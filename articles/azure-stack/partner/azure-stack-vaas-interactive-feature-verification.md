@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 11/19/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: bc2fbf7aadf99a2f765def2d352819dfa6cd5fa4
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: dc0c6a37e11574cef857a7af773a9d90bea57357
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52266076"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52972071"
 ---
 # <a name="interactive-feature-verification-testing"></a>Тестирование интерактивной проверки функций  
 
@@ -48,7 +48,7 @@ ms.locfileid: "52266076"
 
 3.  Нажмите **Start** (Запустить) на плитке **Test Pass** (Прохождение теста).
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image1.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image1.png)
 
 4.  Введите имя рабочего процесса **прохождения теста**.
 
@@ -63,7 +63,7 @@ ms.locfileid: "52266076"
 > [!Note]  
 > Для проверки функции идентификации диска в интерактивном режиме необходимо указать имя и пароль администратора домена.
 
-![Alt text](media\azure-stack-vaas-interactive-feature-verification\image2.png)
+![Alt text](media/azure-stack-vaas-interactive-feature-verification/image2.png)
 
 ## <a name="select-the-test"></a>Выбор теста
 
@@ -72,51 +72,51 @@ ms.locfileid: "52266076"
     > [!Note]  
     > Номер версии будет увеличиваться по мере того, как будут вноситься изменения во вспомогательные тесты. Всегда будет использоваться последняя версия, если Майкрософт не укажет иное.
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image4.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image4.png)
 
 2.  Выберите **Edit** (Изменить) и укажите имя и пароль администратора домена.
 
 3.  Выберите агент или виртуальную машину для развертывания, где будет запущен тест.
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image5.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image5.png)
 
 4.  Нажмите кнопку **Submit** (Отправить) для запуска теста.
 
-![Alt text](media\azure-stack-vaas-interactive-feature-verification\image6.png)
+![Alt text](media/azure-stack-vaas-interactive-feature-verification/image6.png)
 
 ## <a name="start-the-test"></a>Запуск теста
 
 Запросы для теста на идентификацию диска отображаются на компьютере, где запущен агент VaaS. Как правило, это виртуальная машина для развертывания или Jumpbox для экземпляра Azure Stack.
 
-![Alt text](media\azure-stack-vaas-interactive-feature-verification\image8.png)
+![Alt text](media/azure-stack-vaas-interactive-feature-verification/image8.png)
 
 ## <a name="choose-the-actions"></a>Выбор действий
 
 1.  Перейдите по ссылкам **Documentation** (Документация) и **Validation** (Проверка), чтобы ознакомиться с инструкциями от корпорации Майкрософт по выполнению этого сценария.
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image9.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image9.png)
 
 2.  Щелкните **Далее**.
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image10.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image10.png)
 
 3.  Следуйте инструкциям по выполнению скрипта предварительной проверки.
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image11.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image11.png)
 
 4.  Когда скрипт предварительной проверки будет успешно завершен, выполните вручную сценарий (замена диска) согласно инструкциями, приведенным по ссылкам **Documentation** (Документация) и **Validation** (Проверка) на вкладке **Information** (Сведения).
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image12.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image12.png)
 
 5.  Не закрывайте диалоговое окно, когда выполняете сценарий вручную.
 
 6.  По завершении этого сценария следуйте инструкциям по выполнению скрипта последующей проверки.
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image13.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image13.png)
 
 7.  Когда выполняемый вручную сценарий (замена диска) будет успешно завершен, нажмите кнопку **Next** (Далее).
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image14.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image14.png)
 
 > [!Important]  
 > Если закрыть окно, тест остановится до того, как вы его завершите.
@@ -125,7 +125,7 @@ ms.locfileid: "52266076"
 
 1.  По завершении теста вам будет предложено отправить отзыв.
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image15.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image15.png)
 
 2.  Ваши вопросы помогут нам оценить результативность и степень готовности этого сценария к выпуску.
 
@@ -133,7 +133,7 @@ ms.locfileid: "52266076"
 
 1.  Присоедините все файлы журналов, которые нужно отправить в корпорацию Майкрософт.
 
-    ![Alt text](media\azure-stack-vaas-interactive-feature-verification\image16.png)
+    ![Alt text](media/azure-stack-vaas-interactive-feature-verification/image16.png)
 
 2.  Примите условия лицензионного соглашения для отправки отзывов.
 

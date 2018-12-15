@@ -15,12 +15,12 @@ ms.workload: infrastructure
 ms.date: 11/29/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 06bd1216aa3f78b41526670044de0250ad0df7d7
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 96daacef134ca60cb497907a770c83a4bba24a5b
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52833267"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52956030"
 ---
 # <a name="azure-and-linux"></a>Azure и Linux
 Microsoft Azure — это расширяющийся набор интегрированных общедоступных облачных служб, которые включают в себя возможности анализа, работы с виртуальными машинами и базами данных, мобильные средства, веб-технологии, а также возможности работы в сети и хранения данных, требуемые для размещения ваших решений.  Microsoft Azure предоставляет масштабируемую платформу вычислений, которая позволяет платить только за те ресурсы, которые вы используете по требованию, без дополнительных затрат на локальное оборудование.  Среда Azure готова к использованию, когда вы можете масштабировать свои решения в соответствии с потребностями клиентов.
@@ -82,7 +82,7 @@ Azure взимает [почасовую оплату](https://azure.microsoft.c
 * Bitnami — [Bitnami Library для Azure](https://azure.bitnami.com/)
 * Mesosphere — [Azure Marketplace — Mesosphere DC/OS в Azure](https://azure.microsoft.com/marketplace/partners/mesosphere/dcosdcos/)
 * Docker — [Azure Marketplace — служба контейнеров Azure с Docker Swarm](https://azure.microsoft.com/marketplace/partners/microsoft/acsswarms/)
-* Jenkins — [Azure Marketplace — платформа CloudBees Jenkins](https://azure.microsoft.com/marketplace/partners/cloudbees/jenkins-platformjenkins-platform/)
+* Jenkins — [Azure Marketplace — платформа CloudBees Jenkins](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cloudbees.cloudbees-core-contact)
 
 ## <a name="getting-started-with-linux-on-azure"></a>Приступая к работе с Linux в Azure
 Чтобы начать работу с Azure, требуется учетная запись Azure, установленный интерфейс командной строки Azure и пара ключей SSH — открытый и закрытый.
