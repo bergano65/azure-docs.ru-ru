@@ -7,12 +7,12 @@ ms.author: maghan
 ms.service: data-catalog
 ms.topic: conceptual
 ms.date: 01/18/2018
-ms.openlocfilehash: 156673bfac9bfa38772e4daca166e3431f81c09a
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: e68dc22943b7a53693320528f91670d9229b806f
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405015"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52958338"
 ---
 # <a name="how-to-view-related-data-assets-in-azure-data-catalog"></a>Как просматривать связанные ресурсы данных в каталоге данных Azure
 Каталог данных Azure позволяет просматривать ресурсы данных, связанные с выбранным ресурсом, и связи между ними. 
@@ -31,7 +31,7 @@ ms.locfileid: "47405015"
 ## <a name="view-related-data-assets"></a>Просмотр связанных ресурсов данных
 Для просмотра ресурсов данных, связанных с выбранным набором данных, используйте вкладку **Связи**, как показано на следующем рисунке: 
 
-![Просмотр связанных ресурсов данных в каталоге данных Azure](media\data-catalog-how-to-view-related-data-assets\relationships-tab.png)
+![Просмотр связанных ресурсов данных в каталоге данных Azure](media/data-catalog-how-to-view-related-data-assets/relationships-tab.png)
 
 В этом примере у выбранного ресурса данных **ProductSubcategory** имеется две связи: 
 
@@ -43,7 +43,7 @@ ms.locfileid: "47405015"
 
 Для получения дополнительных сведений, таких как полное имя столбца, наведите на него указатель мыши, и появится всплывающее окно, как на следующем рисунке: 
 
-![Извлечение отношений в каталоге данных Azure](media\data-catalog-how-to-view-related-data-assets\relationship-popup.png)
+![Извлечение отношений в каталоге данных Azure](media/data-catalog-how-to-view-related-data-assets/relationship-popup.png)
 
 Для включения связей между зарегистрированными ресурсами зарегистрируйте их повторно.
 

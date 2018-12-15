@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/30/2018
 ms.author: spelluru
-ms.openlocfilehash: 99caf04698226de8daa9cfb8f60662e5cb0f8b49
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 9634c70566aba21bdd28ee016c9fa94464ec9c1b
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39450394"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52956336"
 ---
 # <a name="delete-a-lab-or-vm-in-a-lab-in-azure-devtest-labs"></a>Удаление лаборатории или виртуальной машины в лаборатории в Azure DevTest Labs
 В этой статье описано, как удалить лабораторию или виртуальную машину в лаборатории.
@@ -34,16 +34,16 @@ ms.locfileid: "39450394"
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. В меню в левой области выберите **Все ресурсы**, для типа службы выберите **DevTest Labs** и выберите лабораторию.
 
-    ![Выбор лаборатории](media\devtest-lab-delete-lab-vm\select-lab.png)
+    ![Выбор лаборатории](media/devtest-lab-delete-lab-vm/select-lab.png)
 3. На странице **DevTest Lab** на панели инструментов нажмите кнопку **Удалить**. 
 
-    ![Кнопка "Удалить"](media\devtest-lab-delete-lab-vm\delete-button.png)
+    ![Кнопка "Удалить"](media/devtest-lab-delete-lab-vm/delete-button.png)
 4. На странице **подтверждения** введите **имя** лаборатории и нажмите кнопку **Удалить**. 
 
-    ![Подтверждение](media\devtest-lab-delete-lab-vm\confirm-delete.png)
+    ![Подтверждение](media/devtest-lab-delete-lab-vm/confirm-delete.png)
 5. Чтобы просмотреть состояние операции, щелкните значок **Уведомления** (колокольчик). 
 
-    ![Уведомления](media\devtest-lab-delete-lab-vm\delete-status.png)
+    ![Уведомления](media/devtest-lab-delete-lab-vm/delete-status.png)
 
  
 ## <a name="delete-a-vm-in-a-lab"></a>Удаление виртуальной машины в лаборатории
@@ -59,16 +59,16 @@ ms.locfileid: "39450394"
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. В меню в левой области выберите **Все ресурсы**, для типа службы выберите **DevTest Labs** и выберите лабораторию.
 
-    ![Выбор лаборатории](media\devtest-lab-delete-lab-vm\select-lab.png)
+    ![Выбор лаборатории](media/devtest-lab-delete-lab-vm/select-lab.png)
 3. Щелкните **... (многоточие)** для виртуальной машины в списке виртуальных машин, а затем выберите **Удалить**. 
 
-    ![Удаление виртуальной машины в меню](media\devtest-lab-delete-lab-vm\delete-vm-menu-in-list.png)
+    ![Удаление виртуальной машины в меню](media/devtest-lab-delete-lab-vm/delete-vm-menu-in-list.png)
 4. Нажмите кнопку **ОК** в диалоговом окне **подтверждения**. 
 5. Чтобы просмотреть состояние операции, щелкните значок **Уведомления** (колокольчик). 
 
 Чтобы удалить виртуальную машину на **странице виртуальной машины**, нажмите кнопку **Удалить** на панели инструментов, как показано на следующем рисунке:
 
-![Удаление виртуальной машины на странице виртуальной машины](media\devtest-lab-delete-lab-vm\delete-from-vm-page.png) 
+![Удаление виртуальной машины на странице виртуальной машины](media/devtest-lab-delete-lab-vm/delete-from-vm-page.png) 
 
 
 ## <a name="next-steps"></a>Дополнительная информация

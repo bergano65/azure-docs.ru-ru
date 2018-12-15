@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/15/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: 98ae7fe0fde922aee28ffc05b64d223a40085447
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 0b1affb708a8d481a1378fa691b6547865b0b214
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49340925"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52963595"
 ---
 # <a name="start-and-stop-the-azure-stack-development-kit-asdk"></a>Запуск и остановка пакета средств разработки Azure Stack (ASDK)
 Не рекомендуется обычный перезапуск главного компьютера ASDK. Следуйте инструкциям по корректному завершению работы и перезапуску служб ASDK, приведенным в этой статье. 
@@ -62,7 +62,7 @@ ms.locfileid: "49340925"
    ```
 6. Просмотрите выходные данные, чтобы убедиться, что службы Azure Stack успешно перезапущены.
 
-Чтобы узнать больше о рекомендуемых процедурах для правильного завершения работы и перезапуска служб Azure Stack, ознакомьтесь со статьей [Запуск и остановка Azure Stack](.\.\azure-stack-start-and-stop.md). 
+Чтобы узнать больше о рекомендуемых процедурах для правильного завершения работы и перезапуска служб Azure Stack, ознакомьтесь со статьей [Запуск и остановка Azure Stack](../azure-stack-start-and-stop.md). 
 
 ## <a name="troubleshoot-startup-and-shutdown"></a>Устранение неполадок при запуске и завершении работы 
 Выполните эти шаги, если службы Azure Stack не запускаются в течение двух часов после включения главного компьютера ASDK:
@@ -79,7 +79,7 @@ ms.locfileid: "49340925"
    ```powershell
    Test-AzureStack
    ```
-5. Просмотрите выходные данные и устраните ошибки. Дополнительные сведения см. в статье [Запуск проверочного теста в Azure Stack](.\.\azure-stack-diagnostic-test.md).
+5. Просмотрите выходные данные и устраните ошибки. Дополнительные сведения см. в статье [Запуск проверочного теста в Azure Stack](../azure-stack-diagnostic-test.md).
 6. Перезапустите службы Azure Stack из этого сеанса PEP, запустив командлет **Start-AzureStack**:
 
    ```powershell
@@ -89,4 +89,4 @@ ms.locfileid: "49340925"
 Если запуск командлета **Start-AzureStack** завершается сбоем, посетите [форум технической поддержки Azure Stack](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurestack), чтобы получить помощь по устранению неполадок с ASDK. 
 
 ## <a name="next-steps"></a>Дополнительная информация 
-Дополнительные сведения о средстве диагностики Azure Stack и регистрации проблем см. в статье [Средства диагностики Azure Stack](.\.\azure-stack-diagnostics.md).
+Дополнительные сведения о средстве диагностики Azure Stack и регистрации проблем см. в статье [Средства диагностики Azure Stack](../azure-stack-diagnostics.md).

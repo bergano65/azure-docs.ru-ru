@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: rafats
-ms.openlocfilehash: 3168593e30a7f5acf49960c8479da75529860a65
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 8e25d90b0c86ad7d65510873416d13d93623607b
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51684551"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52865035"
 ---
 # <a name="reading-azure-cosmos-db-change-feed"></a>Чтение канала изменений Azure Cosmos DB
 
@@ -19,7 +19,7 @@ ms.locfileid: "51684551"
 
 * Использование Функций Azure
 * Использование библиотеки обработчика для канала изменений
-* Использование пакета SDK для API SQL Azure Cosmos DB.
+* Использование пакета SDK для API SQL Azure Cosmos DB
 
 ## <a name="using-azure-functions"></a>Использование Функций Azure
 
@@ -35,8 +35,8 @@ ms.locfileid: "51684551"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы можете продолжить изучение канала изменений в следующих статьях:
+Вы можете продолжить знакомство с каналом изменений, перейдя к следующим статьям:
 
 * [Работа с поддержкой веб-канала изменений в Azure Cosmos DB](change-feed.md)
 * [Как использовать канал изменений Azure Cosmos DB с Функциями Azure](change-feed-functions.md)
-* [Использование библиотеки обработчика канала изменений Azure Cosmos DB](change-feed-processor.md)
+* [Using the Azure Cosmos DB change feed processor library](change-feed-processor.md) (Использование библиотеки обработчика канала изменений Azure Cosmos DB)

@@ -10,16 +10,16 @@ ms.component: bing-visual-search
 ms.topic: conceptual
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: c7464558dd7227303fd7a3cc8be71ca5e2d2cfca
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 76fb61f0f1dd3c1f72c4c6132d1bfdc8b516477a
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414970"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52955553"
 ---
 # <a name="using-an-insights-token-to-get-insights-about-an-image"></a>Получение полезных сведений об изображении с помощью токена аналитики
 
-API Bing для визуального поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих способах см. в статье [What is Bing Visual Search API?](overview.md) (Что такое API Bing для визуального поиска?). В этой статье демонстрируется использование токена аналитики. Примеры, демонстрирующие отправку изображения для получения аналитических сведений, см. в кратких руководствах ([C#](quickstarts\csharp.md) | [Java](quickstarts\java.md) | [Node.js](quickstarts\nodejs.md) | [Python](quickstarts\python.md)).
+API Bing для визуального поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих способах см. в статье [What is Bing Visual Search API?](overview.md) (Что такое API Bing для визуального поиска?). В этой статье демонстрируется использование токена аналитики. Примеры, демонстрирующие отправку изображения для получения аналитических сведений, см. в кратких руководствах ([C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [Node.js](quickstarts/nodejs.md) | [Python](quickstarts/python.md)).
 
 
 Если вы отправляете в API визуального поиска токен изображения или URL-адрес, в текст запроса POST необходимо добавить данные формы, показанные ниже. Данные формы должны включать заголовок Content-Disposition, а его параметру `name` необходимо присвоить значение knowledgeRequest. Подробные сведения об объекте `imageInfo` см. в разделе [The request](#the-request) (Запрос).

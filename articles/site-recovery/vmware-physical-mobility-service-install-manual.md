@@ -5,17 +5,15 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/04/2018
+ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: b3b6d7a64873d77336b2fcf14e22f4d6ae33e3a2
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: d0180a32f2a4258cb728869e2cb9f2abd57cc545
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51976797"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52845966"
 ---
-автор ms: ramamill
-
 # <a name="install-the-mobility-service-manually-on-vmware-vms-and-physical-servers"></a>Ручная установка службы Mobility Service на виртуальных машинах VMware и физических серверах
 
 При настройке аварийного восстановления для виртуальных машин VMware и физических серверов используйте [Azure Site Recovery](site-recovery-overview.md). Требуется установить [службу мобильности Site Recovery](vmware-physical-mobility-service-overview.md) на каждую локальную виртуальную машину VMware и физический сервер.  Служба Mobility Service фиксирует операции записи данных на компьютере и перенаправляет их на сервер обработки Site Recovery.

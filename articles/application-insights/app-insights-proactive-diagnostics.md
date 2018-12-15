@@ -9,16 +9,15 @@ ms.assetid: 2eeb4a35-c7a1-49f7-9b68-4f4b860938b2
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/31/2016
 ms.author: mbullwin
-ms.openlocfilehash: 0083c157eab489943f94ed1453c66a5c8d2f291a
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: b884fc15770e91268d1033dc4bab9bf96766de94
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50960316"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52868948"
 ---
 # <a name="smart-detection-in-application-insights"></a>Интеллектуальное обнаружение в Application Insights
  Функция интеллектуального обнаружения автоматически предупреждает о потенциальных проблемах с производительностью в веб-приложении. Она выполняет упреждающий анализ данных телеметрии, которые приложение отправляет в [Application Insights](app-insights-overview.md). В случае внезапного увеличения частоты сбоев или числа аномальных тенденций в производительности клиента или сервера вы получите оповещение. Эта функция не требует настройки. Она работает, если приложение отправляет достаточный объем данных телеметрии.
@@ -57,7 +56,7 @@ ms.locfileid: "50960316"
 
 * [Обозреватель метрик](app-insights-metrics-explorer.md)
 * [Обозреватель поиска](app-insights-diagnostic-search.md)
-* [Аналитика, мощный язык запросов](../log-analytics/query-language/get-started-analytics-portal.md)
+* [Аналитика, мощный язык запросов](../azure-monitor/log-query/get-started-portal.md)
 
 Интеллектуальное обнаружение — это полностью автоматическая функция. но, возможно, вам потребуется настроить некоторые дополнительные оповещения.
 
