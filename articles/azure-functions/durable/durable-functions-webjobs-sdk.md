@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 427c3601d6a4ca65407a98d54b0206cde9af4235
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 18c35070707408f43fd0e5dfc5e3330ef62a914d
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52638399"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53343162"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Запуск устойчивых функций в качестве веб-заданий
 
@@ -35,7 +35,7 @@ ms.locfileid: "52638399"
 
 * [Установите Visual Studio 2017 версии 15.6 или выше](https://docs.microsoft.com/visualstudio/install/) с рабочей нагрузкой **разработки Azure**.
 
-  Если у вас уже установлена среда Visual Studio, но нет рабочей нагрузки, добавьте ее, выбрав **Инструменты > Get Tools and Features** (Получить средства и компоненты). 
+  Если у вас уже установлена среда Visual Studio, но нет рабочей нагрузки, добавьте ее, выбрав **Инструменты > Get Tools and Features** (Получить средства и компоненты).
 
   (Вместо этого можно использовать [Visual Studio Code](https://code.visualstudio.com/), но некоторые инструкции относятся к Visual Studio.)
 
@@ -43,7 +43,7 @@ ms.locfileid: "52638399"
 
 ## <a name="webjobs-sdk-versions"></a>Версии пакета SDK для веб-заданий
 
-В этой статье объясняется, как разрабатывать проект пакета SDK для веб-заданий версии 2.x (эквивалентен Функциям Azure версии 1.x). Дополнительные сведения о версии 3.x см. в разделе [Пакет SDK для веб-заданий версии 3.x](#webjobs-sdk-3x) далее в этой статье. 
+В этой статье объясняется, как разрабатывать проект пакета SDK для веб-заданий версии 2.x (эквивалентен Функциям Azure версии 1.x). Дополнительные сведения о версии 3.x см. в разделе [Пакет SDK для веб-заданий версии 3.x](#webjobs-sdk-3x) далее в этой статье.
 
 ## <a name="create-console-app"></a>Создание консольного приложения
 
@@ -190,9 +190,9 @@ while (true)
 
 1. Если при локальном запуске необходимо просмотреть журналы в Application Insights:
 
-  a. Создайте ресурс Application Insights с типом приложения **Общее**.
+    a. Создайте ресурс Application Insights с типом приложения **Общее**.
 
-  b. Сохраните ключ инструментирования в файл *App.config*.
+    b. Сохраните ключ инструментирования в файл *App.config*.
 
 1. Запустите проект.
 
@@ -216,8 +216,8 @@ while (true)
 
 1. Выберите предварительную версию 3.x следующих пакетов:
 
-  * `Microsoft.Azure.WebJobs.Extensions`
-  * `Microsoft.Azure.WebJobs.Logging.ApplicationInsights`
+    * `Microsoft.Azure.WebJobs.Extensions`
+    * `Microsoft.Azure.WebJobs.Logging.ApplicationInsights`
 
 1. Измените код метода `Main` для получения строки подключения к хранилищу и ключа инструментирования Application Insights из файла *appsettings.json* с помощью платформы конфигурации .NET Core.  Ниже приведен пример:
 
@@ -235,7 +235,7 @@ while (true)
            var config = new JobHostConfiguration();
 
            config.DashboardConnectionString = "";
-           config.StorageConnectionString = 
+           config.StorageConnectionString =
                appSettingsConfig.GetConnectionString("AzureWebJobsStorage");
            var instrumentationKey =
                appSettingsConfig["APPINSIGHTS_INSTRUMENTATIONKEY"];
@@ -258,4 +258,3 @@ while (true)
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о пакете SDK для веб-заданий см. в статье [Использование пакета SDK WebJobs для фоновой обработки управления событиями](../../app-service/webjobs-sdk-how-to.md).
-

@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/18/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: cf3e367dad528017a98e103962c57cb758da55cb
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: a7a5c097f0400d89398cef66eeb7bd0ce8d5e97b
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355363"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53132437"
 ---
 # <a name="how-to-configure-an-application-proxy-application"></a>Как настроить приложение прокси приложения
 
@@ -28,15 +28,15 @@ ms.locfileid: "44355363"
 
 ## <a name="recommended-documents"></a>Рекомендуемые документы 
 
-Дополнительные сведения о начальной конфигурации и о создании приложения прокси приложения доступны в разделе [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-publish-azure-portal.md) в портале администрирования.
+Дополнительные сведения о начальной конфигурации и о создании приложения прокси приложения доступны в разделе [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md) в портале администрирования.
 
-Дополнительные сведения о настройке соединителей см. в разделе [Включение прокси приложения на портале Azure](application-proxy-enable.md).
+Дополнительные сведения о настройке соединителей см. в разделе [Включение прокси приложения на портале Azure](application-proxy-add-on-premises-application.md).
 
 Сведения об отправке сертификатов и пользовательских доменах см. в разделе [Работа с пользовательскими доменами в прокси приложения Azure AD](application-proxy-configure-custom-domain.md).
 
 ## <a name="create-the-applicationsetting-the-urls"></a>Создание приложения/Настройка URL-адресов
 
-Если при выполнении инструкций из раздела [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-publish-azure-portal.md) вы получили сообщение об ошибке при создании приложения, обратитесь к сведениям в сообщении ошибке и к рекомендациям по устранению ошибок. Большинство сообщений об ошибках включают в себя предлагаемое исправление. Чтобы избежать распространенных ошибок, проверьте следующее:
+Если при выполнении инструкций из раздела [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md) вы получили сообщение об ошибке при создании приложения, обратитесь к сведениям в сообщении ошибке и к рекомендациям по устранению ошибок. Большинство сообщений об ошибках включают в себя предлагаемое исправление. Чтобы избежать распространенных ошибок, проверьте следующее:
 
 -   Используется учетная запись администратора с разрешением на создание приложения прокси приложения.
 
@@ -75,4 +75,4 @@ ms.locfileid: "44355363"
    ![Уведомление](./media/application-proxy-config-how-to/error-message2.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Публикация приложений с помощью прокси приложения Azure AD](application-proxy-publish-azure-portal.md)
+[Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md)

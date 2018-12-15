@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
 ms.author: barbkess
-ms.openlocfilehash: d34671d4197735ea2c30aafc8fd01a5893427ff3
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 9e27df857d560abdf5b6a54272bb022b6ed466ee
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51226856"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53079370"
 ---
 # <a name="how-to-assign-users-to-applications"></a>Назначение пользователей для приложений
 
@@ -33,15 +33,15 @@ ms.locfileid: "51226856"
 
 2.  Администратор [назначает для приложения группу](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal), в которую входит пользователь. Ею может быть одна из следующих:
 
-  * Группа, синхронизированная из локальной среды.
+    * Группа, синхронизированная из локальной среды.
 
-  * Статическая группа безопасности, созданная в облаке.
+    * Статическая группа безопасности, созданная в облаке.
 
-  * [Динамическая группа безопасности](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal), созданная в облаке.
+    * [Динамическая группа безопасности](https://docs.microsoft.com/azure/active-directory/active-directory-groups-dynamic-membership-azure-portal), созданная в облаке.
 
-  * Группа Office 365, созданная в облаке.
+    * Группа Office 365, созданная в облаке.
 
-  * Группа ["Все пользователи"](https://docs.microsoft.com/azure/active-directory/active-directory-accessmanagement-dedicated-groups).
+    * Группа ["Все пользователи"](https://docs.microsoft.com/azure/active-directory/active-directory-accessmanagement-dedicated-groups).
 
 3.  Администратор включает [самостоятельный доступ к приложению](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-application-access), чтобы позволить пользователю добавлять приложения, используя возможность **добавления приложения** на [панели доступа к приложениям](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) **без бизнес-утверждения**.
 

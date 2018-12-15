@@ -9,12 +9,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/19/2018
-ms.openlocfilehash: 0bfb652d9e64b9dbf61ad4032f1449fd484cc80a
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: ad58257313c60b4757c83793886ce32a2997332b
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233568"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52996548"
 ---
 # <a name="track-b2b-messages-with-azure-log-analytics"></a>Отслеживание сообщений B2B с помощью Azure Log Analytics
 
@@ -27,7 +27,7 @@ ms.locfileid: "50233568"
 * возможности поиска.
 
 > [!NOTE]
-> На этой странице ранее описывались шаги по выполнению таких задач с помощью консоли Microsoft Operations Management Suite (OMS), которая [выводится из эксплуатации в январе 2019 г.](../log-analytics/log-analytics-oms-portal-transition.md) Теперь эти шаги выполняются с помощью Azure Log Analytics. 
+> На этой странице ранее описывались шаги по выполнению таких задач с помощью консоли Microsoft Operations Management Suite (OMS), которая [выводится из эксплуатации в январе 2019 г.](../azure-monitor/platform/oms-portal-transition.md) Теперь эти шаги выполняются с помощью Azure Log Analytics. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -37,11 +37,11 @@ ms.locfileid: "50233568"
 
 * Если это еще не сделано, [опубликуйте диагностические данные в службе Log Analytics](../logic-apps/logic-apps-track-b2b-messages-omsportal.md).
 
-* Помимо описанных выше требований, вам нужна рабочая область Log Analytics для отслеживания взаимодействия B2B через Log Analytics. См. дополнительные сведения о [создании рабочей области Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
+* Помимо описанных выше требований, вам нужна рабочая область Log Analytics для отслеживания взаимодействия B2B через Log Analytics. См. дополнительные сведения о [создании рабочей области Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
 ## <a name="install-logic-apps-b2b-solution"></a>Установка решения Logic Apps B2B
 
-Прежде чем настраивать в Log Analytics отслеживание сообщений B2B для приложения логики, необходимо добавить решение **Logic Apps B2B** в Log Analytics. Узнайте подробнее о [добавлении решений в Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
+Прежде чем настраивать в Log Analytics отслеживание сообщений B2B для приложения логики, необходимо добавить решение **Logic Apps B2B** в Log Analytics. Узнайте подробнее о [добавлении решений в Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
 1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. В поле поиска введите "log analytics" и выберите **Log Analytics**.
 
@@ -61,7 +61,7 @@ ms.locfileid: "50233568"
 
    Если не удается найти решение, в нижней части списка выберите **Загрузить еще**, пока не появится решение.
 
-1. Выберите **Создать**, затем подтвердите, в какой рабочей области Log Analytics вы хотите установить решение и еще раз щелкните **Создать**.   
+1. Нажмите кнопку **Создать**, подтвердите, в какой рабочей области Log Analytics нужно установить решение, и еще раз нажмите кнопку **Создать**.   
 
    ![Выбор действия "Создать" для Logic Apps B2B](media/logic-apps-track-b2b-messages-omsportal/create-b2b-solution.png)
 

@@ -12,16 +12,16 @@ ms.date: 11/26/2018
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 2d50e4c2352444d29bdb090bc9a2a7947ecc6a50
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 6daa29b4e8f09a4f8a40c3b92d2e2e86a5dea6aa
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52496036"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993176"
 ---
 # <a name="create-an-openapi-definition-for-a-function"></a>Создание определения OpenAPI функции
 
-Интерфейсы REST API часто описываются с помощью определения OpenAPI (ранее известное как файл [Swagger](http://swagger.io/)). Это определение содержит сведения о доступных операция в API и о том, как необходимо структурировать данные запросов и ответов для API.
+Интерфейсы REST API часто описываются с помощью определения OpenAPI (ранее известное как файл [Swagger](https://swagger.io/)). Это определение содержит сведения о доступных операция в API и о том, как необходимо структурировать данные запросов и ответов для API.
 
 В этом руководстве вы создадите функцию, определяющую экономичность аварийного ремонта ветроэлектрической установки. Затем создадите определение OpenAPI для приложения-функции, чтобы иметь возможность вызвать функцию из приложений и служб.
 
@@ -123,7 +123,7 @@ ms.locfileid: "52496036"
 
 ## <a name="generate-the-openapi-definition"></a>Создание определения OpenAPI
 
-Теперь можно приступить к созданию определения OpenAPI. Это определение может использоваться другими технологиями Майкрософт, такими как приложения API, [PowerApps](functions-powerapps-scenario.md) и [Microsoft Flow](../azure-functions/app-service-export-api-to-powerapps-and-flow.md), а также инструментами сторонних разработчиков, такими как [Postman](https://www.getpostman.com/docs/importing_swagger) и [другими дополнительными пакетами](http://swagger.io/tools/).
+Теперь можно приступить к созданию определения OpenAPI. Это определение может использоваться другими технологиями Майкрософт, такими как приложения API, [PowerApps](functions-powerapps-scenario.md) и [Microsoft Flow](../azure-functions/app-service-export-api-to-powerapps-and-flow.md), а также инструментами сторонних разработчиков, такими как [Postman](https://www.getpostman.com/docs/importing_swagger) и [другими дополнительными пакетами](https://swagger.io/tools/).
 
 1. Выберите только *команды*, которые поддерживает API (в этом случае POST). Это очищает созданное определение API.
 
@@ -141,7 +141,7 @@ ms.locfileid: "52496036"
 
     ![Источник определения API](media/functions-openapi-definition/api-definition-source.png)
 
-    Выполнив это действие, вы включите набор параметров OpenAPI для приложения-функции, в том числе конечную точку для размещения файла OpenAPI из домена приложения-функции, встроенную копию [редактора OpenAPI](http://editor.swagger.io) и генератор шаблонов определения API.
+    Выполнив это действие, вы включите набор параметров OpenAPI для приложения-функции, в том числе конечную точку для размещения файла OpenAPI из домена приложения-функции, встроенную копию [редактора OpenAPI](https://editor.swagger.io) и генератор шаблонов определения API.
 
 1. Щелкните **Создать шаблон определения API** > **Сохранить**.
 
@@ -168,7 +168,7 @@ ms.locfileid: "52496036"
         parameters: []
         description: >-
             Replace with Operation Object
-            #http://swagger.io/specification/#operationObject
+            #https://swagger.io/specification/#operationObject
         responses:
             '200':
             description: Success operation

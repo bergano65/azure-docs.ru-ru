@@ -8,19 +8,18 @@ manager: carmonm
 editor: tysonn
 ms.assetid: 1915e204-ba7e-431b-9718-9eb6b4213ad8
 ms.service: monitoring
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/09/2018
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 34161251ac52323bc3eff66cfe30f3de34bdf60c
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: ae310ac35afed06881eb85fabc92d68e256ca5e7
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51714770"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53189784"
 ---
 # <a name="creating-a-management-solution-file-in-azure-preview"></a>Создание файла решения по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -169,7 +168,7 @@ ms.locfileid: "51714770"
 Элемент **dependsOn** указывает [зависимость](../../azure-resource-manager/resource-group-define-dependencies.md) от другого ресурса.  При установке решения ресурс не создается, пока не будут созданы все его зависимости.  Например, при установке решение может [запустить модуль Runbook](solutions-resources-automation.md#runbooks) с помощью [ресурса задания](solutions-resources-automation.md#automation-jobs).  Ресурс задания будет зависеть от ресурса модуля Runbook. Таким образом обеспечивается создание модуля Runbook до задания.
 
 ### <a name="log-analytics-workspace-and-automation-account"></a>Рабочая область Log Analytics и учетная запись службы автоматизации
-Решениям по управлению требуется [рабочая область Log Analytics](../../log-analytics/log-analytics-manage-access.md) для хранения представлений и [учетная запись службы автоматизации](../../automation/automation-security-overview.md#automation-account-overview) для хранения модулей Runbook и связанных ресурсов.  К ним нужно предоставить доступ перед созданием ресурсов решения. Их не нужно определять в самом решении.  Пользователь указывает [рабочую область и учетную запись](solutions.md#log-analytics-workspace-and-automation-account) при развертывании решения. Однако разработчик решения должен учитывать следующие моменты.
+Решениям по управлению требуется [рабочая область Log Analytics](../../azure-monitor/platform/manage-access.md) для хранения представлений и [учетная запись службы автоматизации](../../automation/automation-security-overview.md#automation-account-overview) для хранения модулей Runbook и связанных ресурсов.  К ним нужно предоставить доступ перед созданием ресурсов решения. Их не нужно определять в самом решении.  Пользователь указывает [рабочую область и учетную запись](solutions.md#log-analytics-workspace-and-automation-account) при развертывании решения. Однако разработчик решения должен учитывать следующие моменты.
 
 
 ## <a name="solution-resource"></a>Ресурс решения

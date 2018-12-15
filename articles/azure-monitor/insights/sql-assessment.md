@@ -10,17 +10,15 @@ ms.assetid: e297eb57-1718-4cfe-a241-b9e84b2c42ac
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: magoedte
-ms.component: ''
-ms.openlocfilehash: e66f74edf93688a2793b3f24516f8b14328a8bb9
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 2e20623c015f8bc80b61f07e28c49d49df73887b
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52634954"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53189444"
 ---
 # <a name="optimize-your-sql-environment-with-the-sql-server-health-check-solution-in-log-analytics"></a>Оптимизация среды SQL Server с помощью решения проверки работоспособности SQL Server в Log Analytics
 
@@ -55,7 +53,7 @@ ms.locfileid: "52634954"
 
 1. Установка [агента Microsoft Monitoring Agent (MMA)](../../azure-monitor/platform/agent-windows.md), если сервер уже не отслеживается с помощью решения System Center 2016 Operations Manager или Operations Manager 2012 R2.
 2. Если сервер отслеживается решением System Center 2016 Operations Manager или Operations Manager 2012 R2 и группа управления не интегрирована со службой Log Analytics, сервер может использоваться как многосетевой. С помощью Log Analytics данные будут собираться и пересылаться в службу, а сервер по-прежнему будет отслеживаться решением Operations Manager.  
-3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../../log-analytics/log-analytics-om-agents.md#connecting-operations-manager-to-log-analytics).  
+3. Если группа управления Operations Manager интегрирована со службой, после включения решения в рабочей области добавьте контроллеры домена для сбора данных службой. Для этого выполните инструкции по [добавлению компьютеров под управлением агентов](../../azure-monitor/platform/om-agents.md#connecting-operations-manager-to-log-analytics).  
 
 Агент на сервере SQL Server, который отправляет отчеты в группу управления Operations Manager, собирает данные, перенаправляет их на назначенный сервер управления, а затем отправляет их с сервера управления непосредственно в службу Log Analytics.  Данные не записываются в базы данных Operations Manager.  
 
@@ -184,7 +182,7 @@ Log Analytics использует агент Operations Manager и группу
     ```
 
     >[!NOTE]
-    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../../log-analytics/log-analytics-queries.md), приведенный выше запрос будет изменен следующим образом.
+    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../../azure-monitor/log-query/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
     >
     > `SQLAssessmentRecommendation | where RecommendationResult == "Failed" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -209,7 +207,7 @@ Log Analytics использует агент Operations Manager и группу
     ```
 
     >[!NOTE]
-    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../../log-analytics/log-analytics-queries.md), приведенный выше запрос будет изменен следующим образом.
+    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../../azure-monitor/log-query/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
     >
     > `SQLAssessmentRecommendation | where RecommendationResult == "Ignored" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -265,4 +263,4 @@ Log Analytics использует агент Operations Manager и группу
 * Да. См. раздел [Игнорирование рекомендаций](#ignore-recommendations) выше в этой статье.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Воспользуйтесь функцией [поиска по журналам](../../log-analytics/log-analytics-queries.md), чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности SQL.
+* Воспользуйтесь функцией [поиска по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы научиться анализировать подробные данные и рекомендации для проверки работоспособности SQL.

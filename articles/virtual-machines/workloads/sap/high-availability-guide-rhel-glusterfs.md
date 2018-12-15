@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: bbb0bbc6ddbbabb37932edc6946394b020631231
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: 484a0043b9b5eefa5491dee75e87244d1c001620
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45636430"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53342329"
 ---
 # <a name="glusterfs-on-azure-vms-on-red-hat-enterprise-linux-for-sap-netweaver"></a>GlusterFS в виртуальных машинах Azure с Red Hat Enterprise Linux для SAP NetWeaver
 
@@ -110,10 +110,10 @@ ms.locfileid: "45636430"
 1. Создание группы доступности.  
    Настройка максимального числа доменов обновления.
 1. Создание виртуальной машины 1.  
-   Используйте версию не ниже RHEL 7. В этом примере используется образ Red Hat Enterprise Linux 7.4 <https://ms.portal.azure.com/#create/RedHat.RedHatEnterpriseLinux74-ARM>  
+   Используйте версию не ниже RHEL 7. В этом примере используется образ Red Hat Enterprise Linux 7.4 <https://portal.azure.com/#create/RedHat.RedHatEnterpriseLinux74-ARM>  
    Выберите ранее созданную группу доступности.  
 1. Создание виртуальной машины 2.  
-   Используйте версию не ниже RHEL 7. В этом примере используется образ Red Hat Enterprise Linux 7.4 <https://ms.portal.azure.com/#create/RedHat.RedHatEnterpriseLinux74-ARM>  
+   Используйте версию не ниже RHEL 7. В этом примере используется образ Red Hat Enterprise Linux 7.4 <https://portal.azure.com/#create/RedHat.RedHatEnterpriseLinux74-ARM>  
    Выберите ранее созданную группу доступности.  
 1. Добавьте один диск данных для каждой системы SAP в обе виртуальные машины.
 

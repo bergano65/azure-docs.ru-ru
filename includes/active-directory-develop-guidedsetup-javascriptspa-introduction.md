@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: nacanuma
 ms.custom: include file
-ms.openlocfilehash: 8d0b0c99b743461da41a518feae9c781f90c8b63
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 2cb4895fc2f884d6da41b55faa91fbcb9e88f52f
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49988444"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978844"
 ---
 # <a name="call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Вызов API Microsoft Graph из одностраничного приложения JavaScript
 
@@ -46,7 +46,7 @@ ms.locfileid: "49988444"
 |[msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js)|Библиотека аутентификации Майкрософт для JavaScript (предварительная версия)|
 
 > [!NOTE]
-> В качестве целевого объекта в библиотеке *msal.js* задана *конечная точка Azure Active Directory версии 2.0*, что позволяет выполнять вход и запрашивать маркеры, используя личные, рабочие и учебные учетные записи. В отношении *конечной точки Azure Active Directory версии 2.0* применяется [ряд ограничений](..\articles\active-directory\develop\active-directory-v2-limitations.md).
+> В качестве целевого объекта в библиотеке *msal.js* задана *конечная точка Azure Active Directory версии 2.0*, что позволяет выполнять вход и запрашивать маркеры, используя личные, рабочие и учебные учетные записи. В отношении *конечной точки Azure Active Directory версии 2.0* применяется [ряд ограничений](../articles/active-directory/develop/active-directory-v2-limitations.md).
 > Чтобы понять различия между конечными точками версий 1.0 и 2.0, ознакомьтесь с [руководством по сравнению](../articles/active-directory/develop/azure-ad-endpoint-comparison.md).
 
 <!--end-collapse-->

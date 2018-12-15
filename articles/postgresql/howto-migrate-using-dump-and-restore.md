@@ -9,12 +9,12 @@ editor: jasonwhowell
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: 7c67cac7a5579386921b2b949e9312cb4e5da172
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 2aa59bcf0d56358601b81730abe330a56ca35d02
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49984678"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52966914"
 ---
 # <a name="migrate-your-postgresql-database-using-dump-and-restore"></a>Перенос базы данных PostgreSQL с помощью дампа и ее восстановление
 Можно извлечь базу данных PostgreSQL в файл дампа с помощью [pg_dump](https://www.postgresql.org/docs/9.3/static/app-pgdump.html) и с помощью [pg_restore](https://www.postgresql.org/docs/9.3/static/app-pgrestore.html) восстановить базу данных PostgreSQL из файла архива, созданного pg_dump.
@@ -71,7 +71,7 @@ pg_restore -v --no-owner --host=mydemoserver.postgres.database.azure.com --port=
     ```
 
 ### <a name="for-the-restore"></a>Для восстановления
-- Мы предлагаем переместить файл резервной копии на виртуальную машину Azure в том же регионе, где находится сервер Базы данных Azure для PostgreSQL, на который перемещается база данных, и выполнить команду pg_restore с этой виртуальной машины, чтобы уменьшить задержку сети. Мы также рекомендуем, чтобы виртуальная машина была создана с функцией [ускорения работы в сети](..\virtual-network\create-vm-accelerated-networking-powershell.md).
+- Мы предлагаем переместить файл резервной копии на виртуальную машину Azure в том же регионе, где находится сервер Базы данных Azure для PostgreSQL, на который перемещается база данных, и выполнить команду pg_restore с этой виртуальной машины, чтобы уменьшить задержку сети. Мы также рекомендуем, чтобы виртуальная машина была создана с функцией [ускорения работы в сети](../virtual-network/create-vm-accelerated-networking-powershell.md).
 - Это должно происходить по умолчанию, но откройте файл дампа, чтобы проверить, что инструкции создания индекса находятся после вставленных данных. Если это не так, переместите инструкции создания индекса после вставленных данных.
 - Выполните восстановление с параметрами -Fc и -j *#* для параллельной операции. *#* — это количество ядер на целевом сервере. Вы также можете попробовать установить вдвое большее количество ядер целевого сервера, используя *#*, чтобы оценить влияние. Например: 
 

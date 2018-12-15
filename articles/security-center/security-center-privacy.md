@@ -3,7 +3,7 @@ title: Управление данными пользователя в цент�
 description: " Сведения об управлении данными пользователя в центре безопасности Azure. "
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
 ms.assetid: 411d7bae-c9d4-4e83-be63-9f2f2312b075
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/23/2018
-ms.author: terrylan
-ms.openlocfilehash: fcaac3d248b676e4b7b1fe0344b54e52ce1fb558
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.author: rkarlin
+ms.openlocfilehash: 8417b342dc032f46fddd6c57b82c402cc6c1a10d
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44302679"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52967731"
 ---
 # <a name="manage-user-data-in-azure-security-center"></a>Управление данными пользователя в центре безопасности Azure
 В этой статье приводятся сведения об управлении данными пользователя в центре безопасности Azure. Управление данными пользователя включает в себя возможность доступа, удаления и экспорта данных.

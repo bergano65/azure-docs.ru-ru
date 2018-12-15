@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/24/2018
 ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: 4758c29d1cdb7e09c397524574ba1ab6701efeeb
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 9f1c433be7e8adc0779860c3ec3bfb5d7174fca5
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238034"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52970728"
 ---
 #  <a name="add-marketplace-items-using-publishing-tool"></a>Добавление элементов Marketplace с помощью средства публикации
 
@@ -28,7 +28,7 @@ ms.locfileid: "51238034"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
- - Для запуска набора средств следует использовать узел Azure Stack или создать [VPN](.\asdk\asdk-connect.md#connect-with-vpn)-подключение к узлу ASDK с того компьютера, на котором будет работать средство.
+ - Для запуска набора средств следует использовать узел Azure Stack или создать [VPN](./asdk/asdk-connect.md#connect-with-vpn)-подключение к узлу ASDK с того компьютера, на котором будет работать средство.
 
  - Скачайте [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates/archive/master.zip) и извлеките их содержимое.
 

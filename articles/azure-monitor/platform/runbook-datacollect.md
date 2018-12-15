@@ -10,19 +10,18 @@ ms.assetid: a831fd90-3f55-423b-8b20-ccbaaac2ca75
 ms.service: monitoring
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 05/27/2017
 ms.author: bwren
-ms.openlocfilehash: 87ceb682f35626c5bf468afd83a2f4a35901ef2b
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 2ecb50bdf44b93e8620d6d98a98fc735da6e87c3
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52632353"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53186724"
 ---
 # <a name="collect-data-in-log-analytics-with-an-azure-automation-runbook"></a>Сбор данных в Log Analytics с использованием модуля runbook в службе автоматизации Azure
-В Log Analytics можно собрать значительный объем данных из различных источников, включая [источники данных](../../azure-monitor/platform/agent-data-sources.md) в агентах и [данные, собранные в Azure](../../log-analytics/log-analytics-azure-storage.md).  Но иногда требуется собирать данные, недоступные в этих стандартных источниках.  В таких случаях вы можете использовать [API сборщика данных HTTP](../../log-analytics/log-analytics-data-collector-api.md), чтобы записать данные в Log Analytics из любого клиента REST API.  Чаще всего такие данные собираются с помощью модулей runbook в службе автоматизации Azure.   
+В Log Analytics можно собрать значительный объем данных из различных источников, включая [источники данных](../../azure-monitor/platform/agent-data-sources.md) в агентах и [данные, собранные в Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md).  Но иногда требуется собирать данные, недоступные в этих стандартных источниках.  В таких случаях вы можете использовать [API сборщика данных HTTP](../../azure-monitor/platform/data-collector-api.md), чтобы записать данные в Log Analytics из любого клиента REST API.  Чаще всего такие данные собираются с помощью модулей runbook в службе автоматизации Azure.   
 
 В этом руководстве описан пошаговый процесс создания модуля runbook и расписания для него в службе автоматизации Azure, позволяющий записывать данные в Log Analytics.
 
@@ -30,7 +29,7 @@ ms.locfileid: "52632353"
 ## <a name="prerequisites"></a>Предварительные требования
 Для выполнения этого сценария нужно настроить в подписке Azure указанные ниже ресурсы.  Их можно использовать с бесплатной учетной записью.
 
-- [Рабочая область Log Analytics](../../log-analytics/log-analytics-quick-create-workspace.md).
+- [Рабочая область Log Analytics](../../azure-monitor/learn/quick-create-workspace.md).
 - [Учетная запись службы автоматизации Azure](../..//automation/automation-quickstart-create-account.md).
 
 ## <a name="overview-of-scenario"></a>Обзор сценария
@@ -41,7 +40,7 @@ ms.locfileid: "52632353"
 
 
 ## <a name="1-install-data-collector-api-module"></a>1. Установка модуля API сборщика данных
-Каждый [запрос от API сборщика данных HTTP](../../log-analytics/log-analytics-data-collector-api.md#create-a-request) должен быть правильно отформатирован и содержать заголовок авторизации.  Это можно сделать в модуле runbook, но вы можете уменьшить объем требуемого кода с помощью модуля, упрощающего процесс.  Один из модулей, которые можно использовать, — это [модуль OMSIngestionAPI](https://www.powershellgallery.com/packages/OMSIngestionAPI) в коллекции PowerShell.
+Каждый [запрос от API сборщика данных HTTP](../../azure-monitor/platform/data-collector-api.md#create-a-request) должен быть правильно отформатирован и содержать заголовок авторизации.  Это можно сделать в модуле runbook, но вы можете уменьшить объем требуемого кода с помощью модуля, упрощающего процесс.  Один из модулей, которые можно использовать, — это [модуль OMSIngestionAPI](https://www.powershellgallery.com/packages/OMSIngestionAPI) в коллекции PowerShell.
 
 Чтобы использовать [модуль](../../automation/automation-integration-modules.md) в runbook, установите его в своей учетной записи службы автоматизации.  После этого любой модуль runbook в той же учетной записи сможет использовать функции из модуля.  Вы можете установить новый модуль, последовательно выбрав в своей учетной записи службы автоматизации **Ресурсы** > **Модули** > **Добавить модуль**.  
 
@@ -145,7 +144,7 @@ ms.locfileid: "52632353"
     ![Выходные данные POST](media/runbook-datacollect/post-output.png)
 
 ## <a name="5-verify-records-in-log-analytics"></a>5. Проверка записей в Log Analytics
-Когда тестирование runbook будет завершено и вы убедитесь, что выходные данные получены успешно, можно проверить, созданы ли записи, с помощью [поиска по журналам в Log Analytics](../../log-analytics/log-analytics-queries.md).
+Когда тестирование runbook будет завершено и вы убедитесь, что выходные данные получены успешно, можно проверить, созданы ли записи, с помощью [поиска по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
 
 ![Выходные данные журналов](media/runbook-datacollect/log-output.png)
 
@@ -216,4 +215,4 @@ ms.locfileid: "52632353"
 - Поместите модуль runbook в пакет [решения по управлению](../../azure-monitor/insights/solutions-creating.md), чтобы можно было распространять его среди заказчиков.
 - Дополнительные сведения о [Log Analytics](https://docs.microsoft.com/azure/log-analytics/).
 - Дополнительные сведения о [службе автоматизации Azure](https://docs.microsoft.com/azure/automation/).
-- Дополнительные сведения об [API сборщика данных HTTP](../../log-analytics/log-analytics-data-collector-api.md).
+- Дополнительные сведения об [API сборщика данных HTTP](../../azure-monitor/platform/data-collector-api.md).

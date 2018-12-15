@@ -8,32 +8,30 @@ manager: carmonm
 editor: tysonn
 ms.assetid: fe5d534e-0418-4e2f-9073-8025e13271a8
 ms.service: log-analytics
-ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/19/2018
 ms.author: bwren
-ms.component: ''
-ms.openlocfilehash: 1ac4ec13ad404263e2821c2b89b5db299f36005e
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 1dee53f633d8b5edf893e2f6c83430d7c1a69022
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637099"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53341598"
 ---
 # <a name="alert-management-solution-in-azure-log-analytics"></a>Решение "Управление оповещениями" в Azure Log Analytics
 
 ![Значок "Управление оповещениями"](media/alert-management-solution/icon.png)
 
-Решение для управления оповещениями помогает анализировать все оповещения в репозитории Log Analytics.  Эти оповещения могут поступать из различных источников, например [созданных службой Log Analytics](../../monitoring-and-diagnostics/monitoring-overview-alerts.md) или [импортированных из Nagios или Zabbix](../../log-analytics/log-analytics-quick-collect-linux-computer.md). Это решение также импортирует оповещения из всех [подключенных групп управления System Center Operations Manager](../../log-analytics/log-analytics-om-agents.md).
+Решение для управления оповещениями помогает анализировать все оповещения в репозитории Log Analytics.  Эти оповещения могут поступать из различных источников, например [созданных службой Log Analytics](../../azure-monitor/platform/alerts-overview.md) или [импортированных из Nagios или Zabbix](../../azure-monitor/learn/quick-collect-linux-computer.md). Это решение также импортирует оповещения из всех [подключенных групп управления System Center Operations Manager](../../azure-monitor/platform/om-agents.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Решение работает с любыми записями в репозитории Log Analytics, имеющими тип **Alert** (Оповещение), поэтому необходимо выполнить настройку, которая требуется для сбора этих записей.
 
-- Для оповещений Log Analytics [создайте правила генерации оповещений](../../monitoring-and-diagnostics/monitoring-overview-alerts.md), чтобы записи оповещений создавались непосредственно в репозитории.
-- Для оповещений Nagios и Zabbix [настройте соответствующие серверы](../../log-analytics/log-analytics-quick-collect-linux-computer.md) на отправку оповещений в Log Analytics.
-- Для оповещений System Center Operations Manager [подключите группу управления Operations Manager к рабочей области Log Analytics](../../log-analytics/log-analytics-om-agents.md).  Все оповещения, созданные в System Center Operations Manager, импортируются в Log Analytics.  
+- Для оповещений Log Analytics [создайте правила генерации оповещений](../../azure-monitor/platform/alerts-overview.md), чтобы записи оповещений создавались непосредственно в репозитории.
+- Для оповещений Nagios и Zabbix [настройте соответствующие серверы](../../azure-monitor/learn/quick-collect-linux-computer.md) на отправку оповещений в Log Analytics.
+- Для оповещений System Center Operations Manager [подключите группу управления Operations Manager к рабочей области Log Analytics](../../azure-monitor/platform/om-agents.md).  Все оповещения, созданные в System Center Operations Manager, импортируются в Log Analytics.  
 
 ## <a name="configuration"></a>Параметр Configuration
 Добавьте решение "Управление оповещениями" в рабочую область Log Analytics в соответствии с инструкциями по [добавлению решений](../../azure-monitor/insights/solutions.md). Дополнительная настройка не требуется.
@@ -43,7 +41,7 @@ ms.locfileid: "52637099"
 
 * Управление оповещениями Microsoft System Center Advisor (Microsoft.IntelligencePacks.AlertManagement)
 
-Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../../log-analytics/log-analytics-om-agents.md).
+Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../../azure-monitor/platform/om-agents.md).
 
 ## <a name="data-collection"></a>Сбор данных
 ### <a name="agents"></a>Агенты
@@ -52,8 +50,8 @@ ms.locfileid: "52637099"
 | Подключенный источник | Поддержка | ОПИСАНИЕ |
 |:--- |:--- |:--- |
 | [Агенты Windows](agent-windows.md) | Нет  |Прямые агенты Windows не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Windows. |
-| [Агенты Linux](../../log-analytics/log-analytics-quick-collect-linux-computer.md) | Нет  |Прямые агенты Linux не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Linux.  Оповещения Nagios и Zabbix собираются с тех серверов, для которых требуется агент Linux. |
-| [Группа управления System Center Operations Manager](../../log-analytics/log-analytics-om-agents.md) |Yes |Оповещения, созданные в агентах System Center Operations Manager, поступают в группу управления и пересылаются в Log Analytics.<br><br>Прямое подключение агентов Operations Manager к Log Analytics не требуется. Данные об оповещениях пересылаются из группы управления в репозиторий Log Analytics. |
+| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет  |Прямые агенты Linux не создают оповещения.  Оповещения Log Analytics могут создаваться на основании событий и данных о производительности, собранных из агентов Linux.  Оповещения Nagios и Zabbix собираются с тех серверов, для которых требуется агент Linux. |
+| [Группа управления System Center Operations Manager](../../azure-monitor/platform/om-agents.md) |Yes |Оповещения, созданные в агентах System Center Operations Manager, поступают в группу управления и пересылаются в Log Analytics.<br><br>Прямое подключение агентов Operations Manager к Log Analytics не требуется. Данные об оповещениях пересылаются из группы управления в репозиторий Log Analytics. |
 
 
 ### <a name="collection-frequency"></a>Частота сбора
@@ -74,7 +72,7 @@ ms.locfileid: "52637099"
 | Активные оповещения SCOM |Все оповещения, собранные из Operations Manager, с любым состоянием, кроме *Закрыто*, группируются по источнику оповещения. |
 | все активные оповещения. |Все оповещения с любым уровнем серьезности группируются по имени. Включает только оповещения Operations Manager с любым состоянием, кроме *Закрыто*. |
 
-Если прокрутить панель мониторинга вправо, там вы найдете несколько распространенных запросов. Любой запрос можно щелкнуть, чтобы выполнить [поиск по журналам](../../log-analytics/log-analytics-queries.md) и получить информацию об оповещениях.
+Если прокрутить панель мониторинга вправо, там вы найдете несколько распространенных запросов. Любой запрос можно щелкнуть, чтобы выполнить [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md) и получить информацию об оповещениях.
 
 ![Панель мониторинга "Управление оповещениями"](media/alert-management-solution/dashboard.png)
 
@@ -123,4 +121,4 @@ ms.locfileid: "52637099"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения о генерации оповещений из Log Analytics см. в статье [Оповещения в Log Analytics](../../monitoring-and-diagnostics/monitoring-overview-alerts.md).
+* Дополнительные сведения о генерации оповещений из Log Analytics см. в статье [Оповещения в Log Analytics](../../azure-monitor/platform/alerts-overview.md).

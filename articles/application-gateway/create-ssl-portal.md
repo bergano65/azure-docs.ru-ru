@@ -10,12 +10,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 5/15/2018
 ms.author: victorh
-ms.openlocfilehash: c64754595ef67b7c083ee8d47da5b412467c191b
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 814c3ebec326ab1c17f4fea7f11b2bacaa6b42d9
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34195919"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52997612"
 ---
 # <a name="configure-an-application-gateway-with-ssl-termination-using-the-azure-portal"></a>Настройка шлюза приложений с завершением SSL-запросов с помощью портала Azure
 
@@ -32,7 +32,7 @@ ms.locfileid: "34195919"
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу [http://portal.azure.com](http://portal.azure.com)
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com)
 
 ## <a name="create-a-self-signed-certificate"></a>Создание самозаверяющего сертификата
 

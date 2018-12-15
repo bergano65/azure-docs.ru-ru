@@ -3,12 +3,12 @@ layout: HubPage
 hide_bc: true
 title: Документация по Microsoft Azure
 description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Вы можете получить документацию, примеры кода, учебники и многое другое.
-ms.openlocfilehash: f60d41e2e6333c9d6331f18d4639ababaf748d89
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: c8ba57b9173fbbfa4e00472972921073f32cb2f7
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52426338"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53017791"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -321,9 +321,9 @@ ms.locfileid: "52426338"
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="/azure/redis-cache/">
+                                            <a href="/azure/azure-cache-for-redis/">
                                                 <img src="media/index/RedisCache.svg" alt="" />
-                                                <p>кэш Redis;</p>
+                                                <p>Кэш Azure для Redis</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1874,7 +1874,7 @@ ms.locfileid: "52426338"
                                 </a>
                             </li>
                             <li>
-                                <a href="/azure/redis-cache/">
+                                <a href="/azure/azure-cache-for-redis/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
                                             <div class="card">
@@ -1884,7 +1884,7 @@ ms.locfileid: "52426338"
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>кэш Redis;</h3>
+                                                    <h3>Кэш Azure для Redis</h3>
                                                     <p>Высокая производительность, доступ к данным с низкой задержкой для создания быстрых и масштабируемых приложений</p>
                                                 </div>
                                             </div>

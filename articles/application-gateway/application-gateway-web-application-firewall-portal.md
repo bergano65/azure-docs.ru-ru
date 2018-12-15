@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/26/2018
 ms.author: victorh
-ms.openlocfilehash: 9967813b193159b68aa0f008dae4440aa6e533dc
-ms.sourcegitcommit: c47ef7899572bf6441627f76eb4c4ac15e487aec
+ms.openlocfilehash: 12ef6447e53ba0da3fbd3d56749d7798c49a2cfe
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33207397"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993949"
 ---
 # <a name="create-an-application-gateway-with-a-web-application-firewall-using-the-azure-portal"></a>Создание шлюза приложений с брандмауэром веб-приложения с помощью портала Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "33207397"
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу [http://portal.azure.com](http://portal.azure.com)
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com)
 
 ## <a name="create-an-application-gateway"></a>Создание шлюза приложений
 
@@ -128,7 +128,7 @@ ms.locfileid: "33207397"
 
 ## <a name="create-a-storage-account-and-configure-diagnostics"></a>Создание учетной записи хранения и настройка диагностики.
 
-## <a name="create-a-storage-account"></a>Создайте учетную запись хранения.
+## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 В этом руководстве шлюз приложений использует учетную запись хранения, чтобы хранить данные для выявления и предотвращения угроз. Для записи данных можно также использовать Log Analytics или концентратор событий.
 

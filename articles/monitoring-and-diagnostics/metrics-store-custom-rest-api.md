@@ -8,12 +8,12 @@ ms.topic: howto
 ms.date: 09/24/2018
 ms.author: ancav
 ms.component: metrics
-ms.openlocfilehash: ccfe108b895450e97df1639f6c47eb01823ce5f4
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.openlocfilehash: 8afa6a29d7d97b1d961f8a8ea44a2b62896ec4da
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636770"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53323069"
 ---
 # <a name="send-custom-metrics-for-an-azure-resource-to-the-azure-monitor-metric-store-by-using-a-rest-api"></a>Отправка пользовательских метрик для ресурса Azure в хранилище метрик Azure Monitor с использованием REST API
 
@@ -94,7 +94,7 @@ curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "g
 1. Вы не можете генерировать метрики для таких ресурсов Azure, как подписки или группы ресурсов. 
 1. Вы не можете поместить в хранилище метрику, которая старше 20 минут. Хранилище метрик оптимизировано для оповещений и создания диаграмм в режиме реального времени. 
 2. Число имен измерений должно соответствовать числу значений, и наоборот. Проверьте значения. 
-2. Возможно, метрики генерируются для региона, в котором не поддерживаются пользовательские метрики. Просмотрите список [поддерживаемых регионов](metrics-custom-overview.md#supported-regions). 
+2. Возможно, метрики генерируются для региона, в котором не поддерживаются пользовательские метрики. Просмотрите список [поддерживаемых регионов](../azure-monitor/platform/metrics-custom-overview.md#supported-regions). 
 
 
 
@@ -118,4 +118,4 @@ curl -X POST https://login.microsoftonline.com/<yourtenantid>/oauth2/token -F "g
 
  
 ## <a name="next-steps"></a>Дополнительная информация
-- Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
+- Дополнительные сведения о настраиваемых метриках см. в [этой статье](../azure-monitor/platform/metrics-custom-overview.md).

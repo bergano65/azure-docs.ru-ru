@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/06/2018
 ms.author: johnkem
-ms.openlocfilehash: db4208c8fef27d2e2085e63ba3a986456d0544bf
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: fe24307f7ed01c64217bcb1f9f7645a30bce7f44
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49429122"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53322829"
 ---
 # <a name="azure-diagnostics-extension-for-windows-vms"></a>Расширение системы диагностики Azure для виртуальных машин Windows
 
@@ -37,7 +37,7 @@ ms.locfileid: "49429122"
 
 ## <a name="extension-schema"></a>Схема расширения
 
-[В этом документе описываются схемы и значения свойств для расширения системы диагностики Azure.](../../monitoring-and-diagnostics/azure-diagnostics-schema-1dot3-and-later.md)
+[В этом документе описываются схемы и значения свойств для расширения системы диагностики Azure.](../../azure-monitor/platform/diagnostics-extension-schema-1dot3.md)
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 
@@ -80,12 +80,12 @@ Set-AzureRmVMDiagnosticsExtension -ResourceGroupName $vm_resourcegroup `
 az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 ```
 
-В [этой статье](../../monitoring-and-diagnostics/azure-diagnostics-troubleshooting.md) вы найдете подробные рекомендации по устранению неполадок для расширения системы диагностики Azure.
+В [этой статье](../../azure-monitor/platform/diagnostics-extension-troubleshooting.md) вы найдете подробные рекомендации по устранению неполадок для расширения системы диагностики Azure.
 
 ### <a name="support"></a>Поддержка
 
 Если в любой момент при изучении этой статьи вам потребуется дополнительная помощь, вы можете обратиться к экспертам по Azure на [форумах MSDN Azure и Stack Overflow](https://azure.microsoft.com/support/forums/). Кроме того, можно зарегистрировать обращение в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните "Получить поддержку". Дополнительные сведения об использовании службы поддержки Azure см. в статье [Часто задаваемые вопросы о поддержке Microsoft Azure](https://azure.microsoft.com/support/faq/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Дополнительные сведения о расширении системы диагностики Azure](../../monitoring-and-diagnostics/azure-diagnostics.md)
-* [Журнал и версии схемы конфигурации расширения системы диагностики Azure](../../monitoring-and-diagnostics/azure-diagnostics-schema.md)
+* [Дополнительные сведения о расширении системы диагностики Azure](../../azure-monitor/platform/diagnostics-extension-overview.md)
+* [Журнал и версии схемы конфигурации расширения системы диагностики Azure](../../azure-monitor/platform/diagnostics-extension-schema.md)

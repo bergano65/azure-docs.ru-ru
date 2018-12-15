@@ -8,12 +8,12 @@ ms.author: tanmayb
 ms.date: 10/29/2018
 ms.topic: conceptual
 manager: peterpr
-ms.openlocfilehash: dbc72e040f3d68ca77c036c41612f57616d1e74e
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: b72b2183cb796602f05a0a6858d4de108d3cc2c7
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51016834"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52964804"
 ---
 # <a name="as-a-csp-create-and-manage-an-azure-iot-central-application-on-behalf-of-your-customer"></a>Создание приложения Azure IoT Central и управление им поставщиком облачных решений от имени клиента 
 
@@ -23,21 +23,21 @@ ms.locfileid: "51016834"
 
 Чтобы приступить к работе, войдите в учетную запись на портале партнеров Майкрософт и выберите клиента, для которого вы хотите создать приложение Azure IoT Central. В левой области навигации выберите пункт "Управление службами".
 
-![Клиентское представление в Центре партнеров Майкрософт](media\howto-create-application-asCSP\image1.png)
+![Клиентское представление в Центре партнеров Майкрософт](media/howto-create-application-asCSP/image1.png)
 
 Azure IoT Central отображается как служба, доступная для администрирования. Щелкните ссылку Azure IoT Central на странице, чтобы создавать приложения или управлять существующими приложениями для этого клиента.
 
-![Доступная для управления служба Azure IoT Central](media\howto-create-application-asCSP\image2.png)
+![Доступная для управления служба Azure IoT Central](media/howto-create-application-asCSP/image2.png)
 
 Откроется страница диспетчера приложений в Azure IoT Central. Azure IoT Central сохраняет контекст, указывающий, что вы перешли из Центра партнеров Майкрософт и планируете выполнять управление для этого конкретного клиента. Эти сведения отображаются в заголовке страницы диспетчера приложений. Отсюда можно перейти к существующему приложению, которое вы создали ранее для этого клиента, чтобы управлять им, или можно создать новое приложение для клиента.
 
-![Создание диспетчера для поставщиков облачных решений](media\howto-create-application-asCSP\image3.png)
+![Создание диспетчера для поставщиков облачных решений](media/howto-create-application-asCSP/image3.png)
 
 Чтобы создать приложение Azure IoT Central, щелкните плитку **Новое приложение**. Будет загружена страница создания приложения. Необходимо заполнить все поля на этой странице и нажать кнопку **Создать**. Ниже приводятся сведения о каждом поле.
 
-![Страница создания приложения для CSP](media\howto-create-application-asCSP\image4.png)
+![Страница создания приложения для CSP](media/howto-create-application-asCSP/image4.png)
 
-![Страница создания приложения для CSP](media\howto-create-application-asCSP\image4-1.png)
+![Страница создания приложения для CSP](media/howto-create-application-asCSP/image4-1.png)
 
 ## <a name="payment-plan"></a>План оплаты
 

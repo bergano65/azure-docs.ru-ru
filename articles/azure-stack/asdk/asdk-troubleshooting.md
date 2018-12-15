@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/15/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: 999017e24f6c4c24735b7e0cc818bf20aaabab62
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 3caa45064c41b641aa913e210aa698d818d5355e
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49338579"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52970277"
 ---
 # <a name="microsoft-azure-stack-development-kit-asdk-troubleshooting"></a>Устранение неполадок с Пакетом средств разработки Azure Stack (ASDK)
 В этом документе содержатся общие сведения об устранении неполадок для ASDK. Если возникли проблемы, которые не описаны в этой статье, посетите [форум MSDN Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack) для получения дополнительной помощи и сведений.  
@@ -64,7 +64,7 @@ ms.locfileid: "49338579"
 
 При появлении "потерянных" виртуальных жестких дисков важно знать, являются ли они частью папки удаленной учетной записи хранения. Если учетная запись хранения не была удалена, они по-прежнему находятся в папке.
 
-Вы можете больше узнать о настройке порогового значения периода удержания и освобождении по запросу в статье об [управлении учетными записями хранения](.\.\azure-stack-manage-storage-accounts.md).
+Вы можете больше узнать о настройке порогового значения периода удержания и освобождении по запросу в статье об [управлении учетными записями хранения](../azure-stack-manage-storage-accounts.md).
 
 ## <a name="storage"></a>Хранилище
 ### <a name="storage-reclamation"></a>Освобождение хранилища
@@ -72,4 +72,3 @@ ms.locfileid: "49338579"
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Посетите форум технической поддержки Azure Stack](https://social.msdn.microsoft.com/Forums/azure/home?forum=azurestack)
-

@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.topic: reference
 ms.date: 11/20/2018
 ms.author: tomfitz
-ms.openlocfilehash: a4bb423dc5eddde0fd2d2b9b4f263ab39dbd801f
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: 580955d3c6fd7a33c152e49e601d8078eb169a22
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52284988"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53409672"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [добавления тегов](resource-group-using-tags.md).
@@ -68,18 +68,6 @@ ms.locfileid: "52284988"
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | batchAccounts | Yes | 
-
-## <a name="batch-ai"></a>Искусственный интеллект пакетной службы
-| Тип ресурса | Поддержка тегов |
-| ------------- | ----------- |
-| clusters | Yes | 
-| jobs | Yes | 
-| fileservers | Yes | 
-| workspaces | Yes | 
-| workspaces/clusters | Нет  | 
-| workspaces/fileservers | Нет  | 
-| workspaces/experiments | Нет  | 
-| workspaces/experiments/jobs | Нет  | 
 
 ## <a name="bing-maps"></a>Карты Bing
 | Тип ресурса | Поддержка тегов |

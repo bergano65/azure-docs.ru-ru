@@ -14,19 +14,19 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: c3dbecfcaf40a85c57b9f795d7f2d9b76d27c195
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: 2740da5a51e95a327a868734a7f009dddf40219a
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52274076"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52964940"
 ---
 # <a name="remove-the-mysql-resource-provider"></a>Удаление поставщика ресурсов MySQL
 
 Прежде чем удалить поставщик ресурсов MySQL, необходимо удалить все его зависимости. Кроме того, потребуется скопировать пакет развертывания, который был использован для установки поставщика ресурсов.
 
 > [!NOTE]
-> Скачать установщики поставщика ресурсов можно с помощью ссылок, приведенных в разделе [предварительных требований для развертывания поставщика ресурсов](.\azure-stack-mysql-resource-provider-deploy.md#prerequisites).
+> Скачать установщики поставщика ресурсов можно с помощью ссылок, приведенных в разделе [предварительных требований для развертывания поставщика ресурсов](./azure-stack-mysql-resource-provider-deploy.md#prerequisites).
 
 При удалении поставщика ресурсов MySQL базы данных клиента не удаляются с серверов размещения.
 

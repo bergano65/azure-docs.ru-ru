@@ -7,18 +7,17 @@ editor: tysonn
 services: azure-monitor
 documentationcenter: azure-monitor
 ms.service: azure-monitor
-ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: bwren
-ms.openlocfilehash: f85f0785f180bf333477bd45508f8c670349669e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 68986b3d60566ee190a92c6ccf8cda767824350f
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46980480"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53000151"
 ---
 # <a name="azure-monitor-branding-changes"></a>Изменения фирменной символики Azure Monitor
 В этой статье описываются последние изменения имени и фирменной символики, недавно внесенные в службы управления Azure. 
@@ -47,4 +46,4 @@ Log Analytics и Application Insights были объединены в Azure Mon
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Ознакомьтесь с [обзором Azure Monitor](overview.md), в котором описаны его различные компоненты и функции.
-- Дополнительные сведения о [перемещении портала OMS](../log-analytics/log-analytics-oms-portal-transition.md).
+- Дополнительные сведения о [перемещении портала OMS](../azure-monitor/platform/oms-portal-transition.md).

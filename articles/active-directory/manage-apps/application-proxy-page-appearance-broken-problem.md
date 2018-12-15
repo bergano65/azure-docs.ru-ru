@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 05/21/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 2ebcf225fb0959b5c72c3cea50f2f1386beb1457
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 6354b4b0224effb1eef063779dba736cb6263286
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355456"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141634"
 ---
 # <a name="application-page-does-not-display-correctly-for-an-application-proxy-application"></a>Неправильное отображение страницы приложения для приложения прокси приложения
 
@@ -39,4 +39,4 @@ ms.locfileid: "44355456"
 Для этого рекомендуется использовать решение на базе [личных доменов](application-proxy-configure-custom-domain.md). Однако это решение требует, чтобы вы владели сертификатом для своего домена, а ваши приложения использовали полные доменные имена (FQDN). Другие варианты описаны в [документации по устранению неполадок с неработающими ссылками](application-proxy-page-links-broken-problem.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Публикация приложений с помощью прокси приложения Azure AD](application-proxy-publish-azure-portal.md)
+[Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md)

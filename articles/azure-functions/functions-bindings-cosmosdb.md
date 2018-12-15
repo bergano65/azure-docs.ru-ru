@@ -2,21 +2,20 @@
 title: Привязки Azure Cosmos DB для службы "Функции" версии 1.х
 description: Узнайте, как использовать триггеры и привязки Azure Cosmos DB в службе "Функции Azure".
 services: functions
-documentationcenter: na
 author: craigshoemaker
+ms.author: cshoe
 manager: jeconnoc
 keywords: функции azure, функции, обработка событий, динамические вычисления, независимая архитектура
 ms.service: azure-functions; cosmos-db
-ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/21/2017
-ms.author: cshoe
-ms.openlocfilehash: 3d4c9e974f92f26b93900318c01dc8a659d8edbe
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.custom: seodec18
+ms.openlocfilehash: 2a501129720447462d1e6e961597b51fa683dc1e
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52276216"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53136211"
 ---
 # <a name="azure-cosmos-db-bindings-for-azure-functions-1x"></a>Привязки Azure Cosmos DB для службы "Функции Azure" версии 1.х
 
@@ -24,7 +23,7 @@ ms.locfileid: "52276216"
 > * [Версия 1](functions-bindings-cosmosdb.md)
 > * [Версия 2](functions-bindings-cosmosdb-v2.md)
 
-В этой статье описывается использование привязок [Azure Cosmos DB](..\cosmos-db\serverless-computing-database.md) в службе "Функции Azure". Служба "Функции Azure" поддерживает привязки триггера, а также входные и выходные привязки для Azure Cosmos DB.
+В этой статье описывается использование привязок [Azure Cosmos DB](../cosmos-db/serverless-computing-database.md) в службе "Функции Azure". Служба "Функции Azure" поддерживает привязки триггера, а также входные и выходные привязки для Azure Cosmos DB.
 
 > [!NOTE]
 > Эта статья предназначена для службы "Функции Azure" версии 1.x.  Сведения об использовании этих привязок в Функциях 2.x см. [здесь](functions-bindings-cosmosdb-v2.md).
@@ -38,7 +37,7 @@ ms.locfileid: "52276216"
 
 ## <a name="packages---functions-1x"></a>Пакеты – Функции 1.x
 
-Привязки Azure Cosmos DB для Функций 1.x доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.DocumentDB](http://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DocumentDB) версии 1.х. Исходный код для привязок находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/tree/v2.x/src/WebJobs.Extensions.DocumentDB).
+Привязки Azure Cosmos DB для Функций 1.x доступны в пакете NuGet [Microsoft.Azure.WebJobs.Extensions.DocumentDB](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.Extensions.DocumentDB) версии 1.х. Исходный код для привязок находится в репозитории GitHub [azure-webjobs-sdk-extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/tree/v2.x/src/WebJobs.Extensions.DocumentDB).
 
 [!INCLUDE [functions-package](../../includes/functions-package.md)]
 
@@ -895,7 +894,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, Docume
 
 В этом разделе содержатся следующие примеры:
 
-* [Триггер очереди, поисковый идентификатор из JSON](#queue-trigger-look-up-id-from-string-javascript)
+* [Триггер очереди, поисковый идентификатор из JSON](#queue-trigger-look-up-id-from-json-javascript)
 * [Триггер HTTP, поисковый идентификатор из строки запроса](#http-trigger-look-up-id-from-query-string-javascript)
 * [Триггер HTTP, поисковый идентификатор из данных маршрута](#http-trigger-look-up-id-from-route-data-javascript)
 * [Триггер очереди, получение нескольких документов, используется SqlQuery](#queue-trigger-get-multiple-docs-using-sqlquery-javascript)
@@ -1177,7 +1176,7 @@ module.exports = function (context, req, toDoItem) {
 
 В функциях C# и F# любые изменения, внесенные во входной документ посредством именованных входных параметров, сохраняются автоматически после успешного выхода из функции. 
 
-В функциях JavaScript изменения не обрабатываются автоматически при выходе из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. Ознакомьтесь с [примером на языке JavaScript](#input---javascript-example).
+В функциях JavaScript изменения не обрабатываются автоматически при выходе из функции. Для внесения изменений используйте `context.bindings.<documentName>In` и `context.bindings.<documentName>Out`. Ознакомьтесь с [примером на языке JavaScript](#input---javascript-examples).
 
 ## <a name="output"></a>Выходные данные
 
@@ -1571,7 +1570,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
     }
 ```
 
-Полный пример см. в разделе [Пример выходных данных C#](#output---c-example).
+Полный пример см. в разделе [Пример выходных данных C#](#output---c-examples).
 
 ## <a name="output---configuration"></a>Выходная конфигурация
 
@@ -1606,7 +1605,7 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](..\cosmos-db\serverless-computing-database.md)
+* [Azure Cosmos DB: обработка данных бессерверных баз данных с помощью службы "Функции Azure"](../cosmos-db/serverless-computing-database.md)
 * [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
 
 <!---

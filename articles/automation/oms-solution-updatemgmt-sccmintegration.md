@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 03/19/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b42ce119db2c435f05424cceb5bb90627668bece
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: f3ab50c4fdc080b157212bcc662a2acf6629483d
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407203"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53097970"
 ---
 # <a name="integrate-system-center-configuration-manager-with-update-management"></a>Интеграция Integrate System Center Configuration Manager с решением "Управление обновлениями"
 
@@ -26,7 +26,7 @@ ms.locfileid: "49407203"
 
 * Необходимо добавить [решение "Управление обновлениями"](automation-update-management.md) в учетную запись службы автоматизации.
 * Серверы Windows, которыми в текущее время управляет среда System Center Configuration Manager, также должны отправлять отчеты в рабочую область Log Analytics, в которой также включено решение "Управление обновлениями".
-* Этот компонент включен в текущей версии ветви System Center Configuration Manager 1606 и более поздних версиях. Дополнительные сведения об интеграции сайта центра администрирования Configuration Manager или автономного основного сайта с Log Analytics и импорте коллекций см. в статье [Подключение Configuration Manager к Log Analytics](../log-analytics/log-analytics-sccm.md).  
+* Этот компонент включен в текущей версии ветви System Center Configuration Manager 1606 и более поздних версиях. Дополнительные сведения об интеграции сайта центра администрирования Configuration Manager или автономного основного сайта с Log Analytics и импорте коллекций см. в статье [Подключение Configuration Manager к Log Analytics](../azure-monitor/platform/collect-sccm.md).  
 * На агентах Windows необходимо настроить связь с сервером служб Windows Server Update Services (WSUS) или доступ к Центру обновления Майкрософт, если они не получают обновления безопасности из Configuration Manager.   
 
 Управление клиентами, размещенными в Azure IaaS, с помощью имеющейся среды Configuration Manager в первую очередь зависит от подключения между центрами обработки данных Azure и вашей инфраструктурой. Это подключение влияет на все изменения структуры, которые может потребоваться внести в инфраструктуру Configuration Manager, и связанные с этим затраты на поддержку этих необходимых изменений. Чтобы понять, какие аспекты планирования вам необходимо оценить, прежде чем продолжить, ознакомьтесь с разделом [Что следует знать о требованиях к сети? Необходимо использовать ExpressRoute или VPN-шлюз Azure?](/sccm/core/understand/configuration-manager-on-azure#networking).

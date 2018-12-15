@@ -11,12 +11,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: b36e4598f5ff20b921c5cd150ae19be233cc2d14
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: 45d1275ac3b78836cbb77c4e1508d0689c215d69
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43246519"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52998605"
 ---
 # <a name="start-monitoring-your-java-web-application"></a>Запуск мониторинга веб-приложения Java
 
@@ -29,7 +29,7 @@ ms.locfileid: "43246519"
 Для работы с этим кратким руководством сделайте следующее:
 
 - Установите JRE 1.7 или 1.8.
-- Установите бесплатную [интегрированную среду разработки Eclipse для разработчиков Java EE](http://www.eclipse.org/downloads/). В этом кратком руководстве используется Eclipse Oxygen (4.7).
+- Установите бесплатную [интегрированную среду разработки Eclipse для разработчиков Java EE](https://www.eclipse.org/downloads/). В этом кратком руководстве используется Eclipse Oxygen (4.7).
 - Подписка Azure и веб-проект Java Dynamic.
  
 Если нет веб-проекта Java Dynamic, можно создать его с помощью руководства [Создание первого веб-приложения Java в Azure](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-java).
@@ -67,7 +67,7 @@ ms.locfileid: "43246519"
 
    ![Форма создания ресурса App Insights](./media/app-insights-java-quick-start/000-j.png)
 
-2. Скопируйте ```http://dl.microsoft.com/eclipse``` в поле Work With (Работа с), установите флажок **Azure Toolkit for Java** (Средства Azure для Java), выберите **Application Insights Plugin for Java** >  (Подключаемый модуль Application Insights для Java) и снимите флажок **Contact all update sites during install to find required software** (Связываться со всеми сайтами обновлений во время установки, чтобы найти необходимое программное обеспечение).
+2. Скопируйте ```https://dl.microsoft.com/eclipse``` в поле Work With (Работа с), установите флажок **Azure Toolkit for Java** (Средства Azure для Java), выберите **Application Insights Plugin for Java** >  (Подключаемый модуль Application Insights для Java) и снимите флажок **Contact all update sites during install to find required software** (Связываться со всеми сайтами обновлений во время установки, чтобы найти необходимое программное обеспечение).
 
 3. После завершения установки вам будет предложено **перезапустить Eclipse**.
 
@@ -130,7 +130,7 @@ ms.locfileid: "43246519"
 
    ![Графы метрик сервера](./media/app-insights-java-quick-start/livemetricsjava.png)
 
-Дополнительные сведения о мониторинге Java см. в статье [Приступая к работе с Application Insights в веб-проекте Java](.\app-insights-java-get-started.md).
+Дополнительные сведения о мониторинге Java см. в статье [Приступая к работе с Application Insights в веб-проекте Java](./app-insights-java-get-started.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

@@ -12,14 +12,14 @@ ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 07/31/2018
+ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 2f2da5b38ab39e3636ff0ac09ac2c5515e02b0c1
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: 034ae29b5fabae15aa2b6b96e7fefaef23c1c5a1
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39492341"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275233"
 ---
 # <a name="sfctl-store"></a>sfctl store
 Выполнение базовых операций на уровне файла с хранилищем образов кластера.
@@ -35,7 +35,7 @@ ms.locfileid: "39492341"
 ## <a name="sfctl-store-delete"></a>sfctl store delete
 Удаляет существующее содержимое хранилища образов.
 
-Удаляет существующее содержимое хранилища образов, обнаруженное по заданному относительному пути к хранилищу образов. Эту команду можно использовать, чтобы удалить переданные пакеты приложения после их подготовки.
+Удаляет существующее содержимое хранилища образов, обнаруженное по заданному относительному пути к хранилищу образов. Эту команду можно использовать для удаления переданных пакетов приложения после их подготовки.
 
 ### <a name="arguments"></a>Аргументы
 

@@ -15,12 +15,12 @@ ms.date: 05/24/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017, it-pro
-ms.openlocfilehash: dbb7fca08e8d5c59842f7ddfb02b463a42efadb7
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 565e7379ad12222e459bd61ed50fa38f9f9b12fc
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52422293"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53136252"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для поддержки единого входа в приложения с помощью прокси приложения
 
@@ -75,7 +75,7 @@ ms.locfileid: "52422293"
 Sharepointserviceaccount может содержать учетную запись компьютера Microsoft SharePoint Server или учетную запись службы, с учетными данными которой выполняется пул приложений Microsoft SharePoint Server.
 
 ## <a name="configure-single-sign-on"></a>Настройка единого входа 
-1. Опубликуйте приложение в соответствии с инструкциями, описанными в статье [Публикация приложений с помощью прокси приложения](application-proxy-publish-azure-portal.md). Обязательно выберите значение **Azure Active Directory** для параметра **Метод предварительной проверки подлинности**.
+1. Опубликуйте приложение в соответствии с инструкциями, описанными в статье [Публикация приложений с помощью прокси приложения](application-proxy-add-on-premises-application.md). Обязательно выберите значение **Azure Active Directory** для параметра **Метод предварительной проверки подлинности**.
 2. Когда приложение появится в списке корпоративных приложений, выберите его и щелкните **Единый вход**.
 3. Выберите режим единого входа **Встроенная проверка подлинности Windows**.  
 4. Введите **Внутреннее имя субъекта-службы приложения** сервера приложений. В этом примере таким именем для опубликованного приложения будет http/www.contoso.com. Это имя субъекта-службы должно входить в список служб, для которого соединитель может имеет делегированные учетные данные. 

@@ -12,14 +12,14 @@ ms.devlang: cli
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 07/31/2018
+ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 53e49099fd3486d51f021528c9354cf32f4952d2
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: abc1e835fa153fc5d061cca5a3eb009931240332
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39492795"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53276338"
 ---
 # <a name="sfctl-is"></a>sfctl is
 Запрос службы инфраструктуры и отправка команд для нее.
@@ -41,7 +41,7 @@ ms.locfileid: "39492795"
 |Аргумент|ОПИСАНИЕ|
 | --- | --- |
 | --command [обязательный параметр] | Текст команды для вызова. Содержимое команды зависит от инфраструктуры. |
-| --service-id | Идентификатор службы инфраструктуры. <br><br> Это полное имя службы инфраструктуры без схемы универсального кода ресурса (URI) "fabric". Этот параметр обязателен только для кластеров, в которых выполняется более одного экземпляра службы инфраструктуры. |
+| --service-id | Идентификатор службы инфраструктуры. <br><br> Это полное имя службы инфраструктуры без схемы универсального кода ресурса (URI) "fabric\:". Этот параметр обязателен только для кластеров, в которых выполняется более одного экземпляра службы инфраструктуры. |
 | --timeout -t | Время ожидания сервера в секундах.  Значение по умолчанию\: 60. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы

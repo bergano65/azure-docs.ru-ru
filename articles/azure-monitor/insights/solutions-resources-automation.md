@@ -8,19 +8,18 @@ manager: carmonm
 editor: tysonn
 ms.assetid: 5281462e-f480-4e5e-9c19-022f36dce76d
 ms.service: monitoring
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/24/2017
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 814646902a88c7170da66397709ff3a8c7b081fd
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: 1d2a1be55f00b1b31609f44bd0187fd839340773
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51714806"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53185136"
 ---
 # <a name="adding-azure-automation-resources-to-a-management-solution-preview"></a>Добавление ресурсов службы автоматизации Azure в решение по управлению (предварительная версия)
 > [!NOTE]
@@ -317,8 +316,8 @@ ms.locfileid: "51714806"
 ### <a name="updating-modules"></a>Обновление модулей
 Если при обновлении решения для управления, включающего в себя модуль Runbook, который использует расписание, обновляется и модуль, используемый модулем Runbook, то Runbook может вернуться к старой версии модуля.  В решение следует добавить указанные ниже модули Runbook и создать задание для их выполнения перед выполнением остальных модулей Runbook.  Таким образом все модули будут обновляться, как указано, перед загрузкой модулей Runbook.
 
-* [Update-ModulesinAutomationToLatestVersion](https://www.powershellgallery.com/packages/Update-ModulesInAutomationToLatestVersion/1.03/DisplayScript) обеспечивает то, что модули Runbook в решении используют модули последней версии.  
-* [ReRegisterAutomationSchedule-MS-Mgmt](https://www.powershellgallery.com/packages/ReRegisterAutomationSchedule-MS-Mgmt/1.0/DisplayScript) повторно зарегистрирует все ресурсы расписания, чтобы обеспечить, что модули Runbook, связанные с ними, используют модули последней версии.
+* [Update-ModulesinAutomationToLatestVersion](https://www.powershellgallery.com/packages/Update-ModulesInAutomationToLatestVersion/1.03/) обеспечивает то, что модули Runbook в решении используют модули последней версии.  
+* [ReRegisterAutomationSchedule-MS-Mgmt](https://www.powershellgallery.com/packages/ReRegisterAutomationSchedule-MS-Mgmt/1.0/) повторно зарегистрирует все ресурсы расписания, чтобы обеспечить, что модули Runbook, связанные с ними, используют модули последней версии.
 
 
 

@@ -9,22 +9,21 @@ ms.assetid: 3b722e47-38bd-4667-9ba4-65b7006c074c
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/28/2018
 ms.reviewer: lmolkova
 ms.author: mbullwin
-ms.openlocfilehash: 6d161a49b35bbdfedcb27dd91f9f09dcf7ba4133
-ms.sourcegitcommit: 2ad510772e28f5eddd15ba265746c368356244ae
+ms.openlocfilehash: f2f237d250a6b6e2a0f6ed2e62540968d9fcc7eb
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43122032"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52997975"
 ---
 # <a name="application-insights-for-net-console-applications"></a>Application Insights для консольных приложений .NET
 [Application Insights](app-insights-overview.md) позволяет отслеживать доступность, производительность и использование вашего веб-приложения.
 
-Вам потребуется подписка [Microsoft Azure](http://azure.com). Войдите с помощью учетной записи Майкрософт, которую вы, возможно, уже используете для Windows, XBox Live или других облачных служб Майкрософт. Возможно, у вашей группы есть подписка организации Azure: попросите ее владельца добавить вас к ней с помощью вашей учетной записи Майкрософт.
+Вам потребуется подписка [Microsoft Azure](https://azure.com). Войдите с помощью учетной записи Майкрософт, которую вы, возможно, уже используете для Windows, XBox Live или других облачных служб Майкрософт. Возможно, у вашей группы есть подписка организации Azure: попросите ее владельца добавить вас к ней с помощью вашей учетной записи Майкрософт.
 
 ## <a name="getting-started"></a>Приступая к работе
 
@@ -125,7 +124,7 @@ TelemetryConfiguration.Active.TelemetryInitializers.Add(new OperationCorrelation
 TelemetryConfiguration.Active.TelemetryInitializers.Add(new HttpDependenciesParsingTelemetryInitializer());
 ```
 
-* Для приложения .NET Framework для Windows можно также установить и инициализировать модуль сборщика для счетчика производительности, как описано [здесь](http://apmtips.com/blog/2017/02/13/enable-application-insights-live-metrics-from-code/).
+* Для приложения .NET Framework для Windows можно также установить и инициализировать модуль сборщика для счетчика производительности, как описано [здесь](https://apmtips.com/blog/2017/02/13/enable-application-insights-live-metrics-from-code/).
 
 #### <a name="full-example"></a>Полный пример
 

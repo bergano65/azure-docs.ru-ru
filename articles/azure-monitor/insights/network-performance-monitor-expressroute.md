@@ -10,17 +10,15 @@ ms.assetid: 5b9c9c83-3435-488c-b4f6-7653003ae18a
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: abshamsft
-ms.component: ''
-ms.openlocfilehash: 69088f7d07312d4110eafea369ea999f0597868b
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 50819e1378187dda126f25298d8a2ac0a1b815c5
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52442001"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53188781"
 ---
 # <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
 
@@ -118,7 +116,7 @@ ms.locfileid: "52442001"
 
 В **LogAnalytics** можно просмотреть коды уведомлений и настроить для них оповещения. На странице **диагностики** в Мониторе производительности сети можно найти описание каждого отправленного сообщения диагностики.
 
-| Код уведомления (журналы) | Описание |
+| Код уведомления (журналы) | ОПИСАНИЕ |
 | --- | --- |
 | 5101 | Подчиненный интерфейс Microsoft Edge сообщает о высокой задержке. |
 | 5102 | Подчиненный интерфейс Microsoft Edge удаляет пакет. | 
@@ -160,4 +158,4 @@ ms.locfileid: "52442001"
  
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Выполните поиск по журналам](../../log-analytics/log-analytics-queries.md), чтобы просмотреть подробные записи данных о производительности сети.
+[Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.

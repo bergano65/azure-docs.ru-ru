@@ -4,14 +4,14 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 109f4621af3e3ca617dfe521575d9352f22c5917
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: a65dbbcfddf33692ee179755b4306019ffa8863e
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50226737"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53399975"
 ---
-Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/application-insights/app-insights-overview.md) и [Log Analytics](../articles/log-analytics/log-analytics-queries.md).
+Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/application-insights/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
 
 ## <a name="diagnostics-and-metrics"></a>Диагностика и метрики 
 
@@ -31,7 +31,7 @@ ms.locfileid: "50226737"
 
 ## <a name="alerts"></a>Оповещения
 
-На основе метрик производительности можно создавать [оповещения](../articles/monitoring-and-diagnostics/monitoring-overview-alerts.md). Например, вы можете использовать оповещения для уведомления о том, что средняя загрузка ЦП превышает пороговое значение или показатель свободного места на диске ниже определенного значения. Оповещения можно настроить на [портале Azure](../articles/monitoring-and-diagnostics/insights-alerts-portal.md) с использованием [Azure PowerShell](../articles/monitoring-and-diagnostics/insights-alerts-powershell.md) или [Azure CLI](../articles/monitoring-and-diagnostics/insights-alerts-command-line-interface.md).
+На основе метрик производительности можно создавать [оповещения](../articles/azure-monitor/platform/alerts-overview.md). Например, вы можете использовать оповещения для уведомления о том, что средняя загрузка ЦП превышает пороговое значение или показатель свободного места на диске ниже определенного значения. Оповещения можно настроить на [портале Azure](../articles/monitoring-and-diagnostics/insights-alerts-portal.md) с использованием [Azure PowerShell](../articles/monitoring-and-diagnostics/insights-alerts-powershell.md) или [Azure CLI](../articles/monitoring-and-diagnostics/insights-alerts-command-line-interface.md).
 
 ## <a name="azure-service-health"></a>Работоспособность служб Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "50226737"
 - Создание [оповещения о событии журнала действий Azure](../articles/monitoring-and-diagnostics/monitoring-overview-activity-logs.md).
 - [Потоковая передача журнала в концентратор событий](../articles/monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs.md) для приема сторонней службой или пользовательским аналитическим решением, например PowerBI.
 - Анализ журнала в PowerBI с помощью [пакета содержимого PowerBI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-azure-audit-logs/).
-- [Сохранение журнала в учетную запись хранения](../articles/monitoring-and-diagnostics/monitoring-archive-activity-log.md) для архивации или проверки вручную. В профиле журнала можно задать время хранения (в днях).
+- [Сохранение журнала в учетную запись хранения](../articles/azure-monitor/platform/archive-activity-log.md) для архивации или проверки вручную. В профиле журнала можно задать время хранения (в днях).
 
 Кроме того, вы можете ознакомиться с данными журнала действий, воспользовавшись [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.insights/), [Azure CLI](https://docs.microsoft.com/cli/azure/monitor) или [интерфейсами Monitor REST API](https://docs.microsoft.com/rest/api/monitor/).
 
@@ -58,7 +58,7 @@ ms.locfileid: "50226737"
 
 Ниже описано несколько доступных операций с журналами диагностики:
 
-- Сохранение журналов в [учетную запись хранения](../articles/monitoring-and-diagnostics/monitoring-archive-diagnostic-logs.md) для аудита или проверки вручную. В параметрах диагностики ресурсов можно задать время хранения (в днях).
+- Сохранение журналов в [учетную запись хранения](../articles/azure-monitor/platform/archive-diagnostic-logs.md) для аудита или проверки вручную. В параметрах диагностики ресурсов можно задать время хранения (в днях).
 - [Потоковая передача журналов в Центры событий](../articles/monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md) для обработки в сторонней службе или пользовательском аналитическом решении, например в PowerBI.
 - Анализ журналов с помощью [OMS Log Analytics](../articles/log-analytics/log-analytics-azure-storage.md).
 
