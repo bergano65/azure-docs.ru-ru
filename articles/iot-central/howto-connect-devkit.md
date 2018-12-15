@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 1bfa52d07ddc4eaf86bce17c0ad7c63493a8b5fd
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: dccbd2d87b5a5616c25caed070a337eff9fa753e
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51255733"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52956658"
 ---
 # <a name="connect-an-mxchip-iot-devkit-device-to-your-azure-iot-central-application"></a>Подключение устройства MXChip IoT DevKit к приложению Azure IoT Central
 
@@ -23,7 +23,7 @@ ms.locfileid: "51255733"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-1. Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
+1. Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
 1. Устройство DevKit. Чтобы приобрести устройство DevKit, посетите сайт [MXChip IoT DevKit](http://mxchip.com/az3166).
 
 
@@ -49,12 +49,12 @@ ms.locfileid: "51255733"
     * Введите идентификатор устройства **<span style="color:Red">(должен состоять из символов нижнего регистра)</span>** или используйте предложенный идентификатор устройства.
     * Введите имя устройства или используйте предложенное имя
     
-    ![Add Device (Добавление устройства)](media\concepts-connectivity\add-device.png)
+    ![Add Device (Добавление устройства)](media/concepts-connectivity/add-device.png)
 
 
 1. Получите сведения о подключении, например **идентификатор области, идентификатор устройства и первичный ключ**, для добавленного устройства, нажав кнопку **Подключить** на странице устройства.
  
-    ![Сведения о подключении](media\concepts-connectivity\device-connect.PNG)
+    ![Сведения о подключении](media/concepts-connectivity/device-connect.PNG)
 
 3. Обязательно сохраните эти сведения, так как вы будете временно отключены от Интернета при подготовке устройства DevKit. 
 

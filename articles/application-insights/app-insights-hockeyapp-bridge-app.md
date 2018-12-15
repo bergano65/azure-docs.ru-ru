@@ -9,16 +9,15 @@ ms.assetid: 97783cc6-67d6-465f-9926-cb9821f4176e
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.author: mbullwin
-ms.openlocfilehash: 1951f001de1b9d0667e5d4430454b32b5a3c890e
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 2f9b61a212251332cd94379b40f93eb52d49c729
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50957494"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52870081"
 ---
 # <a name="exploring-hockeyapp-data-in-application-insights"></a>Просмотр данных HockeyApp в Application Insights
 
@@ -61,7 +60,7 @@ ms.locfileid: "50957494"
 
 ![Analytics](./media/app-insights-hockeyapp-bridge-app/05.png)
 
-* [Знакомство с аналитикой в Application Insights](../log-analytics/query-language/get-started-analytics-portal.md)
+* [Знакомство с аналитикой в Application Insights](../azure-monitor/log-query/get-started-portal.md)
 
 ## <a name="continuous-export"></a>непрерывный экспорт.
 Непрерывный экспорт позволяет экспортировать данные в контейнер хранилища BLOB-объектов Azure. Это очень полезно, если вам нужно хранить данные дольше, чем позволяет срок хранения, доступный в службе Application Insights. Вы можете хранить данные в хранилище BLOB-объектов, обрабатывать их в базе данных SQL или использовать другое удобное решение для хранения данных.
@@ -69,5 +68,5 @@ ms.locfileid: "50957494"
 [Экспорт данных телеметрии из Application Insights](app-insights-export-telemetry.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Знакомство с аналитикой в Application Insights](../log-analytics/query-language/get-started-analytics-portal.md)
+* [Знакомство с аналитикой в Application Insights](../azure-monitor/log-query/get-started-portal.md)
 

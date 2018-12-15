@@ -9,19 +9,19 @@ ms.topic: conceptual
 ms.date: 01/12/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: b8cd389bee98058e5362a217268fb53d6aaf3424
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: c0040958cbf748d3eafb3ee60806b064e4e0b1ba
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634487"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53435792"
 ---
 # <a name="use-mapreduce-in-apache-hadoop-on-hdinsight-with-remote-desktop"></a>Использование MapReduce в Apache Hadoop в HDInsight с помощью удаленного рабочего стола
 [!INCLUDE [mapreduce-selector](../../../includes/hdinsight-selector-use-mapreduce.md)]
 
 Из этой статьи вы узнаете, как подключиться к Apache Hadoop в кластере HDInsight с помощью удаленного рабочего стола, а затем выполнить задания MapReduce с помощью команды Hadoop.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Удаленный рабочий стол доступен только в кластерах HDInsight на платформе Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 >
 > При использовании HDInsight 3.4 или более поздней версии см. сведения о подключении к кластеру HDInsight и выполнении заданий MapReduce: [Использование MapReduce с Hadoop в HDInsight с помощью SSH](apache-hadoop-use-mapreduce-ssh.md).
@@ -40,7 +40,7 @@ ms.locfileid: "51634487"
 
 1. На рабочем столе HDInsight запустите **командную строку Hadoop**. Откроется новое окно командной строки в каталоге **c:\apps\dist\hadoop-&lt;номер_версии>**.
 
-   > [!NOTE]
+   > [!NOTE]  
    > При обновлении Hadoop номер версии изменяется. Для поиска пути можно использовать переменную среды **HADOOP_HOME**. Например, `cd %HADOOP_HOME%` изменит каталоги на каталог Hadoop без необходимости знать номер версии.
    >
    >
@@ -94,5 +94,5 @@ ms.locfileid: "51634487"
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight:
 
-* [Использование Hive с Hadoop в HDInsight](hdinsight-use-hive.md)
-* [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md)
+* [Использование Apache Hive с Apache Hadoop в HDInsight](hdinsight-use-hive.md)
+* [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)

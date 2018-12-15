@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/05/2018
 ms.author: jejiang
-ms.openlocfilehash: 537c94976dbb4f7753b7fafb3b6c94e97cc2cc17
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 6cc4a5d5bfc2056f2517bcbcecb19b9f6b2f437a
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46126332"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52966268"
 ---
 # <a name="manage-azure-data-lake-storage-gen1-resources-by-using-storage-explorer"></a>Управление ресурсами Azure Data Lake Storage 1-го поколения с помощью обозревателя службы хранилища
 
@@ -31,7 +31,7 @@ ms.locfileid: "46126332"
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
 
 *   Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial).
-*   Учетная запись Data Lake Storage 1-го поколения. Инструкции по созданию учетной записи см. в статье [Начало работы с Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-portal).
+*   Учетная запись Data Lake Storage 1-го поколения. За инструкциями по созданию учетной записи обращайтесь к статье [Начало работы с Azure Data Lake Storage 1-го поколения](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-get-started-portal).
 
 ## <a name="install-storage-explorer"></a>Установка Обозревателя службы хранилища
 
@@ -136,7 +136,7 @@ ms.locfileid: "46126332"
 
    ![Диалоговое окно выполнения отправки](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-upload-folder-drag.png) 
 
-> [!NOTE] 
+> [!NOTE]
 > Вы можете напрямую перетащить папки и файлы на локальный компьютер, чтобы начать отправку. 
        
 ### <a name="download-folders-or-files-to-your-local-computer"></a>Загрузка папок или файлов на локальный компьютер
@@ -164,7 +164,7 @@ ms.locfileid: "46126332"
 
 ![Выбранные элементы для копирования папки](./media/data-lake-store-in-storage-explorer/storageexplorer-adls-copy-paste.png)
 
-> [!NOTE] 
+> [!NOTE]
 > Операции копирования и вставки между разными типами хранилища не поддерживаются. Вы можете скопировать папки или файлы Data Lake Storage 1-го поколения и вставить их в другую учетную запись Data Lake Storage 1-го поколения. Но *вы не можете* копировать файлы или папки Data Lake Storage 1-го поколения и вставлять их в хранилище BLOB-объектов Azure или наоборот.
 > 
 > Для выполнения операции копирования и вставки нужно загрузить папки или файлы на локальный компьютер, а потом передать их оттуда в расположения назначения. В серверной части эти операции *не выполняются*. Операция копирования и вставки больших файлов может занять много времени. Метод оптимизации копирования и перемещения файлов находится в разработке.

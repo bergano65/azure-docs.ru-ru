@@ -9,19 +9,18 @@ ms.assetid: 4ac803a8-f424-4c0c-b18f-4b9c189a64a5
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/17/2015
 ms.author: mbullwin
-ms.openlocfilehash: e2ec165d0183510487744bc98e31688eb5de0f8c
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: e8fafbe1c5fafd338009b1bdd8c5d838c3fac726
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50959262"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53323292"
 ---
 # <a name="using-powershell-to-set-up-application-insights-for-an-azure-web-app"></a>Настройка Application Insights для веб-приложения Azure с помощью PowerShell
-[Microsoft Azure](https://azure.com) можно [настроить для отправки данных системы диагностики Azure](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md) в [Azure Application Insights](app-insights-overview.md). Данные диагностики связаны с облачными службами Azure и виртуальными машинами Azure. Они дополняют данные телеметрии, отправляемые из приложения с помощью пакета SDK Application Insights. В рамках автоматизации создания новых ресурсов в Azure вы можете настроить диагностику с помощью PowerShell.
+[Microsoft Azure](https://azure.com) можно [настроить для отправки данных системы диагностики Azure](../azure-monitor/platform/diagnostics-extension-to-application-insights.md) в [Azure Application Insights](app-insights-overview.md). Данные диагностики связаны с облачными службами Azure и виртуальными машинами Azure. Они дополняют данные телеметрии, отправляемые из приложения с помощью пакета SDK Application Insights. В рамках автоматизации создания новых ресурсов в Azure вы можете настроить диагностику с помощью PowerShell.
 
 ## <a name="azure-template"></a>Шаблон Azure
 Если веб-приложение работает в Azure и вы создаете ресурсы с помощью шаблона Azure Resource Manager, можно настроить Application Insights, добавив следующий код в узел ресурсов:
@@ -136,6 +135,6 @@ ms.locfileid: "50959262"
 
 ## <a name="see-also"></a>См. также
 * [Мониторинг приложений облачных служб Azure с помощью Application Insights](app-insights-cloudservices.md)
-* [Отправка данных системы диагностики Azure в Application Insights](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md)
+* [Отправка данных системы диагностики Azure в Application Insights](../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
 * [Use PowerShell to set alerts in Application Insights](app-insights-powershell-alerts.md)
 

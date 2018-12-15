@@ -8,37 +8,36 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 02/28/2018
+ms.date: 12/11/2018
 ms.author: kadimitr
-ms.openlocfilehash: 159abb533bcc6211b4eca8b2c60f96bf9800db1a
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 3dcc9e4880c65e868f1cd62d3c6e1567e82b6870
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637499"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53337875"
 ---
 # <a name="durable-functions-unit-testing"></a>Модульное тестирование устойчивых функций
 
-Модульное тестирование является важной частью современных способов разработки программного обеспечения. Модульные тесты позволяют проверить поведение бизнес-логики и предотвратить внедрение незамеченных критических изменений в будущем. Степень сложности устойчивых функций может быстро увеличиться, поэтому использование модульных тестов поможет предотвращать внесение критических изменений. В следующих разделах описывается модульное тестирование трех типов функций — клиента оркестрации, оркестратора и действий. 
+Модульное тестирование является важной частью современных способов разработки программного обеспечения. Модульные тесты позволяют проверить поведение бизнес-логики и предотвратить внедрение незамеченных критических изменений в будущем. Степень сложности устойчивых функций может быстро увеличиться, поэтому использование модульных тестов поможет предотвращать внесение критических изменений. В следующих разделах описывается модульное тестирование трех типов функций — клиента оркестрации, оркестратора и действий.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения примеров в этой статье нужно ознакомиться со следующими понятиями и платформами. 
+Для выполнения примеров в этой статье нужно ознакомиться со следующими понятиями и платформами.
 
 * Модульное тестирование
 
-* Устойчивые функции 
+* Устойчивые функции
 
 * [xUnit](https://xunit.github.io/) — платформа тестирования.
 
 * [moq](https://github.com/moq/moq4) — платформа имитированной реализации.
 
-
-## <a name="base-classes-for-mocking"></a>Базовые классы для имитации 
+## <a name="base-classes-for-mocking"></a>Базовые классы для имитации
 
 Имитация поддерживается с помощью трех абстрактных классов Устойчивых функций:
 
-* [DurableOrchestrationClientBase](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClientBase.html) 
+* [DurableOrchestrationClientBase](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClientBase.html)
 
 * [DurableOrchestrationContextBase](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContextBase.html)
 
@@ -47,7 +46,7 @@ ms.locfileid: "52637499"
 Это базовые классы для [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html), [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) и [DurableActivityContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html), определяющих методы клиента оркестрации, оркестратора и действия. В процессе имитирования устанавливается ожидаемое поведение методов базового класса. Таким образом модульный тест может проверить бизнес-логику. При модульном тестировании бизнес-логики в клиенте оркестрации и оркестраторе выполняется двухэтапный рабочий процесс.
 
 1. При определении сигнатур методов клиента оркестрации и оркестратора используйте базовые классы вместо конкретных реализаций.
-2. Настройте модульные тесты, выполняющие имитирование поведения базовых классов и проверку бизнес-логики. 
+2. Настройте модульные тесты, выполняющие имитирование поведения базовых классов и проверку бизнес-логики.
 
 Подробные сведения по функциям тестирования, использующим привязку клиента оркестрации и триггера оркестратора, изложены в следующих разделах.
 
@@ -57,9 +56,9 @@ ms.locfileid: "52637499"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpStart.cs)]
 
-Модульному тесту необходимо проверить заголовок `Retry-After` в полезных данных ответа. Поэтому модульный тест выполняет имитирование некоторых методов [DurableOrchestrationClientBase](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClientBase.html) для того, чтобы гарантировать предсказуемое поведение. 
+Модульному тесту необходимо проверить заголовок `Retry-After` в полезных данных ответа. Поэтому модульный тест выполняет имитирование некоторых методов [DurableOrchestrationClientBase](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClientBase.html) для того, чтобы гарантировать предсказуемое поведение.
 
-Во-первых, требуется имитирование базового класса [DurableOrchestrationClientBase](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClientBase.html). Имитацией может выступить новый класс, реализующий [DurableOrchestrationClientBase](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClientBase.html). Однако, использование платформы имитированной реализации наподобие [moq](https://github.com/moq/moq4) упрощает данный процесс.    
+Во-первых, требуется имитирование базового класса [DurableOrchestrationClientBase](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClientBase.html). Имитацией может выступить новый класс, реализующий [DurableOrchestrationClientBase](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClientBase.html). Однако, использование платформы имитированной реализации наподобие [moq](https://github.com/moq/moq4) упрощает данный процесс.
 
 ```csharp
     // Mock DurableOrchestrationClientBase
@@ -85,10 +84,10 @@ ms.locfileid: "52637499"
         {
             StatusCode = HttpStatusCode.OK,
             Content = new StringContent(string.Empty),
-            Headers = 
-            { 
+            Headers =
+            {
                 RetryAfter = new RetryConditionHeaderValue(TimeSpan.FromSeconds(10))
-            } 
+            }
         });
 ```
 
@@ -110,10 +109,10 @@ ms.locfileid: "52637499"
             Content = new StringContent("{}", Encoding.UTF8, "application/json"),
             RequestUri = new Uri("http://localhost:7071/orchestrators/E1_HelloSequence"),
         },
-        durableOrchestrationClientBaseMock.Object, 
+        durableOrchestrationClientBaseMock.Object,
         functionName,
         traceWriterMock.Object);
- ``` 
+ ```
 
  На последнем шаге происходит сравнение вывода с ожидаемым значением.
 
@@ -125,7 +124,7 @@ ms.locfileid: "52637499"
     Assert.Equal(TimeSpan.FromSeconds(10), result.Headers.RetryAfter.Delta);
 ```
 
-После объединения всех шагов код модульного теста будет выглядеть следующим образом. 
+После объединения всех шагов код модульного теста будет выглядеть следующим образом.
 
 [!code-csharp[Main](~/samples-durable-functions/samples/VSSample.Tests/HttpStartTests.cs)]
 
@@ -172,7 +171,7 @@ ms.locfileid: "52637499"
 
 ## <a name="unit-testing-activity-functions"></a>Функции действий модульного теста
 
-Функции действий можно подвергать модульному тестированию таким же образом, как неустойчивые функции. 
+Функции действий можно подвергать модульному тестированию таким же образом, как неустойчивые функции.
 
 В этом разделе модульный тест проверяет поведение функции действия `E1_SayHello`.
 

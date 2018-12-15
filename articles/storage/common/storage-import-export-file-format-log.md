@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
 ms.component: common
-ms.openlocfilehash: b842a80762989c34ae278a397cc49c088ff77fb2
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 2ae44edf0d9356000f64ab72fd609f1921cf095c
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39525524"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53316596"
 ---
 # <a name="azure-importexport-service-log-file-format"></a>Формат файла журнала службы импорта и экспорта Azure
 Когда служба импорта и экспорта Microsoft Azure выполняет действия на диске в ходе задания импорта или экспорта, в блочные BLOB-объекты в учетной записи хранения, связанной с этим заданием, записываются журналы.  
@@ -74,7 +74,7 @@ page-range-list ::=
 <PageRangeList>  
       [<PageRange Offset="page-range-offset" Length="page-range-length"   
        [Hash="md5-hash"] Status="page-range-status"/>]  
-      [<PageRange Offset="page-range-offset" Length="page-range-length"   
+      [<PageRange Offset="page-range-offset" Length="page-range-length"   
        [Hash="md5-hash"] Status="page-range-status"/>]  
 </PageRangeList>  
   
@@ -82,7 +82,7 @@ block-list ::=
 <BlockList>  
       [<Block Offset="block-offset" Length="block-length" [Id="block-id"]  
        [Hash="md5-hash"] Status="block-status"/>]  
-      [<Block Offset="block-offset" Length="block-length" [Id="block-id"]   
+      [<Block Offset="block-offset" Length="block-length" [Id="block-id"]   
        [Hash="md5-hash"] Status="block-status"/>]  
 </BlockList>  
   
@@ -142,7 +142,7 @@ properties-status ::=
 |`Properties/Path/@Hash`|Атрибут, строка|MD5-хэш файла свойств в кодировке Base16.|  
 |`Blob/Status`|Строка|Состояние обработки большого двоичного объекта.|  
   
-# <a name="drive-status-codes"></a>Коды состояний диска  
+## <a name="drive-status-codes"></a>Коды состояний диска  
 В таблице ниже перечислены коды состояний обработки диска.  
   
 |Код состояния|ОПИСАНИЕ|  

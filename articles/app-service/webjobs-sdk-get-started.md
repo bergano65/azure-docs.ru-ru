@@ -1,5 +1,5 @@
 ---
-title: Начало работы с пакетом SDK для Веб-заданий Azure
+title: Начало работы с пакетом SDK WebJobs в Azure
 description: Знакомство с пакетом SDK WebJobs для фоновой обработки на основе событий. Получение доступа к данным в службах Azure и службах сторонних разработчиков.
 services: app-service\web, storage
 documentationcenter: .net
@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 04/27/2018
 ms.author: glenga
-ms.openlocfilehash: b0f4ef5079ac689827cb49884fa1c6a51529ea83
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 034f182cc282f50eb3a4a1de05331f42957f49fe
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140355"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53339813"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
@@ -63,9 +63,9 @@ public static void Run(
 
 1. В Visual Studio выберите **Файл > Создать проект**.
 
-1. Выберите **Классический рабочий стол Windows > Консольное приложение (.NET Framework)**.
+2. Выберите **Классический рабочий стол Windows > Консольное приложение (.NET Framework)**.
 
-1. Назовите проект *WebJobsSDKSample*, а затем нажмите кнопку **OK**.
+3. Назовите проект *WebJobsSDKSample*, а затем нажмите кнопку **OK**.
 
    ![Диалоговое окно "Новый проект"](./media/webjobs-sdk-get-started/new-project.png)
 
@@ -396,7 +396,7 @@ public static void Run(
 
 В этом разделе выполняется повторный локальный запуск для проверки того, что данные журналов теперь передаются в Application Insights и в консоль.
 
-1. В Visual Studio в **обозревателе сервера** создайте сообщение в очереди точно так же, как это было сделано [ранее](#trigger-the-function), но в качестве текста сообщения введите *Hello App Insights!* на этот раз.
+1. В Visual Studio в **обозревателе сервера** создайте сообщение в очереди точно так же, как это было сделано [ранее](#trigger-the-function-in-azure), но в качестве текста сообщения введите *Hello App Insights!* на этот раз.
 
 1. Запустите проект.
 

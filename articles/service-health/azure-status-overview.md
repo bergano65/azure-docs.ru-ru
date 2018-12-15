@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: Supportability
 ms.date: 11/16/2018
 ms.author: stbaron
-ms.openlocfilehash: be3c8d10ef034a4bd03f178bc1334b8a9eeb2f58
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: 7121087d9d9699a73b88e07599f70e0c7c40c1eb
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52282912"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53308286"
 ---
 # <a name="azure-status"></a>Состояние Azure
 [Состояние Azure](https://azure.microsoft.com/status/) — это глобальное представление работоспособности служб Azure. Просматривая состояние Azure, можно получать актуальную информацию о доступности служб. Просматривать состояние Azure, а также всех служб, сообщающих о своей работоспособности, могут все пользователи. 
@@ -37,8 +37,8 @@ ms.locfileid: "52282912"
 Здесь можно просмотреть события за прошлый период (до 90 дней), включая сведения о предварительной первопричине, устранении рисков и дальнейших действиях в среде Azure.
 
 ## <a name="rss-feed"></a>RSS-канал
-В рамках сведений о состоянии Azure также предоставляется [RSS-канал](https://azure.microsoft.com/en-us/status/feed/) изменений работоспособности служб Azure, на который можно подписаться.
+В рамках сведений о состоянии Azure также предоставляется [RSS-канал](https://azure.microsoft.com/status/feed/) изменений работоспособности служб Azure, на который можно подписаться.
 
-# <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие действия
 * Узнайте, как можно получить более персонализированное представление о работоспособности Azure с помощью средства [Работоспособность служб](./service-health-overview.md).
 * Узнайте, как можно получить подробное представление о работоспособности определенных ресурсов Azure с помощью средства [Работоспособность ресурсов](./resource-health-overview.md).

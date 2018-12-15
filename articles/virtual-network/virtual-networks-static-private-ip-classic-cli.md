@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: genli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f340b9843ed5763a20d2035e3add86123a1298e8
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: abc551f796cb2d8921b6b1f67fb6a6714655ffde
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46971150"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53134681"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-classic-using-the-azure-classic-cli"></a>Настройка частных IP-адресов для классической виртуальной машины с помощью классического Azure CLI
 
@@ -75,7 +75,7 @@ ms.locfileid: "46971150"
    * **TestService**. Имя облачной службы, в которой будет создана виртуальная машина.
    * **bd507d3a70934695bc2128e3e5a255ba__RightImage-Windows-2012R2-x64-v14.2.** Образ, используемый для создания виртуальной машины.
    * **adminuser**. Локальный администратор виртуальной машины Windows.
-   * **AdminP@ssw0rd**. Пароль локального администратора виртуальной машины Windows.
+   * <strong>AdminP@ssw0rd</strong>. Пароль локального администратора виртуальной машины Windows.
 
 ## <a name="how-to-retrieve-static-private-ip-address-information-for-a-vm"></a>Как получить информацию о статическом частном IP-адресе виртуальной машины
 Чтобы просмотреть информацию о статическом частном IP-адресе виртуальной машины, созданной с помощью приведенного выше сценария, выполните следующую команду Azure CLI и обратите внимание на значение *Network StaticIP*:

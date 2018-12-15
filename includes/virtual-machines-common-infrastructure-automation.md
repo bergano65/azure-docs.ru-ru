@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 28c943b2588270af823c0712d4e510a4f018da3e
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: efca5c4155372456100126671e7d5cd1ccf0cbbc
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50981693"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53027927"
 ---
 # <a name="use-infrastructure-automation-tools-with-virtual-machines-in-azure"></a>Использование средств автоматизации инфраструктуры на виртуальных машинах в Azure
 Средства автоматизации, как правило, позволяют быстро и согласованно создавать виртуальные машины Azure в нужном масштабе, а также управлять ими. Существует множество средств и решений, которые помогают полностью автоматизировать жизненный цикл развертывания и администрирования инфраструктуры Azure. В этой статье приведены сведения о некоторых средствах автоматизации инфраструктуры Azure. Обычно их используют с такими целями:
@@ -23,7 +23,7 @@ ms.locfileid: "50981693"
     - [служба автоматизации Azure](#azure-automation), которая может выполнять действия в инфраструктуре Azure и локальной среде.
 
 - Автоматизация развертывания и доставки приложений:
-    - [Azure DevOps Services](#visual-studio-team-services) и [Jenkins](#jenkins).
+    - [Azure DevOps Services](#azure-devops-services) и [Jenkins](#jenkins).
 
 ## <a name="ansible"></a>Ansible
 [Ansible](https://www.ansible.com/) — это модуль автоматизации управления конфигурацией, создания виртуальных машин и развертывания приложений. Это средство выполняет проверку подлинности целевых машин и управление ими на основе модели без агентов (обычно с помощью ключей SSH). Задачи конфигурации и количество модулей Ansible для их выполнения определены в сборниках схем. Дополнительные сведения см. в статье [How Ansible works](https://www.ansible.com/how-ansible-works) (Принципы работы Ansible).

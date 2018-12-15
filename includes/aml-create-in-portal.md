@@ -9,14 +9,14 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 09/24/2018
-ms.openlocfilehash: 0b95441fd2805308c601509f1afc477f72bde321
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: edcb2ecb74255ddbb8d601cb69565fb401b756d2
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49476392"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52886366"
 ---
-Войдите на [портал Azure](https://portal.azure.com/) с помощью учетных данных для используемой подписки Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+Войдите на [портал Azure](https://portal.azure.com/) с помощью учетных данных для используемой подписки Azure. 
 
 Панель мониторинга для рабочей области портала поддерживается только в браузерах Microsoft Edge, Chrome и Firefox.
 

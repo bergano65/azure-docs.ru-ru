@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/31/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: bc03a5f43ef65ec8feaccb82fc3d31debbc6e7b9
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: f7b73fa4d1f596e0221c2cec3c6c7417ceb767a4
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39523382"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275698"
 ---
 # <a name="monitor-a-storage-account-in-the-azure-portal"></a>Мониторинг учетной записи хранения на портале Azure
 
@@ -98,7 +98,7 @@ ms.locfileid: "39523382"
 3. Укажите **имя** и **описание** для нового правила генерации оповещений.
 4. Выберите **метрику**, для которой нужно добавить оповещение, и укажите **условие** и **пороговое значение** оповещения. Тип единицы порогового значения меняется в зависимости от выбранной метрики. Например, "количество" — тип единицы измерения для *ContainerCount*, тогда как единицей измерения для метрики *PercentNetworkError* является процент.
 5. Выберите **период**. Если метрика достигает порогового значения или превышает его в течение периода, активируется оповещение.
-6. (Необязательно.) Настройте уведомления с использованием **электронного адреса** и **webhook**. Дополнительные сведения об объектах webhook см. в разделе [Настройка объектов webhook для оповещений на основе метрик Azure](../../monitoring-and-diagnostics/insights-webhooks-alerts.md). Если не настроить уведомления с помощью электронной почты или webhook, то они будут отображаться только на портале Azure.
+6. (Необязательно.) Настройте уведомления с использованием **электронного адреса** и **webhook**. Дополнительные сведения об объектах webhook см. в разделе [Настройка объектов webhook для оповещений на основе метрик Azure](../../azure-monitor/platform/alerts-webhooks.md). Если не настроить уведомления с помощью электронной почты или webhook, то они будут отображаться только на портале Azure.
 
 ![Колонка "Добавление правила оповещения" на портале Azure](./media/storage-monitor-storage-account/add-alert-rule.png)
 

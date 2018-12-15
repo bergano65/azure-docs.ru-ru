@@ -3,26 +3,25 @@ title: Рекомендации Azure Advisor по затратам | Докум
 description: Использование Azure Advisor для оптимизации затрат на развернутые службы Azure.
 services: advisor
 documentationcenter: NA
-author: manbeenkohli
+author: kasparks
 manager: ''
 ms.assetid: ''
 ms.service: advisor
-ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/16/2016
-ms.author: makohli
-ms.openlocfilehash: 71c380a1caae730b6b01615ce3047c2e22bd6dfb
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.author: kasparks
+ms.openlocfilehash: a4de50e3dc17d9c9543bf1ec8cabb04c5d60070b
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42142812"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52832893"
 ---
 # <a name="advisor-cost-recommendations"></a>Рекомендации Azure Advisor по затратам
 
-Advisor помогает оптимизировать и уменьшить общие расходы на Azure, выявляя простаивающие и недостаточно нагруженные ресурсы. Рекомендации по затратам можно получить на вкладке **Стоимость** панели мониторинга Помощника.
+Advisor помогает оптимизировать и уменьшить общие расходы на Azure, выявляя простаивающие и недостаточно нагруженные ресурсы. Рекомендации по затратам можно получить на вкладке **Стоимость** панели мониторинга Помощника.
 
 ## <a name="optimize-virtual-machine-spend-by-resizing-or-shutting-down-underutilized-instances"></a>Оптимизация затрат на виртуальные машины путем изменения размеров или завершения работы недостаточно нагруженных экземпляров 
 Хотя в некоторых сценариях приложение может намеренно обеспечивать низкую загрузку, часто можно сократить затраты, управляя размером и числом виртуальных машин. Помощник отслеживает использование виртуальных машин на протяжении 14 дней, а затем определяет недостаточно нагруженные виртуальные машины. Виртуальные машины, у которых использование ресурсов ЦП составляет не больше 5 % и использование ресурсов сети составляет не больше 7 МБ на протяжении 4 или более дней, будут считаться недостаточно нагруженными.

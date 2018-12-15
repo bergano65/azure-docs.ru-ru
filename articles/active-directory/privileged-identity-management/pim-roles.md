@@ -13,12 +13,12 @@ ms.component: pim
 ms.date: 07/23/2018
 ms.author: rolyon
 ms.custom: pim ; H1Hack27Feb2017;oldportal;it-pro;
-ms.openlocfilehash: 63f4c4c48dd0fed3130dc99929a0e84c3cba2026
-ms.sourcegitcommit: 06724c499837ba342c81f4d349ec0ce4f2dfd6d6
+ms.openlocfilehash: 531d19925d24930b6a2bd642a8ff0ec55bd6d16f
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46466053"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52841580"
 ---
 # <a name="azure-ad-directory-roles-you-can-manage-in-pim"></a>Роли каталога Azure AD, которыми можно управлять в PIM
 <!-- **PLACEHOLDER: Need description of how this works. Azure PIM uses roles from MSODS objects.**-->
@@ -75,7 +75,7 @@ ms.locfileid: "46466053"
 
 ## <a name="assign-a-license-to-a-user-in-azure-ad"></a>Назначение лицензии пользователю в Azure AD
 
-1. Войдите на [портал Azure](http://portal.azure.com) как глобальный администратор или владелец.
+1. Войдите на [портал Azure](https://portal.azure.com) как глобальный администратор или владелец.
 
 1. Выберите каталог Azure AD, с которым необходимо работать и с которым сопоставлены соответствующие лицензии.
 

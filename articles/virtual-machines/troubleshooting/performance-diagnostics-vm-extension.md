@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: a76b22feee84820f3acc963af70ec24669a216d7
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 7037c0b4c1021ac7b91134fa429a774f600a774f
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51251974"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53194170"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>Расширение виртуальной машины для диагностики производительности Azure для Windows
 
 Расширение виртуальной машины для диагностики производительности Azure позволяет собирать данные диагностики производительности с виртуальных машин Windows. Оно также выполняет анализ и предоставляет отчет с выводами и рекомендации для определения и решения проблем с производительностью виртуальных машин. Это расширение устанавливает инструмент устранения неполадок [PerfInsights](https://aka.ms/perfinsights).
 
 > [!NOTE]
-    > Если вы хотите выполнить диагностику виртуальной машины на портале Azure, развернутой с помощью неклассической модели Azure, советуем использовать новый интерфейс. Дополнительные сведения см. в статье [Диагностика производительности для виртуальных машин Azure](performance-diagnostics.md). 
+> Если вы хотите выполнить диагностику виртуальной машины на портале Azure, развернутой с помощью неклассической модели Azure, советуем использовать новый интерфейс. Дополнительные сведения см. в статье [Диагностика производительности для виртуальных машин Azure](performance-diagnostics.md). 
 
 ## <a name="prerequisites"></a>Предварительные требования
 

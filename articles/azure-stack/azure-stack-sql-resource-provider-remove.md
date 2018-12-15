@@ -14,19 +14,19 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: b79d64cc063105cb8ecce537a09a7f39a78eef4c
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: 8b6257519c3b1db2180335523047e8dc55558d57
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52275033"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52954599"
 ---
 # <a name="remove-the-sql-resource-provider"></a>Удаление поставщика ресурсов SQL
 
 Прежде чем удалить поставщик ресурсов SQL, необходимо удалить все его зависимости. Кроме того, потребуется скопировать пакет развертывания, который был использован для установки поставщика ресурсов.
 
 > [!NOTE]
-> Скачать установщики поставщика ресурсов можно с помощью ссылок, приведенных в разделе [предварительных требований для развертывания поставщика ресурсов](.\azure-stack-sql-resource-provider-deploy.md#prerequisites).
+> Скачать установщики поставщика ресурсов можно с помощью ссылок, приведенных в разделе [предварительных требований для развертывания поставщика ресурсов](./azure-stack-sql-resource-provider-deploy.md#prerequisites).
 
 При удалении поставщика ресурсов SQL базы данных клиента не удаляются с серверов размещения.
 

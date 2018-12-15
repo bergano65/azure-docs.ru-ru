@@ -1,21 +1,22 @@
 ---
-title: Планирование приложений для Интеллектуальной службы распознавания речи (LUIS)
-titleSuffix: Azure Cognitive Services
+title: Планирование приложения
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Определяйте соответствующие приложению намерения и сущности, а затем создавайте планы приложений в Интеллектуальной службе распознавания речи (LUIS).
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 09/26/2018
 ms.author: diberry
-ms.openlocfilehash: e8e6c32eca932803acfe0e7854de885e7ab129fc
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: e14b9f2930ed9c170f31bd654829efe3b5a99446
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48267670"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53091313"
 ---
 # <a name="plan-your-luis-app"></a>Планирование приложения LUIS
 

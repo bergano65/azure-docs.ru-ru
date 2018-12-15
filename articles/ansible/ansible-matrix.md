@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.date: 09/22/2018
 ms.topic: article
-ms.openlocfilehash: a71f28413028efe3547df7c464ec852fe2161f63
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: accb7b84793b9fc98bc20f1637ec30f97a7f4a87
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49649947"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52962086"
 ---
 # <a name="ansible-module-and-version-matrix"></a>Таблица версий и модулей Ansible
 
@@ -133,4 +133,4 @@ Ansible поставляется с большим количеством мод
 Роль playbook azure_preview_module выпускается каждые три недели.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Дополнительные сведения о ролях playbook см. в документе [о создании повторно используемых наборов инструкций playbook](http://docs.ansible.com/ansible/latest/playbooks_reuse.html). 
+Дополнительные сведения о ролях playbook см. в документе [о создании повторно используемых наборов инструкций playbook](https://docs.ansible.com/ansible/latest/playbooks_reuse.html). 

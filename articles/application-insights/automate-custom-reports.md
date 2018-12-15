@@ -8,17 +8,16 @@ manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/25/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 1f94e297e784d000c829a50c077e7fa6d303333f
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 51482aa460826d4b364ba6b034129be9b7211ff3
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50962220"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52872448"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
 
@@ -160,7 +159,7 @@ availabilityResults
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Узнайте больше о создании [запросов Analytics](../log-analytics/query-language/get-started-queries.md).
+* Узнайте больше о создании [запросов Analytics](../azure-monitor/log-query/get-started-queries.md).
 * Дополнительные сведения о [программных запросах к данным Application Insights](https://dev.applicationinsights.io/).
 * Дополнительные сведения о [Logic Apps](https://docs.microsoft.com/azure/logic-apps/logic-apps-what-are-logic-apps).
 * Дополнительные сведения о [Microsoft Flow](https://ms.flow.microsoft.com).

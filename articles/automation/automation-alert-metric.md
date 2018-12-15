@@ -8,12 +8,12 @@ ms.author: gwallace
 ms.date: 11/01/2018
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: 65de18445f114f468dd42c5a7e7128dd2f63d44c
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: f742f6923b7d9f40a8752d77c7702e9b2ea2a4cf
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50959839"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53185874"
 ---
 # <a name="monitoring-runbooks-with-metric-alerts"></a>Мониторинг модулей runbook с помощью оповещений метрик
 
@@ -51,7 +51,7 @@ ms.locfileid: "50959839"
 
 ### <a name="define-the-action-to-take"></a>Определение предпринимаемого действия
 
-1. В разделе **3. Определение группы действий** щелкните **+ New action group** (+ Новая группа действий). Группа действий содержит действия, которые можно использовать для нескольких оповещений. Они могут включать в себя (но не ограничиваются) уведомления электронной почты, модули Runbook, веб-перехватчики и многое другое. Дополнительные сведения о группах действий см. в статье [Create and manage action groups in the Azure portal](../monitoring-and-diagnostics/monitoring-action-groups.md) (Создание групп действий и управление ими на портале Azure).
+1. В разделе **3. Определение группы действий** щелкните **+ New action group** (+ Новая группа действий). Группа действий содержит действия, которые можно использовать для нескольких оповещений. Они могут включать в себя (но не ограничиваются) уведомления электронной почты, модули Runbook, веб-перехватчики и многое другое. Дополнительные сведения о группах действий см. в статье [Create and manage action groups in the Azure portal](../azure-monitor/platform/action-groups.md) (Создание групп действий и управление ими на портале Azure).
 
 1. В поле **Имя группы действий** введите понятное и краткое имя. Короткое имя используется вместо полного имени группы действий при отправке уведомлений с помощью этой группы.
 

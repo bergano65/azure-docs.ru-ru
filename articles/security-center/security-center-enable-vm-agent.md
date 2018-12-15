@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/28/2018
 ms.author: rkarlin
-ms.openlocfilehash: 7a059cd5c22306c42adc4c7c8fcc4e52c3ebcd00
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: c4fff902614b3979fcc28833c5352afe2bdd84b0
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52313577"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53341503"
 ---
 # <a name="enable-vm-agent-in-azure-security-center"></a>Включение агента виртуальной машины в центре безопасности Azure
 Чтобы [включить сбор данных](security-center-enable-data-collection.md), нужно установить агент виртуальной машины на виртуальные машины.  Центр безопасности Azure позволяет узнать, для каких виртуальных машин требуется агент виртуальной машины, и рекомендует включить его на них.
@@ -40,7 +40,7 @@ ms.locfileid: "52313577"
 ## <a name="see-also"></a>См. также
 Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
-* [Настройка политик безопасности в Центре безопасности Azure](security-center-azure-policy.md)— узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
+* [Настройка политик безопасности в Центре безопасности Azure](tutorial-security-policy.md)— узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
 * [Управление рекомендациями по безопасности в Центре безопасности Azure](security-center-recommendations.md)— узнайте, как рекомендации могут помочь вам защитить ресурсы Azure.
 * [Наблюдение за работоспособностью системы безопасности в центре безопасности Azure](security-center-monitoring.md)— узнайте, как наблюдать за работоспособностью ресурсов Azure.
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md)— узнайте, как управлять оповещениями системы безопасности и реагировать на них.

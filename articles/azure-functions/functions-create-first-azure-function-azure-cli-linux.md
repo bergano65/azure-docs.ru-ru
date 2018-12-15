@@ -11,16 +11,16 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: javascript
 manager: jeconnoc
-ms.openlocfilehash: 6597e0058176eaa819170a494e4908ab44456360
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: b6df653f89f05a9b253ecea102ed8310ff2a53b7
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52850539"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53438295"
 ---
 # <a name="create-your-first-function-hosted-on-linux-using-core-tools-and-the-azure-cli-preview"></a>Создание первой функции, выполняемой в Linux, с помощью основных инструментов и Azure CLI (предварительная версия)
 
-Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.microsoft.com/overview/serverless-computing/) среде Linux без необходимости создавать виртуальную машину или публиковать веб-приложение. Размещение в Linux сейчас доступно в виде предварительной версии. Для этого требуется наличие [среды выполнения Функций версии 2.0](functions-versions.md). Дополнительные сведения о рекомендациях по предварительной версии для выполнения приложения-функции на платформе Linux см. [в этой статье](https://aka.ms/funclinux).
+Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.com/serverless) среде Linux без необходимости создавать виртуальную машину или публиковать веб-приложение. Размещение в Linux сейчас доступно в виде предварительной версии. Для этого требуется наличие [среды выполнения Функций версии 2.0](functions-versions.md). Дополнительные сведения о рекомендациях по предварительной версии для выполнения приложения-функции на платформе Linux см. [в этой статье](https://aka.ms/funclinux).
 
 В этом кратком руководстве вы узнаете, как использовать Azure CLI для создания первого приложения-функции на платформе Linux. Код функции создается локально, а затем развертывается в Azure с помощью [Azure Functions Core Tools](functions-run-local.md).
 

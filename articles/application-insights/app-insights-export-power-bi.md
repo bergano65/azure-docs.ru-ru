@@ -9,19 +9,18 @@ ms.assetid: 7f13ea66-09dc-450f-b8f9-f40fdad239f2
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/10/2018
 ms.author: mbullwin
-ms.openlocfilehash: 6e19735f604fdcd6d6642814e776fd9987d11fde
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 83dfd77c311e1b3324540d352432ec7a6b706d78
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52499509"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993362"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
-[Power BI](http://www.powerbi.com/) — это набор бизнес-инструментов для анализа данных и обмена сведениями. На каждом устройстве доступны панели мониторинга с широкими возможностями. Вы можете объединять данные из различных источников, в том числе аналитические запросы из [ Application Insights](app-insights-overview.md).
+[Power BI](https://www.powerbi.com/) — это набор бизнес-инструментов для анализа данных и обмена сведениями. На каждом устройстве доступны панели мониторинга с широкими возможностями. Вы можете объединять данные из различных источников, в том числе аналитические запросы из [ Application Insights](app-insights-overview.md).
 
 Существуют три способа экспортировать данные Application Insights в Power BI.
 
@@ -41,7 +40,7 @@ ms.locfileid: "52499509"
 Установите [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/).
 
 ### <a name="export-an-analytics-query"></a>Экспорт запроса аналитики
-1. [Откройте средство аналитики и напишите запрос](../log-analytics/query-language/get-started-analytics-portal.md).
+1. [Откройте средство аналитики и напишите запрос](../azure-monitor/log-query/get-started-portal.md).
 2. Протестируйте запрос и откорректируйте его до необходимой степени. Прежде чем экспортировать запрос, убедитесь, что он выполняется в Analytics надлежащим образом.
 3. В меню **Export** (Экспорт) выберите пункт **Power BI (M)**. Сохраните текстовый файл.
    
@@ -52,18 +51,18 @@ ms.locfileid: "52499509"
 
     ![Снимок экрана Power BI Desktop, на котором выделен расширенный редактор](./media/app-insights-export-power-bi/power-bi-import-analytics-query.png)
 
-1. Чтобы разрешить Power BI доступ к Azure, может потребоваться указать учетные данные. Щелкните **Учетная запись в организации**, чтобы войти, используя свою учетную запись Майкрософт.
+5. Чтобы разрешить Power BI доступ к Azure, может потребоваться указать учетные данные. Щелкните **Учетная запись в организации**, чтобы войти, используя свою учетную запись Майкрософт.
    
     ![Снимок экрана диалогового окна "Параметры запроса" в Power BI](./media/app-insights-export-power-bi/power-bi-import-sign-in.png)
 
     Если нужно проверить учетные данные, используйте команду меню **Параметры источника данных** в редакторе запросов. Укажите учетные данные, используемые для Azure. Они могут отличаться от учетных данных для Power BI.
-2. Выберите визуализацию для запроса и выберите поля для оси X, оси Y и размерности.
+6. Выберите визуализацию для запроса и выберите поля для оси X, оси Y и размерности.
    
     ![Снимок экрана параметров визуализации в Power BI Desktop](./media/app-insights-export-power-bi/power-bi-analytics-visualize.png)
-3. Опубликуйте отчет в рабочей области облака Power BI. Из нее можно внедрять синхронизированную версию на другие веб-страницы.
+7. Опубликуйте отчет в рабочей области облака Power BI. Из нее можно внедрять синхронизированную версию на другие веб-страницы.
    
     ![Снимок экрана Power BI Desktop, на котором выделена кнопка "Опубликовать"](./media/app-insights-export-power-bi/publish-power-bi.png)
-4. Периодически обновляйте отчет вручную или настройте запланированное обновление на странице параметров.
+8. Периодически обновляйте отчет вручную или настройте запланированное обновление на странице параметров.
 
 ### <a name="export-a-funnel"></a>Экспорт воронки
 1. [Создайте воронку](usage-funnels.md).
@@ -153,6 +152,6 @@ ms.locfileid: "52499509"
 После первоначального импорта панель мониторинга и отчеты продолжают обновляться ежедневно. При этом можно управлять расписанием обновления для набора данных.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Дополнительные сведения о Power BI](http://www.powerbi.com/learning/)
-* [Руководство по аналитике](../log-analytics/query-language/get-started-analytics-portal.md)
+* [Дополнительные сведения о Power BI](https://www.powerbi.com/learning/)
+* [Руководство по аналитике](../azure-monitor/log-query/get-started-portal.md)
 

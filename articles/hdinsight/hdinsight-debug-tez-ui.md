@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 01/17/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: c96e195d425cff640a4961e34305c1af447f6f28
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 1e529b2276d2e68c67696ba9d142760f5881a25e
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52499430"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53012816"
 ---
 # <a name="use-the-apache-tez-ui-to-debug-tez-jobs-on-windows-based-hdinsight"></a>Отладка заданий Tez в HDInsight для Windows с помощью пользовательского интерфейса Apache Tez
 Пользовательский интерфейс [Apache TEZ](https://tez.apache.org/) можно использовать для отладки заданий [Apache Hive](https://hive.apache.org/), которые используют Tez в качестве подсистемы выполнения. Пользовательский интерфейс Tez визуализирует задание в виде схемы связанных элементов, может выполнять детализацию каждого элемента и получать статистические данные и данные журнала.
@@ -136,4 +136,4 @@ Tez создает направленный ациклический граф (D
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы поняли, как работать с представлением [Apache TEZ](https://tez.apache.org/), узнайте больше об [использовании Apache Hive в HDInsight](hadoop/hdinsight-use-hive.md).
 
-Более подробные технические сведения о Tez см. на [странице Apache Tez на сайте Hortonworks](http://hortonworks.com/hadoop/tez/).
+Более подробные технические сведения о Tez см. на [странице Apache Tez на сайте Hortonworks](https://hortonworks.com/hadoop/tez/).

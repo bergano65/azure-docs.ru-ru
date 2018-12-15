@@ -3,15 +3,15 @@ title: Восстановление размещения из Azure при ав�
 description: Сведения о том, как восстановить размещение на локальный сайт после отработки отказа в Azure в ходе аварийного восстановления виртуальных машин VMware и физических серверов в Azure.
 author: nsoneji
 ms.service: site-recovery
-ms.date: 10/11/2018
+ms.date: 11/27/2018
 ms.topic: conceptual
 ms.author: nisoneji
-ms.openlocfilehash: becf0b8c9f14d81b0a25fb1727b69452c3ff690c
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 1c5d5b97465c6747e5f766a1ce8272579d37993d
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50215180"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52850284"
 ---
 # <a name="fail-back-vmware-vms-and-physical-servers-from-azure-to-an-on-premises-site"></a>Восстановление размещения виртуальных машин VMware и физических серверов из Azure на локальный сайт
 

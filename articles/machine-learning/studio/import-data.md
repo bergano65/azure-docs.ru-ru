@@ -5,9 +5,8 @@ keywords: импорт данных, формат данных, типы дан�
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: c194ee3b-838c-4efe-bb2a-c1d052326216
 ms.service: machine-learning
@@ -17,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
-ms.openlocfilehash: 8f6bc6e1e13de879f81e6fc6f1f447d0c2856ced
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 2f8c1eb43fddb21a59d4f00fd86b08d3fb3608f4
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52315262"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53269963"
 ---
 # <a name="import-your-training-data-into-azure-machine-learning-studio-from-various-data-sources"></a>Импорт обучающих данных в Студию машинного обучения Azure из разных источников данных
 
@@ -39,10 +38,6 @@ ms.locfileid: "52315262"
 > 
 
 Во этой вводной статье также описана подготовка данных для использования в Студии машинного обучения и указаны поддерживаемые форматы и типы данных.
-
-> [!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
-> 
-> 
 
 ## <a name="get-data-ready-for-use-in-azure-machine-learning-studio"></a>Подготовка данных для использования в студии машинного обучения Azure.
 Студия машинного обучения Microsoft Azure предназначена для работы с прямоугольными массивами или таблицами данных, такими как текстовые данные с разделителями или структурированные данные из базы данных, хотя в некоторых случаях могут быть использованы данные из непрямоугольных массивов.

@@ -9,16 +9,15 @@ ms.assetid: 578e30f0-31ed-4f39-baa8-01b4c2f310c9
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: mbullwin
-ms.openlocfilehash: 83852333d8e66c76f2d2710b1813a4400622e624
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 77c0baba1c30153730e87181e24137d9a20ea6b1
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50417316"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53012476"
 ---
 # <a name="separating-telemetry-from-development-test-and-production"></a>Отделение телеметрии стадий разработки, тестирования и эксплуатации
 
@@ -33,7 +32,7 @@ ms.locfileid: "50417316"
 Необходимость использования разных ресурсов или одного общего ресурса зависит от сценария:
 
 * Различные, независимые приложения: используйте отдельный ресурс и ключ инструментирования для каждого приложения.
-* Несколько компонентов или ролей одного бизнес-приложения: используйте [один общий ресурс](app-insights-monitor-multi-role-apps.md) для всех компонентов приложения. Данные телеметрии можно фильтровать и сегментировать с помощью свойства cloud_RoleName.
+* Несколько компонентов или ролей одного бизнес-приложения: используйте [один общий ресурс](app-insights-app-map.md) для всех компонентов приложения. Данные телеметрии можно фильтровать и сегментировать с помощью свойства cloud_RoleName.
 * Разработка, тестирование и выпуск: используйте отдельный ресурс и ключ инструментирования для версий системы отдельных стадий (меток).
 * Тестирование A или B. Используйте один ресурс. Создайте TelemetryInitializer для добавления к телеметрии свойства, определяющего варианты.
 
@@ -114,7 +113,7 @@ ms.locfileid: "50417316"
     ```XML
 
     <?xml version="1.0" encoding="utf-8"?>
-    <DeploymentEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/VisualStudio/DeploymentEvent/2013/06">
+    <DeploymentEvent xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/VisualStudio/DeploymentEvent/2013/06">
       <ProjectName>AppVersionExpt</ProjectName>
       <Build type="MSBuild">
         <MSBuild>

@@ -1,19 +1,18 @@
 ---
-title: Использование обозревателя Azure Cosmos DB для управления данными | Документация Майкрософт
+title: Использование обозревателя Azure Cosmos DB для управления данными
 description: Обозреватель Azure Cosmos DB — это автономный веб-интерфейс, который позволяет просматривать и управлять данными, которые хранятся в базе данных Azure Cosmos DB.
 services: cosmos-db
 author: deborahc
-manager: kfile
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 07/16/2018
 ms.author: dech
-ms.openlocfilehash: 8d1bd0d4331937e37307140e17e5aed1a6e3b0ff
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 6e1317084ce60fb8dce64ccd7d1d93fe1ae1d9e9
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "42142501"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53140767"
 ---
 # <a name="use-azure-cosmos-db-explorer-to-manage-your-data"></a>Использование обозревателя Azure Cosmos DB для управления данными 
 
@@ -52,4 +51,4 @@ ms.locfileid: "42142501"
 ## <a name="next-steps"></a>Дополнительная информация
 Теперь, когда вы узнали, как начать работу с обозревателем Azure Cosmos DB для управления данными, вы можете:
 
-* Начать определение [запросов](sql-api-sql-query-reference.md) с помощью синтаксиса языка SQL и выполнить [программирование на стороне сервера](programming.md) с помощью хранимых процедур, UDF, триггеров. 
+* Начать определение [запросов](sql-api-query-reference.md) с помощью синтаксиса языка SQL и выполнить [программирование на стороне сервера](programming.md) с помощью хранимых процедур, UDF, триггеров. 
