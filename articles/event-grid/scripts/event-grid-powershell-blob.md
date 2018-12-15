@@ -10,14 +10,14 @@ ms.devlang: powershell
 ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/05/2018
+ms.date: 12/10/2018
 ms.author: tomfitz
-ms.openlocfilehash: 0d9af16e77f39859135fe18fc810d4fca6635e19
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: bc8726499f900602bf1dbfc58a7ea2574a483245
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31426032"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273907"
 ---
 # <a name="subscribe-to-events-for-a-blob-storage-account-with-powershell"></a>Создание подписки на события, связанные с учетной записью хранения больших двоичных объектов, с помощью PowerShell
 
@@ -25,7 +25,7 @@ ms.locfileid: "31426032"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="sample-script"></a>Пример скрипта
+## <a name="sample-script---stable"></a>Пример скрипта — стабильная версия
 
 [!code-powershell[main](../../../powershell_scripts/event-grid/subscribe-to-blob-storage/subscribe-to-blob-storage.ps1 "Subscribe to Blob storage")]
 
@@ -33,7 +33,7 @@ ms.locfileid: "31426032"
 
 Чтобы создать подписку на события, в скрипте используются указанные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzureRmEventGridSubscription](https://docs.microsoft.com/powershell/module/azurerm.eventgrid/new-azurermeventgridsubscription) | создание подписки в службе "Сетка событий"; |
 
