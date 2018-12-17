@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 3df6951129f7beda7970e394ffdd32c7e02304dd
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 69ee9e7101a2b7337e1e42ff5ae09954fbfd50b2
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37060313"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52994929"
 ---
 # <a name="enable-offline-sync-for-your-windows-app"></a>Включение автономной синхронизации для приложения для Windows
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
@@ -42,7 +42,7 @@ ms.locfileid: "37060313"
 ## <a name="update-the-client-app-to-support-offline-features"></a>Обновление клиентского приложения для поддержки автономных функций
 Автономные функции мобильных приложений Azure позволяют взаимодействовать с локальной базой данных в случае автономной работы. Чтобы использовать эти функции в приложении, необходимо инициализировать [SyncContext][synccontext] в локальном хранилище. Затем необходимо сослаться на таблицу с помощью интерфейса [IMobileServiceSyncTable][IMobileServiceSyncTable] . SQLite используется как локальное хранилище на устройстве.
 
-1. Установите [среду выполнения SQLite для универсальной платформы Windows](http://sqlite.org/2016/sqlite-uwp-3120200.vsix).
+1. Установите [среду выполнения SQLite для универсальной платформы Windows](https://sqlite.org/2016/sqlite-uwp-3120200.vsix).
 2. В Visual Studio откройте диспетчер пакетов NuGet для проекта приложения UWP, созданного в руководстве [Создание приложения Windows].
     Найдите и установите пакет NuGet **Microsoft.Azure.Mobile.Client.SQLiteStore**.
 3. В обозревателе решений щелкните правой кнопкой мыши **Ссылки** > **Добавить ссылку...** > **Универсальная платформа Windows** > **Расширения**, а затем включите **SQLite для универсальной платформы Windows** и **среду выполнения Visual C++ 2015 для приложений универсальной платформы Windows**.
@@ -107,9 +107,9 @@ ms.locfileid: "37060313"
 <!-- URLs. -->
 [Автономная синхронизация данных в мобильных приложениях Azure]: app-service-mobile-offline-data-sync.md
 [Создание приложения Windows]: app-service-mobile-windows-store-dotnet-get-started.md
-[SQLite for Windows 8.1]: http://go.microsoft.com/fwlink/?LinkID=716919
-[SQLite for Windows Phone 8.1]: http://go.microsoft.com/fwlink/?LinkID=716920
-[SQLite for Windows 10]: http://go.microsoft.com/fwlink/?LinkID=716921
+[SQLite for Windows 8.1]: https://go.microsoft.com/fwlink/?LinkID=716919
+[SQLite for Windows Phone 8.1]: https://go.microsoft.com/fwlink/?LinkID=716920
+[SQLite for Windows 10]: https://go.microsoft.com/fwlink/?LinkID=716921
 [synccontext]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.synccontext(v=azure.10).aspx
 [sqlite store nuget]: https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client.SQLiteStore/
 [IMobileServiceSyncTable]: https://msdn.microsoft.com/library/azure/mt691742(v=azure.10).aspx

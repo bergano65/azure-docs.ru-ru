@@ -8,17 +8,16 @@ manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/18/2018
 ms.reviewer: nimolnar
 ms.author: mbullwin
-ms.openlocfilehash: ddfcb90090d82d8fe947292737163a81c715b32d
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f5f42ae5068440c3a90bf3b374238e18781b9770
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46972833"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52970592"
 ---
 # <a name="local-forwarder"></a>Локальный сервер пересылки
 
@@ -28,7 +27,7 @@ ms.locfileid: "46972833"
 
 Локальный сервер пересылки является [проектом с открытым кодом на GitHub](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/releases). Есть много способов запуска локального сервера пересылки на нескольких платформах.
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 
 #### <a name="windows-service"></a>Служба Windows
 
@@ -40,7 +39,7 @@ https://www.microsoft.com/net/download/dotnet-framework-runtime/net472?utm_sourc
 
 1. Скачайте файл LF.WindowsServiceHost.zip со [страницы выпуска локального сервера пересылки](https://github.com/Microsoft/ApplicationInsights-LocalForwarder/releases) на сайте GitHub.
 
-    ![Снимок экрана страницы загрузки выпуска локального сервера пересылки](.\media\opencensus-local-forwarder\001-local-forwarder-windows-service-host-zip.png)
+    ![Снимок экрана страницы загрузки выпуска локального сервера пересылки](./media/opencensus-local-forwarder/001-local-forwarder-windows-service-host-zip.png)
 
 2. В этом примере для удобства демонстрации мы просто извлечем ZIP-файл в папку `C:\LF-WindowsServiceHost`.
 
@@ -56,7 +55,7 @@ https://www.microsoft.com/net/download/dotnet-framework-runtime/net472?utm_sourc
     
     Чтобы проверить новую службу с помощью графического интерфейса служб, введите команду ``services.msc``
         
-     ![Снимок экрана службы локального сервера пересылки](.\media\opencensus-local-forwarder\002-services.png)
+     ![Снимок экрана службы локального сервера пересылки](./media/opencensus-local-forwarder/002-services.png)
 
 3. **Щелкните правой кнопкой мыши** новый локальный сервер пересылки и выберите **Запустить**. Служба перейдет в состояние выполнения.
 
@@ -74,7 +73,7 @@ https://www.microsoft.com/net/download/dotnet-framework-runtime/net472?utm_sourc
     
 6. Чтобы убедиться, что требуемые настройки активированы и локальный сервер пересылки ожидает передачи данных трассировки надлежащим образом, проверьте файл ``LocalForwarder.log``. В нижней части файла должны отобразиться результаты, подобные приведенным ниже:
 
-    ![Снимок экрана файла LocalForwarder.log](.\media\opencensus-local-forwarder\003-log-file.png)
+    ![Снимок экрана файла LocalForwarder.log](./media/opencensus-local-forwarder/003-log-file.png)
 
 #### <a name="console-application"></a>Консольное приложение
 

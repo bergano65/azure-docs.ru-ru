@@ -4,9 +4,8 @@ description: Как преобразовать обучающий экспери
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 73a3e9c6-00d0-41d4-8cf1-2ec87713867e
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/06/2017
-ms.openlocfilehash: d96755f00aa5023d57c9c4c2b2457902c337e29d
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 71315b6c36a9e41e5805d5a15bde5b1d1d84f2b5
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52314274"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53269929"
 ---
 # <a name="deploy-an-azure-machine-learning-studio-web-service"></a>Развертывание веб-службы Студии машинного обучения Azure
 Машинное обучение Azure позволяет создавать, тестировать и развертывать решения для прогнозной аналитики.
@@ -32,7 +31,7 @@ ms.locfileid: "52314274"
 * **[Преобразование обучающего эксперимента в прогнозный]** Когда модель обучена с помощью существующих данных и готова для оценки новых данных, вы подготавливаете и оптимизируете свой эксперимент для прогнозов.
 * **[Развертывание эксперимента в виде веб-службы]** Прогнозный эксперимент можно развернуть как [новую] или [классическую] веб-службу Azure. Пользователи могут отправлять данные в вашу модель и получать ее прогнозы.
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="create-a-training-experiment"></a>Создание обучающего эксперимента
 Чтобы обучить модель прогнозирующей аналитики использовании, с помощью Студии машинного обучения Azure вы создаете эксперимент по обучению с различными модулями для загрузки обучающих данных, необходимой подготовки данных, применения алгоритмов машинного обучения и оценки результатов. Вы можете выполнять итерации эксперимента и испытывать разные алгоритмы машинного обучения, чтобы сравнить и оценить результаты.

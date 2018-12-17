@@ -157,14 +157,8 @@ items:
       href: sql-database-managed-instance-create-manage.md
     - name: Ограничения ресурсов
       href: sql-database-managed-instance-resource-limits.md
-    - name: Конфигурация виртуальной сети
-      items:
-      - name: Конфигурация виртуальной сети
-        href: sql-database-managed-instance-vnet-configuration.md
-      - name: Архитектура подключения
-        href: sql-database-managed-instance-connectivity-architecture.md
-      - name: Конечная точка управления
-        href: sql-database-managed-instance-management-endpoint.md
+    - name: Архитектура подключения
+      href: sql-database-managed-instance-connectivity-architecture.md
     - name: Отличия T-SQL
       href: sql-database-managed-instance-transact-sql-information.md
   - name: Платформа как услуга
@@ -287,34 +281,28 @@ items:
       href: elastic-jobs-overview.md
   - name: Сравнение возможностей SQL
     href: sql-database-features.md
-  - name: Мониторинг и настройка производительности
+  - name: Мониторинг и настройка
     items:
-    - name: Общие сведения о мониторинге и настройке
+    - name: Мониторинг и настройка производительности
       href: sql-database-monitor-tune-overview.md
-    - name: Интеллектуальные средства повышения производительности
+    - name: Мониторинг производительности
       items:
-      - name: Действия и рекомендации по настройке
-        href: sql-database-performance.md
       - name: анализ производительности запросов
         href: sql-database-query-performance.md
-      - name: Рекомендации по производительности Помощника по базам данных
-        href: sql-database-advisor.md
-    - name: Расширенный мониторинг
-      items:
       - name: Мониторинг с помощью Аналитики SQL Azure
         href: https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql
       - name: Ведение журналов диагностических данных телеметрии
         href: sql-database-metrics-diag-logging.md
-    - name: Интеллектуальные сведения о производительности
-      href: sql-database-intelligent-insights.md
-    - name: Автоматическая настройка
-      href: sql-database-automatic-tuning.md
-    - name: Интеллектуальная обработка запросов
+    - name: Интеллектуальные средства повышения производительности
       items:
-      - name: Интеллектуальная обработка запросов
-        href: https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=/azure/sql-database/toc.json
-      - name: Адаптивная обработка запросов
-        href: https://docs.microsoft.com/sql/relational-databases/performance/adaptive-query-processing?toc=/azure/sql-database/toc.json
+      - name: Автоматическая настройка
+        href: sql-database-automatic-tuning.md
+      - name: Интеллектуальные сведения о производительности
+        href: sql-database-intelligent-insights.md
+      - name: Действия и рекомендации по настройке
+        href: sql-database-performance.md
+      - name: Рекомендации по производительности Помощника по базам данных
+        href: sql-database-advisor.md
   - name: Функции баз данных
     items:
     - name: Функции баз данных
@@ -409,10 +397,20 @@ items:
       href: sql-database-managed-instance-migrate.md
     - name: Перенос сертификата TDE в управляемый экземпляр
       href: sql-database-managed-instance-migrate-tde-certificate.md
+    - name: Определение размера подсети для Управляемого экземпляра
+      href: sql-database-managed-instance-determine-size-vnet-subnet.md
+    - name: Создание виртуальной сети и подсети для Управляемого экземпляра
+      href: sql-database-managed-instance-create-vnet-subnet.md
+    - name: Настройка существующей виртуальной сети и подсети для Управляемого экземпляра
+      href: sql-database-managed-instance-configure-vnet-subnet.md
     - name: Настройка пользовательской службы DNS
       href: sql-database-managed-instance-custom-dns.md
     - name: Синхронизация конфигурации сети
       href: sql-database-managed-instance-sync-network-configuration.md
+    - name: Определение IP-адреса конечной точки управления
+      href: sql-database-managed-instance-find-management-endpoint-ip-address.md
+    - name: Проверка встроенного брандмауэра для защиты
+      href: sql-database-managed-instance-management-endpoint-verify-built-in-firewall.md
     - name: Репликация транзакций
       href: replication-with-sql-database-managed-instance.md
     - name: Настройка обнаружения угроз
@@ -668,9 +666,9 @@ items:
       href: sql-database-elastic-jobs-getting-started.md
     - name: Удаление задания обработки эластичных баз данных (устарело)
       href: sql-database-elastic-jobs-uninstall.md
-ms.openlocfilehash: bb051db62acda98e40be09c174216208578afccc
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: d94f4fb39ccdee60fae434204369fd844aedeb20
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53320971"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53384281"

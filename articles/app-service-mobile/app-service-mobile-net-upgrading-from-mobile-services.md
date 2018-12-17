@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 25eb5c732927dcfb18bfd92991391ff99d4e3629
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.openlocfilehash: f5ffc795e6469971d1eaf335d6683f94d05f0807
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42918264"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53278626"
 ---
 # <a name="upgrade-your-existing-net-azure-mobile-service-to-app-service"></a>Обновление существующего приложения мобильной службы Azure .NET до службы приложений
 Мобильное приложение службы приложений — это новый способ сборки мобильных приложений с помощью Microsoft Azure. Дополнительные сведения см. в статье [Что представляют собой мобильные приложения?].
@@ -68,7 +68,7 @@ ms.locfileid: "42918264"
 
 Создайте второй экземпляр приложения, следуя [инструкциям по созданию серверной части .NET](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#create-app). При запросе на выбор плана службы приложений или "плана размещения" выберите план перенесенного приложения.
 
-Скорее всего, вы захотите использовать ту же базу данных и концентратор уведомлений, которые использовали в мобильных службах. Вы можете скопировать эти значения. Для этого откройте [портал Azure], перейдите к исходному приложению и выберите **Параметры** > **Параметры приложения**. В разделе **Строки подключения** скопируйте `MS_NotificationHubConnectionString` и `MS_TableConnectionString`. Перейдите на новый сайт обновления и вставьте эти значения, перезаписав все существующие значения. Повторите эту процедуру для других необходимых параметров приложения. Если перенесенная служба не используется, строки подключения и параметры приложения можно просмотреть на вкладке **Настройка** раздела "Мобильные службы" на [Классический портал Azure].
+Скорее всего, вы захотите использовать ту же базу данных и концентратор уведомлений, которые использовали в мобильных службах. Вы можете скопировать эти значения. Для этого откройте [портал Azure], перейдите к исходному приложению и выберите **Параметры** > **Параметры приложения**. В разделе **Строки подключения** скопируйте `MS_NotificationHubConnectionString` и `MS_TableConnectionString`. Перейдите на новый сайт обновления и вставьте эти значения, перезаписав все существующие значения. Повторите эту процедуру для других необходимых параметров приложения.
 
 Сделайте копию проекта ASP.NET для приложения и опубликуйте его на новом сайте. Используя копию клиентского приложения, обновленную с помощью нового URL-адреса, убедитесь, что все работает правильно.
 
@@ -84,18 +84,23 @@ ms.locfileid: "42918264"
 ### <a name="base-configuration"></a>Базовая конфигурация
 Затем в файле WebApiConfig.cs можно заменить
 
-        // Use this class to set configuration options for your mobile service
-        ConfigOptions options = new ConfigOptions();
+```csharp
+// Use this class to set configuration options for your mobile service
+ConfigOptions options = new ConfigOptions();
 
-        // Use this class to set WebAPI configuration options
-        HttpConfiguration config = ServiceConfig.Initialize(new ConfigBuilder(options));
+// Use this class to set WebAPI configuration options
+HttpConfiguration config = ServiceConfig.Initialize(new ConfigBuilder(options));
+```
 
 на
 
-        HttpConfiguration config = new HttpConfiguration();
-        new MobileAppConfiguration()
-            .UseDefaultConfiguration()
-        .ApplyTo(config);
+```csharp
+HttpConfiguration config = new HttpConfiguration();
+new MobileAppConfiguration()
+    .UseDefaultConfiguration()
+.ApplyTo(config);
+
+```
 
 > [!NOTE]
 > Дополнительные сведения о новом пакете SDK для сервера .NET и о том, как добавить или удалить компоненты из приложения, см. в статье [Как использовать пакет SDK для .NET].
@@ -110,8 +115,10 @@ ms.locfileid: "42918264"
 
 Убедитесь, что в конце метода `Configuration()` указано следующее:
 
-        app.UseWebApi(config)
-        app.UseAppServiceAuthentication(config);
+```csharp
+app.UseWebApi(config)
+app.UseAppServiceAuthentication(config);
+```
 
 Дополнительные изменения, связанные с проверкой подлинности, рассматриваются в разделе о полной проверке подлинности.
 
@@ -120,7 +127,9 @@ ms.locfileid: "42918264"
 
 Чтобы убедиться, что указывается та же схема, что и прежде, используйте следующий код, чтобы задать схему в DbContext для вашего приложения:
 
-        string schema = System.Configuration.ConfigurationManager.AppSettings.Get("MS_MobileServiceName");
+```csharp
+string schema = System.Configuration.ConfigurationManager.AppSettings.Get("MS_MobileServiceName");
+```
 
 В этом случае проверьте, что задан параметр MS_MobileServiceName. Если имя схемы в приложении было настроено ранее, можно также указать другое имя.
 
@@ -167,33 +176,35 @@ ms.locfileid: "42918264"
 
 Например, следующий код определяет `TodoItem` без свойств системы:
 
-    using System.ComponentModel.DataAnnotations.Schema;
+```csharp
+using System.ComponentModel.DataAnnotations.Schema;
 
-    public class TodoItem : ITableData
-    {
-        public string Text { get; set; }
+public class TodoItem : ITableData
+{
+    public string Text { get; set; }
 
-        public bool Complete { get; set; }
+    public bool Complete { get; set; }
 
-        public string Id { get; set; }
+    public string Id { get; set; }
 
-        [NotMapped]
-        public DateTimeOffset? CreatedAt { get; set; }
+    [NotMapped]
+    public DateTimeOffset? CreatedAt { get; set; }
 
-        [NotMapped]
-        public DateTimeOffset? UpdatedAt { get; set; }
+    [NotMapped]
+    public DateTimeOffset? UpdatedAt { get; set; }
 
-        [NotMapped]
-        public bool Deleted { get; set; }
+    [NotMapped]
+    public bool Deleted { get; set; }
 
-        [NotMapped]
-        public byte[] Version { get; set; }
-    }
+    [NotMapped]
+    public byte[] Version { get; set; }
+}
+```
 
 Примечание. Если возникли ошибки в `NotMapped`, добавьте ссылку на сборку `System.ComponentModel.DataAnnotations`.
 
 ### <a name="cors"></a>CORS
-Мобильные службы обеспечивают определенную поддержку CORS путем заключения решения ASP.NET CORS в оболочку. Этот уровень заключения был удален в целях предоставления разработчикам дополнительного контроля для непосредственного использования [поддержки ASP.NET CORS](http://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api).
+Мобильные службы обеспечивают определенную поддержку CORS путем заключения решения ASP.NET CORS в оболочку. Этот уровень заключения был удален в целях предоставления разработчикам дополнительного контроля для непосредственного использования [поддержки ASP.NET CORS](https://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api).
 
 Основные проблемы при использовании CORS заключаются в необходимости разрешить заголовки `eTag` и `Location` для правильной работы пакетов SDK клиента.
 
@@ -201,19 +212,23 @@ ms.locfileid: "42918264"
 Для отправки основной элемент, который может отсутствовать в пакете SDK для сервера, — это класс PushRegistrationHandler. Регистрации в мобильных приложениях обрабатываются немного по-другому, и способы регистрации без тегов включены по умолчанию. Управление тегами осуществляется с помощью пользовательских API. Дополнительные сведения см. в инструкциях по [регистрации для использования тегов](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags).
 
 ### <a name="scheduled-jobs"></a>Запланированные задания
-Запланированные задания не встраиваются в мобильные приложения, поэтому все существующие задания в серверной части .NET потребуется обновлять по отдельности. Один из вариантов — создать запланированное [веб-задание] на сайте кода мобильных приложений. Можно также настроить контроллер, содержащий код задания, и задать в [Планировщик Azure] вызов конечной точки по ожидаемому расписанию.
+Запланированные задания не встраиваются в мобильные приложения, поэтому все существующие задания в серверной части .NET потребуется обновлять по отдельности. Один из вариантов — создать запланированное [веб-задание] на сайте кода мобильных приложений. Можно также настроить контроллер, содержащий код задания, и задать в [планировщике Azure] вызов конечной точки по ожидаемому расписанию.
 
 ### <a name="miscellaneous-changes"></a>Прочие изменения
 Теперь все классы ApiController, которые будут использоваться мобильным клиентом, должны иметь атрибут `[MobileAppController]` . Это больше не является условием по умолчанию, поэтому другие классы ApiController не будут затрагиваться мобильными средствами форматирования.
 
 Объект `ApiServices` больше не входит в пакет SDK. Для доступа к параметрам мобильного приложения можно использовать следующее:
 
-    MobileAppSettingsDictionary settings = this.Configuration.GetMobileAppSettingsProvider().GetMobileAppSettings();
+```csharp
+MobileAppSettingsDictionary settings = this.Configuration.GetMobileAppSettingsProvider().GetMobileAppSettings();
+```
 
 Аналогично, теперь ведение журнала выполняется с помощью стандартной записи трассировки ASP.NET:
 
-    ITraceWriter traceWriter = this.Configuration.Services.GetTraceWriter();
-    traceWriter.Info("Hello, World");  
+```csharp
+ITraceWriter traceWriter = this.Configuration.Services.GetTraceWriter();
+traceWriter.Info("Hello, World");  
+```
 
 ## <a name="authentication"></a>Рекомендации по проверке подлинности
 Компоненты проверки подлинности мобильных служб перемещены в функцию проверки подлинности и авторизации службы приложений. Дополнительные сведения о том, как это сделать для сайта, см. в статье [Add authentication to your mobile app](app-service-mobile-ios-get-started-users.md) (Добавление проверки подлинности в мобильное приложение).
@@ -227,11 +242,15 @@ ms.locfileid: "42918264"
 ### <a name="getting-additional-user-information"></a>Получение дополнительных сведений о пользователе
 Дополнительные сведения о пользователях, включая маркеры доступа, можно получить с помощью метода `GetAppServiceIdentityAsync()` .
 
-        FacebookCredentials creds = await this.User.GetAppServiceIdentityAsync<FacebookCredentials>();
+```csharp
+FacebookCredentials creds = await this.User.GetAppServiceIdentityAsync<FacebookCredentials>();
+```
 
 Кроме того, если приложение получает зависимости в идентификаторах пользователей, например сохраняет их в базе данных, важно обратить внимание на то, что идентификаторы пользователей в мобильных службах и мобильных приложениях служб приложений отличаются. Однако можно по-прежнему получить идентификатор пользователя мобильных служб. Все подклассы ProviderCredentials имеют свойство UserId. Продолжим с предыдущим примером:
 
-        string mobileServicesUserId = creds.Provider + ":" + creds.UserId;
+```csharp
+string mobileServicesUserId = creds.Provider + ":" + creds.UserId;
+```
 
 Если ваше приложение получает зависимости от идентификаторов пользователей, важно использовать тот же способ регистрации и того же поставщика удостоверений, если это возможно. Идентификаторы пользователей обычно относятся к использованному способу регистрации приложений, поэтому новый способ регистрации может вызвать проблемы с сопоставлением пользователей с их данными.
 
@@ -243,9 +262,11 @@ ms.locfileid: "42918264"
 
 Одно из основных различий между версиями заключается в том, что конструкторам больше не требуется ключ приложения. Просто передайте URL-адрес мобильного приложения. Например, в клиентах .NET конструктор `MobileServiceClient` теперь выглядит так:
 
-        public static MobileServiceClient MobileService = new MobileServiceClient(
-            "https://contoso.azurewebsites.net", // URL of the Mobile App
-        );
+```csharp
+public static MobileServiceClient MobileService = new MobileServiceClient(
+    "https://contoso.azurewebsites.net", // URL of the Mobile App
+);
+```
 
 Сведения об установке новых пакетов SDK и использовании новой структуры см. по ссылкам ниже:
 
@@ -259,17 +280,11 @@ ms.locfileid: "42918264"
 <!-- URLs. -->
 
 [портал Azure]: https://portal.azure.com/
-[Классический портал Azure]: https://manage.windowsazure.com/
 [Что представляют собой мобильные приложения?]: app-service-mobile-value-prop.md
-[I already use web sites and mobile services – how does App Service help me?]: /en-us/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services
-[пакет SDK для сервера мобильных приложений]: http://www.nuget.org/packages/microsoft.azure.mobile.server
-[Create a Mobile App]: app-service-mobile-xamarin-ios-get-started.md
-[Add push notifications to your mobile app]: app-service-mobile-xamarin-ios-get-started-push.md
+[пакет SDK для сервера мобильных приложений]: https://www.nuget.org/packages/microsoft.azure.mobile.server
 [Add authentication to your mobile app]: app-service-mobile-xamarin-ios-get-started-users.md
-[Планировщик Azure]: /azure/scheduler/
+[планировщике Azure]: /azure/scheduler/
 [веб-задание]: https://github.com/Azure/azure-webjobs-sdk/wiki
 [Как использовать пакет SDK для .NET]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
-[Migrate from Mobile Services to an App Service Mobile App]: app-service-mobile-migrating-from-mobile-services.md
-[Migrate your existing Mobile Service to App Service]: app-service-mobile-migrating-from-mobile-services.md
 [Цены службы приложений]: https://azure.microsoft.com/pricing/details/app-service/
 [Обзор пакета SDK для сервера .NET]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md

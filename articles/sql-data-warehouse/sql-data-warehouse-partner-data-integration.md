@@ -10,12 +10,12 @@ ms.component: consume
 ms.date: 04/17/2018
 ms.author: jrj
 ms.reviewer: igorstan
-ms.openlocfilehash: f3e45d62f5117ade9109733d3cc5aba629bf9c7d
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 09be96a4a6fd4e36412e4e0958683a14873e172d
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389740"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52961830"
 ---
 # <a name="sql-data-warehouse-data-integration-partners"></a>Партнеры по интеграции данных хранилища данных SQL
 Для создания собственного решения для хранилища данных можно воспользоваться одним из широкого спектра лучших в отрасли инструментов. В данной статье рассматриваются компании-партнеры корпорации Майкрософт, которые предлагают решения интеграции данных для хранилища данных SQL Azure.
@@ -23,7 +23,7 @@ ms.locfileid: "49389740"
 ## <a name="data-integration-partners"></a>Партнеры по интеграции данных
 | Партнер | ОПИСАНИЕ | Ссылки | Видеоролики |
 | --- | --- | --- | --- |
-| ![Alteryx][1] |**Alteryx**<br> Alteryx Designer предоставляет повторяемый рабочий процесс для самостоятельного анализа данных, который позволяет лучше понять данные за считанные часы, а не недели, как предлагают традиционные подходы. Alteryx Designer расширяет возможности аналитиков, объединяя подготовку, смешение и анализ данных (прогнозный, статистический и пространственный) с помощью интуитивно понятного пользовательского интерфейса. |[Marketplace][alteryx_marketplace]<br>[Веб-сайт][alteryx_designer_website]<br>[Технический документ][alteryx_whitepaper]<br>[Таблица][alteryx_designer_datasheet]<br>[Twitter][alteryx_designer_twitter]<br>[YouTube][alteryx_designer_youtube] |[![Видео об Alteryx](./media/sql-data-warehouse-partner-data-integration/alteryx_designer_video.jpg)](https://www.youtube.com/watch?v=CdqSDPyNDKc) |
+| ![Alteryx][1] |**Alteryx**<br>  Alteryx Designer предоставляет повторяемый рабочий процесс для самостоятельного анализа данных, который позволяет лучше понять данные за считанные часы, а не недели, как предлагают традиционные подходы. Alteryx Designer расширяет возможности аналитиков, объединяя подготовку, смешение и анализ данных (прогнозный, статистический и пространственный) с помощью интуитивно понятного пользовательского интерфейса. |[Marketplace][alteryx_marketplace]<br>[Веб-сайт][alteryx_designer_website]<br>[Технический документ][alteryx_whitepaper]<br>[Таблица][alteryx_designer_datasheet]<br>[Twitter][alteryx_designer_twitter]<br>[YouTube][alteryx_designer_youtube] |[![Видео об Alteryx](./media/sql-data-warehouse-partner-data-integration/alteryx_designer_video.jpg)](https://www.youtube.com/watch?v=CdqSDPyNDKc) |
 | ![Attunity][2] |**Attunity**<br>Attunity CloudBeam предлагает автоматическое и оптимизированное решение для загрузки данных в хранилище данных SQL. Решение упрощает и ускоряет загрузку пакетной службы, а также добавочную репликацию из разнородных универсальных баз данных, включая SQL Server, Oracle, DB2, Sybase и mySQL. |[Marketplace][attunity_marketplace]<br>[Быстрый запуск][attunity_quickstart]<br>[Веб-сайт][attunity_cloudbeam_website]<br>[Таблица][attunity_cloudbeam_datasheet]<br>[Twitter][attunity_cloudbeam_twitter]<br>[YouTube][attunity_cloudbeam_youtube] |[![Видео об Attunity](./media/sql-data-warehouse-partner-data-integration/attunity_video.jpg)](https://www.youtube.com/watch?v=w14zuSjMlok) |
 | ![Bryte Systems][3] |**Bryte Systems**<br>Bryte Systems автоматизирует перенос данных в хранилище данных SQL из разных баз данных и источников. Bryte Systems специализируется на переносе данных и технологиях интеграции. Компания создает облачные хранилища данных и пулы данных для анализа. |[Веб-сайт][bryte_systems_azure_website] | |
 | ![Informatica][4] |**Informatica Cloud Services for Azure – Pay-As-You-Go**<br> Оптимизируйте ценность служб Azure и получите практические сведения из всех своих гибридных наборов данных, воспользовавшись решением Informatica Cloud Services for Azure – Pay-As-You-Go. Informatica Cloud предлагает лучшее в своем классе решение для интеграции данных, облачной аналитики, интеграции приложений и управления данными. Благодаря возможности самостоятельно переносить, интегрировать данные и управлять ими, клиенты могут быстро и безопасно импортировать, экспортировать, синхронизировать и планировать в Azure петабайты данных из различных источников, в том числе приложений SaaS, озер данных на основе Hadoop и других локальных источников данных (Oracle, SAP). Informatica Cloud Services for Azure предоставляет собственные высокопроизводительные подключения к хранилищу данных SQL Azure, Базе данных SQL, хранилищу BLOB-объектов, Data Lake Store и Azure Cosmos DB. |[Marketplace][informatica_Cloud_Services_marketplace]<br>[Бесплатная пробная версия][informatica_cloud_free_trial]<br>[Руководство по настройке][informatica_cloud_services_config]<br>[Веб-сайт][informatica_Cloud_Services_website]<br>[Twitter][informatica_cloud_twitter]<br>[YouTube][informatica_cloud_youtube] | |
@@ -70,7 +70,7 @@ ms.locfileid: "49389740"
 <!--Website Links -->
 [alteryx_designer_website]:http://www.alteryx.com/partners/microsoft/
 [attunity_cloudbeam_website]:http://www.attunity.com/attunity-cloudbeam-for-azure/
-[bryte_systems_azure_website]:http://www.bryte.com.au/azure-integration/
+[bryte_systems_azure_website]:http://www.bryteflow.com/
 [informatica_Cloud_Services_website]:https://www.informatica.com/products/cloud-integration.html
 [informatica_PowerCenter_website]:https://www.informatica.com/products/data-integration/powercenter.html
 [redgate_website]:http://dataplatformstudio.com/

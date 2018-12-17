@@ -14,19 +14,19 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
-ms.openlocfilehash: c12328a441a8cc438fa3e974863cc8adf8651b50
-ms.sourcegitcommit: df4ddc55b42b593f165d56531f591fdb1e689686
+ms.openlocfilehash: 44c54b570a38eb1a3b9ca773893599d1d497dfa2
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2018
-ms.locfileid: "27593720"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52972156"
 ---
 # <a name="enable-offline-sync-for-your-cordova-mobile-app"></a>Включение автономной синхронизации для мобильного приложения Cordova
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
 
 В этом руководстве рассматривается функция автономной синхронизации мобильных приложений Azure для Cordova. Автономная синхронизация позволяет пользователям взаимодействовать с мобильным приложением &mdash;просматривать, добавлять или изменять данные &mdash; даже при отсутствии подключения к сети. Изменения сохраняются в локальной базе данных.  Как только устройство возвращается в режим подключения к сети, эти изменения синхронизируются с удаленной службой.
 
-В этом руководстве используется решение быстрого запуска Cordova для мобильных приложений, которые вы создадите, завершив изучение руководства [Создание приложения Apache Cordova]. При работе с этим руководством вы обновите решение быстрого запуска для добавления автономных функций мобильных приложений Azure.  Мы также рассмотрим автономный код, применяемый в приложении.
+В этом руководстве используется решение быстрого запуска Cordova для мобильных приложений, которые вы создадите, завершив изучение руководства [ознакомительный проект Apache Cordova]. При работе с этим руководством вы обновите решение быстрого запуска для добавления автономных функций мобильных приложений Azure.  Мы также рассмотрим автономный код, применяемый в приложении.
 
 Дополнительные сведения о функции автономной синхронизации см. в статье [Автономная синхронизация данных в мобильных приложениях Azure]. Сведения об использовании API см. в [документации по API](https://azure.github.io/azure-mobile-apps-js-client).
 
@@ -199,14 +199,14 @@ ms.locfileid: "27593720"
 <!-- Images -->
 
 <!-- URLs. -->
-[Создание приложения Apache Cordova]: app-service-mobile-cordova-get-started.md
+[ознакомительный проект Apache Cordova]: app-service-mobile-cordova-get-started.md
 [этом примере]: https://github.com/Azure-Samples/app-service-mobile-cordova-client-conflict-handling
 [Автономная синхронизация данных в мобильных приложениях Azure]: app-service-mobile-offline-data-sync.md
-[Cloud Cover: Offline Sync in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
+[Cloud Cover: Offline Sync in Azure Mobile Services]: https://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Adding Authentication]: app-service-mobile-cordova-get-started-users.md
 [authentication]: app-service-mobile-cordova-get-started-users.md
 [Work with the .NET backend server SDK for Azure Mobile Apps]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
-[Visual Studio Community 2015]: http://www.visualstudio.com/
+[Visual Studio Community 2015]: https://www.visualstudio.com/
 [Инструменты Visual Studio для Apache Cordova]: https://www.visualstudio.com/en-us/features/cordova-vs.aspx
 [Apache Cordova SDK]: app-service-mobile-cordova-how-to-use-client-library.md
 [ASP.NET Server SDK]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md

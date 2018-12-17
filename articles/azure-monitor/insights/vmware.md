@@ -10,17 +10,15 @@ ms.assetid: 16516639-cc1e-465c-a22f-022f3be297f1
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: magoedte
-ms.component: ''
-ms.openlocfilehash: 5caa4940865ff0f0f684a8aa8c3164fee6f321b2
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 3313d7490ed9a2f51831c76148a54b7ecf19d3b3
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52634461"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53338810"
 ---
 # <a name="vmware-monitoring-preview-solution-in-log-analytics"></a>Решение для мониторинга VMware (предварительная версия) в Log Analytics | Microsoft Azure
 
@@ -42,7 +40,7 @@ ms.locfileid: "52634461"
 vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 #### <a name="prepare-a-linux-server"></a>Подготовка сервера под управлением Linux
-Создайте ВМ с ОС Linux, чтобы получать все данные системных журналов от узлов ESXi. [Агент Log Analytics для Linux](../../log-analytics/log-analytics-quick-collect-linux-computer.md) — это точка сбора всех данных системных журналов узлов ESXi. Можно использовать несколько узлов ESXi для пересылки журналов на отдельный сервер под управлением Linux, как показано в следующем примере.
+Создайте ВМ с ОС Linux, чтобы получать все данные системных журналов от узлов ESXi. [Агент Log Analytics для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) — это точка сбора всех данных системных журналов узлов ESXi. Можно использовать несколько узлов ESXi для пересылки журналов на отдельный сервер под управлением Linux, как показано в следующем примере.
 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]  
 
@@ -131,7 +129,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 
 Щелкните любую колонку, чтобы открыть область поиска Log Analytics с соответствующими подробными сведениями.
 
-Здесь можно изменить поисковый запрос в соответствии с определенной задачей. Дополнительные сведения о поиске по журналам см. в разделе [Поиск данных по журналам в Log Analytics](../../log-analytics/log-analytics-queries.md).
+Здесь можно изменить поисковый запрос в соответствии с определенной задачей. Дополнительные сведения о поиске по журналам см. в разделе [Поиск данных по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
 
 #### <a name="find-esxi-host-events"></a>Поиск событий узлов ESXi
 Для одного узла ESXi создается несколько журналов на основе выполняющихся процессов. Решение для мониторинга VMware объединяет их, суммируя счетчики событий. Это централизованное представление помогает понять, на каком узле ESXi происходит больше всего событий и какие именно события происходят в вашей среде чаще всего.
@@ -165,7 +163,7 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
 ![DockerDashboardView](./media/vmware/dockerdashboardview.png)
 
 #### <a name="create-alerts-from-queries"></a>Создание оповещений из запросов
-Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](../../monitoring-and-diagnostics/monitoring-overview-alerts.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](https://blogs.technet.microsoft.com/msoms/2016/06/15/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
+Созданные запросы можно использовать для оповещения при возникновении определенных событий. Подробные сведения о создании оповещений см. в статье [Оповещения в Log Analytics](../../azure-monitor/platform/alerts-overview.md). Примеры оповещающих и других запросов см. в записи блога [Monitor VMware using OMS Log Analytics](https://blogs.technet.microsoft.com/msoms/2016/06/15/monitor-vmware-using-oms-log-analytics) (Мониторинг VMware с помощью OMS Log Analytics).
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 ### <a name="what-do-i-need-to-do-on-the-esxi-host-setting-what-impact-will-it-have-on-my-current-environment"></a>Что нужно настраивать для узла ESXi? Какое влияние это окажет на мою текущую среду?
@@ -206,6 +204,6 @@ vSphere ESXi Host версий 5.5, 6.0 и 6.5
     d. Если файл не существует или настройки пользователя и группы неправильны, выполните действия по исправлению, приведенные в разделе [Подготовка сервера под управлением Linux](#prepare-a-linux-server).
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Используйте [поиск по журналам в Log Analytics](../../log-analytics/log-analytics-queries.md) для просмотра подробных данных об узле VMware.
+* Используйте [поиск по журналам в Log Analytics](../../azure-monitor/log-query/log-query-overview.md) для просмотра подробных данных об узле VMware.
 * [Создавайте собственные панели мониторинга](../../azure-monitor/platform/dashboards.md), отображающие данные об узле VMware.
-* [Создавайте оповещения](../../monitoring-and-diagnostics/monitoring-overview-alerts.md), информирующие о возникновении определенных событий узла VMware.
+* [Создавайте оповещения](../../azure-monitor/platform/alerts-overview.md), информирующие о возникновении определенных событий узла VMware.

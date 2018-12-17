@@ -14,19 +14,19 @@ ms.devlang: node
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 07ebf23270addc63793278d4e0510c187289b82c
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 71be338aeb6d0234d22d412d6838e36a26797b20
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32154551"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53002113"
 ---
 # <a name="upgrade-your-existing-nodejs-azure-mobile-service-to-app-service"></a>Обновление существующего приложения мобильной службы Azure Node.js до службы приложений
-Мобильное приложение службы приложений — это новый способ сборки мобильных приложений с помощью Microsoft Azure. Дополнительные сведения см. в статье [Общие сведения о мобильных приложениях].
+Мобильное приложение службы приложений — это новый способ сборки мобильных приложений с помощью Microsoft Azure. Дополнительные сведения см. в статье [Что представляют собой мобильные приложения?].
 
 В этой статье описывается процесс обновления существующего серверного приложения Node.js мобильных служб Azure до нового мобильного приложения службы приложений. Во время обновления существующее приложение мобильных служб может продолжать работать.  Если необходимо обновить приложение с серверной частью Node.js, см. статью [Обновление существующего приложения мобильной службы Azure .NET до службы приложений](app-service-mobile-net-upgrading-from-mobile-services.md).
 
-Когда мобильное серверное приложение обновляется до службы приложений Azure, оно получает доступ ко всем возможностям службы приложений. Тарификация при этом будет осуществляться в соответствии с [ценами службы приложений], а не мобильных служб.
+Когда мобильное серверное приложение обновляется до службы приложений Azure, оно получает доступ ко всем возможностям службы приложений. Тарификация при этом будет осуществляться в соответствии с [Цены службы приложений], а не мобильных служб.
 
 ## <a name="migrate-vs-upgrade"></a>Миграция или обновление
 [!INCLUDE [app-service-mobile-migrate-vs-upgrade](../../includes/app-service-mobile-migrate-vs-upgrade.md)]
@@ -39,7 +39,7 @@ ms.locfileid: "32154551"
 ### <a name="improvements-in-mobile-apps-nodejs-server-sdk"></a>Улучшения в пакете SDK сервера Node.js мобильных приложений
 Обновление до нового [пакета SDK для мобильных приложений](https://www.npmjs.com/package/azure-mobile-apps) содержит множество улучшений, в частности:
 
-* Новый упрощенный пакет SDK для Node, созданный на [платформе Express](http://expressjs.com/en/index.html), разработан специально для новых версий Node, которые будут выпускаться. Поведение приложения можно настроить с помощью ПО промежуточного слоя Express.
+* Новый упрощенный пакет SDK для Node, созданный на [платформе Express](https://expressjs.com/en/index.html), разработан специально для новых версий Node, которые будут выпускаться. Поведение приложения можно настроить с помощью ПО промежуточного слоя Express.
 * Значительное повышение производительности по сравнению с пакетом SDK для мобильных служб.
 * Веб-сайт можно разместить вместе с мобильным сервером. Аналогичным образом можно легко добавить пакет SDK для мобильных приложений Azure в любое существующее приложение express.v4.
 * Пакет SDK для мобильных приложений предназначен для кроссплатформенной и локальной разработки. Поэтому приложения с его использованием можно разрабатывать и запускать локально на платформах Windows, Linux и OSX. Теперь стало удобнее использовать распространенные методы разработки Node (например, выполнение тестов [Mocha](https://mochajs.org/) перед развертыванием).
@@ -68,7 +68,7 @@ ms.locfileid: "32154551"
 ```npm i -g azure-mobile-apps-compatibility```
 
 ## <a name="obtain-ams-scripts"></a> Получение скриптов мобильных служб Azure
-* Войдите на [портале Azure].
+* Войдите на [портал Azure].
 * Чтобы найти сайт мобильных служб, щелкните **Все ресурсы** или **Службы приложений**.
 * Чтобы перейти на сайт Kudu, на сайте щелкните **Средства** -> **Kudu** -> **Перейти**.
 * Чтобы открыть консоль отладки, щелкните **Консоль отладки** -> **PowerShell**.
@@ -87,14 +87,14 @@ ms.locfileid: "32154551"
 ## <a name="deploy-ama-app"></a> Развертывание серверной части мобильных приложений Azure
 Во время развертывания необходимо сделать следующее:
 
-1. Создайте мобильное приложение на [портале Azure].
+1. Создайте мобильное приложение на [портал Azure].
 2. Выполните скрипт `createViews.sql` в подключенной базе данных.
 3. Свяжите базу данных, привязанную к вашей мобильной службе, с новой службой приложений.
 4. Свяжите все ресурсы (например, Центры уведомлений) с новой службой приложений.
 5. Разверните созданный код на новом сайте.
 
 ### <a name="create-a-new-mobile-app"></a>Создание нового мобильного приложения.
-1. Войдите на [портале Azure].
+1. Войдите на [портал Azure].
 2. Щелкните **+Создать** > **Интернет+мобильные устройства** > **Мобильное приложение**, а затем введите имя серверной части мобильного приложения.
 3. В поле **Группа ресурсов**выберите существующую группу ресурсов или создайте новую (с тем же именем, что и у приложения).
 
@@ -111,7 +111,7 @@ ms.locfileid: "32154551"
 ### <a name="link-the-database-to-your-app-service"></a>Связывание базы данных со службой приложений
 Чтобы связать имеющуюся базу данных со службой приложений, сделайте следующее:
 
-* Откройте службу приложений на [портале Azure].
+* Откройте службу приложений на [портал Azure].
 * Выберите **Все параметры** -> **Подключения к данным**.
 * Щелкните **+ Add**(+ Добавить).
 * В раскрывающемся списке выберите **База данных SQL**
@@ -122,7 +122,7 @@ ms.locfileid: "32154551"
 Имя пользователя и пароль можно найти, просмотрев строку подключения целевой базы данных в перенесенной мобильной службе.
 
 ### <a name="set-up-authentication"></a>Настройка проверки подлинности
-Мобильные приложения Azure позволяют настроить проверку подлинности в Azure Active Directory, Facebook, Google, Microsoft и Twitter прямо в службе.  Пользовательскую проверку подлинности необходимо настроить отдельно.  Дополнительные сведения см. в документации, посвященной [методам] и [быстрому запуску проверки подлинности].  
+Мобильные приложения Azure позволяют настроить проверку подлинности в Azure Active Directory, Facebook, Google, Microsoft и Twitter прямо в службе.  Пользовательскую проверку подлинности необходимо настроить отдельно.  Дополнительные сведения см. в документации, посвященной [Концепции проверки подлинности] и [Быстрый запуск проверки подлинности].  
 
 ## <a name="updating-clients"></a>Обновление мобильных клиентов
 После получения рабочей серверной части мобильных приложений вы можете работать с новой версией клиентского приложения, которое использует эту серверную часть. Мобильные приложения также содержат новую версию клиентских пакетов SDK. Поэтому, как и при обновлении сервера, перед установкой версий мобильных приложений потребуется удалить все ссылки на пакеты SDK для мобильных служб.
@@ -149,7 +149,7 @@ ms.locfileid: "32154551"
 
 [портал Azure]: https://portal.azure.com/
 [Azure classic portal]: https://manage.windowsazure.com/
-[Общие сведения о мобильных приложениях]: app-service-mobile-value-prop.md
+[Что представляют собой мобильные приложения?]: app-service-mobile-value-prop.md
 [I already use web sites and mobile services – how does App Service help me?]: /en-us/documentation/articles/app-service-mobile-value-prop-migration-from-mobile-services
 [Mobile App Server SDK]: https://www.npmjs.com/package/azure-mobile-apps
 [Create a Mobile App]: app-service-mobile-xamarin-ios-get-started.md
@@ -160,13 +160,13 @@ ms.locfileid: "32154551"
 [How to use the .NET server SDK]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
 [Migrate from Mobile Services to an App Service Mobile App]: app-service-mobile-migrating-from-mobile-services.md
 [Migrate your existing Mobile Service to App Service]: app-service-mobile-migrating-from-mobile-services.md
-[ценами службы приложений]: https://azure.microsoft.com/pricing/details/app-service/
+[Цены службы приложений]: https://azure.microsoft.com/pricing/details/app-service/
 [.NET server SDK overview]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
-[методам]: ../app-service/app-service-authentication-overview.md
-[быстрому запуску проверки подлинности]: app-service-mobile-auth.md
+[Концепции проверки подлинности]: ../app-service/app-service-authentication-overview.md
+[Быстрый запуск проверки подлинности]: app-service-mobile-auth.md
 
-[портале Azure]: https://portal.azure.com/
-[OData]: http://www.odata.org
+[портал Azure]: https://portal.azure.com/
+[OData]: https://www.odata.org
 [Promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [basicapp sample on GitHub]: https://github.com/azure/azure-mobile-apps-node/tree/master/samples/basic-app
 [todo sample on GitHub]: https://github.com/azure/azure-mobile-apps-node/tree/master/samples/todo
@@ -175,6 +175,6 @@ ms.locfileid: "32154551"
 [QueryJS]: https://github.com/Azure/queryjs
 [Node.js Tools 1.1 for Visual Studio]: https://github.com/Microsoft/nodejstools/releases/tag/v1.1-RC.2.1
 [mssql Node.js package]: https://www.npmjs.com/package/mssql
-[Microsoft SQL Server 2014 Express]: http://www.microsoft.com/en-us/server-cloud/Products/sql-server-editions/sql-server-express.aspx
-[ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
+[Microsoft SQL Server 2014 Express]: https://www.microsoft.com/en-us/server-cloud/Products/sql-server-editions/sql-server-express.aspx
+[ExpressJS Middleware]: https://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston

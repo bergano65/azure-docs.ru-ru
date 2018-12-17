@@ -10,17 +10,15 @@ ms.assetid: ''
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
-ms.component: ''
-ms.openlocfilehash: 9729c7313f275201fc61bb5c7552066eecb13373
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: f68e2d9c303b6df0d4a2a355dd9d41ac1616be9f
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637989"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53185976"
 ---
 # <a name="collect-log-data-with-the-azure-log-analytics-agent"></a>Сбор данных журнала с помощью агента Azure Log Analytics
 
@@ -36,7 +34,7 @@ ms.locfileid: "52637989"
 
 Этот агент для Linux и Windows обменивается исходящими данными со службой Log Analytics через TCP-порт 443. Если компьютер подключен к брандмауэру или прокси-серверу для обмена данными через Интернет, ознакомьтесь с предварительными требованиями ниже, чтобы должным образом настроить сеть. Если политики ИТ-безопасности запрещают подключение компьютеров в сети к Интернету, вы можете настроить [шлюз Log Analytics](gateway.md), а затем настроить агент для подключения к Log Analytics через шлюз. После этого агент сможет получать сведения о конфигурации и отправлять данные, которые зависят от правил сбора и включенных решений мониторинга. 
 
-Компьютер, отслеживаемый решением System Center Operations Manager 2012 R2 или более поздней версии, может использоваться как многосетевой. С помощью службы Log Analytics будет выполняться сбор данных и их пересылка в службу, а компьютер по-прежнему будет отслеживаться решением [Operations Manager](../../log-analytics/log-analytics-om-agents.md). Компьютеры Linux, отслеживаемые группой управления Operations Manager, интегрированной с Log Analytics, не получают конфигурацию для источников данных. Они пересылают собранные данные через группы управления. Агент для Windows может отправлять отчет в четыре рабочих области Log Analytics, а агент для Linux поддерживает отчетность только для одной рабочей области.  
+Компьютер, отслеживаемый решением System Center Operations Manager 2012 R2 или более поздней версии, может использоваться как многосетевой. С помощью службы Log Analytics будет выполняться сбор данных и их пересылка в службу, а компьютер по-прежнему будет отслеживаться решением [Operations Manager](../../azure-monitor/platform/om-agents.md). Компьютеры Linux, отслеживаемые группой управления Operations Manager, интегрированной с Log Analytics, не получают конфигурацию для источников данных. Они пересылают собранные данные через группы управления. Агент для Windows может отправлять отчет в четыре рабочих области Log Analytics, а агент для Linux поддерживает отчетность только для одной рабочей области.  
 
 Агент для Linux и Windows предназначен не только для подключения к Log Analytics, в нем также поддерживается подключение к службе автоматизации Azure для размещения гибридной рабочей роли runbook и других служб (например, [Отслеживание изменений](../../automation/automation-change-tracking.md) и [Управление обновлениями](../../automation/automation-update-management.md)). Дополнительные сведения о гибридной рабочей роли Runbook см. в разделе [Общие сведения об архитектуре автоматизации](../../automation/automation-hybrid-runbook-worker.md).  
 
@@ -73,7 +71,7 @@ ms.locfileid: "52637989"
 >
 
 ## <a name="tls-12-protocol"></a>Протокол TLS 1.2
-Чтобы обеспечить безопасность данных, передаваемых в передаче в Log Analytics, мы настоятельно рекомендуем настроить агент на использование протокола TLS как минимум версии 1.2. Более старые версии протоколов TLS/SSL оказались уязвимы. Хотя они все еще используются для обеспечения обратной совместимости, применять их **не рекомендуется**.  См. дополнительные сведения о [безопасной отправке данных с помощью TLS 1.2](../../log-analytics/log-analytics-data-security.md#sending-data-securely-using-tls-12). 
+Чтобы обеспечить безопасность данных, передаваемых в передаче в Log Analytics, мы настоятельно рекомендуем настроить агент на использование протокола TLS как минимум версии 1.2. Более старые версии протоколов TLS/SSL оказались уязвимы. Хотя они все еще используются для обеспечения обратной совместимости, применять их **не рекомендуется**.  См. дополнительные сведения о [безопасной отправке данных с помощью TLS 1.2](../../azure-monitor/platform/data-security.md#sending-data-securely-using-tls-12). 
 
 ## <a name="network-firewall-requirements"></a>Требования к брандмауэру в сети
 Ниже приводятся сведения о конфигурации прокси-сервера и брандмауэра, необходимые для взаимодействия агента Windows и Linux с Log Analytics.  
@@ -115,15 +113,15 @@ ms.locfileid: "52637989"
 
 |Источник | Метод | ОПИСАНИЕ|
 |-------|-------------|-------------|
-|Azure| Расширение виртуальной машины Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) или [Linux](../../virtual-machines/extensions/oms-linux.md) с использованием Azure CLI или шаблона Azure Resource Manager<br>- [Вручную с помощью портала Azure](../../log-analytics/log-analytics-quick-collect-azurevm.md?toc=/azure/azure-monitor/toc.json). | Это расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует элементы в существующей рабочей области Azure Monitor.|
+|Azure| Расширение виртуальной машины Log Analytics для [Windows](../../virtual-machines/extensions/oms-windows.md) или [Linux](../../virtual-machines/extensions/oms-linux.md) с использованием Azure CLI или шаблона Azure Resource Manager<br>- [Вручную с помощью портала Azure](../../azure-monitor/learn/quick-collect-azurevm.md?toc=/azure/azure-monitor/toc.json). | Это расширение устанавливает агент Log Analytics на виртуальных машинах Azure и регистрирует элементы в существующей рабочей области Azure Monitor.|
 | Гибридные компьютеры Windows|- [Установка вручную](agent-windows.md)<br>- [DSC службы автоматизации Azure](agent-windows.md#install-the-agent-using-dsc-in-azure-automation)<br>- [Шаблон Resource Manager с Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates/tree/master/MicrosoftMonitoringAgent-ext-win) |Установка агента Microsoft Monitoring Agent из командной строки или автоматически, например с помощью DSC службы автоматизации Azure, [System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/deploy-applications) или шаблона Azure Resource Manager, если Microsoft Azure Stack уже развернут в центре обработки данных.| 
-| Гибридные компьютеры Linux| [Установка вручную](../../log-analytics/log-analytics-quick-collect-linux-computer.md)|Установка агента для Linux путем вызова сценария-оболочки, размещенного в GitHub. | 
-| System Center Operations Manager|[Интеграция Operations Manager с Log Analytics](../../log-analytics/log-analytics-om-agents.md) | Настройка интеграции между Operations Manager и Log Analytics для пересылки отчетов о собранных данных с компьютеров Linux и Windows в группу управления.|  
+| Гибридные компьютеры Linux| [Установка вручную](../../azure-monitor/learn/quick-collect-linux-computer.md)|Установка агента для Linux путем вызова сценария-оболочки, размещенного в GitHub. | 
+| System Center Operations Manager|[Интеграция Operations Manager с Log Analytics](../../azure-monitor/platform/om-agents.md) | Настройка интеграции между Operations Manager и Log Analytics для пересылки отчетов о собранных данных с компьютеров Linux и Windows в группу управления.|  
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Дополнительные сведения об источниках данных, доступных для сбора данных из операционных систем Windows или Linux, см. в статье [Data sources in Log Analytics](../../azure-monitor/platform/agent-data-sources.md) (Источники данных в Log Analytics). 
 
-* Узнайте больше о [запросах журнала](../../log-analytics/log-analytics-queries.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 
+* Узнайте больше о [запросах журнала](../../azure-monitor/log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 
 
 * Узнайте больше о [решениях мониторинга](../../azure-monitor/insights/solutions.md), которые расширяют функции службы Azure Monitor и собирают данные в ее рабочей области.

@@ -9,16 +9,15 @@ ms.assetid: 0b2deb30-6ea8-4bc4-8ed0-26765b85149f
 ms.service: application-insights
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: mbullwin
-ms.openlocfilehash: 17a0b36fffb14f423aba3dd02b5b42d44933309c
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 00af4cc67dc7490727af46e12c387fb0f147371d
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52165396"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53339847"
 ---
 # <a name="monitor-azure-web-app-performance"></a>Мониторинг производительности веб-приложения Azure
 На [портале Azure](https://portal.azure.com) можно настроить мониторинг производительности [веб-приложений Azure](../app-service/app-service-web-overview.md). [Azure Application Insights](app-insights-overview.md) инструментируют ваше приложение для отправки данных телеметрии о действиях в службу Application Insights, где эти данные хранятся и анализируются. В этой службе диаграммы метрик и инструменты поиска могут использоваться для диагностики неисправностей, улучшения производительности и анализа использования приложения.
@@ -100,9 +99,9 @@ ms.locfileid: "52165396"
 ## <a name="next-steps"></a>Дополнительная информация
 * [Запуск профилировщика в живом приложении](app-insights-profiler.md).
 * [Функции Azure.](https://github.com/christopheranderson/azure-functions-app-insights-sample) Отслеживайте функции Azure с помощью Application Insights.
-* [Включите отправку данных диагностики Azure](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md) в Application Insights.
+* [Включите отправку данных диагностики Azure](../azure-monitor/platform/diagnostics-extension-to-application-insights.md) в Application Insights.
 * [Отслеживайте метрики состояния службы](../azure-monitor/platform/data-collection.md), чтобы убедиться, что служба доступна и отвечает на запросы.
-* [Получайте уведомления](../monitoring-and-diagnostics/monitoring-overview-alerts.md) при возникновении операционных событий или превышении пороговых значений метрик.
+* [Получайте уведомления](../azure-monitor/platform/alerts-overview.md) при возникновении операционных событий или превышении пороговых значений метрик.
 * Используйте [расширение Application Insights для приложений JavaScript и веб-страниц](app-insights-javascript.md), чтобы получать данные телеметрии клиентов из браузеров, которые используются для открытия веб-страницы.
 * [Настройте веб-тесты доступности](app-insights-monitor-web-app-availability.md), чтобы получать уведомления о сбоях в работе сайта.
 

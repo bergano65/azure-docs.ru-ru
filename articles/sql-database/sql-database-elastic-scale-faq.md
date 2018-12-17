@@ -3,7 +3,7 @@ title: Часто задаваемые вопросы об эластичном 
 description: Часто задаваемые вопросы об эластичном масштабировании базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
-ms.subservice: elastic-scale
+ms.subservice: scale-out
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 10/05/2018
-ms.openlocfilehash: 52f507d8040f6ad628f7427253ce040ac69978ef
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: a8a26a0a273c8e3cf1880ce277c2d4b4241e35ee
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51250974"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52874742"
 ---
 # <a name="elastic-database-tools-frequently-asked-questions-faq"></a>Часто задаваемые вопросы об инструментах эластичных баз данных
 
@@ -55,6 +55,6 @@ ms.locfileid: "51250974"
 
 #### <a name="does-the-split-merge-tool-provision-or-delete-a-database-during-a-split-or-merge-operation"></a>Подготавливает (или удаляет) ли инструмент разбиения и объединения базу данных в процессе разбиения или объединения?
 
-Нет. Для выполнения операций **разбиения** целевая база данных должна существовать в пределах соответствующей схемы и быть зарегистрированной в диспетчере сопоставления сегментов.  Для выполнения операций **объединения** необходимо удалить сегмент из диспетчера сопоставления сегментов, а затем удалить базу данных.
+ Нет. Для выполнения операций **разбиения** целевая база данных должна существовать в пределах соответствующей схемы и быть зарегистрированной в диспетчере сопоставления сегментов.  Для выполнения операций **объединения** необходимо удалить сегмент из диспетчера сопоставления сегментов, а затем удалить базу данных.
 
 [!INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]

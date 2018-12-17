@@ -5,9 +5,8 @@ keywords: машинное обучение Python, pandas, python pandas, сц�
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: ee9eb764-0d3e-4104-a797-19fc29345d39
 ms.service: machine-learning
@@ -17,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
-ms.openlocfilehash: 958dd91277a81a9082a4149d2b0026fc11bf882a
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: f0fa2401e37e15137e9d5387d1395baf64b0fe61
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317591"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53274077"
 ---
 # <a name="execute-python-machine-learning-scripts-in-azure-machine-learning-studio"></a>Выполнение сценариев Python в Студии машинного обучения Azure
 
@@ -52,7 +51,7 @@ Python используется на всех этапах рабочего пр
 
 Студия машинного обучения Azure позволяет внедрять сценарии Python в различных частях эксперимента машинного обучения, а также легко опубликовывать их в качестве веб-служб в Microsoft Azure.
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 
 ## <a name="design-principles-of-python-scripts-in-machine-learning"></a>Принципы проектирования сценариев Python в машинном обучении
