@@ -44,6 +44,19 @@ items:
     href: https://azure.microsoft.com/resources/samples/?sort=0&service=azure-resource-manager
 - name: Основные понятия
   items:
+  - name: Структура шаблона
+    href: resource-group-authoring-templates.md
+    items:
+    - name: Параметры
+      href: resource-manager-templates-parameters.md
+    - name: Переменные
+      href: resource-manager-templates-variables.md
+    - name: Функции Azure
+      href: resource-group-authoring-templates.md#functions
+    - name: Ресурсы
+      href: resource-manager-templates-resources.md
+    - name: outputs
+      href: resource-manager-templates-outputs.md
   - name: Поставщики и типы ресурсов
     href: resource-manager-supported-services.md
   - name: Группы управления
@@ -65,65 +78,50 @@ items:
   items:
   - name: Создание шаблонов
     items:
-    - name: Разделы шаблона
-      href: resource-group-authoring-templates.md
-      items:
-      - name: Параметры
-        href: resource-manager-templates-parameters.md
-      - name: Переменные
-        href: resource-manager-templates-variables.md
-      - name: Функции Azure
-        href: resource-group-authoring-templates.md#functions
-      - name: Ресурсы
-        href: resource-manager-templates-resources.md
-      - name: outputs
-        href: resource-manager-templates-outputs.md
-    - name: Связанные и вложенные шаблоны
-      href: resource-group-linked-templates.md
-    - name: Зависимости ресурсов
+    - name: Создание групп ресурсов и ресурсов в подписке
+      href: deploy-to-subscription.md
+    - name: Определение зависимостей ресурсов
       href: resource-group-define-dependencies.md
+    - name: Разбиение шаблонов на модули
+      href: resource-group-linked-templates.md
+    - name: Управление секретами
+      href: resource-manager-keyvault-parameter.md
     - name: Развертывание нескольких экземпляров
       href: resource-group-create-multiple.md
-    - name: Создание группы ресурсов в шаблоне
-      href: create-resource-group-in-template.md
-    - name: Создание ресурсов в подписке
-      href: deploy-to-subscription.md
-    - name: Обновление ресурса
+    - name: Использование расширений шаблонов
+      href: resource-manager-use-extensions.md
+    - name: Обновление ресурсов
       href: /azure/architecture/building-blocks/extending-templates/update-resource
-  - name: Развертывание
+  - name: Развертывание шаблонов
     items:
-    - name: Azure PowerShell
-      items:
-      - name: Развертывание шаблона
-        href: resource-group-template-deploy.md
-      - name: Развертывание частного шаблона с помощью маркера SAS
-        href: resource-manager-powershell-sas-token.md
-      - name: Экспорт шаблона и повторное развертывание
-        href: resource-manager-export-template-powershell.md
-    - name: Инфраструктура CLI Azure
-      items:
-      - name: Развертывание шаблона
-        href: resource-group-template-deploy-cli.md
-      - name: Развертывание частного шаблона с помощью маркера SAS
-        href: resource-manager-cli-sas-token.md
-      - name: Экспорт шаблона и повторное развертывание
-        href: resource-manager-export-template-cli.md
-    - name: Портал Azure
-      items:
-      - name: Развертывание ресурсов
-        href: resource-group-template-deploy-portal.md
-      - name: Экспорт шаблона
-        href: resource-manager-export-template.md
-    - name: REST API
+    - name: Развертывание с помощью портала
+      href: resource-group-template-deploy-portal.md
+    - name: Развертывание с помощью Azure CLI
+      href: resource-group-template-deploy-cli.md
+    - name: Развертывание с помощью Azure PowerShell
+      href: resource-group-template-deploy.md
+    - name: Развертывание с помощью REST API
       href: resource-group-template-deploy-rest.md
-    - name: Несколько подписок или групп ресурсов
+    - name: Экспорт шаблонов
+      items:
+      - name: С помощью портала
+        href: resource-manager-export-template.md
+      - name: Использование Azure CLI
+        href: resource-manager-export-template-cli.md
+      - name: Использование Azure PowerShell
+        href: resource-manager-export-template-powershell.md
+    - name: Обеспечение защиты шаблонов с помощью маркера SAS
+      items:
+      - name: Использование Azure CLI
+        href: resource-manager-cli-sas-token.md
+      - name: с использованием PowerShell.
+        href: resource-manager-powershell-sas-token.md
+    - name: Развертывание нескольких подписок или групп ресурсов
       href: resource-manager-cross-resource-group-deployment.md
     - name: Непрерывная интеграция с Azure DevOps Services
       href: ../vs-azure-tools-resource-groups-ci-in-vsts.md
       maintainContext: true
-    - name: Передача безопасных значений в процессе развертывания
-      href: resource-manager-keyvault-parameter.md
-  - name: управление
+  - name: Управление шаблонами
     items:
     - name: Azure PowerShell
       href: powershell-azure-resource-manager.md
@@ -146,13 +144,13 @@ items:
       href: resource-manager-api-authentication.md
     - name: Блокировка ресурсов
       href: resource-group-lock-resources.md
-  - name: Аудит
+  - name: Аудит развертываний
     items:
     - name: Просмотр журналов действий
       href: resource-group-audit.md
     - name: Просмотр операций развертывания
       href: resource-manager-deployment-operations.md
-  - name: Устранение неполадок
+  - name: Устранение неполадок развертываний
     items:
     - name: Устранение ошибок развертывания
       href: resource-manager-common-deployment-errors.md
@@ -237,9 +235,9 @@ items:
     href: resource-manager-personal-data.md
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=azure-resource-manager
-ms.openlocfilehash: 47af6826974759a1b0dfea7949429c5acaca004d
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 166a23d480db7dfda7a78a5a63e7717b5e721bb9
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53252343"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53436795"

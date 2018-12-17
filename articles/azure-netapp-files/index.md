@@ -11,19 +11,19 @@ ms.devlang: na
 ms.topic: landing-page
 ms.date: 04/23/2018
 ms.author: b-juche
-ms.openlocfilehash: 6869d60bfadbeb3f3ed9c7b67d3560e49c73e65b
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 23ec6d3a91dea91fba8565280bcce4e9385f49ae
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39010248"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413247"
 ---
 # <a name="azure-netapp-files-documentation"></a>Документация по Azure NetApp Files
 
 Узнайте, как использовать Azure NetApp Files для создания и администрирования учетных записей, пулов емкости и томов, настройки политики экспорта, подключения тома для виртуальной машины и управления моментальными снимками.
 
 > [!IMPORTANT] 
-> Для выполнения всех задач, описанных в этой документации, требуется участие в программе использования общедоступной предварительной версии и добавление в список разрешений для доступа к поставщику ресурсов Microsoft.NetApp Azure. Дополнительные сведения об участии в этой программе, см. на [страницы регистрации для использования общедоступной предварительной версии Azure NetApp Files](https://aka.ms/nfspublicpreview). 
+> Для выполнения всех задач, описанных в этой документации, требуется участие в программе использования общедоступной предварительной версии и добавление в список разрешений для доступа к поставщику ресурсов Microsoft.NetApp Azure. Сведения о том, как отправить запрос на участие в программе использования общедоступной предварительной версии, см. в статье о [регистрации в службе Azure NetApp Files](azure-netapp-files-register.md). 
 
 <ul class="panelContent cardsFTitle">
     <li>
