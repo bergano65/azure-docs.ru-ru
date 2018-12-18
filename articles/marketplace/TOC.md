@@ -91,7 +91,7 @@
 #### [Вкладка "Тестовый выпуск"](./cloud-partner-portal/azure-applications/cpp-testdrive-tab.md)
 #### [Вкладка Marketplace](./cloud-partner-portal/azure-applications/cpp-marketplace-tab.md)
 #### [Вкладка "Поддержка"](./cloud-partner-portal/azure-applications/cpp-support-tab.md)
-<!-- ### [Create technical assets](./cloud-partner-portal/azure-applications/cpp-create-technical-assets.md) -->
+### [Создание технических средств](./cloud-partner-portal/azure-applications/cpp-create-technical-assets.md)
 ### [Публикация предложения приложения Azure](./cloud-partner-portal/azure-applications/cpp-publish-offer.md)
 ### [Обновление имеющегося предложения](./cloud-partner-portal/azure-applications/cpp-update-existing-offer.md)
 

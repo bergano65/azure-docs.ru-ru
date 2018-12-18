@@ -80,7 +80,7 @@ items:
       href: consistency-levels.md
     - name: Выбор правильного уровня согласованности
       href: consistency-levels-choosing.md
-    - name: Уровни согласованности и API для Azure Cosmos DB
+    - name: Уровни согласованности и API Cosmos DB
       href: consistency-levels-across-apis.md
     - name: Компромиссы согласованности, доступности и производительности
       href: consistency-levels-tradeoffs.md
@@ -144,6 +144,12 @@ items:
       href: unique-keys.md
     - name: Транзакции и оптимистическая блокировка
       href: database-transactions-optimistic-concurrency.md
+  - name: Программирование на стороне сервера
+    items:
+    - name: Хранимые процедуры, триггеры и определяемые пользователем функции
+      href: stored-procedures-triggers-udfs.md
+    - name: API запросов JavaScript
+      href: javascript-query-api.md
   - name: Оптимизация затрат на Azure Cosmos DB
     items:
     - name: Модель ценообразования
@@ -178,8 +184,6 @@ items:
       href: firewall-support.md
     - name: Доступ из виртуальных сетей
       href: vnet-service-endpoint.md
-    - name: Поддержка Key Vault
-      href: access-secrets-from-keyvault.md
   - name: Готовность к работе в масштабах предприятия
     items:
     - name: Оперативное резервное копирование и восстановление
@@ -250,8 +254,14 @@ items:
       items:
       - name: Настройка производительности запросов
         href: sql-api-query-metrics.md
-      - name: Хранимые процедуры, триггеры и определяемые пользователем функции
-        href: programming.md
+      - name: Программирование на стороне сервера
+        items:
+        - name: Запись хранимых процедур, триггеров и определяемых пользователем функций
+          href: how-to-write-stored-procedures-triggers-udfs.md
+        - name: Запись хранимых процедур и триггеров с помощью API запросов JavaScript
+          href: how-to-write-javascript-query-api.md
+        - name: Использование хранимых процедур, триггеров и определяемых пользователем функций
+          href: how-to-use-stored-procedures-triggers-udfs.md
       - name: Типы данных
         items:
         - name: Datetime
@@ -308,7 +318,7 @@ items:
             href: tutorial-develop-mongodb-nodejs-part3.md
           - name: Часть 4. Создание учетной записи
             href: tutorial-develop-mongodb-nodejs-part4.md
-          - name: Шаг 5. Подключение к Azure Cosmos DB
+          - name: Часть 5. Подключение к базе данных Cosmos DB
             href: tutorial-develop-mongodb-nodejs-part5.md
           - name: Часть 6. Выполнение операций CRUD
             href: tutorial-develop-mongodb-nodejs-part6.md
@@ -479,6 +489,8 @@ items:
       href: how-to-configure-vnet-service-endpoint.md
     - name: Настройка предоставления общего доступа к ресурсам (CORS)
       href: how-to-configure-cross-origin-resource-sharing.md
+    - name: Защита с помощью Key Vault
+      href: access-secrets-from-keyvault.md
   - name: Готовность к работе в масштабах предприятия
     items:
     - name: Восстановление данных из резервной копии
@@ -529,7 +541,7 @@ items:
         href: performance-testing.md
     - name: Экономичные операции чтения и записи
       href: key-value-store-cost.md
-  - name: Визуализация данных Azure Cosmos DB
+  - name: Визуализация данных Cosmos DB
     items:
     - name: С помощью Power BI
       href: powerbi-visualize.md
@@ -603,9 +615,9 @@ items:
       href: use-cases.md
     - name: Приложения социальных сетей
       href: social-media-apps.md
-ms.openlocfilehash: d31364cb9d458e54ae407d10fd88d8db4e9f457f
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 34fc77f13f0c0bd394d96e19b86a1632ce2846b1
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 12/14/2018
-ms.locfileid: "53384672"
+ms.locfileid: "53410114"
