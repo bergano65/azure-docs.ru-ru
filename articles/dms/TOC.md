@@ -19,6 +19,7 @@
 ## [Перенос данных из SQL Server в базу данных SQL Azure с помощью PowerShell](howto-sql-server-to-azure-sql-powershell.md)
 ## [Перенос данных из SQL Server в управляемый экземпляр базы данных SQL Azure с помощью PowerShell](howto-sql-server-to-azure-sql-mi-powershell.md)
 ## [Монитор активности миграции](how-to-monitor-migration-activity.md)
+## [Перенос пакетов служб SSI в Azure](how-to-migrate-ssis-packages.md)
 
 # Ресурсы
 ## [Состояние сценария миграции базы данных](resource-scenario-status.md)

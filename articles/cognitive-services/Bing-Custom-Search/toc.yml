@@ -3,26 +3,30 @@ items:
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое "Пользовательский поиск Bing"?
+  - name: Знакомство с API пользовательского поиска Bing
     href: overview.md
   expanded: true
-- name: Краткие руководства по REST API
+- name: Быстрое начало работы
   items:
-  - name: Создание первого экземпляра
+  - name: Создание экземпляра пользовательского поиска
     href: quick-start.md
-  - name: C#
-    href: call-endpoint-csharp.md
-  - name: Java
-    href: call-endpoint-java.md
-  - name: Node.js
-    href: call-endpoint-nodejs.md
-  - name: Python
-    href: call-endpoint-python.md
+  - name: Получить результаты поиска из экземпляра
+    items:
+    - name: REST API
+      items:
+      - name: Использование C#
+        href: call-endpoint-csharp.md
+      - name: Использование Java
+        href: call-endpoint-java.md
+      - name: Использование Node.js
+        href: call-endpoint-nodejs.md
+      - name: Использование Python
+        href: call-endpoint-python.md
+    - name: SDK
+      items:
+      - name: Использование C#
+        href: sdk-csharp-quick-start.md
   expanded: true
-- name: Краткие руководства по пакетам SDK
-  items:
-  - name: Краткое руководство по пакету SDK для C#
-    href: sdk-csharp-quick-start.md
 - name: Учебники
   items:
   - name: Создание веб-страницы пользовательского поиска
@@ -33,23 +37,23 @@ items:
     href: https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Custom+Search
 - name: Практические руководства
   items:
-  - name: Настройка Пользовательского поиска
+  - name: Настройка режима пользовательского поиска
     href: define-your-custom-view.md
-  - name: Вызов Пользовательского поиска
+  - name: Вызов экземпляра пользовательского поиска
     href: search-your-custom-view.md
-  - name: Настройка размещенного пользовательского интерфейса
+  - name: Настройка и интеграция размещенного пользовательского интерфейса
     href: hosted-ui.md
-  - name: Совместное использование Пользовательского поиска
+  - name: Совместное использование экземпляра пользовательского поиска
     href: share-your-custom-search.md
-  - name: Получение изображений из своего экземпляра
+  - name: Получение изображений из экземпляра поиска
     href: get-images-from-instance.md
-  - name: Получение видео из своего экземпляра
+  - name: Получение видео из экземпляра поиска
     href: get-videos-from-instance.md
   - name: Настройка пользовательского автозаполнения
     href: define-custom-suggestions.md
   - name: Обработка выделения совпадений
     href: hit-highlighting.md
-  - name: Отображение веб-страниц на страницах
+  - name: Просмотр результатов поиска веб-страниц
     href: page-webpages.md
 - name: Справочные материалы
   items:
@@ -85,9 +89,9 @@ items:
     href: endpoint-custom.md
   - name: Поддержка языков и региональных параметров
     href: language-support.md
-ms.openlocfilehash: 62392b7ff226072108c61f10b3f0519677aaba6b
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 81d0d94efc519fa241ab36979506b2baddf50d91
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47432004"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555871"

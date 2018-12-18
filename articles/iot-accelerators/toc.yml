@@ -2,24 +2,26 @@ items:
 - name: Принципы работы Azure IoT
   href: ../iot-fundamentals/index.yml
 - name: Документация по акселераторам решений Интернета вещей
-  href: index.yml
+  href: index.md
 - name: Обзор
   items:
   - name: Что такое акселераторы решений Интернета вещей
     href: about-iot-accelerators.md
-- name: Быстрое начало работы
+  - name: AzureIoTSolution.com
+    href: iot-accelerators-permissions.md
+  expanded: true
+- name: Удаленный мониторинг
   items:
-  - name: Пробное использование решения для удаленного мониторинга
-    href: quickstart-remote-monitoring-deploy.md
-  - name: Пробное использование решения подключенной фабрики
-    href: quickstart-connected-factory-deploy.md
-  - name: Пробное использование решения прогнозного обслуживания
-    href: quickstart-predictive-maintenance-deploy.md
-  - name: Пробное использование симулятора устройств
-    href: quickstart-device-simulation-deploy.md
-- name: Учебники
-  items:
-  - name: Удаленный мониторинг
+  - name: Обзор
+    href: iot-accelerators-remote-monitoring-sample-walkthrough.md
+    items:
+    - name: Выбор архитектуры
+      href: iot-accelerators-remote-monitoring-architectural-choices.md
+  - name: Быстрое начало работы
+    items:
+    - name: Пробное использование решения для удаленного мониторинга
+      href: quickstart-remote-monitoring-deploy.md
+  - name: Учебники
     items:
     - name: Мониторинг устройств Интернета вещей
       href: iot-accelerators-remote-monitoring-monitor.md
@@ -35,38 +37,16 @@ items:
       href: iot-accelerators-remote-monitoring-bulk-configuration-update.md
     - name: Обнаружение аномальных действий на граничном устройстве
       href: iot-accelerators-remote-monitoring-edge.md
-  - name: Имитация устройства
+  - name: Практические руководства
     items:
-    - name: Создание и запуск модели
-      href: iot-accelerators-device-simulation-create-simulation.md
-    - name: Создание пользовательского имитированного устройства
-      href: iot-accelerators-device-simulation-create-custom-device.md
-- name: Основные понятия
-  items:
-  - name: Удаленный мониторинг
-    href: iot-accelerators-remote-monitoring-sample-walkthrough.md
-    items:
-    - name: Выбор архитектуры
-      href: iot-accelerators-remote-monitoring-architectural-choices.md
-    - name: Схема модели устройства
-      href: iot-accelerators-remote-monitoring-device-schema.md
-    - name: Поведение модели устройства
-      href: iot-accelerators-remote-monitoring-device-behavior.md
-  - name: Прогнозное обслуживание
-    href: iot-accelerators-predictive-walkthrough.md
-  - name: Подключенная фабрика
-    href: iot-accelerators-connected-factory-features.md
-    items:
-    - name: Архитектура
-      href: iot-accelerators-connected-factory-sample-walkthrough.md
-  - name: Имитация устройства
-    href: iot-accelerators-device-simulation-overview.md
-  - name: Разрешения на сайте azureiotsolutions.com
-    href: iot-accelerators-permissions.md
-- name: Практические руководства
-  items:
-  - name: Удаленный мониторинг
-    items:
+    - name: Развертывание решения
+      items:
+      - name: Развертывание с помощью CLI
+        href: iot-accelerators-remote-monitoring-deploy-cli.md
+      - name: Развертывание в локальной среде с помощью Visual Studio
+        href: iot-accelerators-remote-monitoring-deploy-local.md
+      - name: Развертывание в локальной среде с помощью Docker
+        href: iot-accelerators-remote-monitoring-deploy-local-docker.md
     - name: Подключение физического устройства
       items:
       - name: Использование C в Windows
@@ -81,18 +61,12 @@ items:
         href: iot-accelerators-connecting-pi-node.md
       - name: MXChip IoT DevKit
         href: iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoringv2.md
-    - name: Добавление устройства IoT Edge
-      href: iot-accelerators-remote-monitoring-add-edge-device.md
-    - name: Импортирование пакета IoT Edge
-      href: iot-accelerators-remote-monitoring-import-edge-package.md
-    - name: Импорт пакета автоматического управления устройствами
-      href: iot-accelerators-remote-monitoring-import-adm-package.md
-    - name: Интеграция данных SIM-карты
-      href: iot-accelerators-remote-monitoring-telefonica-sim.md
-    - name: Создайте виртуальное устройство.
-      href: iot-accelerators-remote-monitoring-create-simulated-device.md
-    - name: Развертывание имитированного устройства
-      href: iot-accelerators-remote-monitoring-deploy-simulated-device.md
+    - name: Моделирование устройства
+      items:
+      - name: Создайте виртуальное устройство.
+        href: iot-accelerators-remote-monitoring-create-simulated-device.md
+      - name: Развертывание имитированного устройства
+        href: iot-accelerators-remote-monitoring-deploy-simulated-device.md
     - name: Настройка пользовательского интерфейса
       href: iot-accelerators-remote-monitoring-customize.md
       items:
@@ -108,28 +82,62 @@ items:
         href: iot-accelerators-remote-monitoring-customize-panel.md
     - name: Настройка и повторное развертывание микрослужбы
       href: iot-accelerators-microservices-example.md
-    - name: Развертывание с помощью CLI
-      href: iot-accelerators-remote-monitoring-deploy-cli.md
-    - name: Развертывание в локальной среде
-      href: iot-accelerators-remote-monitoring-deploy-local.md
+    - name: Импорт пакета конфигурации устройства
+      href: iot-accelerators-remote-monitoring-import-adm-package.md
+    - name: Подключение устройств IoT Edge
       items:
-      - name: Visual Studio
-        href: iot-accelerators-remote-monitoring-deploy-local.md
-      - name: Docker
-        href: iot-accelerators-remote-monitoring-deploy-local-docker.md
-    - name: Действия электронной почты
+      - name: Добавление устройства IoT Edge
+        href: iot-accelerators-remote-monitoring-add-edge-device.md
+      - name: Импортирование пакета IoT Edge
+        href: iot-accelerators-remote-monitoring-import-edge-package.md
+    - name: Настройка действий электронной почты
       href: iot-accelerators-remote-monitoring-email-actions.md
-    - name: Визуализация данных телеметрии с помощью Power BI
-      href: iot-accelerators-integrate-data-powerbi.md
-    - name: Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
-      href: iot-accelerators-remote-monitoring-integrate-time-series-insights.md
-    - name: Анализ данных телеметрии с помощью Data Lake
-      href: iot-accelerators-integrate-data-lake.md
-    - name: Настройка управления доступом на основе ролей
+    - name: Настройка элементов управления доступом
       href: iot-accelerators-remote-monitoring-rbac.md
-    - name: Предоставление доступа к обозревателю телеметрии
-      href: iot-accelerators-remote-monitoring-rbac-tsi.md
-  - name: Подключенная фабрика
+    - name: Просмотр данных телеметрии
+      items:
+      - name: Визуализация данных телеметрии с помощью Power BI
+        href: iot-accelerators-integrate-data-powerbi.md
+      - name: Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
+        href: iot-accelerators-remote-monitoring-integrate-time-series-insights.md
+      - name: Анализ данных телеметрии с помощью Data Lake
+        href: iot-accelerators-integrate-data-lake.md
+      - name: Предоставление доступа к обозревателю телеметрии
+        href: iot-accelerators-remote-monitoring-rbac-tsi.md
+    - name: Интеграция данных SIM-карты
+      href: iot-accelerators-remote-monitoring-telefonica-sim.md
+  - name: Справочные материалы
+    items:
+    - name: Схема модели устройства
+      href: iot-accelerators-remote-monitoring-device-schema.md
+    - name: Поведение модели устройства
+      href: iot-accelerators-remote-monitoring-device-behavior.md
+  - name: Ресурсы
+    items:
+    - name: Справочник разработчика (.NET)
+      href: https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Reference-Guide
+    - name: Справочник разработчика (Java)
+      href: https://github.com/Azure/azure-iot-pcs-remote-monitoring-java/wiki/Developer-Reference-Guide
+    - name: Руководство по устранению неполадок для разработчиков
+      href: https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Troubleshooting-Guide
+    - name: Репозиторий GitHub (.NET)
+      href: https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet
+    - name: Репозиторий GitHub (Java)
+      href: https://github.com/Azure/azure-iot-pcs-remote-monitoring-java
+    - name: 'Удаленный мониторинг: вопросы и ответы'
+      href: iot-accelerators-faq-rm-v2.md
+- name: Подключенная фабрика
+  items:
+  - name: Обзор
+    href: iot-accelerators-connected-factory-features.md
+    items:
+    - name: Архитектура
+      href: iot-accelerators-connected-factory-sample-walkthrough.md
+  - name: Быстрое начало работы
+    items:
+    - name: Пробное использование решения подключенной фабрики
+      href: quickstart-connected-factory-deploy.md
+  - name: Практические руководства
     items:
     - name: Использование панели мониторинга
       href: iot-accelerators-connected-factory-dashboard.md
@@ -141,7 +149,27 @@ items:
       href: iot-accelerators-connected-factory-configure.md
     - name: Настройка акселератора решений
       href: iot-accelerators-connected-factory-customize.md
-  - name: Имитация устройства
+  - name: Ресурсы
+    items:
+    - name: Репозиторий GitHub
+      href: https://github.com/Azure/azure-iot-connected-factory
+    - name: 'Подключенная фабрика: вопросы и ответы'
+      href: iot-accelerators-faq-cf.md
+- name: Имитация устройства
+  items:
+  - name: Обзор
+    href: iot-accelerators-device-simulation-overview.md
+  - name: Быстрое начало работы
+    items:
+    - name: Пробное использование симулятора устройств
+      href: quickstart-device-simulation-deploy.md
+  - name: Учебники
+    items:
+    - name: Создание и запуск модели
+      href: iot-accelerators-device-simulation-create-simulation.md
+    - name: Создание пользовательского имитированного устройства
+      href: iot-accelerators-device-simulation-create-custom-device.md
+  - name: Практические руководства
     items:
     - name: Использование существующего Центра Интернета вещей
       href: iot-accelerators-device-simulation-choose-hub.md
@@ -153,28 +181,38 @@ items:
       href: iot-accelerators-device-simulation-protobuf.md
     - name: Развертывание пользовательского образа Docker
       href: iot-accelerators-device-simulation-deploy-image.md
-- name: Справочные материалы
-  items:
-  - name: Удаленный мониторинг
-    items:
-    - name: Справочник разработчика
-      href: https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Reference-Guide
-    - name: Руководство по устранению неполадок для разработчиков
-      href: https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet/wiki/Developer-Troubleshooting-Guide
-  - name: Имитация устройства
+  - name: Ресурсы
     items:
     - name: Справочник разработчика
       href: https://github.com/Azure/device-simulation-dotnet/wiki/Simulation-Service-Developer-Reference-Guide
-  - name: Безопасность
+    - name: Репозиторий GitHub
+      href: https://github.com/Azure/device-simulation-dotnet
+- name: Прогнозное обслуживание
+  items:
+  - name: Обзор
+    href: iot-accelerators-predictive-walkthrough.md
+  - name: Быстрое начало работы
     items:
-    - name: Архитектура безопасности
-      href: /azure/iot-fundamentals/iot-security-architecture?context=azure/iot-accelerators/rc/rc
-    - name: Рекомендации по обеспечению безопасности
-      href: /azure/iot-fundamentals/iot-security-best-practices?context=azure/iot-accelerators/rc/rc
-    - name: Защита развертывания IoT
-      href: /azure/iot-fundamentals/iot-security-deployment?context=azure/iot-accelerators/rc/rc
-    - name: Все аспекты безопасности
-      href: /azure/iot-fundamentals/iot-security-ground-up?context=azure/iot-accelerators/rc/rc
+    - name: Пробное использование решения прогнозного обслуживания
+      href: quickstart-predictive-maintenance-deploy.md
+  - name: Ресурсы
+    items:
+    - name: Репозиторий GitHub
+      href: https://github.com/Azure/azure-iot-predictive-maintenance
+- name: Эталонная архитектура
+  items:
+  - name: Обзор
+    href: iot-accelerators-architecture-overview.md
+  - name: Загрузка
+    href: https://aka.ms/iotrefarchitecture
+  - name: Варианты партнерских реализаций
+    items:
+    - name: Intel Connected Logistics Platform
+      href: https://www.azureiotsolutions.com/Accelerators#description/intel-connected-logistics-platform
+    - name: Edge Dynamometer Analysis
+      href: https://www.azureiotsolutions.com/Accelerators#description/edge-dynamometer-analysis
+    - name: Digital Signage Solution
+      href: https://www.azureiotsolutions.com/Accelerators#description/digital-signage-solution
 - name: Сопутствующие материалы
   items:
   - name: Решения
@@ -209,31 +247,17 @@ items:
     href: /azure/machine-learning/
 - name: Ресурсы
   items:
-  - name: Репозитории GitHub
-    items:
-    - name: Удаленный мониторинг (.NET)
-      href: https://github.com/Azure/azure-iot-pcs-remote-monitoring-dotnet
-    - name: Удаленный мониторинг (Java)
-      href: https://github.com/Azure/azure-iot-pcs-remote-monitoring-java
-    - name: Подключенная фабрика
-      href: https://github.com/Azure/azure-iot-connected-factory
-    - name: Прогнозное обслуживание
-      href: https://github.com/Azure/azure-iot-predictive-maintenance
-    - name: Имитация устройства
-      href: https://github.com/Azure/device-simulation-dotnet
   - name: Стратегия развития Azure
     href: https://azure.microsoft.com/roadmap/
   - name: Часто задаваемые вопросы
     href: iot-accelerators-faq.md
-  - name: 'Удаленный мониторинг: вопросы и ответы'
-    href: iot-accelerators-faq-rm-v2.md
-  - name: 'Подключенная фабрика: вопросы и ответы'
-    href: iot-accelerators-faq-cf.md
   - name: Переполнение стека
     href: https://stackoverflow.com/questions/tagged/azure-iot-suite
-ms.openlocfilehash: 87c98a22ae0f62908a0fff44921206a32b27e2c2
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+  - name: Удаленный мониторинг (версия 1)
+    href: https://docs.microsoft.com/previous-versions/azure/iot-suite/
+ms.openlocfilehash: 948cd45c2b971e2d743709b051eb5a36a7e818aa
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53340663"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53554968"

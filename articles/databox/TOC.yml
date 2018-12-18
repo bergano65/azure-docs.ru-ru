@@ -19,8 +19,14 @@ items:
         href: data-box-deploy-ordered.md
       - name: 2. Настройка
         href: data-box-deploy-set-up.md
-      - name: 3. Копирование данных
-        href: data-box-deploy-copy-data.md
+      - name: 3. Подключение и копирование
+        items:
+        - name: По SMB
+          href: data-box-deploy-copy-data.md
+        - name: Через NFS
+          href: data-box-deploy-copy-data-via-nfs.md
+        - name: Через REST
+          href: data-box-deploy-copy-data-via-rest.md
       - name: 4. Возврат, отправка, проверка
         href: data-box-deploy-picked-up.md
     - name: Основные понятия
@@ -28,7 +34,11 @@ items:
       - name: Руководство по безопасности
         href: data-box-safety.md
       - name: Обзор требований
-        href: data-box-system-requirements.md
+        items:
+        - name: Для Data Box
+          href: data-box-system-requirements.md
+        - name: Для хранилища BLOB-объектов службы Data Box
+          href: data-box-system-requirements-rest.md
       - name: Изучение ограничений
         href: data-box-limits.md
       - name: Проверка состояния защиты
@@ -98,9 +108,9 @@ items:
       href: https://azure.microsoft.com/pricing/details/storage/databox/
     - name: Цены на Диск Data Box
       href: https://azure.microsoft.com/pricing/details/storage/databox/disk/
-ms.openlocfilehash: bd23df1abd99ba3fd89a4b382c6c5f00c8b80f1f
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 4ca0a1e04f558396cb72b0617c9bee6349a0fe54
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50739198"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53540526"

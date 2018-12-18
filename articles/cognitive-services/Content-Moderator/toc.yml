@@ -20,6 +20,10 @@ items:
       items:
       - name: Анализ текстового содержимого
         href: text-moderation-quickstart-python.md
+- name: Учебники
+  items:
+  - name: Модерация изображений для электронной коммерции
+    href: ecommerce-retail-catalog-moderation.md
 - name: Основные понятия
   items:
   - name: Модерация изображений
@@ -102,8 +106,6 @@ items:
     items:
     - name: Модерация контента Facebook
       href: facebook-post-moderation.md
-    - name: Модерация изображений eCommerce
-      href: ecommerce-retail-catalog-moderation.md
     - name: Модерация видео и расшифровки
       href: video-transcript-moderation-review-tutorial-dotnet.md
   - name: Экспорт или удаление данных учетной записи
@@ -150,9 +152,9 @@ items:
     href: https://azure.microsoft.com/global-infrastructure/services/
   - name: Стратегия развития Azure
     href: https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services
-ms.openlocfilehash: 825aafe7980713fbb07499475cb4c8456873f1fe
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 15d3fb94c30783cd6a620b9c53ed2e31369e5d00
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53106181"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53540356"
