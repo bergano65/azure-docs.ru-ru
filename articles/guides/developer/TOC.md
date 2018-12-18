@@ -55,7 +55,7 @@
 ### [Не связанные с сервером приложения](https://docs.microsoft.com/azure/azure-functions/functions-reference)
 ### [Кластеры микрослужб](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal)
 ## Развертывание
-### [Веб-приложения и мобильные приложения: система управления версиями](https://docs.microsoft.com/azure/app-service/app-service-continuous-deployment)
+### [Веб-приложения и мобильные приложения: система управления версиями](https://docs.microsoft.com/azure/app-service/deploy-continuous-deployment)
 ### [Использование микрослужб локально](https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-with-a-local-cluster)
 ### [Виртуальные машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-manage-vm)
 ### [Виртуальные машины Windows](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-manage-vm)
@@ -75,7 +75,7 @@
 ## Безопасность
 ### [Мобильные приложения и веб-приложения](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl)
 
-## Архивация
+## Azure Backup
 ### [Мобильные приложения и веб-приложения](https://docs.microsoft.com/azure/app-service/web-sites-backup)
 ### [Виртуальные машины](https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction)
 
@@ -100,7 +100,7 @@
 ### [Python](http://azure-sdk-for-python.readthedocs.io/en/latest/)
 ### [Ruby](https://github.com/Azure/azure-sdk-for-ruby/blob/master/README.md)
 ## Интерфейсы командной строки
-### [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/)
+### [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/)
 ### [Azure PowerShell](https://docs.microsoft.com/powershell/)
 ## [Выставление счетов](https://docs.microsoft.com/azure/billing/billing-usage-rate-card-overview)
 
