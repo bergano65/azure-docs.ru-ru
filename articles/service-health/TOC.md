@@ -6,7 +6,7 @@
 ## [Что такое "Работоспособность ресурсов"?](resource-health-overview.md)
 # Практическое руководство
 ## [Настройка оповещений о событиях работоспособности служб](../azure-monitor/platform/alerts-activity-log-service-notifications.md?toc=%2fazure%2fservice-health%2ftoc.json)
-### [Просмотр уведомлений о работоспособности служб на портале Azure](../monitoring-and-diagnostics/monitoring-service-notifications.md?toc=%2fazure%2fservice-health%2ftoc.json)
+### [Просмотр уведомлений о работоспособности служб на портале Azure](../azure-monitor/platform/service-notifications.md?toc=%2fazure%2fservice-health%2ftoc.json)
 ## [Настройка уведомлений о работоспособности службы с использованием веб-перехватчика](service-health-alert-webhook-guide.md)
 ### [Настройка с помощью ServiceNow](service-health-alert-webhook-servicenow.md)
 ### [Настройка с помощью PagerDuty](service-health-alert-webhook-pagerduty.md)

@@ -26,18 +26,18 @@
 
 # Примеры
 ## Инфраструктура CLI Azure
-### [Веб-приложения](https://docs.microsoft.com/azure/app-service/app-service-cli-samples)
+### [Веб-приложения](https://docs.microsoft.com/azure/app-service/samples-cli)
 ### [Виртуальные машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/cli-samples)
 ### [Виртуальные машины Windows](https://docs.microsoft.com/azure/virtual-machines/windows/cli-samples)
 ## Azure PowerShell
-### [Веб-приложения](https://docs.microsoft.com/azure/app-service/app-service-powershell-samples)
+### [Веб-приложения](https://docs.microsoft.com/azure/app-service/samples-powershell)
 ### [Виртуальные машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/powershell-samples)
 ### [Виртуальные машины Windows](https://docs.microsoft.com/azure/virtual-machines/windows/powershell-samples)
 
 # Основные понятия
 ## [Выставление счетов и подписки](https://docs.microsoft.com/azure/billing/billing-getting-started)
 ## [Сравнение услуг размещения](https://docs.microsoft.com/azure/app-service/choose-web-site-cloud-service-vm)
-## [Что такое служба приложений?](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
+## [Что такое служба приложений?](https://docs.microsoft.com/azure/app-service/overview)
 ## Виртуальные машины
 ### [Виртуальные машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/overview)
 ### [Виртуальные машины Windows](https://docs.microsoft.com/azure/virtual-machines/windows/overview)
