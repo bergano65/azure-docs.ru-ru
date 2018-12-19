@@ -1,14 +1,14 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: da70af8eb2239fb9246071605aa5323e2e9e041e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: eea9875be7926614811327dfeb89b721b43436e2
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46958447"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53580282"
 documentType: LandingData
 title: Документация по API компьютерного зрения
 metadata:
-  title: Документация по API компьютерного зрения. Краткие руководства, руководства и справочник по API Azure Cognitive Services | Документация Майкрософт
+  title: Документация по API. API компьютерного зрения в Azure Cognitive Services | Документация Майкрософт
   description: Сведения об использовании компьютерного зрения для обработки изображений и получения сведений. В руководствах описано, как создавать приложения, использующие API.
   services: cognitive-services
   author: nitinme
@@ -20,6 +20,7 @@ metadata:
   ms.topic: landing-page
   ms.date: 09/24/2018
   ms.author: nitinme
+ms.custom: seodec18
 abstract:
   description: Облачный API компьютерного зрения предоставляет разработчикам доступ к расширенным алгоритмам обработки изображений и возврата данных. После загрузки изображения или указания его URL-адреса алгоритмы компьютерного зрения от Майкрософт могут по-разному анализировать визуальное содержимое на основе входных данных и выбора пользователя. Узнайте, как анализировать визуальное содержимое разными способами с помощью кратких руководств, примеров и других материалов.
   aside:
@@ -101,4 +102,4 @@ sections:
     - title: PowerShell
       html: <p><a href="https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/?view=azurermps-4.4.1#cognitive_services">Azure PowerShell</a></p>
     - title: Интерфейс командной строки
-      html: <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list">интерфейс командной строки Azure</a></p>
+      html: <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list">Интерфейс командной строки Azure</a></p>

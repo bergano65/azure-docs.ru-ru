@@ -275,6 +275,7 @@
 ##### [Проблема при сохранении учетных данных администратора во время настройки подготовки пользователей для приложения из коллекции](manage-apps/application-provisioning-config-problem-storage-limit.md)
 ##### [Не удается подготовить пользователей для приложения из коллекции](manage-apps/application-provisioning-config-problem-no-users-provisioned.md)
 ##### [Для приложения из коллекции подготовлены не те пользователи](manage-apps/application-provisioning-config-problem-wrong-users-provisioned.md)
+##### [Проблемы совместимости SCIM — приложение не из коллекции](manage-apps/application-provisioning-config-problem-scim-compatibility.md)
 
 #### Единый вход
 ##### [Выбор метода](manage-apps/single-sign-on-modes.md)
@@ -321,10 +322,10 @@
 ## [Устранение неполадок](fundamentals/active-directory-troubleshooting-support-howto.md)
 
 ## Развертывание подтверждения концепции Azure AD (PoC)
-### [Сборник тренировочных заданий по PoC: введение](active-directory-playbook-intro.md)
-### [Сборник тренировочных заданий по PoC: ингредиенты](active-directory-playbook-ingredients.md)
-### [Сборник тренировочных заданий по PoC: реализация](active-directory-playbook-implementation.md)
-### [Сборник тренировочных заданий по PoC: стандартные блоки](active-directory-playbook-building-blocks.md)
+### [Сборник схем по подтверждению концепции: введение](active-directory-playbook-intro.md)
+### [Сборник схем по подтверждению концепции: компоненты](active-directory-playbook-ingredients.md)
+### [Сборник схем по подтверждению концепции: реализация](active-directory-playbook-implementation.md)
+### [Сборник схем по подтверждению концепции: стандартные блоки](active-directory-playbook-building-blocks.md)
 
 # Справочные материалы
 ## [Примеры кода](https://azure.microsoft.com/resources/samples/?service=active-directory)

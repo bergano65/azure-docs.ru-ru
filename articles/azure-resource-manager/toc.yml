@@ -94,7 +94,7 @@ items:
       href: /azure/architecture/building-blocks/extending-templates/update-resource
   - name: Развертывание шаблонов
     items:
-    - name: Развертывание с помощью портала
+    - name: Развертывание с помощью портала Azure
       href: resource-group-template-deploy-portal.md
     - name: Развертывание с помощью Azure CLI
       href: resource-group-template-deploy-cli.md
@@ -123,27 +123,27 @@ items:
       maintainContext: true
   - name: Управление шаблонами
     items:
-    - name: Azure PowerShell
-      href: powershell-azure-resource-manager.md
-    - name: Инфраструктура CLI Azure
-      href: cli-azure-resource-manager.md
-    - name: Портал Azure
+    - name: Управление с помощью портала Azure
       href: resource-group-portal.md
-    - name: Организация ресурсов с помощью тегов
-      href: resource-group-using-tags.md
-    - name: Перемещение ресурсов в новую группу или подписку
+    - name: Управление с помощью Azure PowerShell
+      href: powershell-azure-resource-manager.md
+    - name: Управление с помощью Azure CLI
+      href: cli-azure-resource-manager.md
+    - name: Перемещение ресурсов
       href: resource-group-move-resources.md
       items:
       - name: Поддержка операции перемещения разными типами ресурсов
         href: move-support-resources.md
+    - name: Упорядочение ресурсов с помощью тегов
+      href: resource-group-using-tags.md
+    - name: Блокировка ресурсов
+      href: resource-group-lock-resources.md
+    - name: API проверки подлинности для доступа к подпискам
+      href: resource-manager-api-authentication.md
     - name: Создание подписок EA
       href: programmatically-create-subscription.md
     - name: Предоставление доступа для создания подписок EA
       href: grant-access-to-create-subscription.md
-    - name: API проверки подлинности для доступа к подпискам
-      href: resource-manager-api-authentication.md
-    - name: Блокировка ресурсов
-      href: resource-group-lock-resources.md
   - name: Аудит развертываний
     items:
     - name: Просмотр журналов действий
@@ -211,7 +211,7 @@ items:
     href: /rest/api/resources/
   - name: REST — диспетчер развертывания
     href: /rest/api/deploymentmanager/
-  - name: PowerShell
+  - name: Azure PowerShell
     href: /powershell/module/azurerm.resources
   - name: Инфраструктура CLI Azure
     href: /cli/azure/resource
@@ -235,9 +235,9 @@ items:
     href: resource-manager-personal-data.md
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=azure-resource-manager
-ms.openlocfilehash: 166a23d480db7dfda7a78a5a63e7717b5e721bb9
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 47766ce1bd0250c1eeaa269c4bc2436a2e117f02
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436795"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53600970"
