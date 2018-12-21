@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 12/01/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: b043c5ebe4c2a02bd4d40ca4b2bb7d5f488f5747
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: d63faf63012360d4448166ac5d69eba6ede9d0ed
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52837347"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52969538"
 ---
-# <a name="tutorial-create-a-staged-data-analytics-solution-with-azure-and-azure-stack"></a>Руководство. Создание решения аналитики промежуточных данных с помощью Azure и Azure Stack 
+# <a name="tutorial-create-a-staged-data-analytics-solution-with-azure-and-azure-stack"></a>Руководство. Создание решения для аналитики промежуточных данных с помощью Azure и Azure Stack 
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -81,29 +81,29 @@ ms.locfileid: "52837347"
 
 3.  Укажите следующие сведения для учетной записи:
 
-    a.  Имя: **по вашему выбору**.
+    a.  Имя: **По своему выбору**
 
-    b.  Модель развертывания: **Resource Manager**.
+    b.  Модель развертывания. **Resource Manager**
 
-    c.  Тип учетной записи: **Учетная запись хранения (версия 1, общего назначения)**.
+    c.  Тип учетной записи. **Учетная запись хранения общего назначения версии 1**
 
-    d.  Расположение: **Западная часть США**.
+    d.  Расположение. **Западная часть США**
 
-    д.  Репликация: **Локально избыточное хранилище (LRS)**.
+    д.  Репликация. **Локально избыточное хранилище (LRS)**
 
-    Е.  Производительность: **Стандартная**.
+    Е.  Производительность. **Стандартный**
 
-    ж.  Требуется безопасная передача данных: **Отключено**.
+    ж.  Требуется безопасная передача данных. **Disabled**
 
-    h.  Подписка: выберите подписку.
+    h.  Подписка: Выберите один вариант.
 
-    i.  Группа ресурсов: укажите новую группу ресурсов или выберите существующую.
+    i.  Группа ресурсов. Выберите существующую группу ресурсов или создайте новую.
 
-    j.  Настройка виртуальных сетей: **Отключено**.
+    j.  Настройка виртуальных сетей. **Disabled**
 
 4.  Выберите **Создать**, чтобы создать учетную запись хранения.
 
-    ![Alt text](media\azure-stack-solution-staged-data-analytics\image1.png)
+    ![Alt text](media/azure-stack-solution-staged-data-analytics/image1.png)
 
 5.  После создания учетной записи хранения выберите ее имя.
 
@@ -111,11 +111,11 @@ ms.locfileid: "52837347"
 
 7.  В верхней части колонки выберите **+ Контейнер**, затем выберите **Контейнер**.
 
-    ![Alt text](media\azure-stack-solution-staged-data-analytics\image2.png)
+    ![Alt text](media/azure-stack-solution-staged-data-analytics/image2.png)
 
-8.  Имя: **по вашему выбору**.
+8.  Имя: **по своему выбору**
 
-9.  Общедоступный уровень доступа: **Контейнер** (анонимный доступ на чтение к контейнерам и большим двоичным объектам).
+9.  Уровень общего доступа. **Контейнер** (анонимный доступ на чтение к контейнерам и большим двоичным объектам).
 
 10.  Нажмите кнопку **ОК**.
 
@@ -146,31 +146,31 @@ ms.locfileid: "52837347"
 
     **Пример.**
 
-    ![Определение параметров нового приложения-функции](media\azure-stack-solution-staged-data-analytics\image6.png)
+    ![Определение параметров нового приложения-функции](media/azure-stack-solution-staged-data-analytics/image6.png)
 
 5.  Выберите **Создать**, чтобы подготовить и развернуть приложение-функцию.
 
 6.  Выберите значок уведомления в правом верхнем углу портала. Вы должны увидеть сообщение **Развертывание выполнено**.
 
-    ![Определение параметров нового приложения-функции](media\azure-stack-solution-staged-data-analytics\image7.png)
+    ![Определение параметров нового приложения-функции](media/azure-stack-solution-staged-data-analytics/image7.png)
 
 7.  Выберите **Перейти к ресурсу**, чтобы просмотреть новое приложение-функцию.
 
-![Приложение-функция успешно создана.](media\azure-stack-solution-staged-data-analytics\image8.png)
+![Приложение-функция успешно создана.](media/azure-stack-solution-staged-data-analytics/image8.png)
 
 ### <a name="add-a-function-to-the-azure-stack-function-app"></a>Добавление функции в Приложение-функцию Azure Stack
 
 1.  Чтобы создать функцию, выберите **Функции** и нажмите кнопку **+ Создать функцию**.
 
-    ![Alt text](media\azure-stack-solution-staged-data-analytics\image3.png)
+    ![Alt text](media/azure-stack-solution-staged-data-analytics/image3.png)
 
 2.  Выберите **Триггер таймера**.
 
-    ![Alt text](media\azure-stack-solution-staged-data-analytics\image4.png)
+    ![Alt text](media/azure-stack-solution-staged-data-analytics/image4.png)
 
-3.  Выберите язык **C\#** и присвойте функции имя `upload-to-azure`. Задайте расписание `0 0 * * * *`, что в нотации CRON означает запуск каждый час.
+3.  Выберите язык **C\#** и присвойте имя функции: `upload-to-azure` Задайте для расписания значение `0 0 * * * *`, что в нотации CRON означает один раз в час.
 
-    ![Alt text](media\azure-stack-solution-staged-data-analytics\image5.png)
+    ![Alt text](media/azure-stack-solution-staged-data-analytics/image5.png)
 
 ## <a name="create-a-blob-storage-triggered-function"></a>Создание функции, активируемой хранилищем BLOB-объектов
 
@@ -178,7 +178,7 @@ ms.locfileid: "52837347"
 
 2.  В поле поиска введите `blob` и выберите нужный язык для шаблона **триггера для BLOB-объектов**.
 
-  ![Выбор шаблона триггера для хранилища BLOB-объектов](media\azure-stack-solution-staged-data-analytics\image10.png)
+  ![Выбор шаблона триггера для хранилища BLOB-объектов](media/azure-stack-solution-staged-data-analytics/image10.png)
 
 3.  Используйте параметры, указанные в таблице ниже:
 
@@ -190,7 +190,7 @@ ms.locfileid: "52837347"
 
     **Пример.**
 
-    ![Создание функции, активируемой хранилищем BLOB-объектов.](media\azure-stack-solution-staged-data-analytics\image11.png)
+    ![Создание функции, активируемой хранилищем BLOB-объектов.](media/azure-stack-solution-staged-data-analytics/image11.png)
 
 4.  Щелкните **Создать**, чтобы создать функцию.
 
@@ -202,7 +202,7 @@ ms.locfileid: "52837347"
 
 3.  Разверните учетную запись хранения, узел **Контейнеры больших двоичных объектов** и большой двоичный объект, созданный вами ранее. Последовательно выберите **Отправка** и **Отправка файлов**.
 
-    ![Отправьте файл в контейнер больших двоичных объектов.](media\azure-stack-solution-staged-data-analytics\image12.png)
+    ![Отправьте файл в контейнер больших двоичных объектов.](media/azure-stack-solution-staged-data-analytics/image12.png)
 
 4.  В диалоговом окне "Отправка файлов" выберите поле "Файлы". Перейдите к файлу на локальном компьютере, например к файлу изображения, выберите его, а затем последовательно выберите **Открыть** и **Отправить**.
 
@@ -210,7 +210,7 @@ ms.locfileid: "52837347"
 
     **Пример.**
 
-    ![Просмотр сообщения в журналах](media\azure-stack-solution-staged-data-analytics\image13.png)
+    ![Просмотр сообщения в журналах](media/azure-stack-solution-staged-data-analytics/image13.png)
 
 ## <a name="create-an-azure-stack-storage-account"></a>Создание учетной записи хранения Azure Stack
 
@@ -232,9 +232,9 @@ ms.locfileid: "52837347"
 
 4.  Нажмите кнопку **ОК**.
 
-    ![Alt text](media\azure-stack-solution-staged-data-analytics\image14.png)
+    ![Alt text](media/azure-stack-solution-staged-data-analytics/image14.png)
 
-    ![Alt text](media\azure-stack-solution-staged-data-analytics\image15.png)
+    ![Alt text](media/azure-stack-solution-staged-data-analytics/image15.png)
 
 ## <a name="create-a-queue-triggered-function"></a>Создание функции, активируемой очередью
 
@@ -258,7 +258,7 @@ ms.locfileid: "52837347"
 
 3.  Разверните учетную запись хранения, узел **Контейнеры больших двоичных объектов** и большой двоичный объект, созданный вами ранее. Последовательно выберите **Отправка** и **Отправка файлов**.
 
-    ![Отправьте файл в контейнер больших двоичных объектов.](media\azure-stack-solution-staged-data-analytics\image12.png)
+    ![Отправьте файл в контейнер больших двоичных объектов.](media/azure-stack-solution-staged-data-analytics/image12.png)
 
 4.  В диалоговом окне "Отправка файлов" выберите поле "Файлы". Перейдите к файлу на локальном компьютере, например к файлу изображения, выберите его, а затем последовательно выберите **Открыть** и **Отправить**.
 
@@ -266,7 +266,7 @@ ms.locfileid: "52837347"
 
   **Пример.**
 
-    ![Просмотр сообщения в журналах](media\azure-stack-solution-staged-data-analytics\image13.png)
+    ![Просмотр сообщения в журналах](media/azure-stack-solution-staged-data-analytics/image13.png)
 
 ## <a name="securely-stored-and-accessed-compliant-data"></a>Защищенное хранение соответствующих требованиям данных и доступ к ним
 
