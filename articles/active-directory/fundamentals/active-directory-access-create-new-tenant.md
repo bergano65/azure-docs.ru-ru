@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по доступу к Azure Active Directory и созданию клиента | Документация Майкрософт
-description: Краткое руководство с инструкциями по поиску Azure Active Directory и созданию клиента для организации.
+title: Краткое руководство по созданию клиента и доступу к нему — Azure Active Directory | Документация Майкрософт
+description: Инструкции по поиску Azure Active Directory и созданию клиента для организации.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -10,15 +10,15 @@ ms.workload: identity
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: lizross
-custom: it-pro
-ms.openlocfilehash: eacb2e7c52adae9de0b74c3dade59446cc8459ed
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: cd179d371ec75a2e6ca258a1efbc2361e50a5438
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50023560"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53083285"
 ---
-# <a name="quickstart-access-azure-active-directory-to-create-a-new-tenant"></a>Краткое руководство. Получение доступа к Azure Active Directory для создания клиента
+# <a name="quickstart-create-a-new-tenant-in-azure-active-directory"></a>Краткое руководство. Создание клиента в Azure Active Directory
 С помощью портала Azure Active Directory (Azure AD) можно выполнять все административные задачи, включая создание клиента для своей организации. 
 
 В этом кратком руководстве вы узнаете, как получить доступ к порталу Azure и Azure Active Directory. Кроме того, вы узнаете, как создать базовый клиент для своей организации.

@@ -1,6 +1,6 @@
 ---
-title: Создание веб-приложения C# ASP.NET Core в Azure | Документация Майкрософт
-description: Узнайте, как запустить веб-приложение в службе приложений Azure, развернув веб-приложение C# ASP.NET по умолчанию.
+title: Создание веб-приложения C# с помощью ASP.NET Core в Службе приложений Azure | Документация Майкрософт
+description: Узнайте, как запустить веб-приложение в Службе приложений Azure, развернув веб-приложение ASP.NET Core на C# по умолчанию.
 services: app-service\web
 documentationcenter: ''
 author: cephalin
@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 09/05/2018
 ms.author: cephalin
-ms.custom: mvc, devcenter, vs-azure
-ms.openlocfilehash: ad17488c4e1fd5eb3965049b26d3f00270dce50f
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.custom: seodec18
+ms.openlocfilehash: 70c24b8aef1672696c0e7d7289e23b98b6b49dfe
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51301039"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53341445"
 ---
 # <a name="create-an-aspnet-core-web-app-in-azure"></a>Создание веб-приложения ASP.NET Core в Azure
 

@@ -2,7 +2,6 @@
 title: Передача данных изображений в облако с помощью службы хранилища Azure | Документация Майкрософт
 description: Использование Хранилища BLOB-объектов Azure с веб-приложением для хранения данных приложения
 services: storage
-documentationcenter: ''
 author: tamram
 ms.service: storage
 ms.devlang: dotnet
@@ -10,12 +9,12 @@ ms.topic: tutorial
 ms.date: 11/26/2018
 ms.author: tamram
 ms.custom: mvc
-ms.openlocfilehash: 371a679978c501c71da6e8360d7541c31a6a720f
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: c55e63d813c462db8a6c404894b8754f4130d935
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52682339"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53097953"
 ---
 # <a name="tutorial-upload-image-data-in-the-cloud-with-azure-storage"></a>Руководство. Передача данных изображений в облако с помощью службы хранилища Azure
 
@@ -114,7 +113,7 @@ az appservice plan create --name myAppServicePlan --resource-group myResourceGro
 
 Веб-приложение предоставляет пространство для размещения примера кода приложения, развернутого из примера репозитория GitHub. Создайте [веб-приложение](../../app-service/app-service-web-overview.md) в рамках плана `myAppServicePlan` службы приложений с помощью команды [az webapp create](/cli/azure/webapp#az_webapp_create).  
 
-В следующей команде замените `<web_app>` уникальным именем. Допустимые символы: `a-z`, `0-9` и `-`. Если `<web_app>` не является уникальным, отобразится следующее сообщение об ошибке: _Веб-сайт с указанным именем `<web_app>` уже существует_. URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`.  
+В следующей команде замените `<web_app>` уникальным именем. Допустимые символы: `a-z`, `0-9` и `-`. Если `<web_app>` не является уникальным, отобразится сообщение об ошибке: _Веб-сайт с именем `<web_app>` уже существует._ URL-адрес приложения по умолчанию: `https://<web_app>.azurewebsites.net`.  
 
 ```azurecli-interactive
 az webapp create --name <web_app> --resource-group myResourceGroup --plan myAppServicePlan

@@ -1,5 +1,5 @@
 ---
-title: Быстрое начало. Поиск изображений с помощью пакета SDK Bing для поиска изображений для Java
+title: Краткое руководство. Поиск изображений с помощью пакета SDK для поиска изображений Bing для Java
 description: Воспользуйтесь сведениями из быстрого начала и выполните первый поиск изображения с помощью пакета SDK Bing для поиска изображений. Данный пакет является оболочкой для API и содержит те же функции. Это простое приложение Java отправляет запрос на поиск изображения, анализирует ответ JSON и отображает URL-адрес первого возвращенного изображения.
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
@@ -10,14 +10,15 @@ ms.component: bing-image-search
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: aahi
-ms.openlocfilehash: 81bd7356579b3e4f7b82497bb2163c85374fd0d9
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.custom: seodec2018
+ms.openlocfilehash: 810cdc2029462b225b5d53634f1730cbcbb8d785
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52316333"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53254893"
 ---
-# <a name="quickstart-search-for-images-with-the-bing-image-search-sdk-and-java"></a>Быстрое начало. Поиск изображений с помощью пакета SDK Bing для поиска изображений и Java
+# <a name="quickstart-search-for-images-with-the-bing-image-search-sdk-for-java"></a>Краткое руководство. Поиск изображений с помощью пакета SDK для поиска изображений Bing для Java
 
 Воспользуйтесь сведениями из быстрого начала и выполните первый поиск изображения с помощью пакета SDK Bing для поиска изображений. Данный пакет является оболочкой для API и содержит те же функции. Это простое приложение Java отправляет запрос на поиск изображения, анализирует ответ JSON и отображает URL-адрес первого возвращенного изображения.
 

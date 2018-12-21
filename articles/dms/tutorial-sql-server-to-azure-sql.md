@@ -1,5 +1,5 @@
 ---
-title: Руководство. Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью службы Azure Database Migration Service | Документация Майкрософт
+title: Руководство. Использование Azure Database Migration Service для переноса SQL Server в базу данных SQL Azure в автономном режиме | Документация Майкрософт
 description: Узнайте, как выполнять миграцию из локального экземпляра SQL Server в Базу данных SQL Azure в автономном режиме с помощью Azure Database Migration Service.
 services: dms
 author: pochiraju
@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 10/10/2018
-ms.openlocfilehash: 783785a73b3a6a99126b07f3759be540fe3098d8
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 616b3d965993eb3578a8496069f59c9cc88301d8
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50959245"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52971351"
 ---
-# <a name="tutorial-migrate-sql-server-to-azure-sql-database-offline-using-dms"></a>Руководство. Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS
+# <a name="tutorial-migrate-sql-server-to-azure-sql-database-offline-using-dms"></a>Руководство. Перенос SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [базу данных SQL Azure](https://docs.microsoft.com/azure/sql-database/). В этом руководстве выполняется миграция базы данных **Adventureworks2012**, восстановленной в локальном экземпляре SQL Server 2016 (или более поздней версии), в базу данных SQL Azure с помощью Azure Database Migration Service.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
@@ -69,7 +69,7 @@ Azure Database Migration Service можно использовать для пе
 
     После завершения оценки результаты будут показаны, как на следующем рисунке:
 
-    ![Оценка миграции данных](media\tutorial-sql-server-to-azure-sql\dma-assessments.png)
+    ![Оценка миграции данных](media/tutorial-sql-server-to-azure-sql/dma-assessments.png)
 
     В базе данных SQL Azure внутренняя оценка идентифицирует проблемы с равенством функций и проблемы, блокирующие миграцию.
 
@@ -92,52 +92,52 @@ Azure Database Migration Service можно использовать для пе
 
     После выполнения предыдущих действий интерфейс помощника по миграции данных должен выглядеть, как показано на следующем рисунке:
     
-    ![Создание проекта в помощнике по миграции данных](media\tutorial-sql-server-to-azure-sql\dma-create-project.png)
+    ![Создание проекта в помощнике по миграции данных](media/tutorial-sql-server-to-azure-sql/dma-create-project.png)
 
 4.  Выберите **Создать**, чтобы создать проект.
 5.  В помощнике по миграции данных задайте сведения о подключении к источнику SQL Server, щелкните **Подключение**, а затем выберите базу данных **AdventureWorks2012**.
 
-    ![Сведения о подключении к источнику в помощнике по миграции данных](media\tutorial-sql-server-to-azure-sql\dma-source-connect.png)
+    ![Сведения о подключении к источнику в помощнике по миграции данных](media/tutorial-sql-server-to-azure-sql/dma-source-connect.png)
 
 6.  В разделе **Connect to target server** (Подключение к целевому серверу) нажмите кнопку **Next** (Далее), укажите сведения о подключении к целевому объекту для базы данных SQL Azure, щелкните **Connect** (Подключение), а затем выберите базу данных **AdventureWorksAzure**, предварительно подготовленную в базе данных SQL Azure.
 
-    ![Сведения о подключении к целевому объекту в помощнике по миграции данных](media\tutorial-sql-server-to-azure-sql\dma-target-connect.png)
+    ![Сведения о подключении к целевому объекту в помощнике по миграции данных](media/tutorial-sql-server-to-azure-sql/dma-target-connect.png)
 
 7.  Выберите **Далее**, чтобы перейти на экран **Выбор объектов**, на котором можно указать объекты схемы в базе данных **AdventureWorks2012**, которую нужно развернуть в базе данных SQL Azure.
 
     По умолчанию выбраны все объекты.
 
-    ![Создание сценариев SQL](media\tutorial-sql-server-to-azure-sql\dma-assessment-source.png)
+    ![Создание сценариев SQL](media/tutorial-sql-server-to-azure-sql/dma-assessment-source.png)
 
 8.  Выберите **Создать скрипт SQL**, чтобы создать скрипт SQL, а затем просмотрите его на наличие ошибок.
 
-    ![Скрипт схемы](media\tutorial-sql-server-to-azure-sql\dma-schema-script.png)
+    ![Скрипт схемы](media/tutorial-sql-server-to-azure-sql/dma-schema-script.png)
 
 9.  Выберите **Deploy schema** (Развернуть схему), чтобы развернуть схему в базу данных SQL Azure, а затем проверьте целевой сервер на наличие аномалий.
 
-    ![Развертывание схемы](media\tutorial-sql-server-to-azure-sql\dma-schema-deploy.png)
+    ![Развертывание схемы](media/tutorial-sql-server-to-azure-sql/dma-schema-deploy.png)
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Регистрация поставщика ресурсов Microsoft.DataMigration
 1. Войдите на портал Azure, щелкните **Все службы** и выберите **Подписки**.
  
-   ![Отображение подписок на портале](media\tutorial-sql-server-to-azure-sql\portal-select-subscription1.png)
+   ![Отображение подписок на портале](media/tutorial-sql-server-to-azure-sql/portal-select-subscription1.png)
        
 2. Выберите подписку, в которой нужно создать экземпляр Azure Database Migration Service, а затем щелкните **Поставщики ресурсов**.
  
-    ![Отображение поставщиков ресурсов](media\tutorial-sql-server-to-azure-sql\portal-select-resource-provider.png)
+    ![Отображение поставщиков ресурсов](media/tutorial-sql-server-to-azure-sql/portal-select-resource-provider.png)
     
 3.  В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
  
-    ![Регистрация поставщика ресурсов](media\tutorial-sql-server-to-azure-sql\portal-register-resource-provider.png)    
+    ![Регистрация поставщика ресурсов](media/tutorial-sql-server-to-azure-sql/portal-register-resource-provider.png)    
 
 ## <a name="create-an-instance"></a>Создание экземпляра
 1.  На портале Azure выберите **+Создать ресурс**, введите в поле поиска "Azure Database Migration Service", а затем в раскрывающемся списке выберите **Azure Database Migration Service**.
 
-    ![Azure Marketplace](media\tutorial-sql-server-to-azure-sql\portal-marketplace.png)
+    ![Azure Marketplace](media/tutorial-sql-server-to-azure-sql/portal-marketplace.png)
 
 2.  На экране **Azure Database Migration Service** выберите **Создать**.
  
-    ![Создание экземпляра Azure Database Migration Service](media\tutorial-sql-server-to-azure-sql\dms-create1.png)
+    ![Создание экземпляра Azure Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-create1.png)
   
 3.  На экране **Создание службы миграции** укажите имя службы, подписку и новую или существующую группу ресурсов.
 
@@ -155,7 +155,7 @@ Azure Database Migration Service можно использовать для пе
 
     Если вам нужна помощь в выборе подходящей категории Azure Database Migration Service, см. рекомендации в [этой записи блога](https://go.microsoft.com/fwlink/?linkid=861067).  
 
-     ![Настройка параметров экземпляра Database Migration Service](media\tutorial-sql-server-to-azure-sql\dms-settings2.png)
+     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-settings2.png)
 
 7.  Выберите **Создать**, чтобы создать службу.
 
@@ -164,16 +164,16 @@ Azure Database Migration Service можно использовать для пе
 
 1. На портале Azure щелкните **Все службы**, выполните поиск по запросу "Azure Database Migration Service" и выберите **Azure Database Migration Services** (Службы Azure Database Migration Service).
  
-      ![Поиск всех экземпляров Azure Database Migration Service](media\tutorial-sql-server-to-azure-sql\dms-search.png)
+      ![Поиск всех экземпляров Azure Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-search.png)
 
 2. На экране **Azure Database Migration Services** найдите имя созданного экземпляра Azure Database Migration Service и выберите его.
  
-     ![Поиск экземпляра службы миграции базы данных Azure](media\tutorial-sql-server-to-azure-sql\dms-instance-search.png)
+     ![Поиск экземпляра службы миграции базы данных Azure](media/tutorial-sql-server-to-azure-sql/dms-instance-search.png)
  
 3. Выберите **+ Новый проект миграции**.
 4. На экране **Новый проект миграции** задайте имя для проекта, в текстовом поле **Тип исходного сервера** выберите **SQL Server**, в текстовом поле **Тип целевого сервера** выберите **База данных SQL Azure**, а затем для параметра **Выберите тип действия** выберите значение **Автономная миграция данных**. 
 
-    ![Создание проекта Database Migration Service](media\tutorial-sql-server-to-azure-sql\dms-create-project2.png)
+    ![Создание проекта Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-create-project2.png)
 
 5.  Выберите **Создать и выполнить действие**, чтобы создать проект и выполнить действие миграции.
 
@@ -189,46 +189,46 @@ Azure Database Migration Service можно использовать для пе
     > [!CAUTION]
     > SSL-подключения, шифруемые с помощью самозаверяющего сертификата, не обеспечивают надежную защиту. Они уязвимы для атак "злоумышленник в середине". В рабочей среде или на серверах, подключенных к Интернету, не следует применять самозаверяющие сертификаты для SSL.
 
-   ![Сведения об источнике](media\tutorial-sql-server-to-azure-sql\dms-source-details2.png)
+   ![Сведения об источнике](media/tutorial-sql-server-to-azure-sql/dms-source-details2.png)
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
 1. Нажмите кнопку **Сохранить**, а затем на экране **Сведения о целевом объекте миграции** задайте сведения о подключении для конечного сервера Базы данных SQL Azure — предварительно подготовленной Базы данных SQL Azure, в которой развернута схема **AdventureWorks2012** с помощью Помощника по миграции данных.
 
-    ![Выбор цели](media\tutorial-sql-server-to-azure-sql\dms-select-target2.png)
+    ![Выбор цели](media/tutorial-sql-server-to-azure-sql/dms-select-target2.png)
 
 2. Нажмите кнопку **Сохранить**, а затем на экране **Сопоставление с целевыми базами данных** сопоставьте исходную и целевую базы данных для миграции.
 
     Если в целевой базе данных содержится такое же имя базы данных, что и в исходной базе данных, Azure Database Migration Service выберет целевую базу данных по умолчанию.
 
-    ![Сопоставление с целевыми базами данных](media\tutorial-sql-server-to-azure-sql\dms-map-targets-activity2.png)
+    ![Сопоставление с целевыми базами данных](media/tutorial-sql-server-to-azure-sql/dms-map-targets-activity2.png)
 
 3. На экране **Выбрать таблицы** выберите **Сохранить**, разверните список таблиц и просмотрите список затронутых полей.
 
     Обратите внимание на то, что служба Azure Database Migration Service автоматически выбирает все пустые исходные таблицы, имеющиеся в конечном экземпляре базы данных SQL Azure. Чтобы повторно перенести таблицы, уже содержащие данные, необходимо явным образом выбрать их в этой колонке.
 
-    ![Выбор таблиц](media\tutorial-sql-server-to-azure-sql\dms-configure-setting-activity2.png)
+    ![Выбор таблиц](media/tutorial-sql-server-to-azure-sql/dms-configure-setting-activity2.png)
 
 4.  На экране **Migration summary** (Сводка по миграции) выберите **Сохранить**, а в текстовом поле **Имя действия** задайте имя для действия миграции.
 
 5. Разверните раздел **Вариант проверки**, чтобы открыть экран **Выбор варианта проверки**, а затем выберите категорию проверки переносимых баз данных: **Сравнение схем**, **Согласованность данных** или **Правильность запроса**.
     
-    ![Выбор варианта проверки](media\tutorial-sql-server-to-azure-sql\dms-configuration2.png)
+    ![Выбор варианта проверки](media/tutorial-sql-server-to-azure-sql/dms-configuration2.png)
 
 6.  Выберите **Сохранить**, просмотрите сводку, чтобы убедиться, что сведения об источнике и целевом объекте соответствуют предварительно заданным.
 
-    ![Сводка по миграции](media\tutorial-sql-server-to-azure-sql\dms-run-migration2.png)
+    ![Сводка по миграции](media/tutorial-sql-server-to-azure-sql/dms-run-migration2.png)
 
 ## <a name="run-the-migration"></a>Выполнение миграции
 - Выберите **Запустить миграцию**.
 
     Появится окно действия миграции, в котором будет указано **состояние** действия **Ожидание**.
 
-    ![Состояние действия](media\tutorial-sql-server-to-azure-sql\dms-activity-status1.png)
+    ![Состояние действия](media/tutorial-sql-server-to-azure-sql/dms-activity-status1.png)
 
 ## <a name="monitor-the-migration"></a>Мониторинг миграции
 1. На экране действия миграции нажимайте кнопку **Обновить**, чтобы обновить содержимое экрана, пока **состояние** миграции не поменяется на **Завершено**.
 
-    ![Состояние действия "Завершено"](media\tutorial-sql-server-to-azure-sql\dms-completed-activity1.png)
+    ![Состояние действия "Завершено"](media/tutorial-sql-server-to-azure-sql/dms-completed-activity1.png)
 
 2. После завершения миграции нажмите **Скачать отчет**, чтобы получить отчет с подробными сведениями о процессе миграции.
 

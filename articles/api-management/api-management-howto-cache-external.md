@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 11/27/2018
 ms.author: apimpm
-ms.openlocfilehash: f57b6b35ffff85aad4d970cf9aa908d2a80eadf1
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: 06052bd0cba6d119d07e86ed6aed833dec9f1f92
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52620915"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53014571"
 ---
-# <a name="use-an-external-redis-cache-in-azure-api-management"></a>Использование внешнего кэша Redis в службе управления API Azure
+# <a name="use-an-external-azure-cache-for-redis-in-azure-api-management"></a>Использование внешнего кэша Redis для Azure в Управлении API Azure
 
-Помимо использования встроенного кэша, служба управления API Azure также позволяет кэшировать ответы во внешнем кэше Redis.
+Помимо использования встроенного кэша, Управление API Azure также позволяет кэшировать ответы во внешнем кэше Redis для Azure.
 
 Использование внешнего кэша позволяет преодолеть некоторые ограничения встроенного кэша. Это особенно полезно, если необходимо:
 
@@ -55,13 +55,13 @@ ms.locfileid: "52620915"
 
 ## <a name="create-cache"> </a> Создание кэша Redis для Azure
 
-В этом разделе описывается создание кэша Redis в Azure. Если у вас уже есть кэш Redis внутри или за пределами Azure, вы можете <a href="#add-external-cache">пропустить</a> этот раздел.
+В этом разделе описано, как создать в Azure кэш Redis для Azure. Если у вас уже есть кэш Redis для Azure в Azure или за пределами, вы можете <a href="#add-external-cache">пропустить</a> этот раздел.
 
 [!INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
 ## <a name="add-external-cache"> </a>Добавление внешнего кэша
 
-Выполните описанные ниже действия, чтобы добавить внешний кэш Redis в службу управления API Azure.
+Выполните описанные ниже действия, чтобы добавить внешний кэш Redis для Azure в Управление API Azure.
 
 ![Добавление своего собственного кэша в APIM](media/api-management-howto-cache-external/add-external-cache.png)
 
@@ -70,7 +70,7 @@ ms.locfileid: "52620915"
 >
 > Например, если служба управления API размещена в регионах "Восточная часть США", "Юго-Восточная Азия" и "Западная Европа", и существуют два настроенных кэша, один **Default** (По умолчанию) и второй для региона **Юго-Восточная Азия**, служба управления API в регионе **Юго-Восточная Азия** будет использовать собственный кэш, а два других региона — запись кэша **Default** (По умолчанию).
 
-### <a name="add-an-azure-redis-cache-from-the-same-subscription"></a>Добавление кэша Redis для Azure из той же подписки
+### <a name="add-an-azure-cache-for-redis-from-the-same-subscription"></a>Добавление кэша Redis для Azure из той же подписки
 
 1. Перейдите к экземпляру службы управления API на портале Azure.
 2. Выберите вкладку **External cache** (Внешний кэш) в меню слева.
@@ -79,14 +79,14 @@ ms.locfileid: "52620915"
 5. В раскрывающемся поле **Used from** (Используется из) выберите **Default** (По умолчанию) или укажите требуемый регион.
 6. Выберите команду **Сохранить**.
 
-### <a name="add-a-redis-cache-hosted-outside-of-the-current-azure-subscription-or-azure-in-general"></a>Добавление кэша Redis, размещенного вне текущей подписки Azure или полностью за пределами Azure
+### <a name="add-an-azure-cache-for-redis-hosted-outside-of-the-current-azure-subscription-or-azure-in-general"></a>Добавление кэша Redis для Azure, размещенного за пределами текущей подписки Azure или Azure
 
 1. Перейдите к экземпляру службы управления API на портале Azure.
 2. Выберите вкладку **External cache** (Внешний кэш) в меню слева.
 3. Щелкните **+ Добавить**.
 4. В раскрывающемся поле **Cache instance** (Экземпляр кэша) выберите **Custom** (Настраиваемый).
 5. В раскрывающемся поле **Used from** (Используется из) выберите **Default** (По умолчанию) или укажите требуемый регион.
-6. В поле **Connection string** (Строка подключения) укажите строку подключения к кэшу Redis.
+6. В поле **Строка подключения** укажите строку подключения к кэшу Redis для Azure.
 7. Выберите команду **Сохранить**.
 
 ## <a name="use-the-external-cache"></a>Использование внешнего кэша

@@ -1,5 +1,5 @@
 ---
-title: Что такое Центры событий Azure? | Документация Майкрософт
+title: Что такое Центры событий Azure? Это служба приема больших данных | Документация Майкрософт
 description: В этой статье приводятся сведения о службе потоковой передачи больших данных "Центры событий Azure", которая способна принимать миллионы событий в секунду.
 services: event-hubs
 documentationcenter: na
@@ -7,17 +7,17 @@ author: ShubhaVijayasarathy
 manager: timlt
 ms.service: event-hubs
 ms.topic: overview
-ms.custom: mvc
-ms.date: 08/01/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: f3f9abfb8373e7257237b39d16dfb3f36259ddd5
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: cffa9f566c6b2f4feb0fd7426eeea54a4644fda8
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51281920"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53140155"
 ---
-# <a name="what-is-azure-event-hubs"></a>Что такое Центры событий Azure?
+# <a name="azure-event-hubs---a-big-data-streaming-platform-and-event-ingestion-service"></a>Центры событий Azure представляют собой платформу потоковой передачи и службу приема событий.
 
 Центры событий Azure — это платформа потоковой передачи больших данных и служба приема событий, принимающая и обрабатывающая миллионы событий в секунду. Центры событий могут обрабатывать и сохранять события, данные и телеметрию, созданные распределенным программным обеспечением и устройствами. Данные, отправляемые в концентратор событий, можно преобразовывать и сохранять с помощью любого поставщика аналитики в реальном времени, а также с помощью адаптеров пакетной обработки или хранения. 
 
@@ -66,11 +66,11 @@ ms.locfileid: "51281920"
 
 Центры событий позволяют обрабатывать потоки сообщений. По своим характеристикам они отличаются от традиционных корпоративных служб обмена сообщениями. Центры событий разработаны с учетом высокой пропускной способности и сценариев обработки событий. Центры событий содержат следующие [основные компоненты](event-hubs-features.md):
 
-- **Производители событий** — это любые сущности, которые отправляют данные в концентратор событий. Издатели событий могут публиковать события с помощью HTTPS, AMQP 1.0 или Apache Kafka (версия 1.0 и более поздние).
-- **Разделы** — каждый потребитель считывает только определенный раздел (подмножество) потока сообщений.
-- **Группа потребителей** — это представление всего концентратора событий (состояние, позиция или смещение). Группы потребителей обеспечивают каждому из нескольких потребляющих приложений отдельное представление потока событий, а также возможность считывания потока независимо друг от друга в своем темпе и с собственными смещениями.
-- **Единицы пропускной способности** — заранее приобретаемые единицы, определяющие пропускную способность Центров событий.
-- **Приемники событий** — любые сущности, считывающие данные из концентратора событий. Все потребители Центров событий подключаются через сеанс AMQP 1.0, в рамках которого события доставляются, как только становятся доступными. Все объекты-получатели Kafka подключаются через протокол Kafka 1.0 и более поздней версии.
+- **Производители событий:** любые сущности, которые отправляют данные в концентратор событий. Издатели событий могут публиковать события с помощью HTTPS, AMQP 1.0 или Apache Kafka (версия 1.0 и более поздние).
+- **Разделы:** каждый потребитель считывает только определенный раздел (подмножество) потока сообщений.
+- **Группы потребителей:** представление всего концентратора событий (состояние, позиция или смещение). Группы потребителей обеспечивают каждому из нескольких потребляющих приложений отдельное представление потока событий, а также возможность считывания потока независимо друг от друга в своем темпе и с собственными смещениями.
+- **Единицы пропускной способности:** заранее приобретаемые единицы, определяющие пропускную способность Центров событий.
+- **Приемники событий:** любые сущности, считывающие данные из концентратора событий. Все потребители Центров событий подключаются через сеанс AMQP 1.0, в рамках которого события доставляются, как только становятся доступными. Все объекты-получатели Kafka подключаются через протокол Kafka 1.0 и более поздней версии.
 
 На следующем рисунке показана архитектура обработки потока Центров событий.
 
@@ -81,9 +81,9 @@ ms.locfileid: "51281920"
 
 Чтобы начать работу с Центрами событий, обратитесь к следующим статьям:
 
-1. **Создание концентратора событий**: [портал Azure](event-hubs-create.md), [Azure CLI](event-hubs-quickstart-cli.md), [Azure PowerShell](event-hubs-quickstart-powershell.md), [шаблон Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub.md)
-2. **Отправка событий в концентратор**: [.NET Standard](event-hubs-dotnet-standard-getstarted-send.md), [.NET Framework](event-hubs-dotnet-framework-getstarted-send.md), [Java](event-hubs-java-get-started-send.md), [Python](event-hubs-python-get-started-send.md), [Node.js](event-hubs-node-get-started-send.md), [Go](event-hubs-go-get-started-send.md), [C](event-hubs-c-getstarted-send.md)
-3. **Получение событий из концентратора**: [Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard](event-hubs-dotnet-standard-getstarted-receive-eph.md), [Получение событий от Центров событий Azure с помощью платформы .NET Framework](event-hubs-dotnet-framework-getstarted-receive-eph.md), [Получение событий от Центров событий Azure с помощью Java](event-hubs-java-get-started-receive-eph.md), [Получение событий из концентраторов событий с помощью Python](event-hubs-python-get-started-receive.md), [Получение событий от Центров событий Azure с помощью Node.js](event-hubs-node-get-started-receive.md), [Получение событий из концентраторов событий с помощью Go](event-hubs-go-get-started-receive-eph.md), [Получение событий из Центров событий с помощью Apache Storm](event-hubs-storm-getstarted-receive.md)   
+1. **Создание концентратора событий:** [портал Azure](event-hubs-create.md), [Azure CLI](event-hubs-quickstart-cli.md), [Azure PowerShell](event-hubs-quickstart-powershell.md), [шаблон Azure Resource Manager](event-hubs-resource-manager-namespace-event-hub.md)
+2. **Отправка событий в концентратор:** [.NET Core](event-hubs-dotnet-standard-getstarted-send.md), [.NET Framework](event-hubs-dotnet-framework-getstarted-send.md), [Java](event-hubs-java-get-started-send.md), [Python](event-hubs-python-get-started-send.md), [Node.js](event-hubs-node-get-started-send.md), [Go](event-hubs-go-get-started-send.md), [C](event-hubs-c-getstarted-send.md)
+3. **Получение событий из концентратора:** [.NET Core](event-hubs-dotnet-standard-getstarted-receive-eph.md), [.NET Framework](event-hubs-dotnet-framework-getstarted-receive-eph.md), [Java](event-hubs-java-get-started-receive-eph.md), [Python](event-hubs-python-get-started-receive.md), [Node.js](event-hubs-node-get-started-receive.md), [Go](event-hubs-go-get-started-receive-eph.md), [Apache Storm](event-hubs-storm-getstarted-receive.md)   
 
 Чтобы узнать больше о Центрах событий, обратитесь к следующим статьям:
 

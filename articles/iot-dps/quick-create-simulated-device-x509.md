@@ -9,14 +9,14 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 8b7848392ebd8ec44dcf646b13911aaafe905ae3
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 16942e183152720dc958b6c0ccecde1dee2e5cde
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158927"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53185177"
 ---
-# <a name="quickstart-provision-an-x509-simulated-device-using-the-azure-iot-c-sdk"></a>Краткое руководство по подготовке имитированного устройства X.509 с помощью пакета SDK для устройства C Интернета вещей Azure
+# <a name="quickstart-provision-an-x509-simulated-device-using-the-azure-iot-c-sdk"></a>Краткое руководство. Подготовка имитированного устройства X.509 с помощью пакета SDK для устройства C Интернета вещей Azure
 
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
 
@@ -24,9 +24,9 @@ ms.locfileid: "50158927"
 
 Если вы не знакомы с процессом автоматической подготовки, прочтите статью о [принципах автоматической подготовки устройств](concepts-auto-provisioning.md). Кроме того, прежде чем продолжить работу с этим кратким руководством, выполните шаги, описанные в статье [Настройка службы подготовки устройств для Центра Интернета вещей на портале Azure](./quick-setup-auto-provision.md). 
 
-Служба подготовки устройств интернета вещей Azure поддерживает два типа регистрации:
-- [группы регистрации](concepts-service.md#enrollment-group) — используются для регистрации нескольких связанных устройств;
-- [индивидуальная регистрация](concepts-service.md#individual-enrollment) — используется для регистрации одного устройства.
+Служба подготовки устройств Интернета вещей Azure поддерживает два типа регистрации:
+- [Группы регистрации](concepts-service.md#enrollment-group). Используются для регистрации нескольких связанных устройств.
+- [Индивидуальные регистрации.](concepts-service.md#individual-enrollment) Предназначены для регистрации одного устройства.
 
 В этой статье описана индивидуальная регистрация.
 
@@ -137,13 +137,13 @@ ms.locfileid: "50158927"
 
 3. В разделе **Add enrollment** (Добавить регистрацию) введите указанные ниже сведения, а затем нажмите кнопку **Сохранить**.
 
-    - **Механизм:** выберите **X.509** как *механизм* аттестации удостоверения.
-    - В поле **Primary certificate .pem or .cer file** (PEM-файл или CER-файл первичного сертификата) щелкните **Выберите файл**, чтобы выбрать созданный ранее файл сертификата — X509testcert.pem.
-    - **Идентификатор устройства Центра Интернета вещей:** введите **test-docs-cert-device**, чтобы присвоить устройству идентификатор.
+    - **Механизм.** Выберите **X.509** как *механизм* аттестации удостоверения.
+    - **PEM-файл или CER-файл первичного сертификата.** Щелкните **Выберите файл**, чтобы выбрать созданный ранее файл сертификата — X509testcert.pem.
+    - **Идентификатор устройства Центра Интернета вещей.** Введите **test-docs-cert-device**, чтобы присвоить устройству идентификатор.
 
-    [![Добавление индивидуальной регистрации для аттестации X.509 на портале](./media/quick-create-simulated-device-x509/device-enrollment.png)](./media/quick-create-simulated-device-x509/device-enrollment.png#lightbox)
+      [![Добавление индивидуальной регистрации для аттестации X.509 на портале](./media/quick-create-simulated-device-x509/device-enrollment.png)](./media/quick-create-simulated-device-x509/device-enrollment.png#lightbox)
 
-    После успешной регистрации устройство X.509 отобразится как **riot-device-cert** в столбце *Идентификатор регистрации* на вкладке *Индивидуальные регистрации*. 
+      После успешной регистрации устройство X.509 отобразится как **riot-device-cert** в столбце *Идентификатор регистрации* на вкладке *Индивидуальные регистрации*. 
 
 
 

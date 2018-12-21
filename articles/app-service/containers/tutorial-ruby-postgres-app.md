@@ -1,5 +1,5 @@
 ---
-title: Разработка веб-приложений на основе Ruby и Postgres в службе приложений Azure на платформе Linux | Документация Майкрософт
+title: Создание веб-приложения Ruby с подключением к базе данных PostgreSQL на платформе Linux в Службе приложений Azure | Документация Майкрософт
 description: Узнайте, как создать приложение Ruby, работающее в Azure, с подключением к базе данных PostgreSQL в Azure.
 services: app-service\web
 documentationcenter: ''
@@ -11,17 +11,17 @@ ms.devlang: ruby
 ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: cephalin
-ms.custom: mvc
-ms.openlocfilehash: 925537b3dff852921aad1e74d009e09fc90c394a
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.custom: seodec18
+ms.openlocfilehash: 247c4f24869901f0f50b081d8f57b7e3841a8e8a
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39445082"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53271034"
 ---
 # <a name="build-a-ruby-and-postgres-web-app-in-azure-app-service-on-linux"></a>Разработка веб-приложения на основе Ruby и Postgres в службе приложений Azure на платформе Linux
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать веб-приложение Ruby и подключить его к базе данных PostgreSQL. По завершении вы получите приложение [Ruby on Rails](http://rubyonrails.org/), работающее в службе приложений под управлением Linux.
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать веб-приложение Ruby и подключить его к базе данных PostgreSQL. По завершении вы получите приложение [Ruby on Rails](https://rubyonrails.org/), работающее в службе приложений под управлением Linux.
 
 ![Приложение Ruby on Rails, работающее в службе приложений Azure](./media/tutorial-ruby-postgres-app/complete-checkbox-published.png)
 
@@ -43,7 +43,7 @@ ms.locfileid: "39445082"
 
 * [установите Git](https://git-scm.com/);
 * [установите Ruby 2.3](https://www.ruby-lang.org/en/documentation/installation/);
-* [установите Ruby on Rails 5.1](http://guides.rubyonrails.org/v5.1/getting_started.html);
+* [установите Ruby on Rails 5.1](https://guides.rubyonrails.org/v5.1/getting_started.html);
 * [установите и запустите PostgreSQL](https://www.postgresql.org/download/);
 
 ## <a name="prepare-local-postgres"></a>Подготовка локальной базы данных Postgres
@@ -92,7 +92,7 @@ bundle install --path vendor/bundle
 
 ### <a name="run-the-sample-locally"></a>Локальный запуск примера
 
-Выполните [перенос Rails](http://guides.rubyonrails.org/active_record_migrations.html#running-migrations), чтобы создать таблицы, необходимые для приложения. Чтобы узнать, какие таблицы создаются при переносе, просмотрите каталог _db/migrate_ в репозитории Git.
+Выполните [перенос Rails](https://guides.rubyonrails.org/active_record_migrations.html#running-migrations), чтобы создать таблицы, необходимые для приложения. Чтобы узнать, какие таблицы создаются при переносе, просмотрите каталог _db/migrate_ в репозитории Git.
 
 ```bash
 rake db:create

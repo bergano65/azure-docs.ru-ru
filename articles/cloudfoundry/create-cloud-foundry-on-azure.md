@@ -1,6 +1,6 @@
 ---
-title: Создание Cloud Foundry в Azure
-description: Узнайте, как настроить параметры, необходимые для подготовки к работе кластера Cloud Foundry PCF в Azure
+title: Создание кластера Pivotal Cloud Foundry в Azure
+description: Узнайте, как настроить параметры, необходимые для подготовки кластера Pivotal Cloud Foundry (PCF) к работе в Azure
 services: Cloud Foundry
 documentationcenter: CloudFoundry
 author: ruyakubu
@@ -14,76 +14,77 @@ ms.service: Cloud Foundry
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
-ms.openlocfilehash: a0a3379a8a2579080d9b686917395feec9cf8f3d
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: 9514118e1f29faab937ed01899b5947789ca9735
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48250621"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53101404"
 ---
-# <a name="create-cloud-foundry-on-azure"></a>Создание Cloud Foundry в Azure
+# <a name="create-a-pivotal-cloud-foundry-cluster-on-azure"></a>Создание кластера Pivotal Cloud Foundry в Azure
 
-Это руководство предоставляет быстрые шаги по созданию параметров, необходимых для подготовки кластера Pivotal Cloud Foundry PCF в Azure.  Решение Pivotal Cloud Foundry можно найти, выполнив поиск в Azure [Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/pivotal.pivotal-cloud-foundry).
+Это руководство предоставляет быстрые шаги для создания параметров, необходимых для подготовки кластера Pivotal Cloud Foundry (PCF) к работе в Azure. Чтобы найти решение Pivotal Cloud Foundry, выполните поиск в Azure [Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/pivotal.pivotal-cloud-foundry).
 
-![Замещающий текст](media/deploy/pcf-marketplace.png "Поиск Pivotal Cloud Foundry в Azure")
+![Поиск Pivotal Cloud Foundry в Azure](media/deploy/pcf-marketplace.png)
 
 
 ## <a name="generate-an-ssh-public-key"></a>Создание открытого ключа SSH
 
-Существует несколько способов создать открытый ключ SSH с помощью Windows, Mac или Linux.
+Существует несколько способов создать открытый ключ Secure Shell (SSH) с помощью Windows, Mac или Linux.
 
 ```Bash
 ssh-keygen -t rsa -b 2048
 ```
-- Щелкните здесь для просмотра [инструкций]( https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows) для вашей среды.
+
+Дополнительные сведения см. в статье [Как использовать ключи SSH с Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows).
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 
 > [!NOTE]
 >
-> Для создания субъекта-службы требуется разрешение владельца учетной записи.  Кроме того, можно написать сценарий для автоматизации создания субъекта-службы. Например, с помощью команды [az ad sp create-for-rbac](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest) Azure CLI.
+> Для создания субъекта-службы требуется разрешение владельца учетной записи. Можно также написать сценарий для автоматизации создания субъекта-службы. Например, можно использовать команду [az ad sp create-for-rbac](https://docs.microsoft.com/cli/azure/ad/sp?view=azure-cli-latest) Azure CLI.
 
-1. Войдите в свою учетную запись Azure.
+1. Войдите в учетную запись Azure.
 
     `az login`
 
-    ![Замещающий текст](media/deploy/az-login-output.png "Вход Azure CLI")
+    ![Вход в Azure CLI](media/deploy/az-login-output.png )
  
-    Скопируйте значение "id" как **идентификатор подписки** и значение **tenantId** для дальнейшего использования.
+    Скопируйте значение id как **идентификатор подписки** и скопируйте значение tenantId для дальнейшего использования.
 
 2. Определите подписку по умолчанию для этой конфигурации.
 
     `az account set -s {id}`
 
-3. Создайте приложение AAD для вашего PCF и укажите уникальный буквенно-цифровой пароль.  Сохраните пароль как **clientSecret** для дальнейшего использования.
+3. Создайте приложение Azure Active Directory для вашего PCF. Укажите уникальный буквенно-цифровой пароль. Сохраните пароль как **clientSecret** для дальнейшего использования.
 
-    `az ad app create --display-name "Svc Prinicipal for OpsManager" --password {enter-your-password} --homepage "{enter-your-homepage}" --identifier-uris {enter-your-homepage}`
+    `az ad app create --display-name "Svc Principal for OpsManager" --password {enter-your-password} --homepage "{enter-your-homepage}" --identifier-uris {enter-your-homepage}`
 
-    Скопируйте значение "appId" в выходных данных как **ClientID** для дальнейшего использования.
+    Скопируйте значение appId в выходных данных как **clientID** для дальнейшего использования.
 
     > [!NOTE]
     >
-    > Выберите домашнюю страницу приложения и URI идентификатора.  Например, http://www.contoso.com.
+    > Выберите домашнюю страницу приложения и URI идентификатора, например http://www.contoso.com.
 
-4. Создайте субъект-службу с новым "appId".
+4. Создайте субъект-службу с новым идентификатором приложения.
 
     `az ad sp create --id {appId}`
 
-5. Задайте **Contributor** в качестве разрешения роли субъекта-службы.
+5. Задайте для субъекта-службы роль разрешения "Участник".
 
     `az role assignment create --assignee “{enter-your-homepage}” --role “Contributor” `
 
-    Кроме того, можно использовать…
+    Можно также использовать:
 
     `az role assignment create --assignee {service-princ-name} --role “Contributor” `
 
-    ![Замещающий текст](media/deploy/svc-princ.png "Назначение роли субъекту-службе")
+    ![Назначение роли субъекту-службе](media/deploy/svc-princ.png )
 
-6. Убедитесь, что вы можете успешно войти в субъект-службу с помощью appId, пароля и tenantId.
+6. Убедитесь, что вы можете успешно войти в субъект-службу с помощью идентификатора приложения, пароля и идентификатора клиента.
 
-    `az login --service-principal -u {appId} -p {your-passward}  --tenant {tenantId}`
+    `az login --service-principal -u {appId} -p {your-password}  --tenant {tenantId}`
 
-7. Создайте JSON-файл в следующем формате с помощью всех указанных выше значений: **subscription ID**, **tenantId**, **clientID** и **clientSecret** — которые вы скопировали ранее.  Сохраните файл.
+7. Создайте JSON-файл в следующем формате. Используйте значения **subscriptionID**, **tenantID**, **clientID** и **clientSecret**, скопированные ранее. Сохраните файл.
 
     ```json
     {
@@ -97,34 +98,34 @@ ssh-keygen -t rsa -b 2048
 ## <a name="get-the-pivotal-network-token"></a>Получение токена Pivotal Network
 
 1. Зарегистрируйтесь или войдите в учетную запись [Pivotal Network](https://network.pivotal.io).
-2. Щелкните имя своего профиля в верхней правой части страницы, а затем выберите "Изменение профиля".
-3. Прокрутите до нижней части страницы и скопируйте значение **Legacy API token** (Устаревший токен API).  Это ваше значение **токена Pivotal Network**, которое будет использоваться позже.
+2. Выберите имя профиля в правом верхнем углу страницы. Выберите команду **Edit Profile** (Изменить профиль).
+3. Прокрутите до нижней части страницы и скопируйте значение **Legacy API token** (Устаревший токен API). Это ваше значение **токена Pivotal Network**, которое будет использоваться позже.
 
-## <a name="provision-your-cloud-foundry-on-azure"></a>Подготовка к работе Cloud Foundry в Azure
+## <a name="provision-your-cloud-foundry-cluster-on-azure"></a>Подготовка кластера Cloud Foundry к работе в Azure
 
-1. Теперь у вас есть все параметры, необходимые для подготовки к работе кластера [Pivotal Cloud Foundry в Azure](https://azuremarketplace.microsoft.com/marketplace/apps/pivotal.pivotal-cloud-foundry).
-2. Введите параметры и создайте кластер PCF.
+Теперь у вас есть все параметры, необходимые для подготовки [кластера Pivotal Cloud Foundry к работе в Azure](https://azuremarketplace.microsoft.com/marketplace/apps/pivotal.pivotal-cloud-foundry).
+Введите параметры и создайте кластер PCF.
 
-## <a name="verify-the-deployment-and-log-into-the-pivotal-ops-manager"></a>Проверка развертывания и вход в Pivotal Ops Manager
+## <a name="verify-the-deployment-and-sign-in-to-the-pivotal-ops-manager"></a>Проверка развертывания и вход в Pivotal Ops Manager
 
-1. Кластер PCF должен отображать состояние развертывания.
+1. Кластер PCF отображает состояние развертывания.
 
-    ![Замещающий текст](media/deploy/deployment.png "Состояние развертывания Azure")
+    ![Состояние развертывания в Azure](media/deploy/deployment.png )
 
-2. Щелкните ссылку **Развертывания** на панели навигации слева, чтобы получить учетные данные своего PCF Ops Manager, а затем щелкните **Имя развертывания** на следующей странице.
-3. На панели навигации слева щелкните ссылку **Выходные данные**, чтобы отобразить URL-адрес, имя пользователя и пароль для PCF Ops Manager.  Значение "OPSMAN-FQDN" является URL-адресом.
+2. Выберите ссылку **Развертывания** в области навигации слева, чтобы получить учетные данные для вашего диспетчера PCF Ops Manager. Выберите **Имя развертывания** на следующей странице.
+3. На панели навигации слева выберите ссылку **Выходные данные**, чтобы отобразить URL-адрес, имя пользователя и пароль для PCF Ops Manager. Значение OPSMAN-FQDN является URL-адресом.
  
-    ![Замещающий текст](media/deploy/deploy-outputs.png "Выходные данные развертывания Cloud Foundry")
+    ![Выходные данные развертывания Cloud Foundry](media/deploy/deploy-outputs.png )
  
-4. Перейдите по URL-адресу в веб-браузере и введите учетные данные для входа из предыдущего шага.
+4. В веб-браузере перейдите по URL-адресу. Введите учетные данные с предыдущего шага, чтобы выполнить вход.
 
-    ![Замещающий текст](media/deploy/pivotal-login.png "Страница входа в Pivotal")
+    ![Страница входа Pivotal](media/deploy/pivotal-login.png )
          
     > [!NOTE]
     >
-    > Если произошел сбой браузера Internet Explorer из-за предупреждающего сообщения о небезопасности веб-сайта, щелкните "Подробнее" и "Перейти на веб-страницу".  Для Firefox щелкните "Дополнительно" и добавьте сертификацию для продолжения.
+    > Если произошел сбой браузера Internet Explorer из-за предупреждающего сообщения о небезопасности веб-сайта, выберите **Подробнее** и перейдите на веб-страницу. Для Firefox выберите **Дополнительно** и добавьте сертификат, чтобы продолжить.
 
-5. Ваш PCF Ops Manager должен отображать развернутые экземпляры Azure. Теперь здесь можно приступать к развертыванию ваших приложений и управлению ими!
+5. Ваш PCF Ops Manager отображает развернутые экземпляры Azure. Теперь здесь можно создавать и администрировать приложения.
                
-    ![Замещающий текст](media/deploy/ops-mgr.png "Развернутый экземпляр Azure в Pivotal")
+    ![Развернутый экземпляр Azure в Pivotal](media/deploy/ops-mgr.png )
  

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Использование API таблицы с .NET в Azure Cosmos DB
+title: Краткое руководство. Использование API таблиц с .NET в Azure Cosmos DB
 description: В этом руководстве показано, как использовать API таблицы Azure Cosmos DB для создания приложения с помощью портала Azure и .NET
 services: cosmos-db
 author: SnehaGunda
@@ -10,14 +10,14 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 08/17/2018
 ms.author: sngun
-ms.openlocfilehash: a36c1e68ddd68e497966d50122e9f27c72609948
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 22b2f247de97a0bf0b4a145062c7b92fec61ee9a
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52834457"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53074991"
 ---
-# <a name="quickstart-build-a-table-api-app-with-net-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблицы с помощью .NET и Azure Cosmos DB 
+# <a name="quickstart-build-a-table-api-app-with-net-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью .NET и Azure Cosmos DB 
 
 > [!div class="op_single_selector"]
 > * [.NET](create-table-dotnet.md)
@@ -87,7 +87,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Так вы обеспечите обмен данными между приложением и размещенной базой данных. 
 
-1. На [портале Azure](http://portal.azure.com/) щелкните **Строка подключения**. 
+1. На [портале Azure](https://portal.azure.com/) щелкните **Строка подключения**. 
 
     Используйте кнопку копирования в правой части окна, чтобы скопировать **основную строку подключения**.
 

@@ -1,23 +1,22 @@
 ---
-title: Подключение приложения MongoDB к Azure Cosmos DB с помощью Node.js
-description: Узнайте, как подключить имеющееся приложение MongoDB Node.js к Azure Cosmos DB
-services: cosmos-db
+title: Подключение приложения MongoDB на Node.js к Azure Cosmos DB
+description: В этом кратком руководстве показано, как подключить существующее приложение MongoDB, написанное на Node.js, к Azure Cosmos DB.
 author: SnehaGunda
+ms.author: sngun
 ms.service: cosmos-db
 ms.component: cosmosdb-mongo
-ms.custom: quick start connect, mvc, devcenter
 ms.devlang: nodejs
 ms.topic: quickstart
-ms.date: 06/19/2017
-ms.author: sngun
-ms.openlocfilehash: 6844fc2450154b7e71c74ad9728929c3dc9df2f9
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.date: 12/06/2018
+ms.custom: seodec18
+ms.openlocfilehash: d9754cf66b05059c986c7ffbff94290e207f706a
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52844487"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141386"
 ---
-# <a name="azure-cosmos-db-migrate-an-existing-nodejs-mongodb-web-app"></a>Azure Cosmos DB. Перемещение имеющегося веб-приложения MongoDB Node.js 
+# <a name="azure-cosmos-db-migrate-an-existing-nodejs-mongodb-web-app"></a>Azure Cosmos DB — перенос существующего веб-приложения MongoDB на Node.js 
 
 > [!div class="op_single_selector"]
 > * [.NET](create-mongodb-dotnet.md)
@@ -45,13 +44,13 @@ Azure Cosmos DB — это глобально распределенная мн
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу. 
 [!INCLUDE [cosmos-db-emulator-mongodb](../../includes/cosmos-db-emulator-mongodb.md)]
 
-Кроме Azure CLI, вам нужно локально установить [Node.js](https://nodejs.org/) и [Git](http://www.git-scm.com/downloads) для выполнения команд `npm` и `git`.
+Кроме Azure CLI, вам нужно локально установить [Node.js](https://nodejs.org/) и [Git](https://www.git-scm.com/downloads) для выполнения команд `npm` и `git`.
 
 У вас должен быть опыт работы с Node.js. В целом разработка приложений Node.js в этом кратком руководстве не рассматривается.
 
 ## <a name="clone-the-sample-application"></a>Клонирование примера приложения
 
-Затем выполните следующие команды, чтобы клонировать репозиторий с примером. Этот репозиторий с примером содержит приложение по умолчанию [MEAN.js](http://meanjs.org/).
+Затем выполните следующие команды, чтобы клонировать репозиторий с примером. Этот репозиторий с примером содержит приложение по умолчанию [MEAN.js](https://meanjs.org/).
 
 1. Откройте командную строку, создайте папку git-samples, а затем закройте окно командной строки.
 
@@ -180,7 +179,7 @@ module.exports = {
 
 ## <a name="retrieve-the-key"></a>Получение ключа
 
-Чтобы подключиться к базе данных Azure Cosmos DB, вам понадобится ключ базы данных. Чтобы получить первичный ключ, выполните команду [az cosmosdb list-keys](/cli/azure/cosmosdb#list-keys).
+Чтобы подключиться к базе данных Azure Cosmos DB, вам понадобится ключ базы данных. Чтобы получить первичный ключ, выполните команду [az cosmosdb list-keys](/cli/azure/cosmosdb#az-cosmosdb-list-keys).
 
 ```azurecli-interactive
 az cosmosdb list-keys --name <cosmosdb-name> --resource-group myResourceGroup --query "primaryMasterKey"

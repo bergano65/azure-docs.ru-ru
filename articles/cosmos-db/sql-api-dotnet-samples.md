@@ -1,6 +1,6 @@
 ---
 title: Azure Cosmos DB. Примеры .NET для API SQL
-description: Найти примеры C# .NET на GitHub для типичных задач с помощью API SQL для Azure Cosmos DB, включая операции CRUD.
+description: Здесь вы найдете примеры C# .NET на GitHub для типичных задач с использованием API SQL для Azure Cosmos DB, включая операции CRUD.
 keywords: Пример NoSQL
 author: rnagpal
 ms.service: cosmos-db
@@ -8,12 +8,12 @@ ms.component: cosmosdb-sql
 ms.topic: sample
 ms.date: 02/22/2017
 ms.author: rnagpal
-ms.openlocfilehash: 39eacca1e5ddb4c7024c5195dc1823f2c3c651e7
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 9c16a882e49ceec4fc733cb3a8c1061dd1949e28
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52875269"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53166631"
 ---
 # <a name="azure-cosmos-db-net-examples-for-the-sql-api"></a>Azure Cosmos DB. Примеры .NET для API SQL
 > [!div class="op_single_selector"]
@@ -37,11 +37,11 @@ ms.locfileid: "52875269"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
   
-- Вы можете [активировать преимущества подписчика Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)— каждый месяц ваша подписка Visual Studio предоставляет вам кредиты, которые можно использовать для оплаты служб Azure.
+- Вы можете [активировать преимущества подписчика Visual Studio](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio): в вашей подписке Visual Studio каждый месяц зачисляются деньги на счет, которые можно использовать для оплаты служб Azure.
 
 [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
-Вам также понадобится [пакет NuGet Microsoft.Azure.DocumentDB](http://www.nuget.org/packages/Microsoft.Azure.DocumentDB/). 
+Вам также понадобится [пакет NuGet Microsoft.Azure.DocumentDB](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/). 
 
 > [!NOTE]
 > Каждый пример является самодостаточным, он устанавливается самостоятельно и выполняет необходимую очистку после удаления. Поэтому примеры выполняют несколько вызовов метода CreateDocumentCollectionAsync(). Каждый раз, когда это происходит, вам выставляется счет за 1 час использования каждого уровня производительности создаваемой коллекции. 
@@ -146,7 +146,7 @@ ms.locfileid: "52875269"
 | [Чтение веб-канала изменений](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/ChangeFeed/Program.cs#L132) |[DocumentClient.CreateDocumentChangeFeedQuery](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.createdocumentchangefeedquery.aspx) | 
 | [Чтение диапазонов ключей секционирования](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/ChangeFeed/Program.cs#L118) |[DocumentClient.ReadPartitionKeyRangeFeedAsync](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.documentclient.readpartitionkeyrangefeedasync.aspx) | 
 
-Пример процессора веб-канала изменений. [Средство миграции веб-канала изменений](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/ChangeFeedMigrationTool) демонстрирует использование библиотеки процессора веб-канала изменений для репликации данных в другую коллекцию Cosmos DB.   
+Пример обработчика канала изменений.  [Средство миграции веб-канала изменений](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/ChangeFeedMigrationTool) демонстрирует использование библиотеки процессора веб-канала изменений для репликации данных в другую коллекцию Cosmos DB.   
 
 ## <a name="server-side-programming-examples"></a>Примеры программирования на стороне сервера
 В файле программирования на стороне сервера [azure-documentdb-dotnet/samples/code-samples/ServerSideScripts/Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/ServerSideScripts/Program.cs) показано, как выполнить следующие задачи.

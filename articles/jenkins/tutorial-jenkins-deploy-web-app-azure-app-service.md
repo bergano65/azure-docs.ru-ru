@@ -8,14 +8,14 @@ ms.author: tarcher
 manager: jeconnoc
 ms.topic: tutorial
 ms.date: 11/15/2018
-ms.openlocfilehash: 274de7ac63df0afc1a59e197deebeb7929cf1ef8
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: b65972b79fd16b912abfbd2e35642ef5d9f5adc4
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51855016"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53438478"
 ---
-# <a name="tutorial-deploy-from-github-to-azure-app-service-with-jenkins-continuous-integration-and-deployment"></a>Руководство по развертыванию из GitHub в Службе приложений Azure с использованием непрерывной интеграции и непрерывного развертывания Jenkins
+# <a name="tutorial-deploy-from-github-to-azure-app-service-with-jenkins-continuous-integration-and-deployment"></a>Руководство. Развертывание из GitHub в Службе приложений Azure с использованием непрерывной интеграции и непрерывного развертывания Jenkins
 
 В рамках этого руководства мы развернем пример веб-приложения Java из GitHub в [Службе приложений Azure на платформе Linux](/azure/app-service/containers/app-service-linux-intro), настроив непрерывную интеграцию (CI) и непрерывное развертывание (CD) в Jenkins. Когда вы обновляете приложение, фиксируя изменения в GitHub, Jenkins автоматически выполняет сборку и повторную публикацию приложения в Службе приложений Azure. Пример приложения, используемый в этом руководстве, разработан на платформе [Spring Boot](http://projects.spring.io/spring-boot/). 
 
@@ -43,7 +43,7 @@ ms.locfileid: "51855016"
 
 * Сервер [Jenkins](https://jenkins.io/) с установленными средствами Maven и пакетом Java Development Kit (JDK) на виртуальной машине Azure под управлением Linux.
 
-  Если у вас нет сервера Jenkins, выполните сейчас на портале Azure действия, описанные в статье [Создание сервера Jenkins на виртуальной машине Azure под управлением Linux на портале Azure](/azure/jenkins/install-jenkins-solution-template).
+  Если у вас нет сервера Jenkins, выполните на портале Azure действия, описанные в руководстве по [созданию сервера Jenkins на виртуальной машине Azure под управлением Linux](/azure/jenkins/install-jenkins-solution-template).
 
 * Учетная запись [GitHub](https://github.com), чтобы создать рабочую копию ([вилку](#fork)) для примера веб-приложения Java. 
 
@@ -61,7 +61,7 @@ ms.locfileid: "51855016"
 
 1. На вкладке **Available** (Доступные) выберите такие подключаемые модули:
 
-   - [Azure App Service](https://plugins.jenkins.io/azure-app-service)
+   - [службе приложений Azure](https://plugins.jenkins.io/azure-app-service)
    - [GitHub Branch Source](https://plugins.jenkins.io/github-branch-source);
    - [Environment Injector](https://plugins.jenkins.io/envinject);
    - [Azure Credentials](https://plugins.jenkins.io/azure-credentials).
@@ -92,7 +92,7 @@ ms.locfileid: "51855016"
 > 
 > Выполнив эти действия, вы создадите учетные данные на основе личного маркера доступа, чтобы обеспечить взаимодействие Jenkins и GitHub с помощью ваших имени пользователя и пароля GitHub. 
 > Если для вашей учетной записи GitHub используется двухфакторная проверка подлинности, создайте маркер в GitHub и настройте Jenkins на использование этого маркера. 
-> Дополнительные сведения см. в документации о [подключаемом модуле GitHub для Jenkins](https://wiki.jenkins.io/display/JENKINS/Github+Plugin).
+> Дополнительные сведения см. в документации о [подключаемом модуле GitHub для Jenkins](https://wiki.jenkins.io/display/JENKINS/GitHub+Plugin).
 
 1. На странице **Manage Jenkins** (Управление Jenkins) щелкните **Configure System** (Настройка системы). 
 
@@ -164,7 +164,7 @@ az ad sp create-for-rbac --name "yourAzureServicePrincipalName" --password yourS
 
    | Свойство | Значение | ОПИСАНИЕ | 
    |----------|-------|-------------| 
-   | **Идентификатор подписки** | <*yourAzureSubscription-ID*> | Значение идентификатора GUID для подписки Azure. <p>**Совет**. Если вы не знаете идентификатор своей подписки Azure, выполните следующую команду Azure CLI из командной строки или Cloud Shell, а затем используйте значение GUID `id`: <p>`az account list` | 
+   | **Идентификатор подписки** | <*yourAzureSubscription-ID*> | Значение идентификатора GUID для подписки Azure. <p>**Совет**. Если вы не знаете идентификатор своей подписки Azure, выполните следующую команду Azure CLI из командной строки или Cloud Shell, а затем используйте значение GUID `id`. <p>`az account list` | 
    | **Идентификатор клиента** | <*yourAzureServicePrincipal-ID*> | Значение GUID `appId`, ранее созданное для субъекта-службы Azure. | 
    | **Секрет клиента** | <*yourSecurePassword*> | Значение `password` или секрет, который вы указали для субъекта-службы Azure. | 
    | **Идентификатор клиента** | <*yourAzureActiveDirectoryTenant-ID*> | Значение GUID `tenant` для клиента Azure Active Directory. | 

@@ -1,21 +1,22 @@
 ---
-title: Перемещение данных из концентраторов событий Azure в хранилище данных SQL | Документация Майкрософт
+title: Перенос данных о событиях в Хранилище данных SQL —Центры событий Azure | Документация Майкрософт
 description: В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой "Сетка событий".
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: ''
 ms.author: shvija
-ms.date: 08/27/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.topic: tutorial
 ms.service: event-hubs
-ms.openlocfilehash: 9673a7bff8e2d22764be28abef807434c53cc552
-ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.openlocfilehash: 03ebdabf60882a73eb15cbd36481068591bbd3bc
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43145162"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53086289"
 ---
-# <a name="process-and-migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Обработка и перемещение записанных данных из концентраторов событий в хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
+# <a name="migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
 
 Функция [Сбор](https://docs.microsoft.com/azure/event-hubs/event-hubs-capture-overview) в концентраторах событий Azure — это самый простой способ автоматически доставить данные потоковой передачи из концентраторов событий в хранилище BLOB-объектов Azure или Azure Data Lake Store. Вы можете последовательно обрабатывать и доставлять данные в любые другие назначения хранения по своему усмотрению, например в хранилище данных SQL или Cosmos DB. В этом руководстве показано, как записать данные из концентратора событий в хранилище данных SQL с помощью функции Azure, активируемой службой [Сетка событий](https://docs.microsoft.com/azure/event-grid/overview).
 

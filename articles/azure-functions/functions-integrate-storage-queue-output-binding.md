@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 09/19/2017
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: e48eac4cdc1e98e21a122850b1dc7d3e8f4efe07
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 0cd3d3044623e2265a4ef5f817ed41258e63ae1c
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48854530"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52995518"
 ---
 # <a name="add-messages-to-an-azure-storage-queue-using-functions"></a>Добавление сообщений в очередь службы хранилища Azure с помощью Функций
 
@@ -31,7 +31,7 @@ ms.locfileid: "48854530"
 
 * Следуйте указаниям, приведенным в статье [Создание первой функции на портале Azure](functions-create-first-azure-function.md), пропустив шаг **Очистка ресурсов**. При работе с этим кратким руководством создаются приложение-функция и функция, которые вы будете использовать здесь.
 
-* Установите [Обозреватель службы хранилища Microsoft Azure](http://storageexplorer.com/). Это инструмент, который вы будете использовать для проверки сообщений очереди, создаваемых с помощью выходной привязки.
+* Установите [Обозреватель службы хранилища Microsoft Azure](https://storageexplorer.com/). Это инструмент, который вы будете использовать для проверки сообщений очереди, создаваемых с помощью выходной привязки.
 
 ## <a name="add-binding"></a>Добавление выходной привязки
 
@@ -122,7 +122,7 @@ ms.locfileid: "48854530"
 
 Пропустите этот раздел, если вы уже установили Обозреватель службы хранилища и подключили его к используемой учетной записи хранения.
 
-2. Запустите инструмент [Обозреватель службы хранилища Microsoft Azure](http://storageexplorer.com/), щелкните значок подключения слева, выберите **Использовать имя и ключ учетной записи хранения**, а затем щелкните **Далее**.
+2. Запустите инструмент [Обозреватель службы хранилища Microsoft Azure](https://storageexplorer.com/), щелкните значок подключения слева, выберите **Использовать имя и ключ учетной записи хранения**, а затем щелкните **Далее**.
 
     ![Запуск инструмента "Обозреватель учетной записи хранения"](./media/functions-integrate-storage-queue-output-binding/functions-storage-manager-connect-1.png)
 

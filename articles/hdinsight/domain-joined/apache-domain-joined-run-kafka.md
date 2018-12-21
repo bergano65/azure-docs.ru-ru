@@ -8,14 +8,14 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: aa6702ccf00faa3d63d5458cfbd77ac15fbfbeaa
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 0d9ad11ab9a53cf5de51dd3f262dc16054be5d85
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633054"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53438614"
 ---
-# <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство. Настройка политик Apache Kafka в HDInsight с использованием Корпоративного пакета безопасности (предварительная версия)
+# <a name="tutorial-configure-apache-kafka-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство. Настройка политик Apache Kafka в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
 
 Сведения о настройке политик Apache Ranger для кластеров Apache Kafka с Корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к разделам `sales*` и `marketingspend`.
 
@@ -39,7 +39,7 @@ ms.locfileid: "51633054"
 
 1. В браузере подключитесь к интерфейсу администратора Ranger с помощью URL-адреса `https://<ClusterName>.azurehdinsight.net/Ranger/`. Не забудьте изменить `<ClusterName>` на имя вашего кластера Kafka.
 
-    > [!NOTE] 
+    > [!NOTE]  
     > Учетные данные Ranger не совпадают с учетными данными кластера Hadoop. Чтобы браузеры не использовали кэшированные учетные данные Hadoop, подключитесь к пользовательскому интерфейсу администратора Ranger в новом окне браузера в режиме InPrivate.
 
 2. Зарегистрируйтесь, используя свои учетные данные администратора Azure Active Directory (AD). Учетные данные администратора Azure AD отличаются от учетных данных кластера HDInsight или учетных данных SSH узла Linux HDInsight.
@@ -74,7 +74,7 @@ ms.locfileid: "51633054"
 
    ![Политика создания пользовательского интерфейса администратора Apache Ranger](./media/apache-domain-joined-run-kafka/apache-ranger-admin-create-policy.png)   
 
-   >[!NOTE] 
+   >[!NOTE]   
    >Подождите несколько минут, пока Ranger синхронизируется с Azure AD, если в поле **Выберите пользователя** автоматически не подставится пользователь домена.
 
 4. Щелкните **Добавить**, чтобы сохранить политику.
@@ -113,17 +113,17 @@ ms.locfileid: "51633054"
    read -p 'Enter your Kafka cluster name:' CLUSTERNAME
    ```
 
-3. Чтобы получить узлы Zookeeper и брокера Kafka, используйте следующие команды. При появлении запроса введите пароль для учетной записи администратора кластера.
+3. Чтобы получить узлы Apache Zookeeper и брокера Kafka, используйте приведенные ниже команды. При появлении запроса введите пароль для учетной записи администратора кластера.
 
    ```bash
    export KAFKAZKHOSTS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/ZOOKEEPER/components/ZOOKEEPER_SERVER | jq -r '["\(.host_components[].HostRoles.host_name):2181"] | join(",")' | cut -d',' -f1,2`; \
    export KAFKABROKERS=`curl -sS -u admin -G https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/services/KAFKA/components/KAFKA_BROKER | jq -r '["\(.host_components[].HostRoles.host_name):9092"] | join(",")' | cut -d',' -f1,2`; \
    ```
-> [!Note]
+> [!Note]  
 > Прежде чем продолжить, вам может потребоваться настроить среду разработки, если вы еще не сделали это. Требуются такие компоненты, как Java JDK, Apache Maven и SSH-клиент с scp. См. [инструкции по установке](https://github.com/Azure-Samples/hdinsight-kafka-java-get-started/tree/master/DomainJoined-Producer-Consumer).
 1. Скачайте [примеры присоединенного к домену производителя и потребителя Apache Kafka](https://github.com/Azure-Samples/hdinsight-kafka-java-get-started/tree/master/DomainJoined-Producer-Consumer).
 
-1. Выполните шаги 2 и 3 в разделе, посвященном **сборке и развертыванию примера** в [руководстве по использованию API производителя и потребителя Apache Kafka](https://docs.microsoft.com/azure/hdinsight/kafka/apache-kafka-producer-consumer-api#build-and-deploy-the-example).
+1. Выполните шаги 2 и 3 в разделе **Создание и развертывание примера** в [руководстве по использованию API производителя и потребителя Apache Kafka](https://docs.microsoft.com/azure/hdinsight/kafka/apache-kafka-producer-consumer-api#build-and-deploy-the-example).
 
 1. Выполните следующие команды:
 
@@ -132,7 +132,7 @@ ms.locfileid: "51633054"
    java -jar -Djava.security.auth.login.config=/usr/hdp/current/kafka-broker/config/kafka_client_jaas.conf kafka-producer-consumer.jar create marketingspend $KAFKABROKERS
    ```
 
-   >[!NOTE] 
+   >[!NOTE]   
    >Только владелец процесса службы Kafka, такой как root, может осуществлять запись в z-узлы Zookeeper `/config/topics`. Политики Ranger не реализуются при создании темы непривилегированным пользователем. Это обусловлено тем, что скрипт `kafka-topics.sh` связывается напрямую с Zookeeper для создания темы. Записи добавляются в узлы Zookeeper, в то время как наблюдатели на стороне брокера отслеживают и создают соответствующие темы. Авторизацию невозможно выполнить с помощью подключаемого модуля Ranger, а команда выше выполняется с помощью `sudo` через брокера Kafka.
 
 
@@ -210,5 +210,5 @@ ms.locfileid: "51633054"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Использование собственных ключей в Kafka](https://docs.microsoft.com/azure/hdinsight/kafka/apache-kafka-byok)
-* [Общие сведения о безопасности Hadoop с корпоративным пакетом безопасности](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-introduction)
+* [Создание собственных ключей для Apache Kafka](https://docs.microsoft.com/azure/hdinsight/kafka/apache-kafka-byok)
+* [Общие сведения об обеспечении безопасности Apache Hadoop с помощью Корпоративного пакета безопасности](https://docs.microsoft.com/azure/hdinsight/domain-joined/apache-domain-joined-introduction)

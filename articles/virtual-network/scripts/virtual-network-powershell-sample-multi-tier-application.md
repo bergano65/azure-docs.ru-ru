@@ -13,14 +13,14 @@ ms.devlang: powershell
 ms.topic: sample
 ms.tgt_pltfrm: ''
 ms.workload: infrastructure
-ms.date: 03/20/2018
+ms.date: 12/13/2018
 ms.author: jdial
-ms.openlocfilehash: 3a57827616e4722b8520dcddb64e4e67fa8c79c9
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: ebc0e18ecea61705ea8cb925a25d4233bfc9a2cb
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/19/2018
-ms.locfileid: "31599903"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53340510"
 ---
 # <a name="create-a-network-for-multi-tier-applications-script-sample"></a>Пример скрипта для создания сети для многоуровневых приложений
 
@@ -32,10 +32,11 @@ ms.locfileid: "31599903"
 
 ## <a name="sample-script"></a>Пример скрипта
 
+<!-- gitHub issue https://github.com/MicrosoftDocs/azure-docs/issues/17748 --> Идентификатор подсети назначается после создания виртуальной сети. В частности, это касается использования командлета New-AzureRmVirtualNetwork с параметром -Subnet. Если вы настраиваете подсеть с помощью командлета New-AzureRmVirtualNetworkSubnetConfig до вызова командлета New-AzureRmVirtualNetwork, идентификатор подсети не отобразится, пока вы не вызовете этот командлет.
 
 [!code-azurepowershell-interactive[main](../../../powershell_scripts/virtual-network/virtual-network-multi-tier-application/virtual-network-multi-tier-application.ps1  "Virtual network for multi-tier application")]
 
-## <a name="clean-up-deployment"></a>Очистка развертывания 
+## <a name="clean-up-deployment"></a>Очистка развертывания
 
 Выполните следующую команду, чтобы удалить группу ресурсов, виртуальную машину и все связанные с ней ресурсы:
 
@@ -47,7 +48,7 @@ Remove-AzureRmResourceGroup -Name myResourceGroup -Force
 
 Для создания группы ресурсов, виртуальной сети и групп безопасности сети этот скрипт использует следующие команды. Для каждой команды в следующей таблице приведены ссылки на соответствующую документацию:
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
 | [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzureRmVirtualNetwork](/powershell/module/azurerm.network/new-azurermvirtualnetwork) | Создает виртуальную сеть Azure и интерфейсную подсеть. |

@@ -1,5 +1,5 @@
 ---
-title: Пример политики Azure — конкретная группа безопасности сети на каждой сетевой карте
+title: 'Пример: конкретная группа безопасности сети на каждой сетевой карте'
 description: Этот пример политики требует, чтобы определенная группа безопасности сети использовалась для каждого виртуального сетевого интерфейса.
 services: azure-policy
 author: DCtheGeek
@@ -8,13 +8,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 09/18/2018
 ms.author: dacoulte
-ms.custom: mvc
-ms.openlocfilehash: 9e853e293611d58ac936228fd02fcd0c0a6d8dda
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: e24697620b61e942699f2748590c94f1063d3216
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46948304"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53313485"
 ---
 # <a name="nsg-x-on-every-nic"></a>Конкретная группа безопасности сети на каждой сетевой карте
 
@@ -71,4 +70,4 @@ az group delete --name myResourceGroup --yes
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Другие примеры см. в разделе [Примеры для политики Azure](index.md)
+- Другие примеры см. в статье [Примеры для Политики Azure](index.md).

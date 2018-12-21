@@ -16,12 +16,12 @@ ms.date: 10/25/2018
 ms.author: jeffgilb
 ms.reviewer: unknown
 ms.custom: mvc
-ms.openlocfilehash: 041d679cfc428278737a5668887e73f13ac694b1
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 89552bc568ce38c6153683e9c3b0f3f26f569083
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50137059"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52959551"
 ---
 # <a name="what-is-azure-stack"></a>Что такое Azure Stack?
 
@@ -34,7 +34,7 @@ Azure Stack предлагается в двух вариантах развер
 
 ## <a name="azure-stack-development-kit"></a>Пакет средств разработки Azure Stack
 
-[Пакет средств разработки Azure Stack (ASDK)](.\asdk\asdk-what-is.md) – это развертывание Azure Stack с одним узлом, удобное для оценки и изучения Azure Stack.  Также вы можете использовать ASDK как среду разработки, для разработки приложений с помощью API-интерфейсов и инструментов, совместимых с Azure.
+[Пакет средств разработки Azure Stack (ASDK)](./asdk/asdk-what-is.md) – это развертывание Azure Stack с одним узлом, удобное для оценки и изучения Azure Stack.  Также вы можете использовать ASDK как среду разработки, для разработки приложений с помощью API-интерфейсов и инструментов, совместимых с Azure.
 
 >[!Note]
 >ASDK не предназначен для использования в качестве рабочей среды.

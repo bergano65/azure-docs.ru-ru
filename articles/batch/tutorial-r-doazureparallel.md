@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 01/23/2018
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: fb616dc95cc7dd7dbb25f2deb832b517d0747ae4
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: 305ea27e787196f648fcb4c536f33b12c924c015
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30315456"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53164703"
 ---
 # <a name="tutorial-run-a-parallel-r-simulation-with-azure-batch"></a>Руководство. Параллельное моделирование на R с помощью пакетной службы Azure 
 
@@ -30,7 +30,7 @@ ms.locfileid: "30315456"
 > * Создание пула пакетной службы в качестве параллельного сервера для сеанса R.
 > * Запуск примера параллельного моделирования в пуле.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * Установленный дистрибутив [R](https://www.r-project.org/), такой как [Microsoft R Open](https://mran.microsoft.com/open). Используйте R версии 3.3.1 или более поздней.
 

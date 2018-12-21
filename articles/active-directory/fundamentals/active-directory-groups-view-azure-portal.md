@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство по просмотру групп и членов вашей организации в Azure Active Directory | Документация Майкрософт
-description: Краткое руководство содержит процедуры, позволяющие найти и просмотреть на портале Azure настроенные в организации группы и назначенные в них члены.
+title: Краткое руководство по просмотру групп и членов вашей организации — Azure Active Directory | Документация Майкрософт
+description: Инструкции по поиску и просмотру групп вашей организации и назначенных в них членов.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -10,14 +10,14 @@ ms.component: fundamentals
 ms.topic: quickstart
 ms.date: 09/24/2018
 ms.author: lizross
-ms.custom: it-pro
+ms.custom: it-pro, seodec18
 ms.reviewer: krbain
-ms.openlocfilehash: 9da9f055163f5df4ea064bd46caa811e39fba20c
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: 002b4bb4ab20e531132b461f90857cfab6aecfd3
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47056409"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53087482"
 ---
 <!--As a brand-new Azure AD administrator, I need to view my organization’s groups along with the assigned members, so I can manage permissions to apps and services for people in my organization-->
 
@@ -43,11 +43,11 @@ ms.locfileid: "47056409"
 
 2. Заполните страницу **Группа**:
     
-    - **Тип группы**: выберите **Безопасность**.
+    - **Тип группы.** Выберите **Безопасность**.
     
-    - **Имя группы:** введите _MDM policy - West_.
+    - **Имя группы.** Введите _MDM policy - West_.
     
-    - **Тип членства:** выберите **Назначенные**.
+    - **Тип членства.** Выберите **Назначенный**.
 
 3. Нажмите кнопку **Создать**.
 
@@ -58,9 +58,9 @@ ms.locfileid: "47056409"
 
 2. Заполните данные на странице **Пользователь**.
 
-    - **Имя:** введите _Alain Charon_.
+    - **Имя.** Введите _Alain Charon_.
 
-    - **Имя пользователя:** введите *alain@contoso.com*.
+    - **Имя пользователя.** Введите *alain@contoso.com*.
 
 3. Скопируйте автоматически созданный пароль, который подставляется в поле **Пароль**, а затем щелкните **Создать**.
 

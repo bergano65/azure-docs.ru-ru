@@ -1,5 +1,5 @@
 ---
-title: Разработка веб-приложения на основе Node.js и MongoDB в Azure | Документы Майкрософт
+title: Разработка приложения на основе Node.js и MongoDB в Службе приложений Azure | Документация Майкрософт
 description: Узнайте, как разработать приложение Node.js с подключением к базе данных Cosmos DB и строкой подключения MongoDB в Azure.
 services: app-service\web
 documentationcenter: nodejs
@@ -14,13 +14,13 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 05/04/2017
 ms.author: cephalin
-ms.custom: mvc
-ms.openlocfilehash: 2363f7f2e17bfc451ea9fd5486ba60fbc8ccb993
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.custom: seodec18
+ms.openlocfilehash: 3666af764fa20a8343addedbddcdb12de0daf4a1
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49364291"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53251510"
 ---
 # <a name="tutorial-build-a-nodejs-and-mongodb-web-app-in-azure"></a>Руководство. Разработка веб-приложения на основе Node.js и MongoDB в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "49364291"
 > В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение в службе приложений на платформе _Linux_, см. в руководство по [созданию веб-приложений Node.js с MongoDB в службе приложений Azure в Linux](./containers/tutorial-nodejs-mongodb-app.md).
 >
 
-Веб-приложения Azure — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как создать веб-приложение Node.js в Azure и подключить его к базе данных MongoDB. После выполнения действий, описанных в этом руководстве, у вас появится приложение MEAN (MongoDB, Express, AngularJS и Node.js), выполняющееся в [службе приложений Azure](app-service-web-overview.md). Для простоты в примере приложения используется [веб-платформа MEAN.js](http://meanjs.org/).
+Веб-приложения Azure — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как создать веб-приложение Node.js в Azure и подключить его к базе данных MongoDB. После выполнения действий, описанных в этом руководстве, у вас появится приложение MEAN (MongoDB, Express, AngularJS и Node.js), выполняющееся в [службе приложений Azure](app-service-web-overview.md). Для простоты в примере приложения используется [веб-платформа MEAN.js](https://meanjs.org/).
 
 ![Приложение MEAN.js, которое запущено в службе приложений Azure](./media/app-service-web-tutorial-nodejs-mongodb-app/meanjs-in-azure.png)
 
@@ -49,10 +49,10 @@ ms.locfileid: "49364291"
 Для работы с этим руководством:
 
 1. [установите Git](https://git-scm.com/);
-1. [установите Node.j и NPM](https://nodejs.org/).
-1. [установите Bower](https://bower.io/) (требуется для [MEAN.js](http://meanjs.org/docs/0.5.x/#getting-started));
-1. [Gulp.js](http://gulpjs.com/) (требуется для [MEAN.js](http://meanjs.org/docs/0.5.x/#getting-started));
-1. [Установите и запустите MongoDB Community Edition](https://docs.mongodb.com/manual/administration/install-community/). 
+2. [установите Node.j и NPM](https://nodejs.org/).
+3. [установите Bower](https://bower.io/) (требуется для [MEAN.js](https://meanjs.org/docs/0.5.x/#getting-started));
+4. [Gulp.js](https://gulpjs.com/) (требуется для [MEAN.js](https://meanjs.org/docs/0.5.x/#getting-started));
+5. [Установите и запустите MongoDB Community Edition](https://docs.mongodb.com/manual/administration/install-community/). 
 
 ## <a name="test-local-mongodb"></a>Проверка локальной базы данных MongoDB
 
@@ -310,10 +310,10 @@ remote: Handling node.js deployment.
 .
 remote: Deployment successful.
 To https://<app_name>.scm.azurewebsites.net/<app_name>.git
- * [new branch]      master -> master
+ * [new branch]      master -> master
 ``` 
 
-Вы можете заметить, что в ходе развертывания после `npm install` запускается [Gulp](http://gulpjs.com/). Служба приложений не запускает задачи Gulp или Grunt во время развертывания, поэтому для запуска скрипта в этом примере в корневом каталоге репозитория расположены два дополнительных файла: 
+Вы можете заметить, что в ходе развертывания после `npm install` запускается [Gulp](https://gulpjs.com/). Служба приложений не запускает задачи Gulp или Grunt во время развертывания, поэтому для запуска скрипта в этом примере в корневом каталоге репозитория расположены два дополнительных файла: 
 
 - _.deployment_ — этот файл указывает службе приложений запустить `bash deploy.sh` как пользовательский сценарий развертывания.
 - _deploy.sh_ — пользовательский сценарий развертывания. Если открыть этот файл, вы увидите, что он запускает `gulp prod` после `npm install` и `bower install`. 

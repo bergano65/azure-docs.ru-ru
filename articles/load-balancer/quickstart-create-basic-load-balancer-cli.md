@@ -1,14 +1,13 @@
 ---
-title: Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure CLI | Документация Майкрософт
+title: Краткое руководство. Создание подсистемы балансировки нагрузки ценовой категории "Базовый" с помощью Azure CLI
+titlesuffix: Azure Load Balancer
 description: В рамках этого краткого руководства вы узнаете, как создать общедоступную подсистему балансировки нагрузки с помощью Azure CLI
 services: load-balancer
 documentationcenter: na
 author: KumudD
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
 Customer intent: I want to create a Basic Load balancer so that I can load balance internet traffic to VMs.
-ms.assetid: ''
+ms.custom: mvc
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: get-started-article
@@ -16,17 +15,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/19/2018
 ms.author: kumud
-ms.custom: mvc
-ms.openlocfilehash: 3eb7ae721b0c275ffa39e04904e19c067b949214
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 60cdf251d9a862f8bae80f4f782c6ad94c0b85ce
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46965504"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53260775"
 ---
-# <a name="quickstart-create-a-public-load-balancer-to-load-balance-vms-using-azure-cli"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
+# <a name="quickstart-create-a-load-balancer-to-load-balance-vms-using-azure-cli"></a>Краткое руководство. Создание подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
-В этом кратком руководстве объясняется процесс создания подсистемы балансировки нагрузки Azure. Чтобы протестировать подсистему балансировки нагрузки, мы развернем две виртуальные машины с установленным сервером Ubuntu для распределения между ними нагрузки веб-приложения.
+В этом кратком руководстве показано, как создать Azure Load Balancer для распределения интернет-трафика между виртуальными машинами в Azure. Чтобы протестировать подсистему балансировки нагрузки, мы развернем две виртуальные машины с установленным сервером Ubuntu для распределения между ними нагрузки веб-приложения.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)] 
 

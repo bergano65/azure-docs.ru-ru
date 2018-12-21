@@ -1,5 +1,5 @@
 ---
-title: Руководство по развертывание заданий ASA на устройствах Azure IoT Edge | Документация Майкрософт
+title: Руководство. Развертывание задания Azure Stream Analytics на устройстве — Azure IoT Edge | Документация Майкрософт
 description: В этом руководстве Azure Stream Analytics развертывается в качестве модуля на устройстве IoT Edge
 author: kgremban
 manager: philmea
@@ -7,16 +7,15 @@ ms.author: kgremban
 ms.date: 09/21/2018
 ms.topic: tutorial
 ms.service: iot-edge
-services: iot-edge
-ms.custom: mvc
-ms.openlocfilehash: 2188e21cfd29ac8ac2d44878819ee62a3e2d555e
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: mvc, seodec18
+ms.openlocfilehash: 0096a7a57cb4a404f5c8e36d8b69eac2c20c1fab
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51566947"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53139817"
 ---
-# <a name="tutorial-deploy-azure-stream-analytics-as-an-iot-edge-module-preview"></a>Руководство по развертыванию Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия)
+# <a name="tutorial-deploy-azure-stream-analytics-as-an-iot-edge-module"></a>Руководство. Развертывание Azure Stream Analytics в качестве модуля IoT Edge
 
 Многие решения Интернета вещей используют службы аналитики, чтобы получать аналитические сведения о данных по мере того, как они попадают в облако с устройств Интернета вещей. С помощью Azure IoT Edge можно переместить логику [Azure Stream Analytics](https://docs.microsoft.com/azure/stream-analytics/) на само устройство. Обрабатывая потоки данных телеметрии в Edge, можно сократить объем отправленных данных и время, необходимое для реагирования на полезные аналитические сведения.
 
@@ -34,11 +33,9 @@ Azure Stream Analytics предоставляет расширенный син�
 > * Развертывание задания Azure Stream Analytics на устройстве IoT Edge с портала Azure.
 
 <center>
-![Схема архитектуры, используемая в руководстве](./media/tutorial-deploy-stream-analytics/ASATutorialDiagram.png)
+![Схема рассматриваемой в руководстве архитектуры, а также размещение и развертывание задания ASA](./media/tutorial-deploy-stream-analytics/asa-architecture.png)
 </center>
 
->[!NOTE]
->Модули Azure Stream Analytics для IoT Edge находятся в [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -100,7 +97,7 @@ Azure Stream Analytics предоставляет расширенный син�
 
 1. В разделе **Топология задания** выберите **Входные данные**, а затем **Add stream input** (Добавить потоковый вход).
 
-   ![Входные данные Azure Stream Analytics](./media/tutorial-deploy-stream-analytics/asa_input.png)
+   ![Добавление входных данных Azure Stream Analytics](./media/tutorial-deploy-stream-analytics/asa_input.png)
 
 1. В раскрывающемся списке выберите **Центр Edge**.
 
@@ -110,7 +107,7 @@ Azure Stream Analytics предоставляет расширенный син�
 
 1. В разделе **Топология задания** откройте **Выходные данные**, а затем выберите **Добавить**.
 
-   ![Выходные данные Azure Stream Analytics](./media/tutorial-deploy-stream-analytics/asa_output.png)
+   ![Добавление выходных данных Azure Stream Analytics](./media/tutorial-deploy-stream-analytics/asa_output.png)
 
 1. В раскрывающемся списке выберите **Центр Edge**.
 
@@ -207,7 +204,7 @@ Azure Stream Analytics предоставляет расширенный син�
 
     Вы должны увидеть новый модуль Stream Analytics, работающий вместе с модулем агента IoT Edge и концентратором IoT Edge.
 
-    ![Выходные данные модуля](./media/tutorial-deploy-stream-analytics/module_output2.png)
+    ![tempSensor и модуль ASA, о которых передаются данные с устройства](./media/tutorial-deploy-stream-analytics/module_output2.png)
 
 ## <a name="view-data"></a>Просмотр данных
 
@@ -229,7 +226,7 @@ Azure Stream Analytics предоставляет расширенный син�
 
 Вы должны видать, как температура компьютера постепенно растет, пока не достигнет 70 градусов на 30 секунд. Затем модуль Stream Analytics активирует сброс, и температура компьютера уменьшается до 21 градуса. 
 
-   ![Журнал Docker](./media/tutorial-deploy-stream-analytics/docker_log.png)
+   ![Выходные данные команды сброса в журналах модуля](./media/tutorial-deploy-stream-analytics/docker_log.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов 
 

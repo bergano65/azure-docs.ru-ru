@@ -8,21 +8,21 @@ ms.topic: quickstart
 ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 8ce9606c6b59175e03da5382f76fb320080db86e
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 3971311bff90d0b005acd516336e13766028cccf
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49427032"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53001558"
 ---
-# <a name="quickstart-create-a-server---powershell"></a>Краткое руководство по созданию сервера с помощью PowerShell
+# <a name="quickstart-create-a-server---powershell"></a>Краткое руководство. Создание сервера с помощью PowerShell
 
 В этом кратком руководстве объясняется, как с помощью PowerShell и командной строки создать сервер Azure Analysis Services в подписке Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **Подписка Azure**: откройте ссылку на [бесплатную пробную версию Azure](https://azure.microsoft.com/offers/ms-azr-0044p/), чтобы создать учетную запись.
-- **Azure Active Directory**: ваша подписка должна быть связана с клиентом Azure Active Directory, а учетная запись настроена в этом каталоге. Дополнительные сведения см. в руководстве по [аутентификации и настройке пользовательских разрешений](analysis-services-manage-users.md).
+- **Подписка Azure**. Откройте ссылку на [бесплатную пробную версию Azure](https://azure.microsoft.com/offers/ms-azr-0044p/), чтобы создать учетную запись.
+- **Azure Active Directory**. Ваша подписка должна быть связана с клиентом Azure Active Directory, а учетная запись должна быть настроена в этом каталоге. Дополнительные сведения см. в руководстве по [аутентификации и настройке пользовательских разрешений](analysis-services-manage-users.md).
 - **Модуль Azure PowerShell 4.0 или более поздней версии**. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Чтобы выполнить установку или обновление, см. статью [Установка и настройка Azure PowerShell](/powershell/azure/install-azurerm-ps).
 
 ## <a name="import-azurermanalysisservices-module"></a>Импорт модуля AzureRm.AnalysisServices
@@ -33,7 +33,7 @@ ms.locfileid: "49427032"
 Import-Module AzureRM.AnalysisServices
 ```
 
-## <a name="log-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите в подписку Azure с помощью команды [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount). Выполните инструкции на экране.
 
@@ -73,4 +73,4 @@ Remove-AzureRmAnalysisServicesServer -Name "myserver" -ResourceGroupName "myReso
 > [!div class="nextstepaction"]
 > [Краткое руководство. Настройка брандмауэра сервера с помощью портала](analysis-services-qs-firewall.md)      
 > [!div class="nextstepaction"]
-> [Руководство. Добавление образца модели на сервер](analysis-services-create-sample-model.md)
+> [Руководство. Добавление примера модели на сервер](analysis-services-create-sample-model.md)

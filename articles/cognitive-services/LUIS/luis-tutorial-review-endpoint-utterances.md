@@ -1,23 +1,24 @@
 ---
-title: Руководство 1. Проверка высказываний конечной точки с помощью активного обучения
+title: Проверка высказываний конечной точки
 titleSuffix: Azure Cognitive Services
 description: Повышение точности прогнозирования приложения путем проверки или корректировки высказываний, полученных через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Некоторые высказывания могут быть проверены на наличие намерений, а другие — на наличие сущностей. Высказывания конечных точек необходимо проверять в рамках планового обслуживания LUIS.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 8fbe856826770eb38cd4a6d921c1b0f4eacf9c2a
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: bc641732d74dac4f566420ada6338362932df4d7
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52426967"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53080458"
 ---
-# <a name="tutorial-1-fix-unsure-predictions"></a>Руководство 1. Исправление неточных прогнозов
+# <a name="tutorial-1-fix-unsure-predictions"></a>Руководство 1. Исправление неточных прогнозов
 Из этого руководства вы узнаете, как повысить точность прогнозирования приложения, проверяя или корректируя высказывания, полученные через неизвестную для LUIS конечную точку HTTP интеллектуальной службы распознавания речи. Некоторые высказывания необходимо проверять на наличие намерений, а другие — на наличие сущностей. Высказывания конечных точек необходимо проверять в рамках планового обслуживания LUIS. 
 
 Этот процесс проверки — еще один способ обучить LUIS для использования вашего домена приложений. В LUIS выбираются те высказывания, которые отображаются в списке проверки. Этот список:
@@ -132,7 +133,7 @@ ms.locfileid: "52426967"
 
 2. Перейдите в конец URL-адреса и введите `Are there any natural language processing jobs in my department right now?`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
 
-  ```JSON
+  ```json
   {
     "query": "are there any natural language processing jobs in my department right now?",
     "topScoringIntent": {

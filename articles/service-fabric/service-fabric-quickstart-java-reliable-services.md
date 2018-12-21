@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 10/23/2017
 ms.author: suhuruli
 ms.custom: mvc, devcenter
-ms.openlocfilehash: a7e71b4f93f3b890ea73e36052570f9047fc8f32
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 43a059e13945be3e39f65995e18ccd552727b874
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51228238"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53312584"
 ---
 # <a name="quickstart-deploy-a-java-reliable-services-application-to-service-fabric"></a>Краткое руководство. Развертывание приложения надежных служб Java в Service Fabric
 
@@ -67,7 +67,7 @@ git clone https://github.com/Azure-Samples/service-fabric-java-quickstart.git
 
 2. Откройте Eclipse.
 3. Щелкните "Файл" -> "Импорт" -> "Gradle", выберите существующий проект Gradle и следуйте указаниям мастера.
-4. Щелкните каталог и выберите каталог `Voting` из папки `service-fabric-java-quickstart`, клонированной из GitHub. Нажмите кнопку Готово. 
+4. Щелкните каталог и выберите каталог `Voting` из папки `service-fabric-java-quickstart`, клонированной из GitHub. Нажмите кнопку Готово.
 
     ![Диалоговое окно Eclipse "Import" (Импорт)](./media/service-fabric-quickstart-java/eclipseimport.png)
 
@@ -116,9 +116,9 @@ Service Fabric предоставляет ряд средств, которые 
 
 Для импорта сертификата на компьютер можно использовать любой удобный метод. Например: 
 
-* В Windows: дважды щелкните PFX-файл и следуйте инструкциям на экране для установки сертификата в личном хранилище, `Certificates - Current User\Personal\Certificates`. Кроме того, можно использовать команду PowerShell из инструкций в **файле сведений**.
-* В Mac: дважды щелкните PFX-файл и следуйте инструкциям на экране, чтобы установить сертификат в цепочке ключей.
-* В Ubuntu: браузером по умолчанию в Ubuntu 16.04 является Mozilla Firefox. Чтобы импортировать сертификат в Firefox, нажмите кнопку меню в правом верхнем углу браузера, а затем щелкните **Параметры**. На странице **Настройки** введите в поле поиска слово "сертификаты". Нажмите кнопку **Просмотр сертификатов**, выберите вкладку **Ваши сертификаты**, щелкните **Импорт** и следуйте инструкциям на экране, чтобы импортировать сертификат.
+* Действия для ОС Windows. Дважды щелкните PFX-файл и следуйте инструкциям на экране для установки сертификата в личном хранилище `Certificates - Current User\Personal\Certificates`. Кроме того, можно использовать команду PowerShell из инструкций в **файле сведений**.
+* Для компьютеров Mac. Дважды щелкните PFX-файл и следуйте инструкциям на экране, чтобы установить сертификат в цепочке ключей.
+* Для Ubuntu. В Ubuntu 16.04 браузером по умолчанию является Mozilla Firefox. Чтобы импортировать сертификат в Firefox, нажмите кнопку меню в правом верхнем углу браузера, а затем щелкните **Параметры**. На странице **Настройки** введите в поле поиска слово "сертификаты". Нажмите кнопку **Просмотр сертификатов**, выберите вкладку **Ваши сертификаты**, щелкните **Импорт** и следуйте инструкциям на экране, чтобы импортировать сертификат.
 
    ![Установка сертификата в Firefox](./media/service-fabric-quickstart-java/install-cert-firefox.png)
 
@@ -132,7 +132,7 @@ Service Fabric предоставляет ряд средств, которые 
     openssl x509 -in [CERTIFICATE_PEM_FILE] -fingerprint -noout
     ```
 
-2. В файле `Voting/VotingApplication/ApplicationManifest.xml` добавьте следующий фрагмент кода в тег **ApplicationManifest**. Значение **X509FindValue** должно представлять отпечаток из предыдущего шага (без точки с запятой). 
+2. В файле `Voting/VotingApplication/ApplicationManifest.xml` добавьте следующий фрагмент кода в тег **ApplicationManifest**. Значение **X509FindValue** должно представлять отпечаток из предыдущего шага (без точки с запятой).
 
     ```xml
     <Certificates>

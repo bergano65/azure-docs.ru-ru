@@ -9,12 +9,12 @@ ms.devlang: Java
 ms.topic: sample
 ms.date: 04/05/2018
 ms.author: sngun
-ms.openlocfilehash: d7be0ed8d59063f75b3d4fadbf69237bdb2d0d13
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: e6bae31f0e3558f274ee638c380e69c15b7c3889
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52863692"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53079319"
 ---
 # <a name="how-to-use-azure-table-storage-or-azure-cosmos-db-table-api-from-java"></a>Как использовать в Java хранилище таблиц Azure и API таблиц Azure Cosmos DB
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -602,10 +602,8 @@ catch (Exception e)
 
 Дополнительные сведения см. в разделе [Azure for Java developers](/java/azure) (Azure для разработчиков Java).
 
-[Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
+[Azure SDK for Java]: https://go.microsoft.com/fwlink/?LinkID=525671
 [Azure Storage SDK for Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
-[Справочник по пакету SDK для клиента хранилища Azure]: http://azure.github.io/azure-storage-java/
+[Справочник по пакету SDK для клиента хранилища Azure]: https://azure.github.io/azure-storage-java/
 [Azure Storage REST API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
-[Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
-[Azure Tables: Introducing Upsert and Query Projection]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx

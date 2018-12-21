@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Запрос данных в обозревателе данных Azure
+title: Краткое руководство. Запрос данных в Azure Data Explorer
 description: В этом кратком руководстве вы узнаете, как запрашивать данные из обозревателя данных Azure и делиться ими.
 services: data-explorer
 author: orspod
@@ -8,14 +8,14 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: 7b9bc52e07bccf931593cd2dbddd68e973d1b26c
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: 7ce66d3f6117a5e395920dc2232efb0e43f4cd18
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394363"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53106453"
 ---
-# <a name="quickstart-query-data-in-azure-data-explorer"></a>Краткое руководство. Запрос данных в обозревателе данных Azure
+# <a name="quickstart-query-data-in-azure-data-explorer"></a>Краткое руководство. Запрос данных в Azure Data Explorer
 
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Обозреватель данных Azure предоставляет веб-приложение для выполнения запросов и предоставления общего доступа к ним. Приложение доступно на портале Azure и в качестве отдельного веб-приложения. В этой статье вы работаете в изолированной версии, которая позволяет подключиться к нескольким кластерам, а также совместно использовать прямые ссылки на запросы.
 
@@ -134,7 +134,7 @@ ms.locfileid: "49394363"
 
 1. Выполните следующий запрос.
 
-    ```Kutso
+    ```Kusto
     StormEvents
     | sort by StartTime desc
     | where DamageProperty > 5000

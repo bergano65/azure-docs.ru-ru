@@ -10,16 +10,17 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 11/13/2018
 ms.author: jafreebe
-ms.openlocfilehash: 0772dbb1aaa6b00994bd653c19b006114377dc5f
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.custom: seodec18
+ms.openlocfilehash: 2a38b117cde6d6b51b101f6b0ef0eb3a19b42ba3
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52165464"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53344233"
 ---
 # <a name="tutorial-build-a-java-ee-and-postgres-web-app-in-azure"></a>Руководство. Создание веб-приложения Java EE с подключением к базе данных Postgres в Azure
 
-В этом руководстве приведены сведения о создании веб-приложения Java Enterprise Edition (EE) в Службе приложений Azure, а также подключении его к базе данных Postgres. Когда вы выполните инструкции руководства, у вас будет приложение [WildFly](http://www.wildfly.org/about/), данные которого хранятся в [базе данных Azure для Postgres](https://azure.microsoft.com/services/postgresql/), которая работает в [Службе приложений Azure на платформе Linux](app-service-linux-intro.md).
+В этом руководстве приведены сведения о создании веб-приложения Java Enterprise Edition (EE) в Службе приложений Azure, а также подключении его к базе данных Postgres. Когда вы выполните инструкции руководства, у вас будет приложение [WildFly](https://www.wildfly.org/about/), данные которого хранятся в [базе данных Azure для Postgres](https://azure.microsoft.com/services/postgresql/), которая работает в [Службе приложений Azure на платформе Linux](app-service-linux-intro.md).
 
 Из этого учебника вы узнаете следующее:
 > [!div class="checklist"]
@@ -32,8 +33,8 @@ ms.locfileid: "52165464"
 ## <a name="prerequisites"></a>Предварительные требования
 
 1. [Скачайте и установите Git](https://git-scm.com/)
-1. [Скачайте и установите Maven 3](https://maven.apache.org/install.html).
-1. [Скачайте и установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
+2. [Скачайте и установите Maven 3](https://maven.apache.org/install.html).
+3. [Скачайте и установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 
 ## <a name="clone-and-edit-the-sample-app"></a>Клонирование и изменение примера приложения
 
@@ -160,10 +161,10 @@ az postgres server create -n <desired-name> -g <same-resource-group> --sku-name 
 
 Перед развертыванием измененного приложения необходимо обновить сервер приложений WildFly для добавления модуля Postgres и его зависимостей. Для настройки сервера нам понадобятся четыре файла в каталоге `wildfly_config/`:
 
-- **postgresql-42.2.5.jar** — JAR-файл, представляющий собой драйвер JDBC для Postgres. Дополнительные сведения см. [на официальном веб-сайте](https://jdbc.postgresql.org/index.html).
-- **postgres-module.xml** — XML-файл, объявляющий имя модуля Postgres (org.postgres). Он также указывает ресурсы и зависимости, необходимые для использования модуля.
-- **jboss_cli_commands.cl** — файл, содержащий команды конфигурации, которые будут выполняться с помощью интерфейса командной строки JBoss. Эти команды добавляют модуль Postgres в сервер приложений WildFly, предоставляют учетные данные, объявляют имя JNDI, устанавливают порог времени ожидания и т. д. Сведения об интерфейсе командной строки JBoss см. [здесь](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/management_cli_guide/#how_to_cli).
-- **startup_script.sh** — сценарий оболочки, который будет выполняться каждый раз, когда запускается экземпляр службы приложений. Сценарий выполняет только одну функцию — передача команд в файле `jboss_cli_commands.cli` в интерфейс командной строки JBoss.
+- **postgresql-42.2.5.jar:** JAR-файл, представляющий собой драйвер JDBC для Postgres. Дополнительные сведения см. [на официальном веб-сайте](https://jdbc.postgresql.org/index.html).
+- **postgres-module.xml:** XML-файл, объявляющий имя модуля Postgres (org.postgres). Он также указывает ресурсы и зависимости, необходимые для использования модуля.
+- **jboss_cli_commands.cl:** файл, содержащий команды конфигурации, которые будут выполняться с помощью интерфейса командной строки JBoss. Эти команды добавляют модуль Postgres в сервер приложений WildFly, предоставляют учетные данные, объявляют имя JNDI, устанавливают порог времени ожидания и т. д. Сведения об интерфейсе командной строки JBoss см. [здесь](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/management_cli_guide/#how_to_cli).
+- **startup_script.sh:** сценарий оболочки, который будет выполняться каждый раз, когда запускается экземпляр Службы приложений. Сценарий выполняет только одну функцию — передача команд в файле `jboss_cli_commands.cli` в интерфейс командной строки JBoss.
 
 Мы настоятельно рекомендуем ознакомиться с содержимым этих файлов, особенно _jboss_cli_commands.cli_.
 

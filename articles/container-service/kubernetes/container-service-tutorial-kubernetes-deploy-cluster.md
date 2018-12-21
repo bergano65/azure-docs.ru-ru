@@ -1,24 +1,27 @@
 ---
-title: 'Руководство по Службе контейнеров Azure: развертывание кластера'
+title: 'Руководство по Службе контейнеров Azure: развертывание кластера (не рекомендуется)'
 description: 'Руководство по Службе контейнеров Azure: развертывание кластера'
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 09/14/2017
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 8403e5d8dd3bad07e412b08709dcb8c28201bcdf
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: d77396cdcaa3f2f291aff52dfd1e6793aee4039c
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39434430"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52997859"
 ---
-# <a name="deploy-a-kubernetes-cluster-in-azure-container-service"></a>Развертывание кластера Kubernetes в службе контейнеров Azure
+# <a name="deprecated-deploy-a-kubernetes-cluster-in-azure-container-service"></a>Развертывание кластера Kubernetes в службе контейнеров Azure (не рекомендуется)
 
-[!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
+> [!TIP]
+> Обновленная версия этого руководства, в котором используется служба Azure Kubernetes — [Руководство. Развертывание кластера службы Azure Kubernetes (AKS)](../../aks/tutorial-kubernetes-deploy-cluster.md).
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
 Kubernetes предоставляет распределенную платформу для контейнерных приложений. Служба контейнеров Azure упрощает и убыстряет подготовку кластера Kubernetes для использования в рабочей среде. В этом руководстве (часть 3 из 7) развертывается кластер Kubernetes службы контейнеров Azure. В частности, рассматриваются такие шаги:
 

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 246b423e69fa8fb73db45f44fa17c1bc65407681
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: be08740024e87179a48f3dfd6f8406fa6a2bbca6
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43090731"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52963527"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
@@ -189,7 +189,7 @@ ms.locfileid: "43090731"
     The specified Data Factory name 'ADFIncCopyChangeTrackingTestFactory' is already in use. Data Factory names must be globally unique.
     ```
 * Чтобы создать экземпляры фабрики данных, нужно назначить учетной записи пользователя, используемой для входа в Azure, роль **участника**, **владельца** либо **администратора** подписки Azure.
-* Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+* Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
 
 ## <a name="create-linked-services"></a>Создание связанных служб
@@ -198,7 +198,7 @@ ms.locfileid: "43090731"
 ### <a name="create-azure-storage-linked-service"></a>Создание связанной службы хранилища Azure
 На этом шаге вы свяжете учетную запись хранения Azure с фабрикой данных.
 
-1. Создайте JSON-файл с именем **AzureStorageLinkedService.json** в папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial** и добавьте в него следующее (если эта папка отсутствует, создайте ее): Перед сохранением файла замените значения `<accountName>` и `<accountKey>` на имя вашей учетной записи хранения Azure и ее ключ.
+1. Создайте JSON-файл с именем **AzureStorageLinkedService.json** в папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial** и добавьте в него следующее (если эта папка отсутствует, создайте ее). Перед сохранением файла замените значения `<accountName>` и `<accountKey>` на имя вашей учетной записи хранения Azure и ее ключ.
 
     ```json
     {
@@ -215,7 +215,7 @@ ms.locfileid: "43090731"
     }
     ```
 2. В **Azure PowerShell** перейдите к папке **C:\ADFTutorials\IncCopyChgTrackingTutorial**.
-3. Выполните командлет **Set-AzureRmDataFactoryV2LinkedService**, чтобы создать связанную службу: **AzureStorageLinkedService**. В указанном ниже примере вы передадите значения для параметров **ResourceGroupName** и **DataFactoryName**. 
+3. Выполните командлет **Set-AzureRmDataFactoryV2LinkedService**, чтобы создать связанную службу **AzureStorageLinkedService**. В указанном ниже примере вы передадите значения для параметров **ResourceGroupName** и **DataFactoryName**. 
 
     ```powershell
     Set-AzureRmDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureStorageLinkedService" -File ".\AzureStorageLinkedService.json"
@@ -233,7 +233,7 @@ ms.locfileid: "43090731"
 ### <a name="create-azure-sql-database-linked-service"></a>Создание связанной службы базы данных SQL Azure
 На этом шаге вы свяжете базу данных SQL Azure с фабрикой данных.
 
-1. Создайте JSON-файл с именем **AzureSQLDatabaseLinkedService.json** в папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial** со следующим содержимым (прежде чем сохранять файл, замените значения **&lt;server&gt;, &lt;database name&gt;, &lt;user id&gt; и &lt;password&gt;** именем сервера Azure SQL, именем базы данных, идентификатором пользователя и паролем): 
+1. Создайте JSON-файл с именем **AzureSQLDatabaseLinkedService.json** в папке **C:\ADFTutorials\IncCopyChangeTrackingTutorial** и добавьте в него следующее. Вместо значений **&lt;server&gt;, &lt;database **, &lt;user id&gt; и &lt;password&gt;** укажите имя сервера, имя базы данных, идентификатор пользователя и пароль SQL Azure, прежде чем сохранить файл. 
 
     ```json
     {
@@ -387,7 +387,7 @@ ms.locfileid: "43090731"
 ## <a name="create-a-pipeline-for-the-full-copy"></a>Создание конвейера для полного копирования данных
 На этом этапе вы создадите конвейер с действием копирования, которое копирует все данные из исходного хранилища данных (база данных Azure SQL) в целевое хранилище данных (хранилище BLOB-объектов Azure).
 
-1. Создайте JSON-файл FullCopyPipeline.json в той же папке со следующим содержимым: 
+1. Создайте файл JSON FullCopyPipeline.json в той же папке со следующим содержимым. 
 
     ```json
     {
@@ -445,26 +445,26 @@ Invoke-AzureRmDataFactoryV2Pipeline -PipelineName "FullCopyPipeline" -ResourceGr
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Щелкните **Все службы**, выполните поиск по ключевому слову `data factories` и выберите **Фабрики данных**. 
 
-    ![Меню "Фабрики данных"](media\tutorial-incremental-copy-change-tracking-feature-powershell\monitor-data-factories-menu-1.png)
+    ![Меню "Фабрики данных"](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-data-factories-menu-1.png)
 3. Найдите и выберите в списке свою **фабрику данных**, чтобы открыть страницу "Фабрика данных". 
 
-    ![Поиск фабрики данных](media\tutorial-incremental-copy-change-tracking-feature-powershell\monitor-search-data-factory-2.png)
+    ![Поиск фабрики данных](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-search-data-factory-2.png)
 4. На странице фабрики данных, щелкните плитку **Мониторинг и управление**. 
 
-    ![Плитка Monitor & Manage (Мониторинг и управление)](media\tutorial-incremental-copy-change-tracking-feature-powershell\monitor-monitor-manage-tile-3.png)    
+    ![Плитка Monitor & Manage (Мониторинг и управление)](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-monitor-manage-tile-3.png)    
 5. На отдельной вкладке будет запущено **приложение интеграции данных**. Вы можете увидеть все **запуски конвейеров**  и их состояние. Обратите внимание, что в следующем примере состояние выполнения конвейера имеет значение **Успешно**. Чтобы проверить параметры, переданные в конвейер, перейдите по ссылке в столбце **Параметры**. Если произошла ошибка, вы увидите ссылку в столбце **Ошибка**. Щелкните ссылку в столбце **Действия**. 
 
-    ![Запуски конвейера](media\tutorial-incremental-copy-change-tracking-feature-powershell\monitor-pipeline-runs-4.png)    
+    ![Запуски конвейера](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-pipeline-runs-4.png)    
 6. Если щелкнуть ссылку в столбце **Действия**, вы увидите следующую страницу. На ней отображаются все **выполняемые действия** в конвейере. 
 
-    ![Выполнение действия](media\tutorial-incremental-copy-change-tracking-feature-powershell\monitor-activity-runs-5.png)
+    ![Выполнение действия](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-activity-runs-5.png)
 7. Чтобы вернуться к представлению **Запуски конвейера**, щелкните ссылку **Конвейеры**, как показано на рисунке. 
 
 
 ### <a name="review-the-results"></a>Просмотр результатов
 Вы увидите файл с именем `incremental-<GUID>.txt` в папке `incchgtracking` контейнера `adftutorial`. 
 
-![Выходной файл, полученный в результате полного копирования](media\tutorial-incremental-copy-change-tracking-feature-powershell\full-copy-output-file.png)
+![Выходной файл, полученный в результате полного копирования](media/tutorial-incremental-copy-change-tracking-feature-powershell/full-copy-output-file.png)
 
 Файл должен включать данные из базы данных Azure SQL:
 
@@ -495,7 +495,7 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
 ## <a name="create-a-pipeline-for-the-delta-copy"></a>Создание конвейера для копирования разностных данных
 В этом шаге вы создадите конвейер со следующими действиями для периодического выполнения: **Действия поиска** получают старое и новое значения SYS_CHANGE_VERSION из базы данных SQL Azure и передают их в действие копирования. **Действие копирования** копирует вставленные, обновленные или удаленные данные, связанные с двумя значениями SYS_CHANGE_VERSION, из базы данных SQL Azure в хранилище BLOB-объектов. **Действие хранимой процедуры** обновляет значение SYS_CHANGE_VERSION для запуска следующего конвейера.
 
-1. Создайте в той же папке JSON-файл IncrementalCopyPipeline.json со следующим содержимым: 
+1. Создайте файл JSON IncrementalCopyPipeline.json в той же папке со следующим содержимым. 
 
     ```json
     {
@@ -633,16 +633,16 @@ Invoke-AzureRmDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -Res
 ### <a name="monitor-the-incremental-copy-pipeline"></a>Мониторинг конвейера добавочного копирования
 1. В **приложении интеграции данных** обновите представление **запусков конвейера**. Вы должны увидеть в списке конвейер IncrementalCopyPipeline. Щелкните ссылку в столбце **Действия**.  
 
-    ![Запуски конвейера](media\tutorial-incremental-copy-change-tracking-feature-powershell\monitor-pipeline-runs-6.png)    
+    ![Запуски конвейера](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-pipeline-runs-6.png)    
 2. Если щелкнуть ссылку в столбце **Действия**, вы увидите следующую страницу. На ней отображаются все **выполняемые действия** в конвейере. 
 
-    ![Выполнение действия](media\tutorial-incremental-copy-change-tracking-feature-powershell\monitor-activity-runs-7.png)
+    ![Выполнение действия](media/tutorial-incremental-copy-change-tracking-feature-powershell/monitor-activity-runs-7.png)
 3. Чтобы вернуться к представлению **Запуски конвейера**, щелкните ссылку **Конвейеры**, как показано на рисунке. 
 
 ### <a name="review-the-results"></a>Просмотр результатов
 Вы увидите второй файл в папке `incchgtracking` контейнера `adftutorial`. 
 
-![Выходной файл, полученный в результате добавочного копирования](media\tutorial-incremental-copy-change-tracking-feature-powershell\incremental-copy-output-file.png)
+![Выходной файл, полученный в результате добавочного копирования](media/tutorial-incremental-copy-change-tracking-feature-powershell/incremental-copy-output-file.png)
 
 Файл должен включать только разностные данные из базы данных Azure SQL. Запись с `U` — это обновленная строка в базе данных, а `I` — добавленная строка. 
 
@@ -650,7 +650,7 @@ Invoke-AzureRmDataFactoryV2Pipeline -PipelineName "IncrementalCopyPipeline" -Res
 1,update,10,2,U
 6,new,50,1,I
 ```
-Первые три столбца — это измененные данные из таблицы data_source_table. Последние два столбцы — это метаданные из таблицы sys.change_tracking_tables. Четвертый столбец — это версия SYS_CHANGE_VERSION для каждой изменившейся строки. Пятый столбец — это операция U = update, I = insert.  Дополнительные сведения об отслеживании изменений см. в описании функции [CHANGETABLE](/sql/relational-databases/system-functions/changetable-transact-sql). 
+Первые три столбца — это измененные данные из таблицы data_source_table. Последние два столбцы — это метаданные из таблицы sys.change_tracking_tables. Четвертый столбец — это версия SYS_CHANGE_VERSION для каждой изменившейся строки. Пятый столбец — это операция  U = update, I = insert.  Дополнительные сведения об отслеживании изменений см. в описании функции [CHANGETABLE](/sql/relational-databases/system-functions/changetable-transact-sql). 
 
 ```
 ==================================================================

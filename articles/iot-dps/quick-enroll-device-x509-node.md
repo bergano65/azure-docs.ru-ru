@@ -10,14 +10,14 @@ services: iot-dps
 manager: timlt
 ms.devlang: nodejs
 ms.custom: mvc
-ms.openlocfilehash: 67ed6f2039bad90716edadb2ecdb5e9ac9faa172
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 852e250d60d112ca7a8e8a98d93121762e2fde4d
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50156244"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53187013"
 ---
-# <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-nodejs"></a>Краткое руководство по регистрации устройств X.509 в Службе подготовки устройств с помощью Node.js
+# <a name="quickstart-enroll-x509-devices-to-the-device-provisioning-service-using-nodejs"></a>Краткое руководство. Регистрация устройств X.509 в Службе подготовки устройств с помощью Node.js
 
 [!INCLUDE [iot-dps-selector-quick-enroll-device-x509](../../includes/iot-dps-selector-quick-enroll-device-x509.md)]
 
@@ -46,13 +46,13 @@ ms.locfileid: "50156244"
  
 1. Откройте командную строку или оболочку Git Bash и перейдите в рабочую папку на компьютере. Выполните следующую команду для клонирования репозитория GitHub [пакета SDK для устройства C Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-c):
     
-  ```cmd/sh
-  git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive
-  ```
+   ```cmd/sh
+   git clone https://github.com/Azure/azure-iot-sdk-c.git --recursive
+   ```
 
-  Размер этого репозитория в настоящее время составляет примерно 220 МБ. Выполнение этой операции может занять несколько минут.
+   Размер этого репозитория в настоящее время составляет примерно 220 МБ. Выполнение этой операции может занять несколько минут.
 
-  Средства тестирования находятся в клонированном репозитории *azure-iot-sdk-c/tools/CACertificates*.    
+   Средства тестирования находятся в клонированном репозитории *azure-iot-sdk-c/tools/CACertificates*.    
 
 2. Выполните действия, описанные в статье [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md) (Управление тестовыми сертификатами ЦС для образцов и руководств). 
 
@@ -115,7 +115,7 @@ ms.locfileid: "50156244"
     1. Войдите на портал Azure, нажмите кнопку **Все ресурсы** в меню слева и откройте службу подготовки устройств. 
     2. Щелкните **Политики общего доступа**, а затем выберите нужную политику доступа, чтобы открыть ее свойства. В окне **Политика доступа** скопируйте и запишите строку подключения первичного ключа. 
 
-    ![Получение строки подключения к службе подготовки на портале](./media/quick-enroll-device-x509-node/get-service-connection-string.png) 
+       ![Получение строки подключения к службе подготовки на портале](./media/quick-enroll-device-x509-node/get-service-connection-string.png) 
 
 
 3. Как описано в разделе [Подготовка тестовых сертификатов](quick-enroll-device-x509-node.md#prepare-test-certificates), вам также потребуется PEM-файл, содержащий сертификат X.509 промежуточного или корневого центра сертификации, который вы заранее отправили в службу подготовки и проверили в ней. Чтобы убедиться, что сертификат уже передан и проверен, щелкните элемент **Сертификаты** на странице сводной информации о службе подготовки устройств на портале Azure. Найдите сертификат, который вы намерены применить для группы регистрации и убедитесь, что он имеет статус *Проверен*.

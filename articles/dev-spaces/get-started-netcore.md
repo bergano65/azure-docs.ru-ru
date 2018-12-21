@@ -10,12 +10,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers
-ms.openlocfilehash: bb3ddb0ffe16746a44318ea8d0bf0f1e3b3c3de1
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: b5de5ccdf98d6d0a2952a694a253feaac9d6e07d
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51705588"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413631"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core"></a>Начало работы в Azure Dev Spaces с .NET Core
 
@@ -31,7 +31,7 @@ ms.locfileid: "51705588"
 Теперь вы готовы создать среду разработки на основе Kubernetes в Azure.
 
 ## <a name="install-the-azure-cli"></a>Установка Azure CLI
-Для Azure Dev Spaces требуется минимальная настройка локального компьютера. Большая часть конфигурации среды разработки хранится в облаке и доступна для других пользователей. Локальный компьютер может работать под управлением Windows, Mac или Linux. Для Linux поддерживаются следующие дистрибутивы: Ubuntu (18.04, 16.04 и 14.04), Debian 8 и 9, RHEL 7, Fedora 26 и более поздней версии, CentOS 7, openSUSE 42.2 и SLES 12.
+Для Azure Dev Spaces требуется минимальная настройка локального компьютера. Большая часть конфигурации среды разработки хранится в облаке и доступна для других пользователей. Локальный компьютер может работать под управлением Windows, Mac или Linux. Поддерживаются следующие дистрибутивы Linux: Ubuntu (18.04, 16.04 и 14.04), Debian 8 и 9, RHEL 7, Fedora 26+, CentOS 7, openSUSE 42.2 и SLES 12.
 
 Начните со скачивания и запуска [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest). 
 
@@ -72,7 +72,7 @@ az group create --name MyResourceGroup --location <region>
 Чтобы создать кластер Kubernetes, выполните следующую команду:
 
 ```cmd
-az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-version 1.11.2 --enable-addons http_application_routing --generate-ssh-keys
+az aks create -g MyResourceGroup -n MyAKS --location <region> --kubernetes-version 1.10.9 --enable-addons http_application_routing --generate-ssh-keys
 ```
 
 Создание кластера занимает несколько минут.

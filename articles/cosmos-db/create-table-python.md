@@ -10,14 +10,14 @@ ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: sngun
 ms.custom: mvc
-ms.openlocfilehash: 70a7f17ed0ecb78337d13f68a260fc9f860e3a4a
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 046c8f79ceea9ce40b5a60f720f205157110789e
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52837024"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53161582"
 ---
-# <a name="quickstart-build-a-table-api-app-with-python-and-azure-cosmos-db"></a>Краткое руководство. Сборка приложения API таблиц с помощью Python и Azure Cosmos DB
+# <a name="quickstart-build-a-table-api-app-with-python-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью Python и Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](create-table-dotnet.md)
@@ -84,7 +84,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Так вы обеспечите обмен данными между приложением и размещенной базой данных. 
 
-1. На [портале Azure](http://portal.azure.com/) щелкните **Строка подключения**. 
+1. На [портале Azure](https://portal.azure.com/) щелкните **Строка подключения**. 
 
     ![Просмотр и копирование строки подключения на панели "Строка подключения"](./media/create-table-python/connection-string.png)
 

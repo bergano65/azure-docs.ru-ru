@@ -1,21 +1,22 @@
 ---
-title: Руководство 8. Извлечение ключевых фраз в LUIS
+title: Извлечение ключевой фразы
 titleSuffix: Azure Cognitive Services
 description: Используйте предварительно созданную сущность keyPhrase, чтобы извлекать запрашиваемое содержимое из фраз. Не нужно помечать высказывания с использованием предварительно созданных сущностей. Сущность определяется автоматически.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: fafb6a6cb986b5bcd795c9bac0fadfce2827c667
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 0a064966f118925d2a08e0ff1ce6efc7683cac96
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52424818"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53096933"
 ---
 # <a name="tutorial-8-extract-key-phrases-of-utterance"></a>Руководство 8. Извлечение ключевых фраз из высказывания
 В рамках этого руководства используйте предварительно созданную сущность keyPhrase, чтобы извлечь содержимое из высказываний. Не нужно помечать высказывания с использованием предварительно созданных сущностей. Сущность определяется автоматически.
@@ -31,7 +32,6 @@ ms.locfileid: "52424818"
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
-<!-- green checkmark -->
 > [!div class="checklist"]
 > * Использовать существующее приложение из руководства
 > * Добавление сущности keyPhrase 
@@ -84,7 +84,7 @@ ms.locfileid: "52424818"
 
 2. Перейдите в конец URL-адреса и введите `does form hrf-123456 cover the new dental benefits and medical plan`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
     
-    ```JSON
+    ```json
     {
       "query": "does form hrf-123456 cover the new dental benefits and medical plan",
       "topScoringIntent": {

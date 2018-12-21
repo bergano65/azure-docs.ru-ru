@@ -1,27 +1,20 @@
 ---
-title: Краткое руководство по использованию службы Azure SignalR | Документация Майкрософт
+title: Краткое руководство по использованию Службы Azure SignalR
 description: Краткое руководство по использованию службы Azure SignalR для создания комнаты чата с помощью приложений MVC для ASP.NET Core.
-services: signalr
-documentationcenter: ''
 author: sffamily
-manager: cfowler
-editor: ''
-ms.assetid: ''
 ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.tgt_pltfrm: ASP.NET
-ms.workload: tbd
 ms.date: 06/13/2018
 ms.author: zhshang
-ms.openlocfilehash: b667f38c4e3d2a3fad323171a3b3b49ed3619fd9
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 805f8d55b1627ad12ce58e8a64728a42867a858e
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46959484"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53260622"
 ---
-# <a name="quickstart-create-a-chat-room-with-signalr-service"></a>Краткое руководство по созданию чата с помощью службы SignalR
+# <a name="quickstart-create-a-chat-room-with-signalr-service"></a>Краткое руководство. Создание чата с помощью Службы SignalR
 
 
 Azure SignalR — это служба Azure, которая помогает разработчикам без труда создавать веб-приложения с функциями в режиме реального времени. Эта служба работает на основе [SignalR для ASP.NET Core 2.0](https://docs.microsoft.com/aspnet/core/signalr/introduction).
@@ -41,7 +34,7 @@ Azure SignalR — это служба Azure, которая помогает р�
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Установленный [пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows).
-* Скачанный или клонированный репозиторий [примеров AzureSignalR](https://github.com/aspnet/AzureSignalR-samples) на Github. 
+* Скачанный или клонированный репозиторий [примеров AzureSignalR](https://github.com/aspnet/AzureSignalR-samples), доступный в репозитории GitHub. 
 
 ## <a name="create-an-azure-signalr-resource"></a>Создание ресурса Azure SignalR
 

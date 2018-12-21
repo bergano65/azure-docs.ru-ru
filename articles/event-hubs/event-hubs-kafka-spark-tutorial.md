@@ -1,21 +1,21 @@
 ---
-title: Подключение приложения Apache Spark с помощью Центров событий Azure с поддержкой Kafka | Документация Майкрософт
-description: Используйте Apache Spark с Центрами событий Azure для Kafka.
+title: Интеграция приложения Apache Spark с Центрами событий Azure | Документация Майкрософт
+description: В этой статье рассказывается, как использовать приложение Apache Spark с поддержкой Kafka в Центрах событий Azure.
 services: event-hubs
 documentationcenter: .net
 author: basilhariri
 manager: timlt
 ms.service: event-hubs
 ms.topic: tutorial
-ms.custom: ''
-ms.date: 10/30/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: bahariri
-ms.openlocfilehash: a2ab9a77728509b794c2f5b810fb939f6d1a16e3
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: 93fdd85d1fd1b91e01d8f38b4890e1b588a5c704
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51286781"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53091243"
 ---
 # <a name="connect-your-apache-spark-application-with-kafka-enabled-azure-event-hubs"></a>Подключение приложения Apache Spark с помощью Центров событий Azure с поддержкой Kafka
 В этом руководстве описывается, как подключить приложение Spark к Центрам событий с поддержкой Kafka для потоковой передачи в режиме реального времени. Такая интеграция обеспечивает потоковую передачу без необходимости изменять клиенты протокола или запускать собственные кластеры Kafka или Zookeeper. Для работы с этим руководством требуется Apache Spark v2.4+ и Apache Kafka v2.0+.

@@ -14,20 +14,20 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: ad8cc550ce69e4dc4c19a569718fa873a65b3620
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: eda5f21a535c6256d534bfdaa6cf30ae710ba075
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39010350"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413189"
 ---
 # <a name="create-a-netapp-account"></a>Создание учетной записи NetApp
 Создание учетной записи NetApp предоставляет возможность настройки пула емкости и впоследствии создания тома. Чтобы создать новую учетную запись NetApp, нужно использовать колонку Azure NetApp Files.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Необходимо быть добавленным в список разрешений для доступа к поставщику ресурсов Microsoft.NetApp Azure и настроенным для использования службы Azure NetApp Files.  
+Необходимо зарегистрировать подписку для использования поставщика ресурсов NetApp и общедоступной предварительной версии компонента.
 
-[Azure NetApp Files Public Preview](https://aka.ms/nfspublicpreview) (Подписка на общедоступную предварительную версию Azure NetApp Files). 
+[Register for Azure NetApp Files](azure-netapp-files-register.md) (Регистрация в службе Azure NetApp Files).
 
 ## <a name="steps"></a>Действия 
 
@@ -60,6 +60,5 @@ ms.locfileid: "39010350"
 
 ## <a name="next-steps"></a>Дополнительная информация  
 
-1. [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
-2. [Создание тома для Azure NetApp Files](azure-netapp-files-create-volumes.md)
-3. [Настройка политики экспорта для тома (необязательно)](azure-netapp-files-configure-export-policy.md)
+[Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)
+

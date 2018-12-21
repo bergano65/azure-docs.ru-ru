@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 08/23/2018
-ms.openlocfilehash: f7dbc124781992ada9c3538cf415b836d8764064
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: f17998957db6fca5b109b5a05aa624e238af8dca
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42810826"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53257545"
 ---
 # <a name="create-and-configure-azure-kubernetes-service-clusters-in-azure-using-ansible"></a>Создание и настройка кластеров службы Azure Kubernetes в Azure с помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления службой Azure Kubernetes (AKS). В этой статье приводятся сведения об использовании Ansible для создания и настройки кластера службы Azure Kubernetes.
@@ -79,7 +79,7 @@ Ansible позволяет автоматизировать развертыва
 
 Результат выполнения команды **ansible-playbook* будет аналогичен приведенному ниже — в нем отображается успешное создание кластера AKS:
 
-  ```bash
+  ```Output
   PLAY [Create AKS] ****************************************************************************************
 
   TASK [Gathering Facts] ********************************************************************************************
@@ -140,7 +140,7 @@ Ansible позволяет автоматизировать развертыва
 
 В следующих выходных данных демонстрируется успешное создание кластера AKS:
 
-  ```bash
+  ```Output
   PLAY [Scale AKS cluster] ***************************************************************
 
   TASK [Gathering Facts] ******************************************************************
@@ -178,7 +178,7 @@ Ansible позволяет автоматизировать развертыва
   ```
 
 В следующих выходных данных показано успешное удаление кластера AKS:
-  ```bash
+  ```Output
 PLAY [Delete a managed Azure Container Services (AKS) cluster] ****************************
 
 TASK [Gathering Facts] ********************************************************************

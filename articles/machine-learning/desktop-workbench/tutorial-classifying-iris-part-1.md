@@ -11,16 +11,16 @@ ms.component: core
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: tutorial
-ms.date: 3/7/2018
+ms.date: 03/07/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: 272b8250a80fee42780311dec92f6d47c221c160
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: dd10581888da64114debec40cba8564023033864
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46990167"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53278514"
 ---
-# <a name="tutorial-1-classify-iris---preparing-the-data"></a>Руководство 1. Классификация цветков ириса: подготовка данных
+# <a name="tutorial-1-classify-iris---preparing-the-data"></a>Руководство 1. Классификация цветков ириса: подготовка данных
 
 [!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)]
 
@@ -45,11 +45,11 @@ ms.locfileid: "46990167"
 - Учетная запись службы "Экспериментирование в Машинном обучении Azure".
 - Установленное приложение Azure Machine Learning Workbench.
 
-Если у вас нет этих компонентов, выполните шаги в статье [Создание учетной записи для предварительной версии службы "Машинное обучение Azure" и установка Azure Machine Learning Workbench](quickstart-installation.md). 
+Если вы не выполнили эти предварительные требования, следуйте инструкциям, приведенным в [кратком руководстве по установке и запуску](quickstart-installation.md), чтобы настроить учетные записи и установить приложение Azure Machine Learning Workbench. 
 
 ## <a name="create-a-new-project-in-workbench"></a>Создание проекта в Workbench
 
-Если вы уже создали проект, выполнив инструкции в статье [Создание учетной записи для предварительной версии службы "Машинное обучение Azure" и установка Azure Machine Learning Workbench](quickstart-installation.md), можно пропустить этот шаг и перейти к следующему разделу.
+Если вы уже создали проект, выполнив инструкции из [краткого руководства по установке и запуску](quickstart-installation.md), можете пропустить этот шаг и перейти к следующему разделу.
 
 1. Откройте приложение Azure Machine Learning Workbench и при необходимости выполните вход. 
    
@@ -152,7 +152,7 @@ ms.locfileid: "46990167"
    1. Щелкните его правой кнопкой мыши. 
    1. В раскрывающемся меню выберите пункт **Value Counts** (Число значений). 
 
-   Откроется панель **инспекторов**, расположенная под данными. Отобразится гистограмма с четырьмя полосами. Целевой столбец имеет четыре разных значения: **Iris_virginica**, **Iris_versicolor**, **Iris-setosa**и **(null)**.
+   Откроется панель **инспекторов**, расположенная под данными. Отобразится гистограмма с четырьмя полосами. Целевой столбец имеет четыре разных значения: **Iris-virginica**, **Iris-versicolor**, **Iris-setosa** и значение **(null)**.
 
    ![Выбор числа значений](media/tutorial-classifying-iris/value_count.png)
 

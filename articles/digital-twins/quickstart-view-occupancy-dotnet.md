@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/7/2018
 ms.author: alinast
-ms.openlocfilehash: e11ae90655e1d4ce7a2475f0eacefb25491416da
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: ab1e879a7c145699779f6af3a97cef0ee6b5d219
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582400"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53105518"
 ---
 # <a name="quickstart-find-available-rooms-by-using-azure-digital-twins"></a>Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins
 
@@ -57,9 +57,9 @@ ms.locfileid: "52582400"
 1. Запустите `cd occupancy-quickstart/src`.
 1. Запустите `dotnet restore`.
 1. Измените файл **appSettings.json**, чтобы обновить следующие переменные:
-    - **ClientId**: введите идентификатор приложения из регистрации приложения Azure AD, записанный при работе с предыдущим разделом.
-    - **Tenant**: введите идентификатор каталога клиента Azure AD, записанный при работе с предыдущим разделом.
-    - **BaseUrl**: URL-адрес API управления экземпляра Digital Twins в формате `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Замените заполнители в этом URL-адресе значениями для своего экземпляра из предыдущего раздела.
+    - **ClientId:** введите идентификатор приложения из регистрации приложения Azure AD, записанный при работе с предыдущим разделом.
+    - **Tenant:** введите идентификатор каталога клиента Azure AD, записанный при работе с предыдущим разделом.
+    - **BaseUrl:** URL-адрес API управления экземпляра Digital Twins в формате `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Замените заполнители в этом URL-адресе значениями для своего экземпляра из предыдущего раздела.
 
 ## <a name="provision-graph"></a>Подготовка графа
 
@@ -71,7 +71,7 @@ ms.locfileid: "52582400"
 - пользовательская функция; 
 - одно назначение роли.
  
-Пространственный граф подготовлен с помощью файла [provisionSample.yaml](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/provisionSample.yaml).
+Пространственный граф подготовлен с помощью файла [provisionSample.yaml](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/provisionSample.yaml). 
 
 1. Запустите `dotnet run ProvisionSample`.
     >[!NOTE]
@@ -88,6 +88,9 @@ ms.locfileid: "52582400"
 1. В конце выполнения скопируйте строку устройства `ConnectionString`, чтобы использовать ее в примере симулятора устройства. Скопируйте только ту строку, которая выделена на этом рисунке.
 
     ![Пример подготовки][1]
+
+    >[!TIP]
+    > Вы можете просмотреть и изменить пространственный граф с помощью [средства просмотра графов Azure Digital Twins](https://github.com/Azure/azure-digital-twins-graph-viewer).
 
 ## <a name="send-sensor-data"></a>Отправка данных датчиков
 

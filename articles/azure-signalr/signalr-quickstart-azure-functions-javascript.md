@@ -1,30 +1,22 @@
 ---
-title: Краткое руководство. Бессерверная служба Azure SignalR для JavaScript | Документация Майкрософт
+title: Краткое руководство. Бессерверная служба Azure SignalR для JavaScript
 description: Краткое руководство по использованию служб "Функции Azure" и SignalR для создания чат-комнаты.
-services: signalr
-documentationcenter: ''
 author: sffamily
-manager: cfowler
-editor: ''
-ms.assetid: ''
 ms.service: signalr
 ms.devlang: javascript
 ms.topic: quickstart
-ms.tgt_pltfrm: Node.js
-ms.workload: tbd
 ms.date: 09/23/2018
 ms.author: zhshang
-ms.openlocfilehash: 12ac64a89f27744e1e731633d784135c97c423e0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: f0044ca206d15762d44d8d4ea2d58c93950c5e1e
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46991034"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53252462"
 ---
 # <a name="quickstart-create-a-chat-room-with-azure-functions-and-signalr-service-using-javascript"></a>Краткое руководство. Создание чат-комнаты с помощью служб "Функции Azure" и SignalR с использованием JavaScript
 
 Служба Azure SignalR позволяет легко добавлять в приложение функции реального времени. Функции Azure — бессерверная платформа, которая позволяет выполнять код без необходимости управлять какой-либо инфраструктурой. В этом кратком руководстве вы научитесь использовать службы SignalR и "Функции Azure" для построения бессерверного чат-приложения, работающего в режиме реального времени.
-
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,16 +30,13 @@ ms.locfileid: "46991034"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу <https://portal.azure.com/> с помощью своей учетной записи Azure.
 
-
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
 [!INCLUDE [Clone application](includes/signalr-quickstart-clone-application.md)]
-
 
 ## <a name="configure-and-run-the-azure-function-app"></a>Настройка и запуск приложения-функции Azure
 
@@ -86,9 +75,7 @@ ms.locfileid: "46991034"
 
     ![Создание службы SignalR](media/signalr-quickstart-azure-functions-javascript/signalr-quickstart-run-application.png)
 
-
 [!INCLUDE [Run web application](includes/signalr-quickstart-run-web-application.md)]
-
 
 [!INCLUDE [Cleanup](includes/signalr-quickstart-cleanup.md)]
 

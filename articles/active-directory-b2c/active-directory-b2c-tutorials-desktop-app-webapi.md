@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.component: B2C
-ms.openlocfilehash: b8cdf6cb07215f4c1e2a472f60513aff765dcfb5
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 1ce74afd8ee2266439a591730686b4f5277e1b03
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45603200"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53322011"
 ---
 # <a name="tutorial-grant-access-to-a-nodejs-web-api-from-a-desktop-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API Node.js из классического приложения с помощью Azure Active Directory B2C
 
@@ -125,7 +125,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-nodej
 
 ### <a name="configure-the-web-api"></a>Настройка веб-API
 
-1. Откройте файл `index.html` в примере веб-API Node.js.
+1. Откройте файл `index.js` в примере веб-API Node.js.
 2. Настройте пример, указав сведения о регистрации клиента Azure AD B2C. Измените следующие строки кода:
 
 ```nodejs
