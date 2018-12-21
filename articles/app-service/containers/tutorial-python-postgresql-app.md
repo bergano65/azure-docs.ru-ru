@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения Python с подключением к базе данных PostgreSQL в Службе приложений Azure | Документация Майкрософт
+title: Создание веб-приложения Python с подключением к базе данных PostgreSQL на платформе Linux в Службе приложений Azure | Документация Майкрософт
 description: Узнайте, как запустить управляемое данными приложение Python в Azure с подключением к базе данных PostgreSQL.
 services: app-service\web
 documentationcenter: python
@@ -11,13 +11,13 @@ ms.devlang: python
 ms.topic: tutorial
 ms.date: 11/29/2018
 ms.author: beverst;cephalin
-ms.custom: mvc
-ms.openlocfilehash: 3963e2ffb521a4b4732814e9b2992f4e83af1835
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.custom: seodec18
+ms.openlocfilehash: 8846ec386ad1776172ae1949b5e0f26e03ddf1df
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52865630"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53337995"
 ---
 # <a name="build-a-python-and-postgresql-web-app-in-azure-app-service"></a>Создание веб-приложения Python с подключением к базе данных PostgreSQL в Службе приложений Azure
 
@@ -205,7 +205,7 @@ az postgres server firewall-rule create --resource-group myResourceGroup --serve
 > [!NOTE]
 > Этот параметр разрешает сетевые подключения со всех IP-адресов в сети Azure. Для рабочей среды попробуйте настроить как можно более строгие правила брандмауэра, [указав только исходящие IP-адреса, используемые вашим приложением](../app-service-ip-addresses.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#find-outbound-ips).
 
-В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<you_ip_address >* [локальным IPv4-адресом](http://www.whatsmyip.org/).
+В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<you_ip_address >* [локальным IPv4-адресом](https://www.whatsmyip.org/).
 
 ```azurecli-interactive
 az postgres server firewall-rule create --resource-group myResourceGroup --server-name <postgresql_name> --start-ip-address=<your_ip_address> --end-ip-address=<your_ip_address> --name AllowLocalClient
@@ -287,7 +287,7 @@ python manage.py runserver
 ALLOWED_HOSTS = [os.environ['WEBSITE_SITE_NAME'] + '.azurewebsites.net', '127.0.0.1'] if 'WEBSITE_SITE_NAME' in os.environ else []
 ```
 
-Далее, Django не поддерживает [обработку статических файлов в рабочей среде](https://docs.djangoproject.com/en/2.1/howto/static-files/deployment/), поэтому необходимо включить эту функцию вручную. В этом учебнике используется [WhiteNoise](http://whitenoise.evans.io/en/stable/). Пакет WhiteNoise уже входит в _requirements.txt_. Чтобы использовать Django, его необходимо настроить. 
+Далее, Django не поддерживает [обработку статических файлов в рабочей среде](https://docs.djangoproject.com/en/2.1/howto/static-files/deployment/), поэтому необходимо включить эту функцию вручную. В этом учебнике используется [WhiteNoise](https://whitenoise.evans.io/en/stable/). Пакет WhiteNoise уже входит в _requirements.txt_. Чтобы использовать Django, его необходимо настроить. 
 
 В _azuresite/settings.py_ найдите параметр `MIDDLEWARE` и добавьте ПО промежуточного слоя `whitenoise.middleware.WhiteNoiseMiddleware` к списку прямо под ПО промежуточного слоя `django.middleware.security.SecurityMiddleware`. Параметр `MIDDLEWARE` должен выглядеть следующим образом:
 
@@ -307,7 +307,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 ```
 
-Дополнительные сведения о настройке WhiteNoise см. [здесь](http://whitenoise.evans.io/en/stable/).
+Дополнительные сведения о настройке WhiteNoise см. [здесь](https://whitenoise.evans.io/en/stable/).
 
 > [!IMPORTANT]
 > Раздел параметров базы данных уже соответствует рекомендациям по безопасности использования переменных среды. Рекомендации по полному развертыванию см. в документации о Django [здесь](https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/).

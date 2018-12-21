@@ -4,21 +4,21 @@ description: Вы узнаете, как писать пользовательс
 services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
-manager: kfile
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: tutorial
-ms.date: 09/24/2018
-ms.openlocfilehash: d593930705c7455d03e20af2affd2de3c418d4a5
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.date: 12/06/2018
+ms.custom: seodec18
+ms.openlocfilehash: 5597109a65a8af88bf286977d039656635565ed9
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389074"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53086915"
 ---
-# <a name="tutorial-write-a-c-user-defined-function-for-an-azure-stream-analytics-edge-job-in-visual-studio-preview"></a>Руководство. Написание пользовательской функции C# для задания Edge в Azure Stream Analytics с помощью Visual Studio (предварительная версия)
+# <a name="tutorial-write-a-c-user-defined-function-for-azure-stream-analytics-edge-job-preview"></a>Руководство. Написание определяемой пользователем функции на C# для задания Azure Stream Analytics на IoT Edge (предварительная версия)
 
-Пользовательские функции C#, создаваемые в Visual Studio, позволяют расширить язык запросов Azure Stream Analytics за счет собственных функций. Вы можете повторно использовать уже существующий код (включая DLL), а также математическую или комплексную логику с C#. Существуют три способа реализации пользовательских функций: файлы кода программной части в проекте Stream Analytics, пользовательские функции из локального проекта C# и пользовательские функции из существующего пакета в учетной записи хранения. В этом руководстве для реализации базовой функции C# используется метод кода программной части. Пользовательские функции для заданий Edge в Stream Analytics сейчас находятся на этапе предварительной версии, и их не следует использовать в рабочих нагрузках.
+Пользовательские функции C#, создаваемые в Visual Studio, позволяют расширить язык запросов Azure Stream Analytics за счет собственных функций. Вы можете повторно использовать уже существующий код (включая DLL), а также математическую или комплексную логику с C#. Существует три способа реализации пользовательских функций: Файлы кода программной части в проекте Stream Analytics, пользовательские функции из локального проекта C# и пользовательские функции из существующего пакета в учетной записи хранения. В этом руководстве для реализации базовой функции C# используется метод кода программной части. Пользовательские функции для заданий Edge в Stream Analytics сейчас находятся на этапе предварительной версии, и их не следует использовать в рабочих нагрузках.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -115,11 +115,11 @@ ms.locfileid: "49389074"
 
 2. В **обозревателе решений** разверните **Входные данные**, щелкните правой кнопкой мыши **Input.json** и выберите команду **Добавить локальный ввод**.
 
-   ![Добавление локальных входных данных в задание Azure Stream Analytics в Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-add-local-input.png)
+   ![Добавление локальных входных данных в задание Stream Analytics в Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-add-local-input.png)
 
 3. Укажите путь к локальному файлу входных данных с загруженным вами примером и нажмите **Сохранить**.
 
-    ![Конфигурация локальных входных данных для задания Azure Stream Analytics в Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-local-input-config.png)
+    ![Конфигурация локальных входных данных для задания Stream Analytics в Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-local-input-config.png)
 
 4. В редакторе запросов нажмите **Запустить локально**. После того как локальное выполнение успешно сохранит выходные данные, нажмите любую клавишу, чтобы отобразить результаты в виде таблицы. 
 
@@ -134,11 +134,11 @@ ms.locfileid: "49389074"
 
 1. Добавьте точки останова в функцию C#.
 
-    ![Добавьте точки останова в пользовательскую функцию Azure Stream Analytics для задания Edge с помощью Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-udf-breakpoints.png)
+    ![Добавление точек останова в пользовательскую функцию Stream Analytics в Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-udf-breakpoints.png)
 
 2. Нажмите клавишу **F5**, чтобы запустить отладку. Программа будет останавливаться в точках останова.
 
-    ![Просмотр результатов отладки пользовательской функции Azure Stream Analytics для задания Edge с помощью Visual Studio](./media/stream-analytics-edge-csharp-udf/stream-analytics-udf-debug.png)
+    ![Просмотр результатов отладки определяемой пользователем функции Stream Analytics](./media/stream-analytics-edge-csharp-udf/stream-analytics-udf-debug.png)
 
 ## <a name="publish-your-job-to-azure"></a>Публикация задания в Azure
 Протестировав свой запрос локально, выберите команду **Отправить в Azure** в редакторе сценариев, чтобы опубликовать задание в Azure.
@@ -155,4 +155,4 @@ ms.locfileid: "49389074"
 Дополнительные сведения о различных способах использования пользовательских функций C# для выполнения заданий Edge в Stream Analytics см. в этой статье:
 
 > [!div class="nextstepaction"]
-> [Написание пользовательских функций C# для Azure Stream Analytics](stream-analytics-edge-csharp-udf-methods.md)
+> [Разработка пользовательских функций .NET Standard для заданий Edge в Azure Stream Analytics (предварительная версия)](stream-analytics-edge-csharp-udf-methods.md)

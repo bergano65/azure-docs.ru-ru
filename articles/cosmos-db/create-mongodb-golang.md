@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB. Создание консольного приложения API MongoDB с использованием языка Golang и портала Azure
+title: Azure Cosmos DB — Создание консольного приложения API MongoDB с использованием языка Go и портала Azure
 description: В этой статье представлен пример кода Golang, который можно использовать для подключения и выполнения запросов к Azure Cosmos DB
 services: cosmos-db
 author: slyons
@@ -9,14 +9,14 @@ ms.topic: quickstart
 ms.date: 07/21/2017
 ms.author: sclyon
 ms.custom: mvc
-ms.openlocfilehash: 04149e12e2926888bab82495a0924df94d6e3450
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: a05ca8602ad3b5ea3135ad2ce915bdc38359bfd7
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52836174"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53089566"
 ---
-# <a name="azure-cosmos-db-build-a-mongodb-api-console-app-with-golang-and-the-azure-portal"></a>Azure Cosmos DB. Создание консольного приложения API MongoDB с использованием языка Golang и портала Azure
+# <a name="azure-cosmos-db-build-a-mongodb-api-console-app-with-golang-and-the-azure-portal"></a>Azure Cosmos DB — Создание консольного приложения API MongoDB с использованием языка Go и портала Azure
 
 > [!div class="op_single_selector"]
 > * [.NET](create-mongodb-dotnet.md)
@@ -63,7 +63,7 @@ Azure Cosmos DB — это глобально распределенная мн
     go get gopkg.in/mgo.v2
     ```
 
-Драйвер [mgo](http://labix.org/mgo) — это драйвер [MongoDB](http://www.mongodb.org/) для [языка Go](http://golang.org/), реализующий расширенный и протестированный набор функций в очень простом API в соответствии со стандартными идиомами Go.
+Драйвер [mgo](https://labix.org/mgo) — это драйвер [MongoDB](https://www.mongodb.com/) для [языка Go](https://golang.org/), реализующий расширенный и протестированный набор функций в очень простом API в соответствии со стандартными идиомами Go.
 
 <a id="connection-string"></a>
 
@@ -95,7 +95,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ### <a name="connecting-the-go-app-to-azure-cosmos-db"></a>Подключение приложения Go к Azure Cosmos DB
 
-Azure Cosmos DB поддерживает MongoDB с протоколом SSL. Чтобы подключиться к системе MongoDB с протоколом SSL, необходимо определить функцию **DialServer** в разделе [mgo.DialInfo](http://gopkg.in/mgo.v2#DialInfo) и использовать функцию [tls.*Dial*](http://golang.org/pkg/crypto/tls#Dial) для установки подключения.
+Azure Cosmos DB поддерживает MongoDB с протоколом SSL. Чтобы подключиться к системе MongoDB с протоколом SSL, необходимо определить функцию **DialServer** в разделе [mgo.DialInfo](https://godoc.org/gopkg.in/mgo.v2#DialInfo) и использовать функцию [tls.*Dial*](https://golang.org/pkg/crypto/tls#Dial) для установки подключения.
 
 Следующий фрагмент кода Golang подключается к приложению Go с помощью API MongoDB Azure Cosmos DB. Класс *DialInfo* содержит параметры для установки сеанса подключения к кластеру MongoDB.
 

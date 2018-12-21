@@ -1,23 +1,24 @@
 ---
-title: Краткое руководство для C# — прогнозирование намерения — LUIS
-titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре. Вы отправите намерение пользователя в виде текста в конечную точку прогнозирования HTTP для общедоступного приложения, используя C#. В конечной точке LUIS применяет модель общедоступного приложения, чтобы проанализировать смысл текста на естественном языке, определить общее намерение и извлечь данные, релевантные для предметной области приложения.
+title: Получение намерения с использованием C#
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Из этого краткого руководства по C# вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 51c23029cc771db5351575ce329944a9f06dd286
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 0e58fb35fa29cde16b1ccf50dc20dacc693a4757
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47035850"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141770"
 ---
-# <a name="quickstart-get-intent-using-c"></a>Краткое руководство: получение намерения с использованием C#
+# <a name="quickstart-get-intent-using-c"></a>Краткое руководство. Получение намерения с использованием C#
 
 [!INCLUDE [Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 
@@ -46,11 +47,11 @@ ms.locfileid: "47035850"
 
 1. Создайте в Visual Studio консольное приложение. 
 
-    ![Доступ к меню параметров пользователя LUIS](media/luis-get-started-cs-get-intent/visual-studio-console-app.png)
+    ![Создайте в Visual Studio консольное приложение.](media/luis-get-started-cs-get-intent/visual-studio-console-app.png)
 
 2. В обозревателе решений проекта Visual Studio выберите **Добавить ссылку**, затем на вкладке "Сборки" выберите **System.Web**.
 
-    ![Доступ к меню параметров пользователя LUIS](media/luis-get-started-cs-get-intent/add-system-dot-web-to-project.png)
+    ![Щелкните "Добавить ссылку", а затем на вкладке "Сборки" выберите System.Web.](media/luis-get-started-cs-get-intent/add-system-dot-web-to-project.png)
 
 3. Перезапишите содержимое файла Program.cs следующим кодом:
     

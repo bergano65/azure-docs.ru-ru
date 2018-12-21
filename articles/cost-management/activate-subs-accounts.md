@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/27/2018
+ms.date: 12/06/2018
 ms.topic: quickstart
 ms.service: cost-management
 manager: vitavor
-ms.custom: ''
-ms.openlocfilehash: f2cb5d33b8d7a7442da16a38e268c56de363a9c6
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.custom: secdec18
+ms.openlocfilehash: 9a27efe7908b2a15ceb823d7a85c4a12603731ab
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52274088"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53075987"
 ---
 # <a name="activate-azure-subscriptions-and-accounts-with-cloudyn"></a>Активация подписок и учетных записей Azure с помощью Cloudyn
 
@@ -41,7 +41,7 @@ ms.locfileid: "52274088"
 3. В Azure Active Directory выберите **Параметры пользователя**.
 4. Проверьте параметр **Регистрация приложений**.
     - Если задано значение **Да**, тогда пользователи без прав администратора могут регистрировать приложения AD. Это означает, что приложение в клиенте Azure AD может зарегистрировать любой пользователь.  
-    ![Регистрация приложений](./media/activate-subs-accounts/app-register.png)
+    ![В параметрах пользователя выберите регистрацию приложений](./media/activate-subs-accounts/app-register.png)
     - Если для параметра **Регистрация приложений** задано значение **Нет**, тогда только пользователи с правами администратора в клиенте могут регистрировать приложения Azure Active Directory. Администратор клиента должен зарегистрировать приложение CloudynCollector.
 
 
@@ -53,12 +53,12 @@ ms.locfileid: "52274088"
 
 1. На портале Cloudyn щелкните символ шестеренки в верхнем углу справа и выберите **Cloud Accounts** (Облачные учетные записи).
 2. Щелкните **Добавить новую учетную запись**, и появится поле **добавления новой учетной записи**. Введите необходимые сведения.  
-    ![Поле добавления новой учетной записи](./media/activate-subs-accounts//add-new-account.png)
+    ![Введите необходимые сведения в поле "Добавление новой учетной записи"](./media/activate-subs-accounts/add-new-account.png)
 
 ### <a name="update-a-subscription"></a>Обновление подписки
 
 1. Если вы хотите обновить подписку, которая _не активирована_ и уже существует в службе Cloudyn в разделе управления учетными записями, щелкните символ редактирования справа от родительского _GUID клиента_. Подписки группируются в родительском клиенте. Поэтому не активируйте их по отдельности.
-    ![Повторное обнаружение подписок](./media/activate-subs-accounts/existing-sub.png)
+    ![Выберите свой идентификатор клиента в поле повторного обнаружения подписок](./media/activate-subs-accounts/existing-sub.png)
 2. При необходимости введите идентификатор клиента. Если вы не знаете идентификатор клиента, выполните следующие действия, чтобы найти его.
     1. Войдите на [портале Azure](https://portal.azure.com).
     2. На портале Azure выберите **Azure Active Directory**.
@@ -106,7 +106,7 @@ ms.locfileid: "52274088"
 Только администратор служб Azure может включить службу Cloudyn. Разрешений соадминистратора недостаточно. Но вы можете обойти требование, касающееся разрешений администратора. Можно запросить у администратора Azure Active Directory разрешение на авторизацию **CloudynAzureCollector** с помощью скрипта PowerShell. Приведенный ниже скрипт предоставляет разрешение на регистрацию субъекта-службы Azure Active Directory **CloudynAzureCollector**.
 
 
-```
+```powershell
 #THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #Tenant - enter your tenant ID or Name

@@ -1,5 +1,5 @@
 ---
-title: Создание приложения .NET Core и его развертывание в службе приложений Azure на платформе Linux | Документация Майкрософт
+title: Создание веб-приложения .NET Core в Службе приложений Azure в Linux | Документация Майкрософт
 description: Быстрое развертывание первого приложения Hello World на .NET Core в службе приложений на платформе Linux.
 keywords: служба приложений azure, веб-приложение, dotnet, core, linux, oss
 services: app-service
@@ -15,13 +15,13 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 04/11/2018
 ms.author: cfowler
-ms.custom: mvc
-ms.openlocfilehash: 5aff783735d38a2707f42efe8a1632bd5aaafc4b
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.custom: seodec18
+ms.openlocfilehash: f074c6184652ced133a7253bee3cc7a8a556c574
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52316775"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53251799"
 ---
 # <a name="create-a-net-core-web-app-in-app-service-on-linux"></a>Создание веб-приложения .NET Core в службе приложений на платформе Linux
 

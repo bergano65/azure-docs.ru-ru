@@ -4,14 +4,16 @@ ms.service: container-service
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: danlep
-ms.openlocfilehash: c5200e7e4d5550f26343fab1561c214ee19d6741
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: b385c3e3e5f39e812545143df4a3adcc08ebfce5
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51572663"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53002211"
 ---
-# <a name="container-service-frequently-asked-questions"></a>Часто задаваемые вопросы о службе контейнеров
+# <a name="deprecated-container-service-frequently-asked-questions"></a>Часто задаваемые вопросы о службе контейнеров (не рекомендуется)
+
+[!INCLUDE [ACS deprecation](container-service-deprecation.md)]
 
 ## <a name="orchestrators"></a>Оркестраторы
 
@@ -77,9 +79,9 @@ DNSnamePrefix.AzureRegion.cloudapp.azure.net
 
 ### <a name="how-do-i-tell-which-orchestrator-version-is-running-in-my-cluster"></a>Как узнать, какая версия оркестратора используется в кластере?
 
-* сведения о версии, используемой в DC/OS, см. в [документации по Mesosphere](https://docs.mesosphere.com/1.7/usage/cli/command-reference/);
-* в Docker Swarm используется `docker version`;
-* в Kubernetes используется `kubectl version`.
+* DC/OS: см. [документацию по Mesosphere](https://docs.mesosphere.com/1.7/usage/cli/command-reference/);
+* Docker Swarm: Запустите `docker version`
+* Kubernetes: Запустите `kubectl version`
 
 ### <a name="how-do-i-upgrade-the-orchestrator-after-deployment"></a>Как обновить оркестратор после развертывания?
 

@@ -1,7 +1,7 @@
 ---
-title: Руководство. Одностраничное приложение для службы "Поиск сущностей Bing"
+title: Руководство. Создание одностраничного веб-приложения с использованием API Bing для поиска новостей
 titlesuffix: Azure Cognitive Services
-description: В этой статье показано, как использовать API Bing для поиска новостей в одностраничном веб-приложении.
+description: Из этого руководства вы узнаете, как создать одностраничное веб-приложение, которое может отправлять поисковые запросы к API Bing для поиска новостей и отображать результаты на веб-странице.
 services: cognitive-services
 author: mikedodaro
 manager: cgronlun
@@ -10,14 +10,16 @@ ms.component: bing-news-search
 ms.topic: tutorial
 ms.date: 10/30/2017
 ms.author: v-gedod
-ms.openlocfilehash: 1d27751d12c82736ca519bb3a0e9bcd49bef4a47
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.custom: seodec2018
+ms.openlocfilehash: 311abe4583d29098ebd26dfcf2214553aa1fe1c9
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48803653"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53262050"
 ---
-# <a name="tutorial-single-page-news-search-app"></a>Руководство по одностраничным приложениям для поиска новостей
+# <a name="tutorial-create-a-single-page-web-app"></a>Руководство. Создание одностраничного веб-приложения
+
 API Bing для поиска новостей позволяет выполнять поиск новостей и получать результаты различных типов, релевантных поисковому запросу. В этом руководстве мы создаем одностраничное веб-приложение, использующее API Bing для поиска новостей для отображения результатов поиска прямо на странице. Приложение включает в себя компоненты HTML, CSS и JavaScript.
 
 <!-- Remove until we can replace it with sanitized copy

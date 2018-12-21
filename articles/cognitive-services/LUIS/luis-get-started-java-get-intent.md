@@ -1,22 +1,25 @@
 ---
-title: Краткое руководство для Java — прогнозирование намерения — LUIS
-titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре. Отправляйте намерение пользователя в виде текста в конечную точку прогноза HTTP общедоступного приложения, используя Java. В конечной точке LUIS применяет модель общедоступного приложения, чтобы проанализировать смысл текста на естественном языке, определить общее намерение и извлечь данные, релевантные для предметной области приложения.
+title: Получение намерения с использованием Java
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Из этого краткого руководства по Java вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре.
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: c492a0d0a9d90a79b0e05d4e7de6f5ef0796184a
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: c55721e803b85c536067a90019f75dd5aa0f7845
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50417539"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53085354"
 ---
-# <a name="quickstart-get-intent-using-java"></a>Краткое руководство: получение намерения с использованием Java
+# <a name="quickstart-get-intent-using-java"></a>Краткое руководство. Получение намерения с использованием Java
+
+Из этой статьи вы узнаете, как передать фразы в конечную точку LUIS и получить намерение и сущности.
 
 [!INCLUDE [Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 

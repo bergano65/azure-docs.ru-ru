@@ -1,25 +1,18 @@
 ---
-title: Краткое руководство. REST API службы Azure SignalR | Документация Майкрософт
+title: Краткое руководство. REST API Службы Azure SignalR
 description: Краткое руководство по использованию REST API службы Azure SignalR.
-services: signalr
-documentationcenter: ''
 author: sffamily
-manager: cfowler
-editor: ''
-ms.assetid: ''
 ms.service: signalr
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.tgt_pltfrm: ASP.NET
-ms.workload: tbd
 ms.date: 06/13/2018
 ms.author: zhshang
-ms.openlocfilehash: 36fb87d3255149c041c4288d13c54eaff8425e06
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: fdbdbe77c6541d62acef0d23d599d9687f5301b1
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024364"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53251867"
 ---
 # <a name="quickstart-broadcast-real-time-messages-from-console-app"></a>Краткое руководство. Широковещательные сообщения в режиме реального времени из консольного приложения
 
@@ -30,17 +23,15 @@ ms.locfileid: "50024364"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Это краткое руководство предназначено для macOS, Windows или Linux.
+
 * [Базовый пакет SDK для .NET](https://www.microsoft.com/net/download/core)
 * Текстовый редактор или редактор кода по вашему выбору.
 
-
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Войдите на портал Azure по адресу <https://portal.azure.com/> с помощью своей учетной записи Azure.
-
 
 [!INCLUDE [Create instance](includes/signalr-quickstart-create-instance.md)]
 
@@ -68,6 +59,7 @@ ms.locfileid: "50024364"
 ### <a name="build-the-executable-file"></a>Сборка исполняемого файла
 
 В качестве примера мы используем macOS osx.10.13-x64. Можно найти [рекомендации](https://docs.microsoft.com/dotnet/core/rid-catalog) по сборке на других платформах.
+
 ```bash
 cd AzureSignalR-samples/samples/Serverless/
 
@@ -108,7 +100,7 @@ dotnet run -- client <ClientName> -c "<ConnectionString>" -h <HubName>
 
 ## <a name="usage"></a>Использование
 
-После запуска сервера используйте команду для отправки сообщения
+После запуска сервера используйте такую команду для отправки сообщения.
 
 ```
 send user <User Id>
@@ -121,8 +113,11 @@ broadcast
 Можно запустить несколько клиентов с разными именами.
 
 ## <a name="usage"> </a> Интеграция со сторонними службами
+
 Служба Azure SignalR позволяет интегрировать сторонние службы с системой.
-### <a name="usage"> </a> Определение технических спецификаций
+
+### <a name="definition-of-technical-specifications"></a>Определение технических спецификаций
+
 В следующей таблице показаны все версии поддерживаемых REST API. Также можно найти файл с определением для каждой версии.
 
 Version (версия) | Состояние API | Порт | Стандартный
@@ -144,6 +139,7 @@ API | `1.0-preview` | `1.0`
 
 <a name="broadcast"> </a>
 ### <a name="broadcast-to-everyone"></a>Широковещательная передача для всех
+
 Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
 --- | --- | --- | ---
 `1.0-preview` | `POST` | `https://<instance-name>.service.signalr.net:5002/api/v1-preview/hub/<hub-name>` | `{"target": "<method-name>", "arguments": [...]}`
@@ -151,6 +147,7 @@ Version (версия) | Метод HTTP для API | Request URL (URL-адре�
 
 <a name="broadcast-group"> </a>
 ### <a name="broadcast-to-a-group"></a>Широковещательная передача для группы
+
 Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
 --- | --- | --- | ---
 `1.0-preview` | `POST` | `https://<instance-name>.service.signalr.net:5002/api/v1-preview/hub/<hub-name>/group/<group-name>` | `{"target": "<method-name>", "arguments": [...]}`
@@ -158,6 +155,7 @@ Version (версия) | Метод HTTP для API | Request URL (URL-адре�
 
 <a name="send-user"> </a>
 ### <a name="sending-to-specific-users"></a>Отправка для определенных пользователей
+
 Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса) | Тело запроса
 --- | --- | --- | ---
 `1.0-preview` | `POST` | `https://<instance-name>.service.signalr.net:5002/api/v1-preview/hub/<hub-name>/user/<user-id>` | `{"target": "<method-name>", "arguments": [...]}`
@@ -165,12 +163,14 @@ Version (версия) | Метод HTTP для API | Request URL (URL-адре�
 
 <a name="add-user-to-group"> </a>
 ### <a name="adding-a-user-to-a-group"></a>Добавление пользователя в группу
+
 Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса)
 --- | --- | ---
 `1.0` | `PUT` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/users/<userid>`
 
 <a name="remove-user-from-group"> </a>
 ### <a name="removing-a-user-from-a-group"></a>Удаление пользователя из группы
+
 Version (версия) | Метод HTTP для API | Request URL (URL-адрес запроса)
 --- | --- | ---
 `1.0` | `DELETE` | `https://<instance-name>.service.signalr.net/api/v1/hubs/<hub-name>/groups/<group-name>/users/<userid>`

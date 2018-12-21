@@ -1,5 +1,5 @@
 ---
-title: Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure | Документация Майкрософт
+title: Сопоставление существующего настраиваемого DNS-имени в Службе приложений Azure | Документация Майкрософт
 description: Узнайте, как добавить имеющееся DNS-имя личного домена (именного домена) для веб-приложения, серверной части мобильного приложения или приложения API в службе приложений Azure.
 keywords: служба приложений, служба приложений Azure, сопоставление доменов, доменное имя, существующий домен, имя узла
 services: app-service\web
@@ -15,13 +15,13 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 06/18/2018
 ms.author: cephalin
-ms.custom: mvc
-ms.openlocfilehash: 30199005db93f9a43a37d2c72bb34dd772265419
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.custom: seodec18
+ms.openlocfilehash: 2debb52c703aaa25b2ff0a182bed3e07431b6f48
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43664893"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53270269"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-web-apps"></a>Руководство. Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "43664893"
 
 ## <a name="prepare-the-app"></a>Подготовка приложения
 
-Чтобы сопоставить настраиваемое DNS-имя с веб-приложением, его уровень [плана службы приложений](https://azure.microsoft.com/pricing/details/app-service/) должен быть платным (**Общий**, **Базовый**, **Стандартный** или **Премиум**). На этом шаге следует убедиться, что приложение службы приложений находится в поддерживаемой ценовой категории.
+Чтобы сопоставить настраиваемое DNS-имя с веб-приложением, уровень [плана Службы приложений](https://azure.microsoft.com/pricing/details/app-service/) должен быть платным (**Общий**, **Базовый**, **Стандартный** или **Премиум** или **Потребление** для Функций Azure). На этом шаге следует убедиться, что приложение службы приложений находится в поддерживаемой ценовой категории.
 
 [!INCLUDE [app-service-dev-test-note](../../includes/app-service-dev-test-note.md)]
 

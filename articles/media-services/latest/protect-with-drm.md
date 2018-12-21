@@ -11,14 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 10/16/2018
+ms.date: 12/08/2018
 ms.author: juliako
-ms.openlocfilehash: 2a8a00ab034016e7121e4601b3ff5a16d8c721ac
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.custom: seodec18
+ms.openlocfilehash: 84bdc560a135f8f1eb7d6c86fe4f3749135ff7e1
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49395085"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53139050"
 ---
 # <a name="use-drm-dynamic-encryption-and-license-delivery-service"></a>Использование динамического шифрования DRM и службы доставки лицензий
 
@@ -58,7 +59,7 @@ ms.locfileid: "49395085"
 
 Выполнение описанного здесь примера позволит получить следующий результат.
 
-![Защита с помощью DRM](./media/protect-with-drm/ams_player.png)
+![AMS и видео, защищенное с помощью DRM](./media/protect-with-drm/ams_player.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -116,7 +117,7 @@ ms.locfileid: "49395085"
 
 Выполнение задания занимает некоторое время. По его завершению вы будете уведомлены. В примере кода ниже показано, как опрашивать службу о состоянии [задания](https://docs.microsoft.com/rest/api/media/jobs). Опрос не рекомендуется для приложений рабочей среды из-за потенциальной задержки. Его можно регулировать при чрезмерном использовании в учетной записи. Вместо этого разработчики должны использовать службу "Сетка событий". Дополнительные сведения см. в статье [Route Azure Media Services events to a custom web endpoint using CLI](job-state-events-cli-how-to.md) (Маршрутизация событий Служб мультимедиа в пользовательскую конечную точку с помощью CLI).
 
-**Задание** обычно проходит через такие состояния: **Запланировано**, **В очереди**, **Обработка**, **Завершено** (конечное состояние). Если в задании обнаружена ошибка, вы получите состояние **Ошибка**. Если задание находится в процессе отмены, вы получите состояние **Выполнение отмены** и **Отменено** по завершении.
+Для **задания** обычно последовательно устанавливаются следующие состояния: **Запланировано**, **В очереди**, **Идет обработка**, **Завершено** (конечное состояние). Если в задании обнаружена ошибка, вы получите состояние **Ошибка**. Если задание находится в процессе отмены, вы получите состояние **Выполнение отмены** и **Отменено** по завершении.
 
 [!code-csharp[Main](../../../media-services-v3-dotnet-tutorials/AMSV3Tutorials/EncryptWithDRM/Program.cs#WaitForJobToFinish)]
 

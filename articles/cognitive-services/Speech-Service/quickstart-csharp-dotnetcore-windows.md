@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Распознавание речи в C# под .NET Core на Windows с помощью пакета SDK для службы "Речь"
+title: Краткое руководство. Распознавание речи с помощью .NET Core (Windows) в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как распознавать речь в C# под .NET Core на Windows, используя пакет SDK для службы "Речь"
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: quickstart
 ms.date: 10/12/2018
 ms.author: wolfma
-ms.openlocfilehash: 891de4700470931d8eaec3e2a3bb7ca2110e48dd
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: e82e39eb3fc6c7ebaf4798ad10038bfd2fa9a41b
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49469141"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53085490"
 ---
 # <a name="quickstart-recognize-speech-in-c-under-net-core-on-windows-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C# для .NET Core в Windows с помощью пакета SDK для службы "Речь"
 

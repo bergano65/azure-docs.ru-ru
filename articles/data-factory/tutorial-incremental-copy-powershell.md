@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 08bce244dc4eafcd423123b1230fe4aa8b4ed04e
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: 09ba81e4d895afeccf41617039732ae3e72147d7
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43092048"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52972428"
 ---
 # <a name="incrementally-load-data-from-an-azure-sql-database-to-azure-blob-storage"></a>Пошаговая загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из таблицы в базе данных SQL Azure в хранилище BLOB-объектов Azure. 
@@ -37,7 +37,7 @@ ms.locfileid: "43092048"
 ## <a name="overview"></a>Обзор
 Ниже приведена общая схема решения. 
 
-![Пошаговая загрузка данных](media\tutorial-Incrementally-copy-powershell\incrementally-load.png)
+![Пошаговая загрузка данных](media/tutorial-Incrementally-copy-powershell/incrementally-load.png)
 
 Ниже приведены важные действия для создания этого решения. 
 

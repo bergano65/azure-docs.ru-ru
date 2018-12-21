@@ -1,21 +1,22 @@
 ---
-title: Краткое руководство для Java — изменение модели и обучение приложения LUIS
-titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства по Java вы узнаете, как добавить примеры высказываний в приложение Home Automation и обучить это приложение. Примерами высказываний называют фразы пользователя на обычном языке, сопоставленные с тем или иным намерением. Предоставляя фразы для настроенных намерений, вы сообщаете LUIS ожидаемые варианты сообщений пользователя для каждого намерения.
+title: Изменение и обучение приложения с помощью Java
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Из этого краткого руководства по Java вы узнаете, как добавить примеры высказываний в приложение Home Automation и обучить это приложение.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: bfe4aae25a34799370e52c8677871a62935ab5c2
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 206b345fedb033a6b98e350fec8c66a3496f5236
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50419747"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53080832"
 ---
 # <a name="quickstart-change-model-using-java"></a>Краткое руководство. Изменение модели с помощью Java 
 
@@ -71,14 +72,14 @@ ms.locfileid: "50419747"
 
 Скомпилируйте файл AddUtterance с зависимостями.
 
-```CMD
+```console
 > javac -classpath gson-2.8.2.jar AddUtterances.java
 ```
 
 ## <a name="run-code"></a>Выполнение кода
 Если вызвать `AddUtterance` без аргументов, фразы будут добавлены в приложение LUIS, но обучение по ним не будет выполнено.
 
-```CMD
+```console
 > java -classpath .;gson-2.8.2.jar AddUtterances
 ```
 

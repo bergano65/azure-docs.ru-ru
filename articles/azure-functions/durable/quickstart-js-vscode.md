@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: quickstart
 ms.date: 11/07/2018
 ms.author: azfuncdf, cotresne, glenga
-ms.openlocfilehash: 7dceed4d81f1e1767cbf91804573043d1204beee
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: ad17b6ef032c7bc25a019d53f12cc33baa3163f3
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52838911"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53340903"
 ---
 # <a name="create-your-first-durable-function-in-javascript"></a>Создание устойчивой функции с помощью JavaScript
 
@@ -44,66 +44,35 @@ ms.locfileid: "52838911"
 
 [!INCLUDE [functions-create-function-app-vs-code](../../../includes/functions-create-function-app-vs-code.md)]
 
+## <a name="install-the-durable-functions-npm-package"></a>Установка пакета npm для расширения "Устойчивые функции"
+
+1. Установите пакет npm `durable-functions`, выполнив команду `npm install durable-functions` в корневом каталоге приложения-функции.
+
 ## <a name="create-a-starter-function"></a>Создание функции запуска
 
 Сначала создайте функцию, активируемую протоколом HTTP, которая запускает оркестрацию устойчивых функций.
 
-1. В расширении "**Функции Azure**" щелкните значок Create Function (Создать функцию).
+1. Выберите **Azure: Functions** (Azure: Функции) и щелкните значок Create Function (Создать функцию).
 
     ![Создание функции](./media/quickstart-js-vscode/create-function.png)
 
-1. Укажите папку со своим проектом приложения-функции и выберите шаблон функции **HTTP trigger** (Триггер HTTP).
+2. Укажите папку со своим проектом приложения-функции и выберите шаблон функции **HTTP trigger** (Триггер HTTP).
 
     ![Выбор шаблона функции, активируемой HTTP-запросом](./media/quickstart-js-vscode/create-function-choose-template.png)
 
-1. Введите `HttpStart`, чтобы задать имя функции и нажмите клавишу ВВОД, после чего укажите способ проверки подлинности **Anonymous** (Анонимно).
+3. Введите `HttpStart`, чтобы задать имя функции и нажмите клавишу ВВОД, после чего укажите способ проверки подлинности **Anonymous** (Анонимно).
 
     ![Анонимная аутентификация](./media/quickstart-js-vscode/create-function-anonymous-auth.png)
 
     С помощью шаблона функции, активируемой HTTP-запросом, будет создана функция на выбранном вами языке.
 
-1. Замените файл index.js поданным ниже кодом JavaScript.
+4. Замените файл index.js поданным ниже кодом JavaScript.
 
-    ```javascript
-    const df = require("durable-functions");
-    
-    module.exports = async function (context, req) {
-        const client = df.getClient(context);
-        const instanceId = await client.startNew(req.params.functionName, undefined, req.body);
-    
-        context.log(`Started orchestration with ID = '${instanceId}'.`);
-    
-        return client.createCheckStatusResponse(context.bindingData.req, instanceId);
-    };
-    ```
+    [!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
 
-1. Замените файл function.json поданным ниже кодом JSON.
+5. Замените файл function.json поданным ниже кодом JSON.
 
-    ```JSON
-    {
-      "bindings": [
-        {
-          "authLevel": "anonymous",
-          "name": "req",
-          "type": "httpTrigger",
-          "direction": "in",
-          "route": "orchestrators/{functionName}",
-          "methods": ["post"]
-        },
-        {
-          "name": "$return",
-          "type": "http",
-          "direction": "out"
-        },
-        {
-          "name": "starter",
-          "type": "orchestrationClient",
-          "direction": "in"
-        }
-      ],
-      "disabled": false
-    }
-    ```
+    [!code-json[Main](~/samples-durable-functions/samples/javascript/HttpStart/function.json)]
 
 Мы создали точку входа в нашу устойчивую функцию. Теперь добавим оркестратор.
 
@@ -113,11 +82,11 @@ ms.locfileid: "52838911"
 
 1. Повторите шаги из предыдущего раздела, чтобы создать вторую функцию с помощью шаблона триггера HTTP. Дайте этой функции имя `OrchestratorFunction`.
 
-1. Откройте файл index.js новой функции и замените его содержимое следующим кодом.
+2. Откройте файл index.js новой функции и замените его содержимое следующим кодом.
 
     [!code-json[Main](~/samples-durable-functions/samples/javascript/E1_HelloSequence/index.js)]
 
-1. Откройте файл function.json и замените его следующим кодом JSON.
+3. Откройте файл function.json и замените его следующим кодом JSON.
 
     [!code-json[Main](~/samples-durable-functions/samples/javascript/E1_HelloSequence/function.json)]
 
@@ -127,11 +96,11 @@ ms.locfileid: "52838911"
 
 1. Повторите шаги из предыдущих разделов, чтобы создать третью функцию с помощью шаблона триггера HTTP. Дайте этой функции имя `SayHello`.
 
-1. Откройте файл index.js новой функции и замените его содержимое следующим кодом.
+2. Откройте файл index.js новой функции и замените его содержимое следующим кодом.
 
     [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_SayHello/index.js)]
 
-1. Замените файл function.json поданным ниже кодом JSON.
+3. Замените файл function.json поданным ниже кодом JSON.
 
     [!code-json[Main](~/samples-durable-functions/samples/csx/E1_SayHello/function.json)]
 
@@ -141,19 +110,20 @@ ms.locfileid: "52838911"
 
 Основные инструменты службы "Функции Azure" позволяют запускать проекты функций Azure на локальном компьютере разработчика. Вам будет предложено установить эти инструменты при первом запуске функции из Visual Studio Code.  
 
-1. Установите пакет npm устойчивых функций, выполнив `npm install durable-functions` в корневом каталоге приложения-функции.
-
 1. На компьютере с ОС Windows запустите эмулятор службы хранилища Azure и убедитесь, что свойству **AzureWebJobsStorage** в local.settings.json присваивается значение `UseDevelopmentStorage=true`. На компьютере с ОС Mac или Linux свойству **AzureWebJobsStorage** необходимо задать значение строки подключения существующей учетной записи хранения Azure. Далее в этой статье описывается создание учетной записи хранения.
 
-1. Чтобы протестировать созданную функцию, установите точку останова в коде функции и нажмите клавишу F5 для запуска проекта приложения-функции. Выходные данные основных инструментов отображаются на панели **Terminal** (Терминал). Если вы впервые используете устойчивые функции, расширение устойчивых функций установлено, и сборка может занять несколько секунд.
+2. Чтобы протестировать созданную функцию, установите точку останова в коде функции и нажмите клавишу F5 для запуска проекта приложения-функции. Выходные данные основных инструментов отображаются на панели **Terminal** (Терминал). Если вы впервые используете устойчивые функции, расширение устойчивых функций установлено, и сборка может занять несколько секунд.
 
-1. На панели **Terminal** (Терминал) скопируйте URL-адрес конечной точки функции, активируемой HTTP-запросом.
+    > [!NOTE]
+    > Для расширения "Устойчивые функции" в JavaScript требуется версия расширения **Microsoft.Azure.WebJobs.Extensions.DurableTask** **1.7.0** или более поздняя. Проверьте, соответствует ли версия расширения "Устойчивые функции" в файле `extensions.csproj` этому требованию. Если нет, остановите приложение-функцию, измените версию и нажмите клавишу F5, чтобы перезапустить приложение-функцию.
+
+3. На панели **Terminal** (Терминал) скопируйте URL-адрес конечной точки функции, активируемой HTTP-запросом.
 
     ![Локальные выходные данные в Azure](../media/functions-create-first-function-vs-code/functions-vscode-f5.png)
 
-1. Вставьте URL-адрес HTTP-запроса в адресную строку браузера и просмотрите состояние оркестрации.
+4. Вставьте URL-адрес HTTP-запроса в адресную строку браузера и просмотрите состояние оркестрации.
 
-1. Нажмите клавиши SHIFT+F1, чтобы остановить отладку.
+5. Нажмите клавиши SHIFT+F1, чтобы остановить отладку.
 
 Убедившись, что функция выполняется правильно на локальном компьютере, опубликуйте проект в Azure.
 
@@ -165,9 +135,9 @@ ms.locfileid: "52838911"
 
 1. Скопируйте URL-адрес HTTP-триггера на панели **Output** (Выходные данные). URL-адрес для вызова функции, активируемой HTTP-запросом, должен быть указан в таком формате:
 
-        http://<functionappname>.azurewebsites.net/api/<functionname>
+        http://<functionappname>.azurewebsites.net/orchestrators/<functionname>
 
-1. Вставьте этот URL-адрес HTTP-запроса в адресную строку браузера. При использовании опубликованного приложения ответ состояния должен быть таким же, как и ранее.
+2. Вставьте этот URL-адрес HTTP-запроса в адресную строку браузера. При использовании опубликованного приложения ответ состояния должен быть таким же, как и ранее.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

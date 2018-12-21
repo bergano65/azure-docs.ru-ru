@@ -1,20 +1,20 @@
 ---
-title: Создание учетной записи, базы данных и коллекции API MongoDB для Azure Cosmos DB с помощью сценария Azure CLI | Документация Майкрософт
+title: Скрипт Azure CLI для создания учетной записи, базы данных и коллекции API MongoDB в Azure Cosmos DB
 description: Пример сценария Azure CLI для создания учетной записи, базы данных и коллекции API MongoDB в Azure Cosmos DB.
 author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.component: cosmosdb-mongo
 ms.topic: sample
 ms.date: 10/26/2018
-ms.author: mjbrown
-ms.openlocfilehash: 6ca603a324dddf243927cf5bb67556edfb1cf7e6
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 7c7f3f6907f0c21e3c66a3d814dc355476bec553
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51007143"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52958355"
 ---
-# <a name="azure-cosmos-db-create-an-mongodb-api-account-using-azure-cli"></a>Azure Cosmos DB: создание учетной записи API MongoDB с помощью Azure CLI
+# <a name="azure-cosmos-db-create-an-mongodb-api-account-using-azure-cli"></a>Azure Cosmos DB — создание учетной записи API MongoDB с помощью Azure CLI
 
 Этот пример сценария интерфейса командной строки (CLI) создает учетную запись, базу данных и коллекцию API MongoDB в Azure Cosmos DB.
 

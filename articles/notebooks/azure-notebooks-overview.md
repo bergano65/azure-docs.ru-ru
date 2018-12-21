@@ -1,6 +1,6 @@
 ---
-title: Обзор службы "Записные книжки Azure" | Документация Майкрософт
-description: Запустите в облаке записные книжки Jupyter, используя бесплатную службу "Записные книжки Azure".
+title: Общие сведения о службе "Записные книжки Azure"
+description: Запустите в облаке записные книжки Jupyter в облаке, используя бесплатную службу "Записные книжки Azure", не требующую настройки.
 services: app-service
 documentationcenter: ''
 author: kraigb
@@ -13,18 +13,18 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: a84f71c2656c73867ee076d4b993026558a0a504
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 92cfdea12dc51884ea04ed894a79ded7f532d88b
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52853544"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53085405"
 ---
 # <a name="overview-of-azure-notebooks"></a>Общие сведения о службе "Записные книжки Azure"
 
-Записные книжки Azure — это бесплатная размещенная служба для разработки и запуска записных книжек Jupyter в облаке без их установки. [Jupyter](http://jupyter.org/) (прежнее название — IPython) — это проект с открытым кодом, который позволяет легко объединять текст с разметкой, исполняемый код, хранимые данные, графики и визуализации на одном общем холсте, который называется *записной книжкой* (изображение предоставлено сайтом jupyter.org):
+Записные книжки Azure — это бесплатная размещенная служба для разработки и запуска записных книжек Jupyter в облаке без их установки. [Jupyter](https://jupyter.org/) (прежнее название — IPython) — это проект с открытым кодом, который позволяет легко объединять текст с разметкой, исполняемый код, хранимые данные, графики и визуализации на одном общем холсте, который называется *записной книжкой* (изображение предоставлено сайтом jupyter.org):
 
-[![](http://jupyter.org/assets/jupyterpreview.png "Записные книжки Jupyter")](http://jupyter.org/assets/jupyterpreview.png#lightbox)
+[![](https://jupyter.org/assets/jupyterpreview.png "Записные книжки Jupyter")](https://jupyter.org/assets/jupyterpreview.png#lightbox)
 
 Из-за мощного сочетания кода, графики и пояснений Jupyter стал популярным для различных целей, включая инструкции по обработке и анализу данных, очистку и преобразование данных, цифровое и статистическое моделирование, а также разработку моделей машинного обучения.
 
@@ -51,7 +51,7 @@ ms.locfileid: "52853544"
 Если кратко, служба "Записные книжки Azure" помогает более эффективно выполнить работу и таким образом достигнуть более высоких результатов.
 
 > [!Note]
-> Дополнительные сведения о самом Jupyter можно найти на сайте [jupyter.org](http://jupyter.org/) и в [документации по Jupyter](http://jupyter-notebook.readthedocs.io/en/latest/).
+> Дополнительные сведения о самом Jupyter можно найти на сайте [jupyter.org](https://jupyter.org/) и в [документации по Jupyter](https://jupyter-notebook.readthedocs.io/en/latest/).
 
 ## <a name="pricing-and-quotas"></a>Цены и квоты
 
@@ -71,7 +71,7 @@ ms.locfileid: "52853544"
 
 В службу "Записные книжки Azure" также входят дополнительные пакеты, помимо основных дистрибутивов. Например, ядра Python включают библиотеки numpy, pandas, scikit-learn, matplotlib и bokeh.
 
-Вы также можете настроить проект так, чтобы создать среду для всех входящих в него записных книжек. Дополнительные сведения см. [кратком руководстве по созданию проекта с настраиваемой средой](quickstart-create-jupyter-notebook-project-environment.md).
+Вы также можете настроить проект так, чтобы создать среду для всех входящих в него записных книжек. Дополнительные сведения см. в [кратком руководстве по созданию проекта с использованием настраиваемой среды](quickstart-create-jupyter-notebook-project-environment.md).
 
 В дополнение к основным дистрибутивам в службу "Записные книжки Azure" входят предварительно установленные дополнительные пакеты, которые полезны для специалистов по обработке и анализу данных. Вы также можете установить собственные пакеты, используя обычный процесс для каждого языка.
 
@@ -79,11 +79,11 @@ ms.locfileid: "52853544"
 
 Служба "Записные книжки Azure" снабжена следующими предварительно настроенными расширениями Jupyter:
 
-- [RISE](https://github.com/damianavila/RISE) — расширение Jupyter для слайд-шоу (также известное как live_reveal). Дополнительные сведения см. в статье [Run a notebook slideshow](present-jupyter-notebooks-slideshow.md) (Запуск слайд-шоу на основе записной книжки).
-- [JupyterLab](https://github.com/jupyterlab/jupyterlab) — вычислительная среда для работы с записными книжками Jupyter.
-- [Altair](https://github.com/ellisonbg/altair) — декларативная, статистическая библиотека визуализации для Python.
-- [BQPlot](https://github.com/bloomberg/bqplot) — интерактивная платформа построения графиков для записных книжек Jupyter.
-- [IpyWidgets](https://github.com/jupyter-widgets/ipywidgets) — интерактивные мини-приложения HTML для записных книжек Jupyter.
+- [RISE:](https://github.com/damianavila/RISE) расширение Jupyter для слайд-шоу (также известное как live_reveal). Дополнительные сведения см. в статье [Run a notebook slideshow](present-jupyter-notebooks-slideshow.md) (Запуск слайд-шоу на основе записной книжки).
+- [JupyterLab:](https://github.com/jupyterlab/jupyterlab) вычислительная среда для работы с записными книжками Jupyter.
+- [Altair:](https://github.com/ellisonbg/altair) декларативная, статистическая библиотека визуализации для Python.
+- [BQPlot:](https://github.com/bloomberg/bqplot) интерактивная платформа построения графиков для записных книжек Jupyter.
+- [IpyWidgets:](https://github.com/jupyter-widgets/ipywidgets) интерактивные мини-приложения HTML для записных книжек Jupyter.
 
 ## <a name="issues-and-getting-help"></a>Вопросы и получение справки
 

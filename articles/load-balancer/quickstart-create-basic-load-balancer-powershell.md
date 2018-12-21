@@ -1,11 +1,11 @@
 ---
-title: Краткое руководство. Создание Load Balancer уровня "Базовый" с помощью Azure PowerShell | Документация Майкрософт
+title: Краткое руководство. Создание Load Balancer уровня "Базовый" с помощью Azure PowerShell
+titlesuffix: Azure Load Balancer
 description: В этом кратком руководстве показано, как с помощью PowerShell создать Load Balancer уровня "Базовый"
 services: load-balancer
 documentationcenter: na
 author: KumudD
 Customer intent: I want to create a Basic Load balancer so that I can load balance internet traffic to VMs.
-ms.assetid: ''
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: quickstart
@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/20/2018
 ms.author: kumud
-ms:custom: mvc
-ms.openlocfilehash: c21d5618b3e3223297ddd97dc5c98e5eb8c18c0b
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms:custom: seodec18
+ms.openlocfilehash: 5d76a1ac58606df82fc7e25dc8071d91da8298f5
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51974824"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53261030"
 ---
 # <a name="get-started"></a>Краткое руководство. Создание общедоступной подсистемы балансировки нагрузки с помощью Azure PowerShell
 Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать Load Balancer уровня "Базовый" Чтобы проверить работу подсистемы балансировки нагрузки, вы развернете две виртуальные машины с Windows Server и распределите между ними нагрузку веб-приложения.

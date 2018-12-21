@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложений Node.js в Azure | Документация Майкрософт
+title: Создание веб-приложения Node.js в Службе приложений Azure | Документация Майкрософт
 description: Быстрое развертывание первого приложения Hello World на Node.js в веб-приложении службы приложений Azure.
 services: app-service\web
 documentationcenter: ''
@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 10/30/2018
 ms.author: cephalin;msangapu
-ms.custom: mvc, devcenter
-ms.openlocfilehash: 6d3f367ce21e9574282805737f2eff6c83ea6157
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.custom: seodec18
+ms.openlocfilehash: 4646456acb44f3054ef948a17d3db330e4e1e727
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50248202"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53257985"
 ---
 # <a name="create-a-nodejs-web-app-in-azure"></a>Создание веб-приложений Node.js в Azure
 
@@ -119,10 +119,10 @@ az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name
 az webapp config appsettings set --resource-group myResourceGroup --name <app_name> --settings WEBSITE_NODE_DEFAULT_VERSION=8.11.1
 ```
 
-Перейдите к только что созданному веб-приложению. Замените _&lt;app name>_ уникальным именем приложения.
+Перейдите к только что созданному веб-приложению. Замените `<app_name>` уникальным именем приложения.
 
 ```bash
-http://<app name>.azurewebsites.net
+http://<app_name>.azurewebsites.net
 ```
 
 Новое веб-приложение должно выглядеть так:

@@ -1,17 +1,17 @@
 ---
-title: Повторное создание ключа учетной записи для базы данных Azure Cosmos DB с помощью скрипта Azure CLI | Документация Майкрософт
+title: Повторное создание ключа учетной записи для базы данных Azure Cosmos DB с помощью скрипта Azure CLI
 description: Пример скрипта Azure CLI. Повторное создание ключа учетной записи для базы данных Azure Cosmos DB
 author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: sample
 ms.date: 10/26/2018
-ms.author: mjbrown
-ms.openlocfilehash: 06a71ce759a72483d9ac3993e82d14af21e7d9d7
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 38ebfde4b9b473f412ae667cdc6b36ea5e991608
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51007813"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52958105"
 ---
 # <a name="regenerate-an-azure-cosmos-db-account-key-using-the-azure-cli"></a>Повторное создание ключа учетной записи для базы данных Azure Cosmos DB с помощью Azure CLI
 

@@ -1,6 +1,6 @@
 ---
 title: Использование .NET Core для создания запросов к базе данных SQL Azure | Документация Майкрософт
-description: Из этой статьи вы узнаете, как использовать .NET Core для создания программы, которая подключается к базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
+description: Из этой статьи вы узнаете, как использовать .NET Core для создания программы, которая подключается к Базе данных SQL Azure, и создавать к ней запросы с помощью инструкций Transact-SQL.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
@@ -11,65 +11,73 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 11/01/2018
-ms.openlocfilehash: 646b75e845e1940a87a9a2f45aecda2840a96d81
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.date: 12/10/2018
+ms.openlocfilehash: 471d2b0b8d98651d4b9ef4e88df0e863715b0c88
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50913076"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53341785"
 ---
-# <a name="quickstart-use-net-core-c-to-query-an-azure-sql-database"></a>Краткое руководство. Создание запросов к базе данных SQL Azure с использованием NET Core (C#)
+# <a name="quickstart-use-net-core-c-to-query-an-azure-sql-database"></a>Краткое руководство. Использование .NET Core (C#) для создания запросов к базе данных SQL Azure
 
-В этом кратком руководстве показано, как использовать [.NET Core](https://www.microsoft.com/net/) в Windows, Linux и Mac OS для создания программы C#, которая подключается к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.
+В этом кратком руководстве показано, как использовать [.NET Core](https://www.microsoft.com/net/) и код C# для подключения к базе данных SQL Azure, а затем выполнить инструкцию Transact-SQL, чтобы запросить данные.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Ниже указаны требования для работы с этим кратким руководством.
+Для работы с этим руководством необходимы указанные ниже компоненты.
 
 [!INCLUDE [prerequisites-create-db](../../includes/sql-database-connect-query-prerequisites-create-db-includes.md)]
 
-- [Правило брандмауэра уровня сервера](sql-database-get-started-portal-firewall.md) для общедоступного IP-адреса компьютера, на котором выполняются действия из этого краткого руководства.
+- [Правило брандмауэра на уровне сервера](sql-database-get-started-portal-firewall.md) для общедоступного IP-адреса используемого компьютера.
 
-- Убедитесь, что установлен [.NET Core для вашей операционной системы](https://www.microsoft.com/net/core). 
+- Установленный [.NET Core для вашей операционной системы](https://www.microsoft.com/net/core). 
 
-## <a name="sql-server-connection-information"></a>Сведения о подключении SQL Server
+> [!NOTE]
+> В этом кратком руководстве используется база данных *mySampleDatabase*. Если вы хотите использовать другую базу данных, необходимо будет изменить ссылки на базы данных и изменить запрос `SELECT` в коде C#.
+
+
+## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
 [!INCLUDE [prerequisites-server-connection-info](../../includes/sql-database-connect-query-prerequisites-server-connection-info-includes.md)]
 
-#### <a name="for-adonet"></a>Для ADO.NET
+#### <a name="get-adonet-connection-information-optional"></a>Получение сведений о подключении к ADO.NET (необязательно)
 
-1. Щелкните **Показать строки подключения к базам данных**.
+1. Перейдите на страницу **mySampleDatabase** и в разделе **Параметры** выберите **Строки подключения**.
 
 2. Просмотрите полную строку подключения **ADO.NET**.
 
-    ![Строка подключения по протоколу ADO.NET](./media/sql-database-connect-query-dotnet/adonet-connection-string.png)
+    ![Строка подключения по протоколу ADO.NET](./media/sql-database-connect-query-dotnet/adonet-connection-string2.png)
 
-> [!IMPORTANT]
-> Необходимо настроить правила брандмауэра для общедоступного IP-адреса компьютера, на котором выполняются действия из этого руководства. Если вы используете другой компьютер или имеете другой общедоступный IP-адрес, создайте [правила брандмауэра на уровне сервера с помощью портала Azure](sql-database-get-started-portal-firewall.md). 
->
+3. Скопируйте строку подключения **ADO.NET**, если вы планируете использовать ее.
   
-## <a name="create-a-new-net-project"></a>Создание проекта .NET
+## <a name="create-a-new-net-core-project"></a>Создание проекта .NET Core
 
-1. Откройте командную строку и создайте папку с именем *sqltest*. Перейдите к созданной папке и выполните следующую команду:
+1. Откройте командную строку и создайте папку с именем **sqltest**. Перейдите в эту папку и выполните команду ниже.
 
-    ```
+    ```cmd
     dotnet new console
     ```
+    Она создает файлы проекта нового приложения, включая первоначальный файл кода C# (**Program.cs**), файл конфигурации XML (**sqltest.csproj**) и необходимые двоичные файлы.
 
-2. Откройте ***sqltest.csproj*** с помощью предпочитаемого текстового редактора и добавьте System.Data.SqlClient в качестве зависимости, используя следующий код:
+2. В текстовом редакторе откройте **sqltest.csproj** и вставьте следующий XML-код между тегами `<Project>`. В результате `System.Data.SqlClient` добавляется как зависимость.
 
     ```xml
     <ItemGroup>
-        <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
+        <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
     </ItemGroup>
     ```
 
 ## <a name="insert-code-to-query-sql-database"></a>Вставка кода для отправки запроса к базе данных SQL
 
-1. В среде разработки или в предпочитаемом текстовом редакторе откройте **Program.cs**.
+1. Откройте файл **Program.cs** в текстовом редакторе.
 
-2. Замените содержимое следующим кодом и добавьте соответствующие значения для сервера, базы данных, пользователя и пароля.
+2. Замените содержимое следующим кодом и добавьте соответствующие значения для сервера, базы данных, имени пользователя и пароля.
+
+> [!NOTE]
+> Чтобы использовать строку подключения ADO.NET, замените 4 строки в коде, устанавливающем сервер, базу данных, имя пользователя и пароль, следующей строкой. В строке задайте имя пользователя и пароль.
+>
+>    `builder.ConnectionString="<your_ado_net_connection_string>";`
 
 ```csharp
 using System;
@@ -85,11 +93,12 @@ namespace sqltest
             try 
             { 
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "your_server.database.windows.net"; 
-                builder.UserID = "your_user";            
-                builder.Password = "your_password";     
-                builder.InitialCatalog = "your_database";
 
+                builder.DataSource = "<your_server.database.windows.net>"; 
+                builder.UserID = "<your_username>";            
+                builder.Password = "<your_password>";     
+                builder.InitialCatalog = "<your_database>";
+         
                 using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
                 {
                     Console.WriteLine("\nQuery data example:");
@@ -119,7 +128,8 @@ namespace sqltest
             {
                 Console.WriteLine(e.ToString());
             }
-            Console.ReadLine();
+            Console.WriteLine("\nDone. Press enter.");
+            Console.ReadLine(); 
         }
     }
 }
@@ -127,19 +137,47 @@ namespace sqltest
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-1. В командной строке выполните следующие команды:
+1. Выполните следующие команды при выводе запроса.
 
-   ```csharp
+   ```cmd
    dotnet restore
    dotnet run
    ```
 
-2. Убедитесь, что возвращены первые 20 строк, а затем закройте окно приложения.
+2. Убедитесь, что возвращены первые 20 строк.
 
+   ```text
+   Query data example:
+   =========================================
+
+   Road Frames HL Road Frame - Black, 58
+   Road Frames HL Road Frame - Red, 58
+   Helmets Sport-100 Helmet, Red
+   Helmets Sport-100 Helmet, Black
+   Socks Mountain Bike Socks, M
+   Socks Mountain Bike Socks, L
+   Helmets Sport-100 Helmet, Blue
+   Caps AWC Logo Cap
+   Jerseys Long-Sleeve Logo Jersey, S
+   Jerseys Long-Sleeve Logo Jersey, M
+   Jerseys Long-Sleeve Logo Jersey, L
+   Jerseys Long-Sleeve Logo Jersey, XL
+   Road Frames HL Road Frame - Red, 62
+   Road Frames HL Road Frame - Red, 44
+   Road Frames HL Road Frame - Red, 48
+   Road Frames HL Road Frame - Red, 52
+   Road Frames HL Road Frame - Red, 56
+   Road Frames LL Road Frame - Black, 58
+   Road Frames LL Road Frame - Black, 60
+   Road Frames LL Road Frame - Black, 62
+
+   Done. Press enter.
+   ```
+3. Нажмите клавишу **ВВОД**, чтобы закрыть окно приложения.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Начало работы с .NET Core в Windows, Linux и Mac OS с помощью командной строки](/dotnet/core/tutorials/using-with-xplat-cli).
 - Узнайте, как [подключиться и отправить запрос к базе данных SQL Azure с помощью .NET Framework и Visual Studio](sql-database-connect-query-dotnet-visual-studio.md).  
-- Узнайте, как спроектировать первую базу данных SQL с помощью [SSMS](sql-database-design-first-database.md) или [.NET](sql-database-design-first-database-csharp.md).
+- Узнайте, как [спроектировать первую базу данных SQL Azure с помощью SSMS](sql-database-design-first-database.md) или [спроектировать базу данных SQL Azure и выполнить подключение к C# и ADO.NET](sql-database-design-first-database-csharp.md).
 - Дополнительные сведения о .NET см. в [этой документации](https://docs.microsoft.com/dotnet/).

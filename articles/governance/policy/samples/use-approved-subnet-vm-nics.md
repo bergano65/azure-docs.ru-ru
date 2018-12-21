@@ -1,5 +1,5 @@
 ---
-title: Пример политики Azure. Использование утвержденной подсети для интерфейса сети виртуальной машины
+title: 'Пример: использование утвержденной подсети для сетевых интерфейсов виртуальной машины'
 description: Этот пример политики требует, чтобы сетевые интерфейсы использовали утвержденную подсеть.
 services: azure-policy
 author: DCtheGeek
@@ -8,13 +8,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 09/18/2018
 ms.author: dacoulte
-ms.custom: mvc
-ms.openlocfilehash: 60a79c73765a201f4ed3c9ad6f45900e13753c1c
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: ed09740e7929dc2505a98b00e020eb7149dc4eab
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46995879"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53308538"
 ---
 # <a name="use-approved-subnet-for-vm-network-interfaces"></a>Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
 
@@ -71,4 +70,4 @@ az group delete --name myResourceGroup --yes
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Другие примеры см. в разделе [Примеры для политики Azure](index.md)
+- Другие примеры см. в статье [Примеры для Политики Azure](index.md).

@@ -14,12 +14,12 @@ ms.topic: overview
 ms.date: 11/15/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: cded90d4f36e353241bb594bae35b7c7e03599b9
-ms.sourcegitcommit: e0834ad0bad38f4fb007053a472bde918d69f6cb
+ms.openlocfilehash: 0ede6c0c55e2f953e0d109d2d371313759ed4d06
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37436017"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52965161"
 ---
 # <a name="what-is-api-management"></a>Что такое управление API
 
@@ -59,7 +59,7 @@ ms.locfileid: "37436017"
   * создать учетную запись и оформить подписку, чтобы получить ключи API;
   * получить доступ к аналитике по использованию.
 
-Дополнительные сведения см. в технической документации (в формате PDF) [Управление API в облаке: реализация потенциала API](http://j.mp/ms-apim-whitepaper). В ней приводятся основные сведения о службе управления API. Исследование CITO Research охватывает следующие темы. 
+Дополнительные сведения см. в [документации по Управлению API](https://j.mp/ms-apim-whitepaper) в формате PDF. В ней приводятся основные сведения о службе управления API. Исследование CITO Research охватывает следующие темы. 
  
  * Общие требования и проблемы, связанные с использованием API:
  * отделение API и предоставление интерфейсной части;
@@ -120,7 +120,7 @@ API является основой экземпляра службы API Manage
 > 
 > 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Изучите следующее краткое руководство и приступите к использованию службы управления API Azure:
 

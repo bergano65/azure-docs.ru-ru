@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 09/11/2018
-ms.openlocfilehash: c1e38064e8abe53c96a70fb189b3d9e4cc4bc4e4
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 049fc711d0cf6a69b584ad3926bd9e9c0fc9e27d
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414001"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53408380"
 ---
 # <a name="deploy-applications-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Вы можете использовать Ansible для развертывания приложений в Azure. В этой статье показано, как развернуть приложение Java в масштабируемом наборе виртуальных машин (VMSS) Azure.  
@@ -35,7 +35,7 @@ Ansible позволяет автоматизировать развертыва
 
 Сохраните следующий пример сборника схем как `get-hosts-tasks.yml`: 
 
-  ```yaml
+  ```yml
   - name: Get facts for all Public IPs within a resource groups
     azure_rm_publicipaddress_facts:
       resource_group: "{{ resource_group }}"
@@ -63,7 +63,7 @@ Ansible позволяет автоматизировать развертыва
 
 В этом разделе вы используете git для клонирования примера проекта Java из GitHub и выполните сборку проекта. Сохраните следующий сборник схем как `app.yml`:
 
-  ```yaml
+  ```yml
   - hosts: localhost
     vars:
       repo_url: https://github.com/spring-guides/gs-spring-boot.git
@@ -87,7 +87,7 @@ Ansible позволяет автоматизировать развертыва
 
 Вывод команды ansible-playbook примерно такой, как показано ниже (создан пример приложения, клонированный с GitHub):
 
-  ```bash
+  ```Output
   PLAY [localhost] **********************************************************
 
   TASK [Gathering Facts] ****************************************************
@@ -110,7 +110,7 @@ Ansible позволяет автоматизировать развертыва
 
 (Измените `admin_password` на свой пароль).
 
-  ```yaml
+  ```yml
   - hosts: localhost
     vars:
       resource_group: myResourceGroup
@@ -167,7 +167,7 @@ Ansible позволяет автоматизировать развертыва
 
 Результат выполнения команды ansible-playbook указывает, что пример приложения Java установлен в группу узлов масштабируемого набора виртуальных машин:
 
-  ```bash
+  ```Output
   PLAY [localhost] **********************************************************
 
   TASK [Gathering Facts] ****************************************************
@@ -208,4 +208,4 @@ Ansible позволяет автоматизировать развертыва
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"] 
-> [Пример сборника схем Ansible для масштабируемого набора виртуальных машин](https://github.com/Azure-Samples/ansible-playbooks/tree/master/vmss)
+> [Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Ansible](https://docs.microsoft.com/azure/ansible/ansible-auto-scale-vmss)

@@ -1,6 +1,6 @@
 ---
-title: Получение событий от Центров событий Azure с помощью библиотеки .NET Standard | Документация Майкрософт
-description: Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard
+title: Получение событий от Центров событий Azure с помощью .NET Core | Документация Майкрософт
+description: Эта статья представляет собой пошаговое руководство по созданию приложения .NET Core, которое получает сообщения с помощью узла обработчика событий.
 services: event-hubs
 documentationcenter: na
 author: ShubhaVijayasarathy
@@ -12,16 +12,17 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/16/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 9adbd8b9e7934ebe454d14ac6e47fe96898c9184
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 18b37fd7c85fced4cc57b57320daf195f6f33e3e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51234397"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53082387"
 ---
-# <a name="get-started-receiving-messages-with-the-event-processor-host-in-net-standard"></a>Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard
+# <a name="get-started-receiving-messages-with-the-event-processor-host-in-net-core"></a>Как начать получать сообщения с помощью узла обработчика событий в .NET Core
 Центры событий — это служба, которая обрабатывает большие объемы данных телеметрии о событиях, поступающих от подключенных устройств и приложений. После сбора дынных в Центрах событий их можно сохранить с помощью кластера хранилища или преобразовать с помощью поставщика аналитики в реальном времени. Эта возможность сбора и обработки большого объема данных о событиях является ключевым компонентом в современных архитектурах приложений, включая "Интернет вещей". Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
 
 В этом руководстве показано, как создать консольное приложение .NET Core для получения сообщений из концентратора событий с помощью [узла обработчика событий](event-hubs-event-processor-host.md). [Узел обработчика событий](event-hubs-event-processor-host.md) представляет собой класс .NET, который упрощает прием событий из концентраторов событий путем управления постоянными контрольными точками и одновременно принимает сообщения от этих концентраторов событий. С помощью класса EventProcessorHost можно разделить события между несколькими получателями даже в том случае, если они размещены в разных узлах. В этом примере показано, как использовать EventProcessorHost для одного получателя. В примере [развертывания обработки событий][Scale out Event Processing with Event Hubs] показано, как использовать узел обработчика событий с несколькими получателями.
@@ -206,7 +207,7 @@ ms.locfileid: "51234397"
 > В этом руководстве используется один экземпляр [EventProcessorHost](event-hubs-event-processor-host.md). Чтобы увеличить пропускную способность, рекомендуем запустить несколько экземпляров [EventProcessorHost](event-hubs-event-processor-host.md), как показано в примере [развертывания обработки событий](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3). В этом случае различные экземпляры автоматически координируются друг с другом для распределения нагрузки полученных событий. 
 
 ## <a name="next-steps"></a>Дополнительная информация
-С помощью этого краткого руководства вы создали приложение .NET Standard, получающее сообщения из концентратора событий. Чтобы узнать, как отправлять события в концентратор событий с помощью .NET Standard, см. статью [Приступая к отправке событий в Центры событий Azure на платформе .NET Standard](event-hubs-dotnet-standard-getstarted-send.md).
+С помощью этого краткого руководства вы создали приложение .NET Core, получающее сообщения из концентратора событий. Сведения о том, как отправлять события в концентратор событий с помощью .NET Core, см. в статье [Приступая к отправке событий в Центры событий Azure на платформе .NET Standard](event-hubs-dotnet-standard-getstarted-send.md).
 
 [1]: ./media/event-hubs-dotnet-standard-getstarted-receive-eph/event-hubs-python1.png
 [2]: ./media/event-hubs-dotnet-standard-getstarted-receive-eph/netcorercv.png

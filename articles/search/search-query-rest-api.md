@@ -1,6 +1,6 @@
 ---
-title: Отправка запросов в индекс службы поиска Azure с помощью REST API | Документация Майкрософт
-description: В службе поиска Azure можно создавать поисковые запросы и с помощью параметров поиска фильтровать, сортировать и уточнять результаты.
+title: Запрос индекса в коде с помощью REST API — Поиск Azure
+description: HTTP-команды и код REST API для создания поискового запроса в службе "Поиск Azure". Добавление параметров поиска для фильтрации и сортировки результатов поиска.
 author: brjohnstmsft
 manager: jlembicz
 ms.author: brjohnst
@@ -8,12 +8,13 @@ services: search
 ms.service: search
 ms.topic: quickstart
 ms.date: 04/20/2018
-ms.openlocfilehash: 035dc4ac349513867253e5593e01fab4fec62f6b
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.custom: seodec2018
+ms.openlocfilehash: ccdb872646dded34cb50cd64f56733445132c4b7
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32186517"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53316948"
 ---
 # <a name="query-your-azure-search-index-using-the-rest-api"></a>Отправка запросов в индекс службы поиска Azure с помощью REST API
 > [!div class="op_single_selector"]

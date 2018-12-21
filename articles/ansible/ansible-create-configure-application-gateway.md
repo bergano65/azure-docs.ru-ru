@@ -1,21 +1,21 @@
 ---
-title: Управление веб-трафиком с помощью Шлюза приложений Azure в Ansible (предварительная версия)
+title: Управление веб-трафиком с помощью Шлюза приложений Azure в Ansible
 description: Сведения об использовании службы Ansible для создания и настройки входящего веб-трафика Шлюза приложений Azure
 ms.service: ansible
-keywords: ansible, azure, devops, bash, сборник схем, шлюз приложений azure, подсистема балансировки нагрузки, веб-трафик
+keywords: ansible, azure, devops, bash, playbook, application gateway, load balancer, web traffic
 author: tomarcher
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 09/20/2018
-ms.openlocfilehash: e3c165c87d6c179141f2ddd44f00f0f62a84b285
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.openlocfilehash: af7f22ae5c289a01e6876d8ce586cb32383c8d3b
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50912872"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53253375"
 ---
-# <a name="manage-web-traffic-with-azure-application-gateway-by-using-ansible-preview"></a>Управление веб-трафиком с помощью Шлюза приложений Azure в Ansible (предварительная версия)
+# <a name="manage-web-traffic-with-azure-application-gateway-by-using-ansible"></a>Управление веб-трафиком с помощью Шлюза приложений Azure в Ansible
 
 [Шлюз приложений Azure](https://docs.microsoft.com/azure/application-gateway/) — это подсистема балансировки нагрузки веб-трафика, предназначенная для управления трафиком веб-приложений.
 
@@ -34,7 +34,7 @@ Ansible позволяет автоматизировать развертыва
 - [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
 > [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. Вы можете установить Ansible 2.7 RC, запустив `sudo pip install ansible[azure]==2.7.0rc2`. После выпуска Ansible 2.7 не нужно указывать здесь версию.
+> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. 
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

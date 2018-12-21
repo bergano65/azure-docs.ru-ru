@@ -15,14 +15,17 @@ ms.devlang: CLI
 ms.topic: quickstart
 ms.date: 09/03/2018
 ms.author: danlep
-ms.openlocfilehash: 0d4ba7edfb22a6710222c854ceb2bf86284d2d77
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ROBOTS: NOINDEX
+ms.openlocfilehash: 1ea12c9a544704ea91b85ae944e611e6769b5592
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44057804"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53407139"
 ---
-# <a name="quickstart-create-a-cluster-for-batch-ai-training-jobs-using-the-azure-cli"></a>Краткое руководство — создание кластера Batch AI для заданий обучения с помощью Azure CLI
+# <a name="quickstart-create-a-cluster-for-batch-ai-training-jobs-using-the-azure-cli"></a>Краткое руководство. Создание кластера Batch AI для заданий обучения с помощью Azure CLI
+
+[!INCLUDE [batch-ai-retiring](../../includes/batch-ai-retiring.md)]
 
 В этом кратком руководстве показано, как с помощью Azure CLI создать кластер Batch AI, которые можно использовать для обучения моделей искусственного интеллекта и машинного обучения. Управляемая служба Batch AI позволяет специалистам по обработке и анализу данных и исследователям искусственного интеллекта обучать модели искусственного интеллекта и машинного обучения на кластерах виртуальных машин Azure в большом масштабе.
 

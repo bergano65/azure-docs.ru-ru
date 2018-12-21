@@ -1,5 +1,5 @@
 ---
-title: Создание приложения Node.js в службе приложений Azure в Linux | Документация Майкрософт
+title: Создание веб-приложения Node.js в службе приложений Azure в Linux | Документация Майкрософт
 description: Быстрое развертывание первого приложения Hello World на Node.js в службе приложений Azure в Linux.
 services: app-service\web
 documentationcenter: ''
@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 06/07/2017
 ms.author: msangapu
-ms.custom: mvc
-ms.openlocfilehash: 44c3f8ce05854e993ad551a025eec447d882c326
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.custom: seodec18
+ms.openlocfilehash: 22a022b12e931fd4edf139038eb7506e69422f8e
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969550"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53253592"
 ---
 # <a name="create-a-nodejs-web-app-in-azure-app-service-on-linux"></a>Создание веб-приложения Node.js в службе приложений Azure в Linux
 

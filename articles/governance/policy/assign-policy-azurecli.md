@@ -1,21 +1,22 @@
 ---
-title: Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, в среде Azure с помощью Azure CLI
-description: Использование PowerShell для создания назначения в службе "Политика Azure", позволяющего определить ресурсы, которые не соответствуют требованиям.
+title: Создание политики для идентификации ресурсов, не соответствующих требованиям, с помощью Azure CLI
+description: Создание назначения в службе "Политика Azure", позволяющего определить ресурсы, которые не соответствуют требованиям, с помощью Azure CLI.
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 09/18/2018
+ms.date: 12/06/2018
 ms.topic: quickstart
 ms.service: azure-policy
-ms.custom: mvc
-ms.openlocfilehash: 4954ca42af1755ea62e7142048d48805397b6a0a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+manager: carmonm
+ms.custom: seodec18
+ms.openlocfilehash: 99e8b782f3f52ed89b5188de19d70cb276a0eb84
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46968495"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53315848"
 ---
-# <a name="create-a-policy-assignment-to-identify-non-compliant-resources-in-your-azure-environment-with-the-azure-cli"></a>Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, в среде Azure с помощью Azure CLI | Документация Майкрософт
+# <a name="create-a-policy-assignment-to-identify-non-compliant-resources-with-azure-cli"></a>Создание назначения политики для идентификации ресурсов, не соответствующих требованиям, с помощью Azure CLI
 
 Чтобы понять, соответствуют ли ресурсы требованиям в Azure, прежде всего нужно определить их состояние.
 В этом кратком руководстве описано, как создать назначение политики для определения виртуальных машин, которые не используют управляемые диски.
@@ -32,7 +33,7 @@ Azure CLI используется для создания ресурсов Azur
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Зарегистрируйте поставщик ресурсов Policy Insights с помощью Azure CLI. Регистрация поставщика ресурсов необходима для надлежащей работы вашей подписки с этим поставщиком. Чтобы зарегистрировать поставщик ресурсов, необходимо иметь разрешение на действие регистрации для поставщика ресурсов. Эта операция включается в роли участника и владельца. Выполните указанную ниже команду для регистрации поставщика ресурсов.
+Зарегистрируйте поставщик ресурсов Policy Insights с помощью Azure CLI. Регистрация поставщика ресурсов необходима для надлежащей работы вашей подписки с этим поставщиком. Чтобы зарегистрировать поставщик ресурсов, необходимо разрешение на регистрацию для поставщика ресурсов. Эта операция включается в роли участника и владельца. Выполните указанную ниже команду для регистрации поставщика ресурсов.
 
 ```azurecli-interactive
 az provider register --namespace 'Microsoft.PolicyInsights'
@@ -49,14 +50,14 @@ az provider register --namespace 'Microsoft.PolicyInsights'
 Чтобы создать назначение политики, выполните следующую команду:
 
 ```azurecli-interactive
-az policy assignment create --name 'audit-vm-manageddisks' --display-name 'Audit Virtual Machines without Managed Disks Assignment' --scope '<scope>' --policy '<policy definition ID>'
+az policy assignment create --name 'audit-vm-manageddisks' --display-name 'Audit VMs without managed disks Assignment' --scope '<scope>' --policy '<policy definition ID>'
 ```
 
 В указанной выше команде используются следующие сведения:
 
 - **Name** — фактическое имя назначения.  В этом примере использовалось имя *audit-vm-manageddisks*.
-- **DisplayName** — отображаемое имя назначения политики. В этом случае используйте определение *Audit Virtual Machines without Managed Disks*.
-- **Policy** — идентификатор определения политики, на основе которой вы создаете назначение. В нашем случае это идентификатор определения политики *Аудит виртуальных машин, которые не используют управляемые диски*. Чтобы получить идентификатор определения политики, выполните следующую команду: `az policy definition list --query "[?displayName=='Audit VMs that do not use managed disks']"`
+- **DisplayName** — отображаемое имя назначения политики. В этом случае используется определение *аудита виртуальных машин без назначения управляемых дисков*.
+- **Policy** — идентификатор определения политики, на основе которой вы создаете назначение. В нашем случае это идентификатор определения политики *аудита виртуальных машин, которые не используют управляемые диски*. Чтобы получить идентификатор определения политики, выполните следующую команду: `az policy definition list --query "[?displayName=='Audit VMs that do not use managed disks']"`
 - **Scope.** Область определяет, к каким ресурсам или группе ресурсов принудительно применяется назначение политики. Политика может назначаться разным ресурсам: от подписки до групп ресурсов. Обязательно замените значение &lt;scope&gt; именем своей группы ресурсов.
 
 ## <a name="identify-non-compliant-resources"></a>Выявление несоответствующих ресурсов
@@ -64,7 +65,7 @@ az policy assignment create --name 'audit-vm-manageddisks' --display-name 'Audit
 Чтобы просмотреть ресурсы, которые не соответствуют новому назначению, получите идентификатор назначения политики, выполнив следующие команды:
 
 ```azurepowershell-interactive
-$policyAssignment = Get-AzureRmPolicyAssignment | Where-Object { $_.Properties.DisplayName -eq 'Audit Virtual Machines without Managed Disks Assignment' }
+$policyAssignment = Get-AzureRmPolicyAssignment | Where-Object { $_.Properties.DisplayName -eq 'Audit VMs without managed disks Assignment' }
 $policyAssignment.PolicyAssignmentId
 ```
 
@@ -106,7 +107,7 @@ armclient post "/subscriptions/<subscriptionID>/resourceGroups/<rgName>/provider
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Остальные руководства из этой серии являются продолжением этого документа. Если вы собираетесь продолжать работу с ними, не удаляйте ресурсы, которые вы создали при работе с этим руководством. В противном случае удалите созданное назначение, выполнив следующую команду:
+Чтобы удалить созданное назначение, выполните следующую команду:
 
 ```azurecli-interactive
 az policy assignment delete --name 'audit-vm-manageddisks' --scope '/subscriptions/<subscriptionID>/<resourceGroupName>'
@@ -116,7 +117,7 @@ az policy assignment delete --name 'audit-vm-manageddisks' --scope '/subscriptio
 
 В этом кратком руководстве вы назначили определение политики для идентификации ресурсов, не соответствующих требованиям, в среде Azure.
 
-Дополнительные сведения о назначении политик и обеспечении соответствия создаваемых в **будущем** ресурсов см. в следующем руководстве:
+Следующее руководство серии содержит сведения о назначении политик для проверки новых ресурсов на соответствие требованиям:
 
 > [!div class="nextstepaction"]
 > [Создание политик и управление ими](./tutorials/create-and-manage.md)

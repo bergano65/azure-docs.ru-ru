@@ -15,18 +15,18 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 4/25/2017
 ms.author: manayar
-ms.openlocfilehash: 551d90661f845aa98a41ed7de0b75c657c234f52
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 2a1f79656fa70b4fa895235aff177ca47dc29664
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50741408"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413648"
 ---
 # <a name="azure-virtual-machine-scale-sets-and-attached-data-disks"></a>Масштабируемые наборы виртуальных машин Azure и подключенные диски данных
 Для развертывания доступного хранилища в [масштабируемых наборах виртуальных машин](/azure/virtual-machine-scale-sets/) Azure поддерживаются экземпляры виртуальных машин с подключенными дисками данных. Вы можете подключить диски данных к создаваемому или существующему масштабируемому набору.
 
 > [!NOTE]
->  При создании масштабируемого набора с подключенными дисками данных для их использования вам необходимо подключать и форматировать диски в виртуальной машине (точно так же, как и для автономных виртуальных машин Azure). Для этого удобно использовать расширение пользовательских скриптов, которое вызывает скрипт, чтобы секционировать и форматировать все диски данных на виртуальной машине. Эти примеры см. в руководствах по использованию [Azure CLI](tutorial-use-disks-cli.md#prepare-the-data-disks) и [Azure PowerShell](tutorial-use-disks-powershell.md#prepare-the-data-disks).
+> При создании масштабируемого набора с подключенными дисками данных для их использования вам необходимо подключать и форматировать диски в виртуальной машине (точно так же, как и для автономных виртуальных машин Azure). Для этого удобно использовать расширение пользовательских скриптов, которое вызывает скрипт, чтобы секционировать и форматировать все диски данных на виртуальной машине. Эти примеры см. в руководствах по использованию [Azure CLI](tutorial-use-disks-cli.md#prepare-the-data-disks) и [Azure PowerShell](tutorial-use-disks-powershell.md#prepare-the-data-disks).
 
 
 ## <a name="create-and-manage-disks-in-a-scale-set"></a>Создание дисков и управление ими в масштабируемом наборе
@@ -39,7 +39,7 @@ ms.locfileid: "50741408"
 
 
 ## <a name="create-a-service-fabric-cluster-with-attached-data-disks"></a>Создание кластера Service Fabric с подключенными дисками данных
-Каждому [типу узла](../service-fabric/service-fabric-cluster-nodetypes.md) в кластере [Service Fabric](/azure/service-fabric) в Azure соответствует масштабируемый набор виртуальных машин.  С помощью шаблона Azure Resource Manager можно подключать диски данных к масштабируемым наборам, которые входят в кластер Service Fabric. В качестве отправной точки можно использовать [существующий шаблон](https://github.com/Azure-Samples/service-fabric-cluster-templates). В шаблоне включите раздел _dataDisks_ в раздел _storageProfile_ ресурсов _Microsoft.Compute/virtualMachineScaleSets_ и разверните шаблон. В следующем примере подключается диск данных размером 128 ГБ:
+Каждому [типу узла](../service-fabric/service-fabric-cluster-nodetypes.md) в кластере [Service Fabric](/azure/service-fabric) в Azure соответствует масштабируемый набор виртуальных машин. С помощью шаблона Azure Resource Manager можно подключать диски данных к масштабируемым наборам, которые входят в кластер Service Fabric. В качестве отправной точки можно использовать [существующий шаблон](https://github.com/Azure-Samples/service-fabric-cluster-templates). В шаблоне включите раздел _dataDisks_ в раздел _storageProfile_ ресурсов _Microsoft.Compute/virtualMachineScaleSets_ и разверните шаблон. В следующем примере подключается диск данных размером 128 ГБ:
 
 ```json
 "dataDisks": [
@@ -51,19 +51,19 @@ ms.locfileid: "50741408"
 ]
 ```
 
-При развертывании кластера можно автоматически секционировать, форматировать и подключать диски данных.  Добавьте расширение пользовательского скрипта в подраздел _extensionProfile_ раздела _virtualMachineProfile_ масштабируемых наборов.
+При развертывании кластера можно автоматически секционировать, форматировать и подключать диски данных. Добавьте расширение пользовательского скрипта в подраздел _extensionProfile_ раздела _virtualMachineProfile_ масштабируемых наборов.
 
 Чтобы автоматически подготовить диски данных в кластере Windows, добавьте следующие строки:
 
 ```json
 {
-    "name": "customScript",    
-    "properties": {    
-        "publisher": "Microsoft.Compute",    
-        "type": "CustomScriptExtension",    
-        "typeHandlerVersion": "1.8",    
-        "autoUpgradeMinorVersion": true,    
-        "settings": {    
+    "name": "customScript",
+    "properties": {
+        "publisher": "Microsoft.Compute",
+        "type": "CustomScriptExtension",
+        "typeHandlerVersion": "1.8",
+        "autoUpgradeMinorVersion": true,
+        "settings": {
         "fileUris": [
             "https://raw.githubusercontent.com/Azure-Samples/compute-automation-configurations/master/prepare_vm_disks.ps1"
         ],
@@ -93,7 +93,7 @@ ms.locfileid: "50741408"
 
 
 ## <a name="adding-pre-populated-data-disks-to-an-existing-scale-set"></a>Добавление предварительно заполненных дисков данных в существующий масштабируемый набор
-Диски данных, указанные в модели масштабируемого набора, всегда являются пустыми. Тем не менее вы можете подключить существующий диск данных к определенной виртуальной машине в масштабируемом наборе. Эта функция предоставляется в режиме предварительной версии с примерами, доступными на [GitHub](https://github.com/Azure/vm-scale-sets/tree/master/preview/disk). Если вы хотите распространить данные на все виртуальные машины в масштабируемом наборе, вы можете дублировать на данные диск и присоединить его к каждой виртуальной машины в наборе, создать пользовательский образ с данными и подготовить масштабируемый набор на основе этого образа, использовать службу "Файлы Azure" и аналогичные предложения для хранения данных.
+Диски данных, указанные в модели масштабируемого набора, всегда являются пустыми. Тем не менее вы можете подключить существующий диск данных к определенной виртуальной машине в масштабируемом наборе. Эта функция предоставляется в предварительной версии с примерами, доступными на [GitHub](https://github.com/Azure/vm-scale-sets/tree/master/preview/disk). Если вы хотите распространить данные на все виртуальные машины в масштабируемом наборе, вы можете дублировать на данные диск и присоединить его к каждой виртуальной машины в наборе, создать пользовательский образ с данными и подготовить масштабируемый набор на основе этого образа, использовать службу "Файлы Azure" и аналогичные предложения для хранения данных.
 
 
 ## <a name="additional-notes"></a>Дополнительные замечания

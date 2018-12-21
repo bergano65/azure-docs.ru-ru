@@ -1,6 +1,6 @@
 ---
-title: Работа с событиями хранилища BLOB-объектов для службы "Сетка событий Azure" с помощью портала Azure | Документация Майкрософт
-description: Использование службы "Сетка событий Azure" и портала Azure для создания учетной записи хранилища BLOB-объектов и подписки на связанные события.
+title: Отправка событий хранилища BLOB-объектов Azure в конечную веб-точку с помощью портала | Документация Майкрософт
+description: Использование службы "Сетка событий Azure" и портала Azure для создания учетной записи хранилища BLOB-объектов и подписки на связанные события. Отправка событий в Веб-перехватчик
 services: event-grid
 keywords: ''
 author: tfitzmac
@@ -8,14 +8,15 @@ ms.author: tomfitz
 ms.date: 10/17/2018
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: 44e258069515ad6c409c193312f3a714a5096541
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.custom: seodec18
+ms.openlocfilehash: 6fd48ecd6def6a4fcd56751b6a137f75b16896ef
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49404228"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53086969"
 ---
-# <a name="create-and-route-blob-storage-events-with-the-azure-portal-and-event-grid"></a>Создание и перенаправление событий хранилища BLOB-объектов с помощью службы "Сетка событий Azure" и портала Azure
+# <a name="quickstart-route-blob-storage-events-to-web-endpoint-with-the-azure-portal"></a>Краткое руководство. Отправка событий хранилища BLOB-объектов в конечную веб-точку с помощью портала Azure
 
 "Сетка событий Azure" — это служба обработки событий для облака. В этой статье описано, как с помощью портала Azure создать учетную запись хранилища BLOB-объектов и подписку на связанные события, а также активировать событие для просмотра результата. Как правило, события отправляются на конечную точку, которая обрабатывает данные событий и выполняет соответствующие действия. Но в этой статье для простоты события отправляются в веб-приложение, которое собирает и отображает сообщения.
 

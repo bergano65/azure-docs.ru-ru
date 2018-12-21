@@ -1,5 +1,5 @@
 ---
-title: 'Краткое руководство. Запуск задачи Spark в Azure Databricks с использованием шаблона Resource Manager '
+title: 'Краткое руководство. Запуск задания Spark в Azure Databricks с использованием шаблона Resource Manager '
 description: В этом кратком руководстве объясняется, как с помощью шаблона Azure Resource Manager создать рабочую область Azure Databricks и кластер Apache Spark, а затем запустить задание Spark.
 services: azure-databricks
 ms.service: azure-databricks
@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/12/2018
-ms.openlocfilehash: 87aaf7108fabe0e4d96c4a2edd15db8531f1a828
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.openlocfilehash: 793aa52c0eb49d122f520ead3ee80a869e7b62d9
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51578338"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53251340"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-resource-manager-template"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью шаблона Azure Resource Manager
 
@@ -69,7 +69,7 @@ ms.locfileid: "51578338"
 
    * Введите имя кластера.
    * В рамках этой статьи создайте кластер со средой выполнения **4.0**.
-   * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
+   * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через ___ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
    Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
@@ -80,7 +80,7 @@ ms.locfileid: "51578338"
 Прежде чем приступить к работе с этим разделом, выполните следующие предварительные требования.
 
 * [Создайте учетную запись хранения BLOB-объектов Azure](../storage/common/storage-quickstart-create-account.md).
-* Скачайте образец файла JSON с [сайта GitHub](https://github.com/Azure/usql/blob/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json).
+* Скачайте образец файла JSON на [веб-сайте GitHub](https://github.com/Azure/usql/blob/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json).
 * Отправьте пример JSON-файла в созданную учетную запись хранения BLOB-объектов Azure. Для передачи файлов можно использовать [обозреватель службы хранилища Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md).
 
 Выполните указанные ниже задачи, чтобы создать записную книжку в Databricks, настроить ее для считывания данных из учетной записи хранения больших двоичных объектов Azure, а затем запустить задание Spark SQL в данных.
@@ -174,7 +174,7 @@ ms.locfileid: "51578338"
 
 ![Завершение работы кластера Databricks](./media/quickstart-create-databricks-workspace-portal/terminate-databricks-cluster.png "Stop a Databricks cluster")
 
-Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
+Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после __ мин бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

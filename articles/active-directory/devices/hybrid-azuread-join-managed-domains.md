@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 11/01/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 7061776ba5325a333033d0f272de3b2663b44351
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: b8d45e72e15ff86b53f7355634e8f197b94260bd
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52887803"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53435435"
 ---
-# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для управляемых доменов
+# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство. Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
 Подобно пользователю, устройство становится еще одним удостоверением, которое необходимо защитить, а также использовать для защиты ваших ресурсов в любое время и в любом месте. Вы можете достичь этой цели, разместив удостоверения своих устройств в Azure AD с помощью одного из следующих вариантов:
 
@@ -53,7 +53,11 @@ ms.locfileid: "52887803"
 -  [Как управлять гибридным присоединением устройства к Azure AD](hybrid-azuread-join-control.md)
   
 
-Чтобы настроить сценарий в этой статье, вам потребуется [последняя версия Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) (1.1.819.0 или более поздняя версия). 
+Для настройки сценария в рамках этой статьи вам понадобится следующее:
+
+- Локальная служба Active Directory (AD) с уровнем схемы 85 или более поздней версии. Дополнительные сведения см. в разделе об [обновлении схемы Active Directory](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-device-based-conditional-access-on-premises#upgrade-your-active-directory-schema).
+
+- [Последняя версия Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) (1.1.819.0 или более поздняя версия) 
 
 Проверьте, синхронизированы ли в Azure AD Connect объекты-компьютеры гибридных устройств, которые нужно присоединить к Azure AD. Если объекты-компьютеры принадлежат конкретным подразделениям (OU), эти подразделения также нужно настроить для синхронизации в Azure AD Connect.
 
@@ -153,7 +157,7 @@ ms.locfileid: "52887803"
 
 
     
-Следующая политика должна иметь значение **Все**: **Пользователи могут регистрировать устройства в Azure AD**.
+Для следующей политики нужно установить значение **Все**: **Пользователи могут регистрировать устройства в Azure AD**.
 
 ![Регистрация устройств](media/hybrid-azuread-join-managed-domains/23.png)
 
@@ -172,7 +176,7 @@ ms.locfileid: "52887803"
 
 ### <a name="configure-seamless-sso"></a>Настройка простого единого входа
 
-Для успешного завершения гибридного присоединения к Azure AD устройств Windows нижнего уровня в управляемом домене, использующем сквозную проверку подлинности (PTA) или синхронизацию хэша паролей (PHS) для проверки подлинности в Azure AD, необходимо также [включить простой единый вход](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-sso-quick-start#step-2-enable-the-feature). 
+Для успешного завершения гибридного присоединения к Azure AD устройств Windows нижнего уровня в управляемом домене, использующем сквозную проверку подлинности (PTA) или синхронизацию хэша паролей (PHS) для проверки подлинности в Azure AD, необходимо также [включить простой единый вход](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso-quick-start#step-2-enable-the-feature). 
 
 
 ### <a name="control-windows-down-level-devices"></a>Управление устройствами Windows нижнего уровня 

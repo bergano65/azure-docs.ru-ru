@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/25/2018
 ms.author: yushwang
-ms.openlocfilehash: cced9a313664eaeaed4dd1298488670960b76413
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 0d57e251b241297c461b117edec8fee6316b337b
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32195776"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53098038"
 ---
 # <a name="configure-vpn-gateway-transit-for-virtual-network-peering"></a>Настройка транзита VPN-шлюзов для пиринга между виртуальными сетями
 
@@ -79,7 +79,7 @@ ms.locfileid: "32195776"
     - Задайте параметр **Использовать удаленные шлюзы**.
     - Нажмите кнопку "ОК".
 
-    ![spokerm-to-hubrm](./media/vpn-gateway-peering-gateway-transit/spokerm-hubrm-peering.png)
+      ![spokerm-to-hubrm](./media/vpn-gateway-peering-gateway-transit/spokerm-hubrm-peering.png)
 
 2. Если пиринг уже создан, перейдите к ресурсу пиринга, затем включите параметр **Использовать удаленные шлюзы**, как показано на снимке экрана, приведенном на шаге (1).
 
@@ -90,7 +90,7 @@ ms.locfileid: "32195776"
     - Задайте параметр **Разрешить транзит шлюзов**.
     - Нажмите кнопку "ОК".
 
-    ![hubrm-to-spokerm](./media/vpn-gateway-peering-gateway-transit/hubrm-spokerm-peering.png)
+      ![hubrm-to-spokerm](./media/vpn-gateway-peering-gateway-transit/hubrm-spokerm-peering.png)
 
 4. Если пиринг уже создан, перейдите к ресурсу пиринга, а затем включите параметр **Разрешить транзит шлюзов**, как показано на снимке экрана, приведенном на шаге (3).
 

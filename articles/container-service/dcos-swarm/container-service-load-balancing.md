@@ -1,5 +1,5 @@
 ---
-title: Балансировка нагрузки контейнеров в кластере DC/OS Azure
+title: Балансировка нагрузки контейнеров в кластере DC/OS Azure (не рекомендуется)
 description: Сведения о балансировке нагрузки нескольких контейнеров в кластере DC/OS в Службе контейнеров Azure.
 services: container-service
 author: rgardler
@@ -9,14 +9,16 @@ ms.topic: tutorial
 ms.date: 06/02/2017
 ms.author: rogardle
 ms.custom: mvc
-ms.openlocfilehash: 8e8ad913c6e5b8e947b17ed8920285de3fcfd8ae
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 5a1883412a5285c4916c43a5c6ad81168096dd7f
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46964366"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993551"
 ---
-# <a name="load-balance-containers-in-an-azure-container-service-dcos-cluster"></a>Балансировка нагрузки контейнеров в кластере DC/OS в Службе контейнеров Azure
+# <a name="deprecated-load-balance-containers-in-an-azure-container-service-dcos-cluster"></a>Балансировка нагрузки контейнеров в кластере DC/OS в Службе контейнеров Azure (не рекомендуется)
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
 В этой статье рассматривается создание внутренней подсистемы балансировки нагрузки в управляемой службе контейнеров Azure DC/OS с помощью средства Marathon-LB. Это позволит масштабировать приложения по горизонтали. Вы также сможете воспользоваться преимуществами кластеров общедоступных и частных агентов, поместив подсистемы балансировки нагрузки в общедоступный кластер, а контейнеры приложений в частный кластер. Изучив это руководство, вы:
 

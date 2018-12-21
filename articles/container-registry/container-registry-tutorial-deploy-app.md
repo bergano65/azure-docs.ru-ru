@@ -1,21 +1,21 @@
 ---
-title: Руководство по реестру контейнеров Azure. Развертывание веб-приложения из реестра контейнеров Azure
-description: Развертывание веб-приложения на основе Linux с помощью образа контейнера из геореплицируемого реестра контейнеров Azure. Вторая часть руководства из трех частей.
+title: Руководство. Развертывание приложения из геореплицированного реестра Docker в Azure
+description: Развертывание веб-приложения на основе Linux в два разных региона Azure с помощью образа контейнера из геореплицированного реестра контейнеров Azure. Вторая часть руководства из трех частей.
 services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: tutorial
 ms.date: 08/20/2018
 ms.author: danlep
-ms.custom: mvc
-ms.openlocfilehash: d1924d730f2c2a64063496d4be759194cef99175
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.custom: seodec18, mvc
+ms.openlocfilehash: e5a38e2b6550d763f30c2462944b154f76bbe92c
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48853867"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53253839"
 ---
-# <a name="tutorial-deploy-web-app-from-azure-container-registry"></a>Руководство. Развертывание веб-приложения из Реестра контейнеров Azure
+# <a name="tutorial-deploy-a-web-app-from-a-geo-replicated-azure-container-registry"></a>Руководство. Развертывание веб-приложения из геореплицированного реестра контейнеров Azure
 
 Это вторая часть руководства, состоящего из трех частей. В [первой части](container-registry-tutorial-prepare-registry.md) создавался закрытый геореплицированный реестр контейнеров, а образ контейнера создавался из источника и отправлялся в реестр. В этой статье вы ознакомитесь с аспектом геореплицируемого реестра, касающимся сети. В рамках руководства контейнер развертывается в два экземпляра веб-приложений в двух разных регионах Azure. Затем каждый экземпляр извлекает образ контейнера из ближайшего реестра.
 

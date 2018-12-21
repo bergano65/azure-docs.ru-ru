@@ -1,5 +1,5 @@
 ---
-title: Пример политики Azure — утвержденные образы виртуальных машин
+title: 'Пример: утвержденные образы виртуальных машин'
 description: Пример политики требует, чтобы в среде развертывались только утвержденные пользовательские образы.
 services: azure-policy
 author: DCtheGeek
@@ -8,13 +8,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 09/18/2018
 ms.author: dacoulte
-ms.custom: mvc
-ms.openlocfilehash: d4216c785155ac5462dbcb1b48bf58e7bc718601
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: efec6c4e0a677681fd9f1132f4573d99b35236d4
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46965376"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53312669"
 ---
 # <a name="approved-vm-images"></a>Утвержденные образы виртуальных машин
 
@@ -24,7 +23,7 @@ ms.locfileid: "46965376"
 
 - [портал Azure](#azure-portal).
 - [Azure PowerShell](#azure-powershell)
-- [интерфейс командной строки Azure](#azure-cli)
+- [Интерфейс командной строки Azure](#azure-cli)
 - [REST API](#rest-api)
 
 [!INCLUDE [quickstarts-free-trial-note](../../../../includes/quickstarts-free-trial-note.md)]
@@ -220,10 +219,10 @@ az policy definition delete --name `echo $definition | jq '.name' -r`
 
 | Service | Группа | Операция | Примечания |
 |---|---|---|---|
-| Управление ресурсами | Определения политик | [Создание](/rest/api/resources/policydefinitions/createorupdate) | Создается новое определение политики Azure в подписке. Альтернативный вариант: [Создание в группе управления](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup) |
+| Управление ресурсами | Определения политик | [Создание](/rest/api/resources/policydefinitions/createorupdate) | Создается новое определение политики Azure в подписке. Альтернативный вариант: [Создание группы управления](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup) |
 | Управление ресурсами | Назначения политик | [Создание](/rest/api/resources/policyassignments/create) | Создается новое назначение политики Azure. В этом примере политики предоставляется определение, но она также может взять на себя инициативу. |
 | Управление ресурсами | Назначения политик | [Удалить](/rest/api/resources/policyassignments/delete) | Удаление существующего назначения политики Azure. |
-| Управление ресурсами | Определения политик | [Удалить](/rest/api/resources/policydefinitions/delete) | Удаление существующего определения политики Azure. Альтернатива: [Удаление в группе управления](/rest/api/resources/policydefinitions/deleteatmanagementgroup) |
+| Управление ресурсами | Определения политик | [Удалить](/rest/api/resources/policydefinitions/delete) | Удаление существующего определения политики Azure. Альтернативный вариант: [Удаление группы управления](/rest/api/resources/policydefinitions/deleteatmanagementgroup) |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

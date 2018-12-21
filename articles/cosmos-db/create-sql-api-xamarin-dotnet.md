@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB. Создание приложения со списком дел с помощью Xamarin
+title: Azure Cosmos DB — Создание приложения со списком дел с использованием Xamarin
 description: В этой статье представлен пример кода Xamarin, который можно использовать для подключения и выполнения запросов к Azure Cosmos DB.
 services: cosmos-db
 author: codemillmatt
@@ -10,14 +10,14 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/30/2018
 ms.author: masoucou
-ms.openlocfilehash: 0099bacb98d921a852ece8787bcb7152c5eae3f2
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: f955e0386cd601212eb992870f02607538b537e2
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52838579"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53252632"
 ---
-# <a name="azure-cosmos-db-build-a-todo-app-with-xamarin"></a>Azure Cosmos DB. Создание приложения со списком дел с помощью Xamarin
+# <a name="azure-cosmos-db-build-a-todo-app-with-xamarin"></a>Azure Cosmos DB — Создание приложения со списком дел с использованием Xamarin
 
 > [!div class="op_single_selector"]
 > * [.NET](create-sql-api-dotnet.md)
@@ -90,7 +90,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Вернитесь на портал Azure, чтобы найти сведения о ключе API. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](http://portal.azure.com/) перейдите к учетной записи API SQL для Azure Cosmos DB и на левой панели навигации щелкните **Ключи**, а затем выберите **Ключи записи-чтения**. На следующем шаге используйте кнопки копирования в правой части экрана, чтобы скопировать универсальный код ресурса (URI) и первичный ключ в файл APIKeys.cs.
+1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи API SQL для Azure Cosmos DB и на левой панели навигации щелкните **Ключи**, а затем выберите **Ключи записи-чтения**. На следующем шаге используйте кнопки копирования в правой части экрана, чтобы скопировать универсальный код ресурса (URI) и первичный ключ в файл APIKeys.cs.
 
     ![Просмотр и копирование ключа доступа на портале Azure, колонка "Ключи"](./media/create-sql-api-xamarin-dotnet/keys.png)
 
@@ -114,9 +114,9 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Код в решении ToDoItems содержит:
 
-* ToDoItems.Core — это проект .NET Standard, который содержит проект Xamarin.Forms и общий код логики приложения, используемый для элементов списка дел в Azure Cosmos DB.
-* ToDoItems.Android — это проект, который содержит приложение Android.
-* ToDoItems.iOS — это проект, который содержит приложение iOS.
+* ToDoItems.Core: проект .NET Standard, который содержит проект Xamarin.Forms и общий код логики приложения, используемый для элементов списка дел в Azure Cosmos DB.
+* ToDoItems.Android: проект, который содержит приложение Android.
+* ToDoItems.iOS: проект, который содержит приложение iOS.
 
 Рассмотрим краткий обзор того, как приложение обменивается данными с Azure Cosmos DB.
 

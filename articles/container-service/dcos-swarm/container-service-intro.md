@@ -1,5 +1,5 @@
 ---
-title: Контейнер Docker, размещенный в облаке Azure
+title: Контейнер Docker, размещенный в облаке Azure (не рекомендуется)
 description: Служба контейнеров Azure позволяет упростить создание, настройку кластера виртуальных машин, подготовленных для запуска контейнерных приложений, и управление ими.
 services: container-service
 author: rgardler
@@ -9,14 +9,16 @@ ms.topic: overview
 ms.date: 03/01/2017
 ms.author: rogardle
 ms.custom: H1Hack27Feb2017, mvc
-ms.openlocfilehash: 6bb13ad19f9b0b6137cdb2b4a9afbb2f325b9d36
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 348bde94bc01e00777603af8ac078d5e319d732c
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46975062"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53001977"
 ---
-# <a name="introduction-to-docker-container-hosting-solutions-with-azure-container-service"></a>Общие сведения о решениях для размещения контейнера Docker с помощью службы контейнеров Azure 
+# <a name="deprecated-introduction-to-docker-container-hosting-solutions-with-azure-container-service"></a>Общие сведения о решениях для размещения контейнера Docker с помощью службы контейнеров Azure (не рекомендуется) 
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
 Служба контейнеров Azure позволяет упростить создание и настройку кластера виртуальных машин, настроенных для запуска контейнерных приложений, а также управление такими машинами. Используется оптимизированная конфигурация популярных средств планирования и оркестрации с открытым исходным кодом. Это позволяет использовать имеющиеся навыки либо положиться на опыт обширного и постоянно увеличивающегося сообщества при развертывании приложений на основе контейнера в Microsoft Azure и управлении ими.
 

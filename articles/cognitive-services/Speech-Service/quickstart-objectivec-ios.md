@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Распознавание речи в Objective-C на iOS с помощью пакета SDK для службы "Речь"
+title: Краткое руководство. Распознавание речи с помощью Objective-C в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как распознавать речь в Objective-C на iOS с помощью пакета SDK для службы "Речь".
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: quickstart
 ms.date: 11/06/2018
 ms.author: chlandsi
-ms.openlocfilehash: 7d1e05e13e55b8b7bc07eda71d63f96f12c81ff9
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: eaa44f942082c6bd062599dbdd0401fe4505daf4
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51219194"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53090217"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-ios-using-the-speech-service-sdk"></a>Краткое руководство. Распознавание речи в Objective-C на iOS с помощью пакета SDK для службы "Речь"
 
@@ -25,8 +25,11 @@ ms.locfileid: "51219194"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Ключ подписки для службы распознавания речи. Дополнительные сведения см. в статье [Бесплатная пробная подписка на службу "Речь"](get-started.md).
-* Компьютер Mac с Xcode 9.4.1, установленным в качестве среды разработки iOS. Это руководство предназначено для iOS версии 11.4. Если у вас еще нет Xcode, то его можно установить из [App Store](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12).
+Предварительные требования для начала работы:
+
+* [Ключ подписки](get-started.md) для службы "Речь".
+* Компьютер под управлением macOS с [Xcode 9.4.1](https://geo.itunes.apple.com/us/app/xcode/id497799835?mt=12) или более поздней версии.
+* iOS 11.4 или более поздней версии в качестве целевой версии.
 
 ## <a name="get-the-speech-sdk-for-ios"></a>Получение пакета SDK службы "Речь" для iOS
 
@@ -37,7 +40,7 @@ ms.locfileid: "51219194"
 В настоящее время пакет SDK службы "Речь" для Cognitive Services для Mac и iOS распределяется под названием Cocoa Framework.
 Его можно скачать по ссылке: https://aka.ms/csspeech/iosbinary. Загрузите файл в домашний каталог.
 
-## <a name="create-an-xcode-project"></a>Создание проекта Xcode 
+## <a name="create-an-xcode-project"></a>Создание проекта Xcode
 
 Запустите Xcode и создайте новый проект, щелкнув **Файл** > **Новый** > **Проект**.
 В диалоговом окне выбора шаблона выберите шаблон iOS Single View App (приложение iOS с одним представлением).
@@ -54,7 +57,7 @@ ms.locfileid: "51219194"
     1. Выберите свой домашний каталог, чтобы поместить в него проект. Это создаст в вашем домашнем каталоге каталог `helloworld`, содержащий все файлы проекта Xcode.
     1. Для этого примера проекта отключите создание репозитория Git.
     1. Измените пути к пакету SDK в *Параметрах проекта*.
-        1. На вкладке **Общие** под заголовком **Встроенные двоичные файлы**, добавьте библиотеку пакета SDK в качестве платформы: **Добавить встроенные двоичные файлы** > **Добавить другое...** > Перейдите в домашний каталог и выберите файл `MicrosoftCognitiveServicesSpeech.framework`. Это также автоматически добавит библиотеку пакета SDK в заголовок **Связанные платформы и библиотеки**.
+        1. На вкладке **Общие** в разделе **Embedded Binaries** (Внедренные двоичные файлы) добавьте в качестве платформы библиотеку пакета SDK: Последовательно выберите **Add embedded binaries (Добавить внедренные двоичные файлы)** > **Add other... (Добавить другое...)**, перейдите к корневому каталогу и выберите файл `MicrosoftCognitiveServicesSpeech.framework`. Это также автоматически добавит библиотеку пакета SDK в заголовок **Связанные платформы и библиотеки**.
         ![Добавленная платформа](media/sdk/qs-objectivec-framework.png)
         1. Перейдите на вкладку **Build Settings** (Параметры сборки) и активируйте **Все** параметры.
         1. Добавьте каталог `$(SRCROOT)/..` в *Пути поиска платформы* под заголовком **Пути поиска**.
@@ -103,4 +106,3 @@ ms.locfileid: "51219194"
 
 > [!div class="nextstepaction"]
 > [Получить примеры](speech-sdk.md#get-the-samples)
-

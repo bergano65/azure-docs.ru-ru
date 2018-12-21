@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Получение длины предложений, Python — API перевода текстов
+title: Краткое руководство. Получение длины предложений с помощью API перевода текстов и Python
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как определить длину предложения в символах с помощью REST API перевода текстов и Python.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 10/24/2018
 ms.author: erhopf
-ms.openlocfilehash: 64831f13811029263a2b76f8030589d9329dd318
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: 1d7ba50bf57a5c7f88f4380c4874d6053f07082e
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50086137"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52992595"
 ---
-# <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length-using-python"></a>Краткое руководство. Определение длины предложения с помощью Python и API перевода текстов
+# <a name="quickstart-use-the-translator-text-api-to-determine-sentence-length-using-python"></a>Краткое руководство. Определение длины предложения с помощью API перевода текстов и Python
 
 В этом кратком руководстве вы узнаете, как определить длину предложения в символах с помощью REST API перевода текстов и Python.
 
@@ -69,7 +69,7 @@ else:
 `params` в этом примере используются для задания языка указанного текста. `params` не являются обязательными для маршрута `breaksentence`. Если их исключить из запроса, API попытается определить язык заданного текста и предоставит эти сведения в ответе вместе с оценкой достоверности.
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: BreakSentence](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-break-sentence).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [языкам в API перевода текстов 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-break-sentence).
 
 ```python
 base_url = 'https://api.cognitive.microsofttranslator.com'
@@ -153,10 +153,10 @@ python sentence-length.py
 
 ## <a name="see-also"></a>См. также
 
-Помимо транслитерации, API перевода текстов можно использовать для выполнения и других задач, в частности:
+Узнайте, как использовать API перевода текстов для следующих задач:
 
 * [перевод текста](quickstart-python-translate.md);
 * [транслитерация текста](quickstart-python-transliterate.md);
 * [определение языка по входным данным](quickstart-python-detect.md);
 * [получение вариантов перевода](quickstart-python-dictionary.md);
-* [получение списка поддерживаемых языков](quickstart-python-languages.md).
+* [получение списка поддерживаемых языков](quickstart-python-languages.md);

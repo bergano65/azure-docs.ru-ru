@@ -11,71 +11,77 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 11/01/2018
-ms.openlocfilehash: 2ab5b7a5b17daef00cb62f69a7d2a798c18456bb
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.date: 12/10/2018
+ms.openlocfilehash: b9c33da4f002504a55802e4253d648ff87847d92
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50912957"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53271833"
 ---
 # <a name="quickstart-use-python-to-query-an-azure-sql-database"></a>Краткое руководство. Использование Python для создания запросов к базе данных SQL Azure
 
- В этом кратком руководстве показано, как использовать [Python](https://python.org) для подключения к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных. Дополнительные сведения о пакете SDK см. в [справочной документации](https://docs.microsoft.com/python/api/overview/azure/sql). Также см. [пример ](https://github.com/mkleehammer/pyodbc/wiki/Getting-started) pyodbc и репозиторий [pyodbc](https://github.com/mkleehammer/pyodbc/wiki/) на GitHub.
+ В этом кратком руководстве показано, как использовать [Python](https://python.org) для подключения к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных. Дополнительные сведения о пакете SDK см. в [справочной документации](https://docs.microsoft.com/python/api/overview/azure/sql). См. также [репозиторий pyodbc](https://github.com/mkleehammer/pyodbc/wiki/) на GitHub и [пример pyodbc](https://github.com/mkleehammer/pyodbc/wiki/Getting-started).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Ниже указаны требования для работы с этим кратким руководством.
 
 [!INCLUDE [prerequisites-create-db](../../includes/sql-database-connect-query-prerequisites-create-db-includes.md)]
-
+  
 - [Правило брандмауэра уровня сервера](sql-database-get-started-portal-firewall.md) для общедоступного IP-адреса компьютера, на котором выполняются действия из этого краткого руководства.
+  
+- Python и связанное программное обеспечение для используемой операционной системы:
+  
+  - **macOS**. Установите Homebrew, Python, драйвер ODBC и SQLCMD, а затем драйвер Python для SQL Server. См. шаги в разделе 1.2, 1.3 и 2.1 в статье о [создании приложений Python с помощью SQL Server в macOS](https://www.microsoft.com/sql-server/developer-get-started/python/mac/). Дополнительные сведения см. в разделе об [установке драйвера Microsoft ODBC в Linux и macOS](https://docs.microsoft.com/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server).
+    
+  - **Ubuntu**: Установите Python и другие необходимые пакеты с помощью `sudo apt-get install python python-pip gcc g++ build-essential`. Скачайте и установите драйвер ODBC, SQLCMD и драйвер Python для SQL Server. Инструкции см. в разделе о [настройке среды разработки для разработки на Python с помощью pyodbc](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#linux).
+    
+  - **Windows**: Установите Python, драйвер ODBC, SQLCMD и драйвер Python для SQL Server. Инструкции см. в разделе о [настройке среды разработки для разработки на Python с помощью pyodbc](/sql/connect/python/pyodbc/step-1-configure-development-environment-for-pyodbc-python-development#windows).
 
-- Убедитесь, что установлен компонент Python и связанное программное обеспечение для вашей операционной системы.
-
-    - **Mac OS.** Установите Homebrew, Python, драйвер ODBC и SQLCMD, а затем драйвер Python для SQL Server. См. [шаги 1.2, 1.3 и 2.1](https://www.microsoft.com/sql-server/developer-get-started/python/mac/).
-    - **Ubuntu.** Установите Python и другие необходимые пакеты, а затем установите драйвер Python для SQL Server. См. [шаги 1.2, 1.3 и 2.1](https://www.microsoft.com/sql-server/developer-get-started/python/ubuntu/).
-    - **Windows.** Установите последнюю версию Python (переменная среды теперь настраивается автоматически), драйвер ODBC и SQLCMD, а затем установите драйвер Python для SQL Server. Ознакомьтесь с шагами 1.2, 1.3 и 2.1 в [этом руководстве](https://www.microsoft.com/sql-server/developer-get-started/python/windows/). 
-
-## <a name="sql-server-connection-information"></a>Сведения о подключении SQL Server
+## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
 [!INCLUDE [prerequisites-server-connection-info](../../includes/sql-database-connect-query-prerequisites-server-connection-info-includes.md)]
     
-## <a name="insert-code-to-query-sql-database"></a>Вставка кода для отправки запроса к базе данных SQL 
+## <a name="create-code-to-query-your-sql-database"></a>Создание кода для запроса базы данных SQL 
 
-1. Создайте файл **sqltest.py** в предпочитаемом текстовом редакторе.  
-
-2. Замените содержимое следующим кодом и добавьте соответствующие значения для сервера, базы данных, пользователя и пароля.
-
-```Python
-import pyodbc
-server = 'your_server.database.windows.net'
-database = 'your_database'
-username = 'your_username'
-password = 'your_password'
-driver= '{ODBC Driver 13 for SQL Server}'
-cnxn = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
-cursor = cnxn.cursor()
-cursor.execute("SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName FROM [SalesLT].[ProductCategory] pc JOIN [SalesLT].[Product] p ON pc.productcategoryid = p.productcategoryid")
-row = cursor.fetchone()
-while row:
-    print (str(row[0]) + " " + str(row[1]))
-    row = cursor.fetchone()
-```
+1. Создайте файл *sqltest.py* в текстовом редакторе.  
+   
+1. Добавьте следующий код. Подставьте собственные значения сервера, базы данных, имени пользователя и пароля вместо значений \<server>, \<database>, \<username> и \<password>.
+   
+   >[!IMPORTANT]
+   >Данный пример кода использует данные AdventureWorksLT, которые можно выбрать в качестве источника при создании базы данных. Если в вашей базе данных содержатся другие данные, используйте таблицы из собственной базы данных в запросе SELECT. 
+   
+   ```python
+   import pyodbc
+   server = '<server>.database.windows.net'
+   database = '<database>'
+   username = '<username>'
+   password = '<password>'
+   driver= '{ODBC Driver 17 for SQL Server}'
+   cnxn = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
+   cursor = cnxn.cursor()
+   cursor.execute("SELECT TOP 20 pc.Name as CategoryName, p.name as ProductName FROM [SalesLT].[ProductCategory] pc JOIN [SalesLT].[Product] p ON pc.productcategoryid = p.productcategoryid")
+   row = cursor.fetchone()
+   while row:
+       print (str(row[0]) + " " + str(row[1]))
+       row = cursor.fetchone()
+   ```
+   
 
 ## <a name="run-the-code"></a>Выполнение кода
 
-1. В командной строке выполните следующие команды:
+1. В командной строке выполните следующую команду:
 
-   ```Python
+   ```cmd
    python sqltest.py
    ```
 
-2. Убедитесь, что возвращены первые 20 строк, а затем закройте окно приложения.
+1. Убедитесь, что возвращены первые 20 строк с продуктами из категории, и закройте командное окно.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 - [Проектирование первой базы данных SQL Azure](sql-database-design-first-database.md)
-- [Microsoft Python Drivers for SQL Server](https://docs.microsoft.com/sql/connect/python/python-driver-for-sql-server/) (Драйверы Microsoft Python для SQL Server)
-- [Центр по разработке для Python](https://azure.microsoft.com/develop/python/?v=17.23h)
+- [Сведения о драйверах Microsoft Python для SQL Server](https://docs.microsoft.com/sql/connect/python/python-driver-for-sql-server/)
+- [Центр по разработке на Python](https://azure.microsoft.com/develop/python/?v=17.23h)
 

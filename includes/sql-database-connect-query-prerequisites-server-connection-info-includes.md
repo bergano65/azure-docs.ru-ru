@@ -2,28 +2,28 @@
 author: MightyPen
 ms.service: sql-database
 ms.topic: include
-ms.date: 11/09/2018
+ms.date: 12/06/2018
 ms.author: genemi
-ms.openlocfilehash: b78d52f23de8d02189f10b32d26e070fb6deea68
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: b3b7027e5ae252eb899d2a44d171ea9c9795ab54
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52339713"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53285958"
 ---
 <!-- sql-database-connect-query-prerequisites-server-connection-info-includes.md 
 
-## SQL server connection information
+## Get SQL server connection information
 -->
 
-Получите сведения о подключении, необходимые для подключения к базе данных SQL Azure. Вам понадобится следующее: полное имя сервера, имя базы данных и сведения для входа.
+Получите сведения, необходимые для подключения к базе данных SQL Azure. Для дальнейших действий вам понадобится полное имя сервера, имя базы данных и данные для входа.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 
-1. В меню слева выберите **Базы данных SQL** и на странице **Базы данных SQL** щелкните имя своей базы данных.
+1. В меню слева выберите **Базы данных SQL** и на странице **Базы данных SQL** выберите имя своей базы данных.
 
-1. На странице **Обзор** базы данных просмотрите полное имя сервера, как показано на следующем рисунке. Вы можете навести указатель мыши на **имя сервера**, чтобы отобразился пункт **Щелкните, чтобы скопировать**.  
+1. На странице **Обзор** вашей базы данных просмотрите полное имя сервера рядом с полем **Имя сервера**. Чтобы скопировать имя сервера, наведите на него указатель мыши и щелкните значок **копирования**.  
 
-   ![server-name](./media/sql-database-connect-query-prerequisites-server-connection-info-includes/server-name.png)
+![server-name](./media/sql-database-connect-query-prerequisites-server-connection-info-includes/server-name.png)
 
-1. Если вы забыли сведения для входа на сервер, щелкните **Имя сервера**, чтобы открыть страницу **SQL Server** и увидеть имя **администратора сервера**. При необходимости щелкните **Сброс пароля**.
+Если вы забыли данные для входа, щелкните имя сервера, чтобы открыть страницу **сервера SQL**. Здесь можно просмотреть имя **администратора сервера** и выбрать **сброс пароля** при необходимости.

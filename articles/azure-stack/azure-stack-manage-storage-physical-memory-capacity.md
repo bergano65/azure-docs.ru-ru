@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 09/28/2018
 ms.author: mabrigg
 ms.reviewer: Thomas.Roettinger
-ms.openlocfilehash: a914d20f61b5b632e792ca29f6c201964db4a203
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 0516ee7a8319b85765280b4c84f5febec8343ada
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452145"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52965621"
 ---
 # <a name="manage-physical-memory-capacity-for-azure-stack"></a>Управление емкостью физической памяти для Azure Stack
 
@@ -33,7 +33,7 @@ ms.locfileid: "47452145"
 
 На блок-схеме ниже показан общий процесс добавления памяти для каждого узла единицы масштабирования.
 
-![Добавление памяти в каждый узел единицы масштабирования](media\azure-stack-manage-storage-physical-capacity\process-to-add-memory-to-scale-unit.png)
+![Добавление памяти в каждый узел единицы масштабирования](media/azure-stack-manage-storage-physical-capacity/process-to-add-memory-to-scale-unit.png)
 
 ## <a name="add-memory-to-an-existing-node"></a>Добавление памяти в существующий узел
 Следующие инструкции дают общее представление о процессе добавления памяти. 

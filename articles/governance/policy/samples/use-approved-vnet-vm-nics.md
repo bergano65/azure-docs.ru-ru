@@ -1,5 +1,5 @@
 ---
-title: 'Пример политики Azure: использование утвержденной виртуальной сети для сетевых интерфейсов виртуальных машин'
+title: 'Пример: использование утвержденной виртуальной сети для сетевых интерфейсов виртуальной машины'
 description: Этот пример политики требует, чтобы сетевые интерфейсы использовали утвержденную виртуальную сеть.
 services: azure-policy
 author: DCtheGeek
@@ -8,13 +8,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 09/18/2018
 ms.author: dacoulte
-ms.custom: mvc
-ms.openlocfilehash: 2a0b3ac82d6ff8e7c6df850e5303c342cc269834
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 9e99e6614a5ddfb1f692e5db99c95b3907051fa5
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46959178"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53308810"
 ---
 # <a name="use-approved-vnet-for-vm-network-interfaces"></a>Использование утвержденной виртуальной сети для сетевых интерфейсов виртуальной машины
 
@@ -71,4 +70,4 @@ az group delete --name myResourceGroup --yes
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Другие примеры см. в разделе [Примеры для политики Azure](index.md)
+- Другие примеры см. в статье [Примеры для Политики Azure](index.md).

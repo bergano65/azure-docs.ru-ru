@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.component: authentication
 ms.topic: tutorial
-ms.date: 07/11/2018
+ms.date: 12/05/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 0c5554ca929cbd5231c99e568e987e6e0b7cf6eb
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 5c40e6c681a4f37c61519040eb32531d3c8f071c
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52844844"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53437152"
 ---
-# <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD в окне входа
+# <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD на экране входа
 
 В этом руководстве описывается процедура сброса пароля в окне входа в Windows 10. В обновлении Windows 10 с апреля 2018 года для пользователей устройств, **присоединенных к Azure AD** или **присоединенных к гибридному Azure AD**, в окне входа отображается ссылка "Сбросить пароль". Когда пользователи щелкают эту ссылку, они переходят к уже знакомому им интерфейсу самостоятельного сброса пароля (SSPR).
 
@@ -29,8 +29,8 @@ ms.locfileid: "52844844"
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Обновленный в апреле 2018 года клиент Windows 10 или новее, который:
-   * [присоединен к Azure AD](../device-management-azure-portal.md) или 
-   * [присоединен к гибридному Azure AD](../device-management-hybrid-azuread-joined-devices-setup.md).
+   * [компьютер, присоединенный к Azure AD](../device-management-azure-portal.md);
+   * [компьютеры с гибридным присоединением к Azure AD](../device-management-hybrid-azuread-joined-devices-setup.md) и сетевым подключением к контроллеру домена.
 * Функция самостоятельного сброса пароля Azure AD должна быть включена.
 
 ## <a name="configure-reset-password-link-using-intune"></a>Настройка ссылки сброса пароля с помощью Intune
@@ -125,7 +125,11 @@ ms.locfileid: "52844844"
    * EnableLostMode, установленный на устройстве;
    * файл Explorer.exe, замененный на файл пользовательской оболочки.
 
+Эта функция не поддерживается для сетей с развернутым решением аутентификации 802.1X и заданным параметром "Выполнять непосредственно перед входом пользователя". Чтобы включить эту функцию для сетей с развернутыми решением аутентификации 802.1X, используйте аутентификацию компьютера.
+
 Если компьютеры с Windows 10 защищены прокси-сервером или брандмауэром, следует разрешить трафик HTTPS (443) на сайты passwordreset.microsoftonline.com и ajax.aspnetcdn.com.
+
+Сценарии гибридного присоединения к домену можно реализовать, если рабочий процесс SSPR будет выполниться без контроллера домена Active Directory. Подключение к контроллеру домена требуется при первом использовании нового пароля.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

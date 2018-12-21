@@ -1,6 +1,6 @@
 ---
-title: Обзор службы "Экземпляры контейнеров Azure"
-description: Общие сведения о службе "Экземпляры контейнеров Azure"
+title: Об экземплярах контейнеров Azure
+description: Служба "Экземпляры контейнеров Azure" предоставляет быстрый и простой способ запуска изолированных контейнеров в Azure без необходимости управления виртуальными машинами и применения оркестратора более высокого уровня.
 services: container-instances
 author: seanmck
 manager: jeconnoc
@@ -8,15 +8,15 @@ ms.service: container-instances
 ms.topic: overview
 ms.date: 11/30/2018
 ms.author: seanmck
-ms.custom: mvc
-ms.openlocfilehash: b5f97dac202edd5405c51b75581275166042ac38
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.custom: seodec18, mvc
+ms.openlocfilehash: ba454965ff2bb78ebe526e71d9280200b1f4b08b
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52841461"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53187200"
 ---
-# <a name="azure-container-instances"></a>Экземпляры контейнеров Azure
+# <a name="what-is-azure-container-instances"></a>Об экземплярах контейнеров Azure
 
 Сегодня контейнеры — это популярное средство упаковки и развертывания облачных приложений, а также управления ими. Служба "Экземпляры контейнеров Azure" предоставляет быстрый и простой способ запуска контейнера в Azure без управления виртуальными машинами и применения службы более высокого уровня.
 

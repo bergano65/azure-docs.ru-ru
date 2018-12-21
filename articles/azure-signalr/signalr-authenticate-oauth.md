@@ -1,33 +1,26 @@
 ---
-title: Руководство по аутентификации клиента службы Azure SignalR | Документация Майкрософт
+title: Руководство по аутентификации клиентов Службы Azure SignalR
 description: Изучив это руководство, вы узнаете, как аутентифицировать клиенты службы Azure SignalR
-services: signalr
-documentationcenter: ''
 author: sffamily
-manager: cfowler
-editor: ''
-ms.assetid: ''
 ms.service: signalr
-ms.workload: tbd
-ms.devlang: na
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 06/13/2018
 ms.author: zhshang
-ms.openlocfilehash: 8751e3485b97b67fd8dd4821480fecd7735c08cd
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: beaedf754df2b1c4739c5dfb2abcdc40c163dc81
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48268518"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53254128"
 ---
-# <a name="tutorial-azure-signalr-service-authentication"></a>Учебник по аутентификации службы Azure SignalR
+# <a name="tutorial-azure-signalr-service-authentication"></a>Руководство. Аутентификация в Службе Azure SignalR
 
-Это руководство основано на приложении комнаты чата, представленном в кратком руководстве. Если вы еще не закончили работу с [Quickstart: Create a chat room with SignalR Service](signalr-quickstart-dotnet-core.md) (Краткое руководство по созданию чата с помощью службы SignalR), сначала выполните эти упражнения. 
+Это руководство основано на приложении комнаты чата, представленном в кратком руководстве. Если вы еще не закончили работу с [Quickstart: Create a chat room with SignalR Service](signalr-quickstart-dotnet-core.md) (Краткое руководство по созданию чата с помощью службы SignalR), сначала выполните эти упражнения.
 
-Из этого руководства вы узнаете, как реализовать собственную аутентификацию и интегрировать ее в службу Microsoft Azure SignalR. 
+Из этого руководства вы узнаете, как реализовать собственную аутентификацию и интегрировать ее в службу Microsoft Azure SignalR.
 
-Изначально используемая аутентификация из этого краткого руководства по приложению комнаты чата, является слишком простой для реального мира. Приложение позволяет каждому клиенту утверждать то, кем он является и сервер это просто принимает. Этот подход не очень полезен в реальном мире, где несанкционированный пользователь может олицетворять других, чтобы получить доступ к конфиденциальным данным. 
+Изначально используемая аутентификация из этого краткого руководства по приложению комнаты чата, является слишком простой для реального мира. Приложение позволяет каждому клиенту утверждать то, кем он является и сервер это просто принимает. Этот подход не очень полезен в реальном мире, где несанкционированный пользователь может олицетворять других, чтобы получить доступ к конфиденциальным данным.
 
 [Портал GitHub](https://github.com/) предоставляет API аутентификацию, основанную на популярном протоколе отраслевого стандарта [OAuth](https://oauth.net/). Эти API позволяют сторонним приложениям проходить аутентификацию учетными записями GitHub. В этом руководстве используются API для реализации аутентификации через учетную запись GitHub, перед тем как разрешить клиентам войти в приложение комнаты чата. После аутентификации учетной записи GitHub, информация о ней будет добавлена в cookie файл, который будет использоваться веб-клиентом для аутентификации.
 
@@ -37,9 +30,7 @@ ms.locfileid: "48268518"
 
 Код для этого учебника доступен для скачивания в [репозитории примеров AzureSignalR на GitHub](https://github.com/aspnet/AzureSignalR-samples/tree/master/samples/GitHubChat).
 
-
 ![Размещение всего OAuth в Azure](media/signalr-authenticate-oauth/signalr-oauth-complete-azure.png)
-
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -56,10 +47,9 @@ ms.locfileid: "48268518"
 
 * Учетная запись, созданная в [GitHub](https://github.com/)
 * [Git](https://git-scm.com/)
-* [Базовый пакет SDK для .NET](https://www.microsoft.com/net/download/windows) 
+* [Базовый пакет SDK для .NET](https://www.microsoft.com/net/download/windows)
 * [Настроенный Azure Cloud Shell.](https://docs.microsoft.com/azure/cloud-shell/quickstart)
-* Скачанный или клонированный репозиторий [примеров AzureSignalR](https://github.com/aspnet/AzureSignalR-samples) на Github.
-
+* Скачанный или клонированный репозиторий [примеров AzureSignalR](https://github.com/aspnet/AzureSignalR-samples), доступный в репозитории GitHub.
 
 ## <a name="create-an-oauth-app"></a>Создание приложения OAuth
 
@@ -71,16 +61,15 @@ ms.locfileid: "48268518"
 
     | Имя параметра | Рекомендуемое значение | ОПИСАНИЕ |
     | ------------ | --------------- | ----------- |
-    | имя приложения; | *Чат SignalR Azure* | Скорее всего пользователи GitHub смогут распознать и довериться приложению, с которым они проходят аутентификацию.   |
+    | имя приложения; | *Чат SignalR Azure* | Скорее всего, пользователи GitHub смогут распознать и довериться приложению, с которым они проходят аутентификацию.   |
     | URL-адрес домашней страницы | *http://localhost:5000/home* | |
-    | Описание приложения | *Пример использования службы Azure SignalR в комнате чата с помощью аутентификации Github* | Полезное описание приложения, которое поможет пользователям приложения распознать содержимое используемой аутентификации. |
+    | Описание приложения | *Пример использования службы Azure SignalR в комнате чата с помощью аутентификации GitHub* | Полезное описание приложения, которое поможет пользователям приложения распознать содержимое используемой аутентификации. |
     | URL-адрес обратного вызова авторизации | *http://localhost:5000/signin-github* | Этот параметр является самым важным параметром для приложения OAuth. Он является URL-адресом обратного вызова, который GitHub возвращает пользователю, после успешной аутентификации. В этом руководстве по умолчанию необходимо использовать URL-адрес обратного вызова для пакета *AspNet.Security.OAuth.GitHub*, */signin-github*.  |
 
 4. После завершения регистрации нового приложения OAuth добавьте *Идентификатор клиента* и *Секрет клиента* в менеджер секретов с помощью следующих команд. Замените *Your_GitHub_Client_Id* и *Your_GitHub_Client_Secret* на значения из собственного приложения OAuth.
 
         dotnet user-secrets set GitHubClientId Your_GitHub_Client_Id
         dotnet user-secrets set GitHubClientSecret Your_GitHub_Client_Secret
-
 
 ## <a name="implement-the-oauth-flow"></a>Реализация потока OAuth
 
@@ -127,7 +116,7 @@ ms.locfileid: "48268518"
         });
     ```
 
-4. Добавьте вспомогательный метод `GetUserCompanyInfoAsync` к классу `Startup`.    
+4. Добавьте вспомогательный метод `GetUserCompanyInfoAsync` к классу `Startup`.
 
     ```csharp
     private static async Task GetUserCompanyInfoAsync(OAuthCreatingTicketContext context)
@@ -149,14 +138,14 @@ ms.locfileid: "48268518"
             });
             context.Principal.AddIdentity(companyIdentity);
         }
-    }        
+    }
     ```
 
 5. Обновите метод `Configure` класса Startup с помощью следующей строчки кода и сохраните файл.
 
-        app.UseAuthentication();
-
-
+    ```csharp
+    app.UseAuthentication();
+    ```
 
 ### <a name="add-an-authentication-controller"></a>Добавление контролера аутентификации
 
@@ -189,14 +178,14 @@ ms.locfileid: "48268518"
                 return Redirect("/");
             }
         }
-    }    
+    }
     ```
 
-3. Сохраните изменения.    
+3. Сохраните изменения.
 
 ### <a name="update-the-hub-class"></a>Обновление класса Hub
 
-По умолчанию, когда веб-клиент пытается соединиться со службой SignalR, получение соединения основывается на маркере доступа, который предоставляется изнутри. Этот маркер доступа не связан с аутентифицированным удостоверением. Этот доступ является анонимным. 
+По умолчанию, когда веб-клиент пытается соединиться со службой SignalR, получение соединения основывается на маркере доступа, который предоставляется изнутри. Этот маркер доступа не связан с аутентифицированным удостоверением. Этот доступ является анонимным.
 
 Из этого раздела вы узнаете, как включить настоящую аутентификацию, добавив атрибут `Authorize` к классу hub и обновив метод hub, что позволит считывать имена пользователей из аутентифицированных пользовательских утверждений.
 
@@ -265,7 +254,7 @@ ms.locfileid: "48268518"
         }
         return '';
     }
-    var username = getCookie('githubchat_username');    
+    var username = getCookie('githubchat_username');
     ```
 
 2. Сразу после добавленной строки кода для использования файла cookie для функции `appendMessage` необходимо добавить следующее определение:
@@ -327,8 +316,8 @@ ms.locfileid: "48268518"
             messageInput.focus();
             event.preventDefault();
         });
-    }    
-    ```    
+    }
+    ```
 
 4. Чтобы предложить пользователю войти в систему, обновите обработчик ошибок в конце файла *index.html* для `connection.start()`, как показано ниже.
 
@@ -349,13 +338,11 @@ ms.locfileid: "48268518"
         });
     ```
 
-5. Сохраните изменения.    
-
-
+5. Сохраните изменения.
 
 ## <a name="build-and-run-the-app-locally"></a>Локальное создание и запуск приложения
 
-1. Сохраните изменения для всех файлов. 
+1. Сохраните изменения для всех файлов.
 
 2. Создавайте приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
 
@@ -371,22 +358,21 @@ ms.locfileid: "48268518"
         Hosting environment: Production
         Content root path: E:\Testing\chattest
         Now listening on: http://localhost:5000
-        Application started. Press Ctrl+C to shut down.    
+        Application started. Press Ctrl+C to shut down.
 
-4. Запустите окно браузера и перейдите к `http://localhost:5000`. Чтобы войти с помощью GitHub, щелкните **эту** ссылку вверху. 
+4. Запустите окно браузера и перейдите к `http://localhost:5000`. Чтобы войти с помощью GitHub, щелкните **эту** ссылку вверху.
 
     ![Размещение всего OAuth в Azure](media/signalr-authenticate-oauth/signalr-oauth-complete-azure.png)
 
-    Вам будет предложено авторизовать доступ приложения чата к вашей учетной записи GitHub. Нажмите кнопку **Авторизовать**. 
-    
+    Вам будет предложено авторизовать доступ приложения чата к вашей учетной записи GitHub. Нажмите кнопку **Авторизовать**.
+
     ![Авторизация приложения OAuth](media/signalr-authenticate-oauth/signalr-authorize-oauth-app.png)
-    
+
     Вы будете перенаправлены обратно к приложению чата, куда необходимо войти со своими учетными данными GitHub. Веб приложение определило имя вашей учетной записи путем использования новой аутентификации, добавленной вами.
 
     ![Обнаружение учетной записи](media/signalr-authenticate-oauth/signalr-oauth-account-identified.png)
 
-    Теперь, когда приложение чата выполняет аутентификацию с GitHub и сохраняет сведения о аутентификации в качестве файлов cookie, следует развернуть его в Azure, чтобы другие пользователи могли идентифицироваться со своими учетными записями и взаимодействовать с другими рабочими станциями. 
-
+    Теперь, когда приложение чата выполняет аутентификацию с GitHub и сохраняет сведения о аутентификации в качестве файлов cookie, следует развернуть его в Azure, чтобы другие пользователи могли идентифицироваться со своими учетными записями и взаимодействовать с другими рабочими станциями.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -401,7 +387,6 @@ az extension add -n signalr
 ```
 
 При создании следующего ресурса, обязательно используйте ту же группу ресурсов, в которой находится ресурс службы SignalR. Позднее, когда возникнет желание удалить все ресурсы, такой подход сделает очистку намного легче. В приведенном примере предполагается использование имени группы *SignalRTestResources*, рекомендованного в предыдущих руководствах.
-
 
 ### <a name="create-the-web-app-and-plan"></a>Создание веб-приложения и плана
 
@@ -426,18 +411,13 @@ az appservice plan create --name $WebAppPlan --resource-group $ResourceGroupName
 # Create the new Web App
 az webapp create --name $WebAppName --resource-group $ResourceGroupName \
     --plan $WebAppPlan
-
-
 ```
-
 
 | Параметр | Описание |
 | -------------------- | --------------- |
-| ResourceGroupName | Это имя группы ресурсов было предложено в предыдущих руководствах. Рекомендуется группировать все ресурсы, используемые в этих руководствах, вместе. Используйте ту же группу ресурсов, которую вы использовали в предыдущих руководствах. | 
-| WebAppPlan | Введите новое, уникальное имя плана служб приложений. | 
-| WebAppName | Это станет именем нового веб-приложения и частью URL-адреса. Укажите уникальное имя. Например, signalrtestwebapp22665120.   | 
-
-
+| ResourceGroupName | Это имя группы ресурсов было предложено в предыдущих руководствах. Рекомендуется группировать все ресурсы, используемые в этих руководствах, вместе. Используйте ту же группу ресурсов, которую вы использовали в предыдущих руководствах. |
+| WebAppPlan | Введите новое, уникальное имя плана служб приложений. |
+| WebAppName | Это станет именем нового веб-приложения и частью URL-адреса. Укажите уникальное имя. Например, signalrtestwebapp22665120.   |
 
 ### <a name="add-app-settings-to-the-web-app"></a>Добавление параметров приложения к веб-приложению
 
@@ -467,7 +447,7 @@ WebAppName=myWebAppName
 signalRhostname=$(az signalr show --name $SignalRServiceResource \
     --resource-group $ResourceGroupName --query hostName -o tsv)
 
-# Get the SignalR primary key 
+# Get the SignalR primary key
 signalRprimarykey=$(az signalr key list --name $SignalRServiceResource \
     --resource-group $ResourceGroupName --query primaryKey -o tsv)
 
@@ -477,27 +457,24 @@ connstring="Endpoint=https://$signalRhostname;AccessKey=$signalRprimarykey;"
 #Add an app setting to the web app for the SignalR connection
 az webapp config appsettings set --name $WebAppName \
     --resource-group $ResourceGroupName \
-    --settings "Azure__SignalR__ConnectionString=$connstring" 
+    --settings "Azure__SignalR__ConnectionString=$connstring"
 
 #Add the app settings to use with GitHub authentication
 az webapp config appsettings set --name $WebAppName \
     --resource-group $ResourceGroupName \
-    --settings "GitHubClientId=$GitHubClientId" 
+    --settings "GitHubClientId=$GitHubClientId"
 az webapp config appsettings set --name $WebAppName \
     --resource-group $ResourceGroupName \
-    --settings "GitHubClientSecret=$GitHubClientSecret" 
-
+    --settings "GitHubClientSecret=$GitHubClientSecret"
 ```
 
 | Параметр | ОПИСАНИЕ |
 | -------------------- | --------------- |
 | GitHubClientId | Назначьте этой переменной идентификатор секрета клиента для приложения OAuth GitHub. |
 | GitHubClientSecret | Назначьте этой переменной секретный пароль для приложения OAuth GitHub. |
-| ResourceGroupName | Обновите эту переменную, чтобы у нее было то же имя, что и у группы ресурсов, которую вы использовали в предыдущем разделе. | 
-| SignalRServiceResource | Обновите эту переменную, чтобы у нее было то же имя, что и у ресурса SignalR, который вы создали в кратком руководстве. Например, signalrtestsvc48778624. | 
-| WebAppName | Обновите эту переменную, чтобы у нее было то же имя, что и у нового веб-приложения, которое вы создали в предыдущем разделе. | 
-
-
+| ResourceGroupName | Обновите эту переменную, чтобы у нее было то же имя, что и у группы ресурсов, которую вы использовали в предыдущем разделе. |
+| SignalRServiceResource | Обновите эту переменную, чтобы у нее было то же имя, что и у ресурса SignalR, который вы создали в кратком руководстве. Например, signalrtestsvc48778624. |
+| WebAppName | Обновите эту переменную, чтобы у нее было то же имя, что и у нового веб-приложения, которое вы создали в предыдущем разделе. |
 
 ### <a name="configure-the-web-app-for-local-git-deployment"></a>Настройка веб-приложения для локального развертывания Git
 
@@ -524,19 +501,16 @@ az webapp deployment user set --user-name $DeploymentUserName \
 az webapp deployment source config-local-git --name $WebAppName \
     --resource-group $ResourceGroupName \
     --query [url] -o tsv
-
 ```
 
 | Параметр | ОПИСАНИЕ |
 | -------------------- | --------------- |
 | DeploymentUserName | Выберите новое имя пользователя развертывания. |
 | DeploymentUserPassword | Выберите пароль для нового пользователя развертывания. |
-| ResourceGroupName | Используйте имя группы ресурсов, которое соответствует имени группы ресурсов, использованному в предыдущем разделе. | 
-| WebAppName | Это станет именем нового веб-приложения, которое вы создали ранее. | 
-
+| ResourceGroupName | Используйте имя группы ресурсов, которое соответствует имени группы ресурсов, использованному в предыдущем разделе. |
+| WebAppName | Это станет именем нового веб-приложения, которое вы создали ранее. |
 
 Запишите URL-адрес развертывания Git, возвращенный из этой команды. Этот URL-адрес будет использоваться позднее.
-
 
 ### <a name="deploy-your-code-to-the-azure-web-app"></a>Разверните код в веб-приложении Azure
 
@@ -544,24 +518,32 @@ az webapp deployment source config-local-git --name $WebAppName \
 
 1. Перейдите в корневой каталог проекта. Если у вас нет проекта, инициализированного с помощью репозитория Git, выполните следующую команду:
 
-        git init
+    ```bash
+    git init
+    ```
 
 2. Добавьте remote для URL-адреса развертывания Git, записанного ранее.
 
-        git remote add Azure <your git deployment url>
+    ```bash
+    git remote add Azure <your git deployment url>
+    ```
 
 3. Сгруппируйте все файлы в инициализированном репозитории и добавьте фиксацию.
 
-        git add -A
-        git commit -m "init commit"
+    ```bash
+    git add -A
+    git commit -m "init commit"
+    ```
 
-4. Разверните код в веб-приложении Azure.        
+4. Разверните код в веб-приложении Azure.
 
-        git push Azure master
+    ```bash
+    git push Azure master
+    ```
 
     Вам будет предложено пройти аутентификацию, чтобы развернуть код в Azure. Введите имя и пароль пользователя развертывания, созданного выше.
 
-### <a name="update-the-github-oauth-app"></a>Обновление приложения OAuth GitHub 
+### <a name="update-the-github-oauth-app"></a>Обновление приложения OAuth GitHub
 
 И наконец, для завершения процесса выполните обновление **URL-адреса домашней страницы** и **URL-адреса обратного вызова авторизации** приложения OAuth GitHub, чтобы указать новое размещенное приложение.
 
@@ -574,33 +556,27 @@ az webapp deployment source config-local-git --name $WebAppName \
     | URL-адрес домашней страницы | https://signalrtestwebapp22665120.azurewebsites.net/home |
     | URL-адрес обратного вызова авторизации | https://signalrtestwebapp22665120.azurewebsites.net/signin-github |
 
-
 3. Перейдите к URL-адресу веб-приложения и протестируйте приложение.
 
     ![Размещение всего OAuth в Azure](media/signalr-authenticate-oauth/signalr-oauth-complete-azure.png)
-
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 При переходе к следующему руководству в нем можно использовать ресурсы, созданные в этом руководстве.
 
-В противном случае, если вы закончите работу с примером приложения из краткого руководства, вы можете удалить ресурсы Azure, созданные в текущем руководстве, чтобы избежать ненужных расходов. 
+В противном случае, если вы закончите работу с примером приложения из краткого руководства, вы можете удалить ресурсы Azure, созданные в текущем руководстве, чтобы избежать ненужных расходов.
 
 > [!IMPORTANT]
 > Удаление группы ресурсов — необратимая операция, и все соответствующие ресурсы удаляются окончательно. Будьте внимательны, чтобы случайно не удалить не ту группу ресурсов или не те ресурсы. Если ресурсы для размещения этого примера созданы в имеющейся группе ресурсов, содержащей ресурсы, которые следует сохранить, можно удалить каждый ресурс отдельно в соответствующих колонках вместо удаления группы ресурсов.
-> 
-> 
 
 Войдите на [портал Azure](https://portal.azure.com) и щелкните **Группы ресурсов**.
 
 Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...**. В инструкциях в этой статье использовалась группа ресурсов с именем *SignalRTestResources*. В своей группе ресурсов в списке результатов щелкните **...**, а затем **Удалить группу ресурсов**.
 
-   
 ![Delete](./media/signalr-authenticate-oauth/signalr-delete-resource-group.png)
 
-
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
-   
+
 Через некоторое время группа ресурсов и все ее ресурсы будут удалены.
 
 ## <a name="next-steps"></a>Дополнительная информация

@@ -1,23 +1,24 @@
 ---
-title: Краткое руководство. Публикация базы знаний — REST, Java — QnA Maker
-titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как опубликовать базу знаний с использованием REST. При этом последняя версия протестированной базы знаний передается в выделенный индекс Поиска Azure, представляющий опубликованную базу знаний. Кроме того, создается конечная точка, которая может быть вызвана в приложении или чат-боте.
+title: Публикация базы знаний с использованием REST и Java
+titleSuffix: QnA Maker - Azure Cognitive Services
+description: В этом кратком руководстве по Java описано, как опубликовать базу знаний с использованием REST. При этом последняя версия протестированной базы знаний передается в выделенный индекс Поиска Azure, представляющий опубликованную базу знаний. Кроме того, создается конечная точка, которая может быть вызвана в приложении или чат-боте.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: quickstart
 ms.date: 11/19/2018
 ms.author: diberry
-ms.openlocfilehash: 58d34aa84d57c8c69a146666f23ce9f769554f88
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: a115c5180044da1fe66349fefd9c28824fdd2e51
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52165600"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53163962"
 ---
-# <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-java"></a>Краткое руководство. Публикация базы знаний в QnA Maker с помощью Java
+# <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-java"></a>Краткое руководство. Публикация базы знаний в QnA Maker с использованием Java
 
 В этом кратком руководстве по REST описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний отправляется в индекс выделенной службы "Поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
 
@@ -28,19 +29,19 @@ ms.locfileid: "52165600"
 
 * [JDK SE](https://aka.ms/azure-jdks) (комплект разработчика Java, выпуск "Стандартный");
 * В этом примере используется [HTTP-клиент](http://hc.apache.org/httpcomponents-client-ga/) Apache от HTTP Components. Вам нужно добавить в проект следующие библиотеки для HTTP-клиента Apache: 
-    * httpclient 4.5.3.jar;
+    * httpclient-4.5.3.jar;
     * httpcore-4.4.6.jar;
     * commons-logging-1.2.jar.
 * [Visual Studio Code](https://code.visualstudio.com/)
-* У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ для ресурса QnA Maker, выберите **Ключи** в разделе **Управление ресурсами** на панели мониторинга Azure. . 
+* У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить ключ, выберите **Ключи** в разделе **Управление ресурсами** на панели мониторинга ресурса QnA Maker на портале Azure. . 
 * Идентификатор базы знаний QnA Maker, который находится в URL-адресе в параметре строки запроса kbid, как показано ниже.
 
     ![Идентификатор базы знаний QnA Maker](../media/qnamaker-quickstart-kb/qna-maker-id.png)
 
-    Если у вас еще нет базы знаний, создайте пример для этого краткого руководства по инструкциям из [этой статьи](create-new-kb-csharp.md).
+    Если у вас еще нет базы знаний, можно создать ее для этого руководства. [Создание базы знаний](create-new-kb-csharp.md).
 
 > [!NOTE] 
-> Полные файлы решения доступны в [репозитории Github **Azure-Samples/cognitive-services-qnamaker-java**](https://github.com/Azure-Samples/cognitive-services-qnamaker-java/tree/master/documentation-samples/quickstarts/publish-knowledge-base).
+> Полные файлы решения доступны в [репозитории GitHub **Azure-Samples/cognitive-services-qnamaker-java**](https://github.com/Azure-Samples/cognitive-services-qnamaker-java/tree/master/documentation-samples/quickstarts/publish-knowledge-base).
 
 ## <a name="create-a-java-file"></a>Создание файла Java
 
@@ -83,7 +84,7 @@ public class PublishKB {
 
 ## <a name="build-and-run-the-program"></a>Сборка и запуск проекта
 
-Выполните сборку и запуск программы из командной строки. Запрос к API службы QnA Maker будет отправлен автоматически, а полученный ответ отобразится в окне консоли.
+Выполните сборку и запуск программы из командной строки. Она автоматически отправит запрос к API службы QnA Maker, а полученный ответ отобразится в окне консоли.
 
 1. Выполните сборку файла:
 
@@ -91,7 +92,7 @@ public class PublishKB {
     javac -cp "lib/*" PublishKB.java
     ```
 
-1. Выполните запуск файла:
+1. Запустите файл.
 
     ```bash
     java -cp ".;lib/*" PublishKB

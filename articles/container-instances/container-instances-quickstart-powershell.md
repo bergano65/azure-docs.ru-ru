@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Запуск приложения в службе "Экземпляры контейнеров Azure"
+title: Краткое руководство. Запуск приложения в службе "Экземпляры контейнеров Azure" с помощью PowerShell
 description: В этом кратком руководстве вы развернете приложение, выполняющееся в контейнере Docker, в службе "Экземпляры контейнеров Azure" с помощью Azure PowerShell.
 services: container-instances
 author: dlepow
@@ -7,15 +7,15 @@ ms.service: container-instances
 ms.topic: quickstart
 ms.date: 10/02/2018
 ms.author: danlep
-ms.custom: mvc
-ms.openlocfilehash: 33444e810a2deebee11e535c73ce3e249f42b340
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.custom: seodec18, mvc
+ms.openlocfilehash: b17cca7f0c00aba260b97b29345ff33156a50138
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48854649"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53183953"
 ---
-# <a name="quickstart-run-an-application-in-azure-container-instances"></a>Краткое руководство. Запуск приложения в службе "Экземпляры контейнеров Azure"
+# <a name="quickstart-run-a-container-application-in-azure-container-instances-with-azure-powershell"></a>Краткое руководство. Запуск контейнерного приложения в службе "Экземпляры контейнеров Azure" с помощью Azure PowerShell
 
 Служба "Экземпляры контейнеров Azure" позволяет легко и быстро запускать контейнеры Docker в Azure. В этом случае не нужно развертывать виртуальные машины или использовать единую платформу оркестрации контейнеров, такую как Kubernetes. В этом кратком руководстве вы с помощью портала Azure создадите в Azure контейнер Windows и сделаете его приложение доступным по полному доменному имени (FQDN). Через несколько секунд после выполнения одной команды развертывания можно просмотреть выполняющееся приложение:
 

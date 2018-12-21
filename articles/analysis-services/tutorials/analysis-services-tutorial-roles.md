@@ -1,20 +1,21 @@
 ---
-title: Руководство. Настройка ролей администратора сервера и пользователя для служб Azure Analysis Services | Документация Майкрософт
+title: Руководство. Настройка ролей администратора и пользователя для служб Azure Analysis Services | Документация Майкрософт
+description: Узнайте, как настроить роли в Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: tutorial
-ms.date: 07/09/2018
+ms.date: 12/06/2018
 ms.author: owend
 ms.reviewer: owend
-ms.openlocfilehash: 1c1dd5316eead5e91dd77d3e6b21a7a14d39afeb
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: a1e6e04c4019086d56cc0eb25176a507e514c477
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37929235"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53000644"
 ---
-# <a name="tutorial-configure-server-administrator-and-user-roles"></a>Руководство по настройке ролей администратора сервера и пользователя
+# <a name="tutorial-configure-server-administrator-and-user-roles"></a>Руководство. Настройка ролей администратора и пользователя сервера
 
  При работе с этим руководством вы с помощью SQL Server Management Studio (SSMS) подключитесь к серверу в Azure и настроите роли администратора сервера и шаблона базы данных. Также мы ознакомитесь с [языком TMSL](https://docs.microsoft.com/sql/analysis-services/tabular-model-programming-compatibility-level-1200/tabular-model-programming-for-compatibility-level-1200). Язык написания скриптов TMSL основывается на формате JSON и предназначен для табличных моделей на уровнях совместимости 1200 и выше. Он позволяет автоматизировать многие задачи табличного моделирования. TMSL часто используется с PowerShell, но в этом руководстве мы ограничимся редактором запросов XMLA в среде SSMS. При работе с этим руководством вы выполните следующие задачи: 
   
@@ -27,7 +28,7 @@ ms.locfileid: "37929235"
 
 Дополнительные сведения о защите пользователей в службах Azure Analysis Services см. в статье [Аутентификация и разрешения пользователей](../analysis-services-manage-users.md). 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка с поддержкой Azure Active Directory.
 - Созданный в подписке [сервер Azure Analysis Services](../analysis-services-create-server.md).
@@ -35,7 +36,7 @@ ms.locfileid: "37929235"
 - [Модель из примера adventureworks](../analysis-services-create-sample-model.md), размещенная на сервере.
 - Установленная последняя версия [SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms).
 
-## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на [портал](https://portal.azure.com/).
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по обнаружению аномалий с использованием C#
+title: Руководство. Обнаружение аномалий с использованием C#
 titlesuffix: Azure Cognitive Services
 description: Изучите приложение C#, в котором используется API обнаружения аномалий. Отправьте исходные точки данных в API и получите ожидаемое значение и точки аномалий.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: anomaly-detection
 ms.topic: tutorial
 ms.date: 05/01/2018
 ms.author: chliang
-ms.openlocfilehash: f99ce765c1d9417fd5ca88b49214eca8a3b0bf49
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: ea9083d530d9a94825b8c568ef4c3dbc847c44c0
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48887655"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53162466"
 ---
-# <a name="tutorial-anomaly-detection-with-c-application"></a>Руководство по обнаружению аномалий с использованием приложения C#
+# <a name="tutorial-anomaly-detection-with-c-application"></a>Руководство. Обнаружение аномалий с использованием приложения C#
 
 [!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 

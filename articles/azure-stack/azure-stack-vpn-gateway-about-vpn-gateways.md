@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 07/02/2018
 ms.author: sethm
-ms.openlocfilehash: 860f1181a84ef87fe0e66c2746b76b800a326354
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 86fcec0321e8f1b92fdc554532cb8f949b1b1569
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52496201"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53081396"
 ---
 # <a name="about-vpn-gateway-for-azure-stack"></a>Сведения о VPN-шлюзе для Azure Stack
 
@@ -108,9 +108,9 @@ Azure Stack не поддерживает номер SKU шлюза UltraPerform
 
 |   | Пропускная способность VPN-шлюза *(1)* | *Максимальное число туннелей IPsec для VPN-шлюза (2)* |
 |-------|-------|-------|
-|**SKU "Базовый"** ***(3)***    | 100 Мбит/с  | 10    |
-|**SKU "Стандартный"**       | 100 Мбит/с  | 10    |
-|**SKU с высокой производительностью** | 200 Мбит/с    | 5 |
+|**SKU "Базовый"** ***(3)***    | 100 Мбит/с  | 20    |
+|**SKU "Стандартный"**       | 100 Мбит/с  | 20    |
+|**SKU с высокой производительностью** | 200 Мбит/с    | 10    |
 
 **Примечания к таблице**
 

@@ -1,21 +1,22 @@
 ---
-title: Использование пакета SDK службы "Речь" для C# с LUIS
+title: Использование пакета SDK службы "Речь" для C#
 titleSuffix: Azure Cognitive Services
-description: Служба "Речь" позволяет с помощью единого запроса получать аудио и возвращать объекты JSON для прогнозирования LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS. В этом проекте используется уже включенный в качестве ссылки пакет NuGet службы "Речь".
+description: Служба "Речь" позволяет с помощью единого запроса получать аудио и возвращать объекты JSON для прогнозирования LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 09/10/2018
+ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: c2581abc782558ca114cc3a5d4f6224d132bce5d
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 1bc3b9e016bed59f6453c26371cce7bd089568aa
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50139101"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53162637"
 ---
 # <a name="integrate-speech-service"></a>Интеграция службы распознавания речи
 [Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/) позволяет использовать один запрос для получения аудио и возврата объектов JSON с предсказаниями LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS. В этом проекте используется уже включенный в качестве ссылки пакет [NuGet](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/) для распознавания речи. 
@@ -65,7 +66,7 @@ ms.locfileid: "50139101"
 
 Пакет SDK для распознавания речи уже включен в качестве ссылки. 
 
-[![](./media/luis-tutorial-speech-to-intent/nuget-package.png "Снимок экрана Visual Studio 2017 с пакетом NuGet Microsoft.CognitiveServices.Speech")](./media/luis-tutorial-speech-to-intent/nuget-package.png#lightbox)
+[![Снимок экрана Visual Studio 2017 с пакетом NuGet Microsoft.CognitiveServices.Speech](./media/luis-tutorial-speech-to-intent/nuget-package.png "Снимок экрана Visual Studio 2017 с пакетом NuGet Microsoft.CognitiveServices.Speech")](./media/luis-tutorial-speech-to-intent/nuget-package.png#lightbox)
 
 ## <a name="modify-the-c-code"></a>Изменение кода C#
 Откройте файл `Program.cs` и измените следующие переменные:

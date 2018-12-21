@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: 4881f992e5362efc7e4d7ac23898684966a066e0
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 57624133b249a8ec2ece90eac4a64729e4d15151
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52890999"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52968209"
 ---
-# <a name="tutorial-create-cross-cloud-scaling-solutions-with-azure"></a>Руководство по созданию решений для масштабирования в нескольких облаках в Azure
+# <a name="tutorial-create-cross-cloud-scaling-solutions-with-azure"></a>Руководство. Создание решений для масштабирования в нескольких облаках в Azure
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -107,17 +107,17 @@ Azure Repos
 
     Гибридные процессы непрерывной интеграции и непрерывной поставки применимы и к коду приложения, и к коду инфраструктуры. Используйте [шаблоны Azure Resource Manager](https://azure.microsoft.com/resources/templates/) для частной и облачной разработки.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image1.JPG)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image1.JPG)
 
 2. **Клонируйте репозиторий** путем создания и открытия веб-приложения по умолчанию.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image2.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image2.png)
 
 ### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Создание автономного развертывания веб-приложения для служб приложений в обоих облаках
 
 1.  Измените файл **WebApplication.csproj**. Выберите **Runtimeidentifier** и добавьте **win10-х64**. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)). 
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image3.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image3.png)
 
 2.  Добавьте код в Azure Repos с помощью Team Explorer.
 
@@ -129,7 +129,7 @@ Azure Repos
 
 2. Добавьте код **-r win10-x64**. Это необходимо, чтобы активировать автономное развертывание с .Net Core.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image4.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image4.png)
 
 3. Запустите сборку. Процесс [сборки автономного развертывания](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd) будет публиковать артефакты, которые могут выполняться в Azure и Azure Stack.
 
@@ -143,87 +143,87 @@ Azure Pipelines и Azure DevOps Server предоставляют конвейе
 
 ## <a name="create-release-definition"></a>Создание определения выпуска
 
-![Alt text](media\azure-stack-solution-cloud-burst\image5.png)
+![Alt text](media/azure-stack-solution-cloud-burst/image5.png)
 
 1.  Нажмите кнопку со знаком **плюс**, чтобы добавить новый выпуск на **вкладку выпусков** на странице сборки и выпуска VSO.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image6.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image6.png)
 
 2. Примените шаблон развертывания службы приложений Azure.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image7.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image7.png)
 
 3. В раскрывающемся меню добавления артефакта добавьте артефакт для приложения сборки облака Azure.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image8.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image8.png)
 
 4. На вкладке "Конвейер" выберите ссылку **Phase, Task** (Фаза, Задача) для используемой среды и задайте значения облачной среды Azure.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image9.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image9.png)
 
 5. Задайте **имя среды** и выберите **подписку** Azure для конечной точки облака Azure.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image10.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image10.png)
 
 6. В разделе имени среды задайте требуемое **имя службы приложений Azure**.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image11.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image11.png)
 
 7. Введите **Размещенная среда VS2017** в очереди агента для среды, размещенной в облаке Azure.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image12.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image12.png)
 
 8. В меню развертывания службы приложений Azure выберите допустимый для среды **пакет или папку**. Нажмите кнопку **ОК**, чтобы выбрать **расположение папки**.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image13.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image13.png)
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image14.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image14.png)
 
 9. Сохраните все изменения и вернитесь к **конвейеру выпуска**.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image15.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image15.png)
 
 10. Добавьте новый артефакт, выбрав сборку для приложения Azure Stack.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image16.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image16.png)
 
 11. Добавьте еще одну среду, применив развертывание службы приложений Azure.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image17.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image17.png)
 
 12. Назовите новую среду Azure Stack.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image18.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image18.png)
 
 13. Найдите среду Azure Stack на вкладке **Задача**.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image19.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image19.png)
 
 14. Выберите подписку для конечной точки Azure Stack.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image20.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image20.png)
 
 15. Задайте имя веб-приложения Azure Stack в качестве имени службы приложений.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image21.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image21.png)
 
 16. Выберите агент Azure Stack.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image22.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image22.png)
 
 17. В разделе развертывания службы приложений Azure выберите допустимый для среды **пакет или папку**. Нажмите кнопку **ОК**, чтобы выбрать расположение папки.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image23.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image23.png)
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image24.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image24.png)
 
 18. В разделе "Переменные" добавьте переменную `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`, задайте для нее значение **true** и область Azure Stack.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image25.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image25.png)
 
 19. Выберите значок триггера **непрерывного** развертывания в обоих артефактах и включите триггер **непрерывного** развертывания.
 
-    ![Alt text](media\azure-stack-solution-cloud-burst\image26.png)
+    ![Alt text](media/azure-stack-solution-cloud-burst/image26.png)
 
 20. Выберите значок условий **перед развертыванием** в среде Azure Stack и задайте триггеру значение **После выпуска**.
 
@@ -273,7 +273,7 @@ Azure Pipelines и Azure DevOps Server предоставляют конвейе
 
 #### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Создание автономного развертывания веб-приложения для служб приложений в обоих облаках
 
-1.  Измените файл **WebApplication.csproj**, выберите **Runtimeidentifier**, а затем добавьте win10-x64. Дополнительные сведения см. в документации [по автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd).
+1.  Измените файл **WebApplication.csproj**. Выберите **Runtimeidentifier** и добавьте win10-х64. Дополнительные сведения см. в документации [по автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd).
 
 2.  Добавьте код в Azure Repos с помощью Team Explorer.
 
@@ -307,7 +307,7 @@ Azure Pipelines и Azure DevOps Server предоставляют конвейе
 
 3.  В разделе **Select a Template** (Выбор шаблона) выберите **Развертывание службы приложений Azure**, а затем — **Применить**.
 
-4.  В разделе **Добавить артефакт** из раскрывающегося меню **Источник (определение сборки) выберите приложение сборки облака Azure.
+4.  В разделе **Добавить артефакт** из раскрывающегося меню **Источник (определение сборки)** выберите приложение сборки облака Azure.
 
 5.  На вкладке **Конвейер** выберите ссылку **Фаза 1**, **Задача 1**, чтобы **просмотреть задачи среды**.
 

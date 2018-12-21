@@ -1,6 +1,6 @@
 ---
-title: Отправка событий в Центры событий Azure с помощью .NET Standard | Документация Майкрософт
-description: Узнайте, как начать работу с отправкой событий в Центры событий на платформе .NET Standard.
+title: Отправка событий в Центры событий Azure с помощью .NET Core | Документация Майкрософт
+description: В статье описано, как создать приложение .NET Core, которое отправляет сообщения в Центры событий Azure.
 services: event-hubs
 documentationcenter: na
 author: ShubhaVijayasarathy
@@ -12,16 +12,17 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/18/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 633d29d3e2e8a8ab0b746549f126ad45ea781d6e
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: b645b444d62ae0f1834006a41190c417cee35963
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51227898"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53081699"
 ---
-# <a name="get-started-sending-messages-to-azure-event-hubs-in-net-standard"></a>Приступая к отправке событий в Центры событий Azure на платформе .NET Standard
+# <a name="get-started-sending-messages-to-azure-event-hubs-in-net-core"></a>Отправка событий в Центры событий Azure с помощью .NET Core
 Центры событий — это служба, которая обрабатывает большие объемы данных телеметрии о событиях, поступающих от подключенных устройств и приложений. После сбора дынных в Центрах событий их можно сохранить с помощью кластера хранилища или преобразовать с помощью поставщика аналитики в реальном времени. Эта возможность сбора и обработки большого объема данных о событиях является ключевым компонентом в современных архитектурах приложений, включая "Интернет вещей". Подробный обзор Центров событий см. в статьях [Что такое Центры событий Azure?](event-hubs-about.md) и [Обзор функций Центров событий](event-hubs-features.md).
 
 В этом руководстве также показано, как отправлять события в концентратор событий Azure с помощью консольного приложения, написанного на языке C#, на платформе .NET Core. 
@@ -34,7 +35,9 @@ ms.locfileid: "51227898"
 * [Инструментарий Visual Studio 2015 или Visual Studio 2017 для .NET Core](https://www.microsoft.com/net/core). 
 
 ## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий
-Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве.
+Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, [выполните эти инструкции](event-hubs-create.md).
+
+Получите строку подключения для пространства имен концентратора событий, следуя [этим инструкциям](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже. 
 
 ## <a name="create-a-console-application"></a>Создание консольного приложение
 
@@ -44,7 +47,7 @@ ms.locfileid: "51227898"
 
 ## <a name="add-the-event-hubs-nuget-package"></a>Добавление пакета NuGet для Центров событий
 
-Добавьте пакет NuGet библиотеки .NET Standard [`Microsoft.Azure.EventHubs`](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) в проект, сделав следующее: 
+Добавьте пакет NuGet библиотеки .NET Core [`Microsoft.Azure.EventHubs`](https://www.nuget.org/packages/Microsoft.Azure.EventHubs/) в проект, сделав следующее: 
 
 1. Щелкните созданный проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
 2. Откройте вкладку **Обзор**, а затем выполните поиск по фразе Microsoft.Azure.EventHubs и выберите пакет **Microsoft.Azure.EventHubs**. Щелкните **Установить** , чтобы выполнить установку, а затем закройте это диалоговое окно.
@@ -194,6 +197,6 @@ ms.locfileid: "51227898"
 Поздравляем! Теперь вы можете отправлять сообщения в концентратор событий.
 
 ## <a name="next-steps"></a>Дополнительная информация
-В рамках работы с этим кратким руководством вы отправляли сообщения в концентратор событий с помощью .NET Standard. Чтобы узнать, как получать события из концентратора событий с помощью .NET Standard, см. статью [Основные сведения о получении сообщений с помощью узла EventProcessorHost в .NET Standard](event-hubs-dotnet-standard-getstarted-receive-eph.md).
+В этом кратком руководстве описано, как отправлять сообщения в концентратор событий с помощью .NET Core. См. дополнительные сведения о [получении событий от Центров событий Azure с помощью .NET Core](event-hubs-dotnet-standard-getstarted-receive-eph.md).
 
 [1]: ./media/event-hubs-dotnet-standard-getstarted-send/netcoresnd.png

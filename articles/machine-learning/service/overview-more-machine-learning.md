@@ -1,5 +1,5 @@
 ---
-title: Сравнение вариантов продуктов Майкрософт для машинного обучения (Azure) | Документация Майкрософт
+title: Сравнение продуктов для машинного обучения корпорации Майкрософт
 description: Сравнение различных продуктов корпорации Майкрософт для сборки и развертывания моделей машинного обучения, а также управления ими. Выберите продукты для своего решения.
 services: machine-learning
 ms.service: machine-learning
@@ -9,14 +9,14 @@ ms.reviewer: jmartens
 author: garyericson
 ms.author: garye
 ms.date: 12/04/2018
-ms.openlocfilehash: ad6cb53bd69218d2af801cb56f882f5ffde3026c
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: bae28fd24cfbbf9fe36a626af1f0ec9359c8cda0
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52872558"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53274131"
 ---
-# <a name="what-are-the-machine-learning-product-options-from-microsoft"></a>Какие продукты для машинного обучения предлагает корпорация Майкрософт?
+# <a name="what-are-the-machine-learning-products-at-microsoft"></a>Какие продукты для машинного обучения предлагает корпорация Майкрософт?
 
 Корпорация Майкрософт предлагает различные продукты для сборки и развертывания моделей машинного обучения и управления ими. Сравните эти продукты и выберите те из них, которые позволят обеспечить наиболее эффективную разработку решений для машинного обучения.
 
@@ -41,8 +41,7 @@ ms.locfileid: "52872558"
 
 Для обучения, развертывания и управления моделями машинного обучения с помощью Python и CLI в масштабе облака используйте Службу машинного обучения Azure.
 
->[!Note]
-> Вы можете попробовать машинное обучение Azure бесплатно. Кредитная карта или подписка Azure не требуется. Начните прямо сейчас. https://azure.microsoft.com/free/
+Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
 
 ## <a name="azure-machine-learning-studio"></a>Студия машинного обучения Azure
 

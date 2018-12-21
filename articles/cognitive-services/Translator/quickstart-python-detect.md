@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Определение языка текста с помощью Python и API перевода текстов
+title: Краткое руководство. Определение языка текста с помощью API перевода текстов и Python
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как с помощью REST API перевода текстов и Python определить язык заданного текста.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 10/24/2018
 ms.author: erhopf
-ms.openlocfilehash: 564a12de2a0823372ce267f9ff2759ab17199a80
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: cfc2565c0ee2b51eaff40647cfcd7505e0479e64
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50086045"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993831"
 ---
-# <a name="quickstart-use-the-translator-text-api-to-detect-text-language-using-python"></a>Краткое руководство. Определение языка текста с помощью Python и API перевода текстов
+# <a name="quickstart-use-the-translator-text-api-to-detect-text-language-using-python"></a>Краткое руководство. Определение языка текста с помощью API перевода текстов и Python
 
 Из этого краткого руководства вы узнаете, как с помощью REST API перевода текстов и Python определить язык заданного текста.
 
@@ -67,7 +67,7 @@ else:
 В настоящее время для API перевода текстов доступна одна конечная точка и она задана как `base_url`. Параметр `path` задает маршрут `detect` и определяет, что нужно использовать версию 3 API.
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: Detect](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [определениям в API перевода текстов 3.0](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect).
 
 ```python
 base_url = 'https://api.cognitive.microsofttranslator.com'
@@ -163,7 +163,7 @@ python detect.py
 
 ## <a name="see-also"></a>См. также
 
-Помимо определения языка, API перевода текстов можно использовать для выполнения и других задач, в частности:
+Узнайте, как использовать API перевода текстов для следующих задач:
 
 * [перевод текста](quickstart-python-translate.md);
 * [транслитерация текста](quickstart-python-transliterate.md);

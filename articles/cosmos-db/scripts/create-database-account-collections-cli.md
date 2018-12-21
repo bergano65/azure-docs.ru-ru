@@ -1,22 +1,22 @@
 ---
-title: Создание учетной записи, базы данных и контейнера API SQL для Azure Cosmos DB с помощью скрипта Azure CLI | Документация Майкрософт
+title: Скрипт Azure CLI для создания учетной записи, базы данных и контейнера API SQL в Azure Cosmos DB
 description: Пример скрипта Azure CLI для создания учетной записи, базы данных и контейнера API SQL в Azure Cosmos DB
 author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.topic: sample
 ms.date: 10/26/2018
-ms.author: mjbrown
-ms.openlocfilehash: b38c836efce9f0bd2e29dcfa8c88f6894cf29b38
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 0a39786d2ccc8b0b57f539b10ee12d7b55bba381
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51016375"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52964600"
 ---
-# <a name="azure-cosmos-db-create-a-sql-api-account-using-cli"></a>Azure Cosmos DB: создание учетной записи API SQL с помощью интерфейса командной строки
+# <a name="azure-cosmos-db-create-a-sql-api-account-using-cli"></a>Azure Cosmos DB — создание учетной записи API SQL в интерфейсе командной строки
 
-При помощи этого примера скрипта CLI создается учетная запись, база данных и контейнер API SQL в Azure Cosmos DB.  
+При помощи этого примера-скрипта CLI создается учетная запись, база данных и контейнер API SQL в Azure Cosmos DB.  
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 

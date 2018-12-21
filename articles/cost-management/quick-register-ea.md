@@ -1,21 +1,21 @@
 ---
 title: Регистрация соглашения Enterprise Azure в Cloudyn | Документы Майкрософт
-description: Используйте соглашение Enterprise для регистрации в службе Cloudyn.
+description: В этом кратком руководстве описывается процесс регистрации, который необходимо пройти для создания пробной подписки Cloudyn и входа на портал Cloudyn.
 services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/14/2018
+ms.date: 12/07/2018
 ms.topic: quickstart
-ms.custom: ''
+ms.custom: seodec18
 ms.service: cost-management
 manager: benshy
-ms.openlocfilehash: 36f53203a7d75fc06f872e9cc9ef9379944df108
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: 7a3ed93814407df8f3adfe7d16ba50258fcb323e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52273579"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53082343"
 ---
 # <a name="register-an-azure-enterprise-agreement-and-view-cost-data"></a>Регистрация соглашения Azure Enterprise и просмотр данных о затратах
 
@@ -25,22 +25,22 @@ ms.locfileid: "52273579"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-- Войдите на портал Azure по адресу http://portal.azure.com.
+- Войдите на портал Azure по адресу https://portal.azure.com.
 
 ## <a name="register-with-cloudyn"></a>Регистрация в Cloudyn
 
 1. На портале Azure в списке служб выберите **Cost Management + Billing** (Управление затратами + Выставление счетов).
 2. В разделе **Обзор** щелкните **Cloudyn**.  
-    ![Страница Cloudyn](./media/quick-register-ea/cost-mgt-billing-service.png)
+    ![Страница Cloudyn, показанная на портале Azure](./media/quick-register-ea/cost-mgt-billing-service.png)
 3. На странице **Cloudyn** нажмите кнопку **Go to Cloudyn** (Перейти к Cloudyn), чтобы открыть страницу регистрации Cloudyn в новом окне.
 4. На странице пробной регистрации на портале Cloudyn введите название вашей компании, а затем выберите **Azure Enterprise Enrollment Administrator** (Администратор регистрации Azure Enterprise).  
-    ![пробная регистрация](./media/quick-register-ea/trial-reg.png)
-5. Введите свой ключ API для регистрации на портале Enterprise Portal. Если у вас нет под рукой ключа, то щелкните ссылку [Enterprise Portal](https://ea.azure.com) и выполните описанные ниже действия.
+5. Введите свой ключ API для регистрации на портале Enterprise Portal. Если у вас нет под рукой ключа, то щелкните ссылку [Enterprise Portal](https://ea.azure.com) и выполните описанные ниже действия.  
+    ![Вставка ключа API на вкладке "Выставление счетов"](./media/quick-register-ea/trial-reg.png)
   1. Войдите на веб-сайт Azure Enterprise и щелкните **Отчеты**. Затем выберите **API Access Key** (Ключ доступа к API) и скопируйте первичный ключ.  
-    ![Ключ API EA](./media/quick-register-ea/ea-key.png)
+    ![Пример ключа API EA на портале EA](./media/quick-register-ea/ea-key.png)
   3. Вернитесь на страницу регистрации и вставьте эти ключ API.
 6. Примите условия использования, а затем проверьте свой ключ. Нажмите кнопку **Next** (Далее), чтобы авторизовать Cloudyn для сбора данных ресурсов Azure. Собранные данные включают в себя сведения об использовании, производительности, выставлении счетов, а также данные тегов из подписок.  
-    ![проверка ключа](./media/quick-register-ea/ea-key-validated.png)
+    ![Пример успешной проверки ключа API EA](./media/quick-register-ea/ea-key-validated.png)
 7. В разделе **Invite other stakeholders** (Пригласить других заинтересованных лиц) можно добавить пользователей, введя их адреса электронной почты. По завершении нажмите кнопку **Next** (Далее). На добавление платежных данных в Cloudyn в зависимости от размера регистрации в Azure может потребоваться до 24 часов.
 8. Щелкните **Go to Cloudyn** (Перейти к Cloudyn), чтобы открыть портал Cloudyn. Затем на странице **Cloud Accounts Management** (Управление облачными учетными записями) должны отобразиться сведения вашей зарегистрированной учетной записи EA.
 

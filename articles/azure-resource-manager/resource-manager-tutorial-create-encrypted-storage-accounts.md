@@ -1,6 +1,6 @@
 ---
-title: Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения | Документация Майкрософт
-description: Используйте Visual Studio Code, чтобы создать шаблон для развертывания зашифрованной учетной записи хранения.
+title: Использование справочника по шаблонам Azure Resource Manager | Документация Майкрософт
+description: Создание шаблона для развертывания зашифрованной учетной записи хранения с помощью справочника по шаблонам Azure Resource Manager.
 services: azure-resource-manager
 documentationcenter: ''
 author: mumian
@@ -10,17 +10,18 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 11/13/2018
+ms.date: 12/06/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 6c75c0ce7d12f65878ec8cde0f265022c7beeb29
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.custom: seodec18
+ms.openlocfilehash: 1f831f2d962626de6f847e2fe775605b7bfca5b8
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51613517"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53097596"
 ---
-# <a name="tutorial-deploy-an-encrypted-azure-storage-account-with-resource-manager-template"></a>Руководство. Развертывание зашифрованной учетной записи службы хранилища Azure с помощью шаблона Resource Manager
+# <a name="tutorial-utilize-the-azure-resource-manager-template-reference"></a>Руководство. Использование шаблонов Azure Resource Manager
 
 Узнайте, как найти информацию о схеме шаблона и использовать ее для создания шаблонов Azure Resource Manager.
 
@@ -77,9 +78,11 @@ ms.locfileid: "51613517"
 
 1. Перейдите к [шаблонам Azure](https://docs.microsoft.com/azure/templates/).
 2. В **фильтр по названию** введите **учетные записи хранения**.
-3. Как показано на следующем снимке экрана, выберите **ссылку или ссылка шаблона, или хранилище, или учетные записи хранения**.
+3. Последовательно выберите **"Справочники", Template reference (Справочник по шаблонам), "Хранилище", <Version>, "Учетные записи хранения"**, как показано на приведенном ниже снимке экрана.
 
     ![Учетная запись хранения ссылки на шаблон Resource Manager](./media/resource-manager-tutorial-create-encrypted-storage-accounts/resource-manager-template-resources-reference-storage-accounts.png)
+
+    Если вы не знаете, какую выбрать версию, используйте последнюю.
 
 4. Найдите информацию о шифровании в определениях.  
 

@@ -1,5 +1,6 @@
 ---
-title: Руководства по Службе машинного обучения Azure в записных книжках Jupyter
+title: Примеры записных книжек Jupyter
+titleSuffix: Azure Machine Learning service
 description: Для изучения Службы машинного обучения Azure в Python найдите и используйте примеры записных книжек Jupyter.
 services: machine-learning
 ms.service: machine-learning
@@ -9,12 +10,13 @@ author: sdgilley
 ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 12/04/2018
-ms.openlocfilehash: 5ec010d6e0539e9ba316b48dc02110dc19e4b13e
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.custom: seodec18
+ms.openlocfilehash: 0d74f731d0a7eca25238344e36838dc6c806c788
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52883948"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53434534"
 ---
 # <a name="use-jupyter-notebooks-to-explore-azure-machine-learning-service"></a>Использование записных книжек Jupyter в Azure Machine Learning Workbench
 
@@ -27,7 +29,7 @@ ms.locfileid: "52883948"
 
 Чтобы создать рабочую область и запустить Записные книжки Azure, выполните действия, описанные в [этом руководстве](quickstart-get-started.md).
 
-## <a name="try-azure-notebooks-free-jupyter-notebooks-in-the-cloud"></a>Записные книжки Azure — бесплатные записные книжки на основе Jupyter в облаке Azure
+## <a name="try-azure-notebooks-free-jupyter-notebooks-in-the-cloud"></a>Поработайте со службой "Записные книжки Azure": к вашим услугам бесплатные записные книжки на основе Jupyter в облаке Azure
 
 Начать работу с Записными книжками Azure очень просто. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) уже установлен и настроен в Записных книжках Azure. Службы Azure автоматически управляют установкой и последующими обновлениями.
   
@@ -96,7 +98,7 @@ ms.locfileid: "52883948"
    >[!NOTE]
    >Можно использовать существующую Conda версии 4.4.10 или более поздней. Для отображения версии используйте `conda -V`. Версию Conda можно обновить, выполнив следующую команду: `conda update conda`. Нет необходимости в установке Miniconda.
 
-1. Скачайте примеры записных книжек из [Github](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning
+1. Скачайте примеры записных книжек из [GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning
 ) как ZIP-файл и извлеките его содержимое в локальный каталог. Записные книжки Автоматического машинного обучения находятся в папке `how-to-use-azureml/automated-machine-learning`.
 
 1. Настройте новую среду Conda. 
@@ -114,9 +116,10 @@ ms.locfileid: "52883948"
       + настраивает мини-приложение;
       + создает записную книжку Jupyter.
       
-      Сценарий принимает имя среды Conda в качестве дополнительного параметра. Имя среды Conda по умолчанию — `azure_automl`. Точная команда зависит от операционной системы. 
+   >[!NOTE]
+   > Сценарий принимает имя среды Conda в качестве дополнительного параметра. Имя среды Conda по умолчанию — `azure_automl`. Точная команда зависит от операционной системы. Это полезно при создании среды или ее обновлении до новой версии. Например, вы можете использовать "automl_setup.cmd azure_automl_sandbox", чтобы создать имя среды "azure_automl_sandbox". 
       
-      После выполнения сценария вы увидите в браузере домашнюю страницу записной книжки Jupyter.
+1. После выполнения сценария вы увидите в браузере домашнюю страницу записной книжки Jupyter.
 
 1. Перейдите к пути, где были сохранены записные книжки. 
 

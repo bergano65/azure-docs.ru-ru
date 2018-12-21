@@ -1,6 +1,6 @@
 ---
 title: Руководство. Развертывание выделенных устройств HSM Azure в существующей виртуальной сети с помощью PowerShell | Документация Майкрософт
-description: Развертывание выделенных устройств HSM в существующей виртуальной сети с помощью PowerShell
+description: В этом руководстве описано развертывание выделенного устройства HSM с помощью PowerShell в существующей виртуальной сети
 services: dedicated-hsm
 documentationcenter: na
 author: barclayn
@@ -8,17 +8,17 @@ manager: mbaldwin
 editor: ''
 ms.service: key-vault
 ms.topic: tutorial
-ms.custom: mvc
+ms.custom: mvc, seodec18
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/21/2018
+ms.date: 12/07/2018
 ms.author: barclayn
-ms.openlocfilehash: a714a52ecd6398fde459c5814b8a6cf223655eff
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 3f165b5d372168ef3ce6fea75547513a0148ae5b
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52318760"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53086316"
 ---
 # <a name="tutorial--deploying-hsms-into-an-existing-virtual-network-using-powershell"></a>Руководство. Развертывание выделенных устройств HSM в существующей виртуальной сети с помощью PowerShell
 
@@ -37,9 +37,9 @@ ms.locfileid: "52318760"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Сейчас служба выделенных устройств Azure недоступна на портале Azure, поэтому все операции с ней осуществляются в командной строке или с помощью PowerShell. В этом руководстве используется PowerShell в Azure Cloud Shell. Если вы не знакомы с PowerShell, см. [инструкции по началу работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azurermps-5.0.0).
+Сейчас служба выделенных устройств Azure недоступна на портале Azure, поэтому все операции с ней осуществляются в командной строке или с помощью PowerShell. В этом руководстве используется PowerShell в Azure Cloud Shell. Если вы не знакомы с PowerShell, см. статью [Get started with Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azurermps-5.0.0) (Приступая к работе с Azure PowerShell)
 
-Предполагается следующее:
+Предполагается, что:
 
 - Вы зарегистрировались в службе выделенных устройств HSM Azure и получили одобрение на ее использование. Если это не так, свяжитесь со своим менеджером Майкрософт по работе с клиентами и запросите у него соответствующие сведения. 
 - Вы создали группу ресурсов, которая включает нужные ресурсы. Новые ресурсы, развернутые в рамках этого руководства, будут добавлены в эту группу.
@@ -143,6 +143,14 @@ $delegation = New-AzureRmDelegation `
 ```
 
 ```powershell
+$hsmsubnet = New-AzureRmVirtualNetworkSubnetConfig ` 
+  -Name hsmsubnet ` 
+  -AddressPrefix 10.2.1.0/24 ` 
+  -Delegation $delegation 
+
+```
+
+```powershell
 
 $gwsubnet= New-AzureRmVirtualNetworkSubnetConfig `
   -Name GatewaySubnet `
@@ -177,13 +185,13 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName myRG `
 
 Выполнение этой команды занимает примерно 20 минут. Параметр -verbose обеспечивает непрерывное отображение состояния.
 
-![Состояние подготовки к работе](media/tutorial-deploy-hsm-powershell/progress-status.png)
+![Состояние подготовки](media/tutorial-deploy-hsm-powershell/progress-status.png)
 
-После успешного выполнения команды, о чем свидетельствует параметр "provisioningState": "Succeeded", можно выполнить вход в существующую виртуальную машину и использовать SSH, чтобы обеспечить доступность устройства HSM.
+После успешного завершения отобразится сообщение "provisioningState": "Succeeded". Теперь можно подключиться к существующей виртуальной машине и проверить доступность устройства HSM с помощью SSH.
 
 ## <a name="verifying-the-deployment"></a>Проверка развертывания
 
-Чтобы убедиться, что устройства подготовлены к работе, и просмотреть их параметры, запустите следующий набор команд. Убедитесь, что группа ресурсов настроена соответствующим образом и имя ресурса совпадает с тем, что указано в файле параметров.
+Чтобы убедиться, что устройства подготовлены к работе, и просмотреть их параметры, запустите указанный ниже набор команд. Убедитесь, что группа ресурсов настроена соответствующим образом и имя ресурса совпадает с указанным в файле параметров.
 
 ```powershell
 
@@ -196,7 +204,7 @@ Get-AzureRmResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGr
 
 ![Состояние подготовки к работе](media/tutorial-deploy-hsm-powershell/progress-status2.png)
 
-Теперь вы сможете просмотреть ресурсы с помощью [обозревателя ресурсов Azure](https://resources.azure.com/).   В обозревателе ресурсов разверните раздел "Подписки" слева, подписку для службы выделенных устройств HSM, раздел "Группы ресурсов", используемую группу ресурсов и выберите элемент "Ресурсы".
+Теперь вы можете просмотреть ресурсы с помощью [обозревателя ресурсов Azure](https://resources.azure.com/).   В обозревателе ресурсов разверните раздел "Подписки" слева, подписку для службы выделенных устройств HSM, раздел "Группы ресурсов", используемую группу ресурсов и выберите элемент "Ресурсы".
 
 ## <a name="testing-the-deployment"></a>Проверка развертывания
 
@@ -250,7 +258,7 @@ Get-AzureRmResource -Resourceid /subscriptions/$subId/resourceGroups/$resourceGr
 >[!NOTE]
 При возникновении проблем с конфигурацией устройств Gemalto обратитесь в [службу поддержки клиентов Gemalto](https://safenet.gemalto.com/technical-support/).
 
-Если вы закончили работу с ресурсами в этой группе ресурсов, их можно удалить с помощью следующей команды:
+Если вы закончили работу с ресурсами в этой группе ресурсов, их можно удалить с помощью приведенной ниже команды.
 
 ```powershell
 

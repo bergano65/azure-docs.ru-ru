@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/07/2018
 ms.author: daveba
-ms.openlocfilehash: 5d67d25912df5040665b3a04858be0f3807e8112
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: ee4b504cf26456baa7d10eab05305eee5e36c35a
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51623831"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53191909"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-sql"></a>Руководство. Использование назначаемого системой управляемого удостоверения на виртуальной машине Windows для доступа к SQL Azure
 
@@ -63,6 +63,8 @@ ms.locfileid: "51623831"
 
 - [Универсальная проверка подлинности для Базы данных SQL и хранилища данных SQL (поддержка SSMS для MFA)](/azure/sql-database/sql-database-ssms-mfa-authentication)
 - [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](/azure/sql-database/sql-database-aad-authentication-configure)
+
+Для базы данных SQL в AAD требуются уникальные отображаемые имена. Поэтому учетные записи AAD, например пользователей, групп и субъектов-служб (приложения), и имена виртуальных машин, которые включены для управляемого удостоверения, должны быть уникальными в AAD в соответствии с их отображаемым именами. База данных SQL проверяет отображаемое имя AAD при создании таких пользователей на языке T-SQL. Если имя не является уникальным, команда завершается ошибкой и отображается запрос на ввод уникального отображаемого имени AAD для этой учетной записи.
 
 1.  Запустите среду SQL Server Management Studio.
 2.  В диалоговом окне **Подключение к серверу** в поле **Имя сервера** введите имя сервера SQL.

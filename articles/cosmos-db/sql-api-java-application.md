@@ -10,12 +10,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 08/22/2017
 ms.author: ramkris
-ms.openlocfilehash: 01b1a770959b29969fbfd0b4575a45b9c53318b6
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: bdfe390314f2d2174a26e9b321022a3589a06467
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52867976"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53086545"
 ---
 # <a name="build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 
@@ -49,19 +49,19 @@ ms.locfileid: "52867976"
   [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
 * [Комплект разработчика Java (JDK 7 +)](https://aka.ms/azure-jdks).
-* [Интегрированная среда разработки Eclipse для разработчиков Java EE.](http://www.eclipse.org/downloads/packages/release/luna/sr1/eclipse-ide-java-ee-developers)
+* [Интегрированная среда разработки Eclipse для разработчиков Java EE.](https://www.eclipse.org/downloads/packages/release/luna/sr1/eclipse-ide-java-ee-developers)
 * [Открытый веб-сайт Azure со средой выполнения Java (например, Tomcat или Jetty).](../app-service/app-service-web-get-started-java.md)
 
-При первой установке этих средств воспользуйтесь пошаговым руководством по установке, представленным на сайте coreservlets.com в разделе «Быстрый запуск» статьи [Учебник по установке TomCat7 и его использованию с Eclipse](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html) .
+При первой установке этих средств воспользуйтесь пошаговыми инструкциями, представленными в разделе "Quick Start" (Быстрый запуск) статьи [Tutorial: Installing TomCat7 and Using it with Eclipse](https://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html) (Руководство по установке TomCat7 и его использованию с Eclipse) на сайте coreservlets.com.
 
-## <a id="CreateDB"></a>Шаг 1. Создание учетной записи Azure Cosmos DB
-Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись или вы используете эмулятор Azure Cosmos DB в этом руководстве, можно перейти к разделу [Шаг 2. Создание приложения Java JSP](#CreateJSP).
+## <a id="CreateDB"></a>Шаг 1. Создание учетной записи Azure Cosmos DB
+Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись или вы используете эмулятор Azure Cosmos DB для работы с этим руководством, можно перейти к разделу [Шаг 2. Создание приложения Java JSP](#CreateJSP).
 
 [!INCLUDE [create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
 [!INCLUDE [keys](../../includes/cosmos-db-keys.md)]
 
-## <a id="CreateJSP"></a>шагу 2 (создание приложения Java JSP)
+## <a id="CreateJSP"></a>Шаг 2. Создание приложения Java JSP
 Для создания приложения JSP:
 
 1. Во-первых, необходимо создать проект Java. В меню Eclipse выберите **File** (Файл), щелкните **New** (Создать), а затем выберите **Dynamic Web Project** (Динамический веб-проект). Если элемента **Dynamic Web Project** (Динамический веб-проект) нет в списке доступных проектов, откройте меню **File** (Файл), щелкните пункт **New** (Создать), а затем выберите **Project** (Проект), разверните список **Web** (Интернет), выберите **Dynamic Web Project** (Динамический веб-проект) и нажмите кнопку **Next** (Далее).
@@ -84,7 +84,7 @@ ms.locfileid: "52867976"
     ![Привет, мир! — учебник по разработке приложений Java](./media/sql-api-java-application/image12.png)
 
 ## <a id="InstallSDK"></a>Шаг 3. Установка пакета Java SDK для SQL
-Самый простой способ извлечь данные из пакета Java SDK для SQL и его зависимости — использовать [Apache Maven](http://maven.apache.org/).
+Самый простой способ извлечь данные из пакета Java SDK для SQL и его зависимости — использовать [Apache Maven](https://maven.apache.org/).
 
 Для этого необходимо преобразовать проект в проект Maven, выполнив следующие действия.
 
@@ -106,7 +106,7 @@ ms.locfileid: "52867976"
 6. Нажмите кнопку **ОК**, и Maven установит пакет Java SDK для SQL.
 7. Сохраните файл pom.xml.
 
-## <a id="UseService"></a>Шаг 4. Использование службы Azure Cosmos DB в приложении Java
+## <a id="UseService"></a>Шаг 4. Использование службы Azure Cosmos DB в приложении Java
 1. Сначала определим объект TodoItem в файле TodoItem.java.
    
         @Data
@@ -118,7 +118,7 @@ ms.locfileid: "52867976"
             private String name;
         }
    
-    В этом проекте вы используете [проект Lombok](http://projectlombok.org/) для создания конструктора, получателя, задания и построителя. Альтернационным способом можно написать следующий код вручную, либо сгенерировать его в IDE.
+    В этом проекте вы используете [проект Lombok](https://projectlombok.org/) для создания конструктора, получателя, задания и построителя. Альтернационным способом можно написать следующий код вручную, либо сгенерировать его в IDE.
 2. Чтобы вызвать службу Azure Cosmos DB, необходимо создать новый экземпляр **DocumentClient**. В общем, рекомендуется повторно использовать **DocumentClient** вместо создания нового клиента для каждого последующего запроса. Мы можем повторно использовать клиент, поместив его в **DocumentClientFactory**. В файле DocumentClientFactory.java необходимо вставить универсальный код ресурса (URI) и первичный ключ, сохраненные в буфер обмена на [шаге 1](#CreateDB). Замените [YOUR\_ENDPOINT\_HERE] на универсальный код ресурса, а [YOUR\_KEY\_HERE] — на первичный ключ.
    
         private static final String HOST = "[YOUR_ENDPOINT_HERE]";
@@ -340,7 +340,7 @@ ms.locfileid: "52867976"
             return true;
         }
 
-## <a id="Wire"></a>Шаг 5. Подключение другой части проекта по разработке приложений Java
+## <a id="Wire"></a>Шаг 5. Подключение другой части проекта по разработке приложений Java
 Теперь нам необходимо создать пользовательский интерфейс и привязать его к нашему объекту DAO.
 
 1. Во-первых, необходимо начать с построения контроллера для вызова DAO:
@@ -712,7 +712,7 @@ ms.locfileid: "52867976"
 5. Отлично! Теперь осталось протестировать приложение. Запустите приложение локально и добавьте несколько элементов Todo, заполнив имя элемента и категории и нажав кнопку **Add Task**(Добавить задачу).
 6. Как только элемент появится, вы можете проверить его завершение, отметив флажком и щелкнув команду **Update Tasks**(Обновить задачи).
 
-## <a id="Deploy"></a>Шаг 6. Развертывание приложения Java на веб-сайтах Azure
+## <a id="Deploy"></a>Шаг 6. Развертывание приложения Java на веб-сайтах Azure
 Веб-сайты Azure упрощают развертывание приложений Java с помощью простого экспорта приложения в виде WAR-файла либо с помощью загрузки через систему управления версиями (например, GIT) или через клиент FTP.
 
 1. Чтобы экспортировать приложение в виде WAR-файла, щелкните правой кнопкой мыши проект в **обозревателе проектов**, выберите **Export** (Экспорт) и щелкните **WAR File** (WAR-файл).
@@ -729,7 +729,7 @@ ms.locfileid: "52867976"
 ## <a id="GetProject"></a>Получение проекта из GitHub
 Все примеры в этом учебнике включены в проект [todo](https://github.com/Azure-Samples/documentdb-java-todo-app) на портале GitHub. Чтобы импортировать проект todo в Eclipse, убедитесь, что у вас есть программное обеспечение и ресурсы, перечисленные в разделе [Необходимые условия](#Prerequisites) , а затем выполните следующие действия.
 
-1. Установите [проект Lombok](http://projectlombok.org/). Lombok используется для формирования конструкторов, получателей и заданий в проекте. Дважды щелкните загруженный файл lombok.jar для установки или установите его из командной строки.
+1. Установите [проект Lombok](https://projectlombok.org/). Lombok используется для формирования конструкторов, получателей и заданий в проекте. Дважды щелкните загруженный файл lombok.jar для установки или установите его из командной строки.
 2. Если открыта рабочая область Eclipse, закройте ее и запустите снова для загрузки проекта Lombok.
 3. В Eclipse откройте меню **File** (Файл) и щелкните **Import** (Импорт).
 4. В окне **Import** (Импорт) щелкните **Git**, а затем выберите **Projects from Git** (Проекты из Git) и нажмите кнопку **Next** (Далее).

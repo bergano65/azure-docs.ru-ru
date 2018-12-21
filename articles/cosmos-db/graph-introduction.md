@@ -8,29 +8,29 @@ ms.component: cosmosdb-graph
 ms.topic: overview
 ms.date: 09/05/2018
 ms.author: lbosq
-ms.openlocfilehash: f2ca118e137104c6dddd2945b7b88b2f535621eb
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: e9e0d2f452a21f2da29568b953238318cb4477df
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52849239"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53077456"
 ---
-# <a name="introduction-to-azure-cosmos-db-gremlin-api"></a>Общие сведения об Azure Cosmos DB: API Gremlin
+# <a name="introduction-to-azure-cosmos-db-gremlin-api"></a>Знакомство с Azure Cosmos DB: API Gremlin
 
 [Azure Cosmos DB](introduction.md) — это глобально распределенная, многомодельная служба базы данных от Майкрософт, необходимая для работы с критически важными приложениями. Эта база данных является многомодельной и поддерживает модели данных документа, пары "ключ-значение", графы и столбчатые модели данных. API Gremlin для Azure Cosmos DB используется для хранения и обработки данных графов. API Gremlin поддерживает моделирование данных графов и предоставляет API-интерфейсы для их просмотра.
 
-В этой статье содержатся сведения об интерфейсе API Gremlin для Azure Cosmos DB и объясняется, как его использовать для хранения больших графов с миллиардами вершин и ребер. Вы также узнаете о выполнении запросов с миллисекундными задержками и простой разработке структуры и схемы графа. Для выполнения запросов к Azure Cosmos DB вы можете использовать язык обхода графов [Apache TinkerPop](http://tinkerpop.apache.org) или [Gremlin](http://tinkerpop.apache.org/docs/current/reference/#graph-traversal-steps).
+В этой статье содержатся сведения об интерфейсе API Gremlin для Azure Cosmos DB и объясняется, как его использовать для хранения больших графов с миллиардами вершин и ребер. Вы также узнаете о выполнении запросов с миллисекундными задержками и простой разработке структуры и схемы графа. Для выполнения запросов к Azure Cosmos DB вы можете использовать язык обхода графов [Apache TinkerPop](https://tinkerpop.apache.org) или [Gremlin](https://tinkerpop.apache.org/docs/current/reference/#graph-traversal-steps).
 
 ## <a name="what-is-a-graph-database"></a>Что такое база данных графов
 В реальном мире все данные связаны естественным образом. Традиционное моделирование данных ориентировано на сущности. Для многих приложений необходимо моделировать сущности и взаимосвязи между ними естественным способом.
 
-[Граф](http://mathworld.wolfram.com/Graph.html) — это структура, состоящая из [вершин](http://mathworld.wolfram.com/GraphVertex.html) и [ребер](http://mathworld.wolfram.com/GraphEdge.html). Вершины и ребра могут содержать произвольное число свойств. 
+[Граф](https://mathworld.wolfram.com/Graph.html) — это структура, состоящая из [вершин](http://mathworld.wolfram.com/GraphVertex.html) и [ребер](http://mathworld.wolfram.com/GraphEdge.html). Вершины и ребра могут содержать произвольное число свойств. 
 
 * **Вершины** обозначают дискретные объекты, например пользователя, место или событие. 
 
 * **Ребра** обозначают взаимосвязи между вершинами. Например, пользователь может знать другого пользователя, участвовать в событии или посетить мероприятие. 
 
-* **Свойства** выражают сведения о вершинах и ребрах. Например, свойствами являются имя и возраст для некоторой вершины. Ребро может иметь свойства отметки времени и (или) веса. Более формально эта модель называется [графом свойства](http://tinkerpop.apache.org/docs/current/reference/#intro). База данных Azure Cosmos DB поддерживает модель графа свойства.
+* **Свойства** выражают сведения о вершинах и ребрах. Например, свойствами являются имя и возраст для некоторой вершины. Ребро может иметь свойства отметки времени и (или) веса. Более формально эта модель называется [графом свойства](https://tinkerpop.apache.org/docs/current/reference/#intro). База данных Azure Cosmos DB поддерживает модель графа свойства.
 
 Например, ниже представлен пример графа, в котором показаны отношения между людьми, их интересами, мобильными устройствами и операционными системами.
 
@@ -80,18 +80,18 @@ ms.locfileid: "52849239"
 
 ## <a name="get-started"></a>Начало работы
 
-Для создания учетных записей базы данных Azure Cosmos DB с поддержкой API Gremlin и доступа к ним можно использовать интерфейс командной строки Azure (CLI), Azure PowerShell или же портал Azure. Создав учетную запись, вы можете получить доступ к базам данных графов в пределах этой учетной записи с помощью конечной точки службы API Gremlin `https://<youraccount>.gremlin.cosmosdb.azure.com`, которая обеспечивает внешний интерфейс WebSocket для языка Gremlin. Вы можете настроить инструменты, совместимые с TinkerPop, например [консоль Gremin](http://tinkerpop.apache.org/docs/current/reference/#gremlin-console), чтобы подключиться к этой конечной точке, а также создать приложения на Java, Node.js или любом другом клиентском драйвере Gremlin.
+Для создания учетных записей базы данных Azure Cosmos DB с поддержкой API Gremlin и доступа к ним можно использовать интерфейс командной строки Azure (CLI), Azure PowerShell или же портал Azure. Создав учетную запись, вы можете получить доступ к базам данных графов в пределах этой учетной записи с помощью конечной точки службы API Gremlin `https://<youraccount>.gremlin.cosmosdb.azure.com`, которая обеспечивает внешний интерфейс WebSocket для языка Gremlin. Вы можете настроить инструменты, совместимые с TinkerPop, например [консоль Gremin](https://tinkerpop.apache.org/docs/current/reference/#gremlin-console), чтобы подключиться к этой конечной точке, а также создать приложения на Java, Node.js или любом другом клиентском драйвере Gremlin.
 
 В таблице ниже приведены распространенные драйверы Gremlin, которые вы можете использовать для базы данных Azure Cosmos DB.
 
 | Загрузка | Документация | Приступая к работе | Поддерживаемая версия соединителя |
 | --- | --- | --- | --- |
-| [.NET](http://tinkerpop.apache.org/docs/3.3.1/reference/#gremlin-DotNet) | [Gremlin.NET в GitHub](https://github.com/apache/tinkerpop/tree/master/gremlin-dotnet) | [Создание приложения Graph с помощью .NET](create-graph-dotnet.md) | 3.4.0-RC2 |
-| [Java](https://mvnrepository.com/artifact/com.tinkerpop.gremlin/gremlin-java) | [Документация по Gremlin для Java](http://tinkerpop.apache.org/javadocs/current/full/) | [Создание приложения Graph с помощью Java](create-graph-java.md) | 3.2.0 и выше |
+| [.NET](https://tinkerpop.apache.org/docs/3.3.1/reference/#gremlin-DotNet) | [Gremlin.NET в GitHub](https://github.com/apache/tinkerpop/tree/master/gremlin-dotnet) | [Создание приложения Graph с помощью .NET](create-graph-dotnet.md) | 3.4.0-RC2 |
+| [Java](https://mvnrepository.com/artifact/com.tinkerpop.gremlin/gremlin-java) | [Документация по Gremlin для Java](https://tinkerpop.apache.org/javadocs/current/full/) | [Создание приложения Graph с помощью Java](create-graph-java.md) | 3.2.0 и выше |
 | [Node.js](https://www.npmjs.com/package/gremlin) | [Gremlin для JavaScript в GitHub](https://github.com/jbmusso/gremlin-javascript) | [Создание приложения Graph с помощью Node.js](create-graph-nodejs.md) | 2.6.0|
-| [Python](http://tinkerpop.apache.org/docs/3.3.1/reference/#gremlin-python) | [Gremlin-Python в GitHub](https://github.com/apache/tinkerpop/tree/master/gremlin-python) | [Создание приложения Graph с помощью Python](create-graph-python.md) | 3.2.7 |
+| [Python](https://tinkerpop.apache.org/docs/3.3.1/reference/#gremlin-python) | [Gremlin-Python в GitHub](https://github.com/apache/tinkerpop/tree/master/gremlin-python) | [Создание приложения Graph с помощью Python](create-graph-python.md) | 3.2.7 |
 | [PHP](https://packagist.org/packages/brightzone/gremlin-php) | [Gremlin-PHP в GitHub](https://github.com/PommeVerte/gremlin-php) | [Создание приложения Graph с помощью PHP](create-graph-php.md) | 3.1.0 |
-| [Консоль Gremlin](https://tinkerpop.apache.org/downloads.html) | [Документация по TinkerPop](http://tinkerpop.apache.org/docs/current/reference/#gremlin-console) |  [Создание приложения Graph с помощью консоли Gremlin](create-graph-gremlin-console.md) | 3.2.0 и выше |
+| [Консоль Gremlin](https://tinkerpop.apache.org/downloads.html) | [Документация по TinkerPop](https://tinkerpop.apache.org/docs/current/reference/#gremlin-console) |  [Создание приложения Graph с помощью консоли Gremlin](create-graph-gremlin-console.md) | 3.2.0 и выше |
 
 ## <a name="graph-database-design-considerations"></a>Вопросы проектирования базы данных графа
 

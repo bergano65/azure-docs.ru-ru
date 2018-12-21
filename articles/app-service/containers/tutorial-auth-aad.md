@@ -1,6 +1,6 @@
 ---
-title: Сквозная аутентификация и авторизация в Службе приложений Azure в Linux | Документация Майкрософт
-description: Сведения об использовании проверки подлинности и авторизации в службе приложений для защиты приложений службы приложений, включая доступ к удаленным API.
+title: Сквозная проверка подлинности и авторизация в Службе приложений Azure в Linux | Документация Майкрософт
+description: Узнайте, как использовать проверку подлинности и авторизацию в Службе приложений для защиты приложений Службы приложений в Linux, включая доступ к удаленным API.
 keywords: app service, azure app service, authN, authZ, secure, security, multi-tiered, azure active directory, azure ad
 services: app-service\web
 documentationcenter: dotnet
@@ -14,14 +14,15 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/26/2018
 ms.author: cephalin
-ms.openlocfilehash: a468c5d0f73cc182927f26ea9b7a85e2c5afb7c8
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.custom: seodec18
+ms.openlocfilehash: 65c503c96305cf23b97511dd06a56b5eb6fcc1be
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33766365"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53409422"
 ---
-# <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service-on-linux"></a>Руководство по сквозной аутентификации и авторизации в Службе приложений Azure в Linux
+# <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service-on-linux"></a>Руководство. Сквозная аутентификация и авторизация в Службе приложений Azure в Linux
 
 [Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. Кроме того, служба приложений имеет встроенную поддержку [проверки подлинности и авторизации пользователя](../app-service-authentication-overview.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json). В этом руководстве показано, как защитить ваши приложения с помощью проверки подлинности и авторизации в службе приложений. В качестве примера в нем используется приложение ASP.NET Core с интерфейсом Angular.js. При проверке подлинности и авторизации в службе приложений поддерживаются все языковые среды выполнения. Вы узнаете, как применить их к предпочитаемому языку, следуя руководству.
 
@@ -50,7 +51,7 @@ ms.locfileid: "33766365"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством:
 
@@ -237,11 +238,11 @@ git push frontend master
 
 На этом шаге включите проверку подлинности и авторизацию для двух приложений. Кроме того, настройте создание маркера доступа в интерфейсном приложении, который вы можете использовать для осуществления прошедших проверку подлинности вызовов серверного приложения.
 
-Azure Active Directory используется в качестве поставщика удостоверений. Дополнительные сведения см. в статье [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](../app-service-mobile-how-to-configure-active-directory-authentication.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
+Azure Active Directory используется в качестве поставщика удостоверений. Дополнительные сведения см. в статье [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](../configure-authentication-provider-aad.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
 
 ### <a name="enable-authentication-and-authorization-for-back-end-app"></a>Включение проверки подлинности и авторизации в серверном приложении
 
-На [портале Azure](https://portal.azure.com) откройте страницу управления вашим серверным приложением, щелкнув в меню слева **Группы ресурсов** > **myAuthResourceGroup** > _\<back\_end\_app\_name>_.
+На [портале Azure](https://portal.azure.com) откройте страницу управления вашим серверным приложением. Для этого последовательно выберите в меню слева **Группы ресурсов** > **myAuthResourceGroup** > _\<имя\_для\_серверного\_приложения>_.
 
 ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/portal-navigate-back-end.png)
 

@@ -1,6 +1,6 @@
 ---
-title: Пример скрипта Azure CLI — экспорт и копирование базового VHD управляемых дисков в учетную запись хранения | Документация Майкрософт
-description: Пример скрипта Azure CLI — экспорт и копирование базового VHD управляемых дисков в учетную запись хранения
+title: Пример для Azure CLI. Копирование управляемых дисков в учетную запись хранения
+description: Пример для Azure CLI. Экспорт или копирование управляемых дисков в учетную запись хранения
 services: virtual-machines-linux
 documentationcenter: storage
 author: ramankumarlive
@@ -15,15 +15,15 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/17/2018
 ms.author: ramankum
-ms.custom: mvc
-ms.openlocfilehash: c5f06a8c8fb707a2bf0451f8e9ed391ac0c5bad9
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.custom: mvc,seodec18
+ms.openlocfilehash: 4ee8b9dbb22e4530beb81bea9735867ecf21a1d4
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48045260"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53183036"
 ---
-# <a name="exportcopy-the-underlying-vhd-of-a-managed-disk-to-a-storage-account-with-cli"></a>Экспорт и копирование базового VHD управляемого диска в учетную запись хранения с помощью CLI
+# <a name="exportcopy-a-managed-disk-to-a-storage-account-using-the-azure-cli"></a>Экспорт или копирование управляемых дисков в учетную запись хранения
 
 Этот скрипт позволяет экспортировать базовый VHD управляемого диска в учетную запись хранения в том же или другом регионе. Сначала для управляемого диска создается URI SAS. Затем с его помощью VHD копируется в учетную запись хранения. Этот скрипт также позволяет копировать управляемые диски в различных регионах. 
 

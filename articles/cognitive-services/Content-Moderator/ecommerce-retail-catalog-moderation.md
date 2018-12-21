@@ -10,12 +10,12 @@ ms.component: content-moderator
 ms.topic: tutorial
 ms.date: 09/25/2017
 ms.author: sajagtap
-ms.openlocfilehash: 0bd61c3f1a4f660076be4e87bb5443302e5dc013
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: 285590435a7e3c31d45d5d154d4e430ed3252838
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49364000"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53256236"
 ---
 # <a name="tutorial-ecommerce-catalog-moderation-with-machine-learning"></a>Руководство: модерация каталога электронной коммерции с помощью машинного обучения
 
@@ -66,7 +66,7 @@ ms.locfileid: "49364000"
 > [!NOTE]
 > Данное руководство предназначено для использования ключей подписки в регионах, доступных в следующих конечных точках. Убедитесь, что ваши ключи API соответствуют универсальным кодам ресурса (URI) регионов, в противном случае эти ключи не будут работать с приведенными ниже конечными точками.
 
-        // Your API keys
+         // Your API keys
         public const string ContentModeratorKey = "XXXXXXXXXXXXXXXXXXXX";
         public const string ComputerVisionKey = "XXXXXXXXXXXXXXXXXXXX";
         public const string CustomVisionKey = "XXXXXXXXXXXXXXXXXXXX";
@@ -128,11 +128,11 @@ ms.locfileid: "49364000"
 4. Чтобы войти в систему, выберите из списка доступную учетную запись в Интернете.
 5. Запишите ключи API, которые отображаются на странице службы.
     
-    ![Ключи API компьютерного зрения](images/tutorial-computer-vision-keys.PNG)
+   ![Ключи API компьютерного зрения](images/tutorial-computer-vision-keys.PNG)
     
 6. Обратитесь к исходному коду проекта, чтобы ознакомиться с функцией, которая проверяет изображения с помощью API компьютерного зрения.
 
-        public static bool EvaluateComputerVisionTags(string ImageUrl, string ComputerVisionUri, string ComputerVisionKey, ref KeyValuePair[] ReviewTags)
+         public static bool EvaluateComputerVisionTags(string ImageUrl, string ComputerVisionUri, string ComputerVisionKey, ref KeyValuePair[] ReviewTags)
         {
             var File = ImageUrl;
             string Body = $"{{\"URL\":\"{File}\"}}";
@@ -149,7 +149,7 @@ ms.locfileid: "49364000"
                 ComputerVisionPrediction CVObject = JsonConvert.DeserializeObject<ComputerVisionPrediction>(Response.Content.ReadAsStringAsync().Result);
 
                 if ((CVObject.categories[0].detail != null) && (CVObject.categories[0].detail.celebrities.Count() > 0))
-                {
+                {                 
                     ReviewTags[2].Value = "true";
                 }
             }
@@ -179,7 +179,7 @@ ms.locfileid: "49364000"
                 SaveCustomVisionTags(response.Content.ReadAsStringAsync().Result, ref ReviewTags);
             }
             return response.IsSuccessStatusCode;
-        }
+        }       
  
 ## <a name="reviews-for-human-in-the-loop"></a>Проверки с участием человека
 
@@ -207,10 +207,7 @@ ms.locfileid: "49364000"
 
 1. В этом руководстве предполагается, что каталог C:\Test содержит текстовый файл со списком URL-адресов изображений.
 2. Следующий код проверяет существование этого файла и считывает все URL-адреса в память.
-
-            // Проверка каталога test на наличие текстового файла со списком URL-адресов изображений для проверки
-            var topdir = @"C:\test\";
-            var Urlsfile = topdir + "Urls.txt";
+            // Проверка каталога test на наличие текстового файла со списком URL-адресов изображений для проверки var topdir = @"C:\test\"; var Urlsfile = topdir + "Urls.txt";
 
             if (!Directory.Exists(topdir))
                 return;
@@ -227,10 +224,7 @@ ms.locfileid: "49364000"
 
 1. Эта функция верхнего уровня обходит все URL-адреса изображений в текстовом файле, упомянутом ранее.
 2. Она проверяет их с помощью каждого API, и если оценка достоверности соответствия удовлетворяет нашим критериям, функция создает проверку для модераторов-пользователей.
-
-            // для каждого URL-адреса изображения в файле...
-            foreach (var Url in Urls) {
-                // Инициализация нового массива тегов проверки ReviewTags = new KeyValuePair[MAXTAGSCOUNT];
+             // для каждого URL-адреса изображения в файле... foreach (var Url in Urls) { // Инициализация нового массива тегов проверки ReviewTags = new KeyValuePair[MAXTAGSCOUNT];
 
                 // Evaluate for potential adult and racy content with Content Moderator API
                 EvaluateAdultRacy(Url, ref ReviewTags);
@@ -255,4 +249,4 @@ ms.locfileid: "49364000"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Выполните сборку решений из руководства и дополните его, воспользовавшись [исходными файлами проекта](https://github.com/MicrosoftContentModerator/samples-eCommerceCatalogModeration) на сайте GitHub.
+Выполните сборку решений из руководства и дополните его, воспользовавшись [исходными файлами проекта](https://github.com/MicrosoftContentModerator/samples-eCommerceCatalogModeration) на веб-сайте GitHub.

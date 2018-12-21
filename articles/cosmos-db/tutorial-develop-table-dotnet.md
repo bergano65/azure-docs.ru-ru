@@ -1,23 +1,23 @@
 ---
-title: Разработка с помощью API таблицы базы данных Azure Cosmos DB на языке .NET
-description: Сведения о разработке с помощью API таблицы базы данных Azure Cosmos DB на языке .NET.
-services: cosmos-db
+title: Разработка с помощью API таблиц и пакета SDK для .NET
+titleSuffix: Azure Cosmos DB
+description: Сведения о разработке с помощью API таблиц в Azure Cosmos DB с использованием пакета SDK для .NET
 author: SnehaGunda
 ms.service: cosmos-db
 ms.component: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 12/18/2017
+ms.date: 12/07/2018
 ms.author: sngun
-ms.custom: mvc
-ms.openlocfilehash: 02c4ead0f41463a70cc7123427193f835d9cca94
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.custom: seodec18
+ms.openlocfilehash: f10cb17f0300b6bd21d17b1e2ff204d57e4a7988
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52877741"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53251187"
 ---
-# <a name="azure-cosmos-db-develop-with-the-table-api-in-net"></a>Разработка с помощью API таблицы базы данных Azure Cosmos DB на языке .NET
+# <a name="develop-with-azure-cosmos-dbs-table-api-using-net-sdk"></a>Разработка с помощью API таблиц Azure Cosmos DB с использованием пакета SDK для .NET
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества возможностей глобального распределения и горизонтального масштабирования базы данных Azure Cosmos DB.
 
@@ -97,7 +97,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Так вы обеспечите обмен данными между приложением и размещенной базой данных. 
 
-1. На [портале Azure](http://portal.azure.com/) щелкните **Строка подключения**. 
+1. На [портале Azure](https://portal.azure.com/) щелкните **Строка подключения**. 
 
     Используйте кнопки копирования в правой части экрана, чтобы скопировать основную строку подключения.
 
@@ -180,7 +180,8 @@ CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
 Инициализация клиента осуществляется на основе значений конфигурации `TableConnectionMode`, `TableConnectionProtocol`, `TableConsistencyLevel` и `TablePreferredLocations`, если они указаны в параметрах приложения.
 
 ## <a name="create-a-table"></a>Создание таблицы
-Затем создайте таблицу, используя `CloudTable`. Таблицы в базе данных Azure Cosmos DB можно масштабировать независимо друг от друга в контексте хранилища и пропускной способности. Служба выполняет секционирование автоматически. База данных Azure Cosmos DB поддерживает таблицы с фиксированным и неограниченным размером. Дополнительные сведения см. в статье [Секционирование и масштабирование в базе данных Azure Cosmos DB](partition-data.md). 
+
+Затем создайте таблицу, используя `CloudTable`. Таблицы в базе данных Azure Cosmos DB можно масштабировать независимо друг от друга в контексте хранилища и пропускной способности. Служба выполняет секционирование автоматически. 
 
 ```csharp
 CloudTable table = tableClient.GetTableReference("people");

@@ -1,5 +1,5 @@
 ---
-title: Развертывание службы "Машинное обучение Azure" для Azure IoT Edge | Документация Майкрософт
+title: Руководство по развертыванию службы "Машинное обучение Azure" на устройстве — Azure IoT Edge | Документация Майкрософт
 description: В этом руководстве вы развернете службу "Машинное обучение Azure" в качестве модуля на пограничном устройстве.
 author: kgremban
 manager: philmea
@@ -8,15 +8,15 @@ ms.date: 11/15/2018
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.custom: mvc
-ms.openlocfilehash: c98dc9019421133b83ab9aec29f725852315f6ba
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.custom: mvc, seodec18
+ms.openlocfilehash: db8318e94b646d57c00bc2e6958ba9e7f46ec7af
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51977219"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53344036"
 ---
-# <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство: развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
+# <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство. Развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
 Вы можете использовать модули IoT Edge для развертывания кода, который реализует вашу бизнес-логику непосредственно на устройствах IoT Edge. В этом руководстве рассматривается развертывание модуля машинного обучения Azure, который прогнозирует, когда устройство выходит из строя на основе данных моделируемой машинной температуры. Дополнительные сведения о Машинном обучении Azure в IoT Edge см. в [документации по Машинному обучению Azure](../machine-learning/service/how-to-deploy-to-iot.md).
 
@@ -115,7 +115,7 @@ export IOTEDGE_HOST="http://172.17.0.1:15580"
 
 1. В разделе **Параметры реестра** добавьте учетные данные, которые скопированы из реестра контейнеров Azure. 
 
-   ![Добавьте учетные данные реестра](./media/tutorial-deploy-machine-learning/registry-settings.png)
+   ![Добавление учетных данных реестра в манифест](./media/tutorial-deploy-machine-learning/registry-settings.png)
 
 1. Если модуль tempSensor на вашем устройстве IoT Edge уже развернут, эти данные могут быть заполнены автоматически. Если его еще нет в списке модулей, добавьте его.
 
@@ -174,7 +174,7 @@ export IOTEDGE_HOST="http://172.17.0.1:15580"
 
 ### <a name="view-data-arriving-at-your-iot-hub"></a>Представление данных, поступающих в центр IoT
 
-Можно просматривать сообщения с устройства в облако, которые получает Центр Интернета вещей, используя [расширение Azure IoT Toolkit для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit).
+Можно просматривать сообщения, которые получает Центр Интернета вещей с устройства в облако, используя [расширение "Набор средств для Центра Интернета вещей Azure" для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) (прежнее название — "Набор средств для Интернета вещей Azure").
 
 Следующие шаги показывают, как настроить Visual Studio Code для контроля за сообщениями с устройства в облако, поступающие в центр IoT. 
 
@@ -182,7 +182,7 @@ export IOTEDGE_HOST="http://172.17.0.1:15580"
 
 2. Выберите меню **...**, затем — **Set IoT Hub Connection String** (Задать строку подключения Центра Интернета вещей).
 
-   ![Дополнительное меню "Устройства Центра Интернета вещей"](./media/tutorial-deploy-machine-learning/set-connection.png)
+   ![Установка строки подключения Центра Интернета вещей](./media/tutorial-deploy-machine-learning/set-connection.png)
 
 3. В текстовое поле, которое откроется в верхней части страницы, введите строку подключения для вашего Центра Интернета вещей — iothubowner. Устройство IoT Edge должно появиться в списке устройств Центра Интернета вещей.
 

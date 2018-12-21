@@ -13,12 +13,12 @@ ms.custom: mvc
 ms.date: 04/01/2018
 ms.workload: data-services
 ms.author: rodrigoa
-ms.openlocfilehash: 56ac08593d29a9003f5509f2be52f50fa250bd75
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: e33b90d6f70bb1b765f5170ac37880d31e87f3a5
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47431601"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53088883"
 ---
 # <a name="tutorial-azure-stream-analytics-javascript-user-defined-functions"></a>Руководство. Определяемые пользователем функции JavaScript в Azure Stream Analytics
  
@@ -58,7 +58,7 @@ Azure Stream Analytics поддерживает определяемые пол�
 4.  В колонке **Новая функция** для параметра **Тип функции** выберите значение **JavaScript**. В редакторе отобразится стандартный шаблон функции.
 5.  В качестве значения для параметра **UDF alias**, введите **hex2Int**, затем измените реализацию функции, как показано ниже.
 
-    ```
+    ```javascript
     // Convert Hex value to integer.
     function hex2Int(hexValue) {
         return parseInt(hexValue, 16);
@@ -73,7 +73,7 @@ Azure Stream Analytics поддерживает определяемые пол�
 1. В редакторе запросов для параметра **Топология задания** выберите значение **Запрос**.
 2.  Откройте режим редактирования запроса и добавьте вызов определяемой пользователем функции, как показано здесь:
 
-    ```
+    ```SQL
     SELECT
         time,
         UDF.hex2Int(offset) AS IntOffset
@@ -129,14 +129,14 @@ NULL, не определено | NULL
 
 **Определение определяемой пользователем функции JavaScript:**
 
-```
+```javascript
 function main(x) {
 return JSON.stringify(x);
 }
 ```
 
 **Пример запроса**
-```
+```SQL
 SELECT
     DataString,
     DataValue,

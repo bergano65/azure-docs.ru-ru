@@ -1,5 +1,5 @@
 ---
-title: Создание пространства имен Центров событий Azure и включение функции "Сбор" с помощью шаблона | Документация Майкрософт
+title: Создание концентратора событий с активированной функции "Сбор"в Центрах событий Azure | Документация Майкрософт
 description: Создание пространства имен Центров событий Azure с одним концентратором событий и включение функции "Сбор" с помощью шаблона Azure Resource Manager.
 services: event-hubs
 documentationcenter: .net
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 08/16/2018
 ms.author: shvija
-ms.openlocfilehash: c8341b40ba7616add1415178a2f0775fbbc66ec1
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 36764b661d88f034b306251f76d47d72298308dc
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41919827"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53140002"
 ---
 # <a name="create-a-namespace-with-event-hub-and-enable-capture-using-a-template"></a>Создание пространства имен с концентратором событий и включение записи с помощью шаблона
 

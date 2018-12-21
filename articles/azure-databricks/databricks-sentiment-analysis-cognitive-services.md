@@ -1,23 +1,22 @@
 ---
-title: Руководство по анализу тональности данных потоковой передачи с использованием Azure Databricks
+title: Руководство по оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks
 description: Сведения об анализе тональности данных потоковой передачи практически в реальном времени с использованием Azure Databricks с Центрами событий и API Cognitive Services.
 services: azure-databricks
 author: lenadroid
+ms.author: alehall
 ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
-ms.workload: Active
-ms.date: 10/23/2018
-ms.author: alehall
-ms.openlocfilehash: cf396dea6ee467267ea73379ea04026fc8cc53b2
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.date: 12/07/2018
+ms.openlocfilehash: 449d721683bd59646506db57d78b9535aa7d614d
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636588"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100194"
 ---
-# <a name="tutorial-sentiment-analysis-on-streaming-data-using-azure-databricks"></a>Руководство по анализу тональности данных потоковой передачи с использованием Azure Databricks
+# <a name="tutorial-sentiment-analysis-on-streaming-data-using-azure-databricks"></a>Руководство по оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks
 
 Из этого руководства вы узнаете, как выполнять анализ тональности при потоковой передаче данных практически в реальном времени с использованием Azure Databricks. Вам следует настроить прием данных с использованием Центров событий Azure. Затем вы получите сообщения из Центров событий в Databricks Azure с помощью соединителя Центров событий Spark. И наконец, вы выполните анализ тональности данных потоковой передачи с использованием API Microsoft Cognitive Service.
 
@@ -100,7 +99,7 @@ ms.locfileid: "51636588"
 
     * Введите имя кластера.
     * В рамках этой статьи создайте кластер со средой выполнения **4.0 (бета-версия)**.
-    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
+    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через ___ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
     Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
@@ -151,7 +150,7 @@ ms.locfileid: "51636588"
 
 ## <a name="get-a-cognitive-services-access-key"></a>Получение ключа доступа Cognitive Services
 
-В этом руководстве для анализа тональности потока твитов практически в реальном времени используются [API анализа текста Microsoft Cognitive Services](../cognitive-services/text-analytics/overview.md). Прежде чем использовать API, необходимо создать учетную запись Microsoft Cognitive Services в Azure и получить ключ доступа к API анализа текста.
+В рамках этого руководства для анализа тональности потока твитов практически в реальном времени используются [API анализа текста Microsoft Cognitive Services](../cognitive-services/text-analytics/overview.md). Прежде чем использовать API, необходимо создать учетную запись Microsoft Cognitive Services в Azure и получить ключ доступа к API анализа текста.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 
@@ -169,11 +168,11 @@ ms.locfileid: "51636588"
     - Выберите подписку Azure, в рамках которой создается учетная запись.
     - Выберите расположение Azure.
     - Выберите ценовую категорию для службы. Дополнительные сведения о ценах на Cognitive Services см. на[странице расценок](https://azure.microsoft.com/pricing/details/cognitive-services/).
-    - Укажите, следует ли создать новую группу ресурсов или использовать имеющуюся.
+    - Укажите, следует ли создать новую группу ресурсов или использовать существующую.
 
     Нажмите кнопку **Создать**.
 
-5. После создания учетной записи выберите на вкладке **Обзор** раздел **Show access keys** (Показать ключи доступа).
+5. Создав учетную запись, выберите на вкладке **Обзор** раздел **Show access keys** (Показать ключи доступа).
 
     ![Показать ключи доступа](./media/databricks-sentiment-analysis-cognitive-services/cognitive-services-get-access-keys.png "Show access keys")
 
@@ -204,9 +203,9 @@ ms.locfileid: "51636588"
 
 3. Повторите эти шаги для создания записной книжки **AnalyzeTweetsFromEventHub**.
 
-## <a name="send-tweets-to-event-hubs"></a>Отправка твитов в Центры событий
+## <a name="send-tweets-to-event-hubs"></a>Отправка твитов в Центры событий.
 
-В записной книжке **SendTweetsToEventHub** вставьте следующий код и замените заполнители значениями вашего пространства имен Центров событий и созданного ранее приложения Twitter. Эта записная книжка выполняет потоковую передачу твитов с ключевым словом Azure в Центры событий в режиме реального времени.
+В записной книжке **SendTweetsToEventHub** вставьте приведенный ниже код и замените заполнители значениями вашего пространства имен Центров событий и созданного ранее приложения Twitter. Эта записная книжка выполняет потоковую передачу твитов с ключевым словом Azure в Центры событий в режиме реального времени.
 
 ```scala
 import java.util._
@@ -313,7 +312,7 @@ val customEventhubParameters =
   EventHubsConf(connectionString)
   .setMaxEventsPerTrigger(5)
 
-val incomingStream = spark.readStream.format("eventhubs").option(customEventhubParameters.toMap).load()
+val incomingStream = spark.readStream.format("eventhubs").options(customEventhubParameters.toMap).load()
 
 incomingStream.printSchema
 
@@ -571,7 +570,7 @@ streamingDataFrame.writeStream.outputMode("append").format("console").option("tr
 
 Чем ближе значение в колонке**Тональность** к **1**, тем большее удовлетворение от работы в Azure. Чем ближе значение к **0**,тем больше проблем испытывают пользователи при работе с Microsoft Azure.
 
-Вот и все! С помощью Azure Databricks вы успешно выполнили потоковую передачу данных, использовали данные потока в соединителе Центров событий Azure и выполнили анализ тональности данных потоковой передачи практически в реальном времени.
+Вот и все! С помощью Azure Databricks вы успешно выполнили потоковую передачу данных в Центры событий Azure, использовали данные потока в соединителе Центров событий Azure и выполнили анализ тональности потоковых данных практически в реальном времени.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -579,7 +578,7 @@ streamingDataFrame.writeStream.outputMode("append").format("console").option("tr
 
 ![Завершение работы кластера Databricks](./media/databricks-sentiment-analysis-cognitive-services/terminate-databricks-cluster.png "Stop a Databricks cluster")
 
-Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). В этом случае работа кластера должна завершиться автоматически, если кластер был неактивным в течение определенного времени.
+Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после __ мин бездействия). В этом случае работа кластера должна завершиться автоматически, если кластер был неактивным в течение определенного времени.
 
 ## <a name="next-steps"></a>Дополнительная информация
 В этом руководстве вы узнали, как с помощью Azure Databricks выполнить потоковую передачу данных в Центры событий Azure с последующим чтением данных потоковой передачи из Центров событий в реальном времени. Вы научились выполнять следующие задачи:

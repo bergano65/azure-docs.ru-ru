@@ -1,7 +1,7 @@
 ---
-title: Что такое API Bing для поиска новостей?
+title: Общие сведения об API Bing для поиска новостей
 titlesuffix: Azure Cognitive Services
-description: В этой статье показано, как с помощью API Bing для поиска новостей искать новости в Интернете.
+description: Узнайте, как использовать API Bing для поиска актуальных новостей в Интернете, включая заголовки в нескольких категориях и популярные темы.
 services: cognitive-services
 author: swhite-msft
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: bing-news-search
 ms.topic: overview
 ms.date: 06/21/2016
 ms.author: scottwhi
-ms.openlocfilehash: 7a5df20358198e7ccb44ccc60be3ab7716f71ba6
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.custom: seodec2018
+ms.openlocfilehash: 17383d38b1401149003ad9d1794b3e69284f9033
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51227864"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53253098"
 ---
-# <a name="what-is-bing-news-search"></a>Что такое API Bing для поиска новостей?
+# <a name="what-is-the-bing-news-search-api"></a>Общие сведения об API Bing для поиска новостей
 
 API Bing для поиска новостей работает по похожему (но не аналогичному) принципу, по которому работает служба [Новости Bing](https://www.bing.com/news). API Bing для поиска новостей позволяет отправлять поисковый запрос в Bing и получать список соответствующих новостных статей.
 

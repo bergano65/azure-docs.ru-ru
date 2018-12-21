@@ -7,15 +7,15 @@ ms.service: container-registry
 ms.topic: quickstart
 ms.date: 11/06/2018
 ms.author: danlep
-ms.custom: mvc
-ms.openlocfilehash: 1e039c465bf37e0ee5ca1db5837798680e27463d
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.custom: seodec18, mvc
+ms.openlocfilehash: 865c53fdda60f6a0384157ec68042b4b8b243a7a
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51278673"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53255369"
 ---
-# <a name="quickstart-create-a-container-registry-using-the-azure-portal"></a>Краткое руководство. Создание реестра контейнеров на портале Azure
+# <a name="quickstart-create-a-private-container-registry-using-the-azure-portal"></a>Краткое руководство. Создание частного реестра контейнеров с помощью портала Azure
 
 Реестр контейнеров Azure — это частный реестр Docker в Azure, где можно хранить частные образы контейнеров Docker и управлять ими. Из этого краткого руководства вы узнаете, как создать реестр контейнера на портале Azure, отправить образ контейнера в реестр и, наконец, развернуть контейнер из реестра в службе "Экземпляры контейнеров Azure" (ACI).
 

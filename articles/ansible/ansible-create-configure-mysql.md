@@ -1,5 +1,5 @@
 ---
-title: Создание и настройка Базы данных Azure для сервера MySQL с помощью Ansible (предварительная версия)
+title: Создание и настройка Базы данных Azure для MySQL с помощью Ansible
 description: Узнайте, как с помощью Ansible создать и настроить Базу данных Azure для сервера MySQL
 ms.service: ansible
 keywords: ansible, azure, devops, bash, playbook, mysql, database
@@ -8,14 +8,14 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 09/23/2018
-ms.openlocfilehash: b549aeaf24bd774245ee1f2ff6924ac1f6dbeee3
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 6fd08e21fe0573d48ae7752eb410845062932b5e
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49427902"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53255947"
 ---
-# <a name="create-and-configure-an-azure-database-for-mysql-server-by-using-ansible-preview"></a>Создание и настройка Базы данных Azure для сервера MySQL с помощью Ansible (предварительная версия)
+# <a name="create-and-configure-an-azure-database-for-mysql-server-by-using-ansible"></a>Создание и настройка Базы данных Azure для MySQL с помощью Ansible
 [База данных Azure для MySQL](https://docs.microsoft.com/azure/mysql/) — это управляемая служба, которая позволяет запускать, администрировать и масштабировать высокодоступные базы данных MySQL в облаке. Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. 
 
 В этом кратком руководстве описано, как с помощью Ansible создать Базу данных Azure для сервера MySQL и настроить ее правила брандмауэра. С помощью портала Azure эти задачи можно выполнить за пять минут.
@@ -25,7 +25,7 @@ ms.locfileid: "49427902"
 - [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
 > [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. Чтобы установить версию RC Ansible 2.7, выполните команду `sudo pip install ansible[azure]==2.7.0rc2`. После выпуска Ansible 2.7 не нужно указывать здесь версию, так как версия по умолчанию будет 2.7.
+> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. 
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими.  

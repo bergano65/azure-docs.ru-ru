@@ -14,14 +14,14 @@ ms.topic: get-started-article
 ms.date: 12/03/2018
 ms.author: mabrigg
 ms.reviwer: xiaofmao
-ms.openlocfilehash: efdc1cda9b52b6b79a3ccdcfd16542f7cb4b891a
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 1d1811549978d78a8dddad8e89895fdf605ed02b
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52838554"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53341904"
 ---
-# <a name="azure-stack-storage-differences-and-considerations"></a>Хранилище Azure Stack. Отличия и рекомендации
+# <a name="azure-stack-storage-differences-and-considerations"></a>Объем хранилища для Azure Stack. Отличия и рекомендации
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -29,7 +29,7 @@ ms.locfileid: "52838554"
 
 В этой статье перечислены известные различия между хранилищем Azure Stack и службой хранилища Azure. Кроме того, статья содержит рекомендации по развертыванию Azure Stack. См. дополнительные сведения о [ключевых различиях](azure-stack-considerations.md) между глобальной средой Azure и Azure Stack.
 
-## <a name="cheat-sheet-storage-differences"></a>Памятка. Различия хранилищ
+## <a name="cheat-sheet-storage-differences"></a>Краткий справочник. Различия хранилищ
 
 | Функция | Azure (глобальная) | Azure Stack |
 | --- | --- | --- |
@@ -41,6 +41,7 @@ ms.locfileid: "52838554"
 |Управляемые диски|Поддерживается уровень "Премиум" и "Стандартный"|Поддерживается при использовании версии 1808 или более поздней версии.
 |Имя большого двоичного объекта|1024 символов (2048 байт)|880 символов (1760 байт)
 |Максимальный размер блочного BLOB-объекта|4,75 ТБ (100 МБ х 50 000 блоков)|4,75 ТБ (100 МБ x 50 000 блоков) для обновления 1802 или более новой версии. 50 000 x 4 МБ (примерно 195 ГБ) для предыдущих версий.
+|Копирование моментального снимка страничного BLOB-объекта|Поддерживается архивация неуправляемых дисков виртуальных машин Azure, подключенных к запущенной виртуальной машине|Пока не поддерживается.
 |Копирование добавочных моментальных снимков страничного BLOB-объекта|Поддерживаются страничные BLOB-объекты Azure уровня "Премиум" и "Стандартный"|Пока не поддерживается.
 |Уровни хранилища BLOB-объектов|"Горячий", "холодный" и архивный уровни хранилища.|Пока не поддерживается.
 Обратимое удаление для хранилища BLOB-объектов|Предварительный просмотр|Пока не поддерживается.
@@ -62,21 +63,21 @@ API-интерфейсы служб хранилища Azure.
 
 Обновление 1802 или более новые версии:
 
- - [2017-04-17](https://docs.microsoft.com/rest/api/storageservices/version-2017-04-17);
- - [2016-05-31](https://docs.microsoft.com/rest/api/storageservices/version-2016-05-31);
- - [2015-12-11](https://docs.microsoft.com/rest/api/storageservices/version-2015-12-11);
- - [2015-07-08](https://docs.microsoft.com/rest/api/storageservices/version-2015-07-08);
- - [2015-04-05](https://docs.microsoft.com/rest/api/storageservices/version-2015-04-05).
+- [2017-04-17](https://docs.microsoft.com/rest/api/storageservices/version-2017-04-17);
+- [2016-05-31](https://docs.microsoft.com/rest/api/storageservices/version-2016-05-31);
+- [2015-12-11](https://docs.microsoft.com/rest/api/storageservices/version-2015-12-11);
+- [2015-07-08](https://docs.microsoft.com/rest/api/storageservices/version-2015-07-08);
+- [2015-04-05](https://docs.microsoft.com/rest/api/storageservices/version-2015-04-05).
 
 Предыдущие версии:
 
- - [2015-04-05](https://docs.microsoft.com/rest/api/storageservices/version-2015-04-05).
+- [2015-04-05](https://docs.microsoft.com/rest/api/storageservices/version-2015-04-05).
 
 API управления службами хранилища Azure:
 
- - [2015-05-01-preview](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
- - [2015-06-15](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
- - [2016-01-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN).
+- [2015-05-01-preview](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
+- [2015-06-15](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN);
+- [2016-01-01](https://docs.microsoft.com/rest/api/storagerp/?redirectedfrom=MSDN).
 
 ## <a name="sdk-versions"></a>Версии пакета SDK
 

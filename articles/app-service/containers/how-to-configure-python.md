@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 10/09/2018
 ms.author: astay;cephalin;kraigb
-ms.custom: mvc
-ms.openlocfilehash: 9474b2d64c97b6e6d0fc06c3c448fa6e0515e70c
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.custom: seodec18
+ms.openlocfilehash: 1d9b0e356f0f65be44a533fe098282084b900d89
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633654"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53249640"
 ---
 # <a name="configure-your-python-app-for-the-azure-app-service-on-linux"></a>Настройка приложений Python для Службы приложений Azure под управлением Linux
 
@@ -28,7 +28,7 @@ ms.locfileid: "51633654"
 
 ## <a name="set-python-version"></a>Выбор версии Python
 
-Доступны два базовых образа: Python 3.6 и Python 3.7. Вы можете создать приложение с помощью нужного образа на базе Python. Например, чтобы создать приложение с помощью Python 3.7, выполните в Cloud Shell следующую команду:
+Доступны два базовых образа — Python 3.6 и Python 3.7. Вы можете создать приложение с помощью нужного образа на базе Python. Например, чтобы создать приложение с помощью Python 3.7, выполните в Cloud Shell следующую команду:
 
 ```azurecli-interactive
 az webapp create --resource-group <group_name> --plan <plan_name> --name <app_name> --runtime "PYTHON|3.7"
@@ -48,7 +48,7 @@ az webapp config set --resource-group <group_name> --name <app_name> --linux-fx-
 
 Этот контейнер отличается следующими характеристиками.
 
-- Приложения запускаются с помощью [HTTP-сервера Gunicorn WSGI](http://gunicorn.org/), используя дополнительные аргументы `--bind=0.0.0.0 --timeout 600`.
+- Приложения запускаются с помощью [HTTP-сервера Gunicorn WSGI](https://gunicorn.org/), используя дополнительные аргументы `--bind=0.0.0.0 --timeout 600`.
 
 - По умолчанию базовый образ включает в себя веб-платформу Flask, но контейнер также поддерживает другие платформы, совместимые с WSGI и с Python 3.7, например Django.
 
@@ -59,9 +59,9 @@ az webapp config set --resource-group <group_name> --name <app_name> --linux-fx-
 Во время запуска служба приложений под управлением контейнера Linux выполнит следующие действия.
 
 1. Проверит наличие пользовательских команд запуска и применит их, если они указаны.
-1. Проверит наличие файла приложения Django *wsgi.py* и, если он есть, запустит Gunicorn с помощью этого файла.
-1. Проверит наличие файла с именем *application.py* и, если он найден, запустит Gunicorn с помощью `application:app`, где предполагается приложение Flask.
-1. Если другие приложения не найдены, запускается приложение по умолчанию, встроенное в контейнер.
+2. Проверит наличие файла приложения Django *wsgi.py* и, если он есть, запустит Gunicorn с помощью этого файла.
+3. Проверит наличие файла с именем *application.py* и, если он найден, запустит Gunicorn с помощью `application:app`, где предполагается приложение Flask.
+4. Если другие приложения не найдены, запускается приложение по умолчанию, встроенное в контейнер.
 
 В следующих разделах приведены дополнительные сведения о каждом параметре.
 
@@ -100,7 +100,7 @@ gunicorn --bind=0.0.0.0 --timeout 600 hello:myapp
 gunicorn --bind=0.0.0.0 --timeout 600 --chdir website hello:myapp
 ```
 
-Кроме того, вы можете добавить любые дополнительные аргументы в командную строку для Gunicorn, например `--workers=4`. Дополнительные сведения см. в статье [Running Gunicorn](http://docs.gunicorn.org/en/stable/run.html) (Запуск Gunicorn) (docs.gunicorn.org).
+Кроме того, вы можете добавить любые дополнительные аргументы в командную строку для Gunicorn, например `--workers=4`. Дополнительные сведения см. в статье [Running Gunicorn](https://docs.gunicorn.org/en/stable/run.html) (Запуск Gunicorn) (docs.gunicorn.org).
 
 Чтобы предоставить пользовательскую команду, выполните следующие действия:
 

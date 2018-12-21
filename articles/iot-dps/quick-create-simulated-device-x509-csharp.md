@@ -10,23 +10,23 @@ services: iot-dps
 manager: timlt
 ms.devlang: csharp
 ms.custom: mvc
-ms.openlocfilehash: ae5601cf35540b6f506521a851b4d90dfaf0a20a
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: d9b4777067ed1ee9f253714bc82c2a20aaa0d127
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50156465"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52997031"
 ---
 # <a name="create-and-provision-a-simulated-x509-device-using-c-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью пакета SDK для устройства C# для службы подготовки устройств Центра Интернета вещей
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
 
-В этом руководстве показано, как создать пример имитированного устройства X.509 с помощью [пакета SDK для устройства C# для Центра Интернета вещей](https://github.com/Azure/azure-iot-sdk-csharp) на компьютере разработки под управлением ОС Windows, и как подключить имитированное устройство к службе подготовки устройств и Центру Интернета вещей.
+В этой статье описывается, как с помощью [примеров Azure IoT для C#](https://github.com/Azure-Samples/azure-iot-samples-csharp) имитировать устройство X.509 на компьютере для разработки под управлением ОС Windows. В примере также показано, как подключить это имитированное устройство к Центру Интернета вещей с помощью службы подготовки устройств.
 
 Если вы не знакомы с процессом автоматической подготовки устройств, обязательно прочтите [эту статью](concepts-auto-provisioning.md). Кроме того, прежде чем продолжить, выполните инструкции по [настройке службы "Подготовка устройств к добавлению в Центр Интернета вещей" на портале Azure](./quick-setup-auto-provision.md). 
 
 Служба подготовки устройств Интернета вещей Azure поддерживает два типа регистрации:
-- [группы регистрации](concepts-service.md#enrollment-group) — используются для регистрации нескольких связанных устройств;
-- [индивидуальная регистрация](concepts-service.md#individual-enrollment) — используется для регистрации одного устройства.
+- [Группы регистрации](concepts-service.md#enrollment-group). Используются для регистрации нескольких связанных устройств.
+- [Индивидуальные регистрации](concepts-service.md#individual-enrollment). Предназначены для регистрации одного устройства.
 
 В этой статье описана индивидуальная регистрация.
 
@@ -35,14 +35,14 @@ ms.locfileid: "50156465"
 <a id="setupdevbox"></a>
 ## <a name="prepare-the-development-environment"></a>Подготовка среды разработки 
 
-1. Установите на компьютере [пакет SDK для .NET Core](https://www.microsoft.com/net/download/windows). 
+1. Установите на компьютере [пакет SDK для .NET Core 2.1 или более поздней версии](https://www.microsoft.com/net/download/windows). 
 
 1. Установите на компьютер систему `git` и добавьте ее в переменные среды, доступные в командном окне. Последнюю версию средств `git` для установки, которая включает **Git Bash**, приложение командной строки для взаимодействия с локальным репозиторием Git, можно найти на [этой странице](https://git-scm.com/download/). 
 
-4. Откройте окно командной строки или Git Bash. Клонируйте репозиторий GitHub с [пакетом SDK для C# для Центра Интернета вещей Azure](https://github.com/Azure/azure-iot-sdk-csharp):
+1. Откройте окно командной строки или Git Bash. Клонируйте репозиторий GitHub с примерами на C# для Интернета вещей Azure:
     
     ```cmd
-    git clone --recursive https://github.com/Azure/azure-iot-sdk-csharp.git
+    git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
     ```
 
 ## <a name="create-a-self-signed-x509-device-certificate-and-individual-enrollment-entry"></a>Создание самозаверяющего сертификата устройства X.509 и запись отдельной регистрации
@@ -52,13 +52,13 @@ ms.locfileid: "50156465"
 * Самозаверяющие сертификаты предназначены только для тестирования и не должны использоваться в рабочей среде.
 * Срок действия самозаверяющего сертификата по умолчанию составляет один год.
 
-Вы используете пример кода из [пакета SDK для Интернета вещей Azure для .NET](https://github.com/Azure/azure-iot-sdk-csharp.git), чтобы создать сертификат, который будет использоваться с отдельной записью регистрации для имитированного устройства.
+Вы используете пример кода из репозитория [Provisioning Device Client Sample - X.509 Attestation](https://github.com/Azure-Samples/azure-iot-samples-csharp/tree/master/provisioning/Samples/device/X509Sample) (Пример клиента для подготовки устройств. Аттестация X.509), чтобы создать сертификат, который будет использоваться с отдельной записью регистрации для имитированного устройства.
 
 
 1. В окне командной строки замените каталоги каталогом проекта в примере подготовки устройства X.509.
 
     ```cmd
-    cd .\azure-iot-sdk-csharp\provisioning\device\samples\ProvisioningDeviceClientX509
+    cd .\azure-iot-samples-csharp\provisioning\Samples\device\X509Sample
     ```
 
 2. Пример кода настроен на использование сертификатов X.509, хранящихся в защищенном паролем форматированном файле PKCS12 (certificate.pfx). Кроме того, дальше в этом руководстве для создания индивидуальной регистрации вам понадобится файл сертификата открытого ключа (certificate.cer). Чтобы создать самозаверяющий сертификат и связанные CER- и PFX-файлы, выполните следующую команду:

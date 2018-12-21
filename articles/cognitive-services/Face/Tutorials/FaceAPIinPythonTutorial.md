@@ -10,12 +10,12 @@ ms.component: face-api
 ms.topic: quickstart
 ms.date: 11/13/2018
 ms.author: sbowles
-ms.openlocfilehash: dc84014f3dce027c830f3f46b4aba16b775251d8
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: 1e35d650f6fc99bff5bf49e517e2b38fcdc58dde
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51853155"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53077007"
 ---
 # <a name="quickstart-create-a-python-script-to-detect-and-frame-faces-in-an-image"></a>Краткое руководство. Создание скрипта Python для определения и выделения лиц на изображении
 
@@ -28,14 +28,18 @@ ms.locfileid: "51853155"
 - Ключ подписки на API распознавания лиц. Вы можете получить ключ бесплатной пробной подписки на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=face-api). Или следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку на API распознавания лиц и свой ключ.
 - [Python 2.7 или 3.5+](https://www.python.org/downloads/).
 - Средство [PIP](https://pip.pypa.io/en/stable/installing/).
-- Пакет SDK Python для API распознавания лиц. Установите его, выполнив следующую команду:
-    ```bash
-    pip install cognitive_face
-    ```
+
+## <a name="get-the-face-sdk"></a>Получение пакета SDK Распознавания лиц
+
+Установите пакет SDK Распознавания лиц для Python. Для этого откройте командную строку и выполните следующую команду:
+
+```shell
+pip install cognitive_face
+```
 
 ## <a name="detect-faces-in-an-image"></a>Определение лиц на изображении
 
-Создайте новый скрипт Python _FaceQuickstart.py_. Добавьте следующий код. Это основные функции определения лиц. Замените `<Subscription Key>` фактическим значением ключа. Вам также может потребоваться изменить значение `BASE_URL`, чтобы использовать правильный идентификатор региона для ключа (список конечных точек для всех регионов см. в документации по [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)). Ключи бесплатной пробной подписки создаются в регионе **westus**. При необходимости задайте для `img_url` URL-адрес любого изображения, которое вы хотите использовать.
+Создайте скрипт Python с именем _FaceQuickstart.py_ и добавьте в него приведенный ниже код. Это основные функции определения лиц. Замените `<Subscription Key>` фактическим значением ключа. Вам также может потребоваться изменить значение `BASE_URL`, чтобы использовать правильный идентификатор региона для ключа (список конечных точек для всех регионов см. в документации по [API распознавания лиц](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236)). Ключи бесплатной пробной подписки создаются в регионе **westus**. При необходимости задайте для `img_url` URL-адрес любого изображения, которое вы хотите использовать.
 
 Скрипт определяет лица, вызвав метод **cognitive_face.face.detect**, который инкапсулирует REST API [обнаружения](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) и возвращает список лиц.
 
