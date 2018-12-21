@@ -10,7 +10,7 @@ items:
   - name: Сведения о средах службы приложений
     href: environment/intro.md
   - name: Сравнение вариантов размещения
-    href: choose-web-site-cloud-service-vm.md
+    href: overview-compare.md
 - name: Быстрое начало работы
   items:
   - name: Создание приложения .NET Core
@@ -67,26 +67,26 @@ items:
   - name: Принцип работы службы приложений
     href: app-service-how-works-readme.md
   - name: Планы службы приложений
-    href: azure-web-sites-web-hosting-plans-in-depth-overview.md
+    href: overview-hosting-plans.md
   - name: Функции ОС
     href: operating-system-functionality.md
   - name: Безопасность
-    href: app-service-security.md
+    href: overview-security.md
     items:
     - name: Аутентификация и авторизация
-      href: app-service-authentication-overview.md
+      href: overview-authentication-authorization.md
     - name: Установка исправлений для ОС и среды выполнения
-      href: app-service-patch-os-runtime.md
+      href: overview-patch-os-runtime.md
   - name: Входящие и исходящие IP-адреса
-    href: app-service-ip-addresses.md
+    href: overview-inbound-outbound-ips.md
   - name: Гибридные подключения
     href: app-service-hybrid-connections.md
   - name: Интеграция диспетчера трафика
     href: web-sites-traffic-manager.md
   - name: Локальный кэш
-    href: app-service-local-cache-overview.md
+    href: overview-local-cache.md
   - name: Диагностика
-    href: app-service-diagnostics.md
+    href: overview-diagnostics.md
 - name: Практические руководства
   items:
   - name: Настройка приложения
@@ -116,17 +116,17 @@ items:
     - name: Сброс учетных данных развертывания
       href: deploy-configure-credentials.md
     - name: Создание промежуточных сред
-      href: web-sites-staged-publishing.md
+      href: deploy-staging-slots.md
     - name: Руководство по шаблонам Resource Manager
-      href: web-sites-rm-template-guidance.md
+      href: deploy-resource-manager-template.md
   - name: Сопоставление пользовательского домена
     items:
     - name: Приобретение домена
-      href: custom-dns-web-site-buydomains-web-app.md
+      href: manage-custom-dns-buy-domain.md
     - name: Сопоставление доменов с помощью диспетчера трафика
       href: web-sites-traffic-manager-custom-domain-name.md
     - name: Перенос активного домена
-      href: app-service-custom-domain-name-migrate.md
+      href: manage-custom-dns-migrate-domain.md
   - name: Безопасность приложения
     items:
     - name: Приобретение SSL-сертификата
@@ -148,7 +148,7 @@ items:
     - name: Запрет IP-адресов
       href: app-service-ip-restrictions.md
     - name: Администрирование управляемого удостоверения
-      href: app-service-managed-service-identity.md
+      href: overview-managed-identity.md
     - name: Добавление ссылки на секреты из Key Vault
       href: app-service-key-vault-references.md
     - name: Использование SSL-сертификата в коде приложения
@@ -164,19 +164,19 @@ items:
     - name: Масштабирование на несколько экземпляров
       href: ../azure-monitor/platform/autoscale-get-started.md?toc=%2fazure%2fapp-service%2ftoc.json
     - name: Высокая плотность размещения
-      href: app-service-high-density-hosting.md
+      href: manage-scale-per-app.md
   - name: Мониторинг приложения
     items:
     - name: Квоты и оповещения
       href: web-sites-monitor.md
     - name: Включение журналов
-      href: web-sites-enable-diagnostic-log.md
+      href: troubleshoot-diagnostic-logs.md
   - name: Управление приложением
     items:
     - name: Управление планом размещения
       href: app-service-plan-manage.md
     - name: Резервное копирование приложения
-      href: web-sites-backup.md
+      href: manage-backup.md
     - name: Восстановление из резервной копии
       href: web-sites-restore.md
     - name: Восстановление моментального снимка
@@ -188,9 +188,9 @@ items:
   - name: Выполнение фоновых задач
     items:
     - name: Создание веб-заданий
-      href: web-sites-create-web-jobs.md
+      href: webjobs-create.md
     - name: Разработка веб-заданий с помощью VS
-      href: websites-dotnet-deploy-webjobs.md
+      href: webjobs-dotnet-deploy-vs.md
     - name: Начало работы с пакетом SDK для веб-заданий
       href: webjobs-sdk-get-started.md
     - name: Использование пакета SDK для веб-заданий
@@ -230,7 +230,7 @@ items:
   - name: Устранение неполадок
     items:
     - name: Устранение неполадок с помощью Visual Studio
-      href: web-sites-dotnet-troubleshoot-visual-studio.md
+      href: troubleshoot-dotnet-visual-studio.md
     - name: Устранение неполадок с приложением Node.js
       href: app-service-web-nodejs-best-practices-and-troubleshoot-guide.md
     - name: Устранение неполадок в HTTP 502 и 503
@@ -257,9 +257,9 @@ items:
       href: ip-address-change-outbound.md
     - name: Адрес SSL
       href: ip-address-change-ssl.md
-ms.openlocfilehash: 2256595005b39000cbad8e4967276beb65f22de3
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: e18c991d1ca722b16af2d5df9f2eb3a3d08127d3
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53599694"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53716214"
