@@ -1,23 +1,24 @@
 ---
-title: Руководство 7. Простые сущности со списком фраз в службе LUIS
+title: Простая сущность и список фраз
 titleSuffix: Azure Cognitive Services
-description: Извлечение данных машинного обучения из высказывания
+description: В этом руководстве описано, как извлечь данные машинного обучения о названии должности из высказывания с помощью простой сущности. Чтобы повысить точность извлечения, добавьте список фраз, состоящий из терминов, относящихся к простой сущности.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 09/09/2018
+ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: f3e931344d2d2294c03756d630c688df1e5da9a8
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: e8a1575527f906fab130e08cda715f6c8e904275
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52425265"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53166274"
 ---
-# <a name="tutorial-7-extract-names-with-simple-entity-and-phrase-list"></a>Руководство 7. Извлечение имен с простыми списками сущностей и фраз
+# <a name="tutorial-7-extract-names-with-simple-entity-and-phrase-list"></a>Руководство 7. Извлечение имен с использованием простой сущности и списка фраз
 
 В этом руководстве описано извлечение данных машинного обучения о названии должности из высказывания с помощью **простой** сущности. Чтобы повысить точность извлечения, добавьте список фраз, состоящий из терминов, относящихся к простой сущности.
 
@@ -92,7 +93,7 @@ ms.locfileid: "52425265"
 
 3. В выражении `I want to apply for the new accounting job` выберите `accounting`, введите `Job` в поле сверху всплывающего меню, а затем во всплывающем меню выберите **Create new entity** (Создать сущность). 
 
-    [![](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png "Снимок экрана LUIS с намерением ApplyForJob и выделенными шагами создания сущности")](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png#lightbox)
+    [![Снимок экрана LUIS с намерением ApplyForJob и выделенными шагами создания сущности](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png "Screenshot of LUIS with 'ApplyForJob' intent with create entity steps highlighted")](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png#lightbox)
 
 4. Во всплывающем окне проверьте имя и тип сущности, а затем выберите **Готово**.
 
@@ -100,7 +101,7 @@ ms.locfileid: "52425265"
 
 5. Во фразе `Submit resume for engineering position` обозначьте слово `engineering` как сущность должности. Выберите слово `engineering`, а затем **Должность** во всплывающем меню. 
 
-    [![](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png "Снимок экрана с выделенной сущностью задания маркировки LUIS")](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png#lightbox)
+    [![Снимок экрана LUIS с выделенной сущностью должности, используемой для добавления метки](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png "Screenshot of LUIS labeling job entity highlighted")](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png#lightbox)
 
     Все фразы помечены, но пять фраз недостаточно, чтобы обучить LUIS связанным с должностями словам и фразам. Нам не нужны дополнительные примеры должностей, использующих значение номера, так как используется сущность регулярного выражения. Нужно по крайней мере 15 дополнительных примеров должностей, являющихся словами или фразами. 
 
@@ -157,7 +158,7 @@ ms.locfileid: "52425265"
 
 2. Перейдите в конец URL-адреса и введите `Here is my c.v. for the programmer job`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должны быть возвращены фразы `ApplyForJob`.
 
-    ```JSON
+    ```json
     {
       "query": "Here is my c.v. for the programmer job",
       "topScoringIntent": {
@@ -226,7 +227,7 @@ ms.locfileid: "52425265"
 
 В следующем коде JSON приложение LUIS отвечает правильным намерением, `ApplyForJob`, но не извлекает название должности `lead welder`. 
 
-```JSON
+```json
 {
   "query": "This is the lead welder paperwork.",
   "topScoringIntent": {
@@ -283,7 +284,7 @@ ms.locfileid: "52425265"
 
 ## <a name="to-boost-signal-add-phrase-list"></a>Добавление списка фраз для усиления сигнала
 
-Откройте файл [jobs-phrase-list.csv](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/job-phrase-list.csv) из репозитория Github примеров LUIS. Список содержит более тысячи слов и фраз, связанных с должностями. Ознакомьтесь со списком важных слов, связанных с должностями. Если слов или фраз нет в списке, добавьте собственные.
+Откройте файл [jobs-phrase-list.csv](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/job-phrase-list.csv) из репозитория GitHub примеров LUIS. Список содержит более тысячи слов и фраз, связанных с должностями. Ознакомьтесь со списком важных слов, связанных с должностями. Если слов или фраз нет в списке, добавьте собственные.
 
 1. В разделе **Build** (Сборка) приложения LUIS и в меню **Improve app performance** (Повышение производительности приложения) выберите **Phrase lists** (Списки фраз).
 
@@ -291,13 +292,13 @@ ms.locfileid: "52425265"
 
 3. Присвойте списку фраз имя `Job` и скопируйте список из файла jobs-phrase-list.csv в текстовое поле **Значения**. Нажмите клавишу "ВВОД". 
 
-    [![](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png "Снимок экрана со всплывающим диалоговым окном создания списка фраз")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png#lightbox)
+    [![Снимок экрана, на котором показано всплывающее диалоговое окно для создания списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png "Screenshot of create new phrase list dialog pop-up")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png#lightbox)
 
     Если вы хотите добавить в список фраз другие слова, просмотрите **Связанные значения** и добавьте те, что вам необходимы. 
 
 4. Выберите **Сохранить**, чтобы активировать список фраз.
 
-    [![](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png "Снимок экрана всплывающего диалогового окна создания списка фраз со словами в окне значений списка фраз")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png#lightbox)
+    [![Снимок экрана, на котором показано всплывающее диалоговое окно для создания списка фраз со словами в области значений списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png "Screenshot of create new phrase list dialog pop-up with words in phrase list values box")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png#lightbox)
 
 5. [Обучите](#train) и [опубликуйте](#publish) приложение еще раз, чтобы использовать список фраз.
 
@@ -305,7 +306,7 @@ ms.locfileid: "52425265"
 
     Ответ JSON содержит извлеченные сущности:
 
-    ```JSON
+    ```json
     {
         "query": "This is the lead welder paperwork.",
         "topScoringIntent": {

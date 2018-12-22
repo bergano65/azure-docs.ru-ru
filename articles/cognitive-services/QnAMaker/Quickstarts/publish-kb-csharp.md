@@ -1,23 +1,24 @@
 ---
-title: Краткое руководство. Публикация базы знаний — REST, C# — QnA Maker
-titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как опубликовать базу знаний с использованием REST. При этом последняя версия протестированной базы знаний передается в выделенный индекс Поиска Azure, представляющий опубликованную базу знаний. Кроме того, создается конечная точка, которая может быть вызвана в приложении или чат-боте.
+title: Публикация базы знаний с использованием REST и C#
+titleSuffix: QnA Maker- Azure Cognitive Services
+description: В этом кратком руководстве описано, как опубликовать базу знаний с использованием REST и C#. При этом последняя версия протестированной базы знаний будет передана в выделенный индекс Поиска Azure, представляющий опубликованную базу знаний. Кроме того, создается конечная точка, которая может быть вызвана в приложении или чат-боте.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: quickstart
 ms.date: 11/18/2018
 ms.author: diberry
-ms.openlocfilehash: e48f493c08ee96b75c1d418fdbef1d36672a48a3
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 678b5d340fc81ad917e42e9b8e80051cc511da87
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52163900"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53162619"
 ---
-# <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-c"></a>Краткое руководство. Публикация базы знаний в QnA Maker с помощью C#
+# <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-c"></a>Краткое руководство. Публикация базы знаний в QnA Maker с использованием C#
 
 В этом кратком руководстве по REST описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний отправляется в индекс выделенной службы "Поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
 
@@ -32,10 +33,10 @@ ms.locfileid: "52163900"
 
     ![Идентификатор базы знаний QnA Maker](../media/qnamaker-quickstart-kb/qna-maker-id.png)
 
-    Если у вас еще нет базы знаний, создайте пример для этого краткого руководства по инструкциям из [этой статьи](create-new-kb-csharp.md).
+    Если у вас еще нет базы знаний, ее можно создать для этого руководства. [Создать базу знаний](create-new-kb-csharp.md).
 
 > [!NOTE] 
-> Полные файлы решения доступны в [репозитории Github **Azure-Samples/cognitive-services-qnamaker-csharp**](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/tree/master/documentation-samples/quickstarts/publish-knowledge-base).
+> Полные файлы решения доступны в [репозитории GitHub **Azure-Samples/cognitive-services-qnamaker-csharp**](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp/tree/master/documentation-samples/quickstarts/publish-knowledge-base).
 
 ## <a name="create-knowledge-base-project"></a>Создание проекта базы знаний
 

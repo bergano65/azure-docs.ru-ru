@@ -1,6 +1,6 @@
 ---
-title: Как создать простую группу и добавить в нее участников с помощью Azure Active Directory | Документация Майкрософт
-description: Узнайте, как создать простую группу с помощью Azure Active Directory.
+title: Создание простой группы и добавление в нее участников с помощью Azure Active Directory | Документация Майкрософт
+description: Инструкции по созданию простой группы с помощью Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -11,16 +11,15 @@ ms.topic: quickstart
 ms.date: 08/22/2018
 ms.author: lizross
 ms.reviewer: krbain
-ms.custom: it-pro
-ms.openlocfilehash: 36bd0ca06859c1952a75b1aa8397fba88dc22d40
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: be3271a1105e8222ae04e17140c6e925a1c612f9
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45574918"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53105463"
 ---
-# <a name="how-to-create-a-basic-group-and-add-members-using-azure-active-directory"></a>Как создать простую группу и добавить в нее участников с помощью Azure Active Directory
-
+# <a name="create-a-basic-group-and-add-members-using-azure-active-directory"></a>Создание простой группы и добавление в нее участников с помощью Azure Active Directory
 Можно создать простую группу с помощью портала Azure Active Directory (Azure AD). В целях этой статьи простая группа добавляется для отдельного ресурса владельцем этого ресурса (администратором) и включает в себя конкретных участников (сотрудников), которым требуется доступ к этому ресурсу. Более сложные сценарии, включая динамическое членство и создание правил, описываются в [документации по управлению пользователями Azure Active Directory](../users-groups-roles/index.yml).
 
 ## <a name="create-a-basic-group-and-add-members"></a>Создание простой группы и добавление участников

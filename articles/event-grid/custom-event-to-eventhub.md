@@ -1,5 +1,5 @@
 ---
-title: Отправка пользовательских событий для службы "Сетка событий Azure" в Центры событий|Документация Майкрософт
+title: Отправка настраиваемых событий в гибридное подключение — Сетка событий Azure, Azure CLI
 description: Используйте службу "Сетка событий Azure" и Azure CLI, чтобы иметь возможность публиковать темы и подписываться на эти события. Концентратор событий используется для конечной точки.
 services: event-grid
 keywords: ''
@@ -8,14 +8,15 @@ ms.author: tomfitz
 ms.date: 10/09/2018
 ms.topic: quickstart
 ms.service: event-grid
-ms.openlocfilehash: 0d8504dc002fa43c25f689b4c5b3f78c822cf5b0
-ms.sourcegitcommit: 7b0778a1488e8fd70ee57e55bde783a69521c912
+ms.custom: seodec18
+ms.openlocfilehash: 08039932583fce24db9cd264a15f31b6df782627
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49069426"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53086914"
 ---
-# <a name="route-custom-events-to-azure-event-hubs-with-azure-cli-and-event-grid"></a>Перенаправление пользовательских событий в Центры событий Azure с помощью Azure CLI и службы "Сетка событий"
+# <a name="quickstart-route-custom-events-to-azure-event-hubs-with-azure-cli-and-event-grid"></a>Краткое руководство. Перенаправление пользовательских событий в Центры событий Azure с помощью Azure CLI и службы "Сетка событий"
 
 "Сетка событий Azure" — это служба обработки событий для облака. Центры событий Azure – это один из поддерживаемых обработчиков событий. В этой статье описано, как с помощью Azure CLI создать пользовательский раздел, подписаться на него и активировать событие для просмотра результата. Отправка событий в концентраторы событий.
 

@@ -1,5 +1,5 @@
 ---
-title: Быстрое начало. Поиск изображений с помощью пакета SDK Bing для поиска изображений для Node.js
+title: Краткое руководство. Поиск изображений с помощью пакета SDK для поиска изображений Bing для Node.js
 description: Воспользуйтесь сведениями из быстрого начала и выполните первый поиск изображения с помощью пакета SDK Bing для поиска изображений. Данный пакет является оболочкой для API и содержит те же функции. Это простое приложение Node.js отправляет запрос на поиск изображения, анализирует ответ JSON и отображает URL-адрес первого возвращенного изображения.
 titleSuffix: Azure Cognitive Services
 services: cognitive-services
@@ -10,14 +10,15 @@ ms.component: bing-image-search
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: aahi
-ms.openlocfilehash: a1fda703c74549c351d8eb609819198d7e2856cf
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.custom: seodec2018
+ms.openlocfilehash: cb01b45e26975d44e30669e066b195f4e3abc90a
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52311285"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53252003"
 ---
-# <a name="quickstart-search-for-images-with-the-bing-image-search-sdk-and-nodejs"></a>Быстрое начало. Поиск изображений с помощью пакета SDK Bing для поиска изображений и Node.js
+# <a name="quickstart-search-for-images-with-the-bing-image-search-sdk-for-nodejs"></a>Краткое руководство. Поиск изображений с помощью пакета SDK для поиска изображений Bing для Node.js
 
 Воспользуйтесь сведениями из быстрого начала и выполните первый поиск изображения с помощью пакета SDK Bing для поиска изображений. Данный пакет является оболочкой для API и содержит те же функции. Это простое приложение JavaScript отправляет запрос на поиск изображения, анализирует ответ JSON и отображает URL-адрес первого возвращенного изображения.
 

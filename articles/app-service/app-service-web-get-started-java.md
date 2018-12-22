@@ -1,5 +1,5 @@
 ---
-title: Создание первого веб-приложения Java в Azure
+title: Создание веб-приложения Java в Службе приложений Azure
 description: Узнайте, как запускать веб-приложения в службе приложений, развернув базовое приложение Java.
 services: app-service\web
 documentationcenter: ''
@@ -14,17 +14,17 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 03/26/2018
 ms.author: cephalin;robmcm
-ms.custom: mvc, devcenter
-ms.openlocfilehash: 854ae54992a1389ec7c7f7892c738d070421264d
-ms.sourcegitcommit: 34e0b4a7427f9d2a74164a18c3063c8be967b194
+ms.custom: seodec18
+ms.openlocfilehash: b9321241f174a97976b2f150a9bd6c3547f0dc20
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/30/2018
-ms.locfileid: "30283934"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53253168"
 ---
 # <a name="create-your-first-java-web-app-in-azure"></a>Создание первого веб-приложения Java в Azure
 
-[Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом кратком руководстве показано, как развернуть веб-приложение Java в службе приложений с помощью [интегрированной среды разработки Eclipse для разработчиков Java EE](http://www.eclipse.org/).
+[Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом кратком руководстве показано, как развернуть веб-приложение Java в службе приложений с помощью [интегрированной среды разработки Eclipse для разработчиков Java EE](https://www.eclipse.org/).
 
 > [!NOTE]
 >
@@ -37,11 +37,11 @@ ms.locfileid: "30283934"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим кратким руководством установите:
 
-* Бесплатную <a href="http://www.eclipse.org/downloads/" target="_blank">интегрированную среду разработки Eclipse для разработчиков Java EE</a>. В этом кратком руководстве используется Eclipse Neon.
+* Бесплатную <a href="https://www.eclipse.org/downloads/" target="_blank">интегрированную среду разработки Eclipse для разработчиков Java EE</a>. В этом кратком руководстве используется Eclipse Neon.
 * <a href="/java/azure/eclipse/azure-toolkit-for-eclipse-installation" target="_blank">Набор средств Azure для Eclipse</a>.
 
 > [!NOTE]
@@ -121,8 +121,8 @@ ms.locfileid: "30283934"
 * Выберите подписку Azure.
 * На вкладке **App service plan** (План службы приложений):
 
-  * **Create new** (Создать). Оставьте имя по умолчанию, которое является именем плана службы приложений.
-  * **Location** (Расположение): Выберите **West Europe** (Западная Европа) или ближайшее расположение.
+  * **Create new** (Создать). Оставьте имя по умолчанию. Это имя плана службы приложений.
+  * **Location** (Расположение). Выберите **West Europe** (Западная Европа) или ближайшее к вам расположение.
   * **Pricing tier** (Ценовая категория). Выберите бесплатный вариант. Сведения о функциях см. на странице [цен на службу приложений](https://azure.microsoft.com/pricing/details/app-service/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
    ![Диалоговое окно "Создание службы приложений"](./media/app-service-web-get-started-java/create-app-service-dialog-box.png)

@@ -10,14 +10,14 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 03/26/2018
 ms.author: lbosq
-ms.openlocfilehash: e11ac1c7d813dce069523104955b885b7b857937
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: ed9bcfc52d4403213583b65a18f5066d6a2c4f75
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52841988"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53090221"
 ---
-# <a name="azure-cosmos-db-create-a-graph-database-using-java-and-the-azure-portal"></a>Azure Cosmos DB: создание графовой базы данных с помощью Java и портала Azure
+# <a name="azure-cosmos-db-create-a-graph-database-using-java-and-the-azure-portal"></a>Azure Cosmos DB — Создание графовой базы данных с помощью Java и портала Azure
 
 > [!div class="op_single_selector"]
 > * [Консоль Gremlin](create-graph-gremlin-console.md)
@@ -30,7 +30,7 @@ ms.locfileid: "52841988"
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. С помощью Azure Cosmos DB вы можете быстро создавать базы данных управляемых документов, таблиц и диаграмм и обращаться к ним. 
 
-Выполнив это краткое руководство, вы создадите простую базу данных графа с помощью средств портала Azure для Azure Cosmos DB. В этом руководстве также объясняется, как быстро создать консольное приложение Java с помощью базы данных [API Gremlin](graph-introduction.md) и драйвера [OSS Apache TinkerPop](http://tinkerpop.apache.org/). Указания в этом руководстве применимы к любой операционной системе, с которой может работать Java. Из этого краткого руководства вы узнаете, как создавать и изменять графы с помощью пользовательского интерфейса или программных средств. 
+Выполнив это краткое руководство, вы создадите простую базу данных графа с помощью средств портала Azure для Azure Cosmos DB. В этом руководстве также объясняется, как быстро создать консольное приложение Java с помощью базы данных [API Gremlin](graph-introduction.md) и драйвера [OSS Apache TinkerPop](https://tinkerpop.apache.org/). Указания в этом руководстве применимы к любой операционной системе, с которой может работать Java. Из этого краткого руководства вы узнаете, как создавать и изменять графы с помощью пользовательского интерфейса или программных средств. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
@@ -40,7 +40,7 @@ Azure Cosmos DB — это глобально распределенная мн
 * [Комплект разработчика Java (JDK 1.7+)](https://aka.ms/azure-jdks)
     * В Ubuntu выполните команду `apt-get install default-jdk`, чтобы установить JDK.
     * Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
-* [Скачайте](http://maven.apache.org/download.cgi) и [установите](http://maven.apache.org/install.html) двоичный архив [Maven](http://maven.apache.org/).
+* [Скачайте](https://maven.apache.org/download.cgi) и [установите](https://maven.apache.org/install.html) двоичный архив [Maven](https://maven.apache.org/).
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
 * [Git](https://www.git-scm.com/)
     * В Ubuntu выполните команду `sudo apt-get install git`, чтобы установить Git.
@@ -108,7 +108,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные для подключения. Скопируйте эти данные в приложение. Эти настройки обеспечат обмен данными между вашим приложением и размещенной базой данных.
 
-1. На [портале Azure](http://portal.azure.com/) щелкните **Ключи**. 
+1. На [портале Azure](https://portal.azure.com/) щелкните **Ключи**. 
 
     Скопируйте первую часть значения URI.
 

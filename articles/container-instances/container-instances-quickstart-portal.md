@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство. Запуск приложения в службе "Экземпляры контейнеров Azure"
-description: В этом кратком руководстве вы развернете приложение, выполняющееся в контейнере Docker, в службе "Экземпляры контейнеров Azure" с помощью портала Azure.
+title: Краткое руководство. Запуск приложения в службе "Экземпляры контейнеров Azure" на портале
+description: В этом кратком руководстве описано, как развернуть контейнерное приложение Docker, выполняющееся в изолированном контейнере в службе "Экземпляры контейнеров Azure" с помощью портала Azure
 services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: quickstart
 ms.date: 10/02/2018
 ms.author: danlep
-ms.custom: mvc
-ms.openlocfilehash: 6ab7680559400c0a270142563ecf7e251c2cd1b8
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.custom: seodec18, mvc
+ms.openlocfilehash: 8f547977e544854e281e1c6be442607d55149e5e
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48857726"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53190294"
 ---
-# <a name="quickstart-run-an-application-in-azure-container-instances"></a>Краткое руководство. Запуск приложения в службе "Экземпляры контейнеров Azure"
+# <a name="quickstart-run-a-container-application-in-azure-container-instances-in-the-azure-portal"></a>Краткое руководство. Запуск контейнерного приложения в службе "Экземпляры контейнеров Azure" с помощью портала Azure
 
 Служба "Экземпляры контейнеров Azure" позволяет легко и быстро запускать контейнеры Docker в Azure. В этом случае не нужно развертывать виртуальные машины или использовать единую платформу оркестрации контейнеров, такую как Kubernetes. В этом кратком руководстве вы с помощью портала Azure создадите в Azure контейнер и сделаете его приложение доступным по полному доменному имени (FQDN). После настройки некоторых параметров и развертывания контейнера вы сможете перейти к выполняющемуся приложению:
 
@@ -37,7 +37,7 @@ ms.locfileid: "48857726"
 
 * Имя контейнера: `mycontainer`
 * Образ контейнера: `microsoft/aci-helloworld`
-* Группа ресурсов. **Создайте группу** > `myResourceGroup`.
+* Группа ресурсов: **Создать новую** > `myResourceGroup`
 
 ![Настройка основных параметров для нового экземпляра контейнера на портале Azure][aci-portal-03]
 

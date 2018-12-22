@@ -4,10 +4,9 @@ description: Печатная схема возможностей Студии �
 keywords: студия машинного обучения, обзорная схема, скачивание
 services: machine-learning
 documentationcenter: ''
-author: ericlicoding
-ms.custom: (previous ms.author=haining, author=hning86)
-ms.author: amlstudiodocs
-manager: mwinkle
+author: garyericson
+ms.custom: previous-ms.author=haining, previous-author=hning86
+ms.author: garye
 editor: cgronlun
 ms.assetid: 5b302c6c-41fd-4551-a4ae-0f5b450e1e6b
 ms.service: machine-learning
@@ -17,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.date: 04/04/2017
-ms.openlocfilehash: d972cc9f162e16d5b688919dcdb5b7b06ad90736
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: ce842d11d47529eca2be894a230b60417cea102f
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52312469"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53278021"
 ---
 # <a name="overview-diagram-of-azure-machine-learning-studio-capabilities"></a>Обзорная схема возможностей Студии машинного обучения Azure 
 Схема **Обзор возможностей Студии машинного обучения Microsoft Azure** предоставляет высокоуровневый обзор вариантов использования Студии машинного обучения для разработки модели прогнозной аналитики и введения ее в эксплуатацию в облаке Azure.
@@ -40,7 +39,7 @@ ms.locfileid: "52312469"
 ## <a name="download-the-machine-learning-studio-overview-diagram"></a>Скачивание обзорной схемы Студии машинного обучения
 Скачайте схему **Обзор возможностей Студии машинного обучения Microsoft Azure** и получите высокоуровневое представление о возможностях Студии машинного обучения. Чтобы держать схему под рукой, распечатайте ее в формате 11 x 17 дюймов (27,94 x 43,18 см).
 
-**Скачайте схему здесь: [Обзор возможностей Студии машинного обучения Microsoft Azure](https://download.microsoft.com/download/C/4/6/C4606116-522F-428A-BE04-B6D3213E9E52/ml_studio_overview_v1.1.pdf)**
+**Скачайте схему здесь: [Microsoft Azure Machine Learning Studio Capabilities Overview](https://download.microsoft.com/download/C/4/6/C4606116-522F-428A-BE04-B6D3213E9E52/ml_studio_overview_v1.1.pdf)** (Обзор возможностей Студии машинного обучения Microsoft Azure)
 
 ![Обзор возможностей Студии машинного обучения Microsoft Azure][studio-overview]
 
@@ -52,5 +51,5 @@ ms.locfileid: "52312469"
 * Обзор Студии машинного обучения можно найти в разделе [Что такое Студия машинного обучения Azure](what-is-ml-studio.md).
 * Подробное описание алгоритмов машинного обучения, доступных в Студии машинного обучения, можно найти в разделе [Выбор алгоритмов машинного обучения Microsoft Azure](algorithm-choice.md).
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 

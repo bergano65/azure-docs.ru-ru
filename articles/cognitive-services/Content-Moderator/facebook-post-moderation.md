@@ -1,5 +1,5 @@
 ---
-title: 'Руководство: модерация контента Facebook — Azure Content Moderator'
+title: Руководство. Модерация контента с помощью Azure Content Moderator
 titlesuffix: Azure Cognitive Services
 description: Модерация страниц Facebook с помощью Content Moderator.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: content-moderator
 ms.topic: tutorial
 ms.date: 09/18/2017
 ms.author: sajagtap
-ms.openlocfilehash: ead8c1d445bf32ecaaf236b4e73c2a583c755049
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 048f2f40714fd7675c073337825d75443e58039b
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47223944"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53255437"
 ---
-# <a name="tutorial-facebook-content-moderation-with-content-moderator"></a>Руководство: модерация контента Facebook с помощью Content Moderator
+# <a name="tutorial-facebook-content-moderation-with-content-moderator"></a>Руководство. Модерация контента Facebook с помощью Azure Content Moderator
 
 В этом руководстве вы узнаете, как использовать машинное обучение и Content Moderator для модерации комментариев и записей на Facebook.
 
@@ -61,7 +61,7 @@ ms.locfileid: "47223944"
 4. Задайте следующие [параметры приложения](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings#settings).
 
 > [!NOTE]
-> Значением **cm:Region** должно быть имя региона (без пробелов).
+> Значением **cm: Region** должно быть имя региона (без пробелов).
 > Например, **westeurope**, а не Западная Европа, **westcentralus**, а не центрально-западная часть США, и т. д.
 >
 

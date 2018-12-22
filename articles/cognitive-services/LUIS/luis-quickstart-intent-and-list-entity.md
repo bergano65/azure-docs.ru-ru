@@ -1,23 +1,24 @@
 ---
-title: Руководство 4. Точное текстовое совпадение. Список сущностей LUIS
+title: Точное текстовое совпадение
 titleSuffix: Azure Cognitive Services
 description: Получите данные, соответствующие определенному списку элементов. У каждого элемента в списке могут быть синонимы, для которых существует точное совпадение.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: a4e294687b6c3ea2ba6ff8003e7a8f1ac69ea639
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 5706e0b124bb9ceaf1abf7228faf088dc4e510ce
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52425077"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53096695"
 ---
-# <a name="tutorial-4-extract-exact-text-matches"></a>Руководство 4. Извлечение точных текстовых совпадений
+# <a name="tutorial-4-extract-exact-text-matches"></a>Руководство 4. Извлечение точных текстовых совпадений
 В этом руководстве вы узнаете, как получить данные, соответствующие предварительно определенному списку элементов. Каждый элемент в списке может содержать список синонимов. Для приложения для управления персоналом можно выбрать сотрудника с помощью нескольких ключевых факторов (имени, адреса электронной почты, номера телефона и федерального ИНН США). 
 
 Приложение "Управление персоналом" необходимо для того, чтобы определить, какой сотрудник перемещается из одного здания в другое. Для высказывания о перемещении сотрудника LUIS определяет намерение и извлекает сущность сотрудника, чтобы стандартный заказ на его перемещение мог быть создан клиентским приложением.
@@ -106,11 +107,11 @@ ms.locfileid: "52425077"
 
 3. Во всплывающем диалоговом окне сущности введите имя сущности `Employee` и **Список** для типа сущности. Нажмите кнопку **Готово**.  
 
-    [![](media/luis-quickstart-intent-and-list-entity/hr-list-entity-ddl.png "Снимок экрана всплывающего диалогового окна создания сущности")](media/luis-quickstart-intent-and-list-entity/hr-list-entity-ddl.png#lightbox)
+    [![Снимок экрана со всплывающим диалоговым окном для создания сущности](media/luis-quickstart-intent-and-list-entity/hr-list-entity-ddl.png "Screenshot of creating new entity pop-up dialog")](media/luis-quickstart-intent-and-list-entity/hr-list-entity-ddl.png#lightbox)
 
 4. На странице сущности Employee введите `Employee-24612` в качестве нового значения.
 
-    [![](media/luis-quickstart-intent-and-list-entity/hr-emp1-value.png "Снимок экрана ввода нового значения")](media/luis-quickstart-intent-and-list-entity/hr-emp1-value.png#lightbox)
+    [![Снимок экрана, на котором показан ввод значений](media/luis-quickstart-intent-and-list-entity/hr-emp1-value.png "Screenshot of entering value")](media/luis-quickstart-intent-and-list-entity/hr-emp1-value.png#lightbox)
 
 5. В синонимы добавьте следующие значения:
 
@@ -122,7 +123,7 @@ ms.locfileid: "52425077"
     |Персональный номер мобильного телефона|425-555-1212|
     |Номер социального страхования в США|123-45-6789|
 
-    [![](media/luis-quickstart-intent-and-list-entity/hr-emp1-synonyms.png "Снимок экрана ввода синонимов")](media/luis-quickstart-intent-and-list-entity/hr-emp1-synonyms.png#lightbox)
+    [![Снимок экрана, на котором показан ввод синонимов](media/luis-quickstart-intent-and-list-entity/hr-emp1-synonyms.png "Screenshot of entering synonyms")](media/luis-quickstart-intent-and-list-entity/hr-emp1-synonyms.png#lightbox)
 
 6. Введите `Employee-45612` в качестве нового значения.
 
@@ -150,7 +151,7 @@ ms.locfileid: "52425077"
 
 2. Перейдите в конец URL-адреса и введите `shift 123-45-6789 from Z-1242 to T-54672`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом и должна возвращать намерение `MoveEmployee` с извлеченным `Employee`.
 
-  ```JSON
+  ```json
   {
     "query": "shift 123-45-6789 from Z-1242 to T-54672",
     "topScoringIntent": {

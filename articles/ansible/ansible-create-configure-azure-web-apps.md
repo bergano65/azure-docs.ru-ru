@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложений Azure с помощью Ansible (предварительная версия)
+title: Создание веб-приложений Azure с помощью Ansible
 description: Узнайте, как с помощью Ansible создать веб-приложение со средой выполнения контейнера Java 8 и Tomcat в службе приложений на платформе Linux.
 ms.service: ansible
 keywords: ansible, azure, devops, bash, playbook, azure app service, web app, java
@@ -7,16 +7,16 @@ author: tomarcher
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
-ms.date: 09/20/2018
-ms.openlocfilehash: 48b4c201b2b96bd4662e8c90be7298a4f418af53
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.date: 12/08/2018
+ms.openlocfilehash: a7e7c04b458575cdc9f2608d0c84f0df105bf202
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49426562"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53261761"
 ---
-# <a name="create-azure-app-service-web-apps-by-using-ansible-preview"></a>Создание веб-приложений службы приложений Azure с помощью Ansible (предварительная версия)
-[Веб-приложения службы приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-overview) (или просто "Веб-приложения") размещают веб-приложения, интерфейсы REST API и серверные части мобильных решений. Вы можете выполнять разработку на привычном языке: &mdash;.NET, .NET Core, Java, Ruby, Node.js, PHP или Python.
+# <a name="create-azure-app-service-web-apps-by-using-ansible"></a>Создание веб-приложений Службы приложений Azure с помощью Ansible
+[Веб-приложения Службы приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-overview) (или просто "Веб-приложения") размещают веб-приложения, REST API и серверные части мобильных приложений. Вы можете выполнять разработку на привычном языке: &mdash;.NET, .NET Core, Java, Ruby, Node.js, PHP или Python.
 
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. В этой статье показано, как с помощью Ansible создать веб-приложение со средой выполнения Java. 
 
@@ -25,19 +25,20 @@ Ansible позволяет автоматизировать развертыва
 - [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
 > [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. Чтобы установить версию RC Ansible 2.7, выполните команду `sudo pip install ansible[azure]==2.7.0rc2`. После выпуска Ansible 2.7 не нужно указывать здесь версию, так как версия по умолчанию будет 2.7. 
+> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7.
 
 ## <a name="create-a-simple-app-service"></a>Создание простой службы приложений
 В этом разделе представлен пример сборника схем Ansible, который определяет следующие ресурсы:
 - группу ресурсов, в которой будет развернут план службы и веб-приложение;
 - веб-приложение со средой выполнения контейнера Java 8 и Tomcat в службе приложений на платформе Linux.
 
-```
+```yml
 - hosts: localhost
   connection: local
   vars:
-    resource_group: myfirstResourceGroup
+    resource_group: myResourceGroup
     webapp_name: myfirstWebApp
+    plan_name: myAppServicePlan
     location: eastus
   tasks:
     - name: Create a resource group
@@ -51,7 +52,7 @@ Ansible позволяет автоматизировать развертыва
         name: "{{ webapp_name }}"
         plan:
           resource_group: "{{ resource_group }}"
-          name: myappplan
+          name: "{{ plan_name }}"
           is_linux: true
           sku: S1
           number_of_workers: 1
@@ -71,17 +72,22 @@ ansible-playbook firstwebapp.yml
 
 Выходные данные запуска сборника схем Ansible показывают, что веб-приложение успешно создано:
 
-```
+```Output
+PLAY [localhost] *************************************************
+
+TASK [Gathering Facts] *************************************************
+ok: [localhost]
+
 TASK [Create a resource group] *************************************************
 changed: [localhost]
 
-TASK [Create App Service on Linux with Java Runtime] ******************************
- [WARNING]: Azure API profile latest does not define an entry for
-WebSiteManagementClient
+TASK [Create App Service on Linux with Java Runtime] *************************************************
+ [WARNING]: Azure API profile latest does not define an entry for WebSiteManagementClient
+
 changed: [localhost]
 
-PLAY RECAP *********************************************************************
-localhost                  : ok=2    changed=2    unreachable=0    failed=0   
+PLAY RECAP *************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0
 ```
 
 ## <a name="create-an-app-service-by-using-traffic-manager"></a>Создание службы приложений с помощью диспетчера трафика
@@ -98,33 +104,33 @@ localhost                  : ok=2    changed=2    unreachable=0    failed=0
 - профиль диспетчера трафика;
 - конечную точку диспетчера трафика с использованием созданного веб-сайта.
 
-```
+```yml
 - hosts: localhost
   connection: local
   vars:
+    resource_group_webapp: myResourceGroupWebapp
     resource_group: myResourceGroup
-    plan_resource_group: planResourceGroup
-    app_name: myLinuxWebApp
+    webapp_name: myLinuxWebApp
+    plan_name: myAppServicePlan
     location: eastus
-    linux_plan_name: myAppServicePlan
     traffic_manager_profile_name: myTrafficManagerProfile
     traffic_manager_endpoint_name: myTrafficManagerEndpoint
 
   tasks:
   - name: Create resource group
     azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
+        name: "{{ resource_group_webapp }}"
         location: "{{ location }}"
 
   - name: Create secondary resource group
     azure_rm_resourcegroup:
-        name: "{{ plan_resource_group }}"
+        name: "{{ resource_group }}"
         location: "{{ location }}"
 
   - name: Create App Service Plan
     azure_rm_appserviceplan:
-      resource_group: "{{ plan_resource_group }}"
-      name: "{{ linux_plan_name }}"
+      resource_group: "{{ resource_group }}"
+      name: "{{ plan_name }}"
       location: "{{ location }}"
       is_linux: true
       sku: S1
@@ -132,11 +138,11 @@ localhost                  : ok=2    changed=2    unreachable=0    failed=0
 
   - name: Create App Service on Linux with Java Runtime
     azure_rm_webapp:
-        resource_group: "{{ resource_group }}"
-        name: "{{ app_name }}"
+        resource_group: "{{ resource_group_webapp }}"
+        name: "{{ webapp_name }}"
         plan:
-          resource_group: "{{ plan_resource_group }}"
-          name: "{{ linux_plan_name }}"
+          resource_group: "{{ resource_group }}"
+          name: "{{ plan_name }}"
           is_linux: true
           sku: S1
           number_of_workers: 1
@@ -151,13 +157,13 @@ localhost                  : ok=2    changed=2    unreachable=0    failed=0
 
   - name: Get web app facts
     azure_rm_webapp_facts:
-      resource_group: "{{ resource_group }}"
-      name: "{{ app_name }}"
+      resource_group: "{{ resource_group_webapp }}"
+      name: "{{ webapp_name }}"
     register: webapp
     
   - name: Create Traffic Manager Profile
     azure_rm_trafficmanagerprofile:
-      resource_group: "{{ resource_group }}"
+      resource_group: "{{ resource_group_webapp }}"
       name: "{{ traffic_manager_profile_name }}"
       location: global
       routing_method: performance
@@ -171,13 +177,12 @@ localhost                  : ok=2    changed=2    unreachable=0    failed=0
 
   - name: Add endpoint to traffic manager profile, using created web site
     azure_rm_trafficmanagerendpoint:
-      resource_group: "{{ resource_group }}"
+      resource_group: "{{ resource_group_webapp }}"
       profile_name: "{{ traffic_manager_profile_name }}"
       name: "{{ traffic_manager_endpoint_name }}"
       type: azure_endpoints
       location: "{{ location }}"
       target_resource_id: "{{ webapp.webapps[0].id }}"
-
 ```
 Сохраните упомянутый выше сборник схем, присвоив ему имя **webapp.yml**, или [скачайте этот сборник](https://github.com/Azure-Samples/ansible-playbooks/blob/master/webapp.yml).
 
@@ -187,7 +192,12 @@ ansible-playbook webapp.yml
 ```
 
 Выходные данные запуска сборника схем Ansible показывают, что план службы приложений, веб-приложение, профиль диспетчера трафика и конечная точка успешно созданы:
-```
+```Output
+PLAY [localhost] *************************************************
+
+TASK [Gathering Facts] *************************************************
+ok: [localhost]
+
 TASK [Create resource group] ****************************************************************************
 changed: [localhost]
 
@@ -222,4 +232,4 @@ localhost                  : ok=9    changed=6    unreachable=0    failed=0
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"] 
-> [Документация по Ansible в Azure](https://docs.microsoft.com/azure/ansible/)
+> [Масштабирование веб-приложений Службы приложений Azure с помощью Ansible](https://docs.microsoft.com/azure/ansible/ansible-scale-azure-web-apps)

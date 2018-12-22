@@ -1,5 +1,5 @@
 ---
-title: 'Руководство: отправка изображения — Визуальный поиск Bing'
+title: Руководство. Отправка изображения — Визуальный поиск Bing
 titleSuffix: Azure Cognitive Services
 description: Описание процесса передачи изображения в службу Bing для получения полезных сведений о нем, а также для его анализа и отображения ответа.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: bing-visual-search
 ms.topic: tutorial
 ms.date: 07/10/2018
 ms.author: scottwhi
-ms.openlocfilehash: b13f2e5c96ba50fc76d7bfae256e5fcc1c8b56ce
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 24b4bacd6a369812a07095b1d9c114f557d10d57
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52443463"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52960063"
 ---
-# <a name="tutorial-breaking-down-bing-visual-search-upload"></a>Пошаговое руководство по передаче изображения в Bing Visual Search
+# <a name="tutorial-breaking-down-bing-visual-search-upload"></a>Руководство. Пошаговое руководство по передаче изображения в Визуальный поиск Bing
 
 В этом руководстве подробно описывается передача изображения в службу Bing и получение полезных сведений о нем. В нем также показано, как получить доступ полезным сведениям в ответе JSON и отобразить их. Полный пример HTML и JavaScript приведен в разделе [Полный код](#complete-code).
 
@@ -25,9 +25,9 @@ ms.locfileid: "52443463"
 
 Для выполнения действий, описанных в этом руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
 
-Чтобы создать подписку на портале Azure, сделайте следующее:
+Чтобы создать подписку на портале Azure:
 1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` вверху портала Azure.  
-2. В раскрывающемся списке Marketplace выберите `Bing Search v7`.
+2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
 3. В поле `Name` (Имя) введите имя нового ресурса.
 4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
 5. Выберите ценовую категорию `S9`.
@@ -1340,4 +1340,4 @@ ms.locfileid: "52443463"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Чтобы узнать, как получать полезные сведения с помощью и маркера аналитических сведений, ознакомьтесь с [руководством по использованию ImageInsightsToken в пакете SDK для Bing Visual Search](.\tutorial-visual-search-insights-token.md).
+Чтобы узнать, как получать полезные сведения с помощью и маркера аналитических сведений, ознакомьтесь с [руководством по использованию ImageInsightsToken в пакете SDK для Bing Visual Search](./tutorial-visual-search-insights-token.md).

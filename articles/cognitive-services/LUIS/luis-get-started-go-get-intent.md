@@ -1,23 +1,26 @@
 ---
-title: Краткое руководство для языка Go — прогнозирование намерения — LUIS
-titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре. Отправляйте намерение пользователя в виде текста в конечную точку прогноза HTTP общедоступного приложения, используя GO. В конечной точке LUIS применяет модель общедоступного приложения, чтобы проанализировать смысл текста на естественном языке, определить общее намерение и извлечь данные, релевантные для предметной области приложения.
+title: Получение намерения с использованием Go
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Из этого краткого руководства по Go вы узнаете, как использовать общедоступное приложение LUIS для определения намерений пользователя в разговоре.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: f19c46fcc7dcff2e02786bb3a03082f831e880a2
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 9768e7945a94c5b28a1f28ea0264108cd47865d6
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47032739"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53104719"
 ---
-# <a name="quickstart-get-intent-using-go"></a>Краткое руководство: получение намерения с использованием Go
+# <a name="quickstart-get-intent-using-go"></a>Краткое руководство. Получение намерения с использованием Go
+
+Из этой статьи вы узнаете, как передать фразы в конечную точку LUIS и получить намерение и сущности.
 
 [!INCLUDE [Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 

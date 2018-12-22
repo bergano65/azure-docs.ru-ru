@@ -1,5 +1,5 @@
 ---
-title: Обзор Azure Active Directory | Документация Майкрософт
+title: Что такое Microsoft Azure Active Directory | Документация Майкрософт
 description: Сведения об Azure Active Directory, включая необходимую терминологию, аудиторию, основы лицензирования и связанные функции.
 services: active-directory
 author: eross-msft
@@ -8,12 +8,13 @@ ms.service: active-directory
 ms.topic: overview
 ms.date: 11/13/2018
 ms.author: lizross
-ms.openlocfilehash: 1b1561ed8470c39b13def72774e253db28bf58d8
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: 80c3108d468465e68d554b3d36c527c5ccd4a13c
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51686591"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53085932"
 ---
 # <a name="what-is-azure-active-directory"></a>Что такое Microsoft Azure Active Directory 
 Azure Active Directory (Azure AD) — это облачная служба управления удостоверениями и доступом от корпорации Майкрософт. Azure AD помогает сотрудникам входить в систему и получать доступ к ресурсам:
@@ -51,7 +52,7 @@ Azure AD могут использовать:
 
 - **Лицензии на использование функций с оплатой по мере использования.** Вы также можете получить лицензии на дополнительные функции, такие как Azure Active Directory B2C. B2C помогает предоставлять решения для управления идентификацией и доступом для клиентских приложений. Дополнительные сведения см. в статье [об Azure Active Directory B2C](../../active-directory-b2c/index.yml).
 
-Дополнительные сведения о связывании подписки Azure с Azure AD см. в статье [Практическое руководство. Привязка или добавление подписки Azure в Azure Active Directory](active-directory-how-subscriptions-associated-directory.md), а сведения о присвоении лицензий пользователям — в статье [Практическое руководство. Назначение или удаление лицензий Azure Active Directory](license-users-groups.md).
+Дополнительные сведения см. в руководствах по [ связыванию подписки Azure с Azure Active Directory или добавлении ее в службу](active-directory-how-subscriptions-associated-directory.md) и [ назначению или удалению лицензий Azure Active Directory](license-users-groups.md).
 
 ## <a name="terminology"></a>Терминология
 Чтобы лучше понять Azure AD и сопутствующую документацию, изучите следующие термины.

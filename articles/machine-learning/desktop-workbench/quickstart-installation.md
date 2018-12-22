@@ -11,16 +11,16 @@ ms.component: core
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: quickstart
-ms.date: 3/7/2018
+ms.date: 03/07/2018
 ROBOTS: NOINDEX
-ms.openlocfilehash: a45b8e1dd2f59bf1399c92e3ff1a3c66ca8956ed
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 21ab3448f080e7f4874464dbb4befc0cbed63282
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46956886"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53276508"
 ---
-# <a name="quickstart-install-and-get-started-with-azure-machine-learning-service"></a>Краткое руководство. Установка службы "Машинное обучение Azure" и начало работы
+# <a name="quickstart-install-and-get-started-with-azure-machine-learning-service"></a>Краткое руководство. Установка Службы машинного обучения Azure и начало работы
 
 [!INCLUDE [workbench-deprecated](../../../includes/aml-deprecating-preview-2017.md)]
 
@@ -117,7 +117,7 @@ Azure Machine Learning Workbench доступна для Windows или macOS. �
    
    | |Установочный путь к Azure Machine Learning Workbench.|
    |--------|------------------------------------------------|
-   |Windows|C:\Users\\<пользователь\>\AppData\Local\AmlWorkbench|
+   | Windows|C:\Users\\<пользователь\>\AppData\Local\AmlWorkbench|
    |macOS|/Applications/Azure ML Workbench.app|
 
    Программа установки скачает и настроит все необходимые зависимости, например Python, Miniconda и другие связанные библиотеки. Эта установка также включает программу командной строки Azure (Azure CLI), которая работает на всех платформах.
@@ -213,7 +213,7 @@ Azure Machine Learning Workbench доступна для Windows или macOS. �
 Дополнительные сведения об этом рабочем процессе, в том числе о развертывании модели в качестве веб-службы, вы найдете в полном руководстве *Классификация цветков ириса*. В нем описаны процедуры [подготовки данных](../desktop-workbench/tutorial-classifying-iris-part-1.md), [экспериментирования](../desktop-workbench/tutorial-classifying-iris-part-2.md) и [управления моделями](../desktop-workbench/tutorial-classifying-iris-part-3.md). 
 
 > [!div class="nextstepaction"]
-> [Часть 1. Классификация цветков ириса: подготовка данных](../desktop-workbench/tutorial-classifying-iris-part-1.md)
+> [Руководство. Классификация цветков ириса, част 1](../desktop-workbench/tutorial-classifying-iris-part-1.md)
 
 >[!NOTE]
 > Несмотря на наличие созданной учетной записи управления моделью, среда еще не настроена для развертывания веб-служб. Узнайте, как настроить [среду развертывания](../desktop-workbench/deployment-setup-configuration.md).

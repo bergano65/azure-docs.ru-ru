@@ -1,5 +1,5 @@
 ---
-title: Руководство по добавлению автозаполнения в поле поиска с помощью Поиска Azure | Документация Майкрософт
+title: Руководство. Добавление автозаполнения в поле поиска в Поиске Azure
 description: Примеры того, как улучшить опыт взаимодействия пользователя с дата-центрированными приложениями с помощью функции автозаполнения Поиска Azure и вариантов API.
 manager: pablocas
 author: mrcarter8
@@ -9,14 +9,15 @@ ms.devlang: NA
 ms.topic: tutorial
 ms.date: 07/11/2018
 ms.author: mcarter
-ms.openlocfilehash: 63f4d9f72b9bf81ea772123d65db0659fd3ffa5c
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.custom: seodec2018
+ms.openlocfilehash: 10f86a482fbb35e7276f8f689a7eba184a7b624b
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45578180"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53316188"
 ---
-# <a name="tutorial-add-auto-complete-to-your-search-box-using-azure-search"></a>Руководство. Добавление автозаполнения в поле поиска с помощью Поиска Azure
+# <a name="tutorial-add-auto-complete-to-your-search-box-using-azure-search"></a>Руководство. Руководство. Добавление автозаполнения в поле поиска в Поиске Azure
 
 В этом руководстве вы узнаете, как использовать [предложения](https://docs.microsoft.com/rest/api/searchservice/suggestions), [автозаполнение](https://docs.microsoft.com/rest/api/searchservice/autocomplete) и [аспекты](search-faceted-navigation.md) в [REST API Поиска Azure](https://docs.microsoft.com/rest/api/searchservice/) и [пакете SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions?view=azure-dotnet), чтобы создать эффективное поле поиска. *Предложения* дают рекомендации по результатам по мере ввода поискового запроса. *Автоматическое заполнение*, [новая функция предварительного просмотра](search-api-preview.md) в Поиске Azure, предоставляет термины из индекса, чтобы завершить текст, который вводит пользователь. Мы сравним несколько способов повысить производительность и легко и быстро находить желаемое, применяя широкие возможности функций поиска в процессе набора текста.
 
@@ -126,7 +127,7 @@ source: "/home/suggest?highlights=false&fuzzy=true&",
 
 1. Откройте файл HomeController.cs в каталоге контроллеров. 
 
-1. В первую очередь вы заметите метод в верхней части класса InitSearch.  Он создает прошедший проверку подлинности клиент индекса HTTP для службы поиска Azure.  Если вы хотите узнать больше о том, как это работает, обратитесь к следующему руководству: [Использование Поиска Azure в приложении .NET](https://docs.microsoft.com/azure/search/search-howto-dotnet-sdk)
+1. В первую очередь вы заметите метод в верхней части класса InitSearch.  Он создает прошедший проверку подлинности клиент индекса HTTP для службы поиска Azure.  Если вы хотите узнать больше о том, как это работает, обратитесь к следующему руководству: [Использование службы поиска Azure в приложении .NET](https://docs.microsoft.com/azure/search/search-howto-dotnet-sdk)
 
 1. Перейдите к функции предложений.
 

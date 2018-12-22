@@ -10,14 +10,14 @@ ms.custom: quick start connect, mvc
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: 3708027b766ff9070831dd3677e821565e0dd4fa
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 50c2362e961d882afc109a0554303d364d52384b
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46994961"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53089438"
 ---
-# <a name="quickstart-build-a-cassandra-app-with-net-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью .NET и Azure Cosmos DB
+# <a name="quickstart-build-a-cassandra-app-with-net-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью .NET в Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](create-cassandra-dotnet.md)
@@ -96,7 +96,7 @@ Azure Cosmos DB — это глобально распределенная мн
 * Вставьте пользовательские сущности, используя объект IMapper с новым сеансом, который подключается к пространству ключей uprofile.
 
     ```csharp
-    mapper.Insert<User>(new User(1, "LyubovK", "Dubai"));
+    mapper.Insert<User>(new User(1, "LyubovK", "Dubai"));
     ```
     
 * Выполните запрос на получение информации обо всех пользователях.
@@ -118,7 +118,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Информация из строки подключения обеспечивает обмен данными между приложением и размещенной базой данных.
 
-1. На [портале Azure](http://portal.azure.com/) выберите **Строка подключения**.
+1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**.
 
     Вы можете использовать кнопку ![Кнопка "Копировать"](./media/create-cassandra-dotnet/copy.png) в правой части экрана, чтобы скопировать значение параметра USERNAME (Имя пользователя).
 
@@ -159,7 +159,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
     ![Просмотр и проверка выходных данных](./media/create-cassandra-dotnet/output.png)
 
-    Нажмите клавиши CTRL + C, чтобы остановить выполнение программы и закрыть окно консоли. 
+    Нажмите клавиши CTRL+C, чтобы остановить выполнение программы и закрыть окно консоли. 
     
 4. На портале Azure откройте **обозреватель данных**, чтобы запросить, изменить и обработать новые данные.
 

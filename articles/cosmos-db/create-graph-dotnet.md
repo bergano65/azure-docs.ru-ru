@@ -10,14 +10,14 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 01/08/2018
 ms.author: lbosq
-ms.openlocfilehash: 132e13f213a681b2e6e8581200070fb316e7b582
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: c44936604d0dcea2f00f237f27d27a03491c532e
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52847105"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53407683"
 ---
-# <a name="azure-cosmos-db-build-a-net-framework-or-core-application-using-the-gremlin-api"></a>Azure Cosmos DB. Создание приложения .NET Framework или Core с помощью API Gremlin
+# <a name="azure-cosmos-db-build-a-net-framework-or-core-application-using-the-gremlin-api"></a>Azure Cosmos DB — Создание приложения .NET Framework или Core с помощью API Gremlin
 
 > [!div class="op_single_selector"]
 > * [Консоль Gremlin](create-graph-gremlin-console.md)
@@ -30,7 +30,7 @@ ms.locfileid: "52847105"
 
 Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Вы можете быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества возможностей глобального распределения и горизонтального масштабирования базы данных Azure Cosmos DB. 
 
-В этом кратком руководстве показано, как создать учетную запись [API Gremlin](graph-introduction.md) для Azure Cosmos DB, базу данных и граф (контейнер) с помощью портала Azure. Затем вы можете создать и запустить консольное приложение c помощью драйвера [Gremlin.Net](http://tinkerpop.apache.org/docs/3.2.7/reference/#gremlin-DotNet) с открытым кодом.  
+В этом кратком руководстве показано, как создать учетную запись [API Gremlin](graph-introduction.md) для Azure Cosmos DB, базу данных и граф (контейнер) с помощью портала Azure. Затем вы можете создать и запустить консольное приложение c помощью драйвера [Gremlin.Net](https://tinkerpop.apache.org/docs/3.2.7/reference/#gremlin-DotNet) с открытым кодом.  
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -142,14 +142,13 @@ Azure Cosmos DB — это глобально распределенная мн
 * Выполните каждый запрос Gremlin, используя объект `GremlinClient` с асинхронной задачей (строка 63). Это необходимо для чтения запросов Gremlin из словаря, указанного выше (строка 26).
 
     ```csharp
-    var task = gremlinClient.SubmitAsync<dynamic>(query.Value);
-    task.Wait();
+    var results = await gremlinClient.SubmitAsync<dynamic>(query.Value);
     ```
 
 * Извлеките результат и выполните чтение значений, отформатированных как словарь, с помощью класса `JsonSerializer` из Newtonsoft.Json.
 
     ```csharp
-    foreach (var result in task.Result)
+    foreach (var result in results)
     {
         // The vertex results are formed as dictionaries with a nested dictionary for their properties
         string output = JsonConvert.SerializeObject(result);
@@ -161,7 +160,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](http://portal.azure.com/) перейдите к учетной записи службы базы данных графа. На вкладке **Обзор** вкладку вы увидите две конечные точки: 
+1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи службы базы данных графа. На вкладке **Обзор** вкладку вы увидите две конечные точки: 
  
    **URI пакета SDK для .NET** — это значение используется при подключении к учетной записи графа с помощью библиотеки Microsoft.Azure.Graphs. 
 

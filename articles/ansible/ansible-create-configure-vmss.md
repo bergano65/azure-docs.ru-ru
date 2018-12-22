@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 08/24/2018
-ms.openlocfilehash: f3b08c41d3bf083c7cca5897cee11a1a4b9c9092
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.openlocfilehash: 8dacfb054a36801c076435037a530daa87c4a89c
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42918581"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53409417"
 ---
 # <a name="create-virtual-machine-scale-sets-in-azure-using-ansible"></a>Создание масштабируемых наборов виртуальных машин в Azure с помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления масштабируемым набором виртуальных машин (VMSS) в Azure так же, как любым другим ресурсом Azure. В этой статье показано, как создать и развернуть масштабируемый набор виртуальных машин с помощью Ansible. 
@@ -37,7 +37,7 @@ Ansible позволяет автоматизировать развертыва
 
 Введите свой пароль для значения *admin_password*.
 
-  ```yaml
+  ```yml
   - hosts: localhost
     vars:
       resource_group: myResourceGroup
@@ -141,7 +141,7 @@ Ansible позволяет автоматизировать развертыва
 
 После запуска сборника схем выходные данные, аналогичные следующему примеру, показывают, что масштабируемый набор виртуальных машин был успешно создан:
 
-  ```bash
+  ```Output
   PLAY [localhost] ***********************************************************
 
   TASK [Gathering Facts] *****************************************************
@@ -190,7 +190,7 @@ Ansible позволяет автоматизировать развертыва
 
 Теперь давайте увеличим количество экземпляров с двух до трех. Следующий код сборника схем Ansible извлекает информацию о масштабируемом наборе виртуальных машин и изменяет его емкость с двух до трех. 
 
-  ```yaml
+  ```yml
   - hosts: localhost
     vars:
       resource_group: myResourceGroup
@@ -225,7 +225,7 @@ Ansible позволяет автоматизировать развертыва
 
 Выходные данные запуска сборника схем Ansible показывают, что масштабируемый набор виртуальных машин был успешно развернут:
 
-  ```bash
+  ```Output
   PLAY [localhost] **********************************************************
 
   TASK [Gathering Facts] ****************************************************
@@ -275,4 +275,6 @@ Ansible позволяет автоматизировать развертыва
 
 ## <a name="next-steps"></a>Дополнительная информация
 > [!div class="nextstepaction"] 
-> [Пример сборника схем Ansible для масштабируемого набора виртуальных машин](https://github.com/Azure-Samples/ansible-playbooks/tree/master/vmss)
+> [Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible](https://docs.microsoft.com/azure/ansible/ansible-deploy-app-vmss)
+
+> [Automatically scale a virtual machine scale set in Azure using Ansible](https://docs.microsoft.com/azure/ansible/ansible-auto-scale-vmss) (Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Ansible)

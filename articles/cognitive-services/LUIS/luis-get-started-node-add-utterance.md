@@ -1,21 +1,22 @@
 ---
-title: Краткое руководство для Node.js — изменение модели и обучение приложения LUIS
+title: Изменение и обучение приложения с помощью Node.js
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства по Node.js вы узнаете, как добавить примеры высказываний в приложение Home Automation и обучить это приложение. Примерами высказываний называют фразы пользователя на обычном языке, сопоставленные с тем или иным намерением. Предоставляя фразы для настроенных намерений, вы сообщаете LUIS ожидаемые варианты сообщений пользователя для каждого намерения.
+description: Из этого краткого руководства по Node.js вы узнаете, как добавить примеры высказываний в приложение Home Automation и обучить это приложение.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: a487f44e164830928367d9f6ea737e793e38c0a8
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 8f1ff88dc917c665d04f7500c8022e6baf4c94bf
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47036156"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53164472"
 ---
 # <a name="quickstart-change-model-using-nodejs"></a>Краткое руководство. Изменение модели с помощью Node.js
 
@@ -28,7 +29,7 @@ ms.locfileid: "47036156"
 * Зависимости NPM, необходимые в этой статье: [**request**](https://www.npmjs.com/package/request), [**request-promise**](https://www.npmjs.com/package/request-promise), [**fs-extra**](https://www.npmjs.com/package/fs-extra).  
 * [Visual Studio Code](https://code.visualstudio.com/).
 
-[!INCLUDE [Code is available in LUIS-Samples Github repo](../../../includes/cognitive-services-luis-qs-change-model-luis-repo-note.md)]
+[!INCLUDE [Code is available in LUIS-Samples GitHub repo](../../../includes/cognitive-services-luis-qs-change-model-luis-repo-note.md)]
 
 ## <a name="example-utterances-json-file"></a>Файл JSON с примерами высказываний.
 
@@ -78,7 +79,7 @@ ms.locfileid: "47036156"
 
 Вызвав `npm start`, можно добавить фразы, выполнить обучение и получить состояние обучения.
 
-```CMD
+```console
 > npm start 
 ```
 

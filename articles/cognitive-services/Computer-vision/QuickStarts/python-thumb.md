@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по созданию эскиза с помощью службы "Компьютерное зрение" для REST, Python
+title: Краткое руководство. Создание эскиза с помощью API компьютерного зрения, REST и Python
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения на Python.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: b07c1f1556e69e95b2cd27f94423a6fb09fc44d4
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: d674b3aae171ff1c590724720a0e6ee3761e80ef
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51853869"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52956080"
 ---
-# <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство по созданию эскизов с помощью REST API и Python в службе "Компьютерное зрение"
+# <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство. Краткое руководство по созданию эскизов с помощью API компьютерного зрения, REST API и Python
 
 Из этого краткого руководства вы узнаете, как создать эскиз изображения с помощью REST API компьютерного зрения. Метод [Get Thumbnail](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb) позволяет создать эскиз изображения. Вы можете указать нужную высоту и ширину. При этом пропорции могут отличаться от пропорций исходного изображения. API компьютерного зрения использует интеллектуальную обрезку для идентификации интересующей области и создания координат обрезки для этой области.
 

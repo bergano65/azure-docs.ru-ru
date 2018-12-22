@@ -8,14 +8,14 @@ ms.topic: quickstart
 ms.date: 11/15/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 6ad839b9cf1179e282b9163df5a38e13417408e2
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: 7e11affece7e7eb133aa22e159ec07d4f15e96f7
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51706234"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52999599"
 ---
-# <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-portal"></a>Краткое руководство. Направление веб-трафика с помощью шлюза приложений Azure на портале Azure
+# <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-portal"></a>Краткое руководство. Направление веб-трафика с помощью Шлюза приложений Azure на портале Azure
 
 Шлюз приложений Azure позволяет направлять веб-трафик приложения к определенным ресурсам. Для этого портам назначаются прослушиватели, создаются определенные правила, и в серверный пул добавляются соответствующие ресурсы.
 
@@ -25,7 +25,7 @@ ms.locfileid: "51706234"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на портал Azure по адресу [http://portal.azure.com](http://portal.azure.com).
+Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 
 ## <a name="create-an-application-gateway"></a>Создание шлюза приложений
 
@@ -90,7 +90,7 @@ ms.locfileid: "51706234"
    Примите остальные значения по умолчанию и щелкните кнопку **Далее: Диски**.
 4. Примите параметры дисков по умолчанию и щелкните кнопку **Далее: Сеть**.
 5. Убедитесь, что выбрана виртуальная сеть **myVNet** и подсеть **myBackendSubnet**.
-6. Примите остальные параметры по умолчанию и щелкните кнопку **Далее: Управление**.
+6. Примите остальные значения по умолчанию и щелкните кнопку **Далее: Управление**.
 7. Щелкните **Отключить**, чтобы выключить диагностику загрузки. Примите другие параметры по умолчанию и щелкните кнопку **Просмотр и создание**.
 8. Просмотрите параметры на странице сводки и нажмите кнопку **Создать**.
 9. Прежде чем продолжить, дождитесь завершения создания виртуальной машины.

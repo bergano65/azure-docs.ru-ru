@@ -1,20 +1,21 @@
 ---
-title: Руководство по развертыванию и настройке Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
+title: Руководство. Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 description: В этом руководстве вы можете узнать, как развернуть и настроить службу "Брандмауэр Azure" с помощью портала Azure.
 services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 10/27/2018
+ms.date: 12/14/2018
 ms.author: victorh
-ms.openlocfilehash: d69bd055c95592961216f5da1efaedc4a642fd63
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
+ms.openlocfilehash: abbbec05dfb6d81a65941619a36b7f3afcdc1fba
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52316405"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53435571"
 ---
-# <a name="tutorial-deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Руководство по развертыванию и настройке Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
+# <a name="tutorial-deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Руководство. Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
 Возможность контролировать доступ к сетевым ресурсам Azure при подключении локальной сети к виртуальной сети Azure для создания гибридной сети является важной частью общего плана безопасности.
 
@@ -24,7 +25,7 @@ ms.locfileid: "52316405"
 
 - **VNet-Hub** — виртуальная сеть, в которой размещен брандмауэр;
 - **VNet-Spoke** — периферийная виртуальная сеть, которая представляет рабочую нагрузку, размещенную в Azure;
-- **VNet-Onprem** — локальная виртуальная сеть, которая представляет локальную среду. При фактическом развертывании ее можно подключить либо через соединение VPN, либо через Express Route. Для простоты в этом руководстве используется подключение к шлюзу VPN, а виртуальная сеть, размещенная в Azure, представляет локальную сеть.
+- **VNet-Onprem** — локальная виртуальная сеть, которая представляет локальную среду. При фактическом развертывании ее можно подключить либо через соединение VPN, либо через ExpressRoute. Для простоты в этом руководстве используется подключение к шлюзу VPN, а виртуальная сеть, размещенная в Azure, представляет локальную сеть.
 
 ![Брандмауэр в гибридной сети](media/tutorial-hybrid-ps/hybrid-network-firewall.png)
 
@@ -54,6 +55,12 @@ ms.locfileid: "52316405"
 - Не забудьте указать параметр **AllowGatewayTransit** при пиринге из VNet-Hub в VNet-Spoke и параметр **UseRemoteGateways** при пиринге из VNet-Spoke в VNet-Hub.
 
 См. раздел [Создание маршрутов](#create-routes) в этом руководстве, чтобы узнать, как создаются эти маршруты.
+
+>[!NOTE]
+>Брандмауэр Azure должен быть напрямую подключен к Интернету. Если включено принудительное туннелирование в локальную сеть через ExpressRoute или Шлюз приложений, необходимо настроить определяемый пользователем маршрут 0.0.0.0/0, задав для **NextHopType** значение **Internet**, а затем назначив его подсети  **AzureFirewallSubnet**.
+
+>[!NOTE]
+>Трафик между виртуальными сетями с прямым пирингом передается напрямую, даже если определяемый пользователем маршрут указывает на Брандмауэр Azure как шлюз по умолчанию. Чтобы маршрутизировать трафик между подсетями к брандмауэру в этом сценарии, в определяемом пользователем маршруте для обеих подсетей нужно явно указать префикс целевой подсети.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -482,4 +489,4 @@ Set-AzureRmFirewall -AzureFirewall $azfw
 Теперь вы можете отследить журналы Брандмауэра Azure.
 
 > [!div class="nextstepaction"]
-> [Руководство по мониторингу журналов Брандмауэра Azure](./tutorial-diagnostics.md)
+> [Руководство. Мониторинг журналов Брандмауэра Azure](./tutorial-diagnostics.md)

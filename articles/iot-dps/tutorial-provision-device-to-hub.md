@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 1b9d6342d30c5f5e9ef80213664447c48a62494c
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 40d16076a3d995ecccd06591278b330652d960d8
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39521906"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53189019"
 ---
 # <a name="provision-the-device-to-an-iot-hub-using-the-azure-iot-hub-device-provisioning-service"></a>Подготовка устройства в Центре Интернета вещей с помощью службы подготовки устройств для Центра Интернета вещей Azure
 
@@ -40,12 +40,12 @@ ms.locfileid: "39521906"
     - Уникальный для каждой микросхемы или моделирования доверенного платформенного модуля *ключ подтверждения*, полученный у производителя микросхемы доверенного платформенного модуля.  Дополнительные сведения см. в статье [Общие сведения о ключе подтверждения доверенного платформенного модуля](https://technet.microsoft.com/library/cc770443.aspx).
     - *Registration ID* (ИД регистрации), который позволяет уникально идентифицировать устройство в пространстве имен и (или) области. Этот идентификатор может как совпадать, так и не совпадать с идентификатором устройства. Идентификатор — обязателен для каждого устройства. Для устройств на основе доверенного платформенного модуля идентификатор регистрации может быть производным от самого TPM, например хэш SHA-256 ключа подтверждения доверенного платформенного модуля.
 
-    [![Сведения о регистрации для доверенного платформенного модуля на портале](./media/tutorial-provision-device-to-hub/tpm-device-enrollment.png)](./media/tutorial-provision-device-to-hub/tpm-device-enrollment.png#lightbox)  
+      [![Сведения о регистрации для доверенного платформенного модуля на портале](./media/tutorial-provision-device-to-hub/tpm-device-enrollment.png)](./media/tutorial-provision-device-to-hub/tpm-device-enrollment.png#lightbox)  
 
 - Для устройств на основе X.509 требуется следующее:
     - [Сертификат выдается микросхеме или имитации X.509](https://msdn.microsoft.com/library/windows/desktop/bb540819.aspx) в файле формата *PERM* или *CER*. Для отдельной регистрации необходимо использовать *сертификат подписчика*, выдаваемый на устройство, для системы X.509, а для групп регистраций — *корневой сертификат*. 
 
-    [![Добавление индивидуальной регистрации для аттестации X.509 на портале](./media/tutorial-provision-device-to-hub/individual-enrollment.png)](./media/tutorial-provision-device-to-hub/individual-enrollment.png#lightbox)
+      [![Добавление индивидуальной регистрации для аттестации X.509 на портале](./media/tutorial-provision-device-to-hub/individual-enrollment.png)](./media/tutorial-provision-device-to-hub/individual-enrollment.png#lightbox)
 
 Имеется два способа регистрации устройства в службе подготовки устройств:
 
@@ -89,7 +89,7 @@ ms.locfileid: "39521906"
 
     ![Успешное подключение к центру на портале](./media/tutorial-provision-device-to-hub/hub-connect-success.png)
 
-Дополнительные сведения о примере приложения имитации доверенного платформенного модуля (TPM) см. на странице [dps_client_sample](https://github.com/Azure/azure-iot-device-auth/blob/master/dps_client/samples/dps_client_sample/dps_client_sample.c). 
+Дополнительные сведения см. в примере клиента подготовки устройства [prov_dev_client_sample.c](https://github.com/Azure/azure-iot-sdk-c/blob/master/provisioning_client/samples/prov_dev_client_sample/prov_dev_client_sample.c). В примере демонстрируется подготовка имитированного устройства с помощью TPM, сертификатов X.509 и симметричных ключей. Пошаговые инструкции по использованию примера см. в руководствах по аттестации [TPM](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device), [X.509](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device-x509), и [симметричного ключа](https://docs.microsoft.com/azure/iot-dps/quick-create-simulated-device-symm-key).
 
 ## <a name="next-steps"></a>Дополнительная информация
 Из этого руководства вы узнали, как выполнить следующие задачи:

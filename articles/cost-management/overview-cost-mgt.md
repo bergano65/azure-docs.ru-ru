@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/21/2018
+ms.date: 12/05/2018
 ms.topic: overview
 ms.service: cost-management
 manager: benshy
 ms.custom: ''
-ms.openlocfilehash: 16e2da864d51cbc44457715813e851fd873c8746
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: a90ef531cedb5e4c32a8f0af8b6cca86a93fb39a
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52276675"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52997118"
 ---
 # <a name="what-is-azure-cost-management"></a>Что такое Azure Cost Management?
 
@@ -29,7 +29,7 @@ ms.locfileid: "52276675"
 
 ## <a name="plan-and-control-expenses"></a>Планирование и контроль расходов
 
-Служба управления затратами помогает планировать и контролировать траты с помощью следующих методов: анализ затрат, бюджеты, рекомендации и экспорт данных по управлению затратами.
+Служба "Управление затратами Azure" помогает планировать и контролировать затраты за счет анализа затрат, подготовки бюджетов и рекомендаций, возможности экспорта данных управления затратами.
 
 Анализ затрат можно использовать для изучения и анализа организационных затрат. Вы можете просматривать агрегированные затраты своей организации и, таким образом, определять факторы увеличения затрат и тенденции расходов. Просматривая накопленные затраты за определенный период времени, вы сможете оценивать месячные, квартальные или даже годовые тенденции затрат относительно бюджета.
 

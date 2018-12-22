@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 04/20/2018
 ms.author: danoble
-ms.openlocfilehash: 7fca4adf8130a6a60e4a89edf129a73562289c5e
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 2979cdd0184e287ba83ae8a254722b64decce83d
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52837500"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413699"
 ---
 # <a name="use-the-azure-cosmos-db-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos DB для разработки и тестирования в локальной среде
 
@@ -28,15 +28,15 @@ ms.locfileid: "52837500"
 </tr>
 <tr>
   <td><strong>Источник Docker</strong></td>
-  <td>[Github](https://github.com/Azure/azure-cosmos-db-emulator-docker)</td>
+  <td>[GitHub](https://github.com/Azure/azure-cosmos-db-emulator-docker)</td>
 </tr>
 </table>
-  
-Эмулятор Azure Cosmos DB предоставляет локальную среду для разработки, которая эмулирует службу Azure Cosmos DB. С помощью эмулятора Azure Cosmos DB вы можете локально разрабатывать и тестировать приложения, не создавая подписку Azure и не тратя средства. Если приложение в эмуляторе Azure Cosmos DB работает правильно, вы можете использовать учетную запись Azure Cosmos DB в облаке. 
 
-Сейчас обозреватель данных в эмуляторе полностью поддерживает только создание коллекций API SQL и MongoDB. Контейнеры таблиц, Graph и Cassandra поддерживаются не полностью. 
+Эмулятор Azure Cosmos DB предоставляет локальную среду для разработки, которая эмулирует службу Azure Cosmos DB. С помощью эмулятора Azure Cosmos DB вы можете локально разрабатывать и тестировать приложения, не создавая подписку Azure и не тратя средства. Если приложение в эмуляторе Azure Cosmos DB работает правильно, вы можете использовать учетную запись Azure Cosmos DB в облаке.
 
-В этой статье рассматриваются следующие задачи: 
+Сейчас обозреватель данных в эмуляторе полностью поддерживает только создание коллекций API SQL и MongoDB. Контейнеры таблиц, Graph и Cassandra поддерживаются не полностью.
+
+В этой статье рассматриваются следующие задачи:
 
 > [!div class="checklist"]
 > * Установка эмулятора.
@@ -54,11 +54,11 @@ ms.locfileid: "52837500"
 
 Хотя эмуляция службы Azure Cosmos DB является точной, реализация эмулятора отличается от службы. Например, эмулятор использует стандартные компоненты операционной системы: локальную файловую систему для сохранения данных и стек протокола HTTPS для подключений. Это значит, что некоторые возможности инфраструктуры, включая глобальную репликацию, задержку менее 10 миллисекунд для операций чтения и записи или настраиваемые уровни согласованности, Azure будут недоступными.
 
-## <a name="differences-between-the-emulator-and-the-service"></a>Различия между эмулятором и службой 
+## <a name="differences-between-the-emulator-and-the-service"></a>Различия между эмулятором и службой
 Эмулятор Azure Cosmos DB обеспечивает эмулированную среду, выполняемую на локальном компьютере разработчика. Поэтому возможности эмулятора и облачной учетной записи Azure Cosmos DB несколько отличаются.
 
-* Сейчас обозреватель данных в эмуляторе поддерживает только создание коллекций API SQL и MongoDB. API-интерфейсы таблиц, Graph и Cassandra пока не поддерживаются.  
-* Эмулятор Azure Cosmos DB поддерживает только одну предопределенную учетную запись и известный главный ключ.  Повторное создание ключей в эмуляторе Azure Cosmos DB не поддерживается.
+* Сейчас обозреватель данных в эмуляторе поддерживает только создание коллекций API SQL и MongoDB. API-интерфейсы таблиц, Graph и Cassandra пока не поддерживаются.
+* Эмулятор Azure Cosmos DB поддерживает только одну предопределенную учетную запись и известный главный ключ. Повторное создание ключей в эмуляторе Azure Cosmos DB не поддерживается.
 * Эмулятор Azure Cosmos DB не поддерживает масштабирование и не может работать с большим числом коллекций.
 * Эмулятор Azure Cosmos DB не поддерживает [уровни согласованности Azure Cosmos DB](consistency-levels.md).
 * Эмулятор Azure Cosmos DB не поддерживает [репликацию между несколькими регионами](distribute-data-globally.md).
@@ -75,14 +75,14 @@ ms.locfileid: "52837500"
   * 10 ГБ свободного дискового пространства
 
 ## <a name="installation"></a>Установка
-Эмулятор Azure Cosmos DB можно скачать и установить из [центра загрузки Майкрософт](https://aka.ms/cosmosdb-emulator). Вы также можете запустить эмулятор в Docker для Windows. Инструкции по использованию эмулятора в Docker для Windows см. в статье [Использование эмулятора Azure Cosmos DB для разработки и тестирования в локальной среде](#running-on-docker). 
+Эмулятор Azure Cosmos DB можно скачать и установить из [центра загрузки Майкрософт](https://aka.ms/cosmosdb-emulator). Вы также можете запустить эмулятор в Docker для Windows. Инструкции по использованию эмулятора в Docker для Windows см. в статье [Использование эмулятора Azure Cosmos DB для разработки и тестирования в локальной среде](#running-on-docker).
 
 > [!NOTE]
 > Чтобы установить, настроить и запустить эмулятор Azure Cosmos DB, нужны права администратора на локальном компьютере.
 
 ## <a name="running-on-windows"></a>Запуск в Windows
 
-Чтобы запустить эмулятор Azure Cosmos DB, нажмите кнопку "Пуск" или клавишу Windows. Начните вводить текст **Эмулятор Azure Cosmos DB** и выберите эмулятор в списке приложений. 
+Чтобы запустить эмулятор Azure Cosmos DB, нажмите кнопку "Пуск" или клавишу Windows. Начните вводить текст **Эмулятор Azure Cosmos DB** и выберите эмулятор в списке приложений.
 
 ![Нажмите кнопку "Пуск" или клавишу Windows, начните вводить **Эмулятор Azure Cosmos DB**, а затем выберите эмулятор в списке приложений](./media/local-emulator/database-local-emulator-start.png)
 
@@ -99,10 +99,10 @@ ms.locfileid: "52837500"
 ![Запуск обозревателя данных из локального эмулятора Azure Cosmos DB](./media/local-emulator/database-local-emulator-data-explorer-launcher.png)
 
 ## <a name="checking-for-updates"></a>Проверка наличия обновлений
-Обозреватель данных сообщает о наличии нового обновления, доступного для скачивания. 
+Обозреватель данных сообщает о наличии нового обновления, доступного для скачивания.
 
 > [!NOTE]
-> Данные, созданные в одной версии эмулятора Azure Cosmos DB, могут оказаться недоступными при использовании другой версии. Если нужно сохранить данные на длительный срок, мы рекомендуем хранить их в учетной записи хранения Azure Cosmos DB, а не эмуляторе Azure Cosmos DB. 
+> Данные, созданные в одной версии эмулятора Azure Cosmos DB, могут оказаться недоступными при использовании другой версии. Если нужно сохранить данные на длительный срок, мы рекомендуем хранить их в учетной записи хранения Azure Cosmos DB, а не эмуляторе Azure Cosmos DB.
 
 ## <a name="authenticating-requests"></a>Выполнение проверки подлинности запросов
 Как и в настоящей облачной службе Azure, в эмуляторе Azure Cosmos DB для каждого полученного запроса должна выполняться аутентификация. Эмулятор Azure Cosmos DB поддерживает аутентификацию с помощью главного ключа, используя одну предопределенную учетную запись и известный ключ аутентификации. В качестве учетных данных для эмулятора Azure Cosmos DB можно использовать только эту учетную запись и только этот ключ. К ним относятся:
@@ -111,25 +111,25 @@ ms.locfileid: "52837500"
     Account key: C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==
 
 > [!NOTE]
-> Главный ключ, поддерживаемый эмулятором Azure Cosmos DB, предназначен для использования только с этим эмулятором. Нельзя использовать рабочую учетную запись Azure Cosmos DB и ключ с эмулятором Azure Cosmos DB. 
+> Главный ключ, поддерживаемый эмулятором Azure Cosmos DB, предназначен для использования только с этим эмулятором. Нельзя использовать рабочую учетную запись Azure Cosmos DB и ключ с эмулятором Azure Cosmos DB.
 
-> [!NOTE] 
+> [!NOTE]
 > Если вы запустили эмулятор с параметром /Key, то используйте созданный ключ вместо "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw=="
 
 Как и служба Azure Cosmos DB, эмулятор Azure Cosmos DB поддерживает только безопасное подключение по протоколу SSL.
 
 ## <a name="running-on-a-local-network"></a>Запуск в локальной сети
 
-Вы можете запустить эмулятор в локальной сети. Чтобы разрешить доступ к сети, укажите параметр /AllowNetworkAccess в [командной строке](#command-line-syntax), а также один из обязательных дополнительных параметров /Key=key_string или /KeyFile=file_name. Можно также применить параметр GenKeyFile=file_name, чтобы заранее создать случайный ключ.  Затем передайте этот ключ в параметре /KeyFile=file_name или /Key=contents_of_file.
+Вы можете запустить эмулятор в локальной сети. Чтобы разрешить доступ к сети, укажите параметр /AllowNetworkAccess в [командной строке](#command-line-syntax), а также один из обязательных дополнительных параметров /Key=key_string или /KeyFile=file_name. Можно также применить параметр GenKeyFile=file_name, чтобы заранее создать случайный ключ. Затем передайте этот ключ в параметре /KeyFile=file_name или /Key=contents_of_file.
 
 Чтобы в первый раз получить доступ к сети, нужно завершить работу эмулятора и удалить каталог данных эмулятора (C:\Users\имя_пользователя\AppData\Local\CosmosDBEmulator).
 
 ## <a name="developing-with-the-emulator"></a>Разработка с помощью эмулятора
-Когда эмулятор Azure Cosmos DB будет запущен на рабочем столе, вы сможете работать с ним с помощью любых поддерживаемых [пакетов SDK для Azure Cosmos DB](sql-api-sdk-dotnet.md) или [REST API Azure Cosmos DB](/rest/api/cosmos-db/). Эмулятор Azure Cosmos DB также содержит встроенный обозреватель данных, позволяющий создавать коллекции для API SQL и MongoDB, а также просматривать и редактировать документы без написания кода.   
+Когда эмулятор Azure Cosmos DB будет запущен на рабочем столе, вы сможете работать с ним с помощью любых поддерживаемых [пакетов SDK для Azure Cosmos DB](sql-api-sdk-dotnet.md) или [REST API Azure Cosmos DB](/rest/api/cosmos-db/). Эмулятор Azure Cosmos DB также содержит встроенный обозреватель данных, позволяющий создавать коллекции для API SQL и MongoDB, а также просматривать и редактировать документы без написания кода.
 
     // Connect to the Azure Cosmos DB Emulator running locally
     DocumentClient client = new DocumentClient(
-        new Uri("https://localhost:8081"), 
+        new Uri("https://localhost:8081"),
         "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==");
 
 Если вы используете [поддержку протокола Azure Cosmos DB для MongoDB](mongodb-introduction.md), используйте следующую строку подключения:
@@ -138,7 +138,7 @@ ms.locfileid: "52837500"
 
 Для подключения к эмулятору Azure Cosmos DB вы можете использовать имеющиеся инструменты, такие как [Azure DocumentDB Studio](https://github.com/mingaliu/DocumentDBStudio). Можно также переносить данные между эмулятором Azure Cosmos DB и службой Azure Cosmos DB с помощью [средства миграции данных Azure Cosmos DB](https://github.com/azure/azure-documentdb-datamigrationtool).
 
-> [!NOTE] 
+> [!NOTE]
 > Если вы запустили эмулятор с параметром /Key, то используйте созданный ключ вместо "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw=="
 
 По умолчанию с помощью эмулятора Azure Cosmos DB можно создать до 25 односекционных коллекций или одну секционированную коллекцию. Дополнительные сведения об изменении этого значения см. в разделе [Изменение количества коллекций](#set-partitioncount).
@@ -198,31 +198,31 @@ ms.locfileid: "52837500"
   <td>DataPath</td>
   <td>Указывает путь для сохранения файлов данных. Значение по умолчанию — %LocalAppdata%\CosmosDBEmulator.</td>
   <td>CosmosDB.Emulator.exe /DataPath=&lt;путь_к_данным&gt;</td>
-  <td>&lt;datapath&gt;: любой доступный путь</td>
+  <td>&lt;datapath:&gt; любой доступный путь.</td>
 </tr>
 <tr>
   <td>Порт</td>
-  <td>Указывает номер порта, который должен использоваться эмулятором.  Значение по умолчанию — 8081.</td>
+  <td>Указывает номер порта, который должен использоваться эмулятором. Значение по умолчанию — 8081.</td>
   <td>CosmosDB.Emulator.exe /Port=&lt;порт&gt;</td>
-  <td>&lt;port&gt;: один номер порта</td>
+  <td>&lt;port:&gt; один номер порта.</td>
 </tr>
 <tr>
   <td>MongoPort</td>
   <td>Указывает номер порта для использования с интерфейсом совместимости с MongoDB. Значение по умолчанию — 10255.</td>
   <td>CosmosDB.Emulator.exe /MongoPort=&lt;порт_mongo&gt;</td>
-  <td>&lt;mongoport&gt;: один номер порта</td>
+  <td>&lt;mongoport:&gt; один номер порта.</td>
 </tr>
 <tr>
   <td>DirectPorts</td>
   <td>Указывает порты, которые нужно использовать для прямого подключения. По умолчанию это порты 10251, 10252, 10253, 10254.</td>
   <td>CosmosDB.Emulator.exe /DirectPorts:&lt;directports&gt;</td>
-  <td>&lt;directports&gt;: разделенный запятыми список из 4 портов</td>
+  <td>&lt;directports:&gt; разделенный запятыми список из 4 портов.</td>
 </tr>
 <tr>
   <td>Ключ</td>
   <td>Ключ проверки подлинности для эмулятора. Ключ должен иметь формат 64-разрядного вектора в кодировке Base-64.</td>
   <td>CosmosDB.Emulator.exe /Key:&lt;ключ&gt;</td>
-  <td>&lt;key&gt;: ключ в формате 64-разрядного вектора в кодировке base-64</td>
+  <td>&lt;key:&gt; Ключ должен иметь формат 64-разрядного вектора в кодировке base-64</td>
 </tr>
 <tr>
   <td>EnableRateLimiting</td>
@@ -252,7 +252,7 @@ ms.locfileid: "52837500"
   <td>PartitionCount</td>
   <td>Указывает максимальное количество секционированных коллекций. Дополнительные сведения см. в разделе [Изменение количества коллекций](#set-partitioncount).</td>
   <td>CosmosDB.Emulator.exe /PartitionCount=&lt;число_разделов&gt;</td>
-  <td>&lt;partitioncount&gt;: максимально допустимое количество односекционных коллекций. Значение по умолчанию — 25. Максимально допустимое значение — 250.</td>
+  <td>&lt;partitioncount:&gt; максимальное допустимое количество односекционных коллекций. Значение по умолчанию — 25. Максимально допустимое значение — 250.</td>
 </tr>
 <tr>
   <td>DefaultPartitionCount</td>
@@ -275,14 +275,14 @@ ms.locfileid: "52837500"
 <tr>
   <td>GenKeyFile</td>
   <td>Создает новый ключ авторизации и сохраняет его в указанном файле. Созданный ключ можно использовать с параметрами/Key или/KeyFile.</td>
-  <td>CosmosDB.Emulator.exe  /GenKeyFile=&lt;путь к файлу ключа&gt;</td>
+  <td>CosmosDB.Emulator.exe /GenKeyFile=&lt;путь к файлу ключа&gt;</td>
   <td></td>
 </tr>
 <tr>
   <td>Целостность</td>
   <td>Определяет уровень согласованности по умолчанию для учетной записи.</td>
   <td>CosmosDB.Emulator.exe /Consistency=&lt;consistency&gt;</td>
-  <td>&lt;consistency&gt;: допускается любое значение из следующих [уровней согласованности](consistency-levels.md): Session (на уровне сеансов), Strong (сильная), Eventual (итоговая) или BoundedStaleness (с ограниченным устареванием).  По умолчанию используется значение Session.</td>
+  <td>&lt;consistency:&gt; значение должно быть одного из следующих [уровней согласованности](consistency-levels.md): Session, Strong, Eventual или BoundedStaleness. По умолчанию используется значение Session.</td>
 </tr>
 <tr>
   <td>?</td>
@@ -298,9 +298,9 @@ ms.locfileid: "52837500"
 
 При попытке создать коллекцию сверх этих ограничений на количество секций эмулятор порождает исключение ServiceUnavailable со следующим сообщением:
 
-    Sorry, we are currently experiencing high demand in this region, 
-    and cannot fulfill your request at this time. We work continuously 
-    to bring more and more capacity online, and encourage you to try again. 
+    Sorry, we are currently experiencing high demand in this region,
+    and cannot fulfill your request at this time. We work continuously
+    to bring more and more capacity online, and encourage you to try again.
     Please do not hesitate to email askcosmosdb@microsoft.com at any time or
     for any reason. ActivityId: 29da65cc-fba1-45f9-b82c-bf01d78a1f91
 
@@ -343,7 +343,7 @@ Import-Module Microsoft.Azure.CosmosDB.Emulator
 
 #### <a name="syntax"></a>Синтаксис
 
-`Start-CosmosDbEmulator [-DataPath <string>] [-DefaultPartitionCount <uint16>] [-DirectPort <uint16[]>] [-MongoPort <uint16>] [-NoUI] [-NoWait] [-PartitionCount <uint16>] [-Port <uint16>]  [<CommonParameters>]`
+`Start-CosmosDbEmulator [-DataPath <string>] [-DefaultPartitionCount <uint16>] [-DirectPort <uint16[]>] [-MongoPort <uint16>] [-NoUI] [-NoWait] [-PartitionCount <uint16>] [-Port <uint16>] [<CommonParameters>]`
 
 #### <a name="remarks"></a>Примечания
 
@@ -378,21 +378,21 @@ Import-Module Microsoft.Azure.CosmosDB.Emulator
 
 Затем извлеките образ эмулятора из Docker Hub, выполнив следующую команду в любой оболочке.
 
-```     
-docker pull microsoft/azure-cosmosdb-emulator 
+```
+docker pull microsoft/azure-cosmosdb-emulator
 ```
 Чтобы запустить образ, выполните следующие команды:
 
 Из командной строки:
-```cmd 
+```cmd
 md %LOCALAPPDATA%\CosmosDBEmulatorCert 2>null
-docker run -v %LOCALAPPDATA%\CosmosDBEmulatorCert:C:\CosmosDB.Emulator\CosmosDBEmulatorCert -P -t -i -m 2GB microsoft/azure-cosmosdb-emulator 
+docker run -v %LOCALAPPDATA%\CosmosDBEmulatorCert:C:\CosmosDB.Emulator\CosmosDBEmulatorCert -P -t -i -m 2GB microsoft/azure-cosmosdb-emulator
 ```
 
 Из PowerShell:
 ```powershell
 md $env:LOCALAPPDATA\CosmosDBEmulatorCert 2>null
-docker run -v $env:LOCALAPPDATA\CosmosDBEmulatorCert:C:\CosmosDB.Emulator\CosmosDBEmulatorCert -P -t -i -m 2GB microsoft/azure-cosmosdb-emulator 
+docker run -v $env:LOCALAPPDATA\CosmosDBEmulatorCert:C:\CosmosDB.Emulator\CosmosDBEmulatorCert -P -t -i -m 2GB microsoft/azure-cosmosdb-emulator
 ```
 
 Ответ выглядит примерно так:
@@ -407,12 +407,12 @@ cd /d %LOCALAPPDATA%\CosmosDBEmulatorCert
 powershell .\importcert.ps1
 --------------------------------------------------------------------------------------------------
 Starting interactive shell
-``` 
+```
 
 Теперь воспользуйтесь конечной точкой и главным ключом из ответа в клиенте и импортируйте SSL-сертификат на узел. Чтобы импортировать SSL-сертификат, выполните следующие действия из командной строки с правами администратора.
 
 Из командной строки:
-```cmd 
+```cmd
 cd %LOCALAPPDATA%\CosmosDBEmulatorCert
 powershell .\importcert.ps1
 ```
@@ -438,7 +438,7 @@ cd $env:LOCALAPPDATA\CosmosDBEmulatorCert
 
 - В случае аварийного завершения эмулятора Azure Cosmos DB соберите файлы дампа из папки c:\Users\user_name\AppData\Local\CrashDumps, сожмите их, вложите в электронное сообщение и отправьте по адресу [askcosmosdb@microsoft.com](mailto:askcosmosdb@microsoft.com).
 
-- При возникновении сбоев в CosmosDB.StartupEntryPoint.exe выполните следующую команду из командной строки администратора: `lodctr /R` 
+- При возникновении сбоев в CosmosDB.StartupEntryPoint.exe выполните следующую команду из командной строки администратора: `lodctr /R`
 
 - Если возникли проблемы с подключением, [соберите файлы трассировки](#trace-files), сожмите их, вложите в электронное сообщение и отправьте по адресу [askcosmosdb@microsoft.com](mailto:askcosmosdb@microsoft.com).
 
@@ -464,7 +464,7 @@ cd $env:LOCALAPPDATA\CosmosDBEmulatorCert
 1. Выйдите из всех открытых экземпляров локального эмулятора, щелкнув правой кнопкой мыши значок эмулятора Azure Cosmos DB в области уведомлений и выбрав "Exit" (Выйти). Выход из всех экземпляров может занять около минуты.
 2. Введите в поле поиска Windows **Приложения и возможности** и выберите команду **Apps & features (System settings)** (Приложения и возможности (системные параметры)).
 3. В списке приложений перейдите к **эмулятору Azure Cosmos DB**, выберите его, щелкните **Удалить**, подтвердите и щелкните **Удалить** еще раз.
-4. После удаления приложения перейдите к папке `C:\Users\<user>\AppData\Local\CosmosDBEmulator` удалите ее. 
+4. После удаления приложения перейдите к папке `C:\Users\<user>\AppData\Local\CosmosDBEmulator` удалите ее.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -479,7 +479,7 @@ cd $env:LOCALAPPDATA\CosmosDBEmulatorCert
 > * вызвали эмулятор из командной строки;
 > * собрали файлы трассировки.
 
-Из этого руководства вы также узнали, как использовать локальный эмулятор для бесплатной разработки в локальной среде. Теперь вы можете перейти к следующему руководству, из которого вы узнаете, как экспортировать SSL-сертификаты эмулятора. 
+Из этого руководства вы также узнали, как использовать локальный эмулятор для бесплатной разработки в локальной среде. Теперь вы можете перейти к следующему руководству, из которого вы узнаете, как экспортировать SSL-сертификаты эмулятора.
 
 > [!div class="nextstepaction"]
 > [Экспорт сертификатов эмулятора Azure Cosmos DB для использования с Java, Python и Node.js](local-emulator-export-ssl-certificates.md)

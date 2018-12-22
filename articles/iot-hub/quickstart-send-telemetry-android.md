@@ -10,14 +10,14 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/05/2018
 ms.author: wesmc
-ms.openlocfilehash: 66c1380070c9f9732369cb0d209e428525d53ce8
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: d90595d3d557293bfbc6b06aca638eb1b7c08d30
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52427653"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53164319"
 ---
-# <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Краткое руководство по отправке данных телеметрии в центр Интернета вещей с устройства Android
+# <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Краткое руководство. Отправка данных телеметрии в центр Интернета вещей с устройства Android
 
 [!INCLUDE [iot-hub-quickstarts-1-selector](../../includes/iot-hub-quickstarts-1-selector.md)]
 
@@ -35,7 +35,7 @@ ms.locfileid: "52427653"
 
 * Пакет SDK для Android 27, используемый в примере, который описан в этой статье. 
 
-* [Пример приложения Android](https://github.com/Azure-Samples/azure-iot-samples-java/tree/master/iot-hub/Samples/device/AndroidSample), которое запускается в рамках этого краткого руководства, содержится в репозитории azure-iot-samples-java на сайте Github. Скачайте или клонируйте репозиторий [azure-iot-samples-java](https://github.com/Azure-Samples/azure-iot-samples-java).
+* [Пример приложения Android](https://github.com/Azure-Samples/azure-iot-samples-java/tree/master/iot-hub/Samples/device/AndroidSample), которое запускается при работе с этим кратким руководством, содержится в репозитории azure-iot-samples-java на сайте GitHub. Скачайте или клонируйте репозиторий [azure-iot-samples-java](https://github.com/Azure-Samples/azure-iot-samples-java).
 
 
 
@@ -49,9 +49,9 @@ ms.locfileid: "52427653"
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы добавить расширение CLI Центра Интернета вещей и создать удостоверение устройства. 
 
-   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
-   **MyAndroidDevice** — это имя, присвоенное зарегистрированному устройству. Используйте имя MyAndroidDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyAndroidDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте имя MyAndroidDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az extension add --name azure-cli-iot-ext
@@ -60,7 +60,7 @@ ms.locfileid: "52427653"
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
-    **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyAndroidDevice --output table
@@ -99,7 +99,7 @@ ms.locfileid: "52427653"
 
 1. С помощью Azure Cloud Shell выполните следующую команду для установки подключения к центру Интернета вещей и чтения поступающих из него сообщений:
 
-   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub monitor-events --hub-name YourIoTHubName --output table
@@ -120,5 +120,5 @@ ms.locfileid: "52427653"
 Чтобы узнать, как управлять имитированным устройством из внутреннего приложения, перейдите к следующему краткому руководству.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Java)](quickstart-control-device-android.md)
+> [Краткое руководство. Управление подключенным к Центру Интернета вещей устройством](quickstart-control-device-android.md)
 

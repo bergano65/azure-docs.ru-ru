@@ -1,19 +1,19 @@
 ---
-title: Руководство. Добавление базового образца модели на сервер Azure Analysis Services с помощью портала | Документы Майкрософт
+title: Руководство. Добавление образца модели для сервера Azure Analysis Services | Документация Майкрософт
 description: Это руководство содержит сведения о том, как добавить образец модели в службах Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: tutorial
-ms.date: 10/18/2018
+ms.date: 12/06/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: def7ee54390a716027fcacb433b99826d3650f6f
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 6a492085984eba165bc7cfc5839fa4e1705e823c
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49428698"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53001640"
 ---
 # <a name="tutorial-add-a-sample-model-from-the-portal"></a>Руководство. Добавление образца модели с портала
 
@@ -74,6 +74,6 @@ ms.locfileid: "49428698"
 В этом руководстве было рассмотрено добавление базового образца модели на сервер. Когда есть шаблон базы данных, можно подключиться к нему из SQL Server Management Studio и добавить роли пользователей. Для получения дополнительных сведений перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Руководство по настройке ролей администратора сервера и пользователя](analysis-services-database-users.md)
+> [Руководство. Настройка ролей администратора и пользователя сервера](analysis-services-database-users.md)
 
 

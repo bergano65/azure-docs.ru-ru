@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 02/23/2017
 ms.author: sngun
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: af8b2c3f0b319ce9769e9789f6639e1d5eb266f6
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: a2c7b7c5dc68bb96e0b54dc89f2c170cdb20c792
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52865222"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53081920"
 ---
 # <a name="build-a-python-flask-web-application-using-azure-cosmos-db"></a>Создание веб-приложения Python Flask с использованием Azure Cosmos DB
 
@@ -62,7 +62,7 @@ ms.locfileid: "52865222"
 * [Компилятор Microsoft Visual C++ для Python 2.7](https://www.microsoft.com/en-us/download/details.aspx?id=44266)
 
 ## <a name="step-1-create-an-azure-cosmos-db-database-account"></a>Шаг 1. Создание учетной записи базы данных Azure Cosmos DB
-Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись или вы используете эмулятор Azure Cosmos DB в этом руководстве, можно перейти к разделу [Шаг 2. Создание веб-приложения Python Flask](#step-2-create-a-new-python-flask-web-application).
+Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись или вы используете эмулятор Azure Cosmos DB для работы с этим руководством, можно перейти к разделу [Шаг 2. Создание веб-приложения Python Flask](#step-2-create-a-new-python-flask-web-application).
 
 [!INCLUDE [cosmos-db-create-dbaccount](../../includes/cosmos-db-create-dbaccount.md)]
 
@@ -365,7 +365,7 @@ def vote():
     ![Снимок экрана: страница с результатами голосования](./media/sql-api-python-application/cosmos-db-voting-results.png)
 6. Остановите отладку проекта, нажав клавиши SHIFT+F5.
 
-## <a name="step-5-deploy-the-web-application-to-azure"></a>Шаг 5. Развертывание веб-приложения в Azure
+## <a name="step-5-deploy-the-web-application-to-azure"></a>Шаг 5. Развертывание веб-приложения в Azure
 Теперь, когда у вас есть готовое приложение и оно корректно работает в Azure Cosmos DB локально, необходимо создать файл web.config, обновить файлы на сервере в соответствии с локальной средой и просмотреть завершенное приложение в Azure. Эта процедура относится только к Visual Studio 2017. Если вы используете другую версию Visual Studio, ознакомьтесь со статьей [Публикация в службу приложений Azure](/visualstudio/python/publishing-to-azure).
 
 1. В **обозревателе решений** Visual Studio щелкните проект правой кнопкой мыши и выберите **Добавить > Новый элемент...** В появившемся диалоговом окне выберите шаблон **Azure web.config (FastCGI)**, а затем нажмите кнопку **ОК**. В корневом каталоге проекта будет создан файл `web.config`. 
@@ -436,4 +436,4 @@ def vote():
 
 Дополнительные сведения об Azure, Visual Studio и Python см. в [центре по разработке для Python](https://azure.microsoft.com/develop/python/). 
 
-Дополнительные руководства по Python Flask: [Мегаруководство по Flask, часть I. Привет, мир!](http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) 
+Дополнительные руководства по Python Flask: [The Flask Mega-Tutorial Part I: Hello, World!](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world) (Мегаруководство по Flask. Часть 1. Hello, World!). 

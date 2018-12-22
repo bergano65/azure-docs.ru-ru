@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: 215cc45f09e15c74a39347e3a62945b45eafa130
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 632393696274eaf6f876ea717b5fccf7d4fbea3f
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52877672"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52965399"
 ---
-# <a name="tutorial-create-a-geo-distributed-app-solution-with-azure-and-azure-stack"></a>Руководство по созданию решения для географически распределенного приложения с помощью Azure и Azure Stack
+# <a name="tutorial-create-a-geo-distributed-app-solution-with-azure-and-azure-stack"></a>Руководство. Создание решения для географически распределенного приложения с помощью Azure и Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
@@ -59,13 +59,13 @@ ms.locfileid: "52877672"
 
 Прежде чем создавать распределенную топологию, следует собрать некоторые сведения.
 
--   **Именной домен приложения.** Какое имя домена клиенты будут использовать для доступа к приложению? В нашем примере используется имя личного домена *www.scalableasedemo.com*
+-   **Личный домен приложения.** Какое имя домена клиенты будут использовать для доступа к приложению? В нашем примере используется имя личного домена *www.scalableasedemo.com*
 
 -   **Домен диспетчера трафика.** При создании [профиля диспетчера трафика Azure](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-manage-profiles) необходимо выбрать доменное имя. При регистрации записи домена, используемой диспетчером трафика, к этому имени будет добавлен суффикс *trafficmanager.net*. В нашем примере приложения используется имя *scalable-ase-demo*, поэтому полное имя домена, управляемое диспетчером трафика, — *scalable-ase-demo.trafficmanager.net*.
 
 -   **Стратегия масштабирования приложения.** Как будет распределяться нагрузка между несколькими средами службы приложений? Они будут размещаться в одном регионе, в нескольких регионах, или эти подходы будут комбинироваться? Решение должно основываться на предполагаемых источниках клиентского трафика, а также на характеристиках масштабируемости серверной инфраструктуры приложения. Например, приложение, работающее без отслеживания состояния, можно масштабировать, развернув конфигурацию из нескольких сред Службы приложений в одном регионе, а также в нескольких регионах Azure. Сейчас доступно более 15 глобальных регионов Azure. Поэтому клиенты могут создать по-настоящему глобальное гипермасштабируемое приложение. Для приложения, рассматриваемого в этой статье, создано три среды службы приложений в одном регионе Azure (центрально-южная часть США).
 
--   **Соглашение об именовании для сред Службы приложений.** Для каждой такой среды требуется уникальное имя. Если используется больше двух сред службы приложений, для их идентификации желательно использовать определенное соглашение об именовании. В нашем примере используется простое соглашение об именовании: Среды службы приложений называются *fe1ase*, *fe2ase* и *fe3ase*.
+-   **Соглашение об именовании для Сред службы приложений.** Имя каждой Среды службы приложений должно быть уникальным. Если используется больше двух сред службы приложений, для их идентификации желательно использовать определенное соглашение об именовании. В нашем примере используется простое соглашение об именовании: Среды службы приложений называются *fe1ase*, *fe2ase* и *fe3ase*.
 
 -   **Соглашение об именовании приложений.** Так как предполагается развертывание нескольких экземпляров приложения, каждому из них необходимо присвоить уникальное имя. В разных средах Службы приложений можно использовать одни и те же имена. Так как у каждой среды Службы приложений есть уникальный доменный суффикс, разработчики могут использовать одно и то же имя приложения во всех средах. Например, разработчик может назвать приложения так: *myapp.foo1.p.azurewebsites.net*, *myapp.foo2.p.azurewebsites.net*, *myapp.foo3.p.azurewebsites.net* и т. п. В этом примере каждый экземпляр приложения имеет уникальное имя. *webfrontend1*, *webfrontend2* и *webfrontend3*.
 
@@ -73,7 +73,7 @@ ms.locfileid: "52877672"
 > ![hybrid-pillars.png](./media/azure-stack-solution-cloud-burst/hybrid-pillars.png)  
 > Microsoft Azure Stack — это расширение Azure.re. Azure Stack обеспечивает гибкость и высокую скорость внедрения инноваций облачных вычислений в локальной среде. Только это гибридное облако позволяет создавать и развертывать гибридные приложения в любой точке мира.  
 > 
-> В техническом документе [Design Considerations for Hybrid Applications](https://aka.ms/hybrid-cloud-applications-pillars) (Рекомендации по проектированию гибридных приложений) рассматриваются основные аспекты качества программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность) для разработки, развертывания и эксплуатации гибридных приложений. Эти рекомендации помогут оптимизировать разработку гибридных приложений и свести к минимуму проблемы в рабочих средах.
+> В техническом документе [Design Considerations for Hybrid Applications](https://aka.ms/hybrid-cloud-applications-pillars) (Рекомендации по проектированию гибридных приложений) рассматриваются основные аспекты качества программного обеспечения (размещение, масштабируемость, доступность, устойчивость, управляемость и безопасность) для разработки, развертывания и эксплуатации гибридных приложений. Рекомендации помогут оптимизировать разработку гибридных приложений и свести к минимуму проблемы в рабочих средах.
 
 ## <a name="part-1-create-a-geo-distributed-app"></a>Часть 1. Создание географически распределенного приложения
 
@@ -114,17 +114,17 @@ ms.locfileid: "52877672"
 
     Гибридное решение для непрерывной интеграции и непрерывной поставки (CI/CD) можно применить как для кода приложения, так и для кода инфраструктуры. Используйте [шаблоны Azure Resource Manager](https://azure.microsoft.com/resources/templates/) для частной и облачной разработки.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image1.JPG)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image1.JPG)
 
 2. **Клонируйте репозиторий** путем создания и открытия веб-приложения по умолчанию.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image2.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image2.png)
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Создание развертывания веб-приложений в обоих облаках
 
-1.  Измените файл **WebApplication.csproj**: выберите **Runtimeidentifier** и добавьте **win10-x64**. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
+1.  Измените файл **WebApplication.csproj**: Выберите **Runtimeidentifier** и добавьте **win10-х64**. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image3.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image3.png)
 
 1.  **Добавьте код в Azure Repos** с помощью Team Explorer.
 
@@ -136,7 +136,7 @@ ms.locfileid: "52877672"
 
 2. Добавьте код **-r win10-x64**. Это необходимо, чтобы активировать автономное развертывание с .Net Core.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image4.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image4.png)
 
 3. **Запустите сборку**. Процесс [сборки автономного развертывания](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd) будет публиковать артефакты, которые могут выполняться в Azure и Azure Stack.
 
@@ -151,87 +151,87 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 #### <a name="create-release-definition"></a>Создание определения выпуска
 
 
-![Alt text](media\azure-stack-solution-geo-distributed\image5.png)
+![Alt text](media/azure-stack-solution-geo-distributed/image5.png)
 
 1.  Нажмите кнопку со знаком **плюс**, чтобы добавить новый выпуск на **вкладку выпусков** на странице сборки и выпуска Visual Studio Online (VSO).
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image6.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image6.png)
 
 2. Примените шаблон **развертывания службы приложений Azure**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image7.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image7.png)
 
 3. В раскрывающемся меню добавления артефакта **выберите соответствующую команду** для приложения сборки облака Azure.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image8.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image8.png)
 
 4. На вкладке "Конвейер" выберите ссылку **Phase, Task** (Фаза, Задача) для используемой среды и задайте значения облачной среды Azure.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image9.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image9.png)
 
 5. Задайте **имя среды** и выберите **подписку** Azure для конечной точки облака Azure.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image10.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image10.png)
 
 6. В разделе имени среды задайте требуемое **имя службы приложений Azure**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image11.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image11.png)
 
 7. Введите **Размещенная среда VS2017** в очереди агента для среды, размещенной в облаке Azure.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image12.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image12.png)
 
 8. В меню развертывания службы приложений Azure выберите допустимый для среды **пакет или папку**. Нажмите кнопку "ОК", чтобы выбрать **расположение папки**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image13.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image13.png)
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image14.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image14.png)
 
 9. Сохраните все изменения и вернитесь к **конвейеру выпуска**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image15.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image15.png)
 
 10. Добавьте **новый артефакт**, выбрав сборку для приложения Azure Stack.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image16.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image16.png)
 
 11. Добавьте еще одну среду, применив **развертывание службы приложений Azure**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image17.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image17.png)
 
 12. Назовите новую среду **Azure Stack**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image18.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image18.png)
 
 13. Найдите среду Azure Stack на вкладке **Задача**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image19.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image19.png)
 
 14. Выберите **подписку** для конечной точки Azure Stack.
 
-  ![Alt text](media\azure-stack-solution-geo-distributed\image20.png)
+  ![Alt text](media/azure-stack-solution-geo-distributed/image20.png)
 
 15. Задайте имя веб-приложения Azure Stack в качестве **имени службы приложений**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image21.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image21.png)
 
 16. Выберите **агент Azure Stack**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image22.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image22.png)
 
 17. В разделе развертывания службы приложений Azure выберите допустимый для среды **пакет или папку**. Нажмите кнопку "ОК", чтобы выбрать **расположение папки**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image23.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image23.png)
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image24.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image24.png)
 
 18. В разделе **Переменные** добавьте переменную с именем `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS`, задайте для нее значение `true` и область `Azure Stack`.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image25.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image25.png)
 
 19. Выберите значок триггера **непрерывного** развертывания в обоих артефактах и включите триггер **непрерывного** развертывания.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image26.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image26.png)
 
 20. Выберите значок условий **перед развертыванием** в среде Azure Stack и задайте триггеру значение **После выпуска**.
 
@@ -244,7 +244,7 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
 [Веб-приложения Azure](https://docs.microsoft.com/azure/app-service/app-service-web-overview) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. 
 
-![Alt text](media\azure-stack-solution-geo-distributed\image27.png)
+![Alt text](media/azure-stack-solution-geo-distributed/image27.png)
 
 > [!div class="checklist"]
 > - Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure
@@ -296,7 +296,7 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
 На снимке экрана ниже показан пример страницы с записями DNS:
 
-![Пример страницы с записями DNS](media\azure-stack-solution-geo-distributed\image28.png)
+![Пример страницы с записями DNS](media/azure-stack-solution-geo-distributed/image28.png)
 
 1.  На странице регистратора доменных имен выберите команду **"Добавить" или "Создать"**, чтобы создать запись. Некоторые поставщики имеют разные ссылки для добавления записей различных типов. Обратитесь к документации поставщика.
 
@@ -306,7 +306,7 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
 После добавления этой записи CNAME страница управления записями DNS выглядит так:
 
-![Переход к приложению Azure на портале](media\azure-stack-solution-geo-distributed\image29.png)
+![Переход к приложению Azure на портале](media/azure-stack-solution-geo-distributed/image29.png)
 
 ### <a name="enable-the-cname-record-mapping-in-azure"></a>Включение сопоставления записи CNAME в приложении Azure
 
@@ -348,9 +348,9 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
   Возможно, потребуется некоторое время, чтобы новое имя узла отобразилось на странице **Личные домены** вашего приложения. Попробуйте обновить браузер, чтобы обновить данные.
   
-  ![Alt text](media\azure-stack-solution-geo-distributed\image31.png) 
+  ![Alt text](media/azure-stack-solution-geo-distributed/image31.png) 
   
-  В случае ошибки в нижней части страницы появится уведомление об ошибке проверки. ![Ошибка проверки](media\azure-stack-solution-geo-distributed\image32.png)
+  В случае ошибки в нижней части страницы появится уведомление об ошибке проверки. ![Ошибка проверки](media/azure-stack-solution-geo-distributed/image32.png)
 
 > [!Note]  
 >  Описанные выше действия можно повторить для сопоставления доменного имени с подстановочным знаком (\*. northwindcloud.com). Это позволяет добавлять любые поддомены к этой службе приложений, не создавая для каждого из них отдельную запись CNAME. Следуйте инструкциям регистратора по настройке этого параметра.
@@ -404,17 +404,17 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
 2.  В меню слева выберите **Службы приложений** и щелкните имя нужного приложения Azure.
 
-![Выбор веб-приложения](media\azure-stack-solution-geo-distributed\image33.png)
+![Выбор веб-приложения](media/azure-stack-solution-geo-distributed/image33.png)
 
 #### <a name="check-the-pricing-tier"></a>Проверка ценовой категории
 
 1.  В области навигации слева на странице веб-приложения перейдите к разделу **Параметры** и выберите **Увеличить масштаб (план службы приложений)**.
 
-    ![Меню увеличения масштаба](media\azure-stack-solution-geo-distributed\image34.png)
+    ![Меню увеличения масштаба](media/azure-stack-solution-geo-distributed/image34.png)
 
 1.  Убедитесь, что веб-приложение не относится к категории **Бесплатный** или **Общий**. Текущая категория веб-приложения выделена синей рамкой.
 
-    ![Проверка ценовой категории](media\azure-stack-solution-geo-distributed\image35.png)
+    ![Проверка ценовой категории](media/azure-stack-solution-geo-distributed/image35.png)
 
 Настраиваемые SSL-сертификаты не поддерживаются в ценовых категориях **Бесплатный** или **Общий**. Чтобы повысить уровень, выполните инструкции из следующего раздела или на странице **Выбор ценовой категории** и перейдите к разделу [отправки и привязки SSL-сертификата](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl).
 
@@ -424,11 +424,11 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
 2.  Щелкните **Выбрать**.
 
-![Выбор ценовой категории](media\azure-stack-solution-geo-distributed\image36.png)
+![Выбор ценовой категории](media/azure-stack-solution-geo-distributed/image36.png)
 
 Операция будет считаться завершенной, когда появится уведомление.
 
-![Уведомление об увеличении масштаба](media\azure-stack-solution-geo-distributed\image37.png)
+![Уведомление об увеличении масштаба](media/azure-stack-solution-geo-distributed/image37.png)
 
 #### <a name="bind-your-ssl-certificate-and-merge-intermediate-certificates"></a>Привязка сертификата SSL и объединение промежуточных сертификатов
 
@@ -491,11 +491,11 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 5.  Щелкните **Отправить**.
 
-![Передача сертификата](media\azure-stack-solution-geo-distributed\image38.png)
+![Передача сертификата](media/azure-stack-solution-geo-distributed/image38.png)
 
 Когда Служба приложений завершит передачу сертификата, он появится на странице **Параметры SSL**.
 
-![Alt text](media\azure-stack-solution-geo-distributed\image39.png)
+![Alt text](media/azure-stack-solution-geo-distributed/image39.png)
 
 #### <a name="bind-your-ssl-certificate"></a>Привязка SSL-сертификата
 
@@ -514,11 +514,11 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
     1.  Щелкните **Добавить привязку**.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image40.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image40.png)
 
 Когда служба приложений завершит передачу сертификата, он появится в разделах **SSL-привязки**.
 
-![Alt text](media\azure-stack-solution-geo-distributed\image41.png)
+![Alt text](media/azure-stack-solution-geo-distributed/image41.png)
 
 #### <a name="remap-the-a-record-for-ip-ssl"></a>Переназначение записи A для SSL на основе IP-адреса
 
@@ -534,7 +534,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 В любом браузере перейдите по адресу https://<ваш.личный.домен> и убедитесь, что открывается нужное веб-приложение.
 
-![Alt text](media\azure-stack-solution-geo-distributed\image42.png)
+![Alt text](media/azure-stack-solution-geo-distributed/image42.png)
 
 > [!Note]  
 > Если возникнет ошибка проверки сертификата, это может быть связано с использованием самозаверяющего сертификата или с пропуском промежуточного сертификата при экспорте в PFX-файл.
@@ -545,7 +545,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 На странице веб-приложения выберите **Параметры SL**. Затем в окне **Только HTTPS**выберите **ВКЛ**.
 
-![Принудительное использование HTTPS](media\azure-stack-solution-geo-distributed\image43.png)
+![Принудительное использование HTTPS](media/azure-stack-solution-geo-distributed/image43.png)
 
 По завершении операции перейдите по любому из URL-адресов HTTP, которые указывают на ваше приложение. Например: 
 
@@ -561,7 +561,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 2.  Затем в разделе **Версия TLS** выберите минимальную требуемую версию TLS.
 
-![Принудительное использование TLS 1.1 или 1.2](media\azure-stack-solution-geo-distributed\image44.png)
+![Принудительное использование TLS 1.1 или 1.2](media/azure-stack-solution-geo-distributed/image44.png)
 
 ### <a name="create-a-traffic-manager-profile"></a>Создание профиля диспетчера трафика
 
@@ -583,7 +583,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
     7.  Когда завершится глобальное развертывание профиля для диспетчера трафика, он появится в соответствующей группе ресурсов как один из ресурсов.
 
-    ![Alt text](media\azure-stack-solution-geo-distributed\image45.png)
+    ![Alt text](media/azure-stack-solution-geo-distributed/image45.png)
 
 ### <a name="add-traffic-manager-endpoints"></a>Добавление конечных точек диспетчера трафика
 
@@ -632,7 +632,7 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 
 1.  После добавления обе конечные точки отобразятся в колонке **Профиль диспетчера трафика** с состоянием **В сети**.
 
-  ![Alt text](media\azure-stack-solution-geo-distributed\image46.png)
+  ![Alt text](media/azure-stack-solution-geo-distributed/image46.png)
 
 **Предприятия мирового уровня используют возможности географического распределения Azure**
 

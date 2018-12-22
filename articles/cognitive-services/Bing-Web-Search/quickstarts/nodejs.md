@@ -1,7 +1,7 @@
 ---
-title: Быстрое начало. Поиск с помощью Node.js. API Bing для поиска в Интернете
+title: Краткое руководство. Поиск в Интернете с помощью Node.js. — REST API Bing для поиска в Интернете
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, вызвать API Bing для поиска в Интернете и получить ответ в формате JSON, используя Node.js.
+description: В этом кратком руководстве показано, как отправлять запросы в REST API Bing для поиска в новостей с помощью Node.js и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 9/26/2018
 ms.author: aahi
-ms.openlocfilehash: 4c6e74d4ce9e3c1f9d81e640f7fa8071f73ec776
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.custom: seodec2018
+ms.openlocfilehash: 3d8b323a316dcef10a0d7beb5d1d2dd122b0e2ba
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52309311"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53255590"
 ---
-# <a name="quickstart-use-nodejs-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Node.js  
+# <a name="search-the-web-using-the-bing-web-search-rest-api-and-nodejs"></a>Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Node.js
 
 Используйте это краткое руководство, чтобы за 10 минут вызвать API Bing для поиска в Интернете и получить ответ в формате JSON.
 

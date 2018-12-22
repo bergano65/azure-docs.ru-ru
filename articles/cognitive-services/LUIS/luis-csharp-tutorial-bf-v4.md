@@ -1,23 +1,24 @@
 ---
-title: Бот LUIS с C# — Руководство. Бот веб-приложения — Bot Framework SDK 4.0
-titleSuffix: Azure Cognitive Services
+title: Создание бота на C# с помощью Bot Framework версии 4
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Для быстрой реализации решений ботов этот чат-бот использует приложение "Управление персоналом". Бот создается с помощью Bot Framework версии 4 и бота веб-приложения Azure.
 services: cognitive-services
 author: diberry
+ms.custom: seodec18
 manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/25/2018
 ms.author: diberry
-ms.openlocfilehash: 3ccec4fbd0fd69539e29e2f15f71115444bf0a48
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 113e5769ee6a58785a46182064684bea5825c12c
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389298"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53138945"
 ---
-# <a name="tutorial-luis-bot-in-c"></a>Руководство. Бот LUIS в C#
+# <a name="tutorial-luis-bot-in-c-with-the-bot-framework-4x-and-the-azure-web-app-bot"></a>Руководство. Создание бота Интеллектуальной службы распознавания речи на C# с помощью Bot Framework 4.x и бота веб-приложения Azure.
 С помощью C# можно создавать чат-боты, интегрированные со службой распознавания речи (LUIS). Этот бот использует приложение HomeAutomation, чтобы реализовать решение ботов. Бот создается с помощью [бота веб-приложения Azure](https://docs.microsoft.com/azure/bot-service/) и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-js).
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
@@ -77,7 +78,7 @@ ms.locfileid: "49389298"
 |Отмена|`stop`|
 |Greeting|`hello`|
 |Справка|`help`|
-|None|Все, что находится за пределами домена приложения.|
+|Нет|Все, что находится за пределами домена приложения.|
 
 Добавление предварительно созданного приложения HomeAutomation в модель для обработки высказывания, например `Turn off the living room lights`.
 

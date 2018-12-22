@@ -1,5 +1,5 @@
 ---
-title: Руководство по обнаружению аномалий с использованием Python
+title: Руководство. Обнаружение аномалий с использованием Python
 titlesuffix: Azure Cognitive Services
 description: Изучите записную книжку Python, в которой используется API обнаружения аномалий. Отправьте исходные точки данных в API и получите ожидаемое значение и точки аномалий.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: anomaly-detection
 ms.topic: tutorial
 ms.date: 05/01/2018
 ms.author: chliang
-ms.openlocfilehash: 98f83fbc4db8685526833c3d4f1d15903419ad3f
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: d1e9afc32625cdbf97f576ee091d7dc03271e2fc
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48887757"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53164812"
 ---
-# <a name="tutorial-anomaly-detection-with-python-application"></a>Руководство по обнаружению аномалий с использованием приложения Python
+# <a name="tutorial-anomaly-detection-with-python-application"></a>Руководство. Обнаружение аномалий с использованием приложения Python
 
 [!INCLUDE [PrivatePreviewNote](../../../../../includes/cognitive-services-anomaly-finder-private-preview-note.md)]
 
@@ -31,7 +31,7 @@ ms.locfileid: "48887757"
 
 ## <a name="download-the-example-code"></a>Скачивание примера кода
 
-1. Перейдите к [примеру записной книжки на Github](https://github.com/MicrosoftAnomalyDetection/python-sample).
+1. Перейдите к [примеру записной книжке на GitHub](https://github.com/MicrosoftAnomalyDetection/python-sample).
 2. Нажмите зеленую кнопку, чтобы клонировать или скачать пример. 
 
 ## <a name="opening-the-tutorial-notebook-in-jupyter"></a>Открытие примера записной книжки в Jupyter

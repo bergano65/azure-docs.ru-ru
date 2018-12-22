@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по созданию веб-приложения Java в службе приложений Azure в Linux
+title: Создание веб-приложения Java в Службе приложений Azure в Linux
 description: В этом кратком руководстве описывается, как быстро развернуть ваше первое приложение Java Hello World в службе приложений Azure в Linux.
 services: app-service\web
 documentationcenter: ''
@@ -12,17 +12,17 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: Java
 ms.topic: quickstart
-ms.date: 03/07/2018
+ms.date: 12/10/2018
 ms.author: msangapu
 ms.custom: mvc
-ms.openlocfilehash: e286942f092d2e8c22824a18f5a6503d04a1be0c
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: d27491d84d4df1757f77a403cd754496bbff6887
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50247561"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53252615"
 ---
-# <a name="quickstart-create-a-java-web-app-in-app-service-on-linux"></a>Краткое руководство по созданию веб-приложения Java в службе приложений Azure в Linux
+# <a name="quickstart-create-a-java-web-app-in-app-service-on-linux"></a>Краткое руководство. Создание веб-приложения Java в Службе приложений на платформе Linux
 
 [Служба приложений на Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как использовать [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) (Azure CLI) с [подключаемым модулем Maven для веб-приложений Azure (предварительная версия)](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin), чтобы развернуть файл веб-архива (WAR) веб-приложения Java.
 
@@ -108,8 +108,10 @@ mvn package azure-webapp:deploy
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве описано, как использовать Maven для создания веб-приложения Java, настроить [подключаемый модуль Maven для веб-приложений Azure](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin) и развернуть веб-архив упакованного приложения Java в службе приложений в Linux. Чтобы узнать, как подключать базы данных, настраивать ведение журналов и мониторинг, настраивать защиту и параметры среды выполнения, см. руководство по использованию службы приложений в Linux для разработчиков Java.
+В этом кратком руководстве описано, как использовать Maven для создания веб-приложения Java, настроить [подключаемый модуль Maven для веб-приложений Azure](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin) и развернуть веб-архив упакованного приложения Java в службе приложений в Linux. Дополнительные сведения о размещении приложений Java в Службе приложений на платформе Linux см. в следующих руководствах и статьях с инструкциями:
 
-> [!div class="nextstepaction"]
-> [Руководство по использованию службы приложений в Linux для разработчиков Java](app-service-linux-java.md)
+- [Руководство по развертыванию приложения Java Enterprise с использованием PostgreSQL](tutorial-java-enterprise-postgresql-app.md)
+- [Настройка источника данных Tomcat](app-service-linux-java.md#connecting-to-data-sources)
+- [CI/CD с использованием Jenkins](/azure/jenkins/deploy-jenkins-app-service-plugin)
+- [Настройка средств мониторинга производительности приложения](how-to-java-apm-monitoring.md)
 

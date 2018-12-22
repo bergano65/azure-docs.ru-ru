@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Поиск с помощью Python и API Bing для поиска в Интернете
+title: Краткое руководство. Поиск с помощью Python и API Bing для поиска в Интернете
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON, используя Python.
+description: В этом кратком руководстве описано, как отправлять запросы в REST API Bing для поиска в Интернете с помощью Python и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 8/16/2018
 ms.author: aahi
-ms.openlocfilehash: 0f6f3991e01e4eb6919d958002ef6230a2570dbe
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.custom: seodec2018
+ms.openlocfilehash: 4c42461c31e821128c8aa583b5620c1274a9e955
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52309463"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53260061"
 ---
-# <a name="quickstart-use-python-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Python  
+# <a name="quickstart-use-python-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Python  
 Получите [ключ доступа Cognitive Services](https://azure.microsoft.com/try/cognitive-services/) с помощью **поиска**.  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
 Используйте это краткое руководство, чтобы за 10 минут вызвать API Bing для поиска в Интернете и получить ответ в формате JSON.  

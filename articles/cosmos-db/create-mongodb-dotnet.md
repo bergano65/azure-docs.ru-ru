@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения с использованием .NET и API MongoDB в Azure Cosmos DB
+title: Azure Cosmos DB — создание веб-приложения с использованием .NET и API MongoDB
 description: В этой статье представлен пример кода .NET, который можно использовать для подключения и выполнения запросов к API MongoDB в Azure Cosmos DB.
 services: cosmos-db
 author: slyons
@@ -10,14 +10,14 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/22/2018
 ms.author: sclyon
-ms.openlocfilehash: a0255257ca4f9ebfd0ae230a872be34c4dbec02a
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 170f3132084da07ccf98a0dfed651bbfd7220615
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52846714"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53081036"
 ---
-# <a name="azure-cosmos-db-build-a-mongodb-api-web-app-with-net-and-the-azure-portal"></a>Azure Cosmos DB. Создание веб-приложения API MongoDB с использованием языка .NET и портала Azure
+# <a name="azure-cosmos-db-build-a-mongodb-api-web-app-with-net-and-the-azure-portal"></a>Azure Cosmos DB — создание веб-приложения API MongoDB с использованием .NET и портала Azure
 
 > [!div class="op_single_selector"]
 > * [.NET](create-mongodb-dotnet.md)
@@ -132,7 +132,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](http://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos DB и на левой панели навигации щелкните **Строка подключения**, а затем выберите **Ключи записи-чтения**. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать имя пользователя, пароль и узел в файл Dal.cs.
+1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos DB и на левой панели навигации щелкните **Строка подключения**, а затем выберите **Ключи записи-чтения**. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать имя пользователя, пароль и узел в файл Dal.cs.
 
 2. Откройте файл **Dal.cs** в каталоге **DAL**. 
 

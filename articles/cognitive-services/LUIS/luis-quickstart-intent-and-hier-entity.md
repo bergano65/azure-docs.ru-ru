@@ -1,23 +1,24 @@
 ---
-title: Руководство 5. Связь между родительскими и дочерними элементами. Иерархическая сущность LUIS для данных, полученных с учетом контекста
+title: Иерархическая сущность
 titleSuffix: Azure Cognitive Services
 description: Поиск связанных частей данных на основе контекста. Например, места исходного расположения и назначения при перемещении из одного здания и офиса в другое связаны между собой.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 09/09/2018
+ms.date: 12/05/2018
 ms.author: diberry
-ms.openlocfilehash: d3b8d0597f0732a4a3cfab79125a885b2d141c9f
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: a79c0091220e2980101471abaaa0aaf4c0a898ca
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52424712"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53104413"
 ---
-# <a name="tutorial-5-extract-contextually-related-data"></a>Руководство 5. Извлечение контекстуально связанных данных
+# <a name="tutorial-5-extract-contextually-related-data"></a>Учебник 5. Извлечение контекстуально связанных данных
 Из данного руководства можно узнать, как выполнять поиск связанных частей данных на основе контекста. Например, места исходного расположения и назначения при перемещении из одного здания и офиса в другое связаны между собой. Чтобы создать заказ на работу могут потребоваться фрагменты данных, которые связаны друг с другом.  
 
 Это приложение определяет, в каких случаях сотрудник должен перемещаться из исходного (здание и офис) в целевое расположение (здание и офис). Для определения расположения в пределах фразы в этом приложении используется иерархическая сущность. Назначение **иерархической** сущности — находить связанные данные во фразе, исходя из контекста. 
@@ -32,7 +33,6 @@ ms.locfileid: "52424712"
 
 **Из этого руководства вы узнаете, как выполнять такие задачи:**
 
-<!-- green checkmark -->
 > [!div class="checklist"]
 > * Использовать существующее приложение из руководства
 > * Добавление намерения 
@@ -55,7 +55,7 @@ ms.locfileid: "52424712"
 3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `hier`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе. 
 
 ## <a name="remove-prebuilt-number-entity-from-app"></a>Удаление предварительно созданной сущности номера из приложения
-Чтобы просмотреть всю фразу и пометить иерархические дочерние элементы, временно удалите предварительно созданную сущность номера.
+Чтобы просмотреть всю фразу и пометить иерархические дочерние элементы, [временно удалите предварительно созданную сущность номера](luis-prebuilt-entities.md#marking-entities-containing-a-prebuilt-entity-token). 
 
 1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
@@ -90,7 +90,7 @@ ms.locfileid: "52424712"
 
 Рассмотрите следующую фразу:
 
-```JSON
+```json
 mv Jill Jones from a-2349 to b-1298
 ```
 
@@ -100,19 +100,19 @@ mv Jill Jones from a-2349 to b-1298
 
 1. Во фразе `Displace 425-555-0000 away from g-2323 toward hh-2345` выберите слово `g-2323`. Появится раскрывающееся меню с текстовым полем в верхней области. Введите имя сущности `Locations` в текстовом поле, а затем выберите в раскрывающемся меню **Create new entity** (Создать сущность). 
 
-    [![](media/luis-quickstart-intent-and-hier-entity/hr-create-new-entity-1.png "Снимок экрана создания сущности на странице намерения")](media/luis-quickstart-intent-and-hier-entity/hr-create-new-entity-1.png#lightbox)
+    [![Снимок экрана создания новой сущности на странице намерения](media/luis-quickstart-intent-and-hier-entity/hr-create-new-entity-1.png "Screenshot of creating new entity on intent page")](media/luis-quickstart-intent-and-hier-entity/hr-create-new-entity-1.png#lightbox)
 
 2. Во всплывающем окне выберите **иерархический** тип сущности с `Origin` и `Destination` в качестве дочерних сущностей. Нажмите кнопку **Готово**.
 
-    ![](media/luis-quickstart-intent-and-hier-entity/hr-create-new-entity-2.png "Снимок экрана всплывающего диалогового окна создания сущности для новой сущности \"Расположение\"")
+    ![Снимок экрана, на котором показано всплывающее диалоговое окно для создания сущности с новой сущностью расположения](media/luis-quickstart-intent-and-hier-entity/hr-create-new-entity-2.png "Screenshot of entity creation pop-up dialog for new Location entity")
 
 3. Метка для `g-2323` помечается как `Locations`, так как LUIS не знает, это исходный город, город назначения или ни один из них. Выберите `g-2323`, затем выберите **Расположения**, а затем в меню справа выберите `Origin`.
 
-    [![](media/luis-quickstart-intent-and-hier-entity/hr-label-entity.png "Снимок экрана всплывающего диалогового окна обозначения сущности для изменения расположения дочернего элемента сущности")](media/luis-quickstart-intent-and-hier-entity/hr-label-entity.png#lightbox)
+    [![Снимок экрана всплывающего диалогового окна обозначения сущности для изменения дочернего элемента сущности расположения](media/luis-quickstart-intent-and-hier-entity/hr-label-entity.png "Screenshot of entity labeling pop-up dialog to change locations entity child")](media/luis-quickstart-intent-and-hier-entity/hr-label-entity.png#lightbox)
 
 5. Отметьте другие расположения во всех других фразах, выбрав здание и офис во фразе, а затем выбрав "Расположения", щелкнув меню справа, чтобы выбрать `Origin` или `Destination`. Если все расположения имеют метки, фразы в разделе **Tokens View** (Представление токенов) выглядят как шаблон. 
 
-    [![](media/luis-quickstart-intent-and-hier-entity/hr-entities-labeled.png "Снимок экрана отмеченной во фразах сущности \"Расположения\"")](media/luis-quickstart-intent-and-hier-entity/hr-entities-labeled.png#lightbox)
+    [![Снимок экрана отмеченной во фразах сущности расположения](media/luis-quickstart-intent-and-hier-entity/hr-entities-labeled.png "Screenshot of Locations entity labeled in utterances")](media/luis-quickstart-intent-and-hier-entity/hr-entities-labeled.png#lightbox)
 
 ## <a name="add-prebuilt-number-entity-to-app"></a>Добавление предварительно созданной сущности номера в приложение
 Добавьте предварительно созданную сущность номера обратно в приложение.
@@ -140,7 +140,7 @@ mv Jill Jones from a-2349 to b-1298
 
 2. Перейдите в конец URL-адреса в адресной строке и введите `Please relocation jill-jones@mycompany.com from x-2345 to g-23456`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `MoveEmployee` с извлечением иерархической сущности.
 
-    ```JSON
+    ```json
     {
       "query": "Please relocation jill-jones@mycompany.com from x-2345 to g-23456",
       "topScoringIntent": {

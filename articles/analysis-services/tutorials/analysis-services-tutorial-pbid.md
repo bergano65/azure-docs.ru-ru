@@ -2,17 +2,18 @@
 title: Руководство. Подключение к Azure Analysis Services с помощью Power BI Desktop | Документация Майкрософт
 author: minewiskan
 manager: kfile
+description: Узнайте, как подключиться к Azure Analysis Services с помощью Power BI Desktop.
 ms.service: azure-analysis-services
 ms.topic: tutorial
-ms.date: 10/18/2018
+ms.date: 12/06/2018
 ms.author: owend
 ms.reviewer: owend
-ms.openlocfilehash: ad97fd7569690d0d199b0ce1a82f31f8dfa64c26
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 0025655b3df8ddfb91857bbd56c04507ac6bca5e
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49426136"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993985"
 ---
 # <a name="tutorial-connect-with-power-bi-desktop"></a>Руководство. Подключение с помощью Power BI Desktop
 
@@ -29,8 +30,8 @@ ms.locfileid: "49426136"
 - Разрешения на [*чтение*](../analysis-services-server-admins.md) для базы данных модели из примера adventureworks.
 - [Последняя версия Power BI Desktop](https://powerbi.microsoft.com/desktop).
 
-## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
-В этом руководстве вы войдете на портал только для того, чтобы узнать имя сервера. Как правило, пользователи получают имя сервера от администратора сервера.
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+В этом руководстве вы входите на портал только для того, чтобы узнать имя сервера. Как правило, пользователи получают имя сервера от администратора сервера.
 
 Войдите на [портал](https://portal.azure.com/).
 
@@ -51,7 +52,7 @@ ms.locfileid: "49426136"
 
    ![Ввод имени сервера и имени базы данных модели](./media/analysis-services-tutorial-pbid/aas-pbid-connect-aas-servername.png)
 
-3. Введите учетные данные по соответствующему запросу. Используемая учетная запись должна иметь по меньшей мере разрешения на чтение для базы данных модели из примера adventureworks.
+3. При появлении запроса введите свои учетные данные. Используемая учетная запись должна иметь по меньшей мере разрешения на чтение для базы данных модели из примера adventureworks.
 
     Модель adventureworks откроется в Power BI Desktop с пустым отчетом в представлении "Отчет". Список **Поля** содержит все нескрытые объекты модели. Состояние подключения отображается в правом нижнем углу.
 

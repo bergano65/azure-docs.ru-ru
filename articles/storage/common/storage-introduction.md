@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 07/11/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: b1fb9be6c05edbd85a709632a001fe1c1b8b4c6c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: e483997140efc1d75466d887e42383d887f8a6f4
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51247795"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52963255"
 ---
 # <a name="introduction-to-azure-storage"></a>Общие сведения о службе хранилища Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "51247795"
 
 Доступ к объектам в хранилище BLOB-объектов можно получить в любой точке мира по протоколу HTTP или HTTPS. Пользователи и клиентские приложения могут обращаться к большим двоичным объектам с помощью URL-адресов, [REST API службы хранилища Azure](https://docs.microsoft.com/rest/api/storageservices/blob-service-rest-api), [Azure PowerShell](https://docs.microsoft.com/powershell/module/azure.storage), [Azure CLI](https://docs.microsoft.com/cli/azure/storage) или клиентской библиотеки службы хранилища Azure. Клиентские библиотеки службы хранилища доступны для различных языков, в том числе [.NET](https://docs.microsoft.com/dotnet/api/overview/azure/storage/client), [Java](https://docs.microsoft.com/java/api/overview/azure/storage/client), [Node.js](http://azure.github.io/azure-storage-node), [Python](https://azure-storage.readthedocs.io/), [PHP](http://azure.github.io/azure-storage-php/) и [Ruby](http://azure.github.io/azure-storage-ruby).
 
-Дополнительные сведения о хранилище BLOB-объектов см. в статье [Общие сведения о хранилище BLOB-объектов](../blobs/storage-blobs-introduction.md).
+Дополнительные сведения о хранилище BLOB-объектов см. в статье [Общие сведения о хранилище объектов в Azure](../blobs/storage-blobs-introduction.md).
 
 ## <a name="azure-files"></a>Файлы Azure
 [Служба файлов Azure](../files/storage-files-introduction.md) позволяет настроить сетевые файловые ресурсы с высоким уровнем доступности, доступ к которым можно получить с помощью стандартного протокола SMB. Это означает, что несколько виртуальных машин могут совместно использовать одинаковые файлы с доступом для чтения и записи. Вы также можете считывать файлы с помощью интерфейса REST или клиентских библиотек хранилища.

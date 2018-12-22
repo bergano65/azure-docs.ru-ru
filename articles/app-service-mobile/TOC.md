@@ -2,7 +2,7 @@
 
 # Обзор
 ## [Что представляют собой мобильные приложения?](app-service-mobile-value-prop.md)
-## [Планы службы приложений](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+## [Планы службы приложений](../app-service/overview-hosting-plans.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
 # Быстрое начало работы
 ## [Android](app-service-mobile-android-get-started.md)
@@ -19,8 +19,8 @@
 ### [Проверка подлинности и авторизация в мобильных приложениях Azure](app-service-mobile-auth.md)
 ### [Автономная синхронизация данных в мобильных приложениях Azure](app-service-mobile-offline-data-sync.md)
 ### [Рекомендации по использованию службы приложений Azure](../app-service/app-service-best-practices.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
-### [Подробный обзор планов службы приложений](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
-### [Размещение с высокой плотностью](../app-service/environment/app-service-high-density-hosting.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+### [Подробный обзор планов службы приложений](../app-service/overview-hosting-plans.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+### [Размещение с высокой плотностью](../app-service/manage-scale-per-app.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 ### [Среда службы приложений](../app-service/environment/app-service-app-service-environment-intro.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
 ## Разработка
@@ -81,7 +81,7 @@
 ## Развертывание
 ### [Развертывание синхронизации облака](../app-service/deploy-content-sync.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 ### [Непрерывное развертывание](../app-service/deploy-continuous-deployment.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
-### [Промежуточные среды](../app-service/web-sites-staged-publishing.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+### [Промежуточные среды](../app-service/deploy-staging-slots.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 ### [Развертывание локальной системы Git](../app-service/deploy-local-git.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 ### [Развертывание Azure Resource Manager](../app-service/deploy-complex-application-predictably.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
@@ -95,14 +95,14 @@
 ## управление
 ### [Настройка](../app-service/web-sites-configure.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 ### Личные домены
-#### [Приобретение и настройка личных доменов](../app-service/custom-dns-web-site-buydomains-web-app.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+#### [Приобретение и настройка личных доменов](../app-service/manage-custom-dns-buy-domain.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 #### [Сопоставление личных доменов](../app-service/app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 #### [Личные домены с диспетчером трафика](../app-service/web-sites-traffic-manager-custom-domain-name.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
 ### [Клонирование существующего приложения](../app-service/app-service-web-app-cloning.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 ### [Виртуальная сеть Azure](../app-service/web-sites-integrate-with-vnet.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 ### [Группы ресурсов](../azure-resource-manager/resource-group-move-resources.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json#app-service-limitations)
-#### [Выполнение фоновых задач с веб-заданиями](../app-service/web-sites-create-web-jobs.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+#### [Выполнение фоновых задач с веб-заданиями](../app-service/webjobs-create.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
 #### [Настройка](../app-service/environment/app-service-web-configure-an-app-service-environment.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 #### [Настраиваемые параметры конфигурации](../app-service/environment/app-service-app-service-environment-custom-settings.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
@@ -136,24 +136,24 @@
 #### [Безопасное подключение к серверным ресурсам](../app-service/environment/app-service-app-service-environment-securely-connecting-to-backend-resources.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
 ## Azure Backup
-### [Архивация приложения в Azure](../app-service/web-sites-backup.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+### [Архивация приложения в Azure](../app-service/manage-backup.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 ### [Восстановление приложения в Azure](../app-service/web-sites-restore.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
 ## [Мониторинг](../app-service/web-sites-monitor.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
-### [Включение ведения журналов диагностики](../app-service/web-sites-enable-diagnostic-log.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
-### [Устранение неполадок веб-приложения в службе приложений Azure с помощью Visual Studio](../app-service/web-sites-dotnet-troubleshoot-visual-studio.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+### [Включение ведения журналов диагностики](../app-service/troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+### [Устранение неполадок веб-приложения в службе приложений Azure с помощью Visual Studio](../app-service/troubleshoot-dotnet-visual-studio.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
 ## Интеграция
 ### [Как отправлять электронную почту с помощью SendGrid и Azure](../sendgrid-dotnet-how-to-send-email.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 ### [Экспорт в PowerApps и Microsoft Flow](../azure-functions/app-service-export-api-to-powerapps-and-flow.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
-### [Использование управляемого удостоверения](../app-service/app-service-managed-service-identity.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+### [Использование управляемого удостоверения](../app-service/overview-managed-identity.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
 ## Устранение неполадок
 ### Общие действия по устранению неполадок в мобильных приложениях
 #### [Сервер .NET](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-debug-and-troubleshoot-the-net-server-sdk)
 #### [Сервер Node.js](app-service-mobile-node-backend-how-to-use-server-sdk.md#Debugging)
-### [Включение ведения журналов диагностики](../app-service/web-sites-enable-diagnostic-log.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
-### [Устранение неполадок веб-приложения в службе приложений Azure с помощью Visual Studio](../app-service/web-sites-dotnet-troubleshoot-visual-studio.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+### [Включение ведения журналов диагностики](../app-service/troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
+### [Устранение неполадок веб-приложения в службе приложений Azure с помощью Visual Studio](../app-service/troubleshoot-dotnet-visual-studio.md?toc=%2fazure%2fapp-service-mobile%2ftoc.json)
 
 # Справочные материалы
 ## [Серверный пакет SDK для .NET](https://msdn.microsoft.com/library/azure/dn961176.aspx)

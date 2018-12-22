@@ -1,21 +1,22 @@
 ---
-title: 'Краткое руководство: создание базы знаний с использованием REST, C# — QnA Maker'
-titlesuffix: Azure Cognitive Services
+title: Создание базы знаний — REST, C#
+titlesuffix: QnA Maker- Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как создать пример базы знаний QnA Maker программными средствами с использованием REST на C#, чтобы отобразить ее на панели мониторинга Azure в учетной записи API Cognitive Services.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: quickstart
-ms.date: 11/6/2018
+ms.date: 11/06/2018
 ms.author: diberry
-ms.openlocfilehash: 190a937a4239c08d844d271d2e1d8e858215a5c2
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 36f056003ec35f49120a36b15c0809b06daaecbf
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52334965"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53254815"
 ---
 # <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-c"></a>Краткое руководство. Создание базы знаний в QnA Maker с помощью C#
 
@@ -32,7 +33,7 @@ ms.locfileid: "52334965"
 * У вас должна быть [служба QnA Maker](../How-To/set-up-qnamaker-service-azure.md). Чтобы получить этот ключ, выберите **Ключи** в разделе **Управление ресурсами** на информационной панели. 
 
 > [!NOTE] 
-> Полные файлы решения доступны в [репозитории Github **Azure-Samples/cognitive-services-qnamaker-csharp**](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp).
+> Полные файлы решения доступны в [репозитории GitHub **Azure-Samples/cognitive-services-qnamaker-csharp**](https://github.com/Azure-Samples/cognitive-services-qnamaker-csharp).
 
 ## <a name="create-a-knowledge-base-project"></a>Создание проекта базы знаний
 

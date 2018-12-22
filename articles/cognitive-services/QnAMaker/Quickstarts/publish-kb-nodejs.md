@@ -1,23 +1,24 @@
 ---
-title: Краткое руководство. Публикация базы знаний — REST, Node.js — QnA Maker
-titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний отправляется в индекс выделенной службы "Поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
+title: Публикация базы знаний с использованием REST и Node.js
+titleSuffix: QnA Maker - Azure Cognitive Services
+description: В этом кратком руководстве по Node.js описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний отправляется в индекс выделенной службы "Поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: quickstart
 ms.date: 11/19/2018
 ms.author: diberry
-ms.openlocfilehash: 3d96beee881df560fc616cd975502f062275e9eb
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 5970cb0b4f5e38862d41fc0db84847b1bb92c173
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52162030"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53164183"
 ---
-# <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-nodejs"></a>Краткое руководство. Публикация базы знаний в QnA Maker с помощью Node.js
+# <a name="quickstart-publish-a-knowledge-base-in-qna-maker-using-nodejs"></a>Краткое руководство. Публикация базы знаний в QnA Maker с использованием Node.js
 
 В этом кратком руководстве по REST описано, как программным способом опубликовать базу знаний. В процессе публикации последняя версия базы знаний отправляется в индекс выделенной службы "Поиск Azure" и создается конечная точка, которую можно вызывать в приложении или чат-боте.
 
@@ -32,11 +33,11 @@ ms.locfileid: "52162030"
 
     ![Идентификатор базы знаний QnA Maker](../media/qnamaker-quickstart-kb/qna-maker-id.png)
 
-    Если у вас еще нет базы знаний, создайте пример для этого краткого руководства по инструкциям из [этой статьи](create-new-kb-nodejs.md).
+    Если у вас еще нет базы знаний, можно создать ее для этого руководства. [Создавать базу знаний](create-new-kb-nodejs.md).
 
 
 > [!NOTE] 
-> Полные файлы решения доступны в [репозитории Github **Azure-Samples/cognitive-services-qnamaker-nodejs**](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/tree/master/documentation-samples/quickstarts/publish-knowledge-base-short).
+> Полные файлы решения доступны в [репозитории GitHub **Azure-Samples/cognitive-services-qnamaker-nodejs**](https://github.com/Azure-Samples/cognitive-services-qnamaker-nodejs/tree/master/documentation-samples/quickstarts/publish-knowledge-base-short).
 
 ## <a name="create-a-knowledge-base-nodejs-file"></a>Создание файла базы знаний Node.js
 

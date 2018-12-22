@@ -1,6 +1,6 @@
 ---
-title: Как зарегистрироваться для работы с выпуском Azure Active Directory Premium | Документация Microsoft
-description: Пошаговые инструкции о том, как зарегистрироваться для использования Azure Active Directory Premium.
+title: Регистрация для работы с выпусками Azure Active Directory Premium | Документация Майкрософт
+description: Инструкции по регистрации для работы с выпусками Azure Active Directory Premium.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -11,16 +11,16 @@ ms.topic: quickstart
 ms.date: 09/07/2017
 ms.author: lizross
 ms.reviewer: piotrci
-ms.custom: it-pro
-ms.openlocfilehash: a0a992e62e7b1e375ff2591aa82bdc7733e9d26f
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: 23778a56cfa6440442bd7aab67c5441094a633ae
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394703"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53073998"
 ---
-# <a name="how-to-sign-up-for-azure-active-directory-premium"></a>Инструкция по регистрации для работы с Azure Active Directory Premium
-Вы можете приобрести выпуск Azure Active Directory Premium и связать его со своей подпиской Azure. Если вам нужно создать новую подписку Azure, нужно также активировать план лицензирования и доступ к службе Azure AD.
+# <a name="sign-up-for-azure-active-directory-premium-editions"></a>Регистрация для работы с выпусками Azure Active Directory Premium
+Вы можете приобрести выпуски Azure Active Directory (Azure AD) Premium и связать их со своей подпиской Azure. Если вам нужно создать новую подписку Azure, нужно также активировать план лицензирования и доступ к службе Azure AD.
 
 > [!NOTE]
 >Выпуски Azure AD Premium и Basic доступны для клиентов в Китае, использующих доступный по всему миру экземпляр Azure Active Directory. Эти выпуски в настоящее время не поддерживаются службой Azure под управлением 21Vianet в Китае. Чтобы получить дополнительные сведения, обратитесь к нам на [форум Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/).

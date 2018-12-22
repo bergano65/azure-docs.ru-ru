@@ -1,21 +1,22 @@
 ---
-title: Отправка пользовательских событий для службы "Сетка событий Azure" по гибридному подключению | Документация Майкрософт
+title: Отправка настраиваемых событий в гибридное подключение — "Сетка событий", Azure CLI
 description: Используйте службу "Сетка событий Azure" и Azure CLI, чтобы иметь возможность публиковать темы и подписываться на эти события. Гибридное подключение используется для конечной точки.
 services: event-grid
 keywords: ''
 author: tfitzmac
 ms.author: tomfitz
-ms.date: 10/30/2018
+ms.date: 12/07/2018
 ms.topic: tutorial
 ms.service: event-grid
-ms.openlocfilehash: 488f4e09e329ee41fb307dc3579e76b5378d3a9f
-ms.sourcegitcommit: 6678e16c4b273acd3eaf45af310de77090137fa1
+ms.custom: seodec18
+ms.openlocfilehash: 1f66c75333b41cf399a72b801a7e362672744775
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50747785"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53099600"
 ---
-# <a name="route-custom-events-to-azure-relay-hybrid-connections-with-azure-cli-and-event-grid"></a>Маршрутизация пользовательских событий на гибридные подключения Azure Relay с помощью Azure CLI и службы "Сетка событий"
+# <a name="tutorial-route-custom-events-to-azure-relay-hybrid-connections-with-azure-cli-and-event-grid"></a>Руководство. Маршрутизация пользовательских событий на гибридные подключения Azure Relay с помощью Azure CLI и службы "Сетка событий"
 
 "Сетка событий Azure" — это служба обработки событий для облака. Гибридные подключения Azure Relay — один из поддерживаемых обработчиков событий. Гибридные подключения используются как обработчик событий, когда требуется обработать события из приложения, для которого не предусмотрена общедоступная конечная точка. Эти приложения могут находиться в корпоративной сети организации. В этой статье описано, как с помощью Azure CLI создать пользовательский раздел, подписаться на него и активировать событие для просмотра результата. События отправляются по гибридному подключению.
 

@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения PHP в Azure и его подключение к базе данных MySQL | Документация Майкрософт
+title: Разработка приложения PHP с использованием MySQL в Службе приложений Azure | Документация Майкрософт
 description: Узнайте, как создать приложение PHP, работающее в Azure, с подключением к базе данных MySQL в Azure.
 services: app-service\web
 documentationcenter: php
@@ -14,13 +14,13 @@ ms.devlang: php
 ms.topic: tutorial
 ms.date: 11/15/2018
 ms.author: cephalin
-ms.custom: mvc
-ms.openlocfilehash: 9a1468c27e668663ca9079f5f1c9e5e97e51d2d5
-ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
+ms.custom: seodec18
+ms.openlocfilehash: a20373e43780cea10e550ae968deb2a8720b9a9f
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52291298"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53251680"
 ---
 # <a name="tutorial-build-a-php-and-mysql-web-app-in-azure"></a>Руководство. Создание веб-приложения PHP в Azure с подключением к базе данных MySQL
 
@@ -49,9 +49,9 @@ ms.locfileid: "52291298"
 Для работы с этим руководством:
 
 * [установите Git](https://git-scm.com/);
-* [PHP 5.6.4 или более поздней версии](http://php.net/downloads.php);
+* [PHP 5.6.4 или более поздней версии](https://php.net/downloads.php);
 * [Composer](https://getcomposer.org/doc/00-intro.md);
-* включите следующие расширения PHP, требуемые для Laravel: OpenSSL, PDO-MySQL, Mbstring, Tokenizer, XML;
+* Включите следующие расширения PHP, необходимые для Laravel: OpenSSL, PDO-MySQL, Mbstring, Tokenizer и XML.
 * [MySQL](https://dev.mysql.com/doc/refman/5.7/en/installing.html) (этот компонент потребуется запустить). 
 
 ## <a name="prepare-local-mysql"></a>Подготовка локальной базы данных MySQL
@@ -598,9 +598,9 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 Чтобы отменить потоки для журналов, выполните команду `Ctrl`+`C`.
 
 > [!TIP]
-> Приложение PHP может использовать стандартный метод [error_log()](http://php.net/manual/function.error-log.php) для вывода в консоль. Пример приложения использует этот подход в файле конфигурации _app/Http/routes.php_.
+> Приложение PHP может использовать стандартный метод [error_log()](https://php.net/manual/function.error-log.php) для вывода в консоль. Пример приложения использует этот подход в файле конфигурации _app/Http/routes.php_.
 >
-> Являясь веб-платформой, [Laravel использует Monolog](https://laravel.com/docs/5.4/errors) в качестве поставщика службы ведения журнала. Чтобы узнать, как настроить Monolog для вывода сообщений в консоль, ознакомьтесь с разделом [PHP: как использовать Monolog для вывода журналов в консоль (php://out)](http://stackoverflow.com/questions/25787258/php-how-to-use-monolog-to-log-to-console-php-out).
+> Являясь веб-платформой, [Laravel использует Monolog](https://laravel.com/docs/5.4/errors) в качестве поставщика службы ведения журнала. Дополнительные сведения см. в статье [PHP: How to use monolog to log to console (php://out)?](https://stackoverflow.com/questions/25787258/php-how-to-use-monolog-to-log-to-console-php-out) (PHP: как выполнять запись в консоль с помощью Monolog (php://out)).
 >
 >
 

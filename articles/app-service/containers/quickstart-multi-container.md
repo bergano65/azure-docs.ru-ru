@@ -1,5 +1,5 @@
 ---
-title: Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров" с использованием конфигурации Docker Compose
+title: Создание многоконтейнерного приложения с помощью Docker Compose в Службе приложений Azure
 description: Разверните свое первое многоконтейнерное приложение на платформе Azure "Веб-приложение для контейнеров" за считаные минуты
 keywords: служба приложений azure, веб-приложение, linux, docker, compose, многоконтейнерное, несколько контейнеров, веб-приложение для контейнеров, много контейнеров, контейнер, kubernetes, wordpress, azure db для mysql, рабочая база данных с контейнерами
 services: app-service\web
@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: msangapu
-ms.custom: mvc
-ms.openlocfilehash: 1d54d914edb306b89dc6f2604aa5af3d17cb535d
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.custom: seodec18
+ms.openlocfilehash: 404be7a064e0e4b09178830b7802192e8775e121
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576788"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53316586"
 ---
-# <a name="create-a-multi-container-preview-app-using-web-app-for-containers"></a>Создание многоконтейнерного приложения (предварительная версия) с помощью платформы "Веб-приложение для контейнеров"
+# <a name="create-a-multi-container-preview-app-using-a-docker-compose-configuration"></a>Создание многоконтейнерного приложения (предварительная версия) с использованием конфигурации Docker Compose
 
 Платформа [Веб-приложение для контейнеров](app-service-linux-intro.md) предоставляет гибкие возможности для использования образов Docker. В этом кратком руководстве показано, как в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) развернуть многоконтейнерное приложение на платформе "Веб-приложение для контейнеров", используя конфигурацию Docker Compose. Для получения дополнительных сведений о Kubernetes и комплексном решении с базой данных Azure для MySQL см. [руководство по многоконтейнерным приложениям](tutorial-multi-container-app.md).
 

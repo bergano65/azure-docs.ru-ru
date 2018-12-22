@@ -36,7 +36,7 @@
 
 # Основные понятия
 ## [Выставление счетов и подписки](https://docs.microsoft.com/azure/billing/billing-getting-started)
-## [Сравнение услуг размещения](https://docs.microsoft.com/azure/app-service/choose-web-site-cloud-service-vm)
+## [Сравнение услуг размещения](https://docs.microsoft.com/azure/app-service/overview-compare)
 ## [Что такое служба приложений?](https://docs.microsoft.com/azure/app-service/overview)
 ## Виртуальные машины
 ### [Виртуальные машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/overview)
@@ -76,11 +76,11 @@
 ### [Мобильные приложения и веб-приложения](https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-custom-ssl)
 
 ## Azure Backup
-### [Мобильные приложения и веб-приложения](https://docs.microsoft.com/azure/app-service/web-sites-backup)
+### [Мобильные приложения и веб-приложения](https://docs.microsoft.com/azure/app-service/manage-backup)
 ### [Виртуальные машины](https://docs.microsoft.com/azure/backup/backup-azure-vms-introduction)
 
 ## Мониторинг
-### [Мобильные приложения и веб-приложения](https://docs.microsoft.com/azure/app-service/web-sites-enable-diagnostic-log)
+### [Мобильные приложения и веб-приложения](https://docs.microsoft.com/azure/app-service/troubleshoot-diagnostic-logs)
 ### [Виртуальные машины Linux](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-monitoring)
 ### [Виртуальные машины Windows](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-monitoring)
 ### [Микрослужбы](https://docs.microsoft.com/azure/service-fabric/service-fabric-diagnostics-overview)

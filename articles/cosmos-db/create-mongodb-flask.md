@@ -1,23 +1,23 @@
 ---
-title: Создание веб-приложения Flask с использованием Python и API MongoDB в Azure Cosmos DB
+title: Azure Cosmos DB — Создание веб-приложения Flask с использованием Python и API MongoDB в Azure Cosmos DB
 description: В этой статье представлен пример кода Python Flask, который можно использовать для подключения и выполнения запросов к API MongoDB в Azure Cosmos DB
 services: cosmos-db
 author: slyons
+ms.author: sclyon
 ms.service: cosmos-db
 ms.component: cosmosdb-mongo
-ms.custom: quick start connect, mvc
+ms.custom: quick start connect, mvc, seodec18
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 10/02/2017
-ms.author: sclyon
-ms.openlocfilehash: 70a103aa7c03abeed98237a3b1dc3ec8b514810a
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 09c19f57a2993c0faad3dca708f67526f99d13df
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52849063"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53165118"
 ---
-# <a name="azure-cosmos-db-build-a-flask-app-with-the-mongodb-api"></a>Azure Cosmos DB. Создание приложения Flask с использованием API MongoDB
+# <a name="azure-cosmos-db-build-a-flask-app-with-the-mongodb-api"></a>Azure Cosmos DB — Создание приложения Flask с использованием API MongoDB
 
 > [!div class="op_single_selector"]
 > * [.NET](create-mongodb-dotnet.md)
@@ -120,7 +120,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Если вы хотите проверить код в работающей учетной записи Azure Cosmos DB, тогда перейдите на портал Azure, чтобы создать учетную запись и получить данные строк подключения. Затем скопируйте их в приложение.
 
-1. На [портале Azure](http://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos DB и на левой панели навигации щелкните **Строка подключения**, а затем выберите **Ключи записи-чтения**. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать имя пользователя, пароль и узел в файл Dal.cs.
+1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos DB и на левой панели навигации щелкните **Строка подключения**, а затем выберите **Ключи записи-чтения**. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать имя пользователя, пароль и узел в файл Dal.cs.
 
 2. Откройте в корневом каталоге файл**app.py**.
 
@@ -134,7 +134,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="deploy-to-azure"></a>Развернуть в Azure
 
-Чтобы развернуть это приложение, можно создать веб-приложение в Azure и включить непрерывное развертывание с ветвления в репозитории github. Для настройки непрерывного развертывания с Github в Azure используйте руководство [Непрерывное развертывание в службе приложений Azure](https://docs.microsoft.com/azure/app-service-web/app-service-continuous-deployment).
+Чтобы развернуть это приложение, можно создать веб-приложение в Azure и включить непрерывное развертывание с ветвления в репозитории GitHub. Для настройки непрерывного развертывания с GitHub в Azure используйте руководство [Непрерывное развертывание в службе приложений Azure](https://docs.microsoft.com/azure/app-service-web/app-service-continuous-deployment).
 
 При развертывании в Azure следует удалить ключи приложения и убедиться, что приведенный ниже раздел не закомментирован:
 
@@ -149,11 +149,11 @@ Azure Cosmos DB — это глобально распределенная мн
 Если вы не хотите создавать вилку этого репозитория, можете нажать кнопку "Развертывание в Azure" ниже. Затем перейдите в Azure и настройте параметры приложения с информацией о своей учетной записи Cosmos DB.
 
 <a href="https://deploy.azure.com/?repository=https://github.com/heatherbshapiro/To-Do-List---Flask-MongoDB-Example" target="_blank">
-<img src="http://azuredeploy.net/deploybutton.png"/>
+<img src="https://azuredeploy.net/deploybutton.png" alt="Click to Deploy to Azure">
 </a>
 
 > [!NOTE]
-> Если вы планируете хранить в Github код или другие параметры системы управления версиями, удалите строки подключения из кода. Их можно задать с помощью параметров приложения вместо веб-приложения.
+> Если вы планируете хранить в GitHub код или другие параметры системы управления версиями, удалите строки подключения из кода. Их можно задать с помощью параметров приложения вместо веб-приложения.
 
 ## <a name="review-slas-in-the-azure-portal"></a>Просмотр соглашений об уровне обслуживания на портале Azure
 

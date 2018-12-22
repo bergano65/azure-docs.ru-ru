@@ -13,14 +13,15 @@ ms.devlang: na
 ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 0bcff6e0cec234f17b0aaab9828602eb4a194d85
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.custom: seodec18
+ms.openlocfilehash: 3a84f9ed35bac7f56d4a6aa2af94d1c28e335b74
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52334216"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53093205"
 ---
-# <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Руководство. Интеграция Azure Key Vault в развертывание шаблона Resource Manager
+# <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Руководство. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager
 
 Узнайте, как получить значения секрета из Azure Key Vault и передавать эти значения в качестве параметров во время развертывания Resource Manager. Это значение никогда не будет раскрыто, так как указывается только его идентификатор в Key Vault. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./resource-manager-keyvault-parameter.md).
 
@@ -48,7 +49,7 @@ ms.locfileid: "52334216"
     ```azurecli-interactive
     openssl rand -base64 32
     ```
-    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Руководство. Интеграция Azure Key Vault в развертывание шаблона Resource Manager](./resource-manager-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
+    Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Руководство. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./resource-manager-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
 
 ## <a name="prepare-the-key-vault"></a>Создание Key Vault
 
@@ -81,7 +82,7 @@ ms.locfileid: "52334216"
 
 1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает Key Vault и секрет Key Vault.
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Farmtutorials.blob.core.windows.net%2Fcreatekeyvault%2FCreateKeyVault.json"><img src="./media/resource-manager-tutorial-use-key-vault/deploy-to-azure.png" /></a>
+    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Farmtutorials.blob.core.windows.net%2Fcreatekeyvault%2FCreateKeyVault.json"><img src="./media/resource-manager-tutorial-use-key-vault/deploy-to-azure.png" alt="deploy to azure"/></a>
 
 2. Введите или выберите следующие значения.  Не выбирайте **Купить** после ввода значений.
 
@@ -93,8 +94,8 @@ ms.locfileid: "52334216"
     * **Имя Key Vault** . Укажите уникальное имя. 
     * **Идентификатор клиента**. Функция шаблона автоматически получает идентификатор клиента.  Не изменяйте значение по умолчанию.
     * **Ad User Id** (Идентификатор пользователя AD). Введите идентификатор объекта пользователя Azure AD, который вы получили на последнем этапе.
-    * **Имя секрета.** Имя по умолчанию — **vmAdminPassword**. Если изменить имя секрета здесь, то нужно обновить имя секрета при развертывании виртуальной машины.
-    * **Secret Value** (Значение секрета). Ведите ваш секрет.  Секрет — это пароль, используемый для входа в виртуальную машину. Рекомендуется использовать созданный на последнем шаге пароль.
+    * **Имя секрета.** Имя по умолчанию — **vmAdminPassword**. Если изменить имя секрета здесь, то нужно обновить имя секрета при развертывании виртуальной машины.
+    * **Значение секрета.** Введите секрет.  Секрет — это пароль, используемый для входа в виртуальную машину. Рекомендуется использовать созданный на последнем шаге пароль.
     * **I agree to the terms and conditions state above** (Я принимаю указанные выше условия). Установите этот флажок.
 3. Выберите **Изменить параметры** в верхней части экрана, чтобы взглянуть на шаблон.
 4. Перейдите к строке 28 JSON-файла шаблона. Это определение ресурса Key Vault.

@@ -1,23 +1,24 @@
 ---
-title: Руководство. Создание и публикация базы знаний, а также создание ответов на портале QnA Maker
+title: Создание, публикация и получение ответа в QnA Maker
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве по работе с порталом содержатся сведения о программном создании и публикации базы знаний, а также создании ответа на вопрос из базы знаний.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.technology: qna-maker
 ms.topic: tutorial
 ms.date: 10/29/2018
 ms.author: diberry
-ms.openlocfilehash: 08f708f740b90f27af5443b46c5d03bef688bd45
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 9853e84ffd2de8a1dfd6d9c4f32f58bb36b16403
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50221681"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53164438"
 ---
-# <a name="tutorial-create-a-knowledge-base-then-answer-question-via-the-qna-maker-portal"></a>Руководство. Создание базы знаний, а также ответов на вопрос через портал QnA Maker
+# <a name="tutorial-create-a-knowledge-base-then-answer-question-via-the-qna-maker-portal"></a>Руководство. Создание базы знаний и получение ответа на вопрос на портале QnA Maker
 
 В этом руководстве содержатся сведения о создании и публикации базы знаний, а также создании ответа на вопрос из базы знаний.
 
@@ -96,7 +97,7 @@ ms.locfileid: "50221681"
 
 После публикации базы знаний отобразится конечная точка.
 
-![Опубликовать](../media/qnamaker-tutorial-create-publish-query-in-portal/publish-2.png)
+![Параметры конечной точки на странице публикации](../media/qnamaker-tutorial-create-publish-query-in-portal/publish-2.png)
 
 ## <a name="use-curl-to-query-for-an-faq-answer"></a>Использование cURL для запроса ответа из часто задаваемых вопросов
 

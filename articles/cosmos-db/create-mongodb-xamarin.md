@@ -1,5 +1,5 @@
 ---
-title: Создание приложения Xamarin.Forms с использованием .NET и API MongoDB в Azure Cosmos DB
+title: Azure Cosmos DB — создание приложения Xamarin.Forms с использованием .NET и API MongoDB
 description: В этой статье представлен пример кода Xamarin, который можно использовать для подключения к API MongoDB в Azure Cosmos DB и выполнения запросов
 services: cosmos-db
 author: codemillmatt
@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 06/20/2018
 ms.author: masoucou
-ms.openlocfilehash: 4fde6d203999b15f0f60d4879c2fdc595e1fb7e9
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: ece6780803809829e69fccc320ae65a0c7b0f94b
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52835562"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53089264"
 ---
 # <a name="quickstart-build-a-mongodb-api-xamarinforms-app-with-net-and-the-azure-portal"></a>Краткое руководство. Создание приложения Xamarin.Forms API MongoDB с использованием .NET и портала Azure
 
@@ -156,7 +156,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](http://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos DB и на левой панели навигации щелкните **Строка подключения**, а затем выберите **Ключи записи-чтения**. В следующих шагах используйте кнопки копирования в правой части экрана, чтобы скопировать основную строку подключения.
+1. На [портале Azure](https://portal.azure.com/) перейдите к учетной записи базы данных Azure Cosmos DB и на левой панели навигации щелкните **Строка подключения**, а затем выберите **Ключи записи-чтения**. В следующих шагах используйте кнопки копирования в правой части экрана, чтобы скопировать основную строку подключения.
 
 2. Откройте файл **APIKeys.cs** в каталоге **Helpers** проекта **TaskList.Core**.
 

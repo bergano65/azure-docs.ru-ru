@@ -1,23 +1,24 @@
 ---
-title: Руководство 9. Анализ положительной, отрицательной и нейтральной тональности в LUIS
+title: Анализ мнений
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве создается приложение, демонстрирующее, как извлечь позитивные, негативные и нейтральные тональности из фраз. Тональность определяется на основе всего высказывания.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 60c4b280033e110f6b8b2a3ce720934e118c8479
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: d93c7619bb670a81372ab83359836a78b8956b09
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52424856"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53098946"
 ---
-# <a name="tutorial-9--extract-sentiment-of-overall-utterance"></a>Руководство 9. Извлечение тональности из всего высказывания
+# <a name="tutorial-9--extract-sentiment-of-overall-utterance"></a>Руководство 9.  Извлечение тональности из всего высказывания
 В этом руководстве создается приложение, демонстрирующее, как извлечь позитивные, негативные и нейтральные тональности из фраз. Тональность определяется на основе всего высказывания.
 
 Анализ тональности — это возможность определить, является ли фраза пользователя позитивной, негативной или нейтральной. 
@@ -94,7 +95,7 @@ ms.locfileid: "52424856"
 
 2. Переключите параметр **Анализ тональности**, чтобы включить его. 
 
-    ![](./media/luis-quickstart-intent-and-sentiment-analysis/turn-on-sentiment-analysis-as-publish-setting.png)
+    ![Добавление анализа тональности как параметра публикации](./media/luis-quickstart-intent-and-sentiment-analysis/turn-on-sentiment-analysis-as-publish-setting.png)
 
 ## <a name="publish"></a>Опубликовать
 
@@ -106,7 +107,7 @@ ms.locfileid: "52424856"
 
 2. Перейдите в конец URL-адреса и введите `Jill Jones work with the media team on the public portal was amazing`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `EmployeeFeedback` с извлечением анализа тональности.
     
-    ```JSON
+    ```json
     {
       "query": "Jill Jones work with the media team on the public portal was amazing",
       "topScoringIntent": {

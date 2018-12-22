@@ -1,23 +1,24 @@
 ---
-title: 'Руководство 2: Предварительно созданные намерения и сущности. Использование предварительно построенных общих высказывании. Извлечение общих данных в LUIS'
+title: Предварительно созданные намерения и сущности
 titleSuffix: Azure Cognitive Services
 description: Добавьте предварительно созданные намерения и сущности в учебное приложение Human Resources, чтобы быстро осуществлять прогнозирование намерений и извлекать данные. Не нужно помечать высказывания с использованием предварительно созданных сущностей. Сущность определяется автоматически.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 3bad68d1a388a5bc8780df633313206afaadcef9
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: b6fb603b84cdcf3cb0f75d0020fa2047a0a838d1
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52422428"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53074086"
 ---
-# <a name="tutorial-2-identify-common-intents-and-entities"></a>Руководство 2: Определение общих намерений и сущностей
+# <a name="tutorial-2-identify-common-intents-and-entities"></a>Руководство 2. Определение общих намерений и сущностей
 В этом руководстве измените приложение "Управление персоналом". Добавьте предварительно созданные намерения и сущности в учебное приложение Human Resources, чтобы быстро осуществлять прогнозирование намерений и извлекать данные. Вам не нужно указывать какие-либо высказывания с заранее созданными сущностями, потому что они обнаруживаются автоматически.
 
 Предварительно созданные модели общих предметных доменов и типов данных дают возможность быстрого создания модели, а также привести пример того, как она выглядит. 
@@ -90,7 +91,7 @@ LUIS предоставляет несколько предварительно 
 
 2. Перейдите в конец URL-адреса в адресной строке браузера и введите `I want to cancel on March 3`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
 
-    ```JSON
+    ```json
     {
       "query": "I want to cancel on March 3",
       "topScoringIntent": {

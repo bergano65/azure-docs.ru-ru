@@ -11,14 +11,14 @@ ms.author: carlrab
 ms.reviewer: v-masebo
 manager: craigg
 ms.date: 11/28/2018
-ms.openlocfilehash: be3ac9fab6c89c65ad9673811e108cefe2c80d00
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: b768b50af7ad6736e5cc3c885e6ac5016976f48a
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52724253"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52958548"
 ---
-# <a name="quickstart-use-php-to-query-an-azure-sql-database"></a>Краткое руководство. Создание запросов к базе данных SQL Azure с использованием PHP
+# <a name="quickstart-use-php-to-query-an-azure-sql-database"></a>Краткое руководство. Использование PHP для создания запросов к базе данных SQL Azure
 
 В этой статье показано, как подключаться к базе данных SQL Azure с помощью [PHP](http://php.net/manual/en/intro-whatis.php). Затем можно запросить данные с использованием инструкций T-SQL.
 
@@ -32,9 +32,9 @@ ms.locfileid: "52724253"
 
 - Установленное программное обеспечение, связанное с PHP, для используемой операционной системы:
 
-    - **MacOS.** Установите Homebrew, PHP, драйвер ODBC и SQLCMD, а затем драйвер PHP для SQL Server. Ознакомьтесь с шагами 1.2, 1.3 и 2.1 в [этом руководстве](https://www.microsoft.com/sql-server/developer-get-started/php/mac/).
+    - **MacOS.** Установите, PHP, драйвер ODBC, а затем драйвер PHP для SQL Server. Сведения см. разделах [Шаг 1, 2 и 3](/sql/connect/php/installation-tutorial-linux-mac).
 
-    - **Ubuntu.** Установите PHP и другие необходимые пакеты, а затем установите драйвер PHP для SQL Server. Ознакомьтесь с шагами 1.2 и 2.1 в [этом руководстве](https://www.microsoft.com/sql-server/developer-get-started/php/ubuntu/).
+    - **Linux.** Установите, PHP, драйвер ODBC, а затем драйвер PHP для SQL Server. Сведения см. разделах [Шаг 1, 2 и 3](/sql/connect/php/installation-tutorial-linux-mac).
 
     - **Windows.** Установите PHP для IIS Express и Chocolatey, а затем драйвер ODBC и SQLCMD. Ознакомьтесь с шагами 1.2 и 1.3 в [этом руководстве](https://www.microsoft.com/sql-server/developer-get-started/php/windows/).
 
@@ -91,4 +91,4 @@ ms.locfileid: "52724253"
 
 - [Сообщите о проблемах или задайте вопросы](https://github.com/Microsoft/msphpsql/issues)
 
-- [Пример логики повтора: отказоустойчивое подключение к SQL с помощью PHP](/sql/connect/php/step-4-connect-resiliently-to-sql-with-php)
+- [Шаг 4. Выполнение устойчивого подключения к SQL с помощью PHP](/sql/connect/php/step-4-connect-resiliently-to-sql-with-php)

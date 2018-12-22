@@ -1,5 +1,5 @@
 ---
-title: Знакомство со службой контейнеров Azure для Kubernetes
+title: Знакомство со службой контейнеров Azure для Kubernetes (не рекомендуется)
 description: Служба контейнеров Azure для Kubernetes упрощает развертывание и администрирование контейнерных приложений в Azure.
 services: container-service
 author: gabrtv
@@ -9,16 +9,19 @@ ms.topic: overview
 ms.date: 07/21/2017
 ms.author: gamonroy
 ms.custom: mvc
-ms.openlocfilehash: 3e019f02d13ade6a42f4739eacae55f5bf6ac2af
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: e00ac57cc36b3331cfb847ecedc6c75132cdeb6b
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46973598"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52999181"
 ---
-# <a name="introduction-to-azure-container-service-for-kubernetes"></a>Знакомство со службой контейнеров Azure для Kubernetes
+# <a name="deprecated-introduction-to-azure-container-service-for-kubernetes"></a>Знакомство со службой контейнеров Azure для Kubernetes (не рекомендуется)
 
-[!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
+> [!TIP]
+> Обновленная версия этой статьи — [Обзор службы Azure Kubernetes (AKS)](../../aks/intro-kubernetes.md).
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
 Служба контейнеров Azure для Kubernetes упрощает создание, настройку и администрирование кластера виртуальных машин, настроенных для запуска контейнерных приложений. Это позволяет использовать имеющиеся навыки либо положиться на опыт обширного и постоянно увеличивающегося сообщества при развертывании приложений на основе контейнера в Microsoft Azure и управлении ими.
 

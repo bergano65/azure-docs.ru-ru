@@ -1,5 +1,5 @@
 ---
-title: Руководство по ASP.NET MVC для Azure Cosmos DB. Разработка веб-приложения
+title: Руководство по ASP.NET MVC для Azure Cosmos DB. Разработка веб-приложений
 description: Это руководство по MVC для ASP.NET поможет вам создать веб-приложение MVC с использованием Azure Cosmos DB. С помощью этого руководства по ASP NET MVC вы сможете сохранить файл JSON и получить доступ к данным из приложения "Список дел", размещенного на веб-сайтах Azure.
 keywords: руководство по asp.net mvc, разработка веб-приложений, веб-приложение mvc, пошаговое руководство asp net mvc
 services: cosmos-db
@@ -11,14 +11,14 @@ ms.topic: tutorial
 ms.date: 08/03/2017
 ms.author: sngun
 ms.custom: devcenter, vs-azure
-ms.openlocfilehash: 8230c2ba8c7fdb10d7e37a317d4eeb5abb120d60
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: b0c8d46e74eec4bad7b7e664682c97eb0f0068b6
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52868724"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53098732"
 ---
-# <a name="_Toc395809351"></a>Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB
+# <a name="_Toc395809351"></a>Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB
 
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-dotnet-application.md)
@@ -61,7 +61,7 @@ ms.locfileid: "52868724"
 <br/>
  Теперь рассмотрим создание нового приложения ASP.NET MVC с нуля. 
 
-## <a name="_Toc395637762"></a>Шаг 2. Создание нового приложения ASP.NET MVC
+## <a name="_Toc395637762"></a>Шаг 2. Создание приложения ASP.NET MVC
 
 1. В меню Visual Studio **Файл** выберите **Создать**, а затем щелкните **Проект**. Откроется диалоговое окно **Новый проект** .
 
@@ -84,7 +84,7 @@ ms.locfileid: "52868724"
    
     Мы не станем запускать этот проект локально, потому что я уверена, что мы все видели приложение ASP.NET "Hello World". Давайте перейдем к добавлению Azure Cosmos DB в этот проект и созданию приложения.
 
-## <a name="_Toc395637767"></a>Шаг 3. Добавление Azure Cosmos DB в проект веб-приложения MVC
+## <a name="_Toc395637767"></a>Шаг 3. Добавление Azure Cosmos DB в проект веб-приложения MVC
 Теперь, когда мы установили большую часть коммуникаций MVC для ASP.NET, необходимых для этого решения, перейдем к основной цели этого руководства, т. е. к добавлению Azure Cosmos DB в веб-приложение MVC.
 
 1. Пакет .NET SDK для Azure Cosmos DB комплектуется и распространяется как пакет NuGet. Чтобы получить пакет NuGet в Visual Studio, используйте диспетчер пакетов NuGet в Visual Studio: щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите **Управление пакетами NuGet**.
@@ -106,7 +106,7 @@ ms.locfileid: "52868724"
    
     ![Снимок экрана: две ссылки, добавленные в проект данных JSON в обозревателе решений](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-added-references.png)
 
-## <a name="_Toc395637763"></a>Шаг 4. Настройка приложения ASP.NET MVC
+## <a name="_Toc395637763"></a>Шаг 4. Настройка приложения ASP.NET MVC
 Теперь добавим модели, представления и контроллеры в это приложение MVC.
 
 * [Добавление модели](#_Toc395637764).
@@ -216,7 +216,7 @@ ms.locfileid: "52868724"
 
 Как только все будет готово, закройте документы cshtml в Visual Studio, мы вернемся к этим представлениям позже.
 
-## <a name="_Toc395637769"></a>Шаг 5. Подключение Azure Cosmos DB
+## <a name="_Toc395637769"></a>Шаг 5. Подключение Azure Cosmos DB
 Теперь, когда мы позаботились об основных ресурсах MVC, давайте рассмотрим добавление кода для Azure Cosmos DB. 
 
 В этом разделе мы добавим код для обработки следующих команд
@@ -516,7 +516,7 @@ ms.locfileid: "52868724"
     ![Снимок экрана: представление "Индекс" с установленным флажком возле параметра "Завершено"](./media/sql-api-dotnet-application/asp-net-mvc-tutorial-completed-item.png)
 5. После проверки приложения нажмите клавиши CONTROL+F5, чтобы остановить отладку приложения. Теперь все готово к развертыванию.
 
-## <a name="_Toc395637774"></a>Шаг 7. Развертывание приложения в службу приложений Azure 
+## <a name="_Toc395637774"></a>Шаг 7. Развертывание приложения в Службе приложений Azure 
 Теперь, когда у вас есть готовое приложение, которое корректно работает в Azure Cosmos DB, мы собираемся развернуть его в службу приложений Azure.  
 
 1. Чтобы опубликовать это приложение, щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите **Опубликовать**.
@@ -545,8 +545,8 @@ ms.locfileid: "52868724"
 Чтобы добавить дополнительные функции в приложение, ознакомьтесь с API-интерфейсами, доступными в [библиотеке .NET для Azure Cosmos DB](/dotnet/api/overview/azure/cosmosdb?view=azure-dotnet). Вы также можете стать соавтором библиотеки .NET для Azure Cosmos DB на портале [GitHub][GitHub]. 
 
 [\*]: https://microsoft.sharepoint.com/teams/DocDB/Shared%20Documents/Documentation/Docs.LatestVersions/PicExportError
-[Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
-[Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
-[Preventing Cross-Site Request Forgery]: http://go.microsoft.com/fwlink/?LinkID=517254
-[Basic CRUD Operations in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
+[Visual Studio Express]: https://www.visualstudio.com/products/visual-studio-express-vs.aspx
+[Microsoft Web Platform Installer]: https://www.microsoft.com/web/downloads/platform.aspx
+[Preventing Cross-Site Request Forgery]: https://go.microsoft.com/fwlink/?LinkID=517254
+[Basic CRUD Operations in ASP.NET MVC]: https://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app

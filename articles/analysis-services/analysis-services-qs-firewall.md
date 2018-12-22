@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 96141ddeeb73c7483935d5da49b9341436c10c18
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 0351ab3213ac75559cc025f2ef71e2f098a7504c
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49429721"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993200"
 ---
 # <a name="quickstart-configure-server-firewall---portal"></a>Краткое руководство. Настройка брандмауэра сервера с помощью портала
 
@@ -21,12 +21,12 @@ ms.locfileid: "49429721"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка на сервер служб Analysis Services. Дополнительные сведения см. в разделе [Краткое руководство. Создание портала с помощью сервера](analysis-services-create-server.md) или [Краткое руководство. Создание сервера с помощью PowerShell](analysis-services-create-powershell.md)
+- Подписка на сервер служб Analysis Services. Дополнительные сведения см. в статье [ Краткое руководство по созданию сервера с помощью портала](analysis-services-create-server.md) или [ Краткое руководство по созданию сервера с помощью PowerShell](analysis-services-create-powershell.md).
 - Один или несколько диапазонов IP-адресов для клиентских компьютеров (при необходимости).
 
-## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure. 
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure 
 
-[Войдите на портал](https://portal.azure.com)
+[Войдите на портал](https://portal.azure.com).
 
 ## <a name="configure-a-firewall"></a>Настройка брандмауэра
 

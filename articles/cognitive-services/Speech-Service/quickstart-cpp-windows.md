@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Распознавание речи в C++ на Windows с помощью пакета SDK для службы "Речь"
+title: Краткое руководство. Распознавание речи с помощью C++ (Windows) в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как распознавать речь в C++ на Windows, используя пакет SDK для службы "Речь"
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: quickstart
 ms.date: 11/06/2018
 ms.author: wolfma
-ms.openlocfilehash: 8947ba3f39cebf51e956db0d841e393963832bc4
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: 454b84f4ba5e492f61daf67c980b204c82a2090d
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51218747"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53075193"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-windows-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в классическом приложении C++ для Windows с помощью пакета SDK службы "Речь"
 
@@ -31,11 +31,11 @@ ms.locfileid: "51218747"
 
 1. Запустите Visual Studio 2017.
 
-1. Убедитесь, что рабочая нагрузка **Desktop development with C++** (Разработка классических приложений на C++) доступна. Выберите **Tools**(Средства) > **Get Tools and Features** (Получить средства и компоненты) в строке меню Visual Studio, чтобы открыть установщик Visual Studio. Если эта рабочая нагрузка уже включена, перейдите к следующему шагу. 
+1. Убедитесь, что рабочая нагрузка **Desktop development with C++** (Разработка классических приложений на C++) доступна. Выберите **Tools**(Средства) > **Get Tools and Features** (Получить средства и компоненты) в строке меню Visual Studio, чтобы открыть установщик Visual Studio. Если эта рабочая нагрузка уже включена, перейдите к следующему шагу.
 
     ![Снимок экрана, где отображается вкладка "Рабочие нагрузки" Visual Studio](media/sdk/vs-enable-cpp-workload.png)
 
-    В противном случае поставьте флажок рядом с **Desktop development with C++** (Разработка классических приложений на C++). 
+    В противном случае поставьте флажок рядом с **Desktop development with C++** (Разработка классических приложений на C++).
 
 1. Убедитесь, что компонент **Диспетчер пакетов NuGet** доступен. Переключитесь на вкладку **Отдельные компоненты** диалогового окна установщика Visual Studio и выберите **Диспетчер пакетов NuGet**, если он еще не включен.
 

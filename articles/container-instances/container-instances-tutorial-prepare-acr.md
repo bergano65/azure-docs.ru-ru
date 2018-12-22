@@ -1,21 +1,21 @@
 ---
-title: Руководство по службе "Экземпляры контейнеров Azure". Подготовка реестра контейнеров Azure
-description: Вторая часть руководства по службе "Экземпляры контейнеров Azure". Подготовка реестра контейнеров Azure
+title: Руководство по подготовке реестра контейнеров для службы "Экземпляры контейнеров Azure"
+description: Руководство по службе "Экземпляры контейнеров Azure" — часть 2 из 3. Подготовка реестра контейнеров Azure и отправка образа
 services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: tutorial
 ms.date: 03/21/2018
 ms.author: danlep
-ms.custom: mvc
-ms.openlocfilehash: e7cf9c5fad6219e71205c181b2dbb6828595afdd
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.custom: seodec18, mvc
+ms.openlocfilehash: eeb0fe5b19f23e101eab9393dca64e1e13bf6922
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48855448"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53188929"
 ---
-# <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство. Развертывание Реестра контейнеров Azure и его использование
+# <a name="tutorial-deploy-an-azure-container-registry-and-push-a-container-image"></a>Руководство. Развертывание реестра контейнеров Azure и отправка образа контейнера
 
 Это вторая часть руководства, состоящего из трех частей. [Первая часть](container-instances-tutorial-prepare-app.md) руководства по созданию образа контейнера Docker для веб-приложения Node.js. В этом руководстве мы поместим образ в реестр контейнеров Azure. Если вы еще не создали образ контейнера, вернитесь к первой части этой серии — [руководству по созданию образа контейнера](container-instances-tutorial-prepare-app.md).
 

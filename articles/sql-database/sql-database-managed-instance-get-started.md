@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: Carlrab
 manager: craigg
 ms.date: 11/28/2018
-ms.openlocfilehash: d5be25abc634200e0c0afed6946b38fd163fb78e
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 4b8c67cfff89b54b4776ebc8b4586cd8f52950b3
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52890506"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53342618"
 ---
 # <a name="quickstart-create-an-azure-sql-database-managed-instance"></a>Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "52890506"
    |**Имя для входа администратора управляемого экземпляра**|Любое допустимое имя пользователя|Сведения о допустимых именах см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). Не используйте serveradmin. Это имя зарезервировано для роли уровня сервера.|
    |**Пароль**|Любой допустимый пароль|Пароль должен включать минимум 16 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).|
    |**Местоположение.**|Расположение, в котором хотите создать Управляемый экземпляр|Дополнительные сведения о регионах Azure см. [здесь](https://azure.microsoft.com/regions/).|
-   |**Виртуальная сеть**|Щелкните **Создать виртуальную сеть** или выберите виртуальную сеть, созданную ранее в группе ресурсов, которая уже использовалась в этой форме.| Чтобы настроить виртуальную сеть для Управляемого экземпляра с пользовательскими параметрами, см.раздел [Configure SQL Managed Instance virtual network environment template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-managed-instance-azure-environment) (Настройка шаблона среды виртуальной сети Управляемого экземпляра SQL) в Github. См. дополнительные сведения о требованиях к [настройке виртуальной сети для Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-vnet-configuration.md). |
+   |**Виртуальная сеть**|Щелкните **Создать виртуальную сеть** или выберите допустимую виртуальную сеть и подсеть.| Если поля сети и подсети затенены, прежде чем выбирать эти значения в качестве целевого объекта для нового Управляемого экземпляра, нужно [изменить их в соответствии с требованиями сети](sql-database-managed-instance-configure-vnet-subnet.md). См. дополнительные сведения о требованиях к [настройке виртуальной сети для Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md). |
    |**Группа ресурсов**|Новая или существующая группа ресурсов|Допустимые имена групп ресурсов см. в статье о [правилах и ограничениях именования](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).|
 
    ![форма управляемого экземпляра](./media/sql-database-managed-instance-get-started/managed-instance-create-form.png)

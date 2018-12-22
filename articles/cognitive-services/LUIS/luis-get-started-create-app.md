@@ -1,21 +1,22 @@
 ---
-title: Создание приложения LUIS за 10 минут
-titleSuffix: Azure Cognitive Services
+title: Краткое руководство по созданию приложения
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Узнайте, как создать приложение LUIS, которое использует предварительно созданную предметную область `HomeAutomation` для включения и отключения освещения и устройств. Эта предварительно созданная предметная область предоставляет для использования намерения, сущности и фразы. Когда все будет готово, вы получите работающую в облаке конечную точку LUIS.
 services: cognitive-services
 author: diberry
+ms.custom: seodec18
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 657f5b6879f7782cbd94588657dc0082eff1f9c5
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 71f3084be697dd84f3f262d2a79cd04a0ba76d8e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52423336"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53086816"
 ---
 # <a name="quickstart-use-prebuilt-home-automation-app"></a>Краткое руководство. Использование предварительно созданного приложения для системы домашней автоматики
 
@@ -32,11 +33,11 @@ ms.locfileid: "52423336"
 
 2. Выберите **Создать приложение**.
 
-    [![](media/luis-quickstart-new-app/app-list.png "Снимок экрана со списком приложений")](media/luis-quickstart-new-app/app-list.png)
+    [![Снимок экрана со списком приложений](media/luis-quickstart-new-app/app-list.png "Screenshot of app list")](media/luis-quickstart-new-app/app-list.png)
 
 3. В диалоговом окне присвойте приложению имя Home Automation.
 
-    [![](media/luis-quickstart-new-app/create-new-app-dialog.png "Снимок экрана всплывающего диалогового окна создания приложения")](media/luis-quickstart-new-app/create-new-app-dialog.png)
+    [![Снимок экрана со всплывающим диалоговым окном "Создание приложения"](media/luis-quickstart-new-app/create-new-app-dialog.png "Screenshot of Create new app pop-up dialog")](media/luis-quickstart-new-app/create-new-app-dialog.png)
 
 4. Выберите язык и региональные параметры для приложения. Для нашего примера Home Automation выберите английский язык. Затем выберите **Готово**. LUIS создаст приложение Home Automation. 
 
@@ -47,11 +48,11 @@ ms.locfileid: "52423336"
 
 На панели навигации слева выберите **Prebuilt domains** (Предварительно созданные предметные области). Выполните поиск по строке Home. Выберите **Add domain** (Добавить предметную область).
 
-[![](media/luis-quickstart-new-app/home-automation.png "Снимок экрана с выбором предметной области для приложения Home Automation из меню предварительно созданных предметных областей")](media/luis-quickstart-new-app/home-automation.png)
+[![Снимок экрана с предметной областью Home Automation, вызываемой из предварительно созданного меню предметных областей](media/luis-quickstart-new-app/home-automation.png "Screenshot of Home Automation domain called out in prebuilt domain menu")](media/luis-quickstart-new-app/home-automation.png)
 
 Когда предметная область будет успешно добавлена, в области предварительно созданных предметных областей отобразится кнопка **Remove domain** (Удалить предметную область).
 
-[![](media/luis-quickstart-new-app/remove-domain.png "Снимок экрана с предметной областью Home Automation, рядом с которой отображается кнопку удаления")](media/luis-quickstart-new-app/remove-domain.png)
+[![Снимок экрана с кнопкой удаления в предметной области Home Automation](media/luis-quickstart-new-app/remove-domain.png "Screenshot of Home Automation domain with remove button")](media/luis-quickstart-new-app/remove-domain.png)
 
 ## <a name="intents-and-entities"></a>Намерения и сущности
 
@@ -62,7 +63,7 @@ ms.locfileid: "52423336"
 
 Выберите намерение **HomeAutomation.TurnOff**. Вы увидите, что это намерение содержит список фраз с обозначенными сущностями.
 
-[![](media/luis-quickstart-new-app/home-automation-turnon.png "Снимок экрана с намерением HomeAutomation.TurnOff")](media/luis-quickstart-new-app/home-automation-turnon.png)
+[![Снимок экрана с намерением HomeAutomation.TurnOff](media/luis-quickstart-new-app/home-automation-turnon.png "Screenshot of HomeAutomation.TurnOff intent")](media/luis-quickstart-new-app/home-automation-turnon.png)
 
 ## <a name="train-the-luis-app"></a>Обучение приложения LUIS
 
@@ -79,7 +80,7 @@ Turn off the lights
 
 В нашем примере Turn off the lights (Выключить свет) правильно распознано как намерение HomeAutomation.TurnOff.
 
-[![](media/luis-quickstart-new-app/test.png "Снимок экрана с панелью тестирования, на которой выделено намерение")](media/luis-quickstart-new-app/test.png)
+[![Снимок экрана с выделенной фразой на панели тестирования](media/luis-quickstart-new-app/test.png "Screenshot of Test panel with utterance highlighted")](media/luis-quickstart-new-app/test.png)
 
 
 Снова щелкните **Test** (Тестировать), чтобы свернуть панель тестирования. 
@@ -96,7 +97,7 @@ Turn off the lights
 
 2. Перейдите в конец URL-адреса, введите `turn off the living room light` и нажмите клавишу ВВОД. Браузер отображает ответ JSON для конечной точки HTTP.
 
-    [![](media/luis-quickstart-new-app/turn-off-living-room.png "Снимок экрана браузера с результатом в формате JSON, где обнаружено намерение TurnOff")](media/luis-quickstart-new-app/turn-off-living-room.png)
+    [![Снимок экрана браузера с результатом JSON, в котором обнаружено намерение TurnOff](media/luis-quickstart-new-app/turn-off-living-room.png "Screenshot of browser with JSON result detects the intent TurnOff")](media/luis-quickstart-new-app/turn-off-living-room.png)
     
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

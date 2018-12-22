@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 12/01/2018
 ms.author: dech
-ms.openlocfilehash: 4ac770b58e4a4d9a547916997a8f9d181b2fa895
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 139d7a13b9f6ce6132bffb798aa41b207ebf7929
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52852848"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53317419"
 ---
 # <a name="build-a-net-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account-sdk-version-3-preview"></a>Создание консольного приложения .NET для управления данными в учетной записи API SQL Azure Cosmos DB (предварительная версия 3 пакета SDK)
 
@@ -53,7 +53,7 @@ ms.locfileid: "52852848"
 
 * [!INCLUDE [cosmos-db-emulator-vs](../../includes/cosmos-db-emulator-vs.md)]
 
-## <a name="step-1-create-an-azure-cosmos-db-account"></a>Шаг 1. Создание учетной записи Azure Cosmos DB
+## <a name="step-1-create-an-azure-cosmos-db-account"></a>Шаг 1. создание учетной записи Azure Cosmos DB;
 Давайте создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись, которую вы собираетесь использовать, можно перейти к шагу [Настройка решения Visual Studio](#SetupVS). Если вы используете эмулятор Azure Cosmos DB, выполните действия, описанные в статье об [эмуляторе Azure Cosmos DB](local-emulator.md), чтобы его настроить и сразу перейти к [настройке проекта Visual Studio](#SetupVS).
 
 [!INCLUDE [create-dbaccount-preview](../../includes/cosmos-db-create-dbaccount-preview.md)]
@@ -75,7 +75,7 @@ ms.locfileid: "52852848"
 
 Отлично! Теперь, когда мы завершили настройку, начнем писать код. Вы можете найти проект готового кода для этого руководства в [GitHub](https://github.com/Azure-Samples/cosmos-dotnet-getting-started).
 
-## <a id="Connect"></a>Шаг 3. Подключение к учетной записи Azure Cosmos DB
+## <a id="Connect"></a> Шаг 3. Подключение к учетной записи Azure Cosmos DB
 1. Во-первых, замените ссылки в начале приложения C# в файле **Program.cs** на такие:
     ```csharp
     using System;
@@ -122,7 +122,7 @@ ms.locfileid: "52852848"
 
 1. Далее мы создадим новый экземпляр ```CosmosClient``` и настроим формирование шаблонов для нашей программы.
 
-    В методе **Main** добавьте новую асинхронную задачу с именем **GetStartedDemoAsync**, которая создает экземпляр ```CosmosClient```. Мы будем использовать задачу **GetStartedDemoAsync** в качестве точки входа, которая вызывает методы, работающие с ресурсами Azure Cosmos DB.
+    В методе **Main** добавьте новую асинхронную задачу с именем **GetStartedDemoAsync**, которая создает экземпляр ```CosmosClient```. Мы будем использовать **GetStartedDemoAsync** в качестве точки входа, которая вызывает методы для работы с ресурсами Azure Cosmos DB.
 
     ```csharp
     public static async Task Main(string[] args)
@@ -172,8 +172,8 @@ ms.locfileid: "52852848"
 
 Поздравляем! Вы успешно подключились к учетной записи Azure Cosmos DB. 
 
-## <a name="step-4-create-a-database"></a>Этап 4: создание базы данных
-Вы можете создать базу данных с помощью метода [**CreateDatabaseIfNotExistsAsync**](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.cosmos.cosmosdatabases) или функции [**CreateDatabaseAsync**](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.cosmos.cosmosdatabases) класса ``CosmosDatabases``. База данных представляет собой логический контейнер элементов, разделенных между контейнерами.
+## <a name="step-4-create-a-database"></a>Шаг 4. Создание базы данных
+Вы можете создать базу данных с помощью метода [**CreateDatabaseIfNotExistsAsync**](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosdatabases) или функции [**CreateDatabaseAsync**](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmosdatabases) класса ``CosmosDatabases``. База данных представляет собой логический контейнер элементов, разделенных между контейнерами.
     
 1. Скопируйте и вставьте метод **CreateDatabase** ниже метода **GetStartedDemoAsync**. Функция **CreateDatabase** создаст базу данных с идентификатором ``FamilyDatabase``, указанным в поле ``databaseId``, если она не была создана ранее. 
 
@@ -290,7 +290,7 @@ ms.locfileid: "52852848"
 > 
 > 
 
-Контейнер можно создать с помощью метода [**CreateContainerIfNotExistsAsync**](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.cosmos.cosmoscontainers) или функции [**CreateContainerAsync**](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.cosmos.cosmoscontainers) из класса **CosmosContainers**. Контейнер состоит из элементов (которые в случае API SQL являются документами JSON) и связанной логики приложения JavaScript на стороне сервера, например хранимые процедуры, определяемые пользователем функции и триггеры.
+Контейнер можно создать с помощью метода [**CreateContainerIfNotExistsAsync**](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmoscontainers) или функции [**CreateContainerAsync**](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmoscontainers) из класса **CosmosContainers**. Контейнер состоит из элементов (которые в случае API SQL являются документами JSON) и связанной логики приложения JavaScript на стороне сервера, например хранимые процедуры, определяемые пользователем функции и триггеры.
 
 1. Скопируйте и вставьте метод **CreateContainer** ниже метода **CreateDatabase**. Функция **CreateContainer** создаст контейнер с идентификатором ``FamilyContainer``, указанным в поле ``containerId``, если она не была создана ранее. 
 
@@ -325,7 +325,7 @@ Select **F5** to run your application.
 Congratulations! You have successfully created an Azure Cosmos DB container.  
 
 ## <a id="CreateDoc"></a>Step 6: Add items to the container
-An item can be created by using the [**CreateItemAsync**](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.cosmos.cosmositems) function of the **CosmosItems** class. When using the SQL API, items are projected as documents, which are user-defined (arbitrary) JSON content. You can now insert an item into your Azure Cosmos DB container.
+An item can be created by using the [**CreateItemAsync**](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.cosmositems) function of the **CosmosItems** class. When using the SQL API, items are projected as documents, which are user-defined (arbitrary) JSON content. You can now insert an item into your Azure Cosmos DB container.
 
 First, we need to create a **Family** class that will represent objects stored within Azure Cosmos DB in this sample. We will also create **Parent**, **Child**, **Pet**, **Address** subclasses that are used within **Family**. Note that documents must have an **Id** property serialized as **id** in JSON. 
 1. Select **Ctrl+Shift+A** to open the **Add New Item** dialog. Add a new class **Family.cs** to your project. 
@@ -507,7 +507,7 @@ First, we need to create a **Family** class that will represent objects stored w
 Поздравляем! Вы успешно создали два элемента Azure Cosmos DB.  
 
 
-## <a id="Query"></a>Шаг 7. Запрос ресурсов Azure Cosmos DB
+## <a id="Query"></a>Шаг 7. Запрос ресурсов Azure Cosmos DB
 Azure Cosmos DB поддерживает [полнофункциональные запросы](sql-api-sql-query.md) к документам JSON, хранящимся в каждой коллекции. В следующем примере кода показано, как выполнить запрос к элементам, вставленным на предыдущем шаге.
 
 1. Скопируйте и вставьте метод **RunQuery** ниже метода **AddItemsToContainer**.
@@ -731,7 +731,7 @@ End of demo, press any key to exit.
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Требуется более подробное руководство по ASP.NET MVC? См. [Руководство по ASP.NET MVC. Разработка веб-приложений в Azure Cosmos DB](sql-api-dotnet-application-preview.md).
+* Требуется более подробное руководство по ASP.NET MVC? См. [Руководство. Разработка веб-приложения ASP.NET MVC с использованием Azure Cosmos DB с помощью предварительной версии пакета SDK для .NET](sql-api-dotnet-application-preview.md).
 * Хотите выполнять проверку масштабирования и производительности с помощью Azure Cosmos DB? См. [Проверка производительности и масштабирования с помощью Azure Cosmos DB](performance-testing.md)
 * Узнайте, как организовать [мониторинг запросов, использования и хранилища Azure Cosmos DB](monitor-accounts.md).
 * Отправьте запросы образцу набора данных в [Площадке для запросов](https://www.documentdb.com/sql/demo).

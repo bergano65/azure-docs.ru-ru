@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: mtillman
 ms.reviewer: mal
-ms.openlocfilehash: 609f48d0c2ba41d658850ade367d9b225941b105
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: 992abf97751695c10f28f355e1086a12530b9456
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45982614"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53165237"
 ---
 # <a name="what-is-guest-user-access-in-azure-active-directory-b2b"></a>Что представляет собой гостевой доступ в службе совместной работы Azure Active Directory B2B?
 
@@ -73,7 +73,7 @@ ms.locfileid: "45982614"
 
 Вы можете регистрировать внешних партнеров так, как требуется вашей организации.
 - С помощью [API-интерфейсов приглашения службы совместной работы B2B](https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/invitation) вы можете настроить собственные процедуры регистрации, в том числе создать портал для самостоятельной регистрации. 
-- Используйте пример кода портала самообслуживания, предоставленный нами на сайте [GitHub](https://github.com/Azure/active-directory-dotnet-graphapi-b2bportal-web).
+- Используйте пример кода портала самообслуживания, предоставленный нами на веб-сайте [GitHub](https://github.com/Azure/active-directory-dotnet-graphapi-b2bportal-web).
 
 ![портал регистрации](media/what-is-b2b/sign-up-portal.png)
 

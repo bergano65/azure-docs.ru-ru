@@ -1,5 +1,5 @@
 ---
-title: API-интерфейсы RESTful с поддержкой CORS в службе приложений Azure | Документация Майкрософт
+title: Размещение REST API с использованием CORS в Службе приложений Azure | Документация Майкрософт
 description: Узнайте, как служба приложений Azure помогает размещать API-интерфейсы RESTful с поддержкой CORS.
 services: app-service\api
 documentationcenter: dotnet
@@ -14,15 +14,15 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 11/21/2018
 ms.author: cephalin
-ms.custom: mvc, devcenter
-ms.openlocfilehash: 4d8a95ee4afc844868cfda78087773a6a37c07c2
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18
+ms.openlocfilehash: b22ea49367009a4c76135d979d783c5b73449d9d
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52445436"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53261574"
 ---
-# <a name="tutorial-host-a-restful-api-with-cors-in-azure-app-service"></a>Руководство. Размещение REST API с поддержкой CORS в службе приложений Azure
+# <a name="tutorial-host-a-restful-api-with-cors-in-azure-app-service"></a>Руководство. Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure
 
 [Служба приложений Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Кроме того, служба приложений включает встроенную поддержку [общего доступа к ресурсам независимо от источника (CORS)](https://wikipedia.org/wiki/Cross-Origin_Resource_Sharing) для API-интерфейсов RESTful. В этом руководстве рассматривается развертывание приложения API ASP.NET Core в службу приложений с поддержкой CORS. Вы настроите приложение с помощью программ командной строки и развернете его с помощью Git. 
 
@@ -58,7 +58,7 @@ ms.locfileid: "52445436"
 git clone https://github.com/Azure-Samples/dotnet-core-api
 ```
 
-Этот репозиторий содержит приложение, созданное во время работы с предыдущим руководством: [Страницы справки по веб-API ASP.NET Core с использованием Swagger](/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio). В этом руководстве генератор Swagger используется для обслуживания [пользовательского интерфейса Swagger](https://swagger.io/swagger-ui/) и конечной точки JSON Swagger.
+Этот репозиторий содержит приложение, созданное во время работы с предыдущим руководством: [Использование страниц справки по веб-API ASP.NET Core со Swagger](/aspnet/core/tutorials/web-api-help-pages-using-swagger?tabs=visual-studio). В этом руководстве генератор Swagger используется для обслуживания [пользовательского интерфейса Swagger](https://swagger.io/swagger-ui/) и конечной точки JSON Swagger.
 
 ### <a name="run-the-application"></a>Выполнение приложения
 

@@ -1,24 +1,25 @@
 ---
-title: Создание учетной записи API Cassandra для Azure Cosmos DB, базы данных и таблицы с помощью приложения Java
-description: В этой статье показано, как создать учетную запись API Cassandra, добавить базу данных (также называемую пространством ключей) и таблицу в эту учетную запись с помощью приложения Java.
+title: Руководство. Создание учетной записи API Cassandra с помощью приложения Java — Azure Cosmos DB
+description: В этом руководстве показано, как создать учетную запись API Cassandra, добавить базу данных (также называемую пространством ключей) и таблицу в эту учетную запись с помощью приложения Java.
 author: kanshiG
 ms.author: govindk
 ms.reviewer: sngun
-services: cosmos-db
 ms.service: cosmos-db
 ms.component: cosmosdb-cassandra
 ms.topic: tutorial
-ms.date: 09/24/2018
-ms.openlocfilehash: 1220bcc8445f13a4573f1a6d3181c172799638fb
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.date: 12/06/2018
+ms.custom: seodec18
+Customer intent: As a developer, I want to build a Java application to access and manage Azure Cosmos DB resources so that customers can store key/value data and utilize the global distribution, elastic scaling, multi-master, and other capabilities offered by Azure Cosmos DB.
+ms.openlocfilehash: c3f193479a5446c0cd51c252a5079cbd65826928
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50741795"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53384977"
 ---
-# <a name="tutorial-create-an-azure-cosmos-db-cassandra-api-account-database-and-a-table-by-using-a-java-application"></a>Краткое руководство. Создание учетной записи API Cassandra для Azure Cosmos DB, базы данных и таблицы с помощью приложения Java
+# <a name="tutorial-create-a-cassandra-api-account-in-azure-cosmos-db-by-using-a-java-application-to-store-keyvalue-data"></a>Руководство. Создание учетной записи API Cassandra в Azure Cosmos DB с помощью приложения Java для хранения данных пар "ключ — значение"
 
-В этом руководстве описывается, как использовать приложение Java для создания учетной записи API Cassandra в Azure Cosmos DB, добавить базу данных (также называемую пространством ключей) и добавить таблицу. Приложение Java использует [драйвер Java](https://github.com/datastax/java-driver), чтобы создать базу данных пользователя, которая содержит такие сведения, как идентификатор пользователя, имя пользователя, город пользователя.  
+Как у разработчика у вас должно быть приложение, использующее пары "ключ-значение". Можно использовать учетную запись API Cassandra в Azure Cosmos DB для хранения данных пар "ключ — значение". В этом руководстве описывается, как использовать приложение Java для создания учетной записи API Cassandra в Azure Cosmos DB, добавить базу данных (также называемую пространством ключей) и добавить таблицу. Приложение Java использует [драйвер Java](https://github.com/datastax/java-driver), чтобы создать базу данных пользователя, которая содержит такие сведения, как идентификатор пользователя, имя пользователя и город пользователя.  
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -31,11 +32,11 @@ ms.locfileid: "50741795"
 
 ## <a name="prerequisites"></a>Предварительные требования 
 
-* Если у вас еще нет подписки Azure,  [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу. Кроме того, можно воспользоваться  [бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/)  без подписки Azure, оплаты и каких-либо обязательств. 
+* Если у вас еще нет подписки Azure,  [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу. 
 
-* Получите последнюю версию [пакета средств разработки Java (JDK)](https://aka.ms/azure-jdks) 
+* Получите последнюю версию [пакета средств разработки Java (JDK)](https://aka.ms/azure-jdks). 
 
-* [Скачайте](http://maven.apache.org/download.cgi) и [установите](http://maven.apache.org/install.html) двоичный архив [Maven](http://maven.apache.org/) 
+* [Скачайте](https://maven.apache.org/download.cgi) и [установите](https://maven.apache.org/install.html) двоичный архив [Maven](https://maven.apache.org/). 
   - В Ubuntu выполните команду  `apt-get install maven` , чтобы установить Maven. 
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных 
@@ -44,33 +45,33 @@ ms.locfileid: "50741795"
 
 2. Последовательно выберите  **Создать ресурс** > **Базы данных** > **Azure Cosmos DB**. 
 
-3. На панели  **Новая учетная запись**  введите параметры для новой учетной записи Azure Cosmos DB. 
+3. На панели  **Новая учетная запись** введите параметры для новой учетной записи Azure Cosmos. 
 
    |Параметр   |Рекомендуемое значение  |ОПИСАНИЕ  |
    |---------|---------|---------|
-   |ИД   |   Введите уникальное имя.    | Введите уникальное имя для идентификации этой учетной записи Azure Cosmos DB. <br/><br/>Так как элемент cassandra.cosmosdb.azure.com добавляется к указанному идентификатору для создания точки контакта, используйте уникальный, но узнаваемый идентификатор.         |
-   |API    |  Cassandra   |  API определяет тип учетной записи, которую нужно создать. <br/> Выберите **Cassandra**, так как в этой статье вы создадите базу данных с широкими столбцами, к которой можно отправлять запросы с помощью синтаксиса CQL.  |
-   |Подписка    |  Ваша подписка        |  Выберите подписку Azure, которую планируете использовать для этой учетной записи Azure Cosmos DB.        |
+   |ИД   |   Введите уникальное имя.    | Введите уникальное имя для идентификации этой учетной записи Azure Cosmos. <br/><br/>Так как элемент cassandra.cosmosdb.azure.com добавляется к указанному идентификатору для создания точки контакта, используйте уникальный, но узнаваемый идентификатор.         |
+   |API    |  Cassandra   |  API определяет тип учетной записи, которую нужно создать. <br/> Выберите **Cassandra**, так как в этой статье вы создадите базу данных с широкими столбцами, к которой можно отправлять запросы с помощью синтаксиса языка запросов Cassandra (CQL).  |
+   |Подписка    |  Ваша подписка        |  Выберите подписку Azure, которую планируете использовать для этой учетной записи Azure Cosmos.        |
    |Группа ресурсов   | Введите имя.    |  Выберите  **Создать** и введите новое имя группы ресурсов для учетной записи. Для удобства можно использовать то же имя, которое присвоено идентификатору.    |
-   |Расположение    |  Выберите ближайший к пользователям регион    |  Выберите географическое расположение, в котором будет размещена учетная запись Azure Cosmos DB. Используйте ближайшее к пользователям расположение, чтобы предоставить им максимально быстрый доступ к данным.    |
+   |Расположение    |  Выберите ближайший к пользователям регион    |  Выберите географическое расположение, в котором будет размещена учетная запись Azure Cosmos. Используйте ближайшее к пользователям расположение, чтобы предоставить им максимально быстрый доступ к данным.    |
 
    ![Создание учетной записи с помощью портала](./media/create-cassandra-api-account-java/create-account.png)
 
-4. Затем выберите  **Создать**. <br/>Создание учетной записи займет несколько минут. После создания ресурса вы увидите уведомление **об успешном развертывании** в правом углу портала.
+4. Выберите **Создать**. <br/>Создание учетной записи займет несколько минут. После создания ресурса вы увидите уведомление **об успешном развертывании** в правой части портала.
 
 ## <a name="get-the-connection-details-of-your-account"></a>Получение сведений о подключении учетной записи  
 
 Получите сведения о строке подключения с портала Azure и скопируйте их в файл конфигурации Java. Строка подключения обеспечивает обмен данными между вашим приложением и размещенной базой данных. 
 
-1. На  [портале Azure](http://portal.azure.com/) перейдите к учетной записи Cosmos DB. 
+1. С  [портала Azure](https://portal.azure.com/) перейдите в учетную запись Azure Cosmos. 
 
 2. Откройте панель  **Строка подключения**.  
 
 3. Скопируйте значения **CONTACT POINT**, **PORT**, **USERNAME** и **PRIMARY PASSWORD**, которые пригодятся вам на следующих этапах.
 
-## <a name="create-maven-project-dependencies-and-utility-classes"></a>Создайте проект Maven, зависимости и служебные классы 
+## <a name="create-the-project-and-the-dependencies"></a>Создание проекта и зависимостей 
 
-Пример проекта Java, используемый в этой статье, размещен в GitHub. Его можно загрузить из репозитория [azure-cosmos-db-cassandra-java-getting-started](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started). 
+Пример проекта Java, используемый в этой статье, размещен на GitHub. Можно выполнять действия, описанные в этом документе, или загрузить пример из репозитория [azure-cosmos-db-cassandra-java-getting-started](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started). 
 
 После загрузки файлов обновите строку подключения в файле `java-examples\src\main\resources\config.properties` и запустите его.  
 
@@ -81,7 +82,7 @@ cassandra_username=<FILLME_with_USERNAME>
 cassandra_password=<FILLME_with_PRIMARY PASSWORD> 
 ```
 
-Кроме того, можно создать пример с нуля.  
+Чтобы создать образец с нуля, сделайте следующее: 
 
 1. Из терминала или командной строки создайте новый проект Maven с именем Cassandra-demo. 
 
@@ -95,25 +96,25 @@ cassandra_password=<FILLME_with_PRIMARY PASSWORD>
 
 3. В папке `cassandra-demo\src\main` создайте папку с именем `resources`.  В папке ресурсов добавьте файлы config.properties и log4j.properties:
 
-   - Файл [config.properties](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/resources/config.properties) хранит значения конечной точки и ключа подключения API Cassandra Azure Cosmos DB. 
+   - Файл [config.properties](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/resources/config.properties) хранит значения конечной точки подключения и ключа учетной записи API Cassandra. 
    
-   - Файл [log4j.properties](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/resources/log4j.properties) определяет уровень ведения журнала, необходимый при взаимодействии с API Cassandra.  
+   - Файл [log4j.properties](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/resources/log4j.properties) определяет уровень ведения журнала, необходимый для взаимодействия с API Cassandra.  
 
-4. Затем перейдите в папку `src/main/java/com/azure/cosmosdb/cassandra/`. В папке cassandra создайте вторую папку с именем `utils`. Новая папка хранит служебные классы, необходимые для подключения к учетной записи API Cassandra. 
+4. Перейдите в папку `src/main/java/com/azure/cosmosdb/cassandra/`. В папке cassandra создайте вторую папку с именем `utils`. Новая папка хранит служебные классы, необходимые для подключения к учетной записи API Cassandra. 
 
-   Добавьте класс [CassandraUtils](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/java/com/azure/cosmosdb/cassandra/util/CassandraUtils.java) для создания кластера и открытия и закрытия сеансов Cassandra. Кластер подключается к API Cassandra для Azure Cosmos DB и возвращает сеанс для доступа. Используйте класс [Configurations](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/java/com/azure/cosmosdb/cassandra/util/Configurations.java) для чтения строки подключения из файла config.properties. 
+   Добавьте класс [CassandraUtils](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/java/com/azure/cosmosdb/cassandra/util/CassandraUtils.java) для создания кластера и открытия и закрытия сеансов Cassandra. Кластер подключается к учетной записи API Cassandra в Azure Cosmos DB и возвращает сеанс для доступа. Используйте класс [Configurations](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/java/com/azure/cosmosdb/cassandra/util/Configurations.java) для чтения строки подключения из файла config.properties. 
 
-5. Пример Java создает базу данных со сведениями о пользователе, такими как имя пользователя, идентификатор пользователя, город пользователя. Необходимо определить методы get и set для доступа к сведениям о пользователе в основной функции.
+5. Пример Java создает базу данных со сведениями о пользователе, такими как имя пользователя, идентификатор пользователя и город пользователя. Необходимо определить методы get и set для доступа к сведениям о пользователе в основной функции.
  
    Создайте класс [User.java](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-java-getting-started/blob/master/java-examples/src/main/java/com/azure/cosmosdb/cassandra/User.java) в папке `src/main/java/com/azure/cosmosdb/cassandra/` с методами get и set. 
 
 ## <a name="add-a-database-and-a-table"></a>Добавление базы данных и таблицы  
 
-В этом разделе описывается добавление базы данных (пространства ключей) и таблицы с помощью языка запросов Cassandra (CQL). Для получения дополнительных сведений о синтаксисе CQL для этих команд см. синтаксис запросов [создание пространства ключей](https://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlCreateKeyspace.html) и [создание таблицы](https://docs.datastax.com/en/cql/3.3/cql/cql_reference/cqlCreateTable.html#cqlCreateTable). 
+В этом разделе описывается добавление базы данных (пространства ключей) и таблицы с помощью CQL.
 
 1. В папке `src\main\java\com\azure\cosmosdb\cassandra` создайте папку с именем `repository`. 
 
-2. Затем создайте класс Java `UserRepository` и добавьте в него следующий код: 
+2. Создайте класс Java `UserRepository` и добавьте в него следующий код: 
 
    ```java
    package com.azure.cosmosdb.cassandra.repository; 
@@ -160,7 +161,7 @@ cassandra_password=<FILLME_with_PRIMARY PASSWORD>
 
 3. Найдите папку `src\main\java\com\azure\cosmosdb\cassandra` и создайте новую вложенную папку с именем `examples`.
 
-4. Затем создайте класс Java `UserProfile`. Этот класс содержит основной метод, который вызывает методы createKeyspace и createTable, определенные ранее: 
+4. Создайте класс Java `UserProfile`. Этот класс содержит основной метод, который вызывает методы createKeyspace и createTable, определенные ранее: 
 
    ```java
    package com.azure.cosmosdb.cassandra.examples; 
@@ -223,7 +224,7 @@ cassandra_password=<FILLME_with_PRIMARY PASSWORD>
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы узнали, как создать учетную запись API Cassandra для Azure Cosmos DB, базу данных и таблицу с помощью приложения Java. Теперь вы можете перейти к следующей статье:
+В этом руководстве вы узнали, как создать учетную запись API Cassandra в Azure Cosmos DB, базу данных и таблицу с помощью приложения Java. Теперь вы можете перейти к следующей статье:
 
 > [!div class="nextstepaction"]
 > [Загрузка образца данных в таблицу API Cassandra](cassandra-api-load-data.md).

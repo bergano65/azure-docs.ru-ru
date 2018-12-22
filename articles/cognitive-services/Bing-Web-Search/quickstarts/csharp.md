@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Поиск с помощью C# и API Bing для поиска в Интернете
+title: Краткое руководство. Поиск в Интернете с помощью C# — REST API Bing для поиска в Интернете
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON, используя C#.
+description: В этом кратком руководстве описано, как отправлять запросы в REST API Bing для поиска в Интернете с помощью C# и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: bing-web-search
 ms.topic: quickstart
 ms.date: 8/16/2018
 ms.author: aahi
-ms.openlocfilehash: d868bec1e19ddde556f3c387646c5d7aa898b7d9
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.custom: seodec2018
+ms.openlocfilehash: 844fe2f65b59caba41697db00e809e34e1fe1017
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52313492"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53258667"
 ---
-# <a name="quickstart-use-c-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием C#  
+# <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-c"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и C#
 
 Используйте это краткое руководство, чтобы вызвать API Bing для поиска в Интернете и получить ответ в формате JSON.  
 
@@ -28,8 +29,8 @@ ms.locfileid: "52313492"
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим кратким руководством вам потребуется следующее:
 
-* на платформе Windows: [Visual Studio 2017](https://www.visualstudio.com/downloads/);
-* на платформах Linux/MacOS: [Mono](http://www.mono-project.com/);  
+* Windows: [Visual Studio 2017](https://www.visualstudio.com/downloads/)
+* Linux или MacOS: [Mono](http://www.mono-project.com/).  
 * ключ подписки;
 
 В этом примере программы используются только классы .NET Core.

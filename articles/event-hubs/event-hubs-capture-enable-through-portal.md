@@ -1,6 +1,6 @@
 ---
-title: Включение функции "Сбор" в Центрах событий с помощью портала | Документация Microsoft
-description: Включите функцию "Сбор" в Центрах событий с помощью портала Azure.
+title: Сбор событий потоковой передачи с помощью портала Azure — Центры событий Azure | Документация Майкрософт
+description: В этой статье объясняется, как на портале Azure включить сбор событий потоковой передачи из Центров событий Azure.
 services: event-hubs
 documentationcenter: ''
 author: ShubhaVijayasarathy
@@ -10,18 +10,19 @@ ms.assetid: ''
 ms.service: event-hubs
 ms.workload: na
 ms.tgt_pltfrm: na
+ms.custom: seodec18
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 08/16/2018
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 5cb3fee975e99af3d86affcbc18d89277dde2dc1
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 7f57e75f90511ace45198d7516a5d2550123d9be
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49409124"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53075120"
 ---
-# <a name="enable-event-hubs-capture-using-the-azure-portal"></a>Включение функции "Сбор" в Центрах событий с помощью портала Azure
+# <a name="enable-capturing-of-events-streaming-through-azure-event-event-hubs"></a>Включение сбора событий потоковой передачи из Центров событий Azure
 
 [Функция "Сбор" в Центрах событий][capture-overview] Azure позволяет автоматически доставлять данные потоковой передачи из Центров событий в выбранную учетную запись [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/) или [Azure Data Lake Store](https://azure.microsoft.com/services/data-lake-store/).
 
@@ -35,7 +36,7 @@ ms.locfileid: "49409124"
 
 Продолжительность времени окна по умолчанию составляет 5 минут. Минимальное значение равно 1, а максимальное — 15. Диапазон **окна размера** составляет 10–500 МБ.
 
-![][1]
+![Временное окно для сбора][1]
 
 ## <a name="capture-data-to-an-azure-data-lake-store-account"></a>Запись данных в учетную запись Azure Data Lake Store
 
@@ -52,7 +53,7 @@ ms.locfileid: "49409124"
 2. На странице портала **Создание концентратора событий** в поле **поставщика записи** выберите **Azure Data Lake Store**.
 3. В поле **Выберите Data Lake Store** укажите учетную запись Data Lake Store, созданную ранее, а в поле **Data Lake Path** (Путь к Data Lake) введите путь к созданной папке данных.
 
-    ![][3]
+    ![Выбор учетной записи Data Lake Storage][3]
 
 ## <a name="add-or-configure-capture-on-an-existing-event-hub"></a>Добавление или настройка функции записи для существующего концентратора событий
 
@@ -60,11 +61,11 @@ ms.locfileid: "49409124"
 
 ### <a name="azure-blob-storage"></a>Хранилище больших двоичных объектов Azure
 
-![][2]
+![Настройка хранилища BLOB-объектов Azure][2]
 
 ### <a name="azure-data-lake-store"></a>Хранилище озера данных Azure
 
-![][4]
+![Настройка Azure Data Lake Storage][4]
 
 [1]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture1.png
 [2]: ./media/event-hubs-capture-enable-through-portal/event-hubs-capture2.png

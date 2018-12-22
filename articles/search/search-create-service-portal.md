@@ -1,6 +1,6 @@
 ---
-title: Создание службы Поиска Azure на портале Azure | Документация Майкрософт
-description: Подготовка службы Поиска Azure на портале.
+title: Создание службы "Поиск Azure" на портале — Поиск Azure
+description: Подготовьте службу "Поиск Azure" на портале Azure. Выберите группы ресурсов, регионы, а также номер SKU или ценовую категорию.
 manager: cgronlun
 author: HeidiSteen
 services: search
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: quickstart
 ms.date: 07/09/2018
 ms.author: heidist
-ms.openlocfilehash: 83e34f926ec3133f89ccb90979fc3e6708613a80
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.custom: seodec2018
+ms.openlocfilehash: 2055ad9baff0c6acc05c9287ca1b8fb08731f8bc
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39713933"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53315991"
 ---
 # <a name="create-an-azure-search-service-in-the-portal"></a>Создание службы "Поиск Azure" на портале
 
@@ -58,7 +59,7 @@ ms.locfileid: "39713933"
 Являясь службой Azure, Поиск Azure может размещаться в центрах обработки данных по всему миру. Обратите внимание, что [цены могут отличаться](https://azure.microsoft.com/pricing/details/search/) в зависимости от географического региона.
 
 ## <a name="select-a-pricing-tier-sku"></a>Выбор ценовой категории (номера SKU)
-[Служба поиска Azure сейчас предлагается в нескольких ценовых категориях](https://azure.microsoft.com/pricing/details/search/): "Бесплатный", "Базовый" и "Стандартный". Каждая категория отличается собственным [объемом и ограничениями](search-limits-quotas-capacity.md). Подробные сведения см. в статье [Выбор SKU или ценовой категории для службы поиска Azure](search-sku-tier.md).
+[Служба "Поиск Azure" сейчас предлагается в нескольких ценовых категориях](https://azure.microsoft.com/pricing/details/search/): "Бесплатный", "Базовый" и "Стандартный". Каждая категория отличается собственным [объемом и ограничениями](search-limits-quotas-capacity.md). Подробные сведения см. в статье [Выбор SKU или ценовой категории для службы поиска Azure](search-sku-tier.md).
 
 Цен. категория "Стандартный" обычно используется для рабочих нагрузок, но большинство клиентов начинает работу с бесплатной службой.
 

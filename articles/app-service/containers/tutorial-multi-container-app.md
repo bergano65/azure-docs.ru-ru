@@ -1,5 +1,5 @@
 ---
-title: Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
+title: Создание многоконтейнерного приложения с помощью функции "Веб-приложение для контейнеров" в Службе приложений Azure
 description: Узнайте, как с помощью файлов конфигурации Docker Compose и Kubernetes использовать несколько контейнеров в Azure с приложением WordPress и MySQL.
 keywords: служба приложений azure, веб-приложение, linux, docker, compose, многоконтейнерное, несколько контейнеров, веб-приложение для контейнеров, много контейнеров, контейнер, kubernetes, wordpress, azure db для mysql, рабочая база данных с контейнерами
 services: app-service
@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 06/25/2018
 ms.author: msangapu
-ms.custom: mvc
-ms.openlocfilehash: c8002b10e2c7c0823cd59bf300283d04fca5ce2e
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.custom: seodec18
+ms.openlocfilehash: 7feb168d9cbcb9fc19e6fcd320bbf87c15077a50
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49390216"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53251646"
 ---
-# <a name="tutorial-create-a-multi-container-preview-app-in-web-app-for-containers"></a>Руководство по созданию многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
+# <a name="tutorial-create-a-multi-container-preview-app-in-web-app-for-containers"></a>Руководство. Создание многоконтейнерного приложения (предварительная версия) на платформе Azure "Веб-приложение для контейнеров"
 
 Платформа [Веб-приложение для контейнеров](app-service-linux-intro.md) предоставляет гибкие возможности для использования образов Docker. В этом руководстве объясняется, как создать многоконтейнерное приложение с помощью WordPress и MySQL. Примеры из этого руководства вы будете выполнять в Cloud Shell, но эти команды также можно выполнить на локальном компьютере с помощью программы командной строки [Azure CLI](/cli/azure/install-azure-cli) (версии 2.0.32 или более поздней).
 
@@ -235,7 +235,7 @@ az mysql db create --resource-group myResourceGroup --server-name <mysql_server_
 
 ### <a name="configure-database-variables-in-wordpress"></a>Настройка переменных базы данных в WordPress
 
-Чтобы подключить приложение WordPress к новому серверу MySQL, задайте несколько переменных среды для WordPress, включая путь к выданному центром сертификации SSL-сертификату, который определяется с помощью `MYSQL_SSL_CA`. Сведения о сертификате [Baltimore CyberTrust Root](https://www.digicert.com/digicert-root-certificates.htm) от [DigiCert](http://www.digicert.com/) см. в разделе о [пользовательском образе](https://docs.microsoft.com/azure/app-service/containers/tutorial-multi-container-app#use-a-custom-image-for-mysql-ssl-and-other-configurations) ниже.
+Чтобы подключить приложение WordPress к новому серверу MySQL, задайте несколько переменных среды для WordPress, включая путь к выданному центром сертификации SSL-сертификату, который определяется с помощью `MYSQL_SSL_CA`. Сведения о сертификате [Baltimore CyberTrust Root](https://www.digicert.com/digicert-root-certificates.htm) от [DigiCert](https://www.digicert.com/) см. в разделе о [пользовательском образе](https://docs.microsoft.com/azure/app-service/containers/tutorial-multi-container-app#use-a-custom-image-for-mysql-ssl-and-other-configurations) ниже.
 
 Чтобы внести эти изменения, выполните команду [az webapp config appsettings set](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. Параметры приложения чувствительны к регистру и используются с разделителями-пробелами.
 

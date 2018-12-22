@@ -1,20 +1,20 @@
 ---
-title: Создание учетной записи, базы данных и таблицы API Cassandra для Azure Cosmos DB с помощью скрипта Azure CLI | Документация Майкрософт
+title: Скрипт Azure CLI для создания учетной записи, базы данных и таблицы API Cassandra в Azure Cosmos DB
 description: Пример скрипта Azure CLI для создания учетной записи, базы данных и таблицы API Cassandra в Azure Cosmos DB
 author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.component: cosmosdb-cassandra
 ms.topic: sample
 ms.date: 10/26/2018
-ms.author: mjbrown
-ms.openlocfilehash: 72eb26599ce2f57e7178d5741851b6e442a62e23
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 381dc16366b4772f828ed474637d029324703c9e
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51019601"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52961560"
 ---
-# <a name="azure-cosmos-db-create-a-cassandra-api-account-using-azure-cli"></a>Azure Cosmos DB: создание учетной записи API Cassandra с помощью Azure CLI
+# <a name="azure-cosmos-db-create-a-cassandra-api-account-using-azure-cli"></a>Azure Cosmos DB — создание учетной записи API Cassandra с помощью Azure CLI
 
 При помощи этого примера скрипта CLI создается учетная запись, база данных и таблица API Cassandra в Azure Cosmos DB.
 

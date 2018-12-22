@@ -1,25 +1,18 @@
 ---
-title: Руководство по аутентификации в службе Azure SignalR с помощью Функций Azure | Документация Майкрософт
+title: Руководство по аутентификации в службе Azure SignalR с помощью Функций Azure
 description: Изучив это руководство, вы узнаете, как аутентифицировать клиенты службы Azure SignalR
-services: signalr
-documentationcenter: ''
 author: sffamily
-manager: cfowler
-editor: ''
-ms.assetid: ''
 ms.service: signalr
-ms.workload: tbd
-ms.devlang: na
 ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/18/2018
 ms.author: zhshang
-ms.openlocfilehash: 8af657c39217f3edcadef6ec0981a31ec7e89aa6
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 34cbb4d2c8a1e84499961802ca7bd07408375345
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46978433"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53409399"
 ---
 # <a name="tutorial-azure-signalr-service-authentication-with-azure-functions"></a>Руководство по аутентификации в службе Azure SignalR с помощью Функций Azure
 
@@ -42,14 +35,12 @@ ms.locfileid: "46978433"
 * [Пакет SDK для .NET](https://www.microsoft.com/net/download) (версия 2.x, которая требуется для расширений Функций).
 * [Основные инструменты службы "Функции Azure"](https://github.com/Azure/azure-functions-core-tools) (версия 2).
 * [Visual Studio Code](https://code.visualstudio.com/) (VS Code) со следующими расширениями:
-    * [Функции Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) — работа с Функциями Azure в VS Code;
-    * [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) — локальное отображение веб-страниц для тестирования.
-
+  * [Функции Azure](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) — работа с Функциями Azure в VS Code;
+  * [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) — локальное отображение веб-страниц для тестирования.
 
 ## <a name="sign-into-the-azure-portal"></a>Войдите на портал Azure.
 
 Войдите на [портал Azure](https://portal.azure.com/) со своими учетными данными.
-
 
 ## <a name="create-an-azure-signalr-service-instance"></a>Создание экземпляра службы Azure SignalR
 
@@ -67,11 +58,10 @@ ms.locfileid: "46978433"
     |---|---|
     | Имя ресурса | Уникальное имя для экземпляра службы SignalR |
     | Группа ресурсов | Создание новой группы ресурсов |
-    | Расположение | Выберите близкое к вам расположение |
+    | Расположение | Выберите близкое к вам расположение. |
     | Ценовая категория | Free |
-    
-1. Нажмите кнопку **Создать**.
 
+1. Нажмите кнопку **Создать**.
 
 ## <a name="initialize-the-function-app"></a>Инициализация приложения-функции
 
@@ -81,23 +71,23 @@ ms.locfileid: "46978433"
 
 1. С помощью расширения "Функции Azure" в VS Code инициализируйте приложение-функцию в главной папке проекта.
     1. Откройте палитру команд в VS Code, последовательно выбрав **Представление > Палитра команд** (или с помощью клавиш `Ctrl-Shift-P`, в macOS — `Cmd-Shift-P`).
-    1. Найдите команду **Azure Functions: Create New Project** (Функции Azure: создание нового проекта) и выберите ее.
+    1. Найдите и выберите команду **Azure Functions: Create New Project** (Функции Azure: создать проект).
     1. Должна отобразиться главная папка проекта. Выберите ее (или найдите с помощью кнопки "Обзор").
     1. При появлении запроса на выбор языка выберите **JavaScript**.
 
     ![Создание приложения-функции](media/signalr-authenticate-azure-functions/signalr-create-vscode-app.png)
 
-
 ### <a name="install-function-app-extensions"></a>Установка расширений приложения-функции
 
 В этом руководстве для взаимодействия со службой Azure SignalR используются привязки Функций Azure. Как и большинство других привязок, привязки службы SignalR доступны в виде расширения. Его следует установить с помощью интерфейса командной строки основных инструментов службы "Функции Azure", чтобы использовать эти привязки.
 
-1. Откройте окно терминала в VS Code, последовательно выбрав **Вид > Интегрированный терминал** из меню, вызываемого сочетанием клавиш (Ctrl-`).
+1. Откройте окно терминала в VS Code, последовательно выбрав **Вид > Интегрированный терминал** из меню, вызываемого клавишами CTRL+\`.
 
 1. Убедитесь, что текущим каталогом является главная папка проекта.
 
 1. Установите расширение приложения-функции службы SignalR.
-    ```
+
+    ```bash
     func extensions install -p Microsoft.Azure.WebJobs.Extensions.SignalRService -v 1.0.0-preview1-10002
     ```
 
@@ -108,6 +98,7 @@ ms.locfileid: "46978433"
 1. В VS Code найдите файл **local.settings.json** на панели обозревателя и откройте его.
 
 1. Замените содержимое этого файла приведенным ниже кодом.
+
     ```json
     {
         "IsEncrypted": false,
@@ -133,14 +124,13 @@ ms.locfileid: "46978433"
 
     ![Обновление локальных параметров](media/signalr-authenticate-azure-functions/signalr-update-local-settings.png)
 
-
 ## <a name="create-a-function-to-authenticate-users-to-signalr-service"></a>Создание функции для аутентификации пользователей в службе SignalR
 
 При первом открытии приложения чата в браузере оно запросит допустимые учетные данные для подключения к службе Azure SignalR. Чтобы получить эти сведения о подключении, вы создадите в приложении-функции новую функцию *SignalRInfo*, активируемую HTTP-запросом.
 
 1. Откройте палитру команд VS Code (`Ctrl-Shift-P`, macOS — `Cmd-Shift-P`).
 
-1. Найдите и выберите команду **Azure Functions: Create Function** (Функции Azure: создание функции).
+1. Найдите и выберите команду **Azure Functions: Create Function** (Функции Azure: создать функцию).
 
 1. При появлении запроса введите следующие сведения.
 
@@ -150,7 +140,7 @@ ms.locfileid: "46978433"
     | Шаблон | Триггер HTTP |
     | ИМЯ | SignalRInfo |
     | Уровень авторизации | Анонимные |
-    
+
     Создается папка с именем **SignalRInfo**, которая содержит новую функцию.
 
 1. Откройте файл **SignalRInfo/function.json**, чтобы настроить привязки для функции. Замените содержимое файла указанным ниже кодом. Этот код добавляет входную привязку, которая создает действительные учетные данные для подключения клиента к центру службы Azure SignalR с именем `chat`.
@@ -194,14 +184,13 @@ ms.locfileid: "46978433"
 
     Эта функция принимает сведения о подключении SignalR из входной привязки и возвращает их клиенту в тексте ответа HTTP.
 
-
 ## <a name="create-a-function-to-send-chat-messages"></a>Создание функции для отправки сообщений чата
 
 Также этому веб-приложению нужен API-интерфейс HTTP для отправки сообщений чата. Вы создадите активируемую по запросу HTTP функцию с именем *SendMessage*, которая отправляет сообщения всем подключенным клиентам через службу SignalR.
 
 1. Откройте палитру команд VS Code (`Ctrl-Shift-P`, macOS — `Cmd-Shift-P`).
 
-1. Найдите и выберите команду **Azure Functions: Create Function** (Функции Azure: создание функции).
+1. Найдите и выберите команду **Azure Functions: Create Function** (Функции Azure: создать функцию).
 
 1. При появлении запроса введите следующие сведения.
 
@@ -211,7 +200,7 @@ ms.locfileid: "46978433"
     | Шаблон | Триггер HTTP |
     | ИМЯ | SendMessage |
     | Уровень авторизации | Анонимные |
-    
+
     Будет создана папка с именем **SendMessage**, которая содержит новую функцию.
 
 1. Откройте **SendMessage/function.json**, чтобы настроить привязки для функции. Замените содержимое файла указанным ниже кодом.
@@ -250,17 +239,18 @@ ms.locfileid: "46978433"
 1. Сохраните файл.
 
 1. Откройте файл **SendMessage/index.js**, чтобы просмотреть текст этой функции. Замените содержимое файла указанным ниже кодом.
+
     ```javascript
     module.exports = function (context, req) {
         const message = req.body;
         message.sender = req.headers && req.headers['x-ms-client-principal-name'] || '';
-            
+
         let recipientUserId = '';
         if (message.recipient) {
             recipientUserId = message.recipient;
             message.isPrivate = true;
         }
-    
+
         context.bindings.signalRMessages = [{
             'userId': recipientUserId,
             'target': 'newMessage',
@@ -269,12 +259,12 @@ ms.locfileid: "46978433"
         context.done();
     };
     ```
+
     Эта функция принимает текст из HTTP-запроса и отправляет его всем клиентам, подключенным к службе SignalR, посредством вызова функции с именем `newMessage` на каждом клиенте.
 
     Эта функция может считывать идентификатор отправителя и принимать значение *recipient* (получатель) в тексте сообщения, что позволяет реализовать отправку частных сообщений одному пользователю. Эти функциональные возможности мы применим далее в этом руководстве.
 
 1. Сохраните файл.
-
 
 ## <a name="create-and-run-the-chat-client-web-user-interface"></a>Создание и запуск пользовательского веб-интерфейса для клиентов чата
 
@@ -294,11 +284,9 @@ ms.locfileid: "46978433"
 
 1. Приложение открылось. Введите сообщение в окне чата и нажмите клавишу ВВОД. Обновите приложение, чтобы увидеть новые сообщения. Так как аутентификация пока не настроена, все сообщения отправляются от имени пользователя anonymous (аноним).
 
-
 ## <a name="deploy-to-azure-and-enable-authentication"></a>Развертывание в Azure и включение аутентификации
 
 До этого момента вы запускали приложение-функцию и приложение чата локально. Теперь вы развернете их в Azure и включите в приложении аутентификацию и обмен частными сообщениями.
-
 
 ### <a name="log-into-azure-with-vs-code"></a>Вход на портал Azure с помощью VS Code
 
@@ -307,7 +295,6 @@ ms.locfileid: "46978433"
 1. Найдите и выберите команду **Azure: Sign in** (Azure: вход).
 
 1. Выполните предложенные инструкции по процессу входа в браузере.
-
 
 ### <a name="configure-function-app-for-authentication"></a>Настройка аутентификации для приложения-функции
 
@@ -331,10 +318,9 @@ ms.locfileid: "46978433"
 
 1. Сохраните файл.
 
-
 ### <a name="deploy-function-app"></a>Развертывание приложения-функции
 
-1. Откройте палитру команд VS Code (`Ctrl-Shift-P`, macOS — `Cmd-Shift-P`) и выберите **Azure Functions: Deploy to Function App** (Функции Azure: развертывание приложения-функции). 
+1. Откройте палитру команд VS Code (`Ctrl-Shift-P`, macOS — `Cmd-Shift-P`) и выберите **Azure Functions: Deploy to Function App** (Функции Azure: развертывание приложения-функции).
 
 1. При появлении запроса введите следующие сведения.
 
@@ -348,9 +334,8 @@ ms.locfileid: "46978433"
     | Учетная запись хранения | Выберите **Создать новую учетную запись хранения**. |
     | Имя учетной записи хранения | Введите уникальное имя (от 3 до 24 буквенно-цифровых символов). |
     | Расположение | Выберите близкое к вам расположение. |
-    
-    В Azure будет создано приложение-функция и начнется развертывание. Дождитесь завершения развертывания.
 
+    В Azure будет создано приложение-функция и начнется развертывание. Дождитесь завершения развертывания.
 
 ### <a name="upload-function-app-local-settings"></a>Отправка локальных параметров приложения-функции
 
@@ -368,7 +353,6 @@ ms.locfileid: "46978433"
     | Имя приложения-функции | Введите уникальное имя. |
 
 Локальные параметры передаются в приложение-функцию в Azure. Если будет предложено перезаписать существующие параметры, выберите **Да для всех**.
-
 
 ### <a name="enable-function-app-cross-origin-resource-sharing-cors"></a>Предоставление общего доступа к ресурсам независимо от источника (CORS) для приложения-функции
 
@@ -395,7 +379,6 @@ ms.locfileid: "46978433"
 > [!NOTE]
 > В реальном приложении не стоит разрешать CORS для всех источников (`*`). Лучше выбрать более безопасный подход, то есть вводить отдельные записи CORS для каждого домена, которому они требуются.
 
-
 ### <a name="update-the-web-app"></a>Обновление веб-приложения
 
 1. На портале Azure перейдите к странице обзорной информации о приложении-функции.
@@ -404,13 +387,11 @@ ms.locfileid: "46978433"
 
     ![Получение URL-адреса](media/signalr-authenticate-azure-functions/signalr-get-url.png)
 
-
 1. Откройте в VS Code файл **index.html** и замените значение `apiBaseUrl` URL-адресом приложения-функции.
 
 1. Можно настроить для приложения аутентификацию с помощью Azure Active Directory, Facebook, Twitter, Google или учетной записи Майкрософт. Выберите поставщик проверки подлинности, который вы хотите использовать, задав значение `authProvider`.
 
 1. Сохраните файл.
-
 
 ### <a name="deploy-the-web-application-to-blob-storage"></a>Развертывание веб-приложения в хранилище BLOB-объектов
 
@@ -454,7 +435,6 @@ ms.locfileid: "46978433"
 
 1. Вернитесь к странице **Статический веб-сайт**. Запишите значение **основной конечной точки**. Это URL-адрес веб-приложения.
 
-
 ### <a name="enable-app-service-authentication"></a>Включение функции проверки подлинности службы приложений
 
 Проверка подлинности службы приложений поддерживает аутентификацию с помощью Azure Active Directory, Facebook, Twitter, Google и учетной записи Майкрософт.
@@ -469,12 +449,11 @@ ms.locfileid: "46978433"
 
 1. Выполните инструкции из документации выбранного поставщика входа, чтобы завершить настройку.
 
-    - [Azure Active Directory](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-active-directory-authentication)
-    - [Facebook](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-facebook-authentication)
-    - [Twitter](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-twitter-authentication)
-    - [Учетная запись Майкрософт](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-microsoft-authentication)
-    - [Google](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-google-authentication)
-
+    - [Azure Active Directory](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-aad)
+    - [Facebook](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-facebook)
+    - [Twitter](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-twitter)
+    - [Учетная запись Майкрософт](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-microsoft)
+    - [Google](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-google)
 
 ### <a name="try-the-application"></a>Проверка работы приложения
 
@@ -490,13 +469,11 @@ ms.locfileid: "46978433"
 
 ![Демонстрация](media/signalr-authenticate-azure-functions/signalr-serverless-chat.gif)
 
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Чтобы очистить ресурсы, созданные при работе с этим руководством, удалите группу ресурсов через портал Azure.
 
-
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Из этого руководства вы узнали, как использовать Функции Azure со службой Azure SignalR. Изучите дополнительные сведения о создании бессерверных приложений в реальном времени с привязками службы SignalR для Функций Azure.
 

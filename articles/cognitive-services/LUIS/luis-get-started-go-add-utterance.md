@@ -1,22 +1,25 @@
 ---
-title: Краткое руководство для языка Go — изменение модели и обучение приложения LUIS
-description: Из этого краткого руководства для языка Go вы узнаете, как добавить примеры высказываний в приложение домашней автоматизации и обучить это приложение. Примерами высказываний называют фразы пользователя на обычном языке, сопоставленные с тем или иным намерением. Предоставляя фразы для настроенных намерений, вы сообщаете LUIS ожидаемые варианты сообщений пользователя для каждого намерения.
-titleSuffix: Microsoft Cognitive Services
+title: Изменение и обучение приложения с помощью Go
+description: Из этого краткого руководства для языка Go вы узнаете, как добавить примеры высказываний в приложение домашней автоматизации и обучить это приложение.
+titleSuffix: Language Understanding - Microsoft Cognitive Services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 2cd8c1aa2deb2af97d4f720efa0e40146b15b888
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: e3fb6b2532f2dc99a48cc3c2eac9029367c52185
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47031872"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100299"
 ---
 # <a name="quickstart-change-model-using-go"></a>Краткое руководство. Изменение модели с помощью Go
+
+Из этой статьи вы узнаете, как передать фразы в конечную точку LUIS и получить намерение и сущности.
 
 [!INCLUDE [Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 
@@ -66,7 +69,7 @@ ms.locfileid: "47031872"
 
 2. Запустите приложение Go из командной строки, введя следующий текст: 
 
-    ```CMD
+    ```console
     add-utterances -appID <your-app-id> -authoringKey <add-your-authoring-key> -version <your-version-id> -region westus -utteranceFile utterances.json
 
     ```
@@ -75,7 +78,7 @@ ms.locfileid: "47031872"
 
     В командной строке отобразятся результаты:
 
-    ```CMD
+    ```console
     add example utterances requested
     [
         {

@@ -1,5 +1,5 @@
 ---
-title: Руководство по индексированию баз данных Azure SQL в службе "Поиск Azure" | Документация Майкрософт
+title: Руководство по индексированию баз данных Azure SQL в службе "Поиск Azure" на портал Azure | Документация Майкрософт
 description: В этом руководстве описано, как выполнить сканирование базы данных Azure SQL для извлечения доступных для поиска данных и заполнения индекса в службе "Поиск Azure".
 author: HeidiSteen
 manager: cgronlun
@@ -9,12 +9,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 07/10/2018
 ms.author: heidist
-ms.openlocfilehash: b40d3a74904d6814eb01b5d41d10632e8c9af5be
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.custom: seodec2018
+ms.openlocfilehash: 872871d2ab9a9c693ad81081f24c8de68457982d
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38988801"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53312057"
 ---
 # <a name="tutorial-crawl-an-azure-sql-database-using-azure-search-indexers"></a>Руководство. Сканирование базы данных Azure SQL с помощью индексаторов в службе "Поиск Azure"
 
@@ -272,7 +273,7 @@ public string HotelName { get; set; }
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Самый быстрый способ очистки после завершения работы с руководством — удалить группу ресурсов, содержащую Поиск Azure. Теперь можно удалить группу ресурсов, чтобы окончательно удалить все ее содержимое. На портале имя группы ресурсов находится на странице "Обзор" службы "Поиск Azure".
+Самый быстрый способ очистки по завершении работы с руководством — удалить группу ресурсов, содержащую службу "Поиск Azure". Теперь можно удалить группу ресурсов вместе со всем ее содержимым без возможности восстановления. На портале имя группы ресурсов находится на странице "Обзор" службы "Поиск Azure".
 
 ## <a name="next-steps"></a>Дополнительная информация
 

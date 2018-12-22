@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Поиск с помощью Go и API Bing для поиска в Интернете
+title: Краткое руководство. Поиск в Интернете с помощью Go — REST API Bing для поиска в Интернете
 titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства вы узнаете, как вызвать API Bing для поиска в Интернете и получить ответ в формате JSON, используя Go.
+description: В этом кратком руководстве описано, как отправлять запросы в REST API Bing для поиска в Интернете с помощью Go и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
 manager: cgronlun
@@ -11,14 +11,15 @@ ms.topic: quickstart
 ms.date: 8/16/2018
 ms.author: aahi
 ms.reviewer: nhoyadx@gmail.com, v-gedod, erhopf
-ms.openlocfilehash: 4191232e45d012d3aec5d056c28e765332073ede
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.custom: seodec2018
+ms.openlocfilehash: 97b9a75802441a9360291d334b9920366a1c9450
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52310435"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53255641"
 ---
-# <a name="quickstart-use-go-to-call-the-bing-web-search-api"></a>Краткое руководство. Вызов API Bing для поиска в Интернете с использованием Go  
+# <a name="quickstart-search-the-web-using-the-bing-web-search-rest-api-and-go"></a>Краткое руководство. Поиск в Интернете с помощью REST API Bing для поиска в Интернете и Go
 
 Используйте это краткое руководство, чтобы за 10 минут вызвать API Bing для поиска в Интернете и получить ответ в формате JSON.  
 

@@ -15,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 09/24/2018
 ms.author: andret
-ms.openlocfilehash: a421527de275d38650c314d3722a7d2f93e8331d
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: 10de179c6055feb46439792ea74a0a3131f39646
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52285022"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52970664"
 ---
-# <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Краткое руководство: добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт
+# <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт
 
 [!INCLUDE [active-directory-develop-applies-v1](../../../includes/active-directory-develop-applies-v1.md)]
 
@@ -56,7 +56,7 @@ ms.locfileid: "52285022"
 | [Microsoft.Owin.Security.OpenIdConnect](https://www.nuget.org/packages/Microsoft.Owin.Security.OpenIdConnect/) | Промежуточный слой, который позволяет приложению использовать OpenIDConnect для проверки подлинности. |
 | [Microsoft.Owin.Security.Cookies](https://www.nuget.org/packages/Microsoft.Owin.Security.Cookies) |Промежуточный слой, который позволяет приложению поддерживать пользовательский сеанс с помощью файлов cookie. |
 | [Microsoft.Owin.Host.SystemWeb](https://www.nuget.org/packages/Microsoft.Owin.Host.SystemWeb) | Позволяет приложениям на основе OWIN работать на платформе IIS с помощью конвейера запросов ASP.NET. |
-|  |  | 
+|  |  |
 
 ## <a name="step-1-set-up-your-project"></a>Шаг 1. Настройка проекта
 
@@ -104,11 +104,11 @@ ms.locfileid: "52285022"
 
 1. Добавьте в `Startup.cs` пространства имен *OWIN* и *Microsoft.IdentityModel*.
 
-    [!code-csharp[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet\Startup.cs?name=AddedNameSpaces "Startup.cs")]
+    [!code-csharp[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet/Startup.cs?name=AddedNameSpaces "Startup.cs")]
 
 2. Замените класс Startup следующим кодом.
 
-    [!code-csharp[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet\Startup.cs?name=Startup "Startup.cs")]
+    [!code-csharp[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet/Startup.cs?name=Startup "Startup.cs")]
 
 <!--start-collapse-->
 > [!NOTE]
@@ -129,11 +129,11 @@ ms.locfileid: "52285022"
 4.  Назовите его `HomeController` и выберите **Добавить**.
 5.  Добавьте в класс следующие пространства имен **OWIN**.
 
-    [!code-csharp[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet\Controllers\HomeController.cs?name=AddedNameSpaces "HomeController.cs")]
+    [!code-csharp[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet/Controllers/HomeController.cs?name=AddedNameSpaces "HomeController.cs")]
 
 6. Добавьте методы, которые приведены ниже, чтобы обрабатывать операции входа и выхода для контроллера, запуская запросы защиты для аутентификации с помощью кода.
 
-    [!code-csharp[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet\Controllers\HomeController.cs?name=SigInAndSignOut "HomeController.cs")]
+    [!code-csharp[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet/Controllers/HomeController.cs?name=SigInAndSignOut "HomeController.cs")]
 
 ## <a name="step-6-create-the-apps-home-page-to-sign-in-users-via-a-sign-in-button"></a>Шаг 6. Создание домашней страницы приложения для выполнения входа пользователями с помощью кнопки "Вход"
 
@@ -158,11 +158,11 @@ ms.locfileid: "52285022"
 1. Назовите его **ClaimsController**.
 1. Замените код класса контроллера кодом, приведенным ниже. Таким образом вы добавите в класс атрибут `[Authorize]`.
 
-    [!code-csharp[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet\Controllers\ClaimsController.cs?name=ClaimsController "ClaimsController.cs")]
+    [!code-csharp[main](../../../WebApp-OpenIDConnect-DotNet/WebApp-OpenIDConnect-DotNet/Controllers/ClaimsController.cs?name=ClaimsController "ClaimsController.cs")]
 
 <!--start-collapse-->
 > [!NOTE]
-> Из-за использования атрибута `[Authorize]` все методы контроллера выполняются, только если пользователь прошел проверку подлинности. Если пользователь не прошел аутентификацию и пытается получить доступ к контроллеру, OWIN инициирует запрос на аутентификацию, что заставит пользователя ее пройти. Приведенный выше код просматривает коллекцию утверждений пользователя для обнаружения определенных атрибутов, включенных в маркер пользователя. Эти атрибуты включают имя и фамилию пользователя, а также субъект глобального идентификатора пользователя. Этот субъект содержит *идентификатор клиента*, который представляет идентификатор организации пользователя. 
+> Из-за использования атрибута `[Authorize]` все методы контроллера выполняются, только если пользователь прошел проверку подлинности. Если пользователь не прошел аутентификацию и пытается получить доступ к контроллеру, OWIN инициирует запрос на аутентификацию, что заставит пользователя ее пройти. Приведенный выше код просматривает коллекцию утверждений пользователя для обнаружения определенных атрибутов, включенных в маркер пользователя. Эти атрибуты включают имя и фамилию пользователя, а также субъект глобального идентификатора пользователя. Этот субъект содержит *идентификатор клиента*, который представляет идентификатор организации пользователя.
 <!--end-collapse-->
 
 ## <a name="step-8-create-a-view-to-display-the-users-claims"></a>Шаг 8. Создание представления для отображения утверждений пользователя
@@ -187,7 +187,7 @@ ms.locfileid: "52285022"
     <add key="ClientId" value="Enter_the_Application_Id_here" />
     <add key="RedirectUrl" value="Enter_the_Redirect_Url_here" />
     <add key="Tenant" value="common" />
-    <add key="Authority" value="https://login.microsoftonline.com/{0}" /> 
+    <add key="Authority" value="https://login.microsoftonline.com/{0}" />
     ```
 2. В обозревателе решений выберите проект и просмотрите окно <i>Свойства</i> (если это окно не отображается, нажмите клавишу F4).
 3. Для параметра "SSL включен" измените значение на <code>True</code>.
@@ -227,10 +227,12 @@ ms.locfileid: "52285022"
 Это распространенный сценарий для бизнес-приложений.
 
 Если требуется, чтобы приложение принимало операции входа только с использованием учетных записей, относящихся к определенному экземпляру Azure AD (включая *гостевые учетные записи* этого экземпляра), сделайте следующее:
+
 1. Замените значение параметра `Tenant` в файле *web.config* `Common` именем клиента организации, например *contoso.onmicrosoft.com*.
 1. После этого измените аргумент `ValidateIssuer` в [*классе Startup OWIN*](#configure-the-authentication-pipeline), задав для него значение `true`.
 
 Чтобы разрешить вход для пользователей из списка определенных организаций, сделайте следующее:
+
 1. `ValidateIssuer` — присвойте значение True.
 1. Используйте параметр `ValidIssuers`, чтобы указать список организаций.
 

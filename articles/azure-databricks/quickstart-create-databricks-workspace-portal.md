@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.date: 07/23/2018
 ms.custom: mvc
-ms.openlocfilehash: 080bf465d65199c54e0d09eab8c7bccbc9616ed7
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: 1c8f280d58d12df33b687fa9c09712176987cdd1
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51568960"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53259551"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "51568960"
 
     * Введите имя кластера.
     * В рамках этой статьи создайте кластер со средой выполнения **4.0**.
-    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
+    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of activity** (Завершить через ___ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
     
     Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
@@ -86,7 +86,7 @@ ms.locfileid: "51568960"
 ## <a name="download-a-sample-data-file"></a>Загрузка примера файла данных
 Загрузите пример файла данных JSON и сохраните его в хранилище больших двоичных объектов.
 
-1. Загрузите этот пример файла данных JSON [из Github](https://raw.githubusercontent.com/Azure/usql/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json) на локальный компьютер. Щелкните правой кнопкой мыши кнопку "Сохранить", чтобы сохранить необработанный файл на локальном компьютере.
+1. Скачайте этот пример файла данных JSON [из GitHub](https://raw.githubusercontent.com/Azure/usql/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json) на локальный компьютер. Щелкните правой кнопкой мыши кнопку "Сохранить", чтобы сохранить необработанный файл на локальном компьютере.
 
 2. Если у вас еще нет учетной записи хранения, создайте ее.
     - На портале Azure выберите **Создать ресурс**. Выберите категорию **Хранилище**, затем выберите **Учетные записи хранения**
@@ -200,7 +200,7 @@ ms.locfileid: "51568960"
 
 ![Завершение работы кластера Databricks](./media/quickstart-create-databricks-workspace-portal/terminate-databricks-cluster.png "Stop a Databricks cluster")
 
-Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
+Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после __ мин бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

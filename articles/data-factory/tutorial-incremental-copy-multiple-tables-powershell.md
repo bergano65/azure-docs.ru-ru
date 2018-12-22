@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: yexu
-ms.openlocfilehash: 0cec1fb09503d3cc685b718c2497a363dfd15824
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 20a921a0248fdb8a3856e27ad5e2620f7adb70de
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48868400"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52962143"
 ---
 # <a name="incrementally-load-data-from-multiple-tables-in-sql-server-to-an-azure-sql-database"></a>Добавочная загрузка данных из нескольких таблиц в SQL Server в базу данных SQL Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из нескольких таблиц локальной базы данных SQL Server в базу данных SQL Azure.    
@@ -59,7 +59,7 @@ ms.locfileid: "48868400"
 
     Ниже приведена общая схема решения. 
 
-    ![Пошаговая загрузка данных](media\tutorial-incremental-copy-multiple-tables-powershell\high-level-solution-diagram.png)
+    ![Пошаговая загрузка данных](media/tutorial-incremental-copy-multiple-tables-powershell/high-level-solution-diagram.png)
 
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
@@ -704,22 +704,22 @@ END
 
 1. Выберите **Все службы**, выполните поиск по фразе *Фабрики данных* и выберите **Фабрики данных**. 
 
-    ![Меню "Фабрики данных"](media\tutorial-incremental-copy-multiple-tables-powershell\monitor-data-factories-menu-1.png)
+    ![Меню "Фабрики данных"](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-data-factories-menu-1.png)
 
 1. Найдите и выберите в списке свою фабрику данных, чтобы открыть страницу **Фабрика данных**. 
 
-    ![Поиск фабрики данных](media\tutorial-incremental-copy-multiple-tables-powershell\monitor-search-data-factory-2.png)
+    ![Поиск фабрики данных](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-search-data-factory-2.png)
 
 1. На странице **Фабрика данных** выберите **Мониторинг и управление**. 
 
-    ![Плитка Monitor & Manage (Мониторинг и управление)](media\tutorial-incremental-copy-multiple-tables-powershell\monitor-monitor-manage-tile-3.png)
+    ![Плитка Monitor & Manage (Мониторинг и управление)](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-monitor-manage-tile-3.png)
 
 1. На отдельной вкладке будет открыто **приложение интеграции данных**. Вы можете увидеть все запуски конвейеров и их состояние. Обратите внимание, что в следующем примере состояние выполнения конвейера имеет значение **Успешно**. Чтобы проверить параметры, переданные в конвейер, щелкните ссылку в столбце **Параметры**. Если произошла ошибка, вы увидите ссылку в столбце **Ошибка**. Щелкните ссылку в столбце **Действия**. 
 
-    ![Запуски конвейера](media\tutorial-incremental-copy-multiple-tables-powershell\monitor-pipeline-runs-4.png)    
+    ![Запуски конвейера](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-pipeline-runs-4.png)    
 1. Если щелкнуть ссылку в столбце **Действия**, вы увидите следующую страницу, на которой отображаются все выполняемые действия в конвейере. 
 
-    ![Выполнения действий](media\tutorial-incremental-copy-multiple-tables-powershell\monitor-activity-runs-5.png)
+    ![Выполнения действий](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-activity-runs-5.png)
 
 1. Чтобы вернуться к представлению **Pipeline Runs** (Запуски конвейера), выберите **Конвейеры**, как показано на рисунке. 
 
@@ -801,11 +801,11 @@ VALUES
     ```
 1. Чтобы отслеживать выполнение конвейера, следуйте инструкциям из раздела [Мониторинг конвейера](#monitor-the-pipeline). Так как конвейер находится в состоянии **Выполняется**, отображается ссылка на другое действие в столбце **Действия**, с помощью которой можно отменить выполнение конвейера. 
 
-    ![Выполняемые запуски конвейера](media\tutorial-incremental-copy-multiple-tables-powershell\monitor-pipeline-runs-6.png)
+    ![Выполняемые запуски конвейера](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-pipeline-runs-6.png)
 
 1. Выберите **Обновить**, чтобы обновить список, пока конвейер не будет выполнен. 
 
-    ![Обновление запусков конвейера](media\tutorial-incremental-copy-multiple-tables-powershell\monitor-pipeline-runs-succeded-7.png)
+    ![Обновление запусков конвейера](media/tutorial-incremental-copy-multiple-tables-powershell/monitor-pipeline-runs-succeded-7.png)
 
 1. (Необязательно.) Щелкните ссылку **View Activity Runs** (Просмотреть выполнения действий) в области **Действия**, чтобы просмотреть все выполнения действий, связанные с этим запуском конвейера. 
 

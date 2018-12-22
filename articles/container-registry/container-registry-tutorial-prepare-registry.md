@@ -1,5 +1,5 @@
 ---
-title: Руководство по реестру контейнеров Azure. Подготовка геореплицированного реестра контейнеров Azure
+title: Руководство. Создание геореплицированного реестра Docker в Azure
 description: Создайте реестр контейнеров Azure, настройте георепликацию, подготовьте образ Docker и разверните его в реестре. Первая часть руководства из трех частей.
 services: container-registry
 author: dlepow
@@ -7,13 +7,13 @@ ms.service: container-registry
 ms.topic: tutorial
 ms.date: 04/30/2017
 ms.author: danlep
-ms.custom: mvc
-ms.openlocfilehash: 9d1371dc02f37889b15b3448d82c62d76472f847
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.custom: seodec18, mvc
+ms.openlocfilehash: db00672c7cbb39002c4a40eb7397af76e4c8189a
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48854309"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53261319"
 ---
 # <a name="tutorial-prepare-a-geo-replicated-azure-container-registry"></a>Руководство. Подготовка геореплицированного реестра контейнеров Azure
 
@@ -49,8 +49,8 @@ Azure Cloud Shell не включает в себя компоненты Docker,
 
 Настройте свой новый реестр, используя следующие параметры.
 
-* **Registry name** (Имя реестра). Создайте глобально уникальное имя реестра в Azure, которое содержит от 5 до 50 буквенно-цифровых символов.
-* **Группа ресурсов.** **Создайте новую** > `myResourceGroup`.
+* **Имя реестра**. Создайте глобально уникальное имя реестра в Azure, которое содержит от 5 до 50 буквенно-цифровых символов.
+* **Группа ресурсов**. **Создать** > `myResourceGroup`.
 * **Расположение**`West US`.
 * **Пользователь-администратор.** `Enable` (необходимо для веб-приложения для контейнеров, чтобы извлекать образы).
 * **SKU.** `Premium` (необходимо для георепликации).

@@ -1,5 +1,5 @@
 ---
-title: 'Пример политики Azure: аудит параметров аудита SQL Server'
+title: 'Пример: проверка параметров аудита SQL Server'
 description: Этот пример политики проверяет параметры аудита SQL Server.
 services: azure-policy
 author: DCtheGeek
@@ -8,13 +8,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 09/18/2018
 ms.author: dacoulte
-ms.custom: mvc
-ms.openlocfilehash: 258d56f70349c99faf6053de46886b736ffb95cf
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 7a9f5779b8a0c853d938734f82f3bd63e7f0a45b
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46949616"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53307875"
 ---
 # <a name="audit-sql-server-audit-settings"></a>Проверка параметров аудита SQL Server
 
@@ -98,4 +97,4 @@ az policy assignment delete --name "SQL Audit audit" --resource-group myResource
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Другие примеры см. в разделе [Примеры для политики Azure](index.md)
+- Другие примеры см. в статье [Примеры для Политики Azure](index.md).

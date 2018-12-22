@@ -1,24 +1,27 @@
 ---
-title: Руководство по службе контейнеров Azure — подготовка приложения
+title: Руководство по службе контейнеров Azure — подготовка приложения (не рекомендуется)
 description: Руководство по службе контейнеров Azure — подготовка приложения
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/26/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 2fe160652bf8df289d590722ef4024f0b3dd397c
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: a003248104c45fa2bcc1020e0ad8ea895d759457
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32164361"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52992377"
 ---
-# <a name="create-container-images-to-be-used-with-azure-container-service"></a>Создание образов контейнеров для использования со службой контейнеров Azure
+# <a name="deprecated-create-container-images-to-be-used-with-azure-container-service"></a>Создание образов контейнеров для использования со службой контейнеров Azure (не рекомендуется)
 
-[!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
+> [!TIP]
+> Обновленная версия этого руководства, в котором используется служба Azure Kubernetes — [Руководство. Подготовка приложения для Службы Azure Kubernetes (AKS)](../../aks/tutorial-kubernetes-prepare-app.md).
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
 В этом руководстве (часть 1 из 7) выполняется подготовка многоконтейнерного приложения к использованию в Kubernetes. В частности, рассматриваются такие шаги:  
 

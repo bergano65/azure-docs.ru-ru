@@ -14,14 +14,17 @@ ms.tgt-pltfrm: multiple
 ms.workload: na
 ms.date: 07/26/2018
 ms.author: danlep
-ms.openlocfilehash: 1fb21ab754e85dd347ff3bd66bafc2fadd95f8b1
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ROBOTS: NOINDEX
+ms.openlocfilehash: c56cd7d25ce391b67798c7833894e248f37300bf
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44058207"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53406612"
 ---
-# <a name="cli-example-create-and-manage-a-batch-ai-cluster-of-low-priority-nodes"></a>Пример использования CLI — создание кластера узлов Batch AI с низким приоритетом и управление им
+# <a name="cli-example-create-and-manage-a-batch-ai-cluster-of-low-priority-nodes"></a>Пример использования CLI. Создание кластера узлов Batch AI с низким приоритетом и управление им
+
+[!INCLUDE [batch-ai-retiring](../../../includes/batch-ai-retiring.md)]
 
 Этот скрипт демонстрирует некоторые из команд Azure CLI для создания кластера Batch AI, состоящего из узлов (виртуальных машин) с низким приоритетом, и управления этим кластером.
 
@@ -52,11 +55,11 @@ az group delete --name batchaiautostorage
 | Get-Help | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az batchai workspace create](/cli/azure/batchai/workspace#az-batchai-workspace-create) | Создание рабочей области Batch AI. |
-| [az batchai cluster create](/cli/azure/batchai/cluster#az-batchai-cluster-create) | Создание кластера Batch AI. |
-| [az batchai cluster show](/cli/azure/batchai/cluster#az-batchai-cluster-show) | Отображение сведений о кластере Batch AI. |
+| [az batchai workspace create](/cli/azure/batchai/workspace#az-batchai-workspace-create) | Создает рабочую область Batch AI. |
+| [az batchai cluster create](/cli/azure/batchai/cluster#az-batchai-cluster-create) | Создает кластер Batch AI. |
+| [az batchai cluster show](/cli/azure/batchai/cluster#az-batchai-cluster-show) | Отображает сведения о кластере Batch AI. |
 | [az batchai cluster node list](/cli/azure/batchai/cluster/node#az-batchai-cluster-show) | Вывод списка узлов кластера Batch AI. |
-| [az batchai cluster resize](/cli/azure/batchai/cluster#az-batchai-cluster-resize) | Изменение размера кластера Batch AI.  |
+| [az batchai cluster resize](/cli/azure/batchai/cluster#az-batchai-cluster-resize) | Изменяет размер кластера Batch AI.  |
 | [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация

@@ -1,5 +1,5 @@
 ---
-title: Создание консольного приложения с использованием Java и API MongoDB в Azure Cosmos DB
+title: Azure Cosmos DB — Создание консольного приложения с использованием Java и API MongoDB
 description: В этой статье представлен пример кода Java, который можно использовать для подключения и выполнения запросов к API MongoDB в Azure Cosmos DB.
 services: cosmos-db
 author: slyons
@@ -10,14 +10,14 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 05/10/2017
 ms.author: sclyon
-ms.openlocfilehash: c77d6610939322fcf258e1b650672f319baf0815
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 30e87ba14c6754fa39269f3afac318a02cf99a2c
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52832417"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53162026"
 ---
-# <a name="azure-cosmos-db-build-a-mongodb-api-console-app-with-java-and-the-azure-portal"></a>Azure Cosmos DB. Создание консольного приложения API MongoDB с использованием языка Java и портала Azure
+# <a name="azure-cosmos-db-build-a-mongodb-api-console-app-with-java-and-the-azure-portal"></a>Azure Cosmos DB — создание консольного приложения API MongoDB с использованием языка Java и портала Azure
 
 > [!div class="op_single_selector"]
 > * [.NET](create-mongodb-dotnet.md)
@@ -53,7 +53,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="clone-the-sample-application"></a>Клонирование примера приложения
 
-Теперь необходимо клонировать приложение API MongoDB из GitHub. Задайте строку подключения и выполните ее. Вы узнаете, как можно упростить работу с данными программным способом. 
+Теперь необходимо клонировать приложение API MongoDB из GitHub, задать строку подключения и запустить приложение. Вы узнаете, как можно упростить работу с данными программным способом. 
 
 1. Откройте командную строку, создайте папку git-samples, а затем закройте окно командной строки.
 

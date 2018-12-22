@@ -1,6 +1,6 @@
 ---
-title: Развертывание приложения Service Fabric с непрерывной интеграцией (Azure DevOps Services) в Azure | Документация Майкрософт
-description: В этом руководстве представлены общие сведения о том, как настроить непрерывную интеграцию и развертывание для приложения Service Fabric с помощью Azure DevOps Services.
+title: Развертывание приложения Service Fabric с непрерывной интеграцией с помощью Azure Pipelines в Azure | Документация Майкрософт
+description: В этом руководстве представлены общие сведения о том, как настроить непрерывную интеграцию и развертывание для приложения Service Fabric с помощью Azure Pipelines.
 services: service-fabric
 documentationcenter: .net
 author: rwike77
@@ -12,26 +12,26 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 11/15/2018
+ms.date: 12/02/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 5d53250ebdc14b7b6631e2f419b5b24ac98f3038
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: 766c0c780807ff7627ae9fb96aca4a896918f9c6
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51853748"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094963"
 ---
-# <a name="tutorial-deploy-an-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство. Развертывание приложения с непрерывной интеграцией и непрерывным развертыванием в кластере Service Fabric
+# <a name="tutorial-deploy-an-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство. Развертывание приложения с непрерывной интеграцией и развертыванием в кластере Service Fabric
 
-Это четвертое руководство из цикла. В нем описано, как настроить непрерывные интеграцию и развертывание для приложения Azure Service Fabric с помощью Azure DevOps Services.  Вам потребуется приложение Service Fabric. В качестве примера используется приложение, созданное в разделе [Создание приложения .NET](service-fabric-tutorial-create-dotnet-app.md).
+Это четвертое руководство из цикла. В нем описано, как настроить непрерывные интеграцию и развертывание для приложения Azure Service Fabric с помощью Azure Pipelines.  Вам потребуется приложение Service Fabric. В качестве примера используется приложение, созданное в разделе [Создание приложения .NET](service-fabric-tutorial-create-dotnet-app.md).
 
 В третьей части цикла вы узнаете, как выполнять такие задачи:
 
 > [!div class="checklist"]
 > * Добавление проекта в систему управления версиями
-> * Создание конвейера сборки в Azure DevOps
-> * Создание конвейера выпуска в Azure DevOps
+> * Создание конвейера сборки в Azure Pipelines
+> * Создание конвейера выпуска в Azure Pipelines
 > * Автоматическое развертывание и обновление приложения
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
@@ -50,7 +50,7 @@ ms.locfileid: "51853748"
 * [Установите Visual Studio 2017](https://www.visualstudio.com/), а также рабочие нагрузки **разработка Azure** и **ASP.NET и веб-разработка**.
 * [Установите пакет SDK для Service Fabric](service-fabric-get-started.md)
 * Создайте кластер Service Fabric с Windows, например с помощью [этого руководства](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
-* Создание [организации Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization-msa-or-work-student).
+* Создание [организации Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization-msa-or-work-student). Это позволяет создать проект в Azure DevOps и использовать Azure Pipelines.
 
 ## <a name="download-the-voting-sample-application"></a>Скачивание примера приложения для голосования
 
@@ -62,7 +62,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ## <a name="prepare-a-publish-profile"></a>Подготовка профиля публикации
 
-После [создания приложения](service-fabric-tutorial-create-dotnet-app.md) и [развертывания приложения в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md) вы можете настроить непрерывную интеграцию.  Прежде всего подготовьте в приложении профиль публикации, который будет использоваться в процессе развертывания под управлением Azure DevOps.  Профиль публикации следует настроить для целевого кластера, который был создан ранее.  Запустите Visual Studio и откройте существующий проект приложения Service Fabric.  Щелкните правой кнопкой мыши приложение в **обозревателе решений** и выберите **Опубликовать...**
+После [создания приложения](service-fabric-tutorial-create-dotnet-app.md) и [развертывания приложения в Azure](service-fabric-tutorial-deploy-app-to-party-cluster.md) вы можете настроить непрерывную интеграцию.  Прежде всего подготовьте в приложении профиль публикации, который будет использоваться при развертывании под управлением Azure Pipelines.  Профиль публикации следует настроить для целевого кластера, который был создан ранее.  Запустите Visual Studio и откройте существующий проект приложения Service Fabric.  Щелкните правой кнопкой мыши приложение в **обозревателе решений** и выберите **Опубликовать...**
 
 Выберите в проекте приложения целевой профиль, который будет использоваться для рабочего процесса непрерывной интеграции, например "Облако".  Укажите конечную точку подключения кластера.  Установите флажок **Обновлять приложение**, чтобы ваше приложение обновлялось при каждом развертывании в Azure DevOps.  Нажмите ссылку **Сохранить**, чтобы сохранить параметры профиля публикации, а затем нажмите кнопку **Отменить**, чтобы закрыть диалоговое окно.
 
@@ -84,11 +84,11 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 При публикации репозитория в вашей учетной записи создается новый проект с тем же именем, что и у локального репозитория. Чтобы создать репозиторий в существующем проекте, щелкните **Расширенный** рядом с **именем репозитория** и выберите нужный проект. Код можно просматривать в Интернете, выбрав **Просмотреть на веб-сайте**.
 
-## <a name="configure-continuous-delivery-with-azure-devops"></a>Настройка непрерывной поставки с помощью Azure DevOps
+## <a name="configure-continuous-delivery-with-azure-pipelines"></a>Настройка непрерывной поставки с помощью Azure Pipelines
 
-Конвейер сборки Azure DevOps описывает рабочий процесс, включающий набор последовательно выполняемых шагов сборки. Создайте конвейер сборки, который создает пакет приложения Service Fabric и другие артефакты для развертывания в кластере Service Fabric. Получите дополнительные сведения [о конвейерах сборки Azure DevOps](https://www.visualstudio.com/docs/build/define/create). 
+Конвейер сборки Azure Pipelines описывает рабочий процесс, включающий набор последовательно выполняемых шагов сборки. Создайте конвейер сборки, который создает пакет приложения Service Fabric и другие артефакты для развертывания в кластере Service Fabric. Дополнительные сведения [о конвейерах сборки в Azure Pipelines](https://www.visualstudio.com/docs/build/define/create). 
 
-Конвейер выпуска Azure DevOps описывает рабочий процесс, развертывающий пакет приложения в кластере. При совместном использовании конвейер сборки и конвейер выпуска выполняют весь рабочий процесс от получения файлов с исходным кодом до запуска приложения в кластере. Получите дополнительные сведения [о конвейерах выпуска Azure DevOps](https://www.visualstudio.com/docs/release/author-release-definition/more-release-definition).
+Конвейер выпуска Azure Pipelines описывает рабочий процесс, развертывающий пакет приложения в кластере. При совместном использовании конвейер сборки и конвейер выпуска выполняют весь рабочий процесс от получения файлов с исходным кодом до запуска приложения в кластере. См. дополнительные сведения о [конвейерах выпуска Azure Pipelines](https://www.visualstudio.com/docs/release/author-release-definition/more-release-definition).
 
 ### <a name="create-a-build-pipeline"></a>Создание конвейера сборки
 
@@ -156,11 +156,11 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ![Фиксация всех изменений][changes]
 
-Щелкните значок неопубликованных изменений в строке состояния (![Неопубликованные изменения][unpublished-changes]) или в представлении "Синхронизация" в Team Explorer. Выберите **Отправить изменения**, чтобы обновить код в Azure DevOps Services/TFS.
+Щелкните значок неопубликованных изменений в строке состояния (![Неопубликованные изменения][unpublished-changes]) или в представлении "Синхронизация" в Team Explorer. Выберите **Отправить**, чтобы обновить код в Azure Pipelines.
 
 ![Отправка изменений][push]
 
-При отправке изменений в Azure DevOps автоматически запускается сборка.  После успешного создания конвейера сборки автоматически создается выпуск и начинается обновление приложения в кластере.
+При отправке изменений в Azure Pipelines автоматически запускается сборка.  После успешного создания конвейера сборки автоматически создается выпуск и начинается обновление приложения в кластере.
 
 Чтобы проверить ход сборки, перейдите на вкладку **Сборки** в **Team Explorer** в Visual Studio.  Убедившись, что сборка запускается успешно, определите конвейер выпуска, который развертывает приложение в кластер.
 

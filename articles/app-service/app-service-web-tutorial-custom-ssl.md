@@ -1,5 +1,5 @@
 ---
-title: Привязывание существующего настраиваемого SSL-сертификата к веб-приложениям Azure | Документация Майкрософт
+title: Привязывание существующего настраиваемого SSL-сертификата в Службе приложений Azure | Документация Майкрософт
 description: Узнайте, как привязать настраиваемый SSL-сертификат к веб-приложению, серверной части мобильного приложения или приложению API в Службе приложений Azure.
 services: app-service\web
 documentationcenter: nodejs
@@ -14,13 +14,13 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 08/24/2018
 ms.author: cephalin
-ms.custom: mvc
-ms.openlocfilehash: a543561658d593398ca74f8ae68dd6d0d27bcdaa
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.custom: seodec18
+ms.openlocfilehash: 57046b9e199fbe5e88d0ea7fa25248641693508a
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636462"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53257001"
 ---
 # <a name="tutorial-bind-an-existing-custom-ssl-certificate-to-azure-web-apps"></a>Руководство. Привязывание существующего настраиваемого SSL-сертификата к веб-приложениям Azure
 
@@ -139,9 +139,9 @@ openssl pkcs12 -export -out myserver.pfx -inkey <private-key-file> -in <merged-c
 >
 >
 
-В разделе **Тип SSL** можно выбрать SSL на основе **[указания имени сервера (SNI)](http://en.wikipedia.org/wiki/Server_Name_Indication)** или IP-адреса.
+В разделе **Тип SSL** можно выбрать SSL на основе **[указания имени сервера (SNI)](https://en.wikipedia.org/wiki/Server_Name_Indication)** или IP-адреса.
 
-- **SSL на основе SNI** позволяет добавить несколько привязок SSL на основе SNI. Этот параметр позволяет использовать несколько SSL-сертификатов для защиты нескольких доменов с одним IP-адресом. Большинство современных браузеров (включая Internet Explorer, Chrome, Firefox и Opera) поддерживает SNI (более подробную информацию о поддержки браузеров можно найти в статье [Server Name Indication](http://wikipedia.org/wiki/Server_Name_Indication) (Указание имени сервера)).
+- **SSL на основе SNI** позволяет добавить несколько привязок SSL на основе SNI. Этот параметр позволяет использовать несколько SSL-сертификатов для защиты нескольких доменов с одним IP-адресом. Большинство современных браузеров (включая Internet Explorer, Chrome, Firefox и Opera) поддерживает SNI (более подробную информацию о поддержки браузеров можно найти в статье [Server Name Indication](https://wikipedia.org/wiki/Server_Name_Indication) (Указание имени сервера)).
 - **SSL на основе IP-адреса** позволяет добавить только одну привязку SSL на основе IP-адреса. Этот параметр позволяет использовать только один SSL-сертификат для защиты выделенного общедоступного IP-адреса. Чтобы защитить несколько доменов, необходимо использовать один и тот же SSL-сертификат. Это традиционный вариант привязки SSL.
 
 Щелкните **Добавить привязку**.

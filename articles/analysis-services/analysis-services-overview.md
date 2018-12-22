@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 3cdc4a8a670b5af43e72b38d7a3b6d9aafdac348
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 15dbdc0bb2a3b7ee5af544adb2672a97f839f694
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49429445"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52970201"
 ---
 # <a name="what-is-azure-analysis-services"></a>Службы Azure Analysis Services
 
@@ -182,7 +182,7 @@ Azure Analysis Services — это полностью управляемая п�
 
 ### <a name="azure-governance"></a>Система управления Azure
 
-Использование служб Azure Analysis Services регулируется [условиями использования служб Microsoft Online Services](http://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31) и [заявлением о конфиденциальности корпорации Майкрософт](https://privacy.microsoft.com/privacystatement).
+Использование служб Azure Analysis Services регулируется [условиями использования служб Microsoft Online Services](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31) и [заявлением о конфиденциальности корпорации Майкрософт](https://privacy.microsoft.com/privacystatement).
 Дополнительные сведения о центре безопасности Azure см. [здесь](https://www.microsoft.com/trustcenter).
 
 ## <a name="use-the-tools-you-already-know"></a>Использование знакомых инструментов
@@ -251,7 +251,7 @@ Azure Analysis Services — это полностью управляемая п�
 > [Подписаться на бесплатную пробную версию Azure](https://azure.microsoft.com/offers/ms-azr-0044p/)   
 
 > [!div class="nextstepaction"]
-> [Краткое руководство по созданию сервера с помощью портала](analysis-services-create-server.md)   
+> [Краткое руководство. Создание сервера с помощью портала](analysis-services-create-server.md)   
 
 > [!div class="nextstepaction"]
-> [Краткое руководство по созданию сервера с помощью PowerShell](analysis-services-create-powershell.md)  
+> [Краткое руководство. Создание сервера с помощью PowerShell](analysis-services-create-powershell.md)  

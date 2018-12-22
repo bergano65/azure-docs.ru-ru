@@ -10,19 +10,19 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 11/13/2018
+ms.date: 12/07/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: dfdad89d628fda476ecef1c43246ce3927927555
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: a861a88c8534fa50405109efd738deb8486081e4
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52863505"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53075573"
 ---
 # <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Руководство. Создание связанных шаблонов Azure Resource Manager
 
-Узнайте, как создать связанные шаблоны Azure Resource Manager. Используя связанные шаблоны, можно одним шаблоном вызвать другой. Это отлично подходит для создания модулей шаблонов. В статье [Руководство. Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./resource-manager-tutorial-create-multiple-instances.md) используется тот же шаблон, что и здесь, который создает виртуальную машину, виртуальную сеть и другие зависимые ресурсы, в том числе учетную запись хранения. В связанном шаблоне можно отделить ресурс учетной записи хранения.
+Узнайте, как создать связанные шаблоны Azure Resource Manager. Используя связанные шаблоны, можно одним шаблоном вызвать другой. Это отлично подходит для создания модулей шаблонов. В этом руководстве используется тот же шаблон, что и в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md), который создает виртуальную машину, виртуальную сеть и другие зависимые ресурсы, включая учетную запись хранения. Для создания ресурса учетной записи хранения можно использовать связанный шаблон.
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -33,6 +33,7 @@ ms.locfileid: "52863505"
 > * Ссылка на связанный шаблон
 > * Настройка зависимостей
 > * Развертывание шаблона
+> * Дополнительные рекомендации
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -50,7 +51,7 @@ ms.locfileid: "52863505"
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
-Шаблоны быстрого запуска Azure являются репозиторием для шаблонов Resource Manager. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом руководстве, называется [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Развертывание простой виртуальной машины Windows). Тот же шаблон используется в статье [Руководство. Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./resource-manager-tutorial-create-multiple-instances.md). Можно сохранить две копии одного шаблона для использования как:
+Шаблоны быстрого запуска Azure являются репозиторием для шаблонов Resource Manager. Вместо создания шаблона с нуля можно найти пример шаблона и настроить его. Шаблон, используемый в этом руководстве, называется [Deploy a simple Windows VM](https://azure.microsoft.com/resources/templates/101-vm-simple-windows/) (Развертывание простой виртуальной машины Windows). Это тот же шаблон, который используется в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md). Можно сохранить две копии одного шаблона для использования как:
 
 * **основной шаблон** — создает все ресурсы, за исключением учетной записи хранения;
 * **связанный шаблон** — создает учетную запись хранения.
@@ -82,6 +83,23 @@ ms.locfileid: "52863505"
 2. Выполните следующие изменения:
 
     * Удалите все ресурсы, за исключением учетной записи хранения. Удаляются всего четыре ресурса.
+    * Измените значение элемента **name** учетной записи хранения ресурса на:
+
+        ```json
+          "name": "[parameters('storageAccountName')]",
+        ```
+    * Удалите элемент **variables** и все определения переменных.
+    * Удалить все параметры, кроме **location**.
+    * Добавьте параметр с именем **storageAccountName**. Как параметр имя учетной записи хранения передается из основного в связанный шаблон.
+
+        ```json
+        "storageAccountName":{
+        "type": "string",
+        "metadata": {
+            "description": "Azure Storage account name."
+        }
+        },
+        ```
     * Обновите элемент **выходных данных**, чтобы он выглядел так, как изображено ниже.
 
         ```json
@@ -93,9 +111,6 @@ ms.locfileid: "52863505"
         }
         ```
         Для определения ресурсов виртуальной машины в основном шаблоне необходим **storageUri**.  В качестве значения выходных данных передайте значения обратно в основной шаблон.
-    * Удалите параметры, которые никогда не используются. Эти параметры обозначены зеленой волнообразной линией. Должен остаться только один параметр с именем **расположение**.
-    * Удалите элементы **переменных**. В этом руководстве они не нужны.
-    * Добавьте параметр с именем **storageAccountName**. Как параметр имя учетной записи хранения передается из основного в связанный шаблон.
 
     Когда все готово, шаблон должен выглядеть, как показано ниже.
 
@@ -143,21 +158,96 @@ ms.locfileid: "52863505"
 
 ## <a name="upload-the-linked-template"></a>Передача связанного шаблона
 
-Шаблоны должны быть доступны из любой точки выполнения развертывания. Этим расположением может быть учетная запись хранения Azure, Github и Dropbox. Если ваши шаблоны содержат конфиденциальную информацию, убедитесь, что доступ к ним защищен. В [Руководстве. Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager](./resource-manager-tutorial-create-multiple-instances.md) используется такой же метод развертывания Cloud Shell, как и здесь. Основной шаблон (azuredeploy.json) загружается в оболочку. Где-то можно поделиться связанным шаблоном (linkedTemplate.json).  Чтобы сократить задачи этого руководства, связанный шаблон, определенный в предыдущем разделе, был загружен в [учетную запись хранения Azure](https://armtutorials.blob.core.windows.net/linkedtemplates/linkedStorageAccount.json).
+Основной шаблон и связанный шаблон должны быть доступны из любой точки выполнения развертывания. В этом руководстве используется метод развертывания Cloud Shell, который применялся в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md). Основной шаблон (azuredeploy.json) загружается в оболочку. Связанный шаблон (linkedTemplate.json) должен быть размещен в общем безопасном расположении. Следующий сценарий PowerShell создает учетную запись хранения Azure, передает в нее шаблон, а затем создает маркер SAS для предоставления ограниченного доступа к файлу шаблона. Для упрощения руководства этот скрипт скачивает полный связанный шаблон из общего расположения. Если вы хотите использовать созданный связанный шаблон, можно отправить его с помощью [Cloud Shell](https://shell.azure.com), а затем изменить скрипт для использования этого шаблона.
+
+> [!NOTE]
+> Сценарий ограничивает срок использования маркера SAS до восьми часов. Если для работы с этим руководством необходимо больше времени, увеличьте срок действия.
+
+```azurepowershell-interactive
+$projectNamePrefix = Read-Host -Prompt "Enter a project name:"   # This name is used to generate names for Azure resources, such as storage account name.
+$location = Read-Host -Prompt "Enter a location (i.e. centralus)"
+
+$resourceGroupName = $projectNamePrefix + "rg"
+$storageAccountName = $projectNamePrefix + "store"
+$containerName = "linkedtemplates" # The name of the Blob container to be created.
+
+$linkedTemplateURL = "https://armtutorials.blob.core.windows.net/linkedtemplates/linkedStorageAccount.json" # A completed linked template used in this tutorial.
+$fileName = "linkedStorageAccount.json" # A file name used for downloading and uploading the linked template.
+
+# Download the tutorial linked template
+Invoke-WebRequest -Uri $linkedTemplateURL -OutFile "$home/$fileName"
+
+# Create a resource group
+New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
+
+# Create a storage account
+$storageAccount = New-AzureRmStorageAccount `
+    -ResourceGroupName $resourceGroupName `
+    -Name $storageAccountName `
+    -Location $location `
+    -SkuName "Standard_LRS"
+
+$context = $storageAccount.Context
+
+# Create a container
+New-AzureStorageContainer -Name $containerName -Context $context
+
+# Upload the linked template
+Set-AzureStorageBlobContent `
+    -Container $containerName `
+    -File "$home/$fileName" `
+    -Blob $fileName `
+    -Context $context
+
+# Generate a SAS token
+$templateURI = New-AzureStorageBlobSASToken `
+    -Context $context `
+    -Container $containerName `
+    -Blob $fileName `
+    -Permission r `
+    -ExpiryTime (Get-Date).AddHours(8.0) `
+    -FullUri
+
+echo "You need the following values later in the tutorial:"
+echo "Resource Group Name: $resourceGroupName"
+echo "Linked template URI with SAS token: $templateURI"
+```
+
+1. Нажмите зеленую кнопку **Попробовать**, чтобы открыть панель Azure Cloud Shell.
+2. Нажмите кнопку **Копировать**, чтобы скопировать сценарий PowerShell.
+3. Щелкните правой кнопкой мыши внутри панели оболочки (область темно-синего цвета), а затем выберите **Вставить**.
+4. Запишите эти два значения (имя группы ресурсов и URI связанного шаблона), содержащиеся в конце области оболочки. Они понадобятся вам позже при работе с этим руководством.
+5. Выберите **Выйти из режима фокусировки**, чтобы закрыть панель оболочки.
+
+На практике вы создаете маркер SAS при развертывании основного шаблона и настраиваете для этого маркера небольшой срок действия, чтобы сделать его более безопасным. Дополнительные сведения см. в разделе [Предоставление маркера SAS во время развертывания](./resource-manager-powershell-sas-token.md#provide-sas-token-during-deployment).
 
 ## <a name="call-the-linked-template"></a>Вызов связанного шаблона
 
 Основной шаблон находится в файле с именем azuredeploy.json.
 
 1. Откройте файл azuredeploy.json в Visual Studio Code, если он еще не открыт.
-2. Удалите определения ресурсов учетной записи хранения из шаблона.
+2. Удалите определение ресурса учетной записи хранения из шаблона:
+
+    ```json
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[variables('storageAccountName')]",
+      "location": "[parameters('location')]",
+      "apiVersion": "2018-07-01",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "kind": "Storage",
+      "properties": {}
+    },
+    ```
 3. К тому месту, где необходимо определение учетной записи хранения, добавьте приведенный ниже фрагмент кода JSON.
 
     ```json
     {
-      "apiVersion": "2017-05-10",
       "name": "linkedTemplate",
       "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-05-01",
       "properties": {
           "mode": "Incremental",
           "templateLink": {
@@ -176,13 +266,14 @@ ms.locfileid: "52863505"
     * В основном шаблоне используется ресурс `Microsoft.Resources/deployments` для ссылки на другой шаблон.
     * Ресурс `deployments` имеет имя `linkedTemplate`. Это имя используется для [настройки зависимостей](#configure-dependency).  
     * Для обоих связанного и вложенного шаблонов можно использовать только [добавочный](./deployment-modes.md) режим развертывания.
-    * `templateLink/uri` содержит URI связанного шаблона. Связанный шаблон был загружен в учетную запись общего хранилища. Можно обновить URI, если отправить шаблон в другое расположение в Интернете.
+    * `templateLink/uri` содержит URI связанного шаблона. Обновите это значение, указав URI, полученный при отправке связанного шаблона (тот, который с маркером SAS).
     * Чтобы передать значение из основного шаблона в связанный, используйте `parameters`.
-4. Сохраните изменения.
+4. Укажите для элемента `uri` значение, полученное при отправке связанного шаблона (тот, который с маркером SAS). На практике вам необходимо указать параметр для универсального кода ресурса (URI).
+5. Сохраните измененный шаблон.
 
 ## <a name="configure-dependency"></a>Настройка зависимостей
 
-Как следует из [руководства о создании нескольких экземпляров ресурса с помощью шаблона Resource Manager](./resource-manager-tutorial-create-multiple-instances.md), ресурс виртуальной машины зависит от учетной записи хранения.
+Как следует из статьи [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md), ресурс виртуальной машины зависит от учетной записи хранения:
 
 ![Схема зависимости шаблонов Azure Resource Manager в Visual Studio Code](./media/resource-manager-tutorial-create-linked-templates/resource-manager-template-visual-studio-code-dependency-diagram.png)
 
@@ -208,12 +299,13 @@ ms.locfileid: "52863505"
 
     *linkedTemplate* — имя ресурса развертываний.  
 3. Обновите **properties/diagnosticsProfile/bootDiagnostics/storageUri**, как показано на предыдущем снимке экрана.
+4. Сохраните измененный шаблон.
 
 Дополнительные сведения см. в разделе [Использование связанных шаблонов в при развертывании ресурсов Azure](./resource-group-linked-templates.md).
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Дополнительные сведения о процедуре развертывания шаблона см. в [этом разделе](./resource-manager-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. См. раздел [Предварительные требования](#prerequisites).
+Дополнительные сведения о процедуре развертывания шаблона см. в [этом разделе](./resource-manager-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Используйте для хранения связанного шаблона ту же группу ресурсов, к которой принадлежит учетная запись хранения. Это упростит очистку ресурсов, выполняемую при работе со следующим разделом. Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. См. раздел [Предварительные требования](#prerequisites).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -224,9 +316,16 @@ ms.locfileid: "52863505"
 3. Выберите имя группы ресурсов.  В группе ресурсов должно появится шесть ресурсов.
 4. В главном меню выберите **Удалить группу ресурсов**.
 
+## <a name="additional-practice"></a>Дополнительные рекомендации
+
+Чтобы улучшить готовый проект, внесите в него следующие дополнительные изменения:
+
+1. Измените основной шаблон (azuredeploy.json) таким образом, чтобы он принимал значение URI связанного шаблона с помощью параметра.
+2. Вместо создания маркера SAS при передаче связанного шаблона создайте его при развертывании основного шаблона. Дополнительные сведения см. в разделе [Предоставление маркера SAS во время развертывания](./resource-manager-powershell-sas-token.md#provide-sas-token-during-deployment).
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как разработать и развернуть связанный шаблон. Чтобы узнать, как использовать расширения виртуальной машины для задач, выполняемых после развертывания, ознакомьтесь с дополнительными сведениями о
+В этом руководстве вы разделили шаблон на основной и связанный. Чтобы узнать, как использовать расширения виртуальной машины для задач, выполняемых после развертывания, перейдите к следующей статье:
 
 > [!div class="nextstepaction"]
-> [развертывании расширений виртуальной машины](./deployment-manager-tutorial.md)
+> [Развертывание расширений виртуальной машины](./deployment-manager-tutorial.md)

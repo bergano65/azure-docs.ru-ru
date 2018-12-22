@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB. Создание приложения с помощью Python и API SQL
+title: Azure Cosmos DB — Создание приложения с помощью Python и API SQL
 description: В этой статье представлен пример кода Python, который можно использовать для подключения и выполнения запросов к API SQL в Azure Cosmos DB.
 services: cosmos-db
 author: SnehaGunda
@@ -10,14 +10,14 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 09/24/2018
 ms.author: sngun
-ms.openlocfilehash: a12107fe0dd25a383e7be1adbc717c7c1c654fa5
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 6f3f1f6eb89127e6b0ac0e2983a27dfd731651cb
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52846544"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094242"
 ---
-# <a name="azure-cosmos-db-build-a-sql-api-app-with-python-and-the-azure-portal"></a>Azure Cosmos DB. Создание приложения API SQL с помощью Python и портала Azure
+# <a name="azure-cosmos-db-build-a-sql-api-app-with-python-and-the-azure-portal"></a>Azure Cosmos DB — Создание приложения API SQL с помощью Python и портала Azure
 
 > [!div class="op_single_selector"]
 > * [.NET](create-sql-api-dotnet.md)
@@ -153,7 +153,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение.
 
-1. На [портале Azure](http://portal.azure.com/) в учетной записи Azure Cosmos DB щелкните **Ключи** в области навигации слева. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать **универсальный код ресурса (URI)** и **первичный ключ** в файл `CosmosGetStarted.py`.
+1. На [портале Azure](https://portal.azure.com/) в учетной записи Azure Cosmos DB щелкните **Ключи** в области навигации слева. На следующем шаге используйте кнопку копирования в правой части экрана, чтобы скопировать **универсальный код ресурса (URI)** и **первичный ключ** в файл `CosmosGetStarted.py`.
 
     ![Просмотр и копирование ключа доступа на портале Azure, колонка "Ключи"](./media/create-sql-api-dotnet/keys.png)
 
@@ -173,7 +173,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 1. В Visual Studio Code выберите **Вид**>**Палитра команд**. 
 
-2. В командной строке введите **Python: выберите интерпретатор** и установите нужную версию Python.
+2. При появлении соответствующего запроса введите **Python: выбрать интерпретатор** и установите нужную версию Python.
 
     Нижний колонтитул в Visual Studio Code будет обновлен для указания выбранного интерпретатора. 
 

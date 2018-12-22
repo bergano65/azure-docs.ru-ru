@@ -17,12 +17,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: dadobali
 ms.custom: aaddev
-ms.openlocfilehash: 2d8741f6c65002d7f3701784e5fffe67b0e9bf50
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: 7f7ae858f633a910b796f544ed69a582e749beaf
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51287240"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53311071"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Краткое руководство. Вход пользователей и вызов API Microsoft Graph из приложения Android
 
@@ -30,7 +30,7 @@ ms.locfileid: "51287240"
 
 Корпорация Майкрософт предлагает простые и понятные средства регистрации пользователей Azure Active Directory (Azure AD) для разработчиков приложений для Android. Azure AD позволяет вашему приложению обращаться к данным пользователя через Microsoft Graph или с помощью собственного защищенного веб-API.
 
-Библиотека аутентификации Azure AD (ADAL) для Android позволяет вашему приложению использовать [Microsoft Azure Cloud](https://cloud.microsoft.com) & [API Microsoft Graph](https://developer.microsoft.com/graph) благодаря включенной поддержке [учетных записей Microsoft Azure Active Directory](https://azure.microsoft.com/services/active-directory/) с использованием отраслевых стандартов OAuth версии 2.0 и OpenID Connect.
+Библиотека проверки подлинности Active Directory (ADAL) для Android позволяет вашему приложению использовать [Microsoft Azure Cloud](https://cloud.microsoft.com) и [API Microsoft Graph](https://developer.microsoft.com/graph) благодаря включенной поддержке [учетных записей Microsoft Azure Active Directory](https://azure.microsoft.com/services/active-directory/) с использованием отраслевых стандартов OAuth версии 2.0 и OpenID Connect.
 
 В этом кратком руководстве описано следующее:
 
@@ -51,23 +51,23 @@ ms.locfileid: "51287240"
 
 ## <a name="sample-code"></a>Пример кода
 
-Полный исходный код примера можно найти на сайте [GitHub](https://github.com/Azure-Samples/active-directory-android).
+Полный пример кода можно найти на сайте [GitHub](https://github.com/Azure-Samples/active-directory-android).
 
 ```Java
 // Initialize your app with MSAL
 AuthenticationContext mAuthContext = new AuthenticationContext(
-        MainActivity.this, 
-        AUTHORITY, 
+        MainActivity.this,
+        AUTHORITY,
         false);
 
 
 // Perform authentication requests
 mAuthContext.acquireToken(
-    getActivity(), 
-    RESOURCE_ID, 
-    CLIENT_ID, 
-    REDIRECT_URI,  
-    PromptBehavior.Auto, 
+    getActivity(),
+    RESOURCE_ID,
+    CLIENT_ID,
+    REDIRECT_URI,
+    PromptBehavior.Auto,
     getAuthInteractiveCallback());
 
 // ...
@@ -95,7 +95,7 @@ mAuthResult.getAccessToken()
     - Выберите **Добавить**, затем в разделе **Выберите API** укажите ***Microsoft Graph***.
     - Выберите разрешение **Вход и чтение профиля пользователя**, затем нажмите кнопку **Выбрать**, чтобы сохранить разрешение.
         - Это разрешение будет сопоставлено с областью `User.Read`.
-    - Необязательно: в разделе **"Требуемые разрешения" > "Microsoft Azure Active Directory"** снимите выбранное разрешение **Вход и чтение профиля пользователя**. Это позволит избежать того, чтобы разрешение на странице согласия пользователя отображалось два раза.
+    - Необязательно: в разделе **Необходимые разрешения > Windows Azure Active Directory** снимите флажок для выбранного разрешения **Вход и чтение профиля пользователя**. Это позволит избежать того, чтобы разрешение на странице согласия пользователя отображалось два раза.
 
 4. Поздравляем! Ваше приложение настроено. В следующем разделе вам потребуется:
     - `Application ID`

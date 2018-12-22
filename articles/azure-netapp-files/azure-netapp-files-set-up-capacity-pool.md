@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: 0e9203f5b4e2a9043e242b804c82017cf6fc3ee1
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 55a1d16ce1617ecf7bc28c7c62de8557ceeea311
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39010809"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53412917"
 ---
 # <a name="set-up-a-capacity-pool"></a>Настройка пула емкости
 Настройка пула емкости позволяет создавать в нем тома.  
@@ -55,6 +55,6 @@ ms.locfileid: "39010809"
 
 ## <a name="next-steps"></a>Дополнительная информация 
 
-1. [Создание тома для Azure NetApp Files](azure-netapp-files-create-volumes.md)
-2. [Настройка политики экспорта для тома (необязательно)](azure-netapp-files-configure-export-policy.md)
+[Делегирование подсети в Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
+
 

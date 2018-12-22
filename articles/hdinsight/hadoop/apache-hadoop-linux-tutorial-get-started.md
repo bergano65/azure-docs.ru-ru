@@ -1,5 +1,5 @@
 ---
-title: 'Краткое руководство по началу работы с Apache Hadoop и Apache Hive в Azure HDInsight с помощью шаблона Resource Manager '
+title: Краткое руководство. Создание кластеров Apache Hadoop с помощью Resource Manager и запрашивание данных с помощью Apache Hive в Azure HDInsight
 description: Узнайте, как создать кластеры HDInsight и запросить данные с помощью Hive.
 keywords: начало работы с hadoop, hadoop под управлением linux, краткое руководство по hadoop, начало работы с hive, краткое руководство по hive
 services: hdinsight
@@ -7,19 +7,19 @@ ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
-ms.custom: hdinsightactive,hdiseo17may2017,mvc
+ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.topic: quickstart
 ms.date: 05/07/2018
-ms.openlocfilehash: cc726156273591215e5a311065ae2fe6dd87402c
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 845aa85a025d75dcc0e80b59fbc1620d8cbae082
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634452"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53435748"
 ---
-# <a name="quickstart-get-started-with-apache-hadoop-and-apache-hive-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство по началу работы с Apache Hadoop и Apache Hive в Azure HDInsight с помощью шаблона Resource Manager
+# <a name="quickstart-get-started-with-apache-hadoop-and-apache-hive-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager
 
-Из этой статьи вы узнаете, как создать кластеры [Apache Hadoop](http://hadoop.apache.org/) в HDInsight с помощью шаблона Resource Manager, а затем запустить задания Hive в HDInsight. Большинство заданий Hadoop — пакетные. Вы создаете кластер, выполняете несколько заданий, а затем удаляете кластер. В этой статье будут выполнены все три задачи.
+Из этой статьи вы узнаете, как создать кластеры [Apache Hadoop](https://hadoop.apache.org/) в HDInsight с помощью шаблона Resource Manager, а затем запустить задания Hive в HDInsight. Большинство заданий Hadoop — пакетные. Вы создаете кластер, выполняете несколько заданий, а затем удаляете кластер. В этой статье будут выполнены все три задачи.
 
 В этом кратком руководстве для создания кластера Hadoop в HDInsight используется шаблон Resource Manager. Кластер можно также создать с помощью [портала Azure](apache-hadoop-linux-create-cluster-get-started-portal.md).
 
@@ -38,7 +38,7 @@ ms.locfileid: "51634452"
 
 2. Введите или выберите значения, как показано на следующем снимке экрана.
 
-    > [!NOTE]
+    > [!NOTE]  
     > Необходимо указать уникальные значения, соответствующие правилам именования. Шаблон не выполняет проверки. Если введенные значения уже используются или не соответствуют правилам именования, после отправки шаблона произойдет ошибка.       
     > 
     >
@@ -57,7 +57,7 @@ ms.locfileid: "51634452"
     |**Cluster login name and password** (Имя для входа и пароль для кластера)     | Имя для входа по умолчанию — **admin**. Длина пароля должна составлять не менее 10 символов. Пароль должен содержать по меньшей мере одну цифру, одну прописную и одну строчную буквы, а также один специальный символ (кроме ' " ` \)). Ни в коем случае **не вводите** распространенные пароли, например Pass@word1.|
     |**SSH username and password** (Имя пользователя SSH и пароль)     | Имя пользователя по умолчанию — **sshuser**.  Вы можете изменить имя пользователя SSH.  Для пароля пользователя SSH выдвигаются те же требования, что и для пароля для входа в кластер.|
        
-    Некоторые свойства жестко заданы в шаблоне.  Эти значения можно настроить из шаблона. Дополнительные сведения об этих свойствах см. в инструкциях по [созданию кластеров Hadoop в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md).
+    Некоторые свойства жестко заданы в шаблоне.  Эти значения можно настроить из шаблона. Дополнительные сведения об этих свойствах см. в инструкциях по [созданию кластеров Apache Hadoop в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md).
 
 3. Установите флажки **Я принимаю указанные выше условия** и **Закрепить на панели мониторинга** и нажмите кнопку **Приобрести**. Вы увидите новый элемент **Отправляется развертывание** на панели мониторинга портала. Процесс создания кластера занимает около 20 минут.
 
@@ -70,10 +70,9 @@ ms.locfileid: "51634452"
 5. На элементе также указано хранилище по умолчанию, связанное с кластером. У каждого кластера есть зависимость [учетной записи хранения Azure](../hdinsight-hadoop-use-blob-storage.md) или [учетной записи Azure Data Lake](../hdinsight-hadoop-use-data-lake-store.md). Она называется учетной записью хранения по умолчанию. Кластер HDInsight должен находиться в том же регионе Azure, что и его учетная запись хранения, используемая по умолчанию. Удаление кластеров не приведет к удалению учетной записи хранения.
     
 
-> [!NOTE]
+> [!NOTE]  
 > Сведения о других способах создания кластеров, а также о свойствах, используемых в этом руководстве, см. в статье [Создание кластеров HDInsight](../hdinsight-hadoop-provision-linux-clusters.md).       
-> 
->
+
 
 ## <a name="use-vscode-to-run-hive-queries"></a>Использование VS Code для выполнения запросов Hive
 
@@ -92,15 +91,15 @@ ms.locfileid: "51634452"
     ```hiveql
     SELECT * FROM hivesampletable;
     ```
-4. Щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: Hive Interactive** (HDInsight: интерактивный запрос Hive), чтобы отправить запрос. Средства также позволяют отправить блок кода вместо целого файла сценария с помощью контекстного меню. Вскоре после этого результаты запроса появятся на новой вкладке.
+4. Щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: интерактивный запрос Hive**, чтобы отправить запрос. Средства также позволяют отправить блок кода вместо целого файла сценария с помощью контекстного меню. Вскоре после этого результаты запроса появятся на новой вкладке.
 
    ![Результат Interactive Hive](./media/apache-hadoop-linux-tutorial-get-started/interactive-hive-result.png)
 
-    - Область **результатов**: вы можете сохранить все результаты в виде файла CSV, JSON или Excel по локальному пути или просто выбрать несколько строк.
+    - Панель **Результаты**: вы можете сохранить все результаты в виде файла CSV, JSON или Excel по локальному пути или просто выбрать несколько строк.
 
-    - Область **сообщений**: выбрав номер **строки**, можно перейти к нужной строке выполняемого скрипта.
+    - Панель **Сообщения**: выбрав номер **строки**, можно перейти к нужной строке выполняемого скрипта.
 
-Выполнение интерактивного запроса занимает гораздо меньше времени, чем [выполнение пакетного задания Hive](#submit-hive-batch-scripts).
+Выполнение интерактивного запроса занимает гораздо меньше времени, чем [выполнение пакетного задания Apache Hive](#submit-hive-batch-scripts).
 
 ### <a name="submit-hive-batch-scripts"></a>Отправка пакетных сценариев Hive
 
@@ -113,7 +112,7 @@ ms.locfileid: "51634452"
     ```hiveql
     SELECT * FROM hivesampletable;
     ```
-4. Щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: Hive Batch** (HDInsight: пакет Hive), чтобы отправить задание Hive. 
+4. Щелкните редактор скриптов правой кнопкой мыши и выберите **HDInsight: пакетное задание Hive**, чтобы отправить задание Hive. 
 
 5. Выберите кластер для отправки.  
 
@@ -121,7 +120,7 @@ ms.locfileid: "51634452"
 
    ![отправка результатов задания Hive](./media/apache-hadoop-linux-tutorial-get-started/submit-Hivejob-result.png)
 
-[Отправка интерактивных запросов Hive](#submit-interactive-hive-queries) происходит намного быстрее, чем отправка пакетного задания.
+[Отправка интерактивных запросов Apache Hive](#submit-interactive-hive-queries) происходит намного быстрее, чем отправка пакетного задания.
 
 ## <a name="use-visualstudio-to-run-hive-queries"></a>Использование Visual Studio для выполнения запросов Hive
 
@@ -148,7 +147,7 @@ ms.locfileid: "51634452"
    
     ![Снимок экрана примера 2 IntelliSense в средствах HDInsight для Visual Studio](./media/apache-hadoop-linux-tutorial-get-started/vs-intellisense-column-name.png "U-SQL IntelliSense")
    
-   > [!NOTE]
+   > [!NOTE]  
    > IntelliSense предлагает только метаданные кластеров, выбранных на панели инструментов HDInsight.
    > 
    
@@ -181,7 +180,7 @@ ms.locfileid: "51634452"
 
 ## <a name="run-hive-queries"></a>Выполнение запросов Hive
 
-[Apache Hive](hdinsight-use-hive.md) — это самый популярный компонент службы HDInsight. Существует множество способов выполнения заданий Hive в HDInsight. В этом руководстве используется представление Hive Ambari на портале. Другие способы отправки заданий Hive описаны в статье [Использование Hive в HDInsight](hdinsight-use-hive.md).
+[Apache Hive](hdinsight-use-hive.md) — это самый популярный компонент службы HDInsight. Существует множество способов выполнения заданий Hive в HDInsight. В этом руководстве используется представление Hive Ambari на портале. Другие способы отправки заданий Hive см. в руководстве по [использованию Apache Hive в HDInsight](hdinsight-use-hive.md).
 
 1. Чтобы открыть Ambari, на предыдущем экране выберите **Панель мониторинга кластера**.  Вы можете также перейти по ссылке **https://&lt;ClusterName>.azurehdinsight.net**, где &lt;ClusterName> — это кластер, созданный в предыдущем разделе.
 
@@ -199,10 +198,9 @@ ms.locfileid: "51634452"
 
     ![Представления Hive в HDInsight](./media/apache-hadoop-linux-tutorial-get-started/hiveview-1.png "Редактор запросов представления Hive в HDInsight")
    
-   > [!NOTE]
+   > [!NOTE]  
    > В Hive необходимо использовать точки с запятой.       
-   > 
-   > 
+
 
 5. Нажмите кнопку **Выполнить**. Под вкладкой **Запрос** появится вкладка **Результаты** с информацией о задании. 
    
@@ -218,7 +216,7 @@ ms.locfileid: "51634452"
 
     ![Сохранение результата запроса Hive](./media/apache-hadoop-linux-tutorial-get-started/hdinsight-linux-hive-view-save-results.png "Сохранение результата запроса Hive")
 
-Когда задание Hive будет завершено, вы сможете [экспортировать результаты в базу данных SQL Azure или базу данных SQL Server](apache-hadoop-use-sqoop-mac-linux.md) либо [визуализировать их с помощью Excel](apache-hadoop-connect-excel-power-query.md). Дополнительные сведения об использовании Hive в HDInsight см. в статье [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hdinsight-use-hive.md).
+Когда задание Hive будет завершено, вы сможете [экспортировать результаты в базу данных SQL Azure или базу данных SQL Server](apache-hadoop-use-sqoop-mac-linux.md) либо [визуализировать их с помощью Excel](apache-hadoop-connect-excel-power-query.md). Дополнительные сведения об использовании Hive в HDInsight см. в руководстве по [Apache Hive и HiveQL в Azure HDInsight](hdinsight-use-hive.md).
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 
@@ -227,10 +225,8 @@ ms.locfileid: "51634452"
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 После завершения работы с этой статьей кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры. 
 
-> [!NOTE]
+> [!NOTE]  
 > Если вы *сразу же* перейдете к следующему руководству, чтобы узнать, как выполнять операции извлечения, преобразования и загрузки, то можете не прерывать работу кластера. Дело в том, что в этом руководстве вам придется повторно создать кластер. Но если вы не собираетесь немедленно приступать к изучению следующего руководства, то нужно удалить кластер.
-> 
-> 
 
 **Удаление кластера и (или) учетной записи хранения по умолчанию**
 
@@ -251,13 +247,13 @@ ms.locfileid: "51634452"
 Если вы готовы приступить к работе с собственными данными и хотите узнать больше о том, как HDInsight сохраняет данные или как получать данные в HDInsight, обратитесь к следующим статьям:
 
 * Сведения о том, как HDInsight использует службу хранилища Azure, см. в статье [Использование службы хранилища Azure в HDInsight](../hdinsight-hadoop-use-blob-storage.md).
-* Сведения о том, как создать кластер HDInsight с Data Lake Storage, см. в статье [Краткое руководство. Настройка кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
+* Сведения о том, как создать кластер HDInsight с Data Lake Storage, см. в руководстве по [ настройке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 * Сведения об отправке данных в HDInsight см. в статье [Отправка данных в HDInsight](../hdinsight-upload-data.md).
 
 Дополнительные сведения об анализе данных с помощью HDInsight см. в следующих статьях:
 
-* Дополнительные сведения об использовании Hive с HDInsight, включая выполнение запросов Hive из Visual Studio, см. в статье [Использование Hive в HDInsight](hdinsight-use-hive.md).
-* Дополнительные сведения о языке Pig, который используется для преобразования данных, см. в статье [Использование Pig в HDInsight](hdinsight-use-pig.md).
+* Дополнительные сведения об использовании Hive с HDInsight, включая выполнение запросов Hive из Visual Studio, см. в статье [Обзор Apache Hive и HiveQL в Azure HDInsight](hdinsight-use-hive.md).
+* Дополнительные сведения о языке Pig, который используется для преобразования данных, см. в статье [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md).
 * Дополнительные сведения о MapReduce — способе написания программ, которые обрабатывают данные в Hadoop, — см. в статье [Использование MapReduce в Hadoop в HDInsight](hdinsight-use-mapreduce.md).
 * Дополнительные сведения об анализе данных в HDInsight с помощью средств HDInsight для Visual Studio см. в статье [Приступая к работе с инструментами Hadoop в Visual Studio для HDInsight](apache-hadoop-visual-studio-tools-get-started.md).
 * Дополнительные сведения о HDInsight для VS Code, который используется для анализа данных HDInsight, см. в статье [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).
@@ -265,7 +261,7 @@ ms.locfileid: "51634452"
 
 Дополнительные сведения о создании кластера HDInsight и управлении этим кластером см. в следующих статьях:
 
-* Сведения об управлении кластером HDInsight под управлением Linux см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](../hdinsight-hadoop-manage-ambari.md).
+* Сведения об управлении кластером HDInsight под управлением Linux см. в руководстве по [управлению кластерами HDInsight с помощью Apache Ambari](../hdinsight-hadoop-manage-ambari.md).
 * Дополнительные сведения о параметрах, которые можно выбрать при создании кластера HDInsight, см. в статье [Создание кластеров HDInsight в Linux с пользовательскими параметрами](../hdinsight-hadoop-provision-linux-clusters.md).
 
 
@@ -275,5 +271,3 @@ ms.locfileid: "51634452"
 [hdinsight-upload-data]: hdinsight-upload-data.md
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
-
-

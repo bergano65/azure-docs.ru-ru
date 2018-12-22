@@ -8,7 +8,7 @@ items:
   - name: Сведения о службе приложений в Linux
     href: app-service-linux-intro.md
   - name: Сравнение вариантов размещения
-    href: ../choose-web-site-cloud-service-vm.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    href: ../overview-compare.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
 - name: Быстрое начало работы
   items:
   - name: Создание приложения .NET Core
@@ -69,7 +69,7 @@ items:
   - name: Принцип работы службы приложений
     href: ../app-service-how-works-readme.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
   - name: Планы службы приложений
-    href: ../azure-web-sites-web-hosting-plans-in-depth-overview.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    href: ../overview-hosting-plans.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
   - name: Среда службы приложений
     href: ../environment/intro.md
   - name: Руководство для разработчиков Java
@@ -77,13 +77,13 @@ items:
   - name: Руководство по Java Enterprise
     href: app-service-java-enterprise.md
   - name: Входящие и исходящие IP-адреса
-    href: ../app-service-ip-addresses.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    href: ../overview-inbound-outbound-ips.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
   - name: Аутентификация и авторизация
-    href: ../app-service-authentication-overview.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+    href: ../overview-authentication-authorization.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
   - name: Выбор типа развертывания
     href: choose-deployment-type.md
   - name: Диагностика
-    href: ../app-service-diagnostics.md
+    href: ../overview-diagnostics.md
 - name: Практические руководства
   items:
   - name: Настройка приложения
@@ -113,15 +113,15 @@ items:
     - name: Сброс учетных данных развертывания
       href: ../deploy-configure-credentials.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Создание промежуточных сред
-      href: ../web-sites-staged-publishing.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      href: ../deploy-staging-slots.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
   - name: Сопоставление пользовательского домена
     items:
     - name: Приобретение домена
-      href: ../custom-dns-web-site-buydomains-web-app.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      href: ../manage-custom-dns-buy-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Сопоставление доменов с помощью диспетчера трафика
       href: ../web-sites-traffic-manager-custom-domain-name.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Перенос активного домена
-      href: ../app-service-custom-domain-name-migrate.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      href: ../manage-custom-dns-migrate-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
   - name: Безопасность приложения
     items:
     - name: Приобретение SSL-сертификата
@@ -149,7 +149,7 @@ items:
     - name: Масштабирование на несколько экземпляров
       href: ../../monitoring-and-diagnostics/insights-how-to-scale.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Высокая плотность размещения
-      href: ../app-service-high-density-hosting.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      href: ../manage-scale-per-app.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
   - name: Мониторинг приложения
     items:
     - name: Подключение к приложению по протоколу SSH
@@ -157,13 +157,13 @@ items:
     - name: Квоты и оповещения
       href: ../web-sites-monitor.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Включение журналов
-      href: ../web-sites-enable-diagnostic-log.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      href: ../troubleshoot-diagnostic-logs.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Интеграция APM для Java
       href: how-to-java-apm-monitoring.md
   - name: Управление приложением
     items:
     - name: Резервное копирование приложения
-      href: ../web-sites-backup.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      href: ../manage-backup.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Восстановление из резервной копии
       href: ../web-sites-restore.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Клонирование приложения
@@ -205,7 +205,7 @@ items:
   - name: Устранение неполадок
     items:
     - name: Устранение неполадок с помощью Visual Studio
-      href: ../web-sites-dotnet-troubleshoot-visual-studio.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
+      href: ../troubleshoot-dotnet-visual-studio.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Устранение неполадок с приложением Node.js
       href: ../app-service-web-nodejs-best-practices-and-troubleshoot-guide.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
     - name: Устранение неполадок в HTTP 502 и 503
@@ -222,9 +222,9 @@ items:
         href: ../faq-open-source-technologies.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
       - name: Часто задаваемые вопросы о настройке и управлении
         href: ../faq-configuration-and-management.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json
-ms.openlocfilehash: 3e0ce6b9c8f3fa3aaf88ba8994bf7eb58911da85
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: f29fa4901e2eb8e3a6bcabcc72e4dba37041186a
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53604503"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53719529"

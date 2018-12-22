@@ -1,23 +1,24 @@
 ---
-title: Руководство 1. Поиск намерений в пользовательском приложении LUIS
+title: Прогнозирование намерений
 titleSuffix: Azure Cognitive Services
 description: Создание пользовательского приложения, которое прогнозирует пользовательские намерения. Это приложение является простейшим типом приложения LUIS, так как оно не извлекает различные элементы данных из текста высказывания, такие как адреса электронной почты или даты.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 30c9f572d77caacbeecf5f15d74fd8517e9fa883
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: b1a9718fdf7222dae06f7fe9b3a0f14b50293c08
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52426865"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53097800"
 ---
-# <a name="tutorial-1-build-custom-app-to-determine-user-intentions"></a>Руководство 1. Создание пользовательского приложения для определения намерений
+# <a name="tutorial-1-build-custom-app-to-determine-user-intentions"></a>Руководство 1. Создание пользовательского приложения для определения намерений пользователя
 
 В этом руководстве вы создадите пользовательское приложение "Управление персоналом", которое прогнозирует пользовательские намерения на основе высказываний (текста). В итоге вы получите конечную точку LUIS, работающую в облаке.
 
@@ -43,11 +44,11 @@ ms.locfileid: "52426865"
 
 2. Выберите **Создать приложение**.  
 
-    [![](media/luis-quickstart-intents-only/app-list.png "Снимок экрана страницы My Apps (Мои приложения) Интеллектуальной службы распознавания речи (LUIS)")](media/luis-quickstart-intents-only/app-list.png#lightbox)
+    [![Снимок экрана со страницей My Apps (Мои приложения) Интеллектуальной службы распознавания речи (LUIS)](media/luis-quickstart-intents-only/app-list.png "Screenshot of Language Understanding (LUIS) My Apps page")](media/luis-quickstart-intents-only/app-list.png#lightbox)
 
 3. Во всплывающем диалоговом окне введите имя `HumanResources` и сохраните язык и региональные параметры по умолчанию (**на английском языке**). Описание оставьте пустым.
 
-    ![Новое приложение LUIS](./media/luis-quickstart-intents-only/create-app.png)
+    ![Создание приложения LUIS под названием HumanResources](./media/luis-quickstart-intents-only/create-app.png)
 
     Далее появится страница **намерений** с намерением **None** (Отсутствует).
 
@@ -55,7 +56,7 @@ ms.locfileid: "52426865"
 
 1. Выберите **Create new intent**. (Создать намерение). Введите имя нового намерения `GetJobInformation`. Это намерение предсказывается каждый раз, когда пользователь хочет получить сведения об открытых вакансиях в компании.
 
-    ![](media/luis-quickstart-intents-only/create-intent.png "Снимок экрана диалогового окна нового намерения Интеллектуальной службы распознавания речи (LUIS)")
+    ![Снимок экрана с диалоговым окном New intent (Новое намерение) Интеллектуальной службы распознавания речи (LUIS)](media/luis-quickstart-intents-only/create-intent.png "Screenshot of Language Understanding (LUIS) New intent dialog")
 
 2. Предоставляя _примеры высказываний_, вы обучаете службу LUIS прогнозированию определенного типа высказываний для этого намерения. Добавьте в намерение несколько примеров высказываний, которые ожидаются от пользователя.
 
@@ -69,7 +70,7 @@ ms.locfileid: "52426865"
     |Новые вакансии?|
     |Есть вакансии в офисе в Сиэтле?|
 
-    [![](media/luis-quickstart-intents-only/utterance-getstoreinfo.png "Снимок экрана с вводом новых фраз для намерения MyStore")](media/luis-quickstart-intents-only/utterance-getstoreinfo.png#lightbox)
+    [![Снимок экрана: ввод новых высказываний для намерения MyStore](media/luis-quickstart-intents-only/utterance-getstoreinfo.png "Screenshot of entering new utterances for MyStore intent")](media/luis-quickstart-intents-only/utterance-getstoreinfo.png#lightbox)
 
     [!INCLUDE [Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]    
 
@@ -150,7 +151,7 @@ ms.locfileid: "52426865"
     |Это мое резюме должность 654234|
     |Должность 567890 и мои документы|
 
-    [![](media/luis-quickstart-intents-only/utterance-applyforjob.png "Снимок экрана с вводом новых фраз для намерения ApplyForJob")](media/luis-quickstart-intents-only/utterance-applyforjob.png#lightbox)
+    [![Снимок экрана: ввод новых высказываний для намерения ApplyForJob](media/luis-quickstart-intents-only/utterance-applyforjob.png "Screenshot of entering new utterances for MyStore intent")](media/luis-quickstart-intents-only/utterance-applyforjob.png#lightbox)
 
     Помеченное намерение выделено красным цветом, так как в настоящее время приложение LUIS не уверено в правильности намерения. При обучении приложение сообщает LUIS, что эти фразы выражают верное намерение. 
 
@@ -168,7 +169,7 @@ ms.locfileid: "52426865"
 
 2. В новом окне браузера введите `Can I submit my resume for job 235986` в конце URL-адреса. 
 
-    ```JSON
+    ```json
     {
       "query": "Can I submit my resume for job 235986",
       "topScoringIntent": {

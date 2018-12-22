@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 12/03/2018
 ms.author: dech
-ms.openlocfilehash: ef805ff82b8f44f4caeeafdc8867d851f4501894
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: c0b1ed5aff7f22000a179983396239c24d21a311
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52852798"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53101336"
 ---
 # <a name="tutorial-develop-an-aspnet-mvc-web-application-with-azure-cosmos-db-by-using-net-preview-sdk"></a>Руководство. Разработка веб-приложения ASP.NET MVC с использованием Azure Cosmos DB с помощью предварительной версии пакета SDK для .NET 
 
@@ -47,7 +47,7 @@ ms.locfileid: "52852798"
 
 Перед выполнением инструкций, приведенных в этой статье, обеспечьте наличие следующих ресурсов:
 
-* **Активная учетная запись Azure.** Если у вас нет подписки Azure, перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F). 
+* **Активная учетная запись Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) , прежде чем начинать работу. 
 
   [!INCLUDE [cosmos-db-emulator-docdb-api](../../includes/cosmos-db-emulator-docdb-api.md)]
 
@@ -67,7 +67,7 @@ ms.locfileid: "52852798"
 
 В следующем разделе вы создадите приложение ASP.NET MVC. 
 
-## <a name="create-a-new-mvc-application"></a>Шаг 2. Создание нового приложения ASP.NET MVC
+## <a name="create-a-new-mvc-application"></a>Шаг 2. Создание приложения ASP.NET MVC
 
 1. В Visual Studio откройте меню **Файл** и выберите **Создать**, а затем — **Проект**. Откроется диалоговое окно **Новый проект** .
 
@@ -194,7 +194,7 @@ ms.locfileid: "52852798"
 
 Как только все будет готово, закройте документы cshtml в Visual Studio, вы вернетесь к ним позже.
 
-## <a name="connect-to-cosmosdb"></a>Шаг 5. Подключение к Azure Cosmos DB 
+## <a name="connect-to-cosmosdb"></a>Шаг 5. Подключение к Azure Cosmos DB 
 
 Теперь, когда мы позаботились об основных ресурсах MVC, давайте рассмотрим добавление кода для подключения к Azure Cosmos DB и выполнения операций CRUD. 
 
@@ -244,7 +244,7 @@ ms.locfileid: "52852798"
 ![Снимок экрана: веб-приложение "Список дел", созданное с помощью этого учебника](./media/sql-api-dotnet-application-preview/build-and-run-the-project-now.png)
 
 
-## <a name="run-the-application"></a>Шаг 6. Локальный запуск приложения
+## <a name="run-the-application"></a>Шаг 6. Локальный запуск приложения
 
 Для проверки приложения на локальном компьютере выполните следующие действия:
 
@@ -288,8 +288,8 @@ ms.locfileid: "52852798"
 > [Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL]( sql-api-java-application.md)
 
 
-[Visual Studio Express]: http://www.visualstudio.com/products/visual-studio-express-vs.aspx
-[Microsoft Web Platform Installer]: http://www.microsoft.com/web/downloads/platform.aspx
-[Preventing Cross-Site Request Forgery]: http://go.microsoft.com/fwlink/?LinkID=517254
-[Basic CRUD Operations in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
+[Visual Studio Express]: https://www.visualstudio.com/products/visual-studio-express-vs.aspx
+[Microsoft Web Platform Installer]: https://www.microsoft.com/web/downloads/platform.aspx
+[Preventing Cross-Site Request Forgery]: https://go.microsoft.com/fwlink/?LinkID=517254
+[Basic CRUD Operations in ASP.NET MVC]: https://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/cosmos-dotnet-todo-app

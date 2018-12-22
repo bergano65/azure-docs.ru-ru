@@ -1,24 +1,27 @@
 ---
-title: Руководство по службе контейнеров Azure — подготовка ACR
+title: Руководство по службе контейнеров Azure — подготовка ACR (не рекомендуется)
 description: Руководство по службе контейнеров Azure — подготовка ACR
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/26/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 735aca5509373f840c56e28887088f7a696ca137
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: c3e5e7c4fb46b3f68013ac857dcad2e5434a978d
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024092"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52998312"
 ---
-# <a name="deploy-and-use-azure-container-registry"></a>Развертывание реестра контейнеров Azure и его использование
+# <a name="deprecated-deploy-and-use-azure-container-registry"></a>Развертывание Реестра контейнеров Azure и его использование (не рекомендуется)
 
-[!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
+> [!TIP]
+> Обновленная версия этого руководства, в котором используется служба Azure Kubernetes — [Руководство. Развертывание Реестра контейнеров Azure и его использование](../../aks/tutorial-kubernetes-prepare-acr.md).
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
 Реестр контейнеров Azure (ACR) является частным реестром на базе Azure для образов контейнеров Docker. В этом руководстве (здесь представлена вторая его часть из семи) рассматриваются основные шаги для развертывания экземпляра реестра контейнеров Azure и отправки в него образов контейнеров. В частности, рассматриваются такие шаги:
 

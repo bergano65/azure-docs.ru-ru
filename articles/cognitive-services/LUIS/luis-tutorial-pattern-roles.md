@@ -1,7 +1,8 @@
 ---
-title: Руководство 4. Роли контекстно-связанных шаблонов
+title: Роли шаблонов
 titleSuffix: Azure Cognitive Services
 description: Используйте шаблон для извлечения данных из хорошо отформатированного высказывания шаблона. Высказывание шаблона использует простой объект и роли для извлечения связанных данных, таких как местоположение и место назначения.
+ms.custom: seodec18
 services: cognitive-services
 author: diberry
 manager: cgronlun
@@ -10,14 +11,14 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: d13d77fdb741f7f7cf16e3d25c755f4363e56f93
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: b6d800705509edc31b410d1e9cd30f8b53702010
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52427494"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094412"
 ---
-# <a name="tutorial-4-extract-contextually-related-patterns"></a>Руководство 4. Извлечение контекстно-зависимых шаблонов
+# <a name="tutorial-4-extract-contextually-related-patterns"></a>Руководство 4. Извлечение контекстуально связанных шаблонов
 
 В этом руководстве используйте шаблон для извлечения данных из хорошо отформатированного высказывания шаблона. Высказывание шаблона использует простой объект и роли для извлечения связанных данных, таких как местоположение и место назначения.  При использовании шаблонов для намерения требуется меньшее количество примеров высказываний.
 
@@ -28,7 +29,7 @@ ms.locfileid: "52427494"
 
 Новый сотрудник с семьей должны быть перемещены из текущего города в город, где находится вымышленная компания. Новый сотрудник может прибыть из любого города, поэтому нужно учитывать расположение. Список набора, такой как сущность списка, не будет работать, так как будет извлекаться только название города.
 
-Имена ролей, связанных с исходным городом и городом назначения, должны быть уникальными для всех сущностей. Чтобы убедиться, что роли являются уникальными, необходимо привязать их к содержащей сущности через стратегию именования. Сущность **NewEmployeeRelocation** — это простая сущность с двумя ролями: **NewEmployeeReloOrigin** и **NewEmployeeReloDestination**. "Relo" — сокращение от слова "relocation" (перемещение).
+Имена ролей, связанных с исходным городом и городом назначения, должны быть уникальными для всех сущностей. Чтобы убедиться, что роли являются уникальными, необходимо привязать их к содержащей сущности через стратегию именования. Сущность **NewEmployeeRelocation** является простой сущностью с двумя ролями — **NewEmployeeReloOrigin** и **NewEmployeeReloDestination**. "Relo" — сокращение от слова "relocation" (перемещение).
 
 Поскольку пример выражения `Move new employee Robert Williams from Sacramento and San Francisco` имеет только машинно-обученные сущности, важно для намерения предоставить достаточное количество примерных высказываний, чтобы сущности были обнаружены.  
 
@@ -128,7 +129,7 @@ ms.locfileid: "52427494"
 
 2. Перейдите в конец URL-адреса и введите `Move Wayne Berry from Miami to Mount Vernon`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
 
-    ```JSON
+    ```json
     {
       "query": "Move Wayne Berry from Newark to Columbus",
       "topScoringIntent": {
@@ -258,7 +259,7 @@ ms.locfileid: "52427494"
 
 2. Перейдите в конец URL-адреса и введите `Move wayne berry from miami to mount vernon`. Последний параметр строки запроса — `q`. Это **запрос** фразы. 
 
-    ```JSON
+    ```json
     {
       "query": "Move Wayne Berry from Miami to Mount Vernon",
       "topScoringIntent": {

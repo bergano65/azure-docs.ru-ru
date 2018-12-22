@@ -1,6 +1,6 @@
 ---
-title: Разработка веб-приложения на основе PHP и MySQL в службе приложений Azure на платформе Linux | Документация Майкрософт
-description: Узнайте, как создать приложение PHP, работающее в Azure, с подключением к базе данных MySQL в Azure.
+title: Создание веб-приложения PHP с помощью MySQL на платформе Linux — Служба приложений Azure | Документация Майкрософт
+description: Узнайте, как создать приложение PHP, работающее в Службе приложений Azure в Linux, с подключением к базе данных MySQL в Azure.
 services: app-service\web
 author: cephalin
 manager: erikre
@@ -10,13 +10,13 @@ ms.devlang: php
 ms.topic: tutorial
 ms.date: 11/15/2018
 ms.author: cephalin
-ms.custom: mvc
-ms.openlocfilehash: 91beef3076005fc7b95b1ffd208be238e23a7b8b
-ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
+ms.custom: seodec18
+ms.openlocfilehash: 5d9843eecfed56f09c3a6d659976ca1ce5f42d80
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52291493"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53342366"
 ---
 # <a name="build-a-php-and-mysql-web-app-in-azure-app-service-on-linux"></a>Разработка веб-приложения на основе PHP и MySQL в службе приложений Azure на платформе Linux
 
@@ -45,9 +45,9 @@ ms.locfileid: "52291493"
 Для работы с этим руководством:
 
 * [установите Git](https://git-scm.com/);
-* [PHP 5.6.4 или более поздней версии](http://php.net/downloads.php);
+* [PHP 5.6.4 или более поздней версии](https://php.net/downloads.php);
 * [Composer](https://getcomposer.org/doc/00-intro.md);
-* включите следующие расширения PHP, требуемые для Laravel: OpenSSL, PDO-MySQL, Mbstring, Tokenizer, XML;
+* Включите следующие расширения PHP, необходимые для Laravel: OpenSSL, PDO-MySQL, Mbstring, Tokenizer и XML.
 * [MySQL](https://dev.mysql.com/doc/refman/5.7/en/installing.html) (этот компонент потребуется запустить). 
 
 ## <a name="prepare-local-mysql"></a>Подготовка локальной базы данных MySQL
@@ -194,7 +194,7 @@ az mysql server firewall-rule create --name allAzureIPs --server <mysql_server_n
 > Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](../app-service-ip-addresses.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#find-outbound-ips).
 >
 
-В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<you_ip_address >* [локальным IPv4-адресом](http://www.whatsmyip.org/).
+В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<you_ip_address >* [локальным IPv4-адресом](https://www.whatsmyip.org/).
 
 ```azurecli-interactive
 az mysql server firewall-rule create --name AllowLocalClient --server <mysql_server_name> --resource-group myResourceGroup --start-ip-address=<your_ip_address> --end-ip-address=<your_ip_address>
@@ -350,7 +350,7 @@ git commit -m "database.php updates"
 az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings DB_HOST="<mysql_server_name>.mysql.database.azure.com" DB_DATABASE="sampledb" DB_USERNAME="phpappuser@<mysql_server_name>" DB_PASSWORD="MySQLAzure2017" MYSQL_SSL="true"
 ```
 
-Для доступа к параметрам можно использовать метод PHP [getenv](http://php.net/manual/en/function.getenv.php). В коде Laravel используется программа-оболочка [env](https://laravel.com/docs/5.4/helpers#method-env) для PHP `getenv`. Например, конфигурация MySQL в файле _config/database.php_ выглядит следующим образом:
+Для доступа к параметрам можно использовать метод PHP [getenv](https://php.net/manual/en/function.getenv.php). В коде Laravel используется программа-оболочка [env](https://laravel.com/docs/5.4/helpers#method-env) для PHP `getenv`. Например, конфигурация MySQL в файле _config/database.php_ выглядит следующим образом:
 
 ```php
 'mysql' => [

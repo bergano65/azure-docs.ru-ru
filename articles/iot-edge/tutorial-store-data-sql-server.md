@@ -1,5 +1,5 @@
 ---
-title: Сохранение данных с помощью модуля SQL Azure IoT Edge | Документация Майкрософт
+title: Руководство по хранению данных с помощью модуля SQL — Azure IoT Edge | Документация Майкрософт
 description: Узнайте, как хранить данные локально на устройстве IoT Edge, используя модуль SQL Server
 services: iot-edge
 author: kgremban
@@ -8,15 +8,15 @@ ms.author: kgremban
 ms.date: 12/01/2018
 ms.topic: tutorial
 ms.service: iot-edge
-ms.custom: mvc
-ms.openlocfilehash: b0d26704d287f2e02541cc667250af8e8005f864
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.custom: mvc, seodec18
+ms.openlocfilehash: 0193d79dec663b089184099c2a4d275c91380c8b
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52833999"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53163418"
 ---
-# <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство по хранению данных в пограничной системе с помощью баз данных SQL Server
+# <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство. Хранение данных в граничной системе с помощью баз данных SQL Server
 
 Используйте Azure IoT Edge и SQL Server для хранения и запроса данных в пограничной системе. Azure IoT Edge предоставляет базовые функции хранения для кэширования сообщений при переходе устройства в автономный режим и последующей их переадресацией при повторном подключении. Однако вам могут потребоваться дополнительные возможности хранения данных, например возможность запрашивать данные локально. При использовании локальных баз данных устройства IoT Edge могут выполнять более сложные вычисления без необходимости поддерживать соединение с Центром Интернета вещей. Например, датчик на компьютере отправляет данные в облако раз в месяц для отчетности и оптимизации модуля машинного обучения. При этом данные датчика за последние несколько дней доступны для пользователей на локальном компьютере.
 
@@ -87,7 +87,7 @@ ms.locfileid: "52833999"
 
 2. Выберите **Представление** > **Палитра команд** для открытия палитры команд VS Code.
 
-3. В палитре команд введите и выполните команду**Azure IoT Edge: New IoT Edge solution**. В палитре команд укажите следующие сведения для создания решения: 
+3. В палитре команд введите и выполните команду **Azure IoT Edge: New IoT Edge Solution** (Azure IoT Edge: создать решение IoT Edge). В палитре команд укажите следующие сведения для создания решения: 
 
    | Поле | Значение |
    | ----- | ----- |
@@ -163,7 +163,7 @@ ms.locfileid: "52833999"
                        {
                            //Execute the command and log the # rows affected.
                            var rows = await cmd.ExecuteNonQueryAsync();
-                           log.Info($"{rows} rows were updated");
+                           logger.LogInformation($"{rows} rows were updated");
                        }
                    }
 
@@ -251,7 +251,7 @@ ms.locfileid: "52833999"
    }
    ```
 
-   ![Добавление контейнера SQL Server](./media/tutorial-store-data-sql-server/view_json_sql.png)
+   ![Добавление модуля SQL Server в манифест](./media/tutorial-store-data-sql-server/view_json_sql.png)
 
 5. В зависимости от типа контейнеров Docker на устройстве IoT Edge обновите параметры модуля **sql**, используя следующий код:
    * Контейнеры Windows:
@@ -324,7 +324,7 @@ ms.locfileid: "52833999"
 
 Модули на устройстве можно задать с помощью Центра Интернета вещей, однако доступ к Центру Интернета вещей и устройствам можно также получить через Visual Studio Code. В этом разделе настраивается доступ к Центру Интернета вещей. Используйте VS Code для развертывания решения на устройстве IoT Edge. 
 
-1. В палитре команд VS Code выберите **Azure IoT Hub: Select IoT Hub**.
+1. В палитре команд VS Code выберите **Azure IoT Hub: Select IoT Hub** (Azure IoT Hub: выбрать Центр Интернета вещей).
 
 2. Следуйте указаниям по входу в учетную запись Azure. 
 
@@ -416,7 +416,7 @@ ms.locfileid: "52833999"
    GO
    ```
 
-   ![Просмотр локальных данных](./media/tutorial-store-data-sql-server/view-data.png)
+   ![Просмотр содержимого локальной базы данных](./media/tutorial-store-data-sql-server/view-data.png)
 
 
 

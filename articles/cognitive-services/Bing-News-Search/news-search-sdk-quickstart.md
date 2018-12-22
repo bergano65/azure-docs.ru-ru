@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство по работе с пакетом SDK для API Bing для поиска новостей, C#
+title: Краткое руководство. Поиск новостей с помощью пакета SDK Поиска новостей Bing для C#
 titleSuffix: Azure Cognitive Services
-description: Настройка консольного приложения, созданного с помощью пакета SDK для API Bing для поиска новостей.
+description: В этом кратком руководстве описано, как искать новости с помощью пакета SDK Поиска новостей Bing для Python и обрабатывать ответы.
 services: cognitive-services
 author: mikedodaro
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: bing-news-search
 ms.topic: quickstart
 ms.date: 01/30/2018
 ms.author: v-gedod
-ms.openlocfilehash: 447c59d45e3b1614ce8dbddc56f9dba0dd156e90
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.custom: seodec2018
+ms.openlocfilehash: d116f2553ce35c2d4041f37cc3fe4567e1595adc
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317064"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53258769"
 ---
-# <a name="quickstart-bing-news-search-sdk-with-c"></a>Краткое руководство по работе с пакетом SDK для API Bing для поиска новостей с использованием C#
+# <a name="quickstart-perform-a-news-search-with-the-bing-news-search-sdk-for-c"></a>Краткое руководство. Поиск новостей с помощью пакета SDK Поиска новостей Bing для C#
 
 Пакет SDK для API Bing для поиска новостей содержит функции REST API для обработки запросов новостей и анализа результатов. 
 

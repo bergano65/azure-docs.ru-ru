@@ -1,24 +1,27 @@
 ---
-title: 'Руководство по Службе контейнеров Azure: развертывание приложения'
+title: 'Руководство по Службе контейнеров Azure: развертывание приложения (не рекомендуется)'
 description: 'Руководство по Службе контейнеров Azure: развертывание приложения'
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 02/26/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: e7f9c0c3ad11cb6988f528503d614ab26dcc0968
-ms.sourcegitcommit: 4ea0cea46d8b607acd7d128e1fd4a23454aa43ee
+ms.openlocfilehash: dafbb8d1221d5e9c6194611ad338b3714a089cea
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "41919186"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52998777"
 ---
-# <a name="run-applications-in-kubernetes"></a>Запуск приложений в Kubernetes
+# <a name="deprecated-run-applications-in-kubernetes"></a>Запуск приложений в Kubernetes (не рекомендуется)
 
-[!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
+> [!TIP]
+> Обновленная версия этого руководства, в котором используется служба Azure Kubernetes — [Руководство. Запуск приложений в службе Azure Kubernetes (AKS)](../../aks/tutorial-kubernetes-deploy-application.md).
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
 В этом руководстве (часть 4 из 7) выполняется развертывание примера приложения в кластер Kubernetes. В частности, рассматриваются такие шаги:
 

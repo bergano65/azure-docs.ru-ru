@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 10/23/2018
 ms.author: jeffgilb
 ms.reviewer: quying
-ms.openlocfilehash: 84aaa5534c629554074544b4bb56ae8da8825397
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: bee684409b2ef3fffeb9f175c2b469d3736b6484
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49986461"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993836"
 ---
 # <a name="tutorial-offer-highly-available-mysql-databases"></a>Руководство. Предоставление высокодоступных баз данных MySQL
 
@@ -46,7 +46,7 @@ ms.locfileid: "49986461"
 > Все следующие элементы необходимы для создания кластера MySQL.
 
 - [MySQL с репликацией](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/bitnami.mysql-cluster). Это шаблон решения Bitnami, который используется для развертывания кластера MySQL.
-- [Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/credativ.Debian8backports?tab=Overview). Debian 8 "Jessie" с бэкпортированным ядром для Microsoft Azure предоставляется компанией Credativ. Debian GNU/Linux является одним из наиболее распространенных дистрибутивов Linux.
+- [Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/marketplace/apps/credativ.Debian). Debian 8 "Jessie" с бэкпортированным ядром для Microsoft Azure предоставляется компанией Credativ. Debian GNU/Linux является одним из наиболее распространенных дистрибутивов Linux.
 - [Настраиваемый сценарий для Linux 2.0](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/microsoft.custom-script-linux?tab=Overview). Расширение пользовательских сценариев — это средство для выполнения задач настройки виртуальной машины после ее подготовки. После добавления расширения к виртуальной машине можно загружать сценарии из службы хранилища Azure и запускать их на виртуальной машине. Задачи расширения пользовательских сценариев можно автоматизировать с помощью командлетов Azure PowerShell и кроссплатформенного интерфейса командной строки Azure.
 - Расширение VM Access для Linux 1.4.7. Расширение VM Access позволяет сбросить пароль, ключ SSH или конфигурации SSH, благодаря чему вы можете восстановить доступ к виртуальной машине. Вы также можете добавить или удалить пользователя с помощью пароля или ключа SSH, используя это расширение. Оно предназначено для виртуальных машин Linux.
 

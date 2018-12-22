@@ -1,21 +1,21 @@
 ---
-title: Руководство. Автоматизация сборок образов контейнера с помощью задач службы "Реестр контейнеров Azure"
-description: Из этого руководства вы узнаете, как настроить задачу, чтобы автоматически активировать сборки образов контейнера в облаке при фиксации исходного кода в репозитории Git.
+title: Руководство. Автоматизация сборок образов контейнера с помощью набора функций "Задачи Реестра контейнеров Azure"
+description: Из этого руководства вы узнаете, как настроить задачу Реестра контейнеров Azure, чтобы автоматически активировать сборки образов контейнера в облаке при фиксации исходного кода в репозитории Git.
 services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: danlep
-ms.custom: mvc
-ms.openlocfilehash: 27dbee3b292a9139ce53ef7b09a4cceba56082e4
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.custom: seodec18, mvc
+ms.openlocfilehash: 3dc602589dc3a909ea2a2cf2925d37df0a97605b
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48857233"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53436251"
 ---
-# <a name="tutorial-automate-container-image-builds-with-azure-container-registry-tasks"></a>Руководство. Автоматизация сборок образов контейнера с помощью задач службы "Реестр контейнеров Azure"
+# <a name="tutorial-automate-container-image-builds-in-the-cloud-when-you-commit-source-code"></a>Руководство. Автоматизация создания образов контейнеров в облаке при фиксации исходного кода
 
 В дополнение к функции [быстрой задачи](container-registry-tutorial-quick-task.md) решение "Задачи ACR" поддерживает автоматические сборки образов контейнера Docker с помощью *задачи сборки*. Из этого руководства вы узнаете, как с помощью Azure CLI создать задание, которое автоматически активирует сборки образов в облаке при фиксации исходного кода в репозитории Git.
 
@@ -41,7 +41,7 @@ ms.locfileid: "48857233"
 
 ### <a name="container-registry"></a>Реестр контейнеров
 
-Для выполнения заданий данного руководства необходимо иметь реестр контейнеров Azure в подписке Azure. Если вам нужен реестр, см. сведения в [предыдущем руководстве](container-registry-tutorial-quick-task.md) или в статье [Краткое руководство. Создание реестра контейнеров с использованием Azure CLI](container-registry-get-started-azure-cli.md).
+Для выполнения заданий данного руководства необходимо иметь реестр контейнеров Azure в подписке Azure. Если у вас его нет, воспользуйтесь инструкциями в [предыдущем руководстве](container-registry-tutorial-quick-task.md) или [кратком руководстве по созданию реестра контейнеров с помощью Azure CLI](container-registry-get-started-azure-cli.md).
 
 ## <a name="overview-of-acr-tasks"></a>Общие сведения о решении "Задачи ACR"
 
@@ -155,7 +155,7 @@ $ az acr task create \
           "branch": "master",
           "repositoryUrl": "https://github.com/gituser/acr-build-helloworld-node",
           "sourceControlAuthProperties": null,
-          "sourceControlType": "Github"
+          "sourceControlType": "GitHub"
         },
         "sourceTriggerEvents": [
           "commit"

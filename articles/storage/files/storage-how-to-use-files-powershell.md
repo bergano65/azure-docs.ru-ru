@@ -8,14 +8,14 @@ ms.topic: quickstart
 ms.date: 10/26/2018
 ms.author: wgries
 ms.component: files
-ms.openlocfilehash: 48ac46a9087e8027d0282533afccc4d9b28481ba
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: a82e7d795d9e40ebef8cf0937dd2b91f5bacd42e
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582474"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53138880"
 ---
-# <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство: создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
+# <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
 В этом руководстве рассматриваются основы работы с [общими файловыми ресурсами Azure](storage-files-introduction.md) с помощью PowerShell. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -227,16 +227,18 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 Кроме того, ресурсы можно удалить по одному.
 
 - Чтобы удалить файловые ресурсы Azure, созданные для этого краткого руководства:
-```azurepowershell-interactive
-Get-AzureStorageShare -Context $storageAcct.Context | Where-Object { $_.IsSnapshot -eq $false } | ForEach-Object { 
-    Remove-AzureStorageShare -Context $storageAcct.Context -Name $_.Name
-}
-```
+
+    ```azurepowershell-interactive
+    Get-AzureStorageShare -Context $storageAcct.Context | Where-Object { $_.IsSnapshot -eq $false } | ForEach-Object { 
+        Remove-AzureStorageShare -Context $storageAcct.Context -Name $_.Name
+    }
+    ```
 
 - Чтобы удалить учетную запись хранения (при этом будут неявно удалены созданные файловые ресурсы Azure, а также другие созданные ресурсы хранения, такие как контейнер хранилища BLOB-объектов Azure).
-```azurepowershell-interactive
-Remove-AzureRmStorageAccount -ResourceGroupName $storageAcct.ResourceGroupName -Name $storageAcct.StorageAccountName
-```
+
+    ```azurepowershell-interactive
+    Remove-AzureRmStorageAccount -ResourceGroupName $storageAcct.ResourceGroupName -Name $storageAcct.StorageAccountName
+    ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

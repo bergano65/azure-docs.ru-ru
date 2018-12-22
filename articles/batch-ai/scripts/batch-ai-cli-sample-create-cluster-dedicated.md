@@ -14,14 +14,17 @@ ms.tgt-pltfrm: multiple
 ms.workload: na
 ms.date: 07/26/2018
 ms.author: danlep
-ms.openlocfilehash: 10f3444f81dfaeac4331f0b7798ade7eefbd29fb
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ROBOTS: NOINDEX
+ms.openlocfilehash: 643d2a5a600d018912f09d01f2e018100767f147
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44058191"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53410131"
 ---
 # <a name="cli-example-create-and-manage-a-batch-ai-cluster-of-dedicated-nodes"></a>Пример использования CLI. Создание и администрирование кластера Batch AI, состоящего из выделенных узлов
+
+[!INCLUDE [batch-ai-retiring](../../../includes/batch-ai-retiring.md)]
 
 Этот скрипт демонстрирует некоторые из команд Azure CLI для создания и администрирования кластера Batch AI, состоящего из выделенных узлов (виртуальных машин).
 
@@ -55,7 +58,7 @@ az group delete --name batchaiautostorage
 | [az batchai workspace create](/cli/azure/batchai/workspace#az-batchai-workspace-create) | Создает рабочую область Batch AI. |
 | [az batchai cluster create](/cli/azure/batchai/cluster#az-batchai-cluster-create) | Создает кластер Batch AI. |
 | [az batchai cluster show](/cli/azure/batchai/cluster#az-batchai-cluster-show) | Отображает сведения о кластере Batch AI. |
-| [az batchai cluster node list](/cli/azure/batchai/cluster/node#az-batchai-cluster-show) | Отображает список узлов в кластере Batch AI. |
+| [az batchai cluster node list](/cli/azure/batchai/cluster/node#az-batchai-cluster-show) | Вывод списка узлов кластера Batch AI. |
 | [az batchai cluster resize](/cli/azure/batchai/cluster#az-batchai-cluster-resize) | Изменяет размер кластера Batch AI.  |
 | [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 

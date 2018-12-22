@@ -1,23 +1,24 @@
 ---
-title: Краткое руководство. Распознавание речи в C# в приложении UWP с помощью пакета SDK для службы "Речь"
+title: Краткое руководство. Распознавание речи с помощью приложения C# для универсальной платформы Windows в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как распознавать речь в UWP, используя пакет SDK для службы "Речь"
+description: Из этой статьи вы узнаете, как создать приложение C# для универсальной платформы Windows с помощью пакета SDK службы "Речь" в Cognitive Services. Вы преобразуете речь с микрофона вашего устройства в текст в реальном времени. Приложение создается с использованием пакета SDK службы "Речь" для NuGet и Microsoft Visual Studio 2017.
 services: cognitive-services
 author: wolfma61
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: quickstart
-ms.date: 11/06/2018
+ms.date: 12/06/2018
 ms.author: wolfma
-ms.openlocfilehash: 7b132ea9fea7591d32b693ef9c95acf7626c8fff
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.custom: seodec18
+ms.openlocfilehash: 55988ef65e223c76a485c3cbec13626abf68d3b9
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51218905"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53104635"
 ---
-# <a name="quickstart-recognize-speech-in-a-uwp-app-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении UWP с помощью пакета SDK для службы "Речь"
+# <a name="quickstart-recognize-speech-in-a-uwp-app-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении для универсальной платформы Windows с помощью пакета SDK службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
@@ -34,7 +35,7 @@ ms.locfileid: "51218905"
 
 1. Запустите Visual Studio 2017.
 
-1. Убедитесь, что рабочая нагрузка **Разработка приложений для универсальной платформы Windows** доступна. Выберите **Инструменты** > **Get Tools and Features** (Получить средства и компоненты) в строке меню Visual Studio, чтобы открыть Visual Studio Installer. Если эта рабочая нагрузка уже включена, закройте диалоговое окно. 
+1. Убедитесь, что рабочая нагрузка **Разработка приложений для универсальной платформы Windows** доступна. Выберите **Инструменты** > **Get Tools and Features** (Получить средства и компоненты) в строке меню Visual Studio, чтобы открыть Visual Studio Installer. Если эта рабочая нагрузка уже включена, закройте диалоговое окно.
 
     ![Снимок экрана Visual Studio Installer с выделенной вкладкой "Рабочие нагрузки"](media/sdk/vs-enable-uwp-workload.png)
 

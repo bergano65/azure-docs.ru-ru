@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Распознавание речи в Java на Android с помощью пакета SDK для службы "Речь"
+title: Краткое руководство. Распознавание речи с использованием Java и службы "Речь" (Android)
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как распознавать речь в Java на Android, используя пакет SDK для службы "Речь"
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: quickstart
 ms.date: 11/06/2018
 ms.author: wolfma
-ms.openlocfilehash: 0785383d8b5a8ab282d8097d5229fa5a8aade06f
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: afe0cfe61779e95fc9a65a1f4928ddae4b7af267
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51219432"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53090114"
 ---
 # <a name="quickstart-recognize-speech-in-java-on-android-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении Java для Android с помощью пакета SDK для службы "Речь"
 
@@ -42,7 +42,7 @@ ms.locfileid: "51219432"
 
    ![Снимок экрана мастера Create New Project (создание нового проекта)](media/sdk/qs-java-android-02-create-android-project.png)
 
-1. На экране **Target Android Devices** (целевые устройства Android) выберите только пункт **Phone and Tablet** (телефоны и планшеты). В раскрывающемся списке под этим пунктом выберите **API 23: Android 6.0 (Marshmallow)** и нажмите **Далее**.
+1. На экране **Target Android Devices** (целевые устройства Android) выберите только пункт **Phone and Tablet** (телефоны и планшеты). В раскрывающемся списке под этим пунктом выберите **API 23: Android 6.0 (Marshmallow)** и нажмите кнопку **Далее**.
 
    ![Снимок экрана мастера Create New Project (создание нового проекта)](media/sdk/qs-java-android-03-target-android-devices.png)
 
@@ -63,7 +63,7 @@ Android Studio требуется несколько минут, чтобы по
 Пакет SDK службы "Речь" для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит библиотеки и разрешения Android, необходимые для его использования.
 Она размещена в репозитории Maven в https://csspeechstorage.blob.core.windows.net/maven/.
 
-Настройте проект для использования пакета SDK службы "Речь". Откройте окно Project Structure (Структура проекта), выбрав в строке меню Android Studio **Файл** > **Project Structure** (Структура проекта). В окне Project Structure (Структура проекта) внесите следующие изменения: 
+Настройте проект для использования пакета SDK службы "Речь". Откройте окно Project Structure (Структура проекта), выбрав в строке меню Android Studio **Файл** > **Project Structure** (Структура проекта). В окне Project Structure (Структура проекта) внесите следующие изменения:
 
 1. В списке в левой части окна выберите **Project** (Проект). Измените параметры **Default Library Repository** (Репозиторий библиотек по умолчанию), добавив запятую и URL-адрес репозитория Maven в одиночных кавычках. 'https://csspeechstorage.blob.core.windows.net/maven/'
 
@@ -118,7 +118,7 @@ Android Studio требуется несколько минут, чтобы по
    [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java-android/app/src/main/java/com/microsoft/cognitiveservices/speech/samples/quickstart/MainActivity.java#code)]
 
    * Метод `onCreate` содержит код, который запрашивает разрешения на использование микрофона и подключения к интернету, а также инициализирует привязки собственной платформы. Настроить привязки собственной платформы нужно только один раз. Это следует сделать в начале инициализации приложения.
-   
+
    * Метод `onSpeechButtonClicked`, как упоминалось ранее, является обработчиком нажатия кнопки. Нажатие кнопки активирует преобразование речи в текст.
 
 1. В том же файле замените строку `YourSubscriptionKey` своим ключом подписки.

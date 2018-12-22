@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/12/2018
 ms.author: yexu
-ms.openlocfilehash: f06094fb82f10276f7a41d1b22f6dd99836a497f
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: eaafc8acb73dd48e213d05d953d9ada457c53132
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43095516"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52957271"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information"></a>Добавочная загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений 
 Из этого руководстве вы узнаете, как создать фабрику данных Azure с конвейером, который копирует разностные данные на основе сведений об **отслеживании изменений** в базе данных-источнике SQL Azure в хранилище BLOB-объектов Azure.  
@@ -322,7 +322,7 @@ ms.locfileid: "43095516"
 ### <a name="review-the-results"></a>Просмотр результатов
 Вы увидите файл с именем `incremental-<GUID>.txt` в папке `incchgtracking` контейнера `adftutorial`. 
 
-![Выходной файл, полученный в результате полного копирования](media\tutorial-incremental-copy-change-tracking-feature-portal\full-copy-output-file.png)
+![Выходной файл, полученный в результате полного копирования](media/tutorial-incremental-copy-change-tracking-feature-portal/full-copy-output-file.png)
 
 Файл должен включать данные из базы данных Azure SQL:
 
@@ -445,7 +445,7 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
 ### <a name="review-the-results"></a>Просмотр результатов
 Вы увидите второй файл в папке `incchgtracking` контейнера `adftutorial`. 
 
-![Выходной файл, полученный в результате добавочного копирования](media\tutorial-incremental-copy-change-tracking-feature-portal\incremental-copy-output-file.png)
+![Выходной файл, полученный в результате добавочного копирования](media/tutorial-incremental-copy-change-tracking-feature-portal/incremental-copy-output-file.png)
 
 Файл должен включать только разностные данные из базы данных Azure SQL. Запись с `U` — это обновленная строка в базе данных, а `I` — добавленная строка. 
 
@@ -453,7 +453,7 @@ SET [Age] = '10', [name]='update' where [PersonID] = 1
 1,update,10,2,U
 6,new,50,1,I
 ```
-Первые три столбца — это измененные данные из таблицы data_source_table. Последние два столбцы — это метаданные из таблицы sys.change_tracking_tables. Четвертый столбец — это версия SYS_CHANGE_VERSION для каждой изменившейся строки. Пятый столбец — это операция U = update, I = insert.  Дополнительные сведения об отслеживании изменений см. в описании функции [CHANGETABLE](/sql/relational-databases/system-functions/changetable-transact-sql). 
+Первые три столбца — это измененные данные из таблицы data_source_table. Последние два столбцы — это метаданные из таблицы sys.change_tracking_tables. Четвертый столбец — это версия SYS_CHANGE_VERSION для каждой изменившейся строки. Пятый столбец — это операция  U = update, I = insert.  Дополнительные сведения об отслеживании изменений см. в описании функции [CHANGETABLE](/sql/relational-databases/system-functions/changetable-transact-sql). 
 
 ```
 ==================================================================

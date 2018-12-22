@@ -1,21 +1,22 @@
 ---
-title: Краткое руководство для C# — изменение модели и обучение приложения LUIS
-titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как добавить примеры фраз в приложение Home Automation и выполнить обучение этого приложения на C#. Примерами высказываний называют фразы пользователя на обычном языке, сопоставленные с тем или иным намерением. Предоставляя фразы для настроенных намерений, вы сообщаете LUIS ожидаемые варианты сообщений пользователя для каждого намерения.
+title: Изменение и обучение приложения с помощью C#
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: В этом кратком руководстве описано, как добавить примеры фраз в приложение Home Automation и выполнить обучение этого приложения на C#.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: aab9651092f7ad5dbc78c31db8df4ef3538fedfc
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 23692bd6a0c708b2747a3cc211b8238d30dfe5db
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47039978"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53161752"
 ---
 # <a name="quickstart-change-model-using-c"></a>Краткое руководство. Изменение модели с помощью C#
 
@@ -28,7 +29,7 @@ ms.locfileid: "47039978"
 * Установленный язык программирования C#.
 * Пакеты NuGet [JsonFormatterPlus](https://www.nuget.org/packages/JsonFormatterPlus) и [CommandLine](https://www.nuget.org/packages/CommandLineParser/).
 
-[!INCLUDE [Code is available in LUIS-Samples Github repo](../../../includes/cognitive-services-luis-qs-change-model-luis-repo-note.md)]
+[!INCLUDE [Code is available in LUIS-Samples GitHub repo](../../../includes/cognitive-services-luis-qs-change-model-luis-repo-note.md)]
 
 ## <a name="example-utterances-json-file"></a>Файл JSON с примерами высказываний.
 
@@ -56,7 +57,7 @@ ms.locfileid: "47039978"
 ### <a name="write-the-c-code"></a>Написание кода C#
 Файл **Program.cs** должен выглядеть так:
 
-```CSharp
+```C#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -98,9 +99,7 @@ namespace ConsoleApp3
 
 Добавьте примеры высказываний из файла метода в класс **Program**.
 
-   [!code-csharp[Add example utterances from file.
-](~/samples-luis/documentation-samples/quickstarts/change-model/csharp/ConsoleApp1/Program.cs?range=77-86 "Add example utterances from file.
-")]
+   [!code-csharp[Add example utterances from file.](~/samples-luis/documentation-samples/quickstarts/change-model/csharp/ConsoleApp1/Program.cs?range=77-86 "Add example utterances from file.")]
 
 Применив к модели все эти изменения, обучите ее. Добавьте метод в класс **Program**.
 
@@ -128,7 +127,7 @@ namespace ConsoleApp3
 
 Запустите приложение с помощью командной строки из каталога /bin/Debug. 
 
-```CMD
+```console
 ConsoleApp\bin\Debug> ConsoleApp1.exe --add utterances.json --train --status
 ```
 

@@ -1,5 +1,5 @@
 ---
-title: Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения | Документация Майкрософт
+title: Безопасное подключение к Базе данных SQL с использованием управляемого удостоверения — Служба приложений Azure | Документация Майкрософт
 description: Узнайте, как сделать подключение к базе данных более безопасным с использованием управляемого удостоверения, а также как применить это к другим службам Azure.
 services: app-service\web
 documentationcenter: dotnet
@@ -14,16 +14,16 @@ ms.topic: tutorial
 ms.date: 11/30/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: 8c31e410713e4ba8ce6443170ba5ad5c2e740419
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: b7d8a9b0ef48f7daed74fb15263e516d820a6a38
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52677939"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53259075"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство. Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
-[Служба приложений](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. Она также предоставляет [управляемое удостоверение](app-service-managed-service-identity.md) для вашего приложения, которое является готовым решением для защиты доступа к [Базе данных SQL Azure](/azure/sql-database/) и другим службам Azure. Управляемые удостоверения в службе приложений делают ваше приложение более безопасным, устраняя из него секреты, такие как учетные данные в строках подключения. В этом руководстве вы добавите управляемое удостоверение в пример веб-приложения ASP.NET, которое вы создали при работе с руководством [по созданию приложения ASP.NET в Azure с подключением к Базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md). Когда вы закончите, ваш пример приложения будет безопасно подключаться к базе данных SQL без необходимости использования имен пользователей и паролей.
+[Служба приложений](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. Она также предоставляет [управляемое удостоверение](app-service-managed-service-identity.md) для вашего приложения, которое является готовым решением для защиты доступа к [Базе данных SQL Azure](/azure/sql-database/) и другим службам Azure. Управляемые удостоверения в службе приложений делают ваше приложение более безопасным, устраняя из него секреты, такие как учетные данные в строках подключения. В этом руководстве вы добавите управляемое удостоверение в пример веб-приложения ASP.NET, которое вы создали при работе с [руководством по созданию приложения ASP.NET в Azure с подключением к базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md) Когда вы закончите, ваш пример приложения будет безопасно подключаться к базе данных SQL без необходимости использования имен пользователей и паролей.
 
 > [!NOTE]
 > Этот сценарий сейчас поддерживается только в .NET Framework версии 4.6 и выше, но не в [.NET Core 2.1](https://www.microsoft.com/net/learn/get-started/windows). [.NET Core 2.2](https://www.microsoft.com/net/download/dotnet-core/2.2) поддерживает этот сценарий, но без включения в стандартные образы в Службе приложений. 
@@ -95,11 +95,10 @@ az webapp config connection-string set --resource-group myResourceGroup --name <
 
 ## <a name="modify-aspnet-code"></a>Изменение кода ASP.NET
 
-В проекте **DotNetAppSqlDb** в Visual Studio откройте _packages.config_ и добавьте следующую строку в список пакетов.
+В Visual Studio откройте консоль диспетчера пакетов и добавьте пакет NuGet [Microsoft.Azure.Services.AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication):
 
-```xml
-<package id="Microsoft.Azure.Services.AppAuthentication" version="1.1.0-preview" targetFramework="net461" />
-<package id="Microsoft.IdentityModel.Clients.ActiveDirectory" version="3.14.2" targetFramework="net461" />
+```PowerShell
+Install-Package Microsoft.Azure.Services.AppAuthentication -Version 1.1.0-preview
 ```
 
 Откройте _Models\MyDatabaseContext.cs_ и добавьте следующие инструкции `using` в начало файла:

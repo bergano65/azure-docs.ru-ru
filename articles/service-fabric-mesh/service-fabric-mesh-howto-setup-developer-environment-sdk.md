@@ -5,29 +5,35 @@ services: service-fabric-mesh
 keywords: ''
 author: tylermsft
 ms.author: twhitney
-ms.date: 11/29/2018
+ms.date: 12/12/2018
 ms.topic: get-started-article
 ms.service: service-fabric-mesh
 manager: jeconnoc
-ms.openlocfilehash: bec0b9a7e34f1577f80a99f5380795c479c04bc8
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 3493b94e93a03faaf60aaa64bf8b80cefb754657
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52890472"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53309065"
 ---
 # <a name="set-up-your-windows-development-environment-to-build-service-fabric-mesh-apps"></a>Чтобы создавать приложения Сетки Service Fabric, настройте среду разработки Windows
 
-Чтобы создавать и запускать приложения Сетки Azure Service Fabric на компьютере для разработки Windows, установите среду выполнения Сетки Service Fabric, пакет SDK и инструменты.
+Чтобы создавать и запускать приложения Сетки Azure Service Fabric на компьютере для разработки Windows, вам потребуется:
+
+* Docker
+* Visual Studio 2017
+* Среда выполнения Сетки Service Fabric.
+* Пакет SDK и инструменты для Сетки Service Fabric.
+
+А также одна из следующих версий Windows:
+
+* Windows 10 (Корпоративная, Профессиональная или для образовательных учреждений) версии 1709 (с обновлением Fall Creators Update) или 1803 (с обновлением Windows 10 за апрель 2018 г.).
+* Windows Server, версия 1709
+* Windows Server, версия 1803.
+
+Следующие инструкции помогут все установить на основе используемой версии Windows.
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
-
-## <a name="supported-operating-system-versions"></a>Поддерживаемые версии операционных систем
-
-Для разработки поддерживаются следующие операционные системы:
-
-* Windows 10 (Корпоративная, Профессиональная или Образование)
-* Windows Server 2016
 
 ## <a name="visual-studio"></a>Visual Studio
 
@@ -38,7 +44,9 @@ ms.locfileid: "52890472"
 
 ## <a name="install-docker"></a>Установка Docker
 
-#### <a name="windows-10"></a>Windows 10
+Если у вас уже есть установленный Docker, убедитесь, что используете последнюю версию. Docker может выдать запрос, когда выйдет новая версия, но проверьте вручную, чтобы убедиться, что вы используете последнюю версию.
+
+#### <a name="install-docker-on-windows-10"></a>Установка Docker для Windows 10
 
 Скачайте и установите последнюю версию [Docker Community Edition для Windows][download-docker] для поддержки контейнерных приложений Service Fabric, используемого Сеткой Service Fabric.
 
@@ -46,7 +54,7 @@ ms.locfileid: "52890472"
 
 Если на компьютере не включен Hyper-V, при установке Docker его будет предложено включить. Если будет предложено, щелкните **OK**.
 
-#### <a name="windows-server-2016"></a>Windows Server 2016
+#### <a name="install-docker-on-windows-server-2016"></a>Установите Docker для Windows Server 2016
 
 Если у вас не включена роль Hyper-V, откройте PowerShell как администратор и выполните следующую команду, а затем перезагрузите компьютер. Дополнительные сведения см. в статье [Install Docker Enterprise Edition for Windows Server][download-docker-server] (Установка Docker Enterprise Edition для Windows).
 
@@ -77,9 +85,13 @@ Install-WindowsFeature Containers
 > Перед созданием кластера **необходимо** запустить Docker.
 > Проверьте, работает ли Docker, открыв окно терминала и выполнив команду `docker ps`, которая укажет, возникает ли ошибка. Если полученный ответ не является ошибкой, это значит что Docker работает и можно начинать создание кластера.
 
+> [!Note]
+> При разработке на компьютере с обновлением Windows Fall Creators Update (версия 1709) можно использовать только образы Docker для Windows версии 1709.
+> При разработке на компьютере с обновлением Windows 10 за апрель 2018 г. (версия 1803) можно использовать образы docker как версии 1709, так и версии 1803.
+
 Если используется Visual Studio, этот раздел можно пропустить, поскольку Visual Studio создает локальный кластер при его отсутствии.
 
-Для повышения производительности во время процесса отладки при создании и запуске приложений Service Fabric рекомендуется создать кластер локальной разработки с одним узлом. Этот кластер должен быть запущен при развертывании или при отладке проекта Сетки Service Fabric.
+Для повышения производительности во время процесса отладки при создании и запуске одного приложения Service Fabric одновременно рекомендуется создать кластер локальной разработки с одним узлом. Если вы используете несколько приложений одновременно, создайте кластер локальной разработки с пятью узлами. Этот кластер должен быть запущен при развертывании или при отладке проекта Сетки Service Fabric.
 
 После установки среды выполнения, пакета SDK, средства Visual Studio, Docker и запуска Docker создайте кластер разработки.
 
@@ -105,7 +117,7 @@ Install-WindowsFeature Containers
 
 Ознакомьтесь с руководством [Tutorial: Create, debug, and deploy a multi-service web application to Service Fabric Mesh](service-fabric-mesh-tutorial-create-dotnetcore.md) (Руководство. Создание, отладка и развертывание многосервисного веб-приложения в Сетке Service Fabric).
 
-Найдите ответы на [часто задаваемые вопросы](service-fabric-mesh-faq.md).
+Найдите ответы на [часто задаваемые вопросы и способы решения известных проблем](service-fabric-mesh-faq.md).
 
 [azure-cli-install]: https://docs.microsoft.com/cli/azure/install-azure-cli
 [download-docker]: https://store.docker.com/editions/community/docker-ce-desktop-windows

@@ -1,21 +1,22 @@
 ---
-title: Краткое руководство для Python — изменение модели и обучение приложения LUIS
-titleSuffix: Azure Cognitive Services
-description: Из этого краткого руководства по Python вы узнаете, как добавить примеры высказываний в приложение домашней автоматизации и обучить это приложение. Примерами высказываний называют фразы пользователя на обычном языке, сопоставленные с тем или иным намерением. Предоставляя фразы для настроенных намерений, вы сообщаете LUIS ожидаемые варианты сообщений пользователя для каждого намерения.
+title: Изменение и обучение приложения с помощью Python
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Из этого краткого руководства по Python вы узнаете, как добавить примеры высказываний в приложение домашней автоматизации и обучить это приложение.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: ff076954d51605935bb41488ec6a757c2f7806a1
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 6d05859977a7cba385877298405b9ce77034da68
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47040182"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53166359"
 ---
 # <a name="quickstart-change-model-using-python"></a>Краткое руководство. Изменение модели с помощью Python
 
@@ -27,7 +28,7 @@ ms.locfileid: "47040182"
 * [Python 3.6](https://www.python.org/downloads/) или более поздней версии.
 * [Visual Studio Code](https://code.visualstudio.com/)
 
-[!INCLUDE [Code is available in LUIS-Samples Github repo](../../../includes/cognitive-services-luis-qs-change-model-luis-repo-note.md)]
+[!INCLUDE [Code is available in LUIS-Samples GitHub repo](../../../includes/cognitive-services-luis-qs-change-model-luis-repo-note.md)]
 
 ## <a name="example-utterances-json-file"></a>Файл JSON с примерами высказываний.
 
@@ -46,7 +47,7 @@ ms.locfileid: "47040182"
 
 Если вызвать интерфейс добавления фраз без аргументов, фраза будет добавлена в приложение, но обучение по ней не будет выполнено.
 
-```CMD
+```console
 > python add-utterances-3-6.py
 ```
 
@@ -83,7 +84,7 @@ ms.locfileid: "47040182"
 }
 ```
 
-```JSON
+```json
 Requested training status.
 [
    {

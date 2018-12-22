@@ -14,12 +14,12 @@ ms.date: 08/08/2018
 ms.author: curtand
 ms.reviewer: kairaz.contractor
 ms.custom: it-pro
-ms.openlocfilehash: 8ebdb22ba5ca04a5c811b3b368055f5f4371c75f
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 8c5d980f25e196add6885d250665eae7127456f1
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "40208940"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273125"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Краткое руководство. Политика именования для групп в Azure Active Directory
 
@@ -80,7 +80,7 @@ ms.locfileid: "40208940"
   
 ### <a name="step-3-set-the-naming-policy-and-any-custom-blocked-words"></a>Шаг 3. Установка политики именований и любых настраиваемых запрещенных слов
 
-1. Задайте префиксы и суффиксы имен групп в PowerShell для Azure AD.
+1. Задайте префиксы и суффиксы имен групп в PowerShell для Azure AD. Для правильной работы функции включите [имя_группы] в параметр.
   
   ````
   $Setting["PrefixSuffixNamingRequirement"] =“GRP_[GroupName]_[Department]"
@@ -102,19 +102,19 @@ ms.locfileid: "40208940"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-1. Задайте префиксы и суффиксы имен групп в PowerShell для Azure AD.
+1. Удалите префиксы и суффиксы имен групп в PowerShell для Azure AD.
   
   ````
   $Setting["PrefixSuffixNamingRequirement"] =""
   ````
   
-2. Задайте настраиваемые запрещенные слова. В следующем примере показано, как можно добавить собственные настраиваемые слова.
+2. Удалите настраиваемые запрещенные слова
   
   ````
   $Setting["CustomBlockedWordsList"]=""
   ````
   
-3. Сохраните параметры новой политики, чтобы она вступила в действие, как показано в следующем примере.
+3. Сохраните параметры.
   
   ````
   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting

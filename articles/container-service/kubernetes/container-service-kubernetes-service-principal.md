@@ -1,24 +1,27 @@
 ---
-title: Субъект-служба для кластера Azure Kubernetes
+title: Субъект-служба для кластера Azure Kubernetes (НЕ РЕКОМЕНДУЕТСЯ)
 description: Сведения о настройке субъекта-службы Azure Active Directory для кластера Kubernetes и управлении им в Службе контейнеров Azure.
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: get-started-article
 ms.date: 02/26/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: c370d25ed5d70887c8beecae8fea3528a259a0ea
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 53bb09824a88980a171fa4067a9efd2fc067a898
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49954578"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52992161"
 ---
-# <a name="set-up-an-azure-ad-service-principal-for-a-kubernetes-cluster-in-container-service"></a>Настройка субъекта-службы Azure AD для кластера Kubernetes в Службе контейнеров
+# <a name="deprecated-set-up-an-azure-ad-service-principal-for-a-kubernetes-cluster-in-container-service"></a>Настройка субъекта-службы Azure AD для кластера Kubernetes в Службе контейнеров (НЕ РЕКОМЕНДУЕТСЯ)
 
-[!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
+> [!TIP]
+> Обновленная версия этой статьи — [Субъекты-службы со службой Azure Kubernetes](../../aks/kubernetes-service-principal.md).
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
 [Субъект-служба Azure Active Directory](../../active-directory/develop/app-objects-and-service-principals.md) используется кластером Kubernetes в Службе контейнеров Azure для обеспечения взаимодействия с API-интерфейсами Azure. Субъект-служба используется для динамического управления ресурсами, например [определяемыми пользователем маршрутами](../../virtual-network/virtual-networks-udr-overview.md) и [Azure Load Balancer](../../load-balancer/load-balancer-overview.md) уровня 4.
 
@@ -30,11 +33,11 @@ ms.locfileid: "49954578"
 
 Вы можете использовать имеющийся субъект-службу Azure AD, который соответствует требованиям ниже, или создать другой.
 
-* **Область** — группа ресурсов.
+* **Область:** Группа ресурсов
 
-* **Роль** — участник.
+* **Роль:** участник;
 
-* **Секрет клиента** — должен быть паролем. Сейчас субъект-службу нельзя использовать для проверки подлинности сертификата.
+* **Секрет клиента:** нужно указать пароль. Сейчас субъект-службу нельзя использовать для проверки подлинности сертификата.
 
 > [!IMPORTANT]
 > Чтобы создать субъект-службу, вы должны иметь права на регистрацию приложения в клиенте Azure AD и назначение приложению роли в подписке Azure. Наличие этих разрешений можно [проверить на портале](../../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).

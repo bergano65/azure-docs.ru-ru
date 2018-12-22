@@ -1,6 +1,6 @@
 ---
-title: Отправка запросов в индекс службы поиска Azure с помощью API .NET | Документация Майкрософт
-description: В службе поиска Azure можно создавать поисковые запросы и с помощью параметров поиска фильтровать, сортировать и уточнять результаты.
+title: Запрашивание индекса в коде с помощью пакета SDK Поиска Azure для .NET.
+description: Пример кода C# для создания поискового запроса в Поиске Azure. Добавление параметров поиска для фильтрации и сортировки результатов поиска.
 author: brjohnstmsft
 manager: jlembicz
 ms.author: brjohnst
@@ -9,12 +9,13 @@ ms.service: search
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/19/2017
-ms.openlocfilehash: 5b7f454fed6206ac57799d6f1e86152cd52dc9e9
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.custom: seodec2018
+ms.openlocfilehash: 5c89902da5e773c60c8e2694159ddeed874ecab2
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51254423"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53317004"
 ---
 # <a name="query-your-azure-search-index-using-the-net-sdk"></a>Отправка запросов в индекс службы поиска Azure с помощью пакета SDK для .NET
 > [!div class="op_single_selector"]

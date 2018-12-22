@@ -10,14 +10,14 @@ ms.devlang: php
 ms.topic: quickstart
 ms.date: 01/05/2018
 ms.author: lbosq
-ms.openlocfilehash: e5a7d40007076d09695d166148d84684c1cccee5
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: f6ff46f391ce03f67619ef685f841dcf95a1fd92
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52839625"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53089472"
 ---
-# <a name="azure-cosmos-db-create-a-graph-database-using-php-and-the-azure-portal"></a>Azure Cosmos DB: создание базы данных графа с помощью PHP и портала Azure
+# <a name="azure-cosmos-db-create-a-graph-database-using-php-and-the-azure-portal"></a>Azure Cosmos DB — создание графовой базы данных с помощью PHP и портала Azure
 
 > [!div class="op_single_selector"]
 > * [Консоль Gremlin](create-graph-gremlin-console.md)
@@ -37,7 +37,7 @@ Azure Cosmos DB — это глобально распределенная мн
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] Кроме того, можно воспользоваться [бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств.
 
 Кроме того, сделайте следующее:
-* [PHP](http://php.net/) 5.6 или более поздней версии;
+* [PHP](https://php.net/) 5.6 или более поздней версии;
 * [Редактор](https://getcomposer.org/download/)
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
@@ -104,7 +104,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные для подключения. Скопируйте эти данные в приложение. Эти настройки обеспечат обмен данными между вашим приложением и размещенной базой данных.
 
-1. На [портале Azure](http://portal.azure.com/) щелкните **Ключи**. 
+1. На [портале Azure](https://portal.azure.com/) щелкните **Ключи**. 
 
     Скопируйте первую часть значения URI.
 

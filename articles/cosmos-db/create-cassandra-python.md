@@ -10,12 +10,12 @@ ms.custom: quick start connect, mvc
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: 5ffd134bd4e47f92264f8b299f8fd4bdb76f6c9f
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: c9a0d6ce868fd7fcf14f4b4c1690c99b7f964f8a
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48870322"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53253516"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-python-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью Python и Azure Cosmos DB
 
@@ -36,7 +36,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Кроме того, вам потребуется:
 * [Python](https://www.python.org/downloads/) версии 2.7.14
-* [Git](http://git-scm.com/)
+* [Git](https://git-scm.com/)
 * [Драйвер Python для Apache Cassandra](https://github.com/datastax/python-driver)
 
 ## <a name="create-a-database-account"></a>Создание учетной записи базы данных
@@ -47,7 +47,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="clone-the-sample-application"></a>Клонирование примера приложения
 
-Теперь необходимо клонировать приложение API Cassandra с GitHub. Задайте строку подключения и выполните ее. Вы узнаете, как можно упростить работу с данными программным способом. 
+Теперь необходимо клонировать приложение API Cassandra из GitHub, задать строку подключения и запустить приложение. Вы узнаете, как можно упростить работу с данными программным способом. 
 
 1. Откройте окно командной строки. Создайте папку с именем `git-samples`. Затем закройте командную строку.
 
@@ -138,7 +138,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Строка подключения обеспечивает обмен данными между вашим приложением и размещенной базой данных.
 
-1. На [портале Azure](http://portal.azure.com/) выберите **Строка подключения**. 
+1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**. 
 
     Вы можете использовать кнопку ![Кнопка "Скопировать"](./media/create-cassandra-python/copy.png) в правой части экрана, чтобы скопировать значение параметра Contact point (Контакт).
 

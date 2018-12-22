@@ -1,21 +1,21 @@
 ---
-title: Руководство по службе "Экземпляры контейнеров Azure". Развертывание приложения
-description: Руководство по службе "Экземпляры контейнеров Azure". Часть 3 из 3. Развертывание приложения
+title: Руководство. Развертывание контейнера в службе "Экземпляры контейнеров Azure"
+description: Руководство по службе "Экземпляры контейнеров Azure" — часть 3 из 3. Развертывание приложения-контейнера в службе "Экземпляры контейнеров Azure"
 services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: tutorial
 ms.date: 03/21/2018
 ms.author: danlep
-ms.custom: mvc
-ms.openlocfilehash: 9e8a72564151bea9194ef5180589fa8eae001df5
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.custom: seodec18, mvc
+ms.openlocfilehash: 54fcbe9adc8fbf4a8fba6eabbd7c2f8802fd933a
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52863726"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53191116"
 ---
-# <a name="tutorial-deploy-a-container-to-azure-container-instances"></a>Руководство. Развертывание контейнера в службе "Экземпляры контейнеров Azure"
+# <a name="tutorial-deploy-a-container-application-to-azure-container-instances"></a>Руководство. Развертывание приложения-контейнера в службе "Экземпляры контейнеров Azure"
 
 Это последняя из трех частей руководства. С помощью предыдущих частей мы [создали образ контейнера](container-instances-tutorial-prepare-app.md), который затем [передали в реестр контейнеров Azure](container-instances-tutorial-prepare-acr.md). Эта часть завершает серию руководств. Мы развернем контейнер в службе "Экземпляры контейнеров Azure".
 

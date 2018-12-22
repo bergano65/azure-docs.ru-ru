@@ -1,22 +1,24 @@
 ---
-title: Примеры скриптов для службы контейнеров Azure
+title: Примеры скриптов для службы контейнеров Azure (не рекомендуется)
 description: Примеры скриптов для службы контейнеров Azure
 services: container-service
-author: neilpeterson
+author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: sample
 ms.date: 02/26/2018
-ms.author: nepeters
+ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 704a9ddfc6cb880c3e2edc887d08c489c0b3fd95
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: b64f7af8eda9a4f62463486b00480efbd8cffe57
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32161860"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52992571"
 ---
-# <a name="azure-cli-samples-for-azure-container-service"></a>Примеры Azure CLI для службы контейнеров Azure
+# <a name="deprecated-azure-cli-samples-for-azure-container-service"></a>Примеры Azure CLI для службы контейнеров Azure (не рекомендуется)
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
 В следующей таблице содержатся ссылки на скрипты Bash, созданные с помощью Azure CLI.
 

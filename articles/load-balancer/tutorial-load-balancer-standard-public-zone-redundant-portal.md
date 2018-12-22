@@ -1,14 +1,11 @@
 ---
-title: Руководство. Распределение нагрузки виртуальных машин между зонами доступности с помощью портала Azure | Документация Майкрософт
+title: Руководство. Виртуальные машины Load Balancer в пределах зон доступности на портале Azure
+titlesuffix: Azure Load Balancer
 description: В этом руководстве показано, как создать подсистему балансировки нагрузки уровня "Стандартный" с избыточным между зонами внешним интерфейсом для балансировки нагрузки виртуальных машин между зонами доступности с помощью портала Azure
 services: load-balancer
 documentationcenter: na
 author: KumudD
-manager: jeconnoc
-editor: ''
-tags: azure-resource-manager
 Customer intent: As an IT administrator, I want to create a load balancer that load balances incoming internet traffic to virtual machines across availability zones in a region, so that the customers can still access the web service if a datacenter is unavailable.
-ms.assetid: ''
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: tutorial
@@ -16,15 +13,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/17/2018
 ms.author: kumud
-ms.custom: mvc
-ms.openlocfilehash: 5ec1cc42a0c932e47c08493fa632495426abc4c7
-ms.sourcegitcommit: 688a394c4901590bbcf5351f9afdf9e8f0c89505
+ms.custom: seodec18
+ms.openlocfilehash: 18b5f82a5181f0bbf7024b302b802684ef676c8f
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/18/2018
-ms.locfileid: "34304466"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53255342"
 ---
-# <a name="tutorial-load-balance-vms-across-availability-zones-with-a-standard-load-balancer-using-the-azure-portal"></a>Руководство. Распределение нагрузки виртуальных машин между зонами доступности с помощью подсистемы балансировки нагрузки уровня "Стандартный" и портала Azure
+# <a name="tutorial-load-balance-vms-across-availability-zones-with-a-standard-load-balancer-using-the-azure-portal"></a>Руководство. Распределение нагрузки виртуальных машин в пределах зон доступности с помощью Load Balancer уровня "Стандартный" и портала Azure
 
 Балансировка нагрузки обеспечивает более высокий уровень доступности за счет распределения входящих запросов между несколькими виртуальными машинами. В этом руководстве описывается процесс создания общедоступной подсистемы балансировки нагрузки уровня "Стандартный", которая распределяет нагрузку виртуальных машин между зонами доступности. Это позволяет защитить приложения и данные от маловероятных сбоев и потери всего центра обработки данных. При избыточности в пределах зоны в одной или нескольких зонах доступности может произойти сбой, и путь к данным выдерживает его, пока одна зона в регионе остается работоспособной. Вы узнаете, как выполнять следующие задачи:
 
@@ -211,7 +208,7 @@ ms.locfileid: "34304466"
     - *80* — для номера порта;
     - *80* — для внутреннего порта;
     - *myBackendPool* — для имени серверного пула;
-    - *myHealthProbe* — для имени зонда работоспособности.
+    - *myHealthProbe* — для имени зонда работоспособности;
 4. Последовательно выберите **ОК**.
     
     ![Добавление правила балансировки нагрузки](./media/load-balancer-standard-public-availability-zones-portal/load-balancing-rule.png)

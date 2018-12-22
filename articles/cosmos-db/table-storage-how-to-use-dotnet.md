@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: sample
 ms.date: 08/17/2018
 ms.author: sngun
-ms.openlocfilehash: fd437e42c404bec71036e760b95aef7e005d3fd9
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 23ee4142dbf3d3c07eb89640554a464d0ac51822
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52880205"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53103002"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-net"></a>Начало работы с хранилищем таблиц Azure и API таблиц Azure Cosmos DB с помощью .NET
 [!INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
@@ -78,7 +78,7 @@ ms.locfileid: "52880205"
 
 * [Библиотека таблиц Microsoft Azure Cosmos DB для .NET](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Этот пакет предоставляет программный доступ к ресурсам данных в вашей учетной записи хранилища таблиц или API таблиц Azure Cosmos DB. Эта библиотека сейчас доступна только для .NET Standard, но не для .NET Core.
 
-* [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/) — этот пакет предоставляет класс для анализа строки подключения в файле конфигурации независимо от среды выполнения приложения.
+* [Библиотека Microsoft Azure Configuration Manager для .NET](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/). Этот пакет предоставляет класс для анализа строки подключения в файле конфигурации независимо от среды выполнения приложения.
 
 Чтобы получить пакеты NuGet, сделайте следующее:
 
@@ -88,7 +88,7 @@ ms.locfileid: "52880205"
 4. Выполните поиск в Интернете по запросу "WindowsAzure.ConfigurationManager" и нажмите кнопку **Установить**, чтобы установить библиотеку диспетчера конфигураций Microsoft Azure.
 
 > [!NOTE]
-> Зависимости ODataLib в общей библиотеке хранилища для .NET разрешаются с помощью пакетов ODataLib, доступных в NuGet, а не в WCF Data Services. Библиотеки ODataLib можно скачать напрямую или указать на них ссылку в проекте через NuGet. К специальным пакетам ODataLib, используемым клиентскими библиотеками хранения, относятся [OData](http://nuget.org/packages/Microsoft.Data.OData/), [Edm](http://nuget.org/packages/Microsoft.Data.Edm/) и [Spatial](http://nuget.org/packages/System.Spatial/). Хотя эти библиотеки используются классами хранилища таблиц Azure, они являются обязательными зависимостями для программирования с использованием общей библиотеки хранилища.
+> Зависимости ODataLib в общей библиотеке хранилища для .NET разрешаются с помощью пакетов ODataLib, доступных в NuGet, а не в WCF Data Services. Библиотеки ODataLib можно скачать напрямую или указать на них ссылку в проекте через NuGet. К специальным пакетам ODataLib, используемым клиентскими библиотеками хранения, относятся [OData](https://nuget.org/packages/Microsoft.Data.OData/), [Edm](https://nuget.org/packages/Microsoft.Data.Edm/) и [Spatial](https://nuget.org/packages/System.Spatial/). Хотя эти библиотеки используются классами хранилища таблиц Azure, они являются обязательными зависимостями для программирования с использованием общей библиотеки хранилища.
 > 
 > 
 
@@ -453,7 +453,7 @@ table.Execute(insertOrReplaceOperation);
 ```
 
 ## <a name="query-a-subset-of-entity-properties"></a>Запрос подмножества свойств сущности
-Запрос к таблице может получить лишь несколько свойств сущности, а не все свойства. Этот метод, который называется "проекцией", снижает потребление пропускной способности и может повысить производительность запросов, особенно для крупных сущностей. Запрос в следующем коде возвращает только электронные адреса сущностей в таблице. Это делается с помощью запроса [DynamicTableEntity][dotnet_DynamicTableEntity], а также [EntityResolver][dotnet_EntityResolver]. Дополнительные сведения о проекции см. в записи блога [Windows Azure Tables: Introducing Upsert and Query Projection][blog_post_upsert] (Таблицы Microsoft Azure: введение в Upsert и проекции в запросах). Проекция не поддерживается в эмуляторе хранения, поэтому этот код выполняется только при использовании учетной записи хранения в службе таблиц.
+Запрос к таблице может получить лишь несколько свойств сущности, а не все свойства. Этот метод, который называется "проекцией", снижает потребление пропускной способности и может повысить производительность запросов, особенно для крупных сущностей. Запрос в следующем коде возвращает только электронные адреса сущностей в таблице. Это делается с помощью запроса [DynamicTableEntity][dotnet_DynamicTableEntity], а также [EntityResolver][dotnet_EntityResolver]. Проекция не поддерживается в эмуляторе хранения, поэтому этот код выполняется только при использовании учетной записи хранения в службе таблиц.
 
 ```csharp
 // Retrieve the storage account from the connection string.
@@ -576,9 +576,6 @@ do
 * Информацию о хранении реляционных данных см. в статье [Подключение к базе данных SQL с помощью .NET (C#)](../sql-database/sql-database-develop-dotnet-simple.md).
 
 [Download and install the Azure SDK for .NET]: /develop/net/
-[Creating an Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
-
-[blog_post_upsert]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
 
 [dotnet_api_ref]: https://msdn.microsoft.com/library/azure/mt347887.aspx
 [dotnet_CloudTableClient]: https://msdn.microsoft.com/library/microsoft.windowsazure.storage.table.cloudtableclient.aspx

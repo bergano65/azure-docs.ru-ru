@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/07/2018
+ms.date: 12/04/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: e40c18edadebae1f92cf811ea054503b9cd6b1ae
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: c35c16e1414b1287fa891d1ce1f65ca8eff3d2c5
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51277976"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53434959"
 ---
-# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство по настройке гибридного присоединения к Azure Active Directory для федеративных доменов
+# <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство. Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
 Подобно пользователю, устройство становится еще одним удостоверением, которое необходимо защитить, а также использовать для защиты ваших ресурсов в любое время и в любом месте. Вы можете достичь этой цели, разместив удостоверения своих устройств в Azure AD с помощью одного из следующих вариантов:
 
@@ -53,9 +53,12 @@ ms.locfileid: "51277976"
 -  [Как управлять гибридным присоединением устройства к Azure AD](hybrid-azuread-join-control.md)
 
 
+
 Для настройки сценария в этом руководстве вам понадобится следующее.
 
 - Windows Server 2012 R2 с AD FS.
+
+- Локальную службу Active Directory (AD) с уровнем схемы 85 или более поздней версии. Дополнительные сведения см. в разделе [Обновить схему Active Directory](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-device-based-conditional-access-on-premises#upgrade-your-active-directory-schema).
 
 - [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) 1.1.819.0 или более поздней версии. 
  
@@ -167,7 +170,7 @@ ms.locfileid: "51277976"
 
 
     
-Следующая политика должна иметь значение **Все**: **Пользователи могут регистрировать устройства в Azure AD**.
+Следующей политике должен быть задан вариант **Все** **Пользователи могут регистрировать устройства в Azure AD**.
 
 ![Регистрация устройств](./media/hybrid-azuread-join-federated-domains/23.png)
 

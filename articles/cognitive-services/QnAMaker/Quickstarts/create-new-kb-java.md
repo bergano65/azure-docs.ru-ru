@@ -1,5 +1,5 @@
 ---
-title: 'Краткое руководство: создание базы знаний с использованием REST, Java — QnA Maker'
+title: Краткое руководство. Создание базы знаний с использованием REST, Java — QnA Maker
 titlesuffix: Azure Cognitive Services
 description: В этом кратком руководстве по Java REST описывается, как создать пример базы знаний QnA Maker программными средствами с использованием REST, чтобы отобразить ее на панели мониторинга Azure в вашей учетной записи API Cognitive Services.
 services: cognitive-services
@@ -10,20 +10,20 @@ ms.component: qna-maker
 ms.topic: quickstart
 ms.date: 11/06/2018
 ms.author: diberry
-ms.openlocfilehash: 47a900f6877355fb45481d7b04052387ab3619cf
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 87ba02b6a840d416d54e3129b5720b4f59820eb8
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51229600"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413444"
 ---
-# <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-java"></a>Краткое руководство. Создание базы знаний в QnA Maker с использованием Java
+# <a name="quickstart-create-a-knowledge-base-in-qna-maker-using-java"></a>Краткое руководство. Создание базы знаний в QnA Maker с помощью Java
 
-В этом кратком руководстве описано, как программным способом создать пример базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/data-sources-supported.md). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API. 
+В этом кратком руководстве описано, как программным способом создать пример базы знаний QnA Maker. Служба QnA Maker автоматически извлекает вопросы и ответы из частично структурированного содержимого, например со страниц с вопросами и ответами, [источников данных](../Concepts/data-sources-supported.md). Модель базы знаний определяется в коде JSON, отправляемом в теле запроса API.
 
-[!INCLUDE [Code is available in Azure-Samples Github repo](../../../../includes/cognitive-services-qnamaker-java-repo-note.md)]
+[!INCLUDE [Code is available in Azure-Samples GitHub repo](../../../../includes/cognitive-services-qnamaker-java-repo-note.md)]
 
-## <a name="create-a-knowledge-base-file"></a>Создание файла для базы знаний 
+## <a name="create-a-knowledge-base-file"></a>Создание файла для базы знаний
 
 Создайте файл с именем `CreateKB.java`
 
@@ -34,7 +34,7 @@ ms.locfileid: "51229600"
 [!code-java[Add the required dependencies](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=1-5 "Add the required dependencies")]
 
 ## <a name="add-the-required-constants"></a>Добавление необходимых констант
-После указания зависимостей добавьте необходимые константы в класс `CreateKB`, чтобы получить доступ к QnA Maker. Замените значение переменной `subscriptionKey` собственным ключом QnA Maker. Не нужно добавлять закрывающую фигурную скобку, чтобы закрыть класс, так как она находится в последнем фрагменте кода в конце этого руководства. 
+После указания зависимостей добавьте необходимые константы в класс `CreateKB`, чтобы получить доступ к QnA Maker. Замените значение переменной `subscriptionKey` собственным ключом QnA Maker. Не нужно добавлять закрывающую фигурную скобку, чтобы закрыть класс, так как она находится в последнем фрагменте кода в конце этого руководства.
 
 [!code-java[Add the required constants](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=26-34 "Add the required constants")]
 
@@ -48,7 +48,7 @@ ms.locfileid: "51229600"
 
 Далее добавьте приведенные ниже функции поддержки в класс `CreateKB`.
 
-1. Добавьте следующую функцию, чтобы распечатать файл JSON в доступном для чтения формате:    
+1. Добавьте следующую функцию, чтобы распечатать файл JSON в доступном для чтения формате:
 
     [!code-java[Add the PrettyPrint function](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=82-87 "Add the KB model definition classes")]
 
@@ -56,7 +56,7 @@ ms.locfileid: "51229600"
 
     [!code-java[Add class to manage the HTTP response](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=89-97 "Add class to manage the HTTP response")]
 
-3. Добавьте приведенный ниже метод, который создает POST-запросы к API-интерфейсам QnA Maker. `Ocp-Apim-Subscription-Key` — это ключ службы QnA Maker, используемый в процессе аутентификации. 
+3. Добавьте приведенный ниже метод, который создает POST-запросы к API-интерфейсам QnA Maker. `Ocp-Apim-Subscription-Key` — это ключ службы QnA Maker, используемый в процессе аутентификации.
 
     [!code-java[Add POST method](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=99-121 "Add POST method")]
 
@@ -65,11 +65,11 @@ ms.locfileid: "51229600"
     [!code-java[Add GET method](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=123-137 "Add GET method")]
 
 ## <a name="add-a-method-to-create-the-kb"></a>Добавление метода, который создает базу знаний
-Добавьте следующий метод, который создает базу знаний, вызвав метод Post. 
+Добавьте следующий метод, который создает базу знаний, вызвав метод Post.
 
 [!code-java[Add CreateKB method](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=139-144 "Add CreateKB method")]
 
-Этот вызов API возвращает ответ JSON, который содержит идентификатор операции. С помощью этого идентификатора определите, успешно ли создана база знаний. 
+Этот вызов API возвращает ответ JSON, который содержит идентификатор операции. С помощью этого идентификатора определите, успешно ли создана база знаний.
 
 ```JSON
 {
@@ -82,11 +82,11 @@ ms.locfileid: "51229600"
 ```
 
 ## <a name="add-a-method-to-get-status"></a>Добавление метода для получения состояния
-Добавьте следующий метод для проверки состояния создания. 
+Добавьте следующий метод для проверки состояния создания.
 
 [!code-java[Add GetStatus method](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=146-150 "Add GetStatus method")]
 
-Повторяйте вызов до успешного или неудачного выполнения: 
+Повторяйте вызов до успешного или неудачного выполнения:
 
 ```JSON
 {
@@ -100,10 +100,10 @@ ms.locfileid: "51229600"
 ```
 
 ## <a name="add-a-main-method"></a>Добавление метода main
-Метод main создает базу знаний, а затем выполняет опрос состояний. **Идентификатор операции** создания возвращается в **расположение** поля заголовка ответа POST, а затем используется как часть маршрута в запросе GET. ** Цикл `while` будет выполняться до тех пор, пока состояние не станет завершенным. 
+Метод main создает базу знаний, а затем выполняет опрос состояний. **Идентификатор операции** создания возвращается в **расположение** поля заголовка ответа POST, а затем используется как часть маршрута в запросе GET. ** Цикл `while` будет выполняться до тех пор, пока состояние не станет завершенным.
 
 [!code-java[Add main method](~/samples-qnamaker-java/documentation-samples/quickstarts/create-knowledge-base/CreateKB.java?range=152-191 "Add main method")]
- 
+
 ## <a name="compile-and-run-the-program"></a>Выполнение сборки и запуск программы
 
 1. Убедитесь, что библиотека gson находится в каталоге `./libs`. Скомпилируйте файл `CreateKB.java` в командной строке:
@@ -118,9 +118,9 @@ ms.locfileid: "51229600"
     java -cp ",;libs/*" CreateKB
     ```
 
-Созданную базу знаний вы можете просмотреть на странице [My knowledge bases](https://www.qnamaker.ai/Home/MyServices) (Мои базы знаний) на портале QnA Maker.    
+Созданную базу знаний вы можете просмотреть на странице [My knowledge bases](https://www.qnamaker.ai/Home/MyServices) (Мои базы знаний) на портале QnA Maker.
 
-[!INCLUDE [Clean up files and KB](../../../../includes/cognitive-services-qnamaker-quickstart-cleanup-resources.md)] 
+[!INCLUDE [Clean up files and KB](../../../../includes/cognitive-services-qnamaker-quickstart-cleanup-resources.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -10,12 +10,12 @@ ms.topic: get-started-article
 ms.date: 03/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: a42deb6bc039602c4bda523d2ab1ee5a69bb5644
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: cbc86405225cca0d5144b48b113cf41607ce16f4
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46303542"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53434126"
 ---
 # <a name="move-azure-ad-connect-database-from-sql-server-express-to-sql-server"></a>Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server 
 
@@ -30,7 +30,7 @@ ms.locfileid: "46303542"
 Выполните следующие действия, чтобы переместить базу данных Azure AD Connect на удаленный сервер SQL Server.
 
 1.  На сервере Azure AD Connect перейдите в раздел **Службы** и остановите службу **Microsoft Azure AD Sync**.
-2. Найдите папку **%Program Files%\Microsoft Azure AD Sync/Data/** и скопируйте файлы **ADSync.mdf** и **ADSync_log.mdf** на удаленный сервер SQL Server.
+2. Найдите папку **%Program Files%\Microsoft Azure AD Sync/Data/** и скопируйте файлы **ADSync.mdf** и **ADSync_log.ldf** на удаленный сервер SQL Server.
 3. Перезапустите службу **Microsoft Azure AD Sync** на сервере Azure AD Connect.
 4. Удалите базу данных Azure AD Connect, последовательно выбрав "Панель управления" > "Программы" > "Программы и компоненты".  Выберите Microsoft Azure AD Connect и нажмите кнопку "Удалить" вверху.
 5. На удаленном сервере SQL Server откройте SQL Server Management Studio.

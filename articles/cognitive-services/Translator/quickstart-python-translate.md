@@ -1,5 +1,5 @@
 ---
-title: 'Краткое руководство: перевод текста с помощью Python — API перевода текстов'
+title: Краткое руководство. Перевод текста с использованием Python и API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как перевести текст с одного языка на другой с помощью API перевода текстов и Python менее чем за 10 минут.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 10/17/2018
 ms.author: erhopf
-ms.openlocfilehash: 3ba8064a6d13cfe9d2a2ae2ac496cfa8302989cd
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: db2328d09f9e06ccabdc2408327a342fe94fefe0
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50085994"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52999587"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-translate-a-string-using-python"></a>Краткое руководство. Использование API перевода текстов для перевода строки с помощью Python
 
@@ -69,7 +69,7 @@ else:
 Параметры `params` используются для установки выходных языков. В этом примере мы переводим с английского на итальянский и немецкий: `it` и `de`.
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запроса см. в статье [API перевода текстов 3.0: транслитерация](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: перевод](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate).
 
 ```python
 base_url = 'https://api.cognitive.microsofttranslator.com'
@@ -161,7 +161,7 @@ python translate-text.py
 
 ## <a name="see-also"></a>См. также
 
-Кроме перевода текста API перевода текстов можно использовать для выполнения других задач (узнайте, как их выполнить с помощью API):
+Узнайте, как использовать API перевода текстов, чтобы выполнять такие задачи:
 
 * [транслитерация текста](quickstart-python-transliterate.md);
 * [определение языка по входным данным](quickstart-python-detect.md);

@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. API Bing для поиска новостей (Ruby)
+title: Краткое руководство. Поиск новостей с помощью REST API Bing для поиска новостей и Ruby
 titlesuffix: Azure Cognitive Services
-description: Сведения и примеры кода для быстрого начала работы с API Bing для поиска новостей.
+description: В этом кратком руководстве показано, как отправлять запросы в REST API Bing для поиска в новостей с помощью Ruby и получать ответы в формате JSON.
 services: cognitive-services
 author: aahill
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: bing-news-search
 ms.topic: quickstart
 ms.date: 9/21/2017
 ms.author: aahi
-ms.openlocfilehash: 714f28166b8d24a5b8a69fe4f76ba1737de56e1d
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.custom: seodec2018
+ms.openlocfilehash: 02b603c0a7e1f84b2677511f73f96eee20a613d9
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52315092"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53250235"
 ---
-# <a name="quickstart-for-bing-news-search-api-with-ruby"></a>Краткое руководство по API Bing для поиска новостей с использованием Ruby
+# <a name="quickstart-perform-a-news-search-using-ruby-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью REST API Bing для поиска новостей и Ruby
 
 В этой статье показано, как использовать API "Поиск новостей Bing", входящий в состав Microsoft Cognitive Services в Azure. Хотя в статье представлены сведения для языка Ruby, этот API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON. 
 

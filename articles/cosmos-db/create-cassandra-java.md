@@ -10,12 +10,12 @@ ms.custom: quick start connect, mvc
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: 1683bdcdac5f34b4dd0795befe0b87d6ba1278b0
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 0ba2143847d51bda7bc15c0c93835c758505cd0b
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50421379"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53089186"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-java-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью Java и Azure Cosmos DB
 
@@ -39,7 +39,7 @@ Azure Cosmos DB — это глобально распределенная мн
 * [Комплект разработчика Java (JDK 1.7+)](https://aka.ms/azure-jdks)
     * В Ubuntu выполните команду `apt-get install default-jdk`, чтобы установить JDK.
     * Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
-* [Скачайте](http://maven.apache.org/download.cgi) и [установите](http://maven.apache.org/install.html) двоичный архив [Maven](http://maven.apache.org/).
+* [Скачайте](https://maven.apache.org/download.cgi) и [установите](https://maven.apache.org/install.html) двоичный архив [Maven](https://maven.apache.org/).
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
 * [Git](https://www.git-scm.com/)
     * В Ubuntu выполните команду `sudo apt-get install git`, чтобы установить Git.
@@ -152,7 +152,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь вернитесь на портал Azure, чтобы получить данные строки подключения. Скопируйте эти данные в приложение. Данные строки подключения обеспечивают обмен данными между вашим приложением и размещенной базой данных.
 
-1. На [портале Azure](http://portal.azure.com/) выберите **Строка подключения**. 
+1. На [портале Azure](https://portal.azure.com/) выберите **Строка подключения**. 
 
     ![Просмотрите и скопируйте имя пользователя на странице "Строка подключения" на портале Azure.](./media/create-cassandra-java/keys.png)
 

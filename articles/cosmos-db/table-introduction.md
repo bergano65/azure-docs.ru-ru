@@ -8,14 +8,14 @@ ms.component: cosmosdb-table
 ms.topic: overview
 ms.date: 11/20/2017
 ms.author: sngun
-ms.openlocfilehash: 5d50b50d05877b213f0211a6ca8fa89f69231f52
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 2647065d251caea571e2bfcd5703bbb3bec08345
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52866497"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53074313"
 ---
-# <a name="introduction-to-azure-cosmos-db-table-api"></a>Знакомство со службой Azure Cosmos DB. API таблицы
+# <a name="introduction-to-azure-cosmos-db-table-api"></a>Знакомство с Azure Cosmos DB. API таблицы
 
 [Azure Cosmos DB](introduction.md) предоставляет API таблиц для приложений, созданных для хранилища таблиц Azure и требующих таких возможностей уровня "Премиум", как:
 
@@ -23,7 +23,7 @@ ms.locfileid: "52866497"
 * [выделенная пропускная способность](partition-data.md) в любой точке мира;
 * задержка меньше 10 миллисекунд на уровне 99-го процентиля;
 * гарантированно высокий уровень доступности;
-* [автоматическое вторичное индексирование](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf).
+* [автоматическое вторичное индексирование](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf).
 
 С помощью API таблицы вы можете перенести приложения, написанные для хранилища таблиц Azure, в Azure Cosmos DB, не изменяя код, и воспользоваться возможностями уровня "Премиум". API таблицы включает клиентские пакеты SDK для .NET., Java, Python и Node.js.
 

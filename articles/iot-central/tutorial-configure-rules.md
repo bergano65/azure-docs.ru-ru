@@ -1,7 +1,7 @@
 ---
 title: Настройка правил и действий в Azure IoT Central | Документация Майкрософт
 description: В этом руководстве показано, как разработчику настраивать правила и действия на основе телеметрии в своем приложении Azure IoT Central.
-author: ankitgupta
+author: ankitscribbles
 ms.author: ankitgup
 ms.date: 10/12/2018
 ms.topic: tutorial
@@ -9,14 +9,14 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: fbe9e1fbd0891f2f39b05fa7ba53653188ef8e03
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 7bdfa1659a0c34b3456ed3e52c72cafafc8be034
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158080"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993629"
 ---
-# <a name="tutorial-configure-rules-and-actions-for-your-device-in-azure-iot-central"></a>Руководство по настройке правил и действий для устройства в Azure IoT Central
+# <a name="tutorial-configure-rules-and-actions-for-your-device-in-azure-iot-central"></a>Руководство. Настройка правил и действий для устройства в Azure IoT Central
 
 *Эта статья предназначена для операторов, разработчиков и администраторов.*
 
@@ -60,7 +60,7 @@ ms.locfileid: "50158080"
     | Enable rule for all devices of this template (Включить правило для всех устройств этого шаблона) | С                                |
     | Enable rule on this device (Включить правило на этом устройстве)                   | С                                |
     | Условие                                    | Температура больше 90    |
-    | Агрегирование                                  | None                              |
+    | Агрегирование                                  | Нет                              |
 
     ![Условие правила температуры](media/tutorial-configure-rules/buildertemperaturerule1.png)
 
