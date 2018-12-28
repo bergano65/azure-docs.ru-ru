@@ -11,18 +11,18 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/05/2018
+ms.date: 12/06/2018
 ms.author: mabrigg
-ms.openlocfilehash: a9849b5c96b38fbfe6fa8ef4a69a1a2d4d6e6f2f
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 7ebb9d683803a6c5a5a0fa25308b348eeea586c4
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49958080"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53097902"
 ---
 # <a name="supported-metrics-with-azure-monitor-on-azure-stack"></a>Метрики, поддерживаемые Azure Monitor в Azure Stack
 
-*Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
+*Область применения: интегрированные системы Azure Stack*
 
 Метрики можно получить из Azure Monitor в Azure Stack таким же образом, как и в глобальной среде Azure. Показатели на портале можно создать, получить из REST API или запросить с помощью PowerShell или CLI.
 

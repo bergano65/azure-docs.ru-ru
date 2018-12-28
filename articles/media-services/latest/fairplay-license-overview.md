@@ -1,5 +1,5 @@
 ---
-title: Службы мультимедиа Azure и поддержка лицензии Apple FairPlay | Документация Майкрософт
+title: Службы мультимедиа и поддержка лицензии Apple FairPlay в Azure | Документация Майкрософт
 description: В этом разделе приводится обзор требований и конфигурации лицензии Apple FairPlay.
 author: juliako
 manager: femila
@@ -11,14 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 12/08/2018
 ms.author: juliako
-ms.openlocfilehash: 19f382de3ffe11253005f5fa2874ee817abaeed3
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.custom: seodec18
+ms.openlocfilehash: 66d816795ec06891aafce73036d7aea9bb52b2c8
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49376760"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53140548"
 ---
 # <a name="apple-fairplay-license-requirements-and-configuration"></a>Требования и конфигурация лицензии Apple FairPlay 
 

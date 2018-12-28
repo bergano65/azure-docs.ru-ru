@@ -9,12 +9,12 @@ ms.author: divswa
 ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 10/19/2018
-ms.openlocfilehash: c65cc24f9b0083e9c873465008490bf00ea83852
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 70242de62e976b05e2708dfd4991915c854d4bb4
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50232382"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52995642"
 ---
 # <a name="monitor-logic-apps-with-azure-log-analytics"></a>Мониторинг приложений логики с помощью Azure Log Analytics
 
@@ -23,11 +23,11 @@ ms.locfileid: "50232382"
 Чтобы включить Azure Log Analytics для существующих приложений логики, [включите ведение журнала диагностики и отправку данных о приложениях логики из среды выполнения в Log Analytics](../logic-apps/logic-apps-monitor-your-logic-apps.md#azure-diagnostics).
 
 > [!NOTE]
-> На этой странице ранее описывались шаги по выполнению этих задач с помощью консоли Microsoft Operations Management Suite (OMS), которая [выводится из эксплуатации в январе 2019 г.](../log-analytics/log-analytics-oms-portal-transition.md) Теперь эти шаги выполняются с помощью Azure Log Analytics. 
+> На этой странице ранее описывались шаги по выполнению таких задач с помощью консоли Microsoft Operations Management Suite (OMS), которая [выводится из эксплуатации в январе 2019 г.](../azure-monitor/platform/oms-portal-transition.md) Теперь эти шаги выполняются с помощью Azure Log Analytics. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы начать работу, вам потребуется рабочая область Log Analytics. Узнайте, [как создать рабочую область Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md). 
+Чтобы начать работу, вам потребуется рабочая область Log Analytics. Узнайте, [как создать рабочую область Log Analytics](../azure-monitor/learn/quick-create-workspace.md). 
 
 ## <a name="turn-on-diagnostics-logging-when-creating-logic-apps"></a>Включение ведения журнала диагностики при создании приложений логики
 
@@ -58,7 +58,7 @@ ms.locfileid: "50232382"
 
 Если вы уже включили Log Analytics при создании приложения логики, то пропустите этот шаг. Решение по управлению Logic Apps уже установлено.
 
-1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. В поле для поиска введите log analytics и выберите **Log Analytics**.
+1. На [портале Azure](https://portal.azure.com) выберите **Все службы**. В поле поиска введите "log analytics" и выберите **Log Analytics**.
 
    ![Выбор "Log Analytics"](./media/logic-apps-monitor-your-logic-apps-oms/find-log-analytics.png)
 
@@ -116,7 +116,7 @@ ms.locfileid: "50232382"
 
      Прежде чем любое новое добавленное отслеживаемое свойство появится впервые, может пройти 10–15 минут. Узнайте, [как добавить отслеживаемые свойства в приложение логики](logic-apps-monitor-your-logic-apps.md#azure-diagnostics-event-settings-and-details).
 
-   * **Отправить повторно**. Можно повторно отправить одно или несколько выполнений приложения логики, завершившихся сбоем, выполненных успешно или все еще выполняемых. Установите флажки для выполнений, которые необходимо отправить повторно, и щелкните **Отправить повторно**. 
+   * **Отправить повторно**. Можно повторно отправить одну или несколько операций приложения логики, завершившихся сбоем, выполненных успешно или все еще выполняемых. Установите флажки для выполнений, которые необходимо отправить повторно, и щелкните **Отправить повторно**. 
 
      ![Повторная отправка выполнений приложения логики](media/logic-apps-monitor-your-logic-apps-oms/logic-app-resubmit.png)
 

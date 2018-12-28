@@ -12,37 +12,37 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 03/31/2018
-ms.openlocfilehash: d4ecfe700c90beb94455e3607cee4ea30227bd0e
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: f98c09a7e51fa729ef4a940e5f3c03de55d8dfd2
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47166242"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52875286"
 ---
 # <a name="performance-counters-for-shard-map-manager"></a>Счетчики производительности для диспетчера карты сегментов
 Вы можете сохранять данные о производительности [диспетчера карты сегментов](sql-database-elastic-scale-shard-map-management.md), особенно при использовании [маршрутизации, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md). Счетчики создаются с помощью методов класса Microsoft.Azure.SqlDatabase.ElasticScale.Client.  
 
 Счетчики используются для отслеживания показателей производительности в операциях [маршрутизации, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md) . Эти счетчики можно найти в системном мониторе в категории "Эластичная база данных: управление сегментами".
 
-**Новая версия** : [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/). См. также статью [Обновление приложения для использования новой версии клиентской библиотеки эластичной базы данных](sql-database-elastic-scale-upgrade-client-library.md).
+**Последняя версия**: перейдите к [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/). См. также статью [Обновление приложения для использования новой версии клиентской библиотеки эластичной базы данных](sql-database-elastic-scale-upgrade-client-library.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Чтобы пользователь мог создавать категории производительности и счетчики, он должен быть членом локальной группы **Администраторы** на компьютере, где размещается приложение.  
 * Чтобы пользователь мог создавать экземпляры счетчика производительности и обновлять показания счетчиков, он должен быть членом группы **Администраторы** или **Пользователи системного монитора**. 
 
 ## <a name="create-performance-category-and-counters"></a>Создание счетчиков и категорий производительности
-Чтобы создать счетчик, вызовите метод CreatePeformanceCategoryAndCounters класса [ShardMapManagmentFactory](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.aspx). Этот метод может выполнять только администратор: 
+Чтобы создать счетчик, вызовите метод CreatePeformanceCategoryAndCounters класса [ShardMapManagementFactory](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.aspx). Этот метод может выполнять только администратор: 
 
     ShardMapManagerFactory.CreatePerformanceCategoryAndCounters()  
 
 Для выполнения метода можно также использовать [этот](https://gallery.technet.microsoft.com/scriptcenter/Elastic-DB-Tools-for-Azure-17e3d283) сценарий PowerShell. Этот метод создает следующие счетчики производительности.  
 
-* **Cached mappings**(Кэшированные сопоставления) — количество сопоставлений, кэшируемых для карты сегментов.
-* **DDR operations/sec**(Число операций DDR в секунду) — скорость операций маршрутизации, зависящих от данных, для карты сегментов. Этот счетчик обновляется при успешном подключении к целевому сегменту после вызова метода [OpenConnectionForKey()](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmap.openconnectionforkey.aspx). 
-* **Mapping lookup cache hits/sec**(Число попаданий при поиске сопоставлений в кэше в секунду) — скорость успешных операций поиска сопоставлений в кэше для карты сегментов. 
-* **Mapping lookup cache misses/sec**(Число промахов при поиске сопоставлений в кэше в секунду) — скорость неуспешных операций поиска сопоставлений в кэше для карты сегментов.
-* **Mappings added or updated in cache/sec**(Число добавляемых или обновляемых сопоставлений в кэше в секунду) — скорость добавления или обновления сопоставлений в кэше для карты сегментов. 
-* **Mappings removed from cache/sec**(Число удаляемых из кэша сопоставлений в секунду) — скорость удаления сопоставлений из кэша для карты сегментов. 
+* **Кэшированные сопоставления**: число сопоставлений, кэшируемых для карты сегментов.
+* **Число операций DDR в секунду**: число операций маршрутизации, зависящих от данных, для карты сегментов. Этот счетчик обновляется при успешном подключении к целевому сегменту после вызова метода [OpenConnectionForKey()](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmap.openconnectionforkey.aspx). 
+* **Число попаданий при поиске сопоставлений в кэше в секунду**: число успешных операций поиска сопоставлений в кэше для карты сегментов. 
+* **Число промахов при поиске сопоставлений в кэше в секунду**: число неуспешных операций поиска сопоставлений в кэше для карты сегментов.
+* **Число добавляемых или обновляемых сопоставлений в кэше в секунду**: число добавления или обновления сопоставлений в кэше для карты сегментов. 
+* **Число удаляемых из кэша сопоставлений в секунду**: число удаления сопоставлений из кэша для карты сегментов. 
 
 Счетчики производительности создаются для каждой кэшированной карты сегментов каждого процесса.  
 

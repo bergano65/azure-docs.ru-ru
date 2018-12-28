@@ -1,5 +1,5 @@
 ---
-title: Управление кластером Swarm в Azure с помощью API Docker
+title: Управление кластером Swarm в Azure с помощью API Docker (не рекомендуется)
 description: Развертывание контейнеров в кластер Docker Swarm в Службе контейнеров Azure
 services: container-service
 author: rgardler
@@ -9,14 +9,16 @@ ms.topic: article
 ms.date: 09/13/2016
 ms.author: rogardle
 ms.custom: mvc
-ms.openlocfilehash: 3f8d18bc053bc303ab124ba38c8621d4ee2e8cb8
-ms.sourcegitcommit: 5d3e99478a5f26e92d1e7f3cec6b0ff5fbd7cedf
+ms.openlocfilehash: 04cc9048271d653bd77fd7f2707c8f510ea8c29f
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2017
-ms.locfileid: "26331551"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52997952"
 ---
-# <a name="container-management-with-docker-swarm"></a>Управление контейнерами с помощью Docker Swarm
+# <a name="deprecated-container-management-with-docker-swarm"></a>Управление контейнерами с помощью Docker Swarm (не рекомендуется)
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
 Docker Swarm — это среда для развертывания контейнерной рабочей нагрузки в наборе узлов, объединенных в пул Docker. В Docker Swarm используется собственный API Docker. Поэтому рабочие процессы при управлении контейнерами Docker Swarm и отдельного узла контейнера почти не отличаются. Этот документ содержит простые примеры развертывания контейнерной рабочей нагрузки в экземпляре Docker Swarm, который развернут в службе контейнеров Azure. Дополнительные сведения о Docker Swarm см. в [документации по Docker Swarm на сайте Docker.com](https://docs.docker.com/swarm/).
 

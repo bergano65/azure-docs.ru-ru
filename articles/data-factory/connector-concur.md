@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/15/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 00dd74ccd317799ca3afcbe0ed1ca85e19bb3cbe
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: cee04bd3901db7136a877643979832ed8a70cbd8
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46123886"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53076171"
 ---
 # <a name="copy-data-from-concur-using-azure-data-factory-preview"></a>Копирование данных из Concur с помощью фабрики данных Azure (предварительная версия)
 
@@ -79,7 +79,13 @@ ms.locfileid: "46123886"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Concur.
 
-Чтобы скопировать данные из Concur, установите свойство type набора данных **ConcurObject**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные из Concur, установите свойство type набора данных **ConcurObject**. В этом типе набора данных нет дополнительных свойств для определенного типа. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Свойство type для набора данных должно иметь значение **ConcurObject** | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
+
 
 **Пример**
 
@@ -91,7 +97,8 @@ ms.locfileid: "46123886"
         "linkedServiceName": {
             "referenceName": "<Concur linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -106,8 +113,8 @@ ms.locfileid: "46123886"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **ConcurSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Opportunities where Id = xxx "`. | Yes |
+| Тип | Свойство type источника действия копирования должно иметь значение **ConcurSource** | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Opportunities where Id = xxx "`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

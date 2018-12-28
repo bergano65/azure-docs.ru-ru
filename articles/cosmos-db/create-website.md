@@ -1,21 +1,19 @@
 ---
-title: Развертывание веб-приложения с помощью шаблона (Azure Cosmos DB) | Документация Майкрософт
+title: Развертывание веб-приложения с помощью шаблона в Azure Cosmos DB
 description: В этом руководстве показано, как выполнять развертывание учетной записи Azure Cosmos DB, веб-приложений службы приложений Azure и примера веб-приложения с использованием шаблона Azure Resource Manager.
 services: cosmos-db, app-service\web
 author: SnehaGunda
-manager: kfile
 ms.service: cosmos-db
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/23/2018
 ms.author: sngun
 ms.custom: mvc
-ms.openlocfilehash: 29a2335a3a4077866b71e4303c240ad8352371ba
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 8af76c64e755b9c72ae4ebcc223e5f69549b92b9
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51243783"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53076740"
 ---
 # <a name="deploy-azure-cosmos-db-and-azure-app-service-web-apps-using-an-azure-resource-manager-template"></a>Развертывание Azure Cosmos DB и веб-приложений службы приложений Azure с помощью шаблона Azure Resource Manager
 В этом руководстве показано, как использовать шаблон Azure Resource Manager для развертывания и интеграции [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/), веб-приложения [службы приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714), а также примера веб-приложения.
@@ -37,7 +35,7 @@ ms.locfileid: "51243783"
 
 Для выполнения инструкций этого руководства нужна подписка Azure. Azure — это платформа на основе подписок.  Дополнительные сведения о получении подписки см. на страницах [Как приобрести Azure](https://azure.microsoft.com/pricing/purchase-options/), [Предложения для участников](https://azure.microsoft.com/pricing/member-offers/) или [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
 
-## <a id="CreateDB"></a>Шаг 1. Загрузка файлов шаблонов
+## <a id="CreateDB"></a>Шаг 1. Скачивание файлов шаблонов
 Сначала мы загрузим файлы шаблонов, которые требуются в этом руководстве.
 
 1. Скачайте шаблон [примера создания учетной записи Azure Cosmos DB, веб-приложений и развертывания демонстрационного приложения](https://portalcontent.blob.core.windows.net/samples/DocDBWebsiteTodo.json) в локальную папку (например, C:\Azure Cosmos DBTemplates). В этом примере развертываются учетная запись Azure Cosmos DB, веб-приложение службы приложений и веб-приложение.  Также веб-приложение автоматически настраивается для подключения к учетной записи Azure Cosmos DB.
@@ -45,7 +43,7 @@ ms.locfileid: "51243783"
 
 <a id="Build"></a>
 
-## <a name="step-2-deploy-the-azure-cosmos-db-account-app-service-web-app-and-demo-application-sample"></a>Шаг 2. Пример развертывания учетной записи Azure Cosmos DB, веб-приложения службы приложений и демонстрационного приложения
+## <a name="step-2-deploy-the-azure-cosmos-db-account-app-service-web-app-and-demo-application-sample"></a>Шаг 2. Пример развертывания учетной записи Azure Cosmos DB, веб-приложения службы приложений и примера приложения
 Теперь давайте развернем первый шаблон.
 
 > [!TIP]
@@ -60,7 +58,7 @@ ms.locfileid: "51243783"
    ![Снимок экрана пользовательского интерфейса развертывания шаблона](./media/create-website/TemplateDeployment3.png)
 4. Нажмите кнопку **Изменить параметры**, укажите значения для всех обязательных параметров и нажмите кнопку **ОК**.  Он принимает перечисленные ниже параметры.
    
-   1. SITENAME: задает имя веб-приложения службы приложений и используется для создания URL-адреса, который будет применяться для доступа к веб-приложению (например, если указать "mydemodocdbwebapp", то URL-адрес для доступа к веб-приложению будет иметь вид mydemodocdbwebapp.azurewebsites.net).
+   1. SITENAME: задает имя веб-приложения службы приложений и используется для создания URL-адреса, который будет применяться для доступа к веб-приложению (например, если указать mydemodocdbwebapp, то URL-адрес для доступа к веб-приложению будет иметь вид mydemodocdbwebapp.azurewebsites.net).
    2. HOSTINGPLANNAME: задает имя создаваемого плана размещения службы приложений.
    3. LOCATION: задает расположение Azure, в котором будут создаваться ресурсы Azure Cosmos DB и веб-приложения.
    4. DATABASEACCOUNTNAME: задает имя создаваемой учетной записи Azure Cosmos DB.   
@@ -82,7 +80,7 @@ ms.locfileid: "51243783"
 
 <a id="Build"></a> 
 
-## <a name="step-3-deploy-the-document-account-and-web-app-sample"></a>Шаг 3: пример развертывания учетной записи Document и веб-приложения
+## <a name="step-3-deploy-the-document-account-and-web-app-sample"></a>Шаг 3. Пример развертывания учетной записи Document и веб-приложения
 Теперь давайте развернем второй шаблон.  Этот шаблон наглядно показывает, как внедрить данные о подключении Azure Cosmos DB, например конечную точку учетной записи и главный ключ, в веб-приложение в качестве параметров приложения или в виде пользовательской строки подключения. Например, возможно, у вас имеется собственное веб-приложение, которое нужно развернуть с помощью учетной записи Azure Cosmos DB, причем сведения о подключении должны заполняться автоматически во время развертывания.
 
 > [!TIP]
@@ -97,7 +95,7 @@ ms.locfileid: "51243783"
    ![Снимок экрана пользовательского интерфейса развертывания шаблона](./media/create-website/TemplateDeployment3.png)
 4. Нажмите кнопку **Изменить параметры**, укажите значения для всех обязательных параметров и нажмите кнопку **ОК**.  Он принимает перечисленные ниже параметры.
    
-   1. SITENAME: задает имя веб-приложения службы приложений и используется для создания URL-адреса, который будет применяться для доступа к веб-приложению (например, если указать "mydemodocdbwebapp", то URL-адрес для доступа к веб-приложению будет иметь вид mydemodocdbwebapp.azurewebsites.net).
+   1. SITENAME: задает имя веб-приложения службы приложений и используется для создания URL-адреса, который будет применяться для доступа к веб-приложению (например, если указать mydemodocdbwebapp, то URL-адрес для доступа к веб-приложению будет иметь вид mydemodocdbwebapp.azurewebsites.net).
    2. HOSTINGPLANNAME: задает имя создаваемого плана размещения службы приложений.
    3. LOCATION: задает расположение Azure, в котором будут создаваться ресурсы Azure Cosmos DB и веб-приложения.
    4. DATABASEACCOUNTNAME: задает имя создаваемой учетной записи Azure Cosmos DB.   
@@ -121,12 +119,12 @@ ms.locfileid: "51243783"
 ## <a name="next-steps"></a>Дополнительная информация
 Поздравляем! Мы выполнили развертывание Azure Cosmos DB, веб-приложения службы приложений и примера веб-приложения с использованием шаблонов Azure Resource Manager.
 
-* Дополнительные сведения о базе данных Azure Cosmos DB см. [здесь](http://azure.com/docdb).
+* Дополнительные сведения о базе данных Azure Cosmos DB см. [здесь](https://azure.microsoft.com/services/cosmos-db/).
 * Дополнительные сведения о веб-приложениях службы приложений Azure см. [здесь](https://go.microsoft.com/fwlink/?LinkId=325362).
 * Дополнительные сведения о шаблонах Azure Resource Manager см. [здесь](https://msdn.microsoft.com/library/azure/dn790549.aspx).
 
 ## <a name="whats-changed"></a>Изменения
-* Руководство по переходу от веб-сайтов к службе приложений см. в статье [Служба приложений Azure и существующие службы Azure](https://go.microsoft.com/fwlink/?LinkId=529714).
+* См. руководство по переходу с веб-сайтов на службу приложений: [Служба приложений Azure и ее влияние на существующие службы Azure](https://go.microsoft.com/fwlink/?LinkId=529714)
 
 > [!NOTE]
 > Чтобы приступить к работе со службой приложений Azure до создания учетной записи Azure, перейдите к разделу [Пробное использование службы приложений](https://go.microsoft.com/fwlink/?LinkId=523751), где вы можете быстро создать кратковременное веб-приложение начального уровня в службе приложений. Никаких кредитных карт и обязательств.

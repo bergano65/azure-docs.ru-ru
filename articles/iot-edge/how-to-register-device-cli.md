@@ -1,6 +1,6 @@
 ---
-title: Регистрация нового устройства Azure IoT Edge с помощью CLI | Документация Майкрософт
-description: Использование расширения Интернета вещей для Azure CLI для регистрации нового устройства IoT Edge
+title: Регистрация нового устройства с помощью командной строки — Azure IoT Edge | Документация Майкрософт
+description: Регистрация нового устройства IoT Edge и получение строки подключения с помощью расширения Интернета вещей для Azure CLI
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 737a2dfe5c3b3382db00785b3465147143b17e9e
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: 28f20157de603cf20cb33e9db569064f87922bf8
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51569256"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53081839"
 ---
 # <a name="register-a-new-azure-iot-edge-device-with-azure-cli"></a>Регистрация нового устройства Azure IoT Edge с помощью Azure CLI
 
@@ -39,11 +40,11 @@ ms.locfileid: "51569256"
    ```
 
 Эта команда принимает три параметра:
-* **device-id** содержит описательное имя устройства, уникальное в пределах Центра Интернета вещей;
-* **hub-name** содержит имя Центра Интернета вещей;
-* **edge-enabled** указывает, что устройство предназначено для использования с IoT Edge.
+* **device-id**: содержит описательное имя устройства, уникальное в пределах Центра Интернета вещей;
+* **hub-name**: содержит имя Центра Интернета вещей;
+* **edge-enabled**: указывает, что устройство предназначено для использования с IoT Edge.
 
-   ![Создание устройства IoT Edge](./media/how-to-register-device-cli/Create-edge-device.png)
+   ![Выходные данные команды az iot hub device-identity](./media/how-to-register-device-cli/Create-edge-device.png)
 
 ## <a name="view-all-devices"></a>Просмотр данных обо всех устройствах
 

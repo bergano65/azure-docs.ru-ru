@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: f56e15e12bc176e6b6837e144494599ea4fb5403
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: a6c8a8aa954379036ce566a205b8cb4e97952727
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52282538"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52887852"
 ---
 # <a name="add-a-popup-to-the-map"></a>Добавление всплывающего окна на карту
 
@@ -37,20 +37,32 @@ ms.locfileid: "52282538"
 
 Последний блок кода создает функцию, которая инициируется прослушивателем событий `mouseover`. Он задает содержимое и свойства всплывающего окна и добавляет объект всплывающего окна на карту.
 
+## <a name="reusing-a-popup-with-multiple-points"></a>Повторное использование всплывающего окна с несколькими точками
+
+Если у вас есть большое количество точек и вы хотите отображать только одно всплывающее окно за раз, лучше всего создать одно всплывающее окно и повторно использовать его вместо того, чтобы создавать всплывающее окно для каждой функции точки. Таким образом, число элементов DOM, созданных приложением, значительно снизится, обеспечивая более высокую производительность. Этот пример создает три функции точки. Если щелкнуть любую из них, отобразится всплывающее окно с содержимым этой функции точки.
+
+<br/>
+
+<iframe height='500' scrolling='no' title='Повторное использование всплывающего окна с несколькими закреплениями' src='//codepen.io/azuremaps/embed/rQbjvK/?height=500&theme-id=0&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>Просмотрите фрагмент кода для <a href='https://codepen.io/azuremaps/pen/rQbjvK/'>повторного использования всплывающего окна с несколькими закреплениями</a> службы Azure Maps (<a href='https://codepen.io/azuremaps'>@azuremaps</a>) на сайте <a href='https://codepen.io'>CodePen</a>.
+</iframe>
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о классах и методах, которые используются в этой статье:
 
 > [!div class="nextstepaction"]
-> класс [Map](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest);
+> [Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest)
 
 > [!div class="nextstepaction"]
-> [Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest)
+> [PopupOptions](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popupoptions?view=azure-iot-typescript-latest)
 
 Полные примеры кода см. в следующих превосходных статьях:
 
 > [!div class="nextstepaction"]
-> [Добавление фигуры](./map-add-shape.md)
+> [Добавление слоя символов](./map-add-pin.md)
 
 > [!div class="nextstepaction"]
-> [Добавление пользовательского HTML-кода](./map-add-custom-html.md)
+> [Добавление маркера HTML](./map-add-custom-html.md)
+
+> [!div class="nextstepaction"]
+> [Добавление фигуры](./map-add-shape.md)

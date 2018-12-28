@@ -5,27 +5,27 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/04/2018
+ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: efbbe048456c969f0045a0588bc5b64d1138ee15
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: e3967319cd41399209bd50886bce88efc8ba6ba6
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51976967"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52956522"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
 
 При настройке аварийного восстановления для виртуальных машин VMware и физических серверов используйте [Azure Site Recovery](site-recovery-overview.md). Требуется установить службу мобильности Site Recovery на каждую локальную виртуальную машину VMware и физический сервер.  Служба Mobility Service фиксирует операции записи данных на компьютере и перенаправляет их на сервер обработки Site Recovery. Вы можете запустить службу Mobility Service одним из следующих способов:
 
-[Принудительная установка](vmware-azure-install-mobility-service.md). Настройте в Site Recovery выполнение принудительной установки Mobility Service. Для этого при настройке аварийного восстановления также настройте учетную запись, которую сервер обработки Site Recovery может использовать для доступа к виртуальной машине или физическому серверу для целей установки службы.
+[Принудительная установка](vmware-azure-install-mobility-service.md). Настройте Site Recovery, чтобы выполнить принудительную установку службы Mobility Service. Для этого при настройке аварийного восстановления также настройте учетную запись, которую сервер обработки Site Recovery может использовать для доступа к виртуальной машине или физическому серверу для установки службы.
 [Установка вручную](vmware-physical-mobility-service-install-manual.md). Mobility Service можно установить вручную на каждом компьютере с помощью пользовательского интерфейса или окна командной строки.
 [Автоматизированное развертывание](vmware-azure-mobility-install-configuration-mgr.md). Установку можно автоматизировать с помощью инструментов развертывания программного обеспечения, таких как System Center Configuration Manager.
 
 ## <a name="azure-virtual-machine-agent"></a>Агент виртуальной машины Azure
 
-- **Виртуальные машины Windows**. Начиная с версии 9.7.0.0 Mobility Service, [агент виртуальной машины Azure](../virtual-machines/extensions/features-windows.md#azure-vm-agent) устанавливает установщик Mobility Service. Это гарантирует, что когда выполняется отработка отказа устройства в Azure, виртуальная машина Azure отвечает требованиям к установке агента для использования любого расширения виртуальной машины.
-- **Виртуальные машины Linux**. [WALinuxAgent](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent) следует установить вручную на виртуальной машине Azure после отработки отказа.
+- **Для виртуальных машин Windows**: Начиная с версии 9.7.0.0 Mobility Service, [агент виртуальной машины Azure](../virtual-machines/extensions/features-windows.md#azure-vm-agent) устанавливает установщик Mobility Service. Это гарантирует, что когда выполняется отработка отказа устройства в Azure, виртуальная машина Azure отвечает требованиям к установке агента для использования любого расширения виртуальной машины.
+- **Для виртуальных машин Linux**: [WALinuxAgent](https://docs.microsoft.com/azure/virtual-machines/extensions/update-linux-agent) следует установить вручную на виртуальной машине Azure после отработки отказа.
 
 ## <a name="installer-files"></a>Файлы установщика
 
@@ -56,11 +56,11 @@ Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8;
 2. На портале откройте хранилище и выберите **Реплицированные элементы**.
 3. Если сервер конфигурации последней версии, отобразится уведомление: "Доступно обновление для агента репликации Site Recovery. Щелкните, чтобы установить его."
 
-     ![Окно "Реплицированные элементы"](.\media\vmware-azure-install-mobility-service\replicated-item-notif.png)
+     ![Окно "Реплицированные элементы"](./media/vmware-azure-install-mobility-service/replicated-item-notif.png)
 
 4. Щелкните уведомление и в разделе **Обновление агента** выберите компьютеры, на которых нужно обновить службу Mobility Service. Нажмите кнопку **ОК**.
 
-     ![Список виртуальных машин "Реплицированные элементы"](.\media\vmware-azure-install-mobility-service\update-okpng.png)
+     ![Список виртуальных машин "Реплицированные элементы"](./media/vmware-azure-install-mobility-service/update-okpng.png)
 
 5. Для каждого выбранного компьютера будет запущено задание обновления службы Mobility Service.
 
@@ -74,8 +74,8 @@ Microsoft-ASR_UA\*DEBIAN8-64\*release.tar.gz | Debian 8;
 
 Выполните удаление из пользовательского интерфейса или командной строки.
 
-- **Из пользовательского интерфейса**: на панели управления компьютера выберите **Программы**. Выберите **Microsoft Azure Site Recovery Mobility Service/Master Target server (Microsoft Azure Site Recovery Mobility Service/главный целевой сервер)** > **Удаление**.
-- **Из командной строки**: откройте окно командной строки с правами администратора компьютера. Выполните следующую команду: 
+- **Установка с помощью пользовательского интерфейса**: на панели управления компьютера выберите **Программы**. Выберите **Microsoft Azure Site Recovery Mobility Service/Master Target server (Microsoft Azure Site Recovery Mobility Service/главный целевой сервер)** > **Удаление**.
+- **Установка из командной строки**: откройте окно командной строки с правами администратора на компьютере. Выполните следующую команду: 
     ```
     MsiExec.exe /qn /x {275197FC-14FD-4560-A5EB-38217F80CBD1} /L+*V "C:\ProgramData\ASRSetupLogs\UnifiedAgentMSIUninstall.log"
     ```

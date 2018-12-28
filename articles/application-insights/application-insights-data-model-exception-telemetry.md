@@ -8,19 +8,18 @@ manager: carmonm
 ms.service: application-insights
 ms.workload: TBD
 ms.tgt_pltfrm: ibiza
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/25/2017
 ms.reviewer: sergkanz
 ms.author: mbullwin
-ms.openlocfilehash: dc5480b90ef6b5520f47c51f0c105202d7071089
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 672eb1100731d636ae7c34f16d371c4f93b5716c
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47093599"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52721822"
 ---
-# <a name="exception-telemetry-application-insights-data-model"></a>Телеметрия исключений: модель данных Application Insights
+# <a name="exception-telemetry-application-insights-data-model"></a>Телеметрия исключений. Модель данных Application Insights
 
 В [Application Insights](app-insights-overview.md) экземпляр исключения представляет обработанное или необработанное исключение, возникшее во время выполнения отслеживаемого приложения.
 
@@ -28,7 +27,7 @@ ms.locfileid: "47093599"
 
 Идентификатор места в коде, где возникло исключение. Используется для группирования исключений. Обычно это сочетание типа исключения и функции из стека вызовов.
 
-Максимальная длина: 1024 символа
+Максимальная длина — 1024 символа
 
 ## <a name="severity-level"></a>Уровень серьезности
 

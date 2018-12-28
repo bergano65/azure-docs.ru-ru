@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Perception United States (Non-UltiPro) | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Perception United States (Non-UltiPro) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Perception United States (Non-UltiPro).
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: 61fb9904e69f5269c345b733ef2396294c6c790a
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 8c29d054f2e4e9ff4b57785a57e5c6ea512623a6
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39448178"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52840671"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-perception-united-states-non-ultipro"></a>Руководство по интеграции Azure Active Directory с Perception United States (Non-UltiPro)
+# <a name="tutorial-azure-active-directory-integration-with-perception-united-states-non-ultipro"></a>Руководство. Интеграция Azure Active Directory с Perception United States (Non-UltiPro)
 
 В этом руководстве вы узнаете, как интегрировать Perception United States (Non-UltiPro) с Azure Active Directory (Azure AD).
 
@@ -173,7 +173,7 @@ ms.locfileid: "39448178"
 
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -209,7 +209,7 @@ ms.locfileid: "39448178"
   
 ### <a name="create-a-perception-united-states-non-ultipro-test-user"></a>Создание тестового пользователя Perception United States (Non-UltiPro)
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Perception United States (Non-UltiPro). Обратитесь в [службу поддержки Perception United States (Non-UltiPro)](http://www.ultimatesoftware.com/Contact/ContactUs), чтобы добавить пользователей на платформу Perception United States (Non-UltiPro).
+В этом разделе описано, как создать пользователя Britta Simon в приложении Perception United States (Non-UltiPro). Обратитесь в [службу поддержки Perception United States (Non-UltiPro)](https://www.ultimatesoftware.com/Contact/ContactUs), чтобы добавить пользователей на платформу Perception United States (Non-UltiPro).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -246,7 +246,7 @@ ms.locfileid: "39448178"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Perception United States (Non-UltiPro) на панели доступа, вы автоматически войдете в приложение Perception United States (Non-UltiPro).
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

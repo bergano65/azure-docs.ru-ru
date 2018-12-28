@@ -1,5 +1,5 @@
 ---
-title: Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)
+title: Тестирование реальных данных средствами Azure Stream Analytics для Visual Studio
 description: Узнайте, как протестировать задание Azure Stream Analytics в локальной среде с помощью потоковой трансляции данных.
 services: stream-analytics
 author: mamccrea
@@ -7,13 +7,14 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: f0a8978a9c2e0538a2e7bc4eab202604913e700b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.date: 12/07/2018
+ms.custom: seodec18
+ms.openlocfilehash: ea55d2f96a87503d43a69d288ce85dcff32a39ce
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46984166"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53090335"
 ---
 # <a name="test-live-data-locally-using-azure-stream-analytics-tools-for-visual-studio-preview"></a>Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)
 
@@ -33,28 +34,28 @@ ms.locfileid: "46984166"
 
 1. После создания [облачного проекта Azure Stream Analytics в Visual Studio](stream-analytics-quick-create-vs.md) откройте файл **script.asaql**. При локальном тестировании по умолчанию используются локальные входные и выходные данные.
 
-   ![Локальное тестирование Azure Stream Analytics в Visual Studio: локальные входные и выходные данные](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-local-input-output.png)
+   ![Локальные входные и выходные данные Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-local-input-output.png)
 
 2. Чтобы протестировать реальные данные, из раскрывающегося списка выберите **Use Cloud Input** (Использовать облачные входные данные).
 
-   ![Локальное тестирование Azure Stream Analytics в Visual Studio: реальные облачные входные данные](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input.png)
+   ![Реальные облачные входные данные Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input.png)
 
 
 3. Задайте **время начала**, чтобы определить, когда задание начнет обработку входных данных. Заданию может потребоваться считать входные данные заранее, чтобы обеспечить точные результаты. Время по умолчанию составляет 30 минут с текущего момента.
 
-   ![Локальное тестирование Azure Stream Analytics в Visual Studio с помощью реальных входных данных: время начала](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-start-time.png)
+   ![Время начала обработки реальных данных Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-start-time.png)
 
 4. Щелкните **Run Locally** (Запустить локально). Появится окно консоли, отображающее ход выполнения и метрики задания. Если вы хотите остановить процесс, это можно сделать вручную. 
 
-   ![Локальное тестирование Azure Stream Analytics в Visual Studio с помощью реальных входных данных: окно обработки](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-process-window.png)
+   ![Окно обработки реальных данных Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-process-window.png)
 
    Выходные данные обновляются каждые три секунды. В окне результатов локального выполнения отображаются первые 500 выходных строк, а выходные файлы помещаются в папку **ASALocalRun**, размещенную по пути к вашему проекту. Выходные файлы можно также открыть, нажав кнопку **Открыть папку результатов** в окне результатов локального выполнения.
 
-   ![Локальное тестирование Azure Stream Analytics в Visual Studio с помощью реальных входных данных: открытие папки результатов](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-open-results-folder.png)
+   ![Открытие папки результатов обработки реальных данных Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-input-open-results-folder.png)
 
 5. Если вы хотите вывести результаты в облачные приемники выходных данных, выберите **Output to Cloud** (Вывод в облако) из второго раскрывающегося списка. Power BI и Azure Data Lake Storage не поддерживаются в качестве приемников выходных данных.
 
-   ![Локальное тестирование Azure Stream Analytics в Visual Studio с передачей реальных выходных данных в облако](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-output.png)
+   ![Передача в облако реальных выходных данных Azure Stream Analytics в Visual Studio](./media/stream-analytics-live-data-local-testing/stream-analytics-local-testing-cloud-output.png)
  
 ## <a name="limitations"></a>Ограничения
 

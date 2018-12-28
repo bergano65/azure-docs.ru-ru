@@ -1,20 +1,18 @@
 ---
-title: Массовый импорт и обновление данных в Azure Cosmos DB с помощью библиотеки массового исполнителя | Документация Майкрософт
+title: Массовый импорт и обновление данных в Azure Cosmos DB с помощью библиотеки массового исполнителя
 description: Выполнение массовых операций в Azure Cosmos DB с помощью интерфейсов API массового импорта и массового обновления, предоставляемых библиотекой массового исполнителя.
 services: cosmos-db
 author: tknandu
-manager: kfile
 ms.service: cosmos-db
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: ramkris
-ms.openlocfilehash: a760de998c78ce2afdd24a15d9dd6e5d0cf44dc1
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.openlocfilehash: e3b77ce28e5c3a236abcd9a22e643428b53ed0a6
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49363550"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52834814"
 ---
 # <a name="azure-cosmos-db-bulk-executor-library-overview"></a>Общие сведения о библиотеке массового исполнителя в Azure Cosmos DB
  

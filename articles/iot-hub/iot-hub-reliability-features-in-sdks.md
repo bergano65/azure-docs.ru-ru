@@ -12,12 +12,12 @@ documentationcenter: ''
 manager: timlt
 ms.devlang: na
 ms.custom: mvc
-ms.openlocfilehash: 64bd250f324bed53a9f33aa72f6b1daa48e0dc86
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 8951680ca9488dabffd02ee084e3f6827122276e
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52424652"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52957458"
 ---
 # <a name="manage-connectivity-and-reliable-messaging-by-using-azure-iot-hub-device-sdks"></a>Управление возможностью подключения и надежным обменом сообщениями с помощью пакетов SDK для устройств Центра Интернета вещей Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "52424652"
 
 Пакеты SDK поддерживают три политики повтора.
 
-- **Экспоненциальная задержка с дрожание**. Эта политика повтора применяется по умолчанию и действует довольно агрессивно в начале периода с постепенным замедлением вплоть до максимального периода задержки. Она спроектирована на основе [рекомендаций по логике повтора из центра архитектуры Azure](https://docs.microsoft.com/azure/architecture/best-practices/retry-service-specific).
+- **Экспоненциальная задержка с дрожанием**. Эта политика повтора применяется по умолчанию и действует довольно агрессивно в начале периода с постепенным замедлением вплоть до максимального периода задержки. Она спроектирована на основе [рекомендаций по логике повтора из центра архитектуры Azure](https://docs.microsoft.com/azure/architecture/best-practices/retry-service-specific).
 - **Пользовательская политика повтора**. Для некоторых языков пакет SDK позволяет создать пользовательскую политику повтора, которая лучше соответствует конкретному сценарию работы, и поместить ее в объект RetryPolicy. Пользовательская политика повтора пока недоступна в пакете SDK для языка C.
 - **Без повтора**. Вы может выбрать политику повтора "Без повтора", то есть отключить логику повторных попыток. Пакет SDK один раз пытается подключиться и, если подключение установлено, один раз пытается отправить сообщение. Эта политика обычно используется в сценариях, чувствительных к пропускной способности или затратам. Если вы выберете этот вариант, то неотправленные сообщения сразу теряются без возможности восстановления.
 
@@ -115,9 +115,8 @@ ms.locfileid: "52424652"
 - [Пакет SDK для Node](https://github.com/Azure/azure-iot-sdk-node/wiki/Connectivity-and-Retries#types-of-errors-and-how-to-detect-them)
 
 ## <a name="next-steps"></a>Дополнительная информация
-
-- [Использование пакетов SDK для устройств и служб](.\iot-hub-devguide-sdks.md)
-- [Использование пакета SDK для устройств Azure IoT для C](.\iot-hub-device-sdk-c-intro.md)
-- [Разработка приложений для устройств с ограниченным ресурсами](.\iot-hub-devguide-develop-for-constrained-devices.md)
-- [Разработка приложений для мобильных устройств](.\iot-hub-how-to-develop-for-mobile-devices.md)
+- [Использование пакетов SDK для устройств и служб](./iot-hub-devguide-sdks.md)
+- [Использование пакета SDK для устройств Azure IoT для C](./iot-hub-device-sdk-c-intro.md)
+- [Разработка приложений для устройств с ограниченным ресурсами](./iot-hub-devguide-develop-for-constrained-devices.md)
+- [Разработка приложений для мобильных устройств](./iot-hub-how-to-develop-for-mobile-devices.md)
 - [Detect and troubleshoot disconnects with Azure IoT Hub](iot-hub-troubleshoot-connectivity.md) (Обнаружение и устранение неполадок отключения Центра Интернета вещей Azure)

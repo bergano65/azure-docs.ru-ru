@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ForeSee CX Suite | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ForeSee CX Suite | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ForeSee CX Suite.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/24/2018
 ms.author: jeedes
-ms.openlocfilehash: b288bcbe14050c0f764f348d5e20186570e32866
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 34de89123e75f0c760fbcefa633b9aadf8d2b997
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39442206"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52878650"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Руководство по интеграции Azure Active Directory с ForeSee CX Suite
+# <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Руководство. Интеграция Azure Active Directory с ForeSee CX Suite
 
 В этом руководстве описано, как интегрировать ForeSee CX Suite с Azure Active Directory (Azure AD).
 
@@ -211,7 +211,7 @@ ms.locfileid: "39442206"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку "ForeSee CX Suite" на панели доступа, вы автоматически войдете в приложение ForeSee CX Suite.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

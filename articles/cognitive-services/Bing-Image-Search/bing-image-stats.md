@@ -1,7 +1,7 @@
 ---
-title: Аналитика поиска изображений — API Bing для поиска изображений
+title: Добавление аналитики в API Bing для поиска изображений
 titleSuffix: Azure Cognitive Services
-description: Описывается, как получить аналитику для API Bing для поиска изображений.
+description: Статистика Bing предоставляет аналитику для API Bing для поиска изображений. Аналитика включает в себя вызов тома, часто используемые строки запроса, географическое распределение и многое другое.
 services: cognitive-services
 author: swhite-msft
 manager: cgronlun
@@ -10,13 +10,13 @@ ms.component: bing-image-search
 ms.topic: article
 ms.date: 04/10/2018
 ms.author: scottwhi
-ms.openlocfilehash: 7940330d1bc32a5d1fef158998a9292c86f21154
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 576505e1a3b05666b350c0256e0c8364280bcd95
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48888178"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53249657"
 ---
-# <a name="how-to-get-analytics-for-the-bing-image-search-api"></a>Как получить аналитику для API Bing для поиска изображений
+# <a name="add-analytics-to-the-bing-image-search-api"></a>Добавление аналитики в API Bing для поиска изображений
 
 [!INCLUDE [cognitive-services-bing-statistics](../../../includes/cognitive-services-bing-statistics.md)]

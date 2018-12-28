@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Halosys | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Halosys | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Halosys.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/18/2018
 ms.author: jeedes
-ms.openlocfilehash: 6e0b9d205bf16c92443aadc69a1186b99c6d8cc5
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 838e839aeb0b6d227d9350c4b5cd1f3f1a8cad8e
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39446499"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52837202"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-halosys"></a>Руководство по интеграции Azure Active Directory с Halosys
+# <a name="tutorial-azure-active-directory-integration-with-halosys"></a>Руководство. Интеграция Azure Active Directory с Halosys
 
 В этом руководстве описано, как интегрировать приложение Halosys с Azure Active Directory (Azure AD).
 
@@ -115,7 +115,7 @@ ms.locfileid: "39446499"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company-name>.halosys.com/<instance name>`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Halosys](http://halosys.com/halosys#contact).
+    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Halosys](https://halosys.com/halosys#contact).
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -129,10 +129,10 @@ ms.locfileid: "39446499"
 
     ![Конфигурация Halosys](./media/halosys-tutorial/tutorial_halosys_configure.png) 
 
-1. Чтобы настроить единый вход на стороне **Halosys**, нужно отправить скачанный **XML-файл метаданных** и **URL-адрес службы единого входа SAML** [группе поддержки Halosys](http://halosys.com/halosys#contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Halosys**, нужно отправить скачанный **XML-файл метаданных** и **URL-адрес службы единого входа SAML** [группе поддержки Halosys](https://halosys.com/halosys#contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -168,7 +168,7 @@ ms.locfileid: "39446499"
   
 ### <a name="create-a-halosys-test-user"></a>Создание тестового пользователя Halosys
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Halosys. Обратитесь к [группе поддержки Halosys](http://halosys.com/halosys#contact), чтобы добавить пользователей на платформу Halosys. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Halosys. Обратитесь к  [группе поддержки Halosys](https://halosys.com/halosys#contact), чтобы добавить пользователей на платформу Halosys. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -205,7 +205,7 @@ ms.locfileid: "39446499"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Halosys на панели доступа, вы автоматически войдете в приложение Halosys.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -1,20 +1,21 @@
 ---
 title: Отправка событий в Центры событий Azure с помощью Go | Документация Майкрософт
-description: Приступая к отправке событий в Центры событий с помощью Go
+description: В статье описано, как создать приложение Go, которое отправляет события в Центры событий Azure.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: kamalb
 ms.service: event-hubs
 ms.workload: core
 ms.topic: article
-ms.date: 10/18/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: f5e30a103b09613caee8e9912a89a5bc2d390f65
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: 44cbea8cc40f83ed5fdd2863da0cb0a01e8dc2b8
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49458094"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53091066"
 ---
 # <a name="send-events-to-event-hubs-using-go"></a>Отправка событий в Центры событий с помощью Go
 
@@ -30,10 +31,11 @@ ms.locfileid: "49458094"
 Для работы с данным руководством вам потребуется:
 
 * Локально установленный Go. При необходимости выполните [следующие инструкции](https://golang.org/doc/install).
-* Существующее пространство имен Центров событий и концентратор событий. Эти сущности можно создать, следуя инструкциям в [этой статье](event-hubs-create.md).
 
 ## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий
-Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве.
+Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, [выполните эти инструкции](event-hubs-create.md).
+
+Теперь приступите к следующим действиям в этом руководстве:
 
 ## <a name="install-go-package"></a>Установка пакета Go
 

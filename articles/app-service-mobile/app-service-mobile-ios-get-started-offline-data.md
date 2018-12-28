@@ -14,12 +14,12 @@ ms.devlang: objective-c
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 2f415f1886c654f3bdd880cdccaadc7aa3e69892
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: bc0afcf1ac7d9e7a777d850e1b6df7b915837f3a
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32156501"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52956880"
 ---
 # <a name="enable-offline-syncing-with-ios-mobile-apps"></a>Включение автономной синхронизации с помощью мобильных приложений iOS
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
@@ -141,10 +141,10 @@ ms.locfileid: "32156501"
 При использовании автономного хранилища Core Data необходимо определить конкретные таблицы и поля в модели данных. Пример приложения уже содержит модель данных с подходящим форматом. В этом разделе мы рассмотрим эти таблицы и покажем, как их использовать.
 
 Откройте **QSDataModel.xcdatamodeld**. Определено четыре таблицы — три используются пакетом SDK, а одна предназначена для самих элементов списка дел.
-  * MS_TableOperations: отслеживает элементы, которые должны быть синхронизированы с сервером.
-  * MS_TableOperationErrors: отслеживает ошибки, возникающие во время автономной синхронизации.
-  * MS_TableConfig: отслеживает время последнего обновления у последней операции синхронизации для всех операций извлечения.
-  * TodoItem: сохраняет элементы списка дел. Системные столбцы **mcreatedAt**, **updatedAt** и **version** представляют собой необязательные системные свойства.
+  * MS_TableOperations — отслеживает элементы, которые должны быть синхронизированы с сервером.
+  * MS_TableOperationErrors — отслеживает ошибки, возникающие во время автономной синхронизации.
+  * MS_TableConfig — отслеживает время последнего обновления у последней операции синхронизации для всех операций извлечения.
+  * TodoItem — сохраняет элементы списка дел. Системные столбцы **mcreatedAt**, **updatedAt** и **version** представляют собой необязательные системные свойства.
 
 > [!NOTE]
 > Пакет SDK для мобильных приложений резервирует имена столбцов, начинающиеся с "**``**". Не используйте этот префикс где-либо, кроме системных столбцов. В противном случае при использовании удаленной серверной части имена таких столбцов будут изменены.
@@ -272,7 +272,7 @@ ms.locfileid: "32156501"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 * [Автономная синхронизация данных в мобильных приложениях Azure]
-* [Cloud Cover: Offline Sync in Azure Mobile Services] (Облачное покрытие: автономная синхронизация в мобильных службах Azure). \(Это видео рассказывает о мобильных службах, однако точно так же автономная синхронизация работает в мобильных приложениях.\)
+* [Cloud Cover: Offline Sync in Azure Mobile Services] (Облачная среда: автономная синхронизация в мобильных службах Azure). \(Это видео о мобильных службах, но автономная синхронизация точно так же работает в мобильных приложениях.\)
 
 <!-- URLs. -->
 
@@ -285,5 +285,5 @@ ms.locfileid: "32156501"
 [defining-core-data-tableconfig-entity]: ./media/app-service-mobile-ios-get-started-offline-data/defining-core-data-tableconfig-entity.png
 [defining-core-data-todoitem-entity]: ./media/app-service-mobile-ios-get-started-offline-data/defining-core-data-todoitem-entity.png
 
-[Cloud Cover: Offline Sync in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
-[Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
+[Cloud Cover: Offline Sync in Azure Mobile Services]: https://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri (Облачная среда: автономная синхронизация в мобильных службах Azure).
+[Azure Friday: Offline-enabled apps in Azure Mobile Services]: https://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: b1a4354db23cdfdc6201decbb793a3f9a3ad8206
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: c35082d7aa1e9d669bc9c5b89948f190d3edd2f3
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52496160"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53014537"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB
 
@@ -45,7 +45,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 1. Нажмите эту кнопку, чтобы войти в Azure и открыть шаблон на портале Azure.
     
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fhdinsight-spark-scala-kafka-cosmosdb%2Fmaster%2Fazuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
+    <img src="https://azuredeploy.net/deploybutton.png"/>
     </a>
 
     Шаблон Azure Resource Manager находится в репозитории GitHub для этого проекта ([https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb](https://github.com/Azure-Samples/hdinsight-spark-scala-kafka-cosmosdb)).
@@ -70,24 +70,24 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
    
     ![Настраиваемое развертывание в HDInsight](./media/apache-kafka-spark-structured-streaming-cosmosdb/parameters.png)
 
-    * **Подписка**. Выберите подписку Azure.
+    * **Подписка**: Выберите подписку Azure.
    
-    * **Группа ресурсов.** Создайте новую группу ресурсов или выберите существующую. Эта группа содержит кластер HDInsight.
+    * **Группа ресурсов.** Создайте новую группу или выберите существующую. Эта группа содержит кластер HDInsight.
 
     * **Расположение.** Выберите близкое к вам географическое расположение.
 
-    * **Имя учетной записи Cosmos DB**: это значение используется как имя учетной записи Cosmos DB.
+    * **Имя учетной записи Azure Cosmos DB.** Это значение используется как имя учетной записи Cosmos DB.
 
-    * **Базовое имя кластера**. Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **myhdi**, будет создан кластер Spark с именем __spark-myhdi__ и кластер Kafka с именем **kafka-myhdi**.
+    * **Базовое имя кластера.** Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **myhdi**, будет создан кластер Spark с именем __spark-myhdi__ и кластер Kafka с именем **kafka-myhdi**.
 
-    * **Версия кластера**: версия кластера HDInsight.
+    * **Версия кластера.** Версия кластера HDInsight.
 
         > [!IMPORTANT]
         > Этот пример протестирован с HDInsight 3.6 и может не работать с другими типами кластеров.
 
-    * **Cluster Login User Name** (Имя пользователя для входа в кластер). Имя администратора для кластеров Spark и Kafka.
+    * **Имя пользователя для входа в кластер.** Имя администратора для кластеров Spark и Kafka.
 
-    * **Cluster Login User Password** (Пароль пользователя для входа в кластер). Имя администратора для кластеров Spark и Kafka.
+    * **Пароль пользователя для входа в кластер.** Пароль администратора для кластеров Spark и Kafka.
 
     * **Имя пользователя SSH.** Создаваемый пользователь SSH для кластеров Spark и Kafka.
 

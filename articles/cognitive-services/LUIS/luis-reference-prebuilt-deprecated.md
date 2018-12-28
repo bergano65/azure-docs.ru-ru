@@ -1,28 +1,29 @@
 ---
-title: Справочник по предварительно созданным нерекомендуемым сущностям в LUIS Azure | Документация Майкрософт
+title: Устаревшие предварительно созданные сущности
 titleSuffix: Azure
 description: В этой статье описана готовая сущность deprecated в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
+ms.custom: seodec18
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: diberry
-ms.openlocfilehash: 5f722e9eae45f2df86b8c0831ffd33ad3edd8e5b
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 7b294b9c528d0b7a93a3e287b37124a26d0851dd
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52334114"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53138064"
 ---
-# <a name="deprecated-entities"></a>Нерекомендуемые сущности
+# <a name="deprecated-prebuilt-entities-in-a-luis-app"></a>Устаревшие предварительно созданные сущности
 Перечисленные ниже предварительно созданные сущности являются нерекомендуемыми, поэтому их нельзя добавлять в новые приложения LUIS.
 
 * **Datetime**. Если в существующих приложениях LUIS используется сущность **datetime**, ее следует заменить на **datetimeV2**, хотя сущность datetime продолжает функционировать в ранее созданных приложениях, которые ее используют.
-* **Geography**. Существующие приложения LUIS, в которых используется сущность **geography**, будут поддерживаться до декабря 2018 г.
-* **Encyclopedia**. Существующие приложения LUIS, в которых используется сущность **encyclopedia**, будут поддерживаться до декабря 2018 г.
+* **Geography**. Существующие приложения LUIS, в которых используется сущность **geography**, будут поддерживаться до декабря 2018 г.
+* **Encyclopedia**. Существующие приложения LUIS, в которых используется сущность **encyclopedia**, будут поддерживаться до декабря 2018 г.
 
 ## <a name="geography-culture"></a>Язык и региональные параметры для сущности geography
 Сущность **geography** доступна только в языковом стандарте `en-us`.
@@ -44,7 +45,7 @@ ms.locfileid: "52334114"
 #### <a name="encyclopedia-subtypes"></a>Подтипы сущности encyclopedia
 Встроенная сущность encyclopedia включает более 100 подтипов, показанных в таблице ниже. Кроме того, сущности encyclopedia часто сопоставляются с несколькими типами. Например, запрос Ronald Reagan возвращает следующие данные: 
 
-```JSON
+```json
 {
       "entity": "ronald reagan",
       "type": "builtin.encyclopedia.people.person"

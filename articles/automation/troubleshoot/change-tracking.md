@@ -3,22 +3,22 @@ title: Устранение неполадок в службе Отслежив�
 description: В этой статье приводятся сведения об устранении неполадок в службе Отслеживания изменений.
 services: automation
 ms.service: automation
-ms.component: change-tracking
+ms.component: change-inventory-management
 author: georgewallace
 ms.author: gwallace
 ms.date: 10/24/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 2f2e66a1fab31ce6099ab426d6e8ce144e155efb
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: 686a2c0ef0766176658d42d5ca53ea1ce6d3241c
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50088318"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52722944"
 ---
 # <a name="troubleshoot-change-tracking-and-inventory"></a>Устранение неполадок в службах "Отслеживание изменений" и "Учет"
 
-## <a name="windows"></a>Windows
+## <a name="windows"></a> Windows
 
 ### <a name="records-not-showing-windows"></a>Сценарий. Записи Отслеживания изменений не отображаются на портале Azure
 

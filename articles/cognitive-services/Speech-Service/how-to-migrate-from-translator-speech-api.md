@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: aahi
-ms.openlocfilehash: 81513819fd60dc088c2ed4a781562684c84e803a
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: dec903d8557145701e06ddd588a58eb11fef96f5
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50415480"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52879319"
 ---
 # <a name="migrate-from-the-translator-speech-api-to-the-speech-service"></a>Миграция из API перевода речи в службу "Речь"
 
@@ -45,7 +45,7 @@ ms.locfileid: "50415480"
 | Сведения о времени                                       | :heavy_check_mark:                                              | :heavy_minus_sign:                 |                                                                                                                                                                 |
 | Идентификатор корреляции                                    | :heavy_check_mark:                                              | :heavy_minus_sign:                 |                                                                                                                                                                                                                                                                                    |
 | Пользовательские модели речи                              | :heavy_minus_sign:                                              | :heavy_check_mark:                 | Служба "Речь" предлагает пользовательские модели речи, которые позволяют настраивать распознавание речи на основе уникального словаря для вашей организации.                                                                                                                                           |
-| Пользовательские модели перевода                         | :heavy_minus_sign:                                              | :heavy_check_mark:                 | Если вы подпишитесь на API перевода текстов Microsoft, вам станет доступен [Custom Translator](https://www.microsoft.com/translator/business/customization/) (в настоящее время в предварительной версии), позволяющий использовать собственные данные для более точных переводов.                                                 |
+| Пользовательские модели перевода                         | :heavy_minus_sign:                                              | :heavy_check_mark:                 | Если вы подпишитесь на API перевода текстов Microsoft, вам станет доступен [Custom Translator](https://www.microsoft.com/translator/business/customization/), позволяющий использовать собственные данные для более точных переводов.                                                 |
 
 ## <a name="migration-strategies"></a>Стратегии миграции
 

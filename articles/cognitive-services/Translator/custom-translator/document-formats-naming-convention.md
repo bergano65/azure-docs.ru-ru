@@ -9,12 +9,12 @@ ms.component: custom-translator
 ms.date: 11/13/2018
 ms.author: v-rada
 ms.topic: conceptual
-ms.openlocfilehash: fef4ecd207fd32b5a92a4c072832f3ab45b58300
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 74b421691f5d3536c44af16e99dc54451dfde3f7
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51627182"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52872770"
 ---
 # <a name="document-formats-and-naming-convention-guidance"></a>Руководство по форматам документов и соглашениям об именовании
 
@@ -43,11 +43,13 @@ ms.locfileid: "51627182"
 
 Документы могут быть сгруппированы в один ZIP-файл и отправлены в таком виде. Custom Translator поддерживает форматы ZIP-файлов (ZIP, GZ и TGZ).
 
-Каждый документ в ZIP-файле должен соответствовать такому соглашению об именовании:
+Каждый документ в ZIP-файле с расширением .txt, .html, .htm, .pdf, .docx, .align должен соответствовать этому соглашению об именовании:
 
 {имя документа}\_{код языка}, где {имя документа} — имя документа, {код языка} — идентификатор LanguageID ISO (два символа), указывающий, что документ содержит предложения на этом языке. Перед кодом языка должен присутствовать символ подчеркивания (_).
 
 Например, чтобы отправить два параллельных документа в ZIP-файле для системы перевода с английского на испанский, они должны называться data_en и data_es соответственно.
+
+Файлы памяти перевода (TMX, XLF, XLIFF, LCL, XLSX) не должны соответствовать соглашению об именовании для определенного языка.  
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,6 +1,6 @@
 ---
 title: Отправка событий в Центры событий Azure с помощью C | Документация Майкрософт
-description: Отправка событий в Центры событий Azure с помощью C
+description: В этой статье описано, как создать приложение C, которое отправляет сообщения в Центры событий Azure.
 services: event-hubs
 documentationcenter: ''
 author: ShubhaVijayasarathy
@@ -12,14 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: c
 ms.devlang: csharp
 ms.topic: article
-ms.date: 10/16/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 32345b0f064aa78dbf1cbb84cb2309138e7bf4f7
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: 8c134ae9944517d6ae66fcd22e06bbfc599912b4
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49455391"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53076398"
 ---
 # <a name="send-events-to-azure-event-hubs-using-c"></a>Отправка событий в Центры событий Azure с помощью C
 
@@ -33,6 +34,13 @@ ms.locfileid: "49455391"
 
 * Среда разработки C. В этом учебнике предполагается, что применяется стек gcc на виртуальной машине Azure Linux с Ubuntu 14.04.
 * [Microsoft Visual Studio](https://www.visualstudio.com/).
+
+## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий
+Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните инструкции из [этой статьи](event-hubs-create.md).
+
+Получите значение ключа доступа для концентратора событий, следуя инструкциям из раздела [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Используйте ключ доступа в коде, который вы напишете далее с помощью этого руководства. Имя ключа по умолчанию: **RootManageSharedAccessKey**.
+
+Теперь перейдите к следующим действиям, указанным в этом руководстве.
 
 ## <a name="write-code-to-send-messages-to-event-hubs"></a>Написание кода для отправки сообщений в Центры событий
 Из этого раздела вы узнаете, как написать приложение для отправки событий в концентратор на языке C. В коде используется библиотека Proton AMQP из [проекта Apache Qpid](http://qpid.apache.org/). Эта процедура аналогична использованию очередей и разделов службы "Служебная шина" с AMQP на C, как показано [в этом примере](https://code.msdn.microsoft.com/Using-Apache-Qpid-Proton-C-afd76504). Дополнительную информацию см. в [документации по Qpid Proton](http://qpid.apache.org/proton/index.html).

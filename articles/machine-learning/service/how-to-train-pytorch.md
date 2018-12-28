@@ -1,5 +1,6 @@
 ---
-title: Обучение моделей PyTorch с помощью службы "Машинное обучение Azure"
+title: Обучение моделей с помощью PyTorch
+titleSuffix: Azure Machine Learning service
 description: Сведения о проведении одноузлового и распределенного обучения моделей PyTorch с помощью средства оценки PyTorch.
 services: machine-learning
 ms.service: machine-learning
@@ -8,22 +9,23 @@ ms.topic: conceptual
 ms.author: minxia
 author: mx-iao
 ms.reviewer: sgilley
-ms.date: 09/24/2018
-ms.openlocfilehash: 27d4ad03e4a7f911fe3c9981618337a2fff51317
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.date: 12/04/2018
+ms.custom: seodec18
+ms.openlocfilehash: a6401c6059d8f72f344021879828b01c9ce77169
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49114623"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100571"
 ---
-# <a name="how-to-train-pytorch-models"></a>Способы обучения моделей PyTorch
+# <a name="train-pytorch-models-with-azure-machine-learning-service"></a>Обучение моделей PyTorch с помощью Службы машинного обучения Azure
 
 Для глубокого обучения нейронных сетей (DNN) с помощью PyTorch Машинное обучение Azure предоставляет пользовательский класс `PyTorch` средства оценки `Estimator`. Средство оценки `PyTorch` в пакете Azure SDK позволяет легко отправлять задания обучения PyTorch для одноузловых и распределенных запусков в вычислительных ресурсах Azure.
 
 ## <a name="single-node-training"></a>Одноузловое обучение
 Обучение с помощью средства оценки `PyTorch` похоже на использование [базового средства оценки`Estimator`](how-to-train-ml-models.md), поэтому сначала прочтите статью с практическим руководством и изучите изложенные понятия.
   
-Чтобы выполнить задание PyTorch, следует создать объект `PyTorch`. У вас уже должен быть создан объект `compute_target` [целевого вычислительного ресурса](how-to-set-up-training-targets.md#batch) и объект `ds` [хранилища данных](how-to-access-data.md).
+Чтобы выполнить задание PyTorch, следует создать объект `PyTorch`. У вас уже должен быть создан объект `compute_target` [целевого вычислительного ресурса](how-to-set-up-training-targets.md#amlcompute) и объект `ds` [хранилища данных](how-to-access-data.md).
 
 ```Python
 from azureml.train.dnn import PyTorch
@@ -44,7 +46,7 @@ pt_est = PyTorch(source_directory='./my-pytorch-proj',
 --|--
 `source_directory` |  Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленный вычислительный ресурс.
 `script_params` |  Словарь, указывающий аргументы командной строки для сценария обучения `entry_script` в виде пар <аргумент командной строки, значение>.
-`compute_target` |  Удаленный вычислительный ресурс (в этом случае — кластер [Batch AI](how-to-set-up-training-targets.md#batch)), на котором будет выполняться сценарий обучения.
+`compute_target` |  Целевой объект удаленных вычислений, на котором будет выполняться скрипт обучения. В нашем случае это кластер Вычислительной среды Машинного обучения Azure ([AmlCompute](how-to-set-up-training-targets.md#amlcompute)).
 `entry_script` |  Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. В этой папке должны быть расположены этот файл и дополнительные файлы, от которых он зависит.
 `conda_packages` |  Необходимый для сценария обучения список пакетов Python, которые нужно установить с помощью conda. Параметр `pip_packages` конструктора можно использовать для всех необходимых пакетов pip.
 `use_gpu` |  Присвойте этому флагу значение `True`, чтобы использовать GPU для обучения. По умолчанию — `False`.
@@ -100,13 +102,9 @@ run = exp.submit(pt_est)
 ```
 
 ## <a name="examples"></a>Примеры
-Руководство по одноузловому обучению PyTorch см. здесь:
-* [training/01.train-hyperparameter-tune-deploy-with-pytorch](https://github.com/Azure/MachineLearningNotebooks/tree/master/training/01.train-hyperparameter-tune-deploy-with-pytorch)
 
-Руководство по распределенному обучению PyTorch с использованием Horovod см. здесь:
-* [training/02.distributed-pytorch-with-horovod](https://github.com/Azure/MachineLearningNotebooks/blob/master/training/02.distributed-pytorch-with-horovod)
-
-Получите записные книжки:
+Записные книжки по распределенному глубокому обучению см. в репозитории GitHub, раздел
+* [how-to-use-azureml/training-with-deep-learning](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning).
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 

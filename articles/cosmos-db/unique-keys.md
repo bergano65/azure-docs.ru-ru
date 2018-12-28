@@ -1,18 +1,17 @@
 ---
-title: Уникальные ключи в Azure Cosmos DB
+title: Использование уникальных ключей в Azure Cosmos DB
 description: Узнайте, как использовать уникальные ключи в базе данных Azure Cosmos DB
 author: aliuy
+ms.author: andrl
 ms.service: cosmos-db
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/30/2018
-ms.author: andrl
-ms.openlocfilehash: 006d0ef28d82a7648a56b3bf871c5a3afd6a55a6
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 6dcbfcc4773befc291bd360dd14ff4c943d485bf
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51624426"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52966608"
 ---
 # <a name="unique-keys-in-azure-cosmos-db"></a>Уникальные ключи в Azure Cosmos DB
 

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: 0d2f55538517881ce6cc237885f3bcadfa084520
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 312b476f8809d1d6375cc20035901d8d11c32173
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52494957"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53012357"
 ---
 # <a name="use-apache-ambari-views-to-debug-apache-tez-jobs-on-hdinsight"></a>Отладка заданий Apache Tez в HDInsight с помощью представлений Apache Ambari
 
@@ -103,6 +103,6 @@ Tez создает направленный ациклический граф (D
 
 Теперь, когда вы поняли, как работать с представлением Apache Tez, узнайте больше об [использовании Apache Hive в HDInsight](hadoop/hdinsight-use-hive.md).
 
-Более подробные технические сведения об Apache Tez см. на [странице Apache Tez на сайте Hortonworks](http://hortonworks.com/hadoop/tez/).
+Более подробные технические сведения об Apache Tez см. на [странице Apache Tez на сайте Hortonworks](https://hortonworks.com/hadoop/tez/).
 
 Дополнительные сведения об использовании Apache Ambari в HDInsight см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).

@@ -1,5 +1,5 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Expensify | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Expensify | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Expensify.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/02/2018
 ms.author: jeedes
-ms.openlocfilehash: c9ee0af3cbf2c1aa7b24d2f4cf5fba9d664bc087
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.openlocfilehash: 5d61ac27eb5a6e4f546d8c6db66b84f2c204b507
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48248046"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52840475"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-expensify"></a>Руководство. Интеграция Azure Active Directory с Expensify
 
@@ -107,7 +107,7 @@ ms.locfileid: "48248046"
 
       ![изображение](./media/expensify-tutorial/b1_b2_saml_ssso.png)
 
-3. В диалоговом окне **Выбор метода единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
+3. В диалоговом окне **Выбрать метод единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
 
     ![изображение](./media/expensify-tutorial/b1_b2_saml_sso.png)
 
@@ -115,7 +115,7 @@ ms.locfileid: "48248046"
 
     ![изображение](./media/expensify-tutorial/b1-domains_and_urlsedit.png)
 
-5. В разделе **Базовая настройка SAML** выполните следующие действия.
+5. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://www.expensify.com/authentication/saml/login`.
 
@@ -132,7 +132,7 @@ ms.locfileid: "48248046"
 
     ![изображение](./media/expensify-tutorial/certificatebase64.png)
 
-7. Чтобы включить единый вход в Expensify, сначала необходимо включить в этом приложении **управление доменами**. Это можно сделать, выполнив действия, указанные [здесь](http://help.expensify.com/domain-control). Для получения дополнительной поддержки обратитесь в [службу поддержки клиентов Expensify](mailto:help@expensify.com). После включения управления доменами сделайте следующее:
+7. Чтобы включить единый вход в Expensify, сначала необходимо включить в этом приложении **управление доменами**. Это можно сделать, выполнив действия, указанные [здесь](https://help.expensify.com/domain-control). Для получения дополнительной поддержки обратитесь в [службу поддержки клиентов Expensify](mailto:help@expensify.com). После включения управления доменами сделайте следующее:
    
     ![Настройка единого входа](./media/expensify-tutorial/tutorial_expensify_51.png)
     
@@ -156,13 +156,13 @@ ms.locfileid: "48248046"
 
     ![изображение](./media/expensify-tutorial/d_adduser.png)
 
-3. В разделе свойств "Пользователь" сделайте следующее.
+3. В разделе свойств пользователя сделайте следующее.
 
     ![изображение](./media/expensify-tutorial/d_userproperties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
     Например, BrittaSimon@contoso.com
 
     c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -193,7 +193,7 @@ ms.locfileid: "48248046"
 
     ![изображение](./media/expensify-tutorial/d_assign_user.png)
 
-4. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, затем в верхней части экрана нажмите кнопку **Выбрать**.
+4. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
 5. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
@@ -202,7 +202,7 @@ ms.locfileid: "48248046"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Expensify на панели доступа, вы автоматически войдете в приложение Expensify.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

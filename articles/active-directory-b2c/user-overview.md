@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 08/27/2018
+ms.date: 11/30/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 2354bf02b47c9fbc74dbc0dab07e30ca321279cf
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: f517754a8076fc18ed29f7db49f6ff9bfc6c7b3d
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43670093"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52725766"
 ---
 # <a name="overview-of-user-accounts-in-azure-active-directory-b2c"></a>Общие сведения об учетных записях пользователей в Azure Active Directory B2C
 
@@ -25,11 +25,11 @@ ms.locfileid: "43670093"
 
 - **Рабочая учетная запись**. Рабочая учетная запись может получать доступ к ресурсам в клиенте и в роли администратора может управлять клиентами.
 - **Гостевая учетная запись**. Гостевая учетная запись может быть только учетной записью корпорации Майкрософт или пользователя Azure Active Directory, которая может использоваться для доступа к приложениям или для управления клиентами. 
-- **Учетная запись потребителя**. Учетная запись потребителя создается с помощью политики входа в приложении Azure AD B2C или с помощью API Graph Azure AD и используется пользователями приложений, зарегистрированных в Azure AD B2C. 
+- **Учетная запись клиента**. Эта учетная запись создается при регистрации пользователя в приложении Azure AD B2C или с помощью API Graph Azure AD и применяется пользователями приложений, зарегистрированных в Azure AD B2C. 
 
 ## <a name="work-account"></a>Рабочая учетная запись
 
-Рабочая учетная запись создается одинаково для всех клиентов, основываясь на Azure AD. Чтобы создать рабочую учетную запись, можно использовать сведения из статьи [Краткое руководство по добавлению новых пользователей в Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md). Рабочая учетная запись создается путем выбора параметра **Новый пользователь** на портале Azure.
+Рабочая учетная запись создается одинаково для всех клиентов, основываясь на Azure AD. Чтобы создать рабочую учетную запись, используйте сведения из статьи [Практическое руководство. Добавление или удаление пользователей в Azure Active Directory](../active-directory/fundamentals/add-users-azure-active-directory.md). Рабочая учетная запись создается путем выбора параметра **Новый пользователь** на портале Azure.
 
 При добавлении новой рабочей учетной записи необходимо учитывать следующие параметры конфигурации:
 
@@ -46,21 +46,21 @@ ms.locfileid: "43670093"
 
 Для создания новой рабочей учетной записи перейдите по следующим ссылкам:
 
-- [портала Azure](../active-directory/fundamentals/add-users-azure-active-directory.md)
+- [портал Azure](../active-directory/fundamentals/add-users-azure-active-directory.md)
 - [Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_post_users)
 
 ### <a name="update-a-user-profile"></a>Обновление профиля пользователя
 
 Чтобы обновить профиль пользователя, перейдите по следующим ссылкам:
 
-- [портала Azure](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
+- [портал Azure](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
 - [Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_update)
 
 ### <a name="reset-a-password-for-a-user"></a>Сброс пароля для пользователя
 
 Чтобы сбросить пароль пользователя, перейдите по следующим ссылкам: 
 
-- [портала Azure](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
+- [портал Azure](../active-directory/fundamentals/active-directory-users-reset-password-azure-portal.md)
 - [Microsoft Graph](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_update)
 
 ## <a name="guest-user"></a>Гостевой пользователь
@@ -73,7 +73,7 @@ ms.locfileid: "43670093"
 
 ## <a name="consumer-user"></a>Потребитель
 
-Потребитель может входить в приложение, защищенное Azure AD B2C, однако не имеет доступа к таким ресурсам Azure, как портал Azure.  Потребитель может использовать локальную учетную запись или федеративную учетную запись, такую как Facebook или Twitter. Учетная запись потребителя создается с помощью [политики регистрации или входа](../active-directory-b2c/active-directory-b2c-reference-policies.md).
+Потребитель может входить в приложение, защищенное Azure AD B2C, однако не имеет доступа к таким ресурсам Azure, как портал Azure.  Потребитель может использовать локальную учетную запись или федеративную учетную запись, такую как Facebook или Twitter. Учетная запись клиента создается с помощью потока пользователя [регистрации или входа в систему](../active-directory-b2c/active-directory-b2c-reference-policies.md).
 
 Укажите данные, получаемые при создании учетной записи потребителя, с использованием настраиваемых атрибутов пользователя. Дополнительные сведения см. в статье [Определение настраиваемых атрибутов в Azure Active Directory B2C](../active-directory-b2c/active-directory-b2c-reference-custom-attr.md).
 

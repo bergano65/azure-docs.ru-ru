@@ -15,12 +15,12 @@ ms.tgt_pltfrm: ''
 ms.workload: big-compute
 ms.date: 04/18/2018
 ms.author: danlep
-ms.openlocfilehash: 67f8b49cd2205403dec8843beebb92c9f41f6e37
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 964ef3bd988d71bfb90dbaa473b4b259769064b3
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955802"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52722061"
 ---
 # <a name="authenticate-batch-service-solutions-with-active-directory"></a>Аутентификация решений пакетной службы с помощью Active Directory
 
@@ -139,9 +139,10 @@ ms.locfileid: "49955802"
 
 1. На портале Azure перейдите к учетной записи пакетной службы, используемой приложением.
 2. В колонке **Параметры** учетной записи пакетной службы выберите **Управление доступом (IAM)**.
-3. Нажмите кнопку **Add** (Добавить). 
-4. В раскрывающемся списке **Роль** выберите роль приложения — _Участник_ или _Читатель_. Дополнительные сведения об этих ролях см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).  
-5. В поле **Выбрать** введите имя приложения. Выберите свое приложение в списке, а затем щелкните **Сохранить**.
+3. Перейдите на вкладку **Назначение ролей**.
+4. Нажмите кнопку **Добавить назначение ролей**. 
+5. В раскрывающемся списке **Роль** выберите роль приложения — _Участник_ или _Читатель_. Дополнительные сведения об этих ролях см. в статье [Начало работы с управлением доступом на основе ролей на портале Azure](../role-based-access-control/overview.md).  
+6. В поле **Выбрать** введите имя приложения. Выберите свое приложение в списке, а затем щелкните **Сохранить**.
 
 После этого приложение с назначенной ролью RBAC должно появиться в параметрах контроля доступа. 
 
@@ -170,7 +171,7 @@ ms.locfileid: "49955802"
 >
 >
 
-### <a name="code-example-using-azure-ad-integrated-authentication-with-batch-net"></a>Пример кода. Использование встроенной аутентификации Azure AD с библиотекой .NET для пакетной службы
+### <a name="code-example-using-azure-ad-integrated-authentication-with-batch-net"></a>Пример кода: Использование встроенной аутентификации Azure AD с библиотекой .NET для пакетной службы
 
 Чтобы выполнить аутентификацию с использованием встроенной аутентификации из библиотеки .NET для пакетной службы, укажите ссылку на пакет [.NET для пакетной службы Azure](https://www.nuget.org/packages/Microsoft.Azure.Batch/) и пакет [библиотеки ADAL](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/).
 
@@ -243,7 +244,7 @@ public static async Task PerformBatchOperations()
 }
 ```
 
-### <a name="code-example-using-an-azure-ad-service-principal-with-batch-net"></a>Пример кода. Использование субъекта-службы Azure AD с библиотекой .NET для пакетной службы
+### <a name="code-example-using-an-azure-ad-service-principal-with-batch-net"></a>Пример кода: Использование субъекта-службы Azure AD с библиотекой .NET для пакетной службы
 
 Чтобы выполнить аутентификацию с использованием субъекта-службы из библиотеки .NET для пакетной службы, укажите ссылки на пакет [.NET для пакетной службы Azure](https://www.nuget.org/packages/Azure.Batch/) и пакет [библиотеки ADAL](https://www.nuget.org/packages/Microsoft.IdentityModel.Clients.ActiveDirectory/).
 
@@ -310,7 +311,7 @@ public static async Task PerformBatchOperations()
     }
 }
 ```
-### <a name="code-example-using-an-azure-ad-service-principal-with-batch-python"></a>Пример кода. Использование субъекта-службы Azure AD с библиотекой Python для пакетной службы
+### <a name="code-example-using-an-azure-ad-service-principal-with-batch-python"></a>Пример кода: Использование субъекта-службы Azure AD с библиотекой Python для пакетной службы
 
 Чтобы выполнить аутентификацию с использованием субъекта-службы из библиотеки Python для пакетной службы, установите модули [azure-batch](https://pypi.org/project/azure-batch/) и [azure-common](https://pypi.org/project/azure-common/) и укажите ссылки на них.
 

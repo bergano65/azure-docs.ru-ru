@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Workday | Документация Майкрософт
+title: Руководство по интеграции Azure Active Directory с Workday | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Workday.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/11/2018
 ms.author: chmutali
-ms.openlocfilehash: 78b9fe704c5c8a1f81da480787f1791e88bf4f72
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 9c789f5fec9b31b53d316b23faad5c438b52137c
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44714724"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52843348"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workday"></a>Руководство. Интеграция Azure Active Directory с Workday
+# <a name="tutorial-azure-active-directory-integration-with-workday"></a>Руководство по интеграции Azure Active Directory с Workday
 
 В этом руководстве описано, как интегрировать Workday с Azure Active Directory (Azure AD).
 
@@ -114,7 +114,7 @@ ms.locfileid: "44714724"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://impl.workday.com/<tenant>/login-saml2.htmld`
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес: `http://www.workday.com`
+    b. В текстовом поле **Идентификатор** введите URL-адрес: `https://www.workday.com`
 
 4. Установите флажок **Показывать дополнительные параметры URL-адреса** и выполните следующие действия.
 
@@ -225,7 +225,7 @@ ms.locfileid: "44714724"
 
     ![Настройка единого входа](./media/workday-tutorial/WorkdaySSOConfiguratio.png "Настройка единого входа")
 
-    a.  В текстовом поле **Service Provider ID** (Идентификатор поставщика службы) введите **http://www.workday.com**.
+    a.  В текстовом поле **Service Provider ID** (Идентификатор поставщика службы) введите **https://www.workday.com**.
 
     b. Выберите параметр **Не отклонять запрос проверки подлинности, инициированный поставщиком услуг**.
 

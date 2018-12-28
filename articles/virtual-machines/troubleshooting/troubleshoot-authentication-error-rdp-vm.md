@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/01/2018
 ms.author: delhan
-ms.openlocfilehash: 5f9d933f0f294855719c8d187e759708ef8c9931
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 47d3b827099d3a4a7520ac66765d2928795b6e49
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50669611"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52967986"
 ---
 # <a name="troubleshoot-authentication-errors-when-you-use-rdp-to-connect-to-azure-vm"></a>Устранение ошибок аутентификации при подключении к виртуальной машине Azure по протоколу RDP
 
@@ -31,7 +31,7 @@ ms.locfileid: "50669611"
 
 ### <a name="error-message-1"></a>Сообщение об ошибке 1
 
-**An authentication error has occurred. The Local Security Authority cannot be contacted** (Произошла ошибка аутентификации. Не удается связаться с локальным администратором безопасности).
+**Произошла ошибка проверки подлинности. The Local Security Authority cannot be contacted** (Произошла ошибка аутентификации. Не удается связаться с локальным администратором безопасности).
 
 ### <a name="error-message-2"></a>Сообщение об ошибке 2
 
@@ -75,7 +75,7 @@ ms.locfileid: "50669611"
 
 ### <a name="create-a-backup-snapshot"></a>Создание моментального снимка резервной копии
 
-Чтобы создать моментальный снимок резервной копии, выполните действия, описанные в статье [Создание моментального снимка](..\windows\snapshot-copy-managed-disk.md).
+Чтобы создать моментальный снимок резервной копии, выполните действия, описанные в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
 
 ### <a name="connect-to-the-vm-remotely"></a>Удаленный вход на виртуальную машину
 
@@ -202,15 +202,15 @@ reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP
 
 Исходя из значения реестра, выполните следующие действия.
 
-* 4 (FIPS): перейдите к разделу [Проверка подключений, использующих FIPS-совместимые алгоритмы](#fips-compliant).
+* 4 (FIPS). Перейдите к разделу [Проверка подключений, использующих FIPS-совместимые алгоритмы](#fips-compliant).
 
-* 3 (128-разрядное шифрование): задайте уровень серьезности **2**, выполнив приведенную ниже команду.
+* 3 (128-разрядное шифрование). Задайте уровень серьезности **2**, выполнив приведенную ниже команду.
 
     ```cmd
     reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v MinEncryptionLevel /t REG_DWORD /d 2 /f
     ```
 
-* 2 (максимально возможный уровень шифрования в соответствии с клиентом): можно попытаться установить минимальный уровень шифрования **1**, выполнив приведенную ниже команду.
+* 2 (Максимально возможный уровень шифрования в соответствии с клиентом). Можно попытаться установить минимальный уровень шифрования **1**, выполнив приведенную ниже команду.
 
     ```cmd
     reg add "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" /v MinEncryptionLevel /t REG_DWORD /d 1 /f

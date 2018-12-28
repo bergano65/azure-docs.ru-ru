@@ -1,23 +1,19 @@
 ---
 title: Настройка политики SSL в шлюзе приложений Azure с помощью PowerShell
-description: На этой странице представлены инструкции по настройке политики SSL на шлюзе приложений Azure
-documentationcenter: na
+description: В этой статье содержатся инструкции по настройке политики SSL на шлюзе приложений Azure
 services: application-gateway
 author: vhorne
-manager: jpconnock
 ms.service: application-gateway
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 3/27/2018
+ms.date: 12/3/2018
 ms.author: victorh
-ms.openlocfilehash: 4c9ca5cee14603fb39115defc574aa7e956886ba
-ms.sourcegitcommit: d74657d1926467210454f58970c45b2fd3ca088d
+ms.openlocfilehash: 7afa628ea455aa28f1717de8da66b631baeee4f1
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30232142"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52870459"
 ---
 # <a name="configure-ssl-policy-versions-and-cipher-suites-on-application-gateway"></a>Настройка версий политики SSL и комплектов шифров на шлюзе приложений
 
@@ -110,7 +106,7 @@ CipherSuites:
 
 ## <a name="configure-a-custom-ssl-policy"></a>Настройка пользовательской политики SSL
 
-При настройке пользовательской политики SSL передаются следующие параметры: PolicyType, MinProtocolVersion, CipherSuite и ApplicationGateway. Если вы попытаетесь передать другие параметры, поступит сообщение об ошибке создания или обновления шлюза приложений. 
+При настройке пользовательской политики SSL, передаются следующие параметры: PolicyType, MinProtocolVersion, CipherSuite и ApplicationGateway. Если вы попытаетесь передать другие параметры, поступит сообщение об ошибке создания или обновления шлюза приложений. 
 
 Ниже представлен пример задания пользовательской политики SSL на шлюзе приложений. В качестве минимальной версии протокола она задает версию `TLSv1_1` и включает следующие комплекты шифров.
 
@@ -119,7 +115,8 @@ CipherSuites:
 
 > [!IMPORTANT]
 > При настройке пользовательской политики SSL необходимо выбрать хотя бы один комплект шифров из следующего списка. Для управления серверной частью шлюз приложений использует комплекты шифров RSA SHA256.
-> * TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 
+> * TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384
+> * TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
 > * TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256
 > * TLS_DHE_RSA_WITH_AES_128_GCM_SHA256
 > * TLS_RSA_WITH_AES_128_GCM_SHA256

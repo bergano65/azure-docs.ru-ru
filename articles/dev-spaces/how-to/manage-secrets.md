@@ -11,12 +11,12 @@ ms.topic: article
 ms.technology: azds-kubernetes
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
-ms.openlocfilehash: 49e9a974dc01548c250f0b0a8b9b5afac5f286ff
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: e155b4151a3b974e9ccc56a88028a89c35896522
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51705503"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53014007"
 ---
 # <a name="how-to-manage-secrets-when-working-with-an-azure-dev-space"></a>Управление секретами при работе со службой Azure Dev Space
 
@@ -67,7 +67,7 @@ ms.locfileid: "51705503"
 7. Убедитесь, что _values.dev.yaml_ добавлен в файл _GITIGNORE_, чтобы избежать фиксации секретов в системе управления версиями.
  
  
-## <a name="method-2-inline-directly-in-azdsyaml"></a>Метод 2. Встраивание непосредственно в azds.yaml
+## <a name="method-2-inline-directly-in-azdsyaml"></a>Метод 2. Встраивание непосредственно в azds.yaml
 1.  В файле _azds.yaml_ задайте секреты в разделе YAML configurations/develop/install. Хотя вы можете вводить секретные значения прямо там, это не рекомендуется, потому что _azds.yaml_ фиксируется в системе управления версиями. Вместо этого добавьте заполнители, используя синтаксис "$PLACEHOLDER".
 
     ```yaml
@@ -112,5 +112,5 @@ ms.locfileid: "51705503"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-С помощью этих методов можно безопасно подключиться к базе данных, кэшу Redis или получить защищенный доступ к службам Azure.
+С помощью этих методов можно безопасно подключиться к базе данных, кэшу Azure для Redis или получить защищенный доступ к службам Azure.
  

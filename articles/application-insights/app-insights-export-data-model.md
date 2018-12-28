@@ -9,16 +9,15 @@ ms.assetid: cabad41c-0518-4669-887f-3087aef865ea
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/21/2016
 ms.author: mbullwin
-ms.openlocfilehash: ee6597b78ac8de8fc3a7f3796010f22919243b23
-ms.sourcegitcommit: 6f6d073930203ec977f5c283358a19a2f39872af
+ms.openlocfilehash: 6686b241b93a0ae46b6de134f6f01526bb1a3ad2
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35294900"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52723454"
 ---
 # <a name="application-insights-export-data-model"></a>Экспорт модели данных Application Insights
 В этой таблице перечислены свойства телеметрии, отправляемой из различных пакетов SDK для [Application Insights](app-insights-overview.md) на портал.
@@ -115,7 +114,7 @@ ms.locfileid: "35294900"
 ## <a name="context"></a>Context
 Для каждого типа данных телеметрии приведен пример с разделом контекста. Не все эти поля передаются со всеми точками данных.
 
-| Путь | type | Заметки |
+| Путь | type | Примечания |
 | --- | --- | --- |
 | context.custom.dimensions [0] |объект [ ] |Набор пар "ключ — значение", заданный параметром пользовательских свойств. Максимальная длина ключа — 100, максимальная длина значения —1024. Более 100 уникальных значений. Свойства можно использовать для поиска, но не для сегментации. Максимальное количество — 200 ключей на ключ ikey. |
 | context.custom.metrics [0] |объект [ ] |Набор пар "ключ — значение", заданный параметром пользовательских измерений и метриками TrackMetric. Максимальная длина ключа — 100. Значения могут быть числовыми. |
@@ -157,7 +156,7 @@ ms.locfileid: "35294900"
 ## <a name="events"></a>События
 Пользовательские события, создаваемые элементом [TrackEvent()](app-insights-api-custom-events-metrics.md#trackevent).
 
-| Путь | type | Заметки |
+| Путь | type | Примечания |
 | --- | --- | --- |
 | event [0] count |целое число |100/(частота[выборки](app-insights-sampling.md) ). Например, 4 = &gt; 25 %. |
 | event [0] name |строка |Имя события.  Максимальная длина: 250 |
@@ -168,7 +167,7 @@ ms.locfileid: "35294900"
 ## <a name="exceptions"></a>Исключения
 Отправляются сведения об [исключениях](app-insights-asp-net-exceptions.md) на сервере и в браузере.
 
-| Путь | type | Заметки |
+| Путь | type | Примечания |
 | --- | --- | --- |
 | basicException [0] assembly |строка | |
 | basicException [0] count |целое число |100/(частота[выборки](app-insights-sampling.md) ). Например, 4 = &gt; 25 %. |
@@ -197,7 +196,7 @@ ms.locfileid: "35294900"
 ## <a name="trace-messages"></a>Сообщения трассировки
 Отправитель: [TrackTrace](app-insights-api-custom-events-metrics.md#tracktrace) и [адаптеры ведения журналов](app-insights-asp-net-trace-logs.md).
 
-| Путь | type | Заметки |
+| Путь | type | Примечания |
 | --- | --- | --- |
 | message [0] loggerName |строка | |
 | message [0] parameters |строка | |
@@ -207,7 +206,7 @@ ms.locfileid: "35294900"
 ## <a name="remote-dependency"></a>Удаленная зависимость
 Отправитель: TrackDependency. Используется для создания отчетов о производительности и использовании [вызовов к зависимостям](app-insights-asp-net-dependencies.md) на сервере, а также вызовов AJAX в браузере.
 
-| Путь | type | Заметки |
+| Путь | type | Примечания |
 | --- | --- | --- |
 | remoteDependency [0] async |Логическое | |
 | remoteDependency [0] baseName |строка | |
@@ -228,9 +227,9 @@ ms.locfileid: "35294900"
 ## <a name="requests"></a>Requests
 Отправитель: [TrackRequest](app-insights-api-custom-events-metrics.md#trackrequest). Используется стандартными модулями для создания отчетов о времени отклика сервера (измеряется на сервере).
 
-| Путь | type | Заметки |
+| Путь | type | Примечания |
 | --- | --- | --- |
-| request [0] count |целое число |100/(частота[выборки](app-insights-sampling.md) ). Например: 4 =&gt; 25 %. |
+| request [0] count |целое число |100/(частота[выборки](app-insights-sampling.md) ). Например:  4 =&gt; 25%. |
 | request [0] durationMetric.value |number |Время от поступления запроса до отклика. 1e7 = 1 с. |
 | request [0] id |строка |Идентификатор операции |
 | request [0] name |строка |GET или POST + базовый URL-адрес.  Максимальная длина: 250 |
@@ -246,7 +245,7 @@ ms.locfileid: "35294900"
 
 Контекстные значения показывают версию клиентской ОС и версию браузера.
 
-| Путь | type | Заметки |
+| Путь | type | Примечания |
 | --- | --- | --- |
 | clientPerformance [0] clientProcess.value |целое число |Время от завершения получения HTML до отображения страницы. |
 | clientPerformance [0] name |строка | |
@@ -263,7 +262,7 @@ ms.locfileid: "35294900"
 ## <a name="page-views"></a>Просмотры страницы
 Отправитель: trackPageView() или [stopTrackPage](app-insights-api-custom-events-metrics.md#page-views)
 
-| Путь | type | Заметки |
+| Путь | type | Примечания |
 | --- | --- | --- |
 | view [0] count |целое число |100/(частота[выборки](app-insights-sampling.md) ). Например, 4 =&gt; 25 %. |
 | view [0] durationMetric.value |целое число |При необходимости значение можно указать в методе trackPageView() или с помощью метода start/stopTrackPage(). Не совпадает со значениями clientPerformance. |
@@ -276,7 +275,7 @@ ms.locfileid: "35294900"
 ## <a name="availability"></a>Доступность
 Это свойство создает отчеты о [веб-тестах на доступность](app-insights-monitor-web-app-availability.md).
 
-| Путь | type | Заметки |
+| Путь | type | Примечания |
 | --- | --- | --- |
 | availability [0] availabilityMetric.name |строка |Доступность |
 | availability [0] availabilityMetric.value |number |1,0 или 0,0. |

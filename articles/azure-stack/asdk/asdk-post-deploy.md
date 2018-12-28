@@ -12,19 +12,19 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/17/2018
+ms.date: 10/10/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: a343b01b89bfbe9bc047c0b8b703b975b21b6290
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
+ms.openlocfilehash: cfc191830ddadbbe3258fc1b61fcd4bcc45fdd8c
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48901884"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53186758"
 ---
 # <a name="post-asdk-installation-configuration-tasks"></a>Настройка, выполняемая после установки ASDK
 
-После установки [Пакета средств разработки Azure Stack (ASDK)](asdk-install.md) мы рекомендуем внести в конфигурацию несколько изменений.
+После [ установки Пакета средств разработки Azure Stack (ASDK)](asdk-install.md) мы рекомендуем внести в конфигурацию несколько изменений. Для этого на главном компьютере с ASDK нужно выполнить вход с правами пользователя AzureStack или AzureStackAdmin. 
 
 ## <a name="install-azure-stack-powershell"></a>Установка PowerShell для Azure Stack
 
@@ -41,7 +41,7 @@ Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
 Последнюю версию модуля PowerShell для Azure Stack можно установить в двух режимах: с подключением главного компьютера ASDK к Интернету или без него:
 
 > [!IMPORTANT]
-> Прежде чем устанавливать нужную версию, обязательно [удалите все установленные модули Azure PowerShell](.\.\azure-stack-powershell-install.md#3-uninstall-existing-versions-of-the-azure-stack-powershell-modules).
+> Прежде чем устанавливать нужную версию, обязательно [удалите все установленные модули Azure PowerShell](../azure-stack-powershell-install.md#3-uninstall-existing-versions-of-the-azure-stack-powershell-modules).
 
 - **При наличии подключения к Интернету** с главного компьютера ASDK. Выполните следующий скрипт PowerShell, чтобы установить эти модули там, где установлен пакет средств разработки.
 
@@ -173,7 +173,7 @@ Set-ADDefaultDomainPasswordPolicy -MaxPasswordAge 180.00:00:00 -Identity azurest
 
 ## <a name="enable-multi-tenancy"></a>Включение поддержки мультитенантности
 
-Для развертываний с помощью Azure AD необходимо [включить поддержку мультитенантности](.\.\azure-stack-enable-multitenancy.md#enable-multi-tenancy) для установки ASDK.
+Для развертываний с помощью Azure AD необходимо [включить поддержку мультитенантности](../azure-stack-enable-multitenancy.md#enable-multi-tenancy) для установки ASDK.
 
 > [!NOTE]  
 > Если для входа на портал Azure Stack используются учетные записи администратора или пользователя из доменов, отличных от того, который использовался для регистрации Azure Stack, имя домена, использованного для регистрации Azure Stack, необходимо добавить в URL-адрес портала. Например, если Azure Stack зарегистрирован с использованием домена fabrikam.onmicrosoft.com, а учетная запись для входа является admin@contoso.com, URL-адрес для входа на портал пользователей будет таким: https://portal.local.azurestack.external/fabrikam.onmicrosoft.com.

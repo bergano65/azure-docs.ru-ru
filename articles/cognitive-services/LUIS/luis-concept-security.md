@@ -1,21 +1,22 @@
 ---
-title: Общие сведения о доступе к приложениям LUIS
-titleSuffix: Azure Cognitive Services
-description: Доступ к возможностям разработки предоставляется владельцам и участникам совместной работы. В частных приложениях доступ к конечным точкам имеют владельцы и участники совместной работы. В общедоступных приложениях доступ к конечным точкам имеют все пользователи с учетной записью LUIS и идентификаторами общедоступных приложений.
+title: Совместная работа с другими пользователями
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Доступ к возможностям разработки предоставляется владельцам и участникам совместной работы. В частных приложениях доступ к конечным точкам имеют владельцы и участники совместной работы.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: d0f9d0834cffd642961b2c49d5d252a665b49e73
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: 533854b723dc5fc9e2406b492a60692f25c33257
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49637416"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53132607"
 ---
 # <a name="authoring-and-endpoint-user-access"></a>Доступ пользователей к возможностям разработки и конечным точкам
 Доступ к возможностям разработки предоставляется владельцам и участникам совместной работы. В частных приложениях доступ к конечным точкам имеют владельцы и участники совместной работы. В общедоступных приложениях доступ к конечным точкам имеют все пользователи с учетной записью LUIS и идентификаторами общедоступных приложений. 

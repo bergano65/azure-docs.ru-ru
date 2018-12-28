@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 11/15/2018
+ms.date: 12/5/2018
 ms.author: roiyz
-ms.openlocfilehash: ee74d4520e867604f50c70f2b6449f12ff3bd8b9
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 2a29cae6e7f391dfee75e89ea91525268db3fa62
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52495960"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52971969"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU NVIDIA для Windows
 
@@ -78,17 +78,8 @@ ms.locfileid: "52495960"
 | Тип | NvidiaGpuDriverWindows | строка |
 | typeHandlerVersion | 1.2 | int |
 
-### <a name="settings"></a>Параметры
-
-Все эти параметры не являются обязательными. По умолчанию устанавливается драйвер последней поддерживаемой версии, если она доступна.
-
-| ИМЯ | ОПИСАНИЕ | По умолчанию | Допустимые значения | Тип данных |
-| ---- | ---- | ---- | ---- | ---- |
-| driverVersion | NV: версия драйвера GRID<br> NC/ND: версия драйвера CUDA | последняя | GRID: 411.81, 391.81, 391.58, 391.03<br> CUDA: 398.75, 397.44, 390.85 | строка |
-| installGridND | Установка драйверов GRID на виртуальные машины серии ND | false | true, false | Логическое |
 
 ## <a name="deployment"></a>Развертывание
-
 
 ### <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager 
 
@@ -135,8 +126,6 @@ Set-AzureRmVMExtension
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-Ниже показан пример Azure Resource Manager и PowerShell, о котором говорилось ранее. Также в него добавлены настраиваемые параметры в качестве примера установки драйвера, отличного от драйвера умолчанию. В частности, устанавливается конкретный драйвер GRID, даже если подготавливаются виртуальные машины серии ND.
-
 ```azurecli
 az vm extension set `
   --resource-group myResourceGroup `
@@ -145,8 +134,6 @@ az vm extension set `
   --publisher Microsoft.HpcCompute `
   --version 1.2 `
   --settings '{ `
-    "driverVersion": "391.03",
-    "installGridND": true
   }'
 ```
 

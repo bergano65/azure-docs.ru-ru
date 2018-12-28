@@ -14,12 +14,12 @@ ms.date: 04/06/2017
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: 857d58d31565e413a207162202f1a680d7da7c65
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: c07b87d88b884b22f44fe108bb28877cb30f973e
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50250739"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52837177"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 В этой статье описывается два способа смены доменного имени DNS в неуправляемом каталоге в Azure Active Directory (Azure AD). Когда пользователь самостоятельно регистрируется в облачной службе, использующей Azure AD, он добавляется в неуправляемый каталог Azure AD на основе домена электронной почты. Дополнительные сведения о самостоятельной (или "вирусной") регистрации в службе см. в разделе [What is self-service signup for Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-signup) (Что такое самостоятельная регистрация для Azure Active Directory?).
@@ -108,7 +108,11 @@ ms.locfileid: "50250739"
 
 Ключ и шаблоны не перемещаются лишь в том случае, если неуправляемый клиент находится в другом регионе. Например, неуправляемый клиент находится в Европе, а ваш клиент находится в Северной Америке. 
 
-Несмотря на то что RMS для частных лиц поддерживает проверку подлинности в Azure AD для получения доступа к защищенному содержимому, он не запрещает пользователям также защищать содержимое. Если пользователи защитили содержимое с помощью подписки RMS для частных лиц, а ключи и шаблоны не были перемещены, содержимое останется недоступным после получения прав администрирования доменом.    
+Несмотря на то что RMS для частных лиц поддерживает проверку подлинности в Azure AD для получения доступа к защищенному содержимому, он не запрещает пользователям также защищать содержимое. Если пользователи защитили содержимое с помощью подписки RMS для частных лиц, а ключи и шаблоны не были перемещены, содержимое останется недоступным после получения прав администрирования доменом.
+
+#### <a name="more-information-about-power-bi"></a>Дополнительные сведения о Power BI
+
+Когда выполняется внешнее перенаправление, содержимое Power BI, созданное до этого перенаправления, помещается в [архивную рабочую область Power BI](/power-bi/service-admin-power-bi-archived-workspace). Все содержимое, которое будет использоваться в новом клиенте, нужно перенести вручную.
 
 ### <a name="azure-ad-powershell-cmdlets-for-the-forcetakeover-option"></a>Командлеты Azure AD PowerShell для параметра ForceTakeover
 Вы можете видеть эти командлеты, используемые в [примере PowerShell](#powershell-example).

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: article
 ms.date: 11/16/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 07a9d46dff17b43d01a6b411292cf240c32476f3
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0117a08c76288cda25da2196ec18433b3678e24b
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46983724"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52724644"
 ---
 # <a name="roaming-and-collaboration-in-azure-machine-learning-workbench"></a>Роуминг и совместная работа в Azure Machine Learning Workbench
 
@@ -124,9 +124,9 @@ az role assignment create --assignee bob@contoso.com --role Owner --scope <works
 ### <a name="use-the-azure-portal-to-add-users"></a>Добавление пользователей с помощью портала Azure
 <a name="portal"></a>
 
-Учетные записи, рабочие области и проекты службы "Экспериментирование в Машинном обучении" являются ресурсами Azure Resource Manager. Для назначения ролей можно использовать ссылку **управления доступом** на [портале Azure](https://portal.azure.com). 
+Учетные записи, рабочие области и проекты службы "Экспериментирование в Машинном обучении" являются ресурсами Azure Resource Manager. Для назначения ролей можно использовать ссылку **Управление доступом (IAM)** на [портале Azure](https://portal.azure.com). 
 
-В представлении **Все ресурсы** найдите ресурс, в который необходимо добавить пользователей. Выберите ссылку **управления доступом (IAM)**, а затем **Add users** (Добавить пользователей). 
+В представлении **Все ресурсы** найдите ресурс, в который необходимо добавить пользователей. Выберите ссылку **Управление доступом (IAM)**, а затем **Добавить назначение ролей**. 
 
 <img src="./media/roaming-and-collaboration/iam.png" width="320px">
 

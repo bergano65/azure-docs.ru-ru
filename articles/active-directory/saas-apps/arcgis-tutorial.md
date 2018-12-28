@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ArcGIS Online | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ArcGIS Online | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в ArcGIS Online.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/03/2018
 ms.author: jeedes
-ms.openlocfilehash: 12ab224481c519db36ae21dd11916649ff0bfbe3
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: 3284202ffaa6767a8dd4a6a5050dbdc928075237
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48269040"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52846126"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-arcgis-online"></a>Руководство по интеграции Azure Active Directory с ArcGIS Online
+# <a name="tutorial-azure-active-directory-integration-with-arcgis-online"></a>Руководство. Интеграция Azure Active Directory с ArcGIS Online
 
 В этом руководстве описано, как интегрировать ArcGIS Online с Azure Active Directory (Azure AD).
 
@@ -109,15 +109,15 @@ ms.locfileid: "48269040"
 
       ![изображение](./media/arcgis-tutorial/b1_b2_saml_ssso.png)
 
-3. В диалоговом окне **Select a Single sign-on method** (Выбор метода единого входа) щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
+3. В диалоговом окне **Выбрать метод единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
 
     ![изображение](./media/arcgis-tutorial/b1_b2_saml_sso.png)
 
-4. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+4. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
     ![изображение](./media/arcgis-tutorial/b1-domains_and_urlsedit.png)
 
-5. В разделе **Basic SAML Configuration** (Базовая настройка SAML) выполните следующие действия:
+5. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.maps.arcgis.com`.
 
@@ -126,9 +126,9 @@ ms.locfileid: "48269040"
     ![изображение](./media/arcgis-tutorial/b1-domains_and_urls.png)
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Для получения этих значений обратитесь в [группу поддержки ArcGIS Online](http://support.esri.com/en/).
+    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Для получения этих значений обратитесь в [группу поддержки ArcGIS Online](https://support.esri.com/en/).
 
-6. В разделе **Сертификат для подписи SAML** нажмите **Загрузить**, чтобы загрузить **XML-метаданные федерации**, а затем сохраните XML-файл на своем компьютере.
+6. В разделе **Сертификат подписи SAML** нажмите **Загрузить**, чтобы загрузить **XML метаданных федерации**, а затем сохраните XML-файл на своем компьютере.
 
     ![изображение](./media/arcgis-tutorial/federationxml.png)
 
@@ -168,7 +168,7 @@ ms.locfileid: "48269040"
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем выберите **All users** (Все пользователи).
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
     ![изображение](./media/arcgis-tutorial/d_users_and_groups.png)
 
@@ -176,7 +176,7 @@ ms.locfileid: "48269040"
 
     ![изображение](./media/arcgis-tutorial/d_adduser.png)
 
-3. В разделе свойства пользователя сделайте следующее:
+3. В разделе свойств пользователя сделайте следующее.
 
     ![изображение](./media/arcgis-tutorial/d_userproperties.png)
 
@@ -224,7 +224,7 @@ ms.locfileid: "48269040"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к ArcGIS Online.
 
-1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **All applications** (Все приложения).
+1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
     ![изображение](./media/arcgis-tutorial/d_all_applications.png)
 
@@ -236,11 +236,11 @@ ms.locfileid: "48269040"
 
     ![изображение](./media/arcgis-tutorial/d_leftpaneusers.png)
 
-4. Нажмите кнопку **Добавить**, затем в диалоговом окне **Добавление назначения** выберите **Users and groups** (Пользователи и группы).
+4. Нажмите кнопку **Добавить**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![изображение](./media/arcgis-tutorial/d_assign_user.png)
 
-4. В диалоговом окне **Users and groups** (Пользователи и группы) из списка пользователей выберите **Britta Simon**. В верхней части экрана нажмите кнопку **Выбрать**.
+4. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
 5. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
@@ -249,7 +249,7 @@ ms.locfileid: "48269040"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "ArcGIS Online" на панели доступа, вы автоматически войдете в приложение ArcGIS Online.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

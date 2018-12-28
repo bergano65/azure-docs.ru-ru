@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: juliako
-ms.openlocfilehash: 634563a2010562e20691abae132dc7540ef8faf2
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: b51f2850a925fcd9daf3a07d8db66193555df0fa
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52632710"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53000246"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
 
@@ -34,7 +34,7 @@ ms.locfileid: "52632710"
 
 Для потоковой трансляции с помощью Служб мультимедиа как в реальном времени, так и по запросу необходим хотя бы один компонент [StreamingEndpoint](https://docs.microsoft.com/rest/api/media/streamingendpoints). При создании учетной записи Служб мультимедиа в нее добавляется компонент StreamingEndpoint **по умолчанию** в состоянии **Остановлен**. Необходимо запустить компонент StreamingEndpoint, указав конечную точку, из которой будет выполняться потоковая передача содержимого зрителям. Можно использовать компонент **StreamingEndpoint** по умолчанию или создать другой с необходимой конфигурацией и заданными параметрами сети CDN **.** При желании можно активировать несколько компонентов StreamingEndpoints, каждый из которых предназначен для отдельной сети CDN и предоставляет уникальное имя узла для доставки содержимого. 
 
-В Службах мультимедиа за прием и обработку видеопотоков отвечают компоненты [LiveEvent](https://docs.microsoft.com/rest/api/media/liveevents). При создании компонента LiveEvent создается входная конечная точка, которая используется для передачи сигнала с удаленного кодировщика в реальном времени. Удаленный динамический кодировщик транслирует в эту точку канал доставки, используя протокол [RTMP](https://en.wikipedia.org/wiki/Real-Time_Messaging_Protocol) или [Smooth Streaming](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming#Microsoft_Smooth_Streaming) (фрагментированный MP4).  
+В Службах мультимедиа за прием и обработку видеопотоков отвечают компоненты [LiveEvent](https://docs.microsoft.com/rest/api/media/liveevents). При создании компонента LiveEvent создается входная конечная точка, которая используется для передачи сигнала с удаленного кодировщика в реальном времени. Удаленный динамический кодировщик транслирует в эту точку канал доставки, используя протокол [RTMP](https://www.adobe.com/devnet/rtmp.html) или [Smooth Streaming](https://msdn.microsoft.com/library/ff469518.aspx) (фрагментированный MP4).  
 
 Как только компонент **LiveEvent** начинает принимать исходный поток, можно использовать конечную точку предварительного просмотра (URL-адрес предварительного просмотра), чтобы перед публикацией убедиться, что вы принимаете потоковую трансляцию в реальном времени. Убедившись, что предварительный просмотр транслируется нормально, используйте компонент LiveEvent, чтобы сделать потоковую трансляцию доступной для доставки через одну или несколько предварительно созданных точек **StreamingEndpoint**. Для этого создайте объект [LiveOutput](https://docs.microsoft.com/rest/api/media/liveoutputs) в компоненте **LiveEvent**. 
 
@@ -83,7 +83,7 @@ API-интерфейсы Служб мультимедиа версии 3 даю
 
 ## <a name="liveevent-types-comparison"></a>Сравнение типов LiveEvent
 
-В [этой статье](live-event-types-comparison.md) приведена сравнительная таблица характеристик двух типов LiveEvent.
+В следующей статье приведена сравнительная таблица характеристик двух типов LiveEvent: [Сравнение типов LiveEvent](live-event-types-comparison.md).
 
 ## <a name="liveoutput"></a>Компонент LiveOutput
 

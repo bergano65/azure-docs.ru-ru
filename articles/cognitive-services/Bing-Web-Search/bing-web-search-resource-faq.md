@@ -1,7 +1,7 @@
 ---
 title: Часто задаваемые вопросы — API Bing для поиска в Интернете
 titleSuffix: Azure Cognitive Services
-description: Получите ответы на часто задаваемые вопросы об API Bing для поиска в Интернете.
+description: Ответы на часто задаваемые вопросы об использовании API Bing для поиска в Интернете.
 services: cognitive-services
 author: aahill
 manager: cgronlun
@@ -10,12 +10,13 @@ ms.component: bing-web-search
 ms.topic: troubleshooting
 ms.date: 10/06/2017
 ms.author: aahi
-ms.openlocfilehash: dbff161f96949100703451a64875079288574014
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.custom: seodec2018
+ms.openlocfilehash: 9098ddc780e6adefa8430fe601e3f4d06634972a
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52162443"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53252989"
 ---
 # <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
 

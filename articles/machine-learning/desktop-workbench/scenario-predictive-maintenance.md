@@ -13,12 +13,12 @@ ms.topic: article
 ms.custom: mvc
 ms.date: 10/05/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: c154b0124acb5bee93211adb611356555526d2c0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 9c638ed9132612db7b82168d3a57057aba9b2d60
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46996219"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52870340"
 ---
 # <a name="predictive-maintenance-for-real-world-scenarios"></a>Прогнозное обслуживание в реальных сценариях
 
@@ -98,13 +98,13 @@ az ml notebook start
 
 ## <a name="data-description"></a>Описание данных
 
-[Смоделированные данные](https://github.com/Microsoft/SQL-Server-R-Services-Samples/tree/master/PredictiveMaintanenceModelingGuide/Data) состоят из пяти файлов данных с разделителями-запятыми (CSV-файлы). Подробные описания наборов данных см. по следующим ссылкам.
+[Смоделированные данные](https://github.com/Microsoft/SQL-Server-R-Services-Samples/tree/master/PredictiveMaintanenceModelingGuide) состоят из следующих [пяти файлов данных с разделителями-запятыми (CSV-файлы)](https://github.com/Microsoft/SQL-Server-R-Services-Samples/tree/master/PredictiveMaintanenceModelingGuide/Data):
 
-* [machines.](https://pdmmodelingguide.blob.core.windows.net/pdmdata/machines.csv) Признаки, дифференцирующие каждый компьютер. Например, срок использования и модель.
-* [error.](https://pdmmodelingguide.blob.core.windows.net/pdmdata/errors.csv) Журнал ошибок содержит список некритических ошибок, которые не прерывают работу компьютера. Эти ошибки не рассматриваются в качестве сбоев, хотя они могут спрогнозировать событие сбоя в будущем. Значения даты и времени ошибок округляются до ближайшего часа, так как данные телеметрии собираются по часовому тарифу.
-* [maintenance.](https://pdmmodelingguide.blob.core.windows.net/pdmdata/maint.csv) Журнал обслуживания содержит записи запланированных и незапланированных обслуживаний. Запланированное обслуживание представляет собой регулярную проверку компонентов. Незапланированное обслуживание может возникать из-за механической неисправности или других причин снижения производительности. Значения даты и времени обслуживания округляются до ближайшего часа, так как данные телеметрии собираются по часовому тарифу.
-* [telemetry.](https://pdmmodelingguide.blob.core.windows.net/pdmdata/telemetry.csv) Данные телеметрии состоят из измерений временных рядов, полученных от множества датчиков внутри каждого компьютера. Данные записываются с усреднением значений датчика, получаемых через каждый час.
-* [failures.](https://pdmmodelingguide.blob.core.windows.net/pdmdata/failures.csv) Сбои соответствуют записи о замене компонентов в журнале обслуживания. Каждая запись содержит идентификатор компьютера, тип компонента, дату и время замены. Эти записи используются для создания меток машинного обучения, которые модель пытается спрогнозировать.
+* [Компьютеры](https://github.com/Microsoft/SQL-Server-R-Services-Samples/blob/master/PredictiveMaintanenceModelingGuide/Data/machines.csv). Признаки, отличающие каждый компьютер. Например, срок использования и модель.
+* [Ошибки](https://github.com/Microsoft/SQL-Server-R-Services-Samples/blob/master/PredictiveMaintanenceModelingGuide/Data/errors.csv). Журнал ошибок содержит список некритических ошибок, которые не прерывают работу компьютера. Эти ошибки не рассматриваются в качестве сбоев, хотя они могут спрогнозировать событие сбоя в будущем. Значения даты и времени ошибок округляются до ближайшего часа, так как данные телеметрии собираются по часовому тарифу.
+* [Обслуживание](https://github.com/Microsoft/SQL-Server-R-Services-Samples/blob/master/PredictiveMaintanenceModelingGuide/Data/maint.csv). Журнал обслуживания содержит записи запланированных и незапланированных обслуживаний. Запланированное обслуживание представляет собой регулярную проверку компонентов. Незапланированное обслуживание может возникать из-за механической неисправности или других причин снижения производительности. Значения даты и времени обслуживания округляются до ближайшего часа, так как данные телеметрии собираются по часовому тарифу.
+* [Телеметрия](https://github.com/Microsoft/SQL-Server-R-Services-Samples/blob/master/PredictiveMaintanenceModelingGuide/Data/telemetry.csv). Данные телеметрии состоят из измерений временных рядов, полученных от множества датчиков внутри каждого компьютера. Данные записываются с усреднением значений датчика, получаемых через каждый час.
+* [Сбои](https://github.com/Microsoft/SQL-Server-R-Services-Samples/blob/master/PredictiveMaintanenceModelingGuide/Data/failures.csv). Сбои соответствуют записи о замене компонентов в журнале обслуживания. Каждая запись содержит идентификатор компьютера, тип компонента, дату и время замены. Эти записи используются для создания меток машинного обучения, которые модель пытается спрогнозировать.
 
 Просмотрите сценарий [приема данных](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/blob/master/Code/1_data_ingestion.ipynb) записной книжки Jupyter в папке Code, чтобы скачать наборы необработанных данных из репозитория GitHub и создать наборы данных PySpark для этого анализа.
 
@@ -113,17 +113,17 @@ az ml notebook start
 
 [Файл сведений](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/blob/master/README.md) описывает рабочий процесс подготовки данных, создания модели и последующего развертывания решения в рабочей среде. Каждый шаг рабочего процесса включается в записную книжку Jupyter в папке [Code](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/tree/master/Code) в репозитории.   
 
-[Code\1_data_ingestion.ipynb.](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/blob/master/Code/1_data_ingestion.ipynb) Эта записная книжка загружает пять входных CSV-файлов, выполняет предварительную очистку данных и визуализацию. Записная книжка преобразует каждый набор данных в формат PySpark и сохраняет его в контейнере больших двоичных объектов Azure. Так их можно использовать в записной книжке проектирования признаков.
+[Code\1_data_ingestion.ipynb](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/blob/master/Code/1_data_ingestion.ipynb). Эта записная книжка загружает пять входных CSV-файлов, а также выполняет предварительную очистку данных и визуализацию. Записная книжка преобразует каждый набор данных в формат PySpark и сохраняет его в контейнере больших двоичных объектов Azure. Так их можно использовать в записной книжке проектирования признаков.
 
-[Code\2_feature_engineering.ipynb.](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/blob/master/Code/2_feature_engineering.ipynb) С помощью необработанного набора данных из большого двоичного объекта Azure признаки модели создаются стандартным образом с использованием временных рядов для данных телеметрии, ошибок и обслуживания. На основе сведений о заменах компонентов, вызванных сбоями, создаются метки модели с описанием неисправных компонентов. Данные о признаках с метками сохраняются в большом двоичном объекте Azure для записной книжки создания модели.
+[Code\2_feature_engineering.ipynb](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/blob/master/Code/2_feature_engineering.ipynb). Признаки модели создаются стандартным образом на основе необработанного набора данных из большого двоичного объекта Azure с использованием временных рядов для данных телеметрии, ошибок и обслуживания. На основе сведений о заменах компонентов, вызванных сбоями, создаются метки модели с описанием неисправных компонентов. Данные о признаках с метками сохраняются в большом двоичном объекте Azure для записной книжки создания модели.
 
-[Code\3_model_building.ipynb.](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/blob/master/Code/3_model_building.ipynb) Записная книжка создания модели считывает набор данных о признаках с метками, разбивает данные на наборы для обучения и разработки на основании меток даты и времени. Эта записная книжка создает эксперимент с моделями pyspark.ml.classification. Данные для обучения векторизуются. Пользователь может экспериментировать с **DecisionTreeClassifier** или **RandomForestClassifier** и изменять гиперпараметры, чтобы найти наиболее эффективные модели. Производительность определяется путем расчета статистики мер для набора данных разработки. Эти статистические данные передаются для отслеживания на экран среды выполнения Machine Learning Workbench. При каждом запуске записная книжка сохраняет полученную модель на локальный диск компьютера, на котором выполняется ядро записной книжки Jupyter. 
+[Code\3_model_building.ipynb](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/blob/master/Code/3_model_building.ipynb). Записная книжка создания модели считывает набор данных о признаках с метками, а также разбивает данные на наборы для обучения и разработки на основании меток даты и времени. Эта записная книжка создает эксперимент с моделями pyspark.ml.classification. Данные для обучения векторизуются. Пользователь может экспериментировать с **DecisionTreeClassifier** или **RandomForestClassifier** и изменять гиперпараметры, чтобы найти наиболее эффективные модели. Производительность определяется путем расчета статистики мер для набора данных разработки. Эти статистические данные передаются для отслеживания на экран среды выполнения Machine Learning Workbench. При каждом запуске записная книжка сохраняет полученную модель на локальный диск компьютера, на котором выполняется ядро записной книжки Jupyter. 
 
-[Code\4_operationalization.ipynb.](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/blob/master/Code/4_operationalization.ipynb) Эта записная книжка создает компоненты для развертывания модели в веб-службе Azure на основе последней модели, сохраненной на локальном диске (где выполняется ядро записной книжки Jupyter). Весь набор ресурсов для ввода в эксплуатацию сжимается в файл o16n.zip, который сохраняется в другом контейнере больших двоичных объектов Azure. Сжатый ZIP-файл содержит следующие данные.
+[Code\4_operationalization.ipynb](https://github.com/Azure/MachineLearningSamples-PredictiveMaintenance/blob/master/Code/4_operationalization.ipynb). Эта записная книжка создает компоненты для развертывания модели в веб-службе Azure на основе последней модели, сохраненной на локальном диске (где выполняется ядро записной книжки Jupyter). Весь набор ресурсов для ввода в эксплуатацию сжимается в файл o16n.zip, который сохраняется в другом контейнере больших двоичных объектов Azure. Сжатый ZIP-файл содержит следующие данные.
 
-* **service_schema.json** — файл определения схемы для развертывания; 
-* **pdmscore.py** — функции **init()** и **run()**, необходимые для веб-службы Azure;
-* **pdmrfull.model** — каталог с описанием модели.
+* **service_schema.json**. Файл определения схемы для развертывания. 
+* **pdmscore.py**. Функции **init()** и **run()**, необходимые для работы веб-службы Azure.
+* **pdmrfull.model**. Каталог с определением модели.
     
 Записная книжка проверяет функции по определению модели, а затем упаковывает эти ресурсы для развертывания. В конце записной книжки добавляются инструкции по развертыванию.
 

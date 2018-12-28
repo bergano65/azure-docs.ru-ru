@@ -1,23 +1,24 @@
 ---
-title: Получение данных Application Insights из LUIS с использованием Node.js
+title: Application Insights, Node.js
 titleSuffix: Azure Cognitive Services
 description: Создание бота, интегрированного с приложением LUIS и Application Insights, с помощью Node.js.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: 6199e4a681f7f58ea0cf57b575afb2a63d160eee
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 4f1372f8b15670472146efc1c4f3a341f4a97c71
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49321960"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53255607"
 ---
-# <a name="add-luis-results-to-application-insights"></a>Добавление результатов распознавание речи с помощью LUIS в Application Insights
+# <a name="add-luis-results-to-application-insights-and-azure-functions"></a>Добавление результатов LUIS в Application Insights и Функции Azure
 В этом руководстве приведена процедура добавления данных запроса и ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). После получения этих данных можно включить их запрос (используя язык Kusto или PowerBi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
 
 Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure.
@@ -36,7 +37,7 @@ ms.locfileid: "49321960"
 > [!Tip]
 > Если у вас еще нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/).
 
-Весь код из этого руководства можно найти в [репозитории Github LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/tree/master/documentation-samples/tutorial-web-app-bot-application-insights/nodejs). Все строки, связанные с этим руководством, закомментированы с помощью `//APPINSIGHT:`. 
+Весь код из этого руководства можно найти в [репозитории GitHub LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/tree/master/documentation-samples/tutorial-web-app-bot-application-insights/nodejs). Все строки, связанные с этим руководством, закомментированы с помощью `//APPINSIGHT:`. 
 
 ## <a name="web-app-bot-with-luis"></a>Бот веб-приложения с LUIS
 Предполагается, что у вас есть код, который выглядит следующим образом, или вы выполнили процедуру в [другом руководстве](luis-nodejs-tutorial-build-bot-framework-sample.md): 
@@ -58,7 +59,7 @@ ms.locfileid: "49321960"
 
 3. В консоли введите следующую команду, чтобы установить Application Insights и пакеты Underscore:
 
-    ```
+    ```console
     cd site\wwwroot && npm install applicationinsights && npm install underscore
     ```
 
@@ -66,7 +67,7 @@ ms.locfileid: "49321960"
 
     Подождите, пока пакеты будут установлены:
 
-    ```
+    ```console
     luisbot@1.0.0 D:\home\site\wwwroot
     `-- applicationinsights@1.0.1 
       +-- diagnostic-channel@0.2.0 
@@ -142,7 +143,7 @@ Application Insights позволяет выполнять запросы дан
 
 3. Чтобы получить основное намерение, оценку и фрагмент речи, добавьте следующий код над последней строкой в окне запроса:
 
-    ```SQL
+    ```kusto
     | extend topIntent = tostring(customDimensions.LUIS_intent_intent)
     | extend score = todouble(customDimensions.LUIS_intent_score)
     | extend utterance = tostring(customDimensions.LUIS_text)

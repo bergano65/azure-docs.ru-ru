@@ -8,12 +8,12 @@ editor: jasonwhowell
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/04/2018
-ms.openlocfilehash: 2a6744bdec48e59b820605bb4d1cc01d32702bcf
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 2ee9f750ff52b8afe4be54233f1374f523a789f4
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48867771"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52845177"
 ---
 # <a name="server-logs-in-azure-database-for-postgresql"></a>Журналы сервера в базе данных Azure для PostgreSQL 
 База данных Azure для PostgreSQL создает журналы запросов и ошибок. Журналы запросов и ошибок можно использовать для идентификации, устранения и исправления ошибок конфигурации, а также для повышения производительности. (Доступ к журналам транзакций не включен). 
@@ -26,11 +26,11 @@ ms.locfileid: "48867771"
 Дополнительные сведения об этих параметрах см. в документации PostgreSQL [Error Reporting and Logging](https://www.postgresql.org/docs/current/static/runtime-config-logging.html) (Отчеты об ошибках и ведение журнала). Дополнительные сведения о настройке параметров базы данных Azure для PostgreSQL см. в статье [Настройка параметров сервера на портале Azure](howto-configure-server-parameters-using-portal.md) или [Настройка параметров конфигурации сервера с помощью Azure CLI](howto-configure-server-parameters-using-cli.md).
 
 ## <a name="access-server-logs-through-portal-or-cli"></a>Доступ к журналам сервера с помощью портала или интерфейса командной строки
-Если функция ведения журналов была включена, то для доступа к хранилищу журналов базы данных Azure для PostgreSQL можно использовать [портал Azure](howto-configure-server-logs-in-portal.md), [Azure CLI](howto-configure-server-logs-using-cli.md) или Azure REST API. Файлы журналов создаются каждый час или по достижении размера 100 МБ (в зависимости от того, какое событие произойдет первым). Вы можете настроить срок хранения журналов, используя параметр **log\_retention\_period**, связанный с сервером. Значению по умолчанию соответствует три дня, а максимальному значению семь. Ваш сервер должен иметь достаточный объем выделенной памяти для хранения файлов журналов. (Данный параметр хранения не влияет на Журналы диагностики Azure).
+Если функция ведения журналов была включена, то для доступа к хранилищу журналов базы данных Azure для PostgreSQL можно использовать [портал Azure](howto-configure-server-logs-in-portal.md), [Azure CLI](howto-configure-server-logs-using-cli.md) или Azure REST API. Файлы журналов создаются каждый час или по достижении размера 100 МБ (в зависимости от того, какое событие произойдет первым). Вы можете настроить срок хранения журналов, используя параметр  **log\_retention\_period** , связанный с сервером. Значению по умолчанию соответствует три дня, а максимальному значению семь. Ваш сервер должен иметь достаточный объем выделенной памяти для хранения файлов журналов. (Данный параметр хранения не влияет на Журналы диагностики Azure).
 
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
-База данных Azure для PostgreSQL интегрирована с журналами диагностики Azure Monitor. После активации ведения журналов на сервере PostgreSQL пользователь может выбрать отправлять их в [Log Analytics](../log-analytics/log-analytics-queries.md), центры событий или в службу хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md). 
+База данных Azure для PostgreSQL интегрирована с журналами диагностики Azure Monitor. После активации ведения журналов на сервере PostgreSQL пользователь может выбрать отправлять их в [Log Analytics](../azure-monitor/log-query/log-query-overview.md), центры событий или в службу хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md). 
 
 
 В приведенной ниже таблице описывается содержимое каждого журнала. Порядок появления выбранных полей зависит от выбранной конечной точки вывода. 
@@ -49,7 +49,7 @@ ms.locfileid: "48867771"
 | Ресурс | Имя сервера |
 | Категория | `PostgreSQLLogs` |
 | OperationName | `LogEvent` |
-| errorLevel | Уровень ведения журнала, например: LOG, ERROR, NOTICE |
+| errorLevel | Пример уровня ведения журнала: LOG, ERROR, NOTICE |
 | Сообщение | Первичное сообщение журнала | 
 | Домен | Версия сервера, например: postgres 10 |
 | Описание | Второстепенное сообщение журнала (если применимо) |

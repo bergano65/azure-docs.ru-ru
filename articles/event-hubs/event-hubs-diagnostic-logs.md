@@ -1,6 +1,6 @@
 ---
-title: Журналы диагностики Центров событий Azure | Документация Майкрософт
-description: Узнайте, как настроить журналы диагностики для концентраторов событий в Azure.
+title: Настройка журналов диагностики Центров событий Azure | Документация Майкрософт
+description: Узнайте, как настроить журналы действий и журналы диагностики для Центров событий в Azure.
 keywords: ''
 documentationcenter: ''
 services: event-hubs
@@ -13,21 +13,22 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: data-services
-ms.date: 07/02/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: bee6219bca21c3bc2bf4f97aa061fce0b30d55ff
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: c0c8740648ad845b58ff0578607f4b5e9c235166
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49985172"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53105484"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Настройка журналов диагностики для центра событий Azure
 
 Для Центров событий Azure можно просмотреть журналы двух типов.
 
-* **[Журналы действий.](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md)** Эти журналы содержат сведения об операциях, выполняемых с заданием. Данные журналы всегда включены.
-* **[Журналы диагностики.](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md)** Вы можете настроить журналы диагностики, чтобы получать подробные сведения обо всем, что происходит с заданием. Журналы диагностики охватывают действия с момента создания задания до его удаления, включая обновления и действия, которые происходят во время выполнения задания.
+* **[Журналы действий](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md)**. Эти журналы содержат сведения об операциях, выполняемых с заданием. Данные журналы всегда включены.
+* **[Журналы диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md)**. Вы можете настроить журналы диагностики, чтобы получать более подробные сведения обо всем, что происходит с заданием. Журналы диагностики охватывают действия с момента создания задания до его удаления, включая обновления и действия, которые происходят во время выполнения задания.
 
 ## <a name="enable-diagnostic-logs"></a>Включение ведения журнала диагностики для веб-приложений в службе приложений Azure
 

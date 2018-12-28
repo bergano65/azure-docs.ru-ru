@@ -10,100 +10,107 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 08/31/2018
 ms.author: ambapat
-ms.openlocfilehash: 6315434c1e8acc82e02f5c9e5ae8ab2d1cacc887
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 7dd768d3f0059f4b26f09298992483553f1508d2
+ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44302059"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52681252"
 ---
 # <a name="configure-azure-key-vault-firewalls-and-virtual-networks"></a>Настройка брандмауэров и виртуальных сетей Azure Key Vault
 
-В этом руководстве описываются пошаговые инструкции по настройке брандмауэров и виртуальных сетей Key Vault для ограничения доступа к хранилищу ключей. [Конечные точки службы виртуальной сети для Key Vault](key-vault-overview-vnet-service-endpoints.md) позволяют предоставить доступ к хранилищу ключей только для указанной виртуальной сети или набора диапазонов адресов IPv4 (протокол IP версии 4).
+В этой статье описываются пошаговые инструкции по настройке брандмауэров и виртуальных сетей Azure Key Vault для ограничения доступа к хранилищу ключей. [Конечные точки служб виртуальной сети для Key Vault](key-vault-overview-vnet-service-endpoints.md) позволяют предоставить доступ для указанной виртуальной сети или набора диапазонов адресов IPv4 (протокол IP версии 4).
 
 > [!IMPORTANT]
-> Когда правила брандмауэра и виртуальной сети начнут действовать, все операции [плоскости данных](../key-vault/key-vault-secure-your-key-vault.md#data-plane-access-control) Key Vault будут выполняться, только если запросы вызывающей стороны поступают из разрешенных виртуальных сетей или диапазонов IPv4-адресов. Это также относится к получению доступа к хранилищу ключей с портала Azure. Хотя пользователь может перейти в хранилище ключей с портала Azure, он не сможет перечислять ключи, секреты и сертификаты, если их клиентский компьютер не находится в разрешенном списке. Это также влияет на выбор хранилища ключей другими службами Azure. Пользователи могут просматривать список хранилищ ключей, но не список ключей, если правила брандмауэра запрещают их клиентский компьютер.
+> Когда правила брандмауэра начнут действовать, пользователи смогут выполнять запросы на операции [плоскости данных](../key-vault/key-vault-secure-your-key-vault.md#data-plane-access-control) в Key Vault только из разрешенных виртуальных сетей или диапазонов IPv4-адресов. Это относится и к получению доступа к Key Vault с портала Azure. Пользователь сможет перейти в хранилище ключей с портала Azure, но не сможет получить список ключей, секретов и сертификатов, если клиентский компьютер не включен в список разрешенных. Это также влияет на выбор хранилища ключей другими службами Azure. Пользователи смогут просматривать список хранилищ ключей, но не список ключей, если правила брандмауэра запрещают их клиентские компьютеры.
 
-## <a name="azure-portal"></a>Портал Azure
+## <a name="use-the-azure-portal"></a>Использование портала Azure
+
+Брандмауэры и виртуальные сети Key Vault можно настроить с помощью портала Azure следующим образом:
 
 1. Перейдите к хранилищу ключей, которое нужно защитить.
-2. Щелкните **Брандмауэры и виртуальные сети**.
-3. Щелкните **Выбранные сети** в разделе **Разрешить доступ из**.
-4. Чтобы добавить имеющиеся виртуальные сети в правила брандмауэров и виртуальных сетей, щелкните **+ Добавить существующие виртуальные сети**.
-5. В новой открывшейся колонке выберите подписку, виртуальные сети и подсети, которым нужно предоставить доступ к этому хранилищу ключей. Если у виртуальных сетей и подсетей, которые вы выбрали, нет включенных конечных точек службы, отобразится следующее сообщение: The following networks don't have service endpoints enabled (У следующих сетей нет включенных конечных точек службы). Щелкните **Включить**, убедившись, что вам нужно включить конечные точки службы для перечисленных виртуальных сетей и подсетей. Эта настройка вступит в силу в течение 15 минут.
-6. Вы также можете добавить новые виртуальные сети и подсети, а потом включить конечные точки службы для них, щелкнув **+ Добавить новую виртуальную сеть** и следуя запросам.
-7. В разделе **IP-сети** можно добавить диапазоны IPv4-адресов, введя их с использованием [нотации CIDR](https://tools.ietf.org/html/rfc4632), или указать отдельные IP-адреса.
-8. Выберите команду **Сохранить**.
+2. Выберите **Брандмауэры и виртуальные сети**.
+3. В разделе **Разрешить доступ из** щелкните **Выбранные сети**.
+4. Чтобы добавить имеющиеся виртуальные сети в правила брандмауэров и виртуальных сетей, выберите **+ Добавить существующие виртуальные сети**.
+5. В новой открывшейся колонке выберите подписку, виртуальные сети и подсети, которым нужно предоставить доступ к этому хранилищу ключей. Если в выбранных вами виртуальных сетях и подсетях нет включенных конечных точек службы, подтвердите, что вы хотите включить конечные точки службы, и нажмите кнопку **Включить**. Эта настройка вступит в силу в течение 15 минут.
+6. В разделе **IP-сети** добавьте диапазоны IPv4-адресов, введя их с использованием [нотации CIDR](https://tools.ietf.org/html/rfc4632), или укажите отдельные IP-адреса.
+7. Щелкните **Сохранить**.
 
-## <a name="azure-cli-20"></a>Azure CLI 2.0
+Вы также можете добавить новые виртуальные сети и подсети, а потом включить конечные точки службы для них, выбрав **+ Добавить новую виртуальную сеть**. Затем следуйте инструкциям на экране.
 
-1. [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) и [выполните вход](https://docs.microsoft.com/cli/azure/authenticate-azure-cli).
+## <a name="use-the-azure-cli-20"></a>Использование Azure CLI 2.0
 
-2. Выведите список доступных правил виртуальных сетей. Если вы не настроили какие-либо правила для этого хранилища ключей, список будет пустой.
-```azurecli
-az keyvault network-rule list --resource-group myresourcegroup --name mykeyvault
-```
+Брандмауэры и виртуальные сети Key Vault можно настроить с помощью Azure CLI 2.0 следующим образом:
+
+1. [Установите Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli) и [войдите в систему](https://docs.microsoft.com/cli/azure/authenticate-azure-cli).
+
+2. Перечислите доступные правила виртуальной сети. Если вы не настроили каких-либо правил для этого хранилища ключей, список будет пуст.
+   ```azurecli
+   az keyvault network-rule list --resource-group myresourcegroup --name mykeyvault
+   ```
 
 3. Включите конечную точку службы для Key Vault в имеющейся виртуальной сети и подсети.
-```azurecli
-az network vnet subnet update --resource-group "myresourcegroup" --vnet-name "myvnet" --name "mysubnet" --service-endpoints "Microsoft.KeyVault"
-```
+   ```azurecli
+   az network vnet subnet update --resource-group "myresourcegroup" --vnet-name "myvnet" --name "mysubnet" --service-endpoints "Microsoft.KeyVault"
+   ```
 
-4. Добавьте правило сети для виртуальной сети и подсети.
-```azurecli
-subnetid=$(az network vnet subnet show --resource-group "myresourcegroup" --vnet-name "myvnet" --name "mysubnet" --query id --output tsv)
-az keyvault network-rule add --resource-group "demo9311" --name "demo9311premium" --subnet $subnetid
-```
+4. Добавьте сетевое правило для виртуальной сети и подсети.
+   ```azurecli
+   subnetid=$(az network vnet subnet show --resource-group "myresourcegroup" --vnet-name "myvnet" --name "mysubnet" --query id --output tsv)
+   az keyvault network-rule add --resource-group "demo9311" --name "demo9311premium" --subnet $subnetid
+   ```
 
-5. Добавьте диапазон IP-адресов, с которых нужно разрешить поступление трафика.
-```azurecli
-az keyvault network-rule add --resource-group "myresourcegroup" --name "mykeyvault" --ip-address "191.10.18.0/24"
-```
+5. Добавьте диапазон IP-адресов, из которого необходимо разрешать трафик.
+   ```azurecli
+   az keyvault network-rule add --resource-group "myresourcegroup" --name "mykeyvault" --ip-address "191.10.18.0/24"
+   ```
 
-6. Если это хранилище ключей должно быть доступно для каких-либо доверенных служб, задайте параметр bypass для AzureServices.
-```azurecli
-az keyvault update --resource-group "myresourcegroup" --name "mykeyvault" --bypass AzureServices
-```
+6. Если это хранилище ключей должно быть доступно для каких-либо доверенных служб, задайте для параметра `bypass` значение `AzureServices`.
+   ```azurecli
+   az keyvault update --resource-group "myresourcegroup" --name "mykeyvault" --bypass AzureServices
+   ```
 
-7. Последним и важным шагом является включение правил сети с помощью установки действия Deny (Запретить) по умолчанию.
-```azurecli
-az keyvault update --resource-group "myresourcegroup" --name "mekeyvault" --default-action Deny
-```
+7. Включите правила сети, установив для действия по умолчанию значение `Deny`.
+   ```azurecli
+   az keyvault update --resource-group "myresourcegroup" --name "mekeyvault" --default-action Deny
+   ```
 
-## <a name="azure-powershell"></a>Azure PowerShell
+## <a name="use-azure-powershell"></a>Использование Azure PowerShell
+
+Брандмауэры и виртуальные сети Key Vault можно настроить с помощью PowerShell следующим образом:
 
 1. Установите последнюю версию [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) и [выполните вход](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
 
-2. Выведите список доступных правил виртуальных сетей. Если вы не настроили какие-либо правила для этого хранилища ключей, список будет пустой.
-```PowerShell
-(Get-AzureRmKeyVault -VaultName "mykeyvault").NetworkAcls
-```
+2. Перечислите доступные правила виртуальной сети. Если вы не настроили каких-либо правил для этого хранилища ключей, список будет пуст.
+   ```PowerShell
+   (Get-AzureRmKeyVault -VaultName "mykeyvault").NetworkAcls
+   ```
 
 3. Включите конечную точку службы для Key Vault в имеющейся виртуальной сети и подсети.
-```PowerShell
-Get-AzureRmVirtualNetwork -ResourceGroupName "myresourcegroup" -Name "myvnet" | Set-AzureRmVirtualNetworkSubnetConfig -Name "mysubnet" -AddressPrefix "10.1.1.0/24" -ServiceEndpoint "Microsoft.KeyVault" | Set-AzureRmVirtualNetwork
-```
+   ```PowerShell
+   Get-AzureRmVirtualNetwork -ResourceGroupName "myresourcegroup" -Name "myvnet" | Set-AzureRmVirtualNetworkSubnetConfig -Name "mysubnet" -AddressPrefix "10.1.1.0/24" -ServiceEndpoint "Microsoft.KeyVault" | Set-AzureRmVirtualNetwork
+   ```
 
-4. Добавьте правило сети для виртуальной сети и подсети.
-```PowerShell
-$subnet = Get-AzureRmVirtualNetwork -ResourceGroupName "myresourcegroup" -Name "myvnet" | Get-AzureRmVirtualNetworkSubnetConfig -Name "mysubnet"
-Add-AzureRmKeyVaultNetworkRule -VaultName "mykeyvault" -VirtualNetworkResourceId $subnet.Id
-```
+4. Добавьте сетевое правило для виртуальной сети и подсети.
+   ```PowerShell
+   $subnet = Get-AzureRmVirtualNetwork -ResourceGroupName "myresourcegroup" -Name "myvnet" | Get-AzureRmVirtualNetworkSubnetConfig -Name "mysubnet"
+   Add-AzureRmKeyVaultNetworkRule -VaultName "mykeyvault" -VirtualNetworkResourceId $subnet.Id
+   ```
 
-5. Добавьте диапазон IP-адресов, с которых нужно разрешить поступление трафика.
-```PowerShell
-Add-AzureRmKeyVaultNetworkRule -VaultName "mykeyvault" -IpAddressRange "16.17.18.0/24"
-```
+5. Добавьте диапазон IP-адресов, из которого необходимо разрешать трафик.
+   ```PowerShell
+   Add-AzureRmKeyVaultNetworkRule -VaultName "mykeyvault" -IpAddressRange "16.17.18.0/24"
+   ```
 
-6. Если это хранилище ключей должно быть доступно для каких-либо доверенных служб, задайте параметр bypass для AzureServices.
-```PowerShell
-Update-AzureRmKeyVaultNetworkRuleSet -VaultName "mykeyvault" -Bypass AzureServices
-```
+6. Если это хранилище ключей должно быть доступно для каких-либо доверенных служб, задайте для параметра `bypass` значение `AzureServices`.
+   ```PowerShell
+   Update-AzureRmKeyVaultNetworkRuleSet -VaultName "mykeyvault" -Bypass AzureServices
+   ```
 
-7. Последним и важным шагом является включение правил сети с помощью установки действия Deny (Запретить) по умолчанию.
-```PowerShell
-Update-AzureRmKeyVaultNetworkRuleSet -VaultName "mykeyvault" -DefaultAction Deny
-```
+7. Включите правила сети, установив для действия по умолчанию значение `Deny`.
+   ```PowerShell
+   Update-AzureRmKeyVaultNetworkRuleSet -VaultName "mykeyvault" -DefaultAction Deny
+   ```
 
 ## <a name="references"></a>Ссылки
 

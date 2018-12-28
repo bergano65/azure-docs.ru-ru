@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 09/19/2018
 ms.author: sethm
 ms.reviewer: alfredo
-ms.openlocfilehash: eef1a2f82dc73a1c53b89bb3c9d145f87212ffcc
-ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
+ms.openlocfilehash: 6f93a72acdcc249720abeec3fe871b7108e2bb29
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46498578"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52963748"
 ---
 # <a name="add-tenant-for-usage-and-billing-to-azure-stack"></a>Добавление клиентов для контроля потребления и выставления счетов в Azure Stack
 
@@ -36,7 +36,7 @@ ms.locfileid: "46498578"
 
 **Процесс добавления клиента**
 
-![Настройка отслеживания потребления и управления учетной записью клиента для поставщика облачных служб](media\azure-stack-csp-enable-billing-usage-tracking\process-csp-enable-billing.png)
+![Настройка отслеживания потребления и управления учетной записью клиента для поставщика облачных служб](media/azure-stack-csp-enable-billing-usage-tracking/process-csp-enable-billing.png)
 
 ## <a name="create-a-new-customer-in-partner-center"></a>Создание клиента в Центре партнеров
 
@@ -50,7 +50,7 @@ ms.locfileid: "46498578"
 ## <a name="create-a-guest-user-in-the-end-customer-directory"></a>Создание гостевого пользователя в каталоге клиента
 
 Если клиент будет самостоятельно управлять своей учетной записью, создайте в его каталоге гостевого пользователя и передайте сведения о нем представителям клиента. Затем клиент должен добавить гостевую учетную запись в каталог и повысить ее уровень до **владельца** учетной записи CSP Azure Stack.
- 
+ 
 ## <a name="update-the-registration-with-the-end-customer-subscription"></a>Добавление подписки клиента в регистрацию
 
 Добавьте сведения о новой подписке клиента в регистрацию. Теперь Azure будет передавать данные клиента о потреблении ресурсов, используя указанный в Центре партнеров идентификатор клиента. Благодаря этому данные каждого клиента о потреблении ресурсов будут относиться к его подписке CSP. Так будет намного проще отслеживать потребление и выставлять счета за него.
@@ -86,10 +86,10 @@ ms.locfileid: "46498578"
 
 ## <a name="create-a-local-resource-in-the-end-customer-tenant-in-azure-stack"></a>Создание локального ресурса в клиенте Azure Stack для клиента
 
-Когда вы добавите нового клиента в Azure Stack или представители клиента предоставят права владельца вашей гостевой учетной записи, проверьте возможность создавать ресурсы для этого клиента. Например, можно [создать виртуальную машину Windows на портале Azure Stack](user\azure-stack-quick-windows-portal.md).
+Когда вы добавите нового клиента в Azure Stack или представители клиента предоставят права владельца вашей гостевой учетной записи, проверьте возможность создавать ресурсы для этого клиента. Например, можно [создать виртуальную машину Windows на портале Azure Stack](user/azure-stack-quick-windows-portal.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
  - Если в процессе регистрации возникнут ошибки, изучите их с помощью этой [инструкции по ошибкам регистрации клиента](azure-stack-csp-ref-infrastructure.md#usage-and-billing-error-codes).
  - Дополнительные сведения см. в статье о [потреблении ресурсов и выставлении счетов в Azure Stack](azure-stack-billing-and-chargeback.md).
- - Чтобы помочь клиенту добавить вашу учетную запись (CSP) с правами менеджера в клиенте Azure Stack, изучите статью [Предоставление поставщику облачных служб возможности управлять подпиской Azure Stack](user\azure-stack-csp-enable-billing-usage-tracking.md).
+ - Чтобы помочь клиенту добавить вашу учетную запись (CSP) с правами менеджера в клиенте Azure Stack, изучите статью [Предоставление поставщику облачных служб возможности управлять подпиской Azure Stack](user/azure-stack-csp-enable-billing-usage-tracking.md).

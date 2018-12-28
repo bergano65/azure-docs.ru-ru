@@ -1,11 +1,13 @@
 ---
-title: 10 задач, которые можно выполнить в виртуальной машине для обработки и анализа данных в Azure | Документация Майкрософт
+title: Изучение и моделирование данных в виртуальной машине для обработки и анализа данных
+titleSuffix: Azure
 description: Выполните различные задачи по изучению и моделированию данных в виртуальной машине для анализа и обработки данных.
 services: machine-learning
 documentationcenter: ''
 author: gopitk
 manager: cgronlun
 editor: cgronlun
+ms.custom: seodec18
 ms.assetid: 145dfe3e-2bd2-478f-9b6e-99d97d789c62
 ms.service: machine-learning
 ms.component: data-science-vm
@@ -15,12 +17,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: gokuma
-ms.openlocfilehash: df9edfee9d8a6a0736a040924bac736cfcb3633c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 52f0a298b1a9e9f3f209f51c1bc0362b8ddf2c4e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51250923"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53075693"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -62,7 +64,7 @@ ms.locfileid: "51250923"
 
 Вот как выглядит установка настраиваемой среды в Visual Studio.
 
-![Установка PTVS](./media/vm-do-ten-things/PTVSSetup.png)
+![Снимок экрана Visual Studio с выделенными Инструментами Python для Visual Studio](./media/vm-do-ten-things/PTVSSetup.png)
 
 Дополнительные сведения о создании сред Python см. в [документации по PTVS](https://aka.ms/ptvsdocs).
 
@@ -249,7 +251,7 @@ DSVM уже поставляется с набором клиентских ин
 
 В Visual Studio можно выполнить ту же операцию клонирования. На следующем снимке экрана показано, как получить доступ к средствам Git и GitHub в Visual Studio.
 
-![Git в Visual Studio](./media/vm-do-ten-things/VSGit.PNG)
+![Снимок экрана Visual Studio с отображением соединения с GitHub](./media/vm-do-ten-things/VSGit.PNG)
 
 Дополнительные сведения об использовании Git для работы с репозиторием GitHub доступны в ряде ресурсов на сайте github.com. Вы также найдете полезную информацию в этой [памятке](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) .
 
@@ -261,12 +263,12 @@ DSVM уже поставляется с набором клиентских ин
 
 * **Создайте учетную запись хранения BLOB-объектов Azure на [портале Azure](https://portal.azure.com).**
 
-![Create_Azure_Blob](./media/vm-do-ten-things/Create_Azure_Blob.PNG)
+![Снимок экрана, на котором показан процесс создания учетной записи хранения на портале Azure](./media/vm-do-ten-things/Create_Azure_Blob.PNG)
 
 * Убедитесь, что предустановленное средство командной строки AzCopy находится по адресу ```C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy.exe```. Каталог, содержащий файл Azcopy.exe, уже находится в переменной среды PATH. Поэтому вы можете не вводить полный путь команды при запуске этого средства. Дополнительные сведения об инструменте AzCopy см. в статье [Перенос данных с помощью AzCopy для Windows](../../storage/common/storage-use-azcopy.md).
 * Запустите инструмент Azure Storage Explorer. Его можно скачать с сайта [Microsoft Azure Storage Explorer](http://storageexplorer.com/). 
 
-![AzureStorageExplorer_v4](./media/vm-do-ten-things/AzureStorageExplorer_v4.png)
+![Снимок экрана подключения Обозревателя службы хранилища Azure к учетной записи хранения](./media/vm-do-ten-things/AzureStorageExplorer_v4.png)
 
 **Перемещение данных из виртуальной машины в BLOB-объект Azure: AzCopy**
 
@@ -276,7 +278,7 @@ DSVM уже поставляется с набором клиентских ин
 
 Замените **C:\myfolder** путем к расположению, где хранится файл, **mystorageaccount** — именем учетной записи хранилища BLOB-объектов, **mycontainer** — именем контейнера, а значение в поле **Ключ учетной записи хранения** замените ключом доступа к хранилищу BLOB-объектов. Данные вашей учетной записи хранения находятся на [портале Azure](https://portal.azure.com).
 
-![StorageAccountCredential_v2](./media/vm-do-ten-things/StorageAccountCredential_v2.png)
+![Снимок экрана ключей учетной записи хранения и сведений о контейнере на портале Azure](./media/vm-do-ten-things/StorageAccountCredential_v2.png)
 
 Выполните команду AzCopy в PowerShell или из командной строки. Далее приведен пример использования команды AzCopy.
 
@@ -291,20 +293,20 @@ DSVM уже поставляется с набором клиентских ин
 
 Вскоре после выполнения команды AzCopy для копирования в большой двоичный объект Azure файл появится в обозревателе службы хранилища Azure.
 
-![AzCopy_run_finshed_Storage_Explorer_v3](./media/vm-do-ten-things/AzCopy_run_finshed_Storage_Explorer_v3.png)
+![Снимок экрана учетной записи хранения с отображением загруженного CSV-файла](./media/vm-do-ten-things/AzCopy_run_finshed_Storage_Explorer_v3.png)
 
-**Перемещение данных из виртуальной машины в BLOB-объект Azure: обозреватель хранилищ Azure**
+**Перемещение данных из виртуальной машины в BLOB-объект Azure: Обозреватель службы хранилища Azure**
 
 Отправить данные из локального файла в виртуальной машине можно также с помощью обозревателя хранилищ Azure.
 
-* Чтобы передать данные в контейнер, выберите целевой контейнер и нажмите кнопку **Передать**.![Передача данных в обозревателе хранилищ](./media/vm-do-ten-things/storage-accounts.png)
-* Щелкните знак многоточия **…** справа от поля **Файлы**, выберите в файловой системе один или несколько файлов для передачи и нажмите кнопку **Передать**, чтобы начать их передачу.![Передача файлов в большой двоичный объект](./media/vm-do-ten-things/upload-files-to-blob.png)
+* Чтобы передать данные в контейнер, выберите целевой контейнер и нажмите кнопку **Отправить**.![Снимок экрана кнопки передачи в Обозревателе службы хранилища Azure](./media/vm-do-ten-things/storage-accounts.png)
+* Щелкните знак многоточия **…** справа от поля **Файлы**, выберите в файловой системе один или несколько файлов для передачи и нажмите кнопку **Отправить**, чтобы начать их передачу.![Снимок экрана: диалоговое окно передачи файлов](./media/vm-do-ten-things/upload-files-to-blob.png)
 
-**Чтение данных из большого двоичного объекта Azure: модуль "Читатель" машинного обучения**
+**Чтение данных из BLOB-объекта Azure: модуль "Читатель" машинного обучения**
 
 Для чтения данных из большого двоичного объекта в Студии машинного обучения Azure можно использовать модуль **Импорт данных**.
 
-![AML_ReaderBlob_Module_v3](./media/vm-do-ten-things/AML_ReaderBlob_Module_v3.png)
+![Снимок экрана модуля "Импорт данных" в студии машинного обучения](./media/vm-do-ten-things/AML_ReaderBlob_Module_v3.png)
 
 **Чтение данных из BLOB-объекта Azure: Python ODBC**
 
@@ -352,7 +354,7 @@ DSVM уже поставляется с набором клиентских ин
 
 Данные считываются в виде блока данных, как показано ниже.
 
-![IPNB_data_readin](./media/vm-do-ten-things/IPNB_data_readin.PNG)
+![Снимок экрана первых 10 строк данных](./media/vm-do-ten-things/IPNB_data_readin.PNG)
 
 ### <a name="azure-data-lake"></a>Azure Data Lake;
 Хранилище Azure Data Lake является гипермасштабируемым репозиторием для рабочих нагрузок аналитической обработки больших данных, совместимым с распределенной файловой системой Hadoop (HDFS). Оно работает с Hadoop, Spark и Azure Data Lake Analytics. В этом разделе вы узнаете, как переместить данные в Azure Data Lake Store и запустить анализ с помощью Azure Data Lake Analytics.
@@ -361,29 +363,29 @@ DSVM уже поставляется с набором клиентских ин
 
 * Создайте экземпляр Azure Data Lake Analytics на [портале Azure](https://portal.azure.com).
 
-![Azure_Data_Lake_Create_v2](./media/vm-do-ten-things/Azure_Data_Lake_Create_v2.png)
+![Снимок экрана создания Data Lake Analytics на портале Azure](./media/vm-do-ten-things/Azure_Data_Lake_Create_v2.png)
 
 * Инструменты **Azure Data Lake Tools** для **Visual Studio**, доступные по этой [ссылке](https://www.microsoft.com/download/details.aspx?id=49504), уже установлены в выпуске Visual Studio Community Edition на виртуальной машине. После запуска Visual Studio и входа в подписку Azure вы увидите свою учетную запись анализа данных Azure и хранилище в левой области Visual Studio.
 
-![Azure_Data_Lake_PlugIn_v2](./media/vm-do-ten-things/Azure_Data_Lake_PlugIn_v2.PNG)
+![Снимок экрана средств Data Lake в Visual Studio](./media/vm-do-ten-things/Azure_Data_Lake_PlugIn_v2.PNG)
 
-**Перемещение данных из виртуальной машины в озеро данных: обозреватель озера данных Azure**
+**Перемещение данных из виртуальной машины в Data Lake: Обозреватель Azure Data Lake**
 
 **Azure Data Lake Explorer** можно использовать для передачи данных из локальных файлов в виртуальной машине в хранилище Data Lake.
 
-![Azure_Data_Lake_UploadData](./media/vm-do-ten-things/Azure_Data_Lake_UploadData.PNG)
+![Снимок экрана использования Обозревателя Data Lake для передачи файлов](./media/vm-do-ten-things/Azure_Data_Lake_UploadData.PNG)
 
 Можно также создать конвейер данных для перемещения данных в Azure Data Lake или из него с помощью [фабрики данных Azure (ADF)](https://azure.microsoft.com/services/data-factory/). В этой [записи блога](https://azure.microsoft.com/blog/creating-big-data-pipelines-using-azure-data-lake-and-azure-data-factory/) содержатся сведения об этапах, необходимых для создания конвейеров данных.
 
-**Чтение данных из BLOB-объекта Azure в озеро данных: U-SQL**
+**Чтение данных из BLOB-объекта Azure в Data Lake: U-SQL**
 
 Если данные хранятся в хранилище BLOB-объектов Azure, их можно считывать непосредственно из BLOB-объекта хранилища Azure в запросе U-SQL. Перед построением запроса U-SQL убедитесь, что учетная запись хранения BLOB-объектов связана с озером данных Azure. На **портале Azure** найдите панель мониторинга для Azure Data Lake Analytics, щелкните **Добавить источник данных**, в качестве типа хранилища выберите **Служба хранилища Azure** и укажите имя и ключ учетной записи хранения Azure. Затем вы сможете ссылаться на данные, хранящиеся в учетной записи хранения.
 
-![Ввод имени учетной записи хранения и ключа](./media/vm-do-ten-things/Link_Blob_to_ADLA_v2.PNG)
+![Снимок экрана диалогового окна добавления источника данных](./media/vm-do-ten-things/Link_Blob_to_ADLA_v2.PNG)
 
 В Visual Studio можно читать данные из хранилища BLOB-объектов, выполнять обработку данных, проектировать характеристики и выводить полученные данные в озеро данных Azure или хранилище BLOB-объектов Azure. Ссылаясь на данные в хранилище BLOB-объектов, используйте **wasb://**, а на данные в Azure Data Lake — **swbhdfs://**.
 
-![Кадр данных](./media/vm-do-ten-things/USQL_Read_Blob_v2.PNG)
+![Снимок экрана запроса с выделенной записью WASB](./media/vm-do-ten-things/USQL_Read_Blob_v2.PNG)
 
 В Visual Studio можно использовать следующие запросы U-SQL:
 
@@ -429,19 +431,19 @@ DSVM уже поставляется с набором клиентских ин
 
 После отправки запроса на сервер отображается схема, демонстрирующая состояние задания.
 
-![Схема состояния задания](./media/vm-do-ten-things/USQL_Job_Status.PNG)
+![Снимок экрана состояния диалогового окна задания](./media/vm-do-ten-things/USQL_Job_Status.PNG)
 
-**Запрос данных в озере данных: U-SQL**
+**Запрос данных в Data Lake: U-SQL**
 
 После передачи набора данных в Azure Data Lake можно использовать [язык U-SQL](../../data-lake-analytics/data-lake-analytics-u-sql-get-started.md), чтобы запрашивать данные и затем изучать их. Язык U-SQL аналогичен T-SQL, но содержит некоторые функции из C#, поэтому пользователи могут писать настраиваемые модули, определяемые пользователями функции и т. д. Можно использовать сценарии из предыдущего шага.
 
 Вскоре после отправки запроса на сервер в **Azure Data Lake Explorer** появится файл tripdata_summary.CSV. Чтобы просмотреть данные, щелкните этот файл правой кнопкой мыши.
 
-![Файл в Azure Data Lake Explorer](./media/vm-do-ten-things/USQL_create_summary.png)
+![Снимок экрана CSV-файла в Обозревателе Data Lake](./media/vm-do-ten-things/USQL_create_summary.png)
 
 Вот как выглядят сведения о файле:
 
-![Сведения о файле](./media/vm-do-ten-things/USQL_tripdata_summary.png)
+![Снимок экрана сводных данных файла](./media/vm-do-ten-things/USQL_tripdata_summary.png)
 
 ### <a name="hdinsight-hadoop-clusters"></a>Кластеры HDInsight Hadoop
 Azure HDInsight является управляемой службой Apache Hadoop, Spark, HBase и Storm в облаке. Вы можете легко работать с кластерами Azure HDInsight на виртуальной машине для обработки и анализа данных.
@@ -450,7 +452,7 @@ Azure HDInsight является управляемой службой Apache Ha
 
 * Создайте учетную запись хранения BLOB-объектов Azure на [портале Azure](https://portal.azure.com). Она используется для хранения данных кластеров HDInsight.
 
-![Создание учетной записи хранения больших двоичных объектов Azure](./media/vm-do-ten-things/Create_Azure_Blob.PNG)
+![Снимок экрана создания HDInsight на портале Azure](./media/vm-do-ten-things/Create_Azure_Blob.PNG)
 
 * Настройте кластеры HDInsight Hadoop в Azure на [портале Azure](../team-data-science-process/customize-hadoop-cluster.md)
   
@@ -460,7 +462,7 @@ Azure HDInsight является управляемой службой Apache Ha
 
 * После создания кластера включите **удаленный доступ** к головному узлу кластера. Запомните указываемые здесь учетные данные для удаленного доступа, так как они потребуются при выполнении следующей процедуры.
 
-![Включение удаленного доступа](./media/vm-do-ten-things/Create_HDI_dashboard_v3.PNG)
+![Включите удаленный доступ к кластеру HDInsight.](./media/vm-do-ten-things/Create_HDI_dashboard_v3.PNG)
 
 * Создайте рабочую область машинного обучения Azure. В ней будут храниться эксперименты машинного обучения. Выберите выделенные параметры на портале, как показано на следующем снимке экрана:
 
@@ -638,7 +640,7 @@ Azure HDInsight является управляемой службой Apache Ha
     results.head(5)
 
 
-![Таблица данных о посадке и высадке](./media/vm-do-ten-things/Exploration_compute_pickup_dropoff_distance_v2.PNG)
+![Верхние строки таблицы данных о посадке и высадке](./media/vm-do-ten-things/Exploration_compute_pickup_dropoff_distance_v2.PNG)
 
     results.columns = ['pickup_longitude', 'pickup_latitude', 'dropoff_longitude',
                        'dropoff_latitude', 'trip_distance', 'trip_time_in_secs', 'direct_distance']
@@ -782,7 +784,7 @@ Azure HDInsight является управляемой службой Apache Ha
     pd.read_sql(queryString,connection)
 
 
-![Таблицы данных](./media/vm-do-ten-things/DownSample_Data_For_Modeling_v2.PNG)
+![Верхние строки данных из таблицы](./media/vm-do-ten-things/DownSample_Data_For_Modeling_v2.PNG)
 
 **Чтение данных из HDI с помощью машинного обучения: модуль "Читатель"**
 

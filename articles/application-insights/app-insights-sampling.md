@@ -9,17 +9,16 @@ ms.assetid: 015ab744-d514-42c0-8553-8410eef00368
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/02/2018
 ms.reviewer: vitalyg
 ms.author: mbullwin
-ms.openlocfilehash: 7fca6ffa9efa3eed9f7c74ee89ad8bb9651494bb
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 103f4b10d5fbb7fbcf9c3721a82fe4075abe0dc4
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48044711"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52877621"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -35,7 +34,7 @@ ms.locfileid: "48044711"
 * Вы также можете выполнять выборку вручную, чтобы сократить сетевой трафик. Это можно настроить на портале на странице "Usage and estimated costs" (Данные об использовании и предполагаемые расходы), в пакете SDK для ASP.NET посредством CONFIG-файла, или в пакете SDK для Java посредством файла ApplicationInsights.xml.
 * Если при регистрации пользовательских событий необходимо убедиться, что набор событий сохранен или отклонен полностью, проверьте, одинаковое ли у них значение идентификатора операции.
 * Делитель выборки *n* указывается в каждой записи в свойстве `itemCount`, которая при поиске отображается как число запросов или счетчик событий. Если выборка не выполняется, `itemCount==1`.
-* При написании запросов аналитики необходимо [учитывать выборку](../log-analytics/query-language/aggregations.md). В частности, вместо простого подсчета записей следует использовать функцию `summarize sum(itemCount)`.
+* При написании запросов аналитики необходимо [учитывать выборку](../azure-monitor/log-query/aggregations.md). В частности, вместо простого подсчета записей следует использовать функцию `summarize sum(itemCount)`.
 
 ## <a name="types-of-sampling"></a>Типы выборки
 Существует три альтернативных метода выборки.
@@ -207,7 +206,7 @@ ms.locfileid: "48044711"
 ### <a name="configuring-fixed-rate-sampling-in-aspnet"></a>Настройка выборки с фиксированной частотой в ASP.NET ###
 
 1. **Обновите пакеты NuGet проекта** до последней *предварительной* версии Application Insights. В Visual Studio щелкните проект правой кнопкой мыши в обозревателе решений, выберите "Управление пакетами NuGet", установите флажок **Включить предварительный выпуск** и выполните поиск Microsoft.ApplicationInsights.Web. 
-2. **Отключите адаптивную выборку.** В файле [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md) удалите или преобразуйте в комментарий узел `AdaptiveSamplingTelemetryProcessor`.
+2. **Отключите адаптивную выборку.** В файле [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md) удалите или закомментируйте узел `AdaptiveSamplingTelemetryProcessor`.
    
     ```xml
    
@@ -264,7 +263,7 @@ ms.locfileid: "48044711"
         <IncludedType>Exception</IncludedType>
     </IncludedTypes>
 ```
-Включение и (или) исключение можно настроить для следующих типов данных телеметрии: Dependency (зависимость), Event (событие), Exception (исключение), PageView (просмотр страницы), Request (запрос) и Trace (трассировка).
+Можно включить в выборку и (или) исключить из нее следующие типы данных телеметрии: Dependency, Event, Exception, PageView, Request, Trace.
 
 > [!NOTE]
 > В качестве процента выборки выберите значение в процентах, близкое к 100/N, где N — это целое число.  В настоящее время выборка не поддерживает другие значения.

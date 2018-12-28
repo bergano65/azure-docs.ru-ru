@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: reference
-ms.date: 10/30/2018
+ms.date: 12/05/2018
 ms.author: juliako
-ms.openlocfilehash: 8124b399b859f812ec3bf9f7ea64b6643446a1b5
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 9de0d8bc389218d3102633b09073b3af323d2ceb
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50249333"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53012000"
 ---
 # <a name="azure-event-grid-schemas-for-media-services-events"></a>Схемы службы "Сетка событий Azure" для событий Служб мультимедиа
 
@@ -28,7 +28,7 @@ ms.locfileid: "50249333"
 
 ### <a name="job-related-event-types"></a>Типы событий, связанных с заданием
 
-Служба мультимедиа Microsoft Azure выдает следующие типы событий, связанных с **заданием**. Существует две категории событий, связанных с **заданием**: "Наблюдение за изменениями состояния задания" и "Наблюдение за изменениями состояния выходных данных задания". 
+Служба мультимедиа Microsoft Azure выдает следующие типы событий, связанных с **заданием**. Существует две категории событий, связанных с **заданиями**: Monitoring Job State Changes (Наблюдение за изменениями состояния задания) и Monitoring Job Output State Changes (Наблюдение за изменениями состояния выходных данных задания). 
 
 Вы можете зарегистрироваться на все события, подписавшись на событие JobStateChange. Или, вы можете подписаться на отдельные события (к примеру, такие конечные состояния как JobErrored, JobFinished и JobCanceled). 
 
@@ -112,9 +112,12 @@ ms.locfileid: "50249333"
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
 | previousState | строка | Состояние задания перед событием. |
-| state | строка | Новое состояние задания в этом событии. Пример: "Queued: The Job is awaiting resources" (В очереди: задание ожидает ресурсы) или "Scheduled: The job is ready to start" (Запланировано: задание готово к запуску).|
+| state | строка | Новое состояние задания в этом событии. Например, "Scheduled: The job is ready to start" (Запланировано: задание готово к запуску) или "Finished: The job is finished" (Завершено: задание завершено).|
 
-Возможные значения состояния задания: *В очереди*, *Запланировано*, *Обработка*, *Завершено*, *Ошибка*, *Отменено*, *Отмена*.
+При этом состояние задания может принимать одно из значений: *Queued* (В очереди), *Scheduled* (Запланировано), *Processing* (Идет обработка), *Finished* (Завершено), *Error* (Ошибка), *Canceled* (Отменено), *Canceling* (Отмена).
+
+> [!NOTE]
+> Состояние *Queued* (В очереди) может быть присвоено только свойству **previousState**, но не свойству **state**.
 
 ### <a name="jobscheduled-jobprocessing-jobcanceling"></a>JobScheduled, JobProcessing, JobCanceling
 

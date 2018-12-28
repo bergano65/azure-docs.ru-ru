@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Predictix Price Reporting | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Predictix Price Reporting | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Predictix Price Reporting.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2017
 ms.author: jeedes
-ms.openlocfilehash: 3686a90cb088dae99d20df619c161251b5bdfd60
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: a7b6122638636193b363d0ac57aae22a9c7da57a
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39438949"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53014758"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-predictix-price-reporting"></a>Учебник. Интеграция Azure Active Directory с Predictix Price Reporting
+# <a name="tutorial-azure-active-directory-integration-with-predictix-price-reporting"></a>Руководство. Интеграция Azure Active Directory с Predictix Price Reporting
 
 В этом учебнике описано, как интегрировать Predictix Price Reporting с Azure Active Directory (Azure AD).
 
@@ -113,13 +113,14 @@ ms.locfileid: "39438949"
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname-pricing>.predictix.com/sso/request`
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://<companyname-pricing>.predictix.com` |
     | `https://<companyname-pricing>.dev.predictix.com` |
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Predictix Price Reporting](http://www.infor.com/company/customer-center/). 
+    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Predictix Price Reporting](https://www.infor.com/company/customer-center/). 
  
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -133,10 +134,10 @@ ms.locfileid: "39438949"
 
     ![Настройка Predictix Price Reporting](./media/predictixpricereporting-tutorial/tutorial_predictixpricereporting_configure.png) 
 
-1. Чтобы настроить единый вход на стороне **Predictix Price Reporting**, нужно передать скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки Predictix Price Reporting](http://www.infor.com/company/customer-center/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Predictix Price Reporting**, нужно передать скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки Predictix Price Reporting](https://www.infor.com/company/customer-center/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -173,7 +174,7 @@ ms.locfileid: "39438949"
  
 ### <a name="create-a-predictix-price-reporting-test-user"></a>Создание тестового пользователя Predictix Price Reporting
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Predictix Price Reporting. Чтобы добавить пользователей в платформу Predictix Price Reporting, обратитесь в [службу поддержки Predictix Price Reporting](http://www.infor.com/company/customer-center/).
+В этом разделе описано, как создать пользователя Britta Simon в приложении Predictix Price Reporting. Чтобы добавить пользователей в платформу Predictix Price Reporting, обратитесь в [службу поддержки Predictix Price Reporting](https://www.infor.com/company/customer-center/).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

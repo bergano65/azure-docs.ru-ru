@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.date: 09/20/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 11a14bc8b593e5e7d81e9bdbd4ac4ee3b2bbecaa
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: f078c1389e36b82f95b011ca1fbd7fbd1c4f895e
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582893"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52834244"
 ---
-# <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
+# <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
@@ -167,7 +167,7 @@ ms.locfileid: "52582893"
 
 5. Скопируйте URL-адрес _единой_ страницы, например _https://<имя_приложения>.azurewebsites.net/home/unified_.
 
-## <a name="step-3-configure-cors-in-azure-app-service"></a>Шаг 3. Настройка CORS в службе приложений Azure
+## <a name="step-3-configure-cors-in-azure-app-service"></a>Шаг 3. Настройка CORS в Службе приложений Azure
 1. На [портале Azure](https://portal.azure.com/) выберите **Службы приложений**, а затем щелкните имя своего приложения API.
 
     ![Выбор приложения API на портале Azure](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-CORS1.png)
@@ -193,7 +193,7 @@ ms.locfileid: "52582893"
 * На сервере содержимого включен механизм CORS.
 
     >[!NOTE]
-    >Чтобы проверить, что на сайте, где вы размещаете содержимое, включен механизм CORS и можно тестировать запросы CORS, перейдите на веб-сайт [test-cors.org](http://test-cors.org/). 
+    >Чтобы проверить, что на сайте, где вы размещаете содержимое, включен механизм CORS и можно тестировать запросы CORS, перейдите на веб-сайт [test-cors.org](https://test-cors.org/). 
 
 * Обслуживаемое содержимое защищено с помощью **HTTPS**.
 * Вы используете *абсолютные URL-адреса*, например *https://yourdomain/content*, для всех ссылок, содержимого CSS и изображений.
@@ -259,7 +259,7 @@ ms.locfileid: "52582893"
     </UserJourneyBehaviors>
     ```
 
-### <a name="step-82-change-your-code-to-accept-a-query-string-parameter-and-replace-the-background-image"></a>Шаг 8.2. Изменение кода так, чтобы принять параметр строки запроса и заменить фоновое изображение
+### <a name="step-82-change-your-code-to-accept-a-query-string-parameter-and-replace-the-background-image"></a>Шаг 8.2. Изменение кода, позволяющее принять параметр строки запроса и заменить фоновое изображение
 Измените метод `unified` HomeController для приема параметра campaignId. Затем метод проверяет значение параметра и устанавливает соответствующее значение для переменной `ViewData["background"]`.
 
 1. Откройте файл *Controllers\HomeController.cs*, а затем измените метод `unified`, добавив следующий фрагмент кода:
@@ -292,7 +292,7 @@ ms.locfileid: "52582893"
 
     ![Изменение фона страницы](media/active-directory-b2c-ui-customization-custom-dynamic/aadb2c-ief-ui-customization-add-dynamic-background.png)
 
-### <a name="83-upload-the-changes-and-publish-your-policy"></a>Шаг 8.3. Отправка изменений и публикация политики
+### <a name="83-upload-the-changes-and-publish-your-policy"></a>8.3. Отправка изменений и публикация политики
 1. Опубликуйте проект Visual Studio в службе приложений Azure.
 
 2. Отправьте файл политики *SignUporSignIn.xml* в Azure AD B2C.

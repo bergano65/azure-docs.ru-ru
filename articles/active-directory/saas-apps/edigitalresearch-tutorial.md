@@ -1,5 +1,5 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с eDigitalResearch | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с eDigitalResearch | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении eDigitalResearch.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/20/2017
 ms.author: jeedes
-ms.openlocfilehash: ca42d6c8ca1333f2ffba77b79584b7092b26f03e
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: d5c86186cd6ee02d83800c6483a2e35d8f1fb3c7
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39438602"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52848720"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-edigitalresearch"></a>Руководство. Интеграция Azure Active Directory с eDigitalResearch
 
@@ -115,7 +115,7 @@ ms.locfileid: "39438602"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company-name>.edigitalresearch.com/login/consume`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки eDigitalResearch](http://www.maruedr.com/contact).
+    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки eDigitalResearch](https://www.maruedr.com/contact).
  
 
 
@@ -131,10 +131,10 @@ ms.locfileid: "39438602"
 
     ![Настройка eDigitalResearch](./media/edigitalresearch-tutorial/tutorial_edigitalresearch_configure.png) 
 
-1. Чтобы настроить единый вход на стороне **eDigitalResearch**, нужно отправить скачанный **файл сертификата (Base64)**, **идентификатор сущности SAML** и **URL-адрес выхода** в [службу поддержки eDigitalResearch](http://www.maruedr.com/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **eDigitalResearch**, нужно отправить скачанный **файл сертификата (Base64)**, **идентификатор сущности SAML** и **URL-адрес выхода** в [службу поддержки eDigitalResearch](https://www.maruedr.com/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -172,7 +172,7 @@ ms.locfileid: "39438602"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в приложении eDigitalResearch. 
 
-Чтобы создать пользователей, обратитесь в [службу поддержки eDigitalResearch](http://www.maruedr.com/contact).     
+Чтобы создать пользователей, обратитесь в [службу поддержки eDigitalResearch](https://www.maruedr.com/contact).        
     
  > [!NOTE]
  > Владелец учетной записи Azure Active Directory получит по электронной почте сообщение со ссылкой для активации учетной записи.
@@ -212,7 +212,7 @@ ms.locfileid: "39438602"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент eDigitalResearch на панели доступа, вы автоматически войдете в приложение eDigitalResearch.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

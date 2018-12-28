@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Pacific Timesheet | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Pacific Timesheet | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Pacific Timesheet.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 051e39d0e7a58c79eb00bc3dfb73eaf5389617c8
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 8b821da194ce41fc419e769336eeeb5927306684
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39448369"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52843654"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-pacific-timesheet"></a>Руководство по интеграции Azure Active Directory с Pacific Timesheet
+# <a name="tutorial-azure-active-directory-integration-with-pacific-timesheet"></a>Руководство. Интеграция Azure Active Directory с Pacific Timesheet
 
 В этом руководстве описано, как интегрировать Pacific Timesheet с Azure Active Directory (Azure AD).
 
@@ -117,7 +117,7 @@ ms.locfileid: "39448369"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<InstanceID>.pacifictimesheet.com/timesheet/home.do`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Pacific Timesheet](http://www.pacifictimesheet.com/support).
+    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Pacific Timesheet](https://www.pacifictimesheet.com/support).
  
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -131,10 +131,10 @@ ms.locfileid: "39448369"
 
     ![Настройка единого входа](./media/pacific-timesheet-tutorial/tutorial_pacifictimesheet_configure.png) 
 
-1. Чтобы настроить единый вход на стороне **Pacific Timesheet**, нужно отправить скачанный **сертификат Base64**, **URL-адрес службы единого входа SAML** и **идентификатор сущности SAML** в [службу поддержки Pacific Timesheet](http://www.pacifictimesheet.com/support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Pacific Timesheet**, нужно отправить скачанный **сертификат Base64**, **URL-адрес службы единого входа SAML** и **идентификатор сущности SAML** в [службу поддержки Pacific Timesheet](https://www.pacifictimesheet.com/support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -170,7 +170,7 @@ ms.locfileid: "39448369"
  
 ### <a name="creating-a-pacific-timesheet-test-user"></a>Создание тестового пользователя Pacific Timesheet
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Pacific Timesheet. Чтобы создать пользователя в приложении, обратитесь в [службу поддержки Pacific Timesheet](http://www.pacifictimesheet.com/support).
+В этом разделе описано, как создать пользователя Britta Simon в приложении Pacific Timesheet. Чтобы создать пользователя в приложении, обратитесь в [службу поддержки Pacific Timesheet](https://www.pacifictimesheet.com/support).
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

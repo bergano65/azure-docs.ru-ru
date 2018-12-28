@@ -3,7 +3,7 @@ title: Код файла событий XEvent для базы данных SQL 
 description: Содержит сценарии PowerShell и Transact-SQL для примера двухэтапного кода, демонстрирующего целевой файл событий в расширенном событии в Базе данных SQL Azure. Обязательной частью данного сценария является хранилище Azure.
 services: sql-database
 ms.service: sql-database
-ms.subservice: operations
+ms.subservice: monitor
 ms.custom: ''
 ms.devlang: PowerShell
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 8577b6a1d0f57820cbdd4096b0e8412096ff3af3
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 33bd4e39018f9789464d213ccf7921993e2da142
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51232082"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52864730"
 ---
 # <a name="event-file-target-code-for-extended-events-in-sql-database"></a>Код целевого файла событий для расширенных событий в Базе данных SQL
 
@@ -50,7 +50,7 @@ ms.locfileid: "51232082"
   
   * Модули предоставляют такие команды, как **New-AzureStorageAccount**.
 
-## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Этап 1. Код PowerShell для контейнера хранилища Azure
+## <a name="phase-1-powershell-code-for-azure-storage-container"></a>Этап 1. Код PowerShell для контейнера службы хранилища Azure
 
 На первом этапе примера двухэтапного кода используется PowerShell.
 
@@ -230,7 +230,7 @@ Now shift to the Transact-SQL portion of the two-part code sample!';
 
 Обратите внимание на ряд именованных значений, которые выводятся на экран по завершении сценария PowerShell. Эти значения нужно будет внести в сценарий Transact-SQL, работа с которым составляет второй этап.
 
-## <a name="phase-2-transact-sql-code-that-uses-azure-storage-container"></a>Этап 2. Код Transact-SQL, использующий контейнер хранилища Azure
+## <a name="phase-2-transact-sql-code-that-uses-azure-storage-container"></a>Этап 2. Код Transact-SQL, использующий контейнер службы хранилища Azure
 
 * На первом этапе работы с примером кода вы выполнили сценарий PowerShell, создающий контейнер службы хранилища Azure.
 * На втором этапе этот контейнер используется в сценарии Transact-SQL.
@@ -530,8 +530,8 @@ SELECT 'AFTER__Updates', EmployeeKudosCount, * FROM gmTabEmployee;
 * [Использование хранилища BLOB-объектов из .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md)
 * [Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них](https://msdn.microsoft.com/library/azure/dd135715.aspx)
 * [Работа с корневым контейнером](https://msdn.microsoft.com/library/azure/ee395424.aspx)
-* [Урок 1. Создание хранимой политики доступа и подписанного URL-адреса для контейнера Azure](https://msdn.microsoft.com/library/dn466430.aspx)
-  * [Урок 2. Создание учетных данных SQL Server с использованием подписанного URL-адреса](https://msdn.microsoft.com/library/dn466435.aspx)
+* [1. Создание хранимой политики доступа и хранилища с общим доступом](https://msdn.microsoft.com/library/dn466430.aspx)
+  * [2. Создание учетных данных SQL Server с помощью подписанного URL-адреса](https://msdn.microsoft.com/library/dn466435.aspx)
 * [Расширенные события](https://docs.microsoft.com/sql/relational-databases/extended-events/extended-events)
 
 <!--

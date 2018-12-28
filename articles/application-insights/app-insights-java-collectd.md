@@ -9,21 +9,20 @@ ms.assetid: 40c68f45-197a-4624-bf89-541eb7323002
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/24/2016
 ms.author: mbullwin
-ms.openlocfilehash: fd8c45bf3d7fd9e392d55a82001aa8768fcce8ba
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 528b344063dd9f84720ee55c4b3663c20127e5fe
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47096605"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52995055"
 ---
-# <a name="collectd-linux-performance-metrics-in-application-insights"></a>collectd: метрики производительности Linux в Application Insights
+# <a name="collectd-linux-performance-metrics-in-application-insights"></a>Средство collectd: метрики производительности Linux в Application Insights
 
 
-Для работы с метриками производительности Linux в [Application Insights](app-insights-overview.md) установите инструмент [collectd](http://collectd.org/) вместе с его подключаемым модулем Application Insights. Это решение с открытым исходным кодом собирает разнообразные данные системной и сетевой статистики.
+Для работы с метриками производительности Linux в [Application Insights](app-insights-overview.md) установите инструмент [collectd](https://collectd.org/) вместе с его подключаемым модулем Application Insights. Это решение с открытым исходным кодом собирает разнообразные данные системной и сетевой статистики.
 
 Обычно collectd используется, если вы уже [инструментировали веб-службу Java с помощью Application Insights][java]. Это средство предоставляет больше данных, помогая вам повысить производительность приложения или диагностировать неполадки. 
 
@@ -39,7 +38,7 @@ ms.locfileid: "47096605"
 ## <a name="install-collectd-and-the-plug-in"></a>Установка collectd и подключаемого модуля
 На компьютерах с сервером Unix выполните следующие действия.
 
-1. Установите [collectd](http://collectd.org/) 5.4.0 или более поздней версии.
+1. Установите [collectd](https://collectd.org/) 5.4.0 или более поздней версии.
 2. Загрузите [подключаемый модуль записи Application Insights collectd](https://aka.ms/aijavasdk). Запишите номер версии.
 3. Скопируйте подключаемый модуль JAR в `/usr/share/collectd/java`.
 4. Отредактируйте файл `/etc/collectd/collectd.conf`:
@@ -129,7 +128,7 @@ ms.locfileid: "47096605"
 
 Подключаемый модуль записи для Application Insights несовместим с некоторыми подключаемыми модулями чтения. Некоторые подключаемые модули иногда отправляют сообщение "не число", когда подключаемый модуль Application Insights ожидает число с плавающей запятой.
 
-Симптом. В журнале collectd содержатся ошибки, в которых есть текст "AI: ... SyntaxError: непредвиденный токен N".
+Симптом. В журнале collectd содержатся ошибки, в которых есть текст "AI: ... SyntaxError: Unexpected token N" (Непредвиденный токен N).
 
 Обходное решение. Исключите данные, собранные подключаемым модулем записи, с которым связана проблема. 
 

@@ -1,20 +1,21 @@
 ---
-title: Получение событий от концентраторов событий Azure с помощью Go | Документация Майкрософт
-description: Узнайте основные сведения о получении событий из концентраторов событий с помощью Go
+title: Получение событий от Центров событий Azure с помощью Go | Документация Майкрософт
+description: В статье описано, как создать приложение Go, которое получает события от Центров событий Azure.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: kamalb
 ms.service: event-hubs
 ms.workload: core
 ms.topic: article
-ms.date: 07/23/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 0a8cb349be0ffefecb07bc705391684dc57f1b96
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: db952b82172928e42e951563d98bb32b275e8af7
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50239497"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53084997"
 ---
 # <a name="receive-events-from-event-hubs-using-go"></a>Получение событий из концентраторов событий с помощью Go
 
@@ -80,7 +81,7 @@ import (
 
 ## <a name="create-service-principal"></a>Создание субъекта-службы
 
-Создайте субъект-службу, следуя инструкциям в статье [Создание субъекта-службы Azure с помощью Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli). Сохраните предоставленные учетные данные в своей среде с приведенными ниже именами. Пакет Azure SDK для Go и пакет Центров событий предварительно сконфигурированы для поиска имен этих переменных.
+Создайте субъект-службу, следуя инструкциям в статье [Создание субъекта-службы Azure с помощью Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli). Сохраните предоставленные учетные данные в своей среде со следующими именами. Пакет Azure SDK для Go и пакет для службы "Центры событий" предварительно настроены для поиска этих имен переменных.
 
 ```bash
 export AZURE_CLIENT_ID=

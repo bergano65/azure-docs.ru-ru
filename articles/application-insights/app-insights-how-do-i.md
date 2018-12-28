@@ -9,16 +9,15 @@ ms.assetid: 48b2b644-92e4-44c3-bc14-068f1bbedd22
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/04/2017
 ms.author: mbullwin
-ms.openlocfilehash: 8cee346a45cd20e7dd677fd7f2efed5500175598
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 1c76e25c29d79213fbdf36d563b4bd316b832b06
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47096400"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53017037"
 ---
 # <a name="how-do-i--in-application-insights"></a>Как работать с Application Insights
 ## <a name="get-an-email-when-"></a>Получать уведомление по электронной почте, если...
@@ -83,8 +82,8 @@ ms.locfileid: "47096400"
 
 ## <a name="separate-telemetry-from-different-versions"></a>Разделение телеметрии разных версий
 
-* Несколько ролей в приложении. Используйте единый ресурс Application Insights и выполните фильтрацию по cloud_Rolename. [Подробнее](app-insights-monitor-multi-role-apps.md)
-* Отдельные стадии разработки, тестирования и выпуска версий. Используйте различные ресурсы Application Insights. Получите ключи инструментирования из файла web.config. [Подробнее](app-insights-separate-resources.md)
+* Несколько ролей в приложении. Используйте единый ресурс Application Insights и выполните фильтрацию по [cloud_Rolename](app-insights-app-map.md).
+* Отдельные этапы разработки, тестирования и выпуска версий. Используйте разные ресурсы Application Insights. Получите ключи инструментирования из файла web.config. [Подробнее](app-insights-separate-resources.md)
 * Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Подробнее](app-insights-separate-resources.md)
 
 ## <a name="monitor-backend-servers-and-desktop-apps"></a>Мониторинг внутренних серверов и классических приложений

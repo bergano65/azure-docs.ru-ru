@@ -3,7 +3,7 @@ title: Ограничения ресурсов службы "База данны
 description: На этой странице описаны некоторые общие ограничения ресурсов для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер.
 services: sql-database
 ms.service: sql-database
-ms.subservice: elastic-pool
+ms.subservice: elastic-pools
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: moslake
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 10/15/2018
-ms.openlocfilehash: 6673fa9d377400d7e80fc95dc7d0ce12f4b2e60e
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: f41974c6e2b2b0565f0a2703cfd638777a6bb9eb
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49354178"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52878029"
 ---
 # <a name="azure-sql-database-vcore-based-purchasing-model-limits-for-elastic-pools"></a>Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер
 
@@ -33,7 +33,7 @@ ms.locfileid: "49354178"
 > [!NOTE]
 > Ограничения по ресурсам для отдельных баз данных в эластичных пулах обычно такие же, как и у отдельных баз данных за пределами пулов с тем же объемом вычислительных ресурсов. Например, максимальное количество рабочих процессов для базы данных GP_Gen4_1 составляет 200. Таким образом, максимальное число одновременных рабочих ролей в базе данных из пула GP_Gen4_1 составляет 200. Обратите внимание, что общее число параллельных рабочих ролей в пуле GP_Gen4_1 равно 210.
 
-## <a name="general-purpose-service-tier-storage-sizes-and-compute-sizes"></a>Уровень служб общего назначения: размеры хранилища и вычислительных ресурсов
+## <a name="general-purpose-service-tier-storage-sizes-and-compute-sizes"></a>Уровень служб общего назначения — размеры хранилищ и объемы вычислительных ресурсов
 
 ### <a name="generation-4-compute-platform"></a>Вычислительная платформа 4-го поколения
 
@@ -85,7 +85,7 @@ ms.locfileid: "49354178"
 |Включенное хранилище резервных копий|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|1 x размер базы данных|
 |||
 
-## <a name="business-critical-service-tier-storage-sizes-and-compute-sizes"></a>Уровень служб, критически важных для бизнеса: размеры хранилища и вычислительных ресурсов
+## <a name="business-critical-service-tier-storage-sizes-and-compute-sizes"></a>Уровень служб "Критически важный для бизнеса" — размеры хранилищ и объемы вычислительных ресурсов
 
 ### <a name="generation-4-compute-platform"></a>Вычислительная платформа 4-го поколения
 

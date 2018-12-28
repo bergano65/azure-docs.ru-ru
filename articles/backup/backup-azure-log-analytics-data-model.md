@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 07/24/2017
 ms.author: adigan
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f9cdb11bad5d4aa94fdc083a0fc7dc6a2c5787cd
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: f4ecc87a0a7a0c74b02b72164fe129daa6530ea2
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52635158"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52877587"
 ---
 # <a name="log-analytics-data-model-for-azure-backup-data"></a>Модель данных Log Analytics для данных Azure Backup
 Для создания отчетов используйте модель данных Log Analytics. С помощью модели данных можно создавать пользовательские запросы и панели мониторинга или настраивать как удобно данные Azure Backup.
@@ -30,7 +30,7 @@ ms.locfileid: "52635158"
 | AlertUniqueId_s |текст |Уникальный идентификатор созданного предупреждения |
 | AlertType_s |текст |Тип предупреждения, например "Резервная копия" |
 | AlertStatus_s |текст |Состояние предупреждения, например активное |
-| AlertOccurenceDateTime_s |Дата и время |Дата и время создания предупреждения |
+| AlertOccurrenceDateTime_s |Дата и время |Дата и время создания предупреждения |
 | AlertSeverity_s |текст |Серьезность предупреждения, например критическая |
 | EventName_s |текст |Имя события. Всегда AzureBackupCentralReport |
 | BackupItemUniqueId_s |текст |Уникальный идентификатор архивируемого элемента, связанного с предупреждением |

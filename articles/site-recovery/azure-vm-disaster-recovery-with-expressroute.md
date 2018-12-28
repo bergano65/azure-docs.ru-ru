@@ -6,14 +6,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/16/2018
+ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: af57dc50dd156a3398c2c685e436d22ba3daea95
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: 5a16b81abb9cc95f46bd61f6c0232a28f3cda0ff
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51567780"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52875405"
 ---
 # <a name="integrate-azure-expressroute-with-disaster-recovery-for-azure-vms"></a>Интеграция Azure ExpressRoute и аварийного восстановления виртуальных машин Azure
 
@@ -37,7 +37,7 @@ ExpressRoute позволяет перенести локальные сети �
 Прежде чем начать, ознакомьтесь со следующими понятиями:
 
 - [каналы](../expressroute/expressroute-circuit-peerings.md) ExpressRoute;
-- [домены маршрутизации](../expressroute/expressroute-circuit-peerings.md#expressroute-routing-domains) ExpressRoute;
+- [домены маршрутизации](../expressroute/expressroute-circuit-peerings.md#routingdomains) ExpressRoute;
 - расположения [ExpressRoute](../expressroute/expressroute-locations.md);
 - [архитектура репликации](azure-to-azure-architecture.md) виртуальных машин Azure;
 - [настройка репликации](azure-to-azure-tutorial-enable-replication.md) для виртуальных машин Azure;
@@ -136,7 +136,7 @@ ExpressRoute позволяет перенести локальные сети �
 
 ## <a name="fail-over-azure-vms-when-using-expressroute"></a>Отработка отказа виртуальных машин в Azure с помощью ExpressRoute
 
-После отработки отказа виртуальных машин Azure в целевой регион Azure с помощью Site Recovery они будут доступны с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#azure-private-peering) ExpressRoute.
+После отработки отказа виртуальных машин Azure в целевой регион Azure с помощью Site Recovery они будут доступны с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#privatepeering) ExpressRoute.
 
 - Требуется подключить ExpressRoute к целевой виртуальной сети с помощью нового подключения. Существующее подключение ExpressRoute не перенастраивается автоматически.
 - Способ настройки подключения ExpressRoute к целевой виртуальной сети зависит от топологии ExpressRoute.

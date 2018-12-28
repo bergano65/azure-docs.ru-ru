@@ -1,21 +1,22 @@
 ---
 title: Настройка контейнеров
-titlesuffix: Face - Cognitive Services - Azure
+titlesuffix: Face - Azure Cognitive Services
 description: Параметры конфигурации контейнеров.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: diberry
-ms.openlocfilehash: bfda7a82aeff97f560377864769a4c5dd6c03ff3
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 30546d31e96d7d7fa1009f16a50fe8fda12ead67
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634934"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53105110"
 ---
 # <a name="configure-containers"></a>Настройка контейнеров
 
@@ -27,17 +28,17 @@ ms.locfileid: "51634934"
 
 * [apiKey](#apikey-configuration-setting)
 * [ApplicationInsights](#applicationinsights-configuration-settings)
-* [Аутентификация](#authentication-configuration-settings)
+* [Проверка подлинности](#authentication-configuration-settings)
 * [Выставление счетов](#billing-configuration-setting)
 * [CloudAI](#cloudai-configuration-settings)
 * [Eula](#eula-configuration-setting)
 * [Fluentd](#fluentd-configuration-settings)
 * [ведению журналов](#logging-configuration-settings)
-* [Mounts](#mounts-configuration-settings)
+* [Подключения](#mounts-configuration-settings)
 
 Можно использовать либо [переменные среды](#configuration-settings-as-environment-variables), либо [аргументы командной строки](#configuration-settings-as-command-line-arguments) для определения параметров конфигурации при создании экземпляра контейнера распознавания лиц.
 
-Значения переменных среды переопределяют значения аргументов командной строки, которые, в свою очередь, переопределяют значения по умолчанию для образа контейнера. Другими словами, если задать разные значения в переменной среды и аргументе командной строки для одного параметра конфигурации (например, `Logging:Disk:LogLevel`), а затем создать контейнер, значение в переменной среде будет использоваться созданным контейнером.
+Значения переменных среды переопределяют значения аргументов командной строки, которые, в свою очередь, переопределяют значения по умолчанию для образа контейнера. Другими словами, если задать разные значения в переменной среды и аргументе командной строки для одного параметра конфигурации, такие как `Logging:Disk:LogLevel`, а затем создать контейнер, значение в переменной среды будет использоваться созданным контейнером.
 
 ### <a name="configuration-settings-as-environment-variables"></a>Параметры конфигурации в виде переменных среды
 
@@ -56,7 +57,7 @@ ms.locfileid: "51634934"
 
 Вы можете использовать [синтаксис аргументов командной строки ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration#arguments) для определения параметров конфигурации.
 
-Вы можете определять параметры конфигурации в необязательном параметре `ARGS` команды [docker run](https://docs.docker.com/engine/reference/commandline/run/), которая используется для создания экземпляра контейнера из скачанного образа. Преимущество использования аргументов командной строки заключается в том, что каждый контейнер может использовать отдельный пользовательский набор параметров конфигурации.
+Вы можете определять параметры конфигурации в необязательном параметре `ARGS` команды [docker run](https://docs.docker.com/engine/reference/commandline/run/), которая используется для создания контейнера из скачанного образа контейнера. Преимущество использования аргументов командной строки заключается в том, что каждый контейнер может использовать отдельный пользовательский набор параметров конфигурации.
 
 Например, приведенная ниже команда создает экземпляр контейнера распознавания лиц из образа и задает уровень ведения журнала консоли LogLevel.Information, переопределяя параметр конфигурации по умолчанию.
 
@@ -71,17 +72,17 @@ ms.locfileid: "51634934"
 > [!IMPORTANT]
 > Параметры конфигурации [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-configuration-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](face-how-to-install-containers.md#billing).
 
-## <a name="applicationinsights-configuration-settings"></a>Параметры конфигурации ApplicationInsights
+## <a name="applicationinsights-configuration-settings"></a>Параметры конфигурации Application Insights
 
-С помощью параметров конфигурации в разделе `ApplicationInsights` можно добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights). Application Insights обеспечивает детализированный мониторинг контейнера даже на уровне кода. Вы можете легко отслеживать доступность, производительность и использование своего контейнера. Вы также можете быстро идентифицировать и диагностировать ошибки в контейнере, не дожидаясь, пока пользователь сообщит о них.
+С помощью параметров конфигурации в разделе `ApplicationInsights` можно добавить в контейнер поддержку телеметрии [Azure Application Insights](https://docs.microsoft.com/azure/application-insights). Application Insights обеспечивает детализированный мониторинг контейнера на уровне кода. Вы можете легко отслеживать доступность, производительность и использование своего контейнера. Вы также можете быстро идентифицировать и диагностировать ошибки в контейнере, не дожидаясь, пока пользователь сообщит о них.
 
-В приведенной ниже таблице описываются параметры конфигурации, поддерживаемые в разделе `ApplicationInsights`.
+В следующей таблице описаны параметры конфигурации, поддерживаемые в разделе `ApplicationInsights`.
 
 | ИМЯ | Тип данных | ОПИСАНИЕ |
 |------|-----------|-------------|
 | `InstrumentationKey` | Строка | Ключ инструментирования экземпляра Application Insights, которому отправляются данные телеметрии для контейнера. Дополнительные сведения см. в статье [Application Insights для ASP.NET Core](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net-core). |
 
-## <a name="authentication-configuration-settings"></a>Параметры конфигурации Authentication
+## <a name="authentication-configuration-settings"></a>Параметры конфигурации проверки подлинности
 
 Параметры конфигурации `Authentication` предоставляют параметры безопасности Azure для контейнера. Несмотря на то что в этом разделе доступны параметры конфигурации, контейнер распознавания лиц не использует этот раздел.
 
@@ -91,7 +92,7 @@ ms.locfileid: "51634934"
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-Настройка конфигурации `Billing` задает URI конечной точки для ресурса распознавания лиц в Azure, с помощью которого отслеживаются данные для выставления счетов, связанные с этим контейнером. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса распознавания лиц в Azure.
+Параметр конфигурации `Billing` определяет URI конечной точки ресурса API распознавания лиц в Azure. Этот параметр используется для контроля данных, связанных с контейнером, для выставления счетов. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса распознавания лиц в Azure.
 
 > [!IMPORTANT]
 > Параметры конфигурации [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-configuration-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](face-how-to-install-containers.md#billing).
@@ -128,38 +129,40 @@ ms.locfileid: "51634934"
 Например, приведенная ниже команда указывает сценарий службы хранилища Azure и предоставляет примеры строк подключения для ресурсов службы хранилища Azure и Cosmos DB, которые используются при хранении данных для контейнера распознавания лиц.
 
   ```Docker
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 containerpreview.azurecr.io/microsoft/cognitive-services-face Eula=accept Billing=https://westcentralus.api.cognitive.microsoft.com/face/v1.0 ApiKey=0123456789 CloudAI:Storage:StorageScenario=Azure CloudAI:Storage:ConnectionStringOfCosmosMongo="DefaultEndpointsProtocol=https;AccountName=sampleazurestorage;AccountKey=0123456789;EndpointSuffix=core.windows.net" CloudAI:Storage:ConnectionStringOfAzureStorage="mongodb://samplecosmosdb:0123456789@samplecosmosdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 containerpreview.azurecr.io/microsoft/cognitive-services-face Eula=accept Billing=https://westcentralus.api.cognitive.microsoft.com/face/v1.0 ApiKey=0123456789 CloudAI:Storage:StorageScenario=Azure CloudAI:Storage:ConnectionStringOfCosmosMongo="mongodb://samplecosmosdb:0123456789@samplecosmosdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb" CloudAI:Storage:ConnectionStringOfAzureStorage="DefaultEndpointsProtocol=https;AccountName=sampleazurestorage;AccountKey=0123456789;EndpointSuffix=core.windows.net"
   ```
 
 Сценарий хранения обрабатывается отдельно от входных и выходных подключений. Вы можете указать сочетание этих функций для одного контейнера. Например, приведенная ниже команда определяет подключение привязки Docker к папке `D:\Output` на хост-компьютере в выходном подключении, а затем создает экземпляр контейнера распознавания лиц из образа, сохраняя файлы журнала в формате JSON во внешнем подключении. Эта команда также указывает сценарий службы хранилища Azure и предоставляет примеры строк подключения для ресурсов службы хранилища Azure и Cosmos DB, которые используются при хранении данных для контейнера распознавания лиц.
 
   ```Docker
-  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 --mount type=bind,source=D:\Output,destination=/output containerpreview.azurecr.io/microsoft/cognitive-services-face Eula=accept Billing=https://westcentralus.api.cognitive.microsoft.com/face/v1.0 ApiKey=0123456789 Logging:Disk:Format=json CloudAI:Storage:StorageScenario=Azure CloudAI:Storage:ConnectionStringOfCosmosMongo="DefaultEndpointsProtocol=https;AccountName=sampleazurestorage;AccountKey=0123456789;EndpointSuffix=core.windows.net" CloudAI:Storage:ConnectionStringOfAzureStorage="mongodb://samplecosmosdb:0123456789@samplecosmosdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
+  docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 --mount type=bind,source=D:\Output,destination=/output containerpreview.azurecr.io/microsoft/cognitive-services-face Eula=accept Billing=https://westcentralus.api.cognitive.microsoft.com/face/v1.0 ApiKey=0123456789 Logging:Disk:Format=json CloudAI:Storage:StorageScenario=Azure CloudAI:Storage:ConnectionStringOfCosmosMongo="mongodb://samplecosmosdb:0123456789@samplecosmosdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb" CloudAI:Storage:ConnectionStringOfAzureStorage="DefaultEndpointsProtocol=https;AccountName=sampleazurestorage;AccountKey=0123456789;EndpointSuffix=core.windows.net"
   ```
 
 ## <a name="eula-configuration-setting"></a>Параметр конфигурации Eula
 
-Параметр конфигурации `Eula` указывает, что вы приняли условия лицензии для контейнера. Для этого параметра необходимо указать значение `accept`.
+Параметр конфигурации `Eula` указывает, что вы приняли условия лицензии для контейнера. Для этого параметра конфигурации необходимо указать значение `accept`.
 
 > [!IMPORTANT]
 > Параметры конфигурации [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-configuration-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](face-how-to-install-containers.md#billing).
+
+Лицензия на контейнеры Cognitive Services предоставляется в рамках [вашего соглашения](https://go.microsoft.com/fwlink/?linkid=2018657) об использовании Azure. Если вы не заключали соглашение, регламентирующее использование Azure, вы соглашаетесь с условиями использования Azure, прописанными в [соглашении Microsoft Online Subscription](https://go.microsoft.com/fwlink/?linkid=2018755), которое содержит [Условия использования Online Services](https://go.microsoft.com/fwlink/?linkid=2018760). Что касается предварительных версий, вы также соглашаетесь с [Дополнительными условиями использования предварительных версий Microsoft Azure](https://go.microsoft.com/fwlink/?linkid=2018815). Факт использования вами контейнера подтверждает ваше согласие с этими условиями.
 
 ## <a name="fluentd-configuration-settings"></a>Параметры конфигурации Fluentd
 
 Раздел `Fluentd` управляет параметрами конфигурации для [Fluentd](https://www.fluentd.org) — сборщика данных для единого ведения журнала с открытым кодом. Контейнер распознавания лиц включает поставщика ведения журнала Fluentd, который позволяет контейнеру записывать данные журнала и (при необходимости) метрик на сервер Fluentd.
 
-В приведенной ниже таблице описываются параметры конфигурации, поддерживаемые в разделе `Fluentd`.
+В следующей таблице описаны параметры конфигурации, поддерживаемые в разделе `Fluentd`.
 
 | ИМЯ | Тип данных | ОПИСАНИЕ |
 |------|-----------|-------------|
 | `Host` | Строка | IP-адрес или имя узла DNS сервера Fluentd. |
 | `Port` | Целое число  | Порт сервера Fluentd.<br/> Значение по умолчанию — 24224. |
-| `HeartbeatMs` | Целое число  | Интервал пульса в миллисекундах. Если до окончания этого интервала не отправлялось никакого трафика событий, пульс отправляется на сервер Fluentd. Значение по умолчанию — 60 000 миллисекунд (1 минута). |
-| `SendBufferSize` | Целое число  | Место в сетевом буфере (в байтах), выделенное для операций отправки. Значение по умолчанию — 32768 байт (32 килобайт). |
+| `HeartbeatMs` | Целое число  | Интервал пульса в миллисекундах. Если до окончания этого интервала не отправлялся никакой трафик событий, пульс отправляется на сервер Fluentd. Значение по умолчанию — 60 000 миллисекунд (1 минута). |
+| `SendBufferSize` | Целое число  | Место в сетевом буфере (в байтах), выделенное для операций отправки. Значение по умолчанию — 32768 байт (32 килобайта). |
 | `TlsConnectionEstablishmentTimeoutMs` | Целое число  | Время ожидания (в миллисекундах) до установки соединения по протоколу SSL/TLS с сервером Fluentd. Значение по умолчанию — 10 000 миллисекунд (10 секунд).<br/> Если для параметра `UseTLS` задано значение false, то это значение игнорируется. |
 | `UseTLS` | Логическое | Указывает, должен ли контейнер использовать протокол SSL/TLS для связи с сервером Fluentd. По умолчанию для этого параметра используется значение false. |
 
-## <a name="logging-configuration-settings"></a>Параметры конфигурации ведения журналов
+## <a name="logging-configuration-settings"></a>Параметры конфигурации ведения журнала
 
 Параметры конфигурации `Logging` управляют поддержкой ведения журнала ASP.NET Core для контейнера. Вы можете использовать для контейнера те же параметры конфигурации и значения, что и для приложения ASP.NET Core. Контейнер распознавания лиц поддерживает указанных ниже поставщиков ведения журналов.
 
@@ -169,12 +172,12 @@ ms.locfileid: "51634934"
   Поставщик ведения журнала `Debug` для ASP.NET Core. Для этого поставщика ведения журнала поддерживаются все параметры конфигурации ASP.NET Core и значения по умолчанию.
 * Диск  
   Поставщик ведения журнала JSON. Поставщик ведения журнала записывает данные журнала в выходное подключение.  
-  Поставщик ведения журнала `Disk` поддерживает перечисленные ниже параметры конфигурации.  
+  Поставщик ведения журнала `Disk` поддерживает перечисленные ниже параметры конфигурации:  
 
   | ИМЯ | Тип данных | ОПИСАНИЕ |
   |------|-----------|-------------|
-  | `Format` | Строка | Выходной формат файлов журналов.<br/> **Примечание.** Чтобы включить поставщика ведения журнала, для этого параметра необходимо задать значение `json`. Если это значение задано без указания выходного подключения, при создании экземпляра контейнера возникает ошибка. |
-  | `MaxFileSize` | Целое число  | Максимальный размер файла журнала в мегабайтах (МБ). Когда размер текущего файла журнала достигает этого значения или превышает его, поставщик ведения журнала создает новый файл журнала. Если задано значение –1, то размер файла журнала ограничивается только максимальным размером файла (если он задан) для выходного подключения. Значение по умолчанию — 1. |
+  | `Format` | Строка | Выходной формат файлов журналов.<br/> **Примечание.** Чтобы включить регистратор, необходимо указать значение `json`. Если это значение задано без указания выходного подключения, при создании экземпляра контейнера возникает ошибка. |
+  | `MaxFileSize` | Целое число  | Максимальный размер файла журнала в мегабайтах (МБ). Когда размер текущего файла журнала достигает этого значения или превышает его, поставщик ведения журнала создает файл журнала. Если задано значение –1, то размер файла журнала ограничивается только максимальным размером файла (если он задан) для выходного подключения. Значение по умолчанию — 1. |
 
 Дополнительные сведения о настройке поддержки ведения журналов для ASP.NET Core см. в разделе [Настройка файла параметров](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#settings-file-configuration).
 
@@ -182,12 +185,12 @@ ms.locfileid: "51634934"
 
 Контейнеры Docker, предоставляемые Распознаванием лиц, неизменяемы и не учитывают состояние. Другими словами, созданные в контейнере файлы хранятся на поддерживающем запись уровне контейнера, который сохраняется только на время работы контейнера и к которому сложно получить доступ. Если остановить или удалить этот контейнер, созданные в этом контейнере файлы будут удалены.
 
-Однако так как это контейнеры Docker, вы можете использовать параметры хранения Docker, например тома или подключения привязки, чтобы считывать и записывать сохраненные данные вне контейнера, если последний поддерживает это. Дополнительные сведения о том, как задавать и контролировать параметры хранения Docker, см. в статье [Управление данными в Docker](https://docs.docker.com/storage/).
+Однако так как это контейнеры Docker, вы можете использовать параметры хранения Docker, например тома или подключения привязки, чтобы считывать и записывать сохраненные данные вне контейнера, если последний поддерживает это. Дополнительные сведения о том, как задавать и контролировать параметры хранения Docker, см. в статье [Manage data in Docker](https://docs.docker.com/storage/) (Управление данными в Docker).
 
 > [!NOTE]
-> Как правило, вам не потребуется менять значения этих параметров конфигурации. Вместо этого значения, заданные для этих параметров, используются как цели при указании входных и выходных подключений для контейнера. Дополнительные сведения об указании входных и выходных подключений см. в разделе [Входные и выходные подключения](#input-and-output-mounts).
+> Как правило, вам не потребуется менять значения этих параметров конфигурации. Вместо этого значения, заданные для этих параметров конфигурации, используются как цели при указании входных и выходных подключений для контейнера. Дополнительные сведения об указании входных и выходных подключений см. в [этом разделе](#input-and-output-mounts).
 
-В приведенной ниже таблице описываются параметры конфигурации, поддерживаемые в разделе `Mounts`.
+В следующей таблице описаны параметры конфигурации, поддерживаемые в разделе `Mounts`.
 
 | ИМЯ | Тип данных | ОПИСАНИЕ |
 |------|-----------|-------------|

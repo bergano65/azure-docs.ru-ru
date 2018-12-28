@@ -9,25 +9,24 @@ ms.assetid: 0e3b103c-6e2a-4634-9e8c-8b85cf5e9c84
 ms.service: application-insights
 ms.workload: mobile
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: mbullwin
-ms.openlocfilehash: 60195f135b8b0e102a36c3573a341432f2e0c784
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 815388db673673a3802f8e5e515b7e16cb180a29
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50959313"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53323360"
 ---
-# <a name="application-insights-frequently-asked-questions"></a>Application Insights: вопросы и ответы
+# <a name="application-insights-frequently-asked-questions"></a>Application Insights. Часто задаваемые вопросы
 
 ## <a name="configuration-problems"></a>Проблемы с конфигурацией
 *У меня не получается настроить компоненты, о которых идет речь в таких статьях:*
 
 * [Troubleshooting no data - Application Insights for .NET](app-insights-asp-net-troubleshoot-no-data.md)
 * [раздел "Устранение неполадок"](app-insights-monitor-performance-live-website-now.md#troubleshooting-runtime-configuration-of-application-insights)
-* [Настройка системы диагностики Azure для входа в Application Insights](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md)
+* [Настройка системы диагностики Azure для входа в Application Insights](../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
 * [Веб-приложение Java](app-insights-java-troubleshoot.md)
 
 *Я не получаю данные с моего сервера*
@@ -119,7 +118,7 @@ ms.locfileid: "50959313"
 
 Из других источников, если они настроены:
 
-* [Настройка системы диагностики Azure для входа в Application Insights](../monitoring-and-diagnostics/azure-diagnostics-configure-application-insights.md)
+* [Настройка системы диагностики Azure для входа в Application Insights](../azure-monitor/platform/diagnostics-extension-to-application-insights.md)
 * [контейнеры Docker](app-insights-docker.md);
 * [импорт таблиц в Analytics](app-insights-analytics-import.md);
 * [Служба Log Analytics](https://azure.microsoft.com/blog/omssolutionforappinsightspublicpreview/)
@@ -141,7 +140,7 @@ ms.locfileid: "50959313"
 * Телеметрия браузера: мы собираем сведения об IP-адресе отправителя.
 * Телеметрия сервера: модуль Application Insights собирает сведения об IP-адресе клиента. Эти сведения не собираются, если задан заголовок `X-Forwarded-For`.
 
-Вы можете настроить `ClientIpHeaderTelemetryInitializer` для получения IP-адреса из другого заголовка. Например, в некоторых системах он переносится прокси-сервером, балансировщиком нагрузки или сетью CDN в `X-Originating-IP`. [Узнайте больше](http://apmtips.com/blog/2016/07/05/client-ip-address/).
+Вы можете настроить `ClientIpHeaderTelemetryInitializer` для получения IP-адреса из другого заголовка. Например, в некоторых системах он переносится прокси-сервером, балансировщиком нагрузки или сетью CDN в `X-Originating-IP`. [Узнайте больше](https://apmtips.com/blog/2016/07/05/client-ip-address/).
 
 Вы можете [использовать Power BI](app-insights-export-power-bi.md) для отображения данных телеметрии по запросам на карте.
 
@@ -185,7 +184,7 @@ ms.locfileid: "50959313"
 ## <a name="what-are-the-user-and-session-counts"></a>Что такое количество пользователей и сеансов?
 
 * Пакет SDK для JavaScript создает файл cookie пользователя в веб-клиенте для определения возвращающихся пользователей и файл cookie сеанса для группировки действий.
-* Если скрипт на стороне клиента отсутствует, вы можете [задать файлы cookie на сервере](http://apmtips.com/blog/2016/07/09/tracking-users-in-api-apps/).
+* Если скрипт на стороне клиента отсутствует, вы можете [задать файлы cookie на сервере](https://apmtips.com/blog/2016/07/09/tracking-users-in-api-apps/).
 * Если один реальный пользователь работает с вашим сайтом в разных браузерах, на разных компьютерах либо использует конфиденциальный режим просмотра или режим инкогнито, то он будет учитываться несколько раз.
 * Для определения вошедшего в систему пользователя на разных компьютерах и в разных браузерах добавьте вызов [setAuthenticatedUserContext()](app-insights-api-custom-events-metrics.md#authenticated-users).
 

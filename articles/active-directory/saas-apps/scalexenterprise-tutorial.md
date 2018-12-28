@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ScaleX Enterprise | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со ScaleX Enterprise | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в ScaleX Enterprise.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/20/2017
 ms.author: jeedes
-ms.openlocfilehash: 04708806b9e1ba224e7b438f11c68dca82d6320e
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 60beecc0895fbfb5d3af7817e8b76e0819c89a99
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39448824"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52835392"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-scalex-enterprise"></a>Руководство по интеграции Azure Active Directory с ScaleX Enterprise
+# <a name="tutorial-azure-active-directory-integration-with-scalex-enterprise"></a>Руководство. Интеграция Azure Active Directory со ScaleX Enterprise
 
 В этом руководстве описано, как интегрировать ScaleX Enterprise с Azure Active Directory (Azure AD).
 
@@ -123,7 +123,7 @@ ms.locfileid: "39448824"
     В текстовом поле **URL-адрес для входа** введите значение в следующем формате: `https://platform.rescale.com/saml2/<company id>/sso/`.
      
     > [!NOTE] 
-    > Значения, указанные выше, приведены в качестве примера. Измените их на фактические значения идентификатора, URL-адреса ответа или URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов ScaleX Enterprise](http://info.rescale.com/contact_sales). 
+    > Значения, указанные выше, приведены в качестве примера. Измените их на фактические значения идентификатора, URL-адреса ответа или URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов ScaleX Enterprise](https://info.rescale.com/contact_sales). 
 
 1. Приложение ScaleX ожидает проверочные утверждения SAML в определенном формате, который требует изменить настраиваемые сопоставления атрибутов для конфигурации атрибутов токена SAML. Установите флажок **Просмотреть и изменить все другие атрибуты пользователей**, чтобы открыть пользовательские параметры атрибутов.
 
@@ -172,18 +172,18 @@ ms.locfileid: "39448824"
 
     c. **Name of Identity Provider email field in ACS response** (Имя поля электронного адреса поставщика удостоверений в ответе ACS). Вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    d. **Identity Provider EntityDescriptor Entity ID** (Идентификатор сущности EntityDescriptor поставщика удостоверений). Вставьте значение **идентификатора сущности SAML**, скопированное с портала Azure.
+    d. **Identity Provider EntityDescriptor Entity ID** (Идентификатор сущности EntityDescriptor поставщика удостоверений). Вставьте значение **идентификатора сущности SAML**, скопированное на портале Azure.
 
     д. **Identity Provider SingleSignOnService URL** (URL-адрес SingleSignOnService поставщика удостоверений). Вставьте значение **URL-адреса службы единого входа SAML**, скопированное на портале Azure.
 
     Е. **Identity Provider public X509 certificate** (Общий сертификат X509 поставщика удостоверений). Откройте сертификат X509, скачанный на портале Azure, в Блокноте и вставьте содержимое в это поле. Убедитесь в отсутствии разрыва строк в середине содержимого сертификата.
     
-    ж. Установите следующие флажки: **Enabled, Encrypt NameID and Sign AuthnRequests** (Включено, Шифрование идентификатора имени, Подпись AuthnRequests).
+    ж. Установите следующие флажки: **Enabled, Encrypt NameID, Sign AuthnRequests** ("Включено", "Шифрование идентификатора имени", "Подпись AuthnRequests").
 
     h. Нажмите кнопку **Update SSO Settings** (Обновить параметры единого входа), чтобы сохранить настройки.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. См. дополнительные сведения о [встроенной документации Azure]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

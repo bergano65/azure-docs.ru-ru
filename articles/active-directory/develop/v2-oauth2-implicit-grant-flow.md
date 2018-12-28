@@ -17,12 +17,12 @@ ms.date: 10/02/2018
 ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 878c2596a1d884e26a4b4a4ed4764cfd9ce6b39b
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: e9de2c9b7f79dd6cba3050d84ccfa0795bc2d09a
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52424106"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52962585"
 ---
 # <a name="v20-protocols---spas-using-the-implicit-flow"></a>Протоколы приложений версии 2.0. Одностраничные приложения с использованием неявного потока
 
@@ -36,7 +36,7 @@ ms.locfileid: "52424106"
 
 Для этих приложений (AngularJS, Ember.js, React.js и т. д.) Azure Active Directory (Azure AD) поддерживает поток OAuth 2.0 Implicit Grant. Подробное описание неявного потока данных см. в [спецификации OAuth 2.0](https://tools.ietf.org/html/rfc6749#section-4.2). Его основное преимущество заключается в том, что приложение получает маркеры из Azure AD без предоставления учетных данных внутреннему серверу. Так, приложение может авторизовать пользователей, поддерживать сеансы и получать маркеры для других веб-API — и все это из клиентского кода JavaScript. Во время использования неявного потока данных необходимо обращать внимание на некоторые важные вопросы безопасности, касающиеся [клиента](https://tools.ietf.org/html/rfc6749#section-10.3) и [маскировки под другого пользователя](https://tools.ietf.org/html/rfc6749#section-10.3).
 
-Если для добавления проверки подлинности в приложение JavaScript вы хотите использовать неявный поток данных и Azure AD, рекомендуем использовать библиотеку открытого исходного кода JavaScript [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js). 
+Если для добавления проверки подлинности в приложение JavaScript вы хотите использовать неявный поток данных и Azure AD, рекомендуем использовать библиотеку открытого исходного кода JavaScript [msal.js](https://github.com/AzureAD/microsoft-authentication-library-for-js).
 
 Но в одностраничном приложении можно обойтись без использования библиотеки. Отправлять сообщения протокола в таком случае нужно самостоятельно. Для этого выполните следующие шаги.
 
@@ -54,7 +54,7 @@ ms.locfileid: "52424106"
 Для первого входа пользователя в приложение можно отправить запрос на авторизацию [OpenID Connect](v2-protocols-oidc.md) и получить `id_token` из конечной точки версии 2.0.
 
 > [!IMPORTANT]
-> Чтобы успешно запросить маркер идентификатора, в регистрации приложения на [портале регистрации](https://apps.dev.microsoft.com) для веб-клиента должен быть включен параметр **Разрешить неявный поток**. Если эта функция не включена, будет возвращена ошибка `unsupported_response`: **The provided value for the input parameter 'response_type' is not allowed for this client. Expected value is 'code'** (Указанное значение параметра response_type запрещено для данного клиента. Ожидаемое значение: code).
+> Чтобы успешно запросить маркер идентификатора, в регистрации приложения на [портале регистрации](https://apps.dev.microsoft.com) для веб-клиента должен быть включен параметр **Разрешить неявный поток**. Если его не включить, будет возвращена следующая ошибка `unsupported_response`: **The provided value for the input parameter 'response_type' is not allowed for this client. Expected value is 'code'** (Указанное значение параметра response_type запрещено для данного клиента. Ожидаемое значение: code).
 
 ```
 // Line breaks for legibility only
@@ -71,7 +71,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 > [!TIP]
 > Чтобы проверить вход с помощью неявного потока, щелкните <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=6731de76-14a6-49ae-97bc-6eba6914391e&response_type=id_token&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F&scope=openid&response_mode=fragment&state=12345&nonce=678910" target="_blank">https://login.microsoftonline.com/common/oauth2/v2.0/authorize...</a> После входа браузер будет перенаправлен по адресу `https://localhost/myapp/`, при этом в адресной строке будет `id_token`.
-> 
+>
 
 | Параметр |  | ОПИСАНИЕ |
 | --- | --- | --- |

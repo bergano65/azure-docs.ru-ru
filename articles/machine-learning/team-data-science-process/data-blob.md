@@ -1,6 +1,6 @@
 ---
-title: Обработка больших двоичных данных Azure с применением методов расширенного анализа | Документация Майкрософт
-description: Обработка данных в хранилище больших двоичных объектов Azure.
+title: Обработка больших двоичных данных Azure с применением методов расширенного анализа. Процесс обработки и анализа данных группы
+description: Работайте с данными в хранилище BLOB-объектов Azure и создавайте признаки на их основе с помощью углубленной аналитики.
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: ef5a3decec3ddd87bb73d513981bdfe081fadf74
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 36e3512caa8922f8bc1a65f13ea41d6873b51e5e
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52442392"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53140550"
 ---
 # <a name="heading"></a>Обработка больших двоичных данных Azure с применением методов расширенного анализа
 Этот документ содержит сведения о работе с данными в хранилище больших двоичных объектов Azure и создании характеристик на их основе. 
@@ -130,7 +130,7 @@ ms.locfileid: "52442392"
         dataframe_blobdata_with_bin_bool = dataframe_blobdata.join(dataframe_blobdata_bin_bool)    
 
 ## <a name="sql-featuregen"></a>Запись данных обратно в большой двоичный объект Azure и их использование в Студии машинного обучения Azure
-После просмотра данных и создания необходимых вам признаков вы можете отправить данные (в выборке или в признаке) в большой двоичный объект Azure и использовать их в Студии машинного обучения Azure. Вы можете это сделать описанным ниже способом. Обратите внимание на то, что дополнительные характеристики можно создавать и в Студии машинного обучения Microsoft Azure. 
+После просмотра данных и создания необходимых признаков вы можете отправить данные (в выборке или в признаке) в большой двоичный объект Azure и использовать их в Студии машинного обучения Azure. Вы можете это сделать описанным ниже способом. Обратите внимание на то, что дополнительные признаки можно создавать и в Студии машинного обучения Microsoft Azure. 
 
 1. Запишите блок данных в локальный файл.
    

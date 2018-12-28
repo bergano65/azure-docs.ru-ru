@@ -9,16 +9,15 @@ ms.assetid: a6268811-c8df-42b5-8b1b-1d5a7e94cbca
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/10/2018
 ms.author: mbullwin
-ms.openlocfilehash: 1994c714f691177b526b44e277fea705d18b4335
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 613e0f51ae7bbb0b295f13d50fc95683085d7da9
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51245704"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52995800"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор и хранение данных в Application Insights
 
@@ -29,14 +28,14 @@ ms.locfileid: "51245704"
 * Для отправки конфиденциальных данных в службу лучше не использовать телеметрические модули со стандартными настройками. Телеметрия включает метрики нагрузки, производительности и использования, отчеты об исключениях и другие диагностические данные. Основными пользовательскими данными, которые отображаются в диагностических отчетах, являются URL-адреса. Однако приложение в любом случае не должно помещать конфиденциальные данные в URL-адрес в виде обычного текста.
 * Можно написать код, который будет отправлять дополнительные пользовательские телеметрические данные для диагностики и мониторинга (эта расширяемость — одна из полезных возможностей Application Insights). По ошибке код может включать в себя личные и другие конфиденциальные данные. Если приложение работает с такими данными, то следует тщательно проверять весь написанный код.
 * При разработке и тестировании приложения можно легко проверить, какие именно данные отправляются с помощью пакета SDK. Данные отображаются в окнах вывода отладочных данных IDE и браузера. 
-* Данные хранятся на серверах [Microsoft Azure](http://azure.com) в США или Европе. (При этом ваше приложение может выполняться где угодно.) Azure применяет [надежные процедуры обеспечения безопасности и соответствует целому ряду стандартов](https://azure.microsoft.com/support/trust-center/). Доступ к данным будет только у вас и вашей команды. Сотрудникам Майкрософт может предоставляться ограниченный доступ к данным только при определенных условиях и с вашего ведома. Данные шифруются при передаче, а не на серверах.
+* Данные хранятся на серверах [Microsoft Azure](https://azure.com) в США или Европе. (При этом ваше приложение может выполняться где угодно.) Azure применяет [надежные процедуры обеспечения безопасности и соответствует целому ряду стандартов](https://azure.microsoft.com/support/trust-center/). Доступ к данным будет только у вас и вашей команды. Сотрудникам Майкрософт может предоставляться ограниченный доступ к данным только при определенных условиях и с вашего ведома. Данные шифруются при передаче, а не на серверах.
 
 Далее в статье эта тема рассматривается более подробно. Эта статья содержит все необходимые сведения, поэтому вы можете показывать ее коллегам, которые не работают непосредственно с вами.
 
 ## <a name="what-is-application-insights"></a>Что такое Azure Application Insights?
 [Azure Application Insights][start] — это служба Майкрософт, которая помогает повысить производительность и удобство использования активного приложения. Она отслеживает приложение на протяжении всего времени его работы: как на этапе тестирования, так и после публикации или развертывания. Application Insights создает диаграммы и таблицы, которые могут отображать различные данные: например, в какое время дня у вас наибольшее число пользователей, насколько быстро приложение отвечает на запросы и насколько хорошо оно обслуживается внешними службами, от которых зависит. В случае сбоев, ошибок или проблем с производительностью можно более детально просмотреть телеметрические данные, чтобы определить причину проблемы. Кроме этого, в случае каких-либо изменений в доступности и производительности приложения служба будет отправлять вам по электронной почте соответствующие уведомления.
 
-Чтобы использовать эту возможность, установите в приложение пакет SDK Application Insights, который интегрируется с кодом приложения. Когда приложение запущено, пакет SDK отслеживает его работу и отправляет телеметрические данные в службу Application Insights. Это облачная служба, размещенная в [Microsoft Azure](http://azure.com). (Application Insights работает для любых приложений, а не только тех, которые размещены в Azure.)
+Чтобы использовать эту возможность, установите в приложение пакет SDK Application Insights, который интегрируется с кодом приложения. Когда приложение запущено, пакет SDK отслеживает его работу и отправляет телеметрические данные в службу Application Insights. Это облачная служба, размещенная в [Microsoft Azure](https://azure.com). (Application Insights работает для любых приложений, а не только тех, которые размещены в Azure.)
 
 ![Пакет SDK в приложении отправляет телеметрические данные в службу Application Insights.](./media/app-insights-data-retention-privacy/01-scheme.png)
 
@@ -103,9 +102,8 @@ ms.locfileid: "51245704"
 ## <a name="where-is-the-data-held"></a>Где хранятся данные?
 * В США, Европе и юго-восточной Азии. Расположение можно выбрать при создании нового ресурса Application Insights. 
 
-
 #### <a name="does-that-mean-my-app-has-to-be-hosted-in-the-usa-europe-or-southeast-asia"></a>Значит ли это, что мое приложение должно размещаться в США, Европе или юго-восточной Азии?
-* Нет. Ваше приложение может выполняться где угодно, будь то ваш собственный локальный узел или облако.
+*  Нет. Ваше приложение может выполняться где угодно, будь то ваш собственный локальный узел или облако.
 
 ## <a name="how-secure-is-my-data"></a>Насколько защищены мои данные?
 Application Insights — это служба Azure. Политики безопасности описаны в [техническом документе Azure о безопасности, конфиденциальности и соответствии требованиям](https://go.microsoft.com/fwlink/?linkid=392408).
@@ -206,13 +204,13 @@ services.AddSingleton(typeof(ITelemetryChannel), new ServerTelemetryChannel () {
 |.NET | Поддерживается, конфигурация зависит от версии. | Подробную информацию о конфигурации для .NET 4.7 и более ранних версий см. в [этих инструкциях](https://docs.microsoft.com/dotnet/framework/network-programming/tls#support-for-tls-12).  |
 |Монитор состояния | Поддерживается, требуется настройка | Монитор состояния зависит от [Конфигурации ОС](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) + [Конфигурации .NET](https://docs.microsoft.com/dotnet/framework/network-programming/tls#support-for-tls-12) для поддержки протокола TLS 1.2.
 |Node.js |  Поддерживается, для версии 10.5.0 может потребоваться настройка. | Для определения точной конфигурации приложения используйте [официальную документацию Node.js по протоколу TLS/SSL](https://nodejs.org/api/tls.html). |
-|Java | Поддерживается, в JDK поддержка протокола TLS 1.2 добавлена в [обновлении 121 для JDK 6](http://www.oracle.com/technetwork/java/javase/overview-156328.html#R160_121) и [JDK 7](http://www.oracle.com/technetwork/java/javase/7u131-relnotes-3338543.html). | JDK 8 использует [протокол TLS 1.2 по умолчанию](https://blogs.oracle.com/java-platform-group/jdk-8-will-use-tls-12-as-default).  |
+|Java | Поддерживается, в JDK поддержка протокола TLS 1.2 добавлена в [обновлении 121 для JDK 6](https://www.oracle.com/technetwork/java/javase/overview-156328.html#R160_121) и [JDK 7](http://www.oracle.com/technetwork/java/javase/7u131-relnotes-3338543.html). | JDK 8 использует [протокол TLS 1.2 по умолчанию](https://blogs.oracle.com/java-platform-group/jdk-8-will-use-tls-12-as-default).  |
 |Linux | Как правило, дистрибутивы Linux для поддержки протокола TLS 1.2 используют [OpenSSL](https://www.openssl.org).  | Убедитесь, что ваша версия OpenSSL поддерживается, проверив [журнал изменений OpenSSL](https://www.openssl.org/news/changelog.html).|
 | Windows 8.0–10 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings).  |
 | Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings). |
 | Windows 7 с пакетом обновления 1 и Windows Server 2008 R2 с пакетом обновления 1 | Поддерживается, но не включена по умолчанию. | Информацию о том, как ее включить, см. на странице [Transport Layer Security (TLS) registry settings](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) (Параметры реестра TLS).  |
 | Windows Server 2008 с пакетом обновления 2 (SP2) | Для поддержки протокола TLS 1.2 требуется обновление. | См. статью об [обновлении для добавления поддержки TLS 1.2 в Windows Server 2008 с пакетом обновления 2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
-|Windows Vista | Не поддерживается. | Недоступно
+|Windows Vista |  Не поддерживается. | Недоступно
 
 ### <a name="check-what-version-of-openssl-your-linux-distribution-is-running"></a>Проверка версии OpenSSL, используемой дистрибутивом Linux
 
@@ -232,7 +230,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 
 ## <a name="personal-data-stored-in-application-insights"></a>Персональные данные, хранимые в Application Insights
 
-Этот вопрос подробно рассмотрен в нашей [статье о персональных данных в Application Insights](../log-analytics/log-analytics-personal-data-mgmt.md).
+Этот вопрос подробно рассмотрен в нашей [статье о персональных данных в Application Insights](../azure-monitor/platform/personal-data-mgmt.md).
 
 #### <a name="can-my-users-turn-off-application-insights"></a>Могут ли мои пользователи отключить Application Insights?
 Не напрямую. Мы не предоставляем параметр, с помощью которого пользователи могут отключить Application Insights.
@@ -282,8 +280,11 @@ openssl s_client -connect bing.com:443 -tls1_2
 
 Вы можете [отключить некоторые данные, изменив файл ApplicationInsights.config][config].
 
+> [!NOTE]
+> IP-адрес клиента используется для определения географического расположения, но сейчас данные об IP-адресах больше не сохраняются по умолчанию, а в соответствующее поле записываются нули. Дополнительные сведения об обработке персональных данных см. в этой [статье](../azure-monitor/platform/personal-data-mgmt.md#application-data). Если вам необходимо сохранить IP-адрес, это можно сделать с помощью [инициализатора телеметрии](./app-insights-api-filtering-sampling.md#add-properties-itelemetryinitializer).
+
 ## <a name="credits"></a>Баллы
-Этот продукт содержит данные GeoLite2, созданные пользователем MaxMind и доступные на веб-сайте [http://www.maxmind.com](http://www.maxmind.com).
+Этот продукт содержит данные GeoLite2, созданные пользователем MaxMind и доступные на веб-сайте [https://www.maxmind.com](https://www.maxmind.com).
 
 
 
@@ -296,7 +297,7 @@ openssl s_client -connect bing.com:443 -tls1_2
 [greenbrown]: app-insights-asp-net.md
 [java]: app-insights-java-get-started.md
 [platforms]: app-insights-platforms.md
-[pricing]: http://azure.microsoft.com/pricing/details/application-insights/
+[pricing]: https://azure.microsoft.com/pricing/details/application-insights/
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 

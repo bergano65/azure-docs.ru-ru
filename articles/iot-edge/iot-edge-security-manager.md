@@ -1,5 +1,5 @@
 ---
-title: Диспетчер безопасности Azure IoT Edge | Документация Майкрософт
+title: Защита устройств и ПО с помощью диспетчера безопасности Azure IoT Edge | Документация Майкрософт
 description: Управляет состоянием безопасности устройства IoT Edge и целостностью служб безопасности.
 services: iot-edge
 keywords: безопасность, безопасный элемент, анклава, TEE, IoT Edge
@@ -9,12 +9,13 @@ ms.author: eustacea
 ms.date: 07/30/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 6231f50134f7dcfd29e8754841847beb69570204
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: eda572c0f4abedd59c912dcf1de2cf3c6e226b5c
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51567695"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53091930"
 ---
 # <a name="azure-iot-edge-security-manager"></a>Диспетчер безопасности Azure IoT Edge
 
@@ -33,7 +34,7 @@ ms.locfileid: "51567695"
 * Хранение корня доверия оборудования с помощью нотариальных служб.
 * Мониторинг целостности операций IoT Edge во время выполнения.
 
-Диспетчер безопасности IoT Edge состоит из трех основных компонентов:
+Диспетчер безопасности IoT Edge состоит из трех компонентов:
 
 * управляющая программа безопасности IoT Edge;
 * уровень абстракции платформы аппаратного модуля безопасности (HSM);

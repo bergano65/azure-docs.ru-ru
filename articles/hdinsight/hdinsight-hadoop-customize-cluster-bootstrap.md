@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: bfa36cfeda514be0941481b0e4ed5ab9b3669b54
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 2da89e674b967287150b2e8f3a98fc25df2af81e
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238103"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52878271"
 ---
 # <a name="customize-hdinsight-clusters-using-bootstrap"></a>Настройка кластеров HDInsight с помощью начальной загрузки
 
@@ -50,7 +50,7 @@ ms.locfileid: "51238103"
 * [Настройка кластеров HDInsight с помощью действия скрипта (Linux)](hdinsight-hadoop-customize-cluster-linux.md)
 
 ## <a name="use-azure-powershell"></a>Использование Azure PowerShell
-Следующий код PowerShell настраивает конфигурацию Hive:
+Следующий код PowerShell настраивает конфигурацию [Apache Hive](https://hive.apache.org/).
 
 ```powershell
 # hive-site.xml configuration
@@ -128,11 +128,11 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 ![Настройка шаблона Azure Resource Manager для начальной загрузки кластера с помощью HDInsight Hadoop](./media/hdinsight-hadoop-customize-cluster-bootstrap/hdinsight-customize-cluster-bootstrap-arm.png)
 
 ## <a name="see-also"></a>См. также
-* В статье [Создание кластеров Hadoop под управлением Windows в HDInsight][hdinsight-provision-cluster] приведены указания по созданию кластера HDInsight с использованием других настраиваемых параметров.
+* статью [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий][hdinsight-provision-cluster], в которой даются указания по созданию кластера HDInsight с использованием других настраиваемых параметров.
 * [Разработка скриптов действия сценария для HDInsight][hdinsight-write-script]
-* [Установка и использование Spark в кластерах HDInsight Hadoop с помощью действия сценария][hdinsight-install-spark]
-* [Установка и использование Solr в кластерах HDInsight](hdinsight-hadoop-solr-install.md).
-* [Установка и использование Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install.md).
+* [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона][hdinsight-install-spark].
+* [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона](hdinsight-hadoop-solr-install.md).
+* [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона](hdinsight-hadoop-giraph-install.md).
 
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
 [hdinsight-write-script]: hdinsight-hadoop-script-actions.md
@@ -142,7 +142,7 @@ $OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # 
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster/HDI-Cluster-state.png "Этапы создания кластера"
 
-## <a name="appendix-powershell-sample"></a>Приложение. Пример PowerShell
+## <a name="appendix-powershell-sample"></a>Приложение Пример для PowerShell
 Этот сценарий PowerShell создает кластер HDInsight и настраивает параметр Hive:
 
 ```powershell

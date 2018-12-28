@@ -1,19 +1,20 @@
 ---
-title: Пользовательские шаблоны даты и времени в пути для выходных данных хранилища BLOB-объектов Azure Stream Analytics (предварительная версия)
-description: ''
+title: Шаблоны даты и времени в пути для выходных данных BLOB-объектов в Azure Stream Analytics (предварительная версия)
+description: В статье описываются пользовательские шаблоны даты и времени в пути для выходных данных хранилища BLOB-объектов, поступающих из заданий Azure Stream Analytics.
 services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: da29c6bd8ddc1e2f62a78fb683df5e1784141722
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.date: 12/06/2018
+ms.custom: seodec18
+ms.openlocfilehash: ba386539c3f3c6740b843575bbccd4b028b8a5a7
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452570"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53090796"
 ---
 # <a name="custom-datetime-path-patterns-for-azure-stream-analytics-blob-storage-output-preview"></a>Пользовательские шаблоны даты и времени в пути для выходных данных хранилища BLOB-объектов Azure Stream Analytics (предварительная версия)
 
@@ -61,7 +62,7 @@ Azure Stream Analytics поддерживает пользовательские
 
 Пользовательский тип выходных данных устраняет проблему изменения таблиц и добавления разделов для передачи данных между Azure Stream Analytics и Hive вручную. Вместо этого многие папки можно добавлять автоматически, используя:
 
-```
+```SQL
 MSCK REPAIR TABLE while hive.exec.dynamic.partition true
 ```
 
@@ -75,9 +76,9 @@ MSCK REPAIR TABLE while hive.exec.dynamic.partition true
 
 Шаблон полного пути выглядит следующим образом:
 
-```
-year={datetime:yyyy}/month={datetime:MM}/day={datetime:dd}
-```
+
+`year={datetime:yyyy}/month={datetime:MM}/day={datetime:dd}`
+
 
 Когда вы запускаете задание, в контейнере больших двоичных объектов создается структура папок, основанная на шаблоне пути. Вы можете детализировать до уровня дня.
 

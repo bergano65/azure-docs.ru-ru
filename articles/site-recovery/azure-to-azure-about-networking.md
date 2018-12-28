@@ -6,14 +6,14 @@ author: sujayt
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 11/27/2018
 ms.author: sujayt
-ms.openlocfilehash: 37db2dd5908b231b9f04a5c009052d91724f6333
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: f48283222f5c5d3b18d3dba17c2856801856fb94
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51976254"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52992118"
 ---
 # <a name="about-networking-in-azure-to-azure-replication"></a>Сети для репликации "Azure — Azure"
 
@@ -114,7 +114,10 @@ login.microsoftonline.com | Требуется для авторизации и 
 
       ![storage-tag](./media/azure-to-azure-about-networking/storage-tag.png)
 
-2. Создайте правила исходящих подключений HTTPS (443) для всех диапазонов IP-адресов, которые соответствуют [конечным точкам аутентификации и удостоверениям IP-адресов версии 4](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2#bkmk_identity) Office 365.
+2. Создайте правило безопасности исходящих подключений HTTPS (443) для AzureActiveDirectory в NSG, как показано на снимке экрана ниже.
+
+      ![Тег aad](./media/azure-to-azure-about-networking/aad-tag.png)
+
 3. Создайте правила исходящих подключений HTTPS (443) для IP-адресов Site Recovery, соответствующих целевому расположению:
 
    **Местоположение.** | **IP-адрес Site Recovery** |  **IP-адрес мониторинга Site Recovery**
@@ -127,7 +130,7 @@ login.microsoftonline.com | Требуется для авторизации и 
 
 1. Создайте правило безопасности исходящих подключений HTTPS (443) для Storage.CentralUS в NSG.
 
-2. Создайте правила исходящих подключений HTTPS (443) для всех диапазонов IP-адресов, которые соответствуют [конечным точкам аутентификации и удостоверениям IP-адресов версии 4](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2#bkmk_identity) Office 365.
+2. Создайте правило безопасности исходящих подключений HTTPS (443) для AzureActiveDirectory в NSG.
 
 3. Создайте правила исходящих подключений HTTPS (443) для IP-адресов Site Recovery, соответствующих исходному расположению:
 

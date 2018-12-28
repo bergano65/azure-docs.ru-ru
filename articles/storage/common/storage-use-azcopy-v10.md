@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/09/2018
 ms.author: artemuwka
 ms.component: common
-ms.openlocfilehash: a1b183e5b0929a2149502aa340e2e69c725dba6d
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: 2ab933506ea03ae72198113d70888460e5001a6d
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49168248"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52958428"
 ---
 # <a name="transfer-data-with-the-azcopy-v10-preview"></a>Передача данных с помощью AzCopy версии 10 (предварительная версия)
 
@@ -84,6 +84,16 @@ AzCopy (версия 10) имеет простой самостоятельно 
 .\azcopy cp -h
 ```
 
+## <a name="create-a-file-system-azure-data-lake-storage-gen2-only"></a>Создание файловой системы (только Azure Data Lake Storage 2-го поколения)
+
+Если вы включили иерархические пространства имен в учетной записи хранилища BLOB-объектов, можно использовать следующую команду для создания файловой системы, в которую можно передавать файлы для скачивания.
+
+```azcopy
+.\azcopy make "https://account.dfs.core.windows.net/top-level-resource-name" --recursive=true
+```
+
+Фрагмент ``account`` этой строки представляет имя вашей учетной записи хранения. Фрагмент ``top-level-resource-name`` этой строки представляет имя создаваемой файловой системы.
+
 ## <a name="copy-data-to-azure-storage"></a>Копирование данных в службу хранилища Azure
 
 Используйте команду копирования для передачи данных из источника в место назначения. Источником или местом назначения может быть:
@@ -107,10 +117,22 @@ AzCopy (версия 10) имеет простой самостоятельно 
 .\azcopy cp "C:\local\path" "https://account.blob.core.windows.net/mycontainer1<sastoken>" --recursive=true
 ```
 
+Если вы включили иерархические пространства имен в учетной записи хранилища BLOB-объектов, можно использовать следующую команду для передачи файлов в файловую систему:
+
+```azcopy
+.\azcopy cp "C:\local\path" "https://myaccount.dfs.core.windows.net/myfolder<sastoken>" --recursive=true
+```
+
 Следующая команда передает все файлы из папки C:\local\path (без рекурсии в подкаталоги) в контейнер mycontainer1:
 
 ```azcopy
 .\azcopy cp "C:\local\path\*" "https://account.blob.core.windows.net/mycontainer1<sastoken>"
+```
+
+Если вы включили иерархические пространства имен в учетной записи хранилища BLOB-объектов, можно использовать следующую команду:
+
+```azcopy
+.\azcopy cp "C:\local\path\*" "https://account.blob.core.windows.net/myfolder<sastoken>"
 ```
 
 Чтобы получить дополнительные примеры, используйте следующую команду:
@@ -127,6 +149,8 @@ AzCopy (версия 10) имеет простой самостоятельно 
 ```azcopy
 .\azcopy cp "https://myaccount.blob.core.windows.net/<sastoken>" "https://myotheraccount.blob.core.windows.net/<sastoken>" --recursive=true
 ```
+
+Для работы с учетными записями хранилища BLOB-объектов с поддержкой иерархических пространств имен измените строку ``blob.core.windows.net`` на ``dfs.core.windows.net`` в этих примерах.
 
 > [!NOTE]
 > Команда перечислит все контейнеры больших двоичных объектов и скопирует их в целевую учетную запись. В настоящее время AzCopy (версия 10) поддерживает копирование только блочных BLOB-объектов между двумя учетными записями. Остальные объекты учетной записи хранения (добавочные большие двоичные объекты, страничные BLOB-объекты, файлы, таблицы и очереди) будут пропущены.
@@ -154,6 +178,8 @@ AzCopy (версия 10) имеет простой самостоятельно 
 ```
 
 Команда позволяет выполнять добавочную синхронизацию источника с местом назначения на основе последних измененных меток времени. Если вы добавите файл в источник или удалите его, AzCopy (версия 10) сделает то же самое в месте назначения.
+
+[!NOTE] Для работы с учетными записями хранилища BLOB-объектов с поддержкой иерархических пространств имен измените строку ``blob.core.windows.net`` на ``dfs.core.windows.net`` в этих примерах.
 
 ## <a name="advanced-configuration"></a>Расширенная конфигурация
 

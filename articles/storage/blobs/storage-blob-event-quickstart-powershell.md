@@ -1,5 +1,5 @@
 ---
-title: Перенаправление событий хранилища BLOB-объектов Azure в пользовательскую конечную веб-точку с помощью PowerShell | Документация Майкрософт
+title: Отправка событий хранилища BLOB-объектов Azure в конечную веб-точку — Powershell | Документация Майкрософт
 description: Используйте службу "Сетка событий Azure" для подписки на события хранилища BLOB-объектов.
 services: storage,event-grid
 author: david-stanford
@@ -8,14 +8,15 @@ ms.date: 08/23/2018
 ms.topic: article
 ms.service: storage
 ms.component: blobs
-ms.openlocfilehash: 8482678a9c42fa2d960dee54c9810593cd820553
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.custom: seodec18
+ms.openlocfilehash: c7c8fd487bef0da7da84a23e18a4e999645106b3
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45732008"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53076429"
 ---
-# <a name="route-blob-storage-events-to-a-custom-web-endpoint-with-powershell"></a>Перенаправление событий хранилища BLOB-объектов в пользовательскую конечную веб-точку с помощью PowerShell
+# <a name="quickstart-route-storage-events-to-web-endpoint-with-powershell"></a>Краткое руководство. Перенаправление событий хранилища в конечную веб-точку с помощью PowerShell
 
 "Сетка событий Azure" — это служба обработки событий для облака. В этой статье с помощью Azure PowerShell вы создадите подписку на события хранилища BLOB-объектов и активируете событие, чтобы увидеть результат. 
 
@@ -27,9 +28,9 @@ ms.locfileid: "45732008"
 
 ## <a name="setup"></a>Настройка
 
-В этой статье требуется последняя версия Azure PowerShell. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+Для работы с этой статьей требуется последняя версия Azure PowerShell. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
 
-## <a name="log-in-to-azure"></a>Вход в Azure
+## <a name="sign-in-to-azure"></a>Вход в Azure
 
 Чтобы выполнить проверку подлинности, войдите в подписку Azure с помощью команды `Connect-AzureRmAccount` и следуйте инструкциям на экране.
 
@@ -130,7 +131,7 @@ echo $null >> gridTestFile.txt
 Set-AzureStorageBlobContent -File gridTestFile.txt -Container $containerName -Context $ctx -Blob gridTestFile.txt
 ```
 
-Кроме того, вы активировали событие, а служба "Сетка событий" отправила сообщение в конечную точку, настроенную вами при подписке. Откройте веб-приложение и просмотрите в нем отправленные события.
+Вы активировали событие, а служба "Сетка событий" отправила сообщение в конечную точку, настроенную вами при оформлении подписки. Откройте веб-приложение и просмотрите в нем отправленные события.
 
 ```json
 [{
@@ -160,7 +161,7 @@ Set-AzureStorageBlobContent -File gridTestFile.txt -Container $containerName -Co
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
-Если вы планируете продолжать работу с этой учетной записью хранения и подпиской на события, не очищайте ресурсы, созданные при работе с этой статьей. Если вы не планируете продолжать работу, удалите все созданные ресурсы в этой статье.
+Если вы планируете продолжать работу с этой учетной записью хранения и подпиской на события, не очищайте ресурсы, созданные при работе с этой статьей. Если вы не планируете продолжать работу, используйте следующую команду, чтобы удалить все ресурсы, созданные в рамках этой статьи.
 
 ```powershell
 Remove-AzureRmResourceGroup -Name $resourceGroup

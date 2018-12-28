@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/15/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 8d2550d6a1f99adaec7423997365412eb61ffbdf
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: e9271081b36681c4011d96b329de5058aeaf8472
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46124701"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53090624"
 ---
 # <a name="copy-data-from-shopify-using-azure-data-factory-preview"></a>Копирование данных из Shopify с помощью фабрики данных Azure (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "46124701"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Shopify**. | Yes |
+| Тип | Для свойства type необходимо задать значение **Shopify** | Yes |
 | host | Конечная точка сервера Shopify (mystore.myshopify.com).  | Yes |
 | accessToken | Маркер доступа для API, который может использоваться для доступа к данным Shopify. Срок действия маркера не ограничен, если используется автономный режим. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет  |
@@ -74,7 +74,12 @@ ms.locfileid: "46124701"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Shopify.
 
-Чтобы скопировать данные из Shopify, задайте для свойства type набора данных значение **ShopifyObject**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные из Shopify, задайте для свойства type набора данных значение **ShopifyObject**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Свойство type для набора данных должно иметь значение **ShopifyObject** | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -86,7 +91,8 @@ ms.locfileid: "46124701"
         "linkedServiceName": {
             "referenceName": "<Shopify linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -95,14 +101,14 @@ ms.locfileid: "46124701"
 
 Полный список разделов и свойств, используемых для определения действий, см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md). В этом разделе содержится список свойств, поддерживаемых источником Shopify.
 
-### <a name="shopifysource-as-source"></a>ShopifySource в качестве источника
+### <a name="shopify-as-source"></a>Shopify в качестве источника
 
 Чтобы скопировать данные из Shopify, задайте для типа источника в действии копирования значение **ShopifySource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **ShopifySource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM "Products" WHERE Product_Id = '123'"`. | Yes |
+| Тип | Свойство type источника действия копирования должно иметь значение **ShopifySource** | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM "Products" WHERE Product_Id = '123'"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

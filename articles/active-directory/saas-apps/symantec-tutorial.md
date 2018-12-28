@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Symantec Web Security Service (WSS) | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Symantec Web Security Service (WSS) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Symantec Web Security Service (WSS).
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: jeedes
-ms.openlocfilehash: dbf21c7c22a9b3273a65f7e186a2ac02ccae6ba2
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b933bc5f5ecb39c3462e4e9bd300f1e07fd718c0
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436213"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52838781"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-symantec-web-security-service-wss"></a>Руководство по интеграции Azure Active Directory с Symantec Web Security Service (WSS)
+# <a name="tutorial-azure-active-directory-integration-with-symantec-web-security-service-wss"></a>Руководство. Интеграция Azure Active Directory с Symantec Web Security Service (WSS)
 
 Изучив это руководство, вы сможете интегрировать учетную запись Symantec Web Security Service (WSS) с учетной записью Azure Active Directory (Azure AD). После этого WSS сможет выполнять аутентификацию SAML для конечных пользователей, подготовленных в Azure AD, и применять к ним правила политик на уровне пользователя или группы.
 
@@ -131,7 +131,7 @@ ms.locfileid: "39436213"
 1. Чтобы настроить единый вход на стороне службы безопасности Symantec Web Symantec Web Security Service (WSS), воспользуйтесь электронной документацией по WSS. Скачанный **файл метаданных в формате XML** следует импортировать на портал WSS. Если вам потребуется помощь в использовании портала WSS, обратитесь в [службу поддержки Symantec Web Security Service (WSS)](https://www.symantec.com/contact-us).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -170,7 +170,7 @@ ms.locfileid: "39436213"
 В этом разделе описано, как создать пользователя Britta Simon в Symantec Web Security Service (WSS). Соответствующее имя пользователя можно создать вручную на портале WSS. Также можно дождаться автоматической синхронизации с порталом WSS всех пользователей и групп, подготовленных в Azure AD (на это потребуется несколько минут, обычно около 15). Перед использованием единого входа необходимо создать и активировать пользователей. Общедоступный IP-адрес компьютера конечного пользователя, который будет использоваться для просмотра веб-сайтов, также должен быть подготовлен на портале Symantec Web Security Service (WSS).
 
 > [!NOTE]
-> [Щелкните здесь](http://www.bing.com/search?q=my+ip+address&qs=AS&pq=my+ip+a&sc=8-7&cvid=29A720C95C78488CA3F9A6BA0B3F98C5&FORM=QBLH&sp=1), чтобы получить общедоступный IP-адрес своего компьютера.
+> [Щелкните здесь](https://www.bing.com/search?q=my+ip+address&qs=AS&pq=my+ip+a&sc=8-7&cvid=29A720C95C78488CA3F9A6BA0B3F98C5&FORM=QBLH&sp=1), чтобы получить общедоступный IP-адрес своего компьютера.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

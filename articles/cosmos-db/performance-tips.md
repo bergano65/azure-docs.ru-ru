@@ -1,21 +1,19 @@
 ---
-title: Советы по повышению производительности для .NET в Azure Cosmos DB | Документация Майкрософт
+title: Советы по повышению производительности Azure Cosmos DB и .NET
 description: Узнайте, как повысить производительность базы данных Azure Cosmos DB с помощью параметров конфигурации клиента
 keywords: Как повысить производительность базы данных
 services: cosmos-db
 author: SnehaGunda
-manager: kfile
 ms.service: cosmos-db
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/24/2018
 ms.author: sngun
-ms.openlocfilehash: 91da40613e940b3dd577362273cf14e68d019f26
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: d4d730fe6c72b55a01f7c5f1f95cbd94ff145fba
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52442497"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52873756"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-net"></a>Советы по повышению производительности для .NET в Azure Cosmos DB
 

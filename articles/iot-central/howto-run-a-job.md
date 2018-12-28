@@ -8,12 +8,12 @@ ms.author: sahubbar
 ms.date: 09/15/2018
 ms.topic: conceptual
 manager: peterpr
-ms.openlocfilehash: 35db7bf87c7b72fc31d820c9058b1df8415bd553
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: ac5accc72369d811c0d36c4ef64cd8d523a061f3
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47031311"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52724508"
 ---
 # <a name="create-and-run-a-job-in-your-azure-iot-central-application"></a>Создание и запуск заданий в приложении Azure IoT Central
 
@@ -56,8 +56,13 @@ ms.locfileid: "47031311"
 
 Если вы хотите остановить задание, которое выполняется в данный момент, щелкните его имя. Нажмите кнопку **Остановить** на панели. Вы увидите, что состояние задания изменилось.
 
-> [!NOTE]
-> Остановленное задание нельзя перезапустить. Вы должны создать другое задание с требуемыми операциями и устройствами.
+   ![Остановка задания](./media/howto-run-a-job/stopjob.png)
+
+### <a name="run-a-stopped-job"></a>Запуск остановленного задания
+
+Если вы хотите запустить остановленное задание, щелкните его имя. Нажмите кнопку **Запустить** на панели. Вы увидите, что состояние задания изменилось и задание снова выполняется.
+
+   ![Возобновление выполнения задания](./media/howto-run-a-job/resumejob.png)
 
 ## <a name="view-the-job-status"></a>Просмотр состояния задания
 

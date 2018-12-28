@@ -9,16 +9,15 @@ ms.assetid: 27a3083d-d67f-4a07-8f3c-4edb65a0a685
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/20/2018
 ms.author: mbullwin
-ms.openlocfilehash: 4df6780fa61c1ed32279d882f383097dc0287716
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: 91ba5024dc87ac7707d5ba1d2cdc94a7bfeb02b5
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52275921"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52727466"
 ---
 # <a name="monitor-docker-applications-in-application-insights"></a>Мониторинг приложений Docker в Application Insights
 
@@ -100,7 +99,7 @@ ms.locfileid: "52275921"
 
 *Как получить данные телеметрии из самого приложения?*
 
-* Установите пакет SDK Application Insights в приложении. Узнайте, как это сделать в [веб-приложениях Java](app-insights-java-get-started.md) и [Windows](app-insights-asp-net.md).
+* Установите пакет SDK Application Insights в приложении. Узнайте, как это сделать в [веб-приложениях Java](app-insights-java-get-started.md) и [веб-приложениях Windows](app-insights-asp-net.md).
 
 ## <a name="video"></a>Видео
 

@@ -1,6 +1,6 @@
 ---
-title: Добавление или удаление пользователей в Azure Active Directory | Документы Майкрософт
-description: Инструкции по добавлению новых или удалению существующих пользователей в Azure Active Directory.
+title: Добавление или удаление пользователей в Azure Active Directory | Документация Майкрософт
+description: Инструкции по добавлению новых или удалению существующих пользователей с помощью Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.date: 09/04/2018
 ms.author: lizross
 ms.reviewer: jeffsta
-ms.custom: it-pro
-ms.openlocfilehash: 782363144a6b1dd87aff515c38588b6ce70b61bd
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: dd4a9132d5f04870239be3127f723afb60b3ecef
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46295110"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53104685"
 ---
-# <a name="how-to-add-or-delete-users-using-azure-active-directory"></a>Практическое руководство. Добавление или удаление пользователей в Azure Active Directory
-Добавляйте новых пользователей или удаляйте существующих в клиенте Azure Active Directory (Azure AD) с помощью Azure AD.
+# <a name="add-or-delete-users-using-azure-active-directory"></a>Добавление или удаление пользователей с помощью Azure Active Directory
+Добавляйте новых пользователей или удаляйте существующих в клиенте Azure Active Directory (Azure AD).
 
 ## <a name="add-a-new-user"></a>Добавление нового пользователя
-Вы можете создать нового пользователя с помощью Azure Active Directory.
+Вы можете создать пользователя с помощью портала Azure Active Directory.
 
 ### <a name="to-add-a-new-user"></a>Добавление нового пользователя
 1. Войдите на [портал Azure](https://portal.azure.com/) как глобальный администратор или администратор пользователей для каталога.
@@ -58,7 +58,7 @@ ms.locfileid: "46295110"
 Если у вас есть среда с Azure Active Directory (облако) и Windows Server Active Directory (локально), можно добавить новых пользователей путем синхронизации существующих данных учетной записи пользователя. Дополнительные сведения о гибридных средах и пользователях см. в статье [Интеграция локальных каталогов с Azure Active Directory](../hybrid/whatis-hybrid-identity.md).
 
 ## <a name="delete-a-user"></a>Удаление пользователя
-Вы можете удалить существующего пользователя с помощью Azure Active Directory.
+Вы можете удалить существующего пользователя с помощью портала Azure Active Directory.
 
 ### <a name="to-delete-a-user"></a>Удаление пользователя
 1. Войдите на [портал Azure](https://portal.azure.com/) с учетной записью глобального администратора каталога.

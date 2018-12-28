@@ -1,6 +1,6 @@
 ---
-title: Общие сведения о среде выполнения Azure IoT Edge | Документация Майкрософт
-description: Узнайте о среде выполнения Azure IoT Edge и возможностях, которые она предоставляет для пограничных устройств.
+title: Сведения об управлении устройствами в среде выполнения — Azure IoT Edge | Документация Майкрософт
+description: Сведения об управлении модулями, безопасностью, обменом данных и отчетностью на устройствах в среде выполнения Azure IoT Edge
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,12 +8,13 @@ ms.date: 08/13/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 05c97d21e9acf1bb49418e3a7d0ccf1657f84435
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.custom: seodec18
+ms.openlocfilehash: 3495d157f1a681e80b6d113acced53d01751690f
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685197"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53077500"
 ---
 # <a name="understand-the-azure-iot-edge-runtime-and-its-architecture"></a>Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре
 
@@ -29,7 +30,7 @@ ms.locfileid: "51685197"
 * упрощение взаимодействия между модулями на устройстве IoT Edge;
 * упрощение взаимодействия между устройством IoT Edge и облаком.
 
-![Среда выполнения IoT Edge передает аналитические сведения и информацию о работоспособности модуля в Центр Интернета вещей](./media/iot-edge-runtime/Pipeline.png)
+![Среда выполнения передает аналитические сведения и информацию о работоспособности модуля в Центр Интернета вещей](./media/iot-edge-runtime/Pipeline.png)
 
 Обязанности среды выполнения IoT Edge делятся на две категории: обмен данными и управление модулями. Эти две роли выполняются двумя компонентами, которые составляют среду выполнения IoT Edge. Концентратор IoT Edge отвечает за обмен данными, а агент IoT Edge управляет развертыванием и мониторингом модулей. 
 
@@ -49,7 +50,7 @@ ms.locfileid: "51685197"
 
 Чтобы сократить пропускную способность, используемую решением IoT Edge, концентратор Edge оптимизирует количество фактических подключений к облаку. Концентратор Edge принимает логические подключения от клиентов, например модулей или конечных устройств, и объединяет их для одного физического подключения к облаку. Сведения об этом процессе прозрачны для остальной части решения. Клиенты думают, что имеют собственное подключение к облаку, несмотря на то что передача данных выполняется через одно подключение. 
 
-![Концентратор Edge действует в качестве шлюза между несколькими физическими устройствами и облаком](./media/iot-edge-runtime/Gateway.png)
+![Центр Edge — это шлюз между физическими устройствами и Центром Интернета вещей](./media/iot-edge-runtime/Gateway.png)
 
 Концентратор Edge может определить, подключен ли он к Центру Интернета вещей. Если подключение потеряно, концентратор Edge сохранит сообщения или операции обновления двойников локально. Когда подключение будет снова установлено, он выполнит синхронизацию всех данных. Расположение, используемое для этого временного кэша, определяется свойством двойника модуля в концентраторе Edge. Размер кэша не ограничен и будет увеличиваться, пока у устройства есть емкость хранилища. 
 
@@ -57,7 +58,7 @@ ms.locfileid: "51685197"
 
 Концентратор Edge облегчает взаимодействие между модулями. Благодаря использованию концентратора Edge в качестве брокера сообщений модули независимы друг от друга. Модулям необходимо указывать только те входы, на которые они принимают сообщения, и выходы, на которые они записывают сообщения. Затем разработчик решений совмещает эти входы и выходы вместе, чтобы модули обрабатывали данные в порядке, определенном для этого решения. 
 
-![Концентратор Edge облегчает обмен данными между модулями](./media/iot-edge-runtime/ModuleEndpoints.png)
+![Концентратор Edge облегчает обмен данными между модулями](./media/iot-edge-runtime/module-endpoints.png)
 
 Для отправки данных в концентратор Edge модуль вызывает метод SendEventAsync. Первый аргумент указывает, в какой выход нужно отправить сообщение. Следующий псевдокод отправляет сообщение в output1:
 
@@ -73,13 +74,13 @@ ms.locfileid: "51685197"
    await client.SetInputMessageHandlerAsync(“input1”, messageProcessor, userContext);
    ```
 
-Дополнительные сведения о классе ModuleClient и его методах для обмена данными см. в справочнике по API для предпочитаемого языкового пакета для пакета SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C и Python](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device._module_client?view=azure-java-stable) или [Node.js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
+Дополнительные сведения о классе ModuleClient и его методах обмена данными см. в справочнике по API для предпочитаемого языка пакета SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C и Python](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device._module_client?view=azure-java-stable) или [Node.js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
 
 Разработчик решений отвечает за указание правил, определяющих, как концентратор Edge передает сообщения между модулями. Правила маршрутизации определяются в облаке и помещаются в концентратор Edge в его двойник устройства. Тот же синтаксис для маршрутов Центра Интернета вещей используется при определении маршрутов между модулями в Azure IoT Edge. 
 
 <!--- For more info on how to declare routes between modules, see []. --->   
 
-![Маршруты между модулями](./media/iot-edge-runtime/ModuleEndpointsWithRoutes.png)
+![Маршруты между модулями проходят через центр Edge](./media/iot-edge-runtime/module-endpoints-with-routes.png)
 
 ## <a name="iot-edge-agent"></a>Агент IoT Edge
 

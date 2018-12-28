@@ -8,25 +8,25 @@ ms.topic: include
 ms.date: 03/28/2018
 ms.author: wesmc
 ms.custom: include file
-ms.openlocfilehash: a9d0f4c8de26d3c501c3b04e42864efaa880ee62
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 7f03072c2b7ee1f08fc5fa306da6c5b8368742ae
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32297609"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53111781"
 ---
 Если вы не закрепили кеш на панели мониторинга, найдите его на [портале Azure ](https://portal.azure.com) через меню **Все службы**.
 
 ![Колонка обзора кэша Redis для Azure](media/redis-cache-browse/redis-cache-browse.png)
 
-Чтобы просмотреть кэши, щелкните **Все службы** и выполните поиск по фразе **кэши Redis**. 
+Чтобы просмотреть кэши, щелкните **Все службы** и выполните поиск по фразе **Azure Cache for Redis** (Кэш Redis для Azure). 
 
 Выберите кэш, для которого необходимо просмотреть и настроить параметры.
 
-![Список кэшей в обзоре кэша Redis для Azure](media/redis-cache-browse/redis-caches.png)
+![Список кэшей Redis для Azure в колонке обзора](media/redis-cache-browse/redis-caches.png)
 
-Просмотреть и настроить кэш можно в колонке **Кэш Redis**.
+Просмотреть и настроить кэш можно в колонке **Azure Cache for Redis** (Кэш Redis для Azure).
 
-![Все параметры кэша Redis](media/redis-cache-browse/redis-cache-blade.png)
+![Все параметры кэша Redis для Azure](media/redis-cache-browse/redis-cache-blade.png)
 
 

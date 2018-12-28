@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/01/2018
 ms.author: spelluru
-ms.openlocfilehash: 558df3fa70989aaf9ba182df3a918994c7dc9db6
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 1f1797cf3022285f81991eb15818b68df195de4b
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51243715"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52834134"
 ---
 # <a name="add-owners-and-users-in-azure-devtest-labs"></a>Добавление владельцев и пользователей в Azure DevTest Labs
 > [!VIDEO https://channel9.msdn.com/Blogs/Azure/How-to-set-security-in-your-DevTest-Lab/player]
@@ -69,15 +69,11 @@ ms.locfileid: "51243715"
 3. Из списка лабораторий выберите нужную лабораторию.
 4. В колонке лаборатории выберите **Конфигурация и политики**. 
 5. На странице **Configuration and Policies** (Конфигурация и политики) выберите **Управление доступом (IAM)** в меню слева. 
-6. Щелкните **Добавить** на панели инструментов, чтобы добавить пользователя в роль.
-
-    ![Добавление пользователя](./media/devtest-lab-add-devtest-user/devtest-users-blade.png)
+6. Щелкните **Добавить назначение ролей** на панели инструментов, чтобы добавить пользователя в роль.
 1. На странице **Добавление разрешений** выполните следующие действия: 
-    1. Выберите роль (например, пользователь DevTest Labs). В разделе [Действия, которые можно выполнять в каждой роли](#actions-that-can-be-performed-in-each-role) перечислены различные действия, которые могут выполнять пользователи с ролью владельца, пользователя DevTest или участника.
+    1. Выберите роль (например Пользователь DevTest Labs). В разделе [Действия, которые можно выполнять в каждой роли](#actions-that-can-be-performed-in-each-role) перечислены различные действия, которые могут выполнять пользователи с ролью владельца, пользователя DevTest или участника.
     2. Выберите пользователя для добавления в роль. 
     3. Щелкните **Сохранить**. 
-
-        ![Добавление пользователя в роль](./media/devtest-lab-add-devtest-user/add-user.png) 
 11. Вернувшись в колонку **Пользователи** , вы увидите, что пользователь добавлен.  
 
 ## <a name="add-an-external-user-to-a-lab-using-powershell"></a>Добавление внешнего пользователя в лабораторию с помощью PowerShell

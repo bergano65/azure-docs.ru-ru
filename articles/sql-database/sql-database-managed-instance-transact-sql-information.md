@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: carlrab, bonova
 manager: craigg
-ms.date: 10/24/2018
-ms.openlocfilehash: 31b09818f901ecf957364ae77fd8c6e636b04342
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.date: 12/03/2018
+ms.openlocfilehash: 489eccf1b73e7f5df76a3ce681b4479893a9e0ac
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51712149"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52843212"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -124,7 +124,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="compatibility-levels"></a>Уровни совместимости
 
-- Поддерживаемые уровни совместимости: 100, 110, 120, 130, 140.  
+- Поддерживаемые уровни совместимости: 100, 110, 120, 130 и 140.  
 - Уровни совместимости ниже 100 не поддерживаются.
 - Уровень совместимости по умолчанию для новых баз данных — 140. Для восстановленных баз данных уровень совместимости остается неизменным, если он был 100 и выше.
 
@@ -143,9 +143,9 @@ WITH PRIVATE KEY (<private_key_options>)
 - `CREATE CRYPTOGRAPHIC PROVIDER` не поддерживается. См. статью [CREATE CRYPTOGRAPHIC PROVIDER (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-cryptographic-provider-transact-sql).
 - `ALTER CRYPTOGRAPHIC PROVIDER` не поддерживается. См. статью [ALTER CRYPTOGRAPHIC PROVIDER (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-cryptographic-provider-transact-sql).
 
-### <a name="collation"></a>Collation
+### <a name="collation"></a>Параметры сортировки
 
-Параметр сортировки сервера — `SQL_Latin1_General_CP1_CI_AS`. Его невозможно изменить. См. статью [Параметры сортировки](https://docs.microsoft.com/sql/t-sql/statements/collations).
+Параметр сортировки экземпляра по умолчанию — `SQL_Latin1_General_CP1_CI_AS`. Этот параметр можно указать как параметр создания. См. статью [Параметры сортировки](https://docs.microsoft.com/sql/t-sql/statements/collations).
 
 ### <a name="database-options"></a>Параметры базы данных
 
@@ -264,7 +264,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Связанные серверы в Управляемом экземпляре поддерживают ограниченное число целевых объектов:
 
-- Поддерживаемые целевые объекты: SQL Server и служба "База данных SQL".
+- Поддерживаемые целевые объекты: SQL Server и База данных SQL.
 - Неподдерживаемые целевые объекты: файлы, Analysis Services и другие реляционные СУБД.
 
 Операции
@@ -274,10 +274,11 @@ WITH PRIVATE KEY (<private_key_options>)
 - Функцию `OPENROWSET` можно использовать для выполнения запросов только в экземплярах SQL Server (управляемом, локальном или на виртуальных машинах). См. статью [OPENROWSET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql).
 - Функцию `OPENDATASOURCE` можно использовать для выполнения запросов только в экземплярах SQL Server (управляемом, локальном или на виртуальных машинах). В качестве поставщика поддерживаются только значения `SQLNCLI`, `SQLNCLI11` и `SQLOLEDB`. Например, `SELECT * FROM OPENDATASOURCE('SQLNCLI', '...').AdventureWorks2012.HumanResources.Employee`. См. статью [OPENDATASOURCE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/opendatasource-transact-sql).
 
-### <a name="logins--users"></a>Имена входа и пользователи
+### <a name="logins--users"></a>Имена для входа и пользователи
 
-- Поддерживаются имена входа SQL, созданные с помощью `FROM CERTIFICATE`, `FROM ASYMMETRIC KEY` и `FROM SID`. См. статью [CREATE LOGIN (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql).
-- Имена входа Windows, созданные с помощью синтаксиса `CREATE LOGIN ... FROM WINDOWS`, не поддерживаются.
+- Поддерживаются имена для входа SQL, созданные с помощью `FROM CERTIFICATE`, `FROM ASYMMETRIC KEY` и `FROM SID`. См. статью [CREATE LOGIN (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql).
+- Имена для входа Azure Active Directory (AAD), созданные с помощью синтаксиса [CREATE LOGIN](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) или [CREATE USER](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql?view=azuresqldb-mi-current), поддерживаются (**общедоступная предварительная версия**).
+- Имена для входа Windows, созданные с помощью синтаксиса `CREATE LOGIN ... FROM WINDOWS`, не поддерживаются. Используйте пользователей и имена для входа Azure Active Directory.
 - Пользователь Azure Active Directory (Azure AD), создавший экземпляр, обладает [неограниченными правами доступа администратора](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins#unrestricted-administrative-accounts).
 - Пользователей уровня базы данных Azure Active Directory (Azure AD) без прав администратора можно создать, используя синтаксис `CREATE USER ... FROM EXTERNAL PROVIDER`. См. раздел [Пользователи без прав администратора](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins#non-administrator-users).
 
@@ -332,9 +333,9 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Компонент Service Broker между экземплярами не поддерживается:
 
-- `sys.routes` — обязательный компонент: выберите адрес из sys.routes. Адрес должен быть ЛОКАЛЬНЫМ для каждого маршрута. См. статью [sys.routes (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
-- `CREATE ROUTE` — невозможно `CREATE ROUTE` с `ADDRESS`, отличным от `LOCAL`. См. статью [CREATE ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql).
-- `ALTER ROUTE` — невозможно `ALTER ROUTE` с `ADDRESS`, отличным от `LOCAL`. См. статью [ALTER ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql).  
+- `sys.routes`. Обязательно выберите адрес из sys.routes. Адрес должен быть ЛОКАЛЬНЫМ для каждого маршрута. См. статью [sys.routes (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
+- `CREATE ROUTE`. `CREATE ROUTE` можно использовать только с локальным (`LOCAL`) адресом `ADDRESS`. См. статью [CREATE ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql).
+- `ALTER ROUTE`. Для `ALTER ROUTE` адрес `ADDRESS` может быть только локальным (`LOCAL`). См. статью [ALTER ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql).  
 
 ### <a name="service-key-and-service-master-key"></a>Ключ службы и главный ключ службы
 
@@ -413,7 +414,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - `@@SERVERNAME` возвращает полное DNS-имя с возможностью подключения, например my-managed-instance.wcus17662feb9ce98.database.windows.net. См. статью [@SERVERNAME](https://docs.microsoft.com/sql/t-sql/functions/servername-transact-sql).  
 - `SYS.SERVERS` — возвращает полное DNS-имя с возможностью подключения, такое как `myinstance.domain.database.windows.net` для свойств name и data_source. См. статью [sys.servers (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-servers-transact-sql).
 - `@@SERVICENAME` возвращает значение NULL, так как концепция службы в том виде, в котором она существует в SQL Server, не применяется к Управляемому экземпляру. См. статью [@SERVICENAME](https://docs.microsoft.com/sql/t-sql/functions/servicename-transact-sql).
-- `SUSER_ID` поддерживается. Возвращает значение NULL, если имя входа AAD не содержится в sys.syslogins. См. статью [Идентификатор SUSER_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-id-transact-sql).  
+- `SUSER_ID` поддерживается. Возвращает значение NULL, если имя для входа AAD не содержится в sys.syslogins. См. статью [Идентификатор SUSER_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-id-transact-sql).  
 - `SUSER_SID` не поддерживается. Возвращает неверные данные (временная известная проблема). См. статью [SUSER_SID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-sid-transact-sql).
 - `GETDATE()` и другие встроенные функции даты и времени всегда возвращают время в часовом поясе UTC. См. статью [GETDATE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/getdate-transact-sql).
 
@@ -427,14 +428,14 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Для каждого управляемого экземпляра в хранилище резервируется 35 ТБ для диска Azure уровня "Премиум", а каждый файл базы данных размещается на отдельном физическом диске. Поддерживаются диски размером 128 ГБ, 256 ГБ, 512 ГБ, 1 ТБ или 4 ТБ. Неиспользуемое пространство на диске не оплачивается, но суммарный размер дисков Azure уровня "Премиум" не может превышать 35 ТБ. В некоторых случаях из-за внутренней фрагментации размер Управляемого экземпляра, которому требуется не более 8 ТБ дискового пространства, может превысить ограничение в 35 ТБ.
 
-Например, если Управляемый экземпляр использует один файл размером 1,2 ТБ, размещенный на диске емкостью 4 ТБ, и 248 файлов по 1 ГБ каждый, размещенные на отдельных дисках емкостью по 128 ГБ. В данном примере:
+Например, Управляемый экземпляр использует один файл размером 1,2 ТБ, размещенный на диске объемом 4 ТБ, и 248 файлов по 1 ГБ каждый, размещенные на отдельных дисках объемом по 128 ГБ. В этом случае:
 
-- общий размер дискового хранилища составляет 1 x 4 ТБ + 248 x 128 ГБ = 35 ТБ.
-- общий объем зарезервированного пространства для баз данных в экземпляре составляет 1 x 1,2 ТБ + 248 x 1 ГБ = 1,4 ТБ.
+- общий размер выделенного дискового хранилища составляет 1 x 4 ТБ + 248 x 128 ГБ = 35 ТБ;
+- общий объем зарезервированного пространства для баз данных в экземпляре составляет 1 x 1,2 ТБ + 248 x 1 ГБ = 1,4 ТБ.
 
-Здесь наглядно показано, что в некоторых обстоятельствах при очень неудачном распределении файлов размер Управляемого экземпляра может неожиданно превысить лимит в 35 ТБ, выделенных для присоединенного диска Azure уровня "Премиум".
+Это свидетельствует о том, что в некоторых обстоятельствах при определенном распределении файлов размер Управляемого экземпляра может неожиданно достичь 35 ТБ, выделенных для присоединенного диска Azure уровня "Премиум".
 
-В этом примере существующие базы данных можно будет без проблем использовать и увеличивать, только если не будут добавляться новые файлы. При этом создать новые базы данных или восстановить имеющиеся не удастся, так как для новых дисков места недостаточно, даже если общий размер всех баз данных не достигает предельного размера экземпляра. Сообщение об ошибке, поступающее в этом случае, плохо отражает ситуацию.
+В этом примере существующие базы данных без проблем будут работать и разрастаться при условии, что в них не будут добавляться новые файлы. При этом создать новые базы данных или восстановить имеющиеся не удастся, так как для новых дисков места недостаточно, даже если общий размер всех баз данных не достигает предельного размера экземпляра. Сообщение об ошибке, поступающее в этом случае, плохо отражает ситуацию.
 
 ### <a name="incorrect-configuration-of-sas-key-during-database-restore"></a>Неправильная конфигурация ключа SAS во время восстановления базы данных
 
@@ -443,7 +444,10 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="tooling"></a>Инструментарий
 
-В SQL Server Management Studio и SQL Server Data Tools могут возникнуть некоторые проблемы во время доступа к Управляемому экземпляру. Все проблемы инструментов будут учтены до выхода общедоступной версии.
+В SQL Server Management Studio (SSMS) и SQL Server Data Tools (SSDT) могут возникать некоторые проблемы во время доступа к Управляемому экземпляру.
+
+- Использование пользователей и имен для входа Azure AD (**общедоступная предварительная версия**) в SSDT пока не поддерживается.
+- Создание скриптов с пользователями и именами для входа Azure AD (**общедоступная предварительная версия**) не поддерживается в SSMS.
 
 ### <a name="incorrect-database-names-in-some-views-logs-and-messages"></a>Неправильные имена базы данных в некоторых представлениях, журналах и сообщениях
 
@@ -451,7 +455,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 ### <a name="database-mail-profile"></a>Профиль компонента Database Mail
 
-Допускается только один профиль компонента Database Mail, и ему должно быть присвоено имя `AzureManagedInstance_dbmail_profile`. Это временное ограничение, которое скоро будет устранено.
+Допускается только один профиль компонента Database Mail, и ему должно быть присвоено имя `AzureManagedInstance_dbmail_profile`.
 
 ### <a name="error-logs-are-not-persisted"></a>Журналы ошибок, которые не сохраняются
 
@@ -461,7 +465,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Управляемый экземпляр помещает подробную информацию в журналы ошибок, и многие из них не являются связанными. В будущем объем информации в журналах ошибок будет уменьшен.
 
-**Возможное решение**: используйте пользовательскую процедуру для чтения журналов ошибок, которая отфильтрует некоторые несущественные записи. Дополнительные сведения см. в статье [Azure SQL DB Managed Instance – sp_readmierrorlog](https://blogs.msdn.microsoft.com/sqlcat/2018/05/04/azure-sql-db-managed-instance-sp_readmierrorlog/) (Управляемый экземпляр Базы данных Azure SQL — sp_readmierrorlog).
+**Возможное решение**: для чтения журналов ошибок настройте отфильтровывание некоторых несущественных записей. Дополнительные сведения см. в статье [Azure SQL DB Managed Instance – sp_readmierrorlog](https://blogs.msdn.microsoft.com/sqlcat/2018/05/04/azure-sql-db-managed-instance-sp_readmierrorlog/) (Управляемый экземпляр Базы данных Azure SQL — sp_readmierrorlog).
 
 ### <a name="transaction-scope-on-two-databases-within-the-same-instance-is-not-supported"></a>Не поддерживается разделение области транзакции на две базы данных внутри одного экземпляра
 
@@ -492,13 +496,13 @@ using (var scope = new TransactionScope())
 
 Несмотря на то что этот код работает с данными в одном экземпляре, для него требуется координатор распределенных транзакций (MSDTC).
 
-**Возможное решение**: используйте [SqlConnection.ChangeDatabase(String)](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlconnection.changedatabase), чтобы воспользоваться другой базой данных вместо двух подключений.
+**Возможное решение**: вместо двух подключений используйте [SqlConnection.ChangeDatabase(String)](https://docs.microsoft.com/dotnet/api/system.data.sqlclient.sqlconnection.changedatabase), чтобы подключиться к другой базе данных в том же контексте.
 
 ### <a name="clr-modules-and-linked-servers-sometime-cannot-reference-local-ip-address"></a>Модули среды CLR и связанные серверы иногда не могут ссылаться на локальный IP-адрес
 
-Модули среды CLR, помещенные в Управляемый экземпляр, связанные серверы и распределенные запросы, ссылающиеся на текущий экземпляр, иногда не могут разрешить IP-адрес локального экземпляра. Это временная проблема.
+Модули среды CLR, помещенные в Управляемый экземпляр, связанные серверы и распределенные запросы, ссылающиеся на текущий экземпляр, иногда не могут разрешить IP-адрес локального экземпляра. Это временная ошибка.
 
-**Возможное решение**: если есть возможность, используйте контекстные соединения в модуле среды CLR.
+**Возможное решение**: если есть возможность, используйте в модуле среды CLR контекстные подключения.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

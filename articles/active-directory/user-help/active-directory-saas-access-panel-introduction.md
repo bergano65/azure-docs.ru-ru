@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: lizross
 ms.reviewer: asteen
-ms.openlocfilehash: d9ed140d404387b94428cea5d925911806b62552
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: 129f77ec9ea4d4e2633e1ea0b02795bc0df26433
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51705862"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52834712"
 ---
 # <a name="what-is-the-myapps-portal"></a>Что такое портал MyApps?
 
@@ -41,11 +41,11 @@ ms.locfileid: "51705862"
 
 ## <a name="access-the-myapps-portal"></a>Вход на портал MyApps
 
-Чтобы получить доступ к порталу MyApps, необходимо перейти по ссылке `http://myapps.microsoft.com`.
+Чтобы получить доступ к порталу MyApps, необходимо перейти по ссылке `https://myapps.microsoft.com`.
 
-Если для страницы входа настроена пользовательская фирменная символика, ее можно загружать, добавив домен своей организации в URL-адрес (например, `http://myapps.microsoft.com/<your domain>.com`).
+Если для страницы входа настроена пользовательская фирменная символика, ее можно загружать, добавив домен своей организации в URL-адрес (например, `https://myapps.microsoft.com/<your domain>.com`).
 
-Вы можете использовать любое активное или проверенное доменное имя, настроенное на вашем портале Azure, как показано здесь: ![имя домена Wingtip Toys][2]  
+Вы можете использовать любое активное или проверенное доменное имя, настроенное на портале Azure, как показано ниже. ![Wingtip Toys — имя домена][2]  
 
 Предоставьте URL-адрес всем пользователям, которые входят в приложения, интегрированные с Azure AD.
 

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/15/2018
 ms.author: sethm
 ms.reviewer: anwestg
-ms.openlocfilehash: d65c8653bc039b591f1c0fb711dfe68e3fbacd88
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 66688ae762aa646fc72045836c4ec4671bf4b7b4
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353567"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52888517"
 ---
 # <a name="configure-deployment-sources"></a>Настройка источников развертывания
 
@@ -38,7 +38,8 @@ ms.locfileid: "49353567"
 ## <a name="view-deployment-sources-in-app-service-administration"></a>Просмотр источников развертывания в средстве администрирования службы приложений
 
 1. Войдите на портал администрирования Azure Stack (https://adminportal.local.azurestack.external) с правами администратора служб.
-2. Перейдите в раздел **Resource Providers** (Поставщики ресурсов) и выберите элемент **App Service Resource Provider Admin** (Администрирование поставщика ресурсов службы приложений).  ![Администрирование поставщика ресурсов службы приложений][1]
+2. Выберите **Все службы**, **Служба приложений**.
+    ![Администрирование поставщика ресурсов службы приложений][1]
 3. Щелкните **Source control configuration** (Настройка системы управления версиями). Вы можете просмотреть список всех настроенных источников развертывания.
     ![Администрирование поставщика ресурсов службы приложений — Настройка системы управления версиями][2]
 
@@ -73,8 +74,8 @@ ms.locfileid: "49353567"
 5. Введите значение в поле **Callback URL** (URL-адрес обратного вызова). В развертывании Azure Stack по умолчанию используется URL-адрес обратного вызова в формате https://portal.local.azurestack.external/TokenAuthorize. Если вы используете другой домен, введите его имя вместо домена azurestack.local. Чтобы интеграция с Bitbucket прошла успешно, в точности соблюдайте приведенное здесь написание URL-адреса с учетом регистра.
 6. Введите **URL-адрес**. Это должен быть URL-адрес портала Azure Stack, например https://portal.local.azurestack.external.
 7. В поле **Permissions** (Разрешения) необходимо выбрать:
-    - **Repositories** (Репозитории): *Read* (Чтение).
-    - **Webhooks** (Веб-перехватчики): *Read and write* (Чтение и запись).
+    - **Репозитории**: *чтение*
+    - **Веб-перехватчики**: *чтение и запись*
 8. Выберите команду **Сохранить**. Вы увидите новое зарегистрированное приложение, а также **ключ** и **секрет** для него в разделе **OAuth consumers** (Потребители OAuth).
     ![Список приложений в Bitbucket][9]
 9.  На новой вкладке или в новом окне браузера войдите на портал Azure Stack (https://adminportal.local.azurestack.external) с правами администратора служб.

@@ -9,12 +9,12 @@ ms.service: logic-apps
 ms.suite: integration
 ms.topic: article
 ms.date: 10/05/2018
-ms.openlocfilehash: 84529e1097678ba7a039ffaeec57a9293c93dafd
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 19e6693de673eae6fe0b885580975c4cefc35d60
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50229645"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52725154"
 ---
 # <a name="authenticate-and-access-resources-with-managed-identities-in-azure-logic-apps"></a>Проверка подлинности и получение доступа к ресурсам с помощью управляемых удостоверений в Azure Logic Apps
 
@@ -128,13 +128,13 @@ ms.locfileid: "50229645"
 
 1. На портале Azure перейдите к ресурсу Azure, к которому вы хотите назначить доступ для управляемого удостоверения. 
 
-1. В меню ресурса выберите **Управление доступом (IAM)**, а затем щелкните **Добавить**. 
+1. В меню ресурса выберите **Управление доступом (IAM)**, а затем щелкните **Добавить назначение ролей**. 
 
-   ![Добавление разрешений](./media/create-managed-service-identity/add-permissions-logic-app.png)
+   ![Добавление назначения ролей](./media/create-managed-service-identity/add-permissions-logic-app.png)
 
-1. В разделе **Добавить разрешения** выберите **Роль**, которая требуется удостоверению. 
+1. В меню **Добавить назначение ролей** выберите **роль**, которая требуется для удостоверения. 
 
-1. В свойстве **Назначение доступа** выберите значение **Пользователь, группа или приложение Azure AD**, если оно еще не выбрано.
+1. В свойстве **Назначение доступа** выберите значение **Пользователь, группа или субъект-служба Azure AD**, если оно еще не выбрано.
 
 1. В поле **Выбор** начните вводить имя приложения логики. Когда появится приложение логики, выберите его.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ServiceNow | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ServiceNow | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ServiceNow.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/04/2018
 ms.author: jeedes
-ms.openlocfilehash: 470805b2bb77e367887767b95e0f1e04d79c8f9d
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 5b7baffea8e718810a91ea9687a007d36c806aab
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48830741"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52850012"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-servicenow"></a>Руководство: интеграция Azure Active Directory с ServiceNow
+# <a name="tutorial-azure-active-directory-integration-with-servicenow"></a>Руководство. Интеграция Azure Active Directory с ServiceNow
 
 В этом руководстве описано, как интегрировать ServiceNow с Azure Active Directory (Azure AD).
 
@@ -41,7 +41,7 @@ ms.locfileid: "48830741"
 - подписка Azure AD;
 - Экземпляр или клиент ServiceNow версии Calgary или выше (для ServiceNow).
 - Экземпляр ServiceNow Express версии Helsinki или выше (для ServiceNow Express).
-- В клиенте ServiceNow должен быть включен [подключаемый модуль единого входа для нескольких поставщиков](http://wiki.servicenow.com/index.php?title=Multiple_Provider_Single_Sign-On#gsc.tab=0). Это можно сделать путем [отправки запроса на обслуживание](https://hi.service-now.com).
+- В клиенте ServiceNow должен быть включен [подключаемый модуль единого входа для нескольких поставщиков](https://wiki.servicenow.com/index.php?title=Multiple_Provider_Single_Sign-On#gsc.tab=0). Это можно сделать путем [отправки запроса на обслуживание](https://hi.service-now.com).
 - Чтобы применить автоматическую настройку, включите подключаемый модуль поддержки нескольких поставщиков для ServiceNow.
 
 > [!NOTE]
@@ -113,7 +113,7 @@ ms.locfileid: "48830741"
 
     ![Настройка единого входа](./media/servicenow-tutorial/tutorial_general_300.png)
 
-3. В диалоговом окне **Выбор метода единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
+3. В диалоговом окне **Выбрать метод единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
 
     ![Настройка единого входа](./media/servicenow-tutorial/tutorial_general_301.png)
 
@@ -121,7 +121,7 @@ ms.locfileid: "48830741"
 
     ![Настройка единого входа](./media/servicenow-tutorial/tutorial_general_302.png)
 
-5. В разделе **Базовая настройка SAML** выполните следующие действия.
+5. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Сведения о домене и URL-адресах единого входа приложения ServiceNow](./media/servicenow-tutorial/tutorial_servicenow_url.png)
 
@@ -301,7 +301,7 @@ ms.locfileid: "48830741"
 
     ![Настройка единого входа](./media/servicenow-tutorial/tutorial_general_300.png)
 
-3. В диалоговом окне **Выбор метода единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
+3. В диалоговом окне **Выбрать метод единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
 
     ![Настройка единого входа](./media/servicenow-tutorial/tutorial_general_301.png)
 
@@ -309,7 +309,7 @@ ms.locfileid: "48830741"
 
     ![Настройка единого входа](./media/servicenow-tutorial/tutorial_general_302.png)
 
-5. В разделе **Базовая настройка SAML** выполните следующие действия.
+5. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
     ![Настройка единого входа](./media/servicenow-tutorial/tutorial_servicenow_url.png)
 
@@ -320,7 +320,7 @@ ms.locfileid: "48830741"
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов ServiceNow](https://www.servicenow.com/support/contact-support.html).
 
-6. В разделе **Сертификат подписи SAML** щелкните **Загрузить** чтобы скачать **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+6. В разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
     ![Настройка единого входа](./media/servicenow-tutorial/tutorial_servicenow_certificates.png)
 
@@ -356,7 +356,7 @@ ms.locfileid: "48830741"
 
     ![Настройка единого входа](./media/servicenow-tutorial/ic7694975.png "Настройка единого входа")
 
-    a. В текстовое поле **Name** (Имя) введите имя конфигурации (например, **TestSAML2.0**).
+    a. В текстовое поле **Name** (Имя) введите имя конфигурации (например **TestSAML2.0**).
 
     b. Установите флажок **Активно**.
 
@@ -376,7 +376,7 @@ ms.locfileid: "48830741"
 
     ![Настройка единого входа](./media/servicenow-tutorial/ic7694982ex.png "Настройка единого входа")
 
-    a. В текстовое поле **Name** (Имя) введите имя конфигурации (например, **SAML 2.0**).
+    a. В текстовое поле **Name** (Имя) введите имя конфигурации (например **SAML 2.0**).
 
     b. В поле **Identity Provider URL** (URL-адрес поставщика удостоверений) вставьте значение поля **Идентификатор поставщика удостоверений**, скопированное на портале Azure.
 
@@ -432,7 +432,7 @@ ms.locfileid: "48830741"
 
     ![Создание тестового пользователя Azure AD](./media/servicenow-tutorial/create_aaduser_01.png) 
 
-3. В разделе свойств пользователя выполните описанные ниже действия.
+3. В разделе свойств пользователя сделайте следующее.
 
     ![Создание тестового пользователя Azure AD](./media/servicenow-tutorial/create_aaduser_02.png)
 

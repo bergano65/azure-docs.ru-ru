@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 02/07/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 93d4886d5c266555a5c61a121622943f218caa48
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 59078ae86adce861f9e4ad3d02e35b12fd345e60
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045480"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53077687"
 ---
 # <a name="copy-data-from-mariadb-using-azure-data-factory"></a>Копирование данных из MariaDB с помощью фабрики данных Azure 
 
@@ -30,7 +30,7 @@ ms.locfileid: "37045480"
 
 Фабрика данных Azure имеет встроенный драйвер для настройки подключения. Поэтому с использованием этого соединителя вам не нужно устанавливать драйверы вручную.
 
-Сейчас этот соединитель поддерживает MariaDB более ранней версии, чем 10.2.
+Сейчас этот соединитель поддерживает MariaDB версий 10.0 — 10.2.
 
 ## <a name="getting-started"></a>Приступая к работе
 
@@ -44,7 +44,7 @@ ms.locfileid: "37045480"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **MariaDB**. | Yes |
+| Тип | Свойству type необходимо задать значение **MariaDB** | Yes |
 | connectionString | Строка для подключения к MariaDB через интерфейс ODBC. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
 
@@ -85,7 +85,8 @@ ms.locfileid: "37045480"
         "linkedServiceName": {
             "referenceName": "<MariaDB linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -94,14 +95,14 @@ ms.locfileid: "37045480"
 
 Полный список разделов и свойств, используемых для определения действий, см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md). Этот раздел содержит список свойств, поддерживаемых источником MariaDB.
 
-### <a name="mariadbsource-as-source"></a>MariaDBSource в качестве источника
+### <a name="mariadb-as-source"></a>MariaDB в качестве источника
 
 Чтобы копировать данные из MariaDB, задайте для типа источника в действии копирования значение **MariaDBSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **MariaDBSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Yes |
+| Тип | Свойству type источника действия копирования необходимо задать значение **MariaDBSource** | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

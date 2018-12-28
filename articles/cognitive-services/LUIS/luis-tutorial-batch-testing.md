@@ -1,23 +1,24 @@
 ---
-title: 'Руководство 2. Пакетное тестирование с набором из 1000 высказываний '
+title: Пакетное тестирование
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве показано, как использовать пакетное тестирование для поиска и устранения проблем с прогнозированием высказываний в приложении.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: e5155caa26669cd98b679eec611334ee5c048fca
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 06981972dbdb95b8597bab5028c2d86e0594caf3
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47162547"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53106045"
 ---
-# <a name="tutorial-2-batch-test-data-sets"></a>Руководство 2. Наборы данных для пакетного тестирования
+# <a name="tutorial-2-batch-test-data-sets"></a>Руководство 2. Пакетное тестирование наборов данных
 
 В этом руководстве показано, как использовать пакетное тестирование для поиска и устранения проблем с прогнозированием высказываний в приложении.  
 
@@ -35,7 +36,7 @@ ms.locfileid: "47162547"
 
 <!-- green checkmark -->
 > [!div class="checklist"]
-> * Использование существующего приложения из руководства.
+> * Использовать существующее приложение из руководства
 > * Создание файла пакетного теста 
 > * Выполнение пакетного теста
 > * Просмотр результатов теста
@@ -48,13 +49,13 @@ ms.locfileid: "47162547"
 
 Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если у вас нет приложения HumanResources из предыдущего руководства, сделайте следующее:
+Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
 
-1.  Скачайте и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-review-HumanResources.json).
+1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-review-HumanResources.json).
 
 2. Импортируйте JSON-файл в новое приложение.
 
-3. В разделе **Управление** на вкладке **Версии** клонируйте версию и присвойте ей имя `batchtest`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе. 
+3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `batchtest`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе. 
 
 4. Обучите приложение.
 

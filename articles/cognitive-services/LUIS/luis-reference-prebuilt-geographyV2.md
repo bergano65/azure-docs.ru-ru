@@ -1,23 +1,24 @@
 ---
-title: Справочник по LUIS. Предварительно созданная сущность GeographyV2
+title: Предварительно созданная сущность GeographyV2
 titleSuffix: Azure Cognitive Services
 description: В этой статье описана предварительно созданная сущность GeographyV2 в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
 manager: cjgronlund
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: 3559bc02944f88f486104d4d9553f0c45a1f1754
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a81c97cf8883d2a3629d1eb1b9f6137609c6edda
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46983418"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53135106"
 ---
-# <a name="geographyv2-entity"></a>Сущность GeographyV2
+# <a name="geographyv2-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность GeographyV2 для приложения LUIS
 Предварительно созданная сущность GeographyV2 определяет расположения. Так как эта сущность уже обучена, добавлять примеры высказываний, содержащие сущность GeographyV2, в намерения приложения не нужно. Сущность GeographyV2 поддерживает английский [язык и региональные параметры](luis-reference-prebuilt-entities.md).
 
 ## <a name="subtypes"></a>Подтипы
@@ -35,7 +36,7 @@ ms.locfileid: "46983418"
 ## <a name="resolution-for-geographyv2-entity"></a>Разрешение для сущности GeographyV2
 В следующем примере показано разрешение для сущности **builtin.geographyV2**.
 
-```JSON
+```json
 {
     "query": "Carol is visiting the sphinx in gizah egypt in africa before heading to texas",
     "topScoringIntent": {

@@ -5,14 +5,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/29/2018
+ms.date: 11/27/2018
 ms.author: raynew
-ms.openlocfilehash: 77387b52003923dffce7519df9cca47fad8f6e6c
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 64464772b82a64324a706d1e09e7d2a75b7eb66a
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51007439"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52834321"
 ---
 # <a name="architecture-for-vmwarephysical-server-replication-to-a-secondary-on-premises-site"></a>Архитектура для репликации виртуальных машин VMware или физических серверов в дополнительном локальном расположении
 
@@ -37,7 +37,7 @@ ms.locfileid: "51007439"
 2. После начальной репликации агент на каждом компьютере отправляет сведения об изменениях дельта-репликации на сервер обработки.
 3. Сервер обработки оптимизирует эти данные и передает их на главный целевой сервер на дополнительном сайте. Сервер конфигурации управляет процессом репликации.
 
-**Рис. 6. Репликация VMware в VMware**
+**Рис. 6. Репликация из VMware в VMware**
 
 ![VMware в VMware](./media/site-recovery-components/vmware-to-vmware.png)
 

@@ -12,12 +12,12 @@ ms.author: MirekS
 ms.reviewer: GeneMi
 ms.date: 04/06/2018
 manager: craigg
-ms.openlocfilehash: 80944e73f21d75943d4fa71c7ac9500e47bab250
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: 0b8b83651fb5466f5d9a2f703667d7645b498e89
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47055532"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52958823"
 ---
 # <a name="use-activedirectoryinteractive-mode-to-connect-to-azure-sql-database"></a>Использование режима ActiveDirectoryInteractive для подключения к службе "База данных SQL Azure"
 
@@ -66,23 +66,23 @@ ms.locfileid: "47055532"
 
 1. Портал Azure &gt; **Azure Active Directory** &gt; **Регистрация приложения**
 
-    ![Регистрация приложения](media\active-directory-interactive-connect-azure-sql-db\sshot-create-app-registration-b20.png)
+    ![Регистрация приложения](media/active-directory-interactive-connect-azure-sql-db/sshot-create-app-registration-b20.png)
 
 2. Создается и отображается значение **Идентификатор приложения**.
 
-    ![Отображение идентификатора приложения](media\active-directory-interactive-connect-azure-sql-db\sshot-application-id-app-regis-mk49.png)
+    ![Отображение идентификатора приложения](media/active-directory-interactive-connect-azure-sql-db/sshot-application-id-app-regis-mk49.png)
 
 3. **Зарегистрированное приложение** &gt; **Параметры** &gt; **Требуемые разрешения** &gt; **Добавить**
 
-    ![Параметры разрешений для зарегистрированного приложения](media\active-directory-interactive-connect-azure-sql-db\sshot-registered-app-settings-required-permissions-add-api-access-c32.png)
+    ![Параметры разрешений для зарегистрированного приложения](media/active-directory-interactive-connect-azure-sql-db/sshot-registered-app-settings-required-permissions-add-api-access-c32.png)
 
 4. **Требуемые разрешения** &gt; **Добавить доступ через API** &gt; **Выбор API** &gt; **База данных SQL Azure**
 
-    ![Добавление доступа через API для службы "База данных SQL Azure"](media\active-directory-interactive-connect-azure-sql-db\sshot-registered-app-settings-required-permissions-add-api-access-Azure-sql-db-d11.png)
+    ![Добавление доступа через API для службы "База данных SQL Azure"](media/active-directory-interactive-connect-azure-sql-db/sshot-registered-app-settings-required-permissions-add-api-access-Azure-sql-db-d11.png)
 
 5. **Доступ к API** &gt; **Выберите разрешения** &gt; **Делегированные разрешения**
 
-    ![Делегирование разрешений API для службы "База данных SQL Azure"](media\active-directory-interactive-connect-azure-sql-db\sshot-add-api-access-azure-sql-db-delegated-permissions-checkbox-e14.png)
+    ![Делегирование разрешений API для службы "База данных SQL Azure"](media/active-directory-interactive-connect-azure-sql-db/sshot-add-api-access-azure-sql-db-delegated-permissions-checkbox-e14.png)
 
 
 ### <a name="b-set-azure-ad-admin-on-your-sql-database-server"></a>B. Определение администратора Azure AD на сервере службы "База данных SQL"
@@ -124,13 +124,13 @@ ms.locfileid: "47055532"
 
 Одно из пространств имен, на которых основывается пример C#, — **System.Data.SqlClient**. Особый интерес представляет перечисление **SqlAuthenticationMethod**. Это перечисление имеет следующие значения:
 
-- **SqlAuthenticationMethod.ActiveDirectory \*Interactive**\*:&nbsp; используйте его с именем пользователя Azure AD для обеспечения многофакторной идентификации (MFA).
+- **SqlAuthenticationMethod.ActiveDirectory *Interactive***:&nbsp;  используйте его с именем пользователя Azure AD, чтобы обеспечить многофакторную проверку подлинности (MFA).
     - Значение подробно описано в этой статье. Оно обеспечивает интерактивное взаимодействие с помощью диалоговых окон для ввода пароля пользователя, а затем аутентификацию MFA, если она принудительно задана для этого пользователя.
     - Это значение доступно начиная с .NET Framework версии 4.7.2.
 
-- **SqlAuthenticationMethod.ActiveDirectory \*Integrated**\*:&nbsp; следует использовать для *федеративной* учетной записи. При использовании федеративной учетной записи имя пользователя известно домену Windows. Этот метод не поддерживает MFA.
+- **SqlAuthenticationMethod.ActiveDirectory \*Integrated**\*:&nbsp;  следует использовать для *федеративной* учетной записи. При использовании федеративной учетной записи имя пользователя известно домену Windows. Этот метод не поддерживает MFA.
 
-- **SqlAuthenticationMethod.ActiveDirectory \*Password**\*:&nbsp; следует использовать для аутентификации, при которой требуется указать пользователя Azure AD и его пароль. Аутентификация выполняется в службе "База данных SQL Azure" Этот метод не поддерживает MFA.
+- **SqlAuthenticationMethod.ActiveDirectory *Password***:&nbsp;  следует использовать для проверки подлинности, при которой требуется указать пользователя Azure AD и его пароль. Аутентификация выполняется в службе "База данных SQL Azure" Этот метод не поддерживает MFA.
 
 
 
@@ -187,7 +187,7 @@ ms.locfileid: "47055532"
 
 - Пространство имен **Microsoft.IdentityModel.Clients.ActiveDirectory**:
     - поиск:&nbsp; [https://docs.microsoft.com/dotnet/api/?term=Microsoft.IdentityModel.Clients.ActiveDirectory](https://docs.microsoft.com/dotnet/api/?term=Microsoft.IdentityModel.Clients.ActiveDirectory);
-    - прямая ссылка:&nbsp; [Microsoft.IdentityModel.Clients.ActiveDirectory](https://docs.microsoft.com/dotnet/api/microsoft.identitymodel.clients.activedirectory).
+    - прямая ссылка:&nbsp; [Microsoft.IdentityModel.Clients.ActiveDirectory](https://docs.microsoft.com/dotnet/api/microsoft.identitymodel.clients.activedirectory)
 
 
 #### <a name="c-source-code-in-two-parts"></a>Исходный код C#, в двух частях

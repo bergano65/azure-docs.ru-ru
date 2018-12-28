@@ -1,21 +1,22 @@
 ---
-title: Создание пользовательских слов для активации
+title: Создание пользовательских слов для активации с помощью службы "Речь"
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как создать пользовательские слова для активации пакета SDK для речевых устройств.
+description: Устройство всегда ожидает на звуковом входе слово (или фразу) для активации. Когда пользователь произносит слово для активации, устройство передает в облако всю следующую за этим словом законченную фразу. Настройка слова для активации — это эффективный способ выделить устройство среди конкурентов и укрепить позиции торговой марки.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: conceptual
-ms.date: 04/28/2018
+ms.date: 12/06/2018
 ms.author: erhopf
-ms.openlocfilehash: 5f138aee9dfa91e285591e5d50c14465ad32b77d
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.custom: seodec18
+ms.openlocfilehash: a9a316eccc0b5e237d5a48c833f53ea3d80aae1e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49469084"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53082940"
 ---
 # <a name="create-a-custom-wake-word-by-using-the-speech-service"></a>Создание пользовательских слов для активации с помощью службы "Речь"
 
@@ -50,18 +51,18 @@ ms.locfileid: "49469084"
 
 1. Откройте [портал Пользовательской службы распознавания речи](https://cris.ai/).
 
-1. Создайте учетную запись с адресом электронной почты, на который вы получили приглашение для регистрации в Azure Active Directory. 
+1. Создайте учетную запись с адресом электронной почты, на который вы получили приглашение для регистрации в Azure Active Directory.
 
     ![Создание учетной записи](media/speech-devices-sdk/wake-word-1.png)
- 
+
 1. Страница **пользовательских слов для активации** недоступна обычным посетителям, и вы не можете попасть на нее по прямым ссылкам на портале. Функция "Распознавание речи" требует подписки Azure, но функция "Пользовательское слово для активации" не требует. Если появится страница ошибки **Подписки не найдены.**, просто замените **"Subscriptions?errorMessage=No%20Subscriptions%20found"** на "**customkws**" в URL-адресе и нажмите клавишу ВВОД. URL-адрес должен быть одним из следующих: https://westus.cris.ai/customkws, https://eastasia.cris.ai/customkws или https://northeurope.cris.ai/customkws, в зависимости от того, где находится ваш регион.
 
     ![Страница пользовательского слова для активации скрыта](media/speech-devices-sdk/wake-word-4.png)
- 
+
 1. Введите выбранное слово для активации и щелкните **Submit the word** (Отправить слово).
 
     ![Ввод выбранного слова для активации](media/speech-devices-sdk/wake-word-5.png)
- 
+
 1. Создание нужных файлов может занять несколько минут. В окне браузера в это время будет отображаться вращающийся круг. Через некоторое время появится информационная панель с предложением скачать ZIP-файл.
 
     ![Получение ZIP-файла](media/speech-devices-sdk/wake-word-6.png)
@@ -76,4 +77,3 @@ ms.locfileid: "49469084"
 
 > [!div class="nextstepaction"]
 > [Регистрация для получения пакета SDK для речевых устройств](get-speech-devices-sdk.md)
-

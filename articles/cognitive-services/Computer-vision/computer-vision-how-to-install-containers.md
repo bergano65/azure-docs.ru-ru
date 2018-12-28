@@ -1,21 +1,22 @@
 ---
-title: Как устанавливать и запускать контейнеры
-titlesuffix: Computer Vision - Cognitive Services - Azure
+title: Установка и запуск контейнеров
+titlesuffix: Computer Vision - Azure Cognitive Services
 description: В этом пошаговом руководстве показано, как скачивать, устанавливать и выполнять контейнеры компьютерного зрения.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: diberry
-ms.openlocfilehash: 67dbf3bdf6631785fc876283847e36349e857a77
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 9964be07c578cd1cafd93328bffe972483123e03
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52634648"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53077041"
 ---
 # <a name="install-and-run-containers"></a>Установка и запуск контейнеров
 
@@ -31,15 +32,15 @@ ms.locfileid: "52634648"
 
 Прежде чем использовать контейнер распознавания текста, необходимо выполнить следующие условия:
 
-**Модуль Docker.** Модуль Docker должен быть установлен в локальной среде. Docker предоставляет пакеты для настройки среды с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Linux](https://docs.docker.com/engine/installation/#supported-platforms) и [Windows](https://docs.docker.com/docker-for-windows/). В Windows Docker должен быть настроен для поддержки контейнеров Linux. Контейнеры Docker также можно развертывать непосредственно в [Службе Azure Kubernetes](/azure/aks/), [Экземплярах контейнеров Azure](/azure/container-instances/) или в кластере [Kubernetes](https://kubernetes.io/), развернутом в [Azure Stack](/azure/azure-stack/). Дополнительные сведения о развертывании Kubernetes в Azure Stack см. в [этой статье](/azure/azure-stack/user/azure-stack-solution-template-kubernetes-deploy).
+**Модуль Docker**. Модуль Docker должен быть установлен в локальной среде. Docker предоставляет пакеты для настройки среды с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Linux](https://docs.docker.com/engine/installation/#supported-platforms) и [Windows](https://docs.docker.com/docker-for-windows/). В Windows Docker должен быть настроен для поддержки контейнеров Linux. Контейнеры Docker также можно развертывать непосредственно в [Службе Azure Kubernetes](/azure/aks/), [Экземплярах контейнеров Azure](/azure/container-instances/) или в кластере [Kubernetes](https://kubernetes.io/), развернутом в [Azure Stack](/azure/azure-stack/). Дополнительные сведения о развертывании Kubernetes в Azure Stack см. в [этой статье](/azure/azure-stack/user/azure-stack-solution-template-kubernetes-deploy).
 
 Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure.
 
-**Опыт работы с Реестром контейнеров Майкрософт и Docker.** Требуется базовое представление о Реестре контейнеров Майкрософт и понятиях Docker, таких как реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.  
+**Опыт работы с Реестром контейнеров Майкрософт и Docker**. Требуется базовое представление о Реестре контейнеров Майкрософт и понятиях Docker, о реестрах, репозиториях, контейнерах и образах контейнеров, а также знание основных команд `docker`.  
 
 Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).
 
-### <a name="server-requirements-and-recommendations"></a>Требования к серверу и рекомендации
+### <a name="container-requirements-and-recommendations"></a>Требования к контейнеру и рекомендации
 
 Контейнеру распознавания текста необходимо как минимум 1 ядро ЦП частотой не менее 2,6 гигагерц (ГГц) и 8 гигабайт (ГБ) выделенной памяти, но рекомендуется как минимум 2 ядра ЦП и 8 ГБ выделенной памяти.
 
@@ -161,8 +162,10 @@ http://localhost:5000/
 * Образы контейнеров скачиваются из частного реестра контейнеров в Azure.
 * Образы контейнеров, которые выполняются в Docker.
 * Указав URI узла контейнера, пакет SDK или REST API можно использовать для вызова операций в контейнерах компьютерного зрения.
-* При создании контейнера необходимо указать данные для выставления счетов.
-* ** Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например, анализируемые изображения или тексты).  
+* При создании экземпляра контейнера нужно указать данные для выставления счетов.
+
+> [!IMPORTANT]
+> Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например, анализируемые изображения или тексты).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

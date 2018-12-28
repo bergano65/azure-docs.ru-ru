@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложением CS Stars | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с CS Stars | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и CS Stars.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2017
 ms.author: jeedes
-ms.openlocfilehash: 74ecfe50170f35420d3cf5dc5531b0fe1046889d
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 14b5f13070554328a47cd80185efb487d887a6d5
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39433856"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52832917"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cs-stars"></a>Руководство. Интеграция Azure Active Directory с CS Stars
 
@@ -117,7 +117,7 @@ ms.locfileid: "39433856"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.csstars.com/enterprise/`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов CS Stars](http://www.marshclearsight.com/support/). 
+    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов CS Stars](https://www.marshclearsight.com/support/). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -127,11 +127,11 @@ ms.locfileid: "39433856"
 
     ![Настройка единого входа](./media/cs-stars-tutorial/tutorial_general_400.png) 
 <CS>
-1. Чтобы настроить единый вход на стороне **CS Stars**, отправьте в [службу поддержки CS Stars](http://www.marshclearsight.com/support/) скачанный **XML-файл метаданных**. 
+1. Чтобы настроить единый вход на стороне **CS Stars**, отправьте в [службу поддержки CS Stars](https://www.marshclearsight.com/support/) скачанный **XML-файл метаданных**. 
 <CE>
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -169,7 +169,7 @@ ms.locfileid: "39433856"
 
 Цель этого раздела — создать пользователя с именем Britta Simon в CS Stars.
 
-Чтобы создать пользователя в CS Stars, обратитесь в [службу поддержки CS Stars](http://www.marshclearsight.com/support/).
+Чтобы создать пользователя в CS Stars, обратитесь в [службу поддержки CS Stars](https://www.marshclearsight.com/support/).
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

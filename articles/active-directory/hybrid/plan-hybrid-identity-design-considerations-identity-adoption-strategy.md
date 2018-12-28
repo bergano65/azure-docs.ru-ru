@@ -16,12 +16,12 @@ ms.date: 05/30/2018
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: 5aeefe82255d40938eff09d7920e2fd5aca94c95
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 9cfd3f32f6293d5760c4a4ddcf40428a2b9b70f8
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46308303"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52999088"
 ---
 # <a name="define-a-hybrid-identity-adoption-strategy"></a>Определение стратегии внедрения гибридной идентификации
 В этой статье вы определяете стратегию внедрения гибридной идентификации для гибридных решений идентификации, которая соответствует бизнес-требованиям, выработанным вами с помощью таких статей:
@@ -92,7 +92,7 @@ ms.locfileid: "46308303"
 * Переход с Office на пассивную проверку подлинности обеспечивает совместимость с поставщиками удостоверений SAML 2.0, но только отдельно для каждого клиента.
 
 > [!NOTE]
-> Самый последний список можно найти в статье https://aka.ms/ssoproviders.
+> Последнюю версию списка см. в статье [Список совместимости с федерацией Azure AD](how-to-connect-fed-compatibility.md).
 > 
 > 
 

@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: cherylmc
-ms.openlocfilehash: 7d76827a4e4ba4ccb7a146c5f8282000d143eb35
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 4de4a5a659f38577c1261b169a43df560bf05495
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51624443"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52971272"
 ---
 # <a name="configure-openvpn-clients-for-azure-vpn-gateway-preview"></a>Настройка клиентов OpenVPN для VPN-шлюза Azure (предварительная версия)
 
@@ -67,7 +67,7 @@ ms.locfileid: "51624443"
 2. Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с "New-AzureRmVpnClientConfiguration" в PowerShell.
 3. Распакуйте профиль. Откройте файл конфигурации vpnconfig.ovpn из папки OpenVPN в Блокноте.
 4. Заполните раздел сертификата клиента подключения "точка — сеть" открытым ключом сертификата клиента P2S в формате base64. В сертификате с форматированием PEM вы можете просто открыть файл CER и скопировать ключ в формате base64, находящийся между заголовками сертификата. Дополнительные сведения о том, как экспортировать сертификат для получения закодированного открытого ключа, см. в разделе [Экспорт открытого ключа (CER)](vpn-gateway-certificates-point-to-site.md#cer).
-5. Заполните раздел секретного ключа закрытым ключом сертификата клиента P2S в base64. Дополнительные сведения о том, как извлечь закрытый ключ, см. в разделе [Извлечение закрытого ключа](https://www.geotrust.eu/en/support/manuals/microsoft/all+windows+servers/export+private+key+or+certificate/).
+5. Заполните раздел секретного ключа закрытым ключом сертификата клиента P2S в base64. Дополнительные сведения о том, как извлечь закрытый ключ, см. в разделе [Экспорт закрытого ключа](https://openvpn.net/community-resources/how-to/#pki).
 6. Не изменяйте остальные поля. Для подключения к VPN используйте заполненную конфигурацию на входе клиента.
 7. Дважды щелкните файл профиля, чтобы создать профиль в Tunnelblik.
 8. Запустите Tunnelblik из папки приложения.

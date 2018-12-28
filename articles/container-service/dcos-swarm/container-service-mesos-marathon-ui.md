@@ -1,5 +1,5 @@
 ---
-title: Управление кластером DC/OS Azure с помощью пользовательского интерфейса Marathon
+title: Управление кластером DC/OS Azure с помощью пользовательского интерфейса Marathon (не рекомендуется)
 description: Развертывание контейнеров в кластере службы контейнеров Azure с помощью веб-интерфейса Marathon.
 services: container-service
 author: iainfoulds
@@ -9,21 +9,23 @@ ms.topic: article
 ms.date: 04/04/2017
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: a22bddf48f97d961d481e2aedb42f7d645f3e678
-ms.sourcegitcommit: d551ddf8d6c0fd3a884c9852bc4443c1a1485899
+ms.openlocfilehash: 41b6ce24e7c2e8565d7c2f17c32b8b6e1f38ea4f
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37903087"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52992480"
 ---
-# <a name="manage-an-azure-container-service-dcos-cluster-through-the-marathon-web-ui"></a>Управление контейнером DC/OS службы контейнеров Azure с помощью веб-интерфейса Marathon
+# <a name="deprecated-manage-an-azure-container-service-dcos-cluster-through-the-marathon-web-ui"></a>Управление контейнером DC/OS службы контейнеров Azure с помощью веб-интерфейса Marathon (не рекомендуется)
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
 DC/OS — это среда для развертывания и масштабирования кластерных рабочих нагрузок, в которой используемое оборудование рассматривается абстрактно. На базе DC/OS работает платформа, которая управляет планированием и выполнением вычислительных рабочих нагрузок.
 
 Хотя доступны платформы для многих популярных рабочих нагрузок, в этом документе описывается, как приступить к развертыванию контейнеров с помощью Marathon. 
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для выполнения этих примеров вам потребуется кластер DC/OS, настроенный в службе контейнеров Azure. Необходимо также удаленное подключение к этому кластеру. Дополнительные сведения об этих компонентах см. в следующих статьях.
 
 * [Развертывание кластера службы контейнеров Azure](container-service-deployment.md)

@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с iWellnessNow | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с iWellnessNow | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и iWellnessNow.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: c260b32dc6f659ca4cc1b4c3f59859f75ba999d0
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b02a5ec5a68743e148bcfef3c631d7777fd0a067
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39447379"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52871702"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-iwellnessnow"></a>Руководство по интеграции Azure Active Directory с iWellnessNow
+# <a name="tutorial-azure-active-directory-integration-with-iwellnessnow"></a>Руководство. Интеграция Azure Active Directory с iWellnessNow
 
 В этом руководстве описано, как интегрировать iWellnessNow с Azure Active Directory (Azure AD).
 
@@ -179,7 +179,7 @@ ms.locfileid: "39447379"
  
 ### <a name="create-an-iwellnessnow-test-user"></a>Создание тестового пользователя iWellnessNow
 
-В этом разделе описано, как создать пользователя Britta Simon в iWellnessNow. Обратитесь к [группе поддержки iWellnessNow](mailto:info@iwellnessnow.com), чтобы добавить пользователей на платформу iWellnessNow. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в iWellnessNow. Обратитесь в службу  [технической поддержки iWellnessNow](mailto:info@iwellnessnow.com), чтобы добавить пользователей на платформу iWellnessNow. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -216,7 +216,7 @@ ms.locfileid: "39447379"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку "iWellnessNow" на панели доступа, вы автоматически войдете в приложение iWellnessNow.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -1,18 +1,18 @@
 ---
 title: Добавление runbook службы автоматизации Azure в планы восстановления Site Recovery | Документация Майкрософт
 description: Сведения о том, как расширить планы восстановления с помощью службы автоматизации Azure для аварийного восстановления с использованием Azure Site Recovery.
-author: ruturaj
+author: rajani-janaki-ram
 manager: gauravd
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 07/06/2018
-ms.author: ruturajd@microsoft.com
-ms.openlocfilehash: 1853d8d23aeb96cda3148c6c9e7668b9c2c28924
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.date: 11/27/2018
+ms.author: rajanaki
+ms.openlocfilehash: 5587d86cb4b3a213961ce46e77c75e947de2d29e
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51244021"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52866378"
 ---
 # <a name="add-azure-automation-runbooks-to-recovery-plans"></a>Добавление модулей Runbook службы автоматизации Azure в планы восстановления
 В этой статье описывается, как Azure Site Recovery интегрируется со службой автоматизации Azure для обеспечения расширяемости планов восстановления. Планы восстановления могут управлять восстановлением виртуальных машин, защищенных с помощью Azure Site Recovery. Планы восстановления подходят как для репликации во вторичное облако, так и для репликации в Azure. Они также помогают реализовать **точное**, **воспроизводимое** и **автоматическое** восстановление. Если выполняется отработка отказа с переносом виртуальных машин в Azure, интеграция со службой автоматизации Azure позволяет расширить планы восстановления и предоставляет возможность выполнять Runbook, а это, в свою очередь, позволяет значительно облегчить выполнение задач автоматизации.
@@ -29,7 +29,7 @@ ms.locfileid: "51244021"
 
 2. Щелкните правой кнопкой мыши элемент **Группа 1: запуск**, а затем выберите **Добавить завершающее действие**.
 
-    ![Щелкните правой кнопкой мыши элемент "Группа 1: запуск" и добавьте завершающее действие.](media/site-recovery-runbook-automation-new/customize-rp.png)
+    ![Щелканье правой кнопкой мыши элемента "Группа 1: запуск" и добавление завершающего действия](media/site-recovery-runbook-automation-new/customize-rp.png)
 
 3. Нажмите **Выбрать сценарий**.
 
@@ -213,7 +213,7 @@ workflow AddPublicIPAndNSG {
 4. Используйте эту переменную в модуле runbook. Если указанный GUID виртуальной машины находится в контексте плана восстановления, примените группу NSG к виртуальной машине.
 
     ```
-    $VMDetailsObj = Get-AutomationVariable -Name $RecoveryPlanContext.RecoveryPlanName
+    $VMDetailsObj = (Get-AutomationVariable -Name $RecoveryPlanContext.RecoveryPlanName).ToObject([hashtable])
     ```
 
 4. В модуле Runbook выполните циклический перебор виртуальных машин, входящих в контекст плана восстановления, проверяя наличие этих виртуальных машин в **$VMDetailsObj**. Если встречается совпадение, примените группу NSG, используя свойства переменной.
@@ -223,13 +223,13 @@ workflow AddPublicIPAndNSG {
         $vmMap = $RecoveryPlanContext.VmMap
 
         foreach($VMID in $VMinfo) {
-            Write-output $VMDetailsObj.value.$VMID
-
-            if ($VMDetailsObj.value.$VMID -ne $Null) { #If the VM exists in the context, this will not b Null
+            $VMDetails = $VMDetailsObj[$VMID].ToObject([hashtable]);
+            Write-output $VMDetails
+            if ($VMDetails -ne $Null) { #If the VM exists in the context, this will not be Null
                 $VM = $vmMap.$VMID
                 # Access the properties of the variable
-                $NSGname = $VMDetailsObj.value.$VMID.'NSGName'
-                $NSGRGname = $VMDetailsObj.value.$VMID.'NSGResourceGroupName'
+                $NSGname = $VMDetails.NSGName
+                $NSGRGname = $VMDetails.NSGResourceGroupName
 
                 # Add code to apply the NSG properties to the VM
             }

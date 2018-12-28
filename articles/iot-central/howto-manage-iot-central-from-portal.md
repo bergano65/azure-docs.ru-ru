@@ -8,12 +8,12 @@ ms.author: tanmayb
 ms.date: 08/30/2018
 ms.topic: conceptual
 manager: peterpr
-ms.openlocfilehash: 2977c3d1656bacf8ba8d34080641ea6c5cdf5bbe
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 20b1c7500587324f6f7dbb5cc679a3603eff56bd
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50957137"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52963833"
 ---
 # <a name="manage-iot-central-from-the-azure-portal"></a>Управление IoT Central на портале Azure 
 Помимо создания приложений IoT Central и управления ими на веб-сайте IoT Central, решением IoT Central можно также управлять на портале Azure. В этой статье разбираются возможные задачи и способ их выполнения.
@@ -21,23 +21,23 @@ ms.locfileid: "50957137"
 ## <a name="create-iot-central-applications"></a>Создание приложений IoT Central
 Чтобы создать приложение, перейдите на [портал Azure](https://ms.portal.azure.com) и щелкните "Создать ресурс" в главном меню навигации слева. 
 
-![Портал управления: меню навигации](media\howto-manage-iot-central-from-portal\image0.png)
+![Портал управления: меню навигации](media/howto-manage-iot-central-from-portal/image0.png)
 
 В строке поиска введите запрос "IoT Central".
 
-![Портал управления: поиск](media\howto-manage-iot-central-from-portal\image0a.png)
+![Портал управления: поиск](media/howto-manage-iot-central-from-portal/image0a.png)
 
 В результатах поиска щелкните пункт "Приложение IoT Central".
 
-![Портал управления: результаты поиска](media\howto-manage-iot-central-from-portal\image0b.png)
+![Портал управления: результаты поиска](media/howto-manage-iot-central-from-portal/image0b.png)
 
 Далее нажмите кнопку "Создать", чтобы открыть форму, которую необходимо заполнить.
 
-![Портал управления: ресурс IoT Central](media\howto-manage-iot-central-from-portal\image0c.png)
+![Портал управления. Ресурс IoT Central](media/howto-manage-iot-central-from-portal/image0c.png)
 
 Заполните все поля в форме. Эта форма похожа на ту, которую необходимо заполнить при создании приложения на веб-сайте IoT Central. Дополнительные сведения о заполнении каждого поля см. в кратком руководстве [Создание приложения Azure IoT Central](quick-deploy-iot-central.md). 
 
-![Портал управления: создание ресурса IoT Central](media\howto-manage-iot-central-from-portal\image1.png)  
+![Портал управления: создание ресурса IoT Central](media/howto-manage-iot-central-from-portal/image1.png)  
 
 Заполнив все поля, нажмите кнопку "Создать".
 
@@ -46,19 +46,19 @@ ms.locfileid: "50957137"
 
 Сначала выберите пункт "Все ресурсы" в главном меню навигации слева. В поле поиска введите имя приложения и найдите его в списке ресурсов. Затем щелкните приложение IoT Central, которым необходимо управлять.
 
-![Портал управления: управление ресурсами](media\howto-manage-iot-central-from-portal\image2.png)
+![Портал управления: управление ресурсами](media/howto-manage-iot-central-from-portal/image2.png)
 
 Чтобы перейти к приложению, щелкните URL-адрес приложения IoT Central.
 
-![Портал управления: управление ресурсами](media\howto-manage-iot-central-from-portal\image3.png)
+![Портал управления: управление ресурсами](media/howto-manage-iot-central-from-portal/image3.png)
 
 Чтобы перенести приложение в другую группу ресурсов, щелкните ссылку **изменить** рядом с группой ресурсов. В появившемся диалоговом окне выберите группу ресурсов, в которую необходимо перенести это приложение.
 
-![Портал управления: управление ресурсами](media\howto-manage-iot-central-from-portal\image4.png)
+![Портал управления: управление ресурсами](media/howto-manage-iot-central-from-portal/image4.png)
 
 Чтобы перенести приложение в другую подписку, щелкните ссылку **изменить** рядом с подпиской. В появившемся диалоговом окне выберите подписку, в которую необходимо перенести это приложение.
 
-![Портал управления: управление ресурсами](media\howto-manage-iot-central-from-portal\image5.png)
+![Портал управления: управление ресурсами](media/howto-manage-iot-central-from-portal/image5.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

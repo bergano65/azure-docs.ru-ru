@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: big-compute
 ms.date: 07/22/2016
 ms.author: danlep
-ms.openlocfilehash: 9032a0b68c4c8789010b0304b64a63d4924521fb
-ms.sourcegitcommit: 744747d828e1ab937b0d6df358127fcf6965f8c8
+ms.openlocfilehash: a8744afe3ec3e83e4a543942441118356730347c
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42142706"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52957247"
 ---
 # <a name="run-openfoam-with-microsoft-hpc-pack-on-a-linux-rdma-cluster-in-azure"></a>Выполнение заданий OpenFoam в кластере Linux RDMA в Azure с помощью пакета Microsoft HPC
 В этой статье показан один из способов запуска OpenFoam на виртуальных машинах Azure. Здесь мы развернем кластер пакета Microsoft HPC в Azure с использованием вычислительных узлов Linux и запустим задание [OpenFoam](http://openfoam.com/), используя библиотеку Intel MPI. Для вычислительных узлов можно использовать виртуальные машины Azure с поддержкой RDMA. Так они смогут взаимодействовать по сети Azure RDMA. Другие варианты запуска OpenFoam в Azure включают в себя полностью настроенные коммерческие образы, доступные на сайте Marketplace, например образ [OpenFoam 2.3 на основе CentOS 6](https://azuremarketplace.microsoft.com/marketplace/apps/cfd-direct.cfd-direct-from-the-cloud) от UberCloud, и запуск посредством [пакетной службы Azure](https://blogs.technet.microsoft.com/windowshpc/2016/07/20/introducing-mpi-support-for-linux-on-azure-batch/). 
@@ -46,7 +46,7 @@ OpenFOAM (англ. Open Field Operation and Manipulation) — это пакет
   * После развертывания узлов Linux установите SSH-подключение для выполнения дополнительных задач администрирования. Сведения о SSH-подключении для каждой виртуальной машины Linux можно найти на портале Azure.  
 * **Intel MPI**. Для запуска OpenFOAM на вычислительных узлах SLES 12 HPC в Azure вам потребуется установить библиотеку среды выполнения Intel MPI Library 5, которую можно скачать с сайта [Intel.com](https://software.intel.com/en-us/intel-mpi-library/). (Среда выполнения Intel MPI 5 предустановлена в образах на основе CentOS для HPC.)  Позже установите Intel MPI на вычислительные узлы Linux, если это будет необходимо. Для этого после регистрации на сайте Intel перейдите по ссылке в письме с подтверждением на соответствующую веб-страницу. Затем скопируйте ссылку для скачивания TGZ-файла для соответствующей версии Intel MPI. В этой статье используется Intel MPI версии 5.0.3.048.
 * **Исходный пакет OpenFOAM.** Загрузите исходный пакет OpenFOAM для Linux на сайте [OpenFOAM Foundation](http://openfoam.org/download/2-3-1-source/). В этой статье используется пакет версии 2.3.1, доступный для загрузки в виде файла OpenFOAM-2.3.1.tgz. Инструкции по распаковке и компиляции OpenFOAM на вычислительных узлах Linux приведены далее в этой статье.
-* **EnSight** (необязательно). Для просмотра результатов моделирования OpenFOAM скачайте и установите программу [EnSight](https://ensighttransfe.wpengine.com/direct-access-downloads/), предназначенную для визуализации и анализа данных. Сведения о лицензировании и загрузке приведены на сайте EnSight.
+* **EnSight** (необязательно). Для просмотра результатов моделирования OpenFOAM скачайте и установите программу [EnSight](https://www.ansys.com/products/platform/ansys-ensight/data-interfaces), предназначенную для визуализации и анализа данных. Сведения о лицензировании и загрузке приведены на сайте EnSight.
 
 ## <a name="set-up-mutual-trust-between-compute-nodes"></a>Настройка взаимного доверия между вычислительными узлами
 Чтобы задание выполнялось на нескольких узлах Linux одновременно, сначала необходимо настроить взаимное доверие узлов (через протокол **rsh** или **ssh**). При создании кластера HPC с помощью сценария развертывания Microsoft HPC IaaS сценарий автоматически настраивает постоянное взаимное доверие для указанной учетной записи администратора. Для учетных записей пользователей без прав администратора, создаваемых в домене кластера, взаимное доверие между узлами должно создаваться в момент назначения им задания и уничтожаться после завершения задания. Чтобы реализовать это для всех пользователей, укажите пару ключей RSA в кластере, который пакет HPC использует для установления отношения доверия.
@@ -226,7 +226,7 @@ clusrun /nodegroup:LinuxNodes cp /openfoam/settings.sh /etc/profile.d/
 4. Если вы используете стандартные параметры, представленные в этом примере, выполнение может занять несколько десятков минут. Поэтому для ускорения выполнения можно изменить некоторые параметры. Простым решением является изменение переменных интервала времени deltaT и writeInterval в файле system/controlDict. Этот файл хранит все входные данные, связанные с управлением временем, чтением и записью данных в решении. Например, значение deltaT можно изменить с 0,05 на 0,5, а значение writeInterval — с 0,05 на 0,5.
    
    ![Изменение переменных шага][step_variables]
-5. Укажите нужные значения переменных в файле system/decomposeParDict. В этом примере используется 2 узла Linux с 8 ядрами, поэтому присвойте параметру numberOfSubdomains значение 16, а параметру n hierarchicalCoeffs — (1 1 16), что означает выполнение задания OpenFOAM с созданием 16 параллельных процессов. Дополнительные сведения см. в статье [OpenFOAM User Guide: 3.4 Running applications in parallel](http://cfd.direct/openfoam/user-guide/running-applications-parallel/#x12-820003.4) (Руководство пользователя OpenFOAM. 3.4. Запуск приложений в параллельном режиме).
+5. Укажите нужные значения переменных в файле system/decomposeParDict. В этом примере используется 2 узла Linux с 8 ядрами, поэтому присвойте параметру numberOfSubdomains значение 16, а параметру n hierarchicalCoeffs — (1 1 16), что означает выполнение задания OpenFOAM с созданием 16 параллельных процессов. Дополнительные сведения см. в [руководстве пользователя по параллельному выполнению приложений в OpenFOAM](http://cfd.direct/openfoam/user-guide/running-applications-parallel/#x12-820003.4).
    
    ![Разделение процессов][decompose]
 6. Выполните следующие команды из каталога sloshingTank3D, чтобы подготовить пример данных.
@@ -362,7 +362,7 @@ clusrun /nodegroup:LinuxNodes cp /openfoam/settings.sh /etc/profile.d/
 10. После завершения задания результаты можно будет найти в папке C:\OpenFoam\sloshingTank3D, а файлы журнала — в папке C:\OpenFoam.
 
 ## <a name="view-results-in-ensight"></a>Просмотр результатов в EnSight
-Для отображения и анализа результатов заданий OpenFOAM можно использовать [EnSight](http://www.ensight.com/). Дополнительные сведения о визуализации и анимации в EnSight см. в этом [видеоролике](http://www.ensight.com/ensight.com/envideo/).
+Для отображения и анализа результатов заданий OpenFOAM можно использовать [EnSight](http://www.ensight.com/). 
 
 1. Установив программное обеспечение EnSight на головном узле, запустите его.
 2. Откройте файл C:\OpenFoam\sloshingTank3D\EnSight\sloshingTank3D.case.

@@ -1,18 +1,19 @@
 ---
 title: Автоматизация задач Azure Analysis Services с помощью субъектов-служб | Документация Майкрософт
+description: Сведения о создании субъекта-службы для автоматизации задач Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 12/06/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b9a91b478ea9012a1d041fc102765890954c2fbb
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 2acf39a7537d25b05999b7b2813fa66d7f778724
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49956193"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52995805"
 ---
 # <a name="automation-with-service-principals"></a>Автоматизация с помощью субъектов-служб
 
@@ -83,5 +84,5 @@ db.Model.SaveChanges();
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Вход с помощью Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps)   
+[Sign in with Azure PowerShell](https://docs.microsoft.com/powershell/azure/authenticate-azureps)  (Вход в Azure PowerShell)  
 [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md)   

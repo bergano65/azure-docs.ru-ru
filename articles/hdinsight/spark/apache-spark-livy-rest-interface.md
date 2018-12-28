@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: 6a0a2dec6beeecca3779f4b047d3b5fe6295a1e6
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 999b5ca1f229677b9e11068f4beaa6e2704afd3d
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52495299"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53012578"
 ---
 # <a name="use-apache-spark-rest-api-to-submit-remote-jobs-to-an-hdinsight-spark-cluster"></a>Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API
 
@@ -26,7 +26,7 @@ ms.locfileid: "52495299"
 
 * Кластер Apache Spark в HDInsight. Инструкции см. в статье [Начало работы. Создание кластера Apache Spark в HDInsight на платформе Linux и выполнение интерактивных запросов с помощью SQL Spark](apache-spark-jupyter-spark-sql.md).
 
-* [cURL](http://curl.haxx.se/). В этой статье для демонстрации вызовов REST API к кластеру HDInsight Spark используется cURL.
+* [cURL](https://curl.haxx.se/). В этой статье для демонстрации вызовов REST API к кластеру HDInsight Spark используется cURL.
 
 ## <a name="submit-an-apache-livy-spark-batch-job"></a>Отправка пакетного задания Apache Livy Spark
 Перед отправкой пакетного задания необходимо загрузить JAR-файл приложения в хранилище кластеров, связанное с соответствующим кластером. Вы можете использовать для этого служебную программу командной строки [**AzCopy**](../../storage/common/storage-use-azcopy.md). Кроме того, для отправки данных вы можете использовать множество других клиентов. Дополнительные сведения о них см. в статье [Отправка данных для заданий Apache Hadoop в HDInsight](../hdinsight-upload-data.md).
@@ -174,7 +174,7 @@ Livy обеспечивает высокую доступность задани
 
 **Проблема.** При выполнении задания Livy Spark, которое ссылается на внешний JAR-файл из дополнительной учетной записи хранения, связанной с кластером, происходит сбой.
 
-**Решение.** Обеспечьте наличие JAR-файла, который будет использоваться, в хранилище по умолчанию, связанном с кластером HDInsight.
+**Способы устранения:** Убедитесь, что JAR-файл, который вы хотите использовать, расположен в хранилище по умолчанию, связанном с кластером HDInsight.
 
 
 

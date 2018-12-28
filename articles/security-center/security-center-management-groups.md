@@ -3,7 +3,7 @@ title: Получение видимости в пределах клиента 
 description: Узнайте, как получить видимость в пределах клиента в центре безопасности Azure.
 services: security-center
 documentationcenter: na
-author: TerryLanfear
+author: rkarlin
 manager: MBaldwin
 editor: ''
 ms.assetid: b85c0e93-9982-48ad-b23f-53b367f22b10
@@ -13,13 +13,13 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/22/2018
-ms.author: terrylan
-ms.openlocfilehash: caab7e3d15f6d82ee4daf6eb343601ff849bfde5
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.author: rkarlin
+ms.openlocfilehash: cb70c99d56cb1d09e561a44a90fd6c007ea9b59f
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44298784"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52964123"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
 В этой статье приведены сведения по началу работы, а также описаны действия, которые помогут максимально увеличить преимущества от использования центра безопасности Azure. Выполнив эти действия, вы получите сведения о всех подписках Azure, связанных с клиентом Azure Active Directory, а также сможете эффективно управлять системой безопасности организации, одновременно настроив соответствующие политики в нескольких подписках.
@@ -93,13 +93,16 @@ ms.locfileid: "44298784"
 #### <a name="assign-rbac-roles-to-users-through-the-azure-portal"></a>Назначение ролей RBAC пользователям через портал Azure: 
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
-2. Чтобы просмотреть группы управления, в главном меню Azure выберите **Все службы**, а затем выберите **Группы управления**.
-3.  Выберите группу управления и щелкните **Сведения**.
+1. Чтобы просмотреть группы управления, в главном меню Azure выберите **Все службы**, а затем выберите **Группы управления**.
+1.  Выберите группу управления и щелкните **Сведения**.
 
     ![Снимок экрана сведений группы управления](./media/security-center-management-groups/management-group-details.PNG)
  
-4. Щелкните **Управление доступом (IAM)**, а затем **Добавить**.
-5. Выберите пользователя и роль для назначения, а затем щелкните **Сохранить**.  
+1. Щелкните **Управление доступом (IAM)**, а затем **Назначения ролей**.
+
+1. Выберите команду **Добавить назначение ролей**.
+
+1. Выберите пользователя и роль для назначения, а затем щелкните **Сохранить**.  
    
    ![Добавление снимка экрана роли "Чтение данных безопасности"](./media/security-center-management-groups/asc-security-reader.png)
 

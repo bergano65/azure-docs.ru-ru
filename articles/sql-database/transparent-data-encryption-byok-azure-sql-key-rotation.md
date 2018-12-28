@@ -1,7 +1,24 @@
 ---
-title: "PowerShell — смена предохранителя TDE — База данных SQL Azure | Документация Майкрософт" description: Сведения о том, как сменить предохранитель прозрачного шифрования данных (TDE) для сервера Azure SQL.
-services: sql-database ms.service: sql-database ms.subservice: security ms.custom: ms.devlang: ms.topic: conceptual author: aliceku ms.author: aliceku ms.reviewer: vanto manager: jhubbard ms.date: 08/07/2017
---- 
+title: PowerShell — смена предохранителя TDE — База данных SQL Azure | Документация Майкрософт
+description: Сведения о смене предохранителя прозрачного шифрования данных (TDE) для сервера Azure SQL.
+services: sql-database
+ms.service: sql-database
+ms.subservice: security
+ms.custom: ''
+ms.devlang: ''
+ms.topic: conceptual
+author: aliceku
+ms.author: aliceku
+ms.reviewer: vanto
+manager: jhubbard
+ms.date: 08/07/2017
+ms.openlocfilehash: 02f97b318be975f4ff24b4e72276776ebc30535c
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52991972"
+---
 # <a name="rotate-the-transparent-data-encryption-tde-protector-using-powershell"></a>Смена предохранителя TDE с помощью PowerShell 
 
 В этой статье описывается смена ключей для сервера SQL Azure, который использует предохранитель TDE из Azure Key Vault. Смена предохранителя TDE для сервера Azure SQL предусматривает переключение защиты баз данных на сервере на новый асимметричный ключ. Смена ключей выполняется через Интернет буквально за несколько секунд, так как для этой операции достаточно расшифровать и повторно шифровать только ключ шифрования данных, а не всю базу данных.
@@ -22,7 +39,7 @@ services: sql-database ms.service: sql-database ms.subservice: security ms.custo
 - Установленная и запущенная среда Azure PowerShell 3.7.0 или более поздней версии. 
 - [Рекомендуется, но необязательно.] Предварительно создайте материал ключа для предохранителя TDE в аппаратном модуле безопасности (HSM) или локальном хранилище ключей, а затем импортируйте этот материал в Azure Key Vault. Дополнительные сведения вы найдете в [инструкциях по использованию аппаратного модуля безопасности (HSM) и Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-get-started).
 
-## <a name="option-1-auto-rotation"></a>Вариант 1. Автоматическая смена
+## <a name="option-1-auto-rotation"></a>Вариант 1. Автоматическая смена
 
 Создайте новую версию существующего предохранителя TDE в Key Vault с прежним именем и в том же хранилище ключей. Служба Azure SQL в течение 24 часов перейдет на новую версию ключа. 
 
@@ -35,7 +52,7 @@ services: sql-database ms.service: sql-database ms.subservice: security ms.custo
    -Destination <HardwareOrSoftware>
    ```
 
-## <a name="option-2-manual-rotation"></a>Вариант 2. Смена вручную
+## <a name="option-2-manual-rotation"></a>Вариант 2. Смена вручную
 
 В этом варианте вы с помощью командлетов [Add-AzureKeyVaultKey](/powershell/module/azurerm.keyvault/add-azurekeyvaultkey), [Add-AzureRmSqlServerKeyVaultKey](/powershell/module/azurerm.sql/add-azurermsqlserverkeyvaultkey) и [Set-AzureRmSqlServerTransparentDataEncryptionProtector](/powershell/module/azurerm.sql/set-azurermsqlservertransparentdataencryptionprotector) создаете совершенно новый ключ, выбрав для него новое имя и даже другое хранилище ключей. 
 
@@ -90,4 +107,4 @@ services: sql-database ms.service: sql-database ms.subservice: security ms.custo
 
 - Сведения о том, как удалить потенциально скомпрометированный предохранитель TDE в случае угрозы безопасности, вы найдете в [этой статье](transparent-data-encryption-byok-azure-sql-remove-tde-protector.md). 
 
-- См. дополнительные сведения о [включении прозрачного шифрования данных с помощью собственного ключа из Key Vault с помощью PowerShell](transparent-data-encryption-byok-azure-sql-configure.md).
+- См. дополнительные сведения о [включении прозрачного шифрования данных с использованием собственного ключа из Key Vault с помощью PowerShell](transparent-data-encryption-byok-azure-sql-configure.md).

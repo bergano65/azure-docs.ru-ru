@@ -5,16 +5,15 @@ services: site-recovery
 author: asgang
 manager: rochakm
 ms.service: site-recovery
-ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 10/30/2018
+ms.date: 11/27/2018
 ms.author: asgang
-ms.openlocfilehash: 22ea3d955fe2910dc99ab4015165008da899d48e
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 9a32ac1ae71cb7bd89c4252157c3a5cd395b2694
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52312856"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52842345"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-ongoing-replication-issues"></a>Устранение неполадок текущей репликации виртуальных машин из Azure в Azure
 
@@ -23,13 +22,13 @@ ms.locfileid: "52312856"
 
 ## <a name="recovery-points-not-getting-generated"></a>Точки восстановления не создаются
 
-СООБЩЕНИЕ ОБ ОШИБКЕ: "Для виртуальной машины нет соответствующей точки восстановления приложения за последние 60 минут".</br>
-ИДЕНТИФИКАТОР ОШИБКИ: 153007 </br>
+ERROR MESSAGE (Сообщение об ошибке): No crash consistent recovery point available for the VM in the last 60 minutes (Для виртуальной машины нет соответствующей точки восстановления за последние 60 минут).</br>
+ERROR ID (идентификатор ошибки): 153007 </br>
 
 Azure Site Recovery постоянно реплицирует данные из исходного региона в регион аварийного восстановления и создает отказоустойчивые точки каждые 5 минут. Если Site Recovery не сможет создать точки восстановления в течение 60 минут, он оповещает пользователя. Ниже приведены причины, которые могли вызвать эту ошибку:
 
-**Причина 1.[Высокая скорость изменения данных на исходной виртуальной машине](#high-data-change-rate-on-the-source-virtal-machine)**    
-**Причина 2.[ Проблемы с подключением к сети](#Network-connectivity-issue)**
+**Причина 1. [Высокая скорость изменения данных на исходной виртуальной машине](#high-data-change-rate-on-the-source-virtal-machine)**  .  
+**Причина 2. [Проблемы с подключением к сети](#Network-connectivity-issue)**.
 
 ## <a name="causes-and-solutions"></a>Причины и решения
 

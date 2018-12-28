@@ -1,6 +1,6 @@
 ---
 title: Добавление сведений о конфиденциальности организации в Azure Active Directory | Документация Майкрософт
-description: В этой статье объясняется, как добавить сведения о конфиденциальности организации в область свойств Azure Active Directory (Azure AD).
+description: Инструкции по добавлению сведений о конфиденциальности организации в область свойств Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -10,15 +10,15 @@ ms.topic: conceptual
 ms.date: 04/17/2018
 ms.author: lizross
 ms.reviewer: bpham
-ms.custom: it-pro
-ms.openlocfilehash: f32eeee8f02cee32eb05e14aa98387a20cb2e626
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: 50fcafbdef4fc09532d03ae145183dd45c381c73
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48903985"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53083841"
 ---
-# <a name="how-to-add-your-privacy-info-using-azure-active-directory"></a>Практическое руководство. Добавление сведений о конфиденциальности с помощью Azure Active Directory
+# <a name="add-your-organizations-privacy-info-using-azure-active-directory"></a>Добавление сведений о конфиденциальности организации в Azure Active Directory
 В этой статье объясняется, как администратор клиента может добавить сведения о конфиденциальности в клиент организации Azure Active Directory (Azure AD) на портале Azure.
 
 Настоятельно рекомендуется добавить контактные данные глобального лица по вопросам конфиденциальности и заявление о конфиденциальности вашей организации, чтобы внутренние сотрудники и внешние гости могли просматривать ваши политики. Так как заявления о конфиденциальности создаются в единственном экземпляре и настраиваются для каждого предприятия отдельно, настоятельно рекомендуем обратиться за помощью к юристу.

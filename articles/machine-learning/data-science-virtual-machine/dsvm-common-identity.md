@@ -1,11 +1,12 @@
 ---
 title: Настройка общего удостоверения для виртуальной машины для обработки и анализа данных в Azure | Документация Майкрософт
-description: Настройка общего удостоверения в командных корпоративных средах DSVM.
+description: Узнайте, как создавать общие учетные записи пользователей, которые можно использовать в нескольких Виртуальных машинах для обработки и анализа данных. Для аутентификации пользователей в Виртуальной машине для обработки и анализа данных можно использовать Azure Active Directory или локальную службу Active Directory.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
 documentationcenter: ''
 author: gopitk
 manager: cgronlun
+ms.custom: seodec18
 ms.assetid: ''
 ms.service: machine-learning
 ms.component: data-science-vm
@@ -15,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2018
 ms.author: gokuma
-ms.openlocfilehash: 25d40b6a72ab6da61feb1458f5930eb48ef1d900
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6be7c63d3879c7ed89cd97eaecd6d59b6b5aadd4
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39436307"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53075477"
 ---
 # <a name="set-up-a-common-identity-on-the-data-science-virtual-machine"></a>Настройка общего удостоверения для виртуальной машины для обработки и анализа данных в Azure
 

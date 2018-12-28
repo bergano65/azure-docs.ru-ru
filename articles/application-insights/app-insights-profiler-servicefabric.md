@@ -8,17 +8,16 @@ manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 071d1acb592220f7da83a47fd7dffa757ef81a95
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 3eb5b2300ea2af7bc778e0831d105f286eab247c
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50142976"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52721414"
 ---
 # <a name="profile-live-azure-service-fabric-applications-with-application-insights"></a>Профилирование запущенных приложений Azure Service Fabric с помощью Application Insights
 
@@ -30,7 +29,7 @@ ms.locfileid: "50142976"
 
 ## <a name="set-up-the-environment-deployment-definition"></a>Настройка определения развертывания среды
 
-Application Insights Profiler поставляется в комплекте с системой диагностики Microsoft Azure (WAD). С помощью шаблона Azure RM для кластера Service Fabric можно установить расширение WAD. [**Здесь**](https://github.com/Azure/azure-docs-json-samples/blob/master/application-insights/ServiceFabricCluster.json) вы найдете пример шаблона, который устанавливает WAD в кластере Service Fabric.
+Application Insights Profiler поставляется в комплекте с системой диагностики Microsoft Azure (WAD). С помощью шаблона Azure RM для кластера Service Fabric можно установить расширение WAD. Вот пример шаблона, [**который устанавливает WAD в кластере Service Fabric**](https://github.com/Azure/azure-docs-json-samples/blob/master/application-insights/ServiceFabricCluster.json).
 
 Чтобы настроить среду, выполните следующие действия.
 1. Чтобы использовать [.NET Framework версии 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) и выше, разверните ОС версии `Windows Server 2012 R2` и выше.

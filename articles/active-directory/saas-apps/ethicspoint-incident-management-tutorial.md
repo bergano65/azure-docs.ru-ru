@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeedes
-ms.openlocfilehash: c38c751701b323bf1c985a4127d0e9deac2c8eaa
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: c72ed655166dc1fe8045f5b9fdc7221cdf24d567
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39446027"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52851000"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ethicspoint-incident-management-epim"></a>Руководство. Интеграция Azure Active Directory с решением EthicsPoint Incident Management (EPIM)
 
@@ -123,7 +123,7 @@ ms.locfileid: "39446027"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<servername>.navexglobal.com/adfs/ls/`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Укажите вместо них фактические значения URL-адреса ответа, идентификатора и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов EthicsPoint Incident Management (EPIM)](http://www.navexglobal.com/company/contact-us). 
+    > Эти значения приведены в качестве примера. Укажите вместо них фактические значения URL-адреса ответа, идентификатора и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов EthicsPoint Incident Management (EPIM)](https://www.navexglobal.com/company/contact-us). 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -133,10 +133,10 @@ ms.locfileid: "39446027"
 
     ![Настройка единого входа](./media/ethicspoint-incident-management-tutorial/tutorial_general_400.png)
     
-1. Для настройки единого входа на стороне **EthicsPoint Incident Management (EPIM)** необходимо отправить скачанный **XML-файл метаданных** в [службу поддержки EthicsPoint Incident Management (EPIM)](http://www.navexglobal.com/company/contact-us).
+1. Для настройки единого входа на стороне **EthicsPoint Incident Management (EPIM)** необходимо отправить скачанный **XML-файл метаданных** в [службу поддержки EthicsPoint Incident Management (EPIM)](https://www.navexglobal.com/company/contact-us).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -172,7 +172,7 @@ ms.locfileid: "39446027"
  
 ### <a name="creating-a-ethicspoint-incident-management-epim-test-user"></a>Создание тестового пользователя EthicsPoint Incident Management (EPIM)
 
-В этом разделе описано, как создать пользователя Britta Simon в EthicsPoint Incident Management (EPIM). Чтобы добавить пользователей на платформу EthicsPoint Incident Management (EPIM), обратитесь в [службу поддержки EthicsPoint Incident Management (EPIM)](http://www.navexglobal.com/company/contact-us).
+В этом разделе описано, как создать пользователя Britta Simon в EthicsPoint Incident Management (EPIM). Чтобы добавить пользователей на платформу EthicsPoint Incident Management (EPIM), обратитесь в [службу поддержки EthicsPoint Incident Management (EPIM)](https://www.navexglobal.com/company/contact-us).
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

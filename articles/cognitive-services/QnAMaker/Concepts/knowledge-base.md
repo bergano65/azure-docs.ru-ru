@@ -10,14 +10,15 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: tulasim
-ms.openlocfilehash: cb3426a960a6644b3ae149f02055cdb083febca7
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.custom: seodec18
+ms.openlocfilehash: 865525d9c978f3168a4c580dec20f0f91f0a0d16
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47040767"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53074100"
 ---
-# <a name="knowledge-base"></a>База знаний
+# <a name="what-is-a-qna-maker-knowledge-base"></a>Что представляет собой база знаний QnA Maker?
 
 База знаний QnA Maker состоит из наборов пар вопросов и ответов (QnA) и дополнительных метаданных, связанных с каждой парой QnA.
 

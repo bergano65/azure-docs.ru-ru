@@ -10,15 +10,15 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.component: pim
-ms.date: 09/21/2018
+ms.date: 11/30/2018
 ms.author: rolyon
 ms.custom: pim
-ms.openlocfilehash: 77a57afda3859de4a246c15d3b5c0b4ba8e2a8c8
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 87003a053823cfc257a3b6f41699feefadbbcc66
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47039009"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52835171"
 ---
 # <a name="configure-azure-ad-directory-role-settings-in-pim"></a>Настройка параметров роли каталога Azure AD в PIM
 
@@ -50,7 +50,15 @@ ms.locfileid: "47039009"
 
 ## <a name="notifications"></a>Уведомления
 
-С помощью переключателя **Уведомления** можно указать, будет ли система отправлять администраторам сообщения электронной почты, подтверждающие активацию роли. Этот параметр полезен, если требуется обнаружить несанкционированные или недопустимые активации.
+Используйте переключатель режима **Уведомления**, чтобы указать, будут ли администраторы получать уведомления по электронной почте при активации ролей. Этот параметр полезен, если требуется обнаружить несанкционированные или недопустимые активации.
+
+Если режим **включен**, уведомления будут отправляться таким администраторам:
+
+- администратору привилегированных ролей;
+- администратору безопасности;
+- глобальному администратору.
+
+Дополнительные сведения см. в статье [Уведомления по электронной почте в PIM](pim-email-notifications.md).
 
 ## <a name="incidentrequest-ticket"></a>Обращение с запросом или инцидентом
 

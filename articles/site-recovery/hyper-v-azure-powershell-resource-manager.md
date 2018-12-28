@@ -5,14 +5,14 @@ author: sujayt
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 10/16/2018
+ms.date: 11/27/2018
 ms.author: sutalasi
-ms.openlocfilehash: 4b008cc119951e50567218e332818585fb017e5a
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: c20f61788086806d3eebb62d35b7ac9fbcbd6fb9
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51229413"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52846935"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-hyper-v-vms-using-powershell-and-azure-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V в Azure с помощью PowerShell и Azure Resource Manager
 
@@ -43,11 +43,11 @@ Azure PowerShell предоставляет командлеты для упра
 * Узел Hyper-V под управлением Windows Server 2012 R2 или Microsoft Hyper-V Server 2012 R2, содержащий одну или несколько виртуальных машин. Серверы Hyper-V должны быть подключены к Интернету напрямую или через прокси-сервер.
 * Виртуальные машины, которые вы хотите реплицировать, должны соответствовать [этим условиям](hyper-v-azure-support-matrix.md#replicated-vms).
 
-## <a name="step-1-sign-in-to-your-azure-account"></a>Шаг 1. Вход в учетную запись Azure
+## <a name="step-1-sign-in-to-your-azure-account"></a>Шаг 1. Вход в учетную запись Azure
 
-1. Откройте консоль PowerShell и выполните следующую команду, чтобы войти в учетную запись Azure. Командлет открывает веб-станицу, на которой пользователю предлагается ввести данные для входа в учетную запись: **Connect-AzureRmAccount**.
+1. Откройте консоль PowerShell и выполните следующую команду, чтобы войти в учетную запись Azure. Этот командлет открывает веб-станицу, на которой пользователю предлагается ввести данные для входа в учетную запись — **Connect-AzureRmAccount**.
     - Кроме того, учетные данные можно добавить в качестве параметра в командлет **Connect-AzureRmAccount**, используя параметр **-Credential**.
-    - Если вы — партнер-поставщик облачных услуг, работающий от имени клиента, вам потребуется указать заказчика в качестве клиента. Для этого нужно ввести идентификатор или основное доменное имя клиента. Например: **Connect-AzureRmAccount -Tenant "fabrikam.com"**.
+    - Если вы — партнер-поставщик облачных услуг, работающий от имени клиента, вам потребуется указать заказчика в качестве клиента. Для этого нужно ввести идентификатор или основное доменное имя клиента. Например:  **Connect-AzureRmAccount -Tenant "fabrikam.com"**.
 2. Свяжите подписку, которую вы собираетесь использовать, с учетной записью, которая может иметь несколько подписок:
 
     `Select-AzureRmSubscription -SubscriptionName $SubscriptionName`
@@ -64,7 +64,7 @@ Azure PowerShell предоставляет командлеты для упра
 
     `Get-AzureRmResourceProvider -ProviderNamespace  Microsoft.RecoveryServices` `Get-AzureRmResourceProvider -ProviderNamespace  Microsoft.SiteRecovery`.
 
-## <a name="step-2-set-up-the-vault"></a>Шаг 2. Настройка хранилища
+## <a name="step-2-set-up-the-vault"></a>Шаг 2. Настройка хранилища
 
 1. Создайте группу ресурсов для Azure Resource Manager, которой необходимо создать хранилища, или воспользуйтесь существующими группами ресурсов. Создайте группу ресурсов следующим образом. Переменная $ResourceGroupName содержит имя создаваемой группы ресурсов, а переменная $Geo — регион Azure, в котором ее необходимо создать (например, Южная часть Бразилии).
 
@@ -78,13 +78,13 @@ Azure PowerShell предоставляет командлеты для упра
     Список имеющихся хранилищ можно получить с помощью командлета **Get-AzureRmRecoveryServicesVault**.
 
 
-## <a name="step-3-set-the-recovery-services-vault-context"></a>Шаг 3. Настройка контекста для хранилища служб восстановления
+## <a name="step-3-set-the-recovery-services-vault-context"></a>Шаг 3. Настройка контекста для хранилища Служб восстановления
 
 Задайте контекст хранилища следующим образом:
 
 `Set-AsrVaultSettings -Vault $vault`
 
-## <a name="step-4-create-a-hyper-v-site"></a>Шаг 4. Создание узла Hyper-V
+## <a name="step-4-create-a-hyper-v-site"></a>Шаг 4. Создание сайта Hyper-V
 
 1. Создайте сайт Hyper-V следующим образом:
 
@@ -102,7 +102,7 @@ Azure PowerShell предоставляет командлеты для упра
 
 5. Скопируйте скачанный ключ на узел Hyper-V. Этот ключ вам потребуется, чтобы зарегистрировать узел Hyper-V на сайте.
 
-## <a name="step-5-install-the-provider-and-agent"></a>Шаг 5. Установка поставщика и агента
+## <a name="step-5-install-the-provider-and-agent"></a>Шаг 5. Установка поставщика и агента
 
 1. Скачайте установщик последней версии поставщика с веб-сайта [корпорации Майкрософт](https://aka.ms/downloaddra).
 2. Запустите установщик на узле Hyper-V.
@@ -112,7 +112,7 @@ Azure PowerShell предоставляет командлеты для упра
 
         $server =  Get-AsrFabric -Name $siteName | Get-AsrServicesProvider -FriendlyName $server-friendlyname
 
-## <a name="step-6-create-a-replication-policy"></a>Шаг 6. Создание политики репликации
+## <a name="step-6-create-a-replication-policy"></a>Шаг 6. Создание политики репликации
 
 Перед началом убедитесь, что указанная учетная запись хранения находится в том же регионе Azure, что и хранилище. В ней также должна быть включена функция георепликации.
 
@@ -136,7 +136,7 @@ Azure PowerShell предоставляет командлеты для упра
 
 4. Дождитесь завершения этого задания и убедитесь, что оно выполнено успешно.
 
-## <a name="step-7-enable-vm-protection"></a>Шаг 7. Включение защиты в виртуальных машинах
+## <a name="step-7-enable-vm-protection"></a>Шаг 7. Включение защиты в виртуальных машинах
 
 1. Получите защищаемый элемент, соответствующий виртуальной машине, которую необходимо защитить, выполнив следующую команду:
 

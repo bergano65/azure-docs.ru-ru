@@ -9,27 +9,26 @@ ms.assetid: 769a5ea4-a8c6-4c18-b46c-657e864e24de
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 275eb5f32def94fa974f0cb180b9de9dcedf1a00
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: abc3d5832cd85cb3297077f2d661ec8fe32fde9e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51230926"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53105297"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights
 
-Действующее веб-приложение можно инструментировать с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода. Если приложения размещаются на локальном сервере IIS, необходимо установить монитор состояний. Если это веб-приложения Azure или приложения, которые выполняются на виртуальной машине Azure, вы можете включить мониторинг Application Insights на панели управления Azure. (См. статьи об инструментировании [динамических веб-приложений J2EE](app-insights-java-live.md) и [облачных служб Azure](app-insights-cloudservices.md).) Вам потребуется подписка [Microsoft Azure](http://azure.com) .
+Действующее веб-приложение можно инструментировать с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода. Если приложения размещаются на локальном сервере IIS, необходимо установить монитор состояний. Если это веб-приложения Azure или приложения, которые выполняются на виртуальной машине Azure, вы можете включить мониторинг Application Insights на панели управления Azure. (См. статьи об инструментировании [динамических веб-приложений J2EE](app-insights-java-live.md) и [облачных служб Azure](app-insights-cloudservices.md).) Вам потребуется подписка [Microsoft Azure](https://azure.com) .
 
 ![Снимок экрана App Insights: графики, содержащие сведения о неудачных запросах, времени отклика сервера и запросов сервера](./media/app-insights-monitor-performance-live-website-now/overview-graphs.png)
 
 Вы можете выбрать один из трех указанных ниже вариантов применения Application Insights для веб-приложений .NET.
 
 * **Во время сборки.** [Добавьте пакет SDK для Application Insights][greenbrown] в код своего веб-приложения.
-* **Во время выполнения.** Инструментируйте веб-приложение на сервере, как описано ниже, без повторной сборки и развертывания кода.
+* **Во время выполнения**. Инструментируйте веб-приложение на сервере, как описано ниже, без повторной сборки и развертывания кода.
 * **Оба варианта.** Включите пакет SDK в код веб-приложения и примените расширения во время выполнения, чтобы воспользоваться преимуществами двух вариантов.
 
 Ниже представлено общее сравнение предлагаемых вариантов.
@@ -120,6 +119,7 @@ ms.locfileid: "51230926"
   * В диспетчере IIS выберите свой пул приложений, откройте **Дополнительные параметры** и в разделе **Модель процесса** скопируйте значение параметра "Идентификация".
   * На панели управления компьютера добавьте это значение к группе пользователей монитора производительности.
 * Если на вашем сервере установлен MMA/SCOM (Systems Center Operations Manager), некоторые версии могут конфликтовать. Удалите SCOM и монитор состояний и повторно установите последние версии.
+* Журналы монитора состояний можно найти в этом расположении по умолчанию: C:\Program Files\Microsoft Application Insights\Status Monitor\diagnostics.log.
 * Ознакомьтесь с разделом [Устранение неполадок][qna].
 
 ## <a name="system-requirements"></a>Требования к системе
@@ -133,9 +133,9 @@ ms.locfileid: "51230926"
 
 На них должны быть установлены последний пакет обновления и платформа .NET Framework 4.5.
 
-На клиентских компьютерах должна быть установлена ОС Windows 7, 8, 8.1 или 10 с платформой .NET Framework 4.5.
+На клиентских компьютерах: Windows 7, 8, 8.1 или 10 с платформой .NET Framework 4.5.
 
-Поддерживаются такие версии IIS: 7, 7.5, 8, 8.5 (IIS – обязательный компонент).
+Поддержка IIS: IIS 7, 7.5, 8, 8.5 (требуются службы IIS).
 
 ## <a name="automation-with-powershell"></a>Автоматизация с помощью PowerShell
 Мониторинг можно запускать и останавливать с помощью PowerShell на сервере IIS.
@@ -152,9 +152,9 @@ ms.locfileid: "51230926"
 * Отображает состояние мониторинга Application Insights для каждого веб-приложения (или именованного приложения) на этом сервере IIS.
 * Возвращает `ApplicationInsightsApplication` для каждого приложения.
 
-  * `SdkState==EnabledAfterDeployment`: приложение отслеживается. Оно инструментировано во время выполнения с помощью монитора состояния или командлета `Start-ApplicationInsightsMonitoring`.
-  * `SdkState==Disabled`: приложение не инструментировано для Application Insights. Оно либо никогда не было инструментировано, либо мониторинг во время выполнения был отключен с помощью монитора состояния или командлета `Stop-ApplicationInsightsMonitoring`.
-  * `SdkState==EnabledByCodeInstrumentation`: приложение инструментировано путем добавления пакета SDK в исходный код. Этот пакет SDK нельзя обновить или остановить.
+  * `SdkState==EnabledAfterDeployment`: Приложение отслеживается. Оно инструментировано во время выполнения с помощью монитора состояний или командлета `Start-ApplicationInsightsMonitoring`.
+  * `SdkState==Disabled`: Приложение не инструментировано для Application Insights. Оно либо никогда не было инструментировано, либо мониторинг во время выполнения был отключен с помощью монитора состояния или командлета `Stop-ApplicationInsightsMonitoring`.
+  * `SdkState==EnabledByCodeInstrumentation`: Приложение инструментировано путем добавления пакета SDK в исходный код. Этот пакет SDK нельзя обновить или остановить.
   * `SdkVersion` — отображает версию, которая используется для мониторинга этого приложения.
   * `LatestAvailableSdkVersion`— отображает версию, доступную сейчас в коллекции NuGet. Чтобы обновить приложение до этой версии, используйте командлет `Update-ApplicationInsightsMonitoring`.
 
@@ -187,7 +187,7 @@ ms.locfileid: "51230926"
 
 `Update-ApplicationInsightsMonitoring -Name appName [-InstrumentationKey "0000000-0000-000-000-0000"`]
 
-* `-Name` — имя веб-приложения на сервере IIS.
+* `-Name`: Имя веб-приложения на сервере IIS.
 * `-InstrumentationKey` (необязательный параметр). используется для изменения ресурса, в который отправляются данные телеметрии приложения.
 * Этот командлет:
   * Обновляет именованное приложение до последней версии пакета SDK, загруженной на этот компьютер (работает, только если `SdkState==EnabledAfterDeployment`).
@@ -218,9 +218,12 @@ ms.locfileid: "51230926"
 
 При выборе веб-приложения для инструментирования монитор состояния делает следующее:
 
-* Скачивает и помещает сборки Application Insights и CONFIG-файл в папку с двоичными файлами веб-приложений.
-* Изменяет `web.config`, чтобы добавить HTTP-модуль отслеживания Application Insights.
+* Скачивает и помещает сборки Application Insights и файл ApplicationInsights.config в папку с двоичными файлами веб-приложений.
 * Включает профилирование среды CLR для сбора вызовов зависимостей.
+
+### <a name="what-version-of-application-insights-sdk-does-status-monitor-install"></a>Какую версию пакета SDK Application Insights устанавливает монитор состояний?
+
+Сейчас монитор состояний устанавливает только пакет SDK Application Insights версии 2.3 или 2.4.
 
 ### <a name="do-i-need-to-run-status-monitor-whenever-i-update-the-app"></a>Нужно ли запускать монитор состояния при каждом обновлении приложения?
 
@@ -243,7 +246,7 @@ ms.locfileid: "51230926"
  * вызовы зависимостей (.NET 4.5) и возвращаемые значения в вызовах зависимостей (.NET 4.6);
  * значения трассировки стека исключений.
 
-[Подробнее](http://apmtips.com/blog/2016/11/18/how-application-insights-status-monitor-not-monitors-dependencies/)
+[Подробнее](https://apmtips.com/blog/2016/11/18/how-application-insights-status-monitor-not-monitors-dependencies/)
 
 ## <a name="video"></a>Видео
 
