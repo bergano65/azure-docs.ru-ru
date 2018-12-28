@@ -8,15 +8,15 @@ ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/12/2018
+ms.date: 12/07/2018
 ms.author: barbkess
 ms.reviewer: arvindh
-ms.openlocfilehash: 3012f07d8c56f2581a087bc8e43aa4a089bf9589
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 627bd114504de20517abcd05f45dc6c58fe80117
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633518"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53322710"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Единый вход в приложениях в Azure Active Directory
 Узнайте, как выбрать наиболее подходящий способ единого входа при настройке приложений в Azure Active Directory (Azure AD). 
@@ -61,14 +61,13 @@ ms.locfileid: "51633518"
 
 - SAML 2.0
 - Сертификат
-- OpenID Connect
 
 Сведения о том, как настроить приложение для единого входа на основе SAML, см. в статье [Настройка единого входа на основе SAML](configure-single-sign-on-portal.md). Кроме того, для многих приложений имеются [специальные руководства](../saas-apps/tutorial-list.md) по настройке единого входа на основе SAML. 
 
 Дополнительные сведения о принципе работы протокола SAML см. в статье [Протокол единого входа SAML](../develop/single-sign-on-saml-protocol.md).
 
 ## <a name="password-based-sso"></a>Единый вход на основе пароля
-При едином входе на основе пароля приложение выполняет проверку подлинности при помощи имени и пароля. Пользователи входят в приложение, когда они впервые получают доступ к нему. После первого входа Azure Active Directory предоставляет приложению имя пользователя и пароль. 
+При использовании входа по паролю пользователям, чтобы войти в приложение, необходимо ввести имя пользователя и пароль при первом обращении к нему. После первого входа Azure Active Directory предоставляет приложению имя пользователя и пароль. 
 
 Для единого входа на основе паролей используется имеющийся процесс проверки подлинности, предоставляемый приложением. Когда включается единый вход на основе паролей для приложения, служба Azure AD собирает и безопасно сохраняет имена пользователей и пароли для этого приложения. Учетные данные пользователей хранятся в каталоге в зашифрованном виде. 
 
@@ -178,6 +177,6 @@ ms.locfileid: "51633518"
 * [Руководства по интеграции приложений SaaS с Azure Active Directory](../saas-apps/tutorial-list.md)
 * [Руководство по настройке единого входа](configure-single-sign-on-portal.md)
 * [Введение в управление доступом к приложениям](what-is-access-management.md)
-* Ссылка для скачивания: [План развертывания единого входа](http://aka.ms/SSODeploymentPlan).
+* Ссылка для скачивания: [План развертывания единого входа](https://aka.ms/SSODeploymentPlan).
 
 

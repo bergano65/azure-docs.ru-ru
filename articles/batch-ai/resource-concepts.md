@@ -15,14 +15,17 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: danlep
-ms.openlocfilehash: 4a9e3529f9d68ecdc614ea69cffc6897891f4548
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ROBOTS: NOINDEX
+ms.openlocfilehash: 4454448809411c6390bc1f65c33b4abe76094ded
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44056958"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53407751"
 ---
 # <a name="overview-of-resources-in-batch-ai"></a>Обзор ресурсов в Batch AI
+
+[!INCLUDE [batch-ai-retiring](../../includes/batch-ai-retiring.md)]
 
 При первом запуске службы Batch AI необходимо ознакомиться с доступными ресурсами Batch AI. Как и в случае с другими службами Azure, вам нужно создать ресурсы Batch AI в одной или нескольких *группах ресурсов* Azure. Создайте одну или несколько *рабочих областей* Batch AI в группе ресурсов. Каждая рабочая область содержит сочетание *кластеров*, *файловых серверов* и *экспериментов* Batch AI. Эксперимент Batch AI инкапсулирует группу *заданий*.
 

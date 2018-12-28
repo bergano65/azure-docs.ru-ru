@@ -1,0 +1,39 @@
+---
+title: Обнаружение конечной точки управления Управляемого экземпляра Базы данных SQL Azure | Документация Майкрософт
+description: Сведения о том, как получить общедоступный IP-адрес конечной точки управления Управляемого экземпляра Базы данных SQL Azure и проверить ее встроенный брандмауэр для защиты
+services: sql-database
+ms.service: sql-database
+ms.subservice: managed-instance
+ms.custom: ''
+ms.devlang: ''
+ms.topic: howto
+author: srdan-bozovic-msft
+ms.author: srbozovi
+ms.reviewer: carlrab
+manager: craigg
+ms.date: 12/04/2018
+ms.openlocfilehash: 83eea565a12ee5201c42b543cdbdad72ddc28ca9
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53345797"
+---
+# <a name="determine-the-management-endpoint-ip-address"></a>Определение IP-адреса конечной точки управления
+
+Виртуальный кластер Управляемого экземпляра Базы данных SQL Azure содержит конечную точку управления, которую корпорация Майкрософт использует для операций управления. Конечная точка управления защищена с помощью встроенного брандмауэра на уровне сети и взаимной проверкой сертификатов на уровне приложения. Вы можете определить IP-адрес конечной точки управления, но вы не можете получить доступ к этой конечной точке.
+
+## <a name="determine-ip-address"></a>Определение IP-адреса
+
+Предположим, что узел Управляемого экземпляра — `mi-demo.xxxxxx.database.windows.net`. Запустите `nslookup` с использованием имени узла.
+
+![Разрешение имени внутреннего узла](./media/sql-database-managed-instance-management-endpoint/01_find_internal_host.png)
+
+Теперь снова выполните команду `nslookup` для выделенного имени, удалив сегмент `.vnet.`. Вы получите общедоступный IP-адрес в результате выполнения этой команды.
+
+![Разрешение общедоступного IP-адреса](./media/sql-database-managed-instance-management-endpoint/02_find_public_ip.png)
+
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Дополнительные сведения об Управляемых экземплярах и подключениях см. в статье [Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-connectivity-architecture.md).

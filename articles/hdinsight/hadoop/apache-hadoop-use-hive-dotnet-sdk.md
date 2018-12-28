@@ -9,19 +9,19 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 790cc11e3d4cf1d0260b1099efd82bdddec85785
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: d3c9c8eab0ce13aee5dbe7bdb732d45555e547fb
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634572"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53407173"
 ---
 # <a name="run-apache-hive-queries-using-hdinsight-net-sdk"></a>Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight
 [!INCLUDE [hive-selector](../../../includes/hdinsight-selector-use-hive.md)]
 
 Узнайте, как отправлять запросы Apache Hive с использованием пакета SDK .NET для HDInsight. Напишите программу на языке C#, чтобы отправить запрос Hive для перечисления таблиц Hive и отобразить результаты.
 
-> [!NOTE]
+> [!NOTE]  
 > Действия, описанные в этой статье, необходимо выполнять из клиента Windows. Чтобы получить сведения об использовании клиента Linux, OS X или Unix для работы с Hive, воспользуйтесь выбором вкладок в верхней части статьи.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -29,8 +29,8 @@ ms.locfileid: "51634572"
 
 * **Кластер Apache Hadoop в HDInsight**. См. статью [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux](apache-hadoop-linux-tutorial-get-started.md).
 
-    > [!WARNING]
-    > Начиная с 15 сентября 2017 г. пакет SDK для HDInsight .NET поддерживает возвращение результатов запроса Hive только из учетных записей хранения Azure. Если использовать этот пример с кластером HDInsight, который использует Azure Data Lake Store в качестве основного хранилища, вы не сможете получить результаты поиска с помощью пакета SDK для .NET.
+    > [!WARNING]  
+    > Начиная с 15 сентября 2017 г. пакет SDK для HDInsight .NET поддерживает возвращение результатов запроса Hive только из учетных записей хранения Azure. Если использовать этот пример с кластером HDInsight, в котором Azure Data Lake Storage применяется в качестве основного хранилища, вы не сможете получить результаты поиска с помощью пакета SDK для .NET.
 
 * **Visual Studio 2013, Visual Studio 2015, Visual Studio 2017**.
 
@@ -138,11 +138,11 @@ ms.locfileid: "51634572"
 В этой статье вы ознакомились с несколькими способами создания кластера HDInsight. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Приступая к работе с Azure HDInsight](apache-hadoop-linux-tutorial-get-started.md)
-* [Создание кластеров Hadoop в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md)
-* [Управление кластерами Hadoop в HDInsight с помощью портала Azure](../hdinsight-administer-use-management-portal.md)
+* [Создание кластеров Apache Hadoop в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md)
+* [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](../hdinsight-administer-use-management-portal.md)
 * [Справочник по пакетам SDK HDInsight для .NET](https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight)
-* [Использование Pig с HDInsight](hdinsight-use-pig.md)
-* [Использование Sqoop с HDInsight](apache-hadoop-use-sqoop-mac-linux.md)
+* [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md)
+* [Использование Apache Sqoop с HDInsight](apache-hadoop-use-sqoop-mac-linux.md)
 * [Создание приложений .NET HDInsight с неинтерактивной проверкой подлинности](../hdinsight-create-non-interactive-authentication-dotnet-applications.md)
  
 

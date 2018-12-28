@@ -1,5 +1,5 @@
 ---
-title: Настройка кластера HDInsight с Корпоративным пакетом безопасности с помощью Azure AD-DS
+title: Настройка Корпоративного пакета безопасности с помощью доменных служб Azure Active Directory — Azure HDInsight
 description: Узнайте, как установить и настроить кластер HDInsight с Корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory.
 services: hdinsight
 ms.service: hdinsight
@@ -7,13 +7,14 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: hrasheed
 ms.topic: conceptual
-ms.date: 10/9/2018
-ms.openlocfilehash: 8b92191b60f8eb7e3c63f465926b434e205ef1b4
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.date: 10/09/2018
+ms.custom: seodec18
+ms.openlocfilehash: ced7964fc96138ad7b18ab72d6c479e8db7eab8a
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51684755"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53436234"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -21,12 +22,12 @@ ms.locfileid: "51684755"
 
 Из этой статьи вы узнаете, как настроить присоединенный к домену кластер HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory (Azure AD-DS).
 
->[!NOTE]
->Общедоступная версия корпоративного пакета безопасности включена в HDI версии 3.6 для Spark, Interactive и Apache Hadoop. Корпоративный пакет безопасности для типов кластеров HBase и Kafka находится на этапе предварительной версии.
+>[!NOTE]  
+>Общедоступная версия корпоративного пакета безопасности включена в HDI версии 3.6 для Apache Spark, Interactive и Apache Hadoop. Корпоративный пакет безопасности для типов кластеров Apache HBase и Apache Kafka находится на этапе предварительной версии.
 
 ## <a name="enable-azure-ad-ds"></a>Включение Azure AD-DS
 
-> [!NOTE]
+> [!NOTE]  
 > Только администраторы клиента имеют разрешение на включение Azure AD-DS. Если системой хранения данных кластера является Azure Data Lake Storage (ADLS) 1-го или 2-го поколения, отключите MFA только для тех пользователей, которым будет предоставлен доступ к кластеру. Если системой хранения данных кластера является хранилище BLOB-объектов Azure (WASB), оставьте Многофакторную идентификацию включенной.
 
 Включение доменных служб Azure AD является необходимым предварительным условием, которое нужно выполнить, прежде чем вы сможете создать кластер HDInsight с ESP. Дополнительные сведения см. в разделе [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/active-directory-ds-getting-started.md). 
@@ -65,7 +66,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 ## <a name="networking-considerations"></a>Рекомендации по работе с сетями
 
-> [!NOTE]
+> [!NOTE]  
 > Azure AD-DS необходимо развертывать в виртуальной сети на базе Azure Resource Manager (ARM). Azure AD-DS не поддерживает классические виртуальные сети. Дополнительные сведения см. в статье [Включение доменных служб Azure Active Directory с помощью портала Azure](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started-network).
 
 После включения доменных служб Azure AD локальный сервер службы доменных имен (DNS) будет запущен на виртуальных машинах AD. Настройте виртуальную сеть Azure AD DS, чтобы использовать эти настраиваемые DNS-серверы. Чтобы найти нужные IP-адреса, выберите **Свойства** в категории **управления** и просмотрите IP-адреса, появившиеся в списке под параметром **IP-адрес в виртуальной сети**.
@@ -97,9 +98,9 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 При создании кластера HDInsight с корпоративным пакетом безопасности необходимо указать следующие параметры.
 
-- **Администратор кластера**: выберите администратора кластера в синхронизированных службах Azure AD-DS. Эта учетная запись домена должна быть синхронизирована и доступна в Azure AD-DS.
+- **Администратор кластера**. Выберите администратора кластера в синхронизированных службах Azure AD DS. Эта учетная запись домена должна быть синхронизирована и доступна в Azure AD-DS.
 
-- **Группы доступа к кластеру**. Группы безопасности, пользователей которых нужно синхронизировать и предоставить доступ к кластеру, должны быть доступны в Azure AD-DS. Например, группа HiveUsers. Дополнительные сведения см. в статье [Создание группы и добавление в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
+- **Группы доступа к кластеру**. Группы безопасности, пользователей которых нужно синхронизировать и предоставить им доступ к кластеру, должны быть доступны в Azure AD-DS. Например, группа HiveUsers. Дополнительные сведения см. в статье [Создание группы и добавление в нее пользователей в Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
 - **URL-адрес LDAPS**. Например, ldaps://contoso.com:636.
 
@@ -113,5 +114,5 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Сведения о настройке политик Hive и выполнении запросов Hive см. в разделе [Настройка политик Hive в кластерах HDInsight с корпоративным пакетом безопасности](apache-domain-joined-run-hive.md).
-* Сведения о подключении к кластерам HDInsight с корпоративным пакетом безопасности с использованием SSH см. в разделе [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).
+* Сведения о настройке политик Hive и выполнении запросов Hive см. в статье [Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-run-hive.md).
+* Сведения о подключении к кластерам HDInsight с корпоративным пакетом безопасности с использованием SSH см. в разделе [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).

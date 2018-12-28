@@ -9,23 +9,23 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 07/01/2018
 ms.author: hrasheed
-ms.openlocfilehash: 663cf6ba2eec4b2abbc6ab4a37e05b756ee67ee9
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 1f0ff7bef5c1d30eb6920eaab3767de1dea6b94a
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51016817"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53438869"
 ---
 # <a name="release-notes-for-azure-hdinsight"></a>Заметки о выпуске Azure HDInsight
 
 Эта статья содержит сведения о **последних** обновлениях выпуска Azure HDInsight. Дополнительные сведения о предыдущих выпусках см. в статье [Заметки о выпуске для компонентов Hadoop в Azure HDInsight (архив)](hdinsight-release-notes-archive.md).
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в [статье об управлении версиями HDInsight](hdinsight-component-versioning.md).
 
 ## <a name="summary"></a>Сводка
 
-Azure HDInsight является одной из самых популярных служб среди корпоративных клиентов для аналитики с открытым кодом Hadoop и Spark в Azure. Со скидкой [более 50 % на HDInsight](https://azure.microsoft.com/blog/azure-hdinsight-announcements-significant-price-reduction-and-amazing-new-capabilities/#_blank) клиенты, перемещающиеся в облако, экономят больше, чем когда-либо.
+Azure HDInsight является одной из самых популярных служб среди корпоративных клиентов для аналитики с открытым кодом Apache Hadoop и Apache Spark в Azure. Со скидкой [более 50 % на HDInsight](https://azure.microsoft.com/blog/azure-hdinsight-announcements-significant-price-reduction-and-amazing-new-capabilities/#_blank) клиенты, перемещающиеся в облако, экономят больше, чем когда-либо.
 
 ## <a name="new-features"></a>новые функции;
 
@@ -33,9 +33,9 @@ Azure HDInsight является одной из самых популярных
 
 1.  ***Обновление Hadoop и других проектов с открытым кодом***. Помимо исправления более чем 1000 ошибок в более чем 20 проектах с открытым кодом, это обновление также содержит новые версии Spark (2.3) и Kafka (1.0).
 
-    a.  [**Новые функции в Spark 2.3**](https://spark.apache.org/releases/spark-release-2-3-0.html)
+    a.  [**Новые функции в Apache Spark 2.3**](https://spark.apache.org/releases/spark-release-2-3-0.html)
 
-    b.  [**Новые функции в Kafka 1.0**](https://www.apache.org/dist/kafka/1.0.0/RELEASE_NOTES.html)
+    b.  [**Новые функции в Apache Kafka 1.0**](https://www.apache.org/dist/kafka/1.0.0/RELEASE_NOTES.html)
 
 2.  ***Обновление R Server 9.1 до Служб машинного обучения 9.3***. В этом выпуске мы предоставили специалистам по анализу данных и инженерам лучшие проекты с открытым кодом, дополненные инновационными алгоритмами и возможностью легко вводить их в эксплуатацию, причем на любом удобном языке с сохранением скорости Apache Spark. Этот выпуск расширяет возможности, предлагаемые R Server, реализуя поддержку Python. Из-за этого имя кластера изменено с R Server на Службы машинного обучения. 
 
@@ -89,149 +89,149 @@ Azure HDInsight является одной из самых популярных
 
 В этом выпуске содержится Hadoop Common 2.7.3 и следующие исправления Apache.
 
--   [HADOOP-13190](https://issues.apache.org/jira/browse/HADOOP-13190): укажите поставщик LoadBalancingKMSClientProvider в документации высокой доступности сервера управления ключами.
+-   [HADOOP-13190](https://issues.apache.org/jira/browse/HADOOP-13190). Укажите поставщика LoadBalancingKMSClientProvider в документации высокой доступности сервера управления ключами.
 
--   [HADOOP-13227](https://issues.apache.org/jira/browse/HADOOP-13227): обработчик AsyncCallHandler должен использовать архитектуру, управляемую событиями, для обработки асинхронных вызовов.
+-   [HADOOP-13227](https://issues.apache.org/jira/browse/HADOOP-13227). Обработчик AsyncCallHandler должен использовать архитектуру, управляемую событиями, для обработки асинхронных вызовов.
 
--   [HADOOP-14104](https://issues.apache.org/jira/browse/HADOOP-14104): клиент должен всегда запрашивать узел с именем для пути поставщика сервера управления ключами.
+-   [HADOOP-14104](https://issues.apache.org/jira/browse/HADOOP-14104). Клиент должен всегда запрашивать узел с именем для пути поставщика сервера управления ключами.
 
--   [HADOOP-14799](https://issues.apache.org/jira/browse/HADOOP-14799): обновите nimbus-jose-jwt до версии 4.41.1.
+-   [HADOOP-14799](https://issues.apache.org/jira/browse/HADOOP-14799). Обновите nimbus-jose-jwt до версии 4.41.1.
 
--   [HADOOP-14814](https://issues.apache.org/jira/browse/HADOOP-14814): исправьте изменение в несовместимом API в FsServerDefaults на HADOOP-14104.
+-   [HADOOP-14814](https://issues.apache.org/jira/browse/HADOOP-14814). Исправьте изменение в несовместимом API в FsServerDefaults на HADOOP-14104.
 
--   [HADOOP-14903](https://issues.apache.org/jira/browse/HADOOP-14903): добавьте явным образом json-smart в файл pom.xml.
+-   [HADOOP-14903](https://issues.apache.org/jira/browse/HADOOP-14903). Добавьте явным образом json-smart в файл pom.xml.
 
--   [HADOOP-15042](https://issues.apache.org/jira/browse/HADOOP-15042): Azure PageBlobInputStream.skip() может возвращать отрицательное значение, когда значение numberOfPagesRemaining равно 0.
+-   [HADOOP-15042](https://issues.apache.org/jira/browse/HADOOP-15042). Azure PageBlobInputStream.skip() может возвращать отрицательное значение, когда значение numberOfPagesRemaining равно 0.
 
--   [HADOOP-15255](https://issues.apache.org/jira/browse/HADOOP-15255): поддержка преобразования верхнего и нижнего регистров для имен групп в LdapGroupsMapping.
+-   [HADOOP-15255](https://issues.apache.org/jira/browse/HADOOP-15255). Поддержка преобразования верхнего и нижнего регистров для имен групп в LdapGroupsMapping.
 
 -   [HADOOP-15265](https://issues.apache.org/jira/browse/HADOOP-15265): исключите явным образом json-smart из файла pom.xml hadoop-auth.
 
--   [HDFS-7922](https://issues.apache.org/jira/browse/HDFS-7922): ShortCircuitCache\#close не выпускает ScheduledThreadPoolExecutors.
+-   [HDFS-7922](https://issues.apache.org/jira/browse/HDFS-7922). ShortCircuitCache\#close не выпускает ScheduledThreadPoolExecutors.
 
--   [HDFS-8496](https://issues.apache.org/jira/browse/HDFS-8496): вызов функции stopWriter() с удерживаемой блокировкой FSDatasetImpl может блокировать другие потоки (cmccabe).
+-   [HDFS-8496](https://issues.apache.org/jira/browse/HDFS-8496). Вызов функции stopWriter() с удерживаемой блокировкой FSDatasetImpl может блокировать другие потоки (cmccabe).
 
--   [HDFS-10267](https://issues.apache.org/jira/browse/HDFS-10267): дополнительно синхронизированный в FsDatasetImpl\#recoverAppend и FsDatasetImpl\#recoverClose.
+-   [HDFS-10267](https://issues.apache.org/jira/browse/HDFS-10267). Дополнительно синхронизированный в FsDatasetImpl\#recoverAppend и FsDatasetImpl\#recoverClose.
 
--   [HDFS-10489](https://issues.apache.org/jira/browse/HDFS-10489): объявите устаревшим URI dfs.encryption.key.provider.uri для зон шифрования HDFS.
+-   [HDFS-10489](https://issues.apache.org/jira/browse/HDFS-10489). Объявите dfs.encryption.key.provider.uri устаревшим для зон шифрования HDFS.
 
--   [HDFS-11384](https://issues.apache.org/jira/browse/HDFS-11384): добавьте параметр для балансировщика для разгона вызовов getBlocks, чтобы избежать всплеска rpc.CallQueueLength узла NameNode.
+-   [HDFS-11384](https://issues.apache.org/jira/browse/HDFS-11384). Добавьте параметр для балансировщика для разгона вызовов getBlocks, чтобы избежать всплеска rpc.CallQueueLength узла NameNode.
 
--   [HDFS-11689](https://issues.apache.org/jira/browse/HDFS-11689): новое исключение, созданное шифрованием DFSClient%isHDFSEncryptionEnabled, прервало небезопасный код Hive.
+-   [HDFS-11689](https://issues.apache.org/jira/browse/HDFS-11689). Новое исключение, созданное шифрованием DFSClient%isHDFSEncryptionEnabled, прервало небезопасный код Hive.
 
--   [HDFS-11711](https://issues.apache.org/jira/browse/HDFS-11711): имя DN не должно удалять блокировку в исключении "Слишком много открытых файлов".
+-   [HDFS-11711](https://issues.apache.org/jira/browse/HDFS-11711). Имя DN не должно удалять блокировку в исключении "Слишком много открытых файлов".
 
--   [HDFS-12347](https://issues.apache.org/jira/browse/HDFS-12347): задержка TestBalancerRPCDelay\#testBalancerRPCDelay очень часто завершается сбоем.
+-   [HDFS-12347](https://issues.apache.org/jira/browse/HDFS-12347). Задержка TestBalancerRPCDelay\#testBalancerRPCDelay очень часто завершается сбоем.
 
--   [HDFS-12781](https://issues.apache.org/jira/browse/HDFS-12781): после отключения узла данных на вкладке узла данных пользовательского интерфейса узла имени появится предупреждающее сообщение.
+-   [HDFS-12781](https://issues.apache.org/jira/browse/HDFS-12781). После отключения узла данных на вкладке узла данных пользовательского интерфейса узла имени появится предупреждающее сообщение
 
--   [HDFS-13054](https://issues.apache.org/jira/browse/HDFS-13054): обработка исключения PathIsNotEmptyDirectoryException в вызове удаления DFSClient.
+-   [HDFS-13054](https://issues.apache.org/jira/browse/HDFS-13054). Обработка исключения PathIsNotEmptyDirectoryException в вызове удаления DFSClient.
 
--   [HDFS-13120](https://issues.apache.org/jira/browse/HDFS-13120): инструмент сравнения моментального снимка мог быть поврежден после объединения.
+-   [HDFS-13120](https://issues.apache.org/jira/browse/HDFS-13120). Инструмент сравнения моментального снимка мог быть поврежден после объединения.
 
--   [YARN-3742](https://issues.apache.org/jira/browse/YARN-3742): работа YARN RM будет завершена при истечении времени создания клиента ZKClient.
+-   [YARN-3742](https://issues.apache.org/jira/browse/YARN-3742). Работа YARN RM будет завершена при истечении времени создания клиента ZKClient.
 
--   [YARN-6061](https://issues.apache.org/jira/browse/YARN-6061): добавьте обработчик UncaughtExceptionHandler для критических потоков в RM.
+-   [YARN-6061](https://issues.apache.org/jira/browse/YARN-6061). Добавьте обработчик UncaughtExceptionHandler для критических потоков в RM.
 
 -   [YARN-7558](https://issues.apache.org/jira/browse/YARN-7558): не удалось выполнить команду журналов Yarn, чтобы получить журналы для запуска контейнеров при включенной проверке подлинности пользовательского интерфейса.
 
--   [YARN-7697](https://issues.apache.org/jira/browse/YARN-7697): извлечение журналов для готового приложения завершается сбоем, даже если выполнена агрегация журнала.
+-   [YARN-7697](https://issues.apache.org/jira/browse/YARN-7697). Извлечение журналов для готового приложения завершается сбоем, даже если выполнена агрегация журнала.
 
 В HDP версии 2.6.4 содержится Hadoop Common 2.7.3 и следующие исправления Apache.
 
--   [HADOOP-13700](https://issues.apache.org/jira/browse/HADOOP-13700): удалите неиспользуемое исключение IOException из подписей TrashPolicy\#initialize и \#getInstance.
+-   [HADOOP 13700](https://issues.apache.org/jira/browse/HADOOP-13700). Удалите неиспользуемое исключение IOException из подписей TrashPolicy\#initialize и \#getInstance.
 
--   [HADOOP-13709](https://issues.apache.org/jira/browse/HADOOP-13709): возможность очистить подпроцессы, порожденные Shell, при наличии процесса.
+-   [HADOOP-13709](https://issues.apache.org/jira/browse/HADOOP-13709). Возможность очистить подпроцессы, порожденные Shell, при наличии процесса.
 
 -   [HADOOP-14059](https://issues.apache.org/jira/browse/HADOOP-14059): опечатка в сообщении об ошибке s3a rename(self, subdir).
 
--   [HADOOP-14542](https://issues.apache.org/jira/browse/HADOOP-14542): добавьте средство ведения журнала IOUtils.cleanupWithLogger, которое принимает API средства ведения журнала slf4j.
+-   [HADOOP-14542](https://issues.apache.org/jira/browse/HADOOP-14542). Добавьте средство ведения журнала IOUtils.cleanupWithLogger, которое принимает API средства ведения журнала slf4j.
 
--   [HDFS-9887](https://issues.apache.org/jira/browse/HDFS-9887): время ожидания сокета WebHDFS должно быть настраиваемое.
+-   [HDFS-9887](https://issues.apache.org/jira/browse/HDFS-9887). Время ожидания сокета WebHDFS должно быть настраиваемое.
 
--   [HDFS-9914](https://issues.apache.org/jira/browse/HDFS-9914): исправьте настраиваемое время ожидания на чтение и подключение WebHDFS.
+-   [HDFS-9914](https://issues.apache.org/jira/browse/HDFS-9914). Исправьте настраиваемое время ожидания на чтение и подключение WebHDFS.
 
--   [MAPREDUCE-6698](https://issues.apache.org/jira/browse/MAPREDUCE-6698): увеличьте время ожидания в TestUnnecessaryBlockingOnHist oryFileInfo.testTwoThreadsQueryingDifferentJobOfSameUser.
+-   [MAPREDUCE-6698](https://issues.apache.org/jira/browse/MAPREDUCE-6698). Увеличьте время ожидания в TestUnnecessaryBlockingOnHist oryFileInfo.testTwoThreadsQueryingDifferentJobOfSameUser.
 
--   [YARN-4550](https://issues.apache.org/jira/browse/YARN-4550): некоторые проверки в TestContainerLanch не удается выполнить в среде языкового стандарта, отличного от английского.
+-   [YARN-4550](https://issues.apache.org/jira/browse/YARN-4550). Некоторые проверки в TestContainerLanch не удается выполнить в среде языкового стандарта, отличного от английского.
 
--   [YARN-4717](https://issues.apache.org/jira/browse/YARN-4717): работа каталога TestResourceLocalizationService.testPublicResourceInitializesLocalDir периодически прерывается из-за исключения IllegalArgumentException в процессе очистки.
+-   [YARN-4717](https://issues.apache.org/jira/browse/YARN-4717). Работа каталога TestResourceLocalizationService.testPublicResourceInitializesLocalDir периодически прерывается из-за исключения IllegalArgumentException в процессе очистки.
 
--   [YARN-5042](https://issues.apache.org/jira/browse/YARN-5042): подключите группу /sys/fs/cgroup к контейнерам Docker, выбрав подключение только для чтения.
+-   [YARN-5042](https://issues.apache.org/jira/browse/YARN-5042). Подключите группу /sys/fs/cgroup к контейнерам Docker, выбрав подключение только для чтения.
 
--   [YARN-5318](https://issues.apache.org/jira/browse/YARN-5318): исправьте проблему с прерывающейся проверкой поставщика TestRMAdminService\#te stRefreshNodesResourceWithFileSystemBasedConfigurationProvider.
+-   [YARN-5318](https://issues.apache.org/jira/browse/YARN-5318). Исправьте проблему с прерывающейся проверкой поставщика TestRMAdminService\#te stRefreshNodesResourceWithFileSystemBasedConfigurationProvider.
 
--   [YARN-5641](https://issues.apache.org/jira/browse/YARN-5641): средство локализации остается за пределами архивов в формате TAR после завершения создания контейнера.
+-   [YARN-5641](https://issues.apache.org/jira/browse/YARN-5641). Средство локализации остается за пределами архивов Tarball после завершения создания контейнера.
 
--   [YARN-6004](https://issues.apache.org/jira/browse/YARN-6004): выполните рефакторинг контейнера TestResourceLocalizationService\#testDownloadingResourcesOnContainer, чтобы он составлял менее 150 строк.
+-   [YARN-6004](https://issues.apache.org/jira/browse/YARN-6004). Выполните рефакторинг контейнера TestResourceLocalizationService\#testDownloadingResourcesOnContainer, чтобы он составлял менее 150 строк.
 
--   [YARN-6078](https://issues.apache.org/jira/browse/YARN-6078): контейнеры зависли в состоянии локализации.
+-   [YARN-6078](https://issues.apache.org/jira/browse/YARN-6078). Контейнеры зависли в состоянии локализации.
 
--   [YARN-6805](https://issues.apache.org/jira/browse/YARN-6805): NPE в исполнителе LinuxContainerExecutor из-за кода завершения исключения PrivilegedOperationException со значением NULL.
+-   [YARN-6805](https://issues.apache.org/jira/browse/YARN-6805). NPE в исполнителе LinuxContainerExecutor из-за кода завершения исключения PrivilegedOperationException со значением NULL.
 
 ### <a name="hbase"></a>hbase
 
 В этом выпуске содержится HBase 1.1.2 и следующие исправления Apache.
 
--   [HBASE-13376](https://issues.apache.org/jira/browse/HBASE-13376): улучшения стохастической подсистемы балансировки нагрузки.
+-   [HBASE-13376](https://issues.apache.org/jira/browse/HBASE-13376). Улучшения стохастической подсистемы балансировки нагрузки.
 
--   [HBASE-13716](https://issues.apache.org/jira/browse/HBASE-13716): прекратите использовать константы FSConstants Hadoop.
+-   [HBASE-13716](https://issues.apache.org/jira/browse/HBASE-13716). Прекратите использовать константы FSConstants Hadoop.
 
--   [HBASE-13848](https://issues.apache.org/jira/browse/HBASE-13848): получите доступ к паролям SSL InfoServer с помощью API поставщика учетных данных.
+-   [HBASE-13848](https://issues.apache.org/jira/browse/HBASE-13848). Получите доступ к паролям SSL InfoServer с помощью API поставщика учетных данных.
 
--   [HBASE-13947](https://issues.apache.org/jira/browse/HBASE-13947): используйте службы MasterServices вместо сервера в AssignmentManager.
+-   [HBASE-13947](https://issues.apache.org/jira/browse/HBASE-13947). Используйте службы MasterServices вместо сервера в AssignmentManager.
 
--   [HBASE-14135](https://issues.apache.org/jira/browse/HBASE-14135): этап 3 резервного копирования и восстановления HBase — объедините образы резервных копий.
+-   [HBASE-14135](https://issues.apache.org/jira/browse/HBASE-14135). Этап 3 резервного копирования и восстановления HBase. Объедините образы резервных копий.
 
--   [HBASE-14473](https://issues.apache.org/jira/browse/HBASE-14473): вычислите местоположение региона в параллельном режиме.
+-   [HBASE-14473](https://issues.apache.org/jira/browse/HBASE-14473). Вычислите местоположение региона в параллельном режиме.
 
--   [HBASE-14517](https://issues.apache.org/jira/browse/HBASE-14517): покажите версию сервера региона на главной странице состояния.
+-   [HBASE-14517](https://issues.apache.org/jira/browse/HBASE-14517). Покажите версию сервера региона на главной странице состояния.
 
--   [HBASE-14606](https://issues.apache.org/jira/browse/HBASE-14606): в Apache истекло время ожидания проверок TestSecureLoadIncrementalHFiles в сборке магистралей.
+-   [HBASE-14606](https://issues.apache.org/jira/browse/HBASE-14606). В Apache истекло время ожидания проверок TestSecureLoadIncrementalHFiles в сборке магистралей.
 
--   [HBASE-15210](https://issues.apache.org/jira/browse/HBASE-15210): отмените интенсивное ведение журналов для десятков строк за миллисекунду в подсистеме балансировки нагрузки.
+-   [HBASE-15210](https://issues.apache.org/jira/browse/HBASE-15210). Отмените интенсивное ведение журналов для десятков строк за миллисекунду в подсистеме балансировки нагрузки.
 
--   [HBASE-15515](https://issues.apache.org/jira/browse/HBASE-15515): оптимизируйте в балансировщике LocalityBasedCandidateGenerator.
+-   [HBASE-15515](https://issues.apache.org/jira/browse/HBASE-15515). Оптимизируйте LocalityBasedCandidateGenerator в балансировщике.
 
--   [HBASE-15615](https://issues.apache.org/jira/browse/HBASE-15615): неправильное время перехода в спящий режим при необходимости повторной попытки RegionServerCallable.
+-   [HBASE-15615](https://issues.apache.org/jira/browse/HBASE-15615). Неправильное время перехода в спящий режим при необходимости повторной попытки RegionServerCallable.
 
--   [HBASE-16135](https://issues.apache.org/jira/browse/HBASE-16135): узел PeerClusterZnode в RS удаленного кэширующего узла никогда не удаляется.
+-   [HBASE-16135](https://issues.apache.org/jira/browse/HBASE-16135). Узел PeerClusterZnode в RS удаленного кэширующего узла никогда не удаляется.
 
--   [HBASE-16570](https://issues.apache.org/jira/browse/HBASE-16570): при запуске вычислите местоположение региона в параллельном режиме.
+-   [HBASE-16570](https://issues.apache.org/jira/browse/HBASE-16570). При запуске вычислите местоположение региона в параллельном режиме.
 
--   [HBASE-16810](https://issues.apache.org/jira/browse/HBASE-16810): балансировщик HBase вызывает исключение ArrayIndexOutOfBoundsException, когда серверы региона находятся на узле /hbase/draining и выгружаются.
+-   [HBASE-16810](https://issues.apache.org/jira/browse/HBASE-16810). Балансировщик HBase вызывает исключение ArrayIndexOutOfBoundsException, когда серверы региона находятся на узле /hbase/draining и выгружаются.
 
--   [HBASE-16852](https://issues.apache.org/jira/browse/HBASE-16852): сбой TestDefaultCompactSelection в ветви branch-1.3.
+-   [HBASE-16852](https://issues.apache.org/jira/browse/HBASE-16852). Сбой TestDefaultCompactSelection в ветви branch-1.3.
 
--   [HBASE-17387](https://issues.apache.org/jira/browse/HBASE-17387): уменьшите нагрузку, указанную в отчете об исключении в RegionActionResult для multi().
+-   [HBASE-17387](https://issues.apache.org/jira/browse/HBASE-17387). Уменьшите накладные расходы отчета об исключении в RegionActionResult для multi().
 
--   [HBASE-17850](https://issues.apache.org/jira/browse/HBASE-17850): служебная программа восстановления резервной копии.
+-   [HBASE-17850](https://issues.apache.org/jira/browse/HBASE-17850). Служебная программа восстановления резервной копии.
 
--   [HBASE-17931](https://issues.apache.org/jira/browse/HBASE-17931): назначьте системные таблицы серверам с самой последней версией.
+-   [HBASE-17931](https://issues.apache.org/jira/browse/HBASE-17931). Назначьте системные таблицы серверам с самой последней версией.
 
--   [HBASE-18083](https://issues.apache.org/jira/browse/HBASE-18083): обеспечьте возможность настройки числа потоков очистки файлов небольших и больших размеров в HFileCleaner.
+-   [HBASE-18083](https://issues.apache.org/jira/browse/HBASE-18083). Обеспечьте возможность настройки числа потоков очистки файлов небольших и больших размеров в HFileCleaner.
 
--   [HBASE-18084](https://issues.apache.org/jira/browse/HBASE-18084): оптимизируйте CleanerChore для очистки каталога, который потребляет больше дискового пространства.
+-   [HBASE-18084](https://issues.apache.org/jira/browse/HBASE-18084). Оптимизируйте CleanerChore для очистки каталога, который потребляет больше дискового пространства.
 
--   [HBASE-18164](https://issues.apache.org/jira/browse/HBASE-18164): более быстрая функция стоимости местоположения и генератор-кандидат.
+-   [HBASE-18164](https://issues.apache.org/jira/browse/HBASE-18164). Более быстрая функция стоимости местоположения и генератор-кандидат.
 
--   [HBASE-18212](https://issues.apache.org/jira/browse/HBASE-18212): предупреждающее сообщение в автономном режиме с журналами HBase в локальной файловой системе: "Failed to invoke 'unbuffer' method in class class org.apache.hadoop.fs.FSDataInputStream" (Не удалось вызвать метод очистки буфера в классе org.apache.hadoop.fs.FSDataInputStream).
+-   [HBASE-18212](https://issues.apache.org/jira/browse/HBASE-18212). Предупреждающее сообщение в автономном режиме с журналами HBase в локальной файловой системе: "Failed to invoke 'unbuffer' method in class class org.apache.hadoop.fs.FSDataInputStream" (Не удалось вызвать метод очистки буфера в классе org.apache.hadoop.fs.FSDataInputStream).
 
--   [HBASE-18808](https://issues.apache.org/jira/browse/HBASE-18808): неэффективная проверка конфигурации в BackupLogCleaner\#getDeletableFiles().
+-   [HBASE-18808](https://issues.apache.org/jira/browse/HBASE-18808). Неэффективная проверка конфигурации в BackupLogCleaner\#getDeletableFiles().
 
--   [HBASE-19052](https://issues.apache.org/jira/browse/HBASE-19052): FixedFileTrailer должен распознавать класс CellComparatorImpl в ветви branch-1.x.
+-   [HBASE-19052](https://issues.apache.org/jira/browse/HBASE-19052). FixedFileTrailer должен распознавать класс CellComparatorImpl в ветви branch-1.x.
 
--   [HBASE-19065](https://issues.apache.org/jira/browse/HBASE-19065): метод HRegion\#bulkLoadHFiles() должен ожидать завершения параллельного метода Region\#flush().
+-   [HBASE-19065](https://issues.apache.org/jira/browse/HBASE-19065). Метод HRegion\#bulkLoadHFiles() должен ожидать завершения параллельного метода Region\#flush().
 
--   [HBASE-19285](https://issues.apache.org/jira/browse/HBASE-19285): добавьте гистограммы задержки для каждой таблицы.
+-   [HBASE-19285](https://issues.apache.org/jira/browse/HBASE-19285). Добавьте гистограммы задержки для каждой таблицы.
 
--   [HBASE-19393](https://issues.apache.org/jira/browse/HBASE-19393): ошибка HTTP 413 FULL head (переполнение заголовка) во время доступа к пользовательскому интерфейсу HBase с помощью SSL.
+-   [HBASE-19393](https://issues.apache.org/jira/browse/HBASE-19393). Головной узел HTTP 413 во время доступа к пользовательскому интерфейсу HBase с помощью SSL
 
 -   [HBASE-19395](https://issues.apache.org/jira/browse/HBASE-19395): \[branch-1\] ошибка разделения TestEndToEndSplitTransaction.testMasterOpsWhileSplitting с NPE.
 
 -   [HBASE-19421](https://issues.apache.org/jira/browse/HBASE-19421): ветвь branch-1 не компилируется с Hadoop версии 3.0.0.
 
--   [HBASE-19934](https://issues.apache.org/jira/browse/HBASE-19934): исключение HBaseSnapshotException, если включены реплики чтения и при выполнении интерактивного моментального снимка после разделения региона.
+-   [HBASE-19934](https://issues.apache.org/jira/browse/HBASE-19934). Исключение HBaseSnapshotException, если включены реплики чтения и при выполнении интерактивного моментального снимка после разделения региона.
 
 -   [HBASE-20008](https://issues.apache.org/jira/browse/HBASE-20008): \[backport\] исключение NullPointerException при восстановлении моментального снимка после разделения региона.
 
@@ -241,293 +241,293 @@ Azure HDInsight является одной из самых популярных
 
 **Исправления Apache Hive 1.2.1:**
 
--   [*HIVE-10697*](https://issues.apache.org/jira/browse/HIVE-10697): ObjectInspectorConvertors\#UnionConvertor выполняет ошибочное преобразование.
+-   [*HIVE-10697*](https://issues.apache.org/jira/browse/HIVE-10697). ObjectInspectorConvertors\#UnionConvertor выполняет ошибочное преобразование.
 
 -   [*HIVE-11266*](https://issues.apache.org/jira/browse/HIVE-11266): неправильный результат count(\*), основанный на статистике таблицы для внешних таблиц.
 
--   [*HIVE-12245*](https://issues.apache.org/jira/browse/HIVE-12245): включите поддержку комментариев в столбце для архивной таблицы HBase.
+-   [*HIVE-12245*](https://issues.apache.org/jira/browse/HIVE-12245). Включите поддержку комментариев в столбце для архивной таблицы HBase.
 
--   [*HIVE-12315*](https://issues.apache.org/jira/browse/HIVE-12315): исправьте деление на ноль двойного значения в векторной форме.
+-   [*HIVE-12315*](https://issues.apache.org/jira/browse/HIVE-12315). Исправьте деление на ноль двойного значения в векторной форме.
 
--   [*HIVE-12360*](https://issues.apache.org/jira/browse/HIVE-12360): некорректный поиск в ORC без сжатия с включением предиката.
+-   [*HIVE-12360*](https://issues.apache.org/jira/browse/HIVE-12360). Некорректный поиск в ORC без сжатия с включением предиката.
 
--   [*HIVE-12378*](https://issues.apache.org/jira/browse/HIVE-12378): исключение в бинарном поле HBaseSerDe.serialize.
+-   [*HIVE-12378*](https://issues.apache.org/jira/browse/HIVE-12378). Исключение в бинарном поле HBaseSerDe.serialize.
 
--   [*HIVE-12785*](https://issues.apache.org/jira/browse/HIVE-12785): просмотр структуры с помощью типа объединения и определяемой пользователем функции не работает.
+-   [*HIVE-12785*](https://issues.apache.org/jira/browse/HIVE-12785). Просмотр структуры с помощью типа объединения и определяемой пользователем функции не работает.
 
--   [*HIVE-14013*](https://issues.apache.org/jira/browse/HIVE-14013): в таблице с описанием неправильно отображается Юникод.
+-   [*HIVE-14013*](https://issues.apache.org/jira/browse/HIVE-14013). В таблице с описанием неправильно отображается Юникод.
 
--   [*HIVE-14205*](https://issues.apache.org/jira/browse/HIVE-14205): Hive не поддерживает тип объединения с файлом формата AVRO.
+-   [*HIVE-14205*](https://issues.apache.org/jira/browse/HIVE-14205). Hive не поддерживает тип объединения с файлом формата AVRO.
 
--   [*HIVE-14421*](https://issues.apache.org/jira/browse/HIVE-14421): FS.deleteOnExit содержит ссылки на файлы \_tmp\_space.db.
+-   [*HIVE-14421*](https://issues.apache.org/jira/browse/HIVE-14421). FS.deleteOnExit содержит ссылки на файлы \_tmp\_space.db.
 
--   [*HIVE-15563*](https://issues.apache.org/jira/browse/HIVE-15563): проигнорируйте исключение перехода состояния недопустимой операции в запросе SQLOperation.runQuery, чтобы предоставить реальное исключение.
+-   [*HIVE-15563*](https://issues.apache.org/jira/browse/HIVE-15563). Проигнорируйте исключение перехода состояния недопустимой операции в запросе SQLOperation.runQuery, чтобы предоставить реальное исключение
 
--   [*HIVE-15680*](https://issues.apache.org/jira/browse/HIVE-15680): неправильные результаты в режиме MR, когда hive.optimize.index.filter=true и в запросе дважды содержится ссылка на одну таблицу ORC.
+-   [*HIVE-15680*](https://issues.apache.org/jira/browse/HIVE-15680). Неправильные результаты в режиме MR, когда hive.optimize.index.filter=true и в запросе дважды содержится ссылка на одну таблицу ORC.
 
--   [*HIVE-15883*](https://issues.apache.org/jira/browse/HIVE-15883): сопоставленная таблица HBase в Hive INSERT не подходит для десятичного числа.
+-   [*HIVE-15883*](https://issues.apache.org/jira/browse/HIVE-15883). Сопоставленная таблица HBase в Hive INSERT не подходит для десятичного числа.
 
--   [*HIVE-16232*](https://issues.apache.org/jira/browse/HIVE-16232): включите поддержку вычисления статистики для столбцов в идентификаторе QuotedIdentifier.
+-   [*HIVE-16232*](https://issues.apache.org/jira/browse/HIVE-16232). Включите поддержку вычисления статистики для столбцов в идентификаторе QuotedIdentifier.
 
--   [*HIVE-16828*](https://issues.apache.org/jira/browse/HIVE-16828): с включенной оптимизацией с учетом затрат запрос в секционированных представлениях вызывает исключение IndexOutOfBoundException.
+-   [*HIVE-16828*](https://issues.apache.org/jira/browse/HIVE-16828). С включенной оптимизацией с учетом затрат запрос в секционированных представлениях вызывает исключение IndexOutOfBoundException.
 
--   [*HIVE-17013*](https://issues.apache.org/jira/browse/HIVE-17013): удалите запрос с вложенным запросом на основе выбора над представлением.
+-   [*HIVE-17013*](https://issues.apache.org/jira/browse/HIVE-17013). Удалите запрос с вложенным запросом на основе выбора над представлением.
 
 -   [*HIVE-17063*](https://issues.apache.org/jira/browse/HIVE-17063): вставка раздела перезаписи во внешнюю таблицу завершается сбоем, если в первую очередь выполняется перетаскивание раздела.
 
--   [*HIVE-17259*](https://issues.apache.org/jira/browse/HIVE-17259): Hive JDBC не распознает столбцы UNIONTYPE.
+-   [*HIVE-17259*](https://issues.apache.org/jira/browse/HIVE-17259). Hive JDBC не распознает столбцы UNIONTYPE.
 
--   [*HIVE-17419*](https://issues.apache.org/jira/browse/HIVE-17419): при выполнении команды ANALYZE TABLE...COMPUTE STATISTICS FOR COLUMNS отображается вычисленная статистика для маскированных таблиц.
+-   [*HIVE-17419*](https://issues.apache.org/jira/browse/HIVE-17419). При выполнении команды ANALYZE TABLE...COMPUTE STATISTICS FOR COLUMNS отображается вычисленная статистика для маскированных таблиц.
 
--   [*HIVE-17530*](https://issues.apache.org/jira/browse/HIVE-17530): исключение ClassCastException при преобразовании типа объединения.
+-   [*HIVE-17530*](https://issues.apache.org/jira/browse/HIVE-17530). Исключение ClassCastException при преобразовании типа объединения.
 
--   [*HIVE-17621*](https://issues.apache.org/jira/browse/HIVE-17621): параметры Hive-site игнорируются во время вычисления разделения HCatInputFormat.
+-   [*HIVE-17621*](https://issues.apache.org/jira/browse/HIVE-17621). Параметры Hive-site игнорируются во время вычисления разделения HCatInputFormat.
 
--   [*HIVE-17636*](https://issues.apache.org/jira/browse/HIVE-17636): добавьте проверку multiple\_agg.q для хранилищ BLOB-объектов.
+-   [*HIVE-17636*](https://issues.apache.org/jira/browse/HIVE-17636). Добавьте проверку multiple\_agg.q для хранилищ BLOB-объектов.
 
--   [*HIVE-17729*](https://issues.apache.org/jira/browse/HIVE-17729): добавьте базу данных и объясните связанные проверки в хранилище BLOB-объектов.
+-   [*HIVE-17729*](https://issues.apache.org/jira/browse/HIVE-17729). Добавьте базу данных и объясните связанные проверки в хранилище BLOB-объектов.
 
 -   [*HIVE-17731*](https://issues.apache.org/jira/browse/HIVE-17731): добавьте параметр обратной совместимости для внешних пользователей в HIVE-11985.
 
--   [*HIVE-17803*](https://issues.apache.org/jira/browse/HIVE-17803): при использовании множественного запроса Pig записи 2-х HCatStorers в одну таблицу будут удалять выходные данные друг друга.
+-   [*HIVE-17803*](https://issues.apache.org/jira/browse/HIVE-17803). При использовании множественного запроса Pig записи 2-х HCatStorers в одну таблицу будут удалять выходные данные друг друга.
 
--   [*HIVE-17829*](https://issues.apache.org/jira/browse/HIVE-17829): исключение ArrayIndexOutOfBoundsException — архивные таблицы HBASE со схемой Avro в Hive2.
+-   [*HIVE-17829*](https://issues.apache.org/jira/browse/HIVE-17829). Исключение ArrayIndexOutOfBoundsException – архивные таблицы HBASE со схемой Avro в Hive2.
 
 -   [*HIVE-17845*](https://issues.apache.org/jira/browse/HIVE-17845): вставка завершается сбоем, если для столбцов целевой таблицы используется верхний регистр.
 
 -   [*HIVE-17900*](https://issues.apache.org/jira/browse/HIVE-17900): проанализируйте статистические данные в столбцах. Если они активированы с помощью уплотнителя, будет создан SQL неправильного формата с более чем 1 столбцом раздела.
 
--   [*HIVE-18026*](https://issues.apache.org/jira/browse/HIVE-18026): оптимизация основной конфигурации Hive WebHCat.
+-   [*HIVE-18026*](https://issues.apache.org/jira/browse/HIVE-18026). Оптимизация основной конфигурации Hive WebHCat.
 
--   [*HIVE-18031*](https://issues.apache.org/jira/browse/HIVE-18031): включите поддержку репликации для операции изменения базы данных.
+-   [*HIVE-18031*](https://issues.apache.org/jira/browse/HIVE-18031). Включите поддержку репликации для операции изменения базы данных
 
 -   [*HIVE-18090*](https://issues.apache.org/jira/browse/HIVE-18090): сбой пульса ACID при подключении хранилища метаданных через учетные данные Hadoop.
 
--   [*HIVE-18189*](https://issues.apache.org/jira/browse/HIVE-18189): запрос Hive возвращает неправильные результаты, если для псевдонима hive.groupby.orderby.position.alias установлено значение true.
+-   [*HIVE-18189*](https://issues.apache.org/jira/browse/HIVE-18189). Запрос Hive возвращает неправильные результаты, если для псевдонима hive.groupby.orderby.position.alias установлено значение true.
 
--   [*HIVE-18258*](https://issues.apache.org/jira/browse/HIVE-18258): векторизация — Reduce-Side GROUP BY MERGEPARTIAL с двойными столбцами неработоспособна.
+-   [*HIVE-18258*](https://issues.apache.org/jira/browse/HIVE-18258). Векторизация: Reduce-Side GROUP BY MERGEPARTIAL с двойными столбцами неработоспособна.
 
--   [*HIVE-18293*](https://issues.apache.org/jira/browse/HIVE-18293): Hive не может сжимать таблицы, содержащиеся в папке, которая не принадлежит идентификатору, обеспечивающему работу хранилища HiveMetaStore.
+-   [*HIVE-18293*](https://issues.apache.org/jira/browse/HIVE-18293). Hive не может сжимать таблицы, содержащиеся в папке, которая не принадлежит идентификатору, обеспечивающему работу хранилища HiveMetaStore.
 
--   [*HIVE-18327*](https://issues.apache.org/jira/browse/HIVE-18327): удалите ненужную зависимость HiveConf для MiniHiveKdc.
+-   [*HIVE-18327*](https://issues.apache.org/jira/browse/HIVE-18327). Удалите ненужную зависимость HiveConf для MiniHiveKdc.
 
--   [*HIVE-18341*](https://issues.apache.org/jira/browse/HIVE-18341): добавьте поддержку загрузки REPL для добавления необработанного пространства имени для TDE с одинаковыми ключами шифрования.
+-   [*HIVE-18341*](https://issues.apache.org/jira/browse/HIVE-18341). Добавьте поддержку загрузки REPL для добавления необработанного пространства имени для TDE с одинаковыми ключами шифрования.
 
 -   [*HIVE-18352*](https://issues.apache.org/jira/browse/HIVE-18352): введите параметр METADATAONLY при выполнении REPL DUMP, чтобы разрешить процессы интеграции других инструментов.
 
--   [*HIVE-18353*](https://issues.apache.org/jira/browse/HIVE-18353): CompactorMR должен вызвать метод jobclient.close() для активации очистки (Джозеф Прабху (Prabhu Joseph) через Зеджас Наир (Thejas Nair)).
+-   [*HIVE-18353*](https://issues.apache.org/jira/browse/HIVE-18353). CompactorMR должен вызвать метод jobclient.close() для активации очистки (Джозеф Прабху (Prabhu Joseph) через Зеджас Наир (Thejas Nair)).
 
--   [*HIVE-18390*](https://issues.apache.org/jira/browse/HIVE-18390): исключение IndexOutOfBoundsException при запросе секционированного представления в ColumnPruner.
+-   [*HIVE-18390*](https://issues.apache.org/jira/browse/HIVE-18390). Исключение IndexOutOfBoundsException при запросе секционированного представления в ColumnPruner.
 
--   [*HIVE-18429*](https://issues.apache.org/jira/browse/HIVE-18429): сжатие должно обработать случай при отсутствии выходных данных.
+-   [*HIVE-18429*](https://issues.apache.org/jira/browse/HIVE-18429). Сжатие должно обработать пример при отсутствии выходных данных.
 
--   [*HIVE-18447*](https://issues.apache.org/jira/browse/HIVE-18447): JDBC — предоставьте пользователям JDBC возможность передавать сведения о файлах cookie через строку подключения.
+-   [*HIVE-18447*](https://issues.apache.org/jira/browse/HIVE-18447). JDBC: предоставьте пользователям JDBC возможность передавать сведения о файлах cookie через строку подключения.
 
--   [*HIVE-18460*](https://issues.apache.org/jira/browse/HIVE-18460): уплотнитель не передает свойства таблицы средству записи ORC.
+-   [*HIVE-18460*](https://issues.apache.org/jira/browse/HIVE-18460). Уплотнитель не передает свойства таблицы средству записи ORC.
 
 -   [*HIVE-18467*](https://issues.apache.org/jira/browse/HIVE-18467): поддержка целого дампа хранилища и загрузки, а также создание и удаление событий в базе данных (Анишек Агарвал (Anishek Agarwal), редакция Санкар Харипапан (Sankar Hariappan)).
 
--   [*HIVE-18551*](https://issues.apache.org/jira/browse/HIVE-18551): векторизация — VectorMapOperator пытается написать слишком много векторных столбцов для Hybrid Grace.
+-   [*HIVE-18551*](https://issues.apache.org/jira/browse/HIVE-18551). Векторизация: VectorMapOperator пытается написать слишком много векторных столбцов для Hybrid Grace.
 
 -   [*HIVE-18587*](https://issues.apache.org/jira/browse/HIVE-18587): вставка события DML может привести к попытке вычислить контрольную сумму в каталогах.
 
--   [*HIVE-18613*](https://issues.apache.org/jira/browse/HIVE-18613): продлите JsonSerDe для поддержки типа BINARY.
+-   [*HIVE-18613*](https://issues.apache.org/jira/browse/HIVE-18613). Продлите JsonSerDe для поддержки типа BINARY.
 
--   [*HIVE-18626*](https://issues.apache.org/jira/browse/HIVE-18626): предложение with загрузки REPL не передает конфигурацию задачам.
+-   [*HIVE-18626*](https://issues.apache.org/jira/browse/HIVE-18626). Предложение with загрузки REPL не передает конфигурацию задачам.
 
--   [*HIVE-18660*](https://issues.apache.org/jira/browse/HIVE-18660): реестр конфигурации платформы не различает разделы и виртуальные столбцы.
+-   [*HIVE-18660*](https://issues.apache.org/jira/browse/HIVE-18660). Реестр конфигурации платформы не различает разделы и виртуальные столбцы.
 
--   [*HIVE-18754*](https://issues.apache.org/jira/browse/HIVE-18754): состояние REPL должно поддерживать предложение with.
+-   [*HIVE-18754*](https://issues.apache.org/jira/browse/HIVE-18754). Состояние REPL должно поддерживать предложение with.
 
--   [*HIVE-18754*](https://issues.apache.org/jira/browse/HIVE-18754): состояние REPL должно поддерживать предложение with.
+-   [*HIVE-18754*](https://issues.apache.org/jira/browse/HIVE-18754). Состояние REPL должно поддерживать предложение with.
 
--   [*HIVE-18788*](https://issues.apache.org/jira/browse/HIVE-18788): очистите входные данные в инструкции PreparedStatement в JDBC.
+-   [*HIVE-18788*](https://issues.apache.org/jira/browse/HIVE-18788). Очистите входные данные в инструкции PreparedStatement в JDBC
 
--   [*HIVE-18794*](https://issues.apache.org/jira/browse/HIVE-18794): предложение with загрузки REPL не передает конфигурацию задачам для таблиц вне раздела.
+-   [*HIVE-18794*](https://issues.apache.org/jira/browse/HIVE-18794). Предложение with загрузки REPL не передает конфигурацию задачам для таблиц вне раздела.
 
--   [*HIVE-18808*](https://issues.apache.org/jira/browse/HIVE-18808): обеспечьте более надежное сжатие при сбое обновления статистических данных.
+-   [*HIVE-18808*](https://issues.apache.org/jira/browse/HIVE-18808). Обеспечьте более надежное сжатие при сбое обновления статистических данных.
 
--   [*HIVE-18817*](https://issues.apache.org/jira/browse/HIVE-18817): исключение ArrayIndexOutOfBounds во время чтения таблицы ACID.
+-   [*HIVE-18817*](https://issues.apache.org/jira/browse/HIVE-18817). Исключение ArrayIndexOutOfBounds во время чтения таблицы ACID
 
--   [*HIVE-18833*](https://issues.apache.org/jira/browse/HIVE-18833): сбой автоматического объединения при выполнении вставки в каталог, как вставки ORC-файла.
+-   [*HIVE-18833*](https://issues.apache.org/jira/browse/HIVE-18833). Сбой автоматического объединения при выполнении вставки в каталог как вставки ORC-файла.
 
--   [*HIVE-18879*](https://issues.apache.org/jira/browse/HIVE-18879): запретите работу внедренного элемента в UDFXPathUtil при наличии в пути класса файла xercesImpl.jar.
+-   [*HIVE-18879*](https://issues.apache.org/jira/browse/HIVE-18879). Запретите работу внедренного элемента в UDFXPathUtil при наличии в пути класса файла xercesImpl.jar.
 
--   [*HIVE-18907*](https://issues.apache.org/jira/browse/HIVE-18907): создайте утилиту, чтобы исправить проблему индекса ключа ACID в HIVE-18817.
+-   [*HIVE-18907*](https://issues.apache.org/jira/browse/HIVE-18907). Создайте служебную программу, чтобы исправить проблему индекса ключа ACID в HIVE-18817.
 
 **Исправления Apache Hive 2.1.0:**
 
--   [*HIVE-14013*](https://issues.apache.org/jira/browse/HIVE-14013): в таблице с описанием неправильно отображается Юникод.
+-   [*HIVE-14013*](https://issues.apache.org/jira/browse/HIVE-14013). В таблице с описанием неправильно отображается Юникод.
 
--   [*HIVE-14205*](https://issues.apache.org/jira/browse/HIVE-14205): Hive не поддерживает тип объединения с файлом формата AVRO.
+-   [*HIVE-14205*](https://issues.apache.org/jira/browse/HIVE-14205). Hive не поддерживает тип объединения с файлом формата AVRO.
 
--   [*HIVE-15563*](https://issues.apache.org/jira/browse/HIVE-15563): проигнорируйте исключение перехода состояния недопустимой операции в запросе SQLOperation.runQuery, чтобы предоставить реальное исключение.
+-   [*HIVE-15563*](https://issues.apache.org/jira/browse/HIVE-15563). Проигнорируйте исключение перехода состояния недопустимой операции в запросе SQLOperation.runQuery, чтобы предоставить реальное исключение
 
--   [*HIVE-15680*](https://issues.apache.org/jira/browse/HIVE-15680): неправильные результаты в режиме MR, когда hive.optimize.index.filter=true и в запросе дважды содержится ссылка на одну таблицу ORC.
+-   [*HIVE-15680*](https://issues.apache.org/jira/browse/HIVE-15680). Неправильные результаты в режиме MR, когда hive.optimize.index.filter=true и в запросе дважды содержится ссылка на одну таблицу ORC.
 
--   [*HIVE-15883*](https://issues.apache.org/jira/browse/HIVE-15883): сопоставленная таблица HBase в Hive INSERT не подходит для десятичного числа.
+-   [*HIVE-15883*](https://issues.apache.org/jira/browse/HIVE-15883). Сопоставленная таблица HBase в Hive INSERT не подходит для десятичного числа.
 
--   [*HIVE-16757*](https://issues.apache.org/jira/browse/HIVE-16757): удалите вызовы нерекомендуемых строк AbstractRelNode.getRows.
+-   [*HIVE-16757*](https://issues.apache.org/jira/browse/HIVE-16757). Удалите вызовы нерекомендуемых строк AbstractRelNode.getRows.
 
--   [*HIVE-16828*](https://issues.apache.org/jira/browse/HIVE-16828): с включенной оптимизацией с учетом затрат запрос в секционированных представлениях вызывает исключение IndexOutOfBoundException.
+-   [*HIVE-16828*](https://issues.apache.org/jira/browse/HIVE-16828). С включенной оптимизацией с учетом затрат запрос в секционированных представлениях вызывает исключение IndexOutOfBoundException.
 
 -   [*HIVE-17063*](https://issues.apache.org/jira/browse/HIVE-17063): вставка раздела перезаписи во внешнюю таблицу завершается сбоем, если в первую очередь выполняется перетаскивание раздела.
 
--   [*HIVE-17259*](https://issues.apache.org/jira/browse/HIVE-17259): Hive JDBC не распознает столбцы UNIONTYPE.
+-   [*HIVE-17259*](https://issues.apache.org/jira/browse/HIVE-17259). Hive JDBC не распознает столбцы UNIONTYPE.
 
--   [*HIVE-17530*](https://issues.apache.org/jira/browse/HIVE-17530): исключение ClassCastException при преобразовании типа объединения.
+-   [*HIVE-17530*](https://issues.apache.org/jira/browse/HIVE-17530). Исключение ClassCastException при преобразовании типа объединения.
 
--   [*HIVE-17600*](https://issues.apache.org/jira/browse/HIVE-17600): обеспечьте пользователям возможность настроить размер enforceBufferSize ORC-файла.
+-   [*HIVE-17600*](https://issues.apache.org/jira/browse/HIVE-17600). Обеспечьте пользователям возможность настроить размер enforceBufferSize ORC-файла.
 
 -   [*HIVE-17601*](https://issues.apache.org/jira/browse/HIVE-17601): оптимизируйте обработку ошибок в LlapServiceDriver.
 
 -   [*HIVE-17613*](https://issues.apache.org/jira/browse/HIVE-17613): удалите пулы объекта для коротких распределений с одним потоком.
 
--   [*HIVE-17617*](https://issues.apache.org/jira/browse/HIVE-17617): свертывание пустого экземпляра ResultSet должно включать группирование пустого набора.
+-   [*HIVE-17617*](https://issues.apache.org/jira/browse/HIVE-17617). Свертывание пустого экземпляра ResultSet должно включать группирование пустого набора.
 
--   [*HIVE-17621*](https://issues.apache.org/jira/browse/HIVE-17621): параметры Hive-site игнорируются во время вычисления разделения HCatInputFormat.
+-   [*HIVE-17621*](https://issues.apache.org/jira/browse/HIVE-17621). Параметры Hive-site игнорируются во время вычисления разделения HCatInputFormat.
 
--   [*HIVE-17629*](https://issues.apache.org/jira/browse/HIVE-17629): CachedStore — создайте конфигурацию списка разрешений и запрещенного списка для обеспечения выборочного кэширования таблиц и разделов, а также чтения во время предварительных действий.
+-   [*HIVE-17629*](https://issues.apache.org/jira/browse/HIVE-17629). CachedStore: создайте конфигурацию списка разрешений и запрещенного списка для обеспечения выборочного кэширования таблиц и разделов, а также чтения во время предварительных действий.
 
--   [*HIVE-17636*](https://issues.apache.org/jira/browse/HIVE-17636): добавьте проверку multiple\_agg.q для хранилищ BLOB-объектов.
+-   [*HIVE-17636*](https://issues.apache.org/jira/browse/HIVE-17636). Добавьте проверку multiple\_agg.q для хранилищ BLOB-объектов.
 
 -   [*HIVE-17702*](https://issues.apache.org/jira/browse/HIVE-17702): неправильная обработка isRepeating в средстве чтения десятичных чисел в ORC.
 
--   [*HIVE-17729*](https://issues.apache.org/jira/browse/HIVE-17729): добавьте базу данных и объясните связанные проверки в хранилище BLOB-объектов.
+-   [*HIVE-17729*](https://issues.apache.org/jira/browse/HIVE-17729). Добавьте базу данных и объясните связанные проверки в хранилище BLOB-объектов.
 
 -   [*HIVE-17731*](https://issues.apache.org/jira/browse/HIVE-17731): добавьте параметр обратной совместимости для внешних пользователей в HIVE-11985.
 
--   [*HIVE-17803*](https://issues.apache.org/jira/browse/HIVE-17803): при использовании множественного запроса Pig записи 2-х HCatStorers в одну таблицу будут удалять выходные данные друг друга.
+-   [*HIVE-17803*](https://issues.apache.org/jira/browse/HIVE-17803). При использовании множественного запроса Pig записи 2-х HCatStorers в одну таблицу будут удалять выходные данные друг друга.
 
 -   [*HIVE-17845*](https://issues.apache.org/jira/browse/HIVE-17845): вставка завершается сбоем, если для столбцов целевой таблицы используется верхний регистр.
 
 -   [*HIVE-17900*](https://issues.apache.org/jira/browse/HIVE-17900): проанализируйте статистические данные в столбцах. Если они активированы с помощью уплотнителя, будет создан SQL неправильного формата с более чем 1 столбцом раздела.
 
--   [*HIVE-18006*](https://issues.apache.org/jira/browse/HIVE-18006): оптимизируйте объем памяти HLLDenseRegister.
+-   [*HIVE-18006*](https://issues.apache.org/jira/browse/HIVE-18006). Оптимизируйте объем памяти HLLDenseRegister.
 
--   [*HIVE-18026*](https://issues.apache.org/jira/browse/HIVE-18026): оптимизация основной конфигурации Hive WebHCat.
+-   [*HIVE-18026*](https://issues.apache.org/jira/browse/HIVE-18026). Оптимизация основной конфигурации Hive WebHCat.
 
--   [*HIVE-18031*](https://issues.apache.org/jira/browse/HIVE-18031): включите поддержку репликации для операции изменения базы данных.
+-   [*HIVE-18031*](https://issues.apache.org/jira/browse/HIVE-18031). Включите поддержку репликации для операции изменения базы данных
 
 -   [*HIVE-18090*](https://issues.apache.org/jira/browse/HIVE-18090): сбой пульса ACID при подключении хранилища метаданных через учетные данные Hadoop.
 
--   [*HIVE-18189*](https://issues.apache.org/jira/browse/HIVE-18189): упорядочение по позиции не выполняется при отключенной оптимизации с учетом затрат.
+-   [*HIVE-18189*](https://issues.apache.org/jira/browse/HIVE-18189). Упорядочение по позиции не выполняется при отключенной оптимизации с учетом затрат.
 
--   [*HIVE-18258*](https://issues.apache.org/jira/browse/HIVE-18258): векторизация — Reduce-Side GROUP BY MERGEPARTIAL с двойными столбцами неработоспособна.
+-   [*HIVE-18258*](https://issues.apache.org/jira/browse/HIVE-18258). Векторизация: Reduce-Side GROUP BY MERGEPARTIAL с двойными столбцами неработоспособна.
 
--   [*HIVE-18269*](https://issues.apache.org/jira/browse/HIVE-18269): LLAP — быстрые операции ввода-вывода LLAP с медленным конвейером обработки могут привести к нехватке памяти (OOM).
+-   [*HIVE-18269*](https://issues.apache.org/jira/browse/HIVE-18269). LLAP: быстрые операции ввода-вывода LLAP с медленным конвейером обработки могут привести к нехватке памяти (OOM).
 
--   [*HIVE-18293*](https://issues.apache.org/jira/browse/HIVE-18293): Hive не может сжимать таблицы, содержащиеся в папке, которая не принадлежит идентификатору, обеспечивающему работу хранилища HiveMetaStore.
+-   [*HIVE-18293*](https://issues.apache.org/jira/browse/HIVE-18293). Hive не может сжимать таблицы, содержащиеся в папке, которая не принадлежит идентификатору, обеспечивающему работу хранилища HiveMetaStore.
 
--   [*HIVE-18318*](https://issues.apache.org/jira/browse/HIVE-18318): устройство чтения записей LLAP должно проверять события прерывания, даже если оно не блокируется.
+-   [*HIVE-18318*](https://issues.apache.org/jira/browse/HIVE-18318). Устройство чтения записей LLAP должно проверять события прерывания, даже если оно не блокируется.
 
--   [*HIVE-18326*](https://issues.apache.org/jira/browse/HIVE-18326): планировщик LLAP Tez только для преждевременного использования заданий при наличии между ними зависимости.
+-   [*HIVE-18326*](https://issues.apache.org/jira/browse/HIVE-18326). Планировщик LLAP Tez только для преждевременного использования заданий при наличии между ними зависимости.
 
--   [*HIVE-18327*](https://issues.apache.org/jira/browse/HIVE-18327): удалите ненужную зависимость HiveConf для MiniHiveKdc.
+-   [*HIVE-18327*](https://issues.apache.org/jira/browse/HIVE-18327). Удалите ненужную зависимость HiveConf для MiniHiveKdc.
 
--   [*HIVE-18331*](https://issues.apache.org/jira/browse/HIVE-18331): добавьте повторное имя для входа при истечении срока действия билета TGT и ведение журналов и лямбду.
+-   [*HIVE-18331*](https://issues.apache.org/jira/browse/HIVE-18331). Добавьте повторное имя для входа при истечении срока действия билета TGT и ведении журналов и лямбды.
 
--   [*HIVE-18341*](https://issues.apache.org/jira/browse/HIVE-18341): добавьте поддержку загрузки REPL для добавления необработанного пространства имени для TDE с одинаковыми ключами шифрования.
+-   [*HIVE-18341*](https://issues.apache.org/jira/browse/HIVE-18341). Добавьте поддержку загрузки REPL для добавления необработанного пространства имени для TDE с одинаковыми ключами шифрования.
 
 -   [*HIVE-18352*](https://issues.apache.org/jira/browse/HIVE-18352): введите параметр METADATAONLY при выполнении REPL DUMP, чтобы разрешить процессы интеграции других инструментов.
 
--   [*HIVE-18353*](https://issues.apache.org/jira/browse/HIVE-18353): CompactorMR должен вызвать метод jobclient.close() для активации очистки.
+-   [*HIVE-18353*](https://issues.apache.org/jira/browse/HIVE-18353). CompactorMR должен вызвать метод jobclient.close() для активации очистки.
 
--   [*HIVE-18384*](https://issues.apache.org/jira/browse/HIVE-18384): исключение ConcurrentModificationException в библиотеке log4j2.x.
+-   [*HIVE-18384*](https://issues.apache.org/jira/browse/HIVE-18384). Исключение ConcurrentModificationException в библиотеке log4j2.x.
 
--   [*HIVE-18390*](https://issues.apache.org/jira/browse/HIVE-18390): исключение IndexOutOfBoundsException при запросе секционированного представления в ColumnPruner.
+-   [*HIVE-18390*](https://issues.apache.org/jira/browse/HIVE-18390). Исключение IndexOutOfBoundsException при запросе секционированного представления в ColumnPruner.
 
--   [*HIVE-18447*](https://issues.apache.org/jira/browse/HIVE-18447): JDBC — предоставьте пользователям JDBC возможность передавать сведения о файлах cookie через строку подключения.
+-   [*HIVE-18447*](https://issues.apache.org/jira/browse/HIVE-18447). JDBC: предоставьте пользователям JDBC возможность передавать сведения о файлах cookie через строку подключения.
 
--   [*HIVE-18460*](https://issues.apache.org/jira/browse/HIVE-18460): уплотнитель не передает свойства таблицы средству записи ORC.
+-   [*HIVE-18460*](https://issues.apache.org/jira/browse/HIVE-18460). Уплотнитель не передает свойства таблицы средству записи ORC.
 
--   [*HIVE-18462*](https://issues.apache.org/jira/browse/HIVE-18462): (объяснение форматирования для запросов с соединением сопоставления с columnExprMap, которое включает неформатированное имя столбца).
+-   [*HIVE-18462*](https://issues.apache.org/jira/browse/HIVE-18462) (объяснение форматирования для запросов с соединением сопоставления с columnExprMap, которое включает неформатированное имя столбца).
 
 -   [*HIVE-18467*](https://issues.apache.org/jira/browse/HIVE-18467): поддержка целого дампа хранилища и загрузки, а также создание и удаление событий в базе данных.
 
--   [*HIVE-18488*](https://issues.apache.org/jira/browse/HIVE-18488): у средств чтения LLAP ORC отсутствуют некоторые проверки значений NULL.
+-   [*HIVE-18488*](https://issues.apache.org/jira/browse/HIVE-18488). У средств чтения LLAP ORC отсутствуют некоторые проверки значений NULL.
 
--   [*HIVE-18490*](https://issues.apache.org/jira/browse/HIVE-18490): запрос с инструкциями EXISTS и NOT EXISTS с неэквивалентным предикатом может привести к неправильному результату.
+-   [*HIVE-18490*](https://issues.apache.org/jira/browse/HIVE-18490). Запрос с инструкциями EXISTS и NOT EXISTS с неэквивалентным предикатом может привести к неправильному результату.
 
--   [*HIVE-18506*](https://issues.apache.org/jira/browse/HIVE-18506): формат LlapBaseInputFormat — отрицательный индекс массива.
+-   [*HIVE-18506*](https://issues.apache.org/jira/browse/HIVE-18506). Формат LlapBaseInputFormat – отрицательный индекс массива
 
--   [*HIVE-18517*](https://issues.apache.org/jira/browse/HIVE-18517): векторизация — исправьте VectorMapOperator для приема VRB и проверьте правильное расположение векторизованного флага для поддержки кэширования LLAP.
+-   [*HIVE-18517*](https://issues.apache.org/jira/browse/HIVE-18517). Векторизация: исправьте VectorMapOperator для приема VRB и проверьте правильное расположение векторизованного флага для поддержки кэширования LLAP.
 
--   [*HIVE-18523*](https://issues.apache.org/jira/browse/HIVE-18523): исправьте строку сводки в случае отсутствия входных данных.
+-   [*HIVE-18523*](https://issues.apache.org/jira/browse/HIVE-18523). Исправьте строку сводки в случае отсутствия входных данных.
 
--   [*HIVE-18528*](https://issues.apache.org/jira/browse/HIVE-18528): объединенные статистические данные в ObjectStore получили неправильный результат.
+-   [*HIVE-18528*](https://issues.apache.org/jira/browse/HIVE-18528). Объединенные статистические данные в ObjectStore получили неправильный результат.
 
--   [*HIVE-18530*](https://issues.apache.org/jira/browse/HIVE-18530): репликация должна пропустить таблицу MM (на этом этапе).
+-   [*HIVE-18530*](https://issues.apache.org/jira/browse/HIVE-18530). Репликация должна пропустить таблицу MM (на этом этапе).
 
--   [*HIVE-18548*](https://issues.apache.org/jira/browse/HIVE-18548): исправьте импорт log4j.
+-   [*HIVE-18548*](https://issues.apache.org/jira/browse/HIVE-18548). Исправьте импорт log4j.
 
--   [*HIVE-18551*](https://issues.apache.org/jira/browse/HIVE-18551): векторизация — VectorMapOperator пытается написать слишком много векторных столбцов для Hybrid Grace.
+-   [*HIVE-18551*](https://issues.apache.org/jira/browse/HIVE-18551). Векторизация: VectorMapOperator пытается написать слишком много векторных столбцов для Hybrid Grace.
 
--   [*HIVE-18577*](https://issues.apache.org/jira/browse/HIVE-18577): у SemanticAnalyzer.validate есть некоторые нецелесообразные вызовы хранилища метаданных.
+-   [*HIVE-18577*](https://issues.apache.org/jira/browse/HIVE-18577). У SemanticAnalyzer.validate есть некоторые нецелесообразные вызовы хранилища метаданных.
 
 -   [*HIVE-18587*](https://issues.apache.org/jira/browse/HIVE-18587): вставка события DML может привести к попытке вычислить контрольную сумму в каталогах.
 
--   [*HIVE-18597*](https://issues.apache.org/jira/browse/HIVE-18597): LLAP — всегда включайте в пакет JAR-файл API log4j2 для org.apache.log4j.
+-   [*HIVE-18597*](https://issues.apache.org/jira/browse/HIVE-18597). LLAP: всегда включайте в пакет JAR-файл API log4j2 для org.apache.log4j.
 
--   [*HIVE-18613*](https://issues.apache.org/jira/browse/HIVE-18613): продлите JsonSerDe для поддержки типа BINARY.
+-   [*HIVE-18613*](https://issues.apache.org/jira/browse/HIVE-18613). Продлите JsonSerDe для поддержки типа BINARY.
 
--   [*HIVE-18626*](https://issues.apache.org/jira/browse/HIVE-18626): предложение with загрузки REPL не передает конфигурацию задачам.
+-   [*HIVE-18626*](https://issues.apache.org/jira/browse/HIVE-18626). Предложение with загрузки REPL не передает конфигурацию задачам.
 
 -   [*HIVE-18643*](https://issues.apache.org/jira/browse/HIVE-18643): не выполняйте проверку архивных разделов для операций ACID.
 
--   [*HIVE-18660*](https://issues.apache.org/jira/browse/HIVE-18660): реестр конфигурации платформы не различает разделы и виртуальные столбцы.
+-   [*HIVE-18660*](https://issues.apache.org/jira/browse/HIVE-18660). Реестр конфигурации платформы не различает разделы и виртуальные столбцы.
 
--   [*HIVE-18754*](https://issues.apache.org/jira/browse/HIVE-18754): состояние REPL должно поддерживать предложение with.
+-   [*HIVE-18754*](https://issues.apache.org/jira/browse/HIVE-18754). Состояние REPL должно поддерживать предложение with.
 
--   [*HIVE-18788*](https://issues.apache.org/jira/browse/HIVE-18788): очистите входные данные в инструкции PreparedStatement в JDBC.
+-   [*HIVE-18788*](https://issues.apache.org/jira/browse/HIVE-18788). Очистите входные данные в инструкции PreparedStatement в JDBC
 
--   [*HIVE-18794*](https://issues.apache.org/jira/browse/HIVE-18794): предложение with загрузки REPL не передает конфигурацию задачам для таблиц вне раздела.
+-   [*HIVE-18794*](https://issues.apache.org/jira/browse/HIVE-18794). Предложение with загрузки REPL не передает конфигурацию задачам для таблиц вне раздела.
 
--   [*HIVE-18808*](https://issues.apache.org/jira/browse/HIVE-18808): обеспечьте более надежное сжатие при сбое обновления статистических данных.
+-   [*HIVE-18808*](https://issues.apache.org/jira/browse/HIVE-18808). Обеспечьте более надежное сжатие при сбое обновления статистических данных.
 
--   [*HIVE-18815*](https://issues.apache.org/jira/browse/HIVE-18815): удалите неиспользуемую функцию в HPL и SQL.
+-   [*HIVE-18815*](https://issues.apache.org/jira/browse/HIVE-18815). Удалите неиспользуемую функцию в HPL и SQL.
 
--   [*HIVE-18817*](https://issues.apache.org/jira/browse/HIVE-18817): исключение ArrayIndexOutOfBounds во время чтения таблицы ACID.
+-   [*HIVE-18817*](https://issues.apache.org/jira/browse/HIVE-18817). Исключение ArrayIndexOutOfBounds во время чтения таблицы ACID
 
--   [*HIVE-18833*](https://issues.apache.org/jira/browse/HIVE-18833): сбой автоматического объединения при выполнении вставки в каталог, как вставки ORC-файла.
+-   [*HIVE-18833*](https://issues.apache.org/jira/browse/HIVE-18833). Сбой автоматического объединения при выполнении вставки в каталог как вставки ORC-файла.
 
--   [*HIVE-18879*](https://issues.apache.org/jira/browse/HIVE-18879): запретите работу внедренного элемента в UDFXPathUtil при наличии в пути класса файла xercesImpl.jar.
+-   [*HIVE-18879*](https://issues.apache.org/jira/browse/HIVE-18879). Запретите работу внедренного элемента в UDFXPathUtil при наличии в пути класса файла xercesImpl.jar.
 
--   [*HIVE-18944*](https://issues.apache.org/jira/browse/HIVE-18944): во время DPP было неправильно задано позицию наборов группирования.
+-   [*HIVE-18944*](https://issues.apache.org/jira/browse/HIVE-18944). Во время DPP было неправильно задано позицию наборов группирования.
 
 ### <a name="kafka"></a>Kafka
 
 В этом выпуске содержится Kafka 1.0.0 и следующие исправления Apache.
 
--   [KAFKA-4827](https://issues.apache.org/jira/browse/KAFKA-4827): подключение Kafka — ошибка со специальными знаками в имени соединителя.
+-   [KAFKA-4827](https://issues.apache.org/jira/browse/KAFKA-4827). Подключение Kafka – ошибка со специальными знаками в имени соединителя.
 
--   [KAFKA-6118](https://issues.apache.org/jira/browse/KAFKA-6118): самоустраняющийся отказ в учетных данных kafka.api.SaslScramSslEndToEndAuthorizationTest.testTwoConsumersWithDifferentSaslCredentials.
+-   [KAFKA-6118](https://issues.apache.org/jira/browse/KAFKA-6118). Самоустраняющийся отказ в учетных данных kafka.api.SaslScramSslEndToEndAuthorizationTest.testTwoConsumersWithDifferentSaslCredentials.
 
--   [KAFKA-6156](https://issues.apache.org/jira/browse/KAFKA-6156): JmxReporter не может обрабатывать пути каталога в стиле Windows.
+-   [KAFKA-6156](https://issues.apache.org/jira/browse/KAFKA-6156). JmxReporter не может обрабатывать пути каталога в стиле Windows.
 
--   [KAFKA-6164](https://issues.apache.org/jira/browse/KAFKA-6164): потоки ClientQuotaManager предотвращают выключение при возникновении журналов загрузки ошибок.
+-   [KAFKA-6164](https://issues.apache.org/jira/browse/KAFKA-6164). Потоки ClientQuotaManager предотвращают выключение при возникновении журналов загрузки ошибок.
 
--   [KAFKA-6167](https://issues.apache.org/jira/browse/KAFKA-6167): метка времени в каталоге потоков содержит двоеточие, которое является недопустимым символом.
+-   [KAFKA-6167](https://issues.apache.org/jira/browse/KAFKA-6167). Метка времени в каталоге потоков содержит двоеточие, которое является недопустимым символом.
 
--   [KAFKA-6179](https://issues.apache.org/jira/browse/KAFKA-6179): метод RecordQueue.clear() не очищает поддерживаемый список MinTimestampTracker.
+-   [KAFKA-6179](https://issues.apache.org/jira/browse/KAFKA-6179). Метод RecordQueue.clear() не очищает поддерживаемый список MinTimestampTracker.
 
--   [KAFKA-6185](https://issues.apache.org/jira/browse/KAFKA-6185): утечка памяти селектора с высокой вероятностью OOM в случае понижающего преобразования.
+-   [KAFKA-6185](https://issues.apache.org/jira/browse/KAFKA-6185). Утечка памяти селектора с высокой вероятностью OOM в случае понижающего преобразования.
 
--   [KAFKA-6190](https://issues.apache.org/jira/browse/KAFKA-6190): GlobalKTable никогда не завершает восстановление при потреблении транзактных сообщений.
+-   [KAFKA-6190](https://issues.apache.org/jira/browse/KAFKA-6190). GlobalKTable никогда не завершает восстановление при потреблении транзакционных сообщений.
 
--   [KAFKA-6210](https://issues.apache.org/jira/browse/KAFKA-6210): исключение IllegalArgumentException, если версия 1.0.0 используется для inter.broker.protocol.version или log.message.format.version.
+-   [KAFKA-6210](https://issues.apache.org/jira/browse/KAFKA-6210). Исключение IllegalArgumentException, если версия 1.0.0 используется для inter.broker.protocol.version или log.message.format.version.
 
--   [KAFKA-6214](https://issues.apache.org/jira/browse/KAFKA-6214): использование резервных реплик в хранилище состояний памяти приводит к сбою потоков.
+-   [KAFKA-6214](https://issues.apache.org/jira/browse/KAFKA-6214). Использование резервных реплик в хранилище состояний памяти приводит к сбою потоков.
 
--   [KAFKA-6215](https://issues.apache.org/jira/browse/KAFKA-6215): сбой KafkaStreamsTest в магистрали.
+-   [KAFKA-6215](https://issues.apache.org/jira/browse/KAFKA-6215). Сбой KafkaStreamsTest в магистрали.
 
--   [KAFKA-6238](https://issues.apache.org/jira/browse/KAFKA-6238): проблемы с версией протокола при применении последовательного обновления до версии 1.0.0.
+-   [KAFKA-6238](https://issues.apache.org/jira/browse/KAFKA-6238). Проблемы с версией протокола при применении последовательного обновления до версии 1.0.0.
 
--   [KAFKA-6260](https://issues.apache.org/jira/browse/KAFKA-6260): AbstractCoordinator нечетко обрабатывает исключение NULL.
+-   [KAFKA-6260](https://issues.apache.org/jira/browse/KAFKA-6260). AbstractCoordinator нечетко обрабатывает исключение NULL.
 
--   [KAFKA-6261](https://issues.apache.org/jira/browse/KAFKA-6261): ведение журнала запроса вызывает исключение, если acks=0.
+-   [KAFKA-6261](https://issues.apache.org/jira/browse/KAFKA-6261). Ведение журнала запроса вызывает исключение, если acks=0.
 
--   [KAFKA-6274](https://issues.apache.org/jira/browse/KAFKA-6274): оптимизируйте автоматически созданные имена в хранилище состояния источника KTable.
+-   [KAFKA-6274](https://issues.apache.org/jira/browse/KAFKA-6274). Оптимизируйте автоматически созданные имена в хранилище состояния источника KTable.
 
 ### <a name="mahout"></a>Mahout
 
@@ -547,99 +547,99 @@ Azure HDInsight является одной из самых популярных
 
 В этом выпуске содержится Oozie 4.2.0 и следующие исправления Apache.
 
--   [OOZIE-2571](https://issues.apache.org/jira/browse/OOZIE-2571): добавьте свойство Maven spark.scala.binary.version, чтобы можно было использовать Scala 2.11.
+-   [OOZIE-2571](https://issues.apache.org/jira/browse/OOZIE-2571). Добавьте свойство Maven spark.scala.binary.version, чтобы можно было использовать Scala 2.11.
 
--   [OOZIE-2606](https://issues.apache.org/jira/browse/OOZIE-2606): установите spark.yarn.jars, чтобы исправить Spark 2.0 с помощью Oozie.
+-   [OOZIE-2606](https://issues.apache.org/jira/browse/OOZIE-2606). Установите spark.yarn.jars, чтобы исправить Spark 2.0 с помощью Oozie.
 
 -   [OOZIE-2658](https://issues.apache.org/jira/browse/OOZIE-2658): driver-class-path может перезаписать путь класса в SparkMain.
 
--   [OOZIE-2787](https://issues.apache.org/jira/browse/OOZIE-2787): Oozie распространяет JAR-файл приложения дважды, что приводит к сбою задания Spark.
+-   [OOZIE-2787](https://issues.apache.org/jira/browse/OOZIE-2787). Oozie распространяет JAR-файл приложения дважды, что приводит к сбою задания Spark.
 
--   [OOZIE-2792](https://issues.apache.org/jira/browse/OOZIE-2792): действие Hive2 не выполняет соответствующий синтаксический анализ идентификатора приложения Spark из файла журнала при наличии Hive в Spark.
+-   [OOZIE-2792](https://issues.apache.org/jira/browse/OOZIE-2792). Действие Hive2 не выполняет соответствующий синтаксический анализ идентификатора приложения Spark из файла журнала при наличии Hive в Spark.
 
--   [OOZIE-2799](https://issues.apache.org/jira/browse/OOZIE-2799): настройка местоположения журнала для Spark SQL в Hive.
+-   [OOZIE-2799](https://issues.apache.org/jira/browse/OOZIE-2799). Настройка местоположения журнала для Spark SQL в Hive.
 
--   [OOZIE-2802](https://issues.apache.org/jira/browse/OOZIE-2802): сбой действия Spark в Spark 2.1.0 из-за повторяющихся общедоступных библиотек.
+-   [OOZIE-2802](https://issues.apache.org/jira/browse/OOZIE-2802). Сбой действия Spark в Spark 2.1.0 из-за повторяющихся общедоступных библиотек.
 
--   [OOZIE-2923](https://issues.apache.org/jira/browse/OOZIE-2923): оптимизируйте синтаксический анализ параметров Spark.
+-   [OOZIE-2923](https://issues.apache.org/jira/browse/OOZIE-2923). Оптимизируйте синтаксический анализ параметров Spark.
 
--   [OOZIE-3109](https://issues.apache.org/jira/browse/OOZIE-3109): SCA — отражены межсайтовые скрипты.
+-   [OOZIE-3109](https://issues.apache.org/jira/browse/OOZIE-3109). SCA. Межсайтовые сценарии – отражаются.
 
--   [OOZIE-3139](https://issues.apache.org/jira/browse/OOZIE-3139): Oozie неправильно проверяет рабочий процесс.
+-   [OOZIE-3139](https://issues.apache.org/jira/browse/OOZIE-3139). Oozie неправильно проверяет рабочий процесс.
 
--   [OOZIE-3167](https://issues.apache.org/jira/browse/OOZIE-3167): обновите версию Tomcat в ветви Oozie 4.3.
+-   [OOZIE-3167](https://issues.apache.org/jira/browse/OOZIE-3167). Обновите версию Tomcat в ветви Oozie 4.3
 
 ### <a name="phoenix"></a>Phoenix
 
 В этом выпуске содержится Phoenix 4.7.0 и следующие исправления Apache.
 
--   [PHOENIX-1751](https://issues.apache.org/jira/browse/PHOENIX-1751): выполняйте агрегацию, сортировку и т. д. в preScannerNext, а не postScannerOpen.
+-   [PHOENIX-1751](https://issues.apache.org/jira/browse/PHOENIX-1751). Выполняйте агрегацию, сортировку и т. д. в preScannerNext, а не postScannerOpen.
 
--   [PHOENIX-2714](https://issues.apache.org/jira/browse/PHOENIX-2714): исправьте оценку байтов в BaseResultIterators и предоставьте как интерфейс.
+-   [PHOENIX-2714](https://issues.apache.org/jira/browse/PHOENIX-2714). Исправьте оценку байтов в BaseResultIterators и предоставьте как интерфейс.
 
--   [PHOENIX-2724](https://issues.apache.org/jira/browse/PHOENIX-2724): запрос с большим количеством направляющих выполняется медленнее по сравнению с отсутствием статистики.
+-   [PHOENIX-2724](https://issues.apache.org/jira/browse/PHOENIX-2724). Запрос с большим количеством направляющих выполняется медленнее по сравнению с отсутствием статистики.
 
--   [PHOENIX-2855](https://issues.apache.org/jira/browse/PHOENIX-2855): Workaround Increment TimeRange не сериализуется для HBase 1.2.
+-   [PHOENIX-2855](https://issues.apache.org/jira/browse/PHOENIX-2855). Workaround Increment TimeRange не сериализуется для HBase 1.2.
 
--   [PHOENIX-3023](https://issues.apache.org/jira/browse/PHOENIX-3023): низкая производительность при параллельном выполнении запросов ограничения по умолчанию.
+-   [PHOENIX-3023](https://issues.apache.org/jira/browse/PHOENIX-3023). Низкая производительность при параллельном выполнении запросов ограничения по умолчанию.
 
--   [PHOENIX-3040](https://issues.apache.org/jira/browse/PHOENIX-3040): не используйте направляющие для выполнения запросов поочередно.
+-   [PHOENIX-3040](https://issues.apache.org/jira/browse/PHOENIX-3040). Не используйте направляющие для выполнения запросов поочередно.
 
--   [PHOENIX-3112](https://issues.apache.org/jira/browse/PHOENIX-3112): сканирование частично выполненной строки обрабатывается неправильно.
+-   [PHOENIX-3112](https://issues.apache.org/jira/browse/PHOENIX-3112). Сканирование частично выполненной строки обрабатывается неправильно.
 
--   [PHOENIX 3240](https://issues.apache.org/jira/browse/PHOENIX-3240): исключение ClassCastException из загрузчика Pig.
+-   [PHOENIX-3240](https://issues.apache.org/jira/browse/PHOENIX-3240). Исключение ClassCastException из загрузчика Pig.
 
--   [PHOENIX-3452](https://issues.apache.org/jira/browse/PHOENIX-3452): NULLS FIRST и NULL LAST не должны влиять на то, является ли GROUP BY сохранением порядка.
+-   [PHOENIX-3452](https://issues.apache.org/jira/browse/PHOENIX-3452). NULLS FIRST и NULL LAST не должны влиять на то, является ли GROUP BY сохранением порядка.
 
--   [PHOENIX-3469](https://issues.apache.org/jira/browse/PHOENIX-3469): неверный порядок сортировки для первичного ключа DESC для NULLS LAST и NULLS FIRST.
+-   [PHOENIX-3469](https://issues.apache.org/jira/browse/PHOENIX-3469). Неверный порядок сортировки для первичного ключа DESC для NULLS LAST и NULLS FIRST.
 
--   [PHOENIX-3789](https://issues.apache.org/jira/browse/PHOENIX-3789): выполните вызовы обслуживания межрегионального индекса в postBatchMutateIndispensably.
+-   [PHOENIX-3789](https://issues.apache.org/jira/browse/PHOENIX-3789). Выполните вызовы обслуживания межрегионального индекса в postBatchMutateIndispensably.
 
--   [PHOENIX-3865](https://issues.apache.org/jira/browse/PHOENIX-3865): IS NULL не возвращает правильные результаты, если первое семейство столбцов не фильтруется.
+-   [PHOENIX-3865](https://issues.apache.org/jira/browse/PHOENIX-3865). IS NULL не возвращает правильные результаты, если первое семейство столбцов не фильтруется.
 
--   [PHOENIX-4290](https://issues.apache.org/jira/browse/PHOENIX-4290): полное сканирование таблицы, выполненное для DELETE с таблицей, содержащей неизменяемые индексы.
+-   [PHOENIX-4290](https://issues.apache.org/jira/browse/PHOENIX-4290). Полное сканирование таблицы, выполненное для DELETE с таблицей, содержащей неизменяемые индексы.
 
--   [PHOENIX-4373](https://issues.apache.org/jira/browse/PHOENIX-4373): ключ длины переменной локального индекса может включать завершающие нули при восстановлении.
+-   [PHOENIX-4373](https://issues.apache.org/jira/browse/PHOENIX-4373). Ключ длины переменной локального индекса может включать завершающие нули при восстановлении.
 
 -   [PHOENIX-4466](https://issues.apache.org/jira/browse/PHOENIX-4466): исключение java.lang.RuntimeException — код отклика 500 — выполнение задания Spark для подключения к серверу запросов Phoenix и загрузки данных.
 
--   [PHOENIX-4489](https://issues.apache.org/jira/browse/PHOENIX-4489): утечка HBase Connection в заданиях MR Phoenix.
+-   [PHOENIX-4489](https://issues.apache.org/jira/browse/PHOENIX-4489). Утечка HBase Connection в заданиях MR Phoenix.
 
--   [PHOENIX-4525](https://issues.apache.org/jira/browse/PHOENIX-4525): переполнение целого числа в выполнении GroupBy.
+-   [PHOENIX-4525](https://issues.apache.org/jira/browse/PHOENIX-4525). Переполнение целого числа в выполнении GroupBy.
 
--   [PHOENIX-4560](https://issues.apache.org/jira/browse/PHOENIX-4560): ORDER BY с GROUP BY не работает, если в столбце PK есть WHERE.
+-   [PHOENIX-4560](https://issues.apache.org/jira/browse/PHOENIX-4560). ORDER BY с GROUP BY не работает, если в столбце PK есть WHERE.
 
--   [PHOENIX-4586](https://issues.apache.org/jira/browse/PHOENIX-4586): UPSERT SELECT не принимает операторы сравнения учетных записей для подзапросов.
+-   [PHOENIX-4586](https://issues.apache.org/jira/browse/PHOENIX-4586). UPSERT SELECT не принимает операторы сравнения учетных записей для подзапросов
 
--   [PHOENIX-4588](https://issues.apache.org/jira/browse/PHOENIX-4588): также выражение клона, если дочерние элементы включают вызов Determinism.PER\_INVOCATION.
+-   [PHOENIX-4588](https://issues.apache.org/jira/browse/PHOENIX-4588). Также выражение клона, если дочерние элементы включают вызов Determinism.PER\_INVOCATION.
 
 ### <a name="pig"></a>Pig,
 
 В этом выпуске содержится Pig 0.16.0 и следующие исправления Apache.
 
--   [PIG-5159](https://issues.apache.org/jira/browse/PIG-5159): исправление Pig не сохраняет историю grunt.
+-   [PIG 5159](https://issues.apache.org/jira/browse/PIG-5159). Исправление Pig не сохраняет историю grunt.
 
--   [PIG-5175](https://issues.apache.org/jira/browse/PIG-5175): обновите JRuby до версии 1.7.26.
+-   [PIG-5175](https://issues.apache.org/jira/browse/PIG-5175). Обновите JRuby до версии 1.7.26.
 
 ### <a name="ranger"></a>Ranger
 
 В этом выпуске содержится Ranger 0.7.0 и следующие исправления Apache.
 
--   [RANGER-1805](https://issues.apache.org/jira/browse/RANGER-1805): улучшение кода для отслеживания лучших методик в JS.
+-   [RANGER-1805](https://issues.apache.org/jira/browse/RANGER-1805). Улучшение кода для отслеживания лучших методик в JS.
 
--   [RANGER-1960](https://issues.apache.org/jira/browse/RANGER-1960): для операции удаления учитывайте имя таблицы моментального снимка.
+-   [RANGER-1960](https://issues.apache.org/jira/browse/RANGER-1960). Для операции удаления учитывайте имя таблицы моментального снимка.
 
--   [RANGER-1982](https://issues.apache.org/jira/browse/RANGER-1982): исправление ошибок для метрики аналитики администратора и сервера управления ключами Ranger.
+-   [RANGER-1982](https://issues.apache.org/jira/browse/RANGER-1982). Исправление ошибок для метрики аналитики администратора и сервера управления ключами Ranger.
 
--   [RANGER-1984](https://issues.apache.org/jira/browse/RANGER-1984): записи журнала аудита Hbase могут не показывать все теги, связанные со столбцом, к которому получен доступ.
+-   [RANGER-1984](https://issues.apache.org/jira/browse/RANGER-1984). Записи журнала аудита Hbase могут не показывать все теги, связанные со столбцом, к которому получен доступ.
 
--   [RANGER-1988](https://issues.apache.org/jira/browse/RANGER-1988): исправьте небезопасную случайность.
+-   [RANGER-1988](https://issues.apache.org/jira/browse/RANGER-1988). Исправьте небезопасную случайность.
 
--   [RANGER-1990](https://issues.apache.org/jira/browse/RANGER-1990): добавьте одностороннюю поддержку MySQL SSL для администратора Ranger.
+-   [RANGER-1990](https://issues.apache.org/jira/browse/RANGER-1990). Добавьте одностороннюю поддержку MySQL SSL для администратора Ranger.
 
--   [RANGER-2006](https://issues.apache.org/jira/browse/RANGER-2006): устраните проблемы, обнаруженные при анализе статического кода в синхронизации пользователей Ranger для источника синхронизации ldap.
+-   [RANGER-2006](https://issues.apache.org/jira/browse/RANGER-2006). Устраните проблемы, обнаруженные при анализе статического кода в синхронизации пользователей Ranger для источника синхронизации ldap.
 
--   [RANGER-2008](https://issues.apache.org/jira/browse/RANGER-2008): оценка политики не соответствует ее многолинейным условиям.
+-   [RANGER-2008](https://issues.apache.org/jira/browse/RANGER-2008). Оценка политики не соответствует ее многолинейным условиям
 
 ### <a name="slider"></a>Ползунок
 
@@ -649,127 +649,127 @@ Azure HDInsight является одной из самых популярных
 
 В этом выпуске содержится Spark 2.3.0 и следующие исправления Apache.
 
--   [SPARK-13587](https://issues.apache.org/jira/browse/SPARK-13587): включите поддержку virtualenv в PySpark.
+-   [SPARK-13587](https://issues.apache.org/jira/browse/SPARK-13587). Включите поддержку virtualenv в PySpark.
 
--   [SPARK-19964](https://issues.apache.org/jira/browse/SPARK-19964): избегайте чтения из удаленного репозитория в SparkSubmitSuite.
+-   [SPARK-19964](https://issues.apache.org/jira/browse/SPARK-19964). Избегайте чтения из удаленного репозитория в SparkSubmitSuite.
 
--   [SPARK-22882](https://issues.apache.org/jira/browse/SPARK-22882): тест машинного обучения для структурированной потоковой передачи: ml.classification.
+-   [SPARK-22882](https://issues.apache.org/jira/browse/SPARK-22882). Тест машинного обучения для структурированной потоковой передачи: ml.classification.
 
--   [SPARK-22915](https://issues.apache.org/jira/browse/SPARK-22915): тесты потоковой передачи для функции spark.ml.feature от N to Z.
+-   [SPARK-22915](https://issues.apache.org/jira/browse/SPARK-22915). Тесты потоковой передачи для функции spark.ml.feature от N до Z.
 
--   [SPARK-23020](https://issues.apache.org/jira/browse/SPARK-23020): исправьте другую ошибку состояния гонки во внутрипроцессной проверке средства запуска.
+-   [SPARK-23020](https://issues.apache.org/jira/browse/SPARK-23020). Исправьте другую ошибку состояния гонки во внутрипроцессной проверке средства запуска.
 
--   [SPARK-23040](https://issues.apache.org/jira/browse/SPARK-23040): возвращает прерываемый итератор для средства чтения в случайном порядке.
+-   [SPARK-23040](https://issues.apache.org/jira/browse/SPARK-23040). Возвращает прерываемый итератор для средства чтения в случайном порядке.
 
--   [SPARK-23173](https://issues.apache.org/jira/browse/SPARK-23173): не создавайте поврежденные файлы Parquet при загрузке данных из JSON.
+-   [SPARK-23173](https://issues.apache.org/jira/browse/SPARK-23173). Не создавайте поврежденные файлы Parquet при загрузке данных из JSON.
 
--   [SPARK-23264](https://issues.apache.org/jira/browse/SPARK-23264): исправьте Scala. MatchError в literals.sql.out.
+-   [SPARK-23264](https://issues.apache.org/jira/browse/SPARK-23264). Исправьте scala.MatchError в literals.sql.out.
 
--   [SPARK-23288](https://issues.apache.org/jira/browse/SPARK-23288): исправьте выходные показатели с помощью приемника Parquet.
+-   [SPARK-23288](https://issues.apache.org/jira/browse/SPARK-23288). Исправьте выходные показатели с помощью приемника Parquet.
 
--   [SPARK-23329](https://issues.apache.org/jira/browse/SPARK-23329): исправьте документацию о тригонометрических функциях.
+-   [SPARK-23329](https://issues.apache.org/jira/browse/SPARK-23329). Исправьте документацию о тригонометрических функциях.
 
--   [SPARK-23406](https://issues.apache.org/jira/browse/SPARK-23406): включите самосоединение потоков для ветви branch-2.3.
+-   [SPARK-23406](https://issues.apache.org/jira/browse/SPARK-23406). Включите самосоединение потоков для ветви branch-2.3.
 
--   [SPARK-23434](https://issues.apache.org/jira/browse/SPARK-23434): Spark не должен предупреждать \`каталог метаданных\` для пути к файлу HDFS.
+-   [SPARK-23434](https://issues.apache.org/jira/browse/SPARK-23434). Spark не должен предупреждать \`каталог метаданных\` для пути к файлу HDFS.
 
--   [SPARK-23436](https://issues.apache.org/jira/browse/SPARK-23436): внесите раздел как "Только дата", только если он соответствует значению "По (дата)".
+-   [SPARK-23436](https://issues.apache.org/jira/browse/SPARK-23436). Внесите раздел как "Только дата", только если он соответствует значению "Дата".
 
--   [SPARK-23457](https://issues.apache.org/jira/browse/SPARK-23457): сначала зарегистрируйте слушателей завершения задачи в ParquetFileFormat.
+-   [SPARK-23457](https://issues.apache.org/jira/browse/SPARK-23457). Сначала зарегистрируйте слушателей завершения задачи в ParquetFileFormat.
 
 -   [SPARK-23462](https://issues.apache.org/jira/browse/SPARK-23462): оптимизируйте сообщение об ошибке в отсутствующем поле \`StructType\`.
 
--   [SPARK-23490](https://issues.apache.org/jira/browse/SPARK-23490): проверьте storage.locationUri с помощью имеющейся таблицы в CreateTable.
+-   [SPARK-23490](https://issues.apache.org/jira/browse/SPARK-23490). Проверьте storage.locationUri с помощью имеющейся таблицы в CreateTable.
 
--   [SPARK-23524](https://issues.apache.org/jira/browse/SPARK-23524): большие локальные блоки в случайном порядке не должны проверяться на предмет ошибок.
+-   [SPARK-23524](https://issues.apache.org/jira/browse/SPARK-23524). Большие локальные блоки в случайном порядке не должны проверяться на предмет ошибок.
 
--   [SPARK-23525](https://issues.apache.org/jira/browse/SPARK-23525): включите поддержку ALTER TABLE CHANGE COLUMN COMMENT для внешней таблицы Hive.
+-   [SPARK-23525](https://issues.apache.org/jira/browse/SPARK-23525). Включите поддержку ALTER TABLE CHANGE COLUMN COMMENT для внешней таблицы Hive.
 
--   [SPARK-23553](https://issues.apache.org/jira/browse/SPARK-23553): тесты не должны принимать значение по умолчанию \`spark.sql.sources.default\`.
+-   [SPARK-23553](https://issues.apache.org/jira/browse/SPARK-23553). Тесты не должны принимать значение по умолчанию \`spark.sql.sources.default\`.
 
--   [SPARK-23569](https://issues.apache.org/jira/browse/SPARK-23569): разрешите pandas\_udf работать с функциями аннотированного типа стиля python3.
+-   [SPARK-23569](https://issues.apache.org/jira/browse/SPARK-23569). Разрешите pandas\_udf работать с функциями аннотированного типа стиля python3.
 
--   [SPARK-23570](https://issues.apache.org/jira/browse/SPARK-23570): добавьте Spark 2.3.0 в HiveExternalCatalogVersionsSuite.
+-   [SPARK-23570](https://issues.apache.org/jira/browse/SPARK-23570). Добавьте Spark 2.3.0 в HiveExternalCatalogVersionsSuite.
 
--   [SPARK-23598](https://issues.apache.org/jira/browse/SPARK-23598): сделайте методы в BufferedRowIterator общедоступными, чтобы избежать ошибки времени выполнения для большого запроса.
+-   [SPARK-23598](https://issues.apache.org/jira/browse/SPARK-23598). Сделайте методы в BufferedRowIterator общедоступными, чтобы избежать ошибки времени выполнения для большого запроса.
 
--   [SPARK-23599](https://issues.apache.org/jira/browse/SPARK-23599): добавьте генератор UUID из псевдослучайных чисел.
+-   [SPARK-23599](https://issues.apache.org/jira/browse/SPARK-23599). Добавьте генератор UUID из псевдослучайных чисел.
 
--   [SPARK-23599](https://issues.apache.org/jira/browse/SPARK-23599): используйте RandomUUIDGenerator в выражении Uuid.
+-   [SPARK-23599](https://issues.apache.org/jira/browse/SPARK-23599). Используйте RandomUUIDGenerator в выражении Uuid.
 
--   [SPARK-23601](https://issues.apache.org/jira/browse/SPARK-23601): удалите файлы .md5 из выпуска.
+-   [SPARK-23601](https://issues.apache.org/jira/browse/SPARK-23601). Удалите файлы .md5 из выпуска.
 
--   [SPARK-23608](https://issues.apache.org/jira/browse/SPARK-23608): добавьте синхронизацию в SHS между функциями attachSparkUI и detachSparkUI, чтобы избежать проблемы параллельной модификации в обработчиках Jetty.
+-   [SPARK-23608](https://issues.apache.org/jira/browse/SPARK-23608). Добавьте синхронизацию в SHS между функциями attachSparkUI и detachSparkUI, чтобы избежать проблемы параллельной модификации в обработчиках Jetty.
 
--   [SPARK-23614](https://issues.apache.org/jira/browse/SPARK-23614): исправьте неправильный обмен повторного использования при использовании кэширования.
+-   [SPARK-23614](https://issues.apache.org/jira/browse/SPARK-23614). Исправьте неправильный обмен повторного использования при использовании кэширования.
 
--   [SPARK-23623](https://issues.apache.org/jira/browse/SPARK-23623): избегайте параллельного использования кэшированных потребителей в CachedKafkaConsumer (ветвь branch-2.3).
+-   [SPARK-23623](https://issues.apache.org/jira/browse/SPARK-23623). Избегайте параллельного использования кэшированных потребителей в CachedKafkaConsumer (ветвь branch-2.3).
 
--   [SPARK-23624](https://issues.apache.org/jira/browse/SPARK-23624): пересмотрите документ pushFilters метода в Datasource V2.
+-   [SPARK-23624](https://issues.apache.org/jira/browse/SPARK-23624). Пересмотрите документ pushFilters метода в Datasource V2.
 
 -   [SPARK-23628](https://issues.apache.org/jira/browse/SPARK-23628): метод calculateParamLength не должен возвращать 1 + число выражений.
 
--   [SPARK-23630](https://issues.apache.org/jira/browse/SPARK-23630): разрешите активацию настроек конфигурации Hadoop пользователя.
+-   [SPARK-23630](https://issues.apache.org/jira/browse/SPARK-23630). Разрешите активацию настроек конфигурации Hadoop пользователя.
 
--   [SPARK-23635](https://issues.apache.org/jira/browse/SPARK-23635): переменная среды исполнителя Spark перезаписывается переменной среды антивредоносной программы с тем же именем.
+-   [SPARK-23635](https://issues.apache.org/jira/browse/SPARK-23635). Переменная среды исполнителя Spark перезаписывается переменной среды антивредоносной программы с тем же именем.
 
--   [SPARK-23637](https://issues.apache.org/jira/browse/SPARK-23637): Yarn может выделять больше ресурсов, если один и тот же исполнитель выходит из строя несколько раз.
+-   [SPARK-23637](https://issues.apache.org/jira/browse/SPARK-23637). Yarn может выделять больше ресурсов, если один и тот же исполнитель выходит из строя несколько раз.
 
--   [SPARK-23639](https://issues.apache.org/jira/browse/SPARK-23639): получите маркер перед клиентом хранилища метаданных инициализации в CLI SparkSQL.
+-   [SPARK-23639](https://issues.apache.org/jira/browse/SPARK-23639). Получите маркер перед клиентом хранилища метаданных инициализации в CLI SparkSQL.
 
--   [SPARK-23642](https://issues.apache.org/jira/browse/SPARK-23642): подкласс AccumulatorV2 — исправление isZero.
+-   [SPARK-23642](https://issues.apache.org/jira/browse/SPARK-23642). Подкласс AccumulatorV2 – исправление isZero.
 
--   [SPARK-23644](https://issues.apache.org/jira/browse/SPARK-23644): используйте абсолютный путь для вызова REST в SHS.
+-   [SPARK-23644](https://issues.apache.org/jira/browse/SPARK-23644). Используйте абсолютный путь для вызова REST в SHS.
 
--   [SPARK-23645](https://issues.apache.org/jira/browse/SPARK-23645): добавьте документацию RE \`pandas\_udf\` с аргументами ключевого слова.
+-   [SPARK-23645](https://issues.apache.org/jira/browse/SPARK-23645). Добавьте документацию RE \`pandas\_udf\` с аргументами ключевого слова.
 
--   [SPARK-23649](https://issues.apache.org/jira/browse/SPARK-23649): пропуск символов, запрещенных в UTF-8.
+-   [SPARK-23649](https://issues.apache.org/jira/browse/SPARK-23649). Пропуск символов, запрещенных в UTF-8.
 
--   [SPARK-23658](https://issues.apache.org/jira/browse/SPARK-23658): InProcessAppHandle использует неправильный класс в getLogger.
+-   [SPARK-23658](https://issues.apache.org/jira/browse/SPARK-23658). InProcessAppHandle использует неправильный класс в getLogger.
 
--   [SPARK-23660](https://issues.apache.org/jira/browse/SPARK-23660): исправьте исключение в режиме кластера YARN, если приложение быстро завершает работу.
+-   [SPARK-23660](https://issues.apache.org/jira/browse/SPARK-23660). Исправьте исключение в режиме кластера YARN, если приложение быстро завершает работу.
 
--   [SPARK-23670](https://issues.apache.org/jira/browse/SPARK-23670): исправьте проблему утечки памяти в SparkPlanGraphWrapper.
+-   [SPARK-23670](https://issues.apache.org/jira/browse/SPARK-23670). Исправьте проблему утечки памяти в SparkPlanGraphWrapper.
 
--   [SPARK-23671](https://issues.apache.org/jira/browse/SPARK-23671): исправьте условие, чтобы включить пул потоков SHS.
+-   [SPARK-23671](https://issues.apache.org/jira/browse/SPARK-23671). Исправьте условие, чтобы включить пул потоков SHS.
 
--   [SPARK-23691](https://issues.apache.org/jira/browse/SPARK-23691): используйте утилиту sql\_conf в тестах PySpark, где это возможно.
+-   [SPARK-23691](https://issues.apache.org/jira/browse/SPARK-23691). Используйте утилиту sql\_conf в тестах PySpark, где это возможно.
 
--   [SPARK-23695](https://issues.apache.org/jira/browse/SPARK-23695): исправьте сообщение об ошибке для тестов потоковой передачи Kinesis.
+-   [SPARK-23695](https://issues.apache.org/jira/browse/SPARK-23695). Исправьте сообщение об ошибке для тестов потоковой передачи Kinesis.
 
 -   [SPARK-23706](https://issues.apache.org/jira/browse/SPARK-23706): spark.conf.get(value, default=None) должно формировать значение None в PySpark.
 
--   [SPARK-23728](https://issues.apache.org/jira/browse/SPARK-23728): исправьте тесты машинного обучения с ожидаемыми исключениями, которые запускают потоковые тесты.
+-   [SPARK-23728](https://issues.apache.org/jira/browse/SPARK-23728). Исправьте тесты машинного обучения с ожидаемыми исключениями, которые запускают потоковые тесты.
 
--   [SPARK-23729](https://issues.apache.org/jira/browse/SPARK-23729): учитывайте фрагмент универсального кода ресурса (URI) при разрешении проблем пакетов glob.
+-   [SPARK-23729](https://issues.apache.org/jira/browse/SPARK-23729). Учитывайте фрагмент универсального кода ресурса (URI) при разрешении проблем пакетов glob.
 
--   [SPARK-23759](https://issues.apache.org/jira/browse/SPARK-23759): не удалось связать пользовательский интерфейс Spark с конкретным именем узла или IP-адреса.
+-   [SPARK-23759](https://issues.apache.org/jira/browse/SPARK-23759). Не удалось связать пользовательский интерфейс Spark с конкретным именем узла или IP-адреса.
 
--   [SPARK-23760](https://issues.apache.org/jira/browse/SPARK-23760): CodegenContext.withSubExprEliminationExprs должен правильно сохранять и восстанавливать состояние CSE.
+-   [SPARK-23760](https://issues.apache.org/jira/browse/SPARK-23760). CodegenContext.withSubExprEliminationExprs должен правильно сохранять и восстанавливать состояние CSE.
 
--   [SPARK-23769](https://issues.apache.org/jira/browse/SPARK-23769): удалите комментарии, которые без необходимости отключают проверку Scalastyle.
+-   [SPARK-23769](https://issues.apache.org/jira/browse/SPARK-23769). Удалите комментарии, которые без необходимости отключают проверку Scalastyle.
 
--   [SPARK-23788](https://issues.apache.org/jira/browse/SPARK-23788): исправьте ошибку состояния гонки в StreamingQuerySuite.
+-   [SPARK-23788](https://issues.apache.org/jira/browse/SPARK-23788). Исправьте ошибку состояния гонки в StreamingQuerySuite.
 
--   [SPARK-23802](https://issues.apache.org/jira/browse/SPARK-23802): PropagateEmptyRelation может оставить план запроса в неразрешенном состоянии.
+-   [SPARK-23802](https://issues.apache.org/jira/browse/SPARK-23802). PropagateEmptyRelation может оставить план запроса в неразрешенном состоянии.
 
--   [SPARK-23806](https://issues.apache.org/jira/browse/SPARK-23806): Broadcast.unpersist может вызвать фатальное исключение при использовании с динамическим распределением.
+-   [SPARK-23806](https://issues.apache.org/jira/browse/SPARK-23806). Broadcast.unpersist может вызвать фатальное исключение при использовании с динамическим распределением.
 
--   [SPARK-23808](https://issues.apache.org/jira/browse/SPARK-23808): установите сеанс Spark по умолчанию в сеансах Spark только для тестирования.
+-   [SPARK-23808](https://issues.apache.org/jira/browse/SPARK-23808). Установите сеанс Spark по умолчанию в сеансах Spark только для тестирования.
 
--   [SPARK-23809](https://issues.apache.org/jira/browse/SPARK-23809): активный сеанс SparkSession должен устанавливаться getOrCreate.
+-   [SPARK-23809](https://issues.apache.org/jira/browse/SPARK-23809). Активный сеанс SparkSession должен устанавливаться getOrCreate.
 
--   [SPARK-23816](https://issues.apache.org/jira/browse/SPARK-23816): завешенные задачи должны игнорировать FetchFailures.
+-   [SPARK-23816](https://issues.apache.org/jira/browse/SPARK-23816). Завешенные задачи должны игнорировать FetchFailures.
 
--   [SPARK-23822](https://issues.apache.org/jira/browse/SPARK-23822): оптимизируйте сообщение об ошибке для несоответствий схемы Parquet.
+-   [SPARK-23822](https://issues.apache.org/jira/browse/SPARK-23822). Оптимизируйте сообщение об ошибке для несоответствий схемы Parquet.
 
--   [SPARK-23823](https://issues.apache.org/jira/browse/SPARK-23823): придерживайтесь исходной формы в transformExpression.
+-   [SPARK-23823](https://issues.apache.org/jira/browse/SPARK-23823). Придерживайтесь исходной формы в transformExpression.
 
--   [SPARK-23827](https://issues.apache.org/jira/browse/SPARK-23827): выполнение StreamingJoinExec должно обеспечивать разделение входных данных на определенное количество разделов.
+-   [SPARK-23827](https://issues.apache.org/jira/browse/SPARK-23827). Выполнение StreamingJoinExec должно обеспечивать разделение входных данных на определенное количество разделов.
 
--   [SPARK-23838](https://issues.apache.org/jira/browse/SPARK-23838): на вкладке SQL запуск SQL-запроса отображается как "завершен".
+-   [SPARK-23838](https://issues.apache.org/jira/browse/SPARK-23838). На вкладке SQL запуск SQL-запроса отображается как "завершен".
 
--   [SPARK-23881](https://issues.apache.org/jira/browse/SPARK-23881): исправьте нестабильное тестирование JobCancellationSuite — прерываемый итератор для средства чтения в случайном порядке.
+-   [SPARK-23881](https://issues.apache.org/jira/browse/SPARK-23881). Исправьте нестабильное тестирование JobCancellationSuite – прерываемый итератор для средства чтения в случайном порядке.
 
 ### <a name="sqoop"></a>Sqoop
 
@@ -779,45 +779,45 @@ Azure HDInsight является одной из самых популярных
 
 В этом выпуске содержатся сведения о Storm 1.1.1 и следующие исправления Apache.
 
--   [STORM-2652](https://issues.apache.org/jira/browse/STORM-2652): исключение, вызванное в открытом методе JmsSpout.
+-   [STORM-2652](https://issues.apache.org/jira/browse/STORM-2652). Исключение, вызванное в открытом методе JmsSpout.
 
 -   [STORM-2841](https://issues.apache.org/jira/browse/STORM-2841): сбой UT testNoAcksIfFlushFails с исключением NullPointerException.
 
--   [STORM-2854](https://issues.apache.org/jira/browse/STORM-2854): предоставьте IEventLogger возможность включать регистрацию событий.
+-   [STORM-2854](https://issues.apache.org/jira/browse/STORM-2854). Предоставьте IEventLogger возможность включать регистрацию событий.
 
--   [STORM-2870](https://issues.apache.org/jira/browse/STORM-2870): средство ведения журнала FileBasedEventLogger организовывает утечку ExecutorService, не связанной с управляющей программой, которая предотвращает завершение процесса.
+-   [STORM-2870](https://issues.apache.org/jira/browse/STORM-2870). Средство ведения журнала FileBasedEventLogger организовывает утечку ExecutorService, не связанную с управляющей программой, которая предотвращает завершение процесса.
 
--   [STORM-2960](https://issues.apache.org/jira/browse/STORM-2960): лучше подчеркнуть важность задания надлежащей учетной записи ОС для процессов Storm.
+-   [STORM-2960](https://issues.apache.org/jira/browse/STORM-2960). Лучше подчеркнуть важность задания надлежащей учетной записи ОС для процессов Storm.
 
 ### <a name="tez"></a>Tez
 
 В этом выпуске содержатся сведения о Tez 0.7.0 и следующие исправления Apache.
 
--   [TEZ-1526](https://issues.apache.org/jira/browse/TEZ-1526): LoadingCache для TezTaskID замедляется для больших заданий.
+-   [TEZ-1526](https://issues.apache.org/jira/browse/TEZ-1526). LoadingCache для TezTaskID замедляется для больших заданий
 
 ### <a name="zeppelin"></a>Zeppelin
 
 В этом выпуске содержатся сведения о Zeppelin 0.7.3 без дополнительных исправлений Apache.
 
--   [ZEPPELIN-3072](https://issues.apache.org/jira/browse/ZEPPELIN-3072): пользовательский интерфейс Zeppelin медленно работает или не отвечает при большом количестве записных книжек.
+-   [ZEPPELIN-3072](https://issues.apache.org/jira/browse/ZEPPELIN-3072). Пользовательский интерфейс Zeppelin медленно работает или не отвечает при большом количестве записных книжек.
 
--   [ZEPPELIN-3129](https://issues.apache.org/jira/browse/ZEPPELIN-3129): пользовательский интерфейс Zeppelin не выходит в IE.
+-   [ZEPPELIN-3129](https://issues.apache.org/jira/browse/ZEPPELIN-3129). Пользовательский интерфейс Zeppelin не выходит в IE.
 
--   [ZEPPELIN-903](https://issues.apache.org/jira/browse/ZEPPELIN-903): замените CXF на Jersey2.
+-   [ZEPPELIN-903](https://issues.apache.org/jira/browse/ZEPPELIN-903). Замените CXF на Jersey2.
 
 ### <a name="zookeeper"></a>ZooKeeper
 
 В этом выпуске содержатся сведения о ZooKeeper 3.4.6 и следующие исправления Apache.
 
--   [ZOOKEEPER-1256](https://issues.apache.org/jira/browse/ZOOKEEPER-1256): ошибка ClientPortBindTest в Mac OS X.
+-   [ZOOKEEPER-1256](https://issues.apache.org/jira/browse/ZOOKEEPER-1256). Сбой ClientPortBindTest в Mac OS X.
 
--   [ZOOKEEPER-1901](https://issues.apache.org/jira/browse/ZOOKEEPER-1901): \[JDK8\] — сортируйте дочерние элементы для сравнения в тестах AsyncOps.
+-   [ZOOKEEPER-1901](https://issues.apache.org/jira/browse/ZOOKEEPER-1901). \[JDK8\] – сортируйте дочерние элементы для сравнения в тестах AsyncOps.
 
--   [ZOOKEEPER-2423](https://issues.apache.org/jira/browse/ZOOKEEPER-2423): обновите версию Netty из-за уязвимости безопасности (CVE-2014-3488).
+-   [ZOOKEEPER-2423](https://issues.apache.org/jira/browse/ZOOKEEPER-2423). Обновите версию Netty из-за уязвимости безопасности (CVE-2014-3488).
 
--   [ZOOKEEPER-2693](https://issues.apache.org/jira/browse/ZOOKEEPER-2693): атака типа "отказ в обслуживании" для слов, состоящих из четырех знаков (4lw).
+-   [ZOOKEEPER-2693](https://issues.apache.org/jira/browse/ZOOKEEPER-2693). Атака типа "отказ в обслуживании" для слов, состоящих из четырех знаков (4lw).
 
--   [ZOOKEEPER-2726](https://issues.apache.org/jira/browse/ZOOKEEPER-2726): исправление для определения потенциального состояния гонки.
+-   [ZOOKEEPER-2726](https://issues.apache.org/jira/browse/ZOOKEEPER-2726). Исправление для определения потенциального состояния гонки.
 
 ## <a name="fixed-common-vulnerabilities-and-exposures"></a>Исправлены проблемы, связанные с распространенными уязвимостями и рисками
 
@@ -862,7 +862,7 @@ Azure HDInsight является одной из самых популярных
 
 | **Сводка:** handler/ssl/OpenSslEngine.java в Netty 4.0.x перед 4.0.37.Final и 4.1.x перед 4.1.1.Final позволяет злоумышленникам, использующим удаленный доступ, вызвать отказ в обслуживании (бесконечный цикл) |
 |--------------------------------------------------------------------------------------------------|
-| **Уровень серьезности:** средний  |
+| **Уровень серьезности:** Средний  |
 | **Поставщик:** Hortonworks  |
 | **Затронутые версии:** HDP 2.x.x с версии 2.3.x  |
 | **Затронутые пользователи:** все пользователи, использующие HDFS. |
@@ -878,7 +878,7 @@ Azure HDInsight является одной из самых популярных
 | **Затронутые версии:** все версии HDP 2.5, включая версии Apache Ranger 0.6.0/0.6.1/0.6.2                                         |
 | **Затронутые пользователи:** все пользователи средства администрирования политики Ranger.                                                                         |
 | **Влияние:** механизм политики Ranger неправильно сопоставляет пути в определенных условиях, когда политика содержит подстановочные знаки и рекурсивные флаги. |
-| **Сведения об исправлении:** исправленная логика оценки политики                                                                                          |
+| **Сведения об исправлении:** исправленная логика оценки политики.                                                                                          |
 | **Рекомендуемое действие:** пользователи должны обновить HDI до версии 2.5.4+ (с Apache Ranger 0.6.3+) или 2.6+ (с Apache Ranger 0.7.0+)         |
 
 ### <a name="cve-2016-8751"></a>**CVE-2016-8751**
@@ -912,7 +912,7 @@ Azure HDInsight является одной из самых популярных
 | BUG-92957              | [HIVE-11266](https://issues.apache.org/jira/browse/HIVE-11266)                                                                                                                                                                                                                 | Неправильный результат count(\*), основанный на статистике таблицы для внешних таблиц                                                   |
 | BUG-93097              | [RANGER-1944](https://issues.apache.org/jira/browse/RANGER-1944)                                                                                                                                                                                                               | Не работает фильтр действий для аудита администратора                                                                           |
 | BUG-93335              | [HIVE-12315](https://issues.apache.org/jira/browse/HIVE-12315)                                                                                                                                                                                                                 | vectorization\_short\_regress.q содержит неправильный результат для двойного вычисления                                      |
-| BUG-93415              | [HIVE-18258](https://issues.apache.org/jira/browse/HIVE-18258), [HIVE-18310](https://issues.apache.org/jira/browse/HIVE-18310)                                                                                                                                                 | Векторизация — Reduce-Side GROUP BY MERGEPARTIAL с двойными столбцами неработоспособна                                      |
+| BUG-93415              | [HIVE-18258](https://issues.apache.org/jira/browse/HIVE-18258), [HIVE-18310](https://issues.apache.org/jira/browse/HIVE-18310)                                                                                                                                                 | Векторизация: Reduce-Side GROUP BY MERGEPARTIAL с двойными столбцами неработоспособна.                                      |
 | BUG-93939              | [ATLAS-2294](https://issues.apache.org/jira/browse/ATLAS-2294)                                                                                                                                                                                                                 | При создании типа добавлен дополнительный параметр "описание"                                                               |
 | BUG-94007              | [PHOENIX-1751](https://issues.apache.org/jira/browse/PHOENIX-1751), [PHOENIX-3112](https://issues.apache.org/jira/browse/PHOENIX-3112)                                                                                                                                         | Запросы Phoenix возвращают значения NULL из-за частично выполненных строк HBase                                                          |
 | BUG-94266              | [HIVE-12505](https://issues.apache.org/jira/browse/HIVE-12505)                                                                                                                                                                                                                 | Вставка перезаписи в одной зашифрованной зоне по умолчанию завершается сбоем, чтобы удалить некоторые имеющиеся файлы                                   |
@@ -944,7 +944,7 @@ Azure HDInsight является одной из самых популярных
 | BUG-94618              | [YARN-5037](https://issues.apache.org/jira/browse/YARN-5037), [YARN-7274](https://issues.apache.org/jira/browse/YARN-7274)             | Возможность отключить эластичность на уровне очереди конечного объекта                                                                                          |
 | BUG-94901              | [HBASE-19285](https://issues.apache.org/jira/browse/HBASE-19285)                                                                       | Добавьте гистограммы задержки для каждой таблицы                                                                                                           |
 | BUG-95259              | [HADOOP-15185](https://issues.apache.org/jira/browse/HADOOP-15185), [HADOOP-15186](https://issues.apache.org/jira/browse/HADOOP-15186) | Обновите соединитель ADLS, чтобы использовать текущую версию пакета SDK ADLS                                                                               |
-| BUG-95619              | [HIVE-18551](https://issues.apache.org/jira/browse/HIVE-18551)                                                                         | Векторизация — VectorMapOperator пытается написать слишком много векторных столбцов для Hybrid Grace                                                   |
+| BUG-95619              | [HIVE-18551](https://issues.apache.org/jira/browse/HIVE-18551)                                                                         | Векторизация: VectorMapOperator пытается написать слишком много векторных столбцов для Hybrid Grace.                                                   |
 | BUG-97223              | [SPARK-23434](https://issues.apache.org/jira/browse/SPARK-23434)                                                                       | Spark не должен предупреждать \`каталог метаданных\` для пути к файлу HDFS                                                                          |
 
 **Производительность**
@@ -1001,7 +1001,7 @@ Azure HDInsight является одной из самых популярных
 | BUG-96762              | [PHOENIX-4588](https://issues.apache.org/jira/browse/PHOENIX-4588)                                                                     | Также выражение клона, если дочерние элементы включают вызов Determinism.PER\_INVOCATION                                |
 | BUG-97145              | [HIVE-12245](https://issues.apache.org/jira/browse/HIVE-12245), [HIVE-17829](https://issues.apache.org/jira/browse/HIVE-17829)         | Включите поддержку комментариев в столбце для архивной таблицы HBase                                                      |
 | BUG-97741              | [HIVE-18944](https://issues.apache.org/jira/browse/HIVE-18944)                                                                         | Во время DPP было неправильно задано позицию наборов группирования                                                  |
-| BUG-98082              | [HIVE-18597](https://issues.apache.org/jira/browse/HIVE-18597)                                                                         | LLAP — всегда включайте в пакет JAR-файл API log4j2 для org.apache.log4j                                           |
+| BUG-98082              | [HIVE-18597](https://issues.apache.org/jira/browse/HIVE-18597)                                                                         | LLAP: всегда включайте в пакет JAR-файл API log4j2 для org.apache.log4j.                                           |
 | BUG-99849              | Недоступно                                                                                                                                    | При создании таблицы из файла мастер попытается использовать базу данных по умолчанию                                    |
 
 **Безопасность**
@@ -1120,7 +1120,7 @@ Azure HDInsight является одной из самых популярных
 | BUG-95200              | [HDFS-13061](https://issues.apache.org/jira/browse/HDFS-13061)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | SaslDataTransferClient\#checkTrustAndSend не должен доверять частично доверенному каналу                                                         |
 | BUG-95201              | [HDFS-13060](https://issues.apache.org/jira/browse/HDFS-13060)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Добавление BlacklistBasedTrustedChannelResolver для TrustedChannelResolver                                                                       |
 | BUG-95284              | [HBASE-19395](https://issues.apache.org/jira/browse/HBASE-19395)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | \[branch-1\] ошибка разделения TestEndToEndSplitTransaction.testMasterOpsWhileSplitting с NPE                                                           |
-| BUG-95301              | [HIVE-18517](https://issues.apache.org/jira/browse/HIVE-18517)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Векторизация — исправьте VectorMapOperator для приема VRB и проверьте правильное расположение векторизованного флага для поддержки кэширования LLAP                                |
+| BUG-95301              | [HIVE-18517](https://issues.apache.org/jira/browse/HIVE-18517)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Векторизация: исправьте VectorMapOperator для приема VRB и проверьте правильное расположение векторизованного флага для поддержки кэширования LLAP                                |
 | BUG-95542              | [HBASE-16135](https://issues.apache.org/jira/browse/HBASE-16135)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Узел PeerClusterZnode в RS удаленного кэширующего узла никогда не удаляется                                                                                 |
 | BUG-95595              | [HIVE-15563](https://issues.apache.org/jira/browse/HIVE-15563)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Проигнорируйте исключение перехода состояния недопустимой операции в запросе SQLOperation.runQuery, чтобы предоставить реальное исключение                                         |
 | BUG-95596              | [YARN-4126](https://issues.apache.org/jira/browse/YARN-4126), [YARN-5750](https://issues.apache.org/jira/browse/YARN-5750)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Сбой TestClientRMService                                                                                                                      |
@@ -1199,7 +1199,7 @@ Azure HDInsight является одной из самых популярных
 | BUG-100646             | [ATLAS-2102](https://issues.apache.org/jira/browse/ATLAS-2102)                                                                                                                                                                                                                 | Оптимизация пользовательского интерфейса Atlas: страница результатов поиска                                                                                                                   |
 | BUG-100737             | [HIVE-19049](https://issues.apache.org/jira/browse/HIVE-19049)                                                                                                                                                                                                                 | Добавьте поддержку для таблицы ALTER TABLE, чтобы добавить столбцы для Druid                                                                                                            |
 | BUG-100750             | [KNOX-1246](https://issues.apache.org/jira/browse/KNOX-1246)                                                                                                                                                                                                                   | Обновите конфигурацию службы в Knox для поддержки последних конфигураций Ranger                                                                                   |
-| BUG-100965             | [ATLAS-2581](https://issues.apache.org/jira/browse/ATLAS-2581)                                                                                                                                                                                                                 | Регрессия с уведомлениями обработчика Hive V2: перемещение таблицы в другую базу данных                                                                            |
+| BUG-100965             | [ATLAS-2581](https://issues.apache.org/jira/browse/ATLAS-2581)                                                                                                                                                                                                                 | Регрессия с уведомлениями обработчика Hive V2: перемещение таблицы в другую базу данных                                                                            |
 | BUG-84413              | [ATLAS-1964](https://issues.apache.org/jira/browse/ATLAS-1964)                                                                                                                                                                                                                 | Пользовательский интерфейс: поддержка столбцов упорядочения в таблице поиска                                                                                                                |
 | BUG-90570              | [HDFS-11384](https://issues.apache.org/jira/browse/HDFS-11384), [HDFS-12347](https://issues.apache.org/jira/browse/HDFS-12347)                                                                                                                                                 | Добавьте параметр для балансировщика для разгона вызовов getBlocks, чтобы избежать всплеска rpc.CallQueueLength узла NameNode                                                            |
 | BUG-90584              | [HBASE-19052](https://issues.apache.org/jira/browse/HBASE-19052)                                                                                                                                                                                                               | FixedFileTrailer должен распознавать класс CellComparatorImpl в ветви branch-1.x                                                                                     |
@@ -1250,7 +1250,7 @@ Azure HDInsight является одной из самых популярных
 | BUG-95595              | [HIVE-15563](https://issues.apache.org/jira/browse/HIVE-15563)                                                                                                                                                                                                                 | Проигнорируйте исключение перехода состояния недопустимой операции в запросе SQLOperation.runQuery, чтобы предоставить реальное исключение                                                       |
 | BUG-95685              | [ATLAS-2422](https://issues.apache.org/jira/browse/ATLAS-2422)                                                                                                                                                                                                                 | Экспорт: включите поддержку экспорта на основе типа                                                                                                                            |
 | BUG-95798              | [PHOENIX-2714](https://issues.apache.org/jira/browse/PHOENIX-2714), [PHOENIX-2724](https://issues.apache.org/jira/browse/PHOENIX-2724), [PHOENIX-3023](https://issues.apache.org/jira/browse/PHOENIX-3023), [PHOENIX-3040](https://issues.apache.org/jira/browse/PHOENIX-3040) | Не используйте направляющие для выполнения запросов поочередно                                                                                                          |
-| BUG-95969              | [HIVE-16828](https://issues.apache.org/jira/browse/HIVE-16828), [HIVE-17063](https://issues.apache.org/jira/browse/HIVE-17063), [HIVE-18390](https://issues.apache.org/jira/browse/HIVE-18390)                                                                                 | Сбой секционированного представления с ошибкой: индекс: 1, размер: 1 исключения IndexOutOfBoundsException                                                                              |
+| BUG-95969              | [HIVE-16828](https://issues.apache.org/jira/browse/HIVE-16828), [HIVE-17063](https://issues.apache.org/jira/browse/HIVE-17063), [HIVE-18390](https://issues.apache.org/jira/browse/HIVE-18390)                                                                                 | Сбой секционированного представления с ошибкой: индекс исключения IndexOutOfBoundsException: 1, размер: 1                                                                              |
 | BUG-96019              | [HIVE-18548](https://issues.apache.org/jira/browse/HIVE-18548)                                                                                                                                                                                                                 | Исправьте импорт log4j                                                                                                                                             |
 | BUG-96288              | [HBASE-14123](https://issues.apache.org/jira/browse/HBASE-14123), [HBASE-14135](https://issues.apache.org/jira/browse/HBASE-14135), [HBASE-17850](https://issues.apache.org/jira/browse/HBASE-17850)                                                                           | Реализуйте резервное копирование и восстановление Hbase версии 2.0                                                                                                                            |
 | BUG-96313              | [KNOX-1119](https://issues.apache.org/jira/browse/KNOX-1119)                                                                                                                                                                                                                   | Необходимо настроить субъект Pac4J OAuth/OpenID                                                                                                        |
@@ -1303,7 +1303,7 @@ Azure HDInsight является одной из самых популярных
 |**Spark 2.3** |**Н/Д** |**Изменения, описанные в заметках о выпуске Apache Spark** |Раздел об устаревших версиях и сведения об изменениях в поведении — https://spark.apache.org/releases/spark-release-2-3-0.html#deprecations<br /><br />Для SQL приводится следующее подробное руководство о миграции (обновление SQL с версии 2.2 до 2.3) — http://spark.apache.org/docs/latest/sql-programming-guide.html#upgrading-from-spark-sql-22-to-23|
 |Spark |[**HIVE-12505**](https://issues.apache.org/jira/browse/HIVE-12505) |Задание Spark завершается успешно, но есть ошибка квоты диска HDFS |**Сценарий:** выполнение команды **insert overwrite**, когда в папке "Корзина" пользователя, запустившего команду, задана квота.<br /><br />**Прежнее поведение:** задание выполняется успешно, даже если не удается переместить данные в корзину. Результат может ошибочно содержать некоторые данные, ранее представленные в таблице.<br /><br />**Новое поведение:** при сбое перемещения в папку "Корзина" файлы навсегда удаляются.|
 |**Kafka 1.0**|**Н/Д**|**Изменения, описанные в заметках о выпуске Apache Spark** |http://kafka.apache.org/10/documentation.html#upgrade_100_notable|
-|**Hive/Ranger** | |Дополнительные политики Ranger Hive, необходимые для выполнения команды INSERT OVERWRITE |**Сценарий:** дополнительные политики Ranger Hive, необходимые для выполнения команды **INSERT OVERWRITE**<br /><br />**Прежнее поведение:** запросы **INSERT OVERWRITE** Hive выполнялись в обычном режиме.<br /><br />**Новое поведение:** запросы **INSERT OVERWRITE** Hive неожиданно завершаются сбоем после обновления до HDP-2.6.x. Появляется следующая ошибка:<br /><br />Произошла ошибка при компиляции инструкции: сбой: отклонено разрешение исключения HiveAccessControlException: у пользователя jdoe нет привилегии WRITE в каталоге /tmp/\*(state=42000,code=40000).<br /><br />Начиная с HDP версии 2.6.0, запросам **INSERT OVERWRITE** Hive требуется, чтобы политика URI Ranger позволяла выполнять операции записи, даже если у пользователя есть привилегия на запись, предоставленная с помощью политики HDFS.<br /><br />**Возможное решение или ожидаемое действие пользователя:**<br /><br />1. Создайте политику в репозитории Hive.<br />2. В раскрывающемся списке с базой данных выберите универсальный код ресурса (URI).<br />3. Обновите путь (например: /tmp/*).<br />4. Добавьте пользователей и группу. Сохраните изменения.<br />5. Повторно отправьте запрос вставки.|
+|**Hive/Ranger** | |Дополнительные политики Ranger Hive, необходимые для выполнения команды INSERT OVERWRITE |**Сценарий:** дополнительные политики Ranger Hive, необходимые для выполнения команды **INSERT OVERWRITE**.<br /><br />**Прежнее поведение:** запросы **INSERT OVERWRITE** Hive выполнялись в обычном режиме.<br /><br />**Новое поведение:** запросы **INSERT OVERWRITE** Hive неожиданно завершаются сбоем после обновления до HDP-2.6.x. Появляется следующая ошибка:<br /><br />произошла ошибка при компиляции инструкции: сбой: отклонено разрешение исключения HiveAccessControlException: у пользователя jdoe нет привилегии WRITE в каталоге /tmp/\*(state=42000,code=40000).<br /><br />Начиная с HDP версии 2.6.0, запросам **INSERT OVERWRITE** Hive требуется, чтобы политика URI Ranger позволяла выполнять операции записи, даже если у пользователя есть привилегия на запись, предоставленная с помощью политики HDFS.<br /><br />**Возможное решение или ожидаемое действие пользователя:**<br /><br />1. Создайте политику в репозитории Hive.<br />2. В раскрывающемся списке с базой данных выберите универсальный код ресурса (URI).<br />3. Обновите путь (например: /tmp/*).<br />4. Добавьте пользователей и группу. Сохраните изменения.<br />5. Повторно отправьте запрос вставки.|
 |**HDFS**|**Н/Д** |HDFS должен поддерживать несколько URI сервера управления ключами |**Прежнее поведение:** свойство dfs.encryption.key.provider.uri использовалось для настройки пути поставщика сервера управления ключами.<br /><br />**Новое поведение:** dfs.encryption.key.provider.uri теперь устарел. Для настройки пути поставщика сервера управления ключами сейчас используется hadoop.security.key.provider.path.|
 |**Zeppelin**|[**ZEPPELIN-3271**](https://issues.apache.org/jira/browse/ZEPPELIN-3271)|Параметр отключения планировщика |**Затронутый компонент:** Zeppelin-Server<br /><br />**Прежнее поведение:** в предыдущих выпусках Zeppelin не было возможности отключить планировщик.<br /><br />**Новое поведение:** пользователи больше не будут видеть планировщик, поскольку по умолчанию он отключен.<br /><br />**Возможное решение или ожидаемое действие пользователя:** если вы хотите включить планировщик, вам нужно будет добавить azeppelin.notebook.cron.enable со значением true в параметрах Zeppelin на сайте пользователя Zeppelin из Ambari.|
 
@@ -1328,11 +1328,11 @@ Azure HDInsight является одной из самых популярных
 
 -   **Возможное решение для устранения ошибки проверки службы Ranger**
 
-    -   [RANGER-1607](https://issues.apache.org/jira/browse/RANGER-1607): возможное решение для устранения ошибки проверки службы Ranger при обновлении предыдущих версий HDP до версии 2.6.2.
+    -   [RANGER-1607](https://issues.apache.org/jira/browse/RANGER-1607). Возможное решение для устранения ошибки проверки службы Ranger при обновлении предыдущих версий HDP до версии 2.6.2.
 
-        >[!NOTE]
-        >Только если для Ranger включен SSL. 
-    
+        > [!NOTE]  
+        > Только если для Ranger включен SSL. 
+     
     Эта проблема возникает при попытке обновить через Ambari предыдущие версии HDP до версии 2.6.1. Ambari использует вызов Curl для проверки службы в службе Ranger в Ambari. Если Ambari использует JDK версии 1.7, вызов Curl завершится ошибкой ниже:
     
     `curl: (35) error:14077410:SSL routines:SSL23_GET_SERVER_HELLO:sslv3 alert handshake failure`
@@ -1353,7 +1353,7 @@ Azure HDInsight является одной из самых популярных
             
             SSL\_RSA\_WITH\_RC4\_128\_MD5, SSL\_RSA\_WITH\_RC4\_128\_SHA, TLS\_RSA\_WITH\_AES\_128\_CBC\_SHA, SSL\_RSA\_WITH\_3DES\_EDE\_CBC\_SHA
     
-    >[!NOTE]
+    >[!NOTE]  
     >Указанные значения являются рабочими примерами и могут не подходить для вашей среды. Проверьте, чтобы способ задания этих свойств соответствовал настройке вашей среды.   
 
 -   **Пользовательский интерфейс Ranger: исключение текста условия политики, введенного в форму политики**
@@ -1374,7 +1374,7 @@ Azure HDInsight является одной из самых популярных
     
     **Возможное решение**
     
-    - **Параметр \#1: создание и обновление политики через Rest API Ranger**
+    - **Параметр \#1/ Создание и обновление политики через Rest API Ranger**
         
         URL-адрес REST: http://&lt;host&gt;:6080/service/plugins/policies
         
@@ -1396,7 +1396,7 @@ Azure HDInsight является одной из самых популярных
         
         `curl -H "Content-Type: application/json" -X PUT http://localhost:6080/service/plugins/policies/18 -u admin:admin -d '{"id":18,"guid":"ea78a5ed-07a5-447a-978d-e636b0490a54","isEnabled":true,"createdBy":"Admin","updatedBy":"Admin","createTime":1490802077000,"updateTime":1490802077000,"version":1,"service":"tagdev","name":"P0101","policyType":0,"description":"","resourceSignature":"e5fdb911a25aa7f77af5a9546938d9ed","isAuditEnabled":true,"resources":{"tag":{"values":["tags"],"isExcludes":false,"isRecursive":false}},"policyItems":[{"accesses":[{"type":"hive:select","isAllowed":true},{"type":"hive:update","isAllowed":true},{"type":"hive:create","isAllowed":true},{"type":"hive:drop","isAllowed":true},{"type":"hive:alter","isAllowed":true},{"type":"hive:index","isAllowed":true},{"type":"hive:lock","isAllowed":true},{"type":"hive:all","isAllowed":true}],"users":[],"groups":["public"],"conditions":[{"type":"ip-range","values":["tags.attributes['type']=abc"]}],"delegateAdmin":false}],"denyPolicyItems":[],"allowExceptions":[],"denyExceptions":[],"dataMaskPolicyItems":[],"rowFilterPolicyItems":[]}'`
         
-    - **Параметр \#2: применение изменений Javascript**
+    - **Параметр \#2. Применение изменений Javascript**
         
         Чтобы обновить JS-файл, сделайте следующее:
         
@@ -1412,7 +1412,7 @@ Azure HDInsight является одной из самых популярных
 
 ## <a name="deprecation"></a>Устаревшее
 
--   **Портал OMS:** мы удалили ссылку со страницы ресурсов HDInsight, которая указывала на портал OMS. В Log Analytics изначально существовал собственный портал для управления конфигурацией и анализа собранных данных, известный как портал OMS. Теперь все функциональные возможности этого портала перемещены на портал Azure, где и будут совершенствоваться далее. HDInsight больше не поддерживает портал OMS. На портале Azure клиенты будут использовать интеграцию Log Analytics HDInsight.
+-   **Портал OMS.** Мы удалили ссылку со страницы ресурсов HDInsight, которая указывала на портал OMS. В Log Analytics изначально существовал собственный портал для управления конфигурацией и анализа собранных данных, известный как портал OMS. Теперь все функциональные возможности этого портала перемещены на портал Azure, где и будут совершенствоваться далее. HDInsight больше не поддерживает портал OMS. На портале Azure клиенты будут использовать интеграцию Log Analytics HDInsight.
 
 -   **Spark 2.3**
 

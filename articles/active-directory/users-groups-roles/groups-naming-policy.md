@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 05/21/2018
+ms.date: 12/11/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 2857f95eff0b2d039a1a3c7bbe566a8ed3ca4fea
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 3368133dec82d946318a755dc98b068a048b9e83
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50243135"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275114"
 ---
 # <a name="enforce-a-naming-policy-for-office-365-groups-in-azure-active-directory-preview"></a>Применение политики именования для групп Office 365 в Azure Active Directory (предварительная версия)
 
@@ -58,6 +58,7 @@ ms.locfileid: "50243135"
 Список запрещенных слов — это список разделенных запятыми фраз, которые запрещены в именах и псевдонимах групп. Поиск подстрок не выполняется. Для активации сбоя требуется, чтобы имя группы точно содержало одно или несколько настраиваемых запрещенных слов. Поиск подстрок не выполняется, поэтому пользователи могут использовать распространенные слова, например "Работа", даже если слово "бот" запрещено.
 
 Правила списка запрещенных слов:
+
 - Регистр запрещенных слов не учитывается.
 - Когда пользователь вводит запрещенное слово в имени группы, отображается сообщение об ошибке, содержащее запрещенное слово.
 - Ограничения знаков в запрещенных словах отсутствуют.
@@ -120,7 +121,7 @@ ms.locfileid: "50243135"
   
 ### <a name="set-the-naming-policy-and-custom-blocked-words"></a>Установка политики именования и настраиваемых запрещенных слов
 
-1. Задайте префиксы и суффиксы имен групп в PowerShell для Azure AD.
+1. Задайте префиксы и суффиксы имен групп в PowerShell для Azure AD. Для правильной работы функции включите [имя_группы] в параметр.
   
   ````
   $Setting["PrefixSuffixNamingRequirement"] =“GRP_[GroupName]_[Department]"
@@ -166,6 +167,27 @@ $Settings["CustomBlockedWordsList"] = $BadWords
 $Settings["EnableMSStandardBlockedWords"] = $True
 Set-AzureADDirectorySetting -Id $Settings.Id -DirectorySetting $Settings 
 ````
+
+## <a name="remove-the-naming-policy"></a>Удаление политики именования
+
+1. Удалите префиксы и суффиксы имен групп в PowerShell для Azure AD.
+  
+  ````
+  $Setting["PrefixSuffixNamingRequirement"] =""
+  ````
+  
+2. Удалите настраиваемые запрещенные слова 
+  
+  ````
+  $Setting["CustomBlockedWordsList"]=""
+  ````
+  
+3. Сохраните параметры.
+  
+  ````
+  Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | where -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
+  ````
+
 
 ## <a name="naming-policy-experiences-across-office-365-apps"></a>Использование политик именования в приложениях Office 365
 

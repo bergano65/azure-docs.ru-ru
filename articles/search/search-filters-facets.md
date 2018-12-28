@@ -1,6 +1,6 @@
 ---
-title: Фильтры аспекта в службе "Поиск Azure" | Документация Майкрософт
-description: Условия фильтрации по удостоверениям безопасности, языку, географическому расположению или числовым значениям для уменьшения результатов поиска в запросах в службе "Поиск Azure", размещенной облачной службе поиска в Microsoft Azure.
+title: Фильтры аспекта для навигации поиска в приложениях в службе "Поиск Azure"
+description: Условия фильтрации по удостоверениям безопасности, географическому расположению или числовым значениям для уменьшения результатов поиска в запросах в службе "Поиск Azure", размещенной облачной службе поиска в Microsoft Azure.
 author: HeidiSteen
 manager: cgronlun
 services: search
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 10/13/2017
 ms.author: heidist
-ms.openlocfilehash: 3f2cfea52d3c3f4bfc75364d0662a4218219152d
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.custom: seodec2018
+ms.openlocfilehash: 94a0d3f19e595ac040d908ea47d6332ceae0943c
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31792415"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53314811"
 ---
 # <a name="how-to-build-a-facet-filter-in-azure-search"></a>Как создать фильтр аспекта в службе "Поиск Azure" 
 

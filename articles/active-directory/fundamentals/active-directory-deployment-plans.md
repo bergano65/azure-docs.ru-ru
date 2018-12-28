@@ -1,6 +1,6 @@
 ---
 title: Планы развертывания Azure Active Directory | Документация Майкрософт
-description: Комплексное руководство по развертыванию возможностей Azure Active Directory
+description: Комплексное руководство по развертыванию множества компонентов Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -10,12 +10,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/03/2018
 ms.author: lizross
-ms.openlocfilehash: f5a148cba172b4e1e4490b52afb3b500da3a593c
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: f471f1183a7d0d695b5817003fe70a018787731d
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47434166"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094788"
 ---
 # <a name="azure-active-directory-deployment-plans"></a>Планы развертывания Azure Active Directory
 Ищете комплексное руководство по развертыванию некоторых возможностей Azure Active Directory (Azure AD)? В следующих планах развертывания рассматриваются бизнес-преимущества, вопросы планирования, разработки и операционные процедуры, необходимые для успешного развертывания нескольких наиболее распространенных возможностей Azure AD. 

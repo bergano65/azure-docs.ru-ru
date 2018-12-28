@@ -1,0 +1,169 @@
+---
+title: Отслеживание служб и приложений Azure с помощью Grafana
+description: Маршрутизация данных Azure Monitor и Application Insights для просмотра в Grafana.
+services: azure-monitor
+keywords: ''
+author: rboucher
+ms.author: robb
+ms.date: 11/06/2017
+ms.topic: conceptual
+ms.service: azure-monitor
+ms.component: ''
+ms.openlocfilehash: 4579dd4fb14a01454f86d5913eb9dd44a8977db6
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53440191"
+---
+# <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
+Теперь можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, собранные Azure Monitor, включая различные журналы и метрики. Затем эти данные можно отобразить на панели мониторинга Grafana.
+
+Сейчас подключаемый модуль доступен в предварительной версии.
+
+Выполните указанные ниже действия, чтобы настроить сервер Grafana и создать панели мониторинга для метрик и журналов из Azure Monitor.
+
+## <a name="set-up-a-grafana-server"></a>Настройка сервера Grafana
+
+### <a name="set-up-grafana-locally"></a>Локальная настройка Grafana
+Чтобы настроить локальный сервер Grafana, [скачайте и установите Grafana в локальной среде](https://grafana.com/grafana/download). Чтобы использовать возможности интеграции Log Analytics подключаемого модуля, установите Grafana 5.3 или более поздней версии.
+### <a name="set-up-grafana-on-azure-through-the-azure-marketplace"></a>Настройка Grafana в Azure с помощью Azure Marketplace
+1. Перейдите в Azure Marketplace и выберите Grafana от Grafana Labs.
+
+2. Введите названия и подробные сведения. Создайте новую группу ресурсов. Запомните значения, которые вы выбираете для имени и пароля виртуальной машины, а также пароля администратора сервера Grafana.  
+
+3. Выберите размер виртуальной машины и учетную запись хранения.
+
+4. Настройте параметры конфигурации сети.
+
+5. Просмотрите сводку и выберите **Создать** после принятия условий использования.
+
+6. После завершения развертывания выберите **Перейти к группе ресурсов**. Появится список только что созданных ресурсов.
+
+    ![Объекты группы ресурсов Grafana](media/grafana-plugin/grafana1.png)
+
+    При выборе группы безопасности сети (в этом случае *grafana-nsg*) можно увидеть, что порт 3000 используется для получения доступа к серверу Grafana.
+
+7. Получите общедоступный IP-адрес сервера Grafana, вернитесь к списку ресурсов и выберите **Общедоступный IP-адрес**.
+
+## <a name="log-in-to-grafana"></a>Вход в Grafana
+
+1. Используя IP-адрес сервера, откройте страницу входа *http://\<IP-адрес\>:3000* или *\<DNSName>\:3000* в браузере. Хотя по умолчанию используется порт 3000, обратите внимание, что вы можете выбрать другой порт во время установки. Должна отобразиться созданная страница входа для сервера Grafana.
+
+    ![Экран входа в Grafana](./media/grafana-plugin/grafana-login-screen.png)
+
+2. Войдите с помощью имени пользователя *admin* и пароля администратора сервера Grafana, созданных ранее. Если вы используете локальную настройку, пароль по умолчанию будет *admin*. При первом входе в систему его нужно будет изменить.
+
+## <a name="configure-data-source-plugin"></a>Настройка подключаемого модуля источника данных
+
+После успешного входа вы увидите, что подключаемый модуль источника данных монитора Azure уже включен.
+
+![Grafana содержит подключаемый модуль Azure Monitor](./media/grafana-plugin/grafana-includes-azure-monitor-plugin-dark.png)
+
+1. Выберите **Добавить источник данных**, чтобы добавить и настроить источник данных Azure Monitor.
+
+2. Выберите имя для источника данных и **Azure Monitor** в качестве типа из раскрывающегося списка.
+
+3. Создайте субъект-службу. Grafana использует субъект-службу Azure Active Directory для подключения к API Azure Monitor и сбора данных. Необходимо создать или использовать существующий субъект-службу для управления доступом к ресурсам Azure.
+    * Инструкции по созданию субъекта-службы см. в [этой статье](../../azure-resource-manager/resource-group-create-service-principal-portal.md). Скопируйте и сохраните идентификатор арендатора (идентификатор каталога), идентификатор клиента (идентификатор приложения) и секрет клиента (значение ключа приложения).
+    * См. раздел о [назначении роли для приложения](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-create-service-principal-portal#assign-application-to-role), чтобы узнать, как назначить роль читателя приложению Azure Active Directory для подписки, группы ресурсов или ресурса, который нужно отслеживать. 
+    Для Log Analytics API требуется [роль читателя Log Analytics](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#log-analytics-reader), которая включает разрешения роли читателя и добавляется к ней.
+
+4. Передайте сведения о подключении в интерфейсы API, которые вы хотите использовать. Можно подключиться ко всем или некоторым из них. 
+    * При подключении к Azure Monitor (для сбора метрик) и Azure Log Analytics (для данных журнала) можно повторно использовать те же учетные данные, выбрав пункт **Same details as Azure Monitor API** (Те же сведения, что и для Azure Monitor API).
+    * При настройке подключаемого модуля можно указать, какое облако Azure он должен отслеживать (общедоступное, Azure для государственных организаций США, Azure для Германии или Azure для Китая).
+    * При использовании Application Insights можно также включить API Application Insights и идентификатор приложения для сбора метрик на основе Application Insights. Дополнительные сведения см. в статье [Getting your API key and Application ID](https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID) (Получение ключа API и идентификатора приложения).
+
+        > [!NOTE]
+        > Некоторые поля источника данных именуются не так, как их коррелированные параметры Azure:
+        >     * Идентификатор арендатора — это идентификатор каталога Azure.
+        >     * Идентификатор клиента — это идентификатор приложения Azure Active Directory.
+        >     * Секрет клиента — это значение ключа приложения Azure Active Directory.
+
+5. При использовании Application Insights можно также включить API Application Insights и идентификатор приложения для сбора метрик на основе Application Insights. Дополнительные сведения см. в статье [Getting your API key and Application ID](https://dev.applicationinsights.io/documentation/Authorization/API-key-and-App-ID) (Получение ключа API и идентификатора приложения).
+
+6. Нажмите **Сохранить**, и Grafana будет проверять учетные данные для каждого API. Должно появиться примерно такое сообщение:  
+    ![Конфигурация источника данных Grafana утверждена](./media/grafana-plugin/grafana-data-source-config-approved-dark.png)
+
+## <a name="build-a-grafana-dashboard"></a>Создание панели мониторинга Grafana
+
+1. Перейдите на домашнюю страницу Grafana и выберите пункт **New Dashboard** (Новая панель мониторинга).
+
+2. На новой панели мониторинга выберите **Graph**. Можно использовать другие варианты построения графиков, однако в этой статье в качестве примера используется *Graph*.
+
+3. На панели мониторинга появится пустой график. Щелкните заголовок области и выберите **Edit** (Изменить), чтобы ввести сведения о данных, которые нужно представить на этом графике.
+    ![Новый график Grafana](./media/grafana-plugin/grafana-new-graph-dark.png)
+
+4. Выберите источник данных Azure Monitor, который вы настроили.
+    * Сбор метрик Azure Monitor. Выберите **Azure Monitor** в раскрывающемся списке службы. Отобразится список селекторов, где можно выбрать ресурсы и метрики для мониторинга на этой диаграмме. Для сбора метрик с виртуальных машин используйте пространство имен **Microsoft.Compute/VirtualMachines**. Когда вы выберете виртуальные машины и метрики, на панели мониторинга можно будет просматривать их данные.
+    ![Настройка графика Grafana для Azure Monitor](./media/grafana-plugin/grafana-graph-config-for-azure-monitor-dark.png)
+    * Сбор данных Azure Log Analytics. Выберите **Azure Log Analytics** в раскрывающемся списке службы. Выберите рабочую область, в которой вы хотите выполнять запросы и настраивать текст запроса. Здесь вы можете скопировать любой существующий запрос Log Analytics или создать новый. При вводе запроса будет отображаться IntelliSense с предлагаемыми вариантами автозаполнения. Выберите тип визуализации, **Time series** **Table** (Таблица временных рядов), а затем выполните запрос.
+    
+    > [!NOTE]
+    >
+    > В запросе по умолчанию, который предоставляется с подключаемым модулем, используются два макроса: "$__timeFilter() и $__interval. 
+    > Эти макросы позволяют Grafana динамическим образом вычислять диапазон и интервал времени при увеличении части диаграммы. Можно удалить эти макросы и использовать стандартный фильтр времени, например *TimeGenerated > ago(1h)*, но это означает, что график не будет поддерживать функцию увеличения.
+    
+    ![Настройка графика Grafana для Azure Log Analytics](./media/grafana-plugin/grafana-graph-config-for-azure-log-analytics-dark.png)
+
+5. Ниже приведена простая панель мониторинга с двумя диаграммами. Левая показывает процент использования ЦП на двух виртуальных машинах. Диаграмма справа показывает транзакции в учетной записи хранения Azure с разбивкой по типам API транзакций.
+    ![Пример двух диаграмм Grafana](media/grafana-plugin/grafana6.png)
+
+
+## <a name="optional-monitor-your-custom-metrics-in-the-same-grafana-server"></a>Необязательно: Мониторинг настраиваемых метрик на том же сервере Grafana
+
+Можно также установить Telegraf и InfluxDB, чтобы собирать и представлять на графике настраиваемые метрики и метрики на основе агента в одном экземпляре Grafana. Есть множество подключаемых модулей источников данных, с помощью которых можно объединить эти метрики на панели мониторинга.
+
+Эту настройку можно повторно использовать, чтобы включить метрики с сервера Prometheus. Используйте подключаемый модуль источника данных Prometheus в коллекции подключаемых модулей Grafana.
+
+Вот хорошие справочные статьи о том, как использовать Telegraf, InfluxDB, Prometheus и Docker:
+ - [How To Monitor System Metrics with the TICK Stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-monitor-system-metrics-with-the-tick-stack-on-ubuntu-16-04) (Мониторинг метрик системы с помощью TICK Stack в Ubuntu 16.04)
+
+ - [Monitor Docker resource metrics with Grafana, InfluxDB, and Telegraf](https://blog.vpetkov.net/2016/08/04/monitor-docker-resource-metrics-with-grafana-influxdb-and-telegraf/) (Мониторинг метрик ресурса Docker с помощью Grafana, InfluxDB и Telegraf)
+
+ - [A monitoring solution for Docker hosts, containers and containerized services](https://stefanprodan.com/2016/a-monitoring-solution-for-docker-hosts-containers-and-containerized-services/) (Решение мониторинга для служб контейнеров, контейнеров и узлов Docker)
+
+Вот изображение полной панели мониторинга Grafana, на которой есть метрики из Azure Monitor и Application Insights.
+![Пример метрик Grafana](media/grafana-plugin/grafana8.png)
+
+## <a name="advanced-grafana-features"></a>Расширенные возможности Grafana
+
+### <a name="variables"></a>Переменные
+Некоторые значения запроса можно выбирать в раскрывающихся списках пользовательского интерфейса и обновлять в запросе. В качестве примера используйте следующий запрос:
+```
+Usage 
+| where $__timeFilter(TimeGenerated) 
+| summarize total_KBytes=sum(Quantity)*1024 by bin(TimeGenerated, $__interval) 
+| sort by TimeGenerated
+```
+
+Можно настроить переменную, которая перечисляет все доступные значения параметра **Solution** (Решение), а затем обновить запрос для его использования.
+Чтобы создать новую переменную, нажмите кнопку "Settings" (Параметры) панели мониторинга в верхней правой области, выберите **Variables** (Переменные), а затем **New** (Создать).
+На странице переменных определите источник данных и запрос для запуска, чтобы получить список значений.
+![Настройка переменных Grafana](./media/grafana-plugin/grafana-configure-variable-dark.png)
+
+После создания запроса измените его так, чтобы использовались выбранные значения, и диаграммы будут реагировать соответствующим образом:
+```
+Usage 
+| where $__timeFilter(TimeGenerated) and Solution in ($Solutions)
+| summarize total_KBytes=sum(Quantity)*1024 by bin(TimeGenerated, $__interval) 
+| sort by TimeGenerated
+```
+    
+![Использование переменных Grafana](./media/grafana-plugin/grafana-use-variables-dark.png)
+
+### <a name="create-dashboard-playlists"></a>Создание списков воспроизведения панелей мониторинга
+
+Одна из многих полезных возможностей Grafana — это список воспроизведения панелей мониторинга. Можно создать несколько панелей мониторинга и добавить их в список воспроизведения, настроив интервал показа каждой панели мониторинга. Выберите **Play** (Воспроизведение), чтобы просматривать панели мониторинга циклично. Их можно отобразить на большом мониторе, чтобы представить доску состояния для группы.
+
+![Пример списка воспроизведения Grafana](./media/grafana-plugin/grafana7.png)
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Если вы настроили среду Grafana в Azure, плата будет взиматься при запущенных виртуальных машинах независимо от того, используете вы их или нет. Чтобы избежать дополнительных расходов, очистите группу ресурсов, созданную в этой статье.
+
+1. В меню слева на портале Azure щелкните **Группы ресурсов**, а затем выберите **Grafana**.
+2. На странице группы ресурсов щелкните **Удалить**, в текстовом поле введите **Grafana** и выберите **Удалить**.
+
+## <a name="next-steps"></a>Дополнительная информация
+* [Обзор метрик в Microsoft Azure](../../azure-monitor/platform/data-collection.md)

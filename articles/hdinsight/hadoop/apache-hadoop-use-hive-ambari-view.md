@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 1328119917276b8135c4a6d4188b67bcff2fc069
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 16c9e1cb568533e8dcad046c4ee21bfeaf19d5b7
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51632753"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53407853"
 ---
 # <a name="use-apache-ambari-hive-view-with-apache-hadoop-in-hdinsight"></a>Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight
 
@@ -26,7 +26,7 @@ ms.locfileid: "51632753"
 
 * Apache Hadoop на базе Linux в кластере HDInsight версии 3.4 или более поздней.
 
-  > [!IMPORTANT]
+  > [!IMPORTANT]  
   > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 * веб-браузера;
@@ -70,18 +70,18 @@ ms.locfileid: "51632753"
 
     Эти операторы выполняют следующие действия:
 
-   * `DROP TABLE` — удаляет таблицу и файл данных, если таблица уже существует.
+   * `DROP TABLE`: удаляет таблицу и файл данных, если таблица уже существует.
 
-   * `CREATE EXTERNAL TABLE` — создает "внешнюю" таблицу в Hive.
+   * `CREATE EXTERNAL TABLE`: создает "внешнюю" таблицу в Hive.
    Внешние таблицы хранят только определение таблицы в Hive. Данные остаются в исходном расположении.
 
-   * `ROW FORMAT` — показывает настройку форматирования данных. В данном случае поля всех журналов разделены пробелом.
+   * `ROW FORMAT`: показывает настройку форматирования данных. В данном случае поля всех журналов разделены пробелом.
 
-   * `STORED AS TEXTFILE LOCATION` — показывает место хранения данных и их формат (текст).
+   * `STORED AS TEXTFILE LOCATION`: показывает место хранения данных и их формат (текст).
 
-   * `SELECT` — выбирает подсчет количества строк, в которых столбец t4 содержит значение [ERROR].
+   * `SELECT`: выбирает подсчет количества строк, в которых столбец t4 содержит значение [ERROR].
 
-    > [!IMPORTANT]
+    > [!IMPORTANT]  
     > Оставьте для параметра __База данных__ значение __по умолчанию__. В примерах в этом документе используется база данных по умолчанию, входящая в состав HDInsight.
 
 5. Чтобы выполнить запрос, нажмите кнопку **Выполнить** под листом. Кнопка станет оранжевой, а текст изменится на **Остановить**.
@@ -93,7 +93,7 @@ ms.locfileid: "51632753"
 
     Просмотреть сведения, регистрируемые в процессе выполнения задания, можно на вкладке **Журналы**.
 
-   > [!TIP]
+   > [!TIP]  
    > Скачайте или сохраните результаты в диалоговом окне с раскрывающимся списком **Save results** (Сохранение результатов) в верхнем левом углу раздела **Query Process Results** (Результаты обработки запроса).
 
 ### <a name="visual-explain"></a>Визуальное объяснение
@@ -106,7 +106,7 @@ ms.locfileid: "51632753"
 
 Чтобы отобразить пользовательский интерфейс Tez для запроса, выберите под листом вкладку **Tez**.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Tez используется не для всех запросов. Многие запросы можно разрешить и без применения Tez. 
 
 Если Tez использовался для разрешения запроса, отображается направленный ациклический граф (DAG) . Чтобы просмотреть DAG для ранее выполненных запросов или выполнить отладку процесса Tez, используйте [представление Tez](../hdinsight-debug-ambari-tez-view.md).
@@ -129,7 +129,7 @@ ms.locfileid: "51632753"
 
 ![Изображение вкладки "Сохраненные запросы"](./media/apache-hadoop-use-hive-ambari-view/saved-queries.png)
 
-> [!TIP]
+> [!TIP]  
 > Запросы сохраняются в системе хранения данных кластера по умолчанию. Сохраненные запросы можно найти в следующем расположении: `/user/<username>/hive/scripts`. Они хранятся в виде обычных текстовых файлов `.hql`.
 >
 > Если вы удалите кластер, но сохраните хранилище, для извлечения запросов можно использовать такую служебную программу, как [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/) или обозреватель хранилища Data Lake (на [портале Azure](https://portal.azure.com)).
@@ -165,8 +165,8 @@ create temporary function myawesomeudf as 'com.myudfs.Awesome';
 
 Дополнительные сведения об использовании определяемых пользователем функций с Hive в HDInsight см. в следующих статьях:
 
-* [Использование Python с Hive и Pig в HDInsight](python-udf-hdinsight.md)
-* [Добавление пользовательских UDF Hive в HDInsight](https://blogs.msdn.com/b/bigdatasupport/archive/2014/01/14/how-to-add-custom-hive-udfs-to-hdinsight.aspx)
+* [Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight](python-udf-hdinsight.md)
+* [How to add custom Hive UDFs to HDInsight](https://blogs.msdn.com/b/bigdatasupport/archive/2014/01/14/how-to-add-custom-hive-udfs-to-hdinsight.aspx) (Как добавить пользовательские UDF Hive в HDInsight)
 
 ## <a name="hive-settings"></a>Параметры Hive
 
@@ -176,9 +176,9 @@ create temporary function myawesomeudf as 'com.myudfs.Awesome';
 
 Общая информация о Hive в HDInsight:
 
-* [Использование Hive с Hadoop в HDInsight](hdinsight-use-hive.md)
+* [Использование Apache Hive с Apache Hadoop в HDInsight](hdinsight-use-hive.md)
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight.
 
-* [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md)
-* [Использование MapReduce с Hadoop в HDInsight](hdinsight-use-mapreduce.md)
+* [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)
+* [Использование MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)

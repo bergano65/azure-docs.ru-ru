@@ -1,11 +1,12 @@
 ---
 title: Использование виртуальной машины для обработки и анализа геоданных средствами искусственного интеллекта в Azure | Документация Майкрософт
-description: Использование виртуальной машины для обработки геоданных средствами ИИ в Azure.
+description: Сведения об использовании виртуальной машины обработки и анализа географических данных с помощью ИИ для анализа данных и построения моделей на основе геопространственных данных.
 keywords: deep learning, AI, data science tools, data science virtual machine, Geospatial analytics
 services: machine-learning
 documentationcenter: ''
 author: gopitk
 manager: cgronlun
+ms.custom: seodec18
 ms.assetid: ''
 ms.service: machine-learning
 ms.component: data-science-vm
@@ -15,12 +16,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: gokuma
-ms.openlocfilehash: f346b086a0269f247d64edf9346b01849ba3d0ee
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 872bfdfdef28dbb88861b723bd3186faea461cad
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31408043"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53410012"
 ---
 # <a name="using-the-geo-artificial-intelligence-data-science-virtual-machine"></a>Использование виртуальной машины для обработки и анализа геоданных средствами ИИ
 
@@ -42,11 +43,11 @@ R-мост к ArcGIS устанавливается в качестве библ
 Кроме примеров на основе платформ машинного обучения и глубокого обучения из базовой виртуальной машины для обработки и анализа данных, доступны также примеры геопространственных решений в составе виртуальной машины для обработки и анализа геоданных средствами ИИ. Эти примеры помогут вам начать разработку приложений ИИ с использованием геопространственных данных и программного обеспечения ArcGIS. 
 
 
-1. [Getting started with Geospatial analytics with Python](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/Python%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb) (Начало работы с геопространственной аналитикой с помощью Python): пример использования геопространственных данных с помощью интерфейса Python к ArcGIS, предоставленного библиотекой [arcpy](http://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm). В примере также показано, как можно объединить традиционное машинное обучение с геопространственными данными и визуализировать результат на карте в ArcGIS. 
+1. [Начало работы с геопространственными данными с помощью Python](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/Python%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb). Вводный пример, в котором показано, как работать с геопространственными данными с помощью интерфейса Python для ArcGIS, предоставленного библиотекой [arcpy](http://pro.arcgis.com/en/pro-app/arcpy/main/arcgis-pro-arcpy-reference.htm). В примере также показано, как можно объединить традиционное машинное обучение с геопространственными данными и визуализировать результат на карте в ArcGIS. 
 
-2. [Getting started with Geospatial analytics with R](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/R%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb) (Начало работы с геопространственной аналитикой с помощью R): пример использования геопространственных данных с помощью R-интерфейса к ArcGIS, предоставленного библиотекой [arcgisbinding](https://github.com/R-ArcGIS/r-bridge). 
+2. [Начало работы с геопространственными данными с помощью R](https://github.com/Azure/DataScienceVM/blob/master/Notebooks/ArcGIS/R%20walkthrough%20ArcGIS%20Data%20analysis%20and%20ML.ipynb). Пример, демонстрирующий способы работы с геопространственными данными с помощью интерфейса R для ArcGIS, предоставленного библиотекой [arcgisbinding](https://github.com/R-ArcGIS/r-bridge). 
 
-3. [Pixel-level land use classification](https://github.com/Azure/pixel_level_land_classification) (Классификация использования земли на уровне пикселей): учебное руководство по созданию модели глубокой нейронной сети, которая принимает аэрофотоснимок и возвращает метку покрытия земли. Примеры меток покрытия земли — "лес" или "вода". Модель возвращает такую метку для каждого пикселя в изображении. Модель создана на основе платформы глубокого обучения Microsoft [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) с открытым исходным кодом. В примере также показано, как масштабировать обучение с помощью [Azure Batch AI](https://docs.microsoft.com/azure/batch-ai/) и использовать прогнозы модели в программном обеспечении ArcGIS Pro. 
+3. [Pixel-level land use classification](https://github.com/Azure/pixel_level_land_classification) (Классификация использования земли на уровне пикселей): учебное руководство по созданию модели глубокой нейронной сети, которая принимает аэрофотоснимок и возвращает метку покрытия земли. Примеры меток покрытия земли — "лес" или "вода". Модель возвращает такую метку для каждого пикселя в изображении. Модель создана на основе платформы глубокого обучения Microsoft [Cognitive Toolkit (CNTK)](https://www.microsoft.com/en-us/cognitive-toolkit/) с открытым исходным кодом. 
 
 
 ## <a name="next-steps"></a>Дополнительная информация

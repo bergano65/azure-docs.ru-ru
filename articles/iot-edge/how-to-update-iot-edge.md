@@ -1,5 +1,5 @@
 ---
-title: Обновление устройств Azure IoT Edge до последней версии | Документация Майкрософт
+title: Обновления версии Azure IoT Edge на устройствах | Документация Майкрософт
 description: Сведения об обновлении устройства IoT Edge для запуска последних версий управляющей программы безопасности и среды выполнения IoT Edge
 keywords: ''
 author: kgremban
@@ -9,14 +9,15 @@ ms.date: 10/05/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 1522d9c9bc4fda178d8571fb57cb9c94ed1044ae
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: 8b8638d8fa428b1b867e3f126ac8b5cc992cc273
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51567797"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53095160"
 ---
-# <a name="update-the-iot-edge-runtime"></a>Обновление среды выполнения IoT Edge
+# <a name="update-the-iot-edge-security-daemon-and-runtime"></a>Обновление управляющей программы безопасности и среды выполнения IoT Edge
 
 Выпускаются новые версии службы IoT Edge, поэтому вам может понадобиться обновить устройства IoT Edge, чтобы воспользоваться новейшими функциями и улучшениями системы безопасности. В этой статье представлены сведения об обновлении устройств IoT Edge при наличии новой версии. 
 
@@ -63,7 +64,7 @@ Install-SecurityDaemon -Manual -ContainerOS <Windows or Linux>
 
 Проверьте версию модулей агента IoT Edge и центра Edge, используемую в настоящее время на вашем устройстве, с помощью команд `iotedge logs edgeAgent` или `iotedge logs edgeHub`. 
 
-  ![Просмотр версии контейнеров](./media/how-to-update-iot-edge/container-version.png)
+  ![Поиск версии контейнера в журналах](./media/how-to-update-iot-edge/container-version.png)
 
 ### <a name="understand-iot-edge-tags"></a>Сведения о тегах IoT Edge
 

@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 11/26/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 396dbfcfd13f508c33d8a1bb7370d9170b8f8a56
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 22af5b4b757fed83e5c9b23426283d2fb4c4867f
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52499680"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53410539"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -80,7 +80,7 @@ ms.locfileid: "52499680"
 > | Действие | Microsoft.ADHybridHealthService/addsservices/features/userpreference/read | Получает параметр настройки пользователя для леса.<br>Например, значения MetricCounterName, такие как ldapsuccessfulbinds, ntlmauthentications, kerberosauthentications, addsinsightsagentprivatebytes, ldapsearches.<br>Параметры диаграммы пользовательского интерфейса и т. д. |
 > | Действие | Microsoft.ADHybridHealthService/addsservices/forestsummary/read | Получает сводку для данного леса, например имя леса, количество доменов в лесу, количество сайтов, сведения о сайтах и т. д. |
 > | Действие | Microsoft.ADHybridHealthService/addsservices/metricmetadata/read | Получает список поддерживаемых метрик для данной службы.<br>Например, число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы ADSync. |
-> | Действие | Microsoft.ADHybridHealthService/addsservices/metrics/groups/read | Для данной службы этот API получает информацию о метриках.<br>Например, этот API можно использовать для получения следующей информации: число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы синхронизации. |
+> | Действие | Microsoft.ADHybridHealthService/addsservices/metrics/groups/read | Для данной службы этот API получает информацию о метриках.<br>Например, этот API можно использовать для получения следующей информации: число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы синхронизации. |
 > | Действие | Microsoft.ADHybridHealthService/addsservices/premiumcheck/read | Этот API возвращает список всех подключенных служб ADDomainServices для клиента категории "Премиум". |
 > | Действие | Microsoft.ADHybridHealthService/addsservices/read | Получает сведения о службе для указанного имени службы. |
 > | Действие | Microsoft.ADHybridHealthService/addsservices/replicationdetails/read | Получает сведения о репликации всех серверов для указанного имени службы. |
@@ -115,9 +115,9 @@ ms.locfileid: "52499680"
 > | Действие | Microsoft.ADHybridHealthService/services/exportstatus/read | Возвращает состояние экспорта для данной службы. |
 > | Действие | Microsoft.ADHybridHealthService/services/feedbacktype/feedback/read | Получает обратную связь об оповещениях для данной службы и сервера. |
 > | Действие | Microsoft.ADHybridHealthService/services/metricmetadata/read | Получает список поддерживаемых метрик для данной службы.<br>Например, число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы ADSync. |
-> | Действие | Microsoft.ADHybridHealthService/services/metrics/groups/average/read | Этот API получает среднее значение метрик для данной службы.<br>Например, этот API можно использовать для получения следующей информации: число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы синхронизации. |
-> | Действие | Microsoft.ADHybridHealthService/services/metrics/groups/read | Для данной службы этот API получает информацию о метриках.<br>Например, этот API можно использовать для получения следующей информации: число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы синхронизации. |
-> | Действие | Microsoft.ADHybridHealthService/services/metrics/groups/sum/read | Этот API получает агрегированное представление о метриках для данной службы.<br>Например, этот API можно использовать для получения следующей информации: число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы синхронизации. |
+> | Действие | Microsoft.ADHybridHealthService/services/metrics/groups/average/read | Этот API получает среднее значение метрик для данной службы.<br>Например, этот API можно использовать для получения следующей информации: число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы синхронизации. |
+> | Действие | Microsoft.ADHybridHealthService/services/metrics/groups/read | Для данной службы этот API получает информацию о метриках.<br>Например, этот API можно использовать для получения следующей информации: число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы синхронизации. |
+> | Действие | Microsoft.ADHybridHealthService/services/metrics/groups/sum/read | Этот API получает агрегированное представление о метриках для данной службы.<br>Например, этот API можно использовать для получения следующей информации: число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы синхронизации. |
 > | Действие | Microsoft.ADHybridHealthService/services/monitoringconfiguration/write | Добавляет или обновляет конфигурацию мониторинга для службы. |
 > | Действие | Microsoft.ADHybridHealthService/services/monitoringconfigurations/read | Получает конфигурации мониторинга для данной службы. |
 > | Действие | Microsoft.ADHybridHealthService/services/monitoringconfigurations/write | Добавляет или обновляет конфигурации мониторинга для службы. |
@@ -130,7 +130,7 @@ ms.locfileid: "52499680"
 > | Действие | Microsoft.ADHybridHealthService/services/servicemembers/datafreshness/read | Для данного сервера этот API возвращает список типов данных, которые передаются серверами, и самое позднее время каждой отправки. |
 > | Действие | Microsoft.ADHybridHealthService/services/servicemembers/delete | Удаляет экземпляр службы из службы. |
 > | Действие | Microsoft.ADHybridHealthService/services/servicemembers/exportstatus/read | Возвращает сведения об ошибке экспорта данных синхронизации для указанной службы синхронизации. |
-> | Действие | Microsoft.ADHybridHealthService/services/servicemembers/metrics/groups/read | Для данной службы этот API получает информацию о метриках.<br>Например, этот API можно использовать для получения следующей информации: число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы синхронизации. |
+> | Действие | Microsoft.ADHybridHealthService/services/servicemembers/metrics/groups/read | Для данной службы этот API получает информацию о метриках.<br>Например, этот API можно использовать для получения следующей информации: число блокировок учетных записей из экстрасети, общее число невыполненных запросов, число невыполненных запросов маркера (прокси), число запросов токенов/с и т. д. для службы ADFS.<br>Количество проверок подлинности NTLM/с, число успешных привязок LDAP/с, время привязки LDAP, количество активных потоков LDAP, число проверок подлинности Kerberos/с, общее количество потоков ATQ и т. д. для службы ADDomain.<br>Задержка запуска профиля, установленные TCP-подключения, частные байты агента получения информации, статистика по экспорту в Azure AD для службы синхронизации. |
 > | Действие | Microsoft.ADHybridHealthService/services/servicemembers/read | Считывает экземпляр сервера в службе. |
 > | Действие | Microsoft.ADHybridHealthService/services/servicemembers/serviceconfiguration/read | Получает конфигурацию службы для данного клиента. |
 > | Действие | Microsoft.ADHybridHealthService/services/tenantwhitelisting/read | Получает состояние разрешенных функций для данного клиента. |
@@ -600,38 +600,6 @@ ms.locfileid: "52499680"
 > | Действие | Microsoft.Batch/register/action | Регистрирует подписку для поставщика ресурсов пакетной службы и позволяет создавать учетные записи пакетной службы. |
 > | Действие | Microsoft.Batch/unregister/action | Отмена регистрации подписки для поставщика ресурсов пакетной службы, которая не позволяет создавать учетные записи пакетной службы. |
 
-## <a name="microsoftbatchai"></a>Microsoft.BatchAI
-
-> [!div class="mx-tdCol2BreakAll"]
-> | Тип действия | Операция | ОПИСАНИЕ |
-> | --- | --- | --- |
-> | Действие | Microsoft.BatchAI/clusters/read | Вывод списка кластеров Batch AI или получение свойств кластера. |
-> | Действие | Microsoft.BatchAI/fileservers/read | Вывод списка файловых серверов Batch AI или получение свойств такого сервера. |
-> | Действие | Microsoft.BatchAI/locations/operationresults/read | Возвращение результата асинхронной операции Batch AI в указанном регионе Azure. |
-> | Действие | Microsoft.BatchAI/locations/operationstatuses/read | Возвращение состояния асинхронной операции Batch AI в указанном регионе Azure. |
-> | Действие | Microsoft.BatchAI/locations/usages/read | Возвращение сведений об использовании Batch AI для указанной подписки в заданном регионе Azure. |
-> | Действие | Microsoft.BatchAI/register/action | Регистрация подписки поставщика ресурсов Batch AI и разрешение создания ресурсов. |
-> | Действие | Microsoft.BatchAI/unregister/action | Отмена регистрации подписки для поставщика ресурсов Batch AI, не допускающая создания ресурсов Batch AI. |
-> | Действие | Microsoft.BatchAI/workspaces/clusters/delete | Удаление кластера Batch AI. |
-> | Действие | Microsoft.BatchAI/workspaces/clusters/read | Вывод списка кластеров Batch AI или получение свойств кластера. |
-> | Действие | Microsoft.BatchAI/workspaces/clusters/remoteLoginInformation/action | Получение сведений об удаленном входе для кластера Batch AI. |
-> | Действие | Microsoft.BatchAI/workspaces/clusters/write | Создание нового кластера Batch AI или обновление существующего. |
-> | Действие | Microsoft.BatchAI/workspaces/delete | Удаление рабочей области Batch AI. |
-> | Действие | Microsoft.BatchAI/workspaces/experiments/delete | Удаление эксперимента Batch AI. |
-> | Действие | Microsoft.BatchAI/workspaces/experiments/jobs/delete | Удаление задания Batch AI. |
-> | Действие | Microsoft.BatchAI/workspaces/experiments/jobs/listoutputfiles/action | Вывод списка выходных файлов для задания Batch AI. |
-> | Действие | Microsoft.BatchAI/workspaces/experiments/jobs/read | Вывод списка заданий Batch AI или получение свойств такого задания. |
-> | Действие | Microsoft.BatchAI/workspaces/experiments/jobs/remoteLoginInformation/action | Получение сведений об удаленном входе для задания Batch AI. |
-> | Действие | Microsoft.BatchAI/workspaces/experiments/jobs/terminate/action | Завершение задания Batch AI. |
-> | Действие | Microsoft.BatchAI/workspaces/experiments/jobs/write | Создание нового задания Batch AI или обновление существующего. |
-> | Действие | Microsoft.BatchAI/workspaces/experiments/read | Вывод списка экспериментов Batch AI или получение свойств такого эксперимента. |
-> | Действие | Microsoft.BatchAI/workspaces/experiments/write | Создание нового эксперимента Batch AI или обновление существующего. |
-> | Действие | Microsoft.BatchAI/workspaces/fileservers/delete | Удаление файлового сервера Batch AI. |
-> | Действие | Microsoft.BatchAI/workspaces/fileservers/read | Вывод списка файловых серверов Batch AI или получение свойств такого сервера. |
-> | Действие | Microsoft.BatchAI/workspaces/fileservers/write | Создание нового файлового сервера Batch AI или обновление существующего. |
-> | Действие | Microsoft.BatchAI/workspaces/read | Вывод списка рабочих областей Batch AI или получение свойств такой рабочей области. |
-> | Действие | Microsoft.BatchAI/workspaces/write | Создание новой рабочей области Batch AI или обновление существующей. |
-
 ## <a name="microsoftbilling"></a>Microsoft.Billing
 
 > [!div class="mx-tdCol2BreakAll"]
@@ -658,12 +626,12 @@ ms.locfileid: "52499680"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
-> | Действие | Microsoft.Blueprint/blueprintAssignments/delete | Удаление артефактов схемы. |
+> | Действие | Microsoft.Blueprint/blueprintAssignments/delete | Удаление любых артефактов схемы |
 > | Действие | Microsoft.Blueprint/blueprintAssignments/read | Чтение артефактов схемы. |
-> | Действие | Microsoft.Blueprint/blueprintAssignments/write | Создание или обновление артефактов схемы. |
-> | Действие | Microsoft.Blueprint/blueprints/artifacts/delete | Удаление артефактов схемы. |
+> | Действие | Microsoft.Blueprint/blueprintAssignments/write | Создание или изменение любых артефактов схемы |
+> | Действие | Microsoft.Blueprint/blueprints/artifacts/delete | Удаление любых артефактов схемы |
 > | Действие | Microsoft.Blueprint/blueprints/artifacts/read | Чтение артефактов схемы. |
-> | Действие | Microsoft.Blueprint/blueprints/artifacts/write | Создание или обновление артефактов схемы. |
+> | Действие | Microsoft.Blueprint/blueprints/artifacts/write | Создание или изменение любых артефактов схемы |
 > | Действие | Microsoft.Blueprint/blueprints/delete | Удаление схем. |
 > | Действие | Microsoft.Blueprint/blueprints/read | Чтение схем. |
 > | Действие | Microsoft.Blueprint/blueprints/versions/artifacts/read | Чтение артефактов схемы. |
@@ -695,31 +663,31 @@ ms.locfileid: "52499680"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
-> | Действие | Microsoft.Cache/checknameavailability/action | Проверяет, доступно ли имя для нового кэша Redis. |
+> | Действие | Microsoft.Cache/checknameavailability/action | Проверяет, доступно ли имя для использования его для нового кэша Azure для Redis. |
 > | Действие | Microsoft.Cache/locations/operationresults/read | Получение результата длительных операций, для которых заголовок Location был ранее возвращен клиенту. |
 > | Действие | Microsoft.Cache/operations/read | Вывод списка операций, которые поддерживает поставщик Microsoft.Cache. |
-> | Действие | Microsoft.Cache/redis/delete | Удаляет весь кэш Redis. |
+> | Действие | Microsoft.Cache/redis/delete | Удаляет весь кэш Azure для Redis. |
 > | Действие | Microsoft.Cache/redis/export/action | Экспортирует данные Redis в большие двоичные объекты с префиксом в службе хранилища в указанном формате. |
-> | Действие | Microsoft.Cache/redis/firewallRules/delete | Удаляет правила IP-адресов брандмауэра для кэша Redis. |
-> | Действие | Microsoft.Cache/redis/firewallRules/read | Возвращает правила IP-адресов брандмауэра для кэша Redis. |
-> | Действие | Microsoft.Cache/redis/firewallRules/write | Изменяет правила IP-адресов брандмауэра для кэша Redis. |
+> | Действие | Microsoft.Cache/redis/firewallRules/delete | Удаляет правила брандмауэра IP-адресов кэша Azure для Redis. |
+> | Действие | Microsoft.Cache/redis/firewallRules/read | Получает правила брандмауэра IP-адресов кэша Azure для Redis. |
+> | Действие | Microsoft.Cache/redis/firewallRules/write | Изменяет правила брандмауэра IP-адресов кэша Azure для Redis. |
 > | Действие | Microsoft.Cache/redis/forceReboot/action | Принудительно перезапускает экземпляр кэша. При этом возможна потеря данных. |
 > | Действие | Microsoft.Cache/redis/import/action | Импортирует в Redis данные в указанном формате из нескольких больших двоичных объектов. |
-> | Действие | Microsoft.Cache/redis/linkedservers/delete | Удаляет связанный сервер из кэша Redis. |
-> | Действие | Microsoft.Cache/redis/linkedservers/read | Возвращает связанные серверы для кэша Redis. |
-> | Действие | Microsoft.Cache/redis/linkedservers/write | Добавляет связанный сервер для кэша Redis. |
-> | Действие | Microsoft.Cache/redis/listKeys/action | Отображает значения ключей доступа к кэшу Redis на портале управления. |
+> | Действие | Microsoft.Cache/redis/linkedservers/delete | Удаляет связанный сервер из кэша Azure для Redis. |
+> | Действие | Microsoft.Cache/redis/linkedservers/read | Возвращает связанные серверы для кэша Azure для Redis. |
+> | Действие | Microsoft.Cache/redis/linkedservers/write | Добавляет связанный сервер в кэш Azure для Redis. |
+> | Действие | Microsoft.Cache/redis/listKeys/action | Отображает значения ключей доступа к кэшу Azure для Redis на портале управления. |
 > | Действие | Microsoft.Cache/redis/listUpgradeNotifications/read | Выводит список последних уведомлений об обновлениях для клиента кэша. |
-> | Действие | Microsoft.Cache/redis/metricDefinitions/read | Возвращает доступные метрики для кэша Redis. |
-> | Действие | Microsoft.Cache/redis/patchSchedules/delete | Удаляет расписание исправления для кэша Redis. |
-> | Действие | Microsoft.Cache/redis/patchSchedules/read | Возвращает расписание исправления для кэша Redis. |
-> | Действие | Microsoft.Cache/redis/patchSchedules/write | Изменяет расписание исправления для кэша Redis. |
-> | Действие | Microsoft.Cache/redis/read | Отображает параметры и конфигурацию кэша Redis на портале управления. |
-> | Действие | Microsoft.Cache/redis/recommendations/read | Чтение рекомендаций по кэшу Redis для Azure |
-> | Действие | Microsoft.Cache/redis/regenerateKey/action | Изменяет значения ключей доступа к кэшу Redis на портале управления. |
+> | Действие | Microsoft.Cache/redis/metricDefinitions/read | Получает доступные метрики для кэша Azure для Redis. |
+> | Действие | Microsoft.Cache/redis/patchSchedules/delete | Удаляет расписание исправления кэша Azure для Redis. |
+> | Действие | Microsoft.Cache/redis/patchSchedules/read | Получает расписание исправления кэша Azure для Redis. |
+> | Действие | Microsoft.Cache/redis/patchSchedules/write | Изменяет расписание исправления кэша Azure для Redis. |
+> | Действие | Microsoft.Cache/redis/read | Отображает параметры и конфигурацию кэша Azure для Redis на портале управления. |
+> | Действие | Microsoft.Cache/redis/recommendations/read | Считывает рекомендации по кэшу Azure для Redis. |
+> | Действие | Microsoft.Cache/redis/regenerateKey/action | Изменяет значения ключей доступа к кэшу Azure для Redis на портале управления. |
 > | Действие | Microsoft.Cache/redis/start/action | Запускает экземпляр кэша. |
 > | Действие | Microsoft.Cache/redis/stop/action | Останавливает экземпляр кэша. |
-> | Действие | Microsoft.Cache/redis/write | Изменяет параметры и конфигурацию кэша Redis на портале управления. |
+> | Действие | Microsoft.Cache/redis/write | Изменяет параметры и конфигурацию кэша Azure для Redis на портале управления. |
 > | Действие | Microsoft.Cache/register/action | Регистрирует поставщик ресурсов Microsoft.Cache для подписки. |
 > | Действие | Microsoft.Cache/unregister/action | Отменяет регистрацию поставщика ресурсов Microsoft.Cache для подписки. |
 
@@ -2680,24 +2648,24 @@ ms.locfileid: "52499680"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
-> | Действие | Microsoft.LocationBasedServices/accounts/delete | (Не рекомендуется: используйте /providers/Microsoft.Maps). Удаление учетной записи Location Based Services. |
-> | Действие | Microsoft.LocationBasedServices/accounts/listKeys/action | (Не рекомендуется: используйте /providers/Microsoft.Maps). Вывод списка ключей учетной записи Location Based Services. |
-> | Действие | Microsoft.LocationBasedServices/accounts/read | (Не рекомендуется: используйте /providers/Microsoft.Maps). Получение учетной записи Location Based Services. |
-> | Действие | Microsoft.LocationBasedServices/accounts/regenerateKey/action | (Не рекомендуется: используйте /providers/Microsoft.Maps). Создание нового первичного или вторичного ключа учетной записи Location Based Services. |
-> | Действие | Microsoft.LocationBasedServices/accounts/write | (Не рекомендуется: используйте /providers/Microsoft.Maps). Создание или обновление учетной записи Location Based Services. |
-> | Действие | Microsoft.LocationBasedServices/register/action | (Не рекомендуется: используйте /providers/Microsoft.Maps). Регистрация поставщика. |
+> | Действие | Microsoft.LocationBasedServices/accounts/delete | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Удаление учетной записи Location Based Services. |
+> | Действие | Microsoft.LocationBasedServices/accounts/listKeys/action | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Вывод списка ключей учетной записи Location Based Services. |
+> | Действие | Microsoft.LocationBasedServices/accounts/read | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Получение учетной записи Location Based Services. |
+> | Действие | Microsoft.LocationBasedServices/accounts/regenerateKey/action | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Создание нового первичного или вторичного ключа учетной записи Location Based Services. |
+> | Действие | Microsoft.LocationBasedServices/accounts/write | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Создание или обновление учетной записи Location Based Services. |
+> | Действие | Microsoft.LocationBasedServices/register/action | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Регистрация поставщика. |
 
 ## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
 
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
-> | Действие | Microsoft.LocationServices/accounts/delete | (Не рекомендуется к использованию. Следует использовать /providers/Microsoft.Maps.) Удаление учетной записи Location Based Services. |
-> | Действие | Microsoft.LocationServices/accounts/listKeys/action | (Не рекомендуется: используйте /providers/Microsoft.Maps). Вывод списка ключей учетной записи Location Based Services. |
-> | Действие | Microsoft.LocationServices/accounts/read | (Не рекомендуется к использованию. Следует использовать /providers/Microsoft.Maps.) Получение учетной записи Location Based Services. |
-> | Действие | Microsoft.LocationServices/accounts/regenerateKey/action | (Не рекомендуется: используйте /providers/Microsoft.Maps). Создание нового первичного или вторичного ключа учетной записи Location Based Services. |
-> | Действие | Microsoft.LocationServices/accounts/write | (Не рекомендуется к использованию. Следует использовать /providers/Microsoft.Maps). Создание или обновление учетной записи Location Based Services. |
-> | Действие | Microsoft.LocationServices/register/action | (Не рекомендуется: используйте /providers/Microsoft.Maps). Регистрация поставщика. |
+> | Действие | Microsoft.LocationServices/accounts/delete | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Удаление учетной записи Location Based Services. |
+> | Действие | Microsoft.LocationServices/accounts/listKeys/action | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Вывод списка ключей учетной записи Location Based Services. |
+> | Действие | Microsoft.LocationServices/accounts/read | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Получение учетной записи Location Based Services. |
+> | Действие | Microsoft.LocationServices/accounts/regenerateKey/action | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Создание нового первичного или вторичного ключа учетной записи Location Based Services. |
+> | Действие | Microsoft.LocationServices/accounts/write | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Создание или обновление учетной записи Location Based Services. |
+> | Действие | Microsoft.LocationServices/register/action | (Не рекомендуется: используйте /providers/Microsoft.Maps.) Регистрация поставщика. |
 
 ## <a name="microsoftloganalytics"></a>Microsoft.LogAnalytics
 

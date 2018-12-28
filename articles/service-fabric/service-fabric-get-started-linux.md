@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 00164789d7f37277127878911c3f368a56ec7710
-ms.sourcegitcommit: a62cbb539c056fe9fcd5108d0b63487bd149d5c3
+ms.openlocfilehash: 8b2d7053ce8d980f15132e1d48497aff192713d0
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42616978"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53309381"
 ---
 # <a name="prepare-your-development-environment-on-linux"></a>Подготовка среды разработки в Linux
 > [!div class="op_single_selector"]
@@ -104,7 +104,14 @@ sudo curl -s https://raw.githubusercontent.com/Azure/service-fabric-scripts-and-
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     ```
 
-7. Обновите списки пакетов, добавив в них новые репозитории.
+7. Добавьте ключ JDK Azul в набор ключей APT и настройте его репозиторий.
+
+    ```bash
+    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0x219BD9C9
+    sudo apt-add-repository "deb http://repos.azul.com/azure-only/zulu/apt stable main"
+    ```
+
+8. Обновите списки пакетов, добавив в них новые репозитории.
 
     ```bash
     sudo apt-get update
@@ -172,7 +179,7 @@ sudo yum install servicefabricsdkcommon
 
  | | DotNetCore | Java | Python | NodeJS | 
 --- | --- | --- | --- |---
-Ubuntu | 2.0.0 | OpenJDK 1.8 | Неявно с использованием npm | последняя |
+Ubuntu | 2.0.0 | AzulJDK 1.8 | Неявно с использованием npm | последняя |
 RHEL | - | OpenJDK 1.8 | Неявно с использованием npm | последняя |
 
 ## <a name="set-up-a-local-cluster"></a>Настройка локального кластера
@@ -232,13 +239,12 @@ Service Fabric предоставляет средства формирован�
 
 ## <a name="set-up-java-development"></a>Настройка разработки Java
 
-Для создания служб Service Fabric с помощью Java установите пакет JDK 1.8 и средство Gradle, чтобы выполнять задачи сборки. Указанный ниже фрагмент кода устанавливает Open JDK 1.8 и средство Gradle. Библиотеки Java для Service Fabric извлекаются из Maven.
+Для создания служб Service Fabric с помощью Java установите средство Gradle, чтобы выполнять задачи сборки. Выполните следующую команду, чтобы установить Gradle. Библиотеки Java для Service Fabric извлекаются из Maven.
 
 
 * Ubuntu
 
     ```bash
-    sudo apt-get install openjdk-8-jdk-headless
     sudo apt-get install gradle
     ```
 

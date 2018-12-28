@@ -9,16 +9,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/05/2018
-ms.openlocfilehash: 1136d97ad1c1d02320331e6d2013b68526d5abb4
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: f76dfc8499d294c2c682c4d9c4cf2cd2f858432f
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51277908"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53408870"
 ---
-# <a name="use-spark-to-read-and-write-hbase-data"></a>Чтение и запись данных в HBase с помощью Spark
+# <a name="use-apache-spark-to-read-and-write-apache-hbase-data"></a>Чтение и запись данных Apache HBase с помощью Apache Spark
 
-Обычно для запроса Apache HBase применяется низкоуровневый API (сканирует, получает и помещает) или синтаксис SQL, использующий Phoenix. Apache также предоставляет соединитель Spark HBase, который является удобной и эффективной альтернативой запросу и изменению данных, хранящихся в HBase.
+Обычно для запроса Apache HBase применяется низкоуровневый API (сканирует, получает и помещает) или синтаксис SQL, использующий Apache Phoenix. Apache также предоставляет соединитель Apache Spark HBase, который является удобной и эффективной альтернативой запросу и изменению данных, хранимых в HBase.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -38,9 +38,9 @@ ms.locfileid: "51277908"
 5. Определение каталога, который сопоставляет схему из Spark с HBase.
 6. Взаимодействие с данными HBase с помощью API RDD или таблицы данных.
 
-## <a name="prepare-sample-data-in-hbase"></a>Подготовка демонстрационных данных в HBase
+## <a name="prepare-sample-data-in-apache-hbase"></a>Подготовка демонстрационных данных в Apache HBase
 
-На этом этапе вы создаете и заполняете простую таблицу в HBase, которую затем можно запросить с помощью Spark.
+На этом этапе вы создаете и заполняете простую таблицу в Apache HBase, которую затем можно запросить с помощью Spark.
 
 1. Подключитесь к головному узлу кластера HBase с помощью SSH. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 2. Запустите оболочку HBase:
@@ -132,7 +132,7 @@ ms.locfileid: "51277908"
 
 ## <a name="define-a-catalog-and-query"></a>Определение каталога и отправка запроса
 
-На этом этапе вы определяете объект каталога, который сопоставляет схему из Spark с HBase. 
+На этом этапе вы определяете объект каталога, который сопоставляет схему из Spark с Apache HBase. 
 
 1. В открытой оболочке Spark выполните следующие инструкции `import`:
 
@@ -244,4 +244,4 @@ ms.locfileid: "51277908"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Соединитель Spark HBase](https://github.com/hortonworks-spark/shc)
+* [Соединитель Apache Spark HBase](https://github.com/hortonworks-spark/shc)

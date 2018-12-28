@@ -1,5 +1,5 @@
 ---
-title: Перемещение данных в SQL Server на виртуальной машине | Документация Майкрософт
+title: Перемещение данных в виртуальную машину сервера SQL Server — командный процесс обработки и анализа данных
 description: Перемещение данных из неструктурированных файлов или из локального SQL Server в SQL Server на виртуальной машине Azure.
 services: machine-learning
 author: marktab
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 649c98c235adc2435840c6c43d3e2f9d5755265f
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: fbc23d53687b908245ffe25bdd418cbe64af080b
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52446200"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53136194"
 ---
 # <a name="move-data-to-sql-server-on-an-azure-virtual-machine"></a>Перемещение данных в SQL Server на виртуальной машине Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "52446200"
 
 В следующей таблице перечислены варианты перемещения данных в SQL Server на виртуальной машине Azure.
 
-| <b>ИСТОЧНИК</b> | <b>НАЗНАЧЕНИЕ: SQL Server на виртуальной машине Azure</b> |
+| <b>ИСТОЧНИК</b> | <b>МЕСТО НАЗНАЧЕНИЯ: SQL Server на виртуальной машине Azure</b> |
 | --- | --- |
 | <b>Неструктурированный файл</b> |1. <a href="#insert-tables-bcp">Служебная программа командной строки для массового копирования (BCP)</a><br> 2. <a href="#insert-tables-bulkquery">SQL-запрос на массовую вставку</a><br> 3. <a href="#sql-builtin-utilities">Графические служебные программы, встроенные в SQL Server.</a> |
 | <b>Локальный сервер SQL Server</b> |1. <a href="#deploy-a-sql-server-database-to-a-microsoft-azure-vm-wizard">Мастер развертывания базы данных SQL Server на виртуальной машине Microsoft Azure</a><br> 2. <a href="#export-flat-file">Экспорт в неструктурированный файл</a><br> 3. <a href="#sql-migration">Мастер миграции баз данных SQL</a> <br> 4. <a href="#sql-backup">Архивация и восстановление базы данных</a><br> |

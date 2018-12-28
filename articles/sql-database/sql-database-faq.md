@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 10/22/2018
-ms.openlocfilehash: c9b343bba59776ca735fa5c2cbddf03ec5c92b47
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.date: 12/10/2018
+ms.openlocfilehash: d7e5553ec48cfda858f2a463a2df0cc60f0e5c65
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242829"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53270405"
 ---
 # <a name="sql-database-frequently-asked-questions-faq"></a>База данных SQL Azure: часто задаваемые вопросы
 
@@ -31,7 +31,7 @@ ms.locfileid: "51242829"
 
 ## <a name="can-i-control-when-patching-downtime-occurs"></a>Могу ли я контролировать простой в связи с установкой исправлений
 
-Нет. Влияние исправления в основном незаметно, если в вашем приложении [применяется логика повторных попыток](sql-database-develop-overview.md#resiliency).
+ Нет. Влияние исправления в основном незаметно, если в вашем приложении [применяется логика повторных попыток](sql-database-develop-overview.md#resiliency).
 
 ## <a name="what-is-the-new-vcore-based-purchasing-model-for-azure-sql-database"></a>Что представляет собой новая модель приобретения на основе виртуальных ядер для Базы данных SQL Azure?
 
@@ -196,9 +196,9 @@ ms.locfileid: "51242829"
 > [!NOTE]
 > В течение ограниченного периода времени плата за хранение резервной копии и операции ввода-вывода взиматься не будет.
 
-## <a name="how-does-the-use-of-active-geo-replication-in-an-elastic-pool-show-up-on-my-bill"></a>Как использование активной георепликации в эластичном пуле отражается на счете?
+## <a name="how-does-the-use-of-active-geo-replication-or-auto-failover-groups-in-an-elastic-pool-show-up-on-my-bill"></a>Как использование активной георепликации или групп автоматической отработки отказа в эластичном пуле отражается на счете?
 
-В отличие от отдельных баз данных, использование [активной георепликации](sql-database-geo-replication-overview.md) с эластичными базами данных не оказывает прямого влияния на выставление счетов.  Плата взимается только за ресурсы, выделенные для каждого пула (основного и вторичного).
+В отличие от отдельных баз данных, использование [активной георепликации](sql-database-active-geo-replication.md) или [групп автоматической отработки отказа](sql-database-auto-failover-group.md) с эластичными базами данных не оказывает прямого влияния на выставление счетов. Плата взимается только за ресурсы, выделенные для каждого пула (основного и вторичного).
 
 ## <a name="how-does-the-use-of-the-auditing-feature-impact-my-bill"></a>Как использование функции аудита влияет на мой счет?
 
@@ -217,7 +217,7 @@ ms.locfileid: "51242829"
 
 ## <a name="how-do-i-make-sure-only-authorized-ip-addresses-are-allowed-to-access-a-server"></a>Как предоставить доступ к серверу только авторизованным IP-адресам?
 
-См. статью [Настройка правила брандмауэра уровня сервера базы данных SQL Azure с помощью портала Azure](sql-database-configure-firewall-settings.md).
+Дополнительные сведения см. в статье [Azure SQL Database and SQL Data Warehouse firewall rules](sql-database-configure-firewall-settings.md) (Правила брандмауэра для службы "База данных SQL Azure" и Хранилища данных SQL).
 
 ## <a name="what-is-an-expected-replication-lag-when-geo-replicating-a-database-between-two-regions-within-the-same-azure-geography"></a>Что такое ожидаемая задержка репликации при георепликации базы данных между двумя регионами в пределах одного географического региона Azure?
 

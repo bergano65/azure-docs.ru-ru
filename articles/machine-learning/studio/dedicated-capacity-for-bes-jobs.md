@@ -1,12 +1,11 @@
 ---
-title: Выделение ресурсов для обработки заданий службы пакетного выполнения машинного обучения в Студии машинного обучения Azure| Документация Майкрософт
-description: Обзор пакетных служб Azure для обработки заданий машинного обучения
+title: Использование пакетной службы Azure для обработки заданий Студии машинного обучения Azure | Документация Майкрософт
+description: Обзор пакетных служб Azure для обработки заданий машинного обучения Обработка в пуле пакетной службы связана с возможностью создавать пулы, куда можно отправлять соответствующие задания.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.custom: seodec18, previous-title='Dedicated capacity for batch execution service jobs - Azure Machine Learning Studio | Microsoft Docs'
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.service: machine-learning
 ms.component: studio
@@ -15,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
-ms.openlocfilehash: 13e9921b15faff10ac250aa7c19d655ada782ce2
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 44b63a51049e663e55cc59a623837cf65cab9ccc
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52308143"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275199"
 ---
-# <a name="azure-batch-service-for-machine-learning-jobs"></a>Пакетные службы Azure для обработки заданий машинного обучения
+# <a name="azure-batch-service-for-azure-machine-learning-studio-jobs"></a>Использование пакетной службы Azure для обработки заданий Студии машинного обучения Azure
 
 Обработка в пуле пакетной службы машинного обучения предоставляет пользователям управление масштабированием службы выполнения пакетов машинного обучения Azure. Классическая пакетная обработка для машинного обучения выполняется в мультитенантной среде. Это связано с определенными ограничениями числа одновременно отправляемых заданий, которые при этом помещаются в очередь по принципу FIFO. Эта неопределенность, в свою очередь, означает, что время запуска задания предсказать невозможно.
 

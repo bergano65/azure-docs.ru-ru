@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 12/13/2018
 ms.author: alkohli
 ms.component: common
-ms.openlocfilehash: cb14a23fbffb5ca9b7d3240a42e14aa17060f935
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: 30d0818b57057785784c1fbda1c67ca0be10d769
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51820313"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53384774"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
@@ -29,7 +29,7 @@ ms.locfileid: "51820313"
 - Как минимум одна учетная запись хранения Azure. Просмотрите список [поддерживаемых типов хранилища и учетных записей хранения для службы "Импорт и экспорт"](storage-import-export-requirements.md). Сведения о создании учетной записи хранения см. в разделе [Создание учетной записи хранения](storage-quickstart-create-account.md).
 - Соответствующее количество дисков [поддерживаемых типов](storage-import-export-requirements.md#supported-disks). 
 - Система с ОС Windows [поддерживаемой версии](storage-import-export-requirements.md#supported-operating-systems).
-- [Скачать WAImportExport версии 2](https://www.microsoft.com/download/details.aspx?id=55280) в систему Windows. Распакуйте содержимое в папку по умолчанию: `waimportexport`. Например, `C:\WaImportExport`.
+- [Скачать WAImportExport версии 2](https://aka.ms/waiev2) в систему Windows. Распакуйте содержимое в папку по умолчанию: `waimportexport`. Например, `C:\WaImportExport`.
 - Учетная запись FedEx или DHL. 
     - Учетная запись должна быть действительной, иметь баланс и возможности возврата.
     - Создайте номер отслеживания для задания экспорта.
@@ -40,7 +40,7 @@ ms.locfileid: "51820313"
  
 
 
-## <a name="step-1-prepare-the-drives"></a>Шаг 1. Подготовка дисков
+## <a name="step-1-prepare-the-drives"></a>Шаг 1. Подготовка дисков
 
 На этом шаге создается файл журнала. В файле журнала хранятся основные сведения, например серийный номер диска, ключ шифрования и сведения об учетной записи хранения.
 
@@ -50,14 +50,14 @@ ms.locfileid: "51820313"
 2. Создайте один том NTFS на каждом диске. Присвойте ему букву диска. Не используйте точки подключения.
 3. Измените файл *dataset.csv* в корневой папке, в которой находится средство. В зависимости от того, что импортируется, — файл, папка или и то и другое, добавьте записи в файл *dataset.csv*, как показано в следующем примере.  
 
-    - **Чтобы импортировать файл**. В следующем примере данные для копирования находятся на диске С. Файл *MyFile1.txt* копируется в корень папки *MyAzureFileshare1*. Если папка *MyAzureFileshare1* не существует, она создается в учетной записи хранения Azure. Структура папок сохраняется.
+    - **Импорт файла.** В следующем примере данные для копирования находятся на диске С. Файл *MyFile1.txt* копируется в корень папки *MyAzureFileshare1*. Если папка *MyAzureFileshare1* не существует, она создается в учетной записи хранения Azure. Структура папок сохраняется.
 
         ```
             BasePath,DstItemPathOrPrefix,ItemType,Disposition,MetadataFile,PropertiesFile
             "F:\MyFolder1\MyFile1.txt","MyAzureFileshare1/MyFile1.txt",file,rename,"None",None
     
         ```
-    - **Чтобы импортировать папку**. Все файлы и папки, расположенные в *MyFolder2_original*, будут рекурсивно скопированы в общую папку. Структура папок сохраняется.
+    - **Импорт папки.** Все файлы и папки, расположенные в *MyFolder2*, будут рекурсивно скопированы в общую папку. Структура папок сохраняется.
 
         ```
             "F:\MyFolder2\","MyAzureFileshare1/",file,rename,"None",None 
@@ -77,14 +77,14 @@ ms.locfileid: "51820313"
 
     В этом примере предполагается, что подключено два диска, а базовые тома NTFS G:\ и H:\ уже созданы. H:\ не зашифрован, а G: уже зашифрован. Средство форматирует и шифрует диск, который содержит только H:\ (а не G:\).
 
-    - **Для диска, который не зашифрован:** укажите *Encrypt*, чтобы включить шифрование BitLocker на диске.
+    - **Для незашифрованного диска.** Укажите *Encrypt*, чтобы включить шифрование BitLocker на диске.
 
         ```
         DriveLetter,FormatOption,SilentOrPromptOnFormat,Encryption,ExistingBitLockerKey
         H,Format,SilentMode,Encrypt,
         ```
     
-    - **Для диска, который уже зашифрован:** укажите *AlreadyEncrypted* и введите ключ BitLocker.
+    - **Для зашифрованного диска.** Укажите *AlreadyEncrypted* и предоставьте ключ BitLocker.
 
         ```
         DriveLetter,FormatOption,SilentOrPromptOnFormat,Encryption,ExistingBitLockerKey
@@ -112,7 +112,7 @@ ms.locfileid: "51820313"
 
 Дополнительные примеры см. в [примерах для файлов журнала](#samples-for-journal-files).
 
-## <a name="step-2-create-an-import-job"></a>Шаг 2. Создание задания импорта 
+## <a name="step-2-create-an-import-job"></a>Шаг 2. создание задания импорта; 
 
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
 1. Войдите в систему по адресу https://portal.azure.com/.
@@ -137,7 +137,7 @@ ms.locfileid: "51820313"
 
 3. В разделе **Сведения о задании** сделайте следующее:
     
-    - Отправьте файлы журнала, созданные на [шаге 1: подготовка дисков](#step-1-prepare-the-drives). 
+    - Отправьте файлы журнала, созданные при выполнении [шага 1 (подготовка дисков)](#step-1-prepare-the-drives). 
     - Выберите учетную запись хранения, в которую будут импортированы данные. 
     - Расположение места назначения автоматически заполняется с учетом выбранного региона учетной записи хранения.
    
@@ -162,15 +162,15 @@ ms.locfileid: "51820313"
 
         ![Создание задания импорта — шаг 4](./media/storage-import-export-data-to-blobs/import-to-blob6.png)
 
-## <a name="step-3-ship-the-drives-to-the-azure-datacenter"></a>Шаг 3. Отправка дисков в центр обработки данных Azure 
+## <a name="step-3-ship-the-drives-to-the-azure-datacenter"></a>Шаг 3. Отправка дисков в центр обработки данных Azure 
 
 [!INCLUDE [storage-import-export-ship-drives](../../../includes/storage-import-export-ship-drives.md)]
 
-## <a name="step-4-update-the-job-with-tracking-information"></a>Шаг 4. Указание данных об отслеживании для задания
+## <a name="step-4-update-the-job-with-tracking-information"></a>Шаг 4. Указание данных об отслеживании для задания
 
 [!INCLUDE [storage-import-export-update-job-tracking](../../../includes/storage-import-export-update-job-tracking.md)]
 
-## <a name="step-5-verify-data-upload-to-azure"></a>Шаг 5: Проверка передачи данных в Azure
+## <a name="step-5-verify-data-upload-to-azure"></a>Шаг 5. Проверка передачи данных в Azure
 
 Отслеживание задания до завершения. После завершения задания убедитесь, что данные переданы в Azure. Удалите локальные данные только после подтверждения, что загрузка прошла успешно.
 

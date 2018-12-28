@@ -1,5 +1,5 @@
 ---
-title: Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью соединителей SSIS | Документация Майкрософт
+title: Перемещение данных в хранилище больших двоичных объектов с помощью соединителей SSIS — командный процесс обработки и анализа данных
 description: Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью соединителей SSIS.
 services: machine-learning
 author: marktab
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 2eda0490392e26d386faa4c1e379b50738a56cbb
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 8cd7fc5b69fd3ef124a96f00466a0d9a8c4e2240
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52443364"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53134358"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью соединителей SSIS
 [Пакет дополнительных компонентов SQL Server Integration Services для Azure](https://msdn.microsoft.com/library/mt146770.aspx) содержит компоненты для подключения к Azure, передачи данных между Azure и локальными источниками данных, а также для обработки данных, хранящихся в Azure.
@@ -42,8 +42,8 @@ ms.locfileid: "52443364"
 
 Чтобы использовать **Соединители SSIS**, необходимо загрузить следующие компоненты:
 
-* **SQL Server 2014 или 2016 Standard (или более поздняя версия)**: установка включает в себя SQL Server Integration Services.
-* **Пакет дополнительных компонентов Microsoft SQL Server 2014 или 2016 Integration Services для Azure:** пакет можно скачать на [этой](https://www.microsoft.com/download/details.aspx?id=47366) или на [этой странице](https://www.microsoft.com/download/details.aspx?id=49492) соответственно.
+* **SQL Server 2014 или SQL Server 2016 Standard (или более поздний выпуск)**. При установке также устанавливаются службы SQL Server Integration Services.
+* **Пакет дополнительных компонентов для служб Microsoft SQL Server 2014 или Microsoft SQL Server 2016 Integration Services для Azure**. Их можно загрузить на страницах [SQL Server 2014 Integration Services](https://www.microsoft.com/download/details.aspx?id=47366) и [SQL Server 2016 Integration Services](https://www.microsoft.com/download/details.aspx?id=49492), соответственно.
 
 > [!NOTE]
 > Службы SSIS устанавливаются вместе с SQL Server, но в версию Express они не включены. Сведения о приложениях, которые включены в различные выпуски SQL Server, см. в статье [SQL Server 2016 SP1 editions](https://www.microsoft.com/en-us/server-cloud/products/sql-server-editions/) (Выпуски SQL Server 2016 с пакетом обновления 1 (SP1)).
@@ -52,7 +52,7 @@ ms.locfileid: "52443364"
 
 Обучающие материалы о службах SSIS см. в [этой статье](https://www.microsoft.com/sql-server/training-certification).
 
-Дополнительные сведения о том, как с помощью SISS получить рабочую среду для создания простых пакетов извлечения, преобразования и загрузки (ETL), см. в статье [Службы SSIS: создание пакета ETL](https://msdn.microsoft.com/library/ms169917.aspx).
+Дополнительные сведения о том, как с помощью SISS получить рабочую среду для создания простых пакетов извлечения, преобразования и загрузки (ETL), см. в статье [Службы SSIS. Создание простого пакета ETL](https://msdn.microsoft.com/library/ms169917.aspx).
 
 ## <a name="download-nyc-taxi-dataset"></a>Загрузка набора данных для такси Нью-Йорка
 В приведенном здесь примере используется общедоступный набор данных [Поездки в такси по Нью-Йорку](http://www.andresmh.com/nyctaxitrips/) . Набор данных состоит из информации об около 173 миллионах поездок в такси в Нью-Йорке в 2013 году. В нем используется два типа данных: сведения о поездках и тарифах. Так как для каждого месяца заведен отдельный файл, всего у нас есть 24 файла, каждый из которых занимает объем примерно 2 ГБ (в несжатом виде).

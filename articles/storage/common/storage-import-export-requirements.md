@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 12/07/2018
 ms.author: alkohli
 ms.component: common
-ms.openlocfilehash: 3a42f09967ec42b47947823025f2f0dcd081d1b1
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: 5f6908a80a467e1a8a12d61be2f67cbe70cce8a0
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "49352243"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275646"
 ---
 # <a name="azure-importexport-system-requirements"></a>Требования к системе для импорта и экспорта Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "49352243"
 
 |платформа |Version (версия) |
 |---------|---------|
-|Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> Windows 10        |
+| Windows     | Windows 7 Корпоративная, Windows 7 Максимальная <br> Windows 8 Pro, Windows 8 Корпоративная, Windows 8.1 Pro, Windows 8.1 Корпоративная <br> Windows 10        |
 |Windows Server     |Windows Server 2008 R2 <br> Windows Server 2012, Windows Server 2012 R2         |
 
 ## <a name="other-required-software-for-windows-client"></a>Другое необходимое программное обеспечение для клиента Windows
@@ -41,8 +41,9 @@ ms.locfileid: "49352243"
 
 Служба импорта и экспорта Azure поддерживает следующие типы учетных записей хранения:
 
-- Учетные записи хранения общего назначения версии 1 (как классическое развертывание, так и развертывание с помощью Azure Resource Manager).
+- Учетные записи хранения общего назначения версии 2 (рекомендуем использовать в большинстве сценариев)
 - Учетные записи хранилища BLOB-объектов
+- Учетные записи хранения общего назначения версии 1 (как классическое развертывание, так и развертывание с помощью Azure Resource Manager) 
 
 Дополнительные сведения об учетных записях хранения см. в [этой статье](storage-account-overview.md).
 

@@ -1,6 +1,6 @@
 ---
-title: Как добавить или удалить владельца группы Azure Active Directory | Документы Майкрософт
-description: Узнайте, как добавить или удалить владельцев группы в Azure Active Directory.
+title: Добавление или удаление владельцев группы в Azure Active Directory | Документация Майкрософт
+description: Инструкции по добавлению и удалению владельцев группы в Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -10,15 +10,15 @@ ms.component: fundamentals
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: lizross
-ms.custom: it-pro
-ms.openlocfilehash: fae68bccbeaa54ca1bab9d77510fe6baecd11fcc
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: 8c70378993e0155cbe730a5a351848ca1a1daa0a
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50139726"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53087156"
 ---
-# <a name="how-to-add-or-remove-group-owners-in-azure-active-directory"></a>Практическое руководство. Добавление или удаление владельцев группы в Azure Active Directory
+# <a name="add-or-remove-group-owners-in-azure-active-directory"></a>Добавление или удаление владельцев группы в Azure Active Directory
 Группы Azure Active Directory (Azure AD) управляются владельцами группы. Владельцы группы назначаются для управления группой и ее участниками владельцем ресурса (администратором). Владельцы группы не должны быть участниками группы. После назначения владельца группы только владелец ресурса можно добавить или удалить владельца.
 
 В некоторых случаях администратор может не назначать владельца группы. В этом случае вы становитесь владельцем группы. Кроме того, владелец может назначать других владельцев группы, если это не запрещено в параметрах группы.

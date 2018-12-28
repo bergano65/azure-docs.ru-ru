@@ -10,16 +10,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 2f09bd7055b987a8647a24d4ebb6ea5a27888a53
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 56747179c69e6495e9a764f81e0827e29cb077e6
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51015593"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53017412"
 ---
 # <a name="use-hdinsight-tools-for-intellij-with-hortonworks-sandbox"></a>Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks
 
-Узнайте, как использовать средства HDInsight для IntelliJ при разработке приложений Apache Scala и их тестировании в [песочнице Hortonworks](http://hortonworks.com/products/sandbox/), запущенной на компьютере. 
+Узнайте, как использовать средства HDInsight для IntelliJ при разработке приложений Apache Scala и их тестировании в [песочнице Hortonworks](https://hortonworks.com/products/sandbox/), запущенной на компьютере. 
 
 [IntelliJ IDEA](https://www.jetbrains.com/idea/) — это интегрированная среда разработки (IDE) Java для создания программного обеспечения для компьютеров. После разработки и тестирования приложений в песочнице Hortonworks их можно переместить в [Azure HDInsight](apache-hadoop-introduction.md).
 
@@ -29,7 +29,7 @@ ms.locfileid: "51015593"
 
 - Платформа данных Hortonworks Data Platform 2.4 (HDP) в песочнице Hortonworks, выполняемая на локальном компьютере. Сведения о настройке HDP см. в статье [Начало работы с песочницей Hadoop, эмулятором на виртуальной машине](apache-hadoop-emulator-get-started.md). 
     > [!NOTE]
-    > Средства HDInsight для IntelliJ были протестированы только с HDP 2.4. Чтобы получить HDP 2.4, разверните **архив песочницы Hortonworks** на [сайте скачивания песочницы Hortonworks](http://hortonworks.com/downloads/#sandbox).
+    > Средства HDInsight для IntelliJ были протестированы только с HDP 2.4. Чтобы получить HDP 2.4, разверните **архив песочницы Hortonworks** на [сайте скачивания песочницы Hortonworks](https://hortonworks.com/downloads/#sandbox).
 
 - [Java Developer Kit (JDK) версии 1.8 или более поздней версии](https://aka.ms/azure-jdks). Для набора средств Azure для IntelliJ требуется пакет JDK.
 

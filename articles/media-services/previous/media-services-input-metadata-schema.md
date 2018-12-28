@@ -6,37 +6,37 @@ manager: femila
 editor: ''
 services: media-services
 documentationcenter: ''
-ms.assetid: d72848e2-4b65-4c84-94bc-e2a90a6e7f47
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/30/2018
+ms.date: 12/05/2018
 ms.author: juliako
-ms.openlocfilehash: 1f37dcd14c1b3e85c3fae3bbf7aa67c16b8a898d
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 3eea59eba9fc1fc79a6f72a61860ee7e66a7df5b
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50249022"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52994283"
 ---
 # <a name="input-metadata"></a>Входные метаданные
+
 Задание кодирования связано с входным ресурсом-контейнером (или ресурсами-контейнерами), в котором нужно выполнить эти задачи.  После выполнения задачи создается выходной ресурс-контейнер.  Выходной ресурс-контейнер содержит видео- и аудиофайлы, эскизы, манифест и т. д. Выходной актив также содержит файл с метаданными входного актива. Имя XML-файла метаданных имеет следующий формат: &lt;ИД_ресурса-контейнера&gt;_metadata.xml (например, 41114ad3-eb5e-4c57-8d92-5354e2b7d4a4_metadata.xml), где &lt;ИД_ресурса-контейнера&gt; — это значение AssetId для входного ресурса-контейнера.  
+
+Службы мультимедиа не проверяют входные ресурсы заблаговременно для создания метаданных. Входные метаданные создаются только в качестве артефактов, когда входные файлы обрабатывается в задании. Поэтому этот артефакт записывается в выходной файл. Для создания метаданных входных и выходных файлов используются разные инструменты. Таким образом, схемы входных и выходных метаданных немного отличаются.
 
 Если вы хотите просмотреть файл метаданных, создайте указатель **SAS** и скачайте файл на локальный компьютер. Пример создания указателя SAS и скачивания файла см. в статье [Приступая к работе с доставкой содержимого по запросу с помощью пакета SDK для .NET](media-services-dotnet-get-started.md).  
 
 В этой статье рассматриваются элементы и типы XML-схемы, на основе которой создаются входные метаданные (&lt;ид_ресурса&gt;_metadata.xml).  Сведения о файле, который содержит метаданные выходного контейнера-ресурса, см. в статье [Output Metadata](media-services-output-metadata-schema.md) (Выходные метаданные).  
 
-> [!NOTE]
-> В конце этой статьи вы найдете [код схемы](media-services-input-metadata-schema.md#code) и [пример XML-файла](media-services-input-metadata-schema.md#xml).  
-> 
-> 
+В конце этой статьи вы найдете [код схемы](media-services-input-metadata-schema.md#code) и [пример XML-файла](media-services-input-metadata-schema.md#xml).  
+ 
 
 ## <a name="AssetFiles"></a> Элемент AssetFiles (корневой элемент)
 Содержит коллекцию [элементов AssetFile](media-services-input-metadata-schema.md#AssetFile) для задания кодирования.  
 
-Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
+Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 | ИМЯ | ОПИСАНИЕ |
 | --- | --- |
@@ -45,7 +45,7 @@ ms.locfileid: "50249022"
 ## <a name="AssetFile"></a> Элемент AssetFile
  Содержит атрибуты и элементы, описывающие файл ресурса-контейнера.  
 
- Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
+ Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |
@@ -56,7 +56,7 @@ ms.locfileid: "50249022"
 | **NumberOfStreams**<br /><br /> Обязательно |**xs:int** |Количество потоков в файле ресурса-контейнера. |
 | **FormatNames**<br /><br /> Обязательно |**xs: string** |Имена форматов. |
 | **FormatVerboseNames**<br /><br /> Обязательно |**xs: string** |Подробные имена форматов. |
-| **StartTime** |**xs:duration** |Время начала содержимого. Пример: StartTime="PT2.669S". |
+| **StartTime** |**xs:duration** |Время начала содержимого. Пример: StartTime="PT2.669S" |
 | **OverallBitRate** |**xs: int** |Средняя скорость файла ресурса-контейнера (Кбит/с). |
 
 > [!NOTE]
@@ -73,7 +73,7 @@ ms.locfileid: "50249022"
 | **Metadata**<br /><br /> minOccurs="0" maxOccurs="unbounded" |[MetadataType](media-services-input-metadata-schema.md#MetadataType) |Метаданные файла ресурса-контейнера, представленные в виде строки "ключ —значение". Например: <br /><br /> **&lt;Metadata key="language" value="eng" /&gt;** |
 
 ## <a name="TrackType"></a> TrackType
-Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
+Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |
@@ -102,7 +102,7 @@ ms.locfileid: "50249022"
 
  Этот тип представляет конкретную звуковую дорожку в файле ресурса-контейнера.  
 
- Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
+ Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |
@@ -119,7 +119,7 @@ ms.locfileid: "50249022"
 
 Этот тип представляет конкретную видеодорожку в файле ресурса-контейнера.  
 
-Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
+Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |
@@ -143,7 +143,7 @@ ms.locfileid: "50249022"
 ## <a name="MetadataType"></a> MetadataType
 **MetadataType** — глобальный сложный тип, описывающий метаданные файла ресурса-контейнера в виде строк "ключ —значение". Например, key="language" и value="eng".  
 
-Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
+Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |
@@ -167,7 +167,7 @@ ms.locfileid: "50249022"
 ## <a name="StreamDispositionType"></a> StreamDispositionType
 **StreamDispositionType** — глобальный сложный тип, описывающий поток.  
 
-Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
+Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="attributes"></a>Атрибуты
 | ИМЯ | type | ОПИСАНИЕ |
@@ -195,7 +195,7 @@ ms.locfileid: "50249022"
 ## <a name="VideoTracks"></a> Элемент VideoTracks
  Оболочечный элемент, содержащий несколько элементов **VideoTrack**.  
 
- Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
+ Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="child-elements"></a>Дочерние элементы
 | ИМЯ | type | ОПИСАНИЕ |
@@ -205,7 +205,7 @@ ms.locfileid: "50249022"
 ## <a name="AudioTracks"></a> Элемент AudioTracks
  Оболочечный элемент, содержащий несколько элементов **AudioTrack**.  
 
- Пример XML-файла см. в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml) в конце статьи.  
+ Пример XML-файла см. в конце приведенной ниже статьи в разделе [Пример XML-файла](media-services-input-metadata-schema.md#xml).  
 
 ### <a name="elements"></a>элементы
 | ИМЯ | type | ОПИСАНИЕ |

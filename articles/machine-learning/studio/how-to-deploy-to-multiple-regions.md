@@ -1,10 +1,9 @@
 ---
-title: Развертывание веб-службы в нескольких регионах — Студия машинного обучения Azure | Документация Майкрософт
-description: Действия по развертыванию (копированию) новой веб-службы в других регионах.
+title: Развертывание веб-службы в нескольких регионах с помощью Студии машинного обучения Azure | Документация Майкрософт
+description: Действия по развертыванию (копированию) новой веб-службы в других регионах. Вы можете легко развернуть веб-службу в нескольких регионах. При этом не требуется иметь несколько подписок или рабочих областей.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-manager: hjerez
 editor: cgronlun
 ms.assetid: 36c60411-f2db-4ee2-9b66-b1f1d77a8f44
 ms.service: machine-learning
@@ -14,17 +13,18 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
-ms.custom: (previous ms.author=aashishb, author=aashishb)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-ms.openlocfilehash: ab28cce0f973c4798bfd6995cc275c4724b7bcc9
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 742f462ebc3bd191a045be2a0213b1d8bc52adc5
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52308025"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53252683"
 ---
-# <a name="azure-machine-learning-studio-deploy-a-web-service-to-multiple-regions"></a>Студия машинного обучения Azure — развертывание веб-службы в нескольких регионах
-Новые веб-службы Azure позволяют легко развернуть веб-службу в нескольких регионах. При этом не требуется иметь несколько подписок или рабочих областей. 
+# <a name="deploy-an-azure-machine-learning-studio-web-service-to-multiple-regions"></a>Развертывание веб-службы Студии машинного обучения Azure в нескольких регионах
+
+Новые веб-службы Azure позволяют легко развернуть веб-службу Студии машинного обучения Azure в нескольких регионах. При этом не требуется иметь несколько подписок или рабочих областей. 
 
 Цены зависят от региона, поэтому план выставления счетов необходимо определить для каждого региона, в котором будет выполняется развертывание веб-службы.
 

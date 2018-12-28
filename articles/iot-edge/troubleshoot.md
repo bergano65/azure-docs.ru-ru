@@ -1,6 +1,6 @@
 ---
 title: Устранение неполадок в Azure IoT Edge | Документация Майкрософт
-description: Решения распространенных проблем и получение навыков по устранению неполадок для Azure IoT Edge
+description: В этой статье описаны стандартные навыки диагностики для Azure IoT Edge, такие как получение состояния компонента и журналов, а также решение распространенных проблем
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,12 +8,13 @@ ms.date: 06/26/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a553798a3ac15340805984a0e87312875f82c46c
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: cd9ff1a1a7730ae870ef4e80fbca2d934aa5c8e2
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51567661"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53342669"
 ---
 # <a name="common-issues-and-resolutions-for-azure-iot-edge"></a>Распространенные проблемы и их решения для Azure IoT Edge
 
@@ -146,7 +147,7 @@ ms.locfileid: "51567661"
 
 Сохраните файл и перезапустите диспетчер безопасности IoT Edge.
 
-Можно также проверить сообщения, отправленные между Центром Интернета вещей и устройствами IoT Edge. Просмотрите эти сообщения с помощью расширения [Azure IoT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) для Visual Studio Code. Дополнительные сведения см. в записи блога об [удобном средстве при разработке с помощью Центра Интернета вещей Azure](https://blogs.msdn.microsoft.com/iotdev/2017/09/01/handy-tool-when-you-develop-with-azure-iot/).
+Можно также проверить сообщения, отправленные между Центром Интернета вещей и устройствами IoT Edge. Просмотрите эти сообщения с помощью расширения [Набор средств для Центра Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) (прежнее название — "Набор средств для Интернета вещей Azure") для Visual Studio Code. Дополнительные сведения см. в записи блога об [удобном средстве при разработке с помощью Центра Интернета вещей Azure](https://blogs.msdn.microsoft.com/iotdev/2017/09/01/handy-tool-when-you-develop-with-azure-iot/).
 
 ### <a name="restart-containers"></a>Перезапуск контейнеров
 После изучения журналов и сообщений можно попытаться перезапустить контейнеры:
@@ -243,7 +244,7 @@ Error parsing user input data: invalid hostname. Hostname cannot be empty or gre
 1. На портале Azure перейдите к странице обзора виртуальной машины. 
 2. Выберите **Настроить** под DNS-именем. Если для виртуальной машины уже настроено DNS-имя, настраивать новое не нужно. 
 
-   ![Настройка DNS-имени](./media/troubleshoot/configure-dns.png)
+   ![Настройка DNS-имени виртуальной машины](./media/troubleshoot/configure-dns.png)
 
 3. Укажите значение в поле **Метка DNS-имени** и выберите **Сохранить**.
 4. Скопируйте новое DNS-имя, которое должно быть в формате **\<DNSnamelabel\>.\<vmlocation\>.cloudapp.azure.com**.
@@ -274,7 +275,7 @@ Error parsing user input data: invalid hostname. Hostname cannot be empty or gre
 
 На портале последовательно выберите *Сведения об устройстве*->*Настроить модули*->*Настройка дополнительных параметров среды выполнения IoT Edge*, а затем создайте переменную среды с именем *OptimizeForPerformance* и значением *false* для нужного *центра IoT Edge*.
 
-![optimizeforperformance](./media/troubleshoot/OptimizeForPerformanceFalse.png)
+![Задание значения false для имени OptimizeForPerformance](./media/troubleshoot/optimizeforperformance-false.png)
 
 **OR**
 

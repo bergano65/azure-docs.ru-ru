@@ -1,37 +1,32 @@
 ---
-title: Управление Azure DB Cosmos в Обозревателе службы хранилища Azure
-description: Сведения об управлении Azure DB Cosmos в Обозревателе службы хранилища Azure.
-Keywords: Azure Cosmos DB, Azure Storage Explorer, MongoDB
-services: cosmos-db
+title: Управление ресурсами Azure Cosmos DB с помощью Обозревателя службы хранилища Azure
+description: Узнайте, как подключиться к Azure Cosmos DB и управлять своими ресурсами с помощью Обозревателя службы хранилища Azure.
 author: Jejiang
-manager: kfile
-editor: ''
 tags: Azure Cosmos DB
 ms.service: cosmos-db
-ms.custom: Azure Cosmos DB active
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/20/2018
+ms.date: 12/07/2018
 ms.author: jejiang
-ms.openlocfilehash: 4a50809c48ba03b7a12689d905e704d3f820ca8a
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.custom: seodec18
+ms.openlocfilehash: 1ce483a88c1f57912dfe30efa98f46335e97c01c
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52162472"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53138132"
 ---
-# <a name="manage-azure-cosmos-db-in-azure-storage-explorer"></a>Управление Azure DB Cosmos в Обозревателе службы хранилища Azure
+# <a name="manage-azure-cosmos-db-resources-using-azure-storage-explorer"></a>Управление ресурсами Azure Cosmos DB с помощью Обозревателя службы хранилища Azure
 
 В Обозревателе службы хранилища Azure можно управлять объектами Azure Cosmos DB и работать с данными, хранимыми процедурами и триггерами, а также другими объектами Azure, такими как хранилища BLOB-объектов и очереди. Теперь это средство можно использовать для управления всеми объектами Azure в одном месте. Сейчас Обозреватель службы хранилища Azure поддерживает учетные записи SQL, MongoDB, Graph и службы таблиц.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Учетная запись Azure Cosmos DB для API SQL<!--or MongoDB API-->. Если у вас нет учетной записи, вы можете создать ее на портале Azure, как описано в разделе [Azure Cosmos DB. Создание веб-приложения API SQL с использованием языка .NET и портала Azure](create-sql-api-dotnet.md).
+Учетная запись Azure Cosmos DB для API SQL<!--or MongoDB API-->. Если у вас нет учетной записи, вы можете создать ее на портале Azure, как описано в разделе [Краткое руководство. Создание веб-приложения .NET при помощи Azure Cosmos DB с использованием API SQL и портала Azure](create-sql-api-dotnet.md).
 
 ## <a name="installation"></a>Установка
 
-Скачать новейшие версии обозревателя службы хранилища Azure можно отсюда: [обозреватель хранилищ Azure](https://azure.microsoft.com/features/storage-explorer/), теперь мы поддерживаем версии для Windows, MAC и Linux.
+Установите последнюю версию Обозревателя службы хранилища Azure здесь: [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/). Теперь поддерживаются версии для Windows, Linux и MAC.
 
 ## <a name="connect-to-an-azure-subscription"></a>Подключение к подписке Azure
 
@@ -227,7 +222,7 @@ ms.locfileid: "52162472"
 
 1. Установите Open SSL.
      - [Windows](https://slproweb.com/products/Win32OpenSSL.html) (подойдет любая из облегченных версий).
-     - MAC и Linux: этот компонент должен быть включен в операционную систему.
+     - Mac и Linux: этот компонент должен быть включен в операционную систему.
 2. Запустите Open SSL.
     - Windows: перейдите в каталог установки, затем **/bin/** и дважды щелкните файл **openssl.exe**.
     - MAC и Linux: выполните **openssl** из терминала.
@@ -242,11 +237,11 @@ ms.locfileid: "52162472"
 
 Если после успешного входа вам не удается получить подписки:
 
-- Убедитесь, что учетная запись имеет доступ к подпискам, выполнив вход на [портал Azure](http://portal.azure.com/).
-- Убедитесь, что вы выполнили вход в правильную среду ([Azure](http://portal.azure.com/), [Azure для Китая](https://portal.azure.cn/), [Azure для Германии](https://portal.microsoftazure.de/), [Azure для государственных организаций США](http://portal.azure.us/), пользовательскую среду или Azure Stack).
+- Убедитесь, что учетная запись имеет доступ к подпискам, выполнив вход на [портал Azure](https://portal.azure.com/).
+- Убедитесь, что вы выполнили вход в правильную среду ([Azure](https://portal.azure.com/), [Azure для Китая](https://portal.azure.cn/), [Azure для Германии](https://portal.microsoftazure.de/), [Azure для государственных организаций США](https://portal.azure.us/), пользовательскую среду или Azure Stack).
 - При подключении через прокси-сервер убедитесь, что прокси-сервер Обозревателя службы хранилища настроен правильно.
 - Попробуйте удалить и снова добавить учетную запись.
-- Попробуйте удалить следующие файлы из домашнего каталога (например, C:\Users\ContosoUser), а затем снова добавить учетную запись:
+- Попробуйте удалить следующие файлы из домашнего каталога (например: C:\Users\ContosoUser), а затем снова добавьте учетную запись:
   - adalcache-файл;
   - devaccounts-файл;
   - extaccounts-файл.
@@ -310,6 +305,6 @@ ms.locfileid: "52162472"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Чтобы узнать, как использовать Azure Cosmos DB в Обозревателе службы хранилища Azure, просмотрите это видео: [Использование Azure Cosmos DB в Обозревателе службы хранилища Azure](https://www.youtube.com/watch?v=iNIbg1DLgWo&feature=youtu.be).
+* Просмотрите следующее видео, чтобы узнать, как использовать Azure Cosmos DB в Обозревателе службы хранилища Azure. [Cosmos DB in Azure Storage Explorer](https://www.youtube.com/watch?v=iNIbg1DLgWo&feature=youtu.be) (Cosmos DB в Обозревателе службы хранилища Azure).
 * Дополнительные сведения об Обозревателе службы хранилища и подключении дополнительных служб см. в статье о [начале работы с Обозревателем службы хранилища](https://docs.microsoft.com/azure/vs-azure-tools-storage-manage-with-storage-explorer).
 

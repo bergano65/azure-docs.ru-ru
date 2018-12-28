@@ -10,26 +10,26 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
-ms.openlocfilehash: 880f5fc44978a6b46b3cbaefe41296903617b4e6
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 371685ba8a65fe3ca9d8835f4afcacc8ff2e07ed
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51011414"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53383259"
 ---
-# <a name="index-of-hadoop-in-hdinsight-troubleshooting-articles"></a>Указатель статей об устранении неполадок Hadoop в HDInsight
+# <a name="index-of-apache-hadoop-in-hdinsight-troubleshooting-articles"></a>Указатель статей об устранении неполадок с Apache Hadoop в HDInsight
 Статьи упорядочены по типу ошибок.
 
 ## <a name="out-of-memory-error"></a>Ошибка нехватки памяти
-* [Устранение ошибки нехватки памяти (OOM) с помощью параметров памяти Hive в Hadoop в Azure HDInsight](hdinsight-hadoop-hive-out-of-memory-error-oom.md) — устранение ошибки нехватки памяти, возникшей из-за запроса Hive. Пользовательский сценарий включает в себя запрос ко множеству больших таблиц.
+* [Устранение ошибки нехватки памяти Apache Hive в Azure HDInsight](hdinsight-hadoop-hive-out-of-memory-error-oom.md). Устранение ошибки нехватки памяти (OOM) в запросе Hive. Пользовательский сценарий включает в себя запрос ко множеству больших таблиц.
 
-## <a name="hive-query-performance"></a>Производительность запросов Hive
-* [Optimize Hive queries for Hadoop in HDInsight](hdinsight-hadoop-optimize-hive-query.md)(Оптимизация запросов Hive для Hadoop в HDInsight): в этой статье описывается несколько наиболее распространенных методов оптимизации производительности Hive, которые можно применить к запросам Hive.
-* [Troubleshoot Hive query performance issues in HDInsight Hadoop cluster](https://blogs.msdn.microsoft.com/bigdatasupport/2015/08/13/troubleshooting-hive-query-performance-in-hdinsight-hadoop-cluster/)(Устранение проблем с производительностью запросов Hive в кластере HDInsight Hadoop).
+## <a name="apache-hive-query-performance"></a>Производительность запросов Apache Hive
+* [Оптимизация запросов Apache Hive в Azure HDInsight](hdinsight-hadoop-optimize-hive-query.md). В этой статье описывается несколько наиболее распространенных методов оптимизации производительности Hive, которые можно применить к отправке запросов Hive.
+* [Troubleshooting Hive query performance in HDInsight Hadoop cluster](https://blogs.msdn.microsoft.com/bigdatasupport/2015/08/13/troubleshooting-hive-query-performance-in-hdinsight-hadoop-cluster/) (Устранение проблем с производительностью запросов Hive в кластере HDInsight Hadoop).
 
 ## <a name="more-troubleshooting-articles"></a>Дополнительные статьи об устранении неполадок
 * [Сведения об использовании HDInsight в Linux](hdinsight-hadoop-linux-information.md)
-* [Доступ к журналам приложений YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)
-* [Включение дампов кучи для служб Hadoop в HDInsight под управлением Linux](hdinsight-hadoop-collect-debug-heap-dump-linux.md)
-* [Заметки о выпуске для компонентов Hadoop в Azure HDInsight](hdinsight-release-notes.md)
+* [Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)
+* [Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux](hdinsight-hadoop-collect-debug-heap-dump-linux.md)
+* [Заметки о выпуске Azure HDInsight](hdinsight-release-notes.md)
 

@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/08/2018
 ms.author: glenga
-ms.openlocfilehash: b429f9dab0411dba599fd696dff3d424916007e0
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 4da64f01f3b4f39bd10fd3cb1b67910ffca886b8
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52635175"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413274"
 ---
 # <a name="hostjson-reference-for-azure-functions-2x"></a>Справочник по файлу host.json для службы "Функции Azure" версии 2.x  
 
@@ -96,7 +96,23 @@ ms.locfileid: "52635175"
 
 Этот параметр является дочерним элементом [ведения журнала](#logging).
 
-[!INCLUDE [applicationInsights](../../includes/functions-host-json-applicationinsights.md)]
+Управляет [функцией выборки в Application Insights](./functions-monitoring.md#configure-sampling).
+
+```json
+{
+    "applicationInsights": {
+        "samplingSettings": {
+          "isEnabled": true,
+          "maxTelemetryItemsPerSecond" : 5
+        }
+    }
+}
+```
+
+|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|---------|---------|---------| 
+|isEnabled|Да|Включает или отключает выборку.| 
+|maxTelemetryItemsPerSecond|5|Пороговое значение, при котором начинается выборка.| 
 
 ## <a name="cosmosdb"></a>СosmosDB
 
@@ -185,7 +201,28 @@ ms.locfileid: "52635175"
 |---------|---------|---------|
 |fileLoggingMode|debugOnly|Определяет, какой уровень журнала файла включен.  Доступны следующие параметры: `never`, `always` и `debugOnly`. |
 |LogLevel|Недоступно|Объект, который определяет фильтрацию категорий журналов для функций в приложении. Версия 2.x соответствует макету ASP.NET Core для фильтрации категорий журналов. Это позволяет фильтровать ведения журнала определенных функций. Дополнительные сведения см. в документации по использованию ASP.NET Core [Фильтрация журнала](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#log-filtering). |
+|console|Недоступно| Параметр ведения журнала [консоли](#console). |
 |applicationInsights|Недоступно| Параметр [applicationInsights](#applicationinsights). |
+
+## <a name="console"></a>console
+
+Этот параметр является дочерним элементом [ведения журнала](#logging). Если не в режиме отладки, этот параметр контролирует ведение журнала консоли.
+
+```json
+{
+    "logging": {
+    ...
+        "console": {
+          "isEnabled": "false"
+        },
+    ...
+    }
+}
+```
+
+|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|---------|---------|---------| 
+|isEnabled|false|Включает или отключает ведение журнала консоли.| 
 
 ## <a name="queues"></a>queues
 

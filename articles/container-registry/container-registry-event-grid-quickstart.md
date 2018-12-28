@@ -7,14 +7,15 @@ ms.service: container-registry
 ms.topic: article
 ms.date: 08/23/2018
 ms.author: danlep
-ms.openlocfilehash: 60248da2bbdac751845a40720f8967203c562b4a
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.custom: seodec18
+ms.openlocfilehash: 48fd64908a5cb2488d58f3c078e0ccb17419352f
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50085753"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53260255"
 ---
-# <a name="quickstart-send-container-registry-events-to-event-grid"></a>Краткое руководство. Отправка событий реестра контейнеров в Сетку событий
+# <a name="quickstart-send-events-from-private-container-registry-to-event-grid"></a>Краткое руководство. Отправка событий из частного реестра контейнеров в службу "Сетка событий"
 
 Сетка событий Azure — это полностью управляемая служба маршрутизации событий, которая обеспечивает равномерное потребление событий с помощью модели "публикация — подписка". В этом кратком руководстве вы создадите реестр контейнеров, подпишитесь на события реестра, а затем развернете пример веб-приложения для получения событий, используя Azure CLI. Наконец, вы запускаете образ контейнера `push` и `delete` и просматриваете полезную нагрузку события в примере приложения.
 

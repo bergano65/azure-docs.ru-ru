@@ -4,17 +4,16 @@ description: В этой статье описываются геопростр�
 services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
-manager: kfile
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 09/04/2018
-ms.openlocfilehash: 02d1f551c7ec2856bbfce65c5397f454f6b9d5be
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.date: 12/06/2018
+ms.openlocfilehash: ad789a597da759b9a2d58138c7ed441389a12adb
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43703464"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53103138"
 ---
 # <a name="introduction-to-stream-analytics-geospatial-functions"></a>Сведения о геопространственных функциях Azure Stream Analytics
 
@@ -28,7 +27,7 @@ ms.locfileid: "43703464"
 * Установка геозон
 * Отслеживание телефона на сотовых веб-сайтах
 
-Язык запросов Stream Analytics содержит семь встроенных геопространственных функций: **CreateLineString**, **CreatePoint**, **CreatePolygon**, **ST_DISTANCE**, **ST_OVERLAPS**, **ST_INTERSECTS** и **ST_WITHIN**.
+Язык запросов Stream Analytics содержит семь встроенных геопространственных функций: **CreateLineString**, **CreatePoint**, **CreatePolygon**, **ST_DISTANCE**, **ST_OVERLAPS**, **ST_ Пересекается с** и **ST_WITHIN**.
 
 ## <a name="createlinestring"></a>CreateLineString;
 
@@ -51,9 +50,9 @@ FROM input
   
 ### <a name="output-example"></a>Пример выходных данных  
 
- {"type": "LineString", "coordinates": [ [-10,2; 3,0], [10,0; 10,0], [10,5; 10,5] ]}
+ {"type" : "LineString", "coordinates" : [ [-10.2, 3.0], [10.0, 10.0], [10.5, 10.5] ]}
 
- {"type": "LineString", "coordinates": [ [20,2321; -87,33], [10,0; 10,0], [10,5; 10,5] ]}
+ {"type" : "LineString", "coordinates" : [ [20.2321, -87.33], [10.0, 10.0], [10.5, 10.5] ]}
 
 Дополнительные сведения см. по ссылке [CreateLineString](https://msdn.microsoft.com/azure/stream-analytics/reference/createlinestring).
 
@@ -78,9 +77,9 @@ FROM input
   
 ### <a name="output-example"></a>Пример выходных данных
   
- {"type": "Point", "coordinates": [-10,2; 3,0]}  
+ {"type" : "Point", "coordinates" : [-10.2, 3.0]}  
   
- {"type": "Point", "coordinates": [20,2321; -87,33]}  
+ {"type" : "Point", "coordinates" : [20.2321, -87.33]}  
 
 Дополнительные сведения см. по ссылке [CreatePoint](https://msdn.microsoft.com/azure/stream-analytics/reference/createpoint).
 
@@ -105,9 +104,9 @@ FROM input
   
 ### <a name="output-example"></a>Пример выходных данных  
 
- {"type": "Polygon", "coordinates": [[ [-10,2; 3,0], [10,0; 10,0], [10,5; 10,5], [-10,2; 3,0] ]]}
+ {"type" : "Polygon", "coordinates" : [[ [-10.2, 3.0], [10.0, 10.0], [10.5, 10.5], [-10.2, 3.0] ]]}
  
- {"type": "Polygon", "coordinates": [[ [20,2321; -87,33], [10,0; 10,0], [10,5; 10,5], [20,2321; -87,33] ]]}
+ {"type" : "Polygon", "coordinates" : [[ [20.2321, -87.33], [10.0, 10.0], [10.5, 10.5], [20.2321, -87.33] ]]}
 
 Дополнительные сведения см. по ссылке [CreatePolygon](https://msdn.microsoft.com/azure/stream-analytics/reference/createpolygon).
 

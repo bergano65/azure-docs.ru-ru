@@ -1,10 +1,7 @@
 ---
-title: API-интерфейс, пакет SDK и ресурсы для SQL .NET (Azure Cosmos DB) | Документация Майкрософт
+title: Azure Cosmos DB — API, пакет SDK и ресурсы для SQL .NET
 description: Сведения об API и пакетах SDK для SQL .NET, в том числе даты выхода, даты снятия с учета и изменения, внесенные в каждую версию пакета SDK для .NET для Azure Cosmos DB.
-services: cosmos-db
 author: rnagpal
-manager: kfile
-editor: cgronlun
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: dotnet
@@ -12,14 +9,14 @@ ms.topic: reference
 ms.date: 03/09/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f7f8af635eb7d5449a242f3a7708d865c13bb448
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 715d67a30bbf2c6d1f50ed7c10a013c0d421f48b
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52162812"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53337943"
 ---
-# <a name="azure-cosmos-db-net-sdk-for-sql-api-download-and-release-notes"></a>Пакет SDK для Azure Cosmos DB .NET: скачивание и заметки о выпуске для API SQL
+# <a name="azure-cosmos-db-net-sdk-for-sql-api-download-and-release-notes"></a>Пакет SDK .NET для Azure Cosmos DB для API SQL: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
 > * [Веб-канал изменений в .NET](sql-api-sdk-dotnet-changefeed.md)
@@ -30,7 +27,7 @@ ms.locfileid: "52162812"
 > * [Python](sql-api-sdk-python.md)
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
-> * [SQL](https://msdn.microsoft.com/library/azure/dn782250.aspx)
+> * [SQL](sql-api-query-reference.md)
 > * [BulkExecutor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
 > * [BulkExecutor — Java](sql-api-sdk-bulk-executor-java.md)
 
@@ -50,6 +47,24 @@ ms.locfileid: "52162812"
 </table></br>
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name3001-preview3001-preview"></a><a name="3.0.0.1-preview"/>3.0.0.1-preview
+* Общедоступная предварительная версия 1 пакета SDK для .NET [версии 3.0.0](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/).
+* Целевая спецификация .NET Standard, который поддерживает .NET Framework 4.6.1+ и .NET Core 2.0+.
+* Новая объектная модель и класс верхнего уровня CosmosClient с методами, разделенными между соответствующими классами (CosmosDatabases, CosmosContainers и CosmosItems). 
+* Поддержка потоков. 
+* Обновлен класс сервера CosmosResponseMessage. Теперь он возвращает код состояния и выдает исключение только в случае отсутствия ответа. 
+
+### <a name="a-name220220"></a><a name="2.2.0"/>2.2.0
+
+* Для прямой транспортной диагностики и транспортной диагностики по протоколу TCP добавлено исключение TransportException — внутренний тип исключений пакета SDK. Если этот тип присутствует в сообщениях об исключении, он выводит дополнительную информацию, которая помогает при устранении неполадок с проблемами подключения клиентов.
+
+* Добавлена новая перегрузка конструктора, которая принимает HttpMessageHandler (стек обработчика HTTP-данных) для использования при отправке запросов HttpClient (например, HttpClientHandler).
+
+* Исправлена ошибка, при которой заголовок со значениями NULL не обрабатывался должным образом.
+
+* Улучшенная проверка кэша коллекции.
+
 ### <a name="a-name213213"></a><a name="2.1.3"/>2.1.3
 
 * Обновленные System.Net.Security до версии 4.3.2.
@@ -101,7 +116,7 @@ ms.locfileid: "52162812"
 
 ### <a name="a-name12021202"></a><a name="1.20.2"/>1.20.2
 
-* Исправлена ошибка, которая происходила для определенного состояния гонки, в результате чего при использовании модели согласованности на уровне сеанса периодически возникали ошибки Microsoft.Azure.Documents.NotFoundException: The read session is not available for the input session token (Сеанс чтения для входного маркера сеанса недоступен).
+* Исправлена ошибка, которая возникала в состоянии гонки и вызывала периодические ошибки "Microsoft.Azure.Documents.NotFoundException: The read session is not available for the input session token" (Microsoft.Azure.Documents.NotFoundException. Сеанс чтения для входного маркера сеанса недоступен) при использовании уровня согласованности сеанса.
 
 ### <a name="a-name12011201"></a><a name="1.20.1"/>1.20.1
 
@@ -172,7 +187,7 @@ ms.locfileid: "52162812"
 * Исправления для повышения устойчивости пакета SDK к автоматической отработке отказа при определенных условиях.
 
 ### <a name="a-name11221122"></a><a name="1.12.2"/>1.12.2
-* Исправление ошибки, приводившей к исключению WebException: "Удаленное имя не удалось разрешить".
+* Исправлена проблема, время от времени вызывающая исключение "WebException: удаленное имя не удалось разрешить".
 * Добавлена поддержка непосредственного считывания типизированного документа путем добавления новых перегрузок в API ReadDocumentAsync.
 
 ### <a name="a-name11211121"></a><a name="1.12.1"/>1.12.1
@@ -217,7 +232,7 @@ ms.locfileid: "52162812"
 * Исправлены различные ошибки в пакете SDK.
 
 ### <a name="a-name195195"></a><a name="1.9.5"/>1.9.5
-* Устранена проблема, которая вызвала следующее исключение NotFoundException: "The read session is not available for the input session token" (Сеанс чтения для входного маркера сеанса недоступен). Это исключение иногда происходило при выполнении запроса к региону чтения геораспределенной учетной записи.
+* Исправлена проблема, которая вызывала исключение "NotFoundException: "The read session is not available for the input session token" (NotFoundException. Сеанс чтения для входного маркера сеанса недоступен). Это исключение иногда происходило при выполнении запроса к региону чтения геораспределенной учетной записи.
 * В классе ResourceResponse предоставляется свойство ResponseStream, которое обеспечивает прямой доступ к базовому потоку из ответа.
 
 ### <a name="a-name194194"></a><a name="1.9.4"/>1.9.4
@@ -225,7 +240,7 @@ ms.locfileid: "52162812"
 * Устранена проблема, из-за которой заголовок ключа секции имел неправильный формат при использовании пользовательского объекта JsonSerializerSettings для сериализации данных.
 
 ### <a name="a-name193193"></a><a name="1.9.3"/>1.9.3
-* Устранена проблема, из-за которой длительные запросы завершались сбоем и отображалось сообщение об ошибке "Authorization token is not valid at the current time" (Маркер авторизации в настоящее время недействителен).
+* Исправлена проблема, которая приводила к сбою длительных запросов с ошибкой: Authorization token is not valid at the current time (Маркер авторизации в настоящее время недействителен).
 * Устранена проблема, из-за которой исходный параметр SqlParameterCollection удалялся из запросов top/order-by между секциями.
 
 ### <a name="a-name192192"></a><a name="1.9.2"/>1.9.2
@@ -260,7 +275,7 @@ ms.locfileid: "52162812"
 * Реализованы [секционированные коллекции](partition-data.md) и [определяемые пользователем уровни производительности](performance-levels.md). 
 
 ### <a name="a-name153153"></a><a name="1.5.3"/>1.5.3
-* **[Исправлено]**. Запрос к конечной точке Azure Cosmos DB приводит к появлению исключения "System.Net.Http.HttpRequestException: произошла ошибка при копировании содержимого в поток".
+* **[Исправлено]** Запрос к конечной точке Azure Cosmos DB приводит к появлению исключения: "System.Net.Http.HttpRequestException: Error while copying content to a stream" (System.Net.Http.HttpRequestException. Произошла ошибка при копировании содержимого в поток).
 
 ### <a name="a-name152152"></a><a name="1.5.2"/>1.5.2
 * Расширенная поддержка LINQ, включая новые операторы разбиения по страницам, условные выражения и сравнение диапазонов.
@@ -335,6 +350,7 @@ ms.locfileid: "52162812"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.2.0](#2.2.0) |7 декабря 2018 г. |--- |
 | [2.1.3](#2.1.3) |15 октября 2018 г. |--- |
 | [2.1.2](#2.1.2) |04 октября 2018 г. |--- |
 | [2.1.1](#2.1.1) |27 сентября 2018 г. |--- |

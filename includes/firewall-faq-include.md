@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: ''
 ms.topic: include
-ms.date: 10/20/2018
+ms.date: 12/14/2018
 ms.author: victorh
 ms.custom: include file
-ms.openlocfilehash: e33871f35613fbd5cdc5bf3162855b942056807f
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 7e547f49ec14bdb69a85dd916ef435c3f30f6ef2
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50254629"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413733"
 ---
 ### <a name="what-is-azure-firewall"></a>Что такое брандмауэр Azure?
 
@@ -37,7 +37,7 @@ ms.locfileid: "50254629"
 
 ### <a name="how-can-i-install-the-azure-firewall"></a>Как установить службу "Брандмауэр Azure"?
 
-Службу "Брандмауэр Azure" можно настроить с помощью портала Azure, PowerShell, REST API или шаблонов. Пошаговые инструкции см. в статье [Руководство по развертыванию и настройке службы "Брандмауэр Azure" с помощью портала Azure](../articles/firewall/tutorial-firewall-deploy-portal.md).
+Службу "Брандмауэр Azure" можно настроить с помощью портала Azure, PowerShell, REST API или шаблонов. Пошаговые инструкции см. в [руководстве по развертыванию и настройке службы "Брандмауэр Azure" с помощью портала Azure](../articles/firewall/tutorial-firewall-deploy-portal.md).
 
 ### <a name="what-are-some-azure-firewall-concepts"></a>Каковы некоторые концепции службы "Брандмауэр Azure"?
 
@@ -54,7 +54,7 @@ ms.locfileid: "50254629"
 
 ### <a name="which-logging-and-analytics-services-are-supported-by-the-azure-firewall"></a>Какие службы ведения журнала и аналитики поддерживаются в службе "Брандмауэр Azure"?
 
-Служба "Брандмауэр Azure" интегрирована с Azure Monitor для возможности просмотра и анализа журналов Брандмауэра. Журналы могут отправляться в Log Analytics, службу хранилища Azure или Центры событий. Их можно анализировать в Log Analytics или с помощью различных инструментов, таких как Excel и Power BI. Дополнительные сведения см. в статье [Руководство. Журналы мониторинга Брандмауэра Azure](../articles/firewall/tutorial-diagnostics.md).
+Служба "Брандмауэр Azure" интегрирована с Azure Monitor для возможности просмотра и анализа журналов Брандмауэра. Журналы могут отправляться в Log Analytics, службу хранилища Azure или Центры событий. Их можно анализировать в Log Analytics или с помощью различных инструментов, таких как Excel и Power BI. Дополнительные сведения см. в статье [Руководство. Мониторинг журналов и метрик Брандмауэра Azure](../articles/firewall/tutorial-diagnostics.md).
 
 ### <a name="how-does-azure-firewall-work-differently-from-existing-services-such-as-nvas-in-the-marketplace"></a>Как работа службы "Брандмауэр Azure" отличается от работы имеющихся на рынке служб, например виртуальных сетевых модулей?
 
@@ -117,10 +117,14 @@ Set-AzureRmFirewall -AzureFirewall $azfw
 
 Да, подключенный к концентратору виртуальной сети Брандмауэр Azure может маршрутизировать и фильтровать трафик, которым обмениваются две периферийные зоны виртуальной сети. Чтобы такой сценарий был работоспособным, пользователю нужно задать маршруты к Брандмауэру Azure в качестве шлюза по умолчанию для подсетей каждой из периферийных виртуальных сетей.
 
-### <a name="can-azure-firewall-forward-and-filter-network-traffic-between-subnets-in-the-same-virtual-network"></a>Может ли Брандмауэр Azure передавать и фильтровать трафик, проходящий между подсетями одной виртуальной сети?
+### <a name="can-azure-firewall-forward-and-filter-network-traffic-between-subnets-in-the-same-virtual-network-or-peered-virtual-networks"></a>Может ли Брандмауэр Azure передавать и фильтровать трафик, проходящий между подсетями одной виртуальной сети или пиринговыми виртуальными сетями?
 
 Трафик между подсетями одной виртуальной сети или в одноранговой сети передается напрямую от клиента к клиенту, даже если в определяемом пользователем маршруте Брандмауэр Azure указан как шлюз по умолчанию. Для сегментации внутренней сети рекомендуется использовать группы безопасности сети. Чтобы маршрутизировать трафик между подсетями к брандмауэру в этом сценарии, в определяемом пользователем маршруте для обеих подсетей нужно явно указать префикс целевой подсети.
 
 ### <a name="are-there-any-firewall-resource-group-restrictions"></a>Существуют ли какие-либо ограничения для групп ресурсов брандмауэра?
 
 Да. Брандмауэр, подсеть, виртуальная сеть и общедоступный IP-адрес должны относиться к одной группе ресурсов.
+
+### <a name="when-configuring-dnat-for-inbound-network-traffic-do-i-also-need-to-configure-a-corresponding-network-rule-to-allow-that-traffic"></a>Настраивая DNAT для входящего трафика, нужно ли также настроить соответствующее правило сети для разрешения этого трафика?
+
+ Нет. Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](../articles/firewall/rule-processing.md).

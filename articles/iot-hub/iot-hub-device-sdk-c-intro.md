@@ -8,12 +8,12 @@ ms.devlang: c
 ms.topic: conceptual
 ms.date: 08/25/2017
 ms.author: yizhon
-ms.openlocfilehash: 97f1c9e16ae6be9e6bece69d0923f6290a8cd072
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 73eda631d43da87b4472615c2b6a28244372c613
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50024721"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53339269"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>Пакет SDK для устройств Azure IoT для C
 
@@ -75,11 +75,11 @@ ms.locfileid: "50024721"
 
 * Приложение Windows — [обозреватель устройств](https://github.com/Azure/azure-iot-sdk-csharp/tree/master/tools/DeviceExplorer).
 
-* Кроссплатформенное расширение Visual Studio Code, которое называется [набором средств Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit).
+* Кроссплатформенное расширение Visual Studio Code, которое называется [набором средств Центра Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) (ранее — "Набор средств Интернета вещей Azure").
 
 * Кроссплатформенный интерфейс командной строки Python — [расширение Интернета вещей для Azure CLI](https://github.com/Azure/azure-iot-cli-extension).
 
-В этом руководстве описывается использование графического *обозревателя устройств*. Если вы разрабатываете решения в VS Code, можно воспользоваться *набором средств Интернета вещей Azure для VS Code*. Если вы предпочитаете использовать инструмент интерфейса командной строки, можно воспользоваться *расширением Интернета вещей для Azure CLI 2.0*.
+В этом руководстве описывается использование графического *обозревателя устройств*. Если вы разрабатываете решения в VS Code, можно воспользоваться *набором средств Центра Интернета вещей Azure для VS Code*. Если вы предпочитаете использовать инструмент интерфейса командной строки, можно воспользоваться *расширением Интернета вещей для Azure CLI 2.0*.
 
 Обозреватель устройств использует библиотеки службы Интернета вещей Azure для выполнения различных операций в Центре Интернета вещей, включая добавление устройств. Если для добавления устройств вы используете обозреватель устройств, вы получите строку подключения для устройства. Эта строка подключения понадобится вам для запуска примеров приложений.
 

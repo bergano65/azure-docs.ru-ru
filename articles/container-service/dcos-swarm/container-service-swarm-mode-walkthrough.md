@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Кластер Azure Docker CE для Linux
+title: Краткое руководство. Кластер Azure Docker CE для Linux (устаревшие материалы)
 description: Из этого краткого руководства вы узнаете, как создать кластер Docker CE для контейнеров Linux в службе контейнеров Azure при помощи Azure CLI.
 services: container-service
 author: iainfoulds
@@ -9,14 +9,16 @@ ms.topic: article
 ms.date: 07/16/2018
 ms.author: iainfou
 ms.custom: ''
-ms.openlocfilehash: c8f9db2674976d2c1efa7686b8b224b48a19a534
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a7a7455ce9167a9c480d317d50fdce49e2ef06a9
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46964451"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52994297"
 ---
-# <a name="deploy-docker-ce-cluster"></a>Развертывание кластера Docker CE
+# <a name="deprecated-deploy-docker-ce-cluster"></a>Развертывание кластера Docker CE (устаревшие материалы)
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
 В этом кратком руководстве объясняется, как развернуть кластер Docker CE с помощью Azure CLI. Затем в кластере будет развернуто и запущено многоконтейнерное приложение, состоящее из веб-интерфейса и экземпляра Redis. По завершении приложение будет доступно через Интернет.
 

@@ -10,12 +10,12 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.assetid: 5c1b1e15-3b6c-49dc-98a6-bdbe7cb75339
 ms.date: 07/21/2017
-ms.openlocfilehash: c2e487f421d2dfc875efde82c078f557f7bd03d2
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 3779260d2dd6036e65be39b4a59ceb1459d01b9e
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49405741"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53434262"
 ---
 # <a name="monitor-status-set-up-diagnostics-logging-and-turn-on-alerts-for-azure-logic-apps"></a>Мониторинг состояния, настройка ведения журнала диагностики и включение предупреждений для Azure Logic Apps
 
@@ -74,7 +74,7 @@ ms.locfileid: "49405741"
 
 Для отладки с использованием сведений о среде выполнения и событиях можно настроить ведение журнала диагностики с помощью [Azure Log Analytics](../log-analytics/log-analytics-overview.md). Log Analytics — это служба в Azure, которая отслеживает облачные и локальные среды, помогая поддерживать уровень их доступности и производительности. 
 
-Чтобы начать работу, вам потребуется рабочая область Log Analytics. Узнайте, [как создать рабочую область Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md).
+Чтобы начать работу, вам потребуется рабочая область Log Analytics. Узнайте, [как создать рабочую область Log Analytics](../azure-monitor/learn/quick-create-workspace.md).
 
 1. На [портале Azure](https://portal.azure.com) найдите и выберите требуемое приложение логики. 
 
@@ -155,10 +155,10 @@ ms.locfileid: "49405741"
 
 Помимо Azure Log Analytics, можно расширить возможности использования диагностических данных приложения логики в других службах Azure, например: 
 
-* [Архивация журналов диагностики Azure в службе хранилища Azure](../monitoring-and-diagnostics/monitoring-archive-diagnostic-logs.md)
+* [Архивация журналов диагностики Azure в службе хранилища Azure](../azure-monitor/platform/archive-diagnostic-logs.md)
 * [Потоковая передача журналов диагностики в Центры событий Azure](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md) 
 
-После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../log-analytics/log-analytics-powerbi.md). Например: 
+После этого можно организовать мониторинг в режиме реального времени с помощью данных телеметрии и аналитики из других служб, таких как [Azure Stream Analytics](../stream-analytics/stream-analytics-introduction.md) и [Power BI](../azure-monitor/platform/powerbi.md). Например: 
 
 * [Потоковая передача данных из Центров событий в Stream Analytics](../stream-analytics/stream-analytics-define-inputs.md)
 * [Анализ потоковой передачи данных с помощью Stream Analytics и создание панели мониторинга в Power BI для анализа данных в режиме реального времени](../stream-analytics/stream-analytics-power-bi-dashboard.md)
@@ -174,7 +174,7 @@ ms.locfileid: "49405741"
 
 ## <a name="set-up-alerts-for-your-logic-app"></a>Настройка оповещений для приложения логики
 
-Для отслеживания определенных метрик или превышений пороговых значений для приложения логики настройте [оповещения в Azure](../monitoring-and-diagnostics/monitoring-overview-alerts.md). Узнайте подробнее о [метриках в Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md). 
+Для отслеживания определенных метрик или превышений пороговых значений для приложения логики настройте [оповещения в Azure](../azure-monitor/platform/alerts-overview.md). Узнайте подробнее о [метриках в Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md). 
 
 Чтобы настроить оповещения без [Azure Log Analytics](../log-analytics/log-analytics-overview.md), выполните следующие действия. Для расширенных критериев оповещений и действий необходимо также [настроить Log Analytics](#azure-diagnostics).
 
@@ -207,7 +207,7 @@ ms.locfileid: "49405741"
 
 ## <a name="azure-diagnostics-event-settings-and-details"></a>Параметры события диагностики Azure и подробные сведения о нем
 
-Каждое событие диагностики содержит подробные сведения о приложении логики и данном событии, например такие, как состояние, время начала, время окончания и т. д. Чтобы настроить мониторинг, отслеживание и ведение журнала, используя программные средства, эти сведения можно использовать в [REST API для Azure Logic Apps](https://docs.microsoft.com/rest/api/logic) и [REST API для системы диагностики Azure](../monitoring-and-diagnostics/monitoring-supported-metrics.md#microsoftlogicworkflows).
+Каждое событие диагностики содержит подробные сведения о приложении логики и данном событии, например такие, как состояние, время начала, время окончания и т. д. Чтобы настроить мониторинг, отслеживание и ведение журнала, используя программные средства, эти сведения можно использовать в [REST API для Azure Logic Apps](https://docs.microsoft.com/rest/api/logic) и [REST API для системы диагностики Azure](../azure-monitor/platform/metrics-supported.md#microsoftlogicworkflows).
 
 Например, у события `ActionCompleted` имеются свойства `clientTrackingId` и `trackedProperties`, которые можно использовать для отслеживания и мониторинга:
 
@@ -245,9 +245,9 @@ ms.locfileid: "49405741"
 }
 ```
 
-* `clientTrackingId`. Если это свойство не указано, Azure автоматически создает этот идентификатор и сопоставляет события во время выполнения приложения логики, включая все вложенные рабочие процессы, вызываемые из приложения логики. Можно вручную задать этот идентификатор из триггера, передав заголовок `x-ms-client-tracking-id` с пользовательским идентификатором в запросе триггера. Можно использовать триггер запроса, триггер HTTP или триггер веб-перехватчика.
+* `clientTrackingId`: если это свойство не указано, Azure автоматически создает этот идентификатор и сопоставляет события во время выполнения приложения логики, включая все вложенные рабочие процессы, вызываемые из приложения логики. Можно вручную задать этот идентификатор из триггера, передав заголовок `x-ms-client-tracking-id` с пользовательским идентификатором в запросе триггера. Можно использовать триггер запроса, триггер HTTP или триггер веб-перехватчика.
 
-* `trackedProperties`. Для отслеживания входных и выходных данных можно добавить отслеживаемые свойства в действия в определении JSON приложения логики. Отслеживаемые свойства позволяют отслеживать входные и выходные данные только одного действия. Однако можно использовать свойства `correlation` событий, чтобы сопоставлять действия в выполнении.
+* `trackedProperties`: для отслеживания входных и выходных данных можно добавить отслеживаемые свойства в действия в определении JSON приложения логики. Отслеживаемые свойства позволяют отслеживать входные и выходные данные только одного действия. Однако можно использовать свойства `correlation` событий, чтобы сопоставлять действия в выполнении.
 
   Для отслеживания одного или нескольких свойств добавьте раздел `trackedProperties` и требуемые свойства в определение действия. Например, предположим, что в телеметрии требуется отслеживать такие данные, как "Идентификатор заказа":
 

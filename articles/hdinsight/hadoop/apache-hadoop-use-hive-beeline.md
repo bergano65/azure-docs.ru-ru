@@ -10,12 +10,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: hrasheed
-ms.openlocfilehash: 1516c1a2802046b526688de703b565513789851b
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: c1c4637bf3b71ade6cceb4427180edf8bc408670
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633280"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53408108"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>Использование клиента Apache Beeline с Apache Hive
 
@@ -27,7 +27,7 @@ Beeline — это клиент Hive, установленный на голо�
 * __Использование Beeline в клиенте, подключенному к HDInsight через виртуальную сеть Azure__: `-u 'jdbc:hive2://<headnode-FQDN>:10001/;transportMode=http'`
 * __Использование Beeline в клиенте, подключенному к HDInsight через общий доступ в Интернете__: `-u 'jdbc:hive2://clustername.azurehdinsight.net:443/;ssl=true;transportMode=http;httpPath=/hive2' -n admin -p password`
 
-> [!NOTE]
+> [!NOTE]  
 > Замените `admin` учетной записью для входа в кластер.
 >
 > Замените `password` паролем этой учетной записи.
@@ -40,7 +40,7 @@ Beeline — это клиент Hive, установленный на голо�
 
 * Hadoop в кластере HDInsight версии 3.4 или выше на платформе Linux.
 
-  > [!IMPORTANT]
+  > [!IMPORTANT]  
   > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 * SSH-клиент или локальный клиент Beeline. Большинство действий, описанных в этом руководстве, выполняются в клиенте Beeline из сеанса SSH в кластере. Сведения о запуске Beeline вне кластера см. в разделе [Удаленное использование Beeline](#remote).
@@ -139,7 +139,7 @@ Beeline — это клиент Hive, установленный на голо�
 
     * `INPUT__FILE__NAME LIKE '%.log'`. Hive пытается применить схему ко всем файлам в каталоге. В этом случае каталог содержит файлы, которые не соответствуют схеме. Чтобы исключить лишние данные в результатах, эта инструкция указывает Hive возвращать данные только из файлов, заканчивающихся на .log.
 
-  > [!NOTE]
+  > [!NOTE]  
   > Внешние таблицы следует использовать, если исходные данные должны обновляться с использованием внешних источников. Например, процессом автоматизированной передачи данных или другой операцией MapReduce.
   >
   > Удаление внешней таблицы **не** приводит к удалению данных, будет удалено только определение таблицы.
@@ -193,7 +193,7 @@ Beeline — это клиент Hive, установленный на голо�
     * **STORED AS ORC** : хранение данных в формате ORC (Optimized Row Columnar). Это высокооптимизированный и эффективный формат для хранения данных Hive.
     * **INSERT OVERWRITE ... SELECT**: выбирает строки из таблицы **log4jLogs**, которые содержат значение **[ERROR]**, а затем вставляет данные в таблицу **errorLogs**.
 
-    > [!NOTE]
+    > [!NOTE]  
     > В отличие от внешних таблиц, удаление внутренней таблицы приводит к удалению базовых данных.
 
 3. Чтобы сохранить файл, нажмите клавиши **CTRL**+**+X**, введите **Y** и нажмите клавишу **ВВОД**.
@@ -204,7 +204,7 @@ Beeline — это клиент Hive, установленный на голо�
     beeline -u 'jdbc:hive2://headnodehost:10001/;transportMode=http' -i query.hql
     ```
 
-    > [!NOTE]
+    > [!NOTE]  
     > Параметр `-i` запускает Beeline и выполняет инструкции в файле `query.hql`. После выполнения запроса отобразится командная строка `jdbc:hive2://headnodehost:10001/>`. Можно также выполнить файл с помощью параметра `-f`, который завершает работу Beeline после завершения выполнения запроса.
 
 5. Чтобы убедиться, что таблица **errorLogs** создана, выполните приведенную ниже инструкцию (она выводит все строки из таблицы **errorLogs**).
@@ -242,11 +242,11 @@ Beeline — это клиент Hive, установленный на голо�
 
 * __Строка подключения__: `-u 'jdbc:hive2://<headnode-FQDN>:10001/;transportMode=http'`.
 
-Чтобы найти полное доменное имя головного узла, используйте сведения из раздела [Получение полного доменного имени для узлов кластера](../hdinsight-hadoop-manage-ambari-rest-api.md#example-get-the-fqdn-of-cluster-nodes).
+Чтобы найти полное доменное имя головного узла, используйте сведения из [этого раздела](../hdinsight-hadoop-manage-ambari-rest-api.md#example-get-the-fqdn-of-cluster-nodes).
 
-## <a id="sparksql"></a>Использование Beeline со Spark
+## <a id="sparksql"></a>Использование Beeline с Apache Spark
 
-Spark предоставляет собственную реализацию HiveServer2, которая иногда называется сервером Thrift Spark. Для разрешения запросов эта служба использует Spark SQL вместо Hive и может обеспечить более высокую производительность в зависимости от запроса.
+Apache Spark предоставляет собственную реализацию HiveServer2, которая иногда называется сервером Thrift Spark. Для разрешения запросов эта служба использует Spark SQL вместо Hive и может обеспечить более высокую производительность в зависимости от запроса.
 
 __Строка подключения__, используемая при подключении через Интернет, немного отличается. Вместо `httpPath=/hive2` она содержит `httpPath/sparkhive2`. Ниже приведен пример подключения через Интернет:
 
@@ -264,33 +264,33 @@ beeline -u 'jdbc:hive2://headnodehost:10002/;transportMode=http'
 
 Дополнительные общие сведения об использовании Hadoop в HDInsight см. в следующем документе:
 
-* [Использование Hive с Hadoop в HDInsight](hdinsight-use-hive.md)
+* [Использование Apache Hive с Apache Hadoop в HDInsight](hdinsight-use-hive.md)
 
 Дополнительные сведения о способах работы с Hadoop в HDInsight см. в следующих документах:
 
-* [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md)
-* [Использование MapReduce с Hadoop в HDInsight](hdinsight-use-mapreduce.md)
+* [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)
+* [Использование MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)
 
 Если вы используете Tez с Hive, ознакомьтесь со следующими документами:
 
-* [Использование пользовательского интерфейса Tez в HDInsight на платформе Windows](../hdinsight-debug-tez-ui.md)
-* [Использование представления Ambari Tez в HDInsight на платформе Linux](../hdinsight-debug-ambari-tez-view.md)
+* [Отладка заданий Tez в HDInsight для Windows с помощью пользовательского интерфейса Apache Tez](../hdinsight-debug-tez-ui.md)
+* [Отладка заданий Apache Tez в HDInsight с помощью представлений Apache Ambari](../hdinsight-debug-ambari-tez-view.md)
 
-[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
+[azure-purchase-options]: https://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: https://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: https://azure.microsoft.com/pricing/free-trial/
 
-[apache-tez]: http://tez.apache.org
-[apache-hive]: http://hive.apache.org/
-[apache-log4j]: http://en.wikipedia.org/wiki/Log4j
+[apache-tez]: https://tez.apache.org
+[apache-hive]: https://hive.apache.org/
+[apache-log4j]: https://en.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
-[import-to-excel]: http://azure.microsoft.com/documentation/articles/hdinsight-connect-excel-power-query/
+[import-to-excel]: https://azure.microsoft.com/documentation/articles/hdinsight-connect-excel-power-query/
 
 
 [hdinsight-use-oozie]: hdinsight-use-oozie.md
 [hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
 
-[putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+[putty]: https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
 [hdinsight-provision]: hdinsight-hadoop-provision-linux-clusters.md
@@ -298,4 +298,4 @@ beeline -u 'jdbc:hive2://headnodehost:10002/;transportMode=http'
 [hdinsight-upload-data]: hdinsight-upload-data.md
 
 
-[powershell-here-strings]: http://technet.microsoft.com/library/ee692792.aspx
+[powershell-here-strings]: https://technet.microsoft.com/library/ee692792.aspx

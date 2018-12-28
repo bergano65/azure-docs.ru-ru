@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/27/2018
 ms.author: alzam
-ms.openlocfilehash: c370808d06f31f9d79c99ca0f20f613d9e335d60
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 0c058cb6547d67469d3138dc331b6181c07e6e65
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49339057"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53087530"
 ---
 # <a name="troubleshoot-point-to-site-vpn-connections-from-mac-os-x-vpn-clients"></a>Устранение неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
 
@@ -36,13 +36,13 @@ ms.locfileid: "49339057"
 ## <a name="VPNClient"></a> Устранение неполадок с аутентификацией на основе сертификата
 1. Проверьте параметры VPN-клиента. Откройте **Network Setting** (Настройки сети), нажав клавиши Command+Shift, а затем введите VPN, чтобы перейти к параметрам VPN-клиента. В открывшемся списке щелкните VPN-запись, которую нужно проверить.
 
-  ![Аутентификация на основе сертификата IKEv2](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2cert1.jpg)
+   ![Аутентификация на основе сертификата IKEv2](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2cert1.jpg)
 2. Убедитесь, что в качестве **адреса сервера** указано полное доменное имя, которое содержит cloudapp.net.
 3. **Удаленный идентификатор** должен совпадать с адресом сервера (полным доменным именем шлюза).
 4. **Локальный идентификатор** должен совпадать со значением **субъекта** в сертификате клиента.
 5. Щелкните **Authentication Settings** (Параметры проверки подлинности), чтобы открыть соответствующую страницу.
 
-  ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth2.jpg)
+   ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth2.jpg)
 6. Убедитесь, что в раскрывающемся списке выбран вариант **Сертификат**.
 7. Щелкните **Выбрать** и убедитесь, что выбран правильный сертификат. Щелкните **OK**, чтобы сохранить изменения.
 
@@ -50,13 +50,13 @@ ms.locfileid: "49339057"
 
 1. Проверьте параметры VPN-клиента. Откройте **Network Setting** (Настройки сети), нажав клавиши Command+Shift, а затем введите VPN, чтобы перейти к параметрам VPN-клиента. В открывшемся списке щелкните VPN-запись, которую нужно проверить.
 
-  ![Имя пользователя и пароль IKEv2](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2user3.jpg)
+   ![Имя пользователя и пароль IKEv2](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2user3.jpg)
 2. Убедитесь, что в качестве **адреса сервера** указано полное доменное имя, которое содержит cloudapp.net.
 3. **Удаленный идентификатор** должен совпадать с адресом сервера (полным доменным именем шлюза).
 4. Поле **локального идентификатора** можно оставить пустым.
 5. Нажмите кнопку **Authentication Setting** (Параметры проверки подлинности) и убедитесь, что в раскрывающемся списке выбран вариант Username (Имя пользователя).
 
-  ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth4.jpg)
+   ![Параметры проверки подлинности](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/ikev2auth4.jpg)
 6. Убедитесь, что введены правильные учетные данные.
 
 ## <a name="additional"></a>Дополнительные действия
@@ -66,7 +66,7 @@ ms.locfileid: "49339057"
 1. Отфильтруйте результаты по строке *isakmp* и найдите пакеты **IKE_SA**. Сведения о предложении SA вы найдете в разделе **Payload: Security Association** (Полезные данные: сопоставление безопасности). 
 2. Убедитесь, что для клиента и сервера используется один и тот же набор.
 
-  ![Пакет](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/packet5.jpg) 
+   ![Пакет](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/packet5.jpg) 
   
 3. Если нет ответа сервера для трассировок сети, убедитесь, что вы включили протокол IKEv2 на странице настройки шлюза Azure на сайте портала Azure.
 

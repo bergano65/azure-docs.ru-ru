@@ -10,17 +10,15 @@ ms.assetid: ''
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
-ms.component: ''
-ms.openlocfilehash: c9445793061b84a1bd1632d00b64ea99800bc2d1
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 1f772e1a3e5b3e121b968d358166e9018c80d573
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52638009"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53192701"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -62,7 +60,7 @@ ms.locfileid: "52638009"
 | NOT_DEFINED | Подключаемый модуль auoms auditd не будет установлен, так как не установлены необходимые зависимости | Установить auoms не удалось, установите пакет auditd. |
 | 2 | Набору оболочки предоставлен недопустимый параметр. Запустите `sudo sh ./omsagent-*.universal*.sh --help` для информации об использовании |
 | 3 | Набору оболочки не предоставлен параметр. Выполните `sudo sh ./omsagent-*.universal*.sh --help`, чтобы получить сведения об использовании. |
-| 4. | Недопустимый тип пакета ИЛИ недопустимые настройки прокси-сервера; пакеты omsagent-*rpm*.sh можно установить только в системах на базе RPM, а пакеты omsagent-*deb*.sh — только в системах на базе Debian. Мы рекомендуем использовать универсальный установщик из [последнего выпуска](../../log-analytics/log-analytics-quick-collect-linux-computer.md#install-the-agent-for-linux). Также [просмотрите](#issue:-unable-to-connect-through-proxy-to-log-analytics) и проверьте настройки прокси-сервера. |
+| 4. | Недопустимый тип пакета ИЛИ недопустимые настройки прокси-сервера; пакеты omsagent-*rpm*.sh можно установить только в системах на базе RPM, а пакеты omsagent-*deb*.sh — только в системах на базе Debian. Мы рекомендуем использовать универсальный установщик из [последнего выпуска](../../azure-monitor/learn/quick-collect-linux-computer.md#install-the-agent-for-linux). Также [просмотрите](#issue:-unable-to-connect-through-proxy-to-log-analytics) и проверьте настройки прокси-сервера. |
 | 5 | Набор оболочки должен выполняться от имени привилегированного пользователя, ИЛИ получена ошибка 403 во время подключения. Выполните команду с использованием `sudo`. |
 | 6 | Недопустимая архитектура пакета, ИЛИ получена ошибка 200 во время подключения; пакеты omsagent-*x64.sh можно установить только в 64-разрядных системах, а пакеты omsagent-* x86.sh — только в 32-разрядных системах. Скачайте правильный пакет для используемой архитектуры из [последнего выпуска](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/latest). |
 | 17 | Не удалось установить пакет OMS. Просмотрите выходные данные команды, чтобы определить причину сбоя. |
@@ -155,7 +153,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 </match>
 ```
 
-## <a name="issue-unable-to-connect-through-proxy-to-log-analytics"></a>Проблема. Не удается подключиться к Log Analytics через прокси-сервер
+## <a name="issue-unable-to-connect-through-proxy-to-log-analytics"></a>Проблема Не удается подключиться к Log Analytics через прокси-сервер
 
 ### <a name="probable-causes"></a>Возможные причины
 * При подключении указан недопустимый прокси-сервер.
@@ -175,7 +173,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
     |*.blob.core.windows.net | Порт 443| Исходящий и входящий |  
     |*.azure-automation.net | Порт 443| Исходящий и входящий | 
 
-## <a name="issue-you-receive-a-403-error-when-trying-to-onboard"></a>Проблема. При попытке подключения возникает ошибка 403.
+## <a name="issue-you-receive-a-403-error-when-trying-to-onboard"></a>Проблема При попытке подключения возникает ошибка 403
 
 ### <a name="probable-causes"></a>Возможные причины
 * На сервере Linux установлены неправильные время и дата. 
@@ -187,10 +185,10 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 2. Убедитесь, что установлена последняя версия агента Log Analytics для Linux.  В последней версии вы получаете уведомления, если разница во времени приводит к сбою подключения.
 3. Выполните повторное подключение, используя правильный идентификатор и ключ рабочей области и следуя инструкциям по установке, приведенным ранее в этой статье.
 
-## <a name="issue-you-see-a-500-and-404-error-in-the-log-file-right-after-onboarding"></a>Проблема. Сразу после подключения в файле журнала появляется ошибка 500 и 404.
+## <a name="issue-you-see-a-500-and-404-error-in-the-log-file-right-after-onboarding"></a>Проблема Сразу после подключения в файле журнала появляются ошибки 500 и 404
 Это известная проблема, которая возникает при первой передаче данных Linux в рабочую область Log Analytics. Это не влияет на отправляемые данные и не мешает работе службы.
 
-## <a name="issue-you-are-not-seeing-any-data-in-the-azure-portal"></a>Проблема. На портале Azure не отображаются данные
+## <a name="issue-you-are-not-seeing-any-data-in-the-azure-portal"></a>Проблема На портале Azure не отображаются данные
 
 ### <a name="probable-causes"></a>Возможные причины
 
@@ -208,7 +206,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
     >Эта проблема исправлена в агенте версии 1.1.0-28 и выше.
 
 
-## <a name="issue-you-are-not-seeing-forwarded-syslog-messages"></a>Проблема: не отображаются перенаправленные сообщения системного журнала 
+## <a name="issue-you-are-not-seeing-forwarded-syslog-messages"></a>Проблема Не отображаются перенаправленные сообщения системного журнала 
 
 ### <a name="probable-causes"></a>Возможные причины
 * В конфигурации сервера Linux не включен сбор данных об отправленных средствах и (или) данных об уровнях ведения журнала.
@@ -222,7 +220,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 * Смоделируйте отправку сообщения системного журнала в Log Analytics с помощью команды `logger`.
   * `logger -p local0.err "This is my test message"`
 
-## <a name="issue-you-are-receiving-errno-address-already-in-use-in-omsagent-log-file"></a>Проблема: возникает ошибка "address already in use in omsagent log file" (адрес уже используется в файле журнала агента OMS).
+## <a name="issue-you-are-receiving-errno-address-already-in-use-in-omsagent-log-file"></a>Проблема Возникает ошибка address already in use in omsagent log file (адрес уже используется в файле журнала агента OMS).
 В omsagent.log. отображается сообщение `[error]: unexpected error error_class=Errno::EADDRINUSE error=#<Errno::EADDRINUSE: Address already in use - bind(2) for "127.0.0.1" port 25224>`.
 
 ### <a name="probable-causes"></a>Возможные причины
@@ -243,7 +241,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 3. Перезапустите omsagent `sudo /opt/microsoft/omsagent/bin/service_control restart`.
 4. Перезапустите службу системного журнала.
 
-## <a name="issue-you-are-unable-to-uninstall-omsagent-using-purge-option"></a>Проблема: не удается удалить omsagent с помощью действия очистки
+## <a name="issue-you-are-unable-to-uninstall-omsagent-using-purge-option"></a>Проблема Не удается удалить omsagent с помощью действия очистки
 
 ### <a name="probable-causes"></a>Возможные причины
 
@@ -254,7 +252,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 1. Удалите диагностическое расширение Linux (LAD).
 2. Удалите файлы диагностического расширения Linux с компьютера, если они есть в расположениях `/var/lib/waagent/Microsoft.Azure.Diagnostics.LinuxDiagnostic-<version>/` и `/var/opt/microsoft/omsagent/LAD/`.
 
-## <a name="issue-you-cannot-see-data-any-nagios-data"></a>Проблема: не отображаются данные Nagios 
+## <a name="issue-you-cannot-see-data-any-nagios-data"></a>Проблема Не отображаются данные Nagios 
 
 ### <a name="probable-causes"></a>Возможные причины
 * У пользователя omsagent нет разрешений на чтение данных из файла журнала Nagios.
@@ -277,7 +275,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
     </filter>
     ```
 
-## <a name="issue-you-are-not-seeing-any-linux-data"></a>Проблема: не отображаются данные Linux 
+## <a name="issue-you-are-not-seeing-any-linux-data"></a>Проблема Не отображаются данные Linux 
 
 ### <a name="probable-causes"></a>Возможные причины
 * Сбой при подключении к службе Log Analytics
@@ -295,7 +293,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 5. В некоторых системах распространения Azure управляющая программа сервера OMI (omid) не запускается после перезагрузки виртуальной машины. Это приводит к отсутствию данных из систем аудита, отслеживания изменений или управления обновлениями. В качестве обходного пути запустите сервер omi вручную, выполнив команду `sudo /opt/omi/bin/service_control restart`.
 6. Если вы обновите пакет OMI вручную до более новой версии, его необходимо перезапустить вручную, чтобы агент Log Analytics продолжил работу. Этот шаг необходим для некоторых дистрибутивов, в которых сервер OMI не запускается автоматически после обновления. Выполните `sudo /opt/omi/bin/service_control restart`, чтобы перезапустить OMI.
 7. Если для ресурса DSC в файле omsconfig.log отобразится сообщение об ошибке *Не найден класс*, выполните `sudo /opt/omi/bin/service_control restart`.
-8. Иногда, если агент Log Analytics для Linux не может установить связь со службой Log Analytics, объем данных в агенте превышает максимальный размер буфера (50 МБ). В этом случае перезапустите агент с помощью команды `/opt/microsoft/omsagent/bin/service_control restart`.
+8. Иногда, если агент Log Analytics для Linux не может установить связь со службой Log Analytics, данные агента записываются в резервные копии вплоть до полного размера буфера (50 МБ). В этом случае перезапустите агент с помощью команды `/opt/microsoft/omsagent/bin/service_control restart`.
 
     >[!NOTE]
     >Эта проблема исправлена в агенте версии 1.1.0-28 и более новых версий.
@@ -347,7 +345,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
     sudo service crond start
     ```
 
-## <a name="issue-when-configuring-collection-from-the-portal-for-syslog-or-linux-performance-counters-the-settings-are-not-applied"></a>Проблема: при настройке на портале сбора данных для счетчиков производительности системного журнала или Linux не применяются указанные параметры
+## <a name="issue-when-configuring-collection-from-the-portal-for-syslog-or-linux-performance-counters-the-settings-are-not-applied"></a>Проблема При настройке на портале сбора данных для счетчиков производительности системного журнала или Linux не применяются указанные параметры
 
 ### <a name="probable-causes"></a>Возможные причины
 * Агент Log Analytics для Linux не применяет последнюю конфигурацию
@@ -361,7 +359,7 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 
   2. Убедитесь, что агент `omsconfig` может взаимодействовать со службой Log Analytics, выполнив следующую команду: `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/GetDscConfiguration.py'`. Эта команда возвращает конфигурацию, которую агент получает от портала, в том числе параметры системного журнала, счетчиков производительности Linux и пользовательских журналов. Если выполнить эту команду не удается, используйте команду `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/PerformRequiredConfigurationChecks.py'`. Эта команда указывает агенту omsconfig обратиться к службе Log Analytics для получения последней конфигурации.
 
-## <a name="issue-you-are-not-seeing-any-custom-log-data"></a>Проблема: не отображаются данные пользовательских журналов 
+## <a name="issue-you-are-not-seeing-any-custom-log-data"></a>Проблема Не отображаются данные пользовательских журналов 
 
 ### <a name="probable-causes"></a>Возможные причины
 * Сбой при подключении к службе Log Analytics.
@@ -380,14 +378,14 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 
 2. Убедитесь, что агент `omsconfig` может взаимодействовать со службой Log Analytics, выполнив следующую команду: `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/GetDscConfiguration.py'`.  Эта команда возвращает конфигурацию, которую агент получает от портала, в том числе параметры системного журнала, счетчиков производительности Linux и пользовательских журналов. Если выполнить эту команду не удается, используйте команду `sudo su omsagent -c 'python /opt/microsoft/omsconfig/Scripts/PerformRequiredConfigurationChecks.py`. Эта команда указывает агенту omsconfig обратиться к службе Log Analytics для получения последней конфигурации.
 
-**Базовая информация.** Вместо привилегированного пользователя (`root`) для выполнения агента Log Analytics для Linux используется имя пользователя `omsagent`. В большинстве случаев этому пользователю необходимо предоставить явное разрешение на чтение определенных файлов. Чтобы предоставить разрешения пользователю `omsagent`, выполните следующие команды:
+**Базовая информация.** Вместо привилегированного пользователя (`root`) для выполнения агента Log Analytics для Linux используется пользователь `omsagent`. В большинстве случаев этому пользователю необходимо предоставить явное разрешение на чтение определенных файлов. Чтобы предоставить разрешения пользователю `omsagent`, выполните следующие команды:
 
 1. Добавьте пользователя `omsagent` в определенную группу `sudo usermod -a -G <GROUPNAME> <USERNAME>`.
 2. Предоставьте универсальный доступ на чтение требуемого файла `sudo chmod -R ugo+rx <FILE DIRECTORY>`.
 
 Есть известная проблема с состоянием гонки в агенте Log Analytics для Linux версий старше 1.1.0-217. После обновления агента до последней версии выполните приведенную далее команду, чтобы получить последнюю версию подключаемого модуля выходных данных `sudo cp /etc/opt/microsoft/omsagent/sysconf/omsagent.conf /etc/opt/microsoft/omsagent/<workspace id>/conf/omsagent.conf`.
 
-## <a name="issue-you-are-trying-to-reonboard-to-a-new-workspace"></a>Проблема: вы пытаетесь повторно подключиться к новой рабочей области.
+## <a name="issue-you-are-trying-to-reonboard-to-a-new-workspace"></a>Проблема Вы пытаетесь повторно подключиться к новой рабочей области
 Перед попыткой повторно подключить агент к новой рабочей области необходимо очистить конфигурацию агента Log Analytics. Чтобы удалить из агента старую конфигурацию, выполните пакет оболочки с помощью `--purge`.
 
 ```
@@ -401,7 +399,7 @@ sudo sh ./onboard_agent.sh --purge
 
 Продолжите повторную установку подключения, применив параметр `--purge`.
 
-## <a name="log-analytics-agent-extension-in-the-azure-portal-is-marked-with-a-failed-state-provisioning-failed"></a>Для расширения агента Log Analytics на портале Azure зафиксировано состояние сбоя Provisioning failed (Сбой подготовки)
+## <a name="log-analytics-agent-extension-in-the-azure-portal-is-marked-with-a-failed-state-provisioning-failed"></a>Для расширения агента Log Analytics на портале Azure зафиксировано состояние сбоя: Provisioning failed (Сбой подготовки)
 
 ### <a name="probable-causes"></a>Возможные причины
 * Агент log Analytics удален из операционной системы.
@@ -410,12 +408,12 @@ sudo sh ./onboard_agent.sh --purge
 ### <a name="resolution"></a>Способы устранения: 
 Выполните описанные ниже действия, чтобы устранить проблему.
 1. Удалите расширение с помощью портала Azure.
-2. Установите агент в соответствии с [этими инструкциями](../../log-analytics/log-analytics-quick-collect-linux-computer.md).
+2. Установите агент в соответствии с [этими инструкциями](../../azure-monitor/learn/quick-collect-linux-computer.md).
 3. Перезапустите агент, выполнив следующую команду: `sudo /opt/microsoft/omsagent/bin/service_control restart`.
 * Подождите несколько минут, пока для состояния не отобразится значение **Provisioning succeeded** (Подготовка выполнена успешно).
 
 
-## <a name="issue-the-log-analytics-agent-upgrade-on-demand"></a>Проблема: агент Log Analytics требует выполнить обновление
+## <a name="issue-the-log-analytics-agent-upgrade-on-demand"></a>Проблема Агент Log Analytics требует выполнить обновление
 
 ### <a name="probable-causes"></a>Возможные причины
 

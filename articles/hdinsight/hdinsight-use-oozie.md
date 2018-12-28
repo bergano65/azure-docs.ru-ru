@@ -10,17 +10,17 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/25/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: affef85c917804f0b99200dcfa8e53f6d08fcbe4
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: bbe61477a9841173fb47267b53da1b5cf75d9924
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51684228"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53410301"
 ---
-# <a name="use-oozie-with-hadoop-to-define-and-run-a-workflow-in-hdinsight"></a>Использование Oozie с Hadoop для определения и выполнения рабочего процесса в HDInsight
+# <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-in-hdinsight"></a>Использовании Apache Oozie с Apache Hadoop для определения и выполнения рабочего процесса в HDInsight
 [!INCLUDE [oozie-selector](../../includes/hdinsight-oozie-selector.md)]
 
-Узнайте, как определить рабочий процесс и выполнить его в HDInsight с помощью Apache Oozie. Сведения о координаторе Oozie см. в статье [Использование временного координатора Oozie с Hadoop в HDInsight][hdinsight-oozie-coordinator-time]. Сведения об использовании действий Pig и Hive см. в статье [Преобразование данных в фабрике данных Azure][azure-data-factory-pig-hive].
+Узнайте, как определить рабочий процесс и выполнить его в HDInsight с помощью Apache Oozie. Сведения о координаторе Oozie см. в статье [Use time-based Apache Oozie coordinator with Apache Hadoop in HDInsight to define workflows and coordinate jobs][hdinsight-oozie-coordinator-time] (Использование временного координатора Oozie с Apache Hadoop в HDInsight для определения рабочих процессов и координации заданий). Дополнительные сведения о Фабрике данных Azure см. в статье, [посвященной использованию Apache Pig и Apache Hive в Фабрике данных Azure][azure-data-factory-pig-hive].
 
 Apache Oozie — это система рабочих процессов и координации, управляющая заданиями Hadoop. Это решение интегрировано со стеком Hadoop и поддерживает задания Hadoop Apache MapReduce, Apache Pig, Apache Hive и Apache Sqoop. Его также можно использовать для планирования относящихся к системе заданий, например Java-программ и сценариев оболочки.
 
@@ -28,7 +28,7 @@ Apache Oozie — это система рабочих процессов и ко
 
 ![Схема рабочих процессов][img-workflow-diagram]
 
-1. Действие Hive запускает сценарий HiveQL для подсчета экземпляров каждого типа уровня ведения журнала в файле log4j. Каждый файл LOG4J состоит из строки полей, содержащей поле [LOG LEVEL] с отображением типа и уровня серьезности, например:
+1. Действие Hive запускает сценарий HiveQL для подсчета экземпляров каждого типа уровня ведения журнала в файле Apache Log4j. Каждый файл LOG4J состоит из строки полей, содержащей поле [LOG LEVEL] с отображением типа и уровня серьезности, например:
    
         2012-02-03 18:35:34 SampleClass6 [INFO] everything normal for id 577725851
         2012-02-03 18:35:34 SampleClass4 [FATAL] system problem at id 1991281254
@@ -44,11 +44,11 @@ Apache Oozie — это система рабочих процессов и ко
         [TRACE] 816
         [WARN]  4
    
-    Дополнительные сведения о Hive см. в статье [Использование Hive с HDInsight][hdinsight-use-hive].
-2. Действие Sqoop экспортирует выходные данные действия HiveQL в таблицу в базе данных SQL Azure. Дополнительные сведения о Sqoop см. в статье [Использование Sqoop с Hadoop в HDInsight][hdinsight-use-sqoop].
+    Дополнительные сведения о Hive см. в статье, [посвященной Apache Hive и HiveQL с Hadoop в HDInsight][hdinsight-use-hive].
+2. Действие Sqoop экспортирует выходные данные действия HiveQL в таблицу в базе данных SQL Azure. Дополнительные сведения о Sqoop см. в статье, [посвященной использованию Apache Sqoop в HDInsight][hdinsight-use-sqoop].
 
-> [!NOTE]
-> Сведения о поддерживаемых версиях Oozie в кластерах HDInsight см. в статье [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?][hdinsight-versions].
+> [!NOTE]  
+> Сведения о поддерживаемых версиях Oozie в кластерах HDInsight см. в статье [Что представляют собой различные компоненты Apache Hadoop, доступные в HDInsight?][hdinsight-versions]
 > 
 > 
 
@@ -613,16 +613,16 @@ RunHiveScript имеет несколько переменных. Вы пере�
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-Из этого учебника вы узнали, как определить рабочий процесс Oozie и выполнять задания Oozie с помощью PowerShell. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
+Из этого руководства вы узнали, как определить рабочий процесс Apache Oozie и выполнять задания Oozie с помощью PowerShell. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
-* [Используйте учитывающий время координатор Oozie с Hadoop в HDInsight для определения рабочих процессов и координации заданий][hdinsight-oozie-coordinator-time]
-* [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux][hdinsight-get-started]
+* [Use time-based Apache Oozie coordinator with Apache Hadoop in HDInsight to define workflows and coordinate jobs][hdinsight-oozie-coordinator-time] (Использование временного координатора Oozie с Apache Hadoop в HDInsight для определения рабочих процессов и координации заданий)
+* [Quickstart: Get started with Apache Hadoop and Apache Hive in Azure HDInsight using Resource Manager template][hdinsight-get-started] (Краткое руководство по началу работы с Apache Hadoop и Apache Hive в Azure HDInsight с использованием шаблона Resource Manager)
 * [Использование хранилища BLOB-объектов Azure с HDInsight][hdinsight-storage]
 * [Управление кластерами Hadoop в HDInsight с помощью Azure PowerShell][hdinsight-admin-powershell]
-* [Отправка данных для заданий Hadoop в HDInsight][hdinsight-upload-data]
-* [Использование Sqoop с Hadoop в HDInsight][hdinsight-use-sqoop]
-* [Использование Hive с Hadoop в HDInsight][hdinsight-use-hive]
-* [Использование Pig с Hadoop в HDInsight][hdinsight-use-pig]
+* [Отправка данных для заданий Apache Hadoop в HDInsight][hdinsight-upload-data]
+* [Использование Apache Sqoop с Apache Hadoop в HDInsight][hdinsight-use-sqoop]
+* [Использование Apache Hive с Apache Hadoop в HDInsight][hdinsight-use-hive]
+* [Использование Apache Pig с Apache Hadoop в HDInsight][hdinsight-use-pig]
 * [Разработка программ MapReduce на Java для Hadoop в HDInsight на платформе Linux][hdinsight-develop-mapreduce]
 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
@@ -657,13 +657,13 @@ RunHiveScript имеет несколько переменных. Вы пере�
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
 
-[powershell-download]: http://azure.microsoft.com/downloads/
+[powershell-download]: https://azure.microsoft.com/downloads/
 [powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
 [powershell-install-configure]: /powershell/azureps-cmdlets-docs
-[powershell-start]: http://technet.microsoft.com/library/hh847889.aspx
+[powershell-start]: https://technet.microsoft.com/library/hh847889.aspx
 [powershell-script]: https://technet.microsoft.com/library/ee176961.aspx
 
-[cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
+[cindygross-hive-tables]: https://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
 [img-workflow-diagram]: ./media/hdinsight-use-oozie/HDI.UseOozie.Workflow.Diagram.png
 [img-preparation-output]: ./media/hdinsight-use-oozie/HDI.UseOozie.Preparation.Output1.png  

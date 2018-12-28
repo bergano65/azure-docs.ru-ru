@@ -1,5 +1,5 @@
 ---
-title: Безопасное подключение к серверным ресурсам из среды службы приложений
+title: Безопасное подключение к серверным ресурсам из Среды службы приложений Azure
 description: Подробные сведения о безопасном подключении к серверным ресурсам из среды службы приложений.
 services: app-service
 documentationcenter: ''
@@ -14,14 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/04/2016
 ms.author: stefsch
-ms.openlocfilehash: 1732e6778febac60a25da74c330cb3d3da94154d
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.custom: seodec18
+ms.openlocfilehash: aea51234d26e5dbaef836419c2a13a12f8083e6f
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45580059"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53315865"
 ---
-# <a name="securely-connecting-to-backend-resources-from-an-app-service-environment"></a>Безопасное подключение к серверным ресурсам из среды службы приложений
+# <a name="connect-securely-to-back-end-resources-from-an-app-service-environment"></a>Безопасное подключение к серверным ресурсам из Среды службы приложений
 ## <a name="overview"></a>Обзор
 Так как среда службы приложений всегда создается **либо** в виртуальной сети Azure Resource Manager, **либо** в [виртуальной сети][virtualnetwork], использующей классическую модель развертывания, исходящие подключения из среды службы приложений к другим внутренним ресурсам могут передаваться исключительно по виртуальной сети.  В связи с последним изменением от июня 2016 г. среды ASE можно также развертывать в виртуальных сетях, использующих либо диапазоны общедоступных адресов, либо адресные пространства RFC1918 (т. е. частные адреса).  
 
@@ -53,7 +54,7 @@ ms.locfileid: "45580059"
 * [Группы безопасности сети][NetworkSecurityGroups].
 
 ## <a name="restricting-access-with-a-network-acl"></a>Ограничение доступа с помощью сетевых списков управления доступом
-Порт 1433 можно защитить с помощью сетевого списка управления доступом.  В примере ниже адреса клиентов из виртуальной сети добавляются в утвержденный список, а доступ ко всем других клиентам блокируется.
+Порт 1433 можно защитить с помощью сетевого списка управления доступом.  В примере ниже адреса клиентов из виртуальной сети добавляются в белый список, а доступ ко всем других клиентам блокируется.
 
 ![Пример сетевого списка управления доступом][NetworkAccessControlListExample]
 
@@ -95,7 +96,7 @@ ms.locfileid: "45580059"
 [virtualnetwork]: https://azure.microsoft.com/documentation/articles/virtual-networks-faq/
 [ControlInboundTraffic]:  app-service-app-service-environment-control-inbound-traffic.md
 [SiteToSite]: https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-multi-site
-[ExpressRoute]: http://azure.microsoft.com/services/expressroute/
+[ExpressRoute]: https://azure.microsoft.com/services/expressroute/
 [NetworkAccessControlLists]: https://azure.microsoft.com/documentation/articles/virtual-networks-acl/
 [NetworkSecurityGroups]: https://azure.microsoft.com/documentation/articles/virtual-networks-nsg/
 [IntroToAppServiceEnvironment]:  app-service-app-service-environment-intro.md

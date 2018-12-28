@@ -1,12 +1,11 @@
 ---
-title: Часто задаваемые вопросы о конкурсах Cortana Intelligence | Документация Майкрософт
+title: Часто задаваемые вопросы о конкурсах Cortana Intelligence для Студии машинного обучения Azure | Документация Майкрософт
 description: Часто задаваемые вопросы о конкурсах Microsoft Cortana Intelligence.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=haining, author=hning86)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: mwinkle
 editor: cgronlun
 ms.assetid: 9bac5154-a56c-4e78-9d67-34368b9d1624
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/18/2017
-ms.openlocfilehash: 8782af26056f8341ee68ed87f003bc585e0c4e69
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: fe4da412aa779e9861446f8dcbb8a807c282c7c6
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52265115"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53268909"
 ---
 # <a name="microsoft-cortana-intelligence-competitions-faq"></a>Часто задаваемые вопросы о конкурсах Microsoft Cortana Intelligence
 **Что такое конкурсы Microsoft Cortana Intelligence?**
@@ -70,7 +69,7 @@ ms.locfileid: "52265115"
 
 Участие в конкурсе бесплатное. Однако для участия нужен доступ к рабочей области машинного обучения Azure. Вы можете создать бесплатную рабочую область без кредитной карты, просто войдя в систему с помощью действительной учетной записи Майкрософт или учетной записи Office 365. Если вы уже используете Azure или Cortana Intelligence Suite, то можете создать и использовать стандартную рабочую область в своей подписке Azure. Если вам нужно приобрести подписку Azure, перейдите на страницу [Цены Azure](https://azure.microsoft.com/pricing). Обратите внимание, что при использовании стандартной рабочей области для создания экспериментов применяются стандартные ставки. См. дополнительные сведения о [ценах на Машинное обучение Azure](https://azure.microsoft.com/pricing/details/machine-learning/). 
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 **Что такое открытая и закрытая оценка?**
 

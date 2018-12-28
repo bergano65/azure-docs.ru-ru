@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 09/18/2018
+ms.date: 12/07/2018
 ms.topic: conceptual
 ms.service: cost-management
 manager: benshy
-ms.custom: ''
-ms.openlocfilehash: b4e1ffa0b7bd524fc9029b21e77b09ea07e1f202
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.custom: seodec18
+ms.openlocfilehash: 10a8d434df376749b76e2cf90212d872f705b209
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52276658"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53103427"
 ---
 # <a name="understanding-cloudyn-cost-management-reports"></a>Сведения об отчетах по управлению затратами Cloudyn.
 
@@ -25,7 +25,7 @@ ms.locfileid: "52276658"
 
 Ниже приведен пример отчета по затратам на период времени. Большинство отчетов Cloudyn имеют аналогичный макет.
 
-![пример отчета](./media/understanding-cost-reports/sample-report.png)
+![Пример отчета по затратам за период времени с нумерованными областями, соответствующими описанию](./media/understanding-cost-reports/sample-report.png)
 
 Каждая пронумерованная область на предыдущем снимке подробно описана далее.
 
@@ -47,11 +47,11 @@ ms.locfileid: "52276658"
 
     Используйте область "Теги", чтобы выполнить группировку по категориям тегов. Теги, отображаемые в меню, являются тегами отдела Azure или места возникновения затрат. Они также могут быть тегами подписки и сущности затрат Cloudyn. Выберите теги для фильтрации результатов. Для фильтрации результатов также можно ввести название тега (ключевое слово).
 
-    ![Выбор параметров](./media/understanding-cost-reports/select-options.png)
+    ![Пример списка тегов для фильтрации результатов](./media/understanding-cost-reports/select-options.png)
 
     Выберите **Добавить**, чтобы добавить новый фильтр.
 
-    ![Добавление фильтра](./media/understanding-cost-reports/add-filter.png)
+    ![Поле добавление фильтра с параметрами и условиями фильтрации](./media/understanding-cost-reports/add-filter.png)
 
     Процесс группировки или фильтрации тегов не связан с ресурсами Azure или тегами группы ресурсов.
 
@@ -61,9 +61,9 @@ ms.locfileid: "52276658"
 
     Используйте группы в отчетах анализа затрат, чтобы отобразить стандартные, детализированные категории на основе данных о выставлении счетов из отчета.  Однако в группах отчетов по распределению затрат отображаются категории представлений на основе тегов. Теговые категории определяются в модели распределения затрат и стандартных детализированных категориях из данных о выставлении счетов.
 
-    ![теги групп](./media/understanding-cost-reports/groups-tags01.png)
+    ![Первый пример списка тегов, по которым можно группировать данные](./media/understanding-cost-reports/groups-tags01.png)
 
-    ![теги групп](./media/understanding-cost-reports/groups-tags02.png)
+    ![Второй пример списка тегов, по которым можно группировать данные](./media/understanding-cost-reports/groups-tags02.png)
 
     Отчеты о распределении затрат и группы в теговых категориях групп могут включать в себя следующие компоненты:
       - Теги
@@ -166,7 +166,7 @@ ms.locfileid: "52276658"
 
     Используйте форматы отображения, чтобы выбрать различные представления графика или таблицы.
 
-    ![форматы отображения](./media/understanding-cost-reports/display-formats.png)
+    ![Символы форматов отображения, которые можно выбрать](./media/understanding-cost-reports/display-formats.png)
 
 13. **Multi-color** (Многоцветный)
 

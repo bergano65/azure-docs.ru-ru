@@ -1,6 +1,6 @@
 ---
-title: Фильтрация подключений по протоколу IP в Служебной шине Azure | Документация Майкрософт
-description: Сведения об использовании фильтрации IP-адресов для блокирования подключений к Служебной шине Azure с определенных IP-адресов.
+title: Правила брандмауэра Служебной шины Azure | Документация Майкрософт
+description: Использование правил брандмауэра для разрешения подключений к Служебной шине Azure с определенных IP-адресов.
 services: service-bus
 documentationcenter: ''
 author: clemensv
@@ -10,29 +10,26 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/26/2018
 ms.author: clemensv
-ms.openlocfilehash: c6e9eef762d4a9eb95685d94c61ce10d499bb155
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: f8771be9a96ae188a9610a1b19dfd6cbd49ba277
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48884809"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53270439"
 ---
-# <a name="use-ip-filters"></a>Использование фильтрации IP-адресов
+# <a name="use-firewall-rules"></a>Использование правил брандмауэра
 
-Для сценариев, в которых доступ к служебной шине Azure требуется только из определенных известных расположений, функция *фильтрации IP-адресов* позволяет настроить правила отклонения или разрешения трафика на основе IPv4-адреса отправителя. Например, это могут быть адреса корпоративного шлюза NAT.
+Для сценариев, в которых Служебная шина Azure доступна только из определенных известных расположений, правила брандмауэра позволяют настроить правила для разрешения трафика, поступающего с определенных адресов IPv4. Например, это могут быть адреса корпоративного шлюза NAT.
 
 ## <a name="when-to-use"></a>Сценарии использования
 
-Возможность блокирования конечных точек Служебной шины для определенных IP-адресов полезна в двух случаях:
-
-- Служебная шина должна принимать трафик только из определенного диапазона IP-адресов и отклонять остальной трафик. Допустим, Служебная шина используется вместе с [Azure Express Route][express-route] для создания частных подключений к локальной инфраструктуре.
-- В этом случае требуется отклонять трафик с IP-адресов, которые были определены администратором Служебной шины как подозрительные.
+Если нужно настроить Служебную шину так, чтобы она получала трафик только из указанного диапазона IP-адресов и игнорировала любой другой трафик, можно воспользоваться *брандмауэром*, чтобы заблокировать конечные точки Служебной шины с других IP-адресов. Допустим, Служебная шина используется вместе с [Azure Express Route][express-route] для создания частных подключений к локальной инфраструктуре. 
 
 ## <a name="how-filter-rules-are-applied"></a>Применение правил фильтрации
 
 Правила фильтрации IP-адресов применяются на уровне пространства имен Служебной шины. Поэтому они действуют для всех клиентских подключений по любым поддерживаемым протоколам.
 
-Любые попытки подключения с IP-адреса, который соответствует правилам блокирования для пространства имен Служебной шины, отклоняются. В ответе клиенту правило фильтрации IP-адресов не упоминается.
+Любые попытки подключения с IP-адресов, которые не соответствуют правилу разрешенных IP-адресов для пространства имен Служебной шины, отклоняются. В ответе клиенту правило фильтрации IP-адресов не упоминается.
 
 ## <a name="default-setting"></a>Значение по умолчанию
 
@@ -42,67 +39,107 @@ ms.locfileid: "48884809"
 
 Правила фильтрации IP-адресов применяются по порядку, поэтому первое правило, которое соответствует IP-адресу, определяет действие (принять или отклонить).
 
-Например, чтобы адреса в диапазоне 70.37.104.0/24 принимались, а все остальные отклонялись, первым правилом в списке должно быть именно правило о приеме трафика из диапазона адресов 70.37.104.0/24. Следующим должно быть правило об отклонении всех адресов; для этого используется диапазон 0.0.0.0/0.
+>[!WARNING]
+> Реализация правил брандмауэра может предотвратить взаимодействие других служб Azure со Служебной шиной.
+>
+> Доверенные службы Майкрософт не поддерживаются, если реализована фильтрация IP (правила брандмауэра). Их поддержка будет доступна в ближайшее время.
+>
+> Распространенные сценарии Azure, которые не работают с фильтрацией IP (обратите внимание, что список **НЕ** является исчерпывающим):
+> - Azure Monitor
+> - Azure Stream Analytics
+> - Интеграция со службой "Сетка событий Azure".
+> - Маршруты Центра Интернета вещей.
+> - Device Explorer Центра Интернета вещей.
+> - Обозреватель данных Azure
+>
+> В виртуальной сети должны присутствовать следующие службы Майкрософт:
+> - Веб-приложения Azure.
+> - Функции Azure
 
-> [!NOTE]
-> Отклонение IP-адресов может препятствовать взаимодействию других служб Azure (таких как Azure Stream Analytics, Виртуальные машины Azure или Device Explorer на портале) со Служебной шиной.
+### <a name="creating-a-virtual-network-and-firewall-rule-with-azure-resource-manager-templates"></a>Создание правил виртуальной сети и брандмауэра с использованием шаблонов Azure Resource Manager
 
-### <a name="creating-a-virtual-network-rule-with-azure-resource-manager-templates"></a>Создание правила виртуальной сети с использованием шаблонов Azure Resource Manager
-
-> ![ВАЖНО] Виртуальные сети поддерживаются только в службе "Служебная шина" **ценовой категории "Премиум"**.
+> [!IMPORTANT]
+> Виртуальные сети поддерживаются только в службе "Служебная шина" **ценовой категории "Премиум"**.
 
 Следующий шаблон Resource Manager позволяет добавить правило виртуальной сети в пространство имен существующей Служебной шины.
 
-Параметры шаблона.
+Параметры шаблона:
 
-- Значение **ipFilterRuleName** должно быть уникальной строкой буквенно-цифровых символов длиной не более 128 символов без учета регистра.
-- Параметр **ipFilterAction** поддерживает значения **Reject** (Отклонить) и **Accept** (Подтвердить), которые определяют действие, применяемое этим правилом фильтрации IP-адресов.
 - Зачение **ipMask** — это один IPv4-адрес или блок IP-адресов в нотации CIDR. Например, значение 70.37.104.0/24 в нотации CIDR представляет 256 IPv4-адресов в диапазоне от 70.37.104.0 до 70.37.104.255. Число 24 обозначает количество значимых битов префикса для адресов этого диапазона.
 
+> [!NOTE]
+> Хотя запрещающие правила отсутствуют, в шаблоне Azure Resource Manager для действия по умолчанию установлено значение **Allow**, которое не ограничивает подключения.
+> При создании правил виртуальной сети или брандмауэров необходимо изменить значение параметра ***defaultAction***.
+> 
+> from
+> ```json
+> "defaultAction": "Allow"
+> ```
+> значение
+> ```json
+> "defaultAction": "Deny"
+> ```
+>
+
 ```json
-{  
-   "$schema":"http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
-   "contentVersion":"1.0.0.0",
-   "parameters":{     
-          "namespaceName":{  
-             "type":"string",
-             "metadata":{  
-                "description":"Name of the namespace"
-             }
-          },
-          "ipFilterRuleName":{  
-             "type":"string",
-             "metadata":{  
-                "description":"Name of the Authorization rule"
-             }
-          },
-          "ipFilterAction":{  
-             "type":"string",
-             "allowedValues": ["Reject", "Accept"],
-             "metadata":{  
-                "description":"IP Filter Action"
-             }
-          },
-          "IpMask":{  
-             "type":"string",
-             "metadata":{  
-                "description":"IP Mask"
-             }
-          }
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "servicebusNamespaceName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the Service Bus namespace"
+        }
       },
+      "location": {
+        "type": "string",
+        "metadata": {
+          "description": "Location for Namespace"
+        }
+      }
+    },
+    "variables": {
+      "namespaceNetworkRuleSetName": "[concat(parameters('servicebusNamespaceName'), concat('/', 'default'))]",
+    },
     "resources": [
-        {
-            "apiVersion": "2018-01-01-preview",
-            "name": "[concat(parameters('namespaceName'), '/', parameters('ipFilterRuleName'))]",
-            "type": "Microsoft.ServiceBus/Namespaces/IPFilterRules",
-            "properties": {
-                "FilterName":"[parameters('ipFilterRuleName')]",
-                "Action":"[parameters('ipFilterAction')]",              
-                "IpMask": "[parameters('IpMask')]"
+      {
+        "apiVersion": "2018-01-01-preview",
+        "name": "[parameters('servicebusNamespaceName')]",
+        "type": "Microsoft.ServiceBus/namespaces",
+        "location": "[parameters('location')]",
+        "sku": {
+          "name": "Standard",
+          "tier": "Standard"
+        },
+        "properties": { }
+      },
+      {
+        "apiVersion": "2018-01-01-preview",
+        "name": "[variables('namespaceNetworkRuleSetName')]",
+        "type": "Microsoft.ServiceBus/namespaces/networkruleset",
+        "dependsOn": [
+          "[concat('Microsoft.ServiceBus/namespaces/', parameters('servicebusNamespaceName'))]"
+        ],
+        "properties": {
+          "virtualNetworkRules": [<YOUR EXISTING VIRTUAL NETWORK RULES>],
+          "ipRules": 
+          [
+            {
+                "ipMask":"10.1.1.1",
+                "action":"Allow"
+            },
+            {
+                "ipMask":"11.0.0.0/24",
+                "action":"Allow"
             }
-        } 
-    ]
-}
+          ],
+          "defaultAction": "Deny"
+        }
+      }
+    ],
+    "outputs": { }
+  }
 ```
 
 Инструкции по развертыванию шаблона см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell][lnk-deploy].

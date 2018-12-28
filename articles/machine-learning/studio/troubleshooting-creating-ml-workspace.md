@@ -4,9 +4,8 @@ description: В этом руководстве приведены решени�
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 1a8aec4b-35f9-44e8-9570-2575b8979ab1
 ms.service: machine-learning
@@ -16,17 +15,17 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2017
-ms.openlocfilehash: 5e52abeeef7d40ac5594f4edfa2b80ef553081e4
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 878b26b72263ddd640e1cfa936c1e4ade1af6d68
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52312075"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275284"
 ---
-# <a name="troubleshooting-guide-create-and-connect-to-an-machine-learning-studio-workspace"></a>Руководство по устранению неполадок. Создание рабочей области Студии машинного обучения и подключение к ней
+# <a name="troubleshooting-guide-create-and-connect-to-an-azure-machine-learning-studio-workspace"></a>Руководство по устранению неполадок. Создание рабочей области Студии машинного обучения Azure и подключение к ней
 В этом руководстве приведены решения некоторых проблем, часто возникающих при настройке рабочих областей для Студии машинного обучения Azure.
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="workspace-owner"></a>Владелец рабочей области
 Чтобы открыть рабочую область в Студии машинного обучения, необходимо войти в учетную запись Майкрософт, использованную для создания рабочей области, или получить приглашение присоединиться к рабочей области от владельца. На портале Azure можно управлять рабочей областью, что включает в себя возможность настроить доступ.

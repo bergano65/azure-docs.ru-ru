@@ -1,5 +1,5 @@
 ---
-title: Создание и защита ключей API администратора и запроса, а также управление ими в службе "Поиск Azure" | Документация Майкрософт
+title: Создание и защита ключей API администратора и запроса, а также управление ими в службе "Поиск Azure"
 description: Управление доступом к конечной точке службы с помощью ключей API. Ключи администратора предоставляют доступ на запись. Ключи запроса создаются для доступа только для чтения.
 author: HeidiSteen
 manager: cgronlun
@@ -10,12 +10,13 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 06/20/2018
 ms.author: heidist
-ms.openlocfilehash: 2ec720f26cfbadb9963ff3991ad1795c9b30c136
-ms.sourcegitcommit: d8ffb4a8cef3c6df8ab049a4540fc5e0fa7476ba
+ms.custom: seodec2018
+ms.openlocfilehash: 6ba63fa776e92dd2f8035cfbbdb8cea2860d106f
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36284987"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53316936"
 ---
 # <a name="create-and-manage-api-keys-for-an-azure-search-service"></a>Создание ключей API и управление ими для службы "Поиск Azure"
 
@@ -65,9 +66,9 @@ ms.locfileid: "36284987"
 ## <a name="secure-api-keys"></a>Обеспечение безопасности ключей API
 Безопасность ключей API обеспечивается за счет ограничения доступа на портале или в интерфейсах Resource Manager (PowerShell или интерфейс командной строки). Как уже упоминалось, администраторы подписки могут просматривать и повторно создавать все ключи API. В качестве меры предосторожности проверьте назначения ролей, чтобы понять, кто имеет доступ к ключам администратора.
 
-+ На панели мониторинга службы щелкните **Управление доступом (IAM)**, чтобы просмотреть назначенные роли для службы.
++ На панели мониторинга службы щелкните **Управление доступом (IAM)**, а затем — вкладку **Назначения ролей**, чтобы просмотреть назначенные роли для службы.
 
-Просмотр и повторное создание ключей доступны для следующих ролей: владелец, участник, [участник службы поиска](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#search-service-contributor).
+Просматривать и повторно создавать ключи могут участники следующих ролей: владелец, участник, [участник службы поиска](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#search-service-contributor).
 
 > [!Note]
 > Чтобы применить доступ к результатам поиска на основе удостоверений, вы можете создать фильтры безопасности по идентификаторам, удаляя из результатов те документы, к которым запрашивающая сторона не должна иметь доступ. Дополнительные сведения см. в статьях о [фильтрах безопасности](search-security-trimming-for-azure-search.md) и [безопасности в Active Directory](search-security-trimming-for-azure-search-with-aad.md).

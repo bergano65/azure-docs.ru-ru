@@ -9,12 +9,12 @@ ms.reviewer: omidm
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 35768aed3509d6ec5b73c64c7a8a6b132957ace1
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 50c5838f576b6fd6775373f2dbe3c46d751545c1
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51632736"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53437594"
 ---
 # <a name="use-enterprise-security-package-in-hdinsight"></a>Корпоративный пакет безопасности для HDInsight
 
@@ -62,5 +62,5 @@ HDInsight в настоящее время поддерживает только
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](apache-domain-joined-configure-using-azure-adds.md)
-* [Настройка политик Hive в кластерах HDInsight с ESP](apache-domain-joined-run-hive.md)
-* [Настройка кластеров HDInsight с помощью ESP](apache-domain-joined-manage.md) 
+* [Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-run-hive.md)
+* [Управление кластерами HDInsight с помощью корпоративного пакета безопасности](apache-domain-joined-manage.md) 

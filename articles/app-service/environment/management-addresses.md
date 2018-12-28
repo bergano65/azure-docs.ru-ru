@@ -1,5 +1,5 @@
 ---
-title: Адреса управления среды службы приложений Azure
+title: Адреса управления Среды службы приложений Azure
 description: Список адресов управления, используемых для передачи команд в среду службы приложений
 services: app-service
 documentationcenter: na
@@ -13,12 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/29/2018
 ms.author: ccompy
-ms.openlocfilehash: 590679daff20f9c469fb8fcfcc0fbbad77f91b5b
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.custom: seodec18
+ms.openlocfilehash: 7fb39886b19a2229188821eb39d4fb8a5928bb43
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47162862"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53276695"
 ---
 # <a name="app-service-environment-management-addresses"></a>Адреса управления среды службы приложений
 
@@ -46,7 +47,7 @@ ms.locfileid: "47162862"
 
 API возвращает документ JSON, который включает все адреса входящего трафика для среды ASE. Список адресов включает адреса управления, виртуальный IP-адрес, используемый ASE и диапазон адресов подсети ASE.  
 
-Для вызова API с помощью [armclient](http://github.com/projectkudu/ARMClient) используйте приведенные ниже команды, но укажите свои идентификатор подписки, группу ресурсов и имя среды ASE.  
+Для вызова API с помощью [armclient](https://github.com/projectkudu/ARMClient) используйте приведенные ниже команды, но укажите свои идентификатор подписки, группу ресурсов и имя среды ASE.  
 
     armclient login
     armclient get /subscriptions/<subscription ID>/resourceGroups/<resource group>/providers/Microsoft.Web/hostingEnvironments/<ASE Name>/inboundnetworkdependenciesendpoints?api-version=2016-09-01

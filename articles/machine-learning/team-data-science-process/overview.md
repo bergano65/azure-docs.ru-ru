@@ -1,5 +1,5 @@
 ---
-title: Что такое процесс обработки и анализа данных группы? | Документация Майкрософт
+title: Что такое процесс обработки и анализа данных группы?
 description: Сведения о методологии обработки и анализа данных для предоставления решений прогнозной аналитики и интеллектуальных приложений.
 services: machine-learning
 author: marktab
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 10/20/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 44da452b0ec07eaa1b1446de5dab5bedaac3bc30
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 94728bbc74d1864c76aa801628fcbfb133b97abd
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52446846"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53435996"
 ---
 # <a name="what-is-the-team-data-science-process"></a>Что такое процесс обработки и анализа данных группы?
 
@@ -104,4 +104,4 @@ TDSP предоставляет рекомендации по управлени
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Team Data Science Process: Roles and tasks](https://github.com/Azure/Microsoft-TDSP/blob/master/Docs/roles-tasks.md) (Процесс обработки и анализа данных группы: роли и задания). Описывает ключевые роли сотрудников и связанные с ними задачи для команды обработки и анализа данных, которая стандартизирует этот процесс. 
+[Team Data Science Process: Roles and tasks](https://github.com/Azure/Microsoft-TDSP/blob/master/Docs/roles-tasks.md) (Командный процесс обработки и анализа данных: роли и задания). Описывает ключевые роли сотрудников и связанные с ними задачи для команды обработки и анализа данных, которая стандартизирует этот процесс. 

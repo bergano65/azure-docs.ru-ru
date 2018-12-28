@@ -1,6 +1,6 @@
 ---
-title: Языковые фильтры в службе "Поиск Azure" | Документация Майкрософт
-description: Условия фильтрации по удостоверениям безопасности, языку, географическому расположению или числовым значениям для уменьшения результатов поиска в запросах в службе "Поиск Azure", размещенной облачной службе поиска в Microsoft Azure.
+title: Языковые фильтры многоязычного содержимого в индексе поиска (служба "Поиск Azure")
+description: Сведения об условии фильтра, которое обеспечивает поддержку многоязычного поиска и ограничивает область выполнения запроса до определенных языковых полей.
 author: HeidiSteen
 manager: cgronlun
 services: search
@@ -9,12 +9,13 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 10/23/2017
 ms.author: heidist
-ms.openlocfilehash: 2bacffe64fed3e2ee0cc2eb983776b4ab7086e51
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.custom: seodec2018
+ms.openlocfilehash: aae081232d3633d3f7d8094979764606bf99430d
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49466591"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53311190"
 ---
 # <a name="how-to-filter-by-language-in-azure-search"></a>Фильтрация по языку в службе "Поиск Azure" 
 

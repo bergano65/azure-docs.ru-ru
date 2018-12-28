@@ -1,0 +1,90 @@
+---
+title: Справочник по API управления для Управляемого экземпляра Базы данных SQL Azure | Документация Майкрософт
+description: Узнайте о создании Управляемых экземпляров Базы данных SQL Azure и управлении ими.
+services: sql-database
+ms.service: sql-database
+ms.subservice: managed-instance
+ms.custom: ''
+ms.devlang: ''
+ms.topic: conceptual
+author: CarlRabeler
+ms.author: carlrab
+ms.reviewer: ''
+manager: craigg
+ms.date: 12/12/2018
+ms.openlocfilehash: 7fb6917e129c015536143a707fd2a89fc5423a99
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53323086"
+---
+# <a name="managed-api-reference-for-azure-sql-database-managed-instances"></a>Справочник по API управления для Управляемых экземпляров Базы данных SQL Azure
+
+Вы можете создавать Управляемые экземпляры Базы данных SQL Azure и управлять ими с помощью портала Azure, PowerShell, Azure CLI, REST API и Transact-SQL. В этой статье представлен обзор функций и API, которые можно использовать для создания и настройки Управляемого экземпляра.
+
+## <a name="azure-portal-create-a-managed-instance"></a>Портал Azure. Создание управляемого экземпляра
+
+Дополнительные сведения по созданию Управляемого экземпляра Базы данных SQL Azure см. в статье [Краткое руководство. Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
+
+## <a name="powershell-create-and-manage-a-managed-instance"></a>PowerShell: Создание Управляемого экземпляра и управление им
+
+Для создания сервера Azure SQL, баз данных и брандмауэров и управления ими с помощью Azure PowerShell используйте приведенные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+
+> [!TIP]
+> Примеры сценариев PowerShell см. в [кратком руководстве по созданию Управляемого экземпляра SQL Azure с помощью библиотеки PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/27/quick-start-script-create-azure-sql-managed-instance-using-powershell/).
+
+| Командлет | ОПИСАНИЕ |
+| --- | --- |
+|[New-AzureRmSqlInstance](https://docs.microsoft.com/powershell/module/azurerm.sql/new-azurermsqlinstance)|Создает Управляемый экземпляр Базы данных SQL Azure |
+|[Get-AzureRmSqlInstance](https://docs.microsoft.com/powershell/module/azurerm.sql/Get-AzureRmSqlInstance)|Возвращает информацию об Управляемом экземпляре SQL Azure|
+|[Set-AzureRmSqlInstance](https://docs.microsoft.com/powershell/module/azurerm.sql/Set-AzureRmSqlInstance)|Задает свойства для Управляемого экземпляра Базы данных SQL Azure|
+|[Remove-AzureRmSqlInstance](https://docs.microsoft.com/powershell/module/azurerm.sql/Remove-AzureRmSqlInstance)|Удаляет Управляемый экземпляр Базы данных SQL Azure|
+
+## <a name="azure-cli-manage-logical-servers-and-databases"></a>Azure CLI: Управление логическими серверами и базами данных
+
+Чтобы создать сервер SQL Azure, базы данных и брандмауэры и управлять ими с помощью [Azure CLI](/cli/azure), воспользуйтесь следующими командами Azure CLI для [Управляемого экземпляра SQL](/cli/azure/sql/mi). Запускайте интерфейс командной строки в браузере с помощью [Cloud Shell](/azure/cloud-shell/overview) либо [установите](/cli/azure/install-azure-cli) его на платформе macOS, Linux или Windows.
+
+> [!TIP]
+> Краткое руководство по работе с Управляемым экземпляром SQL с помощью Azure CLI см. [здесь](https://medium.com/azure-sqldb-managed-instance/working-with-sql-managed-instance-using-azure-cli-611795fe0b44).
+>
+
+| Командлет | ОПИСАНИЕ |
+| --- | --- |
+|[az sql mi create](https://docs.microsoft.com/cli/azure/sql/db#az-sql-mi-create) |Создает Управляемый экземпляр|
+|[az sql mi list](https://docs.microsoft.com/cli/azure/sql/db#az-sql-mi-list)|Перечисляет доступные Управляемые экземпляры|
+|[az sql mi show](/cli/azure/sql/db#az-sql-mi-show)|Получает сведения об Управляемом экземпляре|
+|[az sql mi update](/cli/azure/sql/db#az-sql-mi-update)|Обновляет Управляемый экземпляр|
+|[az sql mi delete](/cli/azure/sql/db#az-sql-mi-delete)|Удаляет Управляемый экземпляр|
+
+## <a name="transact-sql-manage-logical-servers-and-databases"></a>Transact-SQL: Управление логическими серверами и базами данных
+
+Для создания базы данных Управляемого экземпляра Базы данных SQL Azure и управления ею после создания Управляемого экземпляра используйте следующие команды T-SQL. Эти команды можно выполнить с помощью портала Azure, [SQL Server Management Studio](/sql/ssms/use-sql-server-management-studio), [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/what-is), [Visual Studio Code](https://code.visualstudio.com/docs) или любой другой программы, которая может подключаться к серверу Базы данных SQL Azure и передавать команды Transact-SQL.
+
+> [!TIP]
+> Краткие руководства для настройки и подключения к Управляемому экземпляру с помощью SQL Server Management Studio в Microsoft Windows см. в статье [Краткое руководство. Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-configure-vm.md) и [Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md).
+> [!IMPORTANT]
+> С помощью Transact-SQL невозможно создать или удалить Управляемый экземпляр.
+
+| Get-Help | ОПИСАНИЕ |
+| --- | --- |
+|[CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current)|Создает базу данных Управляемого экземпляра. Для создания базы данных требуется подключение к базе данных master.|
+| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current) |Изменяет базу данных Управляемого экземпляра SQL Azure.|
+
+## <a name="rest-api-manage-logical-servers-and-databases"></a>REST API: Управление логическими серверами и базами данных
+
+Для создания Управляемого экземпляра Базы данных SQL и управления им используйте запросы REST API.
+
+| Get-Help | ОПИСАНИЕ |
+| --- | --- |
+|[Управляемые экземпляры. Создание или обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/createorupdate)|Создает или обновляет Управляемый экземпляр.|
+|[Управляемые экземпляры. Удаление](https://docs.microsoft.com/rest/api/sql/managedinstances/delete)|Удаляет Управляемый экземпляр.|
+|[Управляемые экземпляры. Получение](https://docs.microsoft.com/rest/api/sql/managedinstances/get)|Получает Управляемый экземпляр.|
+|[Управляемые экземпляры. Перечисление](https://docs.microsoft.com/rest/api/sql/managedinstances/list)|Возвращает список Управляемых экземпляров в подписке.|
+|[Управляемые экземпляры. Перечисление по группе ресурсов](https://docs.microsoft.com/rest/api/sql/managedinstances/listbyresourcegroup)|Возвращает список Управляемых экземпляров в группе ресурсов.|
+|[Управляемые экземпляры. Обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/update)|Обновляет Управляемый экземпляр.|
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- Чтобы узнать о переносе базы данных SQL Server в Azure, ознакомьтесь с разделом [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-cloud-migrate.md).
+- Дополнительные сведения о поддерживаемых функциях см. [здесь](sql-database-features.md).

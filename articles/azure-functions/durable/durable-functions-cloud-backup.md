@@ -8,14 +8,14 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 10/23/2018
+ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 3a7701dacece515bb24567ff6117c183bfe2b526
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: d3dfcb74852f90615af90f9eab3711b1b235c53e
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52638099"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53341394"
 ---
 # <a name="fan-outfan-in-scenario-in-durable-functions---cloud-backup-example"></a>Сценарии развертывания и объединения в устойчивых функциях. Пример резервного копирования в облако
 
@@ -55,7 +55,7 @@ ms.locfileid: "52638099"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E2_BackupSiteContent/run.csx)]
 
-### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E2_BackupSiteContent/index.js)]
 
@@ -67,9 +67,10 @@ ms.locfileid: "52638099"
 4. Ожидает завершения всех передач.
 5. Возвращает сумму общего количества байтов, отправленных в хранилище BLOB-объектов Azure.
 
-Обратите внимание на строки `await Task.WhenAll(tasks);` (C#) и `yield context.df.Task.all(tasks);` (JS). Все вызовы функции `E2_CopyFileToBlob` *не* ожидались. Это сделано намеренно, чтобы они могли выполняться параллельно. При передаче массива задач в `Task.WhenAll` мы получаем задачу, которая не выполнится *до завершения всех операций копирования*. Если вы знакомы с библиотекой параллельных задач (TPL) в .NET, то вы уже знаете об этом. Разница заключается в том, что задачи могут выполняться на нескольких виртуальных машинах одновременно, а расширение устойчивых функций гарантирует, что комплексное выполнение устойчиво к перезапуску процессов.
+Обратите внимание на строки `await Task.WhenAll(tasks);` (C#) и `yield context.df.Task.all(tasks);` (JavaScript). Все отдельные вызовы функции `E2_CopyFileToBlob` *не* ожидались. Это сделано намеренно, чтобы они могли выполняться параллельно. При передаче массива задач в `Task.WhenAll` (C#) или `context.df.Task.all` (JavaScript) мы получаем задачу, которая не выполнится до *завершения всех операций копирования*. Если вы знакомы с библиотекой параллельных задач (TPL) в .NET или с [`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) в JavaScript, то вы уже знаете об этой особенности. Разница заключается в том, что задачи могут выполняться на нескольких виртуальных машинах одновременно, а расширение устойчивых функций гарантирует, что комплексное выполнение устойчиво к перезапуску процессов.
 
-Задачи очень похожи на принцип обещаний в JavaScript. Но `Promise.all` несколько отличается от `Task.WhenAll`. Понятие `Task.WhenAll` перенесено как часть модуля JavaScript `durable-functions` и доступно только для него.
+> [!NOTE]
+> Несмотря на то что задачи концептуально похожи на обещания JavaScript, функции оркестратора должны использовать `context.df.Task.all` и `context.df.Task.any` вместо `Promise.all` и `Promise.race` для управления параллелизацией задач.
 
 Если задача `Task.WhenAll` завершена (или задача `context.df.Task.all` приостановлена), это говорит о том, что все вызовы функций завершены и значения возвращены. Каждый вызов `E2_CopyFileToBlob` возвращает число переданных байтов, поэтому, чтобы узнать сумму всех байтов, нужно сложить все возвращаемые значения.
 
@@ -85,7 +86,7 @@ ms.locfileid: "52638099"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E2_GetFileList/run.csx)]
 
-### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E2_GetFileList/index.js)]
 
@@ -104,7 +105,7 @@ ms.locfileid: "52638099"
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/E2_CopyFileToBlob/run.csx)]
 
-### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
 
 В реализации JavaScript нет доступа к компоненту `Binder` решения "Функции Azure". Вместо этого используется [пакет SDK службы хранилища Azure для Node](https://github.com/Azure/azure-storage-node).
 

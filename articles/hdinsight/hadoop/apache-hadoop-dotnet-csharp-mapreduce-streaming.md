@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: a5f6f09ee6c8504b64cad7ef5313501a65907a90
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 02821abd8769a89fc1c7ad9d0dd5cf4e5a245e5f
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51632600"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53435316"
 ---
 # <a name="use-c-with-mapreduce-streaming-on-apache-hadoop-in-hdinsight"></a>Использование C# для потоковой передачи MapReduce в Apache Hadoop в HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "51632600"
 
 В кластерах __HDInsight под управлением Linux__ для запуска приложений .NET используется [Mono (https://mono-project.com)](https://mono-project.com). Mono версии 4.2.1 входит в состав HDInsight версии 3.6. Дополнительные сведения о версии Mono, которая входит в состав HDInsight, см. в разделе [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md) Чтобы использовать определенную версию Mono, см. статью об [установке или обновлении Mono](../hdinsight-hadoop-install-mono.md).
 
-Дополнительные сведения о совместимости Mono с различными версиями платформы .NET Framework см. в разделе [Compatibility](http://www.mono-project.com/docs/about-mono/compatibility/) (Совместимость).
+Дополнительные сведения о совместимости Mono с различными версиями платформы .NET Framework см. в разделе [Compatibility](https://www.mono-project.com/docs/about-mono/compatibility/) (Совместимость).
 
 ## <a name="how-hadoop-streaming-works"></a>Как работает потоковая передача Hadoop
 
@@ -157,7 +157,7 @@ namespace reducer
 
     * Если эту запись можно развернуты, то для кластера в качестве хранилища по умолчанию используется __учетная запись хранения Azure__. Чтобы просмотреть файлы в хранилище по умолчанию кластера, разверните эту запись, а затем дважды щелкните запись __(Контейнер по умолчанию)__.
 
-    * Если эту запись невозможно развернуты, то для кластера в качестве хранилища по умолчанию используется __Azure Data Lake Store__. Чтобы просмотреть файлы в хранилище по умолчанию кластера, дважды щелкните запись __(Контейнер по умолчанию)__.
+    * Если эту запись невозможно развернуть, то для кластера в качестве хранилища по умолчанию используется __Azure Data Lake Storage__. Чтобы просмотреть файлы в хранилище по умолчанию кластера, дважды щелкните запись __(Контейнер по умолчанию)__.
 
 5. Чтобы передать EXE-файлы, используйте один из следующих методов.
 
@@ -165,7 +165,7 @@ namespace reducer
 
         ![значок отправки](./media/apache-hadoop-dotnet-csharp-mapreduce-streaming/upload.png)
     
-    * Если используется __Azure Data Lake Store__, щелкните правой кнопкой мыши пустое место в списке файлов и выберите __Отправить__. Выберите файл **mapper.exe** и нажмите кнопку **Открыть**.
+    * Если используется __Azure Data Lake Storage__, щелкните правой кнопкой мыши пустое место в списке файлов и выберите __Отправить__. Выберите файл **mapper.exe** и нажмите кнопку **Открыть**.
 
     После завершения передачи __mapper.exe__ повторите этот процесс для передачи файла __reducer.exe__.
 
@@ -175,7 +175,7 @@ namespace reducer
 
 2. Используйте одну из приведенных команд для запуска задания MapReduce.
 
-    * Если в качестве хранилища по умолчанию используется __Azure Data Lake Store__:
+    * Если в качестве хранилища по умолчанию используется __Data Lake Storage__:
 
         ```bash
         yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar -files adl:///mapper.exe,adl:///reducer.exe -mapper mapper.exe -reducer reducer.exe -input /example/data/gutenberg/davinci.txt -output /example/wordcountout
@@ -214,7 +214,7 @@ namespace reducer
         yourselves      3
         youth   17
 
-## <a name="run-a-job-using-powershell"></a>Выполнение задания с помощью PowerShell
+## <a name="run-a-job-using-powershell"></a>Выполнение задания с использованием PowerShell.
 
 Используйте приведенный ниже сценарий PowerShell для запуска задания MapReduce и скачивания результатов.
 
@@ -236,6 +236,6 @@ namespace reducer
 
 Дополнительные сведения об использовании MapReduce с HDInsight см. в разделе [Использование MapReduce в Hadoop в HDInsight](hdinsight-use-mapreduce.md).
 
-Сведения об использовании языка C# с Hive и Pig см. в разделе [Использование определяемых пользователем функций C# при потоковой передаче Hive и Pig в Hadoop HDInsight](apache-hadoop-hive-pig-udf-dotnet-csharp.md).
+Сведения об использовании языка C# с Hive и Pig см. в статье [Использование определяемых пользователем функций C# при потоковой передаче Apache Hive и Apache Pig в Apache Hadoop в HDInsight](apache-hadoop-hive-pig-udf-dotnet-csharp.md).
 
-Сведения об использовании языка C# со Storm в HDInsight см. в разделе [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](../storm/apache-storm-develop-csharp-visual-studio-topology.md).
+Сведения об использовании языка C# со Storm в HDInsight см. в разделе [Разработка топологий для Apache Storm на C# с помощью средств Data Lake для Visual Studio](../storm/apache-storm-develop-csharp-visual-studio-topology.md).

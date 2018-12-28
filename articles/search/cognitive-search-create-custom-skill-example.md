@@ -1,5 +1,5 @@
 ---
-title: Пример. Создание пользовательского навыка в конвейере когнитивного поиска в службе "Поиск Azure" | Документы Майкрософт
+title: 'Пример: создание пользовательского навыка в конвейере когнитивного поиска в службе "Поиск Azure" | Документация Майкрософт'
 description: Демонстрация использования API перевода текста в пользовательском навыке, сопоставленном с конвейером индексирования когнитивного поиска в Поиске Azure.
 manager: pablocas
 author: luiscabrer
@@ -9,14 +9,15 @@ ms.devlang: NA
 ms.topic: conceptual
 ms.date: 06/29/2018
 ms.author: luisca
-ms.openlocfilehash: d78959ba415c837e931edcc0278de84daa879bc1
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.custom: seodec2018
+ms.openlocfilehash: d5bbdac74b0afa745993dd848ef73352d996e8b6
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49393956"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53315066"
 ---
-# <a name="example-create-a-custom-skill-using-the-text-translate-api"></a>Пример создания пользовательского навыка с помощью API перевода текста
+# <a name="example-create-a-custom-skill-using-the-text-translate-api"></a>Пример: создание пользовательского навыка с помощью API перевода текста
 
 В этом примере вы можете узнать, как создать пользовательский навык веб-API, принимающий текст на любом языке и переводящий его на английский язык. Этот пример использует [Функцию Azure](https://azure.microsoft.com/services/functions/) для заключения [API перевода текста](https://azure.microsoft.com/services/cognitive-services/translator-text-api/) в оболочку, чтобы он реализовывал интерфейс пользовательского навыка.
 

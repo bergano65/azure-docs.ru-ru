@@ -1,5 +1,5 @@
 ---
-title: Учебник. Интеграция одного леса AD с Azure с помощью сквозной проверки подлинности (PTA) | Документы Майкрософт
+title: Руководство.  Интеграция одного леса AD с Azure с помощью сквозной аутентификации (PTA) | Документация Майкрософт
 description: Демонстрируется настройка гибридной среды идентификации со сквозной проверкой подлинности.
 services: active-directory
 author: billmath
@@ -10,14 +10,14 @@ ms.topic: article
 ms.date: 09/18/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: df4a1ef30997bef6b83e66182404d0e2659a5d51
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 140161e88ee572d728a7f9c923c9528ea6755cc1
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52422310"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53165461"
 ---
-# <a name="tutorial--integrate-a-single-ad-forest-using-pass-through-authentication-pta"></a>Учебник. Интеграция одного леса AD с помощью сквозной проверки подлинности (PTA)
+# <a name="tutorial--integrate-a-single-ad-forest-using-pass-through-authentication-pta"></a>Руководство.  Интеграция одного леса AD с помощью сквозной аутентификации (PTA)
 
 ![Создание](media/tutorial-passthrough-authentication/diagram.png)
 
@@ -36,7 +36,7 @@ ms.locfileid: "52422310"
 >
 >Скрипты, используемые для создания общей среды Active Directory перед установкой Azure AD Connect.  Они актуальны для всех руководств.
 >
-> Копии скриптов PowerShell, используемых в этом учебнике, можно найти в Github [здесь](https://github.com/billmath/tutorial-phs).
+> Копии сценариев PowerShell, используемых в этом руководстве, можно найти на сайте GitHub [здесь](https://github.com/billmath/tutorial-phs).
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 Первое, что нужно сделать, чтобы подготовить среду гибридной идентификации к работе, — создать виртуальную машину, которая будет служить локальным сервером Active Directory.  
@@ -84,7 +84,7 @@ Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
 5. Нажмите **Установить**.
 6. Введите ключ лицензии и нажмите кнопку **Далее**.
 7. Установите флажок "Я принимаю условия лицензии" и нажмите кнопку **Далее**.
-8. Выберите вариант **Пользовательская: установить только Windows (расширенная)**
+8. Выберите **Custom:  Install Windows Only (Advanced)** (Пользовательская: установить только Windows (расширенная)).
 9. Щелкните **Далее**
 10. Когда установка завершится, перезапустите виртуальную машину, выполните вход и запустите обновление Windows, чтобы обеспечить актуальность виртуальной машины.  Установите последние обновления.
 

@@ -1,6 +1,6 @@
 ---
-title: Часто задаваемые вопросы о службе "Поиск Azure" | Документация Майкрософт
-description: Получите ответы на распространенные вопросы о службе "Поиск Microsoft Azure".
+title: Часто задаваемые вопросы о службе "Поиск Azure"
+description: Получите ответы на часто задаваемые вопросы о службе "Поиск Microsoft Azure", размещенной облачной службе поиска в Microsoft Azure.
 author: HeidiSteen
 manager: cgronlun
 services: search
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 08/03/2017
 ms.author: heidist
-ms.openlocfilehash: 1491fdb0f208100619e569f9a74d5e697a0065a6
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.custom: seodec2018
+ms.openlocfilehash: 9ea4e4ec78e5613758bd9e5ff7a4fbd3273208c6
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43841683"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53312822"
 ---
 # <a name="azure-search---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Поиск Azure"
 

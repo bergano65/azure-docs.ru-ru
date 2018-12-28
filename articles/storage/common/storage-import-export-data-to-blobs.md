@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 12/11/2018
 ms.author: alkohli
 ms.component: common
-ms.openlocfilehash: 023df222ee2e9ca6af1398dd70767938e61c90b7
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: ea81cb52b8492e429903de15a9ff0156c91abae2
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51824117"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53309592"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "51824117"
 - Соответствующее количество дисков [поддерживаемых типов](storage-import-export-requirements.md#supported-disks). 
 - Система с ОС Windows [поддерживаемой версии](storage-import-export-requirements.md#supported-operating-systems). 
 - Включить технологию BitLocker в системе Windows. Дополнительные сведения о включении BitLocker см. в [этой статье](http://thesolving.com/storage/how-to-enable-bitlocker-on-windows-server-2012-r2/).
-- [Скачайте WAImportExport версии 1](https://www.microsoft.com/en-us/download/details.aspx?id=42659) в систему Windows. Распакуйте содержимое в папку по умолчанию: `waimportexportv1`. Например, `C:\WaImportExportV1`.
+- [Скачайте WAImportExport версии 1](https://aka.ms/waiev1) в систему Windows. Распакуйте содержимое в папку по умолчанию: `waimportexportv1`. Например, `C:\WaImportExportV1`.
 - Учетная запись FedEx или DHL.  
     - Учетная запись должна быть действительной, иметь баланс и возможности возврата.
     - Создайте номер отслеживания для задания экспорта.
@@ -39,7 +39,7 @@ ms.locfileid: "51824117"
         - [Создать учетную запись FedEX](https://www.fedex.com/en-us/create-account.html) или 
         - [Создать учетную запись DHL](http://www.dhl-usa.com/en/express/shipping/open_account.html).
 
-## <a name="step-1-prepare-the-drives"></a>Шаг 1. Подготовка дисков
+## <a name="step-1-prepare-the-drives"></a>Шаг 1. Подготовка дисков
 
 На этом шаге создается файл журнала. В файле журнала хранятся основные сведения, например серийный номер диска, ключ шифрования и сведения об учетной записи хранения. 
 
@@ -79,7 +79,7 @@ ms.locfileid: "51824117"
     > [!IMPORTANT]
     > - Вместе с файлом журнала в той же папке, где находится средство, также создается файл `<Journal file name>_DriveInfo_<Drive serial ID>.xml`. XML-файл используется вместо файла журнала при создании задания, если файл журнала слишком велик. 
 
-## <a name="step-2-create-an-import-job"></a>Шаг 2. Создание задания импорта
+## <a name="step-2-create-an-import-job"></a>Шаг 2. создание задания импорта;
 
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
 
@@ -129,16 +129,16 @@ ms.locfileid: "51824117"
 
     ![Создание задания импорта — шаг 4](./media/storage-import-export-data-to-blobs/import-to-blob6.png)
 
-## <a name="step-3-ship-the-drives"></a>Шаг 3. Отправка дисков 
+## <a name="step-3-ship-the-drives"></a>Шаг 3. Отправка дисков 
 
 [!INCLUDE [storage-import-export-ship-drives](../../../includes/storage-import-export-ship-drives.md)]
 
 
-## <a name="step-4-update-the-job-with-tracking-information"></a>Шаг 4. Указание данных об отслеживании для задания
+## <a name="step-4-update-the-job-with-tracking-information"></a>Шаг 4. Указание данных об отслеживании для задания
 
 [!INCLUDE [storage-import-export-update-job-tracking](../../../includes/storage-import-export-update-job-tracking.md)]
 
-## <a name="step-5-verify-data-upload-to-azure"></a>Шаг 5: Проверка передачи данных в Azure
+## <a name="step-5-verify-data-upload-to-azure"></a>Шаг 5. Проверка передачи данных в Azure
 
 Отслеживание задания до завершения. После завершения задания убедитесь, что данные переданы в Azure. Удалите локальные данные только после подтверждения, что загрузка прошла успешно.
 

@@ -3,7 +3,7 @@ title: Руководство по устранению неполадок Azure
 description: Сведения об устранении неполадок при резервном копировании виртуальных машин SQL Server в Azure.
 services: backup
 documentationcenter: ''
-author: markgalioto
+author: rayne-wiselman
 manager: carmonm
 editor: ''
 keywords: ''
@@ -11,17 +11,16 @@ ms.assetid: ''
 ms.service: backup
 ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 06/19/2018
-ms.author: markgal;anuragm
+ms.author: anuragm
 ms.custom: ''
-ms.openlocfilehash: 1c87382c2aae70b022fb391f80f7c75b0a4e5fe6
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: 89344b6e06dbc62fe56c0aebc30a049aebf5c097
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36296961"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53339524"
 ---
 # <a name="troubleshoot-back-up-sql-server-on-azure"></a>Устранении неполадок резервного копирования SQL Server в Azure
 
@@ -79,13 +78,13 @@ ms.locfileid: "36296961"
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Невозможно выполнить резервное копирование, так как журнал транзакций для источника данных заполнен. | Пространство журнала транзакций базы данных заполнено. | Чтобы устранить эту проблему, см. [документацию по SQL](https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-9002-database-engine-error). |
-| This SQL database does not support the requested backup type. (Эта база данных SQL не поддерживает запрашиваемый тип резервного копирования.) | Вторичные реплики группы доступности Always On не поддерживают полное и разностное резервное копирование. | <ul><li>Если вы инициировали резервное копирование ad-hoc, запускайте резервные копии на основном узле.</li><li>Если резервная копия была запланирована политикой, убедитесь, что основной узел зарегистрирован. Чтобы зарегистрировать узел, [выполните действия по обнаружению базы данных SQL Server](backup-azure-sql-database.md#discover-sql-server-databases).</li></ul> | 
+| This SQL database does not support the requested backup type. (Эта база данных SQL не поддерживает запрашиваемый тип резервного копирования.) | Вторичные реплики группы доступности Always On не поддерживают полное и разностное резервное копирование. | <ul><li>Если вы инициировали резервное копирование ad-hoc, запускайте резервные копии на основном узле.</li><li>Если резервная копия была запланирована политикой, убедитесь, что основной узел зарегистрирован. Чтобы зарегистрировать узел, [выполните действия по обнаружению базы данных SQL Server](backup-azure-sql-database.md#discover-sql-server-databases).</li></ul> |
 
 ## <a name="restore-failures"></a>Сбои при восстановлении
 
 Следующие коды ошибок отображаются при сбое задания восстановления.
 
-### <a name="usererrorcannotrestoreexistingdbwithoutforceoverwrite"></a>UserErrorCannotRestoreExistingDBWithoutForceOverwrite 
+### <a name="usererrorcannotrestoreexistingdbwithoutforceoverwrite"></a>UserErrorCannotRestoreExistingDBWithoutForceOverwrite
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
@@ -108,7 +107,7 @@ ms.locfileid: "36296961"
 
 Следующие коды ошибок предназначены для индикации ошибок регистрации.
 
-### <a name="fabricsvcbackuppreferencecheckfailedusererror"></a>FabricSvcBackupPreferenceCheckFailedUserError 
+### <a name="fabricsvcbackuppreferencecheckfailedusererror"></a>FabricSvcBackupPreferenceCheckFailedUserError
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
@@ -125,6 +124,16 @@ ms.locfileid: "36296961"
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Служба Azure Backup использует гостевой агент виртуальной машины Azure VM для выполнения резервного копирования, но агент недоступен на целевом сервере. | Гостевой агент отключен или неисправен | [Установите гостевой агент виртуальной машины](../virtual-machines/extensions/agent-windows.md) вручную. |
+
+## <a name="configure-backup-failures"></a>Сбои при настройке резервного копирования
+
+Следующие коды ошибок предназначены для индикации ошибок настройки резервного копирования.
+
+### <a name="autoprotectioncancelledornotvalid"></a>AutoProtectionCancelledOrNotValid
+
+| Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
+|---|---|---|
+| Намерение автоматической защиты было удалено или больше не действительно. | При включении автоматической защиты для экземпляра SQL задания **настройки резервного копирования** выполняются для всех баз данных в данном экземпляре. Если отключить автоматическую защиту при выполнении заданий, **текущие** задания будут отменены и отобразится этот код ошибки. | Включите автоматическую защиту еще раз, чтобы защитить остальные базы данных. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

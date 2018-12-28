@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/11/2018
+ms.date: 12/13/2018
 ms.author: markvi
 ms.reviewer: spunukol
-ms.openlocfilehash: 2f9075cef671128cacc37f16e8bf29bf0f60401d
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: 46dfb96df7b16fe03bd5c2c69fd9e2e33b04bbd2
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52619645"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53408584"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам условного доступа в Azure Active Directory
 
@@ -179,22 +179,29 @@ ms.locfileid: "52619645"
 |---|---|---|
 |Azure RemoteApp|Удаленная служба приложений Azure|Windows 10, Windows 8.1, Windows 7, iOS, Android и Mac OS X|
 |Приложение Dynamics CRM|Dynamics CRM|Windows 10, Windows 8.1, iOS и Android|
-|Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)|Office 365 Exchange Online|Windows 10|
+|Приложения "Почта", "Календарь" и "Люди", Outlook 2016, Outlook 2013 |Office 365 Exchange Online|Windows 10|
 |MFA и политика расположения для приложений Политики на основе устройств не поддерживаются. |Все службы приложения "Мои приложения"|Android и iOS|
 |Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент.|Microsoft Teams|Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
-|Приложения Office 2016, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e))|Office 365 SharePoint Online|Windows 8.1, Windows 7|
-|Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)); поддержка групп Office и SharePoint ожидается в будущем|Office 365 SharePoint Online|Windows 10|
+|Приложения Office 2013 и Office 2016, клиент синхронизации OneDrive (см. [заметки](https://support.office.com/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e))|Office 365 SharePoint Online|Windows 8.1, Windows 7|
+|Приложения Office 2016, универсальные приложения Office, Office 2013, клиент синхронизации OneDrive (см. [заметки](https://support.office.com/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)); поддержка групп Office и SharePoint ожидается в будущем|Office 365 SharePoint Online|Windows 10|
 |Office 2016 для macOS (только Word, Excel, PowerPoint, OneNote). Поддержку OneDrive для бизнеса планируется реализовать в будущем.|Office 365 SharePoint Online|Mac OS X|
 |Мобильные приложения Office|Office 365 SharePoint Online|Android, iOS|
 |Приложение Office Yammer|Office 365 Yammer|Windows 10, iOS, Android|
 |Outlook 2016 (Office для macOS)|Office 365 Exchange Online|Mac OS X|
-|Outlook 2016, Outlook 2013 (с современной проверкой подлинности), Skype для бизнеса (с современной проверкой подлинности)|Office 365 Exchange Online|Windows 8.1, Windows 7|
+|Outlook 2016, Outlook 2013, Skype для бизнеса|Office 365 Exchange Online|Windows 8.1, Windows 7|
 |Приложение Outlook Mobile|Office 365 Exchange Online|Android, iOS|
 |Приложение PowerBI|Служба PowerBI|Windows 10, Windows 8.1, Windows 7, Android и iOS|
 |Skype для бизнеса|Office 365 Exchange Online|Android, iOS |
 |Приложение Azure DevOps|Azure DevOps|Windows 10, Windows 8.1, Windows 7, iOS и Android|
 
 
+## <a name="support-for-legacy-authentication"></a>Поддержка устаревших методов проверки подлинности
+
+Выберите вариант **Другие клиенты**, чтобы указать условие, которое влияет на приложения, использующие обычную проверку подлинности с протоколами электронной почты IMAP, MAPI, POP, SMTP, и приложения Office более ранних версий, которые не используют современные методы проверки подлинности.  
+
+![Другие клиенты](./media/technical-reference/11.png)
+
+Дополнительные сведения см. в разделе [Клиентские приложения](conditions.md#client-apps).
 
 ## <a name="approved-client-app-requirement"></a>Требование утвержденного клиентского приложения 
 

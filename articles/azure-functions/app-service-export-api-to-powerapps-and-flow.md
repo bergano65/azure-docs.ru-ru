@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/15/2017
 ms.author: glenga
 ms.reviewer: sunayv
-ms.openlocfilehash: ceb0b1ce0d04c15a5b949519caad65d2c33b40ed
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: c9ff4332a10247787e3b11c5508d0d94a1f1c8ba
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44092457"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53410471"
 ---
 # <a name="exporting-an-azure-hosted-api-to-powerapps-and-microsoft-flow"></a>Экспорт размещенного в Azure API в PowerApps и Microsoft Flow
 
@@ -25,7 +25,7 @@ ms.locfileid: "44092457"
 Аналогичным образом разработчикам, которым необходимо расширить возможности совместного использования API внутри организации, может потребоваться предоставить доступ к своим API создателям приложений и потоков. В этой статье показано, как экспортировать API, созданный с помощью [Функций Azure](../azure-functions/functions-overview.md) или [службы приложений Azure](../app-service/app-service-web-overview.md). Экспортированный API становится *настраиваемым соединителем*, который используется в PowerApps и Microsoft Flow так же, как встроенный соединитель.
 
 ## <a name="create-and-export-an-api-definition"></a>Создание и экспорт определения API
-Перед экспортом API нужно описать его с помощью определения OpenAPI (ранее называвшегося файлом [Swagger](http://swagger.io/)). Это определение содержит сведения о доступных операция в API и о том, как необходимо структурировать данные запросов и ответов для API. С помощью PowerApps и Microsoft Flow можно создать настраиваемые соединители для любого определения OpenAPI 2.0. Функции Azure и служба приложений Azure имеют встроенную поддержку создания и размещения определений OpenAPI, а также управления ими. Дополнительные сведения см. в статье [Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure](../app-service/app-service-web-tutorial-rest-api.md).
+Перед экспортом API нужно описать его с помощью определения OpenAPI (ранее называвшегося файлом [Swagger](https://swagger.io/)). Это определение содержит сведения о доступных операция в API и о том, как необходимо структурировать данные запросов и ответов для API. С помощью PowerApps и Microsoft Flow можно создать настраиваемые соединители для любого определения OpenAPI 2.0. Функции Azure и служба приложений Azure имеют встроенную поддержку создания и размещения определений OpenAPI, а также управления ими. Дополнительные сведения см. в статье [Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure](../app-service/app-service-web-tutorial-rest-api.md).
 
 > [!NOTE]
 > Также можно создать настраиваемые соединители в пользовательских интерфейсах PowerApps и Microsoft Flow без использования определения OpenAPI. Дополнительные сведения см. в статьях [Регистрация и использование настраиваемых соединителей в PowerApps](https://powerapps.microsoft.com/tutorials/register-custom-api/) и [Регистрация и использование настраиваемых соединителей в Microsoft Flow](https://flow.microsoft.com/documentation/register-custom-api/).
@@ -154,7 +154,7 @@ PowerApps и Microsoft Flow поддерживают коллекцию пост
 ### <a name="azure-active-directory-azure-ad"></a>Azure Active Directory (Azure AD)
 При использовании Azure AD необходимо две регистрации приложения Azure AD: одна для API, а другая — для настраиваемого соединителя:
 
-- Чтобы настроить регистрацию для API, используйте возможность [проверки подлинности и авторизации в службе приложений](../app-service/app-service-mobile-how-to-configure-active-directory-authentication.md).
+- Чтобы настроить регистрацию для API, используйте возможность [проверки подлинности и авторизации в службе приложений](../app-service/configure-authentication-provider-aad.md).
 
 - Чтобы настроить регистрацию для соединителя, выполните действия, описанные в разделе [Добавление приложения](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#adding-an-application). Регистрации требуется делегированный доступ к вашему API и URL-адресу ответа из `https://msmanaged-na.consent.azure-apim.net/redirect`. 
 

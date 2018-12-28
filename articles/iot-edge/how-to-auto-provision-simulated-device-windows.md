@@ -1,5 +1,5 @@
 ---
-title: Автоматическая подготовка устройства Azure IoT Edge с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей в Windows | Документация Майкрософт
+title: Автоматическая подготовка устройств Windows с помощью DPS — Azure IoT Edge | Документация Майкрософт
 description: Использование имитированного устройства на компьютере Windows для тестирования автоматической подготовки устройств для Azure IoT Edge с помощью Службы подготовки устройств к добавлению в Центр Интернета вещей
 author: kgremban
 manager: philmea
@@ -8,12 +8,13 @@ ms.date: 08/06/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 9be790d9b512dc9338cf183240430ad0ada3bef4
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: a251eb3915ee3043ab4b69e0cd4cef8fa2170486
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51565111"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53101608"
 ---
 # <a name="create-and-provision-a-simulated-tpm-edge-device-on-windows"></a>Создание и подготовка имитированного устройства IoT Edge TPM в Windows
 

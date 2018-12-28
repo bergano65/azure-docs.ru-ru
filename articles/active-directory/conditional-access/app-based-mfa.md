@@ -13,17 +13,17 @@ ms.topic: article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 06/13/2018
+ms.date: 12/14/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: f27ced5c67c5124d0792c5ce3884c88473fba056
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 1c61286a24c3562e32cb4c734ea081526d38837a
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45604201"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413160"
 ---
-# <a name="quickstart-require-mfa-for-specific-apps-with-azure-active-directory-conditional-access"></a>Краткое руководство. Требование многофакторной идентификации (MFA) для конкретных приложений с помощью условного доступа Azure Active Directory 
+# <a name="quickstart-require-mfa-for-specific-apps-with-azure-active-directory-conditional-access"></a>Краткое руководство. Требование Многофакторной идентификации для конкретных приложений с помощью условного доступа Azure Active Directory 
 
 Чтобы упростить процесс входа пользователей, им можно разрешить выполнять вход в облачные приложения с помощью имени пользователя и пароля. Однако во многих средах существует несколько приложений, для которых целесообразно требовать более строгую форму проверки учетной записи, такую как многофакторная идентификация (MFA). Этот вид проверки подойдет, к примеру, для доступа к системе электронной почты или приложениям отдела кадров в организации. В Azure Active Directory (Azure AD) это можно сделать с помощью политики условного доступа.    
 
@@ -85,11 +85,11 @@ ms.locfileid: "45604201"
 
     ![Azure Active Directory](./media/app-based-mfa/02.png)
 
-3. На странице **Azure Active Directory** в разделе **Управление** щелкните **Условный доступ**.
+3. На странице **Azure Active Directory** в разделе **Безопасность** щелкните **Условный доступ**.
 
     ![Условный доступ](./media/app-based-mfa/03.png)
  
-4. На странице **Условный доступ** на панели инструментов сверху нажмите кнопку **Добавить**.
+4. На странице **Условный доступ** на панели инструментов сверху нажмите кнопку **Создать политику**.
 
     ![Добавить](./media/app-based-mfa/04.png)
 

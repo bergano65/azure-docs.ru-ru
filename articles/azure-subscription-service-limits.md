@@ -8,14 +8,14 @@ tags: billing
 ms.assetid: 60d848f9-ff26-496e-a5ec-ccf92ad7d125
 ms.service: billing
 ms.topic: article
-ms.date: 11/05/2018
+ms.date: 12/10/2018
 ms.author: byvinyal
-ms.openlocfilehash: bd20ea58c7693b3be8f583810384aa26dde572d8
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: eb93dfae91ee84400c32af7b662c69aefda979d2
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51219568"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53409179"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет расширен и обновлен, чтобы охватить больше платформ.
@@ -54,10 +54,9 @@ ms.locfileid: "51219568"
 * [служба "Карты Azure"](#azure-maps-limits);
 * [Azure Monitor](#monitor-limits)
 * [Политика Azure](#azure-policy-limits)
-* [кэш Azure Redis](#azure-redis-cache-limits)
+* [Кэш Azure для Redis](#azure-redis-cache-limits)
 * [Архивация](#backup-limits)
 * [Пакетная служба](#batch-limits)
-* [Искусственный интеллект пакетной службы](#batch-ai-limits)
 * [Службы BizTalk](#biztalk-services-limits)
 * [CDN](#cdn-limits)
 * [Облачные службы](#cloud-services-limits)
@@ -220,9 +219,6 @@ ms.locfileid: "51219568"
 ### <a name="batch-limits"></a>Ограничения пакета
 [!INCLUDE [azure-batch-limits](../includes/azure-batch-limits.md)]
 
-### <a name="batch-ai-limits"></a>Ограничения службы Batch AI
-[!INCLUDE [azure-batch-ai-limits](../includes/azure-batch-ai-limits.md)]
-
 ### <a name="biztalk-services-limits"></a>Ограничения служб BizTalk
 В следующей таблице показаны ограничения для служб BizTalk Azure.
 
@@ -329,7 +325,7 @@ Azure Cosmos DB — это глобальная база данных, проп�
 ### <a name="api-management-limits"></a>Ограничения управления API
 [!INCLUDE [api-management-service-limits](../includes/api-management-service-limits.md)]
 
-### <a name="azure-redis-cache-limits"></a>Ограничения кэша Redis для Azure
+### <a name="azure-cache-for-redis-limits"></a>Ограничения кэша Azure для Redis
 [!INCLUDE [redis-cache-service-limits](../includes/redis-cache-service-limits.md)]
 
 ### <a name="key-vault-limits"></a>Ограничения хранилища ключей

@@ -1,5 +1,5 @@
 ---
-title: Ресурсы документации по когнитивному поиску (Поиск Azure) | Документация Майкрософт
+title: Ресурсы документации по когнитивному поиску (служба "Поиск Azure")
 description: Аннотированный перечень статей, руководств, примеров и записей блога, связанных с рабочими нагрузками когнитивного поиска в службе "Поиск Azure".
 services: search
 manager: cgronlun
@@ -9,12 +9,13 @@ ms.devlang: NA
 ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: heidist
-ms.openlocfilehash: bad73d2bf8bdf4adee4ce6e40550e506a35a2083
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.custom: seodec2018
+ms.openlocfilehash: 609b5d990cffce10733f6fc82e6b1032ad0f06bb
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49165686"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53314607"
 ---
 # <a name="documentation-resources-for-cognitive-search-workloads"></a>Ресурсы документации для рабочих нагрузок когнитивного поиска
 
@@ -24,8 +25,8 @@ ms.locfileid: "49165686"
 
 ## <a name="getting-started"></a>Приступая к работе
 + [What is cognitive search?](cognitive-search-concept-intro.md) (Что такое когнитивный поиск?)
-+ [Краткое руководство по созданию конвейера когнитивного поиска с использованием навыков и примера данных](cognitive-search-quickstart-blob.md)
-+ [Руководство по вызову API-интерфейсов когнитивного поиска (предварительная версия)](cognitive-search-tutorial-blob.md)
++ [Краткое руководство Создание конвейера когнитивного поиска с использованием навыков и примера данных](cognitive-search-quickstart-blob.md)
++ [Руководство. Вызов API когнитивного поиска (предварительная версия)](cognitive-search-tutorial-blob.md)
 + [Пример создания пользовательского навыка с помощью API перевода текста](cognitive-search-create-custom-skill-example.md)
 
 ## <a name="how-to-guidance"></a>Практические руководства

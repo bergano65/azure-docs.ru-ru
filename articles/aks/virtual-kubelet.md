@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/14/2018
 ms.author: iainfou
-ms.openlocfilehash: cd41fba675a0814e6f2a1b17576add7811a803eb
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: e5d415593a510acb81eac65242010d1841044857
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233486"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53162653"
 ---
 # <a name="use-virtual-kubelet-with-azure-kubernetes-service-aks"></a>Использование Virtual Kubelet со службой Azure Kubernetes (AKS)
 
@@ -22,9 +22,9 @@ ms.locfileid: "50233486"
 При использовании поставщика Virtual Kubelet для Экземпляров контейнеров Azure вы можете назначить контейнеры Linux и Windows на экземпляр контейнера, как если бы это был стандартный узел Kubernetes. Эта конфигурация позволяет воспользоваться преимуществами Kubernetes и возможностью управления стоимостью и затратами экземпляров контейнеров.
 
 > [!NOTE]
+> Теперь в AKS есть встроенная поддержка планирования контейнеров в ACI (*виртуальные узлы*). Сейчас эти виртуальные узлы поддерживают экземпляры контейнеров Linux. Если вам нужно запланировать экземпляры контейнеров Windows, вы можете продолжить работу с Virtual Kubelet. В противном случае следует использовать виртуальные узлы и не выполнять вручную инструкции Virtual Kubelet, указанные в данной статье. Вы можете начать работу с виртуальными узлами с помощью [Azure CLI][virtual-nodes-cli] или [портала Azure][virtual-nodes-portal].
+>
 > Virtual Kubelet представляет собой экспериментальный открытый проект и должен использоваться таким образом. Чтобы внести свой вклад в проект, сообщить о проблемах и получить дополнительную информацию о Virtual Kubelet, зайдите на [страницу проекта Virtual Kubelet на GitHub][vk-github].
-
-В этом документе приведены инструкции по настройке Virtual Kubelet для экземпляров контейнеров в службе Azure Kubernetes.
 
 ## <a name="prerequisite"></a>Предварительные требования
 
@@ -90,7 +90,7 @@ az aks install-connector --resource-group myAKSCluster --name myAKSCluster --con
 | `--connector-name` | Имя соединителя ACI.| Yes |
 | `--name` `-n` | Имя управляемого кластера. | Yes |
 | `--resource-group` `-g` | Имя группы ресурсов. | Yes |
-| `--os-type` | Тип операционной системы экземпляров контейнера. Допустимые значения: Both, Linux, Windows. Значение по умолчанию: Linux. | Нет  |
+| `--os-type` | Тип операционной системы экземпляров контейнера. Допустимые значения: Оба, Linux, Windows. Значение по умолчанию: Linux. | Нет  |
 | `--aci-resource-group` | Группа ресурсов, в которой будут созданы группы контейнеров ACI. | Нет  |
 | `--location` `-l` | Расположение для создания групп контейнеров ACI. | Нет  |
 | `--service-principal` | Субъект-служба, используемый для проверки подлинности в API-интерфейсах Azure. | Нет  |
@@ -228,13 +228,15 @@ az aks remove-connector --resource-group myAKSCluster --name myAKSCluster --conn
 
 Возможные причины этой проблемы с Virtual Kubelet см. в разделе [Known quirks and workarounds][vk-troubleshooting] (Известные особенности и обходные пути). Чтобы сообщить о проблемах с Virtual Kubelet, [откройте раздел репозитория GitHub "Проблемы"][vk-issues].
 
-Дополнительные сведения о Virtual Kubelet см. на [странице проекта Virtual Kubelet в Github][vk-github].
+Дополнительные сведения о Virtual Kubelet см. на [странице проекта Virtual Kubelet в GitHub][vk-github].
 
 <!-- LINKS - internal -->
 [aks-quick-start]: ./kubernetes-walkthrough.md
 [aks-remove-connector]: /cli/azure/aks#az-aks-remove-connector
 [az-container-list]: /cli/azure/aks#az-aks-list
 [aks-install-connector]: /cli/azure/aks#az-aks-install-connector
+[virtual-nodes-cli]: virtual-nodes-cli.md
+[virtual-nodes-portal]: virtual-nodes-portal.md
 
 <!-- LINKS - external -->
 [kubectl-create]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create

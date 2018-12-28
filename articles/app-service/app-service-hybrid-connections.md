@@ -1,5 +1,5 @@
 ---
-title: Гибридные подключения к службе приложений Azure | Документация Майкрософт
+title: Гибридные подключения к Службе приложений Azure | Документация Майкрософт
 description: Создание и использование гибридных подключений для доступа к ресурсам в разнородных сетях.
 services: app-service
 documentationcenter: ''
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/26/2018
 ms.author: ccompy
-ms.openlocfilehash: 69897e288a90a731d95db82d0ff978d776c12580
-ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
+ms.custom: seodec18
+ms.openlocfilehash: 084d5e9453ea5a55bdeeff839e4c70890575c83d
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42144539"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53258021"
 ---
 # <a name="azure-app-service-hybrid-connections"></a>Гибридные подключения к службе приложений Azure #
 
@@ -136,7 +137,7 @@ ms.locfileid: "42144539"
 Вот как можно добавить одно или несколько гибридных подключений в HCM.
 
 1. Запустите пользовательский интерфейс HCM.
-1. Щелкните **Configure another hybrid connection** (Настроить еще одно гибридное подключение).
+2. Щелкните **Configure another hybrid connection** (Настроить еще одно гибридное подключение).
 ![Снимок экрана настройки новых гибридных подключений][8]
 
 1. Войдите в систему с использованием учетной записи Azure.
@@ -249,8 +250,8 @@ ms.locfileid: "42144539"
 [12]: ./media/app-service-hybrid-connections/hybridconn-bt.png
 
 <!--Links-->
-[HCService]: http://docs.microsoft.com/azure/service-bus-relay/relay-hybrid-connections-protocol/
-[portal]: http://portal.azure.com/
-[oldhc]: http://docs.microsoft.com/azure/biztalk-services/integration-hybrid-connection-overview/
-[sbpricing]: http://azure.microsoft.com/pricing/details/service-bus/
+[HCService]: https://docs.microsoft.com/azure/service-bus-relay/relay-hybrid-connections-protocol/
+[portal]: https://portal.azure.com/
+[oldhc]: https://docs.microsoft.com/azure/biztalk-services/integration-hybrid-connection-overview/
+[sbpricing]: https://azure.microsoft.com/pricing/details/service-bus/
 [armclient]: https://github.com/projectkudu/ARMClient/

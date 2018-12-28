@@ -14,12 +14,12 @@ ms.devlang: node
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: cbedb17bb7563620d0d9db81333d9a79301b4ee0
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: e435baf4a5e3382e3e77195e5315299e3963ff5c
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42817514"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53409264"
 ---
 # <a name="how-to-use-the-mobile-apps-nodejs-sdk"></a>Использование пакета SDK Node.js для функции "Мобильные приложения"
 
@@ -152,7 +152,7 @@ ms.locfileid: "42817514"
 
 В следующей процедуре используется репозиторий Git для скачивания кода проекта быстрого запуска.
 
-1. Установите Git, если его у вас еще нет. Действия, необходимые для установки Git, отличаются в разных операционных системах. Сведения о дистрибутивах для разных операционных систем и руководство по установке см. в статье [Getting Started - Installing Git](http://git-scm.com/book/en/Getting-Started-Installing-Git) (Начало работы. Установка Git).
+1. Установите Git, если его у вас еще нет. Действия, необходимые для установки Git, отличаются в разных операционных системах. Сведения о дистрибутивах для разных операционных систем и руководство по установке см. в статье [Getting Started - Installing Git](https://git-scm.com/book/en/Getting-Started-Installing-Git) (Начало работы. Установка Git).
 1. Чтобы включить репозиторий Git для сайта серверной части, ознакомьтесь с разделом [Подготовка репозитория](../app-service/app-service-deploy-local-git.md#prepare-your-repository). Запишите имя пользователя и пароль для развертывания.
 1. В области для серверной части функции "Мобильные приложения" найдите параметр **URL-адрес клона Git** и запишите его.
 1. Выполните команду `git clone`, указав URL-адрес клона Git. Введите пароль в ответ на запрос, как показано в следующем примере.
@@ -176,7 +176,7 @@ Microsoft Azure предоставляет множество механизмо
 В отношении приложений на Node.js в службе приложений Azure существуют четкие рекомендации, с которыми вам следует ознакомиться перед публикацией серверной части:
 
 * [Указание версии Node.js в приложении Azure]
-* [Использование модулей Node]
+*  [Использование модулей Node]
 
 ### <a name="howto-enable-homepage"></a>Включение домашней страницы для приложения
 
@@ -918,13 +918,13 @@ module.exports = api;
 
 На панели команд для таблицы есть следующие команды.
 
-* **Change permissions** (Изменить разрешения) — позволяет изменить права на операции чтения, вставки, обновления и удаления для таблицы.
+* **Изменить разрешения**. Измените разрешения для операций чтения, вставки, обновления и удаления для таблицы.
  Возможные варианты: разрешен анонимный доступ, требуется проверка подлинности, любой доступ к операции запрещен.
-* **Edit script** (Изменить скрипт) — позволяет открыть файл скрипта для таблицы в редакторе службы приложений.
-* **Управление схемой** — позволяет удалять или добавлять столбцы, а также изменять индекс таблицы.
-* **Clear table** (Очистить таблицу) — удаляет из существующей таблицы все строки данных, сохраняя неизменной ее схему.
-* **Delete rows** (Удалить строки) — удаляет отдельные строки данных.
-* **View streaming logs** (Просмотреть журналы потоковой передачи) — позволяет подключиться к службе потоковой передачи журналов для вашего сайта.
+* **Изменить скрипт**. Позволяет открыть файл скрипта для таблицы в редакторе службы приложений.
+* **Управление схемой**. Позволяет удалять или добавлять столбцы, а также изменять индекс таблицы.
+* **Очистить таблицу**. Удаляет из существующей таблицы все строки данных, сохраняя неизменной ее схему.
+* **Удалить строки**. Удаляет отдельные строки данных.
+* **Просмотреть журналы потоковой передачи**. Позволяет подключиться к службе потоковой передачи журналов для вашего сайта.
 
 ### <a name="work-easy-apis"></a>Работа со средством "Простые API" на портале Azure
 
@@ -963,11 +963,11 @@ module.exports = api;
 [Быстрый запуск клиента Xamarin.Forms]: app-service-mobile-xamarin-forms-get-started.md
 [Быстрый запуск клиента Магазина Windows Phone]: app-service-mobile-windows-store-dotnet-get-started.md
 [автономной синхронизации данных]: app-service-mobile-offline-data-sync.md
-[Настройка приложения службы приложений для использования входа с помощью Azure Active Directory]: ../app-service/app-service-mobile-how-to-configure-active-directory-authentication.md
-[Как настроить приложение службы приложений для использования имени для входа Facebook]: ../app-service/app-service-mobile-how-to-configure-facebook-authentication.md
-[Как настроить приложение службы приложений для использования имени для входа Google]: ../app-service/app-service-mobile-how-to-configure-google-authentication.md
-[Настройка приложения службы приложений для использования входа по учетной записи Майкрософт]: ../app-service/app-service-mobile-how-to-configure-microsoft-authentication.md
-[Как настроить приложение службы приложений для использования имени для входа Twitter]: ../app-service/app-service-mobile-how-to-configure-twitter-authentication.md
+[Настройка приложения службы приложений для использования входа с помощью Azure Active Directory]: ../app-service/configure-authentication-provider-aad.md
+[Как настроить приложение службы приложений для использования имени для входа Facebook]: ../app-service/configure-authentication-provider-facebook.md
+[Как настроить приложение службы приложений для использования имени для входа Google]: ../app-service/configure-authentication-provider-google.md
+[Настройка приложения службы приложений для использования входа по учетной записи Майкрософт]: ../app-service/configure-authentication-provider-microsoft.md
+[Как настроить приложение службы приложений для использования имени для входа Twitter]: ../app-service/configure-authentication-provider-twitter.md
 [Развертывание локального репозитория Git в службе приложений Azure]: ../app-service/app-service-deploy-local-git.md
 [Мониторинг приложений в службе приложений Azure]: ../app-service/web-sites-monitor.md
 [Включение ведения журнала диагностики для веб-приложений в службе приложений Azure]: ../app-service/web-sites-enable-diagnostic-log.md
@@ -976,11 +976,11 @@ module.exports = api;
 [Использование модулей Node]: ../nodejs-use-node-modules-azure-apps.md
 [Create a new Azure App Service]: ../app-service/
 [azure-mobile-apps]: https://www.npmjs.com/package/azure-mobile-apps
-[Express]: http://expressjs.com/
-[Swagger]: http://swagger.io/
+[Express]: https://expressjs.com/
+[Swagger]: https://swagger.io/
 
 [портал Azure]: https://portal.azure.com/
-[OData]: http://www.odata.org
+[OData]: https://www.odata.org
 [Promise]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 [примере basicapp на сайте GitHub]: https://github.com/azure/azure-mobile-apps-node/tree/master/samples/basic-app
 [примере todo на GitHub]: https://github.com/azure/azure-mobile-apps-node/tree/master/samples/todo
@@ -989,6 +989,6 @@ module.exports = api;
 [QueryJS]: https://github.com/Azure/queryjs
 [Node.js Tools 1.1 для Visual Studio]: https://github.com/Microsoft/nodejstools/releases/tag/v1.1-RC.2.1
 [mssql Node.js]: https://www.npmjs.com/package/mssql
-[Microsoft SQL Server 2014 Express]: http://www.microsoft.com/en-us/server-cloud/Products/sql-server-editions/sql-server-express.aspx
-[Использование промежуточных обработчиков]: http://expressjs.com/guide/using-middleware.html
+[Microsoft SQL Server 2014 Express]: https://www.microsoft.com/en-us/server-cloud/Products/sql-server-editions/sql-server-express.aspx
+[Использование промежуточных обработчиков]: https://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston

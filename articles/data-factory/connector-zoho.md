@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/15/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 1e052b656f12a9059a5ee9d3ea21d0fa20fc00c6
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 75594bf77f9bde7549b14e3a154f18ba67ebac3d
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46123068"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53103393"
 ---
 # <a name="copy-data-from-zoho-using-azure-data-factory-preview"></a>Копирование данных из Zoho с помощью фабрики данных Azure (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "46123068"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Zoho** | Yes |
+| Тип | Свойству type необходимо задать следующее значение: **Zoho** | Yes |
 | endpoint | Конечная точка сервера Zoho (`crm.zoho.com/crm/private`). | Yes |
 | accessToken | Маркер доступа для аутентификации Zoho. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет  |
@@ -74,7 +74,12 @@ ms.locfileid: "46123068"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Zoho.
 
-Чтобы скопировать данные с Zoho, установите свойство type набора данных **ZohoObject**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные с Zoho, установите свойство type набора данных **ZohoObject**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Для свойства type набора данных необходимо задать следующее значение: **ZohoObject** | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -86,7 +91,8 @@ ms.locfileid: "46123068"
         "linkedServiceName": {
             "referenceName": "<Zoho linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -95,14 +101,14 @@ ms.locfileid: "46123068"
 
 Полный список разделов и свойств, используемых для определения действий, см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md). В этом разделе содержится список свойств, поддерживаемых источником Zoho.
 
-### <a name="zohosource-as-source"></a>ZohoSource в качестве источника
+### <a name="zoho-as-source"></a>Zoho в качестве источника
 
 Чтобы копировать данные из Zoho, установите тип источника **ZohoSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **ZohoSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Accounts"`. | Yes |
+| Тип | Свойство type источника действия копирования должно иметь следующее значение: **ZohoSource** | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Accounts"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

@@ -9,18 +9,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/02/2018
 ms.author: ashish
-ms.openlocfilehash: 93eb6fb0da86909dfc880db2a9bb2331abe4418a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 3e664fc83fde937b26a4726f997da4c0cb4d8f8a
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46948136"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53407887"
 ---
 # <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
 
 HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Это позволяет сжимать кластер в нерабочие часы или в выходные дни, а также разворачивать его при пиковых бизнес-требованиях.
 
-Например, при пакетной обработке раз в день или месяц можно увеличить масштаб кластера HDInsight за несколько минут до запуска запланированного события, чтобы обеспечить достаточный объем памяти и вычислительной мощности ЦП. Масштабирование можно автоматизировать с помощью командлета PowerShell [`Set–AzureRmHDInsightClusterSize`](hdinsight-administer-use-powershell.md#scale-clusters).  Позже после обработки, когда кластер HDInsight не требует интенсивного использования, можно уменьшить его масштаб для меньшего количества рабочих узлов.
+Например, при пакетной обработке раз в день или месяц можно увеличить масштаб кластера HDInsight за несколько минут до запуска запланированного события, чтобы обеспечить достаточный объем памяти и вычислительной мощности ЦП. Масштабирование можно автоматизировать с помощью командлета PowerShell [`Set–AzureRmHDInsightClusterSize`](hdinsight-administer-use-powershell.md#scale-clusters).  Позже после обработки, когда кластер HDInsight не требует интенсивного использования, можно уменьшить его масштаб для меньшего количества рабочих узлов.
 
 * Чтобы масштабировать кластер с помощью [PowerShell](hdinsight-administer-use-powershell.md), выполните команду ниже:
 
@@ -77,7 +77,7 @@ yarn application -kill <application_id>
 yarn application -kill "application_1499348398273_0003"
 ```
 
-## <a name="rebalancing-an-hbase-cluster"></a>Повторная балансировка кластера HBase
+## <a name="rebalancing-an-apache-hbase-cluster"></a>Повторная балансировка кластера Apache HBase
 
 В течение нескольких минут после завершения операции масштабирования автоматически выполняется балансировка нагрузки на региональные серверы. Чтобы вручную распределить нагрузку между региональными серверами, выполните следующие действия.
 
@@ -99,11 +99,11 @@ yarn application -kill "application_1499348398273_0003"
 
 ![Изменение масштаба кластера](./media/hdinsight-scaling-best-practices/scale-cluster.png)
 
-Если сжать кластер до масштаба одного рабочего узла, как показано на рисунке выше, HDFS может зависнуть в безопасном режиме при перезагрузке рабочих узлов для установки исправлений или сразу же после операции масштабирования.
+Если сжать кластер до масштаба одного рабочего узла, как показано на рисунке выше, Apache HDFS может зависнуть в безопасном режиме при перезагрузке рабочих узлов для установки исправлений или сразу же после операции масштабирования.
 
 В основном это происходит, так как в Hive используется несколько файлов `scratchdir` и ожидается по умолчанию три реплики каждого блока, хотя при уменьшении масштаба как минимум до одного рабочего узла возможна только одна реплика. В результате этого файлы в каталоге `scratchdir` становятся *нереплицированными*. Это может привести к тому, что HDFS зависнет в безопасном режиме после перезапуска служб после операции масштабирования.
 
-При попытке уменьшить масштаб HDInsight обращается к интерфейсам управления Ambari для вывода из эксплуатации дополнительных нежелательных рабочих узлов, что приводит к репликации их блоков HDFS на другие интерактивные рабочие узлы, и последующего успешного уменьшения масштаба кластера. HDFS переходит в безопасный режим во время периода обслуживания и выходит из этого режима после завершения масштабирования. Именно на этом этапе HDFS может зависнуть в безопасном режиме.
+При попытке уменьшить масштаб HDInsight обращается к интерфейсам управления Apache Ambari для вывода из эксплуатации дополнительных нежелательных рабочих узлов, что приводит к репликации их блоков HDFS на другие интерактивные рабочие узлы, и последующего успешного уменьшения масштаба кластера. HDFS переходит в безопасный режим во время периода обслуживания и выходит из этого режима после завершения масштабирования. Именно на этом этапе HDFS может зависнуть в безопасном режиме.
 
 HDFS настраивается с помощью параметра `dfs.replication` для трех рабочих узлов. Таким образом, блоки пустых файлов являются нереплицированными, если в интерактивном режиме менее трех рабочих узлов, так как не ожидается, что будут доступны три копии каждого блока файла.
 
@@ -119,11 +119,11 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode leave
 
 * H070 не удалось открыть сеанс Hive. org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: **не удается создать каталог** /tmp/hive/hive/819c215c-6d87-4311-97c8-4f0b9d2adcf0. **Узел имени работает в безопасном режиме**. Количество полученных блоков — 75, требуется еще 12 для достижения порога 0,9900 от общего количества блоков — 87. Количество активных узлов данных (10) стало минимальным (0). Безопасный режим автоматически отключится по достижении пороговых значений.
 
-* H100 не удалось отправить базы данных отображения инструкции: org.apache.thrift.transport.TTransportException: org.apache.http.conn.HttpHostConnectException: подключение к hn0-clustername.servername.internal.cloudapp.net:10001 [hn0-clustername.servername. internal.cloudapp.net/1.1.1.1] завершилось сбоем: **в подключении отказано**.
+* H100 не удалось отправить базы данных отображения инструкции: org.apache.thrift.transport.TTransportException: org.apache.http.conn.HttpHostConnectException: подключение к hn0-clustername.servername.internal.cloudapp.net:10001 [hn0-clustername.servername. internal.cloudapp.NET/1.1.1.1] завершилось сбоем: **В подключении отказано**
 
-* H020 не удалось подключиться к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001: org.apache.thrift.transport.TTransportException: не удалось создать подключение через HTTP-сеанс к http://hn0-hdisrv.servername.bx.internal.cloudapp.net:10001/. org.apache.http.conn.HttpHostConnectException: подключение к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001 [hn0-hdisrv.servername.bx.internal.cloudapp.net/10.0.0.28] завершилось сбоем: в подключении отказано: org.apache.thrift.transport.TTransportException: не удалось создать подключение через HTTP-сеанс к http://hn0-hdisrv.servername.bx.internal.cloudapp.net:10001/. org.apache.http.conn.HttpHostConnectException: подключение к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001 [hn0-hdisrv.servername.bx.internal.cloudapp.net/10.0.0.28] завершилось сбоем: **в подключении отказано**.
+* H020 не удалось подключиться к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001: org.apache.thrift.transport.TTransportException: не удалось создать подключение через HTTP к http://hn0-hdisrv.servername.bx.internal.cloudapp.net:10001/. org.apache.http.conn.HttpHostConnectException: подключение к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001 [hn0-hdisrv.servername.bx.internal.cloudapp.net/10.0.0.28] завершилось сбоем: в подключении отказано: org.apache.thrift.transport.TTransportException: не удалось создать подключение через HTTP к http://hn0-hdisrv.servername.bx.internal.cloudapp.net:10001/. org.apache.http.conn.HttpHostConnectException: подключение к hn0-hdisrv.servername.bx.internal.cloudapp.net:10001 [hn0-hdisrv.servername.bx.internal.cloudapp.net/10.0.0.28] завершилось сбоем: **В подключении отказано**
 
-* Из журналов Hive: предупреждение [основное]: server.HiveServer2 (HiveServer2.java:startHiveServer2(442)) – ошибка запуска HiveServer2 с попытки: 21, повторная попытка через 60 секунд java.lang.RuntimeException: ошибка применения политики авторизации для конфигурации Hive: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: **не удается создать каталог** /tmp/hive/hive/70a42b8a-9437-466e-acbe-da90b1614374. **Узел имени работает в безопасном режиме**.
+* Из журналов Hive: WARN [main]: server.HiveServer2 (HiveServer2.java:startHiveServer2(442)) — ошибка запуска HiveServer2 с 21 попытки, повторная попытка будет осуществлена через 60 секунд; java.lang.RuntimeException: ошибка при применении авторизации политики для конфигурации Hive: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.ipc.RetriableException): org.apache.hadoop.hdfs.server.namenode.SafeModeException: **Не удается создать каталог** /tmp/hive/hive/70a42b8a-9437-466e-acbe-da90b1614374. **Узел имени работает в безопасном режиме**.
     Количество полученных блоков — 0, требуется еще 9 для достижения порога 0,9900 от общего количества блоков — 9.
     Количество активных узлов данных (10) стало минимальным (0). **Безопасный режим автоматически отключится по достижении пороговых значений**.
     org.apache.hadoop.hdfs.server.namenode.FSNamesystem.checkNameNodeSafeMode(FSNamesystem.java:1324)
@@ -151,7 +151,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode get
 
 ![Безопасный режим отключен](./media/hdinsight-scaling-best-practices/safe-mode-off.png)
 
-> [!NOTE]
+> [!NOTE]  
 > Требуется параметр `-D`, так как в HDInsight файловой системой по умолчанию является служба хранилища Azure или Azure Data Lake Store. Параметр `-D` указывает, что команды выполняются в локальной файловой системе HDFS.
 
 Затем можно просмотреть отчет, в котором содержатся дополнительные сведения о состоянии HDFS:
@@ -251,7 +251,7 @@ The filesystem under path '/tmp/hive/hive' is CORRUPT
 hadoop fs -rm -r -skipTrash hdfs://mycluster/tmp/hive/
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > Эта команда может повлиять на работу Hive, если выполнение некоторых заданий не завершено.
 
 ### <a name="how-to-prevent-hdinsight-from-getting-stuck-in-safe-mode-due-to-under-replicated-blocks"></a>Как предотвратить зависание HDInsight в безопасном режиме из-за нереплицированных блоков
@@ -327,4 +327,4 @@ hadoop fs -rm -r -skipTrash hdfs://mycluster/tmp/hive/
 
 * [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)
 * [Масштабирование кластеров](hdinsight-administer-use-portal-linux.md#scale-clusters)
-* [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
+* [Управление кластерами HDInsight с помощью веб-интерфейса Apache Ambari](hdinsight-hadoop-manage-ambari.md)

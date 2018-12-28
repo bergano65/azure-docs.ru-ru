@@ -1,9 +1,8 @@
 ---
-title: Интерфейсы API, пакет SDK и ресурсы для SQL Node.js (Azure Cosmos DB) | Документация Майкрософт
+title: Azure Cosmos DB — интерфейсы API, пакет SDK и ресурсы для SQL Node.js
 description: Сведения об API и пакете SDK для SQL Node.js, включая даты выхода, даты выбытия и изменения, внесенные в каждую версию пакета SDK для Node.js для Azure Cosmos DB.
 services: cosmos-db
 author: deborahc
-editor: cgronlun
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: nodejs
@@ -11,12 +10,12 @@ ms.topic: reference
 ms.date: 09/24/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b5ba00376e40b92a217bddd5b27c53dbe30c3cf3
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 08e928143e8e54797869a06f4f7b99fd89cdcacc
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51687509"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53343995"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для Node.js для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -29,7 +28,7 @@ ms.locfileid: "51687509"
 > * [Python](sql-api-sdk-python.md)
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
-> * [SQL](https://msdn.microsoft.com/library/azure/dn782250.aspx)
+> * [SQL](sql-api-query-reference.md)
 > * [BulkExecutor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
 > * [BulkExecutor — Java](sql-api-sdk-bulk-executor-java.md)
 
@@ -107,8 +106,8 @@ ms.locfileid: "51687509"
 ### <a name="1.12.1"/>1.12.1</a>
 * Исправлена ошибка в executeStoredProcedure, где документы содержали специальные символы Юникода (LS, PS).
 * Исправлена ошибка обработки документов с использованием символов Юникода в ключе секции.
-* Исправлена поддержка создания коллекций с именем носителя. Проблема GitHub 114.
-* Исправлена поддержка маркера авторизации разрешений. Проблема GitHub 178.
+* Исправлена поддержка создания коллекций с именем носителя. Проблема GitHub 114.
+* Исправлена поддержка маркера авторизации разрешений. Проблема GitHub 178.
 
 ### <a name="1.12.0"/>1.12.0</a>
 * Добавлена поддержка нового [уровня согласованности](consistency-levels.md) с именем ConsistentPrefix.
@@ -120,8 +119,8 @@ ms.locfileid: "51687509"
 * Добавлена возможность контролировать степень параллелизма для запросов между секциями.
 * Добавлена возможность отключения проверки SSL при работе с эмулятором Azure Cosmos DB.
 * Минимальная пропускная способность секционированных коллекций снижена с 10 100 ЕЗ/с до 2500 ЕЗ/с.
-* Исправлена ошибка маркера продолжения для односекционной коллекции. Проблема GitHub 107.
-* Исправлена ошибка выполнения хранимой процедуры (executeStoredProcedure) при обработке 0 как одного параметра. Проблема GitHub 155.
+* Исправлена ошибка маркера продолжения для односекционной коллекции. Проблема GitHub 107.
+* Исправлена ошибка выполнения хранимой процедуры (executeStoredProcedure) при обработке 0 как одного параметра. Проблема GitHub 155.
 
 ### <a name="1.10.2"/>1.10.2</a>
 * Теперь заголовок User-Agent включает версию пакета SDK.
@@ -156,7 +155,7 @@ ms.locfileid: "51687509"
 * Исправлена ошибка метода resolveForRead() hashPartitionResolver. Ранее вместо возврата списка всех зарегистрированных ссылок при отсутствии ключа раздела вызвалось исключение.
 
 ### <a name="1.5.4"/>1.5.4</a>
-* Устранена проблема [№ 100](https://github.com/Azure/azure-documentdb-node/issues/100). Выделенный агент HTTPS: избегайте изменения глобального агента для Azure Cosmos DB. Используйте выделенный агент для всех запросов lib.
+* Устранена проблема [100](https://github.com/Azure/azure-documentdb-node/issues/100). Выделенный агент HTTPS: избегайте изменения глобального агента для Azure Cosmos DB. Используйте выделенный агент для всех запросов lib.
 
 ### <a name="1.5.3"/>1.5.3</a>
 * Устранена проблема [№ 81](https://github.com/Azure/azure-documentdb-node/issues/81). Правильная обработка тире в идентификаторах носителей.

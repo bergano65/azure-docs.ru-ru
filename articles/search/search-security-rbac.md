@@ -1,6 +1,6 @@
 ---
-title: Настройка ролей RBAC для административного доступа к службе "Поиск Azure" на портале | Документаций Майкрософт
-description: Административное управление доступом на основе ролей на портале Azure
+title: Настройка ролей RBAC для административного доступа к службе "Поиск Azure" на портале
+description: Сведения о настройке административного управления доступом на основе ролей на портале Azure для контроля и делегирования задач администрирования в службе "Поиск Azure".
 author: HeidiSteen
 manager: cgronlun
 services: search
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: heidist
-ms.openlocfilehash: 1a463c9eb52ffe2a667cdeace7478e67233a0806
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.custom: seodec2018
+ms.openlocfilehash: 38b8e8a0e413f367d34a4ccf5dbd87817891b8ea
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31792932"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53313026"
 ---
 # <a name="set-rbac-roles-for-administrative-access"></a>Настройка ролей RBAC с правами администратора
 

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 2c4730b3ec84ca14bcc3e93ed82faf37b15970d7
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 0d27b16690516becc586678f8cf3edea234feeea
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51010377"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53383405"
 ---
 # <a name="understand-and-resolve-errors-received-from-webhcat-on-hdinsight"></a>Понимание и устранение ошибок, полученных из WebHCat в HDInsight
 
@@ -22,18 +22,18 @@ ms.locfileid: "51010377"
 
 ## <a name="what-is-webhcat"></a>Что такое WebHCat
 
-[WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat) — это REST API для [HCatalog](https://cwiki.apache.org/confluence/display/Hive/HCatalog), уровень управления таблицами и хранилищем данных для Hadoop. WebHCat активирован по умолчанию в кластерах HDInsight и используется различными средствами для отправки заданий, получения состояния задания и т. д. без входа в кластер.
+[WebHCat](https://cwiki.apache.org/confluence/display/Hive/WebHCat) — это REST API для [HCatalog](https://cwiki.apache.org/confluence/display/Hive/HCatalog), уровень управления таблицами и хранилищем данных для Apache Hadoop. WebHCat активирован по умолчанию в кластерах HDInsight и используется различными средствами для отправки заданий, получения состояния задания и т. д. без входа в кластер.
 
 ## <a name="modifying-configuration"></a>Изменение конфигурации
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Некоторые из ошибок, приведенных в этом документе, возникают из-за превышения установленного максимума. Если на этапе разрешения ошибки упоминается, что можно изменить значение, необходимо сделать одно из следующих действий для внесения изменений:
 
-* Для кластеров на основе **Windows** : используйте Action Script, чтобы настроить значение во время создания кластера. Для получения дополнительных сведений обратитесь к разделу [Разработка сценариев Action Script](hdinsight-hadoop-script-actions.md).
+* Для кластеров **Windows**: используйте сценарий действия, чтобы настроить значение во время создания кластера. Для получения дополнительных сведений обратитесь к разделу [Разработка сценариев Action Script](hdinsight-hadoop-script-actions.md).
 
-* Для кластеров на основе **Linux** : используйте Ambari (онлайн версию или API-Интерфейс REST) для изменения значения. Для получения дополнительных сведений обратитесь к разделу [Управления HDInsight с помощью Ambari](hdinsight-hadoop-manage-ambari.md)
+* Для кластеров **Linux**: используйте Ambari (онлайн-версию или API-Интерфейс REST) для изменения значения. Дополнительные сведения см. в разделе [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 ### <a name="default-configuration"></a>Конфигурация по умолчанию
@@ -62,7 +62,7 @@ ms.locfileid: "51010377"
 | --- | --- |
 | Обычно этот код состояния отображается во время обработки отказа между первичным и вторичным головным узлом кластера. |Подождите две минуты, а затем повторите операцию |
 
-## <a name="bad-request-content-could-not-find-job"></a>Неправильный запрос содержимого: не удалось найти задание
+## <a name="bad-request-content-could-not-find-job"></a>Недопустимый запрос. Содержимое: не удалось найти задание
 
 **Код состояния HTTP**: 400
 

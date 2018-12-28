@@ -1,25 +1,23 @@
 ---
-title: Пакет SDK, интерфейс API SQL и ресурсы для Python (Azure Cosmos DB) | Документация Майкрософт
+title: Azure Cosmos DB — API, пакет SDK и ресурсы для SQL Python
 description: Сведения о пакете SDK и интерфейсах API SQL для Python, включая даты выхода и прекращения использования, а также изменения, внесенные в каждую версию пакета SDK для Azure Cosmos DB на Python.
 services: cosmos-db
 author: rnagpal
-manager: kfile
-editor: cgronlun
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: python
 ms.topic: reference
-ms.date: 9/24/2018
+ms.date: 11/29/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 75b5fd2f586a9122aa1248ba88d7ceab59b13215
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.openlocfilehash: cf796466d8d4156eb442e6b0d1b51cb70d0d30f3
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48269298"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53337093"
 ---
-# <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Python для API-интерфейса SQL
+# <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK для Azure Cosmos DB на Python для API SQL. Заметки о выпуске и материалы
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
 > * [Веб-канал изменений в .NET](sql-api-sdk-dotnet-changefeed.md)
@@ -30,7 +28,7 @@ ms.locfileid: "48269298"
 > * [Python](sql-api-sdk-python.md)
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
-> * [SQL](https://msdn.microsoft.com/library/azure/dn782250.aspx)
+> * [SQL](sql-api-query-reference.md)
 > * [BulkExecutor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
 > * [BulkExecutor — Java](sql-api-sdk-bulk-executor-java.md)
 
@@ -51,10 +49,28 @@ ms.locfileid: "48269298"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
+### <a name="a-name302302"></a><a name="3.0.2"/>3.0.2
+* Добавлена поддержка типа данных MultiPolygon.
+* Исправление ошибки в политике повтора чтения сеанса.
+* Исправление ошибки неверного заполнения при декодировании строк base 64.
+
+### <a name="a-name301301"></a><a name="3.0.1"/>3.0.1
+* Исправление ошибки в LocationCache.
+* Исправление ошибки в логике повторных попыток конечной точки.
+* Исправленная документация
+
 ### <a name="a-name300300"></a><a name="3.0.0"/>3.0.0
 * Поддержка для операций записи в нескольких регионах.
 * Пространство имен изменено на "azure.cosmos".
 * Данные коллекции и документа переименованы как контейнер и элемент: "document_client" — в "cosmos_client". 
+
+### <a name="a-name233233"></a><a name="2.3.3"/>2.3.3
+* Добавлена поддержка прокси-сервера.
+* Добавлена поддержка чтения канала изменений.
+* Добавлена поддержка заголовков квот по умолчанию для коллекции.
+* Устранена проблема с токенами больших сеансов.
+* Устранены проблемы с API ReadMedia.
+* Устранена проблема в кэше диапазона ключей секций.
 
 ### <a name="a-name232232"></a><a name="2.3.2"/>2.3.2
 * Добавлена поддержка для повторных попыток по умолчанию при проблемах с подключением.
@@ -145,6 +161,9 @@ ms.locfileid: "48269298"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [3.0.2](#3.0.2) |15 ноября 2018 г. |--- |
+| [3.0.1](#3.0.1) |04 октября 2018 г. |--- |
+| [2.3.3](#2.3.3) |08 сентября 2018 г. |--- |
 | [2.3.2](#2.3.2) |8 мая 2018 г. |--- |
 | [2.3.1](#2.3.1) |21 декабря 2017 г. |--- |
 | [2.3.0](#2.3.0) |10 ноября 2017 г. |--- |
