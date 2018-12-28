@@ -1,5 +1,5 @@
 ---
-title: Определение сценариев углубленной аналитики для Машинного обучения Azure | Документация Майкрософт
+title: Определение сценариев для машинного обучения Azure — командный процесс обработки и анализа данных
 description: Выберите оптимальные сценарии использования процесса обработки и анализа данных группы для расширенной прогнозной аналитики.
 services: machine-learning
 author: marktab
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 16d8457e5605ce0e3c10ed95296b5a883a4c602c
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 88c3be12647bd73296c214390d3d2fb1fe79ccb4
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52444840"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53138897"
 ---
 # <a name="scenarios-for-advanced-analytics-in-azure-machine-learning"></a>Сценарии для расширенной аналитики в Машинном обучении Azure
 В этой статье описаны различные источники примеров данных и типовые сценарии, в которых можно использовать [процесс обработки и анализа данных группы (TDSP)](overview.md). Процесс TDSP предоставляет систематический подход для совместной работы групп над созданием интеллектуальных приложений. В представленных сценариях продемонстрированы варианты рабочих процессов обработки данных на основе характеристик данных, исходных расположений и целевых репозиториев в Azure.
@@ -39,18 +39,18 @@ ms.locfileid: "52444840"
 > 
 > 
 
-## <a name="smalllocal"></a>Сценарий \#№1. Набор табличных данных небольшого и среднего размера в локальных файлах
+## <a name="smalllocal"></a>Сценарий \#№1. Набор табличных данных небольшого и среднего размера в локальных файлах
 ![Локальные файлы небольшого и среднего размера][1]
 
-#### <a name="additional-azure-resources-none"></a>Дополнительные ресурсы Azure: отсутствуют
+#### <a name="additional-azure-resources-none"></a>Дополнительные ресурсы Azure: Нет
 1. Войдите в [Студию машинного обучения Azure](https://studio.azureml.net/).
 1. Отправьте набор данных.
 1. Создайте последовательность операций эксперимента Машинного обучения Azure, начиная с отправленных наборов данных.
 
-## <a name="smalllocalprocess"></a>Сценарий \#№2. Набор данных небольшого и среднего размера в локальных файлах, требующий обработки
+## <a name="smalllocalprocess"></a>Сценарий \#№2. Набор данных небольшого и среднего размера в локальных файлах, требующий обработки
 ![Локальные файлы небольшого и среднего размера, требующие обработки][2]
 
-#### <a name="additional-azure-resources-azure-virtual-machine-ipython-notebook-server"></a>Дополнительные ресурсы Azure: виртуальная машина Azure (сервер IPython Notebook)
+#### <a name="additional-azure-resources-azure-virtual-machine-ipython-notebook-server"></a>Дополнительные ресурсы Azure: Виртуальная машина Azure (сервер IPython Notebook)
 1. Создайте виртуальную машину Azure с IPython Notebook.
 1. Отправьте данные в контейнер хранилища Azure.
 1. Предварительно обработайте и очистите данные в IPython Notebook из контейнера хранилища Azure.
@@ -60,10 +60,10 @@ ms.locfileid: "52444840"
 1. Считайте данные из больших двоичных объектов Azure с помощью модуля [Импорт данных][import-data].
 1. Создайте последовательность операций эксперимента Машинного обучения Azure, начиная с принятых наборов данных.
 
-## <a name="largelocal"></a>Сценарий\# №3. Большой набор данных в локальных файлах, загружаемый в большие двоичные объекты Azure
+## <a name="largelocal"></a>Сценарий \#№3. Большой набор данных в локальных файлах, загружаемый в большие двоичные объекты Azure
 ![Локальные файлы большого размера][3]
 
-#### <a name="additional-azure-resources-azure-virtual-machine-ipython-notebook-server"></a>Дополнительные ресурсы Azure: виртуальная машина Azure (сервер IPython Notebook)
+#### <a name="additional-azure-resources-azure-virtual-machine-ipython-notebook-server"></a>Дополнительные ресурсы Azure: Виртуальная машина Azure (сервер IPython Notebook)
 1. Создайте виртуальную машину Azure с IPython Notebook.
 1. Отправьте данные в контейнер хранилища Azure.
 1. Предварительно обработайте и очистите данные в IPython Notebook из больших двоичных объектов Azure.
@@ -75,10 +75,10 @@ ms.locfileid: "52444840"
 1. Считайте данные из больших двоичных объектов Azure с помощью модуля [Импорт данных][import-data].
 1. Создайте последовательность операций эксперимента Машинного обучения Azure, начиная с принятых наборов данных.
 
-## <a name="smalllocaltodb"></a>Сценарий \#№4. Набор данных небольшого и среднего размера в локальных файлах, загружаемый на сервер SQL Server в виртуальной машине Azure
+## <a name="smalllocaltodb"></a>Сценарий \#№4. Набор данных небольшого и среднего размера в локальных файлах, загружаемый на сервер SQL Server в виртуальной машине Azure
 ![Локальные файлы небольшого и среднего размера для базы данных SQL в Azure][4]
 
-#### <a name="additional-azure-resources-azure-virtual-machine-sql-server--ipython-notebook-server"></a>Дополнительные ресурсы Azure: виртуальная машина Azure (сервер SQL Server и IPython Notebook)
+#### <a name="additional-azure-resources-azure-virtual-machine-sql-server--ipython-notebook-server"></a>Дополнительные ресурсы Azure: Виртуальная машина Azure (сервер SQL Server / IPython Notebook)
 1. Создайте виртуальную машину Azure с SQL Server и IPython Notebook.
 1. Отправьте данные в контейнер хранилища Azure.
 1. Предварительно обработайте и очистите данные в контейнере хранилища Azure с помощью IPython Notebook.
@@ -86,14 +86,14 @@ ms.locfileid: "52444840"
 1. Сохраните данные в локальных файлах виртуальной машины (IPython Notebook запущен на виртуальной машине, и в качестве локальных дисков используются диски виртуальной машины).
 1. Загрузите данные в базу данных SQL Server на виртуальной машине Azure.
    
-   Вариант \# №1. Использование SQL Server Management Studio.
+   Вариант \#1. Использование среды SQL Server Management Studio.
    
    * Войдите в виртуальную машину SQL Server.
    * Запустите среду SQL Server Management Studio.
    * Создайте базу данных и целевые таблицы.
    * Используйте один из методов массового импорта для загрузки локальных файлов виртуальной машины.
    
-   Вариант \# №2. Использование IPython Notebook (не рекомендуется использовать этот вариант для средних и больших наборов данных).
+   Вариант \#2. Использование IPython Notebook (не рекомендуется использовать этот вариант для средних и больших наборов данных).
    
    <!-- -->    
    * Используйте строку подключения ODBC для доступа к SQL Server на виртуальной машине.
@@ -105,10 +105,10 @@ ms.locfileid: "52444840"
 1. Считайте данные непосредственно из SQL Server с помощью модуля [Импорт данных][import-data]. При необходимости вставьте требуемый запрос, который извлекает поля, создает признаки и примеры данных, непосредственно в запрос модуля [Импорт данных][import-data].
 1. Создайте последовательность операций эксперимента Машинного обучения Azure, начиная с принятых наборов данных.
 
-## <a name="largelocaltodb"></a>Сценарий \#№5. Большой набор данных в локальных файлах, загружаемый на сервер SQL Server в виртуальной машине Azure
+## <a name="largelocaltodb"></a>Сценарий \#№5. Большой набор данных в локальных файлах, целевой SQL Server в виртуальной машине Azure
 ![Локальные файлы большого размера для базы данных SQL в Azure][5]
 
-#### <a name="additional-azure-resources-azure-virtual-machine-sql-server--ipython-notebook-server"></a>Дополнительные ресурсы Azure: виртуальная машина Azure (сервер SQL Server и IPython Notebook)
+#### <a name="additional-azure-resources-azure-virtual-machine-sql-server--ipython-notebook-server"></a>Дополнительные ресурсы Azure: Виртуальная машина Azure (сервер SQL Server / IPython Notebook)
 1. Создайте виртуальную машину Azure с SQL Server и IPython Notebook.
 1. Отправьте данные в контейнер хранилища Azure.
 1. Предварительно обработайте и очистите данные (необязательно).
@@ -146,10 +146,10 @@ ms.locfileid: "52444840"
 1. Считайте данные непосредственно из SQL Server с помощью модуля [Импорт данных][import-data]. При необходимости вставьте требуемый запрос, который извлекает поля, создает признаки и примеры данных, непосредственно в запрос модуля [Импорт данных][import-data].
 1. Создайте простую последовательность операций эксперимента Машинного обучения Azure, начиная с отправленного набора данных.
 
-## <a name="largedbtodb"></a>Сценарий\# №6. Большой набор данных в локальной базе данных SQL Server, загружаемый на сервер SQL Server в виртуальной машине Azure
+## <a name="largedbtodb"></a>Сценарий \#№6. Большой набор данных в локальной базе данных SQL Server, загружаемый на сервер SQL Server в виртуальной машине Azure
 ![Большая локальная база данных SQL для базы данных SQL в Azure][6]
 
-#### <a name="additional-azure-resources-azure-virtual-machine-sql-server--ipython-notebook-server"></a>Дополнительные ресурсы Azure: виртуальная машина Azure (сервер SQL Server и IPython Notebook)
+#### <a name="additional-azure-resources-azure-virtual-machine-sql-server--ipython-notebook-server"></a>Дополнительные ресурсы Azure: Виртуальная машина Azure (сервер SQL Server / IPython Notebook)
 1. Создайте виртуальную машину Azure с SQL Server и IPython Notebook.
 1. Экспортируйте данные из SQL Server в файлы дампа, используя один из методов экспорта данных.
    
@@ -185,7 +185,7 @@ ms.locfileid: "52444840"
 ### <a name="alternate-method-to-copy-a-full-database-from-an-on-premises--sql-server-to-azure-sql-database"></a>Альтернативный метод копирования всей базы данных из локальной системы SQL Server в базу данных SQL Azure
 ![Отсоединение локальной базы данных и присоединение к базе данных SQL в Azure][7]
 
-#### <a name="additional-azure-resources-azure-virtual-machine-sql-server--ipython-notebook-server"></a>Дополнительные ресурсы Azure: виртуальная машина Azure (сервер SQL Server и IPython Notebook)
+#### <a name="additional-azure-resources-azure-virtual-machine-sql-server--ipython-notebook-server"></a>Дополнительные ресурсы Azure: Виртуальная машина Azure (сервер SQL Server / IPython Notebook)
 Чтобы реплицировать всю базу данных SQL Server в виртуальной машине SQL Server, вам следует скопировать базу данных из одного расположения или сервера в другое (на другой) при условии, что база данных может временно работать в автономном режиме. Это можно сделать в обозревателе объектов SQL Server Management Studio или с помощью эквивалентных команд Transact-SQL.
 
 1. Отсоедините базу данных в исходном расположении. Дополнительные сведения см. в статье [Отсоединение базы данных](https://technet.microsoft.com/library/ms191491\(v=sql.110\).aspx).
@@ -194,10 +194,10 @@ ms.locfileid: "52444840"
 
 [Перенос базы данных путем отсоединения и присоединения (язык Transact-SQL)](https://technet.microsoft.com/library/ms187858\(v=sql.110\).aspx)
 
-## <a name="largedbtohive"></a>Сценарий \# №7. Данные большого размера в локальных файлах, загружаемые в базу данных Hive в кластерах Azure HDInsight Hadoop
+## <a name="largedbtohive"></a>Сценарий \#№7. Данные большого размера в локальных файлах, загружаемые в базу данных Hive в кластерах Azure HDInsight Hadoop
 ![Данные большого размера в локальных файлах для базы данных Hive][9]
 
-#### <a name="additional-azure-resources-azure-hdinsight-hadoop-cluster-and-azure-virtual-machine-ipython-notebook-server"></a>Дополнительные ресурсы Azure: кластер Azure HDInsight Hadoop и виртуальная машина Azure (сервер IPython Notebook)
+#### <a name="additional-azure-resources-azure-hdinsight-hadoop-cluster-and-azure-virtual-machine-ipython-notebook-server"></a>Дополнительные ресурсы Azure: Кластер Azure HDInsight Hadoop и виртуальная машина Azure (сервер IPython Notebook)
 1. Создайте виртуальную машину Azure с сервером IPython Notebook.
 1. Создайте кластер Azure HDInsight Hadoop.
 1. Предварительно обработайте и очистите данные (необязательно).

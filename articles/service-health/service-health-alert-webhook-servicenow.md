@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2017
 ms.author: shtabriz
-ms.openlocfilehash: 1f5984f8f28832c33d3a5a844fde72e7286ad251
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6dc66e551c1bce94b473a356cf4648e5c2353a2b
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39433795"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53271306"
 ---
 # <a name="configure-service-health-alerts-with-servicenow"></a>Настройка оповещений о работоспособности служб для ServiceNow
 
@@ -154,15 +154,15 @@ ms.locfileid: "39433795"
 
 ## <a name="create-an-alert-using-servicenow-in-the-azure-portal"></a>Создание предупреждения для ServiceNow на портале Azure
 ### <a name="for-a-new-action-group"></a>Для новой группы действий выполните следующее.
-1. Выполните шаги с 1 по 8, описанные [в этой статье](../monitoring-and-diagnostics/monitoring-activity-log-alerts-on-service-notifications.md), чтобы создать предупреждение в новой группе действий.
+1. Выполните шаги с 1 по 8, описанные [в этой статье](../azure-monitor/platform/alerts-activity-log-service-notifications.md), чтобы создать предупреждение в новой группе действий.
 
 1. В списке **Действия** определите следующие сведения.
 
-    a. **Тип действия**: *Веб-перехватчик*.
+    a. **Тип действия:** *webhook*
 
-    b. **Подробности.** **URL-адрес интеграции** для ServiceNow, который вы сохранили ранее.
+    b. **Подробности:** **URL-адрес интеграции ServiceNow**, который вы сохранили ранее.
 
-    c. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
+    c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 
 1. Завершив создание оповещения, нажмите кнопку **Сохранить**.
 
@@ -175,16 +175,16 @@ ms.locfileid: "39433795"
 
 1. В список **Действия** добавьте следующие сведения.
 
-    a. **Тип действия**: *Веб-перехватчик*.
+    a. **Тип действия:** *webhook*
 
-    b. **Подробности.** **URL-адрес интеграции** для ServiceNow, который вы сохранили ранее.
+    b. **Подробности:** **URL-адрес интеграции ServiceNow**, который вы сохранили ранее.
 
-    c. **Имя**: имя, псевдоним или идентификатор веб-перехватчика.
+    c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 
 1. Завершив изменение группы действий, нажмите кнопку **Сохранить**.
 
 ## <a name="testing-your-webhook-integration-via-an-http-post-request"></a>Проверка интеграции с веб-перехватчиком с помощью запроса HTTP POST
-1. Создайте полезные данные о работоспособности служб, которые хотите отправить. Пример полезных данных для веб-перехватчика службы работоспособности служб см. в статье [Веб-перехватчики для оповещений журнала действий Azure](../monitoring-and-diagnostics/monitoring-activity-log-alerts-webhook.md).
+1. Создайте полезные данные о работоспособности служб, которые хотите отправить. Пример полезных данных для веб-перехватчика службы работоспособности служб см. в статье [Веб-перехватчики для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md).
 
 1. Создайте запрос HTTP POST следующим образом:
 
@@ -201,6 +201,6 @@ ms.locfileid: "39433795"
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Узнайте, [как настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
-- Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../monitoring-and-diagnostics/monitoring-activity-log-alerts-webhook.md). 
+- Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md). 
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../monitoring-and-diagnostics/monitoring-service-notifications.md).
-- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../monitoring-and-diagnostics/monitoring-action-groups.md).
+- Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).

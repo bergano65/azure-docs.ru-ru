@@ -13,21 +13,21 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: 3ff1db9ee7dc34ce529702d61b3ac5970bb5d9df
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 0ef4aa988f4adc855051b213013636b4a04f1cca
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52309879"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53316987"
 ---
 #  <a name="cannot-rdp-to-a-vm-because-the-vm-boots-into-safe-mode"></a>Сбой подключения к виртуальной машине по протоколу RDP по причине загрузки виртуальной машины в безопасном режиме
 
 В этой статье описывается, как устранить сбой подключения к Виртуальным машинам Windows Azure из-за загрузки виртуальной машины в безопасном режиме.
 
-> [!NOTE] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической. 
+> [!NOTE]
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
 
-## <a name="symptoms"></a>Проблемы 
+## <a name="symptoms"></a>Проблемы
 
 Вы не можете установить подключение по протоколу RDP или другие подключения (например, по протоколу HTTP) к виртуальной машине в Azure, потому что виртуальная машина настроена на загрузку в безопасном режиме. При проверке снимка экрана в разделе [Диагностика загрузки](../troubleshooting/boot-diagnostics.md) на портале Azure вы увидите, что виртуальная машина загружается нормально, однако сетевой интерфейс недоступен:
 
@@ -38,7 +38,7 @@ ms.locfileid: "52309879"
 Служба RDP недоступна в безопасном режиме. При загрузке виртуальной машины в безопасном режиме загружаются только основные системные программы и службы. Это применимо к двум различным версиям безопасного режима: "Минимальная безопасная загрузка" и "Безопасная загрузка с возможностью подключения".
 
 
-## <a name="solution"></a>Решение 
+## <a name="solution"></a>Решение
 
 Прежде чем выполнять какие-либо действия, сделайте моментальный снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
 
@@ -46,9 +46,9 @@ ms.locfileid: "52309879"
 
 ### <a name="use-serial-control"></a>Использование последовательной консоли
 
-1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](./serial-console-windows.md#open-cmd-or-powershell-in-serial-console
+1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](./serial-console-windows.md#use-cmd-or-powershell-in-serial-console
 ). Если на виртуальной машине последовательная консоль не включена, перейдите к разделу [Автономное восстановление виртуальной машины](#repair-the-vm-offline).
-2. Проверьте данные конфигурации загрузки: 
+2. Проверьте данные конфигурации загрузки:
 
         bcdedit /enum
 
@@ -65,7 +65,7 @@ ms.locfileid: "52309879"
 3. Удалите параметр **безопасного режима загрузки**, чтобы виртуальная машина загружалась в обычном режиме:
 
         bcdedit /deletevalue {current} safeboot
-        
+
 4. Проверьте данные конфигурации загрузки, чтобы убедиться, что параметр **safeboot** удален:
 
         bcdedit /enum
@@ -77,7 +77,7 @@ ms.locfileid: "52309879"
 #### <a name="attach-the-os-disk-to-a-recovery-vm"></a>Подключите диск ОС к виртуальной машине восстановления.
 
 1. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](../windows/troubleshoot-recovery-disks-portal.md).
-2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления. 
+2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления.
 3. Убедитесь, что в консоли "Управление дисками" подключенный диск имеет состояние **Подключен**. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
 
 #### <a name="enable-dump-log-and-serial-console-optional"></a>Включение журнала дампа и последовательной консоли (необязательно)
@@ -111,23 +111,24 @@ ms.locfileid: "52309879"
     REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
 
     reg unload HKLM\BROKENSYSTEM
+    ```
 
-#### Configure the Windows to boot into normal mode
+#### <a name="configure-the-windows-to-boot-into-normal-mode"></a>Настройка Windows для загрузки в обычном режиме
 
-1. Open an elevated command prompt session (**Run as administrator**).
-2. Check the boot configuration data. In the following commands, we assume that the drive letter that is assigned to the attached OS disk is F. Replace this drive letter with the appropriate value for your VM. 
+1. Откройте сеанс командной строки с повышенными привилегиями (**запуск от имени администратора**).
+2. Проверьте данные конфигурации загрузки. В следующих командах мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением для своей виртуальной машины.
 
         bcdedit /store F:\boot\bcd /enum
-    Take note of the Identifier name of the partition that has the **\windows** folder. By default, the  Identifier name is "Default".  
+    Запишите имя идентификатора раздела, содержащего папку **\windows**. По умолчанию имя идентификатора — Default.
 
-    If the VM is configured to boot into Safe Mode, you will see an extra flag under the **Windows Boot Loader** section called **safeboot**. If you do not see the **safeboot** flag, this article does not apply to your scenario.
+    Если виртуальная машина настроена на загрузку в безопасном режиме, вы увидите в разделе **загрузчика Windows** дополнительный параметр, который называется **safeboot**. Если флаг **safeboot** не отображается, эта статья не применима к вашему сценарию.
 
-    ![The image about boot Identifier](./media/troubleshoot-rdp-safe-mode/boot-id.png)
+    ![Изображение. Идентификатор загрузки](./media/troubleshoot-rdp-safe-mode/boot-id.png)
 
-3. Remove the **safeboot** flag, so the VM will boot into normal mode:
+3. Удалите флаг **safeboot**, чтобы виртуальная машина загружалась в обычном режиме:
 
         bcdedit /store F:\boot\bcd /deletevalue {Default} safeboot
-4. Check the boot configuration data to make sure that the **safeboot** flag is removed:
+4. Проверьте данные конфигурации загрузки, чтобы убедиться, что параметр **safeboot** удален:
 
         bcdedit /store F:\boot\bcd /enum
-5. [Detach the OS disk and recreate the VM](../windows/troubleshoot-recovery-disks-portal.md). Then check whether the issue is resolved.
+5. [Отключение диска операционной системы и повторное создание виртуальной машины](../windows/troubleshoot-recovery-disks-portal.md). Затем проверьте, устранена ли проблема.

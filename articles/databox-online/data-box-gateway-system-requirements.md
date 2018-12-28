@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 10/17/2018
 ms.author: alkohli
-ms.openlocfilehash: 6978360769ba350d85a06116bfee6db9f80b0607
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: da22c09a227069af0eeb42ab67a59189ae494185
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50157366"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53256678"
 ---
 # <a name="azure-data-box-gateway-system-requirements-preview"></a>Системные требования для шлюза Azure Data Box (предварительная версия)
 
@@ -27,6 +27,19 @@ ms.locfileid: "50157366"
 > [!IMPORTANT]
 > Шлюз Data Box доступен в качестве предварительной версии. Изучите [условия использования для предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем развертывать это решение. 
 
+## <a name="specifications-for-the-virtual-device"></a>Спецификации виртуального устройства
+
+Чтобы подготовить виртуальное устройство Data Box, базовая главная система Шлюза Azure Data Box должна быть в состоянии выделить указанный ниже объем ресурсов.
+
+| спецификации;                                          | ОПИСАНИЕ              |
+|---------------------------------------------------------|--------------------------|
+| Виртуальные процессоры (ядра)   | Минимум 4 |            
+| Память  | Минимум 8 ГБ|
+| Доступность|Один узел|
+| диски;| Диск ОС: 250 ГБ <br> Диск данных: минимум 2 ТБ, с тонкой подготовкой, с использованием дисков SSD|
+| Сетевые интерфейсы|Один или несколько виртуальных сетевых интерфейсов|
+
+
 ## <a name="supported-os-for-clients-connected-to-device"></a>Поддерживаемая ОС для клиентов, подключенных к устройству
 
 Ниже приведен список поддерживаемых операционных систем для клиентов или узлов, подключенных к шлюзу Data Box.
@@ -34,7 +47,7 @@ ms.locfileid: "50157366"
 | **Операционная система и (или) платформа** | **Версии** |
 | --- | --- |
 | Windows Server |2012 R2 <br> 2016 |
-| Windows |8, 10 |
+|  Windows |8, 10 |
 | SUSE Linux |Enterprise Server 12 (x86_64)|
 | Ubuntu |16.04.3 LTS|
 | CentOS | 7.0 |

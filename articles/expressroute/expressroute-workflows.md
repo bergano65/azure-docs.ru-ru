@@ -1,23 +1,24 @@
 ---
-title: Процедуры настройки канала Azure ExpressRoute | Документация Майкрософт
-description: На этой странице описана процедура настройки канала ExpressRoute и пирингов
+title: 'Рабочий процесс настройки канала ExpressRoute: Azure | Документация Майкрософт'
+description: На этой странице описана процедура настройки канала ExpressRoute и пирингов.
 services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 08/29/2018
+ms.date: 12/07/2018
 ms.author: cherylmc
-ms.openlocfilehash: 765050c9c21c7ba752535fc391cc9bb7d8ac4083
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.custom: seodec18
+ms.openlocfilehash: 3ffcc5ac2193e607573ceb93717258f5349d1f15
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43301044"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53101693"
 ---
 # <a name="expressroute-workflows-for-circuit-provisioning-and-circuit-states"></a>Процедуры ExpressRoute для подготовки каналов и состояний каналов
 На этой странице описаны процедуры подготовки служб и настройки маршрутизации на высоком уровне.
 
-![](./media/expressroute-workflows/expressroute-circuit-workflow.png)
+![Рабочий процесс настройки канала](./media/expressroute-workflows/expressroute-circuit-workflow.png)
 
 Приведенная схема и соответствующие действия показывают, какие задачи нужно выполнить, чтобы полностью подготовить канал ExpressRoute. 
 
@@ -35,7 +36,7 @@ ms.locfileid: "43301044"
      > 
      > 
      
-     ![](./media/expressroute-workflows/routing-workflow.png)
+     ![Рабочие процессы маршрутизации](./media/expressroute-workflows/routing-workflow.png)
 5. Свяжите виртуальные сети с каналами ExpressRoute. Виртуальные сети можно связать с каналом ExpressRoute. Выполните инструкции по [связыванию виртуальных сетей](expressroute-howto-linkvnet-arm.md) с каналом. Эти виртуальные сети могут входить в ту же самую подписку, что и канал ExpressRoute, или в другую.
 
 ## <a name="expressroute-circuit-provisioning-states"></a>Состояния подготовки канала ExpressRoute

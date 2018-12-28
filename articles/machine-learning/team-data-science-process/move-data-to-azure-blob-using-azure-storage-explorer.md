@@ -1,5 +1,5 @@
 ---
-title: Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью Azure Storage Explorer | Документация Майкрософт
+title: Перемещение данных хранилища больших двоичных объектов с помощью обозревателя службы хранилища Azure — командный процесс обработки и анализа данных
 description: Перемещение данных в хранилище больших двоичных объектов Azure и из него с помощью обозревателя хранилищ Azure
 services: machine-learning
 author: marktab
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 7d4fc17c466f9f7187ca28c847631254d6600ead
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 99c9a86d130989e8c62a948e440b35c928b42299
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52447008"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53134104"
 ---
 # <a name="move-data-to-and-from-azure-blob-storage-using-azure-storage-explorer"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью Azure Storage Explorer
 Azure Storage Explorer — это бесплатный инструмент от корпорации Майкрософт, позволяющий визуально работать с данными из службы хранилища Azure на платформе Windows, MacOS и Linux. В этом разделе описывается, как использовать этот инструмент для передачи и скачивания данных из хранилища BLOB-объектов Azure. Этот инструмент можно скачать с сайта [Microsoft Azure Storage Explorer](http://storageexplorer.com/).
@@ -45,8 +45,8 @@ Azure Storage Explorer — это бесплатный инструмент от
 
 1. Запустите Microsoft Azure Storage Explorer.
 2. Чтобы отобразить мастер **Sign in to your account…** (Вход в учетную запись…), щелкните значок **Azure account settings (Параметры учетной записи Azure)**, а затем выберите **Add an account** (Добавить учетную запись) и введите свои учетные данные. ![Добавление учетной записи хранения Azure](./media/move-data-to-azure-blob-using-azure-storage-explorer/add-an-azure-store-account.png)
-3. Чтобы открыть мастер **Connect to Azure Storage** (Подключиться к хранилищу Azure), щелкните значок **Connect to Azure Storage** (Подключиться к службе хранилища Azure). ![Подключение к службе хранилища Azure](./media/move-data-to-azure-blob-using-azure-storage-explorer/connect-to-azure-storage-1.png)
-4. Введите ключ доступа из своей учетной записи хранения Azure в мастере **Connect to Azure Storage** (Подключиться к хранилищу Azure), а затем нажмите кнопку **Далее**. ![Подключение к службе хранилища Azure](./media/move-data-to-azure-blob-using-azure-storage-explorer/connect-to-azure-storage-2.png)
+3. Чтобы открыть мастер **Connect to Azure Storage** (Подключиться к хранилищу Azure), щелкните значок **Connect to Azure Storage** (Подключиться к службе хранилища Azure). ![Выберите команду "Подключение к службе хранилища Azure"](./media/move-data-to-azure-blob-using-azure-storage-explorer/connect-to-azure-storage-1.png)
+4. Введите ключ доступа из своей учетной записи хранения Azure в мастере **Connect to Azure Storage** (Подключиться к хранилищу Azure), а затем нажмите кнопку **Далее**. ![Введите ключ доступа используя учетную запись хранения Azure](./media/move-data-to-azure-blob-using-azure-storage-explorer/connect-to-azure-storage-2.png)
 5. Введите имя учетной записи хранения в поле **Account name** (Имя учетной записи) и нажмите кнопку **Далее**. ![Подключение внешнего хранилища](./media/move-data-to-azure-blob-using-azure-storage-explorer/attach-external-storage.png)
 6. Теперь добавленная учетная запись хранения должна быть в списке. Чтобы создать контейнер больших двоичных объектов в учетной записи хранения, щелкните правой кнопкой мыши узел **Blob Containers** (Контейнеры больших двоичных объектов) в этой учетной записи, выберите **Create Blob Container** (Создать контейнер BLOB-объектов) и введите имя.
 7. Чтобы передать данные в контейнер, выберите целевой контейнер и нажмите кнопку **Отправить**. ![Учетные записи хранения](./media/move-data-to-azure-blob-using-azure-storage-explorer/storage-accounts.png)

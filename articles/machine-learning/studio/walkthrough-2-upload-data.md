@@ -1,12 +1,11 @@
 ---
-title: Шаг 2. Отправка данных в эксперимент Студии машинного обучения Azure | Документация Майкрософт
-description: 'Второй этап разработки прогнозного решения: передача сохраненных общедоступных данных в Студию машинного обучения Azure.'
+title: Шаг 2. Передача данных в эксперимент Студии машинного обучения Azure | Документация Майкрософт
+description: Пошаговое руководство по разработке решения прогнозирования (шаг 2). Передача сохраненных общедоступных данных в Студию машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
-ms.author: amlstudiodocs
-manager: hjerez
+author: garyericson
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
+ms.author: garye
 editor: cgronlun
 ms.assetid: 9f4bc52e-9919-4dea-90ea-5cf7cc506d85
 ms.service: machine-learning
@@ -16,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/23/2017
-ms.openlocfilehash: 0dc39d42e1ad7cc955b0bdc91d9a4c5cb49a2f2e
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 90a73de4177cec74187da852709137d77d60b4d4
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52311982"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53261457"
 ---
-# <a name="walkthrough-step-2-upload-existing-data-into-an-azure-machine-learning-studio-experiment"></a>Шаг 2 пошагового руководства: отправка существующих данных в эксперимент Студию машинного обучения Azure
+# <a name="walkthrough-step-2-upload-existing-data-into-an-azure-machine-learning-studio-experiment"></a>Шаг 2. Передача существующих данных в эксперимент Студии машинного обучения Azure
 Это второй этап из пошагового руководства [Разработка решения для прогнозной аналитики в службе машинного обучения Azure](walkthrough-develop-predictive-solution.md)
 
 1. [Создание рабочей области машинного обучения](walkthrough-1-create-ml-workspace.md)
@@ -101,7 +100,7 @@ ms.locfileid: "52311982"
 
 Дополнительные сведения об импорте других типов данных в эксперимент см. в статье [Импорт обучающих данных в Студию машинного обучения Azure из разных источников данных](import-data.md).
 
-**Далее:[ создание эксперимента](walkthrough-3-create-new-experiment.md)**
+**Дальнейшие действия. [Создание нового эксперимента](walkthrough-3-create-new-experiment.md)**
 
 [1]: media/walkthrough-2-upload-data/menu.png
 [2]: media/walkthrough-2-upload-data/add-dataset.png

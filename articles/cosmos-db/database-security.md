@@ -1,21 +1,19 @@
 ---
-title: Безопасность базы данных в Azure Cosmos DB | Документация Майкрософт
+title: Безопасность баз данных в Azure Cosmos DB
 description: Узнайте, как Azure Cosmos DB обеспечивает защиту базы данных и данных.
 keywords: безопасность базы данных nosql, защита информации, безопасность данных, шифрование базы данных, защита базы данных, политики безопасности, тестирование безопасности
 services: cosmos-db
 author: rafats
-manager: kfile
 ms.service: cosmos-db
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/15/2017
 ms.author: rafats
-ms.openlocfilehash: 11e1a6d8c0a21c64c38ca1d9cb0583c75056dd08
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: 0ffd07269570b26b527286f1a0b5a57a6b5c6018
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52620512"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53093426"
 ---
 # <a name="azure-cosmos-db-database-security"></a>Безопасность базы данных в Azure Cosmos DB
 
@@ -49,7 +47,7 @@ ms.locfileid: "52620512"
 - Физическая защита серверов в защищенных центрах обработки данных
 - Сертификаты
 
-И хотя это может показаться очевидным, но последние [крупномасштабные нарушения в работе баз данных](http://thehackernews.com/2017/01/mongodb-database-security.html) напоминают нам о простых, но критических важных требованиях, которые необходимо выполнять:
+И хотя это может показаться очевидным, но последние [крупномасштабные нарушения в работе баз данных](https://thehackernews.com/2017/01/mongodb-database-security.html) напоминают нам о простых, но критических важных требованиях, которые необходимо выполнять:
 - На серверах устанавливаются исправления и поддерживается их актуальность
 - Шифрование HTTPS по умолчанию или SSL-шифрование
 - Административные учетные записи с надежными паролями
@@ -77,14 +75,14 @@ ms.locfileid: "52620512"
 |Установка геозон|Azure Cosmos DB обеспечивает управление данными для отдельных регионов (например, Германия, Китай или US Gov).|
 |Защищенное оборудование|Данные в Azure Cosmos DB хранятся на твердотельных накопителях SSD в защищенных центрах обработки данных Azure.<br><br>Дополнительные сведения о глобальных центрах обработки данных корпорации Майкрософт см. на [этой странице](https://www.microsoft.com/en-us/cloud-platform/global-datacenters).|
 |Шифрование HTTPS, SSL и TLS|Все взаимодействия между клиентом и службой в Azure Cosmos DB осуществляются по протоколу SSL/TLS 1.2. Кроме того, любая репликация внутри центра обработки данных или между центрами также выполняется по протоколу SSL/TLS 1.2.|
-|Шифрование при хранении|Все данные, хранимые в Azure Cosmos DB, хранятся в зашифрованном виде. Дополнительные сведения см. в статье [Шифрование неактивных данных базы данных в Azure Cosmos DB](.\database-encryption-at-rest.md).|
+|Шифрование при хранении|Все данные, хранимые в Azure Cosmos DB, хранятся в зашифрованном виде. Дополнительные сведения см. в статье [Шифрование неактивных данных базы данных в Azure Cosmos DB](./database-encryption-at-rest.md).|
 |Установка исправлений на серверы|Являясь управляемой базой данных, Azure Cosmos DB избавляет от необходимости управлять серверами и устанавливать на них исправления. Это делается автоматически.|
 |Административные учетные записи с надежными паролями|Пожалуй, даже не нужно упоминать об этом требовании, но, в отличие от некоторых наших конкурентов, в Azure Cosmos DB не может быть учетной записи администратора без пароля.<br><br> Для обеспечения безопасности в службу по умолчанию интегрированы функции SSL и аутентификации на основе секрета HMAC.|
-|Сертификаты безопасности и защиты данных|Актуальный список данных о сертификатах см. на [сайте с общими сведениями о соответствии Azure нормативным требованиям](https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings) или в последней версии [документа о соответствии Azure нормативным требованиям](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) со всеми сертификатами (выполните поиск по слову Cosmos). Больше сведений по этой теме приведено в записи за 25 апреля 2018 г. об [обеспечении защиты, конфиденциальности и соответствии стандартам Azure CosmosDB](https://azure.microsoft.com/blog/azure-cosmosdb-secure-private-compliant/) с сертификатами SOC 1 и 2 типа 2, HITRUST, PCI DSS (уровень 1), ISO 27001, HIPAA, FedRAMP High и многими другими.
+|Сертификаты безопасности и защиты данных|Актуальный список данных о сертификатах см. на [сайте с общими сведениями о соответствии Azure нормативным требованиям](https://www.microsoft.com/en-us/trustcenter/compliance/complianceofferings) или в последней версии [документа о соответствии Azure нормативным требованиям](https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942) со всеми сертификатами (выполните поиск по слову Cosmos). Больше сведений по этой теме приведено в записи за 25 апреля 2018 г. об [обеспечении защиты, конфиденциальности и соответствия стандартам Azure Cosmos DB](https://azure.microsoft.com/blog/azure-cosmosdb-secure-private-compliant/), включая сертификаты SOCS 1/2 Type 2, HITRUST, PCI DSS Level 1, ISO 27001, HIPAA, FedRAMP High и многие другие.
 
-На следующем снимке экрана показана интеграция Active Directory (RBAC) с помощью управления доступом (IAM) на портале Azure: ![управления доступом (IAM) на портале Azure, демонстрация безопасности базы данных](./media/database-security/nosql-database-security-identity-access-management-iam-rbac.png)
+На следующем снимке экрана показана интеграция Active Directory (RBAC) с помощью управления доступом (IAM) на портале Azure: ![Управление доступом (IAM) на портале Azure, демонстрация безопасности базы данных](./media/database-security/nosql-database-security-identity-access-management-iam-rbac.png)
 
-На следующем снимке экрана показано, как можно выполнять мониторинг учетной записи с помощью журналов аудита и действий: ![журналы действий для Azure Cosmos DB](./media/database-security/nosql-database-security-application-logging.png)
+На следующем снимке экрана показано, как можно выполнять мониторинг учетной записи с помощью журналов аудита и действий: ![Журналы действий для Azure Cosmos DB](./media/database-security/nosql-database-security-application-logging.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/07/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: a576b94881e114a97e58bf93515e372221da3346
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: b97b8e145e2a770a00c77eefc9ce6d323fd6222e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44096153"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53101852"
 ---
 # <a name="copy-data-from-oracle-service-cloud-using-azure-data-factory-preview"></a>Копирование данных из Oracle Cloud с помощью службы "Фабрика данных Azure" (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "44096153"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **OracleServiceCloud**. | Yes |
+| Тип | Свойству type необходимо задать следующее значение: **OracleServiceCloud** | Yes |
 | host | URL-адрес экземпляра Oracle Cloud.  | Yes |
 | Имя пользователя | Имя пользователя, которое позволяет получить доступ к серверу Oracle Cloud.  | Yes |
 | password | Пароль, соответствующий имени пользователя, которое указано в ключе имени пользователя. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и передавать его оттуда в действие копирования ADF при фактическом копировании данных. Подробнее это описано в статье [о хранении учетных данных в Key Vault](store-credentials-in-key-vault.md). | Yes |
@@ -80,7 +80,12 @@ ms.locfileid: "44096153"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Oracle Cloud.
 
-Чтобы скопировать данные из службы Oracle Cloud или в нее, установите для свойства type набора данных значение **OracleServiceCloudObject**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные из службы Oracle Cloud или в нее, установите для свойства type набора данных значение **OracleServiceCloudObject**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Для свойства type набора данных необходимо задать следующее значение: **OracleServiceCloudObject** | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -92,7 +97,8 @@ ms.locfileid: "44096153"
         "linkedServiceName": {
             "referenceName": "<OracleServiceCloud linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 
@@ -108,8 +114,8 @@ ms.locfileid: "44096153"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **OracleServiceCloudSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Yes |
+| Тип | Свойство type источника действия копирования должно иметь следующее значение: **OracleServiceCloudSource** | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

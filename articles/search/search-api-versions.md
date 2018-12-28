@@ -1,5 +1,5 @@
 ---
-title: Версии API службы поиска Azure | Документация Майкрософт
+title: Управление версиями API пакета SDK для .NET и интерфейсов REST API в службе "Поиск Azure"
 description: Политика управления версиями для API REST службы поиска Azure и клиентской библиотеки пакетов SDK для .NET.
 author: brjohnstmsft
 manager: jlembicz
@@ -9,12 +9,13 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 06/28/2018
 ms.author: brjohnst
-ms.openlocfilehash: 8d1e30b0bca3c63fe4528c06e5389d8cbe27a7e6
-ms.sourcegitcommit: 5a7f13ac706264a45538f6baeb8cf8f30c662f8f
+ms.custom: seodec2018
+ms.openlocfilehash: 0cf5cac341cb36029c09ee2da5477323fac79cf5
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37113611"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53311649"
 ---
 # <a name="api-versions-in-azure-search"></a>Версии API в службе поиска Azure
 Служба поиска Azure развертывает обновления компонентов на регулярной основе. Иногда (но не всегда) для сохранения обратной совместимости для этих обновлений требуется новая версия API. Публикация новой версии позволяет вам выбирать, когда и как интегрировать обновления службы поиска в код.
@@ -56,6 +57,6 @@ ms.locfileid: "37113611"
 
 По этим причинам мы не рекомендуем включать в рабочие коды зависимости от предварительных версий. Если вы пользуетесь более ранней предварительной версией, рекомендуем вам перейти на общедоступную версию (GA).
 
-Пакет SDK для .NET: инструкции по переносу кода см. в статье об [обновлении пакета SDK для .NET](search-dotnet-sdk-migration.md).
+Пакет SDK для .NET. Инструкции по переносу кода см. в статье [Обновление пакета SDK службы поиска Azure для .NET до версии 3](search-dotnet-sdk-migration.md).
 
 Общая доступность означает, что служба поиска Azure подчиняется соглашению об уровне обслуживания (SLA). Соглашение об уровне обслуживания для службы поиска Azure см. в [этой статье](https://azure.microsoft.com/support/legal/sla/search/v1_0/).

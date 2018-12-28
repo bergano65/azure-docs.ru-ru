@@ -1,5 +1,6 @@
 ---
-title: Краткое руководство. Создание Load Balancer уровня "Стандартный" с помощью Azure PowerShell | Документация Майкрософт
+title: Краткое руководство. Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
+titlesuffix: Azure Load Balancer
 description: В этом кратком руководстве показано, как с помощью PowerShell создать Load Balancer уровня "Стандартный"
 services: load-balancer
 documentationcenter: na
@@ -13,15 +14,15 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/22/2018
 ms.author: kumud
-ms:custom: mvc
-ms.openlocfilehash: e4e66d18f9dcb7f020cdb881226f6e47118e5186
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms:custom: seodec18
+ms.openlocfilehash: 0db575ee6c04c0fb4639ea2e9e095200da781fe8
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51578558"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53256321"
 ---
-# <a name="get-started"></a>Краткое руководство. Создание Load Balancer уровня "Стандартный" с помощью Azure PowerShell
+# <a name="get-started"></a>Краткое руководство. Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
 Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать Load Balancer уровня "Стандартный" Чтобы проверить работу подсистемы балансировки нагрузки, вы развернете две виртуальные машины с Windows Server и распределите между ними нагрузку веб-приложения. См. дополнительные сведения о [Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]

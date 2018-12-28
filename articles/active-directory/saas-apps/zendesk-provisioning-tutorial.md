@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке автоматической подготовки пользователей с помощью Azure Active Directory для приложения Zendesk | Документация Майкрософт
+title: Руководство. Настройка автоматической подготовки пользователей с помощью Azure Active Directory для приложения Zendesk | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Zendesk.
 services: active-directory
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/31/2018
 ms.author: v-ant
-ms.openlocfilehash: 2dc965547511d27ed43a88c1f45b50593b30a937
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: d8d6df221a8c520cea5e6e938447ffd881e7374c
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44347942"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53322778"
 ---
-# <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Руководство по настройке Zendesk для автоматической подготовки пользователей
+# <a name="tutorial-configure-zendesk-for-automatic-user-provisioning"></a>Руководство. Настройка Zendesk для автоматической подготовки пользователей
 
 В этом руководстве описаны шаги, которые нужно выполнить в Zendesk и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в Zendesk. 
 
@@ -77,6 +77,10 @@ ms.locfileid: "44347942"
 
 ### <a name="important-tips-for-assigning-users-to-zendesk"></a>Важные советы по назначению пользователей в Zendesk
 
+*    Сейчас роли Zendesk автоматически и динамически заполняются данными в пользовательском интерфейсе портала Azure. Прежде чем назначать пользователям роли Zendesk, убедитесь, что начальная синхронизация с Zendesk завершена, чтобы получить последние роли в клиенте Zendesk.
+
+*    Рекомендуется назначить одного пользователя Azure AD в Zendesk для тестирования исходной конфигурации автоматической подготовки пользователей. Дополнительные пользователи и (или) группы можно будет назначить позже, после успешного прохождения тестов.
+  
 *   Рекомендуется назначить одного пользователя Azure AD в Zendesk для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
 
 *   При назначении пользователя в Zendesk в диалоговом окне назначения необходимо выбрать действительную роль для конкретного приложения (если доступно). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.

@@ -1,25 +1,19 @@
 ---
-title: Получение таблиц ARP. Устранение неполадок ExpressRoute (Resource Manager) | Документация Майкрософт
+title: 'Устранение неполадок с получением таблиц ARP в ExpressRoute: Azure | Документация Майкрософт'
 description: На этой странице приводятся инструкции по получению таблиц ARP для канала ExpressRoute.
-documentationcenter: na
 services: expressroute
 author: ganesr
-manager: carolz
-editor: tysonn
-ms.assetid: 0a6bf1d5-6baf-44dd-87d3-1ebd2fd08bdc
 ms.service: expressroute
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 01/30/2017
 ms.author: ganesr
-ms.openlocfilehash: a65b1ba2998eae33b3e73bd2492fbbf025eb5946
-ms.sourcegitcommit: b5c6197f997aa6858f420302d375896360dd7ceb
+ms.custom: seodec18
+ms.openlocfilehash: a16b2dd61a1a04d8fc3362ce2e26c7d3c9433972
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2017
-ms.locfileid: "23013139"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53274484"
 ---
 # <a name="getting-arp-tables-in-the-resource-manager-deployment-model"></a>Получение таблиц ARP в модели развертывания с помощью Resource Manager
 > [!div class="op_single_selector"]
@@ -28,7 +22,7 @@ ms.locfileid: "23013139"
 > 
 > 
 
-В этой статье описана процедура изучения таблиц ARP для канала ExpressRoute. 
+В этой статье описана процедура изучения таблиц ARP для канала ExpressRoute.
 
 > [!IMPORTANT]
 > Данный документ предназначен для диагностики и устранения простых проблем. Он не заменит услуг службы поддержки Майкрософт. Если вам не удается устранить проблему, используя рекомендации, описанные ниже, то необходимо отправить запрос в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) .

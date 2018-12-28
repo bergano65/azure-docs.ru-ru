@@ -1,5 +1,5 @@
 ---
-title: Создание учетной записи Служб мультимедиа Azure с помощью Azure CLI | Документация Майкрософт
+title: Создание учетной записи Служб мультимедиа с помощью Azure CLI — Azure | Документация Майкрософт
 description: В этом кратком руководстве описано, как создать учетную запись Служб мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -9,21 +9,20 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.custom: ''
-ms.date: 11/11/2018
+ms.custom: seodec18
+ms.date: 12/08/2018
 ms.author: juliako
-ms.openlocfilehash: cb49b642137517c0ceef7d2fa01994a554db1f4e
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: fc80e2c540279c0a0c8acb575c9e5b1478a46cf8
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51613165"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53133372"
 ---
 # <a name="create-an-azure-media-services-account"></a>Создание учетной записи служб мультимедиа Azure
 
 Чтобы начать шифрование, кодирование, анализ, потоковую передачу мультимедийного содержимого и управление им в Azure, необходимо создать учетную запись Служб мультимедиа. При создании учетной записи служб мультимедиа также создается связанная учетная запись хранения (или используется уже существующая) в той же географической области, что и учетная запись служб мультимедиа.
-
-В этой статье описаны действия по созданию учетной записи Служб мультимедиа Azure с помощью Azure CLI.  
+Azure В этой статье описаны действия по созданию учетной записи Служб мультимедиа Azure с помощью Azure CLI.  
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 

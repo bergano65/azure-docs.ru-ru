@@ -1,12 +1,11 @@
 ---
-title: Использование параметров веб-службы Студия машинного обучения Azure | Документация Майкрософт
+title: Параметры веб-службы Студии машинного обучения Azure | Документация Майкрософт
 description: Как использовать параметры веб-службы машинного обучения Azure для изменения поведения модели при доступе к веб-службе.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: c49187db-b976-4731-89d6-11a0bf653db1
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 01/12/2017
-ms.openlocfilehash: 0e8a1a4bb90f935bf3890bd803b9375d10261aa7
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: b929608d64e747d6e768da4ee6627f9e6b09a83a
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52312016"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53270099"
 ---
 # <a name="use-azure-machine-learning-studio-web-service-parameters"></a>Использование параметров веб-службы Студии машинного обучения Azure
 Веб-служба машинного обучения Azure создается при публикации эксперимента, содержащего модули с настраиваемыми параметрами. В некоторых случаях может потребоваться изменение поведения модуля, пока веб-служба выполняется. *Параметры веб-службы* позволяют это сделать. 
@@ -30,7 +29,7 @@ ms.locfileid: "52312016"
 
 Можно определить параметры веб-службы и связать их с одним или несколькими параметрами модуля в эксперименте. Вы также можете указать, являются они обязательными или нет. Пользователь веб-службы затем может предоставить значения этих параметров при вызове веб-службы. 
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="how-to-set-and-use-web-service-parameters"></a>Как установить и использовать параметры веб-службы
 Параметр веб-службы задается путем щелчка по значку рядом с параметром конкретного модуля и выбора команды "Установить в качестве параметра веб-службы". При этом создается новый параметр веб-службы, который связывается с параметром модуля. Затем при доступе к веб-службе пользователь может указать значение параметра веб-службы, который будет применен к параметру модуля.

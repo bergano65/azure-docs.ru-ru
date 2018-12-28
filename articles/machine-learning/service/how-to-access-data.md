@@ -1,6 +1,7 @@
 ---
-title: Использование хранилищ данных в службе машинного обучения Azure для доступа к данным
-description: Использование хранилищ данных для получения доступа к хранилищу данных во время обучения
+title: Доступ к данным в хранилищам данных для обучения
+titleSuffix: Azure Machine Learning service
+description: Узнайте, как использовать хранилища данных для доступа к данным во время обучения с помощью Службы машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.component: core
@@ -9,14 +10,15 @@ ms.author: minxia
 author: mx-iao
 ms.reviewer: sgilley
 ms.date: 09/24/2018
-ms.openlocfilehash: ef183397cf7ca3f1f561f6951290b722df31e5ed
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.custom: seodec18
+ms.openlocfilehash: 235ad729be434c8329a74e71abfe713480756316
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52620206"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53187149"
 ---
-# <a name="how-to-access-data-during-training"></a>Получение доступа к данным во время обучения
+# <a name="access-data-during-training-from-your-datastores"></a>Доступ к данным в хранилище данных во время обучения
 Чтобы получить доступ к данным или взаимодействию с ними в рабочих процессах машинного обучения Azure, используйте хранилище данных.
 
 В службах машинного обучения Azure хранилище данных — это абстракция над [службой хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction). Хранилище данных может ссылаться на контейнер [больших двоичных объектов Azure](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) или [общую папку Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) в качестве базового хранилища. 

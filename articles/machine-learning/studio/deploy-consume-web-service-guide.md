@@ -1,12 +1,11 @@
 ---
-title: Развертывание и использование веб-служб машинного обучения в Студии машинного обучения Azure | Документация Майкрософт
+title: Развертывание и использование веб-служб в Студии машинного обучения Azure | Документация Майкрософт
 description: Служба "Машинное обучение Azure" позволяет развертывать рабочие процессы и модели машинного обучения в качестве веб-служб. Затем эти веб-службы можно использовать для вызова моделей машинного обучения из приложений в Интернете, чтобы делать прогнозы в режиме реального времени или в пакетном режиме.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 47635376-d1f4-4ea4-a6af-bd1f99f69a69
 ms.service: machine-learning
@@ -16,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
-ms.openlocfilehash: a192bb50fe6931130492fad037f83e301e401762
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: ed57f80a210cdb9c7ff8e77da2269d8494892fcc
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52315551"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53268433"
 ---
-# <a name="azure-machine-learning-web-services-deployment-and-consumption"></a>Развертывание и использование веб-служб Машинного обучения Azure
+# <a name="azure-machine-learning-studio-web-services-deployment-and-consumption"></a>Веб-службы Студии машинного обучения Azure: развертывание и использование
 Служба "Машинное обучение Azure" позволяет развертывать рабочие процессы и модели машинного обучения в качестве веб-служб. Затем эти веб-службы можно использовать для вызова моделей машинного обучения из приложений в Интернете, чтобы делать прогнозы в режиме реального времени или в пакетном режиме. Так как это веб-службы RESTful, их можно вызывать, используя различные языки программирования и платформы, например .NET и Java, а также приложения, например Microsoft Excel.
 
 В следующих разделах представлены ссылки на пошаговые инструкции, код и документацию, которые помогут вам приступить к работе.
@@ -40,7 +39,7 @@ ms.locfileid: "52315551"
 * Полное пошаговое руководство по созданию и развертыванию веб-службы см. в статье [Шаг 1. Создание рабочей области машинного обучения](walkthrough-1-create-ml-workspace.md).
 * Конкретные примеры развертывания веб-службы см. в следующих статьях:
 
-  * [Шаг 5. Развертывание веб-службы машинного обучения Azure](walkthrough-5-publish-web-service.md)
+  * [Шаг 5. Развертывание веб-службы Машинного обучения Azure](walkthrough-5-publish-web-service.md)
   * [Развертывание веб-службы в нескольких регионах](how-to-deploy-to-multiple-regions.md)
 
 ### <a name="with-web-services-resource-provider-apis-azure-resource-manager-apis"></a>С помощью интерфейсов API поставщика ресурсов веб-служб (интерфейсов API Azure Resource Manager)
@@ -90,7 +89,7 @@ ms.locfileid: "52315551"
 
 * [Развертывание новой веб-службы](publish-a-machine-learning-web-service.md)
 * [Развертывание веб-службы машинного обучения Azure](publish-a-machine-learning-web-service.md)
-* [Шаг 5. Развертывание веб-службы машинного обучения Azure](walkthrough-5-publish-web-service.md)
+* [Шаг 5. Развертывание веб-службы Машинного обучения Azure](walkthrough-5-publish-web-service.md)
 
 ### <a name="from-excel"></a>Из Excel
 Вы можете скачать шаблон Excel, который использует веб-службу:

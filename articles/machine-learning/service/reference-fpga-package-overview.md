@@ -1,6 +1,7 @@
 ---
-title: Пакет FPGA для аппаратного ускорения службы "Машинное обучение Azure"
-description: Сведения о пакетах Python, доступных для пользователей службы "Машинное обучение Azure".
+title: Пакет ППВМ для аппаратного ускорения
+titleSuffix: Azure Machine Learning service
+description: Эта статья считается устаревшей.
 services: machine-learning
 ms.service: machine-learning
 ms.component: core
@@ -9,13 +10,14 @@ ms.reviewer: jmartens
 ms.author: tedway
 author: tedway
 ms.date: 05/07/2018
+ms.custom: seodec18
 ROBOTS: NOINDEX
-ms.openlocfilehash: 83c5a788f85fcc47c221f5c8f9e6944c4448fbf9
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: 44c0818d7ddb418e34e6e124ddc0b27460bb24a0
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51712132"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53262084"
 ---
 # <a name="azure-machine-learning-hardware-acceleration-package"></a>Пакет аппаратного ускорения для службы "Машинное обучение Azure"
 
@@ -32,7 +34,8 @@ ms.locfileid: "51712132"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLfree), прежде чем начинать работу.
+>[!Note]
+>Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
 
 1. Учетная запись службы "Управление моделями Машинного обучения". Дополнительные сведения о создании учетной записи см. в документе [Краткое руководство. Установка и начало работы со службами Машинного обучения Azure](../desktop-workbench/quickstart-installation.md). 
 

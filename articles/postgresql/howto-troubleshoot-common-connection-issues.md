@@ -3,19 +3,19 @@ title: Устранение ошибок подключения к Базе да
 description: Узнайте, как устранить проблемы с подключением к Базе данных Azure для PostgreSQL.
 keywords: postgresql connection,connection string,connectivity issues,transient error,connection error
 services: postgresql
-author: janeng
+author: jan-eng
 ms.author: janeng
 manager: kfile
 editor: jasonwhowell
 ms.service: postgresql
 ms.topic: article
 ms.date: 11/09/2018
-ms.openlocfilehash: fea4c376f73afe2ef36948c59e95a2b679dbd7e8
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 67383db4bd1d57d194e10de2dc1964532b3619a4
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285486"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53160817"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-postgresql"></a>Устранение неполадок подключения к Базе данных Azure для PostgreSQL
 
@@ -49,9 +49,9 @@ ms.locfileid: "51285486"
 
 Если при подключении к Базе данных Azure для PostgreSQL в приложении постоянно возникают сбои, их причины перечислены ниже:
 
-* Конфигурация брандмауэра: База данных Azure для Postgre SQL или клиентский брандмауэр блокирует подключения.
-* Перенастройка сети на стороне клиента: был добавлен новый IP-адрес или прокси-сервер.
-* Ошибка пользователя: например, неправильно введенные параметры подключения (имя сервера в строке подключения или суффикс *@servername* в имени пользователя отсутствует).
+* Конфигурация брандмауэра сервера. Убедитесь, что в брандмауэре сервера службы "База данных Azure для PostgreSQL" настроена возможность подключений из клиента, в том числе через прокси-серверы и шлюзы.
+* Конфигурация брандмауэра клиента. Брандмауэр клиента должен разрешать подключения к серверу базы данных. В некоторых брандмауэрах необходимо разрешить IP-адреса и порты сервера, к которым нельзя подключиться, а также приложения, например PostgreSQL.
+* Ошибка пользователя. К ним, например, относятся неправильно введенные параметры подключения (имя сервера в строке подключения или пропущенный суффикс *@servername* в имени пользователя).
 
 ### <a name="steps-to-resolve-persistent-connectivity-issues"></a>Порядок устранения постоянных проблем подключения
 

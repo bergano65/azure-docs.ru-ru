@@ -6,23 +6,21 @@ ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
-ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 05/17/2018
-ms.openlocfilehash: 8103c06e3fec51316e367de903ed84d0023568bc
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.date: 12/11/2018
+ms.openlocfilehash: f47c9ee85348cc96915a0fa637b06b0a73059351
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52308160"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53322300"
 ---
 # <a name="access-grafana-in-azure-hdinsight"></a>Доступ к Grafana в Azure HDInsight
 
 
 [Grafana](https://grafana.com/) — это популярное средство с открытым кодом для построения графов и панелей мониторинга. Grafana — многофункциональное средство, которое не только позволяет пользователям создавать настраиваемые панели мониторинга с общим доступом, но также предоставляет такие возможности, как шаблонны и скрипты панелей мониторинга, интеграция LDAP, использование нескольких источников данных и многое другое.
 
-Сейчас Grafana поддерживается только в кластерах типа Interactive Query в Azure HDInsight.
-
+Сейчас Grafana в Azure HDInsight поддерживает типы кластеров Hbase и Interactive Query.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -76,16 +74,22 @@ ms.locfileid: "52308160"
 ## <a name="access-the-grafana-dashboard"></a>Доступ к панели мониторинга Grafana
 
 1. Войдите на [портале Azure](https://portal.azure.com).
+
 2. Щелкните **Кластеры HDInsight**, а затем выберите имя кластера, созданного в предыдущем разделе.
+
 3. В разделе **Быстрые ссылки** щелкните **Панель мониторинга кластера**.
 
     ![Панель мониторинга кластера HDInsight на портале](./media/hdinsight-grafana/hdinsight-portal-cluster-dashboard.png "HDInsight cluster dashboard on the portal")
 
-4. На панели мониторинга щелкните плитку **Grafana**.
+4. На панели мониторинга щелкните плитку **Grafana**. Вы можете также перейти по пути `/grafana/` URL-адреса кластера. Например, `https://<clustername>.azurehdinsight.net/grafana/`.
+
 5. Введите учетные данные пользователя кластера Hadoop.
-6. Панель мониторинга Grafana выглядит так:
+
+6. Появится панель мониторинга Grafana, которая выглядит следующим образом:
 
     ![Панель мониторинга Grafana в HDInsight](./media/hdinsight-grafana/hdinsight-grafana-dashboard.png "HDInsight Grafana dashboard")
+
+   
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 После завершения работы с этой статьей кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры. 
@@ -137,5 +141,3 @@ ms.locfileid: "52308160"
 [hdinsight-upload-data]: hdinsight-upload-data.md
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
-
-

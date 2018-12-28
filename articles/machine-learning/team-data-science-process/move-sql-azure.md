@@ -1,6 +1,6 @@
 ---
-title: Перемещение данных в базу данных SQL Azure для Машинного обучения Azure | Документация Майкрософт
-description: Создание таблицы SQL и загрузка данных в таблицу SQL
+title: Перемещение данных в базу данных SQL Azure — командный процесс обработки и анализа данных
+description: Перемещение данных из неструктурированных файлов (CSV или TSV) или данных, хранящихся на локальном сервере SQL Server в базу данных Azure SQL.
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -8,15 +8,15 @@ editor: cgronlun
 ms.service: machine-learning
 ms.component: team-data-science-process
 ms.topic: article
-ms.date: 5/04/2018
+ms.date: 05/04/2018
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 1c65e2b622d9c70626411f470593730570de813b
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 680a47dae057b68957c58bbaab1ec35407d67952
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52445351"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53268642"
 ---
 # <a name="move-data-to-an-azure-sql-database-for-azure-machine-learning"></a>Перемещение данных в базу данных SQL Azure для машинного обучения Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "52445351"
 
 В следующей таблице перечислены варианты перемещения данных в базу данных SQL Azure.
 
-| <b>Источник</b> | <b>Назначение: база данных SQL Azure</b> |
+| <b>ИСТОЧНИК</b> | <b>МЕСТО НАЗНАЧЕНИЯ: база данных SQL Azure</b> |
 | --- | --- |
 | <b>Неструктурированный файл (в формате CSV или TSV)</b> |[SQL-запрос на массовую вставку](#bulk-insert-sql-query) |
 | <b>Локальный сервер SQL Server</b> |1. [Экспорт в неструктурированный файл](#export-flat-file).<br> 2. [Мастер миграции баз данных SQL](#insert-tables-bcp)<br> 3. [Архивация и восстановление базы данных](#db-migration)<br> 4. [Фабрика данных Azure](#adf) |
@@ -39,7 +39,7 @@ ms.locfileid: "52445351"
 * Доступ к **базе данных SQL Azure**. Если требуется настроить базу данных SQL Azure, то обратитесь к статье [Руководство по базам данных SQL: создание базы данных SQL за несколько минут с помощью портала Azure](../../sql-database/sql-database-get-started.md) , которая содержит сведения о том, как подготовить новый экземпляр базы данных SQL Azure.
 * Установленная и настроенная локальная среда **Azure PowerShell**. Инструкции см. в статье [Приступая к работе с командлетами Azure PowerShell](/powershell/azure/overview).
 
-**Данные**: процессы миграции демонстрируются с помощью [набора данных о такси Нью-Йорка](http://chriswhong.com/open-data/foil_nyc_taxi/). Набор данных о такси Нью-Йорка содержит сведения о поездках и тарифах и доступен в хранилище BLOB-объектов Azure [здесь](http://www.andresmh.com/nyctaxitrips/). Пример и описание этих файлов приведены в [описании набора данных «Поездки такси Нью-Йорка»](sql-walkthrough.md#dataset).
+**Данные**: процессы миграции демонстрируются с помощью [набора данных о такси Нью-Йорка](http://chriswhong.com/open-data/foil_nyc_taxi/). Набор данных о такси Нью-Йорка содержит сведения о поездках и тарифах и доступен в хранилище больших двоичных объектов Azure: [данные о такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/). Пример и описание этих файлов приведены в [описании набора данных «Поездки такси Нью-Йорка»](sql-walkthrough.md#dataset).
 
 Вы можете либо адаптировать описанные здесь процедуры к собственному набору данных, либо выполнить описанные действия с набором данных о такси Нью-Йорка. Для передачи набора данных о такси Нью-Йорка в локальную базу данных SQL Server выполните процедуру, описанную в разделе [Массовый импорт данных в базу данных SQL Server](sql-walkthrough.md#dbload). Эти инструкции предназначены для SQL Server на виртуальной машине Azure. Процедура передачи для локального SQL Server идентична.
 

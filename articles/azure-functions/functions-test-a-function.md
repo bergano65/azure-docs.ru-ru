@@ -1,443 +1,362 @@
 ---
-title: Тестирование Функций Azure | Документация Майкрософт
-description: Тестирование функций Azure с помощью Postman, cURL и Node.js.
+title: Тестирование функций Azure
+description: Создание автоматических тестов для функции C# в Visual Studio и функции JavaScript в VS Code
 services: functions
 documentationcenter: na
-author: ggailey777
+author: craigshoemaker
 manager: jeconnoc
 keywords: функции azure, функции, обработка событий, webhook, динамические вычисления, независимая архитектура, тестирование
-ms.assetid: c00f3082-30d2-46b3-96ea-34faf2f15f77
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 02/02/2017
-ms.author: glenga
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8b2605bb30d7a1442c471c8cf1483b106ca27581
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.date: 12/10/2018
+ms.author: cshoe
+ms.openlocfilehash: 90eac2fda46dc5fbfff791e1fc0afb9858aa27a4
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50086766"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53408040"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Методика тестирования кода с помощью Функций Azure
 
-В этом разделе показаны различные способы тестирования функций, включая следующие общие подходы:
+В этой статье показано, как создавать автоматические тесты для Функций Azure. 
 
-+ инструменты на основе HTTP, например cURL, Postman и даже веб-браузер для веб-триггеров;
-+ Azure Storage Explorer для тестирования триггеров на основе службы хранилища Azure;
-+ вкладка тестирования на портале функций Azure;
-+ активируемая по таймеру функция;
-+ приложение или платформа для тестирования.
+Рекомендуется провести тестирование всего кода, однако наилучший результат можно получить благодаря созданию программы-оболочки для логики функции и создания тестов за ее пределами. Абстрагирование логики ограничивает строки кода функции и позволяет функции нести единоличную ответственность за вызов других классов или модулей. Тем не менее в этой статье показано, как создавать автоматические тесты для HTTP и активируемую по таймеру функцию.
 
-Все эти методы тестирования используют функцию триггера HTTP, которая принимает входные данные через параметр строки запроса или текст запроса. Эта функция создается на портале Azure в первом разделе.
+Следующее содержимое разделяется на два различных раздела, что означает, что они предназначены для разных языков и сред. Можно научиться компилировать тесты в:
 
-## <a name="create-a-simple-function-for-testing-using-the-azure-portal"></a>Создание простой функции для тестирования с помощью портала Azure
-В большей части этого руководства мы будем использовать немного измененную версию шаблона функции JavaScript HttpTrigger, который доступен при создании функции. Если вам нужна помощь при создании функции, просмотрите этот [учебник](functions-create-first-azure-function.md). Выберите шаблон **HttpTrigger- JavaScript** при создании тестовой функции на [портал Azure].
+- [C# в Visual Studio с использованием xUnit](#c-in-visual-studio);
+- [JavaScript в VS Code с использованием Jest](#javascript-in-vs-code).
 
-Используемый по умолчанию шаблон функции по сути представляет собой функцию hello world, выводящую на экран имя из текста запроса или параметра строки запроса `name=<your name>`.  Мы обновим код, позволив указать имя и адрес в качестве содержимого JSON в тексте запроса. Затем функция выведет эти значения обратно на клиент при его наличии.   
+Пример репозитория можно найти на [GitHub](https://github.com/Azure-Samples/azure-functions-tests).
 
-Добавьте в функцию следующий код, который будет использоваться для тестирования:
+## <a name="c-in-visual-studio"></a>C# в Visual Studio
+В следующем примере описано создание приложения-функции C# в Visual Studio, а также запуск и тестирование с помощью [xUnit](https://xunit.github.io).
 
-```javascript
-module.exports = function (context, req) {
-    context.log("HTTP trigger function processed a request. RequestUri=%s", req.originalUrl);
-    context.log("Request Headers = " + JSON.stringify(req.headers));
-    var res;
+![Тестирование Функций Azure с помощью C# в Visual Studio](./media/functions-test-a-function/azure-functions-test-visual-studio-xunit.png)
 
-    if (req.query.name || (req.body && req.body.name)) {
-        if (typeof req.query.name != "undefined") {
-            context.log("Name was provided as a query string param...");
-            res = ProcessNewUserInformation(context, req.query.name);
+### <a name="setup"></a>Настройка
+
+Чтобы настроить среду, создайте функцию и протестируйте приложение. Описанные ниже действия помогут создать приложения и функции, необходимые для поддержки тестов.
+
+1. [Создайте новое приложение-функцию](./functions-create-first-azure-function.md) и назовите его *Functions*.
+2. [Создайте функцию HTTP на основе шаблона](./functions-create-first-azure-function.md) и назовите ее *HttpTrigger*.
+3. [Создайте функцию таймера на основе шаблона](./functions-create-scheduled-function.md) и назовите ее *TimerTrigger*.
+4. [Создайте тестовое приложение xUnit](https://xunit.github.io/docs/getting-started-dotnet-core) и назовите его *Functions.Test*.
+5. [Создайте ссылку на приложение *Функции* ](https://docs.microsoft.com/visualstudio/ide/managing-references-in-a-project?view=vs-2017) из приложения *Functions.Test*.
+
+### <a name="create-test-classes"></a>Создание тестовых классов
+
+Теперь после создания приложений можно создать классы, используемые для запуска автоматических тестов.
+
+Каждая функция принимает экземпляр [ILogger](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger) для обработки ведения журнала сообщений. Некоторые тесты либо не ведут журнал сообщений, либо для них не имеет значения, как это происходит. Другие тесты должны оценивать сообщения, записанные в журнал, чтобы определить, проходит ли тест.
+
+Класс `ListLogger` предназначен для реализации интерфейса `ILogger` и хранения внутреннего списка сообщений для оценки во время теста.
+
+**Щелкните правой кнопкой мыши** на приложение *Functions.Test* и выберите **Добавить > Класс**, назовите его **ListLogger.cs** и введите приведенный ниже код.
+
+```csharp
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions.Internal;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Functions.Tests
+{
+    public class ListLogger : ILogger
+    {
+        public IList<string> Logs;
+
+        public IDisposable BeginScope<TState>(TState state) => NullScope.Instance;
+
+        public bool IsEnabled(LogLevel logLevel) => false;
+
+        public ListLogger()
+        {
+            this.Logs = new List<string>();
         }
-        else {
-            context.log("Processing user info from request body...");
-            res = ProcessNewUserInformation(context, req.body.name, req.body.address);
+
+        public void Log<TState>(LogLevel logLevel, 
+                                EventId eventId,
+                                TState state,
+                                Exception exception,
+                                Func<TState, Exception, string> formatter)
+        {
+            string message = formatter(state, exception);
+            this.Logs.Add(message);
         }
     }
-    else {
-        res = {
-            status: 400,
-            body: "Please pass a name on the query string or in the request body"
-        };
-    }
-    context.done(null, res);
-};
-function ProcessNewUserInformation(context, name, address) {
-    context.log("Processing user information...");
-    context.log("name = " + name);
-    var echoString = "Hello " + name;
-    var res;
-
-    if (typeof address != "undefined") {
-        echoString += "\n" + "The address you provided is " + address;
-        context.log("address = " + address);
-    }
-    res = {
-        // status: 200, /* Defaults to 200 */
-        body: echoString
-    };
-    return res;
 }
 ```
 
-## <a name="test-a-function-with-tools"></a>Тестирование функции с помощью инструментов
-За пределами портала Azure существуют различные инструменты, которые можно использовать для активации функций в целях тестирования. К ним относятся инструменты тестирования HTTP на основе пользовательского интерфейса или командной строки, средства доступа к службе хранилища Azure и даже простой веб-браузер.
+Класс `ListLogger` реализует следующие элементы, как предусмотрено интерфейсом `ILogger`.
 
-### <a name="test-with-a-browser"></a>Тестирование с помощью браузера
-Веб-браузер — это простой способ активации функций с помощью протокола HTTP. Браузер можно использовать для запросов GET, в которых не требуются полезные данные текста, а применяются только параметры строки запроса.
+- **BeginScope**. Области добавляют контекст к ведению журнала. В этом случае тест просто указывает на статический экземпляр в классе [NullScope](https://docs.microsoft.com/dotnet/api/microsoft.extensions.logging.abstractions.internal.nullscope), чтобы разрешить функции тест.
 
-Чтобы протестировать определенную выше функцию, скопируйте **URL-адрес функции** с портала. В нем используется следующий формат:
+- **IsEnabled**. Предоставляется значение по умолчанию `false`.
 
-    https://<Your Function App>.azurewebsites.net/api/<Your Function Name>?code=<your access code>
+- **Log**. Этот метод использует предоставленную функцию `formatter` для форматирования сообщения, а затем добавляет итоговый текст к коллекции `Logs`.
 
-Добавьте параметр `name` к строке запроса. Используйте фактическое имя для заполнителя `<Enter a name here>`.
+Коллекция `Logs` является экземпляром `List<string>` и инициализируется в конструкторе.
 
-    https://<Your Function App>.azurewebsites.net/api/<Your Function Name>?code=<your access code>&name=<Enter a name here>
+Затем, **щелкните правой кнопкой мыши** на приложение *Functions.Test* и выберите **Добавить > Класс**, назовите его **LoggerTypes.cs** и введите приведенный ниже код.
 
-Вставьте URL-адрес в браузер. Должен отобразиться примерно такой ответ.
-
-![Снимок экрана: вкладка браузера Chrome с ответом теста](./media/functions-test-a-function/browser-test.png)
-
-В данном примере используется браузер Chrome, который заключает возвращаемую строку в формат XML. Другие браузеры отображают только строковое значение.
-
-В окне **Журналы** на портале при выполнении функции регистрируются выходные данные, подобные следующим:
-
-    2016-03-23T07:34:59  Welcome, you are now connected to log-streaming service.
-    2016-03-23T07:35:09.195 Function started (Id=61a8c5a9-5e44-4da0-909d-91d293f20445)
-    2016-03-23T07:35:10.338 Node.js HTTP trigger function processed a request. RequestUri=https://functionsExample.azurewebsites.net/api/WesmcHttpTriggerNodeJS1?code=XXXXXXXXXX==&name=Glenn from a browser
-    2016-03-23T07:35:10.338 Request Headers = {"cache-control":"max-age=0","connection":"Keep-Alive","accept":"text/html","accept-encoding":"gzip","accept-language":"en-US"}
-    2016-03-23T07:35:10.338 Name was provided as a query string param.
-    2016-03-23T07:35:10.338 Processing User Information...
-    2016-03-23T07:35:10.369 Function completed (Success, Id=61a8c5a9-5e44-4da0-909d-91d293f20445)
-
-### <a name="test-with-postman"></a>Тестирование с помощью приложения Postman
-Рекомендуемым инструментом для тестирования большинства функций является приложение Postman, которое интегрируется с браузером Chrome. Чтобы установить Postman, см. веб-страницу, на которой можно [получить приложение Postman](https://www.getpostman.com/). Приложение Postman позволяет контролировать намного больше атрибутов HTTP-запроса.
-
-> [!TIP]
-> Используйте инструмент для тестирования на основе HTTP, который для вас наиболее удобен. Вот некоторые альтернативы Postman:  
->
-> * [Fiddler](http://www.telerik.com/fiddler)  
-> * [Paw.](https://luckymarmot.com/paw)  
->
->
-
-Чтобы протестировать функцию с текстом запроса в приложении Postman, выполните следующие действия.
-
-1. Запустите Postman нажатием кнопки **Приложения** в левом верхнем углу окна браузера Chrome.
-2. Скопируйте **URL-адрес функции** и вставьте его в Postman. В нем содержится параметр строки запроса — код доступа.
-3. Замените метод HTTP на **POST**.
-4. Щелкните **Body** > **raw** (Текст > Необработанный) и добавьте текст запроса JSON, подобный следующему:
-
-    ```json
+```csharp
+namespace Functions.Tests
+{
+    public enum LoggerTypes
     {
-        "name" : "Wes testing with Postman",
-        "address" : "Seattle, WA 98101"
+        Null,
+        List
     }
-    ```
-5. Нажмите кнопку **Send**(Отправить).
+}
+```
+Это перечисление определяет тип средства ведения журнала, используемого в тестах. 
 
-На следующем рисунке показано тестирование простого примера эхо-функции из этого руководства.
+Затем **щелкните правой кнопкой мыши** на приложение *Functions.Test* и выберите **Добавить > Класс**, назовите его **TestFactory.cs** и введите приведенный ниже код.
 
-![Снимок экрана: пользовательский интерфейс Postman](./media/functions-test-a-function/postman-test.png)
+```csharp
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Extensions.Primitives;
+using System.Collections.Generic;
 
-В окне **Журналы** на портале при выполнении функции регистрируются выходные данные, подобные следующим:
+namespace Functions.Tests
+{
+    public class TestFactory
+    {
+        public static IEnumerable<object[]> Data()
+        {
+            return new List<object[]>
+            {
+                new object[] { "name", "Bill" },
+                new object[] { "name", "Paul" },
+                new object[] { "name", "Steve" }
 
-    2016-03-23T08:04:51  Welcome, you are now connected to log-streaming service.
-    2016-03-23T08:04:57.107 Function started (Id=dc5db8b1-6f1c-4117-b5c4-f6b602d538f7)
-    2016-03-23T08:04:57.763 HTTP trigger function processed a request. RequestUri=https://functions841def78.azurewebsites.net/api/WesmcHttpTriggerNodeJS1?code=XXXXXXXXXX==
-    2016-03-23T08:04:57.763 Request Headers = {"cache-control":"no-cache","connection":"Keep-Alive","accept":"*/*","accept-encoding":"gzip","accept-language":"en-US"}
-    2016-03-23T08:04:57.763 Processing user info from request body...
-    2016-03-23T08:04:57.763 Processing User Information...
-    2016-03-23T08:04:57.763 name = Wes testing with Postman
-    2016-03-23T08:04:57.763 address = Seattle, W.A. 98101
-    2016-03-23T08:04:57.795 Function completed (Success, Id=dc5db8b1-6f1c-4117-b5c4-f6b602d538f7)
+            };
+        }
 
-### <a name="test-with-curl-from-the-command-line"></a>Тестирование с помощью cURL из командной строки
-Часто при тестировании программного обеспечения для отладки приложения достаточно командной строки. То же самое справедливо и для функций. Обратите внимание, что инструмент cURL по умолчанию доступен в системах на основе Linux. При использовании Windows [инструмент cURL](https://curl.haxx.se/) необходимо сначала скачать и установить.
+        private static Dictionary<string, StringValues> CreateDictionary(string key, string value)
+        {
+            var qs = new Dictionary<string, StringValues>
+            {
+                { key, value }
+            };
+            return qs;
+        }
 
-Чтобы протестировать определенную выше функцию, скопируйте **URL-адрес функции** с портала. В нем используется следующий формат:
+        public static DefaultHttpRequest CreateHttpRequest(string queryStringKey, string queryStringValue)
+        {
+            var request = new DefaultHttpRequest(new DefaultHttpContext())
+            {
+                Query = new QueryCollection(CreateDictionary(queryStringKey, queryStringValue))
+            };
+            return request;
+        }
 
-    https://<Your Function App>.azurewebsites.net/api/<Your Function Name>?code=<your access code>
+        public static ILogger CreateLogger(LoggerTypes type = LoggerTypes.Null)
+        {
+            ILogger logger;
 
-Это URL-адрес для активации функции. Протестируйте его, используя команду cURL в командной строке, чтобы выполнить запрос GET (`-G` или `--get`) к функции:
+            if (type == LoggerTypes.List)
+            {
+                logger = new ListLogger();
+            }
+            else
+            {
+                logger = NullLoggerFactory.Instance.CreateLogger("Null Logger");
+            }
 
-    curl -G https://<Your Function App>.azurewebsites.net/api/<Your Function Name>?code=<your access code>
+            return logger;
+        }
+    }
+}
+```
+Класс `TestFactory` реализует следующие элементы.
 
-В этом конкретном примере требуется параметр строки запроса, который может быть передан как данные (`-d`) в команде cURL:
+- **Данные**. Это свойство возвращает коллекцию примеров данных [IEnumerable](https://docs.microsoft.com/dotnet/api/system.collections.ienumerable). Пары "ключ-значение" представляют собой значения, которые передаются в строку запроса.
 
-    curl -G https://<Your Function App>.azurewebsites.net/api/<Your Function Name>?code=<your access code> -d name=<Enter a name here>
+- **CreateDictionary**. Этот метод принимает пару "ключ-значение" в качестве аргументов и возвращает новый `Dictionary`, который используется для создания `QueryCollection`, представляющего значения строки запроса.
 
-Выполните команду, и вы увидите выходные данные функции в командной строке:
+- **CreateHttpRequest**. Этот метод создает HTTP-запрос, инициализированный с параметрами строки запроса.
 
-![Снимок экрана: выходные данные в командной строке](./media/functions-test-a-function/curl-test.png)
+- **CreateLogger**. Основываясь на типе средства ведения журнала, этот метод возвращает класс средства ведения журнала, используемый для тестирования. `ListLogger` следит за сообщениями в журнале, доступными для оценки в тестах.
 
-В окне **Журналы** на портале при выполнении функции регистрируются выходные данные, подобные следующим:
+Затем **щелкните правой кнопкой мыши** на приложение *Functions.Test* и выберите **Добавить > Класс**, назовите его **FunctionsTests.cs** и введите приведенный ниже код.
 
-    2016-04-05T21:55:09  Welcome, you are now connected to log-streaming service.
-    2016-04-05T21:55:30.738 Function started (Id=ae6955da-29db-401a-b706-482fcd1b8f7a)
-    2016-04-05T21:55:30.738 Node.js HTTP trigger function processed a request. RequestUri=https://functionsExample.azurewebsites.net/api/HttpTriggerNodeJS1?code=XXXXXXX&name=Azure Functions
-    2016-04-05T21:55:30.738 Function completed (Success, Id=ae6955da-29db-401a-b706-482fcd1b8f7a)
+```csharp
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Xunit;
 
-### <a name="test-a-blob-trigger-by-using-storage-explorer"></a>Тестирование триггера больших двоичных объектов с помощью Storage Explorer
-Функцию триггера больших двоичных объектов можно протестировать с помощью [Azure Storage Explorer](http://storageexplorer.com/).
+namespace Functions.Tests
+{
+    public class FunctionsTests
+    {
+        private readonly ILogger logger = TestFactory.CreateLogger();
 
-1. На [портал Azure] для приложения-функции создайте функцию триггера больших двоичных объектов на языке C#, F# или JavaScript. Задайте путь для отслеживания имени контейнера больших двоичных объектов. Например: 
+        [Fact]
+        public async void Http_trigger_should_return_known_string()
+        {
+            var request = TestFactory.CreateHttpRequest("name", "Bill");
+            var response = (OkObjectResult)await HttpFunction.Run(request, logger);
+            Assert.Equal("Hello, Bill", response.Value);
+        }
 
-        files
-2. Нажмите кнопку **+** , чтобы выбрать или создать учетную запись хранения, которую следует использовать. Затем щелкните **Создать**.
-3. Создайте текстовый файл со следующим содержимым и сохраните его.
+        [Theory]
+        [MemberData(nameof(TestFactory.Data), MemberType = typeof(TestFactory))]
+        public async void Http_trigger_should_return_known_string_from_member_data(string queryStringKey, string queryStringValue)
+        {
+            var request = TestFactory.CreateHttpRequest(queryStringKey, queryStringValue);
+            var response = (OkObjectResult)await HttpFunction.Run(request, logger);
+            Assert.Equal($"Hello, {queryStringValue}", response.Value);
+        }
 
-        A text file for blob trigger function testing.
-4. Запустите [Azure Storage Explorer](http://storageexplorer.com/) и подключитесь к контейнеру больших двоичных объектов в отслеживаемой учетной записи хранения.
-5. Нажмите кнопку **Отправить**, чтобы отправить текстовый файл.
+        [Fact]
+        public void Timer_should_log_message()
+        {
+            var logger = (ListLogger)TestFactory.CreateLogger(LoggerTypes.List);
+            TimerFunction.Run(null, logger);
+            var msg = logger.Logs[0];
+            Assert.Contains("C# Timer trigger function executed at", msg);
+        }
+    }
+}
+```
+В этом классе реализованы следующие элементы.
 
-    ![Снимок экрана: Storage Explorer](./media/functions-test-a-function/azure-storage-explorer-test.png)
+- **Http_trigger_should_return_known_string**. Этот тест создает запрос со значениями строки запроса `name=Bill` к функции HTTP и проверяет, возвращается ли ожидаемый ответ.
 
-Используемый по умолчанию код функции триггера больших двоичных объектов сообщит об обработке большого двоичного объекта в журналах:
+- **Http_trigger_should_return_string_from_member_data**. В этом тесте используются атрибуты xUnit для предоставления примера данных функции HTTP.
 
-    2016-03-24T11:30:10  Welcome, you are now connected to log-streaming service.
-    2016-03-24T11:30:34.472 Function started (Id=739ebc07-ff9e-4ec4-a444-e479cec2e460)
-    2016-03-24T11:30:34.472 C# Blob trigger function processed: A text file for blob trigger function testing.
-    2016-03-24T11:30:34.472 Function completed (Success, Id=739ebc07-ff9e-4ec4-a444-e479cec2e460)
+- **Timer_should_log_message**. Этот тест создает экземпляр `ListLogger` и передает его функциям таймера. После выполнения функции журнал будет проверен на наличие ожидаемого сообщения.
 
-## <a name="test-a-function-within-functions"></a>Тестирование функции в рамках функций
-Портал Функций Azure разработан, чтобы помочь в тестировании функций, активируемых с помощью протокола HTTP или по таймеру. Также на нем можно создавать функции для активации других тестируемых функций.
+### <a name="run-tests"></a>Выполнение тестов
 
-### <a name="test-with-the-functions-portal-run-button"></a>Тестирование с помощью кнопки "Выполнить" на портале функций
-На портале есть кнопка **Выполнить**, которая позволяет провести ограниченное тестирование. С помощью этой кнопки можно указать текст запроса, но нельзя указать параметры строки запроса или обновить заголовки запроса.
+Чтобы выполнить тесты, перейдите в **Обозреватель тестов** и щелкните **Запустить все**.
 
-Протестируйте функцию HTTP-триггера, созданную ранее, добавив в поле **Текст запроса** строку JSON, подобную указанной ниже. Затем нажмите кнопку **Выполнить**.
+![Тестирование Функций Azure с помощью C# в Visual Studio](./media/functions-test-a-function/azure-functions-test-visual-studio-xunit.png)
+
+### <a name="debug-tests"></a>Отладка тестов
+
+Чтобы отладить тесты, установите точку останова в тесте, перейдите в **Обозреватель тестов** и щелкните **Запустить > Отладка последнего выполнения**.
+
+## <a name="javascript-in-vs-code"></a>JavaScript в VS Code
+
+В следующем примере описано создание приложения-функции JavaScript в VS Code, а также его запуск и проверка с помощью [Jest](https://jestjs.io). В этой процедуре используется [расширение функций VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) для создания Функций Azure.
+
+![Тестирование Функций Azure с помощью JavaScript в VS Code](./media/functions-test-a-function/azure-functions-test-vs-code-jest.png)
+
+### <a name="setup"></a>Настройка
+
+Для настройки среды инициализируйте новое приложение Node.js в пустой папке, запустив `npm init`.
+
+```bash
+npm init -y
+```
+Затем установите Jest, выполнив следующую команду.
+
+```bash
+npm i jest
+```
+Теперь обновите _package.json_, чтобы заменить существующую тестовую команду приведенной ниже командой.
+
+```bash
+"scripts": {
+    "test": "jest"
+}
+```
+
+### <a name="create-test-modules"></a>Создание модулей тестирования
+Благодаря инициализации проекта можно создать модули для запуска автоматических тестов. Для начала создайте новую папку с именем *testing* для хранения модулей поддержки.
+
+В папке *testing* добавьте новый файл, присвойте ему имя **defaultContext.js** и добавьте приведенный ниже код.
+
+```javascript
+module.exports = {
+    log: jest.fn()
+};
+```
+Этот модуль имитирует функцию *log*, чтобы предоставить контекст выполнения по умолчанию.
+
+Затем добавьте новый файл, присвойте ему имя **defaultTimer.js** и добавьте следующий код.
+
+```javascript
+module.exports = {
+    isPastDue: false
+};
+```
+Этот модуль реализует свойство `isPastDue`, чтобы установить его как ложный экземпляр таймера.
+
+Затем используйте расширение Функций VS Code, чтобы [создать новую Функцию JavaScript HTTP](https://code.visualstudio.com/tutorials/functions-extension/getting-started), и присвойте ей имя *HttpTrigger*. Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
+
+```javascript
+const httpFunction = require('./index');
+const context = require('../testing/defaultContext')
+
+test('Http trigger should return known text', async () => {
+
+    const request = {
+        query: { name: 'Bill' }
+    };
+
+    await httpFunction(context, request);
+
+    expect(context.log.mock.calls.length).toBe(1);
+    expect(context.res.body).toEqual('Hello Bill');
+});
+```
+Функция HTTP на основе шаблона возвращает строку "Hello", сцепленную с именем, указанным в строке запроса. Ложный экземпляр запроса создается этим тестом и передается функции HTTP. Тест проверяет, что метод *log* вызывается один раз, и возвращенный текст приравнивается к "Hello Bill".
+
+Затем используйте расширение Функций VS Code, чтобы создать новую Функцию таймера JavaScript, и присвойте ей имя *TimerTrigger*. Создав функцию, добавьте новый файл в той же папке с именем **index.test.js** и приведенный ниже код.
+
+```javascript
+const timerFunction = require('./index');
+const context = require('../testing/defaultContext');
+const timer = require('../testing/defaultTimer');
+
+test('Timer trigger should log message', () => {
+    timerFunction(context, timer);
+    expect(context.log.mock.calls.length).toBe(1);
+});
+```
+Функция таймера из шаблона записывает сообщение в конце основной части функции. Этот тест гарантирует, что функцию *log* вызывают один раз.
+
+### <a name="run-tests"></a>Выполнение тестов
+Для выполнения тестов нажмите клавиши **CTRL + ~**, чтобы открыть командное окно, и запустите `npm test`.
+
+```bash
+npm test
+```
+
+![Тестирование Функций Azure с помощью JavaScript в VS Code](./media/functions-test-a-function/azure-functions-test-vs-code-jest.png)
+
+### <a name="debug-tests"></a>Отладка тестов
+
+Для отладки тестов добавьте следующую конфигурацию в файл *launch.json*.
 
 ```json
 {
-    "name" : "Wes testing Run button",
-    "address" : "USA"
+  "type": "node",
+  "request": "launch",
+  "name": "Jest Tests",
+  "program": "${workspaceRoot}\\node_modules\\jest\\bin\\jest.js",
+  "args": [
+      "-i"
+  ],
+  "internalConsoleOptions": "openOnSessionStart"
 }
 ```
 
-В окне **Журналы** на портале при выполнении функции регистрируются выходные данные, подобные следующим:
+Затем в тесте установите точку останова и нажмите клавишу **F5**.
 
-    2016-03-23T08:03:12  Welcome, you are now connected to log-streaming service.
-    2016-03-23T08:03:17.357 Function started (Id=753a01b0-45a8-4125-a030-3ad543a89409)
-    2016-03-23T08:03:18.697 HTTP trigger function processed a request. RequestUri=https://functions841def78.azurewebsites.net/api/wesmchttptriggernodejs1
-    2016-03-23T08:03:18.697 Request Headers = {"connection":"Keep-Alive","accept":"*/*","accept-encoding":"gzip","accept-language":"en-US"}
-    2016-03-23T08:03:18.697 Processing user info from request body...
-    2016-03-23T08:03:18.697 Processing User Information...
-    2016-03-23T08:03:18.697 name = Wes testing Run button
-    2016-03-23T08:03:18.697 address = USA
-    2016-03-23T08:03:18.744 Function completed (Success, Id=753a01b0-45a8-4125-a030-3ad543a89409)
+## <a name="next-steps"></a>Дополнительная информация
 
-
-### <a name="test-with-a-timer-trigger"></a>Тестирование с помощью триггера таймера
-Некоторые функции нельзя правильно протестировать с помощью упомянутых ранее средств. Например, функцию триггера очереди, которая выполняется при поступлении сообщения в [хранилище очередей Azure](../storage/queues/storage-dotnet-how-to-use-queues.md). Всегда можно написать код, помещающий сообщение в очередь, пример которого указан в консольном проекте далее в этой статье. Однако существует другой подход, который можно использовать для непосредственного тестирования функций.  
-
-Можно использовать триггер таймера, настроенный с привязкой для вывода очереди. Такой код триггера таймера может затем записывать тестовые сообщения в очередь. В этом разделе описан пример.
-
-Более подробные сведения об использовании привязок с Функциями Azure см. в статье [Справочник разработчика по Функциям Azure](functions-reference.md).
-
-#### <a name="create-a-queue-trigger-for-testing"></a>Создание триггера очереди для тестирования
-Чтобы продемонстрировать этот подход, мы сначала создадим функцию триггера очереди, которую нам нужно протестировать, для очереди с именем `queue-newusers`. Эта функция обрабатывает имя и адрес нового пользователя, поступившие в хранилище очередей.
-
-> [!NOTE]
-> При использовании другого имени очереди убедитесь, что используемое имя соответствует правилам [именования очередей и метаданных](https://msdn.microsoft.com/library/dd179349.aspx). В противном случае возникает ошибка.
->
->
-
-1. На [портал Azure] для приложения-функции щелкните **Новая функция** > **QueueTrigger — C#**.
-2. Введите имя очереди, которое будет отслеживаться функцией очереди:
-
-        queue-newusers
-3. Нажмите кнопку **+** , чтобы выбрать или создать учетную запись хранения, которую следует использовать. Затем щелкните **Создать**.
-4. Оставьте это окно браузера с порталом открытым, чтобы можно было отслеживать записи журнала на наличие стандартного кода шаблона функции очереди.
-
-#### <a name="create-a-timer-trigger-to-drop-a-message-in-the-queue"></a>Создание триггера таймера для помещения сообщения в очередь
-1. Откройте [портал Azure] в новом окне браузера и перейдите к приложению-функции.
-2. Щелкните **Новая функция** > **TimerTrigger — C#**. Введите выражение CRON, чтобы задать частоту выполнения кода таймера при тестировании функции очереди. Затем щелкните **Создать**. Если тестирование нужно выполнять каждые 30 секунд, можно использовать следующее [выражение CRON](https://wikipedia.org/wiki/Cron#CRON_expression):
-
-        */30 * * * * *
-3. Выберите вкладку **Интеграция** для нового триггера таймера.
-4. В разделе **Выходные данные** щелкните **+ Новое выходное значение**. Затем последовательно щелкните **Очередь** и **Выбрать**.
-5. Запишите имя, используемое для **объекта сообщения очереди**. Оно будет использоваться в коде функции таймера.
-
-        myQueue
-6. Введите имя очереди, в которую будет отправлено сообщение:
-
-        queue-newusers
-7. Нажмите кнопку **+**, чтобы выбрать учетную запись хранения, указанную ранее в триггере очереди. Нажмите кнопку **Сохранить**.
-8. Выберите вкладку **Разработка** для триггера таймера.
-9. Для функции таймера на языке C# можно использовать приведенный ниже код, если вы использовали то же имя объекта сообщения очереди, указанное выше. Нажмите кнопку **Сохранить**.
-
-    ```cs
-    using System;
-    using Microsoft.Extensions.Logging;
-
-    public static void Run(TimerInfo myTimer, out String myQueue, ILogger log)
-    {
-        String newUser =
-        "{\"name\":\"User testing from C# timer function\",\"address\":\"XYZ\"}";
-
-        log.Verbose($"C# Timer trigger function executed at: {DateTime.Now}");   
-        log.Verbose($"{newUser}");   
-
-        myQueue = newUser;
-    }
-    ```
-
-На этом этапе функция таймера на C# выполняется каждые 30 секунд, если вы использовали выражение CRON из примера. Журналы для функции таймера сообщают о каждом выполнении:
-
-    2016-03-24T10:27:02  Welcome, you are now connected to log-streaming service.
-    2016-03-24T10:27:30.004 Function started (Id=04061790-974f-4043-b851-48bd4ac424d1)
-    2016-03-24T10:27:30.004 C# Timer trigger function executed at: 3/24/2016 10:27:30 AM
-    2016-03-24T10:27:30.004 {"name":"User testing from C# timer function","address":"XYZ"}
-    2016-03-24T10:27:30.004 Function completed (Success, Id=04061790-974f-4043-b851-48bd4ac424d1)
-
-В окне браузера для функции очереди отображается каждое обрабатываемое сообщение:
-
-    2016-03-24T10:27:06  Welcome, you are now connected to log-streaming service.
-    2016-03-24T10:27:30.607 Function started (Id=e304450c-ff48-44dc-ba2e-1df7209a9d22)
-    2016-03-24T10:27:30.607 C# Queue trigger function processed: {"name":"User testing from C# timer function","address":"XYZ"}
-    2016-03-24T10:27:30.607 Function completed (Success, Id=e304450c-ff48-44dc-ba2e-1df7209a9d22)
-
-## <a name="test-a-function-with-code"></a>Тестирование функции с помощью кода
-Вам может потребоваться создать внешнее приложение или платформу для тестирования функций.
-
-### <a name="test-an-http-trigger-function-with-code-nodejs"></a>Тестирование функции HTTP-триггера с помощью кода: Node.js
-Чтобы выполнить HTTP-запрос для тестирования функции, можно использовать приложение Node.js.
-Не забудьте задать следующие значения:
-
-* для `host` в параметрах запроса — узел приложения функции;
-* имя функции в параметре `path`;
-* код доступа (`<your code>`) в параметре `path`.
-
-Пример кода:
-
-```javascript
-var http = require("http");
-
-var nameQueryString = "name=Wes%20Query%20String%20Test%20From%20Node.js";
-
-var nameBodyJSON = {
-    name : "Wes testing with Node.JS code",
-    address : "Dallas, T.X. 75201"
-};
-
-var bodyString = JSON.stringify(nameBodyJSON);
-
-var options = {
-  host: "functions841def78.azurewebsites.net",
-  //path: "/api/HttpTriggerNodeJS2?code=sc1wt62opn7k9buhrm8jpds4ikxvvj42m5ojdt0p91lz5jnhfr2c74ipoujyq26wab3wk5gkfbt9&" + nameQueryString,
-  path: "/api/HttpTriggerNodeJS2?code=sc1wt62opn7k9buhrm8jpds4ikxvvj42m5ojdt0p91lz5jnhfr2c74ipoujyq26wab3wk5gkfbt9",
-  method: "POST",
-  headers : {
-      "Content-Type":"application/json",
-      "Content-Length": Buffer.byteLength(bodyString)
-    }    
-};
-
-callback = function(response) {
-  var str = ""
-  response.on("data", function (chunk) {
-    str += chunk;
-  });
-
-  response.on("end", function () {
-    console.log(str);
-  });
-}
-
-var req = http.request(options, callback);
-console.log("*** Sending name and address in body ***");
-console.log(bodyString);
-req.end(bodyString);
-```
-
-
-Выходные данные:
-
-    C:\Users\Wesley\testing\Node.js>node testHttpTriggerExample.js
-    *** Sending name and address in body ***
-    {"name" : "Wes testing with Node.JS code","address" : "Dallas, T.X. 75201"}
-    Hello Wes testing with Node.JS code
-    The address you provided is Dallas, T.X. 75201
-
-В окне **Журналы** на портале при выполнении функции регистрируются выходные данные, подобные следующим:
-
-    2016-03-23T08:08:55  Welcome, you are now connected to log-streaming service.
-    2016-03-23T08:08:59.736 Function started (Id=607b891c-08a1-427f-910c-af64ae4f7f9c)
-    2016-03-23T08:09:01.153 HTTP trigger function processed a request. RequestUri=http://functionsExample.azurewebsites.net/api/WesmcHttpTriggerNodeJS1/?code=XXXXXXXXXX==
-    2016-03-23T08:09:01.153 Request Headers = {"connection":"Keep-Alive","host":"functionsExample.azurewebsites.net"}
-    2016-03-23T08:09:01.153 Name not provided as query string param. Checking body...
-    2016-03-23T08:09:01.153 Request Body Type = object
-    2016-03-23T08:09:01.153 Request Body = [object Object]
-    2016-03-23T08:09:01.153 Processing User Information...
-    2016-03-23T08:09:01.215 Function completed (Success, Id=607b891c-08a1-427f-910c-af64ae4f7f9c)
-
-
-### <a name="test-a-queue-trigger-function-with-code-c"></a>Тестирование функции триггера очереди с помощью кода: C# #
-Мы уже упоминали, что триггер очереди можно протестировать с помощью кода, поместив сообщение в очередь. Следующий пример кода основан на коде C#, представленном в руководстве [Приступая к работе с хранилищем очередей Azure с помощью .NET](../storage/queues/storage-dotnet-how-to-use-queues.md). По этой ссылке также доступен код для других языков.
-
-Чтобы протестировать этот код в консольном приложении, необходимо сделать следующее:
-
-* [Настройте строку подключения хранилища в файле app.config](../storage/queues/storage-dotnet-how-to-use-queues.md).
-* Передайте `name` и `address` в качестве параметров в приложение. Например, `C:\myQueueConsoleApp\test.exe "Wes testing queues" "in a console app"`. (Этот код принимает имя и адрес для нового пользователя в качестве аргументов командной строки во время выполнения.)
-
-Пример кода C#:
-
-```cs
-static void Main(string[] args)
-{
-    string name = null;
-    string address = null;
-    string queueName = "queue-newusers";
-    string JSON = null;
-
-    if (args.Length > 0)
-    {
-        name = args[0];
-    }
-    if (args.Length > 1)
-    {
-        address = args[1];
-    }
-
-    // Retrieve storage account from connection string
-    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(ConfigurationManager.AppSettings["StorageConnectionString"]);
-
-    // Create the queue client
-    CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
-
-    // Retrieve a reference to a queue
-    CloudQueue queue = queueClient.GetQueueReference(queueName);
-
-    // Create the queue if it doesn't already exist
-    queue.CreateIfNotExists();
-
-    // Create a message and add it to the queue.
-    if (name != null)
-    {
-        if (address != null)
-            JSON = String.Format("{{\"name\":\"{0}\",\"address\":\"{1}\"}}", name, address);
-        else
-            JSON = String.Format("{{\"name\":\"{0}\"}}", name);
-    }
-
-    Console.WriteLine("Adding message to " + queueName + "...");
-    Console.WriteLine(JSON);
-
-    CloudQueueMessage message = new CloudQueueMessage(JSON);
-    queue.AddMessage(message);
-}
-```
-
-В окне браузера для функции очереди отображается каждое обрабатываемое сообщение:
-
-    2016-03-24T10:27:06  Welcome, you are now connected to log-streaming service.
-    2016-03-24T10:27:30.607 Function started (Id=e304450c-ff48-44dc-ba2e-1df7209a9d22)
-    2016-03-24T10:27:30.607 C# Queue trigger function processed: {"name":"Wes testing queues","address":"in a console app"}
-    2016-03-24T10:27:30.607 Function completed (Success, Id=e304450c-ff48-44dc-ba2e-1df7209a9d22)
-
-
-<!-- URLs. -->
-
-[портал Azure]: https://portal.azure.com
+Теперь, когда вы узнали, как записывать автоматизированные тесты для функций, изучите следующие ресурсы.
+- [Запуск функции, не активируемой HTTP-запросом, вручную](./functions-manually-run-non-http.md)
+- [Обработка ошибок службы "Функции Azure"](./functions-bindings-error-pages.md)
+- [Локальная отладка триггера Сетки событий для функций Azure](./functions-debug-event-grid-trigger-local.md)

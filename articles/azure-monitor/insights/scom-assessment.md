@@ -8,19 +8,17 @@ manager: carmonm
 editor: tysonn
 ms.assetid: 49aad8b1-3e05-4588-956c-6fdd7715cda1
 ms.service: log-analytics
-ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/25/2018
 ms.author: magoedte
-ms.component: ''
-ms.openlocfilehash: 1b6f157ce8a184885fcd1cd6bbde912516916db9
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: fc625192464dce174b4c2a6d8a2a98343519699f
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52429729"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53186129"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>Оптимизация среды с помощью решения для проверки работоспособности System Center Operations Manager (предварительная версия)
 
@@ -99,7 +97,7 @@ ms.locfileid: "52429729"
 2. На вкладке **Distribution** (Распространение) щелкните **Добавить** для поля **Выбранные компьютеры** и добавьте сервер управления, на который нужно распространить учетную запись.  Чтобы сохранить изменения, дважды нажмите кнопку **ОК**.
 3. В разделе **Run As Configuration** (Конфигурация запуска от имени) щелкните **Профили**.
 4. Найдите *профиль оценки SCOM*.
-5. Он должен называться *Microsoft System Center Advisor SCOM Assessment Run As Profile*.
+5. Профиль должен называться *Microsoft System Center Advisor SCOM Assessment Run As Profile*.
 6. Щелкните правой кнопкой мыши и обновите свойства профиля. Добавьте в него учетную запись запуска от имени, созданную ранее.
 
 ### <a name="sql-script-to-grant-granular-permissions-to-the-run-as-account"></a>Сценарий SQL для предоставления детализированных разрешений учетной записи запуска от имени
@@ -174,7 +172,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 
 1. В рабочей области **Разработка** консоли Operations Manager в разделе **Правила** найдите правило *Microsoft System Center Advisor SCOM Assessment Run Assessment Rule*.
 2. В результатах поиска выберите тот, который содержит текст *Тип: сервер управления*.
-3. Щелкните правой кнопкой мыши правило, а затем выберите **Override the Rule** (Переопределить правило)  >  **Для всех объектов данного класса: сервер управления**.
+3. Щелкните правой кнопкой мыши правило, а затем выберите **Override the Rule** (Переопределить правило)  > **Для всех объектов данного класса: сервер управления**.
 4. Изменение значение параметра **Интервал**, указав нужное вам значение интервала. В следующем примере задано значение 1440 минут (один день).<br><br> ![Параметр интервала](./media/scom-assessment/interval.png)<br>  
 
     Если задать значение меньше 1440 минут, то правило работает с интервалом в один день. В этом примере правило не учитывает значение интервала и выполняется с частотой один день.
@@ -238,7 +236,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
     ```
 
     >[!NOTE]
-    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../../log-analytics/log-analytics-queries.md), приведенный выше запрос будет изменен следующим образом.
+    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../../azure-monitor/log-query/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
     >
     > `SCOMAssessmentRecommendationRecommendation | where RecommendationResult == "Failed" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -263,7 +261,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
     ```
 
     >[!NOTE]
-    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../../log-analytics/log-analytics-queries.md), приведенный выше запрос будет изменен следующим образом.
+    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../../azure-monitor/log-query/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
     >
     > `SCOMAssessmentRecommendationRecommendation | where RecommendationResult == "Ignore" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -304,4 +302,4 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Выполняйте [поиск по журналам](../../log-analytics/log-analytics-queries.md), чтобы просмотреть подробные данные проверки работоспособности System Center Operations Manager и соответствующие рекомендации.
+- Выполняйте [поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные данные проверки работоспособности System Center Operations Manager и соответствующие рекомендации.

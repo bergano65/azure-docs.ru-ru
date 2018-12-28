@@ -1,13 +1,12 @@
 ---
 title: Копирование примеров обработки и анализа данных других пользователей в Студии машинного обучения Azure | Документация Майкрософт
-description: 'Секрет успешного процесса обработки и анализа данных: используйте работу других пользователей в своих целях. Воспользуйтесь примерами машинного обучения из коллекции средств ИИ Azure.'
+description: 'Секрет успешного процесса обработки и анализа данных: заставьте других работать за вас. Воспользуйтесь примерами машинного обучения из коллекции средств ИИ Azure.'
 keywords: примеры обработки и анализа данных,пример машинного обучения,алгоритм кластеризации,пример алгоритма кластеризации
 services: machine-learning
 documentationcenter: na
-author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
-ms.author: amlstudiodocs
-manager: hjerez
+author: garyericson
+ms.custom: seodec18
+ms.author: garye
 editor: cjgronlund
 ms.assetid: ec2be823-c325-4ad8-b8b2-3e664f1a44b4
 ms.service: machine-learning
@@ -17,12 +16,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/05/2018
-ms.openlocfilehash: e573a0394fa47cd6325fe582366242644232cf3d
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: acd0899396ac5a47dade5fac16e451b2029ec0c2
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52313781"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53260384"
 ---
 # <a name="copy-other-peoples-work-to-do-data-science"></a>Копирование работы других пользователей для обработки и анализа данных
 ## <a name="video-5-data-science-for-beginners-series"></a>Видео 5. Обработка и анализ данных для начинающих
@@ -42,13 +41,13 @@ ms.locfileid: "52313781"
 ## <a name="other-videos-in-this-series"></a>Другие видео из этого цикла
 *Обработка и анализ данных для начинающих* — это пять коротких видеороликов с основными сведениями об обработке и анализе данных.
 
-* Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
-* Видео 2. [Готовы ли ваши данные к обработке и анализу?](data-science-for-beginners-is-your-data-ready-for-data-science.md) *(4 мин 56 с)*
-* Видео 3. [Задайте вопрос, на который можно ответить с помощью данных](data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) *(4 мин 17 с)*
-* Видео 4. [Прогнозирование ответа с помощью простой модели](data-science-for-beginners-predict-an-answer-with-a-simple-model.md) *(7 мин 42 с)*
-* Видео 5. Копирование работы других пользователей для обработки и анализа данных.
+* Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
+* Видео 2. [Готовы ли ваши данные к обработке и анализу?](data-science-for-beginners-is-your-data-ready-for-data-science.md) *(4 мин 56 с)*
+* Видео 3. [Задайте вопрос, на который можно ответить с помощью данных](data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) *(4 мин 17 с)*
+* Видео 4. [Прогнозирование ответа с помощью простой модели](data-science-for-beginners-predict-an-answer-with-a-simple-model.md) *(7 мин 42 с)*
+* Видео 5. Копирование работы других пользователей для обработки и анализа данных
 
-## <a name="transcript-copy-other-peoples-work-to-do-data-science"></a>Расшифровка видео "Копирование работы других пользователей для обработки и анализа данных"
+## <a name="transcript-copy-other-peoples-work-to-do-data-science"></a>Расшифровка. Копирование работы других пользователей для обработки и анализа данных
 Добро пожаловать в пятое видео из цикла "Обработка и анализ данных для начинающих".
 
 В этом видео вы узнаете, где можно взять примеры, служащие отправной точкой для начала работы. Чтобы извлечь максимальную пользу из этого видео, сначала необходимо просмотреть предыдущие видео этого цикла.

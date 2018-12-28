@@ -1,22 +1,22 @@
 ---
-title: Мониторинг запросов и хранилища Azure Cosmos DB | Документация Майкрософт
+title: Мониторинг метрик производительности и хранения в Azure Cosmos DB
 description: Узнайте, как отслеживать метрики производительности, например запросы и ошибки сервера, и метрики использования, такие как использованный объем хранилища, для учетной записи Azure Cosmos DB.
 services: cosmos-db
 author: SnehaGunda
-manager: kfile
 ms.service: cosmos-db
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/19/2017
+ms.date: 12/06/2018
 ms.author: sngun
-ms.openlocfilehash: 1f4bf4ba660e83be9879c56d04b27c932d563e17
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.custom: seodec18
+ms.openlocfilehash: fe527e6e9933d25d7f1a16561ce4822d7b9a33ab
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49354074"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53135888"
 ---
-# <a name="monitor-azure-cosmos-db"></a>Мониторинг Azure Cosmos DB
+# <a name="monitor-performance-and-storage-metrics-in-azure-cosmos-db"></a>Мониторинг метрик производительности и хранения в Azure Cosmos DB
+
 Вы можете отслеживать свои учетные записи Azure DocumentDB на [портале Azure](https://portal.azure.com/). Для каждой учетной записи Azure Cosmos DB доступен полный набор метрик для мониторинга пропускной способности, хранилища, доступности, задержки и согласованности.
 
 Метрики можно просмотреть на странице учетной записи, на странице метрик или в Azure Monitor.

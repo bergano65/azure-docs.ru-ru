@@ -1,13 +1,12 @@
 ---
-title: Готовы ли ваши данные к обработке и анализу? Оценка данных в Студии машинного обучения Azure | Документация Майкрософт
+title: Оценка данных в Студии машинного обучения Azure | Документация Майкрософт
 description: Четыре критерия, которым должны соответствовать ваши данные, чтобы быть готовыми для обработки и анализа данных. Это видео содержит конкретные примеры общей оценки данных.
 keywords: соответствующие данные,оценить данные,подготовить данные,критерии данных,данные готовы
 services: machine-learning
 documentationcenter: na
-author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
-ms.author: amlstudiodocs
-manager: hjerez
+author: garyericson
+ms.custom: seodec18
+ms.author: garye
 editor: cjgronlund
 ms.assetid: d502062c-da70-4b21-9054-0bfd9902612e
 ms.service: machine-learning
@@ -17,12 +16,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/03/2018
-ms.openlocfilehash: 5e7949edb13bfec72fa7d80d86d2e77214ceaa37
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 2a9101ed510c617df81f422aea92ca1ef2b28cd8
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52316214"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53261234"
 ---
 # <a name="is-your-data-ready-for-data-science"></a>Готовы ли ваши данные к обработке и анализу?
 ## <a name="video-2-data-science-for-beginners-series"></a>Видео 2. Обработка и анализ данных для начинающих
@@ -38,13 +37,13 @@ ms.locfileid: "52316214"
 ## <a name="other-videos-in-this-series"></a>Другие видео из этого цикла
 *Обработка и анализ данных для начинающих* — это пять коротких видеороликов с основными сведениями об обработке и анализе данных.
 
-* Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
+* Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
 * Видео 2. Готовы ли ваши данные к обработке и анализу?
-* Видео 3. [Задайте вопрос, на который можно ответить с помощью данных](data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) *(4 мин 17 с)*
-* Видео 4. [Прогнозирование ответа с помощью простой модели](data-science-for-beginners-predict-an-answer-with-a-simple-model.md) *(7 мин 42 с)*
-* Видео 5. [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) *(3 мин 18 с)*
+* Видео 3. [Задайте вопрос, на который можно ответить с помощью данных](data-science-for-beginners-ask-a-question-you-can-answer-with-data.md) *(4 мин 17 с)*
+* Видео 4. [Прогнозирование ответа с помощью простой модели](data-science-for-beginners-predict-an-answer-with-a-simple-model.md) *(7 мин 42 с)*
+* Видео 5. [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) *(3 мин 18 с)*
 
-## <a name="transcript-is-your-data-ready-for-data-science"></a>Расшифровка видео "Готовы ли ваши данные к обработке и анализу?"
+## <a name="transcript-is-your-data-ready-for-data-science"></a>Расшифровка. Готовы ли ваши данные к обработке и анализу?
 Добро пожаловать! Это второе видео из цикла *Обработка и анализ данных для начинающих*, и оно называется "Готовы ли ваши данные к обработке и анализу?".  
 
 Чтобы функция обработки и анализа данных могла отвечать на заданные вопросы, необходимо предоставить ей высококачественное "сырье", с которым она будет работать. Это похоже на процесс приготовления пиццы: чем качественней ингредиенты, тем лучше конечный продукт. 

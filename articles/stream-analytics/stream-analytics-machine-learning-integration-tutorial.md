@@ -2,19 +2,19 @@
 title: Интеграция Azure Stream Analytics со службой "Машинное обучение Azure"
 description: В этой статье описывается, как быстро настроить простое задание Azure Stream Analytics, интегрированное со службой "Машинное обучение Azure" с помощью определяемой пользователем функции.
 services: stream-analytics
-author: jasonwhowell
+author: mamccrea
 ms.author: mamccrea
-manager: kfile
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 04/16/2018
-ms.openlocfilehash: 2169c3a41991b0b49a4324c16ea079f5943fad0b
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.date: 12/07/2018
+ms.custom: seodec18
+ms.openlocfilehash: d90439e498e8812551d9e2994165f1714d3bdaab
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685758"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53093341"
 ---
 # <a name="performing-sentiment-analysis-by-using-azure-stream-analytics-and-azure-machine-learning"></a>Выполнение анализа тональности с помощью Azure Stream Analytics и Машинного обучения Azure
 В этой статье описывается, как быстро настроить простое задание Azure Stream Analytics, интегрированное с Машинным обучением Azure. Вы используете модель машинного обучения для анализа тональности из коллекции Cortana Intelligence для анализа потока текстовых данных, а также определения оценки тональности в реальном времени. С помощью Cortana Intelligence Suite вы сможете выполнить эту задачу, не вникая в особенности создания модели анализа тональности.
@@ -28,7 +28,7 @@ ms.locfileid: "51685758"
 
 В реальном сценарии вы получите данные напрямую из потока данных Twitter. Чтобы упростить работу с этим руководством, мы описали сценарий, когда задание Streaming Analytics получает твиты из CSV-файла в хранилище BLOB-объектов Azure. Вы можете создать собственный CSV-файл или использовать пример этого файла, как показано на рисунке ниже.
 
-![пример твитов в CSV-файле](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-figure-2.png)  
+![Пример твитов в CSV-файле](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-figure-2.png)  
 
 Задание Streaming Analytics, которое вы создаете, применяет модель анализа тональности как определяемую пользователем функцию к образцу текстовых данных из хранилища BLOB-объектов. Выходные данные (результат анализа тональности) записываются в то же хранилище BLOB-объектов в другом CSV-файле. 
 
@@ -58,15 +58,15 @@ ms.locfileid: "51685758"
 
 3. Укажите существующую группу ресурсов и расположение. Мы рекомендуем, чтобы все ресурсы, созданные в рамках этого руководства, использовали одно расположение.
 
-    ![указание сведений об учетной записи хранения](./media/stream-analytics-machine-learning-integration-tutorial/create-sa1.png)
+    ![указание сведений об учетной записи хранения](./media/stream-analytics-machine-learning-integration-tutorial/create-storage-account1.png)
 
 4. На портале Azure выберите учетную запись хранения. В колонке учетной записи хранения щелкните **Контейнеры**, а затем щелкните **+&nbsp;Контейнер**, чтобы создать хранилище BLOB-объектов.
 
-    ![создание контейнера больших двоичных объектов](./media/stream-analytics-machine-learning-integration-tutorial/create-sa2.png)
+    ![Создание контейнера хранилища BLOB-объектов для входных данных](./media/stream-analytics-machine-learning-integration-tutorial/create-storage-account2.png)
 
 5. Укажите имя для контейнера (в примере это `azuresamldemoblob`) и выберите для **типа доступа** значение **BLOB-объект**. Закончив, нажмите кнопку **OK**.
 
-    ![указание сведений о контейнере больших двоичных объектов](./media/stream-analytics-machine-learning-integration-tutorial/create-sa3.png)
+    ![указание сведений о контейнере больших двоичных объектов](./media/stream-analytics-machine-learning-integration-tutorial/create-storage-account3.png)
 
 6. В колонке **Контейнеры** выберите новый контейнер, чтобы открыть его колонку.
 
@@ -123,7 +123,7 @@ ms.locfileid: "51685758"
 
 3. Назовите задание `azure-sa-ml-demo`, укажите подписку, существующую группу ресурсов (или создайте новую), а затем выберите расположение для задания.
 
-   ![указание параметров для нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/create-job-1.png)
+   ![указание параметров для нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/create-stream-analytics-job-1.png)
    
 
 ### <a name="configure-the-job-input"></a>Настройка входных данных для задания
@@ -143,7 +143,7 @@ ms.locfileid: "51685758"
    |**Контейнер**  | Выберите созданный ранее контейнер (`azuresamldemoblob`).        |
    |**Формат сериализации событий**  |  Выберите **CSV**.       |
 
-   ![Параметры для новых входных данных задания](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-create-sa-input-new-portal.png)
+   ![Указание параметров входных данных нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-create-sa-input-new-portal.png)
 
 4. Выберите команду **Сохранить**.
 
@@ -163,7 +163,7 @@ ms.locfileid: "51685758"
    |**Контейнер**  | Выберите созданный ранее контейнер (`azuresamldemoblob`).        |
    |**Формат сериализации событий**  |  Выберите **CSV**.       |
 
-   ![Параметры для новых выходных данных задания](./media/stream-analytics-machine-learning-integration-tutorial/create-output2.png) 
+   ![Указание параметров выходных данных нового задания Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/create-stream-analytics-output.png) 
 
 4. Выберите команду **Сохранить**.   
 
@@ -185,7 +185,7 @@ ms.locfileid: "51685758"
    | **URL-адрес**| Вставьте URL-адрес веб-службы.|
    |**Ключ** | Вставьте ключ API. |
   
-   ![Параметры для добавления функции машинного обучения в задание Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/add-function.png)  
+   ![Параметры добавления функции службы "Машинное обучение" в задание Stream Analytics](./media/stream-analytics-machine-learning-integration-tutorial/add-machine-learning-function.png)  
     
 4. Выберите команду **Сохранить**.
 

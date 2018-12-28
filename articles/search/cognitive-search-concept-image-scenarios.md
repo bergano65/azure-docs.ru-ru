@@ -1,5 +1,5 @@
 ---
-title: Обработка и извлечение текста из изображений в службе "Поиск Azure" | Документация Майкрософт
+title: Обработка и извлечение текста из изображений в конвейерах когнитивного поиска в службе "Поиск Azure"
 description: Обработка и извлечение текста и других сведений из изображений в конвейерах когнитивного поиска в службе "Поиск Azure".
 services: search
 manager: pablocas
@@ -10,12 +10,13 @@ ms.workload: search
 ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: luisca
-ms.openlocfilehash: 5ee821f3d1e81e581f376d4b14b3e8393a8f190c
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec2018
+ms.openlocfilehash: b4829b0da656c648db732b2e7564de6db8fbf2eb
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52444641"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53312618"
 ---
 #  <a name="how-to-process-and-extract-information-from-images-in-cognitive-search-scenarios"></a>Обработка и извлечение информации из изображений в сценариях когнитивного поиска
 
@@ -90,7 +91,7 @@ ms.locfileid: "52444641"
 
 ## <a name="image-related-skills"></a>Навыки, связанные с изображениями
 
-Есть два встроенных когнитивных навыка, которые принимают изображения в качестве входных данных: [OCR](cognitive-search-skill-ocr.md) и [Анализ образов](cognitive-search-skill-image-analysis.md). 
+Есть два встроенных когнитивных навыка, которые принимают изображения в качестве входных данных: [OCR](cognitive-search-skill-ocr.md) и [Анализ изображений](cognitive-search-skill-image-analysis.md). 
 
 Сейчас эти навыки используются только с изображениями, созданными на шаге открытия документа. Таким образом, поддерживаемые входные данные — это только `"/document/normalized_images"`.
 

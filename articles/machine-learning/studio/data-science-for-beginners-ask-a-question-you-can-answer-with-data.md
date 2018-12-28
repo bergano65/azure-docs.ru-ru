@@ -4,10 +4,9 @@ description: Узнайте, как формулировать точные во
 keywords: задачи обработки и анализа данных,вопросы обработки и анализа данных,формулирование вопроса,вопросы регрессии,вопросы классификации,точный вопрос
 services: machine-learning
 documentationcenter: na
-author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
-ms.author: amlstudiodocs
-manager: hjerez
+author: garyericson
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
+ms.author: garye
 editor: cjgronlund
 ms.assetid: 5b9501e3-9964-417a-8ffc-8913103da77b
 ms.service: machine-learning
@@ -17,12 +16,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/03/2018
-ms.openlocfilehash: c6d42ed7920b634994adf5313656c77e2df6dd5b
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 8f117a8c47d7c98f13101efe0ca5147ce8d8c25a
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52310843"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53250984"
 ---
 # <a name="ask-a-question-you-can-answer-with-data"></a>Задайте вопрос, на который можно ответить с помощью данных
 ## <a name="video-3-data-science-for-beginners-series"></a>Видео 3. Обработка и анализ данных для начинающих
@@ -38,18 +37,18 @@ ms.locfileid: "52310843"
 ## <a name="other-videos-in-this-series"></a>Другие видео из этого цикла
 *Обработка и анализ данных для начинающих* — это пять коротких видеороликов с основными сведениями об обработке и анализе данных.
 
-* Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
-* Видео 2. [Готовы ли ваши данные к обработке и анализу?](data-science-for-beginners-is-your-data-ready-for-data-science.md) *(4 мин 56 с)*
-* Видео 3. Задайте вопрос, на который можно ответить с помощью данных.
-* Видео 4. [Прогнозирование ответа с помощью простой модели](data-science-for-beginners-predict-an-answer-with-a-simple-model.md) *(7 мин 42 с)*
-* Видео 5. [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) *(3 мин 18 с)*
+* Видео 1. [5 вопросов, на которые дают ответ обработка и анализ данных](data-science-for-beginners-the-5-questions-data-science-answers.md) *(5 мин 14 с)*
+* Видео 2. [Готовы ли ваши данные к обработке и анализу?](data-science-for-beginners-is-your-data-ready-for-data-science.md) *(4 мин 56 с)*
+* Видео 3. Задайте вопрос, на который можно ответить с помощью данных
+* Видео 4. [Прогнозирование ответа с помощью простой модели](data-science-for-beginners-predict-an-answer-with-a-simple-model.md) *(7 мин 42 с)*
+* Видео 5. [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) *(3 мин 18 с)*
 
-## <a name="transcript-ask-a-question-you-can-answer-with-data"></a>Расшифровка видео "Задайте вопрос, на который можно ответить с помощью данных"
+## <a name="transcript-ask-a-question-you-can-answer-with-data"></a>Расшифровка. Задайте вопрос, на который можно ответить с помощью данных
 Вы смотрите третье видео из цикла "Обработка и анализ данных для начинающих".  
 
 В нем вы получите некоторые советы о том, как сформулировать вопрос, на который можно ответить с помощью данных.
 
-Это видео может быть более полезным, если вы сначала просмотрите два предыдущих видео из этого цикла: "5 вопросов, на которые дают ответ обработка и анализ данных" и "Готовы ли ваши данные к обработке и анализу?"
+Чтобы извлечь максимальную пользу из этого видео, сначала необходимо просмотреть предыдущие видео этого цикла: "5 вопросов, на которые дают ответ обработка и анализ данных" и "Готовы ли ваши данные к обработке и анализу?"
 
 ## <a name="ask-a-sharp-question"></a>Постановка точного вопроса
 Мы говорили о том, что обработка и анализ данных — это процесс использования имен (также называемых категориями или метками) и чисел для прогнозирования ответа на вопрос. Но это должен быть не просто любой вопрос, а *точный вопрос*
@@ -62,7 +61,7 @@ ms.locfileid: "52310843"
 
 Но если задать точный вопрос, такой как "Какой будет цена продажи моих акций на следующей неделе?", джин будет вынужден дать конкретный ответ и предсказать цену продажи.
 
-## <a name="examples-of-your-answer-target-data"></a>Примеры ответа: целевые данные
+## <a name="examples-of-your-answer-target-data"></a>Примеры ответов: целевые данные
 После того, как вопрос сформулирован, проверьте, содержат ли ваши данные примеры ответов.
 
 Если наш вопрос "Сколько будут стоить мои акции на следующей неделе?", необходимо убедиться, что наши данные включают журнал котировки акций.

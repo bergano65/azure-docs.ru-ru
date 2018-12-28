@@ -1,6 +1,6 @@
 ---
-title: Обновление пакета SDK управления .NET для службы поиска Azure до версии 2 | Документация Майкрософт
-description: Обновление пакета SDK управления .NET для службы поиска Azure до версии 2.
+title: Обновление пакета SDK управления .NET для службы "Поиск Azure" до версии 2
+description: Сведения об обновлении пакета SDK управления .NET для службы "Поиск Azure" до версии 2. Сведения о новых возможностях и необходимых изменениях кода.
 author: brjohnstmsft
 manager: jlembicz
 ms.author: brjohnst
@@ -9,12 +9,13 @@ ms.service: search
 ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 01/15/2018
-ms.openlocfilehash: a6b6c01f0cc811abca90139e4c26c27b7bd7119f
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.custom: seodec2018
+ms.openlocfilehash: 369e5283d7350729e0d8cc44f94f1f2e71b133c3
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31790371"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53316881"
 ---
 # <a name="upgrading-to-the-azure-search-net-management-sdk-version-2"></a>Обновление пакета SDK управления .NET для службы поиска Azure до версии 2
 Если вы используете версию 1.0.2 [пакета SDK управления .NET для службы поиска Azure](https://aka.ms/search-mgmt-sdk) или более раннюю версию, то эта статья поможет вам обновить приложение для использования версии 2.

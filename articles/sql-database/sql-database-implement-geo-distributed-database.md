@@ -3,7 +3,7 @@ title: Реализация решения географически распр
 description: Сведения о настройке базы данных SQL Azure и приложения для отработки отказа в реплицированную базу данных и тестовой отработки отказа.
 services: sql-database
 ms.service: sql-database
-ms.subservice: operations
+ms.subservice: high-availability
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -12,42 +12,41 @@ ms.author: sashan
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 11/01/2018
-ms.openlocfilehash: 2508d43e876a7e463d68eed1b1ca93ddf0d1e9d1
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.openlocfilehash: 0fe24c22c42c826db28b6cee460936597b8de83c
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50913350"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53269256"
 ---
 # <a name="tutorial-implement-a-geo-distributed-database"></a>Руководство. Реализация географически распределенной базы данных
 
-В этом руководстве вы настроите базу данных SQL Azure и приложение для отработки отказа в удаленный регион, а затем протестируете план отработки отказа. Вы узнаете, как выполнять следующие задачи: 
+В этом руководстве вы настроите базу данных SQL Azure и приложение для отработки отказа в удаленный регион, а затем протестируете план отработки отказа. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * создавать пользователей базы данных и предоставлять им разрешения;
-> * настраивать правила брандмауэра уровня базы данных;
-> * создавать [группу отработки отказа георепликации](sql-database-geo-replication-overview.md);
-> * создавать и компилировать приложения Java для запроса базы данных SQL Azure;
-> * выполнять отработку аварийного восстановления.
+> - создавать пользователей базы данных и предоставлять им разрешения;
+> - настраивать правила брандмауэра уровня базы данных;
+> - создавать [группу отработки отказа](sql-database-auto-failover-group.md);
+> - создавать и компилировать приложения Java для запроса базы данных SQL Azure;
+> - выполнять отработку аварийного восстановления.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим руководством выполните следующие предварительные требования:
 
-- Установите последнюю версию [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs). 
+- Установите последнюю версию [Azure PowerShell](https://docs.microsoft.com/powershell/azureps-cmdlets-docs).
 - Установите базу данных SQL Azure. В этом руководстве используется пример базы данных AdventureWorksLT с именем **mySampleDatabase** из одного из этих кратких руководств:
 
-   - [Создание базы данных с помощью портала](sql-database-get-started-portal.md)
-   - [Создание базы данных SQL Azure и отправка к ней запросов с помощью Azure CLI](sql-database-cli-samples.md)
-   - [Создание базы данных с помощью PowerShell](sql-database-powershell-samples.md)
+  - [Создание базы данных с помощью портала](sql-database-get-started-portal.md)
+  - [Создание базы данных SQL Azure и отправка к ней запросов с помощью Azure CLI](sql-database-cli-samples.md)
+  - [Создание базы данных с помощью PowerShell](sql-database-powershell-samples.md)
 
 - После определения метода для выполнения сценариев SQL для базы данных можно использовать одно из следующих средств запроса:
-   - Редактор запросов на [портале Azure](https://portal.azure.com). Дополнительные сведения об использовании редактора запросов на портале Azure см. в разделе [Отправка запросов к базе данных SQL](sql-database-get-started-portal.md#query-the-sql-database).
-   - Последнюю версию [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms), которая является интегрированной средой для управления любой инфраструктурой SQL, от SQL Server до базы данных SQL для Microsoft Windows.
-   - Последнюю версию [Visual Studio Code](https://code.visualstudio.com/docs), которая является графическим редактором кода для Linux, macOS и Windows, поддерживающим различные расширения, включая [расширение mssql](https://aka.ms/mssql-marketplace), для выполнения запросов к Microsoft SQL Server, базе данных SQL Azure и хранилищу данных SQL. Дополнительные сведения об использовании этого средства в базе данных SQL Azure см. в статье [База данных SQL Azure: подключение и запрос данных с помощью Visual Studio Code](sql-database-connect-query-vscode.md). 
+  - Редактор запросов на [портале Azure](https://portal.azure.com). Дополнительные сведения об использовании редактора запросов на портале Azure см. в разделе [Отправка запросов к базе данных SQL](sql-database-get-started-portal.md#query-the-sql-database).
+  - Последнюю версию [SQL Server Management Studio](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms), которая является интегрированной средой для управления любой инфраструктурой SQL, от SQL Server до базы данных SQL для Microsoft Windows.
+  - Последнюю версию [Visual Studio Code](https://code.visualstudio.com/docs), которая является графическим редактором кода для Linux, macOS и Windows, поддерживающим различные расширения, включая [расширение mssql](https://aka.ms/mssql-marketplace), для выполнения запросов к Microsoft SQL Server, базе данных SQL Azure и хранилищу данных SQL. Дополнительные сведения об использовании этого средства в базе данных SQL Azure см. в статье [База данных SQL Azure: подключение и запрос данных с помощью Visual Studio Code](sql-database-connect-query-vscode.md).
 
 ## <a name="create-database-users-and-grant-permissions"></a>Создание пользователей базы данных и предоставление им разрешений
 
@@ -59,12 +58,12 @@ ms.locfileid: "50913350"
 
 Эти учетные записи пользователей автоматически реплицируются на сервер-получатель (синхронизация обязательна). Чтобы использовать SQL Server Management Studio или Visual Studio Code, вам может потребоваться настроить правило брандмауэра при подключении из клиента по IP-адресу, для которого еще не настроен брандмауэр. Подробные инструкции см. в разделе [Создание правила брандмауэра на уровне сервера](sql-database-get-started-portal-firewall.md).
 
-- Чтобы создать в базе данных две учетные записи пользователя, в окне запроса выполните следующий запрос: Этот скрипт предоставляет разрешения **db_owner** для учетной записи **app_admin**, а также разрешения **SELECT** и **UPDATE** для учетной записи **app_user**. 
+- Чтобы создать в базе данных две учетные записи пользователя, в окне запроса выполните следующий запрос: Этот скрипт предоставляет разрешения **db_owner** для учетной записи **app_admin**, а также разрешения **SELECT** и **UPDATE** для учетной записи **app_user**.
 
    ```sql
    CREATE USER app_admin WITH PASSWORD = 'ChangeYourPassword1';
    --Add SQL user to db_owner role
-   ALTER ROLE db_owner ADD MEMBER app_admin; 
+   ALTER ROLE db_owner ADD MEMBER app_admin;
    --Create additional SQL user
    CREATE USER app_user WITH PASSWORD = 'ChangeYourPassword1';
    --grant permission to SalesLT schema
@@ -82,9 +81,9 @@ ms.locfileid: "50913350"
    EXECUTE sp_set_database_firewall_rule @name = N'myGeoReplicationFirewallRule',@start_ip_address = '0.0.0.0', @end_ip_address = '0.0.0.0';
    ```
 
-## <a name="create-an-active-geo-replication-auto-failover-group"></a>Создание группы автоматической отработки отказа и активная георепликация 
+## <a name="create-a-failover-group"></a>Создание группы отработки отказа
 
-С помощью Azure PowerShell создайте [группу автоматической отработки отказа активной георепликации](sql-database-geo-replication-overview.md) между существующим сервером SQL Azure и новым пустым сервером SQL Azure в регионе Azure, а затем добавьте пример базы данных в группу отработки отказа.
+С помощью Azure PowerShell создайте [группу отработки отказа](sql-database-auto-failover-group.md) между имеющимся сервером SQL Azure и новым пустым сервером SQL Azure в регионе Azure, а затем добавьте пример базы данных в группу отработки отказа.
 
 > [!IMPORTANT]
 > Для выполнения этих командлетов требуется Azure PowerShell версии 4.0. [!INCLUDE [sample-powershell-install](../../includes/sample-powershell-install-no-ssh.md)]
@@ -111,7 +110,7 @@ ms.locfileid: "50913350"
       -ServerName $mydrservername `
       -Location $mydrlocation `
       -SqlAdministratorCredentials $(New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $adminlogin, $(ConvertTo-SecureString -String $password -AsPlainText -Force))
-   $mydrserver   
+   $mydrserver
    ```
 
 3. Создайте группу отработки отказа между двумя серверами.
@@ -124,7 +123,7 @@ ms.locfileid: "50913350"
       –FailoverGroupName $myfailovergroupname `
       –FailoverPolicy Automatic `
       -GracePeriodWithDataLossHours 2
-   $myfailovergroup   
+   $myfailovergroup
    ```
 
 4. Добавьте базу данных в группу отработки отказа.
@@ -138,15 +137,16 @@ ms.locfileid: "50913350"
       -ResourceGroupName $myresourcegroupname ` `
       -ServerName $myservername `
       -FailoverGroupName $myfailovergroupname
-   $myfailovergroup   
+   $myfailovergroup
    ```
 
 ## <a name="install-java-software"></a>Установка программного обеспечения Java
 
-В этом разделе предполагается, что у вас уже есть опыт разработки на Java и вы только начали работу с Базой данных SQL Azure. 
+В этом разделе предполагается, что у вас уже есть опыт разработки на Java и вы только начали работу с Базой данных SQL Azure.
 
-### <a name="mac-os"></a>**Mac OS**
-Откройте терминал и перейдите в каталог, в котором вы планируете создать проект Java. Введите следующие команды для установки **brew** и **Maven**. 
+### <a name="mac-os"></a>MacOS
+
+Откройте терминал и перейдите в каталог, в котором вы планируете создать проект Java. Введите следующие команды для установки **brew** и **Maven**.
 
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -156,7 +156,8 @@ brew install maven
 
 Для получения подробных инструкций по установке и настройке сред Java и Maven перейдите на ресурс [создания приложения с помощью SQL Server](https://www.microsoft.com/sql-server/developer-get-started/), выберите **Java**, затем — **MacOS** и выполните подробные инструкции по настройке Java и Maven (шаги 1.2 и 1.3).
 
-### <a name="linux-ubuntu"></a>**Linux (Ubuntu)**
+### <a name="linux-ubuntu"></a>Linux (Ubuntu)
+
 Откройте терминал и перейдите в каталог, в котором вы планируете создать проект Java. Введите следующие команды для установки **Maven**.
 
 ```bash
@@ -165,15 +166,18 @@ sudo apt-get install maven
 
 Для получения подробных инструкций по установке и настройке сред Java и Maven перейдите на ресурс [создания приложения с помощью SQL Server](https://www.microsoft.com/sql-server/developer-get-started/), выберите **Java**, затем — **Ubuntu** и выполните подробные инструкции по настройке Java и Maven (шаги 1.2, 1.3 и 1.4).
 
-### <a name="windows"></a>**Windows**
+### <a name="windows"></a> Windows
+
 Установите [Maven](https://maven.apache.org/download.cgi) с помощью официального установщика. Maven можно использовать для управления зависимостями, выполнения сборки, тестирования и запуска проекта Java. Для получения подробных инструкций по установке и настройке сред Java и Maven перейдите на ресурс [создания приложения с помощью SQL Server](https://www.microsoft.com/sql-server/developer-get-started/), выберите **Java**, затем — Windows и выполните подробные инструкции по настройке Java и Maven (шаги 1.2 и 1.3).
 
 ## <a name="create-sqldbsample-project"></a>Создание проекта SqlDbSample
 
-1. В окне командной консоли (например, Bash) создайте проект Maven. 
+1. В окне командной консоли (например, Bash) создайте проект Maven.
+
    ```bash
    mvn archetype:generate "-DgroupId=com.sqldbsamples" "-DartifactId=SqlDbSample" "-DarchetypeArtifactId=maven-archetype-quickstart" "-Dversion=1.0.0"
    ```
+
 2. Введите **Y** и нажмите клавишу **ВВОД**.
 3. Перейдите в только что созданный проект.
 
@@ -181,9 +185,9 @@ sudo apt-get install maven
    cd SqlDbSamples
    ```
 
-4. Используя любой удобный редактор, откройте файл pom.xml в папке проекта. 
+4. Используя любой удобный редактор, откройте файл pom.xml в папке проекта.
 
-5. Добавьте Microsoft JDBC Driver для зависимости SQL Server в проект Maven. Для этого откройте удобный текстовый редактор, скопируйте и вставьте следующие строки в файл pom.xml. Не перезаписывайте имеющиеся значения, предварительно заполненные в файле. JDBC-зависимость необходимо вставить в рамках большего раздела зависимостей.   
+5. Добавьте Microsoft JDBC Driver для зависимости SQL Server в проект Maven. Для этого откройте удобный текстовый редактор, скопируйте и вставьте следующие строки в файл pom.xml. Не перезаписывайте имеющиеся значения, предварительно заполненные в файле. JDBC-зависимость необходимо вставить в рамках большего раздела зависимостей.
 
    ```xml
    <dependency>
@@ -193,7 +197,7 @@ sudo apt-get install maven
    </dependency>
    ```
 
-6. Укажите версию Java, с помощью которой нужно скомпилировать проект. Для этого добавьте следующий раздел свойств в файл pom.xml после раздела зависимостей. 
+6. Укажите версию Java, с помощью которой нужно скомпилировать проект. Для этого добавьте следующий раздел свойств в файл pom.xml после раздела зависимостей.
 
    ```xml
    <properties>
@@ -201,7 +205,8 @@ sudo apt-get install maven
      <maven.compiler.target>1.8</maven.compiler.target>
    </properties>
    ```
-7. Добавьте следующий раздел сборки в файл pom.xml после раздела свойств для поддержки файлов манифеста в JAR-файлах.       
+
+7. Добавьте следующий раздел сборки в файл pom.xml после раздела свойств для поддержки файлов манифеста в JAR-файлах.
 
    ```xml
    <build>
@@ -221,6 +226,7 @@ sudo apt-get install maven
      </plugins>
    </build>
    ```
+
 8. Сохраните и закройте файл pom.xml.
 9. Откройте файл App.java (C:\apache-maven-3.5.0\SqlDbSample\src\main\java\com\sqldbsamples\App.java) и замените его содержимое на содержимое ниже. Замените имя группы отработки отказа на имя своей группы отработки отказа. Если вы изменили значения для имени базы данных, пользователя или пароля, измените также эти значения.
 
@@ -251,7 +257,7 @@ sudo apt-get install maven
          System.out.println("#######################################");
          System.out.println("## GEO DISTRIBUTED DATABASE TUTORIAL ##");
          System.out.println("#######################################");
-         System.out.println(""); 
+         System.out.println("");
 
          int highWaterMark = getHighWaterMarkId();
 
@@ -272,7 +278,7 @@ sudo apt-get install maven
       // Insert data into the product table with a unique product name that we can use to find the product again later
       String sql = "INSERT INTO SalesLT.Product (Name, ProductNumber, Color, StandardCost, ListPrice, SellStartDate) VALUES (?,?,?,?,?,?);";
 
-      try (Connection connection = DriverManager.getConnection(READ_WRITE_URL); 
+      try (Connection connection = DriverManager.getConnection(READ_WRITE_URL);
               PreparedStatement pstmt = connection.prepareStatement(sql)) {
          pstmt.setString(1, "BrandNewProduct" + id);
          pstmt.setInt(2, 200989 + id + 10000);
@@ -290,7 +296,7 @@ sudo apt-get install maven
       // Query the data that was previously inserted into the primary database from the geo replicated database
       String sql = "SELECT Name, Color, ListPrice FROM SalesLT.Product WHERE Name = ?";
 
-      try (Connection connection = DriverManager.getConnection(READ_ONLY_URL); 
+      try (Connection connection = DriverManager.getConnection(READ_ONLY_URL);
               PreparedStatement pstmt = connection.prepareStatement(sql)) {
          pstmt.setString(1, "BrandNewProduct" + id);
          try (ResultSet resultSet = pstmt.executeQuery()) {
@@ -302,11 +308,10 @@ sudo apt-get install maven
    }
 
    private static int getHighWaterMarkId() {
-      // Query the high water mark id that is stored in the table to be able to make unique inserts 
+      // Query the high water mark id that is stored in the table to be able to make unique inserts
       String sql = "SELECT MAX(ProductId) FROM SalesLT.Product";
       int result = 1;
-        
-      try (Connection connection = DriverManager.getConnection(READ_WRITE_URL); 
+      try (Connection connection = DriverManager.getConnection(READ_WRITE_URL);
               Statement stmt = connection.createStatement();
               ResultSet resultSet = stmt.executeQuery(sql)) {
          if (resultSet.next()) {
@@ -319,7 +324,8 @@ sudo apt-get install maven
       }
    }
    ```
-6. Сохраните и закройте файл App.java.
+
+10. Сохраните и закройте файл App.java.
 
 ## <a name="compile-and-run-the-sqldbsample-project"></a>Компиляция и выполнение проекта SqlDbSample
 
@@ -328,11 +334,12 @@ sudo apt-get install maven
    ```bash
    mvn package
    ```
+
 2. После завершения выполните следующую команду для запуска приложения (запуск выполняется около часа, если не завершить эту задачу вручную):
 
    ```bash
    mvn -q -e exec:java "-Dexec.mainClass=com.sqldbsamples.App"
-   
+
    #######################################
    ## GEO DISTRIBUTED DATABASE TUTORIAL ##
    #######################################
@@ -344,7 +351,7 @@ sudo apt-get install maven
 
 ## <a name="perform-disaster-recovery-drill"></a>Выполнение отработки аварийного восстановления
 
-1. Для группы отработки отказа вызовите отработку отказа вручную. 
+1. Для группы отработки отказа вызовите отработку отказа вручную.
 
    ```powershell
    Switch-AzureRMSqlDatabaseFailoverGroup `
@@ -353,7 +360,7 @@ sudo apt-get install maven
    -FailoverGroupName $myfailovergroupname
    ```
 
-2. Просмотрите результаты приложения во время отработки отказа. Во время обновления кэша DNS некоторые операции вставки завершатся ошибкой.     
+2. Просмотрите результаты приложения во время отработки отказа. Во время обновления кэша DNS некоторые операции вставки завершатся ошибкой.
 
 3. Узнайте, какую роль выполняет сервер аварийного восстановления.
 
@@ -370,7 +377,7 @@ sudo apt-get install maven
    -FailoverGroupName $myfailovergroupname
    ```
 
-5. Просмотрите результаты приложения во время восстановления размещения. Во время обновления кэша DNS некоторые операции вставки завершатся ошибкой.     
+5. Просмотрите результаты приложения во время восстановления размещения. Во время обновления кэша DNS некоторые операции вставки завершатся ошибкой.
 
 6. Узнайте, какую роль выполняет сервер аварийного восстановления.
 
@@ -384,17 +391,16 @@ sudo apt-get install maven
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-С помощью этого руководства вы научились настраивать базу данных SQL Azure и приложение для отработки отказа в удаленный регион, а затем тестировать план отработки отказа.  Вы научились выполнять следующие задачи: 
+С помощью этого руководства вы научились настраивать базу данных SQL Azure и приложение для отработки отказа в удаленный регион, а затем тестировать план отработки отказа.  Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * создавать пользователей базы данных и предоставлять им разрешения;
-> * настраивать правила брандмауэра уровня базы данных;
-> * создавать группу отработки отказа георепликации;
-> * создавать и компилировать приложения Java для запроса базы данных SQL Azure;
-> * выполнять отработку аварийного восстановления.
+> - создавать пользователей базы данных и предоставлять им разрешения;
+> - настраивать правила брандмауэра уровня базы данных;
+> - создавать группу отработки отказа георепликации;
+> - создавать и компилировать приложения Java для запроса базы данных SQL Azure;
+> - выполнять отработку аварийного восстановления.
 
 Переходите к следующему руководству, чтобы узнать, как перенести SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS.
 
 > [!div class="nextstepaction"]
 >[Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS](../dms/tutorial-sql-server-to-managed-instance.md)
-

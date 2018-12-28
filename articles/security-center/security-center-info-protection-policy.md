@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/20/2018
 ms.author: rkarlin
-ms.openlocfilehash: e3dfbc4fc4d7ed40ebac7de6fe78398b13eafd58
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: b24e10abd7c0d4dd5a20f8f85c340de03dae696a
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52316554"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53343825"
 ---
 # <a name="customize-the-sql-information-protection-policy-in-azure-security-center-preview"></a>Настройка политики защиты информации SQL в центре безопасности Azure (предварительная версия)
  
@@ -85,8 +85,8 @@ Information Protection поставляется со встроенным наб
 
 Дополнительные сведения о политиках безопасности и безопасности данных в центре безопасности Azure см. в следующих статьях:
  
-- [Обзор политик безопасности](security-center-policies-overview.md) — ознакомьтесь с обзором политик безопасности в центре безопасности
-- [Настройка политик безопасности в центре безопасности Azure](security-center-azure-policy.md) — сведения о настройке политик безопасности для подписок и групп ресурсов Azure
-- [Защита данных в центре безопасности Azure](security-center-data-security.md) — сведения о том, как центр безопасности управляет данными и защищает их
+- [Параметры Центра безопасности.](security-center-policies-overview.md) В этой статье представлен обзор политик безопасности в Центре безопасности.
+- [Руководство: определение и оценка политик безопасности.](tutorial-security-policy.md) Узнайте, как настроить политики безопасности для подписок и групп ресурсов Azure.
+- [Защита данных в центре безопасности Azure.](security-center-data-security.md) Узнайте, как Центр безопасности управляет данными и защищает их
 
 

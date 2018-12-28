@@ -1,5 +1,6 @@
 ---
-title: Создание общедоступного балансировщика нагрузки уровня "Стандартный" с избыточным между зонами интерфейсным общедоступным IP-адресом с помощью Azure CLI | Документы Майкрософт
+title: Создание экземпляра Load Balancer (цен. категория "Стандартный") с избыточным между зонами внешним IP-адресом с помощью Azure CLI
+titlesuffix: Azure Load Balancer
 description: Сведения о создании общедоступного балансировщика нагрузки уровня "Стандартный" с избыточным между зонами интерфейсным общедоступным IP-адресом с помощью Azure CLI
 services: load-balancer
 documentationcenter: na
@@ -7,18 +8,19 @@ author: KumudD
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
+ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2018
 ms.author: kumud
-ms.openlocfilehash: 169c440c8fb64923da537f391d2b5f64746162ce
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 8c396e72a8c8471be4214bf1b461210e2e61a805
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50739130"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53138939"
 ---
-#  <a name="create-a-public-load-balancer-standard-with-zone-redundant-frontend-using-azure-cli"></a>Создание общедоступного балансировщика нагрузки уровня "Стандартный" с избыточным между зонами интерфейсным сервером с помощью Azure CLI
+#  <a name="create-a-standard-load-balancer-with-zone-redundant-frontend-using-azure-cli"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с избыточным между зонами интерфейсным сервером с помощью Azure CLI
 
 В этой статье описываются действия по созданию общедоступного [балансировщика нагрузки уровня "Стандартный"](https://aka.ms/azureloadbalancerstandard) с избыточным между зонами интерфейсным сервером с помощью общедоступного стандартного IP-адреса.
 

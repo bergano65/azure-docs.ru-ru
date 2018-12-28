@@ -1,13 +1,12 @@
 ---
-title: Коды ошибок REST API Студии машинного обучения Azure | Документация Майкрософт
+title: Коды ошибок REST API для Студии машинного обучения Azure | Документация Майкрософт
 description: Эти коды ошибок могут быть возвращены операцией с веб-службой машинного обучения Azure.
 keywords: ''
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 0923074b-3728-439d-a1b8-8a7245e39be4
 ms.service: machine-learning
@@ -17,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
 ms.date: 11/16/2016
-ms.openlocfilehash: 274fbced61318a6617b04ea3092e8e2f96a10940
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: b7f27e981ceb12191e58a3e0824c7e0709a49013
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52314907"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53251330"
 ---
-# <a name="machine-learning-studio-rest-api-error-codes"></a>Коды ошибок REST API Студии машинного обучения Azure
+# <a name="azure-machine-learning-studio-rest-api-error-codes"></a>Коды ошибок REST API для Студии машинного обучения Azure
  
 Приведенные ниже коды ошибок могут быть возвращены операцией с веб-службой Студии машинного обучения Azure.
  

@@ -13,12 +13,12 @@ ms.devlang: java
 ms.topic: article
 ms.date: 11/16/2017
 ms.author: crdun
-ms.openlocfilehash: b595e62e032743be2655406ac02c8db94cf708f9
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 5052ec73114c040a4c140d258b197fdde58f6667
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51281773"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53409332"
 ---
 # <a name="how-to-use-the-azure-mobile-apps-sdk-for-android"></a>Как использовать пакет SDK для мобильных приложений Azure в клиенте Android
 
@@ -189,15 +189,15 @@ public final void setPriority(Integer priority) {
 }
 ```
 
-См. дополнительные сведения о создании дополнительных таблиц в серверной части мобильных приложений, включая сведения об [определении контроллера таблиц][15] (серверная часть .NET) и [определении таблиц с помощью динамической схемы][16] (серверная часть Node.js).
+Сведения о создании дополнительных таблиц в серверной части мобильных приложений см. в разделе [Практическое руководство. Определение контроллера таблиц][15] (серверная часть .NET) или в разделе [Операции с таблицами][16] (серверная часть Node.js).
 
 В таблице серверной части мобильных приложений Azure определено пять специальных полей, четыре из которых доступны клиентам:
 
-* `String id` — глобальный уникальный идентификатор записи.  Мы советуем сделать этот идентификатор представлением строки объекта [UUID][17].
-* `DateTimeOffset updatedAt` — дата и время последнего обновления.  Поле updatedAt устанавливается на сервере и никогда не должно задаваться в коде клиента.
-* `DateTimeOffset createdAt` — дата и время создания объекта.  Поле createdAt устанавливается на сервере и никогда не должно задаваться в коде клиента.
-* `byte[] version` — обычно это поле представлено в виде строки. Версия также устанавливается на сервере.
-* `boolean deleted` — указывает, что запись была удалена, но еще не очищена.  Не используйте `deleted` в качестве свойства класса.
+* `String id`: глобальный уникальный идентификатор для записи.  Мы советуем сделать этот идентификатор представлением строки объекта [UUID][17].
+* `DateTimeOffset updatedAt`: дата и время последнего обновления.  Поле updatedAt устанавливается на сервере и никогда не должно задаваться в коде клиента.
+* `DateTimeOffset createdAt`: дата и время создания объекта.  Поле createdAt устанавливается на сервере и никогда не должно задаваться в коде клиента.
+* `byte[] version`: обычно эта версия представлена в виде строки и также устанавливается на сервере.
+* `boolean deleted`: указывает, что запись была удалена, но еще не очищена.  Не используйте `deleted` в качестве свойства класса.
 
 Поле `id` является обязательным.  Поля `updatedAt` и `version` используются при синхронизации в автономном режиме (для добавочной синхронизации и устранения конфликтов соответственно).  `createdAt` — это эталонное поле. Оно не используется клиентом.  Имена свойств можно передавать по сети. Они не изменяются.  Но вы можете создать сопоставление между своим объектом и этими именами, используя библиотеку [gson][3].  Например: 
 
@@ -446,7 +446,7 @@ do {
 > [!TIP]
 > Выбор правильного размера страницы — это соотношение между использованием памяти во время выполнения запроса, потреблением пропускной способности и задержкой получения всех данных.  Значение по умолчанию (50 записей) подходит для всех устройств.  Если вы работаете на устройствах с большим объемом памяти, увеличьте это значение до 500.  Мы пришли к выводу, что при увеличении размера страницы до более 500 записей возникают недопустимые задержки и большие проблемы с памятью.
 
-### <a name="chaining"></a>Практическое руководство. Объединение методов запросов
+### <a name="chaining"></a>Практическое руководство. Сцепка методов запросов
 
 Методы, используемые в запросах таблиц серверной части, можно сцепить. Цепочка методов запроса позволяет, например, выбирать определенные столбцы отфильтрованных строк, которые сортируются и разбиваются на страницы. Можно создавать сложные логические фильтры.  Каждый метод запроса возвращает объект Query. Чтобы завершить серию методов и фактически выполнить запрос, вызовите метод **execute** . Например: 
 
@@ -767,9 +767,9 @@ public void showAllUntyped(View view) {
 
 Пакет SDK для клиента мобильных приложений Azure также реализует синхронизацию данных в автономном режиме. Это стало возможным благодаря хранению копии данных сервера локально в базе данных SQLite.  Операции в автономной таблице выполняются без подключения к мобильному приложению.  Синхронизация данных в автономном режиме повышает устойчивость и производительность за счет более сложной логики устранения конфликтов.  Пакет SDK для клиента мобильных приложений Azure реализует следующие возможности:
 
-* Добавочная синхронизация. Загружаются только обновленные и новые записи. Это позволяет уменьшить потребление пропускной способности и памяти.
-* Оптимистичный параллелизм. Операции рассматриваются как успешные.  Устранение конфликтов откладывается до выполнения обновлений на сервере.
-* Устранение конфликтов. Пакет SDK обнаруживает время внесения конфликтного изменения на сервере и предоставляет обработчики для отправки уведомлений пользователю.
+* Добавочная синхронизация. Скачиваются только обновленные и новые записи. Это позволяет уменьшить потребление пропускной способности и памяти.
+* Оптимистичный параллелизм. Предполагается, что выполнение операций пройдет успешно.  Устранение конфликтов откладывается до выполнения обновлений на сервере.
+* Разрешение конфликтов. Пакет SDK обнаруживает время внесения конфликтного изменения на сервере и предоставляет обработчики для отправки оповещений пользователю.
 * Обратимое удаление. Удаленные записи помечаются как удаленные, что позволяет другим устройствам обновить их автономный кэш.
 
 ### <a name="initialize-offline-sync"></a>Инициализация синхронизации в автономном режиме
@@ -892,7 +892,7 @@ public void completeItem(View view) {
 
 Процесс добавления этих компонентов подробно описан в руководствах.
 
-Служба приложений поддерживает [проверку подлинности пользователей приложения](app-service-mobile-android-get-started-users.md) с помощью разных внешних поставщиков удостоверений: Facebook, Google, учетной записи Майкрософт, Twitter и Azure Active Directory. Можно задать разрешения таблиц, чтобы предоставить доступ к определенным операциям только пользователям, прошедшим проверку подлинности. Удостоверения пользователей, прошедших проверку подлинности, также можно применять для реализации правил авторизации в серверной части.
+Служба приложений поддерживает [аутентификацию пользователей приложений](app-service-mobile-android-get-started-users.md) с помощью различных внешних поставщиков удостоверений, таких как: Facebook, Google, учетная запись Майкрософт, Twitter и Azure Active Directory. Можно задать разрешения таблиц, чтобы предоставить доступ к определенным операциям только пользователям, прошедшим проверку подлинности. Удостоверения пользователей, прошедших проверку подлинности, также можно применять для реализации правил авторизации в серверной части.
 
 Поддерживаются два потока аутентификации: **серверный** и **клиентский**. Серверный поток обеспечивает самый простой способ аутентификации, так как он использует веб-интерфейс поставщика удостоверений.  Для реализации аутентификации серверного потока не нужны дополнительные пакеты SDK. Аутентификация серверного потока не обеспечивает тесную интеграцию с мобильным устройством и рекомендуется только для подтверждения концепции.
 
@@ -907,7 +907,7 @@ public void completeItem(View view) {
 
 Можно задать разрешения таблиц, чтобы предоставить доступ к определенным операциям только пользователям, прошедшим проверку подлинности. Также можно использовать идентификатор безопасности пользователя, прошедшего проверку, чтобы изменять запросы.  Дополнительную информацию см. в разделе [Приступая к работе с проверкой подлинности] и справочной документации по пакету SDK для сервера.
 
-### <a name="caching"></a>Серверный поток проверки подлинности
+### <a name="caching"></a>Аутентификация. Серверный поток
 
 Следующий код запускает процесс входа серверного потока с помощью поставщика Google.  Из-за требований к безопасности поставщика Google необходимо выполнить дополнительную конфигурацию:
 
@@ -1289,31 +1289,31 @@ client.setGsonBuilder(
 
 <!-- URLs. -->
 [Get started with Azure Mobile Apps]: app-service-mobile-android-get-started.md
-[ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
-[Mobile Services SDK for Android]: http://go.microsoft.com/fwlink/p/?LinkID=717033
+[ASCII control codes C0 and C1]: https://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
+[Mobile Services SDK for Android]: https://go.microsoft.com/fwlink/p/?LinkID=717033
 [Azure portal]: https://portal.azure.com
 [Приступая к работе с проверкой подлинности]: app-service-mobile-android-get-started-users.md
 [1]: https://static.javadoc.io/com.google.code.gson/gson/2.8.5/com/google/gson/JsonObject.html
-[2]: http://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson
+[2]: https://hashtagfail.com/post/44606137082/mobile-services-android-serialization-gson
 [3]: https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5
-[4]: http://go.microsoft.com/fwlink/p/?LinkId=296840
+[4]: https://go.microsoft.com/fwlink/p/?LinkId=296840
 [5]: app-service-mobile-android-get-started-push.md
 [6]: ../notification-hubs/notification-hubs-push-notification-overview.md#integration-with-app-service-mobile-apps
 [7]: app-service-mobile-android-get-started-users.md#cache-tokens
-[8]: http://azure.github.io/azure-mobile-apps-android-client/com/microsoft/windowsazure/mobileservices/table/MobileServiceTable.html
-[9]: http://azure.github.io/azure-mobile-apps-android-client/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html
+[8]: https://azure.github.io/azure-mobile-apps-android-client/com/microsoft/windowsazure/mobileservices/table/MobileServiceTable.html
+[9]: https://azure.github.io/azure-mobile-apps-android-client/com/microsoft/windowsazure/mobileservices/MobileServiceClient.html
 [10]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
 [11]: app-service-mobile-node-backend-how-to-use-server-sdk.md
-[12]: http://azure.github.io/azure-mobile-apps-android-client/
+[12]: https://azure.github.io/azure-mobile-apps-android-client/
 [13]: app-service-mobile-android-get-started.md#create-a-new-azure-mobile-app-backend
-[14]: http://go.microsoft.com/fwlink/p/?LinkID=717034
+[14]: https://go.microsoft.com/fwlink/p/?LinkID=717034
 [15]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#define-table-controller
 [16]: app-service-mobile-node-backend-how-to-use-server-sdk.md#TableOperations
 [17]: https://developer.android.com/reference/java/util/UUID.html
 [18]: https://github.com/google/guava/wiki/ListenableFutureExplained
-[19]: http://www.odata.org/documentation/odata-version-3-0/
-[20]: http://hashtagfail.com/post/46493261719/mobile-services-android-querying
+[19]: https://www.odata.org/documentation/odata-version-3-0/
+[20]: https://hashtagfail.com/post/46493261719/mobile-services-android-querying
 [21]: https://github.com/Azure-Samples/azure-mobile-apps-android-quickstart
-[22]: ../app-service/app-service-mobile-how-to-configure-active-directory-authentication.md
-[Future]: http://developer.android.com/reference/java/util/concurrent/Future.html
-[AsyncTask]: http://developer.android.com/reference/android/os/AsyncTask.html
+[22]: ../app-service/configure-authentication-provider-aad.md
+[Future]: https://developer.android.com/reference/java/util/concurrent/Future.html
+[AsyncTask]: https://developer.android.com/reference/android/os/AsyncTask.html

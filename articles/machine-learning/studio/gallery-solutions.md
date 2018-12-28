@@ -1,12 +1,11 @@
 ---
 title: Решения Коллекции решений ИИ Azure — Студия машинного обучения Azure | Документация Майкрософт
-description: Поиск решений в коллекции решений ИИ Azure.
+description: Поиск решений в коллекции решений ИИ Azure. Решения позволяют быстро создавать решения Cortana Intelligence на основе заранее настроенных решений, эталонных архитектур и конструктивных шаблонов.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: c0be3f10-9e54-4fc1-b5df-725c2e919f65
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
-ms.openlocfilehash: 4a16cdde41e17b334df389c4ef9dab64d959885a
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 8bfcbac45dd50ebed5491b0411d5f1faa5b5f078
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52308959"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53271340"
 ---
 # <a name="discover-solutions-in-the-azure-ai-gallery"></a>Поиск решений в коллекции решений ИИ Azure
 
@@ -48,5 +47,5 @@ ms.locfileid: "52308959"
 
 **[ПЕРЕЙТЕ В КОЛЛЕКЦИЮ >>](http://gallery.cortanaintelligence.com)**
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 

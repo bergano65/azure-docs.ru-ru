@@ -1,5 +1,5 @@
 ---
-title: Настройка взаимной проверки подлинности TLS для веб-приложения
+title: Настройка взаимной проверки подлинности TLS в Службе приложений Azure
 description: Узнайте, как настроить веб-приложение для использования проверки подлинности сертификата клиента на TLS.
 services: app-service
 documentationcenter: ''
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/08/2016
 ms.author: naziml
-ms.openlocfilehash: 894a77be05de131ab122f18c62d209e9829357f9
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.custom: seodec18
+ms.openlocfilehash: f08e8f60f0e23cce9546e45dcf7b249d38224736
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39056214"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53252887"
 ---
 # <a name="how-to-configure-tls-mutual-authentication-for-web-app"></a>Настройка взаимной проверки подлинности TLS для веб-приложения
 ## <a name="overview"></a>Обзор
@@ -47,7 +48,7 @@ ms.locfileid: "39056214"
         }
     }
 
-Обязательно измените значение location на расположение своего веб-приложения, например Северо-Центральный регион США или Запад США и т. п.
+Обязательно измените значение location на расположение своего веб-приложения, например центрально-северная часть США или западная часть США и т. п.
 
 Можно также использовать https://resources.azure.com, чтобы переключить свойство `clientCertEnabled` в значение `true`.
 

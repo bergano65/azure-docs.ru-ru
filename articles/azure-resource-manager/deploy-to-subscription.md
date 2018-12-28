@@ -1,6 +1,6 @@
 ---
-title: Развертывание ресурсов в подписку Azure | Документация Майкрософт
-description: В этой статье описывается, как создать шаблон Azure Resource Manager, который выполняет развертывание ресурсов в области подписки.
+title: Создание группы ресурсов и ресурсов в подписке — шаблон Azure Resource Manager
+description: В этой статье описывается создание группы ресурсов в шаблоне Azure Resource Manager. Здесь также показано, как развернуть ресурсы в области подписки Azure.
 services: azure-resource-manager
 documentationcenter: na
 author: tfitzmac
@@ -9,22 +9,36 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/10/2018
+ms.date: 12/14/2018
 ms.author: tomfitz
-ms.openlocfilehash: 1d281ebe80c6089c559cfaa77f4875a856566092
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 5b8247533a8bf51017767aac3a04e47ce6348a60
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079384"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53435299"
 ---
-# <a name="deploy-resources-to-an-azure-subscription"></a>Развертывание ресурсов в подписку Azure
+# <a name="create-resource-groups-and-resources-for-an-azure-subscription"></a>Создание групп ресурсов и ресурсов для подписки Azure
 
-Как правило,вы развертываете ресурсы в группу ресурсов в подписке Azure. Кроме того, некоторые ресурсы могут быть развернуты на уровне подписки Azure. Эти ресурсы применяются ко всей подписке. [Политики](../azure-policy/azure-policy-introduction.md), [Управление доступом на основе ролей](../role-based-access-control/overview.md) и [центр безопасности Azure](../security-center/security-center-intro.md) — это службы, которые можно применить на уровне подписки, а не на уровне группы ресурсов.
+Как правило,вы развертываете ресурсы в группу ресурсов в подписке Azure. Тем не менее развертывания на уровне подписки можно использовать для создания групп ресурсов и ресурсов, которые применяются в вашей подписке.
 
-В этой статье для развертывания шаблонов используются Azure CLI и PowerShell.
+Чтобы создать группу ресурсов в шаблоне Azure Resource Manager, определите для ресурса **Microsoft.Resources/resourceGroups** имя и расположение. Вы можете создать группу ресурсов и развернуть ресурсы в нее в одном шаблоне.
 
-## <a name="name-and-location-for-deployment"></a>Имя и расположение для развертывания
+[Политики](../azure-policy/azure-policy-introduction.md), [Управление доступом на основе ролей](../role-based-access-control/overview.md) и [центр безопасности Azure](../security-center/security-center-intro.md) — это службы, которые можно применить на уровне подписки, а не на уровне группы ресурсов.
+
+В этой статье показано, как создавать группы ресурсов, а также как создавать ресурсы, которые применяются в подписке. Для развертывания шаблонов используются Azure CLI и PowerShell. Портал нельзя использовать для развертывания шаблонов, так как на нем выполняется развертывание в группу ресурсов, а не в подписку Azure.
+
+## <a name="schema-and-commands"></a>Схема и команды
+
+Схема и команды, используемые для развертываний на уровне подписки, отличаются от развертываний в группу ресурсов. 
+
+Для схемы используйте `https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#`.
+
+В качестве команды развертывания Azure CLI используйте [az deployment create](/cli/azure/deployment?view=azure-cli-latest#az-deployment-create).
+
+В качестве команды развертывания PowerShell используйте [New-AzureRmDeployment](/powershell/module/azurerm.resources/new-azurermdeployment).
+
+## <a name="name-and-location"></a>Имя и расположение
 
 При развертывании в подписке, необходимо указать расположение для развертывания. Можно также указать имя для развертывания. Если не указать имя для развертывания, имя шаблона будет использоваться как имя развертывания. Например, развернув шаблон с именем **azuredeploy.json** создается имя развертывания по умолчанию **azuredeploy**.
 
@@ -37,6 +51,207 @@ ms.locfileid: "49079384"
 * Функция [resourceGroup()](resource-group-template-functions-resource.md#resourcegroup) **не** поддерживается.
 * Функция [resourceId()](resource-group-template-functions-resource.md#resourceid) поддерживается. Используйте ее для получения идентификатора ресурса для ресурсов, которые используются в развертываниях уровня подписки. Например получите идентификатор ресурса для определения политики с помощью `resourceId('Microsoft.Authorization/roleDefinitions/', parameters('roleDefinition'))`
 * Функции [reference()](resource-group-template-functions-resource.md#reference) и [list()](resource-group-template-functions-resource.md#list) поддерживаются.
+
+## <a name="create-resource-group"></a>Создать группу ресурсов
+
+В следующем примере создается пустая группа ресурсов.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.1",
+    "parameters": {
+        "rgName": {
+            "type": "string"
+        },
+        "rgLocation": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "[parameters('rgName')]",
+            "properties": {}
+        }
+    ],
+    "outputs": {}
+}
+```
+
+Развернуть этот шаблон с помощью Azure CLI можно так:
+
+```azurecli-interactive
+az deployment create \
+  -n demoEmptyRG \
+  -l southcentralus \
+  --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/emptyRG.json \
+  --parameters rgName=demoRG rgLocation=northcentralus
+```
+
+Развернуть этот шаблон с помощью PowerShell можно так:
+
+```azurepowershell-interactive
+New-AzureRmDeployment `
+  -Name demoEmptyRG `
+  -Location southcentralus `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/emptyRG.json `
+  -rgName demogroup `
+  -rgLocation northcentralus
+```
+
+## <a name="create-several-resource-groups"></a>Создание нескольких групп ресурсов
+
+Используйте [элемент copy](resource-group-create-multiple.md) с группами ресурсов, чтобы создать несколько групп ресурсов. 
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.1",
+    "parameters": {
+        "rgNamePrefix": {
+            "type": "string"
+        },
+        "rgLocation": {
+            "type": "string"
+        },
+        "instanceCount": {
+            "type": "int"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "[concat(parameters('rgNamePrefix'), copyIndex())]",
+            "copy": {
+                "name": "rgCopy",
+                "count": "[parameters('instanceCount')]"
+            },
+            "properties": {}
+        }
+    ],
+    "outputs": {}
+}
+```
+
+Чтобы развернуть этот шаблон с помощью Azure CLI и создать три группы ресурсов, используйте:
+
+```azurecli-interactive
+az deployment create \
+  -n demoCopyRG \
+  -l southcentralus \
+  --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/copyRG.json \
+  --parameters rgNamePrefix=demoRG rgLocation=northcentralus instanceCount=3
+```
+
+Развернуть этот шаблон с помощью PowerShell можно так:
+
+```azurepowershell-interactive
+New-AzureRmDeployment `
+  -Name demoCopyRG `
+  -Location southcentralus `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/copyRG.json `
+  -rgNamePrefix demogroup `
+  -rgLocation northcentralus `
+  -instanceCount 3
+```
+
+## <a name="create-resource-group-and-deploy-resource"></a>Создание группы ресурсов и развертывание ресурсов
+
+Чтобы создать группу ресурсов и развернуть в нее ресурсы, используйте вложенный шаблон. Вложенный шаблон определяет ресурсы для развертывания в группе ресурсов. Установите вложенный шаблон как зависимый от группы ресурсов, чтобы группа существовала до развертывания ресурсов.
+
+В следующем примере создается группа ресурсов и в нее развертывается учетная запись хранения.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.1",
+    "parameters": {
+        "rgName": {
+            "type": "string"
+        },
+        "rgLocation": {
+            "type": "string"
+        },
+        "storagePrefix": {
+            "type": "string",
+            "maxLength": 11
+        }
+    },
+    "variables": {
+        "storageName": "[concat(parameters('storagePrefix'), uniqueString(subscription().id, parameters('rgName')))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-05-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "[parameters('rgName')]",
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-05-01",
+            "name": "storageDeployment",
+            "resourceGroup": "[parameters('rgName')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/resourceGroups/', parameters('rgName'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "type": "Microsoft.Storage/storageAccounts",
+                            "apiVersion": "2017-10-01",
+                            "name": "[variables('storageName')]",
+                            "location": "[parameters('rgLocation')]",
+                            "kind": "StorageV2",
+                            "sku": {
+                                "name": "Standard_LRS"
+                            }
+                        }
+                    ],
+                    "outputs": {}
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}
+```
+
+Развернуть этот шаблон с помощью Azure CLI можно так:
+
+```azurecli-interactive
+az deployment create \
+  -n demoRGStorage \
+  -l southcentralus \
+  --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/newRGWithStorage.json \
+  --parameters rgName=rgStorage rgLocation=northcentralus storagePrefix=storage
+```
+
+Развернуть этот шаблон с помощью PowerShell можно так:
+
+```azurepowershell-interactive
+New-AzureRmDeployment `
+  -Name demoRGStorage `
+  -Location southcentralus `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/newRGWithStorage.json `
+  -rgName rgStorage `
+  -rgLocation northcentralus `
+  -storagePrefix storage
+```
 
 ## <a name="assign-policy"></a>Назначение политики
 
@@ -257,7 +472,5 @@ New-AzureRmDeployment `
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Пример развертывания параметров рабочей области для центра безопасности Azure см. в разделе о [deployASCwithWorkspaceSettings.json](https://github.com/krnese/AzureDeploy/blob/master/ARM/deployments/deployASCwithWorkspaceSettings.json).
-* Чтобы создать группу ресурсов, см. [Создание группы ресурсов в шаблонах Azure Resource Manager](create-resource-group-in-template.md).
 * Сведения о создании шаблонов диспетчера ресурсов Azure см. в статье о [создании шаблонов](resource-group-authoring-templates.md). 
 * Список доступных в шаблоне функций см. в статье о [функциях шаблонов](resource-group-template-functions.md).
-

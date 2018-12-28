@@ -1,5 +1,5 @@
 ---
-title: Настройка веб-приложений в службе приложений Azure
+title: Настройка веб-приложений в Службе приложений Azure
 description: Настройка веб-приложения в службе приложений Azure
 services: app-service\web
 documentationcenter: ''
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/25/2017
 ms.author: cephalin
-ms.openlocfilehash: 73d2da542c4f7da0933187d800f562de76bfb3e6
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18
+ms.openlocfilehash: 4286aa9cbaf07743c1d420fb1f5caace91bab7ee
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52443514"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53269436"
 ---
 # <a name="configure-web-apps-in-azure-app-service"></a>Настройка веб-приложений в службе приложений Azure
 
@@ -38,10 +39,10 @@ ms.locfileid: "52443514"
 ### <a name="general-settings"></a>Общие параметры
 **Версии Framework**. Укажите эти параметры, если приложение использует какие-либо из этих инфраструктур разработки: 
 
-* **.NET Framework**: укажите версию .NET Framework. 
-* **PHP**: укажите версию PHP или установите значение **Выключено**, чтобы отключить PHP. 
-* **Java**: выберите версию Java или задайте **Выключено**, чтобы отключить Java. Используйте параметр **Веб-контейнер** , чтобы выбрать версию Tomcat или Jetty.
-* **Python**: выберите версию Python или задайте **Выключено**, чтобы отключить Python.
+* **Платформа .NET Framework.** Задайте версию платформы .NET Framework. 
+* **PHP.** Укажите версию PHP или установите значение **Выключено**, чтобы отключить PHP. 
+* **Java.** Выберите версию Java или задайте **Выключено**, чтобы отключить Java. Используйте параметр **Веб-контейнер** , чтобы выбрать версию Tomcat или Jetty.
+* **Python.** Выберите версию Python или задайте **Выключено**, чтобы отключить Python.
 
 По техническим причинам включение Java для веб-приложения отключает использование .NET, PHP и Python.
 
@@ -164,7 +165,7 @@ ms.locfileid: "52443514"
 ### <a name="monitoring"></a>Мониторинг
 В режимах "Базовый" и "Стандартный" можно проверить доступность конечных точек HTTP и HTTPS из трех географических распределенных расположений. Тест мониторинга завершается с ошибкой, если код ответа HTTP говорит об ошибке (4xx или 5xx) или на ответ требуется более 30 секунд. Конечная точка считается доступной, если тесты мониторинга завершились для нее успешно для всех указанных расположений. 
 
-Дополнительные сведения см. в статье [Практическое руководство: мониторинг состояния конечной веб-точки].
+Дополнительные сведения см. в статье [Мониторинг состояния конечной веб-точки].
 
 > [!NOTE]
 > Чтобы приступить к работе со службой приложений Azure до создания учетной записи Azure, перейдите к разделу [Пробное использование службы приложений], где вы можете быстро создать кратковременное веб-приложение начального уровня в службе приложений. Никаких кредитных карт и обязательств.
@@ -179,14 +180,14 @@ ms.locfileid: "52443514"
 
 <!-- URL List -->
 
-[ASP.NET SignalR]: http://www.asp.net/signalr
+[ASP.NET SignalR]: https://www.asp.net/signalr
 [портал Azure]: https://portal.azure.com/
 [Настройка личного доменного имени в службе приложений Azure]: ./app-service-web-tutorial-custom-domain.md
 [Настройка промежуточных сред для веб-приложений в службе приложений Azure]: ./web-sites-staged-publishing.md
 [Включение протокола HTTPS для приложения в службе приложений Azure]: ./app-service-web-tutorial-custom-ssl.md
-[Практическое руководство: мониторинг состояния конечной веб-точки]: http://go.microsoft.com/fwLink/?LinkID=279906
+[Мониторинг состояния конечной веб-точки]: https://go.microsoft.com/fwLink/?LinkID=279906
 [Основы мониторинга для веб-приложений в службе приложений Azure]: ./web-sites-monitor.md
-[режим конвейера]: http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application
+[режим конвейера]: https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application
 [Масштабирование веб-приложения в службе приложений Azure]: ./web-sites-scale.md
 [Пробное использование службы приложений]: https://azure.microsoft.com/try/app-service/
 

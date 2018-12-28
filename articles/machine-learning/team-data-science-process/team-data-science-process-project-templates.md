@@ -1,5 +1,5 @@
 ---
-title: Планирование проекта командного процесса обработки и анализа данных | Документация Майкрософт
+title: Планирование проекта командного процесса обработки и анализа данных
 description: Шаблоны Microsoft Project и Microsoft Excel для планирования проектов обработки и анализа данных и управления ими.
 author: marktab
 manager: cgronlun
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/27/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 702ea6152ce5bf90d1d1f61b566e91d1859e672b
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 3675d3cd8959d78270a491aeb443cb8e458d2472
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52443106"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53137917"
 ---
 # <a name="team-data-science-process-project-planning"></a>Планирование проекта командного процесса обработки и анализа данных
 
@@ -35,7 +35,7 @@ ms.locfileid: "52443106"
  
 ## <a name="microsoft-project-template"></a>Шаблон Microsoft Project
 
-Шаблон Microsoft Project для командного процесса обработки и анализа данных доступен по этой ссылке: [шаблон Microsoft Project](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Team-Data-Science-Process/Project-Planning-and-Governance/Advanced%20Analytics%20Microsoft%20Project%20Plan.mpp). 
+Шаблон Microsoft Project для командного процесса обработки и анализа данных доступен по этой ссылке: [Microsoft Project template](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Team-Data-Science-Process/Project-Planning-and-Governance/Advanced%20Analytics%20Microsoft%20Project%20Plan.mpp) 
 
 Когда вы откроете план, щелкните ссылку TDSP в крайнем левом углу. Измените имя и описание, а затем добавьте необходимые ресурсы группы. Оцените требуемые даты, основываясь на своем опыте.
 
@@ -48,7 +48,7 @@ ms.locfileid: "52443106"
 
 ## <a name="excel-template"></a>Шаблон Excel
 
-Если у вас нет доступа к Microsoft Project, вы также можете скачать лист Excel с такими же данными по этой ссылке: [шаблон Excel](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Team-Data-Science-Process/Project-Planning-and-Governance/Advanced%20Analytics%20Microsoft%20Project%20Plan.xlsx). Вы можете открыть его в любом средстве, с которым привыкли работать.
+В случае отсутствия доступа к Microsoft Project лист Excel с теми же данными можно загрузить здесь: [Шаблон Excel](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Team-Data-Science-Process/Project-Planning-and-Governance/Advanced%20Analytics%20Microsoft%20Project%20Plan.xlsx). Вы можете открыть его при помощи любого удобного инструмента.
 
 Вы используете эти шаблоны на свой риск. Применяются [стандартные заявления об отказе от ответственности](https://www.gnu.org/licenses/gpl-3.0.en.html).
 

@@ -10,14 +10,14 @@ ms.service: machine-learning
 ms.component: core
 ms.workload: data-services
 ms.topic: article
-ms.date: 12/6/2017
+ms.date: 12/06/2017
 ROBOTS: NOINDEX
-ms.openlocfilehash: 84068376f35bc4df6672cffcc0ac3438b12edbb5
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 2d912f559af98045aaef8fe6fcaa1d83ab5f96bd
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46979681"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53269368"
 ---
 # <a name="model-management-setup"></a>Установка службы управления моделями
 
@@ -68,7 +68,7 @@ pip install -r https://aka.ms/az-ml-o16n-cli-requirements-file
 ```
 
 ### <a name="configuring-docker-on-linux"></a>Настройка Docker в Linux
-Чтобы настроить Docker в Linux для непривилегированных пользователей, следуйте приведенным здесь инструкциям: [Post-installation steps for Linux](https://docs.docker.com/engine/installation/linux/linux-postinstall/) (Шаги после установки для Linux).
+Чтобы настроить Docker в Linux для использования пользователями без прав root, выполните инструкции, перечисленные ниже. [Действия после установки для Linux](https://docs.docker.com/engine/installation/linux/linux-postinstall/)
 
 >[!NOTE]
 > На виртуальной машине для обработки и анализа данных под управлением Linux можно выполнить приведенный ниже скрипт, чтобы настроить Docker надлежащим образом. **Обязательно выйдите из системы и войдите снова после выполнения скрипта.**
