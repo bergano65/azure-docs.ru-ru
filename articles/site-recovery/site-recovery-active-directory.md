@@ -7,14 +7,14 @@ author: mayurigupta13
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/16/2018
+ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: f96ed8659fc2f49b89199a813f9fab9d5f4af5a1
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 84cc99bac9ae5fa1743ed151e5bf8c3043cf5869
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51232177"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52851029"
 ---
 # <a name="set-up-disaster-recovery-for-active-directory-and-dns"></a>Настройка аварийного восстановления для Active Directory и DNS
 
@@ -165,7 +165,7 @@ Site Recovery можно использовать для защиты вирту
 1. Выполните заслуживающее доверия восстановление контроллера домена. Примите во внимание указанные ниже сведения.
     * Несмотря на то, что мы не рекомендуем [репликацию FRS](https://blogs.technet.microsoft.com/filecab/2014/06/25/the-end-is-nigh-for-frs/), при ее использовании выполните действия для заслуживающего доверия восстановления. Процесс описан в статье об [использовании раздела реестра BurFlags для повторной инициализации службы репликации файлов](https://support.microsoft.com/kb/290762).
 
-        Дополнительные сведения о BurFlags см. в этой [записи блога](https://blogs.technet.microsoft.com/janelewis/2006/09/18/d2-and-d4-what-is-it-for/).
+        Дополнительные сведения о BurFlags см. в записи блога [D2 and D4: What is it for?](https://blogs.technet.microsoft.com/janelewis/2006/09/18/d2-and-d4-what-is-it-for/) (D2 и D4: для чего они используются).
     * Если используется репликация DFSR, выполните действия для заслуживающего доверия восстановления. Процесс описан в статье [How to force an authoritative and non-authoritative synchronization for DFSR-replicated SYSVOL (like "D4/D2" for FRS)](https://support.microsoft.com/kb/2218556) (Принудительное применение заслуживающей и не заслуживающей доверия синхронизации для SYSVOL, реплицированной с помощью DFSR (как "D4/D2" для FRS)).
 
         Вы можете также использовать функции PowerShell. Дополнительные сведения см. в статье [DFSR-SYSVOL Authoritative / Non-Authoritative Restore Powershell Functions](https://blogs.technet.microsoft.com/thbouche/2013/08/28/dfsr-sysvol-authoritative-non-authoritative-restore-powershell-functions/) (Функции PowerShell заслуживающие и не заслуживающего доверия восстановления DFSR SYSVOL).
@@ -174,7 +174,7 @@ Site Recovery можно использовать для защиты вирту
 
     `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Parameters\Repl Perform Initial Synchronizations`
 
-    Дополнительные сведения см. в статье [Troubleshoot DNS Event ID 4013: The DNS server was unable to load AD integrated DNS zones](https://support.microsoft.com/kb/2001093) (Устранение события DNS с идентификатором 4013: DNS-серверу не удалось загрузить зоны DNS, интегрированные с AD).
+    Дополнительные сведения см. в статье [Устранение неполадок DNS код события: 4013: DNS-серверу не удалось загрузить зон DNS, интегрированных с AD](https://support.microsoft.com/kb/2001093).
 
 3. Отключите требование, чтобы сервер глобального каталога был доступен для проверки входа пользователя. Для этого в локальном контроллере домена присвойте следующему разделу реестра значение **1**. Если параметр DWORD не существует, его можно создать в узле **Lsa**.
 

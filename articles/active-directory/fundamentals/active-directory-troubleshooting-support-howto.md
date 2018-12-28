@@ -1,6 +1,6 @@
 ---
-title: Как получить поддержку для Azure Active Directory | Документы Майкрософт
-description: Сведения о получении поддержки для Azure Active Directory.
+title: Поиск справки и создание запроса в службу поддержки — Azure Active Directory | Документация Майкрософт
+description: Инструкции по получению справки и отправке запроса в службу поддержки для Azure Active Directory.
 services: active-directory
 documentationcenter: na
 author: eross-msft
@@ -13,15 +13,15 @@ ms.workload: identity
 ms.date: 08/28/2017
 ms.author: lizross
 ms.reviewer: jeffsta
-ms.custom: it-pro
-ms.openlocfilehash: d7d499ed43ee2eab03e46e408104eca4af6a2945
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: d67b53d80b74d0a6ad3c4264a55a5e277acffd20
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45729401"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53083909"
 ---
-# <a name="how-to-get-support-for-azure-active-directory"></a>Практическое руководство. Получение поддержки для Azure Active Directory
+# <a name="find-help-and-open-a-support-ticket-for-azure-active-directory"></a>Поиск справки и создание запроса в службу поддержки — Azure Active Directory
 Корпорация Майкрософт предоставляет услуги глобальной технической и предпродажной поддержки, а также поддержки по выставлению счетов и подписке для Azure Active Directory (Azure AD). Поддержка доступна как через Интернет, так и по телефону для платных и пробных подписок Microsoft Azure. Техническая поддержка по телефону и поддержка через Интернет по выставлению счетов доступны на разных языках. 
 
 ## <a name="find-help-without-opening-a-support-ticket"></a>Обращение в службу поддержки без открытия запроса
@@ -68,9 +68,9 @@ ms.locfileid: "45729401"
 
 1. Войдите в [центр администрирования Office 365](https://portal.office.com) с учетной записью, для которой имеется лицензия Enterprise Mobility + Security (EMS).
 
-2. На плитке **Поддержка** выберите **Новый запрос на обслуживание**: ![снимок экрана портала Office 365](./media/active-directory-troubleshooting-support-howto/office-portal.png)
+2. На плитке **Поддержка** выберите **Новый запрос на обслуживание**: ![Снимок экрана портала Office 365](./media/active-directory-troubleshooting-support-howto/office-portal.png)
 
-3. На странице **Обзор вариантов поддержки** выберите **Управление удостоверениями** или **Управление пользователями и доменом**: ![снимок экрана категорий поддержки Azure AD](./media/active-directory-troubleshooting-support-howto/select-identity.png)
+3. На странице **Обзор вариантов поддержки** выберите **Управление удостоверениями** или **Управление пользователями и доменом**: ![Снимок экрана категорий поддержки Azure AD](./media/active-directory-troubleshooting-support-howto/select-identity.png)
 
 4. Для **функции** выберите компонент Azure AD, для которого требуется поддержка.
 

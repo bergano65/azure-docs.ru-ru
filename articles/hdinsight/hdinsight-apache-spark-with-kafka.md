@@ -10,12 +10,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: 110357a7a84aa8cc6bd7dcb5bbef9ca02879a9cb
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: c0687ec94af60d3683d3f129eff2bad8fb97d786
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52494289"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53165812"
 ---
 # <a name="apache-spark-streaming-dstream-example-with-apache-kafka-on-hdinsight"></a>Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka в HDInsight
 
@@ -55,19 +55,19 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
    
     ![Настраиваемое развертывание в HDInsight](./media/hdinsight-apache-spark-with-kafka/parameters.png)
    
-    * **Группа ресурсов.** Создайте новую группу ресурсов или выберите существующую. Эта группа содержит кластер HDInsight.
+    * **Группа ресурсов**. Создайте новую группу или выберите существующую. Эта группа содержит кластер HDInsight.
 
     * **Расположение.** Выберите близкое к вам географическое расположение.
 
-    * **Базовое имя кластера**. Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **hdistreaming**, будет создан кластер Spark с именем __spark-hdistreaming__ и кластер Kafka с именем **kafka-hdistreaming**.
+    * **Base Cluster Name** (Базовое имя кластера). Это значение будет использоваться в качестве базового имени для кластеров Spark и Kafka. Например, если ввести **hdistreaming**, будет создан кластер Spark с именем __spark-hdistreaming__ и кластер Kafka с именем **kafka-hdistreaming**.
 
-    * **Cluster Login User Name** (Имя пользователя для входа в кластер). Имя администратора для кластеров Spark и Kafka.
+    * **Имя пользователя для входа в кластер**. Имя администратора для кластеров Spark и Kafka.
 
-    * **Cluster Login User Password** (Пароль пользователя для входа в кластер). Имя администратора для кластеров Spark и Kafka.
+    * **Cluster Login User Password** (Пароль пользователя для входа в кластер). Пароль администратора для кластеров Spark и Kafka.
 
-    * **Имя пользователя SSH.** Создаваемый пользователь SSH для кластеров Spark и Kafka.
+    * **Имя пользователя SSH**. Создаваемый пользователь SSH для кластеров Spark и Kafka.
 
-    * **Пароль SSH.** Пароль пользователя SSH для кластеров Spark и Kafka.
+    * **Пароль SSH**. Пароль пользователя SSH для кластеров Spark и Kafka.
 
 3. Прочтите **условия использования** и установите флажок **Я принимаю указанные выше условия**.
 

@@ -8,17 +8,17 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/31/2018
+ms.date: 12/3/2018
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: df020fc3a4e2f57730dea7329b08e1e46660e610
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: fab03f12f4099fe2df2525cb3a6fa093170d1c79
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51037045"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52850182"
 ---
 # <a name="customize-setup-for-the-azure-ssis-integration-runtime"></a>Пользовательская установка для среды выполнения интеграции Azure–SSIS
 
@@ -131,7 +131,7 @@ ms.locfileid: "51037045"
 
     c. Выберите подключенный контейнер общедоступной предварительной версии и дважды щелкните папку `CustomSetupScript`. Внутри этой папки находятся следующие элементы:
 
-       1. Папка `Sample`, где содержится файл пользовательской установки для установки базовой задачи на каждом узле Azure SSIS IR. Задача не делает ничего, только несколько секунд находится в спящем режиме. Папка также содержит папку `gacutil`, в которой расположен файл `gacutil.exe`. Кроме того, `main.cmd` содержит комментарии для сохранения учетных данных доступа к общим папкам.
+       1. Папка `Sample`, где содержится файл пользовательской установки для установки базовой задачи на каждом узле Azure SSIS IR. Задача не делает ничего, только несколько секунд находится в спящем режиме. Папка также содержит папку `gacutil`, все содержимое которой (`gacutil.exe`, `gacutil.exe.config` и `1033\gacutlrc.dll`) можно скопировать в контейнер. Кроме того, `main.cmd` содержит комментарии для сохранения учетных данных доступа к общим папкам.
 
        1. Папка `UserScenarios`, содержащая несколько конфигураций пользовательской установки для реальных сценариев.
 
@@ -146,8 +146,6 @@ ms.locfileid: "51037045"
        1. Папка `BCP`, которая содержит файл пользовательской установки для установки служебных программ командной строки SQL Server (`MsSqlCmdLnUtils.msi`), включая программу массового копирования (`bcp`), на каждом узле Azure SSIS IR.
 
        1. Папка `EXCEL`, где содержится файл пользовательской установки для установки сборок с открытым исходным кодом (`DocumentFormat.OpenXml.dll`, `ExcelDataReader.DataSet.dll` и `ExcelDataReader.dll`) на каждом узле Azure SSIS IR.
-
-       1. Папка `MSDTC`, содержащая выборочную установку для изменения конфигураций сети и безопасности для службы координатора распределенных транзакций (Майкрософт) (MSDTC) на каждом узле вашей Azure-SSIS IR. Чтобы убедиться в запуске MSDTC, добавьте задачу "Выполнение процесса" в начало потока управления в пакетах для выполнения следующей команды: `%SystemRoot%\system32\cmd.exe /c powershell -Command "Start-Service MSDTC"` 
 
        1. Папка `ORACLE ENTERPRISE`, которая содержит пользовательский скрипт установки (`main.cmd`) и файл конфигурации автоматической установки (`client.rsp`), позволяющие установить соединители Oracle и драйвер OCI на каждом узле Azure-SSIS IR Enterprise Edition. Эта установка предоставляет возможность использовать диспетчер подключений, источник и назначение Oracle. Прежде всего скачайте соединители Microsoft версии 5.0 для Oracle (`AttunitySSISOraAdaptersSetup.msi` и `AttunitySSISOraAdaptersSetup64.msi`) из [центра загрузки Майкрософт](https://www.microsoft.com/en-us/download/details.aspx?id=55179) и последнюю версию клиента Oracle — например, версию `winx64_12102_client.zip` с сайта [Oracle](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/database12c-win64-download-2297732.html), и отправьте их в контейнер вместе с `main.cmd` и `client.rsp`. Если TNS используется для подключения к Oracle, необходимо загрузить файл `tnsnames.ora`, изменить его и отправить в контейнер, чтобы его можно было скопировать в папку установки Oracle во время установки.
 

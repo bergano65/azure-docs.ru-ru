@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 11/05/2018
 ms.author: jeffgilb
 ms.reviewer: hectorl
-ms.openlocfilehash: ec17f6923fc1c928f24fcb762daedbaea5b688ac
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: cca5fe492032c74a9922780f197065e9c2b40ad3
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035107"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52966140"
 ---
 # <a name="infrastructure-backup-service-best-practices"></a>Рекомендации по службе резервного копирования инфраструктуры
 
@@ -46,7 +46,7 @@ ms.locfileid: "51035107"
 
 Ключ должен храниться в надежном расположении (например, как секрет в открытом хранилище Azure Key Vault). Этот ключ нужно использовать во время повторного развертывания Azure Stack. 
 
-![Сохранение ключа в безопасном расположении](media\azure-stack-backup\azure-stack-backup-encryption2.png)
+![Сохранение ключа в безопасном расположении](media/azure-stack-backup/azure-stack-backup-encryption2.png)
 
 ## <a name="operational-best-practices"></a>Рекомендации по использованию
 

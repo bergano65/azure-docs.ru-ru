@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/19/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 78e432bf526ad270ae8543ad1be40727ed560d4b
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: f155ee7dbea697c72bbd53b933a7410faa828b6c
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46367905"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53089927"
 ---
 # <a name="copy-data-from-phoenix-using-azure-data-factory"></a>Копирование данных из Phoenix с помощью фабрики данных Azure 
 
@@ -42,11 +42,11 @@ ms.locfileid: "46367905"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Phoenix**. | Yes |
+| Тип | Свойству type необходимо задать значение **Phoenix** | Yes |
 | host | IP-адрес или имя узла сервера Phoenix (это 192.168.222.160).  | Yes |
 | порт | TCP-порт, используемый сервером Phoenix для прослушивания клиентских подключений. Значение по умолчанию — 8765. При подключении к Azure HDInsights укажите порт 443. | Нет  |
 | httpPath | Частичный URL-адрес, соответствующий серверу Phoenix (то есть /gateway/sandbox/phoenix/version). Укажите `/hbasephoenix0` при использовании кластера HDInsights.  | Нет  |
-| authenticationType | Механизм аутентификации, используемый для подключения к серверу Phoenix. <br/>Допустимые значения: **Anonymous**, **UsernameAndPassword**, **WindowsAzureHDInsightService**. | Yes |
+| authenticationType | Механизм аутентификации, используемый для подключения к серверу Phoenix. <br/>Допустимые значения: **Anonymous**, **UsernameAndPassword**, **WindowsAzureHDInsightService** | Yes |
 | Имя пользователя | Имя пользователя, используемое для подключения к серверу Phoenix.  | Нет  |
 | password | Пароль, соответствующий имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет  |
 | enableSsl | Указывает, шифруются ли подключения к серверу с помощью протокола SSL. По умолчанию для этого параметра используется значение false.  | Нет  |
@@ -85,7 +85,12 @@ ms.locfileid: "46367905"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Phoenix.
 
-Чтобы копировать данные из Phoenix, установите свойство type набора данных **PhoenixObject**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы копировать данные из Phoenix, установите свойство type набора данных **PhoenixObject**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Свойству type набора данных необходимо задать значение **PhoenixObject**. | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -97,7 +102,8 @@ ms.locfileid: "46367905"
         "linkedServiceName": {
             "referenceName": "<Phoenix linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -106,14 +112,14 @@ ms.locfileid: "46367905"
 
 Полный список разделов и свойств, используемых для определения действий, см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md). В этом разделе содержится список свойств, поддерживаемых источником Phoenix.
 
-### <a name="phoenixsource-as-source"></a>PhoenixSource в качестве источника
+### <a name="phoenix-as-source"></a>Phoenix в качестве источника
 
 Чтобы скопировать данные из Phoenix, задайте тип источника **PhoenixSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **PhoenixSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Yes |
+| Тип | Свойству type источника действия копирования необходимо задать значение **PhoenixSource**. | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

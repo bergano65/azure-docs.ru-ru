@@ -7,25 +7,25 @@ manager: mtillman
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 12/05/2017
+ms.date: 12/07/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 80ba42d7eab1726c7add6c4c9426b7dde3b55480
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 1486e303e4e94ee6140bcd6ed4f52bc433b9aae6
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37445948"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100061"
 ---
 # <a name="linking-an-azure-subscription-to-an-azure-ad-b2c-tenant"></a>Связывание подписки Azure с клиентом Azure B2C
 
 > [!IMPORTANT]
-> Последние сведения о выставлении счетов за использование, а также о ценах на Azure AD B2C см. на [этой странице](https://azure.microsoft.com/pricing/details/active-directory-b2c/).
+> Последние сведения о выставлении счетов за использование и ценах на Azure AD B2C см. на странице [Цены на Azure Active Directory B2C](https://azure.microsoft.com/pricing/details/active-directory-b2c/)
 
 Счета за использование Azure AD B2C выставляются для подписки Azure. Администратор созданного клиента Azure AD B2C должен явным образом связать созданный клиент Azure AD B2C с подпиской Azure. В этой статье показано, как это сделать.
 
 > [!NOTE]
-> Подписку, связанную с клиентом Azure AD B2C, можно использовать только для выставления счетов за использование Azure AD B2C. Она не позволяет добавлять другие службы Azure или лицензии Office 365 *в клиенте Azure AD B2C*.
+> Подписку, связанную с клиентом Azure AD B2C, можно использовать только для выставления счетов за использование Azure AD B2C или других ресурсов Azure, включая дополнительные ресурсы Azure AD B2C.  Она не позволяет добавлять другие лицензируемые службы Azure или лицензии Office 365 в клиенте Azure AD B2C.
 
  Чтобы реализовать такую связь, следует создать ресурс Azure AD B2C в целевой подписке Azure. В одной подписке Azure можно создать несколько клиентов B2C наряду с другими ресурсами Azure (такими как виртуальные машины, хранилища данных, приложения логики). Чтобы увидеть все ресурсы, размещенные в подписке, перейдите к клиенту Azure AD, с которым связана эта подписка.
 

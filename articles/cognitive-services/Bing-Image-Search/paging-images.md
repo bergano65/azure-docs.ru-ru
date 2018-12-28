@@ -1,7 +1,7 @@
 ---
-title: Как разбить на страницы список доступных изображений — API Bing для поиска изображений
+title: Разбивка на страницы списка изображений, возвращаемых API Bing для поиска изображений
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как разбить на страницы список всех изображений, которые может вернуть Bing.
+description: Просмотр различных страниц с изображениями, возвращенными API Bing для поиска изображений.
 services: cognitive-services
 author: swhite-msft
 manager: cgonlun
@@ -11,14 +11,15 @@ ms.component: bing-image-search
 ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: 0db8c62bbb4da1a6fa1230b439c5074325bbe9c3
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.custom: seodec2018
+ms.openlocfilehash: 69829066e543e5ab3badc4d1d3f77ff3c1d16ffd
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50739372"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53259755"
 ---
-# <a name="paging-results"></a>Разбиение результатов по страницам
+# <a name="page-through-the-images-results"></a>Разбивка на страницы списка возвращаемых изображений
 
 Когда вы вызываете API для поиска изображений, Bing возвращает список результатов. Список — это подмножество общего количества результатов, относящихся к запросу. Чтобы получить предполагаемое общее количество доступных результатов, необходимо обратиться к полю [totalEstimatedMatches](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#totalestimatedmatches) объекта ответа.  
 

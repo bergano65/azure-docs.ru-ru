@@ -1,27 +1,28 @@
 ---
-title: Поиск региона конечной точки с использованием Node.js в LUIS
-titleSuffix: Azure Cognitive Services
-description: Программный поиск региона публикации с помощью ключа конечной точки и идентификатора приложения для LUIS.
+title: Регион конечной точки, Node.js
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Поиск региона публикации с помощью ключа конечной точки и идентификатора приложения для LUIS с использованием Node.js.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 09/06/2018
+ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 193872d03dde1d5c620acca1b7aba99b60db238d
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 6bcea43fb21cae6f000f3522b498dfc6c0f6d9a7
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47034082"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53166223"
 ---
 # <a name="find-endpoint-region-with-nodejs"></a>Поиск региона конечной точки с использованием Node.js
 При наличии идентификатора приложения LUIS и идентификатора подписки LUIS можно определить, какой регион будет использоваться для запросов конечной точки.
 
 > [!NOTE] 
-> Полное решение Node.js доступно в разделе [**LUIS-Samples** репозитория Github](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/find-region/nodejs/).
+> Полное решение Node.js доступно в разделе [**LUIS-Samples** репозитория GitHub](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/find-region/nodejs/).
 
 ## <a name="luis-endpoint-query-strategy"></a>Стратегия запросов конечной точки LUIS
 Для каждого запроса конечной точки LUIS требуется:

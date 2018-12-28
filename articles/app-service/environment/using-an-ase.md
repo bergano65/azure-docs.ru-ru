@@ -1,5 +1,5 @@
 ---
-title: Использование среды службы приложений Azure
+title: Работа со средой Службы приложений — Azure
 description: Узнайте, как создавать, публиковать и масштабировать приложения в среде службы приложений Azure
 services: app-service
 documentationcenter: na
@@ -13,12 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2017
 ms.author: ccompy
-ms.openlocfilehash: 80abe29c80898b691aa6e5e47bf068a9e69e50e4
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.custom: seodec18
+ms.openlocfilehash: eca6f7996b05e58614c8f15067dacabb13730396
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44303376"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53274723"
 ---
 # <a name="use-an-app-service-environment"></a>Использование среды службы приложений #
 
@@ -26,13 +27,13 @@ ms.locfileid: "44303376"
 
 Среда службы приложений — это развернутая служба приложений Azure в подсети виртуальной сети Azure клиента. В ее состав входит:
 
-- **Внешние интерфейсы** —это то место, где завершается сеанс HTTP/HTTPS в среде службы приложений (ASE).
-- **Рабочие роли** — это ресурсы, в которых размещаются приложения.
-- **База данных** содержит сведения, определяющие среду.
+- **внешние интерфейсы** — места, где завершаются сеансы HTTP и HTTPS в среде Службы приложений (ASE).
+- **Рабочие роли** — это ресурсы, в которых размещаются приложения.
+- **База данных:**  — здесь содержатся сведения, определяющие среду.
 - **Хранилище** используется для размещения опубликованных приложений клиента.
 
 > [!NOTE]
-> Существует две версии среды службы приложений: ASEv1 и ASEv2. В ASEv1 необходимо выполнить управление ресурсами, прежде чем их можно будет использовать. Чтобы научиться настраивать среду ASEv1 и управлять ей, см. статью [Настройка среды службы приложений][ConfigureASEv1]. Оставшаяся часть этой статьи посвящена ASEv2.
+> Существует две версии Среды службы приложений: ASEv1 и ASEv2. В ASEv1 необходимо выполнить управление ресурсами, прежде чем их можно будет использовать. Чтобы научиться настраивать среду ASEv1 и управлять ей, см. статью [Настройка среды службы приложений][ConfigureASEv1]. Оставшаяся часть этой статьи посвящена ASEv2.
 >
 >
 
@@ -51,7 +52,7 @@ ms.locfileid: "44303376"
 
 1. Последовательно выберите **Создать ресурс** > **Интернет+мобильные устройства** > **Веб-приложение**.
 
-1. Введите имя веб-приложения. Если вы уже выбрали план службы приложений в среде ASE, то доменное имя приложения будет отражать доменное имя среды ASE.
+2. Введите имя веб-приложения. Если вы уже выбрали план службы приложений в среде ASE, то доменное имя приложения будет отражать доменное имя среды ASE.
 
     ![Выбор имени веб-приложения][1]
 
@@ -70,7 +71,7 @@ ms.locfileid: "44303376"
 
     b. Укажите имя для своего плана службы приложений.
 
-    c. В раскрывающемся списке **Расположение** выберите свою среду ASE. Размещение приложения Linux в ASE пока доступно только в 6 регионах: **западная часть США, восточная часть США, Западная Европа, Северная Европа, Восточная Австралия, Юго-Восточная Азия**. 
+    c. В раскрывающемся списке **Расположение** выберите свою среду ASE. Сейчас приложения Linux в ASE можно размещать только в 6 регионах: **Западный регион США, Восточный регион США, Западная Европа, Северная Европа, Восточная Австралия, Юго-Восточная Азия**. 
 
     d. Выберите ценовую категорию **Isolated**. Щелкните **Выбрать**.
 
@@ -182,10 +183,10 @@ URL-адрес contoso.scm.external-ase.p.azurewebsites.net использует
 [ConfigureASEv1]: app-service-web-configure-an-app-service-environment.md
 [ASEv1Intro]: app-service-app-service-environment-intro.md
 [Functions]: ../../azure-functions/index.yml
-[Pricing]: http://azure.microsoft.com/pricing/details/app-service/
+[Pricing]: https://azure.microsoft.com/pricing/details/app-service/
 [ARMOverview]: ../../azure-resource-manager/resource-group-overview.md
 [ConfigureSSL]: ../web-sites-purchase-ssl-web-site.md
-[Kudu]: http://azure.microsoft.com/resources/videos/super-secret-kudu-debug-console-for-azure-web-sites/
+[Kudu]: https://azure.microsoft.com/resources/videos/super-secret-kudu-debug-console-for-azure-web-sites/
 [AppDeploy]: ../app-service-deploy-local-git.md
 [ASEWAF]: app-service-app-service-environment-web-application-firewall.md
 [AppGW]: ../../application-gateway/application-gateway-web-application-firewall-overview.md

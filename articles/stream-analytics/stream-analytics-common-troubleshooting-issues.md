@@ -2,19 +2,19 @@
 title: Распространенные проблемы в Azure Stream Analytics
 description: В этой статье описан ряд распространенных проблем в Azure Stream Analytics и инструкции по их устранению.
 services: stream-analytics
-author: jasonwhowell
-manager: kfile
+author: mamccrea
 ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 04/12/2018
-ms.openlocfilehash: 2fe180873f8f410d80b06d29d16881eb49f7fc2a
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.date: 12/06/2018
+ms.custom: seodec18
+ms.openlocfilehash: a2c7ceae342124f06fcfe8dc18b1a69f7176f4e1
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50978451"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53090981"
 ---
 # <a name="common-issues-in-stream-analytics-and-steps-to-troubleshoot"></a>Распространенные проблемы в Stream Analytics и инструкции по их устранению
 
@@ -24,9 +24,9 @@ ms.locfileid: "50978451"
  
  Когда задание Stream Analytics получает сообщение неправильного формата из входного набора данных, это сообщение отклоняется, а пользователь получает предупреждение. Символ предупреждения появляется на плитке **Входные данные** задания Stream Analytics (он отображается, пока задание находится в рабочем состоянии):
 
-![Плитка "Входные данные"](media/stream-analytics-malformed-events/inputs_tile.png)
+![Плитка "Входные данные" панели мониторинга Azure Stream Analytics](media/stream-analytics-malformed-events/stream-analytics-inputs-tile.png)
 
-Чтобы просмотреть сведения предупреждения, включите журналы диагностики. Для входных событий неправильного формата в журналах выполнения создается запись о том, что не удалось выполнить десериализацию входных событий JSON из ресурса <blob URI>. 
+Чтобы просмотреть сведения предупреждения, включите журналы диагностики. Для входных событий неправильного формата журналы выполнения содержат запись с сообщением, которое выглядит так: "Message: Could not deserialize the input event(s) from resource <blob URI> as json" (Сообщение. Не удалось десериализовать входные события из ресурса <blob URI> как JSON). 
 
 ### <a name="troubleshooting-steps"></a>Действия по устранению неполадок
 
@@ -34,7 +34,7 @@ ms.locfileid: "50978451"
 
 2. На плитке сведений о входных данных отображается набор предупреждений с подробными сведениями о проблеме. Ниже приведен пример предупреждающего сообщения, в котором отображаются раздел, смещение и порядковые номера с данными JSON неправильного формата. 
 
-   ![Предупреждающее сообщение со смещением](media/stream-analytics-malformed-events/warning_message_with_offset.png)
+   ![Предупреждающее сообщение со смещением касательно входных данных](media/stream-analytics-malformed-events/warning-message-with-offset.png)
 
 3. Чтобы получить данные JSON, которые имеют неверный формат, запустите код CheckMalformedEvents.cs. Этот пример доступен в [репозитории примеров GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/Samples/CheckMalformedEventsEH). При помощи этого кода считываются идентификатор раздела и смещение, а затем выводятся данные для этого смещения. 
 

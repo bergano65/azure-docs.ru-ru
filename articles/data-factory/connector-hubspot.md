@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/15/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 69994d0e2f945f54ccc10bcf067fa46bb3befd23
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 4b0023c42d99842c704734d4f994273436f201e4
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46121878"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53077653"
 ---
 # <a name="copy-data-from-hubspot-using-azure-data-factory-preview"></a>Копирование данных из HubSpot с помощью фабрики данных Azure (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "46121878"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Hubspot** | Yes |
+| Тип | Для свойства type необходимо задать значение **Hubspot**. | Yes |
 | clientid | Идентификатор клиента, связанный с приложением Hubspot.  | Yes |
 | clientSecret | Секрет клиента, связанный с приложением Hubspot. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | accessToken | Маркер доступа, полученный на этапе первоначальной аутентификации при интеграции с OAuth. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
@@ -84,7 +84,12 @@ ms.locfileid: "46121878"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). Этот раздел содержит список свойств, поддерживаемых набором данных HubSpot.
 
-Чтобы скопировать данные из HubSpot, задайте для свойства type набора данных значение **HubspotObject**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные из HubSpot, задайте для свойства type набора данных значение **HubspotObject**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Свойство type для набора данных должно иметь значение **HubspotObject**. | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -96,7 +101,8 @@ ms.locfileid: "46121878"
         "linkedServiceName": {
             "referenceName": "<Hubspot linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -112,7 +118,7 @@ ms.locfileid: "46121878"
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Свойство type источника действия копирования должно иметь значение **HubspotSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Companies where Company_Id = xxx"`. | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Companies where Company_Id = xxx"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/15/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: fee9deb43b4619f26cb9e4c0044b25bd34af93d2
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: a4c683f6f3a1b321b786569999edac67cfb41892
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46126842"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53083501"
 ---
 # <a name="copy-data-from-couchbase-using-azure-data-factory-preview"></a>Копирование данных из Couchbase с помощью фабрики данных Azure (предварительная версия)
 
@@ -74,7 +74,13 @@ ms.locfileid: "46126842"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Couchbase.
 
-Чтобы скопировать данные из Couchbase, задайте для свойства type набора данных значение **CouchbaseTable**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные из Couchbase, задайте для свойства type набора данных значение **CouchbaseTable**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Для свойство type набора данных необходимо задать значение **CouchbaseTable**. | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
+
 
 **Пример**
 
@@ -86,7 +92,8 @@ ms.locfileid: "46126842"
         "linkedServiceName": {
             "referenceName": "<Couchbase linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -101,8 +108,8 @@ ms.locfileid: "46126842"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **CouchbaseSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Yes |
+| Тип | Для свойства type источника действия копирования необходимо задать значение **CouchbaseSource**. | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

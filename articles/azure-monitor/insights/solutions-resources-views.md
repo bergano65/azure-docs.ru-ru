@@ -8,18 +8,17 @@ manager: jwhit
 editor: tysonn
 ms.assetid: 570b278c-2d47-4e5a-9828-7f01f31ddf8c
 ms.service: monitoring
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/16/2018
 ms.author: bwren
-ms.openlocfilehash: 97e499612082d0d58cd75bb9f8854b8c4e0f669e
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 6e0bab08e52233d10cff3ec936d024dcbb86d2a6
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52635770"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53188016"
 ---
 # <a name="views-in-management-solutions-preview"></a>Представления в решениях по управлению (предварительная версия)
 > [!NOTE]
@@ -90,14 +89,14 @@ ms.locfileid: "52635770"
 * Переменные нужно определить в решении и использовать в соответствующих свойствах.
 
 ### <a name="log-analytics-api-version"></a>Версия API Log Analytics
-Все ресурсы Log Analytics, определенные в шаблоне Resource Manager, имеют свойство **apiVersion**. В нем указывается версия API, которую должен использовать этот ресурс.  Для представлений с запросами, использующими [устаревший и обновленный язык запросов](../../log-analytics/log-analytics-queries.md), версии будут разными.  
+Все ресурсы Log Analytics, определенные в шаблоне Resource Manager, имеют свойство **apiVersion**. В нем указывается версия API, которую должен использовать этот ресурс.  Для представлений с запросами, использующими [устаревший и обновленный язык запросов](../../azure-monitor/log-query/log-query-overview.md), версии будут разными.  
 
  В следующей таблице перечислены версии API Log Analytics для представлений в устаревших и обновленных рабочих областях. 
 
 | Версия рабочей области | Версия API | Запрос |
 |:---|:---|:---|
 | v1 (прежняя версия)   | 2015-11-01-preview | Устаревший формат.<br> Пример: Type=Event EventLevelName = Error  |
-| v2 (обновленная версия) | 2015-11-01-preview | Устаревший формат.  Преобразовывается в обновленный формат при установке.<br> Пример: Type=Event EventLevelName = Error<br>Преобразовывается в: Event &#124; where EventLevelName == "Error"  |
+| v2 (обновленная версия) | 2015-11-01-preview | Устаревший формат.  Преобразовывается в обновленный формат при установке.<br> Пример: Type=Event EventLevelName = Error<br>Преобразовывается в Event &#124; where EventLevelName == "Error"  |
 | v2 (обновленная версия) | 2017-03-03-preview | Обновленный формат. <br>Пример: Event &#124; where EventLevelName == "Error"  |
 
 

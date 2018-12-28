@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.component: authentication
 ms.topic: conceptual
-ms.date: 08/01/2018
+ms.date: 12/10/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry, michmcla
-ms.openlocfilehash: 44a5b32b68b0365e957d97a516f0d767e6501c0f
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: dbced5cfa2a47dc2fdcf630d62104bb7ba8e7bc0
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45630330"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53186656"
 ---
 # <a name="converged-registration-for-self-service-password-reset-and-azure-multi-factor-authentication-public-preview"></a>Конвергентная регистрация методов самостоятельного сброса пароля и многофакторной идентификации Azure (общедоступная предварительная версия)
 
@@ -74,6 +74,8 @@ ms.locfileid: "45630330"
 Журналы аудита для нового интерфейса находятся в категории методов проверки подлинности журнала аудита.  
 
 ## <a name="known-issues"></a>Известные проблемы
+
+Мы обнаружили ошибку, при которой гостевым пользователям B2B, для которых активирована конвергентная регистрация, не удается зарегистрироваться для MFA. Когда они направляются на страницу регистрации, отображается сообщение об ошибке. Наши разработчики знают об этой проблеме и работают над ее решением. Сейчас в качестве обходного пути рекомендуем создать группу и исключить из нее всех пользователей B2B.
 
 **Когда пользователь регистрирует телефон с помощью SMS, в качестве метода MFA по умолчанию устанавливается телефонный звонок**
 

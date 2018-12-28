@@ -1,5 +1,5 @@
 ---
-title: REST API службы распознавания речи — служба распознавания речи
+title: REST API служб распознавания речи — службы распознавания речи
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как использовать REST API преобразования речи в текст и текста в речь. Из этой статьи вы узнаете о вариантах авторизации, параметрах запроса, структуре запроса и получении ответа.
 services: cognitive-services
@@ -8,14 +8,15 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: conceptual
-ms.date: 11/13/2018
+ms.date: 12/13/2018
 ms.author: erhopf
-ms.openlocfilehash: ce9b3df5093d51eac0a151269b486b5f1310700c
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.custom: seodec18
+ms.openlocfilehash: 0b38c61f4fe884137204cba6d99d5e383b3259a0
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52584865"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53338896"
 ---
 # <a name="speech-service-rest-apis"></a>REST API службы "Речь"
 
@@ -33,7 +34,7 @@ ms.locfileid: "52584865"
 | Поддерживаемые заголовки авторизации | Преобразование речи в текст. | Преобразование текста в речь |
 |------------------------|----------------|----------------|
 | Ocp-Apim-Subscription-Key | Yes | Нет  |
-| Authorization: Bearer | Yes | Yes |
+| Авторизация: носитель | Yes | Yes |
 
 При использовании заголовка `Ocp-Apim-Subscription-Key` необходимо предоставить только ключ подписки. Например: 
 
@@ -321,9 +322,20 @@ Expect: 100-continue
 Этот пример кода показывает, как отправлять фрагментированное аудио. Только первый фрагмент данных должен содержать заголовок звукового файла. `request` — это объект HTTPWebRequest, подключенный к соответствующей конечной точке REST. `audioFile` — путь к звуковому файлу на диске.
 
 ```csharp
+
+    HttpWebRequest request = null;
+    request = (HttpWebRequest)HttpWebRequest.Create(requestUri);
+    request.SendChunked = true;
+    request.Accept = @"application/json;text/xml";
+    request.Method = "POST";
+    request.ProtocolVersion = HttpVersion.Version11;
+    request.Host = host;
+    request.ContentType = @"audio/wav; codec=""audio/pcm""; samplerate=16000";
+    request.Headers["Ocp-Apim-Subscription-Key"] = args[1];
+    request.AllowWriteStreamBuffering = false;
+
 using (fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 {
-
     /*
     * Open a request stream and write 1024 byte chunks in the stream one at a time.
     */
@@ -423,20 +435,10 @@ using (fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 
 ## <a name="text-to-speech-api"></a>API преобразования текста в речь
 
-Для преобразования текста в речь с помощью REST API поддерживаются следующие регионы. Выберите конечную точку, которая соответствует региону подписки.
+REST API преобразования текста в речь поддерживает нейронные модели и стандартные голосовые модели для преобразования текста в речь. Каждая из таких моделей поддерживает определенный язык и диалект, определяемые языковым стандартом.
 
-[!INCLUDE [](../../../includes/cognitive-services-speech-service-endpoints-text-to-speech.md)]
-
-Служба распознавания речи поддерживает аудиосигнал 24 кГц, а также сигналы 16 кГц, которые поддерживались API распознавания речи Bing. Поддерживаются четыре формата сигнала 24 кГц и два голоса 24 кГц.
-
-### <a name="voices"></a>Голоса
-
-| Языковой стандарт | Язык   | пол; | Сопоставление |
-|--------|------------|--------|---------|
-| en-US  | Английский (США) | Female | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (en-US, Jessa24kRUS)" |
-| en-US  | Английский (США) | Male   | "Голос для преобразования текста в речь службы распознавания речи Microsoft Server (en-US, Guy24kRUS)" |
-
-Полный список доступных голосов см. в разделе [Поддерживаемые языки](language-support.md#text-to-speech).
+* Полный список голосовых моделей см. в разделе о [поддерживаемых языках](language-support.md#text-to-speech).
+* Сведения о доступности по регионам см. на [этой странице](regions.md#text-to-speech).
 
 ### <a name="request-headers"></a>Заголовки запросов
 
@@ -451,7 +453,7 @@ using (fs = new FileStream(audioFile, FileMode.Open, FileAccess.Read))
 
 ### <a name="audio-outputs"></a>Аудиосигналы
 
-Это список поддерживаемых аудиоформатов, которые отправляются в каждом запросе в виде заголовка `X-Microsoft-OutputFormat`. Каждый включает в себя скорость и тип кодирования.
+Это список поддерживаемых аудиоформатов, которые отправляются в каждом запросе в виде заголовка `X-Microsoft-OutputFormat`. Каждый включает в себя скорость и тип кодирования. Служба "Речь" поддерживает выходные аудиоданные с частотой дискретизации 24 кГц и 16 кГц.
 
 |||
 |-|-|

@@ -1,6 +1,6 @@
 ---
-title: Рекомендации и руководство по устранению неполадок приложений Node в веб-приложениях Azure
-description: Узнайте рекомендации и способы устранения неполадок приложений Node в веб-приложениях Azure.
+title: Рекомендации и методы устранения неполадок для Node.js в Службе приложений Azure
+description: Представлены рекомендации и способы устранения неполадок в приложениях Node.js в Службе приложений Azure.
 services: app-service\web
 documentationcenter: nodejs
 author: ranjithr
@@ -14,14 +14,15 @@ ms.devlang: nodejs
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: ranjithr
-ms.openlocfilehash: 860874ed49056e6b4695c060b06bf061820c390e
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.custom: seodec18
+ms.openlocfilehash: 5a8760bc67125f857998f23ca33733a62a0d8fb5
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31789679"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53315729"
 ---
-# <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-web-apps"></a>Рекомендации и руководство по устранению неполадок приложений Node в веб-приложениях Azure
+# <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Рекомендации и руководство по устранению неполадок в приложениях Node.js в Службе приложений Azure (Windows)
 
 В этой статье описываются рекомендации и способы устранения неполадок [приложений Node](app-service-web-get-started-nodejs.md), запущенных в веб-приложениях Azure (с помощью [iisnode](https://github.com/azure/iisnode)).
 
@@ -62,7 +63,7 @@ ms.locfileid: "31789679"
 
 ### <a name="debuggerextensiondll"></a>debuggerExtensionDll
 
-Этот параметр определяет версию средства node-inspector, которую iisnode использует при выполнении отладки приложения Node. Сейчас для этого параметра доступны только два значения: iisnode-inspector-0.7.3.dll и iisnode-inspector.dll. По умолчанию для этого параметра задано значение iisnode-inspector-0.7.3.dll. В этой версии используются node-inspector-0.7.3 и веб-сокеты. Чтобы использовать ее, обязательно включите веб-сокеты для веб-приложения Azure. Дополнительные сведения о настройке новой версии node-inspector в iisnode см. по ссылке <http://ranjithblogs.azurewebsites.net/?p=98>.
+Этот параметр определяет версию средства node-inspector, которую iisnode использует при выполнении отладки приложения Node. Сейчас для этого параметра доступны только два значения: iisnode-inspector-0.7.3.dll и iisnode-inspector.dll. По умолчанию для этого параметра задано значение iisnode-inspector-0.7.3.dll. В этой версии используются node-inspector-0.7.3 и веб-сокеты. Чтобы использовать ее, обязательно включите веб-сокеты для веб-приложения Azure. Дополнительные сведения о настройке новой версии node-inspector в iisnode см. по ссылке <https://ranjithblogs.azurewebsites.net/?p=98>.
 
 ### <a name="flushresponse"></a>flushResponse
 
@@ -282,6 +283,6 @@ NODE.exe поддерживает параметр с именем `NODE_PENDING
 * [Создание веб-приложений Node.js в Azure](app-service-web-get-started-nodejs.md)
 * [Отладка веб-приложения Node.js в службе приложений Azure](app-service-web-tutorial-nodejs-mongodb-app.md)
 * [Использование модулей Node.js с приложениями Azure](../nodejs-use-node-modules-azure-apps.md)
-* [Azure App Service Web Apps: Node.js (Веб-приложения службы приложений Azure: Node.js)](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
-* [Центр разработчиков Node.js.](../nodejs-use-node-modules-azure-apps.md)
+* [Azure App Service Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/) (Веб-приложения в Службе приложений Azure: Node.js)
+* [Центр разработчика Node.js](../nodejs-use-node-modules-azure-apps.md)
 * [Exploring the Super Secret Kudu Debug Console (Обзор сверхсекретной консоли для отладки Kudu)](https://azure.microsoft.com/documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/)

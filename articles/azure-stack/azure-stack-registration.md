@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/19/2018
+ms.date: 12/04/2018
 ms.author: jeffgilb
 ms.reviewer: brbartle
-ms.openlocfilehash: 8d737c9fbf149051a8142f5ff546ea88e648541b
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: 58dfb3f02b338d62fcfb10e4d8c1bc492cdacbda
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51976372"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52890557"
 ---
 # <a name="register-azure-stack-with-azure"></a>Регистрация Azure Stack в Azure
 
@@ -121,8 +121,8 @@ Run: get-azurestackstampinformation
 
 2. Добавьте учетную запись Azure, которая использовалась для регистрации Azure Stack. Чтобы добавить учетную запись, выполните командлет **Add-AzureRmAccount**. Вам будет предложено ввести учетные данные учетной записи Azure. Также может потребоваться выполнить двухфакторную аутентификацию в зависимости от конфигурации вашей учетной записи.
 
-   ```PowerShell  
-      Add-AzureRmAccount -EnvironmentName "<AzureCloud, AzureChinaCloud, or AzureUSGovernment>"
+   ```PowerShell
+      Add-AzureRmAccount -EnvironmentName "<environment name>"
    ```
 
    | Параметр | ОПИСАНИЕ |  
@@ -150,8 +150,12 @@ Run: get-azurestackstampinformation
 6. Затем, в том же сеансе PowerShell, убедитесь, что вы вошли в правильный контекст Azure PowerShell. Это учетная запись Azure, которая использовалась для регистрации указанного выше поставщика ресурсов Azure Stack. Выполните эти команды PowerShell:
 
    ```PowerShell  
-   Add-AzureRmAccount -Environment "<AzureCloud, AzureChinaCloud, or AzureUSGovernment>"
+      Add-AzureRmAccount -EnvironmentName "<environment name>"
    ```
+
+   | Параметр | ОПИСАНИЕ |  
+   |-----|-----|
+   | EnvironmentName | Имя среды облачной подписки Azure. Поддерживаемые имена среды — **AzureCloud**, **AzureUSGovernment** или, при использовании подписки Azure для Китая, **AzureChinaCloud**.  |
 
 7. В этом же сеансе PowerShell выполните командлет **Set-AzsRegistration**. Выполните эти команды PowerShell:  
 
@@ -182,7 +186,7 @@ Run: get-azurestackstampinformation
 2. Добавьте учетную запись Azure, которая использовалась для регистрации Azure Stack. Чтобы добавить учетную запись, выполните командлет **Add-AzureRmAccount**. Вам будет предложено ввести учетные данные учетной записи Azure. Также может потребоваться выполнить двухфакторную аутентификацию в зависимости от конфигурации вашей учетной записи.
 
    ```PowerShell  
-      Add-AzureRmAccount -EnvironmentName "<AzureCloud, AzureChinaCloud, or AzureUSGovernment>"
+      Add-AzureRmAccount -EnvironmentName "<environment name>"
    ```
 
    | Параметр | ОПИСАНИЕ |  
@@ -298,7 +302,7 @@ Run: get-azurestackstampinformation
 
 Чтобы убедиться, что инфраструктура Azure Stack успешно зарегистрирована в Azure, следуйте инструкциям ниже.
 
-1. Войдите на [портал администратора](https://docs.microsoft.com/azure/azure-stack/azure-stack-manage-portals#access-the-administrator-portal) Azure Stack: https&#58;//adminportal.*&lt;регион>.&lt;полное доменное имя>*.
+1. Войдите на [портал администрирования](https://docs.microsoft.com/azure/azure-stack/azure-stack-manage-portals#access-the-administrator-portal) Azure Stack: https://adminportal.*&lt;регион>.&lt;полное доменное имя>*.
 2. Выберите **Все службы**, а затем в категории **Администрирование** выберите пункт **Marketplace management** >  (Управление Marketplace) **Add from Azure** (Добавление из Azure).
 
 Если отобразится список элементов, доступных в Azure (например, WordPress), значит, активация прошла успешно. Тем не менее в отключенных средах элементы Azure Marketplace не отображаются в Azure Stack Marketplace.
@@ -430,9 +434,9 @@ Run: get-azurestackstampinformation
 | AzureContext | PSObject |  |
 | ResourceGroupName | Строка |  |
 | ResourceGroupLocation | Строка |  |
-| BillingModel | Строка | Модель выставления счетов, которая используется в подписке. Для этого параметра допустимы такие значения: Capacity, PayAsYouUse и Development. |
+| BillingModel | Строка | Модель выставления счетов, которая используется в подписке. Допустимые значения для этого параметра: Capacity, PayAsYouUse и Development. |
 | MarketplaceSyndicationEnabled | True или False | Определяет, доступна ли функция управления Marketplace на портале. Имеет значение true, если регистрация осуществляется с подключением к Интернету. Имеет значение false, если регистрация осуществляется в среде без подключения к Интернету. При регистрации в среде без подключения к Интернету можно использовать [инструмент автономной синдикации](azure-stack-download-azure-marketplace-item.md#disconnected-or-a-partially-connected-scenario) для скачивания элементов Marketplace. |
-| UsageReportingEnabled | True или False | Azure Stack передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении. Допустимые значения для этого параметра: true, false. |
+| UsageReportingEnabled | True или False | Azure Stack передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении. Допустимые значения для этого параметра: True, False. |
 | AgreementNumber | Строка |  |
 | RegistrationName | Строка | Задайте уникальное имя регистрации, если сценарий регистрации выполняется на нескольких экземплярах Azure Stack с использованием одного идентификатора подписки Azure. Этот параметр имеет значение по умолчанию **AzureStackRegistration**. Тем не менее, если задать одно имя для нескольких экземпляров Azure Stack, сценарий завершится ошибкой. |
 
@@ -452,9 +456,9 @@ Run: get-azurestackstampinformation
 | AzureContext | PSObject |  |
 | ResourceGroupName | Строка |  |
 | ResourceGroupLocation | Строка |  |
-| BillingModel | Строка | Модель выставления счетов, которая используется в подписке. Для этого параметра допустимы такие значения: Capacity, PayAsYouUse и Development. |
+| BillingModel | Строка | Модель выставления счетов, которая используется в подписке. Допустимые значения для этого параметра: Capacity, PayAsYouUse и Development. |
 | MarketplaceSyndicationEnabled | True или False |  |
-| UsageReportingEnabled | True или False | Azure Stack передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении. Допустимые значения для этого параметра: true, false. |
+| UsageReportingEnabled | True или False | Azure Stack передает метрики использования по умолчанию. Операторам, использующим оплату за емкость или поддерживающим отключенную среду, необходимо отключить отчеты о потреблении. Допустимые значения для этого параметра: True, False. |
 | AgreementNumber | Строка |  |
 
 

@@ -1,5 +1,5 @@
 ---
-title: 'Доменные службы Azure Active Directory: параметры уведомлений | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Параметры уведомлений | Документация Майкрософт
 description: Параметры уведомлений для доменных служб Azure AD
 services: active-directory-ds
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/17/2018
 ms.author: ergreenl
-ms.openlocfilehash: f5049d6092bfc6b3f70ebafdc501e02ad9fe7936
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: c6d827629850de88940f41febeeca61b812d692e
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49433212"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52958531"
 ---
 # <a name="notification-settings-in-azure-ad-domain-services"></a>Параметры уведомлений в доменных службах Azure AD
 
@@ -41,7 +41,7 @@ ms.locfileid: "49433212"
 
 На следующем изображении представлен пример уведомления, отправляемого по электронной почте:
 
-![Пример уведомления по электронной почте](.\media\active-directory-domain-services-alerts\email-alert.png)
+![Пример уведомления по электронной почте](./media/active-directory-domain-services-alerts/email-alert.png)
 
 В этом сообщении указан управляемый домен, к которому относится оповещение, а также время его обнаружения и ссылка на страницу с данными о работоспособности доменных служб Azure AD на портале Azure.
 

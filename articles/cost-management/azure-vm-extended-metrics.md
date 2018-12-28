@@ -6,16 +6,16 @@ keywords: ''
 author: bandersmsft
 manager: vitavor
 ms.author: banders
-ms.date: 11/13/2018
+ms.date: 12/06/2018
 ms.topic: conceptual
 ms.service: cost-management
-ms.custom: ''
-ms.openlocfilehash: a41136837a56137ce92bd186cb4ee825e4f664c4
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.custom: seodec18
+ms.openlocfilehash: 9bb8d74b012b25ca959cdb87b8a3d5e4284b6497
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52274965"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53097222"
 ---
 # <a name="add-extended-metrics-for-azure-virtual-machines"></a>Добавление расширенных метрик для виртуальных машин Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "52274965"
 
 ## <a name="determine-whether-extended-metrics-are-enabled"></a>Определение доступности расширенных метрик
 
-1. Войдите на портал Azure по адресу http://portal.azure.com.
+1. Войдите на портал Azure по адресу https://portal.azure.com.
 2. В разделе **Виртуальные машины** выберите виртуальную машину, а затем в разделе **Мониторинг** выберите **Метрики**. Отобразится список доступных метрик.
 3. Выберите несколько метрик, и на графике отобразятся их данные.  
     ![Пример метрики. Загрузка ЦП на узле](./media/azure-vm-extended-metrics/metric01.png)
@@ -55,12 +55,12 @@ ms.locfileid: "52274965"
 1. В разделе **Виртуальные машины** просмотрите список виртуальных машин и выберите нужную.
 2. В разделе **Мониторинг** выберите **Параметры диагностики**.
 3. На странице параметров диагностики щелкните **Включить мониторинг на гостевом уровне**.  
-    ![Включение мониторинга на гостевом уровне](./media/azure-vm-extended-metrics/enable-guest-monitoring.png)
+    ![Включение мониторинга на гостевом уровне на странице "Обзор"](./media/azure-vm-extended-metrics/enable-guest-monitoring.png)
 4. Через несколько минут агент диагностики Azure будет установлен на виртуальную машину. Добавляется базовый набор метрик. Обновите страницу. Добавленные счетчики производительности отображаются на вкладке "Обзор".
 5. В разделе "Мониторинг" выберите **Метрики**.
 6. На диаграмме метрик в разделе **Пространство имен метрики** выберите **Гость (классическая модель)**.
 7. В списке метрик можно просмотреть все доступные счетчики производительности для гостевой виртуальной машины.  
-    ![Расширенные метрики](./media/azure-vm-extended-metrics/extended-metrics.png)
+    ![Список примеров расширенных метрик](./media/azure-vm-extended-metrics/extended-metrics.png)
 
 ### <a name="enable-guest-level-monitoring-on-new-vms"></a>Включение мониторинга на гостевом уровне в новых виртуальных машинах
 
@@ -82,7 +82,7 @@ ms.locfileid: "52274965"
 
 Чтобы просмотреть метрики производительности своих экземпляров Azure на портале Cloudyn, выберите **Ресурсы** > **Вычисления** > **Instance Explorer** (Обозреватель экземпляров). В списке экземпляров виртуальных машин разверните экземпляр, а затем разверните ресурс, чтобы просмотреть подробные сведения.
 
-![Обозреватель экземпляра](./media/azure-vm-extended-metrics/instance-explorer.png)
+![Справочные данные, отображаемые в Обозревателе экземпляра](./media/azure-vm-extended-metrics/instance-explorer.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

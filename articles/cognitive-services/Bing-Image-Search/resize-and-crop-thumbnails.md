@@ -1,6 +1,7 @@
 ---
-title: Изменение размера и обрезка эскизов Bing — API Bing для поиска изображений
-description: Узнайте, как изменить размер и обрезать эскизы в ответе от API Bing для поиска изображений.
+title: Изменение размера и обрезка эскизов — API Bing для поиска изображений
+titleSuffix: Azure Cognitive Services
+description: Изменение размера и обрезка эскизов в ответе от API Bing для поиска изображений.
 services: cognitive-services
 author: swhite-msft
 manager: cgronlun
@@ -10,14 +11,15 @@ ms.component: bing-image-search
 ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: de82cc5554af91294dda3826dfb394cc94dbf3d0
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.custom: seodec2018
+ms.openlocfilehash: 3bb360cd95dcbfb95464b2b259dcebfce7065256
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46296233"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53256397"
 ---
-# <a name="resizing-and-cropping-thumbnail-images"></a>Изменение размера и обрезка эскизов изображений
+# <a name="resize-and-crop-thumbnail-images"></a>Изменение размера и обрезка эскизов
 
 При обработке поискового запроса Bing создаст информацию эскизов для всех образов в [ответе](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/concepts/bing-image-search-get-images#bing-image-search-response-format). Эти сведения можно использовать для отображения всех или подмножества возвращенных эскизов. Если вы отобразите подмножество, предоставьте возможность просмотра оставшихся изображений.
 

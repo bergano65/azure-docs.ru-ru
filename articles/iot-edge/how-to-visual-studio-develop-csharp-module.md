@@ -1,20 +1,20 @@
 ---
-title: Разработка и отладка модулей C# для Azure IoT Edge в Visual Studio 2017 | Документация Майкрософт
+title: Разработка и отладка модулей C# в Visual Studio 2017 — Azure IoT Edge | Документация Майкрософт
 description: Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge
 services: iot-edge
-keywords: ''
 author: shizn
 manager: philmea
 ms.author: xshi
 ms.date: 09/24/2018
 ms.topic: article
 ms.service: iot-edge
-ms.openlocfilehash: 86f0867389ce6ee1c83190e03ba17362db29d6f7
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.custom: seodec18
+ms.openlocfilehash: 547989152320678ec195c4e8a93965cfbbd0f341
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51975879"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53097851"
 ---
 # <a name="use-visual-studio-2017-to-develop-and-debug-c-modules-for-azure-iot-edge-preview"></a>Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)
 

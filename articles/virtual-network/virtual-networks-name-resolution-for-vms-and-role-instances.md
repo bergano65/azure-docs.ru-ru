@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: subsarma
-ms.openlocfilehash: 53e3a298dd8a3eebca1943d9bade51187f14d722
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 17bcc7ada244484c2c2df5bd81c82f695a8b5342
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038490"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52969913"
 ---
 # <a name="name-resolution-for-resources-in-azure-virtual-networks"></a>Разрешение имен ресурсов в виртуальных сетях Azure | Документация Майкрософт
 
@@ -125,7 +125,7 @@ options timeout:1 attempts:5
 Файл resolv.conf обычно создается автоматически, его не следует изменять. Шаги по добавлению строки *options* отличаются в разных дистрибутивах.
 
 * **Ubuntu** (используется пакет resolvconf):
-  1. Добавьте строку *options* в **/etc/resolveconf/resolv.conf.d/head**.
+  1. Добавьте строку *options* в **/etc/resolveconf/resolv.conf.d/tail**.
   2. Запустите `resolvconf -u`, чтобы выполнить обновление.
 * **SUSE** (используется пакет netconf):
   1. Добавьте параметр *timeout:1 attempts:5* в блок **NETCONFIG_DNS_RESOLVER_OPTIONS=""** в **etc/sysconfig/network/config**. 

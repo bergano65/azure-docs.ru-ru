@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 11/08/2018
+ms.date: 12/07/2018
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.openlocfilehash: 530b2a1909ec198ddff5abfe4fd5bb7c645f7582
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: 1f9d5325522f8ec40af99059651a00f6cdc0e8e0
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52261588"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53089629"
 ---
 # <a name="connect-to-azure-stack-with-powershell-as-an-operator"></a>Подключитесь к Azure Stack с помощью PowerShell в роли оператора.
 
@@ -29,37 +29,56 @@ Azure Stack можно настроить для управления таким
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Выполните следующие предварительные требования с помощью [пакета средств разработки](.\asdk\asdk-connect.md#connect-with-rdp) или внешнего клиента на базе Windows (при [подключении к ASDK через VPN](.\asdk\asdk-connect.md#connect-with-vpn)). 
+Выполните следующие предварительные требования с помощью [пакета средств разработки](./asdk/asdk-connect.md#connect-with-rdp) или внешнего клиента на базе Windows (при [подключении к ASDK через VPN](./asdk/asdk-connect.md#connect-with-vpn)). 
 
  - Установите [совместимые с Azure Stack модули Azure PowerShell](azure-stack-powershell-install.md).  
  - Скачайте [средства, необходимые для работы с Azure Stack](azure-stack-powershell-download.md).  
 
-## <a name="configure-the-operator-environment-and-sign-in-to-azure-stack"></a>Настройка среды оператора и вход в Azure Stack
+## <a name="connect-with-azure-ad"></a>Подключение к Azure AD
 
-Настройте среду оператора Azure Stack с помощью PowerShell. Выполните один из следующих сценариев: замените tenantName Azure AD, конечную точку GraphAudience и значения ArmEndpoint собственной конфигурацией среды.
+Настройте среду оператора Azure Stack с помощью PowerShell. Выполните один из приведенных ниже скриптов. Замените значение tenantName для Azure Active Directory (Azure AD) и значение конечной точки Azure Resource Manager собственной конфигурацией среды. <!-- GraphAudience endpoint -->
 
-````PowerShell  
-    # For Azure Stack development kit, this value is set to https://adminmanagement.local.azurestack.external.
-    # To get this value for Azure Stack integrated systems, contact your service provider.
-    $ArmEndpoint = "<Admin Resource Manager endpoint for your environment>"
-
+```PowerShell  
+    # Set your tenant name
     $AuthEndpoint = (Get-AzureRmEnvironment -Name "AzureStackAdmin").ActiveDirectoryAuthority.TrimEnd('/')
+    $AADTenantName = "<myDirectoryTenantName>.onmicrosoft.com"
     $TenantId = (invoke-restmethod "$($AuthEndpoint)/$($AADTenantName)/.well-known/openid-configuration").issuer.TrimEnd('/').Split('/')[-1]
-
-    $TenantID = Get-AzsDirectoryTenantId `
-      -AADTenantName "<myDirectoryTenantName>.onmicrosoft.com" `
-      -EnvironmentName AzureStackAdmin
 
     # After signing in to your environment, Azure Stack cmdlets
     # can be easily targeted at your Azure Stack instance.
-    Add-AzureRmAccount -EnvironmentName "AzureStackAdmin" -TenantId $tenantId
-````
+    Add-AzureRmAccount -EnvironmentName "AzureStackAdmin" -TenantId $TenantId
+```
+
+## <a name="connect-with-ad-fs"></a>Подключение к AD FS
+
+Подключитесь к среде оператора Azure Stack с помощью PowerShell и служб федерации Azure Active Directory (Azure AD FS). Для пакета средств разработки Azure Stack для этой конечной точки Azure Resource Manager устанавливается значение `https://adminmanagement.local.azurestack.external`. Чтобы получить конечную точку Azure Resource Manager для интегрированных систем Azure Stack, обратитесь к поставщику услуг.
+
+<!-- GraphAudience endpoint -->
+
+  ```PowerShell  
+  # Register an Azure Resource Manager environment that targets your Azure Stack instance. Get your Azure Resource Manager endpoint value from your service provider.
+  Add-AzureRMEnvironment -Name "AzureStackAdmin" -ArmEndpoint "https://adminmanagement.local.azurestack.external"
+
+  $AuthEndpoint = (Get-AzureRmEnvironment -Name "AzureStackAdmin").ActiveDirectoryAuthority.TrimEnd('/')
+  $tenantId = (invoke-restmethod "$($AuthEndpoint)/.well-known/openid-configuration").issuer.TrimEnd('/').Split('/')[-1]
+
+  # Sign in to your environment
+
+  $cred = get-credential
+
+  Login-AzureRmAccount `
+    -EnvironmentName "AzureStackAdmin" `
+    -TenantId $tenantId `
+    -Credential $cred
+  ```
+
+
 
 ## <a name="test-the-connectivity"></a>Проверка подключения
 
 Теперь, когда все настроено, можно создавать ресурсы в Azure Stack с помощью Azure PowerShell. Например, можно создать группу ресурсов для приложения и добавить виртуальную машину. Используйте команду ниже, чтобы создать группу ресурсов с именем **MyResourceGroup**.
 
-```powershell
+```PowerShell  
 New-AzureRmResourceGroup -Name "MyResourceGroup" -Location "Local"
 ```
 

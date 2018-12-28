@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по преобразованию текста в речь на .NET Core (служба распознавания речи)
+title: Краткое руководство. Преобразование текста в речь на .NET Core в службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как преобразовать текст в речь с помощью REST API преобразования текста в речь. В это руководство включен образец текста, оформленный по стандарту разметки SSML (Speech Synthesis Markup Language). Этот стандарт позволяет выбрать голос и язык для речевого ответа.
 services: cognitive-services
@@ -10,18 +10,18 @@ ms.component: speech-service
 ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: erhopf
-ms.openlocfilehash: 4f424e73fbe1f05155e7f051d90dd72d57405adf
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 3a0304a69cdff15cddf325be8abe336a42ea4fc1
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52641573"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53089876"
 ---
-# <a name="quickstart-convert-text-to-speech-using-net-core"></a>Краткое руководство по преобразованию текста в речь с помощью .NET Core
+# <a name="quickstart-convert-text-to-speech-using-net-core"></a>Краткое руководство. Преобразование текста в речь с использованием .NET Core
 
 В этом кратком руководстве вы узнаете, как преобразовать текст в речь с помощью .NET Core и REST API преобразования текста в речь. Пример текста в этом руководстве оформлен по стандарту разметки [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md), который позволяет выбрать голос и язык для ответа.
 
-Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом службы речи. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
+Для этого краткого руководства требуется [учетная запись Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с ресурсом службы "Речь". Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -70,9 +70,9 @@ using System.Threading.Tasks;
 
 ## <a name="create-a-class-for-token-exchange"></a>Создание класса для обмена маркерами
 
-REST API преобразования текста в речь требует предоставить маркер доступа для аутентификации. Чтобы получить маркер доступа, нужно выполнить обмен. Этот пример выполняет обмен ключа подписки службы "Речь" на маркера доступа через конечную точку `issueToken`.
+REST API преобразования текста в речь требует предоставить маркер доступа для аутентификации. Чтобы получить маркер доступа, нужно выполнить обмен. Этот пример меняет ключ подписки службы "Речь" на маркер доступа через конечную точку `issueToken`.
 
-В этом примере предполагается, что подписка службы "Речь" размещена в регионе "западная часть США". Если вы используете другой регион, измените значение `FetchTokenUri`. Полный список регионов можно получить [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
+В этом примере предполагается, что подписка службы "Речь" размещена в регионе "Западная часть США". Если вы используете другой регион, измените значение `FetchTokenUri`. Полный список регионов можно получить [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
 
 ```csharp
 public class Authentication
@@ -162,7 +162,7 @@ string body = @"<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis'
 ```
 
 > [!NOTE]
-> В этом примере используется голосовой шрифт `ZiraRUS`. Полный список предоставляемых корпорацией Майкрософт голосов и языков, см. в разделе [Поддержка языков](https://review.docs.microsoft.com/azure/cognitive-services/speech-service/language-support). Если вы хотите создать для своего бренда уникальный и узнаваемый голос, изучите статью [Создание настраиваемого голоса](https://review.docs.microsoft.com/azure/cognitive-services/speech-service/how-to-customize-voice-font).
+> В этом примере используется голосовой шрифт `ZiraRUS`. См. [полный список предоставляемых корпорацией Майкрософт голосов и языков](https://review.docs.microsoft.com/azure/cognitive-services/speech-service/language-support). Если вы хотите создать для своего бренда уникальный и узнаваемый голос, изучите статью [Создание настраиваемого голоса](https://review.docs.microsoft.com/azure/cognitive-services/speech-service/how-to-customize-voice-font).
 
 ## <a name="instantiate-the-client-make-a-request-and-save-synthesized-audio-to-a-file"></a>Создание экземпляра клиента, выполнение запроса и сохранение созданного аудио в файл
 
@@ -193,7 +193,6 @@ using (var client = new HttpClient())
         // Update your resource name
         request.Headers.Add("User-Agent", "YOUR_RESOURCE_NAME");
         request.Headers.Add("X-Microsoft-OutputFormat", "riff-24khz-16bit-mono-pcm");
-        request.Headers.Add("Connection", "Keep-Alive");
         // Create a request
         Console.WriteLine("Calling the TTS service. Please wait... \n");
         using (var response = await client.SendAsync(request).ConfigureAwait(false))
@@ -237,4 +236,5 @@ dotnet run
 
 ## <a name="see-also"></a>См. также
 
-* [Руководство по распознаванию намерений в речи](how-to-recognize-intents-from-speech-csharp.md)
+* [Создание настраиваемого голоса](how-to-customize-voice-font.md)
+* [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

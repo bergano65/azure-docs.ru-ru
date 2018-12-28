@@ -1,5 +1,6 @@
 ---
-title: Настройка высокодоступных портов для Azure Load Balancer | Документы Майкрософт
+title: Настройка портов высокого уровня доступности для Azure Load Balancer
+titlesuffix: Azure Load Balancer
 description: Сведения о том, как использовать высокодоступные порты для балансировки нагрузки внутреннего трафика на всех портах.
 services: load-balancer
 documentationcenter: na
@@ -7,23 +8,24 @@ author: rdhillon
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
+ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/21/2018
 ms.author: kumud
-ms.openlocfilehash: 8e1b94dbdef66c6423d16ffcbc9df4cd60a13c69
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: d104fd8a88a55af75faa2a0958733442c083451c
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50415548"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53084572"
 ---
 # <a name="configure-high-availability-ports-for-an-internal-load-balancer"></a>Настройка высокодоступных портов для внутренней подсистемы балансировки нагрузки
 
 Эта статья содержит пример развертывания высокодоступных портов для внутреннего балансировщика нагрузки. Сведения о конкретных конфигурациях виртуальных сетевых устройств (NVA) см. на веб-сайтах соответствующих поставщиков.
 
 >[!NOTE]
->Azure Load Balancer поддерживает два типа: категории "Базовый" и "Стандартный". В этой статье рассматривается Azure Load Balancer категории "Стандартный". Дополнительные сведения о Load Balancer категории "Базовый" см. в статье [Обзор балансировщика нагрузки Azure](load-balancer-overview.md).
+>Azure Load Balancer предлагается в двух ценовых категориях: "Базовый" и "Стандартный". В этой статье рассматривается Azure Load Balancer категории "Стандартный". Дополнительные сведения о Load Balancer категории "Базовый" см. в статье [Обзор балансировщика нагрузки Azure](load-balancer-overview.md).
 
 На рисунке приведена конфигурация для примера развертывания, описанного в этой статье:
 

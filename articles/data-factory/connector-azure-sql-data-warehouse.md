@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/08/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 5c45167255ec91030f07e550de223a7ebed93168
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: 0971122ee7b9cde0664ee661454a8b7824f4b7d5
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51345765"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53093915"
 ---
 #  <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -69,8 +69,8 @@ ms.locfileid: "51345765"
 В разделах ниже описываются требования и приводятся примеры JSON для разных типов проверки подлинности.
 
 - [Проверка подлинности SQL](#sql-authentication).
-- Аутентификация по маркеру приложения Azure AD на основе [субъекта-службы](#service-principal-authentication).
-- Аутентификация на основе маркеров приложения Azure AD: [Управляемые удостоверения для ресурсов Azure](#managed-identity)
+- Аутентификация по маркеру приложения Azure AD. [Субъект-служба](#service-principal-authentication)
+- Аутентификация по маркеру приложения Azure AD. [Управляемые удостоверения для ресурсов Azure](#managed-identity)
 
 >[!TIP]
 >Если вы получили ошибку с кодом ошибки UserErrorFailedToConnectToSqlServer и сообщение типа "Предел сеанса для базы данных — XXX, и он был достигнут", добавьте `Pooling=false` в строку подключения и повторите попытку.
@@ -358,8 +358,8 @@ GO
 | rejectType | Указывает, является ли параметр **rejectValue** литеральным или процентным.<br/><br/>Допустимые значения: **Значение** (по умолчанию) и **Процент**. | Нет  |
 | rejectSampleValue | Определяет количество строк, которое PolyBase следует получить до повторного вычисления процента отклоненных строк.<br/><br/>Допустимые значения: 1, 2, … | Да, если **rejectType** имеет значение **percentage**. |
 | useTypeDefault | Указывает способ обработки отсутствующих значений в текстовых файлах с разделителями, когда PolyBase получает данные из текстового файла.<br/><br/>Дополнительные сведения об этом свойстве см. в подразделе "Аргументы" раздела [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://msdn.microsoft.com/library/dn935026.aspx).<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет  |
-| writeBatchSize | Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение: **целое число** (количество строк). | Нет. Значение по умолчанию — 10000. |
-| writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение — **timespan**. Пример: 00:30:00 (30 минут). | Нет  |
+| writeBatchSize | Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение: **целое число** (количество строк). |  Нет. Значение по умолчанию — 10000. |
+| writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение — **timespan**. Пример: "00:30:00" (30 минут). | Нет  |
 | preCopyScript | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в хранилище данных SQL Azure при каждом выполнении. Это свойство используется для очистки предварительно загруженных данных. | Нет  | (#repeatability-during-copy). | Инструкция запроса. | Нет  |
 
 #### <a name="sql-data-warehouse-sink-example"></a>Пример приемника хранилища данных SQL
@@ -404,7 +404,7 @@ PolyBase хранилища данных SQL напрямую поддержив
 
    1. `fileName` не содержит фильтр подстановочных знаков.
    2. Параметр `rowDelimiter` должен иметь значение **\n**.
-   3. Параметру `nullValue` задается **пустая строка** ("") или значение по умолчание, а параметру `treatEmptyAsNull` не задается значение false.
+   3. Параметру `nullValue` задается **пустая строка** ("") или значение по умолчанию, а параметр `treatEmptyAsNull` остается со значением по умолчанию или ему задается значение true.
    4. Параметру `encodingName` присваивается значение **utf-8**, которое является значением по умолчанию.
    5. `escapeChar`, `quoteChar` и `skipLineCount` не указываются. Поддержка PolyBase пропускает строку заголовка, которую в файле определения приложения можно настроить как `firstRowAsHeader`.
    6. Параметр `compression` может иметь значение **no compression**, **GZip** или **Deflate**.
@@ -577,7 +577,7 @@ All columns of the table must be specified in the INSERT BULK statement.
 | sql_variant | Object * |
 | текст | String, Char[] |
 | Twitter в режиме реального | Интервал времени |
-| timestamp | Byte[] |
+|  timestamp | Byte[] |
 | tinyint; | Byte |
 | uniqueidentifier | Guid |
 | varbinary; | Byte[] |

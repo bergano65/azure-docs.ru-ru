@@ -1,5 +1,5 @@
 ---
-title: Ранний выпуск с помощью Vamp в кластере DC/OS Azure
+title: (УСТАРЕЛО) Ранний выпуск с помощью Vamp в кластере DC/OS Azure
 description: Узнайте, как использовать Vamp для раннего выпуска служб и применения интеллектуальной фильтрации трафика в кластере DC/OS Службы контейнеров Azure.
 services: container-service
 author: gggina
@@ -9,14 +9,16 @@ ms.topic: article
 ms.date: 04/17/2017
 ms.author: rasquill
 ms.custom: mvc
-ms.openlocfilehash: 116f8ad1760f8e61c70b34d614a0265d11e3ae65
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: 7ab63b869d9cd8a5b1f2b60429c5b54d0da5761f
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51975862"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53002076"
 ---
-# <a name="canary-release-microservices-with-vamp-on-an-azure-container-service-dcos-cluster"></a>Ранний выпуск микрослужб с помощью Vamp в кластере DC/OS Службы контейнеров Azure
+# <a name="deprecated-canary-release-microservices-with-vamp-on-an-azure-container-service-dcos-cluster"></a>(УСТАРЕЛО) Ранний выпуск микрослужб с помощью Vamp в кластере DC/OS Службы контейнеров Azure
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
 В этом пошаговом руководстве мы настраиваем Vamp в Службе контейнеров Azure, используя кластер DC/OS. Мы создаем ранний выпуск демоверсии службы Vamp "sava", а затем устраняем несовместимость этой службы с Firefox, применив интеллектуальную фильтрацию трафика. 
 

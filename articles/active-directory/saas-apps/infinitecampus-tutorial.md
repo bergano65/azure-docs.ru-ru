@@ -1,5 +1,5 @@
 ---
-title: 'Руководство: интеграция Azure Active Directory с Infinite Campus | Документация Майкрософт'
+title: Руководство. Интеграция Azure Active Directory с Infinite Campus | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Infinite Campus.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: jeedes
-ms.openlocfilehash: 837d18a04a0cd22f29a5cbcb8b06b7e3f5fae255
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 9f4adbacf2749e8c8ff2da8f331a007e8dcaaea3
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52632812"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53099959"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-infinite-campus"></a>Руководство: интеграция Azure Active Directory с Infinite Campus
+# <a name="tutorial-azure-active-directory-integration-with-infinite-campus"></a>Руководство. Интеграция Azure Active Directory с Infinite Campus
 
 В этом руководстве вы узнаете, как интегрировать Infinite Campus c Azure Active Directory (Azure AD).
 
@@ -111,11 +111,11 @@ ms.locfileid: "52632812"
 
     ![Настройка единого входа](common/editconfigure.png)
 
-5. Если у вас есть **файл метаданных поставщика служб** (шаг **11.б**), выполните следующие действия в разделе **Базовая конфигурация SAML**:
+5. Если у вас есть **файл метаданных поставщика служб** (перейдите к шагу **11.c**), выполните следующие действия в разделе **Базовая конфигурация SAML**.
 
     a. Щелкните **Отправить файл метаданных**.
 
-    ![изображение](common/b9_saml.png)
+        ![image](common/b9_saml.png)
 
     b. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
 
@@ -128,9 +128,9 @@ ms.locfileid: "52632812"
     d. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате (домен будет отличаться в зависимости от модели размещения): `https://<DOMAIN>.infinitecampus.com/campus/SSO/<DISTRICTNAME>/SIS`.
 
     > [!NOTE]
-    > Вы получите **файл метаданных поставщика служб** на странице настройки поставщика услуг единого входа Infinite Campus, что описано далее в этом руководстве.
+    > Вы получите **файл метаданных поставщика служб** на странице настройки поставщика услуг единого входа Infinite Campus, что описано далее в этом руководстве. Если вы начинаете с новой конфигурации поставщика служб SAML в Infinite Campus, перейдите к **шагу 11**, чтобы завершить экспорт файла метаданных поставщика служб.
 
-6. Если у вас нет **файла метаданных поставщика службы**, выполните следующие действия:
+6. Если у вас нет **файла метаданных поставщика службы**, выполните следующие действия (обратите внимание, что домен зависит от модели размещения):
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<DOMAIN>.infinitecampus.com/campus/SSO/<DISTRICTNAME>/SIS`
 
@@ -169,10 +169,10 @@ ms.locfileid: "52632812"
     ![Единый вход](./media/infinitecampus-tutorial/tutorial_infinitecampus_sso.png)
 
     a. Установите флажок **Enable SAML Single Sign On** (Разрешить единый вход SAML).
+    
+    b. В разделе **Select an option to retrieve Identity Provider (IDP) server data** (Выберите параметр, чтобы получить данные сервера поставщика удостоверений (IDP)) выберите **URL-адрес метаданных**, вставьте **URL-адрес метаданных федерации приложения** в поле и щелкните **Синхронизация**.
 
-    b. Щелкните ссылку **Service Provider Metadata** (Метаданные поставщика услуг), чтобы сохранить **файл метаданных поставщика услуг** на своем компьютере, и отправьте его в раздел **Basic SAML Configuration** (Базовая конфигурация SAML), чтобы автоматически заполнить значения **идентификатора** и **URL-адреса ответа** на портале Azure (см. шаг 5).
-
-    c. В разделе **Select an option to retrieve Identity Provider (IDP) server data** (Выберите параметр, чтобы получить данные сервера поставщика удостоверений (IDP)) выберите **URL-адрес метаданных**, вставьте **URL-адрес метаданных федерации приложения** в текстовом поле и щелкните **Синхронизация**.
+    c. Щелкните ссылку **Service Provider Metadata** (Метаданные поставщика служб), чтобы сохранить **файл метаданных поставщика услуг** на своем компьютере, и отправьте его в раздел **Basic SAML Configuration** (Базовая конфигурация SAML), чтобы автоматически заполнить значения **идентификатора** и **URL-адреса ответа** на портале Azure (см. шаг 4 для отправки и автоматического заполнения значений или шаг 5 для ввода вручную).
 
     d. После нажатия элемента **Синхронизация** значения автоматически заполнятся на странице **SSO Service Provider Configuration** (Настройка поставщика услуг единого входа).
 

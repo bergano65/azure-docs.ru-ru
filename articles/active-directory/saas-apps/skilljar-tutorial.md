@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Skilljar | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со Skilljar | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Skilljar.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/10/2017
 ms.author: jeedes
-ms.openlocfilehash: 6a0463640f9a7194632a65cdb10653a520fcc0c9
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: a997de5530bf8ed475031147369b591b2d44d227
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39435236"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52850338"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-skilljar"></a>Учебник. Интеграция Azure Active Directory с Skilljar
+# <a name="tutorial-azure-active-directory-integration-with-skilljar"></a>Руководство. Интеграция Azure Active Directory со Skilljar
 
 В этом руководстве описано, как интегрировать Skilljar с Azure Active Directory (Azure AD).
 
@@ -117,7 +117,7 @@ ms.locfileid: "39435236"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.skilljar.com/`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Skilljar](http://support.skilljar.com/hc/). 
+    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Skilljar](https://support.skilljar.com/hc/). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -127,10 +127,10 @@ ms.locfileid: "39435236"
 
     ![Настройка единого входа](./media/skilljar-tutorial/tutorial_general_400.png)
 
-1. Чтобы настроить единый вход на стороне **Skilljar**, необходимо отправить скачанный **XML-файл метаданных** и значение **Формат идентификатора имени** (urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress) [группе поддержки Skilljar](http://support.skilljar.com/hc/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Skilljar**, необходимо отправить скачанный **XML-файл метаданных** и значение **Формат идентификатора имени** (urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress) [группе поддержки Skilljar](https://support.skilljar.com/hc/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -171,7 +171,7 @@ ms.locfileid: "39435236"
 В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к Skilljar (если он еще не создан). 
 
 >[!NOTE]
->Если вам нужно вручную создать пользователя, необходимо обратиться к [группе поддержки Skilljar](http://support.skilljar.com/hc/). 
+>Если вам нужно вручную создать пользователя, необходимо обратиться к [группе поддержки Skilljar](https://support.skilljar.com/hc/). 
 > 
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD

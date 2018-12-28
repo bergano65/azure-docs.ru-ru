@@ -14,19 +14,19 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/13/2018
 ms.author: ellacroi
-ms.openlocfilehash: 6d05323eb08a69ef4b76dbbf35217d80b9b2dc3c
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: 0ad4fef9dd67ed0bf2bc9a3c66e26fc111526b90
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52261077"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53081546"
 ---
 # <a name="determine-your-publishing-option"></a>Выбор варианта публикации
 Вариант публикации, выбранный для вашего предложения, определяется требованиями соответствия и преимуществами GTM в Marketplace. Что более важно, выбор варианта публикации и типа предложения на портале Cloud Partner определяет, каким образом пользователи будут взаимодействовать с вашим предложением в Marketplace.
 
 Вы можете включить варианты публикации, выбрав тип предложения, а затем создав предложение для Marketplace на портале Cloud Partner. Для этого необходимо иметь представление о следующих основных понятиях Marketplace: варианты публикации, конфигурация и типы предложений, а также призывы к действию, которые определяют, как и в каком разделе онлайн-магазинов Marketplace будет представлено ваше предложение.
 
-![](https://github.com/ellacroi/azure-docs-pr/blob/options-table/articles/marketplace/media/marketplace-publishers-guide/storefronts_options_table.png?raw=true)
+![](./media/marketplace-publishers-guide/storefronts_options_table.png)
 
 >[!Note]
 >Таблица выше дает представление о том, как ваше решение или служба сопоставляются с онлайн-магазином, вариантом публикации и типом предложения, используемыми для представления предложения в Marketplace.
@@ -44,7 +44,7 @@ ms.locfileid: "52261077"
 
 Приложения **Azure Marketplace** являются техническими "структурными элементами", созданными на основе или для Azure. Консультационные услуги в Azure Marketplace — предложения профессиональных услуг, которые помогают клиентам начать работу с Azure или повысить ее эффективность.
 
-Приложения **AppSource** — это бизнес-решения, которые могут быть созданы на основе Azure или для Dynamics 365, Office 365, PowerBI или Power Apps. Консультационные услуги в AppSource — предложения профессиональных услуг, которые помогают клиентам начать работу с Dynamics 365 и Power BI или повысить ее эффективность.
+Приложения **AppSource** — это бизнес-решения, которые могут быть созданы на основе Azure либо для Dynamics 365, Office 365, Power BI или Power Apps. Консультационные услуги в AppSource — предложения профессиональных услуг, которые помогают клиентам начать работу с Dynamics 365 и Power BI или повысить ее эффективность.
 
 После регистрации в качестве издателя и получения доступа к порталу Cloud Partner для создания, настройки и публикации предложений в Marketplace вам необходимо:
 

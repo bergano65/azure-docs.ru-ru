@@ -8,21 +8,20 @@ manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.reviewer: mbullwin
 ms.pm_owner: daviste;NumberByColors
 ms.author: daviste
-ms.openlocfilehash: c1e5b420c4821732aa8cc19328b0955070100926
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 7da0717273892893bec03c164b9b297f28e5218d
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50138511"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52995544"
 ---
 # <a name="troubleshoot-user-behavior-analytics-tools-in-application-insights"></a>Устранение неполадок со средствами для анализа поведения пользователей в Application Insights
-Возникли вопросы о [средствах для анализа поведения пользователей в Application Insights](app-insights-usage-overview.md), касающиеся [пользователей, сеансов, событий](app-insights-usage-segmentation.md), [воронок](usage-funnels.md), [маршрутов пользователей](app-insights-usage-flows.md), [периода удержания](app-insights-usage-retention.md) или когорт? Ниже приведен ряд ответов.
+Возможно, у вас возникли вопросы о [средствах для анализа поведения пользователей в Application Insights](app-insights-usage-overview.md), таких как [Пользователи, сеансы, события](app-insights-usage-segmentation.md), [Воронки](usage-funnels.md), [Маршруты пользователей](app-insights-usage-flows.md), [Удержание](app-insights-usage-retention.md) или Когорты. Ниже приведен ряд ответов.
 
 ## <a name="counting-users"></a>Подсчет пользователей
 **Средства для анализа поведения пользователей показывают, что в моем приложении есть один пользователь или сеанс, но я знаю, что в нем их множество. Как исправить неправильный подсчет?**
@@ -57,5 +56,5 @@ ms.locfileid: "50138511"
 * [Обзор использования средств для анализа поведения пользователей](app-insights-usage-overview.md)
 
 ## <a name="get-help"></a>Получение справки
-* [Переполнение стека](http://stackoverflow.com/questions/tagged/ms-application-insights)
+* [Переполнение стека](https://stackoverflow.com/questions/tagged/ms-application-insights)
 

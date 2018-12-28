@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 09/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 83820440a6304886785a175b27614b45fdb98b13
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: a0e0000c4baa22ccc1c26c0e40ec62bb277104af
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51252230"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993900"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -53,12 +53,12 @@ ms.locfileid: "51252230"
 
    Для выполнения сценария New-OnPremiseHybridWorker.ps1 необходимо задать следующие параметры.
 
-   * *AutomationAccountName* (обязательный) — имя учетной записи службы автоматизации.
-   * *AAResourceGroupName* (обязательный) — имя группы ресурсов, связанной с вашей учетной записью службы автоматизации.
-   * *OMSResourceGroupName* (необязательный) — имя группы ресурсов для рабочей области Log Analytics. Если эта группа ресурсов не указана, используется *AAResourceGroupName*.
-   * *HybridGroupName* (обязательный) — имя группы гибридных рабочих ролей Runbook, которую вы указываете в качестве целевой для модулей runbook, поддерживающих этот сценарий.
-   * *SubscriptionID* (обязательный) — идентификатор подписки Azure, которая используется для учетной записи службы автоматизации.
-   * *WorkspaceName* (необязательный) — имя рабочей области Log Analytics. Если у вас нет рабочей области Log Analytics, сценарий создаст и настроит ее.
+   * *AutomationAccountName* (обязательный) — имя учетной записи службы автоматизации.
+   * *AAResourceGroupName* (обязательный) — имя группы ресурсов, связанной с вашей учетной записью службы автоматизации.
+   * *OMSResourceGroupName* (необязательно) — имя группы ресурсов для рабочей области Log Analytics. Если эта группа ресурсов не указана, используется *AAResourceGroupName*.
+   * *HybridGroupName* (обязательный) — имя группы гибридных рабочих ролей Runbook, которую вы указываете в качестве целевой для модулей runbook, поддерживающих этот сценарий.
+   * *SubscriptionID* (обязательный) — идентификатор подписки Azure, которая используется для учетной записи службы автоматизации.
+   * *WorkspaceName* (необязательно) — имя рабочей области Log Analytics. Если у вас нет рабочей области Log Analytics, сценарий создаст и настроит ее.
 
      > [!NOTE]
      > Сейчас интеграция с Log Analytics поддерживается только для следующих регионов службы автоматизации: **Юго-Восточная Австралия**, **Восточная часть США 2**, **Юго-Восточная Азия** и **Западная Европа**. Если ваша учетная запись службы автоматизации не находится в одном из этих регионов, сценарий все равно создаст рабочую область Log Analytics, но предупредит, что связывание невозможно.
@@ -85,7 +85,7 @@ ms.locfileid: "51252230"
 
 #### <a name="1-create-a-log-analytics-workspace"></a>1. Создание рабочей области Log Analytics
 
-Если у вас еще нет рабочей области Log Analytics, [создайте](../log-analytics/log-analytics-manage-access.md) ее. Если у вас уже есть рабочая область, вы можете использовать ее.
+Если у вас еще нет рабочей области Log Analytics, [создайте](../azure-monitor/platform/manage-access.md) ее. Если у вас уже есть рабочая область, вы можете использовать ее.
 
 #### <a name="2-add-the-automation-solution-to-the-log-analytics-workspace"></a>2. Добавление решения для автоматизации в рабочую область Log Analytics
 

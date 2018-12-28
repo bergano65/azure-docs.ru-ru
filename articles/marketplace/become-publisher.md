@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 35feb1b2aa593d403b3b54781ddbba41964d15e5
-ms.sourcegitcommit: b4a46897fa52b1e04dd31e30677023a29d9ee0d9
+ms.openlocfilehash: bc6e77643783e1e9f124bc98ea1eb910304a5f32
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49394839"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52846476"
 ---
 # <a name="become-a-cloud-marketplace-publisher"></a>Регистрация в качестве издателя в облаке Marketplace
 
@@ -78,9 +78,9 @@ ms.locfileid: "49394839"
 Наши сотрудники из группы подключения к Marketplace проверят сведения регистрации в Marketplace, указанные на шаге 3. После утверждения вы получите приветственное сообщение электронной почты с учетными данными учетной записи и руководство по входу на [Портал Cloud Partner](https://cloudpartner.azure.com).
 
 Вы будете использовать [Портал Cloud Partner](https://cloudpartner.azure.com) для создания, публикации предложений Marketplace и управления ими. Получив приветственное сообщение электронной почты с утверждением, вы сразу же можете войти на [Портал Cloud Partner](https://cloudpartner.azure.com) с помощью учетной записи Майкрософт, чтобы получить доступ к дополнительным техническим сведениям о публикации в Marketplace и создании вашего предложения. 
-*   Дополнительные сведения об использовании Портала Cloud Partner [см. в статье о начале работы в разделе ознакомления](https://cloudpartner.azure.com/#documentation/getting-started-with-the-cloud-partner-portal). Для доступа к этим сведениям необходимо войти на портал Cloud Partner.
+*   Дополнительные сведения об использовании Портала Cloud Partner [см. в статье о начале работы в разделе ознакомления](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-getting-started-with-the-cloud-partner-portal). Для доступа к этим сведениям необходимо войти на портал Cloud Partner.
 *   Если у вас возникли вопросы или вы хотите запланировать вызов по общим сведениям о подключении, просмотрите другие статьи в этом руководстве для издателя или на Портале Cloud Partner создайте запрос в службу поддержки, указав тип проблемы подключения к Marketplace.
-*   Если вы не получили приветственное сообщение электронной почты, проверьте папку со спамом и найдите сообщение со строкой темы "Добро пожаловать в Microsoft Marketplace!". Если сообщение отсутствует в папке со спамом, [обратитесь в службу поддержки Майкрософт](https://support.microsoft.com/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&locale=&supportregion=&pesid=16230&forceorigin=esmc&ccsid=636595105151894820). На странице поддержки укажите тип проблемы подключения к Marketplace.  Наши сотрудники из группы подключения к Marketplace будут рады помочь по вашему запросу. 
+*   Если вы не получили приветственное сообщение электронной почты, проверьте папку со спамом и найдите сообщение со строкой темы "Добро пожаловать в Microsoft Marketplace!". Если сообщение отсутствует в папке со спамом, [обратитесь в службу поддержки Майкрософт](https://support.microsoft.com/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&locale=&supportregion=&pesid=16230&forceorigin=esmc&ccsid=636595105151894820). На странице поддержки выберите "Тип проблемы" > Marketplace Onboarding (Подключение к Marketplace).  Наши сотрудники из группы подключения к Marketplace будут рады помочь по вашему запросу. 
 
 
 ## <a name="5-register-in-dev-center-for-transact-publishing-option-only"></a>5. Регистрация в центре разработчиков (только для варианта публикации "Транзакция") 
@@ -104,7 +104,7 @@ ms.locfileid: "49394839"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Узнайте об онлайн-магазинах Marketplace: [Сравнение AppSource и Azure Marketplace](https://docs.microsoft.com/azure/marketplace/comparing-appsource-azure-marketplace)
+* Дополнительные сведения об онлайн-магазинах Azure Marketplace и AppSource [Сравнение AppSource и Azure Marketplace](https://docs.microsoft.com/azure/marketplace/comparing-appsource-azure-marketplace)
 *   [Определение типа перечисления для решения](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type)
 
  

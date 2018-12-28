@@ -4,17 +4,17 @@ description: В этой статье объясняется, как с помо
 services: stream-analytics
 author: su-jie
 ms.author: sujie
-manager: kfile
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 07/10/2018
-ms.openlocfilehash: 9cc65fc5119bedc816f825b7aae6120f4bca3b12
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.date: 12/07/2018
+ms.custom: seodec18
+ms.openlocfilehash: e673d4f1c2d58a61c541cca4f8448dffc003f9fa
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "40246840"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53101024"
 ---
 # <a name="monitor-and-manage-stream-analytics-jobs-with-visual-studio"></a>Мониторинг заданий Stream Analytics и управление ими с помощью Visual Studio
 
@@ -31,14 +31,14 @@ ms.locfileid: "40246840"
 
 Вы можете свернуть вкладку **Сводка по заданию** и щелкнуть вкладку **Метрики задания**, чтобы просмотреть график с важными метриками. Выберите или отмените выбор типов метрик, чтобы добавить метрики в график либо удалить их из него.
 
-![Метрики Stream Analytics](./media/stream-analytics-monitor-jobs-use-vs/stream-analytics-vs-metrics.png)
+![Метрики Azure Stream Analytics в Visual Studio](./media/stream-analytics-monitor-jobs-use-vs/stream-analytics-vs-metrics.png)
 
 
 ## <a name="error-monitoring"></a>Отслеживание ошибок
 
 Вы также можете отслеживать ошибки, щелкнув вкладку **​​Ошибки**.
 
-![Ошибки Stream Analytics](./media/stream-analytics-monitor-jobs-use-vs/stream-analytics-vs-errors.png)
+![Ошибки Azure Stream Analytics в Visual Studio](./media/stream-analytics-monitor-jobs-use-vs/stream-analytics-vs-errors.png)
 
 
 ## <a name="get-support"></a>Получение поддержки

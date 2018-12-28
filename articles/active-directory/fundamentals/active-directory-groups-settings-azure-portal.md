@@ -1,6 +1,6 @@
 ---
-title: Изменение сведений о группе в Azure Active Directory | Документы Майкрософт
-description: Узнайте, как изменить сведения о группе с помощью Azure Active Directory.
+title: Изменение сведений о группе в Azure Active Directory | Документация Майкрософт
+description: Инструкции по изменению сведений о группе с помощью Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: lizross
 ms.reviewer: krbain
-ms.custom: it-pro
-ms.openlocfilehash: a02987fdce3a15cd5d416234e3717df6d33622ec
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: b857b0bd56b479d4301535a4e1f734d8002dcc8e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45731348"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53099058"
 ---
-# <a name="how-to-edit-your-group-information-using-azure-active-directory"></a>Практическое руководство. Изменение сведений о группе с помощью Azure Active Directory
+# <a name="edit-your-group-information-using-azure-active-directory"></a>Изменение сведений о группе с помощью Azure Active Directory
 
-С помощью Azure Active Directory можно изменить параметры группы, в том числе имя, описание или тип членства.
+С помощью Azure Active Directory (Azure AD) можно изменить параметры группы, в том числе имя, описание или тип членства.
 
 ## <a name="to-edit-your-group-settings"></a>Изменение параметров группы
 1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью глобального администратора каталога.
@@ -50,7 +50,7 @@ ms.locfileid: "45731348"
 
     - **Тип группы.** Тип группы нельзя изменить после создания. Чтобы изменить **тип группы**, необходимо удалить группу и создать новую.
     
-    - **Тип членства.** Измените тип членства. Дополнительные сведения о различных типах членства см. в разделе [Как создать простую группу и добавлять участников на портале Azure Active Directory](active-directory-groups-create-azure-portal.md)
+    - **Тип членства.** Измените тип членства. Дополнительные сведения о различных типах членства см. в статье [Создание простой группы и добавление в нее участников с помощью Azure Active Directory](active-directory-groups-create-azure-portal.md).
     
     - **Идентификатор объекта.** Невозможно изменить идентификатор объекта, но можно скопировать его и использовать в командах PowerShell для группы. Дополнительные сведения об использовании командлетов PowerShell см. в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](../users-groups-roles/groups-settings-v2-cmdlets.md).
 

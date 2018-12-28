@@ -1,5 +1,5 @@
 ---
-title: Аналитика поискового трафика для поиска Azure | Документация Майкрософт
+title: Аналитика поискового трафика — Поиск Azure
 description: Включите аналитику поискового трафика для поиска Azure, облачной поисковой службы Microsoft Azure, чтобы получить дополнительные сведения о пользователях и данных.
 author: HeidiSteen
 manager: cgronlun
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 04/05/2017
 ms.author: heidist
-ms.openlocfilehash: 4b40e8c9f681b7489c0ab2ffe7b369cc869c73e2
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.custom: seodec2018
+ms.openlocfilehash: 4cc7434508e49715e95c87421db2bbed7e20de05
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33777265"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53310300"
 ---
 # <a name="what-is-search-traffic-analytics"></a>Что такое аналитика поискового трафика?
 Аналитика поискового трафика — это модель реализации цикла обратной связи для службы поиска. Эта модель описывает необходимые данные и метод их сбора с помощью Application Insights, лидирующего решения для мониторинга служб на нескольких платформах.

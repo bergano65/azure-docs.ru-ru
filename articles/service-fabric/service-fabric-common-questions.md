@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/18/2017
 ms.author: chackdan
-ms.openlocfilehash: cc86a18b0db67bf968006c42f5791e1ad7a093f0
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 0a78405dc6293a7debd599e0e44754dc59d8af7e
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51016707"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53164654"
 ---
 # <a name="commonly-asked-service-fabric-questions"></a>Распространенные вопросы о Service Fabric
 
@@ -93,7 +93,7 @@ ms.locfileid: "51016707"
 Да.  Дополнительные сведения см. в разделе [Создание кластера Service Fabric с подключенными дисками данных](../virtual-machine-scale-sets/virtual-machine-scale-sets-attached-disks.md#create-a-service-fabric-cluster-with-attached-data-disks) и статьях о шифровании дисков с помощью [PowerShell](../virtual-machine-scale-sets/virtual-machine-scale-sets-encrypt-disks-ps.md) и [CLI](../virtual-machine-scale-sets/virtual-machine-scale-sets-encrypt-disks-cli.md).
 
 ### <a name="can-i-use-low-priority-vms-in-a-cluster-node-type-virtual-machine-scale-set"></a>Можно ли использовать низкоприоритетные виртуальные машины с типом узла кластера (масштабируемый набор виртуальных машин)?
-Нет. Низкоприоритетные виртуальные машины не поддерживаются. 
+ Нет. Низкоприоритетные виртуальные машины не поддерживаются. 
 
 ### <a name="what-are-the-directories-and-processes-that-i-need-to-exclude-when-running-an-anti-virus-program-in-my-cluster"></a>Какие каталоги и процессы необходимо исключить при запуске антивирусной программы в кластере?
 

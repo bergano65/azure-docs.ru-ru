@@ -3,7 +3,7 @@ title: Ограничения ресурсов службы "База данны
 description: На этой странице описаны некоторые общие ограничения ресурсов для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе DTU.
 services: sql-database
 ms.service: sql-database
-ms.subservice: elastic-pools
+ms.subservice: elastic-poolss
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: sachinp
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 09/20/2018
-ms.openlocfilehash: e3b46620d15f8c08d0da69aef3d8c0920e5ad4ec
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: a31a2bc3fa1edc0f4424dde4b5c8934e26669fc0
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48830078"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52873450"
 ---
 # <a name="resources-limits-for-elastic-pools-using-the-dtu-based-purchasing-model"></a>Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU 
 
@@ -28,7 +28,7 @@ ms.locfileid: "48830078"
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
 
-## <a name="elastic-pool-storage-sizes-and-compute-sizes"></a>Эластичный пул: размеры хранилища и объемы вычислительных ресурсов
+## <a name="elastic-pool-storage-sizes-and-compute-sizes"></a>Эластичный пул: размеры хранилищ и объемы вычислительных ресурсов
 
 В следующих таблицах приведены доступные ресурсы эластичных пулов Баз данных SQL на каждом уровне служб и с каждым объемом вычислительных ресурсов. Уровень служб, объем вычислительных ресурсов и объем хранилища можно задать с помощью [портала Azure](sql-database-elastic-pool-manage.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](sql-database-elastic-pool-manage.md#powershell-manage-elastic-pools-and-pooled-databases), [Azure CLI](sql-database-elastic-pool-manage.md#azure-cli-manage-elastic-pools-and-pooled-databases) или [REST API](sql-database-elastic-pool-manage.md#rest-api-manage-elastic-pools-and-pooled-databases).
 
@@ -111,7 +111,7 @@ ms.locfileid: "48830078"
 ||||||||
 
 > [!IMPORTANT]
-> Хранилище категории "Премиум" объемом свыше 1 ТБ сейчас доступно во всех регионах, кроме следующих: центрально-западная часть США, Восточный Китай, центральный регион US DoD, Центральная Германия, восточный регион US DoD, юго-западный регион USGov, Северо-Восточная Германия, USGov — Айова, Северный Китай. В других регионах максимальный объем хранилища уровня "Премиум" равен 1 ТБ. См. [текущие ограничения для баз данных P11–P15](sql-database-dtu-resource-limits-single-databases.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
+> Хранилище класса Premium объемом более 1 ТБ сейчас доступно во всех регионах, кроме следующих: центрально-западная часть США, Восточный Китай, центральный регион US DoD, Центральная Германия, восточный регион US DoD, юго-западный регион US Gov, Северо-Восточная Германия, US Gov (Айова), Северный Китай. В других регионах максимальный объем хранилища уровня "Премиум" равен 1 ТБ. См. [текущие ограничения для баз данных P11–P15](sql-database-dtu-resource-limits-single-databases.md#single-database-limitations-of-p11-and-p15-when-the-maximum-size-greater-than-1-tb).  
 
 Если использованы все DTU пула эластичных БД, то каждая база данных в пуле получает равное количество ресурсов для обработки запросов. Служба базы данных SQL обеспечивает равное разделение ресурсов между базами данных за счет равных срезов времени вычислений. Если задано минимальное значение DTU на базу данных, отличное от нуля, то такое равное разделение ресурсов в пуле эластичных БД также позволяет гарантировать любое дополнительное количество ресурсов каждой базе данных.
 

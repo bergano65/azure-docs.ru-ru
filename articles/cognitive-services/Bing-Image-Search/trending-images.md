@@ -1,7 +1,7 @@
 ---
-title: Поиск в Интернете изображений, набирающих популярность — API Bing для поиска изображений
+title: Получение набирающих популярность изображений с помощью API Bing для поиска изображений
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как с помощью API Bing для поиска изображений искать в Интернете изображения, набирающие популярность.
+description: Поиск набирающих популярность изображений в Интернете с помощью API Bing для поиска изображений.
 services: cognitive-services
 author: swhite-msft
 manager: cgronlun
@@ -11,14 +11,15 @@ ms.component: bing-image-search
 ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: 00d992da1d061ddbbee59e93898a92b6701f1ffb
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.custom: seodec2018
+ms.openlocfilehash: 8d58c188275dc6b546d418b51835514c99f25d28
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46296317"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53258974"
 ---
-# <a name="get-trending-images-from-the-bing-image-search-api"></a>Получение набирающих популярность изображений из API Bing для поиска изображений
+# <a name="get-trending-images-from-the-web"></a>Получение набирающих популярность изображений из Интернета
 
 Чтобы получить изображения, набирающие сегодня популярность, отправьте следующий запрос GET:  
 

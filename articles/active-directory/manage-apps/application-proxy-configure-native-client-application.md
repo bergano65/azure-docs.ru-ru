@@ -15,12 +15,12 @@ ms.date: 11/08/2018
 ms.author: barbkess
 ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: b4476579665b0e6b574827d1bec06233560038a8
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: a73e652c74f9d88f1e066de190834fc033c13cf0
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51621094"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53135532"
 ---
 # <a name="how-to-enable-native-client-apps-to-interact-with-proxy-applications"></a>Включение собственных клиентских приложений для взаимодействия с приложениями прокси
 
@@ -34,10 +34,10 @@ ms.locfileid: "51621094"
 
 В этой статье рассматриваются четыре действия, которые нужно выполнить, чтобы опубликовать собственное приложение с помощью прокси приложения и библиотеки аутентификации Azure AD. 
 
-## <a name="step-1-publish-your-application"></a>Шаг 1. Публикация приложения
-Опубликуйте приложение прокси, как любое другое приложение, и назначьте пользователей, имеющих доступ к вашему приложению. Дополнительные сведения см. в статье [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-publish-azure-portal.md).
+## <a name="step-1-publish-your-application"></a>Шаг 1. Публикация приложения
+Опубликуйте приложение прокси, как любое другое приложение, и назначьте пользователей, имеющих доступ к вашему приложению. Дополнительные сведения см. в статье [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md).
 
-## <a name="step-2-configure-your-application"></a>Шаг 2. Настройка приложения
+## <a name="step-2-configure-your-application"></a>Шаг 2. Настройка приложения
 Настройте собственное приложение, следуя инструкциям ниже.
 
 1. Войдите на [портале Azure](https://portal.azure.com).
@@ -51,12 +51,12 @@ ms.locfileid: "51621094"
 Дополнительные сведения о создании регистрации приложения см. в разделе [Интеграция приложений с Azure Active Directory](../develop/quickstart-v1-integrate-apps-with-azure-ad.md).
 
 
-## <a name="step-3-grant-access-to-other-applications"></a>Шаг 3. Предоставление доступа для других приложений
+## <a name="step-3-grant-access-to-other-applications"></a>Шаг 3. Предоставление доступа для других приложений
 Включите собственное приложение, которое должно быть доступно для других приложений в каталоге.
 
 1. На странице **Регистрация приложений** выберите только что созданное собственное приложение.
-2. Выберите **Необходимые разрешения**.
-3. Выберите **Добавить**.
+2. Выберите **Разрешения API**.
+3. Выберите **Добавить разрешение**.
 4. Откройте первый шаг, **Выбор API**.
 5. С помощью панели поиска найдите приложение прокси приложения, которое вы опубликовали в первом разделе. Выберите это приложение и щелкните **Выбрать**. 
 
@@ -68,7 +68,7 @@ ms.locfileid: "51621094"
 8. Нажмите кнопку **Готово**.
 
 
-## <a name="step-4-edit-the-active-directory-authentication-library"></a>Шаг 4. Изменение библиотеки проверки подлинности Active Directory
+## <a name="step-4-edit-the-active-directory-authentication-library"></a>Шаг 4. Изменение библиотеки проверки подлинности Active Directory
 Измените код собственного приложения с учетом проверки подлинности с помощью библиотеки Active Directory Authentication Library (ADAL). Для этого включите в код следующий текст:
 
 ```

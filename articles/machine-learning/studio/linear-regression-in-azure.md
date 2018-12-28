@@ -5,9 +5,8 @@ metakeywords: ''
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 417ae6ab-de4f-4bdd-957a-d96133234656
 ms.service: machine-learning
@@ -17,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2017
-ms.openlocfilehash: d7ff9e157f776ebf683846652fe4788fc35e19af
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: c449e86e1ba33425212313103715b8fe48278496
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52311064"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53276685"
 ---
 # <a name="using-linear-regression-in-azure-machine-learning-studio"></a>Использование линейной регрессии в Студии машинного обучения Azure
 > *Кейт Барони* (Kate Baroni) и *Бен Боутмен* (Ben Boatman) — архитекторы корпоративных решений в Научно-инновационном центре анализа данных корпорации Майкрософт. В этой статье они описывают свой опыт миграции существующего набора для регрессионного анализа в облачное решение с помощью Машинного обучения Azure. 
@@ -31,7 +30,7 @@ ms.locfileid: "52311064"
 
 &nbsp; 
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="goal"></a>Цель
 У нашего проекта было две цели: 
@@ -73,8 +72,8 @@ ms.locfileid: "52311064"
 Когда мы объяснили принцип выполнения процесса и показали полученные результаты разработчикам и специалистам по обработке и анализу данных из группы разработки машинного обучения, они нам тут же дали несколько полезных советов. 
 
 * При использовании модуля [Линейная регрессия][linear-regression] в Студии машинного обучения доступно два метода:
-  * метод градиентного спуска в режиме онлайн — может подойти для крупномасштабных проблем;
-  * метод наименьших квадратов — наиболее распространенный метод линейной регрессии. Это самый оптимальный выбор для небольших наборов данных.
+  * метод градиентного спуска в режиме онлайн — может подойти для крупномасштабных проблем;
+  * метод наименьших квадратов — наиболее распространенный метод линейной регрессии. Это самый оптимальный выбор для небольших наборов данных.
 * Для повышения производительности следует рассмотреть возможность изменения параметра «Вес регуляризации L2». Его значение по умолчанию — 0,001. Чтобы повысить производительность, для небольшого набора данных мы установили значение 0,005. 
 
 ### <a name="mystery-solved"></a>Решение найдено!
@@ -86,8 +85,8 @@ ms.locfileid: "52311064"
 | Ученик |Excel -> "Анализ данных" -> "Регрессия" |Линейная регрессия |Линейная регрессия |
 | Параметры ученика |Недоступно |Значения по умолчанию |Метод наименьших квадратов<br />L2 = 0,005 |
 | Набор данных |26 строк, 3 признака, 1 метка. Все значения числовые. |—||— |—||— |
-| Разделение: обучение |Обучение Excel выполнено по первым 18 строкам, тестирование — по последним 8 строкам. |—||— |—||— |
-| Разделение: тестирование |Формула регрессии Excel применяется к последним 8 строкам. |—||— |—||— |
+| Разделение: Train |Обучение Excel выполнено по первым 18 строкам, тестирование — по последним 8 строкам. |—||— |—||— |
+| Разделение: Тест |Формула регрессии Excel применяется к последним 8 строкам. |—||— |—||— |
 | **Производительность** | | | |
 | Скорректированный коэффициент детерминации R-квадрат |0,96 |Недоступно | |
 | Коэффициент детерминации |Недоступно |0,78 |0,952049 |
@@ -145,7 +144,7 @@ ms.locfileid: "52311064"
 
 * Регрессия в Excel. Если вы никогда не работали с регрессией в Excel, это руководство упростит задачу: [http://www.excel-easy.com/examples/regression.html](http://www.excel-easy.com/examples/regression.html).
 * Сравнение регрессии и прогнозирования. Тайлер Чессмен (Tyler Chessman) написал статью в блоге, в которой он рассказывает, как спрогнозировать временные ряды в Excel. [http://sqlmag.com/sql-server-analysis-services/understanding-time-series-forecasting-concepts](http://sqlmag.com/sql-server-analysis-services/understanding-time-series-forecasting-concepts) 
-* Линейная регрессия по методу наименьших квадратов. Недостатки, проблемы и ошибки. Введение в регрессию и ее обсуждение см. по ссылке [http://www.clockbackward.com/2009/06/18/ordinary-least-squares-linear-regression-flaws-problems-and-pitfalls/ ](http://www.clockbackward.com/2009/06/18/ordinary-least-squares-linear-regression-flaws-problems-and-pitfalls/).
+* Линейная регрессия, метод наименьших квадратов: недостатки, проблемы и ловушки. Введение в регрессию и ее обсуждение см. по ссылке [http://www.clockbackward.com/2009/06/18/ordinary-least-squares-linear-regression-flaws-problems-and-pitfalls/ ](http://www.clockbackward.com/2009/06/18/ordinary-least-squares-linear-regression-flaws-problems-and-pitfalls/).
 
 [1]: ./media/linear-regression-in-azure/machine-learning-linear-regression-in-azure-1.png
 [2]: ./media/linear-regression-in-azure/machine-learning-linear-regression-in-azure-2.png

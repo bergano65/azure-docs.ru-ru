@@ -1,6 +1,6 @@
 ---
-title: Создание таблиц Hive и загрузка данных из хранилища BLOB-объектов Azure | Документация Майкрософт
-description: Создание таблиц Hive и загрузка в них данных больших двоичных объектов
+title: Создание таблиц Hive и загрузка данных из хранилища BLOB-объектов Azure — процесс обработки и анализа данных группы
+description: Использование Hive для создания таблиц Hive и загрузки данных из хранилища BLOB-объектов Azure. Секционирование таблиц Hive и использование формата Optimized Row Columnar (ORC) для улучшения производительности запросов.
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 42911c347cd055f37f7fe8f31b6d22cc18a78662
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 5d88974fd1fb3d8784416ad3895fe139a3275e01
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52442886"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53134953"
 ---
 # <a name="create-hive-tables-and-load-data-from-azure-blob-storage"></a>Создание таблиц Hive и загрузка данных из хранилища BLOB-объектов Azure
 
@@ -65,14 +65,14 @@ ms.locfileid: "52442886"
 #### <a name="submit-hive-queries-directly-in-hadoop-command-line"></a>Отправка запросов Hive непосредственно из командной строки Hadoop
 Отправить простой запрос Hive непосредственно из командной строки Hadoop можно с помощью такой команды, как `hive -e "<your hive query>;` . Ниже приведен пример, в котором красной рамкой обведена команда, которая отправляет запрос Hive, а зеленой обведены выходные данные обработки этого запроса.
 
-![Создание рабочей области](./media/move-hive-tables/run-hive-queries-1.png)
+![Команда для отправки запроса Hive с использованием выходных данных запроса Hive](./media/move-hive-tables/run-hive-queries-1.png)
 
 #### <a name="submit-hive-queries-in-hql-files"></a>Отправка запросов Hive в HQL-файлах
 Если запрос Hive сложный и содержит несколько строк, редактировать запросы в командной строке или командной консоли Hive нецелесообразно. Вместо этого можно использовать текстовый редактор в головном узле кластера Hadoop для сохранения запросов Hive в HQL-файле в локальном каталоге головного узла. Затем можно отправить запрос Hive в HQL-файле, воспользовавшись аргументом `-f` :
 
     hive -f "<path to the .hql file>"
 
-![Создание рабочей области](./media/move-hive-tables/run-hive-queries-3.png)
+![Запрос Hive в файле с расширением .hql](./media/move-hive-tables/run-hive-queries-3.png)
 
 **Отменить вывод состояния хода выполнения запросов Hive на экран**
 
@@ -84,7 +84,7 @@ ms.locfileid: "52442886"
 #### <a name="submit-hive-queries-in-hive-command-console"></a>Отправка запросов Hive в командной консоли Hive
 Также можно сначала войти в консоль команд Hive, выполнив команду `hive` в командной строке Hadoop, и затем отправить запросы Hive в командной консоли Hive. Ниже приведен пример. В этом примере красными рамками обведены команды, с помощью которых вы вошли в командную консоль Hive, и запрос Hive, отправленный в командную консоль Hive. Зеленой рамкой выделены выходные данные запроса Hive.
 
-![Создание рабочей области](./media/move-hive-tables/run-hive-queries-2.png)
+![Открытие командной консоли Hive, ввод команды и просмотр выходных данных запроса Hive](./media/move-hive-tables/run-hive-queries-2.png)
 
 В предыдущих примерах данные обработки запроса Hive выведены прямо на экране. Выходные данные также можно записать в локальный файл на головном узле или в большой двоичный объект Azure. Затем можно использовать другие инструменты для дальнейшего анализа выходных данных запросов Hive.
 
@@ -95,7 +95,7 @@ ms.locfileid: "52442886"
 
 В следующем примере выходные данные запроса Hive записываются в файл `hivequeryoutput.txt` в каталоге `C:\apps\temp`.
 
-![Создание рабочей области](./media/move-hive-tables/output-hive-results-1.png)
+![Выходные данные запроса Hive](./media/move-hive-tables/output-hive-results-1.png)
 
 **Вывод результатов запроса Hive в большой двоичный объект Azure**
 
@@ -105,11 +105,11 @@ ms.locfileid: "52442886"
 
 В следующем примере выходные данные запроса Hive записываются в каталог большого двоичного объекта `queryoutputdir` в используемом по умолчанию контейнере кластера Hadoop. Здесь нужно указать только имя каталога, не указывая имя большого двоичного объекта. Если указать имя каталога и имя большого двоичного объекта, появится следующее сообщение об ошибке: `wasb:///queryoutputdir/queryoutput.txt`.
 
-![Создание рабочей области](./media/move-hive-tables/output-hive-results-2.png)
+![Выходные данные запроса Hive](./media/move-hive-tables/output-hive-results-2.png)
 
 При открытии используемого по умолчанию контейнера кластера Hadoop с помощью Azure Storage Explorer выходные данные запроса Hive могут выглядеть так, как показано на следующем рисунке. Чтобы извлечь большие двоичные объекты только с указанными буквами в именах, можно применить фильтр (выделенный красной рамкой).
 
-![Создание рабочей области](./media/move-hive-tables/output-hive-results-3.png)
+![Обозреватель службы хранилища Azure с выходными данными запроса Hive](./media/move-hive-tables/output-hive-results-3.png)
 
 ### <a name="hive-editor"></a> 2. Отправка запросов Hive с помощью редактора Hive
 Вы также можете использовать консоль запросов (редактор Hive). Для этого введите в веб-браузер URL-адрес в таком формате: *https://<Hadoop cluster name>.azurehdinsight.net/Home/HiveEditor*. Чтобы увидеть эту консоль, необходимо выполнить вход, а для этого вам потребуются ваши учетные данные для кластера Hadoop.
@@ -149,7 +149,7 @@ ms.locfileid: "52442886"
 
     LOAD DATA INPATH '<path to blob data>' INTO TABLE <database name>.<table name>;
 
-* **<path to blob data>**: если файл BLOB-объекта, который необходимо передать в таблицу Hive, расположен в контейнере по умолчанию для кластера HDInsight Hadoop, параметр *<path to blob data>* следует указать в формате *"wasb:///<directory in this container>/<blob file name>"*. В дополнительном контейнере кластера Hadoop под управлением службы HDInsight также может быть файл большого двоичного объекта. В этом случае для *<path to blob data>* нужно использовать формат *"wasb://<container name><storage account name>.blob.core.windows.net/<blob file name>"*.
+* **<path to blob data>**. Если файл BLOB-объекта, который необходимо передать в таблицу Hive, расположен в контейнере по умолчанию для кластера HDInsight Hadoop, параметр *<path to blob data>* следует указать в формате *wasb:///<directory in this container>/<blob file name>*. В дополнительном контейнере кластера Hadoop под управлением службы HDInsight также может быть файл большого двоичного объекта. В этом случае для *<path to blob data>* нужно использовать формат *"wasb://<container name><storage account name>.blob.core.windows.net/<blob file name>"*.
 
   > [!NOTE]
   > Данные большого двоичного объекта, которые необходимо отправить в таблицу Hive, должны находиться в контейнере по умолчанию или в дополнительном контейнере учетной записи хранения для кластера Hadoop. В противном случае запрос *LOAD DATA* завершается ошибкой доступа к данным.

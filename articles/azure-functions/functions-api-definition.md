@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alkarche
-ms.openlocfilehash: 93e6b8c606c0a6d7abebeb515b938a45001757c1
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 763e1d20f707a1db1f559661089b55093f93a632
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46950375"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52999919"
 ---
 # <a name="openapi-20-metadata-support-in-azure-functions-preview"></a>Поддержка метаданных OpenAPI 2.0 в Функциях Azure (предварительная версия)
 Поддержка метаданных OpenAPI 2.0 (прежнее название — Swagger) в Функциях Azure — это предварительная версия функции, которая предназначена для записи определения OpenAPI 2.0 в приложении-функции. Затем можно разместить этот файл с помощью приложения-функции.
@@ -23,7 +23,7 @@ ms.locfileid: "46950375"
 > [!IMPORTANT]
 > Предварительная версия OpenAPI доступна сейчас только в среде выполнения версии 1.x. Сведения о том, как создать приложение-функцию 1.x, см. [здесь](./functions-versions.md#creating-1x-apps).
 
-[Метаданные OpenAPI](http://swagger.io/) позволяют использовать функцию, на которой размещен REST API во всевозможном программном обеспечении. Это программное обеспечение включает предложения Майкрософт, такие как PowerApps и [функцию "Приложения API" службы приложений Azure](../app-service/app-service-web-overview.md), средства сторонних разработчиков, например [Postman](https://www.getpostman.com/docs/importing_swagger), и [многие дополнительные пакеты](http://swagger.io/tools/).
+[Метаданные OpenAPI](https://swagger.io/) позволяют использовать функцию, на которой размещен REST API во всевозможном программном обеспечении. Это программное обеспечение включает предложения Майкрософт, такие как PowerApps и [функцию "Приложения API" службы приложений Azure](../app-service/app-service-web-overview.md), средства сторонних разработчиков, например [Postman](https://www.getpostman.com/docs/importing_swagger), и [многие дополнительные пакеты](https://swagger.io/tools/).
 
 [!INCLUDE [intro](../../includes/functions-bindings-intro.md)]
 
@@ -39,7 +39,7 @@ ms.locfileid: "46950375"
 Чтобы включить создание размещенного определения OpenAPI и кратких определений, задайте для параметра **Источник определения API** значение **Функция (предварительная версия)**. **Внешний URL-адрес** позволяет функции применять определение OpenAPI, размещенное в другом месте.
 
 ## <a name="generate-definition"></a>Создание схемы Swagger на основе метаданных функции
-Шаблон поможет вам приступить к написанию первого определения OpenAPI. Функция шаблона определения создает разреженное определение OpenAPI, используя все метаданные в файле function.json для каждой функции "Триггер HTTP". Вам необходимо будет указать дополнительные сведения об API из [спецификации OpenAPI](http://swagger.io/specification/), например шаблоны запросов и ответов.
+Шаблон поможет вам приступить к написанию первого определения OpenAPI. Функция шаблона определения создает разреженное определение OpenAPI, используя все метаданные в файле function.json для каждой функции "Триггер HTTP". Вам необходимо будет указать дополнительные сведения об API из [спецификации OpenAPI](https://swagger.io/specification/), например шаблоны запросов и ответов.
 
 Пошаговые инструкции см. в статье [Создание метаданных OpenAPI 2.0 (Swagger) для приложения-функции (предварительная версия)](./functions-api-definition-getting-started.md).
 
@@ -55,10 +55,10 @@ ms.locfileid: "46950375"
 
 |Swagger.json|Пользовательский интерфейс портала|Function.json|
 |:----|:-----|:-----|
-|[Host](http://swagger.io/specification/#fixed-fields-15)|**Параметры приложения-функции** > **Параметры службы приложений** > **Обзор** > **URL-адрес**|*Отсутствует*
-|[Paths](http://swagger.io/specification/#paths-object-29)|**Интегрировать** > **Выбранные методы HTTP**|Bindings: Route
-|[Path Item](http://swagger.io/specification/#path-item-object-32)|**Интегрировать** > **Шаблон маршрута**|Bindings: Methods
-|[Безопасность](http://swagger.io/specification/#security-scheme-object-112)|**Ключи**|*Отсутствует*|
+|[Host](https://swagger.io/specification/#fixed-fields-15)|**Параметры приложения-функции** > **Параметры службы приложений** > **Обзор** > **URL-адрес**|*Отсутствует*
+|[Paths](https://swagger.io/specification/#paths-object-29)|**Интегрировать** > **Выбранные методы HTTP**|Привязки: Маршрутизация
+|[Path Item](https://swagger.io/specification/#path-item-object-32)|**Интегрировать** > **Шаблон маршрута**|Привязки: Методы
+|[Безопасность](https://swagger.io/specification/#security-scheme-object-112)|**Ключи**|*Отсутствует*|
 |operationID*|**Маршрут + допустимые команды**|Маршрут + допустимые команды|
 
 \*Идентификатор операции необходим только для интеграции с PowerApps и Flow.

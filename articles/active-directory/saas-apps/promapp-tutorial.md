@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Promapp | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Promapp | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Promapp.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/17/2017
 ms.author: jeedes
-ms.openlocfilehash: 6bcd1add3985112fe60aab22f1799e40ad8889b2
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 6ed07ea3cc625c518d6733f7a86f4542f91f425c
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421868"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53017122"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-promapp"></a>Руководство по интеграции Azure Active Directory с Promapp
+# <a name="tutorial-azure-active-directory-integration-with-promapp"></a>Руководство. Интеграция Azure Active Directory с Promapp
 
 В этом руководстве описано, как интегрировать Promapp с Azure Active Directory (Azure AD).
 
@@ -113,6 +113,7 @@ ms.locfileid: "39421868"
     ![Настройка единого входа](./media/promapp-tutorial/tutorial_promapp_url.png)
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://go.promapp.com/TENANTNAME/`|
@@ -171,7 +172,7 @@ ms.locfileid: "39421868"
     c. Откройте скачанный сертификат в блокноте, скопируйте содержимое сертификата без первой строки (-----**BEGIN CERTIFICATE**-----) и последней строки (-----**END CERTIFICATE**-----), вставьте его в текстовое поле **SSO-x.509 Certificate** (Сертификат единого входа x.509) и нажмите кнопку **Save** (Сохранить).
         
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

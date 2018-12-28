@@ -1,25 +1,19 @@
 ---
-title: Получение таблиц ARP. Устранение неполадок ExpressRoute (классическая модель) | Документация Майкрософт
-description: На этой странице приводятся инструкции по получению таблиц ARP для канала ExpressRoute.
-documentationcenter: na
+title: Устранение неполадок с получением таблиц ARP в классической модели развертывания ExpressRoute в Azure | Документация Майкрософт
+description: Инструкции по получению таблиц ARP для канала ExpressRoute в классической модели развертывания.
 services: expressroute
 author: ganesr
-manager: carolz
-editor: tysonn
-ms.assetid: b5856acf-03c2-4933-8111-6ce12998d92a
 ms.service: expressroute
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 01/30/2017
 ms.author: ganesr
-ms.openlocfilehash: fcc847b7e30fd55ca759830e0254ab7542e7663e
-ms.sourcegitcommit: b5c6197f997aa6858f420302d375896360dd7ceb
+ms.custom: seodec18
+ms.openlocfilehash: 367a79b04a8736e2eafb6851b682f2c244e80522
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2017
-ms.locfileid: "23013169"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53272292"
 ---
 # <a name="getting-arp-tables-in-the-classic-deployment-model"></a>Получение таблиц ARP в классической модели развертывания
 > [!div class="op_single_selector"]

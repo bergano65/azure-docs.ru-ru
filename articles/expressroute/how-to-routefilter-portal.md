@@ -1,32 +1,25 @@
 ---
-title: Настройка фильтров маршрутов для пиринга Azure ExpressRoute Майкрософт | Документация Майкрософт
-description: В этой статье описывается, как настраивать фильтры маршрутов для пиринга Майкрософт с помощью портала Azure
-documentationcenter: na
+title: Настройка фильтров маршрутов для пиринга Майкрософт с помощью Azure ExpressRoute на портале | Документация Майкрософт
+description: В этой статье описывается, как настраивать фильтры маршрутов для пиринга Майкрософт с помощью портала Azure.
 services: expressroute
 author: ganesr
-manager: rossort
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: expressroute
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 09/26/2017
+ms.date: 09/26/2018
 ms.author: ganesr
-ms.openlocfilehash: ab0cd45334581f6f5c6dd6e86939e018df5de074
-ms.sourcegitcommit: d87b039e13a5f8df1ee9d82a727e6bc04715c341
+ms.custom: seodec18
+ms.openlocfilehash: 0515b5e85c3bcf56f1f238620d6036d1be0bec7e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2018
-ms.locfileid: "29387733"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53104211"
 ---
-# <a name="configure-route-filters-for-microsoft-peering-azure-portal"></a>Настройка фильтров маршрутов для пиринга Майкрософт с помощью портала Azure
+# <a name="configure-route-filters-for-microsoft-peering-azure-portal"></a>Настройка фильтров маршрутов для пиринга Майкрософт. Портал Azure
 > [!div class="op_single_selector"]
-> * [портале Azure](how-to-routefilter-portal.md)
+> * [портал Azure](how-to-routefilter-portal.md)
 > * [Azure PowerShell](how-to-routefilter-powershell.md)
-> * [интерфейс командной строки Azure](how-to-routefilter-cli.md)
+> * [Интерфейс командной строки Azure](how-to-routefilter-cli.md)
 > 
 
 Фильтры маршрутов — это способ использовать подмножество поддерживаемых служб через пиринг Майкрософт. Действия, описанные в этой статье, помогут настроить фильтры маршрутов для каналов ExpressRoute и управлять ими.
@@ -43,7 +36,7 @@ ms.locfileid: "29387733"
 
 При настроенном пиринге Майкрософт для канала ExpressRoute пограничные маршрутизаторы Майкрософт устанавливают пару сеансов BGP с пограничными маршрутизаторами (вашими или ваших поставщиков услуг подключения). В вашей сети маршруты не объявляются. Чтобы включить объявление маршрутов в своей сети, необходимо связать с ней фильтр маршрутов.
 
-Фильтр маршрутов позволяет вам идентифицировать службы, которые можно использовать через пиринг Майкрософт по каналу ExpressRoute. Это фактически белый список всех значений сообщества BGP. После определения ресурса фильтра маршрута и его подключения к каналу ExpressRoute все префиксы, которые сопоставляются со значениями сообщества BGP, объявляются в сети.
+Фильтр маршрутов позволяет вам идентифицировать службы, которые можно использовать через пиринг Майкрософт по каналу ExpressRoute. Это фактически утвержденный список всех значений сообщества BGP. После определения ресурса фильтра маршрута и его подключения к каналу ExpressRoute все префиксы, которые сопоставляются со значениями сообщества BGP, объявляются в сети.
 
 Чтобы иметь возможность подключать фильтры маршрутов со службами Office 365, у вас должно быть разрешение на использование служб Office 365 через ExpressRoute. Если вы не авторизованы для использования служб Office 365 через ExpressRoute, произойдет сбой операции подключения фильтров маршрута. Дополнительные сведения о процессе авторизации см. в статье [Azure ExpressRoute для Office 365](https://support.office.com/article/Azure-ExpressRoute-for-Office-365-6d2534a2-c19c-4a99-be5e-33a0cee5d3bd). Подключение к службам Dynamics 365 не требует предварительного разрешения.
 
@@ -78,7 +71,7 @@ ms.locfileid: "29387733"
  - Необходимо иметь активный пиринг Майкрософт. Следуйте инструкциям в статье [Создание и изменение канала ExpressRoute с помощью PowerShell](expressroute-howto-routing-portal-resource-manager.md).
 
 
-## <a name="prefixes"></a>Шаг 1. Получение списка префиксов и значений сообщества BGP
+## <a name="prefixes"></a>Шаг 1. Получение списка префиксов и значений сообщества BGP
 
 ### <a name="1-get-a-list-of-bgp-community-values"></a>1. Получение списка значений сообщества BGP
 
@@ -88,40 +81,40 @@ ms.locfileid: "29387733"
 
 Создайте список значений сообщества BGP, которые нужно использовать в фильтре маршрута. Например, значение сообщества BGP для службы Dynamics 365 — 12076:5040.
 
-## <a name="filter"></a>Шаг 2. Создание фильтра маршрутов и правила фильтрации
+## <a name="filter"></a>Шаг 2. Создание фильтра маршрута и правила фильтрации
 
 Фильтр может иметь только одно правило, и оно должно иметь тип "Разрешить". С этим правилом может быть связан список значений сообщества BGP.
 
 ### <a name="1-create-a-route-filter"></a>1. Создание фильтра маршрута
 Чтобы создать фильтр маршрута, необходимо выбрать команду создания ресурса. Выберите **Создать ресурс** > **Сети** > **RouteFilter**, как показано на рисунке ниже:
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\CreateRouteFilter1.png)
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/CreateRouteFilter1.png)
 
 Фильтр маршрута необходимо разместить в группе ресурсов. 
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\CreateRouteFilter.png)
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/CreateRouteFilter.png)
 
 ### <a name="2-create-a-filter-rule"></a>2. Создание правила фильтрации
 
 Можно добавлять и обновлять правила, выбрав вкладку "Управление правилами фильтра маршрута".
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\ManageRouteFilter.png)
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/ManageRouteFilter.png)
 
 
 Можно выбрать службы, к которым необходимо подключиться из раскрывающегося списка, и сохранить правило после завершения.
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\AddRouteFilterRule.png)
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/AddRouteFilterRule.png)
 
 
-## <a name="attach"></a>Шаг 3. Подключение фильтра маршрутов к каналу ExpressRoute
+## <a name="attach"></a>Шаг 3. Подключения фильтра маршрута к каналу ExpressRoute
 
 Фильтр маршрутов можно вложить в схему, нажав кнопку "Добавить схемы" и выбрав схему ExpressRoute из раскрывающегося списка.
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\AddCktToRouteFilter.png)
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/AddCktToRouteFilter.png)
 
 Если поставщик услуг подключения настраивает пиринг для канала ExpressRoute, обновите канал из колонки канала ExpressRoute, прежде чем нажать кнопку Add circuit (Добавить канал).
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\RefreshExpressRouteCircuit.png)
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/RefreshExpressRouteCircuit.png)
 
 ## <a name="tasks"></a>Стандартные задачи
 
@@ -129,7 +122,7 @@ ms.locfileid: "29387733"
 
 Открыв ресурс на портале, можно просмотреть свойства фильтра маршрута.
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\ViewRouteFilter.png)
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/ViewRouteFilter.png)
 
 
 ### <a name="updateproperties"></a>Обновление свойств фильтра маршрутов
@@ -137,23 +130,23 @@ ms.locfileid: "29387733"
 Нажав кнопку "Управление правилом", можно обновить список значений сообщества BGP, присоединенного к схеме.
 
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\ManageRouteFilter.png)
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/ManageRouteFilter.png)
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\AddRouteFilterRule.png) 
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/AddRouteFilterRule.png) 
 
 
 ### <a name="detach"></a>Отсоединение фильтра маршрутов от канала ExpressRoute
 
 Чтобы отсоединить канал от фильтра маршрутов, щелкните канал правой кнопкой мыши и выберите "Отменить связь".
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\DetachRouteFilter.png) 
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/DetachRouteFilter.png) 
 
 
 ### <a name="delete"></a>Удаление фильтра маршрутов
 
 Фильтр маршрута можно удалить, нажав кнопку "Удалить". 
 
-![Создание фильтра маршрута](.\media\how-to-routefilter-portal\DeleteRouteFilter.png) 
+![Создание фильтра маршрута](./media/how-to-routefilter-portal/DeleteRouteFilter.png) 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

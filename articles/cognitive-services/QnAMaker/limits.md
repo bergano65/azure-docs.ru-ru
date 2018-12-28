@@ -1,7 +1,7 @@
 ---
 title: Лимиты и границы —QnA Maker
 titleSuffix: Azure Cognitive Services
-description: Полный список ограничений в QnA Maker.
+description: Для QnA Maker предусмотрены метаограничения для частей базы знаний и службы. Для тестирования и публикации важно хранить базу знаний, учитывая эти ограничения.
 services: cognitive-services
 author: tulasim88
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: tulasim
-ms.openlocfilehash: 53fadc0e3ea21b94ca656774baf077192c0394b4
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.custom: seodec18
+ms.openlocfilehash: 772153040ac76f4b7bbee55c48527a841fc69037
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50137299"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53084794"
 ---
-# <a name="qna-maker-limits"></a>Ограничения QnA Maker
+# <a name="qna-maker-knowledge-base-limits-and-boundaries"></a>Лимиты и границы базы данных QnA Maker
 Полный список ограничений в QnA Maker.
 
 ## <a name="knowledge-bases"></a>Базы знаний
@@ -29,7 +30,7 @@ ms.locfileid: "50137299"
 |Максимальное разрешенное число опубликованных баз знаний (макс. индексы — 1 (зарезервировано для тестирования)|2|14|49|199|199|2 999|
 
 ## <a name="extraction-limits"></a>Ограничения на извлечение
-* Сведения о максимальном числе файлов, которые можно извлечь, и максимальном размере файла см. в разделе, посвященном [расценкам на QnA Maker](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/).
+* Сведения о максимальном числе файлов, которые можно извлечь, и максимальном размере файла см. на странице [цен на QnAMaker](https://azure.microsoft.com/pricing/details/cognitive-services/qna-maker/).
 * Максимальное число прямых ссылок, обход которых можно выполнить для извлечения вопросов и ответов из HTML-страниц часто задаваемых вопросов: 20
 
 ## <a name="metadata-limits"></a>Ограничения на метаданные
@@ -42,14 +43,14 @@ ms.locfileid: "50137299"
 ## <a name="knowledge-base-content-limits"></a>Ограничения на содержимое базы знаний
 Общие ограничения на содержимое в базе знаний
 * Длина текста ответа: 25 000
-* Длина текста вопроса: 1 000
-* Длина текста "ключ-значение" метаданных: 100
-* Поддерживаемые символы для имени метаданных: буквы, цифры и _  
-* Поддерживаемые символы для значения метаданных: все, кроме : и | 
+* Длина текста вопроса: 1000
+* Длина текста рапы "ключ — значение" метаданных: 100
+* Поддерживаемые символы для имени метаданных: буквы, цифры и символ нижнего подчеркивания (_)  
+* Поддерживаемые символы для значения метаданных: все, кроме символов : и | 
 * Длина имени файла: 200
 * Поддерживаемые форматы файлов: TSV, PDF, TXT, DOCX, XLSX.
 * Максимальное число альтернативных вопросов: 100
-* Максимальное число пар "вопрос-ответ": зависит от выбранной [категории службы поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#document-limits) 
+* Максимальное число пар "вопрос — ответ": Зависит от выбранного [уровня Поиска Azure](https://docs.microsoft.com/azure/search/search-limits-quotas-capacity#document-limits) 
 
 ## <a name="create-knowledge-base-call-limits"></a>Ограничения на вызовы создания базы знаний
 Эти значения представляют ограничения для каждого действия создания базы знаний, то есть нажатия кнопки *Создать базу знаний* или вызова API CreateKnowledgeBase.

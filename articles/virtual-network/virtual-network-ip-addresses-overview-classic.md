@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/11/2016
 ms.author: genli
-ms.openlocfilehash: 6a63099bf2a8bc818c88ccec1d5f44bb9ffc32de
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.openlocfilehash: 81699764952e50cb18c1f299c9c4f7c524b0a332
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31798212"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53011708"
 ---
 # <a name="ip-address-types-and-allocation-methods-classic-in-azure"></a>Типы IP-адресов и методы распределения (классическая модель) в Azure
 Вы можете назначать IP-адреса ресурсам Azure, чтобы они могли взаимодействовать с другими ресурсами Azure, а также подключаться к вашей локальной сети и Интернету. В Azure можно использовать два типа IP-адресов: общедоступные и частные.
@@ -30,10 +30,10 @@ ms.locfileid: "31798212"
 Частные IP-адреса используются для обмена данными в виртуальной сети Azure (VNet), облачной службе или вашей локальной сети (если для расширения сети за счет Azure используется VPN-шлюз или канал ExpressRoute).
 
 > [!IMPORTANT]
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../resource-manager-deployment-model.md).  В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний мы рекомендуем использовать модель развертывания с помощью Azure Resource Manager. Дополнительные сведения об IP-адресах в Resource Manager см. в [этой статье](virtual-network-ip-addresses-overview-arm.md).
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними:  [модель развертывания с помощью Resource Manager и классическая модель](../resource-manager-deployment-model.md).  В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний мы рекомендуем использовать модель развертывания с помощью Azure Resource Manager. Дополнительные сведения об IP-адресах в Resource Manager см. в [этой статье](virtual-network-ip-addresses-overview-arm.md).
 
 ## <a name="public-ip-addresses"></a>Общедоступные IP-адреса
-Общедоступные IP-адреса позволяют ресурсам Azure подключаться к Интернету и другим общедоступным службам Azure, таким как [кэш Redis для Azure](https://azure.microsoft.com/services/cache/), [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/), [базы данных SQL](../sql-database/sql-database-technical-overview.md) и [служба хранилища Azure](../storage/common/storage-introduction.md).
+Общедоступные IP-адреса позволяют ресурсам Azure подключаться к Интернету и другим общедоступным службам Azure, таким как [кэш Azure для Redis](https://azure.microsoft.com/services/cache/), [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/), [базы данных SQL](../sql-database/sql-database-technical-overview.md) и [служба хранилища Azure](../storage/common/storage-introduction.md).
 
 Общедоступный IP-адрес связывается со следующими типами ресурсов:
 
@@ -92,7 +92,7 @@ ms.locfileid: "31798212"
 
 | Ресурс | Динамический | Статическое | Несколько IP-адресов |
 | --- | --- | --- | --- |
-| облачная служба |Yes |Yes |Yes |
+| облачная служба |Yes |Да |Yes |
 | Виртуальная машина IaaS или экземпляр роли PaaS |Yes |Нет  |Нет  |
 | VPN-шлюз |Yes |Нет  |Нет  |
 | Шлюз приложений |Yes |Нет  |Нет  |
@@ -142,10 +142,10 @@ ms.locfileid: "31798212"
 
 | Ресурс | Динамический | Статическое | Несколько IP-адресов |
 | --- | --- | --- | --- |
-| Виртуальная машина (в *автономной* облачной службе или виртуальной сети) |Yes |Yes |Yes |
+| Виртуальная машина (в *автономной* облачной службе или виртуальной сети) |Yes |Да |Yes |
 | Экземпляр роли PaaS (в *автономной* облачной службе или виртуальной сети) |Yes |Нет  |Нет  |
-| Внешний интерфейс внутреннего балансировщика нагрузки |Yes |Yes |Yes |
-| Интерфейсная часть шлюза приложений |Yes |Yes |Yes |
+| Внешний интерфейс внутреннего балансировщика нагрузки |Yes |Да |Yes |
+| Интерфейсная часть шлюза приложений |Yes |Да |Yes |
 
 ## <a name="limits"></a>Ограничения
 В следующей таблице показаны ограничения, накладываемые на IP-адресацию в Azure в зависимости от подписки. Для увеличения ограничений по умолчанию до максимальных ограничений в зависимости от потребностей своего бизнеса вы можете [обратиться в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade) .

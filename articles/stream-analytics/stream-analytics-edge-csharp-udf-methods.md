@@ -1,5 +1,5 @@
 ---
-title: Разработка пользовательских функций .NET Standard для заданий Edge в Azure Stream Analytics (предварительная версия)
+title: Разработка функций .NET Standard для заданий Edge в Azure Stream Analytics (предварительная версия)
 description: Вы узнаете, как написать пользовательские функции на C# для заданий Edge в Stream Analytics.
 services: stream-analytics
 author: mamccrea
@@ -8,13 +8,14 @@ manager: kfile
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: f0da25410fe81a93501df940ffbb0e115456a9e8
-ms.sourcegitcommit: 609c85e433150e7c27abd3b373d56ee9cf95179a
+ms.date: 12/06/2018
+ms.custom: seodec18
+ms.openlocfilehash: 5df4c9dfe18b02ade3a37717da9c68acbfcf1853
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48247813"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53106606"
 ---
 # <a name="develop-net-standard-user-defined-functions-for-azure-stream-analytics-edge-jobs-preview"></a>Разработка пользовательских функций .NET Standard для заданий Edge в Azure Stream Analytics (предварительная версия)
 
@@ -82,11 +83,11 @@ Azure Stream Analytics предлагает язык запросов, анал�
 
 4. В списке **Ссылки** в **обозревателе решений** должен отобразиться проект **UDFTest**.
 
-   ![Просмотр ссылки на пользовательскую функцию в обозревателе решений Edge в Azure Stream Analytics](./media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-added-reference.png)
+   ![Просмотр ссылки на пользовательскую функцию в обозревателе решений](./media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-added-reference.png)
 
 5. Щелкните правой кнопкой мыши папку **Функции** и выберите **Новый элемент**.
 
-   ![Добавление нового элемента в функции в решении Edge в Azure Stream Analytics в Visual Studio](./media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-add-csharp-function.png)
+   ![Добавление нового элемента в функции в решении Edge в Azure Stream Analytics](./media/stream-analytics-edge-csharp-udf-methods/stream-analytics-edge-udf-add-csharp-function.png)
 
 6. Добавьте функцию C# **SquareFunction.json** в проект Azure Stream Analytics.
 
@@ -133,6 +134,6 @@ Azure Stream Analytics предлагает язык запросов, анал�
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Руководство. Написание пользовательской функции C# для задания Edge в Azure Stream Analytics (предварительная версия)](stream-analytics-edge-csharp-udf.md)
-* [Руководство. Пользовательские функции JavaScript Azure Stream Analytics](stream-analytics-javascript-user-defined-functions.md)
+* [Руководство. Написание определяемой пользователем функции на C# для задания Azure Stream Analytics на IoT Edge (предварительная версия)](stream-analytics-edge-csharp-udf.md)
+* [Руководство. Определяемые пользователем функции JavaScript в Azure Stream Analytics](stream-analytics-javascript-user-defined-functions.md)
 * [Просмотр заданий Azure Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools.md)

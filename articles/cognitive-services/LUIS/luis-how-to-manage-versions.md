@@ -1,21 +1,22 @@
 ---
-title: Управление версиями в приложениях LUIS
-titleSuffix: Azure Cognitive Services
+title: Управление версиями
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Версии позволяют создавать и публиковать различные модели. Прежде чем вносить изменения в активную модель рекомендуется клонировать ее текущую в другую версию приложения.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: db461191b70aabc322e570ecc814a076c21206f2
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: a1594d3dfe449049258e5ee12bc173c413459f8a
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47033793"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53132880"
 ---
 # <a name="manage-versions"></a>Управление версиями
 
@@ -25,7 +26,7 @@ ms.locfileid: "47033793"
 
 Список версий отображает опубликованные и активные в настоящее время версии, а также место их публикации. 
 
-[![](./media/luis-how-to-manage-versions/versions-import.png "раздел \"Управление\", страница \"Версии\"")](./media/luis-how-to-manage-versions/versions-import.png#lightbox)
+[![Раздел "Управление", страница "Версии"](./media/luis-how-to-manage-versions/versions-import.png "раздел \"Управление\", страница \"Версии\"")](./media/luis-how-to-manage-versions/versions-import.png#lightbox)
 
 ## <a name="clone-a-version"></a>Клонирование версии
 
@@ -44,7 +45,7 @@ ms.locfileid: "47033793"
 
 Выберите версию из списка, а затем на панели инструментов нажмите **Активировать**. 
 
-[![](./media/luis-how-to-manage-versions/versions-other.png "раздел \"Управление\", страница \"Версии\"")](./media/luis-how-to-manage-versions/versions-other.png#lightbox)
+[![Раздел "Управление", страница "Версии", действие "Создать версию"](./media/luis-how-to-manage-versions/versions-other.png "Раздел \"Управление\", страница \"Версии\", действие \"Создать версию\"")](./media/luis-how-to-manage-versions/versions-other.png#lightbox)
 
 ## <a name="import-version"></a>Импорт версии
 
@@ -52,7 +53,7 @@ ms.locfileid: "47033793"
 
 2. В всплывающем окне **Импорт новой версии** введите имя новой версии, которое должно состоять из 10 символов. Необходимо задать идентификатор версии, если версия уже существует в JSON-файле приложения.
 
-    ![раздел "Управление", страница "Версии"](./media/luis-how-to-manage-versions/versions-import-pop-up.png)
+    ![Раздел "Управление", страница "Версии", импорт новой версии](./media/luis-how-to-manage-versions/versions-import-pop-up.png)
 
     После импорта версии она становится активной.
 

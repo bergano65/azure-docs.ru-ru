@@ -1,22 +1,22 @@
 ---
-title: Первое знакомство. Защита виртуальных машин Azure в хранилище служб восстановления
+title: 'Первое знакомство: защита виртуальных машин Azure в хранилище служб восстановления'
 description: Защита виртуальных машин Azure в хранилище служб восстановления. Чтобы защитить данные, используйте резервные копии виртуальных машин, развернутых с помощью Resource Manager или классической модели развертывания, а также виртуальных машин хранилища класса Premium, зашифрованных виртуальных машин и виртуальных машин на управляемых дисках. Создание и регистрация хранилища служб восстановления. Регистрация виртуальных машин, создание политики и защита виртуальных машин в Azure.
 services: backup
-author: markgalioto
+author: rayne-wiselman
 manager: carmonm
 keyword: backups; vm backup
 ms.service: backup
 ms.topic: conceptual
 ms.date: 08/01/2018
-ms.author: markgal
+ms.author: raynew
 ms.custom: H1Hack27Feb2017
 keywords: backups; vm backup
-ms.openlocfilehash: daa2355d028af9b61b0b14a453452c1a96487403
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 2c6b881e5717c0f4600b4e3c2f47c19b5d2dae51
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51233547"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52869934"
 ---
 # <a name="back-up-azure-virtual-machines-to-recovery-services-vault"></a>Резервное копирование виртуальных машин Azure в хранилище служб восстановления
 
@@ -36,8 +36,8 @@ ms.locfileid: "51233547"
 
 > [!NOTE]
 > Служба Backup создает группу ресурсов, отличную от группы ресурсов виртуальной машины, для сохранения коллекции точек восстановления. Пользователям рекомендуется не блокировать группу ресурсов, созданную для использования службой Backup.
-Формат именования группы ресурсов, созданной службой Backup: AzureBackupRG_`<Geo>`_`<number>`
-<br>Например: AzureBackupRG_northeurope_1
+Формат именования группы ресурсов, созданной службой Backup: AzureBackupRG_`<Geo>`_`<number>`.
+<br>Например: AzureBackupRG_northeurope_1.
 >
 >
 

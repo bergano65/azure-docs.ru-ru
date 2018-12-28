@@ -4,19 +4,19 @@ ms.service: redis-cache
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: wesmc
-ms.openlocfilehash: 2c96604093542c2697c691ad8fb8bf11e77e2d0b
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: 2627554647c6c20cbdedfec53c1028b3edfa9c9c
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51572629"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53111822"
 ---
-Чтобы создать кэш уровня "Премиум", войдите на [портал Azure](https://portal.azure.com) и щелкните **Создать ресурс** > **Базы данных** > **Кэш Redis**.
+Чтобы создать кэш уровня "Премиум", войдите на [портал Azure](https://portal.azure.com) и щелкните **Создать ресурс** > **Базы данных** > **Кэш Azure для Redis**.
 
 ![Создание кэша](media/redis-cache-premium-create/redis-cache-new-cache-menu.png)
 
 > [!NOTE]
-> Кэши можно создавать не только на портале Azure, но и с помощью шаблонов Resource Manager, PowerShell или интерфейса командной строки Azure. Дополнительные сведения о создании кэша Redis для Azure см. в разделе [Создание кэша](../articles/redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md#create-a-cache).
+> Кэши можно создавать не только на портале Azure, но и с помощью шаблонов Resource Manager, PowerShell или интерфейса командной строки Azure. Дополнительные сведения о создании кэша Azure для Redis см. в разделе [Создание кэша](../articles/azure-cache-for-redis/cache-dotnet-how-to-use-azure-redis-cache.md#create-a-cache).
 > 
 > 
 

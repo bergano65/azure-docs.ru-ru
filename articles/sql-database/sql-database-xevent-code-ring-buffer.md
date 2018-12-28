@@ -3,7 +3,7 @@ title: Код кольцевого буфера XEvent для базы данн�
 description: Содержит пример кода Transact-SQL, обеспечивающего простоту и удобство использования целевого объекта "Кольцевой буфер" в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
-ms.subservice: operations
+ms.subservice: monitor
 ms.custom: ''
 ms.devlang: PowerShell
 ms.topic: conceptual
@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 0da4626943a7223b24baac80121b5da0062c0d73
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 522561d8afcf6fe1bdd2887f7fd5180b79565a61
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51237083"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52874623"
 ---
 # <a name="ring-buffer-target-code-for-extended-events-in-sql-database"></a>Код целевого объекта "Кольцевой буфер" для расширенных событий в базе данных SQL
 
@@ -348,7 +348,7 @@ ALTER EVENT SESSION eventsession_gm_azuresqldb51
 
 Другие статьи с примерами кода для работы с расширенными событиями доступны по приведенным ниже ссылкам. Обязательно проверяйте, предназначен ли пример для Microsoft SQL Server или для базы данных SQL Azure. После этого вы сможете решить, какие поправки нужно внести в пример кода.
 
-* Пример кода для Базы данных SQL Azure: [Код целевого объекта "Файл событий" для расширенных событий в Базе данных SQL](sql-database-xevent-code-event-file.md)
+* Пример кода для базы данных SQL Azure: [Код целевого объекта "Файл событий" для расширенных событий в Базе данных SQL](sql-database-xevent-code-event-file.md)
 
 <!--
 ('lock_acquired' event.)

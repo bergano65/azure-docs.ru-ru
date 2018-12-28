@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: bc0cf0900ec9f87c75091b3bf219d92e0859aa1f
-ms.sourcegitcommit: 068fc623c1bb7fb767919c4882280cad8bc33e3a
+ms.openlocfilehash: b98b528d2d78d2285977dec49da18081df47e9d6
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39282145"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53166138"
 ---
 # <a name="create-a-conversation-learner-model-using-nodejs"></a>Использование Node.js для создания модели Conversation Learner
 
@@ -164,11 +164,11 @@ cp .env.example .env
 
 - Добавляйте к вопросам на форуме [Stack Overflow](https://stackoverflow.com) тег "microsoft cognitive".
 - Запросить функцию можно на нашей [странице User Voice](https://aka.ms/conversation-learner-uservoice).
-- Отправьте проблему в наш [репозиторий GitHub](https://github.com/Microsoft/ConversationLearner-Samples).
+- Сообщите о проблеме в нашем [репозитории GitHub](https://github.com/Microsoft/ConversationLearner-Samples).
 
 ## <a name="contributing"></a>Участие
 
-Этот проект соответствует [правилам поведения Microsoft Open Source](https://opensource.microsoft.com/codeofconduct/). Дополнительные сведения см. на странице [Вопросы и ответы о правилах поведения](https://opensource.microsoft.com/codeofconduct/faq/) или отправьте вопросы и комментарии по адресу [opencode@microsoft.com](mailto:opencode@microsoft.com).
+Microsoft Open Source Code of Conduct [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Дополнительные сведения:[вопросы и ответы по правилам поведения](https://opensource.microsoft.com/codeofconduct/faq/). С любыми другими вопросами или комментариями обращайтесь по адресу[opencode@microsoft.com](mailto:opencode@microsoft.com).
 
 ## <a name="source-repositories"></a>Исходные репозитории
 

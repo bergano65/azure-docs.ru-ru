@@ -1,21 +1,22 @@
 ---
-title: Добавление шаблонов вместо дополнительных фрагментов речи в приложениях LUIS
-titleSuffix: Azure Cognitive Services
+title: Добавление шаблонов для повышения точности
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Сведения о добавлении шаблонов в приложения службы "Распознавание речи" (LUIS) для повышения точности прогнозирования.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 09/06/2018
 ms.author: diberry
-ms.openlocfilehash: 6c15fc256a330c7de154c551c1ef4c78913f470a
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: ae0fdb17680f415a1dacce1738fa53fcda943788
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48885892"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53135004"
 ---
 # <a name="how-to-add-patterns-to-improve-prediction-accuracy"></a>Добавление шаблонов для повышения точности прогнозирования
 После получения фрагментов речи конечной точки приложением LUIS используйте [понятие](luis-concept-patterns.md) шаблонов для повышения точности прогнозирования для фрагментов речи, в которых наблюдается определенный шаблон в порядке и выборе слов. Шаблоны используют [сущности](luis-concept-entity-types.md) и их роли для извлечения данных с помощью определенного синтаксиса шаблона. 
@@ -95,7 +96,7 @@ ms.locfileid: "48885892"
 
 2. Появится диалоговое окно подтверждения **удаления шаблонов**. Нажмите кнопку **ОК**, чтобы завершить удаление.
 
-    ![Снимок экрана: удаление нескольких шаблонов](./media/luis-how-to-model-intent-pattern/delete-many-patterns-confirmation.png)
+    ![Снимок экрана: окно подтверждения удаления нескольких шаблонов](./media/luis-how-to-model-intent-pattern/delete-many-patterns-confirmation.png)
 
 ## <a name="filter-pattern-list-by-entity"></a>Фильтрация списка шаблонов по сущности
 
@@ -116,7 +117,7 @@ ms.locfileid: "48885892"
 ## <a name="remove-entity-or-intent-filter"></a>Удаление фильтра сущности или намерения
 При фильтрации списка шаблонов имя сущности или намерения имя отображается под панелью инструментов. Чтобы удалить фильтр, выберите имя.
 
-![Снимок экрана: шаблоны, отфильтрованные по сущности](./media/luis-how-to-model-intent-pattern/filter-entities-2.png)
+![Снимок экрана: удаление сущности из фильтра](./media/luis-how-to-model-intent-pattern/filter-entities-2.png)
 
 Фильтр будет удален, и на экран будут выведены все шаблоны. 
 
@@ -125,7 +126,7 @@ ms.locfileid: "48885892"
 
 1. В выбранной строке высказывания нажмите кнопку с многоточием (***...***) справа от фрагмента, а затем пункт **Добавить как шаблон**.
 
-    [![](./media/luis-how-to-model-intent-pattern/add-pattern-from-utterance.png "Снимок экрана: таблица фрагментов речи с выделенным пунктом меню \"Добавить шаблон\"")](./media/luis-how-to-model-intent-pattern/add-pattern-from-utterance.png)
+    [![Снимок экрана: таблица выражений с выделенным пунктом "Добавить как шаблон" в меню "Параметры"](./media/luis-how-to-model-intent-pattern/add-pattern-from-utterance.png "Screenshot of utterances table with Add pattern highlighted in options menu")](./media/luis-how-to-model-intent-pattern/add-pattern-from-utterance.png)
 
 2. Измените шаблон согласно [правилам синтаксиса](luis-concept-patterns.md#pattern-syntax). Если выбранный фрагмент речи помечен сущностями, такие сущности уже находятся в шаблоне с правильным синтаксисом.
 

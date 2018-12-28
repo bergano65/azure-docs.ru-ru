@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: c8edaba8de597e3e76e760e1f5109006338a663c
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: 2f426ab85d9ab15dd080a487337b8d48358ed040
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48238826"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52888466"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
-Azure Maps поддерживает четыре различные встроенные стили карт. Ниже перечислены стили и их описания.
+Карты Azure поддерживает несколько различных встроенных стилей карт, как описано ниже.
 
 ## <a name="road"></a>дорога
 Карта **дороги** — это стандартная карта, которая отображает дороги, природные и искусственные объекты, а также ярлыки для этих объектов.
@@ -49,6 +49,14 @@ Azure Maps поддерживает четыре различные встрое
 **Темно-серый** — это темная версия стиля дорожной карты.
 
 ![gray_scale](./media/supported-map-styles/grayscale_dark.png)
+
+**Применимые API:**
+* Элементы управления картой JS 
+
+## <a name="night"></a>ночь
+**Ночь** — это темная версия стиля дорожной карты с цветными дорогами и символами.
+
+![ночь](./media/supported-map-styles/night.PNG)
 
 **Применимые API:**
 * Элементы управления картой JS 

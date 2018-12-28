@@ -12,31 +12,31 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/25/2018
+ms.date: 11/29/2018
 ms.author: dekapur
-ms.openlocfilehash: 5c184841602f269555ce2196ef660faba14dbf8a
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 556b3375a0f5d138255ba4c46b034894b1037da0
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34204616"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52722332"
 ---
 # <a name="query-eventstore-apis-for-cluster-events"></a>Выполнение запросов к интерфейсам API EventStore для получения событий кластера
 
 В этой статье описывается, как выполнить запрос к интерфейсам API EventStore, которые доступны в Service Fabric версии 6.2 и более поздней версии. Если вы хотите узнать больше о службе EventStore, прочитайте [обзор службы EventStore](service-fabric-diagnostics-eventstore.md). В настоящее время службе EventStore доступны только данные за последние 7 дней (это обусловлено диагностической политикой хранения данных кластера).
 
 >[!NOTE]
->В версии Service Fabric 6.2 интерфейсы API EventStore находятся на этапе предварительной версии для кластеров Windows, работающих только в Azure. Мы работаем над переносом этих функциональных возможностей в Linux, а также в изолированные кластеры.
+>API EventStore предоставляются как общедоступная версия в рамках Service Fabric 6.4 для кластеров Windows, работающих в Azure.
 
 К интерфейсам API EventStore можно обращаться напрямую через конечную точку REST или программно. В зависимости от запроса требуется указать несколько параметров, которые необходимы для сбора соответствующих данных. Как правило, это:
 * `api-version`: версия интерфейсов API EventStore, которую вы используете.
 * `StartTimeUtc`: определяет начало запрашиваемого периода.
 * `EndTimeUtc`: конец периода времени.
 
-Помимо этого доступны дополнительные параметры, в том числе:
-* `timeout`: позволяет переопределить времени ожидания по умолчанию (60 с) для выполнения операции запроса.
+Кроме этого, доступны дополнительные параметры, в том числе:
+* `timeout`: переопределяет время ожидания по умолчанию (60 с) для выполнения операции запроса.
 * `eventstypesfilter`: позволяет фильтровать события по типу.
-* `ExcludeAnalysisEvents`: исключает из результатов события анализа. По умолчанию запросы EventStore будут возвращать события анализа, если это возможно. События анализа — это более подробные события операционного канала, которые содержат дополнительный контекст и сведения по сравнению с обычными событиями Service Fabric и обеспечивают более подробную информацию.
+* `ExcludeAnalysisEvents`: исключает из результатов события анализа. По умолчанию запросы EventStore будут возвращать события анализа, когда это возможно. События анализа — это события операционного канала, которые содержат дополнительный контекст и более подробные сведения по сравнению с обычными событиями Service Fabric.
 * `SkipCorrelationLookup`: позволяет не выполнять поиск потенциальных связанных событий в кластере. По умолчанию EventStore попытается сопоставить события в кластере и связать события между собой, когда это возможно. 
 
 У каждой сущности в кластере можно запросить события. Можно также запрашивать события для всех сущностей определенного типа. Например, можно запросить события для конкретного узла или для всех узлов в кластере. Текущий набор сущностей, для которых вы можете запрашивать события (и структура запроса):
@@ -64,10 +64,10 @@ ms.locfileid: "34204616"
 
 ```
 Method: GET 
-URL: http://mycluster:19080/EventsStore/Cluster/Events?api-version=6.2-preview&StartTimeUtc=2018-04-03T18:00:00Z&EndTimeUtc=2018-04-04T18:00:00Z
+URL: http://mycluster:19080/EventsStore/Cluster/Events?api-version=6.4&StartTimeUtc=2018-04-03T18:00:00Z&EndTimeUtc=2018-04-04T18:00:00Z
 ```
 
-Он может вернуть ошибку, если события отсутствуют, а при успешном выполнении запрос вернет события в формате JSON.
+Он может не возвращать события или вернуть список событий в формате JSON:
 
 ```json
 Response: 200
@@ -136,39 +136,77 @@ var clstrEvents = sfhttpClient.EventsStore.GetClusterEventListAsync(
     .ToList();
 ```
 
+Вот еще один пример запроса и вывода состояния работоспособности кластера и всех событий узла за сентябрь 2018 г.
+
+```csharp
+  const int timeoutSecs = 60;
+  var clusterUrl = new Uri(@"http://localhost:19080"); // This example is for a Local cluster
+  var sfhttpClient = ServiceFabricClientFactory.Create(clusterUrl);
+
+  var clusterHealth = sfhttpClient.Cluster.GetClusterHealthAsync().GetAwaiter().GetResult();
+  Console.WriteLine("Cluster Health: {0}", clusterHealth.AggregatedHealthState.Value.ToString());
+
+  
+  Console.WriteLine("Querying for node events...");
+  var nodesEvents = sfhttpClient.EventsStore.GetNodesEventListAsync(
+      "2018-09-01T00:00:00Z",
+      "2018-09-30T23:59:59Z",
+      timeoutSecs,
+      "NodeDown,NodeUp")
+      .GetAwaiter()
+      .GetResult()
+      .ToList();
+  Console.WriteLine("Result Count: {0}", nodesEvents.Count());
+
+  foreach (var nodeEvent in nodesEvents)
+  {
+      Console.Write("Node event happened at {0}, Node name: {1} ", nodeEvent.TimeStamp, nodeEvent.NodeName);
+      if (nodeEvent is NodeDownEvent)
+      {
+          var nodeDownEvent = nodeEvent as NodeDownEvent;
+          Console.WriteLine("(Node is down, and it was last up at {0})", nodeDownEvent.LastNodeUpAt);
+      }
+      else if (nodeEvent is NodeUpEvent)
+      {
+          var nodeUpEvent = nodeEvent as NodeUpEvent;
+          Console.WriteLine("(Node is up, and it was last down at {0})", nodeUpEvent.LastNodeDownAt);
+      }
+  }
+```
+
 ## <a name="sample-scenarios-and-queries"></a>Примеры сценариев и запросов
 
 Вот несколько примеров того, как можно вызвать интерфейсы REST API хранилища событий для получения представления о состоянии кластера.
 
 *Обновления кластера*
 
-Чтобы узнать время последнего успешного обновления или попытки обновления кластера на прошлой неделе, можно отправить запрос к интерфейсам API, чтобы получить данные о недавно завершенных обновлениях кластера. Для этого нужно запросить события ClusterUpgradeComplete в EventStore: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Cluster/Events?api-version=6.2-preview&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z&EventsTypesFilter=ClusterUpgradeComplete`.
+Чтобы узнать время последнего успешного обновления или попытки обновления кластера на прошлой неделе, можно отправить запрос к API и получить данные о недавно завершенных обновлениях кластера. Для этого нужно запросить события ClusterUpgradeCompleted в EventStore: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Cluster/Events?api-version=6.4&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z&EventsTypesFilter=ClusterUpgradeCompleted`.
 
 *Проблемы при обновлении кластера*
 
-Аналогично, если при последнем обновлении кластера возникли проблемы, может запросить все события для сущности кластера. Вы увидите различные события, включая запуск обновлений и каждый домен обновления, для которого обновление прошло успешно. Также вы увидите события на момент, когда начался откат, и соответствующие события работоспособности. Запрос, который можно использовать для получения этих сведений: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Cluster/Events?api-version=6.2-preview&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z`
+Аналогично, если при последнем обновлении кластера возникли проблемы, может запросить все события для сущности кластера. Вы увидите различные события, включая запуск обновлений и каждый домен обновления, для которого обновление прошло успешно. Также вы увидите события на момент, когда начался откат, и соответствующие события работоспособности. Запрос, который можно использовать для получения этих сведений: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Cluster/Events?api-version=6.4&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z`
 
 *Изменения состояния узлов*
 
-Чтобы просмотреть изменения состояния узлов за последние несколько дней (запуск и остановка узлов, а также их активация или деактивация (платформой, службой тестирования в условиях хаоса или пользователем)), используйте следующий запрос: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Nodes/Events?api-version=6.2-preview&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z`.
+Чтобы просмотреть изменения состояния узлов за последние несколько дней (запуск и остановка узлов, а также их активация или деактивация (платформой, службой тестирования в условиях хаоса или пользователем)), используйте следующий запрос: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Nodes/Events?api-version=6.4&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z`.
 
 *События приложений*
 
-Вы также можете отслеживать последние развертывания и обновления приложений. Используйте следующий запрос, чтобы увидеть все события, связанные с приложениями, в кластере: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Applications/Events?api-version=6.2-preview&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z`.
+Вы также можете отслеживать последние развертывания и обновления приложений. Используйте следующий запрос, чтобы увидеть все события, связанные с приложениями, в кластере: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Applications/Events?api-version=6.4&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z`.
 
 *Хронологические данные о работоспособности приложения*
 
-Помимо событий жизненного цикла приложений может понадобиться просмотреть хронологические данные о работоспособности определенного приложения. Для этого можно указать имя приложения, для которого нужно собрать данные. Используйте данный запрос, чтобы получить все события работоспособности приложения: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Applications/myApp/$/Events?api-version=6.2-preview&starttimeutc=2018-03-24T17:01:51Z&endtimeutc=2018-03-29T17:02:51Z&EventsTypesFilter=ProcessApplicationReport`. Если вы хотите включить в результаты события работоспособности с истекшим сроком действия (то есть с истекшим сроком жизни), добавьте `,ExpiredDeployedApplicationEvent` в конец запроса, чтобы использовать фильтр по двум типам событий.
+Помимо событий жизненного цикла приложений может понадобиться просмотреть хронологические данные о работоспособности определенного приложения. Для этого можно указать имя приложения, для которого нужно собрать данные. Используйте данный запрос, чтобы получить все события работоспособности приложения: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Applications/myApp/$/Events?api-version=6.4&starttimeutc=2018-03-24T17:01:51Z&endtimeutc=2018-03-29T17:02:51Z&EventsTypesFilter=ApplicationNewHealthReport`. Если вы хотите включить в результаты события работоспособности с истекшим сроком действия (то есть с истекшим сроком жизни), добавьте `,ApplicationHealthReportExpired` в конец запроса, чтобы использовать фильтр по двум типам событий.
 
 *Хронологические данные о работоспособности для всех служб в myApp*
 
-В настоящее время события отчета о работоспособности для служб отображаются как события `DeployedServiceHealthReportCreated` для соответствующей сущности приложения. Чтобы увидеть, как ваши службы функционируют для App1, используйте следующий запрос: `https://winlrc-staging-10.southcentralus.cloudapp.azure.com:19080/EventsStore/Applications/myapp/$/Events?api-version=6.2-preview&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z&EventsTypesFilter=DeployedServiceHealthReportCreated`.
+В настоящее время события отчета о работоспособности для служб отображаются как события `DeployedServicePackageNewHealthReport` для соответствующей сущности приложения. Чтобы увидеть, как ваши службы функционируют для App1, используйте следующий запрос: `https://winlrc-staging-10.southcentralus.cloudapp.azure.com:19080/EventsStore/Applications/myapp/$/Events?api-version=6.4&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z&EventsTypesFilter=DeployedServicePackageNewHealthReport`.
 
 *Перенастройка секций*
 
-Чтобы просмотреть все перемещения секций, которые произошли в кластере, запросите событие `ReconfigurationCompleted`. Это поможет выяснить, когда и какие рабочие нагрузки выполнялись на том или ином узле, при диагностике проблем в кластере. Вот пример запроса для этого: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Partitions/Events?api-version=6.2-preview&starttimeutc=2018-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z&EventsTypesFilter=PartitionReconfigurationCompleted`.
+Чтобы просмотреть все перемещения секций, которые произошли в кластере, запросите событие `PartitionReconfigured`. Это поможет выяснить, когда и какие рабочие нагрузки выполнялись на том или ином узле, при диагностике проблем в кластере. Вот пример запроса для этого: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Partitions/Events?api-version=6.4&starttimeutc=2018-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z&EventsTypesFilter=PartitionReconfigured`.
 
 *Служба тестирования в условиях хаоса*
 
-Это событие запуска или остановки службы тестирования в условиях хаоса, представленной на уровне кластера. Для просмотра последних данных об использовании службы тестирования в условиях хаоса выполните следующий запрос: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Cluster/Events?api-version=6.2-preview&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z&EventsTypesFilter=ChaosStarted,ChaosStopped`.
+Это событие запуска или остановки службы тестирования в условиях хаоса, представленной на уровне кластера. Для просмотра последних данных об использовании службы тестирования в условиях хаоса выполните следующий запрос: `https://mycluster.cloudapp.azure.com:19080/EventsStore/Cluster/Events?api-version=6.4&starttimeutc=2017-04-22T17:01:51Z&endtimeutc=2018-04-29T17:02:51Z&EventsTypesFilter=ChaosStarted,ChaosStopped`.
 

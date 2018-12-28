@@ -10,28 +10,28 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/23/2018
-ms.openlocfilehash: d7b29980321f04d1ad9325580bc48ab944f60d1c
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 73c68e6946b3715bfa67561141e6c18e32e20c18
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633722"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53011765"
 ---
 # <a name="what-is-apache-hive-and-hiveql-on-azure-hdinsight"></a>Обзор Apache Hive и HiveQL в Azure HDInsight
 
-[Apache Hive](http://hive.apache.org/) — это система хранилища данных для Apache Hadoop. Hive позволяет обобщать, запрашивать и анализировать данные. Запросы Hive создаются на языке запросов HiveQL, который похож на SQL.
+[Apache Hive](https://hive.apache.org/) — это система хранилища данных для Apache Hadoop. Hive позволяет обобщать, запрашивать и анализировать данные. Запросы Hive создаются на языке запросов HiveQL, который похож на SQL.
 
 Hive позволяет создавать структуру для преимущественно неструктурированных данных. После определения структуры вы можете использовать HiveQL для запроса этих данных без знания Java или MapReduce.
 
 HDInsight предоставляет несколько типов кластера, которые подходят для конкретных рабочих нагрузок. Для запросов Hive наиболее часто используются следующие типы кластеров:
 
-* __Интерактивный запрос.__ Кластер Hadoop, который оптимизирует время ответа интерактивных запросов с помощью функции [аналитической обработки с низкой задержкой (LLAP)](https://cwiki.apache.org/confluence/display/Hive/LLAP). Дополнительные сведения см. в статье [Использование Interactive Hive с HDInsight (предварительная версия)](../interactive-query/apache-interactive-query-get-started.md).
+* __Interactive Query__. Кластер Hadoop, который обеспечивает функцию [аналитической обработки с низкой задержкой (LLAP)](https://cwiki.apache.org/confluence/display/Hive/LLAP) для оптимизации времени ответа для интерактивных запросов. Дополнительные сведения см. в статье [Использование Interactive Hive с HDInsight (предварительная версия)](../interactive-query/apache-interactive-query-get-started.md).
 
-* __Hadoop:__ кластер Hadoop, который предназначен для рабочих нагрузок пакетной обработки. Дополнительные сведения см. в статье [Руководство по Hadoop. Приступая к работе с Hadoop в HDInsight](../hadoop/apache-hadoop-linux-tutorial-get-started.md).
+* __Hadoop__. Кластер Hadoop, который предназначен для рабочих нагрузок пакетной обработки. Дополнительные сведения см. в статье [Руководство по Hadoop. Приступая к работе с Hadoop в HDInsight](../hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
-* __Spark:__ Apache Spark содержит встроенные функциональные возможности для работы с Hive. Дополнительные сведения см. в статье [Начало работы. Создание кластера Apache Spark в Azure HDInsight и выполнение интерактивных запросов с помощью SQL Spark](../spark/apache-spark-jupyter-spark-sql.md).
+* __Spark__. Apache Spark содержит встроенные функциональные возможности для работы с Hive. Дополнительные сведения см. в статье [Начало работы. Создание кластера Apache Spark в Azure HDInsight и выполнение интерактивных запросов с помощью SQL Spark](../spark/apache-spark-jupyter-spark-sql.md).
 
-* __HBase:__ HiveQL может использоваться для запроса данных, хранящихся в HBase. Дополнительные сведения см. в статье [Руководство по HBase. Приступая к работе с Apache HBase на Hadoop под управлением Linux в HDInsight](../hbase/apache-hbase-tutorial-get-started-linux.md).
+* __HBase__. HiveQL может использоваться для создания запросов данных, хранимых в HBase. Дополнительные сведения см. в статье [Руководство по HBase. Приступая к работе с Apache HBase на Hadoop под управлением Linux в HDInsight](../hbase/apache-hbase-tutorial-get-started-linux.md).
 
 ## <a name="how-to-use-hive"></a>Как использовать Hive
 
@@ -78,14 +78,14 @@ Hive также поддерживает пользовательские **се
 
 Существует два типа таблиц, которые вы можете создать с помощью Hive:
 
-* __Внутренняя:__ данные хранятся в хранилище данных Hive. Хранилище данных расположено в `/hive/warehouse/`, в хранилище по умолчанию для кластера.
+* __Внутренние__. Данные хранятся в хранилище данных Hive. Хранилище данных расположено в `/hive/warehouse/`, в хранилище по умолчанию для кластера.
 
     Используйте внутренние таблицы, если выполняется одно из следующих условий:
 
     * данные являются временными;
     * вы хотите использовать Hive для управления жизненным циклом таблицы и данных.
 
-* __Внешняя:__ данные хранятся за пределами хранилища данных. Данные могут храниться в любом хранилище, доступном для кластера.
+* __Внешние__. Данные хранятся за пределами хранилища данных. Данные могут храниться в любом хранилище, доступном для кластера.
 
     Используйте внешние таблицы, если выполняется одно из следующих условий:
 
@@ -138,20 +138,20 @@ SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs
 
 В предыдущем примере операторы HiveQL выполняют следующие действия.
 
-* `set hive.execution.engine=tez;`: задает механизм выполнения с использованием Tez. Использование Tez повышает производительность запросов. Дополнительные сведения о Tez см. в разделе [Использование Apache Tez для повышения производительности](#usetez).
+* `set hive.execution.engine=tez;`: Задает механизм выполнения с использованием Tez. Использование Tez повышает производительность запросов. Дополнительные сведения о Tez см. в разделе [Использование Apache Tez для повышения производительности](#usetez).
 
     > [!NOTE]
     > Эта инструкция необходима только при использовании кластера HDInsight под управлением Windows. Tez является подсистемой выполнения по умолчанию для HDInsight под управлением Linux.
 
-* `DROP TABLE`: если таблица уже существует, удалите ее.
+* `DROP TABLE`: Если таблица уже существует, удалите ее.
 
-* `CREATE EXTERNAL TABLE`: создает новую **внешнюю** таблицу в Hive. Внешние таблицы хранят только определения таблицы в Hive. Данные остаются в исходном расположении и формате.
+* `CREATE EXTERNAL TABLE`: Создает **внешнюю** таблицу в Hive. Внешние таблицы хранят только определения таблицы в Hive. Данные остаются в исходном расположении и формате.
 
-* `ROW FORMAT`: инструкции по форматированию данных для Hive. В данном случае поля всех журналов разделены пробелом.
+* `ROW FORMAT`: Предоставляет инструкции по форматированию данных для Hive. В данном случае поля всех журналов разделены пробелом.
 
-* `STORED AS TEXTFILE LOCATION`: указывает Hive расположение хранения данных (каталог `example/data`) и их формат (текст). Данные могут храниться в одном файле или быть распределенными по нескольким файлам в каталоге.
+* `STORED AS TEXTFILE LOCATION`: Указывает Hive расположение хранения данных (каталог `example/data`) и их формат (текст). Данные могут храниться в одном файле или быть распределенными по нескольким файлам в каталоге.
 
-* `SELECT`: подсчитывает количество всех строк, в которых столбец **t4** содержит значение **[ERROR]**. Эта инструкция должна вернуть значение **3**, так как данное значение содержат три строки.
+* `SELECT`: Подсчитывает количество всех строк, в которых столбец **t4** содержит значение **[ERROR]**. Эта инструкция должна вернуть значение **3**, так как данное значение содержат три строки.
 
 * `INPUT__FILE__NAME LIKE '%.log'`. Hive пытается применить схему ко всем файлам в каталоге. В этом случае каталог содержит файлы, которые не соответствуют схеме. Чтобы исключить лишние данные в результатах, эта инструкция указывает Hive возвращать данные только из файлов, заканчивающихся на .log.
 
@@ -180,11 +180,11 @@ SELECT t1, t2, t3, t4, t5, t6, t7
 
 Эти операторы выполняют следующие действия:
 
-* `CREATE TABLE IF NOT EXISTS`: если таблица не существует, создайте ее. Так как ключевое слово **EXTERNAL** не используется, эта инструкция создает внутреннюю таблицу. Таблица хранится в хранилище данных Hive и полностью управляется Hive.
+* `CREATE TABLE IF NOT EXISTS`: Если таблица не существует, создайте ее. Так как ключевое слово **EXTERNAL** не используется, эта инструкция создает внутреннюю таблицу. Таблица хранится в хранилище данных Hive и полностью управляется Hive.
 
-* `STORED AS ORC`: позволяет сохранить данные в формате ORC. Это высокооптимизированный и эффективный формат для хранения данных Hive.
+* `STORED AS ORC`: Позволяет сохранить данные в формате ORC. Это высокооптимизированный и эффективный формат для хранения данных Hive.
 
-* `INSERT OVERWRITE ... SELECT`: выбирает строки из таблицы **log4jLogs**, содержащей значение **[ERROR]**, а затем вставляет данные в таблицу **errorLogs**.
+* `INSERT OVERWRITE ... SELECT`: Выбирает строки из таблицы **log4jLogs**, содержащей значение **[ERROR]**, а затем вставляет данные в таблицу **errorLogs**.
 
 > [!NOTE]
 > В отличие от внешних таблиц, удаление внутренней таблицы приводит к удалению базовых данных.
@@ -193,7 +193,7 @@ SELECT t1, t2, t3, t4, t5, t6, t7
 
 ### <a id="usetez"></a>Apache Tez
 
-[Apache Tez](http://tez.apache.org) — это платформа, которая позволяет повысить производительность приложений, обрабатывающих большие объемы данных (включая Hive). По умолчанию Tez включена для кластеров HDInsight под управлением Linux.
+[Apache Tez](https://tez.apache.org) — это платформа, которая позволяет повысить производительность приложений, обрабатывающих большие объемы данных (включая Hive). По умолчанию Tez включена для кластеров HDInsight под управлением Linux.
 
 > [!NOTE]
 > В настоящее время Tez по умолчанию отключена для кластеров HDInsight под управлением Windows. Необходимо включить эту платформу. Чтобы воспользоваться преимуществами работы с Tez, необходимо установить для запроса Hive следующие значения переменных:
@@ -246,18 +246,18 @@ Apache Oozie — это система рабочих процессов и ко
 * [Использование Pig с HDInsight][hdinsight-use-pig]
 * [Использование заданий MapReduce с HDInsight][hdinsight-use-mapreduce]
 
-[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
+[azure-purchase-options]: https://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: https://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: https://azure.microsoft.com/pricing/free-trial/
 
-[apache-tez]: http://tez.apache.org
-[apache-hive]: http://hive.apache.org/
-[apache-log4j]: http://en.wikipedia.org/wiki/Log4j
+[apache-tez]: https://tez.apache.org
+[apache-hive]: https://hive.apache.org/
+[apache-log4j]: https://en.wikipedia.org/wiki/Log4j
 [hive-on-tez-wiki]: https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez
-[import-to-excel]: http://azure.microsoft.com/documentation/articles/hdinsight-connect-excel-power-query/
-[hivetask]: http://msdn.microsoft.com/library/mt146771(v=sql.120).aspx
-[connectionmanager]: http://msdn.microsoft.com/library/mt146773(v=sql.120).aspx
-[ssispack]: http://msdn.microsoft.com/library/mt146770(v=sql.120).aspx
+[import-to-excel]: https://azure.microsoft.com/documentation/articles/hdinsight-connect-excel-power-query/
+[hivetask]: https://msdn.microsoft.com/library/mt146771(v=sql.120).aspx
+[connectionmanager]: https://msdn.microsoft.com/library/mt146773(v=sql.120).aspx
+[ssispack]: https://msdn.microsoft.com/library/mt146770(v=sql.120).aspx
 
 [hdinsight-use-pig]: hdinsight-use-pig.md
 [hdinsight-use-oozie]: hdinsight-use-oozie.md
@@ -272,7 +272,7 @@ Apache Oozie — это система рабочих процессов и ко
 [hdinsight-upload-data]: ../hdinsight-upload-data.md
 
 [Powershell-install-configure]: /powershell/azureps-cmdlets-docs
-[powershell-here-strings]: http://technet.microsoft.com/library/ee692792.aspx
+[powershell-here-strings]: https://technet.microsoft.com/library/ee692792.aspx
 
 
-[cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
+[cindygross-hive-tables]: https://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx

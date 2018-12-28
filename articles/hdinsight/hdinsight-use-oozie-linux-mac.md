@@ -9,35 +9,35 @@ ms.author: omidm
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 06/26/2018
-ms.openlocfilehash: 4ea8ded6abcdee397511272c539f9be6cdd12c0e
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 14b849a46701ab19c76ee175717c3715cc89f411
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685537"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53408907"
 ---
-# <a name="use-oozie-with-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Использование Oozie с Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux
+# <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Использование Apache Oozie с Apache Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux
 
 [!INCLUDE [oozie-selector](../../includes/hdinsight-oozie-selector.md)]
 
-Узнайте, как использовать Apache Oozie с Hadoop в Azure HDInsight. Oozie — это система рабочих процессов и координации, управляющая заданиями Hadoop. Служба Oozie интегрирована со стеком Hadoop и поддерживает следующие задания:
+Узнайте, как использовать Apache Oozie с Apache Hadoop в Azure HDInsight. Oozie — это система рабочих процессов и координации, управляющая заданиями Hadoop. Служба Oozie интегрирована со стеком Hadoop и поддерживает следующие задания:
 
-* Apache MapReduce
+* Apache Hadoop MapReduce
 * Apache Pig
 * Apache Hive
 * Apache Sqoop
 
 Вы также можете использовать Oozie для планирования системных заданий, например Java-программ и сценариев оболочки.
 
-> [!NOTE]
-> Еще один способ определения рабочих процессов с помощью HDInsight — использование фабрики данных Azure. Дополнительные сведения о фабрике данных см. в статье [Преобразование данных в фабрике данных Azure][azure-data-factory-pig-hive]. Сведения об использовании Oozie в кластерах с Корпоративным пакетом безопасности см. в статье [Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности](domain-joined/hdinsight-use-oozie-domain-joined-clusters.md).
+> [!NOTE]  
+> Еще один способ определения рабочих процессов с помощью HDInsight — использование фабрики данных Azure. Дополнительные сведения о фабрике данных см. в статье [Использование данных Apache Pig and Apache Hive в фабрике данных Azure][azure-data-factory-pig-hive]. Сведения об использовании Oozie в кластерах с Корпоративным пакетом безопасности см. в статье [Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности](domain-joined/hdinsight-use-oozie-domain-joined-clusters.md).
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Обычный кластер HDInsight**: см. сведения о [начале работы с HDInsight в Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md).
+* **Обычный кластер HDInsight**. См. раздел [Приступая к работе с HDInsight в Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md)
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 ## <a name="example-workflow"></a>Пример рабочего процесса
@@ -54,9 +54,9 @@ ms.locfileid: "51685537"
 
     Сценарий Hive, используемый в этом документе, подсчитывает общее количество посещений для каждой платформы (например, Android или iPhone) и сохраняет результаты в новой таблице Hive.
 
-    Дополнительные сведения о Hive см. в статье [Использование Hive с HDInsight][hdinsight-use-hive].
+    Дополнительные сведения о Hive см. в статье [Использование Apache Hive и HiveQL с Hadoop в HDInsight][hdinsight-use-hive].
 
-2. Действие Sqoop экспортирует содержимое новой таблицы Hive в таблицу, созданную в базе данных SQL Azure. Дополнительные сведения о Sqoop см. в статье [Использование Sqoop с Hadoop в HDInsight][hdinsight-use-sqoop].
+2. Действие Sqoop экспортирует содержимое новой таблицы Hive в таблицу, созданную в базе данных SQL Azure. Дополнительные сведения о Sqoop см. в статье [Использование Apache Hive и HiveQL с Hadoop в HDInsight][hdinsight-use-sqoop].
 
 > [!NOTE]
 > Сведения о поддерживаемых версиях Oozie в кластерах HDInsight см. в статье [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?][hdinsight-versions]
@@ -90,7 +90,7 @@ ms.locfileid: "51685537"
 
     Замените `username` своим именем пользователя SSH.
 
-    > [!NOTE]
+    > [!NOTE]  
     > Ошибки о том, что пользователь уже является членом группы `users`, можно игнорировать.
 
 ## <a name="add-a-database-driver"></a>Добавление драйвера базы данных
@@ -101,7 +101,7 @@ ms.locfileid: "51685537"
 hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > Может отобразиться сообщение о том, что файл уже существует.
 
 Если рабочий процесс использовал другие ресурсы, например JAR-файл, содержащий приложение MapReduce, необходимо добавить и эти ресурсы.
@@ -210,9 +210,9 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
     В рабочем процессе определены два действия:
 
-   * `RunHiveScript`. Это действие запускает сценарий Hive `useooziewf.hql`.
+   * `RunHiveScript`: Это действие запускает сценарий Hive `useooziewf.hql`.
 
-   * `RunSqoopExport`. Это действие экспортирует созданные данные из сценария Hive в базу данных SQL, используя Sqoop. Это действие будет выполнено только после успешного завершения действия `RunHiveScript`.
+   * `RunSqoopExport`: Это действие экспортирует созданные данные из сценария Hive в базу данных SQL, используя Sqoop. Это действие будет выполнено только после успешного завершения действия `RunHiveScript`.
 
      В рабочем процессе есть несколько записей, таких как `${jobTracker}`. Вы замените их значениями, используемыми в определении задания. Позже в этом документе вы создадите определение задания.
 
@@ -232,7 +232,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
 ### <a name="create-the-table"></a>Создание таблицы
 
-> [!NOTE]
+> [!NOTE]  
 > Существует множество способов подключения к базе данных SQL для создания таблицы. В приведенных ниже действиях используется [FreeTDS](http://www.freetds.org/) из кластера HDInsight.
 
 
@@ -300,7 +300,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
     <value>wasb://mycontainer@mystorageaccount.blob.core.windows.net</value>
     ```
 
-    > [!NOTE]
+    > [!NOTE]  
     > Если кластер HDInsight использует службу хранилища Azure в качестве хранилища по умолчанию, содержимое элемента `<value>` начинается с `wasb://`. Если же используется Azure Data Lake Store, оно начинается с `adl://`.
 
     Сохраните содержимое элемента `<value>`, которое потребуется нам на следующих шагах.
@@ -376,7 +376,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
    * Замените все экземпляры `wasb://mycontainer@mystorageaccount.blob.core.windows.net` значением, полученным ранее для хранилища по умолчанию.
 
-     > [!WARNING]
+     > [!WARNING]  
      > Если используется путь `wasb`, его необходимо указать полностью. Не сокращайте его до строки `wasb:///`.
 
    * Замените `YourName` своим именем пользователя для кластера HDInsight.
@@ -384,7 +384,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
      Большая часть информации в этом файле используется для заполнения значений, используемых в файлах workflow.xml или ooziewf.hql, таких как `${nameNode}`.
 
-     > [!NOTE]
+     > [!NOTE]  
      > Запись `oozie.wf.application.path` определяет, где можно найти файл workflow.xml. Этот файл содержит рабочий процесс, запущенный этим заданием.
 
 5. Чтобы сохранить файл, нажмите Ctrl+X, введите `Y`, а затем нажмите клавишу **ВВОД**.
@@ -393,7 +393,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
 
 Далее используется команда Oozie для отправки рабочих процессов Oozie в кластер и управления ими. Команда Oozie предоставляет удобный интерфейс для [Oozie REST API](https://oozie.apache.org/docs/4.1.0/WebServicesAPI.html).
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > При использовании команды Oozie необходимо использовать полное доменное имя для головного узла HDInsight. Это полное доменное имя доступно только из кластера или, если кластер находится в виртуальной сети Azure, с других компьютеров той же сети.
 
 
@@ -435,7 +435,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
     oozie job -info <JOBID>
     ```
 
-    > [!NOTE]
+    > [!NOTE]  
     > Замените `<JOBID>` идентификатором, возвращенным на предыдущем шаге.
 
     Эта команда возвращает следующую информацию:
@@ -463,7 +463,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
     oozie job -start JOBID
     ```
 
-    > [!NOTE]
+    > [!NOTE]  
     > Замените `<JOBID>` идентификатором, возвращенным ранее.
 
     Если вы проверите состояние после этой команды, то увидите состояние выполнения и информацию о действиях для этого задания.
@@ -492,21 +492,21 @@ hdfs dfs -put /usr/share/java/sqljdbc_4.1/enu/sqljdbc*.jar /tutorials/useoozie/
         Windows Phone   1791
         (6 rows affected)
 
-Дополнительные сведения о команде Oozie см. на [странице, посвященной программе командной строки Oozie](https://oozie.apache.org/docs/4.1.0/DG_CommandLineTool.html).
+Дополнительные сведения о команде Oozie см. на [странице, посвященной программе командной строки Apache Oozie](https://oozie.apache.org/docs/4.1.0/DG_CommandLineTool.html).
 
 ## <a name="oozie-rest-api"></a>Oozie REST API
 
 Oozie REST API позволяет создавать собственные утилиты для работы с Oozie. Ниже приведена информация об использовании Oozie REST API для HDInsight:
 
-* **URI.** Вы можете получить доступ к REST API из-за пределов кластера по адресу `https://CLUSTERNAME.azurehdinsight.net/oozie`.
+* **Универсальный код ресурса (URI)**. Вы можете получить доступ к REST API из-за пределов кластера по адресу `https://CLUSTERNAME.azurehdinsight.net/oozie`.
 
-* **Аутентификация.** Для аутентификации используйте API, учетную запись кластера HTTP (администратор) и пароль. Например: 
+* **Аутентификация**. Для аутентификации используйте API, учетную запись кластера HTTP (администратор) и пароль. Например: 
 
     ```bash
     curl -u admin:PASSWORD https://CLUSTERNAME.azurehdinsight.net/oozie/versions
     ```
 
-Дополнительные сведения об использовании Oozie REST API см. в статье о [API веб-служб Oozie](https://oozie.apache.org/docs/4.1.0/WebServicesAPI.html).
+Дополнительные сведения об использовании Oozie REST API см. в статье об [API веб-служб Apache Oozie](https://oozie.apache.org/docs/4.1.0/WebServicesAPI.html).
 
 ## <a name="oozie-web-ui"></a>веб-интерфейс Oozie
 
@@ -540,11 +540,11 @@ Oozie REST API позволяет создавать собственные ут
 
 6. На вкладке **Job Info** (Сведения о задании) можно просмотреть базовую информацию о задании, а также отдельные действия в рамках задания. С помощью вкладок вверху можно просмотреть **определение задания**, **конфигурацию задания**, обратиться к **журналу задания** или просмотреть направленный ациклический граф (DAG) задания в разделе **Job DAG** (Направленный ациклический граф задания).
 
-   * **Job Log** (Журнал задания). Нажмите кнопку **Get Logs** (Получить журналы) для просмотра всех журналов задания или воспользуйтесь полем **Enter Search Filter** (Введите фильтр поиска) для выбора журналов с помощью фильтра.
+   * **Журнал задания**. Нажмите кнопку **Get Logs** (Получить журналы) для просмотра всех журналов задания или воспользуйтесь полем **Enter Search Filter** (Введите фильтр поиска) для выбора журналов с помощью фильтра.
 
        ![Журнал задания](./media/hdinsight-use-oozie-linux-mac/joblog.png)
 
-   * **Job DAG** (Направленный ациклический граф задания). DAG представляет собой графическое отображение путей данных рабочего процесса.
+   * **Направленный ациклический граф задания**. DAG представляет собой графическое представление путей данных рабочего процесса.
 
        ![Направленный ациклический граф задания](./media/hdinsight-use-oozie-linux-mac/jobdag.png)
 
@@ -660,7 +660,7 @@ Oozie REST API позволяет создавать собственные ут
 
     ![Информация о задании координатора](./media/hdinsight-use-oozie-linux-mac/coordinatorjobinfo.png)
 
-    > [!NOTE]
+    > [!NOTE]  
     > На этом изображении показаны только сведения об успешных запусках задания, а не сведения об отдельных действиях запланированного рабочего процесса. Для просмотра отдельных действий выберите одну из записей **Action** (Действие).
 
     ![Информация о действии](./media/hdinsight-use-oozie-linux-mac/coordinatoractionjob.png)
@@ -677,40 +677,40 @@ Oozie REST API позволяет создавать собственные ут
 
 Ниже приведены конкретные ошибки, которые могут возникнуть, и способы их устранения.
 
-### <a name="ja009-cannot-initialize-cluster"></a>JA009: Не удается инициализировать кластер
+### <a name="ja009-cannot-initialize-cluster"></a>JA009. Не удается инициализировать кластер
 
-**Симптомы**. Состояние задания изменяется на **SUSPENDED** (Приостановлено). В подробной информации о задании `RunHiveScript` состояние отображается как **START_MANUAL**. При выборе действия отображается следующее сообщение об ошибке:
+**Проблемы**. Состояние задания изменяется на **SUSPENDED** (Приостановлено). В подробной информации о задании `RunHiveScript` состояние отображается как **START_MANUAL**. При выборе действия отображается следующее сообщение об ошибке:
 
     JA009: Cannot initialize Cluster. Please check your configuration for map
 
-**Причина.** Адреса хранилища BLOB-объектов Azure, используемые в файле **job.xml**, не содержат контейнер хранилища или имя учетной записи хранения. Адрес хранилища BLOB-объектов должен иметь формат `wasb://containername@storageaccountname.blob.core.windows.net`.
+**Причина**. Адреса хранилища BLOB-объектов Azure, используемые в файле **job.xml**, не содержат контейнер хранилища или имя учетной записи хранения. Адрес хранилища BLOB-объектов должен иметь формат `wasb://containername@storageaccountname.blob.core.windows.net`.
 
-**Решение.** Измените адреса хранилища BLOB-объектов, используемые в задании.
+**Решение**. Измените адреса хранилища BLOB-объектов, используемые в задании.
 
-### <a name="ja002-oozie-is-not-allowed-to-impersonate-ltuser"></a>JA002: Oozie не разрешено работать от имени &lt;ПОЛЬЗОВАТЕЛЬ>
+### <a name="ja002-oozie-is-not-allowed-to-impersonate-ltuser"></a>JA002. Oozie не разрешено работать от имени &lt;ПОЛЬЗОВАТЕЛЬ>
 
-**Симптомы**. Состояние задания изменяется на **SUSPENDED** (Приостановлено). В подробной информации о задании `RunHiveScript` состояние отображается как **START_MANUAL**. Если выбрать действие, отобразится следующее сообщение об ошибке:
+**Проблемы**. Состояние задания изменяется на **SUSPENDED** (Приостановлено). В подробной информации о задании `RunHiveScript` состояние отображается как **START_MANUAL**. Если выбрать действие, отобразится следующее сообщение об ошибке:
 
     JA002: User: oozie is not allowed to impersonate <USER>
 
-**Причина.** Текущие права доступа не позволяют Oozie работать от имени учетной записи указанного пользователя.
+**Причина**. Текущие права доступа не позволяют Oozie работать от имени учетной записи указанного пользователя.
 
-**Решение.** Oozie может работать от имени пользователей из группы **users**. Для просмотра групп, в которые входит данный пользователь, воспользуйтесь командой `groups USERNAME` . Если пользователь не является членом группы **users**, добавьте его в группу следующей командой:
+**Решение**. Oozie может работать от имени пользователей из группы **users**. Для просмотра групп, в которые входит данный пользователь, воспользуйтесь командой `groups USERNAME` . Если пользователь не является членом группы **users**, добавьте его в группу следующей командой:
 
     sudo adduser USERNAME users
 
-> [!NOTE]
+> [!NOTE]  
 > Чтобы служба HDInsight поняла, что пользователь добавлен в группу, может потребоваться несколько минут.
 
 ### <a name="launcher-error-sqoop"></a>ОШИБКА запуска (Sqoop)
 
-**Симптомы**. Состояние задания изменяется на **KILLED** (Прекращено). В подробной информации о задании `RunSqoopExport` состояние отображается как **ERROR**. Если выбрать действие, отобразится следующее сообщение об ошибке:
+**Проблемы**. Состояние задания изменяется на **KILLED** (Прекращено). В подробной информации о задании `RunSqoopExport` состояние отображается как **ERROR**. Если выбрать действие, отобразится следующее сообщение об ошибке:
 
     Launcher ERROR, reason: Main class [org.apache.oozie.action.hadoop.SqoopMain], exit code [1]
 
-**Причина**: Sqoop не удалось загрузить драйвер базы данных, необходимый для доступа к базе данных.
+**Причина**. Sqoop не удалось загрузить драйвер базы данных, необходимый для доступа к базе данных.
 
-**Решение.** При использовании Sqoop из задания Oozie необходимо включить драйвер базы данных в ресурсы, используемые заданием, такие как workflow.xml. Кроме того, укажите архив, содержащий драйвер базы данных, из раздела `<sqoop>...</sqoop>` файла workflow.xml.
+**Решение**. При использовании Sqoop из задания Oozie необходимо включить драйвер базы данных в ресурсы, используемые заданием, такие как workflow.xml. Кроме того, укажите архив, содержащий драйвер базы данных, из раздела `<sqoop>...</sqoop>` файла workflow.xml.
 
 Например, для задания в этом документе необходимо выполнить следующие действия:
 
@@ -730,11 +730,11 @@ Oozie REST API позволяет создавать собственные ут
 
 Из этого руководства вы узнали, как задать рабочий процесс Oozie и как запустить задание Oozie. Дополнительные сведения о работе с HDInsight приведены в следующих статьях:
 
-* [Используйте учитывающий время координатор Oozie с Hadoop в HDInsight для определения рабочих процессов и координации заданий][hdinsight-oozie-coordinator-time]
-* [Отправка данных для заданий Hadoop в HDInsight][hdinsight-upload-data]
-* [Использование Sqoop с Hadoop в HDInsight][hdinsight-use-sqoop]
-* [Использование Hive с Hadoop в HDInsight][hdinsight-use-hive]
-* [Использование Pig с Hadoop в HDInsight][hdinsight-use-pig]
+* [Используйте учитывающий время координатор Apache Oozie с Hadoop в HDInsight для определения рабочих процессов и координации заданий][hdinsight-oozie-coordinator-time]
+* [Отправка данных для заданий Apache Hadoop в HDInsight][hdinsight-upload-data]
+* [Использование Apache Sqoop с Apache Hadoop в Azure HDInsight][hdinsight-use-sqoop]
+* [Использование Apache Hive с Apache Hadoop в HDInsight][hdinsight-use-hive]
+* [Использование Apache Pig с Apache Hadoop в HDInsight][hdinsight-use-pig]
 * [Разработка программ MapReduce на Java для Hadoop в HDInsight на платформе Linux][hdinsight-develop-mapreduce]
 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
@@ -761,13 +761,13 @@ Oozie REST API позволяет создавать собственные ут
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
 [apache-oozie-332]: http://oozie.apache.org/docs/3.3.2/
 
-[powershell-download]: http://azure.microsoft.com/downloads/
+[powershell-download]: https://azure.microsoft.com/downloads/
 [powershell-about-profiles]: http://go.microsoft.com/fwlink/?LinkID=113729
 [powershell-install-configure]: /powershell/azureps-cmdlets-docs
-[powershell-start]: http://technet.microsoft.com/library/hh847889.aspx
+[powershell-start]: https://technet.microsoft.com/library/hh847889.aspx
 [powershell-script]: https://technet.microsoft.com/library/ee176961.aspx
 
-[cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
+[cindygross-hive-tables]: https://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
 [img-workflow-diagram]: ./media/hdinsight-use-oozie/HDI.UseOozie.Workflow.Diagram.png
 [img-preparation-output]: ./media/hdinsight-use-oozie/HDI.UseOozie.Preparation.Output1.png

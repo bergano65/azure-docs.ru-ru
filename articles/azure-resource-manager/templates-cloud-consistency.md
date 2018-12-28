@@ -1,6 +1,6 @@
 ---
-title: Шаблоны Azure Resource Manager для обеспечения согласованности с облаком | Документы Майкрософт
-description: Шаблоны Azure Resource Manager для обеспечения согласованности с облаком Создание или обновление существующих шаблонов для Azure Stack.
+title: Повторное использование шаблонов в нескольких облаках Azure Resource Manager
+description: Разработка шаблонов Azure Resource Manager, которые согласованно работают в разных облачных средах. Создание или обновление существующих шаблонов для Azure Stack.
 services: azure-resource-manager
 documentationcenter: na
 author: marcvaneijk
@@ -9,14 +9,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 07/05/2018
+ms.date: 12/09/2018
 ms.author: mavane
-ms.openlocfilehash: f1ff151c0b8d89910949d961b732c10901f19293
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.custom: seodec18
+ms.openlocfilehash: 28542bb66fe1e523201967a9dd67fd7e41fed7a0
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38723376"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53135633"
 ---
 # <a name="develop-azure-resource-manager-templates-for-cloud-consistency"></a>Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком
 
@@ -434,7 +435,7 @@ Get-AzureRmResourceProvider | select-object ProviderNamespace -ExpandProperty Re
 Следующие два примера — типичные пространства имен конечных точек, которые должны быть явно указаны при создании ресурса:
 
 * Учетные записи хранения (BLOB-объекты, очереди, таблицы и файлы)
-* Строки подключения для баз данных и кэша Redis
+* Строки подключения для баз данных и кэша Azure для Redis
 
 Пространства имен конечных точек также можно использовать в выходных данных шаблона как сведения для пользователя после завершения развертывания. Ниже приведено несколько типичных примеров.
 

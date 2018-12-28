@@ -9,16 +9,15 @@ ms.assetid: 106ba99b-b57a-43b8-8866-e02f626c8190
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: mbullwin
-ms.openlocfilehash: 461b1f4e72f0a47da4ccb560bfb4cfb7d0f3ccd2
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 850ff2cfb02b5a968a40e0cd43b5c65d9d4e3490
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47096441"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53001730"
 ---
 # <a name="manually-configure-application-insights-for-net-applications"></a>Настройка Application Insights вручную для приложений .NET
 
@@ -30,14 +29,14 @@ ms.locfileid: "47096441"
 
 Вам необходимы:
 
-* подписка на [Microsoft Azure](http://azure.com). Если у вашей группы или организации есть подписка Azure, владелец может добавить вас в нее с помощью вашей [учетной записи Майкрософт](http://live.com).
+* подписка на [Microsoft Azure](https://azure.com). Если у вашей группы или организации есть подписка Azure, владелец может добавить вас в нее с помощью вашей [учетной записи Майкрософт](https://live.com).
 * Visual Studio 2013 или более поздняя версия.
 
 ## <a name="add"></a>1. Выбор ресурса Application Insights
 
 Ресурс — место, где ваши данные собираются и отображаются на портале Azure. Определитесь, что вам нужно: создать еще один ресурс или совместно использовать имеющийся.
 
-### <a name="part-of-a-larger-app-use-existing-resource"></a>Часть большего приложения. Использование имеющегося ресурса
+### <a name="part-of-a-larger-app-use-existing-resource"></a>Часть приложение большего размера — используйте существующий ресурс
 
 Если веб-приложение состоит из нескольких компонентов, например интерфейсное веб-приложение и одна или несколько серверных служб, вы должны отправлять телеметрию со всех компонентов в один ресурс. Так они будут отображаться на единой схеме сопоставления приложений, а вы сможете отслеживать запрос от одного компонента к другому.
 
@@ -45,7 +44,7 @@ ms.locfileid: "47096441"
 
 Откройте ресурс на [портале Azure](https://portal.azure.com/). 
 
-### <a name="self-contained-app-create-a-new-resource"></a>Автономное приложение. Создание ресурса
+### <a name="self-contained-app-create-a-new-resource"></a>Автономное приложение — Создать новый ресурс
 
 Если новое приложение не связано с другими приложениями, оно должно иметь свой ресурс.
 

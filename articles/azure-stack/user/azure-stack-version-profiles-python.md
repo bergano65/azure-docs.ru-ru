@@ -14,12 +14,12 @@ ms.date: 08/15/2018
 ms.author: sethm
 ms.reviewer: sijuman
 <!-- dev: viananth -->
-ms.openlocfilehash: 657eefcd5b7793f2f181d074084a272e65943681
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 17fb8a82709e7c0c7353b70f7731895889167a79
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51246452"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52873960"
 ---
 # <a name="use-api-version-profiles-with-python-in-azure-stack"></a>Использование профилей версий API и Python в Azure Stack
 
@@ -153,5 +153,5 @@ os_disk = compute_client.disks.get(GROUP_NAME, os_disk_name)
 
 - [Центр разработки на Python Azure](https://azure.microsoft.com/develop/python/)
 - [Документация по виртуальным машинам Azure](https://azure.microsoft.com/services/virtual-machines/)
-- [Схема обучения для виртуальных машин](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/)
+- [Схема обучения для виртуальных машин](/learn/paths/deploy-a-website-with-azure-virtual-machines/)
 - Если у вас нет подписки Microsoft Azure, [здесь](https://go.microsoft.com/fwlink/?LinkId=330212) можно создать учетную запись и получить бесплатную пробную версию.

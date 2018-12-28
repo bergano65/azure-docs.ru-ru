@@ -1,5 +1,5 @@
 ---
-title: Настройка устройства Azure IoT Edge для прокси-серверов сети | Документы Майкрософт
+title: Настройка устройства для прокси-серверов сети — Azure IoT Edge | Документация Майкрософт
 description: Сведения о настройке среды выполнения Azure IoT Edge и модулей IoT Edge с подключением к Интернету для обмена данными через прокси-сервер.
 author: kgremban
 manager: ''
@@ -8,12 +8,13 @@ ms.date: 11/01/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 72855058c5e8294eece55f8dbcdc501025c9aabf
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.custom: seodec18
+ms.openlocfilehash: a7d32c98b77568e02fa14b70e969eeb254989062
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50913229"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100486"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Настройка устройства IoT Edge для обмена данными через прокси-сервер
 
@@ -103,7 +104,7 @@ sudo systemctl restart iotedge
 systemctl show --property=Environment iotedge
 ```
 
-#### <a name="windows"></a>Windows
+#### <a name="windows"></a> Windows
 
 Откройте окно PowerShell от имени администратора и выполните следующую команду, чтобы внести изменения в реестр с помощью новой переменной среды. Замените **\<proxy url>** на адрес и порт прокси-сервера. 
 
@@ -173,7 +174,7 @@ UpstreamProtocol: "AmqpWs"
 
 Добавьте переменную среды **https_proxy** и в агент Edge, и в определения модуля центра Edge. Если вы добавили переменную среды **UpstreamProtocol** в файл config.yaml на устройстве IoT Edge, добавьте ее также в определение модуля агента Edge. 
 
-![Настройка переменных среды](./media/how-to-configure-proxy-support/edgehub-environmentvar.png)
+![Задание переменной среды https_proxy](./media/how-to-configure-proxy-support/edgehub-environmentvar.png)
 
 Все остальные модули, добавляемые в манифест развертывания, должны соответствовать той же схеме. Раздел переменных среды находится на странице настройки имени и изображения модуля.
 

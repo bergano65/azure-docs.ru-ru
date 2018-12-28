@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/15/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: d4399fd26c4c536f89bb15e16bfc67fb1d0940fa
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 4e13050715927fb0b158c32393b56b32290cf175
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37055494"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53078095"
 ---
 # <a name="copy-data-from-vertica-using-azure-data-factory"></a>Копирование данных из Vertica с помощью Фабрики данных Azure 
 
@@ -71,7 +71,12 @@ ms.locfileid: "37055494"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Vertica.
 
-Чтобы скопировать данные из Vertica, установите свойство type набора данных **VerticaTable**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные из Vertica, установите свойство type набора данных **VerticaTable**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Для свойства type набора данных необходимо задать значение **VerticaTable** | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -83,7 +88,8 @@ ms.locfileid: "37055494"
         "linkedServiceName": {
             "referenceName": "<Vertica linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -98,8 +104,8 @@ ms.locfileid: "37055494"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **VerticaSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Yes |
+| Тип | Для свойства type источника действия копирования необходимо задать значение **VerticaSource** | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

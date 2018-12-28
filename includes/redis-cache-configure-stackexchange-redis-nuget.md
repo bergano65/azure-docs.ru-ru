@@ -4,19 +4,19 @@ ms.service: redis-cache
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: wesmc
-ms.openlocfilehash: ba73c481dace43dc72f6740a94bca362763dabac
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: 8ebf5ddfa118e0aeadeab0c00a981871a4b5708e
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51572668"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53430033"
 ---
 Приложения .NET могут использовать клиент кэша **StackExchange.Redis** , который можно настроить в Visual Studio, используя пакет NuGet, упрощающий настройку клиентских приложений кэша. 
 
 > [!NOTE]
-> Дополнительные сведения см. на странице GitHub, посвященной [StackExchange.Redis](http://github.com/StackExchange/StackExchange.Redis), и в [документации по клиенту кэша StackExchange.Redis](http://github.com/StackExchange/StackExchange.Redis#documentation).
-> 
-> 
+> Дополнительные сведения см. на странице GitHub, посвященной [StackExchange.Redis](http://github.com/StackExchange/StackExchange.Redis), и в [документации по клиенту кэша Redis StackExchange.Azure](http://github.com/StackExchange/StackExchange.Redis#documentation).
+>
+>
 
 Чтобы настроить клиентское приложение в Visual Studio, используя пакет StackExchange.Redis из NuGet, щелкните правой кнопкой мыши **обозреватель решений** и выберите **Управление пакетами NuGet**. 
 
@@ -26,20 +26,20 @@ ms.locfileid: "51572668"
 
 > [!NOTE]
 > Если вы хотите использовать версию клиентской библиотеки **StackExchange.Redis** со строгими именами, выберите **StackExchange.Redis.StrongName**, в противном случае выберите **StackExchange.Redis**.
-> 
-> 
+>
+>
 
 ![Пакет NuGet StackExchange.Redis](media/redis-cache-configure-stackexchange-redis-nuget/redis-cache-stackexchange-redis.png)
 
-Пакет NuGet загружает и добавляет необходимые ссылки на сборки в клиентском приложении для доступа к кэшу Azure Redis из клиента кэша StackExchange.Redis.
+Пакет NuGet загружает и добавляет необходимые ссылки на сборки в клиентском приложении для доступа к кэшу Redis для Azure из клиента StackExchange.Azure кэша Redis.
 
 > [!NOTE]
 > Если ранее вы настроили проект для использования StackExchange.Redis, то можете проверять наличие обновлений для пакета с помощью **диспетчера пакетов NuGet**. Чтобы проверить наличие обновленных версий пакета NuGet StackExchange.Redis и установить их, щелкните **Updates** (Обновления) в окне **диспетчера пакетов NuGet**. Если доступно обновление для пакета NuGet для StackExchange.Redis, то можно обновить проект, чтобы использовать эту обновленную версию.
-> 
-> 
+>
+>
 
 Вы также можете установить пакет StackExchange.Redis NuGet, щелкнув в меню **Средства** **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**, а затем выполнив в окне **консоли диспетчера пакетов** следующую команду.
-    
+
 ```
 Install-Package StackExchange.Redis
 ```

@@ -8,18 +8,18 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 07/04/2018
+ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 265314ebf2568bd586934d371e1e6c1d74e0b9bb
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 359594ab91b903033ecc303eccd270988be19810
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637019"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53336533"
 ---
 # <a name="overview-of-function-types-and-features-for-durable-functions-azure-functions"></a>Общие сведения о типах и возможностях функций в устойчивых функциях в Azure (Функции Azure)
 
-Устойчивые функции Azure предоставляют возможность оркестрации выполнения функции с отслеживанием состояния. Устойчивая функция — это решение, сформированное из различных функций Azure. В процессе оркестрации каждая из этих функций может выполнять разные роли. В следующем документе содержится обзор типов функций, применяемых в оркестрации устойчивых функций. Здесь также приводятся некоторые распространенные схемы взаимодействия функций.  Чтобы начать прямо сейчас, создайте устойчивую функцию в [ C# ](durable-functions-create-first-csharp.md) или [JavaScript](quickstart-js-vscode.md).
+Устойчивые функции Azure позволяют оркестрировать выполнение функций с отслеживанием состояния. Устойчивая функция — это решение, сформированное из различных функций Azure. В процессе оркестрации каждая из этих функций может выполнять разные роли. В следующем документе содержится обзор типов функций, применяемых в оркестрации устойчивых функций. Здесь также приводятся некоторые распространенные схемы взаимодействия функций.  Чтобы начать прямо сейчас, создайте устойчивую функцию на языке [C#](durable-functions-create-first-csharp.md) или [JavaScript](quickstart-js-vscode.md).
 
 ![Типы устойчивых функций][1]  
 
@@ -27,15 +27,17 @@ ms.locfileid: "52637019"
 
 ### <a name="activity-functions"></a>Функции действий
 
-Функции действий являются базовой единицей работы в устойчивой оркестрации.  Функции действий — это функции и задачи, управляемые в процессе.  Например, можно создать устойчивую функцию для обработки заказа, которая проверяет запасы, получает оплату от клиента и организует доставку.  Каждая из этих задач будет представлять функцию действия.  У функций действий нет ограничений по типу выполняемых работ.  Они могут быть написаны на любом языке, поддерживаемом функциями Azure.  Платформа устойчивых задач гарантирует, что каждая вызываемая функция действия будет выполнена во время оркестрации по меньшей мере один раз.
+Функции действий являются базовой единицей работы в устойчивой оркестрации.  Функции действий — это функции и задачи, управляемые в процессе.  Например, можно создать устойчивую функцию для обработки заказа, которая проверяет запасы, получает оплату от клиента и организует доставку.  Каждая из этих задач будет представлять функцию действия.  У функций действий нет ограничений по типу выполняемых работ.  Они могут быть написаны на любом [языке, поддерживаемом устойчивыми функциями ](durable-functions-overview.md#language-support). Платформа устойчивых задач — залог того, что каждая вызываемая функция действия будет выполнена во время оркестрации по меньшей мере один раз.
 
-Функция действия должна активироваться с помощью [триггера действия](durable-functions-bindings.md#activity-triggers).  В качестве параметра эта функция получит [DurableActivityContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html). Триггер можно также привязать к любому другому объекту для передачи входных данных в функцию.  Функция действия может возвращать значения в оркестратор.  При отправке большого количества значений в функцию действия или при возвращении из нее больших объемов данных можно [использовать кортежи и массивы](durable-functions-bindings.md#passing-multiple-parameters).  Функции действий запускаются только из экземпляра оркестрации.  Несмотря на то, что у функции действия и другой функции (например, функции, активируемой по HTTP) могут быть общие фрагменты кода, для каждой функции поддерживается только один триггер.
+Функция действия должна активироваться с помощью [триггера действия](durable-functions-bindings.md#activity-triggers).  В качестве параметра функции .NET получат [DurableActivityContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html). Триггер можно также привязать к любому другому объекту для передачи входных данных в функцию. На JavaScript данные можно вводить через `<activity trigger binding name>` свойство [`context.bindings` object](../functions-reference-node.md#bindings).
+
+Функция действия может возвращать значения в оркестратор.  При отправке большого количества значений в функцию действия или при возвращении из нее больших объемов данных можно [использовать кортежи и массивы](durable-functions-bindings.md#passing-multiple-parameters).  Функции действий запускаются только из экземпляра оркестрации.  Несмотря на то, что у функции действия и другой функции (например, функции, активируемой по HTTP) могут быть общие фрагменты кода, для каждой функции поддерживается только один триггер.
 
 Дополнительные сведения и примеры можно найти в [статье о привязке устойчивых функций](durable-functions-bindings.md#activity-triggers).
 
 ### <a name="orchestrator-functions"></a>Функции оркестратора
 
-Функции оркестратора являются ядром устойчивой функции.  Они описывают способ и порядок выполнения действий.  Функции оркестратора описывают оркестрацию в коде (C# или JavaScript), как показано в статье с [обзором устойчивых функций](durable-functions-overview.md).  Оркестрация может поддерживать различные типы действий, например [функции действий](#activity-functions), [вложенные оркестрации](#sub-orchestrations), [ожидание внешних событий](#external-events) и [ таймеры](#durable-timers).  
+Функции оркестратора являются ядром устойчивой функции.  Они описывают способ и порядок выполнения действий.  Функции оркестратора описывают оркестрацию в коде (C# или JavaScript), как показано в статье с [обзором устойчивых функций](durable-functions-overview.md).  Оркестрация может поддерживать различные типы действий, например [функции действий](#activity-functions), [вложенные оркестрации](#sub-orchestrations), [ожидание внешних событий](#external-events) и [таймеры](#durable-timers).  
 
 Функция оркестратора должена активироваться [триггером оркестрации](durable-functions-bindings.md#orchestration-triggers).
 
@@ -79,7 +81,9 @@ ms.locfileid: "52637019"
 
 В то время как устойчивая оркестрация обычно размещается в контексте одного приложения-функции, существуют шаблоны для координации оркестраций между множеством приложений-функций.  Несмотря на то, что взаимодействие между приложениями может осуществляться только по протоколу HTTP, используя платформу устойчивых функций для каждого действия, вы можете по-прежнему поддерживать устойчивый процесс между двумя приложениями.
 
-Ниже приведен пример оркестрации между приложениями-функциями на C#.  Одно действие запускает внешнюю оркестрацию. Другое действие извлекает и возвращает состояние.  Перед продолжением оркестратор ожидает завершение состояния.
+Ниже приведены примеры оркестрации между приложениями-функциями на C# и JavaScript.  Одно действие запускает внешнюю оркестрацию. Другое действие извлекает и возвращает состояние.  Перед продолжением оркестратор ожидает завершение состояния.
+
+#### <a name="c"></a>C#
 
 ```csharp
 [FunctionName("OrchestratorA")]
@@ -128,6 +132,64 @@ public static async Task<bool> CheckIsComplete([ActivityTrigger] string statusUr
         return response.StatusCode == HttpStatusCode.OK;
     }
 }
+```
+
+#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+
+```javascript
+const df = require("durable-functions");
+const moment = require("moment");
+
+module.exports = df.orchestrator(function*(context) {
+    // Do some work...
+
+    // Call a remote orchestration
+    const statusUrl = yield context.df.callActivity("StartRemoteOrchestration", "OrchestratorB");
+
+    // Wait for the remote orchestration to complete
+    while (true) {
+        const isComplete = yield context.df.callActivity("CheckIsComplete", statusUrl);
+        if (isComplete) {
+            break;
+        }
+
+        const waitTime = moment(context.df.currentUtcDateTime).add(1, "m").toDate();
+        yield context.df.createTimer(waitTime);
+    }
+
+    // B is done. Now go do more work...
+});
+```
+
+```javascript
+const request = require("request-promise-native");
+
+module.exports = async function(context, orchestratorName) {
+    const options = {
+        method: "POST",
+        uri: `https://appB.azurewebsites.net/orchestrations/${orchestratorName}`,
+        body: ""
+    };
+
+    const statusUrl = await request(options);
+    return statusUrl;
+};
+```
+
+```javascript
+const request = require("request-promise-native");
+
+module.exports = async function(context, statusUrl) {
+    const options = {
+        method: "GET",
+        uri: statusUrl,
+        resolveWithFullResponse: true,
+    };
+
+    const response = await request(options);
+    // 200 = Complete, 202 = Running
+    return response.statusCode === 200;
+};
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

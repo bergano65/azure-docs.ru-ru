@@ -12,14 +12,14 @@ ms.author: xiwu
 ms.reviewer: douglasl
 manager: craigg
 ms.date: 11/07/2018
-ms.openlocfilehash: 7ab1c0f918b5e5b9135e8d1b91f0f97a6c95d05e
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 9175ed0b4f362a40e1d29a20a8378854b5f4cc81
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685435"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53310392"
 ---
-# <a name="tutorial-set-up-sql-data-sync-to-sync-data-between-azure-sql-database-and-sql-server-on-premises"></a>Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server
+# <a name="tutorial-set-up-sql-data-sync-to-sync-data-between-azure-sql-database-and-sql-server-on-premises"></a>Руководство. Настройка синхронизации данных SQL между Базой данных SQL Azure и локальным сервером SQL Server
 
 В этом руководстве вы узнаете, как для настроить синхронизацию данных SQL Azure, создав гибридную группу синхронизации, содержащую экземпляры базы данных SQL Azure и SQL Server. Новая группа синхронизации полностью настраивается и синхронизируется по заданному расписанию.
 
@@ -199,7 +199,7 @@ ms.locfileid: "51685435"
 
 ### <a name="how-frequently-can-data-sync-synchronize-my-data"></a>Как часто функция синхронизации данных может синхронизировать мои данные?
 
-Минимальная частота — каждые пять минут.
+Минимальный интервал времени между запусками синхронизации составляет пять минут.
 
 ### <a name="does-sql-data-sync-fully-create-and-provision-tables"></a>Используется ли функция "Синхронизация данных SQL" для полного создания и предоставления таблиц?
 

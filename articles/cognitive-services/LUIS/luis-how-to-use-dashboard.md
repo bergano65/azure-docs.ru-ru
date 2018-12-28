@@ -1,23 +1,24 @@
 ---
-title: Панель мониторинга для приложений Интеллектуальной службы распознавания речи
-titleSuffix: Azure Cognitive Services
+title: Панель мониторинга приложения
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Сведения о панели мониторинга приложений, визуализированном средстве создания отчетов, которое обеспечивает удобную среду отслеживания приложений.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: diberry
-ms.openlocfilehash: 0daf25b3c7edc69ada57fb3ce2b8dbb7e50e5aed
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 6f6de278e802b83623413b0bf70e556d083818c8
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52335016"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53140614"
 ---
-# <a name="application-dashboard"></a>Панель мониторинга приложений
+# <a name="model-and-usage-statistics-in-the-dashboard"></a>Статистические сведения о модели и потреблении ресурсов на панели мониторинга
 Панель мониторинга приложений позволяет отслеживать приложения в одном расположении. **Панель мониторинга** отображается при открытии приложения: щелкните имя приложения на странице **Мои приложения** и выберите **Панель мониторинга** на верхней панели. 
 
 > [!CAUTION]
@@ -70,7 +71,7 @@ ms.locfileid: "52335016"
 
 Чтобы выбрать основу для анализа намерений (по помеченным фрагментам речи или совпадениям конечной точки), выполните следующие действия.
 
-1. Нажмите кнопку **Дополнительные параметры** ![кнопка "Дополнительные параметры"](./media/luis-how-to-use-dashboard/Dashboard-Settings-btn.png), чтобы перейти к списку, как показано на рисунке ниже.
+1. Нажмите кнопку **Дополнительные параметры** ![кнопка "Дополнительные параметры" для перехода к списку](./media/luis-how-to-use-dashboard/Dashboard-Settings-btn.png), чтобы перейти к списку, как показано на рисунке ниже.
 
     ![Список анализа намерений](./media/luis-how-to-use-dashboard/intent-breakdown-based-on.png)
 2. Выберите в списке значение и нажмите кнопку со стрелкой "назад", ![Стрелка "назад"](./media/luis-how-to-use-dashboard/Dashboard-backArrow.png) чтобы отобразить диаграмму.
@@ -82,7 +83,7 @@ ms.locfileid: "52335016"
 
 Чтобы выбрать основу для анализа намерений (по помеченным фрагментам речи или совпадениям конечной точки), выполните следующие действия.
 
-1. Нажмите кнопку **Дополнительные параметры** ![кнопка "Дополнительные параметры"](./media/luis-how-to-use-dashboard/Dashboard-Settings-btn.png), чтобы перейти к списку, как показано на рисунке ниже.
+1. Нажмите кнопку **Дополнительные параметры** ![кнопка "Дополнительные параметры" для получения списка](./media/luis-how-to-use-dashboard/Dashboard-Settings-btn.png), чтобы перейти к списку, как показано на рисунке ниже.
 
     ![Список анализа сущностей](./media/luis-how-to-use-dashboard/entity-breakdown-based-on.png)
 2. Выберите в списке значение и нажмите кнопку со стрелкой "назад", ![Стрелка "назад"](./media/luis-how-to-use-dashboard/Dashboard-backArrow.png) чтобы отобразить соответствующую диаграмму.

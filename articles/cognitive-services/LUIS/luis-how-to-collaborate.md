@@ -1,21 +1,22 @@
 ---
-title: Совместная работа с другими участниками над приложениями LUIS
-titleSuffix: Azure Cognitive Services
+title: Совместная работа с другими пользователями
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Владелец приложения может добавлять в приложение участников совместной работы. Они могут изменять модель, обучать и публиковать приложение.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: b7d108bfc0c4283e7856b93daba3f4f92af4cc5b
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: d1db8974ce134b50340db500c9ea1b00126fe10a
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47042199"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53086425"
 ---
 # <a name="how-to-manage-authors-and-collaborators"></a>Как управлять авторами и участниками совместной работы 
 
@@ -31,7 +32,7 @@ ms.locfileid: "47042199"
 
 2. На панели инструментов следует выбрать **Add Collaborator** (Добавить участника совместной работы).
 
-    [![](./media/luis-how-to-collaborate/add-collaborator.png "Добавление участника совместной работы")](./media/luis-how-to-collaborate/add-collaborator.png#lightbox)
+    [![Добавление участника совместной работы](./media/luis-how-to-collaborate/add-collaborator.png "Добавить участника совместной работы")](./media/luis-how-to-collaborate/add-collaborator.png#lightbox)
 
 3. Чтобы войти на портал LUIS необходимо выбрать адрес электронной почты, используемый участником совместной работы.
 

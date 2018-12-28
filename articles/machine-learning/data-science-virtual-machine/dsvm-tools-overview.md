@@ -1,11 +1,12 @@
 ---
 title: Обзор средств виртуальных машин для обработки и анализа данных в Azure | Документация Майкрософт
-description: Обзор средств виртуальных машин для обработки и анализа данных.
+description: Узнайте о средствах и служебных программах, предустановленных на виртуальной машине для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
 documentationcenter: ''
 author: gopitk
 manager: cgronlun
+ms.custom: seodec18
 ms.assetid: ''
 ms.service: machine-learning
 ms.component: data-science-vm
@@ -15,12 +16,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
-ms.openlocfilehash: 9f10c30c8619a32e65063bbc83fd885aee93a4fa
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: 7c51a44f7fcd46e9c15700fe91a4c86afbe02801
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31407034"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100962"
 ---
 # <a name="get-to-know-your-data-science-virtual-machine"></a>Общие сведения о виртуальной машине для обработки и анализа данных
 

@@ -1,7 +1,7 @@
 ---
-title: Получение GIF-изображений — API Bing для поиска изображений
+title: Поиск GIF-изображений с использованием API Bing для поиска изображений
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как использовать API Bing для поиска изображений для получения дополнительных сведений о GIF-изображениях.
+description: Используйте API Bing для поиска изображений, чтобы выполнять поиск GIF-изображений в Интернете.
 services: cognitive-services
 author: MikeDodaro
 manager: cgronlun
@@ -10,16 +10,17 @@ ms.component: bing-image-search
 ms.topic: article
 ms.date: 04/24/2018
 ms.author: rosh
-ms.openlocfilehash: 82a096ccc1ead9bfb542663ae193539fc227c1fb
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.custom: seodec2018
+ms.openlocfilehash: 7536452d3ed0030b34e4f30deba56d6d8ae1957c
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48870253"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53249317"
 ---
-# <a name="search-for-gif-images-using-the-bing-image-search-api"></a>Поиск GIF-изображений с использованием API Bing для поиска изображений
+# <a name="search-for-gif-images"></a>Поиск GIF-изображений 
 
-API Bing для поиска изображений позволяет также искать по всему Интернету наиболее релевантные GIF-изображения.  Разработчики могут интегрировать привлекательные GIF-файлы в различные сценарии общения. 
+API Bing для поиска изображений позволяет также искать по всему Интернету наиболее релевантные GIF-изображения.  Разработчики могут интегрировать привлекательные GIF-файлы в различные сценарии общения. 
 
 Приведенный ниже URL-адрес является запросом анимационных GIF-изображений.
 ````

@@ -10,12 +10,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: 0f9d786988cb547771b8fd999b911bd228cdc3e2
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: b667cfad6eb2a2a13e4b84dacaad0bcd3dfa91b9
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52311047"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53017139"
 ---
 # <a name="get-started-with-an-apache-hbase-example-in-hdinsight"></a>Начало работы с примером Apache HBase в HDInsight
 
@@ -28,22 +28,22 @@ ms.locfileid: "52311047"
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * [Secure Shell(SSH).](../hdinsight-hadoop-linux-use-ssh-unix.md) 
-* [curl](http://curl.haxx.se/download.html).
+* [curl](https://curl.haxx.se/download.html).
 
 ## <a name="create-apache-hbase-cluster"></a>Создание кластера Apache HBase
-В следующей процедуре используется шаблон Azure Resource Manager, чтобы создать кластер HBase и зависимую учетную запись хранения Azure по умолчанию. Описание параметров, используемых в процедуре, и других методов создания кластеров см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). Дополнительные сведения об использовании Data Lake Storage Gen2 см. в статье [Краткое руководство по установке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
+В следующей процедуре используется шаблон Azure Resource Manager, чтобы создать кластер HBase и зависимую учетную запись хранения Azure по умолчанию. Описание параметров, используемых в процедуре, и других методов создания кластеров см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). Дополнительные сведения об использовании Data Lake Storage 2-го поколения см. в [кратком руководстве по установке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
 1. Щелкните следующее изображение, чтобы открыть шаблон на портале Azure. Шаблон находится в [шаблонах быстрого запуска Azure](https://azure.microsoft.com/resources/templates/).
    
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-tutorial-get-started-linux/deploy-to-azure.png" alt="Deploy to Azure"></a>
 2. В колонке **Настраиваемое развертывание** укажите следующие значения.
    
-   * **Подписка**: выберите подписку Azure, которая используется для создания этого кластера.
-   * **Группа ресурсов**: создайте группу ресурсов Azure или выберите существующую.
-   * **Расположение**: укажите расположение группы ресурсов. 
-   * **Имя кластера**: укажите имя кластера HBase.
-   * **Имя для входа и пароль кластера**: имя для входа по умолчанию — **admin**.
-   * **Имя пользователя SSH и пароль**: по умолчанию используется имя **sshuser**.  Это имя можно изменить.
+   * **Подписка**. Выберите подписку Azure, которая используется для создания этого кластера.
+   * **Группа ресурсов**. Создайте группу управления ресурсами Azure или выберите существующую.
+   * **Расположение**. Укажите расположение группы ресурсов. 
+   * **Имя кластера**. Укажите имя кластера HBase.
+   * **Имя для входа и пароль для кластера**. Имя для входа по умолчанию — **admin**.
+   * **Имя пользователя SSH и пароль**. Имя пользователя по умолчанию — **sshuser**.  Это имя можно изменить.
      
      Все остальные параметры являются необязательными.  
      
@@ -174,7 +174,7 @@ HBase включает несколько методов загрузки дан
 
 ## <a name="use-hbase-rest-apis-using-curl"></a>Использование API REST для HBase
 
-REST API защищен с помощью [обычной проверки подлинности](http://en.wikipedia.org/wiki/Basic_access_authentication). Чтобы обеспечить безопасную отправку учетных данных на сервер, все запросы следует отправлять с помощью протокола HTTPS.
+REST API защищен с помощью [обычной проверки подлинности](https://en.wikipedia.org/wiki/Basic_access_authentication). Чтобы обеспечить безопасную отправку учетных данных на сервер, все запросы следует отправлять с помощью протокола HTTPS.
 
 2. Для получения списка имеющихся таблиц HBase используйте следующую команду:
 
@@ -208,9 +208,9 @@ REST API защищен с помощью [обычной проверки по�
    
     Необходимо закодировать значения, указанные в параметре -d, используя кодировку base64. Ознакомьтесь со следующим примером:
    
-   * MTAwMA==: 1000;
+   * MTAwMA==: 1000
    * UGVyc29uYWw6TmFtZQ==: Personal:Name
-   * Sm9obiBEb2xl: John Dole.
+   * Sm9obiBEb2xl: John Dole
      
      [false-row-key](https://hbase.apache.org/apidocs/org/apache/hadoop/hbase/rest/package-summary.html#operation_cell_store_single) позволяет вставить несколько (пакетных) значений.
 5. Для получения строки используйте следующую команду:
@@ -272,7 +272,7 @@ HBase на HDInsight поставляется с веб-интерфейсом �
 
 Дополнительные сведения см. на следующих ресурсах:
 
-* [Общие сведения об HBase в HDInsight][hdinsight-hbase-overview]. Apache HBase — это база данных NoSQL с открытым исходным кодом Apache, разработанная в рамках проекта Apache Hadoop. Она обеспечивает произвольный доступ и строгую согласованность больших объемов неструктурированных и частично структурированных данных.
+* [Общие сведения о HBase в HDInsight][hdinsight-hbase-overview]. Apache HBase — это разработанная Apache база данных NoSQL с открытым исходным кодом, созданная на основе Apache Hadoop. HBase обеспечивает произвольный доступ и строгую согласованность для больших объемов неструктурированных и слабоструктурированных данных.
 
 [hdinsight-manage-portal]: hdinsight-administer-use-management-portal.md
 
@@ -288,11 +288,11 @@ HBase на HDInsight поставляется с веб-интерфейсом �
 [hdinsight-hbase-overview]:apache-hbase-overview.md
 [hdinsight-hbase-provision-vnet]:apache-hbase-provision-vnet.md
 [hdinsight-versions]: hdinsight-component-versioning.md
-[azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
-[azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
-[azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
+[azure-purchase-options]: https://azure.microsoft.com/pricing/purchase-options/
+[azure-member-offers]: https://azure.microsoft.com/pricing/member-offers/
+[azure-free-trial]: https://azure.microsoft.com/pricing/free-trial/
 [azure-portal]: https://portal.azure.com/
-[azure-create-storageaccount]: http://azure.microsoft.com/documentation/articles/storage-create-storage-account/
+[azure-create-storageaccount]: https://azure.microsoft.com/documentation/articles/storage-create-storage-account/
 
 [img-hbase-shell]: ./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-shell.png
 [img-hbase-sample-data-tabular]: ./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-contacts-tabular.png

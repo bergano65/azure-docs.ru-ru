@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/20/2018
 ms.author: genli
-ms.openlocfilehash: cb9058d4f68b2dc202edeeaa6cafb2eefa82470b
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: c32612c411f275220f549eea79276fa5a7232fd0
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52284733"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52954618"
 ---
 #  <a name="cannot-connect-remotely-to-a-vm-because-rdp-port-is-not-enabled-in-nsg"></a>Ошибка удаленного подключения к виртуальной машине из-за отключенного порта RDP в NSG
 
@@ -26,7 +26,7 @@ ms.locfileid: "52284733"
 
 
 > [!NOTE] 
-> В Azure предусмотрены две модели развертывания, позволяющие создавать ресурсы и работать с ними: [модель Resource Manager и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). Для новых развертываний мы рекомендуем использовать модель развертывания Resource Manager вместо классической. 
+> В Azure предусмотрены две модели развертывания, позволяющие создавать ресурсы и работать с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). Для новых развертываний мы рекомендуем использовать модель развертывания Resource Manager вместо классической. 
 
 ## <a name="symptom"></a>Симптом
 
@@ -48,8 +48,8 @@ ms.locfileid: "52284733"
     **Порт**: 3389 </br>
     **Протокол**: TCP </br>
     **Источник**: Любой </br>
-    **Назначение**: Любое </br>
-    **Действие**: Разрешить </br>
+    **Назначения**: Любой </br>
+    **Действие**: РАЗРЕШИТЬ </br>
 
 Если вы указываете IP-адрес источника, этот параметр разрешает передачу трафика только с определенного IP-адреса или диапазона IP-адресов для подключения к виртуальной машине. Убедитесь, что компьютер, который используется для начала сеанса RDP, находится в диапазоне.
 

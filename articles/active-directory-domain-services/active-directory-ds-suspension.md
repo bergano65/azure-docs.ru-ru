@@ -1,5 +1,5 @@
 ---
-title: 'Доменные службы Azure Active Directory: приостановленные домены | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Приостановленные домены | Документация Майкрософт
 description: Приостановка и удаление управляемого домена
 services: active-directory-ds
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/20/2018
 ms.author: ergreenl
-ms.openlocfilehash: 31e7307e427b175eb7424ecaee380bd90ce8150e
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 161a9f1ac517d372884e7606dbd2ef30c910bf6b
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52443412"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52968106"
 ---
 # <a name="suspended-domains"></a>Приостановленные домены
 Когда доменные службы Azure Active Directory (Azure AD DS) в течение длительного периода времени не обслуживают управляемый домен, его работа приостанавливается. Эта статья о том, почему работа управляемых доменов приостанавливается и каким образом можно ее возобновить.
@@ -28,7 +28,7 @@ ms.locfileid: "52443412"
 
 ## <a name="states-your-managed-domain-can-be-in"></a>Состояния, в которых может находиться управляемый домен
 
-![Сроки приостановки работы домена](media\active-directory-domain-services-suspension\suspension-timeline.PNG)
+![Сроки приостановки работы домена](media/active-directory-domain-services-suspension/suspension-timeline.PNG)
 
 На рисунке выше приведен обзор возможных состояний управляемого домена Azure AD DS.
 
@@ -67,7 +67,7 @@ ms.locfileid: "52443412"
 Управляемый домен переводится в состояние **Приостановлено** по таким причинам:
 
 * Одна или несколько проблем в критических оповещениях не были разрешены в течение 15 дней. Критические предупреждения могут быть вызваны неправильной конфигурацией, которая блокирует доступ к ресурсам, необходимым для Azure AD DS.
-    * Например, оповещение [AADDS104: ошибка сети](active-directory-ds-troubleshoot-nsg.md) в управляемом домене не было разрешено в течение 15 дней.
+    * Например, в случае оповещения "[AADDS104: ошибка сети](active-directory-ds-troubleshoot-nsg.md) в управляемом домене не была устранена в течение 15 дней".
 * С вашей подпиской Azure возникла проблема с выставлением счетов, и срок ее действия истек.
 
 Работа управляемых доменов приостанавливается, когда корпорация Майкрософт не может постоянно контролировать, исправлять и архивировать домен или управлять им.

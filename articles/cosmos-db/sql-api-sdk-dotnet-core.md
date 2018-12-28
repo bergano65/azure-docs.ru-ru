@@ -1,10 +1,8 @@
 ---
-title: API-интерфейс, пакет SDK и ресурсы для SQL .NET Core (Azure Cosmos DB) | Документация Майкрософт
+title: Azure Cosmos DB — API, пакет SDK и ресурсы для SQL .NET Core
 description: Сведения об API-интерфейсе и пакете SDK для SQL .NET Core, в том числе даты выхода, даты прекращения использования и внесенные изменения по каждой версии пакета SDK .NET Core для Azure Cosmos DB.
 services: cosmos-db
 author: rnagpal
-manager: kfile
-editor: cgronlun
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: dotnet
@@ -12,12 +10,12 @@ ms.topic: reference
 ms.date: 03/22/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d5216a4a21fbbded4a10429c658f4842db225657
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: d947974575cf996ed880f2c1b5f8f7700b81ffd3
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52161724"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413512"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для .NET Core для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -30,7 +28,7 @@ ms.locfileid: "52161724"
 > * [Python](sql-api-sdk-python.md)
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
-> * [SQL](https://msdn.microsoft.com/library/azure/dn782250.aspx)
+> * [SQL](sql-api-query-reference.md)
 > * [BulkExecutor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
 > * [BulkExecutor — Java](sql-api-sdk-bulk-executor-java.md)
 
@@ -52,6 +50,23 @@ ms.locfileid: "52161724"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 Пакет SDK .NET Core для Azure Cosmos DB функционально полностью эквивалентен последней версии [пакета SDK .NET для Azure Cosmos DB](sql-api-sdk-dotnet.md).
+
+### <a name="a-name3001-preview3001-preview"></a><a name="3.0.0.1-preview"/>3.0.0.1-preview
+* Общедоступная предварительная версия 1 пакета SDK для .NET [версии 3.0.0](https://www.nuget.org/packages/Microsoft.Azure.Cosmos/).
+* Целевая спецификация .NET Standard, который поддерживает .NET Framework 4.6.1+ и .NET Core 2.0+.
+* Новая объектная модель и класс верхнего уровня CosmosClient с методами, разделенными между соответствующими классами (CosmosDatabases, CosmosContainers и CosmosItems).
+* Поддержка потоков.
+* Обновлен класс сервера CosmosResponseMessage. Теперь он возвращает код состояния и выдает исключение только в случае отсутствия ответа.
+
+### <a name="a-name220220"></a><a name="2.2.0"/>2.2.0
+
+* Для прямой транспортной диагностики и транспортной диагностики по протоколу TCP добавлено исключение TransportException — внутренний тип исключений пакета SDK. Если этот тип присутствует в сообщениях об исключении, он выводит дополнительную информацию, которая помогает при устранении неполадок с проблемами подключения клиентов.
+
+* Добавлена новая перегрузка конструктора, которая принимает HttpMessageHandler (стек обработчика HTTP-данных) для использования при отправке запросов HttpClient (например, HttpClientHandler).
+
+* Исправлена ошибка, при которой заголовок со значениями NULL не обрабатывался должным образом.
+
+* Улучшенная проверка кэша коллекции.
 
 ### <a name="a-name213213"></a><a name="2.1.3"/>2.1.3
 
@@ -104,7 +119,7 @@ ms.locfileid: "52161724"
 
 ### <a name="a-name182182"></a><a name="1.8.2"/>1.8.2
 
-* Исправлена ошибка, которая происходила для определенного состояния гонки, в результате чего при использовании модели согласованности на уровне сеанса периодически возникали ошибки Microsoft.Azure.Documents.NotFoundException: The read session is not available for the input session token (Сеанс чтения для входного маркера сеанса недоступен).
+* Исправлена ошибка, которая возникала в состоянии гонки и вызывала периодические ошибки "Microsoft.Azure.Documents.NotFoundException: The read session is not available for the input session token" (Microsoft.Azure.Documents.NotFoundException. Сеанс чтения для входного маркера сеанса недоступен) при использовании уровня согласованности сеанса.
 
 ### <a name="a-name181181"></a><a name="1.8.1"/>1.8.1
 
@@ -121,7 +136,7 @@ ms.locfileid: "52161724"
 
 ### <a name="a-name170170"></a><a name="1.7.0"/>1.7.0
  
- * Изменена фирменная символика с Azure DocumentDB на Azure Cosmos DB в справочной документации по API, сведениях о метаданных в сборках и пакете NuGet. 
+ * Изменена фирменная символика с Azure DocumentDB на Azure Cosmos DB в справочной документации по API, сведениях о метаданных в сборках и пакете NuGet.
  * Предоставлены данные диагностики и сведения о задержке ответов на запросы, отправленные в режиме прямого соединения. Имена свойств: RequestDiagnosticsString и RequestLatency в классе ResourceResponse.
  * Для этой версии пакета SDK требуется последняя версия эмулятора Azure Cosmos DB. Ее можно скачать по адресу https://aka.ms/cosmosdb-emulator.
  
@@ -135,8 +150,8 @@ ms.locfileid: "52161724"
 
 ### <a name="a-name150150"></a><a name="1.5.0"/>1.5.0 
 
-* Добавлена поддержка PartitionKeyRangeId как FeedOption для ограничения области результатов запроса определенным диапазоном ключа секции. 
-* Добавлена поддержка StartTime как ChangeFeedOption для поиска изменений после указанного периода. 
+* Добавлена поддержка PartitionKeyRangeId как FeedOption для ограничения области результатов запроса определенным диапазоном ключа секции.
+* Добавлена поддержка StartTime как ChangeFeedOption для поиска изменений после указанного периода.
 
 ### <a name="a-name141141"></a><a name="1.4.1"/>1.4.1
 
@@ -177,7 +192,7 @@ ms.locfileid: "52161724"
 
 ### <a name="a-name112112"></a><a name="1.1.2"/>1.1.2
 
-* Исправление ошибки, приводившей к исключению WebException: "Удаленное имя не удалось разрешить".
+* Исправлена проблема, время от времени вызывающая исключение "WebException: удаленное имя не удалось разрешить".
 * Добавлена поддержка непосредственного считывания типизированного документа путем добавления новых перегрузок в API ReadDocumentAsync.
 
 ### <a name="a-name111111"></a><a name="1.1.1"/>1.1.1
@@ -201,17 +216,18 @@ ms.locfileid: "52161724"
 Пакет SDK .NET Core для Azure Cosmos DB (предварительная версия) позволяет создавать быстрые кроссплатформенные приложения [ASP.NET Core](https://www.asp.net/core) и [.NET Core](https://www.microsoft.com/net/core#windows) для Windows, Mac и Linux.
 
 Пакет SDK .NET Core для Azure Cosmos DB (предварительная версия) функционально полностью эквивалентен последней версии [пакета SDK .NET для Azure Cosmos DB](sql-api-sdk-dotnet.md) и поддерживает следующие возможности:
-* все [режимы подключения](performance-tips.md#networking): режим шлюза, прямые TCP- и HTTP-подключения; 
+* все [режимы подключения](performance-tips.md#networking): режим шлюза, прямые TCP- и HTTP-подключения;
 * все [уровни согласованности](consistency-levels.md): строгая, ограниченное устаревание, согласованность сеанса, окончательная;
-* [секционированные коллекции](partition-data.md); 
+* [секционированные коллекции](partition-data.md);
 * [георепликация данных и межрегиональные учетные записи баз данных](distribute-data-globally.md).
 
-Если у вас возникли вопросы об этом пакете SDK, опубликуйте их на форуме сайта [StackOverflow](http://stackoverflow.com/questions/tagged/azure-documentdb) или сообщите о проблеме в [репозитории GitHub](https://github.com/Azure/azure-documentdb-dotnet/issues). 
+Если у вас возникли вопросы об этом пакете SDK, опубликуйте их на форуме сайта [StackOverflow](https://stackoverflow.com/questions/tagged/azure-documentdb) или сообщите о проблеме в [репозитории GitHub](https://github.com/Azure/azure-documentdb-dotnet/issues).
 
 ## <a name="release--retirement-dates"></a>Даты выпуска и выбытия
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.2.0](#2.2.0) |7 декабря 2018 г. |--- |
 | [2.1.3](#2.1.3) |15 октября 2018 г. |--- |
 | [2.1.2](#2.1.2) |04 октября 2018 г. |--- |
 | [2.1.1](#2.1.1) |27 сентября 2018 г. |--- |
@@ -240,5 +256,5 @@ ms.locfileid: "52161724"
 | [0.1.0-preview](#0.1.0-preview) |15 ноября 2016 г. |31 декабря 2016 г. |
 
 ## <a name="see-also"></a>См. также
-Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/). 
+Дополнительные сведения о Cosmos DB см. на странице службы [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/).
 

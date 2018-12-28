@@ -1,23 +1,24 @@
 ---
-title: Справочник по предварительно созданным сущностям percentage в службе LUIS в Azure | Документация Microsoft
+title: Предварительно созданная сущность percentage
 titleSuffix: Azure
 description: В этой статье описана готовая сущность percentage в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: diberry
-ms.openlocfilehash: 876ee710491213f17c12d3b6ddd0339bb2043657
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 9b9faaae78cd1e3590291aef68db47f57f050f3d
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52334913"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53165696"
 ---
-# <a name="percentage-entity"></a>Сущность percentage
+# <a name="percentage-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность percentage для приложения LUIS
 Процентное соотношение может выражаться в виде дроби (`3 1/2`) или в процентах (`2%`). Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности percentage, не нужно. Сущность percentage поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
 
 ## <a name="types-of-percentage"></a>Типы сущностей percentage
@@ -26,7 +27,7 @@ ms.locfileid: "52334913"
 ## <a name="resolution-for-prebuilt-percentage-entity"></a>Разрешение для предварительно созданной сущности percentage
 В следующем примере показано разрешение сущности **builtin.percentage**.
 
-```JSON
+```json
 {
   "query": "set a trigger when my stock goes up 2%",
   "topScoringIntent": {

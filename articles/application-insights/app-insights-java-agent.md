@@ -9,26 +9,25 @@ ms.assetid: 84017a48-1cb3-40c8-aab1-ff68d65e2128
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/24/2016
 ms.author: mbullwin
-ms.openlocfilehash: 30983e283f47761d103829f02b02bc281bd785ee
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: a62c6cbb6594aaf7c2c57d7efee1832d7b1430b7
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47091938"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53000732"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
 
 [Инструментирование веб-приложения Java с помощью Application Insights][java] позволяет получать более подробную информацию без изменения кода, используя для этого агент для Java.
 
-* **Зависимости** — данные о вызовах других компонентов в вашем приложении, включая:
+* **Зависимости** — данные о вызовах других компонентов в вашем приложении, включая:
   * **Вызовы REST** через HttpClient, OkHttp и RestTemplate (Spring).
   * Вызовы **Redis** через клиент Jedis.
-  * **[Вызовы JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)** — автоматически включаются команды MySQL, SQL Server и Oracle DB. Если для MySQL вызов выполняется дольше 10 с, агент сообщает о плане запроса.
+  * **[Вызовы JDBC](https://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)** — автоматически включаются команды MySQL, SQL Server и Oracle DB. Если для MySQL вызов выполняется дольше 10 с, агент сообщает о плане запроса.
 * **Перехваченные исключения.** Сведения об исключениях, обработанных вашим кодом.
 * **Время выполнения метода.** Сведения о времени, которое потребовалось для выполнения определенных методов.
 

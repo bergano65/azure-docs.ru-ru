@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/14/2018
+ms.date: 12/10/2018
 ms.author: jeffgilb
-ms.reviewer: quying
-ms.openlocfilehash: 6354212eb95fbefb217dd5339613d050da55f4ba
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.reviewer: georgel
+ms.openlocfilehash: 2f300e496873c0b048ccc1acc078bf1650e6bd9c
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51688277"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53166291"
 ---
 # <a name="mysql-resource-provider-11300--release-notes"></a>Заметки о выпуске для поставщика ресурсов MySQL 1.1.30.0
 
@@ -56,13 +56,26 @@ ms.locfileid: "51688277"
 
 - **Отображение номеров SKU MySQL на портале может занять до часа**. При создании баз данных MySQL новые номера SKU могут отобразиться примерно через час. 
 
-    **Возможное решение**: отсутствует.
+    **Возможное решение**: Отсутствует.
 
 - **Повторное использование имен для входа в MySQL**. Попытка создать имя для входа в MySQL с тем же именем пользователя, которое используется в существующей учетной записи в той же подписке, приведет к повторному использованию того же имени для входа и существующего пароля. 
 
     **Возможное решение**: используйте разные имена пользователей при создании имен для входа в одной подписке или создавайте имена для входа с тем же именем пользователя в разных подписках.
 
+- **Требование включить поддержку TLS 1.2**. Если вы пытаетесь выполнить развертывание или обновление поставщика ресурсов MySQL на компьютере без включенной поддержки TLS 1.2, операция может завершиться ошибкой. Выполните следующую команду PowerShell на компьютере, который используется для развертывания или обновления поставщика ресурсов, чтобы проверить, включена ли поддержка TLS 1.2:
 
+  ```powershell
+  [System.Net.ServicePointManager]::SecurityProtocol
+  ```
+
+  Если **Tls12** отсутствует в выходных данных команды, это значит, что поддержка TLS 1.2 не включена на компьютере.
+
+    **Возможное решение**: Выполните следующую команду PowerShell, чтобы включить поддержку TLS 1.2, а затем начните развертывание поставщика ресурсов или обновите скрипт в том же сеансе PowerShell:
+
+    ```powershell
+    [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
+    ```
+ 
 ### <a name="known-issues-for-cloud-admins-operating-azure-stack"></a>Известные проблемы для облачных администраторов, работающих с Azure Stack
 Обратитесь к документации в статье о [политике обслуживания Azure Stack](azure-stack-servicing-policy.md).
 
