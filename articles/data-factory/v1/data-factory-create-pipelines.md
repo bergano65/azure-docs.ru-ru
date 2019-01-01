@@ -22,7 +22,7 @@ ms.lasthandoff: 07/11/2018
 ms.locfileid: "38668033"
 ---
 # <a name="pipelines-and-activities-in-azure-data-factory"></a>Конвейеры и действия в фабрике данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-create-pipelines.md)
 > * [Версия 2 (текущая)](../concepts-pipelines-activities.md)
 
