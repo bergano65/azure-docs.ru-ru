@@ -9,12 +9,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: spelluru
-ms.openlocfilehash: 047c4c37090db77f7a7a692604dd63c5effff9fa
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: c4899db41f9c60bf6efb40c4d53aaa35f22ad275
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47409767"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53312890"
 ---
 # <a name="service-bus-queues-topics-and-subscriptions"></a>Очереди, разделы и подписки служебной шины
 
@@ -32,9 +32,9 @@ ms.locfileid: "47409767"
 
 ### <a name="create-queues"></a>Создание очередей
 
-Очередь можно создать с помощью [портала Azure](service-bus-quickstart-portal.md), [PowerShell](service-bus-quickstart-powershell.md), [CLI](service-bus-quickstart-cli.md) или [шаблонов Resource Manager](service-bus-resource-manager-namespace-queue.md). Затем можно отправлять и получать сообщения с помощью [объекта QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient). 
+Очередь можно создать с помощью [портала Azure](service-bus-quickstart-portal.md), [PowerShell](service-bus-quickstart-powershell.md), [CLI](service-bus-quickstart-cli.md) или [шаблонов Resource Manager](service-bus-resource-manager-namespace-queue.md). Затем можно отправлять и получать сообщения с помощью [объекта QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient).
 
-Чтобы быстро научиться создавать очереди, а затем отправлять и получать сообщения из очереди и в ней, см. [краткие руководства](service-bus-quickstart-portal.md) для каждого метода. Более подробное руководство по использованию очереди см. в статье [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md). 
+Чтобы быстро научиться создавать очереди, а затем отправлять и получать сообщения из очереди и в ней, см. [краткие руководства](service-bus-quickstart-portal.md) для каждого метода. Более подробное руководство по использованию очереди см. в статье [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md).
 
 Работающий пример см. в статье с [примером BasicSendReceiveUsingQueueClient](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted/Microsoft.Azure.ServiceBus/BasicSendReceiveUsingQueueClient) на GitHub.
 
@@ -56,9 +56,9 @@ ms.locfileid: "47409767"
 
 ### <a name="create-topics-and-subscriptions"></a>Создание разделов и подписок
 
-Создание раздела подобно созданию очереди, как показано в примере, приведенном в предыдущем разделе. Затем сообщения отправляются с помощью [класса TopicClient](/dotnet/api/microsoft.azure.servicebus.topicclient). Для получения сообщений создайте одну или несколько подписок для раздела. Как и в случае с очередью, сообщения извлекаются из подписки с помощью объекта [SubscriptionClient](/dotnet/api/microsoft.azure.servicebus.subscriptionclient), используемого вместо объекта [QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient). Создайте клиент подписки, передав в качестве параметров имя раздела, имя подписки и (необязательно) режим получения. 
+Создание раздела подобно созданию очереди, как показано в примере, приведенном в предыдущем разделе. Затем сообщения отправляются с помощью [класса TopicClient](/dotnet/api/microsoft.azure.servicebus.topicclient). Для получения сообщений создайте одну или несколько подписок для раздела. Как и в случае с очередью, сообщения извлекаются из подписки с помощью объекта [SubscriptionClient](/dotnet/api/microsoft.azure.servicebus.subscriptionclient), используемого вместо объекта [QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient). Создайте клиент подписки, передав в качестве параметров имя раздела, имя подписки и (необязательно) режим получения.
 
-Полный рабочий пример см. в статье с [примером BasicSendReceiveUsingTopicSubscriptionClient](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted/Microsoft.Azure.ServiceBus/BasicSendReceiveUsingTopicSubscriptionClient) на Github.
+Полный рабочий пример см. в статье с [примером BasicSendReceiveUsingTopicSubscriptionClient](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted/Microsoft.Azure.ServiceBus/BasicSendReceiveUsingTopicSubscriptionClient) на сайте GitHub.
 
 ### <a name="rules-and-actions"></a>Правила и действия
 
@@ -66,14 +66,14 @@ ms.locfileid: "47409767"
 
 Полный рабочий пример см. в статье с [примером TopicSubscriptionWithRuleOperations](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted/Microsoft.Azure.ServiceBus/TopicSubscriptionWithRuleOperationsSample) на GitHub.
 
-Дополнительные сведения о возможных значениях фильтров см. в документации по классам [SqlFilter](/dotnet/api/microsoft.azure.servicebus.sqlfilter) и [SqlRuleAction](/dotnet/api/microsoft.azure.servicebus.sqlruleaction). 
+Дополнительные сведения о возможных значениях фильтров см. в документации по классам [SqlFilter](/dotnet/api/microsoft.azure.servicebus.sqlfilter) и [SqlRuleAction](/dotnet/api/microsoft.azure.servicebus.sqlruleaction).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения и примеры использования обмена сообщениями в служебной шине Microsoft Azure см. в следующих дополнительных статьях:
 
 * [Основные сведения об обмене сообщениями через служебную шину](service-bus-messaging-overview.md)
-* [Краткое руководство по отправке и получению сообщений Служебной шины Azure с помощью портала Azure и .NET](service-bus-quickstart-portal.md)
+* [Краткое руководство [по отправке и получению сообщений Служебной шины Azure с помощью портала Azure и .NET](service-bus-quickstart-portal.md)
 * [Руководство. Обновление информации о запасах с помощью портала Azure, разделов и подписок](service-bus-tutorial-topics-subscriptions-portal.md)
 
 
