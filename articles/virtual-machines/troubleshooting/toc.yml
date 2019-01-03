@@ -56,6 +56,12 @@ items:
   items:
   - name: Устранение неполадок с SSH
     href: troubleshoot-ssh-connection.md
+  - name: Устранение ошибок файловой системы
+    href: https://support.microsoft.com/help/3213321
+  - name: Устранение проблем с загрузкой, связанных с ядром
+    href: https://support.microsoft.com/help/4091524
+  - name: Устранение ошибок fstab
+    href: https://support.microsoft.com/help/3206699
   - name: Подробные сведения об устранении неполадок с SSH
     href: detailed-troubleshoot-ssh-connection.md
 - name: Распространенные сообщения об ошибках
@@ -105,6 +111,8 @@ items:
   href: unexpected-reboots-attached-vhds.md
 - name: Проблемы с активацией Windows
   href: troubleshoot-activation-problems.md
+- name: Проблема с активацией при принудительном туннелировании
+  href: custom-routes-enable-kms-activation.md
 - name: Ошибки доступа к приложению
   href: troubleshoot-app-connection.md
 - name: Новые развертывания виртуальных машин
@@ -162,9 +170,9 @@ items:
   href: understand-vm-reboot.md
 - name: Средства удаленного устранения неполадок
   href: remote-tools-troubleshoot-azure-vm-issues.md
-ms.openlocfilehash: af1f284108a326b3ce099ee49cb15a8f51cc61af
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: b745b9e42c700ea446d934df7d2e3201b555f075
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53434865"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53976330"
