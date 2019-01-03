@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 89bab4d2751cdbc3ba9b2303bc88dba874bc117b
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: d05789f8e98d0c2e12989df804a975639d8f653e
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53723949"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53811041"
 documentType: LandingData
 title: Документация по базе данных Azure Cosmos
 metadata:
@@ -51,10 +51,10 @@ sections:
         src: media/index/graph-api.svg
       title: API Gremlin
     - href: /azure/cosmos-db/mongodb-introduction/
-      html: <p>Для переноса данных из базы данных MongoDB в полностью управляемую службу Azure Cosmos DB используйте Azure Cosmos DB для API MongoDB.</p>
+      html: <p>Для переноса данных из базы данных MongoDB в полностью управляемую службу Azure Cosmos DB используйте API Azure Cosmos DB для MongoDB.</p>
       image:
         src: media/index/mongodb-api.svg
-      title: Azure Cosmos DB для API MongoDB
+      title: API Azure Cosmos DB для MongoDB
     - href: /azure/cosmos-db/table-introduction/
       html: <p>Чтобы перенести данные из хранилища таблиц Azure в табличное предложение Azure Cosmos DB уровня "Премиум", используйте API таблиц.</p>
       image:
@@ -103,7 +103,7 @@ sections:
       - href: 
       - href: 
       - href: /azure/cosmos-db/create-sql-api-xamarin-dotnet
-    - title: Azure Cosmos DB для API MongoDB
+    - title: API Azure Cosmos DB для MongoDB
       values:
       - href: /azure/cosmos-db/create-mongodb-java
       - href: /azure/cosmos-db/create-mongodb-dotnet
@@ -183,7 +183,7 @@ sections:
     items:
     - title: API-интерфейс SQL
       html: <p><a href="/rest/api/cosmos-db/">REST</a></p><p><a href="https://aka.ms/acdbnetref">.NET</a></p><p><a href="sql-api-sdk-dotnet-changefeed">Веб-канал изменений в .NET</a></p><p><a href="https://aka.ms/acdbnetcoreref">.NET Core</a></p><p><a href="https://aka.ms/acdbnoderef">Node.js</a></p><p><a href="https://aka.ms/acdbjavaref">Java</a></p><p><a href="https://aka.ms/acdbpythonref">Python</a></p><p><a href="/rest/api/cosmos-db-resource-provider/">Поставщик ресурсов REST</a></p><p><a href="sql-api-sql-query-reference">SQL</a></p>
-    - title: Azure Cosmos DB для API MongoDB
+    - title: API Azure Cosmos DB для MongoDB
       html: <p><a href="https://docs.mongodb.com/manual/reference/mongodb-wire-protocol/">Сетевой протокол</a></p><p><a href="https://mongodb.github.io/node-mongodb-native/ ">Node.js</a></p><p><a href="https://docs.mongodb.com/ecosystem/drivers/csharp/">C#</a></p><p><a href="https://docs.mongodb.com/ecosystem/drivers/java/">Java</a></p><p><a href="https://docs.mongodb.com/ecosystem/drivers/python/">Python</a></p><p><a href="https://docs.mongodb.com/ruby-driver/master/">Ruby</a></p>
     - title: API таблицы
       html: <p><a href="/rest/api/storageservices/fileservices/Table-Service-Concepts">REST</a></p><p><a href="/azure/cosmos-db/table-sdk-dotnet">.NET</a></p><p><a href="/azure/cosmos-db/table-sdk-nodejs">Node.js</a></p><p><a href="/azure/cosmos-db/table-sdk-java">Java</a></p><p><a href="/azure/cosmos-db/table-sdk-python">Python</a></p>
