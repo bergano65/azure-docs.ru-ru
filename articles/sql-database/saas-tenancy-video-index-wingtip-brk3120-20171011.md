@@ -9,22 +9,22 @@ ms.devlang: ''
 ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
-ms.reviewer: billgib
+ms.reviewer: billgib, sstein
 manager: craigg
 ms.date: 05/14/2018
-ms.openlocfilehash: ec3f286791a3a2c7a3bebd84ba17a11571e389f8
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: ad1ae537038c84aac7bebe40a1db124521933f3d
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53163979"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608908"
 ---
 # <a name="video-indexed-and-annotated-for-multi-tenant-saas-app-using-azure-sql-database"></a>Видео индексировано и снабжено заметками для мультитенатного приложения SaaS, использующего базу данных SQL Azure
 
 Эта статья является индексом с заметками по точкам во времени в 81-минутном видеоролике о моделях или шаблонах клиента SaaS. Эта статья позволяет переходить по видео к той части, которая вас интересует. В видео описаны основные варианты создания мультитенатного приложения базы данных в базе данных Azure SQL. Видео включает демонстрации, пошаговые руководства по коду управления и в некоторых случаях более подробно рассматриваются сведения, которые можно найти в письменной документации.
 
 В видео представлена расширенная информация из письменной документации: 
-- *Основные понятия*. [Мультитенантные шаблоны клиента в базе данных SaaS][saas-concept-design-patterns-563e]
+- *Основные понятия*. Мультитенантные шаблоны клиента в базе данных SaaS[saas-concept-design-patterns-563e]
 - *Руководства*. [SaaS-приложение Wingtip Tickets][saas-how-welcome-wingtip-app-679t].
 
 В видео и статьях описано множество этапов создания мультитенантных приложений в базе данных SQL Azure в облаке. Специальные возможности базы данных SQL Azure упрощают процесс разработки и реализации мультенантных приложений, которые просты в управлении, надежны и высокопроизводительны.
@@ -294,7 +294,7 @@ ms.locfileid: "53163979"
 
 - [Запись блога, 22 мая 2017 года][resource-blog-saas-patterns-app-dev-sql-db-768h]
 
-- *Основные понятия*. [Мультитенантные шаблоны клиента в базе данных SaaS][saas-concept-design-patterns-563e]
+- *Основные понятия*. Мультитенантные шаблоны клиента в базе данных SaaS[saas-concept-design-patterns-563e]
 
 - *Руководства*. [SaaS-приложение Wingtip Tickets][saas-how-welcome-wingtip-app-679t].
 

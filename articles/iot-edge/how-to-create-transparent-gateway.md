@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 29c7fc279aec79750df48c70be7792869e89ae78
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: a42f4ce85214ad2a8c5692736b7d36101ccb62ed
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53094361"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53556226"
 ---
 # <a name="configure-an-iot-edge-device-to-act-as-a-transparent-gateway"></a>Настройка устройства IoT Edge в качестве прозрачного шлюза
 
@@ -41,7 +41,7 @@ ms.locfileid: "53094361"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Устройство Azure IoT Edge, настраиваемое в качестве шлюза. В качестве устройства IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для следующих операционных систем:
-* [Windows](./how-to-install-iot-edge-windows-with-windows.md)
+* [Windows](./how-to-install-iot-edge-windows.md)
 * [Linux x64](./how-to-install-iot-edge-linux.md)
 * [Linux ARM32](./how-to-install-iot-edge-linux-arm.md)
 
@@ -60,7 +60,7 @@ ms.locfileid: "53094361"
    >[!NOTE]
    >Если на вашем устройстве Windows уже установлен пакет OpenSSL, этот шаг можно пропустить, но следует убедиться, что файл openssl.exe доступен в переменной среды PATH.
 
-* **Простой способ.** Скачайте и установите любые [сторонние двоичные файлы OpenSS ](https://wiki.openssl.org/index.php/Binaries), например из [этого проекта на SourceForge](https://sourceforge.net/projects/openssl/). Добавьте полный путь к файлу openssl.exe в переменную среды PATH. 
+* **Простой способ.** Скачайте и установите любые сторонние двоичные файлы OpenSS , например из [этого проекта на SourceForge](https://sourceforge.net/projects/openssl/). Добавьте полный путь к файлу openssl.exe в переменную среды PATH. 
    
 * **Рекомендуется:** Скачайте исходный код OpenSSL и создайте двоичные файлы на компьютере самостоятельно или с помощью [vcpkg](https://github.com/Microsoft/vcpkg). В следующих инструкциях используется vcpkg для скачивания исходного кода, а также компиляции и установки OpenSSL на компьютере Windows с помощью простых действий.
 

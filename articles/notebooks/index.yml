@@ -9,7 +9,7 @@ documentType: LandingData
 title: Документация по Записным книжкам Azure
 metadata:
   title: Документация по Записным книжкам Azure. Краткие руководства, учебные материалы и справочники | Документация Майкрософт
-  description: Узнайте, как создавать, запускать и совместно использовать записные книжки Jupyter через размещенную службу Записные книжки Azure.
+  description: Узнайте, как создавать, запускать и совместно использовать записные книжки Jupyter через размещенную службу "Записные книжки Azure".
   services: notebooks
   author: kraigb
   manager: douge
@@ -37,7 +37,7 @@ sections:
         src: media/index/Azure_AddNotebook.svg
       title: Создание и совместное использование записной книжки
     - href: /azure/notebooks/quickstart-clone-jupyter-notebook
-      html: <p>Узнайте, как клонировать записную книжку Jupyter из репозитория GitHub и запустить ее в своей учетной записи Записных книжек Azure.</p>
+      html: <p>Узнайте, как клонировать записную книжку Jupyter из репозитория GitHub и запустить ее в своей учетной записи в слубе "Записные книжки Azure".</p>
       image:
         src: media/index/Azure_ClonePage.svg
       title: Клонирование записной книжки
@@ -47,7 +47,7 @@ sections:
         src: media/index/Azure_MigrateNotebook.svg
       title: Перенос локальной записной книжки Jupyter
     - href: /azure/notebooks/quickstart-create-jupyter-notebook-project-environment
-      html: <p>Узнайте, как настроить проект записных книжек Azure с использованием определенного набора установленных пакетов и скриптов запуска.</p>
+      html: <p>Узнайте, как настроить проект Записных книжек Azure с использованием определенного набора установленных пакетов и скриптов запуска.</p>
       image:
         src: media/index/Azure_CustomEnvironment.svg
       title: Создание проекта с настраиваемой средой
