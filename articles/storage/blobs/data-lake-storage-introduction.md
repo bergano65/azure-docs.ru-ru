@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: jamesbak
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: 0b3c4a4c21bc9b124a98b1f204f85e6e78ff233e
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: ac36499475ffe02ae4d5140f35507530e6cf089e
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53099568"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53994340"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2-preview"></a>Общие сведения о хранилище Azure Data Lake Storage Gen2 (предварительная версия)
 
-Azure Data Lake Storage 2-го поколения (предварительная версия) — это набор возможностей аналитики больших данных, созданных на основе [хранилища BLOB-объектов Azure](storage-blobs-introduction.md). Data Lake Storage 2-го поколения — результат объединения возможностей двух имеющихся служб хранения: хранилища BLOB-объектов Azure и Azure Data Lake Storage 1-го поколения. Функции, описанные в статье [Документация по Azure Data Lake Storage Gen1](https://docs.microsoft.com/en-us/azure/data-lake-store/index), например семантика файловой системы, защита на уровне файлов и масштабирование, объединены с экономичностью, многоуровневостью, возможностями высокой доступности и аварийного восстановления [хранилища BLOB-объектов Azure](storage-blobs-introduction.md).
+Azure Data Lake Storage 2-го поколения (предварительная версия) — это набор возможностей аналитики больших данных, созданных на основе [хранилища BLOB-объектов Azure](storage-blobs-introduction.md). Data Lake Storage 2-го поколения — результат объединения возможностей двух имеющихся служб хранения: хранилища BLOB-объектов Azure и Azure Data Lake Storage 1-го поколения. Функции, описанные в статье [Документация по Azure Data Lake Storage Gen1](https://docs.microsoft.com/azure/data-lake-store/index), например семантика файловой системы, защита на уровне файлов и масштабирование, объединены с экономичностью, многоуровневостью, возможностями высокой доступности и аварийного восстановления [хранилища BLOB-объектов Azure](storage-blobs-introduction.md).
 
 ## <a name="designed-for-enterprise-big-data-analytics"></a>Возможности аналитики больших данных организаций
 

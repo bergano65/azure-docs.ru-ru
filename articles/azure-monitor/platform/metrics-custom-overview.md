@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ancav
 ms.component: metrics
-ms.openlocfilehash: 2b3e8877713fde088be2147bbfa8969e351a3f06
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: aacfc98a9132a59c90a8f67d5a3877b75fa59dfe
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53325776"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53605591"
 ---
 # <a name="custom-metrics-in-azure-monitor"></a>Пользовательские метрики в Azure Monitor
 
@@ -25,7 +25,7 @@ ms.locfileid: "53325776"
 - Инструментировать приложения с помощью пакета SDK Application Insights и отправить пользовательские данные телеметрии в Azure Monitor. 
 - Установить расширения диагностики Windows из [виртуальной машины Azure](collect-custom-metrics-guestos-resource-manager-vm.md), [масштабируемого набора виртуальных машин](collect-custom-metrics-guestos-resource-manager-vmss.md), [классической виртуальной машины](collect-custom-metrics-guestos-vm-classic.md) или [классических облачных служб](collect-custom-metrics-guestos-vm-cloud-service-classic.md) и отправить счетчики производительности в Azure Monitor. 
 - Установить [агент InfluxData Telegraf](collect-custom-metrics-linux-telegraf.md) на виртуальной машине Linux Azure и отправить метрики с помощью подключаемого модуля выходных данных Azure Monitor.
-- Отправить пользовательские метрики [непосредственно в REST API Azure Monitor](../../monitoring-and-diagnostics/metrics-store-custom-rest-api.md), `https://<azureregion>.monitoring.azure.com/<AzureResourceID>/metrics`.
+- Отправить пользовательские метрики [непосредственно в REST API Azure Monitor](../../azure-monitor/platform/metrics-store-custom-rest-api.md), `https://<azureregion>.monitoring.azure.com/<AzureResourceID>/metrics`.
 
 При отправке пользовательских метрик в Azure Monitor каждая отправляемая точка данных или значение должны включать следующие сведения.
 
@@ -193,6 +193,6 @@ Azure Monitor налагает указанные ниже ограничени�
  - [Масштабируемый набор виртуальных машин](collect-custom-metrics-guestos-resource-manager-vmss.md)
  - [Виртуальные машины Azure (классические)](collect-custom-metrics-guestos-vm-classic.md)
  - [Виртуальная машина Linux с агентом Telegraf](collect-custom-metrics-linux-telegraf.md)
- - [REST API](../../monitoring-and-diagnostics/metrics-store-custom-rest-api.md)
+ - [REST API](../../azure-monitor/platform/metrics-store-custom-rest-api.md)
  - [Классические облачные службы](collect-custom-metrics-guestos-vm-cloud-service-classic.md)
  

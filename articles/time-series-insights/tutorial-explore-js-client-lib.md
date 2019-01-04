@@ -1,5 +1,5 @@
 ---
-title: Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure" | Документация Майкрософт
+title: Руководство. Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure" | Документация Майкрософт
 description: Сведения о клиентской библиотеке JavaScript для службы "Аналитика временных рядов Azure" и соответствующей модели программирования.
 author: ashannon7
 manager: cshankar
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 06/05/2018
 ms.author: anshan
 ms.custom: seodec18
-ms.openlocfilehash: 33dcf6f69d1287b4e040b3cccf4164667db2b75f
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: f231fa7624a2babea2a3d91076ad0348b3c9e976
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53269980"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53540390"
 ---
 # <a name="tutorial-explore-the-azure-time-series-insights-javascript-client-library"></a>Руководство. Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure"
 

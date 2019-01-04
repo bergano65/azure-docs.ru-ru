@@ -1,21 +1,18 @@
 ---
 title: Доступ к журналам сервера в службе "База данных Azure для MySQL" с помощью Azure CLI
 description: В этой статье объясняется, как получить доступ к журналам сервера в службе "База данных Azure для MySQL" с помощью служебной программы командной строки Azure CLI.
-services: mysql
 author: rachel-msft
 ms.author: raagyema
-manager: kfile
-editor: jasonwhowell
 ms.service: mysql
-ms.devlang: azure-cli
-ms.topic: article
+ms.devlang: azurecli
+ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: e3940f07ab97eb2ad03c347c39bf2412a8497f5e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 207e9965f6600477e1df93845bc41bd33b5c028c
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46978460"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53547037"
 ---
 # <a name="configure-and-access-server-logs-by-using-azure-cli"></a>Настройка журналов сервера и получение к ним доступа с помощью Azure CLI
 Скачать журналы сервера из службы "База данных Azure для MySQL" можно с помощью портала Azure или Azure CLI, служебной программы командной строки Azure.
@@ -28,7 +25,7 @@ ms.locfileid: "46978460"
 ## <a name="configure-logging-for-azure-database-for-mysql"></a>Настройка ведения журнала для базы данных Azure для MySQL
 Можно настроить на сервере доступ к журналу медленных запросов MySQL, выполнив следующие действия:
 1. Включите ведение журнала, установив для параметра **slow\_query\_log** значение ON.
-2. Настройте другие параметры, такие как **long\_query\_time** и **log\_slow\_admin\_statements**.
+2. Настройте другие параметры, такие как **long\_query\_time**  и  **log\_slow\_admin\_statements**.
 
 Ознакомьтесь со статьей [Настройка параметров конфигурации сервера с помощью Azure CLI](howto-configure-server-parameters-using-cli.md), чтобы узнать, как задать значение этих параметров с помощью Azure CLI. 
 

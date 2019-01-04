@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: 22e15f58f3d4e7f4db3ac3bd519dbb286a36ef95
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: be264be41b198e95dae64730ef31f431ec06a2e7
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53384145"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53715466"
 ---
 # <a name="ports-used-by-apache-hadoop-services-on-hdinsight"></a>Порты, используемые службами Apache Hadoop в HDInsight
 
@@ -157,7 +157,7 @@ ms.locfileid: "53384145"
 
 | Service | Nodes | Порт | Протокол | ОПИСАНИЕ |
 | --- | --- | --- | --- | --- |
-| Broker |Рабочие узлы |9092 |[Сетевой протокол Kafka](http://kafka.apache.org/protocol.html) |Используется для связи с клиентами |
+| Broker |Рабочие узлы |9092 |[Сетевой протокол Kafka](https://kafka.apache.org/protocol.html) |Используется для связи с клиентами |
 | &nbsp; |Узлы Zookeeper |2181 |&nbsp; |Порт, используемый клиентами для подключения к ZooKeeper |
 
 ### <a name="spark-ports"></a>Порты Spark

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 3/26/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: 48f178b7a94e8989f8a0154bea6195834b1ec35f
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 1d199275d6c17dff72c020bd3a9807f50af8af1e
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53438682"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53544045"
 ---
 # <a name="automatically-enable-diagnostic-settings-at-resource-creation-using-a-resource-manager-template"></a>Автоматическое включение параметров диагностики при создании ресурса из шаблона Resource Manager
 В этой статье мы покажем, как применить [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки параметров диагностики при создании ресурса. Это позволит автоматически запускать потоковую передачу журналов диагностики и метрик в Центры событий, архивировать их в учетной записи хранения ли отправлять в Log Analytics при создании ресурса.
@@ -25,7 +25,7 @@ ms.locfileid: "53438682"
 
 Для разных типов ресурсов журналы диагностики включаются с помощью шаблона Resource Manager по-разному.
 
-* **Невычислительные** ресурсы (например, группы безопасности сети, Logic Apps или служба автоматизации) используют [параметры диагностики, описанные в этой статье](../../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md#diagnostic-settings).
+* **Невычислительные** ресурсы (например, группы безопасности сети, Logic Apps или служба автоматизации) используют [параметры диагностики, описанные в этой статье](../../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings).
 * **Вычислительные** ресурсы (на основе WAD/LAD) используют [файл конфигурации WAD/LAD, описанный в этой статье](/visualstudio/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines).
 
 В этой статьей объясняется, как настроить диагностику с помощью каждого из этих методов.
@@ -266,6 +266,6 @@ ms.locfileid: "53438682"
 Весь процесса описан [в этом документе](../../virtual-machines/extensions/diagnostics-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)с примерами.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Дополнительные сведения о журналах диагностики Azure](../../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md)
-* [Потоковая передача журналов диагностики Azure в Центры событий](../../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md)
+* [Дополнительные сведения о журналах диагностики Azure](../../azure-monitor/platform/diagnostic-logs-overview.md)
+* [Потоковая передача журналов диагностики Azure в Центры событий](../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md)
 

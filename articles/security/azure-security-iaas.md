@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/18/2018
 ms.author: barclayn
-ms.openlocfilehash: d4a2daf10fd864f13982f4d327868ad62d1309b3
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: 42958576a127fee5e0a275e53203edd4e4dee6f9
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53321466"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53540293"
 ---
 # <a name="security-best-practices-for-iaas-workloads-in-azure"></a>Рекомендации по безопасности для рабочих нагрузок IaaS в Azure
 
@@ -137,7 +137,7 @@ ms.locfileid: "53321466"
 
 Для получения сведений о работоспособности ресурсов рекомендуется использовать [Azure Monitor](../monitoring-and-diagnostics/monitoring-overview-metrics.md). Возможности Azure Monitor:
 
-- [Диагностические файлы журналов ресурсов](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md). Позволяют отслеживать ресурсы виртуальной машины и выявлять потенциальные проблемы, которые могут снизить производительность и доступность.
+- [Диагностические файлы журналов ресурсов](../azure-monitor/platform/diagnostic-logs-overview.md). Позволяют отслеживать ресурсы виртуальной машины и выявлять потенциальные проблемы, которые могут снизить производительность и доступность.
 - [Расширение системы диагностики Azure](../azure-monitor/platform/diagnostics-extension-overview.md). Позволяет использовать возможности мониторинга и диагностики на виртуальных машинах под управлением Windows. Чтобы использовать эти возможности, необходимо включить расширение в [шаблон Azure Resource Manager](../virtual-machines/windows/extensions-diagnostics-template.md).
 
 Организации, которые не отслеживают производительность виртуальных машин, не способны определить, являются ли определенные изменения в показателях производительности нормальными или аномальными. Если виртуальная машина потребляет больше ресурсов, чем обычно, это может свидетельствовать об атаке, совершаемой с внешнего ресурса, или о скомпрометированном процессе, выполняемом на виртуальной машине.

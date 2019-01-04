@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: asrastog
-ms.openlocfilehash: a5b8ce8cd753ee294a8d61ba8a3dfed872f0f31a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 69c890cfc3db04fe625ed7ad008f545c01844834
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46956337"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53993490"
 ---
 # <a name="query-avro-data-by-using-azure-data-lake-analytics"></a>Запрос данных Avro с помощью Azure Data Lake Analytics
 
@@ -21,7 +21,7 @@ ms.locfileid: "46956337"
 
 Проблема заключается в том, что при маршрутизации сообщений в хранилище BLOB-объектов Azure Центр Интернета вещей Azure записывает содержимое в формате Avro, который включает свойство текста сообщения и свойство сообщения. Центр Интернета вещей поддерживает запись данных в хранилище BLOB-объектов только в формате Avro, и этот формат не используется на каких-либо других конечных точках. Дополнительные сведения см. в статье об использовании контейнеров службы хранилища Azure. Хотя формат Avro прекрасно подходит для хранения данных и сообщений, использовать его для опроса данных сложно. в отличие от формата JSON или CSV.
 
-<!-- https://review.docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-messages-d2c?branch=pr-en-us-51566#azure-blob-storage  NEW LINK FOR 'WHEN USING STORAGE CONTAINERS' -->
+<!-- https://review.docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c?branch=pr-en-us-51566#azure-blob-storage  NEW LINK FOR 'WHEN USING STORAGE CONTAINERS' -->
 
 Чтобы устранить проблемы, связанные с требованиями и форматами нереляционных больших данных, и преодолеть эти сложности, вы можете применить шаблоны больших данных к данным масштабирования и преобразования. Один из шаблонов ("оплата за запрос") — это служба Azure Data Lake Analytics, которой посвящена эта статья. Вы можете легко выполнить этот запрос в Hadoop или другом решении, но зачастую Azure Data Lake Analytics лучше подходит при использовании подхода с оплатой за запрос. 
 
@@ -171,7 +171,7 @@ ms.locfileid: "46956337"
 
 Из этого руководства вы узнали, как запросить данные Avro, чтобы повысить эффективность маршрутизации сообщений из Центра Интернета вещей Azure в службы Azure.
 
-Примеры комплексных решений, в которых используется центр Интернета вещей, см. в [документации по акселераторам решений для Интернета вещей Azure](../iot-accelerators/index.yml).
+Примеры комплексных решений, в которых используется центр Интернета вещей, см. в [документации по акселераторам решений для Интернета вещей Azure](/azure/iot-accelerators).
 
 Дополнительные сведения о разработке решений с помощью Центра Интернета вещей см. в [руководстве разработчика для Центра Интернета вещей](iot-hub-devguide.md).
 

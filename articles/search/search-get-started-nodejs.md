@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/26/2017
 ms.author: jjed
 ms.custom: seodec2018
-ms.openlocfilehash: 81fa7e34c2cacf1ee8613c080d55225ffc37cdfc
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 0b36ee9aa54f0d8dd3d246d6c5a96e767326d2d8
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53311088"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53634683"
 ---
 # <a name="get-started-with-azure-search-in-nodejs"></a>Начало работы со службой поиска Azure на Node.js
 > [!div class="op_single_selector"]
@@ -25,12 +25,12 @@ ms.locfileid: "53311088"
 
 Узнайте, как создать собственное приложение поиска на Node.js на базе службы поиска Azure. В этом руководстве [REST API службы поиска Azure](https://msdn.microsoft.com/library/dn798935.aspx) используется для создания объектов и операций, используемых в этом уроке.
 
-Мы использовали [Node.js](https://Nodejs.org) и NPM, [Sublime Text 3](http://www.sublimetext.com/3) и Windows PowerShell в Windows 8.1 для разработки и проверки этого кода.
+Мы использовали [Node.js](https://Nodejs.org) и NPM, [Sublime Text 3](https://www.sublimetext.com/3) и Windows PowerShell в Windows 8.1 для разработки и проверки этого кода.
 
 Чтобы запустить этот пример, вам потребуется служба поиска Azure. Создать в ней учетную запись можно на [портале Azure](https://portal.azure.com). Пошаговые инструкции приведены в статье [Создание службы "Поиск Azure" на портале](search-create-service-portal.md).
 
 ## <a name="about-the-data"></a>О данных
-В этом примере приложения используются данные [Геологической службы США (USGS)](http://geonames.usgs.gov/domestic/download_data.htm), отфильтрованные по штату Род-Айленд для сокращения размера набора данных. Мы будем использовать эти данные при создании приложения поиска, возвращающего важные здания, такие как больницы и школы, а также геологические объекты, например реки, озера и вершины.
+В этом примере приложения используются данные [Геологической службы США (USGS)](https://geonames.usgs.gov/domestic/download_data.htm), отфильтрованные по штату Род-Айленд для сокращения размера набора данных. Мы будем использовать эти данные при создании приложения поиска, возвращающего важные здания, такие как больницы и школы, а также геологические объекты, например реки, озера и вершины.
 
 В этом приложении программа **DataIndexer** создает и загружает индекс с помощью конструкции [индексатора](https://msdn.microsoft.com/library/azure/dn798918.aspx), получая отфильтрованный набор данных USGS из общедоступной Базы данных SQL Azure. Учетные данные и сведения о подключении к сетевому источнику данных предоставляются в программном коде. Дальнейшая настройка не требуется.
 

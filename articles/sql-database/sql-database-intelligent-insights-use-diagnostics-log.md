@@ -9,19 +9,19 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: carlrab
+ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 04/04/2018
-ms.openlocfilehash: a0eac4344f1294ad2eddd4e05520c1f030a0c4d7
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 1464b2685e0ae084de3679e8a8fea36a3cf19c4b
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53278225"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53599150"
 ---
 # <a name="use-the-intelligent-insights-azure-sql-database-performance-diagnostics-log"></a>Использование журнала диагностики производительности Intelligent Insights для базы данных SQL Azure
 
-Эта страница содержит сведения об использовании журнала диагностики производительности базы данных SQL Azure, созданного [Intelligent Insights](sql-database-intelligent-insights.md), о его формате и содержащихся в нем данных для различных задач разработки. Этот журнал диагностики можно отправить в [Azure Log Analytics](../azure-monitor/insights/azure-sql.md), [Центры событий Azure](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md), [службу хранилища Azure](sql-database-metrics-diag-logging.md#stream-into-storage) или стороннее решение для разработки настраиваемых функций оповещения и отчетности в соответствии с процедурами DevOps.
+Эта страница содержит сведения об использовании журнала диагностики производительности базы данных SQL Azure, созданного [Intelligent Insights](sql-database-intelligent-insights.md), о его формате и содержащихся в нем данных для различных задач разработки. Этот журнал диагностики можно отправить в [Azure Log Analytics](../azure-monitor/insights/azure-sql.md), [Центры событий Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md), [службу хранилища Azure](sql-database-metrics-diag-logging.md#stream-into-storage) или стороннее решение для разработки настраиваемых функций оповещения и отчетности в соответствии с процедурами DevOps.
 
 ## <a name="log-header"></a>Заголовок журнала
 

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 06/28/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 2a494b318011d601609033bc877134f0b0eeff09
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: aaa89b5a3bb1af6878ed21e0160a534a1c989228
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53249334"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53721365"
 ---
 # <a name="how-to-prepare-for-an-inbound-ip-address-change"></a>Подготовка к изменению входящего IP-адреса
 
@@ -50,4 +50,4 @@ ms.locfileid: "53249334"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье показано, как подготовиться к изменению IP-адреса, которое инициировано в Azure. См. дополнительные сведения о [входящих и исходящих IP-адресах в Службе приложений Azure](app-service-ip-addresses.md).
+В этой статье показано, как подготовиться к изменению IP-адреса, которое инициировано в Azure. См. дополнительные сведения о [входящих и исходящих IP-адресах в Службе приложений Azure](overview-inbound-outbound-ips.md).

@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: VanMSFT
 ms.author: vanto
-ms.reviewer: ''
+ms.reviewer: sstein
 manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: 06e9b443c5b0dc1c23b325c7127511f8542a1a11
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: de758d38626107f28211f79a4772c3e887085776
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52964838"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53599839"
 ---
 # <a name="split-merge-security-configuration"></a>Настройка параметров безопасности для службы разделения и объединения
 Для использования службы разделения и объединения необходимо правильно настроить параметры безопасности. Эта служба является частью компонента эластичного масштабирования базы данных Microsoft Azure SQL. Дополнительные сведения см. в [руководстве по эластичному масштабированию службы разбиения и объединения](sql-database-elastic-scale-configure-deploy-split-and-merge.md).
@@ -40,7 +40,7 @@ ms.locfileid: "52964838"
 ### <a name="to-run-the-tools"></a>Запуск инструментов
 * Сведения о запуске инструментов из командной строки разработчика для Visual Studio см. в статье [Командная строка разработчика для Visual Studio](https://msdn.microsoft.com/library/ms229859.aspx). 
   
-    Если ПО установлено:
+    Если ПО установлено, перейдите к:
   
         %ProgramFiles(x86)%\Windows Kits\x.y\bin\x86 
 * Пакет WDK можно загрузить в разделе [Windows 8.1: загрузка пакетов и средств](https://msdn.microsoft.com/windows/hardware/gg454513#drivers).

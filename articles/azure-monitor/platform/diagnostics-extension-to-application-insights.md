@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/19/2016
 ms.author: robb
 ms.component: diagnostic-extension
-ms.openlocfilehash: b2399e47c9071bac159f407deac9755606763a67
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: c22c97efed7c70b554acd449ed15c6641e377b6a
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53325784"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53788503"
 ---
 # <a name="send-cloud-service-virtual-machine-or-service-fabric-diagnostic-data-to-application-insights"></a>Отправка в Application Insights диагностических данных облачной службы, виртуальной машины или Service Fabric
 Облачные службы, виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric используют расширение системы диагностики Azure для сбора данных.  Система диагностики Azure отправляет данные в таблицы службы хранилища Azure.  Тем не менее эти данные можно также полностью или частично передавать в другие расположения, используя расширение системы диагностики Azure 1.5 или более поздней версии.
@@ -62,7 +62,7 @@ ms.locfileid: "53325784"
 
 - Элемент **ApplicationInsights** указывает ключ инструментирования ресурса Application Insights, в который отправляются диагностические данные Azure.
     - Если ресурс Application Insights еще не существует, см. статью [Создание нового ресурса Application Insights](../../application-insights/app-insights-create-new-resource.md), где содержатся дополнительные сведения о создании ресурса и получении ключа инструментирования.
-    - При разработке облачной службы с использованием пакета SDK для Azure 2.8 и более поздних версий этот ключ инструментирования заполняется автоматически. При упаковке проекта облачной службы это значение задается на основе параметра конфигурации службы **APPINSIGHTS_INSTRUMENTATIONKEY**. См. статью [Application Insights для облачных служб Azure](../../application-insights/app-insights-cloudservices.md)
+    - При разработке облачной службы с использованием пакета SDK для Azure 2.8 и более поздних версий этот ключ инструментирования заполняется автоматически. При упаковке проекта облачной службы это значение задается на основе параметра конфигурации службы **APPINSIGHTS_INSTRUMENTATIONKEY**. См. статью [Application Insights для облачных служб Azure](../../azure-monitor/app/cloudservices.md)
 
 - Элемент **Channels** содержит один или несколько элементов **Channel**.
     - Атрибут *name* однозначно ссылается на этот канал.

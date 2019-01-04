@@ -3,15 +3,16 @@ title: Сведения об аварийном восстановлении в�
 description: В этой статье приведены общие сведения об аварийном восстановлении виртуальных машин VMware в Azure с помощью службы Azure Site Recovery.
 author: rayne-wiselman
 ms.service: site-recovery
+services: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 12/31/2018
 ms.author: raynew
-ms.openlocfilehash: 22be5d7438fdb554d1550fd6675ee1884c638824
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 0984f53c70baa50916e125d096a612ad8f061228
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52851066"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53972827"
 ---
 # <a name="about-disaster-recovery-of-vmware-vms-to-azure"></a>Сведения об аварийном восстановлении виртуальных машин VMware в Azure
 

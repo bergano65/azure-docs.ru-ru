@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/31/2016
 ms.author: mbullwin
-ms.openlocfilehash: b884fc15770e91268d1033dc4bab9bf96766de94
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: af85975fce20a87af8365f8fe6ea73ed1e6e1416
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52868948"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53998920"
 ---
 # <a name="smart-detection-in-application-insights"></a>Интеллектуальное обнаружение в Application Insights
  Функция интеллектуального обнаружения автоматически предупреждает о потенциальных проблемах с производительностью в веб-приложении. Она выполняет упреждающий анализ данных телеметрии, которые приложение отправляет в [Application Insights](app-insights-overview.md). В случае внезапного увеличения частоты сбоев или числа аномальных тенденций в производительности клиента или сервера вы получите оповещение. Эта функция не требует настройки. Она работает, если приложение отправляет достаточный объем данных телеметрии.
@@ -54,12 +54,12 @@ ms.locfileid: "52868948"
 ## <a name="next-steps"></a>Дополнительная информация
 Эти диагностические средства позволяют проверять данные телеметрии из приложения:
 
-* [Обозреватель метрик](app-insights-metrics-explorer.md)
-* [Обозреватель поиска](app-insights-diagnostic-search.md)
+* [Обозреватель метрик](../azure-monitor/app/metrics-explorer.md)
+* [Обозреватель поиска](../azure-monitor/app/diagnostic-search.md)
 * [Аналитика, мощный язык запросов](../azure-monitor/log-query/get-started-portal.md)
 
 Интеллектуальное обнаружение — это полностью автоматическая функция. но, возможно, вам потребуется настроить некоторые дополнительные оповещения.
 
-* [Настройка оповещений в Application Insights](app-insights-alerts.md)
-* [Доступность веб-тестов](app-insights-monitor-web-app-availability.md) 
+* [Настройка оповещений в Application Insights](../azure-monitor/app/alerts.md)
+* [Доступность веб-тестов](../azure-monitor/app/monitor-web-app-availability.md) 
 

@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 06/09/2018
 ms.author: shtabriz
-ms.openlocfilehash: bb427575d7cff69f0db778c5eb0e0bdf0671d8dd
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: b22ecb9d8948a77df43f47cd9fd218be4319d06e
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53343297"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53583737"
 ---
 # <a name="create-activity-log-alerts-on-service-notifications"></a>Создание оповещений журнала действий для уведомлений службы
 ## <a name="overview"></a>Обзор
@@ -196,7 +196,7 @@ ms.locfileid: "53343297"
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Узнайте, [как настроить уведомления веб-перехватчика для существующих систем управления проблемами](../../service-health/service-health-alert-webhook-guide.md).
-- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../../monitoring-and-diagnostics/monitoring-service-notifications.md).
+- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../../azure-monitor/platform/service-notifications.md).
 - Дополнительные сведения об ограничении частоты отправки уведомлений см. в статье [Ограничение частоты отправки для SMS, сообщений электронной почты и вызовов Webhook](../../azure-monitor/platform/alerts-rate-limiting.md).
 - Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../../azure-monitor/platform/activity-log-alerts-webhook.md).
 - Изучите [обзор оповещений журнала действий](../../azure-monitor/platform/alerts-overview.md) и узнайте, как получать оповещения. 

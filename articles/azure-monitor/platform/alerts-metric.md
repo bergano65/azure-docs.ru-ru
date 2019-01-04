@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: 3a106b0fe570fe44f96529d830271dfe4912437f
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 4aa6f8fdf4eaa8e439c1a8c8c0202cf49a04433c
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53336499"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53584315"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -33,7 +33,7 @@ ms.locfileid: "53336499"
 
 3. Щелкните **Выбор цели**, в загружаемой контекстной области выберите целевой ресурс, который вы хотите изменить. В раскрывающихся списках **Подписка** и **Тип ресурса** найдите ресурс, который вы хотите отслеживать. Вы также можете найти ресурс с помощью панели поиска.
 
-4. Если выбранный ресурс имеет метрики, по которым можно создавать оповещения, эти метрики будут отображаться на вкладке **Available signals** (Доступные сигналы) в правом нижнем углу. Полный список типов ресурсов, поддерживаемых для оповещений метрик, см. в этой [статье](../../monitoring-and-diagnostics/monitoring-near-real-time-metric-alerts.md#metrics-and-dimensions-supported).
+4. Если выбранный ресурс имеет метрики, по которым можно создавать оповещения, эти метрики будут отображаться на вкладке **Available signals** (Доступные сигналы) в правом нижнем углу. Полный список типов ресурсов, поддерживаемых для оповещений метрик, см. в этой [статье](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported).
 
 5. После выбора целевого ресурса щелкните **Add criteria** (Добавить критерии).
 
@@ -130,4 +130,4 @@ ms.locfileid: "53336499"
 
 - [Создание классического оповещения метрики с помощью шаблона Resource Manager](../../azure-monitor/platform/alerts-enable-template.md).
 - [Сведения о работе оповещений метрики в Azure Monitor](alerts-metric-overview.md).
-- [Схема полезных данных](../../monitoring-and-diagnostics/monitoring-near-real-time-metric-alerts.md#payload-schema)
+- [Схема полезных данных](../../azure-monitor/platform/alerts-metric-near-real-time.md#payload-schema)

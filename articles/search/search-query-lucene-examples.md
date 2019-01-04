@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/09/2018
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 0ce230bc6a926229ed383c828f83aafd60117471
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 962c1cff91a5ac3f52dc67c30bd2c7a4e2e22b9d
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53317165"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53631844"
 ---
 # <a name="lucene-syntax-query-examples-for-building-advanced-queries-in-azure-search"></a>Примеры синтаксиса запросов Lucene для создания расширенных запросов в Поиске Azure
 При создании запросов для Поиска Azure можно заменить [стандартный синтаксический анализатор](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) по умолчанию на более экспансивное [Средство синтаксического анализа запросов Lucene в Поиск Azure](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), чтобы сформулировать специализированные и расширенные определения запросов. 
@@ -174,7 +174,7 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2017-
 
 ## <a name="example-6-regex"></a>Пример 6. Регулярное выражение
 
-Операция поиска по регулярным выражениям позволяет найти совпадение в зависимости от содержимого между косыми чертами "/", как указано в документации [класса RegExp](http://lucene.apache.org/core/4_10_2/core/org/apache/lucene/util/automaton/RegExp.html).
+Операция поиска по регулярным выражениям позволяет найти совпадение в зависимости от содержимого между косыми чертами "/", как указано в документации [класса RegExp](https://lucene.apache.org/core/4_10_2/core/org/apache/lucene/util/automaton/RegExp.html).
 
 В этом запросе выполняется поиск вакансий с термином "Senior" или "Junior": `search=business_title:/(Sen|Jun)ior/``.
 

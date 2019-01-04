@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: mbullwin
-ms.openlocfilehash: 3c3ff606958503efcf2df5fd99b6e52e4687de4a
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 68155b69c1122d645eca5fe121d32bd9353db2da
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52996260"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54002728"
 ---
 # <a name="create-an-application-insights-resource"></a>Создание ресурса Application Insights
 В Azure Application Insights данные о приложении отображаются в *ресурсе* Microsoft Azure. Таким образом, создание ресурса является частью [настройки Application Insights для мониторинга нового приложения][start]. Во многих случаях создать ресурс можно автоматически с помощью IDE. Однако в некоторых случаях создавать ресурс необходимо вручную. Например, чтобы иметь отдельные ресурсы для сборок разработки и производственных сборок приложения.
@@ -66,18 +66,18 @@ ms.locfileid: "52996260"
 Нажмите кнопку **Обновить** через несколько секунд, если ожидаете дополнительные данные.
 
 ## <a name="creating-a-resource-automatically"></a>Автоматическое создание ресурса
-Вы можете написать [Сценарий PowerShell](app-insights-powershell.md) для автоматического создания ресурса.
+Вы можете написать [Сценарий PowerShell](../azure-monitor/app/powershell.md) для автоматического создания ресурса.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Создание панели мониторинга](app-insights-dashboards.md)
-* [Поиск по журналу диагностики](app-insights-diagnostic-search.md)
-* [Изучение метрик](app-insights-metrics-explorer.md)
-* [Написание запросов аналитики](app-insights-analytics.md)
+* [Создание панели мониторинга](../azure-monitor/app/app-insights-dashboards.md)
+* [Поиск по журналу диагностики](../azure-monitor/app/diagnostic-search.md)
+* [Изучение метрик](../azure-monitor/app/metrics-explorer.md)
+* [Написание запросов аналитики](../azure-monitor/app/analytics.md)
 
 <!--Link references-->
 
-[api]: app-insights-api-custom-events-metrics.md
-[diagnostic]: app-insights-diagnostic-search.md
-[metrics]: app-insights-metrics-explorer.md
+[api]: ../azure-monitor/app/api-custom-events-metrics.md
+[diagnostic]: ../azure-monitor/app/diagnostic-search.md
+[metrics]: ../azure-monitor/app/metrics-explorer.md
 [start]: app-insights-overview.md
 

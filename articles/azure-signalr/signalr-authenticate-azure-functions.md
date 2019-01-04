@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 09/18/2018
 ms.author: zhshang
-ms.openlocfilehash: 34cbb4d2c8a1e84499961802ca7bd07408375345
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 0cd0dcaf200b1248204efc2d2c0011a94d3c41d3
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53409399"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53720974"
 ---
 # <a name="tutorial-azure-signalr-service-authentication-with-azure-functions"></a>Руководство по аутентификации в службе Azure SignalR с помощью Функций Azure
 
@@ -298,7 +298,7 @@ ms.locfileid: "53409399"
 
 ### <a name="configure-function-app-for-authentication"></a>Настройка аутентификации для приложения-функции
 
-Сейчас приложение чата работает анонимно. В Azure для аутентификации пользователя вы будете применять [проверку подлинности службы приложений](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview). Идентификатор или имя аутентифицированного пользователя можно передать в привязку *SignalRConnectionInfo*, чтобы сформировать сведения о подключении для аутентификации от имени пользователя.
+Сейчас приложение чата работает анонимно. В Azure для аутентификации пользователя вы будете применять [проверку подлинности службы приложений](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization). Идентификатор или имя аутентифицированного пользователя можно передать в привязку *SignalRConnectionInfo*, чтобы сформировать сведения о подключении для аутентификации от имени пользователя.
 
 При отправке сообщения приложение будет определять, нужно ли отправить его всем подключенным клиентам или только тем, которые прошли аутентификацию от имени определенного пользователя.
 

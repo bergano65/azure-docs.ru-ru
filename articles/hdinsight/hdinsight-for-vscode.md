@@ -10,12 +10,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/27/2017
-ms.openlocfilehash: fe186966dbddb5aa743e465f897aa5a1a0e07db1
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 23cbdb4d72a6b88563d9d2c2bd0e4e3c8223377f
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52840220"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53723677"
 ---
 # <a name="use-azure-hdinsight-tools-for-visual-studio-code"></a>Использование средств Azure HDInsight для Visual Studio Code
 
@@ -30,7 +30,7 @@ ms.locfileid: "52840220"
 
 - Кластер HDInsight. Сведения о создании кластера см. в статье о [начале работы с HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 - [Visual Studio Code](https://www.visualstudio.com/products/code-vs.aspx).
-- [Mono](http://www.mono-project.com/docs/getting-started/install/). Mono требуется только для Linux и macOS.
+- [Mono](https://www.mono-project.com/docs/getting-started/install/). Mono требуется только для Linux и macOS.
 
 ## <a name="install-the-hdinsight-tools"></a>Установка средств HDInsight
    
@@ -87,7 +87,7 @@ ms.locfileid: "52840220"
 
     После подключения имя учетной записи Azure будет отображаться в строке состояния в левом нижнем углу окна VS Code. 
 
-    > [!NOTE]
+    > [!NOTE]  
     > Из-за известной проблемы с проверкой подлинности в Azure браузер следует открывать в режиме конфиденциальности или в режиме инкогнито. Если для учетной записи Azure используется двухфакторная проверка подлинности, мы рекомендуем выбрать проверку подлинности через телефон, а не ПИН-код.
   
 
@@ -113,7 +113,7 @@ ms.locfileid: "52840220"
    
    ![диалоговое окно связывания кластера](./media/hdinsight-for-vscode/link-cluster-process.png)
 
-   > [!NOTE]
+   > [!NOTE]  
    > Если кластер зарегистрирован в подписке Azure и связан, используется имя пользователя и пароль для связывания. 
    
 3. Связанный кластер можно просмотреть с помощью команды **List Cluster**. Теперь в этот связанный кластер можно отправить скрипт.
@@ -231,7 +231,7 @@ ms.locfileid: "52840220"
 
    ![Отправка результата задания Python](./media/hdinsight-for-vscode/pyspark-ineteractive-select-result.png) При выполнении запросов статус отправки отображается слева от нижней строки состояния. Если отображается состояние **PySpark Kernel (busy)** (Ядро PySpark (занято)), не отправляйте другие запросы. 
 
->[!NOTE]
+>[!NOTE]  
 >Кластеры могут сохранять сведения о сеансе. Определенная переменная, функция и соответствующие значения хранятся в сеансе, поэтому к ним можно обращаться в нескольких вызовах службы одного кластера. 
 
 ### <a name="to-disable-environment-check"></a>Отключение проверки окружения
@@ -406,9 +406,9 @@ HDInsight для VSCode поддерживает перечисленные ни
 * [Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](./hdinsight-connect-hive-zeppelin.md)
 
 ### <a name="scenarios"></a>Сценарии
-* [Apache Spark и бизнес-аналитика. Анализ данных Apache Spark с использованием Power BI в HDInsight](spark/apache-spark-use-bi-tools.md)
-* [Apache Spark и Машинное обучение. Использование Spark в HDInsight для анализа температуры здания, с помощью данных системы кондиционирования](spark/apache-spark-ipython-notebook-machine-learning.md)
-* [Apache Spark и Машинное обучение. Использование Spark в HDInsight для прогнозирования результатов проверки продуктов питания](spark/apache-spark-machine-learning-mllib-ipython.md)
+* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](spark/apache-spark-use-bi-tools.md)
+* [Использование Apache Spark MLlib для Создание приложения машинного обучения Apache Spark в HDInsight](spark/apache-spark-ipython-notebook-machine-learning.md)
+* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](spark/apache-spark-machine-learning-mllib-ipython.md)
 * [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](spark/apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-running-applications"></a>Создание и запуск приложений

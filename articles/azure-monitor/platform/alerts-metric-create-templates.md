@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 9/27/2018
 ms.author: snmuvva
 ms.component: alerts
-ms.openlocfilehash: 6d063eb0ae2a468bc8aa73d18b88135f1f119bec
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: a5b82cb5f2ea90876001fe2db0f62d8b1df64f0c
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53345386"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53580252"
 ---
 # <a name="create-a-metric-alert-with-a-resource-manager-template"></a>Создание оповещения метрики с помощью шаблона Resource Manager
 
-В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки [новых оповещений метрик](../../monitoring-and-diagnostics/monitoring-near-real-time-metric-alerts.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Сейчас в [этом наборе типов ресурсов](../../monitoring-and-diagnostics/monitoring-near-real-time-metric-alerts.md#metrics-and-dimensions-supported) доступны новые оповещения метрик.
+В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки [новых оповещений метрик](../../azure-monitor/platform/alerts-metric-near-real-time.md) в Azure Monitor. Шаблоны Resource Manager позволяют программно настроить оповещения согласованным и воспроизводимым образом в разных средах. Сейчас в [этом наборе типов ресурсов](../../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported) доступны новые оповещения метрик.
 
 > [!IMPORTANT]
 > Шаблон Resource Manager, указанный для оповещения метрики, не будет работать для типа ресурса Microsoft.OperationalInsights/workspaces, так как поддержка метрик в Log Analytics доступна в предварительной версии. Пользователи, заинтересованные в использовании функций предварительной версии с шаблоном ресурсов, могут связаться со [службой обратной связи по оповещениям Azure](mailto:azurealertsfeedback@microsoft.com)

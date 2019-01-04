@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: johnkem
 ms.component: logs
-ms.openlocfilehash: aae3454fc8de8455146fa1189b66e6498c32e20c
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: ba163b797cfaaf73c660f1ef3d8da18758e8139a
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53439641"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53542005"
 ---
 # <a name="prepare-for-format-change-to-azure-monitor-diagnostic-logs-archived-to-a-storage-account"></a>Подготовка к изменению формата журналов диагностики Azure Monitor, архивируемых в учетной записи хранения
 
@@ -32,7 +32,7 @@ Azure Monitor предлагает возможность, которая поз
 * Это изменение произойдет один раз во всех регионах общедоступного облака. Изменение пока будет недоступно в облаках Azure для Китая, Azure для Германии или Azure для государственных организаций.
 * Это изменение затрагивает следующие типы данных:
   * [журналы диагностики ресурсов Azure](./../../azure-monitor/platform/archive-diagnostic-logs.md) ([см. список ресурсов здесь](./../../azure-monitor/platform/tutorial-dashboards.md));
-  * [метрики ресурсов Azure, экспортируемые с помощью параметров диагностики](./../../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md#diagnostic-settings);
+  * [метрики ресурсов Azure, экспортируемые с помощью параметров диагностики](./../../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings);
   * [данные журнала действий Azure, экспортируемые с помощью профилей журналов](./../../azure-monitor/platform/archive-activity-log.md).
 * Это изменение не затрагивает следующие данные:
   * журналы сетевых потоков;

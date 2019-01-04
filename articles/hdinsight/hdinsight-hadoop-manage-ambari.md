@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: eee37f5a77331b78aa587ba2e3eb61132d7d6adc
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 738ef5df0b2e2a7f31a7316a1d2ef4395168d41e
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53385573"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53722028"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-web-ui"></a>Управление кластерами HDInsight с помощью веб-интерфейса Apache Ambari
 
@@ -26,7 +26,7 @@ Apache Ambari упрощает управление кластером Apache Ha
 
 ## <a id="whatis"></a>Что такое Apache Ambari?
 
-[Apache Ambari](http://ambari.apache.org) упрощает управление Hadoop, предоставляя простой в использовании веб-интерфейс. Ambari можно использовать для отслеживания кластеров Hadoop, а также для управления ими. Разработчики могут интегрировать эти возможности в своих приложениях с помощью [интерфейсов REST API Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
+[Apache Ambari](https://ambari.apache.org) упрощает управление Hadoop, предоставляя простой в использовании веб-интерфейс. Ambari можно использовать для отслеживания кластеров Hadoop, а также для управления ими. Разработчики могут интегрировать эти возможности в своих приложениях с помощью [интерфейсов REST API Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
 Веб-интерфейс Ambari предоставляется по умолчанию с кластерами HDInsight, использующими операционную систему Linux.
 
@@ -181,12 +181,12 @@ Apache Ambari упрощает управление кластером Apache Ha
 
    * **Списать** — удаление узла из кластера.
 
-     > [!NOTE]
+     > [!NOTE]  
      > Не используйте это действие в кластерах HDInsight.
 
    * **Восстановить списанные** — добавление списанных ранее узлов в кластер.
 
-     > [!NOTE]
+     > [!NOTE]  
      > Не используйте это действие в кластерах HDInsight.
 
 ### <a id="service"></a>Службы

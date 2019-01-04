@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/06/2018
 ms.author: jdial
-ms.openlocfilehash: fae4fffbe9e4b0be0f2edacf3e86b6268cc58608
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 39525c7e25e247504429ea36210986a5e3300cc1
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53384655"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53537182"
 ---
 # <a name="manage-azure-ddos-protection-standard-using-the-azure-portal"></a>Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure
 
@@ -157,7 +157,7 @@ ms.locfileid: "53384655"
 6. Выберите **Turn on diagnostics to collect the DDoSMitigationReports log** (Включить диагностику для сбора журнала DDoSMitigationReports) и выберите необходимые параметры из перечисленных ниже.
 
     - **Архивировать в учетной записи хранения**. Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [Архивирование журналов диагностики](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-    - **Передать в концентратор событий**. Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в разделе [Потоковая передача журналов диагностики Azure в концентратор событий](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+    - **Передать в концентратор событий**. Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в разделе [Потоковая передача журналов диагностики Azure в концентратор событий](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
     - **Отправить в Log Analytics**. Запись журналов в службу Azure Log Analytics. Дополнительные сведения об этом параметре см. в разделе [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 Добавочный отчет об устранении рисков и отчет после устранения рисков атаки содержат приведенные ниже поля.
@@ -179,7 +179,7 @@ ms.locfileid: "53384655"
 6. Выберите **Turn on diagnostics to collect the DDoSMitigationFlowLogs log** (Включить диагностику для сбора журнала DDoSMitigationFlowLogs) и выберите необходимые параметры из перечисленных ниже.
 
     - **Архивировать в учетной записи хранения**. Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [Архивирование журналов диагностики](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-    - **Передать в концентратор событий**. Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в разделе [Потоковая передача журналов диагностики Azure в концентратор событий](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+    - **Передать в концентратор событий**. Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в разделе [Потоковая передача журналов диагностики Azure в концентратор событий](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
     - **Отправить в Log Analytics**. Запись журналов в службу Azure Log Analytics. Дополнительные сведения об этом параметре см. в разделе [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 1. Чтобы просматривать данные журналов потоков на панели мониторинга Аналитики Azure, вы можете импортировать пример панели мониторинга из https://github.com/Anupamvi/Azure-DDoS-Protection/raw/master/flowlogsbyip.zip.
 

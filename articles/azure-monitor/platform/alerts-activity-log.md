@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
-ms.openlocfilehash: 5657cfb40e9017918f5842c573895872940b307a
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 6d0c8f62d109d07a9f08e5190a5a2caa0d66a0c1
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53273715"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53579334"
 ---
 # <a name="create-view-and-manage-activity-log-alerts-using-azure-monitor"></a>Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor  
 
@@ -96,7 +96,7 @@ ms.locfileid: "53273715"
     Вы можете включить, отключить, изменить или удалить правило. [Узнайте больше](#view-and-manage-activity-log-alert-rules-in-azure-portal) об управлении правилами журнала действий.
 
 
-Кроме того, в качестве простой аналогии для понимания условий, на которых могут создаваться правила генерации оповещений для журнала действий, можно просмотреть или отфильтровать события с помощью [журнала действий на портале Azure](../../monitoring-and-diagnostics/monitoring-overview-activity-logs.md#query-the-activity-log-in-the-azure-portal). В Azure Monitor журнал действий можно отфильтровать или найти необходимые события и затем создать оповещение с помощью кнопки **Добавить оповещение журнала действий**, а затем приступить к руководству, описанному выше, начиная с 4-го шага.
+Кроме того, в качестве простой аналогии для понимания условий, на которых могут создаваться правила генерации оповещений для журнала действий, можно просмотреть или отфильтровать события с помощью [журнала действий на портале Azure](../../azure-monitor/platform/activity-logs-overview.md#query-the-activity-log-in-the-azure-portal). В Azure Monitor журнал действий можно отфильтровать или найти необходимые события и затем создать оповещение с помощью кнопки **Добавить оповещение журнала действий**, а затем приступить к руководству, описанному выше, начиная с 4-го шага.
     
  ![ Добавление оповещения из журнала действий](media/alerts-activity-log/add-activity-log.png)
     
@@ -223,4 +223,4 @@ az group deployment create --resource-group myRG --template-file sampleActivityL
 - [Веб-перехватчики для оповещений журнала действий Azure](../../azure-monitor/platform/activity-log-alerts-webhook.md)
 - [Создание оповещений журнала действий (классических)](../../azure-monitor/platform/activity-log-alerts.md) 
 - Дополнительные сведения о группах действий см. в статье [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).  
-- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../../monitoring-and-diagnostics/monitoring-service-notifications.md).
+- Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../../azure-monitor/platform/service-notifications.md).

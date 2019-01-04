@@ -15,15 +15,15 @@ ms.topic: article
 ms.date: 07/06/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 603a6bab75c4a5da4425bcc57d2cc5ccda728636
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 1e8bebdb3f54ac59ec19ef798cc3e794473bbec0
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53274145"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53721467"
 ---
 # <a name="restore-an-app-in-azure"></a>Восстановление приложения в Azure
-В этой статье описывается, как в [службе приложений Azure](../app-service/app-service-web-overview.md) восстановить приложение, для которого ранее была создана резервная копия (ознакомьтесь с [архивацией приложения в Azure](web-sites-backup.md)). Вы можете восстановить предыдущее состояние приложения и связанных с ним баз данных по запросу или создать новое приложение на основе одной из резервных копий исходного приложения. Служба приложений Azure поддерживает следующие базы данных для архивации и восстановления:
+В этой статье описывается, как в [службе приложений Azure](../app-service/overview.md) восстановить приложение, для которого ранее была создана резервная копия (ознакомьтесь с [архивацией приложения в Azure](manage-backup.md)). Вы можете восстановить предыдущее состояние приложения и связанных с ним баз данных по запросу или создать новое приложение на основе одной из резервных копий исходного приложения. Служба приложений Azure поддерживает следующие базы данных для архивации и восстановления:
 - [База данных SQL](https://azure.microsoft.com/services/sql-database/)
 - [База данных Azure для MySQL](https://azure.microsoft.com/services/mysql)
 - [База данных Azure для PostgreSQL](https://azure.microsoft.com/services/postgresql)
@@ -91,8 +91,8 @@ ms.locfileid: "53274145"
 
 Примеры см. в разделах:
 
-- [Примеры Azure CLI](app-service-cli-samples.md)
-- [Примеры сценариев Azure PowerShell](app-service-powershell-samples.md)
+- [Примеры Azure CLI](samples-cli.md)
+- [Примеры сценариев Azure PowerShell](samples-powershell.md)
 
 <!-- ## Next Steps
 You can backup and restore App Service apps using REST API. -->

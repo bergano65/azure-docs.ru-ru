@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/18/2018
 ms.author: anwestg
 ms.reviewer: sethm
-ms.openlocfilehash: 9f320f508fd45b6ad70b1357e873663796825621
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: f40d88df7a46c73981b6f20bee0b119743c08257
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078806"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53714497"
 ---
 # <a name="app-service-on-azure-stack-update-2-release-notes"></a>Служба приложений в заметках о выпуске обновления 2 Azure Stack
 
@@ -66,7 +66,7 @@ ms.locfileid: "49078806"
   - Обновлены компоненты .Net Core для согласования со Службой приложений Azure в общедоступном облаке.
   - Обновлен компонент Kudu
 
-- Включена функция автоматического переключения слотов развертывания: [Настройка автоматического переключения](https://docs.microsoft.com/azure/app-service/web-sites-staged-publishing#configure-auto-swap).
+- Включена функция автоматического переключения слотов развертывания: [Настройка автоматического переключения](https://docs.microsoft.com/azure/app-service/deploy-staging-slots#configure-auto-swap).
 
 - Включено тестирование в рабочей среде: [Introduction to Azure Websites Testing in Production with Galin Iliev](https://azure.microsoft.com/resources/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) (Введение в тестирование веб-сайтов Azure в рабочей среде. Автор: Галин Илиев).
 
@@ -83,15 +83,15 @@ ms.locfileid: "49078806"
 - Рабочим ролям не удается связаться с файловым сервером, если служба приложений развернута в существующей виртуальной сети и файловый сервер доступен только в частной сети.
 
 Если вы решили выполнить развертывание в существующей виртуальной сети с использованием внутреннего IP-адреса для подключения к файловому серверу, необходимо добавить правило безопасности для исходящего трафика, разрешающее передачу трафика SMB между подсетью рабочей роли и файловым сервером. Для этого перейдите к группе безопасности сети WorkersNsg на портале администрирования и добавьте правило безопасности для исходящего трафика со следующими свойствами.
- * Источник: "Любой".
+ * Источник: Любой
  * Диапазон исходных портов: *.
- * Назначение: "IP-адреса".
- * Диапазон IP-адресов назначения: диапазон IP-адресов вашего файлового сервера.
- * Диапазон конечных портов: 445.
- * Протокол: TCP.
- * Действие: "Разрешить".
- * Приоритет: 700.
- * Имя: Outbound_Allow_SMB445.
+ * Назначение: IP-адреса
+ * Диапазон конечных IP-адресов: диапазон IP-адресов для файлового сервера
+ * Диапазон конечных портов: 445
+ * Протокол: TCP
+ * Действие: РАЗРЕШИТЬ
+ * Приоритет: 700
+ * Имя: Outbound_Allow_SMB445
 
 ### <a name="known-issues-for-cloud-admins-operating-azure-app-service-on-azure-stack"></a>Известные проблемы для облачных администраторов, работающих со службой приложений Azure в Azure Stack
 

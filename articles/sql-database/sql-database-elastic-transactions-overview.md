@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 2418de5c20c34ae82ad36a914955fb338afd2822
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: e3fb703d49b97b7e8fa4136f8cd49fed20ee12a9
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52877190"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53720722"
 ---
 # <a name="distributed-transactions-across-cloud-databases"></a>Распределенные транзакции по облачным базам данных
 Возможности эластичной базы данных позволяют выполнять транзакции, охватывающие несколько баз данных в базе данных SQL Azure. Транзакции эластичной базы данных в базе данных SQL можно выполнять с помощью ADO.NET и приложений .NET. Кроме того, транзакции можно объединить с уже знакомыми приемами программирования, используя классы [System.Transaction](https://msdn.microsoft.com/library/system.transactions.aspx). Инструкции по подключению библиотеки см. в статье [Microsoft .NET Framework 4.6.1 (веб-установщик) для Windows 7 SP1, Windows 8, Windows 8.1, Windows 10, Windows Server 2008 R2 SP1, Windows Server 2012 и Windows Server 2012 R2](https://www.microsoft.com/download/details.aspx?id=49981).
@@ -92,7 +92,7 @@ ms.locfileid: "52877190"
 
 
 ## <a name="net-installation-for-azure-cloud-services"></a>Установка .NET для облачных служб Azure
-Azure включает несколько предложений для размещения приложений .NET. Сравнение различных предложений приведено в статье [Сравнение службы приложений, облачных служб и виртуальных машин Azure](../app-service/choose-web-site-cloud-service-vm.md). Если версия гостевой операционной системы предложения меньше .NET 4.6.1 (версия, необходимая для эластичных транзакций), необходимо обновить гостевую ОС до версии 4.6.1. 
+Azure включает несколько предложений для размещения приложений .NET. Сравнение различных предложений приведено в статье [Сравнение службы приложений, облачных служб и виртуальных машин Azure](../app-service/overview-compare.md). Если версия гостевой операционной системы предложения меньше .NET 4.6.1 (версия, необходимая для эластичных транзакций), необходимо обновить гостевую ОС до версии 4.6.1. 
 
 Для службы приложений Azure обновления гостевой ОС в настоящее время не поддерживаются. В виртуальных машинах Azure необходимо просто выполнить вход и запустить установщик для последней версии .NET Framework. Для облачных служб Azure необходимо включить установку более новой версии .NET в задачи запуска данного развертывания. Основные понятия и рекомендованные шаги см. в статье [Установка .NET для роли облачной службы](../cloud-services/cloud-services-dotnet-install-dotnet.md).  
 

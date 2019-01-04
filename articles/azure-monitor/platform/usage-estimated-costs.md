@@ -9,12 +9,12 @@ ms.date: 08/11/2018
 ms.author: mbullwin
 ms.reviewer: Dale.Koetke
 ms.component: ''
-ms.openlocfilehash: 072201dd552f5d68a9b6621b2ca7c83acd76a1f5
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 6b8940f62b94615b4622f60786e411b9a18b2dee
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53439571"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54001623"
 ---
 # <a name="monitoring-usage-and-estimated-costs"></a>Мониторинг использования и ожидаемых затрат
 
@@ -22,7 +22,7 @@ ms.locfileid: "53439571"
 > В этой статье описывается просмотр использования и ожидаемых затрат в различных функциях мониторинга Azure для разных моделей ценообразования.  Дополнительные сведения приведены в статьях ниже.
 > - В статье [Управление затратами на хранение путем регулирования объема и срока хранения данных в Log Analytics](../../azure-monitor/platform/manage-cost-storage.md) описано, как контролировать затраты, изменяя срок хранения данных.
 > - В статье [Анализ использования данных в службе Log Analytics](../../azure-monitor/platform/data-usage.md) описано, как анализировать и оповещать об использовании данных.
-> - В статье [Управление ценами и объемом данных в Application Insights](../../application-insights/app-insights-pricing.md) описано, как анализировать использование данных в Application Insights.
+> - В статье [Управление ценами и объемом данных в Application Insights](../../azure-monitor/app/pricing.md) описано, как анализировать использование данных в Application Insights.
 
 На странице **Usage and estimated costs** (Использование и ожидаемые затраты) в центре мониторинга на портале Azure объясняется, как использовать такие основные функции мониторинга, как [оповещения, метрики и уведомления](https://azure.microsoft.com/pricing/details/monitor/), [Служба анализа журналов Azure](https://azure.microsoft.com/pricing/details/log-analytics/) и [Azure Log Analytics](https://azure.microsoft.com/pricing/details/application-insights/). Для клиентов с тарифными планами, доступными до апреля 2018 года, это также включает использование службы Log Analytics, приобретенной в соответствии с предложением "Анализ и аналитика".
 

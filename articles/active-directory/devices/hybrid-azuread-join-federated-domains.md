@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 12/04/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: c35c16e1414b1287fa891d1ce1f65ca8eff3d2c5
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 3bce57f919490e1689ce40f59a3799ce451ee6e7
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53434959"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53752798"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство. Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -57,8 +57,6 @@ ms.locfileid: "53434959"
 Для настройки сценария в этом руководстве вам понадобится следующее.
 
 - Windows Server 2012 R2 с AD FS.
-
-- Локальную службу Active Directory (AD) с уровнем схемы 85 или более поздней версии. Дополнительные сведения см. в разделе [Обновить схему Active Directory](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configure-device-based-conditional-access-on-premises#upgrade-your-active-directory-schema).
 
 - [Azure AD Connect](https://www.microsoft.com/download/details.aspx?id=47594) 1.1.819.0 или более поздней версии. 
  
@@ -170,7 +168,7 @@ ms.locfileid: "53434959"
 
 
     
-Следующей политике должен быть задан вариант **Все** **Пользователи могут регистрировать устройства в Azure AD**.
+Для следующей политики нужно установить значение **Все**: **Пользователи могут регистрировать устройства в Azure AD**.
 
 ![Регистрация устройств](./media/hybrid-azuread-join-federated-domains/23.png)
 

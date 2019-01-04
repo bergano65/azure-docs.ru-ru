@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/28/2018
 ms.author: mabrigg
-ms.openlocfilehash: e9309f8cb46b31ded46b705308465ac6f6c89204
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.openlocfilehash: c2827a4badd61aeb8de556795834dee39769e85e
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47585192"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53554509"
 ---
 # <a name="enable-azure-cli-for-azure-stack-users"></a>Применение Azure CLI для пользователей Azure Stack
 
@@ -38,7 +38,7 @@ ms.locfileid: "47585192"
 Корневой сертификат ЦС Azure Stack можно найти в пакете SDK и на виртуальной машине клиента, где выполняется среда комплекта разработки. Чтобы экспортировать корневой сертификат Azure Stack в PEM-формате, войдите в пакет SDK или на виртуальную машину клиента и выполните следующий скрипт:
 
 ```powershell
-$label = "AzureStackSelfSignedRootCert"
+$label = "<Your Azure Stack CA root certificate name>"
 Write-Host "Getting certificate from the current user trusted store with subject CN=$label"
 $root = Get-ChildItem Cert:\CurrentUser\Root | Where-Object Subject -eq "CN=$label" | select -First 1
 if (-not $root)

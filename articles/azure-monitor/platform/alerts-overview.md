@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: robb
 ms.component: alerts
-ms.openlocfilehash: cf01ddd53741a77df61e3dc1946eb836640034d0
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: b24b98760e276c207bb360687f32ae902b3306fb
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53345474"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53976959"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Обзор оповещений в Microsoft Azure 
 
@@ -56,7 +56,7 @@ ms.locfileid: "53345474"
 
 ## <a name="what-you-can-alert-on"></a>Возможные оповещения
 
-Вы можете получить оповещение о метриках и журналах, как описано в [источниках данных мониторинга](../../monitoring-and-diagnostics/monitoring-data-sources.md). Помимо прочего, к ним относятся:
+Вы можете получить оповещение о метриках и журналах, как описано в [источниках данных мониторинга](../../azure-monitor/platform/data-sources-reference.md). Помимо прочего, к ним относятся:
 - Значения метрик
 - Запросы поиска по журналам
 - События в журнале действий
@@ -131,7 +131,7 @@ ms.locfileid: "53345474"
 | **Источник мониторинга** | **Тип сигнала**  | **Описание** | 
 |-------------|----------------|-------------|
 | Работоспособность службы | Журнал действий  | Не поддерживается. Ознакомьтесь с разделом [Создание оповещений журнала действий для уведомлений службы](../../azure-monitor/platform/alerts-activity-log-service-notifications.md).  |
-| Application Insights | Веб-тесты доступности | Не поддерживается. Ознакомьтесь с разделом [Наблюдение за доступностью и скоростью реагирования веб-сайта](../../application-insights/app-insights-monitor-web-app-availability.md). Доступны для любого веб-сайта, инструментированного для отправки данных в Application Insights. Получение уведомления, когда доступность или скорость реагирования веб-сайта опускается ниже ожидаемого значения. |
+| Application Insights | Веб-тесты доступности | Не поддерживается. Ознакомьтесь с разделом [Наблюдение за доступностью и скоростью реагирования веб-сайта](../../azure-monitor/app/monitor-web-app-availability.md). Доступны для любого веб-сайта, инструментированного для отправки данных в Application Insights. Получение уведомления, когда доступность или скорость реагирования веб-сайта опускается ниже ожидаемого значения. |
 
 
 ## <a name="all-alerts-page"></a>Страница "Все оповещения" 

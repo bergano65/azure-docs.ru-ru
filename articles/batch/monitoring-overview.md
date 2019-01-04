@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: na
 ms.date: 04/05/2018
 ms.author: danlep
-ms.openlocfilehash: 3053e136ab08c38d9460d60f64464a17f6f61574
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: ee483c19aa59ca98226f77a5e56b1ee4eb4dede5
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51824089"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53543416"
 ---
 # <a name="monitor-batch-solutions"></a>Мониторинг решений пакетной службы
 
@@ -26,7 +26,7 @@ Azure и пакетная служба предоставляют широкий
 
 ## <a name="subscription-level-monitoring"></a>Мониторинг на уровне подписки
 
-На уровне подписки, в том числе для учетных записей пакетной службы, [журнал действий Azure](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md) позволяет собирать операционные данные о событиях по [нескольким категориям](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md#categories-in-the-activity-log).
+На уровне подписки, в том числе для учетных записей пакетной службы, [журнал действий Azure](../azure-monitor/platform/activity-logs-overview.md) позволяет собирать операционные данные о событиях по [нескольким категориям](../azure-monitor/platform/activity-logs-overview.md#categories-in-the-activity-log).
 
 В частности, для учетных записей пакетной службы в журнал действий собираются данные о создании и удалении учетных записей, а также об управлении ключами.
 
@@ -34,7 +34,7 @@ Azure и пакетная служба предоставляют широкий
 
 ## <a name="batch-account-level-monitoring"></a>Мониторинг на уровне учетной записи пакетной службы
 
-Для мониторинга отдельных учетных записей пакетной службы можно применить [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../azure-monitor/platform/data-collection.md#metrics) и (если настроено) [журналы диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) для ресурсов, относящихся к уровню учетной записи пакетной службы, таких как пулы, задания и задачи. Эти данные можно собирать и использовать вручную или программными средствами, чтобы отслеживать действия в учетной записи пакетной службы и диагностировать проблемы. Дополнительные сведения см. в статье [События журнала для диагностики и мониторинга решений пакетной службы](batch-diagnostics.md).
+Для мониторинга отдельных учетных записей пакетной службы можно применить [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../azure-monitor/platform/data-collection.md#metrics) и (если настроено) [журналы диагностики](../azure-monitor/platform/diagnostic-logs-overview.md) для ресурсов, относящихся к уровню учетной записи пакетной службы, таких как пулы, задания и задачи. Эти данные можно собирать и использовать вручную или программными средствами, чтобы отслеживать действия в учетной записи пакетной службы и диагностировать проблемы. Дополнительные сведения см. в статье [События журнала для диагностики и мониторинга решений пакетной службы](batch-diagnostics.md).
  
 > [!NOTE]
 > По умолчанию метрики доступны в учетной записи пакетной службы за 30-дневный период со скользящей ротацией. Для сбора данных об учетной записи пакетной службы необходимо включить ведение журнала диагностики, хранение и (или) обработка которого может повлечь некоторые расходы на использование ресурсов. 

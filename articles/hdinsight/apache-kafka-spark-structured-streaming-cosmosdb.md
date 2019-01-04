@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: c35082d7aa1e9d669bc9c5b89948f190d3edd2f3
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: e964e00cd326d924a77a53348942f91ebbdbdea4
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53014537"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53630166"
 ---
 # <a name="use-apache-spark-structured-streaming-with-apache-kafka-and-azure-cosmos-db"></a>Использование структурированной потоковой передачи Apache Spark с Apache Kafka в Azure Cosmos DB
 
@@ -24,7 +24,7 @@ ms.locfileid: "53014537"
 
 Структурированная потоковая передача Spark — это механизм обработки потока, встроенный в Spark SQL. Он позволяет выражать потоковые вычисления так же, как пакетные вычисления статических данных. Дополнительные сведения о структурированной потоковой передаче см. в [руководстве по программированию структурированной потоковой передачи](https://spark.apache.org/docs/2.2.0/structured-streaming-programming-guide.html) на Apache.org.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > В этом примере используется Spark 2.2 в HDInsight 3.6.
 >
 > Вы узнаете, как создать группу ресурсов Azure, которая содержит кластеры Spark и Kafka в HDInsight. Оба этих кластера находятся в виртуальной сети Azure, что позволяет кластеру Spark напрямую обмениваться данными с кластером Kafka.
@@ -37,7 +37,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 ![Схема кластеров Spark и Kafka в виртуальной сети Azure](./media/hdinsight-apache-spark-with-kafka/spark-kafka-vnet.png)
 
-> [!NOTE]
+> [!NOTE]  
 > Служба Kafka ограничена обменом данными в пределах виртуальной сети. Другие службы в кластере, например SSH и Ambari, могут быть доступны через Интернет. Дополнительные сведения об общих портах, доступных в HDInsight, см. в статье [Порты и универсальные коды ресурсов (URI), используемые кластерами HDInsight](hdinsight-hadoop-port-settings-for-services.md).
 
 Хотя виртуальную сеть Azure, а также кластеры Kafka и Spark можно создать вручную, проще использовать шаблон Azure Resource Manager. Выполните следующие действия, чтобы развернуть виртуальную сеть Azure, а также кластеры Kafka и Spark в подписке Azure.
@@ -58,12 +58,12 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
     * виртуальную сеть Azure, содержащую кластеры HDInsight.
 
-        > [!NOTE]
+        > [!NOTE]  
         > Виртуальная сеть, созданная шаблоном, использует адресное пространство 10.0.0.0/16.
 
     * базу данных API SQL Azure Cosmos DB.
 
-    > [!IMPORTANT]
+    > [!IMPORTANT]  
     > Записная книжка структурированной потоковой передачи, используемая в этом примере, требует Spark в HDInsight 3.6. Если используется более ранняя версия Spark в HDInsight, возникнут ошибки при использовании этой записной книжки.
 
 2. Используйте следующие сведения, чтобы заполнить раздел **Настраиваемое развертывание**:
@@ -82,7 +82,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
     * **Версия кластера.** Версия кластера HDInsight.
 
-        > [!IMPORTANT]
+        > [!IMPORTANT]  
         > Этот пример протестирован с HDInsight 3.6 и может не работать с другими типами кластеров.
 
     * **Имя пользователя для входа в кластер.** Имя администратора для кластеров Spark и Kafka.
@@ -97,7 +97,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 4. Наконец, щелкните **Приобрести**. Процесс создания кластеров занимает около 20 минут.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Создание кластеров, виртуальной сети и учетной записи Cosmos DB может занять до 45 минут.
 
 ## <a name="create-the-cosmos-db-database-and-collection"></a>Создание базы данных и коллекции Cosmos DB
@@ -140,7 +140,7 @@ az cosmosdb list-keys --name $name --resource-group $resourceGroupName --query p
 "YqPXw3RP7TsJoBF5imkYR0QNA02IrreNAlkrUMkL8EW94YHs41bktBhIgWq4pqj6HCGYijQKMRkCTsSaKUO2pw=="
 ```
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Сохраните конечную точку и значения ключей. Они понадобятся при работе с записными книжками Jupyter.
 
 ## <a name="get-the-apache-kafka-brokers"></a>Получение брокеров Apache Kafka
@@ -158,7 +158,7 @@ $brokerHosts = $respObj.host_components.HostRoles.host_name[0..1]
 ($brokerHosts -join ":9092,") + ":9092"
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > В примере Bash ожидается, что `$CLUSTERNAME` содержит имя кластера Kafka.
 >
 > В этом примере используется служебная программа [jq](https://stedolan.github.io/jq/) для анализа данных из документа JSON.

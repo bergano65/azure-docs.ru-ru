@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/24/2018
 ms.author: bwren
-ms.openlocfilehash: 76e3a219d440bab4c6e277887aabb1e01f5e1d9c
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 862380a35dcc4d50dce8d709bd1dbea1aa38e37a
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53435452"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53728352"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -32,7 +32,7 @@ ms.locfileid: "53435452"
 ### <a name="advantages"></a>Преимущества
 - Глубокая интеграция в Azure. Визуализации можно закрепить на панелях мониторинга на нескольких страницах Azure, включая аналитику метрик, Log Analytics и Application Insights.
 - Поддержка метрик и журналов.
-- Объединение данных из нескольких источников, включая выходные данные [обозревателя метрик](../azure-monitor/platform/metrics-charts.md), [запросы Log Analytics](../azure-monitor/log-query/log-query-overview.md) и [данные о сопоставлениях](../application-insights/app-insights-app-map.md) и [доступности]() в Application Insights.
+- Объединение данных из нескольких источников, включая выходные данные [обозревателя метрик](../azure-monitor/platform/metrics-charts.md), [запросы Log Analytics](../azure-monitor/log-query/log-query-overview.md) и [данные о сопоставлениях](../azure-monitor/app/app-map.md) и [доступности]() в Application Insights.
 - Возможность использования личных или общих панелей мониторинга. Интеграция с [проверкой подлинности на основе ролей (RBAC)](../role-based-access-control/overview.md) Azure.
 - Автоматическое обновление. Обновление метрик зависит от диапазона времени (минимум пять минут). Обновление журналов за одну минуту.
 - Панели мониторинга параметризованных метрик с отметкой времени и пользовательскими параметрами.

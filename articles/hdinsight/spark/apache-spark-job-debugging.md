@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.author: hrasheed
-ms.openlocfilehash: 5e00c52c17eac92edc3273e2d765d6c5fd76f59b
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 1601663266f59668918e6799b5c4a7ff606431c4
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52970691"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53600018"
 ---
 # <a name="debug-apache-spark-jobs-running-on-azure-hdinsight"></a>Отладка заданий Apache Spark в Azure HDInsight
 
@@ -32,10 +32,9 @@ ms.locfileid: "52970691"
    
     ![Запуск пользовательского интерфейса YARN](./media/apache-spark-job-debugging/launch-yarn-ui.png)
    
-   > [!TIP]
-   > Также пользовательский интерфейс YARN можно открыть из пользовательского интерфейса Ambari. Чтобы запустить пользовательский Интерфейс Ambari, в разделе **Панели мониторинга кластера** щелкните **Домашняя страница Ambari**. В пользовательском интерфейсе Ambari щелкните **YARN**, затем — **Quick Links** (Быстрые ссылки). Щелкните активный Resource Manager и щелкните **ResourceManager UI** (Пользовательский интерфейс Resource Manager).    
-   > 
-   > 
+   > [!TIP]  
+   > Также пользовательский интерфейс YARN можно открыть из пользовательского интерфейса Ambari. Чтобы запустить пользовательский Интерфейс Ambari, в разделе **Панели мониторинга кластера** щелкните **Домашняя страница Ambari**. В пользовательском интерфейсе Ambari щелкните **YARN**, затем — **Quick Links** (Быстрые ссылки). Щелкните активный Resource Manager и щелкните **ResourceManager UI** (Пользовательский интерфейс Resource Manager). 
+
 2. Так как вы запустили задание Spark с помощью записных книжек Jupyter, приложение получило имя **remotesparkmagics** (это стандартное имя для всех приложений, запускаемых из записных книжек). Нажмите идентификатор приложения рядом с именем приложения, чтобы посмотреть дополнительные сведения о задании. Откроется представление приложения.
    
     ![Поиск идентификатора приложения Spark](./media/apache-spark-job-debugging/find-application-id.png)
@@ -72,10 +71,9 @@ ms.locfileid: "52970691"
    
     Здесь вы увидите события Spark в формате временной шкалы. Это представление доступно на трех уровнях: для заданий, в пределах одного задания и в пределах этапа. На рисунке выше представлен пример представления временной шкалы для одного этапа.
    
-   > [!TIP]
+   > [!TIP]  
    > Если установить флажок **Изменять масштаб** , представление временной шкалы можно будет прокручивать влево и вправо.
-   > 
-   > 
+
 6. Другие вкладки в пользовательском интерфейсе Spark содержат полезные сведения о самом экземпляре Spark.
    
    * Вкладка "Хранилище" — если приложение создает RDD, информацию о них вы найдете на этой вкладке.
@@ -92,10 +90,9 @@ ms.locfileid: "52970691"
    
     ![Запуск сервера журнала Spark](./media/apache-spark-job-debugging/launch-spark-history-server.png)
    
-   > [!TIP]
+   > [!TIP]  
    > Также пользовательский интерфейс сервера журнала Spark можно открыть из пользовательского интерфейса Ambari. Чтобы пользовательский интерфейс Ambari, в колонке "Обзор" в разделе **Панели мониторинга кластера** щелкните **Домашняя страница Ambari**. В пользовательском интерфейсе Ambari щелкните **Spark**, **Быстрые ссылки**, а затем — **Spark History Server UI** (Пользовательский интерфейс сервера журнала Spark).
-   > 
-   > 
+
 2. Отобразится список всех завершенных приложений. Выберите идентификатор приложения, чтобы открыть подробные сведения о приложении.
    
     ![Запуск сервера журнала Spark](./media/apache-spark-job-debugging/view-completed-applications.png)
@@ -106,8 +103,8 @@ ms.locfileid: "52970691"
 
 ### <a name="for-data-analysts"></a>Для специалистов по анализу данных
 
-* [Использование Apache Spark с Машинным обучением. Использование Spark в HDInsight для анализа температуры в здании на основе данных системы кондиционирования](apache-spark-ipython-notebook-machine-learning.md)
-* [Использование Apache Spark с Машинным обучением. Использование Spark в HDInsight для прогнозирования результатов контроля качества пищевых продуктов](apache-spark-machine-learning-mllib-ipython.md)
+* [Использование Apache Spark с Машинным обучением. Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
+* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
 * [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 * [Анализ журналов телеметрии Application Insights с помощью Apache Spark в HDInsight](apache-spark-analyze-application-insight-logs.md)
 * [Использование Caffe в кластере Azure HDInsight Spark для распределенного глубокого обучения](apache-spark-deep-learning-caffe.md)

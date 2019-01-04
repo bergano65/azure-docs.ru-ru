@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 10/18/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 15dbdc0bb2a3b7ee5af544adb2672a97f839f694
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 2dd209025db762f659510898e23cb371a31291b9
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52970201"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53544691"
 ---
 # <a name="what-is-azure-analysis-services"></a>Службы Azure Analysis Services
 
@@ -215,7 +215,7 @@ Azure Analysis Services — это полностью управляемая п�
 
 ## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика.
 
-Службы Azure Analysis Services интегрируются с метриками Azure, предоставляя широкий набор метрик на основе ресурсов для мониторинга производительности и работоспособности серверов. Чтобы узнать больше, ознакомьтесь с [отслеживанием метрик сервера](analysis-services-monitor.md). Для записи метрик используйте [журналы диагностики ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md). Отслеживайте и отправляйте журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполняйте их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортируйте их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/) как службу [Azure](https://www.microsoft.com/cloud-platform/operations-management-suite). Дополнительные сведения см. в статье [Настройка журнала ведения диагностики](analysis-services-logging.md).
+Службы Azure Analysis Services интегрируются с метриками Azure, предоставляя широкий набор метрик на основе ресурсов для мониторинга производительности и работоспособности серверов. Чтобы узнать больше, ознакомьтесь с [отслеживанием метрик сервера](analysis-services-monitor.md). Для записи метрик используйте [журналы диагностики ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md). Отслеживайте и отправляйте журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполняйте их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортируйте их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/) как службу [Azure](https://www.microsoft.com/cloud-platform/operations-management-suite). Дополнительные сведения см. в статье [Настройка журнала ведения диагностики](analysis-services-logging.md).
 
 Службы Azure Analysis Services также поддерживают [динамические административные представления (DMV)](https://docs.microsoft.com/sql/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services). В зависимости от синтаксиса SQL представления DMV позволяют создать связь между наборами строк схемы, которые возвращают метаданные и сведения о мониторинге для экземпляра сервера.
 

@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: 4ce4c9e2479c8d570766169ce5094dcc2b4bc511
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
+ms.openlocfilehash: 669d5995b66322a2a6ad346643444d5a46c4b6f8
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42812877"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53744417"
 ---
 # <a name="find-and-diagnose-performance-issues-with-azure-application-insights"></a>Поиск и диагностика проблем производительности с помощью Azure Application Insights
 
@@ -35,7 +35,7 @@ Azure Application Insights собирает данные телеметрии и
 - Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
     - ASP.NET и веб-разработка.
     - разработка Azure;
-- Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](app-insights-asp-net.md).
+- Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](../azure-monitor/app/asp-net.md).
 - [Включите Application Insights Profiler](app-insights-profiler.md#installation) для вашего приложения.
 
 ## <a name="log-in-to-azure"></a>Вход в Azure

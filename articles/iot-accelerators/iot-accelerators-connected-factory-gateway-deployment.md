@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 10/26/2018
 ms.author: dobett
-ms.openlocfilehash: ce2391014eb5e15650c0a81ebb8e2fd4a08ca96b
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 0a2ccdc6b02e9d348517bee95306ffc88d9ccd98
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50139230"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53599950"
 ---
 # <a name="deploy-an-edge-gateway-for-the-connected-factory-solution-accelerator-on-windows-or-linux"></a>Развертывание шлюза Edge для акселератора решения подключенной фабрики в ОС Windows или Linux
 
@@ -70,7 +70,7 @@ ms.locfileid: "50139230"
 
 Прежде чем устанавливать компоненты OPC, выполните следующие действия для подготовки среды:
 
-1. Чтобы завершить развертывание шлюза, необходимо указать строку подключения Центра Интернета вещей  **iothubowner**  в развернутом решении подключенной фабрики. На  [портале Azure](http://portal.azure.com/) перейдите в Центр Интернета вещей в группе ресурсов, созданной при развертывании решения подключенной фабрики. Щелкните  **Политики общего доступа** , чтобы получить доступ к строке подключения  **iothubowner** :
+1. Чтобы завершить развертывание шлюза, необходимо указать строку подключения Центра Интернета вещей  **iothubowner**  в развернутом решении подключенной фабрики. На  [портале Azure](https://portal.azure.com/) перейдите в Центр Интернета вещей в группе ресурсов, созданной при развертывании решения подключенной фабрики. Щелкните  **Политики общего доступа** , чтобы получить доступ к строке подключения  **iothubowner** :
 
     ![Поиск строки подключения Центра Интернета вещей](./media/iot-accelerators-connected-factory-gateway-deployment/image2.png)
 

@@ -1,20 +1,17 @@
 ---
 title: Основные понятия высокого уровня доступности в базе данных Azure для MySQL
 description: Этот раздел содержит сведения о высоком уровне доступности при использовании базы данных Azure для MySQL.
-services: mysql
 author: jasonwhowell
 ms.author: jasonh
-manager: kfile
-editor: jasonwhowell
 ms.service: mysql
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: 82d6106b7cebf47e6d68347857dd3d8a2d22dc3c
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: 70577f32debc526aaccbd79b62dd35e82119e3f9
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51298693"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53548398"
 ---
 # <a name="high-availability-concepts-in-azure-database-for-mysql"></a>Основные понятия высокого уровня доступности в базе данных Azure для MySQL
 Служба "База данных Azure для службы MySQL" обеспечивает гарантированный высокий уровень доступности. Платные соглашения об уровне обслуживания обеспечивают доступность 99,99% в общедоступной версии. При использовании этой службы время простоя приложений практически отсутствует.

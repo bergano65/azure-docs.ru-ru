@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/19/2018
 ms.author: victorh
-ms.openlocfilehash: 9c0ccb7c5ccb3eced32ea5bcd9f1961c5ccd2110
-ms.sourcegitcommit: 4e5ac8a7fc5c17af68372f4597573210867d05df
+ms.openlocfilehash: 8e8a09ede66213247b306c77938dbff30651fee5
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "39173849"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53727154"
 ---
 # <a name="use-azure-dns-to-provide-custom-domain-settings-for-an-azure-service"></a>Использование Azure DNS для указания параметров личного домена для службы Azure
 
@@ -116,7 +116,7 @@ Azure DNS предоставляет DNS для личного домена лю
 
 Дополнительные сведения о сопоставлении личного домена со службой приложений см. в статье [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](../app-service/app-service-web-tutorial-custom-domain.md?toc=%dns%2ftoc.json).
 
-Если необходимо приобрести личный домен, ознакомьтесь со статьей [Приобретение и настройка имени личного домена для службы приложений Azure](../app-service/custom-dns-web-site-buydomains-web-app.md).
+Если необходимо приобрести личный домен, ознакомьтесь со статьей [Приобретение и настройка имени личного домена для службы приложений Azure](../app-service/manage-custom-dns-buy-domain.md).
 
 ## <a name="blob-storage"></a>Хранилище BLOB-объектов
 

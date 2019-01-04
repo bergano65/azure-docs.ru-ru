@@ -9,18 +9,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: 06181eaf4a44a00ddeeedcd9c40edeae9157abd9
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: de88fbc2960be452df0c9067dca3715d9f6febb0
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53438554"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53744043"
 ---
 # <a name="generate-movie-recommendations-by-using-apache-mahout-with-apache-hadoop-in-hdinsight-powershell"></a>Создание списка рекомендуемых фильмов с помощью Apache Mahout и Apache Hadoop в HDInsight (PowerShell)
 
 [!INCLUDE [mahout-selector](../../includes/hdinsight-selector-mahout.md)]
 
-Узнайте, как использовать библиотеку машинного обучения [Apache Mahout](http://mahout.apache.org) для создания списка рекомендуемых к просмотру фильмов с помощью Azure HDInsight. В примере в этом документе для запуска заданий Mahout используется Azure PowerShell.
+Узнайте, как использовать библиотеку машинного обучения [Apache Mahout](https://mahout.apache.org) для создания списка рекомендуемых к просмотру фильмов с помощью Azure HDInsight. В примере в этом документе для запуска заданий Mahout используется Azure PowerShell.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -212,10 +212,10 @@ foreach($blob in $blobs)
 * [Использование Apache Pig с Apache Hadoop в HDInsight](hadoop/hdinsight-use-pig.md)
 * [Использование MapReduce с HDInsight](hadoop/hdinsight-use-mapreduce.md)
 
-[build]: http://mahout.apache.org/developers/buildingmahout.html
+[build]: https://mahout.apache.org/developers/buildingmahout.html
 [aps]: /powershell/azureps-cmdlets-docs
-[movielens]: http://grouplens.org/datasets/movielens/
-[100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
+[movielens]: https://grouplens.org/datasets/movielens/
+[100k]: https://files.grouplens.org/datasets/movielens/ml-100k.zip
 [getstarted]:hadoop/apache-hadoop-linux-tutorial-get-started.md
 [upload]: hdinsight-upload-data.md
 [ml]: https://en.wikipedia.org/wiki/Machine_learning

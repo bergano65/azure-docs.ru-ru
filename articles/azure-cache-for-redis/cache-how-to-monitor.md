@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2017
 ms.author: wesmc
-ms.openlocfilehash: 5ab2f1df72f04b6456f1083de6870fb86bad6616
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: e6292c97d3e7bbbe74477188586257b4fbf91218
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53438304"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53582717"
 ---
 # <a name="how-to-monitor-azure-cache-for-redis"></a>Как отслеживать кэш Azure для Redis
 В кэше Azure для Redis используется [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) для обеспечения нескольких параметров мониторинга экземпляров кэша. Вы можете просматривать метрики, закреплять диаграммы метрик на начальной панели, настраивать диапазоны дат и времени для диаграмм мониторинга, добавлять и удалять метрики в диаграммах, а также настраивать отправку оповещений при выполнении определенных условий. Эти инструменты позволяют наблюдать за работоспособностью экземпляров кэша Azure для Redis и помогают управлять кэшируемыми приложениями.
@@ -79,7 +79,7 @@ ms.locfileid: "53438304"
 >
 >
 
-Чтобы просмотреть метрики, их можно открыть на портале Azure, как описано выше в этой статье, или же обратиться к ним с помощью [REST API для метрик Azure Monitor](../monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs.md).
+Чтобы просмотреть метрики, их можно открыть на портале Azure, как описано выше в этой статье, или же обратиться к ним с помощью [REST API для метрик Azure Monitor](../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
 
 > [!NOTE]
 > В случае ее смены данные из прежней учетной записи хранения можно будет скачать, однако они не будут отображаться на портале Azure.  
@@ -142,7 +142,7 @@ ms.locfileid: "53438304"
 
 Чтобы просмотреть журналы действий для кэша, щелкните **Журналы действий** в меню **Ресурсы**.
 
-Дополнительные сведения о журналах действий см. в статье [Общие сведения о журнале действий Azure](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md).
+Дополнительные сведения о журналах действий см. в статье [Общие сведения о журнале действий Azure](../azure-monitor/platform/activity-logs-overview.md).
 
 
 

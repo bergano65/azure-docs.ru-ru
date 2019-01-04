@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: robb
 ms.component: diagnostic-extension
-ms.openlocfilehash: 3b7b06b7ab9076b992e6e3349763d633f9b255ef
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: dc8b8e37224201062d0cf53174f3248f04ca0cc3
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53338164"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53789762"
 ---
 # <a name="what-is-azure-diagnostics-extension"></a>Расширение системы диагностики Microsoft Azure
 Расширение диагностики Azure — это агент, который позволяет выполнять сбор диагностических данных о развернутом приложении. Можно использовать модуль диагностики из различных источников. Сейчас поддерживаются веб-роль и рабочая роль облачной службы Azure (классические), виртуальные машины, масштабируемые наборы виртуальных машин и Service Fabric. Для других служб Azure предусмотрены другие методы диагностики. Ознакомьтесь с [общими сведениями о мониторинге в Azure](../../azure-monitor/overview.md).
@@ -42,7 +42,7 @@ ms.locfileid: "53338164"
 ## <a name="data-storage"></a>Хранилище данных
 Расширение хранит свои данные в указанной [учетной записи службы хранилища Azure](diagnostics-extension-to-storage.md).
 
-Также данные можно отправить в [Application Insights](../../application-insights/app-insights-cloudservices.md). Другим вариантом является их потоковая передача в [концентратор событий](../../event-hubs/event-hubs-about.md), позволяющий отправить данные службам мониторинга, не связанным с Azure.
+Также данные можно отправить в [Application Insights](../../azure-monitor/app/cloudservices.md). Другим вариантом является их потоковая передача в [концентратор событий](../../event-hubs/event-hubs-about.md), позволяющий отправить данные службам мониторинга, не связанным с Azure.
 
 ### <a name="azure-monitor"></a>Azure Monitor
 Вы также можете отправить данные в Azure Monitor. Сейчас приемник Azure Monitor работает только с данными счетчиков производительности. Он позволяет направлять данные счетчиков производительности с виртуальной машины, из масштабируемого набора виртуальных машин или облачной службы в Azure Monitor в виде пользовательских метрик. Приемник Azure Monitor поддерживает такие функции:
@@ -66,7 +66,7 @@ ms.locfileid: "53338164"
 
 Более подробные сведения см. в статьях:
 
-* [Application Insights для облачных служб Azure](../../application-insights/app-insights-cloudservices.md)
+* [Application Insights для облачных служб Azure](../../azure-monitor/app/cloudservices.md)
 * [Трассировка потока в приложении облачных служб с помощью системы диагностики Azure](../../cloud-services/cloud-services-dotnet-diagnostics-trace-flow.md)
 * [Включение системы диагностики Azure на виртуальной машине под управлением Windows с помощью PowerShell](../../virtual-machines/extensions/diagnostics-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 

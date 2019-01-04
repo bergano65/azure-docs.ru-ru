@@ -8,15 +8,15 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 12/08/2018
-ms.openlocfilehash: a7e7c04b458575cdc9f2608d0c84f0df105bf202
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 4a772977130f5679da2d879cc12738b89be09f1d
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53261761"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53726737"
 ---
 # <a name="create-azure-app-service-web-apps-by-using-ansible"></a>Создание веб-приложений Службы приложений Azure с помощью Ansible
-[Веб-приложения Службы приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-overview) (или просто "Веб-приложения") размещают веб-приложения, REST API и серверные части мобильных приложений. Вы можете выполнять разработку на привычном языке: &mdash;.NET, .NET Core, Java, Ruby, Node.js, PHP или Python.
+[Веб-приложения Службы приложений Azure](https://docs.microsoft.com/azure/app-service/overview) (или просто "Веб-приложения") размещают веб-приложения, REST API и серверные части мобильных приложений. Вы можете выполнять разработку на привычном языке: &mdash;.NET, .NET Core, Java, Ruby, Node.js, PHP или Python.
 
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. В этой статье показано, как с помощью Ansible создать веб-приложение со средой выполнения Java. 
 
@@ -93,7 +93,7 @@ localhost                  : ok=3    changed=2    unreachable=0    failed=0
 ## <a name="create-an-app-service-by-using-traffic-manager"></a>Создание службы приложений с помощью диспетчера трафика
 С помощью [диспетчера трафика Azure](https://docs.microsoft.com/azure/app-service/web-sites-traffic-manager) можно управлять распределением запросов от веб-клиентов между приложениями в службе приложений Azure. Диспетчер трафика отслеживает состояние приложений службы при добавлении конечных точек службы приложений в профиль диспетчера трафика Azure. Состояния включают запуск, остановку и удаление. Затем диспетчер трафика может решить, какая из этих конечных точек должна получать трафик.
 
-В службе приложений приложение выполняется в [плане службы приложений](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview
+В службе приложений приложение выполняется в [плане службы приложений](https://docs.microsoft.com/azure/app-service/overview-hosting-plans
 ). План службы приложений определяет набор вычислительных ресурсов, на которых выполняется веб-приложение. Вы можете управлять планом службы приложений и веб-приложением в разных группах.
 
 В этом разделе представлен пример сборника схем Ansible, который определяет следующие ресурсы:

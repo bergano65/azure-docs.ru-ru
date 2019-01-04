@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: f82ac972e54dac6df5a913a8059417b701e2f7e0
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: c9b1f3570ae3f9b945c87c2ce316c3f72e32b4ad
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53191586"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53792056"
 ---
 # <a name="create-hdinsight-clusters-using-the-azure-classic-cli"></a>Создание кластеров HDInsight с помощью классического интерфейса командной строки Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "53191586"
 
     * Замените `storagename` на уникальное имя учетной записи хранения.
 
-        > [!NOTE]
+        > [!NOTE]  
         > Дополнительные сведения о параметрах, используемых в этой команде, используйте `azure storage account create -h`, чтобы открыть справку по этой команде.
 
 5. Извлеките ключ для доступа к учетной записи хранения.
@@ -90,7 +90,7 @@ ms.locfileid: "53191586"
 
     * Замените `Hadoop` типом кластера, который хотите создать. Примеры: `Hadoop`, `HBase`, `Kafka`, `Spark` или `Storm`.
 
-      > [!IMPORTANT]
+      > [!IMPORTANT]  
       > Кластеры HDInsight бывают разных типов, которые соответствуют рабочей нагрузке или технологии, для которой предназначен кластер. Создать кластер, в котором бы объединились несколько типов, например Storm и HBase, нельзя.
 
     * Замените `location` на расположение, которое использовалось на предыдущих этапах.
@@ -105,7 +105,7 @@ ms.locfileid: "53191586"
 
     * Замените `sshuser` и `sshuserpassword` именем пользователя и паролем, которые нужно использовать для доступа к кластеру по протоколу SSH.
 
-      > [!IMPORTANT]
+      > [!IMPORTANT]  
       > Этот пример создает кластер с двумя рабочими узлами. После создания кластера можно изменить число рабочих узлов, выполнив операцию масштабирования. Если вы планируете использовать более 32 рабочих узлов, для головного узла необходимо выбрать по крайней мере 8-ядерный процессор и 14 ГБ ОЗУ. Настроить размер головного узла можно с помощью параметра `--headNodeSize` во время создания кластера.
       >
       > Дополнительные сведения о размерах узлов и их стоимости см. на странице с [ценами на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
@@ -114,7 +114,7 @@ ms.locfileid: "53191586"
 
 ## <a name="troubleshoot"></a>Устранение неполадок
 
-Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](hdinsight-administer-use-portal-linux.md#create-clusters).
+Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](hdinsight-hadoop-create-linux-clusters-portal.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -124,7 +124,7 @@ ms.locfileid: "53191586"
 
 * [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md)
 * [Использование Pig с Hadoop в HDInsight](hadoop/hdinsight-use-pig.md)
-* [Использование Apache Hadoop MapReduce в HDInsight](hadoop/hdinsight-use-mapreduce.md)
+* [Использование MapReduce с HDInsight](hadoop/hdinsight-use-mapreduce.md)
 
 ### <a name="apache-hbase-clusters"></a>Кластеры Apache HBase
 

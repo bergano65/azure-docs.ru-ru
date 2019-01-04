@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 11/07/2018
 ms.author: mabrigg
 ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: 36637137741aef6b34ab8e70109d692f5399043a
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 12f9ed6d5b5d4c8dc7e5b0b68a0a394749cc72bd
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52967067"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53714616"
 ---
 # <a name="tutorial-deploy-apps-to-azure-and-azure-stack"></a>Руководство. Развертывание приложений в Azure и Azure Stack
 
@@ -72,7 +72,7 @@ ms.locfileid: "52967067"
 ### <a name="azure-requirements"></a>Требования Azure
 
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-* Создайте [веб-приложение](https://docs.microsoft.com/azure/app-service/app-service-web-overview) в Azure. Запишите URL-адрес веб-приложения. Он понадобится вам дальше при работе с этим руководством.
+* Создайте [веб-приложение](https://docs.microsoft.com/azure/app-service/overview) в Azure. Запишите URL-адрес веб-приложения. Он понадобится вам дальше при работе с этим руководством.
 
 ### <a name="azure-stack-requirements"></a>Требования к Azure Stack
 
@@ -180,9 +180,7 @@ Azure DevOps Services выполняет аутентификацию в Azure R
 
 3. В колонке Visual Studio Enterprise выберите **Управление доступом (IAM)**.
 
-    ![Управление доступом (IAM)](media/azure-stack-solution-hybrid-pipeline/000_12.png)
-
-4. Выберите **Добавить**.
+4. Выберите **Добавить назначение ролей**.
 
     ![Добавить](media/azure-stack-solution-hybrid-pipeline/000_13.png)
 

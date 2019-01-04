@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 09/20/2018
 ms.author: robb
 ms.component: diagnostic-extension
-ms.openlocfilehash: 42ed050606dd242e43903ed980a5670b4aa6f3df
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 064c1b8100e165627d5227b9f24b87aefae2e769
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53343179"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53790764"
 ---
 # <a name="azure-diagnostics-extension-configuration-schema-versions-and-history"></a>Журнал и версии схемы конфигурации расширения системы диагностики Azure
 На этой странице приведен указатель версий схемы расширения системы диагностики Azure, которые поставляются в составе пакета Microsoft Azure SDK.  
@@ -175,7 +175,7 @@ ms.locfileid: "53343179"
 Добавлена возможность маршрутизации в концентратор событий.
 
 ### <a name="diagnostics-extension-15"></a>Расширение системы диагностики версии 1.5
-Добавлен элемент sinks и возможность отправлять данные диагностики в [Application Insights](../../application-insights/app-insights-cloudservices.md). Это упрощает диагностирование проблем в приложении, а также на уровне системы и инфраструктуры.
+Добавлен элемент sinks и возможность отправлять данные диагностики в [Application Insights](../../azure-monitor/app/cloudservices.md). Это упрощает диагностирование проблем в приложении, а также на уровне системы и инфраструктуры.
 
 ### <a name="azure-sdk-26-and-diagnostics-extension-13"></a>Пакет SDK для Azure 2.6 и расширение системы диагностики версии 1.3
 Для проектов облачной службы, созданных в Visual Studio, были внесены следующие изменения. (Эти изменения действуют и в более поздних версиях Azure SDK.)

@@ -1,5 +1,5 @@
 ---
-title: Производительность и регулирование службы "Аналитика временных рядов Azure". Как отслеживать и уменьшать регулирование в службе "Аналитика временных рядов Azure" | Документация Майкрософт
+title: Как отслеживать и уменьшать регулирование в службе "Аналитика временных рядов Azure" | Документация Майкрософт
 description: Эта статья описывает процессы мониторинга, диагностики и устранение проблем производительности в службе "Аналитика временных рядов Azure", которые могут привести к задержкам и регулированию.
 ms.service: time-series-insights
 services: time-series-insights
@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: troubleshooting
 ms.date: 11/27/2017
 ms.custom: seodec18
-ms.openlocfilehash: 34f7128a6ab86a23d911f9bc92908102df4dee92
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 3a42570b51811cfbdd4329f196b98d75c8cd53f7
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53278429"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53556753"
 ---
 # <a name="monitor-and-mitigate-throttling-to-reduce-latency-in-azure-time-series-insights"></a>Отслеживание и уменьшение регулирования для сокращения задержек в службе "Аналитика временных рядов Azure"
 Если объем входящих данных превышает пределы, установленные в конфигурации вашей среды, в службе "Аналитика временных рядов Azure" могут возникнуть задержки или регулирования.

@@ -9,18 +9,18 @@ ms.topic: tutorial
 ms.date: 05/07/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,mvc
-ms.openlocfilehash: c0123008e5b15d6d3edce27245a7ed1fa6c431e7
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: e5ee2f40526837fbe0251e1fdda6847db1c51288
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53015061"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53634360"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-apache-hive-on-azure-hdinsight"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight
 
-В этом руководстве объясняется, как извлечь CSV-файл с необработанными данными, импортировать их в хранилище кластера HDInsight, а затем преобразовать данные с помощью [Apache Hive](https://hive.apache.org/) в Azure HDInsight. После преобразования вы загрузите эти данные в базу данных SQL Azure с использованием [Apache Sqoop](http://sqoop.apache.org/). В этой статье используются общедоступные данные о рейсах.
+В этом руководстве объясняется, как извлечь CSV-файл с необработанными данными, импортировать их в хранилище кластера HDInsight, а затем преобразовать данные с помощью [Apache Hive](https://hive.apache.org/) в Azure HDInsight. После преобразования вы загрузите эти данные в базу данных SQL Azure с использованием [Apache Sqoop](https://sqoop.apache.org/). В этой статье используются общедоступные данные о рейсах.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с Azure HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 В рамках этого руководства рассматриваются следующие задачи: 
@@ -76,7 +76,7 @@ ms.locfileid: "53015061"
 
     Замените *FILENAME* именем ZIP-файла. Замените *USERNAME* именем для входа SSH для кластера HDInsight. Замените *CLUSTERNAME* именем кластера HDInsight.
 
-   > [!NOTE]
+   > [!NOTE]  
    > Если для аутентификации входа посредством SSH используется пароль, будет предложено ввести пароль. Если используется открытый ключ, может потребоваться использовать параметр `-i` и указать путь к соответствующему закрытому ключу. Например, `scp -i ~/.ssh/id_rsa FILENAME.zip USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:`.
 
 2. После завершения отправки можно подключиться к кластеру с помощью SSH. Введите приведенную ниже команду в окне командной строки.
@@ -212,7 +212,7 @@ ms.locfileid: "53015061"
 
 ![Получение сведений о сервере SQL Azure](./media/hdinsight-analyze-flight-delay-data-linux/get-azure-sql-server-details.png "Получение сведений о сервере SQL Azure")
 
-> [!NOTE]
+> [!NOTE]  
 > Существует множество способов подключения к базе данных SQL и создания таблицы. В приведенных ниже действиях используется [FreeTDS](http://www.freetds.org/) из кластера HDInsight.
 
 
@@ -330,7 +330,7 @@ ms.locfileid: "53015061"
 [azure-free-trial]: https://azure.microsoft.com/pricing/free-trial/
 
 
-[rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
+[rita-website]: https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
 [cindygross-hive-tables]: https://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
 [hdinsight-use-oozie]: hdinsight-use-oozie-linux-mac.md
@@ -346,4 +346,4 @@ ms.locfileid: "53015061"
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 
-[technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
+[technetwiki-hive-error]: https://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx

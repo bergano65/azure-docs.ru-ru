@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 3c9514e39e061067b7332570e0eb6273924529e0
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: be86e961d04b600f112a173c041b60cbe50ea00d
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53339218"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53725068"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor  
 
@@ -23,7 +23,7 @@ ms.locfileid: "53339218"
 - Критерии: определенное условие или логика в сигнале, которые должны вызывать действие.
 - Действие: конкретный вызов, отправленный получателю уведомления — электронное сообщение, текстовое сообщение, веб-перехватчик и т. д.
 
-Термин **оповещения журнала**, который используется для описания оповещений, где сигналом является пользовательский запрос, основан на [Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../application-insights/app-insights-analytics.md). Дополнительные сведения о функциях, терминологии и типах см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../../azure-monitor/platform/alerts-unified-log.md).
+Термин **оповещения журнала**, который используется для описания оповещений, где сигналом является пользовательский запрос, основан на [Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../azure-monitor/app/analytics.md). Дополнительные сведения о функциях, терминологии и типах см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../../azure-monitor/platform/alerts-unified-log.md).
 
 > [!NOTE]
 > Распространенные данные журнала из [Azure Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md) теперь также доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](../../azure-monitor/platform/alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
@@ -245,6 +245,6 @@ az group deployment create --resource-group myRG --template-file sampleScheduled
 
 * Дополнительные сведения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../../azure-monitor/platform/alerts-unified-log.md).
 * Общие сведения о [действиях веб-перехватчиков для оповещений журнала](../../azure-monitor/platform/alerts-log-webhook.md)
-* Дополнительные сведения об [Application Insights](../../application-insights/app-insights-analytics.md)
+* Дополнительные сведения об [Application Insights](../../azure-monitor/app/analytics.md)
 * Дополнительные сведения о [Log Analytics](../../azure-monitor/log-query/log-query-overview.md). 
 

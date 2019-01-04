@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: cf037000a047b02f3874c3bccc9678f2ea18ecec
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: 31e4f4a8cfe9a82cf5320cd364905c7c91de0959
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53011204"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53653804"
 ---
 # <a name="create-apache-hbase-clusters-on-hdinsight-in-azure-virtual-network"></a>Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure
 Узнайте, как создавать кластеры Azure HDInsight Apache HBase в [виртуальной сети Azure][1].
@@ -34,10 +34,10 @@ ms.locfileid: "53011204"
 ## <a name="create-apache-hbase-cluster-into-virtual-network"></a>Создание кластера Apache HBase в виртуальной сети
 В этом разделе описывается, как создать кластер Apache HBase под управлением Linux с зависимой учетной записью службы хранилища Azure в виртуальной сети Azure c помощью [шаблона Azure Resource Manager](../../azure-resource-manager/resource-group-template-deploy.md). Сведения о других способах создания кластеров и их параметрах см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). Дополнительные сведения о создании в HDInsight кластеров Apache Hadoop с помощью шаблонов см. в [этой статье](../hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
-> [!NOTE]
+> [!NOTE]  
 > Некоторые свойства жестко заданы в шаблоне. Например: 
 >
-> * **Расположение**: восточная часть США 2.
+> * **Расположение**: Восток США 2
 > * **Версия кластера**: 3.6
 > * **Число рабочих узлов кластера**: 2
 > * **Учетная запись хранения по умолчанию**: уникальная строка
@@ -55,7 +55,7 @@ ms.locfileid: "53011204"
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-hbase-linux-vnet%2Fazuredeploy.json" target="_blank"><img src="./media/apache-hbase-provision-vnet/deploy-to-azure.png" alt="Deploy to Azure"></a>
 2. В колонке **Настраиваемое развертывание** укажите следующие свойства.
 
-   * **Подписка**. Выберите подписку Azure, которая использовалась для создания кластера HDInsight, зависимой учетной записи хранения и виртуальной сети Azure.
+   * **Подписка**: Выберите подписку Azure, которая использовалась для создания кластера HDInsight, зависимой учетной записи хранения и виртуальной сети Azure.
    * **Группа ресурсов**. Щелкните **Создать** и укажите имя новой группы ресурсов.
    * **Расположение**. Выберите расположение группы ресурсов.
    * **Имя кластера**. Введите имя создаваемого кластера Hadoop.
@@ -74,10 +74,8 @@ ms.locfileid: "53011204"
    * **Виртуальная сеть**: &lt;имя_кластера>-vnet.
    * **Подсеть**: subnet1
 
-   > [!IMPORTANT]
+   > [!IMPORTANT]  
    > Замените &lt;имя_кластера> именем, использованным при создании кластера HDInsight на предыдущих шагах.
-   >
-   >
 
    Благодаря этим значениям виртуальная машина будет размещена в той же виртуальной сети и подсети, что и кластер HDInsight. Эта конфигурация позволит им напрямую взаимодействовать друг с другом. Существует возможность создания кластера HDInsight с пустым граничным узлом. Граничный узел можно использовать для управления кластером.  Подробные сведения см. в статье [Использование пустых граничных узлов в HDInsight](../hdinsight-apps-use-edge-node.md).
 
@@ -232,10 +230,8 @@ ms.locfileid: "53011204"
         <value>zookeeper0.<dns suffix>,zookeeper1.<dns suffix>,zookeeper2.<dns suffix></value>
     </property>
 
-> [!NOTE]
+> [!NOTE]  
 > Чтобы получить дополнительную информацию о разрешении имен в виртуальных сетях Azure, а также об использовании своего​ собственного DNS-сервера, ознакомьтесь со статьей [Разрешение имен для ВМ и экземпляров ролей](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
->
->
 
 ## <a name="next-steps"></a>Дополнительная информация
 Из этого руководства вы узнали, как создать кластер Apache HBase. Дополнительные сведения см. на следующих ресурсах:

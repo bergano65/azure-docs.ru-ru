@@ -12,17 +12,17 @@ ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 5bb70bf56efac28029401b69ee4f87c2738c52e3
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 28e21180fde50d19154830694cd4959795ae9d5c
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52721856"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53789388"
 ---
 # <a name="profile-live-azure-cloud-services-with-application-insights"></a>Профилирование облачных служб реального времени Azure с помощью Application Insights
 
 Вы можете развернуть Application Insights Profiler для таких служб:
-* [Веб-приложения Azure](app-insights-profiler.md?toc=/azure/azure-monitor/toc.json)
+* [службе приложений Azure](app-insights-profiler.md?toc=/azure/azure-monitor/toc.json)
 * [Приложения Service Fabric](app-insights-profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
 * [Виртуальные машины](app-insights-profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
@@ -30,7 +30,7 @@ Application Insights Profiler поставляется в комплекте с 
 
 ## <a name="enable-profiler-for-your-azure-cloud-service"></a>Включение профилировщика для облачной службы Azure
 1. Убедитесь, что вы используете [.NET Framework 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии.  Для этого достаточно проверить, что в файлах *ServiceConfiguration.\*.cscfg* для параметра `osFamily` задано по меньшей мере значение 5.
-1. Добавьте [пакет SDK для Application Insights в облачную службу](app-insights-cloudservices.md?toc=/azure/azure-monitor/toc.json).
+1. Добавьте [пакет SDK для Application Insights в облачную службу](../azure-monitor/app/cloudservices.md?toc=/azure/azure-monitor/toc.json).
 1. Отслеживание запросов с помощью Application Insights.
 
     Application Insights может автоматически отслеживает запросы для веб-ролей ASP.Net.
@@ -63,7 +63,7 @@ Application Insights Profiler поставляется в комплекте с 
       </WadCfg>
       ```
 
-    >   **Примечание**. Если файл диагностики *diagnostics.wadcfgx* также содержит другой приемник типа `ApplicationInsights`, все три ключа инструментирования должны совпадать:  
+    >   **Примечание**. Если файл диагностики diagnostics.wadcfgx* также содержит другой приемник типа `ApplicationInsights`, все три ключа инструментирования должны совпадать:  
     >  * Ключ, используемый в приложении.  
     >  * Ключ, используемый в приемнике `ApplicationInsights`.  
     >  * Ключ, используемый в приемнике `ApplicationInsightsProfiler`.  

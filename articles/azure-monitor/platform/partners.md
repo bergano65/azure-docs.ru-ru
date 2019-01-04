@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: 07127e8a15626c7eacad925381f92d0a7c94fc96
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 95e4140125f064d4e279c90f60b390c4762e8cf8
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53439631"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53580218"
 ---
 # <a name="azure-monitor-partner-integrations"></a>Интеграция Azure Monitor с продуктами партнеров
 | Партнеры |  |  |
@@ -166,8 +166,8 @@ Sumo Logic — это безопасное облачное решение сл�
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Дополнительные сведения о Azure Monitor](../../azure-monitor/overview.md)
 * [Доступ к метрикам с помощью REST API](rest-api-walkthrough.md)
-* [Потоковая передача журнала действий Azure в концентраторы событий](../../monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs.md)
-* [Потоковая передача журналов диагностики Azure в концентратор событий](../../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md)
+* [Потоковая передача журнала действий Azure в концентраторы событий](../../azure-monitor/platform/activity-logs-stream-event-hubs.md)
+* [Потоковая передача журналов диагностики Azure в концентратор событий](../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md)
 
 <!--Partner Anchors-->
 [alertlogic-anchor]: #alertlogic-log-manager "AlertLogic"

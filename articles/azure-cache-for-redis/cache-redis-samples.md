@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: wesmc
-ms.openlocfilehash: ea509d3804053f060ad551b6eff945b70cec8796
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: c9a2d569641ab0f8f6aa1d7234da1d3cbb0ab147
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53261064"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53744995"
 ---
 # <a name="azure-cache-for-redis-samples"></a>Примеры использования кэша Azure для Redis
 Здесь представлен список примеров кэша Azure для Redis, охватывающих такие сценарии, как подключение к кэшу, чтение и запись данных в кэше и использование поставщиков кэша Azure для Redis ASP.NET. Некоторые примеры представляют собой скачиваемые проекты, а некоторые содержат пошаговые инструкции и фрагменты кода, но не ссылаются на скачиваемый проект.
@@ -40,7 +40,7 @@ ms.locfileid: "53261064"
 * использовать наборы Redis для реализации тегов.
 * Работа с кластером Redis
 
-Дополнительные сведения см. в документации по [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) на сайте GitHub. С дополнительными сценариями использования можно ознакомиться, изучив модульные тесты [StackExchange.Redis.Tests](https://github.com/StackExchange/StackExchange.Redis/tree/master/StackExchange.Redis.Tests).
+Дополнительные сведения см. в документации по [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) на сайте GitHub. С дополнительными сценариями использования можно ознакомиться, изучив модульные тесты [StackExchange.Redis.Tests](https://github.com/StackExchange/StackExchange.Redis/tree/master/tests).
 
 В статье [Краткое руководство. Использование кэша Redis для Azure с приложениями Python](cache-python-get-started.md) показано, как приступить к работе с кэшем Azure для Redis с помощью Python и клиента [redis-py](https://github.com/andymccurdy/redis-py).
 

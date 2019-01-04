@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/01/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: b22f79195a7246c87a8d5d5b4b5e012cc30a62dd
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: c951d4f646fdaec9731ec4b6320e5f625ad91a42
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53274570"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53993297"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Как планировать гибридную реализацию присоединения к Azure Active Directory
 
@@ -146,9 +146,9 @@ ms.locfileid: "53274570"
 
 ## <a name="alternate-login-id-support-in-hybrid-azure-ad-join"></a>Поддержка альтернативных идентификаторов для входа при гибридном присоединении к Azure AD
 
-Гибридное присоединение к Azure AD в Windows 10 обеспечивает ограниченную поддержку [альтернативных идентификаторов для входа](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configuring-alternate-login-id), которая определяется альтернативным идентификатором для входа, типом [метода проверки подлинности](https://docs.microsoft.com/en-us/azure/security/azure-ad-choose-authn), типом домена и версией Windows 10. Существуют два типа альтернативных идентификаторов для входа, которые могут существовать в вашей среде.
+Гибридное присоединение к Azure AD в Windows 10 обеспечивает ограниченную поддержку [альтернативных идентификаторов для входа](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id), которая определяется альтернативным идентификатором для входа, типом [метода проверки подлинности](https://docs.microsoft.com/azure/security/azure-ad-choose-authn), типом домена и версией Windows 10. Существуют два типа альтернативных идентификаторов для входа, которые могут существовать в вашей среде.
 
- - Маршрутизируемый альтернативный идентификатор для входа. Маршрутизируемый альтернативный идентификатор для входа использует допустимый проверенный домен, который зарегистрирован с помощью регистратора доменных имен. Например, если основным доменом является contoso.com, то contoso.org и contoso.co.uk являются допустимыми доменами, принадлежащими компании Contoso и [проверенными в Azure AD](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/add-custom-domain).
+ - Маршрутизируемый альтернативный идентификатор для входа. Маршрутизируемый альтернативный идентификатор для входа использует допустимый проверенный домен, который зарегистрирован с помощью регистратора доменных имен. Например, если основным доменом является contoso.com, то contoso.org и contoso.co.uk являются допустимыми доменами, принадлежащими компании Contoso и [проверенными в Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/add-custom-domain).
  
  - Немаршрутизируемый альтернативный идентификатор для входа. Немаршрутизируемый альтернативный идентификатор для входа не использует проверенный домен. Такой идентификатор может использоваться только в частной сети вашей организации. Например, если основным доменом является contoso.com, то contoso.local является непроверяемым доменом в Интернете, но используется в сети компании Contoso.
  

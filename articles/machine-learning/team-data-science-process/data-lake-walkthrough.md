@@ -147,7 +147,7 @@ CSV-файл trip_fare содержит подробную информацию 
 ![9](./media/data-lake-walkthrough/9-portal-submit-job.PNG)
 
 ### <a name="ingest"></a>Прием данных. Чтение данных из общедоступного большого двоичного объекта
-Данные большого двоичного объекта Azure расположены по адресу **wasb://container_name@blob_storage_account_name.blob.core.windows.net/blob_name**, и их можно извлечь, используя **Extractors.Csv()**. В следующих скриптах подставьте имена своих контейнера и учетной записи хранения для container_name@blob_storage_account_name в адресе wasb. Благодаря тому, что файлы имеют одинаковый формат имен, вы можете считать все 12 файлов поездок сразу, используя шаблон **trip\_data_{\*\}}.csv\**. 
+Данные большого двоичного объекта Azure расположены по адресу **wasb://container_name@blob_storage_account_name.blob.core.windows.net/blob_name**, и их можно извлечь, используя **Extractors.Csv()**. В следующих скриптах подставьте имена своих контейнера и учетной записи хранения для container_name@blob_storage_account_name в адресе wasb. Благодаря тому, что файлы имеют одинаковый формат имен, вы можете считать все 12 файлов поездок сразу, используя шаблон **trip\_data_{\*\}}.csv**  . 
 
     ///Read in Trip data
     @trip0 =

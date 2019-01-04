@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: jamesbak
-ms.openlocfilehash: f1c42a3e091bc4b3804edfe835e521a99fcee880
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 95aff0bb37a91c1e2ac117f2f3b90c726e9f88d8
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52976707"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53792895"
 ---
 # <a name="quickstart-set-up-clusters-in-hdinsight"></a>Краткое руководство по настройке кластеров в HDInsight
 
@@ -86,8 +86,8 @@ ms.locfileid: "52976707"
 
 Во время создания кластера HDInsight можно настроить две учетные записи пользователя.
 
-* Пользователь HTTP — имя пользователя по умолчанию — *admin*. Эта учетная запись использует базовую конфигурацию на портале Azure. Иногда его называют "пользователем кластера".
-* Пользователь SSH (кластеры Linux) — это имя пользователя используется для подключения к кластеру через SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
+* Пользователь HTTP: Имя пользователя по умолчанию — *admin*. Эта учетная запись использует базовую конфигурацию на портале Azure. Иногда его называют "пользователем кластера".
+* Пользователь SSH (кластеры Linux): это имя пользователя используется для подключения к кластеру через SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ## <a name="location"></a>Расположение (регионы) для кластеров и хранилища
 
@@ -172,8 +172,8 @@ ms.locfileid: "52976707"
 
 При развертывании кластеров выберите вычислительные ресурсы в зависимости от решения, которое планируется развернуть. Для кластеров HDInsight используются следующие виртуальные машины:
 
-* виртуальные машины серий A и D1–4 (см. статью [Размеры виртуальных машин Linux общего назначения](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general));
-* виртуальные машины серии D11–14 (см. статью [Размеры виртуальных машин, оптимизированных для памяти](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-memory)).
+* виртуальные машины серий A и D1–4: [размеры виртуальных машин Linux общего назначения](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-general);
+* виртуальные машины серии D11–14: [размеры виртуальных машин, оптимизированных для памяти](https://docs.microsoft.com/azure/virtual-machines/linux/sizes-memory).
 
 Сведения о том, какие значения следует указывать для размера виртуальной машины при создании кластера с помощью различных пакетов SDK или Azure PowerShell, см. в разделе [Таблицы размеров](../../cloud-services/cloud-services-sizes-specs.md#size-tables). Используйте значение из столбца **Размер** таблиц, приведенных в этой статье.
 
@@ -229,7 +229,7 @@ ms.locfileid: "52976707"
 
 Подробные сведения см. в статье [Настройка кластеров HDInsight с помощью начальной загрузки](../../hdinsight/hdinsight-hadoop-customize-cluster-bootstrap.md).
 
-## <a name="advanced-settings-extend-clusters-with-a-virtual-network"></a>Дополнительные параметры. Расширение кластеров с помощью виртуальной сети
+## <a name="advanced-settings-extend-clusters-with-a-virtual-network"></a>Расширенные параметры. Расширение кластеров с помощью виртуальной сети
 
 Если для решения нужны технологии, распределенные по нескольким типам кластеров HDInsight, [виртуальная сеть Azure](https://docs.microsoft.com/azure/virtual-network) может объединять необходимые типы кластеров. Благодаря такой конфигурации кластеры и любой развернутый в них код могут взаимодействовать друг с другом напрямую.
 
@@ -239,7 +239,7 @@ ms.locfileid: "52976707"
 
 ## <a name="troubleshoot-access-control-issues"></a>Устранение неполадок управления доступом
 
-Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](../../hdinsight/hdinsight-administer-use-portal-linux.md#create-clusters).
+Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](../../hdinsight/hdinsight-hadoop-create-linux-clusters-portal.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

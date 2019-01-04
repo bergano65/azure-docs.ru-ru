@@ -8,17 +8,17 @@ ms.subservice: migration
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: CarlRabeler
-ms.author: carlrab
-ms.reviewer: ''
+author: douglaslMS
+ms.author: douglasl
+ms.reviewer: carlrab
 manager: craigg
 ms.date: 10/15/2018
-ms.openlocfilehash: e87f8a0d168db02bf0e93216991767f5a9be584c
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 89cf69ba8bc88a40582ea795b6a17fab4f286d64
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52863522"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53651986"
 ---
 # <a name="sql-server-database-migration-to-azure-sql-database"></a>Перенос базы данных SQL Server в базу данных SQL Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "52863522"
 
 ## <a name="method-1-migration-with-downtime-during-the-migration"></a>Метод 1. Миграция с простоем
 
- Используйте этот метод для переноса в отдельную базу данных или базу данных в составе пула, если вы можете позволить себе некоторое время простоя или выполняете тестовый перенос рабочей базы данных для последующей полноценной миграции. Руководство см. в статье [Migrate a SQL Server database](sql-database-migrate-your-sql-server-database.md) (Миграция базы данных SQL Server).
+ Используйте этот метод для переноса в отдельную базу данных или базу данных в составе пула, если вы можете позволить себе некоторое время простоя или выполняете тестовый перенос рабочей базы данных для последующей полноценной миграции. Руководство см. в статье [Migrate a SQL Server database](../dms/tutorial-sql-server-to-azure-sql.md) (Миграция базы данных SQL Server).
 
 Ниже представлен общий рабочий процесс переноса базы данных SQL Server в отдельную базу данных или базу данных в составе пула с помощью этого метода. Перенос в управляемый экземпляр описывается в разделе [Перенос экземпляра SQL Server в Управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance-migrate.md).
 

@@ -10,12 +10,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: reference
 ms.date: 10/16/2018
 ms.author: mbullwin
-ms.openlocfilehash: 76cdd4bd4d95c7c11906f9c02a0f5cfa2326390e
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: d8d48a41f9100abc3bc8ba306c766d9511f80026
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53000781"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53972079"
 ---
 # <a name="application-insights-nuget-packages"></a>Пакеты NuGet для Application Insights
 
@@ -70,7 +70,7 @@ ms.locfileid: "53000781"
 | Microsoft.ApplicationInsights.Agent_x64 | 2.2.1 |  Обеспечивает сбор данных среды выполнения для приложений x64. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Agent_x64/) |
 | Microsoft.ApplicationInsights.Agent_x86 | 2.2.1 |  Обеспечивает сбор данных среды выполнения для приложений x86. | [Загрузить пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights.Agent_x86/) |
 
-Эти пакеты являются частью основных функциональных возможностей мониторинга среды выполнения в [мониторе состояния](app-insights-monitor-performance-live-website-now.md). Вам не нужно загружать эти пакеты напрямую, просто используйте установщик монитора состояния. Если вы хотите больше узнать о том, как работают эти пакеты, ознакомьтесь с этой [записью блога](https://apmtips.com/blog/2016/11/18/how-application-insights-status-monitor-not-monitors-dependencies/) от одного из наших разработчиков.
+Эти пакеты являются частью основных функциональных возможностей мониторинга среды выполнения в [мониторе состояния](../azure-monitor/app/monitor-performance-live-website-now.md). Вам не нужно загружать эти пакеты напрямую, просто используйте установщик монитора состояния. Если вы хотите больше узнать о том, как работают эти пакеты, ознакомьтесь с этой [записью блога](https://apmtips.com/blog/2016/11/18/how-application-insights-status-monitor-not-monitors-dependencies/) от одного из наших разработчиков.
 
 ## <a name="additional-packages"></a>Дополнительные пакеты
 
@@ -81,6 +81,6 @@ ms.locfileid: "53000781"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Application Insights для ASP.NET Core](app-insights-asp-net-core.md)
+- [Application Insights для ASP.NET Core](../azure-monitor/app/asp-net-core.md)
 - [Профилирование веб-приложений ASP.NET Core в Azure для Linux с помощью Application Insights Profiler](app-insights-profiler-aspnetcore-linux.md)
 - [Отладочные моментальные снимки для исключений в приложениях .NET](app-insights-snapshot-debugger.md).

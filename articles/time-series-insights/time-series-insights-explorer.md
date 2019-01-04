@@ -1,5 +1,5 @@
 ---
-title: Исследование данных обозревателя службы "Аналитика временных рядов Azure". Исследование данных с использованием обозревателя службы "Аналитика временных рядов Azure" | Документация Майкрософт
+title: Изучение данных с помощью обозревателя службы "Аналитика временных рядов Azure" | Документация Майкрософт
 description: В этой статье описывается, как использовать обозреватель службы "Аналитика временных рядов Azure" в веб-браузере, чтобы быстро просмотреть глобальное представление больших данных и проверить среду Интернета вещей.
 ms.service: time-series-insights
 services: time-series-insights
@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 11/30/2017
 ms.custom: seodec18
-ms.openlocfilehash: 7508db8bd4b7f21308f2e7b0e92c44570dfc7b18
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: d65ce83465f54a30b96bc1ee6644319e1b4fb020
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53273142"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53556600"
 ---
 # <a name="azure-time-series-insights-explorer"></a>Обозреватель службы "Аналитика временных рядов Azure"
 В этой статье рассматриваются различные функции и возможности, доступные в веб-приложении обозревателя службы "Аналитика временных рядов Azure". Вы можете использовать обозреватель службы "Аналитика временных рядов Azure" в веб-браузере для создания визуализаций данных.

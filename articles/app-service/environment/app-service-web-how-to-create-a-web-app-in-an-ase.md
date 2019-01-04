@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/11/2017
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 84a8a0687a1da0eaf7842a9bf6115c1d0f5d3fd1
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 3e7db670a125f3c5f308107aabfbbab9301b7561
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53338147"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53718101"
 ---
 # <a name="create-a-web-app-in-an-app-service-environment-v1"></a>Создание веб-приложения в среде служб приложений версии 1
 
@@ -51,7 +51,7 @@ ms.locfileid: "53338147"
     *Группы ресурсов* позволяют управлять ресурсами Azure как единым целым. Кроме того, они могут быть полезны при настройке правил *контроля доступа на основе ролей* (RBAC) для приложений. Дополнительные сведения см. в [обзоре Azure Resource Manager][ResourceGroups]. 
 4. Выбор или создание плана службы приложений
    
-    *Планы службы приложений* — это управляемые наборы веб-приложений.  Обычно когда вы выбираете ценовую категорию, плата взимается за использование плана службы приложений, а не отдельных приложений. При работе с ASE вы платите за вычислительные операции, выделяемые для ASE, а не за элементы, перечисленные в плане службы приложений.  Чтобы увеличить количество экземпляров веб-приложения, вам следует масштабировать экземпляры вашего плана ASP, что повлияет на все веб-приложения в этом плане.  Некоторые функции, например слоты сайтов или интеграция VNET, также обладают ограничениями в пределах плана.  Дополнительные сведения см. в статье [Обзор планов службы приложений Azure](../azure-web-sites-web-hosting-plans-in-depth-overview.md).
+    *Планы службы приложений* — это управляемые наборы веб-приложений.  Обычно когда вы выбираете ценовую категорию, плата взимается за использование плана службы приложений, а не отдельных приложений. При работе с ASE вы платите за вычислительные операции, выделяемые для ASE, а не за элементы, перечисленные в плане службы приложений.  Чтобы увеличить количество экземпляров веб-приложения, вам следует масштабировать экземпляры вашего плана ASP, что повлияет на все веб-приложения в этом плане.  Некоторые функции, например слоты сайтов или интеграция VNET, также обладают ограничениями в пределах плана.  Дополнительные сведения см. в статье [Обзор планов службы приложений Azure](../overview-hosting-plans.md).
    
     Планы ASP в среде ASE можно определить, просмотрев расположение, указанное под именем соответствующего плана.  
    
@@ -108,7 +108,7 @@ ms.locfileid: "53338147"
 
 <!--Links-->
 [WhatisASE]: app-service-app-service-environment-intro.md
-[Appserviceplans]: ../azure-web-sites-web-hosting-plans-in-depth-overview.md
+[Appserviceplans]: ../overview-hosting-plans.md
 [HowtoCreateASE]: app-service-web-how-to-create-an-app-service-environment.md
 [HowtoScale]: app-service-web-scale-a-web-app-in-an-app-service-environment.md
 [HowtoConfigureASE]: app-service-web-configure-an-app-service-environment.md

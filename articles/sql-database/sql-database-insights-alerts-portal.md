@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: aamalvea
 ms.author: aamalvea
-ms.reviewer: carlrab
+ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 11/02/2018
-ms.openlocfilehash: a48bd66c335981a76a67206f840f4be69aaa8af1
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: ddd704b41e6d1463bc635f13135cc9a388e677fe
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53273353"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53634615"
 ---
 # <a name="use-azure-portal-to-create-alerts-for-azure-sql-database-and-data-warehouse"></a>Создание оповещений для базы данных SQL Azure и хранилища данных с помощью портала Azure
 
@@ -46,13 +46,13 @@ ms.locfileid: "53273353"
 1. На [портале](https://portal.azure.com/)найдите ресурс, который нужно отслеживать, и выберите его.
 2. В разделе "Мониторинг" выберите **Оповещения (классические)**. Текст и значок для разных ресурсов могут незначительно отличаться.  
    
-     ![Мониторинг](../monitoring-and-diagnostics/media/insights-alerts-portal/AlertsClassicButton.JPG)
+     ![Мониторинг](media/sql-database-insights-alerts-portal/AlertsClassicButton.JPG)
   
    - **Инструкция только для хранилищ данных SQL.** Выберите граф **Потребление DWU**. Щелкните **Просмотреть классические оповещения**
 
 3. Нажмите кнопку **Добавить оповещение метрики (классическое)** и заполните поля.
    
-    ![Добавить оповещение](../monitoring-and-diagnostics/media/insights-alerts-portal/AddDBAlertPageClassic.JPG)
+    ![Добавить оповещение](media/sql-database-insights-alerts-portal/AddDBAlertPageClassic.JPG)
 4. Введите **имя** правила генерации оповещений и укажите **описание**, отображаемое также в уведомлениях по электронной почте.
 5. Если вы выбрали **метрику** для отслеживания, то выберите для нее **условие** и **пороговое значение**. Кроме того, выберите **период**, в течение которого должно быть выполнено правило метрики, прежде чем будет активировано оповещение. Например, если используется период "PT5M", а оповещение определяет загрузку ЦП выше 80 %, такое оповещение активируется, если **средняя** загрузка ЦП превышает 80 % не менее 5 минут. После первой активации оповещение активируется повторно, если средняя загрузка ЦП будет ниже 80 % не менее 5 минут. Измерение загрузки ЦП происходит раз в минуту. В следующей таблице представлены поддерживаемые временные окна и типы статистической обработки, используемые каждым оповещением. Не все оповещения используют среднее значение.   
 6. Установите флажок **Владельцы, авторы и читатели электронных писем** , если администраторы и соадминистраторы должны получать электронные сообщения при активации оповещения.
@@ -117,5 +117,5 @@ ms.locfileid: "53273353"
 ## <a name="next-steps"></a>Дополнительная информация
 * [Ознакомьтесь с общими сведениями о мониторинге Azure](../monitoring-and-diagnostics/monitoring-overview.md) , включая типы информации, которую можно собирать и отслеживать.
 * Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).
-* Ознакомьтесь с [обзором журналов диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) , чтобы собирать подробные метрики о службе с высокой частотой.
+* Ознакомьтесь с [обзором журналов диагностики](../azure-monitor/platform/diagnostic-logs-overview.md) , чтобы собирать подробные метрики о службе с высокой частотой.
 * Прочитайте [обзор сбора метрики](../monitoring-and-diagnostics/insights-how-to-customize-monitoring.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

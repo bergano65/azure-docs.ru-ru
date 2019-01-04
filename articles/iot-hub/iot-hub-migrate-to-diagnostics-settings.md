@@ -7,16 +7,16 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 11/19/2018
 ms.author: kgremban
-ms.openlocfilehash: 236adb45ec6663ad361df1afbf6389a449f2a529
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 4a1517c1d5bb0f34c0f1b0ec81d074f8ec39aff5
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52159905"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53546590"
 ---
 # <a name="migrate-your-iot-hub-from-operations-monitoring-to-diagnostics-settings"></a>Перенос Центра Интернета вещей для перехода с операций мониторинга к параметрам диагностики
 
-Клиенты, использующие [мониторинг операций](iot-hub-operations-monitoring.md) для отслеживания состояния операций Центра Интернета вещей, могут перенести этот рабочий процесс в [параметры системы диагностики Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md), компонент Azure Monitor. Параметры диагностики предоставляют сведения о диагностике уровня ресурса для многих служб Azure.
+Клиенты, использующие [мониторинг операций](iot-hub-operations-monitoring.md) для отслеживания состояния операций Центра Интернета вещей, могут перенести этот рабочий процесс в [параметры системы диагностики Azure](../azure-monitor/platform/diagnostic-logs-overview.md), компонент Azure Monitor. Параметры диагностики предоставляют сведения о диагностике уровня ресурса для многих служб Azure.
 
 Функции мониторинга операций Центра Интернета вещей являются устаревшими и в будущем будут удалены. В этой статье содержатся шаги по перемещению рабочих нагрузок из мониторинга операций в параметры диагностики. Дополнительные сведения о графике удаления функции см. в статье [Monitor your Azure IoT solutions with Azure Monitor and Azure Resource Health](https://azure.microsoft.com/blog/monitor-your-azure-iot-solutions-with-azure-monitor-and-azure-resource-health/) (Мониторинг решений Интернета вещей Azure с помощью служб Azure Monitor и "Работоспособность ресурсов Azure").
 

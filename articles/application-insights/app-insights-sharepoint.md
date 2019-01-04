@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: mbullwin
-ms.openlocfilehash: 0425dad96cccb019392c8055b0d1127b583b70dd
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 7d67b2346e4db1e04f2c0611603acd3d6e920498
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52726038"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53972974"
 ---
 # <a name="monitor-a-sharepoint-site-with-application-insights"></a>Мониторинг сайта SharePoint с помощью Application Insights
 Azure Application Insights позволяет отслеживать доступность, производительность и использование приложений. В этой статье вы узнаете, как настроить эту службу для сайта SharePoint.
@@ -144,7 +144,7 @@ function onRequestFail(sender, args) {
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Использование веб-тестов](app-insights-monitor-web-app-availability.md) для мониторинга доступности сайта.
+* [Использование веб-тестов](../azure-monitor/app/monitor-web-app-availability.md) для мониторинга доступности сайта.
 * [Использование Application Insights](app-insights-overview.md) для других типов приложений.
 
 <!--Link references-->

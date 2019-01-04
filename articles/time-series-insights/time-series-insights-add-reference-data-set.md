@@ -1,5 +1,5 @@
 ---
-title: Эталонные данные службы "Аналитика временных рядов Azure". Как добавить набор эталонных данных в среду службы "Аналитика временных рядов Azure" | Документация Майкрософт
+title: Как добавить эталонный набор данных в среду Аналитики временных рядов Azure | Документация Майкрософт
 description: Из этой статьи вы узнаете, как добавить эталонный набор данных в среду аналитики временных рядов Azure.
 ms.service: time-series-insights
 services: time-series-insights
@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.custom: seodec18
-ms.openlocfilehash: de5f4735e7dde7a3e631d14c83d42ccb9fd5c9db
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: f0110ea79d05c0da57ac2d2e1f52194bed12152c
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53273842"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555563"
 ---
 # <a name="create-a-reference-data-set-for-your-time-series-insights-environment-using-the-azure-portal"></a>Создание эталонного набора данных для среды Аналитики временных рядов с помощью портала Azure
 

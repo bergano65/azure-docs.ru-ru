@@ -13,12 +13,12 @@ ms.topic: reference
 ms.date: 09/08/2018
 ms.author: cshoe
 ms.custom: ''
-ms.openlocfilehash: 10cfaab44343a494dd654d0e930e12fa268ea2e3
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: bdbb9d7c8b129642616a934dcc3d226434e69a03
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52992892"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53558980"
 ---
 # <a name="timer-trigger-for-azure-functions"></a>Триггеры таймера для службы "Функции Azure" 
 
@@ -42,11 +42,11 @@ ms.locfileid: "52992892"
 
 Языковой пример см. в разделах:
 
-* [C#](#trigger---c-example)
-* [Скрипт C# (CSX)](#trigger---c-script-example)
-* [F#](#trigger---f-example)
-* [JavaScript](#trigger---javascript-example)
-* [Java](#trigger---java-example)
+* [C#](#c-example)
+* [Скрипт C# (CSX)](#c-script-example)
+* [F#](#f-example)
+* [JavaScript](#javascript-example)
+* [Java](#java-example)
 
 ### <a name="c-example"></a>Пример C#
 

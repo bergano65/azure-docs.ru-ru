@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 11/05/2018
 ms.author: jeffgilb
 ms.reviewer: hectorl
-ms.openlocfilehash: d8d88484181c3c38f64cf8f00f9d8feaa3b0217a
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: f5610f03cb613c7da2f89da1a38b6bf058a4e0cc
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52962568"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53714412"
 ---
 # <a name="enable-backup-for-azure-stack-from-the-administration-portal"></a>Включение резервного копирования для Azure Stack на портале администрирования
 Включите службу резервного копирования инфраструктуры с помощью портала администрирования, чтобы разрешить Azure Stack создавать резервные копии. Вы сможете использовать эти резервные копии для восстановления среды с помощью облачного восстановления в случае [неустранимого сбоя](./azure-stack-backup-recover-data.md). Облачное восстановление предназначено для того, чтобы операторы и пользователи смогли входить на портал по завершении восстановления. При этом восстанавливаются подписки пользователей, в том числе права доступа на основе ролей и роли, исходные планы, предложения и ранее определенные квоты вычислительных ресурсов, ресурсов хранилища и сетевых ресурсов.
@@ -30,7 +30,7 @@ ms.locfileid: "52962568"
 Администраторы и пользователи ответственны за резервное копирование и восстановление ресурсов IaaS и PaaS отдельно от процессов резервного копирования инфраструктуры. Дополнительные сведения о резервном копировании ресурсов IaaS и PaaS доступны по следующим ссылкам:
 
 - [Виртуальные машины](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-manage-vm-protect)
-- [Служба приложений](https://docs.microsoft.com/azure/app-service/web-sites-backup)
+- [Служба приложений](https://docs.microsoft.com/azure/app-service/manage-backup)
 - [SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview)
 
 

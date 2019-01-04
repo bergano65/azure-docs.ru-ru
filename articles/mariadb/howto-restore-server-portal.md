@@ -3,17 +3,15 @@ title: Как восстановить сервер в службе "База д
 description: В этой статье описывается, как восстановить сервер в Базе данных Azure для MariaDB с помощью портала Azure.
 author: ajlam
 ms.author: andrela
-editor: jasonwhowell
-services: mariadb
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 899f0bfa3075c92ac31e2b4f5fab9093a1dc6806
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: cf6d0399c790a42eaf74b3ec339bf8cf67495fb3
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46999055"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53548770"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создать резервную копию сервера в службе "База данных Azure для MariaDB" и восстановить его с помощью портала Azure
 
@@ -67,7 +65,7 @@ ms.locfileid: "46999055"
 
    ![База данных Azure для MariaDB: сведения о восстановлении ](./media/howto-restore-server-portal/3-restore.png)
   - **Точка восстановления.** Выберите точку во времени, до которой нужно восстановить сервер.
-  - **Целевой сервер.** Укажите имя для нового сервера.
+  - **Целевой сервер.** Укажите имя нового сервера.
   - **Расположение.** Невозможно выбрать регион. По умолчанию он совпадает с исходным сервером.
   - **Ценовая категория.** При восстановлении до точки во времени эти параметры изменить нельзя. Она совпадает с ценовой категорией исходного сервера. 
 

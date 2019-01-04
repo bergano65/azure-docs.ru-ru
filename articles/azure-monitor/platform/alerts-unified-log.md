@@ -8,17 +8,17 @@ ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 6a1b9c110c79e428ab0cc182d0da370e59bc4f30
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: b3949fefac1cc230a98687b3b5ff9c7a01c6a0e9
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53386219"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53789582"
 ---
 # <a name="log-alerts-in-azure-monitor"></a>Оповещения журнала в Azure Monitor
 В этой статье рассматриваются оповещения журнала. Это один из типов оповещений, которые поддерживаются в системе [оповещений Azure](../../azure-monitor/platform/alerts-overview.md) и позволяют пользователям применять платформу аналитики Azure в качестве основы для оповещений.
 
-Оповещение журнала состоит из правил поиска по журналам, созданных для [Azure Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../application-insights/app-insights-cloudservices.md#view-azure-diagnostic-events). Дополнительные сведения о его использовании см. в сведениях о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
+Оповещение журнала состоит из правил поиска по журналам, созданных для [Azure Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md) или [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostic-events). Дополнительные сведения о его использовании см. в сведениях о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
 
 > [!NOTE]
 > Распространенные данные журнала из [Azure Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md) теперь также доступны на платформе метрик в Azure Monitor. Более подробную информацию см. в статье [Create Metric Alerts for Logs in Azure Monitor](../../azure-monitor/platform/alerts-metric-logs.md) (Создание оповещений метрик для журналов в Azure Monitor).
@@ -38,7 +38,7 @@ ms.locfileid: "53386219"
 - **Частота**.  Указывает, как часто должен выполняться запрос. Это значение может составлять от 5 минут до 24 часов. Оно не должно превышать указанный период.  Если значение больше, чем указанный период, записи могут быть пропущены.<br>*Например, рассмотрим период в 30 минут и частоту в 60 минут.  Если запрос выполняется в 13:00, он возвращает записи между 12:30 и 13:00.  В следующий раз этот запрос будет выполнен в 14:00, а записи возвратятся между 13:30 и 14:00.  Записи, созданные между 13:00 и 13:30, не будут учитываться.*
 - **Пороговое значение**.  Чтобы определить, следует ли создавать оповещение, оцениваются результаты поиска по журналам.  Для каждого типа правил генерации оповещений для поиска по журналам определяется собственное пороговое значение.
 
-Правила поиска по журналам могут быть двух типов (как для [Azure Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md), так и для [Application Insights](../../application-insights/app-insights-cloudservices.md#view-azure-diagnostic-events)). Каждый из этих типов подробно описан в последующих разделах.
+Правила поиска по журналам могут быть двух типов (как для [Azure Log Analytics](../../azure-monitor/learn/tutorial-viewdata.md), так и для [Application Insights](../../azure-monitor/app/cloudservices.md#view-azure-diagnostic-events)). Каждый из этих типов подробно описан в последующих разделах.
 
 - **[Число результатов](#number-of-results-alert-rules)**. Если число записей, возвращенных в результатах поиска по журналам, превышает указанное количество, создается оповещение.
 - **[Измерение метрик](#metric-measurement-alert-rules)**.  Оповещение, созданное для каждого объекта в результатах поиска по журналам со значением, превышающим указанное пороговое значение.
@@ -121,5 +121,5 @@ ms.locfileid: "53386219"
 * Дополнительные сведения о [создании оповещений журнала в Azure](../../azure-monitor/platform/alerts-log.md).
 * Информация о [веб-перехватчиках в оповещениях журналов в Azure](alerts-log-webhook.md).
 * Сведения об [оповещениях Azure](../../azure-monitor/platform/alerts-overview.md).
-* Дополнительные сведения об [Application Insights](../../application-insights/app-insights-analytics.md).
+* Дополнительные сведения об [Application Insights](../../azure-monitor/app/analytics.md).
 * Дополнительные сведения о [Log Analytics](../../azure-monitor/log-query/log-query-overview.md).    

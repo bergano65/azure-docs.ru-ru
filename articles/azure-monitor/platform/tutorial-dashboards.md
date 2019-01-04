@@ -8,16 +8,16 @@ ms.topic: reference
 ms.date: 10/11/2018
 ms.author: johnkem
 ms.component: logs
-ms.openlocfilehash: 417f542bcf1711b2ac8e986663353e29a3705fb3
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: c6bcc5a7948e87a8b887bd0ebd3abc8fc3d3a517
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53388649"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53545321"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Поддерживаемые службы, схемы и категории для журналов диагностики Azure
 
-[Журналы диагностики Azure Monitor](../../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) — это созданные службами Azure журналы, описывающие работу этих ресурсов и служб. Все журналы диагностики, доступные в Azure Monitor, предоставляют гибкую общую схему верхнего уровня, позволяющую каждой службе задавать уникальные свойства для своих событий.
+[Журналы диагностики Azure Monitor](../../azure-monitor/platform/diagnostic-logs-overview.md) — это созданные службами Azure журналы, описывающие работу этих ресурсов и служб. Все журналы диагностики, доступные в Azure Monitor, предоставляют гибкую общую схему верхнего уровня, позволяющую каждой службе задавать уникальные свойства для своих событий.
 
 Сочетание типа ресурса (доступного в свойстве `resourceId`) и свойства `category` является уникальным идентификатором схемы. В этой статье описывается схема верхнего уровня для журналов диагностики и приводятся ссылки на схемы для каждой службы.
 
@@ -205,7 +205,7 @@ ms.locfileid: "53388649"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Сбор и использование данных журнала из ресурсов Azure](../../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md)
-* [Потоковая передача журналов диагностики Azure в **Центры событий**](../../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md)
+* [Сбор и использование данных журнала из ресурсов Azure](../../azure-monitor/platform/diagnostic-logs-overview.md)
+* [Потоковая передача журналов диагностики Azure в **Центры событий**](../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md)
 * [Создание или обновление диагностического параметра](https://msdn.microsoft.com/library/azure/dn931931.aspx)
 * [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../../azure-monitor/platform/collect-azure-metrics-logs.md)

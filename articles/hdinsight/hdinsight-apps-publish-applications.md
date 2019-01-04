@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: c8b54631f0d37e0e90135dd9e23ff85591cead1b
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 90ba4f2197dc1b00ad2a3d234f3e81e529ae7e4f
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52495369"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53653923"
 ---
 # <a name="publish-an-hdinsight-application-in-the-azure-marketplace"></a>Публикация приложения HDInsight в Azure Marketplace
 Вы можете установить приложения Azure HDInsight в кластере HDInsight под управлением Linux. В этой статье описано, как опубликовать приложение HDInsight в Azure Marketplace. Общие сведения о публикации в Azure Marketplace см. в статье [Публикация предложения и управление им в Azure Marketplace](../marketplace/marketplace-publishers-guide.md).
@@ -53,7 +53,7 @@ ms.locfileid: "52495369"
 ## <a name="application-installation-script"></a>Сценарий установки приложения
 После установки приложения в кластере (в имеющемся или в новом) создается граничный узел. Сценарий установки приложения выполняется на граничном узле.
 
-  > [!IMPORTANT]
+  > [!IMPORTANT]  
   > Имя сценария установки приложения должно быть уникальным для конкретного кластера и иметь следующий формат:
   > 
   > "name": "[concat('hue-install-v0','-' ,uniquestring(‘applicationName’)]"
@@ -81,9 +81,8 @@ ms.locfileid: "52495369"
 * mainTemplate.json (пример см. в статье [Установка пользовательских приложений Hadoop в Azure HDInsight](hdinsight-apps-install-custom-applications.md));
 * все необходимые сценарии.
 
-> [!NOTE]
+> [!NOTE]  
 > Вы можете разместить файлы приложения (включая все файлы веб-приложения) на любой общедоступной конечной точке.
-> 
 
 ## <a name="publish-the-application"></a>Публикация приложения
 Чтобы опубликовать приложение HDInsight, сделайте следующее:

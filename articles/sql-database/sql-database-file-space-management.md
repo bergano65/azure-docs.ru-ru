@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: oslake
 ms.author: moslake
-ms.reviewer: carlrab
+ms.reviewer: jrasnick, carlrab
 manager: craigg
 ms.date: 09/14/2018
-ms.openlocfilehash: 2de57a4ade91293fb1164815f83e87517068544e
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: d8ddbb2590852ed80ce02f147886dc125815fc23
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51277898"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53605982"
 ---
 # <a name="manage-file-space-in-azure-sql-database"></a>Управление файловым пространством в Базе данных SQL Azure
 В этой статье описываются различные типы дискового пространства в Базе данных SQL Azure, а также действия, которые нужно предпринять, если управление файловым пространством, выделенным для баз данных и эластичных пулов, должно осуществляться явным образом.

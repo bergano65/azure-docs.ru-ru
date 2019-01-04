@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 9ad161e3e19a1e546f30a17b38737fa88bc0953a
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 0ccb502cd5ae21468e52bdc4d56202a595cd19ef
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53399980"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53594290"
 ---
 Вы можете легко [автоматически масштабировать](../articles/azure-monitor/platform/autoscale-best-practices.md) свои [виртуальные машины](../articles/virtual-machines/windows/overview.md) при использовании [масштабируемых наборов виртуальных машин](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) и [функции автоматического масштабирования Azure Monitor](../articles/azure-monitor/platform/autoscale-overview.md). Для автоматического масштабирования виртуальные машины должны входить в масштабируемый набор. Эта статья поможет вам лучше понять, как выполнять горизонтальное и вертикальное масштабирование виртуальных машин автоматически и вручную.
 
@@ -29,7 +29,7 @@ ms.locfileid: "53399980"
 
 Автоматическое масштабирование позволяет использовать оптимальное число виртуальных машин для обработки нагрузки в приложении. Это позволяет добавлять виртуальные машины для обработки дополнительной нагрузки и удалять неиспользуемые виртуальные машины для экономии средств. Минимальное и максимальное число виртуальных машин, которые должны использоваться, указывается на основе набора правил. Если указано минимальное количество, приложение работает всегда, даже при отсутствии нагрузки. Максимальное число, в свою очередь, ограничивает общую возможную почасовую стоимость.
 
-Вы можете включить автомасштабирование, когда создаете масштабируемый набор с помощью [Azure PowerShell](../articles/monitoring-and-diagnostics/insights-powershell-samples.md#create-and-manage-autoscale-settings) или [Azure CLI](https://docs.microsoft.com/cli/azure/monitor/autoscale-settings). Его можно включить и после создания масштабируемого набора. Вы можете создать масштабируемый набор, установить расширение и настроить автомасштабирование, воспользовавшись [шаблоном Azure Resource Manager](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md). На портале Azure можно включить автомасштабирование в Azure Monitor или в параметрах масштабируемого набора.
+Вы можете включить автомасштабирование, когда создаете масштабируемый набор с помощью [Azure PowerShell](../articles/azure-monitor/platform/powershell-quickstart-samples.md#create-and-manage-autoscale-settings) или [Azure CLI](https://docs.microsoft.com/cli/azure/monitor/autoscale-settings). Его можно включить и после создания масштабируемого набора. Вы можете создать масштабируемый набор, установить расширение и настроить автомасштабирование, воспользовавшись [шаблоном Azure Resource Manager](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md). На портале Azure можно включить автомасштабирование в Azure Monitor или в параметрах масштабируемого набора.
 
 ![Включение автомасштабирования](./media/virtual-machines-autoscale/virtual-machines-autoscale-enable.png)
  
