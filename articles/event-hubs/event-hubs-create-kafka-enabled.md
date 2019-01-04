@@ -1,6 +1,6 @@
 ---
-title: Создание Центров событий Azure с поддержкой Apache Kafka | Документация Майкрософт
-description: Сведения о создании пространства имен Центров событий Azure с поддержкой Kafka с помощью портала Azure.
+title: Создание концентратора событий с поддержкой Apache Kafka. Центры событий Azure | Документация Майкрософт
+description: В этой статье содержится пошаговое руководство по созданию пространства имен Центров событий Azure с поддержкой Apache Kafka с помощью портала Azure.
 services: event-hubs
 documentationcenter: .net
 author: basilhariri
@@ -8,14 +8,15 @@ manager: timlt
 ms.service: event-hubs
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 08/16/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: bahariri
-ms.openlocfilehash: b72f6b190aad436398629c67f271020ffd0a8da9
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: bf78ac6bce23b739ed661929f6fe90eddc9b4d94
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51822081"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53090786"
 ---
 # <a name="create-apache-kafka-enabled-event-hubs"></a>Создание Центров событий с поддержкой Apache Kafka
 

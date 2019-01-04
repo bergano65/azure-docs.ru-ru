@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/19/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: a9b4de73c04d7c7c753f007c02c775366b882e81
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 39b5a7a99f56c33aee0b0db9211f4f45a058f418
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37047315"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094345"
 ---
 # <a name="copy-data-from-spark-using-azure-data-factory"></a>Копирование данных из Spark с помощью фабрики данных Azure 
 
@@ -42,12 +42,12 @@ ms.locfileid: "37047315"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Spark** | Yes |
+| Тип | Свойству type необходимо задать следующее значение: **Spark** | Yes |
 | host | IP-адрес или имя узла сервера Spark  | Yes |
 | порт | TCP-порт, используемый сервером Spark для прослушивания клиентских подключений. При подключении к Azure HDInsights укажите порт 443. | Yes |
-| serverType | Тип сервера Spark. <br/>Допустимые значения: **SharkServer**, **SharkServer2**, **SparkThriftServer**. | Нет  |
+| serverType | Тип сервера Spark. <br/>Допустимые значения: **SharkServer**, **SharkServer2**, **SparkThriftServer** | Нет  |
 | thriftTransportProtocol | Транспортный протокол для использования в слое Thrift. <br/>Допустимые значения: **Binary**, **SASL**, **HTTP** | Нет  |
-| authenticationType | Метод аутентификации, используемый для доступа к серверу Spark. <br/>Допустимые значения: **Anonymous**, **Username**, **UsernameAndPassword**, **WindowsAzureHDInsightService**. | Yes |
+| authenticationType | Метод аутентификации, используемый для доступа к серверу Spark. <br/>Допустимые значения: **Anonymous**, **Username**, **UsernameAndPassword**, **WindowsAzureHDInsightService** | Yes |
 | Имя пользователя | Имя пользователя, которое позволяет получить доступ к серверу Spark.  | Нет  |
 | password | Пароль, соответствующий пользователю. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Нет  |
 | httpPath | Частичный URL-адрес, соответствующий серверу Spark.  | Нет  |
@@ -83,7 +83,12 @@ ms.locfileid: "37047315"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Spark.
 
-Чтобы скопировать данные с Spark, установите свойство type набора данных **SparkObject**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные с Spark, установите свойство type набора данных **SparkObject**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Для свойства type набора данных необходимо задать следующее значение: **SparkObject** | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -95,7 +100,8 @@ ms.locfileid: "37047315"
         "linkedServiceName": {
             "referenceName": "<Spark linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -104,14 +110,14 @@ ms.locfileid: "37047315"
 
 Полный список разделов и свойств, используемых для определения действий, см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md). В этом разделе содержится список свойств, поддерживаемых источником Spark.
 
-### <a name="sparksource-as-source"></a>SparkSource в качестве источника
+### <a name="spark-as-source"></a>Spark в качестве источника
 
 Чтобы скопировать данные из Spark, установите тип источника **SparkSource** в действии копирования. В разделе **source** действия копирования поддерживаются следующие свойства:
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **SparkSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Yes |
+| Тип | Свойство type источника действия копирования должно иметь следующее значение: **SparkSource** | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

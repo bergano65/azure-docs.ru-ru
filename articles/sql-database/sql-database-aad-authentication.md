@@ -11,17 +11,17 @@ author: GithubMirek
 ms.author: mireks
 ms.reviewer: vanto, carlrab
 manager: craigg
-ms.date: 10/05/2018
-ms.openlocfilehash: 86e60f339af3d6d467b68d5d3b27d77a9861add1
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.date: 12/03/2018
+ms.openlocfilehash: ff9011dda4a94f323b430a3860eadc8d970a23f7
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51244087"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52838622"
 ---
 # <a name="use-azure-active-directory-authentication-for-authentication-with-sql"></a>Использование аутентификации Azure Active Directory для аутентификации с помощью SQL
 
-Аутентификация Azure Active Directory — это механизм подключения к службам [База данных SQL Azure](sql-database-technical-overview.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) с помощью удостоверений в Azure Active Directory (Azure AD). 
+Аутентификация Azure Active Directory — это механизм подключения к службам [База данных SQL](sql-database-technical-overview.md) Azure, [Управляемый экземпляр](sql-database-managed-instance.md) и [Хранилище данных SQL](../sql-data-warehouse/sql-data-warehouse-overview-what-is.md) с помощью удостоверений в Azure Active Directory (Azure AD). 
 
 > [!NOTE]
 > Этот раздел относится к Azure SQL Server, а также к базам данных SQL и хранилища данных SQL, создаваемым на сервере Azure SQL Server. Для простоты база данных SQL используется как для базы данных SQL, так и для хранилища данных SQL.
@@ -44,7 +44,7 @@ ms.locfileid: "51244087"
 Для настройки и использования проверки подлинности Azure Active Directory выполните следующие действия.
 
 1. Создайте и заполните каталог Azure AD.
-2. Свяжите или измените каталог Active Directory, который сейчас связан с вашей подпиской Azure (этот шаг можно пропустить).
+2. Необязательно: Свяжите или измените каталог Active Directory, который сейчас связан с вашей подпиской Azure.
 3. Создайте учетную запись администратора Azure Active Directory для сервера Базы данных SQL Azure, управляемого экземпляра или [хранилища данных SQL Azure](https://azure.microsoft.com/services/sql-data-warehouse/).
 4. Настройте клиентские компьютеры.
 5. Создайте учетные записи пользователей автономной базы данных в базе данных, сопоставленной с удостоверениями Azure AD.
@@ -79,20 +79,12 @@ ms.locfileid: "51244087"
 
 На сервере Azure SQL Server или в хранилище данных SQL можно выполнить подготовку для следующих членов Azure AD.
 
-- Собственные члены — члены, созданные в Azure AD в управляемом домене или в домене клиента. Дополнительные сведения см. в статье [Добавление имени личного домена в Azure Active Directory](../active-directory/active-directory-domains-add-azure-portal.md).
-- Федеративные члены домена — члены, созданные в Azure AD с федеративным доменом. Дополнительные сведения см. в статье [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
+- Собственные члены. Члены, созданные в Azure AD в управляемом домене или в домене клиента. Дополнительные сведения см. в статье [Добавление имени личного домена в Azure Active Directory](../active-directory/active-directory-domains-add-azure-portal.md).
+- Члены федеративного домена. Члены, созданные в Azure AD с федеративным доменом. Дополнительные сведения см. в статье [Microsoft Azure now supports federation with Windows Server Active Directory](https://azure.microsoft.com/blog/2012/11/28/windows-azure-now-supports-federation-with-windows-server-active-directory/) (Microsoft Azure теперь поддерживает федерацию с Windows Server Active Directory).
 - Импортированные члены из других каталогов Azure AD, являющиеся собственными или федеративными членами домена.
 - Группы Active Directory, созданные как группы безопасности.
 
-Ограничения Azure AD, связанные с управляемым экземпляром:
-
-- Только администратор Azure AD может создавать базы данных, пользователи Azure AD ограничиваются только одной базой данных и не имеет этого разрешения.
-- Владение базой данных:
-  - Субъект Azure AD не может изменить владение базой данных (ALTER AUTHORIZATION ON DATABASE) и не может быть задан в качестве владельца.
-  - Для баз данных, созданных администратором Azure AD, владение не задается (поле owner_sid в sys.sysdatabases имеет значение 0x1).
-- Управление агентом SQL Server невозможно в случае входа в систему с помощью субъектов Azure AD.
-- Администратор Azure AD не может быть олицетворен с помощью инструкции EXECUTE AS.
-- Подключение к приложению уровня данных не поддерживается при использовании субъектов Azure AD.
+Имена для входа и пользователи Azure AD поддерживаются в [Управляемых экземплярах](sql-database-managed-instance.md) в качестве предварительной версии функции.
 
 Эти системные функции возвращают значения NULL при выполнении с помощью субъектов Azure AD:
 

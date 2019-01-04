@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/08/2018
 ms.author: cwatson
-ms.openlocfilehash: 6a070d9ebd46d117041276436107abcc958d58d4
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 670aafeb8eb107fc5970b70bfa85d7469c343483
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52583743"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52722859"
 ---
 # <a name="manage-reservations-for-azure-resources"></a>Управление резервированиями для ресурсов Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "52583743"
 2. Выберите **Все службы** > **Резервирование**, чтобы отобразить список доступных вам резервирований.
 3. Выберите резервирование, доступ к которому требуется делегировать другим пользователям.
 4. Выберите **Управление доступом (IAM)**.
-5. Выберите **Добавить** > **Роль** > **Владелец**. Если вы хотите предоставить ограниченный доступ, выберите другую роль.
+5. Выберите **Добавить назначение ролей** > **Роль** > **Владелец**. Если вы хотите предоставить ограниченный доступ, выберите другую роль.
 6. Укажите адрес электронной почты пользователя, для которого хотите добавить роль "Владелец".
 7. Выберите пользователя, а затем щелкните **Сохранить**.
 
@@ -133,4 +133,4 @@ ms.locfileid: "52583743"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

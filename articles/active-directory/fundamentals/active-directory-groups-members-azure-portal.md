@@ -1,6 +1,6 @@
 ---
-title: Как добавить или удалить участников группы с помощью Azure Active Directory | Документы Майкрософт
-description: Узнайте, как добавлять или удалять пользователей и устройства, которые входят в группу в Azure Active Directory.
+title: Добавление или удаление членов группы в Azure Active Directory | Документация Майкрософт
+description: Инструкции по добавлению членов в группу и удалению из нее в Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -10,16 +10,16 @@ ms.component: fundamentals
 ms.topic: conceptual
 ms.date: 08/23/2018
 ms.author: lizross
-ms.custom: it-pro
+ms.custom: it-pro, seodec18
 ms.reviewer: krbain
-ms.openlocfilehash: 7c1a83d83dcbf247550c66602a6f53d4ef0d7930
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 42b80b53ca7c860143f1de1005a609b3e921e650
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45733370"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53076167"
 ---
-# <a name="how-to-add-or-remove-group-members-using-azure-active-directory"></a>Практическое руководство. Как добавить или удалить участников группы с помощью Azure Active Directory
+# <a name="add-or-remove-group-members-using-azure-active-directory"></a>Добавление или удаление членов группы с помощью Azure Active Directory
 С помощью Azure Active Directory можно добавлять и удалять участников группы.
 
 ## <a name="to-add-group-members"></a>Добавление участников группы

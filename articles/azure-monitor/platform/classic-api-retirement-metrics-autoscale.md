@@ -7,13 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 11/19/2018
 ms.author: robb
-ms.component: ''
-ms.openlocfilehash: 450eac3613df18997c5b0f9189555555da20cfcf
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: ce54b63aa7831ed40a8592d536c43fc83fdc5567
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52585435"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53433098"
 ---
 # <a name="azure-monitor-retirement-of-classic-deployment-model-apis-for-metrics-and-autoscale"></a>Прекращается поддержка API классической модели развертывания для метрик и автомасштабирования в Azure Monitor
 
@@ -25,7 +24,7 @@ ms.locfileid: "52585435"
 
 Если вы управляете автомасштабированием с помощью портала Azure, [нового пакета SDK для Azure Monitor](https://www.nuget.org/packages/Microsoft.Azure.Management.Monitor/), PowerShell, интерфейса командной строки или шаблонов Resource Manager, никакие действия не требуются.  
 
-При использовании метрик через портал Azure или с помощью различных [партнерских служб мониторинга](../../monitoring-and-diagnostics/monitoring-partners.md) никакие действия не требуются. Корпорация Майкрософт вместе с партнерами по мониторингу работают над миграцией на новые API.
+При использовании метрик через портал Azure или с помощью различных [партнерских служб мониторинга](../../azure-monitor/platform/partners.md) никакие действия не требуются. Корпорация Майкрософт вместе с партнерами по мониторингу работают над миграцией на новые API.
 
 ## <a name="who-is-affected"></a>На кого изменения повлияют
 
@@ -76,9 +75,9 @@ ms.locfileid: "52585435"
 
 Вызовы классических API, перечисленных ранее, завершатся ошибкой. Будут возвращаться сообщения об ошибках примерно следующего вида:
 
-Для автомасштабирования: "*Этот API не рекомендуется. Используйте портал Azure, пакет SDK для Azure Monitor, PowerShell, интерфейс командной строки или шаблоны Resource Manager для управления параметрами автомасштабирования*".  
+Для автомасштабирования: *Этот API не рекомендуется. Используйте портал Azure, пакет SDK для Azure Monitor, PowerShell, интерфейс командной строки или шаблоны Resource Manager для управления параметрами автомасштабирования*".  
 
-Для метрик: "*Этот API не рекомендуется. Используйте портал Azure, пакет SDK для Azure Monitor, PowerShell или интерфейс командной строки для запрашивания метрик*".
+Для метрик: *Этот API не рекомендуется. Используйте портал Azure, пакет SDK для Azure Monitor, PowerShell или интерфейс командной строки для запрашивания метрик*".
 
 ## <a name="email-notifications"></a>Уведомления по почте
 

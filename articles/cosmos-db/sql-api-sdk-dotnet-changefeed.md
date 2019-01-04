@@ -1,23 +1,22 @@
 ---
-title: API, пакет SDK и ресурсы обработчика канала изменений в .NET для Azure Cosmos DB | Документация Майкрософт
+title: API, пакет SDK и ресурсы обработчика канала изменений в .NET для Azure Cosmos DB
 description: Сведения об API и пакете SDK для обработчика канала изменений, включая даты выхода, даты прекращения, а также изменения, внесенные в каждую версию пакета SDK для обработчика канала изменений в .NET.
 services: cosmos-db
 author: ealsur
-manager: kfile
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 10/24/2018
 ms.author: maquaran
-ms.openlocfilehash: 327873d228fe92a9da495f802c97eb73612caef9
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 7b6fefd575901648a99bb3a67a05e705622bb74a
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52632489"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53407870"
 ---
-# <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK для обработчика канала изменений в .NET: скачивание и заметки о выпуске
+# <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK обработчика канала изменений: заметки о скачивании и выпуске
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
 > * [Веб-канал изменений в .NET](sql-api-sdk-dotnet-changefeed.md)
@@ -28,7 +27,7 @@ ms.locfileid: "52632489"
 > * [Python](sql-api-sdk-python.md)
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
-> * [SQL](https://msdn.microsoft.com/library/azure/dn782250.aspx)
+> * [SQL](sql-api-query-reference.md)
 > * [BulkExecutor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
 > * [BulkExecutor — Java](sql-api-sdk-bulk-executor-java.md)
 
@@ -42,6 +41,10 @@ ms.locfileid: "52632489"
 ## <a name="release-notes"></a>Заметки о выпуске
 
 ### <a name="v2-builds"></a>Сборки версии 2
+
+### <a name="a-name225225"></a><a name="2.2.5"/>2.2.5
+* Добавлена поддержка обработки разбиения коллекций, использующих пропускную способность общей базы данных.
+  * В этом выпуске устранена такая проблема: во время разбиения коллекций с использованием пропускной способности общей базы данных происходило перераспределение разделов с созданием только одного диапазона ключей дочернего элемента (а не двух). В таких ситуациях обработчик канала изменений может зависнуть, удаляя аренду для старого диапазона ключей раздела и не создавая новые аренды. В этом выпуске эта проблема исправлена.
 
 ### <a name="a-name224224"></a><a name="2.2.4"/>2.2.4
 * Добавлено новое свойство ChangeFeedProcessorOptions.StartContinuation для включения поддержки при запуске канала изменений из маркера продолжения запроса. Используется, только если возвращается пустая коллекция аренды или для аренды не настроен параметр ContinuationToken. Для аренды в коллекции аренды с настроенным и используемым параметром ContinuationToken свойство ChangeFeedProcessorOptions.StartContinuation игнорируется.
@@ -155,6 +158,10 @@ ms.locfileid: "52632489"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.2.5](#2.2.5) |13 декабря 2018 г. |--- |
+| [2.2.4](#2.2.4) |29 ноября 2018 г. |--- |
+| [2.2.3](#2.2.3) |19 ноября 2018 г. |--- |
+| [2.2.2](#2.2.2) |31 октября 2018 г. |--- |
 | [2.2.1](#2.2.1) |24 октября 2018 г. |--- |
 | [1.3.3](#1.3.3) |8 мая 2018 г. |--- |
 | [1.3.2](#1.3.2) |18 апреля 2018 г. |--- |

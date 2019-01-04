@@ -1,6 +1,7 @@
 ---
-title: Экспорт или удаление данных рабочей области с помощью Машинного обучения Azure | Документация Майкрософт
-description: Используя Машинное обучение Azure, вы можете экспортировать или удалять данные рабочей области с помощью портала Azure, CLI, пакета SDK и аутентифицированных REST API. В этой статье показано, как это сделать.
+title: Экспорт или удаление данных рабочей области
+titleSuffix: Azure Machine Learning service
+description: Узнайте, как экспортировать или удалить данные рабочей области с помощью портала Azure, интерфейса командной строки, пакета SDK и аутентифицированных интерфейсов REST API.
 services: machine-learning
 ms.service: machine-learning
 ms.component: core
@@ -9,12 +10,13 @@ ms.reviewer: jmartens
 author: ph-com
 ms.author: pahusban
 ms.date: 09/24/2018
-ms.openlocfilehash: 20c75b55e9b02f30e90ad40ea11383b91ae0a247
-ms.sourcegitcommit: f58fc4748053a50c34a56314cf99ec56f33fd616
+ms.custom: seodec18
+ms.openlocfilehash: 81215058095acfeedd320025457feec73d3b0d23
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48267323"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53192351"
 ---
 # <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Экспорт или удаление данных рабочей области Службы машинного обучения 
 

@@ -1,0 +1,58 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: d1ed4fe7c4b2ffd287ce95e7a4a09e08305feb30
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53283650"
+documentType: LandingData
+title: Базы данных SQL Azure — масштабируемость
+metadata:
+  document_id: 36d89c48-3646-380e-34a0-ae3ac62e2641
+  title: Базы данных SQL Azure — масштабируемость
+  meta.description: Learn how to scale your Azure SQL Database.
+  services: sql-database
+  author: jovanpop-msft
+  manager: craigg
+  ms.service: sql-database
+  ms.tgt_pltfrm: na
+  ms.devlang: 
+  ms.topic: overview
+  ms.date: 11/11/2018
+  ms.author: jovanpop-msft
+sections:
+- items:
+  - type: paragraph
+    text: База данных SQL Azure позволяет легко масштабировать базу данных путем добавления вычислительной мощности (вертикальное масштабирование) или дополнительных единиц базы данных (горизонтальное масштабирование).
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - title: Вертикальное масштабирование
+      href: /azure/sql-database/sql-database-scale-resources
+      html: <p>Легко добавляйте или удаляйте ресурсы в вашей Базе данных SQL, чтобы найти лучшее соотношение цены и производительности или устранить проблемы с производительностью.</p>
+    - title: Горизонтальное масштабирование для чтения
+      href: /azure/sql-database/sql-database-read-scale-out
+      html: <p>Уровень "Критически важный для бизнеса" предоставляет бесплатную реплику базы данных, где можно запускать отчеты, аналитику и другие запросы только для чтения к копиям данных.</p>
+    - title: Сегментирование базы данных
+      href: /azure/sql-database/sql-database-elastic-scale-introduction
+      html: <p>Вы можете использовать несколько сегментов баз данных для горизонтального масштабирования базы данных, превышая максимальные пределы ресурсов вычисления и хранения для отдельных единиц баз данных.</p>
+    - title: Эластичные запросы
+      href: /azure/sql-database/sql-database-elastic-query-overview
+      html: <p>Эластичные запросы позволяют выполнять стандартные запросы Transact-SQL к набору сегментов глобально распределенной базы данных.</p>
+    - title: Эластичные транзакции
+      href: /azure/sql-database/sql-database-elastic-transactions-overview
+      html: <p>Используйте глобально распределенные транзакции, чтобы обеспечить транзакционно согласованный доступ к распределенным данным.</p>
+    - title: Перекрестные задания баз данных
+      href: /azure/sql-database/elastic-jobs-overview
+      html: <p>Обрабатывайте набор баз данных с помощью эластичных заданий обработки межбазовых данных.</p>
+- title: Дополнительные ресурсы
+  items:
+  - type: paragraph
+    text: Ознакомьтесь с дополнительными функциями, которые помогут вам масштабировать данные.
+  - type: list
+    style: ordered
+    items:
+    - html: <a href="https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine">Связанный сервер</a> является основным компонентом ядра СУБД SQL Server, который позволяет выполнять распределенные запросы из кода Transact-SQL к другим ядрам СУБД.
+    - html: <a href="sql-database-geo-replication-overview.md">Георепликация</a> позволяет помещать любое количество реплик чтения в разных регионах.

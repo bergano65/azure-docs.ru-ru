@@ -1,0 +1,62 @@
+### YamlMime:YamlDocument
+ms.openlocfilehash: 87fea5f033568303408f923d0a59c626cf72d4cc
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53388621"
+documentType: LandingData
+title: База данных SQL Azure. Мониторинг и настройка
+metadata:
+  document_id: 36d89c48-3646-380e-34a0-ae3ac62e2641
+  title: База данных SQL Azure. Мониторинг и настройка
+  meta.description: Learn how to monitor and tune your Azure SQL Database.
+  services: sql-database
+  author: jovanpop-msft
+  manager: craigg
+  ms.service: sql-database
+  ms.tgt_pltfrm: na
+  ms.devlang: 
+  ms.topic: overview
+  ms.date: 12/12/2018
+  ms.author: jovanpop
+sections:
+- items:
+  - type: paragraph
+    text: База данных SQL Azure позволяет легко контролировать и настраивать рабочую нагрузку базы данных.
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - title: Сведения о производительности запросов
+      href: /azure/sql-database/sql-database-query-performance
+      html: <p>Легко отслеживайте использование ресурсов в базе данных SQL Azure (единая база данных), используя встроенные возможности мониторинга на портале Azure.</p>
+    - title: Azure SQL Analytics
+      href: https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql?toc=/azure/sql-database/toc.json
+      html: <p>Мониторинг Azure SQL Analytics позволяет легко отслеживать большой парк баз данных, эластичных пулов и экземпляров на одной стеклянной панели.</p>
+    - title: Автоматическая настройка
+      href: /azure/sql-database/sql-database-automatic-tuning
+      html: <p>Автоматическая настройка автоматически дает рекомендации и устраняет проблемы, план запроса, создает и удаляет индексы для повышения производительности.</p>
+    - title: Сведение об интеллектуальных средствах повышения производительности
+      href: /azure/sql-database/sql-database-intelligent-insights
+      html: <p>Встроенная интеллектуальная база данных в Azure SQL Database обнаруживает разрушительные события, которые вызывают низкую производительность в ваших базах данных, и по возможности предоставляет рекомендации по их устранению.</p>
+    - title: Рекомендации по производительности
+      href: /azure/sql-database/sql-database-advisor
+      html: <p>База данных SQL Azure предоставляет набор рекомендаций, которые помогут оптимизировать базу данных на портале Azure.</p>
+    - title: Метрики и ведение журнала
+      href: /azure/sql-database/sql-database-metrics-diag-logging
+      html: <p>Потоковая телеметрия диагностики базы данных в Azure SQL Analytics, концентратор событий Azure или хранилище BLOB-объектов Azure для пользовательских интеграций.</p>
+- title: Дополнительные ресурсы
+  items:
+  - type: paragraph
+    text: Ознакомьтесь с дополнительными функциями, которые помогут вам оптимизировать производительность базы данных.
+  - type: list
+    style: unordered
+    items:
+    - html: Дополнительные сведения о <a href="sql-database-monitor-tune-overview.md">мониторинге и настройке</a> см. в базе данных SQL Azure.
+    - html: Узнайте, как <a href="https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing?toc=/azure/sql-database/toc.json">интеллектуальная обработка запросов</a> может повысить производительность вашей базы данных.
+    - html: Настройка и эксплуатация <a href="sql-database-operate-query-store.md"> хранилища запросов </a>, базовой технологии SQL Server, позволяющей получать представление о производительности запросов в режиме реального времени.
+    - html: Дополнительные сведения об использовании <a href="sql-database-operate-query-store.md">динамических административных представлений</a> для анализа производительности рабочей нагрузки.
+    - html: Узнайте, как отслеживать действия базы данных с помощью <a href="sql-database-xevent-db-diff-from-svr.md">XEvents</a>.
+    - html: Узнайте, как <a href="sql-database-performance-guidance.md">настроить базу данных вручную</a>.

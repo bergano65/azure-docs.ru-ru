@@ -6,43 +6,64 @@ author: vhorne
 manager: jpconnock
 ms.service: firewall
 ms.topic: article
-ms.date: 7/11/2018
+ms.date: 12/01/2018
 ms.author: victorh
-ms.openlocfilehash: d32e6e29c287d140c28206743e36dc025b26158b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 86fdbbacf3e8064afe0aaaaebea1d6ef6c25f9d4
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46991340"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52865841"
 ---
 # <a name="deploy-azure-firewall-using-a-template"></a>Развертывание Брандмауэра Azure с помощью шаблона
 
-Этот шаблон создает брандмауэр и тестовую сетевую среду. Эта сеть содержит одну виртуальную сеть с тремя подсетями: *AzureFirewallSubnet*, *ServersSubnet* и *JumpboxSubnet*. ServersSubnet и JumpboxSubnet содержат по одному 2-ядерному серверу Windows Server.
+[Шаблон "Создание настройки песочницы AzureFirewall"](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azurefirewall-sandbox) создает тестовую сетевую среду с брандмауэром. Сеть имеет одну виртуальную сеть (VNet) с тремя подсетями. *AzureFirewallSubnet*, *ServersSubnet* и *JumpboxSubnet*. В подсетях *ServersSubnet* и *JumpboxSubnet* есть одна двухъядерная виртуальная машина Windows Server.
 
-В AzureFirewallSubnet размещен брандмауэр, которому присваивается коллекция правил приложения, единственное правило которой разрешает доступ к www.microsoft.com.
+Брандмауэр находится в подсети *AzureFirewallSubnet* и имеет коллекцию правил приложения с одним правилом, которое разрешает доступ к *www.microsoft.com*.
 
-Создается пользовательский маршрут, направляющий сетевой трафик из ServersSubnet через брандмауэр, где к нему применяются правила брандмауэра.
+Определенный пользователем маршрут направляет сетевой трафик из подсети *ServersSubnet* через брандмауэр, где применяются его правила.
+
+Дополнительные сведения о брандмауэре Azure см. в разделе [Руководство по развертыванию и настройке службы "Брандмауэр Azure" с помощью портала Azure](tutorial-firewall-deploy-portal.md).
+
+## <a name="use-the-template-to-deploy-azure-firewall"></a>Использование шаблона для развертывания брандмауэра Azure
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="template-location"></a>Расположение шаблона
+**Установка и развертывание брандмауэра Azure с помощью шаблона**
 
-Шаблон размещается по адресу:
+1. Перейдите к шаблону по ссылке [https://github.com/Azure/azure-quickstart-templates/tree/master/101-azurefirewall-sandbox](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azurefirewall-sandbox).
+   
+1. Прочитайте вводную информацию, а когда будете готовы развернуть шаблон, выберите **Развертывание в Azure**.
+   
+1. Войдите на портал Azure, если необходимо. 
 
-[https://github.com/Azure/azure-quickstart-templates/tree/master/101-azurefirewall-sandbox](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azurefirewall-sandbox)
-
-Прочитайте вводную информацию, а когда будете готовы развернуть шаблон, щелкните **Развернуть в Azure**.
+1. На странице портала **Create a sandbox setup of AzureFirewall** (Создание настройки песочницы AzureFirewall) введите или выберите следующие значения.
+   
+   - **Группа ресурсов**. Выберите **Create new** (Создать новую), введите имя группы ресурсов и выберите **ОК**. 
+   - **Имя виртуальной сети**. Введите имя новой виртуальной сети. 
+   - **Имя администратора**. Введите имя учетной записи пользователя с правами администратора.
+   - **Пароль администратора**. Введите пароль администратора. 
+   
+1. Прочтите условия использования и установите флажок **Я принимаю указанные выше условия**.
+   
+1. Щелкните **Приобрести**.
+   
+   Создание ресурсов займет несколько минут. 
+   
+1. Изучите ресурсы, созданные с помощью брандмауэра. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Изучите все ресурсы, созданные вместе с брандмауэром. Когда группа ресурсов, брандмауэр и все связанные с ними ресурсы вам станут не нужны, удалите их командлетом [Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup).
+При необходимости группу ресурсов, брандмауэр и все связанные ресурсы можно удалить с помощью команды PowerShell [​​Remove-AzureRmResourceGroup](/powershell/module/azurerm.resources/remove-azurermresourcegroup). Чтобы удалить группу ресурсов с именем *MyResourceGroup*, выполните следующее. 
 
 ```azurepowershell-interactive
-Remove-AzureRmResourceGroup -Name myResourceGroup
+Remove-AzureRmResourceGroup -Name MyResourceGroup
 ```
+Не удаляйте группу ресурсов и брандмауэр, если планируете перейти к изучению руководства по отслеживанию брандмауэра. 
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 Также вы можете изучить журналы брандмауэра Azure.
 
-- [Tutorial: Monitor Azure Firewall logs](./tutorial-diagnostics.md) (Руководство. Мониторинг журналов брандмауэра Azure)
-
+> [!div class="nextstepaction"]
+> [Руководство. Мониторинг журналов и метрик Брандмауэра Azure](./tutorial-diagnostics.md)

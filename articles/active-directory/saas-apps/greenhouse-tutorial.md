@@ -1,5 +1,5 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Greenhouse | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Greenhouse | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Greenhouse.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
 ms.author: jeedes
-ms.openlocfilehash: 7f48a0c11beb038370a8fc00e64d87127d356dec
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 14cdf0ddf648fb4441785106d3a8123d73a4bde9
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39424749"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52835902"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-greenhouse"></a>Руководство. Интеграция Azure Active Directory с Greenhouse
 
@@ -127,10 +127,10 @@ ms.locfileid: "39424749"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/greenhouse-tutorial/tutorial_general_400.png)
 
-1. Чтобы настроить единый вход на стороне **Greenhouse**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Greenhouse](http://www.greenhouse.io/contact).
+1. Чтобы настроить единый вход на стороне **Greenhouse**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Greenhouse](https://www.greenhouse.io/contact).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

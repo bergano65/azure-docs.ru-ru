@@ -2,18 +2,18 @@
 title: Автоматическая установка Azure Backup Server версии 2
 description: Использование скрипта PowerShell для автоматической установки Azure Backup Server версии 2. Этот тип установки также называется "тихой" установкой.
 services: backup
-author: markgalioto
+author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
 ms.date: 11/13/2018
-ms.author: markgal
-ms.openlocfilehash: 8f7bda070e613e5495d3733dd1610cb291e12c36
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.author: raynew
+ms.openlocfilehash: dd66710a24ca28b78c6b3e0a8197a078f17524db
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51612701"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52868147"
 ---
 # <a name="run-an-unattended-installation-of-azure-backup-server"></a>Запуск автоматической установки Azure Backup Server
 
@@ -56,9 +56,9 @@ ms.locfileid: "51612701"
 
 Для установки можно использовать следующие флаги:</br>
 **/f** — путь к файлу INI.</br>
-**/l** — путь к журналу.</br>
-**/i** — путь для установки.</br>
-**/x** — путь для удаления.</br>
+**/l** — путь к журналу.</br>
+**/i** — путь установки.</br>
+**/x** — путь для удаления.</br>
 
 ## <a name="next-steps"></a>Дополнительная информация
 После установки Backup Server узнайте, как подготовить сервер или обеспечить защиту рабочей нагрузки.

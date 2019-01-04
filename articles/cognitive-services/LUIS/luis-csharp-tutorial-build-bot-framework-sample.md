@@ -1,23 +1,24 @@
 ---
-title: Бот LUIS с C# — Бот веб-приложения — Bot Framework SDK 3.0
-titleSuffix: Azure Cognitive Services
+title: Создание бота на C# с помощью Bot Framework версии 3
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Для быстрой реализации решений ботов этот чат-бот использует предварительно созданный домен HomeAutomation.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: 0ad95d5683ea10803c2f3986be97617051f191cf
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 74fec29c2e70f929b64a7a64bab2a525f4facbc6
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47032280"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53438733"
 ---
-# <a name="luis-bot-in-c"></a>Бот LUIS на C#
+# <a name="luis-bot-in-c-with-the-bot-framework-3x-and-the-azure-web-app-bot"></a>Создание бота Интеллектуальной службы распознавания речи на C# с помощью Bot Framework 3.x и бота веб-приложения Azure
 
 Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Для быстрой реализации решений ботов этот чат-бот использует предварительно созданный домен HomeAutomation. Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure.
 
@@ -36,11 +37,11 @@ ms.locfileid: "47032280"
 
 1. На [портале Azure](https://portal.azure.com) в верхнем левом меню выберите пункт **Создать ресурс**.
 
-    ![Создание ресурса](./media/luis-tutorial-cscharp-web-bot/bot-service-creation.png)
+    ![Создание ресурса на портале Azure](./media/luis-tutorial-cscharp-web-bot/bot-service-creation.png)
 
 2. В поле поиска введите **Бот веб-приложения**. 
 
-    ![Создание ресурса](./media/luis-tutorial-cscharp-web-bot/bot-service-selection.png)
+    ![Выбор бота веб-приложения в качестве типа ресурса](./media/luis-tutorial-cscharp-web-bot/bot-service-selection.png)
 
 3. В окне бота веб-приложения нажмите кнопку **Создать**.
 
@@ -167,10 +168,10 @@ ms.locfileid: "47032280"
 
 
 <!-- Links -->
-[Github-BotFramework-Emulator-Download]: https://aka.ms/bot-framework-emulator
-[Github-LUIS-Samples]: https://github.com/Microsoft/LUIS-Samples
-[Github-LUIS-Samples-cs-hotel-bot]: https://github.com/Microsoft/LUIS-Samples/tree/master/bot-integration-samples/hotel-finder/csharp
-[Github-LUIS-Samples-cs-hotel-bot-readme]: https://github.com/Microsoft/LUIS-Samples/blob/master/bot-integration-samples/hotel-finder/csharp/README.md
+[GitHub-BotFramework-Emulator-Download]: https://aka.ms/bot-framework-emulator
+[GitHub-LUIS-Samples]: https://github.com/Microsoft/LUIS-Samples
+[GitHub-LUIS-Samples-cs-hotel-bot]: https://github.com/Microsoft/LUIS-Samples/tree/master/bot-integration-samples/hotel-finder/csharp
+[GitHub-LUIS-Samples-cs-hotel-bot-readme]: https://github.com/Microsoft/LUIS-Samples/blob/master/bot-integration-samples/hotel-finder/csharp/README.md
 [BFPortal]: https://dev.botframework.com/
 [RegisterInstructions]: https://docs.microsoft.com/bot-framework/portal-register-bot
 [BotFramework]: https://docs.microsoft.com/bot-framework/

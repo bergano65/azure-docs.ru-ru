@@ -1,6 +1,6 @@
 ---
-title: Управление устройствами Интернета вещей Azure с помощью расширения "Набор средств Интернета вещей Azure" для Visual Studio Code | Документация Майкрософт
-description: Используйте расширение "Набор средств Интернета вещей Azure" для Visual Studio Code, чтобы управлять устройствами Интернета вещей Azure, используя прямые методы и возможности управления требуемыми свойствами двойника.
+title: Управление устройствами Интернета вещей Azure с помощью расширения "Набор средств Центра Интернета вещей Azure" для Visual Studio Code | Документация Майкрософт
+description: Используйте расширение "Набор средств Центра Интернета вещей Azure" для Visual Studio Code, чтобы управлять устройствами Интернета вещей Azure, используя прямые методы и возможности управления требуемыми свойствами двойника.
 author: formulahendry
 ms.service: iot-hub
 services: iot-hub
@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 8/3/2018
 ms.author: junhan
-ms.openlocfilehash: d79e5b0b5281d502523cd92fbdb21106ffde0c21
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 4b7de0652172de5120e88e7c597fc31037ddbbb3
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48040139"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53339575"
 ---
-# <a name="use-azure-iot-toolkit-extension-for-visual-studio-code-for-azure-iot-hub-device-management"></a>Управление устройствами Интернета вещей Azure с помощью расширения "Набор средств Интернета вещей Azure" для Visual Studio Code
+# <a name="use-azure-iot-hub-toolkit-extension-for-visual-studio-code-for-azure-iot-hub-device-management"></a>Управление устройствами Интернета вещей Azure с помощью расширения "Набор средств Центра Интернета вещей Azure" для Visual Studio Code
 
 ![Комплексная схема](media/iot-hub-get-started-e2e-diagram/2.png)
 
-[Azure IoT Toolkit](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) — это полезное расширение Visual Studio Code, которое упрощает управление Центром Интернета вещей. В нем предусмотрены возможности управления, с помощью которых можно выполнять различные задачи.
+[Набор средств Центра Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) (ранее — "Набор средств Интернета вещей Azure") — это полезное расширение Visual Studio Code, которое упрощает управление Центром Интернета вещей. В нем предусмотрены возможности управления, с помощью которых можно выполнять различные задачи.
 
 [!INCLUDE [iot-hub-basic](../../includes/iot-hub-basic-whole.md)]
 
@@ -36,18 +36,18 @@ ms.locfileid: "48040139"
 
 ## <a name="what-you-learn"></a>Что вы узнаете
 
-Вы узнаете, как использовать расширение "Набор средств Интернета вещей Azure" для Visual Studio Code с различными параметрами управления на компьютере разработки.
+Вы узнаете, как использовать расширение "Набор средств Центра Интернета вещей Azure" для Visual Studio Code с различными параметрами управления на компьютере разработки.
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
-Запустите расширение "Набор средств Интернета вещей Azure" для Visual Studio Code с различными параметрами управления.
+Запустите расширение "Набор средств Центра Интернета вещей Azure" для Visual Studio Code с различными параметрами управления.
 
 ## <a name="what-you-need"></a>Необходимые элементы
 
 * Активная подписка Azure.
 * Центр Интернета вещей Azure в подписке;
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Набор средств Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)
+* [Набор средств Центра Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit)
 
 ## <a name="sign-in-to-access-your-iot-hub"></a>Вход в систему для получения доступа к Центру Интернета вещей
 
@@ -70,7 +70,7 @@ ms.locfileid: "48040139"
 
 2. В поле ввода введите имя метода и полезные данные.
 
-3. Результаты отобразятся в представлении **Выходные данные** > **Azure IoT Toolkit**.
+3. Результаты отобразятся в представлении **Выходные данные** > **Azure IoT Hub Toolkit** (Набор средств Центра Интернета вещей Azure).
 
 ## <a name="read-device-twin"></a>Чтение двойников устройств
 
@@ -94,10 +94,10 @@ ms.locfileid: "48040139"
 
 2. Введите сообщение в поле ввода.
 
-3. Результаты отобразятся в представлении **Выходные данные** > **Azure IoT Toolkit**.
+3. Результаты отобразятся в представлении **Выходные данные** > **Azure IoT Hub Toolkit** (Набор средств Центра Интернета вещей Azure).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы узнали, как использовать расширение "Набор средств Интернета вещей Azure" для Visual Studio Code с различными параметрами управления.
+Вы узнали, как использовать расширение "Набор средств Центра Интернета вещей Azure" для Visual Studio Code с различными параметрами управления.
 
 [!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]

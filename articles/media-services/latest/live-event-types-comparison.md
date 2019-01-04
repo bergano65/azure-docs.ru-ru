@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: juliako
-ms.openlocfilehash: 7ff48962d01a83e8c9fce380d92fbc196ff96533
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 2dbc2b4e316155e880d3baa900196d5cdd31be72
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52585427"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53011782"
 ---
 # <a name="liveevent-types-comparison"></a>Сравнение типов LiveEvent
 
@@ -42,6 +42,7 @@ ms.locfileid: "52585427"
 | Поддерживаемая битовая глубина для входного и выходного видеопотока|До 10 бит, включая HDR 10/HLG|8 бит|
 | Поддерживаемые аудиокодеки для входного потока|AAC-LC, HE-AAC v1, HE-AAC v2|AAC-LC, HE-AAC v1, HE-AAC v2|
 | Поддерживаемые аудиокодеки для выходного потока|Так же, как и для входных данных|AAC-LC|
+| Максимальное разрешение выходного видео|Так же, как и для входных данных|720p (30 кадров в секунду)|
 | Протоколы входных данных|RTMP, фрагментированный MP4 (Smooth Streaming)|RTMP, фрагментированный MP4 (Smooth Streaming)|
 | Цена|Откройте [страницу цен](https://azure.microsoft.com/pricing/details/media-services/) и выберите вкладку Live Video|Откройте [страницу цен](https://azure.microsoft.com/pricing/details/media-services/) и выберите вкладку Live Video|
 | Максимальное время выполнения|24x365 (линейная потоковая передача)|24x7|

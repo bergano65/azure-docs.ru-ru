@@ -5,14 +5,14 @@ author: nsoneji
 manager: garavd
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/11/2018
+ms.date: 11/27/2018
 ms.author: nisoneji
-ms.openlocfilehash: 5aade5a2ad0b0f51c5bd7f53ed0ee191950aa7c4
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 58dc344cc7ab40218a122e34a9032276107a944c
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50213327"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52964464"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>О Планировщике развертывания Azure Site Recovery для восстановления виртуальных машин VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -98,10 +98,10 @@ ms.locfileid: "50213327"
 3. Распакуйте ZIP-папку.
 Папка содержит несколько файлов и вложенных папок. Исполняемый файл ASRDeploymentPlanner.exe находится в родительской папке.
 
-    Пример. Скопируйте ZIP-файл в папку E:\ drive и распакуйте его.
-    E:\ASR Deployment Planner_v2.2.zip
+    Пример: Скопируйте ZIP-файл в папку E:\ drive и распакуйте его.
+    E:\ASR Deployment Planner_v2.3.zip
 
-    E:\ASR Deployment Planner_v2.2\ASRDeploymentPlanner.exe
+    E:\ASR Deployment Planner_v2.3\ASRDeploymentPlanner.exe
 
 ### <a name="update-to-the-latest-version-of-deployment-planner"></a>Обновление планировщика развертывания до последней версии
 Если установлена предыдущая версия планировщика развертывания, выполните одно из следующих действий.
@@ -117,7 +117,7 @@ ms.locfileid: "50213327"
 
 
 ## <a name="version-history"></a>Журнал версий
-Последняя версия Планировщика развертывания Site Recovery — 2.2.
+Последняя версия Планировщика развертывания Site Recovery — 2.3.
 Описание исправлений, добавляемых при каждом обновлении, см. на странице [журнала версий планировщика развертывания Site Recovery](https://social.technet.microsoft.com/wiki/contents/articles/51049.asr-deployment-planner-version-history.aspx).
 
 ## <a name="next-steps"></a>Дополнительная информация

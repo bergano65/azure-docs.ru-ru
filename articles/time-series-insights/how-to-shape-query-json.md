@@ -1,6 +1,6 @@
 ---
-title: Рекомендации по формированию JSON в запросах Аналитики временных рядов Azure.
-description: Сведения о том, как повысить эффективность запросов Аналитики временных рядов.
+title: Формирование JSON в службе "Аналитика временных рядов Azure". Рекомендации по формированию JSON в запросах службы "Аналитика временных рядов Azure" | Документация Майкрософт
+description: Сведения о том, как повысить эффективность запросов службы "Аналитика временных рядов Azure".
 services: time-series-insights
 author: ashannon7
 manager: cshankar
@@ -8,12 +8,13 @@ ms.service: time-series-insights
 ms.topic: article
 ms.date: 05/24/2018
 ms.author: anshan
-ms.openlocfilehash: b9d5e922a9a0a5f50e2ced896f5957fbc90d7eb4
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.custom: seodec18
+ms.openlocfilehash: 284bbf435c7940658753e7bbf1daff00a79d57a1
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46364375"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273856"
 ---
 # <a name="how-to-shape-json-to-maximize-query-performance"></a>Формирование JSON для достижения максимальной производительности запросов 
 
@@ -96,7 +97,7 @@ ms.locfileid: "46364375"
 
 Таблица событий Аналитики временных рядов (после преобразования в плоскую структуру):
 
-| deviceId | messageId | deviceLocation | timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
+| deviceId | messageId | deviceLocation |  timestamp | series.Flow Rate ft3/s | series.Engine Oil Pressure psi |
 | --- | --- | --- | --- | --- | --- |
 | FXXX | LINE\_DATA | EU | 2018-01-17T01:17:00Z | 1.0172575712203979 | 34.7 |
 | FXXX | LINE\_DATA | EU | 2018-01-17T01:17:00Z | 2.445906400680542 | 49.2 |
@@ -172,7 +173,7 @@ ms.locfileid: "46364375"
 
 Таблица событий Аналитики временных рядов (после преобразования в плоскую структуру):
 
-| deviceId | series.tagId | messageId | deviceLocation | Тип | unit | timestamp | series.value |
+| deviceId | series.tagId | messageId | deviceLocation | Тип | unit |  timestamp | series.value |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | FXXX | pumpRate | LINE\_DATA | EU | Скорость потока | ft3/s | 2018-01-17T01:17:00Z | 1.0172575712203979 |
 | FXXX | oilPressure | LINE\_DATA | EU | Давление масла в двигателе | psi | 2018-01-17T01:17:00Z | 34.7 |

@@ -5,15 +5,15 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: include
-ms.date: 06/20/2018
+ms.date: 12/12/2018
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: 4aa4809c57eaf26b10053d432f9191580ec143a0
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 856d702bcf1f566d0cc455cdd2676e6c2e23d179
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44381099"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53326513"
 ---
 Фабрика данных — это мультитенантная служба со следующими ограничениями по умолчанию, которые гарантируют, что подписки клиентов защищены от рабочих нагрузок друг друга. Многие ограничения для подписки можно легко увеличить до максимального значения, обратившись в службу поддержки.
 
@@ -24,8 +24,7 @@ ms.locfileid: "44381099"
 | Число фабрик данных в подписке Azure. | 50 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 | Общее число сущностей (конвейеры, наборы данных, триггеры, связанные службы, среды выполнения интеграции) в фабрике данных | 5000 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 | Общее количество ядер ЦП для сред выполнения интеграции Azure-SSIS в рамках одной подписки. | 128 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
-| Число параллельных запусков на конвейер. | 100 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
-| Число параллельных запусков конвейера в одной фабрике данных | 10 000  | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
+| Число параллельных запусков конвейера в одной фабрике данных (для всех конвейеров в фабрике) | 10 000  | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 | Максимальное число действий в одном конвейере (в том числе внутренние действия для контейнеров) | 40 | 40 |
 | Максимальное число параметров на конвейер. | 50 | 50 |
 | Элементы ForEach | 100 000 | 100 000 |

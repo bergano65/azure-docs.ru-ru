@@ -1,5 +1,5 @@
 ---
-title: Управлением кластером Azure Kubernetes с помощью пользовательского веб-интерфейса
+title: (УСТАРЕЛО) Управлением кластером Azure Kubernetes с помощью пользовательского веб-интерфейса
 description: Использование веб-интерфейса Kubernetes в службе контейнеров Azure
 services: container-service
 author: bburns
@@ -9,16 +9,19 @@ ms.topic: article
 ms.date: 02/21/2017
 ms.author: bburns
 ms.custom: mvc
-ms.openlocfilehash: b5079ddb63f468f924577f61adda6a3056ec8c6c
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: c3a79b2e4fab807613a54d2792f5f5b97570293b
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46998531"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52996137"
 ---
-# <a name="using-the-kubernetes-web-ui-with-azure-container-service"></a>Использование веб-интерфейса Kubernetes со службой контейнеров Azure
+# <a name="deprecated-using-the-kubernetes-web-ui-with-azure-container-service"></a>(УСТАРЕЛО) Использование веб-интерфейса Kubernetes со Службой контейнеров Azure
 
-[!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
+> [!TIP]
+> Обновленная версия этой статьи — [Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)](../../aks/kubernetes-dashboard.md).
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 В этом пошаговом руководстве предполагается, что вы [создали кластер Kubernetes с помощью службы контейнеров Azure](container-service-kubernetes-walkthrough.md).

@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/12/2017
 ms.author: cshoe
-ms.openlocfilehash: 5566ea8b21682c5023afc4af357e1a80e1d37384
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 62924488b776a1a89e1abf492db1881a44585b1a
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50248477"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52997814"
 ---
 # <a name="external-table-binding-for-azure-functions-experimental"></a>Привязка внешних таблиц в службе "Функции Azure" (экспериментальная возможность)
 
@@ -49,7 +49,7 @@ ms.locfileid: "50248477"
 |[Salesforce](https://docs.microsoft.com/azure/connectors/connectors-create-api-salesforce)||x|x
 |[SharePoint](https://docs.microsoft.com/azure/connectors/connectors-create-api-sharepointonline)||x|x
 |[SQL Server](https://docs.microsoft.com/azure/connectors/connectors-create-api-sqlazure)||x|x
-|[Teradata](http://www.teradata.com/products-and-services/azure/products/)||x|x
+|[Teradata](https://www.teradata.com/products-and-services/azure/products/)||x|x
 |UserVoice||x|x
 |Zendesk||x|x
 
@@ -166,7 +166,7 @@ GO
 
 ### <a name="google-sheets-data-source"></a>Источник данных Google Таблицы
 
-Чтобы создать таблицу и применить ее в этом примере с Google Таблицами, создайте электронную таблицу с листом `Contact`. Соединитель не может использовать отображаемое имя листа. В качестве dataSetName необходимо использовать внутреннее имя (выделено полужирным шрифтом), например: `docs.google.com/spreadsheets/d/`**`1UIz545JF_cx6Chm_5HpSPVOenU4DZh4bDxbFgJOSMz0`**. Добавьте имена столбцов `Id`, `LastName`, `FirstName` в первую строку, а затем заполните данные в последующих строках.
+Чтобы создать таблицу и применить ее в этом примере с Google Таблицами, создайте электронную таблицу с листом `Contact`. Соединитель не может использовать отображаемое имя листа. Внутреннее имя (выделено полужирным шрифтом) должно использоваться как dataSetName, например: `docs.google.com/spreadsheets/d/`**`1UIz545JF_cx6Chm_5HpSPVOenU4DZh4bDxbFgJOSMz0`** Добавьте имена столбцов `Id`, `LastName` и `FirstName` в первую строку, а затем заполните следующие строки.
 
 ### <a name="salesforce"></a>Salesforce
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: a469fe0d6057d865ec006d9eb14ad95f2d4b7005
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 2299dd6c723aa3059c293170c655918e5236ca0e
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52308451"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53138166"
 ---
 #  <a name="cannot-rdp-to-azure-virtual-machines-because-the-dhcp-client-service-is-disabled"></a>Не удается подключиться по протоколу удаленного рабочего стола к виртуальным машинам Azure из-за того, что отключена служба DHCP-клиента
 
@@ -26,20 +26,20 @@ ms.locfileid: "52308451"
 
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
 
-## <a name="symptoms"></a>Проблемы 
+## <a name="symptoms"></a>Проблемы
 
 Невозможно создать RDP-подключение к виртуальной машине в Azure, так как на ней отключена служба DHCP-клиента. При проверке снимка экрана в разделе [Диагностика загрузки](../troubleshooting/boot-diagnostics.md) на портале Azure вы увидите, что виртуальная машина загружается нормально и ожидает учетных данных на экране входа. Вы удаленно просматриваете журналы событий в виртуальной машине c помощью средства "Просмотр событий". Вы увидите, что служба DHCP-клиента отключена или не запускается. Ниже приведен пример журнала:
 
-**Log Name**: System </br>
+**Log Name**: системный; </br>
 **Source**: Service Control Manager </br>
 **Date**: 12/16/2015 11:19:36 AM </br>
 **Event ID**: 7022 </br>
-**Категория задачи	**: Отсутствует </br>
-**Level**: Error </br>
-**Keywords**: Classic</br> 
-**User**: N/A </br>
+**Task Category**: Нет </br>
+**Level**: Ошибка </br>
+**Keywords**: Классический</br>
+**User**: Недоступно </br>
 **Computer**: myvm.cosotos.com</br>
-**Description**: The DHCP Client service hung on starting.</br>
+**Описание** The DHCP Client service hung on starting.</br>
 
 Для виртуальных машин Resource Manager можно получить журналы для событий 7022 через последовательную консоль доступа, выполнив следующую команду:
 
@@ -49,12 +49,12 @@ ms.locfileid: "52308451"
 
 ## <a name="cause"></a>Причина:
 
-Служба DHCP-клиента не работает на виртуальной машине. 
+Служба DHCP-клиента не работает на виртуальной машине.
 
 > [!NOTE]
-> Эта статья относится только к службе DHCP-клиента, но не DHCP-сервера. 
+> Эта статья относится только к службе DHCP-клиента, но не DHCP-сервера.
 
-## <a name="solution"></a>Решение 
+## <a name="solution"></a>Решение
 
 Прежде чем выполнять какие-либо действия, сделайте моментальный снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
 
@@ -62,7 +62,7 @@ ms.locfileid: "52308451"
 
 ### <a name="use-serial-control"></a>Использование последовательной консоли
 
-1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](./serial-console-windows.md#open-cmd-or-powershell-in-serial-console
+1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](./serial-console-windows.md#use-cmd-or-powershell-in-serial-console
 ). Если последовательная консоль на нужной виртуальной машине не включена, ознакомьтесь со сведениями о том, как [сбросить сетевой интерфейс](reset-network-interface.md).
 2. Проверьте, отключен ли протокол DHCP в сетевом интерфейсе:
 
@@ -70,7 +70,7 @@ ms.locfileid: "52308451"
 3. Если служба DHCP остановлена, попробуйте запустить эту службу
 
         sc start DHCP
-        
+
 4. Запросите службу еще раз, чтобы убедиться, что она успешно запущена.
 
         sc query DHCP
@@ -89,9 +89,9 @@ ms.locfileid: "52308451"
     |1069 — ERROR_SERVICE_LOGON_FAILED   |  Перейдите к разделу [Происходит сбой службы DHCP-клиента из-за ошибки входа в систему](#dhcp-client-service-fails-because-of-logon-failure). |
     | 1070 — ERROR_SERVICE_START_HANG  | Перейдите к разделу [Происходит сбой службы DHCP-клиента или она зависает](#dhcp-client-service-crashes-or-hangs).  |
     | 1077 — ERROR_SERVICE_NEVER_STARTED  | Перейдите к разделу [Служба DHCP-клиента отключена](#dhcp-client-service-is-disabled).  |
-    |1079 — ERROR_DIFERENCE_SERVICE_ACCOUNT   | [Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.  | 
+    |1079 — ERROR_DIFERENCE_SERVICE_ACCOUNT   | [Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.  |
     |1053 | [Свяжитесь со службой поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы быстро решить проблему.  |
-    
+
 
 #### <a name="dhcp-client-service-is-stopped-because-of-an-access-denied-error"></a>Служба DHCP-клиента остановлена из-за ошибки отказа в доступе
 
@@ -99,18 +99,18 @@ ms.locfileid: "52308451"
 2. Скачайте средство Process Monitor, выполнив следующий скрипт:
 
    ```
-   remove-module psreadline  
-   $source = "https://download.sysinternals.com/files/ProcessMonitor.zip" 
-   $destination = "c:\temp\ProcessMonitor.zip" 
-   $wc = New-Object System.Net.WebClient 
-   $wc.DownloadFile($source,$destination) 
+   remove-module psreadline
+   $source = "https://download.sysinternals.com/files/ProcessMonitor.zip"
+   $destination = "c:\temp\ProcessMonitor.zip"
+   $wc = New-Object System.Net.WebClient
+   $wc.DownloadFile($source,$destination)
    ```
 3. Далее запустите трассировку **procmon**:
 
    ```
-   procmon /Quiet /Minimized /BackingFile c:\temp\ProcMonTrace.PML 
+   procmon /Quiet /Minimized /BackingFile c:\temp\ProcMonTrace.PML
    ```
-4. Воспроизведите проблему, запустив службу, из-за которой появляется сообщение об **отказе в доступе**: 
+4. Воспроизведите проблему, запустив службу, из-за которой появляется сообщение об **отказе в доступе**:
 
    ```
    sc start DHCP
@@ -118,8 +118,8 @@ ms.locfileid: "52308451"
 
    Когда запуск завершится ошибкой, остановите трассировку Process Monitor:
 
-   ```   
-   procmon /Terminate 
+   ```
+   procmon /Terminate
    ```
 5. Соберите файл **c:\temp\ProcMonTrace.PML**:
 
@@ -132,7 +132,7 @@ ms.locfileid: "52308451"
 
     ![Фильтрация по результатам в Process Monitor](./media/troubleshoot-remote-desktop-services-issues/process-monitor-access-denined.png)
 
-7. Исправьте разделы реестра, папки или файлы, которые включены в выходные данные. Обычно эта проблема возникает, если у учетной записи, использованной для входа в систему, нет разрешения ACL на доступ к этим объектам. Чтобы выяснить правильное разрешение в ACL для учетной записи, используемой для входа в систему, просмотрите данные на исправной виртуальной машине. 
+7. Исправьте разделы реестра, папки или файлы, которые включены в выходные данные. Обычно эта проблема возникает, если у учетной записи, использованной для входа в систему, нет разрешения ACL на доступ к этим объектам. Чтобы выяснить правильное разрешение в ACL для учетной записи, используемой для входа в систему, просмотрите данные на исправной виртуальной машине.
 
 #### <a name="dhcp-client-service-is-disabled"></a>Служба DHCP-клиента отключена
 
@@ -158,7 +158,7 @@ ms.locfileid: "52308451"
 
 #### <a name="dhcp-client-service-fails-because-of-logon-failure"></a>Происходит сбой службы DHCP-клиента из-за ошибки входа в систему
 
-1. Поскольку эта проблема возникает при изменении стартовой учетной записи для службы, восстановите для нее стандартную учетную запись: 
+1. Поскольку эта проблема возникает при изменении стартовой учетной записи для службы, восстановите для нее стандартную учетную запись:
 
         sc config DHCP obj= 'NT Authority\Localservice'
 2. Запустите службу:
@@ -167,7 +167,7 @@ ms.locfileid: "52308451"
 3. Попробуйте подключиться к виртуальной машине с помощью удаленного рабочего стола.
 
 #### <a name="dhcp-client-service-crashes-or-hangs"></a>Происходит сбой службы DHCP-клиента или она зависает
-1. Если служба зависла в состоянии **Запуск** или**Остановка**, попробуйте остановить эту службу: 
+1. Если служба зависла в состоянии **Запуск** или**Остановка**, попробуйте остановить эту службу:
 
         sc stop DHCP
 2. Изолируйте службу в собственном контейнере svchost.
@@ -184,12 +184,12 @@ ms.locfileid: "52308451"
 
 1. [Устранение неполадок с виртуальной машиной Windows при подключении диска операционной системы к виртуальной машине восстановления с помощью портала Azure](../windows/troubleshoot-recovery-disks-portal.md).
 2. Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления. Убедитесь, что в консоли "Управление дисками" для подключенного диска отображается состояние **Подключен**. Запишите или запомните букву диска, которая присвоена подключенному диску ОС.
-3.  Откройте командную строку с повышенными привилегиями (**Запуск от имени администратора**). Затем выполните следующий сценарий. В этом скрипте предполагается, что подключенному диску ОС присвоена буква **F**. Замените эту букву правильным значением для вашей виртуальной машины. 
+3.  Откройте командную строку с повышенными привилегиями (**Запуск от имени администратора**). Затем выполните следующий сценарий. В этом скрипте предполагается, что подключенному диску ОС присвоена буква **F**. Замените эту букву правильным значением для вашей виртуальной машины.
 
     ```
     reg load HKLM\BROKENSYSTEM F:\windows\system32\config\SYSTEM
 
-    REM Set default values back on the broken service 
+    REM Set default values back on the broken service
     reg add "HKLM\BROKENSYSTEM\ControlSet001\services\DHCP" /v start /t REG_DWORD /d 2 /f
     reg add "HKLM\BROKENSYSTEM\ControlSet001\services\DHCP" /v ObjectName /t REG_SZ /d "NT Authority\LocalService" /f
     reg add "HKLM\BROKENSYSTEM\ControlSet001\services\DHCP" /v type /t REG_DWORD /d 16 /f

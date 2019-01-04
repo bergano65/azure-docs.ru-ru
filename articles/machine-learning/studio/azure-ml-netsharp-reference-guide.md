@@ -4,9 +4,8 @@ description: Синтаксис языка спецификации нейрон
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: cfd1454b-47df-4745-b064-ce5f9b3be303
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
 ms.date: 03/01/2018
-ms.openlocfilehash: 3aa364e92dd7ce3742d28ac2b36d9a7f16cbebbf
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: fb6efad1f1c06349adb877516f5323d8b9ee45e8
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52315313"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53272241"
 ---
 # <a name="guide-to-net-neural-network-specification-language-for-azure-machine-learning-studio"></a>Руководство по языку спецификаций нейронных сетей Net# для Студии машинного обучения Azure
 
@@ -39,7 +38,7 @@ Net# — это язык, разработанный корпорацией Ма
 + Синтаксис и ключевые слова языка спецификаций Net#
 + Примеры настраиваемых нейронных сетей, созданных с использованием Net# 
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="neural-network-basics"></a>Основы нейронных сетей
 
@@ -219,7 +218,7 @@ hidden ByCol[5, 20] from Pixels where (s,d) => abs(s[1] - d[1]) <= 1;
     
     Если измерение имеет значение False, ядра определяются таким образом, чтобы количество оставшихся узлов на каждой стороне было одинаковым (до разницы в 1). Значение по умолчанию этого атрибута: кортеж со всеми компонентами, равными False.
 
-+ **UpperPad** и **LowerPad** (необязательно): позволяют более тонко управлять объемом заполнения. **Важно!** Эти атрибуты могут задаваться тогда и только тогда, когда свойство **Padding** выше ***не*** задается. Значения должны быть кортежами с целыми значениями, длина которых представляет собой арность пакета. При задании этих атрибутов «пустые» узлы добавляются к нижнему и верхнему концам каждого измерения входного слоя. Число узлов, добавленных к нижнему и верхнему концам в каждом измерении, определяется атрибутами **LowerPad[i]** и **UpperPad[i]** соответственно. 
++ **UpperPad** и **LowerPad** (необязательно): позволяют более тонко управлять объемом заполнения. **Важно!** Эти атрибуты можно задавать тогда и только тогда, когда свойство **Padding** выше ***не*** определено. Значения должны быть кортежами с целыми значениями, длина которых представляет собой арность пакета. При задании этих атрибутов «пустые» узлы добавляются к нижнему и верхнему концам каждого измерения входного слоя. Число узлов, добавленных к нижнему и верхнему концам в каждом измерении, определяется атрибутами **LowerPad[i]** и **UpperPad[i]** соответственно. 
 
     Чтобы обеспечить соответствие количества ядер только количеству «реальных», а не «пустых» узлов, должны выполняться следующие условия.
       - Каждый компонент атрибута **LowerPad** должен быть строго меньше, чем `KernelShape[d]/2`. 
@@ -375,7 +374,7 @@ share { Data1 => H1, Data2 => H2 } // share weights
 
 В этом разделе приводится несколько примеров использования Net# для добавления скрытых слоев, определения способов взаимодействия скрытых слоев с другими слоями и построения сверточных сетей.
 
-### <a name="define-a-simple-custom-neural-network-hello-world-example"></a>Определение простой настраиваемой нейронной сети: пример «Привет, мир!»
+### <a name="define-a-simple-custom-neural-network-hello-world-example"></a>Определение простой настраиваемой нейронной сети: пример Hello World.
 
 В этом простом примере показано, как создавать модель нейронной сети с одним скрытым слоем.
 

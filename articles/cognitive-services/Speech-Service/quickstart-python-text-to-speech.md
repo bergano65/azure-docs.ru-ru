@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство по преобразованию текста в речь на Python (служба "Речь")
+title: Краткое руководство. Преобразованию текста в речь на Python — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: В этом кратком руководстве описано, как преобразовать текст в речь с помощью Python и REST API преобразования текста в речь. В это руководство включен пример текста, оформленный по стандарту разметки SSML (Speech Synthesis Markup Language). Этот стандарт позволяет выбрать голос и язык для речевого ответа. REST API также поддерживает обычный текст (ASCII или UTF-8), но для запросов в формате обычного текста ответ всегда возвращается с голосом и языком по умолчанию, настроенным для службы "Речь".
+description: В этом кратком руководстве описано, как преобразовать текст в речь с помощью Python и REST API преобразования текста в речь. В это руководство включен пример текста, оформленный по стандарту разметки SSML (Speech Synthesis Markup Language). Этот стандарт позволяет выбрать голос и язык для речевого ответа.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: speech-service
 ms.topic: conceptual
 ms.date: 11/16/2018
 ms.author: erhopf
-ms.openlocfilehash: 38bcd67dfb6d9b1a1955658872fee7b8b7a14a0c
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18
+ms.openlocfilehash: 7512c443c49f1518d6a6f7ace7e981d3508b1d7a
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52447471"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53090063"
 ---
-# <a name="quickstart-convert-text-to-speech-using-python"></a>Краткое руководство по преобразованию текста в речь с помощью Python
+# <a name="quickstart-convert-text-to-speech-using-python"></a>Краткое руководство. Преобразование текста в речь с использованием Python
 
 В этом кратком руководстве описано, как преобразовать текст в речь с помощью Python и REST API преобразования текста в речь. Текст запроса в этом руководстве оформлен по стандарту разметки [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md), который позволяет выбрать голос и язык для ответа.
 

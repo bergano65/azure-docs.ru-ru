@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2018
 ms.author: anwestg
-ms.openlocfilehash: c91f92a519c91f4c0fe32ed102c5bb9fab528868
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 740a3ce36dde953cb92c52a10cbebf12544adae0
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51614816"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52968158"
 ---
 # <a name="offline-update-of-azure-app-service-on-azure-stack"></a>Автономное обновление службы приложений Azure в Azure Stack
 
@@ -101,7 +101,7 @@ ms.locfileid: "51614816"
 
    1. Нажмите кнопку **Подключить** рядом с полем **Azure Stack Subscriptions** (Подписки Azure Stack).
         * При использовании Azure Active Directory (Azure AD) введите учетную запись администратора Azure AD и пароль, предоставленный при развертывании Azure Stack. Щелкните **Sign In** (Войти).
-        * Если вы используете службы федерации Active Directory (AD FS), предоставьте соответствующую учетную запись администратора. (например, *cloudadmin@azurestack.local*). Введите пароль и нажмите кнопку **Войти**.
+        * Если вы используете службы федерации Active Directory (AD FS), предоставьте соответствующую учетную запись администратора. Например _cloudadmin@azurestack.local_. Введите пароль и нажмите кнопку **Войти**.
    2. В поле **Azure Stack Subscriptions** (Подписки Azure Stack) выберите **Default Provider Subscription** (Подписка поставщика по умолчанию).
    3. В поле **Azure Stack Locations** (Расположения Azure Stack) выберите расположение, соответствующее региону, в который выполняется развертывание. Например, **локальный** регион при развертывании в Пакете средств разработки Azure Stack.
    4. Если обнаружено существующее развертывание службы приложений, поля группы ресурсов и учетной записи хранения заполняются и выделяются серым цветом.

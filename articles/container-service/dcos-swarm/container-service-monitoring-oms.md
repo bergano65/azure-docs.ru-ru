@@ -1,5 +1,5 @@
 ---
-title: Мониторинг кластера DC/OS Azure с помощью Operations Management
+title: (УСТАРЕЛО) Мониторинг кластера Azure DC/OS с помощью Operations Management
 description: Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics.
 services: container-service
 author: keikhara
@@ -9,20 +9,22 @@ ms.topic: article
 ms.date: 11/17/2016
 ms.author: keikhara
 ms.custom: mvc
-ms.openlocfilehash: 4576d9decc6ba1e01ef39abdb8a3ef89461196e8
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: b5c1596066b02d5ad4f59ed553408d263acc825c
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49407798"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52993571"
 ---
-# <a name="monitor-an-azure-container-service-dcos-cluster-with-log-analytics"></a>Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics
+# <a name="deprecated-monitor-an-azure-container-service-dcos-cluster-with-log-analytics"></a>(УСТАРЕЛО) Мониторинг кластера DC/OS Службы контейнеров Azure с использованием Log Analytics
 
-Log Analytics — это облачное решение Майкрософт для управления ИТ-средой, которое помогает управлять локальной и облачной инфраструктурой и защищать ее. В Log Analytics реализовано решение для контейнеров, которое помогает просматривать сведения, касающиеся инвентаризации и производительности контейнеров, а также соответствующие журналы в одном расположении. Оно позволяет выполнять аудит и устранять неполадки контейнеров, просматривая журналы в централизованном расположении, а также находить контейнеры с высоким уровнем потребления ресурсов на узле.
+[!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
+
+Log Analytics — это облачное решение Майкрософт для управления ИТ-средой, которое помогает управлять локальной и облачной инфраструктурой и защищать ее. В Log Analytics реализовано решение для контейнеров, которое помогает просматривать сведения, касающиеся инвентаризации и производительности контейнеров, а также соответствующие журналы в одном расположении. Оно позволяет выполнять аудит и устранять неполадки контейнеров, просматривая журналы в централизованном расположении, а также находить контейнеры с высоким уровнем потребления ресурсов на узле.
 
 ![](media/container-service-monitoring-oms/image1.png)
 
-Дополнительные сведения об этом решении см. в статье [Решение для мониторинга контейнеров в Log Analytics](../../log-analytics/log-analytics-containers.md).
+Дополнительные сведения об этом решении см. в статье [Решение для мониторинга контейнеров в Log Analytics](../../azure-monitor/insights/containers.md).
 
 ## <a name="setting-up-log-analytics-from-the-dcos-universe"></a>Настройка Log Analytics в среде DC/ОS
 
@@ -74,7 +76,7 @@ Log Analytics — это облачное решение Майкрософт д
 
 ![](media/container-service-monitoring-oms/image11.png)
 
-Дополнительные сведения см. в статье [Решение для мониторинга контейнеров в Log Analytics](../../log-analytics/log-analytics-containers.md).
+Дополнительные сведения см. в статье [Решение для мониторинга контейнеров в Log Analytics](../../azure-monitor/insights/containers.md).
 
 ### <a name="how-to-scale-log-analytics-agent-with-acs-dcos"></a>Масштабирование агента Log Analytics с помощью среды DC/OS службы ACS 
 
@@ -99,4 +101,4 @@ $ dcos package uninstall msoms
 
 ## <a name="next-steps"></a>Дополнительная информация
 
- Теперь, когда вы настроили Log Analytics для мониторинга контейнеров, [просмотрите свою панель мониторинга для контейнера](../../log-analytics/log-analytics-containers.md).
+ Теперь, когда вы настроили Log Analytics для мониторинга контейнеров, [просмотрите свою панель мониторинга для контейнера](../../azure-monitor/insights/containers.md).

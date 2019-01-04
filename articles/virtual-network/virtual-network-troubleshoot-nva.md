@@ -14,18 +14,21 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/26/2018
 ms.author: genli
-ms.openlocfilehash: 2a0f6b75c540f319848805e8a9bda7b166d5d709
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 13cec39278577a818ef43f1215fd2e6653f15ed2
+ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50138665"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52678446"
 ---
 #  <a name="network-virtual-appliance-issues-in-azure"></a>Неполадки сетевого виртуального модуля в Azure
 
 При использовании стороннего сетевого виртуального модуля (NVA) в Microsoft Azure могут возникнуть проблемы и ошибки подключения к виртуальной машине или VPN. В этой статье приведены основные шаги, которые помогут вам проверить базовые требования к конфигурациям NVA на платформе Azure.
 
-Поставщик NVA обеспечивает техническую поддержку сторонних модулей NVA и их интеграцию с платформой Azure. Если у вас есть проблема с подключением или маршрутизацией, которая связана с NVA, вы должны [напрямую обратиться к поставщику NVA](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
+Поставщик NVA обеспечивает техническую поддержку сторонних модулей NVA и их интеграцию с платформой Azure. 
+
+> [!NOTE]
+> Если у вас есть проблема с подключением или маршрутизацией, которая связана с NVA, вы должны [напрямую обратиться к поставщику NVA](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
 
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
@@ -37,6 +40,7 @@ ms.locfileid: "50138665"
 - Маршруты UDR в подсетях виртуальной сети, которые направляют трафик из модулей NVA.
 - Маршрутизация таблиц и правил в модулях NVA (например, из NIC1 в NIC2).
 - Трассировка в сетевых адаптерах NVA для проверки входящего и исходящего трафика.
+- При использовании SKU уровня "Стандартный" и общедоступного IP-адреса нужно создать группу безопасности сети (NSG) и явное правило, разрешающее передачу трафика в NVA.
 
 ## <a name="basic-troubleshooting-steps"></a>Основные шаги по устранению неполадок
 
@@ -73,6 +77,8 @@ ms.locfileid: "50138665"
           Execute: $nic2 #and check for an expected output:
           EnableIPForwarding   : True
           NetworkSecurityGroup : null
+
+**Проверка наличия NSG при использовании SKU уровня "Стандартный" и общедоступного IP-адреса.** Если используется SKU уровня "Стандартный" и общедоступный IP-адрес, нужно создать группу безопасности сети и явное правило, разрешающее передачу трафика в NVA.
 
 **Проверка того, доступна ли возможность маршрутизации трафика в модуль NVA**
 

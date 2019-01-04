@@ -1,6 +1,6 @@
 ---
-title: DevOps в приложениях с искусственным интеллектом (AI). Создание конвейера непрерывной интеграции в Azure с помощью Docker, Kubernetes и приложения Flask Python
-description: DevOps в приложениях с искусственным интеллектом (AI). Создание конвейера непрерывной интеграции в Azure с помощью Docker и Kubernetes
+title: Создание конвейера непрерывной интеграции в Azure — командный процесс обработки и анализа данных
+description: DevOps для приложений искусственного интеллекта (ИИ). Создание конвейера непрерывной интеграции в Azure с помощью Docker и Kubernetes
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -10,15 +10,15 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 05/22/2018
 ms.author: tdsp
-ms.custom: (previous author=jainr, ms.author=jainr)
-ms.openlocfilehash: c232680d5d1bf0eb761ff974ebf6608b67922f33
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.custom: seodec18, previous-author=jainr, previous-ms.author=jainr
+ms.openlocfilehash: a3c570d3d22742afcbba86f35a9dd1f6a85c0b8f
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52496744"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53134290"
 ---
-# <a name="devops-for-artificial-intelligence-ai-applications-creating-continuous-integration-pipeline-on-azure-using-docker-and-kubernetes"></a>DevOps в приложениях с искусственным интеллектом (AI). Создание конвейера непрерывной интеграции в Azure с помощью Docker и Kubernetes
+# <a name="creating-continous-integration-pipeline-on-azure-using-docker-kubernetes-and-python-flask-application"></a>Создание конвейера непрерывной интеграции в Azure с помощью приложения Docker, Kubernetes или Flask Python
 Для приложения AI существуют часто используемые два рабочих потока, создаваемые модели машинного обучения с помощью обработки и анализа данных и разработчики приложений, которые создают приложение и предоставляют его для потребления конечным пользователям. В этой статье будет продемонстрирована реализация конвейера непрерывной интеграции (CI) или непрерывной доставки (CD) для приложения AI. AI-приложение является сочетанием кода приложения, который внедрен в модель предварительного машинного обучения (ML). Из этой статьи вы узнаете, как извлекать предварительно обработанную модель из частной учетной записи хранения BLOB-объектов (вместо нее можно использовать учетную запись AWS S3). В этой статье будут использованы простые примеры веб-приложения Flask Python.
 
 > [!NOTE]

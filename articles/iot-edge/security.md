@@ -1,6 +1,6 @@
 ---
-title: Безопасность в Azure IoT Edge | Документация Майкрософт
-description: Безопасность, проверка подлинности и авторизация устройств IoT Edge.
+title: Инфраструктура безопасности Azure IoT Edge | Документация Майкрософт
+description: Дополнительные сведения о стандартах безопасности, аутентификации и авторизации, которые использовались для разработки Azure IoT Edge и которых следует придерживаться при разработке решения.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,14 +8,15 @@ ms.date: 10/05/2017
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 4292dc3abf775d48ee33cc7a48793d080156efb1
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: 1042f53147122a7370b464f6bfc892dcee70fe70
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51568943"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100146"
 ---
-# <a name="securing-azure-iot-edge"></a>Защита Azure IoT Edge
+# <a name="security-standards-for-azure-iot-edge"></a>Стандарты безопасности для Azure IoT Edge
 
 Чтобы быть уверенным в стабильной работе комплексного решения Интернета вещей, необходимо обеспечить безопасность интеллектуальных пограничных устройств. Специально для этого и разработана Azure IoT Edge, которая охватывает различные профили рисков и сценарии развертывания, а также обеспечивает должную защиту, ожидаемую от всех служб Azure.
 

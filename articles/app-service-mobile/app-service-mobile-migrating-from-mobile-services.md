@@ -14,15 +14,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/03/2016
 ms.author: crdun
-ms.openlocfilehash: 5001704f47af0c7b07744f1dceb7aa58bdb6448c
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 7fdbbee27f83a4583390158e456270324967b28a
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32158874"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52961609"
 ---
 # <a name="article-top"></a>Перенос существующей мобильной службы Azure в службу приложений Azure
-Благодаря [Общедоступная версия службы приложений Azure] сайты мобильных служб Azure можно легко переносить на месте, что позволяет пользоваться преимуществами всех компонентов службы приложений Azure.  В этом документе объясняется, что происходит во время переноса сайта из мобильных служб Azure в службу приложений Azure.
+Благодаря [Общедоступная версия службы приложений Azure]сайты мобильных служб Azure можно легко переносить на месте, что позволяет пользоваться преимуществами всех компонентов службы приложений Azure.  В этом документе объясняется, что происходит во время переноса сайта из мобильных служб Azure в службу приложений Azure.
 
 ## <a name="what-does-migration-do"></a>Что происходит с сайтом во время переноса
 При переносе мобильная служба Azure преобразуется в приложение [службе приложений Azure]. При этом ее код не изменяется.  Центры уведомлений, подключение данных SQL, параметры проверки подлинности, запланированные задания и имя домена также останутся без изменений.  Мобильные клиенты, использующие мобильную службу Azure, будут работать в обычном режиме.  После переноса в службу приложений Azure ваша служба будет перезапущена.
@@ -176,7 +176,7 @@ ms.locfileid: "32158874"
 | Google |**MS\_GoogleClientID** |**MS\_GoogleClientSecret** | |
 | Azure AD |**MS\_AadClientID** | |**MS\_AadTenants** |
 
-Примечание. Параметр **MS\_AadTenants** сохраняется как разделенный запятыми список доменов клиента (поля "Разрешенные клиенты" на портале мобильных служб).
+Примечание. Параметр **MS\_AadTenants** сохраняется в виде списка доменов клиента (поля "Разрешенные клиенты" на портале мобильных служб), разделенных запятыми.
 
 > [!WARNING]
 > **Не используйте механизмы проверки подлинности в меню «Параметры».**
@@ -296,7 +296,7 @@ ms.locfileid: "32158874"
 | mobile scale show *имя* |site show *имя* |
 | mobile scale change *имя* |site scale mode *режим* *имя* <br /> site scale instances *экземпляры* *имя* |
 | mobile appsetting list *имя* |site appsetting list *имя* |
-| mobile appsetting add *имя* *ключ* *значение* |site appsetting add *ключ*=*значение* *имя* |
+| mobile appsetting add *имя* *ключ* *значение* |site appsetting add *key*=*value* *name* |
 | mobile appsetting delete *name* *key* |site appsetting delete *ключ* *значение* |
 | mobile appsetting show *имя* *ключ* |site appsetting delete *ключ* *значение* |
 
@@ -327,7 +327,7 @@ ms.locfileid: "32158874"
 ### <a name="deleting-a-migrated-mobile-app-clone-causes-a-site-outage"></a>Удаление перенесенного клона мобильного приложения приводит к недоступности сайта
 Если клонировать перенесенную мобильную службу с помощью Azure PowerShell, а затем удалить клон, запись DNS для рабочей службы будет удалена.  В результате сайт будет недоступен из Интернета.  
 
-Решение. Если вы хотите клонировать сайт, сделайте это на портале.
+Способы устранения: Если вы хотите клонировать сайт, сделайте это на портале.
 
 ### <a name="changing-webconfig-does-not-work"></a>Изменение Web.config не поддерживается
 При наличии сайта ASP.NET изменить файл `Web.config` нельзя.  Во время запуска служба приложений Azure создает подходящий файл `Web.config` для поддержки среды выполнения мобильных служб.  Некоторые параметры (например, пользовательские заголовки) можно переопределить с помощью файла преобразования XML.  Создайте файл с именем `applicationHost.xdt`; он должен располагаться в каталоге `D:\home\site` службы Azure.  Загрузите файл `applicationHost.xdt`, используя пользовательский скрипт развертывания, или непосредственно с помощью Kudu.  Ниже приведен пример документа.
@@ -383,9 +383,9 @@ ms.locfileid: "32158874"
 [планы планировщика Azure]: ../scheduler/scheduler-plans-billing.md
 [непрерывно развертывать]: ../app-service/app-service-continuous-deployment.md
 [Преобразование смешанного пространств имен]: https://azure.microsoft.com/blog/updates-from-notification-hubs-independent-nuget-installation-model-pmt-and-more/
-[curl]: http://curl.haxx.se/
+[curl]: https://curl.haxx.se/
 [пользовательские доменные имена]: ../app-service/app-service-web-tutorial-custom-domain.md
-[Fiddler]: http://www.telerik.com/fiddler
+[Fiddler]: https://www.telerik.com/fiddler
 [Общедоступная версия службы приложений Azure]: https://azure.microsoft.com/blog/announcing-general-availability-of-app-service-mobile-apps/
 [Hybrid Connections]: ../app-service/app-service-hybrid-connections.md
 [ведению журналов]: ../app-service/web-sites-enable-diagnostic-log.md
@@ -393,7 +393,7 @@ ms.locfileid: "32158874"
 [Сравнение мобильных служб и службы приложений]: app-service-mobile-value-prop-migration-from-mobile-services.md
 [Центры уведомлений]: ../notification-hubs/notification-hubs-push-notification-overview.md
 [мониторинг производительности]: ../app-service/web-sites-monitor.md
-[Postman]: http://www.getpostman.com/
+[Postman]: https://www.getpostman.com/
 [промежуточных слотов]: ../app-service/web-sites-staged-publishing.md
 [VNet]: ../app-service/web-sites-integrate-with-vnet.md
 [Примеры преобразования XDT]: https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples

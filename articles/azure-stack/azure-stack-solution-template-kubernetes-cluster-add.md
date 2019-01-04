@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 10/29/2018
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.openlocfilehash: 61af2c13a7cf395b5a96dc7b7ba63ad4d70dcf36
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 0cac5658d5f6f32795b5988008b3b895024ecc06
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52333025"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52960540"
 ---
 # <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
 
@@ -73,10 +73,10 @@ ms.locfileid: "52333025"
 1. Укажите `UbuntuServer`.
 
 1. Выберите последнюю версию сервера. Проверьте полный номер версии и убедитесь, что вы используете последнюю версию:
-    - **Издатель** : Canonical
+    - **Издатель**: Canonical
     - **Предложение**: UbuntuServer
     - **Версия**: 16.04.201806120
-    - **SKU**: 16.04 LTS
+    - **Номер SKU**: 16.04-LTS
 
 1. Выберите **Скачать**.
 
@@ -93,9 +93,9 @@ ms.locfileid: "52333025"
 1. Укажите `Custom Script for Linux`.
 
 1. Выберите скрипт со следующим профилем:
-    - **Предложение**: настраиваемый скрипт для Linux 2.0
+    - **Предложение**: Настраиваемый скрипт для Linux 2.0
     - **Версия**: 2.0.6
-    - **Издатель**: корпорация Майкрософт
+    - **Издатель**: Корпорация Майкрософт
 
     > [!Note]  
     > Могут отображаться несколько версий настраиваемого скрипта для Linux. Необходимо добавить соответствующую версию. Для Kubernetes необходим настраиваемый скрипт определенной версии.
@@ -120,7 +120,7 @@ ms.locfileid: "52333025"
     > [!note]  
     > Для отображения элемента в Marketplace может потребоваться пять минут.
 
-    ![kubernetes](user\media\azure-stack-solution-template-kubernetes-deploy\marketplaceitem.png)
+    ![kubernetes](user/media/azure-stack-solution-template-kubernetes-deploy/marketplaceitem.png)
 
 ## <a name="update-or-remove-the-kubernetes"></a>Обновление или удаление Kubernetes 
 

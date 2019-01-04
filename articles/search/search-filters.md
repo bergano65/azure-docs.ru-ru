@@ -1,5 +1,5 @@
 ---
-title: Фильтры в службе "Поиск Azure" | Документация Майкрософт
+title: Фильтры ограничения результатов поиска в индексе (служба "Поиск Azure")
 description: Фильтрация по удостоверениям безопасности, языку, географическому расположению или числовым значениям для уменьшения результатов поиска в запросах в службе "Поиск Azure", размещенной облачной службе поиска в Microsoft Azure.
 author: HeidiSteen
 manager: cgronlun
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: heidist
-ms.openlocfilehash: 9f891dbe3f051f2fb5bfd242830f3c30abede487
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.custom: seodec2018
+ms.openlocfilehash: d99196e231d122fcb0e707d30aed4d3b3eb2b89d
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32191372"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53310357"
 ---
 # <a name="filters-in-azure-search"></a>Фильтры в службе "Поиск Azure" 
 

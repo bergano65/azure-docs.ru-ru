@@ -1,21 +1,22 @@
 ---
-title: Добавление сущностей в приложения LUIS
-titleSuffix: Azure Cognitive Services
+title: Добавление сущностей
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Добавление сущностей (ключевые данные в предметной области приложения) в приложения LUIS.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 10/24/2018
+ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 5beb952c2330d44ffe090fc422afa6da67376b0d
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: f95d7851241dfd5b077c215e2df893c6ba8ef36c
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51288056"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53139492"
 ---
 # <a name="create-entities-without-utterances"></a>Создание сущностей без высказываний
 
@@ -156,13 +157,13 @@ ms.locfileid: "51288056"
 
 1. Если необходимо добавить нормализованные элементы в список, выберите **Рекомендуемые**, чтобы просмотреть параметры в [семантическом словаре](luis-glossary.md#semantic-dictionary).
 
-    ![Снимок экрана добавления роли отправления сущности Location](./media/add-entities/hr-list-2.png)
+    ![Снимок экрана просмотра параметров при выборе рекомендуемых элементов](./media/add-entities/hr-list-2.png)
 
 
 1. Выберите элемент в списке "Рекомендуемые", чтобы добавить его в качестве нормализованного значения или выберите **Добавить все**, чтобы добавить все элементы. 
     Можно импортировать значения в существующую сущность списка, используя существующий формат JSON.
 
-    ```
+    ```JSON
     [
         {
             "canonicalForm": "Blue",

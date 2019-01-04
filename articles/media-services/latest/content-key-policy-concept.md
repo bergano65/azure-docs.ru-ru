@@ -1,5 +1,5 @@
 ---
-title: Политики ключей содержимого в Службах мультимедиа Azure | Документация Майкрософт
+title: Политики ключей содержимого в Службах мультимедиа — Azure | Документация Майкрософт
 description: В этой статье приведены общие сведения о политиках ключей содержимого и их использовании в Службах мультимедиа Azure.
 services: media-services
 documentationcenter: ''
@@ -9,14 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 10/22/2018
+ms.date: 12/08/2018
 ms.author: juliako
-ms.openlocfilehash: 24597c36ab6569abb53c7be331631556e2abfe66
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.custom: seodec18
+ms.openlocfilehash: 541713677184d93eb78856e3c3373ab432d5f0cf
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50085963"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141536"
 ---
 # <a name="content-key-policies"></a>Политики ключа содержимого
 

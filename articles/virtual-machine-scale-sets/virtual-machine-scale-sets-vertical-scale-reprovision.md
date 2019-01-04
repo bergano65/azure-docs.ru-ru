@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/03/2016
 ms.author: manayar
-ms.openlocfilehash: 8080cdf78333eed9541311ba67221c713341a21a
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: b961dadbe8743f1485ef0d13a44a1bb0f3ce32b5
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50741578"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53321381"
 ---
 # <a name="vertical-autoscale-with-virtual-machine-scale-sets"></a>Вертикальное автомасштабирование масштабируемых наборов виртуальных машин
 В этой статье описывается, как выполнить вертикальное масштабирование [масштабируемых наборов виртуальных машин](https://azure.microsoft.com/services/virtual-machine-scale-sets/) Azure с повторной подготовкой или без нее. Дополнительные сведения о вертикальном масштабировании виртуальных машин, которые не входят в масштабируемые наборы, с помощью службы автоматизации Azure см. в [этой статье](../virtual-machines/windows/vertical-scaling-automation.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
@@ -84,7 +84,7 @@ ms.locfileid: "50741578"
 > 
 
 ## <a name="add-an-alert-to-your-virtual-machine-scale-set"></a>Добавление правила оповещения в масштабируемый набор виртуальных машин
-Ниже приведен сценарий PowerShell, с помощью которого вы можете добавить в масштабируемый набор виртуальных машин правило оповещения. Дополнительные сведения о получении имени метрики для активации оповещения см. в статье [Общие метрики автомасштабирования Azure Insights](../monitoring-and-diagnostics/insights-autoscale-common-metrics.md).
+Ниже приведен сценарий PowerShell, с помощью которого вы можете добавить в масштабируемый набор виртуальных машин правило оповещения. Дополнительные сведения о получении имени метрики для активации оповещения см. в статье [Общие метрики автомасштабирования Azure Monitor](../azure-monitor/platform/autoscale-common-metrics.md).
 
 ```
 $actionEmail = New-AzureRmAlertRuleEmail -CustomEmail user@contoso.com
@@ -120,7 +120,7 @@ Add-AzureRmMetricAlertRule  -Name  $alertName `
 Дополнительные сведения о создании правил оповещений см. в следующих статьях:
 
 * [Примеры для быстрого запуска Azure Monitor с помощью PowerShell](../monitoring-and-diagnostics/insights-powershell-samples.md)
-* [Примеры команд для кроссплатформенного интерфейса командной строки 1.0 в Azure Monitor](../monitoring-and-diagnostics/insights-cli-samples.md)
+* [Примеры команд для кроссплатформенного интерфейса командной строки 1.0 в Azure Monitor](../azure-monitor/platform/cli-samples.md)
 
 ## <a name="summary"></a>Сводка
 В этой статье описан простой способ вертикального масштабирования. Указанные блоки (работа с учетной записью службы автоматизации, модулями Runbook, веб-перехватчиками и оповещениями) позволяют включить в настраиваемый набор действий самые разные события.

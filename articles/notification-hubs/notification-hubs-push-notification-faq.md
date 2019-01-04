@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы о Центрах уведомлений Azure | Документация Майкрософт
+title: 'Центры уведомлений Azure: часто задаваемые вопросы | Документация Майкрософт'
 description: Часто задаваемые вопросы по разработке и реализации решений в концентраторах уведомлений
 services: notification-hubs
 documentationcenter: mobile
@@ -15,14 +15,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 10/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: cec57f2dafaddfa2ebc492f0cb92755b1f65607f
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 140994de4b1be61f16593e450d156b81727a9f52
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50251028"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53437849"
 ---
-# <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы об отправке push-уведомлений с помощью Центров уведомлений Azure
+# <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure: Часто задаваемые вопросы
 ## <a name="general"></a>Общие сведения
 ### <a name="what-is-the-resource-structure-of-notification-hubs"></a>Какую структуру ресурсов используют Центры уведомлений?
 
@@ -33,14 +33,14 @@ ms.locfileid: "50251028"
 ### <a name="what-is-the-price-model-for-notification-hubs"></a>Как определяется цена на концентраторы уведомлений?
 Последние сведения о тарифах можно найти на странице [Цены на центры уведомлений]. Счета за Центры уведомлений выставляются на уровне пространства имен (определение пространства имен дано в разделе "Какую структуру ресурсов используют Центры уведомлений?"). Центры уведомлений поддерживают три ценовые категории:
 
-* Уровень **Бесплатный**. Это хороший выбор для изучения возможностей отправки, но мы не советуем использовать его для рабочих приложений. На каждое пространство имен поддерживается до 500 устройств и до 1 млн уведомлений в месяц без соглашений об уровне обслуживания.
+* **Бесплатный**. Это хороший выбор для изучения возможностей отправки. но мы не советуем использовать его для рабочих приложений. На каждое пространство имен поддерживается до 500 устройств и до 1 млн уведомлений в месяц без соглашений об уровне обслуживания.
 * **Базовый**. Для небольших рабочих приложений можно выбрать этот уровень или уровень "Стандартный". На каждое пространство имен поддерживается до 200 тысяч устройств и до 10 млн операций отправки в месяц в качестве базового тарифа. Кроме того, предусмотрены возможности для увеличения квот.
-* Уровень **Стандартный**. Рекомендуемый вариант для средних и крупных рабочих приложений. На каждое пространство имен поддерживается до 10 млн устройств и до 10 млн операций отправки в месяц в качестве базового тарифа. Также предусмотрены возможности для увеличения квот и предоставляются широкие возможности для телеметрии.
+* **Стандартный**. Рекомендуемый вариант для средних и крупных рабочих приложений. На каждое пространство имен поддерживается до 10 млн устройств и до 10 млн операций отправки в месяц в качестве базового тарифа. Также предусмотрены возможности для увеличения квот и предоставляются широкие возможности для телеметрии.
 
 Возможности уровня "Стандартный":
-* **Расширенная телеметрия.** Центры уведомлений предоставляют телеметрию по каждому сообщению, которая позволяет отслеживать push-запросы и информацию о системе отправки уведомлений платформы для отладки.
-* **Многопользовательский режим.** Вы можете управлять учетными данными для системы отправки уведомлений платформы на уровне пространства имен. Эта возможность позволяет легко распределять между клиентами узлы в одном пространстве имен.
-* **Запланированная отправка**. Вы можете запланировать отправку уведомлений в любое время.
+* **Расширенная телеметрия**. Центры уведомлений предоставляют телеметрию по каждому сообщению, которая позволяет отслеживать push-запросы и информацию о системе отправки уведомлений платформы для отладки.
+* **Многопользовательский режим**. Вы можете управлять учетными данными для системы отправки уведомлений платформы на уровне пространства имен. Эта возможность позволяет легко распределять между клиентами узлы в одном пространстве имен.
+* **Запланированная отправка**. Вы можете запланировать отправку уведомлений на любое время.
 
 ### <a name="what-is-the-notification-hubs-sla"></a>Что такое соглашение об уровне обслуживания для концентраторов уведомлений?
 Для уровней Центров уведомлений "Базовый" и "Стандартный" мы гарантируем, что как минимум 99,9 % времени правильно настроенные приложения смогут отправлять push-уведомления или выполнять операции управления регистрацией. Дополнительные сведения о соглашении об уровне обслуживания Центров уведомлений см. на [этой странице](https://azure.microsoft.com/support/legal/sla/notification-hubs/).
@@ -51,12 +51,12 @@ ms.locfileid: "50251028"
 ### <a name="which-customers-are-using-notification-hubs"></a>Какие клиенты используют концентраторы уведомлений
 Центры уведомлений использует множество клиентов. Далее перечислены несколько самых значимых из них:
 
-* Sochi 2014 — сотни групп интересов, более 3 миллионов устройств, более 150 миллионов уведомлений, отправленных за 2 недели ([анализ примера — Sochi]);
-* Skanska — [анализ примера: Skanska];
-* Seattle Times — [анализ примера: Seattle Times];
-* Mural.ly — [анализ примера: Mural.ly];
-* 7Digital — [анализ примера: 7Digital];
-* приложения Bing — десятки миллионов устройств, отправляющих 3 миллиона уведомлений ежедневно.
+* Sochi 2014. Это сотни групп интересов, более 3 миллионов устройств, более 150 миллионов уведомлений, отправленных за 2 недели. [Анализ примера. Sochi]
+* Skanska. [Анализ примера. Skanska]
+* Seattle Times. [Анализ примера. Seattle Times]
+* Mural.ly. [Анализ примера. Mural.ly]
+* 7Digital. [Анализ примера. 7Digital]
+* Приложения Bing. Это десятки миллионов устройств, отправляющих 3 миллиона уведомлений ежедневно.
 
 ### <a name="how-do-i-upgrade-or-downgrade-my-hub-or-namespace-to-a-different-tier"></a>Как мне повысить или понизить уровень для узла или пространства имен?
 Перейдите на **[портал Azure]** > **Notification Hubs Namespaces** (Пространства имен Центров уведомлений) или **Центры уведомлений**. Выберите ресурс, который требуется обновить, и перейдите на **страницу цен**. Обратите внимание на следующие требования:
@@ -199,11 +199,11 @@ Push-уведомления поддерживаются на платформа
 [портал Azure]: https://portal.azure.com
 [Цены на центры уведомлений]: http://azure.microsoft.com/pricing/details/notification-hubs/
 [Notification Hubs SLA]: http://azure.microsoft.com/support/legal/sla/
-[Анализ примера — Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942
-[анализ примера: Skanska]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5847
-[анализ примера: Seattle Times]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=8354
-[анализ примера: Mural.ly]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11592
-[анализ примера: 7Digital]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=3684
+[Анализ примера. Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942
+[Анализ примера. Skanska]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=5847
+[Анализ примера. Seattle Times]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=8354
+[Анализ примера. Mural.ly]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11592
+[Анализ примера. 7Digital]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=3684
 [Использование интерфейса REST центров уведомлений]: https://msdn.microsoft.com/library/azure/dn530746.aspx
 [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
 [учебником по приложениям Chrome]: http://azure.microsoft.com/documentation/articles/notification-hubs-chrome-get-started/
@@ -213,7 +213,7 @@ Push-уведомления поддерживаются на платформа
 [Безопасность]: https://msdn.microsoft.com/library/azure/dn495373.aspx
 [Безопасные push-уведомления посредством центров уведомлений Azure]: http://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
 [Центры уведомлений Azure — рекомендации по диагностике]: http://azure.microsoft.com/documentation/articles/notification-hubs-diagnosing/
-[Метрики]: ../monitoring-and-diagnostics/monitoring-supported-metrics.md#microsoftnotificationhubsnamespacesnotificationhubs
+[Метрики]: ../azure-monitor/platform/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs
 [Fetch Notification Hubs Telemetry Programmatically]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel (Получение данных телеметрии Центров уведомлений программным путем)
 [Экспорт и импорт регистраций]: https://msdn.microsoft.com/library/dn790624.aspx
 [портал Azure]: https://portal.azure.com

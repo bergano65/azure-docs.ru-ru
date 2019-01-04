@@ -1,6 +1,6 @@
 ---
-title: Практическое руководство. Сброс пароля для пользователя в Azure Active Directory | Документы Майкрософт
-description: Сведения о сбросе пароля пользователя с помощью Azure Active Directory.
+title: Сброс пароля пользователя в Azure Active Directory | Документация Майкрософт
+description: Инструкции по сбросу пароля пользователя с помощью Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -12,19 +12,22 @@ ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: lizross
 ms.reviewer: jeffsta
-ms.custom: it-pro
-ms.openlocfilehash: 3803808ab589c3d880111421f650141f0d829f0b
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: c8dd387104d52075425d881363dbcbaac700461a
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45736104"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53103376"
 ---
-# <a name="how-to-reset-a-users-password-using-azure-active-directory"></a>Практическое руководство. Сброс пароля для пользователя в Azure Active Directory
-Если пользователь забыл пароль, был заблокирован на устройстве или никогда не получал пароля, то пароль можно сбросить.
+# <a name="reset-a-users-password-using-azure-active-directory"></a>Сброс пароля пользователя в Azure Active Directory
+Если пользователь забыл пароль, был заблокирован на устройстве или никогда не получал пароля, то администратор может сбросить его пароль.
 
 >[!Note]
 >Если клиент Azure AD находится не в домашнем каталоге пользователя, вы не сможете сбросить пароль. Это означает, что если пользователь выполняет вход в вашей организации, используя учетную запись из другой организации, учетную запись Майкрософт или учетную запись Google, вы не сможете сбросить пароль.<br><br>Если пользователь имеет Windows Server Active Directory в качестве центра проверки, пароль можно сбросить, только включив компонент обратной записи паролей.<br><br>Если пользователь имеет внешний Azure AD в качестве центра проверки, то пароль сбросить нельзя. Только сам пользователь или администратор внешнего Azure AD могут сбросить пароль.
+
+>[!Note]
+>Если вы не являетесь администратором и ищете инструкции по сбросу пароля своей рабочей или учебной учетной записи, ознакомьтесь с разделом [Сброс пароля к рабочей или учебной учетной записи](../user-help/active-directory-passwords-update-your-own-password.md).
 
 ## <a name="to-reset-a-password"></a>Процедура сброса пароля
 
@@ -50,7 +53,7 @@ ms.locfileid: "45736104"
 
 - [Добавить или удалить пользователя](add-users-azure-active-directory.md)
 
-- [Назначить роли пользователям](active-directory-users-assign-role-azure-portal.md)
+- [Назначение ролей пользователям](active-directory-users-assign-role-azure-portal.md)
 
 - [Добавить или изменить данные профиля](active-directory-users-profile-azure-portal.md)
 

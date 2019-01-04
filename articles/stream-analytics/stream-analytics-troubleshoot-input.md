@@ -7,13 +7,14 @@ ms.author: sidram
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 10/11/2018
-ms.openlocfilehash: 2b2dc3ba78cfa682c4a326754bdddfa9bc81f836
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.date: 12/07/2018
+ms.custom: seodec18
+ms.openlocfilehash: 6694865909a165842f994501befa404e1bc0a447
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49346404"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53164387"
 ---
 # <a name="troubleshoot-input-connections"></a>Устранение неполадок с входными подключениями
 
@@ -35,7 +36,7 @@ ms.locfileid: "49346404"
  
 Когда задание Stream Analytics получает сообщение неправильного формата из входного набора данных, это сообщение отклоняется, а пользователь получает предупреждение. На плитке **Входные данные** задания Stream Analytics отображается символ предупреждения. Этот символ отображается, пока задание находится в рабочем состоянии:
 
-![Плитка "Входные данные" Azure Stream Analytics](media/stream-analytics-malformed-events/inputs_tile.png)
+![Плитка "Входные данные" Azure Stream Analytics](media/stream-analytics-malformed-events/stream-analytics-inputs-tile.png)
 
 Чтобы просмотреть сведения предупреждения, необходимо включить журналы диагностики. Для входных событий неправильного формата журналы выполнения содержат запись с сообщением, которое выглядит так: 
 <code>Could not deserialize the input event(s) from resource <blob URI> as json.</code>
@@ -47,8 +48,8 @@ ms.locfileid: "49346404"
 
 2. На плитке сведений о входных данных отображается список предупреждений с подробными сведениями о каждой проблеме. Ниже приведен пример предупреждающего сообщения, в котором отображаются раздел, смещение и порядковые номера с данными JSON неправильного формата. 
 
-   ![Предупреждающее сообщение со смещением](media/stream-analytics-malformed-events/warning_message_with_offset.png)
-
+   ![Предупреждающее сообщение со смещением от Stream Analytics](media/stream-analytics-malformed-events/warning-message-with-offset.png)
+   
 3. Чтобы найти данные JSON, которые были представлены в неправильном формате, запустите код CheckMalformedEvents.cs. Его можно найти в [репозитории примеров GitHub](https://github.com/Azure/azure-stream-analytics/tree/master/Samples/CheckMalformedEventsEH). При помощи этого кода считываются идентификатор раздела и смещение, а затем выводятся данные для этого смещения. 
 
 4. После считывания данных можно проанализировать и исправить формат сериализации.
@@ -101,7 +102,7 @@ ms.locfileid: "49346404"
 
 Например, вместо этого запроса:
 
-```
+```SQL
 SELECT foo 
 INTO output1
 FROM inputEventHub
@@ -114,7 +115,7 @@ FROM inputEventHub
 
 Используйте этот:
 
-```
+```SQL
 WITH data AS (
    SELECT * FROM inputEventHub
 )

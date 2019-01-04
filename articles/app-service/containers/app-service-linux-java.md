@@ -1,6 +1,6 @@
 ---
-title: Поддержка языка Java для Службы приложений Azure в Linux | Документация Майкрософт
-description: Руководство разработчика по развертыванию приложений Java с помощью Службы приложений Azure в Linux.
+title: Руководство разработчика для Java для службы приложений в Linux в Azure | Документация Майкрософт
+description: Сведения о настройке приложений Java, работающих в службе приложений Azure в Linux.
 keywords: Служба приложений Azure, веб-приложение, Linux, OSS
 services: app-service
 author: rloutlaw
@@ -10,14 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: article
-ms.date: 08/29/2018
+ms.date: 12/10/2018
 ms.author: routlaw
-ms.openlocfilehash: 8d15aeb92911a26a9a42a0449a24e8c0fee4467b
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.custom: seodec18
+ms.openlocfilehash: 6a9f3fcb372606e7f608b5137fb1ed15376d72d9
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52497347"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53407343"
 ---
 # <a name="java-developers-guide-for-app-service-on-linux"></a>Руководство разработчика для Java для службы приложений в Linux
 
@@ -53,7 +54,7 @@ az webapp log config --name ${WEBAPP_NAME} \
 az webapp log tail --name webappname --resource-group myResourceGroup
 ```
 
-Дополнительные сведения см. в разделе [Потоковая передача с использованием интерфейса командной строки Azure](/azure/app-service/web-sites-enable-diagnostic-log#streaming-with-azure-command-line-interface).
+Дополнительные сведения см. в разделе [Потоковая передача с использованием интерфейса командной строки Azure](../web-sites-enable-diagnostic-log.md#streaming-with-azure-cli).
 
 ### <a name="app-logging"></a>Ведение журнала приложений
 
@@ -134,7 +135,7 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 ### <a name="authenticate-users"></a>Проверка подлинности пользователей
 
-Настройте аутентификацию приложения на портале Azure с помощью параметра **Проверка подлинности и авторизация**. Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации.  Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](/azure/app-service/app-service-mobile-how-to-configure-active-directory-authentication) и связанных статьях о других поставщиках удостоверений.
+Настройте аутентификацию приложения на портале Azure с помощью параметра **Проверка подлинности и авторизация**. Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации.  Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](/azure/app-service/configure-authentication-provider-aad) и связанных статьях о других поставщиках удостоверений.
 
 Если необходимо включить несколько поставщиков входа, следуйте инструкциям в статье [Настройка проверки подлинности и авторизации в службе приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to).
 
@@ -151,36 +152,47 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 >[!NOTE]
 > Если приложение использует Spring Framework или Spring Boot, можно задать сведения о подключении к базе данных для JPA Spring Data в качестве переменных среды (в файле свойств приложения). Затем с помощью [параметров приложения](/azure/app-service/web-sites-configure#app-settings) можно задать эти значения для приложения, воспользовавшись порталом Azure или интерфейсом командной строки.
 
-В этом разделе в фрагментах кода конфигурации используется база данных MySQL. Дополнительные сведения см. в документации по конфигурации [MySQL](https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-tomcat.html), [SQL Server JDBC](https://docs.microsoft.com/sql/connect/jdbc/microsoft-jdbc-driver-for-sql-server?view=sql-server-2017) и [PostgreSQL](https://jdbc.postgresql.org/documentation/head/index.html).
+Эти инструкции применимы ко всем подключениям к базе данных. Необходимо будет заменить значения заполнителей на имя класса драйвера и JAR-файл выбранной базы данных. Ниже приведена таблица с именами классов и ссылками для скачивания драйверов для распространенных баз данных.
 
-Чтобы настроить Tomcat для использования управляемых подключений к базам данных с помощью Java Database Connectivity (JDBC) или Java Persistence API (JPA), сначала настройте считывание переменной среды CATALINA_OPTS в Tomcat при запуску. Задайте эти значения с помощью параметра приложения в подключаемом модуле Maven для службы приложений.
+| База данных   | Имя класса драйвера                             | Драйвер JDBC                                                                      |
+|------------|-----------------------------------------------|------------------------------------------------------------------------------------------|
+| PostgreSQL | `org.postgresql.Drvier`                        | [Загрузить](https://jdbc.postgresql.org/download.html)                                    |
+| MySQL      | `com.mysql.jdbc.Driver`                        | [Скачать](https://dev.mysql.com/downloads/connector/j/) (выберите "Platform Independent" (Независимо от платформы)) |
+| SQL Server; | `com.microsoft.sqlserver.jdbc.SQLServerDriver` | [Загрузить](https://docs.microsoft.com/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017#available-downloads-of-jdbc-driver-for-sql-server)                                                           |
+
+Чтобы настроить Tomcat для использования Java Database Connectivity (JDBC) или Java Persistence API (JPA), сначала настройте переменную среды `CATALINA_OPTS`, считываемую Tomcat при запуске. Задайте эти значения с помощью параметра приложения в [подключаемом модуле Maven для службы приложений](https://github.com/Microsoft/azure-maven-plugins/blob/develop/azure-webapp-maven-plugin/README.md):
 
 ```xml
 <appSettings> 
     <property> 
         <name>CATALINA_OPTS</name> 
-        <value>"$CATALINA_OPTS -Dmysqluser=${mysqluser} -Dmysqlpass=${mysqlpass} -DmysqlURL=${mysqlURL}"</value> 
+        <value>"$CATALINA_OPTS -Ddbuser=${DBUSER} -Ddbpassword=${DBPASSWORD} -DconnURL=${CONNURL}"</value> 
     </property> 
 </appSettings> 
 ```
 
-Можно также настроить эквивалентный параметр службы приложений на портале Azure.
+Переменные среды можно также задать в колонке "Параметры приложения" на портале Azure.
 
-Затем определите, должен ли источник данных быть доступным только для одного приложения или для всех приложений, работающих в плане службы приложений.
+>[!NOTE]
+> Если вы используете базу данных Azure для Postgres, замените `ssl=true` на `sslmode=require` в строке подключения JDBC.
 
-Для источников данных уровня приложения сделайте следующее. 
+Затем определите, должен ли источник данных быть доступным для одного приложения или для всех приложений, работающих в сервлете Tomcat.
 
-1. Добавьте в веб-приложение файл `context.xml` (если он не существует), затем добавьте его в каталог `META-INF` WAR-файла после сборки проекта.
+#### <a name="for-application-level-data-sources"></a>Для источников данных уровня приложения сделайте следующее. 
 
-2. Добавьте в этот файл запись пути `Context`, чтобы связать источник данных с адресом JNDI.
+1. Создайте файл `context.xml` в каталоге `META-INF/` вашего проекта. Создайте каталог `META-INF/`, если он не существует.
+
+2. В `context.xml` добавьте элемент `Context`, чтобы связать источник данных с адресом JNDI. Замените заполнитель `driverClassName` именем класса драйвера из приведенной выше таблицы.
 
     ```xml
     <Context>
         <Resource
-            name="jdbc/mysqldb" type="javax.sql.DataSource"
-            url="${mysqlURL}"
-            driverClassName="com.mysql.jdbc.Driver"
-            username="${mysqluser}" password="${mysqlpass}"
+            name="jdbc/dbconnection" 
+            type="javax.sql.DataSource"
+            url="${dbuser}"
+            driverClassName="<insert your driver class name>"
+            username="${dbpassword}" 
+            password="${connURL}"
         />
     </Context>
     ```
@@ -189,38 +201,50 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
     ```xml
     <resource-env-ref>
-        <resource-env-ref-name>jdbc/mysqldb</resource-env-ref-name>
+        <resource-env-ref-name>jdbc/dbconnection</resource-env-ref-name>
         <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
     </resource-env-ref>
     ```
 
-Для общих ресурсов уровня сервера сделайте следующее.
+#### <a name="for-shared-server-level-resources"></a>Для общих ресурсов уровня сервера сделайте следующее.
 
 1. Скопируйте содержимое `/usr/local/tomcat/conf` в папку `/home/tomcat/conf` на экземпляре службы приложений для Linux с помощью SSH, если на нем еще нет конфигурации.
+    ```
+    mkdir -p /home/tomcat
+    cp -a /usr/local/tomcat/conf /home/tomcat/conf
+    ```
 
-2. Добавьте контекст в `server.xml`.
+2. Добавьте элемент Context в файл `server.xml` в элементе `<Server>`.
 
     ```xml
+    <Server>
+    ...
     <Context>
         <Resource
-            name="jdbc/mysqldb" type="javax.sql.DataSource"
-            url="${mysqlURL}"
-            driverClassName="com.mysql.jdbc.Driver"
-            username="${mysqluser}" password="${mysqlpass}"
+            name="jdbc/dbconnection" 
+            type="javax.sql.DataSource"
+            url="${dbuser}"
+            driverClassName="<insert your driver class name>"
+            username="${dbpassword}" 
+            password="${connURL}"
         />
     </Context>
+    ...
+    </Server>
     ```
 
 3. Обновите `web.xml` приложения для использования источника данных в этом приложении.
 
     ```xml
     <resource-env-ref>
-        <resource-env-ref-name>jdbc/mysqldb</resource-env-ref-name>
+        <resource-env-ref-name>jdbc/dbconnection</resource-env-ref-name>
         <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
     </resource-env-ref>
     ```
 
-4. Убедитесь, что файлы драйвера JDBC доступны для загрузчика классов Tomcat, разместив их в каталоге `/home/tomcat/lib`. Чтобы передать эти файлы в экземпляр службы приложений, выполните следующие действия.  
+#### <a name="finally-place-the-driver-jars-in-the-tomcat-classpath-and-restart-your-app-service"></a>Наконец, разместите JAR-файлы драйверов в пути к классам Tomcat и перезапустите службу приложений: 
+
+1. Убедитесь, что файлы драйвера JDBC доступны для загрузчика классов Tomcat, разместив их в каталоге `/home/tomcat/lib`. (Если этот каталог отсутствует, создайте его.) Чтобы передать эти файлы в экземпляр службы приложений, выполните следующие действия.  
     1. Установите расширение webpp для Службы приложения Azure.
 
       ```azurecli-interactive
@@ -235,7 +259,9 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
     3. Подключитесь к локальному порту туннелирования с помощью клиента SFTP и передайте эти файлы в папку `/home/tomcat/lib`.
 
-5. Перезапустите приложение службы приложений для Linux. Tomcat сбросит `CATALINA_HOME` до значения `/home/tomcat/conf` и будет использовать обновленную конфигурацию и классы.
+    Кроме того, драйвер JDBC можно отправить с помощью FTP-клиента. Чтобы получить учетные данные FTP, следуйте этим [инструкциям](https://docs.microsoft.com/azure/app-service/app-service-deployment-credentials).
+
+2. Если вы создали источник данных на уровне сервера, перезапустите приложение Linux службы приложений. Tomcat сбросит `CATALINA_HOME` до значения `/home/tomcat/conf` и будет использовать обновленную конфигурацию.
 
 ## <a name="docker-containers"></a>контейнеры Docker;
 
@@ -245,7 +271,7 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 Служба приложений для Linux поддерживает две среды выполнения для управляемого размещения веб-приложений Java.
 
-- [Контейнер сервлетов Tomcat](http://tomcat.apache.org/) для запуска приложений, которые упакованы как файлы веб-архива (WAR-файлы). Поддерживаются версии 8.5 и 9.0.
+- [Контейнер сервлетов Tomcat](https://tomcat.apache.org/) для запуска приложений, которые упакованы как файлы веб-архива (WAR-файлы). Поддерживаются версии 8.5 и 9.0.
 - Среда выполнения Java SE для запуска приложений, которые упакованы как файлы архива Java (JAR-файлы). Сейчас поддерживается только основной номер версии 8.
 
 ## <a name="java-runtime-statement-of-support"></a>Заявление о поддержке среды выполнения Java 

@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.component: manage
-ms.date: 11/14/2018
+ms.date: 12/04/2018
 ms.author: mausher
 ms.reviewer: twounder
-ms.openlocfilehash: 1edac9f7eac1f47974f4c94f3cae5bb3451f92fd
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: e67edf382a49839d890d2c1dec50c44bbb19705a
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51705384"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52966829"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-october-2018"></a>Что нового в Хранилище данных SQL Azure? Октябрь 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с октября 2018 года.
@@ -62,6 +62,7 @@ ms.locfileid: "51705384"
 | **Инструкция CETAS в Parquet завершается сбоем для ресурсов небольшого размера, размещенных в хранилищах данных DW2000 и большего размера** | Это исправление правильно определяет пустую ссылку на путь кода Parquet в инструкции CREATE EXTERNAL TABLE AS SELECT. |
 |**Значение столбца идентификаторов может утрачиваться при некоторых операциях CTAS** | Значение столбца идентификаторов не всегда сохраняется при выполнении инструкции CTAS для другой таблицы. Сообщение об этом в блоге: [https://blog.westmonroepartners.com/azure-sql-dw-identity-column-bugs/](https://blog.westmonroepartners.com/azure-sql-dw-identity-column-bugs/). |
 | **В некоторых случаях происходит внутренний сбой при завершении сеанса, пока запрос еще выполняется** | Это исправление создает исключение InvalidOperationException при завершении сеанса, пока запрос еще выполняется. |
+| **(Развернуто в ноябре 2018 года.) Пользователи испытывали проблемы с производительностью при попытке загрузить несколько небольших файлов из ADLS 1-го поколения с помощью Polybase.** | Производительность системы была ограничена во время проверки маркера безопасности AAD. Кэширование маркеров безопасности помогло решить проблемы с производительностью. |
 
 
 ## <a name="next-steps"></a>Дополнительная информация

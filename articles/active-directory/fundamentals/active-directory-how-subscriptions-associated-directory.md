@@ -1,6 +1,6 @@
 ---
-title: Как добавить имеющуюся подписку Azure в клиент Azure Active Directory | Документы Майкрософт
-description: Узнайте, как добавить имеющуюся подписку Azure в клиент Azure Active Directory.
+title: Добавление имеющейся подписки Azure в клиент Azure Active Directory | Документация Майкрософт
+description: Инструкции по добавлению имеющейся подписки Azure в клиент Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: lizross
 ms.reviewer: jeffsta
-ms.custom: it-pro
-ms.openlocfilehash: dd62b22eca40a214c5b08a9bc48815e40fe90e47
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: 4e4d4d9f34c8220ba70c64f073557f0293881c3e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45984092"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53083875"
 ---
-# <a name="how-to-associate-or-add-an-azure-subscription-to-azure-active-directory"></a>Практическое руководство. Привязка или добавление подписки Azure в Azure Active Directory
+# <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 Подписка Azure связана с Azure Active Directory отношением доверия. Это означает, что подписка доверяет Azure AD проверку подлинности пользователей, служб и устройств. Несколько подписок могут доверять одному и тому же каталогу Azure AD, но одна конкретная подписка будет доверять только одному каталогу.
 
 Если срок действия подписки истекает, доступ к другим ресурсам, связанным с этой подпиской, также прекращается. Но каталог Azure AD остается в Azure, и вы можете управлять им, используя другую подписку Azure.

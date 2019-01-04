@@ -1,6 +1,7 @@
 ---
-title: Включение Application Insights для Службы машинного обучения Azure
-description: Узнайте, как настроить Application Insights для служб, развернутых с помощью Службы машинного обучения Azure
+title: Мониторинг моделей с помощью Application Insights
+titleSuffix: Azure Machine Learning service
+description: Использование Application Insights для мониторинга веб-служб, развернутых с помощью Службы машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.component: core
@@ -9,12 +10,13 @@ ms.reviewer: jmartens
 ms.author: marthalc
 author: marthalc
 ms.date: 10/01/2018
-ms.openlocfilehash: 9e0f07e744aaf5f1c35666b40285937dce6dd4de
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.custom: seodec18
+ms.openlocfilehash: 176d0f00774106bbf9ae8dade0fe3fd4062530bb
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52275060"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53277188"
 ---
 # <a name="monitor-your-azure-machine-learning-models-with-application-insights"></a>Мониторинг моделей машинного обучения в Azure с помощью Application Insights
 
@@ -25,12 +27,11 @@ ms.locfileid: "52275060"
 
 [Дополнительные сведения об Application Insights](../../application-insights/app-insights-overview.md). 
 
->[!NOTE]
-> Код в этой статье был протестирован с пакетом SDK для службы "Машинное обучение Azure" версии 0.1.74.
-
 
 ## <a name="prerequisites"></a>Предварительные требования
-* Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://aka.ms/AMLfree), прежде чем начать работу.
+
+* Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
+
 * Должны быть установлены рабочая область машинного обучения Azure, локальный каталог со скриптами и пакет SDK машинного обучения Azure для Python. В руководстве по [настройке среды разработки](how-to-configure-environment.md) описано, как получить эти обязательные компоненты.
 * Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS) или в экземпляре контейнера Azure (ACI). Если у вас ее нет, см. руководство по [обучению модели классификации изображений](tutorial-train-models-with-aml.md).
 
@@ -51,7 +52,7 @@ ms.locfileid: "52275060"
     ```
 
 ### <a name="log-custom-traces-in-your-service"></a>Трассировка пользовательских журналов в службе
-Если требуется выполнять трассировку пользовательских журналов, выполните инструкции из руководства по стандартному процессу развертывания для [AKS](how-to-deploy-to-aks.md) или [ACI](how-to-deploy-to-aci.md). Затем сделайте следующее:
+Если требуется вести журнал пользовательских трассировок, выполните инструкции из руководства по стандартному процессу развертывания для AKS или ACI, представленные в документе [Deploy models with the Azure Machine Learning service](how-to-deploy-and-where.md) (Развертывание моделей с помощью Службы машинного обучения Azure). Затем выполните следующие действия:
 
 1. измените файл оценки, добавив выражения print;
     
@@ -100,7 +101,7 @@ ms.locfileid: "52275060"
 1. Откройте рабочую область на [портале Azure](https://portal.azure.com).
 1. Откройте **Развертывания**, затем выберите службу и щелкните **Изменить**.
 
-   [![Кнопка "Изменить"](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox)
+   [![Нажмите кнопку "Изменить"](media/how-to-enable-app-insights/Edit.PNG)](./media/how-to-enable-app-insights/Edit.PNG#lightbox).
 
 1. В разделе **Дополнительные параметры** снимите флажок **Включить диагностику AppInsights**. 
 
@@ -130,7 +131,7 @@ ms.locfileid: "52275060"
 
 ## <a name="example-notebook"></a>Пример записной книжки
 
-В записной книжке [00.Getting Started/13.enable-app-insights-in-production-service.ipynb](https://github.com/Azure/MachineLearningNotebooks/tree/master/01.getting-started/13.enable-app-insights) показаны основные понятия из этой статьи.  Получите эту записную книжку:
+В записной книжке [how-to-use-azureml/deployment/enable-app-insights-in-production-service/enable-app-insights-in-production-service.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/enable-app-insights-in-production-service/enable-app-insights-in-production-service.ipynb) демонстрируются понятия, описанные в этой статье. 
  
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 

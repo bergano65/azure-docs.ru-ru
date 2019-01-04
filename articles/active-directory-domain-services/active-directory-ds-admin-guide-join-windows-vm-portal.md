@@ -1,5 +1,5 @@
 ---
-title: 'Доменные службы Azure Active Directory: присоединение виртуальной машины Windows Server к управляемому домену | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Присоединение виртуальной машины Windows Server к управляемому домену | Документация Майкрософт
 description: Присоединение виртуальной машины Windows Server к доменным службам Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
@@ -15,22 +15,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/21/2018
 ms.author: ergreenl
-ms.openlocfilehash: 753818526ad637db0baa13c92e92d2725b19dbf8
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 748345bf89e7f746b8ef388ad5cabc987a07d1f8
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158338"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52957680"
 ---
 # <a name="join-a-windows-server-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины Windows Server к управляемому домену
 В этой статье описано развертывание виртуальной машины Windows Server с помощью портала Azure. Затем показано, как присоединить виртуальную машину к управляемому домену доменных служб Azure Active Directory (Azure AD DS).
 
 [!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
-## <a name="step-1-create-a-windows-server-virtual-machine"></a>Шаг 1. Создание виртуальной машины Windows Server
+## <a name="step-1-create-a-windows-server-virtual-machine"></a>Шаг 1. Создание виртуальной машины Windows Server
 Чтобы создать виртуальную машину Windows, которая будет присоединена к виртуальной сети с включенным Azure AD DS, выполните следующее:
 
-1. Войдите на [портале Azure](http://portal.azure.com).
+1. Войдите на [портале Azure](https://portal.azure.com).
 2. В верхней части левой области выберите **Создать**.
 3. Выберите **Вычисления**, а затем — **Windows Server 2016 Datacenter**.
 
@@ -67,7 +67,7 @@ ms.locfileid: "50158338"
 10. После того как развертывание будет выполнено, можно просмотреть сведения о виртуальной машине на странице **Обзор**.
 
 
-## <a name="step-2-connect-to-the-windows-server-virtual-machine-by-using-the-local-administrator-account"></a>Шаг 2. Подключение к виртуальной машине Windows Server с помощью учетной записи локального администратора
+## <a name="step-2-connect-to-the-windows-server-virtual-machine-by-using-the-local-administrator-account"></a>Шаг 2. Подключение к виртуальной машине Windows Server с помощью учетной записи локального администратора
 Далее подключитесь к созданной виртуальной машине Windows Server, чтобы присоединить ее к домену. Используйте учетные данные локального администратора, которые были указаны при создании виртуальной машины.
 
 Выполните следующие действия, чтобы подключиться к виртуальной машине:
@@ -84,7 +84,7 @@ ms.locfileid: "50158338"
 На этом этапе вы должны войти в созданную виртуальную машину Windows с учетными данными локального администратора. Теперь следует присоединить виртуальную машину к домену.
 
 
-## <a name="step-3-join-the-windows-server-virtual-machine-to-the-azure-ad-ds-managed-domain"></a>Шаг 3. Присоединение виртуальной машины Windows Server к управляемому домену Azure AD DS
+## <a name="step-3-join-the-windows-server-virtual-machine-to-the-azure-ad-ds-managed-domain"></a>Шаг 3. Присоединение виртуальной машины Windows Server к управляемому домену Azure AD DS
 Чтобы присоединить виртуальную машину Windows Server к управляемому домену Azure AD DS, выполните следующее:
 
 1. Подключитесь к виртуальной машине Windows Server (см. шаг 2). На **начальном экране** откройте **диспетчер серверов**.
@@ -107,9 +107,9 @@ ms.locfileid: "50158338"
 
 7. Учетные данные можно указать любым из следующих способов.
 
-   * **Формат имени участника-пользователя (рекомендуется):** укажите суффикс имени участника-пользователя (UPN), настроенный в Azure AD для учетной записи пользователя. В этом примере суффикс UPN пользователя *bob* соответствует значению *bob@domainservicespreview.onmicrosoft.com*.
+   * **Формат имени участника-пользователя (рекомендуется)**: укажите суффикс имени участника-пользователя (UPN), настроенный в Azure AD для учетной записи пользователя. В этом примере суффикс UPN пользователя *bob* соответствует значению *bob@domainservicespreview.onmicrosoft.com*.
 
-   * **Формат SAMAccountName:** вы можете указать имя учетной записи в формате SAMAccountName. В нашем примере для пользователя *bob* следует ввести значение *CONTOSO100\bob*.
+   * **Формат SAMAccountName**: вы можете указать имя учетной записи в формате SAMAccountName. В нашем примере для пользователя *bob* следует ввести значение *CONTOSO100\bob*.
 
      > [!TIP]
      > **Для указания учетных данных рекомендуется использовать формат имени участника-пользователя.**

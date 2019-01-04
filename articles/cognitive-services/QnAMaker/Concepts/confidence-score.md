@@ -1,7 +1,7 @@
 ---
 title: Оценка достоверности с помощью Microsoft Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
-description: Объяснение оценки достоверности
+description: Оценка достоверности означает степень достоверности того, что ответ соответствует этому запросу пользователя.
 services: cognitive-services
 author: tulasim88
 manager: pchoudh
@@ -10,14 +10,15 @@ ms.component: QnAMaker
 ms.topic: article
 ms.date: 09/27/2018
 ms.author: tulasim
-ms.openlocfilehash: b1126b2cdb7a5cd7451a916558bc928653bc0027
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.custom: seodec18
+ms.openlocfilehash: 8fe4ecfe241422c03a2de8d0634ef1e1395aa050
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51577929"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53081325"
 ---
-# <a name="confidence-score"></a>Оценка надежности
+# <a name="confidence-score-of-a-qna-maker-knowledge-base"></a>Оценка достоверности в базе знаний QnA Maker
 Когда пользовательский запрос сопоставляется с базой знаний, API службы QnA Maker возвращает соответствующие ответы вместе с оценкой достоверности. Эта оценка означает степень достоверности того, что ответ соответствует этому запросу пользователя. 
 
 Оценка достоверности находится в пределах от 0 до 100. Оценка 100, скорее всего, указывает на точное соответствие, а оценка 0 означает, что соответствия не обнаружено. Чем выше оценка — тем больше уверенность в ответе. Для запроса может вернуться несколько ответов. В этом случае ответы возвращаются в порядке уменьшения оценки достоверности.
@@ -78,15 +79,15 @@ ms.locfileid: "51577929"
 
 2. Щелкните, чтобы открыть **службы приложений**.
 
-    ![Служба доступа к приложениям](../media/qnamaker-concepts-confidencescore/set-default-response.png)
+    ![Доступ к службе приложений для QnA Maker на портале Azure](../media/qnamaker-concepts-confidencescore/set-default-response.png)
 
 3. Щелкните **Параметры приложения** и укажите в поле **DefaultAnswer** требуемый ответ по умолчанию. Выберите команду **Сохранить**.
 
-    ![Изменить ответ по умолчанию](../media/qnamaker-concepts-confidencescore/change-response.png)
+    ![Выбор элемента "Параметры приложения" и изменение значения в поле DefaultAnswer для QnA Maker](../media/qnamaker-concepts-confidencescore/change-response.png)
 
-4. Перезапустите службу приложений
+4. Перезапустите службу приложений.
 
-    ![Перезапуск службы приложений QnA Maker](../media/qnamaker-faq/qnamaker-appservice-restart.png)
+    ![Перезапуск службы приложений QnA Maker после изменения значения в поле DefaultAnswer](../media/qnamaker-faq/qnamaker-appservice-restart.png)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

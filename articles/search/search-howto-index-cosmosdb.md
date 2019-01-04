@@ -1,6 +1,6 @@
 ---
-title: Индексация источника данных Azure Cosmos DB для службы "Поиск Azure" | Документация Майкрософт
-description: В этой статье показано, как создать индексатор службы "Поиска Azure" для источника данных Azure Cosmos DB.
+title: Индексирование источника данных Azure Cosmos DB — Поиск Azure
+description: Сканирование источника данных Azure Cosmos DB и прием данных в полнотекстовый индекс с поддержкой поиска в службе "Поиск Azure". Индексаторы автоматизируют прием данных из выбранных источников, таких как Azure Cosmos DB.
 ms.date: 10/17/2018
 author: mgottein
 manager: cgronlun
@@ -10,12 +10,13 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 robot: noindex
-ms.openlocfilehash: 07768ee1590fa087a1eb1486cb59ab0f57d02b64
-ms.sourcegitcommit: 6678e16c4b273acd3eaf45af310de77090137fa1
+ms.custom: seodec2018
+ms.openlocfilehash: 80759394ac920907c74f67cf9ee6dfcb52bfd9a8
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50747547"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53311819"
 ---
 # <a name="connecting-cosmos-db-with-azure-search-using-indexers"></a>Подключение Cosmos DB к службе поиска Azure с помощью индексаторов
 
@@ -73,7 +74,7 @@ ms.locfileid: "50747547"
 > В настоящее время вы не можете создать или изменить источники данных **MongoDB** с помощью портала Azure или пакета SDK для .NET. Но вы **можете** отслеживать на портале историю выполнения индексаторов MongoDB.  
 
 <a name="CreateDataSource"></a>
-## <a name="step-1-create-a-data-source"></a>Шаг 1. Создание источника данных
+## <a name="step-1-create-a-data-source"></a>Шаг 1. Создание источника данных
 Чтобы создать источник данных, выполните POST:
 
     POST https://[service name].search.windows.net/datasources?api-version=2017-11-11
@@ -95,18 +96,18 @@ ms.locfileid: "50747547"
 
 Текст запроса содержит определение источника данных, который должен включать следующие поля.
 
-* **name**: имя базы данных.
-* **type** должно иметь значение `documentdb`.
+* **name**. Имя базы данных.
+* **type**. Этот параметр должен содержать значение `documentdb`.
 * **credentials**:
   
-  * **connectionString**: обязательное поле. Укажите сведения о подключении к базе данных Azure Cosmos DB в следующем формате: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`. Для коллекций MongoDB добавьте в строку подключения **ApiKind=MongoDb** вот так: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`.
+  * **connectionString**. Обязательный элемент. Укажите сведения о подключении к базе данных Azure Cosmos DB в следующем формате: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>` Для коллекций MongoDB добавьте **ApiKind=MongoDb** в строку подключения: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`
   Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если вы укажете номер порта, служба поиска Azure не сможет индексировать базу данных Azure Cosmos DB.
 * **container**:
   
-  * **name**: обязательное поле. Укажите идентификатор коллекции базы данных, которая будет индексироваться.
-  * **query**: необязательное поле. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure. Для коллекций MongoDB запросы не поддерживаются. 
-* **dataChangeDetectionPolicy** — рекомендуемое поле. Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).
-* **dataDeletionDetectionPolicy**: необязательное поле. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).
+  * **name**. Обязательный элемент. Укажите идентификатор коллекции базы данных, которая будет индексироваться.
+  * **query**. Необязательный элемент. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure. Для коллекций MongoDB запросы не поддерживаются. 
+* **dataChangeDetectionPolicy**. (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).
+* **dataDeletionDetectionPolicy**. Необязательный элемент. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).
 
 ### <a name="using-queries-to-shape-indexed-data"></a>Использование запросов для формирования индексированных данных
 Вы можете указать SQL-запрос для преобразования вложенных свойств или массивов в плоскую структуру, проецирования свойств JSON, а также для фильтрации данных, подлежащих индексированию. 
@@ -145,7 +146,7 @@ ms.locfileid: "50747547"
     SELECT c.id, c.userId, tag, c._ts FROM c JOIN tag IN c.tags WHERE c._ts >= @HighWaterMark ORDER BY c._ts
 
 <a name="CreateIndex"></a>
-## <a name="step-2-create-an-index"></a>Шаг 2. Создание индекса
+## <a name="step-2-create-an-index"></a>Шаг 2. Создание индекса
 Создайте целевой индекс поиска Azure, если это еще не сделано. Вы можете создать индекс с помощью [пользовательского интерфейса портала Azure](search-create-index-portal.md), [REST API создания индекса](/rest/api/searchservice/create-index) или [класса индекса](/dotnet/api/microsoft.azure.search.models.index).
 
 В следующем примере создается индекс с идентификатором и полем описания.
@@ -187,12 +188,12 @@ ms.locfileid: "50747547"
 | Строка |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
-| Геообъекты JSON, например { "тип": "Точка", "координаты": [ долгота, широта ] } |Edm.GeographyPoint |
+| Объекты GeoJSON, например { "type": "Point", "coordinates": [long, lat] } |Edm.GeographyPoint |
 | Другие объекты JSON |Недоступно |
 
 <a name="CreateIndexer"></a>
 
-## <a name="step-3-create-an-indexer"></a>Шаг 3. Создание индексатора
+## <a name="step-3-create-an-indexer"></a>Шаг 3. Создание индексатора
 
 Когда индекс и источник данных уже созданы, можно создать индексатор:
 

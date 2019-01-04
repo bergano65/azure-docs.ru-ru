@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ProMaster (от Inlogik) | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ProMaster (от Inlogik) | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и ProMaster (от Inlogik).
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/30/2018
 ms.author: jeedes
-ms.openlocfilehash: 13bb128836590fb43e0c6a2f7131f83a99a23eaf
-ms.sourcegitcommit: 9222063a6a44d4414720560a1265ee935c73f49e
+ms.openlocfilehash: 871abffc07ee29df388205395110e89a85dd7344
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39507805"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53017660"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-promaster-by-inlogik"></a>Руководство. Интеграция Azure Active Directory с ProMaster (от Inlogik)
 
@@ -53,7 +53,7 @@ ms.locfileid: "39507805"
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде.
 Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. добавление ProMaster (от Inlogik) из коллекции;
+1. Добавление ProMaster (от Inlogik) из коллекции
 2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-promaster-by-inlogik-from-the-gallery"></a>Добавление ProMaster (от Inlogik) из коллекции
@@ -111,6 +111,7 @@ ms.locfileid: "39507805"
     ![Сведения о домене и URL-адресах единого входа для приложения ProMaster (от Inlogik)](./media/promaster-tutorial/tutorial_promaster_url1.png)
 
     a. В текстовом поле **Идентификатор** введите один из следующих шаблонов URL-адреса:
+
     | |
     | - |-|
     |  `https://secure.inlogik.com/<COMPANYNAME>`|
@@ -118,6 +119,7 @@ ms.locfileid: "39507805"
     | |
 
     b. В текстовом поле **URL-адрес ответа** введите один из следующих шаблонов URL-адреса:
+
     | |
     | - |-|
     | `https://secure.inlogik.com/<COMPANYNAME>/saml/acs`|
@@ -129,6 +131,7 @@ ms.locfileid: "39507805"
     ![Сведения о домене и URL-адресах единого входа для приложения ProMaster (от Inlogik)](./media/promaster-tutorial/tutorial_promaster_url2.png)
 
     В текстовом поле **URL-адрес входа** введите один из следующих шаблонов URL-адреса:
+
     | |
     | - |-|
     | `https://secure.inlogik.com/<COMPANYNAME>/saml/acs `|
@@ -182,7 +185,7 @@ ms.locfileid: "39507805"
 
 ### <a name="create-a-promaster-by-inlogik-test-user"></a>Создание тестового пользователя в ProMaster (от Inlogik)
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении ProMaster (от Inlogik). Обратитесь в [службу поддержки ProMaster (от Inlogik)](mailto:michael.boldiston@inlogik.com), чтобы добавить пользователей на платформу ProMaster (от Inlogik). Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении ProMaster (от Inlogik). Обратитесь к  [группе поддержки ProMaster (от Inlogik)](mailto:michael.boldiston@inlogik.com) , чтобы добавить пользователей на платформу ProMaster (от Inlogik). Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

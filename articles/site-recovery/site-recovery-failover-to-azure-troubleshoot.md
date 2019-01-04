@@ -8,18 +8,17 @@ manager: abhemraj
 editor: ''
 ms.assetid: ''
 ms.service: site-recovery
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: storage-backup-recovery
-ms.date: 11/27/2018
+ms.date: 12/11/2018
 ms.author: mayg
-ms.openlocfilehash: 1e7486dc646843c473cfb355445e194893934a1a
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 742e7891ec9c7151f23f1ad6eb57e728dd2a1ddd
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52447152"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53255097"
 ---
 # <a name="troubleshoot-errors-when-failing-over-a-virtual-machine-to-azure"></a>Устранение ошибок при отработке отказа виртуальной машины в Azure
 
@@ -114,9 +113,6 @@ ms.locfileid: "52447152"
 Если при загрузке виртуальной машины Windows после отработки отказа появилось сообщение о непредвиденном завершении работы на восстановленной виртуальной машине, это указывает, что состояние завершения работы виртуальной машины не было записано в точке восстановления, используемой для отработки отказа. Это происходит, если выполняется восстановление до точки, когда виртуальная машина не завершила работу окончательно.
 
 Обычно это не повод для беспокойства и сообщение можно игнорировать для внеплановых отработок отказа. В случае плановой отработки отказа убедитесь, что виртуальная машина правильно завершила работу до отработки отказа и обеспечьте достаточно времени для отправки локальных ожидающих репликации данных в Azure. Затем используйте параметр**Latest** на [экране отработки отказа](site-recovery-failover.md#run-a-failover) таким образом, чтобы все ожидающие данные в Azure обрабатывались в точке восстановления, которая затем будет использоваться для отработки отказа виртуальной машины.
-
-## <a name="retaining-drive-letter-after-failover"></a>Сохранение буквы диска после отработка отказа
-Чтобы сохранить буквы дисков на виртуальных машинах после отработки отказа, укажите значение **OnlineAll** в **политике SAN** для локальной виртуальной машины. [Дополнительные сведения](https://support.microsoft.com/help/3031135/how-to-preserve-the-drive-letter-for-protected-virtual-machines-that-are-failed-over-or-migrated-to-azure).
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Устранение неполадок [с подключением к виртуальной машине Windows через удаленный рабочий стол](../virtual-machines/windows/troubleshoot-rdp-connection.md)

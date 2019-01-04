@@ -1,6 +1,6 @@
 ---
-title: Конечные точки службы и правила виртуальной сети для Центров событий Azure | Документация Майкрософт
-description: Добавление в виртуальную сеть конечных точек службы Microsoft.EventHub.
+title: Конечные точки службы виртуальной сети для Центров событий Azure | Документация Майкрософт
+description: В этой статье содержатся сведения о добавлении конечной точки службы Microsoft.EventHub в виртуальную сеть.
 services: event-hubs
 documentationcenter: ''
 author: ShubhaVijayasarathy
@@ -8,25 +8,43 @@ manager: timlt
 ms.service: event-hubs
 ms.devlang: na
 ms.topic: article
-ms.date: 08/16/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 29b5f877065029dc271e49c1afd6d547def58a6e
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 2ad525ee0e10064d4d606dc1f899ef813fe92ab5
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49408138"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273511"
 ---
 # <a name="use-virtual-network-service-endpoints-with-azure-event-hubs"></a>Использование конечных точек службы виртуальной сети с Центрами событий Azure
 
-Интеграция Центров событий с [конечными точками службы виртуальной сети][vnet-sep] обеспечивает безопасный доступ к возможностям обмена сообщениями из рабочих нагрузок, таких как виртуальные машины, привязанные к виртуальным сетям, где трафик защищен с обеих сторон. 
-
-> [!IMPORTANT]
-> Виртуальные сети поддерживаются в **стандартном** и **выделенном** уровнях Центра событий. В "базовом" уровне не поддерживается. 
+Интеграция Центров событий с [конечными точками службы виртуальной сети][vnet-sep] обеспечивает безопасный доступ к возможностям обмена сообщениями из рабочих нагрузок, таких как виртуальные машины, привязанные к виртуальным сетям, где трафик защищен с обеих сторон.
 
 Когда будет настроена привязка по крайней мере к одной конечной точке службы подсети виртуальной сети, пространство имен соответствующих Центров событий будет принимать трафик только из авторизованных подсетей в виртуальных сетях. С точки зрения виртуальной сети привязка пространства имен Центров событий к конечной точке службы настраивает изолированный сетевой туннель от подсети виртуальной сети к службе обмена сообщениями.
 
 Результатом является частная и изолированная взаимосвязь между рабочими нагрузками, привязанными к подсети, и соответствующим пространством имен Центров событий, несмотря на то что наблюдаемый сетевой адрес конечной точки службы обмена сообщениями находится в общедоступном диапазоне IP-адресов.
+
+>[!WARNING]
+> Реализация интеграции виртуальных сетей может препятствовать взаимодействию других служб Azure с Центрами событий.
+>
+> Доверенные службы Майкрософт не поддерживаются, если реализованы виртуальные сети. Их поддержка будет доступна в ближайшее время.
+>
+> Распространенные сценарии Azure, которые не работают с виртуальными сетями (обратите внимание, что список **НЕ** является исчерпывающим):
+> - Azure Monitor
+> - Azure Stream Analytics
+> - Интеграция со службой "Сетка событий Azure".
+> - Маршруты Центра Интернета вещей Azure.
+> - Device Explorer Интернета вещей Azure.
+> - Обозреватель данных Azure
+>
+> В виртуальной сети должны присутствовать следующие службы Майкрософт:
+> - Веб-приложения Azure.
+> - Функции Azure
+
+> [!IMPORTANT]
+> Виртуальные сети поддерживаются в **стандартном** и **выделенном** уровнях Центра событий. В "базовом" уровне не поддерживается.
 
 ## <a name="advanced-security-scenarios-enabled-by-vnet-integration"></a>Расширенные сценарии обеспечения безопасности, доступные при интеграции с виртуальной сетью 
 
@@ -42,7 +60,7 @@ ms.locfileid: "49408138"
 
 Привязка пространства имен Центров событий к виртуальной сети состоит из двух этапов. Сначала необходимо создать **конечную точку службы виртуальной сети** в подсети виртуальной сети и подключить ее к Microsoft.EventHub, как описано в статье [Конечные точки службы виртуальной сети][vnet-sep]. После добавления конечной точки службы вы привязываете пространство имен Центров событий к ней с помощью *правила виртуальной сети*.
 
-Правило виртуальной сети — это именованная связь пространства имен Центров событий с подсетью виртуальной сети. Пока правило существует, всем рабочим нагрузкам, привязанным к подсети, предоставляется доступ к пространству имен Центров событий. Центры событий никогда не устанавливают исходящие подключения, не нуждаются в доступе и поэтому не получают доступ к вашей подсети, если это правило включено.
+Правило виртуальной сети — это связь пространства имен Центров событий с подсетью виртуальной сети. Пока правило существует, всем рабочим нагрузкам, привязанным к подсети, предоставляется доступ к пространству имен Центров событий. Центры событий никогда не устанавливают исходящие подключения, не нуждаются в доступе и поэтому не получают доступ к вашей подсети, если это правило включено.
 
 ### <a name="create-a-virtual-network-rule-with-azure-resource-manager-templates"></a>Создание правила виртуальной сети с использованием шаблонов Azure Resource Manager
 
@@ -50,45 +68,120 @@ ms.locfileid: "49408138"
 
 Параметры шаблона:
 
-* **namespaceName**. Пространство имен Центров событий.
-* **vnetRuleName**. Имя создаваемого правила виртуальной сети.
-* **virtualNetworkingSubnetId**: полный путь Resource Manager для подсети виртуальной сети, например `subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` для подсети виртуальной сети по умолчанию.
+* **namespaceName.** Пространство имен Центров событий.
+* **vnetRuleName.** Имя создаваемого правила виртуальной сети.
+* **virtualNetworkingSubnetId.** Полный путь Resource Manager для подсети виртуальной сети (например, `subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` для подсети виртуальной сети по умолчанию).
+
+> [!NOTE]
+> Хотя запрещающие правила отсутствуют, в шаблоне Azure Resource Manager для действия по умолчанию установлено значение **Разрешить**, которое не ограничивает подключения.
+> При создании правил виртуальной сети или брандмауэров необходимо изменить значение параметра ***defaultAction***.
+> 
+> from
+> ```json
+> "defaultAction": "Allow"
+> ```
+> значение
+> ```json
+> "defaultAction": "Deny"
+> ```
+>
 
 ```json
-{  
-   "$schema":"http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
-   "contentVersion":"1.0.0.0",
-   "parameters":{     
-          "namespaceName":{  
-             "type":"string",
-             "metadata":{  
-                "description":"Name of the namespace"
-             }
-          },
-          "vnetRuleName":{  
-             "type":"string",
-             "metadata":{  
-                "description":"Name of the Authorization rule"
-             }
-          },
-          "virtualNetworkSubnetId":{  
-             "type":"string",
-             "metadata":{  
-                "description":"subnet Azure Resource Manager ID"
-             }
-          }
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "eventhubNamespaceName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the Event Hubs namespace"
+        }
       },
+      "virtualNetworkName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the Virtual Network Rule"
+        }
+      },
+      "subnetName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the Virtual Network Sub Net"
+        }
+      },
+      "location": {
+        "type": "string",
+        "metadata": {
+          "description": "Location for Namespace"
+        }
+      }
+    },
+    "variables": {
+      "namespaceNetworkRuleSetName": "[concat(parameters('eventhubNamespaceName'), concat('/', 'default'))]",
+      "subNetId": "[resourceId('Microsoft.Network/virtualNetworks/subnets/', parameters('virtualNetworkName'), parameters('subnetName'))]"
+    },
     "resources": [
-        {
-            "apiVersion": "2018-01-01-preview",
-            "name": "[concat(parameters('namespaceName'), '/', parameters('vnetRuleName'))]",
-            "type":"Microsoft.EventHub/namespaces/VirtualNetworkRules",         
-            "properties": {             
-                "virtualNetworkSubnetId": "[parameters('virtualNetworkSubnetId')]"  
+      {
+        "apiVersion": "2018-01-01-preview",
+        "name": "[parameters('eventhubNamespaceName')]",
+        "type": "Microsoft.EventHub/namespaces",
+        "location": "[parameters('location')]",
+        "sku": {
+          "name": "Standard",
+          "tier": "Standard"
+        },
+        "properties": { }
+      },
+      {
+        "apiVersion": "2017-09-01",
+        "name": "[parameters('virtualNetworkName')]",
+        "location": "[parameters('location')]",
+        "type": "Microsoft.Network/virtualNetworks",
+        "properties": {
+          "addressSpace": {
+            "addressPrefixes": [
+              "10.0.0.0/23"
+            ]
+          },
+          "subnets": [
+            {
+              "name": "[parameters('subnetName')]",
+              "properties": {
+                "addressPrefix": "10.0.0.0/23",
+                "serviceEndpoints": [
+                  {
+                    "service": "Microsoft.EventHub"
+                  }
+                ]
+              }
             }
-        } 
-    ]
-}
+          ]
+        }
+      },
+      {
+        "apiVersion": "2018-01-01-preview",
+        "name": "[variables('namespaceNetworkRuleSetName')]",
+        "type": "Microsoft.EventHub/namespaces/networkruleset",
+        "dependsOn": [
+          "[concat('Microsoft.EventHub/namespaces/', parameters('eventhubNamespaceName'))]"
+        ],
+        "properties": {
+          "virtualNetworkRules": 
+          [
+            {
+              "subnet": {
+                "id": "[variables('subNetId')]"
+              },
+              "ignoreMissingVnetServiceEndpoint": false
+            }
+          ],
+          "ipRules":[<YOUR EXISTING IP RULES>],
+          "defaultAction": "Deny"
+        }
+      }
+    ],
+    "outputs": { }
+  }
 ```
 
 Инструкции по развертыванию шаблона см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell][lnk-deploy].

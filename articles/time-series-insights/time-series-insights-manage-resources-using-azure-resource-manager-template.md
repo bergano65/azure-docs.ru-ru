@@ -1,5 +1,5 @@
 ---
-title: Как управлять средой "Аналитика временных рядов Azure" с помощью шаблонов Azure Resource Manager | Документация Майкрософт
+title: Управление шаблонами службы "Аналитика временных рядов Azure". Как управлять средой "Аналитика временных рядов Azure" с помощью шаблонов Azure Resource Manager | Документация Майкрософт
 description: В этой статье описано, как программно управлять средой "Аналитика временных рядов Azure" с помощью Azure Resource Manager.
 ms.service: time-series-insights
 services: time-series-insights
@@ -10,12 +10,13 @@ ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 12/08/2017
-ms.openlocfilehash: 3ca9af8c2c504f75322e00fdaaeac9a3e727a820
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.custom: seodec18
+ms.openlocfilehash: 70f82c19bced7618027379fcf9451348ac2591eb
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39627133"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53270626"
 ---
 # <a name="create-time-series-insights-resources-using-azure-resource-manager-templates"></a>Создание ресурсов службы "Аналитика временных рядов" с помощью шаблонов Resource Manager
 

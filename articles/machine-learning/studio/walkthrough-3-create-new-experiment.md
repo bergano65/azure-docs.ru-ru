@@ -1,12 +1,11 @@
 ---
-title: Шаг 3. Создание эксперимента в Студии машинного обучения Azure | Документация Майкрософт
-description: 'Третий этап пошагового руководства по разработке прогнозного решения: создание эксперимента обучения в студии машинного обучения Azure.'
+title: Шаг 3. Создание эксперимента в Студии машинного обучения Azure | Документация Майкрософт
+description: Пошаговое руководство по разработке решения прогнозирования (шаг 3). Создание простого обучающего эксперимента в Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
-ms.author: amlstudiodocs
-manager: hjerez
+author: garyericson
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
+ms.author: garye
 editor: cgronlun
 ms.assetid: 660e3c27-55ef-4c33-a4e9-dff4d1224630
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/23/2017
-ms.openlocfilehash: a6f12c536cfc18ed0be55ec1755c7fe5179006ba
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 5f3f73e2c2cb281887e795d974403a17cffd5978
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317534"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53260792"
 ---
 # <a name="walkthrough-step-3-create-a-new-azure-machine-learning-studio-experiment"></a>Шаг 3. Создание эксперимента в Студии машинного обучения Azure
 Это третий этап из пошагового руководства [Разработка решения для прогнозной аналитики в службе машинного обучения Azure](walkthrough-develop-predictive-solution.md)
@@ -56,7 +55,7 @@ ms.locfileid: "52317534"
     ![Добавление набора данных в эксперимент][7]
 
 ## <a name="prepare-the-data"></a>Подготовка данных
-Чтобы просмотреть первые 100 строк данных и некоторые статистические сведения для всего набора данных, щелкните выходной порт набора данных (маленький кружок в нижней части) правой кнопкой мыши и выберите команду **Визуализировать**.  
+Можно просмотреть первые 100 строк данных и некоторую статистическую информацию о наборе данных в целом. Щелкните выходной порт набора данных (маленький кружок внизу) и выберите **Визуализировать**.  
 
 Поскольку файл данных поступил без заголовков столбцов, студия предоставляет универсальные заголовки (Col1, Col2 *и т. д.*). Понятные заголовки столбцов не имеют существенного значения для создания модели, однако они облегчат работу с данными в эксперименте. Кроме того, при последующей публикации этой модели в веб-службе заголовки помогают определять столбцы пользователям службы.  
 
@@ -164,7 +163,7 @@ ms.locfileid: "52317534"
 
 Подробнее об использовании сценариев R в экспериментах см. в разделе [Расширение возможностей эксперимента с помощью R](extend-your-experiment-with-r.md).
 
-**Дальнейшие действия: [обучение и анализ моделей](walkthrough-4-train-and-evaluate-models.md)**.
+**Дальнейшие действия. [Обучение и анализ моделей](walkthrough-4-train-and-evaluate-models.md)**
 
 [0]: ./media/walkthrough-3-create-new-experiment/create-new-experiment.png
 [5]: ./media/walkthrough-3-create-new-experiment/rename-experiment.png

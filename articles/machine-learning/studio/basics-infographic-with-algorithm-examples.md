@@ -1,13 +1,12 @@
 ---
-title: Инфографика по основам машинного обучения с примерами алгоритмов — Студия машинного обучения Azure | Документация Майкрософт
+title: Примеры алгоритмов для Студии машинного обучения Azure | Документация Майкрософт
 description: Доходчивый обзор основ машинного обучения включает примеры алгоритмов. Загружаемая инфографика охватывает большинство вопросов по машинному обучению.
 keywords: основы машины обучения, примеры алгоритмов,машинное обучение для начинающих, вопросы машины обучения, популярные алгоритмы, инфографика по алгоритмам
 services: machine-learning
 documentationcenter: ''
-author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
-ms.author: amlstudiodocs
-manager: hjerez
+author: garyericson
+ms.custom: seodc18
+ms.author: garye
 editor: cgronlun
 ms.assetid: cf4e2308-9285-4adc-9f00-408e3ee7931b
 ms.service: machine-learning
@@ -17,23 +16,23 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 12/18/2017
-ms.openlocfilehash: ccbe152901ff7f59548239a1d59e585b8e356c23
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: df628447a441d1580fa1a3862275f2b461f8d18a
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52308008"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275743"
 ---
-# <a name="downloadable-infographic-machine-learning-basics-with-algorithm-examples"></a>Загружаемая инфографика по основам машинного обучения с примерами алгоритмов
+# <a name="downloadable-infographic-machine-learning-basics-with-algorithm-examples"></a>Скачиваемая инфографика по основам машинного обучения с примерами алгоритмов
 Скачайте понятную инфографику по основам машинного обучения и ознакомьтесь с популярными алгоритмами, которые используются для ответа на распространенные вопросы о машинном обучении. Примеры алгоритмов помогут начинающему пользователю машинного обучения понять, какие алгоритмы используются и с какой целью.
 
 ## <a name="popular-algorithms-in-machine-learning-studio"></a>Популярные алгоритмы, доступные в Студии машинного обучения
 [Студия машинного обучения Azure](https://studio.azureml.net/) включает большую библиотеку алгоритмов для прогнозной аналитики. В инфографике определено четыре популярных семейства алгоритмов: регрессия, обнаружение аномалий, кластеризация и классификация. Кроме того, в ней содержатся ссылки на рабочие примеры в [коллекции решений ИИ Azure](https://gallery.cortanaintelligence.com/). Коллекция содержит примеры экспериментов и руководства, в которых показано, как можно применять эти алгоритмы во многих реальных решениях.
 
 ## <a name="download-the-infographic-with-algorithm-examples"></a>Скачайте инфографику с примерами алгоритмов
-**[Скачать инфографику по основам машинного обучения со ссылками на примеры алгоритмов (PDF)](https://download.microsoft.com/download/0/5/A/05AE6B94-E688-403E-90A5-6035DBE9EEC5/machine-learning-basics-infographic-with-algorithm-examples.pdf)**
+**[Скачать инфографику по основам машинного обучения со ссылками на примеры алгоритмов (PDF-файл)](https://download.microsoft.com/download/0/5/A/05AE6B94-E688-403E-90A5-6035DBE9EEC5/machine-learning-basics-infographic-with-algorithm-examples.pdf)**
 
-![Инфографика по основам машинного обучения с примерами алгоритмов Популярные алгоритмы Машинного обучения для начинающих.](./media/basics-infographic-with-algorithm-examples/machine-learning-basics-infographic-with-algorithm-examples.png)
+![Инфографика по основам машинного обучения с примерами алгоритмов. Популярные алгоритмы Машинного обучения для начинающих.](./media/basics-infographic-with-algorithm-examples/machine-learning-basics-infographic-with-algorithm-examples.png)
 
 ## <a name="more-help-with-algorithms-for-beginners-and-advanced-users"></a>Дополнительная справка по алгоритмам для начинающих и продвинутых пользователей
 * Более глубокое обсуждение различных типов алгоритмов машинного обучения, их использования и выбора алгоритма, подходящего для решения, см. в статье [Выбор алгоритмов машинного обучения Microsoft Azure](algorithm-choice.md).
@@ -42,7 +41,7 @@ ms.locfileid: "52308008"
 * Чтобы скачать и распечатать схему, на которой представлены общие возможности Студии машинного обучения, см. [обзорную схему возможностей Студии машинного обучения Azure](studio-overview-diagram.md).
 * Общие сведения о коллекции решений ИИ Azure и множестве доступных ресурсов, созданных участниками сообщества, см. в статье [Share and discover resources in the Azure AI Gallery](gallery-how-to-use-contribute-publish.md) (Совместное использование и поиск ресурсов в коллекции решений ИИ Azure).
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 <!-- Module References -->
 [a-z-list]: https://msdn.microsoft.com/library/azure/dn906033.aspx

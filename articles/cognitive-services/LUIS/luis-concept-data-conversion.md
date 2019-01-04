@@ -1,23 +1,24 @@
 ---
-title: Принципы преобразования данных в LUIS — Интеллектуальной службе распознавания речи
-titleSuffix: Azure Cognitive Services
+title: Преобразование данных
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Узнайте, как изменить высказывания перед прогнозами в службе "Распознавание речи" (LUIS)
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 9324f7b4f7bed844f16d17b8960878892be4b165
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: dc9040661eee4cafc655deb2436130f1abcfcfd5
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49638398"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094803"
 ---
-# <a name="data-conversion-concepts-in-luis"></a>Принципы преобразования данных в LUIS
+# <a name="convert-data-format-of-utterances"></a>Преобразование формата данных высказываний
 LUIS использует службу Cognitive Services Speech, чтобы преобразовать высказывания из произнесенной речи в текст перед получением прогноза. 
 
 ## <a name="speech-to-intent-conversion-concepts"></a>Принципы преобразования речи в намерения

@@ -3,22 +3,21 @@ title: Экспорт и удаление данных из службы "Сту
 description: Внутренние данные продукта, хранимые службой "Студия машинного обучения", доступны для экспорта и удаления через портал Azure, а также через аутентифицированные REST API. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. В этой статье показано, как это сделать.
 services: machine-learning
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.author: amlstudiodocs
-manager: cgronlun
 ms.reviewer: jmartens, mldocs
 ms.service: machine-learning
 ms.component: studio
 ms.topic: conceptual
 ms.date: 05/25/2018
-ms.openlocfilehash: 04b26dc9ad9f4b7a4feb03039d92854385d75465
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: e69883022937ccb4ad0f83f144afef0b5b1e0e56
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52262380"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53276270"
 ---
-# <a name="export-and-delete-in-product-user-data-from-machine-learning-studio"></a>Экспорт и удаление встроенных в продукт данных пользователей из службы "Студия машинного обучения"
+# <a name="export-and-delete-in-product-user-data-from-azure-machine-learning-studio"></a>Экспорт и удаление встроенных в продукт данных пользователей из Студии машинного обучения Azure
 
 Внутренние данные продукта, хранящиеся в службе "Студия машинного обучения Azure", можно удалять или экспортировать с помощью портала Azure, интерфейса Студии, PowerShell и аутентифицированных API REST. В этой статье описано, каким образом это можно сделать. 
 
@@ -33,8 +32,8 @@ ms.locfileid: "52262380"
 В этой службе данные пользователя состоят из информации о пользователях, имеющих разрешение на доступ к рабочим областям и записям телеметрии взаимодействия пользователя со службой.
 
 Есть два типа пользовательских данных в службе "Студия машинного обучения":
-- **Личные данные учетной записи**. Идентификаторы учетной записи и адреса электронной почты, связанные с учетной записью.
-- **Данные клиента**. Данные, загружаемые для анализа.
+- **Личные данные учетной записи.** Идентификаторы учетной записи и адреса электронной почты, связанные с учетной записью.
+- **Данные клиента.** Данные, передаваемые для анализа.
 
 ## <a name="studio-account-types-and-how-data-is-stored"></a>Типы учетных записей Студии и способ хранения данных
 
@@ -65,8 +64,8 @@ ms.locfileid: "52262380"
 ### <a name="delete-an-entire-workspace"></a>Удаление всей рабочей области
 
 Пользователи также могут полностью удалить свою рабочую область:
-- Платная рабочая область. Удаление через портал Azure.
-- Бесплатная рабочая область. Используйте кнопку "Удалить" в области **Параметры**.
+- Платная рабочая область: удалите с помощью портала Azure
+- Бесплатная рабочая область: используйте кнопку "Удалить" в области **Параметры**.
 
 ![Удаление бесплатной рабочей области в Студии машинного обучения](./media/export-delete-personal-data-dsr/delete-studio-data-workspace.png)
  

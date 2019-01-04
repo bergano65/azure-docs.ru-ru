@@ -1,21 +1,22 @@
 ---
 title: Получение пакета SDK для речевых устройств
 titleSuffix: Azure Cognitive Services
-description: Сведения о получении доступа к пакету SDK для речевых устройств.
+description: Служба "Речь" поддерживает широкий ряд устройств и источников звука. Теперь ваши речевые приложения могут стать еще эффективнее благодаря соответствующему оборудованию и программному обеспечению. Из этой статьи вы узнаете, как получить пакет SDK для речевых устройств и приступить к разработке.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: conceptual
-ms.date: 05/07/2018
+ms.date: 12/06/2018
 ms.author: erhopf
-ms.openlocfilehash: 822c4bdc6bb47d51bcd264c9093e7d07308d2b11
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.custom: seodec18
+ms.openlocfilehash: bc9497ff8d48cd1c5fd045f12908234462a7a2f8
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49468778"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53095065"
 ---
 # <a name="get-the-cognitive-services-speech-devices-sdk"></a>Получение пакета SDK для речевых устройств в Cognitive Services
 
@@ -29,14 +30,14 @@ ms.locfileid: "49468778"
 1. Прочитайте [лицензионное соглашение](speech-devices-sdk-license.md).
 1. Если вы согласны с условиями лицензионного соглашения, установите флажок **Я принимаю**.
 1. Ответьте на вопросы в форме.
-1. Отправьте форму. 
+1. Отправьте форму.
 1. Если ваш адрес электронной почты еще не входит в Azure Active Directory (Azure AD), после утверждения заявки вы получите по электронной почте приглашение, аналогичное приведенному ниже. Если ваш адрес электронной почты уже существует в Azure AD, после утверждения заявки вы получите сообщение электронной почты от команды разработчиков службы "Речь" и сможете сразу перейти к [загрузке пакета SDK для речевых устройств](#download-the-speech-devices-sdk).
 
 ## <a name="approval-e-mail"></a>Электронное письмо с утверждением
 
 ```
-From: Microsoft Speech Team from Microsoft (via Microsoft) <invites@microsoft.com> 
-Subject: You're invited to the Microsoft organization 
+From: Microsoft Speech Team from Microsoft (via Microsoft) <invites@microsoft.com>
+Subject: You're invited to the Microsoft organization
 ```
 
 ![сообщение электронной почты](media/speech-devices-sdk/get-sdk-1.png)
@@ -58,16 +59,16 @@ Subject: You're invited to the Microsoft organization
 4. Выберите **Далее**, чтобы создать пароль.
 
 5. При появлении запроса для проверки электронной почты используйте код проверки, который находится в сообщении с приглашением.
- 
+
 7. Вставьте или введите код безопасности из сообщения электронной почты в диалоговом окне. В этом примере код безопасности — **8406**. Щелкните **Далее**.
 
     ![Проверка электронной почты](media/speech-devices-sdk/get-sdk-6.png)
- 
+
 8. Появление приложения панели доступа в окне браузера означает, что ваш адрес электронной почты теперь входит в Azure AD. Теперь вы получаете доступ к сайту загрузки пакета SDK для речевых устройств.
 
 ## <a name="download-the-speech-devices-sdk"></a>Загрузка пакета SDK для речевых устройств
 
-Перейдите на [сайт загрузки пакета SDK для речевых устройств](https://shares.datatransfer.microsoft.com/). Войдите с помощью учетной записи Майкрософт, созданной ранее. 
+Перейдите на [сайт загрузки пакета SDK для речевых устройств](https://shares.datatransfer.microsoft.com/). Войдите с помощью учетной записи Майкрософт, созданной ранее.
 
 ![Сайт загрузки пакета SDK](media/speech-devices-sdk/get-sdk-7.png)
 
@@ -76,20 +77,20 @@ Subject: You're invited to the Microsoft organization
 1. Загрузите и установите инструмент Aspera Connect при получении соответствующего запроса.
 
     ![Загрузка Aspera Connect](media/speech-devices-sdk/get-sdk-8.png)
- 
+
 1. Выберите **Да**, чтобы переключить приложения на Aspera Connect.
 
     ![Переключение на Aspera Connect](media/speech-devices-sdk/get-sdk-9.png)
- 
+
 1. Выберите **Разрешить**, чтобы подтвердить загрузку файлов с помощью Aspera Connect.
 
     ![Загрузка с помощью Aspera Connect](media/speech-devices-sdk/get-sdk-10.png)
- 
+
 1. Закройте окно передачи Aspera Connect после загрузки файлов.
 
     ![Окно передачи Aspera Connect](media/speech-devices-sdk/get-sdk-11.png)
- 
-По умолчанию файлы загружаются в папку **Загрузки**. Теперь вы можете выйти из системы этого сайта. 
+
+По умолчанию файлы загружаются в папку **Загрузки**. Теперь вы можете выйти из системы этого сайта.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

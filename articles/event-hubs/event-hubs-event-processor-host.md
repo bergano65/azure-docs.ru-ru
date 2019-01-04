@@ -1,6 +1,6 @@
 ---
-title: Обзор узла обработчика событий Центров событий Azure и его возможностей | Документация Майкрософт
-description: Общие сведения об узле обработчика событий Центров событий Azure
+title: Получение событий от Центров событий Azure с помощью узла обработчика событий | Документация Майкрософт
+description: В этой статье описывается узел обработчика событий в Центрах событий Azure, который упрощает управление параллельными контрольными точками, арендой и чтением событий.
 services: event-hubs
 documentationcenter: .net
 author: ShubhaVijayasarathy
@@ -11,16 +11,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/16/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 236103861ce8a296c77f708dbb4a7cc7e03f10f3
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: a28ae46a449d4aacf046636793585a84adc5ba83
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51258958"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53089639"
 ---
-# <a name="azure-event-hubs-event-processor-host-overview"></a>Общие сведения об узле обработчика событий Центров событий Azure
+# <a name="receive-events-from-azure-event-hubs-using-event-processor-host"></a>Получение событий от Центров событий Azure с помощью узла обработчика событий
 
 Центры событий Azure — это эффективная служба обработки данных телеметрии, которая может использоваться для потоковой передачи миллионов событий без лишних затрат. В этой статье описывается, как использовать получаемые события с помощью *Узла обработчика событий* (EPH). Этот интеллектуальный потребительский агент упрощает управление контрольными точками, сданными ресурсами и параллельными модулями чтения.  
 
@@ -36,16 +37,16 @@ ms.locfileid: "51258958"
 
 При создании потребителя в распределенной среде сценарий должен удовлетворять следующие требования:
 
-1. **Масштаб.** Создайте несколько потребителей и каждый потребитель возьмет на себя ответственность за чтение нескольких секций Центров событий.
-2. **Балансировка нагрузки.** Изменяйте количество потребителей динамически. Например, при добавлении нового типа датчика в каждый дом (например, детектора угарного газа) увеличивается число событий. В этом случае оператор (человек) увеличивает число экземпляров потребителя. Затем пул потребителей может перебалансировать количество секций, которыми они владеют, для распределения нагрузки на вновь добавленных потребителей.
-3. **Простое возобновление в случае сбоев.** Если у потребителя (**потребитель А**) происходит сбой (например, на виртуальной машине, где размещается потребитель, происходит аварийное завершение), тогда другие пользователи должны иметь возможность выбирать секции, принадлежащие **потребителю A** и продолжать работу. Кроме того, точка продолжения, называемая *контрольной точкой* или *смещением*, должна находиться в точке пересечения, в которой произошел сбой **потребителя А**, или немного раньше этого.
-4. **Получение событий.** Пока предыдущие три точки занимаются управлением потребителя, следует внедрить код, который обрабатывает события и использует их, например, занимается статистической обработкой и загрузкой в хранилище больших двоичных объектов.
+1. **Масштабирование.** Создайте несколько потребителей, где каждый потребитель получит право на чтение из нескольких секций Центров событий.
+2. **Балансировка нагрузки.** Динамически изменяйте количество потребителей. Например, при добавлении нового типа датчика в каждый дом (например, детектора угарного газа) увеличивается число событий. В этом случае оператор (человек) увеличивает число экземпляров потребителя. Затем пул потребителей может перебалансировать количество секций, которыми они владеют, для распределения нагрузки на вновь добавленных потребителей.
+3. **Бесперебойное возобновление в случае сбоев.** Если у потребителя (**потребитель А**) происходит сбой (например, на виртуальной машине, где размещается потребитель, происходит аварийное завершение), тогда другие пользователи должны иметь возможность выбирать секции, принадлежащие **потребителю A**, и продолжать работу. Кроме того, точка продолжения, называемая *контрольной точкой* или *смещением*, должна находиться в точке пересечения, в которой произошел сбой **потребителя А**, или немного раньше этого.
+4. **Получение событий.** Пока предыдущие три точки занимаются управлением потребителя, следует внедрить код, который принимает события и обрабатывает их, например, выполняет статистическую обработку и загрузку в хранилище больших двоичных объектов.
 
 Вместо создания собственного решения Центры событий предоставляют эту функциональную возможность через интерфейс [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) и класс [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost).
 
 ## <a name="ieventprocessor-interface"></a>Интерфейс IEventProcessor
 
-Сначала приложения-потребители реализуют интерфейс [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) с четырьмя методами: [OpenAsync, CloseAsync, ProcessErrorAsync и ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor?view=azure-dotnet#methods). Этот интерфейс содержит фактический код для получения событий, отправляемых в Центры событий. Ниже приведен пример простой реализации:
+Во-первых, потребляющие приложения реализуют интерфейс [IEventProcessor ](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor), который имеет четыре метода: [OpenAsync, CloseAsync, ProcessErrorAsync и ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor?view=azure-dotnet#methods). Этот интерфейс содержит фактический код для получения событий, отправляемых в Центры событий. Ниже приведен пример простой реализации:
 
 ```csharp
 public class SimpleEventProcessor : IEventProcessor
@@ -84,9 +85,9 @@ public class SimpleEventProcessor : IEventProcessor
 
 - **hostName.** Имя каждого экземпляра потребителя. Каждый экземпляр **EventProcessorHost** должен иметь уникальное значение для этой переменной в группе потребителей, поэтому не рекомендуется жестко задавать это значение.
 - **eventHubPath.** Имя концентратора событий.
-- **consumerGroupName.** Центры событий используют **$Default**, как имя группы получателей по умолчанию, но рекомендуется создать группу потребителей для вашего определенного аспекта обработки.
+- **consumerGroupName.** Центры событий используют **$Default** как имя группы получателей по умолчанию, но рекомендуется создать группу потребителей для вашего определенного аспекта обработки.
 - **eventHubConnectionString.** Строка подключения к концентратору событий, которую можно получить на портале Azure. Эта строка подключения должна иметь разрешение **Прослушивание** в концентраторе событий.
-- **storageConnectionString.** Учетная запись хранения, которая используется для управления внутренними ресурсами.
+- **storageConnectionString**. Учетная запись хранения, которая используется для управления внутренними ресурсами.
 
 Наконец, потребители регистрируют экземпляр [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost) в службе Центров событий. Регистрация класса обработчика событий с экземпляром EventProcessorHost запускает обработку событий. Регистрация указывает службе Центров событий ожидать потребления событий из секций в приложение-потребителе, а также вызова кода реализации [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor) всякий раз, когда события передаются для потребления. 
 
@@ -151,11 +152,11 @@ public class SimpleEventProcessor : IEventProcessor
 
 Кроме того, одна перегрузка [RegisterEventProcessorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.registereventprocessorasync?view=azure-dotnet#Microsoft_Azure_EventHubs_Processor_EventProcessorHost_RegisterEventProcessorAsync__1_Microsoft_Azure_EventHubs_Processor_EventProcessorOptions_) принимает объект [EventProcessorOptions](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.registereventprocessorasync?view=azure-dotnet#Microsoft_Azure_EventHubs_Processor_EventProcessorHost_RegisterEventProcessorAsync__1_Microsoft_Azure_EventHubs_Processor_EventProcessorOptions_) в качестве параметра. Этот параметр используется для управления поведением [EventProcessorHost.UnregisterEventProcessorAsync](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost.unregistereventprocessorasync). [EventProcessorOptions](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions) определяет четыре свойства и одно событие:
 
-- [MaxBatchSize.](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.maxbatchsize) Максимальный размер коллекции, которую вы хотите получать при вызове [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync). Этот размер не имеет минимального значения, только максимальное. Если принимается меньшее количество сообщений, **ProcessEventsAsync** выполняется только с доступным количеством.
-- [PrefetchCount.](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.prefetchcount) Значение, используемое базовым каналом AMQP, чтобы определить верхнюю границу количества сообщений, полученных клиентом. Это значение должно быть больше или равно [MaxBatchSize](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.maxbatchsize).
-- [InvokeProcessorAfterReceiveTimeout.](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.invokeprocessorafterreceivetimeout) Если этот параметр имеет значение **true**, [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync) вызывается, когда время базового вызова для получения событий в секции истекает. Этот метод полезен для выполнения временных действий во время простоя в разделе.
-- [InitialOffsetProvider.](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.initialoffsetprovider) Позволяет установить указатель на функцию или лямбда-выражение, которое вызывается для предоставления первоначального смещения, когда читатель приступает к чтению раздела. Без указания этого смещения средство чтения начинает с самого старого события, если только файл JSON со смещением уже не был сохранен в учетной записи хранения, предоставленной конструктору [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost). Этот метод полезен в тех случаях, когда вы хотите изменить поведение при запуске читателя. При вызове этого метода параметр объекта содержит идентификатор секции, для которой запущен читатель.
-- [ExceptionReceivedEventArgs.](/dotnet/api/microsoft.azure.eventhubs.processor.exceptionreceivedeventargs) Позволяет получать уведомления о любых базовых исключениях, возникающих в [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost). Если что-то работает не так, как ожидалось, стоит начать с этого события.
+- [MaxBatchSize](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.maxbatchsize). Максимальный размер коллекции, которую вы хотите получать при вызове [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync). Этот размер не имеет минимального значения, только максимальное. Если принимается меньшее количество сообщений, **ProcessEventsAsync** выполняется только с доступным количеством.
+- [PrefetchCount](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.prefetchcount). Значение, используемое базовым каналом AMQP, чтобы определить верхнюю границу количества сообщений, полученных клиентом. Это значение должно быть больше или равно [MaxBatchSize](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.maxbatchsize).
+- [InvokeProcessorAfterReceiveTimeout](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.invokeprocessorafterreceivetimeout). Если этот параметр имеет значение **true**, [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync) вызывается, когда время базового вызова для получения событий в разделе истекает. Этот метод полезен для выполнения временных действий во время простоя в разделе.
+- [InitialOffsetProvider](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessoroptions.initialoffsetprovider). Позволяет установить указатель на функцию или лямбда-выражение, которое вызывается для предоставления первоначального смещения, когда читатель приступает к чтению раздела. Без указания этого смещения средство чтения начинает с самого старого события, если только файл JSON со смещением уже не был сохранен в учетной записи хранения, предоставленной конструктору [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost). Этот метод полезен в тех случаях, когда вы хотите изменить поведение при запуске читателя. При вызове этого метода параметр объекта содержит идентификатор секции, для которой запущен читатель.
+- [ExceptionReceivedEventArgs](/dotnet/api/microsoft.azure.eventhubs.processor.exceptionreceivedeventargs). Позволяет получать уведомления о любых базовых исключениях, возникающих в [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost). Если что-то работает не так, как ожидалось, стоит начать с этого события.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

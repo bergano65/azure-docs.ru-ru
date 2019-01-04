@@ -1,20 +1,21 @@
 ---
 title: Отправка событий в Центры событий Azure с помощью Node.js | Документация Майкрософт
-description: Приступите к отправке событий в Центры событий с помощью Node.js.
+description: В статье описано, как создать приложение Node.js, которое отправляет сообщения в Центры событий Azure.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: kamalb
 ms.service: event-hubs
 ms.workload: core
 ms.topic: article
-ms.date: 10/18/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 14ea98b9d31bee08b962e8b3801ed507472ba692
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: c75d4404cb0892c3d90261af2fb4982ac84041c4
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49455799"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53163792"
 ---
 # <a name="send-events-to-azure-event-hubs-using-nodejs"></a>Отправка событий в Центры событий Azure с помощью Node.js
 
@@ -35,8 +36,10 @@ ms.locfileid: "49455799"
 ## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий
 Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве.
 
+Получите строку подключения для пространства имен концентратора событий, следуя [этим инструкциям](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Строка подключения понадобится нам позже.
+
 ## <a name="clone-the-sample-git-repository"></a>Клонирование примера репозитория Git
-Клонируйте пример репозитория Git из [Github](https://github.com/Azure/azure-event-hubs-node) на компьютере. 
+Клонируйте пример репозитория Git из [GitHub](https://github.com/Azure/azure-event-hubs-node) на компьютере. 
 
 ## <a name="install-nodejs-package"></a>Установка пакета Node.js
 Установите пакет Node.js для Центров событий Azure на компьютере. 

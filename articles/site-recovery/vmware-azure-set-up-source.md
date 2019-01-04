@@ -6,14 +6,14 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 10/29/2018
+ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: 5f7d3bb51b2d1c05083645ccc5bca4f668d4a661
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 7d81b7f0d84eb8751e4e95a31be58ed49a96bb2d
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52160534"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52835010"
 ---
 # <a name="set-up-the-source-environment-for-vmware-to-azure-replication"></a>Настройка исходного окружения для репликации из VMware в Azure
 
@@ -69,7 +69,7 @@ ms.locfileid: "52160534"
  - C:\ProgramData\ASRSetupLogs.
  - C:\ProgramData\LogUploadServiceLogs.
  - C:\inetpub.
- - Каталог установки сервера ASR. Например, это может быть E:\Program Files (x86) \Microsoft Azure Site Recovery.
+ - Каталог установки сервера ASR. Например:  E:\Program Files (x86) \Microsoft Azure Site Recovery.
 
 ### <a name="if-antivirus-software-is-active-on-scale-out-process-servermaster-target"></a>Антивирусное программное обеспечение работает на горизонтально масштабируемом сервере процессов или главном целевом объекте
 
@@ -81,7 +81,7 @@ ms.locfileid: "52160534"
 4. C:\ProgramData\ASRSetupLogs.
 5. C:\ProgramData\LogUploadServiceLogs.
 6. C:\ProgramData\Microsoft Azure Site Recovery.
-7. Каталог установки сервера процессов ASR с балансировкой нагрузки, например: C:\Program Files (x86) \Microsoft Azure Site Recovery.
+7. Каталог установки сервера ASR с балансировкой нагрузки, например C:\Program Files (x86)\Microsoft Azure Site Recovery
 
 ## <a name="common-issues"></a>Распространенные проблемы
 [!INCLUDE [site-recovery-vmware-to-azure-install-register-issues](../../includes/site-recovery-vmware-to-azure-install-register-issues.md)]

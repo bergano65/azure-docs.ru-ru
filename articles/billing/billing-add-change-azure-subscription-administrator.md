@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/19/2018
 ms.author: cwatson
-ms.openlocfilehash: 2380cd3712c47ca08e9b9b3597f09f4119238af3
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 53cecc845ed8bd15311e1bcec3ec9b36db8f5c2c
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52581619"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52727874"
 ---
 # <a name="add-or-change-azure-subscription-administrators"></a>Добавление или изменение администраторов подписки Azure
 
@@ -42,10 +42,10 @@ Azure предлагает несколько разных ролей. Для у
 1. Откройте раздел [**Подписки** на портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
 2. Выберите подписку, которой нужно предоставить доступ.
 3. В списке выберите **Управление доступом (IAM)**.
-4. Выберите **Добавить**.
-   (Если кнопка "Добавить" отсутствует, это значит, что у вас нет прав на добавление разрешений.)
+4. Выберите **Добавить назначение ролей**.
+   (Если кнопка "Добавить назначение ролей" отсутствует, это значит, что у вас нет прав на добавление разрешений.)
 5. В поле **Роль** выберите значение **Владелец**. 
-6. В поле **Назначение доступа** выберите значение **Пользователь, группа или приложение Azure AD**. 
+6. В поле **Назначить доступ** выберите **Пользователь, группа или субъект-служба Azure AD**. 
 7. В поле **Выбрать** укажите адрес электронной почты пользователя, для которого хотите добавить роль "Владелец". Выберите пользователя, а затем щелкните **Сохранить**.
 
     ![Снимок экрана, на котором показана выбранная роль "Владелец"](./media/billing-add-change-azure-subscription-administrator/add-role.png)
@@ -129,4 +129,4 @@ Azure предлагает несколько разных ролей. Для у
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

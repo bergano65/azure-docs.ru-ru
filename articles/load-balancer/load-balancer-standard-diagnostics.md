@@ -1,13 +1,11 @@
 ---
-title: Диагностика Azure Load Balancer уровня "Стандартный" | Документация Майкрософт
+title: Диагностика Load Balancer (цен. категория "Стандартный")
+titlesuffix: Azure Load Balancer
 description: Использование доступных метрик и информации о работоспособности для диагностики Azure Load Balancer уровня "Стандартный".
 services: load-balancer
 documentationcenter: na
 author: KumudD
-manager: jeconnoc
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 46b152c5-6a27-4bfc-bea3-05de9ce06a57
+ms.custom: seodec18
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -15,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/11/2018
 ms.author: Kumud
-ms.openlocfilehash: 258e093acd50946e95360416f89b2ceb96ee35d3
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 77c3c595994092ff2ca68f3cefa5eb3c8a54bcd6
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52426474"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53189053"
 ---
 # <a name="metrics-and-health-diagnostics-for-standard-load-balancer"></a>Диагностика Load Balancer уровня "Стандартный" на основе метрик и сведений о работоспособности
 
 Azure Load Balancer уровня "Стандартный" предоставляет следующие возможности диагностики для ресурсов.
 * **Многомерные метрики**. С помощью [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) предоставляются новые возможности многомерной диагностики конфигураций общедоступной и внутренней подсистем балансировки нагрузки. Можно отслеживать ресурсы подсистемы балансировки нагрузки, управлять ими и устранять связанные с ними неполадки.
 
-* **Служба "Работоспособность ресурсов".** На странице Load Balancer на портале Azure и странице службы работоспособности ресурсов Azure (в разделе "Мониторинг") представлен раздел "Работоспособность ресурсов" для конфигурации общедоступной подсистемы балансировки нагрузки в службе Load Balancer уровня "Стандартный".
+* **Работоспособность ресурса**. На странице Load Balancer на портале Azure и странице службы "Работоспособность ресурсов" (в разделе "Мониторинг") представлен раздел "Работоспособность ресурсов" для конфигурации общедоступной подсистемы балансировки нагрузки в службе Load Balancer (цен. категория "Стандартный").
 
 Эта статья содержит краткий обзор этих возможностей и способов их использования для Load Balancer уровня "Стандартный".
 
@@ -59,7 +57,7 @@ Azure Load Balancer предоставляет новые многомерные
 
 ![Предварительная версия решения "Метрики" для Load Balancer уровня "Стандартный"](./media/load-balancer-standard-diagnostics/LBMetrics1.png)
 
-*Рисунок. Метрики доступности выделенного IP-адреса и состояния пробы работоспособности в Load Balancer уровня "Стандартный"*
+*Рисунок. Метрики доступности выделенного IP-адреса и состояния пробы работоспособности в Load Balancer (цен. категория "Стандартный")*
 
 ### <a name="retrieve-multi-dimensional-metrics-programmatically-via-apis"></a>Получение многомерных метрик через API-интерфейсы программным образом
 
@@ -157,7 +155,7 @@ Azure Load Balancer предоставляет новые многомерные
 
 ![Количество байтов](./media/load-balancer-standard-diagnostics/LBMetrics-ByteCount.png)
 
-*Рисунок. Количество байтов Load Balancer*
+*Рисунок. Количество байтов подключений для Load Balancer*
 
 #### <a name = "vipavailabilityandhealthprobes"></a>Как выполнить диагностику развертывания подсистемы балансировки нагрузки?
 
@@ -193,7 +191,7 @@ Azure Load Balancer предоставляет новые многомерные
 
    ![Страница мониторинга](./media/load-balancer-standard-diagnostics/LBHealth1.png)
 
-   *Рисунок. Ссылка "Работоспособность службы" в Azure Monitor*
+   *Рисунок. Ссылка службы "Работоспособность службы" в Azure Monitor*
 
 2. Выберите **Работоспособность ресурсов** и убедитесь, что выбран **идентификатор подписки**, а **для типа ресурса установлено значение Load Balancer**.
 

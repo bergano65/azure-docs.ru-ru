@@ -1,23 +1,24 @@
 ---
-title: Руководство по созданию бота QnA с помощью службы Azure Bot — QnA Maker
+title: Создание бота QnA с помощью службы Azure Bot — QnA Maker
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве приводятся пошаговые инструкции по созданию бота QnA с помощью службы Azure Bot версии 3 на портале Azure.
 services: cognitive-services
 author: tulasim88
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: qna-maker`
 ms.topic: article
 ms.date: 10/25/2018
 ms.author: tulasim
-ms.openlocfilehash: 19c56cf05e307deca52808b0eeba65b8949ffc0b
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: f5587e14a0250e7312f1c95598b481bd052931c3
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50212749"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094837"
 ---
-# <a name="tutorial-create-a-qna-bot-with-azure-bot-service-v3"></a>Руководство по созданию бота QnA с помощью службы Azure Bot версии 3
+# <a name="tutorial-create-a-qna-bot-with-azure-bot-service-v3"></a>Руководство. Создание бота QnA с помощью службы Azure Bot версии 3
 
 В этом руководстве приведены пошаговые инструкции по созданию бота QnA с помощью службы Azure Bot версии 3 на [портале Azure](https://portal.azure.com). Вам не придется писать код. Для подключения опубликованной базы знаний к боту достаточно лишь изменить параметры приложения бота. 
 
@@ -60,13 +61,13 @@ ms.locfileid: "50212749"
 
 5. Выберите в поле шаблона бота **Question and Answer** (Вопрос и ответ), а затем сохраните параметры шаблона, нажав кнопку **Выбрать**.
 
-    ![выбор службы бота](../media/qnamaker-tutorials-create-bot/bot-v3-template.png)
+    ![Выбор шаблона бота](../media/qnamaker-tutorials-create-bot/bot-v3-template.png)
 
 6. Просмотрите параметры, а затем нажмите кнопку **Создать**. Это действие позволяет создать службу бота и развернуть ее в Azure.
 
-    ![выбор службы бота](../media/qnamaker-tutorials-create-bot/bot-blade-settings-v3.png)
+    ![Создание бота](../media/qnamaker-tutorials-create-bot/bot-blade-settings-v3.png)
 
-7. Убедитесь, что служба бота развернута.
+7. Убедитесь, что служба Bot Service развернута.
 
     - Щелкните **Уведомления** (значок колокольчика, расположенный в верхней части портала Azure). Уведомление изменится с **Развертывание начато** на **Развертывание прошло успешно**.
     - После того как уведомление изменится на **Развертывание прошло успешно**, в этом уведомлении выберите **Go to resource** (Перейти к ресурсу).

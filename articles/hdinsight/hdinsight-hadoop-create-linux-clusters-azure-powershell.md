@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: hrasheed
-ms.openlocfilehash: 76bef5fcae8e95a52b7a35fdbb657db5dde01bc3
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: af6915a522788f95aaac8ec1b690a7e53b31aac6
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035192"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52863437"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-using-azure-powershell"></a>Создание кластеров под управлением Linux в HDInsight с помощью Azure PowerShell
 
@@ -62,7 +62,7 @@ Azure PowerShell — это полнофункциональная среда с
 
 Операция создания кластера может занять до 20 минут.
 
-## <a name="create-cluster-configuration-object"></a>Создание кластера: объект конфигурации
+## <a name="create-cluster-configuration-object"></a>Создание кластера. Объект конфигурации
 
 Можно также создать объект конфигурации HDInsight с помощью командлета `New-AzureRmHDInsightClusterConfig`. Затем можно изменить этот объект конфигурации, чтобы включить дополнительные параметры конфигурации для кластера. Наконец, используйте параметр `-Config` командлета `New-AzureRmHDInsightCluster`, чтобы использовать эту конфигурацию.
 
@@ -90,16 +90,16 @@ Azure PowerShell — это полнофункциональная среда с
 
 Теперь, когда вы успешно создали кластер HDInsight, обратитесь к следующим ресурсам, чтобы научиться с ним работать.
 
-### <a name="hadoop-clusters"></a>Кластеры Hadoop
+### <a name="apache-hadoop-clusters"></a>Кластеры Apache Hadoop
 
-* [Использование Hive с HDInsight](hadoop/hdinsight-use-hive.md)
-* [Использование Pig с HDInsight](hadoop/hdinsight-use-pig.md)
-* [Использование MapReduce с HDInsight](hadoop/hdinsight-use-mapreduce.md)
+* [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md)
+* [Использование Pig с Hadoop в HDInsight](hadoop/hdinsight-use-pig.md)
+* [Использование Apache HAdoop MapReduce в HDInsight](hadoop/hdinsight-use-mapreduce.md)
 
-### <a name="hbase-clusters"></a>Кластеры HBase
+### <a name="apache-hbase-clusters"></a>Кластеры Apache HBase
 
-* [Начало работы с HBase в HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md)
-* [Разработка приложений Java для HBase в HDInsight](hbase/apache-hbase-build-java-maven-linux.md)
+* [Начало работы с Apache HBase в HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md)
+* [Разработка приложений Java для Apache HBase в HDInsight](hbase/apache-hbase-build-java-maven-linux.md)
 
 ### <a name="storm-clusters"></a>Кластеры Storm
 
@@ -107,10 +107,10 @@ Azure PowerShell — это полнофункциональная среда с
 * [Использование компонентов Python в Storm в HDInsight](storm/apache-storm-develop-python-topology.md)
 * [Развертывание и мониторинг топологий с помощью Storm в HDInsight](storm/apache-storm-deploy-monitor-topology-linux.md)
 
-### <a name="spark-clusters"></a>Кластеры Spark
+### <a name="apache-spark-clusters"></a>Кластеры Apache Spark
 
 * [Создание автономного приложения с использованием Scala](spark/apache-spark-create-standalone-application.md)
-* [Удаленный запуск заданий с помощью Livy в кластере Spark](spark/apache-spark-livy-rest-interface.md)
-* [Использование Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](spark/apache-spark-use-bi-tools.md)
-* [Использование Spark с машинным обучением. Использование Spark в HDInsight для прогнозирования результатов контроля качества пищевых продуктов](spark/apache-spark-machine-learning-mllib-ipython.md)
+* [Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](spark/apache-spark-livy-rest-interface.md)
+* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](spark/apache-spark-use-bi-tools.md)
+* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](spark/apache-spark-machine-learning-mllib-ipython.md)
 

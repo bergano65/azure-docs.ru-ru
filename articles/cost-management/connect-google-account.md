@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 10/05/2018
+ms.date: 12/07/2018
 ms.topic: conceptual
 ms.service: cost-management
 manager: benshy
-ms.custom: ''
-ms.openlocfilehash: 1877acbd39f4e312e3a567e092bb0bcf7531b96b
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.custom: seodec18
+ms.openlocfilehash: 45d5cee92ce75c2e13f602d1ea6540698ea8abf3
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52276335"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53078367"
 ---
 # <a name="connect-a-google-cloud-platform-account"></a>Подключение учетной записи Google Cloud Platform
 
@@ -30,8 +30,8 @@ ms.locfileid: "52276335"
 
 1. Войдите в консоль Google Cloud Platform по адресу[https://console.cloud.google.com](https://console.cloud.google.com).
 2. Просмотрите сведения о проекте, который вы хотите реализовать в Cloudyn, и найдите **имя проекта** и **идентификатор проекта**. Сохраните данные для использования на следующих шагах.  
-    ![Консоль Google Cloud Platform](./media/connect-google-account/gcp-console01.png)
-3. Если выставление счетов не включено и не связано с проектом, создайте учетную запись выставления счетов. Дополнительные сведения см. в разделе [Создание учетной записи выставления счетов](https://cloud.google.com/billing/docs/how-to/manage-billing-account#create\_a\_new\_billing\_account).
+    ![Имя и идентификатор проекта в консоли Google Cloud Platform](./media/connect-google-account/gcp-console01.png)
+3. Если выставление счетов не включено и не связано с проектом, создайте учетную запись выставления счетов. Дополнительные сведения см. в разделе [Создание учетной записи выставления счетов](https://cloud.google.com/billing/docs/how-to/manage-billing-account#create/_a/_new/_billing/_account).
 
 ## <a name="enable-storage-bucket-billing-export"></a>Включение экспорта данных выставления счетов контейнеров хранилища
 
@@ -41,7 +41,7 @@ Cloudyn извлекает данные выставления счетов Goog
 
 1. Если экспорт выставленных счетов в файл не включен, следуйте инструкциям в разделе [Как включить экспорт выставленных счетов в файл](https://cloud.google.com/billing/docs/how-to/export-data-file#how_to_enable_billing_export_to_a_file). Для этого можно использовать формат экспорта выставленных счетов CSV или JSON.
 2. В противном случае в консоли Google Cloud Platform перейдите к разделу **Выставление счета** > **Billing export** (Экспорт выставленного счета). Запишите **имя контейнера** и **префикс отчета** выставления счетов.  
-    ![Экспорт выставленных счетов](./media/connect-google-account/billing-export.png)
+    ![Сведения об экспорте выставленных счетов на соответствующей странице](./media/connect-google-account/billing-export.png)
 
 ## <a name="enable-google-cloud-platform-apis"></a>Включение API-интерфейсов Google Cloud Platform
 
@@ -69,7 +69,7 @@ Cloudyn извлекает данные выставления счетов Goog
 4. В поле **Google Account Name** (Имя учетной записи Google) введите адрес электронной почты для учетной записи выставления счетов, а затем щелкните **Далее**.
 5. В диалоговом окне аутентификации Google выберите или введите учетную запись Google, а затем **предоставьте** cloudyn.com доступ к учетной записи.
 6. Добавьте записанную ранее информацию о проекте запроса. Введите **идентификатор проекта**, имя **проекта**, имя контейнера **выставления счетов** и префикс отчета **файла выставления счетов**, а затем щелкните **Сохранить**.  
-    ![Добавление проекта Google](./media/connect-google-account/add-project.png)
+    ![Добавление проекта Google в учетную запись Cloudyn](./media/connect-google-account/add-project.png)
 
 Учетная запись Google отобразится в списке учетных записей с указанием **Проверка подлинности выполнена**. Под ним должно отображаться имя и идентификатор проекта Google с символом зеленой галочки. Состояние учетной записи должно быть **Завершено**.
 

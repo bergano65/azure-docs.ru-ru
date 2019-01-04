@@ -1,5 +1,5 @@
 ---
-title: 'Доменные службы Azure Active Directory: начало работы | Документы Майкрософт'
+title: Доменные службы Azure Active Directory. Начало работы | Документация Майкрософт
 description: Включение доменных служб Azure Active Directory с помощью портала Azure.
 services: active-directory-ds
 documentationcenter: ''
@@ -15,17 +15,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: ergreenl
-ms.openlocfilehash: cac1814057b5adbb75d9484b332bd3f8aaa31a18
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: ec51ba28c81e2aa2dbfe2a3dc55d9940c74ff673
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52446864"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52959858"
 ---
 # <a name="enable-azure-active-directory-domain-services-using-the-azure-portal"></a>Включение доменных служб Azure Active Directory с помощью портала Azure.
 
-
 ## <a name="task-3-configure-administrative-group"></a>Задача 3. Настройка административной группы
+
 В рамках этой задачи конфигурации вы создадите административную группу в каталоге Azure AD. Эта специальная административная группа называется *Администраторы контроллера домена AAD*. Участникам этой группы предоставляются разрешения администратора для компьютеров, присоединенных к управляемому домену. На компьютерах, присоединенных к домену, эта группа добавляется в группу "Администраторы". Кроме того, участники этой группы могут подключаться по протоколу удаленного рабочего стола к компьютерам, присоединенным к домену.
 
 > [!NOTE]
@@ -49,14 +49,14 @@ ms.locfileid: "52446864"
 ### <a name="full-synchronization"></a>Полная синхронизация
 
 1. Чтобы выполнить полную синхронизацию, просто нажмите кнопку "ОК" в нижней части экрана, так как этот параметр выбран по умолчанию.
-    ![Полная синхронизация](./media\active-directory-domain-services-admin-guide\create-sync-all.PNG)
+    ![Полная синхронизация](./media/active-directory-domain-services-admin-guide/create-sync-all.PNG)
 
 ### <a name="scoped-synchronization"></a>Синхронизация в области
 
 1. Переключите кнопку на синхронизацию в области. Отобразится страница выбора групп. На этой странице можно увидеть, какие группы уже выбраны для синхронизации с управляемым доменом.
-    ![Синхронизация в области](media\active-directory-domain-services-admin-guide\create-sync-scoped.PNG)
+    ![Синхронизация в области](media/active-directory-domain-services-admin-guide/create-sync-scoped.PNG)
 2. Щелкните **Выбор групп** на верхней панели навигации. Сбоку появится всплывающее окно выбора групп. Оно позволяет выбрать любые дополнительные группы для синхронизации с доменными службами Azure AD. По окончании нажмите кнопку **Выбрать**, чтобы закрыть окно выбора групп и добавить эти группы в список.
-    ![Выбор групп для синхронизации в области](media\active-directory-domain-services-admin-guide\create-sync-scoped-groupselect.PNG)
+    ![Выбор групп для синхронизации в области](media/active-directory-domain-services-admin-guide/create-sync-scoped-groupselect.PNG)
 3. Нажмите **OK**, чтобы перейти к странице сводки.
 
 ## <a name="deploy-your-managed-domain"></a>Развертывание управляемого домена
@@ -69,8 +69,8 @@ ms.locfileid: "52446864"
 
     ![Уведомление — выполняется развертывание](./media/getting-started/domain-services-blade-deployment-in-progress.png)
 
-
 ## <a name="check-the-deployment-status-of-your-managed-domain"></a>Проверка состояния развертывания управляемого домена
+
 Процесс подготовки управляемого домена может занять до одного часа.
 
 1. Во время развертывания можно выполнить поиск, введя "доменные службы" в поле поиска **Поиск ресурсов**. В списке результатов выберите **Доменные службы Azure AD**. В колонке **Доменные службы Azure AD** будет указан подготавливаемый управляемый домен.
@@ -96,10 +96,10 @@ ms.locfileid: "52446864"
 
     ![Доменные службы — вкладка "Свойства" после полной подготовки](./media/getting-started/domain-services-provisioned-properties.png)
 
-
 ## <a name="need-help"></a>Требуется помощь?
+
 Обоим контроллерам домена может понадобиться час или два для подготовки управляемого домена. Если развертывание закончилось ошибкой или в течение нескольких часов находится в состоянии "Ожидание", [обратитесь за помощью к команде разработчиков](active-directory-ds-contact-us.md).
 
-
 ## <a name="next-step"></a>Дальнейшие действия
+
 [Задача 4. Обновление настроек DNS для виртуальной сети Azure](active-directory-ds-getting-started-dns.md)

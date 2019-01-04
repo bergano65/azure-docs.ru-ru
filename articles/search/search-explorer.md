@@ -1,6 +1,6 @@
 ---
-title: Обозреватель поиска для обращения к индексам в службе "Поиск Azure" | Документация Майкрософт
-description: Узнайте, как использовать обозреватель поиска для обращения к индексам в службе "Поиск Azure".
+title: Обозреватель поиска на портале Azure для запроса индексов в службе "Поиск Azure"
+description: Узнайте, как запрашивать индексы в службе "Поиск Azure" с помощью таких средств портала Azure, как обозреватель поиска. Введите условия поиска или полные строки поиска, используя расширенный синтаксис.
 manager: cgronlun
 author: HeidiSteen
 services: search
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 07/10/2018
 ms.author: heidist
-ms.openlocfilehash: 520d9e7b1899c54d922ff6fb77e0901f9609b029
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.custom: seodec2018
+ms.openlocfilehash: 11f102fcb2a24f9062313f9a3234c29e70a3dfe0
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39004139"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53315676"
 ---
 # <a name="how-to-use-search-explorer-to-query-indexes-in-azure-search"></a>Как использовать обозреватель поиска для обращения к индексам в службе "Поиск Azure" 
 

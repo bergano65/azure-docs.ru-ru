@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 04/27/2018
 ms.author: glenga
-ms.openlocfilehash: 2266f63f9689ec4d22659eb4a7c4876e25fa08b1
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: f6d343d42bf9d918bf23c9f5f442d977a5caca96
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52335220"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53343723"
 ---
 # <a name="how-to-use-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK WebJobs Azure для фоновой обработки на основе событий
 
@@ -450,7 +450,7 @@ public static void RemoveItem([QueueTrigger("remove-item")] string message)
 
 Триггер таймера автоматически гарантирует, что запускается только один экземпляр таймера, поэтому вы не получаете больше одного экземпляра функции, запущенного в заданное время.
 
-Если вы хотите, чтобы выполнялся только один экземпляр функции, даже если существует несколько экземпляров несущего веб-приложения, можно использовать атрибут [Singleton](#singleton).
+Если вы хотите, чтобы выполнялся только один экземпляр функции, даже если имеется несколько экземпляров несущего веб-приложения, можно использовать атрибут [Singleton](#singleton-attribute).
     
 ## <a name="filters"></a>Фильтры 
 
@@ -498,7 +498,7 @@ config.LoggerFactory = new LoggerFactory()
 
 ### <a name="custom-telemetry-for-application-insights"></a>Пользовательские данные телеметрии для Application Insights
 
-Изнутри клиент `TelemetryClient`, созданный поставщиком Application Insights для пакета SDK WebJobs, использует канал [ServerTelemetryChannel](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/develop/src/ServerTelemetryChannel/ServerTelemetryChannel.cs). Когда конечная точка Application Insights недоступна или регулирует входящие запросы, этот канал [сохраняет запросы в файловой системе веб-приложения и позже повторно отправляет их](http://apmtips.com/blog/2015/09/03/more-telemetry-channels).
+Изнутри клиент `TelemetryClient`, созданный поставщиком Application Insights для пакета SDK WebJobs, использует канал [ServerTelemetryChannel](https://github.com/Microsoft/ApplicationInsights-dotnet/blob/develop/src/ServerTelemetryChannel/ServerTelemetryChannel.cs). Когда конечная точка Application Insights недоступна или регулирует входящие запросы, этот канал [сохраняет запросы в файловой системе веб-приложения и позже повторно отправляет их](https://apmtips.com/blog/2015/09/03/more-telemetry-channels).
 
 Клиент `TelemetryClient` создается классом, который реализует `ITelemetryClientFactory`. По умолчанию это [DefaultTelemetryClientFactory](https://github.com/Azure/azure-webjobs-sdk/blob/dev/src/Microsoft.Azure.WebJobs.Logging.ApplicationInsights/DefaultTelemetryClientFactory.cs).
 

@@ -4,12 +4,12 @@ ms.service: data-factory
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
-ms.openlocfilehash: 9722ca0d83901ec1c73468fb5c192dd2f54c38c7
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: a9f956e66be03a4811868cbc2e7d6fc7dc672310
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51572666"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52886338"
 ---
 ## <a name="specifying-formats"></a>Указание форматов
 Фабрика данных Azure поддерживает следующие типы форматов:
@@ -27,7 +27,7 @@ ms.locfileid: "51572666"
 | --- | --- | --- | --- |
 | columnDelimiter |Знак, используемый для разделения столбцов в файле. Вы можете использовать редкий непечатаемый символ, который обычно отсутствует в данных: например, укажите \u0001 (символ начала заголовка). |Допускается только один знак. Значение **по умолчанию** — **запятая (,)**. <br/><br/>Чтобы использовать [символы Юникода](https://en.wikipedia.org/wiki/List_of_Unicode_characters), необходимо получить соответствующий код. |Нет  |
 | rowDelimiter |Знак, используемый для разделения строк в файле. |Допускается только один знак. **По умолчанию** используется одно из следующих значений: **для чтения — [\r\n, \r, \n]**, для записи — **\r\n**. |Нет  |
-| escapeChar |Специальный знак, используемый для экранирования разделителя столбцов в содержимом входного файла. <br/><br/>Для таблицы нельзя указать и escapeChar, и quoteChar. |Допускается только один знак. Значение по умолчанию отсутствует. <br/><br/>Например, если в качестве разделителя столбцов используется запятая (,), но этот знак встречается и в тексте (пример: "Hello, world"), то в качестве знака экранирования можно определить знак доллара ($) и использовать в исходном тексте строку "Hello$, world". |Нет  |
+| escapeChar |Специальный знак, используемый для экранирования разделителя столбцов в содержимом входного файла. <br/><br/>Для таблицы нельзя указать и escapeChar, и quoteChar. |Допускается только один знак. Значение по умолчанию отсутствует. <br/><br/>Например, если в качестве разделителя столбцов используется запятая (,), но этот знак встречается и в тексте (пример: Hello, world), то в качестве escape-символа можно определить знак доллара ($) и использовать в исходном тексте строку Hello$, world. |Нет  |
 | quoteChar |Знак, используемый в качестве кавычки для заключения строкового значения. Разделители столбцов и строк внутри знаков кавычек будут рассматриваться как часть строкового значения. Это свойство применимо к входным и выходным наборам данных.<br/><br/>Для таблицы нельзя указать и escapeChar, и quoteChar. |Допускается только один знак. Значение по умолчанию отсутствует. <br/><br/>Например, если в качестве разделителя столбцов используется запятая (,) и нужно, чтобы этот знак встречался в тексте (например, <Hello, world>), то можно в качестве знака кавычек определить двойную кавычку (") и использовать в исходном тексте строку "Hello, world". |Нет  |
 | nullValue |Один или несколько знаков, используемых для представления значения NULL. |Один или несколько знаков. Значения **по умолчанию**: **\N и NULL** для чтения и **\N** для записи. |Нет  |
 | encodingName |Имя кодировки. |Допустимое имя кодировки. Ознакомьтесь с описанием свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Пример: windows-1250 или shift_jis. **По умолчанию** используется **UTF-8**. |Нет  |
@@ -78,7 +78,7 @@ ms.locfileid: "51572666"
 | filePattern |Шаблон данных, хранящихся в каждом JSON-файле. Допустимые значения: **setOfObjects** и **arrayOfObjects**. Значение **по умолчанию** — **setOfObjects**. Подробные сведения об этих шаблонах см. в разделе [Шаблоны файлов JSON](#json-file-patterns). |Нет  |
 | jsonNodeReference | Для итерации и извлечения данных из объектов в поле массива с таким же шаблоном укажите путь JSON этого массива. Это свойство поддерживается только в том случае, если данные копируются из JSON-файлов. | Нет  |
 | jsonPathDefinition | Выражение пути JSON для каждого столбца с его сопоставлением с настраиваемым именем столбца (начало в нижнем регистре). Это свойство поддерживается только в том случае, если данные копируются из JSON-файлов и данные можно извлечь из объекта или массива. <br/><br/> Для полей в области корневого объекта выражение пути должно начинаться с корня $. Для полей внутри массива, выбранных с помощью свойства `jsonNodeReference`, выражение должно начинаться с элемента массива. Инструкции по настройке см. в разделе [Пример JsonFormat](#jsonformat-example). | Нет  |
-| encodingName |Имя кодировки. Список допустимых имен кодировок приведен в описании свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Например: windows-1250 или shift_jis. **По умолчанию** используется **UTF-8**. |Нет  |
+| encodingName |Имя кодировки. Список допустимых имен кодировок приведен в описании свойства [Encoding.EncodingName](https://msdn.microsoft.com/library/system.text.encoding.aspx). Например: windows-1250 или shift_jis. По **умолчанию** используется **UTF-8**. |Нет  |
 | nestingSeparator |Символ, используемый для разделения уровней вложенности. Значение по умолчанию — точка (.). |Нет  |
 
 #### <a name="json-file-patterns"></a>Шаблоны файлов JSON
@@ -195,7 +195,7 @@ ms.locfileid: "51572666"
                     "TargetResourceType": "Microsoft.Compute/virtualMachines"
                 },
                 {
-                    "ResourceManagmentProcessRunId": "827f8aaa-ab72-437c-ba48-d8917a7336a3"
+                    "ResourceManagementProcessRunId": "827f8aaa-ab72-437c-ba48-d8917a7336a3"
                 },
                 {
                     "OccurrenceTime": "1/13/2017 11:24:37 AM"
@@ -207,7 +207,7 @@ ms.locfileid: "51572666"
 ```
 и вы хотите скопировать это содержимое (посредством извлечения данных из объекта и массива) в таблицу SQL Azure в следующем формате:
 
-| id | deviceType | targetResourceType | resourceManagmentProcessRunId | occurrenceTime |
+| id | deviceType | targetResourceType | resourceManagementProcessRunId | occurrenceTime |
 | --- | --- | --- | --- | --- |
 | ed0e4960-d9c5-11e6-85dc-d7996816aad3 | PC | Microsoft.Compute/virtualMachines | 827f8aaa-ab72-437c-ba48-d8917a7336a3 | 1/13/2017 11:24:37 AM |
 
@@ -232,7 +232,7 @@ ms.locfileid: "51572666"
             "type": "String"
         },
         {
-            "name": "resourceManagmentProcessRunId",
+            "name": "resourceManagementProcessRunId",
             "type": "String"
         },
         {
@@ -245,7 +245,7 @@ ms.locfileid: "51572666"
         "format": {
             "type": "JsonFormat",
             "filePattern": "setOfObjects",
-            "jsonPathDefinition": {"id": "$.id", "deviceType": "$.context.device.type", "targetResourceType": "$.context.custom.dimensions[0].TargetResourceType", "resourceManagmentProcessRunId": "$.context.custom.dimensions[1].ResourceManagmentProcessRunId", "occurrenceTime": " $.context.custom.dimensions[2].OccurrenceTime"}      
+            "jsonPathDefinition": {"id": "$.id", "deviceType": "$.context.device.type", "targetResourceType": "$.context.custom.dimensions[0].TargetResourceType", "resourceManagementProcessRunId": "$.context.custom.dimensions[1].ResourceManagementProcessRunId", "occurrenceTime": " $.context.custom.dimensions[2].OccurrenceTime"}      
         }
     }
 }

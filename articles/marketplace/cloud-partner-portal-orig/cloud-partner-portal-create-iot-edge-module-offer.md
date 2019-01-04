@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/19/2018
 ms.author: pbutlerm
-ms.openlocfilehash: d3cc1a09963c5f7fee613af24c63fd15b1cfffee
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: bf7d639c682e443f29b31b3c6d7438e89c406fde
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807224"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52838639"
 ---
 # <a name="how-to-publish-a-new-iot-edge-module-in-the-cloud-partner-portal"></a>Процесс публикации модуля IoT Edge на Портале Cloud Partner.
 
@@ -39,7 +39,7 @@ ms.locfileid: "48807224"
 
     -   Описание (в формате HTML)
 
-    -   Логотип в формате изображения .png следующих размеров (в пикселях): 40 x 40, 90 x 90, 115 x 115, 255 x 115.
+    -   Логотип в формате PNG следующих размеров (в пикселях): 40 x 40, 90 x 90, 115 x 115, 255 x 115.
 
     -   Политика конфиденциальности и условия использования
 
@@ -53,7 +53,7 @@ ms.locfileid: "48807224"
 -   Войдите в [учетную запись Портала Cloud Partner](https://cloudpartner.azure.com/).
 
 >[!Note]
->Общие сведения о Портале Cloud Partner можно просмотреть в [обучающей документации](https://cloudpartner.azure.com/#learn).
+>Общие сведения о Портале Cloud Partner можно просмотреть в [обучающей документации](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-getting-started-with-the-cloud-partner-portal).
 
 -   Выберите **Новое предложение**, а затем **Модуль IoT Edge**.
 

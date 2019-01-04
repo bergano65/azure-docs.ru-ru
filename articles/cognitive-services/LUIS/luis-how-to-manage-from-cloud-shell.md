@@ -1,21 +1,22 @@
 ---
-title: Сведения об использовании LUIS в Azure Cloud Shell
-titleSuffix: Azure Cognitive Services
+title: Данные об использовании в Cloud Shell
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Узнайте, как получить сведения об использовании LUIS в Azure Cloud Shell.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 11/27/2018
+ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: aca81bd529fe6151dce7aba6754874355189fc59
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: d4f1a76fe587a34448cf218dbfef10f6b0e2ea46
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52444398"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53133486"
 ---
 # <a name="usage-data-for-luis-service-from-azure-cloud-shell"></a>Получение сведений об использовании LUIS из Azure Cloud Shell
 С помощью портала Azure можно использовать командлеты PowerShell для работы с ресурсами LUIS. 
@@ -34,7 +35,7 @@ ms.locfileid: "52444398"
 
 Чтобы открыть Cloud Shell, воспользуйтесь кнопкой **Запустить Cloud Shell** или откройте в браузере [https://shell.azure.com](https://shell.azure.com). Выберите Power Shell в качестве среды. Если у вас нет учетной записи службы хранилища Azure, вам потребуется ее создать. 
 
-<a style="cursor:pointer" onclick='javascript:window.open("https://shell.azure.com", "_blank", "toolbar=no,scrollbars=yes,resizable=yes,menubar=no,location=no,status=no")'><image src="https://shell.azure.com/images/launchcloudshell.png" /></a>
+<a style="cursor:pointer" onclick='javascript:window.open("https://shell.azure.com", "_blank", "toolbar=no,scrollbars=yes,resizable=yes,menubar=no,location=no,status=no")'><image src="https://shell.azure.com/images/launchcloudshell.png" alt="Start powershell" /></a>
 
 ## <a name="luis-endpoint-usage-information"></a>Сведения об использовании конечной точки LUIS
 
@@ -42,7 +43,7 @@ ms.locfileid: "52444398"
 
 Синтаксис команды:
 
-```
+```powershell
 Get-AzureRmCognitiveServicesAccountUsage -ResourceGroupName my-resource-group -Name my-luis-service-name
 ```
 
@@ -50,7 +51,7 @@ Get-AzureRmCognitiveServicesAccountUsage -ResourceGroupName my-resource-group -N
 
 Командлет возвращает сведения об использовании 16 из 10 000 попаданий конечной точки, использованных в 30-дневный период, заканчивающийся 7 июня:
 
-```
+```powershell
 CurrentValue  : 16
 Name          : LUIS.Calls
 Limit         : 10000

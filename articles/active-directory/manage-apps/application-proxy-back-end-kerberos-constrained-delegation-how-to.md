@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 52157797bb01fc73c551ca9654b2360d161b653d
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 2a55e39414cd691c48b015b3aae73f93cbb95aab
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355786"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53134664"
 ---
 # <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Устранение неполадок конфигураций ограниченного делегирования Kerberos для прокси-сервера приложения
 
@@ -32,7 +32,7 @@ ms.locfileid: "44355786"
 
 Для работы с этой статьей предполагается следующее:
 
--   Развертывание компонента Azure AD Application Proxy выполнено согласно [этой статье](application-proxy-enable.md), а общий доступ к приложениям без ограниченного делегирования Kerberos работает как ожидалось.
+-   Развертывание компонента Azure AD Application Proxy выполнено согласно [этой статье](application-proxy-add-on-premises-application.md), а общий доступ к приложениям без ограниченного делегирования Kerberos работает как ожидалось.
 
 -   Опубликованное целевое приложение основано на службах Internet Information Services (IIS) и реализации Kerberos от корпорации Майкрософт.
 
@@ -64,7 +64,7 @@ ms.locfileid: "44355786"
 
    ![Сбой авторизации из-за отсутствующих разрешений](./media/application-proxy-back-end-kerberos-constrained-delegation-how-to/graphic2.png)
 
-Оба этих изображения указывают на неработоспособность единого входа. В результате этого пользователь не может получить доступ к приложению.
+Оба этих снимка экрана свидетельствуют о неработоспособности единого входа. В результате этого пользователь не может получить доступ к приложению.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

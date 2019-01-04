@@ -1,5 +1,5 @@
 ---
-title: Подключение виртуальной машины SQL к Поиску Azure | Документация Майкрософт
+title: Подключение виртуальной машины SQL Azure для индексирования поиска в службе "Поиск Azure"
 description: Активируйте зашифрованные подключения и настройте брандмауэр, чтобы разрешить подключения к SQL Server на виртуальной машине Azure из индексатора Поиска Azure.
 author: HeidiSteen
 manager: cgronlun
@@ -8,17 +8,18 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 01/23/2017
 ms.author: heidist
-ms.openlocfilehash: 7800e83891cb336bb896299b8fd4d6b3ba590178
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.custom: seodec2018
+ms.openlocfilehash: 5f04c98e1337c2b65c9e0bc8401dd6045a84021e
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34366466"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53312038"
 ---
 # <a name="configure-a-connection-from-an-azure-search-indexer-to-sql-server-on-an-azure-vm"></a>Настройка подключения из индексатора Поиска Azure к SQL Server на виртуальной машине Azure
 Как было отмечено в статье [Подключение базы данных SQL Azure к Поиску Azure с помощью индексаторов](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#faq), служба поиска Azure поддерживает создание индексаторов для **SQL Server на виртуальных машинах Azure** (или **виртуальных машинах SQL Azure** для краткости), но существует несколько требований безопасности, которые необходимо выполнить. 
 
-**Длительность выполнения задачи:** около 30 минут, если на виртуальной машине уже установлен сертификат.
+**Длительность выполнения задачи:** около 30 минут, если на виртуальной машине уже установлен сертификат.
 
 ## <a name="enable-encrypted-connections"></a>Активация зашифрованных подключений
 Для службы поиска Azure требуется зашифрованный канал для всех запросов индексатора, выполняемых через общедоступное Интернет-подключение. В данном разделе перечислены действия, необходимые для выполнения этого требования.

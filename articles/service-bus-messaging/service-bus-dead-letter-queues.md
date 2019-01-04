@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/26/2018
 ms.author: spelluru
-ms.openlocfilehash: df69406bd0a6e09f66262ce66f8eeb7cada2422a
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: eb4057b4cfc6a68fb3489a7ab6fb1ee6b5f41d7d
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47393991"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53338468"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Обзор очередей недоставленных сообщений служебной шины
 
@@ -76,7 +76,7 @@ ms.locfileid: "47393991"
 
 Сообщения отправляются в очередь недоставленных сообщений при следующих условиях:
 
-- Сообщение проходит более 3 очередей или разделов, которые [связаны друг с другом](service-bus-auto-forwarding.md).
+- Сообщение проходит более 4 очередей или разделов, которые [связаны друг с другом](service-bus-auto-forwarding.md).
 - Целевая очередь (или раздел) отключена или удалена.
 - Очередь или раздел назначения превышает максимальный размер сущности.
 

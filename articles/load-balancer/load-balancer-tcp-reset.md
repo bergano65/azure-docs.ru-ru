@@ -1,26 +1,24 @@
 ---
-title: Сброс TCP-подключений для Load Balancer при простое | Документация Майкрософт
+title: Сброс TCP-подключений Load Balancer при простое в Azure
+titlesuffix: Azure Load Balancer
 description: Load Balancer с двунаправленными TCP-пакетами RST при истечении времени ожидания простоя
 services: load-balancer
 documentationcenter: na
 author: KumudD
-manager: timlt
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 46b152c5-6a27-4bfc-bea3-05de9ce06a57
+ms.custom: seodec18
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 10/08/2018
+ms.date: 12/03/2018
 ms.author: kumud
-ms.openlocfilehash: 9aa3811eb03d38a4c6ab8203512f3e6699098122
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 0b3e8fc72eb22a67c0672be19f60d4956d3377b7
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48883641"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53257308"
 ---
 # <a name="load-balancer-with-tcp-reset-on-idle-public-preview"></a>Load Balancer со сбросом TCP-подключений при простое (общедоступная предварительная версия)
 
@@ -76,7 +74,17 @@ ms.locfileid: "48883641"
 | Регион |
 |---|
 | Юго-восточная Азия |
+| Южная часть Бразилии |
+| Центральная Канада |
 | Западная Европа |
+| Центральная Индия |
+| Западная Индия |
+| Западная часть Японии |
+| Центральная Корея |
+| Южная Корея |
+| Север Соединенного Королевства |
+| Юг Соединенного Королевства 2 |
+| Восточная часть США |
 | Восточная часть США 2 |
 | Север США |
 | Западная часть США |

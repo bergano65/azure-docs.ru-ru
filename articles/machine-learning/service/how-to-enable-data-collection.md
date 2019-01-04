@@ -1,5 +1,6 @@
 ---
-title: Включение сбора данных для моделей в рабочей среде — машинное обучение Azure
+title: Сбор данных рабочих моделей
+titleSuffix: Azure Machine Learning service
 description: Сведения о сборе входных данных модели машинного обучения Azure в хранилище BLOB-объектов Azure.
 services: machine-learning
 ms.service: machine-learning
@@ -9,12 +10,13 @@ ms.reviewer: jmartens
 ms.author: marthalc
 author: marthalc
 ms.date: 11/08/2018
-ms.openlocfilehash: f4340d1ef30bb4317e658c9a9a936f009054e784
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.custom: seodec18
+ms.openlocfilehash: 2a4f0f1100064010405c3d0bc599e7add1041074
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51710636"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53271578"
 ---
 # <a name="collect-data-for-models-in-production"></a>Сбор данных для моделей в рабочей среде
 
@@ -45,18 +47,16 @@ ms.locfileid: "51710636"
 /modeldata/<subscriptionid>/<resourcegroup>/<workspace>/<webservice>/<model>/<version>/<identifier>/<year>/<month>/<day>/data.csv
 # example: /modeldata/1a2b3c4d-5e6f-7g8h-9i10-j11k12l13m14/myresourcegrp/myWorkspace/aks-w-collv9/best_model/10/inputs/2018/12/31/data.csv
 ```
->[!NOTE]
-> Код в этой статье был протестирован с пакетом SDK для службы "Машинное обучение Azure" версии 0.1.74.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://aka.ms/AMLfree), прежде чем начать работу.
+- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
 
 - Должны быть установлены: рабочая область службы "Машинное обучение Azure", локальный каталог со сценариями и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
 
 - Обученная модель машинного обучения для развертывания в службе Azure Kubernetes (AKS). Если у вас ее нет, обратитесь к [руководству по обучению модели классификации изображений](tutorial-train-models-with-aml.md).
 
-- [Кластер AKS](how-to-deploy-to-aks.md).
+- Кластер Службы Azure Kubernetes. Сведения о том, как создать и развернуть модель на кластере, см. в документе [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
 
 - [Настройте свою среду](how-to-configure-environment.md) и установите [пакет SDK для мониторинга](https://aka.ms/aml-monitoring-sdk).
 
@@ -81,7 +81,7 @@ ms.locfileid: "51710636"
     prediction_dc = ModelDataCollector("best_model", identifier="predictions", feature_names=["prediction1", "prediction2"])
     ```
 
-    Параметр *CorrelationId* является необязательным, и если он не требуется для модели, указывать его не нужно. Указание идентификатора корреляции упрощает сопоставление с другими данными. (К ним относятся LoanNumber, CustomerId и т. д.)
+    Параметр *CorrelationId* является необязательным, и если он не требуется для модели, указывать его не нужно. Указание идентификатора корреляции упрощает сопоставление с другими данными. (Примеры: LoanNumber, CustomerId и т. д.)
     
     *Идентификатор* используется в дальнейшем для создания структуры папок BLOB-объекта. Его можно использовать, чтобы отделить "необработанные" данные от "обработанных".
 
@@ -104,7 +104,7 @@ ms.locfileid: "51710636"
     aks_config = AksWebservice.deploy_configuration(collect_model_data=True, enable_app_insights=True)
     ``` 
 
-5. [Создание образа и развертывание службы.](how-to-deploy-to-aks.md) 
+5. Сведения о том, как создать образ и развернуть службу, см. в документе [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
 
 
 Если в **файле среды** и **файле оценки** уже указана служба с установленными зависимостями, вы можете включить сбор данных следующим образом:
@@ -136,7 +136,7 @@ ms.locfileid: "51710636"
 
   1. Выберите **Развертывания** -> **Выбор службы** -> **Изменить**.
 
-    [![Изменение службы](media/how-to-enable-data-collection/EditService.PNG)](./media/how-to-enable-data-collection/EditService.PNG#lightbox)
+    [![Параметр "Изменить"](media/how-to-enable-data-collection/EditService.PNG)](./media/how-to-enable-data-collection/EditService.PNG#lightbox)
 
   1. В разделе **Дополнительные параметры** отмените выбор параметра **Включить сбор данных модели**. 
 
@@ -172,7 +172,7 @@ ms.locfileid: "51710636"
 
 ### <a name="analyzing-model-data-through-power-bi"></a>Анализ данных модели с помощью Power BI
 
-1. Скачайте [PowerBi Desktop](http://www.powerbi.com) и откройте его.
+1. Скачайте [PowerBi Desktop](https://www.powerbi.com) и откройте его.
 
 1. Выберите **Получить данные**, а затем [**Хранилище BLOB-объектов Azure**](https://docs.microsoft.com/power-bi/desktop-data-sources).
 
@@ -231,8 +231,6 @@ ms.locfileid: "51710636"
 
 ## <a name="example-notebook"></a>Пример записной книжки
 
-В записной книжке [00.Getting Started/12.enable-data-collection-for-models-in-aks.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/01.getting-started/12.enable-data-collection-for-models-in-aks) показаны основные понятия из этой статьи.  
+В записной книжке [how-to-use-azureml/deployment/enable-data-collection-for-models-in-aks/enable-data-collection-for-models-in-aks.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/enable-data-collection-for-models-in-aks/enable-data-collection-for-models-in-aks.ipynb) демонстрируются понятия, описанные в данной статье.  
 
-Получите эту записную книжку:
- 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]

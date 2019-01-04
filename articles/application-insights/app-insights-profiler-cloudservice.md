@@ -8,17 +8,16 @@ manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 445e607b6b0a21f840ab633b3a5a3779f49fdd98
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 5bb70bf56efac28029401b69ee4f87c2738c52e3
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50142916"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52721856"
 ---
 # <a name="profile-live-azure-cloud-services-with-application-insights"></a>Профилирование облачных служб реального времени Azure с помощью Application Insights
 
@@ -64,7 +63,7 @@ Application Insights Profiler поставляется в комплекте с 
       </WadCfg>
       ```
 
-    >   **ПРИМЕЧАНИ**. Если файл диагностики *diagnostics.wadcfgx* содержит другой приемник типа `ApplicationInsights`, все три ключа инструментирования должны совпадать:  
+    >   **Примечание**. Если файл диагностики *diagnostics.wadcfgx* также содержит другой приемник типа `ApplicationInsights`, все три ключа инструментирования должны совпадать:  
     >  * Ключ, используемый в приложении.  
     >  * Ключ, используемый в приемнике `ApplicationInsights`.  
     >  * Ключ, используемый в приемнике `ApplicationInsightsProfiler`.  

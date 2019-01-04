@@ -1,13 +1,12 @@
 ---
-title: Использование веб-службы машинного обучения с шаблоном веб-приложения в Студии машинного обучения Azure| Документация Майкрософт
+title: Использование веб-службы с шаблоном веб-приложения в Студии машинного обучения Azure | Документация Майкрософт
 description: Использование шаблона веб-приложения в Azure Marketplace для использования прогнозной веб-службы в машинном обучении Azure.
 keywords: веб-служба, ввод в эксплуатацию, REST API, машинное обучение
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: e0d71683-61b9-4675-8df5-09ddc2f0d92d
 ms.service: machine-learning
@@ -17,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2017
-ms.openlocfilehash: 2c0bba4a442b73b82ebc271c3516f65954d6d8a4
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 6a6da1af937338637cd875abe4e9d539b2e2b6e2
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52311574"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273890"
 ---
-# <a name="consume-an-azure-machine-learning-web-service-by-using-a-web-app-template"></a>Использование веб-службы Машинного обучения Azure с помощью шаблона веб-приложения
+# <a name="consume-an-azure-machine-learning-studio-web-service-by-using-a-web-app-template"></a>Использование веб-службы Студии машинного обучения Azure с помощью шаблона веб-приложения
 
 Вы можете разрабатывать прогнозную модель и развертывать ее как веб-службу Azure с помощью:
 - Студии машинного обучения Azure.
@@ -36,7 +35,7 @@ ms.locfileid: "52311574"
 
 Быстрее и легче всего можно получить доступ к веб-службе через шаблоны веб-приложений, доступные в [Azure Marketplace](https://azure.microsoft.com/marketplace/web-applications/all/).
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="azure-machine-learning-web-app-templates"></a>Шаблоны веб-службы Машинного обучения Azure
 С помощью шаблонов веб-служб, доступных в Azure Marketplace, можно создать пользовательское веб-приложение, которое «знает» входные данные вашей веб-службы и ожидаемые результаты. Вам нужно всего лишь предоставить веб-приложению доступ к веб-службе и данным, а шаблон выполнит все остальные действия.

@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect: что такое модуль PowerShell ADConnectivityTools | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: Модуль PowerShell ADConnectivityTools | Документация Майкрософт'
 description: В этом документе представлен новый модуль PowerShell ADConnectivity.
 services: active-directory
 author: billmath
@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 10/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 4020d754bd8c7728b43ef583aa7e7d8dbddcebec
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: e6f85d327fff1ee32dca6dfb2231b28e6dc96c61
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50669801"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52965642"
 ---
 # <a name="what-is-the-adconnectivitytool-powershell-module"></a>Что такое модуль PowerShell ADConnectivityTools?
 
@@ -24,7 +24,7 @@ ms.locfileid: "50669801"
 - Во время установки, когда сбой сетевого подключения препятствует успешной проверке учетных данных Active Directory, указанных пользователем в мастере.
 - После установки используется пользователем, который вызывает функции из сеанса PowerShell.
 
-Путь к инструменту: **C:\Program Files\Microsoft Azure Active Directory Connect\Tools\ ADConnectivityTool.psm1** 
+Средство находится здесь: **C:\Program Files\Microsoft Azure Active Directory Connect\Tools\ ADConnectivityTool.psm1**. 
 
 ## <a name="adconnectivitytool-during-installation"></a>Использование ADConnectivityTool во время установки
 
@@ -40,7 +40,7 @@ ms.locfileid: "50669801"
 При обнаружении какой-либо из этих проблем в окне мастера AAD Connect отображается сообщении об ошибке.
 
 
-![Ошибка](media\how-to-connect-adconnectivitytools\error1.png)
+![Ошибка](media/how-to-connect-adconnectivitytools/error1.png)
 
 Например, когда мы пытаемся добавить каталог на странице **Connect your directories** (Подключение каталогов), служба Azure AD Connect должна проверить его. Для этого ей требуется возможность взаимодействия с контроллером домена через порт 389.  Если это невозможно, мы увидим ошибку, как показано на снимке экрана выше.  
 

@@ -1,5 +1,5 @@
 ---
-title: Получение и анализ данных в жизненном цикле процесса обработки и анализа данных группы в Azure | Документация Майкрософт
+title: Получение и анализ данных в командном процессе обработки и анализа данных
 description: Цели, задачи и конечные результаты на этапе получения и анализа данных проектов обработки и анализа данных
 services: machine-learning
 author: marktab
@@ -10,15 +10,15 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 13cbcead381257c87f17dc8ed6666a1b8964d81a
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 77c67c491b3157103b267864417678c83326814c
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52441586"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141158"
 ---
-# <a name="data-acquisition-and-understanding"></a>Получение и изучение данных
+# <a name="data-acquisition-and-understanding-stage-of-the-team-data-science-process"></a>Этап получения и анализа данных в командном процессе обработки и анализа данных
 
 В этой статье описаны цели, задачи и конечные результаты, связанные с этапом получения и анализа данных процесса обработки и анализа данных группы (TDSP). Этот процесс выполняется в рамках рекомендуемого жизненного цикла, позволяя структурировать проекты по обработке и анализу данных. Этот жизненный цикл представляет основные этапы, которые обычно выполняются проектами, часто итеративно:
 
@@ -66,7 +66,7 @@ ms.locfileid: "52441586"
 ## <a name="artifacts"></a>Артефакты
 Ниже представлены некоторые примеры конечных результатов для этого этапа:
 
-   * [Отчет о качестве данных](https://github.com/Azure/Azure-TDSP-ProjectTemplate/blob/master/Docs/DataReport/DataSummaryReport.md). Этот отчет включает сводную информацию о данных, связи каждого атрибута с целевым объектом, ранжирование переменных и т. д. Инструмент [IDEAR](https://github.com/Azure/Azure-TDSP-Utilities/blob/master/DataScienceUtilities/DataReport-Utils) как часть TDSP может быстро создавать такой отчет по любому набору табличных данных, например CSV-файлу или реляционной таблице. 
+   * [Отчет о качестве данных](https://github.com/Azure/Azure-TDSP-ProjectTemplate/blob/master/Docs/DataReport/DataSummaryReport.md). Этот отчет включает сводную информацию о данных, связи каждого атрибута с целевым объектом, ранжирование переменных и т. д. Инструмент [IDEAR](https://github.com/Azure/Azure-TDSP-Utilities/blob/master/DataScienceUtilities/DataReport-Utils) как часть TDSP может быстро создавать такой отчет по любому набору табличных данных, например CSV-файлу или реляционной таблице. 
    * **Архитектура решения**. Это может быть схема или описание конвейера данных, используемого для оценки или прогнозирования на основе новых данных после создания модели. Также сюда входит конвейер для повторного обучения модели на основе новых данных. Если вы используете шаблон структуры каталогов TDSP, храните документ в каталоге [Project](https://github.com/Azure/Azure-TDSP-ProjectTemplate/tree/master/Docs/Project).
    * **Контрольная точка принятия решения**. Перед началом полномасштабного проектирования и создания модели стоит повторно оценить проект, чтобы определить, стоит ли он того, чтобы и дальше находиться на этапе подготовки. Возможно, вы уже готовы продолжать или вам нужны дополнительные данные, или от проекта пора отказаться из-за отсутствия данных, необходимых для получения ответа.
 

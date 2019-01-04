@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/18/2018
 ms.author: jroth
-ms.openlocfilehash: 0677faa90c73ffe4c0c1c48600c2f1ef2d05eb50
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 298a8597ae111550dfbd44d1e7bd9efb212f08af
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39628789"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53323223"
 ---
 # <a name="migrate-a-sql-server-database-to-sql-server-in-an-azure-vm"></a>Миграция базы данных SQL Server в экземпляр SQL Server на виртуальной машине Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "39628789"
 * Отключение и копирование файлов данных и журналов в хранилище больших двоичных объектов Azure с последующим подключением их к SQL Server на виртуальной машине Azure с использованием URL-адреса.
 * Преобразование локального физического компьютера в VHD Hyper-V, передача VHD в хранилище больших двоичных объектов Azure и последующее развертывание в виде новой виртуальной машины на базе отправленного VHD.
 * Доставка жесткого диска в службу импорта и экспорта Windows.
-* Кроме того, при наличии локального развертывания AlwaysOn с помощью [мастера добавления реплики Azure](../sqlclassic/virtual-machines-windows-classic-sql-onprem-availability.md) можно создать реплику в Azure, а затем выполнить отработку отказа, перенаправляя пользователей к экземпляру базы данных Azure.
+* Кроме того, при наличии локального развертывания группы доступности AlwaysOn с помощью [мастера добавления реплики Azure](../sqlclassic/virtual-machines-windows-classic-sql-onprem-availability.md) можно создать реплику в Azure, а затем выполнить отработку отказа, перенаправляя пользователей к экземпляру базы данных Azure.
 * Используйте [репликацию транзакций](https://msdn.microsoft.com/library/ms151176.aspx) SQL Server для настройки экземпляра SQL Server Azure в качестве подписчика, а затем отключите репликацию, перенаправляя пользователей к экземпляру базы данных Azure.
 
 > [!TIP]

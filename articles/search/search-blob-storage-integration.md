@@ -1,6 +1,6 @@
 ---
-title: Добавление поиска Azure в хранилище BLOB-объектов | Документы Майкрософт
-description: Программное создание индекса с помощью HTTP REST API службы поиска Azure.
+title: Добавление возможности полнотекстового поиска в хранилище BLOB-объектов Azure (служба "Поиск Azure")
+description: Узнайте, как с помощью HTTP REST API сканировать содержимое текста в коде в хранилище BLOB-объектов Azure для индексирования в службе "Поиск Azure".
 services: search
 ms.service: search
 ms.topic: conceptual
@@ -8,12 +8,13 @@ ms.date: 10/17/2018
 author: mgottein
 manager: cgronlun
 ms.author: magottei
-ms.openlocfilehash: 4f8099bbd5af250e58441eb0e202d4674f0671fe
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.custom: seodec2018
+ms.openlocfilehash: 7bd7bcf66f0d91a87519a5d5bff7df7c73e2603f
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49403232"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53310884"
 ---
 # <a name="searching-blob-storage-with-azure-search"></a>Поиск в хранилище BLOB-объектов с помощью поиска Azure
 

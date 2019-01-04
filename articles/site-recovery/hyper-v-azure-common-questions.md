@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.date: 10/28/2018
+ms.date: 11/27/2018
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 6345cf47d19f7990e776e0fe4ec2bafd005c9cf2
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 3e71c4e31c6d57cb54a654e0e1c28dcb0fa82cda
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50212494"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52875337"
 ---
 # <a name="common-questions---hyper-v-to-azure-disaster-recovery"></a>Часто задаваемые вопросы. Аварийное восстановление Hyper-V в Azure
 
@@ -55,7 +55,7 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 
 ### <a name="what-can-i-do-with-hyper-v-to-azure-replication"></a>Что можно сделать с помощью репликации Hyper-V в Azure?
 
-- **Аварийное восстановление.** Можно настроить полное аварийное восстановление. В этом сценарии выполняется репликация локальных виртуальных машин Hyper-V в хранилище Azure.
+- **Аварийное восстановление.** Вы можете настроить полное восстановление после аварии. В этом сценарии выполняется репликация локальных виртуальных машин Hyper-V в хранилище Azure.
     - Вы можете реплицировать виртуальные машины в Azure. Если ваша локальная инфраструктура недоступна, выполняется отработка отказа в Azure.
     - При выполнении отработки отказа создаются виртуальные машины Azure с реплицируемыми данными. Вы можете получить доступ к приложениям и рабочим нагрузкам на виртуальных машинах Azure.
     - Когда локальный центр обработки данных снова станет доступным, можно восстановить размещение из Azure на локальный сайт.
@@ -124,7 +124,7 @@ Site Recovery реплицирует данные из локальной сре
 
 ### <a name="can-i-replicate-to-azure-with-expressroute"></a>Можно ли реплицировать в Azure с помощью ExpressRoute?
 
-Да, ExpressRoute можно использовать для репликации виртуальных машин в Azure. Site Recovery реплицирует данные в учетную запись хранения Azure через общедоступную конечную точку. Для этого вам требуется настроить [общедоступный пиринг](../expressroute/expressroute-circuit-peerings.md#azure-public-peering). После отработки отказа виртуальных машин в виртуальную сеть Azure к ним можно получить доступ с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#azure-private-peering).
+Да, ExpressRoute можно использовать для репликации виртуальных машин в Azure. Site Recovery реплицирует данные в учетную запись хранения Azure через общедоступную конечную точку. Для этого вам требуется настроить [общедоступный пиринг](../expressroute/expressroute-circuit-peerings.md#publicpeering). После отработки отказа виртуальных машин в виртуальную сеть Azure к ним можно получить доступ с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#privatepeering).
 
 
 ### <a name="why-cant-i-replicate-over-vpn"></a>Почему я не могу выполнить репликацию через VPN?

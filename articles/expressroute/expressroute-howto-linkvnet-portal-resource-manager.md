@@ -1,26 +1,19 @@
 ---
-title: Связывание виртуальной сети с каналом ExpressRoute с помощью портала Azure | Документация Майкрософт
+title: 'Связывание виртуальной сети с каналом ExpressRoute: портал Azure | Документация Майкрософт'
 description: Подключение виртуальной сети к каналу Azure ExpressRoute. Пошаговое руководство.
 services: expressroute
-documentationcenter: na
 author: cherylmc
-manager: timlt
-editor: ''
-tags: azure-resource-manager
-ms.assetid: f5cb5441-2fba-46d9-99a5-d1d586e7bda4
 ms.service: expressroute
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 03/08/2018
+ms.topic: conceptual
+ms.date: 12/07/2018
 ms.author: cherylmc
-ms.openlocfilehash: 47c0db66889dae5d74e2fcf46a27ec1397930e53
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.custom: seodec18
+ms.openlocfilehash: 16d85510efb055d7d564ffadb9fff2b200771bc6
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51256788"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53438835"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-the-portal"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью портала
 > [!div class="op_single_selector"]
@@ -77,7 +70,7 @@ ms.locfileid: "51256788"
 
 - Каждое маленькое облако внутри большого облака представляет подписки, принадлежащие различным подразделениям одной организации.
 - Любое подразделение в организации может использовать свою собственную подписку для развертывания служб. Кроме того, оно может совместно использовать один выделенный канал ExpressRoute для подключения к корпоративной сети.
-- Владельцем канала ExpressRoute может выступать одно подразделение (в данном примере — ИТ-подразделение). Другие подписки в организации могут использовать канал ExpressRoute и авторизации, связанные с каналом, в том числе подписки, связанные с другими клиентами Azure Active Directory и регистрациями соглашения Enterprise.
+- Владельцем канала ExpressRoute может выступать одно подразделение (в этом примере — подразделение ИТ). Другие подписки в организации могут использовать канал ExpressRoute и авторизации, связанные с каналом, в том числе подписки, связанные с другими клиентами Azure Active Directory и регистрациями соглашения Enterprise.
 
   > [!NOTE]
   > Плата за подключение выделенного канала ExpressRoute и использование полосы пропускания будет взиматься с владельца выделенного канала. Полоса пропускания распределяется между всеми виртуальными сетями.
@@ -95,6 +88,10 @@ ms.locfileid: "51256788"
 **Создание разрешения на подключение**
 
 Владелец канала создает разрешение. Это приводит к созданию ключа разрешения, который может использоваться пользователем канала для подключения шлюзов виртуальной сети к каналу ExpressRoute. Разрешение действительно только для одного подключения.
+
+> [!NOTE]
+> Каждое соединение требует отдельной авторизации.
+>
 
 1. На странице ExpressRoute щелкните **Разрешения**, введите **имя** разрешения и щелкните **Сохранить**.
 

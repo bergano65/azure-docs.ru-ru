@@ -3,17 +3,17 @@ title: Устранение неполадок в HBase с помощью Azure 
 description: Получите ответы на распространенные вопросы о работе с HBase и Azure HDInsight.
 services: hdinsight
 ms.service: hdinsight
-author: nitinver
-ms.author: nitinver
-ms.custom: hdinsightactive
+author: hrasheed-msft
+ms.author: hrasheed
+ms.custom: hdinsightactive, seodec18
 ms.topic: conceptual
-ms.date: 7/7/2017
-ms.openlocfilehash: 771f01f18c5cb54a0458d624a65ec1a69345cadd
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.date: 12/06/2018
+ms.openlocfilehash: b39c01e76ba3ec21f0cd2d16b86da5664e1d5002
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317234"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53014680"
 ---
 # <a name="troubleshoot-apache-hbase-by-using-azure-hdinsight"></a>Устранение неполадок в Apache HBase с помощью Azure HDInsight
 
@@ -288,7 +288,7 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
 
 ### <a name="detailed-description"></a>Подробное описание
 
-В кластере Linux может появиться сообщение, которое указывает, что таблица *hbase: meta* находится в автономном режиме. При выполнении `hbck` может появиться сообщение "hbase: meta table replicaId 0 is not found on any region" (Таблица метаданных HBase реплики 0 не найдена ни в одном из регионов). Проблема может заключаться в том, что серверу HMaster не удалось выполнить инициализацию после перезагрузки HBase. В журналах HMaster может появиться сообщение: "No server address listed in hbase: meta for region hbase: backup \<region name\>" (Отсутствуют адреса серверов в метаданных hbase для региона hbase: резервное копирование <имя региона>).  
+В кластере Linux может появиться сообщение, которое указывает, что таблица *hbase: meta* находится в автономном режиме. При выполнении `hbck` может появиться сообщение "hbase: meta table replicaId 0 is not found on any region" (Таблица метаданных HBase реплики 0 не найдена ни в одном из регионов). Проблема может заключаться в том, что серверу HMaster не удалось выполнить инициализацию после перезагрузки HBase. В журналах HMaster может появиться следующее сообщение: "No server address listed in hbase: meta for region hbase: backup \<region name\>" (Отсутствуют адреса серверов в метаданных hbase для региона hbase: резервное копирование <имя региона>).  
 
 ### <a name="resolution-steps"></a>Способы устранения
 
@@ -344,7 +344,7 @@ mkdir: Cannot create directory /temp. Name node is in safe mode.
 
 ### <a name="issue"></a>Проблема
 
-Сбой перезапуска на региональном сервере можно предотвратить, следуя рекомендациям. Рекомендуется приостановить действие высокой рабочей нагрузки при планировании перезагрузки региональных серверов HBase. Если приложение продолжит подключаться к региональным серверам во время завершения работы, это замедлит перезапуск регионального сервера на несколько минут. Кроме того рекомендуется сначала очистить все таблицы. Подробные сведения об очистке таблиц см. в статье [HDInsight HBase: How to improve the Apache HBase cluster restart time by flushing tables](https://blogs.msdn.microsoft.com/azuredatalake/2016/09/19/hdinsight-hbase-how-to-improve-hbase-cluster-restart-time-by-flushing-tables/) (HDInsight HBase: как уменьшить время перезапуска кластера Apache HBase с помощью очистки таблиц).
+Сбой перезапуска на региональном сервере можно предотвратить, следуя рекомендациям. Рекомендуется приостановить действие высокой рабочей нагрузки при планировании перезагрузки региональных серверов HBase. Если приложение продолжит подключаться к региональным серверам во время завершения работы, это замедлит перезапуск регионального сервера на несколько минут. Кроме того рекомендуется сначала очистить все таблицы. Подробные сведения об очистке таблиц см. в статье [HDInsight HBase: How to improve the HBase cluster restart time by flushing tables](https://blogs.msdn.microsoft.com/azuredatalake/2016/09/19/hdinsight-hbase-how-to-improve-hbase-cluster-restart-time-by-flushing-tables/) (HDInsight HBase: как уменьшить время перезапуска кластера HBase с помощью очистки таблиц).
 
 При запуске операции перезапуска на региональных серверах HBase в пользовательском интерфейсе Apache Ambari региональные серверы будут сразу же отключены, но они не будут немедленно перезапущены. 
 

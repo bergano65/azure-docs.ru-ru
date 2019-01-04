@@ -1,5 +1,5 @@
 ---
-title: Развертывание модулей IoT Edge Azure с помощью портала | Документация Майкрософт
+title: Развертывание модулей на портале Azure — Azure IoT Edge | Документация Майкрософт
 description: Использование портала Azure для развертывания модулей на устройстве IoT Edge
 author: kgremban
 manager: philmea
@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b135832c1f0cb8af23a513d4914d7e32b398be7e
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: fab85b74fb53bec07843abf31aac1a8495d0fcfb
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51564941"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53093988"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-the-azure-portal"></a>Развертывание модулей IoT Edge Azure с помощью портала Azure
 
@@ -38,7 +39,7 @@ ms.locfileid: "51564941"
 
 Манифест развертывания — это документ JSON, в котором определены развертываемые модули, способ передачи данных между этими модулями и требуемые свойства для двойников модулей. Дополнительные сведения о работе манифестов развертывания и об их создании см. в руководстве по [использованию, настройке и повторном использовании модулей Azure IoT Edge](module-composition.md).
 
-Портал Azure предоставляет мастер, который в пошаговом режиме помогает создать манифест развертывания без необходимости редактировать документ JSON вручную. В этом мастере есть три шага: **Добавление модулей**, **Указание маршрутов** и **Просмотр развертываний**. 
+Портал Azure предоставляет мастер, который в пошаговом режиме помогает создать манифест развертывания без необходимости редактировать документ JSON вручную. Манифест создается в три этапа: **Добавление модулей**, **Указание маршрутов** и **Просмотр развертываний**. 
 
 ### <a name="add-modules"></a>Добавление модулей
 

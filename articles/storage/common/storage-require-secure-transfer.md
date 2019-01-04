@@ -8,20 +8,20 @@ ms.topic: article
 ms.date: 06/20/2017
 ms.author: fryu
 ms.component: common
-ms.openlocfilehash: 201bf1e5d3580902934f139b70ca5363e7cc5930
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 72e0937e91a7287d240bbdb25996865f934d432d
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39523021"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52876508"
 ---
 # <a name="require-secure-transfer-in-azure-storage"></a>Требование безопасной передачи в службе хранилища Azure
 
 Параметр "Требуется безопасное перемещение" повышает безопасность учетной записи хранения, разрешая выполнять к ней запросы, отправленные только посредством безопасных подключений. Например, при вызове интерфейсов REST API для доступа к своей учетной записи хранения необходимо подключиться с помощью протокола HTTPS. Функция "Требуется безопасное перемещение" отклоняет запросы, использующие протокол HTTP.
 
-Кроме того, если этот параметр включен, то при использовании службы файлов Azure любое подключение без шифрования завершается сбоем. Это относится к сценариям, включающим в себя SMB 2.1, SMB 3.0 без шифрования и некоторые версии SMB-клиента Linux. 
+Кроме того, если этот параметр включен, то при использовании службы файлов Azure любое подключение без шифрования завершается сбоем. Это относится к сценариям, включающим в себя SMB 2.1, SMB 3.0 без шифрования и некоторые версии SMB-клиента Linux. 
 
-По умолчанию параметр "Требуется безопасное перемещение" отключен.
+Если вы создаете учетную запись хранения с помощью пакета SDK, параметр "Требуется безопасное перемещение" отключен по умолчанию. Этот параметр включен по умолчанию, если вы создаете учетную запись хранения на портале Azure.
 
 > [!NOTE]
 > Так как служба хранилища Azure не поддерживает протокол HTTPS для имен личных доменов, при использовании данных имен этот параметр не применяется. Классические учетные записи хранения не поддерживаются.
@@ -49,13 +49,13 @@ ms.locfileid: "39523021"
 
 Чтобы программно включить требование безопасного перемещения, укажите параметр _supportsHttpsTrafficOnly_ в свойствах учетной записи хранения с помощью REST API, инструментов или библиотек:
 
-* [REST API](https://docs.microsoft.com/rest/api/storagerp/storageaccounts) (версия: 2016-12-01);
-* [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.storage/set-azurermstorageaccount?view=azurermps-4.1.0) (версия: 4.1.0);
-* [Интерфейс командной строки](https://pypi.python.org/pypi/azure-cli-storage/2.0.11) (версия: 2.0.11);
-* [NodeJS](https://www.npmjs.com/package/azure-arm-storage/) (версия: 1.1.0);
-* [Пакет SDK для .NET ](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/6.3.0-preview) (версия: 6.3.0);
-* [Пакет SDK для Python](https://pypi.python.org/pypi/azure-mgmt-storage/1.1.0) (версия: 1.1.0);
-* [Пакет SDK для Ruby](https://rubygems.org/gems/azure_mgmt_storage) (версия: 0.11.0).
+* [REST API](https://docs.microsoft.com/rest/api/storagerp/storageaccounts) (версия 2016-12-01);
+* [PowerShell](https://docs.microsoft.com/powershell/module/azurerm.storage/set-azurermstorageaccount?view=azurermps-4.1.0) (версия 4.1.0);
+* [CLI](https://pypi.python.org/pypi/azure-cli-storage/2.0.11) (версия 2.0.11)
+* [NodeJS](https://www.npmjs.com/package/azure-arm-storage/) (версия 1.1.0);
+* [пакет SDK для .NET ](https://www.nuget.org/packages/Microsoft.Azure.Management.Storage/6.3.0-preview) (версия 6.3.0);
+* [пакет SDK для Python](https://pypi.python.org/pypi/azure-mgmt-storage/1.1.0) (версия 1.1.0);
+* [пакет SDK для Ruby](https://rubygems.org/gems/azure_mgmt_storage) (версия 0.11.0).
 
 ### <a name="enable-secure-transfer-required-setting-with-powershell"></a>Включение параметра Secure transfer required (Требуется безопасное перемещение) с помощью PowerShell
 

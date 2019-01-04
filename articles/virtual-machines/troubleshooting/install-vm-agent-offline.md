@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 3caa4f2dbe36f86c9b15a83303e90b16d06c56fd
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 14b108a836424e92a251f50b42ed93963038a333
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50419407"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53192062"
 ---
 # <a name="install-the-azure-virtual-machine-agent-in-offline-mode"></a>Установка агента виртуальной машины Azure в автономном режиме 
 
@@ -36,7 +36,7 @@ ms.locfileid: "50419407"
 
 Выполните шаги ниже, чтобы установить агент виртуальной машины в автономном режиме.
 
-### <a name="step-1-attach-the-os-disk-of-the-vm-to-another-vm-as-a-data-disk"></a>Шаг 1. Подключение диска операционной системы виртуальной машины к другой виртуальной машине в качестве диска данных
+### <a name="step-1-attach-the-os-disk-of-the-vm-to-another-vm-as-a-data-disk"></a>Шаг 1. Подключение диска операционной системы виртуальной машины к другой виртуальной машине в качестве диска данных
 
 1.  Удалите виртуальную машину. При удалении установите флажок для **сохранения дисков**.
 
@@ -44,7 +44,7 @@ ms.locfileid: "50419407"
 
 3.  Подключитесь к виртуальной машине для устранения неполадок. Откройте **Computer management** (Управление компьютерами)  > **Disk management** (Управление дисками). Убедитесь, что диск операционной системы подключен и что разделам диска назначены буквы диска.
 
-### <a name="step-2-modify-the-os-disk-to-install-the-azure-vm-agent"></a>Шаг 2. Изменение диска операционной системы для установки агента виртуальной машины Azure
+### <a name="step-2-modify-the-os-disk-to-install-the-azure-vm-agent"></a>Шаг 2. Изменение диска операционной системы для установки агента виртуальной машины Azure
 
 1.  Установите подключение к удаленному рабочему столу для виртуальной машины для устранения неполадок.
 
@@ -76,7 +76,7 @@ ms.locfileid: "50419407"
         - HKEY_LOCAL_MACHINE  \SYSTEM\ControlSet001\Services\WindowsAzureTelemetryService
         - HKEY_LOCAL_MACHINE  \SYSTEM\ControlSet001\Services\RdAgent
 
-        ![Экспорт подразделов реестра](./media/install-vm-agent-offline/backup-reg.png)
+          ![Экспорт подразделов реестра](./media/install-vm-agent-offline/backup-reg.png)
 
     2. Измените файлы реестра. В каждом файле измените значение записи **SYSTEM** на **BROKENSYSTEM** (как показано на рисунке ниже) и сохраните файл. Запомните значение **ImagePath** текущего агента виртуальной машины. Необходимо будет скопировать соответствующую папку на подключенный диск ОС. 
 

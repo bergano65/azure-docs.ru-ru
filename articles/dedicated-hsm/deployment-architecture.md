@@ -1,24 +1,25 @@
 ---
-title: Архитектура развертывания Azure для выделенного устройства HSM | Документация Майкрософт
-description: Служба выделенных устройств HSM Azure позволяет хранить криптографические ключи в Azure и обеспечивает соответствие требованиям стандарта FIPS 140-2 уровня 3
+title: Архитектура развертывания выделенного устройства HSM Azure | Документация Майкрософт
+description: Рекомендации по подходам к проектированию при использовании выделенного устройства HSM Azure как составной части архитектуры приложения
 services: dedicated-hsm
 author: barclayn
 manager: mbaldwin
+ms.custom: mvc, seodec18
 ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/19/2018
+ms.date: 12/07/2018
 ms.author: barclayn
-ms.openlocfilehash: 8481f444464135a24d42612f334ac6096cba7b21
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 913be9d1ee6ce92d71f5f0c7eda46a618483ce8d
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52318993"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53078299"
 ---
-# <a name="deployment-architecture"></a>Архитектура развертывания
+# <a name="azure-dedicated-hsm-deployment-architecture"></a>Архитектура развертывания выделенного устройства HSM Azure
 
 Служба выделенных устройств HSM Azure обеспечивает хранение криптографических ключей в Azure, которое соответствует строгим требованиям к безопасности. Служба выделенных устройств HSM Azure будет полезна клиентам в следующих случаях:
 

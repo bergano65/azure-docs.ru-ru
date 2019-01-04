@@ -1,20 +1,20 @@
 ---
 title: Отправка событий в Центры событий Azure с помощью Python | Документация Майкрософт
-description: Приступая к отправке событий в Центры событий с помощью Python.
+description: В статье описано, как создать приложение Node.js, которое отправляет сообщения в Центры событий Azure.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: femila
 ms.service: event-hubs
 ms.workload: core
 ms.topic: article
-ms.date: 10/16/2018
+ms.date: 11/16/2018
 ms.author: shvija
-ms.openlocfilehash: 05feab0227633ab52f0865fa7c19a310b612eb1c
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: b7adf3976f5f7e028ffa9ffeb13db22d3d4bba8e
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51286900"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53102985"
 ---
 # <a name="send-events-to-event-hubs-using-python"></a>Отправка событий в Центры событий с помощью Python
 
@@ -29,11 +29,16 @@ ms.locfileid: "51286900"
 
 Для работы с данным руководством вам потребуется:
 
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
 - Python 3.4 или более поздней версии.
 
 
 ## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий
-Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве.
+Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, [выполните эти инструкции](event-hubs-create.md).
+
+Получите значение ключа доступа для концентратора событий, следуя [этим инструкциям](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Используйте ключ доступа в коде, который вы напишете далее в рамках этого руководства. Имя ключа по умолчанию: **RootManageSharedAccessKey**.
+
+Теперь приступите к следующим действиям в этом руководстве:
 
 ## <a name="install-python-package"></a>Установка пакета Python
 

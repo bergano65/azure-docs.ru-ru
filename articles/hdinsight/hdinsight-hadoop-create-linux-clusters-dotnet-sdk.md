@@ -9,19 +9,19 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: mamccrea
-ms.openlocfilehash: 943d5aeccf949c1dd494dc8ec8fda0d782527749
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 06135ff77cb9c2a5b8fa2ae674206406469ed293
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035687"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52870611"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-using-the-net-sdk"></a>Создание кластеров под управлением Linux в HDInsight с помощью пакета SDK для .NET
 
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
 
-Узнайте, как создать кластер Apache Hadoop в кластере Azure HDInsight с помощью пакета SDK для .NET.
+Узнайте, как создать кластер [Apache Hadoop](https://hadoop.apache.org/) в кластере Azure HDInsight с помощью пакета SDK для .NET.
 
 > [!IMPORTANT]
 > Действия, описанные в этом документе, позволяют создать кластер с одним узлом рабочей роли. Если вы планируете использовать более 32 рабочих узлов (при создании кластера или в ходе масштабирования после создания кластера), то для головного узла необходимо выбрать как минимум 8 ядер и 14 ГБ ОЗУ.
@@ -192,7 +192,7 @@ ms.locfileid: "51035687"
 
 С помощью начальной загрузки можно настроить дополнительные параметры во время создания кластеров.  Подробные сведения см. в статье [Настройка кластеров HDInsight с помощью начальной загрузки](hdinsight-hadoop-customize-cluster-bootstrap.md).
 
-Измените пример в разделе [Создание кластеров](#create-clusters) для настройки параметра Hive.
+Измените пример в разделе [Создание кластеров](#create-clusters) для настройки параметра Apache Hive.
 
 ```csharp
 static void Main(string[] args)
@@ -372,29 +372,29 @@ static void Main(string[] args)
 ## <a name="next-steps"></a>Дополнительная информация
 Теперь, когда вы успешно создали кластер HDInsight, обратитесь к следующим статьям, чтобы научиться работать с кластером. 
 
-### <a name="hadoop-clusters"></a>Кластеры Hadoop
-* [Использование Hive с HDInsight](hadoop/hdinsight-use-hive.md)
-* [Использование Pig с HDInsight](hadoop/hdinsight-use-pig.md)
-* [Использование MapReduce с HDInsight](hadoop/hdinsight-use-mapreduce.md)
+### <a name="apache-hadoop-clusters"></a>Кластеры Apache Hadoop
+* [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md)
+* [Использование Pig с Hadoop в HDInsight](hadoop/hdinsight-use-pig.md)
+* [Использование Apache Hadoop MapReduce в HDInsight](hadoop/hdinsight-use-mapreduce.md)
 
-### <a name="hbase-clusters"></a>Кластеры HBase
-* [Начало работы с HBase в HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md)
-* [Разработка приложений Java для HBase в HDInsight](hbase/apache-hbase-build-java-maven-linux.md)
+### <a name="apache-hbase-clusters"></a>Кластеры Apache HBase
+* [Начало работы с Apache HBase в HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md)
+* [Разработка приложений Java для Apache HBase в HDInsight](hbase/apache-hbase-build-java-maven-linux.md)
 
-### <a name="storm-clusters"></a>Кластеры Storm
-* [Разработка приложений Java для Storm в HDInsight](storm/apache-storm-develop-java-topology.md)
-* [Использование компонентов Python в Storm в HDInsight](storm/apache-storm-develop-python-topology.md)
-* [Развертывание и мониторинг топологий с помощью Storm в HDInsight](storm/apache-storm-deploy-monitor-topology-linux.md)
+### <a name="apache-storm-clusters"></a>Кластеры Apache Storm
+* [Создание топологий для Apache Storm в HDInsight на языке Java](storm/apache-storm-develop-java-topology.md)
+* [Использование компонентов Python в Apache Storm в HDInsight](storm/apache-storm-develop-python-topology.md)
+* [Развертывание и мониторинг топологии с помощью Apache Storm в HDInsight.](storm/apache-storm-deploy-monitor-topology-linux.md)
 
-### <a name="spark-clusters"></a>Кластеры Spark
+### <a name="apache-spark-clusters"></a>Кластеры Apache Spark
 * [Создание автономного приложения с использованием Scala](spark/apache-spark-create-standalone-application.md)
-* [Удаленный запуск заданий с помощью Livy в кластере Spark](spark/apache-spark-livy-rest-interface.md)
-* [Использование Spark со средствами бизнес-аналитики. Выполнение интерактивного анализа данных с использованием Spark в HDInsight с помощью средств бизнес-аналитики](spark/apache-spark-use-bi-tools.md)
-* [Использование Spark с машинным обучением. Использование Spark в HDInsight для прогнозирования результатов контроля качества пищевых продуктов](spark/apache-spark-machine-learning-mllib-ipython.md)
+* [Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](spark/apache-spark-livy-rest-interface.md)
+* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](spark/apache-spark-use-bi-tools.md)
+* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](spark/apache-spark-machine-learning-mllib-ipython.md)
 
 ### <a name="run-jobs"></a>Выполнение заданий
-* [Выполнение заданий Hive в HDInsight с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-hive-dotnet-sdk.md)
-* [Выполнение заданий Pig в HDInsight с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-pig-dotnet-sdk.md)
-* [Выполнение заданий Sqoop в HDInsight с помощью пакета SDK для .NET](hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md)
-* [Запуск заданий Oozie в HDInsight](hdinsight-use-oozie.md)
+* [Выполнение запросов Apache Hive с использованием пакета SDK .NET для HDInsight](hadoop/apache-hadoop-use-hive-dotnet-sdk.md)
+* [Выполнение заданий Apache Pig с помощью пакета SDK для .NET для Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-dotnet-sdk.md)
+* [Выполнение заданий Apache Sqoop с помощью пакета SDK для .NET для Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-sqoop-dotnet-sdk.md)
+* [Использование Oozie с Hadoop для определения и выполнения рабочего процесса в HDInsight](hdinsight-use-oozie.md)
 

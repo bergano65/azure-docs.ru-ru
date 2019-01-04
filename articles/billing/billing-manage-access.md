@@ -1,6 +1,6 @@
 ---
 title: Управление доступом к счетам Azure | Документация Майкрософт
-description: ''
+description: Узнайте, как предоставить доступ членами вашей команды к сведениям о выставлении счетов в Azure
 services: ''
 documentationcenter: ''
 author: vikramdesai01
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/02/2018
 ms.author: cwatson
-ms.openlocfilehash: 7a4e19ae5bf770949623f4cee7fa0d3033ccfa29
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.custom: seodec18
+ms.openlocfilehash: a15d055505ca0f28ad28b477e90e6fe859cc9ac7
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582621"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094293"
 ---
 # <a name="manage-access-to-billing-information-for-azure"></a>Управление доступом к данным для выставления счетов в Azure
 
@@ -72,9 +73,10 @@ ms.locfileid: "52582621"
 
 1. Выберите **Управление доступом (IAM)**.
 1. Выберите **Назначения ролей**, чтобы просмотреть все назначения ролей для этой подписки.
-1. Выберите **Добавить** > **Добавить назначение ролей**.
+1. Выберите **Добавить назначение ролей**.
 1. В раскрывающемся списке **Роль** выберите **Читатель счетов**.
 1. В текстовом поле **Выбрать** введите имя или адрес электронной почты пользователя, которого вы хотите добавить.
+1. Выберите пользователя.
 1. Щелкните **Сохранить**.
 1. Через несколько секунд выбранному пользователю будет назначена роль читателя счетов в области действия подписки.
 1. Читатель счетов получит по электронной почты сообщение со ссылкой для входа.
@@ -104,4 +106,4 @@ ms.locfileid: "52582621"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

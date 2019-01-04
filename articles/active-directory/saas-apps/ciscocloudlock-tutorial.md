@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с The Cloud Security Fabric | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с The Cloud Security Fabric | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в The Cloud Security Fabric.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: jeedes
-ms.openlocfilehash: 9908dae627ae11a42e8e01a9a4f4d11f35ce0f8d
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 1fe0db2f0c7fea4b24cc23aaa52deb16376012b2
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39422966"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53092015"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-the-cloud-security-fabric"></a>Руководство по интеграции Azure Active Directory с The Cloud Security Fabric
+# <a name="tutorial-azure-active-directory-integration-with-the-cloud-security-fabric"></a>Руководство. Интеграция Azure Active Directory с The Cloud Security Fabric
 
 В этом руководстве описано, как интегрировать The Cloud Security Fabric с Azure Active Directory (Azure AD).
 
@@ -108,12 +108,14 @@ ms.locfileid: "39422966"
     ![Сведения о домене и URL-адресах единого входа для приложения The Cloud Security Fabric](./media/ciscocloudlock-tutorial/tutorial_ciscocloudlock_url.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес.
+
     | |
     |--|
     | `https://platform.cloudlock.com` |
     | `https://app.cloudlock.com` |
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://platform.cloudlock.com/gate/saml/sso/<subdomain>` |
@@ -166,7 +168,7 @@ ms.locfileid: "39422966"
 
 ### <a name="create-a-the-cloud-security-fabric-test-user"></a>Создание тестового пользователя The Cloud Security Fabric
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении The Cloud Security Fabric. Чтобы добавить пользователей на платформе The Cloud Security Fabric, обратитесь в [службу поддержки The Cloud Security Fabric](mailto:support@cloudlock.com). Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении The Cloud Security Fabric. Чтобы добавить пользователей на платформе The Cloud Security Fabric, обратитесь в  [службу поддержки The Cloud Security Fabric](mailto:support@cloudlock.com) . Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -203,7 +205,7 @@ ms.locfileid: "39422966"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент The Cloud Security Fabric на панели доступа, вы автоматически войдете в приложение The Cloud Security Fabric.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

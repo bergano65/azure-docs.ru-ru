@@ -1,23 +1,24 @@
 ---
-title: Совместная работа над приложением LUIS — Интеллектуальная служба распознавания речи
-titleSuffix: Azure Cognitive Services
-description: Для приложений LUIS требуется один владелец и необязательные участники совместной работы.
+title: Совместная работа
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: У приложения LUIS должен быть один владелец и могут быть участники совместной работы над ним — соавторы приложения.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 9acc0b04cbfa074f888d785930f357eaf94f310b
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: 8a3f0cb99dc714a6a0430d0a2ffb7c18583183e9
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49637329"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53084555"
 ---
-# <a name="collaborating"></a>Совместная работа
+# <a name="collaborating-with-other-authors"></a>Совместная работа с другими авторами
 
 LUIS предоставляет возможности совместной работы, позволяющие группе людей разрабатывать приложения.
 

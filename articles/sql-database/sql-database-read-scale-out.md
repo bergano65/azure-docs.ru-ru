@@ -11,19 +11,17 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 10/19/2018
-ms.openlocfilehash: deadbc8186d80b050fdb40879ecf29fd229c8709
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.date: 12/05/2018
+ms.openlocfilehash: 16737ed525147968c97ca20a9f4e674a0dee34fc
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49465459"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52955060"
 ---
 # <a name="use-read-only-replicas-to-load-balance-read-only-query-workloads-preview"></a>Использование реплик только для чтения для распределения рабочих нагрузок запросов только для чтения (предварительная версия)
 
 Функция **Горизонтальное масштабирование для чтения** позволяет распределять рабочие нагрузки службы "База данных SQL Azure" только для чтения, используя емкость одной реплики только для чтения.
-
-## <a name="overview-of-read-scale-out"></a>Общие сведения о горизонтальном масштабировании для чтения
 
 Все базы данных уровня "Премиум" ([модель приобретения на основе единиц DTU](sql-database-service-tiers-dtu.md)) или "Критически важный для бизнеса" ([модель приобретения на основе виртуальных ядер](sql-database-service-tiers-vcore.md)) автоматически подготавливаются с несколькими репликами AlwaysOn для поддержки соглашения об уровне обслуживания по доступности.
 
@@ -47,7 +45,7 @@ ms.locfileid: "49465459"
 > [!NOTE]
 > Задержки репликации в пределах региона случаются крайне редко.
 
-## <a name="connecting-to-a-read-only-replica"></a>Подключение к реплике только для чтения
+## <a name="connect-to-a-read-only-replica"></a>Подключение к реплике только для чтения
 
 При включении для базы данных горизонтального масштабирования для чтения предоставляемый клиентом параметр `ApplicationIntent` в строке подключения определяет, куда направляется подключение: к реплике для записи или к реплике только для чтения. В частности, если значение `ApplicationIntent` — `ReadWrite` (по умолчанию), подключение направляется к реплике базы данных для чтения и записи. Также происходит и без этой функции. Если значение `ApplicationIntent` — `ReadOnly`, подключение направляется к реплике, доступной только для чтения.
 
@@ -65,6 +63,8 @@ Server=tcp:<server>.database.windows.net;Database=<mydatabase>;ApplicationIntent
 Server=tcp:<server>.database.windows.net;Database=<mydatabase>;User ID=<myLogin>;Password=<myPassword>;Trusted_Connection=False; Encrypt=True;
 ```
 
+## <a name="verify-that-a-connection-is-to-a-read-only-replica"></a>Убедитесь, что подключение выполняется к реплике только для чтения
+
 Можно проверить, подключены ли вы к реплике только для чтения, выполнив приведенный ниже запрос. Он возвращает READ_ONLY при подключении к реплике только для чтения.
 
 ```SQL
@@ -76,9 +76,9 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability')
 
 ## <a name="enable-and-disable-read-scale-out"></a>Включение и отключение горизонтального масштабирования для чтения
 
-Горизонтальное масштабирование для чтения по умолчанию включено на уровне "Критически важный для бизнеса" [Управляемого экземпляра](sql-database-managed-instance.md) (предварительная версия). Оно должно быть явно включено на уровнях "Премиум" или "Критически важный для бизнеса" для [базы данных, размещенной на логическом сервере](sql-database-logical-servers.md). Ниже описаны методы включения и отключения горизонтального масштабирования для чтения.
+Горизонтальное масштабирование для чтения по умолчанию включено для [Управляемого экземпляра](sql-database-managed-instance.md) уровня "Критически важный для бизнеса". Оно должно быть явно включено на уровнях "Премиум" или "Критически важный для бизнеса" для [базы данных, размещенной на логическом сервере](sql-database-logical-servers.md). Ниже описаны методы включения и отключения горизонтального масштабирования для чтения.
 
-### <a name="enable-and-disable-read-scale-out-using-azure-powershell"></a>Включение и отключение горизонтального масштабирования для чтения с помощью Azure PowerShell
+### <a name="powershell-enable-and-disable-read-scale-out"></a>PowerShell: Включение и отключение горизонтального масштабирования для чтения
 
 Для управления горизонтальным масштабированием для чтения в Azure PowerShell требуется выпуск Azure PowerShell за декабрь 2016 года или более поздней версии. Последнюю версию Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-azurerm-ps).
 
@@ -102,7 +102,7 @@ Set-AzureRmSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserve
 New-AzureRmSqlDatabase -ResourceGroupName <myresourcegroup> -ServerName <myserver> -DatabaseName <mydatabase> -ReadScale Enabled -Edition Premium
 ```
 
-### <a name="enabling-and-disabling-read-scale-out-using-the-azure-sql-database-rest-api"></a>Включение и отключение функции горизонтального масштабирования для чтения с помощью REST API Базы данных SQL Azure
+### <a name="rest-api-enable-and-disable-read-scale-out"></a>REST API: Включение и отключение горизонтального масштабирования для чтения
 
 Чтобы создать базу данных с поддержкой функции горизонтального масштабирования для чтения, включить или отключить эту функцию для имеющейся базы данных, создайте или обновите соответствующую сущность базы данных, задав для свойства `readScale` значение `Enabled` или `Disabled`, как в приведенном ниже примере запроса.
 

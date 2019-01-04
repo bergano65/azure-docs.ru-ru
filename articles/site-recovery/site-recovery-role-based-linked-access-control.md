@@ -2,16 +2,16 @@
 title: Управление доступом к Azure Site Recovery с помощью управления доступом на основе ролей (RBAC) | Документация Майкрософт
 description: В этой статье объясняется, как применять управление доступом на основе ролей (RBAC) для управления доступом к Azure Site Recovery.
 ms.service: site-recovery
-ms.date: 10/16/2018
+ms.date: 11/27/2018
 author: mayurigupta13
 ms.topic: conceptual
 ms.author: mayg
-ms.openlocfilehash: 19d41d8c9b1a54cefc09190531b064d640048385
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 815eb1f94d80c36824dc34f3f9410458b9837003
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50212052"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52849536"
 ---
 # <a name="manage-site-recovery-access-with-role-based-access-control-rbac"></a>Управление доступом к Site Recovery с помощью управления доступом на основе ролей (RBAC)
 
@@ -69,7 +69,7 @@ Azure Site Recovery предоставляет 3 встроенные роли �
 Попробуйте использовать [встроенные роли](../role-based-access-control/built-in-roles.md) "Участник виртуальных машин" и "Участник классических виртуальных машин" для развертывания с помощью модели Resource Manager и классической модели соответственно.
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Управление доступом на основе ролей](../role-based-access-control/role-assignments-portal.md). Начало работы с RBAC на портале Azure.
+* [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md). Начало работы с RBAC на портале Azure.
 * Сведения об управлении доступом с помощью следующих средств:
   * [PowerShell](../role-based-access-control/role-assignments-powershell.md)
   * [Интерфейс командной строки Azure](../role-based-access-control/role-assignments-cli.md)

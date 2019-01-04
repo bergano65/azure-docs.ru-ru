@@ -1,0 +1,96 @@
+---
+title: Использование программы redis-cli с кэшем Redis для Azure | Документация Майкрософт
+description: Сведения об использовании программы redis-cli с кэшем Redis для Azure.
+services: azure-cache-for-redis
+documentationcenter: ''
+author: wesmc7777
+manager: cfowler
+editor: ''
+ms.service: cache
+ms.workload: tbd
+ms.tgt_pltfrm: azure-cache-for-redis
+ms.devlang: na
+ms.topic: article
+ms.date: 03/22/2018
+ms.author: wesmc
+ms.openlocfilehash: 4cefae50482547b910c6468854a251b0f61ce558
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53021995"
+---
+# <a name="how-to-use-the-redis-command-line-tool-with-azure-cache-for-redis"></a>Использование программы командной строки Redis с кэшем Redis для Azure
+
+*redis cli.exe* является популярной программой командной строки для взаимодействия с кэшем Redis для Azure в качестве клиента. Ее также можно использовать с кэшем Redis для Azure.
+
+Программа доступна для платформ Windows — скачайте [программы командной строки Redis для Windows](https://github.com/MSOpenTech/redis/releases/). 
+
+Если вы хотите запустить программу командной строки на другой платформе, скачайте кэш Redis для Azure по адресу: [http://redis.io/download](https://redis.io/download).
+
+## <a name="gather-cache-access-information"></a>Сбор сведений для доступа к кэшу
+
+Существует три способа сбора сведений, необходимых для доступа к кэшу.
+
+1. С помощью Azure CLI и команды [az redis list-keys](https://docs.microsoft.com/cli/azure/redis?view=azure-cli-latest#az-redis-list-keys).
+2. С помощью Azure PowerShell и командлета [Get-AzureRmRedisCacheKey](https://docs.microsoft.com/powershell/module/azurerm.rediscache/Get-AzureRmRedisCacheKey?view=azurermps-4.4.1).
+3. С помощью портала Azure.
+
+В этом разделе вы будете получать ключи с портала Azure.
+
+[!INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
+
+
+## <a name="enable-access-for-redis-cliexe"></a>Включение доступа для redis cli.exe
+
+При использовании кэша Redis для Azure только один SSL-порт (6380) включен по умолчанию. Программа командной строки `redis-cli.exe` не поддерживает SSL. У вас есть два варианта конфигурации для использования программы.
+
+1. [Включите порт, отличный от SSL (6379)](cache-configure.md#access-ports) - **такая конфигурация не рекомендуется**, так как ключи доступа отправляются по TCP в виде открытого текста. Это изменение может нарушить доступ к кэшу. Единственным сценарием, где может потребоваться эта конфигурация, является просто доступ к кэшу теста.
+
+2. Скачайте и установите [stunnel](https://www.stunnel.org/downloads.html).
+
+    Выполните команду **stunnel GUI Start**, чтобы запустить сервер.
+
+    Щелкните правой кнопкой мыши значок сервера stunnel и выберите пункт **Show Log Window** (Открыть окно журнала).
+
+    В меню "Log Window" (Окно журнала) выберите **Конфигурация** > **Изменить конфигурацию**, чтобы открыть текущий файл конфигурации.
+
+    В разделе **Определения службы** добавьте следующую запись для программы *redis cli.exe*. Вместо `yourcachename` вставьте фактическое имя кэша. 
+
+    ```
+    [redis-cli]
+    client = yes
+    accept = 127.0.0.1:6380
+    connect = yourcachename.redis.cache.windows.net:6380
+    ```
+
+    Сохраните и закройте файл конфигурации. 
+  
+    В меню "Log Window" (Окно журнала) stunnel выберите **Конфигурация** > **Перезагрузить конфигурацию**.
+
+
+## <a name="connect-using-the-redis-command-line-tool"></a>Подключитесь с помощью программы командной строки Redis.
+
+При использовании stunnel запустите *redis cli.exe* и для подключения к кэшу передайте только *порт* и *ключ доступа* (первичный или вторичный).
+
+```
+redis-cli.exe -p 6380 -a YourAccessKey
+```
+
+![stunnel с redis-cli](media/cache-how-to-redis-cli-tool/cache-redis-cli-stunnel.png)
+
+Если вы используете кэш теста с **небезопасным** портом, отличным от SSL, запустите `redis-cli.exe` и для подключения к кэшу теста передайте *имя узла*, *порт* и *ключ доступа* (первичный или вторичный).
+
+```
+redis-cli.exe -h yourcachename.redis.cache.windows.net -p 6379 -a YourAccessKey
+```
+
+![stunnel с redis-cli](media/cache-how-to-redis-cli-tool/cache-redis-cli-non-ssl.png)
+
+
+
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Узнайте больше об использовании [консоли Redis](cache-configure.md#redis-console) для выполнения команд.
+

@@ -12,18 +12,18 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 10/19/2018
-ms.openlocfilehash: 6432c6b2c1c224f44b962df63e1502729f69e57f
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: fb9332832f46dc5c39bf932ce91cd3d3f3d7354f
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49470665"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53269623"
 ---
 # <a name="azure-sql-database-logical-servers-and-their-management"></a>Логические серверы Базы данных SQL Azure и управление ими
 
 ## <a name="what-is-an-azure-sql-logical-server"></a>Что такое логический сервер SQL Azure?
 
-Логический сервер выступает в качестве центра администрирования нескольких отдельных баз данных или баз данных в составе [пула](sql-database-elastic-pool.md), [имен для входа](sql-database-manage-logins.md), [правил брандмауэра](sql-database-firewall-configure.md), [правил аудита](sql-database-auditing.md), [политик обнаружения угроз](sql-database-threat-detection.md) и [групп отработки отказа](sql-database-geo-replication-overview.md). Логический сервер может находиться в регионе, отличном от региона своей группы ресурсов. Логический сервер должен существовать еще до создания базы данных SQL Azure. Все базы данных на сервере создаются в том же регионе, что логический сервер.
+Логический сервер выступает в качестве центра администрирования нескольких отдельных баз данных или баз данных в составе [пула](sql-database-elastic-pool.md), [имен для входа](sql-database-manage-logins.md), [правил брандмауэра](sql-database-firewall-configure.md), [правил аудита](sql-database-auditing.md), [политик обнаружения угроз](sql-database-threat-detection.md) и [групп отработки отказа](sql-database-auto-failover-group.md). Он может не располагаться в том же регионе, что и группа ресурсов. Логический сервер должен существовать еще до создания базы данных SQL Azure. Все базы данных на сервере создаются в том же регионе, что логический сервер.
 
 Логический сервер — это логическая конструкция, отличная от экземпляра SQL Server, с которым вы могли работать в локальной среде. В частности, служба базы данных SQL не дает никаких гарантий, связанных с расположением баз данных относительно логических серверов, а также не предоставляет доступ или возможности на уровне экземпляра. А сервер в службе "Управляемый экземпляр Базы данных SQL" аналогичен экземпляру SQL Server, с которым вы могли работать в локальной среде.
 
@@ -162,7 +162,7 @@ ms.locfileid: "49470665"
 |[sp_delete_database_firewall_rule (база данных SQL Azure)](/sql/relational-databases/system-stored-procedures/sp-delete-database-firewall-rule-azure-sql-database)|Удаляет параметр брандмауэра уровня базы данных из базы данных SQL Azure или хранилища данных SQL. |
 
 > [!TIP]
-> Краткое руководство по использованию SQL Server Management Studio в Microsoft Windows приведено в разделе [Подключайтесь к базе данных Azure SQL и создавайте запросы к ней с помощью SQL Server Management Studio](sql-database-connect-query-ssms.md). Краткое руководство по использованию Visual Studio Code в macOS, Linux и Windows приведено в статье [База данных SQL Azure: подключение и запрос данных с помощью Visual Studio Code](sql-database-connect-query-vscode.md).
+> Инструкции по использованию SQL Server Management Studio в Microsoft Windows см. в статье [Краткое руководство. Подключение к базе данных SQL Azure и создание запросов к ней с помощью SQL Server Management Studio](sql-database-connect-query-ssms.md). Инструкции по использованию Visual Studio Code в macOS, Linux и Windows см. в статье [Краткое руководство. Подключение и запрос Базы данных SQL Azure с помощью Visual Studio Code](sql-database-connect-query-vscode.md).
 
 ## <a name="manage-azure-sql-servers-databases-and-firewalls-using-the-rest-api"></a>Управление серверами SQL Azure, базами данных и брандмауэрами с помощью REST API
 

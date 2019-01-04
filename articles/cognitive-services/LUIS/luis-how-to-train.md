@@ -1,23 +1,24 @@
 ---
-title: Обучение версии приложения LUIS
-titleSuffix: Azure Cognitive Services
+title: Обучать приложения
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Обучение версии приложения Интеллектуальной службы распознавания речи (LUIS) позволяет улучшить распознавание естественного языка. Следует обучать приложение LUIS после обновления модели, например добавления, изменения, пометки или удаления сущностей, намерений или фраз.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 10/18/2018
 ms.author: diberry
-ms.openlocfilehash: 362c5e2e7216d584a9858ace5fb607dc0ee126d5
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: ba450258a03fc21a06476a6bdd81dc5a886056de
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49426110"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53137630"
 ---
-# <a name="train-your-luis-app-version"></a>Обучение версии приложения LUIS
+# <a name="train-your-active-version-of-the-luis-app"></a>Обучение активной версии приложения LUIS 
 
 Обучение приложения службы "Распознавание речи" (LUIS) позволяет улучшить распознавание естественного языка. Следует обучать приложение LUIS после обновления модели, например добавления, изменения, пометки или удаления сущностей, намерений или фраз. 
 

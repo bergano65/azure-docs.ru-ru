@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
-ms.openlocfilehash: 3ddd2f122de832654be295c5978a88bec702558c
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 19ba7013b461917c4aea8ae96f689d7e39859652
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52319023"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53134443"
 ---
 # <a name="azure-vm-guest-os-firewall-is-blocking-inbound-traffic"></a>Входящий трафик блокируется брандмауэром гостевой ОС виртуальной машины Azure
 
@@ -31,17 +31,17 @@ ms.locfileid: "52319023"
 
 ## <a name="cause"></a>Причина:
 
-### <a name="cause-1"></a>Причина 1 
+### <a name="cause-1"></a>Причина 1
 
 Не настроено правило RDP, которое разрешает трафик RDP.
 
-### <a name="cause-2"></a>Причина 2 
+### <a name="cause-2"></a>Причина 2
 
 Настроенные профили брандмауэра гостевой ОС блокируют все входящие подключения, в том числе трафик RDP.
 
 ![Параметры брандмауэра](./media/guest-os-firewall-blocking-inbound-traffic/firewall-advanced-setting.png)
 
-## <a name="solution"></a>Решение 
+## <a name="solution"></a>Решение
 
 Прежде чем выполнять какие-либо действия, сделайте моментальный снимок диска системы затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье  [Create a snapshot](../windows/snapshot-copy-managed-disk.md) (Создание моментального снимка).
 
@@ -49,7 +49,7 @@ ms.locfileid: "52319023"
 
 ### <a name="online-troubleshooting"></a>Сетевое устранение неполадок
 
-Подключитесь к [последовательной консоли и откройте экземпляр PowerShell](serial-console-windows.md#open-cmd-or-powershell-in-serial-console). Если на виртуальной машине последовательная консоль не включена, перейдите к разделу [Автономное восстановление виртуальной машины](troubleshoot-rdp-internal-error.md#repair-the-vm-offline).
+Подключитесь к [последовательной консоли и откройте экземпляр PowerShell](serial-console-windows.md#use-cmd-or-powershell-in-serial-console). Если на виртуальной машине последовательная консоль не включена, перейдите к разделу [Автономное восстановление виртуальной машины](troubleshoot-rdp-internal-error.md#repair-the-vm-offline).
 
 #### <a name="mitigation-1"></a>Решение 1
 
@@ -80,7 +80,7 @@ ms.locfileid: "52319023"
     ```cmd
     netsh advfirewall firewall set rule group="Remote Desktop" new enable=yes
     ```
-    
+
     В противном случае выполните следующую команду, чтобы открыть конкретное правило удаленного рабочего стола (TCP-In):
 
     ```cmd
@@ -94,7 +94,7 @@ ms.locfileid: "52319023"
     ```
 
     Завершив устранение неполадок и правильно настроив брандмауэр, обязательно включите его снова.
-    
+
     > [!Note]
     > Чтобы применить такие изменения, не нужно перезапускать виртуальную машину.
 
@@ -128,17 +128,17 @@ ms.locfileid: "52319023"
     ```
 
     > [!Note]
-    > Чтобы применить такие изменения, не нужно перезапускать виртуальную машину. 
+    > Чтобы применить такие изменения, не нужно перезапускать виртуальную машину.
 
 4.  Снова попробуйте создать подключение к виртуальной машине по протоколу удаленного рабочего стола.
 
-### <a name="offline-mitigations"></a>Автономные способы решения 
+### <a name="offline-mitigations"></a>Автономные способы решения
 
 1.  [Подключите системный диск к виртуальной машине восстановления](troubleshoot-recovery-disks-portal-windows.md).
 
 2.  Установите подключение с помощью удаленного рабочего стола к виртуальной машине, используемой для восстановления.
 
-3.  Убедитесь, что в консоли "Управление дисками" подключенный диск имеет состояние  **Подключен** . Запишите или запомните букву диска, которая назначена подключенному системному диску.
+3.  Убедитесь, что в консоли управления дисками подключенный диск имеет состояние  **подключенного** . Запишите или запомните букву диска, которая назначена подключенному системному диску.
 
 #### <a name="mitigation-1"></a>Решение 1
 
@@ -159,7 +159,7 @@ ms.locfileid: "52319023"
     robocopy f:\windows\system32\config f:\windows\system32\config.BACK /MT
 
     REM Mount the hive
-    reg load HKLM\BROKENSYSTEM f:\windows\system32\config\SYSTEM 
+    reg load HKLM\BROKENSYSTEM f:\windows\system32\config\SYSTEM
 
     REM Delete the keys to block all inbound connection scenario
     REG DELETE "HKLM\BROKENSYSTEM\ControlSet001\services\SharedAccess\Parameters\FirewallPolicy\DomainProfile" /v DoNotAllowExceptions

@@ -1,6 +1,6 @@
 ---
-title: Контрольный список развертывания Azure AD на 30 дней, 90 дней и более длительный срок
-description: Контрольный список развертывания компонентов Azure Active Directory Premium P2
+title: Контрольный список лицензирования компонентов Azure Active Directory Premium P2 | Документация Майкрософт
+description: Контрольный список развертывания компонентов Azure Active Directory Premium P2 на 30, 90 и более дней.
 services: active-directory
 ms.service: active-directory
 ms.component: ''
@@ -9,13 +9,13 @@ ms.date: 09/17/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
-ms.reviewer: ''
-ms.openlocfilehash: 86561cd835a36282ca1b38638ab4372c6b360617
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: 61cefe762b639dcc58c2e10fc845dd9729cb2cb2
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51705657"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53078247"
 ---
 # <a name="azure-active-directory-premium-p2-licensing-feature-checklist"></a>Контрольный список лицензирования компонентов Azure Active Directory Premium P2
 
@@ -75,7 +75,7 @@ ms.locfileid: "51705657"
    - [Сценарии использования и рекомендации по развертыванию для присоединения к Azure AD](../devices/azureadjoin-plan.md)
 - [Управление Windows Hello для бизнеса в организации](/windows/security/identity-protection/hello-for-business/hello-manage-in-organization)
 
-## <a name="plan-and-deploy-day-90-and-beyond"></a>Планирование и развертывание: дни с 90-го и далее
+## <a name="plan-and-deploy-day-90-and-beyond"></a>Планирование и развертывание: день 90 и дальше
 
 - [Управление привилегированными пользователями Azure AD](../privileged-identity-management/pim-configure.md)
    - [Настройка параметров роли каталога Azure AD в PIM](../privileged-identity-management/pim-how-to-change-default-settings.md)

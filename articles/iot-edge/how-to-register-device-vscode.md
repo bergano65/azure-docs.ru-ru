@@ -1,6 +1,6 @@
 ---
-title: Регистрация нового устройства Azure IoT Edge с помощью VS Code | Документация Майкрософт
-description: Использование Visual Studio Code для создания устройства IoT Edge в Центре Интернета вещей Azure
+title: Регистрация нового устройства с помощью Visual Studio Code — Azure IoT Edge | Документация Майкрософт
+description: Использование Visual Studio Code для создания устройства IoT Edge в Центре Интернета вещей Azure и получение строки подключения
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,12 +8,13 @@ ms.date: 06/14/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: cf9603c65454f076a494789e784c9352fb7bef33
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.custom: seodec18
+ms.openlocfilehash: cc812cc7f628f533cbf342edee66e01ce703678f
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51578711"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53099793"
 ---
 # <a name="register-a-new-azure-iot-edge-device-from-visual-studio-code"></a>Регистрация нового устройства Azure IoT Edge с помощью Visual Studio Code
 
@@ -35,7 +36,7 @@ ms.locfileid: "51578711"
 
 2. В нижней части Explorer разверните раздел **Устройства Центра Интернета вещей Azure**. 
 
-   ![Развернутый раздел "Устройства Центра Интернета вещей Azure"](./media/how-to-register-device-vscode/azure-iot-hub-devices.png)
+   ![Развернутый раздел "Azure IoT Hub Devices" (Устройства Центра Интернета вещей Azure)](./media/how-to-register-device-vscode/azure-iot-hub-devices.png)
 
 3. Щелкните значок **...** в заголовке раздела **Устройства Центра Интернета вещей Azure**. Если значок многоточия не отображается, щелкните заголовок или наведите на него курсор. 
 
@@ -63,7 +64,7 @@ ms.locfileid: "51578711"
 
 Все устройства, подключенные к Центру Интернета вещей, перечислены в разделе **Устройства Центра Интернета вещей Azure** в обозревателе Visual Studio Code. Устройства IoT Edge легко отличить от остальных, так как они обозначаются другим значком и их можно открыть для отображения модулей, развернутых на каждом из устройств. 
 
-   ![Просмотр устройств в VS Code](./media/how-to-register-device-vscode/view-devices.png)
+   ![Просмотр списка всех устройств IoT Edge в центре Интернета вещей](./media/how-to-register-device-vscode/view-devices.png)
 
 ## <a name="retrieve-the-connection-string"></a>Получение строки подключения
 

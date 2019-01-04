@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 6d36733b63645fd86580ccdc5af756739f77338c
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 686b602828856e75300152c41bfe4c35cd6a8219
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37048151"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52970167"
 ---
 # <a name="copy-data-from-amazon-redshift-using-azure-data-factory"></a>Копирование данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -37,7 +37,7 @@ ms.locfileid: "37048151"
 > [!TIP]
 > Чтобы обеспечить наилучшую производительность при копировании больших объемов данных из Redshift, рекомендуется использовать встроенный механизм Redshift UNLOAD через Amazon S3. Дополнительные сведения см. в разделе [Копирование данных из Amazon Redshift с помощью UNLOAD](#use-unload-to-copy-data-from-amazon-redshift).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * При копировании данных в локальное хранилище данных с помощью [локальной среды IR](create-self-hosted-integration-runtime.md) предоставьте среде выполнения интеграции доступ к кластеру Amazon Redshift (использовав IP-адрес компьютера). Инструкции см. в статье об [авторизации доступа к кластеру](http://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html).
 * Если вы копируете данные в хранилище данных Azure, вам нужно знать IP-адреса вычислительных ресурсов и диапазоны SQL, используемые центрами обработки данных Azure. Диапазоны IP-адресов центра обработки данных Azure приведены на [этой странице](https://www.microsoft.com/download/details.aspx?id=41653).
@@ -54,7 +54,7 @@ ms.locfileid: "37048151"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства типа необходимо задать значение **AmazonRedshift**. | Yes |
+| Тип | Для свойства type необходимо задать значение **AmazonRedshift**. | Yes |
 | server |IP-адрес или имя узла сервера Amazon Redshift. |Yes |
 | порт |Номер TCP-порта, используемого сервером Amazon Redshift для прослушивания клиентских подключений. |Нет, значение по умолчанию — 5439 |
 | database |Имя базы данных Amazon Redshift. |Yes |
@@ -96,7 +96,7 @@ ms.locfileid: "37048151"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type для набора данных должно иметь значение **RelationalTable**. | Yes |
+| Тип | Для набора данных необходимо задать значение **RelationalTable**. | Yes |
 | tableName | Имя таблицы в Amazon Redshift. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -126,7 +126,7 @@ ms.locfileid: "37048151"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **AmazonRedshiftSource**. | Yes |
+| Тип | Для свойства type источника действия копирования необходимо задать значение **AmazonRedshiftSource**. | Yes |
 | query |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Нет (если для набора данных задано свойство tableName) |
 | redshiftUnloadSettings | Группа свойств при использовании Amazon Redshift UNLOAD. | Нет  |
 | s3LinkedServiceName | Относится к службе Amazon S3, которую необходимо использовать в качестве промежуточного хранилища, указав имя связанной службы типа AmazonS3. | Да, если используется UNLOAD |
@@ -158,7 +158,7 @@ ms.locfileid: "37048151"
 
 В этом варианте использования действие копирования выгружает данные из Amazon Redshift в Amazon S3, как задано в redshiftUnloadSettings, а затем копирует данные из Amazon S3 в большой двоичный объект Azure, заданный в stagingSettings, и наконец, использует PolyBase для загрузки данных в хранилище данных SQL. Формат промежуточного хранения обрабатывается действием копирования должным образом.
 
-![Рабочий процесс копирования из Redshift в хранилище данных SQL](media\copy-data-from-amazon-redshift\redshift-to-sql-dw-copy-workflow.png)
+![Рабочий процесс копирования из Redshift в хранилище данных SQL](media/copy-data-from-amazon-redshift/redshift-to-sql-dw-copy-workflow.png)
 
 ```json
 "activities":[

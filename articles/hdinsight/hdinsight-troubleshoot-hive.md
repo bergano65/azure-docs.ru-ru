@@ -8,14 +8,14 @@ author: dharmeshkakadia
 ms.author: dharmeshkakadia
 ms.topic: conceptual
 ms.date: 11/2/2017
-ms.openlocfilehash: 832fab6c4f183ddad512c5e6e4309d70938a316b
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 150f920fb1371eb64181ff69fdad054f989c0845
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39600029"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53407026"
 ---
-# <a name="troubleshoot-hive-by-using-azure-hdinsight"></a>Устранение неполадок в Hive с помощью Azure HDInsight
+# <a name="troubleshoot-apache-hive-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Hive с помощью Azure HDInsight
 
 Ознакомьтесь с основными проблемами и их разрешением при работе с полезными данными Apache Hive в Apache Ambari.
 
@@ -104,7 +104,7 @@ ms.locfileid: "39600029"
 - [Свойства конфигурации Hive](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties)
 
 
-## <a name="how-do-i-analyze-tez-dag-data-on-a-cluster-critical-path"></a>Как анализировать данные направленного ациклического графа Tez по критическому пути кластера?
+## <a name="how-do-i-analyze-tez-dag-data-on-a-cluster-critical-path"></a>Как анализировать данные направленного ациклического графа Apache Tez по критическому пути кластера?
 
 
 ### <a name="resolution-steps"></a>Способы устранения
@@ -126,17 +126,17 @@ ms.locfileid: "39600029"
   Необходимо задать пример программы в качестве первого аргумента.
 
   Допустимые имена программы:
-    - **ContainerReuseAnalyzer** — печать сведений о повторном использовании контейнера в DAG;
-    - **CriticalPath** — поиск критического пути DAG;
-    - **LocalityAnalyzer** — печать сведений о местоположении в DAG;
-    - **ShuffleTimeAnalyzer** — анализ сведений о смещении времени в DAG;
-    - **SkewAnalyzer** — анализ сведений о неравномерном распределении данных в DAG;
-    - **SlowNodeAnalyzer** — печать сведений об узле в DAG;
-    - **SlowTaskIdentifier** — печать сведений о медленных задачах в DAG;
-    - **SlowestVertexAnalyzer** — печать сведений о медленных вершинах в DAG;
-    - **SpillAnalyzer** — печать сведений о перемещении в DAG;
-    - **TaskConcurrencyAnalyzer** — печать сведений о параллельных задачах в DAG;
-    - **VertexLevelCriticalPathAnalyzer** — поиск критического пути на уровне вершины в DAG.
+    - **ContainerReuseAnalyzer**: печать сведений о повторном использовании контейнера в DAG;
+    - **CriticalPath**: поиск критического пути DAG;
+    - **LocalityAnalyzer**: печать сведений о местоположении в DAG;
+    - **ShuffleTimeAnalyzer**: анализ сведений о смещении времени в DAG;
+    - **SkewAnalyzer**: анализ сведений о неравномерном распределении данных в DAG;
+    - **SlowNodeAnalyzer**: печать сведений об узле в DAG;
+    - **SlowTaskIdentifier**: печать сведений о медленных задачах в DAG;
+    - **SlowestVertexAnalyzer**: печать сведений о медленных вершинах в DAG;
+    - **SpillAnalyzer**: печать сведений о перемещении в DAG;
+    - **TaskConcurrencyAnalyzer**: печать сведений о параллельных задачах в DAG;
+    - **VertexLevelCriticalPathAnalyzer**: поиск критического пути на уровне вершины в DAG.
 
 
 ### <a name="additional-reading"></a>Дополнительные материалы

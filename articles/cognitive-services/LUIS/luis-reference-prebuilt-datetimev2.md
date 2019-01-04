@@ -1,23 +1,24 @@
 ---
-title: Справочные материалы по предварительно созданным сущностям datetimeV2 в службе LUIS в Azure | Документация Майкрософт
+title: Предварительно созданные сущности datetimeV2
 titleSuffix: Azure
 description: В этой статье описана готовая сущность datetimeV2 в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: diberry
-ms.openlocfilehash: bd28981ae0c5b4d6ccff3168f92f0f99be768b10
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 0e2353107d6554a8ecbbd2e4d9850f8d8b5fda5c
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52335782"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53165186"
 ---
-# <a name="datetimev2-entity"></a>Сущность datetimeV2
+# <a name="datetimev2-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность datetimeV2 для приложения LUIS
 
 Предварительно созданная сущность **datetimeV2** извлекает значения даты и времени. Эти значения имеют стандартный формат, за счет чего их могут использовать клиентские программы. Если во фразе указана неполная дата или время, LUIS возвращает в ответе конечной точки _прошедшие и будущие значения_. Так как эта сущность уже обучена, добавлять примеры фраз, содержащие сущность datetimeV2 в приложение, не нужно. 
 
@@ -27,7 +28,7 @@ ms.locfileid: "52335782"
 ## <a name="example-json"></a>Пример JSON 
 В следующем примере ответа JSON приведена сущность `datetimeV2` с подтипом `datetime`. Подтипы сущностей datetimeV2 см. в [этом разделе](#subtypes-of-datetimev2)</a>.
 
-```JSON
+```json
 "entities": [
   {
     "entity": "8am on may 2nd 2017",
@@ -103,7 +104,7 @@ ms.locfileid: "52335782"
 В следующем примере показано разрешение сущности "may 2nd". Это разрешение предполагает, что сегодняшняя дата — это дата между 2 мая 2017 г. и 1 мая 2018 г.
 Поля с `X` в поле `timex` — это части даты, которые явно не указаны во фразе.
 
-```JSON
+```json
   "entities": [
     {
       "entity": "may 2nd",
@@ -132,7 +133,7 @@ ms.locfileid: "52335782"
 
 Сущность `datetimeV2` извлекает диапазоны дат и времени. Поля `start` и `end` определяют начало и конец диапазона. Если имеется фраза "May 2nd to May 5th", LUIS предоставляет значения **daterange** за текущий и будущий год. В поле `timex` значения `XXXX` указывают неоднозначность года. Значение `P3D` указывает на трехдневный период времени.
 
-```JSON
+```json
 "entities": [
     {
       "entity": "may 2nd to may 5th",
@@ -163,7 +164,7 @@ ms.locfileid: "52335782"
 
 В следующем примере показано, как с помощью сущности **datetimeV2** LUIS обрабатывает фразу "Tuesday to Thursday". В этом примере ниже текущей датой является 19 июня. LUIS включает значения **daterange** обоих диапазонов дат перед и после текущей даты.
 
-```JSON
+```json
   "entities": [
     {
       "entity": "tuesday to thursday",
@@ -196,7 +197,7 @@ ms.locfileid: "52335782"
 
 В следующем примере показано, как с помощью сущности **datetimeV2** LUIS обрабатывает фразу с диапазон времени.
 
-```
+```json
   "entities": [
     {
       "entity": "6pm to 7pm",

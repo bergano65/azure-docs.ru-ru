@@ -9,18 +9,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 492087f7eeca8628ac6ac9a9e42f355a9356f1ce
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 5d0259726a45346f1e9b891cb235531d6c24d4a2
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52584712"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53433429"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---data-migration-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию миграции данных
 
-В этой статье представлены рекомендации по миграции данных в Azure HDInsight. В этом цикле статей приведены рекомендации, применимые при перемещении локальных систем Apache Hadoop в Azure HDInsight.
+В этой статье представлены рекомендации по миграции данных в Azure HDInsight. Это часть цикла, где приведены лучшие методики, применимые при перемещении локальных систем Apache Hadoop в Azure HDInsight.
 
-## <a name="migrate-data-from-on-premises-to-azure"></a>Миграция данных из локальной среды в Azure
+## <a name="migrate-on-premises-data-to-azure"></a>Перенос локальных данных в Azure
 
 Существует два основных способа для миграции данных из локальной среды Azure.
 
@@ -47,9 +47,11 @@ ms.locfileid: "52584712"
 |1 ПБ|6 год|3 года|97 дней|10 дней|
 |2 ПБ|12 год|5 год|194 дня|19 дней|
 
-Средства, встроенные в Azure (например, DistCp, Фабрика данных Azure и AzureCp), можно использовать для передачи данных по сети. Независимый инструмент WANDisco можно также использовать с той же целью. Kafka Mirrormaker и Sqoop можно использовать для передачи текущих данных из локальной системы хранения Azure.
+Средства, встроенные в Azure (например, Apache Hadoop DistCp, Фабрика данных Azure и AzureCp), можно использовать для передачи данных по сети. Независимый инструмент WANDisco можно также использовать с той же целью. Apache Kafka Mirrormaker и Apache Sqoop можно использовать для передачи текущих данных из локальной системы хранения Azure.
 
-## <a name="performance-considerations-when-using-apache-distcp"></a>Рекомендации по производительности при использовании Apache DistCp
+
+## <a name="performance-considerations-when-using-apache-hadoop-distcp"></a>Рекомендации по производительности при использовании Apache Hadoop DistCp
+
 
 DistCp — проект Apache, который использует задание сопоставления MapReduce для передачи данных, обработки и восстановления ошибок. Для каждой задачи сопоставления он назначает список исходных файлов. Задача сопоставления копирует все присвоенные файлы в назначение. Существует несколько методов, которые позволяют повысить производительность DistCp.
 
@@ -86,14 +88,14 @@ hadoop distcp -Dmapreduce.fileoutputcommitter.algorithm.version=2 -numListstatus
 
 ## <a name="metadata-migration"></a>Миграция метаданных
 
-### <a name="hive"></a>Hive
+### <a name="apache-hive"></a>Apache Hive
 
 Хранилище метаданных Hive можно перенести с помощью сценариев или с помощью репликации базы данных.
 
 #### <a name="hive-metastore-migration-using-scripts"></a>Миграция хранилища метаданных Hive с помощью сценариев
 
-1. Создайте DDL Hive из локального хранилища метаданных Hive. Это действие можно выполнить, используя [оболочку скрипта Bash].(https://github.com/hdinsight/hdinsight.github.io/blob/master/hive/hive-export-import-metastore.md))
-1. Измените сформированной код DDL, чтобы заменить URL-адрес HDFS URL-адресами WASB/ADLS/ABFS.
+1. Создайте DDL Hive из локального хранилища метаданных Hive. Это действие можно выполнить, используя [оболочку скрипта Bash](https://github.com/hdinsight/hdinsight.github.io/blob/master/hive/hive-export-import-metastore.md).
+1. Измените сформированный код DDL, чтобы заменить URL-адрес HDFS URL-адресами WASB/ADLS/ABFS.
 1. Запустите обновленный код DDL в хранилище метаданных из кластера HDInsight.
 1. Убедитесь, что версия хранилища метаданных Hive совместима с локальной средой и облаком.
 
@@ -106,7 +108,7 @@ hadoop distcp -Dmapreduce.fileoutputcommitter.algorithm.version=2 -numListstatus
 ./hive --service metatool -updateLocation hdfs://nn1:8020/ wasb://<container_name>@<storage_account_name>.blob.core.windows.net/
 ```
 
-### <a name="ranger"></a>Ranger
+### <a name="apache-ranger"></a>Apache Ranger
 
 - Экспортируйте локальные политики Ranger для XML-файлов.
 - Преобразуйте в локальной среде конкретные пути HDFS в WASB/ADLS с помощью XSLT.

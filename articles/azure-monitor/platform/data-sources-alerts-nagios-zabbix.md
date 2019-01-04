@@ -1,6 +1,6 @@
 ---
-title: Сбор оповещений Nagios и Zabbix в Log Analytics | Документация Майкрософт
-description: Nagios и Zabbix — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с оповещениями из других источников.  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
+title: Сбор оповещений Nagios и Zabbix в Azure Monitor | Документация Майкрософт
+description: Nagios и Zabbix — средства мониторинга с открытым исходным кодом. Оповещения от этих инструментов мониторинга можно собирать в Azure Monitor для анализа вместе с оповещениями из других источников.  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
 services: log-analytics
 documentationcenter: ''
 author: mgoedtel
@@ -8,23 +8,27 @@ manager: carmonm
 editor: tysonn
 ms.assetid: f1d5bde4-6b86-4b8e-b5c1-3ecbaba76198
 ms.service: log-analytics
-ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/13/2018
+ms.date: 11/27/2018
 ms.author: magoedte
-ms.component: ''
-ms.openlocfilehash: 3331ed7775cd3027f1262b195c6230fbea742497
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 217f19b02ccd5561ee499388bb62d5a6639086ac
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52336601"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53436200"
 ---
-# <a name="collect-alerts-from-nagios-and-zabbix-in-log-analytics-from-log-analytics-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix с помощью агента Log Analytics для Linux в службу Log Analytics 
+# <a name="collect-alerts-from-nagios-and-zabbix-in-azure-monitor-from-log-analytics-agent-for-linux"></a>Сбор оповещений Nagios и Zabbix с помощью агента Log Analytics для Linux в службу Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
-[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — средства мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с [оповещениями из других источников](../../monitoring-and-diagnostics/monitoring-overview-alerts.md).  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
+<<<<<<< ЗАГОЛОВОК [Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — инструменты мониторинга с открытым исходным кодом. Оповещения этих инструментов мониторинга можно собирать в Azure Monitor для анализа вместе с данными журнала из других источников.  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
+
+> [!NOTE]
+> [Созданные Azure Monitor оповещения](../../monitoring-and-diagnostics/monitoring-overview-alerts.md) хранятся отдельно от данных журнала и недоступны запросам по журналу.
+=======
+[Nagios](https://www.nagios.org/) и [Zabbix](http://www.zabbix.com/) — инструменты мониторинга с открытым исходным кодом. Оповещения от этих средств мониторинга можно собирать в Log Analytics для анализа вместе с [оповещениями из других источников](../../azure-monitor/platform/alerts-overview.md).  В этой статье описано, как настроить агент Log Analytics для Linux для сбора оповещений из этих систем.
+>>>>>>> 98b6f1655e9ada6d4b6a408ada0f1e4c9ed727d2
  
 ## <a name="prerequisites"></a>Предварительные требования
 Агент Log Analytics для Linux поддерживает сбор оповещений из Nagios до версии 4.2.x и Zabbix до версии 2.x.
@@ -80,7 +84,7 @@ ms.locfileid: "52336601"
 
 
 ## <a name="alert-records"></a>Записи оповещений
-Записи оповещений из Nagios и Zabbix можно получить с помощью [поиска по журналам](../../log-analytics/log-analytics-queries.md) в Log Analytics.
+Записи оповещений из Nagios и Zabbix можно получить с помощью [запросов по журналам](../log-query/log-query-overview.md) в Azure Monitor.
 
 ### <a name="nagios-alert-records"></a>Записи оповещений Nagios
 
@@ -118,5 +122,5 @@ ms.locfileid: "52336601"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Ознакомьтесь с дополнительными сведениями об [оповещениях](../../monitoring-and-diagnostics/monitoring-overview-alerts.md) в Log Analytics.
-* Узнайте больше об [операциях поиска по журналу](../../log-analytics/log-analytics-queries.md) , которые можно применять для анализа данных, собираемых из источников данных и решений. 
+* Подробнее об [оповещениях](../../monitoring-and-diagnostics/monitoring-overview-alerts.md) в Azure Monitor.
+* Узнайте больше о [запросах журнала](../log-query/log-query-overview.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 

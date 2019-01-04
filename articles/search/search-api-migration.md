@@ -1,6 +1,6 @@
 ---
-title: Обновление REST API службы поиска Azure до последней версии | Документация Майкрософт
-description: Обновление REST API службы поиска Azure до последней версии
+title: Обновление REST API службы "Поиск Azure" до последней версии — служба "Поиск Azure"
+description: Просмотрите различия в версиях API и узнайте, какие действия необходимы для переноса имеющегося кода в последнюю версию REST API службы "Поиск Azure".
 author: brjohnstmsft
 manager: jlembicz
 services: search
@@ -9,14 +9,15 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: brjohnst
-ms.openlocfilehash: 2efe7769f68988f3c0d52c8806b78c1b96d8c639
-ms.sourcegitcommit: 35ceadc616f09dd3c88377a7f6f4d068e23cceec
+ms.custom: seodec2018
+ms.openlocfilehash: f19d584932be6b6706d6f7b03622303f68f08f91
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39620235"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53312193"
 ---
-# <a name="upgrading-to-the-latest-azure-search-service-rest-api-version"></a>Обновление REST API службы поиска Azure до последней версии
+# <a name="upgrade-to-the-latest-azure-search-service-rest-api-version"></a>Обновление REST API службы "Поиск Azure" до последней версии
 Если вы используете предыдущую версию [REST API службы "Поиск Azure"](https://docs.microsoft.com/rest/api/searchservice/), эта статья поможет вам обновить приложения для использования следующей общедоступной версии API 2017-11-11.
 
 Версия 2017-11-11 REST API содержит некоторые изменения из более ранних версий. Эти отличия в основном обратно совместимы, поэтому изменение кода потребует минимальных усилий в зависимости от версии, которая использовался ранее. В разделе [Действия по обновлению](#UpgradeSteps) вы найдете инструкции о том, как изменить код для использования новой версии API.

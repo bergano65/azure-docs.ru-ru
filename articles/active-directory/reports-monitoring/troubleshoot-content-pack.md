@@ -16,12 +16,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: a76486eaf2f9df8eb47b8bb73f1577324152a80f
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 65747da92a3cad770cd9d474d27645782f7306b9
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51623304"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52998737"
 ---
 # <a name="troubleshooting-azure-active-directory-activity-logs-content-pack-errors"></a>Устранение ошибок пакетов содержимого, зарегистрированных в журналах действий Azure Active Directory 
 
@@ -34,7 +34,8 @@ ms.locfileid: "51623304"
 
 - [Сбой обновления](troubleshoot-content-pack.md#refresh-failed) 
 - [Не удалось обновить учетные данные источников данных](troubleshoot-content-pack.md#failed-to-update-data-source-credentials) 
-- [Importing of data is taking too long](troubleshoot-content-pack.md#importing-of-data-is-taking-too-long) (Импорт данных занимает слишком много времени)
+- [Importing of data is taking too long](troubleshoot-content-pack.md#importing-of-data-is-taking-too-long) (Импорт данных занимает слишком много времени) 
+
 Данная статья содержит сведения о возможных причинах и способах устранения этих ошибок.
  
 ## <a name="refresh-failed"></a>"Сбой обновления" 
@@ -61,7 +62,7 @@ ms.locfileid: "51623304"
 
 ## <a name="data-import-is-too-slow"></a>Импорт данных выполняется слишком медленно 
  
-**Как отображается эта ошибка**: в Power BI после подключения к пакету содержимого процесс импорта данных приступает к подготовке панели мониторинга для журнала действий Azure Active Directory. Появится сообщение **Импорт данных...** без каких-либо дальнейших изменений.  
+**Как отображается эта ошибка**: в Power BI после подключения к пакету содержимого процесс импорта данных приступает к подготовке панели мониторинга для журнала действий Azure Active Directory. Отобразится сообщение: **Импорт данных...** без каких-либо дальнейших изменений.  
 
 | Причина: | Как устранить |
 | ---   | ---        |

@@ -1,5 +1,6 @@
 ---
-title: Обучение моделей машинного обучения с помощью класса Estimator службы Машинное обучение Azure
+title: Обучение моделей машинного обучения с использованием средства оценки
+titleSuffix: Azure Machine Learning service
 description: Узнайте, как выполнять одноузловое и распределенное обучение традиционного машинного обучения и моделей глубокого обучения с помощью класса Estimator Служб машинного обучения Azure
 ms.author: minxia
 author: mx-iao
@@ -8,19 +9,20 @@ ms.service: machine-learning
 ms.component: core
 ms.topic: conceptual
 ms.reviewer: sgilley
-ms.date: 09/24/2018
-ms.openlocfilehash: c47761c184d0e6c091ff49b3eca2fdf89574b49d
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.date: 12/04/2018
+ms.custom: seodec18
+ms.openlocfilehash: 0ebb12df835cf1c32e02419989b21684e9884c18
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49114865"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53184361"
 ---
-# <a name="how-to-train-models-with-azure-machine-learning"></a>Как обучать модели машинного обучения с помощью Машинного обучения Azure
+# <a name="train-models-with-azure-machine-learning"></a>Обучение моделей с помощью Машинного обучения Azure
 
 Для обучения моделей машинного обучения, в особенности глубоких нейронных сетей, часто требуется много времени и вычислений. После того как вы закончите писать сценарий обучения и работать с небольшим подмножеством данных на вашем локальном компьютере вы, вероятно, захотите увеличить свою рабочую нагрузку.
 
-Чтобы облегчить обучение, пакет SDK Машинного обучения Azure для Python обеспечивает высокоуровневую абстракцию класса Estimator, которая позволяет пользователям легко обучать свои модели в экосистеме Azure. Вы можете создать и использовать объект `Estimator` для отправки любого учебного кода, который необходимо запустить на удаленном компьютере, будь то одноузловое выполнение или распределенное обучение по кластеру графического процессора. Для заданий PyTorch и TensorFlow Машинное обучение Azure также предоставляет соответствующие пользовательские оценщики `PyTorch` и `TensorFlow`, которые упрощают использование этих платформ.
+Чтобы облегчить обучение, пакет SDK Машинного обучения Azure для Python обеспечивает высокоуровневую абстракцию класса Estimator, которая позволяет пользователям легко обучать свои модели в экосистеме Azure. Вы можете создать и использовать объект [`Estimator` ](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator?view=azure-ml-py)для отправки любого обучающего кода, который необходимо запустить на удаленном компьютере, будь то запуск на отдельном узле или распределенное обучение на кластере с GPU. Для заданий PyTorch и TensorFlow Машинное обучение Azure также предоставляет соответствующие пользовательские оценщики `PyTorch` и `TensorFlow`, которые упрощают использование этих платформ.
 
 ## <a name="train-with-an-estimator"></a>Обучение с оценщиком
 
@@ -35,7 +37,7 @@ ms.locfileid: "49114865"
 
 ### <a name="single-node-training"></a>Одноузловое обучение
 
-Используйте `Estimator` для одноузлового тренировочного запуска в удаленной вычислительной среде в Azure для модели scikit-learn. У вас уже должен быть создан объект `compute_target` [целевого вычислительного ресурса](how-to-set-up-training-targets.md#batch) и объект `ds` [хранилища данных](how-to-access-data.md).
+Используйте `Estimator` для одноузлового тренировочного запуска в удаленной вычислительной среде в Azure для модели scikit-learn. У вас уже должен быть создан объект `compute_target` [целевого вычислительного ресурса](how-to-set-up-training-targets.md#amlcompute) и объект `ds` [хранилища данных](how-to-access-data.md).
 
 ```Python
 from azureml.train.estimator import Estimator
@@ -58,7 +60,7 @@ sk_est = Estimator(source_directory='./my-sklearn-proj',
 --|--
 `source_directory`| Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленный вычислительный ресурс. 
 `script_params`| Словарь, указывающий аргументы командной строки для сценария обучения `entry_script` в виде пар <аргумент командной строки, значение>.
-`compute_target`| Удаленный вычислительный ресурс (в этом случае — кластер [Batch AI](how-to-set-up-training-targets.md#batch)), на котором будет выполняться сценарий обучения.
+`compute_target`| Удаленный целевой объект вычислений, на котором будет выполняться сценарий обучения. В нашем случае это кластер Вычислительной среды Машинного обучения Azure ([AmlCompute](how-to-set-up-training-targets.md#amlcompute)).
 `entry_script`| Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. В этой папке должны быть расположены этот файл и дополнительные файлы, от которых он зависит.
 `conda_packages`| Необходимый для сценария обучения список пакетов Python, которые нужно установить с помощью conda.  
 У конструктора есть другой параметр с именем `pip_packages`. Его можно использовать для всех необходимых пакетов pip.
@@ -87,7 +89,7 @@ print(run.get_details().status)
 
 Следующий код показывает, как выполнить распределенное обучение для модели CNTK. Кроме того, вместо использования образов по умолчанию Машинного обучения Azure предполагается, что вы используете собственный пользовательский образ Docker для обучения.
 
-У вас уже должен быть создан объект `compute_target` [целевого вычислительного ресурса](how-to-set-up-training-targets.md#batch). Вы можете создать оценщик следующим образом.
+У вас уже должен быть создан объект `compute_target` [целевого вычислительного ресурса](how-to-set-up-training-targets.md#amlcompute). Вы можете создать оценщик следующим образом.
 
 ```Python
 from azureml.train.estimator import Estimator
@@ -117,13 +119,11 @@ run = experiment.submit(cntk_est)
 ```
 
 ## <a name="examples"></a>Примеры
-Руководство по обучению модели sklearn см. в:
-* [tutorials/01.train-models.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/01.train-models.ipynb)
+Записная книжка, которая обучает модель sklearn:
+* [tutorials/img-classification-part1-training.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part1-training.ipynb)
 
-Руководство по распределению CNTK с использованием пользовательских Docker см. в:
-* [training/06.distributed-cntk-with-custom-docker](https://github.com/Azure/MachineLearningNotebooks/blob/master/training/06.distributed-cntk-with-custom-docker)
-
-Получите записные книжки:
+Записные книжки для распределенного глубокого обучения:
+* [how-to-use-azureml/training-with-deep-learning](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 

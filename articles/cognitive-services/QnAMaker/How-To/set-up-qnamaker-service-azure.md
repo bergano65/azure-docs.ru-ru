@@ -10,12 +10,13 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: tulasim
-ms.openlocfilehash: 103da0c65bcf9b9bd24130082f844b9bd12a9a02
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.custom: seodec18
+ms.openlocfilehash: 6898b007287e4f4c87010649c6f0b66c03f7cf8d
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49389723"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53086272"
 ---
 # <a name="create-a-qna-maker-service"></a>Создание службы QnA Maker
 
@@ -27,7 +28,7 @@ ms.locfileid: "49389723"
 
 2.  Щелкните **Добавить новый ресурс** и введите "qna maker" в строке поиска, затем выберите в результатах ресурс QnA Maker.
 
-    ![Создание службы QnA Maker](../media/qnamaker-how-to-setup-service/create-new-resource.png)
+    ![Создание службы QnA Maker — добавление нового ресурса](../media/qnamaker-how-to-setup-service/create-new-resource.png)
 
 3.  Ознакомьтесь с условиями использования и щелкните **Создать**.
 
@@ -35,7 +36,7 @@ ms.locfileid: "49389723"
 
 4. В **QnA Maker** выберите соответствующие уровни и регионы.
 
-    ![Создание службы QnA Maker](../media/qnamaker-how-to-setup-service/enter-qnamaker-info.png)
+    ![Создание службы QnA Maker — ценовая категория и регионы](../media/qnamaker-how-to-setup-service/enter-qnamaker-info.png)
 
     * Введите в поле **Имя** уникальное имя, которое будет обозначать эту службу QnA Maker. Кроме того, это имя определяет конечную точку QnA Maker, с которой будут связаны базы знаний.
     * Выберите **подписку**, в которой будет развернут ресурс QnA Maker.
@@ -57,7 +58,7 @@ ms.locfileid: "49389723"
 
 6.  Когда развертывание завершится, вы увидите в своей подписке следующий список созданных ресурсов.
 
-    ![Создание службы QnA Maker](../media/qnamaker-how-to-setup-service/resources-created.png)
+    ![Ресурс, созданный в службе QnA Maker](../media/qnamaker-how-to-setup-service/resources-created.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

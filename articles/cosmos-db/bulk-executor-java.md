@@ -1,20 +1,19 @@
 ---
-title: Выполнение операций массового импорта и массового обновления в Azure Cosmos DB с помощью библиотеки массового исполнителя Java | Документация Майкрософт
+title: Выполнение операций массового импорта и массового обновления в Azure Cosmos DB с помощью библиотеки массового исполнителя Java
 description: Массовый импорт и массовое обновление документов Azure Cosmos DB с помощью библиотеки массового исполнителя Java.
 services: cosmos-db
 author: tknandu
-manager: kfile
 ms.service: cosmos-db
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 10/16/2018
 ms.author: ramkris
-ms.openlocfilehash: 44477f77547c9373bd4a3394c80e217d419bc8e0
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: e91984281350e9ea0a5f3411c39d29dfd6420529
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50420053"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53080917"
 ---
 # <a name="use-bulk-executor-java-library-to-perform-bulk-operations-on-azure-cosmos-db-data"></a>Выполнение массовых операций с данными Azure Cosmos DB с помощью библиотеки Java массового исполнителя
 
@@ -33,7 +32,7 @@ ms.locfileid: "50420053"
 
   - Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
 
-* [Скачайте](http://maven.apache.org/download.cgi) и [установите](http://maven.apache.org/install.html) двоичный архив [Maven](http://maven.apache.org/).  
+* [Скачайте](https://maven.apache.org/download.cgi) и [установите](https://maven.apache.org/install.html) двоичный архив [Maven](https://maven.apache.org/).  
   
   - В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.
 

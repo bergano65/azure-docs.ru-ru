@@ -1,5 +1,5 @@
 ---
-title: Перенос данных из локального SQL Server в SQL Azure с фабрикой данных Azure | Документация Майкрософт
+title: Перенос данных SQL Server в SQL Azure с помощью фабрики данных Azure — командный процесс обработки и анализа данных
 description: Настройка конвейера ADF, который объединяет два действия миграции данных, которые ежедневно перемещают данные между локальными базами данных и в облаке.
 services: machine-learning
 author: marktab
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/04/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: bddb54d9a00c5ec88fcebe498d7f959c0f8e3dbf
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: a1bb841c1218be0a418583af8ca95b2dff2f67d9
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52447042"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53309507"
 ---
 # <a name="move-data-from-an-on-premises-sql-server-to-sql-azure-with-azure-data-factory"></a>Перенос данных из локального SQL Server в SQL Azure с фабрикой данных Azure
 
@@ -43,7 +43,7 @@ ADF позволяет выполнять планирование и отсле
 * копирование данных из учетной записи хранилища больших двоичных объектов Azure в базу данных SQL Azure.
 
 > [!NOTE]
-> Здесь описаны адаптированные действия из более подробного руководства [Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными](../../data-factory/tutorial-hybrid-copy-portal.md), предоставленного группой разработчиков ADF. В этой статье по мере необходимости приводятся ссылки на соответствующие разделы этого руководства.
+> Показанные здесь шаги были взяты из более подробного учебника, предоставленного группой разработчиков ADF: [Копирование данных из локальной базы данных SQL Server в хранилище BLOB-объектов Azure](https://docs.microsoft.com/azure/data-factory/tutorial-hybrid-copy-portal/). Ссылки на соответствующие разделы этой статьи предоставляются по мере необходимости.
 >
 >
 
@@ -68,15 +68,10 @@ ADF позволяет выполнять планирование и отсле
 ## <a name="create-adf"></a> Создание фабрики данных Azure
 Инструкции по созданию фабрики данных Azure и группы ресурсов на [портале Azure](https://portal.azure.com/) представлены [здесь](../../data-factory/tutorial-hybrid-copy-portal.md#create-a-data-factory). Задайте имя *adfdsp* для нового экземпляра ADF и имя *adfdsprg* для созданной группы ресурсов.
 
-## <a name="install-and-configure-up-the-data-management-gateway"></a>Установка и настройка шлюза управления данными
-Чтобы конвейеры фабрики данных Azure могли работать с локальным SQL Server, необходимо добавить его в качестве связанной службы фабрики данных. Чтобы создать связанную службу для локального SQL Server, выполните следующие действия:
+## <a name="install-and-configure-azure-data-factory-integration-runtime"></a>Установка и настройка фабрики данных Azure Integration Runtime 
+Integration Runtime — это управляемая клиентом инфраструктура среды выполнения интеграции, которую фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. Эта среда выполнения раньше называлась "Шлюз управления данными". 
 
-* скачайте шлюз управления данными Microsoft и установите его на локальном компьютере;
-* настройте связанную службу локального источника данных таким образом, чтобы она использовала этот шлюз.
-
-Шлюз управления данными сериализует и десериализует данные источника и приемника на компьютере, на котором он размещен.
-
-Инструкции по установке и сведения о шлюзе управления данными см. в статье [Перемещение данных между локальными источниками и облаком при помощи шлюза управления данными](../../data-factory/tutorial-hybrid-copy-portal.md).
+Чтобы выполнить настройку, [следуйте указаниям по созданию конвейера](https://docs.microsoft.com/azure/data-factory/tutorial-hybrid-copy-portal#create-a-pipeline)
 
 ## <a name="adflinkedservices"></a>Создание связанных служб для подключения к ресурсам данных
 Информация, необходимая фабрике данных для подключения к внешним ресурсам, определяется связанными службами. В этом сценарии есть три ресурса, для которых требуются связанные службы.

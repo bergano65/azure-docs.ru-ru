@@ -1,6 +1,6 @@
 ---
-title: Регистрация организации в Azure Active Directory | Документы Майкрософт
-description: Узнайте, как зарегистрировать организацию для использования Azure и Azure Active Directory.
+title: Регистрация организации для использования Azure Active Directory | Документация Майкрософт
+description: Инструкции по регистрации организации для использования Azure и Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: lizross
 ms.reviewer: jeffsta
-ms.custom: it-pro
-ms.openlocfilehash: ccff64b88787291832b9d2ed84eb81919152d887
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: 53536604ed2f371d1ae7e63b286b17501b260c8c
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46364777"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100724"
 ---
-# <a name="how-to-sign-up-for-azure-active-directory-as-an-organization"></a>Практическое руководство. Регистрация организации в Azure Active Directory
+# <a name="sign-up-your-organization-to-use-azure-active-directory"></a>Регистрация организации для использования Azure Active Directory
 Зарегистрируйтесь в службе Azure Active Directory (Azure AD) с новой подпиской Microsoft Azure через:
 
 - **Учетную запись Майкрософт.** Используйте персональную учетную запись Майкрософт, чтобы получить доступ к Azure и ко всем потребительским продуктам и облачным службам Майкрософт, таким как Outlook (Hotmail), Messenger, OneDrive, MSN, Xbox LIVE или Office 365. Регистрация почтового ящика Outlook.com автоматически создает учетную запись Майкрософт. Дополнительные сведения см. в статье [Общие сведения об учетной записи Майкрософт](https://account.microsoft.com/account).

@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: e6204933d6b9a4a6b296a141520fc8887c9181f1
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 22e15f58f3d4e7f4db3ac3bd519dbb286a36ef95
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51279726"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53384145"
 ---
-# <a name="ports-used-by-hadoop-services-on-hdinsight"></a>Порты, используемые службами Hadoop в HDInsight
+# <a name="ports-used-by-apache-hadoop-services-on-hdinsight"></a>Порты, используемые службами Apache Hadoop в HDInsight
 
-В этом документе представлен список портов, которые используются службами Hadoop, работающими в кластерах HDInsight под управлением Linux. Кроме того, в статье содержатся сведения о портах, которые используются для подключения к кластеру с помощью протокола SSH.
+В этом документе представлен список портов, которые используются службами Apache Hadoop, работающими в кластерах HDInsight под управлением Linux. Кроме того, в статье содержатся сведения о портах, которые используются для подключения к кластеру с помощью протокола SSH.
 
 ## <a name="public-ports-vs-non-public-ports"></a>Общедоступные и необщедоступные порты
 
@@ -26,7 +26,7 @@ ms.locfileid: "51279726"
 
 По сути, HDInsight реализуется несколькими виртуальными машинами Azure (узлами кластера), которые работают в виртуальной сети Azure. Из виртуальной сети вы можете получить доступ к портам, недоступным из Интернета. Например, подключившись к одному из головных узлов по протоколу SSH, вы можете получить прямой доступ к службам, работающим на узлах кластера.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Если не указать виртуальную сеть Azure с помощью параметра конфигурации для HDInsight, она будет создана автоматически. Тем не менее к этой виртуальной сети невозможно присоединить другие компьютеры (например, другие виртуальные машины Azure или клиентский компьютер разработки).
 
 
@@ -41,20 +41,20 @@ ms.locfileid: "51279726"
 | sshd |22 |SSH |Подключает клиенты к sshd на основном головном узле. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md). |
 | sshd |22 |SSH |Подключает клиенты к SSHD на граничном узле. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md). |
 | sshd |23 |SSH |Подключает клиенты к sshd на дополнительном головном узле. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md). |
-| Ambari |443 |HTTPS |Веб-интерфейс Ambari. См. статью [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md). |
-| Ambari |443 |HTTPS |REST API Ambari. См. статью [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md). |
-| WebHCat |443 |HTTPS |REST API HCatalog. См. статьи [Выполнение заданий Pig с помощью Curl с использованием Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-curl.md), [Выполнение заданий Pig с помощью Curl с использованием Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-curl.md) и [Выполнение заданий MapReduce с помощью Curl с использованием Hadoop в HDInsight](hadoop/apache-hadoop-use-mapreduce-curl.md). |
+| Ambari |443 |HTTPS |Веб-интерфейс Ambari. Дополнительные сведения см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md). |
+| Ambari |443 |HTTPS |REST API Ambari. Дополнительные сведения см. в статье [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md). |
+| WebHCat |443 |HTTPS |REST API HCatalog. Дополнительные сведения см. в статьях [Выполнение заданий Pig с помощью REST с использованием Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-curl.md), [Выполнение заданий Pig с помощью REST с использованием Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-curl.md) и [Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST](hadoop/apache-hadoop-use-mapreduce-curl.md). |
 | HiveServer2 |443 |ODBC |Подключение к Hive с помощью ODBC. См. статью [Подключение Excel к Hadoop с помощью драйвера Microsoft Hive ODBC](hadoop/apache-hadoop-connect-excel-hive-odbc-driver.md). |
-| HiveServer2 |443 |JDBC |Подключение к Hive с помощью JDBC. См. статью [Подключение к Hive в Azure HDInsight с помощью драйвера Hive JDBC](hadoop/apache-hadoop-connect-hive-jdbc-driver.md). |
+| HiveServer2 |443 |JDBC |Подключение к ApacheHive с помощью JDBC. Дополнительные сведения см. в статье [Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight](hadoop/apache-hadoop-connect-hive-jdbc-driver.md). |
 
 Приведенные ниже сведения доступны для определенных типов кластеров.
 
 | Service | Порт | Протокол | Тип кластера | ОПИСАНИЕ |
 | --- | --- | --- | --- | --- |
-| Stargate |443 |HTTPS |hbase |REST API HBase. См. статью [Руководство по HBase. Приступая к работе с Apache HBase на Hadoop под управлением Linux в HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md). |
-| Livy |443 |HTTPS |Spark |Spark REST API. См. статью [Удаленная отправка заданий Spark в кластер Apache Spark в HDInsight на платформе Linux с помощью Livy](spark/apache-spark-livy-rest-interface.md). |
-| Сервер Thrift Spark |443 |HTTPS |Spark |Сервер Thrift Spark, который используется для отправки запросов Hive. См. статью [Использование клиента Beeline с Apache Hive](hadoop/apache-hadoop-use-hive-beeline.md). |
-| Storm |443 |HTTPS |Storm |Веб-интерфейс Storm. См. статью [Развертывание топологий Apache Storm в HDInsight под управлением Linux и управление ими](storm/apache-storm-deploy-monitor-topology-linux.md). |
+| Stargate |443 |HTTPS |hbase |REST API HBase. Дополнительные сведения см. в статье [Начало работы с примером Apache HBase в HDInsight](hbase/apache-hbase-tutorial-get-started-linux.md). |
+| Livy |443 |HTTPS |Spark |Spark REST API. Дополнительные сведения см. в статье [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](spark/apache-spark-livy-rest-interface.md) |
+| Сервер Thrift Spark |443 |HTTPS |Spark |Сервер Thrift Spark, который используется для отправки запросов Hive. Дополнительные сведения см. в статье [Использование клиента Apache Beeline с Apache Hive](hadoop/apache-hadoop-use-hive-beeline.md). |
+| Storm |443 |HTTPS |Storm |Веб-интерфейс Storm. Дополнительные сведения см. в статье [Развертывание и администрирование топологий Apache Storm в Azure HDInsight](storm/apache-storm-deploy-monitor-topology-linux.md) |
 
 ### <a name="authentication"></a>Authentication
 
@@ -67,10 +67,10 @@ ms.locfileid: "51279726"
 
 ## <a name="non-public-ports"></a>Необщедоступные порты
 
-> [!NOTE]
+> [!NOTE]  
 > Некоторые службы доступны только в кластерах определенных типов. Например, служба HBase доступна только на кластерах типа HBase.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Некоторые службы могут работать только на одном головном узле одновременно. Если вы пытаетесь подключиться к службе на основном головном узле и получаете сообщение об ошибке, повторите попытку, используя вторичный головной узел.
 
 ### <a name="ambari"></a>Ambari

@@ -1,5 +1,5 @@
 ---
-title: 'Доменные службы Azure Active Directory: развертывание прокси приложения Azure Active Directory | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Развертывание Azure Active Directory Application Proxy | Документация Майкрософт
 description: Использование прокси приложения Azure AD в управляемых доменах доменных служб Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
@@ -15,17 +15,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: ergreenl
-ms.openlocfilehash: 96ef005f095e5ab774a88ec766080f647414a7ce
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 4621122d805f37be1578aa7b7c9ae059f3141c77
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50155547"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52840305"
 ---
 # <a name="deploy-azure-ad-application-proxy-on-an-azure-ad-domain-services-managed-domain"></a>Развертывание прокси приложения Azure AD в управляемых доменах доменных служб Azure AD
 Прокси приложения Azure Active Directory помогает организовать удаленную работу сотрудников, публикуя локальные приложения для доступа через Интернет. С помощью доменных служб Azure AD теперь можно переносить устаревшие локальные приложения в службы инфраструктуры Azure. Затем эти приложения можно опубликовать с помощью прокси приложения Azure AD, чтобы обеспечить безопасный удаленный доступ для пользователей в вашей организации.
 
-Если вы еще не знакомы с прокси приложения Azure AD, узнайте, [как обеспечить безопасный удаленный доступ к локальным приложениям](../active-directory/manage-apps/application-proxy.md).
+Если вы еще не знакомы с Azure Active Directory Application Proxy AD, узнайте, что это за компонент, из статьи [Как обеспечить безопасный удаленный доступ к локальным приложениям](../active-directory/manage-apps/application-proxy.md).
 
 [!INCLUDE [active-directory-ds-prerequisites.md](../../includes/active-directory-ds-prerequisites.md)]
 
@@ -42,7 +42,7 @@ ms.locfileid: "50155547"
 ## <a name="task-1---enable-azure-ad-application-proxy-for-your-azure-ad-directory"></a>Задача 1. Включить прокси приложения Azure AD для каталога Azure AD
 Чтобы включить прокси приложения Azure AD для каталога Azure AD, выполните следующие действия.
 
-1. Войдите на [портал Azure](http://portal.azure.com) с учетной записью администратора.
+1. Войдите на [портал Azure](https://portal.azure.com) с учетной записью администратора.
 
 2. Щелкните **Azure Active Directory**, чтобы просмотреть каталоги. Щелкните **Корпоративные приложения**.
 
@@ -96,9 +96,9 @@ ms.locfileid: "50155547"
 ## <a name="next-steps"></a>Дальнейшие действия
 После этого прокси приложения Azure AD настроен и интегрирован в управляемый домен доменных служб Azure AD.
 
-* **Перенос приложений в виртуальные машины Azure.** Приложения можно перенести из локальных серверов в виртуальные машины Azure, которые присоединены к управляемому домену. Это позволяет избавиться от затрат на поддержание инфраструктуры локальных серверов.
+* **Перенос приложений на виртуальные машины Azure.** Приложения можно перенести с локальных серверов на виртуальные машины Azure, которые присоединены к управляемому домену, по методике lift-and-shift. Это позволяет избавиться от затрат на поддержание инфраструктуры локальных серверов.
 
-* **Публикация приложений с помощью прокси приложения Azure AD.** Публикация приложений, работающих в виртуальных машинах Azure, с использованием прокси приложения Azure AD. Дополнительные сведения см. в статье [Публикация приложений с помощью прокси приложения Azure AD](../active-directory/manage-apps/application-proxy-publish-azure-portal.md).
+* **Публикация приложений с помощью прокси приложения Azure Active Directory Application Proxy**. Опубликуйте приложения, работающие на виртуальных машинах Azure, с помощью Azure Active Directory Application Proxy. Дополнительные сведения см. в статье [Публикация приложений с помощью прокси приложения Azure AD](../active-directory/manage-apps/application-proxy-publish-azure-portal.md).
 
 
 ## <a name="deployment-note---publish-iwa-integrated-windows-authentication-applications-using-azure-ad-application-proxy"></a>Примечание к развертыванию. Публикация приложений интегрированной проверки подлинности Windows с использованием прокси приложения Azure AD

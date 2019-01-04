@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Reward Gateway | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Reward Gateway | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и Reward Gateway.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: d5cda8830b480e9ef9dff18cb3d7b99e1db55590
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 0339889228c80cc3675fd7fde52e75cb84521ab6
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39442801"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52840186"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-reward-gateway"></a>Учебник. Интеграция Azure Active Directory с Reward Gateway
+# <a name="tutorial-azure-active-directory-integration-with-reward-gateway"></a>Руководство. Интеграция Azure Active Directory с Reward Gateway
 
 В этом учебнике описано, как интегрировать Reward Gateway с Azure Active Directory (Azure AD).
 
@@ -129,7 +129,7 @@ ms.locfileid: "39442801"
     | `https://<companyname>.rewardgateway.com.au/Authentication/EndLogin?idp=<Unique Id>` |
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, запустите настройку интеграции на портале Reward Manager. Дополнительные сведения можно найти по адресу http://success.rewardgateway.com/it-implementation/293968-how-to-configure-a-sso-integration.
+    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, запустите настройку интеграции на портале Reward Manager. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/it-implementation/293968-how-to-configure-a-sso-integration.
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -139,10 +139,10 @@ ms.locfileid: "39442801"
 
     ![Настройка единого входа](./media/reward-gateway-tutorial/tutorial_general_400.png)
 
-1. Чтобы настроить единый вход на стороне **Reward Gateway**, запустите настройку интеграции на портале Reward Manager. С помощью этих скачанных метаданных получите сертификат для подписи и отправьте его во время настройки. Дополнительные сведения можно найти по адресу http://success.rewardgateway.com/it-implementation/293968-how-to-configure-a-sso-integration.
+1. Чтобы настроить единый вход на стороне **Reward Gateway**, запустите настройку интеграции на портале Reward Manager. С помощью этих скачанных метаданных получите сертификат для подписи и отправьте его во время настройки. Дополнительные сведения можно найти по адресу https://success.rewardgateway.com/it-implementation/293968-how-to-configure-a-sso-integration.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

@@ -1,27 +1,28 @@
 ---
-title: Поиск региона конечной точки с использованием C# в LUIS
-titleSuffix: Azure Cognitive Services
-description: Программный поиск региона публикации с помощью ключа конечной точки и идентификатора приложения для LUIS.
+title: Поиск региона конечной точки с использованием C#
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Поиск региона публикации с помощью ключа конечной точки и идентификатора приложения для LUIS с использованием C#.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 09/06/2018
+ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 53c3d1abb24ae0d5b33a2a100dda07fd20ae92d1
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 5d4c564ac797f40d7f6e9b169a6c864d3ef8147b
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47039638"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53165169"
 ---
 # <a name="find-endpoint-region-with-c"></a>Поиск региона конечной точки с использованием C# 
 При наличии идентификатора приложения LUIS и идентификатора подписки LUIS можно определить, какой регион будет использоваться для запросов конечной точки.
 
 > [!NOTE] 
-> Полное решение C# доступно в разделе [**LUIS-Samples** репозитория Github](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/find-region/csharp/).
+> Полное решение C# доступно в разделе [**LUIS-Samples** репозитория GitHub](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/find-region/csharp/).
 
 ## <a name="luis-endpoint-query-strategy"></a>Стратегия запросов конечной точки LUIS
 Для каждого запроса конечной точки LUIS требуется:

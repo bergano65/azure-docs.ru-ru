@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/01/2018
+ms.date: 12/05/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 8068c4a8f38cd33a1a0547f5db5079bc75c76ec1
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: fcebada4ef10c3e0bb298e9308d66ecb37247832
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51013417"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52999260"
 ---
 # <a name="register-an-application-in-azure-active-directory-b2c"></a>Зарегистрировать приложение в Azure Active Directory B2C
 
@@ -82,7 +82,4 @@ ms.locfileid: "51013417"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда у вас есть приложение, зарегистрированное для использования Azure AD B2C, вы можете изучить одно из [кратких руководств](active-directory-b2c-overview.md), чтобы подготовить его к работе и запустить.
-
-> [!div class="nextstepaction"]
-> [Azure AD B2C: регистрация и вход в систему в веб-приложении ASP.NET](active-directory-b2c-devquickstarts-web-dotnet-susi.md)
+Дополнительные сведения об использовании маркеров доступа приложениями для предоставления разрешений для доступа к API см. в статье [Azure AD B2C: запрос маркеров доступа](active-directory-b2c-access-tokens.md).

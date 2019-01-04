@@ -5,14 +5,14 @@ author: asgang
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 07/06/2018
+ms.date: 11/27/2018
 ms.author: asgang
-ms.openlocfilehash: e2cba8cb53e73bd1fc25f1fe43fa0365247e2bd2
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: c1714fd6ada45f2b4498a3f5972424200afa9aa3
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50210828"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52838146"
 ---
 # <a name="set-up-disaster-recovery-for-a-multitier-dynamics-ax-application"></a>Настройка аварийного восстановления для многоуровневого приложения Dynamics AX 
 
@@ -118,12 +118,12 @@ ms.locfileid: "50210828"
 Вы можете настроить план восстановления для приложения Dynamics AX, добавив шаги, как описано ниже. На снимке выше показан полный план восстановления после добавления всех шагов.
 
 
-* **Действия по отработке отказа для SQL Server.** Сведения о конкретных шагах восстановления для SQL Server см. в статье [Защита SQL Server с помощью аварийного восстановления SQL Server и Azure Site Recovery](site-recovery-sql.md).
+* **Действия по отработке отказа для SQL Server.** Сведения о конкретных шагах восстановления для SQL Server см. в статье [Настройка аварийного восстановления для SQL Server](site-recovery-sql.md).
 
 * **Группа отработки отказа 1.** Отработка отказа для виртуальных машин Application Object Server.
 Убедитесь, что выбранная точка восстановления максимально близка к точке во времени базы данных, но не предшествует ей.
 
-* **Сценарий.** Добавление подсистемы балансировки нагрузки (только E-A).
+* **Скрипт.** Добавление подсистемы балансировки нагрузки (только E-A).
 Добавьте сценарий (с помощью службы автоматизации Azure) после группы виртуальных машин Application Object Server, чтобы добавить в нее подсистему балансировки нагрузки. Для этого можно использовать сценарий. Дополнительные сведения см. в разделе [Cloud migration and disaster recovery of load balanced multi-tier applications](https://azure.microsoft.com/blog/cloud-migration-and-disaster-recovery-of-load-balanced-multi-tier-applications-using-azure-site-recovery/) (Миграция в облако и аварийное восстановление многоуровневых приложений с балансировкой нагрузки).
 
 * **Группа отработки отказа 2.** Отработка отказа для виртуальных машин клиента Dynamics AX. Выполните отработку отказа виртуальных машин веб-уровня в рамках плана восстановления.

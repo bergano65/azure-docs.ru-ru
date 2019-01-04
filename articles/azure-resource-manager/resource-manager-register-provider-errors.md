@@ -11,18 +11,18 @@ ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 03/09/2018
+ms.date: 12/10/2018
 ms.author: tomfitz
-ms.openlocfilehash: b90009c1cd08a1004e58c4b9f25cd6350712fbcd
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 704aa488d40a18d7be0b64c9fc9a1bd33f8a3d96
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34358614"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53184548"
 ---
 # <a name="resolve-errors-for-resource-provider-registration"></a>Устранение ошибок регистрации поставщика ресурсов
 
-В этой статье описываются ошибки, которые могут возникнуть при использовании поставщика ресурсов, который вы ранее не использовали в своей подписке.
+В этой статье описываются ошибки, которые могут возникнуть при использовании поставщика ресурсов, который вы еще не использовали в своей подписке.
 
 ## <a name="symptom"></a>Симптом
 
@@ -47,9 +47,9 @@ Message: The subscription is not registered to use namespace {resource-provider-
 
 Эти ошибки возникают по одной из следующих причин:
 
-1. Для подписки не зарегистрирован поставщик ресурсов.
-1. Версия API не поддерживается для выбранного типа ресурса.
-1. Расположение не поддерживается для выбранного типа ресурса.
+* Для подписки не зарегистрирован поставщик ресурсов.
+* Версия API не поддерживается для выбранного типа ресурса.
+* Расположение не поддерживается для выбранного типа ресурса.
 
 ## <a name="solution-1---powershell"></a>Решение 1 — PowerShell
 
@@ -101,10 +101,22 @@ az provider show -n Microsoft.Web --query "resourceTypes[?resourceType=='sites']
 
 Просмотреть состояние регистрации и зарегистрировать пространство имен поставщика ресурсов можно на портале.
 
+1. На портале щелкните **Все службы**.
+
+   ![Выбор всех служб](./media/resource-manager-register-provider-errors/select-all-services.png)
+
+1. Выберите **Подписки**.
+
+   ![Выбор пункта "Подписки"](./media/resource-manager-register-provider-errors/select-subscriptions.png)
+
+1. Из списка подписок выберите ту, которую вы хотите использовать для регистрации поставщика ресурсов.
+
+   ![Выбор подписки для регистрации поставщика ресурсов.](./media/resource-manager-register-provider-errors/select-subscription-to-register.png)
+
 1. Для своей подписки выберите **Поставщики ресурсов**.
 
-   ![Выбор поставщиков ресурсов](./media/resource-manager-register-provider-errors/select-resource-provider.png)
+   ![Выбор поставщика ресурсов](./media/resource-manager-register-provider-errors/select-resource-provider.png)
 
 1. Просмотрите список поставщиков ресурсов и, при необходимости, щелкните ссылку **Зарегистрировать**, чтобы зарегистрировать поставщик ресурсов типа, который вы пытаетесь развернуть.
 
-   ![список поставщиков ресурсов](./media/resource-manager-register-provider-errors/list-resource-providers.png)
+   ![Перечислить поставщиков ресурсов](./media/resource-manager-register-provider-errors/list-resource-providers.png)

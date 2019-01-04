@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 10/09/2018
-ms.openlocfilehash: d228fbde230f89848d895bd1c004724b88de4431
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: a8d91c0410d2a59e4b22866aa48d36c026f3ee8e
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48883828"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52956301"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-db"></a>Известные проблемы и ограничения при сетевых миграциях в Базу данных SQL Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "48883828"
 
 { "resourceId":"/subscriptions/<subscription id>/resourceGroups/migrateready/providers/Microsoft.DataMigration/services/<DMS Service name>", "errorType":"Database migration error" (Ошибка перемещения базы данных), "errorEvents":"["Capture functionalities could not be set (Не удалось установить функциональные возможности отслеживания). RetCode: SQL_ERROR SqlState: 42000 NativeError: 13570 Message: [Microsoft][SQL Server Native Client 11.0][SQL Server]The use of replication is not supported with system-versioned temporal table '[Application. Cities]' Line: 1 Column: -1 (Использование репликации не поддерживается в темпоральной таблице с системным управлением версиями: [Application.Cities]. Строка: 1. Столбец: 1)"]" }
  
- ![Примеры ошибок темпоральной таблицы](media\known-issues-azure-sql-online\dms-temporal-tables-errors.png)
+ ![Примеры ошибок темпоральной таблицы](media/known-issues-azure-sql-online/dms-temporal-tables-errors.png)
 
 **Возможное решение**
 
@@ -52,7 +52,7 @@ ms.locfileid: "48883828"
 
 Вы можете увидеть исключение SQL, сообщающее, что ntext несовместим с hierarchyid во время операции полной загрузки данных:
      
-![Пример ошибок hierarchyid](media\known-issues-azure-sql-online\dms-hierarchyid-errors.png)
+![Пример ошибок hierarchyid](media/known-issues-azure-sql-online/dms-hierarchyid-errors.png)
 
 **Возможное решение**
 
@@ -107,7 +107,7 @@ DMS не переносит значение метки времени исто�
 
 Если в случае возникновения сбоев миграции в представлении сведений о состоянии базы данных щелкнуть ссылку **Ошибки миграции данных** в верхней ленте, могут не отобразиться дополнительные сведения о конкретных сбоях миграции.
 
-![пример ошибок перемещения данных: нет сведений](media\known-issues-azure-sql-online\dms-data-migration-errors-no-details.png)
+![пример ошибок перемещения данных: нет сведений](media/known-issues-azure-sql-online/dms-data-migration-errors-no-details.png)
 
 **Возможное решение**
 
@@ -115,6 +115,6 @@ DMS не переносит значение метки времени исто�
 
 1. Закройте колонку подробностей о состоянии базы данных, чтобы отобразить экран действия миграции.
 
-     ![экран действия миграции](media\known-issues-azure-sql-online\dms-migration-activity-screen.png)
+     ![экран действия миграции](media/known-issues-azure-sql-online/dms-migration-activity-screen.png)
 
 2. Щелкните **См. сведения об ошибке**, чтобы увидеть сообщения об ошибках миграции, которые помогут вам устранить их.

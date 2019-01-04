@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 06/04/2018
+ms.date: 10/06/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a65a0b8e054b1d0bb6cd4cbeb2daf9be2b132a9e
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 381f8c5fb59379c0494dabcd22f4675be9535837
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44304541"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53016697"
 ---
 # <a name="starting-an-azure-automation-runbook-with-a-webhook"></a>Запуск Runbook службы автоматизации Azure с помощью объекта webhook
 
@@ -31,7 +31,7 @@ ms.locfileid: "44304541"
 |:--- |:--- |
 | Действие |Для объекта Webhook можно указать любое имя, так как оно не раскрывается клиенту. Имя используется для идентификации модуля Runbook в службе автоматизации Azure. <br> Рекомендуется задать веб-перехватчику имя, связанное с клиентом, который будет его использовать. |
 | URL-адрес |URL-адрес Webhook — это уникальный адрес, который использует клиент для метода HTTP POST для запуска модуля Runbook, связанного с объектом Webhook. URL-адрес создается автоматически при создании объекта Webhook. Нельзя указать другой URL-адрес. <br> <br> URL-адрес содержит токен безопасности, который позволяет сторонней системе вызвать модуль Runbook без дополнительной проверки подлинности. По этой причине он должен рассматриваться как пароль. По соображениям безопасности просмотреть URL-адрес на портале Azure можно только в момент создания веб-перехватчика. Запишите URL-адрес в надежном месте, чтобы использовать его в дальнейшем. |
-| Срок действия |Как и сертификат, каждый объект Webhook имеет срок действия, после которого он больше не используется. Этот срок можно изменить после создания объекта webhook. |
+| Срок действия |Как и сертификат, каждый объект Webhook имеет срок действия, после которого он больше не используется. Этот срок можно изменить после создания веб-перехватчика (пока срок его действия не истек). |
 | Включено |При создании объекта Webhook он по умолчанию включается. Если его отключить, клиенты не смогут его использовать. Свойство **Включен** можно задать при создании объекта Webhook или в любое время после его создания. |
 
 ### <a name="parameters"></a>Параметры
@@ -122,6 +122,12 @@ http://<Webhook Server>/token?=<Token Value>
 
 Клиент не может определить момент завершения задания Runbook и состояние его завершения из объекта Webhook. Он может определить эти сведения с помощью идентификатора задания, используя другой метод, например [Windows PowerShell](https://docs.microsoft.com/powershell/module/servicemanagement/azure/get-azureautomationjob) или [API службы автоматизации Azure](/rest/api/automation/job).
 
+## <a name="renew-webhook"></a>Обновление веб-перехватчика
+
+Созданный веб-перехватчик имеет срок действия один год. По истечении этого времени срок действия веб-перехватчика автоматически истекает. После истечения срока действия веб-перехватчик нельзя повторно активировать. Его необходимо удалить и создать заново. Если срок действия веб-перехватчика не истек, его можно продлить.
+
+Для этого перейдите в модуль runbook, который содержит веб-перехватчик. Выберите **Веб-перехватчики** в разделе **Ресурсы**. Щелкните веб-перехватчик, срок действия которого нужно продлить. Откроется страница **Веб-перехватчик**.  Введите новую дату окончания срока действия и щелкните **Сохранить**.
+
 ## <a name="sample-runbook"></a>Пример Runbook
 
 Следующий пример модуля Runbook принимает данные веб-перехватчика и запускает виртуальные машины, указанные в тексте запроса. Для тестирования этого модуля Runbook в учетной записи автоматизации в разделе **Модули Runbook** нажмите кнопку **+ Добавить Runbook**. Если вы не знаете, как создать модуль Runbook, ознакомьтесь с [этой статьей](automation-quickstart-create-runbook.md).
@@ -133,8 +139,20 @@ param
     [object] $WebhookData
 )
 
+
+
 # If runbook was called from Webhook, WebhookData will not be null.
 if ($WebhookData) {
+
+    # Check header for message to validate request
+    if ($WebhookData.RequestHeader.message -eq 'StartedbyContoso')
+    {
+        Write-Output "Header has required information"}
+    else
+    {
+        Write-Output "Header missing required information";
+        exit;
+    }
 
     # Retrieve VM's from Webhook request body
     $vms = (ConvertFrom-Json -InputObject $WebhookData.RequestBody)
@@ -143,7 +161,7 @@ if ($WebhookData) {
 
     Write-Output "Authenticating to Azure with service principal and certificate"
     $ConnectionAssetName = "AzureRunAsConnection"
-    Write-Output "Get connection asset: $ConnectionAssetName" 
+    Write-Output "Get connection asset: $ConnectionAssetName"
 
     $Conn = Get-AutomationConnection -Name $ConnectionAssetName
             if ($Conn -eq $null)
@@ -171,7 +189,7 @@ else {
 
 В следующем примере модуль Runbook запускается с помощью Webhook из Windows PowerShell. В любом языке, способном выполнить HTTP-запрос, можно использовать веб-перехватчик. Windows PowerShell используется здесь для примера.
 
-Модуль Runbook ожидает список виртуальных машин, отформатированный в JSON, в теле запроса.
+Модуль Runbook ожидает список виртуальных машин, отформатированный в JSON, в теле запроса. Runbook также проверяет наличие в заголовках специально определенного сообщения для проверки допустимости вызывающего объекта веб-перехватчика.
 
 ```azurepowershell-interactive
 $uri = "<webHook Uri>"
@@ -181,8 +199,8 @@ $vms  = @(
             @{ Name="vm02";ResourceGroup="vm02"}
         )
 $body = ConvertTo-Json -InputObject $vms
-
-$response = Invoke-RestMethod -Method Post -Uri $uri -Body $body
+$header = @{ message="StartedbyContoso"}
+$response = Invoke-RestMethod -Method Post -Uri $uri -Body $body -Headers $header
 $jobid = (ConvertFrom-Json ($response.Content)).jobids[0]
 ```
 

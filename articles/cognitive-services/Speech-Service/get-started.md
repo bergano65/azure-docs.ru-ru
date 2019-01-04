@@ -1,7 +1,7 @@
 ---
-title: Попробуйте службу распознавания речи бесплатно
+title: Бесплатная пробная подписка на службу "Речь"
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как получить бесплатную пробную подписку на службу распознавания речи.
+description: Служба распознавания речи — это простое и недорогое решение. 30-дневная бесплатная версия поможет вам понять, какие задачи может решать эта служба и подходит ли она для ваших приложений.
 services: cognitive-services
 author: erhopf
 manager: cgronlun
@@ -10,12 +10,13 @@ ms.component: speech-service
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: erhopf
-ms.openlocfilehash: 4e29f2e77ad2b4e993fbe6a39b90325a0738f538
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.custom: seodec18
+ms.openlocfilehash: 69e2c094e1fca57d0dddc662cc1dae6453897c38
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49471396"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53079115"
 ---
 # <a name="try-the-speech-service-for-free"></a>Бесплатная пробная подписка на службу "Речь"
 
@@ -36,7 +37,7 @@ ms.locfileid: "49471396"
 1. Выберите вкладку **API распознавания речи**.
 
    ![Вкладка Speech services (Службы речи)](media/index/try-speech-api-free-trial1.png)
-   
+
 1. В разделе **Speech services** (Службы речи) нажмите кнопку **Получить ключ API**.
 
    ![Ключ API](media/index/try-speech-api-free-trial2.png)

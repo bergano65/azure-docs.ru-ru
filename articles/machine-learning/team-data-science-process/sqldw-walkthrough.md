@@ -1,6 +1,6 @@
 ---
-title: 'Процесс обработки и анализа данных группы на практике: использование хранилища данных SQL | Документация Майкрософт'
-description: Расширенный процесс аналитики и технологии в действии
+title: Создание и развертывание модели с помощью Хранилища данных SQL — командный процесс обработки и анализа данных
+description: Создание и развертывание модели машинного обучения с помощью Хранилища данных SQL с общедоступным набором данных.
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/24/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 87c3b0b597a401041b8bf1b6f3997431d8816e92
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: ed3731db88d7f829634a03c55e5ec033c03e4b0f
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52445719"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53139136"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-data-warehouse"></a>Процесс обработки и анализа данных группы на практике: использование хранилища данных SQL
 В этом руководстве описаны шаги по созданию и развертыванию модели машинного обучения с использованием хранилища данных SQL для общедоступного набора данных [Поездки такси Нью-Йорка](http://www.andresmh.com/nyctaxitrips/). Модель двоичной классификации позволяет спрогнозировать получение чаевых за поездку. Кроме того, здесь рассматриваются модели многоклассовой классификации и регрессии, которые помогают спрогнозировать распространение сумм чаевых, оплачиваемых за поездку.
@@ -52,15 +52,15 @@ ms.locfileid: "52445719"
 ## <a name="mltasks"></a>Определение трех типов задач прогнозирования
 На основе *tip\_amount* мы сформулировали три проблемы прогнозирования, чтобы проиллюстрировать три типа задач моделирования.
 
-1. **Двоичная классификация:** спрогнозировать, были ли оставлены чаевые после поездки, т. е. значение *tip\_amount* больше 0 $ является позитивным примером, а значение *tip\_amount* 0 $ является негативным примером.
-2. **Мультиклассовая классификация**: спрогнозировать диапазон суммы чаевых за поездку. Мы разделяем *tip\_amount* на пять ячеек или классов:
+1. **Двоичная классификация**. Прогнозирование того, были ли оставлены чаевые после поездки, т. е. значение *чаевые\_сумма* больше 0 $ является позитивным примером, а значение *чаевые\_сумма* 0 $ — негативным.
+2. **Классификация по нескольким классам**. Прогнозирование диапазона суммы чаевых за поездку. Мы разделяем *tip\_amount* на пять ячеек или классов:
    
         Class 0 : tip_amount = $0
         Class 1 : tip_amount > $0 and tip_amount <= $5
         Class 2 : tip_amount > $5 and tip_amount <= $10
         Class 3 : tip_amount > $10 and tip_amount <= $20
         Class 4 : tip_amount > $20
-3. **Задача регрессии**: спрогнозировать сумму чаевых, выплаченных за поездку.  
+3. **Задача регрессии**. Прогнозирование суммы чаевых, выплаченных за поездку.  
 
 ## <a name="setup"></a>Настройка среды обработки и анализа данных Azure для расширенной аналитики
 Чтобы настроить среду обработки и анализа данных в Azure, выполните следующие шаги.
@@ -117,7 +117,7 @@ ms.locfileid: "52445719"
 
 После успешного выполнения текущий рабочий каталог изменится на *-DestDir*. Должен отобразиться экран, аналогичный показанному ниже:
 
-![][19]
+![Изменения в текущем рабочем каталоге][19]
 
 В каталоге *-DestDir*выполните следующий сценарий PowerShell в режиме администратора:
 
@@ -321,7 +321,7 @@ ms.locfileid: "52445719"
 > 
 > 
 
-![График № 21][21]
+![Выходные данные из AzCopy][21]
 
 Можно использовать собственные данные. Если данные находятся на локальном компьютере в работающем приложении, AzCopy можно использовать для передачи локальных данных в частное хранилище BLOB-объектов Azure. Для этого в команде AzCopy в файле скрипта PowerShell необходимо лишь изменить расположение **источника** `$Source = "http://getgoing.blob.core.windows.net/public/nyctaxidataset"`, указав для него локальный каталог, содержащий данные.
 
@@ -334,7 +334,7 @@ ms.locfileid: "52445719"
 
 После успешного выполнения вы увидите экран, аналогичный этому:
 
-![][20]
+![Результат успешного выполнения скрипта][20]
 
 ## <a name="dbexplore"></a>Изучение данных и проектирование признаков в хранилище данных SQL Azure
 В этом разделе мы исследуем данные и создадим признаки, используя SQL-запросы для хранилища данных SQL Azure с помощью **средств работы с данными Visual Studio**. Все SQL-запросы, используемые в этом разделе, можно найти в примере скрипта *SQLDW_Explorations.sql*. Этот файл скачан в локальный каталог во время выполнения сценария PowerShell. Кроме того, его также можно получить на сайте [GitHub](https://raw.githubusercontent.com/Azure/Azure-MachineLearning-DataScience/master/Misc/SQLDW/SQLDW_Explorations.sql). Но в файл с сайта GitHub не включены данные хранилища SQL Azure.
@@ -363,9 +363,9 @@ ms.locfileid: "52445719"
     -- Report number of columns in table <nyctaxi_trip>
     SELECT COUNT(*) FROM information_schema.columns WHERE table_name = '<nyctaxi_trip>' AND table_schema = '<schemaname>'
 
-**Выходные данные.** Вы должны получить 173 179 759 строк и 14 столбцов.
+**Выходные данные:** Вы должны получить 173 179 759 строк и 14 столбцов.
 
-### <a name="exploration-trip-distribution-by-medallion"></a>Просмотр: распределение поездок по параметру medallion
+### <a name="exploration-trip-distribution-by-medallion"></a>Изучение. Распределение поездок по параметру medallion
 В этом примере запроса определяются медальоны (номера) такси, которые осуществили больше 100 поездок за заданный период времени. Запрос будет использовать секционированный доступ к таблице, так как он обусловлен схемой секционирования **pickup\_datetime**. При запросе к полному набору данных также будет задействовано сканирование секционированной таблицы и/или индекса.
 
     SELECT medallion, COUNT(*)
@@ -374,9 +374,9 @@ ms.locfileid: "52445719"
     GROUP BY medallion
     HAVING COUNT(*) > 100
 
-**Выходные данные.** По результатам запроса возвращается таблица, строки которой содержат 13 369 медальонов (номеров такси) и количество поездок, осуществленных ими за 2013 год. В последнем столбце отображается счетчик поездок.
+**Выходные данные:** По результатам запроса возвращается таблица, строки которой содержат 13 369 медальонов (номеров такси) и количество поездок, осуществленных ими за 2013 год. В последнем столбце отображается счетчик поездок.
 
-### <a name="exploration-trip-distribution-by-medallion-and-hacklicense"></a>Просмотр: распределение поездок по параметрам medallion и hack_license
+### <a name="exploration-trip-distribution-by-medallion-and-hacklicense"></a>Изучение. Распределение поездок по параметру medallion и hack_license
 В этом примере определяются медальоны (номера) такси и номера hack_license (лицензий) водителей, которые осуществили больше 100 поездок за заданный период времени.
 
     SELECT medallion, hack_license, COUNT(*)
@@ -385,9 +385,9 @@ ms.locfileid: "52445719"
     GROUP BY medallion, hack_license
     HAVING COUNT(*) > 100
 
-**Выходные данные.** По результатам запроса возвращается таблица, в 13 369 строках которой перечислены 13 369 автомобилей (водителей), осуществивших в 2013 году более 100 поездок. В последнем столбце отображается счетчик поездок.
+**Выходные данные:** По результатам запроса возвращается таблица, в 13 369 строках которой перечислены 13 369 автомобилей (водителей), осуществивших в 2013 году более 100 поездок. В последнем столбце отображается счетчик поездок.
 
-### <a name="data-quality-assessment-verify-records-with-incorrect-longitude-andor-latitude"></a>Оценка качества данных: проверка записей с неправильными значениями долготы и/или широты
+### <a name="data-quality-assessment-verify-records-with-incorrect-longitude-andor-latitude"></a>Оценка качества данных. Проверка записей с неправильными значениями долготы и широты
 В этом примере анализируется, содержится ли в каких-либо полях долготы и/или широты неверное значение (количество градусов должно быть в пределах от -90 до 90) или значение координат (0, 0).
 
     SELECT COUNT(*) FROM <schemaname>.<nyctaxi_trip>
@@ -399,9 +399,9 @@ ms.locfileid: "52445719"
     OR    (pickup_longitude = '0' AND pickup_latitude = '0')
     OR    (dropoff_longitude = '0' AND dropoff_latitude = '0'))
 
-**Выходные данные.** По результатам запроса возвращаются 837 467 поездок с недопустимыми значениями долготы и (или) широты.
+**Выходные данные:** По результатам запроса возвращаются 837 467 поездок с недопустимыми значениями долготы и (или) широты.
 
-### <a name="exploration-tipped-vs-not-tipped-trips-distribution"></a>Изучение: распределение поездок с чаевыми и без чаевых
+### <a name="exploration-tipped-vs-not-tipped-trips-distribution"></a>Изучение. Распределение поездок с чаевыми и без чаевых
 В этом примере пользователь узнает о соотношении количества поездок, когда водителю дали на чай, к количеству поездок, когда чаевых не было (пользователь ищет сведения за определенный период времени или, если нужны сведения за полный год, во всех данных набора). Это распределение отражает распределение двоичных меток, которые в дальнейшем будут использоваться для моделирования двоичной классификации.
 
     SELECT tipped, COUNT(*) AS tip_freq FROM (
@@ -410,9 +410,9 @@ ms.locfileid: "52445719"
       WHERE pickup_datetime BETWEEN '20130101' AND '20131231') tc
     GROUP BY tipped
 
-**Выходные данные.** По результатам запроса возвращаются следующие результаты по частотности чаевых за 2013 год: 90 447 622 поездок с чаевыми и 82 264 709 — без чаевых.
+**Выходные данные:** По результатам запроса возвращаются следующие результаты по частотности чаевых за 2013 год: 90 447 622 поездок с чаевыми и 82 264 709 — без чаевых.
 
-### <a name="exploration-tip-classrange-distribution"></a>Изучение: распределение классов и диапазонов чаевых
+### <a name="exploration-tip-classrange-distribution"></a>Изучение. Распределение классов и диапазонов чаевых
 В этом примере вычисляется распределение диапазонов чаевых за заданный период времени (или по полному набору данных в случае охвата целого года). Это распределение классов меток, которое в дальнейшем будет использоваться для моделирования мультиклассовой классификации.
 
     SELECT tip_class, COUNT(*) AS tip_freq FROM (
@@ -437,7 +437,7 @@ ms.locfileid: "52445719"
 | 0 |82264625 |
 | 4. |85765 |
 
-### <a name="exploration-compute-and-compare-trip-distance"></a>Изучение: вычисление и сравнение расстояния поездок
+### <a name="exploration-compute-and-compare-trip-distance"></a>Изучение. Вычисление и сравнение расстояния поездок
 В этом примере значения долготы и широты начальных и конечных пунктов поездок преобразуются в географические точки SQL, вычисляется расстояние поездки по разности географических точек и возвращается случайная выборка результатов для сравнения. В примере результаты ограничиваются только допустимыми координатами с помощью запроса оценки качества данных, описанного ранее.
 
     /****** Object:  UserDefinedFunction [dbo].[fnCalculateDistance] ******/
@@ -531,7 +531,7 @@ ms.locfileid: "52445719"
     AND CAST(dropoff_latitude AS float) BETWEEN -90 AND 90
     AND pickup_longitude != '0' AND dropoff_longitude != '0'
 
-**Выходные данные.** По результатам запроса формируется таблица (из 2 803 538 строк) с координатами посадки и высадки пассажиров и дальностью поездок в милях. Вот результаты для первых трех строк:
+**Выходные данные:** По результатам запроса формируется таблица (из 2 803 538 строк) с координатами посадки и высадки пассажиров и дальностью поездок в милях. Вот результаты для первых трех строк:
 
 |  | pickup_latitude | pickup_longitude | dropoff_latitude | dropoff_longitude | DirectDistance |
 | --- | --- | --- | --- | --- | --- |
@@ -571,16 +571,16 @@ ms.locfileid: "52445719"
 
 1. Войдите в рабочую область Машинного обучения Azure, щелкните "Студия" в верхней части, а затем — NOTEBOOKS в левой части веб-страницы.
    
-    ![График № 22][22]
+    ![Щелкните Studio, а затем — NOTEBOOKS][22]
 2. Щелкните вкладку "СОЗДАТЬ" в левом верхнем углу веб-страницы и выберите плитку Python 2. Затем введите имя для Notebook и щелкните значок галочки для создания пустого IPython Notebook.
    
-    ![График № 23][23]
+    ![Щелкните "СОЗДАТЬ", а затем выберите Python 2][23]
 3. Щелкните символ Jupyter в левом верхнем углу нового IPython Notebook.
    
-    ![График № 24][24]
+    ![Щелкните символ Jupyter][24]
 4. Перетащите пример IPython Notebook на страницу **дерева** службы IPython Notebook машинного обучения Azure и нажмите кнопку **Отправить**. После этого пример IPython Notebook будет отправлен в службу IPython Notebook Машинного обучения Azure.
    
-    ![График № 25][25]
+    ![Щелкните "Отправить".][25]
 
 Чтобы запустить пример IPython Notebook или файл сценария Python, необходимо установить следующие пакеты Python. Если вы используете службу IPython Notebook Машинного обучения Azure, эти пакеты уже установлены.
 
@@ -679,14 +679,14 @@ ms.locfileid: "52445719"
 
     df1['trip_distance'].describe()
 
-### <a name="visualization-box-plot-example"></a>Визуализация: пример блочной диаграммы
+### <a name="visualization-box-plot-example"></a>Визуализация. Пример блочной диаграммы
 Далее рассмотрим блочную диаграмму расстояний поездок для визуализации квантилей.
 
     df1.boxplot(column='trip_distance',return_type='dict')
 
-![График #1][1]
+![Вывод блочной диаграммы][1]
 
-### <a name="visualization-distribution-plot-example"></a>Визуализация: пример графика распределения
+### <a name="visualization-distribution-plot-example"></a>Визуализация. Пример графика распределения
 Это график, на котором показано распределение и гистограмма для примеров расстояний выборки.
 
     fig = plt.figure()
@@ -695,9 +695,9 @@ ms.locfileid: "52445719"
     df1['trip_distance'].plot(ax=ax1,kind='kde', style='b-')
     df1['trip_distance'].hist(ax=ax2, bins=100, color='k')
 
-![График #2][2]
+![Вывод графика распределения][2]
 
-### <a name="visualization-bar-and-line-plots"></a>Визуализация: гистограммы и линейные графики
+### <a name="visualization-bar-and-line-plots"></a>Визуализация. Гистограммы и линейные графики
 В этом примере мы сегментируем расстояния поездок на пять ячеек и визуализируем результаты сегментирования.
 
     trip_dist_bins = [0, 1, 2, 4, 10, 1000]
@@ -709,38 +709,38 @@ ms.locfileid: "52445719"
 
     pd.Series(trip_dist_bin_id).value_counts().plot(kind='bar')
 
-![График #3][3]
+![вывод гистограммы][3]
 
 и
 
     pd.Series(trip_dist_bin_id).value_counts().plot(kind='line')
 
-![График #4][4]
+![вывод линейного графика][4]
 
-### <a name="visualization-scatterplot-examples"></a>Визуализация: примеры точечных диаграмм
+### <a name="visualization-scatterplot-examples"></a>Визуализация. Пример точечной диаграммы
 Мы отобразим точечную диаграмму для параметров **trip\_time\_in\_secs** и **trip\_distance**, чтобы проверить возможную корреляцию.
 
     plt.scatter(df1['trip_time_in_secs'], df1['trip_distance'])
 
-![График #6][6]
+![Вывод точечной диаграмме связи между временем и расстоянием][6]
 
 Точно также мы можем проверить связь между **rate\_code** и **trip\_distance**.
 
     plt.scatter(df1['passenger_count'], df1['trip_distance'])
 
-![График #8][8]
+![Вывод точечной диаграмме связи между кодом и расстоянием][8]
 
 ### <a name="data-exploration-on-sampled-data-using-sql-queries-in-ipython-notebook"></a>Изучение выборки данных с помощью SQL-запросов в IPython Notebook
 В этом разделе мы рассмотрим распределение данных с использованием выборки, которая сохранена в созданной ранее таблице. Обратите внимание, что для подобных исследований можно использовать исходные таблицы.
 
-#### <a name="exploration-report-number-of-rows-and-columns-in-the-sampled-table"></a>Исследование: сообщение количества строк и столбцов в таблице выборки
+#### <a name="exploration-report-number-of-rows-and-columns-in-the-sampled-table"></a>Изучение. Сообщение количества строк и столбцов в таблице выборки
     nrows = pd.read_sql('''SELECT SUM(rows) FROM sys.partitions WHERE object_id = OBJECT_ID('<schemaname>.<nyctaxi_sample>')''', conn)
     print 'Number of rows in sample = %d' % nrows.iloc[0,0]
 
     ncols = pd.read_sql('''SELECT count(*) FROM information_schema.columns WHERE table_name = ('<nyctaxi_sample>') AND table_schema = '<schemaname>'''', conn)
     print 'Number of columns in sample = %d' % ncols.iloc[0,0]
 
-#### <a name="exploration-tippednot-tripped-distribution"></a>Исследование: распределение поездок с чаевыми и без чаевых
+#### <a name="exploration-tippednot-tripped-distribution"></a>Изучение. Распределение поездок с чаевыми и без чаевых
     query = '''
         SELECT tipped, count(*) AS tip_freq
         FROM <schemaname>.<nyctaxi_sample>
@@ -749,7 +749,7 @@ ms.locfileid: "52445719"
 
     pd.read_sql(query, conn)
 
-#### <a name="exploration-tip-class-distribution"></a>Изучение: распределение классов чаевых
+#### <a name="exploration-tip-class-distribution"></a>Изучение. Распределение классов чаевых
     query = '''
         SELECT tip_class, count(*) AS tip_freq
         FROM <schemaname>.<nyctaxi_sample>
@@ -758,12 +758,12 @@ ms.locfileid: "52445719"
 
     tip_class_dist = pd.read_sql(query, conn)
 
-#### <a name="exploration-plot-the-tip-distribution-by-class"></a>Исследование: построение диаграммы классового распределения чаевых
+#### <a name="exploration-plot-the-tip-distribution-by-class"></a>Изучение. Построение диаграммы классового распределения чаевых
     tip_class_dist['tip_freq'].plot(kind='bar')
 
 ![График № 26][26]
 
-#### <a name="exploration-daily-distribution-of-trips"></a>Исследование: ежедневное распределение поездок
+#### <a name="exploration-daily-distribution-of-trips"></a>Изучение. Ежедневное распределение поездок
     query = '''
         SELECT CONVERT(date, dropoff_datetime) AS date, COUNT(*) AS c
         FROM <schemaname>.<nyctaxi_sample>
@@ -772,7 +772,7 @@ ms.locfileid: "52445719"
 
     pd.read_sql(query,conn)
 
-#### <a name="exploration-trip-distribution-per-medallion"></a>Исследование: распределение поездок по параметру medallion
+#### <a name="exploration-trip-distribution-per-medallion"></a>Изучение. Распределение поездок по параметру medallion
     query = '''
         SELECT medallion,count(*) AS c
         FROM <schemaname>.<nyctaxi_sample>
@@ -781,20 +781,20 @@ ms.locfileid: "52445719"
 
     pd.read_sql(query,conn)
 
-#### <a name="exploration-trip-distribution-by-medallion-and-hack-license"></a>Изучение: распределение поездок по медальону и номеру лицензии водителя
+#### <a name="exploration-trip-distribution-by-medallion-and-hack-license"></a>Изучение. Распределение поездок по параметру medallion и номеру лицензии водителя
     query = '''select medallion, hack_license,count(*) from <schemaname>.<nyctaxi_sample> group by medallion, hack_license'''
     pd.read_sql(query,conn)
 
 
-#### <a name="exploration-trip-time-distribution"></a>Просмотр: распределение поездок по времени
+#### <a name="exploration-trip-time-distribution"></a>Изучение. Распределение поездок по времени
     query = '''select trip_time_in_secs, count(*) from <schemaname>.<nyctaxi_sample> group by trip_time_in_secs order by count(*) desc'''
     pd.read_sql(query,conn)
 
-#### <a name="exploration-trip-distance-distribution"></a>Изучение: распределение поездок по расстоянию
+#### <a name="exploration-trip-distance-distribution"></a>Изучение. Распределение поездок по расстоянию
     query = '''select floor(trip_distance/5)*5 as tripbin, count(*) from <schemaname>.<nyctaxi_sample> group by floor(trip_distance/5)*5 order by count(*) desc'''
     pd.read_sql(query,conn)
 
-#### <a name="exploration-payment-type-distribution"></a>Изучение: распределение поездок по типу оплаты
+#### <a name="exploration-payment-type-distribution"></a>Изучение. Распределение поездок по типу оплаты
     query = '''select payment_type,count(*) from <schemaname>.<nyctaxi_sample> group by payment_type'''
     pd.read_sql(query,conn)
 
@@ -805,9 +805,9 @@ ms.locfileid: "52445719"
 ## <a name="mlmodel"></a>Построение моделей в компоненте машинного обучения Azure
 Теперь мы готовы перейти к построению и развертыванию модели в [машинном обучении Azure](https://studio.azureml.net). Данные готовы для любой из задач прогнозирования, определенных ранее:
 
-1. **Двоичная классификация**: спрогнозировать, были ли выплачены чаевые за поездку.
-2. **Мультиклассовая классификация**: спрогнозировать диапазон выплаченных чаевых в соответствии с ранее определенными классами.
-3. **Задача регрессии**: спрогнозировать сумму чаевых, выплаченных за поездку.  
+1. **Двоичная классификация**. Прогнозирование того, были ли выплачены чаевые за поездку.
+2. **Классификация по нескольким классам**. Прогнозирование диапазона выплаченных чаевых в соответствии с ранее определенными классами.
+3. **Задача регрессии**. Прогнозирование суммы чаевых, выплаченных за поездку.  
 
 Чтобы начать упражнение по моделированию, войдите в рабочую область **Машинного обучения Azure**. Если вы еще не создали рабочую область Машинного обучения, см. статью [Создание рабочей области Машинного обучения Azure и предоставление к ней общего доступа](../studio/create-workspace.md).
 

@@ -8,14 +8,14 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 11/15/2018
+ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: a5e3bd655e0780861f4bf70c247df72e6acedd09
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 577147ad91c6a35a45fd40ca9e6424863ea196d6
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637089"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53340788"
 ---
 # <a name="http-apis-in-durable-functions-azure-functions"></a>API HTTP в устойчивых функциях (Функции Azure)
 
@@ -24,7 +24,6 @@ ms.locfileid: "52637089"
 * получение состояния экземпляра оркестрации;
 * отправка события в ожидающий экземпляр оркестрации;
 * завершение работающего экземпляра оркестрации.
-
 
 Каждый из этих API HTTP является операцией веб-перехватчика, обрабатываемой напрямую расширением устойчивых задач. Они не относятся к какой-либо функции в приложении-функции.
 
@@ -35,9 +34,15 @@ ms.locfileid: "52637089"
 
 Класс [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html) предоставляет API [CreateCheckStatusResponse](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_CreateCheckStatusResponse_), который можно использовать для создания полезных данных ответа HTTP, содержащих ссылки на все поддерживаемые операции. Ниже приведен пример функции HTTP-триггера, в котором показано, как использовать этот API:
 
+### <a name="c"></a>C#
+
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/HttpStart/run.csx)]
 
-Этот пример функции выводит следующие данные ответа JSON. Тип данных всех полей — `string`.
+### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+
+[!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
+
+Эти примеры функций создают следующие данные ответа JSON. Тип данных всех полей — `string`.
 
 | Поле             |ОПИСАНИЕ                           |
 |-------------------|--------------------------------------|
@@ -63,8 +68,9 @@ Location: https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d84
     "rewindPostUri":"https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d8492ce6a295f1a80e2/rewind?reason={text}&taskHub=DurableFunctionsHub&connection=Storage&code=XXX"
 }
 ```
+
 > [!NOTE]
-> Формат URL-адресов веб-перехватчиков может отличаться в зависимости от того, какая версия узла Функций Azure выполняется. Приведенный выше пример предназначен для узла Функций Azure 2.0.
+> Формат URL-адресов веб-перехватчиков может отличаться в зависимости от того, какая версия узла Функций Azure выполняется. Приведенный выше пример использует формат адресов для узла Функций Azure 2.x.
 
 ## <a name="async-operation-tracking"></a>Отслеживание асинхронных операций
 
@@ -91,8 +97,8 @@ Location: https://{host}/runtime/webhooks/durabletask/instances/34ce9a28a6834d84
 | connection; | Строка запроса    | **Имя** строки подключения для учетной записи хранения. Если не указано, предполагается строка подключения по умолчанию для приложения-функции. |
 | systemKey  | Строка запроса    | Ключ авторизации, необходимый для вызова API. |
 | showInput  | Строка запроса    | Необязательный параметр. Если задано значение `false`, входные данные выполнения не будут включены в полезные данные ответа.|
-| showHistory| Строка запроса    | Необязательный параметр. Если задано значение `true`, журнал выполнения оркестрации будет включен в полезные данные ответа.| 
-| showHistoryOutput| Строка запроса    | Необязательный параметр. Если задано значение `true`, выходные данные действия будут включены в журнал выполнения оркестрации.| 
+| showHistory| Строка запроса    | Необязательный параметр. Если задано значение `true`, журнал выполнения оркестрации будет включен в полезные данные ответа.|
+| showHistoryOutput| Строка запроса    | Необязательный параметр. Если задано значение `true`, выходные данные действия будут включены в журнал выполнения оркестрации.|
 | createdTimeFrom  | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемых экземпляров, которые были созданы в указанной метке времени ISO8601 или после нее.|
 | createdTimeTo    | Строка запроса    | Необязательный параметр. При указании фильтрует список возвращаемых экземпляров, которые были созданы в указанной метке времени ISO8601 или перед ней.|
 | runtimeStatus    | Строка запроса    | Необязательный параметр. При указании он фильтрует список возвращаемого значения экземпляров на основе их состояния среды выполнения. Чтобы просмотреть список возможных значений состояния среды выполнения, см. раздел [Запросы экземпляров](durable-functions-instance-management.md). |
@@ -124,11 +130,11 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}?taskHub={taskHub}&conne
 
 Может быть возвращено несколько кодов состояния.
 
-* **HTTP 200 (ОК)** (HTTP 200 (ОК)). Указанный экземпляр находится в завершенном состоянии.
-* **HTTP 202 (Accepted)** (HTTP 202 (принято)). Указанный экземпляр выполняется.
-* **HTTP 400 (Bad Request)** (HTTP 400 (неверный запрос)). На определенном экземпляре произошел сбой, или его работа была прервана.
-* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)). Указанный экземпляр не существует или не был запущен.
-* **HTTP 500 (внутренняя ошибка сервера)**: сбой указанного экземпляра с необработанным исключением.
+* **HTTP 200 (OK)** (HTTP 200 (ОК)): указанный экземпляр находится в завершенном состоянии.
+* **HTTP 202 (Accepted)** (HTTP 202 (принято)): указанный экземпляр выполняется.
+* **HTTP 400 (Bad Request)** (HTTP 400 (недопустимый запрос)): на определенном экземпляре произошел сбой, или его работа была прервана.
+* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)): указанный экземпляр не существует или не был запущен.
+* **HTTP 500 (Internal Server Error)** (HTTP 500 (внутренняя ошибка сервера)): сбой указанного экземпляра с необработанным исключением.
 
 Полезные данные ответа для случаев **HTTP 200** и **HTTP 202** являются объектами JSON со следующими полями:
 
@@ -140,7 +146,7 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}?taskHub={taskHub}&conne
 | output          | JSON      | Выходные данные JSON экземпляра. Это поле имеет значение `null`, если экземпляр не находится в завершенном состоянии. |
 | createdTime     | строка    | Время, когда был создан экземпляр. Использует расширенную нотацию ISO 8601. |
 | lastUpdatedTime | строка    | Время, когда экземпляр был в последний раз сохранен. Использует расширенную нотацию ISO 8601. |
-| historyEvents   | JSON      | Массив JSON, содержащий журнал выполнения оркестрации. Это поле имеет значение `null`, если для параметра строки запроса `showHistory` не задано значение `true`.  | 
+| historyEvents   | JSON      | Массив JSON, содержащий журнал выполнения оркестрации. Это поле имеет значение `null`, если для параметра строки запроса `showHistory` не задано значение `true`.  |
 
 Ниже приведен пример полезных данных ответа, включающий журнал выполнения оркестрации и выходные данные действия (в удобном для чтения формате).
 
@@ -199,10 +205,9 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}?taskHub={taskHub}&conne
 
 Ответ **HTTP 202** также включает заголовок ответа **Location**, который ссылается на тот же URL-адрес, что и поле `statusQueryGetUri`, упомянутое ранее.
 
-
 ### <a name="get-all-instances-status"></a>Получение состояния всех экземпляров
 
-Можно также запросить состояние всех экземпляров. Удалите `instanceId` из запроса "Получение состояния экземпляра". Параметры такие же, как и в запросе "Получение состояния экземпляра". 
+Можно также запросить состояние всех экземпляров. Удалите `instanceId` из запроса "Получение состояния экземпляра". Параметры такие же, как и в запросе "Получение состояния экземпляра".
 
 Следует помнить, что `connection` и `code` являются дополнительными. Если у вас есть анонимная проверка подлинности на функцию, кода не требуется.
 Если нет необходимости использовать другую строку подключения хранилища больших двоичных объектов, отличную от указанной в параметре приложения AzureWebJobsStorage, вы можете смело игнорировать параметр строки запроса соединения.
@@ -215,7 +220,7 @@ GET /runtime/webhooks/durabletask/instances/{instanceId}?taskHub={taskHub}&conne
 GET /admin/extensions/DurableTaskExtension/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}
 ```
 
-Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса: 
+Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса:
 
 ```http
 GET /runtime/webhooks/durabletask/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}
@@ -231,7 +236,7 @@ GET /runtime/webhooks/durabletask/instances/?taskHub={taskHub}&connection={conne
 GET /admin/extensions/DurableTaskExtension/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}&createdTimeFrom={createdTimeFrom}&createdTimeTo={createdTimeTo}&runtimeStatus={runtimeStatus,runtimeStatus,...}&showInput={showInput}&showHistory={showHistory}&showHistoryOutput={showHistoryOutput}
 ```
 
-Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса: 
+Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса:
 
 ```http
 GET /runtime/webhooks/durableTask/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}&createdTimeFrom={createdTimeFrom}&createdTimeTo={createdTimeTo}&runtimeStatus={runtimeStatus,runtimeStatus,...}&showInput={showInput}&showHistory={showHistory}&showHistoryOutput={showHistoryOutput}
@@ -291,20 +296,20 @@ GET /runtime/webhooks/durableTask/instances/?taskHub={taskHub}&connection={conne
 ```
 
 > [!NOTE]
-> Эта операция может быть весьма затратной с точки зрения операций ввода-вывода службы хранилища Azure, если в таблице экземпляров много строк. Дополнительные сведения о таблице экземпляров см. в документации по [производительности и масштабируемости в устойчивых функциях (Функциях Azure)](https://docs.microsoft.com/azure/azure-functions/durable-functions-perf-and-scale#instances-table).
-> 
+> Эта операция может быть весьма затратной с точки зрения операций ввода-вывода службы хранилища Azure, если в таблице экземпляров много строк. Дополнительные сведения о таблице экземпляров см. в документации по [производительности и масштабируемости в устойчивых функциях (Функциях Azure)](durable-functions-perf-and-scale.md#instances-table).
+>
 
 #### <a name="request-with-paging"></a>Запрос с разбиением на страницы
 
 Чтобы разбить результаты запроса на страницы, задайте параметр `top`.
 
-Формат запроса для Функций 1.0 имеет такой вид:
+Формат запроса для Функций 1.0 имеет такой вид:
 
 ```http
 GET /admin/extensions/DurableTaskExtension/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}&top={top}
 ```
 
-Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса: 
+Формат для Функций 2.0 имеет все те же параметры, но другой префикс URL-адреса:
 
 ```http
 GET /runtime/webhooks/durableTask/instances/?taskHub={taskHub}&connection={connection}&code={systemKey}&top={top}
@@ -313,7 +318,6 @@ GET /runtime/webhooks/durableTask/instances/?taskHub={taskHub}&connection={conne
 Если следующая страница существует, в заголовке ответа возвращается маркер продолжения.  Имя заголовка — `x-ms-continuation-token`.
 
 Если в заголовке следующего запроса задать маркер продолжения, будет получена следующая страница.  Этим ключом в заголовке запроса будет `x-ms-continuation-token`.
-
 
 ### <a name="raise-event"></a>Вызов события
 
@@ -344,10 +348,10 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/raiseEvent/{eventName}
 
 Может быть возвращено несколько кодов состояния.
 
-* **HTTP 202 (Accepted)** (HTTP 202 (принято)). Вызванное событие принято в обработку.
-* **HTTP 400 (Bad request)** (HTTP 400 (неверный запрос)). Содержимое запроса не принадлежит к допустимому типу `application/json` или не является допустимым файлом JSON.
-* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)). Указанный экземпляр не найден.
-* **HTTP 410 (Gone)** (HTTP 410 (потеряно)). Указанный экземпляр выполнен или завершился с ошибкой и не может обрабатывать возникающие события.
+* **HTTP 202 (Accepted)** (HTTP 202 (принято)): сгенерированное событие принято в обработку.
+* **HTTP 400 (Bad Request)** (HTTP 400 (недопустимый запрос)): содержимое запроса не является допустимым типом `application/json` или не соответствует формату JSON.
+* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)): указанный экземпляр не найден.
+* **HTTP 410 (Gone)** (HTTP 410 (потеряно)): указанный экземпляр выполнен или завершился с ошибкой и не может обрабатывать возникающие события.
 
 Ниже приведен пример запроса, отправляющий строку JSON `"incr"` в экземпляр, который ожидает событие с именем **operation**:
 
@@ -389,9 +393,9 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/terminate?reason={reas
 
 Может быть возвращено несколько кодов состояния.
 
-* **HTTP 202 (Accepted)** (HTTP 202 (принято)). Запрос на завершение принят для обработки.
-* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)). Указанный экземпляр не найден.
-* **HTTP 410 (Gone)** (HTTP 410 (потеряно)). Определенный экземпляр выполнен успешно или завершился со сбоем.
+* **HTTP 202 (Accepted)** (HTTP 202 (принято)): запрос на завершение принят в обработку.
+* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)): указанный экземпляр не найден.
+* **HTTP 410 (Gone)** (HTTP 410 (потеряно)): определенный экземпляр выполнен успешно или завершился сбоем.
 
 Ниже приведен пример запроса, который завершает выполнение экземпляра и указывает причину **ошибки**:
 
@@ -405,7 +409,7 @@ POST /admin/extensions/DurableTaskExtension/instances/bcf6fb5067b046fbb021b52ba7
 
 Восстанавливает сбойный экземпляр оркестрации в рабочем состоянии путем воспроизведения последних неудачных операций.
 
-#### <a name="request"></a>Запрос
+### <a name="request"></a>Запрос
 
 Формат запроса для Функций 1.0 имеет такой вид:
 
@@ -425,13 +429,13 @@ POST /runtime/webhooks/durabletask/instances/{instanceId}/rewind?reason={reason}
 |-------------|-----------------|-----------|-------------|
 | reason      | Строка запроса    | строка    | Необязательный элемент. Причина перемотки экземпляра оркестрации. |
 
-#### <a name="response"></a>Ответ
+### <a name="response"></a>Ответ
 
 Может быть возвращено несколько кодов состояния.
 
-* **HTTP 202 (принято)**. Запрос на перемотку принят для обработки.
-* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)). Указанный экземпляр не найден.
-* **HTTP 410 (потеряно)**. Определенный экземпляр выполнен успешно или был прерван.
+* **HTTP 202 (Accepted)** (HTTP 202 (принято)): запрос на перемотку принят в обработку.
+* **HTTP 404 (Not Found)** (HTTP 404 (не найдено)): указанный экземпляр не найден.
+* **HTTP 410 (Gone)** (HTTP 410 (потеряно)): определенный экземпляр выполнен успешно или был прерван.
 
 Ниже приведен пример запроса, который перематывает сбойный экземпляр и указывает причину **исправления**:
 

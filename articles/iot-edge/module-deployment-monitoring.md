@@ -1,6 +1,6 @@
 ---
-title: Развертывание модулей для Azure IoT Edge | Документация Майкрософт
-description: Сведения о развертывании модулей на пограничных устройствах.
+title: Автоматическое развертывание групп устройств —Azure IoT Edge | Документация Майкрософт
+description: Автоматическое развертывания в Azure IoT Edge для управления группами устройств на основе общих тегов
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,12 +8,13 @@ ms.date: 09/27/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: cd077c1a552a14582fce48bbe60f56ef08e5a4d7
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.custom: seodec18
+ms.openlocfilehash: 18cd27ae8bf0a395fa351cf283bc1d40f94dac53
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52584848"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100112"
 ---
 # <a name="understand-iot-edge-automatic-deployments-for-single-devices-or-at-scale"></a>Общие сведения об автоматических развертываниях IoT Edge для отдельных устройств или в требуемом масштабе
 

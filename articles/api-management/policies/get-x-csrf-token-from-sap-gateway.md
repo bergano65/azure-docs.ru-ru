@@ -1,6 +1,6 @@
 ---
 title: Пример политики службы управления API Azure. Реализация шаблона X-CSRF | Документация Майкрософт
-description: Пример политики службы управления API Azure. Реализация шаблона X-CSRF, который используется во многих интерфейсах API. Этот пример относится только к шлюзу SAP.
+description: Пример политики службы управления API Azure. Реализация шаблона X-CSRF, который используется во многих API. Этот пример относится только к шлюзу SAP.
 services: api-management
 documentationcenter: ''
 author: vladvino
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/13/2017
 ms.author: apimpm
-ms.openlocfilehash: 3a2067836a1488d117dced96f3935f2d1f8b1b48
-ms.sourcegitcommit: e34afd967d66aea62e34d912a040c4622a737acb
+ms.openlocfilehash: 2f4d26702443ef3113dad98cde1d13b292fe657a
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36946029"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52870016"
 ---
 # <a name="implement-x-csrf-pattern"></a>Реализация шаблона X-CSRF
 

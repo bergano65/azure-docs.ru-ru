@@ -1,23 +1,24 @@
 ---
-title: Справочник по предварительно созданным сущностям phonenumber в LUIS Azure | Документация Майкрософт
+title: Предварительно созданные сущности phonenumber
 titleSuffix: Azure
 description: В этой статье описана готовая сущность phonenumber в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: diberry
-ms.openlocfilehash: 9a8fcbaf946f936d7a6d6d883a0416fce9d0c158
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 3a538886b0137e1069af1fa680374b749a9b3f92
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52441722"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53165421"
 ---
-# <a name="phonenumber-entity"></a>Сущность phonenumber
+# <a name="phonenumber-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность phonenumber для приложения LUIS
 Сущность `phonenumber` извлекает различные номера телефонов, в том числе код страны. Так как эта сущность уже обучена, добавлять в приложение примеры фраз не нужно. Сущность `phonenumber` поддерживается только в языке `en-us`. 
 
 ## <a name="types-of-phonenumber"></a>Типы сущности phonenumber
@@ -26,7 +27,7 @@ ms.locfileid: "52441722"
 ## <a name="resolution-for-prebuilt-phonenumber-entity"></a>Разрешение для предварительно созданной сущности phonenumber
 В следующем примере показано разрешение сущности **builtin.phonenumber**.
 
-```JSON
+```json
 {
   "query": "my mobile is 00 44 161 1234567",
   "topScoringIntent": {

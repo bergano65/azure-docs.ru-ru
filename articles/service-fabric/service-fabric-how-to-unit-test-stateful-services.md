@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/04/2018
 ms.author: ryanwi
-ms.openlocfilehash: 945cdf63a178a09f121f355aaa7635537e46e5ff
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.openlocfilehash: 4941d893c6c871541772569e42bf5169270def88
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43703561"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413563"
 ---
 # <a name="create-unit-tests-for-stateful-services"></a>Создание модульных тестов для служб с отслеживанием состояния
 Модульное тестирование служб с отслеживанием состояния в Service Fabric помогает выявить некоторые распространенные ошибки, которые необязательно будут обнаружены обычным приложением или модульным тестированием домена. При разработке модульных тестов для служб с отслеживанием состояния существуют некоторые особенности, которые следует иметь в виду.
@@ -33,7 +33,7 @@ ms.locfileid: "43703561"
 ## <a name="the-servicefabricmocks-library"></a>Библиотека ServiceFabric.Mocks
 Начиная с версии 3.3.0, [ServiceFabric.Mocks](https://www.nuget.org/packages/ServiceFabric.Mocks/) предоставляет API для макетирования как оркестрации реплик, так и управления состоянием. Библиотека будет использоваться в примерах.
 
-[NuGet](https://www.nuget.org/packages/ServiceFabric.Mocks/)
+[Nuget](https://www.nuget.org/packages/ServiceFabric.Mocks/)
 [GitHub](https://github.com/loekd/ServiceFabric.Mocks)
 
 *ServiceFabric.Mocks не принадлежит корпорации Майкрософт и не поддерживается ею. Тем не менее в настоящее время корпорация Майкрософт рекомендует эту библиотеку для модульного тестирования служб с отслеживанием состояния.*
@@ -91,7 +91,7 @@ replicaSet.PromoteNewReplicaToPrimaryAsync(4);
 
 //promote the first idle secondary to an active secondary
 PromoteIdleSecondaryToActiveSecondaryAsync();
-//promote idle secodary with replica id 4 to active secondary 
+//promote idle secodary with replica id 4 to active secondary
 PromoteIdleSecondaryToActiveSecondaryAsync(4);
 
 //add a new replica with randomly assigned replica id and promote it to primary

@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/05/2017
+ms.date: 12/13/2018
 ms.author: tomfitz
-ms.openlocfilehash: 725bc41f96359d4bf0d9d570f73f91dba5da2cab
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: d802af1d48405518f26f4b52ecc3023cbb15caff
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34358240"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53407360"
 ---
 # <a name="deployment-functions-for-azure-resource-manager-templates"></a>Функции развертывания для шаблонов Azure Resource Manager 
 
@@ -86,6 +86,8 @@ ms.locfileid: "34358240"
 }
 ```
 
+При [развертывании в подписку Azure](deploy-to-subscription.md) возвращаемый объект содержит свойство `location`, а не группу ресурсов. Свойство расположения включается при развертывании локального или внешнего шаблона.
+
 ### <a name="remarks"></a>Примечания
 
 Вы можете использовать deployment() для ссылки на другой шаблон в зависимости от URI родительского шаблона.
@@ -149,6 +151,8 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 ```powershell
 New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/deployment.json
 ```
+
+Если используется шаблон уровня подписки, в котором применяется функция развертывания, ознакомьтесь с [этой функцией](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/functions/deploymentsubscription.json). Она развертывается с помощью команды `az deployment create` или `New-AzureRmDeployment`.
 
 <a id="parameters" />
 
@@ -370,7 +374,7 @@ New-AzureRmResourceGroupDeployment -ResourceGroupName functionexamplegroup -Temp
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
-* Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
+* Инструкции по объединению нескольких шаблонов см. в статье [Функции развертывания для шаблонов Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).
 * Указания по развертыванию созданного шаблона см. в статье, посвященной [развертыванию приложения с помощью шаблона Azure Resource Manager](resource-group-template-deploy.md).
 

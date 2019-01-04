@@ -3,7 +3,7 @@ title: Масштабирование ресурсов эластичного п
 description: На этой странице описано масштабирование ресурсов для эластичных пулов в базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
-ms.subservice: elastic-pool
+ms.subservice: elastic-pools
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -12,18 +12,18 @@ ms.author: moslake
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 10/15/2018
-ms.openlocfilehash: cd9886f11685397cbfb82f88bb0b37c8ccc41b67
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 04fcb84b22e84060652b4a3743cb73e4543ee573
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50240177"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52868452"
 ---
 # <a name="scale-elastic-pool-resources-in-azure-sql-database"></a>Масштабирование ресурсов эластичного пула в базе данных SQL Azure
 
 В этой статье описано масштабирование вычислительных ресурсов и ресурсов хранилища для эластичных пулов и баз данных в пулах в базе данных SQL Azure.
 
-## <a name="vcore-based-purchasing-model-change-elastic-pool-storage-size"></a>Модель приобретения на основе виртуальных ядер: изменение размера хранилища эластичного пула
+## <a name="vcore-based-purchasing-model-change-elastic-pool-storage-size"></a>Модель покупки на основе числа виртуальных ядер — изменение размера хранилища эластичного пула
 
 - Объем подготавливаемого хранилища не может превышать максимального допустимого размера.
 
@@ -35,7 +35,7 @@ ms.locfileid: "50240177"
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
 
-## <a name="vcore-based-purchasing-model-change-elastic-pool-compute-resources-vcores"></a>Модель приобретения на основе виртуальных ядер: изменение вычислительных ресурсов эластичного пула (виртуальных ядер)
+## <a name="vcore-based-purchasing-model-change-elastic-pool-compute-resources-vcores"></a>Модель покупки на основе числа виртуальных ядер — изменение вычислительных ресурсов эластичного пула (виртуальных ядер)
 
 Вы можете увеличить или уменьшить объем вычислительных ресурсов, доступный для эластичного пула, с помощью[портала Azure](sql-database-elastic-pool-manage.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqlelasticpool), [Azure CLI](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update) или [REST API](https://docs.microsoft.com/rest/api/sql/elasticpools/update).
 
@@ -44,7 +44,7 @@ ms.locfileid: "50240177"
 - Как правило, изменение минимального или максимального числа виртуальных ядер для базы данных обычно занимает пять минут или менее.
 - При уменьшении числа виртуальных ядер на пул используемое им пространство не должно превышать максимальное допустимое число виртуальных ядер для целевых уровня служб и уровня производительности.
 
-## <a name="dtu-based-purchasing-model-change-elastic-pool-storage-size"></a>Модель приобретения на основе единиц DTU: изменение размера хранилища эластичного пула
+## <a name="dtu-based-purchasing-model-change-elastic-pool-storage-size"></a>Модель покупки на основе единиц DTU — изменение размера хранилища эластичного пула
 
 - Цена DTU для эластичного пула включает в себя определенный объем хранилища, не требующий дополнительной платы. Дополнительный объем хранилища, сверх включенного, можно подготовить за дополнительную плату в пределах максимального допустимого размера с шагом в 250 ГБ при объеме хранилища до 1 ТБ и с шагом в 256 ГБ — при объеме более 1 ТБ. Сведения о включенном объеме хранилища и ограничениях максимального размера см. в разделе [Отдельная база данных: размеры хранилища и уровни производительности](sql-database-dtu-resource-limits-elastic-pools.md#elastic-pool-storage-sizes-and-compute-sizes).
 - Дополнительное хранилище для эластичного пула можно подготовить, увеличив его максимальный размер с помощью [портала Azure](sql-database-elastic-pool-manage.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqlelasticpool), [Azure CLI](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update) или [REST API](https://docs.microsoft.com/rest/api/sql/elasticpools/update).
@@ -53,7 +53,7 @@ ms.locfileid: "50240177"
 > [!IMPORTANT]
 > Иногда требуется сжать базу данных, чтобы освободить неиспользуемое пространство. Дополнительные сведения см. в статье об [управлении файловым пространством в Базе данных SQL Azure](sql-database-file-space-management.md).
 
-## <a name="dtu-based-purchasing-model-change-elastic-pool-compute-resources-edtus"></a>Модель приобретения на основе единиц DTU: изменение вычислительных ресурсов эластичного пула (единиц DTU)
+## <a name="dtu-based-purchasing-model-change-elastic-pool-compute-resources-edtus"></a>Модель покупки на основе единиц DTU — изменение вычислительных ресурсов эластичного пула (единиц DTU)
 
 Можно увеличить или сократить ресурсы, доступные для эластичного пула, на основе потребностей в ресурсах, с помощью[портала Azure](sql-database-elastic-pool-manage.md#azure-portal-manage-elastic-pools-and-pooled-databases), [PowerShell](/powershell/module/azurerm.sql/set-azurermsqlelasticpool), [Azure CLI](/cli/azure/sql/elastic-pool#az-sql-elastic-pool-update) или [REST API](https://docs.microsoft.com/rest/api/sql/elasticpools/update).
 

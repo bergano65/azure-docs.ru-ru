@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
-ms.openlocfilehash: 194f84d2ce5360aa9ad9f3d771bf24f153ac6f5c
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: a75514013a1945d9ca5718be115184f6ba9950d9
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52496296"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53015761"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
 
@@ -29,7 +29,7 @@ ms.locfileid: "52496296"
 
 * __Имя учетной записи хранения Azure__: имя учетной записи хранения, добавляемой в кластер HDInsight. После выполнения сценария HDInsight сможет считывать и записывать данные, хранящиеся в этой учетной записи хранения.
 
-* __Ключ учетной записи хранения Azure__: ключ, который предоставляет доступ к учетной записи хранения.
+* __Ключ учетной записи хранения Azure__: ключ, который позволяет получить доступ к учетной записи хранения.
 
 * __-p__ (необязательно): если этот параметр указан, ключ не шифруется и хранится в файле core-site.xml как обычный текст.
 
@@ -95,7 +95,7 @@ curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/cluster
 > [!NOTE]
 > Замените `$PASSWORD` паролем учетной записи администратора для входа на кластер. Замените `$CLUSTERNAME` именем кластера HDInsight. Замените `$STORAGEACCOUNTNAME` именем учетной записи хранения.
 >
-> В этом примере для извлечения и анализа данных JSON используются [curl (http://curl.haxx.se/)](http://curl.haxx.se/) и [jq (https://stedolan.github.io/jq/)](https://stedolan.github.io/jq/).
+> В этом примере для извлечения и анализа данных JSON используются [curl (https://curl.haxx.se/)](https://curl.haxx.se/) и [jq (https://stedolan.github.io/jq/)](https://stedolan.github.io/jq/).
 
 Используя эту команду, замените __CLUSTERNAME__ именем кластера HDInsight. Замените __PASSWORD__ паролем администратора для входа в кластер по протоколу HTTP. Замените __STORAGEACCOUNT__ именем учетной записи хранилища, добавленной с помощью действия скрипта. Выходные данные этой команды выглядят так:
 

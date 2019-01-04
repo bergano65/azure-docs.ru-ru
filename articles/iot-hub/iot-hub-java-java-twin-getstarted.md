@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 07/04/2017
 ms.author: dobett
-ms.openlocfilehash: b2adb2e69475b79324cad2d11a420cbefdf8b059
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: a938e5d872d2c1602f7ce898f0d14e3e04feb759
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51514491"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53312574"
 ---
 # <a name="get-started-with-device-twins-java"></a>Начало работы с двойниками устройств (Java)
 
@@ -228,7 +228,7 @@ ms.locfileid: "51514491"
     <dependency>
       <groupId>com.microsoft.azure.sdk.iot</groupId>
       <artifactId>iot-device-client</artifactId>
-      <version>1.3.32</version>
+      <version>1.14.2</version>
     </dependency>
     ```
 
@@ -278,6 +278,17 @@ ms.locfileid: "51514491"
 
     При создании экземпляра объекта **DeviceClient** в этом примере приложения используется переменная **protocol**. 
 
+1. Чтобы распечатать сведения об обновлениях двойников, добавьте в класс **App** следующий метод:
+
+    ```java
+    protected static class DeviceTwinStatusCallBack implements IotHubEventCallback {
+        @Override
+        public void execute(IotHubStatusCode status, Object context) {
+          System.out.println("IoT Hub responded to device twin operation with status " + status.name());
+        }
+      }
+    ```
+
 9. Добавьте в конец метода **main** следующий код, чтобы:
     * Создать клиент устройства для взаимодействия с Центром Интернета вещей.
     * Создать объект **Device** для хранения свойств двойника устройства.
@@ -310,7 +321,7 @@ ms.locfileid: "51514491"
     catch (Exception e) {
       System.out.println("On exception, shutting down \n" + " Cause: " + e.getCause() + " \n" + e.getMessage());
       dataCollector.clean();
-      client.close();
+      client.closeNow();
       System.out.println("Shutting down...");
     }
     ```
@@ -327,7 +338,13 @@ ms.locfileid: "51514491"
     client.close();
     ```
 
-12. Сохраните и закройте файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
+1. Измените подпись метода **main** , чтобы включить исключения, указанные ниже.
+
+    ```java
+    public static void main(String[] args) throws URISyntaxException, IOException
+    ```
+
+1. Сохраните и закройте файл `simulated-device\src\main\java\com\mycompany\app\App.java`.
 
 13. Создайте приложение **simulated-device** и исправьте все ошибки. В командной строке перейдите к папке `simulated-device` и выполните следующую команду:
 

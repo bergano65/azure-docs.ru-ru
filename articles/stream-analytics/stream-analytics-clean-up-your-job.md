@@ -1,27 +1,27 @@
 ---
 title: Очистка задания Azure Stream Analytics
-description: Эта статья содержит руководство по удалению заданий Azure Stream Analytics.
+description: В этой статье показаны различные методы удаления заданий Azure Stream Analytics.
 services: stream-analytics
 author: mamccrea
-manager: kfile
 ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 05/22/2018
-ms.openlocfilehash: 580d05909ff3c94c982be5353b3b5e86a78fc43f
-ms.sourcegitcommit: f606248b31182cc559b21e79778c9397127e54df
+ms.date: 12/06/2018
+ms.custom: seodec18
+ms.openlocfilehash: 85db38fef5e69c4de855f8cb6d54151496faebbe
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38969346"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53090250"
 ---
 # <a name="clean-up-your-azure-stream-analytics-job"></a>Очистка задания Azure Stream Analytics
 
 Задания Azure Stream Analytics можно легко удалять с помощью портала Azure, Azure PowerShell, пакета Azure SDK для .NET или REST API.
 
 >[!NOTE] 
->При остановке задания Stream Analytics данные сохраняются в хранилище входных и выходных данных, например концентраторах событий или базе данных SQL Azure. Если необходимо удалить данные из Azure, обязательно следуйте процедуре удаления входящих и исходящих ресурсов задания Stream Analytics.
+>При остановке задания Stream Analytics данные сохраняются в хранилище входных и выходных данных, например Центрах событий или базе данных SQL Azure. Если необходимо удалить данные из Azure, обязательно следуйте процедуре удаления входящих и исходящих ресурсов задания Stream Analytics.
 
 ## <a name="stop-a-job-in-azure-portal"></a>Остановка задания на портале Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "38969346"
 
 3. На странице задания Stream Analytics щелкните **Остановить**, чтобы остановить задание. 
 
-   ![Остановка задания](./media/stream-analytics-clean-up-your-job/stop-job.png)
+   ![Остановка задания Azure Stream Analytics](./media/stream-analytics-clean-up-your-job/stop-stream-analytics-job.png)
 
 
 ## <a name="delete-a-job-in-azure-portal"></a>Удаление задания на портале Azure
@@ -42,7 +42,7 @@ ms.locfileid: "38969346"
 
 3. На странице задания Stream Analytics щелкните **Удалить**, чтобы удалить задание. 
 
-   ![Удаление задания](./media/stream-analytics-clean-up-your-job/delete-job.png)
+   ![Удаление задания Azure Stream Analytics](./media/stream-analytics-clean-up-your-job/delete-stream-analytics-job.png)
 
 
 ## <a name="stop-or-delete-a-job-using-powershell"></a>Остановка или удаление задания с помощью PowerShell

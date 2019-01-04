@@ -1,5 +1,5 @@
 ---
-title: Запрос данных из среды службы "Аналитика временных рядов" с помощью кода C# | Документация Майкрософт
+title: Запросы C# в службе "Аналитика временных рядов Azure". Запрос данных из среды службы "Аналитика временных рядов" с помощью кода C# | Документация Майкрософт
 description: Из этой статьи вы узнаете, как запрашивать данные из среды службы "Аналитика временных рядов Azure", создав код для пользовательского приложения на C# (c-sharp) .NET.
 ms.service: time-series-insights
 services: time-series-insights
@@ -11,12 +11,13 @@ ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 03/23/2018
-ms.openlocfilehash: 6c4a99096efc95f439d6c9479cb9014957207ea6
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.custom: seodec18
+ms.openlocfilehash: 82a3d4527d241aba80eb471508c99c7781dd4a41
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39630863"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53277955"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-environment-using-c"></a>Запрос данных из среды Azure Time Series Insights с помощью C#
 

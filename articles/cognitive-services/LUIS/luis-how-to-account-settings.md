@@ -1,21 +1,22 @@
 ---
-title: Управление параметрами учетной записи в LUIS | Документация Майкрософт
-description: Веб-сайт службы LUIS можно использовать для управления параметрами учетной записи.
-titleSuffix: Azure
+title: Управление параметрами
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Управляйте настройками учетной записи пользователя и ключом разработки всех своих приложений с помощью веб-сайта LUIS.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 11/26/2018
+ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: bb41331228e700c55da21c627d617d16faa2dcb9
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: bd6ae88834b45e9e154eb1e5e3ba921f403c7eaa
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52335406"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53138761"
 ---
 # <a name="manage-account-and-authoring-key"></a>Управление учетной записью и ключом разработки
 Чтобы использовать учетную запись LUIS необходимо иметь в наличии два таких ключевых элемента, как учетная запись пользователя и ключ разработки. Сведения для входа управляются с сайта [account.microsoft.com](https://account.microsoft.com). Ключ разработки управляется из веб-сайта [LUIS](luis-reference-regions.md) со страницы **Параметры**. 

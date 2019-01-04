@@ -1,28 +1,21 @@
 ---
-title: Перемещение каналов ExpressRoute из классической модели развертывания в модель Resource Manager с помощью PowerShell и Azure | Документация Майкрософт
+title: 'Перенос каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager: PowerShell: Azure | Документация Майкрософт'
 description: В этой статье описывается перемещение классического канала в модель развертывания Resource Manager с помощью PowerShell.
-documentationcenter: na
 services: expressroute
 author: ganesr
-manager: timlt
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 08152836-23e7-42d1-9a56-8306b341cd91
 ms.service: expressroute
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 06/28/2018
+ms.topic: conceptual
+ms.date: 12/07/2018
 ms.author: ganesr;cherylmc
-ms.openlocfilehash: 0c3a1a57a89d716245dc075e47b7970cb228ff50
-ms.sourcegitcommit: d7725f1f20c534c102021aa4feaea7fc0d257609
+ms.custom: seodec18
+ms.openlocfilehash: fae5ad4a9045115c0e7a68b0164593f639824073
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37100459"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141505"
 ---
-# <a name="move-expressroute-circuits-from-the-classic-to-the-resource-manager-deployment-model-using-powershell"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель Resource Manager с помощью PowerShell
+# <a name="move-expressroute-circuits-from-classic-to-resource-manager-deployment-model-using-powershell"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager с использованием PowerShell
 
 Чтобы канал ExpressRoute можно было использовать в классической модели развертывания и в модели Resource Manager, необходимо переместить его в модель развертывания Resource Manager. Сведения о перемещении канала с помощью PowerShell содержатся в следующих разделах.
 
@@ -36,7 +29,7 @@ ms.locfileid: "37100459"
 
 ## <a name="move-an-expressroute-circuit"></a>Перемещение канала ExpressRoute
 
-### <a name="step-1-gather-circuit-details-from-the-classic-deployment-model"></a>Шаг 1. Соберите сведения о канале из классической модели развертывания
+### <a name="step-1-gather-circuit-details-from-the-classic-deployment-model"></a>Шаг 1. Сбор сведений о канале из классической модели развертывания
 
 Войдите в классическую среду Azure и получите ключ службы.
 
@@ -46,7 +39,7 @@ ms.locfileid: "37100459"
   Add-AzureAccount
   ```
 
-2. Выберите соответствующую подписку Azure.
+2.  Выберите соответствующую подписку Azure.
 
   ```powershell
   Select-AzureSubscription "<Enter Subscription Name here>"
@@ -65,7 +58,7 @@ ms.locfileid: "37100459"
   Get-AzureDedicatedCircuit
   ```
 
-### <a name="step-2-sign-in-and-create-a-resource-group"></a>Шаг 2. Вход и создание группы ресурсов
+### <a name="step-2-sign-in-and-create-a-resource-group"></a>Шаг 2. Вход и создание группы ресурсов
 
 Войдите в среду Resource Manager и создайте группу ресурсов.
 
@@ -75,7 +68,7 @@ ms.locfileid: "37100459"
   Connect-AzureRmAccount
   ```
 
-2. Выберите соответствующую подписку Azure.
+2.  Выберите соответствующую подписку Azure.
 
   ```powershell
   Get-AzureRmSubscription -SubscriptionName "<Enter Subscription Name here>" | Select-AzureRmSubscription
@@ -87,7 +80,7 @@ ms.locfileid: "37100459"
   New-AzureRmResourceGroup -Name "DemoRG" -Location "West US"
   ```
 
-### <a name="step-3-move-the-expressroute-circuit-to-the-resource-manager-deployment-model"></a>Шаг 3. Перемещение канала ExpressRoute в модель развертывания Resource Manager
+### <a name="step-3-move-the-expressroute-circuit-to-the-resource-manager-deployment-model"></a>Шаг 3. Перемещение канала ExpressRoute в модель развертывания Resource Manager
 
 Теперь все готово для перемещения канала ExpressRoute из классической модели развертывания в модель Resource Manager. Прежде чем продолжить, просмотрите сведения в статье [Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager](expressroute-move.md).
 

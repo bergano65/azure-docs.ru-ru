@@ -1,6 +1,6 @@
 ---
-title: Восстановление или окончательное удаление недавно удаленного пользователя в Azure Active Directory | Документы Майкрософт
-description: Сведения о том, как просмотреть подходящих для восстановления пользователей, восстановить удаленного пользователя или окончательно удалить пользователя в Azure Active Directory.
+title: Восстановление или удаление без возможности восстановления недавно удаленного пользователя — Azure Active Directory | Документация Майкрософт
+description: Сведения о том, как просмотреть подходящих для восстановления пользователей, восстановить удаленного пользователя или удалить пользователя без возможности восстановления с помощью Azure Active Directory.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -11,15 +11,15 @@ ms.topic: conceptual
 ms.date: 09/06/2018
 ms.author: lizross
 ms.reviewer: jeffsta
-ms.custom: it-pro
-ms.openlocfilehash: 88d3c672cd072cd4b252f7ce4ede3a4c7b13a7db
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: 5f747d90368b636cb2ab8cf0e20ef5e676f99af6
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45736178"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53080509"
 ---
-# <a name="how-to-restore-or-permanently-remove-a-recently-deleted-user-with-azure-active-directory"></a>Практическое руководство. Восстановление или окончательное удаление недавно удаленного пользователя в Azure Active Directory
+# <a name="restore-or-remove-a-recently-deleted-user-using-azure-active-directory"></a>Восстановление или удаление недавно удаленного пользователя с помощью Azure Active Directory
 После удаления пользователя его учетная запись остается в заблокированном состоянии в течение 30 дней. В течение этого времени учетную запись пользователя и все ее свойства можно восстановить. По истечении 30 дней пользователь удаляется автоматически без возможности восстановления.
 
 Вы можете просмотреть подходящих для восстановления пользователей, восстановить удаленного пользователя или окончательно удалить пользователя с помощью Azure Active Directory (Azure AD) на портале Azure.

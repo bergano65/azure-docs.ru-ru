@@ -8,18 +8,17 @@ manager: jwhit
 editor: tysonn
 ms.assetid: e8614a5a-9cf8-4c81-8931-896d358ad2cb
 ms.service: monitoring
-ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2017
 ms.author: bwren
-ms.openlocfilehash: b590a6ce6d92c78f2020d5ef7cffe6d7f277433c
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: bf0e672ea6f1d62442233993bd778c82a8a16037
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51827497"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53187217"
 ---
 # <a name="service-map-integration-with-system-center-operations-manager"></a>Интеграция схемы услуги с System Center Operations Manager
   > [!NOTE]
@@ -77,7 +76,7 @@ ms.locfileid: "51827497"
 
     ![Настройка Operations Manager: группа](media/service-map-scom/scom-config-group.png)
 
-6. Необязательно. Выберите пул ресурсов сервера управления для взаимодействия с Log Analytics и щелкните **Add Workspace** (Добавить рабочую область).
+6. Необязательно. Выберите пул ресурсов сервера управления для взаимодействия с Log Analytics и щелкните **Добавить рабочую область**.
 
     ![Настройка Operations Manager: пул ресурсов](media/service-map-scom/scom-config-pool.png)
 
@@ -94,15 +93,15 @@ ms.locfileid: "51827497"
 Папка "Сопоставление служб" имеет четыре узла:
 * **Активные оповещения:** список всех активных оповещений об обмене данными между Operations Manager и решением "Сопоставление служб".  Обратите внимание, что оповещения Log Analytics не отображаются в Operations Manager. 
 
-* **Серверы**: список отслеживаемых серверов, настроенных для синхронизации из схемы услуги.
+* **Серверы**: список отслеживаемых серверов, настроенных для синхронизации с решением "Сопоставление служб".
 
     ![Operations Manager: область "Серверы"](media/service-map-scom/scom-monitoring-servers.png)
 
-* **Machine Group Dependency Views** (Представления зависимостей групп компьютеров): здесь указаны группы компьютеров, синхронизируемых с решением "Сопоставление служб". Вы можете щелкнуть любую группу, чтобы просмотреть распределенные диаграммы приложения.
+* **Machine Group Dependency Views** (Представления зависимостей групп компьютеров): здесь указаны все группы компьютеров, синхронизируемых с решением "Сопоставление служб". Вы можете щелкнуть любую группу, чтобы просмотреть распределенные диаграммы приложения.
 
     ![Схема распределенного приложения Operations Manager](media/service-map-scom/scom-group-dad.png)
 
-* **Server Dependency Views** (Представления зависимости серверов): список всех серверов, синхронизируемых из схемы услуги. Вы можете щелкнуть любой сервер, чтобы просмотреть его схему распределенного приложения.
+* **Server Dependency Views** (Представления зависимости серверов): здесь указаны все серверы, синхронизируемые с решением "Сопоставление служб". Вы можете щелкнуть любой сервер, чтобы просмотреть его схему распределенного приложения.
 
     ![Схема распределенного приложения Operations Manager](media/service-map-scom/scom-dad.png)
 

@@ -10,12 +10,12 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.assetid: 85928ec6-d7cb-488e-926e-2e5db89508ee
 ms.date: 10/18/2016
-ms.openlocfilehash: 393543bbb1891e14ed67487aff26a7bda1eebcd5
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: ffa619351ca4a4bfd3a812775ee7ff6cd71ddea4
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44304243"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53089707"
 ---
 # <a name="create-azure-resource-manager-templates-for-deploying-logic-apps"></a>Создание шаблонов Azure Resource Manager для развертывания приложений логики
 
@@ -27,11 +27,11 @@ ms.locfileid: "44304243"
 
 Приложение логики состоит из трех основных компонентов:
 
-* **Ресурс приложения логики**: содержит такие сведения, как тарифный план, расположение и определение рабочего процесса.
-* **Определение рабочего процесса**: описывает этапы рабочего процесса приложения логики и способ выполнения рабочего процесса обработчиком приложений логики.
+* **Ресурс приложения логики**. Содержит такие сведения, как тарифный план, расположение и определение рабочего процесса.
+* **Определение рабочего процесса**. Описывает этапы рабочего процесса приложения логики и способ выполнения рабочего процесса обработчиком Logic Apps.
 Это определение можно просмотреть в окне **Представление кода** приложения логики.
 В ресурсе приложения логики это определение можно найти в свойстве `definition`.
-* **Подключения**: отдельные ресурсы для безопасного хранения метаданных, связанных со всеми подключениями соединителя, таких как строка подключения и маркер доступа.
+* **Подключения**. Отдельные ресурсы для безопасного хранения метаданных, связанных со всеми подключениями соединителя, таких как строка подключения и маркер доступа.
 Эти ресурсы указываются в разделе `parameters` ресурса приложения логики.
 
 Вы можете просмотреть все эти компоненты имеющихся приложений логики с помощью таких инструментов, как [обозреватель ресурсов Azure](http://resources.azure.com).
@@ -173,7 +173,7 @@ ms.locfileid: "44304243"
 
 ## <a name="deploy-a-logic-app-template"></a>Развертывание шаблона приложения логики
 
-Шаблон можно развернуть, используя любые инструменты, включая PowerShell, REST API, [Azure DevOps Release Management](#team-services), а также функцию развертывания шаблона на портале Azure.
+Шаблон можно развернуть, используя любые инструменты, включая PowerShell, REST API, [Azure DevOps Azure Pipelines](#team-services), а также функцию развертывания шаблона на портале Azure.
 Кроме того, для сохранения значений параметров рекомендуется создать [файл параметров](../azure-resource-manager/resource-group-template-deploy.md#parameter-files).
 Узнайте, как [развертывать ресурсы с помощью шаблонов Azure Resource Manager и PowerShell](../azure-resource-manager/resource-group-template-deploy.md) или [развертывать ресурсы с помощью шаблонов Azure Resource Manager и портала Azure](../azure-resource-manager/resource-group-template-deploy-portal.md).
 
@@ -185,11 +185,11 @@ ms.locfileid: "44304243"
 На GitHub есть пример сценария в проекте [LogicAppConnectionAuth](https://github.com/logicappsio/LogicAppConnectionAuth) .
 
 <a name="team-services"></a>
-## <a name="azure-devops-release-management"></a>Azure DevOps Release Management
+## <a name="azure-devops-azure-pipelines"></a>Azure DevOps Azure Pipelines
 
-При развертывании среды и управлении ею часто используется средство Release Management в Azure DevOps и шаблон развертывания приложения логики. Azure DevOps содержит задачу [развертывания группы ресурсов Azure](https://github.com/Microsoft/vsts-tasks/tree/master/Tasks/DeployAzureResourceGroup), которую можно добавить в любую сборку или конвейер выпуска. Для авторизации развертывания требуется [субъект-служба](https://blogs.msdn.microsoft.com/visualstudioalm/2015/10/04/automating-azure-resource-group-deployment-using-a-service-principal-in-visual-studio-online-buildrelease-management/). При ее наличии можно создать конвейер выпуска.
+При развертывании среды и управлении ею часто используется средство Azure Pipelines в Azure DevOps и шаблон развертывания приложения логики. Azure DevOps содержит задачу [развертывания группы ресурсов Azure](https://github.com/Microsoft/vsts-tasks/tree/master/Tasks/DeployAzureResourceGroup), которую можно добавить в любую сборку или конвейер выпуска. Для авторизации развертывания требуется [субъект-служба](https://blogs.msdn.microsoft.com/visualstudioalm/2015/10/04/automating-azure-resource-group-deployment-using-a-service-principal-in-visual-studio-online-buildrelease-management/). При ее наличии можно создать конвейер выпуска.
 
-1. Для создания пустого конвейера в Release Management выберите пункт **Пусто**.
+1. Для создания пустого конвейера в Azure Pipelines выберите **Пусто**.
 
     ![Создание пустого конвейера][1]
 

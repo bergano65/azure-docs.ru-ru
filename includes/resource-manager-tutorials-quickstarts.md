@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 10/30/2018
+ms.date: 12/05/2018
 ms.author: jgao
 ms.custom: include file
-ms.openlocfilehash: 936c9198eebfa229db6ac34426e435c9e6ed96e8
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 46618b76f43247199e85c2023a5391c5566f3394
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50254738"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978693"
 ---
 ## <a name="quickstarts-and-tutorials"></a>Краткие руководства
 
@@ -45,6 +45,7 @@ ms.locfileid: "50254738"
     |[Tutorial: Create linked Azure Resource Manager templates](../articles/azure-resource-manager/resource-manager-tutorial-create-linked-templates.md) (Руководство по созданию связанных шаблонов Azure Resource Manager)|Модулируйте шаблоны и вызывайте другие шаблоны из шаблона. В этом руководстве вы узнаете, как создать виртуальную сеть, виртуальную машину и зависимые ресурсы.  Зависимая учетная запись хранения определяется в связанном шаблоне. |
     |[Развертывание расширений виртуальной машины](../articles/azure-resource-manager/resource-manager-tutorial-deploy-vm-extensions.md)|Выполняйте задачи, требуемые после развертывания, с помощью расширений. В этом руководстве описано развертывание расширения для пользовательского скрипта установки веб-сервера на виртуальной машине. |
     |[Развертывание расширений SQL](../articles/azure-resource-manager/resource-manager-tutorial-deploy-sql-extensions-bacpac.md)|Выполняйте задачи, требуемые после развертывания, с помощью расширений. В этом руководстве описано развертывание расширения для пользовательского скрипта установки веб-сервера на виртуальной машине. |
+    |[Защита артефактов](../articles/azure-resource-manager/resource-manager-tutorial-secure-artifacts.md)|Защитите артефакты, необходимые для завершения развертывания. Из этого руководства вы узнаете, как защитить артефакт, используемый в руководстве по расширениям для развертывания SQL. |
     |[Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](../articles/azure-resource-manager/deployment-manager-tutorial.md)|Использование диспетчера развертывания Azure. |
 
 Эти руководства можно использовать по отдельности или в рамках комплексного изучения основных принципов разработки шаблона Resource Manager.

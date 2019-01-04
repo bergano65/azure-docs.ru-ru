@@ -13,14 +13,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 10/10/2018
+ms.date: 12/13/2018
 ms.author: genli
-ms.openlocfilehash: 4d30cca0106e52706326bfd91a2d0dfb0a64ca04
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 74132c436670247f3eb84859216274d3e1363d07
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51258465"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53338708"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Подготовка диска VHD или VHDX для Windows к отправке в Azure
 Перед тем как передать виртуальные машины Windows из локальной среды в Microsoft Azure, следует правильно подготовить виртуальный жесткий диск (VHD или VHDX). В Azure поддерживаются **только виртуальные машины первого поколения**, использующие формат файла VHD и фиксированный размер диска. Максимально допустимый размер виртуального жесткого диска составляет 1023 ГБ. Вы можете преобразовать виртуальную машину первого поколения, заменив файловую систему VHDX на VHD, а динамически расширяемый диск на диск фиксированного размера. Но вы не можете изменить поколение виртуальной машины. Дополнительные сведения см. в статье о том, [как выбрать поколение для виртуальной машины в Hyper-V](https://technet.microsoft.com/windows-server-docs/compute/hyper-v/plan/should-i-create-a-generation-1-or-2-virtual-machine-in-hyper-v).
@@ -73,6 +73,16 @@ Convert-VHD –Path c:\test\MY-VM.vhdx –DestinationPath c:\test\MY-NEW-VM.vhd 
     ```PowerShell
     netsh winhttp reset proxy
     ```
+
+    Если виртуальной машине нужно работать с конкретным прокси-сервером, необходимо добавить исключение прокси-сервера в IP-адрес Azure ([168.63.129.16](https://blogs.msdn.microsoft.com/mast/2015/05/18/what-is-the-ip-address-168-63-129-16/
+)), чтобы обеспечить подключение виртуальной машины к Azure:
+    ```
+    $proxyAddress="<your proxy server>"
+    $proxyBypassList="<your list of bypasses>;168.63.129.16"
+
+    netsh winhttp set proxy $proxyAddress $proxyBypassList
+    ```
+
 3. Установите для политики SAN дисков значение [Onlineall](https://technet.microsoft.com/library/gg252636.aspx):
    
     ```PowerShell
@@ -283,7 +293,7 @@ Set-Service -Name RemoteRegistry -StartupType Automatic
     ```PowerShell
     winmgmt /verifyrepository
     ```
-    Если репозиторий поврежден, см. запись блога [WMI: Repository Corruption, or Not?](https://blogs.technet.microsoft.com/askperf/2014/08/08/wmi-repository-corruption-or-not) (WMI: поврежден ли репозиторий?)
+    Если репозиторий поврежден, ознакомьтесь с [этим разделом о репозитории WMI](https://blogs.technet.microsoft.com/askperf/2014/08/08/wmi-repository-corruption-or-not).
 
 5. Никакие сторонние приложения не должны использовать порт 3389. Этот порт используется для службы RDP в Azure. Чтобы узнать, какие порты используются на виртуальной машине, запустите команду **netstat -anob**.
 
@@ -377,7 +387,7 @@ Sysprep — это процесс, который можно выполнить
 - [Создание виртуальной машины Windows из специализированного диска](create-vm-specialized.md)
 - [Create a VM from a specialized VHD disk](https://docs.microsoft.com/azure/virtual-machines/windows/create-vm-specialized-portal?branch=master) (Создание виртуальной машины из специализированного VHD-диска)
 
-Если вы хотите создать универсальный образ, необходимо запустить Sysprep. Дополнительные сведения об использовании Sysprep см. в статье [How to Use Sysprep: An Introduction](https://technet.microsoft.com/library/bb457073.aspx) (Как использовать Sysprep: введение). 
+Если вы хотите создать универсальный образ, необходимо запустить Sysprep. Дополнительные сведения об использовании Sysprep см. в [этой статье](https://technet.microsoft.com/library/bb457073.aspx). 
 
 Не все роли или приложения, установленные на компьютере с Windows, поддерживают этот образ. Поэтому перед выполнением этой процедуры ознакомьтесь со статьей ниже, чтобы узнать о поддержке процессом Sysprep определенных ролей компьютера. [Sysprep Support for Server Roles](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles) (Поддержка серверных ролей в Sysprep).
 
@@ -409,7 +419,7 @@ Sysprep — это процесс, который можно выполнить
 *  После создания виртуальной машины в Azure мы рекомендуем разместить файл подкачки в томе "временного диска" для повышения производительности. Вы можете это сделать, как показано ниже:
 
     ```PowerShell
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -name "PagingFiles" -Value "D:\pagefile" -Type MultiString -force
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management' -name "PagingFiles" -Value "D:\pagefile.sys" -Type MultiString -force
     ```
 Если к виртуальной машине подключен какой-либо диск данных, том временного диска обычно получает букву "D". Это назначение может отличаться в зависимости от числа доступных дисков и заданных настроек.
 

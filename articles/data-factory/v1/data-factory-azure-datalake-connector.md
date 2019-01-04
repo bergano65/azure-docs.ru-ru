@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 97bd2081df8c90f885996629862f25cbec8fd2c2
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 2498fbef8d13fe9c61fd474dbbb678aa0b133e8a
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37860237"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52728418"
 ---
 # <a name="copy-data-to-and-from-data-lake-storage-gen1-by-using-data-factory"></a>Копирование данных в Azure Data Lake Storage Gen1 и обратно с помощью фабрики данных
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -53,9 +53,9 @@ ms.locfileid: "37860237"
 ## <a name="get-started"></a>Начало работы
 Можно создать конвейер с действием копирования, которое перемещает данные из Azure Data Lake Store или обратно с помощью различных инструментов и интерфейсов API.
 
-Проще всего создать конвейер для копирования данных с помощью **мастера копирования**. В статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md) приведены указания по созданию конвейера с помощью мастера копирования данных.
+Проще всего создать конвейер для копирования данных с помощью **мастера копирования**. Дополнительные сведения по созданию конвейера с помощью мастера копирования данных см. в статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md).
 
-Также для создания конвейера можно использовать следующие инструменты: **портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
@@ -98,7 +98,7 @@ ms.locfileid: "37860237"
 | **servicePrincipalKey** | Укажите ключ приложения. | Yes |
 | **tenant** | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Yes |
 
-**Пример. Проверка подлинности на основе субъекта-службы**
+**Пример. Проверка подлинности субъекта-службы**
 ```json
 {
     "name": "AzureDataLakeStoreLinkedService",
@@ -150,7 +150,7 @@ ms.locfileid: "37860237"
 #### <a name="token-expiration"></a>Срок действия маркера
 Срок действия кода авторизации, созданного с помощью кнопки **Авторизовать**, через некоторое время истекает. Следующее сообщение означает, что срок действия маркера проверки подлинности истек.
 
-"Произошла ошибка при операции с учетными данными: invalid_grant — AADSTS70002. Ошибка при проверке учетных данных. AADSTS70008: срок действия предоставленных прав доступа истек или они были отозваны. Идентификатор отслеживания: d18629e8-af88-43c5-88e3-d8419eb1fca1 Идентификатор корреляции: fac30a0c-6be6-4e02-8d69-a776d2ffefd7 Метка времени: 2015-12-15 21-09-31Z".
+Произошла ошибка при операции с учетными данными: invalid_grant – AADSTS70002: ошибка при проверке учетных данных. AADSTS70008: срок действия предоставленных прав доступа истек, или они были отозваны. Идентификатор трассировки: d18629e8-af88-43c5-88e3-d8419eb1fca1 Идентификатор корреляции: fac30a0c-6be6-4e02-8d69-a776d2ffefd7 Метка времени: 2015-12-15 21-09-31Z.
 
 Сроки действия для различных типов учетных записей пользователей см. в следующей таблице.
 
@@ -198,7 +198,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
   Failed to detect the region for Azure Data Lake account {your account name}. Please make sure that the Resource Group name: {resource group name} and subscription ID: {subscription ID} of this Azure Data Lake Store resource are correct.
   ```
 
-**Первопричина.** Есть две возможные причины:
+**Первопричина.** Есть две возможные причины.
 
 1. В связанной службе Azure Data Lake Store значения `resourceGroupName` и (или) `subscriptionId` указаны неправильно.
 2. Пользователю или субъекту-службе не предоставлены необходимые разрешения.
@@ -210,11 +210,11 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 2. Убедитесь, что пользователю или субъекту-службе предоставлена по крайней мере роль **читателя** в учетной записи Data Lake. Вот как это можно сделать:
 
     1. Перейдите на портал Azure и выберите учетную запись Data Lake Store.
-    2. В колонке Data Lake Store щелкните "Управление доступом (IAM)".
-    3. В колонке "Управление доступом (IAM)" щелкните "Добавить".
-    4. Чтобы предоставить доступ, задайте роль "Читатель" и выберите пользователя или субъект-службу, используемые для копирования.
+    2. В колонке Data Lake Store щелкните **Управление доступом (IAM)**.
+    3. Щелкните **Добавить назначение ролей**.
+    4. Чтобы предоставить доступ, задайте **роли** значение **Читатель** и выберите пользователя или субъект-службу, используемые для копирования.
 
-3. Чтобы не назначать роль "Читатель" пользователю или субъекту-службе, вы можете [явно определить расположение выполнения](data-factory-data-movement-activities.md#global) с расположением Data Lake Store в действии копирования. Пример:
+3. Чтобы не назначать пользователю или субъекту-службе роль **Читатель**, можно [явно определить расположение выполнения](data-factory-data-movement-activities.md#global) действия копирования в расположении Data Lake Store. Пример:
 
     ```json
     {
@@ -241,9 +241,9 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | **folderPath** |Путь к контейнеру и папке в Data Lake Store. |Yes |
-| **fileName** |Имя файла в Azure Data Lake Store. Свойство **fileName** является необязательным и в нем учитывается регистр символов. <br/><br/>Если указать значение **fileName**, то действие (включая копирование) работает с определенным файлом.<br/><br/>Если значение **fileName** не указано, то копируются все файлы в **folderPath** для входного набора данных.<br/><br/>Если значение **fileName** не указано для выходного набора данных, а значение **preserveHierarchy** не указано в приемнике действия, имя созданного файла будет иметь формат Data._GUID_.txt. Например: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt. |Нет  |
+| **fileName** |Имя файла в Azure Data Lake Store. Свойство **fileName** является необязательным и в нем учитывается регистр символов. <br/><br/>Если указать значение **fileName**, то действие (включая копирование) работает с определенным файлом.<br/><br/>Если значение **fileName** не указано, то копируются все файлы в **folderPath** для входного набора данных.<br/><br/>Если значение **fileName** не указано для выходного набора данных, а значение **preserveHierarchy** не указано в приемнике действия, имя созданного файла будет иметь формат Data._GUID_.txt. Например:  Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt. |Нет  |
 | **partitionedBy** |Свойство **partitionedBy** является необязательным. Его можно использовать, чтобы указать динамический путь к папке и имя файла для данных временного ряда. Например, путь к папке (**folderPath**) каждый час может быть другим. Дополнительные сведения и примеры см. в разделе [Свойство partitionedBy](#using-partitionedby-property). |Нет  |
-| **format** | Поддерживаются следующие типы форматов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Свойству **type** в разделе **format** необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format) статьи [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), можно пропустить раздел `format` в определениях входного и выходного наборов данных. |Нет  |
+| **format** | Поддерживаются следующие форматы файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Свойству **type** в разделе **format** необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format) статьи [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), можно пропустить раздел `format` в определениях входного и выходного наборов данных. |Нет  |
 | **compression** | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Дополнительные сведения см. в статье [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
 
 ### <a name="the-partitionedby-property"></a>Свойство partitionedBy
@@ -291,7 +291,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 
 | Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
-| **copyBehavior** |Определяет поведение копирования. |<b>PreserveHierarchy:</b> сохраняет иерархию файлов в целевой папке. Относительный путь исходного файла в исходной папке идентичен относительному пути целевого файла в целевой папке.<br/><br/><b>FlattenHierarchy</b>: все файлы из исходной папки создаются на первом уровне в целевой папке. Целевые файлы создаются с автоматически сформированными именами.<br/><br/><b>MergeFiles</b>: объединяет все файлы из исходной папки в один файл. Если указано имя Blob-объекта или имя файла, то оно присваивается объединенному файлу. В противном случае имя файла создается автоматически. |Нет  |
+| **copyBehavior** |Определяет поведение копирования. |<b>PreserveHierarchy</b>. Сохраняет иерархию файлов в целевой папке. Относительный путь исходного файла в исходной папке идентичен относительному пути целевого файла в целевой папке.<br/><br/><b>FlattenHierarchy</b>. Все файлы из исходной папки создают на первом уровне целевой папки. Целевые файлы создаются с автоматически сформированными именами.<br/><br/><b>MergeFiles</b>. Объединяет все файлы из исходной папки в один файл. Если указано имя Blob-объекта или имя файла, то оно присваивается объединенному файлу. В противном случае имя файла создается автоматически. |Нет  |
 
 ### <a name="recursive-and-copybehavior-examples"></a>Примеры recursive и copyBehavior
 В данном разделе описываются результаты выполнения операции копирования при использовании различных сочетаний значений recursive и copyBehavior.
@@ -311,7 +311,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 ## <a name="json-examples-for-copying-data-to-and-from-data-lake-store"></a>Примеры JSON для копирования данных в Data Lake Store и обратно
 Ниже приведены примеры определений JSON. Эти примеры определений можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В них показано, как копировать данные в Data Lake Store и хранилище BLOB-объектов Azure и обратно. Однако данные можно скопировать данные _непосредственно_ из любых источников на любой из поддерживаемых приемников. Дополнительные сведения см. в разделе "Поддерживаемые хранилища данных и форматы" статьи [Перемещение данных с помощью действия копирования](data-factory-data-movement-activities.md).  
 
-### <a name="example-copy-data-from-azure-blob-storage-to-azure-data-lake-store"></a>Пример. Копирование данных из хранилища BLOB-объектов Azure в Azure Data Lake Store
+### <a name="example-copy-data-from-azure-blob-storage-to-azure-data-lake-store"></a>Пример: копирование данных из хранилища BLOB-объектов Azure в Azure Data Lake Store
 В примере кода в этом разделе показано следующее:
 
 * Связанная служба типа [AzureStorage](data-factory-azure-blob-connector.md#linked-service-properties).
@@ -496,7 +496,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 }
 ```
 
-### <a name="example-copy-data-from-azure-data-lake-store-to-an-azure-blob"></a>Пример. Копирование данных из Azure Data Lake Store в BLOB-объект Azure
+### <a name="example-copy-data-from-azure-data-lake-store-to-an-azure-blob"></a>Пример: копирование данных из Azure Data Lake Store в большой двоичный объект Azure
 В примере кода в этом разделе показано следующее:
 
 * Связанная служба типа [AzureDataLakeStore](#linked-service-properties).

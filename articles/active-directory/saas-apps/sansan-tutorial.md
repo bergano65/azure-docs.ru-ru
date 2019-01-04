@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Sansan | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Sansan | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Sansan.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: cc070f7c4cb201e68c93b0b1337982325df74663
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 9e14f923b1e25f5fbc522cd39763ac53ddf37617
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39051267"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52872260"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sansan"></a>Руководство по интеграции Azure Active Directory с Sansan
+# <a name="tutorial-azure-active-directory-integration-with-sansan"></a>Руководство. Интеграция Azure Active Directory с Sansan
 
 В этом руководстве описано, как интегрировать Sansan с Azure Active Directory (Azure AD).
 
@@ -186,7 +186,7 @@ ms.locfileid: "39051267"
     }
     ```
 
-8. Когда скрипт PowerShell будет успешно выполнен, отобразится результат, как на приведенном ниже снимке экрана. Значения URL-адресов обновятся, но они не отражаются на портале Azure. 
+8. Когда скрипт PowerShell будет успешно выполнен, отобразится результат, как на приведенном ниже снимке экрана. Значения URL-адресов обновятся, но не будут отображены на портале Azure. 
 
     ![Скрипт настройки единого входа](./media/sansan-tutorial/tutorial_sansan_powershell.png)
 

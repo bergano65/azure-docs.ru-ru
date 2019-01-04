@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 10/22/2018
 ms.author: sethm
 ms.reviewer: kivenkat
-ms.openlocfilehash: accd36c9e0d09da0073570301600b362fff85f6e
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 2c615dd781b40c3ebb78ae291453c5b4b2d2ef4d
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49647346"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52971833"
 ---
 # <a name="make-virtual-machine-scale-sets-available-in-azure-stack"></a>Обеспечение доступности масштабируемых наборов виртуальных машин в Azure Stack
 
@@ -33,8 +33,8 @@ ms.locfileid: "49647346"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **Marketplace:** зарегистрируйте Azure Stack в глобальной среде Azure, чтобы элементы стали доступны в Marketplace. См. инструкции по [регистрации Azure Stack в Azure](azure-stack-registration.md).
-- **Образ операционной системы:** перед созданием масштабируемого набора виртуальных машин (VMSS) из [Azure Stack Marketplace](azure-stack-download-azure-marketplace-item.md) нужно скачать образы виртуальных машин для использования в VMSS. Образы уже должны присутствовать, прежде чем пользователь сможет создать новый VMSS. 
+- **Marketplace**. Зарегистрируйте Azure Stack в глобальной среде Azure, чтобы элементы стали доступны в Marketplace. См. инструкции по [регистрации Azure Stack в Azure](azure-stack-registration.md).
+- **Образ операционной системы**. Перед созданием масштабируемого набора виртуальных машин (VMSS) из [Azure Stack Marketplace](azure-stack-download-azure-marketplace-item.md) необходимо загрузить образы виртуальных машин для использования в VMSS. Образы уже должны присутствовать, прежде чем пользователь сможет создать новый VMSS. 
 
 ## <a name="use-the-azure-stack-portal"></a>Использование портала Azure Stack 
 
@@ -97,7 +97,7 @@ ms.locfileid: "49647346"
 
     Если вы скачаете образ более поздней версии (с изменением номера доступной версии), увеличение масштаба для этого масштабируемого набора становится невозможным. Это сделано намеренно, так как указанная в шаблоне версия образа должна быть всегда доступна.  
 
-Дополнительные сведения см. в разделе [Диски и образы операционной системы](.\user\azure-stack-compute-overview.md#operating-system-disks-and-images).  
+Дополнительные сведения см. в разделе [Диски и образы операционной системы](./user/azure-stack-compute-overview.md#operating-system-disks-and-images).  
 
 ## <a name="scale-a-virtual-machine-scale-set"></a>Масштабирование масштабируемого набора виртуальных машин
 

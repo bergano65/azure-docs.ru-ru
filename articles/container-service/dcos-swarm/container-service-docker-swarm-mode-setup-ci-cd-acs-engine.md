@@ -1,5 +1,5 @@
 ---
-title: Непрерывная интеграция и непрерывное развертывание с использованием обработчика службы контейнеров Azure и Swarm Mode
+title: (УСТАРЕЛО) Реализация CI/CD с использованием обработчика службы контейнеров Azure и Swarm Mode
 description: Использование обработчика Службы контейнеров Azure с Docker Swarm Mode, Реестром контейнеров Azure и Azure DevOps для непрерывной доставки многоконтейнерного приложения .NET Core
 services: container-service
 author: diegomrtnzg
@@ -9,14 +9,16 @@ ms.topic: article
 ms.date: 05/27/2017
 ms.author: diegomrtnzg
 ms.custom: mvc
-ms.openlocfilehash: 296c097ee3302eaa39210274b16c6352866eac8a
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 52d20004f43b5c553a17c44f3f35d30fd5693286
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44299582"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52995068"
 ---
-# <a name="full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-acs-engine-and-docker-swarm-mode-using-azure-devops"></a>Полный конвейер непрерывной интеграции и развертывания многоконтейнерного приложения в Службе контейнеров Azure с обработчиком ACS и Docker Swarm Mode при помощи Azure DevOps
+# <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-acs-engine-and-docker-swarm-mode-using-azure-devops"></a>(УСТАРЕЛО) Реализация полного конвейера CI/CD для многоконтейнерного приложения в Службе контейнеров Azure с обработчиком ACS и Docker Swarm Mode при помощи Azure DevOps
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
 *Эта статья основана на [документации по ](container-service-docker-swarm-setup-ci-cd.md)полному конвейеру непрерывной интеграции и развертывания многоконтейнерного приложения в Службе контейнеров Azure с Docker Swarm с использованием Azure DevOps*.
 
@@ -58,7 +60,7 @@ ms.locfileid: "44299582"
 > Оркестратор Docker Swarm в службе контейнеров Azure использует автономную устаревшую версию Swarm. Сейчас интегрированный [режим Swarm](https://docs.docker.com/engine/swarm/) (в Docker версии 1.12 или выше) не является поддерживаемым оркестратором в службе контейнеров Azure. По этой причине мы используем [обработчик ACS](https://github.com/Azure/acs-engine/blob/master/docs/swarmmode.md), предоставленный сообществом [шаблон для быстрого начала работы](https://azure.microsoft.com/resources/templates/101-acsengine-swarmmode/), или решение Docker из [Azure Marketplace](https://azuremarketplace.microsoft.com).
 >
 
-## <a name="step-1-configure-your-azure-devops-organization"></a>Шаг 1. Настройка организации Azure DevOps 
+## <a name="step-1-configure-your-azure-devops-organization"></a>Шаг 1. Настройка организации Azure DevOps 
 
 В этом разделе вы настроите организацию Azure DevOps. Чтобы настроить конечные точки служб Azure DevOps Services, в проекте Azure DevOps на панели инструментов щелкните значок **Параметры** и выберите **Службы**.
 
@@ -92,7 +94,7 @@ ms.locfileid: "44299582"
 
 Настройка завершена. На следующих шагах создается конвейер CI/CD, который создает и развертывает приложение в кластере Docker Swarm. 
 
-## <a name="step-2-create-the-build-pipeline"></a>Шаг 2. Создание конвейера сборки
+## <a name="step-2-create-the-build-pipeline"></a>Шаг 2. Создание конвейера сборки
 
 На этом шаге настраивается конвейер сборки для проекта Azure DevOps и определяется рабочий процесс сборки для образов контейнера.
 
@@ -106,7 +108,7 @@ ms.locfileid: "44299582"
 
     ![Azure DevOps — создание пустого конвейера сборки](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/create-empty-build-vsts.PNG)
 
-4. Затем щелкните вкладку **Переменные** и создайте две новые переменные: **RegistryURL** и **AgentURL**. Вставьте значения для DNS реестра и агентов кластера.
+4. Затем щелкните вкладку **Переменные** и создайте две переменные: **RegistryURL** и **AgentURL**. Вставьте значения для DNS реестра и агентов кластера.
 
     ![Azure DevOps — конфигурация переменных сборки](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-build-variables.png)
 
@@ -187,7 +189,7 @@ ms.locfileid: "44299582"
 
   ![Azure DevOps — "Сборка успешно выполнена"](./media/container-service-docker-swarm-mode-setup-ci-cd-acs-engine/vsts-build-succeeded.png) 
 
-## <a name="step-3-create-the-release-pipeline"></a>Шаг 3. Создание конвейера выпуска
+## <a name="step-3-create-the-release-pipeline"></a>Шаг 3. Создание конвейера выпуска
 
 Azure DevOps позволяет [управлять выпусками в разных средах](https://www.visualstudio.com/team-services/release-management/). Вы можете включить непрерывное развертывание, чтобы ваше приложение беспрепятственно развертывалось в разных средах (например, в среде разработки, тестирования, подготовки и рабочей среде). Вы также можете создать среду, которая представляет кластер Docker Swarm Mode Службы контейнеров Azure.
 

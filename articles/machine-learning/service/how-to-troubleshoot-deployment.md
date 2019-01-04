@@ -1,6 +1,7 @@
 ---
-title: Руководство по устранению неполадок при развертывании службы "Машинное обучение Azure"
-description: Узнайте, как обойти, решить и устранить распространенные ошибки развертывания Docker с помощью службы "Машинное обучение Azure".
+title: Руководство по устранению неполадок с развертыванием
+titleSuffix: Azure Machine Learning service
+description: Узнайте, как обойти, решить и устранить распространенные проблемы развертывания Docker с AKS и ACI с помощью Службы машинного обучения Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.component: core
@@ -8,17 +9,18 @@ ms.topic: conceptual
 ms.author: haining
 author: hning86
 ms.reviewer: jmartens
-ms.date: 10/01/2018
-ms.openlocfilehash: a10b05e95fa719b80775191e48bd4117e3a785fd
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.date: 12/04/2018
+ms.custom: seodec18
+ms.openlocfilehash: 6bd3bc86aa828ab28462de9d45f660889634cbd7
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49321688"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100520"
 ---
-# <a name="troubleshooting-azure-machine-learning-service-deployments"></a>Устранение неполадок при развертывании службы "Машинное обучение Azure"
+# <a name="troubleshooting-azure-machine-learning-service-aks-and-aci-deployments"></a>Устранение неполадок при развертывании AKS и ACI с помощью Службы машинного обучения Azure
 
-Из этой статьи вы узнаете, как обойти или устранить распространенные ошибки развертывания Docker с помощью службы "Машинное обучение Azure".
+Из этой статьи вы узнаете, как обойти или устранить распространенные проблемы развертывания Docker с Экземплярами контейнеров Azure (ACI) и Службой Azure Kubernetes (AKS) с помощью Службы машинного обучения Azure.
 
 При развертывании модели в службе машинного обучения Azure система выполняет ряд задач. Это сложная последовательность событий, и иногда возникают проблемы. Ниже перечислены задачи развертывания.
 
@@ -117,7 +119,7 @@ print(ws.webservices()['mysvc'].get_logs())
 ```
 
 ### <a name="debug-the-docker-image-locally"></a>Локальная отладка образа Docker
-Иногда журнал Docker не выдает достаточно информации о том, что пошло не так. Можно пойти дальше и извлечь созданный образ Docker, запустить локальный контейнер и провести отладку непосредственно внутри динамического контейнера в интерактивном режиме. Для запуска локального контейнера ядро Docker должно выполняться локально, а также работу значительно упростит наличие установленного [azure-cli](/cli/azure/install-azure-cli?view=azure-cli-latest).
+Иногда журнал Docker не выдает достаточно информации о том, что пошло не так. Можно пойти дальше и извлечь созданный образ Docker, запустить локальный контейнер и провести отладку непосредственно внутри динамического контейнера в интерактивном режиме. Для запуска локального контейнера ядро Docker должно выполняться локально, а также работу значительно упростит наличие установленного [azure-cli](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
 
 Сначала необходимо определить расположение образа.
 
@@ -222,10 +224,6 @@ def run(input_data):
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о развертывании см. в статьях, представленных ниже. 
-* [Развертывание веб-служб в Экземплярах контейнеров Azure](how-to-deploy-to-aci.md)
+* [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md)
 
-* [Развертывание моделей из Службы машинного обучения Azure в Службе Azure Kubernetes](how-to-deploy-to-aks.md)
-
-* [Руководство 1. Обучение модели классификации изображений с помощью службы машинного обучения Azure](tutorial-train-models-with-aml.md)
-
-* [Руководство 2. Развертывание модели классификации изображений в экземпляре контейнера Azure (ACI)](tutorial-deploy-models-with-aml.md)
+* [Руководство. Обучение и развертывание моделей](tutorial-train-models-with-aml.md)

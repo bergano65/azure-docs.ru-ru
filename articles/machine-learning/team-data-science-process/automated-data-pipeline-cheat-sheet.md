@@ -1,5 +1,5 @@
 ---
-title: Памятка по работе с автоматическим конвейером данных Машинного обучения Azure | Документация Майкрософт
+title: Памятка по конвейеру данных машинного обучения Azure — командный процесс обработки и анализа данных
 description: Пригодная для печати памятка по настройке автоматического конвейера данных в веб-службу машинного обучения Azure в зависимости от того, хранятся ли данные на локальном компьютере, транслируются в режиме реального времени или находятся в Azure или в независимой облачной службе.
 services: machine-learning
 author: marktab
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 03/14/2017
 ms.author: tdsp
-ms.custom: (previous author=garyericson, ms.author=garye)
-ms.openlocfilehash: 07f7334a98c1220d051ed1be9d04e4e4e86d4dcc
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=garyericson, previous-ms.author=garye
+ms.openlocfilehash: 627729ef4f2b6a8df96d9e3b794a1ba24143b4d7
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52444441"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53132675"
 ---
 # <a name="cheat-sheet-for-an-automated-data-pipeline-for-azure-machine-learning-predictions"></a>Памятка по работе с автоматическим конвейером данных для создания прогнозов машинного обучения Azure
 **Памятка по работе с автоматическим конвейером данных машинного обучения Microsoft Azure** поможет вам разобраться в технологии, которую вы можете использовать для передачи данных в веб-службу машинного обучения и их последующей оценки с помощью модели прогнозной аналитики.
@@ -27,7 +27,7 @@ ms.locfileid: "52444441"
 ## <a name="download-the-machine-learning-automated-data-pipeline-cheat-sheet"></a>Загрузить памятку по работе с автоматическим конвейером данных машинного обучения
 Загрузив памятку, распечатайте ее в формате А3 (27,94 x 43,18 см).
 
- **[Памятка по работе с автоматическим конвейером данных машинного обучения Microsoft Azure](https://download.microsoft.com/download/C/C/7/CC726F8B-2E6F-4C20-9B6F-AFBEE8253023/microsoft-machine-learning-operationalization-cheat-sheet_v1.pdf)**
+Загрузить памятку можно здесь: **[Памятка по работе с автоматическим конвейером данных Машинного обучения Microsoft Azure](https://download.microsoft.com/download/C/C/7/CC726F8B-2E6F-4C20-9B6F-AFBEE8253023/microsoft-machine-learning-operationalization-cheat-sheet_v1.pdf)**
 
 ![Обзор возможностей Студии машинного обучения Microsoft Azure][op-cheat-sheet]
 

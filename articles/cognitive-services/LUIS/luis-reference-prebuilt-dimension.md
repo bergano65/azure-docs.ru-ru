@@ -1,8 +1,9 @@
 ---
-title: Справочник по предварительно созданным сущностям dimension в службе LUIS в Azure | Документация Microsoft
+title: Предварительно созданные сущности dimension
 titleSuffix: Azure
 description: В этой статье описана готовая сущность dimension в службе "Распознавание речи" (LUIS).
 services: cognitive-services
+ms.custom: seodec18
 author: diberry
 manager: cgronlun
 ms.service: cognitive-services
@@ -10,14 +11,14 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: diberry
-ms.openlocfilehash: 138cf1d2fbc050797c133afaffdb2a9820e2717f
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 0ed5d68905353cc0b99a8ce5e1d1b6bfde9d1b87
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52332924"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53166053"
 ---
-# <a name="dimension-entity"></a>Сущность dimension
+# <a name="dimension-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность dimension для приложения LUIS
 Предварительно созданная сущность dimension обнаруживает различные типы измерений, независимо от языка и региональных параметров LUIS. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности dimension, не нужно. Сущность dimension поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
 
 ## <a name="types-of-dimension"></a>Типы сущностей dimension
@@ -28,7 +29,7 @@ ms.locfileid: "52332924"
 ## <a name="resolution-for-dimension-entity"></a>Разрешение для сущности dimension
 В следующем примере показано разрешение сущности **builtin.dimension**.
 
-```JSON
+```json
 {
   "query": "it takes more than 10 1/2 miles of cable and wire to hook it all up , and 23 computers.",
   "topScoringIntent": {

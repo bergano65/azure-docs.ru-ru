@@ -1,12 +1,11 @@
 ---
-title: Как подготовить модель к развертыванию в студии машинного обучения Azure | Документация Майкрософт
+title: Подготовка модели к развертыванию в Студии машинного обучения Azure | Документация Майкрософт
 description: Как подготовить обученную модель для развертывания в виде веб-службы, преобразовав обучающий эксперимент студии машинного обучения в прогнозный эксперимент.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: eb943c45-541a-401d-844a-c3337de82da6
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2017
-ms.openlocfilehash: 7849a21e2d005584030375e2193f74a99b3977bd
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: ef54281b91147060e9c00bcc6e45e0db0fb8933a
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52265242"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273108"
 ---
 # <a name="how-to-prepare-your-model-for-deployment-in-azure-machine-learning-studio"></a>Как подготовить модель к развертыванию в студии машинного обучения Azure
 
@@ -29,11 +28,11 @@ ms.locfileid: "52265242"
 
 С помощью студии вы создадите *обучающий эксперимент*. С его помощью можно обучать, оценивать и редактировать создаваемую модель. Когда модель будет полностью вас устраивать, вы подготовите ее к развертыванию, преобразовав обучающий эксперимент в *прогнозный*, который предназначен для обработки пользовательских данных.
 
-Полностью этот процесс описан в статье [Пошаговое руководство по разработке решения для прогнозной аналитики в службе машинного обучения Azure для оценки кредитных рисков](walkthrough-develop-predictive-solution.md).
+Пример этого процесса приведен в разделе [Пошаговое руководство по разработке решения для прогнозной аналитики в Службе машинного обучения Azure для оценки кредитных рисков](walkthrough-develop-predictive-solution.md).
 
 В этой статье глубже и подробнее рассматриваются этапы преобразования обучающего эксперимента в прогнозный и последующего развертывания этого прогнозного эксперимента. Ознакомившись с этой информацией, вы сможете повысить эффективность своей модели, изменяя настройки развертывания.
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="overview"></a>Обзор 
 

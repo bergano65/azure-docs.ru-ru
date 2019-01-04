@@ -1,12 +1,11 @@
 ---
-title: Шаг 5. Развертывание веб-службы Студии машинного обучения Azure | Документация Майкрософт
-description: Шаг 5 пошагового руководства по разработке прогностического решения. Развертывание прогностического эксперимента в студии машинного обучения в качестве веб-службы.
+title: Шаг 5. Развертывание веб-службы Студии машинного обучения Azure | Документация Майкрософт
+description: Пошаговое руководство по разработке решения прогнозирования (шаг 5). Развертывание прогнозного эксперимента как веб-службы в Студии машинного обучения.
 services: machine-learning
 documentationcenter: ''
-author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
-ms.author: amlstudiodocs
-manager: hjerez
+author: garyericson
+ms.custom: seodec18
+ms.author: garye
 editor: cgronlun
 ms.assetid: 3fca74a3-c44b-4583-a218-c14c46ee5338
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/23/2017
-ms.openlocfilehash: 33965270c2be6f70614def79a49f1c4aa1a8fbbc
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: ab23636aa0480532606268efedcc76ea1ddd339a
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52309935"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53253737"
 ---
 # <a name="walkthrough-step-5-deploy-the-azure-machine-learning-studio-web-service"></a>Шаг 5. Развертывание веб-службы Студии машинного обучения Azure
 Это пятый этап пошагового руководства [Разработка решения для прогнозной аналитики в машинном обучении Azure](walkthrough-develop-predictive-solution.md)
@@ -205,7 +204,7 @@ ms.locfileid: "52309935"
 4. Щелкните **Панель мониторинга**.
 
 - - -
-**Далее: [доступ к веб-службе](walkthrough-6-access-web-service.md)**
+**Дальнейшие действия. [Доступ к веб-службе](walkthrough-6-access-web-service.md)**
 
 [3]: ./media/walkthrough-5-publish-web-service/publish3.png
 [3a]: ./media/walkthrough-5-publish-web-service/publish3a.png

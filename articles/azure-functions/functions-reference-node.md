@@ -12,18 +12,18 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 10/26/2018
 ms.author: glenga
-ms.openlocfilehash: 44a2cb196e1a89b0abe229f478c0b76b146aa268
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: 17e0cf170197b99037e2892d1b74a699a3a9eef5
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52620631"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275335"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
 Это руководство содержит сведения о сложностях написания Функций Azure на языке JavaScript.
 
-Функция JavaScript — это экспортированная `функция` , которая выполняется при активации ([триггеры настраиваются в файле function.json](functions-triggers-bindings.md)). Первый аргумент каждой функции передается объекту `context`, который используется для получения и отправки данных привязки, ведения журналов и взаимодействия со средой выполнения.
+Функция JavaScript — это экспортированная `функция` , которая `function` выполняется при активации ([триггеры настраиваются в файле function.json](functions-triggers-bindings.md)). Первый аргумент каждой функции передается объекту `context`, который используется для получения и отправки данных привязки, ведения журналов и взаимодействия со средой выполнения.
 
 В этой статье предполагается, что вы уже прочли [руководство для разработчиков по Функциям Azure](functions-reference.md). Следует также выполнить действия в кратком руководстве по Функциям, чтобы создать первую функцию с помощью [Visual Studio Code](functions-create-first-function-vs-code.md) или [портала](functions-create-first-azure-function.md).
 
@@ -417,7 +417,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 | Версия службы "Функции" | Версия Node.js | 
 |---|---|
 | 1.x | 6.11.2 (заблокировано средой выполнения) |
-| 2.x  | _Активная версия LTS_ и четная _текущая_ версия Node.js (рекомендуются версии 8.11.1 и 10.6.0). Установите версию, используя [параметр приложения](functions-how-to-use-azure-function-app-settings.md#settings) WEBSITE_NODE_DEFAULT_VERSION.|
+| 2.x  | _Активная версия LTS_ и четная _текущая_ версия Node.js (рекомендуются версии 8.11.1 и 10.14.1). Установите версию, используя [параметр приложения](functions-how-to-use-azure-function-app-settings.md#settings) WEBSITE_NODE_DEFAULT_VERSION.|
 
 Введя `process.version` из любой функции или путем проверки параметра приложения, указанного выше, можно увидеть текущую версию, которую использует среда выполнения.
 

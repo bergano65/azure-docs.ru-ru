@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: 1c2294004245e0ef64b9b708a5b57ec0d34cc45f
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 1cef5f8f77a11dad605d9758296c9632f5d30ab8
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49321994"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53409026"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -39,7 +39,7 @@ ms.locfileid: "49321994"
 
 Эта схема предоставляет базовую архитектуру. Наши клиенты могут использовать эту схему в качестве основы для рабочих нагрузок категории OFFICIAL и развивать на ней шаблоны и ресурсы в соответствии с конкретными требованиями. Схема опирается на принципы, изложенные в [схеме трехуровневого веб-приложения IaaS для UK OFFICIAL](https://aka.ms/ukofficial-iaaswa), и позволяет предложить нашим клиентам варианты реализации [IaaS (инфраструктура как услуга)](https://azure.microsoft.com/overview/what-is-iaas/) и PaaS для размещения рабочих нагрузок веб-служб.
 
-Чтобы развернуть эту схему, необходима подписка Azure. Если у вас нет подписки Azure, вы можете быстро и легко зарегистрироваться, перейдя на страницу "Приступая к работе с Azure". Инструкции по развертыванию см. [здесь](https://aka.ms/ukofficial-paaswa-repo/).
+Чтобы развернуть эту схему, необходима подписка Azure. Если у вас нет подписки Azure, вы можете быстро и легко зарегистрироваться, перейдя на страницу "Начало работы с Azure". Инструкции по развертыванию см. [здесь](https://aka.ms/ukofficial-paaswa-repo/).
 
 ## <a name="architecture-and-components"></a>Архитектура и компоненты
 
@@ -79,7 +79,7 @@ ms.locfileid: "49321994"
 
 - [Azure Active Directory (Azure AD)](https://azure.microsoft.com/services/active-directory/) — это мультитенантный облачный каталог и служба управления удостоверениями корпорации Майкрософт. Все пользователи решения создаются в Azure Active Directory, включая пользователей, обращающихся к базе данных SQL.
 - Аутентификация в веб-приложении для операторов и доступ к администрированию ресурсов Azure выполняются через Azure AD. Дополнительные сведения см. в статье [Интеграция приложений с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications).
-- Azure AD используется при шифровании столбцов базы данных для аутентификации приложения в Базе данных SQL Azure. Дополнительные сведения см. в статье [Always Encrypted: защита конфиденциальных данных в Базе данных SQL и хранение ключей шифрования в хранилище ключей Azure](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault).
+- Azure AD используется при шифровании столбцов базы данных для аутентификации приложения в Базе данных SQL Azure. Дополнительные сведения см. в статье [Always Encrypted: Always Encrypted: Protect sensitive data and store encryption keys in Azure Key Vault](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault) (Always Encrypted: защита конфиденциальных данных и хранение ключей шифрования в Azure Key Vault).
 - Веб-приложение для граждан предоставляется в свободном доступе. Для поддержки создания учетных записей и аутентификации через Active Directory и (или) социальные сети в качестве поставщиков удостоверений предоставляется возможность интеграции с [Azure Active Directory B2C](https://azure.microsoft.com/services/active-directory-b2c/).
 - Служба [Защита идентификации Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-identityprotection) выявляет потенциальные уязвимости и рискованные учетные записи, предоставляет рекомендации по повышению уровня безопасности для удостоверений вашей организации, настраивает автоматическое реагирование на обнаруженные подозрительные действия, связанные с удостоверениями вашей организации, исследует подозрительные инциденты и предпринимает соответствующие действия для их устранения.
 - [Контроль доступа на основе ролей (RBAC) Azure](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal) обеспечивает точное управление доступом для Azure. Доступ к подписке ограничен администратором подписки, а доступ к Azure Key Vault разрешен только тем пользователям, которым необходим доступ к управлению ключами.
@@ -104,7 +104,7 @@ ms.locfileid: "49321994"
 
 Веб-приложения Azure предоставляют полностью управляемую среду размещения для веб-приложений на языках Java, PHP, Python, Node.js, HTML и C#, избавляя от необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из [Azure DevOps](https://azure.microsoft.com/services/visual-studio-team-services/) или любого репозитория Git.
 
-Служба приложений [соответствует требованиям ISO, SOC и PCI](https://www.microsoft.com/TrustCenter/) и позволяет выполнять аутентификацию пользователей с помощью [Azure Active Directory](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-active-directory-authentication) или учетных записей в социальных сетях ([Google](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-google-authentication), [Facebook](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-facebook-authentication), [Twitter](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-twitter-authentication) и [Microsoft](https://docs.microsoft.com/azure/app-service/app-service-mobile-how-to-configure-microsoft-authentication)).
+Служба приложений [соответствует требованиям ISO, SOC и PCI](https://www.microsoft.com/TrustCenter/) и позволяет выполнять аутентификацию пользователей с помощью [Azure Active Directory](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-aad) или учетных записей в социальных сетях ([Google](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-google), [Facebook](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-facebook), [Twitter](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-twitter) и [Microsoft](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-microsoft)).
 
 Планы "Базовый", "Стандартный" и "Премиум" предназначены для производственных нагрузок и выполняются на выделенных экземплярах виртуальных машин. Каждый экземпляр поддерживает множество приложений и доменов. Службы приложений при необходимости поддерживают [ограничения IP-адресов](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions) для защиты трафика к доверенным IP-адресам, а также [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity) для безопасного подключения к другим службам PaaS, таким как [Key Vault](https://azure.microsoft.com/services/key-vault/) и [База данных Azure SQL](https://azure.microsoft.com/services/sql-database/). Если потребуется более высокий уровень защиты, в рамках плана "Изолированный" приложения можно разместить в частной выделенной среде Azure. Это идеальный вариант, если требуется безопасное подключение к локальной сети, повышенная производительность и дополнительные возможности масштабирования.
 
@@ -230,9 +230,9 @@ ms.locfileid: "49321994"
 Были предложены три подхода к развертыванию. Простой "экспресс-метод" [Azure CLI 2](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) подходит для быстрого создания тестовой среды; параметризованный метод [Azure CLI 2](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) дает больше возможностей для настройки сред для рабочей нагрузки; развертывание через портал Azure позволяет оператору настроить параметры развертывания на портале Azure. 
 
 1.  Клонируйте или скачайте [этот](https://aka.ms/ukofficial-paaswa-repo) репозиторий GitHub на локальную рабочую станцию.
-2.  Изучите [описание метода 1: Azure CLI 2 (экспресс-метод)](https://aka.ms/ukofficial-paaswa-repo/#method-1-azure-cli-2-express-version) и выполните приведенные там команды.
-3.  Изучите [описание метода 1a: Azure CLI 2 (настройка развертывания с помощью аргументов скрипта)](https://aka.ms/ukofficial-paaswa-repo/#method-1a-azure-cli-2-configuring-the-deployment-via-script-arguments) и выполните приведенные там команды.
-4.  Изучите [описание метода 2: процесс развертывания с помощью портала Azure](https://aka.ms/ukofficial-paaswa-repo/#method-2-azure-portal-deployment-process) и выполните перечисленные там действия.
+2.  Изучите [описание метода 1: Azure CLI 2 (экспресс-метод)](https://aka.ms/ukofficial-paaswa-repo/#method-1-azure-cli-2-express-version) и выполните приведенные там команды.
+3.  Изучите [описание метода 1a: Azure CLI 2 (настройка развертывания с помощью аргументов сценария)](https://aka.ms/ukofficial-paaswa-repo/#method-1a-azure-cli-2-configuring-the-deployment-via-script-arguments) и выполните приведенные там команды.
+4.  Изучите [описание метода 2: процесс развертывания с помощью портала Azure](https://aka.ms/ukofficial-paaswa-repo/#method-2-azure-portal-deployment-process) и выполните перечисленные там действия.
 
 ## <a name="guidance-and-recommendations"></a>Инструкции и рекомендации
 

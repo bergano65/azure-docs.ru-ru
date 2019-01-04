@@ -1,19 +1,20 @@
 ---
-title: Подготовка рабочего решения Azure IoT Edge | Документация Майкрософт
+title: Подготовка устройств и их развертывания в рабочей среде — Azure IoT Edge | Документация Майкрософт
 description: Узнайте, как внедрить разрабатываемое решение Azure IoT Edge в рабочей среде, в том числе настроить на устройствах подходящие сертификаты и составить план развертывания будущих обновлений кода.
 author: kgremban
-manager: timlt
+manager: philmea
 ms.author: kgremban
 ms.date: 11/28/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 48fd774d6d887a12ed1c1ad9689ca34f5d866367
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.custom: seodec18
+ms.openlocfilehash: d39a271f33cb86bf870c3a7692c38d780093efa2
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52585453"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100044"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Подготовка к развертыванию решения IoT Edge в рабочей среде
 

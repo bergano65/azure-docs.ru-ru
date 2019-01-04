@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 9/4/2018
 ms.author: shtabriz
-ms.openlocfilehash: ac1b9dbbb5739dd015c0bda5f1ea82fe26bb0c70
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: dcc978c8e169cca2e2cd91a63ef1814a8c3bd87c
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625952"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53184106"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 
@@ -32,7 +32,7 @@ ms.locfileid: "51625952"
 Чтобы следовать инструкциям на этой странице, необходимо заранее сделать следующее:
 
 1. Настроить [модуль Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) (`AzureRm`).
-2. [Создать или повторно использовать группу действий](../monitoring-and-diagnostics/monitoring-action-groups.md), настроенную на уведомление.
+2. [Создать или повторно использовать группу действий](../azure-monitor/platform/action-groups.md), настроенную на уведомление.
 
 ## <a name="instructions"></a>Указания
 1. С помощью PowerShell войдите в Azure с помощью учетной записи и выберите нужную подписку.
@@ -435,4 +435,4 @@ ms.locfileid: "51625952"
 -  [Типы ресурсов и проверок работоспособности, доступные в службе работоспособности ресурсов Azure](resource-health-checks-resource-types.md)
 
 Создание оповещений службы "Работоспособность служб":
--  [Создание оповещений журнала действий для уведомлений службы](../monitoring-and-diagnostics/monitoring-activity-log-alerts-on-service-notifications.md) 
+-  [Создание оповещений журнала действий для уведомлений службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md) 

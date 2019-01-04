@@ -1,11 +1,10 @@
 ---
-title: Выбор алгоритмов машинного обучения в Студии машинного обучения Azure | Документация Майкрософт
+title: Как выбрать алгоритмы для Студии машинного обучения Azure | Документация Майкрософт
 description: Как выбрать алгоритмы студии машинного обучения Azure для контролируемого и неконтролируемого обучения в экспериментах кластеризации, классификации или регрессии.
 services: machine-learning
 author: ericlicoding
-ms.custom: (previous ms.author=pakalra, author=pakalra)
+ms.custom: previous-ms.author=pakalra, previous-author=pakalra
 ms.author: amlstudiodocs
-manager: cgronlun
 editor: cgronlun
 tags: ''
 ms.assetid: a3b23d7f-f083-49c4-b6b1-3911cd69f1b4
@@ -13,12 +12,12 @@ ms.service: machine-learning
 ms.component: studio
 ms.topic: article
 ms.date: 12/18/2017
-ms.openlocfilehash: 7ddfb98a884779385cde643e213bebb98b050436
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 9e601464f97a7717a2ccef0e60172357d3169697
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52312424"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53256933"
 ---
 # <a name="how-to-choose-algorithms-for-azure-machine-learning-studio"></a>Выбор алгоритмов студии машинного обучения Azure
 
@@ -44,7 +43,7 @@ ms.locfileid: "52312424"
 Иногда ни одна из ветвей алгоритма не подходит идеально. Эти рекомендации приближенные, поэтому не нужно беспокоиться о том, что они не являются точными.
 Некоторые специалисты по данным, с которыми я общался, говорили, что единственный надежный способ определить наилучший алгоритм — попробовать их все.
 
-Ниже приведен пример эксперимента из [коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com/), в котором используется несколько алгоритмов для одних и тех же данных, а затем сравниваются результаты: [Сравнение многоклассовых классификаторов: распознавание букв](http://gallery.cortanaintelligence.com/Details/a635502fc98b402a890efe21cec65b92).
+Ниже приведен пример эксперимента из [Коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com/), в котором используется несколько алгоритмов для одних и тех же данных, а затем сравниваются результаты: [Compare Multi-class Classifiers: Letter recognition](http://gallery.cortanaintelligence.com/Details/a635502fc98b402a890efe21cec65b92) (Сравнение многоклассовых классификаторов: распознавание букв).
 
 > [!TIP]
 > Чтобы скачать и распечатать схему, на которой представлены общие возможности Студии машинного обучения, см. [обзорную схему возможностей Студии машинного обучения Azure](studio-overview-diagram.md).

@@ -5,9 +5,8 @@ keywords: machine learning examples, sample experiment, machine learning sample,
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: seodec18, previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 81e6c1d8-682c-4db3-bfd5-d7bfb1150ff3
 ms.service: machine-learning
@@ -17,14 +16,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/05/2018
-ms.openlocfilehash: 568732c5a1d2abbb9f304b624d885b2a3c692706
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 6b2a07b105252ca1fb5eb37c2571601c3eb74179
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52306686"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53276440"
 ---
-# <a name="create-machine-learning-experiments-from-working-examples-in-azure-ai-gallery"></a>Создание экспериментов машинного обучения на основе рабочих примеров в коллекции решений Azure AI
+# <a name="create-azure-machine-learning-studio-experiments-from-working-examples-in-azure-ai-gallery"></a>Создание экспериментов Студии машинного обучения на основе рабочих примеров из Коллекции решений ИИ Azure
 
 Узнайте, как использовать примеры экспериментов машинного обучения из [коллекции решений Azure AI](https://gallery.cortanaintelligence.com/), чтобы не создавать собственные решения с нуля. Эти примеры помогут вам создать решение машинного обучения.
 
@@ -32,7 +31,7 @@ ms.locfileid: "52306686"
 
 Чтобы узнать, как использовать коллекцию, просмотрите 3-минутное видео [Копирование работы других пользователей для обработки и анализа данных](data-science-for-beginners-copy-other-peoples-work-to-do-data-science.md) из серии [Обработка и анализ данных для начинающих](data-science-for-beginners-the-5-questions-data-science-answers.md).
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="find-an-experiment-to-copy-in-azure-ai-gallery"></a>Поиск эксперимента для копирования в коллекцию решений Azure AI
 Чтобы просмотреть доступные эксперименты, перейдите в раздел [Коллекция](https://gallery.cortanaintelligence.com/) и щелкните **Эксперименты** в верхней части страницы.
@@ -46,7 +45,7 @@ ms.locfileid: "52306686"
 1. В верхней части страницы щелкните **Просмотреть все** .
 2. В левой части окна в разделе **Refine by** (Отфильтровать по) в разделе **Категории** выберите **Эксперимент**, чтобы просмотреть все эксперименты в коллекции.
 3. Эксперименты, соответствующие определенным требованиям, можно найти несколькими различными способами.
-   * **Выберите фильтры в левой части окна.** Например, чтобы просмотреть эксперименты, в которых используется алгоритм обнаружения аномалий на основе PCA, выберите **Эксперимент** в разделе **Категории**. Затем в разделе **Используемые алгоритмы** нажмите кнопку **Показать все** и в диалоговом окне выберите **Обнаружение аномалий на основе PCA**. Может потребоваться выполнить прокрутку.<br></br>
+   * **Выберите фильтры в левой части окна.** Например, чтобы просмотреть эксперименты, в которых используется алгоритм обнаружения аномалий на основе PCA, сделайте следующее. В разделе **Категории** выберите **Эксперимент**. Затем в разделе **Используемые алгоритмы** нажмите кнопку **Показать все** и в диалоговом окне выберите **Обнаружение аномалий на основе PCA**. Может потребоваться выполнить прокрутку.<br></br>
      ![Выбор фильтров](./media/sample-experiments/choose-an-algorithm.png)
    * **Используйте поле поиска.** Например, чтобы найти эксперименты, предоставленные корпорацией Майкрософт и относящиеся к распознаванию цифр с использованием алгоритма двухклассовой машины опорных векторов, введите "распознавание цифр" в поле поиска. Затем выберите фильтры **Experiment** (Эксперимент), **Microsoft content only** (Только содержимое Майкрософт) и **Two-Class Support Vector Machine** (Двухклассовая машина опорных векторов).<br></br>
      ![Использование поля поиска](./media/sample-experiments/search-for-experiments.png)

@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: cephalin
-ms.openlocfilehash: f426982163a5e49264bc4f222f6869d9cbb40c89
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.custom: seodec18
+ms.openlocfilehash: 8f8e5f3d184073a73ca30764542dc56e45974120
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49166072"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53262135"
 ---
 # <a name="manage-an-app-service-plan-in-azure"></a>Управлением планом службы приложений в Azure
 
@@ -35,7 +36,7 @@ ms.locfileid: "49166072"
 
 1. На [портале Azure](https://portal.azure.com) щелкните **Создать** > **Интернет+мобильные устройства**, выберите **Веб-приложение** или другое приложение службы приложений.
 
-1. Выберите или создайте план службы приложений для нового приложения.
+2. Выберите или создайте план службы приложений для нового приложения.
 
    ![Создание приложения на портале Azure.][createWebApp]
 

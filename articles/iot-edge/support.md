@@ -1,6 +1,6 @@
 ---
-title: Поддержка платформ в Azure IoT Edge | Документация Майкрософт
-description: Платформы, поддерживаемые в Azure IoT Edge
+title: Поддерживаемые операционные системы и подсистемы контейнеров в Azure IoT Edge | Документация Майкрософт
+description: Узнайте, в каких операционных системах можно запустить управляющую программу и среду выполнения Azure IoT Edge, а также какие подсистемы контейнеров поддерживают рабочие устройства.
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,14 +8,16 @@ ms.date: 11/07/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 45c5c7245a2af3b0d0e328bfcc43112eaee406ee
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: 3c75f50e40f83a4dc6765ae422fbb2458f40d770
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51565009"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100193"
 ---
-# <a name="azure-iot-edge-support"></a>Поддержка Azure IoT Edge
+# <a name="azure-iot-edge-supported-systems"></a>Поддерживаемые Azure IoT Edge системы
+
 Есть много способов реализовать поддержку продуктов Azure IoT Edge.
 
 **Отчеты об ошибках.** Основная часть усилий по разработке продукта Azure IoT Edge, прилагается в рамках проекта IoT Edge с открытым кодом. Вы можете сообщить об ошибках на соответствующей [странице](https://github.com/azure/iotedge/issues) для этого проекта. Внесенные исправления очень быстро попадают из проекта в обновление продукта.

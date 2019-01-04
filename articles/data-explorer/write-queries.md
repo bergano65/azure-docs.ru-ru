@@ -8,12 +8,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 71e39c6430231ae8d175f9c09a9059c3da4c9a1e
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: 0a2b56164662a13d8254d8956712077e5f8a83a9
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51854260"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52961526"
 ---
 # <a name="write-queries-for-azure-data-explorer"></a>Написание запросов для обозревателя данных Azure
 
@@ -26,9 +26,9 @@ ms.locfileid: "51854260"
 - На *вспомогательном кластере* в обозревателе данных Azure, который мы настроили для использования в учебных целях.
     [Войдите в кластер](https://dataexplorer.azure.com/clusters/help/databases/samples) с учетной записью электронной почты организации, которая входит в Azure Active Directory.
 
-- На вашем собственном кластере, который включает примеры данных StormEvents. Дополнительные сведения см. в разделах [Краткое руководство. Создание кластера и базы данных обозревателя данных Azure](create-cluster-database-portal.md) и [Передача данных примера в обозреватель данных Azure](ingest-sample-data.md).
+- На вашем собственном кластере, который включает примеры данных StormEvents. Дополнительные сведения см. в статьях [Краткое руководство. Создание кластера и базы данных обозревателя данных Azure](create-cluster-database-portal.md) и [Прием демонстрационных данных в Azure Data Explorer](ingest-sample-data.md).
 
-[!INCLUDE [data-explorer-storm-events](../../includes/data-explorer-storm-events.md)]
+    [!INCLUDE [data-explorer-storm-events](../../includes/data-explorer-storm-events.md)]
 
 ## <a name="overview-of-the-query-language"></a>Общие сведения о языке запросов
 
@@ -113,7 +113,7 @@ StormEvents
 
 ### <a name="where"></a>где:
 
-[**where**](https://docs.microsoft.com/azure/kusto/query/whereoperator): Отфильтровывает таблицу до подмножества строк, которые удовлетворяют предикату.
+[**where**](https://docs.microsoft.com/azure/kusto/query/whereoperator): Отфильтровывает таблицу для подмножества строк, которые удовлетворяют предикату.
 
 Следующий запрос фильтрует данные по `EventType` и `State`.
 
@@ -128,7 +128,7 @@ StormEvents
 
 ### <a name="sort"></a>sort
 
-[**sort**](https://docs.microsoft.com/azure/kusto/query/sortoperator): сортирует строки входной таблицы по порядку (по одному или нескольким столбцам).
+[**sort**](https://docs.microsoft.com/azure/kusto/query/sortoperator): сортирует по порядку строки входной таблицы (по одному или нескольким столбцам).
 
 Следующий запрос сортирует данные в убывающем порядке по `DamageProperty`.
 
@@ -147,7 +147,7 @@ StormEvents
 
 ### <a name="top"></a>top
 
-[**top**](https://docs.microsoft.com/azure/kusto/query/topoperator): возвращает первые  *N*  записей, отсортированные по указанным столбцам.
+[**top**](https://docs.microsoft.com/azure/kusto/query/topoperator): возвращает первые  *N*  записей, отсортированные по указанным столбцам.
 
 Следующий запрос возвращает те же результаты, что приведенный выше запрос. При этом запрос содержит на один оператор меньше по сравнению с предыдущим.
 
@@ -180,7 +180,7 @@ StormEvents
 
 ### <a name="summarize"></a>summarize
 
-[**summarize**](https://docs.microsoft.com/azure/kusto/query/summarizeoperator): агрегирует группы строк.
+[**summarize**](https://docs.microsoft.com/azure/kusto/query/summarizeoperator): Агрегирует группы строк.
 
 Следующий запрос возвращает количество событий по `State`.
 
@@ -271,7 +271,7 @@ StormEvents
 
 ### <a name="bin"></a>bin()
 
-[**bin()**](https://docs.microsoft.com/azure/kusto/query/binfunction): округляет значения до целого, кратного указанному размеру группы.
+[**bin()**](https://docs.microsoft.com/azure/kusto/query/binfunction): округляет значения до целого числа, кратного указанному размеру группы.
 
 Следующий запрос вычисляет количество с размером контейнера в течение одного дня.
 
@@ -358,7 +358,7 @@ MyData
 
 ### <a name="ago"></a>ago()
 
-[**ago()**](https://docs.microsoft.com/azure/kusto/query/agofunction): вычитает заданный интервал времени из текущего времени UTC.
+[**ago()**](https://docs.microsoft.com/azure/kusto/query/agofunction): Вычитает заданный интервал времени из текущего времени UTC.
 
 Следующий запрос возвращает данные за последние 12 часов.
 
@@ -389,7 +389,7 @@ range offset from -1 to 1 step 1
 
 ### <a name="between"></a>between()
 
-[**between()**](https://docs.microsoft.com/azure/kusto/query/betweenoperator): проверяет, что входные данные находятся внутри указанного диапазона.
+[**between()**](https://docs.microsoft.com/azure/kusto/query/betweenoperator): проверяет, чтобы входные данные находились внутри указанного диапазона.
 
 Следующий запрос фильтрует данные по указанному диапазону дат.
 
@@ -510,9 +510,9 @@ StormEvents
 
 ### <a name="top-nested"></a>top-nested
 
-[**top-nested**](https://docs.microsoft.com/azure/kusto/query/topnestedoperator): формирует выборку результатов, состоящую из первых нескольких уровней, где каждый следующий уровень детализирует предыдущие уровни.
+[**top-nested**](https://docs.microsoft.com/azure/kusto/query/topnestedoperator): формирует выборку результатов, состоящую из первых нескольких уровней, где каждый следующий уровень детализирует предыдущие.
 
-Этот оператор может быть удобен в сценариях визуализации панелей мониторинга или для ответов на такие вопросы, как "Найти первые N значений K1 (с использованием некоторой статистической функции); для каждого из них найти первые M значений K2 (с использованием другой статистической функции); ..."
+Данный оператор может быть удобен в сценариях визуализации панелей мониторинга или для ответов на такие вопросы, как: "Найти первые N значений K1 (с помощью агрегата); для каждого из них найти первые М значений К2 (с помощью другого агрегата);..."
 
 Следующий запрос возвращает иерархическую таблицу с верхним уровнем `State`, за которым следует `Sources`.
 
@@ -715,7 +715,7 @@ X
 
 ### <a name="serialize"></a>serialize
 
-[**serialize**](https://docs.microsoft.com/azure/kusto/query/serializeoperator): сериализует набор строк, так чтобы можно было использовать функции, которые сериализуют данные, например **row_number()**.
+[**serialize**](https://docs.microsoft.com/azure/kusto/query/serializeoperator): сериализует набор строк, так, чтобы можно было использовать функции, которые сериализуют данные, например **row_number()**.
 
 Следующий запрос завершается успешно, поскольку данные сериализованы.
 

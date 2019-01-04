@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.date: 01/07/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 93c3bd3f902f08c8f019744b3f30745c1fd9fa01
-ms.sourcegitcommit: 86cb3855e1368e5a74f21fdd71684c78a1f907ac
+ms.openlocfilehash: 15526cc829d556457a7069df613bb6a8d2a2b23b
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37442429"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52847666"
 ---
-# <a name="azure-ad-b2c-secure-a-web-api-by-using-nodejs"></a>Azure AD B2C: защита веб-API с помощью Node.js
+# <a name="azure-ad-b2c-secure-a-web-api-by-using-nodejs"></a>Azure AD B2C. Защита веб-API с помощью Node.js
 <!-- TODO [AZURE.INCLUDE [active-directory-b2c-devquickstarts-web-switcher](../../includes/active-directory-b2c-devquickstarts-web-switcher.md)]-->
 
 С помощью Azure Active Directory (Azure AD) B2C можно защитить веб-API с помощью маркера доступа OAuth 2.0. Эти маркеры позволяют клиентским приложениям, использующим Azure AD B2C, проходить проверку подлинности для API. В этой статье показано, как создать интерфейс веб-API .NET "Список дел", который позволяет пользователям добавлять и просматривать задачи. Этот веб-API защищен с помощью Azure AD B2C. Управлять списком дел могут только пользователи, прошедшие проверку подлинности.
@@ -47,7 +47,7 @@ ms.locfileid: "37442429"
 * Скопируйте **идентификатор приложения** , назначенный приложению. Эти данные понадобятся позже.
 
 ## <a name="create-your-policies"></a>Создание политик
-В Azure AD B2C любое взаимодействие с пользователем определяется [политикой](active-directory-b2c-reference-policies.md). Это приложение содержит два действия с удостоверениями: регистрация и вход. Вам нужно создать по одной политике каждого типа, как описано в [справочной статье о политиках](active-directory-b2c-reference-policies.md#create-a-sign-up-policy).  При создании трех политик обязательно выполните указанные ниже действия.
+В Azure AD B2C любое взаимодействие с пользователем определяется [политикой](active-directory-b2c-reference-policies.md). Это приложение содержит два действия с удостоверениями: регистрация и вход. Вам нужно создать по одной политике каждого типа, как описано в [справочной статье о политиках](active-directory-b2c-reference-policies.md#create-a-sign-up-user-flow).  При создании трех политик обязательно выполните указанные ниже действия.
 
 * В политике регистрации укажите **отображаемое имя** и другие атрибуты регистрации.
 * Выберите утверждения приложения **Отображаемое имя** и **Идентификатор объекта** для каждой политики.  Можно также выбрать другие утверждения.
@@ -71,12 +71,12 @@ git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-WebAPI-Nod
 ## <a name="download-nodejs-for-your-platform"></a>Загрузка Node.js для платформы
 Чтобы этот пример у вас заработал, потребуется рабочая установка Node.js.
 
-Установите Node.js с сайта [nodejs.org](http://nodejs.org).
+Установите Node.js с сайта [nodejs.org](https://nodejs.org).
 
 ## <a name="install-mongodb-for-your-platform"></a>Установка MongoDB на платформе
 Чтобы этот пример у вас заработал, потребуется рабочая установка MongoDB. MongoDB мы используем для того, чтобы интерфейс REST API устойчиво работал с несколькими экземплярами сервера.
 
-Установите MongoDB с сайта [mongodb.org](http://www.mongodb.org).
+Установите MongoDB с сайта [mongodb.org](https://www.mongodb.org).
 
 > [!NOTE]
 > В данном руководстве предполагается, что вы используете стандартный установочный пакет и стандартные конечные точки сервера для MongoDB. На момент написания статьи это `mongodb://localhost`.
@@ -341,7 +341,7 @@ var log = bunyan.createLogger({
 
 `Text`: сама задача. Значение указывается в формате **string**(строка).
 
-`date`: дата ожидаемого выполнения задачи. Значение указывается в формате **datetime**(дата и время).
+`date`: Дата ожидаемого выполнения задачи. Значение указывается в формате **datetime**(дата и время).
 
 `completed`: статус завершения задачи. Значение указывается в формате **Boolean**(логическое).
 

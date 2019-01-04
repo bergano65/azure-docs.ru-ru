@@ -1,11 +1,13 @@
 ---
-title: Общие сведения о виртуальной машине для обработки и анализа данных с геоинформационной системой и средствами ИИ — Azure | Документация Майкрософт
-description: Описание виртуальной машины и компонентов для обработки и анализа данных с геоинформационной системой и средствами ИИ.
+title: Общие сведения о виртуальной машине для обработки и анализа географических данных средствами ИИ
+titleSuffix: Azure
+description: На виртуальных машинах для обработки и анализа геоданных средствами ИИ предоставляется ArcGIS Pro. Также предоставляются наборы средств обработки и анализа данных, R и Python для работы с моделями машинного обучения и искусственного интеллекта.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics
 services: machine-learning
 documentationcenter: ''
 author: gopitk
 manager: cgronlun
+ms.custom: seodec18
 ms.assetid: ''
 ms.service: machine-learning
 ms.component: data-science-vm
@@ -15,12 +17,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: gokuma
-ms.openlocfilehash: 2fb49212b8480fa550558e14e890cbf7395406da
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: b0152056dcb8716a407e022d2b30c48e6b534b2a
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31407458"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53074576"
 ---
 # <a name="introduction-to-the-geo-artificial-intelligence-data-science-virtual-machine"></a>Общие сведения о виртуальной машине для обработки и анализа данных с геоинформационной системой и средствами ИИ
 

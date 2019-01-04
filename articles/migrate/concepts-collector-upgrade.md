@@ -4,15 +4,15 @@ description: В этой статье приводятся сведения об
 author: musa-57
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 10/29/2018
+ms.date: 11/29/2018
 ms.author: hamusa
 services: azure-migrate
-ms.openlocfilehash: cd48b824845a0195fc78814a88dd449507c99394
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 88077ac965b2abb69be145f29cbadca2ff1128d6
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50241469"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52836650"
 ---
 # <a name="collector-update-release-history"></a>Журнал выпуска версий обновлений Сборщика
 
@@ -20,12 +20,18 @@ ms.locfileid: "50241469"
 
 Сборщик Миграции Azure — это простой модуль, который можно использовать для обнаружения локального окружения vCenter для оценки перед миграцией в Azure. [Узнайте больше](concepts-collector.md).
 
+## <a name="continuous-discovery-upgrade-versions"></a>Непрерывное обнаружение: обновленные версии
 
-## <a name="one-time-discovery-upgrade-versions"></a>Однократное обнаружение: версии обновления
+Обновление для модуля непрерывного обнаружения пока недоступно.
+
+## <a name="one-time-discovery-deprecated-now-previous-upgrade-versions"></a>Однократное обнаружение (теперь не рекомендуется): прежние обновленные версии
+
+> [!NOTE]
+> Устройство однократного обнаружения не рекомендуют использовать, поскольку этот метод полагался на параметры статистик vCenter Server для доступности точки данных производительности и собранных средних счетчиков производительности, которые привели к превышению размера виртуальных машин для миграции в Azure.
 
 ### <a name="version-10916-released-on-10292018"></a>Версия 1.0.9.16 (выпущена 29.10.2018)
 
-Содержит исправления ошибок PowerCLI, которые возникают при настройке устройства. 
+Содержит исправления ошибок PowerCLI, которые возникают при настройке устройства.
 
 Значения хэша для [пакета обновления 1.0.9.16](https://aka.ms/migrate/col/upgrade_9_16)
 
@@ -55,29 +61,6 @@ MD5 | 739f588fe7fb95ce2a9b6b4d0bf9917e
 SHA1 | 9b3365acad038eb1c62ca2b2de1467cb8eed37f6
 SHA256 | 7a49fb8286595f39a29085534f29a623ec2edb12a3d76f90c9654b2f69eef87e
 
-### <a name="version-10911"></a>Версия 1.0.9.11
-
-Хэш-значения для обновления [пакета 1.0.9.11](https://aka.ms/migrate/col/upgrade_9_11)
-
-**Алгоритм** | **Значение хэша**
---- | ---
-MD5 | 0e36129ac5383b204720df7a56b95a60
-SHA1 | aa422ef6aa6b6f8bc88f27727e80272241de1bdf
-SHA256 | 5f76dbbe40c5ccab3502cc1c5f074e4b4bcbf356d3721fd52fb7ff583ff2b68f
-
-### <a name="version-1097"></a>Версия 1.0.9.7
-
-Хэш-значения для обновления [пакета 1.0.9.7](https://aka.ms/migrate/col/upgrade_9_7)
-
-**Алгоритм** | **Значение хэша**
---- | ---
-MD5 | 01ccd6bc0281f63f2a672952a2a25363
-SHA1 | 3e6c57523a30d5610acdaa14b833c070bffddbff
-SHA256 | e3ee031fb2d47b7881cc5b13750fc7df541028e0a1cc038c796789139aa8e1e6
-
-## <a name="continuous-discovery-upgrade-versions"></a>Непрерывное обнаружение: версии обновления
-
-Обновление для модуля непрерывного обнаружения пока недоступно.
 
 ## <a name="run-an-upgrade"></a>Выполнение обновления
 

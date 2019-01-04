@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: azfuncdf, glenga
-ms.openlocfilehash: acbba991e6dcce56fad7f27c45f85214cc8fc707
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: a79faa1dc5a28e5e2ac37ea164c341b855b3bb80
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637009"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53339728"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Создание Устойчивых функций с помощью портала Azure
 
@@ -24,17 +24,43 @@ ms.locfileid: "52637009"
 >[!NOTE]
 >
 >* Если вы разрабатываете Устойчивые функции на языке C#, вместо этого рассмотрите возможность [разработки с помощью Visual Studio 2017](durable-functions-create-first-csharp.md).
-* Если вы разрабатываете Устойчивые функции на языке JavaScript, вместо этого рассмотрите возможность **разработки с помощью Visual Studio Code**.
->
->Создание Устойчивых функций с использованием JavaScript еще не поддерживается на портале. Вместо этого используйте Visual Studio Code.
+* Если вы разрабатываете Устойчивые функции на языке JavaScript, вместо этого рассмотрите возможность [разработки с помощью Visual Studio Code](./quickstart-js-vscode.md).
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
 
-Для выполнения любых функций вам понадобится приложение-функция, позволяющее группировать функции в логические единицы и упростить развертывание и совместное использование ресурсов, а также управление ими. Необходимо создать приложение-функцию C#, так как шаблоны JavaScript еще не поддерживаются для Устойчивых функций.  
+Для выполнения любых функций вам понадобится приложение-функция, позволяющее группировать функции в логические единицы и упростить развертывание и совместное использование ресурсов, а также управление ими. Вы можете создать приложение .NET или JavaScript.
 
 [!INCLUDE [Create function app Azure portal](../../../includes/functions-create-function-app-portal.md)]
 
-По умолчанию для приложения-функции используется версия 2.x среды выполнения Функций Azure. Расширение Устойчивых функций работает для обеих версий среды выполнения Функций Azure: 1.x и 2.x. Но шаблоны доступны, только если планируется использовать среду выполнения версии 2.x.
+По умолчанию для приложения-функции используется версия 2.x среды выполнения Функций Azure. Расширение Устойчивых функций работает для обеих версий 1.x и 2.x среды выполнения Функций Azure на C# и версии 2.x на JavaScript. Но шаблоны доступны, только если планируется использовать среду выполнения версии 2.x., независимо от выбранного языка.
+
+## <a name="install-the-durable-functions-npm-package-javascript-only"></a>Установка пакета npm для расширения "Устойчивые функции" (только JavaScript)
+
+Если вы создаете устойчивые функции на JavaScript, необходимо установить [пакет npm `durable-functions`](https://www.npmjs.com/package/durable-functions).
+
+1. Выберите имя приложения-функции, а затем — **Функции платформы** и **Дополнительные инструменты (Kudu)**.
+
+   ![Выбор Функций, элемента "Функции платформы" и "Дополнительные инструменты (Kudu)"](./media/durable-functions-create-portal/function-app-platform-features-choose-kudu.png)
+
+2. В консоли Kudu выберите **Консоль отладки**, а затем — **CMD**.
+
+   ![Консоль отладки Kudu](./media/durable-functions-create-portal/kudu-choose-debug-console.png)
+
+3. Появится структура каталогов файлов приложения-функции. Перейдите в папку `site/wwwroot`. Из нее вы можете отправить файл `package.json`, перетащив его в окно каталогов файлов. Ниже приведен пример файла `package.json`.
+
+    ```json
+    {
+      "dependencies": {
+        "durable-functions": "^1.1.2"
+      }
+    }
+    ```
+
+   ![Отправка файла package.json в Kudu](./media/durable-functions-create-portal/kudu-choose-debug-console.png)
+
+4. Когда файл `package.json` будет передан, запустите команду `npm install` в консоли удаленного выполнения Kudu.
+
+   ![Запуск команды npm install в Kudu](./media/durable-functions-create-portal/kudu-npm-install.png)
 
 ## <a name="create-an-orchestrator-function"></a>Создание функции оркестратора
 
@@ -92,7 +118,7 @@ ms.locfileid: "52637009"
         }
     ```
 
-1. Продолжайте вызывать конечную точку `statusQueryGetUri`, пока состояние не изменится на **Завершено**, и вы увидите ответ, подобный следующему: 
+1. Продолжайте вызывать конечную точку `statusQueryGetUri`, пока состояние не изменится на **Завершено**, и вы увидите ответ, подобный следующему:
 
     ```json
     {

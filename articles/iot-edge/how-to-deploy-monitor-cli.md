@@ -1,6 +1,6 @@
 ---
-title: Развертывание и мониторинг модулей для Azure IoT Edge (CLI) | Документация Майкрософт
-description: Управление модулями, выполняемыми на пограничных устройствах.
+title: Создание задачи автоматического развертывания с помощью командной строки — Azure IoT Edge | Документация Майкрософт
+description: Создание задач автоматического развертывания для групп устройств IoT Edge с помощью расширения IoT для Azure CLI
 keywords: ''
 author: kgremban
 manager: philmea
@@ -9,12 +9,13 @@ ms.date: 07/25/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 3f2e7de6b32b4cca6320933050775f843e2cdf39
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: 64c4b82208b2f8a20f7fd00fb574d5e017030e81
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51567939"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094157"
 ---
 # <a name="deploy-and-monitor-iot-edge-modules-at-scale-using-the-azure-cli"></a>Развертывание и мониторинг большого числа модулей IoT Edge с помощью Azure CLI
 

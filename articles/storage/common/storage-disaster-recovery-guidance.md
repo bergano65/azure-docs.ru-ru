@@ -6,15 +6,15 @@ author: tamram
 ms.service: storage
 ms.devlang: dotnet
 ms.topic: article
-ms.date: 09/13/2018
+ms.date: 12/12/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: 20db515e99f3e7535ba7b60bbd84f050e33b7acb
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 39a938d45c8f15c21b44bb5b04b1429fb4733b5a
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47033929"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53323274"
 ---
 # <a name="what-to-do-if-an-azure-storage-outage-occurs"></a>Что делать в случае простоя службы хранилища Azure
 Корпорация Майкрософт прилагает все усилия, чтобы наши службы были всегда доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные простои служб в одном или нескольких регионах. Ниже приведено общее руководство для служб хранилища Azure, которое поможет вам справиться с такими редкими ситуациями.
@@ -34,10 +34,10 @@ ms.locfileid: "47033929"
 ## <a name="what-to-do-if-a-storage-outage-occurs"></a>Что делать в случае простоя службы хранилища
 Если одна или несколько служб хранилища временно недоступны в одном или нескольких регионах, вы можете воспользоваться одним из двух вариантов. Если требуется немедленный доступ к данным, рассмотрите вариант 2.
 
-### <a name="option-1-wait-for-recovery"></a>Вариант 1. ожидание восстановления
+### <a name="option-1-wait-for-recovery"></a>Вариант 1. Ожидание восстановления
 В этом случае вам не нужно предпринимать какие-либо действия. Мы активно работаем для восстановления доступности службы Azure. Текущее состояние службы можно просмотреть на [панели мониторинга работоспособности службы Azure](https://azure.microsoft.com/status/).
 
-### <a name="option-2-copy-data-from-secondary"></a>Вариант 2. Копирование данных из дополнительного региона
+### <a name="option-2-copy-data-from-secondary"></a>Вариант 2. Копирование данных из дополнительного региона
 Если вы выбрали [Read-access geo-redundant storage (RA-GRS)](storage-redundancy-grs.md#read-access-geo-redundant-storage) (Доступ для чтения данных из гео-избыточного хранилища) (рекомендуется) для учетных записей хранения, то получите доступ только для чтения к своим данным из дополнительного региона. Вы можете использовать такие средства, как [AzCopy](storage-use-azcopy.md), [Azure PowerShell](storage-powershell-guide-full.md) и [библиотека перемещения данных Azure](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/), чтобы скопировать данные из дополнительного региона в другую учетную запись хранения в незатронутом регионе и затем указать эту учетную запись для приложений как доступную для чтения и записи.
 
 ## <a name="what-to-expect-if-a-storage-failover-occurs"></a>Что произойдет в случае отработки отказа хранилища

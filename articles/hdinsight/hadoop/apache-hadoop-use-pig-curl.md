@@ -9,37 +9,38 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: hrasheed
-ms.openlocfilehash: cb96933569c18b8c70d8991c9ba19f9f3e1243e6
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 855ee1b7396be97c6529480b8fa8200bb8167ee6
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633705"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53434024"
 ---
-# <a name="run-pig-jobs-with-apache-hadoop-on-hdinsight-by-using-rest"></a>Выполнение заданий Pig с помощью REST с использованием Apache Hadoop в HDInsight
+# <a name="run-apache-pig-jobs-with-apache-hadoop-on-hdinsight-by-using-rest"></a>Выполнение заданий Apache Pig с использованием Apache Hadoop в HDInsight с помощью REST
 
 [!INCLUDE [pig-selector](../../../includes/hdinsight-selector-use-pig.md)]
 
 Узнайте, как выполнять задания Apache Pig Latin с помощью запросов REST к кластеру Azure HDInsight. Curl используется для демонстрации возможностей взаимодействия с HDInsight с помощью REST API WebHCat.
 
-> [!NOTE]
+> [!NOTE]  
 > Если вы уже знаете, как использовать серверы Apache Hadoop на платформе Linux, но не знакомы с HDInsight, ознакомьтесь со статьей [Сведения об использовании HDInsight в Linux](../hdinsight-hadoop-linux-information.md).
 
 ## <a id="prereq"></a>Предварительные требования
 
 * Кластер Azure HDInsight (Hadoop в HDInsight) (на платформе Linux или Windows).
 
-  > [!IMPORTANT]
+  > [!IMPORTANT]  
   > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
-* [Curl](http://curl.haxx.se/)
+* [Curl](https://curl.haxx.se/)
 
-* [jq](http://stedolan.github.io/jq/)
+* [jq](https://stedolan.github.io/jq/)
 
 ## <a id="curl"></a>Выполнение заданий Pig с помощью Curl
 
+
 > [!NOTE]
-> REST API защищается с помощью [обычной проверки подлинности](http://en.wikipedia.org/wiki/Basic_access_authentication). Чтобы обеспечить безопасную отправку учетных данных на сервер, запросы всегда следует отправлять с помощью протокола HTTPS.
+> REST API защищается с помощью [обычной проверки подлинности](https://en.wikipedia.org/wiki/Basic_access_authentication). Чтобы обеспечить безопасную отправку учетных данных на сервер, запросы всегда следует отправлять с помощью протокола HTTPS.
 >
 > При использовании команд, описанных в этом разделе, замените `USERNAME` на имя пользователя для выполнения проверки подлинности в кластере, а `PASSWORD` — на пароль учетной записи пользователя. Замените `CLUSTERNAME` именем кластера.
 >
@@ -57,8 +58,8 @@ ms.locfileid: "51633705"
 
     Ниже приведены параметры, используемые в этой команде:
 
-    * **-u**— имя пользователя и пароль, используемый для аутентификации запроса.
-    * **-G** — указывает, что этот запрос является запросом GET.
+    * **-u**. Имя пользователя и пароль, используемый для проверки подлинности запроса.
+    * **-G**. Указывает, что этот запрос является запросом GET.
 
      Начало URL-адреса **https://CLUSTERNAME.azurehdinsight.net/templeton/v1** одинаковое для всех запросов. Путь **/status** указывает, что по запросу серверу должно быть возвращено состояние WebHCat (другое название — Templeton).
 
@@ -70,13 +71,13 @@ ms.locfileid: "51633705"
 
     Ниже приведены параметры, используемые в этой команде:
 
-    * **-d** — так как `-G` не используется, в запросе по умолчанию используется метод POST. `-d` задает значения данных, отправляемые в запросе.
+    * **-d**. Так как `-G` не используется, в запросе по умолчанию используется метод POST. `-d` задает значения данных, отправляемые в запросе.
 
-    * **user.name**— пользователь, выполняющий команду.
-    * **execute**— оператор Pig Latin, который необходимо выполнить.
-    * **statusdir** — каталог, в который будет записано состояние этого задания.
+    * **user.name**. Пользователь, выполняющий команду.
+    * **execute**. Оператор Pig Latin, который необходимо выполнить.
+    * **statusdir**. Каталог, в который будет записано состояние этого задания.
 
-    > [!NOTE]
+    > [!NOTE]  
     > Обратите внимание, что при использовании Curl пробелы в операторах Pig Latin заменяются знаком `+`.
 
     Эта команда должна возвращать идентификатор задания, который может использоваться для проверки состояния задания. Пример:
@@ -93,7 +94,7 @@ ms.locfileid: "51633705"
 
     Если задание завершено, оно будет в состоянии **SUCCEEDED** (Успешно).
 
-    > [!NOTE]
+    > [!NOTE]  
     > Этот запрос Curl возвращает документ JSON с информацией о задании. При этом jq используется только для получения значения состояния.
 
 ## <a id="results"></a>Просмотр результатов
@@ -112,9 +113,9 @@ ms.locfileid: "51633705"
 
 Общая информация о Pig в HDInsight:
 
-* [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md)
+* [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight:
 
-* [Использование Hive с Hadoop в HDInsight](hdinsight-use-hive.md)
-* [Использование MapReduce с Hadoop в HDInsight](hdinsight-use-mapreduce.md)
+* [Использование Apache Hive с Apache Hadoop в HDInsight](hdinsight-use-hive.md)
+* [Использование MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)

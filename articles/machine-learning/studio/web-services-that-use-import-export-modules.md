@@ -4,9 +4,8 @@ description: Узнайте, как использовать модули имп
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 3a7ac351-ebd3-43a1-8c5d-18223903d08e
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2017
-ms.openlocfilehash: ee7d0fb4792983099dc6192de8f85338daee357f
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 0f438f59da079633fea54758261ce1bd93a8477b
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52306953"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53251391"
 ---
 # <a name="deploy-azure-machine-learning-studio-web-services-that-use-data-import-and-data-export-modules"></a>Развертывание веб-служб Студии машинного обучения Azure, использующих модули импорта и экспорта данных
 
@@ -29,10 +28,10 @@ ms.locfileid: "52306953"
 
 Модули импорта и экспорта данных могут выполнять чтение и запись в различные расположения данных, такие как URL-адрес с использованием протокола HTTP, запрос Hive, база данных SQL Azure, хранилище таблиц Azure, хранилище BLOB-объектов Azure, поставщик веб-канала данных или локальная база данных SQL.
 
-В данной статье используется пример "Sample 5: Train, Test, Evaluate for Binary Classification: Adult Dataset" (Образец 5. Обучение, тестирование, оценка для классификации бинарных файлов: набор данных с контентом для взрослых). Предполагается, что набор данных уже загружен в таблицу Azure SQL с именем censusdata.
+В этом разделе используется пример "Sample 5: Train, Test, Evaluate for Binary Classification: Adult Dataset" и предполагается, что набор данных уже загружен в таблицу Azure SQL, которая называется censusdata.
 
 ## <a name="create-the-training-experiment"></a>Создание обучающего эксперимента
-При открытии примера "Sample 5: Train, Test, Evaluate for Binary Classification: Adult Dataset" (Образец 5. Обучение, тестирование, оценка для классификации бинарных файлов: набор данных с контентом для взрослых) используется пример набора данных Adult Census Income Binary Classification. На холсте эксперимент должен выглядеть так, как показано на рисунке ниже.
+При открытии примера "Sample 5: Train, Test, Evaluate for Binary Classification: Adult Dataset" используется набор данных Adult Census Income Binary Classification. На холсте эксперимент должен выглядеть так, как показано на рисунке ниже.
 
 ![Начальная настройка эксперимента.](./media/web-services-that-use-import-export-modules/initial-look-of-experiment.png)
 
@@ -104,7 +103,7 @@ ms.locfileid: "52306953"
 2. По завершении выполнения щелкните **Deploy Web Service** (Развернуть веб-службу) и выберите **Deploy Web Service [Classic]** (Развернуть веб-службу [классическую]).
 3. На панели мониторинга веб-службы найдите ключ API. Скопируйте и сохраните его для последующего использования.
 4. В таблице **Default Endpoint** (Конечная точка по умолчанию) щелкните ссылку **Выполнение пакета**, чтобы открыть страницу справки API.
-5. В Visual Studio создайте консольное приложение C# в Visual Studio (**Создать** > **Проект** > **Visual C#** > **Классический рабочий стол Windows** > **Консольное приложение (.NET Framework**).
+5. Создайте в Visual Studio консольное приложение C#. Выберите **Создать** > **Проект** > **Visual C#** > **Классический рабочий стол Windows** > **Консольное приложение (.NET Framework)**.
 6. На странице справки API в нижней части страницы найдите раздел **Sample Code** (Пример кода).
 7. Скопируйте пример кода C# и вставьте его в файл Program.cs, а также удалите все ссылки на хранилище BLOB-объектов.
 8. Обновите значение переменной *apiKey* , заменив его на ключ API, сохраненный ранее.
@@ -133,7 +132,7 @@ ms.locfileid: "52306953"
 3. На странице "Deploy Experiment" (Развертывание эксперимента) введите имя веб-службы и выберите ценовой план, а затем нажмите кнопку **Deploy** (Развернуть).
 4. На странице **Быстрый запуск** щелкните **Consume** (Использование).
 5. В разделе **Sample Code** (Пример кода) щелкните **Пакетная служба**.
-6. В Visual Studio создайте консольное приложение C# в Visual Studio (**Создать** > **Проект** > **Visual C#** > **Классический рабочий стол Windows** > **Консольное приложение (.NET Framework**).
+6. Создайте в Visual Studio консольное приложение C#. Выберите **Создать** > **Проект** > **Visual C#** > **Классический рабочий стол Windows** > **Консольное приложение (.NET Framework)**.
 7. Скопируйте пример кода C# и вставьте его в файл Program.cs.
 8. Обновите значение переменной *apiKey*, заменив его на **Первичный ключ**, указанный в разделе **Basic consumption info** (Основные сведения об использовании).
 9. Найдите объявление *scoreRequest* и обновите значения параметров веб-службы, которые передаются в модули *Импорт данных* и *Экспорт данных*. В этом случае используется исходный запрос, но определяется имя новой таблицы.

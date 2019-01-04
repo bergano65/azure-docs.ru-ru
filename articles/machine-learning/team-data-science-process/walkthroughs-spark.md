@@ -1,5 +1,5 @@
 ---
-title: Пошаговое руководство HDInsight Spark с использованием PySpark и Scala в Azure | Документация Майкрософт
+title: Аналитика в HDInsight Spark с использованием PySpark и Scala — Процесс обработки и анализа данных группы
 description: Примеры процесса обработки и анализа данных группы, которые объясняют, как использовать PySpark и Scala в Azure HDInsight Spark для прогнозной аналитики.
 services: machine-learning
 author: marktab
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 09/04/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: a7697d2be1a43af93109bb7bbdab50828275f5aa
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: f96e273e27e8d9d6a40370c4ed2161c4a828c5c8
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52446406"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53135905"
 ---
 # <a name="hdinsight-spark-data-science-walkthroughs-using-pyspark-and-scala-on-azure"></a>Пошаговое руководство обработки и анализа данных HDInsight Spark с использованием PySpark и Scala в Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "52446406"
 
 ## <a name="predict-taxi-tips-using-scala-on-azure-spark"></a>Прогнозирование чаевых за такси с помощью Scala в Azure Spark
 
-В пошаговом руководстве [Обработка и анализ данных с использованием Scala и Spark в Azure](scala-walkthrough.md) используются данные такси Нью-Йорка, чтобы предсказать, будут ли оставлены чаевые, и определить диапазон ожидаемых сумм. В этом руководстве показано, как с помощью Scala выполнять контролируемые задачи машинного обучения, используя библиотеку машинного обучения Spark (MLlib) и пакеты SparkML в кластере Azure HDInsight со Spark. Здесь подробно расписаны задачи, которые образуют [процесс обработки и анализа данных](https://aka.ms/datascienceprocess): прием и исследование данных, визуализация, проектирование признаков, моделирование и использование моделей. В моделях используются логистическая и линейная регрессия, случайные леса и градиентный бустинг деревьев.
+В пошаговом руководстве [Обработка и анализ данных с использованием Scala и Spark в Azure](scala-walkthrough.md) используются данные такси Нью-Йорка, чтобы предсказать, будут ли оставлены чаевые, и определить диапазон ожидаемых сумм. В этом руководстве показано, как с помощью Scala выполнять контролируемые задачи машинного обучения, используя библиотеку машинного обучения Spark (MLlib) и пакеты SparkML в кластере Azure HDInsight со Spark. Здесь подробно расписаны задачи, которые образуют [процесс обработки и анализа данных](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/): прием и исследование данных, визуализация, проектирование признаков, моделирование и использование моделей. В моделях используются логистическая и линейная регрессия, случайные леса и градиентный бустинг деревьев.
 
 
 ## <a name="next-steps"></a>Дополнительная информация

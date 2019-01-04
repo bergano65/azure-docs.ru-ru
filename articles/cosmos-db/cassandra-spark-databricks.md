@@ -9,12 +9,12 @@ ms.devlang: spark-scala
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: ankhanol
-ms.openlocfilehash: e1d8f41c55ffd453507804b005d10620665b512c
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: f1588cac61d0cef821dc15019683f67c2962f049
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47222040"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53255386"
 ---
 # <a name="access-azure-cosmos-db-cassandra-api-data-from-azure-databricks"></a>Доступ к данным API Cassandra для Azure Cosmos DB из Azure Databricks
 
@@ -54,7 +54,7 @@ ms.locfileid: "47222040"
 
 ## <a name="sample-notebooks"></a>Примеры записных книжек
 
-Список [примеров записных книжек](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-api-spark-notebooks-databricks/tree/master/notebooks/scala) Azure Databricks доступен для скачивания в репозитории Github. Среди них примеры подключения к API Cassandra для Azure Cosmos DB из Spark и выполнения с данными различных операций CRUD. Также можно [импортировать все записные книжки](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-api-spark-notebooks-databricks/tree/master/dbc) в свою рабочую область кластера Databricks и запустить ее. 
+Список [примеров записных книжек](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-api-spark-notebooks-databricks/tree/master/notebooks/scala) Azure Databricks доступен для скачивания в репозитории GitHub. Среди них примеры подключения к API Cassandra для Azure Cosmos DB из Spark и выполнения с данными различных операций CRUD. Также можно [импортировать все записные книжки](https://github.com/Azure-Samples/azure-cosmos-db-cassandra-api-spark-notebooks-databricks/tree/master/dbc) в свою рабочую область кластера Databricks и запустить ее. 
 
 ## <a name="accessing-azure-cosmos-db-cassandra-api-from-spark-scala-programs"></a>Доступ к API Cassandra для Azure Cosmos DB из программ Spark Scala
 

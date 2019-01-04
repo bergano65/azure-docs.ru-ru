@@ -1,5 +1,5 @@
 ---
-title: Выделение секций и реплик для запросов и индексирования в службе "Поиск Azure" | Документация Майкрософт
+title: Выделение секций и реплик для запросов и индексирования в службе "Поиск Azure"
 description: Настройка вычислительных ресурсов секций и реплик в Поиске Azure, в которых каждый ресурс оценивается в оплачиваемых единицах поиска.
 author: HeidiSteen
 manager: cgronlun
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 11/09/2017
 ms.author: heidist
-ms.openlocfilehash: fa1a13c5c786867f6e92a678c40a491e0a226076
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.custom: seodec2018
+ms.openlocfilehash: e2eff6c854dae48961700341a6db19dc7113901c
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238746"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53316120"
 ---
 # <a name="allocate-partitions-and-replicas-for-query-and-indexing-workloads-in-azure-search"></a>Выделение секций и реплик для рабочих нагрузок запросов и индексирования в службе "Поиск Azure"
 После [выбора ценовой категории](search-sku-tier.md) и [подготовки службы поиска](search-create-service-portal.md) следующим шагом является необязательное увеличение количества реплик или секций, используемых службой. Каждый уровень предоставляет фиксированное число единиц выставления счетов. В этой статье объясняется, как выделять эти единицы для достижения оптимальной конфигурации, позволяющей сбалансировать ваши требования к для выполнению запросов, индексированию и хранению данных.

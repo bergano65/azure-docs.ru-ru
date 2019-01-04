@@ -1,5 +1,5 @@
 ---
-title: Учебник. Федерация среды одного леса AD с Azure | Документы Майкрософт
+title: Руководство. Создание федерации среды одного AD с Azure | Документация Майкрософт
 description: Демонстрируется настройка гибридной среды идентификации с помощью федерации.
 services: active-directory
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.topic: article
 ms.date: 08/16/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 50868d32b35e77495965b9ee9d0023d23b43fd5a
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: b813a276c2047a41038408744637b3dd50aff863
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52426389"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53163520"
 ---
-# <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Учебник. Федерация среды одного леса AD с облаком
+# <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Руководство. Создание федерации среды одного леса AD в облаке с использованием PHS
 
 ![Создание](media/tutorial-federation/diagram.png)
 
@@ -39,7 +39,7 @@ ms.locfileid: "52426389"
 >
 >Скрипты, используемые для создания общей среды Active Directory перед установкой Azure AD Connect.  Они актуальны для всех руководств.
 >
-> Копии скриптов PowerShell, используемых в этом учебнике, можно найти в Github [здесь](https://github.com/billmath/tutorial-phs).
+> Копии сценариев PowerShell, используемых в этом руководстве, можно найти на сайте GitHub [здесь](https://github.com/billmath/tutorial-phs).
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 Первое, что нужно сделать, чтобы подготовить среду гибридной идентификации к работе, — создать виртуальную машину, которая будет служить локальным сервером Active Directory.  
@@ -87,7 +87,7 @@ Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
 5. Нажмите **Установить**.
 6. Введите ключ лицензии и нажмите кнопку **Далее**.
 7. Установите флажок "Я принимаю условия лицензии" и нажмите кнопку **Далее**.
-8. Выберите вариант **Пользовательская: установить только Windows (расширенная)**
+8. Выберите **Custom:  Install Windows Only (Advanced)** (Пользовательская: установить только Windows (расширенная)).
 9. Щелкните **Далее**
 10. Когда установка завершится, перезапустите виртуальную машину, выполните вход и запустите обновление Windows, чтобы обеспечить актуальность виртуальной машины.  Установите последние обновления.
 

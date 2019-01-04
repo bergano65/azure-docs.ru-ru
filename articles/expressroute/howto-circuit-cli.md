@@ -1,26 +1,18 @@
 ---
-title: Создание и изменение канала ExpressRoute Azure с помощью CLI | Документация Майкрософт
+title: Создание и изменение канала ExpressRoute в Azure CLI | Документация Майкрософт
 description: В этой статье описывается создание, подготовка, проверка, обновление, удаление и отзыв канала ExpressRoute с помощью CLI.
-documentationcenter: na
 services: expressroute
 author: cherylmc
-manager: timlt
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: expressroute
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 10/19/2017
+ms.topic: conceptual
+ms.date: 12/07/2018
 ms.author: anzaman;cherylmc
-ms.openlocfilehash: a53fe43365100c6d71fcc2b9e0944a221adf188d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 2013b3b96fddd32f01245655c1feb600bc426e2a
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51249240"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53084147"
 ---
 # <a name="create-and-modify-an-expressroute-circuit-using-cli"></a>Создание и изменение канала ExpressRoute с помощью CLI
 
@@ -44,7 +36,7 @@ ms.locfileid: "51249240"
 
 ### <a name="1-sign-in-to-your-azure-account-and-select-your-subscription"></a>1. Войдите в учетную запись Azure и выберите подписку.
 
-Чтобы начать настройку, войдите в свою учетную запись Azure. Для подключения используйте следующие примеры:
+Чтобы начать настройку, войдите в свою учетную запись Azure. Если вы используете Cloud Shell ознакомительной версии, вход выполняется автоматически. Для подключения используйте следующие примеры:
 
 ```azurecli
 az login
@@ -52,13 +44,13 @@ az login
 
 Просмотрите подписки учетной записи.
 
-```azurecli
+```azurecli-interactive
 az account list
 ```
 
 Выберите подписку, для которой требуется создать канал ExpressRoute.
 
-```azurecli
+```azurecli-interactive
 az account set --subscription "<subscription ID>"
 ```
 
@@ -66,7 +58,7 @@ az account set --subscription "<subscription ID>"
 
 Перед созданием канала ExpressRoute потребуется список поддерживаемых поставщиков услуг подключения, расположений и вариантов пропускной способности. Команда CLI az network express-route list-service-providers возвращает сведения, которые вы будете использовать на следующих этапах:
 
-```azurecli
+```azurecli-interactive
 az network express-route list-service-providers
 ```
 
@@ -140,7 +132,7 @@ az network express-route list-service-providers
 
 Перед созданием канала ExpressRoute необходимо создать группу ресурсов (если вы этого еще не сделали) Чтобы создать группу ресурсов, выполните следующую команду:
 
-```azurecli
+```azurecli-interactive
 az group create -n ExpressRouteResourceGroup -l "West US"
 ```
 
@@ -154,7 +146,7 @@ az group create -n ExpressRouteResourceGroup -l "West US"
 
 Выставление счетов за использование ExpressRoute начинается после получения ключа службы. Ниже приведен пример запроса нового ключа службы:
 
-```azurecli
+```azurecli-interactive
 az network express-route create --bandwidth 200 -n MyCircuit --peering-location "Silicon Valley" -g ExpressRouteResourceGroup --provider "Equinix" -l "West US" --sku-family MeteredData --sku-tier Standard
 ```
 
@@ -164,7 +156,7 @@ az network express-route create --bandwidth 200 -n MyCircuit --peering-location 
 
 Чтобы получить список всех созданных вами каналов ExpressRoute, выполните команду az network express-route list. Вы можете получить эти сведения в любое время с помощью этой команды. Чтобы получить список всех каналов, сделайте вызов без параметров.
 
-```azurecli
+```azurecli-interactive
 az network express-route list
 ```
 
@@ -201,7 +193,7 @@ az network express-route list
 
 Подробное описание всех параметров можно получить, выполнив команду с параметром -h.
 
-```azurecli
+```azurecli-interactive
 az network express-route list -h
 ```
 
@@ -211,21 +203,21 @@ az network express-route list -h
 
 Вновь созданный канал ExpressRoute будет имеет следующее состояние:
 
-```azurecli
+```azurecli-interactive
 "serviceProviderProvisioningState": "NotProvisioned"
 "circuitProvisioningState": "Enabled"
 ```
 
 Когда поставщик услуг подключения находится в процессе его включения, канал переходит в следующее состояние:
 
-```azurecli
+```azurecli-interactive
 "serviceProviderProvisioningState": "Provisioning"
 "circuitProvisioningState": "Enabled"
 ```
 
 Для того чтобы канал ExpressRoute можно было использовать, он должен находиться в следующем состоянии:
 
-```azurecli
+```azurecli-interactive
 "serviceProviderProvisioningState": "Provisioned"
 "circuitProvisioningState": "Enabled
 ```
@@ -234,7 +226,7 @@ az network express-route list -h
 
 Проверка состояния и состояния ключа канала позволит вам узнать, когда поставщик активирует ваш канал. После настройки канала значение параметра ServiceProviderProvisioningState изменится на Provisioned, как показано в примере ниже:
 
-```azurecli
+```azurecli-interactive
 az network express-route show --resource-group ExpressRouteResourceGroup --name MyCircuit
 ```
 
@@ -297,7 +289,7 @@ az network express-route show --resource-group ExpressRouteResourceGroup --name 
 
 Вы можете включить надстройку ExpressRoute "Премиум" для имеющегося канала ExpressRoute с помощью следующей команды:
 
-```azurecli
+```azurecli-interactive
 az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-tier Premium
 ```
 
@@ -318,7 +310,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 
 Вы можете отключить надстройку ExpressRoute "Премиум" для имеющегося канала с помощью следующей команды:
 
-```azurecli
+```azurecli-interactive
 az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-tier Standard
 ```
 
@@ -334,7 +326,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 
 Выберите необходимый размер и используйте следующую команду для изменения размера канала:
 
-```azurecli
+```azurecli-interactive
 az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --bandwidth 1000
 ```
 
@@ -344,7 +336,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --band
 
 Изменить SKU канала ExpressRoute можно, используя следующий пример:
 
-```azurecli
+```azurecli-interactive
 az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-family UnlimitedData
 ```
 
@@ -362,7 +354,7 @@ az network express-route update -n MyCircuit -g ExpressRouteResourceGroup --sku-
 
 Для удаления канала ExpressRoute выполните следующую команду:
 
-```azurecli
+```azurecli-interactive
 az network express-route delete  -n MyCircuit -g ExpressRouteResourceGroup
 ```
 

@@ -1,6 +1,6 @@
 ---
-title: Расположение, в котором Azure AD хранит данные удостоверений европейских клиентов | Документация Майкрософт
-description: Узнайте, где Microsoft Azure Active Directory хранит данные, связанные с идентификаторами своих европейских клиентов.
+title: Хранение данных удостоверений клиентов из ЕС — Azure Active Directory | Документация Майкрософт
+description: Узнайте, где Azure Active Directory хранит данные, связанные с идентификаторами клиентов из ЕС.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -10,16 +10,16 @@ ms.component: fundamentals
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/17/2018
-ms.custom: it-pro
-ms.openlocfilehash: 6aa2307123d62983f7afde3d871e8aa96e0abb5d
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: 371c7b2eb2f2e0e34dc80cf8fe6771620fa76765
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51976899"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53099944"
 ---
-# <a name="where-does-microsoft-azure-active-directory-azure-ad-store-identity-data-for-european-customers"></a>Расположение, в котором Microsoft Azure Active Directory (Azure AD) хранит данные удостоверений европейских клиентов
-Azure AD помогает управлять удостоверениями пользователей и создавать политики доступа на основе аналитики для защиты ресурсов организации. Данные удостоверений хранятся в расположении, которое основывается на адресе организации, указанном при оформлении подписки на службу. Например, при оформлении подписки на Office 365 или Azure. Определенные сведения о том, где хранятся данные удостоверений, можно найти в разделе [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.
+# <a name="identity-data-storage-for-european-customers-in-azure-active-directory"></a>Хранение данных удостоверений клиентов из ЕС — Azure Active Directory
+Azure Active Directory (Azure AD) помогает управлять удостоверениями пользователей и создавать политики доступа на основе аналитики для защиты ресурсов организации. Данные удостоверений хранятся в расположении, которое основывается на адресе организации, указанном при оформлении подписки на службу. Например, при оформлении подписки на Office 365 или Azure. Определенные сведения о том, где хранятся данные удостоверений, можно найти в разделе [Где находятся ваши данные?](https://www.microsoft.com/trustcenter/privacy/where-your-data-is-located) Центра управления безопасностью Майкрософт.
 
 Хотя большинство связанных с Azure AD данных удостоверений европейских клиентов, остается в европейских центрах обработки данных, существуют пять связанных с пользователями атрибутов, которые обычно хранятся в центрах обработки данных в США. Этими атрибутами являются GivenName, Surname, userPrincipalName, Domain и PasswordHash. Атрибут PasswordHash может быть исключением и не хранится в США, если кто-то использует локально метод федеративной проверки подлинности, который блокирует синхронизацию значения PasswordHash с Azure AD. Кроме того, есть операционные данные определенных служб, которые требуются для нормальной работы Azure AD, хранятся в США и не содержат персональных данных.
 

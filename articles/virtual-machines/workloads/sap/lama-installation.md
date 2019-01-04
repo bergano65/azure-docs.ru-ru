@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 17/07/2018
 ms.author: sedusch
-ms.openlocfilehash: 2f3b8371357403071e70dd2e351cd75dbd34f746
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: 2a0934fa3bb46eebba02029a8292b9bee6b12c62
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40007585"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52728231"
 ---
 # <a name="sap-lama-connector-for-azure"></a>Соединитель SAP LaMa для Azure
 
@@ -89,28 +89,28 @@ SAP LaMa используется многими клиентами для ис�
 1. Перейдите на сайт https://portal.azure.com.
 1. Откройте колонку группы ресурсов.
 1. Выберите группу ресурсов, которую нужно использовать.
-1. Щелкните "Управление доступом (IAM)".
-1. Щелкните "Добавить".
+1. Выберите "Управление доступом (IAM)".
+1. Щелкните "Добавить назначение ролей".
 1. Выберите роль участника.
 1. Введите имя созданного ранее приложения.
-1. Нажмите кнопку "ОК".
+1. Щелкните Сохранить
 1. Повторите шаги с 3 по 8 для всех групп ресурсов, которые вы хотите использовать в SAP LaMa.
 
 Откройте веб-сайт SAP LaMa и перейдите к разделу инфраструктуры. Перейдите на вкладку "Cloud Managers" (Менеджеры для облака) и щелкните "Добавить". Выберите адаптер для облака Microsoft Azure и нажмите кнопку "Далее". Введите следующие сведения:
 
 * Метка: выберите имя экземпляра соединителя.
-* Имя пользователя: идентификатор приложения субъекта-службы.
+* Имя пользователя: идентификатор приложения субъекта-службы;
 * Пароль: ключ и пароль субъекта-службы.
 * URL-адрес: оставьте адрес по умолчанию https://management.azure.com/.
-* Интервал мониторинга (секунды): должен быть не менее 300.
-* Идентификатор подписки: идентификатор подписки Azure.
-* Идентификатор клиента Azure Active Directory: идентификатор клиента Active Directory.
+* Интервал опроса (в секундах): должен быть не менее 300.
+* Идентификатор подписки: Идентификатор подписки Azure.
+* Идентификатор клиента Azure Active Directory: идентификатор клиента Azure Active Directory.
 * Узел прокси-сервера: имя узла прокси-сервера, если SAP LaMa требуется прокси-сервер для подключения к Интернету.
 * Порт прокси-сервера: TCP-порт прокси-сервера.
 
 Щелкните "Конфигурация теста" для проверки входных данных. Вы должны увидеть сообщение наподобие
 
-"Подключение установлено успешно: подключение к Microsoft Cloud установлено. Найдено 7 групп ресурсов (запрошено только 10 групп)"
+Подключение установлено: подключение к Microsoft Cloud установлено. Найдено 7 групп ресурсов (запрошено только 10 групп)"
 
 в нижней части веб-сайта.
 
@@ -188,7 +188,7 @@ SAP LaMa не может перемещать сам SQL Server, поэтому 
 
 * osType: тип операционной системы, которую требуется развернуть.
 
-* dbType: тип базы данных. Этот параметр используется, чтобы определить, сколько дополнительных IP-конфигураций нужно добавить и как должна выглядеть разметка диска.
+* dbtype: тип базы данных. Этот параметр используется, чтобы определить, сколько дополнительных IP-конфигураций нужно добавить и как должна выглядеть разметка диска.
 
 * sapSystemSize: размер системы SAP, которую вы хотите развернуть. Он используется для определения типа экземпляра и размера виртуальной машины.
 
@@ -237,7 +237,7 @@ SAP LaMa не может перемещать сам SQL Server, поэтому 
 /usr/sap/hostctrl/exe/sapacext -a ifup -i eth0 -h ah1-ascs -n 255.255.255.128
 ```
 
-![Windows][Logo_Windows] Windows
+![ Windows][Logo_Windows]  Windows
 
 ```bash
 # C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i <network interface> -h <virtual hostname or IP address> -n <subnet mask>
@@ -277,7 +277,7 @@ acosprep/nfs_paths=/home/ah1adm,/usr/sap/trans,/sapmnt/AH1,/usr/sap/AH1
 /usr/sap/hostctrl/exe/sapacext -a ifup -i eth0 -h ah1-di-0 -n 255.255.255.128
 ```
 
-![Windows][Logo_Windows] Windows
+![ Windows][Logo_Windows]  Windows
 
 ```bash
 # C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i <network interface> -h <virtual hostname or IP address> -n <subnet mask>
@@ -360,7 +360,7 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-di
 
 * Возникло исключение при проверке в пользовательском магазине HDB.  
   * См. средство просмотра журнала.  
-    com.sap.nw.lm.aci.monitor.api.validation.RuntimeValidationException: Exception in validator with ID 'RuntimeHDBConnectionValidator' (Validation: 'VALIDATION_HDB_USERSTORE'): Could not retrieve the hdbuserstore (com.sap.nw.lm.aci.monitor.api.validation.RuntimeValidationException: исключение в проверяющем элементе управления с идентификатором RuntimeHDBConnectionValidator (проверка: VALIDATION_HDB_USERSTORE): не удалось получить сведения о hdbuserstore).  
+    com.sap.nw.lm.aci.monitor.api.validation.RuntimeValidationException: исключение в проверяющем элементе управления с идентификатором RuntimeHDBConnectionValidator (проверка: VALIDATION_HDB_USERSTORE): не удалось получить сведения о hdbuserstore.  
     Пользовательский магазин HANA размещен в неверном расположении.
   * Решение  
     Убедитесь, что путь /usr/sap/AH1/hdbclient/install/installation.ini указан правильно.
@@ -373,19 +373,19 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-di
     Создайте резервную копию всех баз данных в исходной системе HANA.
 
 * Шаг копирования системы *Запуск* экземпляра базы данных.
-  * Host Agent Operation '000D3A282BC91EE8A1D76CF1F92E2944' failed (OperationException. FaultCode: '127', Message: 'Command execution failed. (Произошел сбой операции агента узла "000D3A282BC91EE8A1D76CF1F92E2944 (OperationException. FaultCode: "127", сообщение: "Сбой при выполнении команды")). [Microsoft][ODBC SQL Server Driver][SQL Server]User does not have permission to alter database 'AS2', the database does not exist, or the database is not in a state that allows access checks' (У пользователя нет разрешения на изменение базы данных AS2, база данных не существует или база данных не находится в состоянии, позволяющем проверять доступ").
+  * Host Agent Operation '000D3A282BC91EE8A1D76CF1F92E2944' failed (OperationException. FaultCode: "127", сообщение: "Сбой при выполнении команды. [Microsoft][ODBC SQL Server Driver][SQL Server]User does not have permission to alter database 'AS2', the database does not exist, or the database is not in a state that allows access checks' (У пользователя нет разрешения на изменение базы данных AS2, база данных не существует или база данных не находится в состоянии, позволяющем проверять доступ").
   * Решение  
     Убедитесь, что *NT AUTHORITY\SYSTEM* имеет доступ к SQL Server. См. [примечание к SAP 2562184].
 
 ### <a name="errors-and-warnings-during-a-system-clone"></a>Ошибки и предупреждения во время клонирования системы
 
 * Произошла ошибка при попытке зарегистрировать агент экземпляра на шаге *принудительной регистрации и запуска агента экземпляра* сервера приложений или ASCS.
-  * Произошла ошибка при попытке зарегистрировать агента экземпляра. (RemoteException: 'Failed to load instance data from profile '\\as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0':  Cannot access profile '\\as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0': No such file or directory.') (RemoteException: "Не удалось загрузить данные экземпляра из профиля \as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0. Невозможно получить доступ к профилю \as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0. Нет такого файла или каталога").
+  * Произошла ошибка при попытке зарегистрировать агента экземпляра. (RemoteException: "Не удалось загрузить данные экземпляра из профиля \\as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0:  Невозможно получить доступ к профилю \\as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0: Нет такого файла или каталога").
   * Решение  
    Убедитесь, что общий ресурс sapmnt в ASCS/SCS имеет полный доступ для SAP_AS1_GlobalAdmin.
 
 * Ошибка на шаге *включения защиты запуска клона*.
-  * Failed to open file '\\as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0' Cause: No such file or directory (Не удалось открыть файл "\as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0". Причина: нет такого файла или каталога).
+  * Не удалось открыть файл "\\\as1-ascs\sapmnt\AS1\SYS\profile\AS1_D00_as1-di-0". Причина: нет такого файла или каталога.
   * Решение  
     Учетной записи компьютера сервера приложений требуется право на запись в профиль.
 
@@ -416,36 +416,36 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-di
 ### <a name="errors-and-warnings-during-application-server-installation"></a>Ошибки и предупреждения во время установки сервера приложений
 
 * Ошибка при выполнении шага SAPinst: getProfileDir.
-  * Ошибка. Последняя ошибка, которая произошла на шаге: Caught ESAPinstException in module call: Validator of step '|NW_DI|ind|ind|ind|ind|0|0|NW_GetSidFromProfiles|ind|ind|ind|ind|getSid|0|NW_readProfileDir|ind|ind|ind|ind|readProfile|0|getProfileDir' reported an error: Node \\\as1-ascs\sapmnt\AS1\SYS\profile does not exist (Перехвачено исключение ESAPinstException в вызове модуля. Проверяющий элемент управления шага "|NW_DI|ind|ind|ind|ind|0|0|NW_GetSidFromProfiles|ind|ind|ind|ind|getSid|0|NW_readProfileDir|ind|ind|ind|ind|readProfile|0|getProfileDir" сообщил об ошибке: узел \\as1-ascs\sapmnt\AS1\SYS\profile не существует). Start SAPinst in interactive mode to solve this problem (Запустите SAPinst в интерактивном режиме, чтобы решить эту проблему).
+  * Ошибка. (Последняя ошибка, о которой сообщается на шаге: перехвачено исключение ESAPinstException в вызове модуля: проверяющий элемент управления шага "|NW_DI|ind|ind|ind|ind|0|0|NW_GetSidFromProfiles|ind|ind|ind|ind|getSid|0|NW_readProfileDir|ind|ind|ind|ind|readProfile|0|getProfileDir" сообщил об ошибке: узел \\\as1-ascs\sapmnt\AS1\SYS\profile не существует. Start SAPinst in interactive mode to solve this problem (Запустите SAPinst в интерактивном режиме, чтобы решить эту проблему).
   * Решение  
     Убедитесь, что SWPM запущен от имени пользователя, имеющего доступ к профилю. Этот пользователь может быть настроен в мастере установки сервера приложений.
 
 * Ошибка при выполнении шага SAPinst: askUnicode
-  * Ошибка. Последняя ошибка, которая произошла на шаге: Caught ESAPinstException in module call: Validator of step '|NW_DI|ind|ind|ind|ind|0|0|NW_GetSidFromProfiles|ind|ind|ind|ind|getSid|0|NW_getUnicode|ind|ind|ind|ind|unicode|0|askUnicode' reported an error: Start SAPinst in interactive mode to solve this problem (Перехвачено исключение ESAPinstException в вызове модуля. Проверяющий элемент управления шага "|NW_DI|ind|ind|ind|ind|0|0|NW_GetSidFromProfiles|ind|ind|ind|ind|getSid|0|NW_getUnicode|ind|ind|ind|ind|unicode|0|askUnicode" сообщил об ошибке. Запустите SAPinst в интерактивном режиме, чтобы решить эту проблему).
+  * Ошибка. (Последняя ошибка, о которой сообщается на шаге: перехвачено исключение ESAPinstException в вызове модуля: проверяющий элемент управления шага "|NW_DI|ind|ind|ind|ind|0|0|NW_GetSidFromProfiles|ind|ind|ind|ind|getSid|0|NW_getUnicode|ind|ind|ind|ind|unicode|0|askUnicode" сообщил об ошибке: Start SAPinst in interactive mode to solve this problem (Запустите SAPinst в интерактивном режиме, чтобы решить эту проблему).
   * Решение  
     Если вы используете последнее ядро ​​SAP, SWPM не может определить, является ли это система Юникода, используя сервер сообщений ASCS. Дополнительные сведения см. в примечании к SAP [2445033].  
     Эта проблема будет исправлена в новом вспомогательном пакете или исправлении SAP LaMa.  
     Задайте параметр профиля OS_UNICODE=uc в профиле по умолчанию вашей системы SAP, чтобы решить эту проблему.
 
 * Ошибка при выполнении шага SAPinst: dCheckGivenServer
-  * Ошибка при выполнении шага SAPinst: dCheckGivenServer "version="1.0". Последняя ошибка, которая произошла на шаге: \<p> Installation was canceled by user (Установка была отменена пользователем). \</p>
+  * Ошибка при выполнении шага SAPinst: dCheckGivenServer "version="1.0". (Последняя ошибка, о которой сообщается на шаге: \<p > Установка отменена пользователем). \</p>
   * Решение  
     Убедитесь, что SWPM запущен от имени пользователя, имеющего доступ к профилю. Этот пользователь может быть настроен в мастере установки сервера приложений.
 
 * Ошибка при выполнении шага SAPinst: checkClient
-  * Ошибка при выполнении шага SAPinst: checkClient "version="1.0". Последняя ошибка, которая произошла на шаге: \<p> Installation was canceled by user (Установка была отменена пользователем). \</p>)
+  * Ошибка при выполнении шага SAPinst: checkClient "version="1.0". (Последняя ошибка, о которой сообщается на шаге: \<p > Установка отменена пользователем). \</p>)
   * Решение  
     Убедитесь, что драйвер Microsoft ODBC Driver for SQL Server установлен на виртуальной машине, на которой требуется установить сервер приложений.
 
 * Ошибка при выполнении шага SAPinst: copyScripts
-  * Последняя ошибка, о которой сообщается на шаге: "Ошибка при системном вызове". Подробности: Error 13 (0x0000000d) (Permission denied) in execution of system call 'fopenU' with parameter (\\\as1-ascs/sapmnt/AS1/SYS/exe/uc/NTAMD64/strdbs.cmd, w), line (494) in file (\bas/bas/749_REL/bc_749_REL/src/ins/SAPINST/impl/src/syslib/filesystem/syxxcfstrm2.cpp), stack trace: (Ошибка 13 (0x0000000d) (Отказано в доступе) при выполнении системного вызова fopenU с параметром (\\as1-ascs/sapmnt/AS1/SYS/exe/uc/NTAMD64/strdbs.cmd, w), строка (494) в файле (\bas/bas/749_REL/bc_749_REL/src/ins/SAPINST/impl/src/syslib/filesystem/syxxcfstrm2.cpp), трассировка стека:)  
+  * Последняя ошибка, о которой сообщается на шаге: "Ошибка при системном вызове". Подробности: ошибка 13 (0x0000000d) (отказано в доступе) при выполнении системного вызова fopenU с параметром (\\\as1-ascs/sapmnt/AS1/SYS/exe/uc/NTAMD64/strdbs.cmd, w), строка (494) в файле (\bas/bas/749_REL/bc_749_REL/src/ins/SAPINST/impl/src/syslib/filesystem/syxxcfstrm2.cpp), трассировка стека:  
   CThrThread.cpp: 85: CThrThread::threadFunction()  
   CSiServiceSet.cpp: 63: CSiServiceSet::executeService()  
   CSiStepExecute.cpp: 913: CSiStepExecute::execute()  
   EJSController.cpp: 179: EJSControllerImpl::executeScript()  
   JSExtension.hpp: 1136: CallFunctionBase::call()  
-  iaxxcfile.cpp: 183: iastring CIaOsFileConnect::callMemberFunction (iastring const & имя, args_t const & args)  
-  iaxxcfile.cpp: 1849: iastring CIaOsFileConnect::newFileStream (args_t const & _args)  
+  iaxxcfile.cpp: 183: iastring CIaOsFileConnect::callMemberFunction(iastring const& name, args_t const& args)  
+  iaxxcfile.cpp: 1849: iastring CIaOsFileConnect::newFileStream(args_t const& _args)  
   iaxxbfile.cpp: 773: CIaOsFile::newFileStream_impl(4)  
   syxxcfile.cpp: 233: CSyFileImpl::openStream(ISyFile::eFileOpenMode)  
   syxxcfstrm.cpp: 29: CSyFileStreamImpl::CSyFileStreamImpl(CSyFileStream*,iastring,ISyFile::eFileOpenMode)  
@@ -456,7 +456,7 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-di
     Убедитесь, что SWPM запущен от имени пользователя, имеющего доступ к профилю. Этот пользователь может быть настроен в мастере установки сервера приложений.
 
 * Ошибка при выполнении шага SAPinst: askPasswords
-  * Последняя ошибка, о которой сообщается на шаге: "Ошибка при системном вызове". Подробные сведения: Error 5 (0x00000005) (Access is denied.) in execution of system call 'NetValidatePasswordPolicy' with parameter (...), line (359) in file (\bas/bas/749_REL/bc_749_REL/src/ins/SAPINST/impl/src/syslib/account/synxcaccmg.cpp), stack trace: (Ошибка 5 (0x00000005) (В доступе отказано) при выполнении системного вызова NetValidatePasswordPolicy с параметром (...), строка (359) в файле (\bas/bas/749_REL/bc_749_REL/src/ins/SAPINST/impl/src/syslib/account/synxcaccmg.cpp), трассировка стека:)  
+  * Последняя ошибка, о которой сообщается на шаге: "Ошибка при системном вызове". Подробности: ошибка 5 (0x00000005) (в доступе отказано) при выполнении системного вызова NetValidatePasswordPolicy с параметром (...), строка (359) в файле (\bas/bas/749_REL/bc_749_REL/src/ins/SAPINST/impl/src/syslib/account/synxcaccmg.cpp), трассировка стека:  
   CThrThread.cpp: 85: CThrThread::threadFunction()  
   CSiServiceSet.cpp: 63: CSiServiceSet::executeService()  
   CSiStepExecute.cpp: 913: CSiStepExecute::execute()  
@@ -467,8 +467,8 @@ C:\Program Files\SAP\hostctrl\exe\sapacext.exe -a ifup -i "Ethernet 3" -h as1-di
   DarkModeDialog.cpp: 85: DarkModeDialog::submit()  
   EJSController.cpp: 179: EJSControllerImpl::executeScript()  
   JSExtension.hpp: 1136: CallFunctionBase::call()  
-  iaxxcaccount.cpp: 107: iastring CIaOsAccountConnect::callMemberFunction(iastring const & name, args_t const & args)  
-  iaxxcaccount.cpp: 1186: iastring CIaOsAccountConnect::validatePasswordPolicy(args_t const & _args)  
+  iaxxcaccount.cpp: 107: iastring CIaOsAccountConnect::callMemberFunction(iastring const& name, args_t const& args)  
+  iaxxcaccount.cpp: 1186: iastring CIaOsAccountConnect::validatePasswordPolicy(args_t const& _args)  
   iaxxbaccount.cpp: 430: CIaOsAccount::validatePasswordPolicy_impl()  
   synxcaccmg.cpp: 297: ISyAccountMgt::PasswordValidationMessage CSyAccountMgtImpl::validatePasswordPolicy(saponazure,*****) const )
   * Решение  

@@ -9,27 +9,27 @@ ms.topic: conceptual
 ms.date: 02/05/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: a7df61cad250663d4b08c8c8d32257718e2f37db
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: a88d4b09178ea32526cb8d035b47e1aef9c19dc3
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51012859"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53384247"
 ---
-# <a name="use-maven-to-build-java-applications-that-use-hbase-with-windows-based-hdinsight-hadoop"></a>Использование Maven для выполнения сборки приложений Java, которые используют HBase с HDInsight (Hadoop) под управлением Windows
-Вы узнаете, как создать приложение [Apache HBase](http://hbase.apache.org/) на Java и выполнить его сборку с использованием Apache Maven. Затем вы будете использовать приложение с Azure HDInsight (Hadoop).
+# <a name="use-apache-maven-to-build-java-applications-that-use-apache-hbase-with-windows-based-hdinsight-apache-hadoop"></a>Создание приложений Java, использующих Apache HBase с поддержкой HDInsight (Apache Hadoop) для Windows, с помощью Apache Maven
+Вы узнаете, как создать приложение [Apache HBase](http://hbase.apache.org/) на Java и выполнить его сборку с использованием Apache Maven. Затем используйте приложение с Azure HDInsight (Apache Hadoop).
 
-[Maven](http://maven.apache.org/) — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющее создавать ПО, документацию и отчеты для проектов Java. Из данной статьи вы узнаете, как использовать его для создания базового приложения Java, которое формирует запросы и удаляет таблицу HBase в кластере Azure HDInsight.
+[Apache Maven](http://maven.apache.org/) — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющий создавать ПО, документацию и отчеты для проектов Java. Из данной статьи вы узнаете, как использовать его для создания базового приложения Java, которое формирует запросы и удаляет таблицу HBase в кластере Azure HDInsight.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 ## <a name="requirements"></a>Требования
 * [Пакет JDK для платформы Java](https://aka.ms/azure-jdks) версии 7 или более поздней.
-* [Maven](http://maven.apache.org/)
+* [Apache Maven](http://maven.apache.org/)
 * Кластер HDInsight под управлением Windows с HBase
 
-    > [!NOTE]
+    > [!NOTE]  
     > Действия, описанные в этом документе, были проверены для версий кластера HDInsight 3.2 и 3.3. Значения по умолчанию в примерах предназначены для кластера HDInsight 3.3.
 
 ## <a name="create-the-project"></a>Создание проекта
@@ -40,7 +40,7 @@ ms.locfileid: "51012859"
 
     При этом в текущем расположении будет создан каталог с именем, указанным в параметре **artifactID** (в нашем случае **hbaseapp**). Этот каталог содержит следующие элементы:
 
-   * **pom.xml** — это модель объекта проекта ([POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)), которая содержит информацию и подробности конфигурации, учитывающиеся при сборке проекта;
+   * **pom.xml** —  это модель объекта проекта ([POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)), которая содержит информацию и подробности конфигурации, учитывающиеся при сборке проекта.
    * **src** — каталог, содержащий каталог **main\java\com\microsoft\examples**, в котором будет создаваться приложение.
 3. Удалите файл **src\test\java\com\microsoft\examples\apptest.java**, так как он не используется в этом примере.
 
@@ -53,9 +53,9 @@ ms.locfileid: "51012859"
           <version>1.1.2</version>
         </dependency>
 
-    Этот раздел указывает Maven, что для проекта требуется **hbase-client** версии **1.1.2**. При компиляции эта зависимость скачивается из репозитория Maven по умолчанию. Можно воспользоваться [поиском в центральном репозитории Maven](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) , чтобы получить дополнительную информацию об этой зависимости.
+    Этот раздел указывает Maven, что для проекта требуется **hbase-client** версии **1.1.2**. При компиляции эта зависимость скачивается из репозитория Maven по умолчанию. Вы можете воспользоваться [поиском в центральном репозитории Apache Maven](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar), чтобы получить дополнительную информацию об этой зависимости.
 
-   > [!IMPORTANT]
+   > [!IMPORTANT]  
    > Номер версии должен соответствовать версии HBase, которая поставляется с кластером HDInsight. Воспользуйтесь следующей таблицей, чтобы найти правильный номер версии.
    >
    >
@@ -65,7 +65,7 @@ ms.locfileid: "51012859"
    | 3.2 |0.98.4-hadoop2 |
    | 3.3 |1.1.2 |
 
-    Дополнительные сведения о версиях и компонентах HDInsight см. в статье [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md)
+    Дополнительные сведения о версиях и компонентах HDInsight см. в статье [Что представляют собой различные компоненты Apache Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md)
 2. При использовании кластера HDInsight 3.3 необходимо также добавить в раздел `<dependencies>` следующий код.
 
         <dependency>
@@ -122,12 +122,12 @@ ms.locfileid: "51012859"
 
     В разделе `<resources>` настраивается ресурс (**conf\hbase-site.xml**), который содержит информацию о конфигурации для HBase.
 
-   > [!NOTE]
+   > [!NOTE]  
    > Также можно настроить значения конфигурации непосредственно из кода. См. комментарии к примеру **CreateTable** ниже, чтобы узнать, как это сделать.
    >
    >
 
-    В разделе `<plugins>` будут настроены подключаемые модули [компилятора Maven](http://maven.apache.org/plugins/maven-compiler-plugin/) и [Maven Shade](http://maven.apache.org/plugins/maven-shade-plugin/). Подключаемый модуль компилятора используется для компиляции топологии. Подключаемый модуль shade используется для предотвращения дублирования лицензии в JAR-файле, собранном Maven. Причина — дублирующиеся файлы лицензий вызывают ошибку выполнения на кластере HDInsight. Использование maven-shade-plugin с реализацией `ApacheLicenseResourceTransformer` предотвращает возникновение этой ошибки.
+    В разделе `<plugins>` будут настроены подключаемые модули [компилятора Apache Maven](http://maven.apache.org/plugins/maven-compiler-plugin/) и [Apache Maven Shade](http://maven.apache.org/plugins/maven-shade-plugin/). Подключаемый модуль компилятора используется для компиляции топологии. Подключаемый модуль shade используется для предотвращения дублирования лицензии в JAR-файле, собранном Maven. Причина — дублирующиеся файлы лицензий вызывают ошибку выполнения на кластере HDInsight. Использование maven-shade-plugin с реализацией `ApacheLicenseResourceTransformer` предотвращает возникновение этой ошибки.
 
     maven-shade-plugin также создает так называемый uber jar (или fat jar), который содержит все зависимости, требуемые для приложения.
 4. Сохраните файл **pom.xml** .
@@ -173,7 +173,7 @@ ms.locfileid: "51012859"
 
     Этот файл будет использоваться для загрузки конфигурации HBase для кластера HDInsight.
 
-   > [!NOTE]
+   > [!NOTE]  
    > Это минимально возможный файл hbase-site.xml, содержащий лишь самые минимальные настройки для кластера HDInsight.
 
 6. Сохраните файл **hbase-site.xml**.
@@ -357,11 +357,11 @@ ms.locfileid: "51012859"
     При этом будут удалены остатки предыдущих сборок, скачаны все неустановленные на текущий момент зависимости, затем будет произведена сборка и создание пакета приложения.
 3. Когда команда будет выполнена, в каталоге **hbaseapp\target** появится файл с именем **hbaseapp-1.0-SNAPSHOT.jar**.
 
-   > [!NOTE]
+   > [!NOTE]  
    > Файл **hbaseapp-1.0-SNAPSHOT.jar** относится к типу uber jar (другое название — fat jar) и содержит все зависимости, необходимые для работы приложения.
 
 ## <a name="upload-the-jar-file-and-start-a-job"></a>Передача JAR-файла и запуск задания
-Существует множество способов передачи файла в ваш кластер HDInsight, они описаны в разделе [Отправка данных для заданий Hadoop в HDInsight](hdinsight-upload-data.md). В следующих действиях используется Azure PowerShell.
+Существует множество способов передачи файла в ваш кластер HDInsight, они описаны в статье [Upload data for Apache Hadoop jobs in HDInsight](hdinsight-upload-data.md) (Отправка данных для заданий Apache Hadoop в HDInsight). В следующих действиях используется Azure PowerShell.
 
 [!INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 

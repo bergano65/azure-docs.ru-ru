@@ -5,14 +5,14 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/19/2018
-ms.author: ramamill
-ms.openlocfilehash: 50d1170f64ae199f4a1bf4b852c1ed3232df4d42
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.date: 12/11/2018
+ms.author: mayg
+ms.openlocfilehash: f2d8d070a8adbe7992795b06722427da2830cb50
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51974810"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53253686"
 ---
 # <a name="scale-for-failback-with-additional-process-servers"></a>Масштабирование для восстановления размещения с помощью дополнительных серверов обработки
 
@@ -23,6 +23,9 @@ ms.locfileid: "51974810"
 ### <a name="capacity-planning"></a>Планирование загрузки
 
 Убедитесь, что [планирование емкости](site-recovery-plan-capacity-vmware.md) для репликации VMware выполнено. Это позволяет узнать, как и когда следует развернуть дополнительные серверы обработки.
+
+>[!NOTE]
+Использование клонированного компонента сервера обработки не поддерживается. Выполнить шаги в этой статье в ходе каждого горизонтального масштабирования сервера обработки.
 
 ### <a name="sizing-requirements"></a>Требования к размерам 
 

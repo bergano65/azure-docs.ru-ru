@@ -8,22 +8,24 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 09/29/2017
+ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 58e5b06d613ee3e3311b58af64abd2411c637449
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 4832a48489a043493639bdedd6c6adf3c828de11
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637449"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53434704"
 ---
 # <a name="singleton-orchestrators-in-durable-functions-azure-functions"></a>Одноэлементные экземпляры в устойчивых функциях (Функции Azure)
 
-Для фоновых заданий или оркестраций в субъектном стиле часто необходимо обеспечить, чтобы одновременно выполнялся только один экземпляр определенного оркестратора. Это можно реализовать в [устойчивых функциях](durable-functions-overview.md), назначив создаваемому оркестратору определенный идентификатор экземпляра.
+Для фоновых заданий часто необходимо обеспечить, чтобы одновременно выполнялся только один экземпляр определенного оркестратора. Это можно реализовать в [устойчивых функциях](durable-functions-overview.md), назначив создаваемому оркестратору определенный идентификатор экземпляра.
 
 ## <a name="singleton-example"></a>Пример одноэлементного экземпляра
 
-В следующем примере C# показана функция HTTP-триггера, которая создает одноэлементный экземпляр оркестрации фонового задания. Код обеспечивает наличие только одного экземпляра с указанным идентификатором.
+В следующем примере C# и JavaScript показана функция HTTP-триггера, которая создает одноэлементный экземпляр оркестрации фонового задания. Код обеспечивает наличие только одного экземпляра с указанным идентификатором.
+
+### <a name="c"></a>C#
 
 ```cs
 [FunctionName("HttpStartSingle")]
@@ -54,7 +56,39 @@ public static async Task<HttpResponseMessage> RunSingle(
 }
 ```
 
-По умолчанию идентификаторы экземпляров — это случайным образом сгенерированные GUID. Но в этом случае идентификатор экземпляра передается в данных маршрута с URL-адреса. Этот код вызывает [GetStatusAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_GetStatusAsync_), чтобы проверить, запущен ли экземпляр с указанным идентификатором. Если нет, такой экземпляр создается.
+### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
+
+```javascript
+const df = require("durable-functions");
+
+modules.exports = async function(context, req) {
+    const client = df.getClient(context);
+
+    const instanceId = req.params.instanceId;
+    const functionName = req.params.functionsName;
+
+    // Check if an instance with the specified ID already exists.
+    const existingInstance = await client.getStatus(instanceId);
+    if (!existingInstance) {
+        // An instance with the specified ID doesn't exist, create one.
+        const eventData = req.body;
+        await client.startNew(functionName, instanceId, eventData);
+        context.log(`Started orchestration with ID = '${instanceId}'.`);
+        return client.createCheckStatusResponse(req, instanceId);
+    } else {
+        // An instance with the specified ID exists, don't create one.
+        return {
+            status: 409,
+            body: `An instance with ID '${instanceId}' already exists.`,
+        };
+    }
+};
+```
+
+По умолчанию идентификаторы экземпляров — это случайным образом сгенерированные GUID. Но в этом случае идентификатор экземпляра передается в данных маршрута с URL-адреса. Этот код вызывает [GetStatusAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_GetStatusAsync_) (C#) или `getStatus` (JavaScript), чтобы проверить, запущен ли экземпляр с указанным идентификатором. Если нет, такой экземпляр создается.
+
+> [!WARNING]
+> При локальной разработке на языке JavaScript необходимо задать для переменной среды `WEBSITE_HOSTNAME` значение `localhost:<port>`, например `localhost:7071`, чтобы использовать методы для `DurableOrchestrationClient`. Дополнительные сведения об этом требовании см. в [описании проблемы на сайте GitHub](https://github.com/Azure/azure-functions-durable-js/issues/28).
 
 > [!NOTE]
 > В этом примере содержится потенциальное состояние гонки. Если два экземпляра **HttpStartSingle** выполняются одновременно, результатом может стать создание двух разных экземпляров отдельной базы данных, один из которых перезаписывает другой. В зависимости от применяемых требований это может привести к нежелательным побочным эффектам. Поэтому важно, чтобы два запроса не выполняли одновременно эту функцию триггера.

@@ -1,6 +1,6 @@
 ---
-title: Обновление пакета SDK службы поиска Azure для .NET до версии 1.1 | Документация Майкрософт
-description: Обновление пакета SDK службы поиска Azure для .NET до версии 1.1
+title: Обновление до пакета SDK .NET версии 1.1 для службы "Поиск Azure"
+description: Перенос кода в пакет SDK .NET для службы "Поиск Azure" версии 1.1 с предыдущих версий API. Сведения о новых возможностях и необходимых изменениях кода.
 author: brjohnstmsft
 manager: jlembicz
 services: search
@@ -9,12 +9,13 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: brjohnst
-ms.openlocfilehash: ccefd21e2aa89a2b46129956b3c4417d548cbf32
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.custom: seodec2018
+ms.openlocfilehash: 82823bae76521080634d4f7ff285d94ce8495fbf
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31796750"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53317293"
 ---
 # <a name="upgrading-to-the-azure-search-net-sdk-version-11"></a>Обновление пакета SDK службы поиска Azure для .NET до версии 1.1
 
@@ -47,15 +48,15 @@ ms.locfileid: "31796750"
 
 <a name="ListOfChangesV1"></a>
 
-### <a name="list-of-breaking-changes-in-version-11"></a>Список критических изменений в версии 1.1
+## <a name="list-of-breaking-changes-in-version-11"></a>Список критических изменений в версии 1.1
 Следующий список упорядочен по вероятности того, повлияет ли изменение на код приложения.
 
-#### <a name="indexbatch-and-indexaction-changes"></a>Изменения IndexBatch и IndexAction
+### <a name="indexbatch-and-indexaction-changes"></a>Изменения IndexBatch и IndexAction
 `IndexBatch.Create` был переименован в `IndexBatch.New` и больше не имеет аргумента `params`. Можно использовать `IndexBatch.New` для пакетов, сочетающих в себе различные типы действий (слияние, удаление и т. д.). Кроме того, существуют новые статические методы для создания пакетов, в которых все действия одинаковы: `Delete`, `Merge`, `MergeOrUpload` и `Upload`.
 
 `IndexAction` больше не имеет открытых конструкторов, и его свойства теперь являются неизменяемыми. Следует использовать новые статические методы для создания действий для различных целей: `Delete`, `Merge`, `MergeOrUpload` и `Upload`. `IndexAction.Create` был удален. Если используется перегрузка, которая принимает только документ, обязательно используйте вместо нее `Upload` .
 
-##### <a name="example"></a>Пример
+#### <a name="example"></a>Пример
 Если код выглядит следующим образом:
 
     var batch = IndexBatch.Create(documents.Select(doc => IndexAction.Create(doc)));
@@ -71,10 +72,10 @@ ms.locfileid: "31796750"
     var batch = IndexBatch.Upload(documents);
     indexClient.Documents.Index(batch);
 
-#### <a name="indexbatchexception-changes"></a>Изменения IndexBatchException
+### <a name="indexbatchexception-changes"></a>Изменения IndexBatchException
 Свойство `IndexBatchException.IndexResponse` было переименовано в `IndexingResults`, и теперь его тип `IList<IndexingResult>`.
 
-##### <a name="example"></a>Пример
+#### <a name="example"></a>Пример
 Если код выглядит следующим образом:
 
     catch (IndexBatchException e)
@@ -95,7 +96,7 @@ ms.locfileid: "31796750"
 
 <a name="OperationMethodChanges"></a>
 
-#### <a name="operation-method-changes"></a>Изменение метода операции
+### <a name="operation-method-changes"></a>Изменение метода операции
 Каждая операция в пакете SDK для .NET для поиска Azure представляется как набор перегрузок метода для синхронных и асинхронных вызовов. В версии 1.1 были изменены подписи и разложение этих перегрузок метода.
 
 Например, операция "Получить статистику индекса" в более старых версиях пакета SDK предоставляла эти подписи:
@@ -151,10 +152,10 @@ ms.locfileid: "31796750"
 * Методы расширения теперь скрывают много лишних сведений HTTP от вызывающего объекта. Например, более старые версии пакета SDK возвращали объект ответа с кодом состояния HTTP, который часто не нужно проверять, так как методы операции создают исключение `CloudException` для любого кода состояния, который указывает на ошибку. Новые методы расширения просто возвращают объекты модели, что устраняет необходимость развертывать их в коде.
 * И наоборот, основные интерфейсы теперь демонстрируют методы, которые предоставляют более полный контроль на уровне HTTP при необходимости. Теперь можно передавать пользовательские заголовки HTTP для добавления в запросы, и новый возвращаемый тип. Теперь можно передавать пользовательские заголовки HTTP для добавления в запросы, и новый возвращаемый тип `AzureOperationResponse<T>` предоставляет прямой доступ к `HttpRequestMessage` и `HttpResponseMessage` для операции. `AzureOperationResponse` определяется в пространстве имен `Microsoft.Rest.Azure` и заменяет `Hyak.Common.OperationResponse`.
 
-#### <a name="scoringparameters-changes"></a>Изменения в параметрах оценки
+### <a name="scoringparameters-changes"></a>Изменения в параметрах оценки
 В последнюю версию пакета SDK был добавлен класс `ScoringParameter` для упрощения передачи параметров профилям оценки в поисковом запросе. Ранее свойство `ScoringProfiles` класса `SearchParameters` имело тип `IList<string>`. Теперь оно имеет тип `IList<ScoringParameter>`.
 
-##### <a name="example"></a>Пример
+#### <a name="example"></a>Пример
 Если код выглядит следующим образом:
 
     var sp = new SearchParameters();
@@ -172,7 +173,7 @@ ms.locfileid: "31796750"
             new ScoringParameter("mapCenterParam", GeographyPoint.Create(lat, lon))
         };
 
-#### <a name="model-class-changes"></a>Изменение классов модели
+### <a name="model-class-changes"></a>Изменение классов модели
 Из-за изменений подписи, описанных в разделе [Изменение метода операции](#OperationMethodChanges), многие классы в пространстве имен `Microsoft.Azure.Search.Models` были переименованы или удалены. Например: 
 
 * `IndexDefinitionResponse` был заменен на `AzureOperationResponse<Index>`.
@@ -184,7 +185,7 @@ ms.locfileid: "31796750"
 
 Подводя итог, классы, производные от `OperationResponse`, которые существовали только для оборачивания объектов модели, были удалены. В остальных классах суффикс изменен с `Response` на `Result`.
 
-##### <a name="example"></a>Пример
+#### <a name="example"></a>Пример
 Если код выглядит следующим образом:
 
     IndexerGetStatusResponse statusResponse = null;
@@ -217,7 +218,7 @@ ms.locfileid: "31796750"
 
     IndexerExecutionResult lastResult = status.LastResult;
 
-##### <a name="response-classes-and-ienumerable"></a>Классы ответа и IEnumerable
+#### <a name="response-classes-and-ienumerable"></a>Классы ответа и IEnumerable
 Дополнительное изменение, которое может повлиять на код, состоит в том, что классы ответов, содержащие коллекции, больше не реализуют `IEnumerable<T>`. Вместо этого вы можете получать прямой доступ к свойству коллекции. Например, если код выглядит следующим образом:
 
     DocumentSearchResponse<Hotel> response = indexClient.Documents.Search<Hotel>(searchText, sp);
@@ -234,7 +235,7 @@ ms.locfileid: "31796750"
         Console.WriteLine(result.Document);
     }
 
-##### <a name="special-case-for-web-applications"></a>Исключение, касающееся веб-приложений
+#### <a name="special-case-for-web-applications"></a>Исключение, касающееся веб-приложений
 Если у вас есть веб-приложение, которое сериализует `DocumentSearchResponse` непосредственно для отправки результатов поиска в браузер, необходимо будет внести изменения в код, иначе результаты не будут сериализованы правильно. Например, если код выглядит следующим образом:
 
     public ActionResult Search(string q = "")
@@ -267,10 +268,10 @@ ms.locfileid: "31796750"
 
 Вам придется найти такие случаи в коде самостоятельно. **Компилятор не предупредит вас**, так как `JsonResult.Data` имеет тип `object`.
 
-#### <a name="cloudexception-changes"></a>Изменения CloudException
+### <a name="cloudexception-changes"></a>Изменения CloudException
 Класс `CloudException` перемещен из пространства имен `Hyak.Common` в пространство имен `Microsoft.Rest.Azure`. Кроме того, его свойство `Error` было изменено на `Body`.
 
-#### <a name="searchserviceclient-and-searchindexclient-changes"></a>Изменения SearchServiceClient и SearchIndexClient
+### <a name="searchserviceclient-and-searchindexclient-changes"></a>Изменения SearchServiceClient и SearchIndexClient
 Тип свойства `Credentials` был изменен с `SearchCredentials` на базовый класс `ServiceClientCredentials`. Если необходимо получить доступ к `SearchCredentials` из `SearchIndexClient` или `SearchServiceClient`, используйте новое свойство `SearchCredentials`.
 
 В более старых версиях пакета SDK у `SearchServiceClient` и `SearchIndexClient` были конструкторы, которые принимали параметр `HttpClient`. Они были заменены конструкторами, принимающими `HttpClientHandler` и массив объектов `DelegatingHandler`. При необходимости это упрощает установку пользовательских обработчиков для предварительной обработки HTTP-запросов.
@@ -291,7 +292,7 @@ ms.locfileid: "31796750"
 
 Также обратите внимание, что тип параметра учетных данных изменился на `ServiceClientCredentials`. Это вряд ли повлияет на код, так как `SearchCredentials` является производным от `ServiceClientCredentials`.
 
-#### <a name="passing-a-request-id"></a>Передача идентификатора запроса
+### <a name="passing-a-request-id"></a>Передача идентификатора запроса
 В более старых версиях пакета SDK можно было задать идентификатор запроса в `SearchServiceClient` или `SearchIndexClient`, и он включался в каждый запрос к REST API. Это полезно для устранения неполадок в службе поиска, если необходимо обратиться в службу поддержки. Однако более полезно присвоить уникальный идентификатор запроса для каждой операции, а не использовать тот же идентификатор для всех операций. По этой причине методы `SetClientRequestId` из `SearchServiceClient` и `SearchIndexClient` были удалены. Вместо этого вы можете передать идентификатор запроса для каждого метода операции через необязательный параметр `SearchRequestOptions` .
 
 > [!NOTE]
@@ -299,7 +300,7 @@ ms.locfileid: "31796750"
 > 
 > 
 
-#### <a name="example"></a>Пример
+### <a name="example"></a>Пример
 Если у вас есть код, который выглядит следующим образом:
 
     client.SetClientRequestId(Guid.NewGuid());
@@ -310,7 +311,7 @@ ms.locfileid: "31796750"
 
     long count = client.Documents.Count(new SearchRequestOptions(requestId: Guid.NewGuid()));
 
-#### <a name="interface-name-changes"></a>Изменение имени интерфейса
+### <a name="interface-name-changes"></a>Изменение имени интерфейса
 Имена интерфейсов группы операций изменены, чтобы согласовать их с соответствующими именами свойств:
 
 * Тип `ISearchServiceClient.Indexes` был переименован из `IIndexOperations` в `IIndexesOperations`.
@@ -322,17 +323,17 @@ ms.locfileid: "31796750"
 
 <a name="BugFixesV1"></a>
 
-### <a name="bug-fixes-in-version-11"></a>Исправления в версии 1.1
+## <a name="bug-fixes-in-version-11"></a>Исправления в версии 1.1
 В более старых версиях пакета SDK для .NET для поиска Azure была ошибка, связанная с сериализацией классов пользовательской модели. Ошибка могла произойти, если вы создавали класс пользовательской модели со свойством типа значения, не допускающего нуля.
 
-#### <a name="steps-to-reproduce"></a>Шаги для воспроизведения
+### <a name="steps-to-reproduce"></a>Шаги для воспроизведения
 Создайте класс пользовательской модели со свойством типа значения, не допускающего нуля. Например, добавьте открытое свойство `UnitCount` типа `int` вместо `int?`.
 
 При индексировании документа со значением по умолчанию этого типа (например 0 для `int`) поле будет иметь значение NULL в Поиске Azure. Если впоследствии выполняется поиск этого документа, вызов `Search` выдаст `JsonSerializationException` с сообщением о том, что невозможно преобразовать `null` в `int`.
 
 Кроме того, фильтры могут не работать, как ожидалось, поскольку в индекс был записано значение null вместо ожидаемого значения.
 
-#### <a name="fix-details"></a>Сведения об исправлении
+### <a name="fix-details"></a>Сведения об исправлении
 Эта проблема устранена в пакете SDK версии 1.1. Теперь, если имеется такой класс модели:
 
     public class Model
@@ -344,9 +345,9 @@ ms.locfileid: "31796750"
 
 и вы устанавливаете для `IntValue` значение 0, это значение теперь правильно сериализуется как 0 по сети и сохраняется как 0 в индексе. Циклы обработки также работают ожидаемым образом.
 
-Существует одна потенциальная проблема, которую следует учитывать при таком подходе: при использовании типа модели со свойством, не допускающим значения NULL, необходимо **гарантировать** , что документы в индексе не будут содержать значение NULL для соответствующего поля. Ни пакет SDK, ни API REST поиска Azure не поможет вам это обеспечить.
+При таком подходе следует учитывать одну возможную проблему. При использовании типа модели с ненулевым свойством необходимо **гарантировать**, что документы в индексе не будут содержать значение NULL для соответствующего поля. Ни пакет SDK, ни API REST поиска Azure не поможет вам это обеспечить.
 
-Это не просто гипотетическое соображение. Представьте себе ситуацию, когда вы добавляете новое поле в существующий индекс с типом `Edm.Int32`. После обновления определения индекса все документы будут иметь значение null для этого нового поля (поскольку все типы допускают значение NULL в службе поиска Azure). Если затем для этого поля вы используете класс модели со свойством `int`, не допускающим нулевое значение, при попытке получения документов вы получите `JsonSerializationException` следующим образом:
+Это не просто гипотетическое соображение. Представьте себе ситуацию, когда вы добавляете новое поле в имеющийся индекс с типом `Edm.Int32`. После обновления определения индекса все документы будут иметь значение null для этого нового поля (поскольку все типы допускают значение NULL в службе поиска Azure). Если затем для этого поля вы используете класс модели со свойством `int`, не допускающим нулевое значение, при попытке получения документов вы получите `JsonSerializationException` следующим образом:
 
     Error converting value {null} to type 'System.Int32'. Path 'IntValue'.
 

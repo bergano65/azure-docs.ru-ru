@@ -1,5 +1,5 @@
 ---
-title: Как выполнять аутентификацию и авторизацию с помощью API в службе "Аналитика временных рядов Azure"
+title: Проверка подлинности в службе "Аналитика временных рядов". Как выполнять проверку подлинности и авторизацию с помощью API в службе "Аналитика временных рядов Azure" | Документация Майкрософт
 description: В этой статье описывается настройка аутентификации и авторизации для пользовательского приложения, которое вызывает API "Аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
@@ -11,12 +11,13 @@ ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 11/27/2017
-ms.openlocfilehash: cbd851737d7122ff8b0c75eb2050ab481c8cecc0
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.custom: seodec18
+ms.openlocfilehash: e42a29152f3abb762e6c95833e8e2e5eddd6929b
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49958471"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273550"
 ---
 # <a name="authentication-and-authorization-for-azure-time-series-insights-api"></a>Проверка подлинности и авторизация для API Azure Time Series Insights
 

@@ -1,21 +1,20 @@
 ---
-title: Советы по повышению производительности Java в Azure Cosmos DB | Документация Майкрософт
+title: Советы по повышению производительности Azure Cosmos DB и Java
 description: Узнайте, как повысить производительность базы данных Azure Cosmos DB с помощью параметров конфигурации клиента
 keywords: Как повысить производительность базы данных
 services: cosmos-db
 author: SnehaGunda
-manager: kfile
 ms.service: cosmos-db
 ms.devlang: java
 ms.topic: conceptual
 ms.date: 01/02/2018
 ms.author: sngun
-ms.openlocfilehash: f0792e220b27ec564c124f610d0616d0873e2d68
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: afbeb8211baea6da363a5e0162e92a0588581346
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52447016"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52872991"
 ---
 # <a name="performance-tips-for-azure-cosmos-db-and-java"></a>Советы по повышению производительности для Java и Azure Cosmos DB
 
@@ -32,7 +31,7 @@ Azure Cosmos DB — быстрая и гибкая распределенная 
 ## <a name="networking"></a>Сеть
 <a id="direct-connection"></a>
 
-1. **Режим подключения: использование DirectHttps**
+1. **Режим подключения: используйте DirectHttps**
 
     Режим подключения к Azure Cosmos DB серьезно влияет на производительность, в частности на задержку на стороне клиента. Важнейший параметр для настройки политики подключения ([ConnectionPolicy](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb._connection_policy)) на стороне клиента — это [ConnectionMode](https://docs.microsoft.com/java/api/com.microsoft.azure.documentdb._connection_mode).  Этот параметр может принимать одно из двух значений:
 

@@ -12,16 +12,17 @@ ms.devlang: java
 ms.topic: article
 ms.date: 08/29/2018
 ms.author: routlaw
-ms.openlocfilehash: a6d50e6f405294bf8e91018dd4d7b6008cd49ada
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.custom: seodec18
+ms.openlocfilehash: 34506266ed4a2103f0d3bd7a8014b9a038b25491
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52161883"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53338045"
 ---
 # <a name="java-enterprise-guide-for-app-service-on-linux"></a>Руководство разработчика по Java Enterprise для Службы приложений в Linux
 
-Служба приложений Azure в Linux позволяет разработчикам Java создавать, развертывать и масштабировать приложения Java Enterprise (JEE) в полностью управляемой службе на базе Linux.  Базовой средой выполнения Java Enterprise является сервер приложений [Wildfly](http://wildfly.org/) в открытым кодом.
+Служба приложений Azure в Linux позволяет разработчикам Java создавать, развертывать и масштабировать приложения Java Enterprise (JEE) в полностью управляемой службе на базе Linux.  Базовой средой выполнения Java Enterprise является сервер приложений [Wildfly](https://wildfly.org/) в открытым кодом.
 
 Это руководство содержит основные понятия и инструкции для разработчиков Java Enterprise, использующих Службу приложений в Linux. Если вы раньше не использовали Службу приложений Azure в Linux для разработки приложений Java, мы рекомендуем сначала ознакомиться с [кратким руководством по Java](quickstart-java.md). См. ответы на вопросы об использовании Службы приложений в Linux, не относящиеся к разработке для Java Enterprise, [здесь](app-service-linux-java.md) и [здесь](app-service-linux-faq.md).
 
@@ -81,7 +82,7 @@ ms.locfileid: "52161883"
 2. Выполните действия, описанные в разделе "Модули и зависимости", чтобы создать и передать дескриптор модуля XML, скрипт интерфейса командной строки JBoss CLI, скрипт запуска и JDBC-зависимость (файл с расширением .jar).
 
 
-См. дополнительные сведения о настройке Wildfly для использования с [PostgreSQL](https://developer.jboss.org/blogs/amartin-blog/2012/02/08/how-to-set-up-a-postgresql-jdbc-driver-on-jboss-7), [MySQL](https://dev.mysql.com/doc/connector-j/5.1/connector-j-usagenotes-jboss.html) и [Базы данных SQL](https://docs.jboss.org/jbossas/docs/Installation_And_Getting_Started_Guide/5/html/Using_other_Databases.html#d0e3898). Чтобы добавить определения источников данных на сервер, можно использовать разные подходы.
+См. дополнительные сведения о настройке Wildfly для использования с [PostgreSQL](https://developer.jboss.org/blogs/amartin-blog/2012/02/08/how-to-set-up-a-postgresql-jdbc-driver-on-jboss-7), [MySQL](https://docs.jboss.org/jbossas/docs/Installation_And_Getting_Started_Guide/5/html/Using_other_Databases.html#Using_other_Databases-Using_MySQL_as_the_Default_DataSource) и [Базы данных SQL](https://docs.jboss.org/jbossas/docs/Installation_And_Getting_Started_Guide/5/html/Using_other_Databases.html#d0e3898). Чтобы добавить определения источников данных на сервер, можно использовать разные подходы.
 
 ## <a name="messaging-providers"></a>Поставщики службы обмена сообщениями
 
@@ -103,7 +104,7 @@ ms.locfileid: "52161883"
 - Если экземпляр приложения перезапущен или его масштаб уменьшен, состояние сеанса пользователя на сервере приложений будет утеряно.
 - Если для приложений настроены параметры длительного времени ожидания сеанса или фиксированное число пользователей, автомасштабирование новых экземпляров для получения нагрузки может занять некоторое время, так как только новые сеансы будут направляться в новые запущенные экземпляры.
 
-Можно настроить Wildfly для использования внешнего хранилища сеанса, например [кэша Redis](/azure/redis-cache/). Вам нужно будет [отключить сходство существующих экземпляров ARR](https://azure.microsoft.com/blog/disabling-arrs-instance-affinity-in-windows-azure-web-sites/), чтобы отключить маршрутизацию на основе файлов cookie для сеанса и обеспечить бесперебойную работу настроенного хранилища сеансов Wildfly.
+Вы можете настроить Wildfly для использования внешнего хранилища сеанса, например [кэша Azure для Redis](/azure/azure-cache-for-redis/). Вам нужно будет [отключить сходство существующих экземпляров ARR](https://azure.microsoft.com/blog/disabling-arrs-instance-affinity-in-windows-azure-web-sites/), чтобы отключить маршрутизацию на основе файлов cookie для сеанса и обеспечить бесперебойную работу настроенного хранилища сеансов Wildfly.
 
 ## <a name="enable-web-sockets"></a>Включение протокола WebSocket
 
@@ -114,5 +115,5 @@ ms.locfileid: "52161883"
 Служба приложений предоставляет средства для устранения проблем с приложением.
 
 -   Включите ведение журналов, щелкнув **Журналы диагностики** в области навигации слева. Щелкните **Файловая система**, чтобы задать квоту хранилища и период хранения, и сохраните изменения. Эти журналы можно найти в каталоге `/home/LogFiles/`.
--   [Используйте SSH для подключения к экземпляру приложения](/app-service-linux-ssh-support), чтобы просматривать журналы для запущенных приложений.
+-   [Используйте SSH для подключения к экземпляру приложения](app-service-linux-ssh-support.md), чтобы просматривать журналы для запущенных приложений.
 -   Журналы диагностики можно просматривать на панели **Журналы диагностики** на портале или с помощью команды Azure CLI: ` az webapp log tail --name <your-app-name> --resource-group <your-apps-resource-group> `.

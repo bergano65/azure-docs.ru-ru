@@ -1,7 +1,7 @@
 ---
-title: Обновление API Bing для поиска изображений с версии 5 до версии 7 — API Bing для поиска изображений
+title: Обновление API Bing для поиска изображений с версии 5 до версии 7
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве по обновлению определены изменения между версиями 5 и 7 API Bing для поиска изображений. Руководство поможет определить компоненты приложения, которые необходимо обновить для использования версии 7.
+description: В этом руководстве по обновлению описаны изменения между версиями 5 и 7 API Bing для поиска изображений. Руководство поможет определить компоненты приложения, которые необходимо обновить для использования версии 7.
 services: cognitive-services
 author: swhite-msft
 manager: cgronlun
@@ -11,14 +11,14 @@ ms.component: bing-image-search
 ms.topic: article
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: 53713a629dbe2682ef393a3a5dbf7845b5075591
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 2192e3d2a344a31717c59c813123ed0c807a2841
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46296368"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53256559"
 ---
-# <a name="image-search-api-upgrade-guide"></a>Руководство по обновлению API для поиска изображений
+# <a name="bing-image-search-api-upgrade-guide"></a>Руководство по обновлению API Bing для поиска изображений
 
 В этом руководстве по обновлению определены изменения между версиями 5 и 7 API Bing для поиска изображений. Руководство поможет определить компоненты приложения, которые необходимо обновить для использования версии 7.
 

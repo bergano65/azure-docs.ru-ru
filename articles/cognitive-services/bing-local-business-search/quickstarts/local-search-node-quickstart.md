@@ -10,17 +10,17 @@ ms.component: bing-local-business
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: rosh, v-gedod
-ms.openlocfilehash: d60f2aca912f279f84710863e5f6ce507de64cb0
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 409e4d2e71766ddba2b1d7bcf7e10afdbe298104
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52309180"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52968550"
 ---
 # <a name="quickstart-send-a-query-to-the-bing-local-business-search-api-using-nodejs"></a>Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Node.js
 
 С помощью этого краткого руководства вы сможете начать отправку запросов в Bing Local Business Search API в Cognitive Services. Хотя это простое приложение написано на Node.js, API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON.
- 
+
 В этом примере приложения из API извлекаются сведения о местных компаниях по поисковому запросу `hotel in Bellevue`.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -31,14 +31,15 @@ ms.locfileid: "52309180"
 
 Необходима [учетная запись API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) с API Bing. Для этого краткого руководства достаточно [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api). Используйте ключ доступа, предоставляемый в бесплатной пробной версии.  См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
 
-##<a name="code-scenario"></a>Сценарий кода
+## <a name="code-scenario"></a>Сценарий кода
+
 Ниже приведенный код получает, определяет и отправляет запрос. Он реализуется с помощью следующих действий:
 
 1. Объявите переменные для указания конечной точки с помощью узла и пути.
-2. Укажите запрос и добавьте параметр запроса. 
+2. Укажите запрос и добавьте параметр запроса.
 3. Создайте функцию обработчика для ответа.
 4. Определите функцию поиска, которая создает запрос и добавляет заголовок "Ocp-Apim-Subscription-Key".
-5. Запустите функцию поиска. 
+5. Запустите функцию поиска.
 
 Полный код этого примера выглядит так:
 
@@ -92,6 +93,7 @@ Search();
 ````
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Quickstart: Send a query to the Bing Local Business Search API in C#](local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
-- [Краткое руководство. Отправка запроса в API Bing для поиска местных компаний с помощью Java](local-search-java-quickstart.md)
-- [Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Python](local-search-python-quickstart.md)
+
+* [Quickstart: Send a query to the Bing Local Business Search API in C#](local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
+* [Краткое руководство. Отправка запроса в API Bing для поиска местных компаний с помощью Java](local-search-java-quickstart.md)
+* [Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью Python](local-search-python-quickstart.md)

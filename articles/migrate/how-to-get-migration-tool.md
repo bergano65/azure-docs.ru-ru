@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: article
 ms.date: 09/17/2018
 ms.author: raynew
-ms.openlocfilehash: 0b02ae4b75426b379ad7c124f5ddeb053c142ce6
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 068b55e40afc96dbcfae26c8bf7da8a1b9ea349a
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45730300"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53249783"
 ---
 # <a name="migrate-machines-after-assessment"></a>Миграция компьютеров после оценки
 
@@ -19,6 +19,9 @@ ms.locfileid: "45730300"
 Служба [Миграция Azure](migrate-overview.md) оценивает локальные компьютеры, чтобы проверить, подходят ли они для миграции в Azure, и предоставляет оценку размера и затрат, необходимых для выполнения компьютера в Azure. В настоящее время служба "Миграция Azure" только оценивает компьютеры для миграции. Сама миграции выполняется с помощью других служб Azure.
 
 В этой статье описывается, как получить рекомендации по инструменту миграции после оценки миграции.
+
+> [!NOTE]
+> Рекомендация по инструменту миграции недоступна в Azure для государственных организаций.
 
 ## <a name="migration-tool-suggestion"></a>Рекомендация по инструменту миграции
 

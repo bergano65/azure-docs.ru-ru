@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
-ms.openlocfilehash: 7f1bb400650a223a9f0b4249c33f7c480a1bc009
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 7f90fccd062826493b7add1a90406fa9244e00b2
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51262375"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "53002049"
 ---
-# <a name="security-frame-sensitive-data--mitigations"></a>Механизм безопасности. Конфиденциальные данные | Устранение угроз 
+# <a name="security-frame-sensitive-data--mitigations"></a>Механизм безопасности. Конфиденциальные данные | Устранение угроз 
 | Продукт или служба | Статья |
 | --------------- | ------- |
 | **Граница доверия между компьютерами** | <ul><li>[Двоичные файлы, содержащие конфиденциальные данные, должны быть замаскированы](#binaries-info)</li><li>[Используйте шифрование на уровне файловой системы (EFS) для защиты конфиденциальных данных пользователя](#efs-user)</li><li>[Настройте шифрование конфиденциальных данных, сохраняемых приложением в файловой системе](#filesystem)</li></ul> | 
@@ -130,7 +130,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Руководство по шифрованию разделов конфигурации в ASP.NET 2.0 с помощью DPAPI](https://msdn.microsoft.com/library/ff647398.aspx), [сведения об указании поставщика защищенной конфигурации](https://msdn.microsoft.com/library/68ze1hb2.aspx), [использование Azure Key Vault для защиты секретов приложения](https://azure.microsoft.com/documentation/articles/guidance-multitenant-identity-keyvault/) |
+| **Справочные материалы**              | [Практическое руководство. Шифрование разделов конфигурации в ASP.NET 2.0 с помощью DPAPI](https://msdn.microsoft.com/library/ff647398.aspx), [сведения об указании поставщика защищенной конфигурации](https://msdn.microsoft.com/library/68ze1hb2.aspx), [использование Azure Key Vault для защиты секретов приложения](https://azure.microsoft.com/documentation/articles/guidance-multitenant-identity-keyvault/) |
 | **Действия** | Такие файлы конфигурации, как web.config и appsettings.json, часто используются для хранения конфиденциальной информации, включая имена пользователей, пароли, строки подключения к базам данных и ключи шифрования. Если эти данные не защищены, приложение становится уязвимым для злоумышленников, которые таким образом могут получить различные конфиденциальные сведения, например имена учетных записей пользователей, пароли, имена баз данных и имена серверов. На основе типа развертывания (Azure или локального) зашифруйте конфиденциальные разделы файлов конфигурации с помощью DPAPI или таких служб, как Azure Key Vault. |
 
 ## <a id="autocomplete-input"></a>Явным образом отключите автозаполнение атрибута HTML в конфиденциальных формах и входных данных
@@ -193,7 +193,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Версия SQL: все |
-| **Справочные материалы**              | [Контрольный список. Шифрование конфиденциальных данных](https://technet.microsoft.com/library/ff848751(v=sql.105).aspx), [Шифрование столбца данных](https://msdn.microsoft.com/library/ms179331), [ENCRYPTBYCERT (Transact-SQL)](https://msdn.microsoft.com/library/ms188061) |
+| **Справочные материалы**              | [Контрольный список. Шифрование конфиденциальных данных](https://technet.microsoft.com/library/ff848751(v=sql.105).aspx), [ Шифрование столбца данных](https://msdn.microsoft.com/library/ms179331), [ENCRYPTBYCERT (Transact-SQL)](https://msdn.microsoft.com/library/ms188061) |
 | **Действия** | В базе данных должны быть зашифрованы такие конфиденциальные данные, как номера кредитных карт. К данным можно применять шифрование на уровне столбцов или функции шифрования с помощью функции-приложения. |
 
 ## <a id="tde-enabled"></a>Включите шифрование уровня базы данных (TDE)
@@ -338,7 +338,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Недоступно  |
-| **Справочные материалы**              | [Шифрование на стороне клиента для службы хранилища Microsoft Azure](https://azure.microsoft.com/documentation/articles/storage-client-side-encryption/), [Шифрование и расшифровка BLOB-объектов в хранилище Microsoft Azure с помощью хранилища ключей Azure](https://azure.microsoft.com/documentation/articles/storage-encrypt-decrypt-blobs-key-vault/), [запись блога о безопасном хранении данных в хранилище BLOB-объектов Azure с расширениями шифрования Azure](https://blogs.msdn.microsoft.com/partnercatalystteam/2015/06/17/storing-data-securely-in-azure-blob-storage-with-azure-encryption-extensions/) |
+| **Справочные материалы**              | [Шифрование на стороне клиента для службы хранилища Microsoft Azure](https://azure.microsoft.com/documentation/articles/storage-client-side-encryption/), [Руководство. Шифрование и расшифровка BLOB-объектов в хранилище Microsoft Azure с помощью хранилища ключей Azure](https://azure.microsoft.com/documentation/articles/storage-encrypt-decrypt-blobs-key-vault/), [запись блога о безопасном хранении данных в хранилище BLOB-объектов Azure с расширениями шифрования Azure](https://blogs.msdn.microsoft.com/partnercatalystteam/2015/06/17/storing-data-securely-in-azure-blob-storage-with-azure-encryption-extensions/) |
 | **Действия** | <p>Клиентская библиотека службы хранилища Azure для пакета Nuget для .NET поддерживает шифрование данных в клиентских приложениях перед их отправкой в службу хранилища Azure и их расшифровку во время скачивания клиентом. Библиотека также поддерживает интеграцию с хранилищем ключей Azure для управления ключами учетной записи хранения. Вот краткое описание того, как работает шифрование на стороне клиента.</p><ul><li>Пакет SDK клиента хранилища Azure создает ключ шифрования содержимого (CEK), который является одноразовым симметричным ключом.</li><li>Данные пользователей шифруются с помощью этого ключа CEK.</li><li>Ключ CEK, в свою очередь, шифруется с помощью ключа шифрования ключа KEK. Ключ KEK определяется идентификатором ключа и может быть парой асимметричных ключей или симметричным ключом. Вы можете управлять им локально или хранить его в хранилище ключей Azure. У самого клиента хранилища нет доступа к KEK. Он просто вызывает алгоритм шифрования ключа, предоставляемый хранилищем ключей. Пользователи могут при необходимости использовать настраиваемые поставщики для шифрования и расшифровки ключа.</li><li>Зашифрованные данные затем передаются в службу хранилища Azure. Просмотрите ссылки в разделе справочных сведений, чтобы получить низкоуровневые сведения о реализации.</li></ul>|
 
 ## <a id="pii-phones"></a>Шифруйте конфиденциальные данные или личные данные, записываемые в локальное хранилище телефонов
@@ -429,7 +429,7 @@ Allow screen capture
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальные, .NET Framework 3 |
 | **Атрибуты**              | Режим безопасности — транспорт или сообщение |
-| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.hpefod.com/en/detail?id=desc.semantic.dotnet.wcf_misconfiguration_security_not_enabled), [основы безопасности WCF](http://www.codemag.com/article/0611051) |
+| **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_weak_class_reference), [основы безопасности WCF](http://www.codemag.com/article/0611051) |
 | **Действия** | Безопасность доставки и сообщений не определена. Приложения, передающие сообщения без защиты доставки или сообщений, не могут гарантировать их целостность и конфиденциальность. Если для привязки безопасности WCF задано значение None, безопасность доставки и сообщений отключена. |
 
 ### <a name="example"></a>Пример

@@ -8,12 +8,12 @@ ms.date: 06/19/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: c11013c926e77447a69ce0dfe697fdda1ecc2b8c
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: 52ff52ffb558278507bb24e1b1e2054c251b2512
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52284852"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52879648"
 ---
 # <a name="troubleshoot-errors-when-onboarding-solutions"></a>Устранение неполадок при подключении решения
 
@@ -21,7 +21,7 @@ ms.locfileid: "52284852"
 
 ## <a name="general-errors"></a>Общие ошибки
 
-### <a name="computer-grou-query-format-error"></a>Сценарий: ComputerGroupQueryFormatError
+### <a name="computer-group-query-format-error"></a>Ошибка ComputerGroupQueryFormatError
 
 #### <a name="issue"></a>Проблема
 
@@ -35,7 +35,7 @@ ms.locfileid: "52284852"
 
 Вы можете удалить запрос для этого решения и заново подключить решение. Запрос также будет создан заново. Текущий запрос можно найти в разделе **Сохраненные поисковые запросы** рабочей области. Этот запрос имеет имя **MicrosoftDefaultComputerGroup** и категорию, имя которой совпадает с именем связанного решения. Если включены сразу несколько решений, группа **MicrosoftDefaultComputerGroup** отображается в области **Сохраненные условия поиска** несколько раз.
 
-### <a name="policy-violation"></a>Сценарий: PolicyViolation
+### <a name="policy-violation"></a>Ошибка PolicyViolation
 
 #### <a name="issue"></a>Проблема
 
@@ -55,7 +55,7 @@ ms.locfileid: "52284852"
   * повторно примените политику к конкретному ресурсу (например, к конкретной учетной записи службы автоматизации);
   * пересмотрите набор ресурсов, к которым политика запрещает доступ.
 
-Проверьте уведомления в правом верхнем углу портала Azure или перейдите к группе ресурсов, которая содержит выбранную учетную запись автоматизации, и нажмите **Развертывания** в разделе **Параметры**, чтобы изучить проблемное развертывание. Дополнительные сведения о политике Azure см. в [обзоре политики Azure](../../azure-policy/azure-policy-introduction.md?toc=%2fazure%2fautomation%2ftoc.json).
+Проверьте уведомления в правом верхнем углу портала Azure или перейдите к группе ресурсов, которая содержит выбранную учетную запись автоматизации, и нажмите **Развертывания** в разделе **Параметры**, чтобы изучить проблемное развертывание. Дополнительные сведения о Политике Azure см. в статье [Что такое служба "Политика Azure"?](../../azure-policy/azure-policy-introduction.md?toc=%2fazure%2fautomation%2ftoc.json)
 
 ## <a name="mma-extension-failures"></a>Устранение неполадок расширения MMA
 
@@ -67,7 +67,7 @@ ms.locfileid: "52284852"
 
 В следующем разделе описаны различные проблемы, возникающие при подключении, которые могут привести к ошибкам при развертывании расширения MMA.
 
-### <a name="webclient-exception"></a>Сценарий: Исключение во время запроса WebClient
+### <a name="webclient-exception"></a>Ошибка An exception occurred during a WebClient request (Исключение во время запроса WebClient)
 
 Расширению MMA виртуальной машины не удается установить связь с внешними ресурсами, что приводит к ошибке развертывания.
 
@@ -95,7 +95,7 @@ Please verify the VM has a running VM agent, and can establish outbound connecti
 
 Убедитесь в том, что у вас открыты порты и адреса, которые необходимы для сеанса связи. Список портов и адресов можно узнать в разделе [Настройка сети](../automation-hybrid-runbook-worker.md#network-planning).
 
-### <a name="transient-environment-issue"></a>Сценарий: ошибка установки из-за проблем с окружающей средой
+### <a name="transient-environment-issue"></a>Ошибка Install failed due to transient environment issues (Сбой установки из-за временных проблем со средой)
 
 Во время развертывания установить расширение Microsoft Monitoring Agent не удалось, так как процесс установки был заблокирован другой установкой или действием
 
@@ -126,7 +126,7 @@ The Microsoft Monitoring Agent failed to install on this machine. Please try to 
 
 По своей природе эта ошибка является временной. Чтобы установить расширение, необходимо повторить развертывание.
 
-### <a name="installation-timeout"></a>Сценарий: время ожидания установки истекло
+### <a name="installation-timeout"></a>Ошибка Installation timeout (Превышено время ожидания при установке)
 
 Установить расширение MMA не удалось из-за превышения времени ожидания.
 

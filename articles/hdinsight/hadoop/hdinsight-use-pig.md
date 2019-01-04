@@ -1,5 +1,5 @@
 ---
-title: Использование Apache Pig в HDInsight
+title: Использование Apache Pig в Azure HDInsight
 description: Узнайте, как использовать Pig с Apache Hadoop в HDInsight.
 services: hdinsight
 author: hrasheed-msft
@@ -9,16 +9,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
-ms.openlocfilehash: 6a1247048907d81b3c9db644bcdb7b5e5eee5fba
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 25a91c6217aac1b2278957c1ff0ed8b7a9b1f6ac
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633637"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53166172"
 ---
 # <a name="use-apache-pig-with-apache-hadoop-on-hdinsight"></a>Использование Apache Pig с Apache Hadoop в HDInsight
 
-Узнайте, как использовать [Apache Pig](http://pig.apache.org/) с HDInsight.
+Узнайте, как использовать [Apache Pig](https://pig.apache.org/) с HDInsight.
 
 Apache Pig — это платформа, позволяющая создавать программы для Hadoop с помощью процедурного языка, известного как *Pig Latin*. Pig, который является альтернативой Java для создания решений *MapReduce* , входит в состав Azure HDInsight. Воспользуйтесь приведенной таблицей, чтобы узнать, как можно использовать Pig с HDInsight.
 
@@ -42,7 +42,7 @@ Pig позволяет определить обработку как ряд п�
 
 * **Загрузка**: чтение данных для обработки из файловой системы.
 
-* **Преобразование**: обработка данных.
+* **Преобразование**: обработка данных
 
 * **Дамп или сохранение**: вывод данных на экран или сохранение их для дальнейшей обработки.
 
@@ -69,7 +69,7 @@ HDInsight предоставляет различные наборы демон�
 В предыдущем примере уровень журнала имеет значение ERROR ("ошибка").
 
 > [!NOTE]
-> Вы также можете создать файл log4j с помощью средства ведения журнала [Apache Log4j](http://en.wikipedia.org/wiki/Log4j), а затем отправить этот файл в большой двоичный объект. Дополнительные сведения см. в статье [Отправка данных для заданий Hadoop в HDInsight](../hdinsight-upload-data.md). Дополнительные сведения о том, каким образом большие двоичные объекты в службе хранилища Azure используются с HDInsight, см. в статье [Использование хранилища BLOB-объектов Azure с HDInsight](../hdinsight-hadoop-use-blob-storage.md).
+> Вы также можете создать файл log4j с помощью средства ведения журнала [Apache Log4j](https://en.wikipedia.org/wiki/Log4j), а затем отправить этот файл в большой двоичный объект. Дополнительные сведения см. в статье [Отправка данных для заданий Hadoop в HDInsight](../hdinsight-upload-data.md). Дополнительные сведения о том, каким образом большие двоичные объекты в службе хранилища Azure используются с HDInsight, см. в статье [Использование хранилища BLOB-объектов Azure с HDInsight](../hdinsight-hadoop-use-blob-storage.md).
 
 ## <a id="job"></a>Пример задания
 
@@ -120,12 +120,12 @@ HDInsight может запускать задания Pig Latin с помощь
 * [Использование Oozie с HDInsight](../hdinsight-use-oozie.md)
 * [Использование заданий MapReduce с HDInsight][hdinsight-use-mapreduce]
 
-[apachepig-home]: http://pig.apache.org/
-[putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
-[curl]: http://curl.haxx.se/
-[pigtask]: http://msdn.microsoft.com/library/mt146781(v=sql.120).aspx
-[connectionmanager]: http://msdn.microsoft.com/library/mt146773(v=sql.120).aspx
-[ssispack]: http://msdn.microsoft.com/library/mt146770(v=sql.120).aspx
+[apachepig-home]: https://pig.apache.org/
+[putty]: https://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
+[curl]: https://curl.haxx.se/
+[pigtask]: https://msdn.microsoft.com/library/mt146781(v=sql.120).aspx
+[connectionmanager]: https://msdn.microsoft.com/library/mt146773(v=sql.120).aspx
+[ssispack]: https://msdn.microsoft.com/library/mt146770(v=sql.120).aspx
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
 
 [hdinsight-use-hive]:../hdinsight-use-hive.md
@@ -136,7 +136,7 @@ HDInsight может запускать задания Pig Latin с помощь
 
 [Powershell-install-configure]: /powershell/azureps-cmdlets-docs
 
-[powershell-start]: http://technet.microsoft.com/library/hh847889.aspx
+[powershell-start]: https://technet.microsoft.com/library/hh847889.aspx
 
 
 [image-hdi-pig-data-transformation]: ./media/hdinsight-use-pig/HDI.DataTransformation.gif

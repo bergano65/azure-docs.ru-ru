@@ -1,46 +1,49 @@
 ---
-title: Использование расширения Visual Studio Code Tools for AI со службой "Машинное обучение Azure"
-description: Сведения о Visual Studio Code Tools for AI и о том, как начать обучение и развертывание моделей машинного и глубокого обучения с помощью службы "Машинное обучение Azure" в VS Code.
+title: Использование с Visual Studio Code
+titleSuffix: Azure Machine Learning service
+description: Узнайте, как установить Машинное обучение Azure для Visual Studio Code, и создайте простой эксперимент в Машинном обучении Azure.
 services: machine-learning
 ms.service: machine-learning
 ms.component: core
 ms.topic: conceptual
 ms.author: shwinne
 author: swinner95
-ms.reviewer: jmartens
-ms.date: 10/1/2018
-ms.openlocfilehash: 57fe511e5de0d73f2a372da0ecab3e9a3039b194
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.date: 12/04/2018
+ms.custom: seodec18
+ms.openlocfilehash: 898fd7d0416d1e1b27a25cabf524e72a7de44fde
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51854209"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53269601"
 ---
-# <a name="vs-code-tools-for-ai-get-started-with-azure-machine-learning-from-visual-studio-code"></a>VS Code Tools for AI. Начало работы со службой "Машинное обучение Azure" в Visual Studio Code
+# <a name="get-started-with-azure-machine-learning-for-visual-studio-code"></a>Приступая к работе с Azure Machine Learning for Visual Studio Code
 
-Из этой статьи вы узнаете о расширении **Tools for AI** для Visual Studio Code (VS Code) и о том, как начать обучение и развертывание моделей машинного и глубокого обучения с помощью службы "Машинное обучение Azure" в VS Code.
+В этой статье вы узнаете, как установить расширение **Azure Machine Learning for Visual Studio Code** и создать первый эксперимент с помощью Службы машинного обучения Azure в Visual Studio Code (VS Code).
 
-Используйте расширение Tools for AI в Visual Studio Code совместно со службой "Машинное обучение Azure" для того, чтобы подготовить данные, обучить и протестировать модели машинного обучения на локальных и удаленных целевых вычислительных ресурсах, развернуть эти модели и отслеживать пользовательские метрики и эксперименты.
+Используйте расширение Azure Machine Learning for Visual Studio Code в Visual Studio Code, чтобы с помощью Службы машинного обучения Azure можно было подготовить данные, обучить и протестировать модели машинного обучения на локальных и удаленных целевых объектах вычислений, развернуть эти модели и отслеживать пользовательские метрики и эксперименты.
 
 ## <a name="prerequisite"></a>Предварительные требования
+
+
++ Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
 
 + Необходимо установить Visual Studio Code. VS Code — это легковесный, но мощный редактор исходного кода, который работает на компьютере. В нем реализована поддержка Python и других языков.  [Сведения об установке VS Code](https://code.visualstudio.com/docs/setup/setup-overview).
 
 + [Установка Python версии 3.5 или более поздней](https://www.anaconda.com/download/).
 
-+ Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://aka.ms/AMLfree), прежде чем начинать работу.
 
-## <a name="install-vs-code-tools-for-ai-extension"></a>Установка расширения VS Code Tools for AI
+## <a name="install-the-azure-machine-learning-for-vs-code-extension"></a>Установка расширения Azure Machine Learning for VS Code
 
-При установке расширения **Tools for AI** автоматически устанавливаются два других расширения (при наличии доступа к Интернету). Это расширения [Azure Account](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) и [Microsoft Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
+При установке расширения **Azure Machine Learning for Visual Studio Code** автоматически устанавливаются два других расширения (при наличии доступа к Интернету). Это расширения [Azure Account](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account) и [Microsoft Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python).
 
-Для работы со службой "Машинное обучение Azure" нам нужно преобразовать VS Code в интегрированную среду разработки на языке Python. Для работы с [Python в Visual Studio Code](https://code.visualstudio.com/docs/languages/python) требуется расширение Microsoft Python, которое автоматически устанавливается вместе с Tools for AI. Это расширение превращает VS Code в мощную интегрированную среду разработки, которая работает в любой операционной системе с различными интерпретаторами Python. Оно использует все возможности VS Code, предоставляя функции автозаполнения и IntelliSense, анализа кода, отладки и модульного тестирования, а также возможность легко переключаться между окружениями Python, включая виртуальные окружения и окружения conda. Пошаговые инструкции по редактированию, запуску и отладке кода Python см. в [руководстве по началу работы с Python](https://code.visualstudio.com/docs/python/python-tutorial).
+Для работы со службой "Машинное обучение Azure" нам нужно преобразовать VS Code в интегрированную среду разработки на языке Python. Для работы с [Python в Visual Studio Code](https://code.visualstudio.com/docs/languages/python) требуется расширение Microsoft Python, которое автоматически устанавливается вместе с расширением Azure Machine Learning for Visual Studio Code. Это расширение превращает VS Code в мощную интегрированную среду разработки, которая работает в любой операционной системе с различными интерпретаторами Python. Оно использует все возможности VS Code, предоставляя функции автозаполнения и IntelliSense, анализа кода, отладки и модульного тестирования, а также возможность легко переключаться между окружениями Python, включая виртуальные окружения и окружения conda. Пошаговые инструкции по редактированию, запуску и отладке кода Python см. в [руководстве по началу работы с Python](https://code.visualstudio.com/docs/python/python-tutorial).
 
-**Для установки расширения Tools for AI выполните следующие действия:**
+**Чтобы установить расширение Azure Machine Learning for Visual Studio Code, сделайте следующее.**
 
 1. Запустите VS Code.
 
-1. В веб-браузере откройте страницу https://aka.ms/vscodetoolsforai. 
+1. В браузере перейдите по ссылке: [Расширение Azure Machine Learning for Visual Studio Code (предварительная версия)](https://aka.ms/vscodetoolsforai)
 
 1. На этой странице нажмите **Install** (Установить). 
 
@@ -52,7 +55,7 @@ ms.locfileid: "51854209"
 
 1. В диалоговом окне нажмите **Sign In** (Войти) и следуйте инструкциям во всплывающем окне, чтобы выполнить проверку подлинности в Azure. 
    
-   Расширение Azure Account, которое было установлено вместе с VS Code Tools for AI, поможет выполнить проверку подлинности для вашей учетной записи Azure. Список команд см. на странице [расширения Azure Account ](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
+   Расширение Azure Account, которое было установлено вместе с расширением Azure Machine Learning for Visual Studio Code, поможет выполнить аутентификацию вашей учетной записи Azure. Список команд см. на странице [расширения Azure Account ](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 
 > [!Tip] 
 > Ознакомьтесь с расширением [IntelliCode для VS Code (предварительная версия)](https://go.microsoft.com/fwlink/?linkid=2006060). IntelliCode предоставляет набор возможностей на основе искусственного интеллекта для функции IntelliSense в языке Python, например определение наиболее подходящих объектов для автозаполнения на основе текущего контекста кода.
@@ -64,25 +67,26 @@ ms.locfileid: "51854209"
 1. В VS Code откройте палитру команд с помощью клавиш **CTRL+SHIFT+P**.
 
 1. Введите Install Azure ML SDK, чтобы найти команду установки пакета SDK с помощью pip. Будет создано локальное частное окружение Python, содержащее все компоненты, требуемые Visual Studio Code для работы со службой "Машинное обучение Azure".
-   ![Установка](./media/vscode-tools-for-ai/install-sdk.png)
+
+   ![Установка пакета SDK Машинного обучения Azure для Python](./media/vscode-tools-for-ai/install-sdk.png)
 
 1. Во встроенном окне терминала укажите используемый интерпретатор Python или нажмите клавишу **ВВОД**, чтобы использовать интерпретатор Python по умолчанию.
 
-   ![Установка](./media/vscode-tools-for-ai/python.png)
+   ![Выбор интерпретатора](./media/vscode-tools-for-ai/python.png)
 
 ## <a name="get-started-with-azure-machine-learning"></a>Начало работы со службой "Машинное обучение Azure"
 
-Прежде чем начать обучение и развертывание моделей машинного обучения с помощью VS Code, необходимо создать [рабочую область в облачной службе "Машинное обучение Azure"](concept-azure-machine-learning-architecture.md#workspace), которая будет содержать модели и ресурсы. Ознакомьтесь со сведениями о создании рабочей области и создайте в ней свой первый эксперимент.
+Прежде чем начать обучение и развертывание моделей машинного обучения с помощью VS Code, необходимо создать [рабочую область в облачной Службе машинного обучения Azure](concept-azure-machine-learning-architecture.md#workspace), которая будет содержать модели и ресурсы. Ознакомьтесь со сведениями о создании рабочей области и создайте в ней свой первый эксперимент.
 
-1. Щелкните значок Azure на панели действий Visual Studio Code. Появится боковая панель Azure: Machine Learning.
+1. Щелкните значок Azure на панели действий Visual Studio Code. Появится боковая панель "Машинное обучение Azure".
 
-   ![Установка](./media/vscode-tools-for-ai/createworkspace.gif)
+   [![Боковая панель](./media/vscode-tools-for-ai/CreateNewWorkspace.gif)](./media/vscode-tools-for-ai/CreateNewWorkspace.gif#lightbox)
 
-1. Щелкните правой кнопкой мыши подписку Azure и выберите **Create Workspace** (Создать рабочую область). Появится список. В примере, показанном на анимированном изображении, имя подписки — OpenMind Studio, а рабочее пространство — MyWorkspace. 
+1. Щелкните правой кнопкой мыши подписку Azure и выберите **Create Workspace** (Создать рабочую область). Появится список. В примере, показанном на анимированном изображении, имя подписки — Free Trial, а рабочее пространство — TeamWorkspace. 
 
-1. Выберите существующую группу ресурсов в списке или создайте новую с помощью мастера в палитре команд.
+1. Выберите существующую группу ресурсов из списка или создайте новую с помощью мастера в палитре команд.
 
-1. В поле введите уникальное и понятное имя новой рабочей области. На снимках экрана имя рабочей области — MyWorkspace.
+1. В поле введите уникальное и понятное имя новой рабочей области. На снимках экрана имя рабочей области — TeamWorkspace.
 
 1. Нажмите клавишу ВВОД для создания рабочей области. Она появится в древовидном представлении под именем подписки.
 
@@ -92,17 +96,17 @@ ms.locfileid: "51854209"
  
 1. Нажмите клавишу ВВОД для создания эксперимента. Он отобразится в древовидной структуре под именем рабочей области.
 
-1. Щелкните правой кнопкой мыши имя эксперимента и выберите **Attach a local folder** (Присоединить локальную папку). В этой папке должны находиться локальные скрипты Python. Эта папка будет подключена к эксперименту в облаке. 
+1. Щелкните правой кнопкой мыши имя эксперимента и выберите **Attach Folder to Experiment** (Подключить папку к эксперименту). В этой папке должны находиться локальные скрипты Python. Эта папка будет подключена к эксперименту в облаке. 
 
    Теперь все выполняемые операции связаны с экспериментом, благодаря чему все ключевые метрики будут храниться в журнале эксперимента, а обученные модели будут автоматически отправляться в службу "Машинное обучение Azure" и храниться вместе с метриками и журналами эксперимента.
 
-   [![Присоединение папки в VS Code](./media/vscode-tools-for-ai/attachfolder.gif)](./media/vscode-tools-for-ai/attachfolder.gif#lightbox)
+   [![Присоединение папки в VS Code](./media/vscode-tools-for-ai/CreateNewExperimentandFolder.gif)](./media/vscode-tools-for-ai/CreateNewExperimentandFolder.gif#lightbox)
 
 ### <a name="use-keyboard-shortcuts"></a>Использование сочетаний клавиш
 
 Как и для большинства функций VS Code, для службы "Машинное обучение Azure" в VS Code предусмотрены сочетания клавиш. Самое важное сочетание клавиш, которое нужно запомнить, — это CTRL+SHIFT+P для вызова палитры команд. Из палитры вы получаете доступ ко всем функциям VS Code, включая сочетания клавиш для самых распространенных операций.
 
-[![Сочетания клавиш для VS Code Tools for AI](./media/vscode-tools-for-ai/commands.gif)](./media/vscode-tools-for-ai/commands.gif#lightbox)
+[![Сочетания клавиш для расширения Azure Machine Learning for VS Code](./media/vscode-tools-for-ai/commands.gif)](./media/vscode-tools-for-ai/commands.gif#lightbox)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

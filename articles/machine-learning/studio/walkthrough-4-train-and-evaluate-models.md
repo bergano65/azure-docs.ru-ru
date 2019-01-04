@@ -1,12 +1,11 @@
 ---
-title: Шаг 4. Обучение моделей прогнозирующей аналитики в Студии машинного обучения Azure | Документация Майкрософт
-description: 'Четвертый этап пошагового руководства по разработке прогнозного решения: обучение и оценка нескольких моделей в студии машинного обучения Azure.'
+title: Шаг 4. Обучение моделей прогнозной аналитики в Студии машинного обучения Azure | Документация Майкрософт
+description: Пошаговое руководство по разработке решения прогнозирования (шаг 4). Обучение и оценка нескольких моделей в Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
-author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
-ms.author: amlstudiodocs
-manager: hjerez
+author: garyericson
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
+ms.author: garye
 editor: cgronlun
 ms.assetid: d905f6b3-9201-4117-b769-5f9ed5ee1cac
 ms.service: machine-learning
@@ -16,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/23/2017
-ms.openlocfilehash: 4b4ffcf8e6c886a2f182c844f940e53c24d1efa0
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 2464ef0ba89f138834bedfdc9f29347092e5fe99
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52313475"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53254519"
 ---
-# <a name="walkthrough-step-4-train-and-evaluate-the-predictive-analytic-models-in-machine-learning-studio"></a>Шаг 4. Обучение и анализ моделей прогнозирующей аналитики в Студии машинного обучения
+# <a name="walkthrough-step-4-train-and-evaluate-the-predictive-analytic-models-in-machine-learning-studio"></a>Пошаговое руководство (шаг 4). Обучение и анализ моделей прогнозной аналитики в Студии машинного обучения
 Это четвертая часть пошагового руководства [по разработке решения для прогнозной аналитики в Машинном обучении Azure](walkthrough-develop-predictive-solution.md).
 
 1. [Создание рабочей области Студии машинного обучения](walkthrough-1-create-ml-workspace.md)
@@ -190,7 +189,7 @@ ms.locfileid: "52313475"
 > 
 
 - - -
-**Дальнейшие действия: [Развертывание веб-службы](walkthrough-5-publish-web-service.md)**
+**Дальнейшие действия. [Развертывание веб-службы](walkthrough-5-publish-web-service.md)**
 
 [0]: ./media/walkthrough-4-train-and-evaluate-models/train-model-select-column.png
 [1]: ./media/walkthrough-4-train-and-evaluate-models/experiment-with-train-model.png

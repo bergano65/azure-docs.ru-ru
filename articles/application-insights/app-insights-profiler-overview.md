@@ -8,17 +8,16 @@ manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 7e0734790a0b33a52ace01ad961b1bc3127fa3d4
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: 7780c10233a0ce256ee6e9015f40ea789516c25b
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51976525"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52726905"
 ---
 # <a name="profile-production-applications-in-azure-with-application-insights"></a>Профилирование приложений в рабочей среде Azure с помощью Application Insights Profiler
 ## <a name="enable-profiler-for-your-application"></a>Включение профилировщика для приложений
@@ -50,10 +49,10 @@ Application Insights Profiler предоставляет трассировки 
 
 Обозреватель трассировки отображает следующие сведения:
 
-* **Показать критический путь** — открывает основной листовой узел или хотя бы что-то с ним связанное. В большинстве случаев этот узел находится рядом с узким местом производительности.
+* **Показать критический путь** — открывает основной листовой узел или похожий конечный объект. В большинстве случаев этот узел находится рядом с узким местом производительности.
 * **Метка** — имя функции или события. В дереве отображается сочетание кода и возникающих событий (например, события SQL и HTTP). Основное событие предоставляет общую длительность запроса.
-* **Истекло** — интервал времени между началом и завершением операции.
-* **Когда** — время запуска функции или события по отношению к другим функциям.
+* **Прошло** — интервал времени между началом и завершением операции.
+* **Когда** — время запуска функции или события по отношению к другим функциям.
 
 ## <a name="how-to-read-performance-data"></a>Чтение данных о производительности
 

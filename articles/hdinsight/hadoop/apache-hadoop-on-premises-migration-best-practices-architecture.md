@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
-ms.openlocfilehash: 62e15b5845ed9faa605f978f0d2fd427c9c3ee9b
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 8295c149d513f89318aa63ddd7f4236013923203
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51008187"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53434014"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---architecture-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
 
@@ -49,7 +49,7 @@ ms.locfileid: "51008187"
 |[пакет SDK для Java](https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable)||||X|
 |[Шаблоны диспетчера ресурсов Azure](../hdinsight-hadoop-create-linux-clusters-arm-templates.md)||X|||
 
-Дополнительные сведения см. в статье [Что такое Azure HDInsight и стек технологий Hadoop](../hadoop/apache-hadoop-introduction.md).
+Дополнительные сведения см. в статье [Что такое Azure HDInsight и стек технологий Apache Hadoop](../hadoop/apache-hadoop-introduction.md).
 
 ## <a name="use-transient-on-demand-clusters"></a>Использование промежуточных кластеров по запросу
 
@@ -57,7 +57,7 @@ ms.locfileid: "51008187"
 
 При удалении кластера связанная учетная запись хранения и внешние метаданные не удаляются. Кластер можно создавать повторно с использованием тех же учетных записей хранения и хранилищ метаданных.
 
-Фабрику данных Azure можно использовать для планирования создания кластеров HDInsight по запросу. Дополнительные сведения см. в статье [Руководство. Создание кластеров Hadoop в HDInsight по запросу с помощью фабрики данных Azure](../hdinsight-hadoop-create-linux-clusters-adf.md).
+Фабрику данных Azure можно использовать для планирования создания кластеров HDInsight по запросу. Дополнительные сведения см. в статье [Руководство. Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure](../hdinsight-hadoop-create-linux-clusters-adf.md).
 
 ## <a name="decouple-storage-from-compute"></a>Отделение ресурсов хранилища от вычислительных ресурсов
 
@@ -75,7 +75,9 @@ ms.locfileid: "51008187"
 
 ## <a name="use-external-metadata-stores"></a>Использование внешних хранилищ метаданных
 
-Существует два основных хранилища метаданных, которые работают с кластерами HDInsight: Hive и Oozie. Хранилище метаданных Hive — это центральный репозиторий схемы, который могут использовать модули обработки данных, такие как Hadoop, Spark, LLAP, Presto и Pig. Хранилище метаданных Oozie хранит сведения о планировании, состояние хода выполнения и выполненные задания Hadoop.
+
+Существует два основных хранилища метаданных, которые работают с кластерами HDInsight: [Apache Hive](https://hive.apache.org/) и [Apache Oozie](https://oozie.apache.org/). Хранилище метаданных Hive — это центральный репозиторий схемы, который могут использовать модули обработки данных, такие как Hadoop, Spark, LLAP, Presto и Apache Pig. Хранилище метаданных Oozie хранит сведения о планировании, состояние хода выполнения и выполненные задания Hadoop.
+
 
 HDInsight использует Базу данных SQL Azure для хранилищ метаданных Hive и Oozie. Есть два способа настроить хранилище метаданных для кластеров HDInsight.
 
@@ -106,7 +108,7 @@ HDInsight использует Базу данных SQL Azure для храни
 - Отслеживайте производительность и доступность хранилища метаданных с помощью инструментов мониторинга Базы данных SQL Azure, таких как портал Azure или Azure Log Analytics.
 - Выполняйте команду **ANALYZE TABLE** по необходимости, чтобы создать статистику для таблиц и столбцов. Например, `ANALYZE TABLE [table_name] COMPUTE STATISTICS`.
 
-## <a name="best-practices-for-different-types-of-workloads"></a>Рекомендации по различным типам рабочих нагрузок
+## <a name="best-practices-for-different-workloads"></a>Рекомендации для различных рабочих нагрузок
 
 - Рассмотрите возможность использования кластера LLAP для интерактивных запросов Hive с улучшенным временем отклика. [LLAP](https://cwiki.apache.org/confluence/display/Hive/LLAP) — это новая функция в Hive 2.0, которая разрешает кэширование запросов в памяти. LLAP создает запросы Hive гораздо быстрее — в  [некоторых случаях в 26 раз быстрее, чем Hive версии 1.x](https://hortonworks.com/blog/announcing-apache-hive-2-1-25x-faster-queries-much/).
 - Рассмотрите возможность использования заданий Spark вместо заданий Hive.

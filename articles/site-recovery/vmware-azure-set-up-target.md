@@ -6,14 +6,14 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 10/29/2018
+ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: a6f983b08415659b9a989ebed824cddd210396e1
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: cbf9c1a49481de49fb8d9c6599acec7bc3600df3
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233435"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52837517"
 ---
 # <a name="prepare-the-target-environment-for-disaster-recovery-of-vmware-vms-or-physical-servers-to-azure"></a>Подготовка целевой среды к аварийному восстановлению виртуальных машин VMware или физических серверов в Azure
 
@@ -27,12 +27,12 @@ ms.locfileid: "50233435"
 
 ## <a name="prepare-target"></a>Подготовка цели
 
-**Выбрав цель защиты** и **подготовив источник**, следует перейти к **настройке цели**.
+**Выбрав цель защиты** (шаг 1) и **подготовив источник** (шаг 2), следует перейти к **подготовке цели** (шаг 3).
 
 ![Подготовка цели](./media/vmware-azure-set-up-target/prepare-target-vmware-to-azure.png)
 
-1. **Подписка:** из раскрывающегося меню выберите подписку, в которую требуется реплицировать виртуальные машины или физические серверы.
-2. **Модель развертывания:** выберите модель развертывания (классическую модель или модель Resource Manager).
+1. **Подписка.** Из раскрывающегося меню выберите подписку, в которую требуется реплицировать виртуальные машины или физические серверы.
+2. **Модель развертывания.** Выберите модель развертывания (классическую или модель Resource Manager).
 
 После выбора модели развертывания выполняется проверка наличия как минимум одной совместимой учетной записи хранения и виртуальной сети в целевой подписке, выбранной для репликации и отработки отказа виртуальных машин или физических серверов.
 

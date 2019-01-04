@@ -1,5 +1,5 @@
 ---
-title: Защита содержимого с помощью служб мультимедиа Azure | Документация Майкрософт
+title: Защита содержимого с помощью служб мультимедиа Azure — Azure | Документация Майкрософт
 description: В этой статье представлен обзор защиты содержимого с помощью служб мультимедиа.
 services: media-services
 documentationcenter: ''
@@ -11,14 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 12/08/2018
 ms.author: juliako
-ms.openlocfilehash: 1c7454aead07c728d55ff2c309cca83a792aac88
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.custom: seodec18
+ms.openlocfilehash: cb7e867ea4304cf8b8741eac183e60d325c752c7
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238355"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141855"
 ---
 # <a name="content-protection-overview"></a>Обзор системы защиты содержимого
 
@@ -59,7 +60,7 @@ ms.locfileid: "51238355"
 
     Для тестирования зашифрованного содержимого AES или CENC (Widevine и (или) PlayReady) можно использовать [Проигрыватель мультимедиа Azure](https://ampdemo.azureedge.net/azuremediaplayer.html). Обязательно щелкните "Дополнительные параметры" и проверьте параметры шифрования.
 
-    Если необходимо протестировать зашифрованное содержимое FairPlay, используйте [этот тестовый проигрыватель](https://aka.ms/amtest). Проигрыватель поддерживает DRM Widevine, PlayReady и FairPlay, а также шифрование незащищенного ключа AES-128. Для тестирования различных DRM нужно выбрать правильный браузер: Chrome, Opera или Firefox для Widevine, Microsoft Edge или IE11 для PlayReady, Safari в macOS для FairPlay.
+    Если необходимо протестировать зашифрованное содержимое FairPlay, используйте [этот тестовый проигрыватель](https://aka.ms/amtest). Проигрыватель поддерживает DRM Widevine, PlayReady и FairPlay, а также шифрование незащищенного ключа AES-128. Необходимо выбрать правильный браузер для тестирования различных систем управления цифровыми правами: Chrome/Opera/Firefox для Widevine, MS Edge и IE 11 для PlayReady, Safari в Mac OS для FairPlay.
 
 3. Служба токенов безопасности (STS), которая выдает JSON Web Token (JWT) в качестве маркера доступа для доступа к серверному ресурсу. Как серверный ресурс можно использовать службу доставки лицензий AMS. Служба токенов безопасности должна определять следующие данные.
 

@@ -1,25 +1,23 @@
 ---
-title: Интерфейс API, пакет SDK и ресурсы для SQL Java (Azure Cosmos DB) | Документация Майкрософт
+title: Azure Cosmos DB — API, пакет SDK и ресурсы для SQL Java
 description: Сведения о пакете SDK и API-интерфейсе SQL Java, включая даты выхода и прекращения использования, а также изменения, внесенные в каждую версию пакета SDK SQL Java для Azure Cosmos DB.
 services: cosmos-db
 author: rnagpal
-manager: kfile
-editor: cgronlun
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 11/21/2018
+ms.date: 11/29/2018
 ms.author: rnagpal
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 4c58c1972fee782a93f9641d00376db916021f95
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: e5c733ecd65482e4b02a5d4e28784e84e63f2231
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52634495"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53340527"
 ---
-# <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Java для API-интерфейса SQL
+# <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
 > * [Веб-канал изменений в .NET](sql-api-sdk-dotnet-changefeed.md)
@@ -30,7 +28,7 @@ ms.locfileid: "52634495"
 > * [Python](sql-api-sdk-python.md)
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
-> * [SQL](https://msdn.microsoft.com/library/azure/dn782250.aspx)
+> * [SQL](sql-api-query-reference.md)
 > * [BulkExecutor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
 > * [BulkExecutor — Java](sql-api-sdk-bulk-executor-java.md)
 
@@ -38,7 +36,7 @@ ms.locfileid: "52634495"
 
 <table>
 
-<tr><td>**Скачивание пакета SDK**</td><td>[Maven](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22)</td></tr>
+<tr><td>**Скачивание пакета SDK**</td><td>[Maven](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.microsoft.azure%22%20AND%20a%3A%22azure-documentdb%22)</td></tr>
 
 <tr><td>**Документация по API**</td><td>[Справочная документация по API Java](/java/api/com.microsoft.azure.documentdb)</td></tr>
 
@@ -52,6 +50,23 @@ ms.locfileid: "52634495"
 </table></br>
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0
+* Добавлена поддержка операций записи в нескольких регионах для режима прямого подключения.
+* Добавлена поддержка обработки исключений IOException, генерируемых как исключения ServiceUnavailable из прокси-сервера.
+* Исправлена ошибка в политике повтора обнаружения конечных точек.
+* Исправлена ошибка, приводившая к возникновению исключения пустого указателя в BaseDatabaseAccountConfigurationProvider.
+* Исправлена ошибка, в результате которой итератор запроса возвращал нулевые значения.
+* Исправлена ошибка, не разрешающая использование большого ключа секции.
+
+### <a name="a-name200200"></a><a name="2.0.0"/>2.0.0
+* Добавлена поддержка операций записи в нескольких регионах для режима шлюза.
+
+### <a name="a-name11641164"></a><a name="1.16.4"/>1.16.4
+* Исправлена ошибка в чтении диапазонов ключей секций для запроса.
+
+### <a name="a-name11631163"></a><a name="1.16.3"/>1.16.3
+* Исправлена ошибка в настройке размера заголовка маркера продолжения в режиме DirectHttps.
 
 ### <a name="a-name11621162"></a><a name="1.16.2"/>1.16.2
 * Добавлена поддержка отработки отказа потоковой передачи.
@@ -205,6 +220,10 @@ ms.locfileid: "52634495"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.1.1](#2.1.1) |21 ноября 2018 г. |--- |
+| [2.0.0](#2.0.0) |21 сентября 2018 г. |--- |
+| [1.16.4](#1.16.4) |10 сентября 2018 г. |--- |
+| [1.16.3](#1.16.3) |9 сентября 2018 г. |--- |
 | [1.16.2](#1.16.2) |29 июня 2018 г. |--- |
 | [1.16.1](#1.16.1) |16 мая 2018 г. |--- |
 | [1.16.0](#1.16.0) |15 марта 2018 г. |--- |

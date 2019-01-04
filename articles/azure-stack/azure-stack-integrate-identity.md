@@ -6,16 +6,16 @@ author: jeffgilb
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 11/08/2018
+ms.date: 12/10/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
 keywords: ''
-ms.openlocfilehash: b59d503b8aadef9e8f9c2d7db71ff60aee3b6387
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: 9d9e97d81e33487a5f23197912eba3802e83a32e
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51300716"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53257382"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 Azure Stack можно развернуть с помощью Azure Active Directory (Azure AD) или служб федерации Active Directory (AD FS) в качестве поставщика удостоверений. Сделать выбор следует перед развертыванием Azure Stack. Развертывание с помощью AD FS также называется развертыванием Azure Stack в отключенном режиме.
@@ -131,7 +131,7 @@ Graph поддерживает только интеграцию с отдель
 
 |Параметр|ОПИСАНИЕ|Пример|
 |---------|---------|---------|
-|CustomAdfsName|Имя поставщика утверждений. <cr>Так оно отображается на целевой странице AD FS.|Contoso|
+|CustomAdfsName|Имя поставщика утверждений.<br>Так оно отображается на целевой странице AD FS.|Contoso|
 |CustomAD<br>FSFederationMetadataEndpointUri|Ссылка на метаданные федерации:|https://ad01.contoso.com/federationmetadata/2007-06/federationmetadata.xml|
 
 
@@ -215,7 +215,7 @@ Graph поддерживает только интеграцию с отдель
 
 Корпорация Майкрософт предоставляет сценарий, который настраивает отношения доверия с проверяющей стороной, включая правила преобразования утверждений. Использовать этот сценарий необязательно, можно вручную выполнить необходимые команды.
 
-Можно скачать вспомогательный сценарий из раздела [инструментов Azure Stack](https://github.com/Azure/AzureStack-Tools/tree/vnext/DatacenterIntegration/Identity) на сайте GitHub.
+Можно скачать вспомогательный скрипт в разделе [Azure Stack Tools](https://github.com/Azure/AzureStack-Tools/tree/vnext/DatacenterIntegration/Identity) на сайте GitHub.
 
 Если вы решили вручную выполнить команды, сделайте следующее.
 

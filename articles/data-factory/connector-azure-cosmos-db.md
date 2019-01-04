@@ -1,5 +1,5 @@
 ---
-title: Копирование данных в службу Azure Cosmos DB или из нее с помощью фабрики данных | Документация Майкрософт
+title: Копирование данных в службу Azure Cosmos DB (API SQL) или из нее с помощью фабрики данных | Документация Майкрософт
 description: Узнайте, как копировать данные из поддерживаемых исходных хранилищ данных в службу Azure Cosmos DB или из нее в поддерживаемые хранилища-приемники с помощью фабрики данных.
 services: data-factory, cosmosdb
 documentationcenter: ''
@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/19/2018
 ms.author: jingwang
-ms.openlocfilehash: c10a933f371bfc84b863413134f2fdf5ff9c0e34
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 16c02f1f47f556f550519feec78e7dd26b302e18
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52161843"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53103801"
 ---
-# <a name="copy-data-to-or-from-azure-cosmos-db-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure Cosmos DB или из нее с помощью Фабрики данных Azure
+# <a name="copy-data-to-or-from-azure-cosmos-db-sql-api-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure Cosmos DB (API SQL) или из нее с помощью Фабрики данных Azure
 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-azure-documentdb-connector.md)
@@ -39,6 +39,9 @@ ms.locfileid: "52161843"
 - Импорт и экспорт документов JSON "как есть" либо копирование данных из набора табличных данных или в него. К примерам можно отнести базу данных SQL и CSV-файл. Сведения о копировании документов "как есть" в JSON-файлы или другую коллекцию Azure Cosmos DB либо из них см. в разделе [Импорт и экспорт документов JSON](#importexport-json-documents).
 
 Фабрика данных интегрируется с [библиотекой массового исполнителя Azure Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started), чтобы обеспечить оптимальную производительность при операциях записи в Azure Cosmos DB.
+
+>[!NOTE]
+>Этот соединитель поддерживает только копирование данных из API SQL Cosmos DB и из него.
 
 > [!TIP]
 > [Видео о переносе данных](https://youtu.be/5-SRNiC_qOU) поможет вам выполнить копирование данных из хранилища BLOB-объектов Azure в Azure Cosmos DB. Кроме того, в видео приведены общие рекомендации по настройке производительности приема данных в Azure Cosmos DB.
@@ -183,7 +186,7 @@ ms.locfileid: "52161843"
 | Тип | Свойство **type** приемника действия копирования должно иметь значение **DocumentDbCollectionSink**. |Yes |
 | writeBehavior |Описывает способ записи данных в Azure Cosmos DB. Допустимые значения: **insert** и **upsert**.<br/><br/>Поведение **upsert** — замена документа, если документ с таким идентификатором уже существует. В противном выполняется вставка документа.<br /><br />**Примечание**. Фабрика данных автоматически создает идентификатор для документа, если идентификатор не указан в исходном документе или с помощью сопоставления столбцов. Это означает, что для правильной работы **upsert** у документа должен быть идентификатор. |Нет <br />(По умолчанию используется **insert**.) |
 | writeBatchSize | Фабрика данных использует [библиотеку массового исполнителя Azure Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started) для записи данных в Azure Cosmos DB. Свойство **writeBatchSize** определяет размер документов, которые мы передаем в библиотеку. Вы можете увеличить значение **writeBatchSize** для повышения производительности или уменьшить значение, если документ большого размера. См. рекомендации ниже. |Нет <br />(Значение по умолчанию — **10 000**.) |
-| nestingSeparator |Специальный знак в имени **исходного** столбца, который указывает, что нужен вложенный документ. <br/><br/>Например, `Name.First` в выходной структуре набора данных создает приведенную ниже структуру JSON в документе Azure Cosmos DB, в которой **nestedSeparator** является точкой (**.** )  |Нет <br />Значение по умолчанию — **.** (точка). |
+| nestingSeparator |Специальный знак в имени **исходного** столбца, который указывает, что нужен вложенный документ. <br/><br/>Например, `Name.First` в выходной структуре набора данных создает приведенную ниже структуру JSON в документе Azure Cosmos DB, в которой **nestedSeparator** является точкой (**.** ) `"Name": {"First": "[value maps to this column from source]"}`  |Нет <br />Значение по умолчанию — **.** (точка). |
 
 >[!TIP]
 >В Cosmos DB размер одного запроса не должен превышать 2 МБ. Формула выглядит так: размер запроса = размера одного документа * размер пакета для записи. Если появится ошибка **Запрос слишком большой**, **уменьшите значение `writeBatchSize`** в конфигурации приемника действия копирования.

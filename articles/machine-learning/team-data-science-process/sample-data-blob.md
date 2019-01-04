@@ -1,6 +1,6 @@
 ---
-title: Выборка данных в хранилище BLOB-объектов Azure | Документация Майкрософт
-description: Выборка данных в хранилище больших двоичных объектов Azure
+title: Выборка данных из хранилища больших двоичных объектов Azure — Процесс обработки и анализа данных группы
+description: Создание выборки данных, содержащихся в хранилище BLOB-объектов Azure, путем их программной загрузки и последующего построения выборки с использованием процедур на языке Python.
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -10,13 +10,13 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 5fe7c11bd21e9c2f432f443a6a8dd5880646a1a2
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 0f9795e6a9a451ab1492e62fd54faea5894d99ae
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52444194"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53136501"
 ---
 # <a name="heading"></a>Выборка данных в хранилище больших двоичных объектов Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "52444194"
 **Для чего нужна выборка данных?**
 Если размер набора данных, который планируется проанализировать, слишком большой, обычно рекомендуется уменьшить выборку данных до размера, который останется репрезентативным и будет более управляемым. Это способствует пониманию данных, их исследованию и проектированию характеристик. Роль этой операции в процессе аналитики Кортаны заключается в том, чтобы сделать возможным быстрое прототипирование функций обработки данных и моделей машинного обучения.
 
-Эта задача выборки является одним из этапов [процесса обработки и анализа данных группы (TDSP)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/).
+Эта задача выборки является одним из этапов [процесса обработки и анализа данных группы (TDSP)](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/).
 
 ## <a name="download-and-down-sample-data"></a>Скачать данные и уменьшить выборку данных
 1. Загрузить данные из хранилища BLOB-объектов Azure с помощью службы BLOB-объектов и следующего образца кода на языке Python: 

@@ -8,14 +8,14 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 09/29/2017
+ms.date: 12/07/2017
 ms.author: azfuncdf
-ms.openlocfilehash: 7a6346e594c5a7cc4cf02f3ea658aac4977e641a
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 4e48956e42942761abec0143ba2849601dbb1cf4
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637459"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53336906"
 ---
 # <a name="task-hubs-in-durable-functions-azure-functions"></a>Центры задач в устойчивых функциях (Функции Azure)
 
@@ -27,7 +27,7 @@ ms.locfileid: "52637459"
 
 ## <a name="azure-storage-resources"></a>Ресурсы хранилища Azure
 
-Центр задач состоит из следующих ресурсов хранилища: 
+Центр задач состоит из следующих ресурсов хранилища:
 
 * Одна или несколько очередей элементов управления.
 * Одна очередь рабочих элементов.
@@ -41,7 +41,8 @@ ms.locfileid: "52637459"
 
 Центры задач определяются по имени, объявленном в файле *host.json*, как показано в следующем примере:
 
-### <a name="hostjson-functions-v1"></a>host.json (Функции, версия 1)
+### <a name="hostjson-functions-1x"></a>host.json (Функции, версия 1.x)
+
 ```json
 {
   "durableTask": {
@@ -49,7 +50,9 @@ ms.locfileid: "52637459"
   }
 }
 ```
-### <a name="hostjson-functions-v2"></a>host.json (Функции, версия 2)
+
+### <a name="hostjson-functions-2x"></a>host.json (Функции, версия 2.x)
+
 ```json
 {
   "version": "2.0",
@@ -60,9 +63,11 @@ ms.locfileid: "52637459"
   }
 }
 ```
+
 Центры задач также можно настроить с помощью параметров приложения, как показано в следующем примере файла *host.json*:
 
-### <a name="hostjson-functions-v1"></a>host.json (Функции, версия 1)
+### <a name="hostjson-functions-1x"></a>host.json (Функции, версия 1.x)
+
 ```json
 {
   "durableTask": {
@@ -70,7 +75,9 @@ ms.locfileid: "52637459"
   }
 }
 ```
-### <a name="hostjson-functions-v2"></a>host.json (Функции, версия 2)
+
+### <a name="hostjson-functions-2x"></a>host.json (Функции, версия 2.x)
+
 ```json
 {
   "version": "2.0",
@@ -81,14 +88,46 @@ ms.locfileid: "52637459"
   }
 }
 ```
+
 Для имени центра задач будет установлено значение параметра приложения `MyTaskHub`. В следующем файле `local.settings.json` показано, как определить параметр `MyTaskHub` как `samplehubname`:
 
 ```json
 {
   "IsEncrypted": false,
   "Values": {
-    "MyTaskHub" :  "samplehubname" 
+    "MyTaskHub" : "samplehubname"
   }
+}
+```
+
+Ниже приведен предкомпилированный пример C# написания функции, использующей [OrchestrationClientBinding](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.OrchestrationClientAttribute.html) для работы с центром задач, настроенным в качестве параметра приложения:
+
+```csharp
+[FunctionName("HttpStart")]
+public static async Task<HttpResponseMessage> Run(
+    [HttpTrigger(AuthorizationLevel.Function, methods: "post", Route = "orchestrators/{functionName}")] HttpRequestMessage req,
+    [OrchestrationClient(TaskHub = "%MyTaskHub%")] DurableOrchestrationClientBase starter,
+    string functionName,
+    ILogger log)
+{
+    // Function input comes from the request content.
+    dynamic eventData = await req.Content.ReadAsAsync<object>();
+    string instanceId = await starter.StartNewAsync(functionName, eventData);
+
+    log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
+
+    return starter.CreateCheckStatusResponse(req, instanceId);
+}
+```
+
+Ниже приведена необходимая конфигурация для JavaScript. Свойство центра задач в файле `function.json` задается с помощью параметра приложения:
+
+```json
+{
+    "name": "input",
+    "taskHub": "%MyTaskHub%",
+    "type": "orchestrationClient",
+    "direction": "in"
 }
 ```
 

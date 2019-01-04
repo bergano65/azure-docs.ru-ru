@@ -1,19 +1,19 @@
 ---
-title: Настройка сосуществующих подключений VPN типа ExpressRoute и "сеть — сеть" с помощью PowerShell в Azure | Документация Майкрософт
-description: В этой статье описывается, как настроить параллельные подключения ExpressRoute и VPN-подключений типа "сеть — сеть" для модели развертывания Resource Manager с помощью PowerShell.
+title: 'Настройка параллельных подключений ExpressRoute и VPN-подключений "сеть — сеть" с помощью PowerShell: Azure | Документация Майкрософт'
+description: Узнайте, как настроить параллельные подключения ExpressRoute и VPN-подключений типа "сеть — сеть" для модели развертывания с помощью Resource Manager, используя PowerShell.
 services: expressroute
 author: charwen
-manager: rossort
 ms.service: expressroute
 ms.topic: conceptual
 ms.date: 11/05/2018
 ms.author: charwen
-ms.openlocfilehash: 96e2eb85bc96075e0673359910522f8e35bf5a5c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.custom: seodec18
+ms.openlocfilehash: 1aeb5ca447a3058962483b640f742e4a7ec4a414
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51243817"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53104039"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>Настройка параллельных подключений "сеть — сеть" и ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -21,6 +21,9 @@ ms.locfileid: "51243817"
 > * [PowerShell — классическая модель](expressroute-howto-coexist-classic.md)
 > 
 > 
+
+
+Сведения в этой статье помогут настроить параллельные соединения ExpressRoute и соединения VPN типа "сеть — сеть". Возможность настройки VPN типа "сеть-сеть" и ExpressRoute дает целый ряд преимуществ. Вы можете настроить VPN-подключение "сеть — сеть" как защищенный путь отработки отказа для ExressRoute или использовать эту сеть VPN для подключения к сайтам, не подключенным через ExpressRoute. В этой статье мы рассмотрим порядок действия в каждом из этих вариантов. Эта статья посвящена модели развертывания Resource Manager.
 
 Настройка параллельных VPN-подключений типа "сеть — сеть" и ExpressRoute дает ряд преимуществ.
 

@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.component: compliance
-ms.date: 06/21/2018
+ms.date: 12/13/2018
 ms.author: rolyon
 ms.reviewer: mwahl
-ms.openlocfilehash: 7d3361b44d47fd97c14f677e5e4bbc6c1ee5ad3f
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: d3cc5f5a7642ba827a46ab5cbc2b0da2cda38731
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45607644"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53385131"
 ---
 # <a name="manage-guest-access-with-azure-ad-access-reviews"></a>Управление гостевым доступом с помощью проверок доступа Azure AD
 
@@ -39,7 +39,7 @@ ms.locfileid: "45607644"
 
 Проверка доступа поддерживается в выпуске Azure AD Premium P2, включенном в Microsoft Enterprise Mobility + Security E5. Дополнительные сведения см. в разделе [Выпуски Azure Active Directory](../fundamentals/active-directory-whatis.md). Для каждого пользователя, применяющего эту возможность, в том числе для создания и выполнения проверки доступа или подтверждения доступа, требуется лицензия. 
 
-Если вы планируете предлагать гостевым пользователям самим проверять свой доступ, прочитайте о лицензировании гостевых пользователей. Дополнительные сведения см. в статье [Руководство по лицензированию службы совместной работы Azure Active Directory B2B](../b2b/licensing-guidance.md).
+Можно также предлагать гостевым пользователям самим проверять свой доступ. Каждая платная лицензия Azure AD Premium P2, которая присваивается пользователям из вашей организации, позволяет пригласить до пяти гостевых пользователей в пределах квоты внешних пользователей, используя B2B. Эти гостевые пользователи также могут использовать функции Azure AD Premium P2. Дополнительные сведения см. в статье [Руководство по лицензированию службы совместной работы Azure Active Directory B2B](../b2b/licensing-guidance.md).
 
 ## <a name="create-and-perform-an-access-review-for-guests"></a>Создание и выполнение проверки доступа для гостей
 

@@ -1,20 +1,21 @@
 ---
 title: Отправка событий в Центры событий Azure с помощью Java | Документация Майкрософт
-description: Начало работы с отправкой в Центры событий с помощью Java.
+description: В статье описано, как создать приложение Java, которое отправляет события в Центры событий Azure.
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: timlt
 ms.service: event-hubs
 ms.workload: core
 ms.topic: article
-ms.date: 11/12/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 510f1a2bc23d14e1bb9e8e561b52936ae9d53685
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 80c413c874ca3e1bf46bfa4e5becb184223c5eeb
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51624545"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53091299"
 ---
 # <a name="send-events-to-azure-event-hubs-using-java"></a>Отправка событий в Центры событий Azure с помощью Java
 
@@ -32,7 +33,11 @@ ms.locfileid: "51624545"
 * Среда разработки Java. В этом руководстве используется среда [Eclipse](https://www.eclipse.org/).
 
 ## <a name="create-an-event-hubs-namespace-and-an-event-hub"></a>Создание пространства имен Центров событий и концентратора событий
-Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, выполните процедуру, описанную в [этой статье](event-hubs-create.md), а затем перейдите к следующим шагам в этом руководстве.
+Первым шагом является использование [портала Azure](https://portal.azure.com) для создания пространства имен типа Центров событий и получение учетных данных управления, необходимых приложению для взаимодействия с концентратором событий. Чтобы создать пространство имен и концентратор событий, [выполните эти инструкции](event-hubs-create.md).
+
+Получите значение ключа доступа для концентратора событий, следуя инструкциям из раздела [Получение строки подключения на портале](event-hubs-get-connection-string.md#get-connection-string-from-the-portal). Используйте ключ доступа в коде, который вы напишете далее с помощью этого руководства. Имя ключа по умолчанию: **RootManageSharedAccessKey**.
+
+Теперь приступите к следующим действиям в этом руководстве:
 
 ## <a name="add-reference-to-azure-event-hubs-library"></a>Добавление ссылки на библиотеку Центров событий Azure
 
@@ -114,7 +119,7 @@ ehClient.closeSync();
 
 Поздравляем! Теперь вы можете отправлять сообщения в концентратор событий.
 
-### <a name="appendix-how-messages-are-routed-to-eventhub-partitions"></a>Дополнение. Способ маршрутизации сообщений к разделам концентратора событий
+### <a name="appendix-how-messages-are-routed-to-eventhub-partitions"></a>Дополнение. Способ маршрутизации сообщений к секциям концентратора событий
 
 Прежде чем сообщения будут получены потребителями, они должны быть опубликованы издателями в разделах. При синхронной публикации сообщения в концентраторе событий с помощью метода sendSync() в объекте com.microsoft.azure.eventhubs.EventHubClient сообщение может быть отправлено в определенную секцию или распределиться по всем доступным разделам циклически в зависимости от того, указан ли ключ раздела или нет.
 

@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 10/23/2018
 ms.author: raynew
-ms.openlocfilehash: 61e8a7732b7e6dc7fd521819a135fb1a7a6a13b3
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: 647ed64d405424431419da1e693abea2bdf07ace
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52261672"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53262271"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 Эта статья содержит ответы на часто задаваемые вопросы о службе Azure Backup.
@@ -236,7 +236,7 @@ Exchange |Сумма размеров всех баз данных Exchange на
 
 Да. Данные в Azure шифруются при хранении.
 - Для резервных копий локальных данных шифрование выполняется с использованием парольной фразы, которую вы указываете при настройке резервного копирования в Azure.
-- Для виртуальных машин Azure шифрование выполняется с помощью Шифрования службы хранилища (SSE).
+- Для виртуальных машин Azure шифрование выполняется с помощью функции "Шифрование службы хранилища" (SSE).
 
 Мы никогда не расшифровываем резервные копии данных.
 

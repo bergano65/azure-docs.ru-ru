@@ -1,5 +1,5 @@
 ---
-title: При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер". в Azure | Документация Майкрософт
+title: При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер" в Azure | Документация Майкрософт
 description: Здесь описаны шаги по решению проблемы, при которой во время запуска виртуальная машина зависает на сообщении "Подготовка Windows. Не выключайте компьютер".
 services: virtual-machines-windows
 documentationcenter: ''
@@ -14,22 +14,22 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: delhan
-ms.openlocfilehash: 2bcdb2b458327a5e87dc36e4a5f50f0ac46bf96a
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: eb27b4e6c60f23a55a58cd2aae3cff927ffeaf03
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51621043"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53316103"
 ---
-# <a name="vm-startup-is-stuck-on-getting-windows-ready-dont-turn-off-your-computer-in-azure"></a>При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер". в Azure
+# <a name="vm-startup-is-stuck-on-getting-windows-ready-dont-turn-off-your-computer-in-azure"></a>При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер" в Azure
 
-Эта статья помогает решить проблему, когда виртуальная машина зависает на сообщении "Подготовка Windows. Не выключайте компьютер". на этапе запуска.
+Эта статья помогает решить проблему, когда виртуальная машина зависает на этапе "Подготовка Windows. Не выключайте компьютер" во время запуска.
 
 ## <a name="symptoms"></a>Проблемы
 
-При использовании **диагностики загрузки** для получения снимка экрана виртуальной машины вы обнаружили, что операционная система не полностью запускается. Кроме того, на виртуальной машине отображается сообщение **Подготовка Windows. Не выключайте компьютер.** .
+При использовании **диагностики загрузки** для получения снимка экрана виртуальной машины операционная система не полностью запускается. В виртуальной машине отображается сообщение "Подготовка Windows. Не выключайте компьютер".
 
-![Пример сообщения](./media/troubleshoot-vm-configure-update-boot/message1.png)
+![Пример сообщения для Windows Server 2012 R2](./media/troubleshoot-vm-configure-update-boot/message1.png)
 
 ![Пример сообщения](./media/troubleshoot-vm-configure-update-boot/message2.png)
 
@@ -43,13 +43,13 @@ ms.locfileid: "51621043"
 
 ### <a name="for-vms-with-an-encrypted-disk-you-must-unlock-the-disks-first"></a>На виртуальных машинах с зашифрованными дисками сначала необходимо разблокировать диски
 
-Проверьте, является ли виртуальная машина зашифрованной. Для этого выполните следующие действия.
+Чтобы определить, является ли виртуальная машина зашифрованной, сделайте следующее.
 
-1. Откройте свою виртуальную машину на портале и перейдите к дискам.
+1. Откройте свою виртуальную машину на портале Azure и перейдите к дискам.
 
-2. Вы увидите столбец "Шифрование", где показано, включено ли шифрование.
+2. Просмотрите столбец **Шифрование**, чтобы увидеть, включено ли шифрование.
 
-Если диск ОС зашифрован, разблокируйте зашифрованный диск. Для этого выполните следующие действия.
+Если диск ОС зашифрован, разблокируйте зашифрованный диск. Чтобы разблокировать диск, сделайте следующее.
 
 1. Создайте виртуальную машину восстановления, которая размещена в той же группе ресурсов, учетной записи хранения и расположении, что и затронутая виртуальная машина.
 
@@ -72,7 +72,7 @@ ms.locfileid: "51621043"
     Get-AzureKeyVaultSecret -VaultName $vault | where {($_.Tags.MachineName -eq   $vmName) -and ($_.ContentType -eq ‘BEK’)}
     ```
 
-5. Получив имя секрета, выполните следующие команды в PowerShell:
+5. Получив имя секрета, выполните следующие команды в PowerShell.
 
     ```Powershell
     $secretName = 'SecretName'
@@ -83,7 +83,7 @@ ms.locfileid: "51621043"
 6. Преобразуйте значение в кодировке Base64 в байты и запишите выходные данные в файл. 
 
     > [!Note]
-    > Имя файла BEK должно соответствовать исходному глобальному уникальному идентификатору BEK, если вы используете вариант разблокирования по USB. Кроме того, необходимо создать папку BEK на диске с буквой C, прежде чем выполнять следующие действия.
+    > Если вы используете вариант разблокирования по USB, имя файла BEK должно соответствовать исходному глобальному уникальному идентификатору BEK. Создайте на диске C папку с именем "BEK", прежде чем выполнять следующие действия.
     
     ```Powershell
     New-Item -ItemType directory -Path C:\BEK
@@ -92,20 +92,20 @@ ms.locfileid: "51621043"
     [System.IO.File]::WriteAllBytes($path,$bekFileBytes)
     ```
 
-7. После создания файла BEK на компьютере скопируйте этот файл на виртуальную машину восстановления, к которой подключен заблокированный диск ОС. Выполните следующую команду, используя расположение файла BEK:
+7. После создания файла BEK на компьютере скопируйте этот файл на виртуальную машину восстановления, к которой подключен заблокированный диск ОС. Выполните следующие команды, используя расположение файла BEK.
 
     ```Powershell
     manage-bde -status F:
     manage-bde -unlock F: -rk C:\BEKFILENAME.BEK
     ```
-    **Необязательно**. В некоторых сценариях может потребоваться расшифровать диск с помощью следующей команды.
+    **Необязательно.** В некоторых сценариях может потребоваться расшифровать диск с помощью следующей команды.
    
     ```Powershell
     manage-bde -off F:
     ```
 
     > [!Note]
-    > В этой команде предполагается, что диск для шифрования расположен на диске F:
+    > В предыдущей команде предполагается, что диску для шифрования присвоена буква F.
 
 8. Если требуется собрать журналы, перейдите по пути **буква диска:\Windows\System32\winevt\Logs**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "51621043"
 
 ### <a name="create-a-snapshot"></a>Создание моментального снимка
 
-Чтобы создать моментальный снимок, выполните действия, описанные в статье [Создание моментального снимка](..\windows\snapshot-copy-managed-disk.md).
+Чтобы создать моментальный снимок, выполните действия, описанные в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
 
 ## <a name="collect-an-os-memory-dump"></a>Сбор файла дампа памяти операционной системы
 
@@ -124,14 +124,14 @@ ms.locfileid: "51621043"
 После сбора файла дампа обратитесь в [службу поддержки Майкрософт](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), чтобы проанализировать первопричину.
 
 
-## <a name="rebuild-the-vm-using-powershell"></a>Повторное создание виртуальной машины с помощью PowerShell
+## <a name="rebuild-the-vm-by-using-powershell"></a>Повторное создание виртуальной машины с помощью PowerShell
 
 После сбора файла дампа памяти выполните следующие шаги для повторного создания виртуальной машины.
 
 **Для неуправляемых дисков**
 
 ```PowerShell
-# To login to Azure Resource Manager
+# To log in to Azure Resource Manager
 Login-AzureRmAccount
 
 # To view all subscriptions for your account
@@ -162,7 +162,7 @@ New-AzureRmVM -ResourceGroupName $rgname -Location $loc -VM $vm -Verbose
 **Для управляемых дисков**
 
 ```PowerShell
-# To login to Azure Resource Manager
+# To log in to Azure Resource Manager
 Login-AzureRmAccount
 
 # To view all subscriptions for your account
@@ -183,7 +183,7 @@ $avName = "AvailabilitySetName";
 $osDiskName = "OsDiskName";
 $DataDiskName = "DataDiskName"
 
-#This can be found by selecting the Managed Disks you wish you use in the Azure Portal if the format below doesn't match
+#This can be found by selecting the Managed Disks you wish you use in the Azure portal if the format below doesn't match
 $osDiskResourceId = "/subscriptions/$subid/resourceGroups/$rgname/providers/Microsoft.Compute/disks/$osDiskName";
 $dataDiskResourceId = "/subscriptions/$subid/resourceGroups/$rgname/providers/Microsoft.Compute/disks/$DataDiskName";
 

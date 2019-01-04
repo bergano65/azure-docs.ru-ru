@@ -5,14 +5,15 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.workload: storage-backup-recovery
-ms.date: 10/11/2018
+ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: 667cbbbcc0a74550b389d7a75e17cecd00b88d06
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.topic: conceptual
+ms.openlocfilehash: af610aaec238e1b2ae8ec2387e5a8f71225cab8c
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51976627"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52848176"
 ---
 # <a name="exclude-disks-from-replication-of-vmware-vms-to-azure"></a>Исключение дисков из репликации виртуальных машин VMware в Azure
 
@@ -66,7 +67,7 @@ ms.locfileid: "51976627"
 - Диск с файлом tempdb SQL Server.
 - Диск с файлом подкачки (pagefile.sys).
 
-## <a name="example-1-exclude-the-sql-server-tempdb-disk"></a>Пример 1. Исключение диска с файлом tempdb SQL Server
+## <a name="example-1-exclude-the-sql-server-tempdb-disk"></a>Пример 1 Исключение диска с файлом tempdb SQL Server
 Рассмотрим виртуальную машину SQL Server с диском tempdb, который может быть исключен из репликации.
 
 Имя виртуального диска — SalesDB.
@@ -167,7 +168,7 @@ DB-Disk4 | Диск 4 |G:\ |База данных пользователя Data
 Диск 1 | D:\ | Системная база данных SQL и база данных пользователя Database1
 Диск 2 | G:\ | База данных пользователя Database2
 
-## <a name="example-2-exclude-the-paging-file-pagefilesys-disk"></a>Пример 2. Исключение диска с файлом подкачки (pagefile.sys)
+## <a name="example-2-exclude-the-paging-file-pagefilesys-disk"></a>Пример 2 Исключение диска с файлом подкачки (pagefile.sys)
 
 Рассмотрим виртуальную машину с диском с файлом подкачки, который можно исключить из репликации.
 Есть два способа.

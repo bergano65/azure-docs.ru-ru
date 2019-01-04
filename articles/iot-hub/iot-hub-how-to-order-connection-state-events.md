@@ -7,12 +7,12 @@ author: ash2017
 ms.topic: conceptual
 ms.date: 07/06/2018
 ms.author: asrastog
-ms.openlocfilehash: 77615705ade42a2afcc8e3a9f662b0551a2411fd
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: daf4a6142c0e30fa7b8534e5598cec39c69079c0
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582460"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53184055"
 ---
 # <a name="order-device-connection-events-from-azure-iot-hub-using-azure-cosmos-db"></a>Упорядочение событий изменения состояния подключения устройства из Центра Интернета вещей Azure с использованием Azure Cosmos DB
 
@@ -200,11 +200,11 @@ ms.locfileid: "52582460"
 
 2. Заполните условие, как показано ниже, чтобы выполнять действие только для событий, связанных с подключением и отключением устройств:
 
-  * Выберите значение: **eventType**.
-  * Измените is equal to на **ends with**.
-  * Выберите значение: **nected**.
+   * Выберите значение: **eventType**.
+   * Измените is equal to на **ends with**.
+   * Выберите значение: **nected**.
 
-   ![Заполнение условия](./media/iot-hub-how-to-order-connection-state-events/condition-detail.png)
+     ![Заполнение условия](./media/iot-hub-how-to-order-connection-state-events/condition-detail.png)
 
 3. Если условие истинно, щелкните **Добавить действие**.
   
@@ -248,13 +248,13 @@ ms.locfileid: "52582460"
 
 4. Создайте подписку на события со следующими значениями: 
 
-   * **Тип события**: снимите флажок "Подписка на все типы событий" и выберите **Device Connected** (Устройство подключено) и **Device Disconnected** (Устройство отключено) в меню.
+   * **Тип события.** Снимите флажок "Подписка на все типы событий" и выберите **Device Connected** (Устройство подключено) и **Device Disconnected** (Устройство отключено) в меню.
 
-   * **Сведения о конечной точке**: выберите для типа конечной точки **Веб-перехватчик**, щелкните выбранную конечную точку, вставьте URL-адрес, скопированный из приложения логики, и подтвердите выбор.
+   * **Сведения о конечной точке.** Выберите для типа конечной точки **Веб-перехватчик**, щелкните выбранную конечную точку, вставьте URL-адрес, скопированный из приложения логики, и подтвердите выбор.
 
        ![Выбор URL-адреса конечной точки](./media/iot-hub-how-to-order-connection-state-events/endpoint-url.png)
 
-   * **Сведения о подписке на событие**: укажите описательное имя и выберите **Схема сетки событий**.
+   * **Сведения о подписке на события.** Укажите описательное имя и выберите **Схема Сетки событий**.
    Форма должна быть аналогичной приведенной ниже: 
 
        ![Пример формы подписки на события](./media/iot-hub-how-to-order-connection-state-events/subscription-form.png)

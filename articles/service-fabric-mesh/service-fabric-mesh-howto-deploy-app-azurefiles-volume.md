@@ -1,6 +1,6 @@
 ---
-title: Сохранение состояния в приложении "Сетка Azure Service Fabric" путем подключения тома службы файлов Azure внутри контейнера | Документация Майкрософт
-description: Узнайте, как сохранить состояние в приложении "Сетка Azure Service Fabric" путем подключения тома службы файлов Azure в контейнере с помощью Azure CLI.
+title: Использование тома службы файлов Azure в приложении "Сетка Service Fabric" | Документация Майкрософт
+description: Узнайте, как сохранить состояние в приложении "Сетка Azure Service Fabric" путем подключения тома службы файлов Azure в службе с помощью Azure CLI.
 services: service-fabric-mesh
 documentationcenter: .net
 author: rwike77
@@ -12,86 +12,236 @@ ms.devlang: azure-cli
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 08/09/2018
+ms.date: 11/21/2018
 ms.author: ryanwi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: cb5b421c1bcfe888d65335f3ab7f67bed80eec34
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: 9bce2d0e6d01813fd376b2505838defc9c772d70
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51614265"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52891101"
 ---
-# <a name="store-state-in-an-azure-service-fabric-mesh-application-by-mounting-an-azure-files-based-volume-inside-the-container"></a>Сохранение состояния в приложении "Сетка Azure Service Fabric" путем подключения тома службы файлов Azure внутри контейнера
+# <a name="mount-an-azure-files-based-volume-in-a-service-fabric-mesh-application"></a>Подключение тома службы файлов Azure в приложении "Сетка Service Fabric" 
 
-В этой статье показано, как сохранить состояние в службе файлов Azure, подключив том в контейнере приложения Service Fabric Mesh. В этом примере приложение Counter содержит службу ASP.NET Core с веб-страницей, на которой в браузере отображается значение счетчика. 
+В этой статье описано подключение тома службы файлов Azure в службе приложения "Сетка Service Fabric".  Драйвер тома службы файлов Azure — это драйвер тома Docker, используемый для подключения общей папки службы файлов Azure в контейнер, используемый для сохранения состояния службы. Тома предоставляют хранилище файлов общего назначения файлов и дают возможность чтения и записи файлов с помощью стандартных файловых API-интерфейсов дискового ввода-вывода.  Дополнительные сведения о томах и параметрах для хранения данных приложения см. в статье о [состоянии хранения](service-fabric-mesh-storing-state.md).
 
-`counterService` периодически считывает значение счетчика из файла, увеличивает его и записывает обратно в файл. Этот файл хранится в папке, подключенной к тому в общем ресурсе службы файлов Azure.
+Чтобы подключить том в службе, создайте ресурс тома в приложении "Сетка Service Fabric" и затем укажите этот том в вашей службе.  Объявить ресурс тома и указать на него в ресурсе службы можно в [файлах ресурсов на основе YAML](#declare-a-volume-resource-and-update-the-service-resource-yaml) или [шаблоне развертывания на основе JSON](#declare-a-volume-resource-and-update-the-service-resource-json). Прежде чем подключить тома, сначала необходимо создать учетную запись хранения и [файловый ресурс в службе файлов Azure](/azure/storage/files/storage-how-to-create-file-share).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этой задачи можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. Чтобы использовать Azure CLI в рамках работы с этой статьей, убедитесь, что `az --version` возвращает по крайней мере версию `azure-cli (2.0.43)`.  Установите (или обновите) модуль расширения интерфейса командной строки службы "Сетка Azure Service Fabric", выполнив эти [инструкции](service-fabric-mesh-howto-setup-cli.md).
+Для выполнения задач этой статьи можно использовать Azure Cloud Shell или локальный экземпляр Azure CLI. 
 
-## <a name="sign-in-to-azure"></a>Вход в Azure
+Чтобы использовать Azure CLI локально в рамках работы с этой статьей, убедитесь, что `az --version` возвращает по крайней мере версию `azure-cli (2.0.43)`.  Установите (или обновите) модуль расширения интерфейса командной строки службы "Сетка Azure Service Fabric", выполнив эти [инструкции](service-fabric-mesh-howto-setup-cli.md).
 
-Войдите в Azure и настройте подписку.
+Вход в Azure и настройка подписки:
 
-```azurecli-interactive
+```azurecli
 az login
 az account set --subscription "<subscriptionID>"
 ```
 
-## <a name="create-a-file-share"></a>Создание общей папки
-
-Создайте файловый ресурс Azure, следуя этим [инструкциям](/azure/storage/files/storage-how-to-create-file-share). В следующих инструкциях имя учетной записи хранения, ключ учетной записи хранения и имя файлового ресурса обозначены как `<storageAccountName>`, `<storageAccountKey>` и `<fileShareName>` соответственно. Эти значения доступны на портале Azure:
-* <storageAccountName> В разделе **Учетные записи хранения** это имя учетной записи хранения, которое вы использовали при создании файлового ресурса.
-* <storageAccountKey> Выберите учетную запись хранения в разделе **Учетные записи хранения**, а затем выберите **Ключи доступа** и используйте значение в разделе **key1**.
-* <fileShareName> Выберите учетную запись хранения в разделе **Учетные записи хранения**, а затем выберите **Файлы**. Нужно использовать имя только что созданного файлового ресурса.
-
-## <a name="create-a-resource-group"></a>Создание группы ресурсов
-
-Создайте группу ресурсов, в которую будет развертываться приложение. Следующая команда создает группу ресурсов с именем `myResourceGroup` в расположении на востоке Соединенных Штатов Америки.
+## <a name="create-a-storage-account-and-file-share-optional"></a>Создание общего файлового ресурса и учетной записи (необязательно)
+Для подключения тома службы файлов Azure требуется учетная запись хранения и общий файловый ресурс.  Вы можете использовать имеющуюся учетную запись хранения и файловый ресурс Azure или создать ресурсы:
 
 ```azurecli-interactive
-az group create --name myResourceGroup --location eastus 
+az group create --name myResourceGroup --location eastus
+
+az storage account create --name myStorageAccount --resource-group myResourceGroup --location eastus --sku Standard_LRS --kind StorageV2
+
+$current_env_conn_string=$(az storage account show-connection-string -n myStorageAccount -g myResourceGroup --query 'connectionString' -o tsv)
+
+az storage share create --name myshare --quota 2048 --connection-string $current_env_conn_string
 ```
 
-## <a name="deploy-the-template"></a>Развертывание шаблона
+## <a name="get-the-storage-account-name-and-key-and-the-file-share-name"></a>Получение имени учетной записи хранения, ключа и имени файлового ресурса
+В следующих разделах имя учетной записи хранения, ключ учетной записи хранения и имя файлового ресурса обозначены как `<storageAccountName>`, `<storageAccountKey>` и `<fileShareName>` соответственно. 
 
-Создайте приложение и связанные ресурсы, выполнив приведенную ниже команду, и укажите значения `storageAccountName`, `storageAccountKey` и `fileShareName` из предыдущего шага [создания файлового ресурса](#create-a-file-share).
-
-Параметр `storageAccountKey` в шаблоне представляет собой защищенную строку. Он не отображается в данных состояния развертывания и выходных данных команд `az mesh service show`. Убедитесь, что он правильно указан в следующей команде.
-
-Следующая команда развертывает приложение Linux с помощью [шаблона counter.azurefilesvolume.linux.json](https://sfmeshsamples.blob.core.windows.net/templates/counter/counter.azurefilesvolume.linux.json). Чтобы развернуть приложение Windows, используйте [шаблон counter.azurefilesvolume.windows.json](https://sfmeshsamples.blob.core.windows.net/templates/counter/counter.azurefilesvolume.windows.json). Имейте в виду, что развертывание больших образов контейнеров может занять больше времени.
-
+Выведите список учетных записей хранения и получите имя учетной записи хранения с файловым ресурсом, которые вы хотите использовать:
 ```azurecli-interactive
-az mesh deployment create --resource-group myResourceGroup --template-uri https://sfmeshsamples.blob.core.windows.net/templates/counter/counter.azurefilesvolume.linux.json  --parameters "{\"location\": {\"value\": \"eastus\"}, \"fileShareName\": {\"value\": \"<fileShareName>\"}, \"storageAccountName\": {\"value\": \"<storageAccountName>\"}, \"storageAccountKey\": {\"value\": \"<storageAccountKey>\"}}"
+az storage account list
 ```
 
-Через несколько минут команда должна вернуть результат `counterApp has been deployed successfully on counterAppNetwork with public ip address <IP Address>`
-
-## <a name="open-the-application"></a>Запуск приложения
-
-Команда развертывания вернет общедоступный IP-адрес конечной точки службы. После успешного развертывания приложения получите общедоступный IP-адрес конечной точки службы и откройте его в браузере. Отобразится веб-страница со значением счетчика, которое обновляется каждую секунду.
-
-Имя сетевого ресурса для этого приложения — `counterAppNetwork`. С помощью следующей команды можно просмотреть сведения о приложении, такие как его описание, расположение, группа ресурсов и т. д.
-
+Получите имя файлового ресурса:
 ```azurecli-interactive
-az mesh network show --resource-group myResourceGroup --name counterAppNetwork
+az storage share list --account-name <storageAccountName>
 ```
 
-## <a name="verify-that-the-application-is-able-to-use-the-volume"></a>Проверка доступности тома для приложения
-
-Приложение создает файл `counter.txt` в файловом ресурсе, расположенном в папке `counter/counterService`. Этот файл содержит значение счетчика, отображаемое на веб-странице.
-
-Этот файл можно скачать с помощью любого инструмента, поддерживающего просмотр файлового ресурса в службе файлов Azure, например такого как [Обозреватель службы хранилища Azure](https://azure.microsoft.com/features/storage-explorer/).
-
-## <a name="delete-the-resources"></a>Удаление ресурсов
-
-Регулярно удаляйте ресурсы, которые больше не используются в Azure. Чтобы удалить ресурсы, относящиеся к этому примеру, удалите группу ресурсов, в которой они были развернуты (при этом будут удалены все элементы, связанные с этой группой ресурсов), с помощью следующей команды:
-
+Получите ключ учетной записи хранения ("key1"):
 ```azurecli-interactive
-az group delete --resource-group myResourceGroup
+az storage account keys list --account-name <storageAccountName> --query "[?keyName=='key1'].value"
+```
+
+Эти значения также можно найти на [портале Azure](https://portal.azure.com):
+* `<storageAccountName>` (в разделе **Учетные записи хранения**) — это имя учетной записи хранения, используемой для создания файлового ресурса.
+* `<storageAccountKey>` Выберите учетную запись хранения в разделе **Учетные записи хранения**, а затем выберите **Ключи доступа** и используйте значение в разделе **key1**.
+* `<fileShareName>` Выберите учетную запись хранения в разделе **Учетные записи хранения**, а затем выберите **Файлы**. Нужно использовать имя созданного файлового ресурса.
+
+## <a name="declare-a-volume-resource-and-update-the-service-resource-json"></a>Объявление ресурса тома и обновление ресурса службы (JSON)
+
+Добавьте параметры для значений `<fileShareName>`, `<storageAccountName>` и `<storageAccountKey>`, обнаруженных на предыдущем шаге. 
+
+Создайте ресурс тома как узел ресурса приложения. Укажите имя и поставщика (SFAzureFile для использования тома службы файлов Azure). В `azureFileParameters` укажите параметры для значений `<fileShareName>`, `<storageAccountName>` и `<storageAccountKey>`, обнаруженных на предыдущем шаге.
+
+Чтобы подключить том в службе, добавьте `volumeRefs` в элемент `codePackages` службы.  `name` — идентификатор ресурса для тома (или параметр шаблона развертывания для создаваемого ресурса тома) и имя тома, объявленного в файле ресурсов volume.yaml.  `destinationPath` — это локальный каталог, который будет подключен к тому.
+
+```json
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "defaultValue": "EastUS",
+      "type": "String",
+      "metadata": {
+        "description": "Location of the resources."
+      }
+    },
+    "fileShareName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the Azure Files file share that provides the volume for the container."
+      }
+    },
+    "storageAccountName": {
+      "type": "string",
+      "metadata": {
+        "description": "Name of the Azure storage account that contains the file share."
+      }
+    },
+    "storageAccountKey": {
+      "type": "securestring",
+      "metadata": {
+        "description": "Access key for the Azure storage account that contains the file share."
+      }
+    },
+    "stateFolderName": {
+      "type": "string",
+      "defaultValue": "TestVolumeData",
+      "metadata": {
+        "description": "Folder in which to store the state. Provide a empty value to create a unique folder for each container to store the state. A non-empty value will retain the state across deployments, however if more than one applications are using the same folder, the counter may update more frequently."
+      }
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2018-09-01-preview",
+      "name": "VolumeTest",
+      "type": "Microsoft.ServiceFabricMesh/applications",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "Microsoft.ServiceFabricMesh/networks/VolumeTestNetwork",
+        "Microsoft.ServiceFabricMesh/volumes/testVolume"
+      ],
+      "properties": {
+        "services": [
+          {
+            "name": "VolumeTestService",
+            "properties": {
+              "description": "VolumeTestService description.",
+              "osType": "Windows",
+              "codePackages": [
+                {
+                  "name": "VolumeTestService",
+                  "image": "volumetestservice:dev",
+                  "volumeRefs": [
+                    {
+                      "name": "[resourceId('Microsoft.ServiceFabricMesh/volumes', 'testVolume')]",
+                      "destinationPath": "C:\\app\\data"
+                    }
+                  ],
+                  "environmentVariables": [
+                    {
+                      "name": "ASPNETCORE_URLS",
+                      "value": "http://+:20003"
+                    },
+                    {
+                      "name": "STATE_FOLDER_NAME",
+                      "value": "[parameters('stateFolderName')]"
+                    }
+                  ],
+                  ...
+                }
+              ],
+              ...
+            }
+          }
+        ],
+        "description": "VolumeTest description."
+      }
+    },
+    {
+      "apiVersion": "2018-09-01-preview",
+      "name": "testVolume",
+      "type": "Microsoft.ServiceFabricMesh/volumes",
+      "location": "[parameters('location')]",
+      "dependsOn": [],
+      "properties": {
+        "description": "Azure Files storage volume for the test application.",
+        "provider": "SFAzureFile",
+        "azureFileParameters": {
+          "shareName": "[parameters('fileShareName')]",
+          "accountName": "[parameters('storageAccountName')]",
+          "accountKey": "[parameters('storageAccountKey')]"
+        }
+      }
+    }
+    ...
+  ]
+}
+```
+
+## <a name="declare-a-volume-resource-and-update-the-service-resource-yaml"></a>Объявление ресурса тома и обновление ресурса службы (YAML)
+
+Добавьте новый файл *volume.yaml* в каталог *ресурсов приложения* для приложения.  Укажите имя и поставщика (SFAzureFile для использования тома службы файлов Azure). `<fileShareName>`, `<storageAccountName>`, и `<storageAccountKey>` — это значения, обнаруженные на предыдущем шаге.
+
+```yaml
+volume:
+  schemaVersion: 1.0.0-preview2
+  name: testVolume
+  properties:
+    description: Azure Files storage volume for counter App.
+    provider: SFAzureFile
+    azureFileParameters: 
+        shareName: <fileShareName>
+        accountName: <storageAccountName>
+        accountKey: <storageAccountKey>
+```
+
+Обновите файл *service.yaml* в каталоге *ресурсов службы* для подключения тома в службе.  Добавьте элемент `volumeRefs` в элемент `codePackages`.  `name` — идентификатор ресурса для тома (или параметр шаблона развертывания для создаваемого ресурса тома) и имя тома, объявленного в файле ресурсов volume.yaml.  `destinationPath` — это локальный каталог, который будет подключен к тому.
+
+```yaml
+## Service definition ##
+application:
+  schemaVersion: 1.0.0-preview2
+  name: VolumeTest
+  properties:
+    services:
+      - name: VolumeTestService
+        properties:
+          description: VolumeTestService description.
+          osType: Windows
+          codePackages:
+            - name: VolumeTestService
+              image: volumetestservice:dev
+              volumeRefs:
+                - name: "[resourceId('Microsoft.ServiceFabricMesh/volumes', 'testVolume')]"
+                  destinationPath: C:\app\data
+              endpoints:
+                - name: VolumeTestServiceListener
+                  port: 20003
+              environmentVariables:
+                - name: ASPNETCORE_URLS
+                  value: http://+:20003
+                - name: STATE_FOLDER_NAME
+                  value: TestVolumeData
+              resources:
+                requests:
+                  cpu: 0.5
+                  memoryInGB: 1
+          replicaCount: 1
+          networkRefs:
+            - name: VolumeTestNetwork
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

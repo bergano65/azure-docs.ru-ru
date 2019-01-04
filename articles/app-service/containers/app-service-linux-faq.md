@@ -1,5 +1,5 @@
 ---
-title: Вопросы и ответы о службе приложений Azure на платформе Linux | Документация Майкрософт
+title: Вопросы и ответы о службе приложений на платформе Linux в Azure | Документация Майкрософт
 description: 'Служба приложений Azure на платформе Linux: вопросы и ответы.'
 keywords: служба приложений azure, веб-приложение, вопросы и ответы, linux, oss, веб-приложение для контейнеров, мультиконтейнер, многоконтейнерный
 services: app-service
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: yili
-ms.openlocfilehash: 94e61cf5bf4f629dfd776cf9ea2ae54233e91dc6
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.custom: seodec18
+ms.openlocfilehash: 7fe9fd68e03fc36f5aac5d6c27c07896715af906
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50417588"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53261166"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -74,7 +75,7 @@ ms.locfileid: "50417588"
 
 В случае сбоя развертывания Git для веб-приложения Linux можно выбрать следующие варианты развертывания кода приложения:
 
-- Используйте функцию непрерывной поставки (предварительная версия). Чтобы использовать непрерывную поставку Azure, исходный код приложения можно хранить в репозитории Git для Azure DevOps или в репозитории GitHub. Дополнительные сведения см. в блоге [Use Azure portal to setup Continuous Delivery for Web App On Linux](https://blogs.msdn.microsoft.com/devops/2017/05/10/use-azure-portal-to-setup-continuous-delivery-for-web-app-on-linux/) (Настройка непрерывной доставки для веб-приложения на платформе Linux с помощью портала Azure).
+- Используйте возможность непрерывной поставки (предварительная версия). Чтобы использовать непрерывную поставку Azure, исходный код приложения можно хранить в репозитории Git для Azure DevOps или в репозитории GitHub. Дополнительные сведения см. в блоге [Use Azure portal to setup Continuous Delivery for Web App On Linux](https://blogs.msdn.microsoft.com/devops/2017/05/10/use-azure-portal-to-setup-continuous-delivery-for-web-app-on-linux/) (Настройка непрерывной доставки для веб-приложения на платформе Linux с помощью портала Azure).
 
 - Используйте [API развертывания ZIP-файлов](https://github.com/projectkudu/kudu/wiki/Deploying-from-a-zip-file). Чтобы использовать этот API, [установите SSH-подключение к веб-приложению](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-ssh-support#making-a-client-connection) и перейдите в папку, в которую требуется развернуть код. Выполните следующий код:
 

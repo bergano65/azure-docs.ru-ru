@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Mobile Xpense | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Mobile Xpense | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Mobile Xpense.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/05/2018
 ms.author: jeedes
-ms.openlocfilehash: fd35cb67d0555919a1340c428bac042b67239469
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: d51ced3f264a486288c951def7c23a0d95609ac0
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39427345"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52850692"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mobile-xpense"></a>Руководство по интеграции Azure Active Directory с Mobile Xpense
+# <a name="tutorial-azure-active-directory-integration-with-mobile-xpense"></a>Руководство. Интеграция Azure Active Directory с Mobile Xpense
 
 В этом руководстве описано, как интегрировать Mobile Xpense с Azure Active Directory (Azure AD).
 
@@ -121,7 +121,7 @@ ms.locfileid: "39427345"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<sub-domain>.mobilexpense.com/<customername>`
      
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Mobile Xpense](http://www.mobilexpense.net/contact). 
+    > Эти значения приведены в качестве примера. Измените их на фактические значения URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Mobile Xpense](https://www.mobilexpense.net/contact). 
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -131,10 +131,10 @@ ms.locfileid: "39427345"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/mobilexpense-tutorial/tutorial_general_400.png)
 
-1. Чтобы настроить единый вход на стороне **Mobile Xpense**, отправьте скачанный **XML-файл метаданных** [группе поддержки Mobile Xpense](http://www.mobilexpense.net/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Mobile Xpense**, отправьте скачанный **XML-файл метаданных** [группе поддержки Mobile Xpense](https://www.mobilexpense.net/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -170,7 +170,7 @@ ms.locfileid: "39427345"
  
 ### <a name="create-a-mobile-xpense-test-user"></a>Создание тестового пользователя Mobile Xpense
 
-В этом разделе описано, как создать пользователя Britta Simon в MobileXpense. Чтобы добавить пользователей в MobileXpense, обратитесь в [службу поддержки клиентов MobileXpense](http://www.mobilexpense.net/contact). Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в MobileXpense. Чтобы добавить пользователей в MobileXpense, обратитесь в  [службу поддержки клиентов MobileXpense](https://www.mobilexpense.net/contact) . Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -207,7 +207,7 @@ ms.locfileid: "39427345"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Mobile Xpense" на панели доступа, вы автоматически войдете в приложение Mobile Xpense.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

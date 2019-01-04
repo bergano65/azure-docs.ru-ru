@@ -1,5 +1,5 @@
 ---
-title: Начало работы со службой поиска Azure в Java | Документация Майкрософт
+title: Начало работы со службой "Поиск Azure" в Java — служба "Поиск Azure"
 description: Создание облачного приложения поиска в Azure с использованием Java в качестве языка программирования.
 services: search
 author: jj09
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 08/26/2018
 ms.author: jjed
-ms.openlocfilehash: d1ca905d415eb8ab49c449a69707c56d5c717081
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.custom: seodec2018
+ms.openlocfilehash: d74c9c30932bd2db9059738c8dfbc21e4b1b046a
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50419305"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53316977"
 ---
 # <a name="get-started-with-azure-search-in-java"></a>Начало работы с Поиском Azure в Java
 > [!div class="op_single_selector"]
@@ -45,12 +46,12 @@ ms.locfileid: "50419305"
 ## <a name="about-the-program-files"></a>Сведения о файлах программы
 Ниже перечислены файлы, относящиеся к этому примеру.
 
-* Search.jsp: предоставляет пользовательский интерфейс
-* SearchServlet.java: предоставляет методы (аналогично контроллеру в MVC)
-* SearchServiceClient.java: обрабатывает HTTP-запросы
-* SearchServiceHelper.java: вспомогательный класс, предоставляющий статические методы
-* Document.java: предоставляет модель данных
-* config.properties: устанавливает URL-адрес и ключ API службы поиска
+* Search.jsp: предоставляет пользовательский интерфейс;
+* SearchServlet.java: предоставляет методы (аналогично контроллеру в MVC);
+* SearchServiceClient.java: обрабатывает HTTP-запросы;
+* SearchServiceHelper.java: вспомогательный класс, предоставляющий статические методы;
+* Document.java: предоставляет модель данных;
+* config.properties: задает URL-адрес службы Поиска и ключа API;
 * pom.xml: зависимость Maven.
 
 <a id="sub-2"></a>

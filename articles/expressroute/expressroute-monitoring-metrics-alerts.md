@@ -1,26 +1,31 @@
 ---
-title: Мониторинг, метрики и оповещения в ExpressRoute | Microsoft Docs
+title: Мониторинг, метрики и оповещения в Azure ExpressRoute | Документация Майкрософт
 description: Эта страница содержит сведения о мониторинге в ExpressRoute
 services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 09/21/2018
+ms.date: 11/30/2018
 ms.author: cherylmc
-ms.openlocfilehash: fcdaf10ad30cee0e7b79304ff21d67560522875c
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.custom: seodec18
+ms.openlocfilehash: 115b1185575232800e060f67317e4973eea9ea53
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49377803"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53091770"
 ---
 # <a name="expressroute-monitoring-metrics-and-alerts"></a>Мониторинг, метрики и оповещения в ExpressRoute
 
- Эта статья даст вам представление о том, как работают мониторинг, метрики и оповещения в ExpressRoute. Azure Monitor— это централизованная служба метрик, оповещений, журналов диагностики для всех продуктов Azure.
+Эта статья даст вам представление о том, как с помощью Azure Monitor работают мониторинг, метрики и оповещения в ExpressRoute. Azure Monitor— это централизованная служба метрик, оповещений, журналов диагностики для всех продуктов Azure.
+ 
+>[!NOTE]
+>Не рекомендуется использовать **классические метрики**.
+>
 
 ## <a name="circuit-metrics"></a>Метрики канала
 
-Чтобы перейти в подраздел **Метрики**, откройте страницу канала ExpressRoute, который хотите отслеживать. Подраздел **Метрики** находится в разделе **Мониторинг**. Выберите BitsInPerSecond или BitsOutPerSecond и агрегирование. При необходимости можно применить разделение. При этом будут показаны метрики для каждого типа пиринга.
+Чтобы перейти в подраздел **Метрики**, откройте страницу канала ExpressRoute, который хотите отслеживать. В разделе **Мониторинг** вы найдете подраздел **Метрики**. Выберите BitsInPerSecond или BitsOutPerSecond и агрегирование. В случае необходимости можно применить разделение. При этом будут показаны метрики для каждого типа пиринга.
 
 ![метрики канала](./media/expressroute-monitoring-metrics-alerts/ermetricspeering.jpg)
 
@@ -47,7 +52,6 @@ ms.locfileid: "49377803"
 
   ![группа действий](./media/expressroute-monitoring-metrics-alerts/alerthowto3.jpg)
 
-
 4. Указание сведений для группы действий, добавление группы действий.
 
   ![добавить группу действий](./media/expressroute-monitoring-metrics-alerts/actiongroup.png)
@@ -61,9 +65,10 @@ ms.locfileid: "49377803"
 В раскрывающемся списке **Критерии оповещения** можно выбрать **Журнал действий** для определенного типа сигнала и указать сигнал.
 
   ![другое](./media/expressroute-monitoring-metrics-alerts/alertshowto6activitylog.jpg)
-
+  
 ## <a name="next-steps"></a>Дополнительная информация
-* Настройте подключение ExpressRoute.
+
+Настройте подключение ExpressRoute.
   
   * [Создание и изменение канала ExpressRoute с помощью PowerShell](expressroute-howto-circuit-arm.md)
   * [Создание и изменение пиринга для канала ExpressRoute с помощью PowerShell](expressroute-howto-routing-arm.md)

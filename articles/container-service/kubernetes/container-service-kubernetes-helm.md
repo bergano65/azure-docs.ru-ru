@@ -1,5 +1,5 @@
 ---
-title: Развертывание контейнеров с помощью Helm в Azure Kubernetes
+title: (УСТАРЕЛО) Развертывание контейнеров с помощью Helm в Azure Kubernetes
 description: Использование средства упаковки Helm для развертывания контейнеров в кластере Kubernetes в Службе контейнеров Azure
 services: container-service
 author: sauryadas
@@ -9,16 +9,19 @@ ms.topic: article
 ms.date: 04/10/2017
 ms.author: saudas
 ms.custom: mvc
-ms.openlocfilehash: 882e785968f94473e80c7a14e5a68498add37735
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 05edbf40e8cd5f8edbdc8b74b540962b1a25c8de
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38634159"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52997883"
 ---
-# <a name="use-helm-to-deploy-containers-on-a-kubernetes-cluster"></a>Использование Helm для развертывания контейнеров в кластере Kubernetes Helm
+# <a name="deprecated-use-helm-to-deploy-containers-on-a-kubernetes-cluster"></a>(УСТАРЕЛО) Использование Helm для развертывания контейнеров в кластере Kubernetes
 
-[!INCLUDE [aks-preview-redirect.md](../../../includes/aks-preview-redirect.md)]
+> [!TIP]
+> Обновленная версия этой статьи — [Установка приложения с помощью Helm в службе Azure Kubernetes](../../aks/kubernetes-helm.md).
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-kubernetes-deprecation.md)]
 
 [Helm](https://github.com/kubernetes/helm/) — это средство упаковки с открытым исходным кодом, которое помогает установить приложения Kubernetes и управлять их жизненным циклом. Аналогично диспетчерам пакетов Linux, таких как Apt-get и Yum, Helm используется для управления чартами Kubernetes, представляющими собой пакеты предварительно настроенных ресурсов Kubernetes. В этой статье показано, как работать с Helm в кластере Kubernetes, развернутом в Службе контейнеров Azure.
 
@@ -27,7 +30,7 @@ Helm состоит из двух компонентов:
 
 * **Tiller** — сервер, который выполняется в кластере Kubernetes и управляет жизненным циклом приложений Kubernetes. 
  
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 * [Создание кластера Kubernetes](container-service-kubernetes-walkthrough.md) в Службе контейнеров Azure
 

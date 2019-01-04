@@ -1,6 +1,7 @@
 ---
-title: Как развернуть модель как веб-службу в FPGA с помощью Машинного обучения Azure
-description: Узнайте, как развернуть веб-службу с моделью, работающей на базе FPGA, с использованием Машинного обучения Azure.
+title: Развертывание моделей в ППВМ
+titleSuffix: Azure Machine Learning service
+description: Узнайте, как развернуть веб-службу с моделью, работающей в ППВМ, с использованием Службы машинного обучения Azure, чтобы обеспечить получение выводов со сверхнизкой задержкой.
 services: machine-learning
 ms.service: machine-learning
 ms.component: core
@@ -8,21 +9,22 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: tedway
 author: tedway
-ms.date: 10/29/2018
-ms.openlocfilehash: c6bf3c50958085f45c52ec2fa3cbdfba8adbe35f
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.date: 12/06/2018
+ms.custom: seodec18
+ms.openlocfilehash: 3148d4d63ad1464dbd45c361237ac9cd4ffd485a
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51711724"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53268246"
 ---
-# <a name="deploy-a-model-as-a-web-service-on-an-fpga-with-azure-machine-learning"></a>Как развернуть модель как веб-службу в FPGA с помощью Машинного обучения Azure
+# <a name="deploy-a-model-as-a-web-service-on-an-fpga-with-azure-machine-learning-service"></a>Развертывание модели как веб-службы в ППВМ с помощью Службы машинного обучения Azure
 
 Вы можете развернуть модель как веб-службу в [матрицах FPGA](concept-accelerate-with-fpgas.md).  При использовании FPGA обеспечивается сверхнизкая задержка даже в случае пакетов одного размера.   
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://aka.ms/AMLfree), прежде чем начать работу.
+- Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](http://aka.ms/AMLFree).
 
 - Должны быть установлены рабочая область службы "Машинное обучение Azure" и пакет SDK Машинного обучения Azure для Python. Дополнительные сведения о получении этих необходимых компонентов см. в документе [Настройка среды разработки](how-to-configure-environment.md).
  
@@ -165,14 +167,6 @@ registered_model.delete()
 
 Модели машинного обучения Azure, выполняющиеся в FPGA, обеспечивают поддержку SSL и аутентификацию на основе ключей. Это позволит вам ограничивать доступ к вашей службе и защищать данные, предоставляемые клиентами. [Узнайте, как защитить веб-службы](how-to-secure-web-service.md).
 
-
-## <a name="sample-notebook"></a>Пример записной книжки
-
-Основные понятия из этой статьи демонстрируются в записной книжке [project-brainwave/project-brainwave-quickstart.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/project-brainwave/project-brainwave-quickstart.ipynb).
-
-Получите эту записную книжку:
-
-[!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/25/2018
 ms.author: ryanwi
-ms.openlocfilehash: f2795e2836dbb374d147b84d2ac91977659a1520
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 968c9f2455269cf41a701de685e4f47255b46847
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48883521"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53386434"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 > [!div class="op_single_selector"]
@@ -66,10 +66,10 @@ ms.locfileid: "48883521"
 * [Установка пакета SDK Microsoft Azure Service Fabric][core-sdk]
 
 Текущие версии:
-* пакет SDK и инструменты для Service Fabric версии 3.2.187;
-* среда выполнения Service Fabric 6.3.187;
-* инструменты Service Fabric для Visual Studio 2015 2.3.10710.3;
-* Visual Studio 2017 15.7, которая включает в себя инструменты Service Fabric для Visual Studio 2.3.10710.1. 
+* пакет SDK и Средства Service Fabric версии 3.3.617;
+* среда выполнения Service Fabric 6.4.617;
+* Средства Service Fabric для Visual Studio 2015 2.4.11116.1;
+* среда Visual Studio 2017 15.9, которая включает в себя Средства Service Fabric для Visual Studio 2.4.11024.1. 
 
 Список поддерживаемых версий см. в статье [Azure Service Fabric support options](service-fabric-support.md) (Варианты поддержки Azure Service Fabric).
 
@@ -90,7 +90,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope CurrentUser
 
 * [Создание первого приложения Service Fabric в Visual Studio](service-fabric-create-your-first-application-in-visual-studio.md)
 * [Информация о развертывании приложений в локальном кластере и управлении ими](service-fabric-get-started-with-a-local-cluster.md)
-* [Информация о моделях программирования: Reliable Services и Reliable Actors](service-fabric-choose-framework.md)
+* [Общие сведения о модели программирования Service Fabrics](service-fabric-choose-framework.md)
 * [Ознакомление с примерами кода Service Fabric на GitHub](https://aka.ms/servicefabricsamples)
 * [Визуализация кластера с помощью обозревателя Service Fabric](service-fabric-visualizing-your-cluster.md)
 * [Сведения о вариантах поддержки Service Fabric](service-fabric-support.md)

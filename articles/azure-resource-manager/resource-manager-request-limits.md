@@ -1,5 +1,5 @@
 ---
-title: Ограничения запросов Azure Resource Manager | Документация Майкрософт
+title: Ограничения и регулирование запросов Azure Resource Manager
 description: В данной статье описывается использование регулирования запросов Azure Resource Manager при достижении ограничений подписки.
 services: azure-resource-manager
 documentationcenter: na
@@ -10,14 +10,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/17/2018
+ms.date: 12/09/2018
 ms.author: tomfitz
-ms.openlocfilehash: fdc98c6d88b18f770d1869acbea5998ad4571287
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.custom: seodec18
+ms.openlocfilehash: 0ba4a1a4119db515e10c0b704b0a10501fe79682
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45981819"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53136895"
 ---
 # <a name="throttling-resource-manager-requests"></a>Регулирование запросов Resource Manager
 Для каждой подписки и клиента Azure Resource Manager ограничивает число запросов на чтение до 12 000 и запросов на запись — до 1200 в час. Эти ограничения относятся к идентификатору участника, используемому для выполнения запросов, и идентификатору подписки или идентификатору клиента. Если запросы поступают от нескольких идентификаторов субъектов, ваш лимит для подписки или клиента превышает 12000 и 1200 в час.

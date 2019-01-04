@@ -1,5 +1,5 @@
 ---
-title: Расширенное использование проверки подлинности и авторизации в Службе приложений Azure | Документация Майкрософт
+title: Расширенное использование аутентификации и авторизации в Службе приложений Azure | Документация Майкрософт
 description: В этой статье показано, как настроить проверку подлинности и авторизацию в службе приложений и получить утверждения пользователей, а также различные токены.
 services: app-service
 documentationcenter: ''
@@ -13,12 +13,13 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 11/08/2018
 ms.author: cephalin
-ms.openlocfilehash: e1109ec8cc98c7e5fc72d7f56ade19968b0056cc
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.custom: seodec18
+ms.openlocfilehash: 931c1bc68c4e357432081dbfa2df685fcf9fc96d
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685333"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53409757"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Расширенное использование проверки подлинности и авторизации в Службе приложений Azure
 
@@ -26,13 +27,13 @@ ms.locfileid: "51685333"
 
 Чтобы быстро приступить к работе, ознакомьтесь с одним из следующих руководств:
 
-* [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](app-service-web-tutorial-auth-aad.md)
-* [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](containers/tutorial-auth-aad.md)
-* [Настройка приложения для использования имени входа Azure Active Directory](app-service-mobile-how-to-configure-active-directory-authentication.md)
-* [Настройка приложения для использования имени входа Facebook](app-service-mobile-how-to-configure-facebook-authentication.md)
-* [Настройка приложения для использования имени входа Google](app-service-mobile-how-to-configure-google-authentication.md)
-* [Настройка приложения для использования входа по учетной записи Майкрософт](app-service-mobile-how-to-configure-microsoft-authentication.md)
-* [Настройка приложения для использования имени входа Twitter](app-service-mobile-how-to-configure-twitter-authentication.md)
+* [Руководство. Сквозная проверка подлинности и авторизации в Службе приложений Azure](app-service-web-tutorial-auth-aad.md) (Windows)
+* [Руководство. Сквозная аутентификация и авторизация в Службе приложений Azure в Linux](containers/tutorial-auth-aad.md)
+* [Настройка приложения для использования имени входа Azure Active Directory](configure-authentication-provider-aad.md)
+* [Настройка приложения для использования имени входа Facebook](configure-authentication-provider-facebook.md)
+* [Настройка приложения для использования имени входа Google](configure-authentication-provider-google.md)
+* [Настройка приложения для использования входа по учетной записи Майкрософт](configure-authentication-provider-microsoft.md)
+* [Настройка приложения для использования имени входа Twitter](configure-authentication-provider-twitter.md)
 
 ## <a name="use-multiple-sign-in-providers"></a>Использование нескольких поставщиков входа
 
@@ -181,9 +182,9 @@ az webapp config appsettings set --name <app_name> --resource-group <group_name>
 
 - **Google**. Добавьте параметр строки запроса `access_type=offline` к вызову API `/.auth/login/google`. Если используется пакет SDK для мобильных служб, можно добавить параметр к одной из перегрузок `LogicAsync` (см. в разделе о [токенах обновления Google](https://developers.google.com/identity/protocols/OpenIDConnect#refresh-tokens)).
 - **Facebook**. Не предоставляет токены обновления. Срок действия токенов с долгим временем существования истекает через 60 дней (см. раздел об [истечении и продлении срока действия токенов доступа Facebook](https://developers.facebook.com/docs/facebook-login/access-tokens/expiration-and-extension)).
-- **Twitter**. Срок действия токенов доступа не истекает (см. раздел о [часто задаваемых вопросах о Twitter OAuth](https://developer.twitter.com/en/docs/basics/authentication/guides/oauth-faq)).
-- **Учетная запись Майкрософт**. [Настраивая параметры проверки подлинности учетной записи Майкрософт](app-service-mobile-how-to-configure-microsoft-authentication.md), выберите область `wl.offline_access`.
-- **Azure Active Directory**. В [https://resources.azure.com](https://resources.azure.com) сделайте следующее:
+- **Twitter**. Срок действия токенов доступа не истекает (см. раздел о [часто задаваемых вопросах о Twitter OAuth](https://developer.twitter.com/en/docs/basics/authentication/FAQ)).
+- **Учетная запись Майкрософт**. [Настраивая параметры аутентификации учетной записи Майкрософт](configure-authentication-provider-microsoft.md), выберите область `wl.offline_access`.
+- **Azure Active Directory**. На сайте [https://resources.azure.com](https://resources.azure.com) сделайте следующее:
     1. В верхней части страницы выберите **Read/Write** (Чтение и запись).
     1. В левой части браузера перейдите к **subscriptions** > **_\<имя\_подписки_** > **resourceGroups** > _**\<имя\_группы\_ресурсов>**_ > **providers** > **Microsoft.Web** > **sites** > _**\<имя\_приложения>**_ > **config** > **authsettings**. 
     1. Нажмите кнопку **Изменить**.
@@ -242,5 +243,5 @@ az webapp auth update --resource-group <group_name> --name <app_name> --token-re
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Windows)](app-service-web-tutorial-auth-aad.md)
-> [Руководство по сквозной проверке подлинности и авторизации в службе приложений Azure (Linux)](containers/tutorial-auth-aad.md)
+> [Руководство. Сквозная проверка подлинности и авторизации в Службе приложений Azure (Windows)](app-service-web-tutorial-auth-aad.md)
+> [Руководство. Сквозная аутентификация и авторизация в Службе приложений Azure в Linux](containers/tutorial-auth-aad.md)

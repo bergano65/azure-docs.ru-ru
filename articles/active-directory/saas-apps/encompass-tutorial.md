@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Encompass | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Encompass | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Encompass.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/15/2017
 ms.author: jeedes
-ms.openlocfilehash: b2a5050960eee55a7edbdc6048ee717e8345cb2e
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 1a179751cb8919e260c58564be6e14303f4d3f41
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39420297"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52845456"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-encompass"></a>Руководство по интеграции Azure Active Directory с Encompass
+# <a name="tutorial-azure-active-directory-integration-with-encompass"></a>Руководство. Интеграция Azure Active Directory с Encompass
 
 В этом руководстве описано, как интегрировать приложение Encompass с Azure Active Directory (Azure AD).
 
@@ -115,7 +115,7 @@ ms.locfileid: "39420297"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.voxmobile.com/voxportal/ws/saml/consume`.
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Encompass](http://www.voxmobile.com/contact/).
+    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Encompass](https://www.voxmobile.com/contact/).
 
 1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -129,10 +129,10 @@ ms.locfileid: "39420297"
 
     ![Настройка Encompass](./media/encompass-tutorial/tutorial_encompass_configure.png) 
 
-1. Чтобы настроить единый вход на стороне **Encompass**, нужно отправить скачанный **сертификат (Base64), URL-адрес выхода и URL-адрес службы единого входа SAML** [в службу поддержки Encompass](http://www.voxmobile.com/contact/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Encompass**, нужно отправить скачанный **сертификат (Base64), URL-адрес выхода и URL-адрес службы единого входа SAML** [в службу поддержки Encompass](https://www.voxmobile.com/contact/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -168,7 +168,7 @@ ms.locfileid: "39420297"
   
 ### <a name="create-a-encompass-test-user"></a>Создание тестового пользователя Encompass
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Encompass. Обратитесь в [службу поддержки Encompass](http://www.voxmobile.com/contact/), чтобы добавить пользователей на платформу Encompass. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении Encompass. Обратитесь в  [службу поддержки Encompass](https://www.voxmobile.com/contact/) , чтобы добавить пользователей на платформу Encompass. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -205,7 +205,7 @@ ms.locfileid: "39420297"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент Encompass на панели доступа, вы автоматически войдете в приложение Encompass.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

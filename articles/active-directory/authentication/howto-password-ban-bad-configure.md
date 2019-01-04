@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: rogoya
-ms.openlocfilehash: 34011144d4f960413e78f13c999dfddf6d2660bf
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: c4a289d1aeefc35f07e7598adf3780620b11f0da
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50742949"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53252207"
 ---
 # <a name="configuring-the-custom-banned-password-list"></a>Настройка пользовательского списка заблокированных паролей
 
@@ -36,7 +36,7 @@ ms.locfileid: "50742949"
    * Этот список может содержать до 1000 слов.
    * В нем также учитывается регистр.
    * В пользовательском списке заблокированных паролей предусмотрена подстановка стандартных знаков.
-      * Пример: o и 0 или а и @.
+      * Пример: o и 0 или а и \@.
    * Минимальная длина строки составляет четыре символа, а максимальная — 16 символов.
 1. Добавив все строки, нажмите кнопку **Сохранить**.
 

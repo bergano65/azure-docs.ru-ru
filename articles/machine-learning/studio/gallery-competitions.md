@@ -1,12 +1,11 @@
 ---
-title: Конкурсы в коллекции решений ИИ Azure | Документация Майкрософт
-description: Поиск конкурсов в коллекции решений ИИ Azure.
+title: Конкурсы для коллекции — Студия машинного обучения Azure | Документация Майкрософт
+description: Поиск конкурсов в коллекции решений ИИ Azure. Конкурсы дают возможность бросить вызов сообществу специалистов по обработке и анализу данных в решении сложных задач.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: ef74f411-bce4-4b02-aa34-902fc8d7b519
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/31/2017
-ms.openlocfilehash: a209b53893da8f0c7e86102a703334091f982c78
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: 5d38205ca614fef2ea9c10e9ad2fb94bdf3481cc
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52260671"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53277800"
 ---
 # <a name="discover-competitions-in-the-azure-ai-gallery"></a>Поиск конкурсов в коллекции решений ИИ Azure
 
@@ -53,5 +52,5 @@ ms.locfileid: "52260671"
 
 **[ПЕРЕЙТИ В КОЛЛЕКЦИЮ >>](http://gallery.cortanaintelligence.com)**
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 

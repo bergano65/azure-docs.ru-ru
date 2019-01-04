@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке G Suite для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство по настройке G Suite для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить автоматическую отмену и подготовку учетных записей пользователей из Azure AD в G Suite.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 924584a77d36ec41488d8c76d9631baf484ff494
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 48a835bf8c63ffa5512173b600fb85abd5c6cb45
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44346395"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52840356"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Руководство по настройке G Suite для автоматической подготовки пользователей
 
@@ -67,7 +67,7 @@ ms.locfileid: "44346395"
 > [!NOTE]
 > Одним из способов автоматизации подготовки пользователей для G Suite является использование средства синхронизации каталогов [Google Apps Directory Sync (GADS)](https://support.google.com/a/answer/106368?hl=en), которое позволяет локально подготовить удостоверения Active Directory для G Suite. С другой стороны, мы рассмотрим подготовку к использованию G Suite пользователей Azure Active Directory (облако) и групп, поддерживающих почту. 
 
-1. Войдите в [консоль администратора Google Apps](http://admin.google.com/) с использованием учетной записи администратора и выберите **Security** (Безопасность). Если эта ссылка не отображается, она может быть скрыта в меню **More Controls** (Другие элементы управления) в нижней части экрана.
+1. Войдите в [консоль администратора Google Apps](https://admin.google.com/) с использованием учетной записи администратора и выберите **Security** (Безопасность). Если эта ссылка не отображается, она может быть скрыта в меню **More Controls** (Другие элементы управления) в нижней части экрана.
    
     ![Выбор страницы Security (Безопасность)][10]
 
@@ -110,7 +110,7 @@ ms.locfileid: "44346395"
 
 1. После подтверждения всех доменов в Azure AD необходимо подтвердить их в Google Apps. Для каждого домена, который еще не зарегистрирован в Google, сделайте следующее:
    
-    a. В [консоли администратора Google Apps](http://admin.google.com/) выберите **Domains** (Домены).
+    a. В [консоли администратора Google Apps](https://admin.google.com/) выберите **Domains** (Домены).
      
      ![Выбор доменов][20]
 
@@ -127,9 +127,9 @@ ms.locfileid: "44346395"
     д. Повторите описанные выше шаги для других доменов, которые нужно добавить в Google Apps.
      
      > [!WARNING]
-     > Если вы измените основной домен клиента G Suite после того, как настроите единый вход в Azure AD, вам необходимо будет повторить шаг 3, описанный в разделе [Шаг 2. Включение единого входа](#step-two-enable-single-sign-on).
+     > Если вы измените основной домен арендатора G Suite после того, как настроите единый вход в Azure AD, вам необходимо будет повторить шаг 3, описанный в разделе [Шаг 2. Включение единого входа](#step-two-enable-single-sign-on).
        
-1. В [консоли администратора Google Apps](http://admin.google.com/) выберите **Admin Roles** (Роли администраторов).
+1. В [консоли администратора Google Apps](https://admin.google.com/) выберите **Admin Roles** (Роли администраторов).
    
      ![Выбор Google Apps][26]
 

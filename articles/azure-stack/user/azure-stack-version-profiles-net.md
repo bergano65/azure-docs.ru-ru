@@ -12,15 +12,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/25/2018
+ms.date: 12/07/2018
 ms.author: sethm
 ms.reviewer: sijuman
-ms.openlocfilehash: 35329468ee01d5b70d654c1eb4a908db9d3fcb5d
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: cfebbdb9b88a1de6a05f06e6ed72ebc9cddddcf6
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47184405"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53074457"
 ---
 # <a name="use-api-version-profiles-with-net-in-azure-stack"></a>Использование профилей версий API и .NET в Azure Stack
 
@@ -106,7 +106,7 @@ Microsoft Azure Resource Manager — это платформа управлен�
 
 - В Пакете средств разработки Azure Stack (ASDK) **ResourceManagerUrl**: https://management.local.azurestack.external/.
 
-- **ResourceManagerUrl** в интегрированных системах: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/` Для получения необходимых метаданных: `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`
+- В интегрированных системах **ResourceManagerUrl**: `https://management.<location>.ext-<machine-name>.masd.stbtest.microsoft.com/`. Чтобы получить необходимые метаданные, используйте `<ResourceManagerUrl>/metadata/endpoints?api-version=1.0`.
 
 Пример JSON-файла:
 
@@ -125,11 +125,11 @@ Microsoft Azure Resource Manager — это платформа управлен�
 
 ## <a name="existing-api-profiles"></a>Существующие профили API
 
-1.  **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.*ResourceProvider*.0.9.0-preview.nupkg** — актуальный профиль для Azure Stack. Используйте этот профиль для служб, которым нужна максимальная совместимость с Azure Stack с меткой 1808 или более новой.
+1.  **Microsoft.Azure.Management.Profiles.hybrid\_2018\_03\_01.*ResourceProvider*.0.9.0-preview.nupkg**: последний профиль, созданный для Azure Stack. Используйте этот профиль для служб, которым нужна максимальная совместимость с Azure Stack с меткой 1808 или более новой.
 
-2.  **Microsoft.Azure.Management.Profiles.hybrid\_2017\_03\_09. *ResourceProvider*. 0.9.0-preview.nupkg** — если вы используете метку ниже, чем сборка 1808, выберите этот профиль.
+2.  **Microsoft.Azure.Management.Profiles.hybrid\_2017\_03\_09.*ResourceProvider*.0.9.0-preview.nupkg**: если вы используете метку ниже, чем сборка 1808, используйте этот профиль.
 
-3.  **Latest** — профиль с новейшими версиями всех служб. Используйте последние версии всех служб. Этот профиль входит в пакет NuGet **Microsoft.Azure.Management**.
+3.  **Latest**: профиль с новейшими версиями всех служб. Используйте последние версии всех служб. Этот профиль входит в пакет NuGet **Microsoft.Azure.Management**.
 
 См. дополнительные сведения о [Summary of API profiles][].
 
@@ -193,7 +193,9 @@ public override void InitializeServiceClient<T>(ServiceClient<T> client)
 
 1.  Клонируйте репозиторий, используя следующую команду:
 
-    `git clone <https://github.com/seyadava/azure-sdk-for-net-samples/tree/master/TestProject>`
+    ```shell
+    git clone https://github.com/Azure-Samples/hybrid-compute-dotnet-manage-vm.git
+    ```
 
 2.  Создайте субъект-службу Azure и назначьте роль для доступа к подписке. См. дополнительные сведения о [Use Azure PowerShell to create a service principal with a certificate][].
 

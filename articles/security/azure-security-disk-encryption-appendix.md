@@ -1,20 +1,22 @@
 ---
-title: Шифрование дисков Azure для виртуальных машин IaaS под управлением Windows и Linux | Документация Майкрософт
+title: Приложение к статье о шифровании дисков Azure для виртуальных машин IaaS | Документация Майкрософт
 description: Эта статья является приложением к статье о шифровании дисков Microsoft Azure для виртуальных машин IaaS под управлением Windows и Linux.
 author: mestew
 ms.service: security
 ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
-ms.date: 11/12/2018
-ms.openlocfilehash: e5c7d51428c66bf9e6c245f28fb13b8d4a316d18
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.date: 12/12/2018
+ms.custom: seodec18
+ms.openlocfilehash: f10a3c02e98db5777b5231aec04951a7ed1ad9ad
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51614681"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53310684"
 ---
 # <a name="appendix-for-azure-disk-encryption"></a>Приложение к статье о шифровании дисков Azure 
+
 Эта статья является приложением к статье [Шифрование дисков Azure для виртуальных машин IaaS](azure-security-disk-encryption-overview.md). Чтобы понять контекст этого приложения, сначала вам нужно ознакомиться с основной статьей. Здесь описывается, как подготовить предварительно зашифрованные виртуальные жесткие диски и выполнить другие задачи.
 
 ## <a name="connect-to-your-subscription"></a>Подключение к подписке
@@ -57,7 +59,7 @@ ms.locfileid: "51614681"
 
 ### <a name="bkmk_ConnectCLI"></a> Подключение к подписке Azure с помощью Azure CLI
 
-1. Войдите в Azure с помощью команды [az login](/cli/azure/authenticate-azure-cli#interactive-log-in). 
+1. Войдите в Azure с помощью команды [az login](/cli/azure/authenticate-azure-cli#sign-in-interactively). 
      
      ```azurecli
      az login
@@ -130,6 +132,20 @@ ms.locfileid: "51614681"
  -  [Отключение шифрования на работающей виртуальной машине Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-running-linux-vm-without-aad) 
     - Для виртуальных машин Linux отключение шифрования возможно только для томов данных.  
 
+### <a name="encrypt-or-decrypt-vm-scale-sets"></a>Шифрование или расшифровка масштабируемых наборов виртуальных машин
+
+- [Включение шифрования диска в запущенном масштабируемом наборе виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-vmss-linux)
+
+- [Включение шифрования диска в запущенном масштабируемом наборе виртуальных машин Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-vmss-windows)
+
+ - [Развертывание масштабируемого набора виртуальных машин Linux с помощью Jumpbox и включение шифрования в этом наборе Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox)
+
+ - [Развертывание масштабируемого набора виртуальных машин Windows с помощью Jumpbox и включение шифрования в этом наборе Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-windows-jumpbox)
+
+- [Отключение шифрования диска в запущенном масштабируемом наборе виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-linux)
+
+- [Отключение шифрования диска в запущенном масштабируемом наборе виртуальных машин Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-windows)
+
 ### <a name="encrypt-or-decrypt-vms-with-an-azure-ad-app-previous-release"></a>Шифрование или расшифровка виртуальных машин с приложением Azure AD (предыдущий выпуск) 
  
 - [Включение шифрования дисков на виртуальной машине IaaS под управлением Windows, которая уже существует или работает](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-windows-vm)
@@ -160,17 +176,7 @@ ms.locfileid: "51614681"
 
 - [Включение шифрования диска на запущенной виртуальной машине под управлением Windows с использованием отпечатка сертификата клиента AAD](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-windows-vm-aad-client-cert)
     
-- [Включение шифрования диска в запущенном масштабируемом наборе виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-vmss-linux)
 
-- [Включение шифрования диска в запущенном масштабируемом наборе виртуальных машин Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-running-vmss-windows)
-
- - [Развертывание масштабируемого набора виртуальных машин Linux с помощью Jumpbox и включение шифрования в этом наборе Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox)
-
- - [Развертывание масштабируемого набора виртуальных машин Windows с помощью Jumpbox и включение шифрования в этом наборе Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-windows-jumpbox)
-
-- [Отключение шифрования диска в запущенном масштабируемом наборе виртуальных машин Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-linux)
-
-- [Отключение шифрования диска в запущенном масштабируемом наборе виртуальных машин Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-decrypt-vmss-windows)
 
 ## <a name="bkmk_preWin"></a> Подготовка предварительно зашифрованного виртуального жесткого диска Windows
 В следующем разделе приведены инструкции по подготовке предварительно зашифрованного виртуального жесткого диска Windows к развертыванию в качестве зашифрованного виртуального жесткого диска в IaaS Azure. Используйте эти сведения, чтобы подготовить и загрузить новую виртуальную машину Windows (VHD) в Azure Site Recovery Azure или Azure. Дополнительные сведения о подготовке и отправке виртуального жесткого диска см. в статье [Отправка универсального диска VHD и создание виртуальных машин с его помощью в Azure](../virtual-machines/windows/upload-generalized-managed.md).
@@ -189,7 +195,7 @@ ms.locfileid: "51614681"
 
     ServerManagerCmd -install BitLockers
 ### <a name="prepare-the-os-volume-for-bitlocker-by-using-bdehdcfg"></a>Подготовка тома операционной системы для BitLocker с помощью `bdehdcfg`
-Чтобы сжать раздел операционной системы и подготовить компьютер к использованию BitLocker, запустите компонент [bdehdcfg](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-basic-deployment#using-bitlocker-to-encrypt-volumescommand).
+Чтобы сжать раздел операционной системы и подготовить компьютер к использованию BitLocker, запустите компонент [bdehdcfg](https://docs.microsoft.com/windows/security/information-protection/bitlocker/bitlocker-basic-deployment).
 
     bdehdcfg -target c: shrink -quiet 
 
@@ -295,23 +301,23 @@ ms.locfileid: "51614681"
 
 1. Во время настройки разделов дисков выберите **Configure encrypted volumes** (Настройка зашифрованных томов).
 
- ![Настройка Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig1.png)
+ ![Настройка зашифрованных томов при настройке Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig1.png)
 
 2. Создайте отдельный загрузочный диск (незашифрованный). Зашифруйте корневой диск.
 
- ![Настройка Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig2.png)
+ ![Выбор устройств для шифрования при настройке Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig2.png)
 
 3. Укажите парольную фразу. Это парольная фраза, которую вы передали в хранилище ключей.
 
- ![Настройка Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig3.png)
+ ![Указание парольной фразы при настройке Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig3.png)
 
 4. Завершите настройку разделов.
 
- ![Настройка Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig4.png)
+ ![Завершение секционирования при настройке Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig4.png)
 
 5. После загрузки виртуальной машины отобразится запрос парольной фразы. Введите парольную фразу, указанную на шаге 3.
 
- ![Настройка Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig5.png)
+ ![Указание парольной фразы во время загрузки при настройке Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig5.png)
 
 6. Подготовьте виртуальную машину к передаче в Azure, следуя [этим инструкциям](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-create-upload-ubuntu/). Пока не выполняйте последний шаг (отзыв виртуальной машины).
 
@@ -377,7 +383,7 @@ ms.locfileid: "51614681"
 
 7. Теперь виртуальную машину можно отозвать.
 
- ![Настройка Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig6.png)
+ ![Обновление initramfs при настройке Ubuntu 16.04](./media/azure-security-disk-encryption/ubuntu-1604-preencrypted-fig6.png)
 
 8. Перейдите к следующему шагу и передайте свой виртуальный жесткий диск в Azure.
 
@@ -385,11 +391,11 @@ ms.locfileid: "51614681"
 Чтобы настроить шифрование во время установки дистрибутива, сделайте следующее:
 1. При настройке разделов дисков выберите **Encrypt Volume Group** (Шифрование группы томов), а затем введите пароль. Это пароль, который потребуется передать в хранилище ключей.
 
- ![Настройка openSUSE 13.2](./media/azure-security-disk-encryption/opensuse-encrypt-fig1.png)
+ ![Шифрование группы томов при настройке openSUSE 13.2](./media/azure-security-disk-encryption/opensuse-encrypt-fig1.png)
 
 2. Загрузите виртуальную машину, используя указанный пароль.
 
- ![Настройка openSUSE 13.2](./media/azure-security-disk-encryption/opensuse-encrypt-fig2.png)
+ ![Указание парольной фразы во время загрузки при настройке openSUSE 13.2](./media/azure-security-disk-encryption/opensuse-encrypt-fig2.png)
 
 3. Подготовьте виртуальную машину для передачи в Azure, следуя инструкциям в разделе [Подготовка виртуальной машины SLES или openSUSE для Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-suse-create-upload-vhd/#prepare-opensuse-131). Пока не выполняйте последний шаг (отзыв виртуальной машины).
 
@@ -453,19 +459,19 @@ ms.locfileid: "51614681"
 Чтобы настроить шифрование во время установки дистрибутива, сделайте следующее:
 1. Во время настройки разделов дисков выберите **Encrypt my data** (Шифрование личных данных).
 
- ![Настройка CentOS 7](./media/azure-security-disk-encryption/centos-encrypt-fig1.png)
+ ![Установка назначения при настройке CentOS 7](./media/azure-security-disk-encryption/centos-encrypt-fig1.png)
 
 2. Включите шифрование для корневого раздела (параметр **Encrypt**).
 
- ![Настройка CentOS 7](./media/azure-security-disk-encryption/centos-encrypt-fig2.png)
+ ![Выбор шифрования для корневого раздела при настройке CentOS 7](./media/azure-security-disk-encryption/centos-encrypt-fig2.png)
 
 3. Укажите парольную фразу. Это парольная фраза, которую потребуется передать в хранилище ключей.
 
- ![Настройка CentOS 7](./media/azure-security-disk-encryption/centos-encrypt-fig3.png)
+ ![Указание парольной фразы при настройке CentOS 7](./media/azure-security-disk-encryption/centos-encrypt-fig3.png)
 
 4. После загрузки виртуальной машины отобразится запрос парольной фразы. Введите парольную фразу, указанную на шаге 3.
 
- ![Настройка CentOS 7](./media/azure-security-disk-encryption/centos-encrypt-fig4.png)
+ ![Введение парольной фразы во время загрузки при настройке CentOS 7](./media/azure-security-disk-encryption/centos-encrypt-fig4.png)
 
 5. Подготовьте виртуальную машину для передачи в Azure, следуя инструкциям в разделе "CentOS 7.0+" статьи [Подготовка виртуальной машины на основе CentOS для Azure](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-create-upload-centos/#centos-70). Пока не выполняйте последний шаг (отзыв виртуальной машины).
 
@@ -526,7 +532,7 @@ ms.locfileid: "51614681"
     ```    
 5. Выполните команду /usr/sbin/dracut -f -v, чтобы обновить initrd.
 
-![Настройка CentOS 7](./media/azure-security-disk-encryption/centos-encrypt-fig5.png)
+![Выполнение команды /usr/sbin/dracut -f -v при настройке CentOS 7](./media/azure-security-disk-encryption/centos-encrypt-fig5.png)
 
 ## <a name="bkmk_UploadVHD"></a> Передача зашифрованного виртуального жесткого диска в учетную запись хранения Azure
 После включения шифрования BitLocker или DM-Crypt следует передать локальный зашифрованный виртуальный жесткий диск в учетную запись хранения.

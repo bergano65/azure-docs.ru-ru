@@ -1,5 +1,5 @@
 ---
-title: Полное пошаговое руководство по масштабируемому анализу данных с помощью Azure Data Lake | Документация Майкрософт
+title: Масштабируемая обработка и анализ данных с помощью Azure Data Lake — командный процесс обработки и анализа данных
 description: В этой статье описано, как выполнять задания по исследованию и двоичной классификации данных на основе набора данных озера данных Azure.
 services: machine-learning
 author: marktab
@@ -10,15 +10,15 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/13/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: 52518f8c9295f00b93dee0ea356513605450aed7
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 8549a35eed0c1f61c087b9056e4564577170f5f6
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52443565"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141821"
 ---
-# <a name="scalable-data-science-with-azure-data-lake-an-end-to-end-walkthrough"></a>Полное пошаговое руководство по масштабируемому анализу данных с помощью Azure Data Lake
+# <a name="scalable-data-science-with-azure-data-lake-an-end-to-end-walkthrough"></a>Масштабируемая обработка и анализ данных с помощью Azure Data Lake. Полное пошаговое руководство
 В этом пошаговом руководстве на примере набора данных о поездках и тарифах такси в Нью-Йорке показано, как использовать Azure Data Lake для выполнения задач по исследованию и двоичной классификации данных, чтобы спрогнозировать вероятность получения чаевых за поездку. Здесь подробно описаны шаги [процесса обработки и анализа данных группы](https://docs.microsoft.com/azure/machine-learning/team-data-science-process/)— от получения данных для обучения модели и до развертывания веб-службы, которая публикует модель.
 
 ### <a name="azure-data-lake-analytics"></a>Аналитика озера данных Azure
@@ -146,8 +146,8 @@ CSV-файл trip_fare содержит подробную информацию 
 
 ![9](./media/data-lake-walkthrough/9-portal-submit-job.PNG)
 
-### <a name="ingest"></a>Прием данных: чтение из общедоступного большого двоичного объекта
-Данные большого двоичного объекта Azure расположены по адресу **wasb://container_name@blob_storage_account_name.blob.core.windows.net/blob_name**, и их можно извлечь, используя **Extractors.Csv()**. В следующих скриптах подставьте имена своих контейнера и учетной записи хранения для container_name@blob_storage_account_name в адресе wasb. Благодаря тому, что файлы имеют одинаковый формат имен, вы можете считать все 12 файлов поездок сразу, используя шаблон **trip\_data_{\*\}}.csv**. 
+### <a name="ingest"></a>Прием данных. Чтение данных из общедоступного большого двоичного объекта
+Данные большого двоичного объекта Azure расположены по адресу **wasb://container_name@blob_storage_account_name.blob.core.windows.net/blob_name**, и их можно извлечь, используя **Extractors.Csv()**. В следующих скриптах подставьте имена своих контейнера и учетной записи хранения для container_name@blob_storage_account_name в адресе wasb. Благодаря тому, что файлы имеют одинаковый формат имен, вы можете считать все 12 файлов поездок сразу, используя шаблон **trip\_data_{\*\}}.csv\**. 
 
     ///Read in Trip data
     @trip0 =
@@ -452,7 +452,7 @@ CSV-файл trip_fare содержит подробную информацию 
 * Первый вариант предусматривает использование данных выборки, записанных в большой двоичный объект Azure (на шаге **Выборка данных** выше), и Python, чтобы создать и развернуть модели из Машинного обучения Azure. 
 * Второй вариант предполагает, что вы запрашиваете данные озера данных Azure напрямую с помощью запроса Hive. При выборе такого варианта необходимо создать новый кластер HDInsight или использовать кластер HDInsight, который уже есть. Таблицы Hive кластера должны указывать на данные о такси Нью-Йорка в хранилище озера данных Azure.  В следующих разделах рассматриваются оба варианта. 
 
-## <a name="option-1-use-python-to-build-and-deploy-machine-learning-models"></a>Вариант 1. Использование Python для создания и развертывания моделей машинного обучения
+## <a name="option-1-use-python-to-build-and-deploy-machine-learning-models"></a>Вариант 1. Использование Python для создания и развертывания моделей машинного обучения
 Для создания и развертывания моделей машинного обучения, используя Python, создайте записную книжки Jupyter на локальном компьютере или в студии машинного обучения Azure. Записная книжка Jupyter, которая доступна на сайте [GitHub](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/AzureDataLakeWalkthrough), содержит полный код для исследования и визуализации данных, проектирования признаков, моделирования и развертывания. В этой статье описаны только моделирование и развертывание. 
 
 ### <a name="import-python-libraries"></a>Импорт библиотек Python
@@ -592,7 +592,7 @@ CSV-файл trip_fare содержит подробную информацию 
   
        ![c4](./media/data-lake-walkthrough/c4-call-API.PNG)
 
-## <a name="option-2-create-and-deploy-models-directly-in-azure-machine-learning"></a>Вариант 2. Создание и развертывание моделей прямо в Машинном обучении Azure
+## <a name="option-2-create-and-deploy-models-directly-in-azure-machine-learning"></a>Вариант 2. Создание и развертывание моделей прямо в Машинном обучении Azure
 Студия машинного обучения Azure может считывать данные прямо из хранилища озера данных Azure, а затем использоваться для создания и развертывания моделей. Этот подход использует таблицу Hive, которая указывает на хранилище озера данных Azure. Для этого необходимо подготовить отдельный кластер Azure HDInsight, а в нем создать таблицу Hive. В следующих разделах показано, как это сделать. 
 
 ### <a name="create-an-hdinsight-linux-cluster"></a>Создание кластера HDInsight на платформе Linux

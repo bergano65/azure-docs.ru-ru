@@ -10,17 +10,15 @@ ms.assetid: ''
 ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: magoedte
-ms.component: ''
-ms.openlocfilehash: 7474d76537111ebc9f34bb2632a899b7ceb4e50a
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 1c90c85f667e18a80c4673a73867ee2d6b3b6294
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52638199"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53189903"
 ---
 # <a name="connect-windows-computers-to-the-log-analytics-service-in-azure"></a>Подключение компьютеров Windows к службе Log Analytics в Azure
 
@@ -49,7 +47,7 @@ ms.locfileid: "52638199"
 ## <a name="configure-agent-to-use-tls-12"></a>Настройка агента для использования TLS 1.2
 Чтобы настроить использование протокола [TLS 1.2](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings#tls-12) для обмена данными между агентом Windows и службой Log Analytics, можно выполнить следующие действия для включения протокола до установки агента на виртуальной машине или после.   
 
-1. Найдите следующий подраздел реестра: **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols**.
+1. Найдите следующий подраздел реестра: **HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols**
 2. Создайте подраздел в разделе **Protocols** для TLS 1.2 **HKLM\System\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2**.
 3. Создайте подраздел **Client** в созданном ранее подразделе версии протокола TLS 1.2. Например, **HKLM\System\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client**.
 4. Создайте следующие значения DWORD в папке **HKLM\System\System\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client**:
@@ -180,7 +178,7 @@ ms.locfileid: "52638199"
 
 По завершении установки агента вы можете проверить, успешно ли он подключен и отправляет ли он отчеты. Есть два способа.  
 
-На **панели управления** компьютера найдите элемент **Microsoft Monitoring Agent**.  Выберите его. На вкладке **Azure Log Analytics** агент должен отобразить следующее сообщение: **Microsoft Monitoring Agent успешно подключен к службе Microsoft Operations Management Suite.**<br><br> ![Состояние подключения MMA к Log Analytics](media/agent-windows/log-analytics-mma-laworkspace-status.png)
+На **панели управления** компьютера найдите элемент **Microsoft Monitoring Agent**.  Выберите его, а затем на вкладке **Azure Log Analytics** должно появиться следующее сообщение от агента: **The Microsoft Monitoring Agent has successfully connected to the Microsoft Operations Management Suite service** (Microsoft Monitoring Agent успешно подключен к службе Microsoft Operations Management Suite).<br><br> ![Состояние подключения MMA к Log Analytics](media/agent-windows/log-analytics-mma-laworkspace-status.png)
 
 Вы также можете выполнить простой поиск по журналам на портале Azure.  
 

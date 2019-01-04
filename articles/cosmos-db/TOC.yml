@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Обзор
   items:
-  - name: О базе данных Azure Cosmos
+  - name: Добро пожаловать в базу данных Azure Cosmos DB
     href: introduction.md
 - name: Быстрое начало работы
   items:
@@ -192,7 +192,7 @@ items:
       href: compliance.md
 - name: Многомодельные API-интерфейсы
   items:
-  - name: Документация по API SQL
+  - name: API-интерфейс SQL
     items:
     - name: Данные документов модели
       href: modeling-data.md
@@ -296,11 +296,11 @@ items:
         href: /rest/api/cosmos-db/
       - name: Поставщик ресурсов REST
         href: /rest/api/cosmos-db-resource-provider/
-  - name: Документация по API MongoDB
+  - name: API Azure Cosmos DB для MongoDB
     items:
     - name: Введение
       href: mongodb-introduction.md
-    - name: Поддержка MongoDB
+    - name: Поддержка коммуникационного протокола
       href: mongodb-feature-support.md
     - name: Учебники
       items:
@@ -346,11 +346,11 @@ items:
         href: mongodb-time-to-live.md
       - name: Управление индексированием данных
         href: mongodb-indexing.md
-  - name: Документация по API Gremlin
+  - name: API Gremlin
     items:
     - name: Введение
       href: graph-introduction.md
-    - name: Поддержка Gremlin
+    - name: Поддержка коммуникационного протокола
       href: gremlin-support.md
     - name: Учебники
       items:
@@ -362,11 +362,11 @@ items:
         href: bulk-executor-graph-dotnet.md
       - name: Секционирование данных графов
         href: graph-partitioning.md
-  - name: Документация по API Cassandra
+  - name: API Cassandra
     items:
     - name: Введение
       href: cassandra-introduction.md
-    - name: Поддержка Cassandra
+    - name: Поддержка коммуникационного протокола
       href: cassandra-support.md
     - name: Учебники
       items:
@@ -400,7 +400,7 @@ items:
         href: cassandra-spark-aggregation-ops.md
       - name: Копирование данных таблицы
         href: cassandra-spark-table-copy-ops.md
-  - name: Документация по API таблиц
+  - name: API таблицы
     items:
     - name: Введение
       href: table-introduction.md
@@ -615,9 +615,9 @@ items:
       href: use-cases.md
     - name: Приложения социальных сетей
       href: social-media-apps.md
-ms.openlocfilehash: 34fc77f13f0c0bd394d96e19b86a1632ce2846b1
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 3d3236461a02504c74cef07e11615a82c03ae0d5
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53410114"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53807675"

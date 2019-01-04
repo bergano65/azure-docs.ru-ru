@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
-ms.date: 09/21/2018
+ms.date: 12/12/2018
 ms.author: genli
-ms.openlocfilehash: 8253c4c84e38fc3b8279aa311c1627a540502a6c
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: b467618815f2bad8a6816425764fe60707c1db3d
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49351492"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53308147"
 ---
 # <a name="troubleshoot-azure-virtual-machines-boot-errors"></a>Устранение ошибок при загрузке виртуальных машин Azure
 
@@ -29,6 +29,10 @@ ms.locfileid: "49351492"
 * [Ошибки загрузки BitLocker на виртуальной машине Azure](troubleshoot-bitlocker-boot-error.md) 
 * [Отображение в Windows уведомления "Проверка файловой системы" при загрузке виртуальной машины Azure](troubleshoot-check-disk-boot-error.md)
 * [Отображение ошибки "синий экран" при загрузке виртуальной машины Azure под управлением Windows](troubleshoot-common-blue-screen-error.md)
+* [При запуске виртуальная машина зависла на сообщении "Подготовка Windows. Не выключайте компьютер" в Azure](troubleshoot-vm-boot-configure-update.md)
+* [Windows отображает ошибку "Сбой критически важной службы" на синем экране при загрузке виртуальной машины Azure](troubleshoot-critical-service-failed-boot-error.md)
+* [Цикл перезагрузки Windows на виртуальной машине Azure](troubleshoot-reboot-loop.md)
+* [Зависание виртуальной машины при запуске во время обновления Windows](troubleshoot-stuck-updating-boot-error.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

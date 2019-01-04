@@ -1,5 +1,6 @@
 ---
-title: Настройка гиперпараметров модели с помощью службы "Машинное обучение Azure"
+title: Настройка гиперпараметров модели
+titleSuffix: Azure Machine Learning service
 description: Сведения об эффективной настройке гиперпараметров для модели глубокого или машинного обучения с помощью службы "Машинное обучение Azure". Вы узнаете, как определить пространство поиска параметров и указать основную метрику, чтобы оптимизировать и досрочно завершать запуски с низкой эффективностью.
 ms.author: swatig
 author: swatig007
@@ -8,15 +9,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.component: core
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: e66dcac1d83c71174ad5d7c3fdcd2310143f8e01
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.date: 12/04/2018
+ms.custom: seodec18
+ms.openlocfilehash: da809aaaa1dd46c1232d0b032136833caaf0d2d0
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50140812"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100741"
 ---
-# <a name="tune-hyperparameters-for-your-model"></a>Настройка гиперпараметров модели
+# <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning-service"></a>Настройка гиперпараметров модели с помощью Службы машинного обучения Azure
 
 Вы можете эффективно настраивать гиперпараметры для модели с помощью службы "Машинное обучение Azure".  Настройка гиперпараметров включает следующие шаги:
 
@@ -36,8 +38,6 @@ ms.locfileid: "50140812"
 
 Служба "Машинное обучение Azure" позволяет эффективно автоматизировать исследование гиперпараметров, обеспечивая существенную экономию времени и ресурсов. Вы просто указываете диапазон значений гиперпараметров и максимальное количество учебных запусков. Система автоматически начинает несколько одновременных запусков с разными конфигурациями параметров и выбирает из них наиболее эффективную по указанным вами метрикам. Обучающие прогоны с низкой эффективностью автоматически заканчиваются досрочно, снижая потери вычислительных ресурсов. Вместо этого эти ресурсы используются для изучения других конфигураций гиперпараметров.
 
->[!NOTE]
-> Код в этой статье был протестирован с пакетом SDK для службы "Машинное обучение Azure" версии 0.168. 
 
 ## <a name="define-search-space"></a>Определение пространства поиска
 
@@ -255,7 +255,7 @@ policy=None
 
 Чтобы ограничить затраты на эксперимент по настройке гиперпараметров, укажите максимально допустимое общее число учебных запусков.  При желании укажите максимальный срок действия для результатов эксперимента по настройке гиперпараметров.
 
-* `max_total_runs`: максимальное общее количество обучающих прогонов, которые будут созданы. Это верхняя граница. Количество запусков может оказаться меньше, например, если пространство гиперпараметров ограничено и не позволяет извлечь достаточное число образцов. Это значение должно быть в диапазоне от 1 до 1000.
+* `max_total_runs`: максимальное общее количество запусков обучения, которые будут созданы. Это верхняя граница. Количество запусков может оказаться меньше, например, если пространство гиперпараметров ограничено и не позволяет извлечь достаточное число образцов. Это значение должно быть в диапазоне от 1 до 1000.
 * `max_duration_minutes`: максимальная продолжительность эксперимента по настройке гиперпараметров в минутах. Это необязательный параметр. Если он присутствует, автоматически отменяются любые запуски, которые еще не окончены по истечении этого времени.
 
 >[!NOTE] 
@@ -311,7 +311,7 @@ hyperdrive_run = experiment.submit(hyperdrive_run_config)
 Пакет SDK для Машинного обучения Azure предоставляет мини-приложение "Блокнот" для визуализации процесса учебных запусков. Следующий фрагмент кода визуализирует все запуски по настройке гиперпараметров в одном отображении, создаваемом в записной книжке Jupyter:
 
 ```Python
-from azureml.train.widgets import RunDetails
+from azureml.widgets import RunDetails
 RunDetails(hyperdrive_run).show()
 ```
 
@@ -348,10 +348,9 @@ print('\n batch size:',parameter_values[7])
 ```
 
 ## <a name="sample-notebook"></a>Пример записной книжки
-Перейдите к 
-* странице [training/03.train-hyperparameter-tune-deploy-with-tensorflow](https://github.com/Azure/MachineLearningNotebooks/blob/master/training/03.train-hyperparameter-tune-deploy-with-tensorflow), где опубликовано руководство по настройке гиперпараметров для модели Tensorflow. 
-
-Получите эту записную книжку:
+См. эти записные книжки:
+* [how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-pytorch](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-pytorch) 
+* [how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow)
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 

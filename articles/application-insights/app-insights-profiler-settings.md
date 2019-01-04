@@ -8,17 +8,16 @@ manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 81608dd7281ceddce7e0701535ad99e1c9e44315
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: d96b4a99b2ea66cdeff43f06c1789dd133c2c31a
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50142917"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52723012"
 ---
 # <a name="configure-application-insights-profiler"></a>Настройка Application Insights Profiler
 
@@ -44,7 +43,7 @@ ms.locfileid: "50142917"
 Профилировщик можно активировать вручную одним нажатием кнопки. Предположим, вы выполняете веб-тест производительности. Чтобы понять, как работает ваше веб-приложение под нагрузкой, вам потребуются трассировки. Очень важно иметь возможность контролировать время записи трассировок, поскольку вам известно, когда будет выполняться нагрузочный тест, однако это время может не совпадать с интервалом случайной выборки.
 Далее объясняется, как работает этот сценарий.
 
-### <a name="optional-step-1-generate-traffic-to-your-web-app-by-starting-a-web-performance-test"></a>Шаг 1. Создание трафика в веб-приложение путем запуска веб-теста производительности (необязательно)
+### <a name="optional-step-1-generate-traffic-to-your-web-app-by-starting-a-web-performance-test"></a>(Необязательно) Шаг 1. Создание входящего трафика для веб-приложения путем запуска веб-теста производительности
 
 Если в веб-приложение уже поступает входящий трафик или вы хотите создавать трафик вручную, пропустите этот раздел и перейдите к шагу 2.
 
@@ -62,13 +61,13 @@ ms.locfileid: "50142917"
 
 ![нагрузочный тест выполняется][load-test-in-progress]
 
-### <a name="step-2-start-profiler-on-demand"></a>Шаг 2. Запуск профилировщика по запросу
+### <a name="step-2-start-profiler-on-demand"></a>Шаг 2. Запуск профилировщика по запросу
 
 После запуска нагрузочного теста можно запустить профилировщик для записи трассировок для веб-приложения в то время, когда оно получает нагрузку.
 Перейдите к области "Настройка профилировщика":
 
 
-### <a name="step-3-view-traces"></a>Шаг 3. Просмотр трассировок
+### <a name="step-3-view-traces"></a>Шаг 3. Просмотр трассировок
 
 После завершения работы профилировщика следуйте инструкциям в уведомлении, чтобы перейти к странице "Производительность" и просмотреть трассировки.
 
@@ -87,9 +86,9 @@ ms.locfileid: "50142917"
 Выполните следующие действия, чтобы проверить и установить последний профилировщик.
 
 1. Перейдите к параметрам приложений службы приложений и проверьте, заданы ли следующие параметры:
-    * **APPINSIGHTS_INSTRUMENTATIONKEY** — замените правильным ключом инструментирования для Application Insights.
-    * **APPINSIGHTS_PORTALINFO** — ASP.NET.
-    * **APPINSIGHTS_PROFILERFEATURE_VERSION** — 1.0.0. Если любой из этих параметров не задан, перейдите на панель включения Application Insights, чтобы установить последнее расширение сайта.
+    * **APPINSIGHTS_INSTRUMENTATIONKEY** — замените правильным ключом инструментирования для Application Insights.
+    * **APPINSIGHTS_PORTALINFO** — ASP.NET:
+    * **APPINSIGHTS_PROFILERFEATURE_VERSION** — 1.0.0. Если любой из этих параметров не задан, перейдите на панель включения Application Insights, чтобы установить последнее расширение сайта.
 
 1. Перейдите к панели Application Insights на портале службы приложений.
 
@@ -104,9 +103,9 @@ ms.locfileid: "50142917"
     ![Измените и сохраните App Insights][change-and-save-appinsights]
 
 1. Вернитесь на вкладку **Параметры приложений** службы приложений, чтобы еще раз убедиться, что перечисленные ниже параметры приложений заданы правильно.
-    * **APPINSIGHTS_INSTRUMENTATIONKEY** — замените правильным ключом инструментирования для Application Insights.
-    * **APPINSIGHTS_PORTALINFO** — ASP.NET.
-    * **APPINSIGHTS_PROFILERFEATURE_VERSION** — 1.0.0.
+    * **APPINSIGHTS_INSTRUMENTATIONKEY** — замените правильным ключом инструментирования для Application Insights.
+    * **APPINSIGHTS_PORTALINFO** — ASP.NET:
+    * **APPINSIGHTS_PROFILERFEATURE_VERSION** — 1.0.0. 1.0.0
 
     ![параметры приложений для профилировщика][app-settings-for-profiler]
 

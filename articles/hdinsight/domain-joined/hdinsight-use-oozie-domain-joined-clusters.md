@@ -1,22 +1,23 @@
 ---
-title: Рабочие процессы Apache Hadoop Oozie в кластерах Azure HDInsight с Корпоративным пакетом безопасности
-description: Используйте Hadoop Oozie в кластерах HDInsight на базе Linux с Корпоративным пакетом безопасности. Узнайте, как определить рабочий процесс и отправить задание для Oozie.
+title: Защита рабочих процессов Apache Oozie в Azure HDInsight с помощью Корпоративного пакета безопасности
+description: Защита рабочих процессов Apache Oozie с помощью Корпоративного пакета безопасности для Azure HDInsight Узнайте, как определить рабочий процесс и отправить задание для Oozie.
 services: hdinsight
 ms.service: hdinsight
 author: omidm1
 ms.author: omidm
 ms.reviewer: mamccrea
-ms.custom: hdinsightactive
+ms.custom: hdinsightactive,seodec18
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 298277b720045c06d78f1c4964de2246dac22f08
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 0ab225d3579ed6a56c753f0c581709408c65f358
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633671"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53436285"
 ---
 # <a name="run-apache-oozie-in-hdinsight-hadoop-clusters-with-enterprise-security-package"></a>Запуск Apache Oozie в кластерах Hadoop HDInsight с Корпоративным пакетом безопасности
+
 Apache Oozie — это система рабочих процессов и координации, управляющая заданиями Apache Hadoop. Служба Oozie интегрирована со стеком Hadoop и поддерживает следующие задания:
 - Apache MapReduce
 - Apache Pig
@@ -26,9 +27,10 @@ Apache Oozie — это система рабочих процессов и ко
 Вы также можете использовать Oozie для планирования системных заданий, например Java-программ и сценариев оболочки.
 
 ## <a name="prerequisite"></a>Предварительные требования
+
 - Кластер Azure HDInsight Hadoop с Корпоративным пакетом безопасности (ESP). Ознакомьтесь со статьей [Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory](./apache-domain-joined-configure-using-azure-adds.md).
 
-    > [!NOTE]
+    > [!NOTE]  
     > Подробные инструкции по использованию Oozie в кластерах без пакета ESP см. в статье [Использование Oozie с Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
 
 ## <a name="connect-to-an-esp-cluster"></a>Подключение к кластеру ESP
@@ -50,7 +52,7 @@ ssh [DomainUserName]@<clustername>-ssh.azurehdinsight.net
     Код отклика состояния **200 ОК** указывает на успешную регистрацию. Проверьте имя пользователя и пароль, если получен ответ о неуспешной авторизации (например, 401).
 
 ## <a name="define-the-workflow"></a>Определение рабочего процесса
-Определения рабочих процессов Oozie записываются на языке определения процессов Hadoop (hPDL). hPDL — это язык определения процессов XML. Для определения рабочего процесса выполните следующие действия:
+Определения рабочих процессов Oozie записываются на языке определения процессов Apache Hadoop (hPDL). hPDL — это язык определения процессов XML. Для определения рабочего процесса выполните следующие действия:
 
 1.  Настройте рабочую область пользователя домена:
  ```bash
@@ -224,8 +226,11 @@ nano workflow.xml
    Этот файл свойств должен присутствовать локально при выполнении заданий Oozie.
 
 ## <a name="create-custom-hive-scripts-for-oozie-jobs"></a>Создание пользовательских скриптов Hive для заданий Oozie
+
 Вы можете создать два скрипта Hive для сервера Hive 1 и Hive 2, как показано в следующих разделах.
+
 ### <a name="hive-server-1-file"></a>Файл сервера Hive 1
+
 1.  Создайте и измените файл для действий сервера Hive 1:
     ```bash
     nano countrowshive1.hql
@@ -238,12 +243,13 @@ nano workflow.xml
     select devicemake from hivesampletable limit 2;
     ```
 
-3.  Сохраните файл в распределенную файловую систему Hadoop (HDFS):
+3.  Сохраните файл в распределенную файловую систему Apache Hadoop (HDFS):
     ```bash
     hdfs dfs -put countrowshive1.hql countrowshive1.hql
     ```
 
 ### <a name="hive-server-2-file"></a>Файл сервера Hive 2
+
 1.  Создайте и измените поле для действий сервера Hive 2:
     ```bash
     nano countrowshive2.hql
@@ -262,12 +268,14 @@ nano workflow.xml
     ```
 
 ## <a name="submit-oozie-jobs"></a>Отправка заданий Oozie
+
 Отправка заданий Oozie для кластеров ESP аналогична отправке заданий Oozie в кластерах без пакета ESP.
 
 Дополнительные сведения см. в статье [Использование Oozie с Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
 
 ## <a name="results-from-an-oozie-job-submission"></a>Результаты отправки заданий Oozie
-Задания Oozie выполняются от имени пользователя. Поэтому в журналах аудита Apache YARN и Apache Ranger задания отображаются как выполненные олицетворенным пользователем. Выходные данные интерфейса командной строки для заданий Oozie выглядят аналогично следующему коду:
+Задания Oozie выполняются от имени пользователя. Поэтому в журналах аудита Apache Hadoop YARN и Apache Ranger задания отображаются как выполненные олицетворенным пользователем. Выходные данные интерфейса командной строки для заданий Oozie выглядят аналогично следующему коду:
+
 
 
 ```bash
@@ -304,13 +312,15 @@ nano workflow.xml
 Журналы аудита Ranger для действий сервера Hive 2 показывают, что задания Oozie выполняли действие от имени пользователя. Представления Ranger и YARN доступны только для администратора кластера.
 
 ## <a name="configure-user-authorization-in-oozie"></a>Настройка авторизации пользователей в Oozie
+
 В Oozie уже есть конфигурация авторизации пользователей, которая может запретить пользователям останавливать или удалять задания другого пользователя. Чтобы включить эту конфигурацию, задайте для параметра `oozie.service.AuthorizationService.security.enabled` значение `true`. 
 
-Дополнительные сведения см. в статье об [установке и настройке Oozie](https://oozie.apache.org/docs/3.2.0-incubating/AG_Install.html).
+Дополнительные сведения см. в статье об [установке и настройке Apache Oozie](https://oozie.apache.org/docs/3.2.0-incubating/AG_Install.html).
 
 Для таких компонентов, как сервер Hive 1, где подключаемый модуль Ranger недоступен или не поддерживается, возможна только недетализированная авторизация HDFS. Авторизация с высокой степенью детализации доступна только через подключаемые модули Ranger.
 
 ## <a name="get-the-oozie-web-ui"></a>Получение веб-интерфейса Oozie
+
 Веб-интерфейс Oozie позволяет получить информацию о состоянии задания Oozie в кластере. Чтобы получить веб-интерфейс, в кластерах ESP выполните действия ниже:
 
 1. Добавить [граничный узел](../hdinsight-apps-use-edge-node.md) и включить [проверку подлинности SSH Kerberos](../hdinsight-hadoop-linux-use-ssh-unix.md).
@@ -319,5 +329,5 @@ nano workflow.xml
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Использование Oozie с Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux](../hdinsight-use-oozie-linux-mac.md).
-* [Использование учитывающего время координатора Oozie с Hadoop в HDInsight для определения рабочих процессов и координации заданий](../hdinsight-use-oozie-coordinator-time.md).
-* [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).
+* [Используйте учитывающий время координатор Oozie с Hadoop в HDInsight для определения рабочих процессов и координации заданий](../hdinsight-use-oozie-coordinator-time.md).
+* [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).

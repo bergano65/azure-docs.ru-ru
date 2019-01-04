@@ -13,12 +13,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: 38839379f584b40cdbefad3e4cbb3bc47881c9a7
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 1afd98026a2aad552258b636ba078ca4f9bd2d58
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50094601"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52723148"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
 Присоедините среду выполнения интеграции (IR) Azure SSIS к виртуальной сети в одной из следующих ситуаций: 
@@ -198,19 +198,21 @@ ms.locfileid: "50094601"
 
 1. Присоедините **MicrosoftAzureBatch** к роли **Участник классической виртуальной машины** для виртуальной сети. 
 
-    a. В меню слева выберите **Управление доступом (IAM)** и нажмите кнопку **Добавить** на панели инструментов. 
+    a. В меню слева щелкните **Управление доступом (IAM)** и выберите вкладку **Назначения ролей**. 
 
     ![Кнопки "Управление доступом" и "Добавить"](media/join-azure-ssis-integration-runtime-virtual-network/access-control-add.png)
 
-    b. На странице **Добавление разрешений** в поле **Роль** выберите **Участник классической виртуальной машины**. Вставьте **ddbf3205-c6bd-46ae-8127-60eb93363864** в поле **Выбор**, а затем из списка результатов поиска выберите **пакетную службу Microsoft Azure**. 
+    b. Выберите **Добавить назначение ролей**.
 
-    ![Результаты поиска на странице "Добавление разрешений"](media/join-azure-ssis-integration-runtime-virtual-network/azure-batch-to-vm-contributor.png)
+    c. На странице **Добавить назначение ролей** в поле **Роль** выберите **Участник классических виртуальных машин**. Вставьте **ddbf3205-c6bd-46ae-8127-60eb93363864** в поле **Выбор**, а затем из списка результатов поиска выберите **пакетную службу Microsoft Azure**. 
 
-    c. Нажмите кнопку **Сохранить**, чтобы сохранить параметры и закрыть страницу. 
+    ![Результаты поиска на странице "Добавить назначение ролей"](media/join-azure-ssis-integration-runtime-virtual-network/azure-batch-to-vm-contributor.png)
+
+    d. Нажмите кнопку **Сохранить**, чтобы сохранить параметры и закрыть страницу. 
 
     ![Сохранение параметров доступа](media/join-azure-ssis-integration-runtime-virtual-network/save-access-settings.png)
 
-    d. Убедитесь, что в списке участников отображается **пакетная служба Microsoft Azure**. 
+    д. Убедитесь, что в списке участников отображается **пакетная служба Microsoft Azure**. 
 
     ![Подтверждение доступа к пакетной службе Azure](media/join-azure-ssis-integration-runtime-virtual-network/azure-batch-in-list.png)
 

@@ -1,21 +1,22 @@
 ---
-title: Часто задаваемые вопросы. Служба "Распознавание речи" (LUIS)
+title: Часто задаваемые вопросы
 titleSuffix: Azure Cognitive Services
 description: В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 services: cognitive-services
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 11/19/2018
+ms.date: 12/04/2018
 ms.author: diberry
-ms.openlocfilehash: d371ead3280bca5239a9ee6bf2c4275414141fb4
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: 9e5b132a7946bdc648e051c9f7327cc7159f291e
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52284376"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53163639"
 ---
 # <a name="language-understanding-faq"></a>Вопросы и ответы о службе "Распознавание речи"
 
@@ -196,9 +197,9 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 
 ## <a name="luis-service"></a>Служба LUIS
 
-### <a name="is-luis-available-on-premises-or-in-private-cloud"></a>Доступна ли служба LUIS в локальной среде или в частном облаке?
- Нет.
+### <a name="is-language-understanding-luis-available-on-premises-or-in-private-cloud"></a>Доступна ли служба "Распознавание речи" (LUIS) в локальной среде или в частном облаке?
 
+Да. Вы можете использовать [контейнер](luis-container-howto.md) LUIS в таких сценариях, если у вас есть подключение для измерения использования. 
 
 ### <a name="at-the-build-2018-conference-i-heard-about-a-language-understanding-feature-or-demo-but-i-dont-remember-what-it-was-called"></a>На конференции Build 2018 г. говорилось об одной функции или демоверсии службы "Распознавание речи", но я не помню ее названия.
 
@@ -214,13 +215,13 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 Включено создание дополнительных [API маршрутов](https://github.com/Microsoft/LUIS-Samples/blob/master/authoring-routes.md).
 
 Видеоролики:
-* [ Build 2018: серия "Пятница с Azure". Cognitive Services и Интеллектуальная служба распознавания речи (LUIS)](https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player)
+* [Build 2018: серия "Пятница с Azure". Cognitive Services и Интеллектуальная служба распознавания речи (LUIS)](https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player)
 * [Build 2018: канал об искусственном интеллекте. Новые возможности службы "Распознавание речи"](https://channel9.msdn.com/Shows/AI-Show/Whats-New-with-Language-Understanding-Service-LUIS/player)
 * [Build 2018. Интеллектуальные функции ботов, функции распознавания речи и рекомендации по использованию NLU](https://channel9.msdn.com/events/Build/2018/BRK3208)
 * [ Build 2018. Обновления LUIS](https://channel9.msdn.com/events/Build/2018/THR3118/player)
 
 Проекты:
-* Демоверсия [бота Contoso Cafe](https://github.com/botbuilderbuild2018/build2018demo) (исходный код на Github)
+* Пример [бота Contoso Cafe](https://github.com/botbuilderbuild2018/build2018demo) (исходный код на GitHub)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,23 +1,24 @@
 ---
-title: Пакетное тестирование приложения LUIS — Интеллектуальная служба распознавания речи
-titleSuffix: Azure Cognitive Services
+title: Пакетное тестирование
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Используйте пакетное тестирование для постоянной работы над приложением, чтобы усовершенствовать его и улучшить функции распознавания речи.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
-ms.date: 10/24/2018
+ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 44abadc653c4679f37152e6592c882475b139bdd
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: c050c8ed338a019b34302e87a53d4a40306f9a22
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52333910"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53133153"
 ---
-# <a name="batch-testing-in-luis"></a>Пакетное тестирование в LUIS
+# <a name="batch-testing-with-1000-utterances-in-luis-portal"></a>Пакетное тестирование 1000 высказываний на портале LUIS
 
 При пакетном тестировании проверяется [активная](luis-concept-version.md#active-version) обученная модель для оценки точности прогнозирования. По завершении пакетного тестирования отображается диаграмма точности для каждого намерения и каждой сущности в текущей обученной модели. Изучив результаты пакетного тестирования, вы сможете предпринять меры для повышения точности, например добавить в намерение новые примеры высказываний, если приложение часто ошибается с определением намерений.
 

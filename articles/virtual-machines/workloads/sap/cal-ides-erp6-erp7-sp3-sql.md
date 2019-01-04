@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 09/16/2016
 ms.author: hermannd
-ms.openlocfilehash: 93824c8f0e7667fcb58fd6b8292cddfa2b4a482a
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: eb5d731fbef22c70aaf970bf64aa90361e47a542
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39441466"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53194204"
 ---
 # <a name="deploy-sap-ides-ehp7-sp3-for-sap-erp-60-on-azure"></a>Развертывание SAP IDES EHP7 SP3 для SAP ERP 6.0 в Azure
 В этой статье описывается, как развернуть SAP IDES с SQL Server и Windows в Azure с помощью SAP Cloud Appliance Library (SAP CAL) 3.0. На снимках экрана наглядно показан пошаговый процесс. Для развертывания другого решения выполните те же действия.
@@ -29,7 +29,7 @@ ms.locfileid: "39441466"
 Чтобы начать работу с SAP CAL, перейдите на веб-сайт [SAP Cloud Appliance Library](https://cal.sap.com/). В SAP также есть блог о новой версии [SAP Cloud Appliance Library 3.0](http://scn.sap.com/community/cloud-appliance-library/blog/2016/05/27/sap-cloud-appliance-library-30-came-with-a-new-user-experience). 
 
 > [!NOTE]
-Начиная с 29 мая 2017 г. для развертывания SAP CAL можно использовать модель развертывания с помощью Azure Resource Manager в дополнение к менее популярной классической модели развертывания. Мы рекомендуем использовать новую модель развертывания с помощью Resource Manager.
+> Начиная с 29 мая 2017 г. для развертывания SAP CAL можно использовать модель развертывания с помощью Azure Resource Manager в дополнение к менее популярной классической модели развертывания. Мы рекомендуем использовать новую модель развертывания с помощью Resource Manager.
 
 Если вы создали учетную запись SAP CAL, использующую классическую модель, *создайте другую учетную запись SAP CAL*. Эту учетную запись нужно развернуть исключительно в Azure с помощью модели Resource Manager.
 
@@ -104,7 +104,7 @@ ms.locfileid: "39441466"
 
     c.  Введите основной **пароль** для доступа к решению, как показано ниже:
 
-    ![Страница SAP CAL Basic Mode: Create Instance (Базовый режим: создание экземпляра)](./media/cal-ides-erp6-ehp7-sp3-sql/ides-pic10a.png)
+    ![Базовый режим SAP CAL: создание экземпляра](./media/cal-ides-erp6-ehp7-sp3-sql/ides-pic10a.png)
 
 1. Нажмите кнопку **Создать**. В зависимости от размера и сложности решения (оценку предоставляет SAP CAL) через некоторое время состояние экземпляра сменится на "Активный", и он будет готов к использованию. 
 

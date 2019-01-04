@@ -6,14 +6,14 @@ author: Christina-Kang
 manager: timlt
 ms.service: service-fabric
 ms.topic: conceptual
-ms.date: 07/31/2018
+ms.date: 12/06/2018
 ms.author: bikang
-ms.openlocfilehash: 370c8521127ffc28cc1b604c217544bccc82d705
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: 579df1c8412ae626ced6776a98e054a13e4a3e64
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39495948"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273091"
 ---
 # <a name="azure-service-fabric-cli"></a>Интерфейс командной строки Azure Service Fabric
 
@@ -33,7 +33,8 @@ ms.locfileid: "39495948"
 
 | Версия интерфейса командной строки   | Поддерживаемая версия среды выполнения |
 |---------------|---------------------------|
-| Последняя (~=6)  | Последняя (~=6.3)            |
+| Последняя (~7)  | Последняя (~6.4)            |
+| 6.0.0         | 6.3                       |
 | 5.0.0         | 6.2                       |
 | 4.0.0         | 6.1                       |
 | 3.0.0         | 6,0                       |
@@ -53,7 +54,7 @@ pip install -I sfctl==1.1.0
 
 Существует много способов установки pip и Python на вашей платформе. Ниже приведены действия для быстрой установки Python 3 и pip, которые подходят для большинства операционных систем.
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 
 Для Windows 10, Windows Server 2016 и Windows Server 2012 R2 используйте стандартные официальные инструкции по установке. Установщик Python также по умолчанию устанавливает pip.
 

@@ -1,55 +1,60 @@
 ---
-title: Получение данных Application Insights из LUIS с использованием C#
+title: Application Insights и C#
 titleSuffix: Azure Cognitive Services
 description: Создание бота, интегрированного с приложением LUIS и Application Insights, с помощью C#.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: 83ad70e1242af1e01af06206a3a141f455072a44
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: a5150d3f318fce2f66adfa4bdc43ae8aec651223
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47038958"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53251153"
 ---
-# <a name="add-luis-results-to-application-insights"></a>Добавление результатов распознавание речи с помощью LUIS в Application Insights
-В этом учебнике приведена процедура добавления данных ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). После получения этих данных можно включить их запрос (используя язык Kusto или PowerBi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS. 
+# <a name="add-luis-results-to-application-insights-with-a-bot-in-c"></a>Добавление результатов LUIS в Application Insights с помощью бота на C#
+
+В этом учебнике приведена процедура добавления данных ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). После получения этих данных можно включить их запрос (используя язык Kusto или PowerBi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
 
 Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-* добавление Application Insights в бот веб-приложения;
-* запись и отправка результатов запроса LUIS в Application Insights;
-* отправка запроса в Application Insights для получения основных намерений, оценки и фрагментов речи.
+> * добавление Application Insights в бот веб-приложения;
+> * запись и отправка результатов запроса LUIS в Application Insights;
+> * отправка запроса в Application Insights для получения основных намерений, оценки и фрагментов речи.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Бот веб-приложения LUIS из **[предыдущего руководства](luis-csharp-tutorial-build-bot-framework-sample.md)** с включенным компонентом Application Insights. 
+* Бот веб-приложения LUIS из **[предыдущего руководства](luis-csharp-tutorial-build-bot-framework-sample.md)** с включенным компонентом Application Insights.
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/), локально установленная на компьютере.
 
 > [!Tip]
 > Если у вас еще нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/).
 
-Весь код в этом учебнике можно найти в [репозитории Github LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/tree/master/documentation-samples/tutorial-web-app-bot-application-insights/csharp). Все строки, связанные с этим учебником, закомментированы с помощью `//LUIS Tutorial:`. 
+Весь код из этого руководства можно найти в [репозитории LUIS-Samples на GitHub](https://github.com/Microsoft/LUIS-Samples/tree/master/documentation-samples/tutorial-web-app-bot-application-insights/csharp). Все строки, связанные с этим руководством, закомментированы с помощью `//LUIS Tutorial:`.
 
 ## <a name="review-luis-web-app-bot"></a>Проверка бота веб-приложения LUIS
-Предполагается, что у вас есть код, который выглядит следующим образом, или вы выполнили процедуру в [другом учебнике](luis-csharp-tutorial-build-bot-framework-sample.md): 
+
+Предполагается, что у вас есть код, который выглядит следующим образом, или вы выполнили процедуру в [другом учебнике](luis-csharp-tutorial-build-bot-framework-sample.md):
 
    [!code-csharp[Web app bot with LUIS](~/samples-luis/documentation-samples/tutorial-web-app-bot/csharp/BasicLuisDialog.cs "Web app bot with LUIS")]
 
 ## <a name="application-insights-in-web-app-bot"></a>Application Insights в боте веб-приложения
+
 В настоящее время служба Application Insights, добавляемая при создании службы бота веб-приложения, собирает общие данные телеметрии состояния для бота. Она не собирает сведения об ответах LUIS. Для анализа и улучшения службы LUIS требуются сведения об ответах LUIS.  
 
-Чтобы бот веб-приложения мог записывать ответы LUIS, служба **[Application Insights](https://www.nuget.org/packages/Microsoft.ApplicationInsights/)** должна быть установлена и настроена для проекта. 
+Чтобы бот веб-приложения мог записывать ответы LUIS, служба **[Application Insights](https://www.nuget.org/packages/Microsoft.ApplicationInsights/)** должна быть установлена и настроена для проекта.
 
 ## <a name="download-web-app-bot"></a>Загрузка бота веб-приложения
+
 Используйте [Visual Studio 2017](https://www.visualstudio.com/downloads/), чтобы добавить и настроить Application Insights для бота веб-приложения. Чтобы использовать бот веб-приложения в Visual Studio, скачайте код бота веб-приложения.
 
 1. На портале Azure для бота веб-приложения выберите **Сборка**.
@@ -66,13 +71,13 @@ ms.locfileid: "47038958"
 
 ## <a name="open-solution-in-visual-studio-2017"></a>Открытие решения в Visual Studio 2017
 
-1. Извлеките файл в папку. 
+1. Извлеките файл в папку.
 
 2. Откройте Visual Studio 2017, а затем откройте файл решения, `Microsoft.Bot.Sample.LuisBot.sln`. При появлении предупреждения системы безопасности выберите "ОК".
 
     ![Открытие решения в Visual Studio 2017](./media/luis-tutorial-bot-csharp-appinsights/vs-2017-security-warning.png)
 
-3. Visual Studio необходимо добавить зависимости в решение. В **обозревателе решений** щелкните правой кнопкой мыши **Ссылки** и выберите **Управление пакетами NuGet**. 
+3. Visual Studio необходимо добавить зависимости в решение. В **обозревателе решений** щелкните правой кнопкой мыши **Ссылки** и выберите **Управление пакетами NuGet**.
 
     ![Управление пакетами NuGet](./media/luis-tutorial-bot-csharp-appinsights/vs-2017-manage-nuget-packages.png)
 
@@ -81,7 +86,8 @@ ms.locfileid: "47038958"
     ![восстановление пакетов NuGet;](./media/luis-tutorial-bot-csharp-appinsights/vs-2017-restore-packages.png)
 
 ## <a name="add-application-insights-to-the-project"></a>Добавление Application Insights в проект
-Установите и настройте Application Insights в Visual Studio. 
+
+Установите и настройте Application Insights в Visual Studio.
 
 1. В Visual Studio 2017 в верхнем меню выберите **Проект**, а затем **Добавить телеметрию Application Insights...**.
 
@@ -89,21 +95,21 @@ ms.locfileid: "47038958"
 
     ![Начало настройки Application Insights](./media/luis-tutorial-bot-csharp-appinsights/vs-2017-configure-app-insights.png)
 
-3. Зарегистрируйте приложение в Application Insights. Может понадобиться ввести учетные данные портала Azure. 
+3. Зарегистрируйте приложение в Application Insights. Может понадобиться ввести учетные данные портала Azure.
 
-4. Visual Studio добавляет Application Insights в проект, отображая соответствующее состояние. 
+4. Visual Studio добавляет Application Insights в проект, отображая соответствующее состояние.
 
     ![Состояние Application Insights](./media/luis-tutorial-bot-csharp-appinsights/vs-2017-adding-application-insights-to-project.png)
 
-    По окончании процесса в окне **Конфигурация Application Insights** отображается состояние хода выполнения. 
+    По окончании процесса в окне **Конфигурация Application Insights** отображается состояние хода выполнения.
 
     ![Состояние хода выполнения Application Insights](./media/luis-tutorial-bot-csharp-appinsights/vs-2017-configured-application-insights-to-project.png)
 
-    **Включить сбор данных трассировки** отображается красным цветом, то есть эта функция не включена. Для этого учебника эта функция не используется. 
+    **Включить сбор данных трассировки** отображается красным цветом, то есть эта функция не включена. Для этого учебника эта функция не используется.
 
 ## <a name="build-and-resolve-errors"></a>Сборка и устранение ошибок
 
-1. Выполните сборку решения, выбрав меню **Сборка**, а затем пункт **Перестроить решение**. Дождитесь завершения сборки. 
+1. Выполните сборку решения, выбрав меню **Сборка**, а затем пункт **Перестроить решение**. Дождитесь завершения сборки.
 
 2. Если происходит сбой сборки с ошибками `CS0104`, необходимо исправить их. В папке `Controllers` в `MessagesController.cs file` исправьте неоднозначное использование типа `Activity`, задав префикс Connector для типа Activity. Чтобы сделать это, измените имя `Activity` в строках 22 и 36 с `Activity` на `Connector.Activity`. Выполните повторную сборку решения. Ошибок сборки быть не должно.
 
@@ -112,6 +118,7 @@ ms.locfileid: "47038958"
     [!code-csharp[MessagesController.cs file](~/samples-luis/documentation-samples/tutorial-web-app-bot-application-insights/csharp/MessagesController.cs "MessagesController.cs file")]
 
 ## <a name="publish-project-to-azure"></a>Публикация проекта в Azure
+
 Пакет **Application Insights** теперь находится в проекте и правильно настроен для ваших учетных данных на портале Azure. Изменения для проекта должны быть опубликованы обратно в Azure.
 
 1. Щелкните правой кнопкой мыши имя проекта в **обозревателе решений** и выберите пункт **Опубликовать**.
@@ -126,12 +133,13 @@ ms.locfileid: "47038958"
 
     ![Публикация проекта на портале](./media/luis-tutorial-bot-csharp-appinsights/vs-2017-publish-2.png)
 
-4. В окне **Импортировать файл параметров публикации** перейдите в папку проекта, перейдите в папку `PostDeployScripts`, выберите файл, который заканчивается на `.PublishSettings`, и выберите `Open`. Теперь вы настроили публикацию для этого проекта. 
+4. В окне **Импортировать файл параметров публикации** перейдите в папку проекта, перейдите в папку `PostDeployScripts`, выберите файл, который заканчивается на `.PublishSettings`, и выберите `Open`. Теперь вы настроили публикацию для этого проекта.
 
-5. Опубликуйте локальный исходный код в службе Azure Bot, нажав кнопку **Опубликовать**. В окне **вывода** показывается состояние. Остальная часть учебника выполняется на портале Azure. Закройте Visual Studio 2017. 
+5. Опубликуйте локальный исходный код в службе Azure Bot, нажав кнопку **Опубликовать**. В окне **вывода** показывается состояние. Остальная часть учебника выполняется на портале Azure. Закройте Visual Studio 2017.
 
 ## <a name="open-three-browser-tabs"></a>Откройте три вкладки браузера
-На портале Azure найдите бот веб-приложения и откройте его. В следующей процедуре используется три разных представления бота веб-приложения. Поэтому будет проще открыть три отдельные вкладки в браузере: 
+
+На портале Azure найдите бот веб-приложения и откройте его. В следующей процедуре используется три разных представления бота веб-приложения. Поэтому будет проще открыть три отдельные вкладки в браузере:
   
 >  * тестирование в веб-чате;
 >  * Сборка/открытие редактора кода в Интернете -> Редактор службы приложений;
@@ -149,7 +157,7 @@ ms.locfileid: "47038958"
 
    [!code-csharp[Add the LogToApplicationInsights function](~/samples-luis/documentation-samples/tutorial-web-app-bot-application-insights/csharp/BasicLuisDialog.cs?range=61-92 "Add the LogToApplicationInsights function")]
 
-    Ключ инструментирования Application Insights уже находится в параметре бота веб-приложения с именем `BotDevInsightsKey`. 
+    Ключ инструментирования Application Insights уже находится в параметре бота веб-приложения с именем `BotDevInsightsKey`.
 
     Последняя строка функции добавляет данные в Application Insights. Имя трассировки — `LUIS`, уникальное имя, получаемое отдельно от всех остальных данных телеметрии, собираемых этим ботом веб-приложения. Все свойства также начинаются с префикса `LUIS_`, чтобы можно было увидеть, какие данные добавляются в рамках этого учебника по сравнению с данными, предоставляемыми ботом веб-приложения.
 
@@ -158,6 +166,7 @@ ms.locfileid: "47038958"
    [!code-csharp[Use the LogToApplicationInsights function](~/samples-luis/documentation-samples/tutorial-web-app-bot-application-insights/csharp/BasicLuisDialog.cs?range=114-115 "Use the LogToApplicationInsights function")]
 
 ## <a name="build-web-app-bot"></a>Сборка бота веб-приложения
+
 1. Выполните сборку бота веб-приложения одном из двух способов. Первый способ: щелкните правой кнопкой мыши `build.cmd` в **редакторе службы приложений**, а затем выберите **Запуск из консоли**. На консоли отображаются выходные данные, а затем `Finished successfully.`.
 
 2. Если сборка не выполнена успешно, необходимо открыть консоль, перейти к сценарию и запустить его, выполнив следующие действия. В **редакторе службы приложений** на верхней синей панели выберите имя бота веб-приложения, а затем в раскрывающемся списке выберите **Открыть консоль Kudu**.
@@ -166,7 +175,7 @@ ms.locfileid: "47038958"
 
 3. В окне консоли введите следующую команду:
 
-    ```
+    ```console
     cd site\wwwroot && build.cmd
     ```
 
@@ -174,7 +183,7 @@ ms.locfileid: "47038958"
 
 ## <a name="test-the-web-app-bot"></a>Тестирование бота веб-приложения
 
-1. Для проверки бота веб-приложения откройте функцию **тестирования в веб-чате** на портале. 
+1. Для проверки бота веб-приложения откройте функцию **тестирования в веб-чате** на портале.
 
 2. Введите фразу `Coffee bar on please`.  
 
@@ -182,16 +191,18 @@ ms.locfileid: "47038958"
 
 3. Вы должны увидеть тот же ответ чат-бота. Изменение передает данные в Application Insights, а не в ответы бота. Введите несколько дополнительных фрагментов речи, то есть немного больше данных в Application Insights:
 
-```
-Please deliver a pizza
-Turn off all the lights
-Turn on the hall light
-```
+|Высказывания|
+|--|
+|Доставить пиццу|
+|Выключить свет во всех помещениях|
+|Включить свет в коридоре|
+
 
 ## <a name="view-luis-entries-in-application-insights"></a>Просмотр записей LUIS в Application Insights
-Откройте Application Insights, чтобы просмотреть записи LUIS. 
 
-1. На портале выберите **Все ресурсы**, выполните фильтрацию по имени бота веб-приложения. Щелкните ресурс с типом **Application Insights**. Значок для Application Insights — лампочка. 
+Откройте Application Insights, чтобы просмотреть записи LUIS.
+
+1. На портале выберите **Все ресурсы**, выполните фильтрацию по имени бота веб-приложения. Щелкните ресурс с типом **Application Insights**. Значок для Application Insights — лампочка.
 
     ![Поиск Application Insights](./media/luis-tutorial-bot-csharp-appinsights/portal-service-list-app-insights.png)
 
@@ -203,16 +214,16 @@ Turn on the hall light
 
     ![Просмотр элемента трассировки](./media/luis-tutorial-bot-csharp-appinsights/portal-service-list-app-insights-search-luis-trace-item.png)
 
-    Когда вы закончите, нажмите **X** в верхнем правом углу для возврата к списку элементов зависимостей. 
-
+    Когда вы закончите, нажмите **X** в верхнем правом углу для возврата к списку элементов зависимостей.
 
 > [!Tip]
 > Если вы хотите сохранить список зависимостей и вернуться к нему позже, щелкните **...Дополнительно** и выберите **Сохранить избранное**.
 
 ## <a name="query-application-insights-for-intent-score-and-utterance"></a>Запрос Application Insights для получения намерения, оценки и фрагмента речи
-Application Insights позволяет выполнять запросы данных с помощью языка [Kusto](https://docs.microsoft.com/azure/application-insights/app-insights-analytics#query-data-in-analytics), а также экспортировать их в [PowerBI](https://powerbi.microsoft.com). 
 
-1. Щелкните **Аналитика** в верхней части списка зависимостей над полем фильтра. 
+Application Insights позволяет выполнять запросы данных с помощью языка [Kusto](https://docs.microsoft.com/azure/application-insights/app-insights-analytics#query-data-in-analytics), а также экспортировать их в [PowerBI](https://powerbi.microsoft.com).
+
+1. Щелкните **Аналитика** в верхней части списка зависимостей над полем фильтра.
 
     ![Кнопка аналитики](./media/luis-tutorial-bot-csharp-appinsights/portal-service-list-app-insights-search-luis-analytics-button.png)
 
@@ -222,7 +233,7 @@ Application Insights позволяет выполнять запросы дан
 
 3. Чтобы получить основное намерение, оценку и фрагмент речи, добавьте следующий код над последней строкой в окне запроса:
 
-    ```SQL
+    ```kusto
     | extend topIntent = tostring(customDimensions.LUIS_topScoringIntent)
     | extend score = todouble(customDimensions.LUIS_topScoringIntentScore)
     | extend utterance = tostring(customDimensions.LUIS_query)
@@ -232,18 +243,17 @@ Application Insights позволяет выполнять запросы дан
 
     ![Пользовательский отчет аналитики](./media/luis-tutorial-bot-csharp-appinsights/analytics-query-2.png)
 
-
-Дополнительные сведения о [языке запросов Kusto](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries) или [экспорте данных в PowerBI](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi). 
-
+Дополнительные сведения о [языке запросов Kusto](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries) или [экспорте данных в PowerBI](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi).
 
 ## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework
+
 Дополнительные сведения о [платформе Bot Framework](https://dev.botframework.com/).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Другие данные, которые может потребоваться добавить в данные Application Insights, включают идентификатор приложения, идентификатор версии, время последнего изменения модели, дату последнего обучения, дату последней публикации. Эти значения можно получить из URL-адреса конечной точки (идентификатор приложения и идентификатор версии) или из вызова [API разработки](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c3d), задания в параметрах бота веб-приложения и получения из этих параметров.  
 
-При использовании одной подписки конечной точки для нескольких приложений LUIS вам также потребуется включить идентификатор подписки и свойство, сообщающее о том, что это общий ключ. 
+При использовании одной подписки конечной точки для нескольких приложений LUIS вам также потребуется включить идентификатор подписки и свойство, сообщающее о том, что это общий ключ.
 
 > [!div class="nextstepaction"]
 > [Подробнее о примерах фрагментов речи](luis-how-to-add-example-utterances.md)

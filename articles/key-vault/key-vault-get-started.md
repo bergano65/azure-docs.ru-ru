@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/15/2018
 ms.author: barclayn
-ms.openlocfilehash: a28bf1dc23d678c710d7bd6b13f067427e76ef41
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: bb4ef826ed29187209b28c349445ca0eb5ffe9bb
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51238405"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52864911"
 ---
 # <a name="get-started-with-azure-key-vault"></a>Приступая к работе с хранилищем ключей Azure
 Это руководство поможет вам приступить к работе с Azure Key Vault с использованием PowerShell. Здесь также объясняется, как выполнить следующие задачи:
@@ -111,7 +111,7 @@ New-AzureRmKeyVault -Name 'ContosoKeyVault' -ResourceGroupName 'ContosoResourceG
 
 В выходных данных командлета будут показаны свойства созданного хранилища ключей. Среди всех свойств есть два самых важных:
 
-* **Имя хранилища**. В нашем примере это **ContosoKeyVault**. Вы будете использовать это имя для выполнения других командлетов хранилища ключей;
+* **Имя хранилища.** В нашем примере это **ContosoKeyVault**. Вы будете использовать это имя для выполнения других командлетов хранилища ключей;
 * **Код URI хранилища**. В данном примере это https://contosokeyvault.vault.azure.net/. Необходимо, чтобы приложения, использующие ваше хранилище через REST API, использовали этот URI.
 
 Теперь ваша учетная запись Azure авторизована, и вы можете выполнять любые операции в этом хранилище ключей. Пока что это недоступно для других учетных записей.
@@ -193,7 +193,7 @@ $secret = Set-AzureKeyVaultSecret -VaultName 'ContosoKeyVault' -Name 'SQLPasswor
 ```powershell
 $secret.Id
 ```
-Чтобы просмотреть свой секрет, введите: `Get-AzureKeyVaultSecret –VaultName 'ContosoKeyVault'`. Также вы можете просмотреть секрет на портале.
+Чтобы просмотреть свой секрет, введите следующее: `Get-AzureKeyVaultSecret –VaultName 'ContosoKeyVault'`. Также вы можете просмотреть секрет на портале.
 
 ![secret](./media/key-vault-get-started/secret-value.png)
 
@@ -222,14 +222,14 @@ $secret.Id
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. Слева щелкните **Регистрация приложений**. Если зарегистрированные приложения не отображаются, щелкните **Больше служб**.  
->[!NOTE]
-Вам необходимо выбрать каталог, содержащий подписку Azure, которую вы использовали для создания хранилища ключей. 
+    > [!NOTE]
+    > Вам необходимо выбрать каталог, содержащий подписку Azure, которую вы использовали для создания хранилища ключей. 
 3. Щелкните **Регистрация нового приложения**.
 4. В колонке **Создание** укажите имя своего приложения, а затем выберите **Веб-приложение и/или веб-API** (по умолчанию) и укажите **URL-адрес для входа** для веб-приложения. Если у вас пока нет этих сведений, вы можете указать фиктивное значение для использования на этом этапе (например, можно указать http://test1.contoso.com). Неважно, существуют ли эти сайты. 
 
     ![Регистрация нового приложения](./media/key-vault-get-started/new-application-registration.png)
-    >[!WARNING]
-    Убедитесь, что выбран тип **Веб-приложение и/или веб-API**. В противном случае параметр **Ключи** не отобразится в списке параметров.
+    > [!WARNING]
+    > Убедитесь, что выбран тип **Веб-приложение и/или веб-API**. В противном случае параметр **Ключи** не отобразится в списке параметров.
 
 5. Нажмите кнопку **Создать** .
 6. После регистрации приложения вы увидите список зарегистрированных приложений. Найдите зарегистрированное приложение и щелкните его имя.
@@ -312,11 +312,11 @@ Remove-AzureRmResourceGroup -ResourceGroupName 'ContosoResourceGroup'
 ## <a id="other"></a>Другие командлеты Azure PowerShell
 Другие команды, которые могут быть полезны при управлении хранилищем ключей Azure.
 
-- `$Keys = Get-AzureKeyVaultKey -VaultName 'ContosoKeyVault'` — эта команда отображает все ключи и выбранные свойства в виде таблицы;
-- `$Keys[0]` — эта команда отображает полный список свойств для указанного ключа;
-- `Get-AzureKeyVaultSecret` — эта команда перечисляет все имена секретов и выбранные свойства в виде таблицы;
-- `Remove-AzureKeyVaultKey -VaultName 'ContosoKeyVault' -Name 'ContosoFirstKey'` — пример того, как удалить конкретный ключ;
-- `Remove-AzureKeyVaultSecret -VaultName 'ContosoKeyVault' -Name 'SQLPassword'` — пример того, как удалить конкретный секрет.
+- `$Keys = Get-AzureKeyVaultKey -VaultName 'ContosoKeyVault'`: эта команда отображает все ключи и выбранные свойства в виде таблицы.
+- `$Keys[0]`: эта команда отображает полный список свойств для указанного ключа.
+- `Get-AzureKeyVaultSecret`: эта команда перечисляет все имена секретов и выбранные свойства в виде таблицы.
+- `Remove-AzureKeyVaultKey -VaultName 'ContosoKeyVault' -Name 'ContosoFirstKey'`: пример удаления конкретного ключа.
+- `Remove-AzureKeyVaultSecret -VaultName 'ContosoKeyVault' -Name 'SQLPassword'`: пример удаления конкретного секрета.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

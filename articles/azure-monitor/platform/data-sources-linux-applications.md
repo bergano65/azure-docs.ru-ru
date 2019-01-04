@@ -1,5 +1,5 @@
 ---
-title: Сбор данных о производительности приложений Linux в Log Analytics | Документация Майкрософт
+title: Сбор данных о производительности приложений Linux в Azure Monitor | Документация Майкрософт
 description: В этой статье приведены подробные сведения о том, как в агенте Log Analytics для Linux настроить сбор данных о производительности MySQL и HTTP-сервера Apache.
 services: log-analytics
 documentationcenter: ''
@@ -8,23 +8,21 @@ manager: carmonm
 editor: tysonn
 ms.assetid: f1d5bde4-6b86-4b8e-b5c1-3ecbaba76198
 ms.service: log-analytics
-ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/04/2017
 ms.author: magoedte
-ms.component: ''
-ms.openlocfilehash: fe5c355054aab483a7ee8e68305473b7b840779d
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 824d3f2402861ed8a54a29c9571654cc581e4c5e
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52336654"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53434636"
 ---
-# <a name="collect-performance-counters-for-linux-applications-in-log-analytics"></a>Сбор данных производительности приложений Linux в Log Analytics 
+# <a name="collect-performance-counters-for-linux-applications-in-azure-monitor"></a>Сбор данных счетчиков производительности приложений Linux в Azure Monitor 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
-В этой статье приведены подробные сведения о том, как в [агенте Log Analytics для Linux](https://github.com/Microsoft/OMS-Agent-for-Linux) настроить сбор данных о производительности определенных приложений.  В статье используются следующие приложения:  
+В этой статье приведены подробные сведения о том, как в [агенте Log Analytics для Linux](https://github.com/Microsoft/OMS-Agent-for-Linux) настроить сбор данных о производительности определенных приложений в журналах Azure Monitor.  В статье используются следующие приложения:  
 
 - [MySQL](#MySQL)
 - [HTTP-сервер Apache](#apache-http-server)
@@ -116,7 +114,7 @@ ms.locfileid: "52336654"
 
 ### <a name="define-performance-counters"></a>Определение счетчиков производительности
 
-Настроив в агенте Log Analytics для Linux отправку данных в Log Analytics, вам необходимо настроить счетчики производительности, с которых будут собираться данные.  Для счетчиков, описанных в следующей таблице, используйте процедуру, описанную в разделе [Источники данных о производительности Windows и Linux в Log Analytics](data-sources-windows-events.md).
+Настроив в агенте Log Analytics для Linux отправку данных в Azure Monitor, вам необходимо настроить счетчики производительности, с которых будут собираться данные.  Для счетчиков, описанных в следующей таблице, используйте процедуру, описанную в статье [Источники данных о производительности Windows и Linux в Log Analytics](data-sources-performance-counters.md).
 
 | Имя объекта | Имя счетчика |
 |:--|:--|
@@ -152,7 +150,7 @@ sudo /opt/microsoft/apache-cimprov/bin/apache_config.sh -u
 
 ### <a name="define-performance-counters"></a>Определение счетчиков производительности
 
-Настроив в агенте Log Analytics для Linux отправку данных в Log Analytics, вам необходимо настроить счетчики производительности, с которых будут собираться данные.  Для счетчиков, описанных в следующей таблице, используйте процедуру, описанную в разделе [Источники данных о производительности Windows и Linux в Log Analytics](data-sources-windows-events.md).
+Настроив в агенте Log Analytics для Linux отправку данных в Azure Monitor, вам необходимо настроить счетчики производительности, с которых будут собираться данные.  Для счетчиков, описанных в следующей таблице, используйте процедуру, описанную в статье [Источники данных о производительности Windows и Linux в Log Analytics](data-sources-performance-counters.md).
 
 | Имя объекта | Имя счетчика |
 |:--|:--|
@@ -170,4 +168,4 @@ sudo /opt/microsoft/apache-cimprov/bin/apache_config.sh -u
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Сбор счетчиков производительности](data-sources-performance-counters.md) с агентов Linux.
-* Узнайте больше об [операциях поиска по журналу](../../log-analytics/log-analytics-queries.md) , которые можно применять для анализа данных, собираемых из источников данных и решений. 
+* Узнайте больше о [запросах журнала](../../log-analytics/log-analytics-queries.md), которые можно применять для анализа данных, собираемых из источников данных и решений. 

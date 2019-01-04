@@ -1,19 +1,20 @@
 ---
-title: Фильтры безопасности для усечения результатов в службе "Поиск Azure" с использованием удостоверений Active Directory | Документация Майкрософт
-description: Управление доступом к содержимому службы "Поиск Azure" с помощью фильтров безопасности и удостоверений Active Directory.
-author: revitalbarletz
+title: Фильтры безопасности для усечения результатов в службе "Поиск Azure" с использованием удостоверений Active Directory
+description: Управление доступом к содержимому службы "Поиск Azure" с помощью фильтров безопасности и удостоверений Azure Active Directory (AAD).
+author: brjohnstmsft
 manager: jlembicz
 services: search
 ms.service: search
 ms.topic: conceptual
 ms.date: 11/07/2017
-ms.author: revitalb
-ms.openlocfilehash: b134bc2529bf11557ddb1778b87f127db8da650c
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.author: brjohnst
+ms.custom: seodec2018
+ms.openlocfilehash: 2d1ac36341ef47ac95317c583005b675f31f1265
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51684643"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53308833"
 ---
 # <a name="security-filters-for-trimming-azure-search-results-using-active-directory-identities"></a>Фильтры безопасности для усечения результатов в службе "Поиск Azure" с использованием удостоверений Active Directory
 
@@ -63,7 +64,7 @@ Microsoft Graph предоставляет API, который обеспечи�
 
 Назначение пользователей и членство в группе может быть очень гибким, особенно в крупных организациях. Код, который создает удостоверения пользователей и групп, должен выполняться достаточно часто для учета изменений в членстве организации. Индекс службы "Поиск Azure" требует аналогичного расписания обновления, чтобы отражать текущее состояние разрешенных пользователей и ресурсов.
 
-### <a name="step-1-create-aad-grouphttpsdevelopermicrosoftcomen-usgraphdocsapi-referencev10apigrouppostgroups"></a>Шаг 1. Создание [группы AAD](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/group_post_groups) 
+### <a name="step-1-create-aad-grouphttpsdevelopermicrosoftcomen-usgraphdocsapi-referencev10apigrouppostgroups"></a>Шаг 1. Создание [группы AAD](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/group_post_groups) 
 ```csharp
 // Instantiate graph client 
 GraphServiceClient graph = new GraphServiceClient(new DelegateAuthenticationProvider(...));
@@ -77,7 +78,7 @@ Group group = new Group()
 Group newGroup = await graph.Groups.Request().AddAsync(group);
 ```
    
-### <a name="step-2-create-aad-userhttpsdevelopermicrosoftcomen-usgraphdocsapi-referencev10apiuserpostusers"></a>Шаг 2. Создание [пользователя AAD](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_post_users) 
+### <a name="step-2-create-aad-userhttpsdevelopermicrosoftcomen-usgraphdocsapi-referencev10apiuserpostusers"></a>Шаг 2. Создание [пользователя AAD](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_post_users) 
 ```csharp
 User user = new User()
 {
@@ -92,12 +93,12 @@ User user = new User()
 User newUser = await graph.Users.Request().AddAsync(user);
 ```
 
-### <a name="step-3-associate-user-and-group"></a>Шаг 3. Связывание пользователя и групп
+### <a name="step-3-associate-user-and-group"></a>Шаг 3. Связывание пользователя и групп
 ```csharp
 await graph.Groups[newGroup.Id].Members.References.Request().AddAsync(newUser);
 ```
 
-### <a name="step-4-cache-the-groups-identifiers"></a>Шаг 4. Кэширование идентификаторов групп
+### <a name="step-4-cache-the-groups-identifiers"></a>Шаг 4. Кэширование идентификаторов групп
 Чтобы уменьшить задержки в сети, при необходимости можно кэшировать ассоциации пользователей и групп, чтобы при выдаче запроса на поиск группы возвращались из кэша и не приходилось обращаться в AAD. Для отправки единого HTTP-запроса с несколькими пользователями и создания кэша можно использовать [API пакетной службы AAD](https://developer.microsoft.com/graph/docs/concepts/json_batching).
 
 Microsoft Graph может обрабатывать большое число запросов. Если возникает огромное количество запросов, Microsoft Graph отклоняет запрос с кодом состояния HTTP 429. Дополнительные сведения см. в статье [Руководство по регулированию Microsoft Graph](https://developer.microsoft.com/graph/docs/concepts/throttling).
@@ -136,7 +137,7 @@ _indexClient.Documents.Index(batch);
 
 Чтобы фильтровать документы, возвращаемые в результатах поиска, по группам для пользователя, выполняющего запрос, сделайте следующее.
 
-### <a name="step-1-retrieve-users-group-identifiers"></a>Шаг 1. Получение идентификаторов группы пользователя
+### <a name="step-1-retrieve-users-group-identifiers"></a>Шаг 1. Получение идентификаторов групп пользователя
 
 Если группы пользователя не кэшированы или истек срок действия кэша, отправьте запрос [групп](https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/directoryobject_getmembergroups).
 ```csharp
@@ -164,7 +165,7 @@ private static async Task<List<string>> GetGroupIdsForUser(string userPrincipalN
 }
 ``` 
 
-### <a name="step-2-compose-the-search-request"></a>Шаг 2. Составление поискового запроса
+### <a name="step-2-compose-the-search-request"></a>Шаг 2. Составление поискового запроса
 
 Предположим, что у вас есть членство в группах пользователей. Это позволяет отправить поисковой запрос с соответствующими значениями фильтра.
 
@@ -178,7 +179,7 @@ SearchParameters parameters = new SearchParameters()
 
 DocumentSearchResult<SecuredFiles> results = _indexClient.Documents.Search<SecuredFiles>("*", parameters);
 ```
-### <a name="step-3-handle-the-results"></a>Шаг 3. Обработка результатов
+### <a name="step-3-handle-the-results"></a>Шаг 3. Обработка результатов
 
 Ответ включает отфильтрованный список, состоящий из тех документов, для которых у пользователя есть разрешение на просмотр. В зависимости от структуры страницы результатов поиска можно включить визуальные подсказки для отражения отфильтрованного набора результатов.
 

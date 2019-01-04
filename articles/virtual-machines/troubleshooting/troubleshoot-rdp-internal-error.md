@@ -13,24 +13,24 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/22/2018
 ms.author: genli
-ms.openlocfilehash: 7d0d4a34a31f15c23638eba1f14794838780f2b0
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: dd75d5a3186bbb6ba82e2deb83a7e8429e32a3f2
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52307166"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53134528"
 ---
-#  <a name="an-internal-error-occurs-when-you-try-to-connect-to-an-azure-vm-through-remote-desktop"></a>Внутренняя ошибка при попытке подключения к виртуальной Машине Azure через удаленный рабочий стол 
+#  <a name="an-internal-error-occurs-when-you-try-to-connect-to-an-azure-vm-through-remote-desktop"></a>Внутренняя ошибка при попытке подключения к виртуальной Машине Azure через удаленный рабочий стол
 
 В этой статье описаны ошибки, которые могут возникнуть при подключении к виртуальной машине в Microsoft Azure.
-> [!NOTE] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической. 
+> [!NOTE]
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
 
-## <a name="symptoms"></a>Проблемы 
+## <a name="symptoms"></a>Проблемы
 
 Не удается подключиться к виртуальной машине Azure с помощью протокола удаленного рабочего стола (RDP). Подключение зависает на разделе "Configuring Remote" (Настройка удаленного рабочего стола), или появляется следующее сообщение об ошибке:
 
-- внутренняя ошибка RDP; 
+- внутренняя ошибка RDP;
 - произошла внутренняя ошибка;
 - не удается подключиться к удаленному компьютеру с этого компьютера. Повторите попытку подключения. Если проблема не исчезнет, ​​обратитесь к владельцу удаленного компьютера или к администратору сети.
 
@@ -43,7 +43,7 @@ ms.locfileid: "52307166"
 - протокол TLS отключен;
 - сертификат поврежден или истек срок его действия.
 
-## <a name="solution"></a>Решение 
+## <a name="solution"></a>Решение
 
 Прежде чем выполнять какие-либо действия, сделайте моментальный снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
 
@@ -52,10 +52,10 @@ ms.locfileid: "52307166"
 
 ### <a name="use-serial-control"></a>Использование последовательной консоли
 
-Подключитесь к [последовательной консоли и откройте экземпляр PowerShell](./serial-console-windows.md#open-cmd-or-powershell-in-serial-console
+Подключитесь к [последовательной консоли и откройте экземпляр PowerShell](./serial-console-windows.md#use-cmd-or-powershell-in-serial-console
 ). Если последовательную консоль не включено на виртуальной машине, перейдите к разделу [repair the VM offline](#repair-the-vm-offline)(Автономное восстановление виртуальной машины).
 
-#### <a name="step-1-check-the-rdp-port"></a>Шаг 1. Проверка порта RDP
+#### <a name="step-1-check-the-rdp-port"></a>Шаг 1. Проверка порта RDP
 
 1. В экземпляре PowerShell используйте [netstat](https://docs.microsoft.com/windows-server/administration/windows-commands/netstat
 ) для проверки того, используется ли порт 8080 другими приложениями.
@@ -63,35 +63,35 @@ ms.locfileid: "52307166"
         Netstat -anob |more
 2. Если Termservice.exe использует порт 8080, перейдите к шагу 2. Если другая служба или приложение, отличное от Termservice.exe, использует порт 8080, выполните следующие действия.
 
-    О. Остановите службу для приложения, которое использует службу 3389. 
+    1. Остановите службу для приложения, которое использует службу 3389.
 
         Stop-Service -Name <ServiceName>
 
-    B. Запустите службу терминалов. 
+    2. Запустите службу терминалов.
 
         Start-Service -Name Termservice
 
 2. Если не удается остановить приложение, или этот метод не подходит, измените порт для RDP.
 
-    О. Измените порт.
+    1. Измените порт.
 
         Set-ItemProperty -Path 'HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name PortNumber -value <Hexportnumber>
 
         Stop-Service -Name Termservice Start-Service -Name Termservice
- 
-    B. Настройте брандмауэр в соответствии с новым портом.
 
-        Set-NetFirewallRule -Name "RemoteDesktop-UserMode-In-TCP" -LocalPort <NEW PORT (decimal)>
+    2. Настройте брандмауэр в соответствии с новым портом.
 
-    C. [Обновите группу безопасности сети для нового порта](../../virtual-network/security-overview.md) на порте RDP портала Azure.
+        Set-NetFirewallRule -Name "RemoteDesktop-UserMode-In-TCP" -LocalPort <НОВЫЙ_ПОРТ (десятичное число)>
 
-#### <a name="step-2-set-correct-permissions-on-the-rdp-self-signed-certificate"></a>Шаг 2. Установка правильных разрешений на самозаверяющем сертификате RDP
+    3. [Обновите группу безопасности сети для нового порта](../../virtual-network/security-overview.md) на порте RDP портала Azure.
+
+#### <a name="step-2-set-correct-permissions-on-the-rdp-self-signed-certificate"></a>Шаг 2. Установка правильных разрешений на самозаверяющем сертификате RDP
 
 1.  Чтобы обновить самозаверяющий сертификат RDP, по очереди выполните следующие команды в экземпляре PowerShell.
 
-        Import-Module PKI Set-Location Cert:\LocalMachine $RdpCertThumbprint = 'Cert:\LocalMachine\Remote Desktop\'+((Get-ChildItem -Path 'Cert:\LocalMachine\Remote Desktop\').thumbprint) Remove-Item -Path $RdpCertThumbprint 
+        Import-Module PKI Set-Location Cert:\LocalMachine $RdpCertThumbprint = 'Cert:\LocalMachine\Remote Desktop\'+((Get-ChildItem -Path 'Cert:\LocalMachine\Remote Desktop\').thumbprint) Remove-Item -Path $RdpCertThumbprint
 
-        Stop-Service -Name "SessionEnv" 
+        Stop-Service -Name "SessionEnv"
 
         Start-Service -Name "SessionEnv"
 
@@ -101,37 +101,37 @@ ms.locfileid: "52307166"
     2. В меню **Файл**выберите **Add/Remove Snap-in** (Добавить или удалить оснастку), выберите **Сертификаты**, а затем выберите **Добавить**.
     3. Выберите **Computer accounts** (учетные записи компьютера), выберите **Another Computer** (другой компьютер), а затем добавьте IP-адрес проблемной виртуальной машины.
     4. Перейдите в папку **Remote Desktop\Certificates** (Удаленный рабочий стол или сертификаты), щелкните правой кнопкой мыши сертификат и затем щелкните **Удалить**.
-    5. В экземпляре PowerShell из последовательной консоли перезапустите службу настройки удаленного рабочего стола. 
+    5. В экземпляре PowerShell из последовательной консоли перезапустите службу настройки удаленного рабочего стола.
 
-            Stop-Service -Name "SessionEnv" 
+            Stop-Service -Name "SessionEnv"
 
             Start-Service -Name "SessionEnv"
 3. Сбросьте разрешение для папки MachineKeys
-    
-        remove-module psreadline icacls 
+
+        remove-module psreadline icacls
 
         md c:\temp
 
-        icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c > c:\temp\BeforeScript_permissions.txt takeown /f "C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys" /a /r 
+        icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c > c:\temp\BeforeScript_permissions.txt takeown /f "C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys" /a /r
 
-        icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c /grant "NT AUTHORITY\System:(F)" 
+        icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c /grant "NT AUTHORITY\System:(F)"
 
-        icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c /grant "NT AUTHORITY\NETWORK SERVICE:(R)" 
+        icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c /grant "NT AUTHORITY\NETWORK SERVICE:(R)"
 
-        icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c /grant "BUILTIN\Administrators:(F)" 
+        icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c /grant "BUILTIN\Administrators:(F)"
 
         icacls C:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c > c:\temp\AfterScript_permissions.txt Restart-Service TermService -Force
 
 4. Перезапустите виртуальную машину, а затем повторите попытку подключения к виртуальной машине с удаленного рабочего стола. Если ошибку не удалось устранить, перейдите к следующему шагу.
 
-Шаг 3. Включение всех поддерживаемых версий протокола TLS
+Шаг 3. Шаг 3. Включение всех поддерживаемых версий протокола TLS
 
 Клиент RDP использует TLS 1.0 в качестве протокола по умолчанию. Тем не менее его можно изменить на TLS 1.1, который является новым стандартом. Если протокол TLS 1.1 отключен на виртуальной машине, произойдет сбой подключения.
 1.  В экземпляре CMD включите протокол TLS.
 
-        reg add "HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server" /v Enabled /t REG_DWORD /d 1 /f 
+        reg add "HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server" /v Enabled /t REG_DWORD /d 1 /f
 
-        reg add "HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server" /v Enabled /t REG_DWORD /d 1 /f 
+        reg add "HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server" /v Enabled /t REG_DWORD /d 1 /f
 
         reg add "HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server" /v Enabled /t REG_DWORD /d 1 /f
 2.  Чтобы предотвратить перезапись изменений политики AD, временно остановите обновление групповой политики.
@@ -201,23 +201,23 @@ ms.locfileid: "52307166"
 
         icacls F:\ProgramData\Microsoft\Crypto\RSA\MachineKeys /t /c > c:\temp\AfterScript_permissions.txt
 
-#### <a name="enable-all-supported-tls-versions"></a>Шаг 3. Включение всех поддерживаемых версий протокола TLS 
+#### <a name="enable-all-supported-tls-versions"></a>Шаг 3. Включение всех поддерживаемых версий протокола TLS
 
 1.  Отройте сеанс командной строки с повышенными привилегиями (**Запуск от имени администратора**) и выполните приведенные ниже команды. В этом сценарии мы предполагаем, что подключенному диску ОС присвоена буква F. Замените ее соответствующим значением для своей виртуальной машины.
 2.  Проверьте, который протокол TLS включен.
 
         reg load HKLM\BROKENSYSTEM F:\windows\system32\config\SYSTEM.hiv
 
-        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server" /v Enabled /t REG_DWORD /d 1 /f 
-        
-        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server" /v Enabled /t REG_DWORD /d 1 /f 
-        
-        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server" /v Enabled /t REG_DWORD /d 1 /f 
-        
-        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server" /v Enabled /t REG_DWORD /d 1 /f 
-        
-        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server" /v Enabled /t REG_DWORD /d 1 /f 
-        
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server" /v Enabled /t REG_DWORD /d 1 /f
+
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server" /v Enabled /t REG_DWORD /d 1 /f
+
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server" /v Enabled /t REG_DWORD /d 1 /f
+
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server" /v Enabled /t REG_DWORD /d 1 /f
+
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server" /v Enabled /t REG_DWORD /d 1 /f
+
         REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server" /v Enabled /t REG_DWO
 
 3.  Если ключ не существует, или его значение **0**, включите протокол, выполнив следующие сценарии.
@@ -238,22 +238,22 @@ ms.locfileid: "52307166"
 
 4.  Включите NLA.
 
-        REM Enable NLA 
+        REM Enable NLA
 
-        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\Terminal Server\WinStations\RDP-Tcp" /v SecurityLayer /t REG_DWORD /d 1 /f 
-    
-        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 1 /f 
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\Terminal Server\WinStations\RDP-Tcp" /v SecurityLayer /t REG_DWORD /d 1 /f
 
-        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\Terminal Server\WinStations\RDP-Tcp" /v fAllowSecProtocolNegotiation /t REG_DWORD /d 1 /f 
-        
-        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\Terminal Server\WinStations\RDP-Tcp" /v SecurityLayer /t REG_DWORD /d 1 /f 
-        
-        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 1 /f 
-        
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 1 /f
+
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\Terminal Server\WinStations\RDP-Tcp" /v fAllowSecProtocolNegotiation /t REG_DWORD /d 1 /f
+
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\Terminal Server\WinStations\RDP-Tcp" /v SecurityLayer /t REG_DWORD /d 1 /f
+
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\Terminal Server\WinStations\RDP-Tcp" /v UserAuthentication /t REG_DWORD /d 1 /f
+
         REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\Terminal Server\WinStations\RDP-Tcp" /v fAllowSecProtocolNegotiation /t REG_DWORD /d 1 /f reg unload HKLM\BROKENSYSTEM
 5.  [Отключите диск ОС и повторно создайте виртуальную машину](../windows/troubleshoot-recovery-disks-portal.md), а затем проверьте, устранена ли проблема.
 
 
 
-    
- 
+
+

@@ -1,12 +1,11 @@
 ---
-title: Управление рабочей областью машинного обучения — Студия машинного обучения Azure | Документация Майкрософт
+title: Управление рабочей областью Студии машинного обучения | Документация Майкрософт
 description: Управление доступом к рабочим областям Машинного обучения Azure, а также развертывание веб-служб API ML и управление ими
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: daf3d413-7a77-4beb-9a7a-6b4bdf717719
 ms.service: machine-learning
@@ -16,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 02/27/2017
-ms.openlocfilehash: c470d10b933b31d4cfe151fb541c2182562a2805
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 8c5dfd82a7bf0d1985869c8de4e3b313ef885947
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52314110"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53270779"
 ---
-# <a name="manage-an-azure-machine-learning-workspace"></a>Управление рабочей областью машинного обучения Azure
+# <a name="manage-an-azure-machine-learning-studio-workspace"></a>Управление рабочей областью Студии машинного обучения Azure
 
 > [!NOTE]
 > Сведения об управлении веб-службами на портале веб-служб машинного обучения см. в разделе [Управление веб-службой с помощью портала веб-служб машинного обучения Azure](manage-new-webservice.md).
@@ -32,7 +31,7 @@ ms.locfileid: "52314110"
 
 Рабочими областями машинного обучения можно управлять с помощью портала Azure.
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="use-the-azure-portal"></a>Использование портала Azure
 

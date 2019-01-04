@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 08/15/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: 3450a2ba4a0bf4b1f38806ad4aacf5772c13ed9f
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 179d8fc0f17bf43792db6a9b0e15a6f63349f002
+ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317795"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52890948"
 ---
 # <a name="functions-reference-for-workflow-definition-language-in-azure-logic-apps"></a>Сведенья о функциях языка определения рабочих процессов в Azure Logic Apps
 
@@ -265,7 +265,7 @@ ms.locfileid: "52317795"
 
 <a name="manipulation-functions"></a>
 
-## <a name="manipulation-functions-json--xml"></a>Функции обработки. JSON и язык XML
+## <a name="manipulation-functions-json--xml"></a>Функции обработки: JSON и XML
 
 Для работы с объектами JSON и узлами XML вы можете использовать следующие функции обработки. Подробные сведения о каждой функции см. в [алфавитном списке](../logic-apps/workflow-definition-language-functions-reference.md#alphabetical-list).
 
@@ -691,7 +691,7 @@ addToTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 | --------- | -------- | ---- | ----------- | 
 | <*timestamp*> | Yes | Строка | Строка, содержащая метку времени | 
 | <*interval*> | Yes | Целое число  | Число единиц времени для добавления | 
-| <*timeUnit*> | Yes | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" | 
+| <*timeUnit*> | Yes | Строка | Единица измерения времени, используемая с *interval*: Second, Minute, Hour, Day, Week, Month, Year. | 
 | <*format*> | Нет  | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. |
 ||||| 
 
@@ -752,9 +752,9 @@ and(false, false)
 
 И возвращаются следующие результаты:
 
-* В первом примере оба выражения условия выполнены, поэтому возвращается `true`. 
-* Во втором примере одно из выражений имеет значение false, поэтому возвращается `false`.
-* В третьем примере оба выражения имеют значения false, поэтому возвращается `false`.
+* Первый пример: оба выражения условия выполнены, поэтому возвращается `true`. 
+* Второй пример: одно из выражений имеет значение false, поэтому возвращается `false`.
+* Третий пример: оба выражения имеют значения false, поэтому возвращается `false`.
 
 *Пример 2*
 
@@ -768,9 +768,9 @@ and(equals(1, 2), equals(1, 3))
 
 И возвращаются следующие результаты:
 
-* В первом примере оба выражения условия выполнены, поэтому возвращается `true`. 
-* Во втором примере одно из выражений имеет значение false, поэтому возвращается `false`.
-* В третьем примере оба выражения имеют значения false, поэтому возвращается `false`.
+* Первый пример: оба выражения условия выполнены, поэтому возвращается `true`. 
+* Второй пример: одно из выражений имеет значение false, поэтому возвращается `false`.
+* Третий пример: оба выражения имеют значения false, поэтому возвращается `false`.
 
 <a name="array"></a>
 
@@ -1646,8 +1646,8 @@ empty('abc')
 
 И возвращаются следующие результаты: 
 
-* В первом примере передается пустая строка, поэтому функция возвращает `true`. 
-* Во втором примере передается строка "abc", поэтому функция возвращает `false`. 
+* Первый пример: передается пустая строка, поэтому функция возвращает `true`. 
+* Второй пример: передается строка abc, поэтому функция возвращает `false`. 
 
 <a name="endswith"></a>
 
@@ -1721,8 +1721,8 @@ equals('abc', 'abcd')
 
 И возвращаются следующие результаты: 
 
-* В первом примере оба значения эквивалентны, поэтому функция возвращает `true`.
-* Во втором примере оба значения не эквивалентны, поэтому функция возвращает `false`.
+* Первый пример: оба значения эквивалентны, поэтому функция возвращает `true`.
+* Второй пример: оба значения не эквивалентны, поэтому функция возвращает `false`.
 
 <a name="first"></a>
 
@@ -1895,7 +1895,7 @@ getFutureTime(<interval>, <timeUnit>, <format>?)
 | Параметр | Обязательно | type | ОПИСАНИЕ | 
 | --------- | -------- | ---- | ----------- | 
 | <*interval*> | Yes | Целое число  | Число единиц времени для вычитания | 
-| <*timeUnit*> | Yes | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" | 
+| <*timeUnit*> | Yes | Строка | Единица измерения времени, используемая с *interval*: Second, Minute, Hour, Day, Week, Month, Year. | 
 | <*format*> | Нет  | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. | 
 ||||| 
 
@@ -1937,7 +1937,7 @@ getPastTime(<interval>, <timeUnit>, <format>?)
 | Параметр | Обязательно | type | ОПИСАНИЕ | 
 | --------- | -------- | ---- | ----------- | 
 | <*interval*> | Yes | Целое число  | Число единиц времени для вычитания | 
-| <*timeUnit*> | Yes | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" | 
+| <*timeUnit*> | Yes | Строка | Единица измерения времени, используемая с *interval*: Second, Minute, Hour, Day, Week, Month, Year. | 
 | <*format*> | Нет  | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. | 
 ||||| 
 
@@ -2725,8 +2725,8 @@ not(true)
 
 И возвращаются следующие результаты:
 
-* В первом примере выражение имеет значение false, поэтому функция возвращает `true`.
-* Во втором примере выражение имеет значение true, поэтому функция возвращает `false`.
+* Первый пример: выражение имеет значение false, поэтому функция возвращает `true`.
+* Второй пример: выражение имеет значение true, поэтому функция возвращает `false`.
 
 *Пример 2*
 
@@ -2739,8 +2739,8 @@ not(equals(1, 1))
 
 И возвращаются следующие результаты:
 
-* В первом примере выражение имеет значение false, поэтому функция возвращает `true`.
-* Во втором примере выражение имеет значение true, поэтому функция возвращает `false`.
+* Первый пример: выражение имеет значение false, поэтому функция возвращает `true`.
+* Второй пример: выражение имеет значение true, поэтому функция возвращает `false`.
 
 <a name="or"></a>
 
@@ -2773,8 +2773,8 @@ or(false, false)
 
 И возвращаются следующие результаты:
 
-* В первом примере по крайней мере одно выражение имеет значение true, поэтому функция возвращает `true`.
-* Во втором примере оба выражения имеют значения false, поэтому функция возвращает `false`.
+* Первый пример: по крайней мере одно выражение имеет значение true, поэтому функция возвращает `true`.
+* Второй пример: оба выражения имеют значения false, поэтому функция возвращает `false`.
 
 *Пример 2*
 
@@ -2787,8 +2787,8 @@ or(equals(1, 2), equals(1, 3))
 
 И возвращаются следующие результаты:
 
-* В первом примере по крайней мере одно выражение имеет значение true, поэтому функция возвращает `true`.
-* Во втором примере оба выражения имеют значения false, поэтому функция возвращает `false`.
+* Первый пример: по крайней мере одно выражение имеет значение true, поэтому функция возвращает `true`.
+* Второй пример: оба выражения имеют значения false, поэтому функция возвращает `false`.
 
 <a name="parameters"></a>
 
@@ -3294,7 +3294,7 @@ subtractFromTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 | --------- | -------- | ---- | ----------- | 
 | <*timestamp*> | Yes | Строка | Строка, содержащая метку времени | 
 | <*interval*> | Yes | Целое число  | Число единиц времени для вычитания | 
-| <*timeUnit*> | Yes | Строка | Единицы времени для использования с *интервалом*: "секунда", "минута", "час", "день", "неделя", "месяц", "год" | 
+| <*timeUnit*> | Yes | Строка | Единица измерения времени, используемая с *interval*: Second, Minute, Hour, Day, Week, Month, Year. | 
 | <*format*> | Нет  | Строка | Либо [один описатель формата](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings), либо [пользовательский шаблон формата](https://docs.microsoft.com/dotnet/standard/base-types/custom-date-and-time-format-strings). Формат по умолчанию для метки времени — ["o"](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) (ГГГГ-ММ-ДДTЧЧ:ММ:fffffffK), который соответствует [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) и сохраняет информацию о часовом поясе. | 
 ||||| 
 
@@ -4026,7 +4026,7 @@ xml('<value>')
 
 В этом примере создается версия XML для этой строки, которая содержит объект JSON: 
 
-`xml( '{ \"name\": \"Sophia Owen\" }' )`
+`xml(json('{ \"name\": \"Sophia Owen\" }'))`
 
 Возвращается следующий XML: 
 
@@ -4049,7 +4049,7 @@ xml('<value>')
 
 В этом примере создается XML для строки, содержащей этот объект JSON:
 
-`xml( '{ \"person\": { \"name\": \"Sophia Owen\", \"city\": \"Seattle\" } }' )`
+`xml(json('{\"person\": {\"name\": \"Sophia Owen\", \"city\": \"Seattle\"}}'))`
 
 Возвращается следующий XML: 
 

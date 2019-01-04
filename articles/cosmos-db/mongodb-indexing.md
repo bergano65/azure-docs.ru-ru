@@ -1,24 +1,22 @@
 ---
-title: Индексирование в API MongoDB Azure Cosmos DB | Документация Майкрософт
+title: 'Индексирование в Azure Cosmos DB: API MongoDB'
 description: Обзор возможностей индексирования в API MongoDB Azure Cosmos DB.
 services: cosmos-db
 author: orestis-ms
-manager: kfile
-editor: ''
 ms.service: cosmos-db
 ms.component: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 03/01/2018
 ms.author: orkostak
-ms.openlocfilehash: ad04976136fc8db04dbe52bf78bea49a9149e5db
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: bdb2ceb45950b99b1a5a351c6301599a791ef8cc
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52312703"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52875303"
 ---
-# <a name="indexing-in-the-azure-cosmos-db-mongodb-api"></a>Индексирование в Azure Cosmos DB: API MongoDB
+# <a name="indexing-in-the-azure-cosmos-db-mongodb-api"></a>Индексирование в Azure Cosmos DB. API MongoDB
 
 API MongoDB в Azure Cosmos DB использует возможности автоматического управления индексами Azure Cosmos DB. В результате у пользователей появляется доступ к стандартным политикам индексации Azure Cosmos DB. Таким образом, если индексы не были определены пользователем и ни один индекс не был удален, тогда все поля будут автоматически проиндексированы по умолчанию в момент вставки в коллекцию. В большинстве случаев рекомендуется использовать набор политик индексирования по умолчанию, установленный в учетной записи.
 

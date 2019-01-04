@@ -1,12 +1,11 @@
 ---
-title: Как использовать веб-службу Студии машинного обучения Azure | Документация Майкрософт
+title: Использование веб-службы Студии машинного обучения Azure | Документация Майкрософт
 description: Развернув службу машинного обучения с помощью Студии машинного обучения Azure, веб-службу RESTFul можно использовать в качестве службы обработки запросов и ответов в режиме реального времени или службы пакетного выполнения.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 804f8211-9437-4982-98e9-ca841b7edf56
 ms.service: machine-learning
@@ -16,12 +15,12 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 06/02/2017
-ms.openlocfilehash: df837c64cf0e40f3bfc1c596b2950a9d23c74a90
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: d7a48dcb56d2bed0e84714087bb9fda3fae65fc1
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52309112"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273788"
 ---
 # <a name="how-to-consume-an-azure-machine-learning-studio-web-service"></a>Как использовать веб-службу Студии машинного обучения Azure
 
@@ -33,7 +32,7 @@ ms.locfileid: "52309112"
 * Дополнительные сведения о развертывании веб-службы см. в [этой статье](publish-a-machine-learning-web-service.md).
 * Дополнительные сведения о машинном обучении см. в [центре документации по Машинному обучению Azure](https://azure.microsoft.com/documentation/services/machine-learning/).
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="overview"></a>Обзор
 С помощью веб-службы машинного обучения Azure внешнее приложение взаимодействует с рабочим процессом машинного обучения, оценивая модель в режиме реального времени. Вызов веб-службы машинного обучения возвращает результаты прогноза внешнему приложению. Чтобы вызвать веб-службу машинного обучения, следует передать ключ API, создаваемый при развертывании прогноза. Веб-служба машинного обучения работает на основе архитектуры REST, используемой в основном в проектах с веб-программированием.
@@ -102,13 +101,13 @@ ms.locfileid: "52309112"
 
 **Установка Microsoft.AspNet.WebApi.Client NuGet в Visual Studio**
 
-1. Опубликуйте набор данных Загрузки из набора UCI: Adult 2 веб-службы.
+1. Опубликуйте веб-службу "Download dataset from UCI: Adult 2 class dataset".
 2. Выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**.
 3. Выберите **Установить пакет Microsoft.AspNet.WebApi.Client**.
 
 **Для запуска примера выполните следующие действия:**
 
-1. Опубликуйте эксперимент "Пример 1. Загрузка набора данных из UCI: набор данных для класса Adult 2", входящий в набор примеров машинного обучения Azure.
+1. Опубликуйте эксперимент "Sample 1: Download dataset from UCI: Adult 2 class dataset", входящий в коллекцию примеров для Машинного обучения.
 2. Назначьте apiKey ключ из веб-службы. См. раздел **Получение ключа авторизации Машинного обучения Azure** выше.
 3. Назначьте serviceUri универсальный код ресурса запроса.
 
@@ -204,7 +203,7 @@ namespace CallRequestResponseService
 
 **Для запуска примера выполните следующие действия:**
 
-1. Разверните эксперимент "Sample 1: Download dataset from UCI: Adult 2 class dataset" (Пример 1. Скачивание набора данных из UCI: набор данных для класса Adult 2), входящий в набор примеров машинного обучения.
+1. Разверните эксперимент "Sample 1: Download dataset from UCI: Adult 2 class dataset", входящий в коллекцию примеров для Машинного обучения.
 2. Назначьте apiKey ключ из веб-службы. См. раздел **Получение ключа авторизации Машинного обучения Azure** в начале этой статьи.
 3. Назначьте serviceUri универсальный код ресурса запроса.
 

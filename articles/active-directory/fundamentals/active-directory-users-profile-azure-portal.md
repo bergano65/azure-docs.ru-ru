@@ -1,6 +1,6 @@
 ---
-title: Добавление или изменение данных профиля пользователя в Azure Active Directory | Документы Майкрософт
-description: Сведения о добавлении данных в профиль пользователя, в том числе изображения профиля, сведений о работе и некоторых параметров в Azure Active Directory.
+title: Добавление или изменение данных профиля пользователя в Azure Active Directory | Документация Майкрософт
+description: Инструкции по добавлению данных в профиль пользователя в Azure Active Directory, включая изображение и сведения о должности.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -11,14 +11,14 @@ ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: lizross
 ms.reviewer: jeffsta
-ms.openlocfilehash: d4e2ebd88430cab1fe0734e342b1c9ba4a29af1b
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 0e03d882df61755faf283aa67427beeec17c8c05
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45728952"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094735"
 ---
-# <a name="how-to-add-or-update-a-users-profile-information-using-azure-active-directory"></a>Практическое руководство. Добавление или изменение данных профиля пользователя с помощью Azure Active Directory
+# <a name="add-or-update-a-users-profile-information-using-azure-active-directory"></a>Добавление или изменение данных профиля пользователя с помощью Azure Active Directory
 Добавьте данные в профиль пользователя, в том числе изображение профиля, сведения о работе и некоторые параметры, с помощью Azure Active Directory (Azure AD). Дополнительные сведения о добавлении новых пользователей см. в статье [Добавление или удаление пользователей в Azure Active Directory](add-users-azure-active-directory.md).
 
 ## <a name="add-or-change-profile-information"></a>Добавление или изменение данных профиля

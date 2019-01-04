@@ -1,33 +1,23 @@
 ---
-title: Переход с общедоступного пиринга в Azure ExpressRoute на пиринг Майкрософт | Документация Майкрософт
+title: Переход с общедоступного пиринга на пиринг Майкрософт в Azure ExpressRoute | Документация Майкрософт
 description: В этой статье приведены этапы перехода с общедоступного пиринга на пиринг Майкрософт в ExpressRoute.
 services: expressroute
-documentationcenter: na
 author: cherylmc
-manager: timlt
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: expressroute
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 03/12/2018
 ms.author: cherylmc
-ms.openlocfilehash: f34fabc95d5b56edc6e37c323bebf60bd98c8b90
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.custom: seodec18
+ms.openlocfilehash: 6b2bce6b488698db0a72c9a17f67c2555c6afa5b
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30314305"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53100027"
 ---
 # <a name="move-a-public-peering-to-microsoft-peering"></a>Переход с общедоступного пиринга на пиринг Майкрософт
 
-При использовании пиринга Майкрософт с фильтрами маршрутов ExpressRoute поддерживает службы Azure PaaS, такие как хранилище Azure и база данных SQL Azure. Требуется только один домен маршрутизации для доступа к службам Microsoft PaaS и SaaS. Воспользуйтесь фильтрами маршрутов, чтобы выборочно объявить префиксы службы PaaS для регионов Azure, которые нужно использовать.
-
-Эта статья поможет вам переместить конфигурацию общедоступного пиринга в пиринг Майкрософт без простоев. Дополнительные сведения о доменах маршрутизации и пиринге см. в статье [Каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md).
-
+Эта статья поможет вам переместить конфигурацию общедоступного пиринга в пиринг Майкрософт без простоев. При использовании пиринга Майкрософт с фильтрами маршрутов ExpressRoute поддерживает службы Azure PaaS, такие как хранилище Azure и база данных SQL Azure. Требуется только один домен маршрутизации для доступа к службам Microsoft PaaS и SaaS. Воспользуйтесь фильтрами маршрутов, чтобы выборочно объявить префиксы службы PaaS для регионов Azure, которые нужно использовать. Дополнительные сведения о доменах маршрутизации и пиринге см. в статье [Каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md).
 
 ## <a name="before"></a>Перед началом работы
 
@@ -51,13 +41,13 @@ ms.locfileid: "30314305"
 
   * [портал Azure](expressroute-howto-routing-portal-resource-manager.md#getmsft)
   * [Azure PowerShell](expressroute-howto-routing-arm.md#getmsft)
-  * [интерфейс командной строки Azure](howto-routing-cli.md#getmsft)
+  * [Интерфейс командной строки Azure](howto-routing-cli.md#getmsft)
 
 ## <a name="routefilter"></a>3. Настройка и подключение фильтра маршрутов к каналу
 
 По умолчанию новые пиринги Майкрософт не объявляют префиксы, пока фильтр маршрутов не будет подключен к каналу. При создании правила фильтра маршрутов можно указать список сообществ службы для регионов Azure, которые вы хотите использовать для служб Azure PaaS, как показано на следующем снимке экрана:
 
-![Объединение общедоступного пиринга](.\media\how-to-move-peering\public.png)
+![Объединение общедоступного пиринга](./media/how-to-move-peering/public.png)
 
 Настройте фильтры маршрутов, воспользовавшись инструкциями в любой из следующих статей:
 

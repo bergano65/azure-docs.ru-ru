@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с MobileIron | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с MobileIron | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении MobileIron.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/9/2017
 ms.author: jeedes
-ms.openlocfilehash: 1b6527207793558c132be4cf004b7d6fdde14a90
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 8bdf49f4cea7c6f0ff30e37bcf1cf2fed3abc2bb
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52584117"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52963816"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mobileiron"></a>Руководство по интеграции Azure Active Directory с MobileIron
+# <a name="tutorial-azure-active-directory-integration-with-mobileiron"></a>Руководство. Интеграция Azure Active Directory с MobileIron
 
 Из этого руководства вы узнаете, как интегрировать MobileIron с Azure Active Directory (Azure AD).
 
@@ -50,24 +50,27 @@ ms.locfileid: "52584117"
 - Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
+
+В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде.
+Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление MobileIron из коллекции
 1. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-mobileiron-from-the-gallery"></a>Добавление MobileIron из коллекции
+
 Чтобы настроить интеграцию MobileIron с Azure AD, необходимо добавить MobileIron из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить MobileIron из коллекции, выполните инструкции ниже.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
     ![Кнопка "Azure Active Directory"][1]
 
 1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
     ![Колонка "Корпоративные приложения"][2]
-    
+
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
     ![Кнопка "Новое приложение"][3]
@@ -103,7 +106,7 @@ ms.locfileid: "52584117"
     ![Ссылка "Настройка единого входа"][4]
 
 1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
+
     ![Диалоговое окно "Единый вход"](./media/mobileiron-tutorial/tutorial_mobileiron_samlbase.png)
 
 1. Чтобы настроить приложение в режиме, инициированном  **IDP**, в разделе **MobileIron Domain and URLs** (Домен и URL-адреса приложения MobileIron) сделайте следующее:
@@ -119,12 +122,13 @@ ms.locfileid: "52584117"
     ![Домен и URL-адреса единого входа для приложения MobileIron](./media/mobileiron-tutorial/tutorial_mobileiron_url1.png)
 
     В текстовом поле  **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<host>.mobileiron.com/user/login.html`
-    
-    > [!NOTE]  Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Значения ключа и узла вы получите на портале администрирования MobileIron, как описано далее в этом руководстве.
+
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Значения ключа и узла вы получите на портале администрирования MobileIron, как описано далее в этом руководстве.
 
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
-    ![Ссылка для скачивания сертификата](./media/mobileiron-tutorial/tutorial_mobileiron_certificate.png) 
+    ![Ссылка для скачивания сертификата](./media/mobileiron-tutorial/tutorial_mobileiron_certificate.png)
 
 1. Нажмите кнопку **Сохранить** .
 
@@ -134,7 +138,7 @@ ms.locfileid: "52584117"
 
 1. Последовательно выберите пункты **Администратор** > **Удостоверение**.
 
-   * Выберите действие **AAD** (Добавить) в поле **Info on Cloud IDP Setup** (Информация о настройке IDP в облаке).
+   - Выберите действие **AAD** (Добавить) в поле **Info on Cloud IDP Setup** (Информация о настройке IDP в облаке).
 
     ![Кнопка настройки единого входа для администратора](./media/mobileiron-tutorial/tutorial_mobileiron_admin.png)
 
@@ -143,11 +147,11 @@ ms.locfileid: "52584117"
     ![Кнопка настройки единого входа для администратора](./media/mobileiron-tutorial/key.png)
 
 1. В разделе **Export metadata file from AAD and import to MobileIron Cloud Field** (Экспорт файла метаданных из AAD и импорт данных в облако MobileIron) и щелкните **Choose File** (Выбрать файл), чтобы отправить метаданные, скачанные с портала Azure. Когда процесс завершится, нажмите кнопку **Done** (Готово).
- 
+
     ![Настройка единого входа для администратора — кнопка метаданных](./media/mobileiron-tutorial/tutorial_mobileiron_adminmetadata.png)
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -203,20 +207,20 @@ ms.locfileid: "52584117"
     1. В текстовое поле **First Name** (Имя) введите имя пользователя, например Britta.
 
     1. В текстовое поле **Last Name** (Фамилия) введите фамилию пользователя, например Simon.
-    
-    1. Нажмите кнопку **Done**(Готово).  
+
+    1. Нажмите кнопку **Done**(Готово).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе пользователю Britta Simon предоставляется разрешение на использование единого входа Azure для доступа к MobileIron.
 
-![Назначение роли пользователя][200] 
+![Назначение роли пользователя][200]
 
 **Чтобы назначить пользователя Britta Simon в MobileIron, выполните инструкции ниже.**
 
 1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
 
-    ![Назначение пользователя][201] 
+    ![Назначение пользователя][201]
 
 1. В списке приложений выберите **MobileIron**.
 
@@ -235,19 +239,18 @@ ms.locfileid: "52584117"
 1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
+
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент MobileIron на панели доступа, вы автоматически войдете в приложение MobileIron.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 
 <!--Image references-->
 
@@ -262,4 +265,3 @@ ms.locfileid: "52584117"
 [201]: ./media/mobileiron-tutorial/tutorial_general_201.png
 [202]: ./media/mobileiron-tutorial/tutorial_general_202.png
 [203]: ./media/mobileiron-tutorial/tutorial_general_203.png
-

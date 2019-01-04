@@ -1,5 +1,5 @@
 ---
-title: Непрерывная интеграция и непрерывное развертывание со использованием службы контейнеров Azure и Swarm
+title: Непрерывная интеграция и непрерывное развертывание с использованием Службы контейнеров Azure и Swarm (не рекомендуется)
 description: Использование Службы контейнеров Azure с Docker Swarm, Реестром контейнеров Azure и Azure DevOps для непрерывной доставки многоконтейнерного приложения .NET Core
 services: container-service
 author: jcorioland
@@ -9,14 +9,16 @@ ms.topic: article
 ms.date: 12/08/2016
 ms.author: jucoriol
 ms.custom: mvc
-ms.openlocfilehash: 3b91c269104e740add1d3a5b8ecaee93ca269188
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: db0a16fa44dd23cbc32159889fe8b8ec28c77a5f
+ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44302832"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52992551"
 ---
-# <a name="full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-docker-swarm-using-azure-devops-services"></a>Полный конвейер средств непрерывной интеграции и доставки для развертывания многоконтейнерного приложения в Службе контейнеров Azure с Docker Swarm с использованием Azure DevOps Services
+# <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-docker-swarm-using-azure-devops-services"></a>Полный конвейер средств непрерывной интеграции и доставки для развертывания многоконтейнерного приложения в Службе контейнеров Azure с Docker Swarm с использованием Azure DevOps Services (не рекомендуется)
+
+[!INCLUDE [ACS deprecation](../../../includes/container-service-deprecation.md)]
 
 Одна из основных сложностей при разработке современных приложений для облака — возможность предоставлять эти приложения непрерывно. Из этой статьи вы узнаете, как реализовать полный конвейер непрерывной интеграции и развертывания (CI/CD) с помощью Службы контейнеров Azure с Docker Swarm, Реестра контейнеров Azure, а также управления Azure Pipelines.
 
@@ -53,7 +55,7 @@ ms.locfileid: "44302832"
 
 Вам также понадобится компьютер Ubuntu (14.04 или 16.04) с установленным программным обеспечением Docker. Этот компьютер используется службами Azure DevOps Services во время процессов Azure Pipelines. Этот компьютер можно создать, используя образ, доступный в [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/canonicalandmsopentech/dockeronubuntuserver1404lts/). 
 
-## <a name="step-1-configure-your-azure-devops-services-organization"></a>Шаг 1. Настройка организации Azure DevOps Services 
+## <a name="step-1-configure-your-azure-devops-services-organization"></a>Шаг 1. Настройка организации Azure DevOps Services 
 
 В этом разделе вы настроите организацию Azure DevOps Services.
 
@@ -105,7 +107,7 @@ ms.locfileid: "44302832"
 
 Настройка завершена. На следующих шагах создается конвейер CI/CD, который создает и развертывает приложение в кластере Docker Swarm. 
 
-## <a name="step-2-create-the-build-pipeline"></a>Шаг 2. Создание конвейера сборки
+## <a name="step-2-create-the-build-pipeline"></a>Шаг 2. Создание конвейера сборки
 
 На этом шаге настраивается конвейер сборки для проекта Azure DevOps Services и определяется рабочий процесс сборки для образов контейнера.
 
@@ -170,7 +172,7 @@ ms.locfileid: "44302832"
 
 1. Щелкните **Сохранить** и присвойте имя конвейеру сборки.
 
-## <a name="step-3-create-the-release-pipeline"></a>Шаг 3. Создание конвейера выпуска
+## <a name="step-3-create-the-release-pipeline"></a>Шаг 3. Создание конвейера выпуска
 
 Azure DevOps Services позволяет [управлять выпусками в разных средах](https://www.visualstudio.com/team-services/release-management/). Вы можете включить непрерывное развертывание, чтобы ваше приложение беспрепятственно развертывалось в разных средах (например, в среде разработки, тестирования, подготовки и рабочей среде). Вы также можете создать среду, которая представляет кластер Docker Swarm Службы контейнеров Azure.
 

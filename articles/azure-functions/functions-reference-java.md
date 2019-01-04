@@ -11,12 +11,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: routlaw
-ms.openlocfilehash: 5f74ee390ac327a9e697d3dc67da4ea604b64d69
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: e4d96fa558e1122ef9e0fe0b265166757c45e678
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51686898"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53321056"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -105,7 +105,9 @@ public class Function {
 
 ## <a name="jdk-runtime-availability-and-support"></a>Обеспечения доступности и предоставления поддержки времени выполнения пакета JDK 
 
-Для локальной разработки приложений функций Java загрузите и используйте [Azul Zulu для пакетов JDK Azure](https://assets.azul.com/files/Zulu-for-Azure-FAQ.pdf) из [Azul Systems](https://www.azul.com/downloads/azure-only/zulu/). Пакеты JDK доступны для Windows, Linux и macOS. [Поддержка Azure](https://support.microsoft.com/en-us/help/4026305/sql-contact-microsoft-azure-support) доступна с [соответствующим планом поддержки](https://azure.microsoft.com/support/plans/).
+Для локальной разработки приложений-функций Java загрузите и используйте JDK для Java 8 [Azul Zulu Enterprise for Azure](https://assets.azul.com/files/Zulu-for-Azure-FAQ.pdf) из [Azul Systems](https://www.azul.com/downloads/azure-only/zulu/). Функции Azure используют среду выполнения Azul Java 8 JDK, если вы развертываете приложения-функции в облако.
+
+[Поддержка Azure](https://azure.microsoft.com/en-us/support/) для устранения проблем с пакетами JDK и приложениями-функциями доступна с [соответствующим планом поддержки](https://azure.microsoft.com/support/plans/).
 
 ## <a name="third-party-libraries"></a>Сторонние библиотеки 
 
@@ -361,11 +363,11 @@ az webapp log download --resource-group resourcegroupname --name functionappname
 
 ## <a name="environment-variables"></a>Переменные среды
 
-В Функциях [параметры приложения](https://docs.microsoft.com/en-us/azure/azure-functions/functions-app-settings), такие как строки подключения службы, доступны в виде переменных среды во время выполнения. Получить доступ к этим параметрам можно с помощью `System.getenv("AzureWebJobsStorage")`
+В Функциях [параметры приложения](https://docs.microsoft.com/azure/azure-functions/functions-app-settings), такие как строки подключения службы, доступны в виде переменных среды во время выполнения. Получить доступ к этим параметрам можно с помощью `System.getenv("AzureWebJobsStorage")`
 
 Пример:
 
-Добавьте [AppSetting](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings) с именем testAppSetting и значением testAppSettingValue:
+Добавьте [AppSetting](https://docs.microsoft.com/azure/azure-functions/functions-how-to-use-azure-function-app-settings) с именем testAppSetting и значением testAppSettingValue:
 
 ```java
 

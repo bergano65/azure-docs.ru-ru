@@ -8,26 +8,26 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 04/20/2018
+ms.date: 12/07/2018
 ms.author: glenga
-ms.openlocfilehash: 00735293d8fa8c6056f1ecf89fd312fe4b90bcac
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 78011e799fb4ddaf89fb1fd24c1f2a313ef49ba5
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637579"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53338113"
 ---
 # <a name="durable-functions-publishing-to-azure-event-grid-preview"></a>Публикации устойчивых функций в службе "Сетка событий Azure" (предварительная версия)
 
-В этой статье показано, как настроить устойчивые функции Azure для публикации событий жизненного цикла оркестрации (например, события создания, завершения и сбоя) в пользовательском [разделе сетки событий Azure](https://docs.microsoft.com/azure/event-grid/overview). 
+В этой статье показано, как настроить Устойчивые функции для публикации событий жизненного цикла оркестрации (например, события создания, завершения и сбоя) в пользовательском [разделе Сетки событий Azure](https://docs.microsoft.com/azure/event-grid/overview).
 
 Ниже приведены некоторые сценарии, где эта функция полезна:
 
-* **Сценарии DevOps, например развертывания Blue-Green**. Вам может потребоваться определить, выполняются ли какие-то задачи, перед реализацией [стратегии параллельного развертывания](https://docs.microsoft.com/azure/azure-functions/durable-functions-versioning#side-by-side-deployments).
+* **Сценарии DevOps, такие как "синие" или "зеленые" развертывания**. Вам может потребоваться определить, выполняются ли какие-то задачи, перед реализацией [стратегии параллельного развертывания](durable-functions-versioning.md#side-by-side-deployments).
 
-* **Поддержка расширенного мониторинга и диагностики**. Вы можете отслеживать сведения о состоянии оркестрации во внешнем хранилище, оптимизированном для запросов, например базы данных SQL или Cosmos DB.
+* **Поддержка расширенного мониторинга и диагностики**. Вы можете отслеживать сведения о состоянии оркестрации во внешнем хранилище, оптимизированном для запросов, например, базы данных SQL или Cosmos DB.
 
-* **Продолжительное фоновое действие**. При использовании устойчивых функций для продолжительного фонового действия эта функция позволяет вам узнать текущее состояние.
+* **Продолжительное фоновое действие**. При использовании Устойчивых функций для продолжительного фонового действия эта функция позволяет вам узнать текущее состояние.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -39,12 +39,12 @@ ms.locfileid: "52637579"
 
 Создайте раздел сетки событий для отправки событий из устойчивых функций. Ниже показано, как создать раздел с помощью Azure CLI. Сведения о том, как сделать это с помощью PowerShell или портала Azure, см. в следующих статьях:
 
-* [Создание и перенаправление пользовательских событий с помощью службы Azure PowerShell и "Сетка событий"](https://docs.microsoft.com/azure/event-grid/custom-event-quickstart-powershell)
-* [Создание и перенаправление пользовательских событий с помощью портала Azure и службы "Сетка событий"](https://docs.microsoft.com/azure/event-grid/custom-event-quickstart-portal)
+* [Краткие руководства по EventGrid: создание пользовательского события с помощью PowerShell](https://docs.microsoft.com/azure/event-grid/custom-event-quickstart-powershell)
+* [Краткие руководства по EventGrid: создание пользовательского события с помощью портала Azure](https://docs.microsoft.com/azure/event-grid/custom-event-quickstart-portal)
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды `az group create`. В настоящее время сетка событий не поддерживает все регионы. Сведения о поддерживаемых регионах см. в разделе [Общие сведения о службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/overview). 
+Создайте группу ресурсов с помощью команды `az group create`. В настоящее время сетка событий не поддерживает все регионы. Сведения о поддерживаемых регионах см. в разделе [Общие сведения о службе "Сетка событий Azure"](https://docs.microsoft.com/azure/event-grid/overview).
 
 ```bash
 az group create --name eventResourceGroup --location westus2
@@ -55,7 +55,7 @@ az group create --name eventResourceGroup --location westus2
 Раздел сетки событий содержит определяемую пользователем конечную точку, в которой можно размещать свое событие. Замените `<topic_name>` уникальным именем для вашей темы. Имя раздела должно быть уникальным, так как оно становится записью службы доменных имен (DNS).
 
 ```bash
-az eventgrid topic create --name <topic_name> -l westus2 -g eventResourceGroup 
+az eventgrid topic create --name <topic_name> -l westus2 -g eventResourceGroup
 ```
 
 ## <a name="get-the-endpoint-and-key"></a>Получение конечной точки и ключа
@@ -119,7 +119,7 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 ### <a name="create-an-event-grid-trigger-function"></a>Создание функции триггера сетки событий
 
-Создайте функцию для получения событий жизненного цикла. Выберите **Пользовательская функция**. 
+Создайте функцию для получения событий жизненного цикла. Выберите **Пользовательская функция**.
 
 ![Выберите создание пользовательской функции.](./media/durable-functions-event-publishing/functions-portal.png)
 
@@ -131,7 +131,7 @@ az eventgrid topic key list --name <topic_name> -g eventResourceGroup --query "k
 
 ![Создайте триггер сетки событий.](./media/durable-functions-event-publishing/eventgrid-trigger-creation.png)
 
-Будет создана функция со следующим кодом: 
+Будет создана функция со следующим кодом:
 
 ```csharp
 #r "Newtonsoft.Json"
@@ -153,11 +153,11 @@ public static void Run(JObject eventGridEvent, ILogger log)
 
 ![создание подписки в службе "Сетка событий";](./media/durable-functions-event-publishing/eventsubscription.png)
 
-Теперь все готово для получения событий жизненного цикла. 
+Теперь все готово для получения событий жизненного цикла.
 
-## <a name="create-durable-functions-to-send-the-events"></a>Создание устойчивых функций для отправки событий
+## <a name="create-durable-functions-to-send-the-events"></a>Создание Устойчивых функций для отправки событий
 
-В проекте устойчивых функций начните отладку на локальном компьютере.  Следующий код совпадает с кодом шаблона для устойчивых функций. Вы уже настроили `host.json` и `local.settings.json` на локальном компьютере. 
+В проекте устойчивых функций начните отладку на локальном компьютере.  Следующий код совпадает с кодом шаблона для устойчивых функций. Вы уже настроили `host.json` и `local.settings.json` на локальном компьютере.
 
 ```csharp
 using System.Collections.Generic;
@@ -217,7 +217,7 @@ namespace LifeCycleEventSpike
 ```
 2018-04-20T09:28:21.041 [Info] Function started (Id=3301c3ef-625f-40ce-ad4c-9ba2916b162d)
 2018-04-20T09:28:21.104 [Info] {
-    "id": "054fe385-c017-4ce3-b38a-052ac970c39d",    
+    "id": "054fe385-c017-4ce3-b38a-052ac970c39d",
     "subject": "durable/orchestrator/Running",
     "data": {
         "hubName": "DurableFunctionsHub",
@@ -258,19 +258,19 @@ namespace LifeCycleEventSpike
 
 В приведенном ниже списке описана схема событий жизненного цикла:
 
-* **id.** Уникальный идентификатор события сетки событий.
+* **id.** Уникальный идентификатор события Сетки событий.
 * **subject.** Путь к субъекту событий. `durable/orchestrator/{orchestrationRuntimeStatus}`. `{orchestrationRuntimeStatus}` будет `Running`, `Completed`, `Failed` и `Terminated`.  
-* **data.** Определенные параметры устойчивых функций.
-    * **hubName.** Имя [центра задач](https://docs.microsoft.com/azure/azure-functions/durable-functions-task-hubs).
-    * **functionName.** Имя функции оркестратора.
-    * **instanceId.** Идентификатор экземпляра устойчивых функций.
-    * **reason.** Дополнительные данные, связанные с событием отслеживания. Дополнительные сведения см. в статье [Диагностика в устойчивых функциях (Функции Azure)](https://docs.microsoft.com/azure/azure-functions/durable-functions-diagnostics).
-    * **runtimeStatus.** Состояние среды выполнения оркестрации: "Running", "Completed", "Failed", "Canceled". 
+* **data.** Определенные параметры Устойчивых функций.
+  * **hubName.** Имя [TaskHub](durable-functions-task-hubs.md).
+  * **functionName.** Имя функции оркестратора.
+  * **instanceId.** Идентификатор экземпляра Устойчивых функций.
+  * **reason.** Дополнительные данные, связанные с событием отслеживания. Дополнительные сведения см. в статье [Диагностика в устойчивых функциях (Функции Azure)](durable-functions-diagnostics.md).
+  * **runtimeStatus.** Состояние среды выполнения оркестрации. "Running", "Completed", "Failed", "Canceled".
 * **eventType.** "orchestratorEvent".
 * **eventTime.** Время события (UTC).
 * **dataVersion.** Версия схемы события жизненного цикла.
-* **metadataVersion.** Версия метаданных.
-* **topic.** Ресурс раздела сетки событий.
+* **metadataVersion.**  Версия метаданных.
+* **topic.** Ресурс раздела Сетки событий.
 
 ## <a name="how-to-test-locally"></a>Локальное тестирование
 

@@ -1,5 +1,5 @@
 ---
-title: Обмен событиями через Центры событий Azure между потребителями и производителями, использующими разные протоколы | Документация Майкрософт
+title: Обмен событиями между приложениями, использующими разные протоколы — Центры событий Azure| Документация Майкрософт
 description: В этой статье показано, как через Центры событий Azure организовать обмен событиями между потребителями и производителями, которые используют разные протоколы (AMQP, Apache Kafka и HTTPS).
 services: event-hubs
 documentationcenter: ''
@@ -8,19 +8,19 @@ manager: ''
 ms.service: event-hubs
 ms.devlang: na
 ms.topic: article
-ms.custom: mvc
+ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/05/2018
+ms.date: 12/06/2018
 ms.author: bahariri
-ms.openlocfilehash: 54edeafbe950cde88c2c6051f95825cfaed52ac7
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 1345a5814faefd4074e7d9548d374bd79d977514
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51285316"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53015591"
 ---
-# <a name="exchange-events-between-consumers-and-producers-that-use-different-protocols-amqp-kafka-and-https"></a>Обмен событиями через Центры событий Azure между потребителями и производителями, использующими разные протоколы (AMQP, Apache Kafka и HTTPS).
+# <a name="exchange-events-between-consumers-and-producers-that-use-different-protocols-amqp-kafka-and-https"></a>Обмен событиями между потребителями и производителями, использующими разные протоколы: AMQP, Kafka и HTTPS
 Центры событий Azure поддерживают для потребителей и производителей три протокола: AMQP, Kafka и HTTPS. В каждом из этих протоколов описан собственный способ представления сообщений, что приводит нас к логичному вопросу: как будут выглядеть разные компоненты и значения события при поступлении к потребителю, если в Центр событий они отправлялись по одному протоколу, а потребитель использовал для получения другой протокол? В этой статье обсуждаются современные рекомендации для производителей и потребителей, которые позволяют обеспечить правильную обработку потребителем всех значений в событии.
 
 Приведенные здесь рекомендации применимы к перечисленным ниже клиентам, с указанием конкретных номеров версий, которые использовались при разработке фрагментов кода:

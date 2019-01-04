@@ -1,26 +1,19 @@
 ---
-title: Создание и изменение канала ExpressRoute с помощью портала Azure | Документация Майкрософт
-description: В этой статье описывается создание, подготовка, проверка, обновление, удаление и отзыв канала ExpressRoute.
-documentationcenter: na
+title: Создание и изменение канала ExpressRoute на портале Azure | Документация Майкрософт
+description: Создание, подготовка, проверка, обновление, удаление и отзыв канала ExpressRoute.
 services: expressroute
 author: cherylmc
-manager: timlt
-editor: ''
-tags: azure-resource-manager
-ms.assetid: 68d59d59-ed4d-482f-9cbc-534ebb090613
 ms.service: expressroute
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 10/20/2017
+ms.date: 10/20/2018
 ms.author: cherylmc;ganesr
-ms.openlocfilehash: 94d7b743bdec0d22254144d5316e0d94f5660a55
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.custom: seodec18
+ms.openlocfilehash: 974421662a33cd9167d3c39b31d8da20db9f505f
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51235332"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53091533"
 ---
 # <a name="create-and-modify-an-expressroute-circuit"></a>Создание и изменение канала ExpressRoute
 > [!div class="op_single_selector"]
@@ -31,7 +24,7 @@ ms.locfileid: "51235332"
 > * [PowerShell (классическая модель)](expressroute-howto-circuit-classic.md)
 >
 
-В этой статье объясняется, как создать канал Azure ExpressRoute, используя портал Azure и модель развертывания с помощью Azure Resource Manager. Описанные ниже действия показывают, как проверить состояние канала, обновить его или удалить и отозвать.
+Эта статья поможет создать канал Azure ExpressRoute, используя портал Azure и модель развертывания с помощью Azure Resource Manager. Вы также сможете проверять состояние канала, обновлять, удалять или отзывать его.
 
 
 ## <a name="before-you-begin"></a>Перед началом работы
@@ -85,19 +78,19 @@ ms.locfileid: "51235332"
 Вновь созданный канал ExpressRoute будет имеет следующее состояние:
 
 Состояние поставщика: Не подготовлено<BR>
-Состояние канала: Включен
+Состояние канала: Включено
 
 ![Инициация процесса подготовки](./media/expressroute-howto-circuit-portal-resource-manager/status.png)
 
 Когда поставщик услуг подключения находится в процессе его включения, канал переходит в следующее состояние:
 
-Состояние поставщика: Идет подготовка<BR>
-Состояние канала: Включен
+Состояние поставщика: Подготовка<BR>
+Состояние канала: Включено
 
 Для того чтобы канал ExpressRoute можно было использовать, он должен находиться в следующем состоянии:
 
 Состояние поставщика: Подготовлено<BR>
-Состояние канала: Включен
+Состояние канала: Включено
 
 ### <a name="5-periodically-check-the-status-and-the-state-of-the-circuit-key"></a>5. Периодическая проверка состояния и статуса ключа канала
 Чтобы просмотреть свойства интересующего вас канала, выберите его. Проверьте **Состояние поставщика**. Чтобы вы могли продолжить работу, оно должно измениться на **Подготовлено**.

@@ -1,19 +1,19 @@
 ---
-title: Настройка Azure ExpressRoute Global Reach с помощью Azure CLI | Документация Майкрософт
+title: 'Настройка ExpressRoute Global Reach: Azure CLI | Документация Майкрософт'
 description: В этой статье содержатся сведения о том, как связать каналы ExpressRoute, чтобы настроить частную сеть между локальными сетями и включить Global Reach.
-documentationcenter: na
 services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 11/14/2018
+ms.date: 12/12/2018
 ms.author: cherylmc
-ms.openlocfilehash: 9d41ab26876d464187466f566bbfafc4861c799d
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.custom: seodec18
+ms.openlocfilehash: 9a8e0a5df9383d8e3d7159aa916b0e4fbfeea948
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52333300"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53384070"
 ---
 # <a name="configure-expressroute-global-reach-using-azure-cli-preview"></a>Настройка ExpressRoute Global Reach с помощью Azure CLI (предварительная версия)
 Эта статья поможет вам настроить ExpressRoute Global Reach с помощью Azure CLI. Дополнительные сведения см. в разделе [Связывание каналов ExpressRoute для включения ExpressRoute Global Reach (предварительная версия)](expressroute-global-reach.md).
@@ -55,24 +55,22 @@ az account set --subscription <your subscription ID>
 
 ## <a name="enable-connectivity-between-your-on-premises-networks"></a>Настройка подключения между локальными сетями
 
-Запустите следующий интерфейс командной строки для подключения двух каналов ExpressRoute.
+При выполнении команды активации подключения советуем использовать следующие значения:
 
-> [!NOTE]
-> *peer-circuit* должен представлять полный идентификатор ресурса, например
-> ```
-> */subscriptions/{your_subscription_id}/resourceGroups/{your_resource_group}/providers/Microsoft.Network/expressRouteCircuits/{your_circuit_name}*
-> ```
-> 
+* Параметр *peer-circuit* должен представлять полный идентификатор ресурса. Например:  
+
+  ```
+  /subscriptions/{your_subscription_id}/resourceGroups/{your_resource_group}/providers/Microsoft.Network/expressRouteCircuits/{your_circuit_name}
+  ```
+* *-AddressPrefix* должен быть подсетью IPv4/29, например "10.0.0.0/29". Мы будем использовать IP-адреса в этой подсети, чтобы установить подключение между двумя каналами ExpressRoute. Не следует использовать адреса в этой подсети в виртуальных сетях Azure или в локальных сетях.
+
+Запустите следующий интерфейс командной строки для подключения двух каналов ExpressRoute. Используйте команду, как в следующем примере:
 
 ```azurecli
 az network express-route peering connection create -g <ResourceGroupName> --circuit-name <Circuit1Name> --peering-name AzurePrivatePeering -n <ConnectionName> --peer-circuit <Circuit2ResourceID> --address-prefix <__.__.__.__/29>
 ```
 
-> [!IMPORTANT]
-> *-AddressPrefix* должен быть подсетью IPv4/29, например "10.0.0.0/29". Мы будем использовать IP-адреса в этой подсети, чтобы установить подключение между двумя каналами ExpressRoute. Не следует использовать адреса в этой подсети в виртуальных сетях Azure или в локальных сетях.
-> 
-
-Выходные данные CLI будут выглядеть примерно так:
+Выходные данные CLI выглядят так:
 
 ```azurecli
 {

@@ -12,20 +12,20 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/05/2018
+ms.date: 12/11/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
-ms.openlocfilehash: 5714257fce53fafa148b8ae4d5a3addf3b872c6f
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 33512b47eff75421ce07b02f9c17ae3028152568
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035481"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53276259"
 ---
 # <a name="azure-disconnected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Планирование развертываний без подключения к Azure для интегрированных систем Azure Stack
 Когда вы решите, [как интегрировать Azure Stack с гибридной облачной средой](azure-stack-connection-models.md), вы сможете спланировать развертывание Azure Stack.
 
-Вы можете развернуть и использовать Azure Stack без подключения к Интернету. Но при этом вы будете ограничены хранилищем удостоверений службы федерации Active Directory (AD FS) и моделью выставления счетов на основе емкости. 
+Вы можете развернуть и использовать Azure Stack без подключения к Интернету. Но при этом вы будете ограничены хранилищем удостоверений службы федерации Active Directory (AD FS) и моделью выставления счетов на основе емкости. Мультитенантность не поддерживается в развертываниях без подключения к Интернету, так как для нее требуется использование Azure AD. 
 
 Выбирайте этот вариант в таких случаях:
 - Из-за ограничений, связанных с безопасностью, или других ограничений требуется развертывать Azure Stack в среде, не подключенной к Интернету.
@@ -58,7 +58,7 @@ ms.locfileid: "51035481"
 
 ## <a name="learn-more"></a>Подробнее
 - Дополнительные сведения об использовании, покупке, партнерах и поставщиках оборудования OEM см. на странице продукта [Azure Stack](https://azure.microsoft.com/overview/azure-stack/).
-- Сведения о стратегии развития и географической доступности интегрированных систем Azure Stack см. в техническом документе: [Azure Stack: An extension of Azure](https://azure.microsoft.com/resources/azure-stack-an-extension-of-azure/) (Azure Stack: расширение Azure (PDF)). 
+- Сведения о стратегии развития и географической доступности интегрированных систем Azure Stack см. в технической документации [Azure Stack: An extension of Azure](https://azure.microsoft.com/resources/azure-stack-an-extension-of-azure/) (Azure Stack: расширение Azure). 
 - Чтобы узнать больше о пакетах и ценах Microsoft Azure Stack, [скачайте документ PDF](https://azure.microsoft.com/mediahandler/files/resourcefiles/5bc3f30c-cd57-4513-989e-056325eb95e1/Azure-Stack-packaging-and-pricing-datasheet.pdf). 
 
 ## <a name="next-steps"></a>Дополнительная информация

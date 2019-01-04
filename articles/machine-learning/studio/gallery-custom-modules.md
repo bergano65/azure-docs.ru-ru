@@ -1,12 +1,11 @@
 ---
 title: Пользовательские модули в Коллекции решений ИИ Azure — Студия машинного обучения Azure | Документация Майкрософт
-description: Поиск пользовательских модулей машинного обучения в коллекции решений ИИ Azure.
+description: Поиск пользовательских модулей машинного обучения в коллекции решений ИИ Azure. Пользовательские модули расширяют возможности Студии машинного обучения Azure.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 16037a84-dad0-4a8c-9874-a1d3bd551cf0
 ms.service: machine-learning
@@ -16,14 +15,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/14/2017
-ms.openlocfilehash: a504bcfbbcd70c1d6fc8402d4c232e7e8a5476b0
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 92067a93a1f67711df0312f4daf484a577ff14d1
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52313747"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273207"
 ---
-# <a name="machine-learning-studio-discover-custom-machine-learning-modules-in-azure-ai-gallery"></a>Студия машинного обучения Azure: поиск пользовательских модулей машинного обучения в Коллекции решений ИИ Azure
+# <a name="machine-learning-studio-discover-custom-machine-learning-modules-in-azure-ai-gallery"></a>Студия машинного обучения. Поиск пользовательских модулей машинного обучения в коллекции решений ИИ Azure
 
 В [Коллекции решений ИИ Azure](http://gallery.cortanaintelligence.com) есть несколько [пользовательских модулей](https://gallery.cortanaintelligence.com/customModules), которые расширяют возможности Студии машинного обучения Azure. Вы можете импортировать эти модули и использовать их в экспериментах, чтобы создать еще более сложные решения для прогнозной аналитики.
 
@@ -94,5 +93,5 @@ ms.locfileid: "52313747"
 
 **[Перейти к коллекции](http://gallery.cortanaintelligence.com)**
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 

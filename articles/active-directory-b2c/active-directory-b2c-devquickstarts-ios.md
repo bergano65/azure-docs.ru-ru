@@ -7,15 +7,15 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/07/2017
+ms.date: 11/30/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 5f95b71497b59eafff09d4add2b4bb1c20656592
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 9dbe88e1e179df4560d5094cf3f58ca770541323
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43339364"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52842278"
 ---
 # <a name="azure-ad-b2c-sign-in-using-an-ios-application"></a>Azure AD B2C. Вход с помощью приложения iOS
 
@@ -38,16 +38,16 @@ ms.locfileid: "43339364"
 * Скопируйте **идентификатор приложения** , назначенный приложению. Этот GUID понадобится позже.
 * Задайте **URI перенаправления** с настраиваемой схемой (например, com.onmicrosoft.fabrikamb2c.exampleapp://oauth/redirect). Этот URI понадобится позже.
 
-## <a name="create-your-policies"></a>Создание политик
-В Azure AD B2C любое взаимодействие с пользователем определяется [политикой](active-directory-b2c-reference-policies.md). Это приложение предусматривает одну процедуру идентификации, сочетающую в себе вход и регистрацию. Создайте эту политику, как описано в [справочной статье о политиках](active-directory-b2c-reference-policies.md#create-a-sign-up-policy). При создании политики обязательно сделайте следующее:
+## <a name="create-your-user-flows"></a>Создание потоков пользователей
+В Azure AD B2C любое взаимодействие с пользователем определяется [потоком пользователя](active-directory-b2c-reference-policies.md). Это приложение предусматривает одну процедуру идентификации, сочетающую в себе вход и регистрацию. Создайте такой поток пользователя, как описано в [этой справочной статье](active-directory-b2c-reference-policies.md#create-a-sign-up-user-flow). При создании потока пользователя обязательно сделайте следующее:
 
 * В разделе **Sign-up attributes** (Атрибуты регистрации) выберите атрибут **Отображаемое имя**.  Можно также выбрать другие атрибуты.
 * В разделе **Application claims** (Утверждения приложения) выберите утверждения **Отображаемое имя** и **ИД объекта пользователя**. Можно также выбрать другие утверждения.
-* Скопируйте **имя** каждой политики после ее создания. При сохранении политики к ее имени добавляется префикс `b2c_1_`.  Эти имена политик понадобятся вам позже.
+* Скопируйте **имя** каждого потока пользователя после его создания. При сохранении потока пользователя к его имени добавляется префикс `b2c_1_`.  Имя потока пользователя понадобится вам позже.
 
 [!INCLUDE [active-directory-b2c-devquickstarts-policy](../../includes/active-directory-b2c-devquickstarts-policy.md)]
 
-После создания политик можно приступать к сборке приложения.
+После создания потоков пользователей можно приступать к сборке приложения.
 
 ## <a name="download-the-sample-code"></a>Скачивание примера кода
 Мы разместили рабочий пример, использующий AppAuth с Azure AD B2C, [на сайте GitHub](https://github.com/Azure-Samples/active-directory-ios-native-appauth-b2c). Вы можете скачать код и запустить его. Чтобы использовать собственный клиент Azure AD B2C, следуйте инструкциям в файле [README.md](https://github.com/Azure-Samples/active-directory-ios-native-appauth-b2c/blob/master/README.md).
@@ -64,7 +64,7 @@ ms.locfileid: "43339364"
 
 Вы можете настроить взаимодействие с Azure AD B2C, указав URI конечной точки авторизации и конечной точки токена.  Для создания URI вам потребуются следующие сведения:
 * идентификатор клиента (например, contoso.onmicrosoft.com);
-* имя политики (например, B2C\_1\_SignUpIn).
+* имя потока пользователя (например, B2C\_1\_SignUpIn).
 
 URI конечной точки токена можно создать, заменив Tenant\_ID (идентификатор клиента) и Policy\_Name (имя политики) в следующем URL-адресе:
 

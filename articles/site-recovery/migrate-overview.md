@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 10/28/2018
+ms.date: 11/27/2018
 ms.author: raynew
-ms.openlocfilehash: 6f510ac394b939996defe0a7ed49317ec0aabe3b
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 9a5c45b66e775ce83625e1f6d9507aaf456c7c7b
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50212001"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52843994"
 ---
 # <a name="about-migration"></a>Общие сведения о миграции
 
@@ -21,9 +21,9 @@ ms.locfileid: "50212001"
 
 Вот что можно сделать с помощью Site Recovery:
 
-- **Перенести из локальной среды в Azure**: миграция локальных виртуальных машин Hyper-V, VMware и физических серверов в Azure. После переноса рабочие нагрузки, выполняемые на локальных компьютерах, будут выполняться на виртуальных машинах Azure. 
-- **Перенести между регионами Azure**: миграция виртуальных машин Azure между регионами Azure. 
-- **Перенести AWS в Azure**: миграция экземпляров AWS под управлением Windows на виртуальные машины IaaS Azure. 
+- **Миграция из локальной среды в Azure**. Перенос локальных виртуальных машин Hyper-V, VMware и физических серверов в Azure. После переноса рабочие нагрузки, выполняемые на локальных компьютерах, будут выполняться на виртуальных машинах Azure. 
+- **Миграция в рамках Azure**. Перенос виртуальных машин Azure в другие регионы Azure. 
+- **Перенос AWS**. Перенос экземпляров AWS Windows на виртуальные машины Azure IaaS. 
 
 
 ## <a name="what-do-we-mean-by-migration"></a>Что подразумевает собой перенос?

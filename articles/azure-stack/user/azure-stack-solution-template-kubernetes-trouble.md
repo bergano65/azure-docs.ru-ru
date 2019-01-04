@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 10/29/2018
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.openlocfilehash: f7f23a6d645a1d8e16e42e751050d8d91b49e2b3
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 472dfc04cea65cab39d177bb214c417d229b71d2
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51007831"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52956726"
 ---
 # <a name="troubleshoot-your-deployment-to-kubernetes-to-azure-stack"></a>Устранение неполадок развертывания в Kubernetes (K8) в Azure Stack
 
@@ -46,9 +46,9 @@ ms.locfileid: "51007831"
 
     Введите значения, которые необходимо настроить в кластере Kubernetes, в том числе:
     -  **Имя пользователя**. Это имя пользователя для виртуальных машин Linux, которые являются частью кластера Kubernetes и динамического административного представления.
-    -  **Открытый ключ SSH**. Это ключ, используемый для авторизации на всех компьютерах Linux, созданных как часть кластера Kubernetes и динамического административного представления.
+    -  **Открытый ключ SSH**. Это ключ, используемый для авторизации на всех виртуальных машинах Linux, созданных как часть кластера Kubernetes и динамического административного представления.
     -  **Субъект-служба**. Это идентификатор, используемый поставщиком облачных служб Azure Kubernetes. Идентификатор клиента определяется как идентификатор приложения во время создания субъекта-службы. 
-    -  **Секрет клиента**. Ключ, полученный при создании субъекта-службы.
+    -  **Секрет клиента**. Это ключ, полученный при создании субъекта-службы.
 
 2. Создайте виртуальную машину развертывания и расширение пользовательских скриптов.
     -  Создайте развертывание виртуальной машины Linux с помощью образа Linux Marketplace, **Ubuntu Server 16.04-LTS**.
@@ -154,9 +154,9 @@ ms.locfileid: "51007831"
     | Параметр           | ОПИСАНИЕ                                                                                                      | Пример                                                                       |
     |---------------------|------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
     | -i, --identity-file | Файл закрытого ключа RSA для подключения Kubernetes к главной виртуальной машине. Ключ должен начинаться с `-----BEGIN RSA PRIVATE KEY-----`. | C:\data\privatekey.pem                                                        |
-    | -h, --host          | Общедоступный IP-адрес или полное доменное имя главного кластера Kubernetes виртуальной машины. Имя виртуальной машины начинается с `k8s-master-`.                       | IP: 192.168.102.37<br><br>Полное доменное имя: k8s-12345.local.cloudapp.azurestack.external      |
+    | -h, --host          | Общедоступный IP-адрес или полное доменное имя главного кластера Kubernetes виртуальной машины. Имя виртуальной машины начинается с `k8s-master-`.                       | IP-адрес: 192.168.102.37<br><br>Полное доменное имя: k8s-12345.local.cloudapp.azurestack.external      |
     | -u, --user          | Имя пользователя кластера Kubernetes в главной виртуальной машине. Это имя задается при настройке элемента marketplace.                                                                    | azureuser                                                                     |
-    | -d, --vmdhost       | Общедоступный IP-адрес или полное доменное имя DVM. Имя виртуальной машины начинается с `vmd-`.                                                       | IP: 192.168.102.38<br><br>Служба доменных имен (DNS): vmd-dnsk8-frog.local.cloudapp.azurestack.external |
+    | -d, --vmdhost       | Общедоступный IP-адрес или полное доменное имя DVM. Имя виртуальной машины начинается с `vmd-`.                                                       | IP-адрес: 192.168.102.38<br><br>Служба доменных имен (DNS): vmd-dnsk8-frog.local.cloudapp.azurestack.external |
 
    Когда вы добавляете значения параметров, это может быть в виде следующего кода:
 
@@ -178,6 +178,6 @@ ms.locfileid: "51007831"
 
 [Развертывание Kubernetes в Azure Stack](azure-stack-solution-template-kubernetes-deploy.md)
 
-[Добавление Kubernetes в Azure Stack Marketplace](..\azure-stack-solution-template-kubernetes-cluster-add.md)
+[Добавление Kubernetes в Azure Stack Marketplace](../azure-stack-solution-template-kubernetes-cluster-add.md)
 
 [Kubernetes в Azure](https://docs.microsoft.com/azure/container-service/kubernetes/container-service-kubernetes-walkthrough)

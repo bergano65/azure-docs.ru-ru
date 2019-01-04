@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
-ms.openlocfilehash: 4e89664bf980717dbfd7994d6469fc4a412307a0
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 8bb964308e11d238def4eed3f194ffc9ef8ab086
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51258550"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52840169"
 ---
 # <a name="lead-management-for-cloud-marketplace"></a>Управление интересами облачного Marketplace
 
@@ -39,15 +39,15 @@ ms.locfileid: "51258550"
 
 Ниже приведены пошаговые инструкции по подключению всех возможных назначений интересов:
 
-**Dynamics CRM Online** - [Щелкните здесь](https://cloudpartner.azure.com/#documentation/lead-management-instructions-dynamics), чтобы получить инструкции по настройке Dynamics CRM Online для получения интересов.
+**Dynamics CRM Online** - [Щелкните здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics), чтобы получить инструкции по настройке Dynamics CRM Online для получения интересов.
 
-**Marketo** - [Щелкните здесь](https://cloudpartner.azure.com/#documentation/lead-management-instructions-marketo), чтобы получить инструкции по настройке Marketo для получения интересов.
+**Marketo** - [Щелкните здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-marketo), чтобы получить инструкции по настройке Marketo для получения интересов.
 
-**SalesForce** - [Щелкните здесь](https://cloudpartner.azure.com/#documentation/lead-management-instructions-salesforce), чтобы получить инструкции по настройке экземпляра Salesforce для получения интересов.
+**SalesForce** - [Щелкните здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-salesforce), чтобы получить инструкции по настройке экземпляра Salesforce для получения интересов.
 
-**Таблица Azure** – [Щелкните здесь](https://cloudpartner.azure.com/#documentation/lead-management-instructions-azure-table), чтобы получить инструкции по настройке учетной записи хранения Azure для получения интересов в таблице Azure.
+**Таблица Azure** – [Щелкните здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table), чтобы получить инструкции по настройке учетной записи хранения Azure для получения интересов в таблице Azure.
 
-**Конечная точка HTTP** – [Щелкните здесь](https://cloudpartner.azure.com/#documentation/lead-management-instructions-https), чтобы получить инструкции по настройке конечной точки HTTP для получения сведений о потенциальных клиентах.
+**Конечная точка HTTP** – [Щелкните здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-https), чтобы получить инструкции по настройке конечной точки HTTP для получения сведений о потенциальных клиентах.
 
 После успешной настройки назначения интереса нажмите кнопку "Опубликовать" в вашем предложении, и мы проверим подключение и отправим вам тестовый интерес. Перед тем как использовать предложение в рабочей среде, вы можете проверить подключение интереса, попробовав получить предложение в предварительной среде. Очень важно следить за настройками параметров интересов, чтобы не упустить потенциальных клиентов. Поэтому регулярно обновляйте эти подключения при каждом изменении с вашей стороны.
 
@@ -60,38 +60,38 @@ ms.locfileid: "51258550"
 
 ## <a name="common-lead-configuration-errors-during-publishing-on-cloud-partner-portal"></a>Распространенные ошибки конфигурации интересов во время публикации на портале Cloud Partner 
 
-**Не удалось сохранить интерес в Dynamics CRM. Проверьте параметры учетной записи Dynamics CRM. LastCRMError: не удалось войти в Dynamics CRM, LastCRMException:** 
+**Не удалось сохранить интерес в Dynamics CRM. Проверьте параметры учетной записи Dynamics CRM. LastCRMError: Unable to Login to Dynamics CRM, LastCRMException:** 
 
-> Если выбрано аутентификацию O365, проверьте допустимость учетной записи пользователя и пароля. Если выбрано AAD, проверьте, соответствуют ли идентификатор клиента, идентификатор приложения и секретный ключ приложения тем, что были настроены на AAD. Следуйте [этим](https://cloudpartner.azure.com/#documentation/lead-management-instructions-dynamics) инструкциям. Если имя пользователя/пароль учетной записи является допустимым, убедитесь, что она имеет доступ к Dynamics 365, и ему присвоено лицензию (шаги 11–15, если при использовании пользователя Office используются Azure Active Directory или параметры безопасности). 
+> Если выбрано аутентификацию O365, проверьте допустимость учетной записи пользователя и пароля. Если выбрано AAD, проверьте, соответствуют ли идентификатор клиента, идентификатор приложения и секретный ключ приложения тем, что были настроены на AAD. Следуйте [этим](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) инструкциям. Если имя пользователя/пароль учетной записи является допустимым, убедитесь, что она имеет доступ к Dynamics 365, и ему присвоено лицензию (шаги 11–15, если при использовании пользователя Office используются Azure Active Directory или параметры безопасности). 
 
  
 **Не удалось сохранить интерес в Dynamics CRM. У пользователя нет разрешений на создание атрибута leadourcecode в объекте интереса**  
 
-> В приложения/пользователя нет роли (ролей) безопасности для автора интересов Microsoft Marketplace. Выполните шаги 11–15, если при использовании пользователя Office используются Azure Active Directory или параметры безопасности, [здесь](https://cloudpartner.azure.com/#documentation/lead-management-instructions-dynamics).
+> В приложения/пользователя нет роли (ролей) безопасности для автора интересов Microsoft Marketplace. Выполните шаги 11–15, если при использовании пользователя Office используются Azure Active Directory или параметры безопасности, [здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics).
 
-**Не удалось сохранить интерес в Dynamics CRM, используя AAD. Исключение: клиент не найден. Этот экземпляр может произойти, если у клиента отсутствуют активные подписки.**  
+**Не удалось сохранить интерес в Dynamics CRM, используя AAD. Exception:: Tenant not found. Этот экземпляр может произойти, если у клиента отсутствуют активные подписки.**  
 
-> Идентификатор каталога, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 2 (в Azure Active Directory, [отсюда](https://cloudpartner.azure.com/#documentation/lead-management-instructions-dynamics) 
+> Идентификатор каталога, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 2 (в Azure Active Directory, [отсюда](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) 
 
-**Не удалось сохранить интерес в Dynamics CRM. LastCRMError: сбой в SecLib::RetrievePrivilegeForUser — пользователю не назначено никаких ролей.**  
+**Не удалось сохранить интерес в Dynamics CRM. LastCRMError: SecLib::RetrievePrivilegeForUser failed - no roles are assigned to user.**  
 
-> Решение: назначение роли безопасности для автора интересов Microsoft Marketplace. Следуйте [этим](https://cloudpartner.azure.com/#documentation/lead-management-instructions-dynamics) инструкциям в параметрах безопасности 
+> Способы устранения: назначьте роль безопасности автору интересов Microsoft Marketplace. Следуйте [этим](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) инструкциям в параметрах безопасности 
 
-**Не удалось сохранить интерес в Dynamics CRM, используя AAD. Исключение: приложение с идентификатором в каталоге** не найдено 
+**Не удалось сохранить интерес в Dynamics CRM, используя AAD. Exception:: Application with identifier was not found in the directory** 
 
-> Идентификатор приложения, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 8 (в Azure Active Directory, [отсюда](https://cloudpartner.azure.com/#documentation/lead-management-instructions-dynamics)). 
+> Идентификатор приложения, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 8 (в Azure Active Directory, [отсюда](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)). 
 
-**Не удалось сохранить интерес в Dynamics CRM, используя AAD. Исключение: запрошенный идентификатор клиента является недопустимым, и недопустимый формат внешнего домена** 
+**Не удалось сохранить интерес в Dynamics CRM, используя AAD. Exception:: Requested tenant identifier is not valid and not valid external domain format** 
 
-> Идентификатор каталога, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 2 (в Azure Active Directory, [отсюда](https://cloudpartner.azure.com/#documentation/lead-management-instructions-dynamics)). 
+> Идентификатор каталога, приведенный в разделе управления интересами, является недопустимым каталогом. Получите идентификатор каталога в соответствии с инструкциями в шаге 2 (в Azure Active Directory, [отсюда](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)). 
 
-**Не удалось сохранить интерес в Dynamics CRM, используя AAD. Исключение: ошибка при проверке учетных данных.: предоставлен недопустимый секрет клиента.** 
+**Не удалось сохранить интерес в Dynamics CRM, используя AAD. Exception:: Error validating credentials.: Invalid client secret is provided.** 
 
-> Решение: войдите на портал Azure, проверьте, соответствует ли ключ приложения значениям на портале Cloud Partner. Получите сгенерированный пароль в соответствии с инструкциями в шаге 10 (в Azure Active Directory, [отсюда](https://cloudpartner.azure.com/#documentation/lead-management-instructions-dynamics)). 
+> Способы устранения: войдите на портал Azure и проверьте, соответствует ли ключ приложения значениям на портале Cloud Partner. Получите сгенерированный пароль в соответствии с инструкциями в шаге 10 (в Azure Active Directory, [отсюда](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)). 
 
-**Не удалось сохранить интерес в Dynamics CRM. LastCRMError: превышено время ожидания на канале запроса после 00:02:00. Увеличьте значение времени ожидания, которое передается во время вызова запроса, или значение SendTimeout в привязке. Время, назначенное для выполнения этой операции, может быть составной частью более длинного времени ожидания.**  
+**Не удалось сохранить интерес в Dynamics CRM. LastCRMError: The request channel timed out while waiting for a reply after 00:02:00. Увеличьте значение времени ожидания, которое передается во время вызова запроса, или значение SendTimeout в привязке. Время, назначенное для выполнения этой операции, может быть составной частью более длинного времени ожидания.**  
 
-> Разрешение: войдите на портал Cloud Partner, проверьте подробные сведения об онлайн-магазинах >> назначения интереса >> URL-адрес, проверить, является ли экземпляр Dynamic CRM допустимым
+> Способы устранения: войдите на портал Cloud Partner и проверьте подробные сведения об онлайн-магазинах, назначения интереса, URL-адрес, а затем проверьте, является ли экземпляр Dynamic CRM допустимым.
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -102,7 +102,7 @@ ms.locfileid: "51258550"
 
 **Где можно получить помощь про поводу настройки назначения моего интереса?** 
 
-Документацию можно найти здесь: https://cloudpartner.azure.com/#documentation/get-customer-leads, или отправить запрос в службу поддержки через тип aka.ms/marketplacepublishersupport, выбрав тип предложения и управление интересами. 
+Документацию см. здесь: [получение сведений об интересах клиента](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads). Также вы можете отправить запрос в службу поддержки через тип aka.ms/marketplacepublishersupport, выбрав тип предложения и управление интересами. 
 
 
 
@@ -150,7 +150,7 @@ title = MSFT_TEST_636573304831318844
 
 **У меня есть действующее предложение, но я не вижу интересов?**
 
-Каждый интерес будет передавать данные в поля выбранного назначения интереса. Интересы будут поступать в следующем формате: **источник — действие|предложение** 
+Каждый интерес будет передавать данные в поля выбранного назначения интереса. Интересы будут поступать в следующем формате: **источник — действие|предложение**. 
 
   *Источники:*
 
@@ -199,7 +199,7 @@ title = MSFT_TEST_636573304831318844
 
     } 
 
-Дополнительные сведения см. в [Lead Info](https://cloudpartner.azure.com/#documentation/get-customer-leads) (Информация по поводу интересов). 
+Дополнительные сведения см. в [Lead Info](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads) (Информация по поводу интересов). 
 
 
 **В качестве назначений интересов у меня настроено BLOB-объект Azure. Почему интерес не отображается?** 
@@ -219,7 +219,7 @@ title = MSFT_TEST_636573304831318844
 
 **В качестве назначений интересов у меня настроено таблицу Azure. Буду ли я получать уведомления о том, что Marketplace отправил мне новый интерес?** 
 
-Да. Следуйте инструкциям, чтобы задать в [этой ](https://cloudpartner.azure.com/#documentation/lead-management-instructions-azure-table) документации таблицу Azure + функцию. 
+Да. Следуйте инструкциям, чтобы задать в [этой ](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-azure-table) документации таблицу Azure + функцию. 
 
 
 

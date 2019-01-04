@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect: простой единый вход — как это работает | Документы Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: Простой единый вход — как это работает | Документация Майкрософт'
 description: В этой статье описывается принцип работы функции простого единого входа в Azure Active Directory.
 services: active-directory
 keywords: что такое Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
@@ -15,20 +15,21 @@ ms.topic: article
 ms.date: 11/14/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 6f93d7c4b76d635a221c2711ce9d4ef0de2286f6
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 54b614e49bc7c03325ebeada60232fca861874e0
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51687407"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53193082"
 ---
-# <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Подробное техническое руководство по простому единому входу Azure Active Directory
+# <a name="azure-active-directory-seamless-single-sign-on-technical-deep-dive"></a>Простой единый вход Azure Active Directory: подробное техническое руководство
 
 В этой статье приводятся технические сведения о работе функции простого единого входа Azure Active Directory.
 
 ## <a name="how-does-seamless-sso-work"></a>Как работает простой единый вход?
 
 Этот раздел состоит из трех частей.
+
 1. Настройка функции простого единого входа.
 2. Как транзакция единого входа пользователя в веб-браузере работает с простым единым входом.
 3. Как транзакция единого входа пользователя в собственном клиенте работает с простым единым входом.
@@ -36,6 +37,7 @@ ms.locfileid: "51687407"
 ### <a name="how-does-set-up-work"></a>Как выполняется настройка?
 
 Простой единый вход включается с помощью Azure AD Connect, как показано [здесь](how-to-connect-sso-quick-start.md). При включении функции выполняются следующие действия:
+
 - В каждом лесу AD в локальной службе Active Directory (AD) создается учетная запись компьютера с именем `AZUREADSSOACC` (представляет Azure AD).
 - С помощью Azure AD безопасным образом предоставляется ключ расшифровки Kerberos учетной записи компьютера. При наличии нескольких лесов AD каждый из них будет иметь свой собственный ключ расшифровки Kerberos.
 - Кроме того, создаются два имени субъектов-служб (SPN) Kerberos, представляющие URL-адреса, используемые при входе в Azure AD.
@@ -56,8 +58,8 @@ ms.locfileid: "51687407"
 2. Если пользователь еще не выполнил вход, он перенаправляется на страницу входа в Azure AD.
 3. Пользователь вводит свое имя на странице входа в Azure AD.
 
-  >[!NOTE]
-  >Для [некоторых приложений](./how-to-connect-sso-faq.md#what-applications-take-advantage-of-domainhint-or-loginhint-parameter-capability-of-seamless-sso) шаги 2 и 3 пропускаются.
+   >[!NOTE]
+   >Для [некоторых приложений](./how-to-connect-sso-faq.md#what-applications-take-advantage-of-domainhint-or-loginhint-parameter-capability-of-seamless-sso) шаги 2 и 3 пропускаются.
 
 4. С помощью JavaScript, выполняемого в фоновом режиме, Azure AD запрашивает у браузера билет Kerberos (возвращается ответ 401 — не авторизовано).
 5. В свою очередь браузер запрашивает в Active Directory билет для учетной записи компьютера `AZUREADSSOACC` (которая представляет Azure AD).

@@ -13,17 +13,17 @@ ms.topic: article
 ms.devlang: na
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 07/17/2018
+ms.date: 12/14/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: a3c5c26f43fddf5d23df3bee0b0511e865b7e71b
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: abd9aeab88dc723ddcdff90ce58268296841dc4e
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51705928"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413308"
 ---
-# <a name="quickstart-block-access-when-a-session-risk-is-detected-with-azure-active-directory-conditional-access"></a>Краткое руководство. Блокировка доступа в случае обнаружения угроз сеанса при помощи условного доступа Azure Active Directory  
+# <a name="quickstart-block-access-when-a-session-risk-is-detected-with-azure-active-directory-conditional-access"></a>Краткое руководство. Блокировка доступа в случае обнаружения угроз сеанса с помощью условного доступа Azure Active Directory  
 
 Чтобы обеспечить защиту окружения, может потребоваться блокировка подозрительных пользователей от входа в систему. [Azure Active Directory (Azure AD) Identity Protection](../active-directory-identityprotection.md) анализирует каждый вход в систему и вычисляет вероятность того, что попытка входа не была выполнена законным владельцем учетной записи пользователя. Вероятность (низкая, средняя, высокая) указывается в виде вычисляемого значения, называемого [уровни риска при входе](conditions.md#sign-in-risk). Задавая условие риска при входе, можно настроить политику условного доступа так, что она будет реагировать на определенные уровни риска при входе в систему. 
 
@@ -87,7 +87,7 @@ ms.locfileid: "51705928"
 
     ![Azure Active Directory](./media/app-sign-in-risk/02.png)
 
-3. На странице **Azure Active Directory** в разделе **Управление** щелкните **Условный доступ**.
+3. На странице **Azure Active Directory** в разделе **Безопасность** щелкните **Условный доступ**.
 
     ![Условный доступ](./media/app-sign-in-risk/03.png)
  

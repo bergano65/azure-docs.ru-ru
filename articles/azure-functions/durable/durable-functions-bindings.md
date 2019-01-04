@@ -1,6 +1,6 @@
 ---
 title: Привязки для устойчивых функций — Azure
-description: Инструкции по использованию триггеров и привязок в расширении устойчивых функций для Функций Azure.
+description: Инструкции по использованию триггеров и привязок в расширении Устойчивых функций для Функций Azure.
 services: functions
 author: kashimiz
 manager: jeconnoc
@@ -8,14 +8,14 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 10/23/2018
+ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 1a932e5548941a949120ab6c15c73c739a7dc8c3
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 889d26be12fef62d37a471fbe0640a2b8ecdd99c
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637029"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53337195"
 ---
 # <a name="bindings-for-durable-functions-azure-functions"></a>Привязки для устойчивых функций (Функции Azure)
 
@@ -27,7 +27,7 @@ ms.locfileid: "52637029"
 
 При использовании средств Visual Studio для Функций Azure триггер оркестрации настраивается с помощью атрибута .NET [OrchestrationTriggerAttribute](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.OrchestrationTriggerAttribute.html).
 
-При написании функции оркестратора на языках сценариев (например, на портале Azure) триггер оркестрации определяется следующим объектом JSON в массиве `bindings` файла *function.json*:
+При написании функции оркестратора на языках сценариев (например,на JavaScript или C#) триггер оркестрации определяется следующим объектом JSON в массиве `bindings` файла *function.json*:
 
 ```json
 {
@@ -54,12 +54,15 @@ ms.locfileid: "52637029"
 > [!WARNING]
 > Функции оркестратора никогда не должны использовать никаких входных и выходных привязок, отличных от привязки триггера оркестрации. Это может вызвать проблемы с расширением устойчивых функций, так как эти привязки могут не подчиняться правилам однопоточности и ввода-вывода.
 
-### <a name="trigger-usage"></a>Использование триггера
+> [!WARNING]
+> Функции оркестратора JavaScript никогда не должны быть объявлены как `async`.
+
+### <a name="trigger-usage-net"></a>Использование триггера (.NET)
 
 Привязка триггера оркестрации поддерживает входные и выходные данные. Ниже приведены некоторые сведения об обработке входных и выходных данных.
 
-* **Входные данные**. Функции оркестрации поддерживают только [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) в качестве типа параметра. Входные данные десериализации непосредственно в сигнатуре функции не поддерживаются. В коде необходимо использовать метод [GetInput\<T>](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_GetInput__1) для извлечения входных данных функции оркестратора. Эти входные данные должны быть типа, который сериализуется в JSON.
-* **Выходные данные**. Триггеры оркестрации поддерживают выходные значения, а также входные данные. Возвращаемое значение функции используется для назначения выходного значения и должно быть типа, который сериализуется в JSON. Если функция возвращает `Task` или `void`, значение `null` будет сохранено как выходное.
+* **Входные данные**. Функции оркестрации .NET поддерживают только [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) в качестве типа параметра. Входные данные десериализации непосредственно в сигнатуре функции не поддерживаются. В коде необходимо использовать метод [GetInput\<T>](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_GetInput__1)(.NET) или `getInput` (JavaScript) для извлечения входных данных функции оркестратора. Эти входные данные должны быть типа, который сериализуется в JSON.
+* **Выходные данные**. Триггеры оркестрации поддерживают выходные значения, а также входные данные. Возвращаемое значение функции используется для назначения выходного значения и должно быть типа, который сериализуется в JSON. Если функция .NET возвращает `Task` или `void`, значение `null` будет сохранено как выходное.
 
 ### <a name="trigger-sample"></a>Пример триггера
 
@@ -76,7 +79,7 @@ public static string Run([OrchestrationTrigger] DurableOrchestrationContext cont
 }
 ```
 
-#### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
 
 ```javascript
 const df = require("durable-functions");
@@ -86,6 +89,9 @@ module.exports = df.orchestrator(function*(context) {
     return `Hello ${name}!`;
 });
 ```
+
+> [!NOTE]
+> Объект `context` в JavaScript представляет не DurableOrchestrationContext, а [контекст функции в целом](../functions-reference-node.md#context-object). Получить доступ к методам оркестрации можно через свойство `df` объекта `context`.
 
 > [!NOTE]
 > Для оркестраторов JavaScript нужно использовать `return`. Библиотека `durable-functions` отвечает за вызов метода `context.done`.
@@ -105,7 +111,7 @@ public static async Task<string> Run(
 }
 ```
 
-#### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
 
 ```javascript
 const df = require("durable-functions");
@@ -121,7 +127,7 @@ module.exports = df.orchestrator(function*(context) {
 
 Триггер действия позволяет создавать функции, которые вызываются функциями оркестратора.
 
-Если вы используете Visual Studio, триггер действия настраивается с помощью атрибута .NET [ActvityTriggerAttribute](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.ActivityTriggerAttribute.html). 
+Если вы используете Visual Studio, триггер действия настраивается с помощью атрибута .NET [ActvityTriggerAttribute](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.ActivityTriggerAttribute.html).
 
 Если вы используете VS Code или портал Azure для разработки приложений, триггер действия определяется следующим объектом JSON в массиве `bindings` файла *function.json*:
 
@@ -150,13 +156,13 @@ module.exports = df.orchestrator(function*(context) {
 > [!WARNING]
 > Внутренняя часть хранилища функций действий является частью реализации, и код пользователя не должен взаимодействовать с этими сущностями хранилища напрямую.
 
-### <a name="trigger-usage"></a>Использование триггера
+### <a name="trigger-usage-net"></a>Использование триггера (.NET)
 
 Привязка триггера действий поддерживает входные и выходные данные, как и триггер оркестрации. Ниже приведены некоторые сведения об обработке входных и выходных данных.
 
-* **Входные данные**. Функции действий изначально используют [DurableActivityContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html) как тип параметра. Кроме того, функция действия может быть объявлена с любым типом параметра, который сериализуется в JSON. При использовании `DurableActivityContext` можно вызвать [GetInput\<T>](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html#Microsoft_Azure_WebJobs_DurableActivityContext_GetInput__1) для извлечения и десериализации входных данных функции действия.
-* **Выходные данные.** Функции действий поддерживают выходные значения, а также входные данные. Возвращаемое значение функции используется для назначения выходного значения и должно быть типа, который сериализуется в JSON. Если функция возвращает `Task` или `void`, значение `null` будет сохранено как выходное.
-* **Метаданные**. Функции действий можно привязать к параметру `string instanceId`, чтобы получить идентификатор экземпляра родительской оркестрации.
+* **Входные данные**. Функции действий .NET изначально используют [DurableActivityContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html) как тип параметра. Кроме того, функция действия может быть объявлена с любым типом параметра, который сериализуется в JSON. При использовании `DurableActivityContext` можно вызвать [GetInput\<T>](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableActivityContext.html#Microsoft_Azure_WebJobs_DurableActivityContext_GetInput__1) для извлечения и десериализации входных данных функции действия.
+* **Выходные данные.** Функции действий поддерживают выходные значения, а также входные данные. Возвращаемое значение функции используется для назначения выходного значения и должно быть типа, который сериализуется в JSON. Если функция .NET возвращает `Task` или `void`, значение `null` будет сохранено как выходное.
+* **Метаданные**. Функции действий .NET можно привязать к параметру `string instanceId`, чтобы получить идентификатор экземпляра родительской оркестрации.
 
 ### <a name="trigger-sample"></a>Пример триггера
 
@@ -173,17 +179,7 @@ public static string SayHello([ActivityTrigger] DurableActivityContext helloCont
 }
 ```
 
-#### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
-
-```javascript
-module.exports = function(context) {
-    context.done(null, `Hello ${context.bindings.name}!`);
-};
-```
-
-Типом параметра по умолчанию для привязки `ActivityTriggerAttribute` является `DurableActivityContext`. Однако триггеры действий также поддерживают привязку непосредственно к JSON-сериализуемым типам (включая примитивные типы), поэтому эту же функцию можно упростить следующим образом:
-
-#### <a name="c"></a>C#
+Типом параметра по умолчанию для привязки `ActivityTriggerAttribute` .NET является `DurableActivityContext`. Но триггеры действий .NET также поддерживают привязку непосредственно к JSON-сериализуемым типам (включая примитивные типы), поэтому эту же функцию можно упростить следующим образом:
 
 ```csharp
 [FunctionName("SayHello")]
@@ -193,17 +189,25 @@ public static string SayHello([ActivityTrigger] string name)
 }
 ```
 
-#### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+#### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
 
 ```javascript
-module.exports = function(context, name) {
-    context.done(null, `Hello ${name}!`);
+module.exports = async function(context) {
+    return `Hello ${context.bindings.name}!`;
 };
 ```
 
-### <a name="passing-multiple-parameters"></a>Передача нескольких параметров 
+Привязки JavaScript также можно передать в качестве дополнительных параметров, поэтому одну и ту же функцию можно упростить следующим образом:
 
-Передать несколько параметров непосредственно в функцию действия нельзя. В этом случае рекомендуем передать массив объектов или использовать объекты [ValueTuples](https://docs.microsoft.com/dotnet/csharp/tuples).
+```javascript
+module.exports = async function(context, name) {
+    return `Hello ${name}!`;
+};
+```
+
+### <a name="passing-multiple-parameters"></a>Передача нескольких параметров
+
+Передать несколько параметров непосредственно в функцию действия нельзя. В этом случае рекомендуем передать массив объектов или использовать объекты [ValueTuples](https://docs.microsoft.com/dotnet/csharp/tuples) в .NET.
 
 В следующем примере используются новые функции [ValueTuples](https://docs.microsoft.com/dotnet/csharp/tuples), добавленные в [C# 7](https://docs.microsoft.com/dotnet/csharp/whats-new/csharp-7#tuples):
 
@@ -222,7 +226,7 @@ public static async Task<dynamic> RunOrchestrator(
 [FunctionName("CourseRecommendations")]
 public static async Task<dynamic> Mapper([ActivityTrigger] DurableActivityContext inputs)
 {
-    // parse input for student's major and year in university 
+    // parse input for student's major and year in university
     (string Major, int UniversityYear) studentInfo = inputs.GetInput<(string, int)>();
 
     // retrieve and return course recommendations by major and university year
@@ -242,6 +246,7 @@ public static async Task<dynamic> Mapper([ActivityTrigger] DurableActivityContex
 ## <a name="orchestration-client"></a>Клиент оркестрации
 
 Привязка клиента оркестрации дает возможность создавать функции, которые взаимодействуют с функциями оркестратора. Например, с экземплярами оркестрации можно взаимодействовать следующим образом:
+
 * Запустите их.
 * Запросите их состояние.
 * Завершите их.
@@ -270,17 +275,20 @@ public static async Task<dynamic> Mapper([ActivityTrigger] DurableActivityContex
 
 ### <a name="client-usage"></a>Использование клиента
 
-В функциях C # вы обычно выполняете привязку к `DurableOrchestrationClient`, что обеспечивает полный доступ ко всем клиентским API, поддерживаемым устойчивыми функциями. API-интерфейсы в клиентском объекте включают в себя:
+В функциях .NET вы обычно выполняете привязку к `DurableOrchestrationClient`, что обеспечивает полный доступ ко всем клиентским API, поддерживаемым устойчивыми функциями. В JavaScript одни и те же интерфейсы API предоставляются объектом `DurableOrchestrationClient`, возвращенным из `getClient`. API-интерфейсы в клиентском объекте включают в себя:
 
 * [StartNewAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_StartNewAsync_)
 * [GetStatusAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_GetStatusAsync_)
 * [TerminateAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_TerminateAsync_)
 * [RaiseEventAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_RaiseEventAsync_)
-* [PurgeInstanceHistoryAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_PurgeInstanceHistoryAsync_)
+* [PurgeInstanceHistoryAsync](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html#Microsoft_Azure_WebJobs_DurableOrchestrationClient_PurgeInstanceHistoryAsync_) (сейчас только .NET)
 
-Кроме того, можно выполнить привязку к `IAsyncCollector<T>`, где `T` — [StartOrchestrationArgs](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.StartOrchestrationArgs.html) или `JObject`.
+Кроме того, функции .NET могут выполнить привязку к `IAsyncCollector<T>`, где `T` — [StartOrchestrationArgs](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.StartOrchestrationArgs.html) или `JObject`.
 
 Дополнительные сведения об этих операциях см. в документации по API [DurableOrchestrationClient](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationClient.html).
+
+> [!WARNING]
+> При локальной разработке на языке JavaScript необходимо задать для переменной среды `WEBSITE_HOSTNAME` значение `localhost:<port>`, например `localhost:7071`, чтобы использовать методы для `DurableOrchestrationClient`. Дополнительные сведения об этом требовании см. в [описании проблемы на сайте GitHub](https://github.com/Azure/azure-functions-durable-js/issues/28).
 
 ### <a name="client-sample-visual-studio-development"></a>Пример клиента (разработка в Visual Studio)
 
@@ -315,9 +323,8 @@ public static Task Run(
       "type": "orchestrationClient",
       "direction": "in"
     }
-  ],
-  "disabled": false
-} 
+  ]
+}
 ```
 
 Ниже приведены примеры конкретно для языка, которые запускают новые экземпляры функции оркестратора.
@@ -339,22 +346,18 @@ public static Task<string> Run(string input, DurableOrchestrationClient starter)
 
 В следующем примере показано, как использовать привязку клиента устойчивой оркестрации для запуска нового экземпляра функции из функции JavaScript:
 
-```js
-module.exports = function (context, input) {
-    var id = generateSomeUniqueId();
-    context.bindings.starter = [{
-        FunctionName: "HelloWorld",
-        Input: input,
-        InstanceId: id
-    }];
+```javascript
+const df = require("durable-functions");
 
-    context.done(null, id);
+module.exports = async function (context) {
+    const client = df.getClient(context);
+    return instanceId = await client.startNew("HelloWorld", undefined, context.bindings.input);
 };
 ```
 
 Дополнительные сведения о запуске экземпляров см. в статье [Управление экземплярами в устойчивых функциях (Функции Azure)](durable-functions-instance-management.md).
 
-<a name="host-json"></a>  
+<a name="host-json"></a>
 
 ## <a name="hostjson-settings"></a>Параметры файла host.json
 
@@ -364,4 +367,3 @@ module.exports = function (context, input) {
 
 > [!div class="nextstepaction"]
 > [Контрольные точки и воспроизведение в устойчивых функциях (Функции Azure)](durable-functions-checkpointing-and-replay.md)
-

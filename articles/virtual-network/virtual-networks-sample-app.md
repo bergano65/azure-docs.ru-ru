@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/03/2017
 ms.author: jonor
-ms.openlocfilehash: 7a0f1313f8b22aba0a153563bd804435c3ef53f2
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 1ccdb8254551d0009a71cc047b8399a539edb8e2
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52159871"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52866856"
 ---
 # <a name="sample-application-for-use-with-dmzs"></a>Пример приложения для использования с сетями периметра
 [Вернуться на страницу с советами и рекомендациями по построению периметра безопасности][HOME]
@@ -142,7 +142,7 @@ New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" `
     Restart-Service -Name W3SVC
 
     Write-Host
-    Write-Host "Web App Creation Successfull!" -ForegroundColor Green
+    Write-Host "Web App Creation Successful!" -ForegroundColor Green
     Write-Host
 ```
 
@@ -156,7 +156,7 @@ New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" `
 5. Отключает усиленную безопасность Internet Explorer для упрощения работы в Интернете на этом сервере. 
 
 > [!IMPORTANT]
-> **Рекомендация.** Никогда не отключайте усиленную безопасность Internet Explorer на рабочем сервере. Кроме того, мы не рекомендуем подключаться к Интернету на рабочем сервере. Мы также не рекомендуем предоставлять анонимный доступ к файловым ресурсам. В нашем случае это сделано для простоты.
+> **Рекомендация**. Никогда не отключайте усиленную безопасность Internet Explorer на рабочем сервере. Кроме того, мы не рекомендуем подключаться к Интернету на рабочем сервере. Мы также не рекомендуем предоставлять анонимный доступ к файловым ресурсам. В нашем случае это сделано для простоты.
 > 
 > 
 
@@ -189,7 +189,7 @@ New-NetFirewallRule -Name Allow_ICMPv4 -DisplayName "Allow ICMPv4" `
     Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}" -Name "IsInstalled" -Value 0
 
     Write-Host
-    Write-Host "File Server Set up Successfull!" -ForegroundColor Green
+    Write-Host "File Server Set up Successful!" -ForegroundColor Green
     Write-Host
 ```
 

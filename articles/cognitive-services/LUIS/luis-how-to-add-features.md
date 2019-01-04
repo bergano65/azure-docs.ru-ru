@@ -1,21 +1,22 @@
 ---
-title: Списки фраз для улучшения обнаружения сущностей
-titleSuffix: Azure Cognitive Services
+title: Списки фраз
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Использование Интеллектуальной службы распознавания речи для добавления функций приложения, которые улучшают обнаружение или прогнозирование намерений и сущностей, которые относятся к категориям и шаблонам
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: diberry
-ms.openlocfilehash: feb51cd55801addaf5ce2486e5527542f794bbc5
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 39a6ead041b1783a3effcb9659c59ea788cd2bf6
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52580967"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53139509"
 ---
 # <a name="use-phrase-lists-to-boost-signal-of-word-list"></a>Используйте списки фраз для повышения эффективности работы списка слов.
 
@@ -37,11 +38,11 @@ ms.locfileid: "52580967"
 
 4. Интеллектуальная служба распознавания речи может предложить связанные значения для добавления в список фраз. Щелкните **Рекомендовать**, чтобы получить группу предложенных значений, которые семантически связаны с добавленными значениями. Щелкните любое предложенное значение или нажмите **Add All** (Добавить все), чтобы добавить все.
 
-    ![Предложенные значения списка фраз](./media/luis-add-features/related-values.png)
+    ![Добавление всех предложенных значений списка фраз](./media/luis-add-features/related-values.png)
 
 5. Щелкните **These values are interchangeable** (Эти значения являются взаимозаменяемыми), если добавленные значения списка фраз являются альтернативными, которые можно использовать как взаимозаменяемые.
 
-    ![Предложенные значения списка фраз](./media/luis-add-features/interchangeable.png)
+    ![Назначение предложенных значений списка фраз взаимозаменяемыми ](./media/luis-add-features/interchangeable.png)
 
 6. Выберите команду **Сохранить**. Список фраз "Города" добавляется на страницу **Список фраз**.
 

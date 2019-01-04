@@ -8,14 +8,14 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 10/23/2018
+ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: ce930adc4cb2c635b54b3d41ea4a3ac272541698
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 5d2cf4d76ce6f44cb31f05d45f2ccbceccbe9c10
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52638239"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53339371"
 ---
 # <a name="checkpoints-and-replay-in-durable-functions-azure-functions"></a>Контрольные точки и воспроизведение в устойчивых функциях (Функции Azure)
 
@@ -27,7 +27,7 @@ ms.locfileid: "52638239"
 
 Предположим, что у вас есть следующая функция оркестратора:
 
-#### <a name="c"></a>C#
+### <a name="c"></a>C#
 
 ```csharp
 [FunctionName("E1_HelloSequence")]
@@ -45,7 +45,7 @@ public static async Task<List<string>> Run(
 }
 ```
 
-#### <a name="javascript-functions-v2-only"></a>JavaScript (только для решения "Функции" версии 2)
+### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
 
 ```javascript
 const df = require("durable-functions");
@@ -56,6 +56,7 @@ module.exports = df.orchestrator(function*(context) {
     output.push(yield context.df.callActivity("E1_SayHello", "Seattle"));
     output.push(yield context.df.callActivity("E1_SayHello", "London"));
 
+    // returns ["Hello Tokyo!", "Hello Seattle!", "Hello London!"]
     return output;
 });
 ```
@@ -77,47 +78,48 @@ module.exports = df.orchestrator(function*(context) {
 
 По завершении приведенный выше журнал функций будет выглядеть примерно следующим образом в хранилище таблиц Azure (следующий пример приведен в сокращенном виде):
 
-| PartitionKey (InstanceId)                     | EventType             | Timestamp               | Входные данные | ИМЯ             | Результат                                                    | Status | 
-|----------------------------------|-----------------------|----------|--------------------------|-------|------------------|-----------------------------------------------------------|---------------------| 
-| eaee885b | OrchestratorStarted   | 2017-05-05T18:45:32.362Z |       |                  |                                                           |                     | 
-| eaee885b | ExecutionStarted      | 2017-05-05T18:45:28.852Z | null  | E1_HelloSequence |                                                           |                     | 
-| eaee885b | TaskScheduled         | 2017-05-05T18:45:32.670Z |       | E1_SayHello      |                                                           |                     | 
-| eaee885b | OrchestratorCompleted | 2017-05-05T18:45:32.670Z |       |                  |                                                           |                     | 
-| eaee885b | OrchestratorStarted   | 2017-05-05T18:45:34.232Z |       |                  |                                                           |                     | 
-| eaee885b | TaskCompleted         | 2017-05-05T18:45:34.201Z |       |                  | """Hello Tokyo!"""                                        |                     | 
-| eaee885b | TaskScheduled         | 2017-05-05T18:45:34.435Z |       | E1_SayHello      |                                                           |                     | 
-| eaee885b | OrchestratorCompleted | 2017-05-05T18:45:34.435Z |       |                  |                                                           |                     | 
-| eaee885b | OrchestratorStarted   | 2017-05-05T18:45:34.857Z |       |                  |                                                           |                     | 
-| eaee885b | TaskCompleted         | 2017-05-05T18:45:34.763Z |       |                  | """Hello Seattle!"""                                      |                     | 
-| eaee885b | TaskScheduled         | 2017-05-05T18:45:34.857Z |       | E1_SayHello      |                                                           |                     | 
-| eaee885b | OrchestratorCompleted | 2017-05-05T18:45:34.857Z |       |                  |                                                           |                     | 
-| eaee885b | OrchestratorStarted   | 2017-05-05T18:45:35.032Z |       |                  |                                                           |                     | 
-| eaee885b | TaskCompleted         | 2017-05-05T18:45:34.919Z |       |                  | """Hello London!"""                                       |                     | 
-| eaee885b | ExecutionCompleted    | 2017-05-05T18:45:35.044Z |       |                  | "[""Hello Tokyo!"",""Hello Seattle!"",""Hello London!""]" | Завершено           | 
-| eaee885b | OrchestratorCompleted | 2017-05-05T18:45:35.044Z |       |                  |                                                           |                     | 
+| PartitionKey (InstanceId)                     | EventType             | Timestamp               | Входные данные | ИМЯ             | Результат                                                    | Status |
+|----------------------------------|-----------------------|----------|--------------------------|-------|------------------|-----------------------------------------------------------|---------------------|
+| eaee885b | OrchestratorStarted   | 2017-05-05T18:45:32.362Z |       |                  |                                                           |                     |
+| eaee885b | ExecutionStarted      | 2017-05-05T18:45:28.852Z | null  | E1_HelloSequence |                                                           |                     |
+| eaee885b | TaskScheduled         | 2017-05-05T18:45:32.670Z |       | E1_SayHello      |                                                           |                     |
+| eaee885b | OrchestratorCompleted | 2017-05-05T18:45:32.670Z |       |                  |                                                           |                     |
+| eaee885b | OrchestratorStarted   | 2017-05-05T18:45:34.232Z |       |                  |                                                           |                     |
+| eaee885b | TaskCompleted         | 2017-05-05T18:45:34.201Z |       |                  | """Hello Tokyo!"""                                        |                     |
+| eaee885b | TaskScheduled         | 2017-05-05T18:45:34.435Z |       | E1_SayHello      |                                                           |                     |
+| eaee885b | OrchestratorCompleted | 2017-05-05T18:45:34.435Z |       |                  |                                                           |                     |
+| eaee885b | OrchestratorStarted   | 2017-05-05T18:45:34.857Z |       |                  |                                                           |                     |
+| eaee885b | TaskCompleted         | 2017-05-05T18:45:34.763Z |       |                  | """Hello Seattle!"""                                      |                     |
+| eaee885b | TaskScheduled         | 2017-05-05T18:45:34.857Z |       | E1_SayHello      |                                                           |                     |
+| eaee885b | OrchestratorCompleted | 2017-05-05T18:45:34.857Z |       |                  |                                                           |                     |
+| eaee885b | OrchestratorStarted   | 2017-05-05T18:45:35.032Z |       |                  |                                                           |                     |
+| eaee885b | TaskCompleted         | 2017-05-05T18:45:34.919Z |       |                  | """Hello London!"""                                       |                     |
+| eaee885b | ExecutionCompleted    | 2017-05-05T18:45:35.044Z |       |                  | "[""Hello Tokyo!"",""Hello Seattle!"",""Hello London!""]" | Завершено           |
+| eaee885b | OrchestratorCompleted | 2017-05-05T18:45:35.044Z |       |                  |                                                           |                     |
 
 Некоторые сведения о значениях столбцов:
+
 * **PartitionKey.** Содержит идентификатор экземпляра оркестрации.
 * **EventType.** Предоставляет тип события. Принимается один из следующих типов:
-    * **OrchestrationStarted.** Функция оркестратора, которая возобновлена после состояния ожидания или выполняется впервые. Столбец `Timestamp` используется, чтобы заполнить детерминированное значение для API [CurrentUtcDateTime](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CurrentUtcDateTime).
-    * **ExecutionStarted.** Функция оркестратора, которая начала выполнение впервые. Это событие также содержит входные данные функции в столбце `Input`.
-    * **TaskScheduled.** Функция действия была запланирована. Имя функции действия сохраняется в столбце `Name`.
-    * **TaskCompleted.** Функция действия выполнена. Результаты функции находятся в столбце `Result`.
-    * **TimerCreated.** Устойчивый таймер создан. Столбец `FireAt` содержит запланированное время в формате UTC, когда истекает срок действия таймера.
-    * **TimerFired.** Активирован устойчивый таймер.
-    * **EventRaised.** Внешнее событие было отправлено в экземпляр оркестрации. Столбец `Name` содержит имя события, а столбец `Input` — полезные данные события.
-    * **OrchestratorCompleted.** Функция оркестратора находится в состоянии ожидания.
-    * **ContinueAsNew.** Функция оркестратора выполнена и автоматически перезапущена с новым состоянием. Столбец `Result` содержит значение, которое используется в качестве входных данных в перезапущенном экземпляре.
-    * **ExecutionCompleted.** Функция оркестратора выполнена (или завершилась сбоем). Выходные данные функции или сведения об ошибке хранятся в столбце `Result`.
+  * **OrchestrationStarted.** Функция оркестратора, которая возобновлена после состояния ожидания или выполняется впервые. Столбец `Timestamp` используется, чтобы заполнить детерминированное значение для API [CurrentUtcDateTime](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CurrentUtcDateTime).
+  * **ExecutionStarted.** Функция оркестратора, которая начала выполнение впервые. Это событие также содержит входные данные функции в столбце `Input`.
+  * **TaskScheduled.** Функция действия была запланирована. Имя функции действия сохраняется в столбце `Name`.
+  * **TaskCompleted.** Функция действия выполнена. Результаты функции находятся в столбце `Result`.
+  * **TimerCreated.** Устойчивый таймер создан. Столбец `FireAt` содержит запланированное время в формате UTC, когда истекает срок действия таймера.
+  * **TimerFired.** Устойчивый таймер активирован.
+  * **EventRaised.** Внешнее событие отправлено в экземпляр оркестрации. Столбец `Name` содержит имя события, а столбец `Input` — полезные данные события.
+  * **OrchestratorCompleted.** Функция оркестратора находится в состоянии ожидания.
+  * **ContinueAsNew.** Функция оркестратора выполнена и автоматически перезапущена с новым состоянием. Столбец `Result` содержит значение, которое используется в качестве входных данных в перезапущенном экземпляре.
+  * **ExecutionCompleted.** Функция оркестратора выполнена (или завершилась сбоем). Выходные данные функции или сведения об ошибке хранятся в столбце `Result`.
 * **Timestamp.** Метка времени события журнала в формате UTC.
-* **Name.** Имя вызванной функции.
-* **Input.** Входные данные функции в формате JSON.
+* **Name**. Имя вызванной функции.
+* **Входные данные** Входные данные функции в формате JSON.
 * **Result.** Выходные данные функции (то есть ее возвращаемое значение).
 
 > [!WARNING]
 > Хотя это удобно использовать в качестве средства отладки, не используйте в таблице никакие зависимости. Они могут измениться при развитии расширения устойчивых функций.
 
-Каждый раз, когда функция возобновляется из состояния `await`, платформа устойчивых задач повторно выполняет функцию оркестратора с нуля. При каждом повторном выполнении она учитывает журнал выполнения, чтобы определить, выполнялась ли асинхронная операция.  Если операция выполнялась, платформа немедленно воспроизводит выходные данные этой операции и переходит к следующему объекту с состоянием `await`. Этот процесс продолжается, пока весь журнал не будет воспроизведен. После этого все локальные переменные в функции оркестратора восстанавливают свои прежние значения.
+Каждый раз, когда функция возобновляется из состояния `await` (C#) или `yield` (JavaScript), платформа устойчивых задач повторно выполняет функцию оркестратора с нуля. При каждом повторном выполнении она учитывает журнал выполнения, чтобы определить, выполнялась ли асинхронная операция.  Если операция выполнялась, платформа немедленно воспроизводит выходные данные этой операции и переходит к следующему объекту с состоянием `await` (C#) или `yield` (JavaScript). Этот процесс продолжается, пока весь журнал не будет воспроизведен. После этого все локальные переменные в функции оркестратора восстанавливают свои прежние значения.
 
 ## <a name="orchestrator-code-constraints"></a>Ограничения кода оркестратора
 
@@ -125,26 +127,36 @@ module.exports = df.orchestrator(function*(context) {
 
 * Код оркестратора должен быть **детерминированным**. Он будет воспроизведен несколько раз и должен каждый раз выдавать одинаковый результат. Например, не должно быть прямых вызовов, чтобы получить текущие дату и время, получить случайные числа, создать случайные значения GUID, а также вызовов удаленных конечных точек.
 
-  Если коду оркестратора нужно получить текущие значения даты и времени, он должен использовать API [CurrentUtcDateTime](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CurrentUtcDateTime), который безопасен для воспроизведения.
+  Если коду оркестратора нужно получить текущие значения даты и времени, он должен использовать API [CurrentUtcDateTime](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CurrentUtcDateTime) (.NET) или `currentUtcDateTime` (JavaScript), который безопасен для воспроизведения.
 
-  Если коду оркестратора нужно создать случайный идентификатор GUID, следует использовать API [NewGuid](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_NewGuid), который безопасен для воспроизведения.
+  Если коду оркестратора нужно создать случайный идентификатор GUID, он должен использовать API [NewGuid](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_NewGuid) (.NET), который безопасен для воспроизведения, или делегировать создание GUID функции действия (JavaScript), как показано в этом примере:
+
+  ```javascript
+  const uuid = require("uuid/v1");
+
+  module.exports = async function(context) {
+    return uuid();
+  }
+  ```
 
   В функциях действий должны выполняться недетерминированные операции. Сюда входят любые взаимодействия с другими входными или выходными привязками. Это гарантирует, что все недетерминированные значения будут создаваться один раз при первом выполнении и сохранятся в журнал выполнения. Последующие выполнения будут автоматически использовать сохраненные значения.
 
-* Код оркестратора не должен иметь **блокировки**. Например, это означает отсутствие операций ввода-вывода и вызовов `Thread.Sleep` или эквивалентных API.
+* Код оркестратора не должен иметь **блокировки**. Например, это означает отсутствие операций ввода-вывода и вызовов `Thread.Sleep` (.NET) или эквивалентных API.
 
-  Если для оркестратора требуется задержка, он может использовать API [CreateTimer](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CreateTimer_).
+  Если для оркестратора требуется задержка, он может использовать API [CreateTimer](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CreateTimer_) (.NET) или `createTimer` (JavaScript).
 
-* Код оркестратора никогда не должен **запускать асинхронную операцию**, разве что с помощью API [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html). Например, запрещено использовать `Task.Run`, `Task.Delay` или `HttpClient.SendAsync`. Платформа устойчивых задач выполняет код оркестратора в одном потоке и не может взаимодействовать с другими потоками, которые могут планироваться другими асинхронными API.
+* Код оркестратора никогда не должен **запускать асинхронную операцию**, разве что с помощью API [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) или API объекта `context.df`. Например, не выполнять `Task.Run` `Task.Delay` или `HttpClient.SendAsync` в .NET либо `setTimeout()` и `setInterval()` в JavaScript. Платформа устойчивых задач выполняет код оркестратора в одном потоке и не может взаимодействовать с другими потоками, которые могут планироваться другими асинхронными API.
 
-* **Следует избегать бесконечных циклов** в коде оркестратора. Так как платформа устойчивых задач сохраняет журнал выполнения в ходе работы функции оркестрации, бесконечный цикл может привести к нехватке памяти для экземпляра оркестратора. Для сценариев с бесконечным циклом используйте API, например [ContinueAsNew](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_ContinueAsNew_), чтобы перезапустить выполнение функции и отменить предыдущий журнал выполнения.
+* **Следует избегать бесконечных циклов** в коде оркестратора. Так как платформа устойчивых задач сохраняет журнал выполнения в ходе работы функции оркестрации, бесконечный цикл может привести к нехватке памяти для экземпляра оркестратора. Для сценариев с бесконечным циклом используйте API, например [ContinueAsNew](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_ContinueAsNew_) (.NET) или `continueAsNew` (JavaScript), чтобы перезапустить выполнение функции и отменить предыдущий журнал выполнения.
+
+* Функции оркестратора JavaScript не могут быть асинхронными (`async`). Они должны быть объявленными как синхронные функции генератора.
 
 Хотя эти ограничения могут показаться пугающими, на практике им легко следовать. Платформа устойчивых задач пытается обнаружить нарушения приведенных выше правил и выдает исключение `NonDeterministicOrchestrationException`. Тем не менее это поведение обнаружения является лучшим вариантом и вы не должны от него зависеть.
 
 > [!NOTE]
 > Все эти правила применяются только к функциям, активированным привязкой `orchestrationTrigger`. Функции действий, активированные привязкой `activityTrigger`, и функции, использующие привязку`orchestrationClient`, не имеют таких ограничений.
 
-## <a name="durable-tasks"></a>Устойчивые задачи
+## <a name="durable-tasks-net"></a>Устойчивые задачи (.NET)
 
 > [!NOTE]
 > Этот раздел содержит сведения о внутренней реализации платформы устойчивых задач. Вы можете использовать устойчивые функции, не зная эту информацию. Она предназначена только для того, чтобы помочь вам понять поведение воспроизведения.

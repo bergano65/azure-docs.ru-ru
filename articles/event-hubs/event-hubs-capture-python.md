@@ -1,5 +1,5 @@
 ---
-title: Пошаговое руководство. Функция "Сбор" в Центрах событий Azure | Документация Майкрософт
+title: Чтение собранных данных из приложения Python в службе "Центры событий Azure" | Документация Майкрософт
 description: Пример приложения, использующего пакет SDK Azure Python для демонстрации функции "Сбор" в Центрах событий.
 services: event-hubs
 documentationcenter: ''
@@ -12,16 +12,17 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/16/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 76102e1238346cbbb8f5159d2ffcd94c788c16d6
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 72efe156920bb78631ea71a0f47f7f5fe19c7e23
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42146973"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53133661"
 ---
-# <a name="event-hubs-capture-walkthrough-python"></a>Пошаговое руководство. Использование функции "Сбор" в Центрах событий с Python
+# <a name="event-hubs-capture-walkthrough-python"></a>Пошаговое руководство. Использование функции "Сбор" в службе "Центры событий" с Python
 
 Сбор — это функция Центров событий Azure. Она позволяет автоматически передавать потоковые данные из концентратора событий в выбранную учетную запись хранилища BLOB-объектов Azure. Эта возможность упрощает выполнение пакетной обработки данных потоковой передачи в режиме реального времени. В этой статье мы расскажем, как использовать функцию "Сбор" в Центрах событий с Python. Дополнительные сведения о функции "Сбор" в Центрах событий см. в [этом обзоре](event-hubs-capture-overview.md).
 
@@ -38,10 +39,9 @@ ms.locfileid: "42146973"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Python 2.7.x.
-- Подписка Azure
-- Активные [пространство имен Центров событий и концентратор событий](event-hubs-create.md).
-
-[!INCLUDE [create-account-note](../../includes/create-account-note.md)]
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
+- Активные [пространство имен Центров событий и концентратор событий](event-hubs-create.md). 
+- Чтобы включить возможность **сбора** в концентраторе событий, следуйте указаниям из этой статьи: [Включение функции "Сбор" в Центрах событий с помощью портала Azure](event-hubs-capture-enable-through-portal.md)
 
 ## <a name="create-an-azure-blob-storage-account"></a>Создание учетной записи хранения BLOB-объектов Azure
 1. Войдите на [портал Azure][Azure portal].

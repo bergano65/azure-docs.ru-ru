@@ -1,11 +1,12 @@
 ---
 title: Платформы данных для виртуальных машин для обработки и анализа данных в Azure | Документация Майкрософт
-description: Платформы данных для виртуальных машин для обработки и анализа данных.
+description: Платформы данных и средства, поддерживаемые Виртуальной машиной для обработки и анализа данных.
 keywords: средства анализа и обработки данных, виртуальная машина для анализа и обработки данных, средства для анализа и обработки данных, анализ и обработка данных Linux
 services: machine-learning
 documentationcenter: ''
 author: gopitk
 manager: cgronlun
+ms.custom: seodec18
 ms.assetid: ''
 ms.service: machine-learning
 ms.component: data-science-vm
@@ -15,14 +16,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
-ms.openlocfilehash: b3f340006801287383c2afb2924706affbd77a51
-ms.sourcegitcommit: 9cdd83256b82e664bd36991d78f87ea1e56827cd
+ms.openlocfilehash: f73f90b76900a3a5213297f8a28ff13204852039
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2018
-ms.locfileid: "31411035"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53105553"
 ---
-# <a name="data-platforms"></a>Платформы данных
+# <a name="data-platforms-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые Виртуальной машиной для обработки и анализа данных
 
 На виртуальной машине для обработки и анализа данных (DSVM) можно создавать аналитику на множестве платформ данных. Кроме интерфейсов для платформ удаленных данных DSVM предоставляет локальный экземпляр для быстрой разработки и создания прототипов. 
 
@@ -33,7 +34,7 @@ ms.locfileid: "31411035"
 | | |
 | ------------- | ------------- |
 | Что это такое?   | Экземпляр локальной реляционной базы данных      |
-| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Windows      |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      |  Windows      |
 | Распространенные способы применения      | Быстрая локальная разработка приложений с меньшим набором данных <br/> Запуск R внутри базы данных   |
 | Ссылки на примеры      |    Небольшой пример набора данных поездок по Нью-Йорку загружается в базу данных SQL `nyctaxi`. <br/> Пример Jupyter, показывающий аналитику Microsoft R и внутреннюю аналитику, можно найти в следующем файле:<br/> `~notebooks/SQL_R_Services_End_to_End_Tutorial.ipynb`  |
 | Дополнительные средства на виртуальной машине для обработки и анализа данных       | SQL Server Management Studio <br/> Драйверы ODBC и JDBC<br/> pyodbc, RODBC<br />Apache Drill      |
@@ -100,7 +101,7 @@ SQL Server устанавливается обычным образом. Его 
 ### <a name="how-is-it-configured--installed-on-the-dsvm"></a>Настройка и установка на DSVM 
 |платформа|Размещение установки ($SPARK_HOME)|
 |:--------|:--------|
-|Windows | c:\dsvm\tools\spark-X.X.X-bin-hadoopX.X|
+| Windows | c:\dsvm\tools\spark-X.X.X-bin-hadoopX.X|
 |Linux   | /dsvm/tools/spark-X.X.X-bin-hadoopX.X|
 
 

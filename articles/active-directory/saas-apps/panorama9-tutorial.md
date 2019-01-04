@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Panorama9 | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Panorama9 | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Panorama9.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: jeedes
-ms.openlocfilehash: 77e370e80e423446d17a074b9458e7002f8627dd
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: ad2a9dba54df3ae7a3e2604437c8a65c88dcca94
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39448352"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52850896"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-panorama9"></a>Учебник. Интеграция Azure Active Directory с Panorama9
+# <a name="tutorial-azure-active-directory-integration-with-panorama9"></a>Руководство. Интеграция Azure Active Directory с Panorama9
 
 В этом руководстве описано, как интегрировать Panorama9 с Azure Active Directory (Azure AD).
 
@@ -115,7 +115,7 @@ ms.locfileid: "39448352"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://dashboard.panorama9.com/saml/access/3262`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `http://www.panorama9.com/saml20/<tenant-name>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.panorama9.com/saml20/<tenant-name>`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Panorama9](https://support.panorama9.com). 
@@ -151,7 +151,7 @@ ms.locfileid: "39448352"
 1. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 82fb2241b5988bae9587807c03e7bec50e7c1677
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: f76c1676e21e1abdc3f23e2e2c4a7f6f721fefdb
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49955390"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53386576"
 ---
 # <a name="copy-data-from-office-365-into-azure-using-azure-data-factory-preview"></a>Копирование данных из Office 365 с помощью Фабрики данных Azure (предварительная версия) 
 
@@ -34,7 +34,7 @@ ms.locfileid: "49955390"
 >- Подписка Azure, содержащая фабрику данных и целевое хранилище данных должны размещаться в том же клиенте Azure Active Directory (AAD), что и клиент Office 365.
 >- Среда выполнения Azure Integration Runtime, используемая для действия копирования, а также целевой объект должны размещаться в том же регионе, где расположен почтовый ящик пользователей клиента Office 365. В [этой статье](concepts-integration-runtime.md#integration-runtime-location) описано, как определяется расположение Azure Integration Runtime. В [этой таблице](https://github.com/OfficeDev/ManagedAccessMSGraph/wiki/Capabilities#data-regions) собран список поддерживаемых регионов Office и соответствующих им регионов Azure.
 >-  Если вы загружаете данные из Office 365 в **хранилище BLOB-объектов Azure**, при определении связанных служб для хранилища BLOB-объектов Azure обязательно используйте **[аутентификацию субъекта-службы](connector-azure-blob-storage.md#service-principal-authentication)**, а не [ключ учетной записи](connector-azure-blob-storage.md#account-key-authentication), [подписанные URL-адреса](connector-azure-blob-storage.md#shared-access-signature-authentication) или [управляемые удостоверения для ресурсов Azure](connector-azure-blob-storage.md#managed-identity).
->-  Если вы загружаете данные из Office 365 в **Azure Data Lake Storage 1-го поколения**, при определении связанных служб для Azure Data Lake Storage 1-го поколения обязательно используйте [**аутентификацию субъекта-службы**](connector-azure-data-lake-store.md#using-service-principal-authentication), а не [управляемые удостоверения для ресурсов Azure](connector-azure-data-lake-store.md#managed-identity).
+>-  Если вы загружаете данные из Office 365 в **Azure Data Lake Storage 1-го поколения**, при определении связанных служб для Azure Data Lake Storage 1-го поколения обязательно используйте [**аутентификацию субъекта-службы**](connector-azure-data-lake-store.md#use-service-principal-authentication), а не [управляемые удостоверения для ресурсов Azure](connector-azure-data-lake-store.md#managed-identity).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -79,7 +79,7 @@ ms.locfileid: "49955390"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Office365**. | Yes |
+| Тип | Свойству type необходимо задать следующее значение: **Office365** | Yes |
 | office365TenantId | Идентификатор клиента Azure, которому принадлежит учетная запись Office 365. | Yes |
 | servicePrincipalTenantId | Укажите сведения о клиенте, в котором находится веб-приложение AAD. | Yes |
 | servicePrincipalId | Укажите идентификатора клиента приложения. | Yes |
@@ -119,7 +119,7 @@ ms.locfileid: "49955390"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type для набора данных должно иметь значение **Office365Table**. | Yes |
+| Тип | Для свойства type набора данных необходимо задать следующее значение: **Office365Table** | Yes |
 | tableName | Имя набора данных, который нужно извлечь из Office 365. [Здесь](https://github.com/OfficeDev/MS-Graph-Data-Connect/wiki/Capabilities#datasets) вы найдете список наборов данных, доступных для извлечения из Office 365. | Yes |
 | predicate | Выражение предиката, которое позволяет фильтровать определенные строки при извлечении данных из Office 365.  В [этой статье](https://github.com/OfficeDev/MS-Graph-Data-Connect/wiki/Capabilities#filters) указано, какие столбцы можно использовать в предикате фильтрации для каждой таблицы, и описан формат выражения фильтра. | Нет <br>(Если предиката не указан, по умолчанию настраивается извлечение данных за последние 30 дней.) |
 

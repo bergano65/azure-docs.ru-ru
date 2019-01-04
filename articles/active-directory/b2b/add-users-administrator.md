@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.component: B2B
 ms.topic: conceptual
-ms.date: 11/26/2018
+ms.date: 12/14/2018
 ms.author: mimart
 author: msmimart
 manager: mtillman
 ms.reviewer: mal
-ms.openlocfilehash: bda01b5c9fbd43feed8c407e85b90b31bef0ffa1
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 3da427974c4a270a7a743bb81d2376cf61b77390
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52335067"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53436914"
 ---
 # <a name="add-azure-active-directory-b2b-collaboration-users-in-the-azure-portal"></a>Добавление пользователей службы совместной работы B2B на портале Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "52335067"
 После добавления гостевого пользователя в каталог вы можете отправить ему прямую ссылку на общее приложение или он может щелкнуть URL-адрес активации в электронном письме с приглашением. Дополнительные сведения о процессе активации приглашений см. в статье [Azure Active Directory B2B collaboration invitation redemption](redemption-experience.md) (Активация приглашения службы совместной работы Azure Active Directory B2B).
 
 > [!IMPORTANT]
-> Добавьте URL-адрес заявления о конфиденциальности вашей организации, следуя инструкциям в статье [Практическое руководство. Добавление сведений о конфиденциальности организации в Azure Active Directory](https://aka.ms/adprivacystatement). В рамках процесса первой активации приглашения приглашенный пользователь должен согласиться на ваши условия конфиденциальности, чтобы продолжить. 
+> Выполните инструкции, описанные в [Практическое руководство. Добавление сведений о конфиденциальности организации в Azure Active Directory](https://aka.ms/adprivacystatement), чтобы добавить URL-адрес заявления о конфиденциальности вашей организации. В рамках процесса первой активации приглашения приглашенный пользователь должен согласиться на ваши условия конфиденциальности, чтобы продолжить. 
 
 ## <a name="add-guest-users-to-the-directory"></a>Добавление гостевых пользователей в каталог
 
@@ -37,6 +37,9 @@ ms.locfileid: "52335067"
 
    ![Снимок экрана с пользовательским интерфейсом, где выделена команда "Новый гостевой пользователь"](./media/add-users-administrator/NewGuestUser-Directory.png) 
  
+   > [!NOTE]
+   > Параметр **Новый гостевой пользователь** также доступен на странице **Организационные связи**. В разделе **Azure Active Directory**, в подразделе **Управление** выберите **Организационные связи**.
+
 5. В колонке **Имя пользователя** введите адрес электронной почты внешнего пользователя. При желании допишите приветственное сообщение. Например: 
 
    ![Снимок экрана с пользовательским интерфейсом, где выделена команда "Новый гостевой пользователь"](./media/add-users-administrator/InviteGuest.png) 

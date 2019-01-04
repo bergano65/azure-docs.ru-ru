@@ -12,20 +12,20 @@ ms.author: genemi
 ms.reviewer: billgib
 manager: craigg
 ms.date: 05/14/2018
-ms.openlocfilehash: b472baf77cc8f253337aa0780321a6e7dd3fecac
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: ec3f286791a3a2c7a3bebd84ba17a11571e389f8
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47056696"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53163979"
 ---
 # <a name="video-indexed-and-annotated-for-multi-tenant-saas-app-using-azure-sql-database"></a>Видео индексировано и снабжено заметками для мультитенатного приложения SaaS, использующего базу данных SQL Azure
 
 Эта статья является индексом с заметками по точкам во времени в 81-минутном видеоролике о моделях или шаблонах клиента SaaS. Эта статья позволяет переходить по видео к той части, которая вас интересует. В видео описаны основные варианты создания мультитенатного приложения базы данных в базе данных Azure SQL. Видео включает демонстрации, пошаговые руководства по коду управления и в некоторых случаях более подробно рассматриваются сведения, которые можно найти в письменной документации.
 
 В видео представлена расширенная информация из письменной документации: 
-- *Основные понятия.* [Мультитенантные шаблоны клиента в базе данных SaaS][saas-concept-design-patterns-563e].
-- *Руководства.* [SaaS-приложение Wingtip Tickets][saas-how-welcome-wingtip-app-679t].
+- *Основные понятия*. [Мультитенантные шаблоны клиента в базе данных SaaS][saas-concept-design-patterns-563e]
+- *Руководства*. [SaaS-приложение Wingtip Tickets][saas-how-welcome-wingtip-app-679t].
 
 В видео и статьях описано множество этапов создания мультитенантных приложений в базе данных SQL Azure в облаке. Специальные возможности базы данных SQL Azure упрощают процесс разработки и реализации мультенантных приложений, которые просты в управлении, надежны и высокопроизводительны.
 
@@ -94,7 +94,7 @@ ms.locfileid: "47056696"
 &nbsp; <a name="anchor-image-wtip-min00001"/>
 #### <a name="1-start-welcome-slide-00001"></a>1. *(Начало)* Слайд приветствия, 0:00:01
 
-*Обучение от MYOB. Конструктивные шаблоны для приложений SaaS в базе данных SQL Azure — BRK3120*
+*Обучение от MYOB. Конструктивные шаблоны для приложений SaaS в базе данных SQL Azure — BRK3120*
 
 [![Слайд приветствия][image-wtip-min00003-brk3120-whole-welcome]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=1)
 
@@ -199,7 +199,7 @@ ms.locfileid: "47056696"
 
 
 &nbsp; <a name="anchor-image-wtip-min05018"/>
-#### <a name="20-demo-of-tutorials-and-github-repository-05012"></a>20. Демонстрации руководств и репозиторий GitHub, 0:50:12
+#### <a name="20-demo-of-tutorials-and-github-repository-05012"></a>20. Демонстрации руководств и репозитория GitHub, 0:50:12
 [![Демонстрации руководств и репозиторий GitHub][image-wtip-min05018-demo-tutorials-github]](https://www.youtube.com/watch?v=jjNmcKBVjrc&t=3012)
 
 
@@ -294,14 +294,14 @@ ms.locfileid: "47056696"
 
 - [Запись блога, 22 мая 2017 года][resource-blog-saas-patterns-app-dev-sql-db-768h]
 
-- *Основные понятия.* [Мультитенантные шаблоны клиента в базе данных SaaS][saas-concept-design-patterns-563e].
+- *Основные понятия*. [Мультитенантные шаблоны клиента в базе данных SaaS][saas-concept-design-patterns-563e]
 
-- *Руководства.* [SaaS-приложение Wingtip Tickets][saas-how-welcome-wingtip-app-679t].
+- *Руководства*. [SaaS-приложение Wingtip Tickets][saas-how-welcome-wingtip-app-679t].
 
 - Репозитории GitHub для разновидностей клиентских приложений SaaS Wingtip Tickets:
-    - [Репозиторий Github для изолированной модели приложения][github-wingtip-standaloneapp].
-    - [Репозиторий Github для модели базы данных клиента][github-wingtip-dbpertenant].
-    - [Репозиторий Github для модели мультитенантной базы данных][github-wingtip-multitenantdb].
+    - [Репозиторий GitHub для изолированной модели приложения][github-wingtip-standaloneapp].
+    - [Репозиторий GitHub для модели базы данных клиента][github-wingtip-dbpertenant].
+    - [Репозиторий GitHub для модели мультитенантной базы данных][github-wingtip-multitenantdb].
 
 
 

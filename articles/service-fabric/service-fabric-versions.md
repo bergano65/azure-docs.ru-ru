@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 9/24/2018
 ms.author: TylerMSFT
-ms.openlocfilehash: 1041f37486c556ae29eed47728336a1ccb518e78
-ms.sourcegitcommit: 3856c66eb17ef96dcf00880c746143213be3806a
+ms.openlocfilehash: 154869c3e6bcd44a71480a3cf7363537dddcebf9
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48040372"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52727687"
 ---
 # <a name="supported-service-fabric-versions"></a>Поддерживаемые версии Service Fabric
 
@@ -42,5 +42,6 @@ ms.locfileid: "48040372"
 | 5.7.* | 5.4.164.* |Не выше версии 2.7 |15 декабря 2017 г.  |
 | 6.0.* | 5.6.205.* |Не выше версии 2.8 |30 марта 2018 г.     |
 | 6.1.* | 5.7.221.* |Не выше версии 3.0 |15 июля 2018 г.      |
-| 6.2.* | 6.0.232.* |Не выше версии 3.1 |26 октября 2018 г |
-| 6.3.* | 6.1.480.* |Не выше версии 3.2. |Текущая версия, дата окончания поддержки не определена. |
+| 6.2.* | 6.0.232.* |Не выше версии 3.1 |26 октября 2018 г   |
+| 6.3.* | 6.1.480.* |Не выше версии 3.2. |28 февраля 2019 г.  |
+| 6.4.* | 6.2.301.* |Версия 3.3 или более ранняя |Текущая версия, дата окончания поддержки не определена. |

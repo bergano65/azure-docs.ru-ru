@@ -1,23 +1,24 @@
 ---
-title: Сведения о намерениях в приложениях LUIS
-titleSuffix: Azure Cognitive Services
-description: Намерение представляет задачу или действие, которое хочет выполнить пользователь. Эта цель или задача выражаются в высказывании пользователя. Определите набор намерений, которые соответствуют действиям пользователей в вашем приложении.
+title: Намерения пользователя
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Намерение представляет задачу или действие, которое хочет выполнить пользователь. Эта цель или задача выражаются в высказывании пользователя.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
-ms.date: 09/10/2018
+ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 5ccfe781b3632bd7ccfc532398a00faf7a87b63f
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: a6343d9bd2009ee2c16f0cca3118e5653faa4c07
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49637217"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53138693"
 ---
-# <a name="intents-in-luis"></a>Намерения в LUIS
+# <a name="concepts-about-intents-in-your-luis-app"></a>Основные сведения о намерениях в приложении LUIS
 
 Намерение представляет задачу или действие, которое хочет выполнить пользователь. Эта цель или задача выражаются в [высказывании](luis-concept-utterance.md) пользователя.
 
@@ -28,7 +29,7 @@ ms.locfileid: "49637217"
  BookFlight     |   "Book me a flight to Rio next week" ("Забронировать авиаперелет в Рио на следующей неделе") <br/> "Fly me to Rio on the 24th" ("Найти авиаперелет в Рио 24-го числа") <br/> "I need a plane ticket next Sunday to Rio de Janeiro" ("Мне нужен билет на самолет в Рио-де-Жанейро на следующее воскресенье")    |
  Greeting     |   "Hi" ("Привет") <br/>"Hello" ("Привет") <br/>"Good morning" ("Доброе утро")  |
  CheckWeather | "What's the weather like in Boston?" ("Какая сейчас погода в Бостоне?") <br/> "Show me the forecast for this weekend" ("Покажите мне прогноз на эту неделю") |
- None         | "Get me a cookie recipe" ("Рецепт печенья")<br>"Did the Lakers win?" ("Лейкерс победили?") |
+ Нет         | "Get me a cookie recipe" ("Рецепт печенья")<br>"Did the Lakers win?" ("Лейкерс победили?") |
 
 Во всех приложениях используется предварительно определенное намерение "[None](#none-intent-is-fallback-for-app)", это резервное намерение. 
 

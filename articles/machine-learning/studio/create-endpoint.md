@@ -1,12 +1,11 @@
 ---
-title: Создание конечных точек веб-службы в машинном обучении — Студия машинного обучения Azure | Документация Майкрософт
-description: Создание конечных точек веб-службы в машинном обучении Azure
+title: Создание конечных точек веб-службы в Студии машинного обучения Azure | Документация Майкрософт
+description: Создание конечных точек веб-службы в Машинном обучении Azure. Каждая конечная точка в веб-службе адресуется, регулируется и управляется независимо.
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=yahajiza, author=YasinMSFT)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 4657fc1b-5228-4950-a29e-bc709259f728
 ms.service: machine-learning
@@ -16,14 +15,14 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 10/04/2016
-ms.openlocfilehash: 266970bec1e61dca808bb6358f2b4580359ee70d
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 58418357d6e96204485887cca5d7724c42183db7
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52314019"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275896"
 ---
-# <a name="creating-endpoints"></a>Создание конечных точек 
+# <a name="creating-endpoints-for-deployed-azure-machine-learning-studio-web-services"></a>Создание конечных точек для развернутых веб-служб Студии машинного обучения Azure
 > [!NOTE]
 >  В этой статье описаны методы, применимые для **классической** веб-службы машинного обучения.
 > 
@@ -33,7 +32,7 @@ ms.locfileid: "52314019"
 
 Для этого в Студии машинного обучения Azure можно создать несколько конечных точек для развернутой веб-службы. Каждая конечная точка в веб-службе адресуется, регулируется и управляется независимо. Каждая конечная точка представляет собой уникальный URL-адрес и ключ авторизации, который можно передавать заказчикам.
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 ## <a name="adding-endpoints-to-a-web-service"></a>Добавление конечных точек в веб-службу
 Новую конечную точку можно добавить в веб-службу двумя способами.

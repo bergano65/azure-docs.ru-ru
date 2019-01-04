@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.date: 04/07/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 4be14cd1804c27eedc49cc17e33298c6134f6a37
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 062925f7e072651f4b4189cec7ca73144c0cf994
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51008748"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53436336"
 ---
-# <a name="monitor-hadoop-clusters-in-hdinsight-using-the-ambari-api"></a>Отслеживание кластеров Hadoop в HDInsight с помощью интерфейса Ambari API
-Узнайте, как отслеживать кластеры HDInsight с помощью интерфейсов Ambari API.
+# <a name="monitor-apache-hadoop-clusters-in-hdinsight-using-the-apache-ambari-api"></a>Отслеживание кластеров Apache Hadoop в HDInsight с помощью API Apache Ambari
+Узнайте, как отслеживать кластеры HDInsight с помощью API-интерфейсов Apache Ambari.
 
-> [!NOTE]
+> [!NOTE]  
 > Информация в этой статье касается преимущественно кластеров HDInsight на платформе Windows, которые предоставляют версию интерфейса API REST Ambari только для чтения. Сведения о кластерах под управлением Linux см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
 > 
 > 
@@ -36,7 +36,7 @@ ms.locfileid: "51008748"
 * **Рабочая станция с Azure PowerShell**.
 * [cURL][curl] (необязательно). Чтобы установить cURL, перейдите на страницу [выпусков и скачиваемых файлов][curl-download].
   
-  > [!NOTE]
+  > [!NOTE]  
   > При использовании команды cURL в Windows для значений параметров указывайте двойные кавычки вместо одинарных.
   > 
   > 
@@ -120,7 +120,7 @@ ms.locfileid: "51008748"
 При использовании конечной точки Ambari https://{clusterDns}.azurehdinsight.net/ambari/api/v1/clusters/{clusterDns}.azurehdinsight.net/services/{servicename}/components/{componentname} поле *host_name* в настоящее время возвращает полное доменное имя (FQDN) узла вместо имени узла. До выпуска от 08.10.2014 этот пример просто возвращал значение**headnode0**. Начиная с выпуска от 08.10.2014 он возвращает полное доменное имя**headnode0.{ClusterDNS}.azurehdinsight.net**, как показано выше. Это изменение было продиктовано необходимостью использовать сценарии, в которых кластеры различного типа, например кластеры HBase и Hadoop, можно было бы размещать в одной виртуальной сети (VNET). Такая необходимость может возникнуть, например, при использовании HBase в качестве вспомогательной платформы для Hadoop.
 
 ## <a name="ambari-monitoring-apis"></a>Интерфейсы Ambari API для мониторинга
-В следующей таблице перечислены некоторые наиболее распространенные вызовы Ambari API для мониторинга. Дополнительные сведения об API см. в [справочнике по Ambari API][ambari-api-reference].
+В следующей таблице перечислены некоторые наиболее распространенные вызовы Ambari API для мониторинга. Дополнительные сведения об API см. в [справочнике по API Apache Ambari][ambari-api-reference].
 
 | Отслеживание вызова API | URI | ОПИСАНИЕ |
 | --- | --- | --- |
@@ -138,7 +138,7 @@ ms.locfileid: "51008748"
 | Получение сведений о конфигурации. |`/api/v1/clusters/<ClusterName>.azurehdinsight.net/configurations?type=<ConfigType>&tag=<VersionName>` |Типы настройки: core-site, hdfs-site, mapred-site, hive-site |
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Теперь вы узнали, как использовать Ambari API для мониторинга. Дополнительные сведения см. на следующих ресурсах:
+Теперь вы узнали, как использовать вызовы API Apache Ambari для мониторинга. Дополнительные сведения см. на следующих ресурсах:
 
 * [Управление кластерами Hadoop в HDInsight с помощью портала Azure][hdinsight-admin-portal]
 * [Управление кластерами Hadoop в HDInsight с помощью Azure PowerShell][hdinsight-admin-powershell]
@@ -150,12 +150,12 @@ ms.locfileid: "51008748"
 [ambari-api-reference]: https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md
 
 [curl]: http://curl.haxx.se
-[curl-download]: http://curl.haxx.se/download.html
+[curl-download]: https://curl.haxx.se/download.html
 
 [microsoft-hadoop-SDK]: http://hadoopsdk.codeplex.com/wikipage?title=Ambari%20Monitoring%20Client
 
 [powershell-install]: /powershell/azureps-cmdlets-docs
-[powershell-script]: http://technet.microsoft.com/library/ee176949.aspx
+[powershell-script]: https://technet.microsoft.com/library/ee176949.aspx
 
 [hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
 [hdinsight-admin-portal]: hdinsight-administer-use-management-portal.md

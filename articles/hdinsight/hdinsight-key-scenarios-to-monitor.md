@@ -9,18 +9,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: arindamc
-ms.openlocfilehash: 727ecdb06f9a43bf3722f82fa10b7a3304cf4958
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 22b9a63ab595b4d0b003d999bcd0f131e50aeabf
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51255308"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53383941"
 ---
 # <a name="monitor-cluster-performance"></a>Мониторинг производительности кластера
 
 Мониторинг работоспособности и производительности кластера HDInsight важен для обеспечения оптимальной производительности и эффективного использования ресурсов. Мониторинг может также помочь вам обнаружить и устранить ошибки конфигурации кластера и проблемы с пользовательским кодом.
 
-В следующих разделах описывается, как отслеживать и оптимизировать нагрузку на кластеры, очереди YARN и обнаруживать проблемы регулирования хранилища.
+В следующих разделах описывается, как отслеживать и оптимизировать нагрузку на кластеры, очереди Apache Hadoop YARN и обнаруживать проблемы регулирования хранилища.
 
 ## <a name="monitor-cluster-load"></a>Мониторинг загрузки кластера
 
@@ -43,7 +43,7 @@ ms.locfileid: "51255308"
 
 ![Сведения об узле](./media/hdinsight-key-scenarios-to-monitor/host-details.png)
 
-В разделе [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md) приведены подробные сведения о настройке оповещений и просмотре метрик.
+Подробные сведения о настройке оповещений и просмотре метрик см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
 
 ## <a name="yarn-queue-configuration"></a>Конфигурация очереди YARN
 
@@ -79,14 +79,14 @@ YARN позволяет выделять ресурсы для этих очер
 
 Если резервным хранилищем кластера является Azure Data Lake Store (ADLS), то регулирование, вероятнее всего, возникает из-за ограничения пропускной способности. В данном случае регулирование можно заметить, отслеживая ошибки регулирования в журналах задач. Сведения об использовании ADLS приведены в разделе о регулировании для соответствующей службы в следующих статьях:
 
-* [Рекомендации по настройке производительности для Hive в HDInsight и Azure Data Lake Store](../data-lake-store/data-lake-store-performance-tuning-hive.md)
+* [Рекомендации по настройке производительности для Hive в HDInsight и Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-performance-tuning-hive.md)
 * [Рекомендации по настройке производительности для MapReduce в HDInsight и Azure Data Lake Store](../data-lake-store/data-lake-store-performance-tuning-mapreduce.md)
-* [Рекомендации по настройке производительности для Storm в HDInsight и Azure Data Lake Store](../data-lake-store/data-lake-store-performance-tuning-storm.md)
+* [Рекомендации по настройке производительности для Storm в HDInsight и Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-performance-tuning-storm.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Перейдите по следующим ссылкам, чтобы получить дополнительные сведения об устранении неполадок и мониторинге кластеров:
 
 * [Анализ журналов HDInsight](hdinsight-debug-jobs.md)
-* [Отладка приложений с помощью журналов YARN](hdinsight-hadoop-access-yarn-app-logs-linux.md)
-* [Включение дампов кучи для служб Hadoop в HDInsight под управлением Linux](hdinsight-hadoop-collect-debug-heap-dump-linux.md)
+* [Доступ к журналам приложений Apache Hadoop YARN в HDInsight под управлением Linux](hdinsight-hadoop-access-yarn-app-logs-linux.md)
+* [Включение дампов кучи для служб Apache Hadoop в HDInsight под управлением Linux](hdinsight-hadoop-collect-debug-heap-dump-linux.md)

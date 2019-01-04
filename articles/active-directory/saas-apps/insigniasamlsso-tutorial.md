@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Insignia SAML SSO | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Insignia SAML SSO | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Insignia SAML SSO.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 776ad8445c1968928a631ae1a401db4c65a6bb6d
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: afc2d52044a294af0ead373dfce283d0ec994d1e
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421247"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52840628"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-insignia-saml-sso"></a>Руководство по интеграции Azure Active Directory с Insignia SAML SSO
+# <a name="tutorial-azure-active-directory-integration-with-insignia-saml-sso"></a>Руководство. Интеграция Azure Active Directory с Insignia SAML SSO
 
 В этом руководстве описано, как интегрировать Insignia SAML SSO с Azure Active Directory (Azure AD).
 
@@ -120,7 +120,7 @@ ms.locfileid: "39421247"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<customername>.insigniailsusa.com/<uniqueid>`
 
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Insignia SAML SSO](http://www.insigniasoftware.com/insignia/Techsupport.aspx). 
+    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Insignia SAML SSO](https://www.insigniasoftware.com/insignia/Techsupport.aspx). 
  
 
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
@@ -135,10 +135,10 @@ ms.locfileid: "39421247"
 
     ![Конфигурация Insignia SAML SSO](./media/insigniasamlsso-tutorial/tutorial_insigniasamlsso_configure.png) 
 
-1. Чтобы настроить единый вход на стороне **Insignia SAML SSO**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода и URL-адрес службы единого входа SAML** [группе поддержки Insignia SAML SSO](http://www.insigniasoftware.com/insignia/Techsupport.aspx). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Insignia SAML SSO**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода и URL-адрес службы единого входа SAML** [группе поддержки Insignia SAML SSO](https://www.insigniasoftware.com/insignia/Techsupport.aspx). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -175,7 +175,7 @@ ms.locfileid: "39421247"
  
 ### <a name="create-an-insignia-saml-sso-test-user"></a>Создание тестового пользователя Insignia SAML SSO
 
-В этом разделе описано, как создать пользователя Britta Simon в Insignia Library System. Обратитесь к [группе поддержки Insignia Library System](http://www.insigniasoftware.com/insignia/Techsupport.aspx), чтобы добавить пользователей на платформу Insignia Library System.
+В этом разделе описано, как создать пользователя Britta Simon в Insignia Library System. Обратитесь к [группе поддержки Insignia Library System](https://www.insigniasoftware.com/insignia/Techsupport.aspx), чтобы добавить пользователей на платформу Insignia Library System.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -212,7 +212,7 @@ ms.locfileid: "39421247"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Insignia SAML SSO" на панели доступа, вы автоматически войдете в приложение Insignia SAML SSO.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

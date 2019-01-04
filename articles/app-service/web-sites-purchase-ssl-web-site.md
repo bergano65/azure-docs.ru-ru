@@ -1,5 +1,5 @@
 ---
-title: Приобретение и настройка SSL-сертификата для службы приложений Azure | Документация Майкрософт
+title: Приобретение и настройка SSL-сертификата в Службе приложений Azure | Документация Майкрософт
 description: Узнайте, как приобрести сертификат службы приложений и привязать его к приложению службы приложений.
 services: app-service
 documentationcenter: .net
@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/16/2018
 ms.author: apurvajo;cephalin
-ms.openlocfilehash: c775798591a3063fdfe6d399c8337aac2e2f207e
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.custom: seodec18
+ms.openlocfilehash: ff2fd2c9b66cc9c80087ab5009ee65c0ba73714b
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49351360"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53268722"
 ---
 # <a name="buy-and-configure-an-ssl-certificate-for-azure-app-service"></a>Приобретение и настройка сертификата SSL для службы приложений Azure
 
@@ -59,7 +60,7 @@ ms.locfileid: "49351360"
 
 После завершения процесса приобретения сертификата нужно выполнить еще некоторые действия, прежде чем его можно будет использовать. 
 
-На странице [Сертификаты службы приложений](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders) выберите сертификат и щелкните **Конфигурация сертификата** > **Шаг 1. Сохранение**.
+На странице [Сертификаты службы приложений](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders) выберите сертификат и щелкните **Конфигурация сертификата** > **Шаг 1. Сохранение**.
 
 ![вставить изображение для готовности к размещению в хранилище ключей](./media/app-service-web-purchase-ssl-web-site/ReadyKV.png)
 
@@ -80,7 +81,7 @@ ms.locfileid: "49351360"
 
 ## <a name="verify-domain-ownership"></a>проверка принадлежности домена;
 
-На той же странице **Конфигурация сертификата**, которую вы использовали в последнем шаге, щелкните **Шаг 2. Проверка**.
+На той же странице **Конфигурация сертификата**, которую вы использовали в последнем шаге, щелкните **Шаг 2. Проверка**.
 
 ![](./media/app-service-web-purchase-ssl-web-site/verify-domain.png)
 
@@ -114,7 +115,7 @@ ms.locfileid: "49351360"
 |-|-|
 | имя узла; | Имя домена, которое будет добавлено для привязки SSL. |
 | Отпечаток закрытого сертификата | Привязка сертификата. |
-| Тип SSL | <ul><li>**SNI SSL** позволяет добавить несколько привязок SSL на основе SNI. Этот параметр позволяет использовать несколько SSL-сертификатов для защиты нескольких доменов с одним IP-адресом. Большинство современных браузеров (включая Internet Explorer, Chrome, Firefox и Opera) поддерживает SNI (более подробную информацию о поддержки браузеров можно найти в статье [Server Name Indication](http://wikipedia.org/wiki/Server_Name_Indication) (Указание имени сервера)).</li><li>**SSL на основе IP-адреса** позволяет добавить только одну привязку SSL на основе IP-адреса. Этот параметр позволяет использовать только один SSL-сертификат для защиты выделенного общедоступного IP-адреса. После настройки привязки воспользуйтесь сведениями из раздела [Переназначение записи A для SSL на основе IP-адреса](app-service-web-tutorial-custom-ssl.md#remap-a-record-for-ip-ssl). </li></ul> |
+| Тип SSL | <ul><li>**SNI SSL** позволяет добавить несколько привязок SSL на основе SNI. Этот параметр позволяет использовать несколько SSL-сертификатов для защиты нескольких доменов с одним IP-адресом. Большинство современных браузеров (включая Internet Explorer, Chrome, Firefox и Opera) поддерживает SNI (более подробную информацию о поддержки браузеров можно найти в статье [Server Name Indication](https://wikipedia.org/wiki/Server_Name_Indication) (Указание имени сервера)).</li><li>**SSL на основе IP-адреса** позволяет добавить только одну привязку SSL на основе IP-адреса. Этот параметр позволяет использовать только один SSL-сертификат для защиты выделенного общедоступного IP-адреса. После настройки привязки воспользуйтесь сведениями из раздела [Переназначение записи A для SSL на основе IP-адреса](app-service-web-tutorial-custom-ssl.md#remap-a-record-for-ip-ssl). </li></ul> |
 
 ## <a name="verify-https-access"></a>Проверка доступа к HTTPS
 
@@ -147,15 +148,15 @@ ms.locfileid: "49351360"
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom SSL certificate to a web app")] 
+[!code-azurecli[main](../../cli_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.sh?highlight=3-5 "Bind a custom SSL certificate to a web app")] 
 
 ### <a name="powershell"></a>PowerShell
 
-[!code-powershell[main](../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom SSL certificate to a web app")]
+[!code-powershell[main](../../powershell_scripts/app-service/configure-ssl-certificate/configure-ssl-certificate.ps1?highlight=1-3 "Bind a custom SSL certificate to a web app")]
 
 ## <a name="more-resources"></a>Дополнительные ресурсы
 
 * [Принудительное использование HTTPS](app-service-web-tutorial-custom-ssl.md#enforce-https)
 * [Принудительное применение TLS 1.1/1.2](app-service-web-tutorial-custom-ssl.md#enforce-tls-versions)
 * [Использование SSL-сертификата в коде приложения службы приложений Azure](app-service-web-ssl-cert-load.md)
-* [FAQ : App Service Certificates](https://blogs.msdn.microsoft.com/appserviceteam/2017/07/24/faq-app-service-certificates/) (Вопросы по сертификатам службы приложений и ответы на них)
+* [FAQ: SSL certificates for Web Apps and App Service Certificates](https://blogs.msdn.microsoft.com/appserviceteam/2017/07/24/faq-app-service-certificates/) (SSL-сертификаты для веб-приложений и сертификаты Службы приложений: вопросы и ответы)

@@ -14,12 +14,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 7ece34809734478ddb52c12d5dbd92291231f439
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: ee0cd90b8d1b901f9e8a506674b3f04167b48899
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37045693"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52968789"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Перемещение данных из Amazon Redshift с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -36,7 +36,7 @@ ms.locfileid: "37045693"
 > [!TIP]
 > Чтобы обеспечить наилучшую производительность при копировании больших объемов данных из Amazon Redshift, рекомендуется использовать встроенную команду Redshift **UNLOAD** через Amazon Simple Storage Service (Amazon S3). Дополнительные сведения см. в разделе [Копирование данных из Amazon Redshift с помощью UNLOAD](#use-unload-to-copy-data-from-amazon-redshift).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 * Для перемещения данных в локальное хранилище установите [шлюз управления данными](data-factory-data-management-gateway.md) на локальный компьютер. Предоставьте доступ для шлюза в кластер Amazon Redshift с помощью IP-адреса локального компьютера. Инструкции см. в статье об [авторизации доступа к кластеру](http://docs.aws.amazon.com/redshift/latest/gsg/rs-gsg-authorize-cluster-access.html).
 * Дополнительные сведения о перемещении в хранилище данных Azure см. в статье [Microsoft Azure Datacenter IP Ranges ](https://www.microsoft.com/download/details.aspx?id=41653) (Диапазоны IP-адресов центра обработки данных Microsoft Azure).
 
@@ -53,7 +53,7 @@ ms.locfileid: "37045693"
 2. Создайте наборы данных, которые представляют входные и выходные данные для операции копирования. 
 3. Создайте конвейер с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. 
 
-При использовании мастера копирования для этих сущностей фабрики данных автоматически создаются определения JSON. При использовании инструментов или интерфейсов API (за исключением API .NET) вы самостоятельно определяете сущности фабрики данных в формате JSON. В разделе [Пример JSON. Копирование данных из Amazon Redshift в хранилище больших двоичных объектов Azure](#json-example-copy-data-from-amazon-redshift-to-azure-blob) показаны определения JSON для сущностей фабрики данных, которые используются для копирования данных из локального хранилища данных Amazon Redshift.
+При использовании мастера копирования для этих сущностей фабрики данных автоматически создаются определения JSON. При использовании инструментов или интерфейсов API (за исключением API .NET) вы самостоятельно определяете сущности фабрики данных в формате JSON. В [примере кода JSON для копирования данных из Amazon Redshift в хранилище больших двоичных объектов Azure](#json-example-copy-data-from-amazon-redshift-to-azure-blob) показаны определения JSON для сущностей фабрики данных, которые используются для копирования данных из локального хранилища данных Amazon Redshift.
 
 В следующих разделах описаны свойства JSON, используемые для определения сущностей фабрики данных для Amazon Redshift.
 
@@ -103,13 +103,13 @@ ms.locfileid: "37045693"
 
 Команда Amazon Redshift [**UNLOAD**](http://docs.aws.amazon.com/redshift/latest/dg/r_UNLOAD.html) выгружает результаты запроса для одного или нескольких файлов в Amazon S3. Эта команда рекомендуется Amazon для копирования больших наборов данных из Redshift.
 
-**Пример. Копирование данных из Amazon Redshift в хранилище данных SQL Azure**
+**Пример. Копирование данных из Amazon Redshift в Хранилище данных SQL Azure**
 
 В этом примере копируются данные из Amazon Redshift в хранилище данных SQL Azure. В этом примере используется команда Redshift **UNLOAD**, промежуточные данные копирования и Microsoft PolyBase.
 
 В этом примере варианта использования действие копирования сначала выгружает данные из Amazon Redshift Amazon S3, как указано в параметре **redshiftUnloadSettings**. Затем данные копируются из Amazon S3 в хранилище BLOB-объектов Azure, как указано в параметре **stagingSettings**. Наконец, PolyBase загружает данные в хранилище данных SQL. Все промежуточные форматы обновляются действием копирования.
 
-![Копирование рабочего процесса из Amazon Redshift в хранилище данных SQL](media\data-factory-amazon-redshift-connector\redshift-to-sql-dw-copy-workflow.png)
+![Копирование рабочего процесса из Amazon Redshift в хранилище данных SQL](media/data-factory-amazon-redshift-connector/redshift-to-sql-dw-copy-workflow.png)
 
 ```json
 {

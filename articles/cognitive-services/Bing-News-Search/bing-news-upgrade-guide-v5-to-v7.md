@@ -10,12 +10,12 @@ ms.component: bing-news-search
 ms.topic: conceptual
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: c6ecb7d4c1e5b648373fcaa3f44c6294329d33c2
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 565c0ed877cf4500131f7ad3099f3c7d3f1a1220
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48801171"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52955043"
 ---
 # <a name="news-search-api-upgrade-guide"></a>Руководство по обновлению API для поиска новостей
 
@@ -25,7 +25,7 @@ ms.locfileid: "48801171"
 
 ### <a name="endpoints"></a>Конечные точки
 
-- Номер версии конечной точки изменен с 5 на 7. Например, https://api.cognitive.microsoft.com/bing/\*\*v7.0**/news/search.
+- Номер версии конечной точки изменен с 5 на 7. Пример: https://api.cognitive.microsoft.com/bing/**v7.0**/news/search.
 
 ### <a name="error-response-objects-and-error-codes"></a>Объекты ответов на ошибки и коды ошибок
 
@@ -34,7 +34,6 @@ ms.locfileid: "48801171"
 - В объект `Error` добавлены следующие поля:  
   - `subCode`&mdash;Разделяет код ошибки на дискретные сегменты, если это возможно
   - `moreDetails`&mdash;Дополнительные сведения об ошибке, описанной в поле `message`
-   
 
 - Коды ошибок версии 5 заменены следующими возможными значениями `code` и `subCode`.
 
@@ -77,18 +76,18 @@ InsufficientScope|InsufficientAuthorization
 
 ### <a name="query-parameters"></a>Параметры запроса
 
-- Добавлены продукты, которые можно задать в качестве значения параметра запроса [category](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#category). Категории по рынкам приводятся в [этой статье](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#categories-by-market).  
-    
-- Добавлен параметр запроса [SortBy](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#sortby), который возвращает темы, набирающие популярность (начиная с самых последних).  
-  
+- Добавлены продукты, которые можно задать в качестве значения параметра запроса [category](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#category). Категории по рынкам приводятся в [этой статье](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#categories-by-market).
+
+- Добавлен параметр запроса [SortBy](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#sortby), который возвращает темы, набирающие популярность (начиная с самых последних).
+
 - Добавлен параметр запроса [Since](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#since), который возвращает темы, набирающие популярность. Это темы, обнаруженные Bing во время или после указанной метки времени (формат времени UNIX EPOCH).
 
 ### <a name="object-changes"></a>Изменения объектов
 
-- В объект [NewsArticle](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#newsarticle) добавлено поле `mentions`. Поле `mentions` содержит список сущностей (людей или мест), найденных в статье.  
-  
-- В объект [NewsArticle](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#newsarticle) добавлено поле `video`. Поле `video` содержит видео, связанное с новостной статьей. Видео — это элемент \<iframe\>, который можно внедрить, или анимированный эскиз.   
-  
-- В объект [News](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#news) добавлено поле `sort`. Поле `sort` показывает порядок сортировки статей. Например, статьи сортируются по релевантности (по умолчанию) или дате.  
-  
+- В объект [NewsArticle](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#newsarticle) добавлено поле `mentions`. Поле `mentions` содержит список сущностей (людей или мест), найденных в статье.
+
+- В объект [NewsArticle](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#newsarticle) добавлено поле `video`. Поле `video` содержит видео, связанное с новостной статьей. Видео — это элемент \<iframe\>, который можно внедрить, или анимированный эскиз.
+
+- В объект [News](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#news) добавлено поле `sort`. Поле `sort` показывает порядок сортировки статей. Например, статьи сортируются по релевантности (по умолчанию) или дате.
+
 - Добавлен объект [SortValue](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#sortvalue), который определяет порядок сортировки. Поле `isSelected` указывает, используется ли в ответе порядок сортировки. Значение **true** означает, что в ответе использовался порядок сортировки. А если `isSelected` имеет значение **false**, то вы можете использовать URL-адрес в поле `url`, чтобы запросить другой порядок сортировки.

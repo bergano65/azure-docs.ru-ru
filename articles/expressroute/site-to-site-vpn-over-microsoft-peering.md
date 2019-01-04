@@ -1,5 +1,5 @@
 ---
-title: Настройка VPN типа "сеть — сеть" через пиринг Майкрософт для Azure ExpressRoute | Документация Майкрософт
+title: Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute в Azure | Документация Майкрософт
 description: Настройка подключения IPsec/IKE к Azure через пиринговый канал Майкрософт ExpressRoute с использованием VPN-шлюза типа "сеть — сеть".
 services: expressroute
 author: cherylmc
@@ -7,25 +7,25 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: cherylmc
-ms.openlocfilehash: 5fb4a4034a744b8b2b769a1cfd2d9df12ea90dde
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.custom: seodec18
+ms.openlocfilehash: 3ba9d7ab9e05c3c5480e1832cc5ddd0ce91a3ae1
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50240918"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094208"
 ---
 # <a name="configure-a-site-to-site-vpn-over-expressroute-microsoft-peering"></a>Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute
 
-Эта статья поможет вам настроить безопасное зашифрованное подключение между локальной сетью и виртуальными сетями Azure через закрытое подключение ExpressRoute. Настройка безопасного туннеля через ExpressRoute обеспечивает конфиденциальный обмен данными, защиту от повтора, подлинность и целостность данных.
+Эта статья поможет вам настроить безопасное зашифрованное подключение между локальной сетью и виртуальными сетями Azure через закрытое подключение ExpressRoute. Вы можете использовать пиринг Майкрософт для создания VPN-туннеля типа "сеть — сеть" IPsec/IKE между выбранными локальными сетями и виртуальными сетями Azure. Настройка безопасного туннеля через ExpressRoute обеспечивает конфиденциальный обмен данными, защиту от повтора, подлинность и целостность данных.
 
-## <a name="architecture"></a>Архитектура
-
-Вы можете использовать пиринг Майкрософт для создания VPN-туннеля типа "сеть — сеть" IPsec/IKE между выбранными локальными сетями и виртуальными сетями Azure.
-
-  >[!NOTE]
+>[!NOTE]
 >При настройке VPN типа "сеть — сеть" через пиринговый канал Майкрософт вы платите за VPN-шлюз и исходящий трафик VPN. Дополнительные сведения см. на странице [цен на VPN-шлюз](https://azure.microsoft.com/pricing/details/vpn-gateway).
 >
 >
+
+## <a name="architecture"></a>Архитектура
+
 
   ![Общие сведения о подключениях](./media/site-to-site-vpn-over-microsoft-peering/IPsecER_Overview.png)
 

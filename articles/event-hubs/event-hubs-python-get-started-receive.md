@@ -1,20 +1,20 @@
 ---
-title: Получение событий от Центров событий Azure с помощью Python | Документация Майкрософт
-description: Основные сведения о получении событий из концентраторов событий с помощью Python.
+title: Получение событий в службе "Центры событий Azure" с помощью Python | Документация Майкрософт
+description: В статье описано, как создать приложение Python, которое получает события из службы "Центры событий Azure".
 services: event-hubs
 author: ShubhaVijayasarathy
 manager: femila
 ms.service: event-hubs
 ms.workload: core
 ms.topic: article
-ms.date: 07/26/2018
+ms.date: 11/26/2018
 ms.author: shvija
-ms.openlocfilehash: db177c3356d378317c41e0c91c10865db5e05992
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: bc1cf07c5a74bc4d7182eea5281e75525fd04247
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51286985"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53103190"
 ---
 # <a name="receive-events-from-event-hubs-using-python"></a>Получение событий из концентраторов событий с помощью Python
 
@@ -30,11 +30,9 @@ ms.locfileid: "51286985"
 
 Для работы с данным руководством вам потребуется:
 
+- Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начать работу.
 - Python 3.4 или более поздней версии.
 - Существующее пространство имен Центров событий и концентратор событий. Эти сущности можно создать, следуя инструкциям в [этой статье](event-hubs-create.md). 
-
-[!INCLUDE [create-account-note](../../includes/create-account-note.md)]
-
 
 ## <a name="install-python-package"></a>Установка пакета Python
 

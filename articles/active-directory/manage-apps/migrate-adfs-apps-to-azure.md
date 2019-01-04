@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.date: 03/02/2018
 ms.author: barbkess
-ms.openlocfilehash: b799a3947770b44752b599dbb2c47cbf1cfbcda2
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 7657ac2e2d5a169607c73b8934328ce41ecea78e
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49959066"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141940"
 ---
 # <a name="move-applications-from-ad-fs-to-azure-ad"></a>Перемещение приложений из AD FS в Azure Active Directory 
 
@@ -82,7 +82,7 @@ ms.locfileid: "49959066"
 
 ### <a name="non-federated-apps"></a>Нефедеративные приложения
 Вы можете интегрировать нефедеративные приложения с Azure AD с помощью прокси-сервера приложения Azure AD и связанных функций. К нефедеративным приложениям относятся:
-- Приложения, использующие встроенную проверку подлинности непосредственно с помощью Active Directory. Вы можете интегрировать эти приложения с Azure AD через [Azure AD Application Proxy](application-proxy-publish-azure-portal.md).
+- Приложения, использующие встроенную проверку подлинности непосредственно с помощью Active Directory. Вы можете интегрировать эти приложения с Azure AD через [Azure AD Application Proxy](application-proxy-add-on-premises-application.md).
 - Приложения, которые интегрируются с поставщиком единого входа через агент и используют заголовки для авторизации. Локальные приложения, использующие установленный агент для входа и авторизацию на основе заголовка, можно настроить для входа на основе Azure AD с помощью Azure AD Application Proxy с [доступом Ping Access для Azure AD](https://blogs.technet.microsoft.com/enterprisemobility/2017/06/15/ping-access-for-azure-ad-is-now-generally-available-ga/).
 
 ## <a name="translating-on-premises-federated-apps-to-azure-ad"></a>Переход локальных федеративных приложений в Azure AD 
@@ -93,7 +93,7 @@ ms.locfileid: "49959066"
 ### <a name="representing-the-app-in-azure-ad-or-ad-fs"></a>Описание приложения в Azure AD или AD FS
 Перемещение начинается с оценки настройки приложения в локальной среде и сопоставления этой конфигурации с Azure AD. В таблице ниже приведено сопоставление элементов конфигурации проверяющей стороны AD FS с соответствующими элементами в Azure AD.  
 - Условие AD FS: проверяющая сторона или доверие проверяющей стороны.
-- Условие Azure AD: корпоративное приложение или регистрация приложения (в зависимости от типа приложения).
+- Условие Azure AD: корпоративное приложение или регистрация приложения (в зависимости от типа приложения).
 
 |Элемент конфигурации приложения|ОПИСАНИЕ|Расположение в рамках конфигурации AD FS|Соответствующее расположение в конфигурации Azure AD|Элемент токена SAML|
 |-----|-----|-----|-----|-----|
@@ -203,7 +203,7 @@ ms.locfileid: "49959066"
 
 ![Область "Добавление назначения"](media/migrate-adfs-apps-to-azure/migrate7.png)
 
-Для проверки доступа пользователь должен увидеть приложение SaaS на [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) при входе. Панель доступа можно найти по этому адресу http://myapps.microsoft.com. В этом примере пользователю успешно предоставлен доступ к Salesforce и ServiceNow.
+Для проверки доступа пользователь должен увидеть приложение SaaS на [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md) при входе. Панель доступа можно найти по этому адресу https://myapps.microsoft.com. В этом примере пользователю успешно предоставлен доступ к Salesforce и ServiceNow.
 
 ![Пример панели доступа с приложениями Salesforce и ServiceNow](media/migrate-adfs-apps-to-azure/migrate8.png)
 
@@ -231,7 +231,7 @@ ms.locfileid: "49959066"
 
 ![Выбор Azure AD в качестве службы проверки подлинности](media/migrate-adfs-apps-to-azure/migrate10.png)
 
-### <a name="optional-configure-user-provisioning-in-azure-ad"></a>Необязательно. Настройка подготовки пользователей в Azure AD
+### <a name="optional-configure-user-provisioning-in-azure-ad"></a>Необязательно: настройка подготовки пользователей в Azure AD
 Если вы хотите, чтобы в Azure AD напрямую выполнялась обработка подготовки пользователей для приложения SaaS, ознакомьтесь со статьей [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](user-provisioning.md).
 
 ## <a name="next-steps"></a>Дополнительная информация

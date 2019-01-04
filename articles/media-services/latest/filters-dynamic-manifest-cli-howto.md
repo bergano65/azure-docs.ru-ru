@@ -1,6 +1,6 @@
 ---
-title: Масштабирование зарезервированных единиц кодирования — Azure | Документация Майкрософт
-description: В этом разделе рассматривается масштабирование обработки мультимедиа с помощью служб мультимедиа Azure.
+title: Использование CLI для создания фильтров с помощью служб мультимедиа Azure | Документация Майкрософт
+description: В этом разделе показано, как использовать CLI для создания фильтров с помощью служб мультимедиа.
 services: media-services
 documentationcenter: ''
 author: juliako
@@ -13,12 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: juliako
-ms.openlocfilehash: 9099429097efb17629e88318430f004f0f763cc5
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.custom: seodec18
+ms.openlocfilehash: a16024ad5d8b9d2355b579b9b508ef0de91f2ccd
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52336667"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53133865"
 ---
 # <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI 
 

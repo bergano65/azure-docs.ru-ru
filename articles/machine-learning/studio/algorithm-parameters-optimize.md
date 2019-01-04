@@ -4,9 +4,8 @@ description: В этой статье содержится информация 
 services: machine-learning
 documentationcenter: ''
 author: ericlicoding
-ms.custom: (previous ms.author=hshapiro, author=heatherbshapiro)
+ms.custom: seodec18
 ms.author: amlstudiodocs
-manager: hjerez
 editor: cgronlun
 ms.assetid: 6717e30e-b8d8-4cc1-ad0b-1d4727928d32
 ms.service: machine-learning
@@ -16,18 +15,18 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2017
-ms.openlocfilehash: f4b7ba04f643fc823ca627e279faea31dee9d2a4
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 57561c9841297b7ea2991bda1e94065a854597cd
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52314721"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53269419"
 ---
 # <a name="choose-parameters-to-optimize-your-algorithms-in-azure-machine-learning-studio"></a>Выбор параметров для оптимизации алгоритмов в Студии машинного обучения Azure
 
 В этой статье описывается, как выбрать правильный набор гиперпараметров для алгоритма в Машинном обучении Azure. В большинстве алгоритмов машинного обучения есть параметры, которые необходимо настроить. Например, это требуется сделать при обучении модели. Эффективность обученной модели зависит от выбранных для нее параметров. Процесс определения оптимального набора параметров называется *выбором модели*.
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 Выбор модели осуществляется разными способами. В машинном обучении чаще всего используется перекрестная проверка (которая также представляет стандартный способ выбора модели в машинном обучении Azure). Так как в машинном обучении Azure поддерживаются языки R и Python, вы всегда можете реализовать свой механизм выбора модели, используя привычные вам средства.
 
@@ -43,7 +42,7 @@ ms.locfileid: "52314721"
 ![Поиск оптимального набора параметров](./media/algorithm-parameters-optimize/fig1.png)
 
 ## <a name="define-the-parameter-space"></a>Определение пространства параметров
-Набор параметров можно определить на этапе инициализации модели. На панели параметров всех алгоритмов машинного обучения доступны два режима обучения: *Single Parameter* (Один параметр) и *Parameter Range* (Диапазон параметров). Выберите режим с диапазоном параметров. В этом режиме каждому параметру можно присвоить несколько значений. В текстовое поле можно ввести разделенные запятыми значения.
+Набор параметров можно определить на этапе инициализации модели. В области параметров всех алгоритмов машинного обучения доступны два режима обучения: *Single Parameter* (Один параметр) и *Parameter Range* (Диапазон параметров). Выберите режим с диапазоном параметров. В этом режиме каждому параметру можно присвоить несколько значений. В текстовое поле можно ввести разделенные запятыми значения.
 
 ![Двухклассовое увеличивающееся дерево принятия решений](./media/algorithm-parameters-optimize/fig2.png)
 

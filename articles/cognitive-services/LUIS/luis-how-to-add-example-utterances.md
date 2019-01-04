@@ -1,21 +1,22 @@
 ---
-title: Добавление примеров высказываний в приложения LUIS
-titleSuffix: Azure Cognitive Services
-description: Сведения о добавлении фрагментов речи в приложения службы "Распознавание речи" (LUIS).
+title: Добавление примеров высказываний
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Примеры высказываний являются примерами текста пользовательских вопросов или команд. Для обучения службы "Распознавание речи" (LUIS) необходимо добавить примеры высказываний в намерение.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 10/24/2018
+ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: caf8628569481149ee41e8253f4759e15e49150f
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 33c941f84952faca1961bb65687b4098b837a2fd
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50139129"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53139179"
 ---
 # <a name="add-an-entity-to-example-utterances"></a>Добавление сущности к примерам высказываний 
 
@@ -89,7 +90,7 @@ Does John Smith work in Seattle?
 
 1. Введите название составной сущности в раскрывающем списке.
 
-    ![Снимок экрана ввода имени сущности](./media/luis-how-to-add-example-utterances/hr-create-composite-2.png)
+    ![Снимок экрана с примером, показывающим как ввести название составной сущности в раскрывающемся списке](./media/luis-how-to-add-example-utterances/hr-create-composite-2.png)
 
     Если правильно создать программу-оболочку сущности, зеленая линия находится под всей этой фразой.
 
@@ -117,7 +118,7 @@ Does John Smith work in Seattle?
 
 1. Слово в высказывании было помечено иерархической родительской сущностью. Необходимо назначить слово дочерней сущности. Вернитесь к высказыванию на странице сведений о намерении. Выделите слово, а затем из раскрывающегося списка выберите имя сущности, которую вы создали, и перейдите в меню справа, чтобы выбрать необходимую дочернюю сущность.
 
-    ![Снимок экрана страницы сведений о намерениях с выделенной сущностью ToLocation](./media/luis-how-to-add-example-utterances/hr-hier-3.png)
+    ![Снимок экрана со страницей сведений о намерениях, где необходимо присвоить слово дочерней сущности](./media/luis-how-to-add-example-utterances/hr-hier-3.png)
 
     >[!CAUTION]
     >Имена дочерних сущностей должны быть уникальными для всех сущностей в одном приложении. Две разные иерархические сущности не могут содержать дочерние элементы с тем же именем. 
@@ -134,7 +135,7 @@ Does John Smith work in Seattle?
 
 При наличии несоответствия прогноза в поле сущности отображается **Состояние сущности** с красным восклицательным знаком. Чтобы просмотреть состояние сущности с информацией о различиях между помеченной и спрогнозированной сущностями, выберите **Состояние сущности**, а затем элемент справа.
 
-![Снимок экрана с несоответствием прогноза состояния сущности](./media/luis-how-to-add-example-utterances/entity-status.png)
+![Снимок экрана: выбор правильного элемента для устранения ошибки несоответствия прогнозирования](./media/luis-how-to-add-example-utterances/entity-status.png)
 
 Красная линия может отображаться в любом из следующих случаев:
 

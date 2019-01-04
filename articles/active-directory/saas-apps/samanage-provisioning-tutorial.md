@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке Samanage для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка Samanage для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в Samanage.
 services: active-directory
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/28/2018
 ms.author: v-wingf-msft
-ms.openlocfilehash: 53b78231dba4f525410f53dc1ae60901c67f043d
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: d3442710e1e1327dcafc1b4ed6617aeb7ff1bf0f
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52634512"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53322436"
 ---
-# <a name="tutorial-configure-samanage-for-automatic-user-provisioning"></a>Руководство по настройке Samanage для автоматической подготовки пользователей
+# <a name="tutorial-configure-samanage-for-automatic-user-provisioning"></a>Руководство. Настройка Samanage для автоматической подготовки пользователей
 
 В этом руководстве описаны шаги, которые нужно выполнить в Samanage и Azure Active Directory (Azure AD), чтобы настроить Azure AD для автоматической подготовки и отзыва пользователей и групп в Samanage.
 
@@ -76,7 +76,9 @@ ms.locfileid: "52634512"
 
 ### <a name="important-tips-for-assigning-users-to-samanage"></a>Важные советы по назначению пользователей в Samanage
 
-*   Рекомендуется назначить одного пользователя Azure AD в Samanage для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+*    Сейчас роли Samanage автоматически и динамически заполняются данными в пользовательском интерфейсе портала Azure. Прежде чем назначать пользователям роли Samanage, убедитесь, что начальная синхронизация с Samanage завершена, чтобы получить последние роли в клиенте Samanage.
+
+*    Рекомендуется назначить одного пользователя Azure AD в Samanage для тестирования исходной конфигурации автоматической подготовки пользователей. Дополнительные пользователи и (или) группы можно будет назначить позже, после успешного прохождения тестов.
 
 *   При назначении пользователя в Samanage в диалоговом окне назначения необходимо выбрать действительную роль для конкретного приложения (если доступно). Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
 

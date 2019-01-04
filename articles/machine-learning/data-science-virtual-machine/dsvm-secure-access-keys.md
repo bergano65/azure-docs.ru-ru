@@ -1,11 +1,12 @@
 ---
 title: Безопасное хранение учетных данных для доступа на виртуальной машине для обработки и анализа данных в Azure | Документация Майкрософт
-description: Описывается безопасное хранение учетных данных для доступа на виртуальной машине для обработки и анализа данных.
-keywords: глубинное обучение, ИИ, инструменты обработки и анализа данных, виртуальная машина для обработки и анализа данных, геопространственный анализ
+description: Описание безопасного хранения учетных данных для доступа на виртуальной машине для обработки и анализа данных. Вы узнаете, как использовать удостоверения управляемых служб и Azure Key Vault для хранения учетных данных доступа.
+keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
 documentationcenter: ''
 author: gopitk
 manager: cgronlun
+ms.custom: seodec18
 ms.assetid: ''
 ms.service: machine-learning
 ms.component: data-science-vm
@@ -15,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2018
 ms.author: gokuma
-ms.openlocfilehash: 1bf3150fc79f86e196be120fef78b76be8e47f63
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: d7d68e784aab371503e4828ce51387b86502de62
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49344512"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53103444"
 ---
 # <a name="store-access-credentials-on-the-data-science-virtual-machine-securely"></a>Безопасное хранение учетных данных для доступа на виртуальной машине для обработки и анализа данных
 

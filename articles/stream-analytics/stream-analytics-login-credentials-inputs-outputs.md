@@ -2,19 +2,19 @@
 title: Смена учетных данных для входа в заданиях Azure Stream Analytics
 description: В этой статье объясняется, как обновить учетные данные для приемников входных и выходных данных в заданиях Azure Stream Analytics.
 services: stream-analytics
-author: jasonwhowell
+author: mamccrea
 ms.author: mamccrea
-manager: kfile
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 01/11/2018
-ms.openlocfilehash: 362fdca3b9a54ea0a8785ae37b32b88cbe0f67ba
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.date: 12/07/2018
+ms.custom: seodec18
+ms.openlocfilehash: 14e24c1e9a61eb7ea73a949e17ffbf8c5b768f05
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50978780"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53099075"
 ---
 # <a name="rotate-login-credentials-for-inputs-and-outputs-of-a-stream-analytics-job"></a>Смена учетных данных для источников входных данных и мест назначения выходных данных задания Stream Analytics
 
@@ -27,20 +27,20 @@ ms.locfileid: "50978780"
 ### <a name="blob-storagetable-storage"></a>Хранилище больших двоичных объектов и табличное хранилище
 1. Перейдите на портал Azure, войдите в учетную запись хранения, используемую в качестве входной или выходной для задания Stream Analytics.    
 2. В разделе параметров щелкните **Ключи доступа**. Из двух ключей по умолчанию (key1, key2) выберите тот, который не используется заданием, и повторно создайте его:  
-   ![Повторное создание ключей для учетной записи хранения](media/stream-analytics-login-credentials-inputs-outputs/image1.png)
+   ![Повторное создание ключей для учетной записи хранения](media/stream-analytics-login-credentials-inputs-outputs/regenerate-storage-keys.png)
 3. Скопируйте созданный ключ.    
 4. На портале Azure найдите необходимое задание Stream Analytics, выберите **Stop** (Остановить) и дождитесь остановки задания.    
 5. Найдите входные или выходные данные хранилища BLOB-объектов или таблиц, для которых требуется обновить учетные данные.    
 6. Найдите поле **Ключ учетной записи хранения**, вставьте в него созданный ключ и щелкните **Сохранить**.    
 7. При сохранении изменений автоматически запускается проверка подключения. Вы можете увидеть это на вкладке уведомлений. Здесь отображается два уведомления (о сохранении обновления и тестировании соединения):  
-   ![Уведомления после редактирования ключа](media/stream-analytics-login-credentials-inputs-outputs/image4.png)
+   ![Уведомления после редактирования ключа](media/stream-analytics-login-credentials-inputs-outputs/edited-key-notifications.png)
 8. Перейдите к разделу [Запуск задания с момента последней остановки](#start-your-job-from-the-last-stopped-time).
 
 ### <a name="event-hubs"></a>Центры событий
 
 1. Перейдите на портал Azure и войдите в концентратор событий, используемый в качестве входного или выходного для задания Stream Analytics.    
 2. В разделе параметров щелкните **Политики общего доступа** и выберите необходимую политику доступа. На выбор предлагаются **первичный** и **вторичный** ключи. Выберите тот, который не используется заданием, и создайте его повторно:  
-   ![Повторное создание ключей для концентратора событий](media/stream-analytics-login-credentials-inputs-outputs/image2.png)
+   ![Повторное создание ключей для Центров событий Azure](media/stream-analytics-login-credentials-inputs-outputs/regenerate-event-hub-keys.png)
 3. Скопируйте созданный ключ.    
 4. На портале Azure найдите необходимое задание Stream Analytics, выберите **Stop** (Остановить) и дождитесь остановки задания.    
 5. Найдите входные или выходные данные концентраторов событий, для которых требуется обновить учетные данные.    
@@ -54,7 +54,7 @@ ms.locfileid: "50978780"
 
 1. Перейдите на портал Azure и войдите в базу данных SQL, используемую в качестве входной или выходной для задания Stream Analytics.    
 2. В разделе **Обозреватель данных** войдите в базу данных или подключитесь к ней, выберите тип авторизации **SQL server authentication** (Аутентификация SQL Server), введите **имя для входа** и **пароль**, затем щелкните **ОК**.  
-   ![Повторное создание учетных данных для базы данных SQL](media/stream-analytics-login-credentials-inputs-outputs/image3.png)
+   ![Повторное создание учетных данных для базы данных SQL](media/stream-analytics-login-credentials-inputs-outputs/regenerate-sql-credentials.png)
 
 3. На вкладке запросов измените пароль для одного из пользователей, выполнив следующий запрос (не забудьте заменить `<user_name>` на свое имя пользователя и `<new_password>` на свой новый пароль):  
 
@@ -79,7 +79,7 @@ ms.locfileid: "50978780"
 
 1. Перейдите к панели задания **Overview** (Общие сведения) и выберите **Start** (Запустить), чтобы запустить задание.    
 2. Выберите **Во время последней остановки** и щелкните **Start** (Запустить). Обратите внимание, что параметр "Во время последней остановки" отображается, только если задание запускалось ранее и были созданы выходные данные. Задание перезапускается на основе значения последних выходных данных.
-   ![Запуск задания](media/stream-analytics-login-credentials-inputs-outputs/image5.png)
+   ![Запуск задания Stream Analytics](media/stream-analytics-login-credentials-inputs-outputs/start-stream-analytics-job.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Введение в Azure Stream Analytics](stream-analytics-introduction.md)

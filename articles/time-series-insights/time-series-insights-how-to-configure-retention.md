@@ -1,5 +1,5 @@
 ---
-title: Как настроить период удержания в среде службы "Аналитики временных рядов Azure" | Документация Майкрософт
+title: Конфигурация службы "Аналитика временных рядов Azure". Как настроить период удержания в среде службы "Аналитика временных рядов Azure" | Документация Майкрософт
 description: В этом руководстве описано, как настроить период удержания в среде службы "Аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
@@ -10,12 +10,13 @@ ms.reviewer: jasonh, kfile, anshan
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 02/09/2018
-ms.openlocfilehash: a87a12e08e78cf8a7f0b4d2af3e8029b233cf02b
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.custom: seodec18
+ms.openlocfilehash: 2822f99b950a2adca5e097cfa937b7fd68e04a3e
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39629894"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53277919"
 ---
 # <a name="configuring-retention-in-time-series-insights"></a>Настройка периода удержания в службе "Аналитика временных рядов"
 В этой статье описывается, как настроить **время хранения данных** и **поведение при превышении размера хранилища** в службе "Аналитика временных рядов Azure".

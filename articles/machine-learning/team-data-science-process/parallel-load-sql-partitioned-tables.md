@@ -1,6 +1,6 @@
 ---
-title: Создание и оптимизация таблиц для быстрого параллельного импорта данных в SQL Server на виртуальной машине Azure | Документация Майкрософт
-description: Параллельный массовый импорт данных с использованием таблиц секционирования SQL
+title: Параллельный массовый импорт данных с использованием таблиц разделов SQL — командный процесс обработки и анализа данных
+description: Создание секционированных таблиц для быстрого параллельного массового импорта данных в базу данных SQL Server.
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -10,15 +10,15 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 11/09/2017
 ms.author: tdsp
-ms.custom: (previous author=deguhath, ms.author=deguhath)
-ms.openlocfilehash: f437de3043cbd3d689f85dc3524b419b1633553f
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
+ms.openlocfilehash: 25c79f15c11dcf84ab6b3e5946f17361a98737fa
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52446472"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53140257"
 ---
-# <a name="parallel-bulk-data-import-using-sql-partition-tables"></a>Параллельный массовый импорт данных с использованием таблиц секционирования SQL
+# <a name="build-and-optimize-tables-for-fast-parallel-import-of-data-into-a-sql-server-on-an-azure-vm"></a>Создание и оптимизация таблиц для быстрого параллельного импорта данных в SQL Server на виртуальной машине Azure
 
 В этой статье описывается создание секционированных таблиц для быстрого параллельного массового импорта данных в Базу данных SQL Server. При загрузке и передаче больших данных в базу данных SQL с помощью *секционированных таблиц и представлений* можно оптимизировать импорт информации в эту базу, а также выполнение последующих запросов. 
 

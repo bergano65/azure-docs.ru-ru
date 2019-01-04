@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ClearCompany | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ClearCompany | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ClearCompany.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 0463a89b8c320b31929bf5e0322079088c2cdeab
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 9cf5092dabf5649f4d063ce05dae169b90228378
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39054137"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52834100"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-clearcompany"></a>Руководство по интеграции Azure Active Directory с ClearCompany
+# <a name="tutorial-azure-active-directory-integration-with-clearcompany"></a>Руководство. Интеграция Azure Active Directory с ClearCompany
 
 В этом руководстве описано, как интегрировать ClearCompany с Azure Active Directory (Azure AD).
 
@@ -119,7 +119,7 @@ ms.locfileid: "39054137"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.clearcompany.com`
     
     > [!NOTE] 
-    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов ClearCompany](http://www.clearcompany.com/support). 
+    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов ClearCompany](https://www.clearcompany.com/support). 
 
 5. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -133,10 +133,10 @@ ms.locfileid: "39054137"
 
     ![Настройка ClearCompany](./media/clearcompany-tutorial/tutorial_clearcompany_configure.png) 
 
-8. Чтобы настроить единый вход на стороне **ClearCompany**, отправьте скачанный **сертификат в кодировке Base64** и **URL-адрес службы единого входа SAML** [группе поддержки ClearCompany](http://www.clearcompany.com/support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+8. Чтобы настроить единый вход на стороне **ClearCompany**, отправьте скачанный **сертификат в кодировке Base64** и **URL-адрес службы единого входа SAML** [группе поддержки ClearCompany](https://www.clearcompany.com/support). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -172,7 +172,7 @@ ms.locfileid: "39054137"
  
 ### <a name="create-a-clearcompany-test-user"></a>Создание тестового пользователя ClearCompany
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении ClearCompany. Обратитесь в [службу поддержки ClearCompany](http://www.clearcompany.com/support), чтобы добавить пользователей на платформу ClearCompany. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении ClearCompany. Обратитесь в  [службу поддержки ClearCompany](https://www.clearcompany.com/support) , чтобы добавить пользователей на платформу ClearCompany. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -209,7 +209,7 @@ ms.locfileid: "39054137"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку ClearCompany на панели доступа, вы автоматически войдете в приложение ClearCompany.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

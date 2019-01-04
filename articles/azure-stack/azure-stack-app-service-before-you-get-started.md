@@ -12,14 +12,14 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/13/2018
+ms.date: 12/11/2018
 ms.author: anwestg
-ms.openlocfilehash: 4f669d44582c47cc6c7c090627f957288fee0f1a
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: add4a7f1ce8133b5c3891f731fc98ee7fdb26ebd
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51615880"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275675"
 ---
 # <a name="before-you-get-started-with-app-service-on-azure-stack"></a>Подготовка к работе со службой приложений в Azure Stack
 
@@ -152,6 +152,12 @@ ms.locfileid: "51615880"
 | Формат | Пример |
 | --- | --- |
 | sso.appservice.\<регион\>.\<имя домена\>.\<расширение\> | sso.appservice.redmond.azurestack.external |
+
+
+### <a name="validate-certificates"></a>Проверка сертификатов
+Прежде чем развернуть поставщик ресурсов службы приложений, [проверьте сертификаты, которые будут использоваться](azure-stack-validate-pki-certs.md#perform-platform-as-a-service-certificate-validation) с помощью средства проверки готовности Azure Stack, доступного в [коллекции PowerShell](https://aka.ms/AzsReadinessChecker). Средство проверки готовности Azure Stack проверяет, подходят ли созданные сертификаты PKI для развертывания служб приложений. 
+
+При работе с любым необходимым [сертификатом Azure Stack PKI](azure-stack-pki-certs.md), рекомендуется запланировать достаточно времени для тестирования и повторной выдачи сертификатов, если необходимо. 
 
 ## <a name="virtual-network"></a>Виртуальная сеть
 
@@ -347,7 +353,7 @@ icacls %WEBSITES_FOLDER% /grant *S-1-1-0:(OI)(CI)(IO)(RA,REA,RD)
 | AzureStackAdminCredential | Обязательно | Null | Учетные данные администратора службы Azure AD. |
 | CertificateFilePath | Обязательно | Null | **Полный путь** к файлу сертификата приложения идентификации, созданному ранее. |
 | CertificatePassword | Обязательно | Null | Пароль, который помогает защитить закрытый ключ сертификата. |
-| Среда | Необязательно | AzureCloud; | Имя поддерживаемой облачной среды, в которой доступна целевая служба Azure Active Directory Graph.  Доступные значения: "AzureCloud", "AzureChinaCloud", "AzureUSGovernment", "AzureGermanCloud".|
+| Среда | Необязательно | AzureCloud; | Имя поддерживаемой облачной среды, в которой доступна целевая служба Azure Active Directory Graph.  Допустимые значения: AzureCloud, AzureChinaCloud, AzureUSGovernment, AzureGermanCloud.|
 
 ## <a name="create-an-active-directory-federation-services-application"></a>Создание приложения служб федерации Active Directory (AD FS)
 

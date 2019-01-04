@@ -1,6 +1,6 @@
 ---
-title: Индексирование хранилища таблиц Azure с помощью поиска Azure | Документы Майкрософт
-description: Вы можете узнать, как индексировать данные в хранилище таблиц Azure с помощью поиска Azure.
+title: Индексирование содержимого хранилища таблиц Azure для полнотекстового поиска — Поиск Azure
+description: Вы можете узнать, как индексировать данные в хранилище таблиц Azure с помощью Поиска Azure
 ms.date: 10/17/2018
 author: mgottein
 manager: cgronlun
@@ -9,12 +9,13 @@ services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
-ms.openlocfilehash: 738518f94869a55cf80db1c87b8c74b167f5cce1
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.custom: seodec2018
+ms.openlocfilehash: 39455669dd739309ac0201de49b390c2390e0067
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49406931"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53317276"
 ---
 # <a name="index-azure-table-storage-with-azure-search"></a>Индексирование хранилища таблиц Azure с помощью поиска Azure
 В этой статье показано, как использовать поиск Azure для индексирования данных в хранилище таблиц Azure.
@@ -29,7 +30,7 @@ ms.locfileid: "49406931"
 
 Здесь демонстрируется процесс работы с использованием REST API. 
 
-### <a name="step-1-create-a-datasource"></a>Шаг 1. Создание источника данных
+### <a name="step-1-create-a-datasource"></a>Шаг 1. Создание источника данных
 
 Источник данных определяет следующее: какие данные нужно индексировать, какие учетные данные требуются для доступа к этим данным, а также какие политики нужны, чтобы служба поиска Azure могла эффективно определять изменения в данных.
 
@@ -66,16 +67,16 @@ ms.locfileid: "49406931"
 
 Учетные данные для таблицы можно указать одним из описанных ниже способов. 
 
-- **Строка подключения учетной записи хранения с полным доступом**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` строку подключения можно получить на портале Azure, перейдя в раздел **Учетная запись хранения** > **Параметры** > **Ключи** (для классических учетных записей хранения) или **Параметры** > **Ключи доступа** (для учетных записей хранения Azure Resource Manager).
-- **Строка подключения с подписанным URL-адресом (SAS) учетной записи хранения**: `TableEndpoint=https://<your account>.table.core.windows.net/;SharedAccessSignature=?sv=2016-05-31&sig=<the signature>&spr=https&se=<the validity end time>&srt=co&ss=t&sp=rl` подписанный URL-адрес должен иметь разрешения "Список" и "Чтение" для контейнеров (в данном случае — таблиц) и объектов (строк таблицы).
--  **Подписанный URL-адрес таблицы**: `ContainerSharedAccessUri=https://<your storage account>.table.core.windows.net/<table name>?tn=<table name>&sv=2016-05-31&sig=<the signature>&se=<the validity end time>&sp=r` подписанный URL-адрес должен иметь разрешения на запрос (чтение) для таблицы.
+- **Строка подключения учетной записи хранения с полным доступом**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` Строку подключения можно получить на портале Azure, перейдя в **колонку учетной записи хранения** и щелкнув **Параметры** > **Ключи** (для классических учетных записей хранения) или **Параметры** > **Ключи доступа** (для учетных записей хранения Azure Resource Manager).
+- Строка подключения с **подписанным URL-адресом учетной записи хранения**: `TableEndpoint=https://<your account>.table.core.windows.net/;SharedAccessSignature=?sv=2016-05-31&sig=<the signature>&spr=https&se=<the validity end time>&srt=co&ss=t&sp=rl` Подписанный URL-адрес должен иметь разрешения "Список" и "Чтение" для контейнеров (в данном случае таблиц) и объектов (строк таблицы).
+-  **Подписанный URL-адрес таблицы**: `ContainerSharedAccessUri=https://<your storage account>.table.core.windows.net/<table name>?tn=<table name>&sv=2016-05-31&sig=<the signature>&se=<the validity end time>&sp=r` Подписанный URL-адрес должен иметь разрешения на запрос (чтение) для таблицы.
 
 Дополнительные сведения о подписанных URL-адресах хранения см. в разделе [Использование подписанных URL-адресов](../storage/common/storage-dotnet-shared-access-signature-part-1.md).
 
 > [!NOTE]
 > Если используются учетные данные на основе подписанного URL-адреса, нужно периодически обновлять учетные данные источника данных с помощью продленных подписей, чтобы не истек их срок действия. Если срок действия учетных данных на основе подписанного URL-адреса истек, индексатор выдает сообщение об ошибке "Credentials provided in the connection string are invalid or have expired" (Учетные данные, указанные в строке подключения, недействительны или устарели).  
 
-### <a name="step-2-create-an-index"></a>Шаг 2. Создание индекса
+### <a name="step-2-create-an-index"></a>Шаг 2. Создание индекса
 Индекс задает поля в документе, атрибуты и другие компоненты, которые определяют процедуру поиска.
 
 Создание индекса:
@@ -94,7 +95,7 @@ ms.locfileid: "49406931"
 
 Дополнительные сведения о создании индексов см. в статье [Создание индекса](https://docs.microsoft.com/rest/api/searchservice/create-index).
 
-### <a name="step-3-create-an-indexer"></a>Шаг 3. Создание индексатора
+### <a name="step-3-create-an-indexer"></a>Шаг 3. Создание индексатора
 Индексатор соединяет источник данных с целевым индексом поиска и предоставляет расписание для автоматизации обновления данных. 
 
 После создания индекса и источника данных можно создать индексатор:

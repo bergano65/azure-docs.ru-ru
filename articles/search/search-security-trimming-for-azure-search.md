@@ -1,19 +1,20 @@
 ---
-title: Фильтры безопасности для усечения результатов в службе "Поиск Azure" | Документация Майкрософт
+title: Фильтры безопасности для усечения результатов в службе "Поиск Azure"
 description: Управление доступом к содержимому службы "Поиск Azure" с помощью фильтров безопасности и удостоверений пользователей.
 ms.service: search
 ms.topic: conceptual
 services: search
 ms.date: 08/07/2017
-author: revitalbarletz
-ms.author: revitalb
+author: brjohnstmsft
+ms.author: brjohnst
 manager: jlembicz
-ms.openlocfilehash: dd26676b74431566b3631b8a79cd06bcf3022518
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.custom: seodec2018
+ms.openlocfilehash: 84147b250ea17df9af67cc8a9025cdf6ec59a705
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31792806"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53314233"
 ---
 # <a name="security-filters-for-trimming-results-in-azure-search"></a>Фильтры безопасности для усечения результатов в службе "Поиск Azure"
 
@@ -32,7 +33,7 @@ ms.locfileid: "31792806"
 >[!NOTE]
 > В этом документе не рассматривается процесс получения идентификаторов субъектов. Его следует узнать у поставщика службы идентификации.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается наличие [подписки Azure](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F), [службы поиска Azure](https://docs.microsoft.com/azure/search/search-create-service-portal) и [индекса поиска Azure](https://docs.microsoft.com/azure/search/search-create-index-portal).  
 

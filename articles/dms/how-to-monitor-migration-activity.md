@@ -10,13 +10,13 @@ ms.service: database-migration
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 10/09/2018
-ms.openlocfilehash: 8c30af5023cb83ee1f9ca0f41db5b7f977cc4bc7
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.date: 12/14/2018
+ms.openlocfilehash: a315e8b42ab8e0df659a3388a50fedf5dd3a54d2
+ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48883913"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53413070"
 ---
 # <a name="monitor-migration-activity"></a>Мониторинг действия миграции
 В этой статье вы узнаете, как отслеживать ход миграции на уровне базы данных и таблицы.
@@ -24,7 +24,7 @@ ms.locfileid: "48883913"
 ## <a name="monitor-at-the-database-level"></a>Мониторинг на уровне базы данных
 Чтобы отслеживать действие на уровне базы данных, просмотрите колонку уровня базы данных:
 
-![Колонка уровня базы данных](media\how-to-monitor-migration-activity\dms-database-level-blade.png)
+![Колонка уровня базы данных](media/how-to-monitor-migration-activity/dms-database-level-blade.png)
 
 > [!NOTE]
 > При выборе гиперссылки базы данных отобразится список таблиц и текущее состояние миграции.
@@ -104,7 +104,7 @@ ms.locfileid: "48883913"
 
 В нижней части колонки содержится список таблиц и отображается краткая сводка о ходе выполнения миграции.
 
-![Колонка уровня таблицы — краткая сводка](media\how-to-monitor-migration-activity\dms-table-level-blade-summary.png)
+![Колонка уровня таблицы — краткая сводка](media/how-to-monitor-migration-activity/dms-table-level-blade-summary.png)
 
 В следующей таблице описаны поля, отображаемые в сведениях на уровне таблицы.
 
@@ -123,9 +123,9 @@ ms.locfileid: "48883913"
 ## <a name="monitor-at-table-level--detailed-summary"></a>Мониторинг на уровне таблицы — подробная сводка
 Есть две вкладки, показывающие ход миграции в режиме полной загрузки и добавочной синхронизации данных.
     
-![Вкладка полной загрузки](media\how-to-monitor-migration-activity\dms-full-load-tab.png)
+![Вкладка полной загрузки](media/how-to-monitor-migration-activity/dms-full-load-tab.png)
 
-![Вкладка добавочной синхронизации данных](media\how-to-monitor-migration-activity\dms-incremental-data-sync-tab.png)
+![Вкладка добавочной синхронизации данных](media/how-to-monitor-migration-activity/dms-incremental-data-sync-tab.png)
 
 В следующей таблице описаны поля, показанные в ходе миграции на уровне таблицы.
 
@@ -136,7 +136,7 @@ ms.locfileid: "48883913"
 | **Обновление**. | Количество операций обновления CDC в строках, примененных к целевому объекту.      |
 | **Удалить**      | Количество операций удаления CDC в строках, примененных к целевому объекту. |
 | **Всего применено**      | Общее количество операций обновления, вставки и удаления CDC в строках, примененных к целевому объекту. |
-| **Ошибки данных** | Количество ошибок данных, случившихся в этой таблице. Примерами ошибок могут быть *511: Cannot create a row of size %d which is greater than the allowable maximum row size of %d, 8114: Error converting data type %ls to %ls.* (511: не удалось создать строку размером %d, который превышает допустимый размер строки — %d, 8114: ошибка преобразования типа данных %ls в %ls).  Клиенту нужно выполнить запрос из таблицы attms_apply_exceptions в целевом объекте Azure, чтобы просмотреть сведения об ошибке.    |
+| **Ошибки данных** | Количество ошибок данных, случившихся в этой таблице. Примерами ошибок могут быть *511: Cannot create a row of size %d which is greater than the allowable maximum row size of %d, 8114: Error converting data type %ls to %ls.* (511: не удалось создать строку размером %d, который превышает допустимый размер строки — %d, 8114: ошибка преобразования типа данных %ls в %ls).  Клиенту нужно выполнить запрос из таблицы dms_apply_exceptions в целевом объекте Azure, чтобы просмотреть сведения об ошибке.    |
 
 > [!NOTE]
 > Значения CDC полей операций вставки, обновления, удаления и поля "Всего применено" могут уменьшаться при прямой миграции базы данных или перезапуске миграции.

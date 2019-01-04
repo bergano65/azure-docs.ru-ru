@@ -9,31 +9,31 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 1c8c63e10e62af60e09af729b115cc675dae7205
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 3500a29c1cdd8b1997f67a3cf1918090dc4ca812
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51009408"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53383601"
 ---
-# <a name="install-and-use-solr-on-hdinsight-hadoop-clusters"></a>Установка и использование Solr на кластерах HDInsight Hadoop
+# <a name="install-and-use-apache-solr-on-hdinsight-hadoop-clusters"></a>Установка и использование Apache Solr в кластерах HDInsight Hadoop
 
-Узнайте, как установить Solr в Azure HDInsight с помощью действия сценария. Solr представляет собой многофункциональную платформу поиска и предоставляет возможности поиска корпоративного уровня на основе данных, управляемых Hadoop.
+Узнайте, как установить Apache Solr в Azure HDInsight с помощью действия сценария. Solr представляет собой многофункциональную платформу поиска и предоставляет возможности поиска корпоративного уровня на основе данных, управляемых Hadoop.
 
-> [!IMPORTANT]
-    > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
+> [!IMPORTANT]  
+> Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Пример скрипта, используемый в этом документе, устанавливает кластер Solr 4.9 с определенной конфигурацией. Если вы хотите настроить кластер Solr для использования других коллекций, сегментов, схем, реплик и т. п., необходимо соответствующим образом изменить сценарий и двоичные файлы Solr.
 
 ## <a name="whatis"></a>Что такое Solr
 
 [Apache Solr](http://lucene.apache.org/solr/features.html) — это корпоративная платформа поиска, предоставляющая многофункциональные инструменты полнотекстового поиска данных. Если Hadoop обеспечивает хранение огромных объемов данных и управление ими, то Apache Solr предоставляет возможности поиска для быстрого извлечения этих данных.
 
-> [!WARNING]
+> [!WARNING]   
 > Компоненты, поставляемые с кластером HDInsight, полностью поддерживаются корпорацией Майкрософт.
 >
-> Настраиваемые компоненты, такие как Solr, получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт не всегда имеет возможность устранить проблемы с пользовательскими компонентами. Может потребоваться обратиться за помощью к сообществу разработчиков открытого кода. Можно использовать ряд сайтов сообществ, например [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=hdinsight) или [http://stackoverflow.com](http://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты, например [Hadoop](http://hadoop.apache.org/) на сайте [http://apache.org](http://apache.org).
+> Настраиваемые компоненты, такие как Solr, получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт не всегда имеет возможность устранить проблемы с пользовательскими компонентами. Может потребоваться обратиться за помощью к сообществу разработчиков открытого кода. Вы можете использовать сайты сообществ, например: [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты ([http://apache.org](http://apache.org)), например [Hadoop](http://hadoop.apache.org/).
 
 ## <a name="what-the-script-does"></a>Что делает сценарий
 
@@ -54,12 +54,12 @@ ms.locfileid: "51009408"
 
 1. В разделе __Сводка кластера__ выберите __Дополнительные параметры__, а затем — __Действия скрипта__. Используйте следующие сведения, чтобы заполнить форму.
 
-   * **ИМЯ**: введите понятное имя для действия сценария.
+   * **Имя:** Введите понятное имя для действия сценария.
    * **URI СКРИПТА**: https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh
-   * **ГОЛОВНОЙ**: установите флажок.
-   * **Рабочая роль**: установите флажок.
-   * **ZooKeeper**: установите этот флажок для установки на узле Zookeeper.
-   * **ПАРАМЕТРЫ**: оставьте это поле пустым.
+   * **Головной узел.** Установите этот флажок.
+   * **Рабочая роль:** Установите этот флажок.
+   * **ZOOKEEPER:** Установите этот флажок, чтобы установить на узле Zookeeper.
+   * **Параметры:** Оставьте это поле пустым.
 
 2. В нижней части раздела **Действия скрипта** нажмите кнопку **Выбрать**, чтобы сохранить конфигурацию. Наконец, нажмите кнопку **Далее**, чтобы вернуться в колонку __Сводка кластера__.
 
@@ -67,7 +67,7 @@ ms.locfileid: "51009408"
 
 ## <a name="usesolr"></a>Как использовать Solr в HDInsight
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Действия, описанные в этом разделе, демонстрируют базовые функциональные возможности Solr. Дополнительные сведения об использовании Solr см. на [сайте Apache Solr](http://lucene.apache.org/solr/).
 
 ### <a name="index-data"></a>Данные индекса
@@ -76,7 +76,7 @@ ms.locfileid: "51009408"
 
 1. Подключитесь к кластеру HDInsight с помощью протокола SSH:
 
-    > [!NOTE]
+    > [!NOTE]  
     > Замените `sshuser` пользователем SSH для кластера. Замените `clustername` именем кластера.
 
     ```bash
@@ -85,7 +85,7 @@ ms.locfileid: "51009408"
 
     Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 
-     > [!IMPORTANT]
+     > [!IMPORTANT]  
      > В действиях, описанных ниже, для подключения к пользовательскому веб-интерфейсу Solr используется туннель SSH. Чтобы выполнить эти действия, необходимо установить туннель SSH и настроить браузер для его использования.
      >
      > Дополнительные сведения см. в документе [Использование туннелирования SSH для доступа к веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим веб-интерфейсам](hdinsight-linux-ambari-ssh-tunnel.md).
@@ -316,11 +316,11 @@ sudo start solr
     hdfs dfs -put snapshot.20150806185338855.tgz /example/data
     ```
 
-Дополнительные сведения о резервном копировании и восстановлении Solr см. по ссылке [https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups).
+Дополнительные сведения о резервном копировании и восстановлении Apache Solr см. по ссылке [https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Установка Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install-linux.md). Используйте настройки кластера для установки Giraph в кластерах HDInsight Hadoop. Giraph позволяет выполнять обработку графов с использованием Hadoop и может использоваться с Azure HDInsight.
+* [Установка Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов](hdinsight-hadoop-giraph-install-linux.md). Используйте настройки кластера для установки Giraph в кластерах HDInsight Hadoop. Giraph позволяет выполнять обработку графов с использованием Hadoop и может использоваться с Azure HDInsight.
 
 * [Установка Hue в кластерах HDInsight](hdinsight-hadoop-hue-linux.md). Установить Hue в кластерах HDInsight Hadoop можно при помощи настройки кластера. Hue — это набор веб-приложений, используемых для взаимодействия с кластером Hadoop.
 

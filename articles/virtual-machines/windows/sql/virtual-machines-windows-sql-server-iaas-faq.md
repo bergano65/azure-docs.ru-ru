@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 07/12/2018
 ms.author: v-shysun
-ms.openlocfilehash: edfd2e9e03aefa4833c8472a43d4857f08b95780
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 0956d9bdbf6390f2d64f15ca267545ca15289a46
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52495477"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53339405"
 ---
 # <a name="frequently-asked-questions-for-sql-server-running-on-windows-virtual-machines-in-azure"></a>Часто задаваемые вопросы об SQL Server на виртуальных машинах Windows в Azure
 
@@ -112,7 +112,7 @@ ms.locfileid: "52495477"
 
 1. **Возможно ли зарегистрировать самостоятельно развернутые виртуальные машины SQL Server в поставщике ресурсов виртуальной машины SQL?**
 
-   Да. Если вы развернули SQL Server с вашего собственного носителя, вы можете зарегистрировать виртуальную машину SQL в поставщике ресурсов, чтобы получить преимущества управления, предоставляемые расширением SQL IaaS. Однако вы не можете преобразовать самостоятельно развернутую виртуальную машину SQL в PAYG. 
+   Да. Если вы развернули SQL Server с собственного носителя и установили расширение SQL IaaS, вы можете зарегистрировать виртуальную машину SQL в поставщике ресурсов, чтобы получить преимущества управления, предоставляемые расширением SQL IaaS. Однако вы не можете преобразовать самостоятельно развернутую виртуальную машину SQL в виртуальную машину с оплатой по мере использования.  
 
 ## <a name="administration"></a>Администрирование
 
@@ -153,7 +153,7 @@ ms.locfileid: "52495477"
 
 1. **В чем разница между виртуальными машинами SQL и службой "База данных SQL"?**
 
-   По существу выполнение SQL Server в виртуальной машине Azure не отличается от выполнения SQL Server в удаленном центре данных. В свою очередь, служба [База данных SQL](../../../sql-database/sql-database-technical-overview.md) предлагается на основе модели "база данных как услуга". При использовании Базы данных SQL у вас нет доступа к компьютерам, на которых размещаются ваши базы данных. Полное сравнение доступно в статье [Вы можете выбрать компонент SQL Server в облаке: база данных SQL Azure (PaaS) или SQL Server на виртуальных машинах Azure (IaaS)](../../../sql-database/sql-database-paas-vs-sql-server-iaas.md).
+   По существу выполнение SQL Server в виртуальной машине Azure не отличается от выполнения SQL Server в удаленном центре данных. В свою очередь, служба [База данных SQL](../../../sql-database/sql-database-technical-overview.md) предлагается на основе модели "база данных как услуга". При использовании Базы данных SQL у вас нет доступа к компьютерам, на которых размещаются ваши базы данных. Полное сравнение см. в разделе [Выбор компонента SQL Server в облаке: база данных SQL Azure (PaaS) или SQL Server на виртуальных машинах Azure (IaaS)](../../../sql-database/sql-database-paas-vs-sql-server-iaas.md).
 
 1. **Как установить SQL Server Data Tools в виртуальной машине Azure?**
 

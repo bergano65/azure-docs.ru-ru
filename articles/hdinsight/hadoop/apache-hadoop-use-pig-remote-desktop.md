@@ -9,22 +9,22 @@ ms.topic: conceptual
 ms.date: 01/17/2017
 ms.author: hrasheed
 ROBOTS: NOINDEX
-ms.openlocfilehash: 9ab3c5399263e301760b7822488fe00145149d2a
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 69eeadd8252d20dd25ac6d0abbbf0c6c158383d5
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633348"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53438631"
 ---
 # <a name="run-apache-pig-jobs-from-a-remote-desktop-connection"></a>Выполнение заданий Apache Pig через подключение к удаленному рабочему столу
 [!INCLUDE [pig-selector](../../../includes/hdinsight-selector-use-pig.md)]
 
 Этот документ содержит пошаговые инструкции по использованию команды Apache Pig для выполнения операторов Pig Latin через подключение к удаленному рабочему столу, установленное с кластером HDInsight для Windows. Pig Latin позволяет создавать приложения MapReduce, описывая преобразования данных, а не функции сопоставления и приведения.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Удаленный рабочий стол доступен только в кластерах HDInsight под управлением операционной системы Windows. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 >
-> При использовании HDInsight 3.4 или более поздней версии см. сведения о выполнении интерактивных заданий Pig непосредственно в кластере из командной строки: [Use Pig with HDInsight and SSH](apache-hadoop-use-pig-ssh.md) (Использование Pig в HDInsight с помощью SSH).
+> При использовании HDInsight 3.4 или более поздней версии ознакомьтесь со сведениями о выполнении интерактивных заданий Pig непосредственно в кластере из командной строки: [Use Apache Pig with HDInsight and SSH](apache-hadoop-use-pig-ssh.md) (Использование Apache Pig в HDInsight с помощью SSH).
 
 ## <a id="prereq"></a>Предварительные требования
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее.
@@ -78,7 +78,7 @@ ms.locfileid: "51633348"
 
         STORE RESULT into 'wasb:///example/data/pigout'
 
-   > [!NOTE]
+   > [!NOTE]  
    > Данные хранятся в указанном каталоге в файлах с именем **part-№№№№№**. Если каталог уже существует, появится сообщение об ошибке.
    >
    >
@@ -119,9 +119,9 @@ ms.locfileid: "51633348"
 ## <a id="nextsteps"></a>Дальнейшие действия
 Общая информация о Pig в HDInsight:
 
-* [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md)
+* [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight:
 
-* [Использование Hive с Hadoop в HDInsight](hdinsight-use-hive.md)
-* [Использование MapReduce с Hadoop в HDInsight](hdinsight-use-mapreduce.md)
+* [Использование Apache Hive с Apache Hadoop в HDInsight](hdinsight-use-hive.md)
+* [Использование MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)

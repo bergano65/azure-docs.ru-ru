@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 4b565252c78bfe2194530d840651a57df2686728
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: a7b657d11e829d636063639e26a90d671a5d1473
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633179"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53438359"
 ---
 # <a name="run-apache-sqoop-jobs-with-hadoop-in-hdinsight-with-curl"></a>Запуск заданий Apache Sqoop с Hadoop в HDInsight с помощью Curl
 [!INCLUDE [sqoop-selector](../../../includes/hdinsight-selector-use-sqoop.md)]
@@ -26,17 +26,19 @@ Curl используется для демонстрации возможнос
 ## <a name="prerequisites"></a>Предварительные требования
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-* Выполните инструкции, приведенные в статье [Использование Sqoop с Hadoop в HDInsight](hdinsight-use-sqoop.md#create-cluster-and-sql-database), чтобы настроить среду с помощью кластера HDInsight и базы данных SQL Azure.
-* [Curl](http://curl.haxx.se/). Curl — это средство для передачи данных в кластер HDInsight или из него.
-* [jq](http://stedolan.github.io/jq/). Служебная программа jq используется для обработки данных JSON, возвращаемых запросами REST.
 
-## <a name="submit-sqoop-jobs-by-using-curl"></a>Отправка заданий Sqoop с помощью Curl
-> [!NOTE]
+* Выполните указания в статье [Использование Sqoop с Hadoop в HDInsight](hdinsight-use-sqoop.md#create-cluster-and-sql-database), чтобы настроить среду с использованием кластера HDInsight и базы данных SQL Azure.
+* [Curl](https://curl.haxx.se/). Curl — это средство для передачи данных в кластер HDInsight или из него.
+* [jq](https://stedolan.github.io/jq/). Служебная программа jq используется для обработки данных JSON, возвращаемых запросами REST.
+
+
+## <a name="submit-apache-sqoop-jobs-by-using-curl"></a>Отправка заданий Sqoop с помощью cURL
+> [!NOTE]  
 > При использовании Curl или любых других средств связи REST с WebHCat нужно выполнять аутентификацию запросов с помощью пароля и имени пользователя администратора кластера HDInsight. Имя кластера необходимо также использовать в составе универсального кода ресурса (URI), используемого для отправки запросов на сервер.
 > 
 > В командах, описанных в этом разделе, замените **USERNAME** на имя пользователя для выполнения проверки подлинности в кластере, а **PASSWORD** — на пароль учетной записи пользователя. Замените **CLUSTERNAME** именем кластера.
 > 
-> REST API защищен с помощью [обычной проверки подлинности](http://en.wikipedia.org/wiki/Basic_access_authentication). Чтобы обеспечить безопасную отправку учетных данных на сервер, все запросы следует отправлять с помощью протокола HTTPS.
+> REST API защищен с помощью [обычной проверки подлинности](https://en.wikipedia.org/wiki/Basic_access_authentication). Чтобы обеспечить безопасную отправку учетных данных на сервер, все запросы следует отправлять с помощью протокола HTTPS.
 > 
 > 
 
@@ -88,10 +90,9 @@ Curl используется для демонстрации возможнос
 
     Если задание завершено, у него будет состояние **SUCCEEDED**(Успешно).
    
-   > [!NOTE]
+   > [!NOTE]  
    > Этот запрос Curl возвращает документ нотации объектов JavaScript с информацией о задании. При этом jq используется только для получения значения состояния.
-   > 
-   > 
+
 4. После изменения состояния задания на **SUCCEEDED** результаты задания можно получить из хранилища больших двоичных объектов Azure. Параметр `statusdir`, передаваемый с запросом, содержит расположение выходного файла. В нашем примере это **wasb:///example/data/sqoop/curl**. При использовании этого адреса выходные данные задания сохраняются в каталоге **example/data/sqoop/curl** в контейнере хранилища, используемом по умолчанию кластером HDInsight.
    
     Портал Azure можно использовать для доступа к большим двоичным объектам stderr и stdout.  Также можно использовать Microsoft SQL Server Management Studio для проверки данных, передаваемых в таблицу log4jlogs.
@@ -103,25 +104,25 @@ Curl используется для демонстрации возможнос
 ## <a name="summary"></a>Сводка
 Как показано в этом документе, для запуска, мониторинга и просмотра результатов выполнения заданий Sqoop в кластере HDInsight можно использовать необработанные HTTP-запросы.
 
-Дополнительную информацию об интерфейсе REST, используемом в этой статье, см. в <a href="https://sqoop.apache.org/docs/1.99.3/RESTAPI.html" target="_blank">справочнике по Sqoop REST API</a>.
+Дополнительную информацию об интерфейсе REST, используемом в этой статье, см. в <a href="https://sqoop.apache.org/docs/1.99.3/RESTAPI.html" target="_blank">справочнике по REST API Sqoop</a>.
 
 ## <a name="next-steps"></a>Дополнительная информация
 Общая информация об использовании Hive в HDInsight:
 
-* [Использование Sqoop с Hadoop в HDInsight (Windows)](hdinsight-use-sqoop.md)
+* [Использование Apache Sqoop с Hadoop в HDInsight](hdinsight-use-sqoop.md)
 
 Дополнительная информация о других способах работы с Hadoop в HDInsight.
 
-* [Использование Hive с Hadoop в HDInsight](hdinsight-use-hive.md)
-* [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md)
-* [Использование MapReduce с Hadoop в HDInsight](hdinsight-use-mapreduce.md)
+* [Использование Apache Hive с Apache Hadoop в HDInsight](hdinsight-use-hive.md)
+* [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)
+* [Использование MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)
 
 Другие статьи об HDInsight, в которых используется curl:
  
-* [Создание кластеров Hadoop с помощью Azure REST API](../hdinsight-hadoop-create-linux-clusters-curl-rest.md)
-* [Выполнение запросов Hive с Hadoop в HDInsight с помощью REST](apache-hadoop-use-hive-curl.md)
-* [Выполнение заданий MapReduce с помощью REST в Hadoop в HDInsight](apache-hadoop-use-mapreduce-curl.md)
-* [Выполнение запросов Pig с помощью cURL с использованием Hadoop в HDInsight](apache-hadoop-use-pig-curl.md)
+* [Создание кластеров Apache Hadoop с помощью REST API Azure](../hdinsight-hadoop-create-linux-clusters-curl-rest.md)
+* [Выполнение запросов Apache Hive в Apache Hadoop в HDInsight с использованием REST](apache-hadoop-use-hive-curl.md)
+* [Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST](apache-hadoop-use-mapreduce-curl.md)
+* [Выполнение заданий Pig с помощью cURL с использованием Apache Hadoop в HDInsight](apache-hadoop-use-pig-curl.md)
 
 
 

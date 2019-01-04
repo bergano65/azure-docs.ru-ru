@@ -7,14 +7,14 @@ author: ggailey777
 manager: jeconnoc
 ms.service: azure-functions
 ms.topic: conceptual
-ms.date: 07/18/2018
+ms.date: 12/03/2018
 ms.author: glenga
-ms.openlocfilehash: a92a4183962f71005577478bf27df9b5fb945acf
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 83e5a15d8a7f9c01f6a180ebceb715600b8a39db
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634368"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52849485"
 ---
 # <a name="ip-addresses-in-azure-functions"></a>IP-адреса в Функциях Azure
 
@@ -88,13 +88,13 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 
 ## <a name="inbound-ip-address-changes"></a>Изменения входящего IP-адреса
 
- Входящий IP-адрес **может** измениться, если вы:
+Входящий IP-адрес **может** измениться, если вы:
 
 - удалите приложение-функцию и создадите его заново в другой группе ресурсов;
 - удалите последнее приложение-функцию с некоторым сочетанием группы ресурсов и региона и создадите его заново;
 - удалите привязку SSL, например, во время [обновления сертификата](../app-service/app-service-web-tutorial-custom-ssl.md#renew-certificates).
 
-Входящий IP-адрес также может измениться, если вы не выполнили какие-либо действия, например, из перечисленных.
+При первом запуске приложения-функции в рамках [плана потребления](functions-scale.md#consumption-plan) входящий IP-адрес также может измениться, если вы не выполнили какие-либо действия, например, из перечисленных.
 
 ## <a name="outbound-ip-address-changes"></a>Изменения исходящих IP-адресов
 
@@ -103,7 +103,7 @@ az webapp show --resource-group <group_name> --name <app_name> --query possibleO
 * выполните какое-либо действие, которое может изменить входящий IP-адрес;
 * измените ценовую категорию для плана служб приложений. Список всех возможных исходящих IP-адресов приложения для всех ценовых категорий указан в свойстве `possibleOutboundIPAddresses`. См. также раздел [Поиск исходящих IP-адресов](#find-outbound-ip-addresses).
 
-Входящий IP-адрес также может измениться, если вы не выполнили какие-либо действия, например, из перечисленных.
+При работе приложений-функций в рамках [плана потребления](functions-scale.md#consumption-plan) входящий IP-адрес также может измениться, если вы не выполнили какие-либо действия, например, из перечисленных.
 
 Чтобы принудительно изменить исходящий IP-адрес, сделайте следующее.
 

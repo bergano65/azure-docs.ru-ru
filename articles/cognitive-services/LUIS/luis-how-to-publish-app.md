@@ -1,21 +1,22 @@
 ---
-title: Публикация приложения LUIS в конечной точке прогнозирования
+title: Публикация приложения
 titleSuffix: Azure Cognitive Services
 description: После завершения создания и проверки рабочего приложения LUIS, сделайте его доступным для приложения клиента путем его публикации в конечной точке.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 6eb48fd0f3290fbc3a249bc3880c809ace9f9ddb
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 73788b05cad3abac19b1ef509f1250542d10dba2
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48886503"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53136653"
 ---
 # <a name="publish-your-trained-app"></a>Публикация обученного приложения
 
@@ -37,7 +38,7 @@ ms.locfileid: "48886503"
 
 При успешной публикации приложения в верхней части браузера появится зеленое уведомление. На зеленую панель уведомлений также добавлена ссылка на конечную точку. 
 
-![Всплывающее окно публикации](./media/luis-how-to-publish-app/publish-success.png)
+![Всплывающее окно публикации со ссылкой на конечную точку](./media/luis-how-to-publish-app/publish-success.png)
 
 Если требуется узнать URL-адрес конечной точки, выберите ссылку. Чтобы получить URL-адрес конечной точки, в верхнем меню выберите **Управление**, а затем в меню слева выберите **Keys and Endpoints** (Ключи и конечные точки). 
 

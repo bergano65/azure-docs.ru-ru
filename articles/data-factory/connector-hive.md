@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/19/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 379cc5412d317680afa9b03f0eea60c7f1a3b60d
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 9402be4045b9b3113623cfe3e441c944f62296cc
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37051096"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53079388"
 ---
 # <a name="copy-data-from-hive-using-azure-data-factory"></a>Копирование данных из Hive с помощью фабрики данных Azure 
 
@@ -42,12 +42,12 @@ ms.locfileid: "37051096"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Hive**. | Yes |
+| Тип | Свойству type необходимо задать следующее значение: **Hive** | Yes |
 | host | IP-адрес или имя узла сервера Hive, разделенные ";" для нескольких узлов (только при включенном режиме serviceDiscoveryMode).  | Yes |
 | порт | TCP-порт, используемый сервером Hive для прослушивания клиентских подключений. При подключении к Azure HDInsights укажите порт 443. | Yes |
-| serverType | Тип сервера Hive. <br/>Допустимые значения: **HiveServer1**, **HiveServer2**, **HiveThriftServer**. | Нет  |
+| serverType | Тип сервера Hive. <br/>Допустимые значения: **HiveServer1**, **HiveServer2**, **HiveThriftServer** | Нет  |
 | thriftTransportProtocol | Транспортный протокол для использования в слое Thrift. <br/>Допустимые значения: **Binary**, **SASL**, **HTTP** | Нет  |
-| authenticationType | Метод проверки подлинности, используемый для доступа к серверу Hive. <br/>Допустимые значения: **Anonymous**, **Username**, **UsernameAndPassword**, **WindowsAzureHDInsightService**. | Yes |
+| authenticationType | Метод проверки подлинности, используемый для доступа к серверу Hive. <br/>Допустимые значения: **Anonymous**, **Username**, **UsernameAndPassword**, **WindowsAzureHDInsightService** | Yes |
 | serviceDiscoveryMode | Значение true, если служба ZooKeeper используется, значение false — если нет.  | Нет  |
 | zooKeeperNameSpace | Пространство имен на ZooKeeper, в которое добавлены 2 узла сервера Hive.  | Нет  |
 | useNativeQuery | Определяет, использует ли драйвер собственные запросы HiveQL или преобразует их в эквивалентную форму в HiveQL.  | Нет  |
@@ -86,7 +86,12 @@ ms.locfileid: "37051096"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). Этот раздел содержит список свойств, поддерживаемых набором данных Hive.
 
-Чтобы скопировать данные из Hive, установите свойство типа набора данных **HiveObject**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные из Hive, установите свойство типа набора данных **HiveObject**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Для свойства type набора данных необходимо задать следующее значение: **HiveObject** | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -98,7 +103,8 @@ ms.locfileid: "37051096"
         "linkedServiceName": {
             "referenceName": "<Hive linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -113,8 +119,8 @@ ms.locfileid: "37051096"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **HiveSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Yes |
+| Тип | Свойство type источника действия копирования должно иметь следующее значение: **HiveSource** | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

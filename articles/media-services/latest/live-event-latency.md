@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 11/16/2018
 ms.author: juliako
-ms.openlocfilehash: a74f2e53127b506f42ff49018c3df2985396646d
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: b167d3424d520cf8be515eec9d495164dd9785ab
+ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52619828"
+ms.lasthandoff: 11/30/2018
+ms.locfileid: "52682101"
 ---
 # <a name="liveevent-latency-in-media-services"></a>Задержка LiveEvent в Службах мультимедиа
 
@@ -43,7 +43,7 @@ LiveEvent liveEvent = new LiveEvent(
             streamOptions: new List<StreamOptionsFlag?>()
             {
                 // Set this to Default or Low Latency
-                // To use low latency optimally, you should tune your encoder settings down to 1 second GOP size instead of 2 seconds.
+                // To use low latency optimally, you should tune your encoder settings down to 1 second "Group Of Pictures" (GOP) length instead of 2 seconds.
                 StreamOptionsFlag.LowLatency
             }
         );
@@ -51,14 +51,23 @@ LiveEvent liveEvent = new LiveEvent(
 
 Полный пример см. здесь: [MediaV3LiveApp](https://github.com/Azure-Samples/media-services-v3-dotnet-core-tutorials/blob/master/NETCore/Live/MediaV3LiveApp/Program.cs#L126).
 
-## <a name="pass-through-liveevents-latency"></a>Сквозная задержка LiveEvents
+## <a name="liveevents-latency"></a>Задержка LiveEvents
 
-В следующей таблице приведены результаты настройки задержки (установленный флаг LowLatency) в Службах мультимедиа. Задержка измеряется с момента, когда веб-канал входного потока достигает службы, и до момента, когда игрок может запросить воспроизведение.
+В следующих таблицах приведены результаты настройки задержки (установленный флаг LowLatency) в Службах мультимедиа. Задержка измеряется с момента, когда веб-канал входного потока достигает службы, и до момента, когда проигрыватель может запросить воспроизведение. Чтобы оптимально использовать низкую задержку, в параметрах кодировщика задайте для длительности группы изображений (GOP) значение менее 1 секунды. Если задать меньшую длительность GOP, вы уменьшите использование пропускной способности и скорость при одинаковой частоте кадров. Это особенно подходит для видео, где меньше движения.
+
+### <a name="pass-through"></a>Сквозной режим 
 
 ||Включена двухсекундная GOP с малой задержкой|Включена односекундная GOP с малой задержкой|
 |---|---|---|
 |DASH в AMP|10 с|8 с|
 |HLS на собственном проигрывателе iOS|14 с|10 с|
+
+### <a name="live-encoding"></a>Кодирование в реальном времени
+
+||Включена двухсекундная GOP с малой задержкой|Включена односекундная GOP с малой задержкой|
+|---|---|---|
+|DASH в AMP|14 с|10 с|
+|HLS на собственном проигрывателе iOS|18 с|13 с|
 
 > [!NOTE]
 > Значение сквозной задержки может зависеть от условий локальной сети или наличия уровня кэширования CDN. Следует протестировать используемые конфигурации.

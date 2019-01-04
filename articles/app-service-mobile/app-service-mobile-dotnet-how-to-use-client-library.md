@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: crdun
-ms.openlocfilehash: 4709d3afce890941689396200347b3212d85159d
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 30eb458b9d0584b467479163d8312d7bd5456be1
+ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51280866"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53409740"
 ---
 # <a name="how-to-use-the-managed-client-for-azure-mobile-apps"></a>Использование управляемого клиента для мобильных приложений Azure
 [!INCLUDE [app-service-mobile-selector-client-library](../../includes/app-service-mobile-selector-client-library.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "51280866"
 В этом руководстве показано, как реализовать типичные сценарии с использованием управляемой клиентской библиотеки для мобильных приложений службы приложений Azure в приложениях Windows и Xamarin. Если вы не знакомы с мобильными приложениями, рекомендуем сначала прочитать [краткое руководство по мобильным приложениям Azure][1]. В данном руководстве мы сосредоточимся на управляемом пакете SDK клиентской части. Дополнительные сведения о серверных пакетах SDK для мобильных приложений см. в документации по [серверному пакету SDK для .NET][2] или [серверному пакету SDK для Node.js][3].
 
 ## <a name="reference-documentation"></a>Справочная документация
-Справочная документация по клиентскому пакету SDK находится в [справочнике по клиенту мобильных приложений Azure для .NET][4].
+Справочную документацию по пакету SDK для клиента см. здесь: [справочник по клиенту .NET для мобильный приложений Azure][4].
 Несколько примеров клиентов доступно в [репозитории GitHub с примерами Azure][5].
 
 ## <a name="supported-platforms"></a>Поддерживаемые платформы
@@ -64,7 +64,7 @@ public class TodoItem
 
 Дополнительные сведения о создании таблиц в серверной части мобильных приложений см. в статье [Работа с пакетом SDK для внутреннего сервера .NET для мобильных приложений Azure][7] или [Использование пакета SDK Node.js для мобильных приложений Azure][8]. При создании серверной части мобильного приложения на портале Azure с помощью краткого руководства можно использовать параметр **Простые таблицы** на [портал Azure].
 
-### <a name="how-to-install-the-managed-client-sdk-package"></a>Практическое руководство. Установка пакета SDK для управляемого клиента
+### <a name="how-to-install-the-managed-client-sdk-package"></a>Практическое руководство: Установка пакета SDK для управляемого клиента
 Используйте один из следующих методов установки пакета SDK для управляемого клиента для мобильных приложений с сайта [NuGet][9].
 
 * **Visual Studio**. Щелкните правой кнопкой мыши свой проект, выберите пункт **Управление пакетами NuGet**, найдите пакет `Microsoft.Azure.Mobile.Client` и нажмите кнопку **Установить**.
@@ -520,8 +520,8 @@ PullOptions pullOptions = new PullOptions
 1. В Visual Studio щелкните правой кнопкой мыши решение, выберите пункт **Управление пакетами NuGet для решения…**, а затем найдите и установите пакет NuGet **Microsoft.Azure.Mobile.Client.SQLiteStore** для всех проектов в решении.
 2. (Необязательный шаг.) Чтобы обеспечить поддержку устройств Windows, установите один из следующих пакетов среды выполнения SQLite:
 
-   * **Среда выполнения Windows 8.1**: установите [SQLite для Windows 8.1][3].
-   * **Windows Phone 8.1**: установите [SQLite для Windows Phone 8.1][4].
+   * **Среда выполнения Windows 8.1**: установите [SQLite для Windows 8.1][3].
+   * **Windows Phone 8.1**: установите [SQLite для Windows Phone 8.1][4].
    * **Универсальная платформа Windows**: установите [SQLite для универсальной платформы Windows][5].
 3. (необязательно). Для устройств с Windows щелкните правой кнопкой мыши **Ссылки** > **Добавить ссылку…**, разверните папку **Windows** > **Расширения**, а затем включите соответствующий пакет SDK **SQLite для Windows** и пакет SDK **среды выполнения Visual C++ 2013 для Windows**.
     Имена пакетов SDK для SQLite немного отличаются в зависимости от версии платформы Windows.
@@ -624,7 +624,7 @@ var result = await client.InvokeApiAsync<MarkAllResult>("completeAll", System.Ne
 InvokeApiAsync можно использовать для вызова любого веб-API, включая веб-API, не определенные с помощью мобильных приложений Azure.  При использовании InvokeApiAsync() в запросе отправляются соответствующие заголовки, включая заголовки аутентификации.
 
 ## <a name="authentication"></a>Аутентификация пользователей
-Мобильные приложения поддерживают аутентификацию и авторизацию пользователей с помощью различных внешних поставщиков удостоверений: Facebook, Google, учетной записи Майкрософт, Twitter и Azure Active Directory. Можно задать разрешения таблиц, чтобы предоставить доступ к определенным операциям только пользователям, прошедшим проверку подлинности. Удостоверения пользователей, прошедших проверку подлинности, также можно применять для реализации правил авторизации в серверных скриптах. Дополнительные сведения см. в учебнике [Добавление аутентификации в приложение].
+Мобильные приложения поддерживают аутентификацию и авторизацию пользователей с помощью различных внешних поставщиков удостоверений, таких как: Facebook, Google, учетная запись Майкрософт, Twitter и Azure Active Directory. Можно задать разрешения таблиц, чтобы предоставить доступ к определенным операциям только пользователям, прошедшим проверку подлинности. Удостоверения пользователей, прошедших проверку подлинности, также можно применять для реализации правил авторизации в серверных скриптах. Дополнительные сведения см. в учебнике [Добавление аутентификации в приложение].
 
 Поддерживаются два потока аутентификации: *управляемой клиентом* и *управляемый сервером*. Управляемый сервером поток обеспечивает самый простой способ аутентификации, так как он использует веб-интерфейс аутентификации. Управляемый клиентом поток обеспечивает более тесную интеграцию с возможностями устройства, так как использует пакеты SDK конкретного поставщика для конкретного устройства.
 
@@ -904,7 +904,7 @@ private async void InitNotificationsAsync()
 Запрос тегов от клиента не поддерживается.  Запросы тегов автоматически отбрасываются из регистрации.
 Если вы хотите зарегистрировать устройство с тегами, создайте пользовательский интерфейс API, который использует API центров уведомлений для выполнения регистрации от вашего имени.  [Используйте вызов настраиваемого API](#customapi) вместо метода `RegisterNativeAsync()`.
 
-### <a name="package-sid"></a>Получение SID пакета Microsoft Store
+### <a name="package-sid"></a>Практическое руководство. Получение ИД безопасности пакета Microsoft Store
 Для включения push-уведомлений для приложений Microsoft Store необходим SID пакета.  Для получения идентификатора безопасности пакета зарегистрируйте приложение в Microsoft Store.
 
 Для получения этого значения выполните следующие действия:
@@ -922,7 +922,7 @@ private async void InitNotificationsAsync()
 * [Xamarin.Android](app-service-mobile-xamarin-android-get-started-push.md#add-push)
 * [Xamarin.iOS](app-service-mobile-xamarin-ios-get-started-push.md#add-push-notifications-to-your-app)
 
-### <a name="register-xplat"></a>Использование шаблонов для отправки кроссплатформенных push- уведомлений
+### <a name="register-xplat"></a>Практическое руководство. Использование шаблонов для отправки кроссплатформенных push-уведомлений
 Чтобы зарегистрировать шаблоны, используйте метод `RegisterAsync()` с шаблонами, как показано ниже.
 
 ```csharp
@@ -988,7 +988,7 @@ private async void InsertTodoItem(TodoItem todoItem)
 
 Еще один пример работы с состояниями ошибки можно найти в [Пример файлов мобильных приложений]. Пример [LoggingHandler] предоставляет обработчик делегированного входа для ведения журнала запросов к серверной части.
 
-### <a name="headers"></a>Практическое руководство. Настройка заголовков запроса
+### <a name="headers"></a>Практическое руководство. Настройка заголовков запросов
 Для поддержки определенного сценария приложения вам может потребоваться настроить связь с внутренним сервером мобильных приложений. Например, может возникнуть необходимость добавлять настраиваемый заголовок к каждому исходящему запросу или даже изменять коды состояний ответов. Вы можете использовать настраиваемый метод [DelegatingHandler], как показано в следующем примере.
 
 ```csharp
@@ -1031,26 +1031,26 @@ public class MyHandler : DelegatingHandler
 [3]: app-service-mobile-node-backend-how-to-use-server-sdk.md
 [4]: https://msdn.microsoft.com/library/azure/mt419521(v=azure.10).aspx
 [5]: https://github.com/Azure-Samples
-[6]: http://www.newtonsoft.com/json/help/html/Properties_T_Newtonsoft_Json_JsonPropertyAttribute.htm
+[6]: https://www.newtonsoft.com/json/help/html/Properties_T_Newtonsoft_Json_JsonPropertyAttribute.htm
 [7]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#define-table-controller
 [8]: app-service-mobile-node-backend-how-to-use-server-sdk.md#TableOperations
 [9]: https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/
-[10]: http://www.symbolsource.org/
+[10]: https://github.com/SymbolSource/SymbolSource
 [11]: http://www.symbolsource.org/Public/Wiki/Using
 [12]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient(v=azure.10).aspx
 
 [Добавление аутентификации в приложение]: app-service-mobile-windows-store-dotnet-get-started-users.md
 [Автономная синхронизация данных в мобильных приложениях Azure]: app-service-mobile-offline-data-sync.md
 [Добавление push-уведомлений в приложение]: app-service-mobile-windows-store-dotnet-get-started-push.md
-[Register your app to use a Microsoft account login]: ../app-service/app-service-mobile-how-to-configure-microsoft-authentication.md
-[Как настроить службу приложений для входа с помощью Active Directory]: ../app-service/app-service-mobile-how-to-configure-active-directory-authentication.md
+[Register your app to use a Microsoft account login]: ../app-service/configure-authentication-provider-microsoft.md
+[Как настроить службу приложений для входа с помощью Active Directory]: ../app-service/configure-authentication-provider-aad.md
 
 <!-- Microsoft URLs. -->
 [MobileServiceCollection]: https://msdn.microsoft.com/library/azure/dn250636(v=azure.10).aspx
 [MobileServiceIncrementalLoadingCollection]: https://msdn.microsoft.com/library/azure/dn268408(v=azure.10).aspx
-[MobileServiceAuthenticationProvider]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider(v=azure.10).aspx
-[MobileServiceUser]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser(v=azure.10).aspx
-[MobileServiceAuthenticationToken]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken(v=azure.10).aspx
+[MobileServiceAuthenticationProvider]: https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceauthenticationprovider(v=azure.10).aspx
+[MobileServiceUser]: https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser(v=azure.10).aspx
+[MobileServiceAuthenticationToken]: https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.mobileserviceauthenticationtoken(v=azure.10).aspx
 [GetTable]: https://msdn.microsoft.com/library/azure/jj554275(v=azure.10).aspx
 [создает ссылку на нетипизированную таблицу]: https://msdn.microsoft.com/library/azure/jj554278(v=azure.10).aspx
 [DeleteAsync]: https://msdn.microsoft.com/library/azure/dn296407(v=azure.10).aspx
@@ -1066,24 +1066,24 @@ public class MyHandler : DelegatingHandler
 [Select]: https://msdn.microsoft.com/library/azure/dn250569(v=azure.10).aspx
 [Skip]: https://msdn.microsoft.com/library/azure/dn250573(v=azure.10).aspx
 [UpdateAsync]: https://msdn.microsoft.com/library/azure/dn250536.(v=azure.10)aspx
-[UserID]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid(v=azure.10).aspx
+[UserID]: https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceuser.userid(v=azure.10).aspx
 [Where]: https://msdn.microsoft.com/library/azure/dn250579(v=azure.10).aspx
 [портал Azure]: https://portal.azure.com/
 [EnableQueryAttribute]: https://msdn.microsoft.com/library/system.web.http.odata.enablequeryattribute.aspx
 [Guid.NewGuid]: https://msdn.microsoft.com/library/system.guid.newguid(v=vs.110).aspx
-[ISupportIncrementalLoading]: http://msdn.microsoft.com/library/windows/apps/Hh701916.aspx
+[ISupportIncrementalLoading]: https://msdn.microsoft.com/library/windows/apps/Hh701916.aspx
 [Центр разработки для Windows]: https://dev.windows.com/overview
 [DelegatingHandler]: https://msdn.microsoft.com/library/system.net.http.delegatinghandler(v=vs.110).aspx
-[PasswordVault]: http://msdn.microsoft.com/library/windows/apps/windows.security.credentials.passwordvault.aspx
-[ProtectedData]: http://msdn.microsoft.com/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
+[PasswordVault]: https://msdn.microsoft.com/library/windows/apps/windows.security.credentials.passwordvault.aspx
+[ProtectedData]: https://msdn.microsoft.com/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
 [справочниками по API]: https://msdn.microsoft.com/library/azure/dn495101.aspx
 [Пример файлов мобильных приложений]: https://github.com/Azure-Samples/app-service-mobile-dotnet-todo-list-files
 [LoggingHandler]: https://github.com/Azure-Samples/app-service-mobile-dotnet-todo-list-files/blob/master/src/client/MobileAppsFilesSample/Helpers/LoggingHandler.cs#L63
 
 <!-- External URLs -->
-[документации по OData версии 3]: http://www.odata.org/documentation/odata-version-3-0/
-[Fiddler]: http://www.telerik.com/fiddler
-[Json.NET]: http://www.newtonsoft.com/json
+[документации по OData версии 3]: https://www.odata.org/documentation/odata-version-3-0/
+[Fiddler]: https://www.telerik.com/fiddler
+[Json.NET]: https://www.newtonsoft.com/json
 [Xamarin.Auth]: https://components.xamarin.com/view/xamarin.auth/
 [AuthStore.cs]: https://github.com/azure-appservice-samples/ContosoMoments
 [ContosoMoments photo sharing sample]: https://github.com/azure-appservice-samples/ContosoMoments

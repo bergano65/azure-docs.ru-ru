@@ -1,5 +1,5 @@
 ---
-title: Управление одновременными операциями записи в ресурсы Поиска Azure
+title: Управление одновременными операциями записи в ресурсы службы "Поиск Azure"
 description: Узнайте, как использовать оптимистическую блокировку во избежание конфликтов в процессе обновления или удаления индексов, индексаторов и источников данных Поиска Azure.
 author: HeidiSteen
 manager: cgronlun
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 07/21/2017
 ms.author: heidist
-ms.openlocfilehash: f5fa495c1266c847cabc0eb4e35b85132550bc3c
-ms.sourcegitcommit: fa493b66552af11260db48d89e3ddfcdcb5e3152
+ms.custom: seodec2018
+ms.openlocfilehash: 017f665f3d0d19746854e2cf566034f801b32a04
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2018
-ms.locfileid: "31796386"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53310261"
 ---
 # <a name="how-to-manage-concurrency-in-azure-search"></a>Управление параллелизмом в Поиске Azure
 
@@ -24,9 +25,9 @@ ms.locfileid: "31796386"
 
 ## <a name="how-it-works"></a>Принцип работы
 
-Оптимистическая блокировка реализуется за счет проверки условий доступа в вызовах API при записи в индексы, индексаторы, источники данных и ресурсы synonymMap. 
+Оптимистическая блокировка реализуется за счет проверки условий доступа в вызовах API при записи в индексы, индексаторы, источники данных и ресурсы synonymMap.
 
-Все ресурсы имеют [*тег сущности (ETag)*](https://en.wikipedia.org/wiki/HTTP_ETag), который предоставляет сведения о версии объекта. Если сначала проверить ETag, то можно избежать параллельных обновлений в стандартном рабочем процессе (получение, локальное изменение, обновление), убедившись, что ETag ресурса соответствует локальной копии. 
+Все ресурсы имеют [*тег сущности (ETag)*](https://en.wikipedia.org/wiki/HTTP_ETag), который предоставляет сведения о версии объекта. Если сначала проверить ETag, то можно избежать параллельных обновлений в стандартном рабочем процессе (получение, локальное изменение, обновление), убедившись, что ETag ресурса соответствует локальной копии.
 
 + Интерфейс REST API использует [ETag](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search) в заголовке запроса.
 + Пакет SDK для .NET задает ETag с помощью объекта accessCondition, устанавливая в ресурсе [заголовок If-Match | If-None-Match](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search). Любой объект, наследуемый из [IResourceWithETag (пакет SDK для .NET)](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.iresourcewithetag), содержит объект accessCondition.
@@ -34,7 +35,7 @@ ms.locfileid: "31796386"
 Каждый раз при обновлении ресурса его ETag изменяется автоматически. При реализации управления параллелизмом все, что необходимо сделать, это поместить предварительное условие в запрос на обновление. Этим условием должно быть требование, чтобы удаленный ресурс имел такой же ETag, как и копия ресурса, измененного вами на клиенте. Если параллельный процесс уже изменил удаленный ресурс, то ETag не будет соответствовать предварительному условию и, следовательно, запрос завершится ошибкой HTTP 412. Если используется пакет SDK для .NET, то это объявляется в качестве `CloudException`, где метод расширения `IsAccessConditionFailed()` возвращает значение true.
 
 > [!Note]
-> Для параллелизма существует только один механизм. Он всегда используется независимо от того, какой интерфейс API задействован для обновления ресурсов. 
+> Для параллелизма существует только один механизм. Он всегда используется независимо от того, какой интерфейс API задействован для обновления ресурсов.
 
 <a name="samplecode"></a>
 ## <a name="use-cases-and-sample-code"></a>Варианты использования и пример кода
@@ -111,7 +112,7 @@ ms.locfileid: "31796386"
             {
                 indexForClient2.Fields.Add(new Field("b", DataType.Boolean));
                 serviceClient.Indexes.CreateOrUpdate(
-                    indexForClient2, 
+                    indexForClient2,
                     accessCondition: AccessCondition.IfNotChanged(indexForClient2));
 
                 Console.WriteLine("Whoops; This shouldn't happen");
@@ -167,9 +168,9 @@ ms.locfileid: "31796386"
 
 ## <a name="design-pattern"></a>Конструктивный шаблон
 
-Конструктивный шаблон для реализации оптимистической блокировки должен включать в себя цикл повторных попыток проверки условия доступа, тест для условия доступа и, при необходимости, должен получать обновленный ресурс перед попыткой повторного применения изменений. 
+Конструктивный шаблон для реализации оптимистической блокировки должен включать в себя цикл повторных попыток проверки условия доступа, тест для условия доступа и, при необходимости, должен получать обновленный ресурс перед попыткой повторного применения изменений.
 
-В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код взят из [руководства по C# для синонимов (предварительная версия) в Поиске Azure](https://docs.microsoft.com/azure/search/search-synonyms-tutorial-sdk). 
+В этом фрагменте кода показано добавление synonymMap в индекс, который уже существует. Этот код взят из [руководства по C# для синонимов (предварительная версия) в Поиске Azure](https://docs.microsoft.com/azure/search/search-synonyms-tutorial-sdk).
 
 Этот фрагмент получает индекс "hotels", проверяет версию объекта при операции обновления, порождает исключение, если условие не выполняется, а затем совершает повторную попытку операции (до трех раз), начиная с извлечения индекса с сервера, чтобы получить последнюю версию.
 
@@ -211,10 +212,11 @@ ms.locfileid: "31796386"
 
 Попробуйте изменить один из следующих примеров, включив теги ETags или объекты AccessCondition.
 
-+ [Пример REST API на портале Github](https://github.com/Azure-Samples/search-rest-api-getting-started). 
-+ [Пример пакета SDK для .NET на портале Github](https://github.com/Azure-Samples/search-dotnet-getting-started). Это решение включает в себя проект DotNetEtagsExplainer, который содержит код, представленный в этой статье.
++ [Пример REST API на портале GitHub](https://github.com/Azure-Samples/search-rest-api-getting-started)
++ [Пример пакета SDK для .NET на портале GitHub](https://github.com/Azure-Samples/search-dotnet-getting-started) Это решение включает в себя проект DotNetEtagsExplainer, который содержит код, представленный в этой статье.
 
 ## <a name="see-also"></a>См. также
 
-  [Common HTTP request and response headers used in Azure Search](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)   (Стандартные заголовки HTTP-запросов и ответов, используемые в Поиске Azure)  
-  [Коды состояния HTTP](https://docs.microsoft.com/rest/api/searchservice/http-status-codes) [Операции с индексами (REST API)](https://docs.microsoft.com/\rest/api/searchservice/index-operations)
+[Common HTTP request and response headers used in Azure Search (Распространенные заголовки запросов и ответов HTTP в службе "Поиск Azure")](https://docs.microsoft.com/rest/api/searchservice/common-http-request-and-response-headers-used-in-azure-search)
+[HTTP status codes (Azure Search) (Коды состояния HTTP в службе "Поиск Azure")](https://docs.microsoft.com/rest/api/searchservice/http-status-codes)
+[Index operations (Azure Search Service REST API) (Операции с индексами в службе "Поиск Azure" (REST API))](https://docs.microsoft.com/rest/api/searchservice/index-operations)

@@ -196,10 +196,6 @@
 #### [Вкладка со сведениями об онлайн-магазине](./cloud-partner-portal/consulting-services/cpp-consulting-service-storefront-details.md)
 ### [Публикация предложения консультационных услуг](./cloud-partner-portal/consulting-services/cpp-consulting-service-publish-offer.md) 
 
-## [Управление профилем издателя](./cloud-partner-portal-orig/cloud-partner-portal-manage-publisher-profile.md)
-## [Управление пользователями](./cloud-partner-portal-orig/cloud-partner-portal-manage-users.md)
-## [Соответствие требованиям GDPR](./cloud-partner-portal-orig/cloud-partner-portal-gdpr.md)
-
 ## Тестовый выпуск
 ### [Что такое тестовый выпуск](./cloud-partner-portal-orig/what-is-test-drive.md)
 ### [Тестовый выпуск Azure Resource Manager](./cloud-partner-portal-orig/azure-resource-manager-test-drive.md)

@@ -9,14 +9,14 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: 202a68d219bec3a70e50afa68228cbc6bf453518
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 6cedc269e279a9154e63bae241f02e766e06ec96
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51011669"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53383907"
 ---
-# <a name="install-giraph-on-hdinsight-hadoop-clusters-and-use-giraph-to-process-large-scale-graphs"></a>Установка Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов
+# <a name="install-apache-giraph-on-hdinsight-hadoop-clusters-and-use-giraph-to-process-large-scale-graphs"></a>Установка Apache Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов
 
 Узнайте, как установить Apache Giraph в кластере HDInsight. Действие сценария в HDInsight позволяет настроить кластер с помощью сценария bash. Сценарии можно использовать для настройки кластеров во время и после создания кластера.
 
@@ -33,10 +33,10 @@ ms.locfileid: "51011669"
 
 * вычисление ранга страницы для веб-страниц.
 
-> [!WARNING]
+> [!WARNING]  
 > Компоненты, предоставляемые вместе с кластером HDInsight, поддерживаются в полном объеме. Служба технической поддержки Майкрософт помогает выявить и решить проблемы, связанные с этими компонентами.
 >
-> Настраиваемые компоненты, такие как Giraph, получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Эту проблему может решить служба технической поддержки Майкрософт. В противном случае необходимо обратиться в сообщество разработчиков открытого кода, обладающих большим опытом в этой сфере. Можно использовать ряд сайтов сообществ, например [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=hdinsight) или [http://stackoverflow.com](http://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты, например [Hadoop](http://hadoop.apache.org/) на сайте [http://apache.org](http://apache.org).
+> Настраиваемые компоненты, такие как Giraph, получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Эту проблему может решить служба технической поддержки Майкрософт. В противном случае необходимо обратиться в сообщество разработчиков открытого кода, обладающих большим опытом в этой сфере. Вы можете использовать сайты сообществ, например: [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты ([http://apache.org](http://apache.org)), например [Hadoop](http://hadoop.apache.org/).
 
 
 ## <a name="what-the-script-does"></a>Что делает сценарий
@@ -68,17 +68,17 @@ ms.locfileid: "51011669"
 
 2. В разделе **Необязательная настройка** выберите **Действия скрипта** и укажите следующие сведения:
 
-   * **ИМЯ**: введите понятное имя для действия сценария.
+   * **Имя:** введите понятное имя для действия сценария.
 
    * **URI СКРИПТА**: https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh
 
-   * **Головной**: установите флажок.
+   * **ГОЛОВНОЙ УЗЕЛ:** установите флажок.
 
-   * **Рабочий**: не устанавливайте этот флажок.
+   * **Рабочая роль:** не устанавливайте этот флажок.
 
-   * **ZOOKEEPER**: не устанавливайте этот флажок.
+   * **ZOOKEEPER:** не устанавливайте этот флажок.
 
-   * **ПАРАМЕТРЫ**: оставьте это поле пустым.
+   * **Параметры:** оставьте это поле пустым.
 
 3. В нижней части раздела **Действия скрипта** нажмите кнопку **Выбрать**, чтобы сохранить конфигурацию. Наконец, в нижней части раздела **Необязательная конфигурация** нажмите кнопку **Выбрать**, чтобы сохранить дополнительные настройки.
 
@@ -172,4 +172,4 @@ ms.locfileid: "51011669"
 
 * [Установка и использование Hue в кластерах HDInsight](hdinsight-hadoop-hue-linux.md).
 
-* [Установка Solr в кластерах HDInsight](hdinsight-hadoop-solr-install-linux.md).
+* [Установка и использование Solr на кластерах HDInsight Hadoop](hdinsight-hadoop-solr-install-linux.md).

@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/19/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: df1fbcb09310985b7ca9d9fd2e7a987fc6e2b2dc
-ms.sourcegitcommit: 668b486f3d07562b614de91451e50296be3c2e1f
+ms.openlocfilehash: 1958d694ab87d635624884b43486761269e37c37
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49457100"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53082652"
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Действие копирования в фабрике данных Azure
 
@@ -173,6 +173,7 @@ ms.locfileid: "49457100"
 | dataRead | Размер данных, считанных из источника. | Значение Int64 в **байтах** |
 | dataWritten | Размер данных, записанных в приемник. | Значение Int64 в **байтах** |
 | filesRead | Число файлов, скопированных из хранилища файлов. | Значение Int64 (не единица измерения) |
+| fileScanned | Количество файлов, сканируемых из исходного хранилища файлов. | Значение Int64 (не единица измерения) |
 | filesWritten | Число файлов, скопированных в хранилище файлов. | Значение Int64 (не единица измерения) |
 | rowsCopied | Число скопированных строк (неприменимо для двоичного копирования). | Значение Int64 (не единица измерения) |
 | rowsSkipped | Число пропущенных несовместимых строк. Эту возможность можно включить, задав свойству enableSkipIncompatibleRow значение true. | Значение Int64 (не единица измерения) |

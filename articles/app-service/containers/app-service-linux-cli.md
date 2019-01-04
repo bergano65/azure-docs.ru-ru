@@ -1,5 +1,5 @@
 ---
-title: Управление Веб-приложением для контейнеров с помощью Azure CLI | Документация Майкрософт
+title: Управление компонентом "Веб-приложение для контейнеров" с помощью Azure CLI в службе приложений Azure | Документация Майкрософт
 description: Сведения о том, как управлять веб-приложением для контейнеров с помощью Azure CLI.
 keywords: служба приложений azure, веб-приложение, cli, linux, oss
 services: app-service
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/22/2017
 ms.author: aelnably
-ms.openlocfilehash: 024ca5bcf9c1f82f07656691d6ef5358ca3d5111
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.custom: seodec18
+ms.openlocfilehash: 0b125903493712dca3b8c8c3a9ce663f9e1b408c
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46998497"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53257647"
 ---
 # <a name="manage-web-app-for-containers-using-azure-cli"></a>Управление веб-приложением для контейнеров с помощью Azure CLI
 

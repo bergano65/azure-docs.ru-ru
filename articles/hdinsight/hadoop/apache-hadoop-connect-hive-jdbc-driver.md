@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/02/2018
 ms.author: hrasheed
-ms.openlocfilehash: 577f36f53bfad79af968a4c34f4b6ab0b49527c7
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 59ca7a98bfa275502e847a8d2c34ec79141603da
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633450"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53433820"
 ---
 # <a name="query-apache-hive-through-the-jdbc-driver-in-hdinsight"></a>Отправка запросов в Apache Hive с помощью драйвера JDBC в HDInsight
 
@@ -31,7 +31,7 @@ ms.locfileid: "51633450"
   > [!IMPORTANT]
   > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе о [прекращении поддержки HDInsight 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
-* [SQuirreL SQL](http://squirrel-sql.sourceforge.net/). SQuirreL представляет собой клиентское приложение JDBC.
+* [SQuirreL SQL](https://squirrel-sql.sourceforge.net/). SQuirreL представляет собой клиентское приложение JDBC.
 
 * [Java Developer Kit (JDK) версии 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) или более поздней версии.
 
@@ -88,7 +88,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 5. В диалоговом окне Add Driver (Добавление драйвера) укажите следующие сведения.
 
-    * **Имя:** Hive.
+    * **Имя.** Hive
     * **Пример URL-адреса:** `jdbc:hive2://localhost:443/default;transportMode=http;ssl=true;httpPath=/hive2`
     * **Путь к дополнительным классам.** Нажмите кнопку "Добавить", чтобы добавить все скачанные ранее JAR-файлы.
     * **Имя класса:** org.apache.hive.jdbc.HiveDriver.
@@ -103,9 +103,9 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 7. В диалоговом окне **Добавить псевдоним** укажите следующие значения.
 
-    * **Имя:** Hive в HDInsight.
+    * **Имя.** Hive в HDInsight
 
-    * **Драйвер.** Выберите драйвер **Hive** в раскрывающемся списке.
+    * **Драйвер**. Выберите драйвер **Hive** в раскрывающемся списке.
 
     * **URL-адрес:** `jdbc:hive2://CLUSTERNAME.azurehdinsight.net:443/default;transportMode=http;ssl=true;httpPath=/hive2`
 
@@ -113,7 +113,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
     * **Имя пользователя.** Имя пользователя для учетной записи входа кластера HDInsight. Значение по умолчанию — `admin`.
 
-    * **Пароль.** Пароль для учетной записи входа кластера.
+    * **Пароль**. Пароль для учетной записи входа кластера.
 
  ![диалоговое окно "Добавить псевдоним"](./media/apache-hadoop-connect-hive-jdbc-driver/addalias.png)
 
@@ -140,7 +140,7 @@ SQuirreL SQL — клиент JDBC, который можно использов
 
 ### <a name="unexpected-error-occurred-attempting-to-open-an-sql-connection"></a>Непредвиденная ошибка при попытке открыть подключение к SQL
 
-**Признаки.** При подключении к кластеру HDInsight версии 3.3 или более поздней может появиться сообщение о возникновении непредвиденной ошибки. Трассировка стека для этой ошибки начинается со следующих строк:
+**Проблема.** При подключении к кластеру HDInsight версии 3.3 или более поздней может появиться сообщение о возникновении непредвиденной ошибки. Трассировка стека для этой ошибки начинается со следующих строк:
 
 ```java
 java.util.concurrent.ExecutionException: java.lang.RuntimeException: java.lang.NoSuchMethodError: org.apache.commons.codec.binary.Base64.<init>(I)V
@@ -150,7 +150,7 @@ at java.util.concurrent.FutureTask.get(FutureTask.java:206)
 
 **Причина.** Эту ошибку вызывают прежние версии файла commons-codec.jar в составе SQuirreL.
 
-**Решение.** Чтобы устранить эту ошибку, выполните приведенные далее действия.
+**Решение**. Чтобы устранить эту ошибку, выполните приведенные далее действия.
 
 1. Скачайте файл commons-codec.jar из кластера HDInsight.
 
@@ -164,14 +164,14 @@ at java.util.concurrent.FutureTask.get(FutureTask.java:206)
 
 Теперь, когда вы узнали, как использовать JDBC для работы с Hive, воспользуйтесь следующими ссылками, чтобы изучить другие способы работы с Azure HDInsight.
 
-* [Визуализация данных Hive с помощью Microsoft Power BI в Azure HDInsight](apache-hadoop-connect-hive-power-bi.md).
+* [Визуализация данных Apache Hive с помощью Microsoft Power BI в Azure HDInsight](apache-hadoop-connect-hive-power-bi.md)
 * [Visualize Interactive Query Hive data with Microsoft Power BI using DirectQuery in Azure HDInsight](../interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md) (Визуализация данных Hive из кластера Interactive Query с помощью Microsoft Power BI и DirectQuery в Azure HDInsight).
-* [Выполнение запросов Hive в Azure HDInsight с помощью Zeppelin](./../hdinsight-connect-hive-zeppelin.md)
+* [Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](./../hdinsight-connect-hive-zeppelin.md)
 * [Подключение Excel к Hadoop в Azure HDInsight с помощью Microsoft Hive ODBC Driver](apache-hadoop-connect-excel-hive-odbc-driver.md)
-* [Подключение Excel к Hadoop с помощью Power Query](apache-hadoop-connect-excel-power-query.md)
-* [Подключение к Azure HDInsight и выполнение запросов Hive с помощью средств Data Lake для Visual Studio](apache-hadoop-visual-studio-tools-get-started.md)
+* [Подключение Excel к Apache Hadoop с помощью Power Query](apache-hadoop-connect-excel-power-query.md)
+* [Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью Средств Data Lake для Visual Studio](apache-hadoop-visual-studio-tools-get-started.md)
 * [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).
 * [Отправка данных в HDInsight](../hdinsight-upload-data.md)
-* [Использование Hive с HDInsight](hdinsight-use-hive.md)
-* [Использование Pig с HDInsight](hdinsight-use-pig.md)
+* [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hdinsight-use-hive.md)
+* [Использование Pig с Hadoop в HDInsight](hdinsight-use-pig.md)
 * [Использование заданий MapReduce с HDInsight](hdinsight-use-mapreduce.md)

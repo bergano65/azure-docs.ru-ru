@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: hrasheed
 ms.custom: hdinsightactive
-ms.openlocfilehash: 9daf0d45c9bb24192750991e7bf84fa3614c970d
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 4f51de6ded29f93d29dbf80dd68715f621b5cb06
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51011040"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53384621"
 ---
 # <a name="install-or-update-mono-on-hdinsight"></a>Установка или обновление Mono в HDInsight
 
@@ -52,7 +52,7 @@ __Требования__
 
 Чтобы указать версию Mono для установки, введите номер версии в поле __Параметры__. Например, введите `5.4`, чтобы установить Mono 5.4.
 
-> [!NOTE]
+> [!NOTE]  
 > Чтобы настроить HDInsight с помощью этого скрипта, пометьте скрипт как __сохраненный__. Этот параметр позволяет HDInsight применять скрипт к рабочим узлам, добавленным с помощью операций масштабирования.
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -60,8 +60,8 @@ __Требования__
 Вы узнали, как обновить или установить конкретную версию Mono в HDInsight. Дополнительные сведения об использовании приложений .NET в HDInsight см. в следующих статьях:
 
 * [Использование языка C# для потоковой передачи MapReduce в Hadoop в HDInsight](hadoop/apache-hadoop-dotnet-csharp-mapreduce-streaming.md);
-* [Использование определяемых пользователем функций C# при потоковой передаче Hive и Pig в Hadoop HDInsight](hadoop/apache-hadoop-hive-pig-udf-dotnet-csharp.md);
-* [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](storm/apache-storm-develop-csharp-visual-studio-topology.md);
+* [Использование определяемых пользователем функций C# при потоковой передаче Apache Hive и Apache Pig в Apache Hadoop в HDInsight](hadoop/apache-hadoop-hive-pig-udf-dotnet-csharp.md);
+* [Разработка топологий для Apache Storm на C# с помощью средств Data Lake для Visual Studio](storm/apache-storm-develop-csharp-visual-studio-topology.md);
 * [Перенос решений .NET из HDInsight под управлением Windows в HDInsight под управлением Linux](hdinsight-hadoop-migrate-dotnet-to-linux.md).
 
-Дополнительные сведения об использовании действий скрипта см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
+Дополнительные сведения об использовании действий скрипта см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев](hdinsight-hadoop-customize-cluster-linux.md).

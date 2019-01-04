@@ -1,21 +1,22 @@
 ---
-title: Документация по API пакета SDK для службы "Речь". Руководства и справочник по API
+title: Разработка приложений с помощью пакета SDK службы "Речь" — служба "Речь"
 titleSuffix: Azure Cognitive Services
-description: Сведения о создании и разработке приложений с помощью пакета SDK для службы "Речь"
+description: Узнайте, как создавать приложения с помощью пакета SDK службы "Речь".
 services: cognitive-services
 author: wolfma61
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: conceptual
-ms.date: 06/07/2018
+ms.date: 12/06/2018
 ms.author: wolfma
-ms.openlocfilehash: 7510b1501051b79f6bdaf33ec57647a7982fafda
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.custom: seodec18
+ms.openlocfilehash: 4999639356fd440b6358983f1e4859fb3c505fc7
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49469424"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53106504"
 ---
 # <a name="ship-an-application"></a>Доставка приложения
 
@@ -23,7 +24,7 @@ ms.locfileid: "49469424"
 
 Для выполнения приложений на разных платформах имеются различные зависимости.
 
-## <a name="windows"></a>Windows
+## <a name="windows"></a> Windows
 
 Пакет SDK для службы "Речь" в Cognitive Services протестирован для Windows 10 и Windows Server 2016.
 

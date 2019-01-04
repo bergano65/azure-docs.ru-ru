@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 562320b49f92d9ebb0c74c06e27fab63681955be
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 6e31062e3965c9ed5a0b24e822f0ec14234cec1c
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634079"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53435078"
 ---
 # <a name="use-a-java-udf-with-apache-hive-in-hdinsight"></a>Использование определяемых пользователем функций Java с Apache Hive в HDInsight
 
@@ -29,9 +29,9 @@ ms.locfileid: "51634079"
 
     Большинство действий, описываемых в этой статье, можно выполнять в кластерах как на основе Windows, так и на основе Linux. Тем не менее инструкции по отправке скомпилированных определяемых пользователем функций в кластер и их выполнению относятся только к кластерам под управлением Linux. Здесь также приведены ссылки на дополнительные сведения, которые можно использовать при работе с кластерами под управлением Windows.
 
-* Пакет [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/) 8 или более поздней версии (или эквивалентный пакет, например OpenJDK).
+* Пакет [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/) 8 или более поздней версии (или эквивалентный пакет, например OpenJDK).
 
-* [Apache Maven](http://maven.apache.org/)
+* [Apache Maven](https://maven.apache.org/)
 
 * Текстовый редактор или Java IDE.
 
@@ -213,7 +213,7 @@ ms.locfileid: "51634079"
     ```
 
     > [!NOTE]
-    > В этом примере предполагается, что служба хранилища Azure является хранилищем по умолчанию для кластера. Если же кластер использует Data Lake Store, измените значение `wasb:///` на `adl:///`.
+    > В этом примере предполагается, что служба хранилища Azure является хранилищем по умолчанию для кластера. Если же кластер использует Data Lake Storage, измените значение `wasb:///` на `adl:///`.
 
 3. Используйте определяемую пользователем функцию, чтобы преобразовать значения, полученные из таблицы, в строки нижнего регистра.
 
@@ -240,6 +240,6 @@ ms.locfileid: "51634079"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Другие способы работы с Hive см. в статье об [использовании Hive в HDInsight](hdinsight-use-hive.md).
+Другие способы работы с Hive в HDInsight см. в [этой статье](hdinsight-use-hive.md).
 
 Дополнительные сведения об определяемых пользователем функциях Hive см. в разделе [Hive Operators and User-Defined Functions](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF) (Операторы Hive и определяемые пользователем функции) вики-сайта Hive на сайте apache.org.

@@ -1,23 +1,24 @@
 ---
-title: Просмотр фраз конечной точки в Интеллектуальной службе распознавания речи (LUIS)
-titleSuffix: Azure Cognitive Services
+title: Проверка фраз пользователя
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Уникальность службы LUIS состоит в использовании концепции активного обучения. Как только в конечную точку поступают запросы, служба LUIS выбирает фразы, в правильности которых не уверена, используя таким образом активное обучения для улучшения качества результатов. Если пометить эти фрагменты речи, выполнить обучение и публикацию, LUIS будет идентифицировать их более точно.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/06/2018
 ms.author: diberry
-ms.openlocfilehash: a5e0dabe251d14389923df3efe41f6ba80f41bdd
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 7175463001eac118d2939d3479e61a01b80ba86b
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47030801"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53106555"
 ---
-# <a name="review-endpoint-utterances"></a>Просмотр фрагментов речи конечной точки
+# <a name="how-to-review-endpoint-utterances-in-luis-portal"></a>Сведения о проверке фрагментов речи конечной точки на портале LUIS
 
 Революционной возможностью службы LUIS является [понятие](luis-concept-review-endpoint-utterances.md) активного обучения. Когда в службу LUIS поступают запросы конечной точки, LUIS использует активное обучение для повышения качества результатов. В процессе активного обучения служба LUIS проверяет все фрагменты речи конечной точки и выбирает те из них, в которых она не уверена. Если пометить эти фрагменты речи, выполнить обучение и публикацию, LUIS будет идентифицировать их более точно. 
 

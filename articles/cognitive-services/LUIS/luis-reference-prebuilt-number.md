@@ -1,23 +1,24 @@
 ---
-title: Справочник по предварительно созданным сущностям number в LUIS Azure | Документация Майкрософт
+title: Предварительно созданная сущность number
 titleSuffix: Azure
 description: В этой статье описана готовая сущность number в службе "Распознавание речи" (LUIS).
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 11/26/2018
 ms.author: diberry
-ms.openlocfilehash: b3ac42f5ecd1dc14055b0767e057a1da093042f9
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: bd42fbb85468ab652741573731515e499fe453da
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52334573"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53165679"
 ---
-# <a name="number-entity"></a>Сущность number
+# <a name="number-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность number для приложения LUIS
 Существует множество способов использования числовых значений для подсчета, выражения и описания фрагментов информации. В этой статье рассматриваются только некоторые возможные примеры. Служба LUIS интерпретирует вариации в фразах пользователя и возвращает согласованные числовые значения. Так как эта сущность уже обучена, добавлять в назначение приложения примеры фраз, содержащие сущность number, не нужно. 
 
 ## <a name="types-of-number"></a>Типы сущности number
@@ -42,7 +43,7 @@ ms.locfileid: "52334573"
 ## <a name="resolution-for-prebuilt-number"></a>Разрешение для предварительно созданной сущности number
 В следующем примере показан ответ LUIS в формате JSON, который содержит расшифровку высказывания "two dozen" (две дюжины) в значение 24.
 
-```JSON
+```json
 {
   "query": "order two dozen eggs",
   "topScoringIntent": {

@@ -1,21 +1,22 @@
 ---
-title: Добавление намерений в приложения LUIS
-titleSuffix: Azure Cognitive Services
+title: Добавление намерений
+titleSuffix: Language Understanding - Azure Cognitive Services
 description: Добавьте намерения в свое приложение LUIS, чтобы определять группы вопросов или команд, которые имеют одинаковые намерения.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.component: language-understanding
 ms.topic: article
 ms.date: 10/24/2018
 ms.author: diberry
 ms.service: cognitive-services
-ms.openlocfilehash: 495b7e99319126b3ee9e655b2d9aa4af940e1d56
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 3e6064b4c202c36e4b63d6e06edfbf3149f6665f
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50139927"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53139877"
 ---
 # <a name="add-intents"></a>Добавление намерений 
 
@@ -57,7 +58,7 @@ ms.locfileid: "50139927"
 
 Для фрагмента речи в намерении может возникать несоответствие прогнозирования между выбранным намерением и оценкой прогнозирования. LUIS отмечает это несоответствие красным прямоугольником вокруг **помеченного намерения** в строке с примером высказывания. 
 
-![Снимок экрана страницы сведений о намерении с выделенным высказыванием](./media/luis-how-to-add-intents/prediction-discrepancy-intent.png) 
+![Снимок экрана страницы сведений о намерениях с ошибками несоответствия прогнозирования высказывания](./media/luis-how-to-add-intents/prediction-discrepancy-intent.png) 
 
 Выберите **Train** (Обучить) в верхней панели навигации. Теперь несоответствие прогнозирования устранено.
 

@@ -1,5 +1,6 @@
 ---
-title: Настройка режима распределения Azure Load Balancer | Документация Майкрософт
+title: Настройка режима распределения Azure Load Balancer
+titlesuffix: Azure Load Balancer
 description: Сведения о том, как настроить режим распределения Azure Load Balancer для поддержки соответствия исходному IP-адресу.
 services: load-balancer
 documentationcenter: na
@@ -7,16 +8,17 @@ author: KumudD
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
+ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/25/2017
 ms.author: kumud
-ms.openlocfilehash: b521d633f5779daeab431a16a13f72bbf301182c
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: bc78c4afd3a85dc4b7b03fb3543632da7586ea31
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50415531"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53083297"
 ---
 # <a name="configure-the-distribution-mode-for-azure-load-balancer"></a>Настройка режима распределения для Azure Load Balancer
 

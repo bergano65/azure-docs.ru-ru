@@ -1,5 +1,5 @@
 ---
-title: Azure AD Connect. Настройка разрешений учетной записи соединителя AD DS | Документация Майкрософт
+title: 'Azure AD Connect выполняет следующие функции: Настройка разрешений учетной записи соединителя AD DS | Документация Майкрософт'
 description: В этом документе описаны способы настройки учетной записи соединителя AD DS с помощью нового модуля ADSyncConfig PowerShell
 services: active-directory
 author: billmath
@@ -10,14 +10,14 @@ ms.topic: article
 ms.date: 10/12/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: f57a5a2413103ddcf7484f3b1fc5b4170b7bdc98
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 97352cdc89aabe312bf500901347acaf5238e871
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50412865"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53436999"
 ---
-# <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect. Настройка разрешений учетной записи соединителя AD DS 
+# <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect выполняет следующие функции: Настройка разрешений учетной записи соединителя AD DS 
 
 Новый модуль PowerShell с именем [ADSyncConfig.psm1](reference-connect-adsyncconfig.md) был представлен в сборке 1.1.880.0 (выпущенной в августе 2018 года). Эта сборка включает в себя коллекцию командлетов, которые помогут вам настроить правильные разрешения Active Directory для развертывания соединителя Azure AD. 
 
@@ -205,12 +205,12 @@ Set-ADSyncPasswordWritebackPermissions -ADConnectorAccountDN <String> [-ADobject
 Чтобы задать разрешения для учетной записи соединителя AD DS при использовании записи групп, запустите: 
 
 ``` powershell
-Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-SkipAdminSdHolders] [<CommonParameters>] 
+Set-ADSyncExchangeHybridPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-SkipAdminSdHolders] [<CommonParameters>] 
 ```
 или; 
 
 ``` powershell
-Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>]
+Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>]
 ```
  
 Этот командлет задаст следующие разрешения: 
@@ -225,14 +225,14 @@ Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN <String> [-ADob
 Чтобы задать разрешения для учетной записи соединителя AD DS при использовании гибридного развертывания Exchange, запустите: 
 
 ``` powershell
-Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-SkipAdminSdHolders] [<CommonParameters>] 
+Set-ADSyncExchangeHybridPermissions -ADConnectorAccountName <String> -ADConnectorAccountDomain <String> [-SkipAdminSdHolders] [<CommonParameters>] 
 ```
 
 
 или; 
 
 ``` powershell
-Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>] 
+Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN <String> [-ADobjectDN <String>] [<CommonParameters>] 
 ```
 
 Этот командлет задаст следующие разрешения:  

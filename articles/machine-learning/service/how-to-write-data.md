@@ -1,5 +1,6 @@
 ---
-title: Запись данных с помощью пакета SDK для подготовки данных Машинного обучения Azure (Python)
+title: 'Запись: пакет SDK Python для подготовки данных'
+titleSuffix: Azure Machine Learning service
 description: Узнайте, как записывать данные с помощью пакета SDK для подготовки данных Машинного обучения Azure. Можно записать данные в любой точке потока данных, а также в файлы в любом из поддерживаемых расположений (локальная файловая система, хранилище BLOB-объектов Azure и Azure Data Lake Storage).
 services: machine-learning
 ms.service: machine-learning
@@ -9,13 +10,14 @@ ms.author: cforbe
 author: cforbe
 manager: cgronlun
 ms.reviewer: jmartens
-ms.date: 09/24/2018
-ms.openlocfilehash: 4a2af832fda8a85ee8a4aba395a8f436172153ed
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.date: 12/04/2018
+ms.custom: seodec18
+ms.openlocfilehash: a6abdaff986df3c457a0118f6e143fe4ff0daf49
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52308568"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53384349"
 ---
 # <a name="write-data-using-the-azure-machine-learning-data-prep-sdk"></a>Запись данных с помощью пакета SDK для подготовки данных Машинного обучения Azure
 
@@ -50,7 +52,7 @@ ms.locfileid: "52308568"
 
 ```python
 import azureml.dataprep as dprep
-t = dprep.smart_read_file('./data/fixed_width_file.txt')
+t = dprep.auto_read_file('./data/fixed_width_file.txt')
 t = t.to_number('Column3')
 t.head(10)
 ```

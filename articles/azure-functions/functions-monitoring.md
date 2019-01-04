@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: glenga
-ms.openlocfilehash: 9fb25f21e9ff54baf0e297fad1601018af45e476
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: aba3d9f33d179c09708464975fa2a929a8bb68d0
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52497238"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52876525"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -158,7 +158,7 @@ requests
 * **requests** — по одному запросу для каждого вызова функции;
 * **exceptions** — любые исключения в среде выполнения;
 * **customMetrics** — число успешных и неудачных вызовов, доля успешных попыток, длительность;
-* **customEvents** — события, отслеживаемые средой выполнения, например HTTP-запросы, которые активируют функции;
+* **customEvents** —события, отслеживаемые средой выполнения, например  HTTP-запросы, которые активируют функции;
 * **performanceCounters** — сведения о производительности серверов, на которых выполняются функции.
 
 Остальные таблицы предназначены для проверок доступности, а также телеметрии клиента и (или) браузера. Вы можете реализовать пользовательскую телеметрию, чтобы добавлять в них данные.
@@ -330,6 +330,21 @@ traces
 ## <a name="configure-sampling"></a>Настройка выборки
 
 В Application Insights есть функция [выборки](../application-insights/app-insights-sampling.md), которая позволят избежать создания слишком большого объема данных телеметрии в периоды пиковой нагрузки. Если скорость входящей телеметрии превышает заданное пороговое значение, служба Application Insights будет случайным образом игнорировать часть поступающих элементов. Максимальное количество элементов в секунду по умолчанию — 5. Вы можете настроить выборку в файле [host.json](functions-host-json.md).  Ниже приведен пример:
+
+### <a name="version-2x"></a>Версия 2.x 
+
+```json
+{
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "maxTelemetryItemsPerSecond" : 5
+      }
+    }
+  }
+}
+```
 
 ### <a name="version-1x"></a>Версия 1.x 
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: f8e16af629eaa18b49b054be9fc478d633263ddb
-ms.sourcegitcommit: ab9514485569ce511f2a93260ef71c56d7633343
+ms.openlocfilehash: d023bf4428790667ef192a3ce981087694224f50
+ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45636800"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52724542"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -224,10 +224,10 @@ ms.locfileid: "45636800"
 1. Откройте колонку "Все ресурсы".
 1. Выберите виртуальную машину первого узла кластера.
 1. Выберите "Управление доступом (IAM)".
-1. Нажмите "Добавить"
+1. Выберите "Добавить назначение ролей".
 1. Выберите роль Linux Fence Agent Role.
 1. Введите имя созданного ранее приложения.
-1. Нажмите кнопку "ОК"
+1. Щелкните Сохранить
 
 Повторите предыдущие шаги для второго узла кластера.
 

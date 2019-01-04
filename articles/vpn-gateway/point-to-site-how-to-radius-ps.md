@@ -1,26 +1,18 @@
 ---
-title: Установка между компьютером и виртуальной сетью подключения типа "точка — сеть" с использованием аутентификации RADIUS и PowerShell | Документация Майкрософт
-description: Безопасное подключение клиентов Windows и Mac OS X к виртуальной сети с помощью подключения типа "точка — сеть" и аутентификации RADIUS.
+title: Установка между компьютером и виртуальной сетью подключения типа "точка — сеть" с использованием аутентификации RADIUS и PowerShell | Azure
+description: Установка безопасного подключения типа "точка — сеть" между клиентами Windows или Mac OS X и виртуальной сетью с использованием аутентификации RADIUS.
 services: vpn-gateway
-documentationcenter: na
 author: cherylmc
-manager: jpconnock
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 02/12/2018
-ms.author: anzaman
-ms.openlocfilehash: df7afe9324831ffb8e79d7320f2c716ed18a7b4f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.topic: conceptual
+ms.date: 11/30/2018
+ms.author: cherylmc
+ms.openlocfilehash: b5d69b8f9f004da93e5bed05b86e46f6e4214d63
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38719691"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52847360"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-radius-authentication-powershell"></a>Настройка подключения типа "точка — сеть" к виртуальной сети с использованием аутентификации RADIUS и PowerShell
 
@@ -45,14 +37,14 @@ VPN-подключение "точка — сеть" устанавливает
 
 Для подключений типа "точка — сеть" требуется следующее:
 
-* VPN-шлюз с маршрутизацией на основе маршрутов. 
+* VPN-шлюз с маршрутизацией на основе маршрутов. 
 * Сервер RADIUS для аутентификации пользователей. Сервер RADIUS можно развернуть локально или в виртуальной сети Azure.
 * Пакет конфигурации VPN-клиента для устройств с Windows, которые будут подключаться к виртуальной сети. Пакет конфигурации VPN-клиента содержит параметры, необходимые для подключения VPN-клиента типа "точка — сеть".
 
 ## <a name="aboutad"></a>Сведения об аутентификации домена Active Directory (AD) для VPN-подключений типа "точка — сеть".
 
-Аутентификация домена AD позволяет пользователям входить в Azure с помощью учетных данных домена организации. Для этой проверки требуется сервер RADIUS, который интегрирован с сервером AD. Организации могут также использовать существующие серверы RADIUS.
- 
+Если используется аутентификация домена AD, пользователи могут входить в Azure с помощью учетных данных домена организации. Для этой проверки требуется сервер RADIUS, который интегрирован с сервером AD. Организации могут также использовать существующие серверы RADIUS.
+ 
 Сервер RADIUS можно развернуть локально или в виртуальной сети Azure. Во время аутентификации VPN-шлюз выступает в качестве транзитного и переадресовывает сообщения аутентификации между сервером RADIUS и подключаемым устройством. Очень важно, чтобы VPN-шлюз мог связаться с сервером RADIUS. Если сервер RADIUS развернут локально, требуется VPN-подключение "сеть — сеть" между Azure и локальной сетью.
 
 Сервер RADIUS можно интегрировать не только с Active Directory, но и с другими системами внешних идентификаторов. Благодаря этой возможности для VPN-подключения типа "точка — сеть" доступно множество вариантов аутентификации, в том числе варианты многофакторной проверки подлинности. Список систем идентификаторов для интеграции см. в документации поставщика сервера RADIUS.
@@ -66,33 +58,33 @@ VPN-подключение "точка — сеть" устанавливает
 
 ## <a name="before"></a>Подготовка
 
-* Убедитесь в том, что у вас уже есть подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial).
+Убедитесь в том, что у вас уже есть подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial).
 
-* Установите последнюю версию командлетов PowerShell для Azure Resource Manager. Дополнительные сведения об установке командлетов PowerShell см. в статье [Overview of Azure PowerShell](/powershell/azure/overview) (Обзор Azure PowerShell).
+[!INCLUDE [powershell](../../includes/vpn-gateway-cloud-shell-powershell-about.md)]
 
-### <a name="log-in"></a>Вход в систему
+### <a name="sign-in"></a>Вход
 
-[!INCLUDE [Log in](../../includes/vpn-gateway-ps-login-include.md)]
+[!INCLUDE [sign in](../../includes/vpn-gateway-cloud-shell-ps login.md)]
 
 ### <a name="example"></a>Примеры значений
 
 Эти примеры значений можно использовать для создания тестовой среды или анализа примеров из этой стать. Вы можете использовать эти пошаговые инструкции, используя указанные в них значения, или же изменить значения в соответствии со своей средой.
 
-* **Имя: VNet1**.
+* **Имя: VNet1.**
 * **Адресное пространство: 192.168.0.0/16** и **10.254.0.0/16**.<br>Чтобы продемонстрировать, что эта конфигурация будет работать с несколькими адресными пространствами, в этом примере мы используем несколько адресных пространств. Однако это необязательно для этой конфигурации.
-* **Имя подсети: FrontEnd**.
-  * **Диапазон адресов подсети: 192.168.1.0/24**.
+* **Имя подсети: FrontEnd.**
+  * **Диапазон адресов подсети: 192.168.1.0/24.**
 * **Имя подсети: BackEnd.**
   * **Диапазон адресов подсети: 10.254.1.0/24.**
 * **Имя подсети: GatewaySubnet.**<br>Имя подсети *GatewaySubnet* обязательно для работы VPN-шлюза.
   * **Диапазон адресов подсети шлюза: 192.168.200.0/24.** 
 * **Пул адресов VPN-клиента: 172.16.201.0/24.**<br>VPN-клиенты, подключающиеся к виртуальной сети с помощью этого подключения типа "точка — сеть", получают IP-адреса из пула адресов VPN-клиента.
 * **Подписка**. Если у вас есть несколько подписок, убедитесь, что используется правильная.
-* **Группа ресурсов: TestRG**.
-* **Расположение: восточная часть США**.
+* **Группа ресурсов: TestRG.**
+* **Расположение: восточная часть США.**
 * **DNS-сервер: IP-адрес** DNS-сервера, который нужно использовать для разрешения имен в виртуальной сети. (необязательно).
-* **Имя шлюза: Vnet1GW**.
-* **Имя общедоступного IP-адреса: VNet1GWPIP**.
+* **Имя шлюза: Vnet1GW.**
+* **Имя общедоступного IP-адреса: VNet1GWPIP.**
 * **Тип VPN: RouteBased.** 
 
 ## 1. <a name="vnet"></a>Создание группы ресурсов, виртуальной сети и общедоступного IP-адреса
@@ -101,31 +93,31 @@ VPN-подключение "точка — сеть" устанавливает
 
 1. Создайте группу ресурсов.
 
-  ```powershell
+  ```azurepowershell-interactive
   New-AzureRmResourceGroup -Name "TestRG" -Location "East US"
   ```
 2. Создайте конфигурации подсети для виртуальной сети, присвоив им имена *FrontEnd*, *BackEnd* и *GatewaySubnet*. Эти префиксы должны быть частью объявленного адресного пространства виртуальной сети.
 
-  ```powershell
-  $fesub = New-AzureRmVirtualNetworkSubnetConfig -Name "FrontEnd" -AddressPrefix "192.168.1.0/24"  
-  $besub = New-AzureRmVirtualNetworkSubnetConfig -Name "Backend" -AddressPrefix "10.254.1.0/24"  
+  ```azurepowershell-interactive
+  $fesub = New-AzureRmVirtualNetworkSubnetConfig -Name "FrontEnd" -AddressPrefix "192.168.1.0/24"  
+  $besub = New-AzureRmVirtualNetworkSubnetConfig -Name "Backend" -AddressPrefix "10.254.1.0/24"  
   $gwsub = New-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -AddressPrefix "192.168.200.0/24"
   ```
 3. Создание виртуальной сети.
 
   В этом примере параметр сервера -DnsServer является необязательным. Если указать значение, DNS-сервер не создается. Необходимо указать IP-адрес DNS-сервера, который может разрешать имена для ресурсов, к которым вы подключаетесь из своей виртуальной сети. В этом примере мы использовали частный IP-адрес, но, скорее всего, это не IP-адрес DNS-сервера. Подставьте собственные значения. Указанное значение используется для ресурсов, развертываемых в виртуальной сети, а не для подключений типа "точка — сеть".
 
-  ```powershell
+  ```azurepowershell-interactive
   New-AzureRmVirtualNetwork -Name "VNet1" -ResourceGroupName "TestRG" -Location "East US" -AddressPrefix "192.168.0.0/16","10.254.0.0/16" -Subnet $fesub, $besub, $gwsub -DnsServer 10.2.1.3
   ```
 4. VPN-шлюз должен иметь общедоступный IP-адрес. Сначала запросите ресурс IP-адреса, а затем укажите его при создании шлюза виртуальной сети. IP-адрес динамически назначается ресурсу при создании VPN-шлюза. В настоящее время VPN-шлюз поддерживает только *динамическое* выделение общедоступных IP-адресов. Вы не можете запросить назначение статического общедоступного IP-адреса. Однако это не означает, что IP-адрес изменяется после назначения VPN-шлюзу. Общедоступный IP-адрес изменяется только после удаления и повторного создания шлюза. При изменении размера, сбросе или других внутренних операциях обслуживания или обновления IP-адрес VPN-шлюза не изменяется.
 
   Укажите переменные, чтобы подать запрос на динамически назначенный общедоступный IP-адрес.
 
-  ```powershell
-  $vnet = Get-AzureRmVirtualNetwork -Name "VNet1" -ResourceGroupName "TestRG"  
-  $subnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet 
-  $pip = New-AzureRmPublicIpAddress -Name "VNet1GWPIP" -ResourceGroupName "TestRG" -Location "East US" -AllocationMethod Dynamic 
+  ```azurepowershell-interactive
+  $vnet = Get-AzureRmVirtualNetwork -Name "VNet1" -ResourceGroupName "TestRG"  
+  $subnet = Get-AzureRmVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet 
+  $pip = New-AzureRmPublicIpAddress -Name "VNet1GWPIP" -ResourceGroupName "TestRG" -Location "East US" -AllocationMethod Dynamic 
   $ipconf = New-AzureRmVirtualNetworkGatewayIpConfig -Name "gwipconf" -Subnet $subnet -PublicIpAddress $pip
   ```
 
@@ -133,8 +125,8 @@ VPN-подключение "точка — сеть" устанавливает
 
 Прежде чем создавать и настраивать шлюз виртуальной сети, необходимо правильно настроить сервер RADIUS для аутентификации.
 
-1. Если вы еще не развернули сервер RADIUS, сделайте это. Инструкции по развертыванию см. в руководстве по установке, которое предоставлено поставщиком RADIUS.  
-2. Настройте VPN-шлюз как клиент RADIUS на сервере RADIUS. При добавлении клиента RADIUS укажите подсеть шлюза виртуальной сети, которую вы создали. 
+1. Если вы еще не развернули сервер RADIUS, сделайте это. Инструкции по развертыванию см. в руководстве по установке, которое предоставлено поставщиком RADIUS.  
+2. Настройте VPN-шлюз как клиент RADIUS на сервере RADIUS. При добавлении клиента RADIUS укажите подсеть шлюза виртуальной сети, которую вы создали. 
 3. После настройки сервера RADIUS получите его IP-адрес и общий секрет, который клиенты RADIUS будут использовать для обмена данными с сервером RADIUS. Если сервер RADIUS находится в виртуальной сети Azure, используйте IP-адрес центра сертификации виртуальной машины сервера RADIUS.
 
 Статья [Сервер политики сети (NPS)](https://docs.microsoft.com/windows-server/networking/technologies/nps/nps-top) содержит сведения о настройке сервера RADIUS (NPS) под управлением Windows для аутентификации домена AD.
@@ -146,34 +138,34 @@ VPN-подключение "точка — сеть" устанавливает
 * Для параметра -GatewayType должно быть установлено значение Vpn, а для параметра -VpnTyp — RouteBased.
 * Создание VPN-шлюза может занять до 45 минут. Время зависит от выбранного  [номера SKU шлюза](vpn-gateway-about-vpn-gateway-settings.md#gwsku) .
 
-```powershell
+```azurepowershell-interactive
 New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
 -Location $Location -IpConfigurations $ipconf -GatewayType Vpn `
 -VpnType RouteBased -EnableBgp $false -GatewaySku VpnGw1
 ```
 
 ## 4. <a name="addradius"></a>Добавление пула адресов клиента и сервера RADIUS
- 
-* -RadiusServer можно указать с помощью имени или IP-адреса. Если вы укажете имя и сервер находится в локальной среде, VPN-шлюз может не разрешить имя. В таком случае рекомендуем указать IP-адрес сервера. 
+ 
+* -RadiusServer можно указать с помощью имени или IP-адреса. Если вы укажете имя и сервер находится в локальной среде, VPN-шлюз может не разрешить имя. В таком случае рекомендуем указать IP-адрес сервера. 
 * Параметр -RadiusSecret должен соответствовать настроенному параметру на сервере RADIUS.
-* -VpnCientAddressPool — это диапазон, из которого VPN-клиенты будут получать IP-адреса при подключении. Используйте диапазон частных IP-адресов, который не пересекается с локальным расположением, из которого будет выполняться подключение, или с виртуальной сетью, к которой вы хотите подключиться. Настройте достаточное количество адресов в пуле.  
+* -VpnCientAddressPool — это диапазон, из которого VPN-клиенты будут получать IP-адреса при подключении. Используйте диапазон частных IP-адресов, который не пересекается с локальным расположением, из которого будет выполняться подключение, или с виртуальной сетью, к которой вы хотите подключиться. Настройте достаточное количество адресов в пуле.  
 
 1. Создайте безопасную строку секрета RADIUS.
 
-  ```powershell
+  ```azurepowershell-interactive
   $Secure_Secret=Read-Host -AsSecureString -Prompt "RadiusSecret"
   ```
 
 2. Появится запрос на ввод секрета RADIUS. Символы, которые вы вводите, не будут отображаться. Вместо них вы увидите символы "*".
 
-  ```powershell
+  ```azurepowershell-interactive
   RadiusSecret:***
   ```
 3. Добавьте пул адресов VPN-клиента и сведения о сервере RADIUS.
 
   Для конфигураций SSTP:
 
-    ```powershell
+    ```azurepowershell-interactive
     $Gateway = Get-AzureRmVirtualNetworkGateway -ResourceGroupName $RG -Name $GWName
     Set-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $Gateway `
     -VpnClientAddressPool "172.16.201.0/24" -VpnClientProtocol "SSTP" `
@@ -182,7 +174,7 @@ New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
 
   Для конфигураций IKEv2:
 
-    ```powershell
+    ```azurepowershell-interactive
     $Gateway = Get-AzureRmVirtualNetworkGateway -ResourceGroupName $RG -Name $GWName
     Set-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $Gateway `
     -VpnClientAddressPool "172.16.201.0/24" -VpnClientProtocol "IKEv2" `
@@ -191,7 +183,7 @@ New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
 
   Для конфигураций SSTP и IKEv2:
 
-    ```powershell
+    ```azurepowershell-interactive
     $Gateway = Get-AzureRmVirtualNetworkGateway -ResourceGroupName $RG -Name $GWName
     Set-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $Gateway `
     -VpnClientAddressPool "172.16.201.0/24" -VpnClientProtocol @( "SSTP", "IkeV2" ) `
@@ -200,7 +192,7 @@ New-AzureRmVirtualNetworkGateway -Name $GWName -ResourceGroupName $RG `
 
 ## 5. <a name="vpnclient"></a>Загрузка пакета конфигурации VPN-клиента и настройка VPN-клиента
 
-Конфигурация VPN-клиента позволяет устройствам устанавливать с виртуальной сетью соединение типа "точка — сеть". Чтобы создать пакет конфигурации VPN-клиента и настроить VPN-клиент, см. инструкции в статье о [создании файла конфигурации VPN-клиента для аутентификации RADIUS](point-to-site-vpn-client-configuration-radius.md).
+Конфигурация VPN-клиента позволяет устройствам устанавливать с виртуальной сетью соединение типа "точка — сеть". Чтобы создать пакет конфигурации VPN-клиента и настроить VPN-клиент, см. инструкции в статье о [создании файла конфигурации VPN-клиента для аутентификации RADIUS](point-to-site-vpn-client-configuration-radius.md).
 
 ## <a name="connect"></a>6. Подключение к Azure
 

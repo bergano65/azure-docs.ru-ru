@@ -1,5 +1,5 @@
 ---
-title: Запуск проверочного теста в Azure Stack | Документация Майкрософт
+title: Использование средства проверки Azure Stack | Документация Майкрософт
 description: Сведения о том, как собирать файлы журналов для диагностики в Azure Stack.
 services: azure-stack
 author: jeffgilb
@@ -10,193 +10,188 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 11/02/2018
+ms.date: 12/03/2018
 ms.author: jeffgilb
 ms.reviewer: adshar
-ms.openlocfilehash: af601005c7c8bd8fa7fe335879991caa34187927
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: f754242d0cf7ee30572b21a3f4daf6fd2c0f63ff
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51236981"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53275913"
 ---
-# <a name="run-a-validation-test-for-azure-stack"></a>Запуск проверочного теста в Azure Stack
+# <a name="validate-azure-stack-system-state"></a>Проверка состояния системы Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
- 
-Вы можете проверить состояние Azure Stack. Если возникнет проблема, обратитесь в службу поддержки пользователей Майкрософт. Специалист службы поддержки попросит вас выполнить командлет **Test-AzureStack** из узла управления. Проверочный тест выявит ошибку. Затем служба поддержки проанализирует подробные журналы, обращая внимание на область, в которой произошла ошибка, и вместе с вами попробует устранить проблему.
 
-## <a name="run-test-azurestack"></a>Выполнение Test-AzureStack
+Для оператора Azure Stack важна возможность получить по запросу информацию о состоянии системы. Средство проверки Azure Stack (**Test-AzureStack**) представляет собой командлет PowerShell, который позволяет выполнить в системе ряд тестов для выявления сбоев. Обычно при обращении в службу поддержки клиентов служб Майкрософт (CSS) для устранения проблем вам будут предлагать запустить это средство из [привилегированной конечной точки (PEP)](azure-stack-privileged-endpoint.md). Получив сведения о работоспособности и состоянии всей системы, служба поддержки клиентов переходит к сбору и анализу подробных журналов по тем областям, где произошла ошибка, и в сотрудничестве с вами устраняет проблему.
 
-Если возникнет проблема, обратитесь в службу поддержки пользователей Майкрософт, а затем выполните командлет **Run Test-AzureStack**.
+## <a name="running-the-validation-tool-and-accessing-results"></a>Запуск средства проверки и доступ к результатам
 
-1. У вас проблема.
-2. Обратитесь в службу поддержки пользователей Майкрософт.
-3. Выполните командлет **Test-AzureStack** из привилегированной конечной точки.
-    1. Получите доступ к привилегированной конечной точке. См. инструкции по [использованию привилегированной конечной точки в Azure Stack](azure-stack-privileged-endpoint.md). 
-    2. В ASDK войдите в узел управления как **AzureStack\CloudAdmin**.  
-    В интегрированной системе потребуется использовать IP-адрес привилегированной конечной точки для управления, предоставленного поставщиком оборудования OEM.
-    3. Откройте PowerShell от имени администратора.
-    4. Выполните команду `Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint`
-    5. Выполните команду `Test-AzureStack`
-4. Если все тесты сообщают об ошибках (**FAIL**), выполните этот командлет: `Get-AzureStackLog -FilterByRole SeedRing -OutputSharePath “<path>” -OutputShareCredential $cred`. Он собирает журналы выполнения Test-AzureStack. Дополнительные сведения о журналах диагностики см. в статье [Средства диагностики Azure Stack](azure-stack-diagnostics.md). Не следует собирать журналы или обращаться в службу поддержки пользователей Майкрософт (CSS), если тесты выдают предупреждение (**WARN**).
-5. Отправьте журналы **SeedRing** в службу поддержки пользователей Майкрософт. Служба поддержки Майкрософт совместно с вами постарается устранить проблему.
+Как уже упоминалось ранее, средство проверки запускается из привилегированной конечной точки. Каждый тест возвращает состояние **успеха или сбоя** в окне PowerShell. Кроме того, создается подробный отчет в формате HTML, который можно получить позднее при [сборе журналов](azure-stack-diagnostics.md). Ниже приводится описание полного процесса проверочного тестирования. 
 
-## <a name="reference-for-test-azurestack"></a>Справочник по Test-AzureStack
+1. Получите доступ к привилегированной конечной точке. Выполните следующие команды, чтобы создать сеанс подключения к привилегированной конечной точке:
 
-Этот раздел содержит общие сведения о командлете Test-AzureStack и сводку отчета о проверке.
+   ```powershell
+   Enter-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
+   ```
 
-### <a name="test-azurestack"></a>Test-AzureStack
+   > [!TIP]
+   > Для доступа к привилегированной конечной точке на главном компьютере ASDK укажите значение AzS-ERCS01 для параметра -ComputerName.
 
-Этот командлет проверяет состояние Azure Stack. Командлет сообщает о состоянии оборудования и программного обеспечения Azure Stack. Этот отчет поможет персоналу службы поддержки быстрее устранить проблемы, связанные с Azure Stack.
+2. Подключившись в привилегированной конечной точке, выполните следующую команду: 
 
-> [!Note]  
-> Командлет **Test-AzureStack** может обнаруживать сбои, которые не приводят к сбоям в облаке, например сбой одного диска или одного физического узла.
+   ```powershell
+   Test-AzureStack
+   ```
 
-#### <a name="syntax"></a>Синтаксис
+   Воспользуйтесь разделами [Рекомендации по настройке параметров](azure-stack-diagnostic-test.md#parameter-considerations) и [Примеры использования](azure-stack-diagnostic-test.md#use-case-examples), чтобы получить дополнительные сведения.
 
-````PowerShell
-  Test-AzureStack
-````
+3. Если любой из тестов вернет состояние **FAIL** (Сбой), выполните такую команду:
 
-#### <a name="parameters"></a>Параметры
+   ```powershell
+   Get-AzureStackLog -FilterByRole SeedRing -OutputSharePath "<path>" -OutputShareCredential $cred
+   ```
 
-| Параметр               | Значение           | Обязательно | значение по умолчанию |
-| ---                     | ---             | ---      | ---     |
-| ServiceAdminCredentials | Строка    | Нет        | FALSE   |
-| DoNotDeployTenantVm     | SwitchParameter | Нет        | FALSE   |
-| AdminCredential         | PSCredential    | Нет        | Нет данных      |
-| список                    | SwitchParameter | Нет        | FALSE   |
-| Игнорировать                  | Строка          | Нет        | Нет данных      |
-| Включить                 | Строка          | Нет        | Нет данных      |
-| BackupSharePath         | Строка          | Нет        | Нет данных      |
-| BackupShareCredential   | PSCredential    | Нет        | Нет данных      |
+   Этот командлет собирает журналы, созданные командлетом Test-AzureStack. Дополнительные сведения о журналах диагностики см. в статье [Средства диагностики Azure Stack](azure-stack-diagnostics.md). Нет необходимости собирать журналы или обращаться в службу поддержки пользователей, если тест возвращает состояние **WARN** (ПРЕДУПРЕЖДЕНИЕ).
 
+4. Если вы запускаете средство проверки по просьбе службы поддержки пользователей, нужно будет передать сотруднику службы поддержки собранные журналы для продолжения работы по устранению проблемы.
 
-Командлет Test-AzureStack поддерживает общие параметры: Verbose, Debug, ErrorAction, ErrorVariable, WarningAction, WarningVariable, OutBuffer, PipelineVariable и OutVariable. См. дополнительные сведения об [общих параметрах](https://go.microsoft.com/fwlink/?LinkID=113216). 
+## <a name="tests-available"></a>Доступные тесты
 
-### <a name="examples-of-test-azurestack"></a>Примеры Test-AzureStack
+Средство проверки позволяет выполнить ряд тестов на системном уровне и проверить базовые облачные сценарии, чтобы составить представление о текущем состоянии системы и наличии проблем.
 
-В следующих примерах предполагается, вы вошли как **CloudAdmin** и у вас есть доступ к привилегированной конечной точке. См. инструкции по [использованию привилегированной конечной точки в Azure Stack](azure-stack-privileged-endpoint.md). 
+### <a name="cloud-infrastructure-tests"></a>Тесты облачной инфраструктуры
 
-#### <a name="run-test-azurestack-interactively-without-cloud-scenarios"></a>Интерактивный запуск Test-AzureStack без облачных сценариев
+Эти тесты на уровне инфраструктуры выполняются без существенного влияния на работу системы и предоставляют сведения о различных системных компонентах и функциях. Сейчас тесты сгруппированы в следующие категории:
 
-В сеансе привилегированной конечной точки выполните следующую команду:
+| Категория тестов                                        | Аргумент для параметров -Include (Включить) и -Ignore (Игнорировать) |
+| :--------------------------------------------------- | :-------------------------------- |
+| Сводка по оповещениям Azure Stack                            | AzsAlertSummary                   |
+| Сводка по доступу к общему ресурсу резервных копий Azure Stack       | AzsBackupShareAccessibility       |
+| Сводка по плоскости управления Azure Stack                    | AzsControlPlane                   |
+| Сводка по Защитнику Azure Stack                         | AzsDefenderSummary                |
+| Сводка по встроенному ПО для инфраструктуры размещения Azure Stack  | AzsHostingInfraFWSummary          |
+| Сводка по инфраструктуре, размещающей облако Azure Stack     | AzsHostingInfraSummary            |
+| Использование инфраструктуры, размещающей облако Azure Stack | AzsHostingInfraUtilization        |
+| Производительность инфраструктуры Azure Stack                  | AzsInfraCapacity                  |
+| Производительность инфраструктуры Azure Stack               | AzsInfraPerformance               |
+| Сводка по роли инфраструктуры Azure Stack              | AzsInfraRoleSummary               |
+| Сводка по обновлению Azure Stack                           | AzsInfraUpdateSummary             |
+| Сводка по API и порталу Azure Stack                   | AzsPortalAPISummary               |
+| События виртуальной машины для единицы масштабирования Azure Stack                     | AzsScaleUnitEvents                |
+| Ресурсы виртуальной машины для единицы масштабирования Azure Stack                  | AzsScaleUnitResources             |
+| Сводка по проверке SDN для Azure Stack                   | AzsSDNValidation                  |
+| Сводка по роли Service Fabric для Azure Stack              | AzsSFRoleSummary                  |
+| Сводка по BMC для Azure Stack                              | AzsStampBMCSummary                |
+| Сводка по службам хранилища Azure Stack                 | AzsStorageSvcsSummary             |
+| Сводка по хранилищу SQL для Azure Stack                        | AzsStoreSummary                   |
+| Сводка по размещению виртуальных машин для Azure Stack                     | AzsVmPlacement                    |
 
-````PowerShell
-    Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint -Credential $localcred
-    Test-AzureStack
-````
+### <a name="cloud-scenario-tests"></a>Тесты облачных сценариев
 
-#### <a name="run-test-azurestack-with-cloud-scenarios"></a>Запуск Test-AzureStack с облачными сценариями
+Помимо вышеперечисленных тестов инфраструктуры, вы можете запускать тесты облачных сценариев для проверки функциональности разных компонентов инфраструктуры. Для выполнения этих тестов требуются учетные данные администратора облака, так как они включают развертывание ресурсов. 
+    > [!NOTE]
+    >
+    > Currently you cannot run cloud scenario tests using Active Directory Federated Services (AD FS) credentials. 
 
-С помощью командлета **Test-AzureStack** можно выполнять облачные сценарии в Azure Stack. Ниже приведены соответствующие сценарии.
+Средство проверки умеет проверять следующие облачные сценарии:
+- создание группы ресурсов;   
+- создание плана;              
+- создание предложения;            
+- создание учетной записи хранения;   
+- создание виртуальной машины; 
+- операции с хранилищем BLOB-объектов;   
+- операции с хранилищем очередей;  
+- операции с хранилищем таблиц.  
 
- - Создание группы ресурсов.
- - Создание планов.
- - Создание предложений.
- - Создание учетных записей хранения.
- - Создание виртуальной машины.
- - Выполнение операций в большом двоичном объекте с помощью учетной записи хранения, созданной в сценарии тестирования.
- - Выполнение операций в очереди с помощью учетной записи хранения, созданной в сценарии тестирования.
- - Выполнение операций в таблице с помощью учетной записи хранения, созданной в сценарии тестирования.
+## <a name="parameter-considerations"></a>Рекомендации по настройке параметров
 
-Для выполнения облачных сценариев требуются учетные данные администратора облака. 
-> [!Note]  
-> Вы не можете запускать сценарии в облаке с помощью учетных данных службы федерации Active Directory (AD FS). Командлет **Test-AzureStack** можно запустить только из привилегированной конечной точки. Но эта конечная точка не поддерживает учетные данные AD FS.
+- Параметр **List** (Список) позволяет отобразить все доступные категории тестов.
 
-Введите имя администратора облака в формате имени участника-пользователя serviceadmin@contoso.onmicrosoft.com (Azure AD). При появлении запроса введите пароль учетной записи администратора облака.
+- Параметры **Include** (Включить) и **Ignore** (Пропустить) можно применять для включения или исключения определенных категорий тестов. В разделе [Доступные тесты](azure-stack-diagnostic-test.md#tests-available) вы найдете дополнительные сведения о сокращениях, которые можно использовать с этими аргументами.
 
-В сеансе привилегированной конечной точки выполните следующую команду:
-
-````PowerShell
-  Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint -Credential $localcred
-  Test-AzureStack -ServiceAdminCredentials <Cloud administrator user name>
-````
-
-#### <a name="run-test-azurestack-without-cloud-scenarios"></a>Запуск Test-AzureStack без облачных сценариев
-
-В сеансе привилегированной конечной точки выполните следующую команду:
-
-````PowerShell
-  $session = New-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint -Credential $localcred
-  Invoke-Command -Session $session -ScriptBlock {Test-AzureStack}
-````
-
-#### <a name="list-available-test-scenarios"></a>Список доступных сценариев теста
-
-В сеансе привилегированной конечной точки выполните следующую команду:
-
-````PowerShell
-  Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint -Credential $localcred
-  Test-AzureStack -List
-````
-
-#### <a name="run-a-specified-test"></a>Выполнение конкретного теста
-
-В сеансе привилегированной конечной точки выполните следующую команду:
-
-````PowerShell
-  Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint -Credential $localcred
+  ```powershell
   Test-AzureStack -Include AzsSFRoleSummary, AzsInfraCapacity
-````
+  ```
 
-Чтобы исключить определенные тесты, выполните эту команду:
+  ```powershell
+  Test-AzureStack -Ignore AzsInfraPerformance
+  ```
 
-````PowerShell
-    Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint -Credential $localcred
-    Test-AzureStack -Ignore AzsInfraPerformance
-````
+- В одном из тестов облачных сценариев выполняется развертывание виртуальной машины клиента. Чтобы отключить его, укажите параметр **DoNotDeployTenantVm**. 
 
-### <a name="run-test-azurestack-to-test-infrastructure-backup-settings"></a>Выполнение командлета Test-AzureStack для тестирования параметров резервного копирования инфраструктуры
+- Параметр **ServiceAdminCredential** является обязательным для выполнения тестов облачных сценариев, как описано в разделе [Примеры использования](azure-stack-diagnostic-test.md#use-case-examples).
 
-Перед настройкой резервного копирования инфраструктуры вы можете протестировать путь к общему ресурсу резервных копий и учетные данные с помощью теста **AzsBackupShareAccessibility**.
+- Параметры **BackupSharePath** и **BackupShareCredential** используются при тестировании параметров резервного копирования инфраструктуры, как показано в разделе [Примеры использования](azure-stack-diagnostic-test.md#use-case-examples).
 
-В сеансе привилегированной конечной точки выполните следующую команду:
+- Средство проверки также поддерживает стандартные параметры PowerShell: Verbose, Debug, ErrorAction, ErrorVariable, WarningAction, WarningVariable, OutBuffer, PipelineVariable и OutVariable. См. дополнительные сведения об [общих параметрах](http://go.microsoft.com/fwlink/?LinkID=113216).  
 
-````PowerShell
-    Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint -Credential $localcred
-    Test-AzureStack -Include AzsBackupShareAccessibility -BackupSharePath "\\<fileserver>\<fileshare>" -BackupShareCredential <PSCredentials-for-backup-share>
-````
-После настройки резервного копирования вы можете выполнить команду AzsBackupShareAccessibility для проверки доступа к общему ресурсу из ERCS. В сеансе PEP выполните следующую команду:
+## <a name="use-case-examples"></a>Примеры использования
 
-````PowerShell
-    Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint -Credential $localcred
-    Test-AzureStack -Include AzsBackupShareAccessibility
-````
+### <a name="run-validation-without-cloud-scenarios"></a>Запуск проверки без облачных сценариев
 
-Чтобы проверить новые учетные данные с настроенным общим ресурсом резервных копий, в сеансе PEP выполните следующую команду:
+Запустите средство проверки без параметра **ServiceAdminCredential**, чтобы пропустить тесты облачных сценариев: 
 
-````PowerShell
-    Enter-PSSession -ComputerName <ERCS-VM-name> -ConfigurationName PrivilegedEndpoint -Credential $localcred
-    Test-AzureStack -Include AzsBackupShareAccessibility -BackupShareCredential <PSCredential for backup share>
-````
+```powershell
+New-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred
+Test-AzureStack
+```
 
-### <a name="validation-test"></a>Проверочный тест
+### <a name="run-validation-with-cloud-scenarios"></a>Запуск проверки с облачными сценариями
 
-В следующей таблице перечислены проверочные тесты, выполняемые с помощью командлета **Test-AzureStack**.
+Если средство проверки запущено с параметром **ServiceAdminCredentials**, по умолчанию оно выполняет тесты облачных сценариев: 
 
-| ИМЯ                                                                                                                              |
-|-----------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| Сводка по инфраструктуре, размещающей облако Azure Stack                                                                                  |
-| Сводка по службам хранилища Azure Stack                                                                                              |
-| Сводка по экземпляру роли инфраструктуры Azure Stack                                                                                  |
-| Использование инфраструктуры, размещающей облако Azure Stack                                                                              |
-| Производительность инфраструктуры Azure Stack                                                                                               |
-| Сводка по API и порталу Azure Stack                                                                                                |
-| Сводка по сертификату Azure Resource Manager для Azure Stack                                                                                               |
-| Роли контроллера управления инфраструктурой, сетевого контроллера, службы хранилища и инфраструктуры привилегированной конечной точки          |
-| Экземпляры роли контроллера управления инфраструктурой, сетевого контроллера, службы хранилища и инфраструктуры привилегированной конечной точки |
-| Сводка по роли инфраструктуры Azure Stack                                                                                           |
-| Облачные службы Service Fabric Azure Stack                                                                                         |
-| Производительность экземпляра роли инфраструктуры Azure Stack                                                                              |
-| Сводка по производительности узлов в облаке Azure Stack                                                                                        |
-| Сводка по потреблению ресурсов службы Azure Stack                                                                                  |
-| Критические события единицы масштабирования Azure Stack (за последние 8 часов)                                                                             |
-| Сводка по физическим дискам служб хранилища Azure Stack                                                                               |
-|Сводка по доступу к общему ресурсу резервных копий Azure Stack                                                                                     |
+```powershell
+Enter-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
+Test-AzureStack -ServiceAdminCredential "<Cloud administrator user name>" 
+```
+
+Если вы хотите выполнить ТОЛЬКО тесты облачных сценариев без остальных тестов, укажите параметр **Include**: 
+
+```powershell
+Enter-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
+Test-AzureStack -ServiceAdminCredential "<Cloud administrator user name>" -Include AzsScenarios   
+```
+
+Имя администратора облака следует указывать в формате имени участника-пользователя: serviceadmin@contoso.onmicrosoft.com (Azure AD). При появлении запроса введите пароль учетной записи администратора облака.
+
+### <a name="run-validation-tool-to-test-system-readiness-before-installing-update-or-hotfix"></a>Запуск средства проверки для тестирования готовности системы перед установкой обновления или исправления
+
+Прежде чем устанавливать обновление или исправление, следует запустить средство проверки для тестирования состояния Azure Stack:
+
+```powershell
+New-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
+Test-AzureStack -Include AzsControlPlane, AzsDefenderSummary, AzsHostingInfraSummary, AzsHostingInfraUtilization, AzsInfraCapacity, AzsInfraRoleSummary, AzsPortalAPISummary, AzsSFRoleSummary, AzsStampBMCSummary
+```
+
+### <a name="run-validation-tool-to-test-infrastructure-backup-settings"></a>Запуск средства проверки для тестирования параметров резервного копирования инфраструктуры
+
+*Перед* настройкой резервного копирования инфраструктуры вы можете протестировать путь к общему ресурсу резервных копий и учетные данные с помощью теста **AzsBackupShareAccessibility**: 
+
+  ```powershell
+  New-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
+  Test-AzureStack -Include AzsBackupShareAccessibility -BackupSharePath "\\<fileserver>\<fileshare>" -BackupShareCredential <PSCredentials-for-backup-share>
+  ```
+
+*После* настройки резервного копирования вы можете выполнить команду **AzsBackupShareAccessibility** для проверки доступа к общему ресурсу из ERCS.
+
+  ```powershell
+  Enter-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
+  Test-AzureStack -Include AzsBackupShareAccessibility
+  ```
+
+Чтобы проверить новые учетные данные для настроенного общего ресурса резервных копий, выполните следующую команду: 
+
+  ```powershell
+  Enter-PSSession -ComputerName "<ERCS VM-name/IP address>" -ConfigurationName PrivilegedEndpoint -Credential $localcred 
+  Test-AzureStack -Include AzsBackupShareAccessibility -BackupShareCredential "<PSCredential for backup share>"
+  ```
+
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 
- - Дополнительные сведения о средствах диагностики Azure Stack и ведении журналов проблем см. в статье [Средства диагностики Azure Stack](azure-stack-diagnostics.md).
- - Дополнительные сведения об устранении неполадок см. в статье [Устранение неполадок, связанных с Microsoft Azure Stack](azure-stack-troubleshooting.md).
+Дополнительные сведения о средствах диагностики Azure Stack и ведении журналов проблем см. в статье [Средства диагностики Azure Stack](azure-stack-diagnostics.md).
+
+Дополнительные сведения об устранении неполадок см. в статье [Устранение неполадок, связанных с Microsoft Azure Stack](azure-stack-troubleshooting.md).

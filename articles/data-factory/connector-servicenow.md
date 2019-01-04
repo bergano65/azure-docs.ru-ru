@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/23/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 1e0bbfafcda77ca48fb22ad919c5848a7670a102
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 67658d75f7ad4a6db1af5db97a525774b0ab6e61
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52309680"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53095284"
 ---
 # <a name="copy-data-from-servicenow-using-azure-data-factory"></a>Копирование данных из ServiceNow с помощью фабрики данных Azure
 
@@ -42,9 +42,9 @@ ms.locfileid: "52309680"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type нужно задать значение **ServiceNow**. | Yes |
+| Тип | Свойству type необходимо задать следующее значение: **ServiceNow** | Yes |
 | endpoint | Конечная точка сервера ServiceNow (`http://<instance>.service-now.com`).  | Yes |
-| authenticationType | Тип проверки подлинности. <br/>Допустимые значения: **Basic**, **OAuth2**. | Yes |
+| authenticationType | Тип проверки подлинности. <br/>Допустимые значения: **Basic**, **OAuth2** | Yes |
 | Имя пользователя | Имя пользователя, используемое для подключения к серверу ServiceNow для обычной проверки подлинности и OAuth2.  | Yes |
 | password | Пароль, соответствующий имени пользователя для обычной проверки подлинности и OAuth2. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | clientid | Идентификатор клиента для проверки подлинности OAuth2.  | Нет  |
@@ -77,7 +77,12 @@ ms.locfileid: "52309680"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). Этот раздел содержит список свойств, поддерживаемых набором данных ServiceNow.
 
-Чтобы скопировать данные из ServiceNow, установите свойство type набора данных **ServiceNowObject**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные из ServiceNow, установите свойство type набора данных **ServiceNowObject**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Для свойства type набора данных необходимо задать следующее значение: **ServiceNowObject** | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -89,7 +94,8 @@ ms.locfileid: "52309680"
         "linkedServiceName": {
             "referenceName": "<ServiceNow linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -104,8 +110,8 @@ ms.locfileid: "52309680"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **ServiceNowSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Actual.alm_asset"`. | Yes |
+| Тип | Свойство type источника действия копирования должно иметь следующее значение: **ServiceNowSource** | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Actual.alm_asset"`. | Нет (если для набора данных задано свойство tableName) |
 
 Указывая в запросе схему и столбец для ServiceNow, обратите внимание на следующую информацию. Также просмотрите **советы по [улучшению производительности](#performance-tips) копирования**.
 
@@ -113,7 +119,7 @@ ms.locfileid: "52309680"
 - **Столбец.** Имя столбца для фактического значения в схеме `Actual` — это `[columne name]_value`, а отображаемое имя в `Display` — это `[columne name]_display_value`. Обратите внимание, что имя столбца должно соответствовать имени в схеме, используемой в запросе.
 
 **Пример запроса:**
-`SELECT col_value FROM Actual.alm_asset` или  
+`SELECT col_value FROM Actual.alm_asset` или 
 `SELECT col_display_value FROM Display.alm_asset`
 
 **Пример.**

@@ -1,5 +1,6 @@
 ---
-title: Мониторинг операций, событий и счетчиков для общедоступного Load Balancer ценовой категории "Базовый" | Документация Майкрософт
+title: Мониторинг операций, событий и счетчиков для общедоступной службы Load Balancer ценовой категории "Базовый"
+titlesuffix: Azure Load Balancer
 description: Узнайте, как включить ведение журналов событий оповещений и проверки работоспособности для общедоступного Load Balancer ценовой категории "Базовый"
 services: load-balancer
 documentationcenter: na
@@ -7,21 +8,22 @@ author: KumudD
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
+ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/10/2018
 ms.author: kumud
-ms.openlocfilehash: e8d38aaff2e7f20a3935608bcf4d610828d2b84f
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 00a5e888961a9712db0cd509a39fb0367895ac3f
+ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51261508"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53164132"
 ---
 # <a name="log-analytics-for-public-basic-load-balancer"></a>Log Analytics для общедоступного Load Balancer ценовой категории "Базовый"
 
 >[!IMPORTANT] 
->Azure Load Balancer поддерживает два типа: категории "Базовый" и "Стандартный". В этой статье рассматривается Azure Load Balancer категории "Базовый". Дополнительные сведения о Load Balancer ценовой категории "Стандартный" см. в разделе [Обзор Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md), в котором предоставлены данные телеметрии с помощью многомерных метрик в Azure Monitor.
+>Azure Load Balancer поддерживает две ценовые категории: "Базовый" и "Стандартный". В этой статье рассматривается Azure Load Balancer категории "Базовый". Дополнительные сведения о Load Balancer ценовой категории "Стандартный" см. в разделе [Обзор Azure Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md), в котором предоставлены данные телеметрии с помощью многомерных метрик в Azure Monitor.
 
 В Azure можно использовать различные виды журналов для управления Load Balancer ценовой категории "Базовый" и устранения возникающих в них неполадок. Доступ к некоторым из этих журналов можно получить через портал. Также все журналы можно извлечь из хранилища BLOB-объектов Azure, чтобы просматривать их с помощью таких средств, как Excel и Power BI. В списке ниже приведены дополнительные сведения о различных типах журналов.
 

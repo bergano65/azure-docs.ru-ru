@@ -1,21 +1,22 @@
 ---
-title: Использование диспетчера трафика Microsoft Azure для увеличения квоты конечной точки в Интеллектуальной службе распознавания речи (LUIS)
+title: Увеличение квоты конечной точки
 titleSuffix: Azure Cognitive Services
 description: Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**.
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 services: cognitive-services
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: 28fc0d0061d1826f0e17c26325ea227e001dccda
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: 3f3dddca7944403ace6a9779be07b0d458fb3cd1
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47042182"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53076769"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько ключей
 Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**. 
@@ -36,7 +37,7 @@ ms.locfileid: "47042182"
 
 Создайте группу ресурсов с помощью командлета **[New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/azurerm.resources/new-azurermresourcegroup?view=azurermps-6.2.0)**:
 
-```PowerShell
+```powerShell
 New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 ```
 
@@ -69,7 +70,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
     Для создания профиля воспользуйтесь указанным ниже командлетом. Не забудьте изменить значения параметров `appIdLuis` и `subscriptionKeyLuis`. Ключ подписки указан для региона LUIS "Восточная часть США". Если путь, включая идентификатор приложения и ключ конечной точки, является неправильным, то результат опроса диспетчера трафика получает состояние `degraded`, так как диспетчер трафика не может успешно опросить конечную точку LUIS. Убедитесь, что параметр `q` имеет значение `traffic-manager-east`, которое можно будет найти в журналах конечной точки LUIS.
 
-    ```PowerShell
+    ```powerShell
     $eastprofile = New-AzureRmTrafficManagerProfile -Name luis-profile-eastus -ResourceGroupName luis-traffic-manager -TrafficRoutingMethod Performance -RelativeDnsName luis-dns-eastus -Ttl 30 -MonitorProtocol HTTPS -MonitorPort 443 -MonitorPath "/luis/v2.0/apps/<appID>?subscription-key=<subscriptionKey>&q=traffic-manager-east"
     ```
     
@@ -89,7 +90,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
 2. Добавление конечной точки в регионе "Восточная часть США" с помощью командлета **[Add-AzureRmTrafficManagerEndpointConfig](https://docs.microsoft.com/powershell/module/azurerm.trafficmanager/add-azurermtrafficmanagerendpointconfig?view=azurermps-6.2.0)**
 
-    ```PowerShell
+    ```powerShell
     Add-AzureRmTrafficManagerEndpointConfig -EndpointName luis-east-endpoint -TrafficManagerProfile $eastprofile -Type ExternalEndpoints -Target eastus.api.cognitive.microsoft.com -EndpointLocation "eastus" -EndpointStatus Enabled
     ```
     В таблице ниже показаны значения каждой переменной в командлете:
@@ -105,7 +106,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
     Успешный ответ выглядит следующим образом:
 
-    ```cmd
+    ```console
     Id                               : /subscriptions/<azure-subscription-id>/resourceGroups/luis-traffic-manager/providers/Microsoft.Network/trafficManagerProfiles/luis-profile-eastus
     Name                             : luis-profile-eastus
     ResourceGroupName                : luis-traffic-manager
@@ -124,7 +125,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
 3. Настройка конечной точки в регионе "Восточная часть США" с помощью командлета **[Set-AzureRmTrafficManagerProfile](https://docs.microsoft.com/powershell/module/azurerm.trafficmanager/set-azurermtrafficmanagerprofile?view=azurermps-6.2.0)**
 
-    ```PowerShell
+    ```powerShell
     Set-AzureRmTrafficManagerProfile -TrafficManagerProfile $eastprofile
     ```
 
@@ -137,7 +138,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
     Для создания профиля воспользуйтесь указанным ниже командлетом. Не забудьте изменить значения параметров `appIdLuis` и `subscriptionKeyLuis`. Ключ подписки указан для региона LUIS "Восточная часть США". Если путь, включая идентификатор приложения и ключ конечной точки, является неправильным, то результат опроса диспетчера трафика получает состояние `degraded`, так как диспетчер трафика не может успешно опросить конечную точку LUIS. Убедитесь, что параметр `q` имеет значение `traffic-manager-west`, которое можно будет найти в журналах конечной точки LUIS.
 
-    ```PowerShell
+    ```powerShell
     $westprofile = New-AzureRmTrafficManagerProfile -Name luis-profile-westus -ResourceGroupName luis-traffic-manager -TrafficRoutingMethod Performance -RelativeDnsName luis-dns-westus -Ttl 30 -MonitorProtocol HTTPS -MonitorPort 443 -MonitorPath "/luis/v2.0/apps/<appIdLuis>?subscription-key=<subscriptionKeyLuis>&q=traffic-manager-west"
     ```
     
@@ -157,7 +158,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
 2. Добавление конечной точки в регионе "Западная часть США" с помощью командлета **[Add-AzureRmTrafficManagerEndpointConfig](https://docs.microsoft.com/powershell/module/AzureRM.TrafficManager/Add-AzureRmTrafficManagerEndpointConfig?view=azurermps-6.2.0)**
 
-    ```PowerShell
+    ```powerShell
     Add-AzureRmTrafficManagerEndpointConfig -EndpointName luis-west-endpoint -TrafficManagerProfile $westprofile -Type ExternalEndpoints -Target westus.api.cognitive.microsoft.com -EndpointLocation "westus" -EndpointStatus Enabled
     ```
 
@@ -174,7 +175,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
     Успешный ответ выглядит следующим образом:
 
-    ```cmd
+    ```console
     Id                               : /subscriptions/<azure-subscription-id>/resourceGroups/luis-traffic-manager/providers/Microsoft.Network/trafficManagerProfiles/luis-profile-westus
     Name                             : luis-profile-westus
     ResourceGroupName                : luis-traffic-manager
@@ -193,7 +194,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
 3. Настройка конечной точки в регионе "Западная часть США" с помощью командлета **[Set-AzureRmTrafficManagerProfile](https://docs.microsoft.com/powershell/module/AzureRM.TrafficManager/Set-AzureRmTrafficManagerProfile?view=azurermps-6.2.0)**
 
-    ```PowerShell
+    ```powerShell
     Set-AzureRmTrafficManagerProfile -TrafficManagerProfile $westprofile
     ```
 
@@ -204,7 +205,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
 1. Создание родительского профиля с помощью командлета **[New-AzureRmTrafficManagerProfile](https://docs.microsoft.com/powershell/module/AzureRM.TrafficManager/New-AzureRmTrafficManagerProfile?view=azurermps-6.2.0)**
 
-    ```PowerShell
+    ```powerShell
     $parentprofile = New-AzureRmTrafficManagerProfile -Name luis-profile-parent -ResourceGroupName luis-traffic-manager -TrafficRoutingMethod Performance -RelativeDnsName luis-dns-parent -Ttl 30 -MonitorProtocol HTTPS -MonitorPort 443 -MonitorPath "/"
     ```
 
@@ -224,7 +225,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
 2. Добавление дочернего профиля для региона "Восточная часть США" в родительский профиль с помощью командлета **[Add-AzureRmTrafficManagerEndpointConfig](https://docs.microsoft.com/powershell/module/AzureRM.TrafficManager/Add-AzureRmTrafficManagerEndpointConfig?view=azurermps-6.2.0)** и с использованием типа **NestedEndpoints**
 
-    ```PowerShell
+    ```powerShell
     Add-AzureRmTrafficManagerEndpointConfig -EndpointName child-endpoint-useast -TrafficManagerProfile $parentprofile -Type NestedEndpoints -TargetResourceId $eastprofile.Id -EndpointStatus Enabled -EndpointLocation "eastus" -MinChildEndpoints 1
     ```
 
@@ -242,7 +243,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
     Успешный ответ будет похож на приведенный ниже и будет включать новую конечную точку `child-endpoint-useast`:    
 
-    ```cmd
+    ```console
     Id                               : /subscriptions/<azure-subscription-id>/resourceGroups/luis-traffic-manager/providers/Microsoft.Network/trafficManagerProfiles/luis-profile-parent
     Name                             : luis-profile-parent
     ResourceGroupName                : luis-traffic-manager
@@ -261,7 +262,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
 3. Добавление дочернего профиля для региона "Западная часть США" в родительский профиль с помощью командлета **[Add-AzureRmTrafficManagerEndpointConfig](https://docs.microsoft.com/powershell/module/AzureRM.TrafficManager/Add-AzureRmTrafficManagerEndpointConfig?view=azurermps-6.2.0)** и с использованием типа **NestedEndpoints**
 
-    ```PowerShell
+    ```powerShell
     Add-AzureRmTrafficManagerEndpointConfig -EndpointName child-endpoint-uswest -TrafficManagerProfile $parentprofile -Type NestedEndpoints -TargetResourceId $westprofile.Id -EndpointStatus Enabled -EndpointLocation "westus" -MinChildEndpoints 1
     ```
 
@@ -279,7 +280,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
     Успешный ответ будет похож на приведенный ниже и будет включать как предыдущую конечную точку `child-endpoint-useast`, так и новую конечную точку `child-endpoint-uswest`:
 
-    ```cmd
+    ```console
     Id                               : /subscriptions/<azure-subscription-id>/resourceGroups/luis-traffic-manager/providers/Microsoft.Network/trafficManagerProfiles/luis-profile-parent
     Name                             : luis-profile-parent
     ResourceGroupName                : luis-traffic-manager
@@ -298,7 +299,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
 4. Настройка конечных точек с помощью командлета **[Set-AzureRmTrafficManagerProfile](https://docs.microsoft.com/powershell/module/AzureRM.TrafficManager/Set-AzureRmTrafficManagerProfile?view=azurermps-6.2.0)** 
 
-    ```PowerShell
+    ```powerShell
     Set-AzureRmTrafficManagerProfile -TrafficManagerProfile $parentprofile
     ```
 
@@ -309,7 +310,7 @@ New-AzureRmResourceGroup -Name luis-traffic-manager -Location "West US"
 
 Замените элементы в угловых скобках (`<>`) на соответствующие значения для каждого из трех профилей. 
 
-```PowerShell
+```powerShell
 $<variable-name> = Get-AzureRmTrafficManagerProfile -Name <profile-name> -ResourceGroupName luis-traffic-manager
 ```
 
@@ -329,7 +330,7 @@ $<variable-name> = Get-AzureRmTrafficManagerProfile -Name <profile-name> -Resour
 ### <a name="validate-traffic-manager-polling-works"></a>Проверка опроса диспетчера трафика
 Еще один способ проверить работу опросов диспетчера трафика — журналы конечных точек LUIS. На странице со списком приложений веб-сайта [LUIS][LUIS] экспортируйте журнал конечной точки для приложения. Поскольку диспетчер трафика часто опрашивает две конечные точки, в журналах будут записи с опросом этих конечных точек, даже если они работали всего несколько минут. Найдите записи, запросы для которых начинаются с `traffic-manager-`.
 
-```text
+```console
 traffic-manager-west    6/7/2018 19:19  {"query":"traffic-manager-west","intents":[{"intent":"None","score":0.944767}],"entities":[]}
 traffic-manager-east    6/7/2018 19:20  {"query":"traffic-manager-east","intents":[{"intent":"None","score":0.944767}],"entities":[]}
 ```
@@ -339,7 +340,7 @@ traffic-manager-east    6/7/2018 19:20  {"query":"traffic-manager-east","intents
 
 В следующем примере кода Node.js отправляется запрос к родительскому профилю, и возвращается конечная точка LUIS:
 
-```javascript
+```nodejs
 const dns = require('dns');
 
 dns.resolveAny('luis-dns-parent.trafficmanager.net', (err, ret) => {

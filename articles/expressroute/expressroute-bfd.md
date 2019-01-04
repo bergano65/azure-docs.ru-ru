@@ -1,25 +1,19 @@
 ---
-title: Настройка обнаружения двунаправленной передачи через ExpressRoute | Документация Майкрософт
-description: Этот документ содержит инструкции по настройке обнаружения двунаправленной передачи через частный пиринг по каналу ExpressRoute.
-documentationcenter: na
+title: Настройка обнаружения двунаправленной передачи через ExpressRoute в Azure | Документация Майкрософт
+description: Эта статья содержит инструкции по настройке обнаружения двунаправленной передачи (BFD) через частный пиринг по каналу ExpressRoute.
 services: expressroute
 author: rambk
-manager: tracsman
-editor: ''
-ms.assetid: ''
 ms.service: expressroute
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
 ms.date: 8/17/2018
 ms.author: rambala
-ms.openlocfilehash: 6d941bf810a45e8808f83c4df701a856f664c7ef
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.custom: seodec18
+ms.openlocfilehash: 14f65851e50ed25024524f6d988ba2b2f2b3aeba
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51631665"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53083790"
 ---
 # <a name="configure-bfd-over-expressroute"></a>Настройка обнаружения двунаправленной передачи через ExpressRoute
 

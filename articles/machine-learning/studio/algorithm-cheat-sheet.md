@@ -4,21 +4,20 @@ description: Памятка по алгоритмам Машинного обу�
 keywords: памятка по алгоритмам, памятка, алгоритм машинного обучения
 services: machine-learning
 author: ericlicoding
-ms.custom: (previous ms.author=pakalra, author=pakalra)
+ms.custom: previous-ms.author=pakalra, previous-author=pakalra
 ms.author: amlstudiodocs
-manager: cgronlun
 editor: cgronlun
 ms.assetid: e1dc31ec-1acb-463f-ba77-de565d4ddf4d
 ms.service: machine-learning
 ms.component: studio
 ms.topic: article
 ms.date: 12/18/2017
-ms.openlocfilehash: 307a2d442fc8cf82630b111b6ea73e180c740c64
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 7ddc3a9829dc05ac1c1df450091789e4cad2b2f5
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52307424"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53274519"
 ---
 # <a name="machine-learning-algorithm-cheat-sheet-for-azure-machine-learning-studio"></a>Памятка по алгоритмам машинного обучения для студии машинного обучения Azure
 
@@ -26,11 +25,11 @@ ms.locfileid: "52307424"
 
 [Студия машинного обучения Azure](https://studio.azureml.net/) включает большую библиотеку алгоритмов из семейств ***регрессии***, ***классификации***, ***кластеризации*** и ***обнаружения аномалий***. Каждое семейство предназначено для решения определенного типа проблем, связанных с машинным обучением.
 
-## <a name="download-machine-learning-algorithm-cheat-sheet"></a>Скачивание памятки по алгоритмам Машинного обучения Microsoft Azure
+## <a name="download-machine-learning-algorithm-cheat-sheet"></a>Скачивание: памятка по алгоритмам машинного обучения
 
-**Скачать можно здесь: [Памятка по алгоритмам Машинного обучения Microsoft Azure (27,94 x 43,18 см)](https://download.microsoft.com/download/A/6/1/A613E11E-8F9C-424A-B99D-65344785C288/microsoft-machine-learning-algorithm-cheat-sheet-v7.pdf)**
+**Скачать памятку можно отсюда: [Памятка по алгоритмам машинного обучения (28х43 см)](https://download.microsoft.com/download/A/6/1/A613E11E-8F9C-424A-B99D-65344785C288/microsoft-machine-learning-algorithm-cheat-sheet-v7.pdf)**
 
-![Памятка по алгоритмам машинного обучения: как выбрать алгоритм машинного обучения?][cheat-sheet]
+![Памятка по алгоритмам машинного обучения Узнайте, как правильно выбрать алгоритм машинного обучения.][cheat-sheet]
 
 [cheat-sheet]: ./media/algorithm-cheat-sheet/machine-learning-algorithm-cheat-sheet-small_v_0_6-01.png
 
@@ -73,7 +72,7 @@ ms.locfileid: "52307424"
 
 * Чтобы скачать и распечатать схему, на которой представлены общие возможности Студии машинного обучения, см. [обзорную схему возможностей Студии машинного обучения Azure](studio-overview-diagram.md).
 
-[!INCLUDE [machine-learning-free-trial](../../../includes/machine-learning-free-trial.md)]
+
 
 <!-- Module References -->
 [a-z-list]: https://docs.microsoft.com/azure/machine-learning/studio-module-reference/a-z-module-list

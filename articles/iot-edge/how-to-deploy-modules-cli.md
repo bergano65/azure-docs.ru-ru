@@ -1,5 +1,5 @@
 ---
-title: Развертывание модулей IoT Edge Azure | Документация Майкрософт
+title: Развертывание модулей с помощью командной строки — Azure IoT Edge | Документация Майкрософт
 description: Использование расширения IoT интерфейса командной строки Azure для развертывания модулей на устройстве IoT Edge
 author: kgremban
 manager: philmea
@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.reviewer: menchi
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a8f39befbe1a329091da19eeba14a8dcc749fa93
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: f9aa3fff8750dc20053072c939a6db9362a2b0d7
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51564992"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53093579"
 ---
 # <a name="deploy-azure-iot-edge-modules-with-azure-cli"></a>Развертывание модулей IoT Edge Azure с помощью интерфейса командной строки Azure
 
@@ -117,7 +118,7 @@ ms.locfileid: "51564992"
 
 В параметре идентификатора устройства учитывается регистр символов. Параметр content указывает на сохраненный ранее файл манифеста развертывания. 
 
-   ![Настройка модулей](./media/how-to-deploy-cli/set-modules.png)
+   ![Выходные данные команды az iot edge set-modules](./media/how-to-deploy-cli/set-modules.png)
 
 ## <a name="view-modules-on-your-device"></a>Просмотр модулей, установленных на устройстве
 
@@ -131,7 +132,7 @@ ms.locfileid: "51564992"
 
 В параметре идентификатора устройства учитывается регистр.
 
-   ![Вывод списка модулей](./media/how-to-deploy-cli/list-modules.png)
+   ![Выходные данные команды az iot hub module-identity list](./media/how-to-deploy-cli/list-modules.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

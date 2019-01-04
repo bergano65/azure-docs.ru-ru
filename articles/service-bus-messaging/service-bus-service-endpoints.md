@@ -1,35 +1,53 @@
 ---
 title: Конечные точки службы и правила виртуальной сети для Служебной шины Azure | Документация Майкрософт
 description: Добавление конечной точки службы Microsoft.ServiceBus в виртуальную сеть.
-services: event-hubs
+services: service-bus
 documentationcenter: ''
 author: clemensv
 manager: timlt
-ms.service: event-hubs
+ms.service: service-bus
 ms.devlang: na
 ms.topic: article
 ms.date: 09/05/2018
 ms.author: clemensv
-ms.openlocfilehash: 05930dfce64378d792213ccaefa3d15057bd5dfd
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 3e1bdcc9340cc6cf997bebcdf1567bf676521ea5
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405008"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53276134"
 ---
 # <a name="use-virtual-network-service-endpoints-with-azure-service-bus"></a>Использование конечных точек службы виртуальной сети со Служебной шиной Azure
 
-Интеграция службы "Служебная шина" с [конечными точками службы виртуальной сети][vnet-sep] обеспечивает безопасный доступ к возможностям обмена сообщениями из рабочих нагрузок, таких как виртуальные машины, связанные с виртуальными сетями, где трафик защищен с обеих сторон. 
+Интеграция службы "Служебная шина" с [конечными точками службы виртуальной сети][vnet-sep] обеспечивает безопасный доступ к возможностям обмена сообщениями из рабочих нагрузок, таких как виртуальные машины, связанные с виртуальными сетями, где трафик защищен с обеих сторон.
 
 Если настроена привязка по крайней мере к одной конечной точке службы подсети виртуальной сети, пространство имен соответствующей Служебной шины принимает трафик только из авторизованных виртуальных сетей. С точки зрения виртуальной сети привязка пространства имен Служебной шины к конечной точке службы настраивает изолированный сетевой туннель от подсети виртуальной сети к службе обмена сообщениями.
 
 Результатом является частная и изолированная взаимосвязь между рабочими нагрузками, связанными с подсетью, и соответствующим пространством имен Служебной шины, несмотря на то что наблюдаемый сетевой адрес конечной точки службы обмена сообщениями находится в общедоступном диапазоне IP-адресов.
 
+>[!WARNING]
+> Реализация интеграции виртуальных сетей может препятствовать взаимодействию других служб Azure со служебной шиной.
+>
+> Доверенные службы Майкрософт не поддерживаются, если реализованы виртуальные сети. Их поддержка будет доступна в ближайшее время.
+>
+> Распространенные сценарии Azure, которые не работают с виртуальными сетями (обратите внимание, что список **НЕ** является исчерпывающим):
+> - Azure Monitor
+> - Azure Stream Analytics
+> - Интеграция со службой "Сетка событий Azure".
+> - Маршруты Центра Интернета вещей Azure.
+> - Device Explorer Интернета вещей Azure.
+> - Обозреватель данных Azure
+>
+> В виртуальной сети должны присутствовать следующие службы Майкрософт:
+> - Веб-приложения Azure.
+> - Функции Azure
+
+> [!IMPORTANT]
+> Виртуальные сети поддерживаются только в пространствах имен службы "Служебная шина" [ценовой категории "Премиум"](service-bus-premium-messaging.md).
+
 ## <a name="enable-service-endpoints-with-service-bus"></a>Включение конечных точек служб с использованием службы "Служебная шина"
 
-Виртуальные сети поддерживаются только в пространствах имен службы "Служебная шина" [ценовой категории "Премиум"](service-bus-premium-messaging.md). 
-
-Если вы используете конечные точки служб виртуальной сети со службой "Служебная шина", важно учесть, что не следует включать эти конечные точки в приложениях, где одновременно применяются пространства имен службы "Служебная шина" ценовых категорий "Стандартный" и "Премиум". В ценовой категории "Стандартный" виртуальные сети не поддерживаются, поэтому конечная точка ограничивается только пространствами имен ценовой категории "Премиум". Виртуальная сеть будет блокировать трафик для пространства имен ценовой категории "Стандартный". 
+Если вы используете конечные точки служб виртуальной сети со службой "Служебная шина", важно учесть, что не следует включать эти конечные точки в приложениях, где одновременно применяются пространства имен службы "Служебная шина" ценовых категорий "Стандартный" и "Премиум". В ценовой категории "Стандартный" виртуальные сети не поддерживаются, поэтому конечная точка ограничивается только пространствами имен ценовой категории "Премиум". Виртуальная сеть будет блокировать трафик для пространства имен ценовой категории "Стандартный".
 
 ## <a name="advanced-security-scenarios-enabled-by-vnet-integration"></a>Расширенные сценарии обеспечения безопасности, доступные при интеграции с виртуальной сетью 
 
@@ -45,7 +63,7 @@ ms.locfileid: "47405008"
 
 Привязка пространства имен Служебной шины к виртуальной сети состоит из двух этапов. Сначала необходимо создать **конечную точку службы виртуальной сети** в подсети виртуальной сети и включить ее для Microsoft.ServiceBus, как описано в статье [Конечные точки службы виртуальной сети][vnet-sep]. Добавив конечную точку службы, вы привязываете к ней пространство имен Служебной шины с помощью *правила виртуальной сети*.
 
-Правило виртуальной сети — это именованная связь пространства имен Служебной шины с подсетью виртуальной сети. Пока правило существует, всем рабочим нагрузкам, привязанным к подсети, предоставляется доступ к пространству имен Служебной шины. Служебная шина никогда не устанавливает исходящие подключения и не нуждается в доступе, и поэтому это правило не предоставляет ей доступ к вашей подсети.
+Правило виртуальной сети — это связь пространства имен Служебной шины с подсетью виртуальной сети. Пока правило существует, всем рабочим нагрузкам, привязанным к подсети, предоставляется доступ к пространству имен Служебной шины. Служебная шина никогда не устанавливает исходящие подключения и не нуждается в доступе, и поэтому это правило не предоставляет ей доступ к вашей подсети.
 
 ### <a name="creating-a-virtual-network-rule-with-azure-resource-manager-templates"></a>Создание правила виртуальной сети с использованием шаблонов Azure Resource Manager
 
@@ -53,47 +71,121 @@ ms.locfileid: "47405008"
 
 Параметры шаблона:
 
-* **namespaceName**: пространство имен служебной шины;
-* **vnetRuleName**: имя создаваемого правила виртуальной сети;
-* **virtualNetworkingSubnetId**: полный путь Resource Manager для подсети виртуальной сети, например `/subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` для подсети виртуальной сети по умолчанию.
+* **namespaceName**. Имя пространства имен служебной шины.
+* **virtualNetworkingSubnetId**. Полный путь Resource Manager для подсети виртуальной сети (например, `/subscriptions/{id}/resourceGroups/{rg}/providers/Microsoft.Network/virtualNetworks/{vnet}/subnets/default` для подсети виртуальной сети по умолчанию).
+
+> [!NOTE]
+> Хотя запрещающие правила отсутствуют, в шаблоне Azure Resource Manager для действия по умолчанию установлено значение **Разрешить**, которое не ограничивает подключения.
+> При создании правил виртуальной сети или брандмауэров необходимо изменить значение параметра ***defaultAction***.
+> 
+> from
+> ```json
+> "defaultAction": "Allow"
+> ```
+> значение
+> ```json
+> "defaultAction": "Deny"
+> ```
+>
 
 Шаблон:
 
 ```json
-{  
-   "$schema":"http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
-   "contentVersion":"1.0.0.0",
-   "parameters":{     
-          "namespaceName":{  
-             "type":"string",
-             "metadata":{  
-                "description":"Name of the namespace"
-             }
-          },
-          "vnetRuleName":{  
-             "type":"string",
-             "metadata":{  
-                "description":"Name of the Authorization rule"
-             }
-          },
-          "virtualNetworkSubnetId":{  
-             "type":"string",
-             "metadata":{  
-                "description":"subnet Azure Resource Manager ID"
-             }
-          }
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "servicebusNamespaceName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the Service Bus namespace"
+        }
       },
+      "virtualNetworkName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the Virtual Network Rule"
+        }
+      },
+      "subnetName": {
+        "type": "string",
+        "metadata": {
+          "description": "Name of the Virtual Network Sub Net"
+        }
+      },
+      "location": {
+        "type": "string",
+        "metadata": {
+          "description": "Location for Namespace"
+        }
+      }
+    },
+    "variables": {
+      "namespaceNetworkRuleSetName": "[concat(parameters('servicebusNamespaceName'), concat('/', 'default'))]",
+      "subNetId": "[resourceId('Microsoft.Network/virtualNetworks/subnets/', parameters('virtualNetworkName'), parameters('subnetName'))]"
+    },
     "resources": [
-        {
-            "apiVersion": "2018-01-01-preview",
-            "name": "[concat(parameters('namespaceName'), '/', parameters('vnetRuleName'))]",
-            "type":"Microsoft.ServiceBus/namespaces/VirtualNetworkRules",           
-            "properties": {             
-                "virtualNetworkSubnetId": "[parameters('virtualNetworkSubnetId')]"  
+      {
+        "apiVersion": "2018-01-01-preview",
+        "name": "[parameters('servicebusNamespaceName')]",
+        "type": "Microsoft.ServiceBus/namespaces",
+        "location": "[parameters('location')]",
+        "sku": {
+          "name": "Standard",
+          "tier": "Standard"
+        },
+        "properties": { }
+      },
+      {
+        "apiVersion": "2017-09-01",
+        "name": "[parameters('virtualNetworkName')]",
+        "location": "[parameters('location')]",
+        "type": "Microsoft.Network/virtualNetworks",
+        "properties": {
+          "addressSpace": {
+            "addressPrefixes": [
+              "10.0.0.0/23"
+            ]
+          },
+          "subnets": [
+            {
+              "name": "[parameters('subnetName')]",
+              "properties": {
+                "addressPrefix": "10.0.0.0/23",
+                "serviceEndpoints": [
+                  {
+                    "service": "Microsoft.ServiceBus"
+                  }
+                ]
+              }
             }
-        } 
-    ]
-}
+          ]
+        }
+      },
+      {
+        "apiVersion": "2018-01-01-preview",
+        "name": "[variables('namespaceNetworkRuleSetName')]",
+        "type": "Microsoft.ServiceBus/namespaces/networkruleset",
+        "dependsOn": [
+          "[concat('Microsoft.ServiceBus/namespaces/', parameters('servicebusNamespaceName'))]"
+        ],
+        "properties": {
+          "virtualNetworkRules": 
+          [
+            {
+              "subnet": {
+                "id": "[variables('subNetId')]"
+              },
+              "ignoreMissingVnetServiceEndpoint": false
+            }
+          ],
+          "ipRules":[<YOUR EXISTING IP RULES>],
+          "defaultAction": "Deny"
+        }
+      }
+    ],
+    "outputs": { }
+  }
 ```
 
 Инструкции по развертыванию шаблона см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell][lnk-deploy].

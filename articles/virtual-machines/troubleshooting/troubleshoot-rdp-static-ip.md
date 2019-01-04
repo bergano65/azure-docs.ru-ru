@@ -13,21 +13,21 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/08/2018
 ms.author: genli
-ms.openlocfilehash: c219b2fb58d46d9280ef5c022140e0499e3ac54c
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: 81a3064290e0aa720a4fe6b0fa0d8eb13cfe6903
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51347513"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53141804"
 ---
 #  <a name="cannot-remote-desktop-to-azure-virtual-machines-because-of-static-ip"></a>Сбой подключения удаленного рабочего стола к Виртуальным машинам Azure из-за статического IP-адреса
 
 В этой статье описывается проблема, при которой не удается установить подключение удаленного рабочего стола к виртуальным машинам Azure под управлением Windows после настройки на виртуальной машины статического IP-адреса.
 
-> [!NOTE] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель диспетчера ресурсов и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической. 
+> [!NOTE]
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье описывается использование модели развертывания c помощью Resource Manager. Для новых развертываний рекомендуется использовать эту модель вместо классической.
 
-## <a name="symptoms"></a>Проблемы 
+## <a name="symptoms"></a>Проблемы
 
 При подключении RDP к виртуальной машине в Azure может появиться сообщение об ошибке:
 
@@ -47,7 +47,7 @@ ms.locfileid: "51347513"
 
 У виртуальной машины есть статический IP-адрес, определенный для сетевого интерфейса в Windows. Этот IP-адрес отличается от адреса, который определен на портале Azure.
 
-## <a name="solution"></a>Решение 
+## <a name="solution"></a>Решение
 
 Прежде чем выполнять какие-либо действия, сделайте моментальный снимок диска ОС затронутой виртуальной машины в качестве резервной копии. Дополнительные сведения см. в статье [Создание моментального снимка](../windows/snapshot-copy-managed-disk.md).
 
@@ -55,7 +55,7 @@ ms.locfileid: "51347513"
 
 ### <a name="use-serial-control"></a>Использование последовательной консоли
 
-1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](./serial-console-windows.md#open-cmd-or-powershell-in-serial-console
+1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](./serial-console-windows.md#use-cmd-or-powershell-in-serial-console
 ). Если последовательная консоль на нужной виртуальной машине не включена, ознакомьтесь со сведениями о том, как [сбросить сетевой интерфейс](reset-network-interface.md).
 2. Проверьте, отключен ли протокол DHCP в сетевом интерфейсе:
 
@@ -63,7 +63,7 @@ ms.locfileid: "51347513"
 3. Если протокол DHCP отключен, измените конфигурацию сетевого интерфейса так, чтобы использовался протокол DHCP:
 
         netsh interface ip set address name="<NIC Name>" source=dhc
-        
+
     Например, если имя интерфейса взаимодействия — Ethernet 2, выполните команду ниже:
 
         netsh interface ip set address name="Ethernet 2" source=dhc

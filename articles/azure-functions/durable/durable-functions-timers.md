@@ -8,20 +8,20 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 10/23/2018
+ms.date: 12/08/2018
 ms.author: azfuncdf
-ms.openlocfilehash: ad6ddacad322e4c2f952591be786d46cbcb95a21
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 7af204ad76cb04c3d71c5108948be4036be1d1e4
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52637559"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53338844"
 ---
 # <a name="timers-in-durable-functions-azure-functions"></a>Таймеры в устойчивых функциях (Функции Azure)
 
 [Устойчивые функции](durable-functions-overview.md) предоставляют *устойчивые таймеры*, которые используются в функциях оркестраторов для реализации задержек или настройки времени ожидания в асинхронных действиях. Устойчивые таймеры следует использовать в функциях оркестраторов вместо `Thread.Sleep` (C#) или `Task.Delay``setTimeout()``setInterval()` (JavaScript).
 
-Чтобы создать устойчивый таймер, в [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) нужно вызвать метод [CreateTimer](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CreateTimer_). Метод возвращает задачу, которая возобновляется в указанные дату и время.
+Чтобы создать устойчивый таймер, в [DurableOrchestrationContext](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html) нужно вызвать метод [CreateTimer](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CreateTimer_) в .NET или метод `createTimer` `DurableOrchestrationContext` в JavaScript. Метод возвращает задачу, которая возобновляется в указанные дату и время.
 
 ## <a name="timer-limitations"></a>Ограничения таймера
 
@@ -29,13 +29,13 @@ ms.locfileid: "52637559"
 
 > [!NOTE]
 > * Из-за ограничений службы хранилища Azure устойчивые таймеры можно устанавливать не более чем на 7 дней. Мы работаем над [заявкой на исправление функции, касающейся продления работы таймеров более чем на 7 дней](https://github.com/Azure/azure-functions-durable-extension/issues/14).
-> * При вычислении относительного срока действия устойчивого таймера всегда используйте [CurrentUtcDateTime](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CurrentUtcDateTime) вместо `DateTime.UtcNow`, как показано в примерах ниже.
+> * При вычислении относительного срока действия устойчивого таймера всегда используйте [CurrentUtcDateTime](https://azure.github.io/azure-functions-durable-extension/api/Microsoft.Azure.WebJobs.DurableOrchestrationContext.html#Microsoft_Azure_WebJobs_DurableOrchestrationContext_CurrentUtcDateTime) вместо `DateTime.UtcNow` .NET и `currentUtcDateTime` вместо `Date.now` или `Date.UTC` в JavaScript, как показано в примерах ниже.
 
 ## <a name="usage-for-delay"></a>Использование для задержки
 
 В следующем примере показано, как использовать устойчивые таймеры для задержки выполнения. Пример выдает уведомление о выставлении счета каждый день в течение 10 дней.
 
-#### <a name="c"></a>C#
+### <a name="c"></a>C#
 
 ```csharp
 [FunctionName("BillingIssuer")]
@@ -51,7 +51,7 @@ public static async Task Run(
 }
 ```
 
-#### <a name="javascript"></a>JavaScript
+### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
 
 ```js
 const df = require("durable-functions");
@@ -68,13 +68,13 @@ module.exports = df.orchestrator(function*(context) {
 ```
 
 > [!WARNING]
-> Избегайте бесконечных циклов в функциях оркестраторов. Сведения о том, как безопасно и эффективно реализовать сценарии с бесконечным циклом, см. в описании [внешних оркестраций](durable-functions-eternal-orchestrations.md). 
+> Избегайте бесконечных циклов в функциях оркестраторов. Сведения о том, как безопасно и эффективно реализовать сценарии с бесконечным циклом, см. в описании [внешних оркестраций](durable-functions-eternal-orchestrations.md).
 
 ## <a name="usage-for-timeout"></a>Использование для установки времени ожидания
 
 В этом примере показано, как использовать устойчивые таймеры для реализации времени ожидания.
 
-#### <a name="c"></a>C#
+### <a name="c"></a>C#
 
 ```csharp
 [FunctionName("TryGetQuote")]
@@ -105,7 +105,7 @@ public static async Task<bool> Run(
 }
 ```
 
-#### <a name="javascript"></a>JavaScript
+### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
 
 ```js
 const df = require("durable-functions");
@@ -142,4 +142,3 @@ module.exports = df.orchestrator(function*(context) {
 
 > [!div class="nextstepaction"]
 > [Сведения о том, как вызывать и обрабатывать внешние события](durable-functions-external-events.md)
-

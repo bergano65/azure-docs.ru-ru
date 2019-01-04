@@ -1,5 +1,5 @@
 ---
-title: Настройка ценовой категории Премиум V2 для службы приложений Azure | Документы Майкрософт
+title: Настройка ценовой категории "Премиум V2" для Службы приложений Azure | Документация Майкрософт
 description: Вы можете узнать, как улучшить производительность для веб-приложений, мобильных приложений и приложений API в службе приложений Azure с помощью новой ценовой категории Премиум V2.
 keywords: служба приложений, служба приложений azure, масштабировать, масштабируемый, план службы приложений, стоимость службы приложений
 services: app-service
@@ -15,12 +15,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/25/2018
 ms.author: cephalin
-ms.openlocfilehash: 59e5825554843ef7265cbccdd9a63db0426891fa
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.custom: seodec18
+ms.openlocfilehash: ac0a3500956cc81e264c8743d44aa06f018b1a45
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47226315"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53258905"
 ---
 # <a name="configure-premiumv2-tier-for-azure-app-service"></a>Настройка ценовой категории Премиум V2 для службы приложений Azure
 

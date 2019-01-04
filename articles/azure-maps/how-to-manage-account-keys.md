@@ -1,19 +1,19 @@
 ---
 title: Как управлять учетной записью и ключами службы "Карты Azure" | Документация Майкрософт
 description: Вы можете управлять учетной записью и ключами доступа службы "Карты Azure" с помощью портала Azure.
-author: dsk-2015
-ms.author: dkshir
-ms.date: 09/11/2018
+author: walsehgal
+ms.author: v-musehg
+ms.date: 12/12/2018
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 29fd63139d31d146cfc67153f35bd57650b08cfa
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+ms.openlocfilehash: 351bc26d6c5b3dcfa9479138f2bd523f64a2912a
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45541625"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53335818"
 ---
 # <a name="how-to-manage-your-azure-maps-account-and-keys"></a>Как управлять учетной записью и ключами службы "Карты Azure"
 
@@ -53,5 +53,10 @@ ms.locfileid: "45541625"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Дополнительные сведения о том, как использовать поисковые интерфейсы API в Azure Maps для поиска адреса, см. в статье [Как найти адрес с помощью службы поиска по Картам Azure](./how-to-search-for-address.md).
-* Дополнительные сведения о том, как использовать управление картой JavaScript в Azure Maps, см. в статье [Как использовать библиотеку Map Control в службе "Карты Azure"](./how-to-use-map-control.md).
+Сведения об управлении ценовой категорией учетной записи Azure Maps см. здесь:
+> [!div class="nextstepaction"]
+> [Управление ценовой категорией](./how-to-manage-pricing-tier.md)
+
+Сведения о том, как просматривать метрики использования API для учетной записи Azure Maps, см. здесь:
+> [!div class="nextstepaction"]
+> [Просмотр метрик использования](./how-to-view-api-usage.md)

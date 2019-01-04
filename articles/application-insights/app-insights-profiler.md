@@ -8,21 +8,20 @@ manager: carmonm
 ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
-ms.devlang: na
 ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: b0fc10099f1388169146d90efcd7c20dcbe8df27
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 4d957c26bd4e4ae278c0909c9df1476b02954b86
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52164954"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53138013"
 ---
 # <a name="profile-live-azure-web-apps-with-application-insights"></a>Профилирование динамических веб-приложений Azure с помощью Application Insights
 
-Сейчас профилировщик работает для веб-приложений ASP.NET и ASP.NET Core, запущенных в компоненте "Веб-приложения". Он требуется, начиная от уровня службы "Базовый".
+Сейчас профилировщик работает для веб-приложений ASP.NET и ASP.NET Core, запущенных в компоненте "Веб-приложения". Он требуется, начиная от уровня службы "Базовый". Сейчас включить средство Profiler на платформе Linux можно с помощью [этого метода](app-insights-profiler-aspnetcore-linux.md).
 
 ## <a id="installation"></a> Включение профилировщика для веб-приложений
 Чтобы включить Profiler для веб-приложения, сделайте следующее. Далее приведены сведения по включению Profiler на других поддерживаемых платформах при выполнении службы Azure другого типа.
@@ -30,11 +29,10 @@ ms.locfileid: "52164954"
 * [Приложения Service Fabric](app-insights-profiler-servicefabric.md?toc=/azure/azure-monitor/toc.json)
 * [Виртуальные машины](app-insights-profiler-vm.md?toc=/azure/azure-monitor/toc.json)
 
-
 Средство Application Insights Profiler предварительно установлено в среде выполнения Службы приложений. Но это средство нужно включить, чтобы получать профили для веб-приложений Службы приложений Azure. Чтобы активировать после развертывания веб-приложения, даже если в исходный код был включено пакета SDK для App Insights, выполните следующие.
 
 1. Перейдите к панели **служб приложений** на портале Azure.
-1. Перейдите к панели **Параметры > Мониторинг**.
+1. Выберите **Параметры > Application Insights**.
 
    ![Включение Application Insights на портале служб приложений](./media/app-insights-profiler/AppInsights-AppServices.png)
 

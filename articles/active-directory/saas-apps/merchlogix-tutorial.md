@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Merchlogix | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Merchlogix | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Merchlogix.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: jeedes
-ms.openlocfilehash: b10f9cc5c766796b61e3c56da943e92e84d17488
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: dae953276fb89b798ff0a152994dc19f1e7c85a5
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39442590"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52834253"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-merchlogix"></a>Руководство по интеграции Azure Active Directory с Merchlogix
+# <a name="tutorial-azure-active-directory-integration-with-merchlogix"></a>Руководство. Интеграция Azure Active Directory с Merchlogix
 
 В этом руководстве описано, как интегрировать Merchlogix с Azure Active Directory (Azure AD).
 
@@ -115,7 +115,7 @@ ms.locfileid: "39442590"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<DOMAIN>/simplesaml/module.php/saml/sp/metadata.php/<SAML_NAME>`
     
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки MaxxPoint](http://www.merchlogix.com/contact/).
+    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки MaxxPoint](https://www.merchlogix.com/contact/).
 
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -129,10 +129,10 @@ ms.locfileid: "39442590"
 
     ![Конфигурация Merchlogix](./media/merchlogix-tutorial/tutorial_merchlogix_configure.png) 
 
-1. Чтобы настроить единый вход на стороне **Merchlogix**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** [группе поддержки Merchlogix](http://www.merchlogix.com/contact/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Merchlogix**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** [группе поддержки Merchlogix](https://www.merchlogix.com/contact/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -169,7 +169,7 @@ ms.locfileid: "39442590"
  
 ### <a name="create-a-merchlogix-test-user"></a>Создание тестового пользователя Merchlogix
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Merchlogix. Обратитесь к [группе поддержки Merchlogix](http://www.merchlogix.com/contact/), чтобы добавить пользователей на платформу Merchlogix.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Merchlogix. Обратитесь к [группе поддержки Merchlogix](https://www.merchlogix.com/contact/), чтобы добавить пользователей на платформу Merchlogix.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -206,7 +206,7 @@ ms.locfileid: "39442590"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Merchlogix" на панели доступа, вы автоматически войдете в приложение Merchlogix.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

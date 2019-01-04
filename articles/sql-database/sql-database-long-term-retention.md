@@ -3,7 +3,7 @@ title: Хранение резервных копий базы данных SQL 
 description: Узнайте, как база данных SQL Azure поддерживает хранение полных резервных копий базы данных в течение 10 лет.
 services: sql-database
 ms.service: sql-database
-ms.subservice: operations
+ms.subservice: backup-restore
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
@@ -12,19 +12,19 @@ ms.author: sashan
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 10/24/2018
-ms.openlocfilehash: 7fe34423e706054daf84eaa8baf45fe201a661c9
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 7225c90d0d85b2a7fe53f9d2d3b13f68a45d0471
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50026183"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52868214"
 ---
 # <a name="store-azure-sql-database-backups-for-up-to-10-years"></a>Хранение резервных копий базы данных SQL Azure до 10 лет
 
 В соответствии с нормативными требованиями, стандартами соответствия или бизнес-задачами многие приложения должны хранить резервные копии баз данных более 7–35 дней, то есть дольше, чем при [автоматическом резервном копировании](sql-database-automated-backups.md) базы данных SQL Azure. Используя возможность долгосрочного хранения (LTR), можно хранить полные резервные копии указанной базы данных SQL в хранилище BLOB-объектов [RA-GRS](../storage/common/storage-redundancy-grs.md#read-access-geo-redundant-storage) сроком до 10 лет. Впоследствии любую резервную копию можно восстановить как новую базу данных.
 
 > [!NOTE]
-> LTR можно включить для базы данных, размещенной в логических серверах базы данных SQL Azure. Он пока недоступен для баз данных, размещенных в Управляемых экземплярах.
+> LTR можно включить для базы данных, размещенной в логических серверах базы данных SQL Azure. Он пока недоступен для баз данных, размещенных в Управляемых экземплярах. Задания агентов SQL можно использовать для планирования [резервных копий только для копирования базы данных](https://docs.microsoft.com/sql/relational-databases/backup-restore/copy-only-backups-sql-server) как альтернативу LTR за 35 дней.
 > 
 
 ## <a name="how-sql-database-long-term-retention-works"></a>Принципы работы долгосрочного хранения базы данных SQL

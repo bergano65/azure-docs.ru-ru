@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.author: abnarain
-ms.openlocfilehash: 3c2b44455b417d1bc764337d91a5535d7ffa34a5
-ms.sourcegitcommit: e2348a7a40dc352677ae0d7e4096540b47704374
+ms.openlocfilehash: ad6fe023c4e93328331140dc3552ae1afd7c83ef
+ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43783378"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52970650"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Вопросы безопасности при перемещении данных в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -167,7 +167,7 @@ Salesforce поддерживает шифрование Shield Platform Encrypt
 | ------------- | ---------------------------------------- |
 | 8050 (TCP)    | Требуется для командлета шифрования PowerShell, как описано в статье [Шифрование учетных данных для локальных хранилищ данных в фабрике данных Azure](encrypt-credentials-self-hosted-integration-runtime.md), или для приложения диспетчера учетных данных, чтобы обеспечить безопасную настройку учетных данных для локальных хранилищ данных в локальной среде выполнения интеграции. |
 
-![Требования к порту шлюза](media\data-movement-security-considerations/gateway-port-requirements.png) 
+![Требования к порту шлюза](media/data-movement-security-considerations/gateway-port-requirements.png) 
 
 #### <a name="ip-configurations-and-whitelisting-in-data-stores"></a>Конфигурации IP и утвержденный список в хранилище данных
 Некоторые хранилища данных в облаке также требуют от вас, чтобы IP-адрес компьютера, который получает к ним доступ, был добавлен в список разрешенных. IP-адрес компьютера локальной среды выполнения интеграции должен быть добавлен в список разрешений или корректно настроен в брандмауэре.

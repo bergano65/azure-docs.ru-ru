@@ -1,6 +1,6 @@
 ---
-title: Кодирование видео с помощью автоматически созданной схемы скоростей, используя кодировщик по плану Standard в Службах мультимедиа Azure | Документация Майкрософт
-description: В этой статье показано, как с помощью кодировщика по плану Standard в Службах мультимедиа закодировать входные видео, используя автоматически созданную схему скоростей, на основе разрешений и скорости входных данных. Разрешение и скорость входных данных никогда не превышаются. Например, если указаны входные данные с разрешением 720p и скоростью 3 Мбит/с, то выходные данные будут иметь разрешение не выше 720p, а их скорости начнутся со значений ниже 3 Мбит/с.
+title: Кодирование видео с помощью Standard Encoder в Службах мультимедиа — Azure | Документация Майкрософт
+description: В этой статье показано, как с помощью кодировщика по плану Standard в Службах мультимедиа закодировать входные видео, используя автоматически созданную схему скоростей, на основе разрешений и скорости входных данных.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -11,14 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 12/08/2018
 ms.author: juliako
-ms.openlocfilehash: ec1b4b88e5b9639c3ee9debbd8ac7d48544344dc
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.custom: seodec18
+ms.openlocfilehash: 976e1ea013c6a30615bdc742ed79e76ec35258a1
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49378964"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53132812"
 ---
 #  <a name="encode-with-an-auto-generated-bitrate-ladder"></a>Кодирование с помощью автоматически созданной схемы скоростей
 

@@ -16,12 +16,12 @@ ms.date: 07/23/2018
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: bcb448296313eedebb8f8389b320c5da5f1a80dd
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: ef86c9ee00fdd4673774640d33eec93e2ead876d
+ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46305653"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53193100"
 ---
 # <a name="user-privacy-and-azure-active-directory-pass-through-authentication"></a>Конфиденциальность пользователей и сквозная аутентификация Azure Active Directory
 
@@ -72,7 +72,7 @@ Foreach ($file in $Files) {
 
 ### <a name="delete-authentication-agent-trace-log-files"></a>Удаление файлов журнала трассировки агента проверки подлинности
 
-Следует регулярно проверять содержимое каталога **%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\\** и очищать его каждые 48 часов. 
+Следует регулярно проверять содержимое каталога <strong>%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\</strong> и очищать его каждые 48 часов. 
 
 >[!IMPORTANT]
 >Если запущена служба агента аутентификации, вы не сможете удалить текущий файл журнала в этой папке. Остановите службу и повторите попытку. Чтобы избежать ошибок со входом пользователей, следует заранее настроить [высокий уровень доступности](how-to-connect-pta-quick-start.md#step-4-ensure-high-availability) для сквозной аутентификации.

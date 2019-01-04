@@ -1,5 +1,5 @@
 ---
-title: Безопасность и конфиденциальность данных в службе "Поиск Azure" | Документация Майкрософт
+title: Безопасность и конфиденциальность данных в службе "Поиск Azure"
 description: Служба "Поиск Azure" совместима с SOC 2, HIPAA и другими сертификатами. Подключение, шифрование данных, проверка подлинности и доступ на основе удостоверений с использованием идентификаторов безопасности пользователей и групп в фильтрах службы "Поиск Azure".
 author: HeidiSteen
 manager: cgronlun
@@ -8,12 +8,13 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 09/06/2018
 ms.author: heidist
-ms.openlocfilehash: 4b1307aa00fae26d7425c9a95ed673b11ba2e9b4
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.custom: seodec2018
+ms.openlocfilehash: 55558f1483a576e7ac3b9ce027588eceabd5db70
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44092637"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53311717"
 ---
 # <a name="security-and-data-privacy-in-azure-search"></a>Безопасность и конфиденциальность данных в службе "Поиск Azure"
 
@@ -21,7 +22,7 @@ ms.locfileid: "44092637"
 
 Архитектура безопасности службы "Поиск Azure" объединяет физическую безопасность, зашифрованную передачу данных, зашифрованное хранилище и соответствие стандартам на уровне платформы. С точки зрения операций служба "Поиск Azure" принимает только запросы, прошедшие проверку подлинности. При необходимости можно добавить элементы управления доступом к содержимому для отдельного пользователя с помощью фильтров безопасности. В этой статье описывается безопасность на каждом уровне, но основное внимание уделяется способам защиты данных и операций в службе поиска Azure.
 
-## <a name="standards-compliance-iso-27001-soc-2-hipaa"></a>Соответствие стандартам ISO 27001, SOC 2 и HIPAA
+## <a name="standards-compliance-iso-27001-soc-2-hipaa"></a>Соответствие стандартам: ISO 27001, SOC 2, HIPAA
 
 [Как было объявлено в июне 2018 г.](https://azure.microsoft.com/blog/azure-search-is-now-certified-for-several-levels-of-compliance/), служба "Поиск Azure" сертифицирована на соответствие следующим стандартам:
 

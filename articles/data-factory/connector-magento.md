@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/15/2018
+ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 36afc89ef583baa5484aa4e69c6969e7448c93c1
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 03757aaf13d48730a3061f07ae3138f0aadbdf00
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46127590"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53077857"
 ---
 # <a name="copy-data-from-magento-using-azure-data-factory-preview"></a>Копирование данных из Magento с помощью фабрики данных Azure (предварительная версия)
 
@@ -45,7 +45,7 @@ ms.locfileid: "46127590"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Magento**. | Yes |
+| Тип | Для свойства type необходимо задать значение **Magento** | Yes |
 | host | URL-адрес экземпляра Magento (192.168.222.110/magento3).  | Yes |
 | accessToken | Маркер доступа из Magento. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет  |
@@ -77,7 +77,12 @@ ms.locfileid: "46127590"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). В этом разделе содержится список свойств, поддерживаемых набором данных Magento.
 
-Чтобы скопировать данные из Magento, задайте для свойства type набора данных значение **MagentoObject**. В этом типе набора данных нет дополнительных свойств для определенного типа.
+Чтобы скопировать данные из Magento, задайте для свойства type набора данных значение **MagentoObject**. Поддерживаются следующие свойства:
+
+| Свойство | ОПИСАНИЕ | Обязательно |
+|:--- |:--- |:--- |
+| Тип | Для набора данных необходимо задать значение **MagentoObject**. | Yes |
+| tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
 
@@ -89,7 +94,8 @@ ms.locfileid: "46127590"
         "linkedServiceName": {
             "referenceName": "<Magento linked service name>",
             "type": "LinkedServiceReference"
-        }
+        },
+        "typeProperties": {}
     }
 }
 ```
@@ -98,14 +104,14 @@ ms.locfileid: "46127590"
 
 Полный список разделов и свойств, используемых для определения действий, см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md). В этом разделе содержится список свойств, поддерживаемых источником Magento.
 
-### <a name="magentosource-as-source"></a>MagentoSource в качестве источника
+### <a name="magento-as-source"></a>Magento в качестве источника
 
 Чтобы копировать данные из Magento, задайте для типа источника в действии копирования значение **MagentoSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **MagentoSource**. | Yes |
-| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Customers"`. | Yes |
+| Тип | Для свойства type источника действия копирования необходимо задать значение **MagentoSource**. | Yes |
+| query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM Customers"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**
 

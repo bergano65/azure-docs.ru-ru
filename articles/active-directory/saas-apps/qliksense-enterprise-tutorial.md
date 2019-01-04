@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Qlik Sense Enterprise | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Qlik Sense Enterprise | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Qlik Sense Enterprise.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/06/2018
 ms.author: jeedes
-ms.openlocfilehash: a8816451b45171e0ba8cbd7acc937201c587c481
-ms.sourcegitcommit: 4de6a8671c445fae31f760385710f17d504228f8
+ms.openlocfilehash: 24353f89f7c833a16675841f741a4a81ac34597c
+ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39627956"
+ms.lasthandoff: 12/07/2018
+ms.locfileid: "53015233"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-qlik-sense-enterprise"></a>Руководство. Интеграция Azure Active Directory с Qlik Sense Enterprise
 
@@ -47,7 +47,7 @@ ms.locfileid: "39627956"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по этой ссылке: [пробная версия](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
@@ -113,6 +113,7 @@ ms.locfileid: "39627956"
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<Qlik Sense Fully Qualifed Hostname>:4443/azure/hub`
 
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
+    
     | |
     |--|
     | `https://<Qlik Sense Fully Qualifed Hostname>.qlikpoc.com`|
@@ -209,7 +210,7 @@ ms.locfileid: "39627956"
 
     ![QlikSense][qs13]
 
-    В разделе Host white list (Список разрешенных узлов) определяются имена принимаемых узлов при подключении к серверу Qlik Sense.  **Введите имя узла, которое пользователи будут указывать при подключении к серверу Qlik Sense.** Для имени узла указывается то же значение, что и для URI узла SAML, только без https://.
+    В разделе Host white list (Список разрешенных узлов) определяются имена принимаемых узлов при подключении к серверу Qlik Sense.  **Введите имя узла, которое пользователи будут указывать при подключении к серверу Qlik Sense.**  Для имени узла указывается то же значение, что и для URI узла SAML, только без https://.
 
 16. Щелкните кнопку **Apply** (Применить).
 
@@ -283,7 +284,7 @@ ms.locfileid: "39627956"
 
 ### <a name="create-a-qlik-sense-enterprise-test-user"></a>Создание тестового пользователя Qlik Sense Enterprise
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Sense Enterprise. Обратитесь в [службу поддержки Qlik Sense Enterprise](https://www.qlik.com/us/services/support), чтобы добавить пользователей для платформы Qlik Sense Enterprise. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Sense Enterprise. Обратитесь в  [службу поддержки Qlik Sense Enterprise](https://www.qlik.com/us/services/support) , чтобы добавить пользователей на платформу Qlik Sense Enterprise. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

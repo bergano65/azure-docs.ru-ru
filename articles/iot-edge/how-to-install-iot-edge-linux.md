@@ -1,6 +1,6 @@
 ---
-title: Как установить Azure IoT Edge в Linux | Документация Майкрософт
-description: Инструкции по установке Azure IoT Edge в Linux
+title: Установка Azure IoT Edge в Linux | Документация Майкрософт
+description: Инструкции по установке Azure IoT Edge на устройствах AMD64 Linux под управлением Ubuntu
 author: kgremban
 manager: philmea
 ms.reviewer: veyalla
@@ -9,12 +9,13 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: kgremban
-ms.openlocfilehash: 08946076add9ab1c0972729fa89cf8aea0968c99
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.custom: seodec18
+ms.openlocfilehash: beda9fa096dd8308822a5cd5a816b569712b8c05
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51568512"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53086093"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-linux-x64"></a>Установка среды выполнения Azure IoT Edge в Linux (x64)
 
@@ -106,7 +107,7 @@ sudo apt-get install iotedge
 
 Одно устройство IoT Edge можно подготовить к работе вручную, используя строку подключения устройства, предоставленную Центром Интернета вещей. Вы также можете использовать службу подготовки устройств, что удобно, если нужно автоматически подготовить несколько устройств. В зависимости от выбранного способа подготовки выберите соответствующий скрипт установки. 
 
-### <a name="option-1-manual-provisioning"></a>Вариант 1. Подготовка вручную
+### <a name="option-1-manual-provisioning"></a>Вариант 1. Подготовка вручную
 
 Чтобы вручную подготовить устройство, вам необходимо предоставить ему [​​строку подключения устройства](how-to-register-device-portal.md), которую вы можете создать, зарегистрировав новое устройство в Центре Интернета вещей.
 
@@ -141,7 +142,7 @@ sudo nano /etc/iotedge/config.yaml
 sudo systemctl restart iotedge
 ```
 
-### <a name="option-2-automatic-provisioning"></a>Вариант 2. Автоматическая подготовка
+### <a name="option-2-automatic-provisioning"></a>Вариант 2. Автоматическая подготовка
 
 Для автоматической подготовки устройства [настройте службу подготовки устройств и получите идентификатор регистрации устройства](how-to-auto-provision-simulated-device-linux.md). Автоматическая подготовка работает только с устройствами, которые содержат микросхему доверенного платформенного модуля (TPM). Например, устройства Raspberry Pi не поставляются с TPM по умолчанию. 
 

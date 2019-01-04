@@ -10,24 +10,24 @@ ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
 ms.custom: hdiseo17may2017
-ms.openlocfilehash: ae728cd1cfc27a17badcce319a8cd047b54ddb1e
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 8ef8f66a67ee93ea8c015c33e69b87e7c5d2a898
+ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634011"
+ms.lasthandoff: 12/11/2018
+ms.locfileid: "53259993"
 ---
 # <a name="serialize-data-in-apache-hadoop-with-the-microsoft-avro-library"></a>Сериализация данных в Apache Hadoop с помощью библиотеки Microsoft Avro
 
 >[!NOTE]
->Пакет SDK Avro больше не поддерживается корпорацией Майкрософт. Библиотека поддерживается сообществом разработчиков ПО с открытым кодом. Источники для библиотеки доступны на портале [Github](https://github.com/Azure/azure-sdk-for-net/tree/master/src/ServiceManagement/HDInsight/Microsoft.Hadoop.Avro).
+>Пакет SDK Avro больше не поддерживается корпорацией Майкрософт. Библиотека поддерживается сообществом разработчиков ПО с открытым кодом. Источники для библиотеки доступны на портале [GitHub](https://github.com/Azure/azure-sdk-for-net/tree/master/src/ServiceManagement/HDInsight/Microsoft.Hadoop.Avro).
 
 В этой статье показано, как использовать [библиотеку Microsoft Avro](https://github.com/Azure/azure-sdk-for-net/tree/master/src/ServiceManagement/HDInsight/Microsoft.Hadoop.Avro) для сериализации объектов и других структур данных в потоки с целью их сохранения в памяти, базе данных или файле. Также показано, как десериализовать данные для восстановления исходных объектов.
 
 [!INCLUDE [windows-only](../../../includes/hdinsight-windows-only.md)]
 
 ## <a name="apache-avro"></a>Apache Avro
-<a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Библиотека Microsoft Avro</a> реализует систему сериализации данных Apache Avro для среды Microsoft.NET. Apache Avro обеспечивает компактный формат обмена двоичными данными для сериализации. Она использует <a href="http://www.json.org" target="_blank">JSON</a> для определения не зависящей от языка схемы, которая гарантирует взаимодействие языков. Данные, сериализованные в одном языке, могут быть прочитаны в другом. В настоящее время поддерживаются C, C++, C#, Java, PHP, Python и Ruby. Подробные сведения об этом формате см. в <a href="http://avro.apache.org/docs/current/spec.html" target="_blank">спецификации Аpache Avro</a>. 
+<a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Библиотека Microsoft Avro</a> реализует систему сериализации данных Apache Avro для среды Microsoft.NET. Apache Avro обеспечивает компактный формат обмена двоичными данными для сериализации. Она использует <a href="http://www.json.org" target="_blank">JSON</a> для определения не зависящей от языка схемы, которая гарантирует взаимодействие языков. Данные, сериализованные в одном языке, могут быть прочитаны в другом. В настоящее время поддерживаются C, C++, C#, Java, PHP, Python и Ruby. Подробные сведения об этом формате см. в <a href="https://avro.apache.org/docs/current/spec.html" target="_blank">спецификации Аpache Avro</a>. 
 
 >[!NOTE]
 >Библиотека Microsoft Avro не поддерживает часть этой спецификации, связанную с удаленными вызовами процедур (RPC).
@@ -53,12 +53,12 @@ ms.locfileid: "51634011"
 * <a href="http://james.newtonking.com/json" target="_blank">Newtonsoft Json.NET</a> (6.0.4 или более поздней версии)
 
 > [!Note]
-> Библиотека Microsoft Avro больше не предоставляется в виде пакета NuGet. Чтобы использовать библиотеку Avro, клонируйте репозиторий [Microsoft.Hadoop.Avro](https://github.com/Azure/azure-sdk-for-net/tree/master/src/ServiceManagement/HDInsight/Microsoft.Hadoop.Avro) с сайта Github и скомпилируйте код на своем компьютере.
+> Библиотека Microsoft Avro больше не предоставляется в виде пакета NuGet. Чтобы использовать библиотеку Avro, клонируйте репозиторий [Microsoft.Hadoop.Avro](https://github.com/Azure/azure-sdk-for-net/tree/master/src/ServiceManagement/HDInsight/Microsoft.Hadoop.Avro) с сайта GitHub и скомпилируйте код на своем компьютере.
 
 ## <a name="compile-schemas-using-avro-library"></a>Компиляция схем с использованием библиотеки Avro
 Библиотека Microsoft Avro содержит служебную программу создания кода, которая позволяет создавать типы C# автоматически на основе ранее определенной схемы JSON. Эта служебная программа создания кода не распространяется в виде двоичного исполняемого файла, но ее можно легко построить с помощью следующей процедуры.
 
-1. Загрузите ZIP-файл с последней версией исходного кода пакета SDK для HDInsight со страницы <a href="http://hadoopsdk.codeplex.com/SourceControl/latest#" target="_blank">Microsoft .NET SDK для Hadoop</a>. (Щелкните значок **Скачать**, а не вкладку **Загрузки**.)
+1. Загрузите ZIP-файл с последней версией исходного кода пакета SDK для HDInsight со страницы <a href="https://hadoopsdk.codeplex.com/SourceControl/latest#" target="_blank">Microsoft .NET SDK для Hadoop</a>. (Щелкните значок **Скачать**, а не вкладку **Загрузки**.)
 2. Извлеките пакет SDK для HDInsight в каталог на подключенном к Интернету компьютере с установленной платформой .NET Framework 4 для загрузки пакетов NuGet необходимых зависимостей. Далее подразумевается, что исходный код извлечен в папку C:\SDK.
 3. Откройте папку C:\SDK\SRC\Microsoft.Hadoop.Avro.Tools и запустите файл build.bat. (Файл вызывает MSBuild из 32-разрядного пакета распространения платформы .NET Framework. Если вы хотите использовать 64-разрядную версию, измените файл build.bat в соответствии с комментариями в этом файле.) Убедитесь, что сборка выполнена успешно. (В некоторых системах MSBuild может создавать предупреждения. Эти предупреждения не влияют на служебную программу, если отсутствуют ошибки сборки.)
 4. Скомпилированная служебная программ находится в папке C:\SDK\Bin\Unsigned\Release\Microsoft.Hadoop.Avro.Tools.
@@ -99,7 +99,7 @@ ms.locfileid: "51634011"
 * <a href="#Scenario5">**Сериализация с использованием файлов контейнера объектов с помощью кодека сжатия**</a> — в этом примере показано, как создать файл контейнера объектов Avro с помощью настроенной реализации .NET кодека сжатия данных Deflate.
 * <a href="#Scenario6">**Использование Avro для отправки данных для службы Microsoft Azure HDInsight**</a> — этот пример показывает, как сериализация Avro взаимодействует со службой HDInsight. Для выполнения этого примера требуется активная подписка Azure и доступ к кластеру Azure HDInsight.
 
-## <a name="Scenario1"></a>Пример 1. Сериализация с помощью отражения
+## <a name="Scenario1"></a>Пример 1. Сериализация с использованием отражения
 Схема JSON для типов может создаваться автоматически библиотекой Microsoft Avro с использованием отражения атрибутов контракта данных объектов C#, которые необходимо сериализовать. Библиотека Microsoft Avro создает сериализатор [**IAvroSeralizer<T>**](https://msdn.microsoft.com/library/dn627341.aspx) для определения сериализуемых полей.
 
 В этом примере объекты (класс **SensorData** c элементом структуры **Location**) сериализуются в поток в памяти, а этот поток, в свою очередь, десериализуется. Далее результат сравнивается с исходным экземпляром для подтверждения, что объект **SensorData** был восстановлен в полном соответствии с оригиналом.
@@ -224,7 +224,7 @@ ms.locfileid: "51634011"
     // Press any key to exit.
 
 
-## <a name="sample-2-serialization-with-a-generic-record"></a>Пример 2. Сериализация с помощью универсальной записи
+## <a name="sample-2-serialization-with-a-generic-record"></a>Пример 2 Сериализация с использованием универсальной записи
 Схема JSON может быть явно задана в универсальной записи, если нельзя использовать отражение, поскольку данные не могут быть представлены при помощи классов .NET с контрактом данных. Этот метод занимает больше времени, чем использование отражения. В подобных случаях схема для данных может также быть динамической, то есть неизвестной во время компиляции. В качестве примера подобного рода динамического сценария можно привести данные, представленные в виде файлов значений, разделенных запятыми (CSV), с неизвестной заранее схемой до ее преобразования в формат Avro во время выполнения.
 
 В этом примере показано, как создавать и использовать запись [**AvroRecord**](https://msdn.microsoft.com/library/microsoft.hadoop.avro.avrorecord.aspx) для явного определения схемы JSON, как заполнять ее данными, а затем сериализовать и десериализовать. Далее результат сравнивается с исходным экземпляром для подтверждения, что запись была восстановлена в полном соответствии с оригиналом.
@@ -347,7 +347,7 @@ ms.locfileid: "51634011"
     // Press any key to exit.
 
 
-## <a name="sample-3-serialization-using-object-container-files-and-serialization-with-reflection"></a>Пример 3. Сериализация с помощью файлов контейнеров объектов и сериализация с помощью отражения
+## <a name="sample-3-serialization-using-object-container-files-and-serialization-with-reflection"></a>Пример 3. Сериализация с использованием файлов контейнеров объектов и сериализация с использованием отражения
 Этот пример похож на сценарий в <a href="#Scenario1">первом примере</a>, где схема задается неявно с помощью отражения. Различие состоит в том, что здесь схема считается неизвестной модулю чтения, который выполняет десериализацию. Сериализуемые объекты **SensorData** и их неявно заданная схема сохраняются в файле контейнера объектов Avro, представленном классом [**AvroContainer**](https://msdn.microsoft.com/library/microsoft.hadoop.avro.container.avrocontainer.aspx).
 
 Данные в этом примере сериализуются с помощью [**SequentialWriter<SensorData>**](https://msdn.microsoft.com/library/dn627340.aspx), а десериализуются с помощью [**SequentialReader<SensorData>**](https://msdn.microsoft.com/library/dn627340.aspx). Далее результат сравнивается с исходными экземплярами для подтверждения идентичности.
@@ -587,7 +587,7 @@ ms.locfileid: "51634011"
     // Press any key to exit.
 
 
-## <a name="sample-4-serialization-using-object-container-files-and-serialization-with-generic-record"></a>Пример 4. Сериализация с помощью файлов контейнеров объектов и сериализация с помощью универсальной записи
+## <a name="sample-4-serialization-using-object-container-files-and-serialization-with-generic-record"></a>Пример 4. Сериализация с использованием файлов контейнеров объектов и сериализация с использованием универсальной записи
 Этот пример похож на сценарий во <a href="#Scenario2">втором примере</a>, где схема задается явно с помощью JSON. Различие состоит в том, что здесь схема считается неизвестной модулю чтения, который выполняет десериализацию.
 
 Набор тестовых данных помещается в список объектов [**AvroRecord**](https://msdn.microsoft.com/library/microsoft.hadoop.avro.avrorecord.aspx) с использованием явно определенной схемы JSON, а затем сохраняется как файл контейнера объектов, представленного классом [**AvroContainer**](https://msdn.microsoft.com/library/microsoft.hadoop.avro.container.avrocontainer.aspx). Этот файл контейнера создает модуль записи, который используется для сериализации несжатых данных в поток в памяти, который затем сохраняется в файле. Параметр [**Codec.Null**](https://msdn.microsoft.com/library/microsoft.hadoop.avro.container.codec.null.aspx), используемый для создания модуля чтения, указывает, что эти данные не сжимаются.
@@ -849,10 +849,10 @@ ms.locfileid: "51634011"
 
 
 
-## <a name="sample-5-serialization-using-object-container-files-with-a-custom-compression-codec"></a>Пример 5. Сериализация с использованием файлов контейнеров объектов с помощью настраиваемого кодека сжатия
+## <a name="sample-5-serialization-using-object-container-files-with-a-custom-compression-codec"></a>Пример 5. Сериализация с использованием файлов контейнеров объектов с помощью настраиваемого кодека сжатия
 В пятом примере показано, как использовать настраиваемый кодек сжатия для файлов контейнера объектов Avro. Образец с кодом для этого примера можно загрузить с сайта [Примеры кода Azure](https://code.msdn.microsoft.com/Serialize-data-with-the-67159111) .
 
-[Спецификация Avro](http://avro.apache.org/docs/current/spec.html#Required+Codecs) позволяет использовать дополнительные кодеки сжатия (помимо **Null** и **Deflate**, которые используются по умолчанию). В этом примере не реализуется новый кодек, такой как Snappy (который упоминается как поддерживаемый дополнительный кодек в [спецификации Avro](http://avro.apache.org/docs/current/spec.html#snappy)). Здесь показано, как использовать реализацию .NET Framework 4.5 кодека [**Deflate**][deflate-110], которая обеспечивает лучший алгоритм сжатия на основе библиотеки сжатия [zlib](http://zlib.net/), чем используемая по умолчанию версия .NET Framework 4.
+[Спецификация Avro](https://avro.apache.org/docs/current/spec.html#Required+Codecs) позволяет использовать дополнительные кодеки сжатия (помимо **Null** и **Deflate**, которые используются по умолчанию). В этом примере не реализуется новый кодек, такой как Snappy (который упоминается как поддерживаемый дополнительный кодек в [спецификации Avro](https://avro.apache.org/docs/current/spec.html#snappy)). Здесь показано, как использовать реализацию .NET Framework 4.5 кодека [**Deflate**][deflate-110], которая обеспечивает лучший алгоритм сжатия на основе библиотеки сжатия [zlib](https://zlib.net/), чем используемая по умолчанию версия .NET Framework 4.
 
     //
     // This code needs to be compiled with the parameter Target Framework set as ".NET Framework 4.5"
@@ -1345,13 +1345,13 @@ ms.locfileid: "51634011"
     // ----------------------------------------
     // Press any key to exit.
 
-## <a name="sample-6-using-avro-to-upload-data-for-the-microsoft-azure-hdinsight-service"></a>Пример 6. Использование Avro для передачи данных в службу Microsoft Azure HDInsight
+## <a name="sample-6-using-avro-to-upload-data-for-the-microsoft-azure-hdinsight-service"></a>Пример 6. Использование Avro для передачи данных в службу Microsoft Azure HDInsight
 В шестом примере показаны некоторые методы программирования, предусматривающие взаимодействие со службой Azure HDInsight. Образец с кодом для этого примера можно загрузить с сайта [Примеры кода Azure](https://code.msdn.microsoft.com/Using-Avro-to-upload-data-ae81b1e3) .
 
 Этот образец выполняет следующие задачи:
 
 * Выполняет подключение к существующему кластеру службы HDInsight.
-* Сериализует несколько CSV-файлов и передает результаты в хранилище больших двоичных объектов Azure. CSV-файлы распространяются вместе с образцом и представляют выдержку из исторических данных AMEX, распространяемых службой [Infochimps](http://www.infochimps.com/) за период 1970–2010. Образец считывает данные CSV-файла, преобразует записи в экземпляры класса **Stock** , а затем сериализует их с использованием отражения. Определение типа Stock создается из схемы JSON с помощью служебной программы создания кодов библиотеки Microsoft Avro.
+* Сериализует несколько CSV-файлов и передает результаты в хранилище больших двоичных объектов Azure. CSV-файлы распространяются вместе с образцом и представляют выдержку из исторических данных AMEX, распространяемых службой [Infochimps](https://www.infochimps.com/) за период 1970–2010. Образец считывает данные CSV-файла, преобразует записи в экземпляры класса **Stock** , а затем сериализует их с использованием отражения. Определение типа Stock создается из схемы JSON с помощью служебной программы создания кодов библиотеки Microsoft Avro.
 * Создает новую внешнюю таблицу с именем **Stocks** в Hive и связывает ее с данными, отправленными в предыдущем шаге.
 * Выполняет запрос с помощью Hive в таблице **Stocks** .
 
@@ -1378,5 +1378,5 @@ ms.locfileid: "51634011"
 
     AvroHDISample clean
 
-[deflate-100]: http://msdn.microsoft.com/library/system.io.compression.deflatestream(v=vs.100).aspx
-[deflate-110]: http://msdn.microsoft.com/library/system.io.compression.deflatestream(v=vs.110).aspx
+[deflate-100]: https://msdn.microsoft.com/library/system.io.compression.deflatestream(v=vs.100).aspx
+[deflate-110]: https://msdn.microsoft.com/library/system.io.compression.deflatestream(v=vs.110).aspx

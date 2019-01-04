@@ -1,23 +1,22 @@
 ---
-title: Azure Cosmos DB. Интерфейс API, пакет SDK и ресурсы для SQL Async Java | Документация Майкрософт
+title: Azure Cosmos DB — API-интерфейс, ресурсы и пакет SDK Async Java SQL
 description: Сведения о пакете SDK и API-интерфейсе SQL Async Java, включая даты выхода и прекращения использования, а также изменения, внесенные в каждую версию пакета SDK SQL Async Java для Azure Cosmos DB.
 services: cosmos-db
 author: SnehaGunda
-manager: kfile
 ms.service: cosmos-db
 ms.component: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 11/02/2018
+ms.date: 11/29/2018
 ms.author: moderakh
-ms.openlocfilehash: c8b8397e5d51b67895a6a95ed6d1611813a9aaf6
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: 5284de9a5b0f4f78b3b8b68e3848c2cb2783b839
+ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51300852"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53338623"
 ---
-# <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK Async Java для API-интерфейса SQL
+# <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
 > * [.NET](sql-api-sdk-dotnet.md)
 > * [Веб-канал изменений в .NET](sql-api-sdk-dotnet-changefeed.md)
@@ -28,11 +27,11 @@ ms.locfileid: "51300852"
 > * [Python](sql-api-sdk-python.md)
 > * [REST](https://docs.microsoft.com/rest/api/cosmos-db/)
 > * [Поставщик ресурсов REST](https://docs.microsoft.com/rest/api/cosmos-db-resource-provider/)
-> * [SQL](https://msdn.microsoft.com/library/azure/dn782250.aspx)
+> * [SQL](sql-api-query-reference.md)
 > * [BulkExecutor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
 > * [BulkExecutor — Java](sql-api-sdk-bulk-executor-java.md)
 
-Пакет SDK Async Java для API-интерфейса SQL отличается от пакета SDK Java для API-интерфейса SQL возможностью выполнять асинхронные операции с поддержкой [библиотеки Netty](http://netty.io/). Существующий [пакет SDK Java для API-интерфейса SQL](sql-api-sdk-java.md) не поддерживает асинхронные операции. 
+Пакет SDK Async Java для API-интерфейса SQL отличается от пакета SDK Java для API-интерфейса SQL возможностью выполнять асинхронные операции с поддержкой [библиотеки Netty](https://netty.io/). Существующий [пакет SDK Java для API-интерфейса SQL](sql-api-sdk-java.md) не поддерживает асинхронные операции. 
 
 <table>
 
@@ -44,14 +43,19 @@ ms.locfileid: "51300852"
 
 <tr><td>**Начало работы**</td><td>[Начало работы с пакетом SDK для Async Java](https://github.com/Azure-Samples/azure-cosmos-db-sql-api-async-java-getting-started)</td></tr>
 
-<tr><td>**Пример кода**</td><td>[Github](https://github.com/Azure/azure-cosmosdb-java#usage-code-sample)</td></tr>
+<tr><td>**Пример кода**</td><td>[GitHub](https://github.com/Azure/azure-cosmosdb-java#usage-code-sample)</td></tr>
 
-<tr><td>**Советы по улучшению производительности**</td><td>[Файл сведений Github](https://github.com/Azure/azure-cosmosdb-java#guide-for-prod)</td></tr>
+<tr><td>**Советы по улучшению производительности**</td><td>[Файл сведений GitHub](https://github.com/Azure/azure-cosmosdb-java#guide-for-prod)</td></tr>
 
 <tr><td>**Минимальная поддерживаемая среда выполнения**</td><td>[JDK 8](https://aka.ms/azure-jdks)</td></tr>
 </table></br>
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name230230"></a><a name="2.3.0"/>2.3.0
+* Исправлена ошибка утечки ресурсов.
+* Добавлена поддержка MultiPolygon.
+* Добавлена поддержка пользовательских заголовков в RequestOptions.
 
 ### <a name="a-name222222"></a><a name="2.2.2"/>2.2.2
 * Исправлена ошибка упаковки.
@@ -59,7 +63,7 @@ ms.locfileid: "51300852"
 ### <a name="a-name221221"></a><a name="2.2.1"/>2.2.1
 * Исправлена ошибка с NPE, которая возникает при записи пути файла retry.
 * Исправлена ошибка NPE, которая возникает при управлении конечными точками.
-* Обновлены уязвимые зависимости ([github #68](https://github.com/Azure/azure-cosmosdb-java/issues/68)).
+* Обновлены уязвимые зависимости ([GitHub № 68](https://github.com/Azure/azure-cosmosdb-java/issues/68)).
 * Добавлена поддержка ведения сетевого журнала Netty для устранения неполадок.
 
 ### <a name="a-name220220"></a><a name="2.2.0"/>2.2.0
@@ -68,16 +72,16 @@ ms.locfileid: "51300852"
 ### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0
 * Добавлена поддержка прокси-сервера.
 * Добавлена поддержка авторизации с помощью маркера ресурса.
-* Исправлена ошибка при обработке ключей больших секций ([github #63](https://github.com/Azure/azure-cosmosdb-java/issues/63)).
+* Исправлена ошибка при обработке ключей больших секций ([GitHub № 63](https://github.com/Azure/azure-cosmosdb-java/issues/63)).
 * Улучшена документация.
 * Изменена структура пакета SDK с разбивкой на более детализированные модули.
 
 ### <a name="a-name201201"></a><a name="2.0.1"/>2.0.1
-* Исправлена ошибка для не английских языковых стандартов ([github #51](https://github.com/Azure/azure-cosmosdb-java/issues/51)).
+* Исправлена ошибка для языковых стандартов, отличных от английского ([GitHub № 51](https://github.com/Azure/azure-cosmosdb-java/issues/51)).
 * Добавлены вспомогательные методы в раздел "Конфликт ресурсов".
 
 ### <a name="a-name200200"></a><a name="2.0.0"/>2.0.0
-* Заменена зависимость org.json от jackson из соображений производительности и лицензирования ([github #29](https://github.com/Azure/azure-cosmosdb-java/issues/29)).
+* Заменена зависимость org.json от jackson из соображений производительности и лицензирования ([GitHub № 29](https://github.com/Azure/azure-cosmosdb-java/issues/29)).
 * Удален нерекомендуемый класс OfferV2.
 * Добавлен метод доступа в класс Offer для материала о пропускной способности.
 * Все методы в Document/Resource, возвращающие типы org.json, изменены для возвращения типа объекта jackson.
@@ -90,18 +94,18 @@ ms.locfileid: "51300852"
 * Добавлена поддержка политики уникальных индексов.
 * Добавлена поддержка ограничения размера маркера продолжения ответа в параметрах веб-канала.
 * Добавлена поддержка разбиения секций в запросах между секциями.
-* Исправлена ошибка в сериализации метки времени JSON ([№32 на сайте GitHub](https://github.com/Azure/azure-cosmosdb-java/issues/32)).
+* Исправлена ошибка в сериализации метки времени JSON ([№ 32 на сайте GitHub](https://github.com/Azure/azure-cosmosdb-java/issues/32)).
 * Исправлена ошибка в сериализации перечисления JSON.
-* Исправлена ошибка в управлении документами размером 2 МБ ([№33 на сайте GitHub](https://github.com/Azure/azure-cosmosdb-java/issues/33)).
-* Зависимость com.fasterxml.jackson.core:jackson-databind обновлена до версии 2.9.5 из-за ошибки ([jackson-databind: №1599 на сайте GitHub](https://github.com/FasterXML/jackson-databind/issues/1599)).
-* Зависимость от rxjava-extras обновлена до версии 0.8.0.17 из-за ошибки ([rxjava-extras: №30 на сайте GitHub](https://github.com/davidmoten/rxjava-extras/issues/30)).
+* Исправлена ошибка в управлении документами размером 2 МБ ([№ 33 на сайте GitHub](https://github.com/Azure/azure-cosmosdb-java/issues/33)).
+* Зависимость com.fasterxml.jackson.core:jackson-databind обновлена до версии 2.9.5 из-за ошибки ([jackson-databind: № 1599 на сайте GitHub](https://github.com/FasterXML/jackson-databind/issues/1599)).
+* Зависимость от rxjava-extras обновлена до версии 0.8.0.17 из-за ошибки ([rxjava-extras: № 30 на сайте GitHub](https://github.com/davidmoten/rxjava-extras/issues/30)).
 * Описание метаданных в POM-файле обновлено в соответствии с остальной документацией.
-* Улучшение синтаксиса ([№41 на сайте GitHub ](https://github.com/Azure/azure-cosmosdb-java/issues/41)), ([№40 на сайте GitHub](https://github.com/Azure/azure-cosmosdb-java/issues/40)).
+* Улучшение синтаксиса ([№ 41 на сайте GitHub ](https://github.com/Azure/azure-cosmosdb-java/issues/41)), ([№ 40 на сайте GitHub](https://github.com/Azure/azure-cosmosdb-java/issues/40)).
 
 ### <a name="a-name101101"></a><a name="1.0.1"/>1.0.1
 * В запросах добавлена поддержка обратной реакции.
 * В запросах добавлена поддержка идентификатора диапазона для ключей секции.
-* Внесено исправление, позволяющее использовать больший маркер продолжения в заголовке запроса (исправление ошибки 24 в GitHub).
+* Внесено исправление, позволяющее использовать больший маркер продолжения в заголовке запроса (исправление ошибки № 24 на сайте GitHub).
 * Зависимость Netty обновлена до версии 4.1.22.Final, чтобы обеспечить завершение работы виртуальной машины Java после выполнения основного потока.
 * Внесено исправление, позволяющее избежать передачи маркера сеанса при считывании ресурсов главной ветви.
 * Добавлены другие примеры.
@@ -109,7 +113,7 @@ ms.locfileid: "51300852"
 * Исправлены файлы заголовков Java для правильного создания документа Java.
 
 ### <a name="a-name100100"></a><a name="1.0.0"/>1.0.0
-* Пакет SDK в общедоступной версии с комплексной поддержкой неблокирующих операций ввода-вывода и [библиотеки Netty](http://netty.io/) в режиме шлюза. 
+* Пакет SDK в общедоступной версии с комплексной поддержкой неблокирующих операций ввода-вывода и [библиотеки Netty](https://netty.io/) в режиме шлюза. 
 
 ## <a name="release-and-retirement-dates"></a>Даты выпуска и выбытия
 Корпорация Майкрософт отправит уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию.
@@ -122,6 +126,7 @@ ms.locfileid: "51300852"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.3.0](#2.3.0) |29 ноября 2018 г.|--- |
 | [2.2.2](#2.2.2) |8 ноября 2018 г.|--- |
 | [2.2.1](#2.2.1) |2 ноября 2018 г.|--- |
 | [2.2.0](#2.2.0) |22 сентября 2018 г.|--- |

@@ -1,21 +1,22 @@
 ---
 title: Настройка контейнеров
-titlesuffix: Computer Vision - Cognitive Services - Azure
+titlesuffix: Computer Vision - Azure Cognitive Services
 description: Параметры конфигурации для контейнеров в Компьютерном зрении.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: diberry
-ms.openlocfilehash: 8df293878486a9cd4ded6e899871c30498c4b68f
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: f71cbe965e70dfce1b29cf0e5f9ea44faf0a4e27
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634971"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53077024"
 ---
 # <a name="configure-containers"></a>Настройка контейнеров
 
@@ -27,7 +28,7 @@ ms.locfileid: "51634971"
 
 * [apiKey](#apikey-configuration-setting)
 * [ApplicationInsights](#applicationinsights-configuration-settings)
-* [Аутентификация](#authentication-configuration-settings)
+* [Проверка подлинности](#authentication-configuration-settings)
 * [Выставление счетов](#billing-configuration-setting)
 * [Лицензионное соглашение](#eula-configuration-setting)
 * [Fluentd](#fluentd-configuration-settings)
@@ -53,7 +54,7 @@ ms.locfileid: "51634971"
 
 ### <a name="configuration-settings-as-command-line-arguments"></a>Параметры конфигурации в виде аргументов командной строки
 
-Вы можете использовать [синтаксис переменной среды ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration#arguments) для определения параметров конфигурации.
+Вы можете использовать [синтаксис аргументов командной строки ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration#arguments) для определения параметров конфигурации.
 
 Вы можете определять параметры конфигурации в необязательном параметре `ARGS` команды [docker run](https://docs.docker.com/engine/reference/commandline/run/), которая используется для создания контейнера из скачанного образа контейнера. Преимуществом использования аргументов командной строки является то, что каждый контейнер может использовать различный пользовательский набор параметров конфигурации.
 
@@ -86,7 +87,7 @@ ms.locfileid: "51634971"
 
 ## <a name="billing-configuration-setting"></a>Параметр конфигурации выставления счетов
 
-Параметр конфигурации `Billing` задает URI конечной точки для ресурса Компьютерного зрения в Azure, с помощью которого отслеживаются данные для выставления счетов, связанные с этим контейнером. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса Компьютерного зрения в Azure.
+Параметр конфигурации `Billing` задает URI конечной точки для ресурса API компьютерного зрения в Azure, с помощью которого измеряются данные для выставления счетов, связанные с этим контейнером. Для этого параметра конфигурации необходимо задать значение, которое должно быть допустимым URI конечной точки для ресурса Компьютерного зрения в Azure.
 
 > [!IMPORTANT]
 > Параметры конфигурации [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-configuration-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](computer-vision-how-to-install-containers.md#billing).
@@ -98,6 +99,8 @@ ms.locfileid: "51634971"
 > [!IMPORTANT]
 > Параметры конфигурации [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-configuration-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](computer-vision-how-to-install-containers.md#billing).
 
+Лицензия на использование контейнеров Cognitive Services предоставляется в рамках [вашего соглашения](https://go.microsoft.com/fwlink/?linkid=2018657) об использовании Azure. Если вы не заключали соглашения, регламентирующего использование Azure, вы соглашаетесь, что ваше соглашение об использовании Azure является [соглашением Microsoft Online Subscription](https://go.microsoft.com/fwlink/?linkid=2018755), которое содержит [Условия использования Online Services](https://go.microsoft.com/fwlink/?linkid=2018760). Что касается предварительных версий, вы также соглашаетесь с [Дополнительными условиями использования предварительных версий Microsoft Azure](https://go.microsoft.com/fwlink/?linkid=2018815). Факт использования вами контейнера подтверждает ваше согласие с этими условиями.
+
 ## <a name="fluentd-configuration-settings"></a>Параметры конфигурации Fluentd
 
 Раздел `Fluentd` управляет параметрами конфигурации для [Fluentd](https://www.fluentd.org) — сборщика данных для единого ведения журнала с открытым кодом. Контейнеры Компьютерного зрения включают поставщика ведения журнала Fluentd, который позволяет контейнеру записывать данные журнала и при необходимости данные метрики на сервер Fluentd.
@@ -107,10 +110,10 @@ ms.locfileid: "51634971"
 | ИМЯ | Тип данных | ОПИСАНИЕ |
 |------|-----------|-------------|
 | `Host` | Строка | IP-адрес или имя узла DNS сервера Fluentd. |
-| `Port` | Целое число  | Порт сервера Fluentd.<br/> Значение по умолчанию — 24224. |
-| `HeartbeatMs` | Целое число  | Интервал пульса в миллисекундах. Если до окончания этого интервала не отправлялся никакой трафик событий, пульс отправляется на сервер Fluentd. Значение по умолчанию — 60 000 миллисекунд (1 минута). |
+| `Port` | Целое число  | Порт сервера Fluentd.<br/> Значение по умолчанию — 24224. |
+| `HeartbeatMs` | Целое число  | Интервал пульса в миллисекундах. Если до окончания этого интервала не отправлялся никакой трафик событий, пульс отправляется на сервер Fluentd. Значение по умолчанию — 60 000 миллисекунд (1 минута). |
 | `SendBufferSize` | Целое число  | Место в сетевом буфере (в байтах), выделенное для операций отправки. Значение по умолчанию — 32768 байт (32 килобайта). |
-| `TlsConnectionEstablishmentTimeoutMs` | Целое число  | Время ожидания (в миллисекундах) до установки соединения по протоколу SSL/TLS с сервером Fluentd. Значение по умолчанию — 10 000 миллисекунд (10 секунд).<br/> Если для параметра `UseTLS` задано значение false, то это значение игнорируется. |
+| `TlsConnectionEstablishmentTimeoutMs` | Целое число  | Время ожидания (в миллисекундах) до установки соединения по протоколу SSL/TLS с сервером Fluentd. Значение по умолчанию — 10 000 миллисекунд (10 секунд).<br/> Если для параметра `UseTLS` задано значение false, то это значение игнорируется. |
 | `UseTLS` | Логическое | Указывает, должен ли контейнер использовать протокол SSL/TLS для связи с сервером Fluentd. По умолчанию для этого параметра используется значение false. |
 
 ## <a name="logging-configuration-settings"></a>Параметры конфигурации ведения журнала
@@ -154,7 +157,7 @@ ms.locfileid: "51634971"
 
 Контейнер Распознавания текста не поддерживает входные подключения, а при необходимости поддерживает выходные.
 
-Вы можете указать входное или выходное подключение с помощью параметра `--mount` команды [docker run](https://docs.docker.com/engine/reference/commandline/run/), которая используется для создания из скачанного образа контейнера. По умолчанию входное подключение использует цель `/input`, а выходное — `/output`. Любой параметр хранения Docker, доступный контейнеру Docker, можно указать в параметре `--mount`.
+Вы можете указать входное или выходное подключение с помощью параметра `--mount` команды [docker run](https://docs.docker.com/engine/reference/commandline/run/), которая используется для создания из скачанного образа контейнера. По умолчанию входное подключение использует цель `/input`, а выходное — `/output`. Любой параметр хранения Docker, доступный контейнеру Docker, можно указать в параметре `--mount`.
 
 Например, приведенная ниже команда определяет подключение привязки Docker к папке `D:\Output` на хост-компьютере в выходном подключении, а затем создает контейнер из образа контейнера для Распознавания текста, сохраняя файлы журнала в формате JSON в выходное подключение.
 

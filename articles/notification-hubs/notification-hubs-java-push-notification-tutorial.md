@@ -14,30 +14,31 @@ ms.devlang: java
 ms.topic: article
 ms.date: 04/14/2018
 ms.author: dimazaid
-ms.openlocfilehash: a7ced71f2d0a8c5d956bbdbcd8fcae485aee3fc6
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 3251e2ecc9171081c5128dd0782eecdf83064114
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51241584"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53312261"
 ---
 # <a name="how-to-use-notification-hubs-from-java"></a>Использование концентраторов уведомлений из Java
 [!INCLUDE [notification-hubs-backend-how-to-selector](../../includes/notification-hubs-backend-how-to-selector.md)]
 
-В этой статье описаны основные функции нового, полностью поддерживаемого официального пакета SDK для Java Центра уведомлений Azure. Это проект с открытым кодом. Вы можете просмотреть весь код пакета SDK в [пакет SDK для Java]. 
+В этой статье описаны основные функции нового, полностью поддерживаемого официального пакета SDK для Java Центра уведомлений Azure.
+Это проект с открытым кодом. Вы можете просмотреть весь код пакета SDK в [пакет SDK для Java].
 
-Вы можете обращаться ко всем функциям центров уведомлений из серверной части Java/PHP/Python/Ruby, используя интерфейс REST в соответствии с описанием в разделе MSDN [Интерфейсы API REST центров уведомлений](https://msdn.microsoft.com/library/dn223264.aspx). Пакет SDK для Java предоставляет тонкую оболочку для этих интерфейсов REST на Java. 
+Вы можете обращаться ко всем функциям центров уведомлений из серверной части Java/PHP/Python/Ruby, используя интерфейс REST в соответствии с описанием в разделе MSDN [Интерфейсы API REST центров уведомлений](https://msdn.microsoft.com/library/dn223264.aspx). Пакет SDK для Java предоставляет тонкую оболочку для этих интерфейсов REST на Java.
 
 В настоящее время пакет SDK поддерживает следующее:
 
-* операции CRUD для центра уведомлений; 
+* операции CRUD для центра уведомлений;
 * операции CRUD для регистрации;
 * управление установкой;
 * регистрацию импорта и экспорта;
 * обычную отправку;
 * запланированную отправку;
 * асинхронные операции с использованием Java NIO;
-* Поддерживаемые платформы: APNS (iOS), GCM (Android), WNS (приложения для Магазина Windows), MPNS (Windows Phone), ADM (Amazon Kindle Fire), Baidu (Android без служб Google). 
+* Поддерживаемые платформы: APNS (iOS), GCM (Android), WNS (приложения для Магазина Windows), MPNS (Windows Phone), ADM (Amazon Kindle Fire), Baidu (Android без служб Google).
 
 ## <a name="sdk-usage"></a>Использование пакета SDK
 ### <a name="compile-and-build"></a>Компиляция и сборка
@@ -85,7 +86,7 @@ ms.locfileid: "51241584"
 
     WindowsRegistration reg = new WindowsRegistration(new URI(CHANNELURI));
     reg.getTags().add("myTag");
-    reg.getTags().add("myOtherTag");    
+    reg.getTags().add("myOtherTag");
     hub.createRegistration(reg);
 
 **Создание регистрации iOS:**
@@ -122,33 +123,34 @@ ms.locfileid: "51241584"
 **Запрос регистраций:**
 
 * **Получение одной регистрации:**
-  
+
         hub.getRegistration(regid);
 
 * **Получение всех регистраций в центре:**
-  
+
         hub.getRegistrations();
 
 * **Получение регистраций с тегом:**
-  
+
         hub.getRegistrationsByTag("myTag");
 
 * **Получение регистраций по каналу:**
-  
+
         hub.getRegistrationsByChannel("devicetoken");
 
 
 Все запросы коллекций поддерживают маркеры $top и маркеры продолжения.
 
 ### <a name="installation-api-usage"></a>Использование API установки
-API установки — это альтернативный механизм управления регистрацией. Вместо поддержки нескольких регистраций, что является непростой задачей, которую зачастую выполняют неправильно или неэффективно, теперь можно использовать ЕДИНЫЙ объект установки. Установка включает в себя все необходимые составляющие: канал отправки (маркер устройства), теги, шаблоны и вспомогательные плитки (для WNS и APNS). Вам больше не нужно вызывать службу, чтобы получить идентификатор. Просто создайте GUID или любой другой идентификатор, сохраните его в устройстве и отправьте в серверную часть вместе с каналом отправки (маркером устройства). На сервере нужно сделать всего один вызов: CreateOrUpdateInstallation. Он является полностью идемпотентным, поэтому при необходимости можно повторить попытку.
+API установки — это альтернативный механизм управления регистрацией. Вместо поддержки нескольких регистраций, что является непростой задачей, которую зачастую выполняют неправильно или неэффективно, теперь можно использовать ЕДИНЫЙ объект установки. Установка включает в себя все необходимые составляющие: канал отправки (маркер устройства), теги, шаблоны и вспомогательные плитки (для WNS и APNS). Вам больше не нужно вызывать службу, чтобы получить идентификатор. Просто создайте GUID или любой другой идентификатор, сохраните его в устройстве и отправьте в серверную часть вместе с каналом отправки (маркером устройства).
+На внутреннем сервере нужно сделать всего один вызов: CreateOrUpdateInstallation. Он является полностью идемпотентным, поэтому при необходимости можно повторить попытку.
 
 Вот пример для Amazon Kindle Fire.
 
     Installation installation = new Installation("installation-id", NotificationPlatform.Adm, "adm-push-channel");
     hub.createOrUpdateInstallation(installation);
 
-Если нужно обновление: 
+Если нужно обновление:
 
     installation.addTag("foo");
     installation.addTemplate("template1", new InstallationTemplate("{\"data\":{\"key1\":\"$(value1)\"}}","tag-for-template1"));
@@ -186,7 +188,7 @@ API установки — это альтернативный механизм 
 **Планирование собственных уведомлений Windows:**
 
     Calendar c = Calendar.getInstance();
-    c.add(Calendar.DATE, 1);    
+    c.add(Calendar.DATE, 1);
     Notification n = Notification.createWindowsNotification("WNS body");
     hub.scheduleNotification(n, c.getTime());
 
@@ -216,34 +218,34 @@ API установки — это альтернативный механизм 
         job = hub.getNotificationHubJob(job.getJobId());
         if(job.getJobStatus() == NotificationHubJobStatus.Completed)
             break;
-    }       
+    }
 
 **Получение всех заданий:**
 
     List<NotificationHubJob> jobs = hub.getAllNotificationHubJobs();
 
-**URI с подписью SAS** — это URL-адрес определенного файла большого двоичного объекта или контейнера больших двоичных объектов в сочетании с набором параметров, таких как разрешения и сроки действия, и подписью всех этих элементов, выполненной с использованием ключа подписанного URL-адреса учетной записи. Пакет SDK для Java для службы хранилища Azure предоставляет широкие возможности, включая создание подобных универсальных кодов ресурса. В качестве простой альтернативы рассмотрим тестовый класс ImportExportE2E (из расположения github) с базовой компактной реализацией алгоритма подписывания.
+**URI с подписью SAS —** это URL-адрес определенного файла большого двоичного объекта или контейнера больших двоичных объектов в сочетании с набором параметров, таких как разрешения и сроки действия, и подписью всех этих элементов, выполненной с использованием ключа подписанного URL-адреса учетной записи. Пакет SDK для Java для службы хранилища Azure предоставляет широкие возможности, включая создание подобных универсальных кодов ресурса. В качестве простой альтернативы рассмотрим тестовый класс ImportExportE2E (из расположения GitHub) с базовой компактной реализацией алгоритма подписывания.
 
 ### <a name="send-notifications"></a>Отправка уведомлений
 Объект уведомления — это основной текст с заголовками. С помощью методов, предоставляемых некоторыми служебными программами, можно создать собственные и шаблонные объекты уведомлений.
 
 * **Магазин Windows и Windows Phone 8.1 (без Silverlight)**
-  
+
         String toast = "<toast><visual><binding template=\"ToastText01\"><text id=\"1\">Hello from Java!</text></binding></visual></toast>";
         Notification n = Notification.createWindowsNotification(toast);
         hub.sendNotification(n);
 * **iOS**
-  
+
         String alert = "{\"aps\":{\"alert\":\"Hello from Java!\"}}";
         Notification n = Notification.createAppleNotification(alert);
         hub.sendNotification(n);
 * **Android**
-  
+
         String message = "{\"data\":{\"msg\":\"Hello from Java!\"}}";
         Notification n = Notification.createGcmNotification(message);
         hub.sendNotification(n);
 * **Windows Phone 8.0 и 8.1 Silverlight**
-  
+
         String toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
                     "<wp:Notification xmlns:wp=\"WPNotification\">" +
                        "<wp:Toast>" +
@@ -253,7 +255,7 @@ API установки — это альтернативный механизм 
         Notification n = Notification.createMpnsNotification(toast);
         hub.sendNotification(n);
 * **Kindle Fire**
-  
+
         String message = "{\"data\":{\"msg\":\"Hello from Java!\"}}";
         Notification n = Notification.createAdmNotification(message);
         hub.sendNotification(n);
@@ -263,11 +265,11 @@ API установки — это альтернативный механизм 
         tags.add("boo");
         tags.add("foo");
         hub.sendNotification(n, tags);
-* **Отправка к выражению тега**       
-  
+* **Отправка к выражению тега**
+
         hub.sendNotification(n, "foo && ! bar");
 * **Отправка шаблонного уведомления**
-  
+
         Map<String, String> prop =  new HashMap<String, String>();
         prop.put("prop1", "v1");
         prop.put("prop2", "v2");
@@ -279,7 +281,7 @@ API установки — это альтернативный механизм 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом разделе было показано, как создать простой клиент REST Java для службы "Центры уведомлений". На данном этапе можно сделать следующее.
 
-* Скачайте полный [пакет SDK для Java], содержащий весь код пакета SDK. 
+* Скачайте полный [пакет SDK для Java], содержащий весь код пакета SDK.
 * Попробуйте разные примеры:
   * [Приступая к работе с центрами уведомлений]
   * [Отправка экстренных новостей]

@@ -1,5 +1,6 @@
 ---
-title: ONNX и машинное обучение Azure | Создание и развертывание моделей
+title: Создание и развертывание моделей ONNX с возможностью взаимодействия
+titleSuffix: Azure Machine Learning service
 description: Дополнительные сведения об ONNX и использовании машинного обучения Azure для создания и развертывания моделей ONNX
 services: machine-learning
 ms.service: machine-learning
@@ -9,14 +10,15 @@ ms.reviewer: jmartens
 ms.author: prasantp
 author: prasanthpul
 ms.date: 09/24/2018
-ms.openlocfilehash: 2e5c0e479d5564a48048b9fa9c67ad8870122601
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.custom: seodec18
+ms.openlocfilehash: 15aa80c5291854c937bdc128a597ed5bebd608a2
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51706064"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53437439"
 ---
-# <a name="onnx-and-azure-machine-learning-create-and-deploy-interoperable-ai-models"></a>ONNX и машинное обучение Azure: создание и развертывание совместимых моделей AI
+# <a name="onnx-and-azure-machine-learning-create-and-deploy-interoperable-ai-models"></a>ONNX и Машинное обучение Azure: создание и развертывание моделей ИИ с возможностью взаимодействия
 
 Формат [Open Neural Network Exchange](https://onnx.ai) (ONNX) — это открытый стандарт для представления моделей машинного обучения. ONNX поддерживается [сообществом партнеров](https://onnx.ai/supported-tools), включая корпорацию Майкрософт, которое создает совместимые платформы и средства. Корпорация Майкрософт стремится к созданию открытого, совместимого AI, чтобы ученые и разработчики могли делать следующее:
 
@@ -32,7 +34,7 @@ ONNX дает совместимость, которая позволяет бы
 
 Также имеется экосистема средств для визуализации и ускорения моделей ONNX. Для распространенных сценариев доступен также ряд предварительно обученных моделей ONNX.
 
-[Модели ONNX можно развертывать](#deploy) в облако с помощью машинного обучения Azure и среды выполнения ONNX. С помощью [Windows ML](https://docs.microsoft.com/windows/ai/) их можно также развертывать на устройствах Windows 10. В сообществе ONNX существуют также конвертеры для развертывания на другие платформы. 
+[Модели ONNX можно развертывать](#deploy) в облако с помощью Машинного обучения Azure и среды выполнения ONNX. С помощью [Windows ML](https://docs.microsoft.com/windows/ai/) их можно также развертывать на устройствах Windows 10. В сообществе ONNX существуют также конвертеры для развертывания на другие платформы. 
 
 [ ![Схема ONNX, демонстрирующая обучение, конвертеры и развертывание](media/concept-onnx/onnx.png) ] (./media/concept-onnx/onnx.png#lightbox)
 
@@ -65,16 +67,16 @@ ONNX дает совместимость, которая позволяет бы
 
 С помощью службы машинного обучения Azure можно развертывать модели ONNX, управлять ими и осуществлять мониторинг. Используя стандартный [рабочий процесс развертывания](concept-model-management-and-deployment.md) и среду выполнения ONNX, можно создать конечную точку REST, размещенную в облаке. Полный пример записной книжки Jupyter см. в конце этой статьи — опробуйте его на практике. 
 
-### <a name="install-and-configure-the-onnx-runtime"></a>Установка и настройка среды выполнения ONNX
+### <a name="install-and-configure-onnx-runtime"></a>Установка и настройка среды выполнения ONNX
 
-Среда выполнения ONNX — это высокоэффективный механизм логической обработки для моделей ONNX. Она включает API Python и обеспечивает аппаратное ускорение ЦП и GPU. Сейчас она поддерживает модели ONNX 1.2 и выполняется в системе Ubuntu 16.04 Linux. Пакеты [ЦП](https://pypi.org/project/onnxruntime) и [GPU](https://pypi.org/project/onnxruntime-gpu) доступны на сайте [PyPi.org](https://pypi.org).
+Среда выполнения ONNX — это высокоэффективная подсистема вывода с открытым кодом, предназначенная для логической обработки моделей ONNX. Она обеспечивает аппаратное ускорение на ЦП и GPU с помощью интерфейсов API, предоставляемых для Python, C# и C. Среда выполнения ONNX поддерживает модели ONNX 1.2 и более поздних версий и может работать на платформах Linux, Windows и Mac. Пакеты Python доступны на сайте [PyPi.org](https://pypi.org) ([ЦП](https://pypi.org/project/onnxruntime), [GPU](https://pypi.org/project/onnxruntime-gpu)), а [пакет C#](https://www.nuget.org/packages/Microsoft.ML.OnnxRuntime/) доступен на сайте [Nuget.org](https://www.nuget.org). Дополнительные сведения о проекте можно найти на сайте [GitHub](https://github.com/Microsoft/onnxruntime). 
 
-Для установки среды выполнения ONNX используйте следующую команду:
+Чтобы установить среду выполнения ONNX для Python, используйте следующую команду.
 ```python
 pip install onnxruntime
 ```
 
-Для вызова среды выполнения ONNX в сценарии Python используйте следующую команду:
+Для вызова среды выполнения ONNX в сценарии Python используйте следующую команду.
 ```python
 import onnxruntime
 
@@ -94,7 +96,7 @@ results = session.run(["output1", "output2"], {"input1": indata1, "input2": inda
 results = session.run([], {"input1": indata1, "input2": indata2})
 ```
 
-Полный справочник по API см. в [документации по среде выполнения ONNX](https://aka.ms/onnxruntime-python).
+Полный справочник по API Python см. в [документации по среде выполнения ONNX](https://aka.ms/onnxruntime-python).
 
 ### <a name="example-deployment-steps"></a>Пример этапов развертывания
 
@@ -183,24 +185,12 @@ results = session.run([], {"input1": indata1, "input2": indata2})
     f.write(myenv.serialize_to_string())
    ```
 
-4. С помощью машинного обучения Azure разверните модель ONNX в:
-   + Экземпляры контейнеров Azure: [подробнее](how-to-deploy-to-aci.md).
-
-   + Служба Azure Kubernetes (AKS): [подробнее...](how-to-deploy-to-aks.md)
+4. Развертывание модели описывается в документе [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
 
 
 ## <a name="examples"></a>Примеры
  
-Следующие записные книжки показывают, как создавать модели ONNX и развертывать их с помощью машинного обучения Azure: 
-+ [onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/onnx/onnx-modelzoo-aml-deploy-resnet50.ipynb)
-+ [onnx/onnx-convert-aml-deploy-tinyyolo.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/onnx/onnx-convert-aml-deploy-tinyyolo.ipynb)
-+ [onnx/onnx-train-pytorch-aml-deploy-mnist.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/onnx/onnx-train-pytorch-aml-deploy-mnist.ipynb)
-
-Следующие записные книжки показывают, как разворачивать существующие модели ONNX с помощью машинного обучения Azure: 
-+ [onnx/onnx-inference-mnist-deploy.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/onnx/onnx-inference-mnist-deploy.ipynb) 
-+ [onnx/onnx-inference-facial-expression-recognition-deploy.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/onnx/onnx-inference-facial-expression-recognition-deploy.ipynb)
- 
-Получите записные книжки:
+[how-to-use-azureml/deployment/onnx](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/onnx): примеры записных книжек, создающих и развертывающих модели ONNX.
  
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
@@ -210,3 +200,8 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 + [Веб-сайт проекта ONNX](https://onnx.ai)
 
 + [Код ONNX в GitHub](https://github.com/onnx/onnx)
+
+Узнайте больше о среде выполнения ONNX или поддержите проект:
++ [Репозиторий GitHub для среды выполнения ONNX](https://github.com/Microsoft/onnxruntime)
+
+

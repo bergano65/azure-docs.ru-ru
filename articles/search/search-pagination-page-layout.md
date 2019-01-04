@@ -1,5 +1,5 @@
 ---
-title: Разбивка результатов поиска на страницы в службе поиска Azure | Документация Майкрософт
+title: Как разбивать на страницы результаты поиска в службе "Поиск Azure"
 description: Разбивка на страницы в службе Поиск Azure, размещенной облачной службе поиска в Microsoft Azure.
 author: HeidiSteen
 manager: cgronlun
@@ -9,12 +9,13 @@ ms.devlang: rest-api
 ms.topic: conceptual
 ms.date: 08/29/2016
 ms.author: heidist
-ms.openlocfilehash: 8953be2be77c14a82294e56ac60b8bc993ec6c2f
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.custom: seodec2018
+ms.openlocfilehash: 5f36dbb72e2518f7e3a27ef3aadec85312d751c2
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39527075"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53309349"
 ---
 # <a name="how-to-page-search-results-in-azure-search"></a>Разбивка результатов поиска на страницы в службе поиска Azure.
 В данной статье приводятся рекомендации по использованию API REST службы поиска Azure для реализации стандартных элементов страницы результатов поиска, например, общего подсчета, извлечения документа, порядка сортировки и навигации.

@@ -1,6 +1,6 @@
 ---
-title: Регистрация нового устройства Azure IoT Edge с помощью портала | Документация Майкрософт
-description: Регистрация нового устройства IoT Edge с помощью портала Azure
+title: Регистрация нового устройства на портале Azure — Azure IoT Edge | Документация Майкрософт
+description: Регистрация нового устройства IoT Edge и получение строки подключения на портале Azure
 author: kgremban
 manager: philmea
 ms.author: kgremban
@@ -8,12 +8,13 @@ ms.date: 06/05/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 6657203c76bc03a262fbcbd30b5bf74b5be140eb
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.custom: seodec18
+ms.openlocfilehash: da93541339ac1c199d3ba0a220fbfff6bbb8bf9c
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51577504"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53082130"
 ---
 # <a name="register-a-new-azure-iot-edge-device-from-the-azure-portal"></a>Регистрация нового устройства Azure IoT Edge на портале Azure
 

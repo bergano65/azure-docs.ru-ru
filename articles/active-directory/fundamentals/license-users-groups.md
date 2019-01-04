@@ -1,6 +1,6 @@
 ---
-title: Как назначить или удалить лицензии Azure Active Directory | Документы Майкрософт
-description: Назначение или удаление лицензий Azure Active Directory для пользователей и групп с помощью Azure Active Directory.
+title: Назначение или удаление лицензий Azure Active Directory | Документация Майкрософт
+description: Инструкции по назначению или удалению лицензий Azure Active Directory для пользователей и групп.
 services: active-directory
 author: eross-msft
 manager: mtillman
@@ -12,15 +12,15 @@ ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: lizross
 ms.reviewer: jeffsta
-custom: it-pro
-ms.openlocfilehash: e1b0b2f84c67e30c3bb998554dc662b002744003
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.custom: it-pro, seodec18
+ms.openlocfilehash: 6cf3e9a9b767dfaa6f04d151864f64123e3d6ae7
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45603897"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53077467"
 ---
-# <a name="how-to-assign-or-remove-azure-active-directory-licenses"></a>Практическое руководство. Назначение или удалений лицензий Azure Active Directory
+# <a name="assign-or-remove-licenses-using-the-azure-active-directory-portal"></a>Назначение или удаление лицензий с помощью портала Azure Active Directory
 Многие службы Azure Active Directory (Azure AD) требуют активации продукта Azure AD и наличия лицензии для каждого пользователя или группы (и их участников). Только пользователи с действующими лицензиями могут использовать лицензированные службы Azure AD.
 
 ## <a name="available-product-editions"></a>Доступные выпуски продукта

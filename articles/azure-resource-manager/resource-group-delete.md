@@ -1,6 +1,6 @@
 ---
-title: Удаление группы ресурсов в Azure Resource Manager
-description: Здесь описывается, как Azure Resource Manager определяет порядок удаления ресурсов при удалении группы ресурсов.
+title: Удаление группы ресурсов и ее содержимого в Azure Resource Manager
+description: Здесь описывается, как Azure Resource Manager определяет порядок удаления ресурсов при удалении группы ресурсов. В этой статье описываются коды отклика и объясняется, как Resource Manager обрабатывает их для определения, успешно ли выполнено удаление.
 services: azure-resource-manager
 documentationcenter: na
 author: tfitzmac
@@ -9,14 +9,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/21/2018
+ms.date: 12/09/2018
 ms.author: tomfitz
-ms.openlocfilehash: 8b0711cab07584aa84ab437a2a4efb5aab92f3d1
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.custom: seodec18
+ms.openlocfilehash: b8c4fdc942af291e912a4c1e74d1292279cf9f8c
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52318913"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53132335"
 ---
 # <a name="azure-resource-manager-resource-group-deletion"></a>Удаление группы ресурсов в Azure Resource Manager
 
@@ -68,4 +69,4 @@ Resource Manager отправляет вызов GET для каждого ре�
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Основные понятия Azure Resource Manager см. в [этой статье](resource-group-overview.md).
-* Чтобы просмотреть операции для поставщика ресурсов, ознакомьтесь с [Azure REST API](/rest/api/).
+* Команды удаления см. в разделах [PowerShell](/powershell/module/azurerm.resources/Remove-AzureRmResourceGroup), [Azure CLI](/cli/azure/group?view=azure-cli-latest#az-group-delete) и [REST API](/rest/api/resources/resourcegroups/delete).

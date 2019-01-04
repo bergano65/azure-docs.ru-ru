@@ -3,23 +3,22 @@ title: Установка Azure Backup Server в Azure Stack | Документ�
 description: Узнайте, как с помощью Azure Backup Server защитить рабочие нагрузки или выполнить для них резервное копирование в Azure Stack.
 services: backup
 documentationcenter: ''
-author: markgalioto
+author: rayne-wiselman
 manager: carmonm
 editor: ''
 keywords: сервер резервного копирования Azure; защита рабочих нагрузок; резервное копирование рабочих нагрузок
 ms.service: backup
 ms.workload: storage-backup-recovery
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: article
 ms.date: 6/5/2018
-ms.author: markgal
-ms.openlocfilehash: 5092a677bcbeac179e26fa0591b6a1cfbc3263d4
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.author: raynew
+ms.openlocfilehash: 1e8c8efa590b6cce4543255dd33afbfd79aecef6
+ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45576703"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52877173"
 ---
 # <a name="install-azure-backup-server-on-azure-stack"></a>Установка Azure Backup Server в Azure Stack
 
@@ -91,7 +90,7 @@ Azure Backup Server защищает следующие рабочие нагр�
 
 ## <a name="using-an-iaas-vm-in-azure-stack"></a>Использование виртуальной машины IaaS в Azure Stack
 
-При выборе сервера для Azure Backup Server начните с образа из коллекции Windows Server 2012 R2 Datacenter или Windows Server 2016 Datacenter. Статья [Краткое руководство. Создание виртуальной машины под управлением Windows на портале Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) содержит инструкции по началу работы с рекомендуемой виртуальной машиной. Рекомендуемые минимальные требования для виртуальной машины сервера: Standard A2 с двумя ядрами и 3,5 ГБ ОЗУ.
+При выборе сервера для Azure Backup Server начните с образа из коллекции Windows Server 2012 R2 Datacenter или Windows Server 2016 Datacenter. Статья [Краткое руководство. Создание виртуальной машины под управлением Windows на портале Azure](../virtual-machines/virtual-machines-windows-hero-tutorial.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) содержит инструкции по началу работы с рекомендуемой виртуальной машиной. Рекомендуемые минимальные требования для виртуальной машины сервера: Standard A2 с двумя ядрами и 3,5 ГБ ОЗУ.
 
 Защита рабочих нагрузок с помощью Azure Backup Server имеет свои особенности. Эти особенности рассматриваются в статье [Установка DPM в виде виртуальной машины Azure](https://technet.microsoft.com/library/jj852163.aspx). Прежде чем развертывать виртуальную машину, полностью ознакомьтесь с этой статьей.
 

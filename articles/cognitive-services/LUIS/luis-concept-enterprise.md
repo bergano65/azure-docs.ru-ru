@@ -1,21 +1,22 @@
 ---
-title: Корпоративные принципы разработки приложений LUIS — Интеллектуальная служба распознавания речи
-titleSuffix: Azure Cognitive Services
-description: Общие сведения о принципах разработки крупных приложений LUIS.
+title: Разработка корпоративных приложений
+titleSuffix: Language Understanding - Azure Cognitive Services
+description: Принципы разработки больших приложений LUIS или нескольких приложений, использующих LUIS и QnA Maker.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 09/10/2018
 ms.author: diberry
-ms.openlocfilehash: bb4078c9131488e5077795df792de259d7c789dc
-ms.sourcegitcommit: 17633e545a3d03018d3a218ae6a3e4338a92450d
+ms.openlocfilehash: 60e1e8d49fcbae7d7049c97e9ee756dc938ca5ff
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2018
-ms.locfileid: "49638280"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53105943"
 ---
 # <a name="enterprise-strategies-for-a-luis-app"></a>Корпоративные стратегии для разработки приложения LUIS
 Ознакомьтесь с этими стратегиями разработки корпоративных приложений.

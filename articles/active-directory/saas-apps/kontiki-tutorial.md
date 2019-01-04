@@ -1,5 +1,5 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Kontiki | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Kontiki | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Kontiki.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: jeedes
-ms.openlocfilehash: e5f29a12de5f82fa13c0c61462db00b2906fdca7
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: e5733547aa9b8b8d0c5aa0ce033d00f8c94b3d21
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444459"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52842855"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kontiki"></a>Руководство. Интеграция Azure Active Directory с Kontiki
 
@@ -115,7 +115,7 @@ ms.locfileid: "39444459"
      В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.mc.eval.kontiki.com`
 
     > [!NOTE] 
-    > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес для входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов Kontiki](http://customersupport.kontiki.com/enterprise/contactsupport.html). 
+    > Это значение приведено для справки. Вместо него необходимо указать фактический URL-адрес для входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов Kontiki](https://customersupport.kontiki.com/enterprise/contactsupport.html). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -125,10 +125,10 @@ ms.locfileid: "39444459"
 
     ![Настройка единого входа](./media/kontiki-tutorial/tutorial_general_400.png) 
 
-1. Чтобы настроить единый вход на стороне **Kontiki**, отправьте в [службу поддержки Kontiki](http://customersupport.kontiki.com/enterprise/contactsupport.html) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **Kontiki**, отправьте в [службу поддержки Kontiki](https://customersupport.kontiki.com/enterprise/contactsupport.html) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

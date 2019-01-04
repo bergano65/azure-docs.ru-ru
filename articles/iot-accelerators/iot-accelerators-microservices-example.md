@@ -7,16 +7,16 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 04/19/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0b206d7b56fc8a65c422a4ce22b2f5585e71c8da
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 20e86220fffe95fc38b5fa15dd5603db4331203f
+ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47219431"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53315763"
 ---
 # <a name="customize-and-redeploy-a-microservice"></a>Настройка и повторное развертывание микрослужбы
 
-Это руководство содержит сведения об изменении одной из микрослужб в решении удаленного мониторинга, создании образа микрослужбы, развертывании образа в центре Docker, а затем его использовании в решении удаленного мониторинга. Для предоставления этой концепции в руководстве используется базовый сценарий, в котором вы вызываете API микрослужбы и изменяете сообщение о состоянии с "Alive and Well" (Активно и работоспособно) на "New Edits Made Here!" (Сюда внесены новые изменения!).
+Это руководство содержит сведения об изменении одной из [микрослужб](http://azure.com/microservices) в решении удаленного мониторинга, создании образа микрослужбы, развертывании образа в центре Docker, а затем его использовании в решении удаленного мониторинга. Для предоставления этой концепции в руководстве используется базовый сценарий, в котором вы вызываете API микрослужбы и изменяете сообщение о состоянии с "Alive and Well" (Активно и работоспособно) на "New Edits Made Here!" (Сюда внесены новые изменения!).
 
 Решение удаленного мониторинга использует микрослужбы, созданные с помощью образов Docker, которые извлечены из центра Docker. 
 
@@ -45,7 +45,7 @@ ms.locfileid: "47219431"
 1. Убедитесь, что решение удаленного мониторинга запущено локально на вашем компьютере.
 2. Откройте Postman из расположения, в которое вы его скачали.
 3. В Postman введите следующее значение в поле GET (Получить): http://localhost:8080/iothubmanager/v1/status.
-4. Просмотрите возвращенное значение. Должен отобразиться следующий результат — "Status": "OK:Alive and Well".
+4. Просмотрите возвращенное значение. Должен отобразиться следующий результат — "Status": "OK: Alive and Well".
 
     ![Сообщение Alive and Well (Активно и работоспособно) в приложении Postman](./media/iot-accelerators-microservices-example/postman-alive-well.png)
 
@@ -54,25 +54,31 @@ ms.locfileid: "47219431"
 Теперь измените сообщение о состоянии микрослужбы диспетчера Центра Интернета вещей на "New Edits Made Here!", а затем повторно создайте образ Docker с этим новым состоянием. Если у вас возникнут здесь проблемы, ознакомьтесь с разделом [об устранении неполадок](#Troubleshoot).
 
 1. Убедитесь, что терминал открыт и перейдите в каталог, в который вы клонировали решение удаленного мониторинга. 
-2. Перейдите в каталог azure-iot-pcs-remote-monitoring-dotnet/services/iothub-manager/WebService/v1/Controllers.
-3. Откройте файл StatusController.cs в любом текстовом редакторе или в интегрированной среде разработки. 
-4. Найдите следующий код:
+1. Перейдите в каталог azure-iot-pcs-remote-monitoring-dotnet/services/iothub-manager/Services.
+1. Откройте файл StatusService.cs в любом текстовом редакторе или в интегрированной среде разработки. 
+1. Найдите следующий код:
 
     ```csharp
-    return new StatusApiModel(true, "Alive and well");
+    var result = new StatusServiceModel(true, "Alive and well!");
     ```
 
     Замените его приведенным ниже кодом и сохраните.
 
     ```csharp
-    return new StatusApiModel(true, "New Edits Made Here!");
+    var result = new StatusServiceModel(true, "New Edits Made Here!");
     ```
 
 5. Вернитесь в окно терминала, но теперь перейдите в этот каталог: azure-iot-pcs-remote-monitoring-dotnet/services/iothub-manager/scripts/docker.
 6. Чтобы создать образ Docker, введите следующее:
 
-    ```cmd/sh
+    ```sh
     sh build
+    ```
+    
+    или в Windows:
+    
+    ```
+    ./build.cmd
     ```
 
 7. Чтобы убедиться, что образ успешно создан, введите следующее:
@@ -138,7 +144,7 @@ ms.locfileid: "47219431"
     ```
 
 3. Откройте Postman из расположения, в которое вы его скачали.
-4. В Postman введите следующий запрос в поле GET (Получить): http://localhost:8080/iothubmanager/v1/status. Должен отобразиться следующий результат — "Status": "OK: New Edits Made Here!".
+4. В Postman введите следующий запрос в поле GET (Получить): http://localhost:8080/iothubmanager/v1/status. Теперь должен отобразиться следующий результат — "Status": "ОК: New Edits Made Here!".
 
 ![Сообщение "New Edits Made Here" в приложении Postman](./media/iot-accelerators-microservices-example/new-postman-message.png)
 

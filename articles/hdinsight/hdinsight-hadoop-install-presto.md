@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: ce1e82971f10541bf3a67d46b48c5fc93b5432b4
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 4285c633062386657cbea478f327c9a1b088f16a
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51687084"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53383822"
 ---
 # <a name="install-and-use-presto-on-hdinsight-hadoop-clusters"></a>Установка и использование Presto в кластерах HDInsight Hadoop
 
@@ -22,16 +22,16 @@ ms.locfileid: "51687084"
 
 В HDInsight также предлагается приложение Starburst Presto для кластеров Apache Hadoop. Дополнительные сведения см. в статье [Установка сторонних приложений Hadoop в Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-apps-install-applications).
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Для выполнения действий, описанных в этом документе, необходим **кластер Hadoop для HDInsight 3.5** под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в статье [Что представляют собой различные компоненты и версии Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md)
 
 ## <a name="what-is-presto"></a>Что такое Presto?
 [Presto](https://prestodb.io/overview.html) представляет собой быстрый распределенный модуль SQL-запросов для больших данных. Presto подходит для интерактивных запросов петабайт данных. Дополнительные сведения о компонентах Presto и их совместной работе см. в статье [Presto Concepts](https://github.com/prestodb/presto/blob/master/presto-docs/src/main/sphinx/overview/concepts.rst) (Концепции Presto).
 
-> [!WARNING]
+> [!WARNING]  
 > Компоненты, предоставляемые вместе с кластером HDInsight, поддерживаются в полном объеме. Служба поддержки Майкрософт поможет вам выявить и устранить проблемы, связанные с этими компонентами.
 > 
-> Настраиваемые компоненты, такие как Presto, получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. В результате проблема может быть устранена, либо вас могут попросить воспользоваться доступными каналами по технологиям с открытым исходным кодом, чтобы связаться с экспертами в данной области. Можно использовать ряд сайтов сообществ, например [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight) или [http://stackoverflow.com](http://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты, например [Hadoop](http://hadoop.apache.org/) на сайте [http://apache.org](http://apache.org).
+> Настраиваемые компоненты, такие как Presto, получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. В результате проблема может быть устранена, либо вас могут попросить воспользоваться доступными каналами по технологиям с открытым исходным кодом, чтобы связаться с экспертами в данной области. Вы можете использовать сайты сообществ, например: [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты ([http://apache.org](http://apache.org)), например [Hadoop](http://hadoop.apache.org/).
 > 
 > 
 
@@ -50,19 +50,19 @@ ms.locfileid: "51687084"
 
 2. В области **Дополнительные параметры** выберите **Действия скрипта** и введите следующие сведения. Также можете выбрать вариант "Установить Presto" для типа скрипта.
    
-   * **ИМЯ**: введите понятное имя для действия сценария.
+   * **Имя.** Введите понятное имя для действия сценария.
    * **URI bash-скрипта**: `https://raw.githubusercontent.com/hdinsight/presto-hdinsight/master/installpresto.sh`
-   * **ГОЛОВНОЙ**: установите флажок.
-   * **Рабочая роль**: установите флажок.
-   * **Zookeeper**: не устанавливайте этот флажок.
-   * **ПАРАМЕТРЫ**: оставьте это поле пустым.
+   * **Головной узел.** Установите этот флажок.
+   * **Рабочая роль.** Установите этот флажок.
+   * **ZOOKEEPER:** Не устанавливайте этот флажок.
+   * **Параметры.** Оставьте это поле пустым.
 
 
 3. Внизу области **Действия скрипта** нажмите кнопку **Выбрать**, чтобы сохранить конфигурацию. Наконец, нажмите кнопку **Выбрать** внизу области **Дополнительные настройки**, чтобы сохранить конфигурацию.
 
 4. Продолжите подготовку кластера к работе, как описано в статье [Подготовка кластеров HDInsight на основе Linux](hdinsight-hadoop-create-linux-clusters-portal.md).
 
-    > [!NOTE]
+    > [!NOTE]  
     > Для выполнения действий этого сценария также можно использовать Azure PowerShell, классический интерфейс командной строки Azure, пакет SDK .NET для HDInsight или шаблоны Azure Resource Manager. Действия сценария также можно применять к уже работающим кластерам. Дополнительные сведения см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md).
     > 
     > 
@@ -86,7 +86,7 @@ ms.locfileid: "51687084"
    
         select count (*) from hivesampletable;
    
-    По умолчанию соединители [Hive](https://prestodb.io/docs/current/connector/hive.html) и [TPCH](https://prestodb.io/docs/current/connector/tpch.html) для Presto уже настроены. Соединитель Hive настроен на использование установки Hive по умолчанию, поэтому все таблицы из Hive будут автоматически отображаться в Presto.
+    По умолчанию соединители [Apache Hive](https://prestodb.io/docs/current/connector/hive.html) и [TPCH](https://prestodb.io/docs/current/connector/tpch.html) для Presto уже настроены. Соединитель Hive настроен на использование установки Hive по умолчанию, поэтому все таблицы из Hive будут автоматически отображаться в Presto.
 
     Дополнительные сведения см. в [документации по Presto](https://prestodb.io/docs/current/index.html).
 
@@ -168,11 +168,11 @@ TPC-DS — это отраслевой стандарт для измерени
 
 
 ## <a name="see-also"></a>См. также
-* [Установка и использование Hue в кластерах HDInsight](hdinsight-hadoop-hue-linux.md). Hue является веб-интерфейсом, позволяющим легко создавать, выполнять и сохранять задания Pig и Hive.
+* [Установка и использование Hue в кластерах HDInsight](hdinsight-hadoop-hue-linux.md). Hue является веб-интерфейсом, позволяющим легко создавать, выполнять и сохранять задания Apache Pig и Hive.
 
-* [Установка Giraph в кластерах HDInsight](hdinsight-hadoop-giraph-install-linux.md). Используйте настройки кластера для установки Giraph в кластерах HDInsight Hadoop. Giraph позволяет выполнять обработку графов с использованием Hadoop и может использоваться с Azure HDInsight.
+* [Установка Giraph в кластерах HDInsight Hadoop и использование Giraph для обработки диаграмм больших объемов](hdinsight-hadoop-giraph-install-linux.md). Используйте настройки кластера для установки Giraph в кластерах HDInsight Hadoop. Giraph позволяет выполнять обработку графов с использованием Hadoop и может использоваться с Azure HDInsight.
 
-* [Установка Solr в кластерах HDInsight](hdinsight-hadoop-solr-install-linux.md). Используйте настройки кластера для установки Solr в кластерах HDInsight Hadoop. Solr позволяет вести расширенный поиск по хранимым данным.
+* [Установка и использование Solr на кластерах HDInsight Hadoop](hdinsight-hadoop-solr-install-linux.md). Используйте настройки кластера для установки Solr в кластерах HDInsight Hadoop. Solr позволяет вести расширенный поиск по хранимым данным.
 
 [hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md

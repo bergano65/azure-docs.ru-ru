@@ -1,5 +1,5 @@
 ---
-title: 'Устранение сбоя службы Azure Backup: состояние гостевого агента "Недоступно"'
+title: Устранение неполадок службы Azure Backup. Состояние гостевого агента недоступно
 description: Симптомы, причины и способы устранения проблем в работе службы Azure Backup, связанных с агентом, расширением и дисками.
 services: backup
 author: genlin
@@ -7,14 +7,14 @@ manager: cshepard
 keywords: Azure backup; VM agent; Network connectivity;
 ms.service: backup
 ms.topic: troubleshooting
-ms.date: 10/30/2018
+ms.date: 12/03/2018
 ms.author: genli
-ms.openlocfilehash: d8b78551a762b4388344aaf3b44e7472127737ae
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: 9f26a51a8da2c3fec3ff180dbc8c8de08bb0a93a
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51977120"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52833879"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -24,30 +24,30 @@ ms.locfileid: "51977120"
 
 ## <a name="UserErrorGuestAgentStatusUnavailable-vm-agent-unable-to-communicate-with-azure-backup"></a>UserErrorGuestAgentStatusUnavailable — агенту виртуальной машины не удается установить связь со службой Azure Backup
 
-**Код ошибки**: UserErrorGuestAgentStatusUnavailable. <br>
-**Сообщение об ошибке**: "Агенту виртуальной машины не удается установить связь со службой Azure Backup".<br>
+**Код ошибки** UserErrorGuestAgentStatusUnavailable <br>
+**Сообщение об ошибке** Агенту виртуальной машины не удается установить связь со службой Azure Backup<br>
 
 После регистрации виртуальной машины в службе Backup и добавления ее в расписание служба Backup инициирует задание, взаимодействуя с агентом виртуальной машины, чтобы создать моментальный снимок. Любое из указанных ниже условий может помешать активации создания моментального снимка, что может привести к сбою службы Backup. Выполните следующие шаги про устранению неполадок в указанном порядке, а затем повторите операцию:<br>
-**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**  .  
-**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**.  
-**Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**  .  
-**Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**.  
-**Причина 5. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**.
+**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**    
+**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
+**Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**    
+**Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**  
+**Причина 5. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**
 
 ## <a name="guestagentsnapshottaskstatuserror---could-not-communicate-with-the-vm-agent-for-snapshot-status"></a>GuestAgentSnapshotTaskStatusError — не удалось запросить состояние моментального снимка в агенте виртуальной машины
 
-**Код ошибки**: GuestAgentSnapshotTaskStatusError.<br>
-**Сообщение об ошибке**: "Не удалось запросить состояние моментального снимка в агенте виртуальной машины". <br>
+**Код ошибки** GuestAgentSnapshotTaskStatusError<br>
+**Сообщение об ошибке** Не удалось запросить состояние моментального снимка в агенте виртуальной машины <br>
 
 После регистрации виртуальной машины в службе архивации Azure и добавления ее в расписание служба архивации инициирует задание, взаимодействуя с расширением виртуальной машины, чтобы создать моментальный снимок. Любое из указанных ниже условий может помешать активации создания моментального снимка, что может привести к сбою службы Backup. Выполните следующие шаги про устранению неполадок в указанном порядке, а затем повторите операцию:  
-**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**.  
-**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**.  
-**Причина 3. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**.
+**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**  
+**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
+**Причина 3. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**
 
 ## <a name="usererrorrpcollectionlimitreached---the-restore-point-collection-max-limit-has-reached"></a>UserErrorRpCollectionLimitReached — достигнуто максимальное количество точек восстановления в коллекции
 
-**Код ошибки**: UserErrorRpCollectionLimitReached. <br>
-**Сообщение об ошибке**: "Достигнуто максимальное количество точек восстановления в коллекции". <br>
+**Код ошибки** UserErrorRpCollectionLimitReached <br>
+**Сообщение об ошибке** Достигнуто максимальное количество точек восстановления в коллекции. <br>
 * Эта ошибка может произойти, если в группе ресурсов точек восстановления есть блокировка, предотвращающая автоматическую очистку точки восстановления.
 * Эта ошибка также может произойти при активации нескольких операций резервного копирования в день. Сейчас мы рекомендуем выполнять только одну операцию резервного копирования в день, так как мгновенные точки восстановления хранятся в течение 7 дней, а с виртуальной машиной можно связать только 18 мгновенных точек восстановления в любой момент времени. <br>
 
@@ -55,63 +55,63 @@ ms.locfileid: "51977120"
 Чтобы устранить эту проблему, удалите блокировку группы ресурсов и повторите операцию активации очистки.
 
 > [!NOTE]
-    > Служба Backup создает группу ресурсов, отличную от группы ресурсов виртуальной машины, для сохранения коллекции точек восстановления. Пользователям рекомендуется не блокировать группу ресурсов, созданную для использования службой Backup. Формат именования группы ресурсов, созданной службой Backup: AzureBackupRG_`<Geo>`_`<number>`. Например, AzureBackupRG_northeurope_1.
+    > Служба Backup создает группу ресурсов, отличную от группы ресурсов виртуальной машины, для сохранения коллекции точек восстановления. Пользователям рекомендуется не блокировать группу ресурсов, созданную для использования службой Backup. Формат именования группы ресурсов, созданной службой Backup: AzureBackupRG_`<Geo>`_`<number>`. Например, AzureBackupRG_northeurope_1
 
-**Шаг 1. [Удаление блокировки с группы ресурсов точки восстановления](#remove_lock_from_the_recovery_point_resource_group)** <br>
-**Шаг 2. [Очистка коллекции точек восстановления](#clean_up_restore_point_collection)**<br>
+**Шаг 1. [Удаление блокировки с группы ресурсов точки восстановления](#remove_lock_from_the_recovery_point_resource_group)** <br>
+**Шаг 2. [ Очистка коллекции точек восстановления](#clean_up_restore_point_collection)**<br>
 
 ## <a name="usererrorkeyvaultpermissionsnotconfigured---backup-doesnt-have-sufficient-permissions-to-the-key-vault-for-backup-of-encrypted-vms"></a>UserErrorKeyvaultPermissionsNotConfigured — служба архивации не имеет достаточных разрешений на доступ к хранилищу ключей для резервного копирования зашифрованных виртуальных машин.
 
-**Код ошибки**: UserErrorKeyvaultPermissionsNotConfigured. <br>
-**Сообщение об ошибке**: "Служба архивации не имеет достаточных разрешений на доступ к хранилищу ключей для резервного копирования зашифрованных виртуальных машин". <br>
+**Код ошибки** UserErrorKeyvaultPermissionsNotConfigured <br>
+**Сообщение об ошибке** Служба резервного копирования не имеет достаточных разрешений к хранилищу ключей для резервного копирования зашифрованных виртуальных машин. <br>
 
 Для выполнения операции резервного копирования зашифрованных виртуальных машин необходимы разрешения на доступ к хранилищу ключей. Это можно сделать с помощью [портала Azure](https://docs.microsoft.com/azure/backup/backup-azure-vms-encryption#provide-permissions-to-backup) или [PowerShell](https://docs.microsoft.com/azure/backup/backup-azure-vms-automation#enable-protection).
 
 ## <a name="ExtensionSnapshotFailedNoNetwork-snapshot-operation-failed-due-to-no-network-connectivity-on-the-virtual-machine"></a>ExtensionSnapshotFailedNoNetwork — сбой операции моментального снимка, отсутствует сетевое подключение у виртуальной машины
 
-**Код ошибки**: ExtensionSnapshotFailedNoNetwork.<br>
-**Сообщение об ошибке**: "Сбой операции моментального снимка, отсутствует сетевое подключение у виртуальной машины".<br>
+**Код ошибки** ExtensionSnapshotFailedNoNetwork<br>
+**Сообщение об ошибке** Сбой операции моментального снимка, отсутствует сетевое подключение у виртуальной машины<br>
 
 После регистрации виртуальной машины в службе архивации Azure и добавления ее в расписание служба архивации инициирует задание, взаимодействуя с расширением виртуальной машины, чтобы создать моментальный снимок. Любое из указанных ниже условий может помешать активации создания моментального снимка, что может привести к сбою службы Backup. Выполните следующие шаги про устранению неполадок в указанном порядке, а затем повторите операцию:    
-**Причина 1. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**.  
-**Причина 2. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**.  
-**Причина 3. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**.
+**Причина 1. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**  
+**Причина 2. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**  
+**Причина 3. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**
 
 ## <a name="ExtentionOperationFailed-vmsnapshot-extension-operation-failed"></a>ExtentionOperationFailedForManagedDisks — операция расширения VMSnapshot завершилась сбоем.
 
-**Код ошибки**: ExtentionOperationFailedForManagedDisks <br>
-**Сообщение об ошибке**: "Сбой в ходе работы расширения VMSnapshot".<br>
+**Код ошибки** ExtentionOperationFailedForManagedDisks <br>
+**Сообщение об ошибке** Не удалось выполнить операцию с расширением моментального снимка виртуальной машины<br>
 
 После регистрации виртуальной машины в службе архивации Azure и добавления ее в расписание служба архивации инициирует задание, взаимодействуя с расширением виртуальной машины, чтобы создать моментальный снимок. Любое из указанных ниже условий может помешать активации создания моментального снимка, что может привести к сбою службы Backup. Выполните следующие шаги про устранению неполадок в указанном порядке, а затем повторите операцию:  
-**Причина 1. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**.  
-**Причина 2. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**.  
-**Причина 3. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**.  
-**Причина 4. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**.
+**Причина 1. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**  
+**Причина 2. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**  
+**Причина 3. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**  
+**Причина 4. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**
 
 ## <a name="backupoperationfailed--backupoperationfailedv2---backup-fails-with-an-internal-error"></a>BackUpOperationFailed или BackUpOperationFailedV2 — сбой резервного копирования с внутренней ошибкой
 
-**Код ошибки**: BackUpOperationFailed или BackUpOperationFailedV2. <br>
-**Сообщение об ошибке**: "Произошла внутренняя ошибка службы Backup. Повторите операцию через несколько минут". <br>
+**Код ошибки** BackUpOperationFailed или BackUpOperationFailedV2 <br>
+**Сообщение об ошибке** Произошла внутренняя ошибка службы Backup. Повторите операцию через несколько минут <br>
 
 После регистрации виртуальной машины в службе архивации Azure и добавления ее в расписание служба архивации инициирует задание, взаимодействуя с расширением виртуальной машины, чтобы создать моментальный снимок. Любое из указанных ниже условий может помешать активации создания моментального снимка, что может привести к сбою службы Backup. Выполните следующие шаги про устранению неполадок в указанном порядке, а затем повторите операцию:  
-**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**.  
-**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**.  
-**Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**.  
-**Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**.  
-**Причина 5. [Служба архивации не имеет разрешения на удаление старых точек восстановления из-за блокировки группы ресурсов](#backup-service-does-not-have-permission-to-delete-the-old-restore-points-due-to-resource-group-lock)**. <br>
-**Причина 6. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**.
+**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**  
+**Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
+**Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**  
+**Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**  
+**Причина 5. [Служба Backup не имеет разрешения на удаление старых точек восстановления из-за блокировки группы ресурсов](#backup-service-does-not-have-permission-to-delete-the-old-restore-points-due-to-resource-group-lock)** <br>
+**Причина 6. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**
 
 ## <a name="usererrorunsupporteddisksize---currently-azure-backup-does-not-support-disk-sizes-greater-than-1023gb"></a>UserErrorUnsupportedDiskSize. Сейчас служба Azure Backup не поддерживает размер диска больше 1023 ГБ
 
-**Код ошибки**. UserErrorUnsupportedDiskSize <br>
-**Сообщение об ошибке**. Сейчас служба Azure Backup не поддерживает размер диска больше 1023 ГБ <br>
+**Код ошибки** UserErrorUnsupportedDiskSize <br>
+**Сообщение об ошибке** Сейчас служба Azure Backup не поддерживает размер диска больше 1023 ГБ <br>
 
 Операция резервного копирования виртуальной машины с размером диска более 1023 ГБ может завершиться ошибкой, поскольку хранилище не обновлено до стека резервного копирования виртуальных машин Azure версии 2. После обновления до стека резервного копирования виртуальных машин Azure версии 2 вы сможете использовать диски размером до 4 TБ. Ознакомьтесь со следующими [преимуществами](backup-upgrade-to-vm-backup-stack-v2.md), [рекомендациями](backup-upgrade-to-vm-backup-stack-v2.md#considerations-before-upgrade), а затем перейдите к обновлению, выполнив следующие [инструкции](backup-upgrade-to-vm-backup-stack-v2.md#upgrade).  
 
 ## <a name="usererrorstandardssdnotsupported---currently-azure-backup-does-not-support-standard-ssd-disks"></a>UserErrorStandardSSDNotSupported. В настоящее время Azure Backup не поддерживает диски SSD категории "Стандартный"
 
-**Код ошибки**. UserErrorStandardSSDNotSupported <br>
-**Сообщение об ошибке**. В настоящее время Azure Backup не поддерживает диски SSD категории "Стандартный" <br>
+**Код ошибки** UserErrorStandardSSDNotSupported <br>
+**Сообщение об ошибке** В настоящее время Azure Backup не поддерживает диски SSD категории "Стандартный" <br>
 
 Служба Azure Backup сейчас поддерживает диски SSD категории "Стандартный" только для хранилищ, обновленных до стека резервного копирования виртуальных машин Azure версии 2. Ознакомьтесь со следующими [преимуществами](backup-upgrade-to-vm-backup-stack-v2.md), [рекомендациями](backup-upgrade-to-vm-backup-stack-v2.md#considerations-before-upgrade), а затем перейдите к обновлению, выполнив следующие [инструкции](backup-upgrade-to-vm-backup-stack-v2.md#upgrade).
 
@@ -156,11 +156,11 @@ ms.locfileid: "51977120"
 #### <a name="solution"></a>Решение
 Возможно, агент виртуальной машины может быть поврежден или служба остановлена. Повторная установка агента виртуальной машины поможет получить последнюю версию и возобновить обмен данными со службой.
 
-1. Определите, запущена ли служба гостевого агента Windows в службах компьютера (services.msc) на виртуальной машине. Попробуйте перезапустить службу гостевого агента Windows и запустите резервное копирование.    
-2. Если она не отображается в списке служб, на панели управления выберите **Программы и компоненты**, чтобы определить, установлена ли служба гостевого агента Windows.
-4. Если гостевой агент Windows отображается в разделе **Программы и компоненты**, удалите его.
+1. Определите, запущена ли служба гостевого агента Microsoft Azure в службах виртуальной машины (services.msc). Попробуйте перезапустить службу гостевого агента Microsoft Azure и запустите резервное копирование.    
+2. Если она не отображается в списке служб, на панели управления выберите **Программы и компоненты**, чтобы определить, установлена ли служба гостевого агента Microsoft Azure.
+4. Если гостевой агент Microsoft Azure отображается в разделе **Программы и компоненты**, удалите его.
 5. Скачайте и установите [последнюю версию файла MSI агента](https://go.microsoft.com/fwlink/?LinkID=394789&clcid=0x409). Чтобы выполнить установку, необходимо иметь права администратора.
-6. Убедитесь, что службы гостевого агента Windows отображаются в списке служб.
+6. Убедитесь, что службы гостевого агента Microsoft Azure отображаются в списке служб.
 7. Выполните резервное копирование по запросу:
     * На портале выберите **Моментальная архивация**.
 
@@ -192,7 +192,7 @@ ms.locfileid: "51977120"
 
 Если нам потребуется подробное ведение журнала для waagent, выполните следующие действия.
 
-1. В файле /etc/waagent.conf найдите такую строку: **Enable verbose logging (y|n)**.
+1. В файле /etc/waagent.conf найдите следующую строку: **Enable verbose logging (y|n)**.
 2. Для параметра **Logs.Verbose** измените значение с *n* на *y*.
 3. Сохраните изменения и перезапустите waagent, выполнив шаги, описанные выше в этом разделе.
 

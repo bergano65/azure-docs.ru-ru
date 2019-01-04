@@ -1,23 +1,24 @@
 ---
-title: Руководство 6. Извлечение составных данных с помощью составной сущности LUIS
+title: Составная сущность"
 titleSuffix: Azure Cognitive Services
 description: Добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
 services: cognitive-services
 author: diberry
 manager: cgronlun
+ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
 ms.date: 09/09/2018
 ms.author: diberry
-ms.openlocfilehash: 8f7edecf1abd1f01a2f40f1420a6a85224271239
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: b5923d5cd4a704dda76e33ee6a2b76cfd903219d
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52423507"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53079217"
 ---
-# <a name="tutorial-6-group-and-extract-related-data"></a>Руководство 6. Группирование и извлечение связанных данных
+# <a name="tutorial-6-group-and-extract-related-data"></a>Руководство 6: Группирование и извлечение связанных данных
 В этом руководстве описывается добавление составной сущности для объединения извлеченных данных различных типов в содержащую сущность. Клиентское приложение может легко извлекать связанные данные разных типов путем их объединения.
 
 Целью сущности является группировка связанных сущностей в сущность родительской категории. До создания составной сущности информация существует в виде отдельных сущностей. Она похожа на иерархическую сущность, но может содержать разные типы сущностей. 
@@ -57,7 +58,7 @@ ms.locfileid: "52423507"
 
 В этом приложении имя сотрудника определяется в сущности списка **Employee** и включает синонимы имени, адрес электронной почты, добавочный номер телефона компании, номер мобильного телефона и Федеральный налоговый номер США. 
 
-В намерении **MoveEmployee** есть примеры высказываний для запроса перемещения сотрудника из одного здания или офиса в другой. Именами зданий являются буквы: "A", "B" и т. д., именами офисов — числа: "1234", "13245". 
+В намерении **MoveEmployee** есть примеры высказываний для запроса перемещения сотрудника из одного здания или офиса в другой. Названия зданий обозначено буквами: "A", "B", и т. д., а названия офисов обозначено числами: "1234", "13245". 
 
 Примеры высказываний в намерении **MoveEmployee**.
 
@@ -70,7 +71,7 @@ ms.locfileid: "52423507"
 
 Извлеченные из конечной точки данные должны содержать эту информацию и возвращать ее в составную сущность `RequestEmployeeMove`.
 
-```JSON
+```json
 "compositeEntities": [
   {
     "parentType": "RequestEmployeeMove",
@@ -103,22 +104,22 @@ ms.locfileid: "52423507"
 
 3. Выберите значок лупы на панели инструментов, чтобы отфильтровать список высказываний. 
 
-    [![](media/luis-tutorial-composite-entity/hr-moveemployee-magglass.png "Снимок экрана LUIS для намерения MoveEmployee с выделенной кнопкой лупы")](media/luis-tutorial-composite-entity/hr-moveemployee-magglass.png#lightbox)
+    [![Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенной кнопкой увеличительного стекла](media/luis-tutorial-composite-entity/hr-moveemployee-magglass.png "Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенной кнопкой увеличительного стекла")](media/luis-tutorial-composite-entity/hr-moveemployee-magglass.png#lightbox)
 
 4. Введите `tomorrow` в текстовое поле фильтра, чтобы найти высказывание `shift x12345 to h-1234 tomorrow`.
 
-    [![](media/luis-tutorial-composite-entity/hr-filter-by-tomorrow.png "Снимок экрана LUIS для намерения MoveEmployee с выделенным фильтром \"завтра\"")](media/luis-tutorial-composite-entity/hr-filter-by-tomorrow.png#lightbox)
+    [![Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенным фильтром tomorrow](media/luis-tutorial-composite-entity/hr-filter-by-tomorrow.png "Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенным фильтром tomorrow")](media/luis-tutorial-composite-entity/hr-filter-by-tomorrow.png#lightbox)
 
     Другим методом является фильтрация сущности по datetimeV2. Для этого щелкните **Entity filters** (Фильтры сущности), затем в выпадающем списке выберите **datetimeV2**. 
 
 5. Выберите первую сущность `Employee`, а затем в списке всплывающего меню выберите **Wrap in composite entity** (Заключить в составную сущность). 
 
-    [![](media/luis-tutorial-composite-entity/hr-create-entity-1.png "Снимок экрана LUIS для намерения MoveEmployee, где изображен выделенный выбор первой сущности в составной")](media/luis-tutorial-composite-entity/hr-create-entity-1.png#lightbox)
+    [![Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенным выбором первой сущности в составной](media/luis-tutorial-composite-entity/hr-create-entity-1.png "Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенным выбором первой сущности в составной")](media/luis-tutorial-composite-entity/hr-create-entity-1.png#lightbox)
 
 
 6. Затем немедленно выберите последнюю сущность `datetimeV2` в высказывании. Зеленая линия под выбранными словами указывает на составную сущность. В контекстном меню введите имя `RequestEmployeeMove` и нажмите клавишу ВВОД. 
 
-    [![](media/luis-tutorial-composite-entity/hr-create-entity-2.png "Снимок экрана LUIS для намерения MoveEmployee, где изображен выделенный выбор последней предварительно созданной сущности и создание новой")](media/luis-tutorial-composite-entity/hr-create-entity-2.png#lightbox)
+    [![Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенным выбором последней сущности в составной и способом создания новой](media/luis-tutorial-composite-entity/hr-create-entity-2.png "Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенным выбором последней сущности в составной и способом создания новой")](media/luis-tutorial-composite-entity/hr-create-entity-2.png#lightbox)
 
 7. В диалоговом окне**What type of entity do you want to create?** (Какой тип сущности необходимо создать?) в списке содержатся почти все необходимые поля. Отсутствует только исходное расположение. В списке существующих сущностей выберите **Add a child entity** (Добавьте дочернюю сущность), затем — **Locations::Origin** и нажмите кнопку **Готово**. 
 
@@ -135,15 +136,15 @@ ms.locfileid: "52423507"
 
 1. В каждом примере высказывания выберите самую левую сущность, которая должна быть в составной сущности. Затем выберите **Wrap in composite entity** (Заключить в составную сущность).
 
-    [![](media/luis-tutorial-composite-entity/hr-label-entity-1.png "Снимок экрана LUIS для намерения MoveEmployee, где изображен выделенный выбор первой сущности в составной")](media/luis-tutorial-composite-entity/hr-label-entity-1.png#lightbox)
+    [![Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенным выбором первой сущности в составной](media/luis-tutorial-composite-entity/hr-label-entity-1.png "Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенным выбором первой сущности в составной")](media/luis-tutorial-composite-entity/hr-label-entity-1.png#lightbox)
 
 2. Выберите последнее слово в составной сущности, а затем во всплывающем меню выберите **RequestEmployeeMove**. 
 
-    [![](media/luis-tutorial-composite-entity/hr-label-entity-2.png "Снимок экрана LUIS для намерения MoveEmployee, где изображен выделенный выбор последний сущности в составной")](media/luis-tutorial-composite-entity/hr-label-entity-2.png#lightbox)
+    [![Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенным выбором последней сущности в составной](media/luis-tutorial-composite-entity/hr-label-entity-2.png "Снимок экрана службы LUIS на странице намерения MoveEmployee с выделенным выбором последней сущности в составной")](media/luis-tutorial-composite-entity/hr-label-entity-2.png#lightbox)
 
 3. Убедитесь, что все высказывания в намерении помечены составной сущностью. 
 
-    [![](media/luis-tutorial-composite-entity/hr-all-utterances-labeled.png "Снимок экрана LUIS для намерения MoveEmployee с меткой всех высказываний")](media/luis-tutorial-composite-entity/hr-all-utterances-labeled.png#lightbox)
+    [![Снимок экрана службы LUIS на странице намерения MoveEmployee со всеми отмеченными фразами](media/luis-tutorial-composite-entity/hr-all-utterances-labeled.png "Снимок экрана службы LUIS на странице намерения MoveEmployee со всеми отмеченными фразами")](media/luis-tutorial-composite-entity/hr-all-utterances-labeled.png#lightbox)
 
 ## <a name="train"></a>Train
 
@@ -161,7 +162,7 @@ ms.locfileid: "52423507"
 
     Поскольку этот тест был создан для проверки правильности извлечения составной сущности, то он может включать либо существующие образцы высказываний, либо новое высказывание. Хорошей проверкой является включение всех дочерних сущностей в составную сущность.
 
-    ```JSON
+    ```json
     {
       "query": "Move Jill Jones from a-1234 to z-2345 on March 3  2 p.m",
       "topScoringIntent": {

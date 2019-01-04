@@ -1,5 +1,5 @@
 ---
-title: Настройка PHP в веб-приложениях службы приложений Azure
+title: Настройка среды выполнения PHP в Службе приложений Azure
 description: Узнайте, как настроить установку PHP по умолчанию или добавить пользовательскую установку PHP для веб-приложений в службе приложений Azure.
 services: app-service
 documentationcenter: php
@@ -13,12 +13,13 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 04/11/2018
 ms.author: msangapu
-ms.openlocfilehash: 1e5f7ed2fb4c77e0a738cbe6ee6c84b46bc59bb8
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.custom: seodec18
+ms.openlocfilehash: d5ad7b392029ae33ee7666b80edfe5b4b7555b41
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51230841"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53273206"
 ---
 # <a name="configure-php-in-azure-app-service-web-apps"></a>Настройка PHP в веб-приложениях службы приложений Azure
 
@@ -28,7 +29,7 @@ ms.locfileid: "51230841"
 
 [!INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
-## <a name="how-to-change-the-built-in-php-version"></a>Практическое руководство. Изменение встроенной версии PHP
+## <a name="how-to-change-the-built-in-php-version"></a>Практическое руководство: изменение встроенной версии PHP
 
 По умолчанию при создании веб-приложения службы приложений устанавливается среда PHP 5.6, которая будет сразу готова для использования. Оптимальный способ увидеть доступные версии, конфигурацию по умолчанию и поддерживаемые расширения заключается в развертывании сценария, который вызывает функцию [phpinfo()] .
 
@@ -39,10 +40,10 @@ ms.locfileid: "51230841"
 1. Перейдите к своему веб-приложению на [портале Azure](https://portal.azure.com) и нажмите кнопку **Параметры**.
 
     ![Параметры веб-приложения][settings-button]
-1. В колонке **Параметры** откройте **Параметры приложения** и выберите новую версию PHP.
+2. В колонке **Параметры** откройте **Параметры приложения** и выберите новую версию PHP.
 
     ![Параметры приложения][application-settings]
-1. Нажмите кнопку **Сохранить** в верхней части колонки **Параметры веб-приложения**.
+3. Нажмите кнопку **Сохранить** в верхней части колонки **Параметры веб-приложения**.
 
     ![Сохранение параметров конфигурации][save-button]
 
@@ -78,7 +79,7 @@ ms.locfileid: "51230841"
 
         az webapp show --name {app-name} --resource-group {resource-group-name}
 
-## <a name="how-to-change-the-built-in-php-configurations"></a>Практическое руководство. Изменение встроенной конфигурации PHP
+## <a name="how-to-change-the-built-in-php-configurations"></a>Практическое руководство: изменение встроенной конфигурации PHP
 
 Для любой встроенной среды выполнения PHP можно изменить параметры конфигурации, выполнив приведенные ниже действия. (Дополнительные сведения о директивах php.ini см. в разделе [Список директив php.ini].)
 
@@ -109,7 +110,7 @@ ms.locfileid: "51230841"
         wincache.maxfilesize=512
 1. Чтобы перезагрузить изменения, перезапустите веб-приложение.
 
-## <a name="how-to-enable-extensions-in-the-default-php-runtime"></a>Практическое руководство. Включение расширений в среде выполнения PHP по умолчанию
+## <a name="how-to-enable-extensions-in-the-default-php-runtime"></a>Практическое руководство: включение расширений в среде выполнения PHP по умолчанию
 
 Как было отмечено в предыдущем разделе, оптимальный способ увидеть версию PHP по умолчанию, конфигурацию по умолчанию и поддерживаемые расширения заключается в развертывании сценария, который вызывает функцию [phpinfo()]. Чтобы включить дополнительные расширения, выполните следующие действия.
 
@@ -144,11 +145,11 @@ ms.locfileid: "51230841"
 
 Расширения Zend также поддерживаются с помощью ключа **PHP_ZENDEXTENSIONS**. Чтобы включить несколько расширений, включите список разделенных запятыми файлов `.dll` для значения параметра приложения.
 
-## <a name="how-to-use-a-custom-php-runtime"></a>Практическое руководство. Настраиваемая среда выполнения PHP
+## <a name="how-to-use-a-custom-php-runtime"></a>Практическое руководство: настраиваемая среда выполнения PHP
 
 Вместо среды выполнения PHP по умолчанию веб-приложения службы приложений могут использовать среду выполнения PHP, предоставляемую для выполнения скриптов PHP. Предоставляемую среду выполнения можно настроить с помощью файла `php.ini`, также предоставляемого пользователем. Чтобы использовать настраиваемую среду выполнения PHP с веб-приложениями, выполните следующие действия.
 
-1. Получите версию PHP для Windows, совместимую с VC9 или VC11 и непотокобезопасной технологией (nts). Последние версии PHP для Windows можно найти здесь: [http://windows.php.net/download/]. Более старые версии можно найти в архиве, доступном здесь: [http://windows.php.net/downloads/releases/archives/].
+1. Получите версию PHP для Windows, совместимую с VC9 или VC11 и непотокобезопасной технологией (nts). Последние версии PHP для Windows можно найти здесь: [https://windows.php.net/download/]. Более старые версии можно найти в архиве, доступном здесь: [https://windows.php.net/downloads/releases/archives/].
 1. Измените файл `php.ini` для среды выполнения. Все параметры конфигурации, являющиеся директивами только уровня системы, не будут учитываться веб-приложениями. (Дополнительные сведения о директивах только системного уровня см. в разделе [Список директив php.ini].)
 1. При необходимости добавьте расширения для вашей среды выполнения PHP и включите их в файл `php.ini` .
 1. Добавьте каталог `bin` в корневой каталог и поместите в него каталог, в котором содержится ваша среда выполнения PHP (например, `bin\php`).
@@ -165,7 +166,7 @@ ms.locfileid: "51230841"
 
 <a name="composer" />
 
-## <a name="how-to-enable-composer-automation-in-azure"></a>Практическое руководство. Включение автоматизации Composer в Azure
+## <a name="how-to-enable-composer-automation-in-azure"></a>Практическое руководство: включение автоматизации Composer в Azure
 
 По умолчанию служба приложений не выполняет никаких действий с файлом composer.json, если он есть в проекте PHP. Если используется [развертывание Git](app-service-deploy-local-git.md), можно включить обработку composer.json во время операции `git push`, для этого активируйте расширение Composer.
 
@@ -196,7 +197,7 @@ ms.locfileid: "51230841"
 >
 
 [бесплатную пробную версию]: https://www.windowsazure.com/pricing/free-trial/
-[phpinfo()]: http://php.net/manual/en/function.phpinfo.php
+[phpinfo()]: https://php.net/manual/en/function.phpinfo.php
 [select-php-version]: ./media/web-sites-php-configure/select-php-version.png
 [Список директив php.ini]: http://www.php.net/manual/en/ini.list.php
 [.user.ini]: http://www.php.net/manual/en/configuration.file.per-user.php
@@ -206,8 +207,8 @@ ms.locfileid: "51230841"
 [save-button]: ./media/web-sites-php-configure/save-button.png
 [php-extensions]: ./media/web-sites-php-configure/php-extensions.png
 [handler-mappings]: ./media/web-sites-php-configure/handler-mappings.png
-[http://windows.php.net/download/]: http://windows.php.net/download/
-[http://windows.php.net/downloads/releases/archives/]: http://windows.php.net/downloads/releases/archives/
+[https://windows.php.net/download/]: https://windows.php.net/download/
+[https://windows.php.net/downloads/releases/archives/]: https://windows.php.net/downloads/releases/archives/
 [SETPHPVERCLI]: ./media/web-sites-php-configure/ChangePHPVersion-XPlatCLI.png
 [GETPHPVERCLI]: ./media/web-sites-php-configure/ShowPHPVersion-XplatCLI.png
 [SETPHPVERPS]: ./media/web-sites-php-configure/ChangePHPVersion-PS.png

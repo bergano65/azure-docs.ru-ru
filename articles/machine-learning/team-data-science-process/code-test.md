@@ -1,6 +1,6 @@
 ---
-title: Тестирование кода обработки и анализа данных в Azure на примере набора данных UCI для прогнозирования дохода совершеннолетних лиц — командный процесс обработки и анализа данных и Azure DevOps Services
-description: Тестирование кода обработки и анализа данных на примере данных UCI для прогноза дохода совершеннолетних лиц
+title: Тестирование кода обработки и анализа данных с помощью Azure DevOps Services — командный процесс обработки и анализа данных
+description: Тестирование кода обработки и анализа данных в Azure на примере набора данных UCI для прогнозирования дохода совершеннолетних лиц с помощью командного процесса обработки и анализа данных и Azure DevOps Services
 services: machine-learning
 author: marktab
 manager: cgronlun
@@ -10,15 +10,15 @@ ms.component: team-data-science-process
 ms.topic: article
 ms.date: 05/19/2018
 ms.author: tdsp
-ms.custom: (previous author=weig, ms.author=weig)
-ms.openlocfilehash: d04f50bc3de34c28c10be7ba429f85a99096de47
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.custom: seodec18, previous-author=weig, previous-ms.author=weig
+ms.openlocfilehash: d8c3bafaa42e68eb7f6b5212c055793a1f2b1137
+ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52443956"
+ms.lasthandoff: 12/10/2018
+ms.locfileid: "53134545"
 ---
-# <a name="data-science-code-testing-with-the-uci-adult-income-prediction-dataset"></a>Тестирование кода обработки и анализа данных на примере набора данных UCI для прогноза дохода совершеннолетних лиц
+# <a name="data-science-code-testing-on-azure-with-the-team-data-science-process-and-azure-devops-services"></a>Тестирование кода обработки и анализа данных в Azure с помощью командного процесса обработки и анализа данных и Azure DevOps Services
 В этой статье приведены предварительные рекомендации по тестированию кода в рабочем потоке обработки и анализа данных. Такое тестирование предоставляет специалистам по обработке и анализу данных системный и эффективный способ проверки качества и ожидаемого результата выполнения созданного кода. Мы продемонстрируем тестирование кода на примере [проекта для командного процесса обработки и анализа данных (TDSP), основанного на наборе данных UCI с данными о доходе совершеннолетних лиц](https://github.com/Azure/MachineLearningSamples-TDSPUCIAdultIncome), который мы опубликовали ранее. 
 
 ## <a name="introduction-on-code-testing"></a>Общие сведения о тестировании кода

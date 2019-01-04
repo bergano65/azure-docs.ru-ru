@@ -7,14 +7,14 @@ manager: sankalpsoni
 ms.service: virtual-machines-linux
 ms.tgt_pltfrm: vm-linux
 ms.topic: article
-ms.date: 05/09/2017
+ms.date: 12/13/2018
 ms.author: agaiha
-ms.openlocfilehash: ac09754876d52798add58d9e0752d776ca29f247
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 1aa9c6da2d59294c5791d65a0943bfce497f9be4
+ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46994808"
+ms.lasthandoff: 12/14/2018
+ms.locfileid: "53387052"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>Отслеживание метрик и журналов с помощью диагностического расширения Linux
 
@@ -38,9 +38,7 @@ ms.locfileid: "46994808"
 
 ## <a name="installing-the-extension-in-your-vm"></a>Установка расширения в виртуальной машине
 
-Это расширение можно включить с помощью командлетов Azure PowerShell, скриптов Azure CLI или шаблонов развертывания Azure. Дополнительные сведения см. в статье [Обзор расширений](features-linux.md).
-
-С помощью портала Azure нельзя включить или настроить расширение LAD 3.0. С его помощью устанавливается и настраивается версия 2.3. Графы и оповещения портала Azure работают с данными из обеих версий расширения.
+Это расширение можно включить с помощью командлетов Azure PowerShell, скриптов Azure CLI, шаблонов ARM или портала Azure. Дополнительные сведения см. в статье [Обзор расширений](features-linux.md).
 
 С помощью этих инструкций по установке и [доступного для скачивания образца конфигурации](https://raw.githubusercontent.com/Azure/azure-linux-extensions/master/Diagnostic/tests/lad_2_3_compatible_portal_pub_settings.json) можно настроить LAD 3.0 для выполнения следующих задач:
 
@@ -55,7 +53,7 @@ ms.locfileid: "46994808"
 
 * **Агент Linux для Azure 2.2.0 или более поздней версии**. Большинство образов в коллекции виртуальных машин Azure на базе Linux включает версию 2.2.7 или более позднюю. Чтобы проверить версию, установленную в виртуальной машине, выполните команду `/usr/sbin/waagent -version`. Если в виртуальной машине установлена более старая версия гостевого агента, выполните [эти инструкции](https://docs.microsoft.com/azure/virtual-machines/linux/update-agent) по ее обновлению.
 * **Azure CLI**. [Установите среду Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) на компьютере.
-* Команда wget, если у вас ее еще нет: выполните `sudo apt-get install wget`.
+* Команда wget, если у вас ее еще нет: Запустите `sudo apt-get install wget`.
 * Существующая подписка Azure и существующая учетная запись хранилища в ней для хранения данных.
 * Список поддерживаемых дистрибутивов Linux: https://github.com/Azure/azure-linux-extensions/tree/master/Diagnostic#supported-linux-distributions
 
@@ -320,7 +318,7 @@ class | Вместе с элементом counter определяет конк
 counterSpecifier | Определяет конкретную метрику в пространстве имен метрик Azure.
 condition | Выбирает определенный экземпляр объекта, к которому применяется метрика, или совокупность всех экземпляров этого объекта (необязательно). Дополнительные сведения см. в [определениях метрик `builtin`](#metrics-supported-by-builtin).
 sampleRate | Интервал IS 8601, который задает частоту, с которой собираются необработанные выборки данной метрики. Если этот элемент не задан, интервал сбора определяется значением [sampleRateInSeconds](#ladcfg). Минимальная поддерживаемая частота выборки — 15 секунд (PT15S).
-unit | Значением должна быть одна из следующих строк: "Count", "Bytes", "Seconds", "Percent", "CountPerSecond", "BytesPerSecond", "Millisecond". Определяет единицу измерения для метрики. Потребители собранных данных ожидают, что значения собранных данных выражены в этой единице. LAD игнорирует это поле.
+unit | Должна быть одна из следующих строк: "Count", "Bytes", "Seconds", "Percent", "CountPerSecond", "BytesPerSecond", "Millisecond". Определяет единицу измерения для метрики. Потребители собранных данных ожидают, что значения собранных данных выражены в этой единице. LAD игнорирует это поле.
 displayName | Метка (на языке, заданном с помощью соответствующего параметра языкового стандарта), которая добавляется к данным в метриках Azure. LAD игнорирует это поле.
 
 counterSpecifier — это произвольный идентификатор. Потребители метрик, например функция построения диаграмм и вывода оповещений на портале Azure, используют counterSpecifier в качестве ключа, который определяет метрику или экземпляр метрики. Для метрик `builtin` рекомендуется использовать значения counterSpecifier, начинающиеся с `/builtin/`. При сборе определенного экземпляра метрики рекомендуется присоединять идентификатор экземпляра к значению counterSpecifier. Некоторые примеры

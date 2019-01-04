@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 05/22/2017
 ms.author: jeconnoc
-ms.openlocfilehash: f9f26f14944986bc673a3b7529adb055ad16d058
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 6a22a3dabf1aa71e0d092c4145523da9b0121c8c
+ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39003067"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53322215"
 ---
 # <a name="enabling-azure-diagnostics-in-azure-cloud-services"></a>Включение системы диагностики Azure в облачных службах Azure
 Основные сведения о системе диагностики Azure см. в [обзоре системы диагностики Azure](../azure-diagnostics.md).
@@ -30,7 +30,7 @@ ms.locfileid: "39003067"
 ### <a name="prerequisites"></a>Предварительные требования
 В данной статье предполагается, что у вас есть подписка Azure и вы используете Visual Studio с пакетом SDK для Azure. Если у вас нет подписки Azure, можно зарегистрироваться для получения [бесплатной пробной версии][Free Trial]. Следует обязательно [установить и настроить Azure PowerShell версии 0.8.7 или более поздней][Install and configure Azure PowerShell version 0.8.7 or later].
 
-### <a name="step-1-create-a-worker-role"></a>Шаг 1. Создание рабочей роли
+### <a name="step-1-create-a-worker-role"></a>Шаг 1. Создание рабочей роли
 1. Запустите **Visual Studio**.
 2. Создайте проект **облачной службы Azure** из шаблона **Облако**, предназначенного для .NET Framework 4.5.  Назовите проект WadExample и нажмите кнопку «ОК».
 3. Выберите **рабочую роль** и нажмите кнопку «ОК». После этих действий будет создан новый проект.
@@ -38,7 +38,7 @@ ms.locfileid: "39003067"
 5. На вкладке **Настройка** снимите флажок **Включить диагностику**, чтобы отключить систему диагностики Diagnostics 1.0 (пакет Azure SDK 2.4 и предыдущих версий).
 6. Создайте свое решение, чтобы проверить, что в нем нет ошибок.
 
-### <a name="step-2-instrument-your-code"></a>Шаг 2. Инструментирование кода
+### <a name="step-2-instrument-your-code"></a>Шаг 2. Инструментирование кода
 Замените содержимое файла WorkerRole.cs следующим кодом. Класс SampleEventSourceWriter, наследуемый от [класса EventSource][EventSource Class], реализует четыре метода ведения журнала: **SendEnums**, **MessageMethod**, **SetOther** и **HighFreq**. Первый параметр для метода **WriteEvent** определяет идентификатор соответствующего события. Метод Run реализует бесконечный цикл, который вызывает каждый из методов ведения журнала, реализованных в классе **SampleEventSourceWriter** , каждые 10 секунд.
 
 ```csharp
@@ -122,7 +122,7 @@ namespace WorkerRole1
 ```
 
 
-### <a name="step-3-deploy-your-worker-role"></a>Шаг 3. Развертывание рабочей роли
+### <a name="step-3-deploy-your-worker-role"></a>Шаг 3. Развертывание рабочей роли
 
 [!INCLUDE [cloud-services-wad-warning](../../includes/cloud-services-wad-warning.md)]
 
@@ -134,7 +134,7 @@ namespace WorkerRole1
 6. Измените любые другие **Параметры** по необходимости и щелкните **Опубликовать**.
 7. После завершения развертывания на портале Azure должно быть указано, что облачная служба находится в состоянии **Выполняется**.
 
-### <a name="step-4-create-your-diagnostics-configuration-file-and-install-the-extension"></a>Шаг 4. Создание файла конфигурации системы диагностики и установка расширения
+### <a name="step-4-create-your-diagnostics-configuration-file-and-install-the-extension"></a>Шаг 4. Создание файла конфигурации системы диагностики и установка расширения
 1. Скачайте общедоступное определение схемы файла конфигурации, выполнив следующую команду PowerShell:
 
     ```powershell
@@ -170,7 +170,7 @@ namespace WorkerRole1
 </PublicConfig>
 ```
 
-### <a name="step-5-install-diagnostics-on-your-worker-role"></a>Шаг 5. Установка системы диагностики в рабочей роли
+### <a name="step-5-install-diagnostics-on-your-worker-role"></a>Шаг 5. Установка системы диагностики в рабочей роли
 Командлеты PowerShell для управления диагностикой в веб-роли или в рабочей роли: Set-AzureServiceDiagnosticsExtension, Get-AzureServiceDiagnosticsExtension и Remove-AzureServiceDiagnosticsExtension.
 
 1. Откройте Azure PowerShell.
@@ -185,7 +185,7 @@ $storageContext = New-AzureStorageContext -StorageAccountName $storage_name -Sto
 Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -DiagnosticsConfigurationPath $config_path -ServiceName $service_name -Slot Staging -Role WorkerRole1
 ```
 
-### <a name="step-6-look-at-your-telemetry-data"></a>Шаг 6. Просмотр данных телеметрии
+### <a name="step-6-look-at-your-telemetry-data"></a>Шаг 6. Просмотр данных телеметрии
 В **обозревателе решений** Visual Studio перейдите к учетной записи хранения wadexample. После того как облачная служба проработает около пяти (5) минут, следует просмотреть таблицы **WADEnumsTable**, **WADHighFreqTable**, **WADMessageTable**, **WADPerformanceCountersTable** и **WADSetOtherTable**. Дважды щелкните одну из таблиц, чтобы просмотреть собранные данные телеметрии.
 
 ![CloudServices_diag_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
@@ -197,7 +197,7 @@ Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -Diagnostic
 Если возникли проблемы, см. сведения в статье [Устранение неполадок с помощью системы диагностики Azure](../azure-diagnostics-troubleshooting.md). Это поможет вам устранить распространенные проблемы.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[См. перечень статей о системе диагностики виртуальных машин Azure](../monitoring-and-diagnostics/azure-diagnostics.md#cloud-services-using-azure-diagnostics), чтобы изменить данные, которые вы собираете, устранить неполадки или больше узнать о диагностике в целом.
+[См. перечень статей о системе диагностики виртуальных машин Azure](../azure-monitor/platform/diagnostics-extension-overview.md#cloud-services-using-azure-diagnostics), чтобы изменить данные, которые вы собираете, устранить неполадки или больше узнать о диагностике в целом.
 
 [EventSource Class]: http://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource(v=vs.110).aspx
 

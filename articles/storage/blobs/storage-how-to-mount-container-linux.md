@@ -7,17 +7,17 @@ ms.service: storage
 ms.topic: article
 ms.date: 10/11/2018
 ms.author: seguler
-ms.openlocfilehash: 50378fd7739567b0cc56066168ddd33c3ea14141
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 2374875512bba55409ef43906acb20238c77158f
+ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49957060"
+ms.lasthandoff: 12/12/2018
+ms.locfileid: "53268467"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
 ## <a name="overview"></a>Обзор
-[blobfuse](https://github.com/Azure/azure-storage-fuse) — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure, позволяющий получать доступ к имеющимся данным блочного BLOB-объекта в учетной записи хранения в файловой системе Linux. Хранилище BLOB-объектов Azure — это служба хранения объектов, не имеющая иерархического пространства имен. blobfuse предоставляет это пространство имен, используя схему виртуального каталога с прямой косой чертой (/) в качестве разделителя.  
+[blobfuse](https://github.com/Azure/azure-storage-fuse) — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure. blobfuse позволяет получить доступ к имеющимся данным блочного BLOB-объекта в учетной записи хранения через файловую систему Linux. Хранилище BLOB-объектов Azure — это служба хранения объектов, не имеющая иерархического пространства имен. blobfuse предоставляет это пространство имен, используя схему виртуального каталога с прямой косой чертой (/) в качестве разделителя.  
 
 В этом руководстве показано, как использовать blobfuse, подключить контейнер хранилища BLOB-объектов в Linux, а также получить доступ к данным. Дополнительные сведения о blobfuse см. в [репозитории blobfuse](https://github.com/Azure/azure-storage-fuse).
 
@@ -27,7 +27,12 @@ ms.locfileid: "49957060"
 > 
 
 ## <a name="install-blobfuse-on-linux"></a>Установка blobfuse в Linux
-Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для дистрибутивов Ubuntu и RHEL. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя действиям по установке [здесь](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
+Двоичные файлы blobfuse доступны в [репозиториях программного обеспечения Майкрософт для Linux](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) для дистрибутивов Ubuntu и RHEL. Чтобы установить blobfuse в этих дистрибутивах, настройте один из репозиториев из списка. Вы также можете создавать двоичные файлы из исходного кода, следуя [действиям по установке службы хранилища Azure](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source), если для вашего дистрибутива нет двоичных файлов.
+
+blobfuse поддерживает установку на Ubuntu 14.04 и 16.04. Выполните следующую команду, чтобы убедиться в том, что у вас развернута одна из этих версий:
+```
+lsb_release -a
+```
 
 ### <a name="configure-the-microsoft-package-repository"></a>Настройка репозитория пакетов Майкрософт
 Настройте [репозиторий пакетов Linux для продуктов Майкрософт](https://docs.microsoft.com/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software).
@@ -37,16 +42,16 @@ ms.locfileid: "49957060"
 sudo rpm -Uvh https://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
 ```
 
-Аналогичным образом измените URL-адрес на `.../rhel/7/...`, чтобы указать дистрибутив Enterprise Linux 7.
+Аналогичным образом измените URL-адрес на `.../rhel/7/...`, чтобы указать дистрибутив Enterprise Linux 7.
 
-Еще один пример для Ubuntu 14.04:
+Еще один пример для распределения Ubuntu 14.04:
 ```bash
 wget https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 ```
 
-Аналогичным образом измените URL-адрес на `.../ubuntu/16.04/...`, чтобы указать дистрибутив Ubuntu 16.04.
+Аналогичным образом измените URL-адрес на `.../ubuntu/16.04/...`, чтобы указать дистрибутив Ubuntu 16.04.
 
 ### <a name="install-blobfuse"></a>Установка blobfuse
 
@@ -56,7 +61,7 @@ sudo apt-get install blobfuse
 ```
 
 В дистрибутиве Enterprise Linux:
-```bash
+```bash    
 sudo yum install blobfuse
 ```
 
@@ -68,17 +73,17 @@ sudo yum install blobfuse
 > 
 
 ### <a name="optional-use-a-ramdisk-for-the-temporary-path"></a>Использование электронного диска для временного пути (необязательно)
-В следующем примере создается электронный диск на 16 ГБ, а также каталог для blobfuse. Выберите размер в соответствии со своими потребностями. Такой электронный диск позволяет blobfuse открывать файлы размером до 16 ГБ. 
+В следующем примере создается электронный диск на 16 ГБ и каталог для blobfuse. Выберите размер в соответствии со своими потребностями. Такой электронный диск позволяет blobfuse открывать файлы размером до 16 ГБ. 
 ```bash
 sudo mount -t tmpfs -o size=16g tmpfs /mnt/ramdisk
 sudo mkdir /mnt/ramdisk/blobfusetmp
 sudo chown <youruser> /mnt/ramdisk/blobfusetmp
 ```
 
-### <a name="use-an-ssd-for-temporary-path"></a>Использование диска SSD для временного пути
-В Azure можно использовать временные диски (SSD), доступные на виртуальной машине, чтобы обеспечить для blobfuse буфер с малой задержкой. В дистрибутивах Ubuntu этот временный диск подключен к "/mnt", тогда как в дистрибутивах Red Hat и CentOS — к "/mnt/resource/".
+### <a name="use-an-ssd-as-a-temporary-path"></a>Использование диска SSD в качестве временного пути
+В Azure можно использовать временные диски (SSD), доступные на виртуальной машине, чтобы обеспечить для blobfuse буфер с малой задержкой. В дистрибутивах Ubuntu этот временный диск подключен к расположению "/mnt". В дистрибутивах CentOS и Red Hat диск подключен к расположению "/mnt/resource/".
 
-Для пользователя нужно настроить права доступа к временному пути.
+Для пользователя нужно настроить права доступа к временному пути:
 ```bash
 sudo mkdir /mnt/resource/blobfusetmp
 sudo chown <youruser> /mnt/resource/blobfusetmp
@@ -99,7 +104,7 @@ chmod 700 fuse_connection.cfg
 ```
 
 > [!NOTE]
-> Если вы создали файл конфигурации в Windows, обязательно запустите `dos2unix`, чтобы очистить данные и преобразовать их в формат Unix. 
+> Если вы создали файл конфигурации в Windows, обязательно запустите `dos2unix`, чтобы очистить данные и преобразовать файл в формат Unix. 
 >
 
 ### <a name="create-an-empty-directory-for-mounting"></a>Создание пустого каталога для подключения
@@ -116,10 +121,10 @@ mkdir ~/mycontainer
 Чтобы подключить blobfuse, выполните следующую команду с использованием нужного профиля пользователя. Эта команда подключает контейнер, указанный в "/path/to/fuse_connection.cfg", к расположению "/mycontainer".
 
 ```bash
-blobfuse ~/mycontainer --tmp-path=/mnt/resource/blobfusetmp  --config-file=/path/to/fuse_connection.cfg -o attr_timeout=240 -o entry_timeout=240 -o negative_timeout=120
+sudo blobfuse ~/mycontainer --tmp-path=/mnt/resource/blobfusetmp  --config-file=/path/to/fuse_connection.cfg -o attr_timeout=240 -o entry_timeout=240 -o negative_timeout=120
 ```
 
-Теперь у вас должен быть доступ к блочным BLOB-объектам через обычные API файловой системы. Обратите внимание, что доступ к подключенному каталогу может получить только пользователь, выполнивший это подключение, что обеспечивает безопасный доступ. Если вы хотите разрешить доступ всем пользователям, можно выполнить подключение через параметр ```-o allow_other```. 
+Теперь у вас должен быть доступ к блочным BLOB-объектам через обычные API файловой системы. Только тот пользователь, который подключает каталог, может пользоваться им по умолчанию, что обеспечивает безопасный доступ. Чтобы разрешить доступ всем пользователям, можно выполнить подключение через параметр ```-o allow_other```. 
 
 ```bash
 cd ~/mycontainer

@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/09/2018
 ms.author: iainfou
-ms.openlocfilehash: 0dc0421baf1e5cb19be925072b5fffb989e23a3b
-ms.sourcegitcommit: 1fc949dab883453ac960e02d882e613806fabe6f
+ms.openlocfilehash: 9bdd3060219907f95454bfc9248572f796afd72e
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/03/2018
-ms.locfileid: "50979256"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53437613"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service"></a>rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 
@@ -149,7 +149,7 @@ az aks create \
 az aks get-credentials --resource-group myResourceGroup --name myAKSCluster --admin
 ```
 
-Затем используйте следующий манифест, чтобы создать привязку ClusterRoleBinding для учетной записи Azure AD. Обновите имя пользователя с помощью одного из имен, которое используется в клиенте Azure AD. В этом примере учетной записи предоставляется полный доступ ко всем пространствам имен в кластере.
+Затем используйте следующий манифест, чтобы создать привязку ClusterRoleBinding для учетной записи Azure AD. В этом примере учетной записи предоставляется полный доступ ко всем пространствам имен в кластере. Создайте файл, например *rbac-aad-user.yaml*, и вставьте в него приведенное ниже содержимое. Обновите имя пользователя с помощью одного из имен, которое используется в клиенте Azure AD:
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -166,7 +166,13 @@ subjects:
   name: "user@contoso.com"
 ```
 
-Привязку роли также можно создать для всех членов группы Azure AD. Группы Azure AD указываются с помощью идентификатора объекта группы в следующем примере.
+Примените привязку с помощью команды [kubectl apply][kubectl-apply], как показано в следующем примере:
+
+```console
+kubectl apply -f rbac-aad-user.yaml
+```
+
+Привязку роли также можно создать для всех членов группы Azure AD. Группы Azure AD указываются с помощью идентификатора объекта группы, как показано в приведенном ниже примере. Создайте файл, например *rbac-aad-group.yaml*, и вставьте в него приведенное ниже содержимое. Обновите идентификатор объекта группы с помощью одного из имен, которое используется в клиенте Azure AD:
 
  ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -181,6 +187,12 @@ subjects:
 - apiGroup: rbac.authorization.k8s.io
    kind: Group
    name: "894656e1-39f8-4bfe-b16a-510f61af6f41"
+```
+
+Примените привязку с помощью команды [kubectl apply][kubectl-apply], как показано в следующем примере:
+
+```console
+kubectl apply -f rbac-aad-group.yaml
 ```
 
 Дополнительные сведения о защите кластера Kubernetes с помощью ролей RBAC см. в документации об [использовании авторизации на основе ролей RBAC][rbac-authorization].
@@ -221,6 +233,7 @@ error: You must be logged in to the server (Unauthorized)
 <!-- LINKS - external -->
 [kubernetes-webhook]:https://kubernetes.io/docs/reference/access-authn-authz/authentication/#webhook-token-authentication
 [rbac-authorization]: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+[kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 
 <!-- LINKS - internal -->
 [az-aks-create]: /cli/azure/aks?view=azure-cli-latest#az-aks-create

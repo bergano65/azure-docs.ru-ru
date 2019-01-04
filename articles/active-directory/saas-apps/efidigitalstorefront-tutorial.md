@@ -1,5 +1,5 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с EFI Digital StoreFront | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с EFI Digital StoreFront | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и EFI Digital StoreFront.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/08/2017
 ms.author: jeedes
-ms.openlocfilehash: 6959521b0f700a0afafef0950e9cb336488cc94b
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 7df615caf3ca1b8ca7dd7d4da876c840e20defd8
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39425312"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52833131"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-efi-digital-storefront"></a>Учебник. Интеграция Azure Active Directory с EFI Digital StoreFront
+# <a name="tutorial-azure-active-directory-integration-with-efi-digital-storefront"></a>Руководство. Интеграция Azure Active Directory с EFI Digital StoreFront
 
 В этом руководстве описано, как интегрировать EFI Digital StoreFront с Azure Active Directory (Azure AD).
 
@@ -122,10 +122,10 @@ ms.locfileid: "39425312"
 
     ![Кнопка "Сохранить" в окне настройки единого входа](./media/efidigitalstorefront-tutorial/tutorial_general_400.png)
 
-1. Чтобы настроить единый вход на стороне **EFI Digital StoreFront**, отправьте в [службу поддержки EFI Digital StoreFront](http://www.efi.com/products/productivity-software/ecommerce-web-to-print/efi-digital-storefront/support/) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **EFI Digital StoreFront**, отправьте в [службу поддержки EFI Digital StoreFront](https://www.efi.com/products/productivity-software/ecommerce-web-to-print/efi-digital-storefront/support/) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -162,7 +162,7 @@ ms.locfileid: "39425312"
  
 ### <a name="create-a-efi-digital-storefront-test-user"></a>Создание тестового пользователя EFI Digital StoreFront
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении EFI Digital StoreFront. Добавление пользователей на платформе EFI Digital StoreFront совместно со [службой поддержки EFI Digital StoreFront](http://www.efi.com/products/productivity-software/ecommerce-web-to-print/efi-digital-storefront/support/). Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении EFI Digital StoreFront. Обратитесь в  [службу поддержки EFI Digital StoreFront](https://www.efi.com/products/productivity-software/ecommerce-web-to-print/efi-digital-storefront/support/) , чтобы добавить пользователей на платформу EFI Digital StoreFront. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -199,7 +199,7 @@ ms.locfileid: "39425312"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку EFI Digital StoreFront на панели доступа, вы автоматически войдете в приложение EFI Digital StoreFront.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

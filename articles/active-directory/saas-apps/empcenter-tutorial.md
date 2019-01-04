@@ -1,5 +1,5 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с EmpCenter | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с EmpCenter | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в EmpCenter.
 services: active-directory
 documentationCenter: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/14/2017
 ms.author: jeedes
-ms.openlocfilehash: e7e594619c3b7c1ebd34c802d53b3897046a9cd7
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 722a5b90b9ca17197cb0a0d117e58a01108d0a9c
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39426842"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52845048"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-empcenter"></a>Руководство. Интеграция Azure Active Directory с EmpCenter
 
@@ -46,7 +46,7 @@ ms.locfileid: "39426842"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете получить [месячную пробную версию](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
@@ -119,7 +119,7 @@ ms.locfileid: "39426842"
     | `https://<subdomain>.workforcehosting.com/<instancename>` |
 
     > [!NOTE] 
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов EmpCenter](http://www.workforcesoftware.com/services/customer-support/). 
+    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [службу поддержки клиентов EmpCenter](https://www.workforcesoftware.com/services/customer-support/). 
  
 1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -129,10 +129,10 @@ ms.locfileid: "39426842"
 
     ![Настройка единого входа](./media/empcenter-tutorial/tutorial_general_400.png)
 
-1. Чтобы настроить единый вход на стороне **EmpCenter**, отправьте в [службу поддержки EmpCenter](http://www.workforcesoftware.com/services/customer-support/) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+1. Чтобы настроить единый вход на стороне **EmpCenter**, отправьте в [службу поддержки EmpCenter](https://www.workforcesoftware.com/services/customer-support/) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -168,7 +168,7 @@ ms.locfileid: "39426842"
  
 ### <a name="creating-an-empcenter-test-user"></a>Создание тестового пользователя EmpCenter
 
-Чтобы пользователи Azure AD могли выполнять вход в EmpCenter, они должны быть подготовлены в EmpCenter. В случае EmpCenter учетные записи пользователей должны быть созданы [службой поддержки EmpCenter](http://www.workforcesoftware.com/services/customer-support/).
+Чтобы пользователи Azure AD могли выполнять вход в EmpCenter, они должны быть подготовлены в EmpCenter. В случае EmpCenter учетные записи пользователей должны быть созданы [службой поддержки EmpCenter](https://www.workforcesoftware.com/services/customer-support/).
 
 > [!NOTE]
 > Вы можете использовать любые другие инструменты создания учетных записей пользователя EmpCenter или API, предоставляемые EmpCenter для подготовки учетных записей пользователя Azure Active Directory.

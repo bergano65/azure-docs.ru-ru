@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с RedBrick Health | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с RedBrick Health | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и RedBrick Health.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/22/2018
 ms.author: jeedes
-ms.openlocfilehash: 11452dfb94a5a1c8cf4734b1ef21a44cccafbea1
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: bccc7abed9a86bcba74a5d994664a20313f3282a
+ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39430514"
+ms.lasthandoff: 12/04/2018
+ms.locfileid: "52833811"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-redbrick-health"></a>Руководство по интеграции Azure Active Directory с RedBrick Health
+# <a name="tutorial-azure-active-directory-integration-with-redbrick-health"></a>Руководство. Интеграция Azure Active Directory с RedBrick Health
 
 В этом руководстве описано, как интегрировать RedBrick Health с Azure Active Directory (Azure AD).
 
@@ -110,7 +110,7 @@ ms.locfileid: "39430514"
 
     ![Сведения о домене и URL-адресах единого входа приложения RedBrick Health](./media/redbrickhealth-tutorial/tutorial_redbrickhealth_url.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес: `http://www.redbrickhealth.com`
+    a. В текстовом поле **Идентификатор** введите URL-адрес: `https://www.redbrickhealth.com`
     
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес: `https://sso-intg.redbrickhealth.com/sp/ACS.saml2`
     
@@ -169,7 +169,7 @@ ms.locfileid: "39430514"
 1. Для настройки единого входа на стороне **RedBrick Health** необходимо отправить скачанный **сертификат (Base64)** и **идентификатор сущности SAML** [службе поддержки RedBrick Health](https://home.redbrickhealth.com/contact/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -205,7 +205,7 @@ ms.locfileid: "39430514"
   
 ### <a name="create-a-redbrick-health-test-user"></a>Создание тестового пользователя RedBrick Health
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении RedBrick Health. Обратитесь в [службу поддержки RedBrick Health](https://home.redbrickhealth.com/contact/), чтобы добавить пользователей на платформу RedBrick Health. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении RedBrick Health. Обратитесь в  [службу поддержки RedBrick Health](https://home.redbrickhealth.com/contact/) , чтобы добавить пользователей на платформу RedBrick Health. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -242,7 +242,7 @@ ms.locfileid: "39430514"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку RedBrick Health на панели доступа, вы автоматически войдете в приложение RedBrick Health.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

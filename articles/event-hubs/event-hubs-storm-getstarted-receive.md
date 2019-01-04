@@ -1,6 +1,6 @@
 ---
-title: Получение событий от Центров событий Azure с помощью Apache Storm | Документация Майкрософт
-description: Узнайте основные сведения о получении событий от Центров событий с помощью Apache Storm.
+title: Получение событий от службы "Центры событий Azure" с помощью Apache Storm | Документация Майкрософт
+description: В этой статье приводятся сведения о том, как получать события от службы "Центры событий Azure" с помощью Apache Storm.
 services: event-hubs
 documentationcenter: ''
 author: ShubhaVijayasarathy
@@ -12,14 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: java
 ms.devlang: multiple
 ms.topic: article
-ms.date: 08/16/2018
+ms.custom: seodec18
+ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: c70096796bb038c27d18bb3467d7c425dafd5c5b
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 3c50916f648a2bce634f7aeb109147a873de1de6
+ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42143420"
+ms.lasthandoff: 12/08/2018
+ms.locfileid: "53094616"
 ---
 # <a name="receive-events-from-event-hubs-using-apache-storm"></a>Получение событий из Центров событий с помощью Apache Storm
 
@@ -40,7 +41,7 @@ ms.locfileid: "42143420"
     ```
 4. В Eclipse создайте проект Maven (щелкните **File** (Файл), **New** (Создать), а затем **Project** (Проект)).
    
-    ![][12]
+    ![File (Файл) > New (Создать) > Project (Проект)][12]
 5. Выберите параметр **Use default Workspace location** (Использовать расположение рабочей области по умолчанию), а затем нажмите кнопку **Next** (Далее).
 6. Выберите архетип **maven-archetype-quickstart** и нажмите кнопку **Next** (Далее).
 7. Вставьте параметры **GroupId** и **ArtifactId**, а затем нажмите кнопку **Finish** (Готово).

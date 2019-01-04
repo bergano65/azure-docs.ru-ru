@@ -1,21 +1,19 @@
 ---
-title: Руководство по Power BI для соединителя Azure Cosmos DB | Документация Майкрософт
+title: Руководство по Power BI для соединителя Azure Cosmos DB
 description: Используйте это руководство по Power BI для импорта JSON, создания информативных отчетов и визуализации данных с помощью соединителя Azure Cosmos DB и Power BI.
 keywords: учебник по Power BI, визуализация данных, соединитель Power BI
 services: cosmos-db
 author: SnehaGunda
-manager: kfile
 ms.service: cosmos-db
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/03/2018
 ms.author: sngun
-ms.openlocfilehash: 782de7dc6e099fade0d2f1099ac19b9398562023
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: fa4e6aa1274609ebf990a02d41f63541668d3b37
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51622097"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53438716"
 ---
 # <a name="visualize-azure-cosmos-db-data-by-using-the-power-bi-connector"></a>Визуализация данных Azure Cosmos DB с помощью соединителя Power BI
 
@@ -36,7 +34,19 @@ ms.locfileid: "51622097"
 
 * загруженному из GitHub [примеру данных о вулканах](https://github.com/Azure-Samples/azure-cosmos-db-sample-data/blob/master/SampleData/VolcanoData.json);
 
-* [созданной учетной записи базы данных Azure Cosmos DB](https://azure.microsoft.com/documentation/articles/create-account/) и импортированных с помощью [средства переноса данных Azure Cosmos DB](import-data.md) данных о вулканах.
+* [созданной учетной записи базы данных Azure Cosmos DB](https://azure.microsoft.com/documentation/articles/create-account/) и импортированных с помощью [средства переноса данных Azure Cosmos DB](import-data.md) данных о вулканах. При импорте данных советуем использовать в средстве переноса следующие параметры источника и целевых расположений:
+
+   * **Параметры источника** 
+
+       * **Импортировать из:** JSON-файлы
+
+   * **Параметры целевых расположений** 
+
+      * **Строка подключения:** `AccountEndpoint=<Your_account_endpoint>;AccountKey=<Your_primary_or_secondary_key>;Database= <Your_database_name>` 
+
+      * **Ключ секции**: /страна 
+
+      * **Collection throughput** (Пропускная способность коллекции): 1000 
 
 Для совместного использования отчетов в службе PowerBI.com необходимо настроить учетную запись в PowerBI.com.  Дополнительные сведения о Power BI и Power BI Pro см. по ссылке [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing).
 
