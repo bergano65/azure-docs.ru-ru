@@ -14,12 +14,12 @@ ms.devlang: node
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: e435baf4a5e3382e3e77195e5315299e3963ff5c
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 4e478c2559ac534f595393fdc36b95ad8e9c989a
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53409264"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53725037"
 ---
 # <a name="how-to-use-the-mobile-apps-nodejs-sdk"></a>Использование пакета SDK Node.js для функции "Мобильные приложения"
 
@@ -153,14 +153,14 @@ ms.locfileid: "53409264"
 В следующей процедуре используется репозиторий Git для скачивания кода проекта быстрого запуска.
 
 1. Установите Git, если его у вас еще нет. Действия, необходимые для установки Git, отличаются в разных операционных системах. Сведения о дистрибутивах для разных операционных систем и руководство по установке см. в статье [Getting Started - Installing Git](https://git-scm.com/book/en/Getting-Started-Installing-Git) (Начало работы. Установка Git).
-1. Чтобы включить репозиторий Git для сайта серверной части, ознакомьтесь с разделом [Подготовка репозитория](../app-service/app-service-deploy-local-git.md#prepare-your-repository). Запишите имя пользователя и пароль для развертывания.
-1. В области для серверной части функции "Мобильные приложения" найдите параметр **URL-адрес клона Git** и запишите его.
-1. Выполните команду `git clone`, указав URL-адрес клона Git. Введите пароль в ответ на запрос, как показано в следующем примере.
+2. Чтобы включить репозиторий Git для сайта серверной части, ознакомьтесь с разделом [Подготовка репозитория](../app-service/deploy-local-git.md#prepare-your-repository). Запишите имя пользователя и пароль для развертывания.
+3. В области для серверной части функции "Мобильные приложения" найдите параметр **URL-адрес клона Git** и запишите его.
+4. Выполните команду `git clone`, указав URL-адрес клона Git. Введите пароль в ответ на запрос, как показано в следующем примере.
 
         $ git clone https://username@todolist.scm.azurewebsites.net:443/todolist.git
 
-1. Перейдите в локальный каталог (в приведенном выше примере это `/todolist`) и убедитесь, что файлы проекта скачаны. Найдите файл todoitem.json в каталоге `/tables`. Этот файл определяет разрешения для таблицы. В том же каталоге найдите файл todoitem.js. Он определяет скрипты операций CRUD для таблицы.
-1. После внесения изменений в файлы проекта выполните следующие команды, чтобы добавить, зафиксировать и передать изменения на сайт:
+5. Перейдите в локальный каталог (в приведенном выше примере это `/todolist`) и убедитесь, что файлы проекта скачаны. Найдите файл todoitem.json в каталоге `/tables`. Этот файл определяет разрешения для таблицы. В том же каталоге найдите файл todoitem.js. Он определяет скрипты операций CRUD для таблицы.
+6. После внесения изменений в файлы проекта выполните следующие команды, чтобы добавить, зафиксировать и передать изменения на сайт:
 
         $ git commit -m "updated the table script"
         $ git push origin master
@@ -968,10 +968,10 @@ module.exports = api;
 [Как настроить приложение службы приложений для использования имени для входа Google]: ../app-service/configure-authentication-provider-google.md
 [Настройка приложения службы приложений для использования входа по учетной записи Майкрософт]: ../app-service/configure-authentication-provider-microsoft.md
 [Как настроить приложение службы приложений для использования имени для входа Twitter]: ../app-service/configure-authentication-provider-twitter.md
-[Развертывание локального репозитория Git в службе приложений Azure]: ../app-service/app-service-deploy-local-git.md
+[Развертывание локального репозитория Git в службе приложений Azure]: ../app-service/deploy-local-git.md
 [Мониторинг приложений в службе приложений Azure]: ../app-service/web-sites-monitor.md
-[Включение ведения журнала диагностики для веб-приложений в службе приложений Azure]: ../app-service/web-sites-enable-diagnostic-log.md
-[Устранение неполадок веб-приложения в службе приложений Azure с помощью Visual Studio]: ../app-service/web-sites-dotnet-troubleshoot-visual-studio.md
+[Включение ведения журнала диагностики для веб-приложений в службе приложений Azure]: ../app-service/troubleshoot-diagnostic-logs.md
+[Устранение неполадок веб-приложения в службе приложений Azure с помощью Visual Studio]: ../app-service/troubleshoot-dotnet-visual-studio.md
 [Указание версии Node.js в приложении Azure]: ../nodejs-specify-node-version-azure-apps.md
 [Использование модулей Node]: ../nodejs-use-node-modules-azure-apps.md
 [Create a new Azure App Service]: ../app-service/

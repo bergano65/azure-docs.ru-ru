@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 28b72f63360b4ce323c1cd82b11c2798b1fbc2ff
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 66712b97807135b1e9e8321e441ac21368f86fc5
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53313400"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53633033"
 ---
 # <a name="connect-to-and-index-azure-sql-database-content-using-azure-search-indexers"></a>Подключение к Базе данных SQL Azure и индексирование ее содержимого с помощью индексаторов службы Поиска Azure
 
@@ -156,7 +156,7 @@ ms.locfileid: "53313400"
         "schedule" : { "interval" : "PT10M", "startTime" : "2015-01-01T00:00:00Z" }
     }
 
-Параметр **interval** обязателен. Он указывает время между двумя последовательными запусками индексатора. Наименьшее допустимое значение — 5 минут, наибольшее — один день. Значение должно быть отформатировано как значение dayTimeDuration XSD (ограниченное подмножество значения [продолжительности ISO 8601](http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). Используется следующий шаблон: `P(nD)(T(nH)(nM))`. Примеры: `PT15M` для каждых 15 минут, `PT2H` для каждых 2 часов.
+Параметр **interval** обязателен. Он указывает время между двумя последовательными запусками индексатора. Наименьшее допустимое значение — 5 минут, наибольшее — один день. Значение должно быть отформатировано как значение dayTimeDuration XSD (ограниченное подмножество значения [продолжительности ISO 8601](https://www.w3.org/TR/xmlschema11-2/#dayTimeDuration) ). Используется следующий шаблон: `P(nD)(T(nH)(nM))`. Примеры: `PT15M` для каждых 15 минут, `PT2H` для каждых 2 часов.
 
 Необязательный параметр **startTime** указывает время, когда должно начаться выполнение по расписанию. Если опустить этот параметр, используется текущее время в формате UTC. Это время может быть прошедшим. В таком случае первое выполнение планируется так, как если бы индексатор не прекращал работу со времени, указанного в параметре startTime.  
 

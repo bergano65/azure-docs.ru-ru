@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/03/2016
 ms.author: crdun
-ms.openlocfilehash: 7fdbbee27f83a4583390158e456270324967b28a
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 17fbaa7efcdd9e0de675defb3958a61f29bbc3fe
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52961609"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53714327"
 ---
 # <a name="article-top"></a>Перенос существующей мобильной службы Azure в службу приложений Azure
 Благодаря [Общедоступная версия службы приложений Azure]сайты мобильных служб Azure можно легко переносить на месте, что позволяет пользоваться преимуществами всех компонентов службы приложений Azure.  В этом документе объясняется, что происходит во время переноса сайта из мобильных служб Azure в службу приложений Azure.
@@ -376,25 +376,25 @@ ms.locfileid: "52961609"
 [Цены службы приложений]: https://azure.microsoft.com/pricing/details/app-service/
 [Application Insights]: ../application-insights/app-insights-overview.md
 [Автомасштабирование]: ../app-service/web-sites-scale.md
-[службе приложений Azure]: ../app-service/app-service-web-overview.md
+[службе приложений Azure]: ../app-service/overview.md
 [классический портал Azure]: https://manage.windowsazure.com
 [портал Azure]: https://portal.azure.com
 [Azure Region]: https://azure.microsoft.com/regions/
 [планы планировщика Azure]: ../scheduler/scheduler-plans-billing.md
-[непрерывно развертывать]: ../app-service/app-service-continuous-deployment.md
+[непрерывно развертывать]: ../app-service/deploy-continuous-deployment.md
 [Преобразование смешанного пространств имен]: https://azure.microsoft.com/blog/updates-from-notification-hubs-independent-nuget-installation-model-pmt-and-more/
 [curl]: https://curl.haxx.se/
 [пользовательские доменные имена]: ../app-service/app-service-web-tutorial-custom-domain.md
 [Fiddler]: https://www.telerik.com/fiddler
 [Общедоступная версия службы приложений Azure]: https://azure.microsoft.com/blog/announcing-general-availability-of-app-service-mobile-apps/
 [Hybrid Connections]: ../app-service/app-service-hybrid-connections.md
-[ведению журналов]: ../app-service/web-sites-enable-diagnostic-log.md
+[ведению журналов]: ../app-service/troubleshoot-diagnostic-logs.md
 [пакет SDK Node.js для мобильных приложений]: https://github.com/azure/azure-mobile-apps-node
 [Сравнение мобильных служб и службы приложений]: app-service-mobile-value-prop-migration-from-mobile-services.md
 [Центры уведомлений]: ../notification-hubs/notification-hubs-push-notification-overview.md
 [мониторинг производительности]: ../app-service/web-sites-monitor.md
 [Postman]: https://www.getpostman.com/
-[промежуточных слотов]: ../app-service/web-sites-staged-publishing.md
+[промежуточных слотов]: ../app-service/deploy-staging-slots.md
 [VNet]: ../app-service/web-sites-integrate-with-vnet.md
 [Примеры преобразования XDT]: https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples
 [Функции]: ../azure-functions/functions-overview.md

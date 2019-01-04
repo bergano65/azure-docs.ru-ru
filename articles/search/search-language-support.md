@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: jlembicz
 ms.custom: seodec2018
-ms.openlocfilehash: 3f88965e0d48a9ed3e9a91b4df42a79b83d2a79b
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: a198fa7fe5e1ed81e30987990359f9ecedbe225b
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53313332"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53631555"
 ---
 # <a name="create-an-index-for-documents-in-multiple-languages-in-azure-search"></a>Создание индекса для многоязычных документов в поиске Azure
 > [!div class="op_single_selector"]
@@ -53,7 +53,7 @@ ms.locfileid: "53313332"
 ![][2]
 *Выберите один из поддерживаемых анализаторов для каждого поля.*
 
-По умолчанию для всех полей, доступных для поиска, используется [стандартный анализатор Lucene](http://lucene.apache.org/core/4_10_0/analyzers-common/org/apache/lucene/analysis/standard/StandardAnalyzer.html), не зависящий от конкретного языка. Полный список поддерживаемых анализаторов см. в статье [Language support (Azure Search Service REST API)](https://msdn.microsoft.com/library/azure/dn879793.aspx) (Языковая поддержка в REST API службы поиска Azure).
+По умолчанию для всех полей, доступных для поиска, используется [стандартный анализатор Lucene](https://lucene.apache.org/core/4_10_0/analyzers-common/org/apache/lucene/analysis/standard/StandardAnalyzer.html), не зависящий от конкретного языка. Полный список поддерживаемых анализаторов см. в статье [Language support (Azure Search Service REST API)](https://msdn.microsoft.com/library/azure/dn879793.aspx) (Языковая поддержка в REST API службы поиска Azure).
 
 Выбранный для поля анализатор языка будет использоваться при каждом запросе индексирования и поиска для этого поля. Если запрос охватывает несколько полей с различными анализаторами, он обрабатывается анализаторами каждого поля отдельно.
 
@@ -81,7 +81,7 @@ ms.locfileid: "53313332"
 
 `https://[service name].search.windows.net/indexes/[index name]/docs?search=Microsoft&scoringProfile=englishFirst&api-version=2017-11-11`
 
-Если вы разработчик .NET, обратите внимание на то, что языковые анализаторы можно настраивать с помощью [SDK .NET службы поиска Azure](http://www.nuget.org/packages/Microsoft.Azure.Search). Последний выпуск включает поддержку языковых анализаторов корпорации Майкрософт.
+Если вы разработчик .NET, обратите внимание на то, что языковые анализаторы можно настраивать с помощью [SDK .NET службы поиска Azure](https://www.nuget.org/packages/Microsoft.Azure.Search). Последний выпуск включает поддержку языковых анализаторов корпорации Майкрософт.
 
 <!-- Image References -->
 [1]: ./media/search-language-support/AnalyzerTab.png

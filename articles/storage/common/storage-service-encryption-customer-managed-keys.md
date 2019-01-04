@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/11/2018
 ms.author: lakasa
 ms.component: common
-ms.openlocfilehash: 5ef9c15d4edf62ef63b16765f16971a9be5ca58b
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: e2497233ec97ffc88bf13797f62d601d4da373a1
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52970711"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53628499"
 ---
 # <a name="storage-service-encryption-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование службы хранилища с помощью управляемых клиентом ключей в Azure Key Vault
 
@@ -32,6 +32,8 @@ Microsoft Azure прилагает все усилия, чтобы защити�
 
 Чтобы использовать ключи, управляемые клиентом, можно создать хранилище ключей и ключ или использовать имеющиеся. Учетная запись хранения и Key Vault должны быть расположены в одном регионе, но могут находиться в разных подписках.
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 ### <a name="step-1-create-a-storage-account"></a>Шаг 1. Создание учетной записи хранения
 
 Если у вас еще нет учетной записи хранения, создайте ее. Дополнительные сведения см. в разделе [Создание учетной записи хранения](storage-quickstart-create-account.md).
@@ -45,7 +47,7 @@ Microsoft Azure прилагает все усилия, чтобы защити�
 Чтобы использовать управляемые клиентом ключи с помощью SSE, необходимо назначить удостоверение учетной записи хранения. Чтобы настроить удостоверение, выполните следующую команду PowerShell или Azure CLI:
 
 ```powershell
-Set-AzureRmStorageAccount -ResourceGroupName \$resourceGroup -Name \$accountName -AssignIdentity
+Set-AzStorageAccount -ResourceGroupName \$resourceGroup -Name \$accountName -AssignIdentity
 ```
 
 ```azurecli-interactive
@@ -58,18 +60,18 @@ az storage account \
 Чтобы включить функции обратимого удаления и Do Not Purge (Не очищать), выполните следующие команды PowerShell или Azure CLI:
 
 ```powershell
-($resource = Get-AzureRmResource -ResourceId (Get-AzureRmKeyVault -VaultName
+($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName
 $vaultName).ResourceId).Properties | Add-Member -MemberType NoteProperty -Name
 enableSoftDelete -Value 'True'
 
-Set-AzureRmResource -resourceid $resource.ResourceId -Properties
+Set-AzResource -resourceid $resource.ResourceId -Properties
 $resource.Properties
 
-($resource = Get-AzureRmResource -ResourceId (Get-AzureRmKeyVault -VaultName
+($resource = Get-AzResource -ResourceId (Get-AzKeyVault -VaultName
 $vaultName).ResourceId).Properties | Add-Member -MemberType NoteProperty -Name
 enablePurgeProtection -Value 'True'
 
-Set-AzureRmResource -resourceid $resource.ResourceId -Properties
+Set-AzResource -resourceid $resource.ResourceId -Properties
 $resource.Properties
 ```
 
@@ -121,11 +123,11 @@ az resource update \
 Указанный выше ключ можно связать с существующей учетной записи хранения с помощью следующих команд PowerShell:
 
 ```powershell
-$storageAccount = Get-AzureRmStorageAccount -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount"
-$keyVault = Get-AzureRmKeyVault -VaultName "mykeyvault"
+$storageAccount = Get-AzStorageAccount -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount"
+$keyVault = Get-AzKeyVault -VaultName "mykeyvault"
 $key = Get-AzureKeyVaultKey -VaultName $keyVault.VaultName -Name "keytoencrypt"
-Set-AzureRmKeyVaultAccessPolicy -VaultName $keyVault.VaultName -ObjectId $storageAccount.Identity.PrincipalId -PermissionsToKeys wrapkey,unwrapkey,get
-Set-AzureRmStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName -AccountName $storageAccount.StorageAccountName -KeyvaultEncryption -KeyName $key.Name -KeyVersion $key.Version -KeyVaultUri $keyVault.VaultUri
+Set-AzKeyVaultAccessPolicy -VaultName $keyVault.VaultName -ObjectId $storageAccount.Identity.PrincipalId -PermissionsToKeys wrapkey,unwrapkey,get
+Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName -AccountName $storageAccount.StorageAccountName -KeyvaultEncryption -KeyName $key.Name -KeyVersion $key.Version -KeyVaultUri $keyVault.VaultUri
 ```
 
 ### <a name="step-5-copy-data-to-storage-account"></a>Шаг 5. Копирование данных в учетную запись хранения
@@ -154,7 +156,7 @@ Set-AzureRmStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName -
 Шифрование дисков Azure обеспечивает интеграцию решений на основе операционной системы, например BitLocker, DM-Crypt и Azure Key Vault. Шифрование службы хранилища обеспечивает встроенное шифрование на уровне платформы службы хранилища Azure (ниже уровня виртуальной машины).
 
 **Можно ли отменить доступ к ключам шифрования?**
-Да, вы можете отменить доступ в любое время. Отменить доступ к ключам можно несколькими способами. Чтобы получить дополнительные сведения, обратитесь к разделам [Azure​RM.​Key​Vault](https://docs.microsoft.com/powershell/module/azurerm.keyvault/) и [Key Vault - az keyvault](https://docs.microsoft.com/cli/azure/keyvault). Отмена доступа фактически заблокирует доступ ко всем большим двоичным объектам в учетной записи хранения, так как ключ шифрования учетной записи станет недоступен службе хранилища Azure.
+Да, вы можете отменить доступ в любое время. Отменить доступ к ключам можно несколькими способами. Чтобы получить дополнительные сведения, обратитесь к разделам [Azure​RM.​Key​Vault](https://docs.microsoft.com/powershell/module/az.keyvault/) и [Key Vault - az keyvault](https://docs.microsoft.com/cli/azure/keyvault). Отмена доступа фактически заблокирует доступ ко всем большим двоичным объектам в учетной записи хранения, так как ключ шифрования учетной записи станет недоступен службе хранилища Azure.
 
 **Могу ли я создать учетную запись хранения и ключ в разных регионах?**  
 Нет, учетная запись хранения, Azure Key Vault и ключ должны находиться в одном регионе.

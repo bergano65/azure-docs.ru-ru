@@ -14,12 +14,12 @@ ms.devlang: node
 ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
-ms.openlocfilehash: 71be338aeb6d0234d22d412d6838e36a26797b20
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 5a74097521cc7dceea2c47f78c1dbb2f17e292aa
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53002113"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53726686"
 ---
 # <a name="upgrade-your-existing-nodejs-azure-mobile-service-to-app-service"></a>Обновление существующего приложения мобильной службы Azure Node.js до службы приложений
 Мобильное приложение службы приложений — это новый способ сборки мобильных приложений с помощью Microsoft Azure. Дополнительные сведения см. в статье [Что представляют собой мобильные приложения?].
@@ -98,7 +98,7 @@ ms.locfileid: "53002113"
 2. Щелкните **+Создать** > **Интернет+мобильные устройства** > **Мобильное приложение**, а затем введите имя серверной части мобильного приложения.
 3. В поле **Группа ресурсов**выберите существующую группу ресурсов или создайте новую (с тем же именем, что и у приложения).
 
-    Выберите другой план службы приложений или создайте новый. Дополнительные сведения о планах службы приложений, а также о создании плана другой ценовой категории и в другом расположении см. в статье [Подробный обзор планов службы приложений Azure](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
+    Выберите другой план службы приложений или создайте новый. Дополнительные сведения о планах службы приложений, а также о создании плана другой ценовой категории и в другом расположении см. в статье [Подробный обзор планов службы приложений Azure](../app-service/overview-hosting-plans.md).
 4. В качестве **плана службы приложений**используется план по умолчанию (для [уровня "Стандартный"](https://azure.microsoft.com/pricing/details/app-service/)). Вы также можете [создать план](../app-service/app-service-plan-manage.md#create-an-app-service-plan) или выбрать другой. Параметры плана службы приложений определяют [расположение, функции, стоимость и вычислительные ресурсы](https://azure.microsoft.com/pricing/details/app-service/), связанные с вашим приложением.
 
     Выбрав план, нажмите кнопку **Создать**. Будет создана серверная часть мобильного приложения,
@@ -162,7 +162,7 @@ ms.locfileid: "53002113"
 [Migrate your existing Mobile Service to App Service]: app-service-mobile-migrating-from-mobile-services.md
 [Цены службы приложений]: https://azure.microsoft.com/pricing/details/app-service/
 [.NET server SDK overview]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
-[Концепции проверки подлинности]: ../app-service/app-service-authentication-overview.md
+[Концепции проверки подлинности]: ../app-service/overview-authentication-authorization.md
 [Быстрый запуск проверки подлинности]: app-service-mobile-auth.md
 
 [портал Azure]: https://portal.azure.com/

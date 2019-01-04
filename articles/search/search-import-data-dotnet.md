@@ -10,12 +10,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 01/13/2017
 ms.custom: seodec2018
-ms.openlocfilehash: ae723e07f92a05f128ca78a7c5974cd0ebc55ac6
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: a34a48f8816315602fc497d4f39dcfee7fe2b032
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53313298"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53634904"
 ---
 # <a name="upload-data-to-azure-search-using-the-net-sdk"></a>Отправка данных в службу поиска Azure с помощью пакета SDK для .NET
 > [!div class="op_single_selector"]
@@ -208,11 +208,11 @@ public partial class Hotel
 Прежде всего обратите внимание, что каждое общедоступное свойство `Hotel` соответствует полю в определении индекса. Но между ними есть одно принципиальное различие: Имя каждого поля начинается со строчной буквы ("верблюжий" регистр), а имя каждого общего свойства `Hotel` — с прописной (регистр Pascal). Это часто встречается в приложениях .NET, выполняющих привязку данных, если целевая схема не подлежит управлению разработчика приложения. Чтобы не нарушать правил присвоения имен .NET, указывая имена свойств в нижнем регистре, вы можете сделать так, чтобы пакет SDK автоматически сопоставлял имена свойств в нижнем регистре, с помощью атрибута `[SerializePropertyNamesAsCamelCase]` .
 
 > [!NOTE]
-> Пакет SDK службы поиска Azure для .NET использует библиотеку [NewtonSoft JSON.NET](http://www.newtonsoft.com/json/help/html/Introduction.htm) для сериализации и десериализации настраиваемых объектов модели в JSON и обратно. При необходимости эту сериализацию можно настроить. Дополнительные сведения см. в разделе [Пользовательская сериализация с помощью JSON.NET](search-howto-dotnet-sdk.md#JsonDotNet). Например, в приведенном выше примере кода в свойстве `DescriptionFr` можно указать атрибут `[JsonProperty]`.
+> Пакет SDK службы поиска Azure для .NET использует библиотеку [NewtonSoft JSON.NET](https://www.newtonsoft.com/json/help/html/Introduction.htm) для сериализации и десериализации настраиваемых объектов модели в JSON и обратно. При необходимости эту сериализацию можно настроить. Дополнительные сведения см. в разделе [Пользовательская сериализация с помощью JSON.NET](search-howto-dotnet-sdk.md#JsonDotNet). Например, в приведенном выше примере кода в свойстве `DescriptionFr` можно указать атрибут `[JsonProperty]`.
 > 
 > 
 
-Вторая важная составляющая класса `Hotel` — типы данных общих свойств. Типы .NET этих свойств сопоставляются с эквивалентными типами полей в определении индекса. Например, свойство строки `Category` сопоставляется с полем `category`, которое имеет тип `DataType.String`. Аналогичные сопоставления присутствуют между типами `bool?` и `DataType.Boolean`, `DateTimeOffset?` и `DataType.DateTimeOffset` и т. д. Конкретные правила сопоставления типов указаны в описании метода `Documents.Get` в [справочнике по SDK для .NET службы поиска Azure](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations#Microsoft_Azure_Search_IDocumentsOperations_GetWithHttpMessagesAsync__1_System_String_System_Collections_Generic_IEnumerable_System_String__Microsoft_Azure_Search_Models_SearchRequestOptions_System_Collections_Generic_Dictionary_System_String_System_Collections_Generic_List_System_String___System_Threading_CancellationToken_).
+Вторая важная составляющая класса `Hotel` — типы данных общих свойств. Типы .NET этих свойств сопоставляются с эквивалентными типами полей в определении индекса. Например, свойство строки `Category` сопоставляется с полем `category`, которое имеет тип `DataType.String`. Аналогичные сопоставления присутствуют между типами `bool?` и `DataType.Boolean`, `DateTimeOffset?` и `DataType.DateTimeOffset` и т. д. Конкретные правила сопоставления типов указаны в описании метода `Documents.Get` в [справочнике по SDK для .NET службы поиска Azure](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.documentsoperationsextensions.get).
 
 Возможность использовать собственные классы как документы работает и в обратную сторону. Вы также можете получать результаты поиска, настроив пакет SDK на автоматическую десериализацию в выбранный тип, как показано в [следующей статье](search-query-dotnet.md).
 
@@ -225,7 +225,7 @@ public partial class Hotel
 
 При разработке собственных классов модели для сопоставления с индексом поиска Azure рекомендуется объявлять свойства типов значений, такие как `bool` и `int`, допускающих нулевое значение (например: `bool?` вместо `bool`). При использовании ненулевого свойства необходимо **гарантировать** , что документы в индексе не будут содержать значение NULL для соответствующего поля. Ни пакет SDK, ни служба поиска Azure не помогут вам это обеспечить.
 
-Это не просто гипотетическое соображение. Представьте себе ситуацию, когда вы добавляете новое поле в существующий индекс с типом `DataType.Int32`. После обновления определения индекса все документы будут иметь значение null для этого нового поля (поскольку все типы допускают значение NULL в службе поиска Azure). Если затем для этого поля вы используете класс модели со свойством `int`, не допускающим нулевое значение, при попытке получения документов вы получите `JsonSerializationException` следующим образом:
+Это не просто гипотетическое соображение. Представьте себе ситуацию, когда вы добавляете новое поле в имеющийся индекс с типом `DataType.Int32`. После обновления определения индекса все документы будут иметь значение null для этого нового поля (поскольку все типы допускают значение NULL в службе поиска Azure). Если затем для этого поля вы используете класс модели со свойством `int`, не допускающим нулевое значение, при попытке получения документов вы получите `JsonSerializationException` следующим образом:
 
     Error converting value {null} to type 'System.Int32'. Path 'IntValue'.
 

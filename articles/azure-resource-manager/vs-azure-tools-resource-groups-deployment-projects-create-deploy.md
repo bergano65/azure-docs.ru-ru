@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/02/2018
 ms.author: tomfitz
-ms.openlocfilehash: c5f1c5add069be99f7a6f467f6e3e2bd9c2b3535
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
+ms.openlocfilehash: 082170d6f8bfb687195de87cde4247697571b0d6
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45543094"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53715925"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Создание и развертывание групп ресурсов Azure с помощью Visual Studio
 С помощью Visual Studio можно создать проект для развертывания инфраструктуры и кода в Azure. Например, можно определить веб-узел, веб-сайт и базу данных для приложения, а затем развернуть эту инфраструктуру вместе с кодом. Visual Studio предоставляет разные начальные шаблоны для распространенных сценариев развертывания. В этой статье показано, как развернуть веб-приложение и базу данных SQL.  
@@ -132,7 +132,7 @@ ms.locfileid: "45543094"
     ![Кнопка "Изменить параметры"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/edit-parameters.png)
 4. Укажите значения пустых параметров и нажмите кнопку **Сохранить** . К пустым параметрам относится **hostingPlanName**, **administratorLogin**, **administratorLoginPassword** и **databaseName**.
    
-    **hostingPlanName** задает имя [плана службы приложений](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) . 
+    **hostingPlanName** задает имя [плана службы приложений](../app-service/overview-hosting-plans.md) . 
    
     **administratorLogin** задает имя администратора SQL Server. Не используйте общие имена администраторов, такие как **sa** или **admin**. 
    
@@ -141,7 +141,7 @@ ms.locfileid: "45543094"
     **databaseName** задает имя создаваемой базы данных. 
    
     ![Диалоговое окно "Изменение параметров"](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/provide-parameters.png)
-5. Щелкните кнопку **Развернуть** , чтобы развернуть проект в Azure. Консоль PowerShell откроется вне экземпляра Visual Studio. При появлении запроса в консоли PowerShell введите пароль администратора базы данных. **Консоль PowerShell может быть скрыта под другими элементами или свернута на панели задач.** Откройте ее и введите пароль.
+5. Щелкните кнопку **Развернуть** , чтобы развернуть проект в Azure. Консоль PowerShell откроется вне экземпляра Visual Studio. При появлении запроса в консоли PowerShell введите пароль администратора базы данных. **Консоль PowerShell может быть скрыта под другими элементами или свернута на панели задач.**  Откройте ее и введите пароль.
    
    > [!NOTE]
    > В Visual Studio может отобразиться запрос на установку командлетов Azure PowerShell. Командлеты Azure PowerShell необходимы для успешного развертывания групп ресурсов. При появлении запроса установите их. Дополнительные сведения см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/install-azurerm-ps).
