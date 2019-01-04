@@ -21,7 +21,7 @@ ms.lasthandoff: 07/11/2018
 ms.locfileid: "38581272"
 ---
 # <a name="datasets-and-linked-services-in-azure-data-factory"></a>Наборы данных и связанные службы в фабрике данных Azure 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
 > * [Версия 1](v1/data-factory-create-datasets.md)
 > * [Текущая версия](concepts-datasets-linked-services.md)
 
