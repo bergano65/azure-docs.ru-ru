@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: 8bc725a5d9e3e9cdf82a01693aed83bff1f16c04
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: c2202a194c3912bd9a8b8f534df792e6f1a3543b
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38991695"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53998699"
 ---
 # <a name="start-monitoring-your-nodejs-web-application"></a>Запуск мониторинга веб-приложения Node.js
 
@@ -124,7 +124,7 @@ ms.locfileid: "38991695"
 
    ![Граф метрик сервера](./media/app-insights-nodejs-quick-start/009-Black.png)
 
-Дополнительные сведения о мониторинге Node.js см. в статье [Мониторинг служб и приложений Node.js с помощью Application Insights](app-insights-nodejs.md).
+Дополнительные сведения о мониторинге Node.js см. в статье [Мониторинг служб и приложений Node.js с помощью Application Insights](../azure-monitor/app/nodejs.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

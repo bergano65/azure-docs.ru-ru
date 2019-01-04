@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.author: hrasheed
-ms.openlocfilehash: ace025f096b756259d25ca2adb347dd23a12a910
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 280d56951053870d5dc1bb8fba52cc089e842757
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53409529"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53743873"
 ---
 # <a name="use-ssh-tunneling-to-access-apache-ambari-web-ui-jobhistory-namenode-apache-oozie-and-other-web-uis"></a>Использование туннелирования SSH для доступа к пользовательскому веб-интерфейсу Apache Ambari, JobHistory, NameNode, Apache Oozie и другим пользовательским веб-интерфейсам
 
@@ -47,7 +47,7 @@ ms.locfileid: "53409529"
 
 * Веб-браузер, который можно настроить на использование прокси-сервера SOCKS5.
 
-    > [!WARNING]
+    > [!WARNING]  
     > Встроенная в параметры Интернета в Windows поддержка прокси-сервера SOCKS не применяется к SOCKS5 и не работает при выполнении действий в этом документе. Следующие браузеры используют параметры прокси-сервера Windows и в настоящее время не будут работать при выполнении действий в этом документе.
     >
     > * Microsoft Edge
@@ -78,7 +78,7 @@ ssh -C2qTnNf -D 9876 sshuser@clustername-ssh.azurehdinsight.net
 
 ## <a name="useputty"></a>Создание туннеля с помощью PuTTY
 
-[PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty) — это графический клиент SSH для Windows. Если вы не работали с PuTTY, ознакомьтесь с [документацией по PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html). Для создания туннеля SSH с помощью PuTTY выполните следующие действия.
+[PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty) — это графический клиент SSH для Windows. Если вы не работали с PuTTY, ознакомьтесь с [документацией по PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/docs.html). Для создания туннеля SSH с помощью PuTTY выполните следующие действия.
 
 ### <a name="create-or-load-a-session"></a>Создание или загрузка сеанса
 
@@ -120,7 +120,7 @@ ssh -C2qTnNf -D 9876 sshuser@clustername-ssh.azurehdinsight.net
    > [!NOTE]  
    > Если выбрать параметр **Remote DNS** (Удаленная служба DNS), то запросы службы доменных имен (DNS) будут разрешаться с помощью кластера HDInsight. Этот параметр разрешает запросы DNS с помощью головного узла кластера.
 
-2. Чтобы проверить, работает ли туннель, зайдите на сайт [http://www.whatismyip.com/](http://www.whatismyip.com/). Возвращаемый IP-адрес должен быть адресом, который используется центром обработки данных Microsoft Azure.
+2. Чтобы проверить, работает ли туннель, зайдите на сайт [https://www.whatismyip.com/](https://www.whatismyip.com/). Возвращаемый IP-адрес должен быть адресом, который используется центром обработки данных Microsoft Azure.
 
 ## <a name="verify-with-ambari-web-ui"></a>Проверка для веб-интерфейса Ambari
 

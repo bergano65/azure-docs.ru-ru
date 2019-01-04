@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: bonova
 ms.author: bonova
-ms.reviewer: carlrab
+ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 8795930c6b676e7e710f112e8d9eedd6ab9084b5
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: cf5035d4dd1c58baff66bd5edbdac42c08d6baab
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47164571"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53600187"
 ---
 # <a name="operating-the-query-store-in-azure-sql-database"></a>Управление хранилищем запросов в базе данных SQL Azure
 Хранилище запросов в Azure является полностью управляемой службой базы данных, которая непрерывно собирает и предоставляет подробные статистические сведения обо всех запросах. Хранилище запросов можно рассматривать как аналог бортового самописца, который значительно упрощает устранение проблем, отражающихся на производительности запросов, для клиентов в облаке и в локальной среде. В этой статье объясняются некоторые аспекты управления хранилищем запросов в Azure. С помощью предварительно собранных данных о запросах можно быстро диагностировать и устранять проблемы с производительностью, что позволяет уделять больше времени основным рабочим задачам. 

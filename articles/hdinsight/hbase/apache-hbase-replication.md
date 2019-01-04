@@ -9,20 +9,20 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/15/2018
-ms.openlocfilehash: b03cffe35337ee5720944dc4cfe88c17c3b5b748
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 933506e732926b0f3827f039a65e78acd3a6932b
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53163842"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53653821"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
-Настройка репликации [Apache HBase](http://hbase.apache.org/) в пределах одной или двух виртуальных сетей в Azure.
+Настройка репликации [Apache HBase](https://hbase.apache.org/) в пределах одной или двух виртуальных сетей в Azure.
 
 Репликация кластера использует методологию source-push. Кластер HBase может быть исходным, кластером назначения или выполнять обе роли одновременно. Репликация выполняется асинхронно. Целью репликации в конечном итоге является согласованность. При получении источником изменения в семействе столбцов с включенной репликацией такое изменение распространяется на все кластеры назначения. При репликации данных с одного кластера на другой исходный кластер и все кластеры, которые уже потребили данные, отслеживаются для предотвращения циклических репликаций.
 
-В этом руководстве показано, как настроить репликацию "источник — назначение". Другие топологии кластеров см. в [справочном руководстве по Apache HBase](http://hbase.apache.org/book.html#_cluster_replication).
+В этом руководстве показано, как настроить репликацию "источник — назначение". Другие топологии кластеров см. в [справочном руководстве по Apache HBase](https://hbase.apache.org/book.html#_cluster_replication).
 
 Примеры использования репликации HBase для одной виртуальной сети:
 
@@ -121,7 +121,7 @@ ms.locfileid: "53163842"
 
     Замените `sshuser` учетной записью пользователя SSH, указанной при создании виртуальной машины DNS.
 
-    > [!NOTE]
+    > [!NOTE]  
     > Есть несколько способов получить служебную программу `ssh`. В Linux, Unix и macOS она предоставляется как часть операционной системы. Если вы используете Windows, рассмотрите один из следующих вариантов:
     >
     > * [Azure Cloud Shell](../../cloud-shell/quickstart.md);
@@ -162,7 +162,7 @@ ms.locfileid: "53163842"
     };
     ```
     
-    > [!IMPORTANT]
+    > [!IMPORTANT]  
     > Замените значения в разделе `goodclients` следующим диапазоном IP-адресов двух виртуальных сетей. Этот раздел определяет адреса, по которым этот DNS-сервер принимает запросы.
 
     Чтобы изменить этот файл, используйте следующую команду:
@@ -197,7 +197,7 @@ ms.locfileid: "53163842"
     };
     ```
 
-    > [!IMPORTANT]
+    > [!IMPORTANT]  
     > Замените значение `v5ant3az2hbe1edzthhvwwkcse.bx.internal.cloudapp.net` DNS-суффиксом другой виртуальной сети. IP-адрес сервера пересылки представляет собой частный IP-адрес DNS-сервера в другой виртуальной сети.
 
     Чтобы изменить этот файл, используйте следующую команду:
@@ -221,7 +221,7 @@ ms.locfileid: "53163842"
     nslookup vnet2dns.v5ant3az2hbe1edzthhvwwkcse.bx.internal.cloudapp.net
     ```
 
-    > [!IMPORTANT]
+    > [!IMPORTANT]  
     > Замените значение `vnet2dns.v5ant3az2hbe1edzthhvwwkcse.bx.internal.cloudapp.net` полным доменным именем (FQDN) виртуальной машины DNS в другой сети.
     >
     > Замените `10.2.0.4` __внутренним IP-адресом__ пользовательского DNS-сервера в другой виртуальной сети.
@@ -258,7 +258,7 @@ sudo service bind9 status
 
 ## <a name="create-apache-hbase-clusters"></a>Создание кластеров Apache HBase
 
-В каждой виртуальной сети создайте кластер [Apache HBase](http://hbase.apache.org/) со следующей конфигурацией:
+В каждой виртуальной сети создайте кластер [Apache HBase](https://hbase.apache.org/) со следующей конфигурацией:
 
 - **Имя группы ресурсов.** Используйте те же имена групп ресурсов, как при создании виртуальных сетей.
 - **Тип кластера.** hbase
@@ -289,14 +289,13 @@ sudo service bind9 status
 5. Выберите или введите следующие сведения.
 
   1. **Имя.** Укажите **Включение репликации**.
-  2. **URI bash-скрипта.** Укажите **https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh**.
+  2. **URI bash-скрипта.** Укажите https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh**.
   3.  **Головной узел.** Выберите этот тип узла. Отмените выбор других типов узлов.
   4. **Параметры.** Параметры в следующем примере позволяют включить репликацию для всех имеющихся таблиц, а затем копировать все данные из исходного кластера в целевой.
 
           -m hn1 -s <source hbase cluster name> -d <destination hbase cluster name> -sp <source cluster Ambari password> -dp <destination cluster Ambari password> -copydata
     
-    >[!note]
-    >
+    > [!NOTE]
     > Используйте имя узла вместо полного доменного имени (FQDN) для DNS-имени как исходного, так и целевого кластера.
 
 6. Нажмите кнопку **Создать**. Выполнение скрипта может занять некоторое время, особенно при использовании аргумента **-copydata**.

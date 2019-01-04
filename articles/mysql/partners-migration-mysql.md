@@ -1,18 +1,17 @@
 ---
 title: Партнеры по миграции для базы данных Azure для MySQL | Документы Майкрософт
 description: В этой статье приведен список сторонних партнеров по миграции для решений, поддерживающих базу данных Azure для MySQL.
-services: mysql
 author: HJToland3
 ms.author: jtoland
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 08/08/2018
-ms.openlocfilehash: e50cd285d904830bd7332f39d51aaa149f38b82a
-ms.sourcegitcommit: 387d7edd387a478db181ca639db8a8e43d0d75f7
+ms.openlocfilehash: 8c081c6436939089565425a0f14bbf1856ca7ce8
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40038543"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53536769"
 ---
 # <a name="azure-database-for-mysql-migration-partners"></a>Партнеры по миграции для базы данных Azure для MySQL
 Чтобы существенно расширить поддержку вашего решения базы данных Azure для MySQL, вы можете выбрать инструменты и партнеров из обширного списка ведущих в отрасли партнеров. В данной статье рассматриваются партнеры корпорации Майкрософт, которые предлагают решения миграции, поддерживающие базу данных Azure для MySQL.

@@ -10,16 +10,16 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 04/25/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 18c35070707408f43fd0e5dfc5e3330ef62a914d
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: c1a778a006c7743b6ea19062d79cff3cfeaba3d8
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53343162"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53713276"
 ---
 # <a name="how-to-run-durable-functions-as-webjobs"></a>Запуск устойчивых функций в качестве веб-заданий
 
-Расширения [Функций Azure](../functions-overview.md) и [устойчивых функций](durable-functions-overview.md) созданы на основе [пакета SDK для веб-заданий](../../app-service/web-sites-create-web-jobs.md). `JobHost` в пакете SDK для веб-заданий — это среда выполнения в Функциях Azure. Если необходимо отслеживать поведение `JobHost` способами, недоступными в Функциях Azure, можно самостоятельно разрабатывать и запускать устойчивые функции с помощью пакета SDK для веб-заданий. Устойчивые функции можно запускать в веб-задании Azure или в любом другом месте, где работает консольное приложение.
+Расширения [Функций Azure](../functions-overview.md) и [устойчивых функций](durable-functions-overview.md) созданы на основе [пакета SDK для веб-заданий](../../app-service/webjobs-create.md). `JobHost` в пакете SDK для веб-заданий — это среда выполнения в Функциях Azure. Если необходимо отслеживать поведение `JobHost` способами, недоступными в Функциях Azure, можно самостоятельно разрабатывать и запускать устойчивые функции с помощью пакета SDK для веб-заданий. Устойчивые функции можно запускать в веб-задании Azure или в любом другом месте, где работает консольное приложение.
 
 Пример цепочки устойчивых функций доступен в версии пакета SDK для веб-заданий. Загрузите или клонируйте [репозиторий устойчивых функций](https://github.com/azure/azure-functions-durable-extension/) и перейдите к папке *samples\\webjobssdk\\chaining*.
 

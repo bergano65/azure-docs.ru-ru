@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: bd8bfb8775bc9c988bb7484ac25f189c3ff46991
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 69eaa0028f1115cafbd1ed28b66940d7faaed062
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317285"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608551"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
@@ -30,7 +30,7 @@ ms.locfileid: "52317285"
 
 3. Настройка кластера Kafka для использования Log Analytics. Дополнительные сведения см. в статье об [использовании Log Analytics для мониторинга HDInsight](../hdinsight-hadoop-oms-log-analytics-tutorial.md).
 
-    > [!NOTE]
+    > [!NOTE]  
     > Кроме того, можно настроить кластер для использования Log Analytics с помощью командлета `Enable-AzureRmHDInsightOperationsManagementSuite`. Для использования этого командлета требуется указанная ниже информация.
     >
     > * Имя кластера HDInsight.
@@ -38,7 +38,7 @@ ms.locfileid: "52317285"
     > * Первичный ключ для подключения к Log Analytics. Чтобы найти первичный ключ, откройте рабочую область на портале Azure и выберите __Дополнительные параметры__ в меню слева. В разделе "Дополнительные параметры" последовательно выберите __Подключенные источники__>__Серверы с Linux__.
 
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Подготовка данных для Log Analytics может занять около 20 минут.
 
 ## <a name="query-logs"></a>Журналы запросов
@@ -57,7 +57,7 @@ ms.locfileid: "52317285"
 
     * Исходящих байт в секунду: `metrics_kafka_CL | where ClusterName_s == "your_kafka_cluster_name" and InstanceName_s == "kafka-BrokerTopicMetrics-BytesOutPerSec-Count" | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_BytesOutPerSec_Count_value_d) by bin(TimeGenerated, 1h)`
 
-    > [!IMPORTANT]
+    > [!IMPORTANT]  
     > Замените значения запроса своими сведениями об определенном кластере. Например, для параметра `ClusterName_s` укажите имя кластера. `HostName_s` должно быть присвоено доменное имя рабочего узла в кластере.
 
     Кроме того, вы можете ввести `*` для поиска всех типов данных журнала. В настоящее время для запросов доступны следующие журналы:

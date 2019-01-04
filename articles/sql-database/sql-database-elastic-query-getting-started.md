@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: MladjoA
 ms.author: mlandzic
-ms.reviewer: ''
+ms.reviewer: sstein
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 9eabdae9b884b7c55d410100193c8c5a41243e09
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: da876152b55ee626025b6192a5004648a29545dc
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52864602"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53604190"
 ---
 # <a name="report-across-scaled-out-cloud-databases-preview"></a>Отчеты по масштабируемым облачным базам данных (предварительная версия)
 С помощью [эластичных запросов](sql-database-elastic-query-overview.md)можно создавать отчеты из нескольких баз данных SQL Azure из одной точки подключения. Базы данных должны быть горизонтально секционированными (сегментированными).

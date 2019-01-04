@@ -10,12 +10,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: 41c8315bab1b716f79b47afb77c6d371a757691d
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 89878b2774727d49d81ebec4c2a3c2cee355d8e8
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53386449"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53743669"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
@@ -47,7 +47,7 @@ ms.locfileid: "53386449"
 
 ### <a name="apache-zookeeper-nodes"></a>Узлы Apache Zookeeper
 
-Узлы [ZooKeeper](http://zookeeper.apache.org/) используются для выбора лидера главных служб на головных узлах, а также для уведомления служб, узлов данных (рабочих узлов) и шлюзов о том, на каком головном узле активна главная служба. По умолчанию в кластере HDInsight предусмотрено три узла ZooKeeper.
+Узлы [ZooKeeper](https://zookeeper.apache.org/) используются для выбора лидера главных служб на головных узлах, а также для уведомления служб, узлов данных (рабочих узлов) и шлюзов о том, на каком головном узле активна главная служба. По умолчанию в кластере HDInsight предусмотрено три узла ZooKeeper.
 
 ### <a name="worker-nodes"></a>Рабочие узлы
 
@@ -192,7 +192,7 @@ URL-адрес указывает, что сейчас служба работа
 Для просмотра списка доступных команд введите `help` в строке `sftp>`.
 
 > [!NOTE]  
-> Некоторые графические интерфейсы позволяют визуализировать файловую систему при подключении по протоколу SFTP. Например, [MobaXTerm](http://mobaxterm.mobatek.net/) позволяет просматривать файловую систему с помощью интерфейса, похожего на проводник Windows.
+> Некоторые графические интерфейсы позволяют визуализировать файловую систему при подключении по протоколу SFTP. Например, [MobaXTerm](https://mobaxterm.mobatek.net/) позволяет просматривать файловую систему с помощью интерфейса, похожего на проводник Windows.
 
 ### <a name="ambari"></a>Ambari
 

@@ -12,16 +12,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: mbullwin
-ms.openlocfilehash: 850ff2cfb02b5a968a40e0cd43b5c65d9d4e3490
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: b760780912642dac664f68c1f2b9d8d4ebf8cbde
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53001730"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53809902"
 ---
 # <a name="manually-configure-application-insights-for-net-applications"></a>Настройка Application Insights вручную для приложений .NET
 
-Вы можете настроить [Application Insights](app-insights-overview.md) для мониторинга разнообразных приложений, ролей приложений, компонентов или микрослужб. Для веб-приложений и служб Visual Studio предлагает [одноэтапную настройку](app-insights-asp-net.md). Для других типов приложений .NET, таких как внутренние роли сервера или классические приложения, вы можете настроить Application Insights вручную.
+Вы можете настроить [Application Insights](app-insights-overview.md) для мониторинга разнообразных приложений, ролей приложений, компонентов или микрослужб. Для веб-приложений и служб Visual Studio предлагает [одноэтапную настройку](../azure-monitor/app/asp-net.md). Для других типов приложений .NET, таких как внутренние роли сервера или классические приложения, вы можете настроить Application Insights вручную.
 
 ![Пример диаграмм мониторинга производительности](./media/app-insights-windows-services/10-perf.png)
 
@@ -90,7 +90,7 @@ ms.locfileid: "53001730"
 * Задайте ключ инструментирования в коде, например в `main()`: 
   
     `TelemetryConfiguration.Active.InstrumentationKey = "` *ваш ключ* `";` 
-* [Создайте собственную телеметрию с помощью](app-insights-api-custom-events-metrics.md#ikey).
+* [Создайте собственную телеметрию с помощью](../azure-monitor/app/api-custom-events-metrics.md#ikey).
 
 **Если у вас установлены другие пакеты Application Insights** , ключ инструментирования можно задать с помощью CONFIG-файла:
 
@@ -119,7 +119,7 @@ ms.locfileid: "53001730"
 
 ### <a name="no-data"></a>Данные отсутствуют?
 * Используйте приложение, открывая различные страницы, чтобы создать некоторый объем данных телеметрии.
-* Откройте плитку [Поиск](app-insights-diagnostic-search.md) , чтобы просмотреть отдельные события. Иногда для прохождения событий через конвейер метрики требуется чуть больше времени.
+* Откройте плитку [Поиск](../azure-monitor/app/diagnostic-search.md) , чтобы просмотреть отдельные события. Иногда для прохождения событий через конвейер метрики требуется чуть больше времени.
 * Подождите несколько секунд и нажмите **Обновить**. Диаграмма периодически обновляется, однако ее можно обновить и вручную, если вы ждете появления каких-либо данных.
 * См. раздел [Устранение неполадок](app-insights-troubleshoot-faq.md).
 
@@ -134,7 +134,7 @@ ms.locfileid: "53001730"
 Откройте порты для исходящего трафика в брандмауэре сервера. Список необходимых адресов можно просмотреть на [этой странице](https://docs.microsoft.com/azure/application-insights/app-insights-ip-addresses). 
 
 ### <a name="trouble-on-your-build-server"></a>Проблемы на сервере сборки?
-Изучите [этот элемент устранения неполадок](app-insights-asp-net-troubleshoot-no-data.md#NuGetBuild).
+Изучите [этот элемент устранения неполадок](../azure-monitor/app/asp-net-troubleshoot-no-data.md#NuGetBuild).
 
 > [!NOTE]
 > Если приложение генерирует много телеметрических данных, модуль адаптивной выборки автоматически сокращает объем отправляемых на портал данных, пересылая только репрезентативную часть событий. При этом связанные с тем же запросом события отбираются как группа, что позволяет перемещаться между связанными событиями. 
@@ -147,5 +147,5 @@ ms.locfileid: "53001730"
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player]
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [добавить дополнительную телеметрию](app-insights-asp-net-more.md) .
+* [добавить дополнительную телеметрию](../azure-monitor/app/asp-net-more.md) .
 

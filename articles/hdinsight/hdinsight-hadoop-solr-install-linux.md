@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2018
 ms.author: hrasheed
-ms.openlocfilehash: 3500a29c1cdd8b1997f67a3cf1918090dc4ca812
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: e52a7cbb5c81f779ac4d12d2f3e5fd1e4ae62852
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53383601"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53714021"
 ---
 # <a name="install-and-use-apache-solr-on-hdinsight-hadoop-clusters"></a>Установка и использование Apache Solr в кластерах HDInsight Hadoop
 
@@ -28,12 +28,12 @@ ms.locfileid: "53383601"
 
 ## <a name="whatis"></a>Что такое Solr
 
-[Apache Solr](http://lucene.apache.org/solr/features.html) — это корпоративная платформа поиска, предоставляющая многофункциональные инструменты полнотекстового поиска данных. Если Hadoop обеспечивает хранение огромных объемов данных и управление ими, то Apache Solr предоставляет возможности поиска для быстрого извлечения этих данных.
+[Apache Solr](https://lucene.apache.org/solr/features.html) — это корпоративная платформа поиска, предоставляющая многофункциональные инструменты полнотекстового поиска данных. Если Hadoop обеспечивает хранение огромных объемов данных и управление ими, то Apache Solr предоставляет возможности поиска для быстрого извлечения этих данных.
 
 > [!WARNING]   
 > Компоненты, поставляемые с кластером HDInsight, полностью поддерживаются корпорацией Майкрософт.
 >
-> Настраиваемые компоненты, такие как Solr, получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт не всегда имеет возможность устранить проблемы с пользовательскими компонентами. Может потребоваться обратиться за помощью к сообществу разработчиков открытого кода. Вы можете использовать сайты сообществ, например: [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты ([http://apache.org](http://apache.org)), например [Hadoop](http://hadoop.apache.org/).
+> Настраиваемые компоненты, такие как Solr, получают ограниченную коммерчески оправданную поддержку, способствующую дальнейшей диагностике проблемы. Служба поддержки Майкрософт не всегда имеет возможность устранить проблемы с пользовательскими компонентами. Может потребоваться обратиться за помощью к сообществу разработчиков открытого кода. Вы можете использовать сайты сообществ, например: [форум MSDN по HDInsight](https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=hdinsight), [https://stackoverflow.com](https://stackoverflow.com). Кроме того, для проектов Apache есть соответствующие сайты ([https://apache.org](https://apache.org)), например [Hadoop](https://hadoop.apache.org/).
 
 ## <a name="what-the-script-does"></a>Что делает сценарий
 
@@ -54,7 +54,7 @@ ms.locfileid: "53383601"
 
 1. В разделе __Сводка кластера__ выберите __Дополнительные параметры__, а затем — __Действия скрипта__. Используйте следующие сведения, чтобы заполнить форму.
 
-   * **Имя:** Введите понятное имя для действия сценария.
+   * **Имя:** введите понятное имя для действия сценария.
    * **URI СКРИПТА**: https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh
    * **Головной узел.** Установите этот флажок.
    * **Рабочая роль:** Установите этот флажок.
@@ -68,7 +68,7 @@ ms.locfileid: "53383601"
 ## <a name="usesolr"></a>Как использовать Solr в HDInsight
 
 > [!IMPORTANT]  
-> Действия, описанные в этом разделе, демонстрируют базовые функциональные возможности Solr. Дополнительные сведения об использовании Solr см. на [сайте Apache Solr](http://lucene.apache.org/solr/).
+> Действия, описанные в этом разделе, демонстрируют базовые функциональные возможности Solr. Дополнительные сведения об использовании Solr см. на [сайте Apache Solr](https://lucene.apache.org/solr/).
 
 ### <a name="index-data"></a>Данные индекса
 

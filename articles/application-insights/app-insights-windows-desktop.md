@@ -12,16 +12,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/15/2018
 ms.author: mbullwin
-ms.openlocfilehash: 10044f17baee8fb4d7afe9223abdbb518952e71f
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 52c07ee66e37f6bc14c5c9d6414bc47a1225af65
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52741864"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54000373"
 ---
 # <a name="monitoring-usage-and-performance-in-classic-windows-desktop-apps"></a>Мониторинг использования и производительности в классических приложениях для Windows
 
-Все приложения, размещенные на локальном компьютере, в Azure и в других облаках могут воспользоваться преимуществами Application Insights. Все, что нужно — это [разрешить обмен данными](app-insights-ip-addresses.md) со службой Application Insights. Для мониторинга приложений универсальной платформы Windows (UWP) мы рекомендуем использовать [Центр приложений Visual Studio](app-insights-mobile-center-quickstart.md).
+Все приложения, размещенные на локальном компьютере, в Azure и в других облаках могут воспользоваться преимуществами Application Insights. Все, что нужно — это [разрешить обмен данными](../azure-monitor/app/ip-addresses.md) со службой Application Insights. Для мониторинга приложений универсальной платформы Windows (UWP) мы рекомендуем использовать [Центр приложений Visual Studio](app-insights-mobile-center-quickstart.md).
 
 ## <a name="to-send-telemetry-to-application-insights-from-a-classic-windows-application"></a>Отправка данных телеметрии в Application Insights из классического приложения для Windows
 1. На [портале Azure](https://portal.azure.com) [создайте ресурс Application Insights](app-insights-create-new-resource.md). Для параметра типа приложения выберите приложение ASP.NET.
@@ -36,7 +36,7 @@ ms.locfileid: "52741864"
     `<InstrumentationKey>`*ваш ключ*`</InstrumentationKey>` 
    
     Если используется файл ApplicationInsights.config, убедитесь, что его свойства в обозревателе решений имеют следующие значения: **"Действие сборки = содержимое", "Копировать в выходной каталог = копировать"**.
-5. [Используйте API](app-insights-api-custom-events-metrics.md) для отправки данных телеметрии.
+5. [Используйте API](../azure-monitor/app/api-custom-events-metrics.md) для отправки данных телеметрии.
 6. Запустите приложение и понаблюдайте за телеметрией в ресурсе, созданном на портале Azure.
 
 ## <a name="telemetry"></a>Пример кода
@@ -77,8 +77,8 @@ ms.locfileid: "52741864"
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Создание панели мониторинга](app-insights-dashboards.md)
-* [Поиск по журналу диагностики](app-insights-diagnostic-search.md)
-* [Изучение метрик](app-insights-metrics-explorer.md)
-* [Написание запросов аналитики](app-insights-analytics.md)
+* [Создание панели мониторинга](../azure-monitor/app/app-insights-dashboards.md)
+* [Поиск по журналу диагностики](../azure-monitor/app/diagnostic-search.md)
+* [Изучение метрик](../azure-monitor/app/metrics-explorer.md)
+* [Написание запросов аналитики](../azure-monitor/app/analytics.md)
 

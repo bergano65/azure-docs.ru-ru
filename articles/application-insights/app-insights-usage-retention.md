@@ -13,12 +13,12 @@ ms.date: 05/03/2017
 ms.pm_owner: daviste;NumberByColors
 ms.reviewer: mbullwin
 ms.author: daviste
-ms.openlocfilehash: 85fd0131da6d67cb8001c4b3de25af0c4575a64d
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 7aa5dae1b23726c8b908a5f166c7f0bff67e5e6a
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52721992"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53715993"
 ---
 # <a name="user-retention-analysis-for-web-applications-with-application-insights"></a>Анализ удержания пользователей веб-приложений с помощью Application Insights
 
@@ -61,7 +61,7 @@ ms.locfileid: "52721992"
    telemetry.TrackEvent("won game");
 ```
 
-[Узнайте больше о создании пользовательских событий](app-insights-api-custom-events-metrics.md#trackevent).
+[Узнайте больше о создании пользовательских событий](../azure-monitor/app/api-custom-events-metrics.md#trackevent).
 
 
 ## <a name="next-steps"></a>Дополнительная информация

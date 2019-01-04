@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 12/10/2018
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 6a9f3fcb372606e7f608b5137fb1ed15376d72d9
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 6f6dac37d1114e8a9faa16c07fd5c14a90a5b0fb
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53407343"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53976738"
 ---
 # <a name="java-developers-guide-for-app-service-on-linux"></a>Руководство разработчика для Java для службы приложений в Linux
 
@@ -28,7 +28,7 @@ ms.locfileid: "53407343"
 
 ## <a name="logging-and-debugging-apps"></a>Ведение журнала и отладка приложений
 
-Отчеты о производительности, визуализация трафика и проверка работоспособности доступны на портале Azure для каждого приложения. Прочитайте [обзор диагностики с помощью Службы приложений Azure](/azure/app-service/app-service-diagnostics), чтобы узнать больше о том, как обращаться к этим средствам диагностики и использовать их.
+Отчеты о производительности, визуализация трафика и проверка работоспособности доступны на портале Azure для каждого приложения. Прочитайте [обзор диагностики с помощью Службы приложений Azure](/azure/app-service/overview-diagnostics), чтобы узнать больше о том, как обращаться к этим средствам диагностики и использовать их.
 
 ## <a name="application-performance-monitoring"></a>Мониторинг производительности приложения
 
@@ -54,11 +54,11 @@ az webapp log config --name ${WEBAPP_NAME} \
 az webapp log tail --name webappname --resource-group myResourceGroup
 ```
 
-Дополнительные сведения см. в разделе [Потоковая передача с использованием интерфейса командной строки Azure](../web-sites-enable-diagnostic-log.md#streaming-with-azure-cli).
+Дополнительные сведения см. в разделе [Потоковая передача с использованием интерфейса командной строки Azure](../troubleshoot-diagnostic-logs.md#streaming-with-azure-cli).
 
 ### <a name="app-logging"></a>Ведение журнала приложений
 
-Включите [ведение журнала приложений](/azure/app-service/web-sites-enable-diagnostic-log#enablediag) с помощью портала Azure или [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config), чтобы настроить службу приложений для записи выходных данных стандартной консоли приложения и потоков ошибок стандартной консоли в локальную файловую систему или хранилище BLOB-объектов Azure. Запись журналов в локальную файловую систему экземпляра службы приложений отключается через 12 часов после настройки ведения журнала. Если необходимо более длительное хранение, настройте приложение для записи выходных данных в контейнер больших двоичных объектов.
+Включите [ведение журнала приложений](/azure/app-service/troubleshoot-diagnostic-logs#enablediag) с помощью портала Azure или [Azure CLI](/cli/azure/webapp/log#az-webapp-log-config), чтобы настроить службу приложений для записи выходных данных стандартной консоли приложения и потоков ошибок стандартной консоли в локальную файловую систему или хранилище BLOB-объектов Azure. Запись журналов в локальную файловую систему экземпляра службы приложений отключается через 12 часов после настройки ведения журнала. Если необходимо более длительное хранение, настройте приложение для записи выходных данных в контейнер больших двоичных объектов.
 
 Если приложение использует [Logback](https://logback.qos.ch/) или [Log4j](https://logging.apache.org/log4j) для трассировки, то эти данные трассировки можно передать в Azure Application Insights для просмотра, выполнив инструкции по настройке платформы ведения журнала в разделе [Просмотр журналов трассировки Java в Application Insights](/azure/application-insights/app-insights-java-trace-logs). 
 
@@ -173,9 +173,6 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
 Переменные среды можно также задать в колонке "Параметры приложения" на портале Azure.
 
->[!NOTE]
-> Если вы используете базу данных Azure для Postgres, замените `ssl=true` на `sslmode=require` в строке подключения JDBC.
-
 Затем определите, должен ли источник данных быть доступным для одного приложения или для всех приложений, работающих в сервлете Tomcat.
 
 #### <a name="for-application-level-data-sources"></a>Для источников данных уровня приложения сделайте следующее. 
@@ -259,7 +256,7 @@ az webapp start -n ${WEBAPP_NAME} -g ${WEBAPP_RESOURCEGROUP_NAME}
 
     3. Подключитесь к локальному порту туннелирования с помощью клиента SFTP и передайте эти файлы в папку `/home/tomcat/lib`.
 
-    Кроме того, драйвер JDBC можно отправить с помощью FTP-клиента. Чтобы получить учетные данные FTP, следуйте этим [инструкциям](https://docs.microsoft.com/azure/app-service/app-service-deployment-credentials).
+    Кроме того, драйвер JDBC можно отправить с помощью FTP-клиента. Чтобы получить учетные данные FTP, следуйте этим [инструкциям](https://docs.microsoft.com/azure/app-service/deploy-configure-credentials).
 
 2. Если вы создали источник данных на уровне сервера, перезапустите приложение Linux службы приложений. Tomcat сбросит `CATALINA_HOME` до значения `/home/tomcat/conf` и будет использовать обновленную конфигурацию.
 

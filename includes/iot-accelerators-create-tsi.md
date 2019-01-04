@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/20/2018
 ms.author: dobett
 ms.custom: include file
-ms.openlocfilehash: 8c114ed137089e70899e601ebdc1d4d39f562601
-ms.sourcegitcommit: a3a0f42a166e2e71fa2ffe081f38a8bd8b1aeb7b
+ms.openlocfilehash: ab3d4cbe8a200e91d02177e49446065cd9c228df
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43382975"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53609078"
 ---
 ## <a name="create-a-consumer-group"></a>Создание группы потребителей
 
@@ -41,7 +41,7 @@ ms.locfileid: "43382975"
 
 [Аналитика временных рядов Azure ](../articles/time-series-insights/time-series-insights-overview.md) — это полностью управляемая служба аналитики, хранения и визуализации для управления масштабируемыми данными временного ряда Интернета вещей в облаке. Чтобы создать новую среду "Аналитики временных рядов", выполните следующие действия.
 
-1. Войдите на [портале Azure](http://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
 1. Выберите **Создать ресурс** > **Интернет вещей** > **Аналитика временных рядов**.
 

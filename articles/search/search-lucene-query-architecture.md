@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/20/2018
 ms.author: jlembicz
 ms.custom: seodec2018
-ms.openlocfilehash: 8ca9fe72e4bd5272a5303b3bacd8c0960504789d
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: dedfc7db6aef6d55fd50c94a217bdc489b9615f3
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53315817"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53633867"
 ---
 # <a name="how-full-text-search-works-in-azure-search"></a>Как работает полнотекстовый поиск в службе поиска Azure
 
@@ -385,7 +385,7 @@ search=Spacious, air-condition* +"Ocean view"
 
 + Создайте пример индекса, попробуйте выполнить различные запросы и проанализируйте результаты. Дополнительные сведения см. в разделе о [запросе индекса](search-get-started-portal.md#query-index).
 
-+ Попробуйте использовать другой синтаксис запросов на основе примеров в статьях о [поиске документов](https://docs.microsoft.com/rest/api/searchservice/search-documents#examples) или [простом синтаксисе запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) в проводнике поиска на портале.
++ Попробуйте использовать другой синтаксис запросов на основе примеров в статьях о [поиске документов](https://docs.microsoft.com/rest/api/searchservice/search-documents#bkmk_examples) или [простом синтаксисе запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) в проводнике поиска на портале.
 
 + Если вы хотите настроить ранжирование в поисковом приложении, ознакомьтесь со статьей о [добавлении профилей оценки в поисковый индекс](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index).
 
@@ -393,7 +393,7 @@ search=Spacious, air-condition* +"Ocean view"
 
 + [Настройте пользовательские анализаторы](https://docs.microsoft.com/rest/api/searchservice/custom-analyzers-in-azure-search) для минимальной или специализированной обработки определенных полей.
 
-+ Параллельно [сравните стандартный анализатор и анализатор английского языка](http://alice.unearth.ai/) на этом демонстрационном веб-сайте. 
++ Параллельно [сравните стандартный анализатор и анализатор английского языка](https://alice.unearth.ai/) на этом демонстрационном веб-сайте. 
 
 ## <a name="see-also"></a>См. также
 

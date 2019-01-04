@@ -9,19 +9,19 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: carlrab
+ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 09/20/2018
-ms.openlocfilehash: ae6ddea3860c7fc636e071b3c39c418ff4a10272
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: ad7d56b3a23d163cfbc6c9ca14c2788c5f96486b
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53273941"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53600868"
 ---
 # <a name="troubleshoot-azure-sql-database-performance-issues-with-intelligent-insights"></a>Устранение проблем с производительностью базы данных SQL Azure с помощью Intelligent Insights
 
-Эта страница содержит сведения о проблемах производительности Базы данных SQL Azure и Управляемого экземпляра Базы данных SQL, которые можно обнаружить с помощью журнала диагностики производительности базы данных [Intelligent Insights](sql-database-intelligent-insights.md). Данные телеметрии журнала диагностики можно потоково передать в [Azure Log Analytics](../azure-monitor/insights/azure-sql.md), [Центры событий Azure](../monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md), [службу хранилища Azure](sql-database-metrics-diag-logging.md#stream-into-storage) или стороннее решение для разработки настраиваемых функций оповещения и создания отчетов в соответствии с процедурами DevOps.
+Эта страница содержит сведения о проблемах производительности Базы данных SQL Azure и Управляемого экземпляра Базы данных SQL, которые можно обнаружить с помощью журнала диагностики производительности базы данных [Intelligent Insights](sql-database-intelligent-insights.md). Данные телеметрии журнала диагностики можно потоково передать в [Azure Log Analytics](../azure-monitor/insights/azure-sql.md), [Центры событий Azure](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md), [службу хранилища Azure](sql-database-metrics-diag-logging.md#stream-into-storage) или стороннее решение для разработки настраиваемых функций оповещения и создания отчетов в соответствии с процедурами DevOps.
 
 > [!NOTE]
 > Краткие инструкции по устранению неполадок производительности Базы данных SQL с помощью Intelligent Insights приведены на блок-схеме [рекомендуемой последовательности устранения неполадок](sql-database-intelligent-insights-troubleshoot-performance.md#recommended-troubleshooting-flow) в этом документе.
@@ -332,4 +332,4 @@ Intelligent Insights автоматически обнаруживает про�
 - Изучите основные понятия [Intelligent Insights](sql-database-intelligent-insights.md).
 - Используйте [журнал диагностики производительности Intelligent Insights для базы данных SQL Azure](sql-database-intelligent-insights-use-diagnostics-log.md).
 - Настройте [мониторинг базы данных SQL Azure с помощью службы "Аналитика SQL Azure"](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql).
-- Изучите [сбор и использование данных журнала из ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md).
+- Изучите [сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).

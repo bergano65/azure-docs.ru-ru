@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: 008e61841611f36c440bb4896ae5a85d0bf4d874
-ms.sourcegitcommit: df50934d52b0b227d7d796e2522f1fd7c6393478
+ms.openlocfilehash: 17c1cce5c20570f36505ce67a472280b03ef8f0e
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38991690"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53744541"
 ---
 # <a name="start-monitoring-your-aspnet-core-web-application"></a>Запуск мониторинга веб-приложения ASP.NET Core
 
@@ -33,7 +33,7 @@ ms.locfileid: "38991690"
 - [Установите пакет SDK для .NET Core 2.0.](https://www.microsoft.com/net/core)
 - Потребуется подписка Azure и веб-приложение .NET Core.
 
-Если у вас нет веб-приложения ASP.NET Core, [создайте его и добавьте Application Insights](app-insights-asp-net-core.md) с помощью нашего пошагового руководства.
+Если у вас нет веб-приложения ASP.NET Core, [создайте его и добавьте Application Insights](../azure-monitor/app/asp-net-core.md) с помощью нашего пошагового руководства.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
@@ -79,7 +79,7 @@ ms.locfileid: "38991690"
 
    ![Меню "Обзор Application Insights"](./media/app-insights-dotnetcore-quick-start/overview-001.png)
 
-2. Щелкните **Схема приложений**, чтобы получить визуальный макет отношений зависимости между компонентами приложения. Каждый компонент показывает ключевой показатель эффективности, такие как производительность, сбои и оповещения.
+2. Щелкните **схему приложений**, чтобы получить визуальный макет отношений зависимости между компонентами приложения. Каждый компонент показывает ключевой показатель эффективности, такие как производительность, сбои и оповещения.
 
    ![Схема сопоставления приложений](./media/app-insights-dotnetcore-quick-start/application-map.png)
 

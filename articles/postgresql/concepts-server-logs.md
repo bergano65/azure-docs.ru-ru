@@ -1,19 +1,17 @@
 ---
 title: Журналы сервера в базе данных Azure для PostgreSQL
 description: В этой статье объясняется, как служба "База данных Azure для PostgreSQL" создает журналы запросов и ошибок и как настраивается срок хранения журналов.
-services: postgresql
 author: rachel-msft
 ms.author: raagyema
-editor: jasonwhowell
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/04/2018
-ms.openlocfilehash: 2ee9f750ff52b8afe4be54233f1374f523a789f4
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 0e2dc2af6b4c7ddf531458136e6bcabb49be3b8f
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52845177"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53538811"
 ---
 # <a name="server-logs-in-azure-database-for-postgresql"></a>Журналы сервера в базе данных Azure для PostgreSQL 
 База данных Azure для PostgreSQL создает журналы запросов и ошибок. Журналы запросов и ошибок можно использовать для идентификации, устранения и исправления ошибок конфигурации, а также для повышения производительности. (Доступ к журналам транзакций не включен). 
@@ -30,7 +28,7 @@ ms.locfileid: "52845177"
 
 
 ## <a name="diagnostic-logs"></a>Журналы диагностики
-База данных Azure для PostgreSQL интегрирована с журналами диагностики Azure Monitor. После активации ведения журналов на сервере PostgreSQL пользователь может выбрать отправлять их в [Log Analytics](../azure-monitor/log-query/log-query-overview.md), центры событий или в службу хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md). 
+База данных Azure для PostgreSQL интегрирована с журналами диагностики Azure Monitor. После активации ведения журналов на сервере PostgreSQL пользователь может выбрать отправлять их в [Log Analytics](../azure-monitor/log-query/log-query-overview.md), центры событий или в службу хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md). 
 
 
 В приведенной ниже таблице описывается содержимое каждого журнала. Порядок появления выбранных полей зависит от выбранной конечной точки вывода. 

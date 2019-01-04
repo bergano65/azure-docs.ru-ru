@@ -1,5 +1,5 @@
 ---
-title: Эталонные данные C# в службе "Аналитика временных рядов Azure". Управление эталонными данными в среде службы "Аналитика временных рядов" с помощью C# | Документация Майкрософт
+title: Управление эталонными данными для среды "Аналитика временных рядов Azure" с помощью C# | Документация Майкрософт
 description: Из этой статьи вы узнаете, как управлять эталонными данными для среды службы "Аналитика временных рядов Azure", создав пользовательское приложение на C# (c-sharp) .NET.
 ms.service: time-series-insights
 services: time-series-insights
@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 03/23/2018
 ms.custom: seodec18
-ms.openlocfilehash: 299f1de73b1b0023f55089417b9d9ee5ba98b93f
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: cded580e9083b9056bafe8070626a34726e8595a
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53276848"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53556005"
 ---
 # <a name="manage-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Управление эталонными данными для среды Azure Time Series Insights с помощью C#
 

@@ -7,17 +7,17 @@ ms.subservice: monitor
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: jodebrui
-ms.author: jodebrui
+author: juliemsft
+ms.author: jrasnick
 ms.reviewer: genemi
 manager: craigg
 ms.date: 09/14/2018
-ms.openlocfilehash: ac7b568d95b9a2c382b1c167965942f0733012c4
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: c41420e46a0bd4afbaed96da0e2fb9775d49c6fc
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52874929"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53606543"
 ---
 # <a name="monitor-in-memory-oltp-storage"></a>Мониторинг хранилища выполняющейся в памяти OLTP
 При использовании [выполняющейся в памяти OLTP](sql-database-in-memory.md) данные в оптимизированных для памяти таблицах и переменные таблиц находятся в выполняющемся в памяти хранилище OLTP. В каждом уровне обслуживания "Премиум" и "Критически важный для бизнеса" используется максимальный объем хранилища OLTP в памяти. Ознакомьтесь с разделами [Ограничения ресурсов на основе DTU — отдельная база данных](sql-database-dtu-resource-limits-single-databases.md), [Ограничения ресурсов на основе DTU — эластичные пулы](sql-database-dtu-resource-limits-elastic-pools.md),[Ограничения ресурсов на основе виртуальных ядер — отдельные базы данных](sql-database-vcore-resource-limits-single-databases.md) и [Ограничения ресурсов на основе виртуальных ядер — эластичные пулы](sql-database-vcore-resource-limits-elastic-pools.md).

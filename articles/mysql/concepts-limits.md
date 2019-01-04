@@ -1,20 +1,17 @@
 ---
 title: Ограничения в службе "База данных Azure для MySQL"
 description: В этой статье описываются ограничения в службе "База данных Azure для MySQL", например количество подключений и параметры подсистемы хранилища.
-services: mysql
 author: ajlam
 ms.author: andrela
-manager: kfile
-editor: jasonwhowell
 ms.service: mysql
-ms.topic: article
+ms.topic: conceptual
 ms.date: 12/6/2018
-ms.openlocfilehash: 89451122ff8cae33f1710fc1458fcd4277964e1f
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 19fc20f21a57c2325254581c642b75c92c221fd9
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53090998"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53536096"
 ---
 # <a name="limitations-in-azure-database-for-mysql"></a>Ограничения в службе "База данных Azure для MySQL"
 В следующих разделах приводятся ограничения, касающиеся емкости, поддерживаемых подсистем хранилища, поддерживаемых разрешений, поддерживаемых инструкций языка обработки данных и функциональных возможностей в службе базы данных. Кроме того, ознакомьтесь с [общими ограничениями](https://dev.mysql.com/doc/mysql-reslimits-excerpt/5.6/en/limits.html), применимыми к ядру СУБД базы данных MySQL.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/14/2017
 ms.author: johnkem
 ms.component: alerts
-ms.openlocfilehash: e3159ac4074e7ff437e052e0e2c1ae7d31378abe
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 8fd7161208f6303e03deaacca6a1e2fad24ec45e
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53345401"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53580882"
 ---
 # <a name="migrate-azure-alerts-on-management-events-to-activity-log-alerts"></a>Перенос оповещений Azure о событиях управления в оповещения журнала действий
 
@@ -110,9 +110,9 @@ ResourceUri          : /subscriptions/<subscription-id>/resourceGroups/<resource
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Узнайте больше о [журнале действий](../../monitoring-and-diagnostics/monitoring-overview-activity-logs.md).
+* Узнайте больше о [журнале действий](../../azure-monitor/platform/activity-logs-overview.md).
 * Настройте [оповещения журнала действий на портале Azure](../../azure-monitor/platform/activity-log-alerts.md).
 * Настройте [оповещения журнала действий с помощью Resource Manager](../../azure-monitor/platform/alerts-activity-log.md).
 * Просмотрите [схему webhook оповещений журнала действий](../../azure-monitor/platform/activity-log-alerts-webhook.md).
-* Узнайте больше об [уведомлениях службы](../../monitoring-and-diagnostics/monitoring-service-notifications.md).
+* Узнайте больше об [уведомлениях службы](../../azure-monitor/platform/service-notifications.md).
 * Узнайте больше о [группах действий](../../azure-monitor/platform/action-groups.md).

@@ -8,33 +8,33 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 517ebbf739c64c0364dc21386fee86ebc740e997
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: b657d54c3ebbe5afc20fc98c1348bb783410df60
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "30198134"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53444349"
 ---
 Созданный сертификат клиента автоматически устанавливается на компьютере, который использовался для его создания. Если вы хотите установить созданный сертификат клиента на другой клиентский компьютер, то его необходимо экспортировать.
 
 1. Чтобы экспортировать сертификат клиента, откройте раздел **Управление сертификатами пользователей**. По умолчанию создаваемые сертификаты клиента хранятся в папке Certificates - Current User\Personal\Certificates. Щелкните правой кнопкой мыши сертификат, который нужно экспортировать, выберите **Все задачи**, а затем — **Экспорт**, чтобы открыть **мастер экспорта сертификатов**.
 
-  ![экспорт.](./media/vpn-gateway-certificates-export-client-cert-include/export.png)
+   ![экспорт.](./media/vpn-gateway-certificates-export-client-cert-include/export.png)
 2. В мастере экспорта сертификатов нажмите кнопку **Далее**, чтобы продолжить.
 
-  ![Далее](./media/vpn-gateway-certificates-export-client-cert-include/next.png)
+   ![Далее](./media/vpn-gateway-certificates-export-client-cert-include/next.png)
 3. Выберите **Да, экспортировать закрытый ключ**, а затем нажмите кнопку **Далее**.
 
-  ![Экспорт закрытого ключа](./media/vpn-gateway-certificates-export-client-cert-include/privatekeyexport.png)
+   ![Экспорт закрытого ключа](./media/vpn-gateway-certificates-export-client-cert-include/privatekeyexport.png)
 4. На странице **Формат экспортируемого файла** оставьте настройки по умолчанию. Не забудьте установить флажок **Включить по возможности все сертификаты в путь сертификации**. При этом также будут экспортированы данные корневого сертификата, необходимые для успешной аутентификации клиента. Без этих данных аутентификация клиента завершится ошибкой, так как у клиента не будет доверенного корневого сертификата. Затем щелкните **Далее**.
 
-  ![Формат экспортируемого файла](./media/vpn-gateway-certificates-export-client-cert-include/includeallcerts.png)
+   ![Формат экспортируемого файла](./media/vpn-gateway-certificates-export-client-cert-include/includeallcerts.png)
 5. На странице **Безопасность** следует защитить закрытый ключ. Если вы решите использовать пароль, обязательно запишите или запомните пароль, заданный для этого сертификата. Затем щелкните **Далее**.
 
-  ![security](./media/vpn-gateway-certificates-export-client-cert-include/security.png)
+   ![security](./media/vpn-gateway-certificates-export-client-cert-include/security.png)
 6. На странице **Имя экспортируемого файла** нажмите кнопку **Обзор**, чтобы перейти в расположение для экспорта сертификата. В поле **Имя файла**введите имя для файла сертификата. Затем щелкните **Далее**.
 
-  ![Имя экспортируемого файла](./media/vpn-gateway-certificates-export-client-cert-include/filetoexport.png)
+   ![Имя экспортируемого файла](./media/vpn-gateway-certificates-export-client-cert-include/filetoexport.png)
 7. Нажмите кнопку **Готово** , чтобы экспортировать сертификат.
 
-  ![Готово](./media/vpn-gateway-certificates-export-client-cert-include/finish.png)
+   ![Готово](./media/vpn-gateway-certificates-export-client-cert-include/finish.png)

@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
-ms.openlocfilehash: e9e88fc9aa3aad902c140ac176e31571b9e55ee3
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: ef55f25657d1decb09e438d443e7c289823f7d9d
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353747"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53605914"
 ---
 # <a name="frequently-asked-questions-for-connected-factory-solution-accelerator"></a>Часто задаваемые вопросы об акселераторе решения "Подключенная фабрика"
 
@@ -27,7 +27,7 @@ ms.locfileid: "49353747"
 
 ### <a name="what-is-opc-ua"></a>Что такое OPC UA?
 
-Унифицированная архитектура OPC (OPC UA, выпущена в 2008 г.) — это независящий от платформы, сервис-ориентированный стандарт взаимодействия. OPC UA используется в различных производственных системах и устройствах, например в производственных компьютерах, контроллерах ПЛК и датчиках. В OPC UA интегрированы функции спецификаций классической технологии OPC с одной расширяемой платформой со встроенными средствами обеспечения безопасности. Этим стандартом управляет OPC Foundation. [OPC Foundation](http://opcfoundation.org/) — это некоммерческая организация, в которую входит более 440 членов. Ее цель заключается в обеспечении надежного, безопасного взаимодействия между несколькими поставщиками и платформами на основе спецификации OPC через следующие компоненты:
+Унифицированная архитектура OPC (OPC UA, выпущена в 2008 г.) — это независящий от платформы, сервис-ориентированный стандарт взаимодействия. OPC UA используется в различных производственных системах и устройствах, например в производственных компьютерах, контроллерах ПЛК и датчиках. В OPC UA интегрированы функции спецификаций классической технологии OPC с одной расширяемой платформой со встроенными средствами обеспечения безопасности. Этим стандартом управляет OPC Foundation. [OPC Foundation](https://opcfoundation.org/) — это некоммерческая организация, в которую входит более 440 членов. Ее цель заключается в обеспечении надежного, безопасного взаимодействия между несколькими поставщиками и платформами на основе спецификации OPC через следующие компоненты:
 
 * Инфраструктура
 * спецификации;
@@ -78,7 +78,7 @@ IP-адрес можно удалить двумя вариантами.
 1. Чтобы запустить все контейнеры симуляции, сделайте следующее:
     * Экспортируйте переменную оболочки с именем **IOTHUB_CONNECTIONSTRING**. Используйте значение **IotHubOwnerConnectionString** в файле `<name of your deployment>.config.user`. Например: 
 
-        ```
+        ```sh
         export IOTHUB_CONNECTIONSTRING="HostName={yourdeployment}.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey={your key}"
         ```
 
@@ -142,7 +142,7 @@ IP-адрес можно удалить двумя вариантами.
 
 Чтобы включить интерактивную карту в решении "Подключенная фабрика", требуется учетная запись Azure Maps.
 
-При развертывании с сайта [www.azureiotsolutions.com](http://www.azureiotsolutions.com) учетная запись Azure Maps добавляется в группу ресурсов, содержащую службы акселератора решений.
+При развертывании с сайта [www.azureiotsolutions.com](https://www.azureiotsolutions.com) учетная запись Azure Maps добавляется в группу ресурсов, содержащую службы акселератора решений.
 
 При развертывании с помощью сценария `build.ps1` в репозитории GitHub подключенной фабрики задайте переменную среды `$env:MapApiQueryKey` в окне создания для [ключа учетной записи Azure Maps](../azure-maps/how-to-manage-account-keys.md). Интерактивная карта включается автоматически.
 
@@ -174,15 +174,15 @@ IP-адрес можно удалить двумя вариантами.
 
     ```json
     [
-      {
-        "ApplicationUri": "<the_value_of_OpcUri_of_your_station",
-        "DisplayName": "<name_of_the_datapoint>",
-        "NodeId": "value_of_NodeId_of_your_datapoint_in_the_station",
-        "Value": {
-          "Value": <datapoint_value>,
-          "SourceTimestamp": "<timestamp>"
-        }
-      }
+      {
+        "ApplicationUri": "<the_value_of_OpcUri_of_your_station",
+        "DisplayName": "<name_of_the_datapoint>",
+        "NodeId": "value_of_NodeId_of_your_datapoint_in_the_station",
+        "Value": {
+          "Value": <datapoint_value>,
+          "SourceTimestamp": "<timestamp>"
+        }
+      }
     ]
     ```
 

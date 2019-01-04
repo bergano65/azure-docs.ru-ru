@@ -10,12 +10,12 @@ ms.component: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: 80e39e845ab631ad5cc3ae8af9e2e42f09b521bf
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 2da6795e938f1a0c0ed0495fb169007126501eea
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49342196"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53753666"
 ---
 # <a name="troubleshooting-bing-speech"></a>Устранение неполадок Распознавания речи Bing
 
@@ -52,7 +52,7 @@ ms.locfileid: "49342196"
 > [!NOTE]
 > Замените `YOUR_SUBSCRIPTION_KEY` фактическим ключом подписки.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/Powershell)
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```Powershell
 $FetchTokenHeader = @{
@@ -88,7 +88,7 @@ curl -v -X POST "https://api.cognitive.microsoft.com/sts/v1.0/issueToken" -H "Co
 > [!NOTE]
 > Замените `YOUR_AUDIO_FILE` на путь к предварительно записанному аудиофайлу и `YOUR_ACCESS_TOKEN` на токен авторизации, возвращенный на предыдущем шаге.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/Powershell)
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```Powershell
 

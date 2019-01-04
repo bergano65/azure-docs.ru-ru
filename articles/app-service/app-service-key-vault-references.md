@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 8add470048d3ead3f75ff85dd6f489d798af5e29
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: c47de9fbe1b9923ff8ce1c38a9a9695af4311858
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53253448"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53723150"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions-preview"></a>Использование ссылок на Key Vault в Службе приложений и Функциях Azure (предварительная версия)
 
@@ -32,7 +32,7 @@ ms.locfileid: "53253448"
 
 1. Чтобы создать хранилище ключей, изучите [краткое руководство по Key Vault](../key-vault/quick-create-cli.md).
 
-1. Создайте для приложения [управляемое удостоверение, назначаемое системой](app-service-managed-service-identity.md).
+1. Создайте для приложения [управляемое удостоверение, назначаемое системой](overview-managed-identity.md).
 
    > [!NOTE] 
    > Ссылки на Key Vault сейчас поддерживают только назначаемые системой управляемые удостоверения. Вы не сможете использовать удостоверения, назначаемые пользователем.

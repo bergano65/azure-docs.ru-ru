@@ -3,17 +3,15 @@ title: Перенос базы данных MariaDB в базу данных Azu
 description: В этой статье описываются два распространенных способа архивации и восстановления баз данных в базе данных Azure для MariaDB с помощью таких средств, как mysqldump, MySQL Workbench и PHPMyAdmin.
 author: ajlam
 ms.author: andrela
-editor: jasonwhowell
-services: mariadb
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 5ac80ef36241b58812832c66511c0a09d49b365f
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: bcb76fcbba02bf53b48cc462e3dad8f264db02ed
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49986990"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53540450"
 ---
 # <a name="migrate-your-mariadb-database-to-azure-database-for-mariadb-using-dump-and-restore"></a>Перенос базы данных MariaDB в базу данных Azure для MariaDB с помощью резервного копирования и восстановления
 В этой статье описываются два распространенных способа архивации и восстановления баз данных в базе данных Azure для MariaDB.

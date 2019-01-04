@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 04/20/2018
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: f73ec81686575efde70b7f90239299ec4deca00c
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 5946ff5e75e7c3fedf42c23200f61e821c0d9d61
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53312992"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53631402"
 ---
 # <a name="explore-azure-search-rest-apis-using-fiddler-or-postman"></a>Работа с REST API службы "Поиск Azure" с помощью Fiddler или Postman
 
@@ -36,7 +36,7 @@ ms.locfileid: "53312992"
 Следующие инструменты широко используются в веб-разработке, но если вы знакомы с другим инструментом, инструкции в этой статье по-прежнему будут полезны.
 
 + [Классическое приложение Postman](https://www.getpostman.com/)
-+ [Telerik Fiddler](http://www.telerik.com/fiddler)
++ [Telerik Fiddler](https://www.telerik.com/fiddler)
 
 ## <a name="get-the-api-key-and-endpoint"></a>Получение ключа API и конечной точки
 

@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 07/11/2018
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 4b78675de2902736b90afa1df9ad66e2df2b0f77
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 8c63b97f9d4423bf57909da7716675915a5271ef
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53386236"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53994058"
 ---
 # <a name="tutorial-learn-how-to-call-cognitive-search-apis-preview"></a>Руководство. Руководство. Вызов API когнитивного поиска (предварительная версия)
 
@@ -59,7 +59,7 @@ ms.locfileid: "53386236"
 
 1. Создайте группу ресурсов, которая будет содержать все ресурсы, созданные в рамках этого руководства. Это упрощает очистку ресурсов после завершения руководства.
 
-1. В качестве расположения выберите один из [поддерживаемых регионов](https://docs.microsoft.com/en-us/azure/search/cognitive-search-quickstart-blob#supported-regions) для функции "Когнитивный поиск".
+1. В качестве расположения выберите один из [поддерживаемых регионов](https://docs.microsoft.com/azure/search/cognitive-search-quickstart-blob#supported-regions) для функции "Когнитивный поиск".
 
 1. В разделе ценовой категории можно выбрать **бесплатный** уровень, чтобы выполнить инструкции в руководствах. Для более глубокого анализа с использованием собственных данных создайте [платную службу](https://azure.microsoft.com/pricing/details/search/), например с уровнем **Базовый** или **Стандартный**. 
 

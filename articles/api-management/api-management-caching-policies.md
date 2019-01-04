@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: apimpm
-ms.openlocfilehash: 48b0085e52c1752c0b5ecc89ce229a5a82f74345
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 52bdeb5fe517430497c57a5c34b822df5933e3ff
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53310442"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608891"
 ---
 # <a name="api-management-caching-policies"></a>Политики кэширования в службе управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).  
@@ -118,8 +118,8 @@ ms.locfileid: "53310442"
 | cache-preference               | Выберите одно из следующих значений атрибута:<br />- `internal` — использование встроенного кэша в службе управления API;<br />- `external` — использование внешнего кэша, как описано в статье [Использование внешнего кэша Redis для Azure в Управлении API Azure](api-management-howto-cache-external.md);<br />- `prefer-external` — использование внешнего кэша, если он настроен. В противном случае используется внутренний кэш. | Нет        | `prefer-external` |
 | downstream-caching-type        | Для этого атрибута следует указать одно из таких значений:<br /><br /> - none — нисходящее кэширование не разрешено;<br />- private — разрешено нисходящее частное кэширование;<br />- public — разрешено частное и совместно используемое нисходящее кэширование.                                                                                                          | Нет        | Нет              |
 | must-revalidate                | Если включено нисходящее кэширование, этот атрибут включает или отключает директиву управления кэшем `must-revalidate` в ответах шлюза.                                                                                                                                                                                                                      | Нет        | Да              |
-| vary-by-developer              | Установите значение `true`, если нужно кэшировать ответы в зависимости от [ключа подписки](https://docs.microsoft.com/azure/api-management/api-management-subscriptions#what-is-subscriptions).                                                                                                                                                                                                                                                                                                         | Yes      |                   |
-| vary-by-developer-groups       | Установите значение `true`, если нужно кэшировать ответы в зависимости от [группы пользователя](https://docs.microsoft.com/azure/api-management/api-management-howto-create-groups).                                                                                                                                                                                                                                                                                                             | Yes      |                   |  
+| vary-by-developer              | Установите значение `true`, если нужно кэшировать ответы в зависимости от [ключа подписки](https://docs.microsoft.com/azure/api-management/api-management-subscriptions#what-is-subscriptions).                                                                                                                                                                                                                                                                                                         | Yes      |         Ложь          |
+| vary-by-developer-groups       | Установите значение `true`, если нужно кэшировать ответы в зависимости от [группы пользователя](https://docs.microsoft.com/azure/api-management/api-management-howto-create-groups).                                                                                                                                                                                                                                                                                                             | Yes      |       Ложь            |  
 
 ### <a name="usage"></a>Использование  
  Эта политика может использоваться в следующих [разделах](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#sections) и [областях](https://azure.microsoft.com/documentation/articles/api-management-howto-policies/#scopes).  

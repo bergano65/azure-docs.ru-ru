@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/26/2018
 ms.author: jjed
 ms.custom: seodec2018
-ms.openlocfilehash: d74c9c30932bd2db9059738c8dfbc21e4b1b046a
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: d16f20e3c2dfa3d670006e44f0072a3871d41c3f
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53316977"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53629907"
 ---
 # <a name="get-started-with-azure-search-in-java"></a>Начало работы с Поиском Azure в Java
 > [!div class="op_single_selector"]
@@ -34,7 +34,7 @@ ms.locfileid: "53316977"
 * [Apache Tomcat 8.5.33](https://tomcat.apache.org/download-80.cgi#8.5.33).
 
 ## <a name="about-the-data"></a>О данных
-В этом примере приложения используются данные [Геологической службы США (USGS)](http://geonames.usgs.gov/domestic/download_data.htm), отфильтрованные по штату Род-Айленд для сокращения размера набора данных. Мы будем использовать эти данные при создании приложения поиска, возвращающего важные здания, такие как больницы и школы, а также геологические объекты, например реки, озера и вершины.
+В этом примере приложения используются данные [Геологической службы США (USGS)](https://geonames.usgs.gov/domestic/download_data.htm), отфильтрованные по штату Род-Айленд для сокращения размера набора данных. Мы будем использовать эти данные при создании приложения поиска, возвращающего важные здания, такие как больницы и школы, а также геологические объекты, например реки, озера и вершины.
 
 В этом приложении программа **SearchServlet.java** создает и загружает индекс с помощью конструкции [Indexer](https://msdn.microsoft.com/library/azure/dn798918.aspx) , получая отфильтрованный набор данных USGS из общей Базы данных SQL Azure. Готовые учетные данные и сведения о подключении к сетевому источнику данных предоставляются в программном коде. С точки зрения доступа к данным дальнейшая настройка не требуется.
 
@@ -87,7 +87,7 @@ ms.locfileid: "53316977"
 ## <a name="configure-the-service-url-and-api-key"></a>Настройка URL-адреса и ключа API службы
 1. В **обозревателе проектов** дважды щелкните файл **config.properties**, чтобы изменить параметры конфигурации, содержащие имя сервера и ключ API.
 2. См. предыдущие шаги в этой статье, в которых вы нашли URL-адрес службы и ключ API на [портале Azure](https://portal.azure.com), чтобы получить значения, которые вы теперь введете в файл **config.properties**.
-3. В файле **config.properties**замените "Api Key" на ключ API для вашей службы. Затем имя службы (первый компонент URL-адреса http://servicename.search.windows.net) заменяет "service name" в том же файле.
+3. В файле **config.properties**замените "Api Key" на ключ API для вашей службы. Затем имя службы (первый компонент URL-адреса https://servicename.search.windows.net) заменяет "service name" в том же файле.
    
     ![][5]
 

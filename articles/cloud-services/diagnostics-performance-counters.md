@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/02/18
 ms.author: jeconnoc
-ms.openlocfilehash: b288c6a64572287c460e82cd8746a8504d264933
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: d332a792f693b099ce925e9b5705f09e52507522
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53322949"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54000246"
 ---
 # <a name="collect-performance-counters-for-your-azure-cloud-service"></a>Сбор данных счетчиков производительности для облачной службы Azure
 
@@ -84,7 +84,7 @@ Get-Counter -ListSet * | Where-Object CounterSetName -eq "Processor" | Select -E
 
 ### <a name="application-insights"></a>Application Insights
 
-Azure Application Insights для облачных служб позволяет указать счетчики производительности для сбора данных. После того как вы [добавите Application Insights в свой проект](../application-insights/app-insights-cloudservices.md#sdk), в проект Visual Studio добавляется файл конфигурации с именем **ApplicationInsights.config**. Он определяет, какой тип данных Application Insights собирает и отправляет в Azure.
+Azure Application Insights для облачных служб позволяет указать счетчики производительности для сбора данных. После того как вы [добавите Application Insights в свой проект](../azure-monitor/app/cloudservices.md#sdk), в проект Visual Studio добавляется файл конфигурации с именем **ApplicationInsights.config**. Он определяет, какой тип данных Application Insights собирает и отправляет в Azure.
 
 Откройте файл **ApplicationInsights.config** и найдите элемент **ApplicationInsights** > **TelemetryModules**. Каждый дочерний элемент `<Add>` определяет тип телеметрии, собираемый вместе с его конфигурацией. Тип модуля телеметрического счетчика производительности следующий: `Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule, Microsoft.AI.PerfCounterCollector`. Если этот элемент уже определен, не добавляйте его снова. Каждый счетчик производительности для сбора определяется в узле с именем `<Counters>`. Ниже приведен пример сбора данных счетчика производительности диска.
 
@@ -116,7 +116,7 @@ Application Insights автоматически собирает данные с
 * \Process(??APP_WIN32_PROC??)\I/O — обмен данными, байт в секунду
 * \Процессор (_общий объем ресурсов)\% загруженности процессора
 
-Дополнительные сведения см. в статье [Системные счетчики производительности в Application Insights](../application-insights/app-insights-performance-counters.md) и в разделе [Счетчики производительности](../application-insights/app-insights-cloudservices.md#performance-counters).
+Дополнительные сведения см. в статье [Системные счетчики производительности в Application Insights](../azure-monitor/app/performance-counters.md) и в разделе [Счетчики производительности](../azure-monitor/app/cloudservices.md#performance-counters).
 
 ### <a name="azure-diagnostics"></a>Диагностика Azure
 
@@ -294,7 +294,7 @@ counterServiceUsed.Increment();
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-- [Счетчики производительности](../application-insights/app-insights-cloudservices.md#performance-counters)
-- [Системные счетчики производительности в Application Insights](../application-insights/app-insights-performance-counters.md)
+- [Счетчики производительности](../azure-monitor/app/cloudservices.md#performance-counters)
+- [Системные счетчики производительности в Application Insights](../azure-monitor/app/performance-counters.md)
 - [Specifying a Counter Path](https://msdn.microsoft.com/library/windows/desktop/aa373193(v=vs.85)) (Указание пути счетчика)
 - [Элемент PerformanceCounters](../azure-monitor/platform/diagnostics-extension-schema-1dot3.md#performancecounters-element)

@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: d5e97d82a011bc4aba29aa597a7fc6473d17a3b2
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 5a991bf5da6d17aad6b1456e82f6c7795ab67356
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52970796"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53745029"
 ---
 # <a name="use-azure-application-insights-to-understand-how-customers-are-using-your-application"></a>Использование Azure Application Insights для анализа информации о том, как пользователи используют приложение
 
@@ -39,7 +39,7 @@ ms.locfileid: "52970796"
     - ASP.NET и веб-разработка.
     - разработка Azure;
 - Загрузите и установите [отладчик моментальных снимков Visual Studio](https://aka.ms/snapshotdebugger).
-- Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](app-insights-asp-net.md). 
+- Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](../azure-monitor/app/asp-net.md). 
 - Включите [отправку из приложения телеметрии](app-insights-usage-overview.md#send-telemetry-from-your-app) для пользовательских событий и просмотров страниц.
 - Включите [отправку контекста пользователя](https://docs.microsoft.com/azure/application-insights/app-insights-usage-send-user-context) для отслеживания действий с привязкой ко времени, чтобы максимально эффективно применить информацию об использовании.
 

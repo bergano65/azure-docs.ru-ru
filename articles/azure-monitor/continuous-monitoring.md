@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: bwren
-ms.openlocfilehash: fa5c3d65daa86a678ec278bc49759e1de7da7f0c
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 2d58a39efca8733902d157083489e59bf22ef161
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53386542"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54002286"
 ---
 # <a name="continuous-monitoring-with-azure-monitor"></a>Непрерывный мониторинг с помощью Azure Monitor
 
@@ -33,8 +33,8 @@ ms.locfileid: "53386542"
 
 - [Azure DevOps Projects](../devops-project/overview.md) предоставляет вам упрощенный интерфейс с подключением существующего кода и репозитория Git. Или можно выбрать один из примеров приложений, чтобы создать конвейер непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.
 - [Непрерывный мониторинг в вашем конвейере выпуска DevOps](../application-insights/app-insights-vsts-continuous-monitoring.md) позволяет вам контролировать или откатывать развертывание на основе данных мониторинга.
-- [Монитор состояния](../application-insights/app-insights-monitor-performance-live-website-now.md) позволяет вживую использовать приложение .NET в Windows с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода.
-- Если у вас есть доступ к коду для вашего приложения, включите полный мониторинг с помощью [Application Insights](../application-insights/app-insights-overview.md), установив пакет SDK Azure Monitor Application Insights для [.NET](../application-insights/quick-monitor-portal.md), [Java](../application-insights/app-insights-java-quick-start.md), [Node.js](../application-insights/app-insights-nodejs-quick-start.md) или [любых других языков программирования](../application-insights/app-insights-platforms.md). Это позволяет вам задавать пользовательские события, метрики или просмотры страниц, которые имеют отношение к вашему приложению и бизнесу.
+- [Монитор состояния](../azure-monitor/app/monitor-performance-live-website-now.md) позволяет вживую использовать приложение .NET в Windows с помощью Azure Application Insights, не прибегая к изменению или повторному развертыванию кода.
+- Если у вас есть доступ к коду для вашего приложения, включите полный мониторинг с помощью [Application Insights](../application-insights/app-insights-overview.md), установив пакет SDK Azure Monitor Application Insights для [.NET](../application-insights/quick-monitor-portal.md), [Java](../application-insights/app-insights-java-quick-start.md), [Node.js](../application-insights/app-insights-nodejs-quick-start.md) или [любых других языков программирования](../azure-monitor/app/platforms.md). Это позволяет вам задавать пользовательские события, метрики или просмотры страниц, которые имеют отношение к вашему приложению и бизнесу.
 
 
 
@@ -56,7 +56,7 @@ ms.locfileid: "53386542"
 ##  <a name="combine-resources-in-azure-resource-groups"></a>Объединяйте ресурсы Azure в группы ресурсов
 Типичное приложение в Azure сегодня включает в себя несколько ресурсов, таких как виртуальные машины и службы приложений, или микрослужбы, размещенные в облачных службах, кластерах службы Azure Kubernetes или Service Fabric. Эти приложения часто используют такие зависимости, как Центры событий, хранилище, SQL и Служебная шина.
 
-- Объедините ресурсы в группы ресурсов Azure, чтобы получить полное представление о всех ваших ресурсах, которые составляют различные приложения. [Azure Monitor для групп ресурсов](../monitoring-and-diagnostics/resource-group-insights.md) предоставляет простой способ отслеживания работоспособности и производительности всего приложения с полным стеком и позволяет детализировать соответствующие компоненты для любых исследований или отладки.
+- Объедините ресурсы в группы ресурсов Azure, чтобы получить полное представление о всех ваших ресурсах, которые составляют различные приложения. [Azure Monitor для групп ресурсов](../azure-monitor/insights/resource-group-insights.md) предоставляет простой способ отслеживания работоспособности и производительности всего приложения с полным стеком и позволяет детализировать соответствующие компоненты для любых исследований или отладки.
 
 ## <a name="ensure-quality-through-continuous-deployment"></a>Обеспечение качества с помощью непрерывного развертывания
 Непрерывная интеграция или непрерывное развертывание позволяет автоматически интегрировать и развертывать изменения кода в вашем приложении на основе результатов автоматического теста. Это упрощает процесс развертывания и обеспечивает качество любых изменений до их запуска в производство.
@@ -74,7 +74,7 @@ ms.locfileid: "53386542"
 - Определите действия для оповещений, чтобы использовать наиболее эффективные средства уведомления ваших администраторов. Доступные [действия для уведомления](platform/action-groups.md#create-an-action-group-by-using-the-azure-portal): SMS, электронная почта, push-уведомления или голосовые звонки.
 - Используйте более сложные действия, чтобы [подключиться к своему инструменту ITSM](platform/itsmc-overview.md) или другим системам управления оповещениями через [веб-перехватчики](platform/activity-log-alerts-webhook.md).
 - Также исправьте ситуации, выявленные в оповещениях с помощью [модулей Runbook службы автоматизации Azure](../automation/automation-webhooks.md) или [Logic Apps](/connectors/custom-connectors/create-webhook-trigger), которые можно запустить из оповещения с помощью веб-перехватчиков. 
-- Используйте [автоматическое масштабирование](../monitoring-and-diagnostics/monitor-tutorial-autoscale-performance-schedule.md) для динамического увеличения и уменьшения ваших вычислительных ресурсов на основе собранных метрик.
+- Используйте [автоматическое масштабирование](../azure-monitor/learn/tutorial-autoscale-performance-schedule.md) для динамического увеличения и уменьшения ваших вычислительных ресурсов на основе собранных метрик.
 
 ## <a name="prepare-dashboards-and-workbooks"></a>Подготовьте панели мониторинга и книги
 Гарантируя, что ваши разработки и операции имеют доступ к одной и той же телеметрии и инструментам, они могут просматривать шаблоны во всей вашей среде и минимизировать среднее время обнаружения (MTTD) и среднее время восстановления (MTTR).

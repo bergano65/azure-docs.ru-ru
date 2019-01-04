@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/23/2018
 ms.author: rkarlin
-ms.openlocfilehash: 8417b342dc032f46fddd6c57b82c402cc6c1a10d
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 35868545c46acb65ba487c546b66d8834bcb81a7
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52967731"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53543195"
 ---
 # <a name="manage-user-data-in-azure-security-center"></a>Управление данными пользователя в центре безопасности Azure
 В этой статье приводятся сведения об управлении данными пользователя в центре безопасности Azure. Управление данными пользователя включает в себя возможность доступа, удаления и экспорта данных.
@@ -98,7 +98,7 @@ GET https://<endpoint>/subscriptions/{subscriptionId}/providers/microsoft.Securi
 [Данные об оповещении](security-center-managing-and-responding-alerts.md) считаются данными безопасности и хранятся в течение двух лет.
 
 ## <a name="auditing-and-reporting"></a>Аудит и создание отчетов
-Журналы аудита контактного лица по вопросам безопасности, данные JIT и обновления оповещений хранятся в [журналах действий Azure](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md).
+Журналы аудита контактного лица по вопросам безопасности, данные JIT и обновления оповещений хранятся в [журналах действий Azure](../azure-monitor/platform/activity-logs-overview.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об управлении данными пользователя см. в статье об [управлении данными пользователя, обнаруженными в исследовании центра безопасности Azure](security-center-investigation-user-data.md).

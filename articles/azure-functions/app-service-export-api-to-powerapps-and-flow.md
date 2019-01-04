@@ -11,18 +11,18 @@ ms.topic: conceptual
 ms.date: 12/15/2017
 ms.author: glenga
 ms.reviewer: sunayv
-ms.openlocfilehash: c9ff4332a10247787e3b11c5508d0d94a1f1c8ba
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 53aa40c047b2b5201cd74c0409d56e97d2880eb0
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53410471"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53602857"
 ---
 # <a name="exporting-an-azure-hosted-api-to-powerapps-and-microsoft-flow"></a>Экспорт размещенного в Azure API в PowerApps и Microsoft Flow
 
 [PowerApps](https://powerapps.microsoft.com/guided-learning/learning-introducing-powerapps/) — это служба для создания и использования пользовательских бизнес-приложений, которые подключаются к данным и работают на различных платформах. [Microsoft Flow](https://flow.microsoft.com/guided-learning/learning-introducing-flow/) позволяет легко автоматизировать рабочие и бизнес-процессы между избранными приложениями и службами. PowerApps и Microsoft Flow содержат ряд встроенных соединителей для источников данных, таких как Office 365, Dynamics 365, Salesforce и т д. В некоторых случаях разработчикам приложений и потоков также нужно подключиться к источникам данных и API, созданным в их организации.
 
-Аналогичным образом разработчикам, которым необходимо расширить возможности совместного использования API внутри организации, может потребоваться предоставить доступ к своим API создателям приложений и потоков. В этой статье показано, как экспортировать API, созданный с помощью [Функций Azure](../azure-functions/functions-overview.md) или [службы приложений Azure](../app-service/app-service-web-overview.md). Экспортированный API становится *настраиваемым соединителем*, который используется в PowerApps и Microsoft Flow так же, как встроенный соединитель.
+Аналогичным образом разработчикам, которым необходимо расширить возможности совместного использования API внутри организации, может потребоваться предоставить доступ к своим API создателям приложений и потоков. В этой статье показано, как экспортировать API, созданный с помощью [Функций Azure](../azure-functions/functions-overview.md) или [службы приложений Azure](../app-service/overview.md). Экспортированный API становится *настраиваемым соединителем*, который используется в PowerApps и Microsoft Flow так же, как встроенный соединитель.
 
 ## <a name="create-and-export-an-api-definition"></a>Создание и экспорт определения API
 Перед экспортом API нужно описать его с помощью определения OpenAPI (ранее называвшегося файлом [Swagger](https://swagger.io/)). Это определение содержит сведения о доступных операция в API и о том, как необходимо структурировать данные запросов и ответов для API. С помощью PowerApps и Microsoft Flow можно создать настраиваемые соединители для любого определения OpenAPI 2.0. Функции Azure и служба приложений Azure имеют встроенную поддержку создания и размещения определений OpenAPI, а также управления ими. Дополнительные сведения см. в статье [Размещение API-интерфейсов RESTful с поддержкой CORS в службе приложений Azure](../app-service/app-service-web-tutorial-rest-api.md).

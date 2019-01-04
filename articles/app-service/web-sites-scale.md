@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/05/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 2fb1f5ad0c3b46623550cbcc1204761b57f6093b
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 98d3d1f6fc0f2f30196f360811808579dfbab312
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53251064"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53727485"
 ---
 # <a name="scale-up-an-app-in-azure"></a>Увеличение масштаба приложения в Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "53251064"
 * [Развертывание](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling). Увеличение количества экземпляров виртуальных машин, на которых работает приложение.
   В зависимости от ценовой категории вы можете развернуть приложение на виртуальных машинах в количестве до 20 экземпляров. Использование [сред службы приложений](environment/intro.md) с ценовой категорией **Изолированная** позволит увеличить количество экземпляров до 100. Дополнительные сведения см. в статье [Масштабирование числа экземпляров вручную или автоматически](../monitoring-and-diagnostics/insights-how-to-scale.md). Из нее вы узнаете, как использовать автомасштабирование, которое позволяет масштабировать число экземпляров автоматически на основе предварительно определенных правил и расписаний.
 
-Применение этих параметров масштаба занимает всего несколько секунд, но они влияют на все приложения в вашем [плане службы приложений](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md).
+Применение этих параметров масштаба занимает всего несколько секунд, но они влияют на все приложения в вашем [плане службы приложений](../app-service/overview-hosting-plans.md).
 Для этого не требуется вносить изменения в код или повторно развертывать приложение.
 
 Сведения о ценах и функциях отдельных планов службы приложений см. [здесь](https://azure.microsoft.com/pricing/details/web-sites/).  

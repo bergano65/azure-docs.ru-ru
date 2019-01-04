@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f3a3261fa1b7aa2075a05d7b87ea3fc29c5b9fab
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: f2e0767e78119b224f7be9256ab7050deca37e32
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53385879"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53546986"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
-Важной частью любого решения Analysis Services является мониторинг работы серверов. С помощью [журналов диагностики ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/) как службу [Azure](https://www.microsoft.com/cloud-platform/operations-management-suite). 
+Важной частью любого решения Analysis Services является мониторинг работы серверов. С помощью [журналов диагностики ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/) как службу [Azure](https://www.microsoft.com/cloud-platform/operations-management-suite). 
 
 ![Процесс ведения журнала диагностики в хранилище, Центрах событий и Log Analytics](./media/analysis-services-logging/aas-logging-overview.png)
 
@@ -304,6 +304,6 @@ Set-AzureRmDiagnosticSetting -ResourceId $account.ResourceId`
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте больше о [журнал ведения диагностики ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md).
+Узнайте больше о [журнал ведения диагностики ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
 
 Ознакомьтесь с описанием [Set-AzureRmDiagnosticSetting](https://docs.microsoft.com/powershell/module/azurerm.insights/Set-AzureRmDiagnosticSetting) в справке PowerShell.

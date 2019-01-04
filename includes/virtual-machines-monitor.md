@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: a65dbbcfddf33692ee179755b4306019ffa8863e
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 3c2924380ef5175b330deb5052a962bfecf820ae
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53399975"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53594366"
 ---
 Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/application-insights/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
 
@@ -43,23 +43,23 @@ ms.locfileid: "53399975"
 
 ## <a name="logs"></a>Журналы
 
-[Журнал действий Azure](../articles/monitoring-and-diagnostics/monitoring-overview-activity-logs.md) — это журнал подписки с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этот журнал входят различные данные: от операционных данных Azure Resource Manager до обновлений в событиях работоспособности службы. Чтобы просмотреть журнал виртуальной машины, щелкните "Журнал действий" на портале Azure.
+[Журнал действий Azure](../articles/azure-monitor/platform/activity-logs-overview.md) — это журнал подписки с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этот журнал входят различные данные: от операционных данных Azure Resource Manager до обновлений в событиях работоспособности службы. Чтобы просмотреть журнал виртуальной машины, щелкните "Журнал действий" на портале Azure.
 
 Ниже описано несколько доступных операций с журналом действий:
 
-- Создание [оповещения о событии журнала действий Azure](../articles/monitoring-and-diagnostics/monitoring-overview-activity-logs.md).
-- [Потоковая передача журнала в концентратор событий](../articles/monitoring-and-diagnostics/monitoring-stream-activity-logs-event-hubs.md) для приема сторонней службой или пользовательским аналитическим решением, например PowerBI.
+- Создание [оповещения о событии журнала действий Azure](../articles/azure-monitor/platform/activity-logs-overview.md).
+- [Потоковая передача журнала в концентратор событий](../articles/azure-monitor/platform/activity-logs-stream-event-hubs.md) для приема сторонней службой или пользовательским аналитическим решением, например PowerBI.
 - Анализ журнала в PowerBI с помощью [пакета содержимого PowerBI](https://powerbi.microsoft.com/documentation/powerbi-content-pack-azure-audit-logs/).
 - [Сохранение журнала в учетную запись хранения](../articles/azure-monitor/platform/archive-activity-log.md) для архивации или проверки вручную. В профиле журнала можно задать время хранения (в днях).
 
 Кроме того, вы можете ознакомиться с данными журнала действий, воспользовавшись [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.insights/), [Azure CLI](https://docs.microsoft.com/cli/azure/monitor) или [интерфейсами Monitor REST API](https://docs.microsoft.com/rest/api/monitor/).
 
-[Журналы диагностики Azure](../articles/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) генерируются виртуальной машиной и содержат подробные и актуальные данные о ее работе. Журналы диагностики отличаются от журналов действий тем, что предоставляют подробные сведения об операциях, которые выполнялись на виртуальной машине.
+[Журналы диагностики Azure](../articles/azure-monitor/platform/diagnostic-logs-overview.md) генерируются виртуальной машиной и содержат подробные и актуальные данные о ее работе. Журналы диагностики отличаются от журналов действий тем, что предоставляют подробные сведения об операциях, которые выполнялись на виртуальной машине.
 
 Ниже описано несколько доступных операций с журналами диагностики:
 
 - Сохранение журналов в [учетную запись хранения](../articles/azure-monitor/platform/archive-diagnostic-logs.md) для аудита или проверки вручную. В параметрах диагностики ресурсов можно задать время хранения (в днях).
-- [Потоковая передача журналов в Центры событий](../articles/monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs.md) для обработки в сторонней службе или пользовательском аналитическом решении, например в PowerBI.
+- [Потоковая передача журналов в Центры событий](../articles/azure-monitor/platform/diagnostic-logs-stream-event-hubs.md) для обработки в сторонней службе или пользовательском аналитическом решении, например в PowerBI.
 - Анализ журналов с помощью [OMS Log Analytics](../articles/log-analytics/log-analytics-azure-storage.md).
 
 ## <a name="advanced-monitoring"></a>Расширенный мониторинг

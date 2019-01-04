@@ -11,12 +11,12 @@ ms.component: text-analytics
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: diberry
-ms.openlocfilehash: 556cf755890f49e540afe64de6e485d9ebde2147
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: ac273ac7d4c6c371670e6b8a8170274602a5318b
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53086442"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53536548"
 ---
 # <a name="install-and-run-containers"></a>Установка и запуск контейнеров
 
@@ -30,7 +30,7 @@ API распознавания лиц предоставляет стандар�
 
 Прежде чем использовать контейнер распознавания лиц, необходимо выполнить следующие условия:
 
-**Модуль Docker**. Модуль Docker должен быть установлен в локальной среде. Docker предоставляет пакеты для настройки среды с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Linux](https://docs.docker.com/engine/installation/#supported-platforms) и [Windows](https://docs.docker.com/docker-for-windows/). В Windows Docker должен быть настроен для поддержки контейнеров Linux. Контейнеры Docker также можно развертывать непосредственно в [Службе Azure Kubernetes](/azure/aks/), [Экземплярах контейнеров Azure](/azure/container-instances/) или в кластере [Kubernetes](https://kubernetes.io/), развернутом в [Azure Stack](/azure/azure-stack/). Дополнительные сведения о развертывании Kubernetes в Azure Stack см. в [этой статье](/azure/azure-stack/user/azure-stack-solution-template-kubernetes-deploy).
+**Модуль Docker**. Модуль Docker должен быть установлен в локальной среде. Docker предоставляет пакеты для настройки среды с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Linux](https://docs.docker.com/engine/installation/#supported-platforms) и [Windows](https://docs.docker.com/docker-for-windows/). В Windows Docker должен быть настроен для поддержки контейнеров Linux. Контейнеры Docker также можно развертывать непосредственно в [Службе Azure Kubernetes](../../aks/index.yml), [Экземплярах контейнеров Azure](../../container-instances/index.yml) или в кластере [Kubernetes](https://kubernetes.io/), развернутом в [Azure Stack](../../azure-stack/index.yml). Дополнительные сведения о развертывании Kubernetes в Azure Stack см. в [этой статье](../../azure-stack/user/azure-stack-solution-template-kubernetes-deploy.md).
 
 Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure.
 

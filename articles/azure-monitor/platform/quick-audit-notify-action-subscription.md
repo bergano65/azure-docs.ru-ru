@@ -9,12 +9,12 @@ ms.date: 09/25/2017
 ms.author: johnkem
 ms.custom: mvc
 ms.component: alerts
-ms.openlocfilehash: 76ed904a90b84e7b0bac86b2ed5380289d7802c1
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 79375dbbc7c966f2e972389788cefe8a0fe3692d
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53387977"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53582683"
 ---
 # <a name="audit-and-receive-notifications-about-important-actions-in-your-azure-subscription"></a>Аудит и получение уведомлений о важных действиях в подписке Azure
 
@@ -98,4 +98,4 @@ ms.locfileid: "53387977"
 В этом кратком руководстве вы выполнили операцию для создания события журнала действий, а затем создали оповещение журнала событий, чтобы получать уведомления при выполнении этой операции в будущем. Затем вы проверили оповещения, выполнив эту операцию повторно. В Azure доступны события журнала действий за последние 90 дней. Если необходимо сохранять события больше 90 дней, попробуйте архивировать данные журнала действий вместе с другими данными наблюдения.
 
 > [!div class="nextstepaction"]
-> [Archive Azure monitoring data](./../../monitoring-and-diagnostics/monitor-tutorial-archive-monitoring-data.md) (Архивирование данных мониторинга Azure)
+> [Archive Azure monitoring data](./../../azure-monitor/learn/tutorial-archive-data.md) (Архивирование данных мониторинга Azure)

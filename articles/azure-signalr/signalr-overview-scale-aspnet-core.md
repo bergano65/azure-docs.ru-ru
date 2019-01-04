@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: overview
 ms.date: 09/13/2018
 ms.author: zhshang
-ms.openlocfilehash: e739f3905ff2bbb60669b1f1e214a4630b896db4
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 695cc2afbfd231758e90889eea2c154fbc16dffb
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53255471"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53602619"
 ---
 # <a name="scale-aspnet-core-signalr-applications-with-azure-signalr-service"></a>Масштабирование приложений ASP.NET Core SignalR с помощью службы Azure SignalR.
 
@@ -21,7 +21,7 @@ ms.locfileid: "53255471"
 
 ASP.NET Core SignalR — это переписанная предыдущая версия. В результате решение Core SignalR ASP.NET не является обратно совместимым с более ранней версией SignalR. Их API-интерфейсы и поведение отличаются. Пакет SDK для ASP.NET Core SignalR предназначен для .NET Standard, но вы можете использовать его с .NET Framework. Однако вы должны использовать новые API, а не старые. Если вы используете SignalR и хотите перейти на ASP.NET Core SignalR или службу Azure SignalR, вам нужно будет изменить код, чтобы обрабатывать различия в API-интерфейсах.
 
-В службе Azure SignalR серверный компонент ASP.NET Core SignalR размещен в Azure. Однако, так как технология создана поверх ASP.NET Core, у вас есть возможность запускать свое фактическое веб-приложение на нескольких платформах (Windows, Linux и MacOS) при размещении с помощью [службы приложений Azure](../app-service/app-service-web-overview.md), [IIS](https://docs.microsoft.com/aspnet/core/host-and-deploy/iis/index), [Nginx](https://docs.microsoft.com/aspnet/core/host-and-deploy/linux-nginx), [Apache](https://docs.microsoft.com/aspnet/core/host-and-deploy/linux-apache) и [Docker](https://docs.microsoft.com/aspnet/core/host-and-deploy/docker/index). Вы также можете использовать самостоятельное размещение в собственном процессе.
+В службе Azure SignalR серверный компонент ASP.NET Core SignalR размещен в Azure. Однако, так как технология создана поверх ASP.NET Core, у вас есть возможность запускать свое фактическое веб-приложение на нескольких платформах (Windows, Linux и MacOS) при размещении с помощью [службы приложений Azure](../app-service/overview.md), [IIS](https://docs.microsoft.com/aspnet/core/host-and-deploy/iis/index), [Nginx](https://docs.microsoft.com/aspnet/core/host-and-deploy/linux-nginx), [Apache](https://docs.microsoft.com/aspnet/core/host-and-deploy/linux-apache) и [Docker](https://docs.microsoft.com/aspnet/core/host-and-deploy/docker/index). Вы также можете использовать самостоятельное размещение в собственном процессе.
 
 Если задачей вашего приложения является поддержка новейших функций для обновления веб-клиентов с обновлением содержимого в режиме реального времени, работа на нескольких платформах (Azure, Windows, Linux и MacOS) и размещение в разных средах, использование службы Azure SignalR будет лучшим выбором.
 

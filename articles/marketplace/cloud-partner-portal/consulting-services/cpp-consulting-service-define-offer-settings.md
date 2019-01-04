@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 6ce51dc9bbcdc7b46593a4800c4fce07a42f3171
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 9cb52aea56e9c1183af9ca76201ab65c62a58f22
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53345353"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53972177"
 ---
 # <a name="offer-settings-tab"></a>Вкладка с параметрами предложения
 
@@ -42,9 +42,6 @@ ms.locfileid: "53345353"
 *Имя*
 
 Эта строка отображается в качестве названия предложения в AppSource или Azure Marketplace. Поле *Имя* имеет ограничение на 50 символов.  Проверяющему может потребоваться изменить название, чтобы добавить в название предложения длительность и тип предложения.
-
->[!Note]
->Важно! Здесь необходимо просто ввести имя самой службы. Не следует добавлять ее длительность и тип.
 
 В следующем примере с Edgewater Fullscope показано, как формируется имя предложения. Имя предложения выглядит следующим образом:
 

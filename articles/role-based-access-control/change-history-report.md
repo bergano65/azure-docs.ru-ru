@@ -15,16 +15,16 @@ ms.date: 05/23/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c1ba7798fd8c1a18bc84aeb9ab8c4c2e0ff718cc
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: f8c3c770cb7e30bda16b4857d5b337923d2417d2
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52967901"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53541563"
 ---
 # <a name="view-activity-logs-for-rbac-changes"></a>Просмотр журналов действий на предмет изменений в RBAC
 
-Иногда могут потребоваться сведения об изменении доступа на основе ролей (RBAC), например для аудита и устранения неполадок. Каждый раз, когда кто-либо вносит изменения в определения ролей или назначения ролей в ваших подписках, изменения регистрируются в [журнале действий Azure](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md). Вы можете просматривать журналы действий, чтобы увидеть все изменения в управлении доступом на основе ролей за последние 90 дней.
+Иногда могут потребоваться сведения об изменении доступа на основе ролей (RBAC), например для аудита и устранения неполадок. Каждый раз, когда кто-либо вносит изменения в определения ролей или назначения ролей в ваших подписках, изменения регистрируются в [журнале действий Azure](../azure-monitor/platform/activity-logs-overview.md). Вы можете просматривать журналы действий, чтобы увидеть все изменения в управлении доступом на основе ролей за последние 90 дней.
 
 ## <a name="operations-that-are-logged"></a>Операции, которые регистрируются в журнале
 

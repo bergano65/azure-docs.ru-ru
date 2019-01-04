@@ -7,20 +7,20 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 4/27/2018
 ms.author: johnkem
-ms.component: metric
-ms.openlocfilehash: 4fcde6773bcdfe7ac522c813151518785dc14e25
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.component: metrics
+ms.openlocfilehash: a5e38f1400b99c6030799121d37721c26e16649c
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53383567"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53721144"
 ---
 # <a name="create-a-classic-metric-alert-with-a-resource-manager-template"></a>Создание классического оповещения метрики с помощью шаблона Resource Manager
 В этой статье показано, как можно использовать [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки оповещений метрик Azure. Это позволяет автоматически настраивать оповещения для ресурсов при их создании, чтобы обеспечить правильный мониторинг всех ресурсов.
 
 > [!NOTE]
 > 
-> В этой статье описывается создание **классических оповещений на основе метрик** с помощью шаблонов Resource Manager. Если вам нужно создать [новые оповещения на основе метрик](../../monitoring-and-diagnostics/monitoring-near-real-time-metric-alerts.md) с использованием шаблонов, [в этой статье](alerts-metric-create-templates.md) приведены подробности.
+> В этой статье описывается создание **классических оповещений на основе метрик** с помощью шаблонов Resource Manager. Если вам нужно создать [новые оповещения на основе метрик](../../azure-monitor/platform/alerts-metric-near-real-time.md) с использованием шаблонов, [в этой статье](alerts-metric-create-templates.md) приведены подробности.
 >
 
 

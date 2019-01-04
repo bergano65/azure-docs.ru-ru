@@ -8,12 +8,12 @@ ms.devlang: php
 ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: rogarana
-ms.openlocfilehash: 6ecb87af9cc75898aa8734b329dce01f70511a27
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: 58d1d47b548569f7542e24bd09a41299f12e496e
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51712914"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53787891"
 ---
 #  <a name="transfer-objects-tofrom-azure-blob-storage-using-php"></a>Передача объектов в хранилище BLOB-объектов Azure и обратно с помощью PHP
 Из этого краткого руководства вы узнаете, как использовать PHP для передачи, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure. 
@@ -24,7 +24,7 @@ ms.locfileid: "51712914"
 
 Прежде чем приступить к работе, убедитесь, что у вас установлены следующие дополнительные компоненты:
 
-* [PHP](http://php.net/downloads.php);
+* [PHP](http://php.net/downloads.php)
 * [пакет SDK для Службы хранилища Azure для PHP](https://github.com/Azure/azure-storage-php).
 
 ## <a name="download-the-sample-application"></a>Загрузка примера приложения
@@ -43,14 +43,14 @@ git clone https://github.com/Azure-Samples/storage-blobs-php-quickstart.git
 ## <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
 В приложении нужно указать имя и ключ учетной записи хранения, чтобы создать экземпляр **BlobRestProxy** для вашего приложения. Рекомендуем хранить эти идентификаторы в переменной среды на локальном компьютере, где выполняется приложение. Чтобы создать переменную среды, используйте один из следующих примеров в зависимости от операционной системы. Замените строки **youraccountname** и **youraccountkey** фактическими значениями имени и ключа учетной записи.
 
-# <a name="linux-tablinux"></a>[Linux] (#tab/linux)
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 ```bash
 export ACCOUNT_NAME=<youraccountname>
 export ACCOUNT_KEY=<youraccountkey>
 ```
 
-# <a name="windows-tabwindows"></a>[Windows] (#tab/windows)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 ```cmd
 setx ACCOUNT_NAME=<youraccountname>

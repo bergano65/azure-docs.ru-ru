@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.author: normesta
-ms.openlocfilehash: d42d05046f4ef133aa3dfb52bbe4e2b72255ccce
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: bc6f59922286663435782623a72345c19adb494c
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53322898"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53995043"
 ---
 # <a name="known-issues-with-azure-data-lake-storage-gen2"></a>Известные проблемы с Azure Data Lake Storage 2-го поколения
 
@@ -66,10 +66,6 @@ API-интерфейсы хранилища BLOB-объектов еще нед�
 AzCopy версии 8 не поддерживает Azure Data Lake Storage 2-го поколения.
 
 Используйте последнюю (предварительную) версию AzCopy ([AzCopy v10](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-v10?toc=%2fazure%2fstorage%2ftables%2ftoc.json)), которая поддерживает конечные точки Azure Data Lake Storage 2-го поколения.
-
-## <a name="oauth-authentication"></a>Аутентификация OAuth
-
-Некоторые службы, например HDInsight и Фабрика данных Azure, пока не поддерживают интеграцию с аутентификацией на основе токена носителя OAuth в Azure Active Directory (AAD).
 
 ## <a name="azure-event-grid"></a>Сетка событий Azure
 

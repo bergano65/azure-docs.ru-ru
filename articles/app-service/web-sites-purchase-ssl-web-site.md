@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: apurvajo;cephalin
 ms.custom: seodec18
-ms.openlocfilehash: ff2fd2c9b66cc9c80087ab5009ee65c0ba73714b
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 78b7668dee892841ced1a06626ff09a534a88b69
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53268722"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53714306"
 ---
 # <a name="buy-and-configure-an-ssl-certificate-for-azure-app-service"></a>Приобретение и настройка сертификата SSL для службы приложений Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "53268722"
 Ознакомьтесь со следующими статьями:
 
 - [Создано приложение службы приложений](/azure/app-service/).
-- [Руководство. Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](app-service-web-tutorial-custom-domain.md) или [Приобретение имени личного домена для веб-приложений Azure](custom-dns-web-site-buydomains-web-app.md)
+- [Руководство. Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](app-service-web-tutorial-custom-domain.md) или [Приобретение имени личного домена для веб-приложений Azure](manage-custom-dns-buy-domain.md)
 
 [!INCLUDE [Prepare your web app](../../includes/app-service-ssl-prepare-app.md)]
 
@@ -91,7 +91,7 @@ ms.locfileid: "53268722"
 > Поддерживаются четыре метода проверки домена. 
 > 
 > - **Служба приложений** —это наиболее удобный вариант проверки домена, который уже был сопоставлен с приложением службы приложений в одной подписке. Преимущество этого метода в том, что приложение службы приложений уже проверило владельца домена.
-> - **Домен**. Выполняется проверка [домена службы приложений, который вы приобрели в Azure](custom-dns-web-site-buydomains-web-app.md). Azure автоматически добавляет проверочную запись типа TXT и завершает процесс.
+> - **Домен**. Выполняется проверка [домена службы приложений, который вы приобрели в Azure](manage-custom-dns-buy-domain.md). Azure автоматически добавляет проверочную запись типа TXT и завершает процесс.
 > - **Почта**. Выполняется проверка домена путем отправки электронной почты администратору домена. После выбора данного параметра будут предоставлены инструкции.
 > - **Вручную**. Выполняется проверка, используется ли в домене HTML-страница (только для сертификата типа **Стандартный**) или запись типа TXT DNS. После выбора данного параметра будут предоставлены инструкции.
 

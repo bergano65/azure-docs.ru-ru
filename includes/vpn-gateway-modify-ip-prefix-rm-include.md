@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/28/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 8803aada61ae58f1e221767aeb382f7d74c63eb4
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.openlocfilehash: 58acd2d0ed422f296e82cae5a30c79b339a66e01
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30326533"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53444328"
 ---
 ### <a name="noconnection"></a>Изменение префиксов IP-адресов для шлюза локальной сети при отсутствии подключения шлюза
 
@@ -41,37 +41,37 @@ Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $local `
 
 1. Удалите подключение.
 
-  ```azurepowershell-interactive
-  Remove-AzureRmVirtualNetworkGatewayConnection -Name VNet1toSite1 -ResourceGroupName TestRG1
-  ```
+   ```azurepowershell-interactive
+   Remove-AzureRmVirtualNetworkGatewayConnection -Name VNet1toSite1 -ResourceGroupName TestRG1
+   ```
 2. Измените префиксы адресов для локального сетевого шлюза.
    
-  Задайте переменную для локального сетевого шлюза.
+   Задайте переменную для локального сетевого шлюза.
 
-  ```azurepowershell-interactive
-  $local = Get-AzureRmLocalNetworkGateway -Name Site1 -ResourceGroupName TestRG1
-  ```
+   ```azurepowershell-interactive
+   $local = Get-AzureRmLocalNetworkGateway -Name Site1 -ResourceGroupName TestRG1
+   ```
    
-  Измените префиксы.
+   Измените префиксы.
    
-  ```azurepowershell-interactive
-  Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $local `
-  -AddressPrefix @('10.101.0.0/24','10.101.1.0/24')
-  ```
+   ```azurepowershell-interactive
+   Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $local `
+   -AddressPrefix @('10.101.0.0/24','10.101.1.0/24')
+   ```
 3. Создайте подключение. В этом примере мы настраиваем тип подключения IPsec. При повторном создании подключения используйте тип соединения, указанный для вашей конфигурации. Дополнительные типы подключений см. на странице с [командлетами PowerShell](https://msdn.microsoft.com/library/mt603611.aspx).
    
-  Задайте переменную для шлюза виртуальной сети.
+   Задайте переменную для шлюза виртуальной сети.
 
-  ```azurepowershell-interactive
-  $gateway1 = Get-AzureRmVirtualNetworkGateway -Name VNet1GW  -ResourceGroupName TestRG1
-  ```
+   ```azurepowershell-interactive
+   $gateway1 = Get-AzureRmVirtualNetworkGateway -Name VNet1GW  -ResourceGroupName TestRG1
+   ```
    
-  Создайте подключение. В этом примере используется переменная $local, присвоенная на шаге 2.
+   Создайте подключение. В этом примере используется переменная $local, присвоенная на шаге 2.
 
-  ```azurepowershell-interactive
-  New-AzureRmVirtualNetworkGatewayConnection -Name VNet1toSite1 `
-  -ResourceGroupName TestRG1 -Location 'East US' `
-  -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local `
-  -ConnectionType IPsec `
-  -RoutingWeight 10 -SharedKey 'abc123'
-  ```
+   ```azurepowershell-interactive
+   New-AzureRmVirtualNetworkGatewayConnection -Name VNet1toSite1 `
+   -ResourceGroupName TestRG1 -Location 'East US' `
+   -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local `
+   -ConnectionType IPsec `
+   -RoutingWeight 10 -SharedKey 'abc123'
+   ```

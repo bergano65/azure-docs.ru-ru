@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: troubleshooting
 ms.date: 11/27/2018
 ms.author: asgang
-ms.openlocfilehash: 9a32ac1ae71cb7bd89c4252157c3a5cd395b2694
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 4a18e009f7defc8d41846b867f9b7a65d2b853dd
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52842345"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53993337"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-ongoing-replication-issues"></a>Устранение неполадок текущей репликации виртуальных машин из Azure в Azure
 
@@ -78,8 +78,8 @@ Azure Site Recovery запускает событие, если скорость
 
 #### <a name="network-latency-to-cache-storage-account-"></a>Задержка сети при подключении к учетной записи хранения кэша
  Site Recovery отправляет реплицированные данные в учетную запись хранения кэша. Проблема может возникнуть, если передача данных из виртуальной машины в учетную запись хранения кэша происходит на скорости, меньшей чем 4 МБ в 3 секунды. Чтобы узнать, существуют ли проблемы с задержкой, с помощью [azcopy](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy) передайте данные из виртуальной машины в учетную запись хранения кэша.<br>
-Если задержка большая, проверьте, используются ли сетевые виртуальные модули для управления исходящим сетевым трафиком виртуальных машин. Если весь трафик репликации проходит через сетевой виртуальный модуль, к модулю может применяться регулирование. Мы рекомендуем создать конечную точку службы сети в виртуальной сети для хранилища, чтобы трафик репликации не передавался на виртуальный сетевой модуль. См. раздел о [настройке сетевого виртуального модуля](https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-about-networking#network-virtual-appliance-configuration).
+Если задержка большая, проверьте, используются ли сетевые виртуальные модули для управления исходящим сетевым трафиком виртуальных машин. Если весь трафик репликации проходит через сетевой виртуальный модуль, к модулю может применяться регулирование. Мы рекомендуем создать конечную точку службы сети в виртуальной сети для хранилища, чтобы трафик репликации не передавался на виртуальный сетевой модуль. См. раздел о [настройке сетевого виртуального модуля](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-about-networking#network-virtual-appliance-configuration).
 
 #### <a name="network-connectivity"></a>Сетевое подключение
 Чтобы реплика Site Recovery заработала, от виртуальной машины требуется исходящее подключение для конкретного URL-адреса или IP-диапазонов. Если виртуальная машина находится за брандмауэром или использует правила группы безопасности сети (NSG) для управления исходящими подключениями, могут возникнуть следующие проблемы.</br>
-Сведения о том, как убедиться, что все URL-адреса подключены, см. в разделе [Исходящие подключения для диапазонов IP-адресов](https://docs.microsoft.com/en-us/azure/site-recovery/azure-to-azure-about-networking#outbound-connectivity-for-ip-address-ranges). 
+Сведения о том, как убедиться, что все URL-адреса подключены, см. в разделе [Исходящие подключения для диапазонов IP-адресов](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-about-networking#outbound-connectivity-for-ip-address-ranges). 

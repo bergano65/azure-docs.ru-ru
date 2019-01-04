@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 11/13/2018
 ms.author: jafreebe
 ms.custom: seodec18
-ms.openlocfilehash: 2a38b117cde6d6b51b101f6b0ef0eb3a19b42ba3
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 3a668783e8257ef9074d12b30ff0afc3a40325f4
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53344233"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53539730"
 ---
 # <a name="tutorial-build-a-java-ee-and-postgres-web-app-in-azure"></a>Руководство. Создание веб-приложения Java EE с подключением к базе данных Postgres в Azure
 
@@ -170,7 +170,7 @@ az postgres server create -n <desired-name> -g <same-resource-group> --sku-name 
 
 ### <a name="ftp-the-configuration-files"></a>Передача файлов конфигурации по FTP
 
-Нам нужно будет передать содержимое `wildfly_config/` в экземпляр службы приложений по протоколу FTP. Чтобы получить учетные данные FTP, нажмите кнопку **Get Publish Profile** (Получить профиль публикации) в колонке службы приложений на портале Azure. Ваше имя пользователя и пароль FTP будут находиться в скачанном XML-документе. Дополнительные сведения о профиле публикации см. в статье [Настройка учетных данных развертывания службы приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-deployment-credentials).
+Нам нужно будет передать содержимое `wildfly_config/` в экземпляр службы приложений по протоколу FTP. Чтобы получить учетные данные FTP, нажмите кнопку **Get Publish Profile** (Получить профиль публикации) в колонке службы приложений на портале Azure. Ваше имя пользователя и пароль FTP будут находиться в скачанном XML-документе. Дополнительные сведения о профиле публикации см. в статье [Настройка учетных данных развертывания службы приложений Azure](https://docs.microsoft.com/azure/app-service/deploy-configure-credentials).
 
 С помощью любого инструмента FTP перенесите четыре файла из `wildfly_config/` в `/home/site/deployments/tools/`. (Обратите внимание, что нужно перемещать не каталог, а сами файлы.)
 

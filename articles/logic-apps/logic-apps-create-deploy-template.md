@@ -10,12 +10,12 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.assetid: 85928ec6-d7cb-488e-926e-2e5db89508ee
 ms.date: 10/18/2016
-ms.openlocfilehash: ffa619351ca4a4bfd3a812775ee7ff6cd71ddea4
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: c953d4635ce43ee05fe7c507076c5bd11e9d8c81
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53089707"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54000569"
 ---
 # <a name="create-azure-resource-manager-templates-for-deploying-logic-apps"></a>Создание шаблонов Azure Resource Manager для развертывания приложений логики
 
@@ -187,7 +187,7 @@ ms.locfileid: "53089707"
 <a name="team-services"></a>
 ## <a name="azure-devops-azure-pipelines"></a>Azure DevOps Azure Pipelines
 
-При развертывании среды и управлении ею часто используется средство Azure Pipelines в Azure DevOps и шаблон развертывания приложения логики. Azure DevOps содержит задачу [развертывания группы ресурсов Azure](https://github.com/Microsoft/vsts-tasks/tree/master/Tasks/DeployAzureResourceGroup), которую можно добавить в любую сборку или конвейер выпуска. Для авторизации развертывания требуется [субъект-служба](https://blogs.msdn.microsoft.com/visualstudioalm/2015/10/04/automating-azure-resource-group-deployment-using-a-service-principal-in-visual-studio-online-buildrelease-management/). При ее наличии можно создать конвейер выпуска.
+При развертывании среды и управлении ею часто используется средство Azure Pipelines в Azure DevOps и шаблон развертывания приложения логики. Azure DevOps содержит задачу [развертывания группы ресурсов Azure](https://github.com/Microsoft/azure-pipelines-tasks/tree/master/Tasks/AzureResourceGroupDeploymentV2), которую можно добавить в любую сборку или конвейер выпуска. Для авторизации развертывания требуется [субъект-служба](https://blogs.msdn.microsoft.com/visualstudioalm/2015/10/04/automating-azure-resource-group-deployment-using-a-service-principal-in-visual-studio-online-buildrelease-management/). При ее наличии можно создать конвейер выпуска.
 
 1. Для создания пустого конвейера в Azure Pipelines выберите **Пусто**.
 

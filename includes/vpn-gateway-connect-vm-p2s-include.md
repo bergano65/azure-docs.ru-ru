@@ -8,33 +8,33 @@ ms.topic: include
 ms.date: 03/21/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 708098c7ed126705d7b8b561134e2bcf8c7f2fcd
-ms.sourcegitcommit: 48ab1b6526ce290316b9da4d18de00c77526a541
+ms.openlocfilehash: 4999868170b73493f601f06e114a233a0f88fa35
+ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/23/2018
-ms.locfileid: "30197094"
+ms.lasthandoff: 12/15/2018
+ms.locfileid: "53444337"
 ---
 Вы можете подключиться к виртуальной машине, которая развернута в вашей виртуальной сети, создав подключение к удаленному рабочему столу. Лучший способ проверить, можете ли вы подключиться к своей виртуальной машине, — подключиться, используя частный IP-адрес, а не имя компьютера. Таким образом, вы проверяете, можете ли вы подключиться, а не правильно ли настроено разрешение имен.
 
 1. Найдите частный IP-адрес. Вы можете найти частный IP-адрес виртуальной машины, просмотрев ее свойства на портале Azure или используя PowerShell.
 
-  - Портал Azure. Найдите свою виртуальную машину на портале Azure. Просмотрите свойства виртуальной машины. Там будет указан частный IP-адрес.
+   - Портал Azure. Найдите свою виртуальную машину на портале Azure. Просмотрите свойства виртуальной машины. Там будет указан частный IP-адрес.
 
-  - PowerShell. Воспользуйтесь примером ниже, чтобы просмотреть список виртуальных машин и частных IP-адресов из ваших групп ресурсов. Вам не нужно изменять этот пример перед использованием.
+   - PowerShell. Воспользуйтесь примером ниже, чтобы просмотреть список виртуальных машин и частных IP-адресов из ваших групп ресурсов. Вам не нужно изменять этот пример перед использованием.
 
-    ```powershell
-    $VMs = Get-AzureRmVM
-    $Nics = Get-AzureRmNetworkInterface | Where VirtualMachine -ne $null
+     ```powershell
+     $VMs = Get-AzureRmVM
+     $Nics = Get-AzureRmNetworkInterface | Where VirtualMachine -ne $null
 
-    foreach($Nic in $Nics)
-    {
+     foreach($Nic in $Nics)
+     {
       $VM = $VMs | Where-Object -Property Id -eq $Nic.VirtualMachine.Id
       $Prv = $Nic.IpConfigurations | Select-Object -ExpandProperty PrivateIpAddress
       $Alloc = $Nic.IpConfigurations | Select-Object -ExpandProperty PrivateIpAllocationMethod
       Write-Output "$($VM.Name): $Prv,$Alloc"
-    }
-    ```
+     }
+     ```
 
 2. Убедитесь, что вы подключены к виртуальной сети с помощью VPN-подключения "точка — сеть".
 3. Откройте **подключение к удаленному рабочему столу**. Для этого введите "RDP" или "подключение к удаленному рабочему столу" в поле поиска на панели задач, а затем выберите подключение к удаленному рабочему столу. Вы также можете открыть подключение к удаленному рабочему столу с помощью команды mstsc в PowerShell. 

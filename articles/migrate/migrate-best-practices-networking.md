@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.author: raynew
-ms.openlocfilehash: 1493eb6978b00771aa8ed4d8cfc28c37a9dde5b6
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: c6a995c20beefb3a939aa1421eed537137037922
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53139754"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53994969"
 ---
 # <a name="best-practices-to-set-up-networking-for-workloads-migrated-to-azure"></a>Рекомендации по настройке сетей для рабочих нагрузок, перенесенных в Azure
 
@@ -118,7 +118,7 @@ Azure добавляет DNS-сервер по умолчанию при раз�
 
 **Подробнее:**
 - [Сведения](https://docs.microsoft.com/azure/migrate/contoso-migration-infrastructure) о разрешении имен при использовании собственного DNS-сервера.
-- [Сведения](https://docs.microsoft.com/en-us/azure/architecture/best-practices/naming-conventions?toc=%2fazure%2fvirtual-network%2ftoc.json#naming-subscriptions) о правилах именования и ограничениях DNS.
+- [Сведения](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions?toc=%2fazure%2fvirtual-network%2ftoc.json#naming-subscriptions) о правилах именования и ограничениях DNS.
 
 
 ## <a name="best-practice-set-up-availability-zones"></a>Рекомендация. Настройка зон доступности
@@ -336,7 +336,7 @@ Azure добавляет DNS-сервер по умолчанию при раз�
 
 **Подробнее:**
 
-- [Сведения](https://docs.microsoft.com/en-us/azure/virtual-network/security-overview) о группах безопасности сети.
+- [Сведения](https://docs.microsoft.com/azure/virtual-network/security-overview) о группах безопасности сети.
 - [Просмотр](https://docs.microsoft.com/azure/virtual-network/security-overview#service-tags) тегов служб, доступных для групп безопасности сети.
 
 
@@ -499,7 +499,7 @@ Azure содержит функции безопасности платформ�
 
 ## <a name="next-steps"></a>Дополнительная информация 
 
-Рассмотрите другие рекомендации:
+Просмотрите другие рекомендации:
 
 - [Рекомендации](migrate-best-practices-security-management.md) по обеспечению безопасности и управлению после миграции.
 - [Рекомендации](migrate-best-practices-costs.md) по управлению затратами после миграции.

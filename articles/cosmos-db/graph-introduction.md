@@ -8,12 +8,12 @@ ms.component: cosmosdb-graph
 ms.topic: overview
 ms.date: 09/05/2018
 ms.author: lbosq
-ms.openlocfilehash: e9e0d2f452a21f2da29568b953238318cb4477df
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 833b9e7ce65a566757c739feebdfc8e0f1d268e9
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53077456"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53976347"
 ---
 # <a name="introduction-to-azure-cosmos-db-gremlin-api"></a>Знакомство с Azure Cosmos DB: API Gremlin
 
@@ -24,7 +24,7 @@ ms.locfileid: "53077456"
 ## <a name="what-is-a-graph-database"></a>Что такое база данных графов
 В реальном мире все данные связаны естественным образом. Традиционное моделирование данных ориентировано на сущности. Для многих приложений необходимо моделировать сущности и взаимосвязи между ними естественным способом.
 
-[Граф](https://mathworld.wolfram.com/Graph.html) — это структура, состоящая из [вершин](http://mathworld.wolfram.com/GraphVertex.html) и [ребер](http://mathworld.wolfram.com/GraphEdge.html). Вершины и ребра могут содержать произвольное число свойств. 
+[Граф](http://mathworld.wolfram.com/Graph.html) — это структура, состоящая из [вершин](http://mathworld.wolfram.com/GraphVertex.html) и [ребер](http://mathworld.wolfram.com/GraphEdge.html). Вершины и ребра могут содержать произвольное число свойств. 
 
 * **Вершины** обозначают дискретные объекты, например пользователя, место или событие. 
 

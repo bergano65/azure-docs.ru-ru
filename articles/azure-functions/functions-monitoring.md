@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: glenga
-ms.openlocfilehash: aba3d9f33d179c09708464975fa2a929a8bb68d0
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: da676b5d1cb3c25adc72d04882915ee0440c2d98
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52876525"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54002337"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "52876525"
 
 ## <a name="application-insights-pricing-and-limits"></a>Стоимость и ограничения Application Insights
 
-Вы можете протестировать интеграцию Application Insights с приложением-функцией бесплатно. Тем не менее, есть ежедневный лимит того, сколько данных можно обрабатывать бесплатно, и вы можете превысить этот предел во время тестирования. Azure отправляет уведомления на портале и по электронной почте при приближении к ежедневному ограничению.  Однако, если вы пропустите эти оповещения и превысите ограничения, новые журналы не будут отображаться в Application Insights. Поэтому следует учитывать ограничения, чтобы не тратить времени на ненужное устранение неполадок. Дополнительные сведения см. в статье [Управление ценами и объемом данных в Application Insights](../application-insights/app-insights-pricing.md).
+Вы можете протестировать интеграцию Application Insights с приложением-функцией бесплатно. Тем не менее, есть ежедневный лимит того, сколько данных можно обрабатывать бесплатно, и вы можете превысить этот предел во время тестирования. Azure отправляет уведомления на портале и по электронной почте при приближении к ежедневному ограничению.  Однако, если вы пропустите эти оповещения и превысите ограничения, новые журналы не будут отображаться в Application Insights. Поэтому следует учитывать ограничения, чтобы не тратить времени на ненужное устранение неполадок. Дополнительные сведения см. в статье [Управление ценами и объемом данных в Application Insights](../azure-monitor/app/pricing.md).
 
 ## <a name="enable-app-insights-integration"></a>Включение интеграции с Application Insights
 
@@ -85,7 +85,7 @@ ms.locfileid: "52876525"
 
 1. Периодически выбирайте **Обновить**, пока не появится список вызовов функций.
 
-   Для отображения списка может потребоваться до 5 минут из-за того, как клиент телеметрии пакует данные для передачи на сервер. (Эта задержка не применяется к [Live Metrics Stream](../application-insights/app-insights-live-stream.md). Эта служба подключается к узлу решения "Функции" при загрузке страницы, поэтому журналы передаются напрямую на страницу.)
+   Для отображения списка может потребоваться до 5 минут из-за того, как клиент телеметрии пакует данные для передачи на сервер. (Эта задержка не применяется к [Live Metrics Stream](../azure-monitor/app/live-stream.md). Эта служба подключается к узлу решения "Функции" при загрузке страницы, поэтому журналы передаются напрямую на страницу.)
 
    ![Список вызовов](media/functions-monitoring/monitor-tab-ai-invocations.png)
 
@@ -115,15 +115,15 @@ ms.locfileid: "52876525"
 
 Дополнительные сведения об использовании Application Insights см. в [документации по Application Insights](https://docs.microsoft.com/azure/application-insights/). В этом разделе представлено несколько примеров просмотра данных в Application Insights. Если вы уже знакомы с Application Insights, можете сразу переходить к [разделам, посвященным конфигурации и настройке данных телеметрии](#configure-categories-and-log-levels).
 
-В [обозревателе метрик](../application-insights/app-insights-metrics-explorer.md) можно создавать диаграммы и оповещения на основе таких метрик, как количество вызовов функции, время выполнения и процент успешных операций.
+В [обозревателе метрик](../azure-monitor/app/metrics-explorer.md) можно создавать диаграммы и оповещения на основе таких метрик, как количество вызовов функции, время выполнения и процент успешных операций.
 
 ![Обозреватель метрик](media/functions-monitoring/metrics-explorer.png)
 
-На вкладке [Сбои](../application-insights/app-insights-asp-net-exceptions.md) можно создавать диаграммы и оповещения на основе сбоев функции и исключений сервера. **Имя операции** обозначает имя функции. Сбои в зависимостях здесь не отображаются, если вы не настроили для зависимостей [пользовательскую телеметрию](#custom-telemetry-in-c-functions).
+На вкладке [Сбои](../azure-monitor/app/asp-net-exceptions.md) можно создавать диаграммы и оповещения на основе сбоев функции и исключений сервера. **Имя операции** обозначает имя функции. Сбои в зависимостях здесь не отображаются, если вы не настроили для зависимостей [пользовательскую телеметрию](#custom-telemetry-in-c-functions).
 
 ![Сбои](media/functions-monitoring/failures.png)
 
-На вкладке [Производительность](../application-insights/app-insights-performance-counters.md) вы можете анализировать проблемы производительности.
+На вкладке [Производительность](../azure-monitor/app/performance-counters.md) вы можете анализировать проблемы производительности.
 
 ![Производительность](media/functions-monitoring/performance.png)
 
@@ -131,13 +131,13 @@ ms.locfileid: "52876525"
 
 ![Серверы](media/functions-monitoring/servers.png)
 
-Вкладка [Live Metrics Stream](../application-insights/app-insights-live-stream.md) отображает создаваемые данные метрик в режиме реального времени.
+Вкладка [Live Metrics Stream](../azure-monitor/app/live-stream.md) отображает создаваемые данные метрик в режиме реального времени.
 
 ![Live Stream](media/functions-monitoring/live-stream.png)
 
 ## <a name="query-telemetry-data"></a>Запросы к данным телеметрии
 
-[Аналитика в Application Insights](../application-insights/app-insights-analytics.md) предоставляет доступ ко всем данным телеметрии в формате таблиц в базе данных. Функция аналитики поддерживает язык запросов для извлечения, обработки и визуализации данных.
+[Аналитика в Application Insights](../azure-monitor/app/analytics.md) предоставляет доступ ко всем данным телеметрии в формате таблиц в базе данных. Функция аналитики поддерживает язык запросов для извлечения, обработки и визуализации данных.
 
 ![Выбор функции аналитики](media/functions-monitoring/select-analytics.png)
 
@@ -439,7 +439,7 @@ context.log.metric("TestMetric", 1234);
 
 ## <a name="custom-telemetry-in-c-functions"></a>Пользовательские данные телеметрии в функциях C#
 
-Вы можете использовать пакет NuGet [Microsoft.ApplicationInsights](https://www.nuget.org/packages/Microsoft.ApplicationInsights/) для отправки пользовательских данных телеметрии в Application Insights. В следующем примере C# используется [настраиваемый API телеметрии](../application-insights/app-insights-api-custom-events-metrics.md). Пример приведен для библиотеки классов .NET, но код Application Insights в скрипте C# будет точно таким же.
+Вы можете использовать пакет NuGet [Microsoft.ApplicationInsights](https://www.nuget.org/packages/Microsoft.ApplicationInsights/) для отправки пользовательских данных телеметрии в Application Insights. В следующем примере C# используется [настраиваемый API телеметрии](../azure-monitor/app/api-custom-events-metrics.md). Пример приведен для библиотеки классов .NET, но код Application Insights в скрипте C# будет точно таким же.
 
 ### <a name="version-2x"></a>Версия 2.x
 
@@ -671,7 +671,7 @@ PS C:\> Get-AzureSubscription -SubscriptionName "<subscription name>" | Select-A
 PS C:\> Get-AzureWebSiteLog -Name <function app name> -Tail
 ```
 
-Дополнительные сведения см. в разделе [Практическое руководство. Потоковая передача журналов](../app-service/web-sites-enable-diagnostic-log.md#streamlogs).
+Дополнительные сведения см. в разделе [Практическое руководство. Потоковая передача журналов](../app-service/troubleshoot-diagnostic-logs.md#streamlogs).
 
 ### <a name="viewing-log-files-locally"></a>Просмотр файлов журнала в локальной среде
 

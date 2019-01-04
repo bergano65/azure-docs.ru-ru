@@ -4,17 +4,17 @@ ms.service: billing
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: 515aeac3531a45080824df126ad674353f70cdb8
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: 6bb7db5d57508d448f88a30623b7f30e88a0a821
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52279893"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53736799"
 ---
 | Ресурс | Free | Совмещаемая блокировка | базовая; | Стандартная | Премиум (версия 2) | Isolated </th> |
 | --- | --- | --- | --- | --- | --- | --- |
-| Количество [веб-приложений, мобильных приложений или приложений API](https://azure.microsoft.com/services/app-service/) на один [план службы приложений](../articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md)<sup>1</sup> |10 |100 |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup>|
-| [План обслуживания приложения](../articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md) |1 для каждого региона |10 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов|
+| Количество [веб-приложений, мобильных приложений или приложений API](https://azure.microsoft.com/services/app-service/) на один [план службы приложений](../articles/app-service/overview-hosting-plans.md)<sup>1</sup> |10 |100 |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup>|
+| [План обслуживания приложения](../articles/app-service/overview-hosting-plans.md) |1 для каждого региона |10 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов|
 | Тип вычислительной операции |Совмещаемая блокировка |Совмещаемая блокировка |Выделенный<sup>3</sup> |Выделенный<sup>3</sup> |Выделенный<sup>3</sup></p> |Выделенный<sup>3</sup>|
 | [Масштабирование](../articles/app-service/web-sites-scale.md) (максимальное количество экземпляров) |1 общедоступный |1 общедоступный |3 выделенных<sup>3</sup> |10 выделенных<sup>3</sup> |20 выделенных<sup>3</sup>|100 выделенных<sup>4</sup>|
 | Хранилище<sup>5</sup> |1 ГБ<sup>5</sup> |1 ГБ<sup>5</sup> |10 ГБ<sup>5</sup> |50 ГБ<sup>5</sup> |250 ГБ<sup>5</sup></p> |1 ТБ<sup>5</sup>|
@@ -24,18 +24,18 @@ ms.locfileid: "52279893"
 | Пропускная способность |165 MB |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |
 | Архитектура приложения |32-битная |32-битная |32- или 64-битная |32- или 64-битная |32- или 64-битная |32- или 64-битная |
 | Количество веб-сокетов на один экземпляр<sup>7</sup> |5 |35 |350 |Без ограничений |Без ограничений |Без ограничений |
-| Количество одновременных [подключений к отладчику](../articles/app-service/web-sites-dotnet-troubleshoot-visual-studio.md) для каждого приложения |1 |1 |1 |5 |5 |5 |
+| Количество одновременных [подключений к отладчику](../articles/app-service/troubleshoot-dotnet-visual-studio.md) для каждого приложения |1 |1 |1 |5 |5 |5 |
 | Сертификаты службы приложений на подписку<sup>10</sup>| Не поддерживается | Не поддерживается |10 |10 |10 |10 |
 | Количество личных доменов на одно приложение</a> |0 (только поддомен azurewebsites.net)|500 |500 |500 |500 |500 |
 | личных доменов [Поддержка SSL](../articles/app-service/app-service-web-tutorial-custom-ssl.md) |Не поддерживается. Шаблон сертификата для *. azurewebsites.net доступен по умолчанию.|Не поддерживается. Шаблон сертификата для *. azurewebsites.net доступен по умолчанию.|Неограниченное количество подключений SSL на основе SNI |Включено неограниченное количество подключений SSL на основе SNI и 1 подключение SSL на основе IP |Включено неограниченное количество подключений SSL на основе SNI и 1 подключение SSL на основе IP | Включено неограниченное количество подключений SSL на основе SNI и 1 подключение SSL на основе IP|
 | Интегрированная подсистема балансировки нагрузки | |X |X |X |X |X<sup>9</sup> |
 | [Всегда включено](../articles/app-service/web-sites-configure.md) | | |X |X |X |X |
-| [Архивация по расписанию](../articles/app-service/web-sites-backup.md) | | | | Плановая архивация каждые 2 часа, не более 12 резервных копий в день (ручные + плановые) | Плановая архивация каждый час, не более 50 резервных копий в день (ручные + плановые) | Плановая архивация каждый час, не более 50 резервных копий в день (ручные + плановые) |
+| [Архивация по расписанию](../articles/app-service/manage-backup.md) | | | | Плановая архивация каждые 2 часа, не более 12 резервных копий в день (ручные + плановые) | Плановая архивация каждый час, не более 50 резервных копий в день (ручные + плановые) | Плановая архивация каждый час, не более 50 резервных копий в день (ручные + плановые) |
 | [Автоматическое масштабирование](../articles/app-service/web-sites-scale.md) | | | |X |X |X |
-| [Веб-задания](../articles/app-service/web-sites-create-web-jobs.md)<sup>8</sup> |X |X |X |X |X |X |
+| [Веб-задания](../articles/app-service/webjobs-create.md)<sup>8</sup> |X |X |X |X |X |X |
 | [планировщика Azure](https://azure.microsoft.com/services/scheduler/)  | |X |X |X |X |X |
 | [Мониторинг конечных точек](../articles/app-service/web-sites-monitor.md) | | |X |X |X |X |
-| [Промежуточные слоты](../articles/app-service/web-sites-staged-publishing.md) | | | |5 |20 |20 |
+| [Промежуточные слоты](../articles/app-service/deploy-staging-slots.md) | | | |5 |20 |20 |
 | Соглашение об уровне обслуживания | |  |99,9 % |99,95 %|99,95 %|99,95 %|  
 
 <sup>1</sup> Если не указано иное, квоты приложений и хранилищ указаны в расчете на один план службы приложений.  
