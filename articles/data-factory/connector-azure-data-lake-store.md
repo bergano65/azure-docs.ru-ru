@@ -20,7 +20,7 @@ ms.lasthandoff: 12/14/2018
 ms.locfileid: "53387035"
 ---
 # <a name="copy-data-to-or-from-azure-data-lake-storage-gen1-by-using-azure-data-factory"></a>Копирование данных в Azure Data Lake Storage Gen1 и из него с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
 > * [Версия 1](v1/data-factory-azure-datalake-connector.md)
 > * [Текущая версия](connector-azure-data-lake-store.md)
 
