@@ -21,7 +21,7 @@ ms.lasthandoff: 11/09/2018
 ms.locfileid: "51346717"
 ---
 # <a name="copy-data-to-or-from-azure-sql-database-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you use:"]
+> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
 > * [Версия 1](v1/data-factory-azure-sql-connector.md)
 > * [Текущая версия](connector-azure-sql-database.md)
 
