@@ -40,7 +40,7 @@ items:
       href: tutorial-design-database-using-portal.md
     - name: Инфраструктура CLI Azure
       href: tutorial-design-database-using-cli.md
-    - name: Шаблоны Azure Resource Manager
+    - name: Шаблон Azure Resource Manager
       href: tutorial-provision-mysql-server-using-Azure-Resource-Manager-templates.md
   - name: 2. Создание веб-приложения
     items:
@@ -236,9 +236,9 @@ items:
     href: partners-migration-mysql.md
   - name: Руководство по переносу баз данных
     href: https://datamigration.microsoft.com/
-ms.openlocfilehash: 79f8e21c9f81d2d10f7afdc5e2c31a8d0936846f
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 8322ca7687a0a124c1f535cbac1c0c98f4ff6250
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54002456"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54074269"
