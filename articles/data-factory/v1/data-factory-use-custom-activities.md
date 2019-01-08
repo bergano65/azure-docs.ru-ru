@@ -22,7 +22,7 @@ ms.lasthandoff: 11/21/2018
 ms.locfileid: "52276012"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
 > * [Версия 1](data-factory-use-custom-activities.md)
 > * [Версия 2 (текущая)](../transform-data-using-dotnet-custom-activity.md)
 
