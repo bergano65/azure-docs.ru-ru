@@ -52,12 +52,9 @@
 ## [Резервное копирование SAP HANA на уровне файлов](sap-hana-backup-file-level.md)
 ## [Резервные копии моментальных снимков хранилища SAP HANA](sap-hana-backup-storage-snapshots.md)
 # Использование SAP NetWeaver и Business One на виртуальных машинах Azure
-## [Использование SAP Business One на виртуальных машинах Azure](business-one-azure.md)
-## [Руководство по развертыванию интегрированных сред разработки SAP и SAP CAL в Windows или SQL Server](cal-ides-erp6-erp7-sp3-sql.md)
-## [SAP NetWeaver на виртуальных машинах Azure под управлением Linux](suse-quickstart.md)
+## [Контрольный список для планирования и развертывания рабочей нагрузки SAP](sap-deployment-checklist.md)
 ## [SAP NetWeaver в Azure: планирование и реализация](planning-guide.md)
 ## [Руководство по развертыванию SAP NetWeaver](deployment-guide.md)
-## [Соединитель SAP LaMa для Azure](lama-installation.md)
 ## Руководства по развертыванию СУБД для рабочих нагрузок SAP
 ### [Рабочие нагрузки SAP на виртуальных машинах Azure. Общие сведения о развертывании СУБД](dbms_guide_general.md)
 ### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SQL Server](dbms_guide_sqlserver.md)
@@ -69,6 +66,10 @@
 ### [Общие сведения о доступности SAP HANA в Azure](sap-hana-availability-overview.md)
 ### [Доступность SAP HANA в Azure в пределах одного региона Azure](sap-hana-availability-one-region.md)
 ### [Доступность SAP HANA в Azure в разных регионах Azure](sap-hana-availability-across-regions.md)
+## [Использование SAP Business One на виртуальных машинах Azure](business-one-azure.md)
+## [Руководство по развертыванию интегрированных сред разработки SAP и SAP CAL в Windows или SQL Server](cal-ides-erp6-erp7-sp3-sql.md)
+## [SAP NetWeaver на виртуальных машинах Azure под управлением Linux](suse-quickstart.md)
+## [Соединитель SAP LaMa для Azure](lama-installation.md)
 ## Высокий уровень доступности в Windows и Linux
 ### [Обзор](sap-high-availability-guide-start.md)
 ### Архитектура высокого уровня доступности

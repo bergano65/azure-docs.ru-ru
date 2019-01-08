@@ -107,7 +107,7 @@
    Obsolete ### [Migrate offers](./cloud-partner-portal-orig/cloud-partner-portal-how-to-migrate-to-the-new-cloud-partner-portal.md)  
 -->
 
-<!-- new for SaaS 12/05/2018 -->
+<!-- new for SaaS 12/24/2018 -->
 ## [Предложение приложения SaaS](./cloud-partner-portal/saas-app/cpp-saas-offer.md)
 ### [Предварительные требования](./cloud-partner-portal/saas-app/cpp-prerequisites.md)
 ### [Создание предложения приложения SaaS](./cloud-partner-portal/saas-app/cpp-create-offer.md)
@@ -121,6 +121,7 @@
 ### [Публикация предложения](./cloud-partner-portal/saas-app/cpp-publish-offer.md)
 ### [Обновление имеющегося предложения](./cloud-partner-portal/saas-app/cpp-update-existing-offer.md)
 ### [API SaaS](./cloud-partner-portal-orig/cloud-partner-portal-saas-subscription-apis.md)
+### [Клиент для самопроверки SaaS](./cloud-partner-portal/saas-app/cpp-selftest-client.md)
 
 <!-- Legacy SaaS Offer replaced
 ## [SaaS application offer](./cloud-partner-portal-orig/cpp-saas-app-offer.md)
@@ -162,12 +163,26 @@
 
 <!-- ## [Cortana Intelligence](./cloud-partner-portal-orig/cloud-partner-portal-publish-cortana-intelligence-app.md)  -->
 
-## [Предложение Dynamics 365 for Customer Engagement](./cloud-partner-portal-orig/cpp-customer-engagement-offer.md)
-### [Создание решения](./cloud-partner-portal-orig/dynamics-365-solution-preparation.md)
-### [Создание пакета](./cloud-partner-portal-orig/appSource-package-preparation.md)
-### [Создание ключа SAS](./cloud-partner-portal-orig/store-your-appSource-package-to-azure-storage-and-generate-sas-key.md)
-### [Создание предложения](./cloud-partner-portal-orig/setup-your-application-in-the-publishing-portal.md)
-### [Публикация предложения](./cloud-partner-portal-orig/request-to-publish-the-app.md)
+## [Предложение Dynamics 365 for Customer Engagement](./cloud-partner-portal/dyn365ce/cpp-customer-engagement-offer.md)
+### [Предварительные требования](./cloud-partner-portal/dyn365ce/cpp-prerequisites.md)
+### [Создание предложения модуля IoT Edge](./cloud-partner-portal/dyn365ce/cpp-create-offer.md)
+#### [Вкладка с параметрами предложения](./cloud-partner-portal/dyn365ce/cpp-offer-settings-tab.md)
+#### [Вкладка с техническими сведениями](./cloud-partner-portal/dyn365ce/cpp-technical-info-tab.md)
+#### [Вкладка "Тестовый выпуск"](./cloud-partner-portal/dyn365ce/cpp-testdrive-tab.md)
+#### [Вкладка со сведениями об онлайн-магазине](./cloud-partner-portal/dyn365ce/cpp-storefront-details-tab.md)
+#### [Вкладка "Контакты"](./cloud-partner-portal/dyn365ce/cpp-contacts-tab.md)
+### [Создание технических средств в рамках плана Customer Engagement](./cloud-partner-portal/dyn365ce/cpp-create-technical-assets.md)
+### [Публикация предложения в рамках плана Customer Engagement](./cloud-partner-portal/dyn365ce/cpp-publish-offer.md)
+
+<!-- Following legacy IoT section was replaced.  -->
+<!-- 
+## [Dynamics 365 for Customer Engagement offer](./cloud-partner-portal-orig/cpp-customer-engagement-offer.md)
+### [Create solution](./cloud-partner-portal-orig/dynamics-365-solution-preparation.md)
+### [Create package](./cloud-partner-portal-orig/appSource-package-preparation.md)
+### [Generate SAS key](./cloud-partner-portal-orig/store-your-appSource-package-to-azure-storage-and-generate-sas-key.md)
+### [Create offer](./cloud-partner-portal-orig/setup-your-application-in-the-publishing-portal.md)
+### [Publish offer](./cloud-partner-portal-orig/request-to-publish-the-app.md)
+-->
 
 ## [Предложение Dynamics 365 for Business Central](./cloud-partner-portal-orig/cpp-business-central-offer.md)
 ### [Общие сведения о публикации](./cloud-partner-portal-orig/d365-finance-overview-publish-your-app.md)
