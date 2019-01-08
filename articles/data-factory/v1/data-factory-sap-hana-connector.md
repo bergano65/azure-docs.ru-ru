@@ -22,7 +22,7 @@ ms.lasthandoff: 06/27/2018
 ms.locfileid: "37054642"
 ---
 # <a name="move-data-from-sap-hana-using-azure-data-factory"></a>Перемещение данных из SAP HANA с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
 > * [Версия 1](data-factory-sap-hana-connector.md)
 > * [Версия 2 (текущая)](../connector-sap-hana.md)
 
