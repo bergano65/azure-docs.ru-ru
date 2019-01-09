@@ -5,24 +5,21 @@ services: dms
 author: pochiraju
 ms.author: rajpo
 manager: craigg
-ms.reviewer: ''
+ms.reviewer: douglasl
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 12/04/2018
-ms.openlocfilehash: 030cd89bbd6407cd2e83a9b56942adbf419e069b
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.date: 12/19/2018
+ms.openlocfilehash: f23b297acdd8de0c26bf5fc02bc2d5415845b828
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52956709"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53718186"
 ---
 # <a name="tutorial-migrate-sql-server-to-azure-sql-database-managed-instance-online-using-dms"></a>Руководство. Перенос SQL Server в Управляемый экземпляр Базы данных SQL Azure с помощью DMS в автономном режиме
 Azure Database Migration Service можно использовать для переноса баз данных из локального экземпляра SQL Server в [Управляемый экземпляр Базы данных SQL Azure](../sql-database/sql-database-managed-instance.md) с минимальным временем простоя в работе приложений. Сведения о дополнительных методах, которые могут потребовать некоторых действий вручную, см. в статье [Перенос экземпляра SQL Server в Управляемый экземпляр базы данных SQL Azure](../sql-database/sql-database-managed-instance-migrate.md).
-
->[!IMPORTANT]
->Проекты миграции из SQL Server в Управляемый экземпляр базы данных SQL Azure по сети находятся в стадии предварительной версии. На них распространяются [Дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В этом руководстве выполняется миграция базы данных **Adventureworks2012** из локального экземпляра SQL Server в Управляемый экземпляр базы данных SQL Azure с помощью Azure Database Migration Service с минимальным временем простоя.
 
@@ -34,7 +31,7 @@ Azure Database Migration Service можно использовать для пе
 > * Когда будете готовы, выполните прямую миграцию.
 
 > [!NOTE]
-> Чтобы выполнить подключенную миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум" (предварительная версия).
+> Чтобы выполнить подключенную миграцию с помощью Azure Database Migration Service, требуется создать экземпляр ценовой категории "Премиум".
 
 > [!IMPORTANT]
 > Чтобы оптимизировать процесс миграции, Майкрософт рекомендует создать экземпляр Azure Database Migration Service в том же регионе Azure, в котором размещена целевая база данных. Перемещение данных между регионами и географическими областями может замедлить процесс миграции и привести к ошибкам.
@@ -95,10 +92,10 @@ Azure Database Migration Service можно использовать для пе
 
     Подробные сведения см. в статье [Сетевые топологии для переноса Управляемого экземпляра базы данных Azure SQL с помощью Azure Database Migration Service](https://aka.ms/dmsnetworkformi).
 
-6. Выберите номер SKU из ценовой категории "Критически важный для бизнеса (предварительная версия)".
+6. Выберите номер SKU ценовой категории "Премиум".
 
     > [!NOTE]
-    > Миграция по сети поддерживается, только если используется уровень "Критически важный для бизнеса (предварительная версия)". 
+    > Миграция по сети поддерживается, только если используется уровень "Премиум". 
    
     Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
    
@@ -118,7 +115,7 @@ Azure Database Migration Service можно использовать для пе
  
 3. Выберите **+ Новый проект миграции**.
 
-4. На экране **New migration project** (Новый проект миграции) задайте имя для проекта, в текстовом поле **Source server type** (Тип исходного сервера) выберите **SQL Server**, в текстовом поле **Target server type** (Тип целевого сервера) выберите **Azure SQL Database Managed Instance** (Управляемый экземпляр Базы данных SQL Azure), а затем в разделе **Выберите тип действия** нажмите кнопку **Online data migration (preview)** (Автономная миграция данных (предварительная версия)).
+4. На экране **New migration project** (Новый проект миграции) задайте имя для проекта, в текстовом поле **Source server type** (Тип исходного сервера) выберите **SQL Server**, в текстовом поле **Target server type** (Тип целевого сервера) выберите **Управляемый экземпляр Базы данных SQL Azure**, а затем в разделе **Choose type of activity** (Выберите тип действия) выберите **Online data migration** (Миграция данных по сети).
 
    ![Создание проекта DMS](media/tutorial-sql-server-to-managed-instance-online/dms-create-project3.png)
 

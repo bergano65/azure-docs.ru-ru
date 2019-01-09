@@ -1,5 +1,5 @@
 ---
-title: Создание приложения MongoDB на Node.Js с помощью Angular (часть 2)
+title: Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание приложения Express Node.js
 titleSuffix: Azure Cosmos DB
 description: Часть 2 серии руководств по созданию приложения MongoDB в Azure Cosmos DB с помощью Angular и Node и тех же API, которые используются для MongoDB.
 author: johnpapa
@@ -7,19 +7,19 @@ ms.service: cosmos-db
 ms.component: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: tutorial
-ms.date: 12/06/2018
+ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
-ms.openlocfilehash: 842a321f63bce11207e6144705e9c4f68df21760
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 8e122ab62009463ae12d5635323655be708aa29d
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53133981"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53788061"
 ---
-# <a name="create-a-mongodb-app-with-angular-and-azure-cosmos-db---part-2-create-a-nodejs-express-app"></a>Создание приложения MongoDB с помощью Angular и Azure Cosmos DB, часть 2 Создание веб-приложения Node.js с использованием Express
+# <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---create-a-nodejs-express-app"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание приложения Express Node.js
 
-Из этого руководства в нескольких частях вы узнаете, как создать приложение [API MongoDB](mongodb-introduction.md), написанное на Node.js с использованием Express, Angular и базы данных Azure Cosmos DB.
+Из этого руководства в нескольких частях вы узнаете, как создать новое приложение, написанное на Node.js с использованием Express и Angular, а затем подключить его к [учетной записи Cosmos, настроенной с помощью API Cosmos DB для MongoDB](mongodb-introduction.md).
 
 Часть 2 руководства основана на [введении](tutorial-develop-mongodb-nodejs.md). Здесь рассматриваются следующие задачи:
 

@@ -9,12 +9,12 @@ ms.date: 11/25/2018
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 76bc59b41bf35f6427b1dcb273f3f50c5e70b748
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: f69babb4520b4829a8cf59e2dac7763471a2db65
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53344063"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53557107"
 ---
 # <a name="tutorial-develop-and-deploy-a-nodejs-iot-edge-module-to-your-simulated-device"></a>Руководство по разработке модуля IoT Edge на Node.js и его развертывание на имитированном устройстве
 
@@ -36,6 +36,7 @@ ms.locfileid: "53344063"
 Устройство Azure IoT Edge.
 
 * В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md).
+* Если вы запускаете IoT Edge в Windows, то IoT Edge версии 1.0.5 не поддерживает модули Node.js. Дополнительные сведения см. в [заметках о выпуске 1.0.5](https://github.com/Azure/azure-iotedge/releases/tag/1.0.5). Инструкции по установке конкретной версии см. в статье [Обновление управляющей программы безопасности и среды выполнения IoT Edge](how-to-update-iot-edge.md).
 
 Облачные ресурсы.
 
@@ -221,9 +222,9 @@ ms.locfileid: "53344063"
 
 ## <a name="deploy-and-run-the-solution"></a>Развертывание и запуск решения
 
-При использовании руководства по настройке устройства IoT Edge модуль был развернут с помощью портала Azure. Модули также можно развертывать с помощью расширения Azure IoT Hub Toolkit для Visual Studio Code (прежнее название — "расширение Azure IoT Toolkit"). У вас уже есть манифест развертывания, подготовленный для вашего сценария (см. файл **deployment.json**). Теперь вам осталось выбрать устройство для получения развертывания.
+При использовании руководства по настройке устройства IoT Edge модуль был развернут с помощью портала Azure. Модули также можно развертывать с помощью расширения "Набор средств для Центра Интернета вещей Azure" (прежнее название — "Набор средств для Интернета вещей Azure") для Visual Studio Code. У вас уже есть манифест развертывания, подготовленный для вашего сценария (см. файл **deployment.json**). Теперь вам осталось выбрать устройство для получения развертывания.
 
-1. В палитре команд VS Code выполните команду **Azure IoT Hub: Select IoT Hub** (Центр Интернета вещей: выбрать Центр Интернета вещей). 
+1. В палитре команд VS Code выполните команду **Центр Интернета вещей Azure: Select IoT Hub** (Центр Интернета вещей Azure: выбрать Центр Интернета вещей). 
 
 2. Выберите подписку и Центр Интернета вещей, содержащий устройство IoT Edge, которое нужно настроить. 
 

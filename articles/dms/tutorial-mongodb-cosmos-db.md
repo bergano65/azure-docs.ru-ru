@@ -5,18 +5,18 @@ services: dms
 author: pochiraju
 ms.author: rajpo
 manager: craigg
-ms.reviewer: ''
+ms.reviewer: douglasl
 ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
 ms.date: 12/11/2018
-ms.openlocfilehash: 46e8ca97411e9dce77c0c82c4e0f5dd164bce01b
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: 4651c9afab99577622af71297e1fb6465a20097f
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53320740"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53713103"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-db-mongo-api-offline-using-dms"></a>Руководство. Миграция с MongoDB в API Mongo Azure Cosmos DB в автономном режиме с помощью DMS
 С помощью Azure Database Migration Service можно выполнять автономную миграцию (однократно) баз данных из локального или облачного экземпляра MongoDB в API Mongo Azure Cosmos DB.
@@ -28,11 +28,11 @@ ms.locfileid: "53320740"
 > * выполнение миграции.
 > * мониторинг миграции.
 
-В этом руководстве выполняется миграция набора данных **Wingtips** в базе данных MongoDB, размещенной в виртуальной машине Azure, в API MongoDB Cosmos DB с помощью Azure Database Migration Service. Если у вас еще не настроен источник MongoDB, обратитесь к статье [Установка и настройка базы данных MongoDB на виртуальной машине Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/install-mongodb).
+В этом руководстве выполняется миграция набора данных **Wingtips** в базе данных MongoDB, размещенной в виртуальной машине Azure, в API Azure Cosmos DB для MongoDB с помощью Azure Database Migration Service. Если у вас еще не настроен источник MongoDB, обратитесь к статье [Установка и настройка базы данных MongoDB на виртуальной машине Windows в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/install-mongodb).
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим руководством вам потребуется следующее:
-- [Создайте учетную запись API MongoDB Azure Cosmos DB](https://ms.portal.azure.com/#create/Microsoft.DocumentDB).
+- [Создайте учетную запись API Azure Cosmos DB для MongoDB](https://ms.portal.azure.com/#create/Microsoft.DocumentDB).
 - Создайте виртуальную сеть для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
 - Убедитесь, что правила группы безопасности сети для виртуальной сети Azure не блокируют порты: 443, 53, 9354, 445 и 12000. Дополнительные сведения о фильтрации трафика, предназначенного для виртуальной сети Azure, с помощью NSG см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
 - Откройте брандмауэр Windows, чтобы предоставить Azure Database Migration Service доступ к исходному серверу MongoDB. По умолчанию это TCP-порт 27017.
@@ -163,7 +163,7 @@ ms.locfileid: "53320740"
 
 ## <a name="verify-data-in-cosmos-db"></a>Проверка данных в Cosmos DB
 
-- После завершения миграции вы можете проверить свою учетную запись API Cosmos DB MongoDB, чтобы убедиться, что все коллекции успешно перенесены.
+- После завершения миграции вы можете проверить свою учетную запись API Azure Cosmos DB для MongoDB, чтобы убедиться, что все коллекции успешно перенесены.
 
     ![Состояние действия: завершено](media/tutorial-mongodb-to-cosmosdb/dms-cosmosdb-data-explorer.png)
 

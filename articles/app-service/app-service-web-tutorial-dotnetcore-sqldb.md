@@ -14,20 +14,20 @@ ms.topic: tutorial
 ms.date: 04/11/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 775d7595e80c02bcfbc1c3d6abc687d5e335d7da
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 0b4549323b64b0f6210a228ea6cb5ca301839ec8
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53261013"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53721858"
 ---
-# <a name="tutorial-build-a-net-core-and-sql-database-web-app-in-azure-app-service"></a>Руководство. Создание веб-приложения .NET Core с базой данных SQL в службе приложений Azure
+# <a name="tutorial-build-a-net-core-and-sql-database-app-in-azure-app-service"></a>Руководство. Создание приложения .NET Core с Базой данных SQL в Службе приложений Azure
 
 > [!NOTE]
-> В этой статье мы развернем приложение в службе приложений на платформе Windows. Дополнительные сведения о развертывании службы приложений в _Linux_ см. в руководстве по [созданию веб-приложения .NET Core с базой данных SQL в службе приложений Azure в Linux](./containers/tutorial-dotnetcore-sqldb-app.md).
+> В этой статье мы развернем приложение в службе приложений на платформе Windows. Дополнительные сведения о развертывании в Службе приложений в _Linux_ см. в руководстве по [созданию приложения .NET Core с Базой данных SQL в Службе приложений Azure в Linux](./containers/tutorial-dotnetcore-sqldb-app.md).
 >
 
-[Служба приложений](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. В этом руководстве показано, как создать веб-приложение .NET Core и подключить его к базе данных SQL. После выполнения всех действий у вас будет приложение .NET Core MVC, работающее в службе приложений.
+[Служба приложений](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. В этом руководстве показано, как создать приложение .NET Core и подключить его к Базе данных SQL. После выполнения всех действий у вас будет приложение .NET Core MVC, работающее в службе приложений.
 
 ![Приложение, работающее в службе приложений](./media/app-service-web-tutorial-dotnetcore-sqldb/azure-app-in-browser.png)
 
@@ -135,7 +135,7 @@ az sql server firewall-rule create --resource-group myResourceGroup --server <se
 ```
 
 > [!TIP] 
-> Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](app-service-ip-addresses.md#find-outbound-ips).
+> Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](overview-inbound-outbound-ips.md#find-outbound-ips).
 >
 
 ### <a name="create-a-database"></a>Создание базы данных
@@ -182,7 +182,7 @@ az webapp config connection-string set --resource-group myResourceGroup --name <
 
 Затем задайте для параметра приложения `ASPNETCORE_ENVIRONMENT` значение _Production_. Этот параметр позволяет определить, выполняется ли приложение в Azure, так как SQLite применяется для локальной среды разработки, а база данных SQL — для среды Azure.
 
-В следующем примере настраивается параметр приложения `ASPNETCORE_ENVIRONMENT` в веб-приложении Azure. Замените заполнитель *\<app_name>* собственным значением.
+В следующем примере настраивается параметр приложения `ASPNETCORE_ENVIRONMENT` в приложении Azure. Замените заполнитель *\<app_name>* собственным значением.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings ASPNETCORE_ENVIRONMENT="Production"
@@ -257,9 +257,9 @@ To https://<app_name>.scm.azurewebsites.net/<app_name>.git
  * [new branch]      master -> master
 ```
 
-### <a name="browse-to-the-azure-web-app"></a>Переход к веб-приложению Azure
+### <a name="browse-to-the-azure-app"></a>Переход к приложению Azure
 
-Откройте развертываемое веб-приложение в веб-браузере.
+Перейдите к развернутому приложению в веб-браузере.
 
 ```bash
 http://<app_name>.azurewebsites.net
@@ -361,21 +361,21 @@ git commit -m "added done field"
 git push azure master
 ```
 
-После окончания `git push` перейдите в веб-приложение Azure и проверьте новые функции.
+После окончания `git push` перейдите в приложение Службы приложений и проверьте новые функции.
 
-![Веб-приложение Azure после включения Code First Migrations](./media/app-service-web-tutorial-dotnetcore-sqldb/this-one-is-done.png)
+![Приложение Azure после включения Code First Migration](./media/app-service-web-tutorial-dotnetcore-sqldb/this-one-is-done.png)
 
 Все имеющиеся элементы списка дел по-прежнему отображаются. При повторной публикации приложения .NET Core существующие данные в базе данных SQL не теряются. Кроме того, Entity Framework Core Migrations изменяет только схему данных, оставляя существующие данные нетронутыми.
 
-## <a name="manage-your-azure-web-app"></a>Управление веб-приложением Azure
+## <a name="manage-your-azure-app"></a>Управление приложением Azure
 
-Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное веб-приложение.
+Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное приложение.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/app-service-web-tutorial-dotnetcore-sqldb/access-portal.png)
+![Переход к приложению Azure на портале](./media/app-service-web-tutorial-dotnetcore-sqldb/access-portal.png)
 
-По умолчанию на портале отображается страница **Обзор** веб-приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
+По умолчанию на портале отображается страница **Обзор** приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
 
 ![Страница службы приложений на портале Azure](./media/app-service-web-tutorial-dotnetcore-sqldb/web-app-blade.png)
 
@@ -394,7 +394,7 @@ git push azure master
 > * Потоковая передача журналов из Azure в окно терминала.
 > * Управление приложением на портале Azure.
 
-Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с веб-приложением.
+Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](app-service-web-tutorial-custom-domain.md)
+> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md)

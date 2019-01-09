@@ -1,5 +1,5 @@
 ---
-title: Создание приложения MongoDB на Node.Js с помощью Angular (часть 4)
+title: Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание учетной записи Cosmos
 titleSuffix: Azure Cosmos DB
 description: Часть 4 серии руководств по созданию в Azure Cosmos DB приложения MongoDB с помощью Angular и Node и тех же API, которые используются для MongoDB.
 author: johnpapa
@@ -10,22 +10,22 @@ ms.topic: tutorial
 ms.date: 12/06/2018
 ms.author: jopapa
 ms.custom: seodec18
-ms.openlocfilehash: d6119186bd8ffbda4fa3bb2c432dd58d851992ea
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: d85183f0104d9066f93adc73c09c76406128700d
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53136228"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53787806"
 ---
-# <a name="create-a-mongodb-app-with-angular-and-azure-cosmos-db---part-4-create-an-azure-cosmos-db-account"></a>Создание приложения MongoDB с помощью Angular и Azure Cosmos DB, часть 4 создание учетной записи Azure Cosmos DB;
+# <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---create-a-cosmos-account"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание учетной записи Cosmos
 
-Из этого руководства в нескольких частях вы узнаете, как создать приложение [API MongoDB](mongodb-introduction.md), написанное на Node.js с использованием Express, Angular и базы данных Azure Cosmos DB.
+Из этого руководства в нескольких частях вы узнаете, как создать новое приложение, написанное на Node.js с использованием Express и Angular, а затем подключить его к [учетной записи Cosmos, настроенной с помощью API Cosmos DB для MongoDB](mongodb-introduction.md).
 
 Часть 4 руководства основана на [части 3](tutorial-develop-mongodb-nodejs-part3.md). Здесь рассматриваются следующие задачи:
 
 > [!div class="checklist"]
 > * создание группы ресурсов Azure с помощью Azure CLI;
-> * Создание учетной записи для базы данных Azure Cosmos DB с помощью Azure CLI
+> * создание учетной записи Cosmos с помощью Azure CLI.
 
 ## <a name="video-walkthrough"></a>Видеоруководство
 

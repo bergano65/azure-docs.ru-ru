@@ -15,20 +15,20 @@ ms.topic: tutorial
 ms.date: 05/04/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 3666af764fa20a8343addedbddcdb12de0daf4a1
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 514915d68ef79c3f6db2ff1da2b5ea6e348de150
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53251510"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53633816"
 ---
-# <a name="tutorial-build-a-nodejs-and-mongodb-web-app-in-azure"></a>Руководство. Разработка веб-приложения на основе Node.js и MongoDB в Azure
+# <a name="tutorial-build-a-nodejs-and-mongodb-app-in-azure"></a>Руководство. Разработка приложения на основе Node.js и MongoDB в Azure
 
 > [!NOTE]
-> В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение в службе приложений на платформе _Linux_, см. в руководство по [созданию веб-приложений Node.js с MongoDB в службе приложений Azure в Linux](./containers/tutorial-nodejs-mongodb-app.md).
+> В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение в Службе приложений в _Linux_, обратитесь к руководству по [созданию приложений Node.js с подключением к MongoDB в Службе приложений Azure в Linux](./containers/tutorial-nodejs-mongodb-app.md).
 >
 
-Веб-приложения Azure — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как создать веб-приложение Node.js в Azure и подключить его к базе данных MongoDB. После выполнения действий, описанных в этом руководстве, у вас появится приложение MEAN (MongoDB, Express, AngularJS и Node.js), выполняющееся в [службе приложений Azure](app-service-web-overview.md). Для простоты в примере приложения используется [веб-платформа MEAN.js](https://meanjs.org/).
+Служба приложений Azure — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как создать приложение Node.js в Службе приложений и подключить его к базе данных MongoDB. После выполнения действий, описанных в этом руководстве, у вас появится приложение MEAN (MongoDB, Express, AngularJS и Node.js), выполняющееся в [службе приложений Azure](overview.md). Для простоты в примере приложения используется [веб-платформа MEAN.js](https://meanjs.org/).
 
 ![Приложение MEAN.js, которое запущено в службе приложений Azure](./media/app-service-web-tutorial-nodejs-mongodb-app/meanjs-in-azure.png)
 
@@ -119,7 +119,7 @@ MEAN.JS version: 0.5.0
 Чтобы остановить Node.js в любое время, введите `Ctrl+C` в окне терминала. 
 
 > [!NOTE]
-> В [краткое руководстве по Node.js](app-service-web-get-started-nodejs.md) говорится о необходимости наличия файла web.config в корневом каталоге приложения. Тем не менее в рамках этого руководства файл web.config автоматически создается Службой приложений при развертывании файлов с использованием [ локального развертывания Git](app-service-deploy-local-git.md) вместо развертывания из ZIP-файла. 
+> В [краткое руководстве по Node.js](app-service-web-get-started-nodejs.md) говорится о необходимости наличия файла web.config в корневом каталоге приложения. Тем не менее в рамках этого руководства файл web.config автоматически создается Службой приложений при развертывании файлов с использованием [ локального развертывания Git](deploy-local-git.md) вместо развертывания из ZIP-файла. 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -268,11 +268,11 @@ MEAN.JS version: 0.5.0
 
 ### <a name="configure-an-environment-variable"></a>Настройка переменной среды
 
-По умолчанию _config/env/local-production.js_ хранится в проекте MEAN.js вне репозитория Git. Поэтому для веб-приложения Azure вам нужно использовать параметры приложения, чтобы определить строку подключения MongoDB.
+По умолчанию _config/env/local-production.js_ хранится в проекте MEAN.js вне репозитория Git. Поэтому для приложения Azure вам нужно использовать параметры приложения, чтобы определить строку подключения MongoDB.
 
 Чтобы задать параметры приложения, выполните команду [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set) в Cloud Shell. 
 
-В следующем примере настраивается параметр приложения `MONGODB_URI` в веб-приложении Azure. Замените заполнители *\<app_name>*, *\<cosmosdb_name>* и *\<primary_master_key>*.
+В следующем примере настраивается параметр приложения `MONGODB_URI` в приложении Azure. Замените заполнители *\<app_name>*, *\<cosmosdb_name>* и *\<primary_master_key>*.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings MONGODB_URI="mongodb://<cosmosdb_name>:<primary_master_key>@<cosmosdb_name>.documents.azure.com:10250/mean?ssl=true"
@@ -318,11 +318,11 @@ To https://<app_name>.scm.azurewebsites.net/<app_name>.git
 - _.deployment_ — этот файл указывает службе приложений запустить `bash deploy.sh` как пользовательский сценарий развертывания.
 - _deploy.sh_ — пользовательский сценарий развертывания. Если открыть этот файл, вы увидите, что он запускает `gulp prod` после `npm install` и `bower install`. 
 
-Точно так же можно добавить любые действия в развертывание на основе Git. При перезапуске веб-приложения Azure в любой момент времени служба приложений не перезапускает эти задачи автоматизации.
+Точно так же можно добавить любые действия в развертывание на основе Git. При перезапуске приложения Azure в любой момент времени Служба приложений не перезапускает эти задачи автоматизации.
 
-### <a name="browse-to-the-azure-web-app"></a>Переход к веб-приложению Azure 
+### <a name="browse-to-the-azure-app"></a>Переход к приложению Azure 
 
-Откройте развертываемое веб-приложение в веб-браузере. 
+Перейдите к развернутому приложению в веб-браузере. 
 
 ```bash 
 http://<app_name>.azurewebsites.net 
@@ -464,7 +464,7 @@ git commit -am "added article comment"
 git push azure master
 ```
 
-После окончания `git push` перейдите в веб-приложение Azure и проверьте новые функции.
+После выполнения команды `git push` перейдите к приложению Azure и проверьте новые функции.
 
 ![Изменения модели и базы данных, опубликованные в Azure](media/app-service-web-tutorial-nodejs-mongodb-app/added-comment-field-published.png)
 
@@ -480,19 +480,19 @@ git push azure master
 az webapp log tail --name <app_name> --resource-group myResourceGroup
 ``` 
 
-После настройки потоков обновите веб-приложение Azure в браузере, чтобы получить немного трафика. Вы должны увидеть, что журналы консоли теперь направляются в терминал.
+После настройки потоков обновите приложение Azure в браузере, чтобы получить немного трафика. Вы должны увидеть, что журналы консоли теперь направляются в терминал.
 
 Чтобы в любое время отменить потоковую передачу журналов, введите `Ctrl+C`. 
 
-## <a name="manage-your-azure-web-app"></a>Управление веб-приложением Azure
+## <a name="manage-your-azure-app"></a>Управление приложением Azure
 
-Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное веб-приложение.
+Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное приложение.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/app-service-web-tutorial-nodejs-mongodb-app/access-portal.png)
+![Переход к приложению Azure на портале](./media/app-service-web-tutorial-nodejs-mongodb-app/access-portal.png)
 
-По умолчанию на портале отображается страница **Обзор** веб-приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
+По умолчанию на портале отображается страница **Обзор** приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
 
 ![Страница службы приложений на портале Azure](./media/app-service-web-tutorial-nodejs-mongodb-app/web-app-blade.png)
 
@@ -511,7 +511,7 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 > * Потоковая передача журналов из Azure в окно терминала.
 > * Управление приложением на портале Azure.
 
-Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с веб-приложением.
+Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"] 
-> [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](app-service-web-tutorial-custom-domain.md)
+> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md)

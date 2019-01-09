@@ -15,20 +15,20 @@ ms.topic: tutorial
 ms.date: 04/11/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: cb81699671bd2a0e86838d043ad0a4442eb79a6c
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: fe6a1db295bc8fb1ab8e6c9d2d149be62871e733
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53254247"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53629821"
 ---
-# <a name="build-a-net-core-and-sql-database-web-app-in-azure-app-service-on-linux"></a>Создание веб-приложения .NET Core с базой данных SQL в службе приложений Azure в Linux
+# <a name="build-a-net-core-and-sql-database-app-in-azure-app-service-on-linux"></a>Создание приложения .NET Core с Базой данных SQL в Службе приложений Azure в Linux
 
 > [!NOTE]
-> В этой статье мы развернем приложение в службе приложений на платформе Linux. Дополнительные сведения о развертывании службы приложений в _Windows_ см. в руководстве по [созданию веб-приложения .NET Core с базой данных SQL в службе приложений Azure](../app-service-web-tutorial-dotnetcore-sqldb.md).
+> В этой статье мы развернем приложение в службе приложений на платформе Linux. Дополнительные сведения о развертывании в Службе приложений в _Windows_ см. в руководстве по [созданию приложения .NET Core с Базой данных SQL в Службе приложений Azure](../app-service-web-tutorial-dotnetcore-sqldb.md).
 >
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать веб-приложение .NET Core и подключить его к базе данных SQL. После выполнения всех действий у вас будет приложение .NET Core MVC, работающее в службе приложений в Linux.
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать приложение .NET Core и подключить его к Базе данных SQL. После выполнения всех действий у вас будет приложение .NET Core MVC, работающее в службе приложений в Linux.
 
 ![Приложение, работающее в службе приложений в Linux](./media/tutorial-dotnetcore-sqldb-app/azure-app-in-browser.png)
 
@@ -179,7 +179,7 @@ az webapp config connection-string set --resource-group myResourceGroup --name <
 
 Затем задайте для параметра приложения `ASPNETCORE_ENVIRONMENT` значение _Production_. Этот параметр позволяет определить, выполняется ли приложение в Azure, так как SQLite применяется для локальной среды разработки, а база данных SQL — для среды Azure.
 
-В следующем примере настраивается параметр приложения `ASPNETCORE_ENVIRONMENT` в веб-приложении Azure. Замените заполнитель *\<app_name>* собственным значением.
+В следующем примере настраивается параметр приложения `ASPNETCORE_ENVIRONMENT` в приложении Azure. Замените заполнитель *\<app_name>* собственным значением.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings ASPNETCORE_ENVIRONMENT="Production"
@@ -250,9 +250,9 @@ To https://<app_name>.scm.azurewebsites.net/<app_name>.git
  * [new branch]      master -> master
 ```
 
-### <a name="browse-to-the-azure-web-app"></a>Переход к веб-приложению Azure
+### <a name="browse-to-the-azure-app"></a>Переход к приложению Azure
 
-Откройте развертываемое веб-приложение в веб-браузере.
+Перейдите к развернутому приложению в веб-браузере.
 
 ```bash
 http://<app_name>.azurewebsites.net
@@ -354,21 +354,21 @@ git commit -m "added done field"
 git push azure master
 ```
 
-После окончания `git push` перейдите в веб-приложение Azure и проверьте новые функции.
+После выполнения команды `git push` перейдите к приложению Azure и проверьте новые функции.
 
-![Веб-приложение Azure после включения Code First Migrations](./media/tutorial-dotnetcore-sqldb-app/this-one-is-done.png)
+![Приложение Azure после включения Code First Migration](./media/tutorial-dotnetcore-sqldb-app/this-one-is-done.png)
 
 Все имеющиеся элементы списка дел по-прежнему отображаются. При повторной публикации приложения .NET Core существующие данные в базе данных SQL не теряются. Кроме того, Entity Framework Core Migrations изменяет только схему данных, оставляя существующие данные нетронутыми.
 
-## <a name="manage-your-azure-web-app"></a>Управление веб-приложением Azure
+## <a name="manage-your-azure-app"></a>Управление приложением Azure
 
-Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное веб-приложение.
+Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное приложение.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/tutorial-dotnetcore-sqldb-app/access-portal.png)
+![Переход к приложению Azure на портале](./media/tutorial-dotnetcore-sqldb-app/access-portal.png)
 
-По умолчанию на портале отображается страница **Обзор** веб-приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
+По умолчанию на портале отображается страница **Обзор** приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
 
 ![Страница службы приложений на портале Azure](./media/tutorial-dotnetcore-sqldb-app/web-app-blade.png)
 
@@ -387,7 +387,7 @@ git push azure master
 > * Потоковая передача журналов из Azure в окно терминала.
 > * Управление приложением на портале Azure.
 
-Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с веб-приложением.
+Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](../app-service-web-tutorial-custom-domain.md)
+> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](../app-service-web-tutorial-custom-domain.md)

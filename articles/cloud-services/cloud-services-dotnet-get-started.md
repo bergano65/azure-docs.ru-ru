@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: hero-article
 ms.date: 05/15/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 04c68308739f641e892a335832725ba87e36f7af
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 59354b7f4a1a82d1fa2fd105bd743ecb73526434
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242132"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53716112"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -35,8 +35,8 @@ ms.locfileid: "51242132"
 
 Приложение использует [рабочий шаблон на основе очередей](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) для разгрузки процессора от задач создания эскизов в фоновом режиме.
 
-## <a name="alternative-architecture-web-apps-and-webjobs"></a>Альтернативная архитектура: функции "Веб-приложения" и "Веб-задания"
-Это руководство описывает, как запускать фоновые и интерфейсные компоненты в облачной службе Azure. Альтернативой является запуск интерфейсной части с помощью функции [Веб-приложения Azure](/azure/app-service/) и использование функции [Веб-задания](https://go.microsoft.com/fwlink/?LinkId=390226) для серверной части. Руководство по веб-заданиям см. в статье [Создание веб-задания .NET в службе приложений Azure](https://github.com/Azure/azure-webjobs-sdk/wiki). Сведения о том, как выбрать службы, см. в статье о [сравнении веб-сайтов, облачных служб и виртуальных машин Azure](../app-service/choose-web-site-cloud-service-vm.md).
+## <a name="alternative-architecture-app-service-and-webjobs"></a>Альтернативная архитектура: Служба приложений и веб-задания
+Это руководство описывает, как запускать фоновые и интерфейсные компоненты в облачной службе Azure. Альтернативой является запуск интерфейсной части в [Службе приложений Azure](/azure/app-service/) и использование функции [Веб-задания](https://go.microsoft.com/fwlink/?LinkId=390226) для серверной части. Руководство по веб-заданиям см. в статье [Создание веб-задания .NET в службе приложений Azure](https://github.com/Azure/azure-webjobs-sdk/wiki). Сведения о том, как выбрать службы, см. в статье о [сравнении Службы приложений, облачных служб и виртуальных машин Azure](../app-service/overview-compare.md).
 
 ## <a name="what-youll-learn"></a>Что вы узнаете
 * Как подготовить компьютер к разработке для Azure путем установки пакета Azure SDK.
@@ -232,7 +232,7 @@ ms.locfileid: "51242132"
 1. В **обозревателе решений** щелкните правой кнопкой мыши пункт **ContosoAdsWeb** в области **Роли** проекта **ContosoAdsCloudService**, а затем выберите **Свойства**.
 
     ![Свойства роли](./media/cloud-services-dotnet-get-started/roleproperties.png)
-2. Перейдите на вкладку **Параметры** . В раскрывающемся списке Конфигурация службы выберите значение **Облако**.
+2. Перейдите на вкладку **Параметры** . В раскрывающемся списке **Конфигурация службы** выберите значение **Облако**.
 
     ![Конфигурация облака](./media/cloud-services-dotnet-get-started/sccloud.png)
 3. Выберите запись **StorageConnectionString**, и вы увидите кнопку с многоточием (**...**) в правом конце строки. Нажмите эту кнопку с многоточием, чтобы открыть диалоговое окно **Создание строки подключения учетной записи хранения** .
@@ -390,9 +390,9 @@ ms.locfileid: "51242132"
 7. Следуйте этой же процедуре для добавления строки подключения хранилища в свойства роли ContosoAdsWorker.
 8. Там же в окне свойств **ContosoAdsWorker [роль]** добавьте другую строку подключения:
 
-   * Имя: ContosoAdsDbConnectionString
-   * Тип: строка
-   * Значение. Вставьте ту же строку подключения, которая была использована для проекта веб-роли. (Этот пример предназначен для Visual Studio 2013. Не забудьте изменить источник данных при копировании этого примера для Visual Studio 2015 или более поздней версии.)
+   * Имя: ContosoAdsDbConnectionString.
+   * Тип: Строка
+   * Значение: вставьте ту же строку подключения, которая была использована для проекта веб-роли. (Этот пример предназначен для Visual Studio 2013. Не забудьте изменить источник данных при копировании этого примера для Visual Studio 2015 или более поздней версии.)
 
        ```
        Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;
@@ -775,7 +775,7 @@ private void ProcessQueueMessage(CloudQueueMessage msg)
 
 Для получения дополнительных сведений см. следующие ресурсы:
 
-* [Облачные службы Azure, часть 1: Введение](http://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
+* [Облачные службы Azure. Часть 1: введение](http://justazure.com/microsoft-azure-cloud-services-part-1-introduction/)
 * [Управление облачными службами](cloud-services-how-to-manage-portal.md)
 * [Хранилище Azure](https://docs.microsoft.com/azure/storage/)
 * [Как выбрать поставщика облачных служб](https://azure.microsoft.com/overview/choosing-a-cloud-service-provider/)

@@ -1,183 +1,196 @@
 ---
-title: Использование mongoimport и mongorestore с API Azure Cosmos DB для MongoDB
-description: Узнайте, как использовать mongoimport и mongorestore для импорта данных в учетную запись API для MongoDB.
+title: Перенос данных MongoDB на Azure Cosmos DB с помощью mongoimport и mongorestore
+description: Вы узнаете, как использовать mongoimport и mongorestore для импорта данных в Cosmos DB.
 keywords: mongoimport, mongorestore
 services: cosmos-db
-author: SnehaGunda
+author: rimman
 ms.service: cosmos-db
 ms.component: cosmosdb-mongo
+ms.devlang: na
 ms.topic: tutorial
-ms.date: 05/07/2018
-ms.author: sngun
+ms.date: 12/26/2018
+ms.author: rimman
 ms.custom: mvc
-ms.openlocfilehash: 50bb34d86780dec003c63b5ff0a3884049dd47c1
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+Customer intent: As a developer, I want to migrate the data from my existing MongoDB to Cosmos DB.
+ms.openlocfilehash: 4cd30c7981cd6807113729292db403a80cbddef0
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52871019"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53793756"
 ---
-# <a name="tutorial-migrate-your-data-to-azure-cosmos-db-mongodb-api-account"></a>Руководство по переносу данных в учетную запись API MongoDB в Azure Cosmos DB
+# <a name="migrate-your-mongodb-data-to-azure-cosmos-db"></a>Перенос данных MongoDB в Azure Cosmos DB
 
-Это руководство содержит инструкции по переносу данных из MongoDB в учетную запись API MongoDB в Azure Cosmos DB. Если вы импортируете данные из MongoDB и планируете использовать их с API SQL для Azure Cosmos DB, это можно сделать с помощью [средства переноса данных](import-data.md).
+ Это руководство содержит инструкции по переносу данных из MongoDB в службу Azure Cosmos DB, настроенную для использования API Cosmos DB для MongoDB. Если вы импортируете данные из MongoDB и планируете использовать их с API SQL для Azure Cosmos DB, это можно сделать с помощью [средства переноса данных](import-data.md).
 
-В рамках этого руководства рассматриваются следующие задачи:
+Изучив данный учебник, вы научитесь:
 
 > [!div class="checklist"]
-> * Планирование миграции
-> * Предварительные требования для миграции
-> * перенос данных с помощью mongoimport;
-> * перенос данных с помощью mongorestore.
+> * составлять план переноса;
+> * переносить данные с помощью mongoimport;
+> * переносить данные с помощью mongorestore.
 
-Прежде чем переносить данные в учетную запись API MongoDB, убедитесь, что у вас есть образец данных MongoDB. Если у вас нет образца базы данных MongoDB, скачайте и установите [сервер сообщества MongoDB](https://www.mongodb.com/download-center), создайте базу данных и с помощью mongoimport.exe или mongorestore.exe передайте в нее пример данных. 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="plan-for-migration"></a>Планирование миграции
+## <a name="prerequisites"></a>Предварительные требования
 
-1. Заранее создайте и масштабируйте свои коллекции:
-        
-   * По умолчанию Azure Cosmos DB подготавливает новую коллекцию MongoDB, обеспечивающую пропускную способность 1000 единиц запроса в секунду (ЕЗ/с). Прежде чем начать перенос с помощью mongoimport или mongorestore, создайте все свои коллекции с помощью [портала Azure](https://portal.azure.com) или драйверов и инструментов MongoDB. Если объем данных превышает 10 ГБ, создайте [секционированную коллекцию](partition-data.md) с соответствующим ключом сегмента. Для хранения данных сущностей в коллекциях рекомендуется использовать MongoDB. Можно совместно размещать сущности сопоставимых размеров и подготавливать пропускную способность на уровне базы данных Azure Cosmos.
+Просмотрите и выполните приведенные ниже предварительные требования перед запуском переноса.
 
-   * На [портале Azure](https://portal.azure.com) увеличьте показатели пропускной способности своих коллекций (с 1000 ЕЗ/с для односекционной коллекции и 2500 ЕЗ/с для сегментированной коллекции) только на время выполнения переноса. Более высокая пропускная способность позволяет избежать ограничения скорости и выполнить перенос быстрее. Чтобы снизить затраты, вы можете снизить пропускную способность сразу после переноса.
+### <a name="plan-for-the-migration"></a>Планирование переноса
 
-   * Помимо показателей ЕЗ/с на уровне коллекции вы также можете настроить ЕЗ/с для набора коллекций на уровне родительской базы данных. Но перед этим вам потребуется создать базу данных и коллекции, а также определить ключ сегмента для каждой коллекции.
+В этом разделе описывается планирование переноса данных. Ми оценим затраты в единицах запросов, определим задержку между компьютером и облачной службой, вычислим размер пакета и количество рабочих ролей вставки.
 
-   * Вы можете создать сегментированную коллекцию с помощью привычного средства, драйвера или пакета SDK. В этом примере для создания сегментированной коллекции используется оболочка Mongo:
 
-        ```bash
-        db.runCommand( { shardCollection: "admin.people", key: { region: "hashed" } } )
-        ```
+#### <a name="pre-create-and-scale-your-collections"></a>Создание своих коллекций заранее и их масштабирование
+
+Прежде чем выполнять миграцию с помощью mongoimport или mongorestore, создайте все свои коллекции с помощью [портала Azure](https://portal.azure.com) или драйверов и инструментов MongoDB. 
+
+Увеличьте пропускную способность коллекций для миграции на [портале Azure](https://portal.azure.com). Более высокая пропускная способность позволяет избежать ограничения скорости и выполнить перенос быстрее. Чтобы снизить затраты, вы можете снизить пропускную способность сразу после переноса.
+
+В дополнение к подготовке пропускной способности на уровне коллекции вы можете подготавливать общую пропускную способность на уровне базы данных для набора коллекций. Необходимо предварительно создать базу данных и коллекции, а также определить ключ сегмента для каждой коллекции в базе данных с общей пропускной способностью.
+
+Вы можете создать сегментированные коллекции с помощью предпочтительного средства, драйвера или пакета SDK. В этом примере для создания сегментированной коллекции используется оболочка Mongo:
+
+```bash
+db.runCommand( { shardCollection: "admin.people", key: { region: "hashed" } } )
+```
     
-        Результат:
+Эта команда возвращает следующие результаты:
 
-        ```JSON
-        {
-            "_t" : "ShardCollectionResponse",
-            "ok" : 1,
-            "collectionsharded" : "admin.people"
-        }
-        ```
+```JSON
+{
+    "_t" : "ShardCollectionResponse",
+    "ok" : 1,
+    "collectionsharded" : "admin.people"
+}
+```
 
-1. Вычислите приблизительную стоимость ЕЗ при записи одного документа:
+#### <a name="calculate-the-approximate-ru-charge-for-a-single-document-write"></a>Вычисление приблизительной стоимости ЕЗ при записи одного документа
 
-   a. Подключение к учетной записи API MongoDB в Azure Cosmos DB из оболочки MongoDB. Инструкции доступны в статье [Подключение приложения MongoDB к Azure Cosmos DB](connect-mongodb-account.md).
-    
-   b. Выполните пример команды insert, используя один из примеров документов из оболочки MongoDB:
+Из оболочки MongoDB подключитесь к учетной записи Cosmos, настроенной на использование API Cosmos DB для MongoDB. Инструкции доступны в статье [Подключение приложения MongoDB к Azure Cosmos DB](connect-mongodb-account.md).
+
+Затем выполните пример команды insert, используя один из примеров документов:
    
-      ```bash
-      db.coll.insert({ "playerId": "a067ff", "hashedid": "bb0091", "countryCode": "hk" })
-      ```
+```bash
+db.coll.insert({ "playerId": "a067ff", "hashedid": "bb0091", "countryCode": "hk" })
+```
         
-   c. Выполните команду ```db.runCommand({getLastRequestStatistics: 1})```. Вы получите примерно такой ответ:
+Выполните команду `db.runCommand({getLastRequestStatistics: 1})`.
+
+Вы получите примерно такие выходные данные:
      
-      ```bash
-        globaldb:PRIMARY> db.runCommand({getLastRequestStatistics: 1})
-        {
-            "_t": "GetRequestStatisticsResponse",
-            "ok": 1,
-            "CommandName": "insert",
-            "RequestCharge": 10,
-            "RequestDurationInMilliSeconds": NumberLong(50)
-        }
-      ```
+```bash
+globaldb:PRIMARY> db.runCommand({getLastRequestStatistics: 1})
+{
+    "_t": "GetRequestStatisticsResponse",
+    "ok": 1,
+    "CommandName": "insert",
+    "RequestCharge": 10,
+    "RequestDurationInMilliSeconds": NumberLong(50)
+}
+```
         
-    d. Запишите значение RequestCharge (стоимость запроса).
+Запишите значение RequestCharge (стоимость запроса).
     
-1. Определите задержку между вашим компьютером и облачной службой Azure Cosmos DB:
+#### <a name="determine-the-latency-from-your-machine-to-cosmos-db"></a>Определение задержки между своим компьютером и Cosmos DB
     
-    a. Включите ведение подробного журнала из оболочки MongoDB с помощью команды ```setVerboseShell(true)```.
+Включите ведение подробного журнала из оболочки MongoDB с помощью команды `setVerboseShell(true)`.
     
-    b. Выполните простой запрос к базе данных: ```db.coll.find().limit(1)```. Вы получите примерно такой ответ:
+Выполните простой запрос к базе данных с помощью команды `db.coll.find().limit(1)`.
 
-       ```bash
-       Fetched 1 record(s) in 100(ms)
-       ```
+Вы получите примерно такие выходные данные:
+
+```bash
+Fetched 1 record(s) in 100(ms)
+```
         
-1. Перед выполнением переноса удалите вставленный документ, чтобы точно не было повторяющихся документов. Для удаления документов можно использовать команду ```db.coll.remove({})```.
+Перед выполнением переноса удалите вставленный документ, чтобы убедиться в отсутствии повторяющихся документов. Документы можно удалить с помощью команды `db.coll.remove({})`.
 
-1. Вычислите приблизительные значения *batchSize* и *numInsertionWorkers*:
+#### <a name="calculate-the-approximate-values-for-the-batchsize-and-numinsertionworkers-properties"></a>Вычисление приблизительных значений для свойств batchSize и numInsertionWorkers
 
-    * Для расчета *batchSize* поделите общее число подготовленных ЕЗ на число ЕЗ, использованных для записи одного документа (на шаге 3).
+Для свойства **batchSize** разделите общую подготовленную пропускную способность (ЕЗ/с) на единицы запросов, потребляемые для записи одного документа, как показано в разделе "Определение задержки между своим компьютером и Cosmos DB". Если вычисленное значение меньше или равно 24, используйте это число в качестве значения свойства. Если вычисленное значение больше 24, задайте значение свойства 24.
     
-    * Если полученное значение *batchSize* <= 24, то используйте его в качестве значения *batchSize*.
-    
-    * Если полученное значение *batchSize* > 24, то задайте значение *batchSize* равное 24.
-    
-    * Для расчета *numInsertionWorkers* используйте следующую формулу: *numInsertionWorkers = (подготовленная пропускная способность * задержка в секундах) / (размер пакета * число ЕЗ, использованных для одной операции записи)*.
-        
-    |Свойство|Значение|
-    |--------|-----|
-    |batchSize| 24 |
-    |Подготовленные ЕЗ | 10 000 |
-    |Latency | 0,100 с |
-    |ЕЗ, использованные для записи 1 документа | 10 ЕЗ |
-    |numInsertionWorkers | ? |
-    
-    *numInsertionWorkers = (10000 ЕЗ x 0,1 с) / (24 x 10 ЕЗ) = 4,1666*
+Для определения значения свойства **numInsertionWorkers** используйте следующую формулу:
 
-1. Выполните команду переноса. Параметры переноса данных описаны в следующих разделах.
+`numInsertionWorkers = (Provisioned RUs throughput * Latency in seconds) / (batchSize * Consumed RUs for a single write)`
 
-   ```bash
-   mongoimport.exe --host cosmosdb-mongodb-account.documents.azure.com:10255 -u cosmosdb-mongodb-account -p <Your_MongoDB_password> --ssl --sslAllowInvalidCertificates --jsonArray --db dabasename --collection collectionName --file "C:\sample.json" --numInsertionWorkers 4 --batchSize 24
-   ```
-   Или же можно использовать mongorestore (убедитесь, что для всех коллекций установлена пропускная способность, которая равна числу ЕЗ, используемых в предыдущих вычислениях, или превышает его).
+Мы можем использовать следующие значения для вычисления значения свойства **numInsertionWorkers**:
+
+| Свойство | Значение |
+|--------|-----|
+| **batchSize** | 24 |
+| Подготовленные единицы запросов | 10 000 |
+| Latency | 0,100 с |
+| Потребленные единицы запросов | 10 ЕЗ |
+| **numInsertionWorkers** | (10 000 ЕЗ x 0,100 с) / (24 x 10 ЕЗ) = **4,1666** |
+
+Выполните команду миграции **monogoimport**. Параметры команды описаны далее в этой статье.
+
+```bash
+mongoimport.exe --host cosmosdb-mongodb-account.documents.azure.com:10255 -u cosmosdb-mongodb-account -p <Your_MongoDB_password> --ssl --sslAllowInvalidCertificates --jsonArray --db dabasename --collection collectionName --file "C:\sample.json" --numInsertionWorkers 4 --batchSize 24
+```
+
+Вы также можете использовать команду **monogorestore**. Убедитесь, что для всех коллекций установлена пропускная способность, которая равна числу ЕЗ, используемых в предыдущих вычислениях, или превышает его.
    
-   ```bash
-   mongorestore.exe --host cosmosdb-mongodb-account.documents.azure.com:10255 -u cosmosdb-mongodb-account -p <Your_MongoDB_password> --ssl --sslAllowInvalidCertificates ./dumps/dump-2016-12-07 --numInsertionWorkersPerCollection 4 --batchSize 24
-   ```
+```bash
+mongorestore.exe --host cosmosdb-mongodb-account.documents.azure.com:10255 -u cosmosdb-mongodb-account -p <Your_MongoDB_password> --ssl --sslAllowInvalidCertificates ./dumps/dump-2016-12-07 --numInsertionWorkersPerCollection 4 --batchSize 24
+```
 
-## <a name="prerequisites-for-migration"></a>Предварительные требования для миграции
+### <a name="complete-the-prerequisites"></a>Выполнение предварительных требований
 
-* **Увеличьте пропускную способность**. Продолжительность переноса данных зависит от пропускной способности, настроенной для отдельной коллекции или набора коллекций. Увеличьте пропускную способность для крупных миграций. После переноса уменьшите пропускную способность для экономии расходов. Дополнительные сведения об увеличении пропускной способности на [портале Azure](https://portal.azure.com) см. в статье [Прекращение использования уровней производительности S1, S2 и S3 в DocumentDB](performance-levels.md).
+После планирования миграции выполните указанные ниже действия: 
 
-* **Включите SSL**. В Azure Cosmos DB реализуются строгие требования и стандарты безопасности. Обязательно включите SSL при взаимодействии с учетной записью. Процедуры, описанные в оставшейся части статьи, включают инструкции по включению SSL для mongoimport и mongorestore.
+* **Получение примера данных**. Убедитесь, что у вас есть несколько примеров данных перед началом миграции. 
 
-* **Создайте ресурсы Azure Cosmos DB**. Перед началом переноса данных заранее создайте коллекции на портале Azure. Если вы выполняете перенос в учетную запись Azure Cosmos DB, обладающую пропускной способностью уровня базы данных, обязательно укажите ключ раздела при создании коллекций Azure Cosmos DB.
+* **Увеличение пропускной способности**. Продолжительность переноса данных зависит от пропускной способности, подготовленной для отдельной коллекции или базы данных. Увеличьте пропускную способность для крупных миграций. После переноса уменьшите пропускную способность для экономии расходов. 
 
-## <a name="get-your-connection-string"></a>Получение строки подключения 
+* **Включение SSL.**  В Cosmos DB строгие требования к безопасности и стандарты. Обязательно включите SSL при взаимодействии с учетной записью Cosmos. Процедуры, описанные в оставшейся части статьи, включают инструкции по включению SSL для команд mongoimport и mongorestore.
 
-1. В левой панели на [портале Azure](https://portal.azure.com) щелкните запись **Azure Cosmos DB**.
-1. На панели **Подписки** выберите имя своей учетной записи.
-1. В колонке **Строка подключения** щелкните **Строка подключения**.
+* **Создание ресурсов Cosmos DB.** Перед началом переноса данных заранее создайте коллекции на портале Azure. Для перехода на учетную запись Cosmos с пропускной способностью, подготовленной на уровне базы данных, при создании коллекций укажите ключ раздела.
 
-   На правой панели содержатся все сведения, необходимые для успешного подключения к учетной записи.
+* **Получение строки подключения.** На [портале Azure](https://portal.azure.com) щелкните запись **Azure Cosmos DB** слева. В разделе **Подписки** выберите имя своей учетной записи. В разделе **Строка подключения** выберите **Строка подключения**. В правой части портала отображаются сведения, необходимые для подключения к учетной записи:
 
-   ![Колонка "Строка подключения"](./media/mongodb-migrate/ConnectionStringBlade.png)
+    ![Сведения о строке подключения](./media/mongodb-migrate/ConnectionStringBlade.png)
 
-## <a name="migrate-data-by-using-mongoimport"></a>Перенос данных с помощью mongoimport
+## <a name="use-mongoimport"></a>Использование mongoimport
 
-Чтобы импортировать данные в учетную запись Azure Cosmos DB, используйте следующий шаблон. Укажите *узел*, *имя пользователя* и *пароль* своей учетной записи.  
-
-Шаблон:
+Чтобы импортировать данные в учетную запись Cosmos, используйте следующий шаблон.
 
 ```bash
 mongoimport.exe --host <your_hostname>:10255 -u <your_username> -p <your_password> --db <your_database> --collection <your_collection> --ssl --sslAllowInvalidCertificates --type json --file "C:\sample.json"
 ```
 
-Пример:  
+Укажите вместо заполнителей \<your_hostname>, \<your_username> и \<your_password> имя хоста, имя пользователя и пароль для своей учетной записи. В следующем примере мы используем **sampleDB** в качестве значения для \<your_database> и **sampleColl** как значение для \<your_collection>:
 
 ```bash
 mongoimport.exe --host cosmosdb-mongodb-account.documents.azure.com:10255 -u cosmosdb-mongodb-account -p <Your_MongoDB_password> --ssl --sslAllowInvalidCertificates --db sampleDB --collection sampleColl --type json --file "C:\Users\admin\Desktop\*.json"
 ```
 
-## <a name="migrate-data-by-using-mongorestore"></a>Перенос данных с помощью mongorestore
+## <a name="use-mongorestore"></a>Использование mongorestore
 
-Чтобы восстановить данные в учетной записи API для MongoDB, используйте приведенный ниже шаблон для выполнения импорта. Укажите *узел*, *имя пользователя* и *пароль* своей учетной записи.
-
-Шаблон:
+Чтобы восстановить данные в учетной записи Cosmos, настроенной с API для MongoDB, используйте приведенный ниже шаблон для выполнения импорта.
 
 ```bash
 mongorestore.exe --host <your_hostname>:10255 -u <your_username> -p <your_password> --db <your_database> --collection <your_collection> --ssl --sslAllowInvalidCertificates <path_to_backup>
 ```
 
-Пример:
+Укажите вместо заполнителей \<your_hostname>, \<your_username> и \<your_password> имя хоста, имя пользователя и пароль для своей учетной записи. В следующем примере мы используем **./dumps/dump-2016-12-07** в качестве значения для \<path_to_backup>:
 
 ```bash
-mongorestore.exe --host cosmosdb-mongodb-account.documents.azure.com:10255 -u cosmosdb-mongodb-account -p <Your_MongoDB_password> --ssl --sslAllowInvalidCertificates ./dumps/dump-2016-12-07
+mongorestore.exe --host cosmosdb-mongodb-account.documents.azure.com:10255 -u cosmosdb-mongodb-account -p <Your_MongoDB_password> --db mydatabase --collection mycollection --ssl --sslAllowInvalidCertificates ./dumps/dump-2016-12-07
 ```
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+Вы можете удалить группу ресурсов, учетную запись Cosmos и все связанные ресурсы, когда они больше не нужны. Чтобы удалить группу ресурсов, выполните шаги, описанные ниже:
+
+1. Перейдите к группе ресурсов, в которой создана учетная запись Cosmos.
+1. Выберите **Удалить группу ресурсов**.
+1. Подтвердите имя удаляемой группы ресурсов и выберите **Удалить**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Вы можете перейти к следующему руководству, из которого вы узнаете, как запрашивать данные MongoDB с помощью Azure Cosmos DB. 
+Перейдите к следующему руководству, из которого вы узнаете, как запрашивать данные с помощью API Azure Cosmos DB для MongoDB. 
 
 > [!div class="nextstepaction"]
->[Как выполнять запросы к данным в базе данных Azure Cosmos DB с помощью API для MongoDB](../cosmos-db/tutorial-query-mongodb.md)
+> [Руководство. Выполнение запросов в Azure Cosmos DB с использованием API MongoDB](../cosmos-db/tutorial-query-mongodb.md)

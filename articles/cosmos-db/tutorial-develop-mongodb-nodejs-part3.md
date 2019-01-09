@@ -1,5 +1,5 @@
 ---
-title: Создание приложения Angular с помощью API MongoB на Node.Js (часть 3)
+title: Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание пользовательского интерфейса с помощью Angular
 titleSuffix: Azure Cosmos DB
 description: Часть 3 серии руководств по созданию в Azure Cosmos DB приложения MongoDB с помощью Angular, Node и тех же API, которые используются для MongoDB.
 author: johnpapa
@@ -7,19 +7,19 @@ ms.service: cosmos-db
 ms.component: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: tutorial
-ms.date: 12/06/2018
+ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
-ms.openlocfilehash: b34155fc8f40a1dc51aaf236a78da5f5ee0511ae
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 462d0ea036ee50a3eea6812d87772bba9559125c
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53134511"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53788588"
 ---
-# <a name="create-a-mongodb-app-with-angular-and-azure-cosmos-db---part-3-build-the-ui-with-angular"></a>Создание приложения MongoDB с помощью Angular и Azure Cosmos DB, часть 3 Создание пользовательского интерфейса с помощью Angular
+# <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---build-the-ui-with-angular"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание пользовательского интерфейса с помощью Angular
 
-Из этого руководства в нескольких частях вы узнаете, как создать приложение [API MongoDB](mongodb-introduction.md), написанное на Node.js с использованием Express и Angular, и подключить его к базе данных Azure Cosmos DB.
+Из этого руководства в нескольких частях вы узнаете, как создать новое приложение, написанное на Node.js с использованием Express и Angular, а затем подключить его к [учетной записи Cosmos, настроенной с помощью API Cosmos DB для MongoDB](mongodb-introduction.md).
 
 Часть 3 руководства основана на [части 2](tutorial-develop-mongodb-nodejs-part2.md). Здесь рассматриваются следующие задачи:
 

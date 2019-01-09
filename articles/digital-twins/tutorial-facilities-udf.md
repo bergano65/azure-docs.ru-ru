@@ -1,20 +1,21 @@
 ---
-title: Мониторинг пространства с помощью Azure Digital Twins | Документация Майкрософт
+title: Руководство. Мониторинг пространства с помощью Azure Digital Twins | Документация Майкрософт
 description: Сведения о подготовке пространственных ресурсов и контроле условий работы с помощью Azure Digital Twins.
 services: digital-twins
 author: dsk-2015
+ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 10/26/2018
 ms.author: dkshir
-ms.openlocfilehash: a9784860cbc0b6d58f63fb22b7ad676048c8aee6
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 077dee19bbe32379bc88919117b3c61177828094
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52584202"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53556107"
 ---
-# <a name="tutorial-provision-your-building-and-monitor-working-conditions-with-azure-digital-twins"></a>Руководство по подготовке примера здания и мониторинге условий работы с помощью Azure Digital Twins
+# <a name="tutorial-provision-your-building-and-monitor-working-conditions-with-azure-digital-twins"></a>Руководство. Подготовка примера здания и мониторинг условий работы с помощью Azure Digital Twins
 
 В этом руководстве описано, как использовать Azure Digital Twins для отслеживания желаемых температурных условий и уровня комфорта в необходимых пространствах. [Настроив пример здания](tutorial-facilities-setup.md), вы можете подготовить его и запустить пользовательские функции на основе данных датчика, используя шаги в этом руководстве.
 

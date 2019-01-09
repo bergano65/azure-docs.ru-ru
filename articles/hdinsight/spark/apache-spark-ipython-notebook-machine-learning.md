@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание приложений машинного обучения Spark в Azure HDInsightt
+title: Руководство. Создание приложения машинного обучения Spark в Azure HDInsight
 description: Пошаговые инструкции по созданию приложения машинного обучения Apache Spark в кластерах HDInsight Spark с помощью записной книжки Jupyter.
 services: hdinsight
 ms.service: hdinsight
@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: a730f6ccba9f935855b233ca804a8180aa7f504b
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 0a0712e4985414263d1e90299d78d5e30fe78a3e
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52580576"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608517"
 ---
 # <a name="tutorial-build-an-apache-spark-machine-learning-application-in-hdinsight"></a>Руководство. Создание приложения машинного обучения Apache Spark в HDInsight 
 
@@ -97,7 +97,7 @@ ms.locfileid: "52580576"
     pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])
     ```
 
-    См. дополнительные сведения о <a href="http://spark.apache.org/docs/latest/ml-guide.html#how-it-works" target="_blank">конвейере машинного обучения Spark и том, как он работает</a>.
+    См. дополнительные сведения о <a href="https://spark.apache.org/docs/latest/ml-guide.html#how-it-works" target="_blank">конвейере машинного обучения Apache Spark и том, как он работает</a>.
 
 5. Впишите конвейер в документ для обучения.
    
@@ -184,7 +184,7 @@ ms.locfileid: "52580576"
 10. Завершите работу записной книжки для освобождения ресурсов. Для этого в меню **File** (Файл) записной книжки выберите пункт **Close and Halt** (Закрыть и остановить). Записная книжка завершит работу и закроется.
 
 ## <a name="use-anaconda-scikit-learn-library-for-spark-machine-learning"></a>Использование библиотеки scikit-learn Anaconda для машинного обучения Spark
-Кластеры Apache Spark в HDInsight включают библиотеки Anaconda. Они также включают библиотеку **scikit-learn** для машинного обучения. Кроме того, библиотека включает различные наборы данных, которые можно использовать для создания примеров приложений прямо в записной книжке Jupyter. Примеры использования библиотеки scikit-learn см. здесь: [http://scikit-learn.org/stable/auto_examples/index.html](http://scikit-learn.org/stable/auto_examples/index.html).
+Кластеры Apache Spark в HDInsight включают библиотеки Anaconda. Они также включают библиотеку **scikit-learn** для машинного обучения. Кроме того, библиотека включает различные наборы данных, которые можно использовать для создания примеров приложений прямо в записной книжке Jupyter. Примеры использования библиотеки scikit-learn см. здесь: [https://scikit-learn.org/stable/auto_examples/index.html](https://scikit-learn.org/stable/auto_examples/index.html).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

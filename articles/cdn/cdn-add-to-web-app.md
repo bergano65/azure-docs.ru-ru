@@ -15,16 +15,16 @@ ms.topic: tutorial
 ms.date: 05/14/2018
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: db4a9a43a971f66870c2079762b9c62802122baa
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 33b47d33262a4968a0eafb9ec70ef73e50975735
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49093329"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53602823"
 ---
-# <a name="tutorial-add-azure-cdn-to-an-azure-app-service-web-app"></a>Руководство по добавлению сети доставки содержимого Azure в веб-приложение службы приложений Azure
+# <a name="tutorial-add-azure-cdn-to-an-azure-app-service-web-app"></a>Руководство. Добавление сети доставки содержимого Azure в веб-приложение Службы приложений Azure
 
-В этом руководстве показано, как добавить [сеть доставки содержимого Azure (CDN)](cdn-overview.md) в [веб-приложение службы приложений Azure](../app-service/app-service-web-overview.md). Веб-приложения — это служба для размещения веб-приложений, интерфейсов REST API и серверной части мобильных решений. 
+В этом руководстве показано, как добавить [сеть доставки содержимого Azure (CDN)](cdn-overview.md) в [веб-приложение службы приложений Azure](../app-service/overview.md). Веб-приложения — это служба для размещения веб-приложений, интерфейсов REST API и серверной части мобильных решений. 
 
 Это домашняя страница примера статического HTML-сайта, с которым вы будете работать:
 
@@ -268,6 +268,6 @@ http://<endpointname>.azureedge.net/index.html?q=1
 Чтобы узнать, как оптимизировать производительность CDN, см. следующие статьи:
 
 > [!div class="nextstepaction"]
-> [Руководство. Добавление личного домена к конечной точке CDN Azure](cdn-map-content-to-custom-domain.md)
+> [Руководство Добавление личного домена к конечной точке Azure CDN](cdn-map-content-to-custom-domain.md)
 
 

@@ -15,16 +15,16 @@ ms.topic: tutorial
 ms.date: 04/26/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 65c503c96305cf23b97511dd06a56b5eb6fcc1be
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 8ebaab260d38a3fe4f492f2545c5ec8b07990235
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53409422"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53715245"
 ---
 # <a name="tutorial-authenticate-and-authorize-users-end-to-end-in-azure-app-service-on-linux"></a>Руководство. Сквозная аутентификация и авторизация в Службе приложений Azure в Linux
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. Кроме того, служба приложений имеет встроенную поддержку [проверки подлинности и авторизации пользователя](../app-service-authentication-overview.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json). В этом руководстве показано, как защитить ваши приложения с помощью проверки подлинности и авторизации в службе приложений. В качестве примера в нем используется приложение ASP.NET Core с интерфейсом Angular.js. При проверке подлинности и авторизации в службе приложений поддерживаются все языковые среды выполнения. Вы узнаете, как применить их к предпочитаемому языку, следуя руководству.
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. Кроме того, служба приложений имеет встроенную поддержку [проверки подлинности и авторизации пользователя](../overview-authentication-authorization.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json). В этом руководстве показано, как защитить ваши приложения с помощью проверки подлинности и авторизации в службе приложений. В качестве примера в нем используется приложение ASP.NET Core с интерфейсом Angular.js. При проверке подлинности и авторизации в службе приложений поддерживаются все языковые среды выполнения. Вы узнаете, как применить их к предпочитаемому языку, следуя руководству.
 
 В этом руководстве используется пример приложения, чтобы показать вам, как защитить автономное приложение (в разделе [Включение проверки подлинности и авторизации в серверном приложении](#enable-authentication-and-authorization-for-back-end-app)).
 
@@ -86,7 +86,7 @@ dotnet run
 
 ### <a name="create-azure-resources"></a>Создание ресурсов Azure
 
-В Cloud Shell введите следующие команды, чтобы создать два веб-приложения: Замените _&lt;front\_end\_app\_name>_ и _&lt;back\_end\_app\_name>_ на два глобально уникальных имени приложений (допустимые символы — `a-z`, `0-9` и `-`). Дополнительные сведения о каждой команде см. в статье [Создание веб-приложения .NET Core в службе приложений на платформе Linux](quickstart-dotnetcore.md).
+В Cloud Shell введите следующие команды, чтобы создать два приложения Службы приложений. Замените _&lt;front\_end\_app\_name>_ и _&lt;back\_end\_app\_name>_ на два глобально уникальных имени приложений (допустимые символы — `a-z`, `0-9` и `-`). Дополнительные сведения о каждой команде см. в статье [Создание приложения .NET Core в Службе приложений в Linux](quickstart-dotnetcore.md).
 
 ```azurecli-interactive
 az group create --name myAuthResourceGroup --location "West Europe"
@@ -129,7 +129,7 @@ git commit -m "add CORS to back end"
 
 ### <a name="push-to-azure-from-git"></a>Публикация в Azure из Git
 
-В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание в серверное приложение. Замените _&lt;deploymentLocalGitUrl-of-back-end-app>_ URL-адресом удаленного репозитория Git, который вы сохранили при [создании ресурсов Azure](#create-azure-resources). При появлении запроса на ввод учетных данных в диспетчере учетных данных Git введите [учетные данные развертывания](../app-service-deployment-credentials.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) (а не используемые для входа на портал Azure).
+В окне терминала на локальном компьютере выполните следующие команды Git, чтобы выполнить развертывание в серверное приложение. Замените _&lt;deploymentLocalGitUrl-of-back-end-app>_ URL-адресом удаленного репозитория Git, который вы сохранили при [создании ресурсов Azure](#create-azure-resources). При появлении запроса на ввод учетных данных в диспетчере учетных данных Git введите [учетные данные развертывания](../deploy-configure-credentials.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) (а не используемые для входа на портал Azure).
 
 ```bash
 git remote add backend <deploymentLocalGitUrl-of-back-end-app>
@@ -143,7 +143,7 @@ git remote add frontend <deploymentLocalGitUrl-of-front-end-app>
 git push frontend master
 ```
 
-### <a name="browse-to-the-azure-web-apps"></a>Переход к веб-приложению Azure
+### <a name="browse-to-the-azure-apps"></a>Переход к приложениям Azure
 
 Перейдите по следующим URL-адресам в браузере и посмотрите, как работают два приложения.
 
@@ -242,7 +242,7 @@ Azure Active Directory используется в качестве постав
 
 ### <a name="enable-authentication-and-authorization-for-back-end-app"></a>Включение проверки подлинности и авторизации в серверном приложении
 
-На [портале Azure](https://portal.azure.com) откройте страницу управления вашим серверным приложением. Для этого последовательно выберите в меню слева **Группы ресурсов** > **myAuthResourceGroup** > _\<имя\_для\_серверного\_приложения>_.
+На [портале Azure](https://portal.azure.com) откройте страницу управления серверным приложением. Для этого последовательно выберите в меню слева **Группы ресурсов** > **myAuthResourceGroup** > _\<имя\_вашего\_серверного\_приложения>_.
 
 ![API ASP.NET Core, выполняющийся в службе приложений Azure](./media/tutorial-auth-aad/portal-navigate-back-end.png)
 
@@ -453,7 +453,7 @@ az group delete --name myAuthResourceGroup
 > * Использование маркера доступа из серверного кода.
 > * Использование маркера доступа из клиентского кода (браузер).
 
-Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с веб-приложением.
+Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](../app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
+> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](../app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)

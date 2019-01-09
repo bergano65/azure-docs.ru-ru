@@ -1,22 +1,19 @@
 ---
 title: Руководство. Проектирование Базы данных Azure для MariaDB с помощью Azure CLI
 description: В этом руководстве описано, как создать и администрировать сервер и Базу данных Azure для MariaDB и с помощью Azure CLI 2.0 из командной строки.
-services: mariadb
 author: ajlam
 ms.author: andrela
-manager: kfile
-editor: jasonwhowell
 ms.service: mariadb
-ms.devlang: azure-cli
+ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 11/10/2018
 ms.custom: mvc
-ms.openlocfilehash: 2d715f89b56af822c2c1174cca0f2a9c1b847fc0
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: fa056dad052914e771251585cb426c70591aa235
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51516343"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53541197"
 ---
 # <a name="tutorial-design-an-azure-database-for-mariadb-using-azure-cli"></a>Руководство. Проектирование Базы данных Azure для MariaDB с помощью Azure CLI
 
@@ -175,10 +172,10 @@ SELECT * FROM inventory;
 
 Чтобы восстановить данные, вам потребуются следующие сведения:
 
-- Точка восстановления. Выберите время до того момента, когда был изменен сервер. Значение точки восстановления должно быть не меньше значения самой старой резервной копии исходной базы данных.
-- Целевой сервер. Укажите новое имя сервера, который нужно восстановить.
-- Исходный сервер. Укажите имя сервера, из которого требуется выполнить восстановление.
-- Расположение. Вы не сможете выбрать регион, по умолчанию он совпадает с исходным сервером.
+- "Точка восстановления". Выберите время до того момента, когда был изменен сервер. Значение точки восстановления должно быть не меньше значения самой старой резервной копии исходной базы данных.
+- "Целевой сервер". Укажите новое имя сервера, который нужно восстановить.
+- "Исходный сервер". Укажите имя сервера, из которого требуется выполнить восстановление.
+- Расположение. Вы не сможете выбрать регион. По умолчанию он совпадает с исходным сервером.
 
 ```azurecli-interactive
 az mariadb server restore --resource-group myresourcegroup --name mydemoserver-restored --restore-point-in-time "2017-05-4 03:10" --source-server-name mydemoserver

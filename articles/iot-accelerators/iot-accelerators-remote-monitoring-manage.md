@@ -1,5 +1,5 @@
 ---
-title: Руководство по настройке устройств с помощью решения для удаленного мониторинга в Azure | Документация Майкрософт
+title: Руководство по настройке устройств с помощью решения для удаленного мониторинга в Azure | Документация Майкрософт
 description: В этом руководстве объясняется, как настраивать устройства, подключенные к акселератору решений для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
@@ -9,14 +9,14 @@ services: iot-accelerators
 ms.date: 11/15/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: b8352b062efdb49df01834bd3c2a5e1393e11a44
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: 5505ceaa88f1ad792df57f9728f5e4809404942c
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52679160"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53599507"
 ---
-# <a name="tutorial-configure-devices-connected-to-your-monitoring-solution"></a>Руководство по настройке устройств, подключенных к решению для мониторинга
+# <a name="tutorial-configure-devices-connected-to-your-monitoring-solution"></a>Руководство. Настройка устройств, подключенных к решению для мониторинга
 
 В этом руководстве показано, как настраивать подключенные устройства Интернета вещей и управлять ими с помощью акселератора решений для удаленного мониторинга. Вы научитесь добавлять новое устройство в акселератор решений и настраивать это устройство.
 

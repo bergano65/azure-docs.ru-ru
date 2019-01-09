@@ -1,29 +1,29 @@
 ---
-title: Как выполнять запросы в базе данных Azure Cosmos DB с помощью API MongoDB
-description: Узнайте, как выполнять запросы с помощью API MongoDB в базе данных Azure Cosmos DB
+title: Запрос данных с помощью API Azure Cosmos DB для MongoDB
+description: Узнайте, как запрашивать данные с помощью API Azure Cosmos DB для MongoDB.
 services: cosmos-db
-author: SnehaGunda
-ms.author: sngun
+author: rimman
+ms.author: rimman
 ms.service: cosmos-db
 ms.component: cosmosdb-mongo
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 03/29/2018
-ms.openlocfilehash: 8c865ab7fa997b169e481612ce791d960688da56
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.date: 12/26/2018
+ms.openlocfilehash: b2bfc48fa0ba8aab0bbdf19e1b127155633e2271
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52841512"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53793212"
 ---
-# <a name="tutorial-query-azure-cosmos-db-by-using-the-mongodb-api"></a>Руководство. Выполнение запросов в Azure Cosmos DB с использованием API MongoDB
+# <a name="query-data-by-using-azure-cosmos-dbs-api-for-mongodb"></a>Запрос данных с использованием API Azure Cosmos DB для MongoDB
 
-[API для MongoDB](mongodb-introduction.md) базы данных Azure Cosmos DB поддерживает [запросы оболочки MongoDB](https://docs.mongodb.com/manual/tutorial/query-documents/). 
+[API Azure Cosmos DB для MongoDB](mongodb-introduction.md) поддерживает [запросы MongoDB](https://docs.mongodb.com/manual/tutorial/query-documents/). 
 
 В этой статье рассматриваются следующие задачи: 
 
 > [!div class="checklist"]
-> * Запрос данных с помощью MongoDB.
+> * Запрос данных, хранящихся в базе данных Cosmos, с помощью оболочки MongoDB
 
 Начать работу можно с использования примеров в этом документе и просмотра видео [о запросе Azure Cosmos DB с помощью оболочки MongoDB](https://azure.microsoft.com/resources/videos/query-azure-cosmos-db-data-by-using-the-mongodb-shell/).
 
@@ -303,7 +303,7 @@ ms.locfileid: "52841512"
 В этом руководстве вы выполнили следующее:
 
 > [!div class="checklist"]
-> * Вы узнали, как выполнять запросы с помощью MongoDB. 
+> * научились выполнять запросы с помощью API Cosmos DB для MongoDB.
 
 Теперь вы можете приступать к следующему руководству, чтобы узнать, как глобально распределять данные.
 

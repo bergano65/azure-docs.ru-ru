@@ -13,16 +13,18 @@ ms.devlang: na
 ms.date: 11/13/2018
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 5f355604e2bff1c3f03c8237f30cbe41ce7e5810
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: b50609449d6144d2bb013d82e2eb29e94b5b01be
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51616153"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53754124"
 ---
 # <a name="tutorial-create-multiple-resource-instances-with-resource-manager-templates"></a>Руководство. Создание нескольких экземпляров ресурса с помощью шаблонов Resource Manager
 
 Узнайте, как выполнить итерацию в шаблоне Azure Resource Manager для создания нескольких экземпляров ресурса Azure. В этом руководстве описано, как изменить шаблон для создания трех экземпляров учетной записи хранения.
+
+В рамках этого руководства рассматриваются следующие задачи:
 
 > [!div class="checklist"]
 > * открытие шаблона быстрого запуска;
@@ -120,14 +122,14 @@ ms.locfileid: "51616153"
 
 Чтобы получить список всех трех учетных записей хранения, опустите параметр --name.
 
-# <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
+# <a name="azure-clitabazure-cli"></a>[Интерфейс командной строки Azure](#tab/azure-cli)
 ```azurecli
 echo "Enter the Resource Group name:" &&
 read resourceGroupName &&
 az storage account list --resource-group $resourceGroupName
 ```
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```azurepowershell
 $resourceGroupName = Read-Host -Prompt "Enter the resource group name"
@@ -149,7 +151,7 @@ Get-AzureRmStorageAccount -ResourceGroupName $resourceGroupName
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как создать несколько экземпляров учетной записи хранения. На данный момент вы создали одну учетную запись хранения или несколько экземпляров учетной записи хранения. С помощью следующего руководства вы разработаете шаблон с несколькими ресурсами и несколькими типами ресурсов. Некоторые ресурсы обладают зависимыми ресурсами.
+Из этого руководства вы узнали, как создать несколько экземпляров учетной записи хранения. В следующем руководстве вы узнаете, как переместить ресурс из одной группы ресурсов в другую.
 
 > [!div class="nextstepaction"]
-> [Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md)
+> [Перемещение ресурсов](./resource-manager-tutorial-move-resources.md)

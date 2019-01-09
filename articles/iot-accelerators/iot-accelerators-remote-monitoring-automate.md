@@ -9,14 +9,14 @@ services: iot-accelerators
 ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 7ebe81565bc6bd28747f3a251b39a3c010493307
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: 91ee5087e5f41cda3648c2ecadcfcf16fd32a249
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51819106"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53598690"
 ---
-# <a name="tutorial-detect-issues-with-devices-connected-to-your-monitoring-solution"></a>Учебник. Выявление проблем с устройствами, подключенными к решению для мониторинга
+# <a name="tutorial-detect-issues-with-devices-connected-to-your-monitoring-solution"></a>Руководство. Определение проблем с устройствами, подключенными к решению для мониторинга
 
 В этом руководстве показано, как настроить акселератор решений для удаленного мониторинга с целью выявления проблем на подключенных устройствах Интернета вещей. Для определения проблем с устройствами необходимо добавить правила, которые создают оповещения на панели мониторинга решения.
 

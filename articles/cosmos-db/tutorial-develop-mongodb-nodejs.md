@@ -7,21 +7,21 @@ ms.service: cosmos-db
 ms.component: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: tutorial
-ms.date: 12/06/2018
+ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
-ms.openlocfilehash: ea69e4c8ba74dc685dd0b0fb7ac61cc6d061a26f
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 364c8d4c0ca9ac9a733ee98fd73b2dfd8497625f
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53137656"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53791292"
 ---
-# <a name="create-a-mongodb-app-with-angular-and-azure-cosmos-db"></a>Создание приложения MongoDB с помощью Angular и Azure Cosmos DB 
+# <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB
 
-Из этого руководства в нескольких частях вы узнаете, как создать приложение [API MongoDB](mongodb-introduction.md) с использованием Express, Angular и Node.js (стек MEAN) и подключить его к базе данных Azure Cosmos DB. Azure Cosmos DB поддерживает клиентские подключения MongoDB. Поэтому вместо MongoDB можно использовать базу данных Azure Cosmos DB, применяя тот же код, что и для приложений MongoDB, но с дополнительными преимуществами. Среди таких преимуществ Azure Cosmos DB — простое развертывание в облаке, масштабирование, защита, глобальная репликация данных, поддержка нескольких моделей и сверхбыстрое выполнение операций чтения и записи. 
+Из этого руководства в нескольких частях вы узнаете, как создать новое приложение, написанное на Node.js с использованием Express и Angular, а затем подключить его к учетной записи Cosmos[, настроенной с помощью API Cosmos DB для MongoDB](mongodb-introduction.md).
 
-Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Она позволяет быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества глобального распределения и горизонтального масштабирования Azure Cosmos DB. 
+Azure Cosmos DB — это глобально распределенная многомодельная служба базы данных Майкрософт. Она позволяет быстро создавать и запрашивать документы, пары "ключ — значение" и базы данных графов, используя преимущества глобального распределения и горизонтального масштабирования Cosmos DB. 
 
 В этом руководстве из нескольких частей рассматриваются следующие задачи:
 

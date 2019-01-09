@@ -1,20 +1,21 @@
 ---
-title: Анализ событий экземпляра установки Azure Digital Twins | Документация Майкрософт
+title: Руководство. Анализ событий экземпляра установки Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как визуализировать и анализировать события из пространств Azure Digital Twins с помощью Аналитики временных рядов Azure.
 services: digital-twins
 author: dsk-2015
+ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 10/15/2018
 ms.author: dkshir
-ms.openlocfilehash: b7c44184d0a0d8d5a8f1fbd80b053230f2c1ae84
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: f233efc93fa07cc7fc7c904336f01348f4da3f82
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582026"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53554526"
 ---
-# <a name="tutorial-visualize-and-analyze-events-from-your-azure-digital-twins-spaces-by-using-time-series-insights"></a>Руководство по визуализации и анализу событий пространств Azure Digital Twins с помощью Аналитики временных рядов
+# <a name="tutorial-visualize-and-analyze-events-from-your-azure-digital-twins-spaces-by-using-time-series-insights"></a>Руководство. Визуализация и анализ событий пространств Azure Digital Twins с помощью Аналитики временных рядов
 
 После развертывания экземпляра Azure Digital Twins, подготовки пространств и реализации пользовательской функции для мониторинга определенных условий вы можете визуализировать события и данные, поступающие из ваших пространств, чтобы найти тенденции и аномалии. 
 

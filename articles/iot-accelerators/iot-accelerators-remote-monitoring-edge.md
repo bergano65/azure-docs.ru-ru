@@ -1,5 +1,5 @@
 ---
-title: Руководство по обнаружению аномалий на пограничных устройствах в решении Azure | Документация Майкрософт
+title: Руководство по обнаружению аномалий на пограничных устройствах в решении Azure | Документация Майкрософт
 description: Из этого руководства вы узнаете, как отслеживать устройства IoT Edge с помощью акселератора решений для удаленного мониторинга.
 author: dominicbetts
 manager: timlt
@@ -9,12 +9,12 @@ services: iot-accelerators
 ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 51c19447e115426bd39d39fedc86193c8f091df1
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 2f6e8b40907d02e62ede95a44fa10168f7590bd5
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52843314"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53606254"
 ---
 # <a name="tutorial-detect-anomalies-at-the-edge-with-the-remote-monitoring-solution-accelerator"></a>Руководство. Обнаружение аномалий на пограничных устройствах с помощью акселератора решений для удаленного мониторинга
 
@@ -28,7 +28,7 @@ ms.locfileid: "52843314"
 
 ![Обзор](media/iot-accelerators-remote-monitoring-edge/overview.png)
 
-Из этого руководства вы узнаете, как:
+Изучив это руководство, вы:
 
 >[!div class="checklist"]
 > * добавить устройство IoT Edge в решение;

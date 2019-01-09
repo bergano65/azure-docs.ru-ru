@@ -15,20 +15,20 @@ ms.topic: tutorial
 ms.date: 11/15/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: a20373e43780cea10e550ae968deb2a8720b9a9f
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: d26f51d05ef97e15c47183e87f44aecec247723c
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53251680"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53722334"
 ---
-# <a name="tutorial-build-a-php-and-mysql-web-app-in-azure"></a>Руководство. Создание веб-приложения PHP в Azure с подключением к базе данных MySQL
+# <a name="tutorial-build-a-php-and-mysql-app-in-azure"></a>Руководство. Создание приложения PHP в Azure с подключением к базе данных MySQL
 
 > [!NOTE]
-> В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение в службе приложений на платформе _Linux_, см. руководство по [созданию веб-приложений PHP и MySQL в службе приложений Azure на платформе Linux](./containers/tutorial-php-mysql-app.md).
+> В этой статье мы развернем приложение в службе приложений на платформе Windows. Чтобы развернуть приложение в Службе приложений в _Linux_, обратитесь к руководству по [созданию приложений PHP с подключением к MySQL в Службе приложений Azure в Linux](./containers/tutorial-php-mysql-app.md).
 >
 
-[Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как создать веб-приложение PHP в Azure и подключить его к базе данных MySQL. По завершении вы получите приложение [Laravel](https://laravel.com/), работающее в веб-приложениях службы приложений Azure.
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как создать приложение PHP в Azure и подключить его к базе данных MySQL. По завершении вы получите приложение [Laravel](https://laravel.com/), работающее в Службе приложений Azure.
 
 ![Приложение PHP, работающее в службе приложений Azure](./media/app-service-web-tutorial-php-mysql/complete-checkbox-published.png)
 
@@ -206,7 +206,7 @@ az mysql server firewall-rule create --name allAzureIPs --server <mysql_server_n
 ```
 
 > [!TIP] 
-> Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](app-service-ip-addresses.md#find-outbound-ips).
+> Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](overview-inbound-outbound-ips.md#find-outbound-ips).
 >
 
 В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<you_ip_address >* [локальным IPv4-адресом](http://www.whatsmyip.org/).
@@ -384,17 +384,17 @@ az webapp config appsettings set --name <app_name> --resource-group myResourceGr
 php artisan key:generate --show
 ```
 
-В Cloud Shell задайте ключ приложения в веб-приложении службы приложений с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set). Замените заполнители _&lt;appname>_ и _&lt;outputofphpartisankey:generate>_ собственными значениями.
+В Cloud Shell задайте ключ приложения в приложении Службы приложений с помощью команды [`az webapp config appsettings set`](/cli/azure/webapp/config/appsettings?view=azure-cli-latest#az-webapp-config-appsettings-set). Замените заполнители _&lt;appname>_ и _&lt;outputofphpartisankey:generate>_ собственными значениями.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app_name> --resource-group myResourceGroup --settings APP_KEY="<output_of_php_artisan_key:generate>" APP_DEBUG="true"
 ```
 
-Значение `APP_DEBUG="true"` указывает Laravel возвращать отладочную информацию в случае ошибок в работе развернутого веб-приложения. При выполнении рабочего приложения задайте для него более безопасное значение `false`.
+Значение `APP_DEBUG="true"` указывает Laravel возвращать отладочную информацию в случае ошибок в работе развернутого приложения. При выполнении рабочего приложения задайте для него более безопасное значение `false`.
 
 ### <a name="set-the-virtual-application-path"></a>Задание пути виртуального приложения
 
-Задайте путь виртуального приложения для веб-приложения. Этот шаг требуется из-за того, что [жизненный цикл приложения Laravel](https://laravel.com/docs/5.4/lifecycle) начинается в _общем_ каталоге, а не в корневом каталоге приложения. Другие платформы PHP, жизненный цикл которых начинается в корневом каталоге, могут работать без ручной настройки пути виртуального приложения.
+Задайте для приложения путь виртуального приложения. Этот шаг требуется из-за того, что [жизненный цикл приложения Laravel](https://laravel.com/docs/5.4/lifecycle) начинается в _общем_ каталоге, а не в корневом каталоге приложения. Другие платформы PHP, жизненный цикл которых начинается в корневом каталоге, могут работать без ручной настройки пути виртуального приложения.
 
 В Cloud Shell задайте путь виртуального приложения с помощью команды [`az resource update`](/cli/azure/resource#az-resource-update). Замените заполнитель _&lt;appname>_ собственным значением.
 
@@ -433,7 +433,7 @@ remote: Running deployment command...
 > Точно так же можно добавить любые действия развертывания в службе приложений на основе Git. Дополнительные сведения см. в статье [Custom Deployment Script](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script) (Пользовательский сценарий развертывания).
 >
 
-### <a name="browse-to-the-azure-web-app"></a>Переход к веб-приложению Azure
+### <a name="browse-to-the-azure-app"></a>Переход к приложению Azure
 
 Перейдите по адресу `http://<app_name>.azurewebsites.net` и добавьте несколько задач в список.
 
@@ -577,7 +577,7 @@ git commit -m "added complete checkbox"
 git push azure master
 ```
 
-После выполнения команды `git push` перейдите в веб-приложение Azure и еще раз проверьте новые функции.
+После выполнения команды `git push` перейдите в приложение Azure и проверьте новые функции.
 
 ![Изменения модели и базы данных, опубликованные в Azure](media/app-service-web-tutorial-php-mysql/complete-checkbox-published.png)
 
@@ -593,7 +593,7 @@ git push azure master
 az webapp log tail --name <app_name> --resource-group myResourceGroup
 ```
 
-После настройки потоков обновите веб-приложение Azure в браузере, чтобы получить немного трафика. Вы должны увидеть, что журналы консоли теперь направляются в терминал. Если журналы консоли не отображаются, проверьте еще раз через 30 секунд.
+После настройки потоков обновите приложение Azure в браузере, чтобы получить немного трафика. Вы должны увидеть, что журналы консоли теперь направляются в терминал. Если журналы консоли не отображаются, проверьте еще раз через 30 секунд.
 
 Чтобы отменить потоки для журналов, выполните команду `Ctrl`+`C`.
 
@@ -604,15 +604,15 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 >
 >
 
-## <a name="manage-the-azure-web-app"></a>Управление веб-приложением Azure
+## <a name="manage-the-azure-app"></a>Управление приложением Azure
 
-Перейдите на [портал Azure](https://portal.azure.com) для управления созданным веб-приложением.
+Перейдите на [портал Azure](https://portal.azure.com), чтобы управлять созданным приложением.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/app-service-web-tutorial-php-mysql/access-portal.png)
+![Переход к приложению Azure на портале](./media/app-service-web-tutorial-php-mysql/access-portal.png)
 
-Отобразится страница обзора вашего веб-приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
+Отобразится страница обзора вашего приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
 
 В меню слева доступны страницы для настройки приложения.
 
@@ -634,7 +634,7 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 > * Потоковая передача журналов диагностики из Azure.
 > * Управление приложением на портале Azure.
 
-Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с веб-приложением.
+Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](app-service-web-tutorial-custom-domain.md)
+> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md)

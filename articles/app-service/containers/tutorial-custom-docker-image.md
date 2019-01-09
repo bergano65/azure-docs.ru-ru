@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 10/24/2017
 ms.author: cfowler
 ms.custom: seodec18
-ms.openlocfilehash: ae9da43ac40a3da188e6030659cfb6de166c53bb
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 62cdc50b40fb1273fdc2eece050869fc2284cf6c
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53256083"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53632982"
 ---
 # <a name="use-a-custom-docker-image-for-web-app-for-containers"></a>Использование пользовательского образа Docker для платформы "Веб-приложения для контейнеров".
 
@@ -193,7 +193,7 @@ v1.0.0: digest: sha256:21f2798b20555f4143f2ca0591a43b4f6c8138406041f2d32ec908974
 
 ## <a name="deploy-app-to-azure"></a>Развертывание приложения в Azure
 
-С помощью веб-приложения Azure можно разместить собственные приложения Linux в облаке. Чтобы создать веб-приложение для контейнеров, выполните команды Azure CLI, которые создают группу, план обслуживания, а затем само веб-приложение. 
+Чтобы создать приложение, которое использует только что отправленный образ, выполните команды Azure CLI, которые создают группу, план обслуживания, а затем само веб-приложение. 
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 

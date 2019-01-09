@@ -1,21 +1,19 @@
 ---
 title: Скрипт Azure CLI. Создание Базы данных Azure для MariaDB
 description: Этот пример скрипта CLI создает сервер Базы данных Azure для MariaDB и настраивает правило брандмауэра на уровне сервера.
-services: mariadb
 author: ajlam
 ms.author: andrela
-editor: jasonwhowell
 ms.service: mariadb
-ms.devlang: azure-cli
+ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc
 ms.date: 11/28/2018
-ms.openlocfilehash: 80609035933e45ea9b7cc911a908f6ed24b9f6a7
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: a7e8a4c8f8572cfdd236b1752e89b3a1b4e7b758
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52585299"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53546816"
 ---
 # <a name="create-a-mariadb-server-and-configure-a-firewall-rule-using-the-azure-cli"></a>Создание сервера MariaDB и настройка правила брандмауэра с помощью Azure CLI
 Этот пример скрипта CLI создает сервер Базы данных Azure для MariaDB и настраивает правило брандмауэра на уровне сервера. После успешного выполнения скрипта доступ к серверу MariaDB можно получить из всех служб Azure, а также по настроенному IP-адресу.
@@ -43,5 +41,5 @@ ms.locfileid: "52585299"
 | [az group delete](/cli/azure/group#az-group-delete) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
-- Попробуйте использовать другие скрипты на основе [примеров Azure CLI для Базы данных Azure для MariaDB](../sample-scripts-azure-cli.md).
+- Дополнительные сведения об Azure CLI см. в: [документации по Azure CLI](/cli/azure).
+- Попробуйте использовать дополнительные сценарии: [Примеры Azure CLI для Базы данных Azure для MariaDB](../sample-scripts-azure-cli.md)

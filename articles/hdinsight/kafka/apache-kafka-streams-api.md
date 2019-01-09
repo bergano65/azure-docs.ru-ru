@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 11/06/2018
-ms.openlocfilehash: 8319376c597f16a5bfe1a357d74c59453b797e51
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: cb959bd74322534573f83c2b3258ff28d4c324ff
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52495125"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53584162"
 ---
 # <a name="tutorial-apache-kafka-streams-api"></a>Руководство. API Потоков Apache Kafka
 
@@ -22,7 +22,7 @@ ms.locfileid: "52495125"
 
 В этом руководстве используется приложение для подсчета слов во время потоковой передачи. Оно считывает текстовые данные из раздела Kafka, извлекает отдельные слова, а затем сохраняет слово и количество слов в другом разделе Kafka.
 
-> [!NOTE]
+> [!NOTE]  
 > Потоковая обработка Kafka часто выполняется с помощью Apache Spark или Apache Storm. В Kafka версии 0.10.0 (в HDInsight 3.5 и 3.6) появился API Потоков Kafka. Этот API позволяет преобразовать потоки данных между входными и выходными разделами. В некоторых случаях это может быть альтернативой созданию решения потоковой передачи Spark или Storm. 
 >
 > Дополнительные сведения о Потоках Kafka см. в [вводной документации ](https://kafka.apache.org/10/documentation/streams/) на сайте Apache.org.
@@ -38,7 +38,7 @@ ms.locfileid: "52495125"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Kafka в кластере HDInsight 3.6; Чтобы узнать, как создавать Kafka в кластере HDInsight, см. статью [Краткое руководство по созданию Apache Kafka в кластере HDInsight](apache-kafka-get-started.md).
+* Kafka в кластере HDInsight 3.6; Чтобы узнать, как создать кластер Kafka в HDInsight, ознакомьтесь с документом [начале работы с Apache Kafka в HDInsight](apache-kafka-get-started.md).
 
 * Выполните шаги, приведенные в статье [Руководство. Использование API производителя и потребителя Apache Kafka](apache-kafka-producer-consumer-api.md). В шагах, описанных в этом документе, используется пример приложения и разделы, созданные в этом руководстве.
 
@@ -48,7 +48,7 @@ ms.locfileid: "52495125"
 
 * [Java JDK 8](https://aka.ms/azure-jdks) или эквивалент, например OpenJDK.
 
-* [Apache Maven](http://maven.apache.org/)
+* [Apache Maven](https://maven.apache.org/)
 
 * Клиент SSH и команда `scp`. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
@@ -56,8 +56,8 @@ ms.locfileid: "52495125"
 
 Пример приложения расположен в подкаталоге `Streaming` по адресу [https://github.com/Azure-Samples/hdinsight-kafka-java-get-started](https://github.com/Azure-Samples/hdinsight-kafka-java-get-started). Приложение состоит из двух файлов:
 
-* файл `pom.xml` определяет зависимости проекта, версию Java и методы упаковки;
-* файл `Stream.java` реализует логику потоковой передачи.
+* `pom.xml`: этот файл определяет зависимости проекта, версию Java и методы упаковки.
+* `Stream.java`: этот файл реализует логику потоковой передачи.
 
 ### <a name="pomxml"></a>Pom.xml
 
@@ -74,13 +74,13 @@ ms.locfileid: "52495125"
     </dependency>
     ```
 
-    > [!NOTE]
+    > [!NOTE]  
     > Запись `${kafka.version}` объявлена в разделе `<properties>..</properties>` файла `pom.xml`. Она настроена для версии Kafka кластера HDInsight.
 
 * Подключаемые модули. Подключаемые модули Maven предоставляют различные возможности. В этом проекте используются следующие подключаемые модули:
 
-    * С помощью модуля `maven-compiler-plugin` можно задать для проекта Java версии 8. Для HDInsight 3.6 требуется Java версии 8.
-    * Модуль `maven-shade-plugin` используется для создания файла типа uber jar, содержащего это приложение, а также любые зависимости. Он также используется для установки точки входа приложения, с помощью которой вы сможете напрямую запускать JAR-файл, не указывая основной класс.
+    * `maven-compiler-plugin`: с помощью этого модуля можно задать для проекта Java версии 8. Для HDInsight 3.6 требуется Java версии 8.
+    * `maven-shade-plugin`: используется для создания файла типа uber jar, содержащего это приложение, а также любые зависимости. Он также используется для установки точки входа приложения, с помощью которой вы сможете напрямую запускать JAR-файл, не указывая основной класс.
 
 ### <a name="streamjava"></a>Stream.java
 
@@ -184,7 +184,7 @@ public class Stream
 
 4. Чтобы создать разделы для операции потоковой передачи, используйте следующие команды:
 
-    > [!NOTE]
+    > [!NOTE]  
     > Вы можете получить сообщение-ошибку о том, что раздел `test` уже существует. Это нормально, так как он, возможно, был создан в руководстве по API производителя и потребителя.
 
     ```bash
@@ -199,12 +199,12 @@ public class Stream
 
     Разделы используются для следующих целей:
 
-    * `test`. В этот раздел поступают записи. Здесь приложение потоковой передачи считывает их.
-    * `wordcounts`. В этом разделе приложение потоковой передачи хранит свои выходные данные.
-    * `RekeyedIntermediateTopic`. Этот раздел используется для секционирования данных, так как счетчик обновляется оператором `countByKey`.
-    * `wordcount-example-Counts-changelog`. Этот раздел является хранилищем состояний, используемым операцией `countByKey`.
+    * `test`: в этот раздел поступают записи. Здесь приложение потоковой передачи считывает их.
+    * `wordcounts`: в этом разделе приложение потоковой передачи хранит свои выходные данные.
+    * `RekeyedIntermediateTopic`: этот раздел используется для секционирования данных, так как счетчик обновляется оператором `countByKey`.
+    * `wordcount-example-Counts-changelog`: этот раздел является хранилищем состояний, используемым операцией `countByKey`.
 
-    > [!IMPORTANT]
+    > [!IMPORTANT]  
     > Кроме того, Kafka в HDInsight можно настроить на автоматическое создание разделов. Дополнительные сведения см. в статье [How to configure Apache Kafka on HDInsight to automatically create topics](apache-kafka-auto-create-topics.md) (Настройка автоматического создания разделов в Apache Kafka в HDInsight).
 
 ## <a name="run-the-code"></a>Выполнение кода
@@ -215,8 +215,8 @@ public class Stream
     java -jar kafka-streaming.jar $KAFKABROKERS $KAFKAZKHOSTS &
     ```
 
-    > [!NOTE]
-    > Может появиться предупреждение о log4j. На это можно не обращать внимания.
+    > [!NOTE]  
+    > Может появиться предупреждение об Apache log4j. На это можно не обращать внимания.
 
 2. Чтобы отправить записи в раздел `test`, используйте следующую команду для запуска приложения-отправителя:
 
@@ -230,7 +230,7 @@ public class Stream
     /usr/hdp/current/kafka-broker/bin/kafka-console-consumer.sh --bootstrap-server $KAFKABROKERS --topic wordcounts --formatter kafka.tools.DefaultMessageFormatter --property print.key=true --property key.deserializer=org.apache.kafka.common.serialization.StringDeserializer --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer --from-beginning
     ```
 
-    > [!NOTE]
+    > [!NOTE]  
     > В соответствии с параметрами `--property` объект-получатель консоли печатает ключ (машинное слово) и число (значение). Кроме того, этот параметр настраивает десериализатор, используемый при считывании этих значений из Kafka.
 
     Результат будет аналогичен приведенному ниже:
@@ -248,7 +248,7 @@ public class Stream
         jumped  13640
         jumped  13641
    
-    > [!NOTE]
+    > [!NOTE]  
     > Параметр `--from-beginning` настраивает запуск объекта-получателя в начале записей, хранящихся в разделе. Число увеличивается каждый раз, когда встречается слово, поэтому раздел содержит несколько записей для каждого слова с увеличивающимся числом.
 
 7. Нажмите клавиши __Ctrl+C__, чтобы закрыть отправитель. Снова нажмите клавиши __Ctrl+C__, чтобы выйти из приложения и объекта-получателя.
@@ -257,5 +257,5 @@ public class Stream
 
 Из этого документа вы узнали, как использовать API для Apache Kafka Streams с Kafka в HDInsight. Дополнительные сведения о работе с Kafka см. в следующих материалах.
 
-* [Анализ журналов для Apache Kafka в HDInsight](apache-kafka-log-analytics-operations-management.md)
-* [Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker](apache-kafka-mirroring.md)
+* [Анализ журналов для Apache Kafka](apache-kafka-log-analytics-operations-management.md)
+* [Репликация данных между кластерами Apache Kafka](apache-kafka-mirroring.md)

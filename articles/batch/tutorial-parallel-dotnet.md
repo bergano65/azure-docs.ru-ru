@@ -8,17 +8,17 @@ ms.assetid: ''
 ms.service: batch
 ms.devlang: dotnet
 ms.topic: tutorial
-ms.date: 11/20/2018
+ms.date: 12/21/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 7e654e070ce64b0f5e7f9fb5734bf0ec1584dbf6
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 9db223075284b02de1cf3de8cfa7a0b5aa35f286
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52423615"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53754226"
 ---
-# <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство. Запуск параллельной рабочей нагрузки с помощью пакета Azure с использованием .NET API
+# <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство. Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API
 
 Используйте пакетную службу Azure, чтобы эффективно выполнять пакетные задания для крупномасштабных параллельных и высокопроизводительных вычислений (HPC). В этом руководстве рассматривается пример C# для запуска параллельной рабочей нагрузки с помощью пакетной службы Azure. Вы изучите общий рабочий процесс приложения пакетной службы и узнаете, как программно взаимодействовать с ресурсами пакетной службы и службы хранилища. Вы узнаете, как выполнять следующие задачи:
 
@@ -175,8 +175,8 @@ CreateContainerIfNotExistAsync(blobClient, outputContainerName);
 
 При загрузке файлов задействованы два метода из `Program.cs`.
 
-* `UploadResourceFilesToContainerAsync`. Возвращает коллекцию объектов ResourceFile и выполняет внутренний вызов `UploadResourceFileToContainerAsync`, чтобы отправить каждый файл, переданный в параметре `inputFilePaths`.
-* `UploadResourceFileToContainerAsync`. Загружает каждый файл в качестве большого двоичного объекта в контейнер входных данных. После отправки файла метод получает подписанный URL-адрес (SAS) для большого двоичного объекта и возвращает объект ResourceFile, который его представляет.
+* `UploadResourceFilesToContainerAsync`: возвращает коллекцию объектов ResourceFile и выполняет внутренний вызов `UploadResourceFileToContainerAsync`, чтобы отправить каждый файл, переданный в параметре `inputFilePaths`.
+* `UploadResourceFileToContainerAsync`: загружает каждый файл в качестве большого двоичного объекта в контейнер входных данных. После отправки файла метод получает подписанный URL-адрес (SAS) для большого двоичного объекта и возвращает объект ResourceFile, который его представляет.
 
 ```csharp
 string inputPath = Path.Combine(Environment.CurrentDirectory, "InputFiles");
@@ -248,11 +248,14 @@ await job.CommitAsync();
 
 Пример создает задачи в задании путем вызова метода `AddTasksAsync`, который создает список объектов [CloudTask](/dotnet/api/microsoft.azure.batch.cloudtask). Каждый `CloudTask` запускает ffmpeg для обработки объекта входных данных `ResourceFile` с помощью свойства [CommandLine](/dotnet/api/microsoft.azure.batch.cloudtask.commandline). ffmpeg был ранее установлен на каждом узле при создании пула. В командной строке выполняется ffmpeg для преобразования каждого входного файла MP4 (видео) в файл MP3 (аудио).
 
-В примере создается объект [OutputFile](/dotnet/api/microsoft.azure.batch.outputfile) для файла MP3 после запуска командной строки. Выходные файлы каждой задачи (в этом случае один) передаются в контейнер в связанной учетной записи с помощью свойства задачи [OutputFiles](/dotnet/api/microsoft.azure.batch.cloudtask.outputfiles).
+В примере создается объект [OutputFile](/dotnet/api/microsoft.azure.batch.outputfile) для файла MP3 после запуска командной строки. Выходные файлы каждой задачи (в этом случае один) передаются в контейнер в связанной учетной записи с помощью свойства задачи [OutputFiles](/dotnet/api/microsoft.azure.batch.cloudtask.outputfiles). Ранее в примере кода был получен подписанный URL-адрес (`outputContainerSasUrl`), чтобы предоставить доступ на запись к выходному контейнеру. Обратите внимание на набор условий в объекте `outputFile`. Выходной файл из задачи передается в контейнер только после успешного завершения задачи (`OutputFileUploadCondition.TaskSuccess`). Ознакомьтесь с полным [примером кода](https://github.com/Azure-Samples/batch-dotnet-ffmpeg-tutorial) на сайте GitHub для получения дальнейших сведений о реализации.
 
 Затем в примере к заданию добавляются задачи с помощью метода [AddTaskAsync](/dotnet/api/microsoft.azure.batch.joboperations.addtaskasync), который ставит их в очередь для запуска на вычислительных узлах.
 
 ```csharp
+ // Create a collection to hold the tasks added to the job.
+List<CloudTask> tasks = new List<CloudTask>();
+
 for (int i = 0; i < inputFiles.Count; i++)
 {
     string taskId = String.Format("Task{0}", i);
@@ -265,7 +268,7 @@ for (int i = 0; i < inputFiles.Count; i++)
         ".mp3");
     string taskCommandLine = String.Format("cmd /c {0}\\ffmpeg-3.4-win64-static\\bin\\ffmpeg.exe -i {1} {2}", appPath, inputMediaFile, outputMediaFile);
 
-    // Create a cloud task (with the task ID and command line) 
+    // Create a cloud task (with the task ID and command line)
     CloudTask task = new CloudTask(taskId, taskCommandLine);
     task.ResourceFiles = new List<ResourceFile> { inputFiles[i] };
 

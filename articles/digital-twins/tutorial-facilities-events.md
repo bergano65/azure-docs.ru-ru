@@ -1,20 +1,21 @@
 ---
-title: Регистрация событий пространства Azure Digital Twins | Документация Майкрософт
+title: Руководство. Регистрация событий пространства Azure Digital Twins | Документация Майкрософт
 description: В этом руководстве вы узнаете, как получать уведомления от пространств, интегрировав Azure Digital Twins с Logic Apps.
 services: digital-twins
 author: dsk-2015
+ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
 ms.date: 10/15/2018
 ms.author: dkshir
-ms.openlocfilehash: bf41be4a3a4856302a054e5767b3d7b5ba423c60
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: a52a3be8c3023893569e95b566a18c032be26459
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52583267"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53556022"
 ---
-# <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Руководство по получению уведомлений от пространств Azure Digital Twins с использованием Logic Apps
+# <a name="tutorial-receive-notifications-from-your-azure-digital-twins-spaces-by-using-logic-apps"></a>Руководство. Получение уведомлений от пространств Azure Digital Twins с использованием Logic Apps
 
 Развернув экземпляр Azure Digital Twins, подготовив пространства и реализовав пользовательские функции для отслеживания определенных условий, вы можете по электронной почте уведомлять администратора офиса, когда возникают отслеживаемые условия. 
 

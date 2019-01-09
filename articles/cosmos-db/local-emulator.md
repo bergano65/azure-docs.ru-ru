@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 04/20/2018
 ms.author: danoble
-ms.openlocfilehash: 2979cdd0184e287ba83ae8a254722b64decce83d
-ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
+ms.openlocfilehash: 1876a74ff1631ee8a383ebe954df9756f7ef89f1
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53413699"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53811449"
 ---
 # <a name="use-the-azure-cosmos-db-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos DB для разработки и тестирования в локальной среде
 
@@ -34,7 +34,7 @@ ms.locfileid: "53413699"
 
 Эмулятор Azure Cosmos DB предоставляет локальную среду для разработки, которая эмулирует службу Azure Cosmos DB. С помощью эмулятора Azure Cosmos DB вы можете локально разрабатывать и тестировать приложения, не создавая подписку Azure и не тратя средства. Если приложение в эмуляторе Azure Cosmos DB работает правильно, вы можете использовать учетную запись Azure Cosmos DB в облаке.
 
-Сейчас обозреватель данных в эмуляторе полностью поддерживает только создание коллекций API SQL и MongoDB. Контейнеры таблиц, Graph и Cassandra поддерживаются не полностью.
+Сейчас обозреватель данных в эмуляторе полностью поддерживает только клиенты для API SQL и API Azure Cosmos DB для MongoDB. Клиенты для API таблиц, Graph и Cassandra поддерживаются не полностью.
 
 В этой статье рассматриваются следующие задачи:
 
@@ -57,7 +57,7 @@ ms.locfileid: "53413699"
 ## <a name="differences-between-the-emulator-and-the-service"></a>Различия между эмулятором и службой
 Эмулятор Azure Cosmos DB обеспечивает эмулированную среду, выполняемую на локальном компьютере разработчика. Поэтому возможности эмулятора и облачной учетной записи Azure Cosmos DB несколько отличаются.
 
-* Сейчас обозреватель данных в эмуляторе поддерживает только создание коллекций API SQL и MongoDB. API-интерфейсы таблиц, Graph и Cassandra пока не поддерживаются.
+* Сейчас обозреватель данных в эмуляторе поддерживает клиенты для API SQL и API Azure Cosmos DB для MongoDB. Клиенты для API таблиц, Graph и Cassandra еще не поддерживаются.
 * Эмулятор Azure Cosmos DB поддерживает только одну предопределенную учетную запись и известный главный ключ. Повторное создание ключей в эмуляторе Azure Cosmos DB не поддерживается.
 * Эмулятор Azure Cosmos DB не поддерживает масштабирование и не может работать с большим числом коллекций.
 * Эмулятор Azure Cosmos DB не поддерживает [уровни согласованности Azure Cosmos DB](consistency-levels.md).
@@ -125,14 +125,14 @@ ms.locfileid: "53413699"
 Чтобы в первый раз получить доступ к сети, нужно завершить работу эмулятора и удалить каталог данных эмулятора (C:\Users\имя_пользователя\AppData\Local\CosmosDBEmulator).
 
 ## <a name="developing-with-the-emulator"></a>Разработка с помощью эмулятора
-Когда эмулятор Azure Cosmos DB будет запущен на рабочем столе, вы сможете работать с ним с помощью любых поддерживаемых [пакетов SDK для Azure Cosmos DB](sql-api-sdk-dotnet.md) или [REST API Azure Cosmos DB](/rest/api/cosmos-db/). Эмулятор Azure Cosmos DB также содержит встроенный обозреватель данных, позволяющий создавать коллекции для API SQL и MongoDB, а также просматривать и редактировать документы без написания кода.
+Когда эмулятор Azure Cosmos DB будет запущен на рабочем столе, вы сможете работать с ним с помощью любых поддерживаемых [пакетов SDK для Azure Cosmos DB](sql-api-sdk-dotnet.md) или [REST API Azure Cosmos DB](/rest/api/cosmos-db/). Эмулятор Azure Cosmos DB также содержит встроенный обозреватель данных, позволяющий создавать коллекции для API SQL или API Cosmos DB для Mongo DB, а также просматривать и редактировать документы без написания кода.
 
     // Connect to the Azure Cosmos DB Emulator running locally
     DocumentClient client = new DocumentClient(
         new Uri("https://localhost:8081"),
         "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==");
 
-Если вы используете [поддержку протокола Azure Cosmos DB для MongoDB](mongodb-introduction.md), используйте следующую строку подключения:
+Если вы применяете [поддержку коммуникационного протокола Azure Cosmos DB для MongoDB](mongodb-introduction.md), используйте следующую строку подключения:
 
     mongodb://localhost:C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==@localhost:10255/admin?ssl=true
 
@@ -151,7 +151,7 @@ ms.locfileid: "53413699"
 
 ![Сертификат SSL для эмулятора Azure Cosmos DB](./media/local-emulator/database-local-emulator-ssl_certificate.png)
 
-Чтобы импортировать сертификат X.509 в хранилище сертификатов Java, выполните инструкции из статьи [Добавление сертификата в хранилище сертификатов ЦС Java](https://docs.microsoft.com/azure/java-add-certificate-ca-store). После импорта сертификата в хранилище сертификатов приложения Java и MongoDB смогут подключаться к эмулятору DB Azure Cosmos.
+Чтобы импортировать сертификат X.509 в хранилище сертификатов Java, выполните инструкции из статьи [Добавление сертификата в хранилище сертификатов ЦС Java](https://docs.microsoft.com/azure/java-add-certificate-ca-store). После импорта сертификата в хранилище сертификатов клиенты для SQL и API Azure Cosmos DB для MongoDB смогут подключаться к эмулятору Azure Cosmos DB.
 
 При подключении к эмулятору с помощью пакетов SDK для Python и Node.js проверка SSL отключена.
 

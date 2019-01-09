@@ -3,18 +3,17 @@ title: Руководство по Kubernetes в Azure. Подготовка п�
 description: В этом руководстве по Службе Azure Kubernetes (AKS) вы узнаете, как подготовить и создать многоконтейнерное приложение с помощью Docker Compose, которое можно затем развернуть в AKS.
 services: container-service
 author: iainfoulds
-manager: jeconnoc
 ms.service: container-service
 ms.topic: tutorial
-ms.date: 08/14/2018
+ms.date: 12/19/2018
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: 20a57a0d528fa6a291aa66f91ff6ddd71053f478
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: b529af1db6d72d87abc25eb37f2f1c39216a0ba4
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46297066"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53724170"
 ---
 # <a name="tutorial-prepare-an-application-for-azure-kubernetes-service-aks"></a>Руководство. Подготовка приложения для Службы Azure Kubernetes (AKS)
 
@@ -29,7 +28,7 @@ ms.locfileid: "46297066"
 
 ![Схема кластера Kubernetes в Аzure](./media/container-service-tutorial-kubernetes-prepare-app/azure-vote.png)
 
-В последующих руководствах образ контейнера отправляется в Реестр контейнеров Azure, а затем развертывается в кластере AKS.
+В дополнительных руководствах образ контейнера отправляется в Реестр контейнеров Azure, а затем развертывается в кластере AKS.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -49,7 +48,7 @@ Azure Cloud Shell не включает в себя компоненты Docker,
 git clone https://github.com/Azure-Samples/azure-voting-app-redis.git
 ```
 
-Измените каталоги, чтобы использовать клонированный каталог.
+Перейдите в клонированный каталог.
 
 ```console
 cd azure-voting-app-redis

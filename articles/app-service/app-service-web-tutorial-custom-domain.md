@@ -16,16 +16,16 @@ ms.topic: tutorial
 ms.date: 06/18/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 2debb52c703aaa25b2ff0a182bed3e07431b6f48
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 89852e30929cc26aa0cbe63ed4e334c4e878b90b
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53270269"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53714344"
 ---
-# <a name="tutorial-map-an-existing-custom-dns-name-to-azure-web-apps"></a>Руководство. Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure
+# <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство. Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
 
-[Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как сопоставить имеющееся DNS-имя личного домена с веб-приложением Azure.
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как сопоставить имеющееся настраиваемое DNS-имя со Службой приложений Azure.
 
 ![Переход к приложению Azure на портале](./media/app-service-web-tutorial-custom-domain/app-with-custom-dns.png)
 
@@ -48,7 +48,7 @@ ms.locfileid: "53270269"
   Например, чтобы добавить записи DNS для `contoso.com` и `www.contoso.com`, необходимо настроить параметры DNS для корневого домена `contoso.com`.
 
   > [!NOTE]
-  > Если у вас нет доменного имени, вы можете [купить его на портале Azure](custom-dns-web-site-buydomains-web-app.md). 
+  > Если у вас нет доменного имени, вы можете [купить его на портале Azure](manage-custom-dns-buy-domain.md). 
 
 ## <a name="prepare-the-app"></a>Подготовка приложения
 
@@ -156,7 +156,7 @@ ms.locfileid: "53270269"
 ![Запись CNAME добавлена](./media/app-service-web-tutorial-custom-domain/cname-record-added.png)
 
 > [!NOTE]
-> Дополнительные сведения см. в [руководстве по привязыванию существующего пользовательского SSL-сертификата к веб-приложениям Azure](app-service-web-tutorial-custom-ssl.md).
+> Дополнительные сведения см. в [руководстве по привязыванию существующего настраиваемого SSL-сертификата к Службе приложений Azure](app-service-web-tutorial-custom-ssl.md).
 
 Если вы пропустили шаг или где-то допустили опечатку, в нижней части страницы появится сообщение об ошибке проверки.
 
@@ -231,7 +231,7 @@ ms.locfileid: "53270269"
 ![Запись добавлена](./media/app-service-web-tutorial-custom-domain/a-record-added.png)
 
 > [!NOTE]
-> Дополнительные сведения см. в [руководстве по привязыванию существующего пользовательского SSL-сертификата к веб-приложениям Azure](app-service-web-tutorial-custom-ssl.md).
+> Дополнительные сведения см. в [руководстве по привязыванию существующего настраиваемого SSL-сертификата к Службе приложений Azure](app-service-web-tutorial-custom-ssl.md).
 
 Если вы пропустили шаг или где-то допустили опечатку, в нижней части страницы появится сообщение об ошибке проверки.
 
@@ -286,7 +286,7 @@ ms.locfileid: "53270269"
 ![Запись CNAME добавлена](./media/app-service-web-tutorial-custom-domain/cname-record-added-wildcard2.png)
 
 > [!NOTE]
-> Дополнительные сведения см. в [руководстве по привязыванию существующего пользовательского SSL-сертификата к веб-приложениям Azure](app-service-web-tutorial-custom-ssl.md).
+> Дополнительные сведения см. в [руководстве по привязыванию существующего настраиваемого SSL-сертификата к Службе приложений Azure](app-service-web-tutorial-custom-ssl.md).
 
 ## <a name="test-in-browser"></a>Тестирование в браузере
 
@@ -305,7 +305,7 @@ ms.locfileid: "53270269"
 
 ## <a name="migrate-an-active-domain"></a>Перенос активного домена
 
-Сведения о том, как перенести активный веб-сайт и его DNS-имя домена в службу приложений без простоев, см. в статье [Перенос активного DNS-имени в службу приложений Azure](app-service-custom-domain-name-migrate.md).
+Сведения о том, как перенести активный веб-сайт и его DNS-имя домена в службу приложений без простоев, см. в статье [Перенос активного DNS-имени в службу приложений Azure](manage-custom-dns-migrate-domain.md).
 
 ## <a name="redirect-to-a-custom-directory"></a>Перенаправление к пользовательскому каталогу
 
@@ -334,7 +334,7 @@ az webapp config hostname add \
     --hostname <fully_qualified_domain_name> 
 ``` 
 
-Дополнительные сведения см. в статье [Сопоставление пользовательского домена с веб-приложением](scripts/app-service-cli-configure-custom-domain.md). 
+Дополнительные сведения см. в статье [Сопоставление пользовательского домена с веб-приложением](scripts/cli-configure-custom-domain.md). 
 
 ### <a name="azure-powershell"></a>Azure PowerShell 
 
@@ -347,7 +347,7 @@ Set-AzureRmWebApp `
     -HostNames @("<fully_qualified_domain_name>","<app_name>.azurewebsites.net") 
 ```
 
-Дополнительные сведения см. в статье [Назначение пользовательского домена веб-приложению](scripts/app-service-powershell-configure-custom-domain.md).
+Дополнительные сведения см. в статье [Назначение пользовательского домена веб-приложению](scripts/powershell-configure-custom-domain.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -363,4 +363,4 @@ Set-AzureRmWebApp `
 Перейдите к следующему руководству, чтобы научиться привязывать пользовательский SSL-сертификат к веб-приложению.
 
 > [!div class="nextstepaction"]
-> [Привязывание существующего настраиваемого SSL-сертификата к веб-приложениям Azure](app-service-web-tutorial-custom-ssl.md)
+> [Привязывание существующего настраиваемого SSL-сертификата к Службе приложений Azure](app-service-web-tutorial-custom-ssl.md)

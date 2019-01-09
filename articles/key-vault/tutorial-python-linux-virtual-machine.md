@@ -12,18 +12,18 @@ ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: pryerram
 ms.custom: mvc
-ms.openlocfilehash: acc926151e5abd1d6f9d0992591575198d1fdf44
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: f5d74c2283d25d5774bd46bb9fe94795ff98fe9b
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52890540"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53720583"
 ---
 # <a name="tutorial-how-to-use-azure-key-vault-with-azure-linux-virtual-machine-in-python"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Linux в Azure (Python)
 
 Azure Key Vault помогает защитить секреты, такие как ключи API, строки подключения к базам данных, необходимые для доступа к приложениям, службам и ИТ-ресурсам.
 
-В этом руководстве описано, как в веб-приложении Azure настроить чтение данных из Azure Key Vault с помощью управляемых удостоверений для ресурсов Azure. Это руководство основано на [веб-приложениях Azure](../app-service/app-service-web-overview.md). Далее вы узнаете:
+В этом руководстве описано, как в веб-приложении Azure настроить чтение данных из Azure Key Vault с помощью управляемых удостоверений для ресурсов Azure. Далее вы узнаете:
 
 > [!div class="checklist"]
 > * Создать хранилище ключей.
@@ -80,9 +80,9 @@ az group create --name "<YourResourceGroupName>" --location "West US"
 
 Теперь создайте хранилище ключей в группе ресурсов, созданной на предыдущем шаге. Введите следующие сведения:
 
-* Имя хранилища ключей: это должна быть строка, состоящая из 3–24 таких символов: 0–9, a–z, A–Z и -.
+* Имя хранилища ключей: это должна быть строка, состоящая из 3–24 таких знаков: 0–9, a–z, A–Z и -.
 * Имя группы ресурсов.
-* Расположение: **Западная часть США**.
+* Расположение. **Западная часть США**.
 
 ```azurecli
 az keyvault create --name "<YourKeyVaultName>" --resource-group "<YourResourceGroupName>" --location "West US"
@@ -160,7 +160,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
 
 ## <a name="create-and-run-sample-python-app"></a>Создание и запуск примера приложения Python
 
-Ниже приведен пример файла с именем Sample.py. Он использует библиотеку [requests](http://docs.python-requests.org/master/) для выполнения вызовов HTTP GET.
+Ниже приведен пример файла с именем Sample.py. Он использует библиотеку [requests](https://pypi.org/project/requests/2.7.0/) для выполнения вызовов HTTP GET.
 
 ## <a name="edit-samplepy"></a>Редактирование файла Sample.py
 Откройте созданный файл Sample.py и скопируйте приведенный ниже код.

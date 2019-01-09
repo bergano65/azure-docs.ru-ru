@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 05/07/2018
-ms.openlocfilehash: d83c04946b67dd25bae306c2fa41a0864287bfc8
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: eef755c01a6703976383ee31b52bde14d32f0110
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52499307"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53604071"
 ---
 # <a name="tutorial-create-a-scala-maven-application-for-apache-spark-in-hdinsight-using-intellij"></a>Руководство. Создание приложения Scala Maven для Apache Spark в HDInsight с помощью IntelliJ
 
@@ -26,7 +26,7 @@ ms.locfileid: "52499307"
 * создание JAR-файла, который можно отправить в кластеры HDInsight Spark;
 * запуск приложений с помощью Livy в кластере Spark.
 
-> [!NOTE]
+> [!NOTE]  
 > HDInsight также предоставляет подключаемый модуль IntelliJ IDEA для упрощения процесса создания и отправки приложений в кластер HDInsight Spark на платформе Linux. Дополнительные сведения см. в статье [Создание приложений Apache Spark для кластера HDInsight с помощью набора средств Azure для IntelliJ](apache-spark-intellij-tool-plugin.md).
 > 
 
@@ -106,7 +106,7 @@ ms.locfileid: "52499307"
 1. Введите соответствующие значения для параметров **GroupId**, **ArtifactId** и **Version**. В этом руководстве используются представленные ниже значения.
 
     - GroupId: com.microsoft.spark.example;
-    - ArtifactId: SparkSimpleApp.
+    - ArtifactId:Id: SparkSimpleApp.
 1. Щелкните **Далее**.
 1. Проверьте параметры и нажмите кнопку **Next** (Далее).
 1. Проверьте имя и расположение проекта, а затем выберите **Finish** (Готово).
