@@ -11,18 +11,18 @@ ms.service: functions
 ms.custom: mvc
 ms.devlang: python
 manager: jeconnoc
-ms.openlocfilehash: a5abc90f5a40911538b6516622203f595adfed5c
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 140fc870500054d0652b48bc602706398371fa8e
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53091821"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54039067"
 ---
 # <a name="create-your-first-python-function-in-azure-preview"></a>Создание первой функции Python в Azure (предварительная версия)
 
 [!INCLUDE [functions-python-preview-note](../../includes/functions-python-preview-note.md)]
 
-В этом кратком руководстве вы узнаете, как использовать Azure CLI для создания первого [беcсерверного](https://azure.microsoft.com/overview/serverless-computing/) приложения-функции на платформе Linux. Код функции создается локально, а затем развертывается в Azure с помощью [Azure Functions Core Tools](functions-run-local.md). Дополнительные сведения о рекомендациях по предварительной версии для выполнения приложения-функции на платформе Linux см. [в этой статье](https://aka.ms/funclinux).
+В этом кратком руководстве вы узнаете, как использовать Azure CLI для создания первого [беcсерверного](https://azure.com/serverless) приложения-функции на платформе Linux. Код функции создается локально, а затем развертывается в Azure с помощью [Azure Functions Core Tools](functions-run-local.md). Дополнительные сведения о рекомендациях по предварительной версии для выполнения приложения-функции на платформе Linux см. [в этой статье](https://aka.ms/funclinux).
 
 Описанные далее действия можно выполнять на компьютерах с Mac, Windows или Linux.
 

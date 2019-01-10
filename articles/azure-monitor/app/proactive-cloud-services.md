@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.reviewer: harelbr
 ms.author: mbullwin
-ms.openlocfilehash: c71ace039c8b8b7ec89c5a38ef203399f5af82aa
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 219ba632d7688f1a428378309828b689698d2fe5
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54004717"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54019480"
 ---
 # <a name="alert-on-issues-in-azure-cloud-services-using-the-azure-diagnostics-integration-with-azure-application-insights"></a>Оповещение о проблемах в облачных службах Azure с использованием интеграции системы диагностики Azure с помощью Azure Application Insights
 
@@ -120,7 +120,7 @@ EventLogs
 
 Дополнительные сведения об автоматическом обнаружении.
 
-[Аномальные сбои](../../application-insights/app-insights-proactive-failure-diagnostics.md)
-[Утечка памяти](../../application-insights/app-insights-proactive-potential-memory-leak.md)
-[Аномалии производительности](../../application-insights/app-insights-proactive-performance-diagnostics.md)
+[Аномальные сбои](../../azure-monitor/app/proactive-failure-diagnostics.md)
+[Утечка памяти](../../azure-monitor/app/proactive-potential-memory-leak.md)
+[Аномалии производительности](../../azure-monitor/app/proactive-performance-diagnostics.md)
 

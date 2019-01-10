@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/02/2019
 ms.author: jeedes
-ms.openlocfilehash: f4f7546efca0bd69fd71418116142acacb927604
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 31dc45dbe8d7e3ed9b701f8623fd4e1425320316
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53970905"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54107469"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-g-suite"></a>Руководство. Интеграция Azure Active Directory с G Suite
 
@@ -153,8 +153,8 @@ ms.locfileid: "53970905"
     |--|
     | `google.com/a/<yourdomain.com>` |
     | `google.com` |
-    | `http://google.com` |
-    | `http://google.com/a/<yourdomain.com>` |
+    | `https://google.com` |
+    | `https://google.com/a/<yourdomain.com>` |
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить их, обратитесь в [группу поддержки клиентов G Suite](https://www.google.com/contact/).
@@ -203,7 +203,7 @@ ms.locfileid: "53970905"
 
 ### <a name="configure-g-suite-single-sign-on"></a>Настройка единого входа в G Suite
 
-1. Откройте в браузере новую вкладку и войдите в [консоль администратора G Suite](http://admin.google.com/) с использованием учетной записи администратора.
+1. Откройте в браузере новую вкладку и войдите в [консоль администратора G Suite](https://admin.google.com/) с использованием учетной записи администратора.
 
 2. Щелкните **Security**(Безопасность). Если эта ссылка не отображается, она может быть скрыта в меню **More Controls** (Другие элементы управления) в нижней части экрана.
 

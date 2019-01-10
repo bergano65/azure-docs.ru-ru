@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 10/29/2018
 ms.author: yijenj
-ms.openlocfilehash: b2f106edf69b57410fd1990d0888cf9d3a71be56
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 867af6de05d1d9ab54cf8a4bf02221acc43a2b28
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52880188"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54075640"
 ---
 # <a name="azure-marketplace-commercial-transaction-capabilities-and-considerations"></a>Возможности коммерческих транзакций в Azure Marketplace и рекомендации по их использованию
 
@@ -214,7 +214,7 @@ ms.locfileid: "52880188"
 
 Дополнительные сведения и юридические политики представлены в [соглашении с издателем](https://cloudpartner.azure.com/Content/Unversioned/PublisherAgreement2.pdf) (доступном на Портале Cloud Partner).
 
-Чтобы получить ответы на вопросы о выставлении счетов, [создайте инцидент поддержки](https://support.microsoft.com/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&locale=en-us&supportregion=en-us&pesid=16230&forceorigin=esmc&ccsid=636764613233453423) и выберите виртуальные машины или веб-приложения (также называемые приложениями SaaS) в зависимости от используемого типа предложения.
+Чтобы получить ответы на вопросы о выставлении счетов, [создайте инцидент поддержки](https://support.microsoft.com/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&pesid=16230&forceorigin=esmc&ccsid=636764613233453423) и выберите виртуальные машины или веб-приложения (также называемые приложениями SaaS) в зависимости от используемого типа предложения.
 
 ## <a name="transact-requirements"></a>Требования к транзакциям
 

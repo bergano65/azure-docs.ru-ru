@@ -1,17 +1,17 @@
 ---
 title: Искусственные ключи секций в Azure Cosmos DB
 description: Сведения об использовании искусственных ключей секций в контейнерах Azure Cosmos DB
-author: aliuy
+author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/30/2018
-ms.author: andrl
-ms.openlocfilehash: f6323549c0ecf8f0196d327779f7f7cb67c6e03f
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.author: mjbrown
+ms.openlocfilehash: 37d220a13aec99de94afa3357db1462d11f8662c
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51263349"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54043374"
 ---
 # <a name="create-a-synthetic-partition-key"></a>Создание искусственного ключа секции
 
@@ -61,4 +61,4 @@ ms.locfileid: "51263349"
 * Подробнее о [логических разделах](partition-data.md).
 * Дополнительные сведения см. в статье [Настройка и получение пропускной способности контейнеров и базы данных Azure Cosmos DB](set-throughput.md).
 * Сведения о том, [как подготовить пропускную способность для контейнера Cosmos](how-to-provision-container-throughput.md).
-* Дополнительные сведения см. в статье [Provision throughput for an Azure Cosmos DB container](how-to-provision-database-throughput.md) (Подготовка пропускной способности для базы данных в Azure Cosmos DB)
+* Сведения о том, [как подготовить пропускную способность для базы данных Cosmos](how-to-provision-database-throughput.md).

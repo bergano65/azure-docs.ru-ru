@@ -9,17 +9,16 @@ ms.assetid: 688b964b-51d0-4faa-91a7-26c7e3150868
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: a20ba54226e5cdcec242e29344110840615a0c95
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: e053fa52b7b7cea1c35b68a0f2079eb5a590a76a
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53317531"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54021583"
 ---
 # <a name="process-large-scale-datasets-by-using-data-factory-and-batch"></a>Обработка больших наборов данных с помощью фабрики данных и пакетной службы
 > [!NOTE]
@@ -847,7 +846,7 @@ test custom activity Microsoft test custom activity Microsoft
 
 1. В колонке **OutputDataset** щелкните правой кнопкой мыши срез, для которого в столбце **Время начала среза** задано значение **11/16/2015 01:00:00 AM**. Выберите **Запустить** для повторного выполнения и обработки среза. Теперь в срезе пять файлов вместо одного.
 
-    ![Выполнить](./media/data-factory-data-processing-using-batch/image17.png)
+    ![Run (Запустить)](./media/data-factory-data-processing-using-batch/image17.png)
 
 1. Когда после запуска среза его состояние изменится на **Готов**, проверьте содержимое в выходном файле для этого среза (**2015-11-16-01.txt**). Выходные файлы появятся в папке `mycontainer` контейнера `outputfolder` в хранилище BLOB-объектов. В выходном файле каждому файлу среза должна соответствовать одна строка.
 

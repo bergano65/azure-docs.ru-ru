@@ -14,28 +14,14 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: nacanuma
 ms.custom: include file
-ms.openlocfilehash: 2e65c5f0d6c2d493abcd61bea4077cbdd8ff95fa
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 135ee9f6b833165cd393b9c5ca582e0ee9499e0f
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52331413"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54057414"
 ---
 ## <a name="register-your-application"></a>Регистрация приложения
-
-Существует несколько способов регистрации приложений. Выберите тот, который лучше всего соответствует вашим потребностям:
-* [экспресс-режим — использование быстрого запуска SPA для настройки приложения](#option-1-register-your-application-express-mode);
-* [расширенный режим — ручная настройка параметров приложения](#option-2-register-your-application-advanced-mode).
-
-### <a name="option-1-register-your-application-express-mode"></a>Вариант 1. Регистрация приложения (экспресс-режим).
-
-1. Войдите на [портал регистрации приложений Azure (предварительная версия)](https://portal.azure.com/?Microsoft_AAD_RegisteredApps=true#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs), чтобы зарегистрировать приложение.
-1. На странице **Register an application** (Регистрация приложения) введите имя приложения.
-1. В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
-1. По завершении щелкните **Зарегистрировать**.
-1. Следуйте инструкциям быстрого запуска для загрузки и автоматической настройки нового приложения одним щелчком мыши.
-
-### <a name="option-2-register-your-application-advanced-mode"></a>Вариант 2. Регистрация приложения (расширенный режим).
 
 1. Чтобы зарегистрировать приложение, войдите на [портал Azure](https://portal.azure.com/).
 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.

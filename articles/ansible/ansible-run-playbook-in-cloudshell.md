@@ -3,17 +3,17 @@ title: Запуск Ansible с помощью Bash в Azure Cloud Shell
 description: Узнайте, как выполнять разные задачи Ansible с использованием Bash в Azure Cloud Shell.
 ms.service: ansible
 keywords: ansible, azure, devops, bash, cloudshell, сборник тренировочных заданий, bash
-author: tomarcher
+author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.date: 08/07/2018
 ms.topic: article
-ms.openlocfilehash: 9928f646905dd0da4b15166ec55e5d8a183cb210
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 6bfac47e4afa41b4c75a8d33b4eea1ff5103296d
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42144525"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54050903"
 ---
 # <a name="run-ansible-with-bash-in-azure-cloud-shell"></a>Запуск Ansible с помощью Bash в Azure Cloud Shell
 
@@ -23,7 +23,7 @@ ms.locfileid: "42144525"
 
 - **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
 
-- **Настройка Azure Cloud Shell**. Если вы еще не работали с Azure Cloud Shell, то в статье [Краткое руководство по Bash в Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart) объясняется, как запустить и настроить Cloud Shell. 
+- **Настройте Azure Cloud Shell**. Если вы еще не работали с Azure Cloud Shell, см. [краткое руководство по Bash в Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart), в котором объясняется, как запустить и настроить Cloud Shell. 
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

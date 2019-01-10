@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/04/2018
 ms.author: mbullwin
-ms.openlocfilehash: 8afe994f2441e736d660a306746508e9c6d13691
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 58eaec32fee149c845dc77a83763f2fcd8133a06
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54001844"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54120790"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -25,7 +25,7 @@ ms.locfileid: "54001844"
 В этом примере мы создадим адаптер, который принимает данные из Application Insights, переименовывает и обрабатывает некоторые поля, а затем передает данные в Power BI.
 
 > [!WARNING]
-> Мы рекомендуем использовать более простые и удобные [способы отображения данных Application Insights в Power BI](../../application-insights/app-insights-export-power-bi.md). Используемый в этой статье способ приведен только в качестве примера, чтобы показать, как можно обрабатывать экспортированные данные.
+> Мы рекомендуем использовать более простые и удобные [способы отображения данных Application Insights в Power BI](../../azure-monitor/app/export-power-bi.md ). Используемый в этой статье способ приведен только в качестве примера, чтобы показать, как можно обрабатывать экспортированные данные.
 > 
 > 
 
@@ -198,7 +198,7 @@ ms.locfileid: "54001844"
 
 ## <a name="see-results-in-power-bi"></a>Просмотр результатов в Power BI
 > [!WARNING]
-> Мы рекомендуем использовать более простые и удобные [способы отображения данных Application Insights в Power BI](../../application-insights/app-insights-export-power-bi.md). Используемый в этой статье способ приведен только в качестве примера, чтобы показать, как можно обрабатывать экспортированные данные.
+> Мы рекомендуем использовать более простые и удобные [способы отображения данных Application Insights в Power BI](../../azure-monitor/app/export-power-bi.md ). Используемый в этой статье способ приведен только в качестве примера, чтобы показать, как можно обрабатывать экспортированные данные.
 > 
 > 
 
@@ -223,5 +223,5 @@ ms.locfileid: "54001844"
 ## <a name="next-steps"></a>Дополнительная информация
 * [непрерывный экспорт.](export-telemetry.md)
 * [Подробный справочник по модели данных типов и значений свойств.](export-data-model.md)
-* [Application Insights](../../application-insights/app-insights-overview.md)
+* [Application Insights](../../azure-monitor/app/app-insights-overview.md)
 

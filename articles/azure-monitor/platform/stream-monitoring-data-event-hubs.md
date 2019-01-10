@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: a39d497c90f49f8699b9d27be175e501973804c5
-ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
+ms.openlocfilehash: 7225bc8121ddab8809ebb1c409a3af59dbcc42f2
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53811517"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54118393"
 ---
 # <a name="stream-azure-monitoring-data-to-an-event-hub-for-consumption-by-an-external-tool"></a>Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом
 
@@ -26,7 +26,7 @@ Azure Monitor предоставляет единый конвейер для п
 В пределах вашей среды Azure существует несколько уровней данных мониторинга, а метод доступа к данным на разных уровнях несколько отличается. Как правило, эти уровни можно описать так:
 
 - **Данные мониторинга приложений**. Данные о производительности и функциональности кода, который вы написали и выполняете в Azure. Примеры данных мониторинга приложений включают в себя трассировки производительности, журналы приложений и пользовательскую телеметрию. Данные мониторинга приложений обычно собираются одним из следующих способов:
-  - Посредством иснтрументирования кода с помощью пакета SDK, такого как [пакет SDK для Application Insights](../../application-insights/app-insights-overview.md).
+  - Посредством иснтрументирования кода с помощью пакета SDK, такого как [пакет SDK для Application Insights](../../azure-monitor/app/app-insights-overview.md).
   - Путем запуска агента мониторинга, который прослушивает новые журналы приложений на компьютере, где запущено приложение, например [агент диагностики Azure для Windows](./../../azure-monitor/platform/diagnostics-extension-overview.md) или [агент диагностики Azure для Linux](../../virtual-machines/extensions/diagnostics-linux.md).
 - **Данные мониторинга гостевой ОС**. Данные об операционной системе, в которой выполняется ваше приложение. К примерам данных мониторинга гостевой ОС относится системный журнал Linux или системные события Windows. Для сбора данных этого типа необходимо установить агент, такой как [агент диагностики Azure для Windows](./../../azure-monitor/platform/diagnostics-extension-overview.md) или [агент диагностики Azure для Linux](../../virtual-machines/extensions/diagnostics-linux.md).
 - **Данные мониторинга ресурсов Azure**. Данные об операциях с ресурсами Azure. Для некоторых типов ресурсов Azure, например виртуальных машин, внутри этой службы Azure нужно выполнять мониторинг гостевой ОС и приложений. Для других ресурсов Azure, таких как группы безопасности сети, данные мониторинга ресурсов являются наивысшим из доступных уровней данных (так как в этих ресурсах не выполняется гостевая ОС или приложения). Эти данные можно собирать с помощью [параметров диагностики ресурсов](./../../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings).
@@ -98,7 +98,7 @@ Azure Monitor предоставляет единый конвейер для п
 
 ## <a name="application-monitoring-data"></a>Данные мониторинга приложений
 
-Для данных мониторинга приложений требуется инструментирование кода в пакете SDK, поэтому не существует универсального решения для маршрутизации данных мониторинга приложений в концентратор событий в Azure. Тем не менее службу [Azure Application Insights](../../application-insights/app-insights-overview.md) можно использовать для сбора данных уровня приложения Azure. Если вы используете Application Insights, вы можете передавать данные мониторинга в концентратор событий, выполнив следующие действия:
+Для данных мониторинга приложений требуется инструментирование кода в пакете SDK, поэтому не существует универсального решения для маршрутизации данных мониторинга приложений в концентратор событий в Azure. Тем не менее службу [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) можно использовать для сбора данных уровня приложения Azure. Если вы используете Application Insights, вы можете передавать данные мониторинга в концентратор событий, выполнив следующие действия:
 
 1. [Настройте непрерывный экспорт](../../azure-monitor/app/export-telemetry.md) данных Application Insights в учетную запись хранения.
 
@@ -108,7 +108,7 @@ Azure Monitor предоставляет единый конвейер для п
 
 Маршрутизация данных мониторинга в концентратор событий с помощью Azure Monitor обеспечивает интеграцию с партнерским решением SIEM и средствами мониторинга. Для большинства средств требуется строка подключения к концентратору событий и определенные разрешения подписки Azure для чтения данных из концентратора событий. Ниже приведен неполный список средств интеграции с Azure Monitor:
 
-* **IBM QRadar**. Модуль устройства (DSM) Microsoft Azure и протокол концентратора событий Microsoft Azure доступны для загрузки на [веб-сайте поддержки IBM](http://www.ibm.com/support). [Дополнительные сведения об интеграции с Azure.](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0)
+* **IBM QRadar**. Модуль устройства (DSM) Microsoft Azure и протокол концентратора событий Microsoft Azure доступны для загрузки на [веб-сайте поддержки IBM](https://www.ibm.com/support). [Дополнительные сведения об интеграции с Azure.](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/c_dsm_guide_microsoft_azure_overview.html?cp=SS42VS_7.3.0)
 * **Splunk**. В зависимости от настройки Splunk имеется два подхода:
     1. [Надстройка Azure Monitor для Splunk](https://splunkbase.splunk.com/app/3534/) доступна в Splunkbase и является проектом с отрытым кодом. [Документация](https://github.com/Microsoft/AzureMonitorAddonForSplunk/wiki/Azure-Monitor-Addon-For-Splunk).
     2. Если вам не удалось установить надстройку в своем экземпляре Splunk (например, при использовании прокси-сервера или запуске в Splunk Cloud), можно передать эти события в сборщик событий HTTP Splunk с помощью [этой функции, активируемой при поступлении новых сообщений в концентратор событий](https://github.com/Microsoft/AzureFunctionforSplunkVS).

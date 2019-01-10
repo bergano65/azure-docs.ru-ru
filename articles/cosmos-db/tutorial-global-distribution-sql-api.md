@@ -1,20 +1,18 @@
 ---
 title: Руководство по настройке глобального распределения Azure Cosmos DB с помощью API SQL
 description: Сведения о настройке глобального распределения Azure Cosmos DB с помощью API SQL.
-services: cosmos-db
-keywords: Глобальное распределение
-author: rafats
+author: rimman
 ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 05/10/2017
-ms.author: rafats
-ms.custom: mvc
-ms.openlocfilehash: 8bef38aca9c14dbddb30b57871267490bc03e00f
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.author: rimman
+ms.reviewer: sngun
+ms.openlocfilehash: 19e0dd8a60155272f2e338c760db409d20a9f755
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52863488"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54157247"
 ---
 # <a name="set-up-azure-cosmos-db-global-distribution-using-the-sql-api"></a>Настройка глобального распределения Azure Cosmos DB с помощью API SQL
 
@@ -94,7 +92,7 @@ await docClient.OpenAsync().ConfigureAwait(false);
 
 Ниже приведен пример кода для NodeJS и JavaScript. В Python и Java используется тот же шаблон.
 
-```java
+```JavaScript
 // Creating a ConnectionPolicy object
 var connectionPolicy = new DocumentBase.ConnectionPolicy();
 

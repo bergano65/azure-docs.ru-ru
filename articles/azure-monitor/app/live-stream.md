@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.date: 12/04/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: d261fe78bc6902558e2714d9fe4e66d991a7bd09
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 403906a60d16a478dffd313b45aa1ce24e42196a
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54004842"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54119243"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: мониторинг и диагностика с задержкой в 1 секунду
 
-Держите руку на пульсе работы веб-приложения с помощью Live Metrics Stream в [Application Insights](../../application-insights/app-insights-overview.md). Выбирайте и фильтруйте метрики и счетчики производительности для отслеживания в режиме реального времени, не нарушая работу служб. Проверяйте трассировки стека на основе образцов неудавшихся запросов и исключений. Вместе с [Profiler](../../application-insights/app-insights-profiler.md), [отладчиком моментальных снимков](../../application-insights/app-insights-snapshot-debugger.md) и [тестированием производительности](../../azure-monitor/app/monitor-web-app-availability.md#performance-tests) Live Metrics Stream предоставляет эффективное средство диагностики веб-сайта, не вмешивающееся в его работу.
+Держите руку на пульсе работы веб-приложения с помощью Live Metrics Stream в [Application Insights](../../azure-monitor/app/app-insights-overview.md). Выбирайте и фильтруйте метрики и счетчики производительности для отслеживания в режиме реального времени, не нарушая работу служб. Проверяйте трассировки стека на основе образцов неудавшихся запросов и исключений. Вместе с [Profiler](../../azure-monitor/app/profiler.md), [отладчиком моментальных снимков](../../azure-monitor/app/snapshot-debugger.md) и [тестированием производительности](../../azure-monitor/app/monitor-web-app-availability.md#performance-tests) Live Metrics Stream предоставляет эффективное средство диагностики веб-сайта, не вмешивающееся в его работу.
 
 С помощью Live Metrics Stream можно выполнять следующие действия:
 
@@ -38,7 +38,7 @@ ms.locfileid: "54004842"
 
 ## <a name="get-started"></a>Начало работы
 
-1. Если вы еще не [установили Application Insights](../../azure-monitor/app/asp-net.md) в своем веб-приложении ASP.NET или [приложении Windows Server](../../application-insights/app-insights-windows-services.md), сделайте это сейчас. 
+1. Если вы еще не [установили Application Insights](../../azure-monitor/app/asp-net.md) в своем веб-приложении ASP.NET или [приложении Windows Server](../../azure-monitor/app/windows-services.md), сделайте это сейчас. 
 2. **Выполните обновление до последней версии** пакета Application Insights. В Visual Studio щелкните проект правой кнопкой мыши и выберите пункт **Управление пакетами NuGet**. Откройте вкладку **Обновления**, установите флажок **Включить предварительные выпуски** и выберите все пакеты Microsoft.ApplicationInsights.*.
 
     Разверните приложение заново.
@@ -202,7 +202,7 @@ services.ConfigureTelemetryModule<QuickPulseTelemetryModule> ((module, o) => mod
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Отслеживание использования Application Insights.](../../application-insights/app-insights-usage-overview.md)
+* [Отслеживание использования Application Insights.](../../azure-monitor/app/usage-overview.md)
 * [Использование диагностического поиска](../../azure-monitor/app/diagnostic-search.md)
-* [Профилировщик](../../application-insights/app-insights-profiler.md)
-* [Отладчик моментальных снимков](../../application-insights/app-insights-snapshot-debugger.md)
+* [Профилировщик](../../azure-monitor/app/profiler.md)
+* [Отладчик моментальных снимков](../../azure-monitor/app/snapshot-debugger.md)

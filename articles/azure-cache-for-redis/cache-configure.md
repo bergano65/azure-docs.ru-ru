@@ -14,12 +14,12 @@ ms.tgt_pltfrm: azure-cache-for-redis
 ms.workload: tbd
 ms.date: 08/22/2017
 ms.author: wesmc
-ms.openlocfilehash: ff6a3f32d9163be01483e8b8c743caa4e5bb573c
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 8a78823a208a5310e62714de7b1a3cd2e35eaa8f
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53581255"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54104681"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -147,7 +147,7 @@ ms.locfileid: "53581255"
 * `volatile-ttl`
 * `noeviction`
 
-Дополнительные сведения о политиках `maxmemory` см. в разделе [Eviction policies](http://redis.io/topics/lru-cache#eviction-policies) (Политики вытеснения) на сайте Redis.
+Дополнительные сведения о политиках `maxmemory` см. в разделе [Eviction policies](https://redis.io/topics/lru-cache#eviction-policies) (Политики вытеснения) на сайте Redis.
 
 Параметр **maxmemory-reserved** определяет объем памяти в мегабайтах, зарезервированный для операций, не связанных с кэшем, например для репликации при отработке отказа. Установка этого значения обеспечивает более согласованную работу сервера Redis при изменении нагрузки. Это значение должно быть выше при рабочих нагрузках с преобладанием записи. При резервировании памяти для таких операций она недоступна для хранения кэшированных данных.
 
@@ -170,7 +170,7 @@ ms.locfileid: "53581255"
 > 
 > 
 
-Дополнительные сведения см. в статье [Redis Keyspace Notifications](http://redis.io/topics/notifications) (Уведомления пространства ключей Redis). Пример кода см. в файле [KeySpaceNotifications.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/KeySpaceNotifications.cs) в примере [Здравствуй, мир!](https://github.com/rustd/RedisSamples/tree/master/HelloWorld).
+Дополнительные сведения см. в статье [Redis Keyspace Notifications](https://redis.io/topics/notifications) (Уведомления пространства ключей Redis). Пример кода см. в файле [KeySpaceNotifications.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/KeySpaceNotifications.cs) в примере [Здравствуй, мир!](https://github.com/rustd/RedisSamples/tree/master/HelloWorld).
 
 
 <a name="recommendations"></a>
@@ -406,7 +406,7 @@ ms.locfileid: "53581255"
 | `maxmemory-samples` |3 |Для экономии памяти алгоритмы LRU и минимальный TTL являются не точными, а аппроксимированными алгоритмами. По умолчанию Redis проверяет три ключа и выбирает один, использовавшийся наиболее давно. |
 | `lua-time-limit` |5 000 |Максимальное время выполнения сценария Lua в миллисекундах. При достижении максимального времени выполнения Redis делает запись в журнале о нахождении данного сценария в процессе выполнения по истечении максимально допустимого времени и начинает отвечать на запросы ошибкой. |
 | `lua-event-limit` |500 |Максимальный размер очереди событий сценариев. |
-| `client-output-buffer-limit` `normalclient-output-buffer-limit` `pubsub` |0 0 032mb 8mb 60 |Ограничения буферов вывода клиентов можно использовать для принудительного отключения клиентов, по каким-либо причинам недостаточно быстро считывающим данные с сервера (распространенной причиной является неспособность клиента Pub/Sub поглощать сообщения так же быстро, как их производит издатель). Дополнительные сведения можно найти по адресу [http://redis.io/topics/clients](http://redis.io/topics/clients). |
+| `client-output-buffer-limit` `normalclient-output-buffer-limit` `pubsub` |0 0 032mb 8mb 60 |Ограничения буферов вывода клиентов можно использовать для принудительного отключения клиентов, по каким-либо причинам недостаточно быстро считывающим данные с сервера (распространенной причиной является неспособность клиента Pub/Sub поглощать сообщения так же быстро, как их производит издатель). Дополнительные сведения можно найти по адресу [https://redis.io/topics/clients](https://redis.io/topics/clients). |
 
 <a name="databases"></a>
 <sup>1</sup> Для различных ценовых категорий кэша Azure для Redis предельное значение `databases` будет разным. Его можно указать при создании кэша. Если при создании кэша значение `databases` не указано, то используется значение по умолчанию — 16.
@@ -424,7 +424,7 @@ ms.locfileid: "53581255"
   * кэш P2 (13–130 ГБ) — до 32 баз данных;
   * кэш P3 (26–260 ГБ) — до 48 баз данных;
   * кэш P4 (53–530 ГБ) — до 64 баз данных.
-  * Для всех кэшей уровня Премиум включен кластер Redis. Он поддерживает только базу данных 0, поэтому предельное значение `databases` для любого кэша уровня Премиум с включенным кластером Redis равно 1, а использование команды [Select](http://redis.io/commands/select) не допускается. Дополнительные сведения см. в разделе [Нужно ли вносить изменения в клиентское приложение, чтобы использовать кластеризацию?](cache-how-to-premium-clustering.md#do-i-need-to-make-any-changes-to-my-client-application-to-use-clustering).
+  * Для всех кэшей уровня Премиум включен кластер Redis. Он поддерживает только базу данных 0, поэтому предельное значение `databases` для любого кэша уровня Премиум с включенным кластером Redis равно 1, а использование команды [Select](https://redis.io/commands/select) не допускается. Дополнительные сведения см. в разделе [Нужно ли вносить изменения в клиентское приложение, чтобы использовать кластеризацию?](cache-how-to-premium-clustering.md#do-i-need-to-make-any-changes-to-my-client-application-to-use-clustering).
 
 Дополнительные сведения о базах данных см. в разделе [Что такое базы данных Redis?](cache-faq.md#what-are-redis-databases)
 
@@ -473,14 +473,14 @@ ms.locfileid: "53581255"
 > 
 > 
 
-Дополнительные сведения о командах Redis см здесь: [http://redis.io/commands](http://redis.io/commands).
+Дополнительные сведения о командах Redis см здесь: [https://redis.io/commands](https://redis.io/commands).
 
 ## <a name="redis-console"></a>Консоль Redis
 В экземплярах кэша Azure для Redis можно безопасно выполнять команды с помощью **консоли Redis**, доступной на портале Azure для всех категорий кэшей.
 
 > [!IMPORTANT]
 > - Консоль Redis не работает с [VNET](cache-how-to-premium-vnet.md). Если кэш является частью виртуальной сети, то к нему могут обращаться только клиенты в этой виртуальной сети. Так как консоль Redis работает в локальном браузере вне виртуальной сети, она не может подключиться к кэшу.
-> - В кэше Azure для Redis поддерживаются не все команды Redis. Список команд Redis, отключенных в кэше Azure для Redis, см. в предыдущем разделе — [Команды Redis не поддерживаются в кэше Azure для Redis](#redis-commands-not-supported-in-azure-cache-for-redis). Дополнительные сведения о командах Redis см здесь: [http://redis.io/commands](http://redis.io/commands).
+> - В кэше Azure для Redis поддерживаются не все команды Redis. Список команд Redis, отключенных в кэше Azure для Redis, см. в предыдущем разделе — [Команды Redis не поддерживаются в кэше Azure для Redis](#redis-commands-not-supported-in-azure-cache-for-redis). Дополнительные сведения о командах Redis см здесь: [https://redis.io/commands](https://redis.io/commands).
 > 
 > 
 

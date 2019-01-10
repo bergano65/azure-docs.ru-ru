@@ -3,17 +3,17 @@ title: Перенос данных в учетную запись API табли
 description: Сведения о том, как перенести либо импортировать данные из локальной или облачной среды в учетную запись API таблиц Azure в Azure Cosmos DB.
 author: SnehaGunda
 ms.service: cosmos-db
-ms.component: cosmosdb-table
+ms.subservice: cosmosdb-table
 ms.topic: tutorial
 ms.date: 12/07/2017
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: b2256f16d284cb079231e271a7fc06c25c381c8a
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 20c7a065ec2a302f53c78fb4cfd348d17ab7bdab
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53137690"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54040291"
 ---
 # <a name="migrate-your-data-to-azure-cosmos-db-table-api-account"></a>Перенос данных в учетную запись API таблиц в Azure Cosmos DB
 

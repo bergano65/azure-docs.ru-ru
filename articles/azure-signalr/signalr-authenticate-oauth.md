@@ -7,12 +7,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 06/13/2018
 ms.author: zhshang
-ms.openlocfilehash: be44a233c2b09aa91ec04b5a64b523a2d0b00db1
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: bd872e7aa9ada8c46b0af897b4d7ad137b767514
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53599865"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54103797"
 ---
 # <a name="tutorial-azure-signalr-service-authentication"></a>Руководство. Аутентификация в Службе Azure SignalR
 
@@ -547,7 +547,7 @@ az webapp deployment source config-local-git --name $WebAppName \
 
 И наконец, для завершения процесса выполните обновление **URL-адреса домашней страницы** и **URL-адреса обратного вызова авторизации** приложения OAuth GitHub, чтобы указать новое размещенное приложение.
 
-1. В браузере откройте [http://github.com](http://github.com) и в учетной записи перейдите к элементам **Параметры** > **Параметры разработчика** > **Oauth Apps** (Приложения OAuth).
+1. В браузере откройте [https://github.com](https://github.com) и в учетной записи перейдите к элементам **Параметры** > **Параметры разработчика** > **Oauth Apps** (Приложения OAuth).
 
 2. Щелкните приложение аутентификации и обновите **URL-адрес домашней страницы** и **URL-адрес обратного вызова авторизации**, как показано ниже.
 
@@ -573,7 +573,7 @@ az webapp deployment source config-local-git --name $WebAppName \
 
 Введите имя группы ресурсов в текстовое поле **Фильтровать по имени...**. В инструкциях в этой статье использовалась группа ресурсов с именем *SignalRTestResources*. В своей группе ресурсов в списке результатов щелкните **...**, а затем **Удалить группу ресурсов**.
 
-![Delete](./media/signalr-authenticate-oauth/signalr-delete-resource-group.png)
+![Delete (Удалить)](./media/signalr-authenticate-oauth/signalr-delete-resource-group.png)
 
 Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
 

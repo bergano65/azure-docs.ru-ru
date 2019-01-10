@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/30/2018
 ms.author: wesmc
-ms.openlocfilehash: 21f6f729cef6478c190c9e8b872723e4ae67fb1e
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: da99d446da1451c2b05f6ecab8ba19eaa1e2bfa3
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53020844"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54104953"
 ---
 # <a name="tutorial-create-a-cache-aside-leaderboard-on-aspnet"></a>Руководство. Создание списка лидеров с применением шаблона "Кэш на стороне" в ASP.NET
 
@@ -520,7 +520,7 @@ ms.locfileid: "53020844"
     ```csharp
     // POST: Teams/Create
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-    // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+    // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
     public ActionResult Create([Bind(Include = "ID,Name,Wins,Losses,Ties")] Team team)
@@ -544,7 +544,7 @@ ms.locfileid: "53020844"
     ```csharp
     // POST: Teams/Edit/5
     // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-    // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+    // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
     public ActionResult Edit([Bind(Include = "ID,Name,Wins,Losses,Ties")] Team team)
@@ -735,7 +735,7 @@ ms.locfileid: "53020844"
 2. Введите имя группы ресурсов в текстовое поле **Фильтровать элементы…** .
 3. Щелкните **...** справа от группы ресурсов и выберите **Удалить группу ресурсов**.
 
-    ![Delete](./media/cache-web-app-cache-aside-leaderboard/cache-delete-resource-group.png)
+    ![Delete (Удалить)](./media/cache-web-app-cache-aside-leaderboard/cache-delete-resource-group.png)
 
 4. Подтвердите операцию удаления группы ресурсов. Введите имя группы ресурсов и нажмите кнопку **Удалить**.
 
