@@ -1,6 +1,6 @@
 ---
 title: Сравнение Microsoft Flow, Logic Apps, функций и веб-заданий Azure
-description: 'Сравнение облачных служб Майкрософт, которые оптимизированы для выполнения задач интеграции: Microsoft Flow, Logic Apps, функций и веб-заданий Azure.'
+description: 'Сравнение облачных служб Майкрософт, которые оптимизированы для выполнения задач интеграции:  Microsoft Flow, Logic Apps, Функции Azure и веб-задания Azure.'
 services: functions, logic-apps
 documentationcenter: na
 author: ggailey777
@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 04/09/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: c22d75b4eb058942da5a3b0699cbb4a23eec42f3
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: ec2c7a25c5108ee3c6f861defd8403ff40113075
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52634937"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53722223"
 ---
 # <a name="compare-flow-logic-apps-functions-and-webjobs"></a>Сравнение Microsoft Flow, Logic Apps, функций и веб-заданий
 
@@ -26,7 +26,7 @@ ms.locfileid: "52634937"
 * [Microsoft Flow](https://flow.microsoft.com/)
 * [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/)
 * [Функции Azure](https://azure.microsoft.com/services/functions/)
-* [веб-задания службы приложений Azure](../app-service/web-sites-create-web-jobs.md)
+* [веб-задания службы приложений Azure](../app-service/webjobs-create.md)
 
 Все эти службы используются для настройки интеграции и автоматизации бизнес-процессов. Они позволяют определять входные данные, действия, условия и выходные данные. Каждую отдельную службу можно запускать по расписанию или активировать по запросу. Каждая служба имеет уникальные преимущества, но в этой статье описываются их различия.
 
@@ -47,7 +47,7 @@ Microsoft Flow и Azure Logic Apps спроектированы в рамках 
 | Средство разработки |В браузере и мобильном приложении, только пользовательский интерфейс |В браузере и [Visual Studio](../logic-apps/logic-apps-deploy-from-vs.md) доступно [представление кода](../logic-apps/logic-apps-author-definitions.md). |
 | Управление жизненным циклом приложений (ALM) |Разработка и тестирование в непроизводственных средах, распространение в рабочей среде по готовности. |DevOps: система управления версиями, тестирование, поддержка, автоматизация и управление в [Azure Resource Manager](../logic-apps/logic-apps-create-deploy-azure-resource-manager-templates.md) |
 | Административные функции |Управление средами Flow и политиками защиты от потери данных (DLP), отслеживание лицензирования [https://admin.flow.microsoft.com](https://admin.flow.microsoft.com) |Управление группами ресурсов, подключениями, доступом и ведение журнала [https://portal.azure.com](https://portal.azure.com) |
-| Безопасность |Журналы аудита безопасности и соответствия требованиям Office 365, защита от потери данных (DLP), [шифрование неактивных](https://wikipedia.org/wiki/Data_at_rest#Encryption) конфиденциальных данных и т. д. |Обеспечение безопасности Azure: [безопасность Azure](https://www.microsoft.com/en-us/trustcenter/Security/AzureSecurity), [центр безопасности](https://azure.microsoft.com/services/security-center/), [журналы аудита](https://azure.microsoft.com/blog/azure-audit-logs-ux-refresh/) и многое другое. |
+| Безопасность |Журналы аудита безопасности и соответствия требованиям Office 365, защита от потери данных (DLP), [шифрование неактивных](https://wikipedia.org/wiki/Data_at_rest#Encryption) конфиденциальных данных и т. д. |Обеспечение безопасности Azure: [Безопасность Azure](https://www.microsoft.com/en-us/trustcenter/Security/AzureSecurity), [Центр безопасности Azure](https://azure.microsoft.com/services/security-center/), [журналы аудита](https://azure.microsoft.com/blog/azure-audit-logs-ux-refresh/) и прочее. |
 
 ## <a name="compare-azure-functions-and-azure-logic-apps"></a>Сравнение служб "Функции Azure" и Azure Logic Apps
 
@@ -70,7 +70,7 @@ Microsoft Flow и Azure Logic Apps спроектированы в рамках 
 
 ## <a name="compare-functions-and-webjobs"></a>Сравнение функций и веб-заданий
 
-Подобно решению "Функции Azure", компонент "Веб-задания" службы приложений Azure с пакетом SDK для веб-заданий является службой интеграции на основе модели *code-first*, предназначенной для разработчиков. Обе службы созданы на основе [службы приложений Azure](../app-service/app-service-web-overview.md) и поддерживают следующие возможности: [интеграция системы управления версиями](../app-service/app-service-continuous-deployment.md), [проверка подлинности](../app-service/app-service-authentication-overview.md) и [мониторинг с помощью интеграции Application Insights](functions-monitoring.md).
+Подобно решению "Функции Azure", компонент "Веб-задания" службы приложений Azure с пакетом SDK для веб-заданий является службой интеграции на основе модели *code-first*, предназначенной для разработчиков. Обе службы созданы на основе [службы приложений Azure](../app-service/overview.md) и поддерживают следующие возможности: [интеграция системы управления версиями](../app-service/deploy-continuous-deployment.md), [проверка подлинности](../app-service/overview-authentication-authorization.md) и [мониторинг с помощью интеграции Application Insights](functions-monitoring.md).
 
 ### <a name="webjobs-and-the-webjobs-sdk"></a>Веб-задания и пакет SDK для веб-заданий
 

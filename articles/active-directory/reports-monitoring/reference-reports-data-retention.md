@@ -16,12 +16,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: abd64b7d2fa7930f5b6177c7ac037840da34dc18
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 6188b141ec1a514d999f290366cd9ffbafc1d96c
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52333587"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53753138"
 ---
 # <a name="azure-active-directory-report-retention-policies"></a>Политики хранения отчетов Azure Active Directory
 
@@ -53,17 +53,19 @@ ms.locfileid: "52333587"
 
 **Отчеты о действиях**    
 
-| Отчет                 | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
-| :--                    | :--           | :--                 | :--                 |
-| Аудит каталога        | 7 дней        | 30 дней             | 30 дней             |
-| Действия при входе       | Недоступно           | 30 дней             | 30 дней             |
-| Использование Azure MFA        | 30 дней       | 30 дней             | 30 дней             |
+| Отчет                 | Azure AD уровня "Бесплатный" | Azure AD Basic | Azure AD Premium P1 | Azure AD Premium P2 |
+| :--                    | :--           | :--            | :--                 | :--                 |
+| Аудит каталога        | 7 дней        |  7 дней        | 30 дней             | 30 дней             |
+| Действия при входе       | Недоступно           |  Недоступно           | 30 дней             | 30 дней             |
+| Использование Azure MFA        | 30 дней       |  30 дней       | 30 дней             | 30 дней             |
+
+Данные о действиях аудита и входа в систему можно хранить дольше указанных выше сроков хранения по умолчанию, направив их в учетную запись хранения с помощью Azure Monitor. Дополнительные сведения см. в статье [Архивация журналов Azure AD в учетной записи хранения Azure](quickstart-azure-monitor-route-logs-to-storage-account.md).
 
 **Сигналы системы безопасности**
 
-| Отчет         | Azure AD уровня "Бесплатный" | Azure AD Premium P1 | Azure AD Premium P2 |
-| :--            | :--           | :--                 | :--                 |
-| пользователи под угрозой;  | 7 дней        | 30 дней             | 90 дней             |
-| Вход, представляющий риск | 7 дней        | 30 дней             | 90 дней             |
+| Отчет         | Azure AD уровня "Бесплатный" | Azure AD Basic | Azure AD Premium P1 | Azure AD Premium P2 |
+| :--            | :--           | :--            | :--                 | :--                 |
+| пользователи под угрозой;  | 7 дней        | 7 дней         | 30 дней             | 90 дней             |
+| Вход, представляющий риск | 7 дней        | 7 дней         |  30 дней            | 90 дней             |
 
 ---

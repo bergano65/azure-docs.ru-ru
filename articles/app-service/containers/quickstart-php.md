@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения PHP в Службе приложений Azure на платформе Linux | Документация Майкрософт
+title: Создание приложения PHP в Службе приложений Azure в Linux | Документация Майкрософт
 description: Разверните первое приложение PHP Hello World в службе приложений на платформе Linux в считанные минуты.
 services: app-service\web
 documentationcenter: ''
@@ -15,20 +15,20 @@ ms.topic: quickstart
 ms.date: 08/30/2017
 ms.author: cfowler
 ms.custom: seodec18
-ms.openlocfilehash: 2c9586bb5abce66e4043e3df80b420174a582cbb
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: af413528c279c5fcab472347d247b17dd5061167
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53257409"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53628414"
 ---
-# <a name="create-a-php-web-app-in-app-service-on-linux"></a>Создание веб-приложения PHP в службе приложений на платформе Linux
+# <a name="create-a-php-app-in-app-service-on-linux"></a>Создание приложения PHP в Службе приложений Azure в Linux
 
 > [!NOTE]
-> В этой статье мы развернем приложение в службе приложений на платформе Linux. Сведения о развертывании в службе приложений на платформе _Windows_ см. в статье [Создание веб-приложения PHP в Azure](../app-service-web-get-started-php.md).
+> В этой статье мы развернем приложение в службе приложений на платформе Linux. Сведения о развертывании в Службе приложений на платформе _Windows_ см. в статье [Создание веб-приложения PHP в Azure](../app-service-web-get-started-php.md).
 >
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. Из этого краткого руководства вы узнаете, как развернуть приложение PHP в службе приложений Azure на платформе Linux. Создайте веб-приложение со встроенным образом при помощи [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) в Cloud Shell и разверните пример кода PHP в веб-приложении с помощью Git.
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. Из этого краткого руководства вы узнаете, как развернуть приложение PHP в службе приложений Azure на платформе Linux. Создайте приложение со встроенным образом при помощи [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) в Cloud Shell и разверните пример кода PHP в приложении в Службе приложений.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-php/hello-world-in-browser.png)
 
@@ -80,15 +80,15 @@ php -S localhost:8080
 
 [!INCLUDE [Create web app](../../../includes/app-service-web-create-web-app-php-linux-no-h.md)] 
 
-Перейдите на сайт, чтобы просмотреть созданное веб-приложение со встроенным образом. Замените _&lt;имя_приложения>_ уникальным именем веб-приложения.
+Перейдите на сайт, чтобы просмотреть созданное приложение со встроенным образом. Замените _&lt;app name>_ именем своего приложения.
 
 ```bash
 http://<app_name>.azurewebsites.net
 ```
 
-Новое веб-приложение должно выглядеть так:
+Новое приложение должно выглядеть следующим образом.
 
-![Пустая страница веб-приложения](media/quickstart-php/app-service-web-service-created.png)
+![Пустая страница приложения](media/quickstart-php/app-service-web-service-created.png)
 
 [!INCLUDE [Push to Azure](../../../includes/app-service-web-git-push-to-azure.md)] 
 
@@ -125,7 +125,7 @@ To https://<app_name>.scm.azurewebsites.net/<app_name>.git
 http://<app_name>.azurewebsites.net
 ```
 
-Пример кода PHP выполняется в веб-приложении со встроенным образом.
+Пример кода PHP выполняется в Службе приложений в Linux со встроенным образом.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-php/hello-world-in-browser.png)
 
@@ -150,15 +150,15 @@ git push azure master
 
 ![Обновленный пример приложения, выполняющегося в Azure](media/quickstart-php/hello-azure-in-browser.png)
 
-## <a name="manage-your-new-azure-web-app"></a>Управление новым веб-приложением Azure
+## <a name="manage-your-new-azure-app"></a>Управление новым приложением Azure
 
-Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления созданным веб-приложением.
+Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a>, чтобы управлять созданным приложением.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/quickstart-php/php-docs-hello-world-app-service-list.png)
+![Переход к приложению Azure на портале](./media/quickstart-php/php-docs-hello-world-app-service-list.png)
 
-Отобразится страница обзора вашего веб-приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
+Отобразится страница обзора вашего приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
 
 ![Страница службы приложений на портале Azure](media/quickstart-php/php-docs-hello-world-app-service-detail.png)
 

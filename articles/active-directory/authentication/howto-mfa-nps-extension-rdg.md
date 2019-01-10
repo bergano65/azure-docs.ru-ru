@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: 013b63d0eb2cc69893dcb4075c1ca26a31ef2474
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: db7591c98147a5728486843efb0c807b6094557a
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53277987"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53601480"
 ---
 # <a name="integrate-your-remote-desktop-gateway-infrastructure-using-the-network-policy-server-nps-extension-and-azure-ad"></a>Интеграция инфраструктуры шлюза удаленных рабочих столов с помощью расширения сервера политики сети (NPS) и Azure AD
 
@@ -26,7 +26,7 @@ ms.locfileid: "53277987"
 В этой статье приведены пошаговые инструкции по интеграции инфраструктуры NPS с Azure MFA с помощью расширения NPS для Azure. Это обеспечивает надежную проверку пользователей, пытающихся войти на шлюз удаленных рабочих столов.
 
 > [!NOTE]
-> Эта статья не предназначена для развертываний серверов MFA. Она предназначена только для облачных развертываний Azure MFA.
+> Эта статья не предназначена для развертываний серверов MFA. Она предназначена только для облачных развертываний Azure MFA.
 
 Службы политики сети и доступа (NPS) дают организациям следующие возможности.
 
@@ -76,7 +76,7 @@ ms.locfileid: "53277987"
 Если вы хотите быстро вручную создать локальную инфраструктуру служб удаленных рабочих столов для тестирования, выполните соответствующие инструкции. 
 **Дополнительные сведения**. [Развертывание службы удаленных рабочих столов с помощью шаблона быстрого запуска Azure](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-in-azure) и [развертывание базовой инфраструктуры служб удаленных рабочих столов](https://docs.microsoft.com/windows-server/remote/remote-desktop-services/rds-deploy-infrastructure). 
 
-### <a name="azure-mfa-license"></a>Лицензия Azure MFA
+### <a name="azure-mfa-license"></a>лицензия Azure MFA;
 
 Требуется лицензия для Azure MFA, которая предоставляется в составе Azure AD Premium или других пакетов, содержащих эту лицензию. Лицензии на основе потребления Azure MFA, такие как лицензии на пользователя или лицензии на аутентификацию, несовместимы с расширением NPS. Дополнительные сведения см. в разделе [Как получить службу Многофакторной идентификации Azure](concept-mfa-licensing.md). Для тестирования можно использовать пробную подписку.
 
@@ -162,7 +162,7 @@ ms.locfileid: "53277987"
 
 1. Откройте командную строку Windows PowerShell с правами администратора.
 1. В командной строке PowerShell введите `cd ‘c:\Program Files\Microsoft\AzureMfa\Config’` и нажмите клавишу **ВВОД**.
-1. Введите `.\AzureMfsNpsExtnConfigSetup.ps1` и нажмите клавишу **ВВОД**. Сценарий проверяет, установлен ли модуль Azure Active Directory для PowerShell. Если он не установлен, сценарий автоматически установит этот модуль.
+1. Введите `.\AzureMfaNpsExtnConfigSetup.ps1` и нажмите клавишу **ВВОД**. Сценарий проверяет, установлен ли модуль Azure Active Directory для PowerShell. Если он не установлен, сценарий автоматически установит этот модуль.
 
   ![Azure AD PowerShell](./media/howto-mfa-nps-extension-rdg/image4.png)
   

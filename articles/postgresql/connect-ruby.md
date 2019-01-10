@@ -1,24 +1,21 @@
 ---
 title: Подключение к базе данных Azure для PostgreSQL с помощью Ruby
 description: В этом кратком руководстве представлен пример кода Ruby, который можно использовать для подключения к базе данных Azure для PostgreSQL и запроса данных из нее.
-services: postgresql
 author: rachel-msft
 ms.author: raagyema
-manager: kfile
-editor: jasonwhowell
 ms.service: postgresql
 ms.custom: mvc
 ms.devlang: ruby
 ms.topic: quickstart
 ms.date: 02/28/2018
-ms.openlocfilehash: 2d132ba1b901c45df79507a974ee8d4786c6311d
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 6748f168624a20e17491a2f84b63b966ce5ad4c6
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49985035"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53539302"
 ---
-# <a name="azure-database-for-postgresql-use-ruby-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: подключение и запрос данных с помощью Ruby
+# <a name="azure-database-for-postgresql-use-ruby-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: использование Ruby для подключения и создания запросов данных
 В этом кратком руководстве описывается, как подключиться к базе данных Azure для PostgreSQL с помощью приложения [Ruby](https://www.ruby-lang.org). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Ruby и вы только начали работу с базой данных Azure для PostgreSQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -29,7 +26,7 @@ ms.locfileid: "49985035"
 ## <a name="install-ruby"></a>Установка Ruby
 Установите Ruby на своем компьютере. 
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 - Скачайте и установите последнюю версию [Ruby](https://rubyinstaller.org/downloads/).
 - На последнем экране установщика MSI установите флажок с рядом надписью "Run 'ridk install' to install MSYS2 and development toolchain" (Выполнить ridk install, чтобы установить MSYS2 и цепочку средств разработки). Нажмите кнопку **Готово** для запуска следующего установщика.
 - Запустится установщик RubyInstaller2 для Windows. Введите 2, чтобы установить обновление репозитория MSYS2. После завершения и возврата к строке установки закройте командное окно.

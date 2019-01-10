@@ -8,25 +8,25 @@ ms.topic: conceptual
 ms.date: 09/21/2018
 ms.author: tyfox
 ms.custom: seodec18
-ms.openlocfilehash: 13bca67a48d1b9e73dc2f092979e455c72711316
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: d353db3554837ebe13cc53f5adac6658b82e31ec
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53011341"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53717693"
 ---
 # <a name="hdinsight-go-management-sdk-preview"></a>Предварительная версия пакета SDK Go для HDInsight
 
 ## <a name="overview"></a>Обзор
 Пакет SDK Go для HDInsight предоставляет классы и функции для управления кластерами HDInsight. Пакет также поддерживает операции создания, удаления, обновления, получения списков, масштабирования, выполнения скриптов, мониторинга, получения свойства кластеров HDInsight и т. д.
 
-> [!NOTE]
+> [!NOTE]  
 >Справочные материалы GoDoc для этого пакета SDK также можно найти [здесь](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Учетная запись Azure. Если у вас ее нет, [получите бесплатную пробную версию](https://azure.microsoft.com/free/).
-* [GO](https://golang.org/dl/)
+* [Перейти](https://golang.org/dl/).
 
 ## <a name="sdk-installation"></a>Установка пакета SDK
 
@@ -36,7 +36,7 @@ ms.locfileid: "53011341"
 
 Для использования пакета SDK нужно выполнить аутентификацию с помощью подписки Azure.  Ниже описано, как создать субъект-службу и использовать его для аутентификации. После этого вы получите экземпляр `ClustersClient`, в котором доступны различные функции (описанные далее) операций управления.
 
-> [!NOTE]
+> [!NOTE]  
 > Кроме описанного выше, есть и другие методы аутентификации, которые могут оказаться удобнее для вас. Дополнительные сведения о функциях см. в статье [Методы аутентификации в пакете Azure SDK для Go](https://docs.microsoft.com/go/azure/azure-sdk-go-authorization).
 
 ### <a name="authentication-example-using-a-service-principal"></a>Пример аутентификации с помощью субъекта-службы
@@ -70,7 +70,7 @@ az account show
 az account set -s <name or ID of subscription>
 ```
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Если вы еще не зарегистрировали поставщик ресурсов HDInsight с помощью другой функции (например, создав кластер HDInsight на портале Azure), вам необходимо это сделать, прежде чем выполнять аутентификацию. Это можно сделать с помощью [Azure Cloud Shell](https://shell.azure.com/bash), выполнив такую команду:
 >```azurecli-interactive
 >az provider register --namespace Microsoft.HDInsight
@@ -133,7 +133,7 @@ func main() {
 
 ## <a name="cluster-management"></a>Управление кластерами
 
-> [!NOTE]
+> [!NOTE]  
 > В этом разделе предполагается, что вы уже выполнили аутентификацию, создали экземпляр `ClusterClient` и сохранили его в переменной с именем `client`. Инструкции по выполнению аутентификации и получению `ClusterClient` см. в разделе "Аутентификация" выше.
 
 ### <a name="create-a-cluster"></a>Создание кластера
@@ -144,7 +144,7 @@ func main() {
 
 В этом примере показано, как создать кластер [Apache Spark](https://spark.apache.org/) с двумя головными узлами и одним рабочим.
 
-> [!NOTE]
+> [!NOTE]  
 > Сначала необходимо создать группу ресурсов и учетную запись хранения, как описано далее. Если они уже созданы, следующие шаги можно пропустить.
 
 ##### <a name="creating-a-resource-group"></a>Создание группы ресурсов
@@ -283,7 +283,8 @@ client.List()
 ```golang
 client.ListByResourceGroup("<Resource Group Name>")
 ```
-> [!NOTE]
+
+> [!NOTE]  
 > `List()` и `ListByResourceGroup()` возвращают структуры `ClusterListResultPage`. Чтобы перейти на следующую страницу, можно вызвать `Next()`. Команду можно повторять, пока для экземпляра `ClusterListResultPage.NotDone()` не будет возвращено значение `false`, как показано ниже.
 
 #### <a name="example"></a>Пример
@@ -345,12 +346,12 @@ extClient := hdi.NewExtensionsClient(SUBSCRIPTION_ID)
 extClient.Authorizer, _ = credentials.Authorizer()
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > В приведенных ниже примерах мониторинга предполагается, что вы уже инициализировали экземпляр `ExtensionClient` с именем `extClient` и присвоили ему значение `Authorizer`, как показано выше.
 
 ### <a name="enable-oms-monitoring"></a>Включение мониторинга OMS
 
-> [!NOTE]
+> [!NOTE]  
 > Чтобы включить мониторинг OMS, требуется рабочая область Log Analytics. Если вы не создавали такую рабочую область, см. статью [Создание рабочей области Log Analytics на портале Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-quick-create-workspace).
 
 Чтобы включить мониторинг OMS в кластере, выполните такую команду:
@@ -378,7 +379,8 @@ extClient.DisableMonitoring(context.Background(), "<Resource Group Name", "Clust
 ## <a name="script-actions"></a>Действия сценария
 
 В кластерах HDInsight поддерживается функция конфигурации с использованием действий сценариев, которая вызывает пользовательские сценарии настройки кластера.
-> [!NOTE]
+
+> [!NOTE]  
 > Дополнительные сведения о действиях скриптов см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действий сценариев](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).
 
 ### <a name="execute-script-actions"></a>Выполнение действий сценариев
@@ -397,7 +399,7 @@ scriptActionsClient := hdi.NewScriptActionsClient(SUBSCRIPTION_ID)
 scriptActionsClient.Authorizer, _ = credentials.Authorizer()
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > В приведенных ниже примерах действия сценария предполагается, что вы уже инициализировали экземпляр `ScriptActionsClient` с именем `scriptActionsClient` и присвоили ему значение `Authorizer`, как показано выше.
 
 ### <a name="delete-script-action"></a>Удаление действий сценариев
@@ -410,7 +412,7 @@ scriptActionsClient.Delete(context.Background(), "<Resource Group Name>", "<Clus
 
 ### <a name="list-persisted-script-actions"></a>Получение списка сохраненных действий сценариев
 
-> [!NOTE]
+> [!NOTE]  
 > Метод `ListByCluster()` возвращает структуру `ScriptActionsListPage`. Чтобы перейти на следующую страницу, можно вызвать `Next()`. Команду можно повторять, пока для экземпляра `ClusterListResultPage.NotDone()` не будет возвращено значение `false`, как показано ниже.
 
 Чтобы получить список всех сохраненных действий скриптов в кластере, выполните такую команду:
@@ -445,7 +447,7 @@ scriptExecutionHistoryClient := hdi.NewScriptExecutionHistoryClient(SUBSCRIPTION
 scriptExecutionHistoryClient.Authorizer, _ = credentials.Authorizer()
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > В приведенных ниже примерах предполагается, что вы уже инициализировали экземпляр `ScriptExecutionHistoryClient` с именем `scriptExecutionHistoryClient` и присвоили ему значение `Authorizer`, как показано выше.
 
 Чтобы получить журнал выполнения всех скриптов в кластере, выполните такую команду:

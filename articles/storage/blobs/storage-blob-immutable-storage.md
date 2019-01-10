@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/05/2018
 ms.author: hux
 ms.component: blobs
-ms.openlocfilehash: d3d83e240fec692d5aa655923637910006c7a62f
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: 53c719fbeb31d605bd9dff170a798b262d44698a
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52261478"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53634275"
 ---
 # <a name="store-business-critical-data-in-azure-blob-storage"></a>Хранение критически важных для бизнеса данных в хранилище BLOB-объектов Azure
 
@@ -95,7 +95,7 @@ ms.locfileid: "52261478"
 
 ## <a name="getting-started"></a>Приступая к работе
 
-Хранение данных в неизменяемом виде в хранилище BLOB-объектов Azure поддерживается в последних выпусках [портала Azure](http://portal.azure.com) и [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), а также в предварительной версии [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/tag/Azure.Storage.v4.4.0-preview-May2018).
+Хранение данных в неизменяемом виде в хранилище BLOB-объектов Azure поддерживается в последних выпусках [портала Azure](http://portal.azure.com) и [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest), а также в предварительной версии [Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
 
 ### <a name="azure-portal"></a>Портал Azure
 
@@ -137,13 +137,12 @@ ms.locfileid: "52261478"
 
 ### <a name="powershell"></a>PowerShell
 
-[PowerShell версии 4.4.0-preview](https://github.com/Azure/azure-powershell/releases/tag/Azure.Storage.v4.4.0-preview-May20180) поддерживает возможность хранения данных в неизменяемом виде.
-Чтобы включить эту функцию, сделайте следующее:
+Предварительная версия модуля Az.Storage поддерживает неизменяемое хранилище.  Чтобы включить эту функцию, сделайте следующее:
 
 1. Установите последнюю версию PowerShellGet: `Install-Module PowerShellGet –Repository PSGallery –Force`.
 2. Удалите все предыдущие версии Azure PowerShell.
-3. Установите AzureRM: `Install-Module AzureRM –Repository PSGallery –AllowClobber`. Azure можно установить аналогично из этого репозитория.
-4. Установите предварительную версию командлетов плоскости управления хранилища: `Install-Module -Name AzureRM.Storage -AllowPrerelease -Repository PSGallery -AllowClobber`.
+3. Установка Azure PowerShell: `Install-Module Az –Repository PSGallery –AllowClobber`.
+4. Установка предварительной версии модуля хранилища Azure PowerShell: `Install-Module Az.Storage -AllowPrerelease -Repository PSGallery -AllowClobber`.
 
 В разделе [примера кода PowerShell](#sample-powershell-code) ниже показано использование функции.
 
@@ -202,6 +201,8 @@ ms.locfileid: "52261478"
 
 ## <a name="sample-powershell-code"></a>Пример кода PowerShell
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 Пример сценария PowerShell ниже приводится для справки. Он создает учетную запись хранения и контейнер. Далее в нем показано, как задавать и снимать юридические удержания, создавать и блокировать политику хранения на основе времени (известную как неизменяемая политика), а также продлевать интервал хранения.
 
 Настройка и тестирование учетной записи хранения Azure:
@@ -214,122 +215,122 @@ $container2 = "<Enter another container name>”
 $location = "<Enter the storage account location>"
 
 # Log in to the Azure Resource Manager account
-Login-AzureRMAccount
-Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.Storage"
+Login-AzAccount
+Register-AzResourceProvider -ProviderNamespace "Microsoft.Storage"
 
 # Create your Azure resource group
-New-AzureRmResourceGroup -Name $ResourceGroup -Location $location
+New-AzResourceGroup -Name $ResourceGroup -Location $location
 
 # Create your Azure storage account
-New-AzureRmStorageAccount -ResourceGroupName $ResourceGroup -StorageAccountName `
+New-AzStorageAccount -ResourceGroupName $ResourceGroup -StorageAccountName `
     $StorageAccount -SkuName Standard_LRS -Location $location -Kind StorageV2
 
 # Create a new container
-New-AzureRmStorageContainer -ResourceGroupName $ResourceGroup `
+New-AzStorageContainer -ResourceGroupName $ResourceGroup `
     -StorageAccountName $StorageAccount -Name $container
 
 # Create Container 2 with a storage account object
-$accountObject = Get-AzureRmStorageAccount -ResourceGroupName $ResourceGroup `
+$accountObject = Get-AzStorageAccount -ResourceGroupName $ResourceGroup `
     -StorageAccountName $StorageAccount
-New-AzureRmStorageContainer -StorageAccount $accountObject -Name $container2
+New-AzStorageContainer -StorageAccount $accountObject -Name $container2
 
 # Get a container
-Get-AzureRmStorageContainer -ResourceGroupName $ResourceGroup `
+Get-AzStorageContainer -ResourceGroupName $ResourceGroup `
     -StorageAccountName $StorageAccount -Name $container
 
 # Get a container with an account object
-$containerObject = Get-AzureRmStorageContainer -StorageAccount $accountObject -Name $container
+$containerObject = Get-AzStorageContainer -StorageAccount $accountObject -Name $container
 
 # List containers
-Get-AzureRmStorageContainer -ResourceGroupName $ResourceGroup `
+Get-AzStorageContainer -ResourceGroupName $ResourceGroup `
     -StorageAccountName $StorageAccount
 
 # Remove a container (add -Force to dismiss the prompt)
-Remove-AzureRmStorageContainer -ResourceGroupName $ResourceGroup `
+Remove-AzStorageContainer -ResourceGroupName $ResourceGroup `
     -StorageAccountName $StorageAccount -Name $container2
 
 # Remove a container with an account object
-Remove-AzureRmStorageContainer -StorageAccount $accountObject -Name $container2
+Remove-AzStorageContainer -StorageAccount $accountObject -Name $container2
 
 # Remove a container with a container object
-$containerObject2 = Get-AzureRmStorageContainer -StorageAccount $accountObject -Name $container2
-Remove-AzureRmStorageContainer -InputObject $containerObject2
+$containerObject2 = Get-AzStorageContainer -StorageAccount $accountObject -Name $container2
+Remove-AzStorageContainer -InputObject $containerObject2
 ```
 
 Установка и удаление юридических удержаний:
 
 ```powershell
 # Set a legal hold
-Add-AzureRmStorageContainerLegalHold -ResourceGroupName $ResourceGroup `
+Add-AzStorageContainerLegalHold -ResourceGroupName $ResourceGroup `
     -StorageAccountName $StorageAccount -Name $container -Tag <tag1>,<tag2>,...
 
 # with an account object
-Add-AzureRmStorageContainerLegalHold -StorageAccount $accountObject -Name $container -Tag <tag3>
+Add-AzStorageContainerLegalHold -StorageAccount $accountObject -Name $container -Tag <tag3>
 
 # with a container object
-Add-AzureRmStorageContainerLegalHold -Container $containerObject -Tag <tag4>,<tag5>,...
+Add-AzStorageContainerLegalHold -Container $containerObject -Tag <tag4>,<tag5>,...
 
 # Clear a legal hold
-Remove-AzureRmStorageContainerLegalHold -ResourceGroupName $ResourceGroup `
+Remove-AzStorageContainerLegalHold -ResourceGroupName $ResourceGroup `
     -StorageAccountName $StorageAccount -Name $container -Tag <tag2>
 
 # with an account object
-Remove-AzureRmStorageContainerLegalHold -StorageAccount $accountObject -Name $container -Tag <tag3>,<tag5>
+Remove-AzStorageContainerLegalHold -StorageAccount $accountObject -Name $container -Tag <tag3>,<tag5>
 
 # with a container object
-Remove-AzureRmStorageContainerLegalHold -Container $containerObject -Tag <tag4>
+Remove-AzStorageContainerLegalHold -Container $containerObject -Tag <tag4>
 ```
 
 Создание или обновление политик неизменяемости:
 ```powershell
 # with an account name or container name
-Set-AzureRmStorageContainerImmutabilityPolicy -ResourceGroupName $ResourceGroup `
+Set-AzStorageContainerImmutabilityPolicy -ResourceGroupName $ResourceGroup `
     -StorageAccountName $StorageAccount -ContainerName $container -ImmutabilityPeriod 10
 
 # with an account object
-Set-AzureRmStorageContainerImmutabilityPolicy -StorageAccount $accountObject `
+Set-AzStorageContainerImmutabilityPolicy -StorageAccount $accountObject `
     -ContainerName $container -ImmutabilityPeriod 1 -Etag $policy.Etag
 
 # with a container object
-$policy = Set-AzureRmStorageContainerImmutabilityPolicy -Container `
+$policy = Set-AzStorageContainerImmutabilityPolicy -Container `
     $containerObject -ImmutabilityPeriod 7
 
 # with an immutability policy object
-Set-AzureRmStorageContainerImmutabilityPolicy -ImmutabilityPolicy $policy -ImmutabilityPeriod 5
+Set-AzStorageContainerImmutabilityPolicy -ImmutabilityPolicy $policy -ImmutabilityPeriod 5
 ```
 
 Извлечение политик неизменяемости:
 ```powershell
 # Get an immutability policy
-Get-AzureRmStorageContainerImmutabilityPolicy -ResourceGroupName $ResourceGroup `
+Get-AzStorageContainerImmutabilityPolicy -ResourceGroupName $ResourceGroup `
     -StorageAccountName $StorageAccount -ContainerName $container
 
 # with an account object
-Get-AzureRmStorageContainerImmutabilityPolicy -StorageAccount $accountObject `
+Get-AzStorageContainerImmutabilityPolicy -StorageAccount $accountObject `
     -ContainerName $container
 
 # with a container object
-Get-AzureRmStorageContainerImmutabilityPolicy -Container $containerObject
+Get-AzStorageContainerImmutabilityPolicy -Container $containerObject
 ```
 
 Блокировка политик неизменяемости (добавление Force для отклонения запроса):
 ```powershell
 # with an immutability policy object
-$policy = Get-AzureRmStorageContainerImmutabilityPolicy -ResourceGroupName `
+$policy = Get-AzStorageContainerImmutabilityPolicy -ResourceGroupName `
     $ResourceGroup -StorageAccountName $StorageAccount -ContainerName $container
-$policy = Lock-AzureRmStorageContainerImmutabilityPolicy -ImmutabilityPolicy $policy -force
+$policy = Lock-AzStorageContainerImmutabilityPolicy -ImmutabilityPolicy $policy -force
 
 # with an account name or container name
-$policy = Lock-AzureRmStorageContainerImmutabilityPolicy -ResourceGroupName `
+$policy = Lock-AzStorageContainerImmutabilityPolicy -ResourceGroupName `
     $ResourceGroup -StorageAccountName $StorageAccount -ContainerName $container `
     -Etag $policy.Etag
 
 # with an account object
-$policy = Lock-AzureRmStorageContainerImmutabilityPolicy -StorageAccount `
+$policy = Lock-AzStorageContainerImmutabilityPolicy -StorageAccount `
     $accountObject -ContainerName $container -Etag $policy.Etag
 
 # with a container object
-$policy = Lock-AzureRmStorageContainerImmutabilityPolicy -Container `
+$policy = Lock-AzStorageContainerImmutabilityPolicy -Container `
     $containerObject -Etag $policy.Etag -force
 ```
 
@@ -337,45 +338,45 @@ $policy = Lock-AzureRmStorageContainerImmutabilityPolicy -Container `
 ```powershell
 
 # with an immutability policy object
-$policy = Get-AzureRmStorageContainerImmutabilityPolicy -ResourceGroupName `
+$policy = Get-AzStorageContainerImmutabilityPolicy -ResourceGroupName `
     $ResourceGroup -StorageAccountName $StorageAccount -ContainerName $container
 
-$policy = Set-AzureRmStorageContainerImmutabilityPolicy -ImmutabilityPolicy `
+$policy = Set-AzStorageContainerImmutabilityPolicy -ImmutabilityPolicy `
     $policy -ImmutabilityPeriod 11 -ExtendPolicy
 
 # with an account name or container name
-$policy = Set-AzureRmStorageContainerImmutabilityPolicy -ResourceGroupName `
+$policy = Set-AzStorageContainerImmutabilityPolicy -ResourceGroupName `
     $ResourceGroup -StorageAccountName $StorageAccount -ContainerName $container `
     -ImmutabilityPeriod 11 -Etag $policy.Etag -ExtendPolicy
 
 # with an account object
-$policy = Set-AzureRmStorageContainerImmutabilityPolicy -StorageAccount `
+$policy = Set-AzStorageContainerImmutabilityPolicy -StorageAccount `
     $accountObject -ContainerName $container -ImmutabilityPeriod 12 -Etag `
     $policy.Etag -ExtendPolicy
 
 # with a container object
-$policy = Set-AzureRmStorageContainerImmutabilityPolicy -Container `
+$policy = Set-AzStorageContainerImmutabilityPolicy -Container `
     $containerObject -ImmutabilityPeriod 13 -Etag $policy.Etag -ExtendPolicy
 ```
 
 Удаление политики неизменяемости (добавление Force для отклонения запроса):
 ```powershell
 # with an immutability policy object
-$policy = Get-AzureRmStorageContainerImmutabilityPolicy -ResourceGroupName `
+$policy = Get-AzStorageContainerImmutabilityPolicy -ResourceGroupName `
     $ResourceGroup -StorageAccountName $StorageAccount -ContainerName $container
-Remove-AzureRmStorageContainerImmutabilityPolicy -ImmutabilityPolicy $policy
+Remove-AzStorageContainerImmutabilityPolicy -ImmutabilityPolicy $policy
 
 # with an account name or container name
-Remove-AzureRmStorageContainerImmutabilityPolicy -ResourceGroupName `
+Remove-AzStorageContainerImmutabilityPolicy -ResourceGroupName `
     $ResourceGroup -StorageAccountName $StorageAccount -ContainerName $container `
     -Etag $policy.Etag
 
 # with an account object
-Remove-AzureRmStorageContainerImmutabilityPolicy -StorageAccount $accountObject `
+Remove-AzStorageContainerImmutabilityPolicy -StorageAccount $accountObject `
     -ContainerName $container -Etag $policy.Etag
 
 # with a container object
-Remove-AzureRmStorageContainerImmutabilityPolicy -Container $containerObject `
+Remove-AzStorageContainerImmutabilityPolicy -Container $containerObject `
     -Etag $policy.Etag
 
 ```

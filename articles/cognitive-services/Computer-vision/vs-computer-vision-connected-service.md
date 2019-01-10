@@ -1,7 +1,7 @@
 ---
-title: Руководство по использованию API компьютерного зрения с C#
+title: Подключенная служба Visual Studio в API компьютерного зрения
 titleSuffix: Azure Cognitive Services
-description: Подключение к API компьютерного зрения из веб-приложения ASP.NET Core.
+description: Подключитесь к API компьютерного зрения с веб-приложения ASP.NET Core с помощью компонента "Подключенные службы" в Visual Studio.
 services: cognitive-services
 author: ghogen
 manager: cgronlun
@@ -10,12 +10,13 @@ ms.component: computer-vision
 ms.topic: Tutorial
 ms.date: 03/01/2018
 ms.author: ghogen
-ms.openlocfilehash: ebfcabdea1e83a83af5eea8025ba5a411c3f9880
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.custom: seodec18
+ms.openlocfilehash: e9207fe19272dac23db165e160ce9f7a7e802c14
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49077956"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53579742"
 ---
 # <a name="use-connected-services-in-visual-studio-to-connect-to-the-computer-vision-api"></a>Подключение к API компьютерного зрения с помощью компонента "Подключенные службы" в Visual Studio
 
@@ -37,15 +38,15 @@ ms.locfileid: "49077956"
 1. В **обозревателе решений** выберите **Добавить** > **Подключенная служба**.
    Откроется страница "Подключенная служба" с перечнем служб, которые можно добавить в проект.
 
-   ![Пункт меню "Добавить подключенную службу"](../media/vs-common/Connected-Service-Menu.PNG)
+   ![Снимок экрана с меню, вызванным щелчком правой кнопки мыши, в проекте Visual Studio. Добавить > Подключенная служба](../media/vs-common/Connected-Service-Menu.PNG)
 
 1. В меню доступных служб выберите **Cognitive Services Computer Vision API** (API компьютерного зрения в Cognitive Services).
 
-   ![Выбор службы для подключения](./media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-0.PNG)
+   ![Меню "Подключенные службы", выделение анализа изображения с помощью компьютерного зрения](./media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-0.PNG)
 
    Если вы выполнили вход в Visual Studio и с вашей учетной записью связана подписка Azure, отобразится страница с раскрывающимся списком ваших подписок.
 
-   ![Выберите свою подписку.](media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-1.PNG)
+   ![Выделено окно Visual Studio "API компьютерного зрения" с раскрывающимся списком "Подписка"](media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-1.PNG)
 
 1. Выберите подписку, которую необходимо использовать, придумайте имя для API компьютерного зрения или выберите ссылку "Изменить", чтобы изменить автоматически созданное имя, а затем выберите группу ресурсов и ценовую категорию.
 
@@ -93,11 +94,11 @@ ms.locfileid: "49077956"
 
 1. В папку "wwwroot" проекта добавьте папку изображений и файл изображения. Например, можно использовать одно из изображений на странице [API компьютерного зрения](https://azure.microsoft.com/services/cognitive-services/computer-vision/). Щелкните правой кнопкой одно из изображений и сохраните его на локальный жесткий диск, а затем в обозревателе решений щелкните правой кнопкой мыши папку изображений и выберите **Добавить** > **Существующий элемент**, чтобы добавить это изображение в проект. В обозревателе решений проект должен выглядеть примерно так. 
   
-   ![Папка изображений с файлом изображения](media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-3.PNG) 
+   ![Снимок экрана представления обозревателя решений с выбранным файлом изображения](media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-3.PNG) 
 
 1. Щелкните правой кнопкой мыши файл изображения, выберите "Свойства", а затем выберите **Копировать, если новее**. 
 
-   ![Копировать, если новее](media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-5.PNG) 
+   ![Окно свойств образа; параметр "Копировать в выходной каталог" имеет значение "Копировать, если новее"](media/vs-computer-vision-connected-service/Cog-Vision-Connected-Service-5.PNG) 
  
 1. Метод Configure замените следующим кодом, чтобы получить доступ к API компьютерного зрения и протестировать изображение.
 

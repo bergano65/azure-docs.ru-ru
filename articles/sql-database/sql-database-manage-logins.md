@@ -12,13 +12,13 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 11/29/2018
-ms.openlocfilehash: c234ac95d0e02857fe87afe3a734d77f00954477
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.date: 12/18/2018
+ms.openlocfilehash: 2be5c8ddf6928d5529c2eb08a6d64bd64b8445de
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52864950"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53631980"
 ---
 # <a name="controlling-and-granting-database-access-to-sql-database-and-sql-data-warehouse"></a>Контроль и предоставление доступа к базе данных SQL и хранилищу данных SQL
 
@@ -31,9 +31,9 @@ ms.locfileid: "52864950"
 > Ознакомьтесь с руководством [Защита базы данных SQL Azure](sql-database-security-tutorial.md). Это руководство не относится к **Управляемому экземпляру Базы данных SQL Azure**.
 
 ## <a name="unrestricted-administrative-accounts"></a>Административные учетные записи с неограниченным доступом
-В качестве администратора выступают две учетные записи (**администратор сервера** и **администратор Active Directory**). Чтобы определить эти учетные записи администратора для сервера SQL Server, откройте портал Azure и перейдите к его свойствам.
+В качестве администратора выступают две учетные записи (**администратор сервера** и **администратор Active Directory**). Чтобы определить эти учетные записи администратора для сервера SQL Server, откройте портал Azure и перейдите на вкладку "Свойства" сервера SQL или базы данных SQL.
 
-![Администраторы SQL Server](./media/sql-database-manage-logins/sql-admins.png)
+![Администраторы SQL Server](media/sql-database-manage-logins/sql-admins.png)
 
 - **Администратор сервера**   
 При создании сервера Azure SQL Server необходимо назначить **имя для входа администратора сервера**. SQL Server создает эту учетную запись в качестве имени для входа в базе данных master. Эта учетная запись подключается с использованием проверки подлинности SQL Server (с предоставлением имени пользователя и пароля). Может существовать только одна такая учетная запись.   

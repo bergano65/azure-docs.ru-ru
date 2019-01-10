@@ -9,18 +9,18 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/03/2018
 ms.author: hrasheed
-ms.openlocfilehash: 4b673423bcf3785b29cc287e025d1ee52bc402f7
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 51707baeba4a511d2766161afacd512a4338cf24
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52312908"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53653991"
 ---
 # <a name="use-apache-phoenix-with-linux-based-apache-hbase-clusters-in-hdinsight"></a>Использование Apache Phoenix с кластерами Apache HBase под управлением Linux в HDInsight
-Из этой статьи вы узнаете, как использовать [Apache Phoenix](http://phoenix.apache.org/) в Azure HDInsight, а также как использовать SQLLine. Дополнительные сведения о Phoenix см. в статье [Phoenix in 15 minutes or less](http://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html) (Phoenix за 15 минут или меньше). Сведения о грамматике Phoenix см. [здесь](http://phoenix.apache.org/language/index.html).
+Из этой статьи вы узнаете, как использовать [Apache Phoenix](https://phoenix.apache.org/) в Azure HDInsight, а также как использовать SQLLine. Дополнительные сведения о Phoenix см. в статье [Phoenix за 15 минут или меньше](https://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html). Сведения о грамматике Phoenix см. в статье [Грамматика Apache Phoenix](https://phoenix.apache.org/language/index.html).
 
-> [!NOTE]
-> Сведения о версии Phoenix в HDInsight см. в статье [Что представляют собой компоненты и версии Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)
+> [!NOTE]  
+> Сведения о версии Phoenix в HDInsight см. в статье [Каковы новые возможности версий кластера Apache Hadoop в HDInsight](../hdinsight-component-versioning.md).
 >
 >
 
@@ -61,7 +61,7 @@ ms.locfileid: "52312908"
 
         !quit
 
-Дополнительные сведения см. в [руководстве по SQLLine](http://sqlline.sourceforge.net/#manual) и статье о [грамматике Apache Phoenix](http://phoenix.apache.org/language/index.html).
+Дополнительные сведения см. в [руководстве по SQLLine](http://sqlline.sourceforge.net/#manual) и статье о [грамматике Apache Phoenix](https://phoenix.apache.org/language/index.html).
 
 ## <a name="next-steps"></a>Дополнительная информация
 В этой статье вы изучили использование Apache Phoenix в HDInsight. Дополнительные сведения см. в статьях ниже:

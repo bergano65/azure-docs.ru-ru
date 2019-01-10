@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/22/2018
-ms.openlocfilehash: 6086c03961294a18fbf6a106188593c79c88d663
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: b34d67e640f09ac6949e992d3af9388581851622
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52310003"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53629532"
 ---
 # <a name="use-interactive-query-with-hdinsight"></a>Использование Interactive Query в HDInsight
 Interactive Query (также называется Apache Hive LLAP или [Low Latency Analytical Processing](https://cwiki.apache.org/confluence/display/Hive/LLAP)) — это [тип кластера](../hdinsight-hadoop-provision-linux-clusters.md#cluster-types) Azure HDInsight. Interactive Query поддерживает кэширование в памяти, благодаря чему запросы Apache Hive становятся более быстрыми и интерактивными.
@@ -23,10 +23,8 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
 
 Кластер Interactive Query отличается от кластера Apache Hadoop. Он содержит только службу Hive. 
 
-> [!NOTE]
+> [!NOTE]  
 > Получить доступ к службе Hive в кластере Interactive Query можно только с помощью представления Apache Ambari Hive, Beeline и драйвера Microsoft Hive ODBC. Служба недоступна при использовании консоли Hive, Templeton, классического Azure CLI или Azure PowerShell. 
-> 
-> 
 
 ## <a name="create-an-interactive-query-cluster"></a>Создание кластера Interactive Query
 Дополнительные сведения о создании кластера HDInsight см. в статье [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](../hdinsight-hadoop-provision-linux-clusters.md). Выберите тип кластера Interactive Query.
@@ -34,7 +32,7 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
 ## <a name="execute-apache-hive-queries-from-interactive-query"></a>Выполнение запросов Apache Hive из Interactive Query
 Есть несколько способов выполнять запросы Hive:
 
-* С помощью Power BI
+* Использование Microsoft Power BI
 
     Ознакомьтесь со статьей о [визуализации данных интерактивного запроса Apache Hive с помощью Power BI в Azure HDInsight](./apache-hadoop-connect-hive-power-bi-directquery.md) и о [визуализации больших данных с помощью Power BI в Azure HDInsight](../hadoop/apache-hadoop-connect-hive-power-bi.md).
  
@@ -44,7 +42,7 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
 
 * Использование Visual Studio
 
-    Ознакомьтесь с разделом [Выполнение интерактивных запросов Hive](../hadoop/apache-hadoop-visual-studio-tools-get-started.md#run-interactive-hive-queries).
+    Ознакомьтесь с разделом [Выполнение интерактивных запросов Hive](../hadoop/apache-hadoop-visual-studio-tools-get-started.md#run-interactive-apache-hive-queries).
 
 * С помощью Visual Studio Code
 
@@ -75,7 +73,7 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
 * Узнайте, как [создавать кластеры Interactive Query в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md).
 * Узнайте, как [визуализировать большие данные с помощью Power BI в Azure HDInsight](../hadoop/apache-hadoop-connect-hive-power-bi.md).
 * Сведения о [запуске запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](../hdinsight-connect-hive-zeppelin.md).
-* Сведения о [запуске запросов Apache Hive с помощью средств Data Lake для Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md#run-interactive-hive-queries).
+* Сведения о [запуске запросов Apache Hive с помощью средств Data Lake для Visual Studio](../hadoop/apache-hadoop-visual-studio-tools-get-started.md#run-interactive-apache-hive-queries).
 * Узнайте, как [использовать средствами HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).
 * Сведения об [использовании представления Apache Hive с Apache Hadoop в HDInsight](../hadoop/apache-hadoop-use-hive-ambari-view.md)
 * Сведения об [использовании Beeline для отправки запросов Apache Hive в HDInsight](../hadoop/apache-hadoop-use-hive-beeline.md).

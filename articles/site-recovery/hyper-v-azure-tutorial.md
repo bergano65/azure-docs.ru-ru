@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 11/27/2018
+ms.date: 12/28/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 44b5702aa765b0e821850f6a390432563126482d
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 6e0cff6725db52601b4639ad638216370dd3cfda
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52839914"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53810701"
 ---
 # <a name="set-up-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Настройка аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -81,8 +81,24 @@ ms.locfileid: "52839914"
 5. В разделе **Proxy Settings** (Параметры прокси-сервера) выберите **Connect directly to Azure Site Recovery without a proxy** (Подключиться к Azure Site Recovery напрямую без прокси-сервера).
 6. После регистрации сервера в хранилище в разделе **Registration** (Регистрация) нажмите кнопку **Готово**.
 
-Azure Site Recovery извлечет метаданные с сервера Hyper-V, а сам сервер отобразится в колонке **Site Recovery Infrastructure** (Инфраструктура Site Recovery) > **Hyper-V Hosts** (Узлы Hyper-V). Этот процесс может занять до 30 минут.
+Azure Site Recovery извлечет метаданные с сервера Hyper-V, а сам сервер отобразится в колонке **Site Recovery Infrastructure** (Инфраструктура Site Recovery) > **Hyper-V Hosts** (Узлы Hyper-V). Этот процесс может занять до 30 минут.        
 
+Если вы используете основной сервер Hyper-V, выполните следующие действия, когда скачаете учетные данные поставщика и хранилища, как упоминалось [здесь](#set-up-the-source-environment).
+
+1. Извлеките файлы из AzureSiteRecoveryProvider.exe, выполнив следующую команду:
+
+    ``AzureSiteRecoveryProvider.exe /x:. /q``
+ 
+    Файлы будут извлечены в локальный каталог.
+ 
+2.  Запустите ``.\setupdr.exe /i ``
+
+    Результаты будут записаны в журнал %Programdata%\ASRLogs\DRASetupWizard.log.
+
+3.  Зарегистрируйте сервер с помощью этой команды:
+
+``cd  C:\Program Files\Microsoft Azure Site Recovery Provider\DRConfigurator.exe" /r /Friendlyname "FriendlyName of the Server" /Credentials "path to where the credential file is saved" ``
+ 
 
 ## <a name="set-up-the-target-environment"></a>Настройка целевой среды
 

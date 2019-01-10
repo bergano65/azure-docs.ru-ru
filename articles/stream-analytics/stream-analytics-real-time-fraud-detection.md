@@ -4,19 +4,19 @@ description: Информация о том, как с помощью служб
 services: stream-analytics
 author: mamccrea
 ms.author: mamccrea
-manager: kfile
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 03/28/2017
-ms.openlocfilehash: 43202e88482933aed7952f6cc97dcaf1e0dcb5e7
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.date: 12/07/2018
+ms.custom: seodec18
+ms.openlocfilehash: 73fffda6ec0ae0a65af9b5aa8505e3b9551bd3b4
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49986038"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53558181"
 ---
-# <a name="get-started-using-azure-stream-analytics-real-time-fraud-detection"></a>Приступая к работе с Azure Stream Analytics: выявление мошенничества в режиме реального времени
+# <a name="get-started-using-azure-stream-analytics-real-time-fraud-detection"></a>Приступая к работе с Azure Stream Analytics. Выявление мошенничества в реальном времени
 
 В этом руководстве содержится комплексное описание использования Azure Stream Analytics. Вы узнаете, как выполнять следующие задачи: 
 
@@ -44,7 +44,7 @@ ms.locfileid: "49986038"
     >[!NOTE]
     >Windows может заблокировать загруженный ZIP-файл. Если вам не удается распаковать его, щелкните файл правой кнопкой мыши и выберите **Свойства**. Если появляется сообщение "Этот файл получен с другого компьютера и, возможно, был заблокирован с целью защиты компьютера", выберите параметр **Разблокировать**, а затем щелкните **Применить**.
 
-Если вы хотите проанализировать результаты задания Streaming Analytics, вам также необходимо средство просмотра содержимого контейнера хранилища BLOB-объектов Azure. Если вы используете Visual Studio, можно использовать [инструменты Azure для Visual Studio](https://docs.microsoft.com/azure/vs-azure-tools-storage-resources-server-explorer-browse-manage) или [Visual Studio Cloud Explorer](https://docs.microsoft.com/azure/vs-azure-tools-resources-managing-with-cloud-explorer). Кроме того, можно установить автономные средства, например [обозреватель хранилищ Azure](http://storageexplorer.com/) или [Azure Explorer](http://www.cerebrata.com/products/azure-explorer/introduction). 
+Если вы хотите проанализировать результаты задания Streaming Analytics, вам также необходимо средство просмотра содержимого контейнера хранилища BLOB-объектов Azure. Если вы используете Visual Studio, можно использовать [инструменты Azure для Visual Studio](https://docs.microsoft.com/azure/vs-azure-tools-storage-resources-server-explorer-browse-manage) или [Visual Studio Cloud Explorer](https://docs.microsoft.com/azure/vs-azure-tools-resources-managing-with-cloud-explorer). Кроме того, можно установить автономные средства, например [обозреватель хранилищ Azure](https://storageexplorer.com/) или [Cerulean](https://www.cerebrata.com/products/cerulean/features/azure-storage). 
 
 ## <a name="create-an-azure-event-hubs-to-ingest-events"></a>Создание концентраторов событий Azure для приема событий
 
@@ -62,7 +62,7 @@ ms.locfileid: "49986038"
     
 3. Выберите подписку, создайте или выберите группу ресурсов, а затем щелкните **Создать**.
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-namespace-new-portal.png" alt="drawing" width="300px"/>
+    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-namespace-new-portal.png" alt="Create event hub namespace in Azure portal" width="300px"/>
 
 4. После завершения развертывания пространства имен найдите пространство имен концентратора событий в списке ресурсов Azure. 
 
@@ -72,7 +72,7 @@ ms.locfileid: "49986038"
  
 6. Назовите новый концентратор событий `asa-eh-frauddetection-demo`. Вы можете использовать другое имя. В таком случае запишите его, так как это имя понадобится вам позже. На этом этапе этих параметров концентратора событий достаточно.
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-new-portal.png" alt="drawing" width="400px"/>
+    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-eventhub-new-portal.png" alt="Name event hub in Azure portal" width="400px"/>
     
  
 7. Нажмите кнопку **Создать**.
@@ -90,7 +90,7 @@ ms.locfileid: "49986038"
 
 3.  Добавьте политику с именем `sa-policy-manage-demo`, а для параметра **Утверждение** выберите **Управление**.
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-shared-access-policy-manage-new-portal.png" alt="drawing" width="300px"/>
+    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-shared-access-policy-manage-new-portal.png" alt="Create shared access policy for Stream Analytics" width="300px"/>
  
 4.  Нажмите кнопку **Создать**.
 
@@ -98,7 +98,7 @@ ms.locfileid: "49986038"
 
 6.  Найдите текстовое поле с пометкой **Строка подключения — первичный ключ** и нажмите кнопку копирования рядом со строкой подключения. 
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-shared-access-policy-copy-connection-string-new-portal.png" alt="drawing" width="300px"/>
+    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-shared-access-policy-copy-connection-string-new-portal.png" alt="Stream Analytics shared access policy" width="300px"/>
  
 7.  Вставьте строку подключения в текстовый редактор. Эта строка подключения понадобится в следующем разделе после внесения в нее небольших изменений.
 
@@ -125,7 +125,7 @@ ms.locfileid: "49986038"
 
     Раздел `<appSettings>` будет выглядеть, как показано в примере ниже. (Для удобства при чтении мы добавили переносы строк и удалили некоторые символы из маркера авторизации.)
 
-   ![Файл конфигурации приложения TelcoGenerator, отображающий имя концентратора событий и строку подключения](./media/stream-analytics-real-time-fraud-detection/stream-analytics-telcogenerator-config-file-app-settings.png)
+   ![Файл конфигурации TelcoGenerator, отображающий имя Центра событий и строку подключения](./media/stream-analytics-real-time-fraud-detection/stream-analytics-telcogenerator-config-file-app-settings.png)
  
 4.  Сохраните файл. 
 
@@ -133,12 +133,14 @@ ms.locfileid: "49986038"
 1.  Откройте окно командной строки и перейдите в папку, в которой было распаковано приложение TelcoGenerator.
 2.  Введите следующую команду:
 
+        ```cmd
         telcodatagen.exe 1000 0.2 2
+        ```
 
     Используются следующие параметры: 
 
     * Число записей подробных сведений о звонках за час. 
-    * Вероятность мошенничества с SIM-картами: частота моделирования приложением мошеннических вызовов, выраженная в процентном соотношении ко всем вызовам. Значение 0,2 означает, что около 20 % записей вызовов будут мошенническими.
+    * Вероятность мошенничества с SIM картами: частота моделирования приложением мошеннических вызовов, выраженная в процентном соотношении ко всем вызовам. Значение 0,2 означает, что около 20 % записей вызовов будут мошенническими.
     * Продолжительность в часах. Количество часов, на протяжении которых должно выполняться приложение. Вы также можете остановить выполнение приложения, использовав Ctrl+C в командной строке.
 
     Через несколько секунд приложение запустит отображение записей вызовов на экране, так как будет отправлять их в концентратор событий.
@@ -167,7 +169,7 @@ ms.locfileid: "49986038"
 
     Мы рекомендуем поместить задание и концентратор событий в одном регионе, чтобы достичь оптимальной производительности и не оплачивать передачу данных между регионами.
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-sa-job-new-portal.png" alt="drawing" width="300px"/>
+    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-sa-job-new-portal.png" alt="Create Stream Analytics job in portal" width="300px"/>
 
 3. Нажмите кнопку **Создать**.
 
@@ -190,7 +192,7 @@ ms.locfileid: "49986038"
    |имя концентратора событий;  | asa-eh-frauddetection-demo | Выберите имя концентратора событий.   |
    |Имя политики концентратора событий  | asa-policy-manage-demo | Выберите созданную ранее политику доступа.   |
     </br>
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-sa-input-new-portal.png" alt="drawing" width="300px"/>
+    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-sa-input-new-portal.png" alt="Create Stream Analytics input in portal" width="300px"/>
 
 
 4. Нажмите кнопку **Создать**.
@@ -219,7 +221,7 @@ ms.locfileid: "49986038"
 
 5. Для параметра **Минуты** задайте значение 3 и нажмите кнопку **ОК**. 
     
-   ![Параметры выборки входного потока с выбранным значением "3 минуты".](./media/stream-analytics-real-time-fraud-detection/stream-analytics-input-create-sample-data.png)
+   ![Параметры выборки входного потока с выбранным значением "3 минуты"](./media/stream-analytics-real-time-fraud-detection/stream-analytics-input-create-sample-data.png)
 
     Azure обработает данные из входного потока, накопленные за 3 минуты, и сообщит о готовности образца данных. (Это займет некоторое время.) 
 
@@ -232,11 +234,13 @@ ms.locfileid: "49986038"
 Чтобы архивировать все события, вы можете использовать запрос к серверу для считывания всех полей в полезных данных события.
 
 1. В окне запроса введите следующий запрос:
-
-        SELECT 
-            *
-        FROM 
-            CallStream
+        
+   ```SQL
+   SELECT 
+       *
+   FROM 
+       CallStream
+   ```
 
     >[!NOTE]
     >Как и при использовании SQL, регистр ключевых слов не учитывается, пробел не имеет значения.
@@ -257,13 +261,15 @@ ms.locfileid: "49986038"
 
 1. Измените запрос в редакторе кода, используя следующие значения:
 
-        SELECT CallRecTime, SwitchNum, CallingIMSI, CallingNum, CalledNum 
-        FROM 
-            CallStream
+   ```SQL
+   SELECT CallRecTime, SwitchNum, CallingIMSI, CallingNum, CalledNum 
+   FROM 
+       CallStream
+   ```
 
 2. Снова щелкните **Проверка**. 
 
-   ![Выходные данные задания Stream Analytics для заполнения столбцов, которые включают 25 созданных записей](./media/stream-analytics-real-time-fraud-detection/stream-analytics-sa-job-sample-output-projection.png)
+   ![Выходные данные задания Stream Analytics для заполнения столбцов, которые включают 25 записей](./media/stream-analytics-real-time-fraud-detection/stream-analytics-sa-job-sample-output-projection.png)
  
 ### <a name="count-incoming-calls-by-region-tumbling-window-with-aggregation"></a>Количество входящих вызовов по региону: "переворачивающееся" окно с агрегированием
 
@@ -273,11 +279,13 @@ ms.locfileid: "49986038"
 
 1. Измените запрос в редакторе кода, используя следующие значения:
 
+        ```SQL
         SELECT 
             System.Timestamp as WindowEnd, SwitchNum, COUNT(*) as CallCount 
         FROM
             CallStream TIMESTAMP BY CallRecTime 
         GROUP BY TUMBLINGWINDOW(s, 5), SwitchNum
+        ```
 
     Этот запрос использует ключевое слово `Timestamp By` в предложении `FROM`, чтобы указать, какое поле метки времени использовать во входном потоке для определения "переворачивающегося" окна. В этом случае окно делит данные на сегменты по полю `CallRecTime` в каждой записи. Если поле не указано, при выполнении операций с окнами будет использоваться время поступления каждого события в концентратор событий. Дополнительные сведения см. в разделе о времени поступления и времени приложения в [справочнике по языку запросов Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx). 
 
@@ -287,7 +295,7 @@ ms.locfileid: "49986038"
 
 2. Снова щелкните **Проверка**. В результатах обратите внимание на то, что метки времени в **WindowEnd** формируются с шагом приращения в 5 секунд.
 
-   ![Выходные данные задания Stream Analytics для статистической обработки, которые включают 13 созданных записей](./media/stream-analytics-real-time-fraud-detection/stream-analytics-sa-job-sample-output-aggregation.png)
+   ![Выходные данные задания Stream Analytics для статистической обработки, которые включают 13 записей](./media/stream-analytics-real-time-fraud-detection/stream-analytics-sa-job-sample-output-aggregation.png)
  
 ### <a name="detect-sim-fraud-using-a-self-join"></a>Выявление мошенничества в отношении SIM-карт с помощью самосоединения
 
@@ -299,6 +307,7 @@ ms.locfileid: "49986038"
 
 1. Измените запрос в редакторе кода, используя следующие значения: 
 
+        ```SQL
         SELECT  System.Timestamp as Time, 
             CS1.CallingIMSI, 
             CS1.CallingNum as CallingNum1, 
@@ -310,6 +319,7 @@ ms.locfileid: "49986038"
             ON CS1.CallingIMSI = CS2.CallingIMSI 
             AND DATEDIFF(ss, CS1, CS2) BETWEEN 1 AND 5 
         WHERE CS1.SwitchNum != CS2.SwitchNum
+        ```
 
     Этот запрос напоминает любое другое соединение SQL за исключением функции в соединении `DATEDIFF`. Эта версия функции `DATEDIFF` предназначена для Stream Analytics и должна присутствовать в предложении `ON...BETWEEN`. Параметры представлены единицей времени (в этом примере — секундами) и псевдонимами двух источников для соединения. В этом она отличается от стандартной функции SQL `DATEDIFF`.
 
@@ -321,7 +331,7 @@ ms.locfileid: "49986038"
 
 3. Щелкните **Сохранить**, и запрос на самосоединение сохранится как часть задания Stream Analytics. (Образец данных не сохраняется.)
 
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-query-editor-save-button-new-portal.png" alt="drawing" width="300px"/>
+    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-query-editor-save-button-new-portal.png" alt="Save Stream Analytics query in portal" width="300px"/>
 
 ## <a name="create-an-output-sink-to-store-transformed-data"></a>Создание приемника выходных данных для хранения преобразованных данных
 
@@ -335,7 +345,7 @@ ms.locfileid: "49986038"
 
 1. В верхнем левом углу окна портала Azure выберите **Создать ресурс** > **Хранилище** > **Учетная запись хранения**. На странице заданий учетной записи хранения для параметра **Имя** введите значение asaehstorage, для параметра **Расположение** — "восточная часть США 2", для параметра **Группа ресурсов** — asa-eh-ns-rg (для повышения производительности разместите учетную запись хранения в той же группе ресурсов, что и задание потоковой передачи). Для остальных параметров можно оставить значения по умолчанию.  
 
-   ![Создать учетную запись хранения](./media/stream-analytics-real-time-fraud-detection/stream-analytics-storage-account-create.png)
+   ![Создание учетной записи хранения на портале Azure](./media/stream-analytics-real-time-fraud-detection/stream-analytics-storage-account-create.png)
 
 2. Вернитесь в область задания Streaming Analytics на портале Azure. (Если вы закрыли область, найдите `asa_frauddetection_job_demo` в области **Все ресурсы**.)
 
@@ -350,7 +360,7 @@ ms.locfileid: "49986038"
    |Учетная запись хранения  |  asaehstorage |  Введите имя созданной учетной записи хранения. |
    |Контейнер  | asa-fraudulentcalls-demo | Выберите "Создать новый" и введите имя контейнера. |
     <br/>
-    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-output-blob-storage-new-console.png" alt="drawing" width="300px"/>
+    <img src="./media/stream-analytics-real-time-fraud-detection/stream-analytics-create-output-blob-storage-new-console.png" alt="Create blob output for Stream Analytics job" width="300px"/>
     
 5. Выберите команду **Сохранить**. 
 
@@ -371,7 +381,7 @@ ms.locfileid: "49986038"
 
 Теперь у вас есть готовое задание Streaming Analytics. Задание проверяет поток метаданных телефонных вызовов, выполняет поиск мошеннических вызовов в режиме реального времени, а также записывает сведения об этих мошеннических вызовах в хранилище. 
 
-Чтобы завершить работу с этим руководством, просмотрите данные, собранные заданием Streaming Analytics. Данные записываются в хранилище BLOB-объектов Azure в блоки (файлы). Вы можете использовать любое средство, считывающее хранилище BLOB-объектов Azure. Как упоминалось в разделе предварительных требований, вы можете использовать расширения Azure в Visual Studio или средства [обозреватель хранилищ Azure](http://storageexplorer.com/) или [Azure Explorer](http://www.cerebrata.com/products/azure-explorer/introduction). 
+Чтобы завершить работу с этим руководством, просмотрите данные, собранные заданием Streaming Analytics. Данные записываются в хранилище BLOB-объектов Azure в блоки (файлы). Вы можете использовать любое средство, считывающее хранилище BLOB-объектов Azure. Как упоминалось в разделе предварительных требований, вы можете использовать расширения Azure в Visual Studio или средства [обозреватель хранилищ Azure](https://storageexplorer.com/) или [Cerulean](https://www.cerebrata.com/products/cerulean/features/azure-storage). 
 
 При проверке содержимого файла в хранилище BLOB-объектов должны отобразиться примерно такие данные:
 
@@ -399,7 +409,7 @@ ms.locfileid: "49986038"
 
 Вы можете ознакомиться со следующей статьей, связанной с этим руководством:
 
-* [Stream Analytics и Power BI. Панель мониторинга для анализа потоковой передачи данных](stream-analytics-power-bi-dashboard.md). В этой статье описывается, как отправить выходные данные TelCo задания Stream Analytics в Power BI для визуализации и анализа в режиме реального времени.
+* [Stream Analytics и Power BI: панель мониторинга аналитики для потоковой передачи данных в режиме реального времени](stream-analytics-power-bi-dashboard.md). В этой статье описывается, как отправить выходные данные TelCo задания Stream Analytics в Power BI для визуализации и анализа в режиме реального времени.
 
 Узнать больше о Stream Analytics в целом вы можете с помощью следующих ресурсов:
 

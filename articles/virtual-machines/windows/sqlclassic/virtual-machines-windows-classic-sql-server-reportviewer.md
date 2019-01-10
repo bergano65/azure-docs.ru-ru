@@ -15,16 +15,16 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 01/11/2017
 ms.author: maghan
-ms.openlocfilehash: 514e85fc61240834d8db152ece65a4f9cce9023e
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: b554dc1fa33519d87aa0c9c5ba9130b47cbea142
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51250413"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53971756"
 ---
 # <a name="use-reportviewer-in-a-web-site-hosted-in-azure"></a>Использование ReportViewer для веб-сайта, размещенного в Azure
-> [!IMPORTANT] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
+> [!IMPORTANT]
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
 
 Вы можете создать веб-сайт Microsoft Azure с элементом управления ReportViewer Visual Studio, который отображает отчет, хранящийся на виртуальной машине Microsoft Azure. Элемент управления ReportViewer представляет собой веб-приложение, создаваемое с помощью шаблона веб-приложения ASP.NET.
 
@@ -42,7 +42,7 @@ ms.locfileid: "51250413"
 
 > [!NOTE]
 > Элементы управления ReportViewer входят в состав Visual Studio Standard Edition или выше. Если используется Web Developer Express Edition, необходимо установить [MICROSOFT REPORT VIEWER 2012 RUNTIME](https://www.microsoft.com/download/details.aspx?id=35747) , чтобы воспользоваться функциями среды выполнения ReportViewer.
-> 
+>
 > ReportViewer в режиме локальной обработки не поддерживается в Microsoft Azure.
 
 ## <a name="adding-assemblies-to-the-deployment-package"></a>Добавление сборок в пакет развертывания
@@ -71,21 +71,21 @@ ms.locfileid: "51250413"
 
 ### <a name="to-configure-for-localized-reportviewer-control"></a>Настройка локализованного элемента управления ReportViewer
 1. Загрузите и установите распространяемый пакет Microsoft Report Viewer 2012 Runtime, следуя приведенным выше инструкциям.
-2. Создайте каталог <language> в проекте и скопируйте в него файлы сборок соответствующих ресурсов. Необходимо скопировать следующие файлы сборок ресурсов: **Microsoft.ReportViewer.Webforms.Resources.dll** и **Microsoft.ReportViewer.Common.Resources.dll**. Выберите файлы сборок ресурсов и в области "Свойства" задайте для параметра **Копировать в выходной каталог** значение **Всегда копировать**.
-3. Настройте Culture и UI Culture для веб-проекта. Дополнительные сведения о настройке Culture и UI Culture для веб-страницы ASP.NET см. в статье [Практическое руководство. Установка значений Culture и UICulture для глобализации веб-страниц ASP.NET](https://go.microsoft.com/fwlink/?LinkId=237461).
+2. Создайте папку \<language\> в проекте и скопируйте в него файлы сборок соответствующих ресурсов. Необходимо скопировать следующие файлы сборок ресурсов: **Microsoft.ReportViewer.Webforms.Resources.dll** и **Microsoft.ReportViewer.Common.Resources.dll**. Выберите файлы сборок ресурсов и в области "Свойства" задайте для параметра **Копировать в выходной каталог** значение **Всегда копировать**.
+3. Настройте Culture и UI Culture для веб-проекта. Дополнительные сведения о настройке Culture и UI Culture для веб-страницы ASP.NET см. в статье [Практическое руководство. Установка значений Culture и UI Culture для глобализации веб-страниц ASP.NET](https://go.microsoft.com/fwlink/?LinkId=237461).
 
 ## <a name="configuring-authentication-and-authorization"></a>Настройка проверки подлинности и авторизации
 В ReportViewer должны использоваться правильные учетные данные для проверки подлинности на сервере отчетов. Для доступа к желаемым отчетам учетные данные должны быть авторизованы сервером отчетов. Сведения о проверке подлинности приведены в техническом документе [Элемент управления средства просмотра отчетов Reporting Services и серверы отчетов на основе виртуальной машины Microsoft Azure](https://msdn.microsoft.com/library/azure/dn753698.aspx).
 
 ## <a name="publish-the-aspnet-web-application-to-azure"></a>Публикация веб-приложения ASP.NET в Azure
-Инструкции по публикации веб-приложения ASP.NET в Azure см. в статьях [Инструкции. Миграция и публикация веб-приложения в облачную службу Azure из среды Visual Studio](../../../vs-azure-tools-migrate-publish-web-app-to-cloud-service.md) и [Начало работы с веб-приложениями и ASP.NET](../../../app-service/app-service-web-get-started-dotnet.md).
+Инструкции по публикации веб-приложений ASP.NET в Azure см. в статье [Практическое руководство. Миграция и публикация веб-приложения в Azure из Visual Studio](../../../vs-azure-tools-migrate-publish-web-app-to-cloud-service.md) и [Начало работы с веб-приложениями и ASP.NET](../../../app-service/app-service-web-get-started-dotnet.md).
 
 > [!IMPORTANT]
 > Если в контекстном меню в обозревателе решений не появилась команда "Добавить проект развертывания Azure" или "Добавить проект облачной службы Azure", может потребоваться изменить целевую платформу для проекта на .NET Framework 4.
-> 
+>
 > Эти две команды по сути выполняют одну и ту же функцию. В контекстном меню появится одна или другая команда в зависимости от того, какая версия Microsoft Azure SDK установлена.
-> 
-> 
+>
+>
 
 ## <a name="resources"></a>Ресурсы
 [Отчеты Майкрософт](https://go.microsoft.com/fwlink/?LinkId=205399)
@@ -93,4 +93,3 @@ ms.locfileid: "51250413"
 [SQL Server Business Intelligence на виртуальных машинах Azure](../classic/ps-sql-bi.md)
 
 [Использование PowerShell для создания виртуальной машины Azure с помощью сервера отчетов, работающего в собственном режиме](../classic/ps-sql-report.md)
-

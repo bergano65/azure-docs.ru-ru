@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/25/2018
 ms.author: laevenso
-ms.openlocfilehash: c2f68afb685cb04d456e06cadf378bd1c3ebb1fb
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 0bca7281c390388bd860219fb6f2eacb96b99df0
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49384993"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53742394"
 ---
 # <a name="http-application-routing"></a>Маршрутизация приложений HTTP
 
@@ -28,10 +28,10 @@ ms.locfileid: "49384993"
 
 Надстройка развертывает два компонента: [контроллер входящего трафика Службы Azure Kubernetes][ingress] и контроллер [внешних DNS][external-dns].
 
-- **Контроллер входящего трафика**. Доступ к контроллеру входящего трафика в Интернете предоставляется с помощью Службы Azure Kubernetes типа LoadBalancer. Контроллер входящего трафика отслеживает и реализует [ресурсы входящего трафика Службы Azure Kubernetes][ingress-resource], которые создают маршруты к конечным точкам приложения.
-- **Контроллер внешних DNS**. Отслеживает ресурсы входящего трафика Службы Azure Kubernetes и создает записи A DNS в зоне DNS с определенным кластером.
+- **Контроллер входящего трафика**. Доступ к контроллеру входящего трафика в Интернете предоставляется с помощью службы Azure Kubernetes типа LoadBalancer. Контроллер входящего трафика отслеживает и реализует [ресурсы входящего трафика Службы Azure Kubernetes][ingress-resource], которые создают маршруты к конечным точкам приложения.
+- **Контроллер внешних DNS**. Отслеживает ресурсы входящего трафика службы Azure Kubernetes и создает DNS-записи A в зоне DNS определенного кластера.
 
-## <a name="deploy-http-routing-cli"></a>Развертывание маршрутизации HTTP-трафика: CLI
+## <a name="deploy-http-routing-cli"></a>Развертывание маршрутизации HTTP-трафика Интерфейс командной строки
 
 Надстройку для маршрутизации приложений HTTP можно активировать с помощью Azure CLI при развертывании кластера AKS. Для этого используйте команду [az aks create][az-aks-create] с аргументом `--enable-addons`.
 
@@ -55,7 +55,7 @@ Result
 9f9c1fe7-21a1-416d-99cd-3543bb92e4c3.eastus.aksapp.io
 ```
 
-## <a name="deploy-http-routing-portal"></a>Развертывание маршрутизации HTTP-трафика: портал
+## <a name="deploy-http-routing-portal"></a>Развертывание маршрутизации HTTP-трафика Microsoft Azure
 
 При развертывании кластера службы AKS надстройку для маршрутизации приложений HTTP можно активировать на портале Azure.
 
@@ -174,6 +174,36 @@ $ curl party-clippy.471756a6-e744-4aa0-aa01-89c4d162a7a7.canadaeast.aksapp.io
 az aks disable-addons --addons http_application_routing --name myAKSCluster --resource-group myResourceGroup --no-wait
 ```
 
+При отключении надстройки маршрутизации приложений HTTP некоторые ресурсы Kubernetes могут оставаться в кластере. Эти ресурсы включают объекты *configMap* и *секреты* и создаются в пространстве имен *kube-system*. Чтобы поддерживать чистоту кластера, можно удалить эти ресурсы.
+
+Найдите ресурсы *addon-http-application-routing* с помощью следующих команд [kubectl get][kubectl-get].
+
+```console
+kubectl get deployments --namespace kube-system
+kubectl get services --namespace kube-system
+kubectl get configmaps --namespace kube-system
+kubectl get secrets --namespace kube-system
+```
+
+В следующем примере выходных данных показаны объекты configMap, подлежащие удалению.
+
+```
+$ kubectl get configmaps --namespace kube-system
+
+NAMESPACE     NAME                                                       DATA   AGE
+kube-system   addon-http-application-routing-nginx-configuration         0      9m7s
+kube-system   addon-http-application-routing-tcp-services                0      9m7s
+kube-system   addon-http-application-routing-udp-services                0      9m7s
+```
+
+Чтобы удалить ресурсы, используйте команду [kubectl delete][kubectl-delete]. Укажите тип ресурса, имя ресурса и пространство имен. В следующем примере удаляется один из предыдущих объектов configmap.
+
+```console
+kubectl delete configmaps addon-http-application-routing-nginx-configuration --namespace kube-system
+```
+
+Повторите предыдущий шаг `kubectl delete` для всех ресурсов *addon-http-application-routing*, которые остаются в кластере.
+
 ## <a name="troubleshoot"></a>Устранение неполадок
 
 Выполните команду [kubectl logs][kubectl-logs], чтобы просмотреть журналы приложений для внешнего приложения DNS. В журналах должно быть указано, что записи A и TXT DNS успешно созданы.
@@ -256,6 +286,7 @@ ingress "party-clippy" deleted
 [external-dns]: https://github.com/kubernetes-incubator/external-dns
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
+[kubectl-delete]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete
 [kubectl-logs]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs
 [ingress]: https://kubernetes.io/docs/concepts/services-networking/ingress/
 [ingress-resource]: https://kubernetes.io/docs/concepts/services-networking/ingress/#the-ingress-resource

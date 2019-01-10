@@ -16,16 +16,16 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/12/2016
 ms.author: kasing
-ms.openlocfilehash: 942141fad09e6233efc7f850212a73f8a39c163c
-ms.sourcegitcommit: 59914a06e1f337399e4db3c6f3bc15c573079832
+ms.openlocfilehash: b7fafa148417ba1667ec0277b414105f95e428ce
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "30918311"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53971790"
 ---
 # <a name="manage-your-virtual-machines-by-using-azure-powershell"></a>Управление виртуальными машинами с помощью Azure PowerShell
 > [!IMPORTANT] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../../../resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Общие команды PowerShell, использующиеся с моделью Resource Manager, см. [здесь](../../virtual-machines-windows-ps-common-ref.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../../resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов. Общие команды PowerShell, использующиеся с моделью Resource Manager, см. [здесь](../../virtual-machines-windows-ps-common-ref.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
 
 Многие повседневные задачи управления виртуальными машинами можно автоматизировать с помощью командлетов Azure PowerShell. В этой статье приводятся примеры команд для простых задач, а также ссылки на статьи о командах для более сложных задач.
 
@@ -42,7 +42,7 @@ ms.locfileid: "30918311"
 
 Чтобы получить информацию о виртуальной машине, выполните эту команду и замените все, что заключено в кавычки, в том числе знаки < и >.
 
-     Get-AzureVM -ServiceName "<cloud service name>" -Name "<virtual machine name>"
+    Get-AzureVM -ServiceName "<cloud service name>" -Name "<virtual machine name>"
 
 Чтобы сохранить выходные данные в переменной $vm, выполните:
 
@@ -54,7 +54,7 @@ ms.locfileid: "30918311"
 > [!NOTE]
 > Имя виртуальной машины и облачной службы можно получить из вывода команды **Get-AzureVM** .
 > 
-> $svcName = "<cloud service name>" $vmName = "<virtual machine name>" $localPath = "<расположение диска и файла для хранения скачанного RDP-файла, например c:\temp >" $localFile = $localPath + "\" + $vmname + ".rdp" Get-AzureRemoteDesktopFile -ServiceName $svcName -Name $vmName -LocalPath $localFile -Launch
+> $svcName = `"<cloud service name>"` $vmName = `"<virtual machine name>"` $localPath = `"<drive and folder location to store the downloaded RDP file, example: c:\temp >"` $localFile = $localPath + "\" + $vmname + ".rdp" Get-AzureRemoteDesktopFile -ServiceName $svcName -Name $vmName -LocalPath $localFile -Launch
 > 
 > 
 
@@ -64,7 +64,7 @@ ms.locfileid: "30918311"
     Stop-AzureVM -ServiceName "<cloud service name>" -Name "<virtual machine name>"
 
 > [!IMPORTANT]
-> Используйте этот параметр, чтобы сохранить виртуальный IP-адрес (VIP) облачной службы, если эта виртуальная машина является последней в этой службе. <br><br> При использовании параметра StayProvisioned вам по-прежнему будут выставлять счета за использование виртуальной машины.
+> Используйте этот параметр, чтобы сохранить виртуальный IP-адрес (VIP) облачной службы, если эта виртуальная машина является последней в этой службе. <br><br>  При использовании параметра StayProvisioned вам по-прежнему будут выставлять счета за использование виртуальной машины.
 > 
 > 
 

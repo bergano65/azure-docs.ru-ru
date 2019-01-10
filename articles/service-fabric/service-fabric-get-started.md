@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/25/2018
 ms.author: ryanwi
-ms.openlocfilehash: 968c9f2455269cf41a701de685e4f47255b46847
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 064d73aa3d1a9183eddd53b1a1b8ddbf02afb04d
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53386434"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53792855"
 ---
 # <a name="prepare-your-development-environment-on-windows"></a>Настройка среды разработки для Windows
 > [!div class="op_single_selector"]
@@ -50,6 +50,9 @@ ms.locfileid: "53386434"
 ## <a name="install-the-sdk-and-tools"></a>Установка пакета SDK и инструментов
 Установщик веб-платформы (WebPI) — это рекомендуемый способ установки пакета SDK и средств. При получении ошибок, при выполнения с помощью установщика веб-платформы, также можно найти прямые ссылки на средства установки в заметках о выпуске для определенной версии Service Fabric. Заметки о выпуске можно найти в различных объявлениях о выпусках в [блоге команды Service Fabric](https://blogs.msdn.microsoft.com/azureservicefabric/).
 
+> [!NOTE]
+> Обновления локального кластера разработки Service Fabric не поддерживаются.
+
 ### <a name="to-use-visual-studio-2017"></a>Для использования Visual Studio 2017
 Средства Service Fabric являются частью рабочей нагрузки разработки Azure в Visual Studio 2017. Эту рабочую нагрузку необходимо включить при установке Visual Studio.
 Кроме того, необходимо установить пакет SDK и среду выполнения Microsoft Azure Service Fabric, используя установщик веб-платформы.
@@ -66,8 +69,8 @@ ms.locfileid: "53386434"
 * [Установка пакета SDK Microsoft Azure Service Fabric][core-sdk]
 
 Текущие версии:
-* пакет SDK и Средства Service Fabric версии 3.3.617;
-* среда выполнения Service Fabric 6.4.617;
+* пакет SDK и средства Service Fabric версии 3.3.622;
+* среда выполнения Service Fabric 6.4.622;
 * Средства Service Fabric для Visual Studio 2015 2.4.11116.1;
 * среда Visual Studio 2017 15.9, которая включает в себя Средства Service Fabric для Visual Studio 2.4.11024.1. 
 

@@ -1,24 +1,21 @@
 ---
-title: 'Первое знакомство: защита виртуальных машин Azure в хранилище служб восстановления'
-description: Защита виртуальных машин Azure в хранилище служб восстановления. Чтобы защитить данные, используйте резервные копии виртуальных машин, развернутых с помощью Resource Manager или классической модели развертывания, а также виртуальных машин хранилища класса Premium, зашифрованных виртуальных машин и виртуальных машин на управляемых дисках. Создание и регистрация хранилища служб восстановления. Регистрация виртуальных машин, создание политики и защита виртуальных машин в Azure.
+title: Резервное копирование виртуальных машин Azure с помощью службы Azure Backup
+description: Узнайте, как выполнять резервное копирование виртуальных машин Azure с помощью службы Azure Backup
 services: backup
 author: rayne-wiselman
 manager: carmonm
-keyword: backups; vm backup
 ms.service: backup
 ms.topic: conceptual
-ms.date: 08/01/2018
+ms.date: 12/17/2018
 ms.author: raynew
-ms.custom: H1Hack27Feb2017
-keywords: backups; vm backup
-ms.openlocfilehash: 2c6b881e5717c0f4600b4e3c2f47c19b5d2dae51
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 0c394a92bff3ace210ee0db156f47bb8912bf45d
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52869934"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53631589"
 ---
-# <a name="back-up-azure-virtual-machines-to-recovery-services-vault"></a>Резервное копирование виртуальных машин Azure в хранилище служб восстановления
+# <a name="back-up-azure-vms-with-the-azure-backup-service"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup
 
 В этой статье описывается, как настроить защиту виртуальной машины с помощью ее меню операций или хранилища служб восстановления. Хранилища служб восстановления защищают следующие ресурсы:
 
@@ -32,7 +29,7 @@ ms.locfileid: "52869934"
 
 Дополнительные сведения о защите виртуальных машин хранилища класса Premium см. в разделе [Использование службы архивации Azure для виртуальных машин хранилища класса "Премиум"](backup-introduction-to-azure-backup.md#using-premium-storage-vms-with-azure-backup). Дополнительные сведения о поддержке для виртуальных машин, запущенных на управляемых дисках, см. в разделе [Использование службы архивации Azure для виртуальных машин, запущенных на управляемых дисках](backup-introduction-to-azure-backup.md#using-managed-disk-vms-with-azure-backup). Дополнительные сведения о платформе для резервного копирования виртуальных машин Linux с помощью платформы для предварительного и последующего выполнения скриптов см. в статье [Согласованное с приложениями резервное копирование виртуальных машин Linux в Azure](https://docs.microsoft.com/azure/backup/backup-azure-linux-app-consistent).
 
-Чтобы узнать больше о том, для каких объектов можно создавать резервные копии, ознакомьтесь с разделом [Подготовка среды к архивации виртуальных машин, развернутых с помощью Resource Manager](backup-azure-arm-vms-prepare.md#limitations-when-backing-up-and-restoring-a-vm).
+Чтобы узнать больше о том, для каких объектов можно создавать резервные копии, ознакомьтесь с разделом [Подготовка среды к архивации виртуальных машин, развернутых с помощью Resource Manager](backup-azure-arm-vms-prepare.md#before-you-start).
 
 > [!NOTE]
 > Служба Backup создает группу ресурсов, отличную от группы ресурсов виртуальной машины, для сохранения коллекции точек восстановления. Пользователям рекомендуется не блокировать группу ресурсов, созданную для использования службой Backup.
@@ -337,7 +334,9 @@ ms.locfileid: "52869934"
 Если у вас возникли проблемы при выполнении задач, описанных в этой статье, изучите [руководство по устранению неполадок](backup-azure-vms-troubleshoot.md).
 
 ## <a name="pricing"></a>Цены
-Затраты на архивацию виртуальных машин Azure зависят от количества защищенных экземпляров. Определение защищенного экземпляра см. в разделе [Что такое защищенный экземпляр](backup-introduction-to-azure-backup.md#what-is-a-protected-instance). Пример расчета стоимости архивации виртуальной машины см. в разделе [Как вычисляются защищенные экземпляры](backup-azure-vms-introduction.md#calculating-the-cost-of-protected-instances). Цены на службу архивации Azure см. на [этой странице](https://azure.microsoft.com/pricing/details/backup/).
+Затраты на архивацию виртуальных машин Azure зависят от количества защищенных экземпляров. Определение защищенного экземпляра см. в разделе [Что такое защищенный экземпляр](backup-introduction-to-azure-backup.md#what-is-a-protected-instance). Цены на службу архивации Azure см. на [этой странице](https://azure.microsoft.com/pricing/details/backup/).
 
-## <a name="questions"></a>Вопросы?
-Если вы хотите задать вопрос или предложить добавить какие-либо функции, [отправьте нам свой отзыв](https://aka.ms/azurebackup_feedback).
+## <a name="next-steps"></a>Дополнительная информация
+
+[Управление](backup-azure-manage-vms.md) резервными копиями.
+

@@ -15,14 +15,14 @@ ms.workload: NA
 ms.date: 10/31/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 06a7ce6301af6e5a7c04ac5c5a0a1240c21f834e
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 6e7f6499a78b21ad81af5d541966e18090467532
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52887514"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53787636"
 ---
-# <a name="tutorial-debug-a-service-fabric-mesh-application-running-in-your-local-development-cluster"></a>Руководство по отладке приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки.
+# <a name="tutorial-debug-a-service-fabric-mesh-application-running-in-your-local-development-cluster"></a>Руководство. Отладка приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки
 
 Это руководство является вторым из серии руководств. Здесь показано, как создать и отладить приложение Сетки Azure Service Fabric в локальном кластере разработки.
 
@@ -93,8 +93,8 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 ### <a name="debug-in-visual-studio"></a>Отладка в Visual Studio
 
 При отладке приложения Сетки Service Fabric в Visual Studio используется локальный кластер разработки Service Fabric. Чтобы увидеть как задачи извлекаются из серверной службы, делайте отладку методом OnGet().
-1. В проекте **WebFrontEnd** откройте **Страницы** > **Index.cshtml** > **Index.cshtml.cs** и задайте точку останова методом **Get** (строка 17).
-2. В проекте **ToDoService** откройте **TodoController.cs** и задайте точку останова методом **OnGet** (строка 15).
+1. В проекте **WebFrontEnd** откройте **Страницы** > **Index.cshtml** > **Index.cshtml.cs** и задайте точку останова методом **OnGet** (строка 17).
+2. В проекте **ToDoService** откройте **TodoController.cs** и задайте точку останова методом **Get** (строка 15).
 3. Затем вернитесь в браузер и обновите страницу. Вы попадете в точку останова во внешнем интерфейсе методом `OnGet()`. Чтобы увидеть как переменные среды, определенные в файле **service.yaml**, объединены в URL-адрес, используемый для связи с внутренней службой, можно проверить переменную `backendUrl`.
 4. Шаг назад (F10) к запросу `client.GetAsync(backendUrl).GetAwaiter().GetResult())` и вы окажетесь в точке останова оператора `Get()`. При помощи этого метода можно увидеть как список работающих элементов извлекается из списка в памяти.
 5. После окончания остановите отладку проекта в Visual Studio, нажав комбинацию клавиш **SHIFT+F5**.

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
-ms.date: 12/10/2018
+ms.date: 01/02/2019
 ms.author: diberry
-ms.openlocfilehash: 62827054a14930cd49f7d80d6c305e60060c0fe6
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 2d6f7e2fd332e1687db1564befeb6f531045c5dd
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53271391"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53993073"
 ---
 # <a name="phrase-list-features-in-your-luis-app"></a>Признаки списков фраз в приложении LUIS
 
@@ -29,6 +29,10 @@ ms.locfileid: "53271391"
 
 Список фраз добавляется в словарь домена приложений в качестве второго сигнала LUIS об этих словах.
 
+## <a name="phrase-lists-help-all-models"></a>Списки фраз удобны для всех моделей.
+
+Списки фраз не связаны с определенным намерением или сущностью, но добавляются во все модели для повышения эффективности, в том числе обнаружения намерений и классификации сущностей.
+
 ## <a name="how-to-use-phrase-lists"></a>Использование списка фраз
 В статье [Руководство: 7. Добавление простой сущности и списка фраз](luis-quickstart-primary-and-secondary-data.md) в приложении для управления персоналом используется список фраз **Задание** типов заданий, таких как программист, кровельщик и секретарь. Если одно из следующих значений пометить как сущность машинного обучения, LUIS учится распознавать другие. 
 
@@ -40,6 +44,7 @@ ms.locfileid: "53271391"
 |Список невзаимозаменяемых фраз|Специальный словарь приложения, который обычно включает больше слов, чем доступно на определенном языке.|
 
 Список фраз не только помогает с определением намерений. Он также позволяет выполнить классификацию с использованием невзаимоизменяемых фраз, например путем добавления в словарь слов, которые неизвестны на английском языке.
+
 
 <a name="phrase-lists-help-identify-simple-exchangeable-entities"></a>
 

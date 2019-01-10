@@ -8,20 +8,22 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 08/31/2018
 ms.author: dobett
-ms.openlocfilehash: 5faa91f054e62e2b3d9d317efe57f2d3f659cee6
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 91d4eda566c8b534daa10c62637db28ccb01bbb6
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48829840"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53628329"
 ---
 # <a name="connect-your-device-to-the-remote-monitoring-solution-accelerator-linux"></a>Подключение устройства к акселератору решения для удаленного мониторинга в Linux
 
 [!INCLUDE [iot-suite-selector-connecting](../../includes/iot-suite-selector-connecting.md)]
 
-В этом руководстве показано, как подключить физическое устройство к акселератору решений для удаленного мониторинга.
+В этом руководстве показано, как подключить реальное устройство к акселератору решений для удаленного мониторинга.
 
 Как и для большинства внедряемых приложений, работающих на устройствах с ограниченными ресурсами, клиентский код для приложения на устройстве пишется на языке C. В этом руководстве вы создадите приложение на компьютере под управлением Ubuntu (Linux).
+
+Если вы предпочитаете имитацию устройства, см. раздел [Создание и тестирование нового имитированного устройства](iot-accelerators-remote-monitoring-create-simulated-device.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -47,7 +49,7 @@ ms.locfileid: "48829840"
 
 1. Измените файл **remote_monitoring.c**, чтобы заменить `<connectionstring>` строкой подключения устройства, которую вы записали в начале этого практического руководства, при добавлении устройства в акселератор решений.
 
-1. Перейдите в корневой каталог хранилища клонированных копии [Репозиторий пакетов SDK для Azure IoT C](https://github.com/Azure/azure-iot-sdk-c) и выполните следующие команды для создания клиентского приложения:
+1. Перейдите в корневой каталог хранилища клонированных копий [Репозиторий пакетов SDK для Azure IoT C](https://github.com/Azure/azure-iot-sdk-c) и выполните следующие команды для создания клиентского приложения:
 
     ```sh
     mkdir cmake

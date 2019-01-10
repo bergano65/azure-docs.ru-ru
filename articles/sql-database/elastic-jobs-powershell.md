@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: tutorial
 author: johnpaulkee
 ms.author: joke
-ms.reviwer: ''
+ms.reviwer: sstein
 manager: craigg
 ms.date: 06/14/2018
-ms.openlocfilehash: 9b38e1b6ba55fab46965fdc7a73ab608e1e6b754
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 13054ed0da2ad3fc38bdd4a39d9092dc72e39de9
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52877808"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53601667"
 ---
 # <a name="create-an-elastic-job-agent-using-powershell"></a>Создание агента заданий обработки эластичных баз данных с помощью PowerShell
 
@@ -209,7 +209,7 @@ $JobCred = $JobAgent | New-AzureRmSqlElasticJobCredential -Name "jobuser" -Crede
 
 [Целевая группа](elastic-jobs-overview.md#target-group) определяет набор из одной или нескольких баз данных, в которых будет выполняться шаг задания. 
 
-Следующий фрагмент кода позволяет создать две целевые группы: *ServerGroup* и *ServerGroupExcludingDb2*. *ServerGroup* охватывает все базы данных, имеющиеся на сервере во время выполнения, а *ServerGroupExcludingDb2* охватывает все базы данных сервера, за исключением *TargetDb2*:
+В следующем фрагменте кода создаются две целевые группы: *ServerGroup* и *ServerGroupExcludingDb2*. *ServerGroup* охватывает все базы данных, имеющиеся на сервере во время выполнения, а *ServerGroupExcludingDb2* охватывает все базы данных сервера, за исключением *TargetDb2*:
 
 ```powershell
 Write-Output "Creating test target groups..."

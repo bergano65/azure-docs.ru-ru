@@ -14,16 +14,16 @@ ms.topic: tutorial
 ms.date: 11/30/2018
 ms.author: cephalin
 ms.custom: mvc
-ms.openlocfilehash: b7d8a9b0ef48f7daed74fb15263e516d820a6a38
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 6af6eb0dd6473b9fe947f7cc4939da4e0cbc77cb
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53259075"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53718532"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство. Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
-[Служба приложений](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. Она также предоставляет [управляемое удостоверение](app-service-managed-service-identity.md) для вашего приложения, которое является готовым решением для защиты доступа к [Базе данных SQL Azure](/azure/sql-database/) и другим службам Azure. Управляемые удостоверения в службе приложений делают ваше приложение более безопасным, устраняя из него секреты, такие как учетные данные в строках подключения. В этом руководстве вы добавите управляемое удостоверение в пример веб-приложения ASP.NET, которое вы создали при работе с [руководством по созданию приложения ASP.NET в Azure с подключением к базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md) Когда вы закончите, ваш пример приложения будет безопасно подключаться к базе данных SQL без необходимости использования имен пользователей и паролей.
+[Служба приложений](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости в Azure. Она также предоставляет [управляемое удостоверение](overview-managed-identity.md) для вашего приложения, которое является готовым решением для защиты доступа к [Базе данных SQL Azure](/azure/sql-database/) и другим службам Azure. Управляемые удостоверения в службе приложений делают ваше приложение более безопасным, устраняя из него секреты, такие как учетные данные в строках подключения. В этом руководстве вы добавите управляемое удостоверение в пример веб-приложения ASP.NET, которое вы создали при работе с [руководством по созданию приложения ASP.NET в Azure с подключением к базе данных SQL](app-service-web-tutorial-dotnet-sqldatabase.md) Когда вы закончите, ваш пример приложения будет безопасно подключаться к базе данных SQL без необходимости использования имен пользователей и паролей.
 
 > [!NOTE]
 > Этот сценарий сейчас поддерживается только в .NET Framework версии 4.6 и выше, но не в [.NET Core 2.1](https://www.microsoft.com/net/learn/get-started/windows). [.NET Core 2.2](https://www.microsoft.com/net/download/dotnet-core/2.2) поддерживает этот сценарий, но без включения в стандартные образы в Службе приложений. 
@@ -123,7 +123,7 @@ public MyDatabaseContext(SqlConnection conn) : base(conn, true)
 }
 ```
 
-Этот конструктор настраивает собственный объект SqlConnection для использования маркера доступа базы данных Azure SQL из службы приложений. С помощью маркера доступа приложение службы приложений проходит проверку подлинности в Базе данных SQL Azure с использованием управляемого удостоверения. Дополнительные сведения см. в разделе [Получение маркеров для ресурсов Azure](app-service-managed-service-identity.md#obtaining-tokens-for-azure-resources). Оператор `if` позволяет продолжить тестирование приложения локально с помощью LocalDB.
+Этот конструктор настраивает собственный объект SqlConnection для использования маркера доступа базы данных Azure SQL из службы приложений. С помощью маркера доступа приложение службы приложений проходит проверку подлинности в Базе данных SQL Azure с использованием управляемого удостоверения. Дополнительные сведения см. в разделе [Получение маркеров для ресурсов Azure](overview-managed-identity.md#obtaining-tokens-for-azure-resources). Оператор `if` позволяет продолжить тестирование приложения локально с помощью LocalDB.
 
 > [!NOTE]
 > `SqlConnection.AccessToken` сейчас поддерживается только в .NET Framework версии 4.6 и выше и [.NET Core 2.2](https://www.microsoft.com/net/download/dotnet-core/2.2), но не в [.NET Core2.1](https://www.microsoft.com/net/learn/get-started/windows).
@@ -147,7 +147,7 @@ private MyDatabaseContext db = new MyDatabaseContext(new System.Data.SqlClient.S
 
 На странице публикации щелкните **Опубликовать**. Когда на новой веб-странице отображается список дел, ваше приложение подключается к базе данных с управляемым удостоверением.
 
-![Веб-приложение Azure после включения Code First Migrations](./media/app-service-web-tutorial-dotnet-sqldatabase/this-one-is-done.png)
+![Приложение Azure после включения Code First Migration](./media/app-service-web-tutorial-dotnet-sqldatabase/this-one-is-done.png)
 
 Теперь вы должны иметь возможность редактировать список дел по-прежнему.
 
@@ -211,4 +211,4 @@ GO
 Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с веб-приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](app-service-web-tutorial-custom-domain.md)
+> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](app-service-web-tutorial-custom-domain.md)

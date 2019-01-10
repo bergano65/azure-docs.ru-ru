@@ -1,61 +1,50 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Adobe Creative Cloud | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Adobe Creative Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Adobe Creative Cloud.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
-ms.reviewer: joflore
+ms.reviewer: barbkess
 ms.assetid: c199073f-02ce-45c2-b515-8285d4bbbca2
-ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 07/10/2018
+ms.topic: tutorial
+ms.date: 12/19/2018
 ms.author: jeedes
-ms.openlocfilehash: 506f52faf916aa0d5ca2e8587bdbcc16ab88e130
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 8000208dfe15744c891bbf27ad8f9e69f44ef4dc
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39054290"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53807794"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adobe-creative-cloud"></a>Руководство по интеграции Azure Active Directory с Adobe Creative Cloud
+# <a name="tutorial-azure-active-directory-integration-with-adobe-creative-cloud"></a>Руководство. Интеграция Azure Active Directory с Adobe Creative Cloud
 
 В этом учебнике описано, как интегрировать приложение Adobe Creative Cloud с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Adobe Creative Cloud обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Adobe Creative Cloud.
-- Вы можете включить автоматический вход пользователей в Adobe Creative Cloud (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к Adobe Creative Cloud.
+* Вы можете включить автоматический вход пользователей в Adobe Creative Cloud (единый вход) с использованием учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно — на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с приложением Adobe Creative Cloud, вам потребуется:
 
-- подписка Azure AD;
-- подписка Adobe Creative Cloud с поддержкой единого входа.
-- Требуется версия Adobe Creative Cloud Enterprise
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка Adobe Creative Cloud с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
+В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
 
-1. Добавление Adobe Creative Cloud из коллекции
-2. настройка и проверка единого входа в Azure AD.
+* Adobe Creative Cloud поддерживает единый вход, инициированный **поставщиком услуг и поставщиком удостоверений**.
 
 ## <a name="adding-adobe-creative-cloud-from-the-gallery"></a>Добавление Adobe Creative Cloud из коллекции
 
@@ -63,109 +52,123 @@ ms.locfileid: "39054290"
 
 **Чтобы добавить Adobe Creative Cloud из коллекции, выполните следующие действия:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **Adobe Creative Cloud**, выберите **Adobe Creative Cloud** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Adobe Creative Cloud в списке результатов](./media/adobe-creative-cloud-tutorial/tutorial_adobecreativecloud_addfromgallery.png)
+     ![Adobe Creative Cloud в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Adobe Creative Cloud с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Adobe Creative Cloud соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Adobe Creative Cloud.
+В этом разделе описана настройка и проверка единого входа Azure AD в Adobe Creative Cloud с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Adobe Creative Cloud.
 
 Чтобы настроить и проверить единый вход Azure AD в Adobe Creative Cloud, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создайте тестового пользователя Adobe Creative Cloud](#create-an-adobe-creative-cloud-test-user)** для создания в Adobe Creative Cloud пользователя Britta Simon, связанного с соответствующим представлением в Azure AD.
+2. **[Настройка единого входа в Adobe Creative Cloud](#configure-adobe-creative-cloud-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+5. **[Создание тестового пользователя Adobe Creative Cloud](#create-adobe-creative-cloud-test-user)** требуется для того, чтобы в Adobe Creative Cloud существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В данном разделе описано, как включить единый вход в Azure AD на портале Azure и настроить его в приложении Adobe Creative Cloud.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Adobe Creative Cloud, выполните следующие действия:**
+Чтобы настроить единый вход Azure AD в Adobe Creative Cloud, выполните следующие действия:
 
-1. На портале Azure на странице интеграции с приложением **Adobe Creative Cloud** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Adobe Creative Cloud** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-    ![Диалоговое окно "Единый вход"](./media/adobe-creative-cloud-tutorial/tutorial_adobecreativecloud_samlbase.png)
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. Если вы хотите настроить приложение в режиме, инициированном поставщиком удостоверений, то в разделе **Домены и URL-адреса приложения Adobe Creative Cloud** выполните следующее.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Сведения о домене и URL-адресах единого входа приложения Adobe Creative Cloud](./media/adobe-creative-cloud-tutorial/tutorial_adobecreativecloud_url.png)
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.okta.com/saml2/service-provider/<token>`
+4. Если вы хотите настроить в режиме, инициируемом **IDP**, в разделе **Базовая конфигурация SAML** выполните следующие действия:
+
+    ![Сведения о домене и URL-адресах единого входа приложения Adobe Creative Cloud](common/idp-intiated.png)
+
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://www.okta.com/saml2/service-provider/<token>`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company name>.okta.com/auth/saml20/accauthlinktest`.
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [Adobe Creative Cloud Enterprise](https://www.adobe.com/au/creativecloud/business/teams/plans.html).
+    > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Adobe Creative Cloud](https://www.adobe.com/au/creativecloud/business/teams/plans.html). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
 
-4. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
+5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
 
-    ![Сведения о домене и URL-адресах единого входа приложения Adobe Creative Cloud](./media/adobe-creative-cloud-tutorial/tutorial_adobecreativecloud_url2.png)
+    В текстовом поле **URL-адрес входа** введите значение в формате `https://adobe.com`.
 
-    В текстовом поле **URL-адрес для входа** введите значение `https://adobe.com`.
+    ![Сведения о домене и URL-адресах единого входа приложения Adobe Creative Cloud](common/metadata-upload-additional-signon.png)
 
-5. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+6. Adobe Creative Cloud ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![Ссылка для скачивания сертификата](./media/adobe-creative-cloud-tutorial/tutorial_adobecreativecloud_certificate.png)
-     
-6. Adobe Creative Cloud ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно на вкладке **Атрибуты пользователя** приложения. На следующем снимке экрана приведен пример.
+    ![изображение](common/edit-attribute.png)
 
-    ![Настройка единого входа](./media/adobe-creative-cloud-tutorial/tutorial_attribute.png)
+7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
+ 
+    | ИМЯ | Исходный атрибут|
+    |----- | --------- |
+    | FirstName | user.givenname |
+    | LastName | user.surname |
+    | Email | user.mail
 
-7. В разделе **Атрибуты пользователя** диалогового окна **Единый вход** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия:
+    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    | Имя атрибута | Значение атрибута |
-    | ---------------| ----------------|
-    | FirstName |user.givenname |
-    | LastName |user.surname |
-    | Email |user.mail |
+    ![изображение](common/new-save-attribute.png)
 
-    a. Щелкните **Добавить атрибут**, чтобы открыть диалоговое окно **Добавление атрибута**.
-
-    ![Настройка единого входа](./media/adobe-creative-cloud-tutorial/tutorial_attribute_04.png)
-
-    ![Настройка единого входа](./media/adobe-creative-cloud-tutorial/tutorial_attribute_05.png)
+    ![изображение](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
-    c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
+    c. Оставьте пустым поле **Пространство имен**.
 
-    d. Нажмите кнопку **ОК**.
+    d. В качестве источника выберите **Атрибут**.
+
+    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
+
+    Е. Нажмите кнопку **ОК**.
+
+    ж. Выберите команду **Сохранить**.
 
     > [!NOTE]
     > У пользователей должна быть действительная лицензия Office 365 ExO для заполнения значения утверждения из электронного письма в ответе SAML.
 
-8. Нажмите кнопку **Сохранить** .
+8. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/adobe-creative-cloud-tutorial/tutorial_general_400.png)
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-9. В разделе **Конфигурация Adobe Creative Cloud** щелкните **Настройка Adobe Creative Cloud**, чтобы открыть окно **настройки входа**. Скопируйте **идентификатор сущности SAML и URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+9. Скопируйте требуемый URL-адрес из раздела **Настройка Adobe Creative Cloud**.
 
-    ![Настройка Adobe Creative Cloud](./media/adobe-creative-cloud-tutorial/tutorial_adobecreativecloud_configure.png)
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-10. В другом окне веб-браузера войдите в [консоль администрирования Adobe](https://adminconsole.adobe.com) от имени администратора.
+    a. URL-адрес входа.
 
-11. На панели навигации вверху выберите **Параметры**, а затем щелкните **Удостоверение**. Откроется список доменов. Щелкните ссылку **Настройка** для вашего домена. В разделе **Single Sign On Configuration Required** (Обязательная конфигурация единого входа) выполните следующие действия. Дополнительные сведения см. в статье о [настройке домена](https://helpx.adobe.com/enterprise/using/set-up-domain.html).
+    b. Идентификатор Azure AD.
+
+    c. URL-адрес выхода
+
+### <a name="configure-adobe-creative-cloud-single-sign-on"></a>Подписка Adobe Creative Cloud с поддержкой единого входа
+
+1. В другом окне веб-браузера войдите в [консоль администрирования Adobe](https://adminconsole.adobe.com) от имени администратора.
+
+2. На панели навигации вверху выберите **Параметры**, а затем щелкните **Удостоверение**. Откроется список доменов. Щелкните ссылку **Настройка** для вашего домена. В разделе **Single Sign On Configuration Required** (Обязательная конфигурация единого входа) выполните следующие действия. Дополнительные сведения см. в статье о [настройке домена](https://helpx.adobe.com/enterprise/using/set-up-domain.html).
 
     ![Параметры](https://helpx.adobe.com/content/dam/help/en/enterprise/using/configure-microsoft-azure-with-adobe-sso/_jcr_content/main-pars/procedure_719391630/proc_par/step_3/step_par/image/edit-sso-configuration.png "Параметры")
 
@@ -179,9 +182,9 @@ ms.locfileid: "39054290"
 
     д. Для параметра **Email Address** (Адрес электронной почты) выберите вариант **User Login Setting** (Настройки входа пользователя).
 
-    f. Нажмите кнопку **Сохранить** .
+    Е. Нажмите кнопку **Сохранить** .
 
-12. Теперь на панели мониторинга отобразится XML-файл **Download Metadata** (Загрузить метаданные). Он содержит URL-адреса компании Adobe для описания сущности (EntityDescriptor) и URL-адреса службы утверждений (AssertionConsumerService). Откройте этот файл и перенесите настройки в приложение Azure AD.
+3. Теперь на панели мониторинга отобразится XML-файл **Download Metadata** (Загрузить метаданные). Он содержит URL-адреса компании Adobe для описания сущности (EntityDescriptor) и URL-адреса службы утверждений (AssertionConsumerService). Откройте этот файл и перенесите настройки в приложение Azure AD.
 
     ![Настройка единого входа на стороне приложения](./media/adobe-creative-cloud-tutorial/tutorial_adobe-creative-cloud_003.png)
 
@@ -193,35 +196,54 @@ ms.locfileid: "39054290"
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Azure Active Directory"](./media/adobe-creative-cloud-tutorial/create_aaduser_01.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/adobe-creative-cloud-tutorial/create_aaduser_02.png)
-
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
-
-    ![Кнопка "Добавить"](./media/adobe-creative-cloud-tutorial/create_aaduser_03.png)
-
-4. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/adobe-creative-cloud-tutorial/create_aaduser_04.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="create-an-adobe-creative-cloud-test-user"></a>Создание тестового пользователя Adobe Creative Cloud
+
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Adobe Creative Cloud.
+
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Adobe Creative Cloud**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. В списке приложений выберите **Adobe Creative Cloud**.
+
+    ![Ссылка на Adobe Creative Cloud в списке приложений](common/all-applications.png)
+
+3. В меню слева выберите **Пользователи и группы**.
+
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Область "Добавление назначения"](common/add-assign-user.png)
+
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-adobe-creative-cloud-test-user"></a>Создание тестового пользователя Adobe Creative Cloud
 
 Чтобы пользователи Azure AD могли входить в Adobe Creative Cloud, они должны быть подготовлены для Adobe Creative Cloud. В случае Adobe Creative Cloud подготовка выполняется вручную.
 
@@ -236,60 +258,20 @@ ms.locfileid: "39054290"
     * В программе классического приложения > "Вход"
     * В приложении > "Справка" > "Вход"
 
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Adobe Creative Cloud.
-
-![Назначение роли пользователя][200] 
-
-**Чтобы назначить пользователя Britta Simon в Adobe Creative Cloud, выполните следующие действия.**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
-
-2. В списке приложений выберите **Adobe Creative Cloud**.
-
-    ![Ссылка на Adobe Creative Cloud в списке приложений](./media/adobe-creative-cloud-tutorial/tutorial_adobecreativecloud_app.png)  
-
-3. В меню слева выберите **Пользователи и группы**.
-
-    ![Ссылка "Пользователи и группы"][202]
-
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Область "Добавление назначения"][203]
-
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Adobe Creative Cloud на панели доступа, вы автоматически войдете в приложение Adobe Creative Cloud.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув элемент Adobe Creative Cloud на панели доступа, вы автоматически войдете в приложение Adobe Creative Cloud, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-* [Настройка домена (adobe.com)](https://helpx.adobe.com/enterprise/using/set-up-domain.html)
-* [Настройка Azure для использования с единым входом Adobe (adobe.com)](https://helpx.adobe.com/enterprise/kb/configure-microsoft-azure-with-adobe-sso.html)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/adobe-creative-cloud-tutorial/tutorial_general_01.png
-[2]: ./media/adobe-creative-cloud-tutorial/tutorial_general_02.png
-[3]: ./media/adobe-creative-cloud-tutorial/tutorial_general_03.png
-[4]: ./media/adobe-creative-cloud-tutorial/tutorial_general_04.png
-
-[100]: ./media/adobe-creative-cloud-tutorial/tutorial_general_100.png
-
-[200]: ./media/adobe-creative-cloud-tutorial/tutorial_general_200.png
-[201]: ./media/adobe-creative-cloud-tutorial/tutorial_general_201.png
-[202]: ./media/adobe-creative-cloud-tutorial/tutorial_general_202.png
-[203]: ./media/adobe-creative-cloud-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+  
+- [Настройка домена (adobe.com)](https://helpx.adobe.com/enterprise/using/set-up-domain.html)
+  
+- [Настройка Azure для использования с единым входом Adobe (adobe.com)](https://helpx.adobe.com/enterprise/kb/configure-microsoft-azure-with-adobe-sso.html)

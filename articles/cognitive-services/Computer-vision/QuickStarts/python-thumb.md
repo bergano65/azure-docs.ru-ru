@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание эскиза с помощью API компьютерного зрения, REST и Python
+title: Краткое руководство. Создание эскиза — REST, Python
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения на Python.
 services: cognitive-services
@@ -10,12 +10,13 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: d674b3aae171ff1c590724720a0e6ee3761e80ef
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.custom: seodec18
+ms.openlocfilehash: 23ef0e83656e7f6d73bf89a787ab8864770a0f4b
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52956080"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53581119"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство. Краткое руководство по созданию эскизов с помощью API компьютерного зрения, REST API и Python
 

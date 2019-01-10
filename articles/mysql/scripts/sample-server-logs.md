@@ -1,22 +1,19 @@
 ---
 title: Скрипт Azure CLI. Скачивание журналов сервера в Базе данных Azure для MySQL
 description: Этот пример скрипта Azure CLI демонстрирует, как включить и скачать журналы сервера в службе "База данных Azure для MySQL".
-services: mysql
 author: ajlam
 ms.author: andrela
-manager: kfile
-editor: jasonwhowell
 ms.service: mysql
-ms.devlang: azure-cli
+ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc
 ms.date: 02/28/2018
-ms.openlocfilehash: a48685269c0a8a9effde0ecebfab54c1228509cd
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 7cb28d22dbd1fb7fcefbc16d01f55f4785a5932d
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52581023"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53544506"
 ---
 # <a name="enable-and-download-server-slow-query-logs-of-an-azure-database-for-mysql-server-using-azure-cli"></a>Включение и загрузка журналов медленных запросов для сервера службы "База данных Azure для MySQL" с помощью Azure CLI
 Этот пример скрипта CLI позволяет скачать журналы медленных запросов на одном сервере службы "База данных Azure для MySQL".
@@ -48,4 +45,4 @@ ms.locfileid: "52581023"
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
-- Попробуйте использовать другие скрипты на основе [примеров Azure CLI для базы данных Azure для MySQL](../sample-scripts-azure-cli.md).
+- Попробуйте использовать дополнительные сценарии: [Примеры Azure CLI для базы данных Azure для MySQL](../sample-scripts-azure-cli.md)

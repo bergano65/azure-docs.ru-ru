@@ -9,12 +9,12 @@ ms.topic: article
 ms.service: storage
 ms.component: blobs
 ms.custom: seodec18
-ms.openlocfilehash: c7c8fd487bef0da7da84a23e18a4e999645106b3
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 852b7a32bc27b0aa67d66c25d3b54ab864ee1612
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53076429"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53628261"
 ---
 # <a name="quickstart-route-storage-events-to-web-endpoint-with-powershell"></a>Краткое руководство. Перенаправление событий хранилища в конечную веб-точку с помощью PowerShell
 
@@ -28,14 +28,16 @@ ms.locfileid: "53076429"
 
 ## <a name="setup"></a>Настройка
 
-Для работы с этой статьей требуется последняя версия Azure PowerShell. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
+Для работы с этой статьей требуется последняя версия Azure PowerShell. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Чтобы выполнить проверку подлинности, войдите в подписку Azure с помощью команды `Connect-AzureRmAccount` и следуйте инструкциям на экране.
+Чтобы выполнить проверку подлинности, войдите в подписку Azure с помощью команды `Connect-AzAccount` и следуйте инструкциям на экране.
 
 ```powershell
-Connect-AzureRmAccount
+Connect-AzAccount
 ```
 
 В этом примере используется регион **westus2**, который сохраняется в переменной для повсеместного использования.
@@ -48,27 +50,27 @@ $location = "westus2"
 
 Темами событий сетки являются ресурсы Azure, которые необходимо поместить в группу ресурсов Azure. Группа ресурсов Azure — это логическая коллекция, в которой выполняется развертывание и администрирование ресурсов Azure.
 
-Создайте группу ресурсов с помощью команды [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup).
+Создайте группу ресурсов с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).
 
 В следующем примере создается группа ресурсов с именем **gridResourceGroup** в расположении **westus2**.  
 
 ```powershell
 $resourceGroup = "gridResourceGroup"
-New-AzureRmResourceGroup -Name $resourceGroup -Location $location
+New-AzResourceGroup -Name $resourceGroup -Location $location
 ```
 
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
 События хранилища BLOB-объектов доступны в учетных записях хранения общего назначения версии 2 и учетных записях хранения BLOB-объектов. Учетные записи хранения **общего назначения версии 2** поддерживают все функции для всех служб хранилища, включая большие двоичные объекты, файлы, очереди и таблицы. **Учетные записи хранения BLOB-объектов** — это специализированные учетные записи хранения таких неструктурированных данных, как большие двоичные объекты, в службе хранилища Azure. Учетные записи хранилища BLOB-объектов похожи на учетные записи хранения общего назначения и обладают такими же функциями обеспечения устойчивости, надежности, масштабируемости и производительности, которые вы уже используете, а также отличаются полной согласованностью API в плане блочных BLOB-объектов и добавления больших двоичных объектов. Дополнительные сведения см. в статье [Общие сведения об учетной записи хранения Azure](../common/storage-account-overview.md).
 
-Создайте учетную запись хранения BLOB-объектов с репликацией LRS, используя командлет [New-AzureRmStorageAccount](/powershell/module/azurerm.storage/New-AzureRmStorageAccount), а затем извлеките контекст учетной записи хранения, который определяет используемую учетную запись хранения. Действуя в учетной записи хранения, ссылайтесь на контекст, вместо того чтобы многократно предоставлять учетные данные. В этом примере создается учетная запись хранения **gridstorage** с локально избыточным хранилищем (LRS). 
+Создайте учетную запись хранения BLOB-объектов с репликацией LRS, используя командлет [New-AzStorageAccount](/powershell/module/az.storage/New-azStorageAccount), а затем извлеките контекст учетной записи хранения, который определяет используемую учетную запись хранения. Действуя в учетной записи хранения, ссылайтесь на контекст, вместо того чтобы многократно предоставлять учетные данные. В этом примере создается учетная запись хранения **gridstorage** с локально избыточным хранилищем (LRS). 
 
 > [!NOTE]
 > Имена учетных записей хранения находятся в глобальном пространстве имен, поэтому в имя, указанное в этом сценарии, необходимо добавить несколько произвольных знаков.
 
 ```powershell
 $storageName = "gridstorage"
-$storageAccount = New-AzureRmStorageAccount -ResourceGroupName $resourceGroup `
+$storageAccount = New-AzStorageAccount -ResourceGroupName $resourceGroup `
   -Name $storageName `
   -Location $location `
   -SkuName Standard_LRS `
@@ -87,7 +89,7 @@ $ctx = $storageAccount.Context
 ```powershell
 $sitename="<your-site-name>"
 
-New-AzureRmResourceGroupDeployment `
+New-AzResourceGroupDeployment `
   -ResourceGroupName $resourceGroup `
   -TemplateUri "https://raw.githubusercontent.com/Azure-Samples/azure-event-grid-viewer/master/azuredeploy.json" `
   -siteName $sitename `
@@ -105,10 +107,10 @@ New-AzureRmResourceGroupDeployment `
 Подпишитесь на тему, чтобы определить в сетке событий Azure, какие события вам необходимо отслеживать. В следующем примере создается подписка на созданную учетную запись хранения и передается URL-адрес из веб-приложения в качестве конечной точки для уведомления о событии. Конечная точка веб-приложения должна содержать суффикс `/api/updates/`.
 
 ```powershell
-$storageId = (Get-AzureRmStorageAccount -ResourceGroupName $resourceGroup -AccountName $storageName).Id
+$storageId = (Get-AzStorageAccount -ResourceGroupName $resourceGroup -AccountName $storageName).Id
 $endpoint="https://$sitename.azurewebsites.net/api/updates"
 
-New-AzureRmEventGridSubscription `
+New-AzEventGridSubscription `
   -EventSubscriptionName gridBlobQuickStart `
   -Endpoint $endpoint `
   -ResourceId $storageId
@@ -124,11 +126,11 @@ New-AzureRmEventGridSubscription `
 
 ```powershell
 $containerName = "gridcontainer"
-New-AzureStorageContainer -Name $containerName -Context $ctx
+New-AzStorageContainer -Name $containerName -Context $ctx
 
 echo $null >> gridTestFile.txt
 
-Set-AzureStorageBlobContent -File gridTestFile.txt -Container $containerName -Context $ctx -Blob gridTestFile.txt
+Set-AzStorageBlobContent -File gridTestFile.txt -Container $containerName -Context $ctx -Blob gridTestFile.txt
 ```
 
 Вы активировали событие, а служба "Сетка событий" отправила сообщение в конечную точку, настроенную вами при оформлении подписки. Откройте веб-приложение и просмотрите в нем отправленные события.
@@ -164,7 +166,7 @@ Set-AzureStorageBlobContent -File gridTestFile.txt -Container $containerName -Co
 Если вы планируете продолжать работу с этой учетной записью хранения и подпиской на события, не очищайте ресурсы, созданные при работе с этой статьей. Если вы не планируете продолжать работу, используйте следующую команду, чтобы удалить все ресурсы, созданные в рамках этой статьи.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name $resourceGroup
+Remove-AzResourceGroup -Name $resourceGroup
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

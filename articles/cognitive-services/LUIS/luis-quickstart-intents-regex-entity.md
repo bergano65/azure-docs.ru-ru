@@ -9,19 +9,34 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 12/07/2018
+ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: d4deeec2c5af5047fa16a2d80f0992409d517910
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 58fa0c36f8c3f630ae7f349bd0f54a497a38f19d
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53135582"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53976789"
 ---
-# <a name="tutorial-3-extract-well-formatted-data"></a>Руководство 3. Извлечение данных в правильном формате
-В этом руководстве изменяется приложение "Управление персоналом" для извлечения согласованно отформатированных данных из высказывания с помощью сущности **регулярного выражения**.
+# <a name="tutorial-get-well-formatted-data-from-the-utterance"></a>Руководство. Получение данных правильного формата из высказывания
+В этом руководстве создается приложение для извлечения согласованно отформатированных данных из фразы с помощью сущности **регулярного выражения**.
 
-Назначение сущности — это извлечение важных данных, содержащихся в высказывании. Приложение использует сущность регулярного выражения для извлечения форматированных номеров формы в системе управления персоналом из высказывания. Хотя намерение высказывания всегда определяется машинным обучением, этот тип сущности к машинному обучению не относится. 
+**В этом руководстве рассмотрено, как выполнять следующие задачи.**
+
+<!-- green checkmark -->
+> [!div class="checklist"]
+> * Создание нового приложения 
+> * Добавление намерения
+> * Добавление сущности регулярного выражения 
+> * Train
+> * Опубликовать
+> * Получать намерения и сущности из конечной точки.
+
+[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+
+## <a name="regular-expression-entities"></a>Сущности регулярного выражения
+
+Приложение использует сущность регулярного выражения для извлечения отформатированных номеров формы в системе управления персоналом из высказывания. Хотя намерение высказывания всегда определяется машинным обучением, этот тип сущности к машинному обучению не относится. 
 
 **Примеры высказывания включают следующее.**
 
@@ -37,41 +52,22 @@ ms.locfileid: "53135582"
 
 * данные имеют правильный формат.
 
-**Из этого руководства вы узнаете, как выполнять следующие задачи**.
 
-<!-- green checkmark -->
-> [!div class="checklist"]
-> * Использовать существующее приложение из руководства
-> * Добавление намерения FindForm
-> * Добавление сущности регулярного выражения 
-> * Train
-> * Опубликовать
-> * Получать намерения и сущности из конечной точки.
+## <a name="create-a-new-app"></a>Создание нового приложения
 
-[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+[!INCLUDE [Follow these steps to create a new LUIS app](../../../includes/cognitive-services-luis-create-new-app-steps.md)]
 
-## <a name="use-existing-app"></a>Использование существующего приложения
-Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
-
-Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
-
-1. Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-prebuilts-HumanResources.json).
-
-2. Импортируйте JSON-файл в новое приложение.
-
-3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `regex`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе. 
-
-## <a name="findform-intent"></a>Намерение FindForm
+## <a name="create-intent-for-finding-form"></a>Создание намерения для поиска формы
 
 1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
-2. Выберите **Create new intent**. (Создать намерение). 
+1. Выберите **Create new intent**. (Создать намерение). 
 
-3. Введите `FindForm` во всплывающем диалоговом окне и нажмите кнопку **Done** (Готово). 
+1. Введите `FindForm` во всплывающем диалоговом окне и нажмите кнопку **Done** (Готово). 
 
     ![Снимок экрана диалогового окна создания намерения со служебными программами в поле поиска](./media/luis-quickstart-intents-regex-entity/create-new-intent-ddl.png)
 
-4. Добавьте примеры фраз в намерение.
+1. Добавьте примеры фраз в намерение.
 
     |Примеры фраз|
     |--|
@@ -88,11 +84,9 @@ ms.locfileid: "53135582"
 
     [ ![Снимок экрана страницы намерения с выделенными фразами](./media/luis-quickstart-intents-regex-entity/findform-intent.png) ](./media/luis-quickstart-intents-regex-entity/findform-intent.png#lightbox)
 
-    В приложении есть предварительно созданная сущность номера, добавленная в предыдущем руководстве, поэтому каждый номер формы помечен. Этого может быть достаточно для клиентского приложения, но номер не будет помечен типом. Благодаря созданию сущности с соответствующим именем клиентское приложение может обрабатывать возвращенную из LUIS сущность соответствующим образом.
-
     [!INCLUDE [Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
 
-## <a name="regular-expression-entity"></a>Сущность регулярного выражения 
+## <a name="use-the-regular-expression-entity-for-well-formatted-data"></a>Использование сущности регулярного выражения для отформатированных данных
 Сущность регулярного выражения для поиска номера формы — `hrf-[0-9]{6}`. Это регулярное выражение сопоставляет символьные литералы `hrf-`, но не учитывает регистр и варианты языка и региональных параметров. Оно ищет цифры 0–9 (всего 6 цифр).
 
 HRF означает `human resources form`.
@@ -103,27 +97,31 @@ LUIS помечает высказывания, добавляемые в нам
 
 1. В области слева выберите **Entities** (Сущности).
 
-2. Нажмите кнопку **Create new entity** (Создать сущность) на странице "Сущности". 
+1. Нажмите кнопку **Create new entity** (Создать сущность) на странице "Сущности". 
 
-3. Во всплывающем диалоговом окне введите имя новой сущности `HRF-number` и выберите **RegEx** как тип сущности, а затем введите `hrf-[0-9]{6}` в качестве значения **RegEx** и нажмите кнопку **Готово**.
+1. Во всплывающем диалоговом окне введите имя новой сущности `HRF-number` и выберите **RegEx** как тип сущности, а затем введите `hrf-[0-9]{6}` в качестве значения **RegEx** и нажмите кнопку **Готово**.
 
     ![Снимок экрана всплывающего диалогового окна, где задаются свойства новой сущности](./media/luis-quickstart-intents-regex-entity/create-regex-entity.png)
 
-4. Выберите **Intents** (Намерения) в меню слева, а затем намерение **FindForm**, чтобы увидеть регулярное выражение, помеченное в высказывании. 
+1. Выберите **Intents** (Намерения) в меню слева, а затем намерение **FindForm**, чтобы увидеть регулярное выражение, помеченное в высказывании. 
 
     [![Снимок экрана помеченной фразы с имеющейся сущностью и шаблоном регулярного выражения](./media/luis-quickstart-intents-regex-entity/labeled-utterances-for-entity.png)](./media/luis-quickstart-intents-regex-entity/labeled-utterances-for-entity.png#lightbox)
 
-    Так как сущность не обучена с помощью машинного обучения, метка применяется к фразам и отображается на веб-сайте LUIS сразу же после создания.
+    Так как сущность не обучена с помощью машинного обучения, сущность применяется к фразам и отображается на веб-сайте LUIS сразу же после создания.
 
-## <a name="train"></a>Train
+## <a name="add-example-utterances-to-the-none-intent"></a>Добавление примеров речевых фрагментов в намерение None 
+
+[!INCLUDE [Follow these steps to add the None intent to the app](../../../includes/cognitive-services-luis-create-the-none-intent.md)]
+
+## <a name="train-the-app-before-testing-or-publishing"></a>Обучение приложения перед тестированием и публикацией
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
-## <a name="publish"></a>Опубликовать
+## <a name="publish-the-app-to-query-from-the-endpoint"></a>Публикация приложения для получения запроса из конечной точки
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-## <a name="get-intent-and-entities-from-endpoint"></a>Получение намерения и сущностей из конечной точки
+## <a name="get-intent-and-entity-prediction-from-endpoint"></a>Получение намерения и прогнозирование сущности из конечной точки
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
@@ -134,63 +132,19 @@ LUIS помечает высказывания, добавляемые в нам
       "query": "When were HRF-123456 and hrf-234567 published in the last year?",
       "topScoringIntent": {
         "intent": "FindForm",
-        "score": 0.9993477
+        "score": 0.9988884
       },
       "intents": [
         {
           "intent": "FindForm",
-          "score": 0.9993477
-        },
-        {
-          "intent": "ApplyForJob",
-          "score": 0.0206110049
-        },
-        {
-          "intent": "GetJobInformation",
-          "score": 0.00533067342
-        },
-        {
-          "intent": "Utilities.StartOver",
-          "score": 0.004215215
-        },
-        {
-          "intent": "Utilities.Help",
-          "score": 0.00209096959
+          "score": 0.9988884
         },
         {
           "intent": "None",
-          "score": 0.0017655947
-        },
-        {
-          "intent": "Utilities.Stop",
-          "score": 0.00109490135
-        },
-        {
-          "intent": "Utilities.Confirm",
-          "score": 0.0005704638
-        },
-        {
-          "intent": "Utilities.Cancel",
-          "score": 0.000525338168
+          "score": 0.00204812363
         }
       ],
       "entities": [
-        {
-          "entity": "last year",
-          "type": "builtin.datetimeV2.daterange",
-          "startIndex": 53,
-          "endIndex": 61,
-          "resolution": {
-            "values": [
-              {
-                "timex": "2017",
-                "type": "daterange",
-                "start": "2017-01-01",
-                "end": "2018-01-01"
-              }
-            ]
-          }
-        },
         {
           "entity": "hrf-123456",
           "type": "HRF-number",
@@ -202,35 +156,24 @@ LUIS помечает высказывания, добавляемые в нам
           "type": "HRF-number",
           "startIndex": 25,
           "endIndex": 34
-        },
-        {
-          "entity": "-123456",
-          "type": "builtin.number",
-          "startIndex": 13,
-          "endIndex": 19,
-          "resolution": {
-            "value": "-123456"
-          }
-        },
-        {
-          "entity": "-234567",
-          "type": "builtin.number",
-          "startIndex": 28,
-          "endIndex": 34,
-          "resolution": {
-            "value": "-234567"
-          }
         }
       ]
     }
     ```
 
-    Номера во фразе возвращаются дважды: один раз как новая сущность `hrf-number` и один раз в качестве предварительно созданной сущности `number`. Как показывает этот пример, фраза может иметь несколько сущностей, которые могут принадлежать к одному типу. С помощью сущности регулярного выражения LUIS извлекает именованные данные, что программно более полезно для клиентского приложения, получающего ответ JSON.
+    С помощью сущности регулярного выражения LUIS извлекает именованные данные, что программно более полезно для клиентского приложения, получающего ответ JSON.
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
+
+## <a name="related-information"></a>Связанные сведения
+
+* Концепции сущности [регулярного выражения](luis-concept-entity-types.md#regular-expression-entity)
+* [Обучение активной версии приложения LUIS](luis-how-to-train.md)
+* [Как опубликовать предложение](luis-how-to-publish-app.md)
+* [Тестирование приложения LUIS на портале LUIS](luis-interactive-test.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
 Из этого руководства вы узнали, как создать новое намерение, добавить примеры высказываний, а затем создать сущность регулярного выражения для извлечения данных в правильном формате из высказывания. После обучения и публикации приложения запрос к конечной точке идентифицировал намерение и вернул извлеченные данные.

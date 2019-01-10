@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: lmolkova
-ms.openlocfilehash: 4584104e9c9833b5f3f586581dd5a58f420fe0bd
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 12f9f55544f46bc9c88cab7234f78ad7ee7de2d2
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52165345"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53790900"
 ---
 # <a name="distributed-tracing-and-correlation-through-service-bus-messaging"></a>Распределенная трассировка и корреляция путем обмена сообщениями через служебную шину
 
@@ -45,9 +45,9 @@ ms.locfileid: "52165345"
 [Microsoft Application Insights](https://azure.microsoft.com/services/application-insights/) предоставляет широкие возможности мониторинга производительности, включая автоматическое создание запросов и отслеживание зависимостей.
 
 В зависимости от типа проекта установите пакет SDK для Application Insights:
-- [ASP.NET](../application-insights/app-insights-asp-net.md): установите версию 2.5-beta2 или более позднюю.
-- [ASP.NET Core](../application-insights/app-insights-asp-net-core.md): установите версию 2.2.0-beta2 или более позднюю.
-Эти ссылки содержат подробные сведения об установке пакета SDK, создании ресурсов и настройке пакета SDK (при необходимости). Сведения для приложений без ASP.NET см. в статье [Application Insights for .NET console applications](../application-insights/application-insights-console.md) (Application Insights для консольных приложений .NET).
+- [ASP.NET](../azure-monitor/app/asp-net.md): установите версию 2.5-beta2 или более позднюю.
+- [ASP.NET Core](../azure-monitor/app/asp-net-core.md): установите версию 2.2.0-beta2 или более позднюю.
+Эти ссылки содержат подробные сведения об установке пакета SDK, создании ресурсов и настройке пакета SDK (при необходимости). Сведения для приложений без ASP.NET см. в статье [Application Insights for .NET console applications](../azure-monitor/app/console.md) (Application Insights для консольных приложений .NET).
 
 При использовании [шаблона обработчика сообщений](/dotnet/api/microsoft.azure.servicebus.queueclient.registermessagehandler) для обработки отправленных сообщений все вызовы служебной шины, сделанные вашей службой, автоматически отслеживаются и связываются с другими элементами телеметрии. В противном случае ознакомьтесь с указанным ниже примером для отслеживания обработки сообщений вручную.
 
@@ -83,7 +83,7 @@ async Task ProcessAsync(Message message)
 В этом примере `RequestTelemetry` выводится для каждого обработанного сообщения вместе с меткой времени, продолжительностью и результатом (успешно). Данные телеметрии также имеют набор свойств корреляции.
 Вложенные трассировки и исключения, обнаруженные во время обработки сообщения, также имеют свойства корреляции, представляя их в качестве дочерних элементов `RequestTelemetry`.
 
-Если вы отправили вызовы к поддерживаемым внешним компонентам во время обработки сообщения, они также будут автоматически отслеживаться и коррелироваться. Дополнительные сведения о выполнении отслеживания и корреляции вручную см. в статье [Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET](../application-insights/application-insights-custom-operations-tracking.md).
+Если вы отправили вызовы к поддерживаемым внешним компонентам во время обработки сообщения, они также будут автоматически отслеживаться и коррелироваться. Дополнительные сведения о выполнении отслеживания и корреляции вручную см. в статье [Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET](../azure-monitor/app/custom-operations-tracking.md).
 
 ### <a name="tracking-without-tracing-system"></a>Отслеживание без системы трассировки
 Если ваша система трассировки не поддерживает автоматическое отслеживание вызовов служебной шины, вы можете рассмотреть возможность добавить эту поддержку в систему трассировки или приложение. В этом разделе описываются события диагностики, отправленные клиентом .NET служебной шины.  
@@ -227,6 +227,6 @@ serviceBusLogger.LogInformation($"{currentActivity.OperationName} is finished, D
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Корреляция данных телеметрии в Application Insights](../application-insights/application-insights-correlation.md)
-* [Настройка Application Insights: отслеживание зависимостей](../application-insights/app-insights-asp-net-dependencies.md), чтобы выяснить, что стало причиной медленной работы: REST, SQL или другие внешние ресурсы.
-* [Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET](../application-insights/application-insights-custom-operations-tracking.md)
+* [Корреляция данных телеметрии в Application Insights](../azure-monitor/app/correlation.md)
+* [Настройка Application Insights: отслеживание зависимостей](../azure-monitor/app/asp-net-dependencies.md), чтобы выяснить, что стало причиной медленной работы: REST, SQL или другие внешние ресурсы.
+* [Отслеживание пользовательских операций с помощью пакета SDK Application Insights для .NET](../azure-monitor/app/custom-operations-tracking.md)

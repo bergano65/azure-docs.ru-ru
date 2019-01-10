@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения Ruby с подключением к базе данных PostgreSQL на платформе Linux в Службе приложений Azure | Документация Майкрософт
+title: Создание приложения Ruby с подключением к базе данных PostgreSQL на платформе Linux в Службе приложений Azure | Документация Майкрософт
 description: Узнайте, как создать приложение Ruby, работающее в Azure, с подключением к базе данных PostgreSQL в Azure.
 services: app-service\web
 documentationcenter: ''
@@ -12,16 +12,16 @@ ms.topic: tutorial
 ms.date: 06/15/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 247c4f24869901f0f50b081d8f57b7e3841a8e8a
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: e42d9592d74e845410441097fa6082cfb3f4ac5e
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53271034"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53713885"
 ---
-# <a name="build-a-ruby-and-postgres-web-app-in-azure-app-service-on-linux"></a>Разработка веб-приложения на основе Ruby и Postgres в службе приложений Azure на платформе Linux
+# <a name="build-a-ruby-and-postgres-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Ruby и Postgres в Службе приложений Azure в Linux
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать веб-приложение Ruby и подключить его к базе данных PostgreSQL. По завершении вы получите приложение [Ruby on Rails](https://rubyonrails.org/), работающее в службе приложений под управлением Linux.
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать приложение Ruby и подключить его к базе данных PostgreSQL. По завершении вы получите приложение [Ruby on Rails](https://rubyonrails.org/), работающее в службе приложений под управлением Linux.
 
 ![Приложение Ruby on Rails, работающее в службе приложений Azure](./media/tutorial-ruby-postgres-app/complete-checkbox-published.png)
 
@@ -162,7 +162,7 @@ az postgres server firewall-rule create --resource-group myResourceGroup --serve
 ```
 
 > [!TIP] 
-> Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](../app-service-ip-addresses.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#find-outbound-ips).
+> Вы можете применить еще более строгие ограничения в правиле брандмауэра, [разрешив только исходящие IP-адреса, используемые приложением](../overview-inbound-outbound-ips.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#find-outbound-ips).
 >
 
 ### <a name="connect-to-production-postgres-server-locally"></a>Локальное подключение к рабочему серверу Postgres
@@ -357,7 +357,7 @@ remote: Running deployment command...
 < Output has been truncated for readability >
 ```
 
-### <a name="browse-to-the-azure-web-app"></a>Переход к веб-приложению Azure
+### <a name="browse-to-the-azure-app"></a>Переход к приложению Azure
 
 Перейдите по адресу `http://<app_name>.azurewebsites.net` и добавьте несколько задач в список.
 
@@ -470,21 +470,21 @@ git commit -m "added complete checkbox"
 git push azure master
 ```
 
-После выполнения команды `git push` перейдите в веб-приложение Azure и еще раз проверьте новые функции.
+После выполнения команды `git push` перейдите в приложение Azure и проверьте новые функции.
 
 ![Изменения модели и базы данных, опубликованные в Azure](media/tutorial-ruby-postgres-app/complete-checkbox-published.png)
 
 Добавленные задачи сохраняются в базе данных. Изменения в схеме данных не влияют на имеющиеся данные.
 
-## <a name="manage-the-azure-web-app"></a>Управление веб-приложением Azure
+## <a name="manage-the-azure-app"></a>Управление приложением Azure
 
-Перейдите на [портал Azure](https://portal.azure.com) для управления созданным веб-приложением.
+Перейдите на [портал Azure](https://portal.azure.com), чтобы управлять созданным приложением.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем выберите имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/tutorial-php-mysql-app/access-portal.png)
+![Переход к приложению Azure на портале](./media/tutorial-php-mysql-app/access-portal.png)
 
-Отобразится страница обзора вашего веб-приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
+Отобразится страница обзора вашего приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
 
 В меню слева доступны страницы для настройки приложения.
 
@@ -506,7 +506,7 @@ git push azure master
 > * Потоковая передача журналов диагностики из Azure.
 > * Управление приложением на портале Azure.
 
-Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с веб-приложением.
+Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](../app-service-web-tutorial-custom-domain.md)
+> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](../app-service-web-tutorial-custom-domain.md)

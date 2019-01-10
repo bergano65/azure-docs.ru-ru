@@ -4,17 +4,17 @@ description: Из этой статьи вы узнаете, как исполь
 services: stream-analytics
 author: su-jie
 ms.author: sujie
-manager: kfile
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 03/13/2018
-ms.openlocfilehash: 5dc90a1334b525c02be3eae2985900ab07cf2e05
-ms.sourcegitcommit: cb61439cf0ae2a3f4b07a98da4df258bfb479845
+ms.date: 12/07/2018
+ms.custom: seodec18
+ms.openlocfilehash: 886cae572ee651efd217e9a87b935918eebe8b13
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43696254"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53558827"
 ---
 # <a name="develop-stream-analytics-edge-jobs-using-visual-studio-tools"></a>Разработка заданий Edge Stream Analytics с помощью средств Visual Studio
 
@@ -32,25 +32,25 @@ ms.locfileid: "43696254"
 
 В Visual Studio выберите **Файл** > **Создать** > **Проект**. Перейдите к списку **Шаблоны** слева, разверните **Azure Stream Analytics** > **Stream Analytics Edge** > **Azure Stream Analytics Edge Application** (Приложение Azure Stream Analytics Edge). Укажите имя, расположение и имя решения для вашего проекта, а затем нажмите кнопку **ОК**.
 
-![Новый проект Edge](./media/stream-analytics-tools-for-visual-studio-edge-jobs/new-edge-project.png)
+![Создание проекта Edge в Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/new-stream-analytics-edge-project.png)
 
 После создания проекта перейдите в **обозреватель решений**, чтобы просмотреть иерархию папок.
 
-![Представление обозревателя решений](./media/stream-analytics-tools-for-visual-studio-edge-jobs/edge-project-in-solution-explorer.png)
+![Представление обозревателя решений для задания Edge Stream Analytics](./media/stream-analytics-tools-for-visual-studio-edge-jobs/edge-project-in-solution-explorer.png)
 
  
 ## <a name="choose-the-correct-subscription"></a>Выбор соответствующей подписки
 
 1. В меню **Вид** в Visual Studio выберите **Обозреватель серверов**.  
 
-2. Щелкните правой кнопкой мыши **Azure**, выберите **Подключиться к подписке Microsoft Azure** и войдите в систему с помощью учетной записи Azure.
+2. Щелкните правой кнопкой мыши **Azure**, выберите **Подключиться к подписке Microsoft Azure** и войдите в систему с помощью учетной записи Azure.
 
 ## <a name="define-inputs"></a>Определение входных данных
 
 1. В **обозревателе решений** разверните узел **входных данных**. Должен появиться файл входных данных с именем **EdgeInput.json**. Дважды щелкните его, чтобы просмотреть параметры.  
 
-2. В поле "Тип источника" задайте значение **Поток данных**, в поле "Источник" — **Центр Edge**, в поле "Формат сериализации событий" — **Json**, а в поле "Кодировка" — **UTF8**. При желании вы также можете переименовать **псевдоним входных данных** (в этом примере оставим указанное значение). В случае переименования псевдонима входных данных используйте имя, указанное при определении запроса. Нажмите кнопку **Сохранить**, чтобы сохранить параметры.  
-   ![Конфигурация входных данных](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-input-configuration.png)
+2. В качестве типа источника данных выберите **Поток данных**. В качестве источника выберите **Концентратор Edge**, в качестве формата сериализации событий — **Json**, а в качестве кодировки — **UTF8**. При желании вы также можете переименовать **псевдоним входных данных** (в этом примере оставим указанное значение). В случае переименования псевдонима входных данных используйте имя, указанное при определении запроса. Нажмите кнопку **Сохранить**, чтобы сохранить параметры.  
+   ![Настройка входных данных задания Stream Analytics](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-input-configuration.png)
  
 
 
@@ -59,7 +59,7 @@ ms.locfileid: "43696254"
 1. В **обозревателе решений** разверните узел **выходных данных**. Должен появиться файл выходных данных с именем **EdgeOutput.json**. Дважды щелкните его, чтобы просмотреть параметры.  
 
 2. В поле "Приемник" задайте значение **Центр Edge**, в поле "Формат сериализации событий" — **Json**, в поле "Кодировка" — **UTF8**, а в поле "Формат" — **Массив**. При желании вы также можете переименовать **псевдоним выходных данных** (в этом примере оставим значение по умолчанию). В случае переименования псевдонима выходных данных используйте имя, указанное при определении запроса. Нажмите кнопку **Сохранить**, чтобы сохранить параметры. 
-   ![Конфигурация выходных данных](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-output-configuration.png)
+   ![Настройка выходных данных задания Stream Analytics](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-output-configuration.png)
  
 ## <a name="define-the-transformation-query"></a>Определение запроса преобразования
 
@@ -84,20 +84,20 @@ FROM EdgeInput
 
 Чтобы протестировать запрос локально, необходимо передать образец данных. Образец данных можно получить, скачав регистрационные данные из [репозитория GitHub](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/Registration.json) и сохранив их на локальном компьютере. 
 
-1. Чтобы передать образец данных, щелкните правой кнопкой мыши файл **EdgeInput.json** и выберите **Add Local Input** (Добавить локальные входные данные).  
+1. Чтобы передать образец данных, щелкните правой кнопкой мыши файл **EdgeInput.json** и выберите **Добавить локальные входные данные**.  
 
 2. Во всплывающем окне **перейдите** к примеру данных из локальной папки и нажмите кнопку **Сохранить**.
-   ![Конфигурация локальных входных данных](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-local-input-configuration.png)
+   ![Настройка локальных входных данных в Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-local-input-configuration.png)
  
 3. Файл **local_EdgeInput.json** будет автоматически добавлен в папку входных данных.  
 4. Вы можете запустить его локально или отправить в Azure. Чтобы выполнить тестирование запроса, щелкните **Run Locally** (Запустить локально).  
-   ![Параметры запуска](./media/stream-analytics-tools-for-visual-studio-edge-jobs/run-options.png)
+   ![Параметры запуска заданий Stream Analytics в Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-visual-stuidio-run-options.png)
  
 5. В окне командной строки показано состояние задания. Если задание выполняется успешно, в папке проекта "Visual Studio 2015\Projects\MyASAEdgejob\MyASAEdgejob\ASALocalRun\2018-02-23-11-31-42" создается папка, например, "2018-02-23-11-31-42". Перейдите к этой папке, чтобы просмотреть результаты в локальной папке:
 
    Вы также можете войти на портал Azure и убедиться, что задание создано. 
 
-   ![Папка результатов](./media/stream-analytics-tools-for-visual-studio-edge-jobs/result-folder.png)
+   ![Папка результатов задания Stream Analytics](./media/stream-analytics-tools-for-visual-studio-edge-jobs/stream-analytics-job-result-folder.png)
 
 ## <a name="submit-the-job-to-azure"></a>Отправка задания в Azure
 
@@ -107,22 +107,22 @@ FROM EdgeInput
 
 3. Откроется всплывающее окно, в котором можно создать задание Edge или обновить имеющееся. Если обновить имеющееся задание, будут заменены все параметры задания и в этом сценарии будет опубликовано новое задание. Выберите **Create a New Azure Stream Analytics Job** (Создать задание Azure Stream Analytics), введите имя для этого задания, например **MyASAEdgeJob**, выберите необходимые **подписку**, **группу ресурсов** и **расположение**, а затем нажмите кнопку **Отправить**.
 
-   ![Отправка в Azure](./media/stream-analytics-tools-for-visual-studio-edge-jobs/submit-to-azure.png)
+   ![Отправка задания Stream Analytics в Azure из Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/submit-stream-analytics-job-to-azure.png)
  
    После создания задания Stream Analytics Edge можно перейти к [руководству по запуску заданий в IoT Edge](stream-analytics-edge.md), чтобы узнать, как развертывать задания на устройствах. 
 
 ## <a name="manage-the-job"></a>Управление заданием 
 
-Вы можете просмотреть состояние и схему заданий в обозревателе сервера. В **обозревателе сервера**  >  выберите **Stream Analytics**, разверните подписку и группу ресурсов, в которых развернуто задание Edge, и вы увидите задание MyASAEdgejob с состоянием **Создано**. Разверните узел задания и дважды щелкните его, чтобы открыть представление задания.
+Вы можете просмотреть состояние и схему заданий в обозревателе сервера. В разделе **Stream Analytics** в **обозревателе серверов** разверните подписку и группу ресурсов, в которых развернуто задание Edge. Вы увидите задание MyASAEdgejob с состоянием **Создано**. Разверните узел задания и дважды щелкните его, чтобы открыть представление задания.
 
-![Параметры обозревателя сервера](./media/stream-analytics-tools-for-visual-studio-edge-jobs/server-explorer-options.png)
+![Параметры управления заданиями обозревателя сервера](./media/stream-analytics-tools-for-visual-studio-edge-jobs/server-explorer-options.png)
  
-В окне представления задания можно выполнить операции, такие как обновление, удаление задания, открытие задания с портала Azure и т. д.
+В окне представления задания вы можете обновить задание, удалить задание и открыть задание с портала Azure.
 
-![Схема задания и другие параметры](./media/stream-analytics-tools-for-visual-studio-edge-jobs/job-diagram-and-other-options.png) 
+![Схема задания и другие параметры в Visual Studio](./media/stream-analytics-tools-for-visual-studio-edge-jobs/job-diagram-and-other-options.png) 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Что такое Azure IoT Edge (предварительная версия)](../iot-edge/about-iot-edge.md)
+* [Дополнительные сведения об Azure IoT Edge](../iot-edge/about-iot-edge.md)
 * [Deploy Azure Stream Analytics as an IoT Edge module - preview](../iot-edge/tutorial-deploy-stream-analytics.md) (Развертывание Azure Stream Analytics в качестве модуля IoT Edge (предварительная версия))
 * [Отправьте отзыв команде с помощью этого опроса](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR2czagZ-i_9Cg6NhAZlH9ypUMjNEM0RDVU9CVTBQWDdYTlk0UDNTTFdUTC4u) 

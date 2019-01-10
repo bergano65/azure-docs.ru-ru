@@ -9,18 +9,32 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 09/09/2018
+ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 4551968cc446bb949d0b18cb77211808169cb907
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 58a62a5a882c6883c6fed31a7b95d949247e1bf1
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53103478"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53752611"
 ---
-# <a name="tutorial-5-extract-free-form-data"></a>Руководство 5. Извлечение неструктурированных данных
+# <a name="tutorial-extract-free-form-data-with-patternany-entity"></a>Руководство. Извлечение неструктурированных данных с использованием сущности Pattern.any
 
 В этом руководстве сущность pattern.any следует использовать для извлечения данных из высказываний, где они хорошо отформатированы и где конец данных можно легко спутать с остальными словами высказывания. 
+
+**В этом руководстве рассмотрено, как выполнять следующие задачи.**
+
+> [!div class="checklist"]
+> * Импортировать пример приложения
+> * Добавление примеров высказываний в существующую сущность
+> * Создание сущности Pattern.any
+> * Создание шаблона
+> * Train
+> * Тестирование нового шаблона
+
+[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+
+## <a name="using-patternany-entity"></a>Использование сущности Pattern.any
 
 Сущность Pattern.any позволяет найти данные произвольной формы, в которых формулировка сущности затрудняет определение ее окончание из остальной части высказывания. 
 
@@ -50,24 +64,12 @@ ms.locfileid: "53103478"
 |Кто создатель {FormName} [?]|
 |Было ли {FormName} опубликовано на французском языке[?]|
 
-**Из этого руководства вы узнали, как выполнять такие задачи:**
-
-> [!div class="checklist"]
-> * Использовать существующее приложение из руководства
-> * Добавление примеров высказываний в существующую сущность
-> * Создание сущности Pattern.any
-> * Создание шаблона
-> * Train
-> * Тестирование нового шаблона
-
-[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
-
-## <a name="use-existing-app"></a>Использование существующего приложения
+## <a name="import-example-app"></a>Импортировать пример приложения
 Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
+Выполните следующие действия.
 
-1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-roles-HumanResources.json).
+1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-pattern-roles-HumanResources.json).
 
 2. Импортируйте JSON-файл в новое приложение.
 

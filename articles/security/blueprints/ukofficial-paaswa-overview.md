@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: 1cef5f8f77a11dad605d9758296c9632f5d30ab8
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 0b3b3cd1c9c0410c4cc0ffda8887b40123c1ac7a
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53409026"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53718524"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -102,17 +102,17 @@ ms.locfileid: "53409026"
 
 #### <a name="azure-app-service"></a>Служба приложений Azure
 
-Веб-приложения Azure предоставляют полностью управляемую среду размещения для веб-приложений на языках Java, PHP, Python, Node.js, HTML и C#, избавляя от необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из [Azure DevOps](https://azure.microsoft.com/services/visual-studio-team-services/) или любого репозитория Git.
+Служба приложений Azure предоставляет полностью управляемую среду размещения для веб-приложений на языках Java, PHP, Python, Node.js, HTML и C#, избавляя от необходимости управлять инфраструктурой. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из [Azure DevOps](https://azure.microsoft.com/services/visual-studio-team-services/) или любого репозитория Git.
 
 Служба приложений [соответствует требованиям ISO, SOC и PCI](https://www.microsoft.com/TrustCenter/) и позволяет выполнять аутентификацию пользователей с помощью [Azure Active Directory](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-aad) или учетных записей в социальных сетях ([Google](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-google), [Facebook](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-facebook), [Twitter](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-twitter) и [Microsoft](https://docs.microsoft.com/azure/app-service/configure-authentication-provider-microsoft)).
 
-Планы "Базовый", "Стандартный" и "Премиум" предназначены для производственных нагрузок и выполняются на выделенных экземплярах виртуальных машин. Каждый экземпляр поддерживает множество приложений и доменов. Службы приложений при необходимости поддерживают [ограничения IP-адресов](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions) для защиты трафика к доверенным IP-адресам, а также [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity) для безопасного подключения к другим службам PaaS, таким как [Key Vault](https://azure.microsoft.com/services/key-vault/) и [База данных Azure SQL](https://azure.microsoft.com/services/sql-database/). Если потребуется более высокий уровень защиты, в рамках плана "Изолированный" приложения можно разместить в частной выделенной среде Azure. Это идеальный вариант, если требуется безопасное подключение к локальной сети, повышенная производительность и дополнительные возможности масштабирования.
+Планы "Базовый", "Стандартный" и "Премиум" предназначены для производственных нагрузок и выполняются на выделенных экземплярах виртуальных машин. Каждый экземпляр поддерживает множество приложений и доменов. Службы приложений при необходимости поддерживают [ограничения IP-адресов](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions) для защиты трафика к доверенным IP-адресам, а также [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/app-service/overview-managed-identity) для безопасного подключения к другим службам PaaS, таким как [Key Vault](https://azure.microsoft.com/services/key-vault/) и [База данных Azure SQL](https://azure.microsoft.com/services/sql-database/). Если потребуется более высокий уровень защиты, в рамках плана "Изолированный" приложения можно разместить в частной выделенной среде Azure. Это идеальный вариант, если требуется безопасное подключение к локальной сети, повышенная производительность и дополнительные возможности масштабирования.
 
 Этот шаблон предназначен для развертывания следующих функций службы приложений:
 
-- план службы приложений уровня [Стандартный](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview);
-- несколько [слотов развертывания](https://docs.microsoft.com/azure/app-service/web-sites-staged-publishing) для веб-приложений: Dev (разработка), Preview (предварительный просмотр), QA (контроль качества), UAT (приемочное тестирование) и, конечно же, слот по умолчанию Production (рабочая среда);
-- [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity) для подключения к [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) (также может использоваться для предоставления доступа к [Базе данных SQL Azure](https://azure.microsoft.com/services/sql-database/)); 
+- план службы приложений уровня [Стандартный](https://docs.microsoft.com/azure/app-service/overview-hosting-plans);
+- Несколько [слотов развертывания](https://docs.microsoft.com/azure/app-service/deploy-staging-slots) службы приложений: Dev (разработка), Preview (предварительный просмотр), QA (контроль качества), UAT (приемочное тестирование) и, конечно же, слот по умолчанию Production (рабочая среда);
+- [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/app-service/overview-managed-identity) для подключения к [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) (также может использоваться для предоставления доступа к [Базе данных SQL Azure](https://azure.microsoft.com/services/sql-database/)); 
 - интеграция с [Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-azure-web-apps) для мониторинга производительности;
 - [Журналы диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) 
 - [оповещения метрик](https://docs.microsoft.com/azure/application-insights/app-insights-alerts); 
@@ -163,7 +163,7 @@ ms.locfileid: "53409026"
 
 #### <a name="azure-key-vault-in-this-blueprint"></a>Azure Key Vault в рамках этой схемы:
 
-- содержит ключ доступа к хранилищу с доступом на чтение, предоставленным [управляемым удостоверением](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity) для веб-приложения с интерфейсом клиента;
+- содержит ключ доступа к хранилищу с доступом на чтение, предоставленным [управляемым удостоверением](https://docs.microsoft.com/azure/app-service/overview-managed-identity) для веб-приложения с интерфейсом клиента;
 - содержит пароль администратора базы данных SQL Server (в отдельном хранилище);
 - ведет журнал диагностики.
 

@@ -11,13 +11,13 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: carlrab
 manager: craigg
-ms.date: 12/13/2018
-ms.openlocfilehash: 814d558efee4a72a25d956828e0db237424cab24
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.date: 12/17/2018
+ms.openlocfilehash: aea95c245b86905b7bef0a35ffaa6c5e00567111
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53409774"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53558640"
 ---
 # <a name="tutorial-secure-a-single-database-in-azure-sql-database"></a>Руководство. Защита отдельной базы данных в Базе данных SQL Azure
 
@@ -136,6 +136,9 @@ ms.locfileid: "53409774"
     ![choose-ad](./media/sql-database-aad-authentication/8choose-ad.png)
 
 2. На странице **SQL Server** выберите **Администратор Active Directory**, а затем на странице **администратора Active Directory** выберите **Задать администратора**. ![Выбор Active Directory](./media/sql-database-aad-authentication/select-active-directory.png)  
+
+   > [!IMPORTANT]
+   > Вы должны быть "администратором компании" или "глобальным администратором, чтобы выполнить эту задачу.
 
 3. На странице **Добавление администратора** найдите пользователя, выберите пользователя (или группу), чтобы назначить его администратором, и щелкните **Выбрать**. На странице "Администратор Active Directory" отобразятся все участники и группы Active Directory. Пользователей или группы, которые выделены серым цветом, нельзя выбрать; они не поддерживаются ролью администратора Azure AD. (Список поддерживаемых администраторов см. в разделе о **функциях и ограничениях Azure AD** статьи [Использование аутентификации Azure Active Directory для аутентификации с помощью базы данных SQL или хранилища данных SQL](sql-database-aad-authentication.md).) Управление доступом на основе ролей (RBAC) применяется только к порталу и не распространяется на SQL Server.
     ![выбор администратора](./media/sql-database-aad-authentication/select-admin.png)  

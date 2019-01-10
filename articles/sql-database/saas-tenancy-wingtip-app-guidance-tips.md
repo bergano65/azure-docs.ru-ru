@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: MightyPen
 ms.author: genemi
-ms.reviewer: ''
+ms.reviewer: sstein
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: da8814cfd8fca8da061c27d9c5b69af15bff5007
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: 42fd1c19a9cda0aa3d5d62bd265467327250a784
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47054410"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53606033"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
 
@@ -57,7 +57,7 @@ ms.locfileid: "47054410"
 
 ### <a name="execute-the-scripts-by-pressing-f5"></a>Выполнение сценариев нажатием клавиши F5
 
-Некоторые скрипты используют *$PSScriptRoot*, чтобы разрешить перемещение по папкам. Переменная *$PSScriptRoot* обрабатывается только при выполнении скрипта по нажатию клавиши **F5**.  Если выделить несколько скриптов и запустить их (**F8**), может произойти ошибка, поэтому нажмите клавишу **F5** при выполнении скриптов.
+Некоторые скрипты используют *$PSScriptRoot*, чтобы разрешить перемещение по папкам. Переменная *$PSScriptRoot* обрабатывается только при выполнении скрипта по нажатию клавиши **F5**.  Если выделить несколько скриптов и запустить их (**F8**), может произойти ошибка, поэтому нажмите клавишу **F5** при выполнении скриптов.
 
 ### <a name="step-through-the-scripts-to-examine-the-implementation"></a>Пошаговое выполнение скриптов и изучение их реализации
 
@@ -94,7 +94,7 @@ ms.locfileid: "47054410"
 
    ![сервер каталога](media/saas-tenancy-wingtip-app-guidance-tips/connect.png)
 
-3. Используйте такие демонстрационные учетные данные: имя пользователя — *developer*, пароль — *P@ssword1*.
+3. Используйте следующие демонстрационные учетные данные: имя входа *developer* и пароль *P@ssword1*.
 
     На следующем рисунке показано имя для входа для шаблона *однотенантной базы данных*. 
     ![подключение](media/saas-tenancy-wingtip-app-guidance-tips/tenants1-connect.png)

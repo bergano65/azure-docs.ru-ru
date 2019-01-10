@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: reference
-ms.date: 12/05/2018
+ms.date: 12/24/2018
 ms.author: juliako
-ms.openlocfilehash: 9de0d8bc389218d3102633b09073b3af323d2ceb
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: c5332cd2613bc64e3dda143381f37d27b54aa922
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53012000"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53789235"
 ---
 # <a name="azure-event-grid-schemas-for-media-services-events"></a>Схемы службы "Сетка событий Azure" для событий Служб мультимедиа
 
@@ -134,7 +134,7 @@ ms.locfileid: "53012000"
     "previousState": "Scheduled",
     "state": "Processing",
     "correlationData": {
-      "TestKey1": "TestValue1",
+      "testKey1": "testValue1",
       "testKey2": "testValue2"
     }
   },
@@ -168,7 +168,7 @@ ms.locfileid: "53012000"
     "previousState": "Processing",
     "state": "Finished",
     "correlationData": {
-      "TestKey1": "TestValue1",
+      "testKey1": "testValue1",
       "testKey2": "testValue2"
     }
   },
@@ -205,7 +205,7 @@ ms.locfileid: "53012000"
       "state": "Finished"
     },
     "jobCorrelationData": {
-      "TestKey1": "TestValue1",
+      "testKey1": "testValue1",
       "testKey2": "testValue2"
     }
   },
@@ -236,7 +236,7 @@ ms.locfileid: "53012000"
       "state": "Processing"
     },
     "jobCorrelationData": {
-      "TestKey1": "TestValue1",
+      "testKey1": "testValue1",
       "testKey2": "testValue2"
     }
   },
@@ -258,13 +258,14 @@ ms.locfileid: "53012000"
     "eventTime": "2018-01-16T01:57:26.005121Z",
     "id": "b303db59-d5c1-47eb-927a-3650875fded1",
     "data": { 
-      "StreamId":"Mystream1",
-      "IngestUrl": "http://abc.ingest.isml",
-      "EncoderIp": "118.238.251.xxx",
-      "EncoderPort": 52859,
-      "ResultCode": "MPE_INGEST_CODEC_NOT_SUPPORTED"
+      "streamId":"Mystream1",
+      "ingestUrl": "http://abc.ingest.isml",
+      "encoderIp": "118.238.251.xxx",
+      "encoderPort": 52859,
+      "resultCode": "MPE_INGEST_CODEC_NOT_SUPPORTED"
     },
-    "dataVersion": "1.0"
+    "dataVersion": "1.0",
+    "metadataVersion": "1"
   }
 ]
 ```
@@ -273,11 +274,11 @@ ms.locfileid: "53012000"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| StreamId | строка | Идентификатор потока или подключения. Кодировщик или клиент несет ответственность за добавление этого идентификатора в URL-адрес приема. |  
-| IngestUrl | строка | URL-адрес приема, предоставленный событием прямой трансляции. |  
-| EncoderIp | строка | IP-адрес кодировщика. |
-| EncoderPort | строка | Порт кодировщика из источника этого потока. |
-| ResultCode | строка | Причина, по которой подключение было отклонено. Коды результатов перечислены в следующей таблице. |
+| streamId | строка | Идентификатор потока или подключения. Кодировщик или клиент несет ответственность за добавление этого идентификатора в URL-адрес приема. |  
+| ingestUrl | строка | URL-адрес приема, предоставленный событием прямой трансляции. |  
+| encoderIp | строка | IP-адрес кодировщика. |
+| encoderPort | строка | Порт кодировщика из источника этого потока. |
+| resultCode | строка | Причина, по которой подключение было отклонено. Коды результатов перечислены в следующей таблице. |
 
 Коды результатов следующие:
 
@@ -320,10 +321,10 @@ ms.locfileid: "53012000"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| StreamId | строка | Идентификатор потока или подключения. Кодировщик или клиент несет ответственность за указание этого идентификатора в URL-адресе приема. |
-| IngestUrl | строка | URL-адрес приема, предоставленный событием прямой трансляции. |
-| EncoderIp | строка | IP-адрес кодировщика. |
-| EncoderPort | строка | Порт кодировщика из источника этого потока. |
+| streamId | строка | Идентификатор потока или подключения. Кодировщик или клиент несет ответственность за указание этого идентификатора в URL-адресе приема. |
+| ingestUrl | строка | URL-адрес приема, предоставленный событием прямой трансляции. |
+| encoderIp | строка | IP-адрес кодировщика. |
+| encoderPort | строка | Порт кодировщика из источника этого потока. |
 
 ### <a name="liveeventencoderdisconnected"></a>LiveEventEncoderDisconnected.
 
@@ -354,11 +355,11 @@ ms.locfileid: "53012000"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| StreamId | строка | Идентификатор потока или подключения. Кодировщик или клиент несет ответственность за добавление этого идентификатора в URL-адрес приема. |  
-| IngestUrl | строка | URL-адрес приема, предоставленный событием прямой трансляции. |  
-| EncoderIp | строка | IP-адрес кодировщика. |
-| EncoderPort | строка | Порт кодировщика из источника этого потока. |
-| ResultCode | строка | Причина отключения кодировщика. Это может быть нормальное отключение или ошибка. Коды результатов перечислены в следующей таблице. |
+| streamId | строка | Идентификатор потока или подключения. Кодировщик или клиент несет ответственность за добавление этого идентификатора в URL-адрес приема. |  
+| ingestUrl | строка | URL-адрес приема, предоставленный событием прямой трансляции. |  
+| encoderIp | строка | IP-адрес кодировщика. |
+| encoderPort | строка | Порт кодировщика из источника этого потока. |
+| resultCode | строка | Причина отключения кодировщика. Это может быть нормальное отключение или ошибка. Коды результатов перечислены в следующей таблице. |
 
 Коды результатов ошибок следующие:
 
@@ -394,14 +395,15 @@ ms.locfileid: "53012000"
     "eventTime": "2018-01-16T01:57:26.005121Z",
     "id": "03da9c10-fde7-48e1-80d8-49936f2c3e7d",
     "data": { 
-      "TrackType": "Video",
-      "TrackName": "Video",
-      "Bitrate": 300000,
-      "Timestamp": 36656620000,
-      "Timescale": 10000000,
-      "ResultCode": "FragmentDrop_OverlapTimestamp"
+      "trackType": "Video",
+      "trackName": "Video",
+      "bitrate": 300000,
+      "timestamp": 36656620000,
+      "timescale": 10000000,
+      "resultCode": "FragmentDrop_OverlapTimestamp"
     },
-    "dataVersion": "1.0"
+    "dataVersion": "1.0",
+    "metadataVersion": "1"
   }
 ]
 ```
@@ -410,12 +412,12 @@ ms.locfileid: "53012000"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| TrackType | строка | Тип дорожки (аудио/видео). |
-| TrackName | строка | Имя дорожки. |
-| Bitrate | целое число | Скорость дорожки. |
-| Timestamp | строка | Удалена метка времени блока данных. |
-| Шкала времени | строка | Шкала времени метки времени. |
-| ResultCode | строка | Причина удаления блока данных. **FragmentDrop_OverlapTimestamp** или **FragmentDrop_NonIncreasingTimestamp**. |
+| trackType | строка | Тип дорожки (аудио/видео). |
+| trackName | строка | Имя дорожки. |
+| bitrate | целое число | Скорость дорожки. |
+|  timestamp | строка | Удалена метка времени блока данных. |
+| timescale | строка | Шкала времени метки времени. |
+| resultCode | строка | Причина удаления блока данных. **FragmentDrop_OverlapTimestamp** или **FragmentDrop_NonIncreasingTimestamp**. |
 
 ### <a name="liveeventincomingstreamreceived"></a>LiveEventIncomingStreamReceived
 
@@ -450,14 +452,14 @@ ms.locfileid: "53012000"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| TrackType | строка | Тип дорожки (аудио/видео). |
-| TrackName | строка | Название дорожки (предоставляется кодировщиком или, в случае RTMP, создается сервером в формате *TrackType_Bitrate*). |
-| Bitrate | целое число | Скорость дорожки. |
-| IngestUrl | строка | URL-адрес приема, предоставленный событием прямой трансляции. |
-| EncoderIp | строка  | IP-адрес кодировщика. |
-| EncoderPort | строка | Порт кодировщика из источника этого потока. |
-| Timestamp | строка | Получена первая метка времени. |
-| Шкала времени | строка | Шкала времени, в которой представлена метка времени. |
+| trackType | строка | Тип дорожки (аудио/видео). |
+| trackName | строка | Название дорожки (предоставляется кодировщиком или, в случае RTMP, создается сервером в формате *TrackType_Bitrate*). |
+| bitrate | целое число | Скорость дорожки. |
+| ingestUrl | строка | URL-адрес приема, предоставленный событием прямой трансляции. |
+| encoderIp | строка  | IP-адрес кодировщика. |
+| encoderPort | строка | Порт кодировщика из источника этого потока. |
+|  timestamp | строка | Получена первая метка времени. |
+| timescale | строка | Шкала времени, в которой представлена метка времени. |
 
 ### <a name="liveeventincomingstreamsoutofsync"></a>LiveEventIncomingStreamsOutOfSync
 
@@ -489,12 +491,12 @@ ms.locfileid: "53012000"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| MinLastTimestamp | строка | Минимальная из последних меток времени среди всех дорожек (аудио или видео). |
-| TypeOfTrackWithMinLastTimestamp | строка | Тип дорожки (аудио или видео) с минимальной последней меткой времени. |
-| MaxLastTimestamp | строка | Максимальная из всех меток времени среди всех дорожек (аудио или видео). |
-| TypeOfTrackWithMaxLastTimestamp | строка | Тип дорожки (аудио или видео) с максимальной последней меткой времени. |
-| TimescaleOfMinLastTimestamp| строка | Получить шкалу времени, в которой представлена "MinLastTimestamp".|
-| TimescaleOfMaxLastTimestamp| строка | Получить шкалу времени, в которой представлена "MaxLastTimestamp".|
+| minLastTimestamp | строка | Минимальная из последних меток времени среди всех дорожек (аудио или видео). |
+| typeOfTrackWithMinLastTimestamp | строка | Тип дорожки (аудио или видео) с минимальной последней меткой времени. |
+| maxLastTimestamp | строка | Максимальная из всех меток времени среди всех дорожек (аудио или видео). |
+| typeOfTrackWithMaxLastTimestamp | строка | Тип дорожки (аудио или видео) с максимальной последней меткой времени. |
+| timescaleOfMinLastTimestamp| строка | Получить шкалу времени, в которой представлена "MinLastTimestamp".|
+| timescaleOfMaxLastTimestamp| строка | Получить шкалу времени, в которой представлена "MaxLastTimestamp".|
 
 ### <a name="liveeventincomingvideostreamsoutofsync"></a>LiveEventIncomingVideoStreamsOutOfSync;
 
@@ -509,13 +511,14 @@ ms.locfileid: "53012000"
     "eventTime": "2018-01-16T01:57:26.005121Z",
     "id": "6dd4d862-d442-40a0-b9f3-fc14bcf6d750",
     "data": {
-      "FirstTimestamp": "2162058216",
-      "FirstDuration": "2000",
-      "SecondTimestamp": "2162057216",
-      "SecondDuration": "2000",
+      "firstTimestamp": "2162058216",
+      "firstDuration": "2000",
+      "secondTimestamp": "2162057216",
+      "secondDuration": "2000",
       "timescale": "10000000"      
     },
-    "dataVersion": "1.0"
+    "dataVersion": "1.0",
+    "metadataVersion": "1"
   }
 ]
 ```
@@ -524,11 +527,11 @@ ms.locfileid: "53012000"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| FirstTimestamp | строка | Метка времени, полученная для одной из дорожек или уровней качества типа видео. |
-| FirstDuration | строка | Длительность блока данных с первой меткой времени. |
-| SecondTimestamp | строка  | Метка времени, полученная для другого уровня дорожки или уровня качества типа видео. |
-| SecondDuration | строка | Длительность блока данных со второй меткой времени. |
-| Шкала времени | строка | Шкала времени, состоящая из отметок времени и длительности.|
+| firstTimestamp | строка | Метка времени, полученная для одной из дорожек или уровней качества типа видео. |
+| firstDuration | строка | Длительность блока данных с первой меткой времени. |
+| secondTimestamp | строка  | Метка времени, полученная для другого уровня дорожки или уровня качества типа видео. |
+| secondDuration | строка | Длительность блока данных со второй меткой времени. |
+| timescale | строка | Шкала времени, состоящая из отметок времени и длительности.|
 
 ### <a name="liveeventingestheartbeat"></a>LiveEventIngestHeartbeat;
 
@@ -566,20 +569,20 @@ ms.locfileid: "53012000"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| TrackType | строка | Тип дорожки (аудио/видео). |
-| TrackName | строка | Название дорожки (предоставляется кодировщиком или, в случае RTMP, создается сервером в формате *TrackType_Bitrate*). |
-| Bitrate | целое число | Скорость дорожки. |
-| IncomingBitrate | целое число | Расчетная скорость на основе блоков данных, поступающих из кодировщика. |
-| LastTimestamp | строка | Последняя метка времени, полученная для дорожки за последние 20 секунд. |
-| Шкала времени | строка | Шкала времени, в которой выражены метки времени. |
-| OverlapCount | целое число | Количество блоков данных с перекрывающимися метками времени за последние 20 секунд. |
-| DiscontinuityCount | целое число | Количество прерываний, наблюдаемое за последние 20 секунд. |
-| NonincreasingCount | целое число | Количество блоков данных с метками времени в прошлом, полученных за последние 20 секунд. |
-| UnexpectedBitrate | bool | Если ожидаемые и фактические скорости отличаются более чем на допустимый предел за последние 20 секунд. Это верно, только если IncomingBitrate> = 2 * скорость, IncomingBitrate <= скорость/2 ИЛИ IncomingBitrate = 0. |
-| Состояние | строка | Состояние события прямой трансляции. |
-| Healthy | bool | Указывает состояние работоспособности приема на основе счетчиков и ​​флагов. Работоспособно, если OverlapCount = 0 && DiscontinuityCount = 0 && NonIncreasingCount = 0 && UnexpectedBitrate = false. |
+| trackType | строка | Тип дорожки (аудио/видео). |
+| trackName | строка | Название дорожки (предоставляется кодировщиком или, в случае RTMP, создается сервером в формате *TrackType_Bitrate*). |
+| bitrate | целое число | Скорость дорожки. |
+| incomingBitrate | целое число | Расчетная скорость на основе блоков данных, поступающих из кодировщика. |
+| lastTimestamp | строка | Последняя метка времени, полученная для дорожки за последние 20 секунд. |
+| timescale | строка | Шкала времени, в которой выражены метки времени. |
+| overlapCount | целое число | Количество блоков данных с перекрывающимися метками времени за последние 20 секунд. |
+| discontinuityCount | целое число | Количество прерываний, наблюдаемое за последние 20 секунд. |
+| nonIncreasingCount | целое число | Количество блоков данных с метками времени в прошлом, полученных за последние 20 секунд. |
+| unexpectedBitrate | bool | Если ожидаемые и фактические скорости отличаются более чем на допустимый предел за последние 20 секунд. Это верно, только если incomingBitrate> = 2 * bitrate, incomingBitrate <= bitrate/2 ИЛИ IncomingBitrate = 0. |
+| state | строка | Состояние события прямой трансляции. |
+| healthy | bool | Указывает состояние работоспособности приема на основе счетчиков и ​​флагов. Работоспособно, если overlapCount = 0 && discontinuityCount = 0 && nonIncreasingCount = 0 && unexpectedBitrate = false. |
 
-### <a name="liveeventtrackdiscontinuitydetected"></a>LiveEventTrackDiscontinuityDetected
+### <a name="liveeventtrackdiscontinuitydetected"></a>LiveEventTrackDiscontinuityDetected.
 
 Следующий пример демонстрирует схему события **LiveEventTrackDiscontinuityDetected**: 
 
@@ -610,13 +613,13 @@ ms.locfileid: "53012000"
 
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
-| TrackType | строка | Тип дорожки (аудио/видео). |
-| TrackName | строка | Название дорожки (предоставляется кодировщиком или, в случае RTMP, создается сервером в формате *TrackType_Bitrate*). |
-| Bitrate | целое число | Скорость дорожки. |
-| PreviousTimestamp | строка | Метка времени предыдущего фрагмента. |
-| NewTimestamp | строка | Метка времени текущего фрагмента. |
-| DiscontinuityGap | строка | Разрыв между двумя метками времени выше. |
-| Шкала времени | строка | Шкала времени, в которой представлены метка времени и разрыв. |
+| trackType | строка | Тип дорожки (аудио/видео). |
+| trackName | строка | Название дорожки (предоставляется кодировщиком или, в случае RTMP, создается сервером в формате *TrackType_Bitrate*). |
+| bitrate | целое число | Скорость дорожки. |
+| previousTimestamp | строка | Метка времени предыдущего фрагмента. |
+| newTimestamp | строка | Метка времени текущего фрагмента. |
+| discontinuityGap | строка | Разрыв между двумя метками времени выше. |
+| timescale | строка | Шкала времени, в которой представлены метка времени и разрыв. |
 
 ### <a name="common-event-properties"></a>Общие свойства событий
 

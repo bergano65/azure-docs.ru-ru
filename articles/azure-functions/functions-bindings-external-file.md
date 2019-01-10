@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: cshoe
-ms.openlocfilehash: 39036f17b8ceafebbe3660f2074e2a6c84c4df03
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 765eab8dfc1163c4d9e0337a1af840278ae1a82c
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50248699"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53546272"
 ---
 # <a name="azure-functions-external-file-bindings-experimental"></a>Привязки внешних файлов в службе "Функции Azure" (экспериментальная возможность)
 В этой статье показано, как управлять файлами различных поставщиков SaaS (например, Dropbox или Google Диск) в службе "Функции Azure". Служба "Функции Azure" поддерживают привязки триггера, а также входные и выходные привязки внешних файлов. Привязка создает подключения API к поставщикам SaaS или использует имеющиеся подключения API из группы ресурсов приложения-функции.
@@ -31,7 +31,7 @@ ms.locfileid: "50248699"
 |:-----|:---:|:---:|:---:|
 |[Box](https://www.box.com)|x|x|x
 |[Dropbox](https://www.dropbox.com)|x|x|x
-|[FTP](https://docs.microsoft.com/azure/app-service/app-service-deploy-ftp)|x|x|x
+|[FTP](https://docs.microsoft.com/azure/app-service/deploy-ftp)|x|x|x
 |[OneDrive](https://onedrive.live.com)|x|x|x
 |[OneDrive для бизнеса](https://onedrive.live.com/about/business/)|x|x|x
 |[SFTP](https://docs.microsoft.com/azure/connectors/connectors-create-api-sftp)|x|x|x
@@ -204,7 +204,7 @@ To force reprocessing of a file, delete the file receipt for that file from the 
 * FileType
 * FolderName
 * FileName
-* ETag (идентификатор версии файла, например 0x8D1DC6E70A277EF)
+* ETag (идентификатор версии файла, например: 0x8D1DC6E70A277EF).
 
 ## <a name="input"></a>Входные данные
 

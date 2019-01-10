@@ -10,19 +10,19 @@ ms.component: speech-service
 ms.topic: quickstart
 ms.date: 11/06/2018
 ms.author: fmegen
-ms.openlocfilehash: f8b6f4d39ce4dc65d691ec6a0e3d0734abb19734
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: b6add6ac94e45789033cfe9913ec64e69f394f45
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53087921"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53715143"
 ---
 # <a name="quickstart-recognize-speech-in-javascript-in-a-browser-using-the-speech-service-sdk"></a>Краткое руководство. Распознавание речи с использованием JavaScript в браузере с помощью пакета SDK для службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как создать веб-сайт, использующий привязку JavaScript из пакета SDK для службы "Речь" в Cognitive Services, который будет преобразовывать речь в текст.
-Приложение создано на базе пакета SDK для службы "Речь" в Microsoft Cognitive Services ([скачать версию 1.1.0](https://aka.ms/csspeech/jsbrowserpackage)).
+Приложение создано на базе пакета SDK для службы "Речь" в Microsoft Cognitive Services ([скачать версию 1.2.0](https://aka.ms/csspeech/jsbrowserpackage)).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -40,8 +40,8 @@ ms.locfileid: "53087921"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Скачайте пакет SDK для службы "Речь" как [ZIP-файл](https://aka.ms/csspeech/jsbrowserpackage) и распакуйте его в созданную папку. Должны быть распакованы два файла, `microsoft.cognitiveservices.speech.sdk.bundle.js` и `microsoft.cognitiveservices.speech.sdk.bundle.js.map`.
-Второй файл является необязательным. Он используются для отладки кода пакета SDK (при необходимости).
+Скачайте пакет SDK для службы "Речь" как [ZIP-файл](https://aka.ms/csspeech/jsbrowserpackage) и распакуйте его в созданную папку. В результате должны распаковаться два файла: `microsoft.cognitiveservices.speech.sdk.bundle.js` и `microsoft.cognitiveservices.speech.sdk.bundle.js.map`.
+Второй файл является необязательным. Он используются для отладки кода пакета SDK.
 
 ## <a name="create-an-indexhtml-page"></a>Создание страницы index.html
 
@@ -103,10 +103,7 @@ ms.locfileid: "53087921"
 
 Чтобы запустить приложение, откройте веб-браузер на свой выбор и введите в нем общедоступный URL-адрес, по которому размещена ваша папка. Затем введите свой [регион](regions.md) и активируйте распознавание речи с помощью микрофона. Приложение получит маркер из источника маркера, если он настроен.
 
-[!INCLUDE [Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
-Этот пример можно найти в папке `quickstart/js-browser`.
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Получить примеры](speech-sdk.md#get-the-samples)
+> [Примеры для JavaScript на сайте GitHub](https://aka.ms/csspeech/samples)

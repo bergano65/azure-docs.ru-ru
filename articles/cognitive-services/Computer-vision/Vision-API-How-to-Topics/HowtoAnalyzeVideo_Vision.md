@@ -1,5 +1,5 @@
 ---
-title: Пример. Анализ видео в реальном времени с помощью API компьютерного зрения
+title: Пример. Анализ видео в режиме реального времени с помощью API компьютерного зрения
 titlesuffix: Azure Cognitive Services
 description: Узнайте, как выполнить анализ практически в реальном времени по кадрам, взятым из видеотрансляции, с помощью API компьютерного зрения.
 services: cognitive-services
@@ -10,12 +10,13 @@ ms.component: computer-vision
 ms.topic: sample
 ms.date: 01/20/2017
 ms.author: kefre
-ms.openlocfilehash: 058f2ad58665a88d2d3cf3ce20b43ac0fad30000
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.custom: seodec18
+ms.openlocfilehash: 140e45270cf29eec48df260efa29b8aacac2d855
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45983201"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53580473"
 ---
 # <a name="how-to-analyze-videos-in-real-time"></a>Анализ видео в реальном времени
 В этом руководстве показано, как выполнить анализ практически в реальном времени по кадрам, взятым из видеотрансляции. Базовые операции этой системы:
@@ -68,13 +69,13 @@ while (true)
 ```CSharp
 // Queue that will contain the API call tasks. 
 var taskQueue = new BlockingCollection<Task<ResultWrapper>>();
-     
+     
 // Producer thread. 
 while (true)
 {
     // Grab a frame. 
     Frame f = GrabFrame();
- 
+ 
     // Decide whether to analyze the frame. 
     if (ShouldAnalyze(f))
     {
@@ -106,10 +107,10 @@ while (true)
 {
     // Get the oldest task. 
     Task<ResultWrapper> analysisTask = taskQueue.Take();
- 
+ 
     // Await until the task is completed. 
     var output = await analysisTask;
-     
+     
     // Consume the exception or result. 
     if (output.Exception != null)
     {
@@ -134,7 +135,7 @@ using System;
 using VideoFrameAnalyzer;
 using Microsoft.ProjectOxford.Face;
 using Microsoft.ProjectOxford.Face.Contract;
-     
+     
 namespace VideoFrameConsoleApplication
 {
     class Program
@@ -175,9 +176,9 @@ namespace VideoFrameConsoleApplication
 ```
 Второй пример приложения более интересный. Он позволяет выбрать, какой API вызывать для видеокадров. Слева в приложении отображается видео в реальном времени для предварительного просмотра, справа — последний результат API, наложенный на соответствующий кадр.
 
-В большинстве режимов будет наблюдаться видимая задержка между текущим видео с левой стороны и визуализированным анализом с правой. Эта задержка равна времени, которое занимает выполнение вызова API. Исключением является режим EmotionsWithClientFaceDetect, который выполняет обнаружение лиц локально на клиентском компьютере с помощью OpenCV перед отправкой изображений в Cognitive Services. Таким образом мы можем сразу же визуализировать обнаруженное лицо, а затем обновить эмоции после возвращения вызова API. Этот пример демонстрирует возможность гибридного подхода, когда некоторая простая обработка может выполняться на клиенте, а затем с помощью API-интерфейсов Cognitive Services ее можно при необходимости дополнить более сложным анализом.
+В большинстве режимов будет наблюдаться видимая задержка между текущим видео с левой стороны и визуализированным анализом с правой. Эта задержка равна времени, которое занимает выполнение вызова API. Исключением является режим EmotionsWithClientFaceDetect, который позволяет выполнить обнаружение лиц локально на клиентском компьютере с помощью OpenCV перед отправкой изображений в Cognitive Services. Таким образом мы можем сразу же визуализировать обнаруженное лицо, а затем обновить эмоции после возвращения вызова API. Этот пример демонстрирует возможность гибридного подхода, когда некоторая простая обработка может выполняться на клиенте, а затем с помощью API-интерфейсов Cognitive Services ее можно при необходимости дополнить более сложным анализом.
 
-![HowToAnalyzeVideo](../../Video/Images/FramebyFrame.jpg)
+![Снимок экрана приложения LiveCameraSample, на котором показано изображение с тегами](../../Video/Images/FramebyFrame.jpg)
 
 ### <a name="integrating-into-your-codebase"></a>Интеграция в базу кода
 Чтобы приступить к работе с этим примером, сделайте следующее:
@@ -189,7 +190,7 @@ namespace VideoFrameConsoleApplication
 2. Клонируйте репозиторий GitHub [Cognitive-Samples-VideoFrameAnalysis](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/).
 
 3. Откройте пример в Visual Studio 2015, создайте и запустите примеры приложений:
-    - Для примера BasicConsoleSample ключ API распознавания лиц содержится непосредственно в коде [BasicConsoleSample/Program.cs](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/blob/master/Windows/BasicConsoleSample/Program.cs).
+    - Для примера BasicConsoleSample ключ API распознавания лиц содержится непосредственно в коде [BasicConsoleSample/Program.cs](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/blob/master/Windows/BasicConsoleSample/Program.cs).
     - Для LiveCameraSample ключи следует ввести в области "Параметры" приложения. Они будут сохраняться во всех сеансах как пользовательские данные.
         
 
@@ -207,5 +208,5 @@ namespace VideoFrameConsoleApplication
 ## <a name="summary"></a>Сводка
 В этом руководстве описано, как запустить анализ потокового видео практически в реальном времени с использованием API распознавания лиц и эмоций, а также API компьютерного зрения, и приступить к работе с использованием наших примеров кода. Вы можете создать свое приложения, используя бесплатные ключи API на [странице регистрации Microsoft Cognitive Services](https://azure.microsoft.com/try/cognitive-services/). 
 
-Отправляйте отзывы и предложения в [репозиторий GitHub](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/), а также развернутые идеи об API на наш [сайт UserVoice](https://cognitive.uservoice.com/).
+Отправляйте отзывы и предложения в [репозиторий GitHub](https://github.com/Microsoft/Cognitive-Samples-VideoFrameAnalysis/), а более подробные отзывы об API — на наш [сайт UserVoice](https://cognitive.uservoice.com/).
 

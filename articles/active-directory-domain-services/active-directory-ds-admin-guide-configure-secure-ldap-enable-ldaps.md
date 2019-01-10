@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/01/2018
 ms.author: ergreenl
-ms.openlocfilehash: 74d6748a4d595e330103497dcc97ac57e01db250
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: b1cfecca7d7b8a3f554466d95c666e2cbddbffde
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158624"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53975684"
 ---
 # <a name="enable-secure-ldap-ldaps-for-an-azure-ad-domain-services-managed-domain"></a>Включение защищенного протокола LDAP (LDAPS) для управляемого домена доменных служб Azure AD
 
@@ -51,7 +51,7 @@ ms.locfileid: "50158624"
 5. По умолчанию защищенный доступ LDAP к управляемому домену через Интернет отключен. При необходимости измените значение параметра **Разрешить доступ по защищенному протоколу LDAP через Интернет** на **Включить**.
 
     > [!WARNING]
-    > При включении доступа по защищенному протоколу LDAP через Интернет ваш домен уязвим к атакам методом подбора пароля через Интернет. Поэтому рекомендуется настроить группу безопасности сети для блокировки доступа к необходимым диапазонам исходных IP-адресов. Инструкции см. в разделе о [блокировке доступа через LDAPS к управляемому домену через Интернет](#task-5---lock-down-secure-ldap-access-to-your-managed-domain-over-the-internet).
+    > При включении доступа по защищенному протоколу LDAP через Интернет ваш домен уязвим к атакам методом подбора пароля через Интернет. Поэтому рекомендуется настроить группу безопасности сети для блокировки доступа к необходимым диапазонам исходных IP-адресов. Инструкции см. в разделе о [блокировке доступа через LDAPS к управляемому домену через Интернет](active-directory-ds-ldaps-bind-lockdown.md#task-6-lock-down-secure-ldap-access-to-your-managed-domain-over-the-internet).
     >
 
 6. Щелкните значок папки рядом с полем **PFX-файл с защищенным сертификатом LDAP**. Укажите путь к PFX-файлу сертификата для доступа управляемому домену через защищенный протокол LDAP.

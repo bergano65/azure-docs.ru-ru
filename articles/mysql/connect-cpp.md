@@ -1,22 +1,19 @@
 ---
 title: Подключение к Базе данных Azure для MySQL с помощью C++
 description: В этом кратком руководстве представлен пример кода C++, который можно использовать для подключения к базе данных Azure для MySQL и запроса данных из нее.
-services: mysql
 author: ajlam
 ms.author: andrela
-manager: kfile
-editor: jasonwhowell
 ms.service: mysql
 ms.custom: mvc
-ms.devlang: C++
+ms.devlang: cpp
 ms.topic: quickstart
 ms.date: 04/12/2018
-ms.openlocfilehash: 6d9deba8c7e6317ab349f86d5a1730f05288ea35
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: b262359b91a2545682e7611c44cfccd2b08da0c1
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49987670"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53544198"
 ---
 # <a name="azure-database-for-mysql-use-connectorc-to-connect-and-query-data"></a>База данных Azure для MySQL: подключение и запрос данных с помощью Connector/C++
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для MySQL с помощью приложения C++. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на C++ и вы только начали работу с базой данных Azure для MySQL.
@@ -41,7 +38,7 @@ ms.locfileid: "49987670"
    2. Запустите установщик и выполните указанные действия, чтобы завершить установку.
 
 ### <a name="configure-visual-studio"></a>**Настройка Visual Studio**
-1. В Visual Studio последовательно выберите элементы "Проект" -> "Свойства" -> "Компоновщик" -> "Общие" -> "Дополнительные каталоги библиотек" и добавьте каталог lib\opt соединителя C++ (например, C:\Program Files (x86)\MySQL\MySQL Connector C++ 1.1.9\lib\opt).
+1. В Visual Studio последовательно выберите "Проект" -> "Свойства" -> "Компоновщик" -> "Общие" -> "Дополнительные каталоги библиотек" и добавьте каталог lib\opt соединителя C++ (например, C:\Program Files (x86)\MySQL\MySQL Connector C++ 1.1.9\lib\opt).
 2. В Visual Studio последовательно выберите "Проект" -> "Свойства" -> "C/C++" -> "Общие" -> "Дополнительные каталоги включаемых файлов":
    - Добавьте каталог \include соединителя C++ (например, C:\Program Files (x86)\MySQL\MySQL Connector C++ 1.1.9\include\).
    - Добавьте корневой каталог библиотеки Boost (например, C:\boost_1_64_0\).

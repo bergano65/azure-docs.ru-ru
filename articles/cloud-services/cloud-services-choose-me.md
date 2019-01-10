@@ -13,15 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 309c7275a1e775ed2bd689520ac39501e8bd6052
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: ce88dcaedf32f293fc121cda2a088388c99badee
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48857828"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53603833"
 ---
 # <a name="overview-of-azure-cloud-services"></a>Общие сведения об облачных службах Azure
-Облачные службы Azure являются примером концепции [платформа как услуга](https://azure.microsoft.com/overview/what-is-paas/) (PaaS). Так же как и [служба приложений Azure](../app-service/app-service-web-overview.md), эта технология предназначена для поддержки масштабируемых, надежных и недорогих в эксплуатации приложений. Облачные службы Azure размещаются так же, как и службы приложений на виртуальных машинах (ВМ). Однако над виртуальными машинами доступен больший контроль. На виртуальных машинах, использующих облачные службы Azure, можно установить собственное программное обеспечение, а затем получить удаленный доступ к нему.
+Облачные службы Azure являются примером концепции [платформа как услуга](https://azure.microsoft.com/overview/what-is-paas/) (PaaS). Так же как и [служба приложений Azure](../app-service/overview.md), эта технология предназначена для поддержки масштабируемых, надежных и недорогих в эксплуатации приложений. Облачные службы Azure размещаются так же, как и службы приложений на виртуальных машинах (ВМ). Однако над виртуальными машинами доступен больший контроль. На виртуальных машинах, использующих облачные службы Azure, можно установить собственное программное обеспечение, а затем получить удаленный доступ к нему.
 
 ![Диаграмма облачных служб Azure](./media/cloud-services-choose-me/diagram.png)
 

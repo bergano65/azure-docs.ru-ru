@@ -4,24 +4,22 @@ description: Узнайте, как спроектировать свою пер
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
-ms.custom: ''
-ms.devlang: ''
 ms.topic: tutorial
 author: MightyPen
 ms.author: genemi
 ms.reviewer: carlrab
 manager: craigg-msft
-ms.date: 11/01/2018
-ms.openlocfilehash: 82cf0303019d2cbb620c442fd6f750f733930f84
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.date: 12/10/2018
+ms.openlocfilehash: cf180f6e2970ac4435602f1cceeb98a4dd9e8724
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50912345"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53727171"
 ---
 # <a name="tutorial-design-an-azure-sql-database-and-connect-with-cx23-and-adonet"></a>Руководство. Проектирование базы данных SQL Azure и подключение к ней с помощью C# и ADO.NET
 
-База данных SQL Azure — это реляционная база данных как услуга (DBaaS) в Microsoft Cloud (Azure). Из этого руководства вы узнаете, как с помощью портала Azure и ADO.NET с Visual Studio выполнить следующие действия:
+База данных SQL Azure — это реляционная база данных как услуга (DBaaS) в Microsoft Cloud (Azure). Из этого руководства вы узнаете, как с помощью портала Azure и ADO.NET с Visual Studio выполнить следующие действия:
 
 > [!div class="checklist"]
 > * создать базу данных на портале Azure;
@@ -35,7 +33,7 @@ ms.locfileid: "50912345"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Убедитесь, что установлен [Visual Studio Community 2017, Visual Studio Professional 2017 или Visual Studio Enterprise 2017](https://www.visualstudio.com/downloads/).
+Установленная среда [Visual Studio 2017](https://www.visualstudio.com/downloads/).
 
 <!-- The following included .md, sql-database-tutorial-portal-create-firewall-connection-1.md, is long.
 And it starts with a ## H2.
@@ -51,16 +49,16 @@ And it starts with a ## H2.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали об основных задачах базы данных, таких как создание базы данных и таблиц, загрузка и запрос данных, а также восстановление базы данных до предшествующей точки во времени. Вы научились выполнять следующие задачи:
+Из этого руководства вы узнали об основных задачах базы данных, таких как создание базы данных и таблиц, подключение к базе данных, загрузка данных и выполнение запросов. Вы научились выполнять следующие задачи:
+
 > [!div class="checklist"]
 > * Создание базы данных
 > * Настройка правила брандмауэра.
 > * подключаться к базе данных с помощью [Visual Studio и C#](sql-database-connect-query-dotnet-visual-studio.md);
 > * создание таблиц.
-> * вставлять, обновлять и удалять данные;
-> * Запрос данных
+> * Вставка, обновление, удаление и запрашивание данных.
 
 Перейдите к следующему руководству, чтобы узнать о переносе данных.
 
 > [!div class="nextstepaction"]
-> [Перенос базы данных SQL Server в базу данных SQL Azure](sql-database-migrate-your-sql-server-database.md)
+> [Перенос баз данных из SQL Server в Базу данных SQL Azure в автономном режиме с помощью DMS](../dms/tutorial-sql-server-to-azure-sql.md)

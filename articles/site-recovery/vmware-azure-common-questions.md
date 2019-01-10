@@ -4,15 +4,16 @@ description: В этой статье перечислены часто зада
 author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
-ms.date: 12/11/2018
+services: site-recovery
+ms.date: 12/31/2018
 ms.topic: conceptual
-ms.author: mayg
-ms.openlocfilehash: d7b3919d0f970190238dbc5899a20f2d9e7d8cd4
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.author: rayne
+ms.openlocfilehash: 920ae8ff09cb8e936a1ba70b2c862bd9bc076046
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53256522"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53974698"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
@@ -74,7 +75,7 @@ ms.locfileid: "53256522"
 Site Recovery реплицирует данные из локальной среды в хранилище Azure через общедоступную конечную точку или с помощью общедоступного пиринга ExpressRoute. Репликация через VPN-подключение "сеть — сеть" не поддерживается.
 
 ### <a name="can-i-replicate-to-azure-with-expressroute"></a>Можно ли реплицировать в Azure с помощью ExpressRoute?
-Да, ExpressRoute можно использовать для репликации виртуальных машин в Azure. Site Recovery реплицирует данные в учетную запись хранения Azure через общедоступную конечную точку. Для этого вам требуется настроить [общедоступный пиринг](../expressroute/expressroute-circuit-peerings.md#publicpeering). После отработки отказа виртуальных машин в виртуальную сеть Azure к ним можно получить доступ с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#privatepeering).
+Да, ExpressRoute можно использовать для репликации виртуальных машин в Azure. Site Recovery реплицирует данные в учетную запись хранения Azure через общедоступную конечную точку. Чтобы использовать ExpressRoute для репликации Site Recovery, необходимо настроить [общедоступный пиринг](../expressroute/expressroute-circuit-peerings.md#publicpeering) или [пиринг Майкрософт](../expressroute/expressroute-circuit-peerings.md#microsoftpeering). Пиринг Майкрософт является рекомендуемым доменом маршрутизации для репликации. Убедитесь, что [требования к сети](vmware-azure-configuration-server-requirements.md#network-requirements) также выполняются для репликации. После отработки отказа виртуальных машин в виртуальную сеть Azure к ним можно получить доступ с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#privatepeering).
 
 
 ### <a name="why-cant-i-replicate-over-vpn"></a>Почему я не могу выполнить репликацию через VPN?

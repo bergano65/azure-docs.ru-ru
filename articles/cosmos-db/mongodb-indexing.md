@@ -1,24 +1,24 @@
 ---
-title: 'Индексирование в Azure Cosmos DB: API MongoDB'
-description: Обзор возможностей индексирования в API MongoDB Azure Cosmos DB.
+title: Индексирование в API Azure Cosmos DB для MongoDB
+description: Обзор возможностей индексирования в API Azure Cosmos DB для MongoDB.
 services: cosmos-db
-author: orestis-ms
+author: rimman
 ms.service: cosmos-db
 ms.component: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: conceptual
-ms.date: 03/01/2018
-ms.author: orkostak
-ms.openlocfilehash: bdb2ceb45950b99b1a5a351c6301599a791ef8cc
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.date: 12/26/2018
+ms.author: rimman
+ms.openlocfilehash: 4c6ba4b12625433f0b0218dc88decf2d7cb7ad77
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52875303"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53792288"
 ---
-# <a name="indexing-in-the-azure-cosmos-db-mongodb-api"></a>Индексирование в Azure Cosmos DB. API MongoDB
+# <a name="indexing-using-azure-cosmos-dbs-api-for-mongodb"></a>Индексирование с помощью API Azure Cosmos DB для MongoDB
 
-API MongoDB в Azure Cosmos DB использует возможности автоматического управления индексами Azure Cosmos DB. В результате у пользователей появляется доступ к стандартным политикам индексации Azure Cosmos DB. Таким образом, если индексы не были определены пользователем и ни один индекс не был удален, тогда все поля будут автоматически проиндексированы по умолчанию в момент вставки в коллекцию. В большинстве случаев рекомендуется использовать набор политик индексирования по умолчанию, установленный в учетной записи.
+API Azure Cosmos DB для MongoDB использует возможности автоматического управления индексами Cosmos DB. В результате у пользователей появляется доступ к стандартным политикам индексации Cosmos DB. Таким образом, если индексы не были определены пользователем и ни один индекс не был удален, тогда все поля будут автоматически проиндексированы по умолчанию в момент вставки в коллекцию. В большинстве случаев рекомендуется использовать набор политик индексирования по умолчанию, установленный в учетной записи.
 
 ## <a name="dropping-the-default-indexes"></a>Удаление индексов по умолчанию
 
@@ -97,5 +97,5 @@ globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
 В настоящее время создание уникальных индексов возможно только в том случае, если коллекция не содержит документов. Популярные средства перемещения MongoDB пытаются создавать уникальные индексы после импорта данных. Для обхода этой проблемы пользователям рекомендуется вручную создавать соответствующие коллекции и уникальные индексы, отключив это действие для средств перемещения (в ```mongorestore``` для этого в командной строке следует указать параметр --noIndexRestore).
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Как работает индексирование данных в Azure Cosmos DB?](../cosmos-db/index-policy.md)
-* [Автоматическое завершение срока действия данных в коллекциях Azure Cosmos DB с использованием срока жизни](../cosmos-db/time-to-live.md)
+* [Индексирование в Azure Cosmos DB](../cosmos-db/index-policy.md)
+* [Автоматическое завершение срока действия данных в Azure Cosmos DB с использованием срока жизни](../cosmos-db/time-to-live.md)

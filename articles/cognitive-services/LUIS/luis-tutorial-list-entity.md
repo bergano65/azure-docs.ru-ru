@@ -10,12 +10,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 02/21/2018
 ms.author: diberry
-ms.openlocfilehash: be2c7aea356f6d7b73438499b7e4d680ed4bad7c
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 4cac20cb44c2400e44ff2ca0939b1537f0b20734
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53259245"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53727188"
 ---
 # <a name="use-a-list-entity-to-increase-entity-detection"></a>Использование сущности списка, чтобы увеличить обнаружение сущностей 
 В этом руководстве показано, как использовать [сущность списка](luis-concept-entity-types.md), чтобы увеличить обнаружение сущностей. Сущности списков не обязательно должны быть помечены как они точно соответствуют терминам.  
@@ -37,7 +37,7 @@ ms.locfileid: "53259245"
 > [!Tip]
 > Если у вас еще нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/).
 
-Весь код из этого руководства можно найти в разделе [LUIS-Samples репозитория GitHub](https://github.com/Microsoft/LUIS-Samples/tree/master/documentation-samples/tutorial-list-entity). 
+Весь код из этого руководства можно найти в разделе [Azure-Samples репозитория GitHub](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/tutorial-list-entity). 
 
 ## <a name="use-homeautomation-app"></a>Использование приложения HomeAutomation
 Приложение HomeAutomation позволяет управлять такими устройствами, как освещение, развлекательные системы и контроль параметров окружающей среды, например нагревание и охлаждение. Эти системы имеют несколько разных названий, которые могут включать имена производителей, псевдонимы, аббревиатуры и сленг. 

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/14/2018
 ms.author: hrasheed
-ms.openlocfilehash: 26aeb5641533125dcd909ae96d28c8274677cf30
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: 8d7b18dfd88a1a136e8b6e11f9f712e9212d6dd5
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53013447"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53788809"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-by-using-net-sdk"></a>Управление кластерами Apache Hadoop в HDInsight с помощью пакета SDK для .NET
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
@@ -135,10 +135,8 @@ _hdiManagementClient.Clusters.DeleteAsync("<Resource Group Name>", "<Cluster Nam
 ## <a name="scale-clusters"></a>Масштабирование кластеров
 Масштабирование кластера позволяет изменить количество рабочих узлов в кластере, который работает под управлением Azure HDInsight. При этом не требуется повторно создавать кластер.
 
-> [!NOTE]
-> Поддерживаются только кластеры HDInsight версии 3.1.3 или более поздней. Если вы не знаете версию кластера, см. страницу «Свойства».  См. раздел [Отображение кластеров](hdinsight-administer-use-portal-linux.md#list-and-show-clusters).
-> 
-> 
+> [!NOTE]  
+> Поддерживаются только кластеры HDInsight версии 3.1.3 или более поздней. Если вы не знаете версию кластера, см. страницу «Свойства».  См. раздел [Отображение кластеров](hdinsight-administer-use-portal-linux.md#showClusters).
 
 Ниже представлены возможности, связанные с изменением количества узлов данных в кластере каждого типа, поддерживаемого в HDInsight.
 
@@ -165,7 +163,7 @@ _hdiManagementClient.Clusters.DeleteAsync("<Resource Group Name>", "<Cluster Nam
   * с помощью веб-интерфейса Storm;
   * с помощью программы командной строки.
     
-    Дополнительные сведения см. в [документации по Apache Storm](http://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html).
+    Дополнительные сведения см. в [документации по Apache Storm](https://storm.apache.org/documentation/Understanding-the-parallelism-of-a-Storm-topology.html).
     
     В кластере HDInsight доступен веб-интерфейс Storm.
     
@@ -220,10 +218,8 @@ var httpParams = new HttpSettingsParameters
 _hdiManagementClient.Clusters.ConfigureHttpSettings("<Resource Group Name>, <Cluster Name>, httpParams);
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > Предоставляя или отменяя доступ, вы сбрасываете имя пользователя и пароль кластера.
-> 
-> 
 
 Это также можно сделать через портал. Ознакомьтесь с разделом [Администрирование HDInsight с помощью портала Azure][hdinsight-admin-portal].
 
@@ -242,9 +238,9 @@ foreach (var key in results.Configuration.Keys)
 ```
 
 ## <a name="submit-jobs"></a>Отправка заданий
-**Отправка заданий Apache Hadoop MapReduce**
+**Отправка заданий MapReduce**
 
-См. статью о [выполнении примеров Apache Hadoop MapReduce в HDInsight](hadoop/apache-hadoop-run-samples-linux.md).
+См. статью [Выполнение примеров MapReduce в HDInsight](hadoop/apache-hadoop-run-samples-linux.md).
 
 **Отправка заданий Apache Hive** 
 

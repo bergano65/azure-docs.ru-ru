@@ -2,27 +2,21 @@
 title: Глобальное распространение Azure Cosmos DB
 description: Сведения о глобальной репликации данных с помощью Azure DB Cosmos на портале Azure
 services: cosmos-db
-author: SnehaGunda
+author: rimman
 ms.service: cosmos-db
 ms.topic: include
-ms.date: 03/26/2018
-ms.author: sngun
+ms.date: 12/26/2018
+ms.author: rimman
 ms.custom: include file
-ms.openlocfilehash: fb9418d47d2888467e1c1c40862833029111b75b
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 751571820d52c003a7e740bd63af8c9d9e071c7a
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38747557"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53796119"
 ---
-В следующем видео руководитель программы Azure Cosmos DB Эндрю Лю (Andrew Liu) расскажет о возможностях глобального распределения Azure Cosmos DB.
-
->[!VIDEO https://www.youtube.com/embed/1D06yjTVxt8]
-
-Дополнительные сведения о том, как функционирует репликация глобальной базы данных в Azure Cosmos DB, см. в руководстве по [глобальному распределению данных в Cosmos DB](../articles/cosmos-db/distribute-data-globally.md).
-
 ## <a id="addregion"></a>Добавление регионов глобальной базы данных с помощью портала Azure
-База данных Azure Cosmos DB доступна во всех [регионах Azure][azureregions] по всему миру. После выбора уровня согласованности по умолчанию для учетной записи базы данных вы можете связать один или несколько регионов (в зависимости от выбранного уровня согласованности по умолчанию и потребностей глобального распространения).
+Служба Azure Cosmos DB доступна во всех [регионах Azure][azureregions] по всему миру. После выбора уровня согласованности по умолчанию для учетной записи базы данных вы можете связать один или несколько регионов (в зависимости от выбранного уровня согласованности по умолчанию и потребностей глобального распространения).
 
 1. На левой панели на [портале Azure](https://portal.azure.com/) щелкните **Azure Cosmos DB**.
 2. На странице **Azure Cosmos DB** выберите учетную запись базы данных, которую нужно изменить.

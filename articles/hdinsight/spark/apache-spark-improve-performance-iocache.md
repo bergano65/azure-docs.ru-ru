@@ -7,12 +7,12 @@ author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: conceptual
 ms.date: 10/15/2018
-ms.openlocfilehash: 724e6c57f10fb85b4b91c2236d17a64899953d67
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 204a3230c782279b0cad4194e97aa4014c940635
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52581941"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608500"
 ---
 # <a name="improve-performance-of-apache-spark-workloads-using-azure-hdinsight-io-cache-preview"></a>Повышение производительности рабочих нагрузок Apache Spark с помощью службы IO Cache для Azure HDInsight (предварительная версия)
 
@@ -20,7 +20,7 @@ IO Cache — это служба кэширования данных для Azur
 
 Большинство твердотельных накопителей обеспечивают пропускную способность более 1 ГБ в секунду. Такая пропускная способность в сочетании с файловым кэшем в памяти, который поддерживает операционная система, обеспечивает возможность загружать модули обработки для вычисления больших данных, например Apache Spark. Оперативная память остается доступной Apache Spark для обработки задач с высокой нагрузкой на память, например процессов изменения порядка элементов. Эксклюзивное использование оперативной памяти позволяет Apache Spark добиться оптимального использования ресурсов.  
 
->[!Note]
+>[!Note]  
 >В настоящее время IO Cache использует RubiX в качестве компонента кэширования, но в будущих версиях службы это может измениться. Используйте интерфейсы IO Cache, не создавая никаких прямых зависимостей от реализации RubiX.
 
 ## <a name="benefits-of-azure-hdinsight-io-cache"></a>Преимущества IO Cache для Azure HDInsight
@@ -45,7 +45,7 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 1. Подтвердите перезапуск всех затрагиваемых служб в кластере.
 
->[!NOTE] 
+>[!NOTE]  
 > Несмотря на значение индикатора выполнения, фактически IO Cache активируется только после перезапуска всех затрагиваемых служб.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
@@ -78,4 +78,4 @@ IO Cache для Azure HDInsight по умолчанию отключен в пр
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительная информация об IO Cache, в том числе о сравнительных тестах производительности, приведена в [этой записи блога](https://azure.microsoft.com/en-us/blog/apache-spark-speedup-with-hdinsight-io-cache/)
+- Дополнительные сведения о кэше ввода-вывода, включая показатели производительности, см. в следующей записи блога: [Девятикратное ускорение заданий Apache Spark с кэшем ввода-вывода HDInsight (Apache Spark jobs gain up to 9x speed up with HDInsight IO Cache)](https://azure.microsoft.com/en-us/blog/apache-spark-speedup-with-hdinsight-io-cache/).

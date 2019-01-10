@@ -1,5 +1,5 @@
 ---
-title: Настройка топологии решения "Подключенная фабрика" | Документация Майкрософт
+title: Настройка топологии решения "Подключенная фабрика" — Azure | Документация Майкрософт
 description: Настройка топологии для акселератора решения "Подключенная фабрика"
 author: dominicbetts
 manager: timlt
@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 12/12/2017
 ms.author: dobett
-ms.openlocfilehash: 8cb3cae396016545c5d78a2ff7ccde4a053c4cf1
-ms.sourcegitcommit: b5ac31eeb7c4f9be584bb0f7d55c5654b74404ff
+ms.openlocfilehash: 3fd160fbccfb5298cefed6a731797ca6962b997c
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42746985"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53602279"
 ---
 # <a name="configure-the-connected-factory-solution-accelerator"></a>Настройка акселератора решения "Подключенная фабрика"
 
@@ -85,7 +85,7 @@ ms.locfileid: "42746985"
 }
 ```
 
-Общими свойствами `<global_configuration>`, `<factory_configuration>`, `<production_line_configuration>` и `<station_configuration>` являются:
+Общими свойствами  `<global_configuration>`, `<factory_configuration>`, `<production_line_configuration>` и `<station_configuration>` являются следующие.
 
 * **Name** (строковый тип)
 
@@ -282,7 +282,7 @@ WebApp поддерживает внутренний словарь данных
 * Значений узлов OPC UA, которые должны быть включены в вычисление.
 * Способа вычисления показателей на основе значений телеметрии.
 
-В решении "Подключенная фабрика" используются формулы OEE, опубликованные http://www.oeefoundation.org.
+В решении "Подключенная фабрика" используются формулы OEE, опубликованные https://www.oeefoundation.org.
 
 Объекты узлов OPC UA на станциях позволяют применять теги для вычислений показателя OEE и ключевого показателя эффективности. Свойство **Relevance** указывает, для какого показателя OEE или ключевого показателя эффективности следует использовать значение узла OPC UA. Свойство **OpCode** определяет, каким образом это значение включается в вычисление.
 
@@ -309,7 +309,7 @@ WebApp поддерживает внутренний словарь данных
 
 На [этой странице](https://github.com/Azure/iot-edge-opc-publisher) GitHub содержатся дополнительные сведения о том, как данные телеметрии поступают в решение "Подключенная фабрика" с помощью издателя OPC.
 
-## <a name="example-how-kpi1-is-calculated"></a>Пример метода вычисления KPI1
+## <a name="example-how-kpi1-is-calculated"></a>Пример: Метод вычисления KPI1
 
 Конфигурация в файле `ContosoTopologyDescription.json` определяет метод вычисления показателя OEE и ключевого показателя эффективности. В следующем примере показано, как свойства в этом файле определяют метод вычисления KPI1.
 

@@ -1,7 +1,7 @@
 ---
 title: Описание изображений. Компьютерное зрение
 titleSuffix: Azure Cognitive Services
-description: Понятия, связанные с описанием изображений с помощью API компьютерного зрения.
+description: Понятия, связанные с функцией описания изображений API компьютерного зрения.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: conceptual
 ms.date: 08/29/2018
 ms.author: pafarley
-ms.openlocfilehash: 423d1be57bc800108a08a81b72587ca2711bbc3d
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.custom: seodec18
+ms.openlocfilehash: 5b920e4ce8df131b81a9ef6ce2d66c7082d8f5e4
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49342421"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53583414"
 ---
-# <a name="describing-images"></a>Описание изображений
+# <a name="describe-images-with-human-readable-language"></a>Описание изображений на понятном для пользователя языке
 
 Алгоритмы Компьютерного зрения анализируют содержимое изображения. Анализ формирует основу для 'описания', отображаемого на понятном для пользователя языке в полных предложениях. В описании приведена сводка того, что найдено на изображении. Алгоритмы Компьютерного зрения создают различные описания в зависимости от визуальных признаков, определенных на изображении. Каждое описание оценивается и получает оценку достоверности. Затем возвращается список, упорядоченный от наибольшей оценки достоверности к наименьшей.
 
@@ -25,7 +26,7 @@ ms.locfileid: "49342421"
 
 В приведенном ниже ответе JSON показано, что именно возвращает Компьютерное зрение при описании примера изображения на основе его визуальных характеристик.
 
-![Черно-белое фото зданий](./Images/bw_buildings.png)
+![Черно-белая фотография здания на Манхэттене](./Images/bw_buildings.png)
 
 ```json
 {

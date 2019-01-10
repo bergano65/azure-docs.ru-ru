@@ -9,12 +9,12 @@ ms.date: 09/22/2018
 ms.topic: tutorial
 ms.service: service-bus-messaging
 ms.custom: mvc
-ms.openlocfilehash: 1d2be579dda9f90f06897f11d62ccd08076f892e
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: fbfb6a030d4979f9bd6a27f4c5b6908e62ffd9ab
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50413576"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54001759"
 ---
 # <a name="tutorial-update-inventory-using-cli-and-topicssubscriptions"></a>Руководство. Обновление информации о запасах с помощью интерфейса командной строки, разделов и подписок
 
@@ -126,7 +126,7 @@ connectionString=$(az servicebus namespace authorization-rule keys list \
 
 ## <a name="create-filter-rules-on-subscriptions"></a>Создание правил фильтрации по подпискам
 
-Итак, вы уже подготовили пространство имен, разделы и подписки, также у вас есть необходимые учетные данные, а значит вы готовы создать правила фильтрации для этих подписок, чтобы отправлять и получать сообщения. Этот код можно изучить в [папке с примером на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/quickstarts-and-tutorials/tutorial-topics-subscriptions-filters-java/src/main/java/com/microsoft/azure/).
+Итак, вы уже подготовили пространство имен, разделы и подписки, также у вас есть необходимые учетные данные, а значит вы готовы создать правила фильтрации для этих подписок, чтобы отправлять и получать сообщения. Этот код можно изучить в [папке с примером на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/azure-servicebus/TopicFilters).
 
 ## <a name="send-and-receive-messages"></a>Отправка и получение сообщений
 

@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 09/09/2018
+ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 06981972dbdb95b8597bab5028c2d86e0594caf3
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 2c8d4486b235534db2bb7d06206d5767c1496fbd
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53106045"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53754396"
 ---
-# <a name="tutorial-2-batch-test-data-sets"></a>Руководство 2. Пакетное тестирование наборов данных
+# <a name="tutorial-batch-test-data-sets"></a>Руководство. Пакетное тестирование наборов данных
 
 В этом руководстве показано, как использовать пакетное тестирование для поиска и устранения проблем с прогнозированием высказываний в приложении.  
 
@@ -32,11 +32,11 @@ ms.locfileid: "53106045"
 
 При использовании приложения, которое отличается от описанного в этом руководстве, *не* используйте примеры высказываний, которые уже добавлены в намерение. 
 
-**Из этого руководства вы узнаете, как выполнить следующие задачи:**
+**В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
 <!-- green checkmark -->
 > [!div class="checklist"]
-> * Использовать существующее приложение из руководства
+> * Импорт примера приложения
 > * Создание файла пакетного теста 
 > * Выполнение пакетного теста
 > * Просмотр результатов теста
@@ -45,13 +45,13 @@ ms.locfileid: "53106045"
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
-## <a name="use-existing-app"></a>Использование существующего приложения
+## <a name="import-example-app"></a>Импорт примера приложения
 
 Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
+Выполните следующие действия.
 
-1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-review-HumanResources.json).
+1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-review-HumanResources.json).
 
 2. Импортируйте JSON-файл в новое приложение.
 
@@ -61,7 +61,7 @@ ms.locfileid: "53106045"
 
 ## <a name="batch-file"></a>Пакетный файл
 
-1. Создайте файл `HumanResources-jobs-batch.json` в текстовом редакторе или [скачайте](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/HumanResources-jobs-batch.json) его. 
+1. Создайте файл `HumanResources-jobs-batch.json` в текстовом редакторе или [скачайте](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/HumanResources-jobs-batch.json) его. 
 
 2. В пакетный файл в формате JSON добавьте высказывания с **намерением**, которое должно быть спрогнозировано в тесте. 
 
@@ -177,7 +177,7 @@ ms.locfileid: "53106045"
 
 Значение сущности **задания**, представленное в тестовых высказываниях, обычно является одним или двумя словами, в нескольких примерах больше слов. Если _ваше собственное_ приложение по управлению персоналом обычно имеет имена заданий, составленные с нескольких слов, примеры высказываний с меткой **Job**  в этом приложении не будут работать хорошо.
 
-1. Создайте файл `HumanResources-entities-batch.json` в текстовом редакторе, таком как [VSCode](https://code.visualstudio.com/), или [скачайте](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/HumanResources-entities-batch.json) этот файл.
+1. Создайте файл `HumanResources-entities-batch.json` в текстовом редакторе, таком как [VSCode](https://code.visualstudio.com/), или [скачайте](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/HumanResources-entities-batch.json) этот файл.
 
 
 2. В пакетном файле в формате JSON добавьте массив объектов, которые включают высказывания с **намерением**, которое необходимо спрогнозировать во время тестирования, а также местоположения любых сущностей в высказывании. Поскольку сущность основана на токенах, обязательно запускайте и останавливайте каждую сущность на символе. Не начинайте или заканчивайте высказывание пробелом. Это приводит к ошибке во время импорта пакетного файла.  

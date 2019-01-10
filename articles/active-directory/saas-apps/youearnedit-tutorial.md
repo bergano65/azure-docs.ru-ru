@@ -1,60 +1,50 @@
 ---
-title: Руководство по интеграции Azure Active Directory с YouEarnedIt | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с YouEarnedIt | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и YouEarnedIt.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
-ms.reviewer: joflore
+ms.reviewer: barbkess
 ms.assetid: 3011d44d-dfcf-4061-888f-cff90fbc8150
-ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 08/10/2018
+ms.topic: tutorial
+ms.date: 12/6/2018
 ms.author: jeedes
-ms.openlocfilehash: 3a394c13092547991bf7f8ae98e5c69e92077701
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: fd65d6a5d210b4b0549236ec39844e36480b10c9
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43344790"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53790264"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-youearnedit"></a>Руководство. Интеграция Azure Active Directory с YouEarnedIt
 
 В этом руководстве описано, как интегрировать YouEarnedIt с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением YouEarnedIt дает следующие преимущества.
 
-- C помощью Azure AD вы можете контролировать доступ к YouEarnedIt.
-- Вы можете включить автоматический вход пользователей в YouEarnedIt (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+* C помощью Azure AD вы можете контролировать доступ к YouEarnedIt.
+* Вы можете включить автоматический вход пользователей в YouEarnedIt (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно — на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с YouEarnedIt, вам потребуется следующее:
 
-- подписка Azure AD;
-- подписка YouEarnedIt с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка YouEarnedIt с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
+В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
 
-1. Добавление YouEarnedIt из коллекции.
-2. настройка и проверка единого входа в Azure AD.
+* YouEarnedIt поддерживает единый вход, инициированный **поставщиком услуг**.
 
 ## <a name="adding-youearnedit-from-the-gallery"></a>Добавление YouEarnedIt из коллекции.
 
@@ -62,55 +52,57 @@ ms.locfileid: "43344790"
 
 **Чтобы добавить YouEarnedIt из коллекции, сделайте следующее:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **YouEarnedIt**, выберите **YouEarnedIt** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![YouEarnedIt в списке результатов](./media/youearnedit-tutorial/tutorial_youearnedit_addfromgallery.png)
+     ![YouEarnedIt в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в YouEarnedIt с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в YouEarnedIt соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в YouEarnedIt.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в YouEarnedIt.
+В этом разделе описана настройка и проверка единого входа Azure AD в YouEarnedIt с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в YouEarnedIt.
 
 Чтобы настроить и проверить единый вход Azure AD в YouEarnedIt, вам потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя YouEarnedIt](#create-a-youearnedit-test-user)** требуется для того, чтобы в YouEarnedIt существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в YouEarnedIt](#configure-youearnedit-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Создание тестового пользователя YouEarnedIt](#create-youearnedit-test-user)** требуется для того, чтобы в YouEarnedIt существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе мы включим на портале Azure единый вход Azure AD и настроим его в приложении YouEarnedIt.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в YouEarnedIt, сделайте следующее:**
+Чтобы настроить единый вход Azure AD в YouEarnedIt, сделайте следующее:
 
-1. На портале Azure на странице интеграции с приложением **YouEarnedIt** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **YouEarnedIt** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/youearnedit-tutorial/tutorial_youearnedit_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-3. В разделе **Домены и URL-адреса приложения YouEarnedIt** выполните следующие действия.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа для приложения YouEarnedIt](./media/youearnedit-tutorial/tutorial_youearnedit_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+
+    ![Сведения о домене и URL-адресах единого входа для приложения YouEarnedIt](common/sp-identifier.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: 
     | Среда  | Модель  |
@@ -121,117 +113,100 @@ ms.locfileid: "43344790"
     b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате:
     | Среда  | Модель  |
     |:--- |:--- |
-    | Производство | `https://<company name>.youearnedit.com` |
-    | Песочница  |`https://<company name>.sandbox.youearnedit.com` |
+    | Производство | `<company name>.youearnedit.com` |
+    | Песочница  |`<company name>.sandbox.youearnedit.com` |
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к назначенному менеджеру по работе с клиентами YouEarnedIt.
 
-4. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
-    ![Ссылка для скачивания сертификата](./media/youearnedit-tutorial/tutorial_youearnedit_certificate.png) 
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-5. Нажмите кнопку **Сохранить** .
+6. Скопируйте требуемый URL-адрес из раздела **Настройка YouEarnedIt**.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/youearnedit-tutorial/tutorial_general_400.png)
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-6. В разделе **Конфигурация YouEarnedIt** щелкните **Настроить YouEarnedIt**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+    a. URL-адрес входа.
 
-    ![Конфигурация YouEarnedIt](./media/youearnedit-tutorial/tutorial_youearnedit_configure.png) 
+    b. Идентификатор Azure AD.
 
-7. Чтобы настроить единый вход на стороне **YouEarnedIt**, отправьте загруженный ***сертификат в кодировке Base64*** и ***URL-адрес службы единого входа SAML*** назначенному менеджеру по работе с клиентами **YouEarnedIt**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+    c. URL-адрес выхода
+
+### <a name="configure-youearnedit-single-sign-on"></a>Настройка единого входа YouEarnedIt
+
+Чтобы настроить единый вход на стороне **YouEarnedIt**, отправьте скачанный **сертификат в кодировке Base64** и соответствующие скопированные URL-адреса c портала Azure назначенному менеджеру по работе с клиентами YouEarnedIt. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Azure Active Directory"](./media/youearnedit-tutorial/create_aaduser_01.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/youearnedit-tutorial/create_aaduser_02.png)
-
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
-
-    ![Кнопка "Добавить"](./media/youearnedit-tutorial/create_aaduser_03.png)
-
-4. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/youearnedit-tutorial/create_aaduser_04.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
 
-### <a name="create-a-youearnedit-test-user"></a>Создание тестового пользователя YouEarnedIt
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как включить для пользователя Britta Simon единый вход Azure, предоставив этому пользователю доступ к YouEarnedIt.
+
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **YouEarnedIt**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. В списке приложений введите и выберите **YouEarnedIt**.
+
+    ![Ссылка на YouEarnedIt в списке "Приложения"](common/all-applications.png)
+
+3. В меню слева выберите **Пользователи и группы**.
+
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Область "Добавление назначения"](common/add-assign-user.png)
+
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-youearnedit-test-user"></a>Создание тестового пользователя YouEarnedIt
 
 В этом разделе описано, как создать пользователя Britta Simon в приложении YouEarnedIt. Чтобы добавить пользователей на платформу YouEarnedIt, обратитесь к назначенному менеджеру по работе с клиентами YouEarnedIt.
 
 >[!NOTE]
 >Для приложения YouEarnedIt требуется, чтобы поставщик удостоверений предоставил значение имени пользователя или адреса электронной почты в атрибуте NameID. Если в базе данных отсутствует соответствующее значение или оно не полностью соответствует, проверка подлинности завершится ошибкой. Чтобы устранить эту проблему, перед интеграцией единого входа необходимо импортировать учетные записи в систему YouEarnedIt (обычно для этого нужно импортировать CSV-файл или выполнить импорт через API).
 
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как включить для пользователя Britta Simon единый вход Azure, предоставив этому пользователю доступ к YouEarnedIt.
-
-![Назначение роли пользователя][200]
-
-**Чтобы назначить пользователя Britta Simon в YouEarnedIt, сделайте следующее:**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201]
-
-2. В списке приложений выберите **YouEarnedIt**.
-
-    ![Ссылка на YouEarnedIt в списке "Приложения"](./media/youearnedit-tutorial/tutorial_youearnedit_app.png)  
-
-3. В меню слева выберите **Пользователи и группы**.
-
-    ![Ссылка "Пользователи и группы"][202]
-
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Область "Добавление назначения"][203]
-
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент YouEarnedIt на панели доступа, вы автоматически войдете в приложение YouEarnedIt.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Щелкнув плитку YouEarnedIt на панели доступа, вы автоматически войдете в YouEarnedIt, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/youearnedit-tutorial/tutorial_general_01.png
-[2]: ./media/youearnedit-tutorial/tutorial_general_02.png
-[3]: ./media/youearnedit-tutorial/tutorial_general_03.png
-[4]: ./media/youearnedit-tutorial/tutorial_general_04.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-[100]: ./media/youearnedit-tutorial/tutorial_general_100.png
-
-[200]: ./media/youearnedit-tutorial/tutorial_general_200.png
-[201]: ./media/youearnedit-tutorial/tutorial_general_201.png
-[202]: ./media/youearnedit-tutorial/tutorial_general_202.png
-[203]: ./media/youearnedit-tutorial/tutorial_general_203.png

@@ -1,5 +1,5 @@
 ---
-title: Испытание решения для имитации устройства в Azure | Документация Майкрософт
+title: Испытание решения для имитации устройства — Azure | Документация Майкрософт
 description: В этом кратком руководстве развертывается имитация устройств Интернета вещей Azure и запускается имитация
 author: troyhopwood
 manager: timlt
@@ -9,14 +9,14 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 09/28/2018
 ms.author: troyhop
-ms.openlocfilehash: a109f3536ea8709313de3d1d6d17ce69c5652289
-ms.sourcegitcommit: 3dcb1a3993e51963954194ba2a5e42260d0be258
+ms.openlocfilehash: 12f993f606fc1ef44280142d5acfa2687cd4e043
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50753939"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53601599"
 ---
-# <a name="quickstart-deploy-and-run-an-iot-device-simulation-in-azure"></a>Краткое руководство по развертыванию и запуску имитации устройств Интернета вещей в Azure
+# <a name="quickstart-deploy-and-run-an-iot-device-simulation-in-azure"></a>Краткое руководство. Развертывание и запуск имитации устройств Интернета вещей в Azure
 
 В этом кратком руководстве показано, как развернуть имитацию устройств Интернета вещей Azure для тестирования решения Интернета вещей. После развертывания акселератора решений запустите пример имитации, чтобы приступить к работе.
 

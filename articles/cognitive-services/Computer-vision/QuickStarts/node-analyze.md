@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Анализ удаленного изображения c помощью службы "Компьютерное зрение" (REST, Node.js)
+title: Краткое руководство. Анализ удаленного изображения — REST, Node.js
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как проанализировать изображение с помощью API компьютерного зрения на Node.js.
 services: cognitive-services
@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: 22497d07133a9ab717d319524c3e2825c832ddaa
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.custom: seodec18
+ms.openlocfilehash: 58f25d4ac37498c56728b5526ead3ae97b9843d8
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49342592"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53583347"
 ---
-# <a name="quickstart-analyze-a-remote-image-using-the-rest-api-with-nodejs-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и Node.js в службе "Компьютерное зрение"
+# <a name="quickstart-analyze-a-remote-image-using-the-rest-api-with-nodejs-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API компьютерного зрения и Node.js
 
 Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные функции на основе содержимого изображения.
 

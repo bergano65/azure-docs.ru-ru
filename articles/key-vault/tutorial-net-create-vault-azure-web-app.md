@@ -1,5 +1,5 @@
 ---
-title: Руководство. Использование Azure Key Vault в веб-приложении Azure (.NET) | Документация Майкрософт
+title: Руководство. Использование Azure Key Vault в веб-приложении Azure (.NET) — Azure Key Vault | Документация Майкрософт
 description: Руководство. Настройка веб-приложения ASP.NET Core для считывания секрета из Key Vault
 services: key-vault
 documentationcenter: ''
@@ -9,21 +9,21 @@ ms.assetid: 0e57f5c7-6f5a-46b7-a18a-043da8ca0d83
 ms.service: key-vault
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/05/2018
+ms.date: 12/21/2018
 ms.author: pryerram
 ms.custom: mvc
-ms.openlocfilehash: 50a7f3166d677fe1af961866ccae4445a3d810b8
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: b6dbae0f721983920c2073927fff74100528678e
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53322147"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53998801"
 ---
 # <a name="tutorial-use-azure-key-vault-with-an-azure-web-app-in-net"></a>Руководство. Использование Azure Key Vault в веб-приложении Azure (.NET)
 
 Служба Azure Key Vault помогает защищать секреты, например ключи API и строки подключения к базе данных. Она позволяет осуществлять доступ к приложениям, службам и ИТ-ресурсам.
 
-В этом руководстве описано, как создать веб-приложение Azure, которое может считывать информацию из хранилища ключей Azure. При этом используются управляемые удостоверения для ресурсов Azure. См. дополнительные сведения о [веб-приложениях Azure](../app-service/app-service-web-overview.md).
+В этом руководстве описано, как создать веб-приложение Azure, которое может считывать информацию из хранилища ключей Azure. При этом используются управляемые удостоверения для ресурсов Azure. См. дополнительные сведения о [Службе приложений Azure](../app-service/overview.md).
 
 В этой статье описаны следующие операции:
 
@@ -256,4 +256,4 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <PrincipalId> --s
 ## <a name="next-steps"></a>Дополнительная информация
 
 >[!div class="nextstepaction"]
->[Руководство разработчика хранилища ключей Azure](https://docs.microsoft.com/en-us/azure/key-vault/key-vault-developers-guide)
+>[Руководство разработчика хранилища ключей Azure](https://docs.microsoft.com/azure/key-vault/key-vault-developers-guide)

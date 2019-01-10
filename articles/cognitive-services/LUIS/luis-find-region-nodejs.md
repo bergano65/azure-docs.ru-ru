@@ -11,18 +11,18 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 6bcea43fb21cae6f000f3522b498dfc6c0f6d9a7
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 4d14569219c8db503fc91f52a6867de85373aa05
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53166223"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53724391"
 ---
-# <a name="find-endpoint-region-with-nodejs"></a>Поиск региона конечной точки с использованием Node.js
+# <a name="programmatically-find-endpoint-region-with-nodejs"></a>Программный поиск региона конечной точки с использованием Node.js
 При наличии идентификатора приложения LUIS и идентификатора подписки LUIS можно определить, какой регион будет использоваться для запросов конечной точки.
 
 > [!NOTE] 
-> Полное решение Node.js доступно в разделе [**LUIS-Samples** репозитория GitHub](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/find-region/nodejs/).
+> Полное решение Node.js доступно в разделе [**Azure-Samples** репозитория GitHub](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/find-region/nodejs/).
 
 ## <a name="luis-endpoint-query-strategy"></a>Стратегия запросов конечной точки LUIS
 Для каждого запроса конечной точки LUIS требуется:

@@ -8,15 +8,15 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 12/18/2018
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: 4999639356fd440b6358983f1e4859fb3c505fc7
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 8c230143a4b3ab15e5a43d8b565d1973bc47ec29
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53106504"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53599029"
 ---
 # <a name="ship-an-application"></a>Доставка приложения
 
@@ -55,7 +55,7 @@ ms.locfileid: "53106504"
 * библиотеку cURL (`libcurl.so.4`);
 * общую библиотеку для приложений ALSA (`libasound.so.2`)
 
-В Ubuntu 16.04, например, библиотеки GNU C должны быть уже установлены по умолчанию. Последние три библиотеки можно установить с помощью следующих команд:
+В Ubuntu 16.04 или 18.04, например, библиотеки GNU C должны быть уже установлены по умолчанию. Последние три библиотеки можно установить с помощью следующих команд:
 
 ```sh
 sudo apt-get update

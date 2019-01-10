@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/25/2016
 ms.author: glenga
-ms.openlocfilehash: 7529d20535eedab92d164df5a0435efeda83fca2
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: a0d697438c1265b8c4e6802dc2dad62a33f51855
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44301554"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53548601"
 ---
 # <a name="continuous-deployment-for-azure-functions"></a>Непрерывное развертывание для Функций Azure
 Функции Azure упрощают развертывание приложения-функции за счет непрерывной интеграции службы приложений. Функции интегрируются с BitBucket, Dropbox, GitHub и Azure DevOps. Это позволяет организовать работу так, чтобы изменения кода функций, вносимые одной из интегрированных служб, активировали развертывание в Azure. Если вы еще не работали с Функциями Azure, начните с [обзора](functions-overview.md).
@@ -26,7 +26,7 @@ ms.locfileid: "44301554"
 * [Bitbucket;](https://bitbucket.org/)
 * [Dropbox](https://www.dropbox.com/)
 * Внешний репозиторий (Git или Mercurial)
-* [Локальный репозиторий Git](../app-service/app-service-deploy-local-git.md)
+* [Локальный репозиторий Git](../app-service/deploy-local-git.md)
 * [GitHub](https://github.com)
 * [OneDrive](https://onedrive.live.com/)
 * [Azure DevOps Services](https://www.visualstudio.com/team-services/)
@@ -52,7 +52,7 @@ ms.locfileid: "44301554"
  
     ![Настройка непрерывного развертывания](./media/functions-continuous-deployment/setup-deployment-1.png)
    
-2. В колонке **Источник развертывания** щелкните **Выбор источника**, а затем введите сведения о выбранном источнике развертывания и нажмите кнопку **OК**.
+3. В колонке **Источник развертывания** щелкните **Выбор источника**, а затем введите сведения о выбранном источнике развертывания и нажмите кнопку **OК**.
    
     ![Выбор источника развертывания](./media/functions-continuous-deployment/choose-deployment-source.png)
 
@@ -98,7 +98,7 @@ ms.locfileid: "44301554"
 - [Практическое руководство. Скачивание файлов с помощью локального репозитория Git](#downgit)
 
 <a name="credentials"></a>
-#### <a name="how-to-configure-deployment-credentials"></a>Практическое руководство. Настройка учетных данных развертывания
+#### <a name="how-to-configure-deployment-credentials"></a>Практическое руководство: Настройка учетных данных развертывания
 Чтобы скачать файлы из приложения-функции с помощью FTP или локального репозитория Git, нужно настроить учетные данные для доступа к сайту. Учетные данные задаются на уровне приложения-функции. Чтобы задать учетные данные развертывания на портале Azure, выполните следующие действия:
 
 1. В приложении-функции на [портале Azure](https://portal.azure.com) щелкните **Функции платформы** и **Учетные данные развертывания**.
@@ -108,7 +108,7 @@ ms.locfileid: "44301554"
 2. Введите имя пользователя и пароль, а затем щелкните **Сохранить**. Теперь эти учетные данные можно использовать для доступа к приложению-функции из FTP или встроенного репозитория Git.
 
 <a name="downftp"></a>
-#### <a name="how-to-download-files-using-ftp"></a>Практическое руководство. Скачивание файлов с помощью FTP
+#### <a name="how-to-download-files-using-ftp"></a>Практическое руководство: Скачивание файлов с помощью FTP
 
 1. В приложении-функции на [портале функций Azure](https://portal.azure.com) щелкните **Функции платформы** и **Свойства**, а затем скопируйте значения параметров **Пользователь FTP или развертывания**, **Имя узла FTP** и **Имя узла FTPS**.  
 
@@ -119,7 +119,7 @@ ms.locfileid: "44301554"
 2. Подключитесь к приложению из клиента FTP, используя полученные сведения, и скачайте исходные файлы функций.
 
 <a name="downgit"></a>
-#### <a name="how-to-download-files-using-a-local-git-repository"></a>Практическое руководство. Скачивание файлов с помощью локального репозитория Git
+#### <a name="how-to-download-files-using-a-local-git-repository"></a>Практическое руководство: Скачивание файлов с помощью локального репозитория Git
 
 1. В приложении-функции на [портале Azure](https://portal.azure.com) щелкните **Функции платформы** и **Параметры развертывания**. 
    

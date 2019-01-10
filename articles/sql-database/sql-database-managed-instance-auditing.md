@@ -14,12 +14,12 @@ ms.author: ronitr
 ms.reviewer: vanto
 manager: craigg
 ms.date: 09/20/2018
-ms.openlocfilehash: 375e1a0ba4be9483986c088195e380e856d32a67
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: b295f7a2a454e3987e8639814f785b7457dd452b
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49093754"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53973100"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Приступая к аудиту управляемого экземпляра Базы данных SQL Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "49093754"
      ![Область навигации][6]
 
    - Настройте SAS следующим образом.
-     - **Допустимые службы**: большой двоичный объект
+     - **Допустимые службы**: BLOB-объект
      - **Дата начала**: чтобы избежать проблем, связанных с часовыми поясами, выберите вчерашний день.
      - **Дата окончания**: выберите дату окончания срока действия для этого маркера SAS. 
 
@@ -153,7 +153,7 @@ ms.locfileid: "49093754"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](https://docs.microsoft.com/ azure/sql-database/sql-database-auditing).
+- Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-auditing).
 - Дополнительную информацию о программах Azure, поддерживающих проверку соблюдения стандартов, см. в [Центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/).
 
 

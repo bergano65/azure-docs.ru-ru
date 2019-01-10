@@ -9,12 +9,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/20/2017
 ms.author: cshoe
-ms.openlocfilehash: 3932ad18ceedb36a4a8c1f9fc78eb8aef27a8a4f
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: e979930ed504dafe330b774725f4193f1c15ed17
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51301022"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53793994"
 ---
 # <a name="microsoft-graph-bindings-for-azure-functions"></a>Привязки Microsoft Graph для службы "Функции Azure"
 
@@ -63,7 +63,7 @@ ms.locfileid: "51301022"
 
 ### <a name="configuring-authentication--authorization"></a>Настройка аутентификации или авторизации
 
-Для привязок, приведенных в этой статье, необходимо использовать удостоверение. Это позволит Microsoft Graph принудительно применять разрешения и выполнять аудит взаимодействия. Под удостоверением может подразумеваться пользователь, который пытается получить доступ к приложению, или само приложение. Чтобы настроить это удостоверение, настройте [аутентификацию и авторизацию в службе приложений](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview) с помощью Azure Active Directory. Вам также понадобится запросить все разрешения на ресурсы, требуемые для функций.
+Для привязок, приведенных в этой статье, необходимо использовать удостоверение. Это позволит Microsoft Graph принудительно применять разрешения и выполнять аудит взаимодействия. Под удостоверением может подразумеваться пользователь, который пытается получить доступ к приложению, или само приложение. Чтобы настроить это удостоверение, настройте [аутентификацию и авторизацию в службе приложений](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization) с помощью Azure Active Directory. Вам также понадобится запросить все разрешения на ресурсы, требуемые для функций.
 
 > [!Note] 
 > Расширение Microsoft Graph поддерживает только аутентификацию с помощью Azure AD. Для входа пользователи должны указывать рабочую или учебную учетную запись.
@@ -226,7 +226,8 @@ module.exports = function (context, req) {
 
 В коде токен всегда представлен виде строки.
 
-
+> [!Note]
+> При локальной разработке с помощью любого из параметров (`userFromId`, `userFromToken` или `userFromRequest`) необходимый токен может быть [получен вручную](https://github.com/Azure/azure-functions-microsoftgraph-extension/issues/54#issuecomment-392865857) и указан в заголовке запроса `X-MS-TOKEN-AAD-ID-TOKEN` из вызывающего клиентского приложения.
 
 
 <a name="excel-input"></a>

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: 5994abaf0276d915553494b7272d2a8abed451bb
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: da6435c6e3ea5fe88b605bd65c5d0e10f1772450
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52498613"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53717472"
 ---
 # <a name="use-empty-edge-nodes-on-apache-hadoop-clusters-in-hdinsight"></a>Использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight
 
@@ -57,15 +57,15 @@ ms.locfileid: "52498613"
 
 После создания граничного узла можно подключиться к нему с помощью SSH и запустить клиентские средства для доступа к кластеру Hadoop в HDInsight.
 
-> [!WARNING] 
+> [!WARNING]   
 > Пользовательские компоненты, установленные на граничном узле, получают коммерчески оправданную поддержку от компании Майкрософт. В результате могут быть устранены возникающие проблемы. Или вы можете обратиться к ресурсам сообщества для получения дополнительной помощи. Ниже приведены некоторые из наиболее активных сайтов для получения помощи от сообщества.
 >
 > * [Форум MSDN для HDInsight](https://social.msdn.microsoft.com/Forums/azure/home?forum=hdinsight)
-> * [http://stackoverflow.com](http://stackoverflow.com).
+> * [https://stackoverflow.com](https://stackoverflow.com).
 >
-> При использовании технологии Apache можно получить помощь на соответствующих сайтах для проектов Apache, например [Apache Hadoop](http://hadoop.apache.org/) на сайте [http://apache.org](http://apache.org).
+> При использовании технологии Apache можно получить помощь на соответствующих сайтах для проектов Apache, например [Apache Hadoop](https://hadoop.apache.org/) на сайте [https://apache.org](https://apache.org).
 
-> [!NOTE]
+> [!NOTE]  
 > Граничные узлы, как и узлы кластера, также поддерживают установку исправлений.  Дополнительные сведения см. в статье [Обновление путем частичной замены ОС для кластеров HDInsight](./hdinsight-os-patching.md).
 
 ## <a name="add-an-edge-node-to-an-existing-cluster"></a>Добавление граничного узла в имеющийся кластер
@@ -78,16 +78,16 @@ ms.locfileid: "52498613"
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-add-edge-node%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apps-use-edge-node/deploy-to-azure.png" alt="Deploy to Azure"></a>
 3. Настройте следующие свойства:
    
-   * **Подписка.** Выберите подписку Azure, используемую для создания кластера.
+   * **Подписка**: Выберите подписку Azure, используемую для создания кластера.
    * **Группа ресурсов.** Выберите группу ресурсов, используемую для имеющегося кластера HDInsight.
    * **Расположение.** Выберите расположение для имеющегося кластера HDInsight.
-   * **Имя кластера.** Введите имя имеющегося кластера HDInsight.
-   * **Edge Node Size** (Размер граничного узла). Выберите один из размеров виртуальной машины. Размер виртуальной машины должны соответствовать требованиям к размеру виртуальной машины рабочего узла. Рекомендуемые размеры виртуальной машины рабочего узла приведены в разделе о [создании кластеров Apache Hadoop в HDInsight](hdinsight-hadoop-provision-linux-clusters.md#cluster-types).
-   * **Edge Node Prefix** (Префикс граничного узла). Значение по умолчанию — **new**.  Имя граничного узла по умолчанию — **new-edgenode**.  Префикс можно настроить на портале. В шаблоне также можно настроить полное имя.
+   * **Имя кластера**. Введите имя имеющегося кластера HDInsight.
+   * **Размер граничного узла**. Выберите один из размеров виртуальной машины. Размер виртуальной машины должны соответствовать требованиям к размеру виртуальной машины рабочего узла. Рекомендуемые размеры виртуальной машины рабочего узла приведены в разделе о [создании кластеров Apache Hadoop в HDInsight](hdinsight-hadoop-provision-linux-clusters.md#cluster-types).
+   * **Префикс граничного узла**. По умолчанию используется значение **new**.  Имя граничного узла по умолчанию — **new-edgenode**.  Префикс можно настроить на портале. В шаблоне также можно настроить полное имя.
 
 4. Установите флажок **Я принимаю указанные выше условия** и нажмите кнопку **Приобрести**, чтобы создать граничный узел.
 
->[!IMPORTANT]
+>[!IMPORTANT]  
 > Выберите группу ресурсов Azure, используемую для существующего кластера HDInsight.  Иначе вы получите сообщение об ошибке "Не удается выполнить запрошенную операцию с вложенным ресурсом. Родительский ресурс &lt;ClusterName> не найден."
 
 ## <a name="add-an-edge-node-when-creating-a-cluster"></a>Добавление граничного узла при создании кластера
@@ -101,17 +101,17 @@ ms.locfileid: "52498613"
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-hdinsight-linux-with-edge-node%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apps-use-edge-node/deploy-to-azure.png" alt="Deploy to Azure"></a>
 3. Настройте следующие свойства:
    
-   * **Подписка.** Выберите подписку Azure, используемую для создания кластера.
+   * **Подписка**: Выберите подписку Azure, используемую для создания кластера.
    * **Группа ресурсов.** Создайте группу ресурсов для кластера.
-   * **Расположение**. Выберите расположение группы ресурсов.
-   * **Имя кластера.** Введите имя для нового кластера.
-   * **Cluster Login User Name** (Имя пользователя для входа в кластер). Введите имя пользователя HTTP для Hadoop.  Имя по умолчанию — **admin**.
-   * **Пароль для входа в кластер.** Введите пароль HTTP для Hadoop.
-   * **Имя пользователя SSH.** Введите имя пользователя SSH. Имя по умолчанию — **sshuser**.
-   * **Пароль SSH.** Введите пароль пользователя SSH.
-   * **Install Script Action** (Установка действия скрипта). Для прохождения этого руководства оставьте значение по умолчанию.
+   * **Расположение.** Выберите расположение группы ресурсов.
+   * **Имя кластера**. Введите имя для нового кластера.
+   * **Имя пользователя для входа в кластер.** Введите имя пользователя HTTP для Hadoop.  Имя по умолчанию — **admin**.
+   * **Пароль пользователя для входа в кластер.** Введите пароль пользователя HTTP для Hadoop.
+   * **Имя пользователя SSH**. Введите имя пользователя SSH. Имя по умолчанию — **sshuser**.
+   * **Пароль SSH**. Введите пароль пользователя SSH.
+   * **Установка действия скрипта**. В рамках этого руководства оставьте значение по умолчанию.
      
-     Некоторые свойства жестко запрограммированы в шаблоне: "Тип кластера", Cluster worker node count (Количество рабочих узлов кластера), Edge node size (Размер граничного узла) и Edge node name (Имя граничного узла).
+     Некоторые свойства жестко заданы в шаблоне: тип кластера, число рабочих узлов кластера, размер граничного узла и имя граничного узла.
 4. Установите флажок **Я принимаю указанные выше условия** и нажмите кнопку **Приобрести**, чтобы создать кластер с граничным узлом.
 
 ## <a name="add-multiple-edge-nodes"></a>Добавление нескольких граничных узлов
@@ -155,10 +155,10 @@ ms.locfileid: "52498613"
 ## <a name="next-steps"></a>Дополнительная информация
 В этой статье вы узнали, как добавить граничный узел и как получить к нему доступ. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
-* [Установка приложений HDInsight](hdinsight-apps-install-applications.md)— узнайте, как устанавливать в кластер приложения HDInsight.
+* [Установка приложений HDInsight](hdinsight-apps-install-applications.md). Узнайте, как установить приложения HDInsight в кластерах.
 * [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md)— узнайте, как развернуть в HDInsight неопубликованное приложение HDInsight.
-* [Публикация приложений HDInsight в Azure Marketplace](hdinsight-apps-publish-applications.md)— узнайте, как опубликовать пользовательские приложения HDInsight в Azure Marketplace.
-* [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx)(Установка приложения HDInsight) — узнайте, как определить приложения HDInsight.
+* [Публикация приложения HDInsight в Azure Marketplace](hdinsight-apps-publish-applications.md). Узнайте, как опубликовать пользовательские приложения HDInsight в Microsoft Azure Marketplace.
+* [MSDN. Application](https://msdn.microsoft.com/library/mt706515.aspx) (Приложение). Узнайте, как определить приложения HDInsight.
 * [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md)— узнайте, как использовать действие скрипта для установки дополнительных приложений.
 * [Создание кластеров Apache Hadoop под управлением Linux в HDInsight с помощью шаблонов Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md) — узнайте, как вызывать шаблоны Resource Manager для создания кластеров HDInsight.
 

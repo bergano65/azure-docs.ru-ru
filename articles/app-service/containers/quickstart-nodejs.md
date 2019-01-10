@@ -1,10 +1,10 @@
 ---
-title: Создание веб-приложения Node.js в службе приложений Azure в Linux | Документация Майкрософт
+title: Создание приложения Node.js в Службе приложений Azure в Linux | Документация Майкрософт
 description: Быстрое развертывание первого приложения Hello World на Node.js в службе приложений Azure в Linux.
 services: app-service\web
 documentationcenter: ''
 author: msangapu
-manager: cfowler
+manager: jeconnoc
 editor: ''
 ms.assetid: 582bb3c2-164b-42f5-b081-95bfcb7a502a
 ms.service: app-service-web
@@ -12,20 +12,20 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 06/07/2017
+ms.date: 11/20/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 22a022b12e931fd4edf139038eb7506e69422f8e
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: b3c57a9a8912f44dbe7e9261549d034e99356547
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53253592"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190584"
 ---
-# <a name="create-a-nodejs-web-app-in-azure-app-service-on-linux"></a>Создание веб-приложения Node.js в службе приложений Azure в Linux
+# <a name="create-a-nodejs-app-in-azure-app-service-on-linux"></a>Создание приложения Node.js в Службе приложений Azure в Linux
 
 > [!NOTE]
-> В этой статье мы развернем приложение в службе приложений на платформе Linux. Сведения о развертывании в службе приложений на платформе _Windows_ см. в статье [Создание веб-приложений Node.js в Azure](../app-service-web-get-started-nodejs.md).
+> В этой статье мы развернем приложение в службе приложений на платформе Linux. Сведения о развертывании в Службе приложений на платформе _Windows_ см. в статье [Создание веб-приложений Node.js в Azure](../app-service-web-get-started-nodejs.md).
 >
 
 [Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как развернуть приложение Node.js в службе приложений для Linux с помощью [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
@@ -37,22 +37,6 @@ ms.locfileid: "53253592"
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
-
-## <a name="install-web-app-extension-for-cloud-shell"></a>Установка расширения веб-приложения для Cloud Shell
-
-Чтобы выполнить это краткое руководство, необходимо добавить расширение веб-приложения с помощью команды [az web app extension](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az-extension-add). Если расширение уже установлено, обновите его до последней версии. Чтобы обновить расширение веб-приложения, введите команду `az extension update -n webapp`.
-
-Чтобы установить расширение веб-приложения, выполните следующую команду:
-
-```bash
-az extension add -n webapp
-```
-
-После установки расширения в Cloud Shell отображаются примерно такие сведения:
-
-```bash
-The installed extension 'webapp' is in preview.
-```
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
@@ -136,17 +120,17 @@ All done.
 
 - создание приложения с указанным именем.
 
-- [Разверните ZIP-файлы](https://docs.microsoft.com/azure/app-service/app-service-deploy-zip) для веб-приложения из текущего рабочего каталога.
+- [Разверните ZIP-файлы](https://docs.microsoft.com/azure/app-service/deploy-zip) для приложения из текущего рабочего каталога.
 
 ## <a name="browse-to-the-app"></a>Переход в приложение
 
-Перейдите в развертываемое приложение с помощью веб-браузера. Замените <app_name> уникальным именем веб-приложения.
+Перейдите в развертываемое приложение с помощью веб-браузера. Замените <app_name> именем своего приложения.
 
 ```bash
 http://<app_name>.azurewebsites.net
 ```
 
-Пример кода Node.js выполняется в веб-приложении со встроенным образом.
+Пример кода Node.js выполняется в Службе приложений в Linux со встроенным образом.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-nodejs/hello-world-in-browser.png)
 
@@ -166,7 +150,7 @@ response.end("Hello Azure!");
 
 Сохраните изменения и выйдите из редактора Nano. Выполните команду `^O`, чтобы сохранить файл, и `^X` — чтобы выйти.
 
-Теперь можно повторно развернуть приложение. Замените `<app_name>` именем своего веб-приложения.
+Теперь можно повторно развернуть приложение. Замените `<app_name>` именем своего приложения.
 
 ```bash
 az webapp up -n <app_name>
@@ -176,15 +160,15 @@ az webapp up -n <app_name>
 
 ![Обновленный пример приложения, выполняющегося в Azure](media/quickstart-nodejs/hello-azure-in-browser.png)
 
-## <a name="manage-your-new-azure-web-app"></a>Управление новым веб-приложением Azure
+## <a name="manage-your-new-azure-app"></a>Управление новым приложением Azure
 
-Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления созданным веб-приложением.
+Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a>, чтобы управлять созданным приложением.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/quickstart-nodejs/nodejs-docs-hello-world-app-service-list.png)
+![Переход к приложению Azure на портале](./media/quickstart-nodejs/nodejs-docs-hello-world-app-service-list.png)
 
-Отобразится страница обзора вашего веб-приложения. Здесь вы можете выполнять базовые задачи управления, например просмотр, завершение, запуск, перезапуск и удаление.
+Отобразится страница обзора вашего приложения. Здесь вы можете выполнять базовые задачи управления, например просмотр, завершение, запуск, перезапуск и удаление.
 
 ![Страница службы приложений на портале Azure](media/quickstart-nodejs/nodejs-docs-hello-world-app-service-detail.png)
 

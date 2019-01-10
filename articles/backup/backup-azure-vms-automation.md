@@ -9,16 +9,16 @@ ms.topic: conceptual
 ms.date: 10/20/2018
 ms.author: raynew
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 814afb8731f8e4da3d3cbc75ef69c3b5da487914
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: f2cdeea546e7153c63cb1edfbc53f3644facc4f2
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52877876"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53743907"
 ---
 # <a name="use-powershell-to-back-up-and-restore-virtual-machines"></a>Использование PowerShell для резервного копирования и восстановления виртуальных машин
 
-В этой статье показано, как выполнять архивацию и восстановление виртуальной машины Azure из хранилища служб восстановления с помощью командлетов Azure PowerShell. Хранилище служб восстановления — это ресурс Azure Resource Manager, используемый для защиты данных и ресурсов-контейнеров в службе архивации Azure и службах Azure Site Recovery. 
+В этой статье показано, как выполнять архивацию и восстановление виртуальной машины Azure из хранилища служб восстановления с помощью командлетов Azure PowerShell. Хранилище служб восстановления — это ресурс Azure Resource Manager, используемый для защиты данных и ресурсов-контейнеров в службе архивации Azure и службах Azure Site Recovery.
 
 > [!NOTE]
 > В Azure предусмотрены две модели развертывания, позволяющие создавать ресурсы и работать с ними: [модель развертывания с помощью Resource Manager и классическая модель](../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование виртуальных машин, созданных с помощью модели Resource Manager.
@@ -28,6 +28,7 @@ ms.locfileid: "52877876"
 В этой статье описано, как использовать PowerShell для защиты виртуальной машины и восстановления данных из точки восстановления.
 
 ## <a name="concepts"></a>Основные понятия
+
 Если вы не знакомы со службой архивации Azure, общие сведения о службе см. в статье [Что такое служба архивации Azure?](backup-introduction-to-azure-backup.md) Перед началом работы убедитесь, что вам известны предварительные требования для работы со службой архивации Azure и ограничения, применяемые к текущему решению для архивации виртуальных машин.
 
 Чтобы эффективно использовать PowerShell, необходимо понимать иерархию объектов и знать, с чего следует начать.
@@ -43,7 +44,7 @@ ms.locfileid: "52877876"
 1. [Скачайте последнюю версию PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) (требуется версия 1.4.0 или более поздняя)
 
 2. Чтобы получить список доступных командлетов PowerShell для службы архивации Azure, введите следующую команду:
-   
+
     ```powershell
     Get-Command *azurermrecoveryservices*
     ```    
@@ -326,7 +327,7 @@ $rp[0]
 
 Вы должны увидеть результат, аналогичный приведенному ниже.
 
-```
+```powershell
 RecoveryPointAdditionalInfo :
 SourceVMStorageType         : NormalStorage
 Name                        : 15260861925810
@@ -350,6 +351,7 @@ BackupManagementType        : AzureVM
 $restorejob = Restore-AzureRmRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName "DestAccount" -StorageAccountResourceGroupName "DestRG"
 $restorejob
 ```
+
 #### <a name="restore-managed-disks"></a>Восстановление управляемых дисков
 
 > [!NOTE]
@@ -359,16 +361,15 @@ $restorejob
 
 Укажите дополнительный параметр **TargetResourceGroupName** для указания группы ресурсов, в которой будут восстановлены управляемые диски.
 
-
 ```powershell
 $restorejob = Restore-AzureRmRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName "DestAccount" -StorageAccountResourceGroupName "DestRG" -TargetResourceGroupName "DestRGforManagedDisks"
 ```
 
 Файл **VMConfig.JSON** будет восстановлен в учетной записи хранения, а управляемые диски — в указанной целевой группе ресурсов.
 
-
 Вы должны увидеть результат, аналогичный приведенному ниже.
-```
+
+```powershell
 WorkloadName     Operation          Status               StartTime                 EndTime            JobID
 ------------     ---------          ------               ---------                 -------          ----------
 V2VM              Restore           InProgress           4/23/2016 5:00:30 PM                        cf4b3ef5-2fac-4c8e-a215-d2eba4124f27
@@ -397,6 +398,27 @@ $details = Get-AzureRmRecoveryServicesBackupJobDetails -Job $restorejob
 > При создании зашифрованных виртуальных машин с помощью восстановленных дисков у роли Azure должно быть разрешение на выполнение действия **Microsoft.KeyVault/vaults/deploy/action**. Если у роли нет этого разрешения, создайте пользовательскую роль с этим действием. Дополнительные сведения см. в разделе [Пользовательские роли в Azure RBAC](../role-based-access-control/custom-roles.md).
 >
 >
+
+> [!NOTE]
+> После восстановления дисков можно получить шаблон развертывания, который можно использовать непосредственно для создания виртуальной машины. Для создания управляемых или неуправляемых и зашифрованных или незашифрованных виртуальных машин больше не используются разные командлеты PS.
+
+В сведениях о результирующем задании указан URI шаблона, который можно запросить и развернуть.
+
+```powershell
+   $properties = $details.properties
+   $templateBlobURI = $properties["Template Blob Uri"]
+```
+
+Чтобы создать виртуальную машину, просто разверните шаблон, как описано [здесь](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy#deploy-a-template-from-an-external-source).
+
+```powershell
+New-AzureRmResourceGroupDeployment -Name ExampleDeployment ResourceGroupName ExampleResourceGroup -TemplateUri $templateBlobURI -storageAccountType Standard_GRS
+```
+
+В следующем разделе перечислены шаги, необходимые для создания виртуальной машины с помощью файла VMConfig.
+
+> [!NOTE]
+> Для создания виртуальной машины настоятельно рекомендуется использовать шаблон развертывания, описанный выше. Действия, указанные в этом разделе (пункты 1–6), скоро перестанут использоваться.
 
 1. Запросите свойства восстановленного диска для получения сведений о задании.
 
@@ -476,14 +498,14 @@ $details = Get-AzureRmRecoveryServicesBackupJobDetails -Job $restorejob
    * **Управляемые и незашифрованные виртуальные машины**. Для управляемых незашифрованных виртуальных машин подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
    * **Управляемые и зашифрованные виртуальные машины (только BEK)**. Для управляемых виртуальных машин, зашифрованных только с помощью BEK, подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
-   
-      Используйте следующую команду, чтобы вручную включить шифрование для дисков данных.
+
+     Используйте следующую команду, чтобы вручную включить шифрование для дисков данных.
 
        ```powershell
        Set-AzureRmVMDiskEncryptionExtension -ResourceGroupName $RG -VMName $vm -AadClientID $aadClientID -AadClientSecret $aadClientSecret -DiskEncryptionKeyVaultUrl $dekUrl -DiskEncryptionKeyVaultId $keyVaultId -VolumeType Data
        ```
 
-   * **Управляемые и зашифрованные виртуальные машины (BEK и KEK)**. Для управляемых виртуальных машин, зашифрованных с помощью BEK и KEK, подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md). 
+   * **Управляемые и зашифрованные виртуальные машины (BEK и KEK)**. Для управляемых виртуальных машин, зашифрованных с помощью BEK и KEK, подключите восстановленные управляемые диски. Более подробные сведения см. в статье [Подключение диска данных к виртуальной машине Windows с помощью PowerShell](../virtual-machines/windows/attach-disk-ps.md).
 
       Используйте следующую команду, чтобы вручную включить шифрование для дисков данных.
 
@@ -520,7 +542,6 @@ $details = Get-AzureRmRecoveryServicesBackupJobDetails -Job $restorejob
 * Подключение дисков точки восстановления
 * Копирование необходимых файлов.
 * Отключение диска.
-
 
 ### <a name="select-the-vm"></a>Выбор виртуальной машины.
 
@@ -575,7 +596,7 @@ Get-AzureRmRecoveryServicesBackupRPMountScript -RecoveryPoint $rp[0]
 
 Вы должны увидеть результат, аналогичный приведенному ниже.
 
-```
+```powershell
 OsType  Password        Filename
 ------  --------        --------
 Windows e3632984e51f496 V2VM_wus2_8287309959960546283_451516692429_cbd6061f7fc543c489f1974d33659fed07a6e0c2e08740.exe

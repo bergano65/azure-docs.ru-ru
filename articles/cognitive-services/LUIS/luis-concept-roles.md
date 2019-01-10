@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
-ms.date: 09/10/2018
+ms.date: 12/17/2018
 ms.author: diberry
-ms.openlocfilehash: dd11c2c7062d09c522c46770e8dba6d6eb0ac1e9
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: cb155486365ffa1beb4657e2d9cc56fcf143b624
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53105570"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53547751"
 ---
 # <a name="entity-roles-in-patterns-are-contextual-subtypes"></a>Роли сущностей в шаблонах — это контекстно-зависимые подтипы
 Роли — это именованные, контекстно-зависимые подтипы сущности, которые используется только в [шаблонах](luis-concept-patterns.md).
@@ -45,6 +45,16 @@ ms.locfileid: "53105570"
 
 
 [!INCLUDE [H2 Roles versus hierarchical entities](../../../includes/cognitive-services-luis-hier-roles.md)] 
+
+## <a name="example-role-for-entities"></a>Пример роли для сущностей
+
+Роль представляет собой лишь контекстно определяемое расположение сущности в высказывании. Это наиболее эффективно в том случае, если высказывание содержит несколько типов сущностей. Самый простой пример для любого типа сущности — провести различие между исходным и целевым расположениями. Расположение может быть представлено в виде сущностей различных типов. 
+
+Примеры использования — это перевод сотрудника из одного отдела в другой, причем каждый отдел представляет собой элемент списка. Например:  
+
+`Move [PersonName] from [Department:from] to [Department:to]`. 
+
+В возвращенном прогнозе обе сущности будут возвращены в ответе JSON и каждая сущность будет включать имя роли. 
 
 ## <a name="roles-with-prebuilt-entities"></a>Роли с предварительно созданными сущностями
 

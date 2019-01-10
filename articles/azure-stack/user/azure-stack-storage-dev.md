@@ -4,17 +4,17 @@ description: Руководство по началу работы со сред
 services: azure-stack
 author: mattbriggs
 ms.author: mabrigg
-ms.date: 11/05/2018
+ms.date: 12/03/2018
 ms.topic: get-started-article
 ms.service: azure-stack
 manager: femila
 ms.reviewer: xiaofmao
-ms.openlocfilehash: a218cf9b3d89236128c83d8b879691940e432a55
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 56814cc44874fe0c169e5fb51dc6cbff5a225231
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53341564"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53727859"
 ---
 # <a name="get-started-with-azure-stack-storage-development-tools"></a>Начало работы со средствами разработки хранилища Azure Stack
 
@@ -29,9 +29,9 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
 ## <a name="azure-client-libraries"></a>Клиентские библиотеки Azure
 
-Поддерживаемые версии REST API для хранилища Azure Stack: 2017-04-17, 2016-05-31, 2015-12-11, 2015-07-08, 2015-04-05 (обновление 1802 или более новые версии), а также 2015-04-05 (предыдущие версии). Конечные точки Azure Stack не имеют полного соответствия с последней версией REST API службы хранилища Azure. Для клиентских библиотек хранилища вам необходимо знать версию, совместимую с REST API.
+Для клиентских библиотек хранилища вам необходимо знать версию, совместимую с REST API. Необходимо также указать конечную точку Azure Stack в коде.
 
-### <a name="1802-update-or-newer-versions"></a>Обновление 1802 или более новые версии
+### <a name="1811-update-or-newer-versions"></a>Обновление 1811 или более новые версии
 
 | Клиентская библиотека | Поддерживаемая версия Azure Stack | Ссылка | Спецификация конечной точки |
 |----------------|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------|
@@ -49,18 +49,18 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
 1. Создайте файл с именем **composer.json** в корневом каталоге проекта со следующим кодом:
 
-  ```php
+    ```json
     {
       "require": {
-      "Microsoft/azure-storage-blob":"1.0.0"
+      "Microsoft/azure-storage-blob":"1.2.0"
       }
     }
-  ```
+    ```
 
 2. Скачайте файл [composer.phar](http://getcomposer.org/composer.phar) в корневой каталог проекта.
 3. Выполните команду `php composer.phar install`.
 
-### <a name="previous-versions"></a>Предыдущие версии
+### <a name="previous-versions-1802-to-1809-update"></a>Предыдущие версии (обновления 1802–1809)
 
 |Клиентская библиотека|Поддерживаемая версия Azure Stack|Ссылка|Спецификация конечной точки|
 |---------|---------|---------|---------|
@@ -74,19 +74,19 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
 #### <a name="install-php-client-via-composer---previous"></a>Установка клиента PHP через компоновщик — предыдущая версия
 
-Установка через компоновщик:
+Для установки через компоновщик сделайте следующее (возьмите для примера большой двоичный объект).
 
 1. Создайте файл с именем **composer.json** в корневом каталоге проекта со следующим кодом:
 
-  ```php
+  ```json
     {
-          "require":{
-          "Microsoft/azure-storage":"0.15.0"
-          }
+      "require": {
+      "Microsoft/azure-storage-blob":"1.0.0"
+      }
     }
   ```
 
-2. Скачайте [composer.phar](http://getcomposer.org/composer.phar) в корневой каталог проекта.
+2. Скачайте файл [composer.phar](http://getcomposer.org/composer.phar) в корневой каталог проекта.
 3. Выполните команду `php composer.phar install`.
 
 ## <a name="endpoint-declaration"></a>Объявление конечной точки
@@ -101,7 +101,7 @@ Microsoft Azure Stack предоставляет набор служб хран�
 
 Для Azure Stack суффикс конечной точки указан в файле app.config:
 
-```
+```xml
 <add key="StorageConnectionString"
 value="DefaultEndpointsProtocol=https;AccountName=myaccount;AccountKey=mykey;
 EndpointSuffix=local.azurestack.external;" />
@@ -111,7 +111,7 @@ EndpointSuffix=local.azurestack.external;" />
 
 Для Azure Stack суффикс конечной точки указывается в настройке строки подключения:
 
-```
+```java
 public static final String storageConnectionString =
     "DefaultEndpointsProtocol=http;" +
     "AccountName=your_storage_account;" +
@@ -123,7 +123,7 @@ public static final String storageConnectionString =
 
 Для Azure Stack суффикс конечной точки указан в экземпляре объявления:
 
-```
+```nodejs
 var blobSvc = azure.createBlobService('myaccount', 'mykey',
 'myaccount.blob.local.azurestack.external');
 ```
@@ -132,7 +132,7 @@ var blobSvc = azure.createBlobService('myaccount', 'mykey',
 
 Для Azure Stack суффикс конечной точки указывается в настройке строки подключения:
 
-```
+```cpp
 const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;
 AccountName=your_storage_account;
 AccountKey=your_storage_account_key;
@@ -143,7 +143,7 @@ EndpointSuffix=local.azurestack.external"));
 
 Для Azure Stack суффикс конечной точки указывается в настройке строки подключения:
 
-```
+```php
 $connectionString = 'BlobEndpoint=http://<storage account name>.blob.local.azurestack.external/;
 QueueEndpoint=http:// <storage account name>.queue.local.azurestack.external/;
 TableEndpoint=http:// <storage account name>.table.local.azurestack.external/;
@@ -154,7 +154,7 @@ AccountName=<storage account name>;AccountKey=<storage account key>'
 
 Для Azure Stack суффикс конечной точки указан в экземпляре объявления:
 
-```
+```python
 block_blob_service = BlockBlobService(account_name='myaccount',
 account_key='mykey',
 endpoint_suffix='local.azurestack.external')
@@ -164,7 +164,7 @@ endpoint_suffix='local.azurestack.external')
 
 Для Azure Stack суффикс конечной точки указывается в настройке строки подключения:
 
-```
+```ruby
 set
 AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;
 AccountName=myaccount;

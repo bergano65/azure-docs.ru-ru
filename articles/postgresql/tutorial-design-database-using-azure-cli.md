@@ -1,24 +1,21 @@
 ---
-title: Руководство по проектированию службы "База данных Azure для PostgreSQL" с помощью Azure CLI
+title: Руководство. Разработка базы данных Azure для PostgreSQL в интерфейсе командной строки Azure
 description: Это руководство содержит сведения о создании, настройке первого сервера службы "База данных Azure для PostgreSQL" и выполнении запросов к нему с помощью Azure CLI.
-services: postgresql
 author: rachel-msft
 ms.author: raagyema
-manager: kfile
-editor: jasonwhowell
 ms.service: postgresql
 ms.custom: mvc
-ms.devlang: azure-cli
+ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 04/01/2018
-ms.openlocfilehash: c04eede63df50359af55f3956041df10fa2d075e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 03c9d647c98122b63b81baa453e0cccdf951901a
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46982347"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53547326"
 ---
-# <a name="tutorial-design-an-azure-database-for-postgresql-using-azure-cli"></a>Руководство по проектированию службы "База данных Azure для PostgreSQL" с помощью Azure CLI 
+# <a name="tutorial-design-an-azure-database-for-postgresql-using-azure-cli"></a>Руководство. Разработка базы данных Azure для PostgreSQL в интерфейсе командной строки Azure 
 Из этого руководства вы узнаете, как с помощью Azure CLI (интерфейса командной строки) и других служебных программ выполнять следующие операции:
 > [!div class="checklist"]
 > * Создание сервера базы данных Azure для PostgreSQL
@@ -195,9 +192,9 @@ az postgres server restore --resource-group myresourcegroup --name mydemoserver-
 ```
 
 Для команды `az postgres server restore` необходимо настроить следующие параметры:
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
 | restore-point-in-time | 2017-04-13T13:59:00Z | Выберите точку во времени, до которой необходимо выполнить восстановление. Значения даты и времени должны находиться в пределах срока хранения резервной копии исходного сервера. Используйте формат даты и времени ISO8601. Например, вы можете использовать свой местный часовой пояс, например `2017-04-13T05:59:00-08:00`, или использовать формат UTC Zulu `2017-04-13T13:59:00Z`. |
 | source-server | mydemoserver | Имя или идентификатор исходного сервера, с которого необходимо выполнить восстановление. |
@@ -218,4 +215,4 @@ az postgres server restore --resource-group myresourcegroup --name mydemoserver-
 > * Обновление данных
 > * восстановление данных.
 
-Чтобы узнать, как выполнять похожие задачи с помощью портала Azure, см. сведения в руководстве [Проектирование первой базы данных Azure для PostgreSQL с помощью портала Azure](tutorial-design-database-using-azure-portal.md).
+Сведения о том, как выполнять похожие задачи с помощью портала Azure, см. в статье [Руководство по проектированию службы "База данных Azure для PostgreSQL" с помощью портала Azure](tutorial-design-database-using-azure-portal.md)

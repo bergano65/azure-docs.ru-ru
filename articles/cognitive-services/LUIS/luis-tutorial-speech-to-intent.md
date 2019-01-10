@@ -11,14 +11,14 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 1bc3b9e016bed59f6453c26371cce7bd089568aa
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 8e664e26a2cafc2f0b32ebea0f019918426d956c
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53162637"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53714586"
 ---
-# <a name="integrate-speech-service"></a>Интеграция службы распознавания речи
+# <a name="integrate-speech-service-with-your-language-understanding-app"></a>Интеграция службы "Речь" с приложением службы "Распознавание речи"
 [Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/) позволяет использовать один запрос для получения аудио и возврата объектов JSON с предсказаниями LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS. В этом проекте используется уже включенный в качестве ссылки пакет [NuGet](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/) для распознавания речи. 
 
 Для работы с этой статьей требуется бесплатная учетная запись для веб-сайта [LUIS][LUIS], в которую вы импортируете приложение.
@@ -27,7 +27,7 @@ ms.locfileid: "53162637"
 На портале Azure [создайте](luis-how-to-azure-subscription.md#create-luis-endpoint-key) ключ **службы "Распознавание речи"** (LUIS). 
 
 ## <a name="import-human-resources-luis-app"></a>Импорт приложения LUIS Human Resources
-Намерения и фразы для этой статьи взяты из приложения LUIS Human Resources, доступного в репозитории GitHub [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples). Скачайте файл [HumanResources.json](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/HumanResources.json), сохраните его с расширением `.json`, а затем — [импортируйте](luis-how-to-start-new-app.md#import-new-app) в LUIS. 
+Намерения и фразы для этой статьи взяты из приложения LUIS Human Resources, доступного в репозитории GitHub [Azure-Samples](https://github.com/Azure-Samples/cognitive-services-language-understanding). Скачайте файл [HumanResources.json](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/HumanResources.json), сохраните его с расширением `.json`, а затем — [импортируйте](luis-how-to-start-new-app.md#import-new-app) в LUIS. 
 
 Это приложение имеет намерения, сущности и фразы, относящиеся к кадровым ресурсам. Ниже приведены примеры фраз.
 
@@ -62,7 +62,7 @@ ms.locfileid: "53162637"
 В этой статье используется звуковое устройство на вашем компьютере. Это может быть гарнитура с микрофоном или встроенное звуковое устройство. Чтобы ваша речь обнаруживалась на звуковом устройстве, проверьте уровни входного аудиосигнала и определите, следует ли говорить громче, чем обычно. 
 
 ## <a name="download-the-luis-sample-project"></a>Загрузка примера проекта LUIS
- Клонируйте или загрузите репозиторий [LUIS-Samples](https://github.com/Microsoft/LUIS-Samples). Откройте [проект преобразование речи в намерения](https://github.com/Microsoft/LUIS-Samples/tree/master/documentation-samples/tutorial-speech-intent-recognition) в Visual Studio и восстановите пакеты NuGet. Файл решения VS имеет путь .\LUIS-Samples-master\documentation-samples\tutorial-speech-intent-recognition\csharp\csharp_samples.sln.
+ Клонируйте или скачайте репозиторий [Azure-Samples](https://github.com/Azure-Samples/cognitive-services-language-understanding). Откройте [проект преобразование речи в намерения](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/tutorial-speech-intent-recognition) в Visual Studio и восстановите пакеты NuGet. Файл решения VS имеет путь documentation-samples\tutorial-speech-intent-recognition\csharp\csharp_samples.sln.
 
 Пакет SDK для распознавания речи уже включен в качестве ссылки. 
 
@@ -93,7 +93,7 @@ ms.locfileid: "53162637"
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Удалите приложение LUIS HumanResources, если оно больше не нужно. Для этого выберите приложение, а затем на контекстной панели инструментов над списком щелкните **Delete** (Удалить). Во всплывающем диалоговом окне **Delete app?** (Удалить приложение?) нажмите кнопку **ОК**.
 
-Не забудьте удалить каталог LUIS-Samples, когда вы закончите использовать пример кода.
+Не забудьте удалить каталог, когда вы закончите использовать пример кода.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -2,18 +2,18 @@
 title: включение файла
 description: включение файла
 services: cosmos-db
-author: SnehaGunda
+author: rimman
 ms.service: cosmos-db
 ms.topic: include
-ms.date: 04/13/2018
-ms.author: sngun
+ms.date: 12/26/2018
+ms.author: rimman
 ms.custom: include file
-ms.openlocfilehash: 8b5b7126a264d6a15010fc18288f4a4ba1263344
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: b8ade5590ac2edb386d06f63995da8c25c678754
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53286024"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53796177"
 ---
 1. В новом окне войдите на [портал Azure](https://portal.azure.com/).
 2. В меню слева щелкните **Создать ресурс**, **Базы данных**, а затем в разделе **Azure Cosmos DB** выберите **Создать**.
@@ -27,13 +27,13 @@ ms.locfileid: "53286024"
     Подписка|Ваша подписка|Вы подписку Azure, которую нужно использовать для этой учетной записи Azure Cosmos DB. 
     Группа ресурсов|Создание<br><br>Введите уникальное имя, указанное в идентификаторе.|Выберите **Создать**. Затем введите новое имя группы ресурсов для учетной записи. Для удобства используйте то же имя, которое присвоено идентификатору. 
     Имя учетной записи|Введите уникальное имя.|Введите уникальное имя для идентификации вашей учетной записи Azure Cosmos DB. Так как элемент *documents.azure.com* добавляется к указанному вами идентификатору для создания URI, используйте уникальный идентификатор.<br><br>Идентификатор может содержать только строчные буквы, цифры и знак дефиса (-). Длина — от 3 до 31 знака.
-    API|MongoDB|API определяет тип учетной записи, которую нужно создать. Azure Cosmos DB предоставляет пять API: API Core (SQL) для баз данных документов, API Gremlin для графовых баз данных, API MongoDB для баз данных документов, API таблиц Azure и API Cassandra. Сейчас для каждого API требуется создавать отдельную учетную запись. <br><br>Выберите **MongoDB**, так как в этом кратком руководстве создается таблица, которая работает с API MongoDB.|
+    API|API Azure Cosmos DB для MongoDB|API определяет тип учетной записи, которую нужно создать. Azure Cosmos DB предоставляет пять API: API Core (SQL) для баз данных документов, API Gremlin для графовых баз данных, API Azure Cosmos DB для MongoDB для баз данных документов, API таблиц Azure и API Cassandra. Сейчас для каждого API требуется создавать отдельную учетную запись. <br><br>Выберите **MongoDB**, так как в этом кратком руководстве создается таблица, которая работает с API MongoDB.|
     Расположение|Выберите ближайший к пользователям регион|Выберите географическое расположение для размещения учетной записи Azure Cosmos DB. Используйте ближайшее к пользователям расположение, чтобы предоставить им максимально быстрый доступ к данным.
 
     Выберите **Просмотр и создание**. Можете пропустить разделы **Сеть** и **Теги**. 
 
     ![Страница "Новая учетная запись" для Azure Cosmos DB](./media/cosmos-db-create-dbaccount-mongodb/azure-cosmos-db-create-new-account.png)
 
-4. Создание учетной записи займет несколько минут. Дождитесь, пока на портале откроется страница с сообщением **Congratulations! Учетная запись Azure Cosmos DB с API MongoDB создана**.
+4. Создание учетной записи займет несколько минут. Дождитесь, пока на портале откроется страница с сообщением **Congratulations! Your Cosmos account with wire protocol compatibility for MongoDB is ready** (Поздравляем! Ваша учетная запись Cosmos, обеспечивающая совместимость с сетевыми протоколами для MongoDB готова).
 
     ![Область "Уведомления" на портале Azure](./media/cosmos-db-create-dbaccount-mongodb/azure-cosmos-db-account-created.png)

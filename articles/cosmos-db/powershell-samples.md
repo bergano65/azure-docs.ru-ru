@@ -1,20 +1,17 @@
 ---
 title: Примеры Azure PowerShell для Azure Cosmos DB
 description: Примеры Azure PowerShell — это скрипты для создания учетных записей базы данных Azure Cosmos DB и управления ими.
-services: cosmos-db
 author: SnehaGunda
-tags: azure-service-management
 ms.service: cosmos-db
-ms.custom: mvc
 ms.topic: sample
 ms.date: 10/16/2017
 ms.author: sngun
-ms.openlocfilehash: c2bd1ac165e6b17d1bd9604fb1203ae47214278f
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: f4220653b39381c360b4b05ab018262e46288e8f
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52871036"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54043810"
 ---
 # <a name="azure-powershell-samples-for-azure-cosmos-db"></a>Примеры Azure PowerShell для базы данных Azure Cosmos DB
 
@@ -23,11 +20,11 @@ ms.locfileid: "52871036"
 | |  |
 |---|---|
 |**Создание учетной записи Azure Cosmos DB**||
-|[Создание учетной записи API SQL](scripts/create-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API SQL. |
-|[Создание учетной записи API MongoDB](scripts/create-mongodb-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API MongoDB. |
-|[Создание учетной записи API Gremlin](scripts/create-graph-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API Gremlin. |
-|[Создание учетной записи API Cassandra](scripts/create-and-configure-cassandra-database.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API Cassandra. |
-|[Создание учетной записи API таблицы](scripts/create-table-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API таблицы. |
+|[Azure Cosmos DB — создание учетной записи API SQL с помощью PowerShell](scripts/create-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API SQL. |
+|[Azure Cosmos DB — создание учетной записи API MongoDB с помощью PowerShell](scripts/create-mongodb-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Cosmos с помощью API Azure Cosmos DB для MongoDB. |
+|[Azure Cosmos DB — создание учетной записи API Gremlin с помощью PowerShell](scripts/create-graph-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API Gremlin. |
+|[Azure Cosmos DB — создание учетной записи API Cassandra с помощью PowerShell](scripts/create-and-configure-cassandra-database.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API Cassandra. |
+|[Azure Cosmos DB — создание учетной записи API таблиц с помощью PowerShell](scripts/create-table-database-account-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Создание одной учетной записи Azure Cosmos DB для использования с API таблицы. |
 |**Масштабирование Azure Cosmos DB**||
 |[Replicate an Azure Cosmos DB database account in multiple regions and configure failover priorities using PowerShell](scripts/scale-multiregion-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) (Репликация учетной записи базы данных Azure Cosmos DB в нескольких регионах и настройка приоритетов отработки отказа с помощью PowerShell)|Глобально реплицирует данные учетной записи в нескольких регионах с указанным приоритетом отработки отказа.|
 |**Безопасность базы данных Azure Cosmos DB**||

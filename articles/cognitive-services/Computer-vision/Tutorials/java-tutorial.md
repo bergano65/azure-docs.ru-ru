@@ -1,5 +1,5 @@
 ---
-title: Руководство. API компьютерного зрения для Java
+title: Руководство. Выполнение операций с изображениями — Java
 titlesuffix: Azure Cognitive Services
 description: Изучите базовое приложение Java Swing, в котором используется API компьютерного зрения в Azure Cognitive Services. Узнайте, как выполнять распознавание текста, создавать эскизы и работать с визуальными компонентами в изображении.
 services: cognitive-services
@@ -9,15 +9,16 @@ ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: tutorial
 ms.author: kefre
+ms.custom: seodec18
 ms.date: 09/21/2017
-ms.openlocfilehash: 36a8a49ee49636d186ca217ae223b1eebf9bb54b
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: ef1180a8e8c833648e3b61705abf354cb4dfaed3
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49340262"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54117492"
 ---
-# <a name="tutorial-computer-vision-api-java"></a>Руководство. API компьютерного зрения для Java
+# <a name="tutorial-computer-vision-api-java"></a>Руководство. API компьютерного зрения c Java
 
 В этом руководстве демонстрируются функции REST API компьютерного зрения в Azure Cognitive Services.
 
@@ -777,7 +778,7 @@ ms.locfileid: "49340262"
             
             // Check for success.
             if (textResponse.getStatusLine().getStatusCode() != 202) {
-                // An error occured. Return the JSON error message.
+                // An error occurred. Return the JSON error message.
                 HttpEntity entity = textResponse.getEntity();
                 String jsonString = EntityUtils.toString(entity);
                 return new JSONObject(jsonString);

@@ -3,24 +3,22 @@ title: Настройка SSL-соединений для безопасного
 description: Инструкции по настройке базы данных Azure для MariaDB и связанных приложений для правильного использования SSL-соединений
 author: ajlam
 ms.author: andrela
-editor: jasonwhowell
-services: mariadb
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 00e8479eab927acccc8f797311a0a2d440bb96da
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 4bf18a44255903df09aae3382c0eb35a2a55eea5
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46961677"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53541818"
 ---
 # <a name="configure-ssl-connectivity-in-your-application-to-securely-connect-to-azure-database-for-mariadb"></a>Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MariaDB
 База данных Azure для MariaDB поддерживает подключение сервера базы данных Azure для MariaDB к клиентским приложениям с помощью протокола SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
 
 ## <a name="obtain-ssl-certificate"></a>Получение SSL-сертификата
 Скачайте сертификат, который необходим для взаимодействия с сервером базы данных Azure для MariaDB по протоколу SSL, со страницы [https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem](https://www.digicert.com/CACerts/BaltimoreCyberTrustRoot.crt.pem) и сохраните файл сертификата на локальном диске (в этом руководстве для примера мы использовали папку C:\SSL).
-**Для браузеров Microsoft Internet Explorer и Microsoft Edge:** по завершении скачивания переименуйте сертификат в BaltimoreCyberTrustRoot.crt.pem.
+**Для браузеров Microsoft Internet Explorer и Microsoft Edge:** после завершения скачивания переименуйте сертификат в BaltimoreCyberTrustRoot.crt.pem.
 
 ## <a name="bind-ssl"></a>Привязка SSL
 ### <a name="connecting-to-server-using-the-mysql-workbench-over-ssl"></a>Подключение к серверу с помощью MySQL Workbench по протоколу SSL
@@ -49,7 +47,7 @@ az mariadb server update --resource-group myresource --name mydemoserver --ssl-e
 ```sql
 status
 ```
-Убедитесь, что соединение зашифровано, просмотрев выходные данные, в которых должно отображаться следующее: **SSL: используемый шифр — AES256 SHA**. 
+Убедитесь, что подключение зашифровано, просмотрев выходные данные. Они должны содержать следующее.  **SSL. Используемый алгоритм шифрования: AES256-SHA** 
 
 ## <a name="sample-code"></a>Пример кода
 Чтобы установить безопасное подключение приложения к базе данных Azure для MariaDB по протоколу SSL, изучите приведенные ниже примеры кода.

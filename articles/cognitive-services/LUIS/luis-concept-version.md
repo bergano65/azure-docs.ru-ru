@@ -1,7 +1,7 @@
 ---
 title: Управление версиями
 titleSuffix: Language Understanding - Azure Cognitive Services
-description: Узнайте, как использовать версии для управления изменениями в службе "Распознавание речи" (LUIS).
+description: Версии в LUIS аналогичны версиям в традиционном программировании. Каждая версия является моментальным снимком приложения. Перед внесением изменений в приложение создайте новую версию. Перейти к точному моментальному снимку приложения гораздо проще, чем пытаться по шагам вернуть намерение и фразы приложения в предыдущее состояние.
 services: cognitive-services
 author: diberry
 manager: cgronlun
@@ -9,16 +9,19 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
-ms.date: 09/10/2018
+ms.date: 12/18/2018
 ms.author: diberry
-ms.openlocfilehash: 3dae1256e93bb15777225ada742539c5a0ebdccc
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: 522f1cff2d735081daecc8be6384badcd378fd75
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53015574"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53599592"
 ---
-# <a name="versions"></a>Версии
+# <a name="understand-how-and-when-to-use-a-luis-version"></a>Основные принципы работы с версиями LUIS
+
+Версии в LUIS аналогичны версиям в традиционном программировании. Каждая версия является моментальным снимком приложения. Перед внесением изменений в приложение создайте новую версию. Перейти к точному моментальному снимку приложения гораздо проще, чем пытаться по шагам вернуть намерение и фразы приложения в предыдущее состояние. 
+
 Создавайте разные модели одного приложения с помощью [версий](luis-how-to-manage-versions.md). 
 
 ## <a name="version-id"></a>ИД версии

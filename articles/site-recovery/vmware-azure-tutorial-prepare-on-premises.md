@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 11/27/2018
+ms.date: 12/31/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: da5643f707a2f891fcf6663ec88f5a5dff40ac86
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 505acdde07c23654ddd3875fa600046a67e04aea
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52846646"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53970820"
 ---
 # <a name="prepare-on-premises-vmware-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов VMware для аварийного восстановления в Azure
 
@@ -67,8 +67,8 @@ Site Recovery требуется доступ к серверам VMware, что
 
 Подготовьте домен или локальную учетную запись с этими разрешениями для установки на виртуальной машине.
 
-- **Виртуальные машины Windows**. Если при установке Windows на виртуальные машины не используется учетная запись домена, отключите контроль удаленного доступа пользователей на локальном компьютере. Для этого в разделе реестра > **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** добавьте запись DWORD **LocalAccountTokenFilterPolicy** и задайте для нее значение 1.
-- **Виртуальные машины Linux**. Для установки Linux на виртуальные машины необходимо подготовить учетную запись суперпользователя на исходном сервере Linux.
+- **Для виртуальных машин Windows**: Если при установке на виртуальные машины Windows не используется учетная запись домена, отключите контроль удаленного доступа пользователей на локальном компьютере. Для этого в разделе реестра > **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** добавьте запись DWORD **LocalAccountTokenFilterPolicy** и задайте для нее значение 1.
+- **Для виртуальных машин Linux**: Для установки на виртуальные машины Linux необходимо подготовить корневую учетную запись на исходном сервере Linux.
 
 
 ## <a name="check-vmware-requirements"></a>Проверка соответствия требованиям к VMware
@@ -80,6 +80,7 @@ Site Recovery требуется доступ к серверам VMware, что
 3. Проверьте поддержку локальных [сетей](vmware-physical-azure-support-matrix.md#network) и [хранилищ](vmware-physical-azure-support-matrix.md#storage). 
 4. Проверьте возможности, которые поддерживаются для [сети Azure](vmware-physical-azure-support-matrix.md#azure-vm-network-after-failover), [хранилища](vmware-physical-azure-support-matrix.md#azure-storage) и [вычислительных ресурсов](vmware-physical-azure-support-matrix.md#azure-compute) после отработки отказа.
 5. Локальные виртуальные машины, которые реплицируются в Azure, должны соответствовать [требованиям к виртуальным машинам Azure](vmware-physical-azure-support-matrix.md#azure-vm-requirements).
+6. На виртуальная машинах Linux имя устройства или точки подключения должно быть уникальным. Имена устройств или точек подключения не должны повторяться с изменением регистра. Например, нельзя называть два устройства на одной виртуальной машине как *device1* и *Device1*.
 
 
 ## <a name="prepare-to-connect-to-azure-vms-after-failover"></a>Подготовка к подключению виртуальных машин Azure после отработки отказа

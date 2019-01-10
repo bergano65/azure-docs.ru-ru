@@ -7,14 +7,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: quickstart
-ms.date: 10/19/2018
+ms.date: 12/18/2018
 ms.author: diberry
-ms.openlocfilehash: c57edd897797d4352706283072aa19444948436b
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 4b4f208524f18b98d44dc3d34e05359445fb2f17
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49644791"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53598316"
 ---
 # <a name="create-train-and-publish-your-qna-maker-knowledge-base"></a>Создание, подготовка и публикация базы знаний QnA Maker
 
@@ -57,9 +57,7 @@ ms.locfileid: "49644791"
 
 11. В правом верхнем углу выберите **Save and train** (Сохранить и обучить), чтобы сохранить изменения и обучить модель QnA Maker. Изменения не вступят в силу, если они не сохранены.
 
-   ![Сохранение и обучение](../media/qnamaker-quickstart-kb/add-qna-pair2.png)
-
-12. В правом верхнем углу выберите **Test** (Тестировать), чтобы проверить, вступили ли в силу внесенные изменения. Введите **Привет** в поле и нажмите клавишу ВВОД. Должен появиться ответ, созданный ранее.
+12. В правом верхнем углу выберите **Test** (Тестировать), чтобы проверить, вступили ли в силу внесенные изменения. Введите `hi there` в поле и нажмите клавишу ВВОД. Должен появиться ответ, созданный ранее.
 
 13. Выберите **Inspect** (Проверить), чтобы более подробно изучить ответ. Окно тестирования используется для проверки изменений, внесенных в базу знаний, перед их публикацией.
 

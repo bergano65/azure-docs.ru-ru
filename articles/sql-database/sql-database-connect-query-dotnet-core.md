@@ -12,16 +12,16 @@ ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
 ms.date: 12/10/2018
-ms.openlocfilehash: 471d2b0b8d98651d4b9ef4e88df0e863715b0c88
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 5f2c8c2a9a2b21a15aa997ff0cc98860ceec76cc
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53341785"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53744842"
 ---
 # <a name="quickstart-use-net-core-c-to-query-an-azure-sql-database"></a>Краткое руководство. Использование .NET Core (C#) для создания запросов к базе данных SQL Azure
 
-В этом кратком руководстве показано, как использовать [.NET Core](https://www.microsoft.com/net/) и код C# для подключения к базе данных SQL Azure, а затем выполнить инструкцию Transact-SQL, чтобы запросить данные.
+При работе с этим кратким руководством вы будете использовать [.NET Core](https://www.microsoft.com/net/) и код C# для подключения к базе данных SQL Azure. Затем вы выполните инструкцию Transact-SQL для запроса данных.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -53,14 +53,14 @@ ms.locfileid: "53341785"
   
 ## <a name="create-a-new-net-core-project"></a>Создание проекта .NET Core
 
-1. Откройте командную строку и создайте папку с именем **sqltest**. Перейдите в эту папку и выполните команду ниже.
+1. Откройте командную строку и создайте папку с именем **sqltest**. Перейдите в эту папку и выполните следующую команду.
 
     ```cmd
     dotnet new console
     ```
-    Она создает файлы проекта нового приложения, включая первоначальный файл кода C# (**Program.cs**), файл конфигурации XML (**sqltest.csproj**) и необходимые двоичные файлы.
+    Эта команда создает файлы проекта нового приложения, включая первоначальный файл кода C# (**Program.cs**), файл конфигурации XML (**sqltest.csproj**) и необходимые двоичные файлы.
 
-2. В текстовом редакторе откройте **sqltest.csproj** и вставьте следующий XML-код между тегами `<Project>`. В результате `System.Data.SqlClient` добавляется как зависимость.
+2. В текстовом редакторе откройте **sqltest.csproj** и вставьте следующий XML-код между тегами `<Project>`. Этот XML-код добавляет `System.Data.SqlClient` как зависимость.
 
     ```xml
     <ItemGroup>

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2017
-ms.openlocfilehash: a8b0884486f86f66ae02c7e7a82fecee43d5ffed
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: c92a55ec1d56b83457167fc2db0bd7897a447852
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53386906"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53974851"
 ---
 # <a name="combine-scaler-and-sparkr-in-hdinsight"></a>Совместное использование ScaleR и SparkR в HDInsight
 
@@ -21,7 +21,7 @@ ms.locfileid: "53386906"
 
 Хотя оба пакета работают поверх механизма выполнения Spark Apache Hadoop, совместное использование данных в памяти для них заблокировано, так как для каждого из них требуются отдельные сеансы Spark. Это будет исправлено в последующих версиях ML Server, а пока временным решением является поддержание неперекрывающихся сеансов Spark и обмен данными с помощью промежуточных файлов. В приведенных в этой статье инструкциях показано, что обеспечить выполнение этих требований достаточно просто.
 
-Этот пример изначально озвучили в докладе Марио Инчиоза (Mario Inchiosa) и Рони Берда (Roni Burd) на конференции Strata 2016 Дополнительные сведения см. в вебинаре [Building a Scalable Data Science Platform with R](http://event.on24.com/eventRegistration/console/EventConsoleNG.jsp?uimode=nextgeneration&eventid=1160288&sessionid=1&key=8F8FB9E2EB1AEE867287CD6757D5BD40&contenttype=A&eventuserid=305999&playerwidth=1000&playerheight=650&caller=previewLobby&text_language_id=en&format=fhaudio) (Создание масштабируемой платформы анализа и обработки данных на основе R).
+Этот пример изначально озвучили в докладе Марио Инчиоза (Mario Inchiosa) и Рони Берда (Roni Burd) на конференции Strata 2016 Дополнительные сведения см. в вебинаре [Building a Scalable Data Science Platform with R](https://event.on24.com/eventRegistration/console/EventConsoleNG.jsp?uimode=nextgeneration&eventid=1160288&sessionid=1&key=8F8FB9E2EB1AEE867287CD6757D5BD40&contenttype=A&eventuserid=305999&playerwidth=1000&playerheight=650&caller=previewLobby&text_language_id=en&format=fhaudio) (Создание масштабируемой платформы анализа и обработки данных на основе R).
 
 Этот код изначально был написан для ML Server под управлением Spark в кластере HDInsight в Azure. Однако понятие совместного использования SparkR и ScaleR в одном скрипте в равной степени применимо к локальным средам.
 
@@ -29,9 +29,9 @@ ms.locfileid: "53386906"
 
 ## <a name="the-airline-and-weather-datasets"></a>Наборы данных об авиакомпаниях и погоде
 
-Данные о полетах взяты из [архива правительства США](http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236). Их можно получить из файла [AirOnTimeCSV.zip](http://packages.revolutionanalytics.com/datasets/AirOnTime87to12/AirOnTimeCSV.zip).
+Данные о полетах взяты из [архива правительства США](https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236). Их можно получить из файла [AirOnTimeCSV.zip](https://packages.revolutionanalytics.com/datasets/AirOnTime87to12/AirOnTimeCSV.zip).
 
-Данные о погоде можно скачать как ZIP-файлы в необработанном виде по месяцам из [репозитория Национального управления океанических и атмосферных исследований](http://www.ncdc.noaa.gov/orders/qclcd/). Для этого примера загрузите данные за период с мая 2007 г. по декабрь 2012 г. Используйте почасовые файлы данных и файл `YYYYMMMstation.txt` внутри каждого из ZIP-архивов. 
+Данные о погоде можно скачать как ZIP-файлы в необработанном виде по месяцам из [репозитория Национального управления океанических и атмосферных исследований](https://www.ncdc.noaa.gov/orders/qclcd/). Для этого примера загрузите данные за период с мая 2007 г. по декабрь 2012 г. Используйте почасовые файлы данных и файл `YYYYMMMstation.txt` внутри каждого из ZIP-архивов. 
 
 ## <a name="setting-up-the-spark-environment"></a>Настройка среды Spark
 
@@ -41,7 +41,7 @@ ms.locfileid: "53386906"
 workDir        <- '~'  
 myNameNode     <- 'default' 
 myPort         <- 0
-inputDataDir   <- 'wasb://hdfs@myAzureAcccount.blob.core.windows.net'
+inputDataDir   <- 'wasb://hdfs@myAzureAccount.blob.core.windows.net'
 hdfsFS         <- RxHdfsFileSystem(hostName=myNameNode, port=myPort)
 
 # create a persistent Spark session to reduce startup times 
@@ -535,7 +535,7 @@ logmsg(paste('Elapsed time=',sprintf('%6.2f',elapsed),'(sec)\n\n'))
 
 ## <a name="next-steps-and-more-information"></a>Дальнейшие действия и дополнительные сведения
 
-- Дополнительные сведения об использовании ML Server в Apache Spark см. в этом [руководстве по началу работы](https://msdn.microsoft.com/microsoft-r/scaler-spark-getting-started).
+- Дополнительные сведения об использовании ML Server в Apache Spark см. в [руководстве по началу работы](https://msdn.microsoft.com/microsoft-r/scaler-spark-getting-started).
 
 - Общие сведения об ML Server см. в статье о [начале работы с R](https://msdn.microsoft.com/microsoft-r/microsoft-r-get-started-node).
 
@@ -543,6 +543,6 @@ logmsg(paste('Elapsed time=',sprintf('%6.2f',elapsed),'(sec)\n\n'))
 
 Дополнительные сведения об использовании SparkR см. в следующих статьях:
 
-- [SparkR (R on Spark)](https://spark.apache.org/docs/2.1.0/sparkr.html) (SparkR (язык R в Spark))
+- [Документ Apache SparkR](https://spark.apache.org/docs/2.1.0/sparkr.html).
 
-- [SparkR Overview](https://docs.databricks.com/spark/latest/sparkr/overview.html) (Общие сведения о SparkR) на сайте Databricks
+- [Общие сведения о SparkR](https://docs.databricks.com/spark/latest/sparkr/overview.html) на сайте Databricks.

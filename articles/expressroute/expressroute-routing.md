@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: ganesr
 ms.custom: seodec18
-ms.openlocfilehash: 73dc4b14214c10966dca1a6cd7ebd41af019f640
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 5dde36bb8710190627a8780ed740957e62a57da0
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406561"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53994587"
 ---
 # <a name="expressroute-routing-requirements"></a>Требования ExpressRoute к маршрутизации
 Для подключения к облачным службам Майкрософт с помощью ExpressRoute необходимо настроить маршрутизацию и управлять ею. Некоторые поставщики услуг подключения предлагают настройку маршрутизации как управляемой службы и управление этой службой. Узнайте у поставщика услуг подключения, предоставляет ли он такую услугу. В противном случае необходимо выполнить требования, указанные ниже:

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по извлечению печатного текста (OCR) в Компьютерном зрении (REST, Python)
+title: Краткое руководство. Извлечение печатного текста — REST, Python
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как, используя API компьютерного зрения, извлекать печатный текст из изображения с помощью Python.
 services: cognitive-services
@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: 8a435df6c30f625752339bfdf89884ce4a77ddde
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.custom: seodec18
+ms.openlocfilehash: 4c89ab58e214080855d9ce707ab60a8462ae930c
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51853801"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53583533"
 ---
-# <a name="quickstart-extract-printed-text-ocr-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство по извлечению печатного текста (OCR) с помощью REST API и Python в Компьютерном зрении
+# <a name="quickstart-extract-printed-text-ocr-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство. Извлечение печатного текста (OCR) с помощью REST API и Python в службе "Компьютерное зрение"
 
 Из этого краткого руководства вы узнаете, как извлекать печатный текст с оптическим распознаванием символов из изображения с помощью REST API компьютерного зрения. С помощью метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) можно определить печатный текст на изображении и извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
 

@@ -15,16 +15,16 @@ ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: c7d01d4c079eacfd2af1ebad4ac41d70f792a0bb
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: ae37befe2ae2220feaf17ae4354b6fc780147f7e
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53253587"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53634241"
 ---
 # <a name="create-a-static-html-web-app-in-azure"></a>Создание статического веб-приложения HTML в Azure
 
-[Веб-приложения Azure](app-service-web-overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом кратком руководстве объясняется, как развернуть базовый сайт HTML+CSS в веб-приложениях Azure. Действия в этом руководстве выполняются в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), но эти же команды можно выполнить локально в [Azure CLI](/cli/azure/install-azure-cli).
+[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом кратком руководстве объясняется, как развернуть простейший сайт HTML+CSS в Служба приложений Azure. Действия в этом руководстве выполняются в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview), но эти же команды можно выполнить локально в [Azure CLI](/cli/azure/install-azure-cli).
 
 ![Домашняя страница в примере приложения](media/app-service-web-get-started-html/hello-world-in-browser-az.png)
 
@@ -84,7 +84,7 @@ az webapp up --location westeurope --name <app_name>
 
 - создание приложения с указанным именем.
 
-- [Разверните ZIP-файлы](https://docs.microsoft.com/azure/app-service/app-service-deploy-zip) для веб-приложения из текущего рабочего каталога.
+- [Разверните ZIP-файлы](https://docs.microsoft.com/azure/app-service/deploy-zip) для веб-приложения из текущего рабочего каталога.
 
 Выполнение этой команды может занять несколько минут. При выполнении эта команда выводит приблизительно следующие сведения:
 
@@ -106,7 +106,7 @@ az webapp up --location westeurope --name <app_name>
 
 ## <a name="browse-to-the-app"></a>Переход в приложение
 
-В браузере перейдите по URL-адресу веб-приложения Azure: `http://<app_name>.azurewebsites.net`.
+В браузере перейдите по URL-адресу приложения: `http://<app_name>.azurewebsites.net`.
 
 Страница выполняется как веб-приложение службы приложений Azure.
 
@@ -132,13 +132,13 @@ az webapp up --location westeurope --name <app_name>
 
 ![Обновленная домашняя страница примера приложения](media/app-service-web-get-started-html/hello-azure-in-browser-az.png)
 
-## <a name="manage-your-new-azure-web-app"></a>Управление новым веб-приложением Azure
+## <a name="manage-your-new-azure-app"></a>Управление новым приложением Azure
 
 Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления созданным веб-приложением.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/app-service-web-get-started-html/portal1.png)
+![Переход к приложению Azure на портале](./media/app-service-web-get-started-html/portal1.png)
 
 Отобразится страница обзора вашего веб-приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
 

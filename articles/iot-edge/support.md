@@ -4,17 +4,17 @@ description: Узнайте, в каких операционных систем
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 11/07/2018
+ms.date: 12/17/2018
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 3c75f50e40f83a4dc6765ae422fbb2458f40d770
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 6443260de0a8bd8531edb303fa581d281034fef3
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53100193"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555614"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Поддерживаемые Azure IoT Edge системы
 
@@ -44,9 +44,11 @@ Azure IoT Edge работает на большинстве операционн
 Общедоступная предварительная версия
 | Операционная система | AMD64 | ARM32 |
 | ---------------- | ----- | ----- |
-| Windows 10 IoT Core (обновление за апрель 2018 г.) | Yes | Нет  |
-| Windows 10 IoT Enterprise (обновление за апрель 2018 г.) | Yes | Нет  |
-| Windows 10 Server (1803) | Yes | Нет  |
+| Windows 10 IoT Базовая, сборка 17763 | Yes | Нет  |
+| Windows 10, сборка 17763 для контейнеров Windows<br><br>Windows 10, сборка 14393 или более поздняя для контейнеров Linux\* | Yes | Нет  |
+| Windows Server 2019 для контейнеров Windows<br><br>Windows Server 2016 или более поздней версии для контейнеров Linux\* | Yes | Нет  |
+
+\* Корпорация Майкрософт предоставляет пакеты установки для контейнеров Linux на устройствах Windows только для разработки и тестирования. Эта конфигурация не поддерживается для использования в рабочей среде. 
 
 ### <a name="tier-2"></a>Уровень 2
 Системы уровня 2 можно считать совместимыми с Azure IoT Edge, то есть их использование не вызывает особых сложностей. Это означает следующее:

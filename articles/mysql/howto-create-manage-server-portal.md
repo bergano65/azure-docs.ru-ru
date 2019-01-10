@@ -1,20 +1,17 @@
 ---
 title: Создание сервера базы данных Azure для MySQL и управление им с помощью портала Azure
 description: В этой статье описывается, как быстро создать сервер базы данных Azure для MySQL и управлять этим сервером с помощью портала Azure.
-services: mysql
 author: ajlam
 ms.author: andrela
-editor: jasonwhowell
-manager: kfile
 ms.service: mysql
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: 065eb708a1d80b0eac618bd9039a859db6ef1340
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: 39ffe1b71fb002658110c63c825e0515f38e2b9e
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35265590"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53537330"
 ---
 # <a name="create-and-manage-azure-database-for-mysql-server-using-azure-portal"></a>Создание сервера базы данных Azure для MySQL и управление им с помощью портала Azure
 В этом разделе описывается, как быстро создать сервер базы данных Azure для MySQL. Он также содержит сведения о том, как управлять сервером с помощью портала Azure. Управление сервером включает в себя просмотр сведений о сервере и базах данных, сброс пароля, масштабирование ресурсов и удаление сервера.
@@ -113,4 +110,4 @@ ms.locfileid: "35265590"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Создание сервера базы данных Azure для MySQL и управление им с помощью портала Azure](./quickstart-create-mysql-server-database-using-azure-portal.md)
+[Краткое руководство Создание сервера базы данных Azure для MySQL с помощью портала Azure](./quickstart-create-mysql-server-database-using-azure-portal.md)

@@ -8,14 +8,14 @@ ms.topic: quickstart
 ms.date: 10/26/2018
 ms.author: wgries
 ms.component: files
-ms.openlocfilehash: cc94e309db3fd0e97e06b5be5884a0b6e7337cea
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 236a4e4f79e6da89154e1e52bb9f45daf3a54d59
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158981"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53632049"
 ---
-# <a name="quickstart-create-and-manage-azure-file-shares-using-azure-cli"></a>Краткое руководство: создание файловых ресурсов Azure и управление ими с помощью Azure CLI
+# <a name="quickstart-create-and-manage-azure-file-shares-using-azure-cli"></a>Краткое руководство. Создание файловых ресурсов Azure и управление ими с помощью Azure CLI
 В этом руководстве рассматриваются основы работы с [файловыми ресурсами Azure](storage-files-introduction.md) с помощью Azure CLI. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -87,7 +87,7 @@ az storage share create \
 - [Windows](storage-how-to-use-files-windows.md)
 
 ### <a name="using-an-azure-file-share-with-the-file-rest-protocol"></a>Использование общего файлового ресурса Azure с протоколом File REST 
-С протоколом File REST можно работать напрямую (т. е. вручную обрабатывать вызовы HTTP REST), но наиболее распространенным способом использования протокола File REST является использование Azure CLI, [модуля AzureRM PowerShell](storage-how-to-use-files-powershell.md) или пакета SDK для службы хранилища Azure. Все это обеспечивает хорошую оболочку вокруг протокола File REST на языке сценариев или программирования по вашему выбору.  
+С протоколом File REST можно работать напрямую (т. е. вручную обрабатывать вызовы HTTP REST), но чаще всего он используется с помощью Azure CLI, [модуля Azure PowerShell](storage-how-to-use-files-powershell.md) или пакета SDK для службы хранилища Azure. Все это обеспечивает хорошую оболочку вокруг протокола File REST на любом языке скриптов или программирования.  
 
 Ожидается, что в большинстве случаев служба файлов Azure будет использовать общий файловый ресурс Azure по протоколу SMB, так как это позволяет использовать имеющиеся приложения и инструменты, на использование которых у вас должна быть возможность, но есть несколько причин, по которым выгодно использовать File REST API, а не SMB, например:
 
@@ -95,7 +95,7 @@ az storage share create \
 - Вам необходимо выполнить сценарий или приложение из клиента, который не может подключать ресурсы SMB, например локальные клиенты, у которых нет разблокированного порта 445.
 - Вы используете бессерверные ресурсы, такие как [Функции Azure](../../azure-functions/functions-overview.md). 
 
-В следующих примерах показано, как использовать модуль AzureRM PowerShell для управления файловым ресурсом Azure с помощью протокола File REST. 
+В следующих примерах показано, как использовать Azure CLI для управления общим файловым ресурсом Azure с помощью протокола File REST. 
 
 ### <a name="create-a-directory"></a>создать каталог;
 Чтобы создать каталог с именем *myDirectory* в корне файлового ресурса Azure, выполните команду [`az storage directory create`](/cli/azure/storage/directory#az_storage_directory_create).

@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.author: rezas
-ms.openlocfilehash: 9df2e8762d546e6115dc1205548e927cfee7bb60
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: d1214df922e8e656ba2ff566571d878b0031fea9
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53341886"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54000263"
 ---
 # <a name="communicate-with-your-iot-hub-using-the-mqtt-protocol"></a>Взаимодействие с Центром Интернета вещей с помощью протокола MQTT
 
@@ -279,11 +279,12 @@ client.publish("$iothub/twin/PATCH/properties/reported/?$rid=" + rid, twin_repor
 ```json
 {
     "telemetrySendFrequency": "5m",
-    "route": null
+    "route": null,
+    "$version": 8
 }
 ```
 
-В обновлениях свойств значение `null` означает, что компонент объекта JSON удаляется.
+В обновлениях свойств значение `null` означает, что компонент объекта JSON удаляется. Кроме того, обратите внимание, что `$version` содержит новую версию раздела с требуемыми свойствами двойника.
 
 > [!IMPORTANT]
 > Центр Интернета вещей создает уведомления об изменении только в том случае, если устройства подключены. Убедитесь, что выполняется [процедура при повторном подключении устройства][lnk-devguide-twin-reconnection], чтобы требуемые свойства продолжали синхронизироваться между Центром Интернета вещей и приложением для устройства.

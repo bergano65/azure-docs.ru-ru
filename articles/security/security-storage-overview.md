@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/29/2018
 ms.author: terrylan
-ms.openlocfilehash: 63967face89c12f6769d397bd5be78c23bc9f851
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 55686972979c5ac3015802c340cef7dffebdb9bd
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51259145"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53973134"
 ---
 # <a name="azure-storage-security-overview"></a>Общие сведения о безопасности службы хранилища Azure
 
@@ -67,11 +67,11 @@ SAS — это URI, который в своих параметрах запро
 Дополнительные сведения о шифровании на стороне клиента.
 
 * [Client-Side Encryption for Microsoft Azure Storage (Шифрование на стороне клиента для службы хранилища Microsoft Azure)](https://blogs.msdn.microsoft.com/windowsazurestorage/2015/04/28/client-side-encryption-for-microsoft-azure-storage-preview/)
-* [Cloud security controls series: Encrypting Data in Transit (Серия статей об управлении безопасностью в облаке: защита данных при передаче)](https://blogs.microsoft.com/cybertrust/2015/08/10/cloud-security-controls-series-encrypting-data-in-transit/)
+* [Серия "Средства управления безопасностью в облаке". Шифрование данных при передаче](https://cloudblogs.microsoft.com/microsoftsecure/2015/08/10/cloud-security-controls-series-encrypting-data-in-transit/)
 
 ## <a name="encryption-at-rest"></a>Шифрование при хранении
 
-Для многих организаций [шифрование неактивных данных](https://blogs.microsoft.com/cybertrust/2015/09/10/cloud-security-controls-series-encrypting-data-at-rest/) является обязательным шагом для защиты данных, соблюдения требований и обеспечения конфиденциальности данных. В Azure есть три функции, обеспечивающие шифрование неактивных данных.
+Для многих организаций [шифрование неактивных данных](https://cloudblogs.microsoft.com/microsoftsecure/2015/09/10/cloud-security-controls-series-encrypting-data-at-rest/) является обязательным шагом для защиты данных, соблюдения требований и обеспечения конфиденциальности данных. В Azure есть три функции, обеспечивающие шифрование неактивных данных.
 
 * [Шифрование службы хранилища](../storage/common/storage-security-guide.md#encryption-at-rest) позволяет настроить автоматическое шифрование данных, записываемых в службу хранилища Azure.
 * [Шифрование на стороне клиента](../storage/common/storage-security-guide.md#client-side-encryption) также обеспечивает шифрование при хранении.

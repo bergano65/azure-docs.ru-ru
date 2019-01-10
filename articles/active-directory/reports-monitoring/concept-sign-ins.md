@@ -16,12 +16,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: d3705267520087e098e3e2bcc55e677935dc6097
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: 5607dd0f3c682915f1a64edcc5e946491bab5279
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52275339"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53653362"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "52275339"
 * Кроме того, любой пользователь (не администратор) может получить доступ к своим данным о входах. 
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-sign-in-activity"></a>Какие лицензии Azure AD требуются для доступа к действию входа?
-* Для просмотра отчета о всех действиях входа с клиентом должна быть связана лицензия Azure AD Premium.
+* Для просмотра отчета обо всех действиях входа с клиентом должна быть связана лицензия Azure AD Premium. Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md).
 
 ## <a name="sign-ins-report"></a>Отчет о входе
 

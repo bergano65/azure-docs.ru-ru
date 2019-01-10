@@ -1,7 +1,7 @@
 ---
 title: Определение лиц. Компьютерное зрение
 titleSuffix: Azure Cognitive Services
-description: Понятия, связанные с определением лиц с помощью API компьютерного зрения.
+description: Понятия, связанные с функцией определения лиц API компьютерного зрения.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: conceptual
 ms.date: 08/29/2018
 ms.author: pafarley
-ms.openlocfilehash: bf358d1e8f60f989ced8db966bbf0a5179fab25b
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.custom: seodec18
+ms.openlocfilehash: 0c6485bff4ad11aab37139cd2aa2d3660bddac0e
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49342319"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53580545"
 ---
-# <a name="detecting-faces"></a>Распознавание лиц
+# <a name="face-detection-with-computer-vision"></a>Определение лиц с помощью компьютерного зрения
 
 Компьютерное зрение обнаруживает на изображении лица людей и создает прямоугольник для каждого из них, а также указывает пол и возраст. API компьютерного зрения предоставляет подмножество функций, которые можно найти в [API распознавания лиц](/azure/cognitive-services/face/), и вы можете использовать службу "Распознавание лиц" для более детального анализа, такого как идентификация по лицу и определение позы.  
 

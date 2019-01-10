@@ -3,17 +3,15 @@ title: Создание пользователей на сервере базы 
 description: В этой статье описывается создание учетных записей пользователей для взаимодействия с сервером базы данных Azure для MariaDB.
 author: jasonwhowell
 ms.author: jasonh
-editor: jasonwhowell
-services: mariadb
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: 50154a7fee63eb3ff9e08155123f9e5962bbfcf0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 189e122e04d56d28c1e1e94d328569647614a124
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46946122"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53542133"
 ---
 # <a name="create-users-in-azure-database-for-mariadb"></a>Создание пользователей в базе данных Azure для MariaDB 
 В этой статье описывается создание пользователей в базе данных Azure для MariaDB.
@@ -85,6 +83,6 @@ ms.locfileid: "46946122"
 Чтобы получить дополнительные сведения об управлении учетными записями пользователей, ознакомьтесь с [управлением учетными записями пользователей](https://mariadb.com/kb/en/library/user-account-management/), [синтаксисом GRANT](https://mariadb.com/kb/en/library/grant/) и [привилегиями](https://mariadb.com/kb/en/library/grant/#privilege-levels) в документации по MariaDB.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение. Для этого ознакомьтесь с разделом [Создание правил брандмауэра базы данных Azure для MariaDB и управление ими с помощью портала Azure](howto-manage-firewall-portal.md).  
+Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение: [Создание правил брандмауэра базы данных Azure для MariaDB и управление ими на портале Azure](howto-manage-firewall-portal.md).  
 
 <!--or [Azure CLI](howto-manage-firewall-using-cli.md).-->

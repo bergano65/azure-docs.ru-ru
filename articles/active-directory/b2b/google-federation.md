@@ -5,23 +5,23 @@ services: active-directory
 ms.service: active-directory
 ms.component: B2B
 ms.topic: conceptual
-ms.date: 11/07/2018
+ms.date: 12/17/2018
 ms.author: mimart
 author: msmimart
 manager: mtillman
 ms.reviewer: mal
-ms.openlocfilehash: 5bc94b6fe69a9ffec11fcbab952a6f8aa3e2259a
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: 295b7eeebf8d9815aef0b862ee2b3cccbee15ed6
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51569011"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53546748"
 ---
 # <a name="add-google-as-an-identity-provider-for-b2b-guest-users"></a>Добавление Google в качестве поставщика удостоверений для гостевых пользователей B2B
 
 Настроив федерацию с Google, можно разрешить приглашенным пользователям входить в общие приложения и ресурсы с помощью собственных учетных записей Google без необходимости создавать учетные записи Майкрософт (MSA) или Azure AD.  
 > [!NOTE]
-> Ваши гостевые пользователи Google должны входить в систему, используя ссылку, которая содержит контекст клиента, например `https://myapps.microsoft.com/?tenantid=<tenant id>`. Прямые ссылки на приложения и ресурсы также работают, если они содержат контекст клиента. В настоящее время пользователи не могут войти в систему, используя конечные точки, которые не имеют контекста клиента. Например, использование `https://myapps.microsoft.com`, `https://portal.azure.com` или общей конечной точки команды приведет к ошибке.
+> Ваши гостевые пользователи Google должны входить в систему, используя ссылку, которая содержит контекст клиента, например `https://myapps.microsoft.com/<tenant id>`. Прямые ссылки на приложения и ресурсы также работают, если они содержат контекст клиента. В настоящее время пользователи не могут войти в систему, используя конечные точки, которые не имеют контекста клиента. Например, использование `https://myapps.microsoft.com`, `https://portal.azure.com` или общей конечной точки команды приведет к ошибке.
  
 ## <a name="what-is-the-experience-for-the-google-user"></a>Как эта возможность выглядит для пользователя Google?
 Когда вы отправляете приглашение пользователю Google Gmail, гостевой пользователь должен получить доступ к вашим общим приложениям или ресурсам, используя ссылку, которая содержит контекст клиента. Способ взаимодействия с пользователем зависит от того, выполнил ли он вход в Google:
@@ -32,7 +32,7 @@ ms.locfileid: "51569011"
 
 ![Вход с учетными данными Google](media/google-federation/google-sign-in.png)
 
-## <a name="step-1-configure-a-google-developer-project"></a>Шаг 1. Настройка проекта разработчика Google
+## <a name="step-1-configure-a-google-developer-project"></a>Шаг 1. Настройка проекта разработчика Google
 Сначала создайте новый проект в консоли разработчиков Google, чтобы получить идентификатор и секрет клиента, которые впоследствии можно добавить в Azure AD. 
 1. Перейдите к API-интерфейсам Google на странице https://console.developers.google.com и войдите с помощью учетной записи Google. Мы рекомендуем использовать общую учетную запись Google, используемую командой.
 2. Создайте новый проект: на панели мониторинга выберите **Создать проект**, а затем нажмите кнопку **Создать**. На странице "Создание проекта" введите **имя проекта**, а затем нажмите кнопку **Создать**.
@@ -70,7 +70,7 @@ ms.locfileid: "51569011"
 
    ![Получение идентификатора клиента и секрета клиента OAuth](media/google-federation/google-auth-client-id-secret.png)
 
-## <a name="step-2-configure-google-federation-in-azure-ad"></a>Шаг 2. Настройка федерации с Google в Azure AD 
+## <a name="step-2-configure-google-federation-in-azure-ad"></a>Шаг 2. Настройка федерации с Google в Azure AD 
 Теперь необходимо установить идентификатор и секрет клиента Google, введя их на портале Azure AD или с помощью PowerShell. Не забудьте проверить конфигурацию федерации Google. Для этого пригласите себя, используя адрес электронной почты Gmail, и попробуйте активировать приглашение с помощью учетной записи Google, указанной в приглашении. 
 
 #### <a name="to-configure-google-federation-in-the-azure-ad-portal"></a>Настройка федерации с Google на портале Azure AD 
@@ -90,7 +90,7 @@ ms.locfileid: "51569011"
    `New-AzureADMSIdentityProvider -Type Google -Name Google -ClientId [Client ID] -ClientSecret [Client secret]`
  
    > [!NOTE]
-   > Используйте идентификатор и секрет клиента из приложения, созданного в разделе "Шаг 1. Настройка проекта разработчика Google". Дополнительные сведения см. в статье [New-AzureADMSIdentityProvider](https://docs.microsoft.com/powershell/module/azuread/new-azureadmsidentityprovider?view=azureadps-2.0-preview). 
+   > Используйте идентификатор и секрет клиента из приложения, созданного в разделе "Шаг 1: настройка проекта разработчика Google". Дополнительные сведения см. в статье [New-AzureADMSIdentityProvider](https://docs.microsoft.com/powershell/module/azuread/new-azureadmsidentityprovider?view=azureadps-2.0-preview). 
  
 ## <a name="how-do-i-remove-google-federation"></a>Как удалить федерацию с Google?
 Вы можете удалить настройку федерации с Google. Если вы это сделаете, пользователи Google, которые уже активировали свое приглашение, не смогут войти в систему, но вы можете снова предоставить им доступ к своим ресурсам, удалив их из каталога и повторно пригласив их. 

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/10/2018
 ms.author: hrasheed
-ms.openlocfilehash: 768dc4f555ade9483e11c3aec0f4622fe6b441c1
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 9dafe7df3c488dbc6d0c2f27a6265e86eebad41c
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53384209"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53718934"
 ---
 # <a name="script-action-development-with-hdinsight"></a>Разработка действий сценариев с помощью HDInsight
 
@@ -134,7 +134,7 @@ fi
 
 ### <a name="bPS6"></a>Настройка пользовательских компонентов для использования хранилища больших двоичных объектов Azure
 
-Компоненты, устанавливаемые на кластере, могут по умолчанию использовать хранилище распределенной файловой системы (HDFS) Apache Hadoop. В качестве хранилища по умолчанию HDInsight использует хранилище Azure или Data Lake Store. Это обеспечивает совместимую с HDFS файловую систему, которая сохраняет данные даже после удаления кластера. Может потребоваться настроить устанавливаемые компоненты для использования WASB или ADL вместо HDFS.
+Компоненты, устанавливаемые на кластере, могут по умолчанию использовать хранилище распределенной файловой системы (HDFS) Apache Hadoop. В качестве хранилища по умолчанию HDInsight использует хранилище Azure или Data Lake Storage. Это обеспечивает совместимую с HDFS файловую систему, которая сохраняет данные даже после удаления кластера. Может потребоваться настроить устанавливаемые компоненты для использования WASB или ADL вместо HDFS.
 
 Для большинства операций не требуется указывать файловую систему. Пример ниже копирует файл giraph-examples.jar из локальной файловой системы в хранилище кластера.
 
@@ -142,7 +142,7 @@ fi
 hdfs dfs -put /usr/hdp/current/giraph/giraph-examples.jar /example/jars/
 ```
 
-В этом примере команда `hdfs` прозрачно использует хранилище кластера по умолчанию. Для некоторых операций может потребоваться указать URI. Например, `adl:///example/jars` для Data Lake Store или `wasb:///example/jars` для хранилища Azure.
+В этом примере команда `hdfs` прозрачно использует хранилище кластера по умолчанию. Для некоторых операций может потребоваться указать URI. Например, `adl:///example/jars` для Data Lake Storage или `wasb:///example/jars` для хранилища Azure.
 
 ### <a name="bPS7"></a>Запись информации в STDOUT и STDERR
 
@@ -163,7 +163,7 @@ echo "Getting ready to install Foo"
 >&2 echo "An error occurred installing Foo"
 ```
 
-Информация, записываемая в STDOUT, перенаправляется STDERR (2). Дополнительные сведения о перенаправлении операций ввода и вывода см. здесь: [http://www.tldp.org/LDP/abs/html/io-redirection.html](http://www.tldp.org/LDP/abs/html/io-redirection.html).
+Информация, записываемая в STDOUT, перенаправляется STDERR (2). Дополнительные сведения о перенаправлении операций ввода и вывода см. здесь: [https://www.tldp.org/LDP/abs/html/io-redirection.html](https://www.tldp.org/LDP/abs/html/io-redirection.html).
 
 Дополнительные сведения о просмотре журналов, созданных действиями сценариев, см. в статье [Настройка кластеров HDInsight с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md#troubleshooting).
 
@@ -278,17 +278,17 @@ echo "HADOOP_CONF_DIR=/etc/hadoop/conf" | sudo tee -a /etc/environment
 
 * __ресурсе с общедоступным URI__. Например, URL-адрес к данным, хранящимся в OneDrive, Dropbox или других службах размещения файлов.
 
-* __учетной записи Azure Data Lake Store__, связанной с кластером HDInsight. Дополнительные сведения об использовании Azure Data Lake Store с HDInsight см. в руководстве по [ настройке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
+* __Учетная запись Azure Data Lake Storage__, связанная с кластером HDInsight. Дополнительные сведения об использовании Azure Data Lake Storage с HDInsight см. в [кратком руководстве по настройке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
     > [!NOTE]  
-    > Кластер HDInsight субъекта-службы с доступом к Data Lake Store должен иметь доступ к сценарию с правами на чтение.
+    > Кластер HDInsight субъекта-службы с доступом к Data Lake Storage должен иметь доступ к сценарию с правами на чтение.
 
 Ресурсы, используемые сценарием, также должны быть общедоступными.
 
-Сохранение файлов в учетной записи хранения Azure или Azure Data Lake Store поможет обеспечить быстрый доступ к файлам, так как оба хранилища находятся в сети Azure.
+Сохранение файлов в учетной записи хранения Azure или Azure Data Lake Storage поможет обеспечить быстрый доступ к файлам, так как оба хранилища находятся в сети Azure.
 
 > [!NOTE]  
-> Формат универсального кода ресурса (URI), используемый для ссылки на скрипт, отличается в зависимости от используемой службы. Для учетной записи хранения, связанной с кластером HDInsight, используйте `wasb://` или `wasbs://`, для общедоступного универсального кода ресурса (URI) — `http://` или `https://`, а для Data Lake Store — `adl://`.
+> Формат универсального кода ресурса (URI), используемый для ссылки на скрипт, отличается в зависимости от используемой службы. Для учетной записи хранения, связанной с кластером HDInsight, используйте `wasb://` или `wasbs://`, для общедоступного универсального кода ресурса (URI) — `http://` или `https://`, а для Data Lake Storage — `adl://`.
 
 ### <a name="checking-the-operating-system-version"></a>Проверка версии операционной системы
 

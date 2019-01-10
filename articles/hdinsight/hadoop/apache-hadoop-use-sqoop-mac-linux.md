@@ -10,12 +10,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 03/26/2018
-ms.openlocfilehash: 1b6a77e78d3385c9dfd4e43e0e4242c870eb8c57
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: d7df1c65b8588b97a6beb0a4c2428b3c6430c3b2
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53012561"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53635703"
 ---
 # <a name="use-apache-sqoop-to-import-and-export-data-between-apache-hadoop-on-hdinsight-and-sql-database"></a>Использование Apache Sqoop для импорта и экспорта между Apache Hadoop в HDInsight и базой данных SQL
 
@@ -23,10 +23,10 @@ ms.locfileid: "53012561"
 
 Узнайте, как использовать Apache Sqoop для импорта и экспорта между кластером Apache Hadoop в Azure HDInsight и Базой данных SQL Azure или базой данных Microsoft SQL Server. В этом руководстве используется команда `sqoop` ​​непосредственно из головного узла кластера Hadoop. В этом документе вы подключитесь к головному узлу, используя SSH, и выполните команды.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Шаги, описанные в этом документе, можно применять только к кластерам HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
-> [!WARNING]
+> [!WARNING]  
 > В инструкциях в этом документе предполагается, что вы уже создали базу данных SQL Azure с именем `sqooptest`.
 >
 > В этом документе содержатся инструкции T-SQL, используемые для создания таблицы в базе данных SQL и отправки запросов к этой таблице. Эти инструкции можно использовать с базой данных SQL в разных клиентах. Мы рекомендуем использовать следующие клиенты:
@@ -37,7 +37,7 @@ ms.locfileid: "53012561"
 
 ## <a name="create-the-table-in-sql-database"></a>Создание таблицы в базе данных SQL
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Если вы используете кластер HDInsight и базу данных SQL, созданные при изучении руководства [Использование Sqoop с Hadoop в HDInsight](hdinsight-use-sqoop.md), пропустите действия, описанные в этом разделе. База данных и таблица были созданы при выполнении действий, описанных в документе [Использование Sqoop с Hadoop в HDInsight (SSH)](hdinsight-use-sqoop.md).
 
 Используйте клиент SQL для подключения к базе данных `sqooptest` в базе данных SQL. Затем используйте следующую инструкцию T-SQL, чтобы создать таблицу `mobiledata`:
@@ -104,8 +104,8 @@ GO
 
     Поля в данных разделены знаками табуляции, а строки завершаются символом новой строки.
 
-    > [!IMPORTANT]
-    > Путь `wasb:///` применяется к кластерам, которые используют службу хранилища Azure в качестве хранилища данных кластера по умолчанию. Если кластеры используют Azure Data Lake Store, применяйте `adl:///`.
+    > [!IMPORTANT]  
+    > Путь `wasb:///` применяется к кластерам, которые используют службу хранилища Azure в качестве хранилища данных кластера по умолчанию. Если кластеры используют Azure Data Lake Storage, применяйте `adl:///`.
 
 2. После завершения импорта используйте следующую команду для вывода списка данных в новом каталоге:
 
@@ -160,8 +160,8 @@ Sqoop можно также использовать для импорта и э
 
 Теперь вы узнали, как использовать Sqoop. Дополнительные сведения см. на следующих ресурсах:
 
-* [Использование Oozie с HDInsight](../hdinsight-use-oozie.md). Используйте действие Sqoop в рабочем процессе Oozie.
-* [Анализ данных о задержке рейсов с помощью HDInsight](../hdinsight-analyze-flight-delay-data.md). Используйте Hive для анализа данных о задержке рейсов, а затем используйте Sqoop для экспорта данных в базу данных SQL Azure.
+* [Использование Apache Oozie с HDInsight](../hdinsight-use-oozie.md). Используйте действие Sqoop в рабочем процессе Oozie.
+* [Анализ данных о задержке рейсов с помощью HDInsight](../hdinsight-analyze-flight-delay-data.md). Используйте Apache Hive для анализа данных о задержке рейсов, а затем используйте Sqoop для экспорта данных в базу данных SQL Azure.
 * [Отправка данных в HDInsight](../hdinsight-upload-data.md). Узнайте о других способах отправки данных в HDInsight или хранилище BLOB-объектов Azure.
 
 [hdinsight-versions]:  ../hdinsight-component-versioning.md

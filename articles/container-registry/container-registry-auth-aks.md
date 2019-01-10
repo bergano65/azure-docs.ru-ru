@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/08/2018
 ms.author: danlep
-ms.openlocfilehash: d08fc0cb8e3203a60cbd426145ec50bb3636e758
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: 850919f8ca8bb68af544ae528a779e16068424b1
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48857131"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53752543"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
@@ -22,7 +22,7 @@ ms.locfileid: "48857131"
 
 Когда вы создаете кластер AKS, Azure также создает субъект-службу для взаимодействия кластера с другими ресурсами Azure. Автоматически созданный субъект-службу можно использовать для аутентификации в реестре ACR. Для этого в Azure AD нужно [назначить субъекту-службе кластера роль](../role-based-access-control/overview.md#role-assignments), у которой есть доступ к реестру контейнеров.
 
-Используйте следующий скрипт для предоставления субъекту-службе, созданному службой AKS, доступа к реестру контейнеров Azure. Прежде чем выполнять этот скрипт, измените переменные `AKS_*` и `ACR_*` в соответствии с условиями своей среды.
+Используйте следующий скрипт для предоставления субъекту-службе, созданному службой AKS, доступа к реестру контейнеров Azure с правами на извлечение данных. Прежде чем выполнять этот скрипт, измените переменные `AKS_*` и `ACR_*` в соответствии с условиями своей среды.
 
 ```bash
 #!/bin/bash
@@ -39,7 +39,7 @@ CLIENT_ID=$(az aks show --resource-group $AKS_RESOURCE_GROUP --name $AKS_CLUSTER
 ACR_ID=$(az acr show --name $ACR_NAME --resource-group $ACR_RESOURCE_GROUP --query "id" --output tsv)
 
 # Create role assignment
-az role assignment create --assignee $CLIENT_ID --role Reader --scope $ACR_ID
+az role assignment create --assignee $CLIENT_ID --role acrpull --scope $ACR_ID
 ```
 
 ## <a name="access-with-kubernetes-secret"></a>Доступ с помощью секрета Kubernetes
@@ -58,8 +58,8 @@ SERVICE_PRINCIPAL_NAME=acr-service-principal
 ACR_LOGIN_SERVER=$(az acr show --name $ACR_NAME --query loginServer --output tsv)
 ACR_REGISTRY_ID=$(az acr show --name $ACR_NAME --query id --output tsv)
 
-# Create a 'Reader' role assignment with a scope of the ACR resource.
-SP_PASSWD=$(az ad sp create-for-rbac --name $SERVICE_PRINCIPAL_NAME --role Reader --scopes $ACR_REGISTRY_ID --query password --output tsv)
+# Create acrpull role assignment with a scope of the ACR resource.
+SP_PASSWD=$(az ad sp create-for-rbac --name $SERVICE_PRINCIPAL_NAME --role acrpull --scopes $ACR_REGISTRY_ID --query password --output tsv)
 
 # Get the service principal client id.
 CLIENT_ID=$(az ad sp show --id http://$SERVICE_PRINCIPAL_NAME --query appId --output tsv)

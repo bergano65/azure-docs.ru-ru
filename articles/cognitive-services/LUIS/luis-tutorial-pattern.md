@@ -9,23 +9,23 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 09/09/2018
+ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 346d8a83661c487a1d9a11e4da7d7bb67843e0b4
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 05af52ab492fcfe509b547efdd182a366642b9ed
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53075528"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53754413"
 ---
-# <a name="tutorial-3-add-common-utterance-formats"></a>Руководство 3. Добавление стандартных форматов высказываний
+# <a name="tutorial-add-common-pattern-template-utterance-formats"></a>Руководство. Добавление шаблонов высказываний в стандартных форматах
 
 В этом руководстве используйте шаблоны для улучшения намерения и сущности прогнозирования, в то же время предоставляя меньше примеров высказываний. Шаблон предоставляется в виде примера высказывания шаблона, который включает синтаксис для идентификации сущностей и игнорируемый текст. Шаблон представляет собой сочетание сопоставления выражений и машинного обучения.  Пример высказывания шаблона вместе с высказываниями намерений дает LUIS лучшее представление о том, какие высказывания соответствуют намерениям. 
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
 > [!div class="checklist"]
-> * Использовать существующее приложение из руководства 
+> * Импортировать пример приложения 
 > * Создавать намерение.
 > * Train
 > * Опубликовать
@@ -37,13 +37,13 @@ ms.locfileid: "53075528"
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
-## <a name="use-existing-app"></a>Использование существующего приложения
+## <a name="import-example-app"></a>Импортировать пример приложения
 
 Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
+Выполните следующие действия.
 
-1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-batchtest-HumanResources.json).
+1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/custom-domain-batchtest-HumanResources.json).
 
 2. Импортируйте JSON-файл в новое приложение.
 

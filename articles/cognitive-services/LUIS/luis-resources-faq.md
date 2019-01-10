@@ -11,14 +11,14 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: diberry
-ms.openlocfilehash: 9e5b132a7946bdc648e051c9f7327cc7159f291e
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 9a8bfa2e89e6bc0cbbd5af2efdff60aa406b3f1d
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53163639"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53714208"
 ---
-# <a name="language-understanding-faq"></a>Вопросы и ответы о службе "Распознавание речи"
+# <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
 В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
 
@@ -212,7 +212,7 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 |Интеграции|Интеграция [текстовой аналитики](https://docs.microsoft.com/azure/cognitive-services/text-analytics/) [анализа тональности](luis-how-to-publish-app.md#enable-sentiment-analysis)<br>Интеграция службы [Речь](https://docs.microsoft.com/azure/cognitive-services/speech) для подготовки речи в сочетании с [пакетом SDK службы "Речь"](https://aka.ms/SpeechSDK)|
 |Средство подготовки к отправке|Часть [BotBuilder-tools](https://github.com/Microsoft/botbuilder-tools), [инструмент](luis-concept-enterprise.md#when-you-need-to-combine-several-luis-and-qna-maker-apps) командной строки подготовки к отправке для объединения нескольких приложений LUIS и QnA Maker в одно приложение LUIS и улучшения распознавания намерений в ботах
 
-Включено создание дополнительных [API маршрутов](https://github.com/Microsoft/LUIS-Samples/blob/master/authoring-routes.md).
+Включено создание дополнительных [API маршрутов](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/authoring-routes.md).
 
 Видеоролики:
 * [Build 2018: серия "Пятница с Azure". Cognitive Services и Интеллектуальная служба распознавания речи (LUIS)](https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player)

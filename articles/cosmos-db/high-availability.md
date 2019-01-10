@@ -1,25 +1,24 @@
 ---
 title: Высокий уровень доступности в Azure Cosmos DB
 description: В этой статье описывается, как Azure Cosmos DB обеспечивает высокий уровень доступности
-services: cosmos-db
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 10/15/2018
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 112b41aa41706a807a82e708fe1fb4173fd084ca
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 4fc17daf640e95ab028150cec029471a0c7bc565
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52837534"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54063001"
 ---
 # <a name="high-availability-with-azure-cosmos-db"></a>Высокий уровень доступности при использовании Azure Cosmos DB
 
 Azure Cosmos DB прозрачно реплицирует данные во всех регионах Azure, связанных с вашей учетной записью Cosmos. Cosmos DB реализует несколько уровней избыточности для данных, как показано на рисунке ниже.
 
-![Секционирование ресурсов](./media/high-availability/figure1.png)
+![Физическое секционирование](./media/high-availability/cosmosdb-data-redundancy.png)
 
 - Данные внутри контейнеров Cosmos горизонтально секционируются.
 

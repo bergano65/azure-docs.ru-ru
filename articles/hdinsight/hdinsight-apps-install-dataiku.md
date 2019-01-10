@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: ashish
-ms.openlocfilehash: 4ba1e325ec978114016682aaee35be35a20ec028
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 5d2f803414db3bd118f57d317cfc32c8f22fcd5a
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52499126"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53653261"
 ---
 # <a name="install-published-application---dataiku-dds"></a>Установка опубликованного приложения Dataiku DDS
 
@@ -28,15 +28,15 @@ Dataiku [Data Science Studio (DSS)](https://www.dataiku.com/dss/features/connect
 
 Вы можете установить DSS в HDInsight с помощью кластеров [Apache Hadoop](https://hadoop.apache.org/) или [Apache Spark](https://spark.apache.org/), а также при создании новых кластеров или на имеющиеся работающие кластеры. DSS также поддерживает использование хранилища BLOB-объектов Azure в качестве соединителя для чтения данных.
 
-Вы можете использовать DSS для сборки проектов, которые будут создавать задания [Apache Hadoop MapReduce](https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html) или Spark. Эти задания выполняются как обычные задания MapReduce или Spark на HDInsight, поэтому кластер можно масштабировать по запросу.
+Вы можете использовать DSS для сборки проектов, которые будут создавать задания [MapReduce](https://hadoop.apache.org/docs/r1.2.1/mapred_tutorial.html) или Spark. Эти задания выполняются как обычные задания MapReduce или Spark на HDInsight, поэтому кластер можно масштабировать по запросу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Для установки этого приложения на новый кластер HDInsight или на имеющийся кластер требуется следующая конфигурация:
 
-* уровень кластера: "Стандартный", "Премиум";
-* тип кластера: Hadoop, Spark;
-* версия кластера: 3.4, 3.5.
+* Уровни кластера: "Стандартный", "Премиум"
+* Тип кластера: Hadoop, Spark
+* Версии кластера: 3.4, 3.5
 
 ## <a name="install-the-dataiku-dss-published-application"></a>Установка опубликованного приложения Dataiku DSS
 
@@ -113,8 +113,8 @@ Dataiku [Data Science Studio (DSS)](https://www.dataiku.com/dss/features/connect
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Документация по Dataiku DSS](https://doc.dataiku.com/dss/latest/).
-* [Установка пользовательских приложений Hadoop в Azure HDInsight](hdinsight-apps-install-custom-applications.md) — узнайте, как развернуть в HDInsight неопубликованное приложение HDInsight.
-* [Публикация приложений HDInsight в Azure Marketplace](hdinsight-apps-publish-applications.md)— узнайте, как опубликовать пользовательские приложения HDInsight в Azure Marketplace.
-* [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx)(Установка приложения HDInsight) — узнайте, как определить приложения HDInsight.
-* [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md) — узнайте, как использовать действие скрипта для установки дополнительных приложений.
-* [Использование пустых граничных узлов в кластерах Hadoop в HDInsight](hdinsight-apps-use-edge-node.md) — узнайте, как использовать пустой граничный узел для доступа к кластерам HDInsight, а также тестирования и размещения приложений HDInsight.
+* [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md). Узнайте, как развернуть в HDInsight неопубликованное приложение HDInsight.
+* [Публикация приложения HDInsight в Azure Marketplace](hdinsight-apps-publish-applications.md). Узнайте, как опубликовать пользовательские приложения HDInsight в Microsoft Azure Marketplace.
+* [MSDN. Application](https://msdn.microsoft.com/library/mt706515.aspx) (Приложение). Узнайте, как определить приложения HDInsight.
+* [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md). Узнайте, как использовать действие сценария для установки дополнительных приложений.
+* [Использование пустых граничных узлов в HDInsight](hdinsight-apps-use-edge-node.md). Узнайте, как использовать пустой граничный узел для доступа к кластерам HDInsight, а также для тестирования и размещения приложений HDInsight.

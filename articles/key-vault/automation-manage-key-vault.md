@@ -1,5 +1,5 @@
 ---
-title: Управление хранилищем ключей Azure с помощью службы автоматизации Azure | Документация Майкрософт
+title: Управление Azure Key Vault с помощью службы автоматизации Azure — Azure Key Vault | Документация Майкрософт
 description: Сведения об использовании службы автоматизации Azure для управления хранилищем ключей Azure.
 services: Key-Vault, automation
 documentationcenter: ''
@@ -10,21 +10,22 @@ ms.assetid: 4e780762-19b6-4ca6-b894-ebb44c538f35
 ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/29/2016
+ms.date: 01/07/2019
 ms.author: magoedte
-ms.openlocfilehash: be7829c35f299381a5e82621412feb13cc2e8bb2
-ms.sourcegitcommit: f3bd5c17a3a189f144008faf1acb9fabc5bc9ab7
+ms.openlocfilehash: 85a0c05719ba374ed213212db6f094d75e433183
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44299242"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54073447"
 ---
 # <a name="managing-azure-key-vault-using-azure-automation"></a>Управление хранилищем ключей Azure с помощью службы автоматизации Azure
+
 В этом руководстве будет представлена служба автоматизации Azure и показано, как ее использовать для упрощения управления ключами и секретами в хранилище ключей Azure.
 
 ## <a name="what-is-azure-automation"></a>Что такое служба автоматизации Azure
+
 [Служба автоматизации Azure](../automation/automation-intro.md) — это служба Azure, которая упрощает управление облаком благодаря автоматизации процессов и настройке требуемого состояния. С помощью службы автоматизации Azure повторяющиеся задачи, которые выполняются вручную, требуют много времени и подвержены ошибкам, можно автоматизировать для повышения надежности, эффективности и экономии времени в вашей организации.
 
 Служба автоматизации Azure предоставляет высоконадежную и высокодоступную подсистему выполнения рабочих процессов, которая масштабируется в соответствии с вашими задачами. В службе автоматизации Azure процессы можно запустить вручную, в сторонних системах или по расписанию, чтобы все задачи выполнялись в нужное время.
@@ -32,6 +33,7 @@ ms.locfileid: "44299242"
 Уменьшите операционные затраты и освободите ИТ-сотрудников и DevOps для работы над повышением бизнес-ценности ПО и автоматизации задач управления облаком в службе автоматизации Azure.
 
 ## <a name="how-can-azure-automation-help-manage-azure-key-vault"></a>Как служба автоматизации Azure помогает управлять хранилищем ключей Azure?
+
 Хранилищем ключей можно управлять в службе автоматизации Azure с помощью [командлетов хранилища ключей AzureRM](https://www.powershellgallery.com/packages/AzureRM.KeyVault/1.1.4) и [командлетов классического хранилища ключей Azure](https://docs.microsoft.com/powershell/module/servicemanagement/azure). Модуль Azure для управления классическим хранилищем ключей автоматически доступен в службе автоматизации Azure, и вы можете импортировать [модуль AzureRM-KeyVault](https://www.powershellgallery.com/packages/AzureRM.KeyVault/1.1.4) в службу автоматизации Azure. Это позволит выполнять многие задачи управления хранилищем ключей в службе. Вы также можете связать эти командлеты в службе автоматизации Azure с командлетами для других служб Azure, чтобы автоматизировать сложные задачи в службах Azure и системах сторонних производителей.
 
 С помощью командлетов хранилища ключей Azure можно выполнять следующие задачи: 
@@ -49,6 +51,7 @@ ms.locfileid: "44299242"
 * [Setting Up and Configuring an Azure Key Vault (Установка и настройка хранилища ключей Azure)](https://www.simple-talk.com/cloud/platform-as-a-service/setting-up-and-configuring-an-azure-key-vault)
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 Теперь, когда вы познакомились с основами службы автоматизации Azure и способами ее использования для управления хранилищем ключей Azure, пройдите по ссылкам, чтобы получить дополнительные сведения о службе автоматизации Azure.
 
 * Изучите [руководство по началу работы](../automation/automation-first-runbook-graphical.md)со службой автоматизации Azure.

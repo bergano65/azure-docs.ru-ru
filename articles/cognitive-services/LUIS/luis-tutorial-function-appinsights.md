@@ -11,12 +11,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: 4f1372f8b15670472146efc1c4f3a341f4a97c71
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 0ab9e4a3d129243ec069031c5e7233f341b545e4
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53255607"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53713970"
 ---
 # <a name="add-luis-results-to-application-insights-and-azure-functions"></a>Добавление результатов LUIS в Application Insights и Функции Azure
 В этом руководстве приведена процедура добавления данных запроса и ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). После получения этих данных можно включить их запрос (используя язык Kusto или PowerBi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
@@ -37,7 +37,7 @@ ms.locfileid: "53255607"
 > [!Tip]
 > Если у вас еще нет подписки, вы можете зарегистрироваться для получения [бесплатной учетной записи](https://azure.microsoft.com/free/).
 
-Весь код из этого руководства можно найти в [репозитории GitHub LUIS-Samples](https://github.com/Microsoft/LUIS-Samples/tree/master/documentation-samples/tutorial-web-app-bot-application-insights/nodejs). Все строки, связанные с этим руководством, закомментированы с помощью `//APPINSIGHT:`. 
+Весь код из этого руководства можно найти в [репозитории Azure-Samples на GitHub](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/tutorial-web-app-bot-application-insights/nodejs). Все строки, связанные с этим руководством, закомментированы с помощью `//APPINSIGHT:`. 
 
 ## <a name="web-app-bot-with-luis"></a>Бот веб-приложения с LUIS
 Предполагается, что у вас есть код, который выглядит следующим образом, или вы выполнили процедуру в [другом руководстве](luis-nodejs-tutorial-build-bot-framework-sample.md): 
@@ -51,11 +51,11 @@ ms.locfileid: "53255607"
 
 1. На портале Azure в службе ботов веб-приложения выберите **Сборка** в разделе **Управление ботом**. 
 
-    ![Поиск Application Insights](./media/luis-tutorial-appinsights/build.png)
+    ![На портале Azure в службе ботов веб-приложения выберите "Сборка" в разделе "Управление ботом". ](./media/luis-tutorial-appinsights/build.png)
 
 2. Откроется новая вкладка браузера с редактором службы приложений. Выберите имя приложения на верхней панели, а затем **Открытие консоли Kudu**. 
 
-    ![Поиск Application Insights](./media/luis-tutorial-appinsights/kudu-console.png)
+    ![Выберите имя приложения на верхней панели, а затем "Открыть консоль Kudu". ](./media/luis-tutorial-appinsights/kudu-console.png)
 
 3. В консоли введите следующую команду, чтобы установить Application Insights и пакеты Underscore:
 
@@ -63,7 +63,7 @@ ms.locfileid: "53255607"
     cd site\wwwroot && npm install applicationinsights && npm install underscore
     ```
 
-    ![Поиск Application Insights](./media/luis-tutorial-appinsights/npm-install.png)
+    ![Введите команды npm, чтобы установить Application Insights и пакеты Underscore](./media/luis-tutorial-appinsights/npm-install.png)
 
     Подождите, пока пакеты будут установлены:
 
@@ -112,9 +112,7 @@ ms.locfileid: "53255607"
 
 1. На портале выберите **Все ресурсы**, выполните фильтрацию по имени бота веб-приложения. Щелкните ресурс с типом **Application Insights**. Значок для Application Insights — лампочка. 
 
-    ![Поиск Application Insights](./media/luis-tutorial-appinsights/search-for-app-insights.png)
-
-
+    ![[Поиск Application Insights на портале Azure](./media/luis-tutorial-appinsights/search-for-app-insights.png)
 
 2. Когда ресурс откроется, щелкните значок **поиска** (лупы) на крайней правой панели. Откроется новая панель справа. В зависимости от объема обнаруженных данных телеметрии вывод панели может занять некоторое время. Найдите `LUIS-results` и нажмите клавишу ВВОД на клавиатуре. Список будет уточнен для включения только тех результатов запросов LUIS, которые были добавлены в этом руководстве.
 

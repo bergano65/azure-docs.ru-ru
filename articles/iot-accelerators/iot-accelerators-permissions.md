@@ -1,106 +1,72 @@
 ---
-title: Акселераторы решений Интернета вещей Azure и Azure Active Directory | Документация Майкрософт
-description: В этой статье описывается, как акселераторы решений Интернета вещей Azure используют Azure Active Directory для управления разрешениями.
+title: Использование сайта решений Интернета вещей Azure — Azure | Документация Майкрософт
+description: В этой статье описывается использование веб-сайта AzureIoTSolutions.com для развертывания акселератора решений.
 author: dominicbetts
-manager: timlt
+manager: philmea
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.topic: conceptual
-ms.date: 11/10/2017
+ms.date: 12/13/2018
 ms.author: dobett
-ms.openlocfilehash: e45954389c8dd1b484a7009460c541bf35266973
-ms.sourcegitcommit: c29d7ef9065f960c3079660b139dd6a8348576ce
+ms.openlocfilehash: 87f6b9cef50e4b8c388be835b2aa7bed8177ac4b
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44713856"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53601089"
 ---
-# <a name="permissions-on-the-azureiotsolutionscom-site"></a>Разрешения на сайте azureiotsolutions.com
+# <a name="use-the-azureiotsolutionscom-site-to-deploy-your-solution-accelerator"></a>Использование сайта azureiotsolutions.com для развертывания акселератора решений
 
-## <a name="what-happens-when-you-sign-in"></a>Что происходит при входе
+Акселераторы решений Интернета вещей Azure можно развернуть в подписке Azure на сайте [AzureIoTSolutions.com](https://www.azureiotsolutions.com/Accelerators). На сайте AzureIoTSolutions.com вы найдете акселераторы решений Microsoft с открытым исходным кодом и акселераторы решений от партнеров. Эти акселераторы решений соответствуют [эталонной архитектуре Интернета вещей Azure](https://aka.ms/iotrefarchitecture). Сайт можно использовать для быстрого развертывания акселератора решений в качестве демонстрационной или производственной среды.
 
-При первом входе сайт [azureiotsuite.com][lnk-azureiotsolutions] определяет ваши уровни разрешений в зависимости от выбранного клиента Azure Active Directory (AAD) и подписки Azure.
+![AzureIoTSolutions.com](media/iot-accelerators-permissions/iotsolutionscom.png)
 
-1. Сначала сайт получает из Azure сведения о ваших клиентах AAD, чтобы заполнить список клиентов, который отображается рядом с вашим именем пользователя после входа. В настоящее время сайт может одновременно получать маркеры пользователя только для одного клиента. Поэтому, если вы переключитесь между клиентами в раскрывающемся списке в правом верхнем углу сайта, вам придется выполнить вход с указанием этого клиента, чтобы получить для него маркеры.
+> [!TIP]
+> Если вам требуется больший контроль над процессом развертывания, можно использовать [CLI для развертывания акселератора решений](iot-accelerators-remote-monitoring-deploy-cli.md).
 
-2. После этого сайт получает из Azure сведения о подписках, связанных с выбранным клиентом. Доступные подписки можно просмотреть при создании акселератора решений.
+Акселераторы решений можно развернуть в следующих конфигурациях.
 
-3. Наконец, сайт получает сведения о всех ресурсах в подписках и группах ресурсов, помеченных как акселераторы решений, и заполняет элементы на домашней странице.
+* **Стандартный**. Развертывание расширенной инфраструктуры для разработки в рабочей среде. С помощью Службы контейнеров Azure можно развернуть микрослужбы на нескольких виртуальных машинах Azure. Kubernetes управляет контейнерами Docker, на которых размещаются отдельные микрослужбы.
+* **Базовый**. Версия с низкой стоимостью для демонстрации или тестирования развертывания. Все микрослужбы развертываются на одной виртуальной машине Azure.
+* **Локальные среды**. Развертывание на локальном компьютере для тестирования и разработки. При этом подходе выполняется развертывание микрослужб в локальном контейнере Docker и подключение к облачным службам: Центр Интернета вещей, база данных Azure Cosmos DB и служба хранения Azure.
 
-В следующих разделах описываются роли, которые позволяют управлять доступом к акселераторам решений.
+Каждый акселератор решений использует свое сочетание служб Azure, например Центр Интернета вещей, Azure Stream Analytics и Cosmos DB. Чтобы узнать больше, посетите сайт [AzureIoTSolutions.com](https://www.azureiotsolutions.com/Accelerators) и выберите акселератор решений.
 
-## <a name="aad-roles"></a>Роли AAD
+## <a name="sign-in-at-azureiotsolutionscom"></a>Вход на azureiotsolutions.com
 
-Роли AAD определяют возможность подготавливать акселераторы решений и управлять в них пользователями и другими службами Azure.
+Перед развертыванием акселератора решений необходимо войти на сайт AzureIoTSolutions.com, используя учетные данные, связанные с подпиской Azure. Если ваша учетная запись связана с несколькими клиентами Microsoft Azure Active Directory (AD), используйте **раскрывающийся список выбора учетной записи**, чтобы выбрать каталог для использования.
 
-Дополнительные сведения о ролях администратора в AAD см. в статье [Назначение ролей администратора в Azure AD][lnk-aad-admin]. В этой статье основное внимание уделяется ролям **глобального администратора**, а также **пользовательским** ролям каталога, которые используются в акселераторах решений.
+Ваши разрешения на развертывание акселераторов решений, управление пользователями и управление службами Azure зависят от вашей роли в выбранном каталоге. Типичные роли Azure AD, связанные с акселераторами решений
 
-### <a name="global-administrator"></a>Глобальный администратор.
+* **Глобальный администратор**. В одном клиенте AAD может быть несколько [глобальных администраторов](../active-directory/users-groups-roles/directory-assign-admin-roles.md).
 
-В одном клиенте AAD может быть несколько глобальных администраторов.
+  * Создавая клиент AAD, вы по умолчанию становитесь его глобальным администратором.
+  * Глобальный администратор может развертывать базовые и стандартные акселераторы решений.
 
-* Создавая клиент AAD, вы по умолчанию становитесь его глобальным администратором.
-* Глобальный администратор может предоставить базовые и стандартные акселераторы решений (в базовом развертывании используется одна виртуальная машина Azure).
+* **Пользователь домена**. На каждый клиент AAD может приходиться множество пользователей домена. Пользователь домена может развертывать базовый акселератор решений.
 
-### <a name="domain-user"></a>Пользователь домена
+* **Гостевой пользователь**. В одном клиенте AAD может быть множество гостевых пользователей. Гостевые пользователи не могут развертывать акселератор решений в клиенте Azure AD.
 
-На каждый клиент AAD может приходиться много пользователей домена.
+Дополнительные сведения о пользователях и ролях в Azure AD см. в следующих ресурсах.
 
-* Пользователь домена может подготовить базовый акселератор решений на сайте [azureiotsolutions.com][lnk-azureiotsolutions].
-* Пользователь домена может создать базовый акселератор решений с помощью интерфейса командной строки.
+* [Создание пользователей в Azure Active Directory](../active-directory/fundamentals/active-directory-users-profile-azure-portal.md)
+* [Назначение пользователей приложениям](../active-directory/manage-apps/assign-user-or-group-access-portal.md)
 
-### <a name="guest-user"></a>Гостевой пользователь
+## <a name="choose-your-device"></a>Выбор устройства
 
-В одном клиенте AAD может быть много гостевых пользователей. Пользователи-гости обладают ограниченным набором прав в клиенте AAD. Поэтому они не могут подготавливать акселераторы решений в клиенте AAD.
+На сайте AzureIoTSolutions.com есть ссылки на [Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT](https://catalog.azureiotsolutions.com/).
 
-Дополнительные сведения о пользователях и ролях в AAD см. в следующих ресурсах:
+В каталоге перечислены сотни сертифицированных устройств Интернета вещей, которые вы можете подключать к акселераторам решений для создания своего решения Интернета вещей.
 
-* [Добавление новых пользователей или пользователей с учетными записями Майкрософт в Azure Active Directory][lnk-create-edit-users]
-* [Назначение пользователя или группы корпоративному приложению в предварительной версии Azure Active Directory][lnk-assign-app-roles]
+![Каталог устройств](media/iot-accelerators-permissions/devicecatalog.png)
 
-## <a name="azure-subscription-administrator-roles"></a>Роли администратора подписки Azure
-
-Роли администратора Azure определяют возможность сопоставлять подписку Azure с клиентом AAD.
-
-Дополнительные сведения о ролях администратора Azure см. в статье [Добавление или изменение администраторов подписки Azure][lnk-admin-roles].
-
-## <a name="faq"></a>Часто задаваемые вопросы
-
-### <a name="im-a-service-administrator-and-id-like-to-change-the-directory-mapping-between-my-subscription-and-a-specific-aad-tenant-how-do-i-complete-this-task"></a>Я являюсь администратором службы и хочу изменить сопоставление каталогов подписки и конкретного клиента AAD. Как выполнить эту задачу?
-
-Ознакомьтесь с разделом [Добавление существующей подписки в каталог Azure AD](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md#to-associate-an-existing-subscription-to-your-azure-ad-directory)
-
-### <a name="i-want-to-change-a-service-administrator-or-co-administrator-when-logged-in-with-an-organizational-account"></a>Я хочу сменить администратора службы и соадминистратора при входе в систему с использованием рабочей учетной записи.
-
-См. справочную статью [Смена администратора службы и соадминистратора при входе в систему с использованием учетной записи организации][lnk-service-admins].
-
-### <a name="why-am-i-seeing-this-error-your-account-does-not-have-the-proper-permissions-to-create-a-solution-please-check-with-your-account-administrator-or-try-with-a-different-account"></a>Почему появляется ошибка «У вашей учетной записи нет необходимых разрешений для создания решения. Обратитесь к администратору учетной записи или попробуйте использовать другую учетную запись»
-
-Руководствуйтесь следующей схемой:
-
-![][img-flowchart]
-
-> [!NOTE]
-> Вы выполнили проверку, которая подтверждает ваши права глобального администратора на клиенте AAD и соадминистратора подписки, но ошибка не устранена. В таком случае администратор учетной записи должен удалить этого пользователя и повторно назначить необходимые разрешения в указанном порядке. Сначала добавить пользователя в качестве глобального администратора, а затем — пользователя в качестве соадминистратора подписки Azure. Если проблемы не удается устранить, обратитесь в службу [справки и поддержки][lnk-help-support].
-
-### <a name="why-am-i-seeing-this-error-when-i-have-an-azure-subscription-an-azure-subscription-is-required-to-create-pre-configured-solutions-you-can-create-a-free-trial-account-in-just-a-couple-of-minutes"></a>Почему эта ошибка появляется при наличии подписки Azure? "Для создания предварительно настроенных решений требуется подписка Azure. Вы можете создать бесплатную пробную учетную запись всего за несколько минут".
-
-Если точно известно, что у вас есть подписка Azure, проверьте сопоставление клиентов для своей подписки и убедитесь, что в раскрывающемся списке выбран правильный клиент. Если клиент выбран правильно, следуйте приведенной выше схеме и проверьте сопоставление подписки и этого клиента AAD.
+Если вы изготовитель оборудования, нажмите **Стать партнером**, чтобы узнать больше о партнерстве с корпорацией Майкрософт по программе Microsoft Azure Certified for IoT.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Чтобы узнать больше об акселераторах решений Интернета вещей, ознакомьтесь с руководством по [настройке акселератора решений][lnk-customize].
 
-[img-flowchart]: media/iot-accelerators-permissions/flowchart.png
+Чтобы опробовать один из акселераторов решений Интернета вещей, см. следующие краткие руководства.
 
-[lnk-azureiotsolutions]: https://www.azureiotsolutions.com
-[lnk-rm-github-repo]: https://github.com/Azure/remote-monitoring-services-dotnet
-[lnk-pm-github-repo]: https://github.com/Azure/azure-iot-predictive-maintenance
-[lnk-cf-github-repo]: https://github.com/Azure/azure-iot-connected-factory
-[lnk-aad-admin]:../active-directory/users-groups-roles/directory-assign-admin-roles.md
-[lnk-portal]: https://portal.azure.com
-[lnk-create-edit-users]:../active-directory/fundamentals/active-directory-users-profile-azure-portal.md
-[lnk-assign-app-roles]:../active-directory/manage-apps/assign-user-or-group-access-portal.md
-[lnk-service-admins]: https://azure.microsoft.com/support/changing-service-admin-and-co-admin
-[lnk-admin-roles]: ../billing/billing-add-change-azure-subscription-administrator.md
-[lnk-help-support]: https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade
-[lnk-customize]: iot-accelerators-remote-monitoring-customize.md
+* [Краткое руководство. Использование облачного решения для удаленного мониторинга](quickstart-remote-monitoring-deploy.md)
+* [Краткое руководство. Пробное использование облачного решения для управления промышленными устройствами Центра Интернета вещей](quickstart-connected-factory-deploy.md)
+* [Краткое руководство. Использование облачных решений для анализа прогнозного обслуживания на подключенных устройствах](quickstart-predictive-maintenance-deploy.md)
+* [Краткое руководство по развертыванию и запуску решения "Симулятор устройств" на основе облака](quickstart-device-simulation-deploy.md)

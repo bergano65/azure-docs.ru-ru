@@ -9,11 +9,11 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 09/24/2018
-ms.openlocfilehash: cb3270078c1a79285e672909dc29c258b7b13960
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: e8b8d86c6040a268b9fc6fe2edae3107313f93ac
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52881941"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53584706"
 ---
-Узнайте, как запускать записные книжки, следуя указаниям из статьи о том, [как изучить эту службу с помощью записных книжек Jupyter](../articles/machine-learning/service/samples-notebooks.md).
+Узнайте, как запускать записные книжки, следуя указаниям из статьи [Использование записных книжек Jupyter в Azure Machine Learning Workbench](../articles/machine-learning/service/samples-notebooks.md).

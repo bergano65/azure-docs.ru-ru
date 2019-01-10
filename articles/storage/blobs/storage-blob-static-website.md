@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 10/19/18
 ms.author: tamram
 ms.component: blobs
-ms.openlocfilehash: 36b4fbac13e012de2fbef137c6637fd7e2daea8f
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 933fcbfc21c69d02f1093e0ea2519d76f4130b29
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52161299"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53598896"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 Учетные записи хранения GPv2 Azure позволяют передавать статическое содержимое (HTML, CSS, JavaScript и файлы изображений) непосредственно из контейнера хранилища с именем *$web*. Преимущества размещения в службе хранилища Azure заключаются в использовании бессерверной архитектуры, в том числе [Функций Azure](/azure/azure-functions/functions-overview) и других служб PaaS.
 
-В отличие от статических веб-сайтов, динамические сайты, которые зависят от серверного кода, лучше всего размещать с помощью [веб-приложений Azure](/azure/app-service/app-service-web-overview).
+В отличие от статических веб-сайтов динамические сайты, которые зависят от серверного кода, лучше всего размещать с помощью [службы приложений Azure](/azure/app-service/overview).
 
 ## <a name="how-does-it-work"></a>Как это работает?
 При включении статического размещения на веб-сайте в вашей учетной записи хранения вы выбираете имя файла по умолчанию и при необходимости указываете путь к настраиваемой странице ошибки 404. После включения этой функции создается контейнер с именем *$web*, если он еще не существует. 
@@ -161,6 +161,6 @@ az storage blob upload-batch -s <SOURCE_PATH> -d $web --account-name <ACCOUNT_NA
 * [Использование Azure CDN для доступа к BLOB-объектам с помощью личных доменов по протоколу HTTPS](storage-https-custom-domain-cdn.md)
 * [Настройка имени личного домена для конечной точки хранилища BLOB-объектов](storage-custom-domain-name.md)
 * [Функции Azure](/azure/azure-functions/functions-overview)
-* [Веб-приложения Azure](/azure/app-service/app-service-web-overview)
+* [службе приложений Azure](/azure/app-service/overview)
 * [Создание первого бессерверного веб-приложения](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)
-* [Руководство. Размещение домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)
+* [Руководство по размещению домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)

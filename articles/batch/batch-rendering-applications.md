@@ -1,17 +1,17 @@
 ---
-title: Приложения пакетной службы для рендеринга
+title: Приложения для рендеринга — пакетная служба Azure
 description: Предварительно установленные приложения пакетной службы для рендеринга
 services: batch
 author: laurenhughes
 ms.author: lahugh
 ms.date: 12/11/2018
 ms.topic: conceptual
-ms.openlocfilehash: 7cc19c8def9e162c752efab776d0b6f5118bfde2
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: d17a740959f36a11835f6d4548b8f8bc1a5c5f80
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53320954"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53536327"
 ---
 # <a name="pre-installed-applications-on-rendering-vm-images"></a>Предварительно установленные приложения в образах виртуальных машин для рендеринга
 

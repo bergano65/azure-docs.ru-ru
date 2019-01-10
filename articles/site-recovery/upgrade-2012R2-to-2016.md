@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: site-recovery
 ms.date: 12/03/2018
 ms.author: rajanaki
-ms.openlocfilehash: 351213749dcec2b4c16728c04230c75a12179118
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: e7644128a3f0e0ea531933286e95b15149fdebd3
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411351"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53557873"
 ---
 # <a name="upgrade-windows-server-2012-r2-hosts-scvmm-2012-r2-configured-with-azure-site-recovery-to-windows-server-2016--scvmm-2016"></a>Обновление узлов Windows Server 2012 R2 и SCVMM 2012 R2, настроенных с помощью Azure Site Recovery, до Windows Server 2016 и SCVMM 2016
 
@@ -109,5 +109,5 @@ ms.locfileid: "53411351"
 4.  Перейдите на портал Azure и проверьте состояние репликации виртуальных машин в хранилище служб восстановления. 
 
 ## <a name="next-steps"></a>Дополнительная информация
-При выполнении обновления узлов, можно выполнить [тестовую отработку отказа](tutorial-dr-drill-azure.md), чтобы проверить работоспособность репликации и статус восстановления.
+При выполнении обновления узлов можно выполнить [тестовую отработку отказа](tutorial-dr-drill-azure.md), чтобы проверить работоспособность репликации и статус восстановления.
 

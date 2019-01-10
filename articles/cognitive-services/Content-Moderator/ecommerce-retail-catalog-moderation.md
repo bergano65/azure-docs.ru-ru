@@ -1,252 +1,123 @@
 ---
-title: 'Руководство: модерация каталога электронной коммерции — Content Moderator'
+title: Руководство. Модерация изображений товаров для электронной коммерции с помощью Content Moderator
 titlesuffix: Azure Cognitive Services
-description: Автоматическая модерация каталогов электронной коммерции с помощью ИИ и машинного обучения.
+description: Настройка приложения, которое анализирует изображения товаров, классифицирует их по указанным меткам (с использованием Компьютерного зрения Azure и Пользовательского визуального распознавания) и помечает нежелательные изображения тегами для последующего просмотра с помощью Azure Content Moderator.
 services: cognitive-services
-author: sanjeev3
+author: PatrickFarley
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: tutorial
 ms.date: 09/25/2017
-ms.author: sajagtap
-ms.openlocfilehash: 285590435a7e3c31d45d5d154d4e430ed3252838
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.author: pafarley
+ms.openlocfilehash: 209fb3bba2b5462caad53d809c46eba0ebf4d836
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53256236"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53547904"
 ---
-# <a name="tutorial-ecommerce-catalog-moderation-with-machine-learning"></a>Руководство: модерация каталога электронной коммерции с помощью машинного обучения
+# <a name="tutorial-moderate-e-commerce-product-images-with-azure-content-moderator"></a>Руководство. Модерация изображений товаров для электронной коммерции с помощью Azure Content Moderator
 
-В этом руководстве описывается, как реализовать машинную интеллектуальную модерацию каталогов электронной коммерции, объединив машинные технологии ИИ с пользовательской модерацией, чтобы создать интеллектуальную систему каталогизации.
+В этом руководстве описано, как с помощью служб Azure Cognitive Services, включая Content Moderator, эффективно классифицировать и модерировать изображения товаров в сценарии электронной коммерции. Мы будем использовать Компьютерное зрение и Пользовательское визуальное распознавание для присвоения изображениям различных тегов (меток) с последующим проведением командной проверки. В основе интеллектуальной системы модерации лежит сочетание технологий машинного обучения в Content Moderator и усилий людей из команды проверки.
 
-![Классифицированные изображения продуктов](images/tutorial-ecommerce-content-moderator.PNG)
+В этом учебнике описаны следующие процедуры.
 
-## <a name="business-scenario"></a>Бизнес-сценарий
+> [!div class="checklist"]
+> * Регистрация в Content Moderator и создание команды проверки.
+> * Поверка изображений на наличие потенциального содержимого для взрослых и непристойного содержимого с помощью API проверки Content Moderator.
+> * Использование Компьютерного зрения для проверки на наличие знаменитостей (или применения других тегов, обнаруживаемых с помощью Компьютерного зрения).
+> * Применение Пользовательского визуального распознавания для проверки наличия флагов, игрушек и ручек (или применения других пользовательских тегов).
+> * Предоставление комбинированных результатов проверки для пользовательской оценки и окончательного принятия решений.
 
-Машинные технологии можно использовать, чтобы классифицировать и модерировать изображения продуктов по следующим категориям:
+Полный кода для этого примера доступен в репозитории [Samples eCommerce Catalog Moderation](https://github.com/MicrosoftContentModerator/samples-eCommerceCatalogModeration) на сайте GitHub.
 
-1. содержимое для взрослых (нагота);
-2. непристойное содержимое;
-3. знаменитости;
-4. государственные флаги;
-5. игрушки;
-6. ручки.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="tutorial-steps"></a>Этапы руководства
+## <a name="prerequisites"></a>Предварительные требования
 
-В данном руководстве описываются следующие шаги:
+- Ключ подписки Content Moderator. Следуйте инструкциям в руководстве по [созданию учетной записи Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account), чтобы получить подписку и ключ для службы Content Moderator.
+- Ключ подписки Компьютерного зрения (см. те же инструкции).
+- Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
+- Набор изображений для каждой метки, которую будет использовать классификатор Пользовательского визуального распознавания (в нашем примере это игрушки, ручки и флаги США).
 
-1. Регистрация и создание группы Content Moderator.
-2. Настройка тегов модерации (меток) для потенциального содержимого со знаменитостями и флагами.
-3. Поверка изображений на наличие потенциального содержимого для взрослых и непристойного содержимого с помощью API проверки Content Moderator.
-4. Проверка изображений на наличие потенциальных знаменитостей с помощью API компьютерного зрения.
-5. Проверка изображений на наличие флагов с помощью Пользовательской службы визуального распознавания.
-6. Предоставление уточненных результатов проверки для пользовательской проверки и окончательного принятия решений.
+## <a name="create-a-review-team"></a>Создание команды проверки
 
-## <a name="create-a-team"></a>Создание команды
+Изучите краткое руководство по [работе с Content Moderator](quick-start.md), в котором предоставлены инструкции по регистрации для использования [средства проверки Content Moderator](https://contentmoderator.cognitive.microsoft.com/) и созданию команды проверки. Запишите значение **Идентификатор команды**, которое указано на странице **Учетные данные**.
 
-Обратитесь к странице [краткого руководства](quick-start.md), чтобы зарегистрироваться в Content Moderator и создать команду. Запишите **идентификатор команды**, указанный на странице **Credentials** (Учетные данные).
+## <a name="create-custom-moderation-tags"></a>Создание пользовательских тегов модерации
 
-
-## <a name="define-custom-tags"></a>Определение настраиваемых тегов
-
-Обратитесь к статье [О тегах](https://docs.microsoft.com/azure/cognitive-services/content-moderator/review-tool-user-guide/tags), чтобы добавить настраиваемые теги. Наряду со встроенными тегами **adult** и **racy** новые теги позволяют инструменту проверки показывать описательные имена тегов.
-
-В нашем случае мы определяем пользовательские теги **celebrity**, **flag**, **us**, **toy** и **pen**.
+Теперь создайте настраиваемые теги в средстве проверки (если потребуется помощь с этим процессом, см. [сведения о тегах](https://docs.microsoft.com/azure/cognitive-services/content-moderator/review-tool-user-guide/tags)). В нашем примере добавляются следующие теги: **celebrity** (знаменитость), **USA** (США), **flag** (флаг), **toy** (игрушка) и **pen** (ручка). Обратите внимание, что в качестве тегов можно использовать не только категории, выявляемые Компьютерным зрением (например, **celebrities**), но и настраиваемые пользовательские теги, для обнаружения которых вы позже проведете обучение классификатора Пользовательского визуального распознавания.
 
 ![Настройка пользовательских тегов](images/tutorial-ecommerce-tags2.PNG)
 
-## <a name="list-your-api-keys-and-endpoints"></a>Вывод списка ключей и конечных точек API
+## <a name="create-visual-studio-project"></a>Создание проекта Visual Studio
 
-1. В руководстве используются три интерфейса API, а также соответствующие ключи и конечные точки API.
-2. Конечные точки API зависят от регионов подписки и идентификатора команды проверки Content Moderator.
+1. В Visual Studio откройте диалоговое окно "Новый проект". Разверните узел **Установленные**, затем — **Visual C#** и выберите **Консольное приложение (платформа .NET)**.
+1. Присвойте приложению имя **EcommerceModeration** и щелкните **ОК**.
+1. Если вы добавляете проект в уже существующее решение, определите его как один запускаемый проект.
 
-> [!NOTE]
-> Данное руководство предназначено для использования ключей подписки в регионах, доступных в следующих конечных точках. Убедитесь, что ваши ключи API соответствуют универсальным кодам ресурса (URI) регионов, в противном случае эти ключи не будут работать с приведенными ниже конечными точками.
+В этом руководстве внимание уделяется только той части кода, которая важна для нашего проекта. Мы не будем обсуждать каждую строку этого кода. Скопируйте все содержимое файла _Program.cs_ из примера проекта ([Samples eCommerce Catalog Moderation](https://github.com/MicrosoftContentModerator/samples-eCommerceCatalogModeration)) в файл _Program.cs_ в новом проекте. Затем примените пошаговые инструкции из следующих разделов, которые помогут разобраться в устройстве этого проекта и способах его использования.
 
-         // Your API keys
-        public const string ContentModeratorKey = "XXXXXXXXXXXXXXXXXXXX";
-        public const string ComputerVisionKey = "XXXXXXXXXXXXXXXXXXXX";
-        public const string CustomVisionKey = "XXXXXXXXXXXXXXXXXXXX";
+## <a name="define-api-keys-and-endpoints"></a>Определение ключей и конечных точек API
 
-        // Your end points URLs will look different based on your region and Content Moderator Team ID.
-        public const string ImageUri = "https://westus.api.cognitive.microsoft.com/contentmoderator/moderate/v1.0/ProcessImage/Evaluate";
-        public const string ReviewUri = "https://westus.api.cognitive.microsoft.com/contentmoderator/review/v1.0/teams/YOURTEAMID/reviews";
-        public const string ComputerVisionUri = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0";
-        public const string CustomVisionUri = "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.0/Prediction/XXXXXXXXXXXXXXXXXXXX/url";
+Как упоминалось выше, в этом руководстве используются три службы Cognitive Services, для которых вам потребуется три комплекта ключей и конечных точек API. Добавьте следующие поля в класс **Program**: 
 
-## <a name="scan-for-adult-and-racy-content"></a>Проверка на наличие содержимого для взрослых и непристойного характера
+[!code-csharp[define API keys and endpoint URIs](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=21-29)]
 
-1. Эта функция принимает в качестве параметров URL-адрес изображения и массив пар "ключ-значение".
-2. Она вызывает API модерации изображений Content Moderator для получения оценок зрелости и неприличности.
-3. Если оценка больше 0,4 (используется диапазон от 0 до 1), то значению **ReviewTags** в массиве присваивается значение **True**.
-4. Массив **ReviewTags** используется для выделения соответствующего тега в инструменте проверки.
+В полях `___Key` следует указать реальные значения ключей подписки (значение `CustomVisionKey` вы получите позже), а поля `___Uri` нужно изменить так, чтобы они содержали правильные идентификаторы регионов. В сегменте `YOURTEAMID` поля `ReviewUri` поместите идентификатор ранее созданной команды проверки. Заключительную часть поля `CustomVisionUri` мы заполним позже.
 
-        public static bool EvaluateAdultRacy(string ImageUrl, ref KeyValuePair[] ReviewTags)
-        {
-            float AdultScore = 0;
-            float RacyScore = 0;
+## <a name="primary-method-calls"></a>Вызовы основных методов
 
-            var File = ImageUrl;
-            string Body = $"{{\"DataRepresentation\":\"URL\",\"Value\":\"{File}\"}}";
+Обратите внимание на представленный ниже код из метода **Main**, который в цикле просматривает список URL-адресов изображений. Он вызывает три разные службы для анализа каждого изображения, записывает полученные теги в массив **ReviewTags** и создает анализ для модераторов (то есть отправляет изображения в средство просмотра Content Moderator). Мы подробно рассмотрим эти методы в следующих разделах. Обратите внимание, что здесь вы можете отбирать изображения для дополнительного анализа, проверяя сохраненные в массив **ReviewTags** теги с помощью условного оператора.
 
-            HttpResponseMessage response = CallAPI(ImageUri, ContentModeratorKey, CallType.POST,
-                                                   "Ocp-Apim-Subscription-Key", "application/json", "", Body);
+[!code-csharp[Main: evaluate each image and create review](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=53-70)]
 
-            if (response.IsSuccessStatusCode)
-            {
-                // {“answers”:[{“answer”:“Hello”,“questions”:[“Hi”],“score”:100.0}]}
-                // Parse the response body. Blocking!
-                GetAdultRacyScores(response.Content.ReadAsStringAsync().Result, out AdultScore, out RacyScore);
-            }
+## <a name="evaluateadultracy-method"></a>Метод EvaluateAdultRacy
 
-            ReviewTags[0] = new KeyValuePair();
-            ReviewTags[0].Key = "a";
-            ReviewTags[0].Value = "false";
-            if (AdultScore > 0.4)
-            {
-                ReviewTags[0].Value = "true";
-            }
+Просмотрите метод **EvaluateAdultRacy** в классе **Program**. Этот метод принимает в качестве параметров URL-адрес изображения и массив пар "ключ — значение". Он создает вызов REST к API изображений Content Moderator, чтобы получить оценки изображений для взрослых и изображений непристойного характера. Если любая из оценок превысит значение 0,4 (по шкале от 0 до 1), то соответствующему параметру в массиве **ReviewTags** присваивается значение **True**.
 
-            ReviewTags[1] = new KeyValuePair();
-            ReviewTags[1].Key = "r";
-            ReviewTags[1].Value = "false";
-            if (RacyScore > 0.3)
-            {
-                ReviewTags[1].Value = "true";
-            }
-            return response.IsSuccessStatusCode;
-        }
+[!code-csharp[define EvaluateAdultRacy method](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=73-113)]
 
-## <a name="scan-for-celebrities"></a>Поиск знаменитостей
+## <a name="evaluatecustomvisiontags-method"></a>Метод EvaluateCustomVisionTags
 
-1. Зарегистрируйтесь для использования [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=computer-vision) [API компьютерного зрения](https://azure.microsoft.com/services/cognitive-services/computer-vision/).
-2. Нажмите кнопку **Get API Key** (Получить ключ API).
-3. Примите условия.
-4. Чтобы войти в систему, выберите из списка доступную учетную запись в Интернете.
-5. Запишите ключи API, которые отображаются на странице службы.
-    
-   ![Ключи API компьютерного зрения](images/tutorial-computer-vision-keys.PNG)
-    
-6. Обратитесь к исходному коду проекта, чтобы ознакомиться с функцией, которая проверяет изображения с помощью API компьютерного зрения.
+Следующий метод принимает URL-адрес изображения и сведения о подписке Компьютерного зрения и анализирует изображение на наличие знаменитостей. Если он обнаружит одну или несколько знаменитостей, соответствующему параметру в массиве **ReviewTags** присваивается значение **True**. 
 
-         public static bool EvaluateComputerVisionTags(string ImageUrl, string ComputerVisionUri, string ComputerVisionKey, ref KeyValuePair[] ReviewTags)
-        {
-            var File = ImageUrl;
-            string Body = $"{{\"URL\":\"{File}\"}}";
+[!code-csharp[define EvaluateCustomVisionTags method](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=115-146)]
 
-            HttpResponseMessage Response = CallAPI(ComputerVisionUri, ComputerVisionKey, CallType.POST,
-                                                   "Ocp-Apim-Subscription-Key", "application/json", "", Body);
+## <a name="evaluatecustomvisiontags-method"></a>Метод EvaluateCustomVisionTags
 
-            if (Response.IsSuccessStatusCode)
-            {
-                ReviewTags[2] = new KeyValuePair();
-                ReviewTags[2].Key = "cb";
-                ReviewTags[2].Value = "false";
+Теперь мы перейдем к методу **EvaluateCustomVisionTags**, который классифицирует товары — в нашем примере это флаги, игрушки и ручки. Следуйте инструкциям в руководстве по [созданию классификатора](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier), чтобы создать настраиваемый пользовательский классификатор изображений для определения наличия флагов, игрушек и ручек (вы можете выбрать любые другие пользовательские теги).
 
-                ComputerVisionPrediction CVObject = JsonConvert.DeserializeObject<ComputerVisionPrediction>(Response.Content.ReadAsStringAsync().Result);
+![Веб-страница Пользовательского визуального распознавания с обучающими изображениями ручек, игрушек и флагов](images/tutorial-ecommerce-custom-vision.PNG)
 
-                if ((CVObject.categories[0].detail != null) && (CVObject.categories[0].detail.celebrities.Count() > 0))
-                {                 
-                    ReviewTags[2].Value = "true";
-                }
-            }
+Завершив обучение классификатора, получите ключ прогнозирования и URL-адрес конечной точки прогнозирования (если потребуется помощь, воспользуйтесь [этими инструкциями](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/use-prediction-api#get-the-url-and-prediction-key)) и сохраните эти значения в поля `CustomVisionKey` и `CustomVisionUri`, соответственно. Этот метод использует значения в запросе к классификатору. Если классификатор обнаружит на изображении один или несколько пользовательских тегов, он сохранит значения **True** для соответствующих параметров в массиве **ReviewTags**. 
 
-            return Response.IsSuccessStatusCode;
-        }
+[!code-csharp[define EvaluateCustomVisionTags method](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=148-171)]
 
-## <a name="classify-into-flags-toys-and-pens"></a>Классификация по категориям флагов, игрушек и ручек
+## <a name="create-reviews-for-review-tool"></a>Создание проверок для средства проверки
 
-1. [Войдите](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/) в [предварительную версию API пользовательского визуального распознавания](https://www.customvision.ai/).
-2. Используйте [краткое руководство](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/getting-started-build-a-classifier) для создания пользовательского классификатора, позволяющего определить потенциальное наличие флагов, игрушек и ручек.
-   ![Учебные изображения для службы "Пользовательское визуальное распознавание"](images/tutorial-ecommerce-custom-vision.PNG)
-3. [Получите URL-адрес конечной точки прогнозирования](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/use-prediction-api) для своего пользовательского классификатора.
-4. Обратитесь к исходному коду проекта, чтобы ознакомиться с функцией, которая вызывает конечную точку прогнозирования пользовательского классификатора для проверки изображения.
+В предыдущих разделах вы изучили методы, которые анализируют поступающие изображения на наличие содержимого для взрослых и содержимого непристойного характера (Content Moderator), знаменитостей (Компьютерное зрение) и определенных объектов (Пользовательское визуальное распознавание). Теперь мы перейдем к методу **CreateReview**, который загружает изображения и все присвоенные им теги (в виде _метаданных_) в средство просмотра Content Moderator, где они будут доступны для проверки человеком. 
 
-        public static bool EvaluateCustomVisionTags(string ImageUrl, string CustomVisionUri, string CustomVisionKey, ref KeyValuePair[] ReviewTags)
-        {
-            var File = ImageUrl;
-            string Body = $"{{\"URL\":\"{File}\"}}";
+[!code-csharp[define CreateReview method](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=173-196)]
 
-            HttpResponseMessage response = CallAPI(CustomVisionUri, CustomVisionKey, CallType.POST,
-                                                   "Prediction-Key", "application/json", "", Body);
+Эти изображения будут отображаться на вкладке Review (Проверка) в [средстве проверки Content Moderator](https://contentmoderator.cognitive.microsoft.com/).
 
-            if (response.IsSuccessStatusCode)
-            {
-                // Parse the response body. Blocking!
-                SaveCustomVisionTags(response.Content.ReadAsStringAsync().Result, ref ReviewTags);
-            }
-            return response.IsSuccessStatusCode;
-        }       
- 
-## <a name="reviews-for-human-in-the-loop"></a>Проверки с участием человека
+![Снимок экрана средства проверки Content Moderator с несколькими изображениями и выделенными тегами](images/tutorial-ecommerce-content-moderator.PNG)
 
-1. В предыдущих разделах вы проверяли входящие изображения на наличие содержимого для взрослых и неприличного содержимого (Content Moderator), знаменитостей (API компьютерного зрения) и флагов (Пользовательское визуальное распознавание).
-2. На основе порогов для каждой проверки подготовьте уточненные данные для пользовательской проверки в инструменте проверки.
-        public static bool CreateReview(string ImageUrl, KeyValuePair[] Metadata) {
+## <a name="submit-a-list-of-test-images"></a>Отправка списка тестовых изображений
 
-            ReviewCreationRequest Review = new ReviewCreationRequest();
-            Review.Item[0] = new ReviewItem();
-            Review.Item[0].Content = ImageUrl;
-            Review.Item[0].Metadata = new KeyValuePair[MAXTAGSCOUNT];
-            Metadata.CopyTo(Review.Item[0].Metadata, 0);
+В методе **Main** вы видите код, который проверяет наличие каталога C:Test с файлом _Urls.txt_, который содержит список URL-адресов изображений. Создайте файл и каталог с указанными именами или измените эти значения, чтобы они указывали на ваш текстовый файл с URL-адресами проверяемых изображений.
 
-            //SortReviewItems(ref Review);
+[!code-csharp[Main: set up test directory, read lines](~/samples-eCommerceCatalogModeration/Fusion/Program.cs?range=38-51)]
 
-            string Body = JsonConvert.SerializeObject(Review.Item);
+## <a name="run-the-program"></a>Запуск программы
 
-            HttpResponseMessage response = CallAPI(ReviewUri, ContentModeratorKey, CallType.POST,
-                                                   "Ocp-Apim-Subscription-Key", "application/json", "", Body);
-
-            return response.IsSuccessStatusCode;
-        }
-
-## <a name="submit-batch-of-images"></a>Отправка пакета изображений
-
-1. В этом руководстве предполагается, что каталог C:\Test содержит текстовый файл со списком URL-адресов изображений.
-2. Следующий код проверяет существование этого файла и считывает все URL-адреса в память.
-            // Проверка каталога test на наличие текстового файла со списком URL-адресов изображений для проверки var topdir = @"C:\test\"; var Urlsfile = topdir + "Urls.txt";
-
-            if (!Directory.Exists(topdir))
-                return;
-
-            if (!File.Exists(Urlsfile))
-            {
-                return;
-            }
-
-            // Read all image URLs in the file
-            var Urls = File.ReadLines(Urlsfile);
-
-## <a name="initiate-all-scans"></a>Запуск всех проверок
-
-1. Эта функция верхнего уровня обходит все URL-адреса изображений в текстовом файле, упомянутом ранее.
-2. Она проверяет их с помощью каждого API, и если оценка достоверности соответствия удовлетворяет нашим критериям, функция создает проверку для модераторов-пользователей.
-             // для каждого URL-адреса изображения в файле... foreach (var Url in Urls) { // Инициализация нового массива тегов проверки ReviewTags = new KeyValuePair[MAXTAGSCOUNT];
-
-                // Evaluate for potential adult and racy content with Content Moderator API
-                EvaluateAdultRacy(Url, ref ReviewTags);
-
-                // Evaluate for potential presence of celebrity (ies) in images with Computer Vision API
-                EvaluateComputerVisionTags(Url, ComputerVisionUri, ComputerVisionKey, ref ReviewTags);
-
-                // Evaluate for potential presence of custom categories other than Marijuana
-                EvaluateCustomVisionTags(Url, CustomVisionUri, CustomVisionKey, ref ReviewTags);
-
-                // Create review in the Content Moderator review tool
-                CreateReview(Url, ReviewTags);
-            }
-
-## <a name="license"></a>Лицензия
-
-Все пакеты SDK и примеры для Microsoft Cognitive Services регулируются лицензией MIT. Дополнительные сведения см. в разделе о [лицензировании](https://microsoft.mit-license.org/).
-
-## <a name="developer-code-of-conduct"></a>Правила поведения для разработчиков
-
-Ожидается, что разработчики, использующие Cognitive Services, включая эту клиентскую библиотеку и пример, следуют правилам поведения разработчиков для служб Microsoft Cognitive Services, доступным здесь: http://go.microsoft.com/fwlink/?LinkId=698895.
+Если вы правильно выполнили все описанные выше действия, программа обработает каждое изображение (создав запросы ко всем трем службам для получения соответствующих тегов) и передаст изображения вместе со сведениями о тегах в средство проверки Content Moderator.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Выполните сборку решений из руководства и дополните его, воспользовавшись [исходными файлами проекта](https://github.com/MicrosoftContentModerator/samples-eCommerceCatalogModeration) на веб-сайте GitHub.
+В этом руководстве вы настроили программу, которая анализирует изображения товаров и присваивает им теги с типами товаров, а затем передает изображения команде проверки для принятия обоснованных решений по модерации содержимого. Теперь переходите к подробному изучению модерации изображений.
+
+> [!div class="nextstepaction"]
+> [Проверка прошедших модерацию изображений](./review-tool-user-guide/review-moderated-images.md)

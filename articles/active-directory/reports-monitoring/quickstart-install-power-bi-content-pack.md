@@ -15,14 +15,14 @@ ms.topic: quickstart
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: cd5da2a3c5fa3d9cd67715493eb649926badb694
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 314f1c1656485f93942eb23f928cc66720a12565
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51622540"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53753546"
 ---
-# <a name="quickstart-install-azure-active-directory-power-bi-content-pack"></a>Краткое руководство. Установка пакета содержимого Power BI для Azure Active Directory
+# <a name="quickstart-install-azure-active-directory-power-bi-content-pack"></a>Краткое руководство. Установка пакета содержимого Azure Active Directory Power BI
 
 |  |
 |--|
@@ -39,7 +39,7 @@ ms.locfileid: "51622540"
 
 * Учетная запись Power BI. Это та же учетная запись, которую вы используете с Office 365 или Azure AD. 
 * Идентификатор клиента Azure AD. Это **идентификатор каталога**, указанный на [странице свойств](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties) портала Azure.
-* Лицензия Azure AD Premium (P1 или P2). 
+* Лицензия Azure AD Premium (P1 или P2). Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md).
 
 ## <a name="install-azure-ad-power-bi-content-pack"></a>Установка пакета содержимого Power BI для Azure AD 
 

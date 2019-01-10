@@ -1,5 +1,5 @@
 ---
-title: Вопросы и ответы об API компьютерного зрения
+title: Часто задаваемые вопросы. API компьютерного зрения
 titlesuffix: Azure Cognitive Services
 description: Ответы на часто задаваемые вопросы об API компьютерного зрения в Azure Cognitive Services.
 services: cognitive-services
@@ -10,12 +10,13 @@ ms.component: computer-vision
 ms.topic: conceptual
 ms.date: 01/26/2017
 ms.author: kefre
-ms.openlocfilehash: 55b474d0edbb8dc01b9f35d4f8799e53e37862df
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.custom: seodec18
+ms.openlocfilehash: 3146650280af80923a4ed9cbb78a5ce6d43e5bce
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49166378"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53584281"
 ---
 # <a name="computer-vision-api-frequently-asked-questions"></a>Часто задаваемые вопросы об API компьютерного зрения
 
@@ -37,7 +38,7 @@ ms.locfileid: "49166378"
 
 **Вопрос**. *Какие языки поддерживаются в API компьютерного зрения?*
 
-**Ответ**. Поддерживаются перечисленные ниже языки.
+**Ответ**. Поддерживаемые языки включают в себя:
 
 | | | Поддерживаемые языки | | |
 |---------------- |------------------ |------------------ |--------------------------- |--------------------
@@ -86,6 +87,6 @@ ms.locfileid: "49166378"
 
 **Вопрос**. *Какие ориентации текста поддерживаются технологией распознавания рукописного текста?*
 
-**Ответ**. Операция распознавания рукописного текста может принимать текст под углом примерно до 30–40 градусов.
+**Ответ**. Операция распознавания рукописного текста может принимать текст под углом примерно до 30–40 градусов.
 
 -----

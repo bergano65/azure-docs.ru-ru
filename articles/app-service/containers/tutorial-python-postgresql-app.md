@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения Python с подключением к базе данных PostgreSQL на платформе Linux в Службе приложений Azure | Документация Майкрософт
+title: Создание приложения Python с подключением к базе данных PostgreSQL на платформе Linux в Службе приложений Azure | Документация Майкрософт
 description: Узнайте, как запустить управляемое данными приложение Python в Azure с подключением к базе данных PostgreSQL.
 services: app-service\web
 documentationcenter: python
@@ -12,16 +12,16 @@ ms.topic: tutorial
 ms.date: 11/29/2018
 ms.author: beverst;cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 8846ec386ad1776172ae1949b5e0f26e03ddf1df
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: c70c7e8b893c511aae36f122c5983fd0958eac8e
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53337995"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53975395"
 ---
-# <a name="build-a-python-and-postgresql-web-app-in-azure-app-service"></a>Создание веб-приложения Python с подключением к базе данных PostgreSQL в Службе приложений Azure
+# <a name="build-a-python-and-postgresql-app-in-azure-app-service"></a>Создание приложения Python с подключением к базе данных PostgreSQL в Службе приложений Azure
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. Это руководство демонстрирует создание управляемого данными веб-приложения Python, используя в качестве серверной части базу данных PostgreSQL. После выполнения всех действий у вас будет приложение Django, работающее в Службе приложений Azure с поддержкой Linux.
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом руководстве показано, как создать управляемое данными приложение Python, используя в качестве серверной части базу данных PostgreSQL. После выполнения всех действий у вас будет приложение Django, работающее в Службе приложений Azure с поддержкой Linux.
 
 ![Приложение Python Django в Службе приложений Azure под управлением Linux](./media/tutorial-python-postgresql-app/django-admin-azure.png)
 
@@ -203,9 +203,9 @@ az postgres server firewall-rule create --resource-group myResourceGroup --serve
 ```
 
 > [!NOTE]
-> Этот параметр разрешает сетевые подключения со всех IP-адресов в сети Azure. Для рабочей среды попробуйте настроить как можно более строгие правила брандмауэра, [указав только исходящие IP-адреса, используемые вашим приложением](../app-service-ip-addresses.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#find-outbound-ips).
+> Этот параметр разрешает сетевые подключения со всех IP-адресов в сети Azure. Для рабочей среды попробуйте настроить как можно более строгие правила брандмауэра, [указав только исходящие IP-адреса, используемые вашим приложением](../overview-inbound-outbound-ips.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#find-outbound-ips).
 
-В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<you_ip_address >* [локальным IPv4-адресом](https://www.whatsmyip.org/).
+В Cloud Shell повторно выполните соответствующую команду, чтобы разрешить доступ с локального компьютера, заменив *\<you_ip_address >* [локальным IPv4-адресом](http://www.whatsmyip.org/).
 
 ```azurecli-interactive
 az postgres server firewall-rule create --resource-group myResourceGroup --server-name <postgresql_name> --start-ip-address=<your_ip_address> --end-ip-address=<your_ip_address> --name AllowLocalClient
@@ -371,9 +371,9 @@ To https://<app_name>.scm.azurewebsites.net/<app_name>.git
 
 Сервер развертывания Службы приложений в корневой папке репозитория видит _requirements.txt_ и, выполнив `git push`, запускает автоматическое управление пакетами Python.
 
-### <a name="browse-to-the-azure-web-app"></a>Переход к веб-приложению Azure
+### <a name="browse-to-the-azure-app"></a>Переход к приложению Azure
 
-Перейдите к развернутому веб-приложению. Запуск занимает некоторое время, так как при первом запросе приложения контейнер должен быть скачан и запущен. Если истекает время ожидания страницы или отображается сообщение об ошибке, подождите несколько минут и обновите страницу.
+Перейдите в развернутое приложение. Запуск занимает некоторое время, так как при первом запросе приложения контейнер должен быть скачан и запущен. Если истекает время ожидания страницы или отображается сообщение об ошибке, подождите несколько минут и обновите страницу.
 
 ```bash
 http://<app_name>.azurewebsites.net
@@ -403,15 +403,15 @@ az webapp log config --name <app_name> --resource-group myResourceGroup --docker
 az webapp log tail --name <app_name> --resource-group myResourceGroup
 ```
 
-## <a name="manage-your-web-app-in-the-azure-portal"></a>Управление веб-приложением с помощью портала Azure
+## <a name="manage-your-app-in-the-azure-portal"></a>Управление приложением с помощью портала Azure
 
-Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное веб-приложение.
+Перейдите на [портал Azure](https://portal.azure.com), чтобы увидеть созданное приложение.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/tutorial-python-postgresql-app/app-resource.png)
+![Переход к приложению Azure на портале](./media/tutorial-python-postgresql-app/app-resource.png)
 
-По умолчанию на портале отображается страница **Обзор** веб-приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
+По умолчанию на портале отображается страница **Обзор** приложения. Здесь вы можете наблюдать за работой приложения. Вы также можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. На вкладках в левой части страницы отображаются различные страницы конфигурации, которые можно открыть.
 
 ![Страница службы приложений на портале Azure](./media/tutorial-python-postgresql-app/app-mgmt.png)
 
@@ -428,10 +428,10 @@ az webapp log tail --name <app_name> --resource-group myResourceGroup
 > * просмотр журналов диагностики;
 > * Управление приложением на портале Azure.
 
-Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с веб-приложением.
+Перейдите к следующему руководству, чтобы научиться сопоставлять пользовательские DNS-имена с приложением.
 
 > [!div class="nextstepaction"]
-> [Сопоставление существующего настраиваемого DNS-имени с веб-приложениями Azure](../app-service-web-tutorial-custom-domain.md)
+> [Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure](../app-service-web-tutorial-custom-domain.md)
 
 > [!div class="nextstepaction"]
 > [Настройка приложений Python для Службы приложений Azure под управлением Linux](how-to-configure-python.md)

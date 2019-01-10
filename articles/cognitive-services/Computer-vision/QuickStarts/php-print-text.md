@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по извлечению печатного текста (OCR) — REST, PHP в службе "Компьютерное зрение"
+title: Краткое руководство. Извлечение печатного текста — REST, PHP
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как, используя API компьютерного зрения, извлекать печатный текст из изображения с помощью PHP.
 services: cognitive-services
@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: 10be09c4d18cc7bc395937e1a175a5bfcd1e5d7e
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.custom: seodec18
+ms.openlocfilehash: 2707134c3fb451f4386748f691086eeb617d3ebe
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49340245"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53581391"
 ---
-# <a name="quickstart-extract-printed-text-ocr-using-the-rest-api-and-php-in-computer-vision"></a>Краткое руководство по извлечению печатного текста (OCR) с помощью REST API и PHP в службе "Компьютерное зрение"
+# <a name="quickstart-extract-printed-text-ocr-using-the-rest-api-and-php-in-computer-vision"></a>Краткое руководство. Извлечение печатного текста (OCR) с помощью REST API компьютерного зрения и PHP
 
 Из этого краткого руководства вы узнаете, как извлекать печатный текст с оптическим распознаванием символов из изображения с помощью REST API компьютерного зрения. С помощью метода [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc) можно определить печатный текст на изображении и извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
 
@@ -33,7 +34,7 @@ ms.locfileid: "49340245"
 
 Чтобы создать и запустить пример, сделайте следующее.
 
-1. Установите пакет [`HTTP_Request2`](http://pear.php.net/package/HTTP_Request2) для PHP5.
+1. Установите пакет [`HTTP_Request2`](https://pear.php.net/package/HTTP_Request2) для PHP5.
    1. Откройте окно командной строки с правами администратора.
    1. Выполните следующую команду:
 

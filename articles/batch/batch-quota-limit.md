@@ -1,9 +1,9 @@
 ---
-title: Квоты и ограничения служб для пакетной службы Azure | Документация Майкрософт
+title: Квоты и ограничения служб — пакетная служба Azure | Документация Майкрософт
 description: Узнайте о квотах по умолчанию, лимитах и ограничениях пакетной службы Azure, а также о том, как запросить увеличение квоты.
 services: batch
 documentationcenter: ''
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 editor: ''
 ms.assetid: 28998df4-8693-431d-b6ad-974c2f8db5fb
@@ -12,15 +12,15 @@ ms.workload: big-compute
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/06/2018
-ms.author: danlep
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0493783cb1253aab78ff39aa42eeabbec8ddb726
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.date: 12/18/2018
+ms.author: lahugh
+ms.custom: seodec18
+ms.openlocfilehash: 5194fa73d246cee039e113207bbde277b06d7130
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52263610"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53753205"
 ---
 # <a name="batch-service-quotas-and-limits"></a>Квоты и ограничения пакетной службы
 
@@ -65,9 +65,9 @@ ms.locfileid: "52263610"
 | [Количество параллельных задач](batch-parallel-node-tasks.md) на один вычислительный узел | В 4 раза больше, чем количество ядер в узле |
 | [Количество приложений](batch-application-packages.md) на одну учетную запись пакетной службы | 20 |
 | Пакеты приложения на приложение | 40 |
-| Максимальное время существования задачи | 7 дней<sup>1</sup> |
+| Максимальное время существования задачи | 180 дней <sup>1</sup> |
 
-<sup>1</sup> Максимальное время существования задачи от ее добавления к заданию до завершения составляет 7 дней. Завершенные задачи сохраняются в течение неограниченного времени; данные для задач, которые не были завершены в течение максимального времени существования, недоступны.
+<sup>1</sup> Максимальное время существования задачи от ее добавления к заданию до завершения составляет 180 дней. Завершенные задачи сохраняются в течение 7 дней; данные для задач, которые не были завершены в течение максимального времени существования, недоступны.
 
 ## <a name="view-batch-quotas"></a>Просмотр квот пакетной службы
 

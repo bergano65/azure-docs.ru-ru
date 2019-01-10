@@ -8,21 +8,21 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: quickstart
-ms.date: 11/06/2018
+ms.date: 12/13/2018
 ms.author: wolfma
-ms.openlocfilehash: afe0cfe61779e95fc9a65a1f4928ddae4b7af267
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: e77ee61e3d318b355b978ce21031f3f55a26feca
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53090114"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53724629"
 ---
 # <a name="quickstart-recognize-speech-in-java-on-android-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении Java для Android с помощью пакета SDK для службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-Из этой статьи вы узнаете, как в Android с помощью пакета SDK службы "Речь" в Cognitive Services создать приложение Java, которое будет преобразовывать речь в текст.
-Приложение основано на пакете SDK Maven версии 1.1.0 для службы "Речь" в Microsoft Cognitive Services, а также Android Studio 3.1.
+Из этой статьи вы узнаете, как с помощью пакета SDK службы "Речь" в Cognitive Services создать приложение Java для Android, которое будет преобразовывать речь в текст.
+Приложение основано на пакете SDK Maven версии 1.2.0 для службы "Речь" в Microsoft Cognitive Services, а также Android Studio 3.1.
 Пакет SDK службы "Речь" сейчас совместим с устройствами Android, в которых установлены 32- или 64-разрядные процессоры ARM и процессоры Intel, совместимые с набором команд x86-x64.
 
 > [!NOTE]
@@ -58,9 +58,9 @@ Android Studio требуется несколько минут, чтобы по
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.1.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.2.0`.
 
-Пакет SDK службы "Речь" для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит библиотеки и разрешения Android, необходимые для его использования.
+Пакет SDK службы "Речь" для Android входит в состав [AAR (библиотека Android)](https://developer.android.com/studio/projects/android-library), которая содержит необходимые библиотеки и требуемые разрешения Android.
 Она размещена в репозитории Maven в https://csspeechstorage.blob.core.windows.net/maven/.
 
 Настройте проект для использования пакета SDK службы "Речь". Откройте окно Project Structure (Структура проекта), выбрав в строке меню Android Studio **Файл** > **Project Structure** (Структура проекта). В окне Project Structure (Структура проекта) внесите следующие изменения:
@@ -73,7 +73,7 @@ Android Studio требуется несколько минут, чтобы по
 
    ![Снимок экрана окна Project Structure (Структура проекта)](media/sdk/qs-java-android-07-add-module-dependency.png)
 
-1. В появившемся окне введите имя и версию нашего пакета SDK службы "Речь" для Android, `com.microsoft.cognitiveservices.speech:client-sdk:1.1.0`. Нажмите кнопку **ОК**.
+1. В появившемся окне введите имя и версию нашего пакета SDK службы "Речь" для Android, `com.microsoft.cognitiveservices.speech:client-sdk:1.2.0`. Нажмите кнопку **ОК**.
    Пакет SDK для службы "Речь" должен быть добавлен в список зависимостей, как показано ниже.
 
    ![Снимок экрана окна Project Structure (Структура проекта)](media/sdk/qs-java-android-08-dependency-added-1.0.0.png)
@@ -86,7 +86,7 @@ Android Studio требуется несколько минут, чтобы по
 
 ## <a name="create-user-interface"></a>Создание пользовательского интерфейса
 
-Для этого приложения мы создадим базовый пользовательский интерфейс. Измените макет для основного действия, `activity_main.xml`. В макете должны отображаться имя вашего приложения в заголовке окна и элемент TextView, содержащий текст "Hello World!"
+Для этого приложения мы создадим базовый пользовательский интерфейс. Измените макет для основного действия, `activity_main.xml`. В макете должны отображаться имя вашего приложения в заголовке окна и элемент TextView, содержащий текст "Hello World!".
 
 * Щелкните элемент TextView. Измените его атрибут ID в правом верхнем углу, указав `hello`.
 
@@ -98,7 +98,7 @@ Android Studio требуется несколько минут, чтобы по
 
   ![Снимок экрана со значком "волшебная палочка"](media/sdk/qs-java-android-10-infer-layout-constraints.png)
 
-Теперь текстовая и графическая версии пользовательского интерфейса должны выглядеть следующим образом.
+Теперь текстовая и графическая версии пользовательского интерфейса должны выглядеть следующим образом:
 
 <table>
 <tr>
@@ -141,16 +141,12 @@ Android Studio требуется несколько минут, чтобы по
 
 ![Снимок экрана приложения Android](media/sdk/qs-java-android-13-gui-on-device.png)
 
-[!INCLUDE [Download this sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
-Этот пример можно найти в папке `quickstart/java-android`.
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Распознавание намерений из речи с помощью пакета SDK службы "Речь" для Java](how-to-recognize-intents-from-speech-java.md)
+> [Примеры для Java на сайте GitHub](https://aka.ms/csspeech/samples)
 
 ## <a name="see-also"></a>См. также
 
-- [Translate speech using Speech service](how-to-translate-speech-csharp.md) (Перевод речи с помощью службы распознавания речи)
 - [Настройка акустических моделей](how-to-customize-acoustic-models.md)
 - [Настройка языковых моделей](how-to-customize-language-model.md)

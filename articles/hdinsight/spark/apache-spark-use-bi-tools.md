@@ -1,5 +1,5 @@
 ---
-title: 'Руководство. Анализ данных Apache Spark с использованием Power BI в Azure HDInsight '
+title: 'Руководство. Анализ данных Apache Spark с использованием Power BI в Azure HDInsight '
 description: Визуализация хранимых данных Apache Spark в кластерах HDInsight с помощью Microsoft Power BI
 services: hdinsight
 author: hrasheed-msft
@@ -9,14 +9,14 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
 ms.date: 05/07/2018
-ms.openlocfilehash: e862000df1edc5101c0768f1f96c11953f1485c7
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: c058cfa3bc9fa976726731cedeb80eb76a1f0810
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52583284"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53999277"
 ---
-# <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight 
+# <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight 
 
 Узнайте, как использовать [Microsoft Power BI](https://powerbi.microsoft.com/) для визуализации данных в кластере [Apache Spark](https://spark.apache.org/) в [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/).
 
@@ -28,8 +28,8 @@ ms.locfileid: "52583284"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Выполните инструкции в [руководстве по загрузке данных и выполнению запросов в кластере Spark в Azure HDInsight](./apache-spark-load-data-run-query.md)**.
-* **Для Power BI**: [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/) и [пробная подписка Power BI](https://app.powerbi.com/signupredirect?pbi_source=web) (необязательно).
+* **Выполните инструкции из статьи [Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](./apache-spark-load-data-run-query.md)**.
+* **Power BI**. [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/) и [пробная подписка Power BI](https://app.powerbi.com/signupredirect?pbi_source=web) (необязательно).
 
 
 ## <a name="verify-the-data"></a>Проверка данных
@@ -69,7 +69,7 @@ ms.locfileid: "52583284"
 ### <a name="create-a-report-in-power-bi-desktop"></a>Создание отчета в Power BI Desktop
 Начиная работать со Spark, в первую очередь необходимо подключиться к кластеру в Power BI Desktop, загрузить данные из кластера, а затем создать базовую визуализацию на основе этих данных.
 
-> [!NOTE]
+> [!NOTE]  
 > Соединитель, описанный в этой статье, находится в стадии предварительной версии. Любые отзывы о нем вы можете предоставить на [сайте сообщества Power BI](https://community.powerbi.com/) или на форуме [Power BI ideas](https://ideas.powerbi.com/forums/265200-power-bi-ideas).
 
 1. Откройте [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/).
@@ -103,7 +103,7 @@ ms.locfileid: "52583284"
 
         Схема выглядит следующим образом.
 
-        ![Создание визуализаций данных Spark с помощью Apache Spark BI](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph.png "Создание визуализаций данных Spark с помощью Apache Spark BI")
+        ![Создание визуализаций данных Spark с помощью Apache Spark BI](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph-sum.png "Создание визуализаций данных Spark с помощью Apache Spark BI")
 
         По умолчанию представление показывает сумму для **фактической температуры** и **целевой температуры**. Щелкните направленную вниз стрелку рядом с полями **ActualTemp** и **TragetTemp** на панели визуализации, и вы увидите выбранную **сумму**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "52583284"
 
         Визуализация данных должна выглядеть примерно так, как показано на снимке экрана ниже. Наведите указатель мыши на визуализацию, чтобы отобразить всплывающие подсказки с соответствующими данными.
 
-        ![Создание визуализаций данных Spark с помощью Apache Spark BI](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph-sum.png "Создание визуализаций данных Spark с помощью Apache Spark BI")
+        ![Создание визуализаций данных Spark с помощью Apache Spark BI](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph.png "Создание визуализаций данных Spark с помощью Apache Spark BI")
 
 7. Щелкните **Файл**, **Сохранить**, а затем введите имя файла `BuildingTemperature.pbix`. 
 
@@ -174,7 +174,7 @@ ms.locfileid: "52583284"
 >
 >
 
-1. Install [Tableau Desktop](http://www.tableau.com/products/desktop) on the computer where you are running this Apache Spark BI tutorial.
+1. Install [Tableau Desktop](https://www.tableau.com/products/desktop) on the computer where you are running this Apache Spark BI tutorial.
 
 2. Make sure that computer also has Microsoft Spark ODBC driver installed. You can install the driver from [here](https://go.microsoft.com/fwlink/?LinkId=616229).
 

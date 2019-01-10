@@ -1,5 +1,5 @@
 ---
-title: Визуализация данных телеметрии имитации устройств с помощью службы "Аналитика временных рядов Azure" | Документация Майкрософт
+title: Визуализация данных телеметрии имитации устройств с помощью аналитики временных рядов Azure | Документация Майкрософт
 description: Сведения о настройке среды службы "Аналитика временных рядов Azure" для изучения и анализа данных телеметрии, созданных акселератором решений для имитации устройств.
 author: dominicbetts
 manager: timlt
@@ -8,12 +8,12 @@ ms.date: 08/20/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: 49cecca4e5ebef9f43fdda16cfa1fdc2ad7b6f94
-ms.sourcegitcommit: a3a0f42a166e2e71fa2ffe081f38a8bd8b1aeb7b
+ms.openlocfilehash: aea02cbde32d9485bd49ec39a6f300021c6ef927
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43382882"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53597704"
 ---
 # <a name="use-time-series-insights-to-visualize-telemetry-sent-from-the-device-simulation-solution-accelerator"></a>Использование службы "Аналитика временных рядов Azure" для визуализации данных телеметрии, отправленных из акселератора решений для имитации устройств
 

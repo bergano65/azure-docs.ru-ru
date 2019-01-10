@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/26/2018
 ms.author: wesmc
 ms.custom: mvc
-ms.openlocfilehash: 11e674771e9f4a8afbe820aa91dfee1c8b8ab6db
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: fd5a995bf03d530ccbcf9b839ccc840d202b47d6
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53018807"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53556193"
 ---
 # <a name="quickstart-create-an-aspnet-web-app"></a>Краткое руководство. Создание веб-приложения ASP.NET 
 
@@ -118,7 +118,7 @@ ms.locfileid: "53018807"
 * До: `<appSettings>`
 * После: ` <appSettings file="C:\AppSecrets\CacheSecrets.config">`
 
-Среда выполнения ASP.NET объединяет содержимое внешнего файла с разметкой в элементе `<appSettings>`. Если указанный файл не удается найти, среда выполнения игнорирует атрибут файла. Секреты (строка подключения к вашему кэшу) не включаются в исходный код приложения. При развертывании веб-приложения в Azure файл *CacheSecrests.config* не развертывается.
+Среда выполнения ASP.NET объединяет содержимое внешнего файла с разметкой в элементе `<appSettings>`. Если указанный файл не удается найти, среда выполнения игнорирует атрибут файла. Секреты (строка подключения к вашему кэшу) не включаются в исходный код приложения. При развертывании веб-приложения в Azure файл *CacheSecrets.config* не развертывается.
 
 ### <a name="to-configure-the-application-to-use-stackexchangeredis"></a>Настройка приложения для использования StackExchange.Redis
 
@@ -173,7 +173,7 @@ ms.locfileid: "53018807"
             ViewBag.command3 = "SET Message \"Hello! The cache is working from ASP.NET!\"";
             ViewBag.command3Result = cache.StringSet("Message", "Hello! The cache is working from ASP.NET!").ToString();
 
-            // Demostrate "SET Message" executed as expected...
+            // Demonstrate "SET Message" executed as expected...
             ViewBag.command4 = "GET Message";
             ViewBag.command4Result = cache.StringGet("Message").ToString();
 

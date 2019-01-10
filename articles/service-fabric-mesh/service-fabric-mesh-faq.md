@@ -9,12 +9,12 @@ ms.date: 12/12/2018
 ms.topic: troubleshooting
 ms.service: service-fabric-mesh
 manager: jeanpaul.connock
-ms.openlocfilehash: 7103557d19b367be0b9f0aa6f4a4642800c14558
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 2f9800deedb2e8d55362920fed2493a42290e764
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53314845"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555852"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
 
@@ -79,7 +79,7 @@ ms.locfileid: "53314845"
 
 ## <a name="supported-container-os-images"></a>Поддерживаемые образы ОС контейнера
 
-При разработке на компьютере с обновлением Windows Fall Creators (версия 1709) можно использовать только образы Docker для Windows версии 1709.
+При разработке на компьютере с обновлением Windows Fall Creators (версия 1709) можно использовать только образы Docker для Windows версии 1709.
 
 При разработке на компьютере с обновлением Windows 10 за апрель 2018 г. (версия 1803) можно использовать образы Docker как версии 1709, так и версии 1803.
 
@@ -101,7 +101,7 @@ ms.locfileid: "53314845"
 - Если само имя службы не работает, попробуйте полное имя: ServiceName.ApplicationName.
 - В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Например: 
 
-```
+```DockerFile
 EXPOSE 80
 ```
 

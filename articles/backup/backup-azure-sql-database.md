@@ -2,25 +2,18 @@
 title: Резервное копирование баз данных SQL Server в Azure | Документация Майкрософт
 description: Узнайте, как выполнить резервное копирование SQL Server в Azure. Здесь также описывается восстановление SQL Server.
 services: backup
-documentationcenter: ''
 author: rayne-wiselman
 manager: carmonm
-editor: ''
-keywords: ''
-ms.assetid: ''
 ms.service: backup
-ms.workload: storage-backup-recovery
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.date: 08/02/2018
-ms.author: anuragm
-ms.custom: ''
-ms.openlocfilehash: e2e6742fb3eda0523c7333451e836beb069e57ca
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.topic: tutorial
+ms.date: 12/21/2018
+ms.author: raynew
+ms.openlocfilehash: 50085336c59f2284f357e32b875eae08ff90d30f
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53410369"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53790180"
 ---
 # <a name="back-up-sql-server-databases-to-azure"></a>Резервное копирование баз данных SQL Server в Azure
 
@@ -44,9 +37,9 @@ ms.locfileid: "53410369"
 - Виртуальной машине SQL требуется подключение к Интернету для доступа к общедоступным IP-адресам Azure. Дополнительные сведения см. в разделе [Установка сетевого подключения](backup-azure-sql-database.md#establish-network-connectivity).
 - В одном хранилище служб восстановления можно защитить до 2000 баз данных SQL. Дополнительные базы данных SQL должны храниться в отдельном хранилище служб восстановления.
 - [Резервное копирование распределенных групп доступности](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/distributed-availability-groups?view=sql-server-2017) имеет ограничения.
-- Экземпляры отказоустойчивого кластера SQL Server Always On не поддерживаются.
+- Экземпляры отказоустойчивого кластера SQL Server Always On не поддерживаются для резервного копирования.
 - Чтобы настроить Azure Backup для защиты баз данных SQL Server, используйте портал Azure. Azure PowerShell, Azure CLI и интерфейсы REST API сейчас не поддерживаются.
-- Операции резервного копирования и восстановления для зеркальных баз данных, моментальных снимков базы данных и баз данных в FCI не поддерживаются.
+- Операции резервного копирования и восстановления для зеркальных баз данных, моментальных снимков базы данных и баз данных экземпляра отказоустойчивого кластера не поддерживаются.
 - Базу данных с большим числом файлов невозможно защитить. Максимальное число поддерживаемых файлов не является детерминированным числом, так как оно не только зависит от количества файлов, но и от длины пути к файлам. Хотя такие случаи менее распространены. Мы создаем решение для устранения этой проблемы.
 
 Дополнительные сведения о поддерживаемых и не поддерживаемых сценариях см. в разделе с [вопросами и ответами](https://docs.microsoft.com/azure/backup/backup-azure-sql-database#faq).
@@ -136,7 +129,7 @@ Linux в настоящее время не поддерживается.
 
 ## <a name="set-permissions-for-non-marketplace-sql-vms"></a>Установка разрешений для виртуальных машин SQL не из marketplace
 
-Azure Backup требуется установка расширения **AzureBackupWindowsWorkload** для резервного копирования виртуальной машины. Если используются виртуальные машины Azure Marketplace, перейдите к разделу [Обнаружение базы данных SQL Server](backup-azure-sql-database.md#discover-sql-server-databases). Если виртуальная машина, на которой размещены базы данных SQL, не была создана посредством Azure Marketplace, выполните приведенную ниже процедуру, чтобы установить расширение и задать соответствующие разрешения. В дополнение к расширению **AzureBackupWindowsWorkload** для Azure Backup требуются разрешения sysadmin SQL для защиты баз данных SQL. При обнаружении баз данных на виртуальной машине Azure Backup создает учетную запись **NT Service\AzureWLBackupPluginSvc**. Эта учетная запись используется для резервного копирования и восстановления и должна иметь разрешения системного администратора SQL. Кроме того, Azure Backup будет использовать учетную запись **NT AUTHORITY\SYSTEM** для обнаружения и запроса баз данных, поэтому эта учетная запись должна соответствовать общедоступному имени входа в SQL.
+Azure Backup требуется установка расширения **AzureBackupWindowsWorkload** для резервного копирования виртуальной машины. Если используются виртуальные машины Azure Marketplace, перейдите к разделу [Обнаружение базы данных SQL Server](backup-azure-sql-database.md#discover-sql-server-databases). Если виртуальная машина, на которой размещены базы данных SQL, не была создана посредством Azure Marketplace, выполните приведенную ниже процедуру, чтобы установить расширение и задать соответствующие разрешения. В дополнение к расширению **AzureBackupWindowsWorkload** для Azure Backup требуются разрешения sysadmin SQL для защиты баз данных SQL. При обнаружении баз данных на виртуальной машине Azure Backup создает учетную запись **NT SERVICE\AzureWLBackupPluginSvc**. Эта учетная запись используется для резервного копирования и восстановления и должна иметь разрешения системного администратора SQL. Кроме того, Azure Backup будет использовать учетную запись **NT AUTHORITY\SYSTEM** для обнаружения и запроса баз данных, поэтому эта учетная запись должна соответствовать общедоступному имени входа в SQL.
 
 Настройка разрешений
 
@@ -182,7 +175,7 @@ Azure Backup требуется установка расширения **AzureB
 
     ![Выбор "Найти" в диалоговом окне "Login - New" (Создание имени для входа)](./media/backup-azure-sql-database/new-login-search.png)
 
-3. Учетная запись виртуальной службы Windows **NT Service\AzureWLBackupPluginSvc** была создана во время регистрации виртуальной машины и обнаружения баз данных SQL. Введите имя учетной записи, как показано в поле **Enter the object name to select** (Введите имя выбираемого объекта). Выберите **Проверить имена**, чтобы разрешить имя.
+3. Учетная запись виртуальной службы Windows **NT SERVICE\AzureWLBackupPluginSvc** была создана во время регистрации виртуальной машины и обнаружения баз данных SQL. Введите имя учетной записи, как показано в поле **Enter the object name to select** (Введите имя выбираемого объекта). Выберите **Проверить имена**, чтобы разрешить имя.
 
     ![Выбор "Проверить имена" для разрешения имени неизвестной службы](./media/backup-azure-sql-database/check-name.png)
 

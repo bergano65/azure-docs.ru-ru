@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2018
+ms.date: 12/27/2018
 ms.author: sethm
-ms.reviewer: jeffgo
-ms.openlocfilehash: 73a0766baee8da782f0192fbc17fb2898a8360ac
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.reviewer: ''
+ms.openlocfilehash: f6ef1dfdef68136ae129faced7443302e738d5b9
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "41946618"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53810379"
 ---
 # <a name="check-your-templates-for-azure-stack-with-the-template-validation-tool"></a>Проверьте свои шаблоны для Azure Stack с помощью средства проверки шаблонов.
 
@@ -32,25 +32,25 @@ ms.locfileid: "41946618"
 
 Чтобы проверить шаблон, сначала нужно создать файл возможностей облака, а затем запустить средство проверки. Можно использовать приведенные ниже модули PowerShell с помощью инструментов Azure Stack.
 
-- В папке **CloudCapabilities**:<br>         AzureRM.CloudCapabilities.psm1 создает JSON-файл со списком возможностей облака, где перечисляются доступные в облаке Azure Stack службы и версии.
+- В папке **CloudCapabilities**:<br>         `AzureRM.CloudCapabilities.psm1` создает JSON-файл со списком возможностей облака, где перечисляются доступные в облаке Azure Stack службы и версии.
 - В папке **TemplateValidator**:<br>
-AzureRM.TemplateValidator.psm1 использует JSON-файл облачных возможностей для проверки шаблонов на возможность развертывания в Azure Stack.
+`AzureRM.TemplateValidator.psm1` использует JSON-файл облачных возможностей для проверки шаблонов на возможность развертывания в Azure Stack.
 
 ## <a name="build-the-cloud-capabilities-file"></a>Создание файла возможностей облака
 
-Прежде чем использовать средство проверки шаблонов, запустите модуль PowerShell AzureRM.CloudCapabilities, чтобы создать файл JSON.
+Прежде чем использовать средство проверки шаблонов, запустите модуль PowerShell **AzureRM.CloudCapabilities**, чтобы создать файл JSON.
 
 >[!NOTE]
 >При обновлении интегрированной системы и добавлении новых служб или расширений виртуальной машины следует еще раз запустить этот модуль.
 
 1. Убедитесь, что у вас есть подключение к Azure Stack. Эти шаги можно выполнить на узле пакета средств разработки Azure Stack или на рабочей станции, подключенной через [VPN](azure-stack-connect-azure-stack.md#connect-to-azure-stack-with-vpn).
-2. Импортируйте модуль PowerShell AzureRM.CloudCapabilities:
+2. Импортируйте модуль PowerShell **AzureRM.CloudCapabilities**.
 
     ```PowerShell
     Import-Module .\CloudCapabilities\AzureRM.CloudCapabilities.psm1
     ```
 
-3. С помощью командлета Get-CloudCapabilities получите версии служб и создайте JSON-файл облачных возможностей. Если вы не укажете параметр **-OutputPath**, файл AzureCloudCapabilities.Json будет создан в текущем каталоге. Укажите фактическое расположение.
+3. С помощью командлета `Get-CloudCapabilities` получите версии служб и создайте JSON-файл облачных возможностей. Если вы не укажете параметр **-OutputPath**, файл AzureCloudCapabilities.Json будет создан в текущем каталоге. Укажите фактическое расположение.
 
     ```PowerShell
     Get-AzureRMCloudCapability -Location <your location> -Verbose
@@ -58,9 +58,9 @@ AzureRM.TemplateValidator.psm1 использует JSON-файл облачны
 
 ## <a name="validate-templates"></a>Проверка шаблонов
 
-Этот процесс позволяет проверить шаблоны с помощью модуля PowerShell AzureRM.TemplateValidator. Вы можете использовать собственные шаблоны или взять для примера [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates).
+Этот процесс позволяет проверить шаблоны с помощью модуля PowerShell **AzureRM.TemplateValidator**. Вы можете использовать собственные шаблоны или взять для примера [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates).
 
-1. Импортируйте модуль AzureRM.TemplateValidator.psm1 PowerShell:
+1. Импортируйте модуль **AzureRM.TemplateValidator.psm1** PowerShell.
 
     ```PowerShell
     cd "c:\AzureStack-Tools-master\TemplateValidator"
@@ -95,13 +95,13 @@ AzureRM.TemplateValidator.psm1 использует JSON-файл облачны
 
 ### <a name="examples"></a>Примеры
 
-Этот пример проверяет все [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates), скачанные в локальное хранилище. Пример также проверяет размеры и расширения виртуальной машины на соответствие возможностям Пакета средств разработки Azure Stack.
+Этот пример проверяет все [шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates), скачанные в локальное хранилище. Пример также проверяет размеры и расширения виртуальной машины на соответствие возможностям пакета средств разработки Azure Stack.
 
 ```PowerShell
 test-AzureRMTemplate -TemplatePath C:\AzureStack-Quickstart-Templates `
 -CapabilitiesPath .\TemplateValidator\AzureStackCloudCapabilities_with_AddOns_20170627.json `
--TemplatePattern MyStandardTemplateName.json`
--IncludeComputeCapabilities`
+-TemplatePattern MyStandardTemplateName.json `
+-IncludeComputeCapabilities `
 -Report TemplateReport.html
 ```
 

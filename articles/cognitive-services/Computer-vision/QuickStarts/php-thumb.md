@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание эскиза с помощью API компьютерного зрения для REST, PHP
+title: Краткое руководство. Создание эскиза — REST, PHP
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения в PHP.
 services: cognitive-services
@@ -10,12 +10,13 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: 171893dd3017d46c405d2269506fe37896155e55
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.custom: seodec18
+ms.openlocfilehash: 1527f57a1d300f730222d100bc9caf2001098fea
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52964515"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53579351"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-php-in-computer-vision"></a>Краткое руководство. Создание эскиза с помощью API компьютерного зрения, REST API и PHP
 
@@ -33,7 +34,7 @@ ms.locfileid: "52964515"
 
 Чтобы создать и запустить пример, сделайте следующее.
 
-1. Установите пакет [`HTTP_Request2`](http://pear.php.net/package/HTTP_Request2) для PHP5.
+1. Установите пакет [`HTTP_Request2`](https://pear.php.net/package/HTTP_Request2) для PHP5.
    1. Откройте окно командной строки с правами администратора.
    1. Выполните следующую команду:
 

@@ -9,15 +9,18 @@ ms.author: gwallace
 ms.date: 09/11/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a518d00a50c0fc6ec83626852f30f739d64b18ea
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.openlocfilehash: 5b87d04466a2c94ed233edf4069ec1a30b10d03a
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52283303"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53634326"
 ---
 # <a name="runbook-and-module-galleries-for-azure-automation"></a>Коллекции модулей Runbook и других модулей для службы автоматизации Azure
 Вы можете не создавать собственные модули Runbook и другие модули в службе автоматизации Azure, а воспользоваться разнообразными сценариями, уже созданными корпорацией Майкрософт и сообществом.  Эти готовые сценарии можно применять без изменений или использовать в качестве отправной точки, модифицируя их под свои задачи.
+
+> [!NOTE]
+> Новый [модуль Azure PowerShell Az](/powershell/azure/new-azureps-module-az?view=azurermps-6.13.0) не поддерживается в службе автоматизации Azure. Сценарии, загруженные из коллекции PowerShell с помощью этих командлетов, не будут работать в службе автоматизации Azure.
 
 Модули Runbook можно получить из [коллекции Runbook](#runbooks-in-runbook-gallery), а другие модули — из [коллекции PowerShell](#modules-in-powerShell-gallery).  Также вы можете поделиться с сообществом сценариями, которые вы разработали: см. раздел, посвященный [добавлению модуля Runbook в коллекцию](automation-runbook-gallery.md#adding-a-runbook-to-the-runbook-gallery).
 

@@ -15,14 +15,14 @@ ms.workload: NA
 ms.date: 09/18/2018
 ms.author: twhitney
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 467484824ec3a3ceffb6dfa692953406ed6acc1b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: ec282bc1159e8a8cf21b88b8430bbf3067686528
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46963327"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53788628"
 ---
-# <a name="tutorial-deploy-a-service-fabric-mesh-application"></a>Руководство. Развертывание приложения Сетки Service Fabric
+# <a name="tutorial-deploy-a-service-fabric-mesh-application"></a>Руководство. Развертывание приложения Сетки Service Fabric.
 
 Это руководство является третьей частью цикла, в котором показано, как публиковать веб-приложение Сетки Azure Service Fabric непосредственно из Visual Studio.
 
@@ -113,10 +113,10 @@ The application was deployed successfully and it can be accessed at http://10.00
 
 На этом этапе приложение развернуто. Можно проверить его состояние с помощью команды `app show`. 
 
-Имя приложения для учебного приложения — `ServiceMeshApp`. Соберите сведения о приложении с помощью следующей команды.
+Имя приложения для учебного приложения — `todolistapp`. Соберите сведения о приложении с помощью следующей команды.
 
 ```azurecli-interactive
-az mesh app show --resource-group $rg --name ServiceMeshApp
+az mesh app show --resource-group $rg --name todolistapp
 ```
 
 ## <a name="see-all-applications-currently-deployed-to-your-subscription"></a>Обзор всех приложений, развернутых сейчас в подписке

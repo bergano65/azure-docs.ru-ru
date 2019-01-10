@@ -1,5 +1,5 @@
 ---
-title: Изменение идентификатора клиента хранилища ключей после перемещения подписки | Документация Майкрософт
+title: Изменение идентификатора клиента хранилища ключей после перемещения подписки — Azure Key Vault | Документация Майкрософт
 description: Узнайте, как изменить идентификатор клиента хранилища ключей после перемещения подписки в другой клиент.
 services: key-vault
 documentationcenter: ''
@@ -10,19 +10,20 @@ ms.assetid: 46d7bc21-fa79-49e4-8c84-032eef1d813e
 ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/07/2017
+ms.date: 01/07/2019
 ms.author: ambapat
-ms.openlocfilehash: e9acd011c76ea23dbbee2c52c5d1909168878d69
-ms.sourcegitcommit: 2d961702f23e63ee63eddf52086e0c8573aec8dd
+ms.openlocfilehash: ea6fc4b155075084150d5bb732f3f8a08846974f
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44161617"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54074314"
 ---
 # <a name="change-a-key-vault-tenant-id-after-a-subscription-move"></a>Изменение идентификатора клиента хранилища ключей после перемещения подписки
-### <a name="q-my-subscription-was-moved-from-tenant-a-to-tenant-b-how-do-i-change-the-tenant-id-for-my-existing-key-vault-and-set-correct-acls-for-principals-in-tenant-b"></a>В. Моя подписка перемещена из клиента А в клиент Б. Как изменить идентификатор клиента имеющегося хранилища ключей и настроить правильные списки ACL для субъектов в клиенте Б?
+
+## <a name="q-my-subscription-was-moved-from-tenant-a-to-tenant-b-how-do-i-change-the-tenant-id-for-my-existing-key-vault-and-set-correct-acls-for-principals-in-tenant-b"></a>Вопрос. Моя подписка перемещена из клиента А в клиент Б. Как изменить идентификатор клиента существующего хранилища ключей и настроить правильные списки ACL для субъектов в клиенте Б?
+
 При создании хранилища ключей в подписке оно автоматически привязывается к идентификатору клиента Azure Active Directory по умолчанию для этой подписки. Все записи политики доступа также привязываются к этому идентификатору клиента. При перемещении подписки Azure из клиента A в клиент Б существующие хранилища ключей недоступны для субъектов (пользователей и приложений) в клиенте Б. Вот как устранить эту проблему.
 
 * Измените идентификатор клиента, связанный со всеми существующими хранилищами ключей в этой подписке, для клиента Б.
@@ -45,5 +46,5 @@ Set-AzureRmResource -ResourceId $vaultResourceId -Properties $vault.Properties
 Теперь, когда хранилище связано с правильным идентификатором клиента и старые записи политики доступа удалены, можно настроить новые записи политики доступа с помощью командлета [Set-AzureRmKeyVaultAccessPolicy](https://docs.microsoft.com/powershell/module/azurerm.keyvault/Set-AzureRmKeyVaultAccessPolicy).
 
 ## <a name="next-steps"></a>Дополнительная информация
-Если у вас возникли вопросы о хранилище ключей Azure, посетите [форумы хранилища ключей Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureKeyVault)
 
+Если у вас возникли вопросы о хранилище ключей Azure, посетите [форумы хранилища ключей Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureKeyVault)

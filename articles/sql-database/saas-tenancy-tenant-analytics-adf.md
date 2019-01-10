@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: anumjs
 ms.author: anjangsh
-ms.reviewer: MightyPen
+ms.reviewer: MightyPen, sstein
 manager: craigg
 ms.date: 09/19/2018
-ms.openlocfilehash: 034fd2434d3b824c4356e640a1c1665dff542de6
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: 4b2c9f17bc9c6e9bbc280116d074bd0f1e3d3e38
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47056602"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53606050"
 ---
 # <a name="explore-saas-analytics-with-azure-sql-database-sql-data-warehouse-data-factory-and-power-bi"></a>Изучение аналитики SaaS с помощью базы данных SQL Azure, хранилища данных SQL, фабрики данных и Power BI
 
@@ -142,11 +142,11 @@ ms.locfileid: "47056602"
 На странице обзора перейдите на вкладку **Author** (Создание) на левой панели и обратите внимание, что создано три [конвейера](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities) и три [набора данных](https://docs.microsoft.com/azure/data-factory/concepts-datasets-linked-services).
 ![adf_author](media/saas-tenancy-tenant-analytics/adf_author_tab.JPG)
 
-Три вложенных конвейера: SQLDBToDW, DBCopy и TableCopy.
+Ниже приведено описание трех вложенных конвейеров: SQLDBToDW, DBCopy и TableCopy.
 
 **Конвейер 1 — SQLDBToDW** ищет имена баз данных клиентов, хранящихся в базе данных каталога (имя таблицы: [__ShardManagement].[ShardsGlobal]), и для каждой клиентской базы данных выполняет конвейер **DBCopy**. По завершении выполняется указанная схема хранимой процедуры **sp_TransformExtractedData**. Эта хранимая процедура преобразовывает загруженные данные в промежуточные таблицы и заполняет таблицы схемы типа "звезда".
 
-**Конвейер 2 — DBCopy** ищет имена исходных таблиц и столбцов из файла конфигурации, хранящегося в хранилище BLOB-объектов.  Затем конвейер **TableCopy** запускается для каждой из четырех таблиц: TicketFacts, CustomerFacts, EventFacts и VenueFacts. Действие **[Foreach](https://docs.microsoft.com/azure/data-factory/control-flow-for-each-activity)** выполняется в параллельном режиме для всех 20 баз данных. ADF поддерживает параллельное выполнение не более 20 итераций цикла. Рассмотрите возможность создания нескольких конвейеров для большего количества баз данных.    
+**Конвейер 2 — DBCopy** ищет имена исходных таблиц и столбцов из файла конфигурации, хранящегося в хранилище BLOB-объектов.  Затем конвейер **TableCopy** выполняется для каждой из четырех таблиц: TicketFacts, CustomerFacts, EventFacts и VenueFacts. Действие **[Foreach](https://docs.microsoft.com/azure/data-factory/control-flow-for-each-activity)** выполняется в параллельном режиме для всех 20 баз данных. ADF поддерживает параллельное выполнение не более 20 итераций цикла. Рассмотрите возможность создания нескольких конвейеров для большего количества баз данных.    
 
 **Конвейер 3 — TableCopy** использует номера версий строк в базе данных SQL (_rowversion_) для определения измененных или обновленных строк. Это действие выполняет поиск версии начальной и конечной строк для извлечения строк из исходных таблиц. Таблица **CopyTracker**, хранящаяся в каждой базе данных клиентов, отслеживает последнюю строку, извлеченную из каждой исходной таблицы при каждом запуске. Новые или измененные строки копируются в соответствующие промежуточные таблицы в хранилище данных: **raw_Tickets**, **raw_Customers**, **raw_Venues** и **raw_Events**. Наконец, версия последней строки сохраняется в таблице **CopyTracker** для использования в качестве версии начальной строки для следующего сеанса извлечения. 
 
@@ -189,7 +189,7 @@ ms.locfileid: "47056602"
 Выполните шаги ниже, чтобы подключиться к Power BI, а также импортировать созданные ранее представления:
 
 1. Запустите Power BI Desktop.
-2. На вкладке "Главная" выберите **Получение данных**, а затем выберите **Дополнительно…**. в меню.
+2. На вкладке "Главная" выберите **Получение данных**, а затем выберите **Дополнительно…**.  в меню.
 3. В окне **Get Data** (Получение данных) выберите **База данных SQL Azure**.
 4. В окне входа в базу данных введите имя сервера (**catalog-dpt-&lt;Пользователь&gt;.database.windows.net**). Выберите **Импорт** для параметра **Режим подключения к данным**, а затем нажмите кнопку **ОК**. 
 

@@ -4,17 +4,17 @@ description: В этой статье объясняется, как с помо
 services: stream-analytics
 author: jseb225
 ms.author: jeanb
-manager: kfile
-ms.reviewer: jasonh
+ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 06/26/2017
-ms.openlocfilehash: 4c676ab3039a02a4fda27ab00312133e5de8077a
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.date: 12/07/2018
+ms.custom: seodec18
+ms.openlocfilehash: 727747d84d0db32c73fc1a200bcea7e5c149d24b
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47090972"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53554917"
 ---
 # <a name="set-up-alerts-for-azure-stream-analytics-jobs"></a>Настройка оповещений для заданий Azure Stream Analytics
 Оповещения можно настроить на отображение в случае, если метрика достигнет указанного состояния. Например, оповещение для условия можно настроить следующим образом:
@@ -30,7 +30,7 @@ ms.locfileid: "47090972"
 
 3. В колонке **Метрика** выберите команду **Добавить оповещение**.
 
-      ![Настройка портала Azure](./media/stream-analytics-set-up-alerts/06-stream-analytics-set-up-alerts.png)  
+      ![Настройка оповещений Stream Analytics на портале Azure](./media/stream-analytics-set-up-alerts/06-stream-analytics-set-up-alerts.png)  
 
 4. Введите имя и описание.
 

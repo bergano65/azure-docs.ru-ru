@@ -1,18 +1,17 @@
 ---
 title: Подготовка пропускной способности контейнера в Azure Cosmos DB
 description: Узнайте о том, как подготовить пропускную способность на уровне контейнера в Azure Cosmos DB
-services: cosmos-db
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
 ms.date: 11/06/2018
 ms.author: mjbrown
-ms.openlocfilehash: dd47976bca75569142f1912eee06c66061e92fa6
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: eb34385087118614f8d7057c2229bc3c9e8d1ae4
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53097671"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54039492"
 ---
 # <a name="provision-throughput-for-an-azure-cosmos-db-container"></a>Подготовка пропускной способности для коллекций Azure Cosmos DB
 
@@ -47,7 +46,7 @@ az cosmosdb collection create \
     --throughput 1000
 ```
 
-При подготовке пропускной способности для учетной записи API MongoDB используйте /myShardKey для пути к ключу раздела и при подготовке пропускной способности для учетной записи API Cassandra используйте /myPrimaryKey для пути к ключу секции.
+При подготовке пропускной способности для учетной записи Cosmos, настроенной с помощью API Azure Cosmos DB для MongoDB, используйте /myShardKey для пути к ключу раздела, а при подготовке пропускной способности для учетной записи Cosmos, настроенной для API Cassandra, используйте /myPrimaryKey для пути к ключу секции.
 
 ## <a name="provision-throughput-using-net-sdk"></a>Подготовка пропускной способности с помощью пакета SDK для .NET
 

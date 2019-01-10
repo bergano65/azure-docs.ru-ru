@@ -1,20 +1,18 @@
 ---
 title: Создание правил и конечных точек службы виртуальной сети Базы данных Azure для MariaDB и управление ими с помощью Azure CLI | Документация Майкрософт
 description: В этой статье описывается, как создать конечные точки службы виртуальной сети и правила Базы данных Azure для MariaDB и управлять ими с помощью командной строки Azure CLI.
-services: mariaDB
 author: ajlam
 ms.author: andrela
-editor: jasonwhowell
 ms.service: mariadb
-ms.devlang: azure-cli
-ms.topic: article
+ms.devlang: azurecli
+ms.topic: conceptual
 ms.date: 11/20/2018
-ms.openlocfilehash: 7f39eb2b3020016d1fb14e8c611ae00dfab07c11
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: bfa55c0a91473a4adc6b9fb02ac9697208ef39f9
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52336574"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53540067"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-vnet-service-endpoints-using-azure-cli"></a>Создание конечных точек службы виртуальной сети Базы данных Azure для MariaDB и управление ими с помощью Azure CLI
 
@@ -58,7 +56,7 @@ az login
 Виртуальные сети и ресурсы служб Azure могут находиться в одной или разных подписках. Если виртуальные сети и ресурсы служб Azure находятся в разных подписках, ресурсы должны быть размещены в одном клиенте Active Directory (AD).
 
 > [!IMPORTANT]
-> Прежде чем настраивать конечные точки службы, настоятельно рекомендуется прочитать эту статью о конфигурациях конечной точки службы и рекомендациях: [Конечные точки службы виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md). **Конечная точка службы виртуальной сети** — это подсеть, значения свойств которой включают в себя одно или несколько формальных имен типов службы Azure. Конечные точки службы виртуальной сети используют имя типа службы **Microsoft.Sql**, которое относится к службе Azure, которая называется "База данных SQL". Этот тег службы также применяется к службам "База данных SQL Azure", "База данных Azure для MariaDB", "База данных Azure для PostgreSQL" и "База данных Azure для MySQL". Важно отметить, что при применении тега службы **Microsoft.Sql** к конечной точке службы виртуальной сети она настроит трафик конечной точки службы для всех служб базы данных Azure, в том числе служб "База данных SQL Azure", "База данных Azure для MariaDB", "База данных Azure для PostgreSQL" и "База данных Azure для MySQL" в подсети.
+> Прежде чем настраивать конечные точки службы, настоятельно рекомендуется прочитать эту статью о конфигурациях конечной точки службы и рекомендациях: **Конечная точка службы виртуальной сети.** [Конечная точка службы виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md) — это подсеть, значения свойств которой включают в себя одно формальное имя типа службы Azure или несколько. Конечные точки службы виртуальной сети используют имя типа службы **Microsoft.Sql**, которое относится к службе Azure, которая называется "База данных SQL". Этот тег службы также применяется к Базе данных SQL Azure, Базе данных Azure для MariaDB, PostgreSQL и MySQL. Важно отметить, что при применении тега службы **Microsoft.Sql** к конечной точке службы виртуальной сети настраивается трафик конечной точки службы для всех служб баз данных Azure, в том числе для Базы данных SQL Azure, Базы данных Azure для MariaDB, Базы данных Azure для PostgreSQL и Базы данных Azure для MySQL в подсети.
 
 ### <a name="sample-script"></a>Пример скрипта
 

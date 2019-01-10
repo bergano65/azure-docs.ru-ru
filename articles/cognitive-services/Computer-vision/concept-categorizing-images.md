@@ -1,7 +1,7 @@
 ---
 title: Классификация изображений. Компьютерное зрение
 titleSuffix: Azure Cognitive Services
-description: Понятия, связанные с классификацией изображений с помощью API компьютерного зрения.
+description: Понятия, связанные с функцией классификации изображений API компьютерного зрения.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: conceptual
 ms.date: 08/29/2018
 ms.author: pafarley
-ms.openlocfilehash: 7062d98d40c15f4e9e873038fc12fc1b104c996d
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.custom: seodec18
+ms.openlocfilehash: 40873b13407066920caec5c04751b65c01d7e209
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52333485"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53579504"
 ---
-# <a name="categorizing-images"></a>Классификация изображений
+# <a name="image-categorization-with-computer-vision"></a>Классификация изображений с помощью API компьютерного зрения
 
 В дополнение к добавлению тегов и описаний, компьютерное зрение возвращает основанные на таксономии категории, определенные в предыдущих версиях. Эти категории организованы в виде таксономии с иерархиями родительских и дочерних наследований. Все категории указаны на английском языке. Они могут использоваться отдельно или с новыми моделями добавления тегов.
 
@@ -31,7 +32,7 @@ ms.locfileid: "52333485"
 
 В приведенном ниже ответе JSON показано, что именно возвращает компьютерное зрение при классификации примера изображения на основе его визуальных характеристик.
 
-![Женщина на крыше](./Images/woman_roof.png)
+![Женщина на крыше жилого дома](./Images/woman_roof.png)
 
 ```json
 {
@@ -54,10 +55,10 @@ ms.locfileid: "52333485"
 
 | Образ — | Категория |
 |-------|----------|
-| ![Семейное фото](./Images/family_photo.png) | people_group |
-| ![Милая собака](./Images/cute_dog.png) | animal_dog |
-| ![Гора](./Images/mountain_vista.png) | outdoor_mountain |
-| ![Анализ изображения. Хлеб](./Images/bread.png) | food_bread |
+| ![Четыре человека позируют как семья](./Images/family_photo.png) | people_group |
+| ![Щенок, сидящий на лужайке](./Images/cute_dog.png) | animal_dog |
+| ![Человек, стоящий на скале на закате](./Images/mountain_vista.png) | outdoor_mountain |
+| ![Гора булочек на столе](./Images/bread.png) | food_bread |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

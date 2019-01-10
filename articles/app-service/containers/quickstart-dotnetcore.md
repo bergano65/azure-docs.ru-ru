@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения .NET Core в Службе приложений Azure в Linux | Документация Майкрософт
+title: Создание приложения .NET Core в Службе приложений Azure в Linux | Документация Майкрософт
 description: Быстрое развертывание первого приложения Hello World на .NET Core в службе приложений на платформе Linux.
 keywords: служба приложений azure, веб-приложение, dotnet, core, linux, oss
 services: app-service
@@ -16,20 +16,20 @@ ms.topic: quickstart
 ms.date: 04/11/2018
 ms.author: cfowler
 ms.custom: seodec18
-ms.openlocfilehash: f074c6184652ced133a7253bee3cc7a8a556c574
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 047ed6026412cac7fc7c51135e1837a20decd910
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53251799"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53633937"
 ---
-# <a name="create-a-net-core-web-app-in-app-service-on-linux"></a>Создание веб-приложения .NET Core в службе приложений на платформе Linux
+# <a name="create-a-net-core-app-in-app-service-on-linux"></a>Создание приложения .NET Core в службе приложений на платформе Linux
 
 > [!NOTE]
 > В этой статье мы развернем приложение в службе приложений на платформе Linux. Сведения о развертывании в службе приложений на платформе _Windows_ см. в статье [Создание веб-приложения ASP.NET Core в Azure](../app-service-web-get-started-dotnet.md).
 >
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как создать приложение [.NET Core](https://docs.microsoft.com/aspnet/core/) в службе приложений на платформе Linux. Создайте веб-приложение с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) и разверните код .NET Core в веб-приложении с помощью Git.
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как создать приложение [.NET Core](https://docs.microsoft.com/aspnet/core/) в службе приложений на платформе Linux. Создайте приложение с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli) и разверните код .NET Core в приложении с помощью Git.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-dotnetcore/dotnet-browse-azure.png)
 
@@ -53,7 +53,7 @@ md hellodotnetcore
 cd hellodotnetcore
 ```
 
-Создайте веб-приложение .NET Core.
+Создание нового приложения .NET Core
 
 ```bash
 dotnet new web
@@ -95,15 +95,15 @@ git commit -m "first commit"
 
 [!INCLUDE [Create web app](../../../includes/app-service-web-create-web-app-dotnetcore-linux-no-h.md)]
 
-Перейдите к только что созданному веб-приложению. Замените _&lt;имя_приложения>_ уникальным именем веб-приложения.
+Перейдите к только что созданному веб-приложению. Замените _&lt;app name>_ именем своего приложения.
 
 ```bash
 http://<app name>.azurewebsites.net
 ```
 
-Новое веб-приложение должно выглядеть так:
+Новое приложение должно выглядеть следующим образом.
 
-![Пустая страница веб-приложения](media/quickstart-dotnetcore/dotnet-browse-created.png)
+![Пустая страница приложения](media/quickstart-dotnetcore/dotnet-browse-created.png)
 
 [!INCLUDE [Push to Azure](../../../includes/app-service-web-git-push-to-azure.md)] 
 
@@ -144,7 +144,7 @@ To https://cephalin-dotnetcore.scm.azurewebsites.net/cephalin-dotnetcore.git
 http://<app_name>.azurewebsites.net
 ```
 
-Пример кода .NET Core выполняется в веб-приложении со встроенным образом.
+Пример кода .NET Core выполняется в службе приложений в Linux со встроенным образом.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-dotnetcore/dotnet-browse-azure.png)
 
@@ -169,15 +169,15 @@ git push azure master
 
 ![Обновленный пример приложения, выполняющегося в Azure](media/quickstart-dotnetcore/dotnet-browse-azure-updated.png)
 
-## <a name="manage-your-new-azure-web-app"></a>Управление новым веб-приложением Azure
+## <a name="manage-your-new-azure-app"></a>Управление новым приложением Azure
 
-Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления созданным веб-приложением.
+Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a>, чтобы управлять созданным приложением.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/quickstart-dotnetcore/portal-app-service-list.png)
+![Переход к приложению Azure на портале](./media/quickstart-dotnetcore/portal-app-service-list.png)
 
-Отобразится страница обзора вашего веб-приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. 
+Отобразится страница обзора вашего приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление. 
 
 ![Страница службы приложений на портале Azure](media/quickstart-dotnetcore/portal-app-overview.png)
 

@@ -11,14 +11,15 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: diberry
-ms.openlocfilehash: 478727a4d3628fbe6a385e3beb28201c228f9e2d
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 8ea180131ce2f9e1288c3ffb928170be55a77de7
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53078246"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53598456"
 ---
-# <a name="luis-api-http-response-codes"></a>Коды ответов HTTP для API LUIS
+# <a name="common-api-response-codes-and-their-meaning"></a>Стандартные коды ответа API и их значение
+
 API-интерфейсы [разработки](https://aka.ms/luis-authoring-apis) и [конечных точек](https://aka.ms/luis-endpoint-apis) возвращают коды ответов HTTP. В то время как ответные сообщения содержат сведения, относящиеся к запросу, код состояния ответа HTTP имеет общий характер. 
 
 ## <a name="common-status-codes"></a>Распространенные коды состояний
@@ -38,3 +39,7 @@ API-интерфейсы [разработки](https://aka.ms/luis-authoring-ap
 |410|Конечная точка|Приложение необходимо повторно обучить и опубликовать заново|
 |414|Конечная точка|В запросе превышено максимально допустимое количество символов|
 |429|Разработки, конечных точек|Превышено ограничение скорости (запросов в секунду)|
+
+## <a name="next-steps"></a>Дополнительная информация
+
+* Документация по [разработке](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c2f) и [конечной точке](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78) REST API

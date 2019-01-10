@@ -10,16 +10,16 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 02/27/2018
 ms.author: hrasheed
-ms.openlocfilehash: 3ea1048b1bd47a5cb4f8f4f7725f5ac4d3bbed8a
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 3bae6d93ffe7ea028d3329dcc69c2f33bdf7aa2a
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582854"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53635465"
 ---
 # <a name="what-is-apache-storm-on-azure-hdinsight"></a>Основные сведения об Apache Storm в Azure HDInsight
 
-[Apache Storm](http://storm.apache.org/) — это распределенная отказоустойчивая вычислительная система с открытым исходным кодом. Ее можно использовать для обработки потоков данных в реальном времени с помощью [Apache Hadoop](https://hadoop.apache.org/). Решения Storm могут также обеспечить гарантированную обработку данных и возможность воспроизвести те данные, которые не прошли удачную обработку в первый раз.
+[Apache Storm](https://storm.apache.org/) — это распределенная отказоустойчивая вычислительная система с открытым исходным кодом. Ее можно использовать для обработки потоков данных в реальном времени с помощью [Apache Hadoop](https://hadoop.apache.org/). Решения Storm могут также обеспечить гарантированную обработку данных и возможность воспроизвести те данные, которые не прошли удачную обработку в первый раз.
 
 [!INCLUDE [hdinsight-price-change](../../../includes/hdinsight-enhancements.md)]
 
@@ -27,22 +27,22 @@ ms.locfileid: "52582854"
 
 Использование Storm в HDInsight обеспечивает следующие преимущества:
 
-* __Соглашение об уровне обслуживания (SLA) с гарантией времени доступности Storm на уровне 99 %__. Дополнительные сведения см. в документе [о SLA для HDInsight](https://azure.microsoft.com/support/legal/sla/hdinsight/v1_0/).
+* __Соглашение об уровне обслуживания (SLA) 99 % в отношении бесперебойной работы Storm__. Дополнительные сведения см. в документе [Соглашение об уровне обслуживания для HDInsight](https://azure.microsoft.com/support/legal/sla/hdinsight/v1_0/).
 
 * Простая настройка с помощью скриптов во время или после создания кластера Storm. Дополнительные сведения см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](../hdinsight-hadoop-customize-cluster-linux.md).
 
-* **Создание решений на различных языках.** Вы можете написать компоненты Storm на удобном для вас языке, например Java, C# и Python.
+* **Создание решений на нескольких языках**. Вы можете написать компоненты Storm на удобном для вас языке, например Java, C# и Python.
 
     * Интеграция Visual Studio с HDInsight для разработки, администрирования и отслеживания топологий C#. Дополнительные сведения см. в статье [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md).
 
     * Поддержка Java-интерфейса Trident. Вы можете создавать топологии Storm, поддерживающие обработку сообщений в рамках подхода "только один раз", сохраняемость "транзакционных" хранилищ данных, а также набор распространенных операций Stream Analytics.
 
-* **Динамическое масштабирование.** Вы можете добавить или удалить рабочие узлы, не влияя на выполняющиеся топологии Storm.
+* **Динамическое масштабирование**. Вы можете добавить или удалить рабочие узлы, не влияя на выполняющиеся топологии Storm.
 
-    > [!NOTE]
+    > [!NOTE]  
     > Чтобы использовать новые узлы, добавленные с помощью операций масштабирования, нужно деактивировать и повторно активировать выполняющиеся топологии.
 
-* **Создание конвейеров потоковой передачи с помощью различных служб Azure.** Storm в HDInsight интегрируется с другими службами Azure, такими как Центры событий, База данных SQL, служба хранилища Azure и Azure Data Lake Store.
+* **Создание конвейеров потоковой передачи с помощью нескольких служб Azure**. Storm в HDInsight интегрируется с другими службами Azure, такими как Центры событий, база данных SQL, служба хранилища Azure и Azure Data Lake Storage.
 
     Пример приложения, которое интегрируется со службами Azure, см. в руководстве по [обработке событий из Центров событий Azure с помощью Apache Storm в HDInsight](https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/).
 
@@ -76,31 +76,31 @@ Storm работает с топологиями, а не заданиями [Ap
 
 ## <a name="ease-of-use"></a>Простота использования
 
-* __Подключение Secure Shell.__ Головные узлы кластера Storm доступны через Интернет по протоколу SSH. С помощью SSH вы можете выполнять команды непосредственно в кластере.
+* __Подключение Secure Shell (SSH)__. Головные узлы кластера Storm доступны через Интернет по протоколу SSH. С помощью SSH вы можете выполнять команды непосредственно в кластере.
 
   Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
-* __Веб-подключение.__ Все кластеры HDInsight предоставляют веб-интерфейс Ambari. Он позволяет легко отслеживать, настраивать и администрировать службы в кластере. Кластеры Storm также предоставляют пользовательский интерфейс Storm. С его помощью вы можете отслеживать и контролировать выполнение топологий Storm из браузера.
+* __Веб-подключение__. Все кластеры HDInsight предоставляют веб-интерфейс Ambari. Он позволяет легко отслеживать, настраивать и администрировать службы в кластере. Кластеры Storm также предоставляют пользовательский интерфейс Storm. С его помощью вы можете отслеживать и контролировать выполнение топологий Storm из браузера.
 
   Дополнительные сведения см. в руководствах по [управлению кластерами HDInsight с помощью веб-интерфейса Apache Ambari](../hdinsight-hadoop-manage-ambari.md) и [мониторингу и администрированию пользовательского интерфейса Apache Storm](apache-storm-deploy-monitor-topology-linux.md#monitor-and-manage-storm-ui).
 
-* __Azure PowerShell и классический Azure CLI.__ Обе эти служебные программы командной строки можно использовать для работы с HDInsight и другими службами Azure из клиентской системы.
+* __Azure PowerShell и классический Azure CLI__. Обе эти служебные программы командной строки можно использовать для работы с HDInsight и другими службами Azure из клиентской системы.
 
-* __Интеграция с Visual Studio.__ Средства Azure Data Lake для Visual Studio включают шаблоны проектов для создания топологий C# Storm с помощью платформы SCP.Net. Средства Data Lake также предоставляют средства для развертывания, отслеживания и администрирования решений с помощью Storm в HDInsight.
+* __Интеграция с Visual Studio__. Средства Azure Data Lake для Visual Studio включают шаблоны проектов для создания топологий C# Storm с помощью платформы SCP.Net. Средства Data Lake также предоставляют средства для развертывания, отслеживания и администрирования решений с помощью Storm в HDInsight.
 
   Дополнительные сведения см. в статье [Разработка топологий для Apache Storm в HDInsight на C# с помощью средств Hadoop для Visual Studio](apache-storm-develop-csharp-visual-studio-topology.md).
 
 ## <a name="integration-with-other-azure-services"></a>Интеграция с другими службами Azure
 
-* __Azure Data Lake Store.__ Примеры использования Data Lake Store с помощью кластера Storm см. в статье [Использование Azure Data Lake Store с помощью Apache Storm в HDInsight (Java)](apache-storm-write-data-lake-store.md).
+* __Хранилище Azure Data Lake Storage__. Примеры использования Data Lake Storage с кластером Storm см. в статье, посвященной [использованию Azure Data Lake Storage с помощью Apache Storm в HDInsight](apache-storm-write-data-lake-store.md).
 
-* __Центры событий.__ Примеры использования Центров событий с кластером Storm:
+* __Центры событий__. Примеры использования Центров событий с кластером Storm
 
     * [Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (Java)](https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/)
 
     * [Обработка событий из Центров событий Azure с помощью Apache Storm в HDInsight (C#)](apache-storm-develop-csharp-event-hub-topology.md)
 
-* __База данных SQL__, __Cosmos DB__, __Центры событий__ и __HBase.__ Примеры шаблонов для работы с ними включены в средства Data Lake для Visual Studio. Дополнительные сведения см. в руководстве по [разработке топологии C# для Apache Storm в HDInsight](apache-storm-develop-csharp-visual-studio-topology.md).
+* __База данных SQL__, __Cosmos DB__, __Центры событий__ и __HBase__. Примеры шаблонов для работы с ними включены в средства Data Lake для Visual Studio. Дополнительные сведения см. в руководстве по [разработке топологии C# для Apache Storm в HDInsight](apache-storm-develop-csharp-visual-studio-topology.md).
 
 ## <a name="support"></a>Поддержка
 
@@ -136,17 +136,17 @@ Storm работает с топологиями, а не заданиями [Ap
 
 ### <a name="guaranteed-message-processing"></a>Гарантированная обработка сообщений
 
-Apache Storm может обеспечить различные уровни гарантированной обработки сообщений. Например, простое приложение Storm гарантирует как минимум одну обработку, в то время как [Trident](http://storm.apache.org/releases/current/Trident-API-Overview.html) может гарантировать ровно одну обработку.
+Apache Storm может обеспечить различные уровни гарантированной обработки сообщений. Например, простое приложение Storm гарантирует как минимум одну обработку, в то время как [Trident](https://storm.apache.org/releases/current/Trident-API-Overview.html) может гарантировать ровно одну обработку.
 
 Дополнительные сведения см. в статье о [гарантированной обработке данных](https://storm.apache.org/about/guarantees-data-processing.html) на сайте apache.org.
 
 ### <a name="ibasicbolt"></a>IBasicBolt
 
-Шаблон чтения входного кортежа, выдающий значение 0 или больше, а затем непосредственно в конце метод execute, запрашивающий подтверждение входного кортежа, является типичным. Storm обеспечивает интерфейс [IBasicBolt](http://storm.apache.org/releases/current/javadocs/org/apache/storm/topology/IBasicBolt.html) для автоматизации этого шаблона.
+Шаблон чтения входного кортежа, выдающий значение 0 или больше, а затем непосредственно в конце метод execute, запрашивающий подтверждение входного кортежа, является типичным. Storm обеспечивает интерфейс [IBasicBolt](https://storm.apache.org/releases/current/javadocs/org/apache/storm/topology/IBasicBolt.html) для автоматизации этого шаблона.
 
 ### <a name="joins"></a>Соединения
 
-Объединение потоков данных отличается в разных приложениях. Например, вы можете объединять все кортежи с нескольких потоков в один новый поток или объединять только пакеты кортежей для отдельного окна. В любом случае объединение можно выполнить с помощью [fieldsGrouping](http://storm.apache.org/releases/current/javadocs/org/apache/storm/topology/InputDeclarer.html#fieldsGrouping-java.lang.String-org.apache.storm.tuple.Fields-). Группирование полей — это способ определения того, как кортежи перенаправляются к элементам bolts.
+Объединение потоков данных отличается в разных приложениях. Например, вы можете объединять все кортежи с нескольких потоков в один новый поток или объединять только пакеты кортежей для отдельного окна. В любом случае объединение можно выполнить с помощью [fieldsGrouping](https://storm.apache.org/releases/current/javadocs/org/apache/storm/topology/InputDeclarer.html#fieldsGrouping-java.lang.String-org.apache.storm.tuple.Fields-). Группирование полей — это способ определения того, как кортежи перенаправляются к элементам bolts.
 
 В приведенном ниже примере Java используется fieldsGrouping для перенаправления кортежей из компонентов "1", "2" и "3" в элемент bolt MyJoiner.
 
@@ -160,11 +160,11 @@ Apache Storm предоставляет внутренний временной 
 
 ### <a name="caches"></a>Кэши
 
-Для ускорения обработки часто используется кэширование в памяти, при котором в памяти сохраняются часто используемые ресурсы. Так как топология распределяется между несколькими узлами и несколькими процессами в пределах одного узла, вы можете использовать [fieldsGrouping](http://storm.apache.org/releases/current/javadocs/org/apache/storm/topology/InputDeclarer.html#fieldsGrouping-java.lang.String-org.apache.storm.tuple.Fields-). `fieldsGrouping` гарантирует, что кортежи, содержащие поля, используемые для поиска в кэше, всегда перенаправляются к одному и тому же процессу. Эта функция группирования избавит от дублирования записей кэша в процессах.
+Для ускорения обработки часто используется кэширование в памяти, при котором в памяти сохраняются часто используемые ресурсы. Так как топология распределяется между несколькими узлами и несколькими процессами в пределах одного узла, вы можете использовать [fieldsGrouping](https://storm.apache.org/releases/current/javadocs/org/apache/storm/topology/InputDeclarer.html#fieldsGrouping-java.lang.String-org.apache.storm.tuple.Fields-). `fieldsGrouping` гарантирует, что кортежи, содержащие поля, используемые для поиска в кэше, всегда перенаправляются к одному и тому же процессу. Эта функция группирования избавит от дублирования записей кэша в процессах.
 
 ### <a name="stream-top-n"></a>Передача значения "Первые N"
 
-Когда ваша топология зависит от расчета значения "Первые N", это значение нужно рассчитывать параллельно. Затем объедините результат расчетов в глобальное значение. Эту операцию можно выполнить с помощью [fieldsGrouping](http://storm.apache.org/releases/current/javadocs/org/apache/storm/topology/InputDeclarer.html#fieldsGrouping-java.lang.String-org.apache.storm.tuple.Fields-), направив отдельные поля в параллельную обработку, а затем — в элемент bolt, который определяет глобальное значение "Топ N".
+Когда ваша топология зависит от расчета значения "Первые N", это значение нужно рассчитывать параллельно. Затем объедините результат расчетов в глобальное значение. Эту операцию можно выполнить с помощью [fieldsGrouping](https://storm.apache.org/releases/current/javadocs/org/apache/storm/topology/InputDeclarer.html#fieldsGrouping-java.lang.String-org.apache.storm.tuple.Fields-), направив отдельные поля в параллельную обработку, а затем — в элемент bolt, который определяет глобальное значение "Топ N".
 
 Для расчета значения "Первые N" см. пример [RollingTopWords](https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/org/apache/storm/starter/RollingTopWords.java).
 
@@ -182,6 +182,6 @@ Storm использует [Apache Log4j 2](https://logging.apache.org/log4j/2.x
 * [Примеры топологий и компонентов Storm для Apache Storm в HDInsight](apache-storm-example-topology.md)
 
 [stormtrident]: https://storm.apache.org/documentation/Trident-API-Overview.html
-[samoa]: http://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
+[samoa]: https://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
 [apachetutorial]: https://storm.apache.org/documentation/Tutorial.html
 [gettingstarted]: apache-storm-tutorial-get-started-linux.md

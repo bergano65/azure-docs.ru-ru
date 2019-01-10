@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Анализ удаленного изображения c помощью службы "Компьютерное зрение"(REST, PHP)
+title: Краткое руководство. Анализ удаленного изображения — REST, PHP
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как проанализировать изображение с помощью API компьютерного зрения на PHP.
 services: cognitive-services
@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: pafarley
-ms.openlocfilehash: d9e65b5fa42cc9026f8b1e3f18901f988c38cc46
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.custom: seodec18
+ms.openlocfilehash: 8af75c05d3c30fd8a3f2808cf81de840b7df2d6c
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49341010"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53584304"
 ---
-# <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-php-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API и PHP в службе "Компьютерное зрение"
+# <a name="quickstart-analyze-a-remote-image-using-the-rest-api-and-php-in-computer-vision"></a>Краткое руководство. Анализ удаленного изображения с помощью REST API компьютерного зрения и PHP
 
 Из этого краткого руководства вы узнаете, как анализировать удаленное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные функции на основе содержимого изображения.
 
@@ -33,7 +34,7 @@ ms.locfileid: "49341010"
 
 Чтобы создать и запустить пример, сделайте следующее.
 
-1. Установите пакет [`HTTP_Request2`](http://pear.php.net/package/HTTP_Request2) для PHP5.
+1. Установите пакет [`HTTP_Request2`](https://pear.php.net/package/HTTP_Request2) для PHP5.
    1. Откройте окно командной строки с правами администратора.
    1. Выполните следующую команду:
 

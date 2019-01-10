@@ -4,17 +4,17 @@ description: Узнайте, как с помощью Terratest тестиров
 services: terraform
 ms.service: terraform
 keywords: terraform, devops, storage account, azure, terratest, unit test, integration test
-author: JunyiYi
+author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 10/19/2018
-ms.openlocfilehash: cff7d0dea27dd21ac4f7bb133e297e4f5928d2c2
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: 94d878f8a17b0c0d62afbabe8125068bbf3a2e85
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52680605"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54075810"
 ---
 # <a name="test-terraform-modules-in-azure-by-using-terratest"></a>Тестирование модулей Terraform в Azure с помощью Terratest
 
@@ -35,10 +35,10 @@ ms.locfileid: "52680605"
 
 Прежде чем начать, установите следующее программное обеспечение:
 
-- **Язык Go**. Тестовые случаи Terraform написаны на языке [Go](https://golang.org/dl/).
+- **Язык программирования Go**. Тестовые случаи Terraform написаны на языке [Go](https://golang.org/dl/).
 - **dep**. [dep](https://github.com/golang/dep#installation) — это средство управления зависимостями для Go.
-- **Azure CLI**. [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) — это программа командной строки, которую можно использовать для управления ресурсами Azure. (Terraform поддерживает проверку подлинности в Azure с помощью субъекта-службы или [через Azure CLI](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html).)
-- **mage**: мы используем [исполняемый файл mage](https://github.com/magefile/mage/releases), чтобы показать, как упростить выполнение случаев Terratest. 
+- **Azure CLI.** [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) — это программа командной строки, которую можно использовать для управления ресурсами Azure. (Terraform поддерживает проверку подлинности в Azure с помощью субъекта-службы или [через Azure CLI](https://www.terraform.io/docs/providers/azurerm/authenticating_via_azure_cli.html).)
+- **mage**. Мы используем [исполняемый файл mage](https://github.com/magefile/mage/releases), чтобы показать, как упростить выполнение случаев Terratest. 
 
 ## <a name="create-a-static-webpage-module"></a>Создание модуля статической веб-страницы
 
@@ -93,10 +93,10 @@ output "homepage_url" {
 ```
 
 Основная логика модуля подготавливает четыре ресурса:
-- **Группа ресурсов**. Имя группы ресурсов — входные данные `website_name` с добавлением `-staging-rg`.
-- **Учетная запись хранения**. Имя учетной записи хранения — входные данные `website_name` с добавлением `data001`. Для соблюдения ограничений имени учетной записи хранения модуль удаляет все специальные символы и использует буквы в нижнем регистре во всем имени учетной записи хранения.
+- **Группа ресурсов**. Имя группы ресурсов — входные данные `website_name` с добавлением `-staging-rg`.
+- **Учетная запись хранения**. Имя учетной записи хранения — входные данные `website_name` с добавлением `data001`. Для соблюдения ограничений имени учетной записи хранения модуль удаляет все специальные символы и использует буквы в нижнем регистре во всем имени учетной записи хранения.
 - **Контейнер с фиксированным именем**. Контейнеру присваивается имя `wwwroot`, и он создается в учетной записи хранения.
-- **Один HTML-файл**. HTML-файл считывается из входных данных `html_path` и отправляется в файл `wwwroot/index.html`.
+- **Один HTML-файл**. HTML-файл считывается из входных данных `html_path` и отправляется в `wwwroot/index.html`.
 
 Логика модуля статической веб-страницы реализована в `./main.tf`:
 
@@ -298,7 +298,7 @@ GoPath/src/staticwebpage/test$ go test -run TestUT_StorageAccountName
 </head>
 <body>
     <h1>Hi, Terraform Module</h1>
-    <p>This is a sample webpage to demostrate Terratest.</p>
+    <p>This is a sample webpage to demonstrate Terratest.</p>
 </body>
 </html>
 ```
@@ -365,7 +365,7 @@ func TestIT_HelloWorldExample(t *testing.T) {
     http_helper.HttpGetWithCustomValidation(t, homepage, func(status int, content string) bool {
         return status == 200 &&
             strings.Contains(content, "Hi, Terraform Module") &&
-            strings.Contains(content, "This is a sample web page to demostrate Terratest.")
+            strings.Contains(content, "This is a sample web page to demonstrate Terratest.")
     })
 }
 ```
@@ -417,11 +417,11 @@ GoPath/src/staticwebpage/test$ go test
 ```
 
 Ниже приведен пример `./magefile.go`. В этом скрипте сборки на языке Go мы реализовали пять шагов сборки:
-- `Clean`. На этом шаге удаляются все сгенерированные и временные файлы, созданные во время выполнения тестов.
-- `Format`. На этом шаге выполняется `terraform fmt` и `go fmt` для форматирования базы кода.
-- `Unit`. На этом шаге выполняются все модульные тесты (с использованием соглашения об именовании функции `TestUT_*`) в папке `./test/`.
-- `Integration`. Этот шаг аналогичен `Unit`, но в отличие от модульных тестов на этом этапе выполняются тесты интеграции (`TestIT_*`).
-- `Full`. На этом шаге последовательно выполняются `Clean`, `Format`, `Unit` и `Integration`.
+- `Clean`: На этом шаге удаляются все сгенерированные и временные файлы, созданные во время выполнения тестов.
+- `Format`: На этом шаге выполняется `terraform fmt` и `go fmt` для форматирования базы кода.
+- `Unit`: На этом шаге выполняются все модульные тесты (с использованием соглашения об именовании функции `TestUT_*`) в папке `./test/`.
+- `Integration`: Этот шаг аналогичен `Unit`, но в отличие от модульных тестов на этом этапе выполняются тесты интеграции (`TestIT_*`).
+- `Full`: На этом шаге последовательно выполняются `Clean`, `Format`, `Unit` и `Integration`.
 
 ```go
 // +build mage
@@ -504,7 +504,7 @@ func Clean() error {
 $ cd [Your GoPath]/src/staticwebpage
 GoPath/src/staticwebpage$ dep init    # Run only once for this folder
 GoPath/src/staticwebpage$ dep ensure  # Required to run if you imported new packages in magefile or test cases
-GoPath/src/staticwebpage$ go fmt      # Only requied when you change the magefile
+GoPath/src/staticwebpage$ go fmt      # Only required when you change the magefile
 GoPath/src/staticwebpage$ az login    # Required when no service principal environment variables are present
 GoPath/src/staticwebpage$ mage
 ```
@@ -513,7 +513,7 @@ GoPath/src/staticwebpage$ mage
 
 С mage вы можете также предоставить общий доступ к действиям, используя пакетную систему Go. В этом случае файлы magefile во всех модулях можно упростить, просто ссылаясь на общую реализацию и объявляя зависимости (`mg.Deps()`).
 
-**Дополнительно. Установка переменных среды субъекта-службы для выполнения тестов приемки**
+**Необязательно. Установка переменных среды субъекта-службы для выполнения тестов приемки**
  
 Вместо выполнения команды `az login` перед тестом проверку подлинности Azure можно выполнить, задав переменные среды субъекта-службы. Terraform выводит [список имен переменных среды](https://www.terraform.io/docs/providers/azurerm/index.html#testing). (Требуются только первые четыре переменных среды.) Terraform также выводит подробные инструкции о том, как [получить значение этих переменных среды](https://www.terraform.io/docs/providers/azurerm/authenticating_via_service_principal.html).
 

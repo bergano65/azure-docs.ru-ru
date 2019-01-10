@@ -8,14 +8,14 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: seguler
-ms.openlocfilehash: 2939bd5c7b32cc9fe05326ee72dbb7367a72ef7f
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: 5bafceca09cfe5a981365a39e4f3803b5865ce73
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51711163"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53754821"
 ---
-# <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью языка Go
+# <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью Go
 
 Из этого краткого руководства вы узнаете, как передать, скачать и создать список блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure с помощью языка Go. 
 
@@ -51,14 +51,14 @@ git clone https://github.com/Azure-Samples/storage-blobs-go-quickstart
 ## <a name="configure-your-storage-connection-string"></a>Настройка строки подключения хранилища
 Этому решению требуется, чтобы имя и ключ учетной записи хранения безопасно хранились в переменных среды локального компьютера, на котором выполняется пример. Чтобы создать переменную среды, выполните один из приведенных ниже примеров в зависимости от операционной системы.
 
-# <a name="linuxtablinux"></a>[Linux](#tab/Linux)
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
 ```
 export AZURE_STORAGE_ACCOUNT="<youraccountname>"
 export AZURE_STORAGE_ACCESS_KEY="<youraccountkey>"
 ```
 
-# <a name="windowstabwindows"></a>[Windows](#tab/Windows)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 ```
 setx AZURE_STORAGE_ACCOUNT "<youraccountname>"
@@ -148,7 +148,7 @@ handleErrors(err)
 
 Хранилище BLOB-объектов поддерживает блочные, добавочные и страничные BLOB-объекты. Чаще всего используются блочные BLOB-объекты. Именно этот тип представлен в этом кратком руководстве.  
 
-Чтобы отправить файл в большой двоичный объект, откройте файл с помощью **os.Open**. Затем вы можете отправить файл по указанному пути, используя один из REST API: Upload (PutBlob), StageBlock/CommitBlockList (PutBlock/PutBlockList). 
+Чтобы отправить файл в большой двоичный объект, откройте файл с помощью **os.Open**. Затем вы можете передать файл по указанному пути с помощью одного из таких REST API: Upload (PutBlob), StageBlock/CommitBlockList (PutBlock/PutBlockList). 
 
 Кроме того, пакет SDK предоставляет [API высокого уровня](https://github.com/Azure/azure-storage-blob-go/blob/master/azblob/highlevel.go), которые созданы на основе низкоуровневых интерфейсов REST API. Например, с помощью операций StageBlock (PutBlock) функция ***UploadFileToBlockBlob*** одновременно передает файлы блоками, оптимизируя тем самым пропускную способность. Если размер файла менее 256 МБ, передача осуществляется одной транзакцией с помощью операции Upload (PutBlob).
 

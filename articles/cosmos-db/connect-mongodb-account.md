@@ -1,37 +1,37 @@
 ---
-title: Строка подключения MongoDB для учетной записи Azure Cosmos DB
-description: Здесь содержатся сведения о подключении приложения MongoDB к учетной записи Azure Cosmos DB с помощью строки подключения MongoDB.
+title: Подключение приложения MongoDB к Azure Cosmos DB
+description: Узнайте, как подключить приложение MongoDB к Azure Cosmos DB.
 keywords: строка подключения MongoDB
 services: cosmos-db
-author: slyons
+author: rimman
 ms.service: cosmos-db
 ms.component: cosmosdb-mongo
 ms.topic: conceptual
-ms.date: 12/19/2017
-ms.author: sclyon
-ms.openlocfilehash: a78a77e16e9a810c0be03656aa48b02cc8e6e5e6
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.date: 12/26/2018
+ms.author: rimman
+ms.openlocfilehash: 9a6cbc551704541f3e4ead40567f272205b71325
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52849264"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53791393"
 ---
 # <a name="connect-a-mongodb-application-to-azure-cosmos-db"></a>Подключение приложения MongoDB к Azure Cosmos DB
-Здесь содержатся сведения о подключении приложения MongoDB к учетной записи Azure Cosmos DB с помощью строки подключения MongoDB. Вы сможете использовать базу данных Azure Cosmos DB в качестве хранилища данных для приложения MongoDB. 
+Здесь содержатся сведения о подключении приложения MongoDB к Azure Cosmos DB с помощью строки подключения MongoDB. Вы сможете использовать базу данных Azure Cosmos DB в качестве хранилища данных для приложения MongoDB. 
 
 В этом руководстве описаны два способа получения строки подключения.
 
-- [Метод "Быстрый запуск"](#QuickstartConnection) для использования с драйверами .NET, Node.js, Java, Python или оболочкой MongoDB.
+- [Метод "Быстрый запуск"](#QuickstartConnection) для использования с драйверами .NET, Node.js, Java, Python или MongoDB.
 - [Метод с использованием пользовательской строки подключения](#GetCustomConnection) для других драйверов.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Учетная запись Azure. Если у вас нет учетной записи, вы можете создать [бесплатную учетную запись Azure](https://azure.microsoft.com/free/). 
-- Учетная запись Azure Cosmos DB. Инструкции см. в статье [Azure Cosmos DB. Создание веб-приложения API MongoDB с использованием языка .NET и портала Azure](create-mongodb-dotnet.md).
+- Учетная запись Cosmos. Инструкции см. в статье о [создании веб-приложения с помощью API Azure Cosmos DB для MongoDB и пакета SDK для .NET](create-mongodb-dotnet.md).
 
 ## <a id="QuickstartConnection"></a>Получение строки подключения MongoDB с помощью метода быстрого запуска
 1. В браузере войдите на [портал Azure](https://portal.azure.com).
-2. В колонке **Azure Cosmos DB** выберите API для учетной записи MongoDB. 
+2. В колонке **Azure Cosmos DB** выберите API. 
 3. В левой панели в колонке учетной записи щелкните **Быстрый запуск**. 
 4. Выберите платформу (**.NET**, **Node.js**, **оболочка MongoDB**, **Java**, **Python**). Если соответствующего драйвера или средства нет в списке, не беспокойтесь, мы постоянно добавляем дополнительные фрагменты кода для подключения. Оставьте в конце статьи свои комментарии о том, что, по вашему мнению, нужно добавить. Дополнительные сведения о том, как создавать собственное подключение, см.в разделе [Получение строки подключения MongoDB для настройки](#GetCustomConnection).
 5. Скопируйте и вставьте фрагмент кода в приложение MongoDB.
@@ -40,7 +40,7 @@ ms.locfileid: "52849264"
 
 ## <a id="GetCustomConnection"></a> Получение строки подключения MongoDB для настройки
 1. В браузере войдите на [портал Azure](https://portal.azure.com).
-2. В колонке **Azure Cosmos DB** выберите API для учетной записи MongoDB. 
+2. В колонке **Azure Cosmos DB** выберите API. 
 3. На левой панели в колонке учетной записи щелкните **Строка подключения**. 
 4. Откроется колонка **Строка подключения**. Она содержит все необходимые сведения для подключения к учетной записи с помощью драйвера для MongoDB, включая автоматически сформированную строку подключения.
 
@@ -58,9 +58,9 @@ Azure Cosmos DB поддерживает стандартный формат URI
 
 Значения для этой строки можно найти в колонке **Строка подключения**, как показано выше:
 
-* Имя пользователя (обязательно): имя учетной записи Azure Cosmos DB.
-* Пароль (обязательно): пароль для учетной записи Azure Cosmos DB.
-* Узел (обязательно): полное доменное имя учетной записи Azure Cosmos DB.
+* Имя пользователя (обязательно): имя учетной записи Cosmos DB.
+* Пароль (обязательно): пароль учетной записи Cosmos.
+* Узел (обязательно): полное доменное имя учетной записи Cosmos.
 * Порт (обязательно): 10255.
 * База данных (необязательно): база данных, используемая для подключения. Если база данных не указана, база данных по умолчанию — test.
 * ssl=true (обязательно)
@@ -70,5 +70,7 @@ Azure Cosmos DB поддерживает стандартный формат URI
     mongodb://contoso123:0Fc3IolnL12312asdfawejunASDF@asdfYXX2t8a97kghVcUzcDv98hawelufhawefafnoQRGwNj2nMPL1Y9qsIr9Srdw==@contoso123.documents.azure.com:10255/mydatabase?ssl=true
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Узнайте, как [использовать Studio 3T (MongoChef)](mongodb-mongochef.md) с учетной записью API для MongoDB в Azure Cosmos DB.
-* Ознакомьтесь с [примерами](mongodb-samples.md) API для MongoDB в Azure Cosmos DB.
+
+- Узнайте, как [использовать Studio 3T](mongodb-mongochef.md) с API Azure Cosmos DB для MongoDB.
+- Узнайте, как [использовать Robo 3T](mongodb-robomongo.md) с API Azure Cosmos DB для MongoDB.
+- Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.

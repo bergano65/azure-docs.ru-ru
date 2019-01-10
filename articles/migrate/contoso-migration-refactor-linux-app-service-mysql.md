@@ -7,14 +7,14 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 588bd5b3edeadb841de54691cf30916dd18c0982
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 6dd063f8d6520e3ee18dcb3899c1cca16d732707
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49093007"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608721"
 ---
-# <a name="contoso-migration-refactor-a-contoso-linux-service-desk-app-to-multiple-regions-with-azure-app-service-traffic-manager-and-azure-mysql"></a>Миграция в компании Contoso: рефакторинг приложения службы поддержки Linux для использования нескольких регионов со Службой приложений Azure, диспетчером трафика и MySQL Azure в Contoso
+# <a name="contoso-migration-refactor-a-contoso-linux-service-desk-app-to-multiple-regions-with-azure-app-service-traffic-manager-and-azure-mysql"></a>Миграция Contoso. Рефакторинг приложения службы поддержки Contoso Linux для использования в нескольких регионах с помощью службы приложений Azure, диспетчера трафика и MySQL Azure
 
 В этой статье показано, как Contoso выполняет рефакторинг локального двухуровневого приложения для службы поддержки Linux (osTicket) путем переноса в Службу приложений Azure с интеграцией GitHub и MySQL Azure.
 
@@ -22,19 +22,19 @@ ms.locfileid: "49093007"
 
 **Статья** | **Дополнительные сведения** | **Состояние**
 --- | --- | ---
-[Статья 1. Общие сведения](contoso-migration-overview.md) | Обзор серии статей, стратегии миграции компании Contoso и используемых в этой серии примеров приложений. | Доступна
-[Статья 2. Развертывание инфраструктуры миграции в Contoso](contoso-migration-infrastructure.md) | Компания Contoso готовит локальную инфраструктуру и инфраструктуру Azure для миграции. Для всех статей миграции в серии используется одна и та же инфраструктура. | Доступна
-[Статья 3. Оценка готовности локальных ресурсов к переносу в Azure](contoso-migration-assessment.md)  | Компания Contoso выполняет оценку локального приложения SmartHotel360 в VMware. Для оценки виртуальных машин приложения Contoso использует службу "Миграция Azure". Для оценки базы данных SQL Server приложения используется Помощник по миграции данных. | Доступна
-[Статья 4. Повторное размещение приложения на виртуальной машине Azure и в Управляемом экземпляре Базы данных SQL](contoso-migration-rehost-vm-sql-managed-instance.md) | Специалисты компании Contoso переносят локальное приложение SmartHotel360 в Azure по методу lift-and-shift. Специалисты компании Contoso переносят виртуальную машину внешнего интерфейса приложения с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview). Они переносят базу данных приложения в Управляемый экземпляр Базы данных SQL Azure с помощью [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview). | Доступна   
-[Статья 5. Повторное размещение приложения на виртуальных машинах Azure](contoso-migration-rehost-vm.md) | Специалисты компании Contoso переносят виртуальные машины приложения SmartHotel360 на виртуальные машины Azure с помощью службы Site Recovery. | Доступна
-[Статья 6. Повторное размещение приложения на виртуальных машинах Azure и в группе доступности SQL Server AlwaysOn](contoso-migration-rehost-vm-sql-ag.md) | Компания Contoso переносит приложение SmartHotel360. Для переноса виртуальных машин приложения компания Contoso использует Site Recovery. Она использует службу Azure Database Migration Service для миграции базы данных приложения в кластер SQL Server, который защищен группой доступности AlwaysOn. | Доступна 
-[Статья 7. Повторное размещение приложения Linux на виртуальных машинах Azure](contoso-migration-rehost-linux-vm.md) | Специалисты компании Contoso выполняют миграцию приложения osTicket для Linux по методу lift-and-shift на виртуальные машины Azure с помощью Azure Site Recovery. | Доступна
-[Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и в Azure MySQL](contoso-migration-rehost-linux-vm-mysql.md) | Специалисты компании Contoso переносят приложение osTicket для Linux на виртуальные машины Azure с помощью Azure Site Recovery, а также переносят базу данных приложения в экземпляр Azure MySQL Server, используя MySQL Workbench. | Доступна
-[Статья 9. Рефакторинг приложения в веб-приложениях Azure и базе данных SQL Azure](contoso-migration-refactor-web-app-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel360 в веб-приложение Azure, а базу данных приложения — в экземпляр SQL Server Azure с помощью Помощника по миграции баз данных. | Доступна
-Статья 10. Рефакторинг приложения Linux в веб-приложениях Azure и Azure MySQL | Специалисты компании Contoso переносят свое приложение osTicket для Linux в веб-приложение Azure в нескольких регионах Azure с помощью диспетчера трафика Azure, интегрированного с GitHub для непрерывной поставки. Компания Contoso переносит базу данных приложения в экземпляр Базы данных Azure для MySQL. | Эта статья
-[Статья 11. Рефакторинг Team Foundation Server в Azure DevOps Services](contoso-migration-tfs-vsts.md) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Azure DevOps Services в Azure. | Доступна
-[Статья 12. Перепроектирование приложения для использования контейнеров Azure и Базы данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure". | Доступна
-[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel360, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна
+[Статья 1. Общие сведения](contoso-migration-overview.md) | Обзор серии статей, стратегии миграции компании Contoso и используемых в этой серии примеров приложений. | Доступна
+[Статья 2. Развертывание инфраструктуры Azure](contoso-migration-infrastructure.md) | Компания Contoso готовит локальную инфраструктуру и инфраструктуру Azure для миграции. Для всех статей миграции в серии используется одна и та же инфраструктура. | Доступна
+[Статья 3. Оценка локальных ресурсов для миграции в Azure](contoso-migration-assessment.md)  | Компания Contoso выполняет оценку локального приложения SmartHotel360 в VMware. Для оценки виртуальных машин приложения Contoso использует службу "Миграция Azure". Для оценки базы данных SQL Server приложения используется Помощник по миграции данных. | Доступна
+[Статья 4. Повторное размещение приложения на виртуальной машине Azure и в Управляемом экземпляре Базы данных SQL](contoso-migration-rehost-vm-sql-managed-instance.md) | Специалисты компании Contoso переносят локальное приложение SmartHotel360 в Azure по методу lift-and-shift. Специалисты компании Contoso переносят виртуальную машину внешнего интерфейса приложения с помощью [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview). Они переносят базу данных приложения в Управляемый экземпляр Базы данных SQL Azure с помощью [Azure Database Migration Service](https://docs.microsoft.com/azure/dms/dms-overview). | Доступна   
+[Статья 5. Повторное размещение приложения на виртуальных машинах Azure](contoso-migration-rehost-vm.md) | Специалисты компании Contoso переносят виртуальные машины приложения SmartHotel360 на виртуальные машины Azure с помощью службы Site Recovery. | Доступна
+[Статья 6. Повторное размещение приложения на виртуальных машинах Azure и в группе доступности SQL Server AlwaysOn](contoso-migration-rehost-vm-sql-ag.md) | Компания Contoso переносит приложение SmartHotel360. Для переноса виртуальных машин приложения компания Contoso использует Site Recovery. Она использует службу Azure Database Migration Service для миграции базы данных приложения в кластер SQL Server, который защищен группой доступности AlwaysOn. | Доступна 
+[Статья 7. Перенос приложения компании Contoso: повторное размещение локального приложения Linux на виртуальных машинах Azure](contoso-migration-rehost-linux-vm.md) | Специалисты компании Contoso выполняют миграцию приложения osTicket для Linux по методу lift-and-shift на виртуальные машины Azure с помощью Azure Site Recovery. | Доступна
+[Статья 8. Повторное размещение приложения Linux на виртуальных машинах Azure и в Azure MySQL](contoso-migration-rehost-linux-vm-mysql.md) | Специалисты компании Contoso переносят приложение osTicket для Linux на виртуальные машины Azure с помощью Azure Site Recovery, а также переносят базу данных приложения в экземпляр Azure MySQL Server, используя MySQL Workbench. | Доступна
+[Статья 9. Рефакторинг приложения для веб-приложений Azure и базы данных SQL Azure](contoso-migration-refactor-web-app-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel360 в веб-приложение Azure, а базу данных приложения — в экземпляр SQL Server Azure с помощью Помощника по миграции баз данных. | Доступна
+Статья 10. Рефакторинг приложения Linux для веб-приложений Azure и Azure MySQL | Специалисты компании Contoso переносят свое приложение osTicket для Linux в веб-приложение Azure в нескольких регионах Azure с помощью диспетчера трафика Azure, интегрированного с GitHub для непрерывной поставки. Компания Contoso переносит базу данных приложения в экземпляр Базы данных Azure для MySQL. | Эта статья
+[Статья 11. Рефакторинг Team Foundation Server в Azure DevOps Services](contoso-migration-tfs-vsts.md) | Специалисты компании Contoso переносят локальное развертывание Team Foundation Server в Azure DevOps Services в Azure. | Доступна
+[Статья 12. Повторное проектирование приложения для контейнеров Azure и Базы данных SQL Azure](contoso-migration-rearchitect-container-sql.md) | Специалисты компании Contoso переносят приложение SmartHotel в Azure. Затем уровень веб-приложений преобразуется в контейнер Windows, работающий в Azure Service Fabric, и базу данных в службе "База данных SQL Azure". | Доступна
+[Статья 13. Повторное создание приложения в Azure](contoso-migration-rebuild.md) | Специалисты компании Contoso выполняют повторную сборку приложения SmartHotel360, используя ряд возможностей и служб Azure, включая Службу приложений Azure, Службу Azure Kubernetes (AKS), Функции Azure, Cognitive Services и Azure Cosmos DB. | Доступна
 [Статья 14. Масштабирование миграции в Azure](contoso-migration-scale.md) | Ознакомившись с вариантами сочетаний миграции, компания Contoso готовится к полномасштабной миграции в Azure. | Доступна
 
 В этой статье описывается, как Contoso переносит в Azure свое двухуровневое приложение службы поддержки osTicket на базе комплекса Linux, Apache, MySQL, PHP (LAMP). Если вы хотите использовать это приложение с открытым исходным кодом, вы можете загрузить его с [GitHub](https://github.com/osTicket/osTicket).
@@ -45,8 +45,8 @@ ms.locfileid: "49093007"
 Совместными усилиями ИТ-руководство и деловые партнеры определили следующие цели своей деятельности:
 
 - **Адаптация к расширению бизнеса.** Компания Contoso растет и переходит на новые рынки. Требуются дополнительные агенты обслуживания клиентов. 
-- **Масштаб.** Решение должно создаваться таким образом, чтобы компания Contoso имела возможность добавлять дополнительные агенты обслуживания пользователей по мере расширения бизнеса.
-- **Повышение устойчивости.** Предыдущие проблемы с системой повлияли только на внутренних пользователей. В новой бизнес-модели эти проблемы будут влиять на внешних пользователей, и компании Contoso потребуется, чтобы приложение работало постоянно.
+- **Масштабируемость.** Решение должно создаваться таким образом, чтобы компания Contoso имела возможность добавлять дополнительные агенты обслуживания пользователей по мере расширения бизнеса.
+- **Повышения устойчивости**.  Предыдущие проблемы с системой повлияли только на внутренних пользователей. В новой бизнес-модели эти проблемы будут влиять на внешних пользователей, и компании Contoso потребуется, чтобы приложение работало постоянно.
 
 ## <a name="migration-goals"></a>Цели миграции
 
@@ -129,17 +129,17 @@ ms.locfileid: "49093007"
 Миграция в Contoso будет осуществляться следующим образом:
 
 > [!div class="checklist"]
-> * **Шаг 1. Подготовка Службы приложений Azure**. Администраторы компании Contoso подготовят веб-приложения в основном и дополнительном регионах.
-> * **Шаг 2. Настройка диспетчера трафика**. Компания настраивает диспетчер трафика перед веб-приложениями с целью маршрутизации и балансировки нагрузки трафика.
+> * **Шаг 1. Подготовка службы приложений Azure**. Администраторы компании Contoso подготовят веб-приложения в основном и дополнительном регионах.
+> * **Шаг 2. Настройка диспетчера трафика**. Компания настраивает диспетчер трафика перед веб-приложениями с целью маршрутизации и балансировки нагрузки трафика.
 > * **Шаг 3. Подготовка MySQL**. Специалисты компании подготавливают в Azure экземпляр базы данных MySQL для Azure.
-> * **Шаг 4. Миграция базы данных**. Компания переносит базу данных с помощью MySQL Workbench. 
-> * **Шаг 5. Настройка GitHub**. Специалисты компании настраивают локальный репозиторий GitHub для веб-сайтов и кода приложения.
-> * **Шаг 6. Развертывание веб-приложений**. Они развертывают веб-приложения из GitHub.
+> * **Шаг 4. Миграция базы данных**. Компания переносит базу данных с помощью MySQL Workbench. 
+> * **Шаг 5. Настройка GitHub**. Специалисты компании настраивают локальный репозиторий GitHub для веб-сайтов и кода приложения.
+> * **Шаг 6. Развертывание веб-приложений**. Они развертывают веб-приложения из GitHub.
 
 
 
 
-## <a name="step-1-provision-azure-app-services"></a>Шаг 1. Подготовка Службы приложений Azure
+## <a name="step-1-provision-azure-app-services"></a>Шаг 1. Подготовка службы приложений Azure
 
 Администраторы Contoso подготавливают два веб-приложения (по одному в каждом регионе) с помощью Службы приложений Azure.
 
@@ -163,11 +163,11 @@ ms.locfileid: "49093007"
 
 **Нужна дополнительная помощь?**
 
-- Узнайте больше о [веб-приложениях Службы приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-overview).
+- Узнайте больше о [веб-приложениях Службы приложений Azure](https://docs.microsoft.com/azure/app-service/overview).
 - Узнайте больше о [Службе приложений Azure на платформе Linux](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro).
 
 
-## <a name="step-2-set-up-traffic-manager"></a>Шаг 2. Настройка диспетчера трафика
+## <a name="step-2-set-up-traffic-manager"></a>Шаг 2. Настройка диспетчера трафика
 
 Администраторы Contoso настраивают диспетчер трафика для направления входящих веб-запросов в веб-приложения веб-уровня osTicket.
 
@@ -188,7 +188,7 @@ ms.locfileid: "49093007"
 - Подробнее о [диспетчере трафика](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview).
 - Узнайте больше о [перенаправлении трафика к приоритетной конечной точке](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-configure-priority-routing-method).
  
-## <a name="step-3-provision-azure-database-for-mysql"></a>Шаг 3. Подготовка Базы данных Azure для MySQL
+## <a name="step-3-provision-azure-database-for-mysql"></a>Шаг 3. Подготовка базы данных Azure для MySQL
 
 Администраторы компании Contoso подготавливают экземпляр базы данных MySQL в основном регионе "Восточная часть США 2".
 
@@ -212,7 +212,7 @@ ms.locfileid: "49093007"
 
 
 
-## <a name="step-4-migrate-the-database"></a>Шаг 4. Миграция базы данных
+## <a name="step-4-migrate-the-database"></a>Шаг 4. Миграция базы данных
 
 Администраторы компании Contoso выполняют миграцию базы данных с помощью функции резервного копирования и восстановления в инструментах MySQL. Специалисты установят MySQL Workbench, создадут резервную копию базы данных из OSTICKETMYSQL, а затем восстановят ее в Базе данных Azure для сервера MySQL.
 
@@ -259,7 +259,7 @@ ms.locfileid: "49093007"
     ![MySQL Workbench](./media/contoso-migration-refactor-linux-app-service-mysql/workbench10.png)
 
 
-## <a name="step-5-set-up-github"></a>Шаг 5. Настройка GitHub
+## <a name="step-5-set-up-github"></a>Шаг 5. Настройка GitHub
 
 Администраторы компании Contoso создают частный репозиторий GitHub и настраивают подключение к базе данных osTicket в MySQL для Azure. После этого они загружают веб-приложение Azure в приложение.  
 

@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/21/2018
+ms.date: 12/14/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 87d5389abd72875c62ea3484fc3f9ca43c339447
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: 36b3fcfa90b5b1de9c9d3262da1f3e519cc99c19
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48240225"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "53444353"
 ---
 ### <a name="is-custom-ipsecike-policy-supported-on-all-azure-vpn-gateway-skus"></a>Поддерживается ли политика IPsec/IKE во всех номерах SKU VPN-шлюзов Azure?
 Политика IPsec/IKE поддерживается в VPN-шлюзах Azure класса **VpnGw1, VpnGw2, VpnGw3, Standard** и **HighPerformance**. SKU уровня **Базовый** **не** поддерживается.
@@ -102,3 +102,6 @@ ms.locfileid: "48240225"
 
 ### <a name="does-custom-ipsecike-policy-work-on-expressroute-connection"></a>Работает ли настраиваемая политика IPsec/IKE для подключения ExpressRoute?
 Нет. Политика IPsec/IKE работает только для VPN-подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть" через VPN-шлюзы Azure.
+
+### <a name="where-can-i-find-more-configuration-information-for-ipsec"></a>Где можно найти дополнительные сведения о конфигурации для IPsec?
+См. раздел [Настройка политики IPsec/IKE для подключений типа "сеть — сеть" или "виртуальная сеть — виртуальная сеть"](../articles/vpn-gateway/vpn-gateway-ipsecikepolicy-rm-powershell.md).

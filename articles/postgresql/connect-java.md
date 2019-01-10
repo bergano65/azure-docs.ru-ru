@@ -1,27 +1,24 @@
 ---
 title: Подключение к Базе данных Azure для PostgreSQL с помощью Java
 description: В этом кратком руководстве представлен пример кода Java, который можно использовать для подключения к базе данных Azure для PostgreSQL и запроса данных из нее.
-services: postgresql
 author: rachel-msft
 ms.author: raagyema
-manager: kfile
-editor: jasonwhowell
 ms.service: postgresql
 ms.custom: mvc
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 02/28/2018
-ms.openlocfilehash: 5c55adec1471b28880f7a24a736cf25df2c8bd3f
-ms.sourcegitcommit: c765cbd9c379ed00f1e2394374efa8e1915321b9
+ms.openlocfilehash: c8216c67a912beb9a735c3757520684cc837e989
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2018
-ms.locfileid: "29686849"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53544657"
 ---
-# <a name="azure-database-for-postgresql-use-java-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: подключение и запрос данных с помощью Java
+# <a name="azure-database-for-postgresql-use-java-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: использование Java для подключения и создания запросов данных
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для PostgreSQL с помощью приложения Java. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Java и вы только начали работу с Базой данных Azure для PostgreSQL.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 В качестве отправной точки в этом кратком руководстве используются ресурсы, созданные в соответствии со следующими материалами:
 - [Создание базы данных с помощью портала](quickstart-create-server-database-portal.md)
 - [Создание базы данных с помощью Azure CLI](quickstart-create-server-database-azure-cli.md)

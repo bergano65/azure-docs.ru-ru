@@ -12,12 +12,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 04/01/2017
 ms.author: cshoe
-ms.openlocfilehash: 0a4d5cf4731932ed72e0dc38c13a5f855a937864
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 21f8d8ad63e8ea7c134477a6171155c40a2b4dc8
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53317514"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53792022"
 ---
 # <a name="azure-service-bus-bindings-for-azure-functions"></a>Привязки служебной шины Azure для службы "Функции Azure"
 
@@ -331,6 +331,9 @@ module.exports = function(context, myQueueItem) {
 |`Label`|`string`|Метка конкретного приложения.|
 |`CorrelationId`|`string`|Идентификатор корреляции.|
 |`UserProperties`|`IDictionary<String,Object>`|Свойства сообщения конкретного приложения.|
+
+> [!NOTE]
+> В настоящее время триггер работает только для очередей и подписок, которые не используют сеансы. Можно отслеживать [этот элемент функциональности](https://github.com/Azure/azure-functions-host/issues/563) во всех дальнейших обновлениях, касающихся этой функции. 
 
 См. [примеры кода](#trigger---example), в которых используются эти свойства, в предыдущих разделах этой статьи.
 

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по созданию кластера Spark в HDInsight с использованием портала Azure
+title: Краткое руководство. Создание кластера Spark в HDInsight с использованием портала Azure
 description: В этом кратком руководстве показано, как использовать портал Azure для создания кластера Apache Spark в Azure HDInsight и выполнить SQL-запрос Spark.
 services: hdinsight
 author: hrasheed-msft
@@ -9,26 +9,26 @@ ms.service: hdinsight
 ms.topic: quickstart
 ms.date: 11/06/2018
 ms.custom: mvc
-ms.openlocfilehash: 370503cc463fd3683f47fe0b573ad83daa0b9d14
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 5833571bc1c1ac2674723abf286437c3e5e0a5ae
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52584559"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53791872"
 ---
 # <a name="quickstart-create-an-apache-spark-cluster-in-hdinsight-using-the-azure-portal"></a>Краткое руководство. Создание кластера Apache Spark в HDInsight с использованием портала Azure
-Узнайте, как создать кластер Apache Spark в Azure HDInsight и как выполнять SQL-запросы Spark к таблицам Hive. Apache Spark обеспечивает быстрый анализ данных и кластерные вычисления, используя обработку в памяти. Сведения о Spark в HDInsight см. в [этой статье](apache-spark-overview.md).
+Узнайте, как создать кластер Apache Spark в Azure HDInsight и как выполнять SQL-запросы Spark к таблицам Hive. Apache Spark обеспечивает быстрый анализ данных и кластерные вычисления, используя обработку в памяти. Сведения о Spark в HDInsight см. в статье [ Apache Spark в Azure HDInsight](apache-spark-overview.md).
 
-В этом кратком руководстве для создания кластера Spark в HDInsight используется портал Azure. Этот кластер использует Azure Storage Blob в качестве системы хранения данных кластера. Дополнительные сведения об использовании Data Lake Storage Gen2 см. в статье [Краткое руководство по установке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
+В этом кратком руководстве для создания кластера Spark в HDInsight используется портал Azure. Этот кластер использует Azure Storage Blob в качестве системы хранения данных кластера. Дополнительные сведения об использовании Data Lake Storage 2-го поколения см. в [кратком руководстве по настройке кластеров в HDInsight](../../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Счета за кластеры HDInsight выставляются пропорционально за минуту независимо от их использования. Обязательно удалите кластер, когда завершите его использование. Дополнительные сведения см. в разделе [Очистка ресурсов](#clean-up-resources) этой статьи.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="create-an-hdinsight-spark-cluster"></a>Создание кластера HDInsight Spark
 
-1. На портале Azure выберите **Создать ресурс** > **Данные и аналитика** > **HDInsight**. 
+1. На портале Azure выберите **Создать ресурс** > **Аналитика** > **HDInsight**. 
 
     ![HDInsight на портале Azure](./media/apache-spark-jupyter-spark-sql-use-portal/azure-portal-create-hdinsight-spark-cluster.png "HDInsight на портале Azure")
 2. В разделе **Основные сведения** укажите следующие значения.
@@ -37,7 +37,7 @@ ms.locfileid: "52584559"
     |---------|---------|
     |**Имя кластера**     | Введите имя кластера Spark в HDInsight. В данном кратком руководстве используется кластер **myspark20180403**.|
     |**Подписка**     | Из раскрывающегося списка выберите подписку Azure, используемую для этого кластера. В данном кратком руководстве используется **&lt;подписка Azure**. |
-    |**Тип кластера**| Разверните элемент, а затем выберите тип кластера **Spark** и укажите версию кластера Spark. <br/> <img src="./media/apache-spark-jupyter-spark-sql-use-portal/azure-portal-create-hdinsight-spark-cluster-type.png" alt = "Slect HDInsight clsuter type" /> |
+    |**Тип кластера**| Разверните элемент, а затем выберите тип кластера **Spark** и укажите версию кластера Spark. <br/> <img src="./media/apache-spark-jupyter-spark-sql-use-portal/azure-portal-create-hdinsight-spark-cluster-type.png" alt = "Select HDInsight cluster type" /> |
     |**Имя пользователя для входа в кластер**| Введите имя пользователя для входа в кластер.  Имя по умолчанию — *admin*. Эта учетная запись будет использована для входа в Jupyter Notebook позже в данном кратком руководстве. |
     |**Пароль для входа в кластер**| Введите пароль для входа в кластер. |
     |**Имя пользователя для Secure Shell (SSH)**| Введите имя пользователя SSH. В данном кратком руководстве используется имя пользователя SSH **sshuser**. По умолчанию эта учетная запись использует тот же пароль, что и учетная запись *для входа в кластер*. |
@@ -53,7 +53,7 @@ ms.locfileid: "52584559"
 
     ![Создание конфигураций хранилища кластера Spark в HDInsight](./media/apache-spark-jupyter-spark-sql-use-portal/azure-portal-create-hdinsight-spark-cluster-storage.png "Создание кластера Spark в HDInsight: конфигурации хранилища")
 
-    > [!NOTE] 
+    > [!NOTE]  
     > На приведенном снимке экрана показан параметр **Выбрать существующий**. С помощью ссылки можно выбрать параметр **Создать** или **Выбрать существующий**.
 
     **Контейнер по умолчанию** использует имя по умолчанию.  При необходимости его можно изменить.
@@ -63,7 +63,7 @@ ms.locfileid: "52584559"
 
 3. На странице **Сводка** щелкните **Создать**. Процесс создания кластеров занимает около 20 минут. Прежде чем перейти к следующему сеансу, вы должны создать кластер.
 
-Если при создании кластера HDInsight возникают проблемы, возможно, у вас нет необходимых разрешений. Дополнительные сведения см. в разделе [Требования к контролю доступа](../hdinsight-administer-use-portal-linux.md#create-clusters).
+Если при создании кластера HDInsight возникают проблемы, возможно, у вас нет необходимых разрешений. Дополнительные сведения см. в разделе [Требования к контролю доступа](../hdinsight-hadoop-create-linux-clusters-portal.md).
 
 ## <a name="create-a-jupyter-notebook"></a>Создание записной книжки Jupyter
 

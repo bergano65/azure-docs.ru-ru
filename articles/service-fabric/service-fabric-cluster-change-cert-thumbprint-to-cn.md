@@ -12,17 +12,20 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/24/2018
+ms.date: 01/01/2019
 ms.author: ryanwi
-ms.openlocfilehash: 378f4609efcc9e9f0652b9ec68f5374b1fe3626a
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 6e596b0db1a03efbf6b029487ed956105b632edb
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52959654"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53972810"
 ---
 # <a name="change-cluster-from-certificate-thumbprint-to-common-name"></a>Переход с отпечатка на общее имя сертификата для кластера
 Два сертификата не могут иметь один и тот же отпечаток. Это затрудняет смену сертификатов кластера и управление им. Тем не менее несколько сертификатов могут иметь одно общее имя или тему.  Переключение развернутого кластера с использования отпечатков сертификата на использование общих имен сертификатов упрощает управление им. В этой статье описывается обновление выполняющегося кластера Service Fabric для использования общего имени сертификата вместо отпечатка сертификата.
+
+>[!NOTE]
+> При наличии двух отпечаток, объявленных в шаблоне, необходимо выполнить два развертывания.  Первое развертывание выполняется перед выполнением действий, описанных в этой статье.  Первое развертывание задает для свойства **thumbprint** в шаблоне используемый сертификат и удаляет свойство **thumbprintSecondary**.  Для второго развертывания выполните действия, описанные в этой статье.
  
 ## <a name="get-a-certificate"></a>Получение сертификата
 Сначала получите сертификат в [центре сертификации (ЦС)](https://wikipedia.org/wiki/Certificate_authority).  Общее имя сертификата должно быть именем узла кластера.  Например, myclustername.southcentralus.cloudapp.azure.com.  

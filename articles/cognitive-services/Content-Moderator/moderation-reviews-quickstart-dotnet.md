@@ -1,5 +1,5 @@
 ---
-title: Быстрое начало. Создание проверок с помощью .NET — Content Moderator
+title: Краткое руководство. Создание проверок с помощью .NET — Content Moderator
 titlesuffix: Azure Cognitive Services
 description: Как создавать проверки с помощью пакета SDK Azure Content Moderator для .NET.
 services: cognitive-services
@@ -10,21 +10,21 @@ ms.component: content-moderator
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: sajagtap
-ms.openlocfilehash: ce90c5f691a0a8a333161f3135856d720d1de310
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 6409011c1a7c125dd03bb706f49ccad1a1fd49a4
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47226591"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53538877"
 ---
-# <a name="quickstart-create-reviews-using-net"></a>Быстрое начало. Создание проверок с помощью .NET
+# <a name="quickstart-create-reviews-using-net"></a>Краткое руководство. Создание проверок с помощью .NET
 
-В этой статье содержатся сведения и примеры кода, которые помогут приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) в следующих целях:
+В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
  
 - создание набора проверок для модераторов-пользователей;
 - получение состояния существующих проверок для модераторов-пользователей.
 
-Как правило, содержимое проходит некоторую автоматическую модерацию перед пользовательской проверкой. В этой статье рассматривается только создание проверки для пользовательской модерации. Более полный сценарий описан в руководствах [Модерация контента Facebook](facebook-post-moderation.md) и [Модерирование каталога электронной коммерции](ecommerce-retail-catalog-moderation.md).
+Как правило, содержимое проходит некоторую автоматическую модерацию перед пользовательской проверкой. В этой статье рассматривается только создание проверки для пользовательской модерации. Более полный сценарий описан в статьях [Руководство. Модерация контента Facebook с помощью Azure Content Moderator](facebook-post-moderation.md) и [Руководство: модерация каталога электронной коммерции с помощью машинного обучения](ecommerce-retail-catalog-moderation.md).
 
 В этой статье предполагается, что вы уже работали с Visual Studio и C#.
 
@@ -33,17 +33,17 @@ ms.locfileid: "47226591"
 Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ подписки.
 Изучите [краткое руководство](quick-start.md) о том, как можно получить ключ.
 
-## <a name="sign-up-for-a-review-tool-account-if-not-completed-in-the-previous-step"></a>Зарегистрируйте учетную запись средства проверки, если вы еще не создали ее на предыдущем шаге
+## <a name="sign-up-for-a-review-tool-account-if-not-completed-in-the-previous-step"></a>Регистрация учетной записи средства проверки (если не сделано на предыдущем этапе)
 
-Если на портале Azure вы также получили Content Moderator, то также [зарегистрируйте учетную запись средства проверки](https://contentmoderator.cognitive.microsoft.com/) и создайте команду проверки. Чтобы вызвать API обзора, начать работу и просмотреть проверки в средстве проверок, вам понадобиться идентификатор команды и средство проверки.
+Если вы получили Content Moderator на портале Azure, [зарегистрируйте учетную запись средства проверки](https://contentmoderator.cognitive.microsoft.com/) и создайте команду проверки. Чтобы вызывать API проверки для запуска заданий и просматривать результаты в средстве проверки, вам понадобится идентификатор команды и средство проверки.
 
-## <a name="ensure-your-api-key-can-call-the-review-api-for-review-creation"></a>Убедитесь, что ваш ключ API может вызвать API проверки для ее создания
+## <a name="ensure-your-api-key-can-call-the-review-api-for-review-creation"></a>Проверка, может ли ключ API вызвать API проверки для создания соответствующих заданий
 
-Выполнив предыдущие шаги, вы можете получить два ключа Content Moderator, если вы начали работу в портале Azure. 
+Если вы начали с портала Azure, после выполнения предыдущих шагов у вас может получиться два ключа Content Moderator. 
 
-Если вы планируете использовать ключ API, предоставленный Azure, в своем примере пакета SDK, выполните шаги, указанные в разделе [Как использовать учетную запись Azure с инструментом проверки](review-tool-user-guide/credentials.md#use-the-azure-account-with-the-review-tool-and-review-api), чтобы ваше приложение вызывало API проверки и ее создавало.
+Если в своем примере пакета SDK вы планируете использовать ключ API, предоставленный платформой Azure, выполните [эти действия](review-tool-user-guide/credentials.md#use-the-azure-account-with-the-review-tool-and-review-api), чтобы разрешить приложению вызывать API проверки и создавать соответствующие задания.
 
-Если вы используете бесплатный пробный ключ, сгенерированный средством проверки, то ваша учетная запись средства проверки уже знает о ключе, поэтому никаких дополнительных шагов не требуется.
+Если вы используете бесплатный пробный ключ, сгенерированный средством проверки, ваша учетная запись средства проверки уже знает об этом ключе, поэтому никакие дополнительные действия не требуются.
 
 ## <a name="create-your-visual-studio-project"></a>Создание проекта Visual Studio
 

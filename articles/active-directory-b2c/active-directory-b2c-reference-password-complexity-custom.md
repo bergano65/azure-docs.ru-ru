@@ -1,102 +1,39 @@
 ---
-title: Сложность пароля в настраиваемых политиках в Azure Active Directory B2C | Документация Майкрософт
-description: Узнайте, как настроить требования к сложности паролей в настраиваемой политике.
+title: Настройка сложности пароля в настраиваемых политиках в Azure Active Directory B2C | Документация Майкрософт
+description: Узнайте, как настроить требования к сложности паролей с помощью настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
 manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 08/16/2017
+ms.date: 12/13/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: c6b8312a08d1d92bccf70e7d3dda5f01811b4f87
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 74542f86d5114ff57e358db7e239e307059fe5ad
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52848533"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53580354"
 ---
-# <a name="configure-password-complexity-in-custom-policies"></a>Настройка сложности пароля в настраиваемых политиках
+# <a name="configure-password-complexity-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка сложности пароля в настраиваемых политиках в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье представлено расширенное описание понятия сложности пароля, а также сведения о том, как включить ее с помощью настраиваемых политик Azure AD B2C.
-
-## <a name="azure-ad-b2c-configure-complexity-requirements-for-passwords"></a>Azure AD B2C: настройка требований к сложности паролей
-
-Azure Active Directory B2C (Azure AD B2C) поддерживает изменение требований сложности к паролям, которые пользователи указывают при создании учетной записи.  По умолчанию Azure AD B2C использует **надежные** пароли.  Azure AD B2C также поддерживает параметры конфигурации для управления сложностью паролей, используемых клиентами.  В этой статье рассказывается о настройке сложности пароля в настраиваемых политиках.  Вы также можете ознакомиться со статьей [Azure AD B2C: Настройка требований к сложности паролей](active-directory-b2c-reference-password-complexity.md).
+В Azure Active Directory B2C (Azure AD) можно настроить требования к сложности паролей, которые пользователи указывают при создании учетной записи. По умолчанию Azure AD B2C использует **надежные** пароли. В этой статье рассказывается о настройке сложности пароля в [настраиваемых политиках](active-directory-b2c-overview-custom.md). Вы также можете настроить сложность пароля в [пользовательских потоках](active-directory-b2c-reference-password-complexity.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Клиент Azure AD B2C, необходимый для регистрации или входа с использованием локальной учетной записи, как описано в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
+Выполните шаги, описанные в статье [Начало работы с настраиваемыми политиками в Azure Active Directory B2C](active-directory-b2c-get-started-custom.md).
 
-## <a name="how-to-configure-password-complexity-in-custom-policy"></a>Как настроить сложность пароля в настраиваемых политиках
+## <a name="add-the-elements"></a>Добавление элементов
 
-Чтобы настроить сложность пароля в настраиваемой политике, в общей структуре настраиваемой политики в элементе `BuildingBlocks` должны содержаться элементы `ClaimsSchema`, `Predicates` и `InputValidations`.
+1. Скопируйте файл *SignUpOrSignIn.xml*, загруженный с начальным пакетом, и назовите его *SingUpOrSignInPasswordComplexity.xml*.
+2. Откройте файл *SingUpOrSignInPasswordComplexity.xml* и измените **PolicyId** и **PublicPolicyUri** на новое имя политики. Например, *B2C_1A_signup_signin_password_complexity*.
+3. Добавьте следующие элементы **ClaimType** с идентификаторами `newPassword` и `reenterPassword`.
 
-```XML
-  <BuildingBlocks>
-    <ClaimsSchema>...</ClaimsSchema>
-    <Predicates>...</Predicates>
-    <InputValidations>...</InputValidations>
-  </BuildingBlocks>
-```
-
-Ниже представлены сведения о предназначении каждого элемента.
-
-- Каждый элемент `Predicate` определяет основную проверку строки, при которой возвращается значение true или false.
-- Элемент `InputValidations` содержит один или несколько элементов `InputValidation`.  Каждый элемент `InputValidation` создается с использованием ряда элементов `Predicate`. Этот элемент дает возможность выполнять логическое агрегирование (схожее с `and` и `or`).
-- Элемент `ClaimsSchema` определяет проверяющееся утверждение,  а также определяет правило `InputValidation`, используемое для проверки утверждения.
-
-### <a name="defining-a-predicate-element"></a>Определение элемента предиката
-
-Предикаты имеют два типа метода. IsLengthRange и MatchesRegex. Давайте рассмотрим пример каждого из них.  Сначала рассмотрим пример MatchesRegex, используемый для сопоставления регулярного выражения.  В этом примере он соответствует строке, содержащей числа.
-
-```XML
-      <Predicate Id="PIN" Method="MatchesRegex" HelpText="The password must be a pin.">
-        <Parameters>
-          <Parameter Id="RegularExpression">^[0-9]+$</Parameter>
-        </Parameters>
-      </Predicate>
-```
-
-Далее рассмотрим пример IsLengthRange.  Этот метод принимает минимальную и максимальную длину строки.
-
-```XML
-      <Predicate Id="Length" Method="IsLengthRange" HelpText="The password must be between 8 and 16 characters.">
-        <Parameters>
-          <Parameter Id="Minimum">8</Parameter>
-          <Parameter Id="Maximum">16</Parameter>
-        </Parameters>
-      </Predicate>
-```
-
-Используйте атрибут `HelpText` для предоставления пользователю сообщения об ошибке при неудачном завершении проверки.  Эту строку можно локализовать с помощью возможности [настройки языка](active-directory-b2c-reference-language-customization.md).
-
-### <a name="defining-an-inputvalidation-element"></a>Определение элемента InputValidation
-
-Элемент `InputValidation` является агрегатом элемента `PredicateReferences`. Для успешного выполнения элемента `InputValidation` все элементы `PredicateReferences` должны иметь значение true.  Однако внутри элемента `PredicateReferences` используйте атрибут `MatchAtLeast`, чтобы указать количество проверок `PredicateReference` со значением true.  При необходимости определите атрибут `HelpText` для переопределения сообщения об ошибке, заданного в элементах `Predicate`, на которые он ссылается.
-
-```XML
-      <InputValidation Id="PasswordValidation">
-        <PredicateReferences Id="LengthGroup" MatchAtLeast="1">
-          <PredicateReference Id="Length" />
-        </PredicateReferences>
-        <PredicateReferences Id="3of4" MatchAtLeast="3" HelpText="You must have at least 3 of the following character classes:">
-          <PredicateReference Id="Lowercase" />
-          <PredicateReference Id="Uppercase" />
-          <PredicateReference Id="Number" />
-          <PredicateReference Id="Symbol" />
-        </PredicateReferences>
-      </InputValidation>
-```
-
-### <a name="defining-a-claimsschema-element"></a>Определение элемента ClaimsSchema
-
-Типы утверждений `newPassword` и `reenterPassword` считаются особыми, поэтому не следует изменять их имена.  Пользовательский интерфейс проверяет правильность повторно введенного пароля во время создания учетной записи на основе этих элементов `ClaimType`.  Такие же элементы `ClaimType` можно найти в файле TrustFrameworkBase.xml в начальном пакете.  В этом примере дополнительно показано переопределение этих элементов, чтобы определить `InputValidationReference`. Атрибут `ID` этого нового элемента указывает на определенный элемент `InputValidation`.
-
-```XML
+    ```XML
     <ClaimsSchema>
       <ClaimType Id="newPassword">
         <InputValidationReference Id="PasswordValidation" />
@@ -105,78 +42,29 @@ Azure Active Directory B2C (Azure AD B2C) поддерживает измене�
         <InputValidationReference Id="PasswordValidation" />
       </ClaimType>
     </ClaimsSchema>
-```
+    ```
 
-### <a name="putting-it-all-together"></a>Сборка
+4. [Предикаты](predicates.md) имеют типы метода `IsLengthRange` или `MatchesRegex`. Тип `MatchesRegex` используется для сопоставления регулярного выражения. Тип `IsLengthRange` принимает минимальную и максимальную длину строки. Добавьте элемент **Predicates** в элемент **BuildingBlocks**, если в нем нет следующих элементов **Predicate**.
 
-В этом примере показано, как все части формируют рабочую политику.  Чтобы использовать этот пример, сделайте следующее:
-
-1. Следуйте инструкциям в разделе "Предварительные требования" статьи [Azure Active Directory B2C: начало работы с настраиваемыми политиками](active-directory-b2c-get-started-custom.md), чтобы скачать, настроить и отправить TrustFrameworkBase.xml и TrustFrameworkExtensions.xml.
-1. Создайте файл SignUporSignIn.xml, используя пример в этом разделе.
-1. Обновите SignUporSignIn.xml, заменив `yourtenant` на свое имя клиента Azure AD B2C.
-1. Отправьте файл политики SignUporSignIn.xml последним.
-
-Данный пример содержит проверку для ПИН-кодов и надежных паролей:
-
-- Поищите `PINpassword`. Элемент `InputValidation` проверяет ПИН-код любой длины.  Сейчас он не используется, так как он не указыван в элементе `InputValidationReference` внутри `ClaimType`. 
-- Поищите `PasswordValidation`. Элемент `InputValidation` проверяет пароль от 8 до 16 знаков и содержит 3 из 4 знаков верхнего и нижнего регистра, цифры или символы.  Он указывается в `ClaimType`.  Таким образом, применение этого правила в этой политике обязательное.
-
-```XML
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<TrustFrameworkPolicy
-  xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-  xmlns:xsd="https://www.w3.org/2001/XMLSchema"
-  xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06"
-  PolicySchemaVersion="0.3.0.0"
-  TenantId="yourtenant.onmicrosoft.com"
-  PolicyId="B2C_1A_signup_signin"
-  PublicPolicyUri="http://yourtenant.onmicrosoft.com/B2C_1A_signup_signin">
- <BasePolicy>
-    <TenantId>yourtenant.onmicrosoft.com</TenantId>
-    <PolicyId>B2C_1A_TrustFrameworkExtensions</PolicyId>
-  </BasePolicy>
-  <BuildingBlocks>
-    <ClaimsSchema>
-      <ClaimType Id="newPassword">
-        <InputValidationReference Id="PasswordValidation" />
-      </ClaimType>
-      <ClaimType Id="reenterPassword">
-        <InputValidationReference Id="PasswordValidation" />
-      </ClaimType>
-    </ClaimsSchema>
+    ```XML
     <Predicates>
-      <Predicate Id="Lowercase" Method="MatchesRegex" HelpText="a lowercase">
+      <Predicate Id="PIN" Method="MatchesRegex" HelpText="The password must be a pin.">
         <Parameters>
-          <Parameter Id="RegularExpression">[a-z]+</Parameter>
-        </Parameters>
-      </Predicate>
-      <Predicate Id="Uppercase" Method="MatchesRegex" HelpText="an uppercase">
-        <Parameters>
-          <Parameter Id="RegularExpression">[A-Z]+</Parameter>
-        </Parameters>
-      </Predicate>
-      <Predicate Id="Number" Method="MatchesRegex" HelpText="a number">
-        <Parameters>
-          <Parameter Id="RegularExpression">[0-9]+</Parameter>
-        </Parameters>
-      </Predicate>
-      <Predicate Id="Symbol" Method="MatchesRegex" HelpText="a symbol">
-        <Parameters>
-          <Parameter Id="RegularExpression">[!@#$%^*()]+</Parameter>
+          <Parameter Id="RegularExpression">^[0-9]+$</Parameter>
         </Parameters>
       </Predicate>
       <Predicate Id="Length" Method="IsLengthRange" HelpText="The password must be between 8 and 16 characters.">
         <Parameters>
           <Parameter Id="Minimum">8</Parameter>
           <Parameter Id="Maximum">16</Parameter>
-        </Parameters>
-      </Predicate>
-      <Predicate Id="PIN" Method="MatchesRegex" HelpText="The password must be a pin.">
-        <Parameters>
-          <Parameter Id="RegularExpression">^[0-9]+$</Parameter>
         </Parameters>
       </Predicate>
     </Predicates>
+    ```
+
+5. Каждый элемент **InputValidation** создается с использованием определенных элементов **Predicate**. Этот элемент дает возможность выполнять логическое агрегирование, схожее с `and` и `or`. Добавьте элемент **InputValidations** в элемент **BuildingBlocks**, если в нем нет следующих элементов **InputValidation**.
+
+    ```XML
     <InputValidations>
       <InputValidation Id="PasswordValidation">
         <PredicateReferences Id="LengthGroup" MatchAtLeast="1">
@@ -189,30 +77,57 @@ Azure Active Directory B2C (Azure AD B2C) поддерживает измене�
           <PredicateReference Id="Symbol" />
         </PredicateReferences>
       </InputValidation>
-      <InputValidation Id="PINpassword">
-        <PredicateReferences Id="PINGroup">
-          <PredicateReference Id="PIN" />
-        </PredicateReferences>
-      </InputValidation>
     </InputValidations>
-  </BuildingBlocks>
-  <RelyingParty>
-    <DefaultUserJourney ReferenceId="SignUpOrSignIn" />
-    <TechnicalProfile Id="PolicyProfile">
-      <DisplayName>PolicyProfile</DisplayName>
-      <Protocol Name="OpenIdConnect" />
-      <InputClaims>
-        <InputClaim ClaimTypeReferenceId="passwordPolicies" DefaultValue="DisablePasswordExpiration, DisableStrongPassword" />
-      </InputClaims>
-      <OutputClaims>
-        <OutputClaim ClaimTypeReferenceId="displayName" />
-        <OutputClaim ClaimTypeReferenceId="givenName" />
-        <OutputClaim ClaimTypeReferenceId="surname" />
-        <OutputClaim ClaimTypeReferenceId="email" />
-        <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub"/>
-      </OutputClaims>
-      <SubjectNamingInfo ClaimType="sub" />
-    </TechnicalProfile>
-  </RelyingParty>
-</TrustFrameworkPolicy>
-```
+    ```
+
+6. Убедитесь, что технический профиль **PolicyProfile** содержит следующие элементы.
+
+    ```XML
+    <RelyingParty>
+      <DefaultUserJourney ReferenceId="SignUpOrSignIn"/>
+      <TechnicalProfile Id="PolicyProfile">
+        <DisplayName>PolicyProfile</DisplayName>
+        <Protocol Name="OpenIdConnect"/>
+        <InputClaims>
+          <InputClaim ClaimTypeReferenceId="passwordPolicies" DefaultValue="DisablePasswordExpiration, DisableStrongPassword"/>
+        </InputClaims>
+        <OutputClaims>
+          <OutputClaim ClaimTypeReferenceId="displayName"/>
+          <OutputClaim ClaimTypeReferenceId="givenName"/>
+          <OutputClaim ClaimTypeReferenceId="surname"/>
+          <OutputClaim ClaimTypeReferenceId="email"/>
+          <OutputClaim ClaimTypeReferenceId="objectId" PartnerClaimType="sub"/>
+        </OutputClaims>
+        <SubjectNamingInfo ClaimType="sub"/>
+      </TechnicalProfile>
+    </RelyingParty>
+    ```
+
+7. Сохраните файл политики.
+
+## <a name="test-your-policy"></a>Тестирование политики
+
+При тестировании приложений в Azure AD B2C может потребоваться вернуть маркер Azure AD B2C в `https://jwt.ms` для просмотра в нем утверждений.
+
+### <a name="upload-the-files"></a>Передача файлов
+
+1. Войдите на [портале Azure](https://portal.azure.com/).
+2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
+4. Выберите **Инфраструктура процедур идентификации**.
+5. На странице "Настраиваемые политики" щелкните **Отправить политику**.
+6. Выберите **Перезаписать политику, если она существует**, а затем найдите и выберите файл *SingUpOrSignInPasswordComplexity.xml*.
+7. Щелкните **Отправить**.
+
+### <a name="run-the-policy"></a>Запуск политики
+
+1. Откройте измененную политику. Например, *B2C_1A_signup_signin_password_complexity*.
+2. В разделе **Приложение** выберите зарегистрированное ранее приложение. Чтобы маркер отображался, **URL-адрес ответа** должен быть следующим: `https://jwt.ms`.
+3. Щелкните **Запустить сейчас**.
+4. Выберите **Зарегистрироваться сейчас**, введите адрес электронной почты и новый пароль. Отображаются рекомендации по ограничению для пароля. Введите данные пользователя и нажмите **Создать**. Вы увидите содержимое возвращенного маркера.
+
+## <a name="next-steps"></a>Дополнительная информация
+
+- Узнайте, как [настроить сложность пароля в настраиваемых политиках в Azure Active Directory B2C](active-directory-b2c-reference-password-change-custom.md).
+
+

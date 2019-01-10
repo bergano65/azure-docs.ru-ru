@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 03/15/2017
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: cf183b0a78ff3f7e442ea8052f37fc2df58aac54
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 80a2ed779fa65c669be81fdf8212b7d018325ee5
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51262324"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53634513"
 ---
 # <a name="end-to-end-troubleshooting-using-azure-storage-metrics-and-logging-azcopy-and-message-analyzer"></a>Комплексный поиск и устранение неполадок с помощью метрик службы хранилища Azure и ведения журнала, AzCopy и анализатора сообщений
 [!INCLUDE [storage-selector-portal-e2e-troubleshooting](../../../includes/storage-selector-portal-e2e-troubleshooting.md)]
@@ -94,6 +94,8 @@ ms.locfileid: "51262324"
 
 **Через PowerShell**
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 Чтобы начать работу с PowerShell для Azure, см. раздел [Как установить и настроить Azure PowerShell](/powershell/azure/overview).
 
 1. Выполните командлет [Add-AzureAccount](/powershell/module/servicemanagement/azure/add-azureaccount?view=azuresmps-3.7.0) в окне PowerShell, чтобы добавить свою учетную запись пользователя Azure.
@@ -114,13 +116,13 @@ ms.locfileid: "51262324"
 4. Включение ведения журнала хранилища для службы BLOB-объектов.
    
     ```powershell
-    Set-AzureStorageServiceLoggingProperty -ServiceType Blob -LoggingOperations Read,Write,Delete -PassThru -RetentionDays 7 -Version 1.0
+    Set-AzStorageServiceLoggingProperty -ServiceType Blob -LoggingOperations Read,Write,Delete -PassThru -RetentionDays 7 -Version 1.0
     ```
 
 5. Включите метрики хранилища для службы BLOB-объектов, установив параметр **-MetricsType** в `Minute`:
    
     ```powershell
-    Set-AzureStorageServiceMetricsProperty -ServiceType Blob -MetricsType Minute -MetricsLevel ServiceAndApi -PassThru -RetentionDays 7 -Version 1.0
+    Set-AzStorageServiceMetricsProperty -ServiceType Blob -MetricsType Minute -MetricsLevel ServiceAndApi -PassThru -RetentionDays 7 -Version 1.0
     ```
 
 ### <a name="configure-net-client-side-logging"></a>Настройка ведения журнала на стороне клиента .NET
@@ -198,11 +200,11 @@ AzCopy можно скачать на странице [Загрузки Azure](
 2. Запустите анализатор сообщений.
 3. В меню **Инструменты** выберите **Диспетчер ресурсов**. В окне **Диспетчер ресурсов** выберите **Загрузки** и отфильтруйте данные для **хранилища Azure**. Вы увидите ресурсы хранилища Azure, как показано на рисунке ниже.
 4. Щелкните **Синхронизировать все отображаемые элементы** для установки ресурсов хранилища Azure. Доступные ресурсы включают:
-   * **Цветовые правила хранилища Azure.** Цветовые правила хранилища Azure позволяют определить специальные фильтры, использующие стили шрифта, текст и цвет для выделения сообщений, содержащих определенные данные трассировки.
-   * **Диаграммы хранилища Azure.** Диаграммы хранилища Azure — стандартные диаграммы, отображающие данные журнала сервера. Обратите внимание, что для использования диаграмм хранилища Azure в настоящее время можно только загружать журнал сервера в сетку анализа.
-   * **Синтаксические анализаторы хранилища Azure.** Синтаксические анализаторы хранилища Azure позволяют проанализировать журналы HTTP, сервера и клиента хранилища Azure для их отображения в сетке анализа.
-   * **Фильтры хранилища Azure.** Фильтры хранилища Azure являются предопределенными критериями, которые можно использовать для запроса данных в сетке анализа.
-   * **Макеты представления хранилища Azure.** Макеты представления хранилища Azure — это предопределенные макеты и группировки в сетке анализа.
+   * **Правила цвета службы хранилища Azure:** правила цвета службы хранилища Azure позволяют определить специальные фильтры, использующие стили шрифта, текст и цвет для выделения сообщений, содержащих определенные данные трассировки.
+   * **Диаграммы службы хранилища Azure:** диаграммы службы хранилища Azure — это стандартные диаграммы, отображающие данные журнала сервера. Обратите внимание, что для использования диаграмм хранилища Azure в настоящее время можно только загружать журнал сервера в сетку анализа.
+   * **Средства синтаксического анализа службы хранилища Azure:** средства синтаксического анализа службы хранилища Azure позволяют проанализировать журналы HTTP, сервера и клиента хранилища Azure для их отображения в сетке анализа.
+   * **Фильтры службы хранилища Azure:** фильтры службы хранилища Azure являются предопределенными критериями, которые можно использовать для запроса данных в сетке анализа.
+   * **Макеты представления хранилища Azure:** макеты представления хранилища Azure — это предопределенные макеты и группировки в сетке анализа.
 5. После установки ресурсов перезапустите анализатор сообщений.
 
 ![Диспетчер ресурсов в анализаторе сообщений](./media/storage-e2e-troubleshooting/mma-start-page-1.png)

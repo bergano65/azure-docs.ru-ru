@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/28/2018
 ms.author: oanapl
-ms.openlocfilehash: c6d5954ed3547666236130753dfd53d10475df43
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 09696c606fdf57f5ac55fc50eb06c2c5eea55dfe
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52308994"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555257"
 ---
 # <a name="view-service-fabric-health-reports"></a>Просмотр отчетов о работоспособности Service Fabric
 В платформе Azure Service Fabric используется [модель работоспособности](service-fabric-health-introduction.md) с сущностями работоспособности, на основе которых компоненты системы и модули наблюдения создают отчеты о состоянии отслеживаемых локальных условий. [Хранилище данных о работоспособности](service-fabric-health-introduction.md#health-store) содержит все данные о работоспособности, с помощью которых можно определить состояние работоспособности сущностей.
@@ -464,7 +464,7 @@ HealthEvents                    : None
 
 В следующем примере возвращаются сведения о работоспособности службы с указанным именем (URI):
 
-```charp
+```csharp
 ServiceHealth serviceHealth = await fabricClient.HealthManager.GetServiceHealthAsync(serviceName);
 ```
 
@@ -1030,27 +1030,27 @@ ApplicationHealthStateChunks :
 
 Ниже приведены запросы, возвращающие сведения о состоянии работоспособности ( **HealthState** ) для сущностей:
 
-* Список узлов — возвращает список узлов в кластере (с разбивкой на страницы).
-  * API — [FabricClient.QueryClient.GetNodeListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getnodelistasync)
-  * PowerShell: Get-ServiceFabricNode.
-* Список приложений — возвращает список приложений в кластере (с разбивкой на страницы).
-  * API — [FabricClient.QueryClient.GetApplicationListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getapplicationlistasync)
-  * PowerShell: Get-ServiceFabricApplication.
-* Список служб — возвращает список служб в приложении (с разбивкой на страницы).
-  * API — [FabricClient.QueryClient.GetServiceListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getservicelistasync)
-  * PowerShell: Get-ServiceFabricService.
-* Список разделов — возвращает список разделов в службе (с разбивкой на страницы).
-  * API — [FabricClient.QueryClient.GetPartitionListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getpartitionlistasync)
-  * PowerShell: Get-ServiceFabricPartition.
-* Список реплик — возвращает список реплик в разделе (с разбивкой на страницы).
-  * API — [FabricClient.QueryClient.GetReplicaListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getreplicalistasync)
-  * PowerShell: Get-ServiceFabricReplica.
-* Список развернутых приложений — возвращает список развернутых приложений на узле.
-  * API — [FabricClient.QueryClient.GetDeployedApplicationListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedapplicationlistasync)
-  * PowerShell: Get-ServiceFabricDeployedApplication.
-* Список развернутых пакетов служб — возвращает список пакетов служб в развернутом приложении.
-  * API — [FabricClient.QueryClient.GetDeployedServicePackageListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedservicepackagelistasync)
-  * PowerShell: Get-ServiceFabricDeployedApplication.
+* Список узлов: возвращает список узлов в кластере (с разбивкой на страницы).
+  * API: [FabricClient.QueryClient.GetNodeListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getnodelistasync)
+  * PowerShell: Get-ServiceFabricNode
+* Список приложений: возвращает список приложений в кластере (с разбивкой на страницы).
+  * API: [FabricClient.QueryClient.GetApplicationListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getapplicationlistasync)
+  * PowerShell: Get-ServiceFabricApplication
+* Список служб: возвращает список служб в приложении (с разбивкой на страницы).
+  * API: [FabricClient.QueryClient.GetServiceListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getservicelistasync)
+  * PowerShell: Get-ServiceFabricService
+* Список секций: возвращает список секций в службе (с разбивкой на страницы).
+  * API: [FabricClient.QueryClient.GetPartitionListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getpartitionlistasync)
+  * PowerShell: Get-ServiceFabricPartition
+* Список реплик: возвращает список реплик в разделе (с разбивкой на страницы).
+  * API: [FabricClient.QueryClient.GetReplicaListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getreplicalistasync)
+  * PowerShell: Get-ServiceFabricReplica
+* Список развернутых приложений: возвращает список развернутых приложений на узле.
+  * API: [FabricClient.QueryClient.GetDeployedApplicationListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedapplicationlistasync)
+  * PowerShell: Get-ServiceFabricDeployedApplication
+* Список развернутых пакетов служб: возвращает список пакетов служб в развернутом приложении.
+  * API: [FabricClient.QueryClient.GetDeployedServicePackageListAsync](https://docs.microsoft.com/dotnet/api/system.fabric.fabricclient.queryclient.getdeployedservicepackagelistasync)
+  * PowerShell: Get-ServiceFabricDeployedApplication
 
 > [!NOTE]
 > Некоторые запросы возвращают результаты с разбивкой на страницы. В результатах этих запросов возвращается список, производный от [PagedList<T>](https://docs.microsoft.com/dotnet/api/system.fabric.query.pagedlist-1). Если результаты не соответствуют сообщению, возвращается только страница и устанавливается маркер ContinuationToken, который отслеживает остановку перечисления. Чтобы получить следующие результаты, необходимо продолжить вызов того же запроса, передавая маркер продолжения из предыдущего запроса.

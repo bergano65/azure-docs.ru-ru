@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по извлечению рукописного текста (REST, Python) в службе "Компьютерное зрение"
+title: Краткое руководство. Извлечение рукописного текста — REST, Python
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как извлечь рукописный текст из изображения с помощью API компьютерного зрения на Python.
 services: cognitive-services
@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: 83c8bb76d6bc646de6811c68076ed7a9dfb85669
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.custom: seodec18
+ms.openlocfilehash: 38e0b243b79975fa0cf6b5bb9a8a64c144289b15
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51853478"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53582887"
 ---
-# <a name="quickstart-extract-handwritten-text-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство по извлечению рукописного текста с помощью REST API и Python в службе "Компьютерное зрение"
+# <a name="quickstart-extract-handwritten-text-using-the-rest-api-and-python-in-computer-vision"></a>Краткое руководство. Извлечение рукописного текста с помощью REST API компьютерного зрения и Python
 
 Из этого краткого руководства вы узнаете, как извлечь рукописный текст из изображения с помощью REST API компьютерного зрения. С помощью методов [Recognize Text](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) и [Get Recognize Text Operation Result](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201) можно определить рукописный текст на изображении, а потом извлечь распознанные знаки в поток знаков, пригодный для машинной обработки.
 

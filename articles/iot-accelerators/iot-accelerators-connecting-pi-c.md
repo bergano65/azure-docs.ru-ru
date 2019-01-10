@@ -8,18 +8,20 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 09/17/2018
 ms.author: dobett
-ms.openlocfilehash: c20b1d5f3a84e950e37a3236272256db620a5985
-ms.sourcegitcommit: 26cc9a1feb03a00d92da6f022d34940192ef2c42
+ms.openlocfilehash: 838a33fd390b28fec609c42487dca225ddc6eaa8
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48831106"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53628210"
 ---
 # <a name="connect-your-raspberry-pi-device-to-the-remote-monitoring-solution-accelerator-c"></a>Подключение устройства Raspberry Pi к акселератору решения для удаленного мониторинга с помощью С
 
 [!INCLUDE [iot-suite-selector-connecting](../../includes/iot-suite-selector-connecting.md)]
 
-В этом руководстве показано, как подключить физическое устройство к акселератору решений для удаленного мониторинга. Как и для большинства внедряемых приложений, работающих на устройствах с ограниченными ресурсами, код клиента для приложения на устройстве Raspberry Pi пишется на языке C. В этом руководстве вы создадите приложение на устройстве Raspberry Pi под управлением ОС Raspbian.
+В этом руководстве показано, как подключить реальное устройство к акселератору решений для удаленного мониторинга. Как и для большинства внедряемых приложений, работающих на устройствах с ограниченными ресурсами, код клиента для приложения на устройстве Raspberry Pi пишется на языке C. В этом руководстве вы создадите приложение на устройстве Raspberry Pi под управлением ОС Raspbian.
+
+Если вы предпочитаете имитацию устройства, см. раздел [Создание и тестирование нового имитированного устройства](iot-accelerators-remote-monitoring-create-simulated-device.md).
 
 ### <a name="required-hardware"></a>Необходимое оборудование
 
@@ -36,7 +38,7 @@ ms.locfileid: "48831106"
 
 На настольном компьютере необходимо установить клиент SSH, чтобы иметь удаленный доступ к командной строке Raspberry Pi.
 
-- Windows не предоставляет клиент SSH. Мы советуем использовать [PuTTY](http://www.putty.org/).
+- Windows не предоставляет клиент SSH. Мы советуем использовать [PuTTY](https://www.putty.org/).
 - Большинство дистрибутивов Linux и Mac OS содержат служебную программу командной строки SSH. Дополнительные сведения см. в статье [SSH Using Linux or Mac OS](https://www.raspberrypi.org/documentation/remote-access/ssh/unix.md) (Подключение по протоколу SSH с помощью Linux или Mac OS).
 
 ### <a name="required-raspberry-pi-software"></a>Необходимое ПО для Raspberry Pi

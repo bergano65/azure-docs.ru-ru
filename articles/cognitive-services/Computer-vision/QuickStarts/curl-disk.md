@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Анализ локального изображения c помощью API компьютерного зрения (REST, cURL)
+title: Краткое руководство. Анализ локального изображения — REST, cURL
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как проанализировать локальное изображение с помощью API компьютерного зрения с cURL.
 services: cognitive-services
@@ -10,16 +10,17 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 09/10/2018
 ms.author: pafarley
-ms.openlocfilehash: c7c3cf2bae66e1739c4a62e1ce823542d0dfce36
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.custom: seodec18
+ms.openlocfilehash: c5e3de438593a6fb960edaffd14fa18ebe03f548
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49339922"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53579395"
 ---
-# <a name="quickstart-analyze-a-local-image-using-the-rest-api-and-curl-in-computer-vision"></a>Краткое руководство. Анализ локального изображения с помощью REST API и cURL в Компьютерном зрении
+# <a name="quickstart-analyze-a-local-image-using-the-rest-api-and-curl-in-computer-vision"></a>Краткое руководство. Анализ локального изображения с помощью REST API компьютерного зрения и cURL
 
-Из этого краткого руководства вы узнаете, как анализировать локальное изображение с помощью REST API в API компьютерного зрения, чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные функции на основе содержимого изображения.
+Из этого краткого руководства вы узнаете, как анализировать локальное изображение с помощью REST API в службе "Компьютерное зрение", чтобы извлечь визуальные признаки. С помощью метода [Analyze Image](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fa) можно извлечь визуальные функции на основе содержимого изображения.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/ai/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=cognitive-services), прежде чем начинать работу.
 

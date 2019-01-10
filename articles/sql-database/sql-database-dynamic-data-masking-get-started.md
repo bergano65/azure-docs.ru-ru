@@ -11,13 +11,13 @@ author: ronitr
 ms.author: ronitr
 ms.reviewer: vanto
 manager: craigg
-ms.date: 04/01/2018
-ms.openlocfilehash: 872e700842ce69ca955035120d4e09ec9facf7ec
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.date: 12/16/2018
+ms.openlocfilehash: 3e807033b109b8281057f6881a315f5c1c783a22
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47165557"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53536378"
 ---
 # <a name="sql-database-dynamic-data-masking"></a>Динамическое маскирование данных базы данных SQL Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "47165557"
 Настройка политики динамического маскирования данных на портале Azure осуществляется посредством выбора операции "Динамическое маскирование данных" в колонке конфигурации или параметров базы данных SQL.
 
 ### <a name="dynamic-data-masking-permissions"></a>Разрешения для динамической маскировки данных
-Динамическую маскировку данных может настраивать администратор базы данных Azure, администратор сервера или сотрудник службы безопасности.
+Динамическую маскировку данных может настраивать администратор базы данных Azure, администратор сервера или [диспетчер безопасности SQL](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#sql-security-manager).
 
 ### <a name="dynamic-data-masking-policy"></a>Политика динамической маскировки данных
 * **Пользователи SQL, исключенные из маскирования** — ряд пользователей SQL или удостоверений AAD, при использовании которых с данных, полученных в результатах SQL-запросов, снимается маска. Пользователи с привилегия администратора всегда исключаются из правил маскирования и видят исходные данные без какой-либо маски.

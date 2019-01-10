@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/20/2018
+ms.date: 12/13/2018
 ms.author: barclayn
-ms.openlocfilehash: 1109e72d00ccddd6fc0f120ee71c88adaae72fed
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: b73bf3e542801e58fbda6232eb063305785ce643
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53337603"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53536276"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Интеграция Advanced Threat Protection в Защитнике Windows с центром безопасности Azure
 
@@ -57,7 +57,21 @@ ms.locfileid: "53337603"
 
 Поддерживаются только серверы в подписках с уровнем служб "Стандартный".
 
-## <a name="onboarding-instructions"></a>Инструкции по подключению
+## <a name="onboarding-servers-to-security-center"></a>Подключение серверов к Центру безопасности 
+
+Чтобы подключить серверы к центру безопасности, нажмите кнопку **Перейти в Центр безопасности Azure для подключения серверов** в разделе подключения сервера ATP в Защитнике Windows.
+
+1. В колонке **Подключение** выберите или создайте рабочую область, в которой будут храниться данные. <br>
+2. Если отображаются не все рабочие области, это может быть вызвано отсутствием разрешений. Убедитесь, что для вашей рабочей области выбран уровень "Стандартный" Центра безопасности Azure. Дополнительные сведения см. в статье [Обновление Центра безопасности до уровня "Стандартный"](security-center-pricing.md).
+    
+3.  Выберите **Добавить серверы**, чтобы просмотреть инструкции по установке Microsoft Monitoring Agent. 
+
+4.  После подключения вы сможете выполнять мониторинг компьютеров в разделе **Вычисления и приложения**.
+
+  ![Подключение компьютеров](media/security-center-wdatp/onboard-computers.png)
+
+
+## <a name="enable-windows-defender-atp-integration"></a>Включение интеграции ATP в Защитнике Windows
 
 Чтобы просмотреть, включена ли интеграция ATP в Защитнике Windows, выберите **Центр безопасности** > **Политики безопасности** > **Подписки** > **Изменить параметры**.
 

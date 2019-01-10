@@ -1,5 +1,5 @@
 ---
-title: Руководство по поиску частично структурированных данных в облачном хранилище Azure с помощью службы "Поиск Azure"
+title: Руководство по поиску JSON в хранилище BLOB-объектов Azure — Поиск Azure
 description: Из этого руководства вы узнаете, как искать частично структурированные данные больших двоичных объектов Azure с помощью службы "Поиск Azure".
 author: HeidiSteen
 manager: cgronlun
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 07/12/2018
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 5608495ff2975cabefdb83e5794a7d92b318b5a5
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: ba9b34dbd9d0959e79c755abc8dad9fe1d358a50
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53313832"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53632948"
 ---
 # <a name="tutorial-search-semi-structured-data-in-azure-cloud-storage"></a>Руководство. Поиск частично структурированных данных в облачном хранилище Azure
 
@@ -60,7 +60,7 @@ ms.locfileid: "53313832"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите на [портале Azure](http://portal.azure.com).
+Войдите на [портале Azure](https://portal.azure.com).
 
 ## <a name="upload-the-sample-data"></a>Отправка примеров данных
 

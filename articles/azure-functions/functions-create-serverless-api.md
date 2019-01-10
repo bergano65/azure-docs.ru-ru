@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 05/04/2017
 ms.author: mahender
 ms.custom: mvc
-ms.openlocfilehash: 9a35c1205c0b564c8d0db1fbd0535d41bb9c84a0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 9f96b4cbe95d918a94ea0d02f9b8fdd8f663eeec
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46989912"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54001470"
 ---
 # <a name="create-a-serverless-api-using-azure-functions"></a>Создание бессерверного API с помощью Функций Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "46989912"
     | Разрешенные методы HTTP | Выбранные методы | Определяет, какие методы HTTP могут использоваться для вызова этой функции |
     | Выбранные методы HTTP | ПОЛУЧЕНИЕ | Разрешает использовать только выбранные методы HTTP для вызова этой функции |
     | Шаблон маршрута | /hello | Определяет пути, используемые для вызова этой функции |
-    | Уровень авторизации | Анонимные | (Необязательно.) Предоставляет доступ к функции без ключа API |
+    | Уровень авторизации | Анонимные | Необязательно: Предоставляет доступ к функции без ключа API |
 
     > [!NOTE] 
     > Обратите внимание, что вы не включали префикс базового пути `/api` в шаблон маршрута, так как он обрабатывается глобальным параметром.
@@ -71,7 +71,7 @@ ms.locfileid: "46989912"
 
 Прокси-сервер может указывать на любой ресурс HTTP, например:
 - Функции Azure 
-- Приложения API в [службе приложений Azure](https://docs.microsoft.com/azure/app-service/app-service-web-overview).
+- Приложения API в [службе приложений Azure](https://docs.microsoft.com/azure/app-service/overview).
 - Контейнеры Docker в [службе приложений под управлением Linux](https://docs.microsoft.com/azure/app-service/containers/app-service-linux-intro).
 - Любой другой размещенный API.
 
@@ -104,7 +104,7 @@ ms.locfileid: "46989912"
     | Поле | Образец значения | ОПИСАНИЕ |
     |---|---|---|
     | ИМЯ | HelloProxy | Понятное имя, используемое только для управления |
-    | Шаблон маршрута | /api/hello | Определяет пути, используемые для вызова этого прокси-сервера |
+    | Шаблон маршрута | /api/remotehello | Определяет пути, используемые для вызова этого прокси-сервера |
     | Внутренний URL-адрес | https://%HELLO_HOST%/api/hello | Определяет конечную точку, к которой должен быть отправлен запрос |
     
 1. Обратите внимание, что прокси-сервер не предоставляет префикс базового пути `/api`, который нужно включить в шаблон маршрута.
@@ -112,9 +112,9 @@ ms.locfileid: "46989912"
 1. Нажмите кнопку **Создать**.
 1. Вы можете испытать новый прокси-сервер, скопировав URL-адрес прокси-сервера и протестировав его в браузере или с помощью избранного клиента HTTP.
     1. Для использования анонимной функции:
-        1. `https://YOURPROXYAPP.azurewebsites.net/api/hello?name="Proxies"`
+        1. `https://YOURPROXYAPP.azurewebsites.net/api/remotehello?name="Proxies"`
     1. Для использования функции с авторизацией:
-        1. `https://YOURPROXYAPP.azurewebsites.net/api/hello?code=YOURCODE&name="Proxies"`
+        1. `https://YOURPROXYAPP.azurewebsites.net/api/remotehello?code=YOURCODE&name="Proxies"`
 
 ## <a name="create-a-mock-api"></a>Создание макета API
 
@@ -132,7 +132,7 @@ ms.locfileid: "46989912"
     "proxies": {
         "HelloProxy": {
             "matchCondition": {
-                "route": "/api/hello"
+                "route": "/api/remotehello"
             },
             "backendUri": "https://%HELLO_HOST%/api/hello"
         }
@@ -148,7 +148,7 @@ ms.locfileid: "46989912"
     "proxies": {
         "HelloProxy": {
             "matchCondition": {
-                "route": "/api/hello"
+                "route": "/api/remotehello"
             },
             "backendUri": "https://%HELLO_HOST%/api/hello"
         },

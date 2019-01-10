@@ -4,21 +4,19 @@ description: Доступные примеры проектов управляе
 services: managed-applications
 documentationcenter: na
 author: tfitzmac
-manager: timlt
-editor: tysonn
 ms.service: managed-applications
 ms.devlang: na
 ms.topic: sample
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/15/2017
+ms.date: 01/02/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9acc769355b44628ca617550e44c9ed9724cfdcb
-ms.sourcegitcommit: 68aec76e471d677fd9a6333dc60ed098d1072cfc
+ms.openlocfilehash: c0e2ab5cbf45aa2b3836be760ca256bd28e7459a
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2017
-ms.locfileid: "26753066"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53993235"
 ---
 # <a name="sample-projects-for-azure-managed-applications"></a>Примеры проектов для управляемых приложений Azure
 
@@ -31,4 +29,4 @@ ms.locfileid: "26753066"
 | [Управляемая учетная запись хранения Azure](https://github.com/Azure/azure-managedapp-samples/tree/master/samples/201-managed-storage-account) | Развертывание одной учетной записи хранения. Используйте этот пример проекта как отправную точку при создании управляемых приложений. |
 | [Управляемая платформа Service Fabric и службы управления Azure](https://github.com/Azure/azure-managedapp-samples/tree/master/samples/201-managed-service-fabric) | Развертывание кластера Service Fabric и масштабируемых наборов виртуальных машин. Доступны учетные записи хранения для ведения журнала и диагностики. |
 | [Управляемые веб-приложения (IaaS) и службы управления Azure](https://github.com/Azure/azure-managedapp-samples/tree/master/samples/201-managed-web-app) | Развертывание виртуальной машины, на которой размещается веб-приложение. |
-| [Управляемые веб-приложения (IaaS), службы управления Azure и Key Vault](https://github.com/Azure/azure-managedapp-samples/tree/master/samples/201-managed-web-app-using-keyvault) | Развертывание виртуальной машины, на которой размещается веб-приложение. При этом создается ссылка на хранилище ключей для пароля администратора. |
+| [Управляемая система SQL 2017 IaaS с автоматической установкой исправлений и резервным копированием](https://github.com/Azure/azure-managedapp-samples/tree/master/samples/201-managed-sql-iaas) | Развертывание виртуальной машины, на которой размещается SQL 2017. |

@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 11/02/2018
 ms.author: dech
-ms.openlocfilehash: 8b64142a7d693e8e48e1739a61978abbab740e3d
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 83178abab84679dcfb36a361950097f9224eda81
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52875218"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53810650"
 ---
 # <a name="set-up-a-cicd-pipeline-with-the-azure-cosmos-db-emulator-build-task-in-azure-devops"></a>Настройка конвейера CI/CD с использованием задачи сборки эмулятора Azure Cosmos DB в Azure DevOps
 
@@ -81,7 +81,7 @@ ms.locfileid: "52875218"
 </RunSettings>
 ```
 
-Если вы настраиваете конвейер CI/CD для приложения, использующего API MongoDB Azure Cosmos DB, по умолчанию строка подключения к MongoDB содержит такой номер порта: 10255. Но сейчас этот порт не открыт. Вместо него можете использовать порт 10250 для подключения. В строке подключения API MongoDB нужно изменить только номер порта 10250 на 10255.
+Если вы настраиваете конвейер CI/CD для приложения, использующего API Azure Cosmos DB для MongoDB, по умолчанию строка подключения содержит такой номер порта: 10255. Но сейчас этот порт не открыт. Вместо него можете использовать порт 10250 для подключения. В строке подключения API Azure Cosmos DB для MongoDB нужно изменить только номер порта 10250 на 10255.
 
 Эти параметры `TestRunParameters` указываются с помощью свойства `TestContext` в тестовом проекте приложения. Ниже приведен пример теста, который выполняется для Cosmos DB.
 

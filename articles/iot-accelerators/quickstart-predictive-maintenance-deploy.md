@@ -1,5 +1,5 @@
 ---
-title: Испытание облачного решения Интернета вещей в Azure для прогнозного обслуживания | Документация Майкрософт
+title: Испытание облачного решения Интернета вещей для прогнозного обслуживания — Azure | Документация Майкрософт
 description: В этом кратком руководстве мы будем развертывать акселератор решения для прогнозного обслуживания Интернета вещей в Azure, войдем в систему и используем панель мониторинга решения.
 author: dominicbetts
 manager: timlt
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 10/26/2018
 ms.author: dobett
-ms.openlocfilehash: c56bdb5968b5f5ada902aa9212282c3cfebe2eaf
-ms.sourcegitcommit: 0f54b9dbcf82346417ad69cbef266bc7804a5f0e
+ms.openlocfilehash: 22f0eae805ad112c5a6a7746897dac7e37d90028
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50139845"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53604343"
 ---
 # <a name="quickstart-try-a-cloud-based-solution-to-run-a-predictive-maintenance-analysis-on-my-connected-devices"></a>Краткое руководство. Использование облачных решений для анализа прогнозного обслуживания на подключенных устройствах
 
@@ -36,7 +36,7 @@ ms.locfileid: "50139845"
 
 Щелкните плитку **Predictive Maintenance** (Прогнозное обслуживание). На странице **Predictive Maintenance** (Прогнозное обслуживание) щелкните **Try Now** (Попробовать сейчас).
 
-![Попробовать сейчас](./media/quickstart-predictive-maintenance-deploy/predictivemaintenance.png)
+![Попробовать](./media/quickstart-predictive-maintenance-deploy/predictivemaintenance.png)
 
 На странице **Create Predictive Maintenance solution** (Создание решения прогнозного обслуживания) введите уникальное **имя решения** для акселератора решения прогнозного обслуживания. В этом кратком руководстве используется **MyPredictiveMaintenance**.
 
@@ -70,7 +70,7 @@ ms.locfileid: "50139845"
 
 В процессе моделирования обрабатывается весь набор данных со 148 циклами. В результате можно получить окончательные значения остаточного срока эксплуатации и количества выполненных циклов.
 
-Моделирование можно остановить в любой момент, но, если нажать кнопку **Запустить моделирование**, процесс перезапустится с самого начала.
+Моделирование можно остановить в любой момент, но, если нажать кнопку **Запустить моделирование** , процесс перезапустится с самого начала.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

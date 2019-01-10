@@ -4,17 +4,16 @@ description: Использование агента Microsoft Azure Backup дл
 services: backup
 author: rayne-wiselman
 manager: carmonm
-keywords: хранилище архивации; архивация сервера Windows; архивация Windows;
 ms.service: backup
 ms.topic: conceptual
 ms.date: 8/5/2018
 ms.author: raynew
-ms.openlocfilehash: 4e138311b58d56f3a188347d43ed12287d43e1bd
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: ff1aaadd77df9cb7678ad71141d15c96f2f12dc0
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52874011"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53788401"
 ---
 # <a name="back-up-a-windows-server-or-client-to-azure-using-the-resource-manager-deployment-model"></a>Архивация сервера Windows Server или клиента Windows в Azure с использованием модели развертывания с помощью Resource Manager
 В этой статье описывается, как выполнить архивацию файлов и папок Windows Server или клиентского компьютера Windows в Azure с помощью службы архивации Azure, используя модель развертывания Resource Manager.
@@ -183,6 +182,8 @@ ms.locfileid: "52874011"
 Политика архивации — это расписание, которое определяет частоту и время создания точек восстановления, а также срок хранения каждой резервной копии. Используйте агент Microsoft Azure Backup для создания политики резервного копирования файлов и папок.
 
 ### <a name="to-create-a-backup-schedule"></a>Создание расписания архивации
+
+Настройте расписание резервного копирования на компьютере, на котором вы хотите создать резервную копию. Обратите внимание, что установленное время резервного копирования может отличаться от локального времени компьютера, так как служба архивации Azure не использует летнее время (DST) в учетной записи. 
 1. Откройте агент Microsoft Azure Backup. Его можно найти, выполнив поиск строки **Microsoft Azure Backup** на компьютере.
 
     ![Запуск агента службы архивации Azure](./media/backup-configure-vault/snap-in-search.png)

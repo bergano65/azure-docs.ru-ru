@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание эскиза с помощью API компьютерного зрения, REST и Node.js
+title: Краткое руководство. Создание эскиза — REST, Node.js
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения и Node.js.
 services: cognitive-services
@@ -10,12 +10,13 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: 3d92849eae64e48cb2052b233b89c96ad702e622
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.custom: seodec18
+ms.openlocfilehash: cda00b7d8a9d7b597f5702769eb367a7fa93d2dc
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52971068"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53578943"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-nodejs-in-computer-vision"></a>Краткое руководство. Краткое руководство по созданию эскиза с помощью API компьютерного зрения, REST API и Node.js
 

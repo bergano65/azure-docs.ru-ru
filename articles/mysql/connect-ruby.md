@@ -1,22 +1,19 @@
 ---
 title: Подключение к Базе данных Azure для MySQL с помощью Ruby
 description: В этом кратком руководстве представлены примеры кода Ruby, которые можно использовать для подключения к базе данных Azure для MySQL и запроса данных из нее.
-services: mysql
 author: jasonwhowell
 ms.author: jasonh
-manager: kfile
-editor: jasonwhowell
 ms.service: mysql
 ms.custom: mvc
 ms.devlang: ruby
 ms.topic: quickstart
 ms.date: 02/28/2018
-ms.openlocfilehash: cfaf6cc5b93ee80017a8fe5634c7afa7b9ce0ccf
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 2a5b05985494602e73fa949033958f4a974602b0
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49986805"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53542549"
 ---
 # <a name="azure-database-for-mysql-use-ruby-to-connect-and-query-data"></a>База данных Azure для MySQL: подключение и запрос данных с помощью Ruby
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для MySQL с помощью приложения [Ruby](https://www.ruby-lang.org) и пакета [Mysql2](https://rubygems.org/gems/mysql2) на платформе Windows, Ubuntu Linux и Mac. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Ruby и вы только начали работу с базой данных Azure для MySQL.
@@ -29,7 +26,7 @@ ms.locfileid: "49986805"
 ## <a name="install-ruby"></a>Установка Ruby
 Установите Ruby, Gem и библиотеку MySQL2 на своем компьютере. 
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 1. Скачайте и установите [Ruby](https://rubyinstaller.org/downloads/) версии 2.3.
 2. Запустите новую командную строку (cmd) из меню "Пуск".
 3. Перейдите в каталог Ruby версии 2.3. `cd c:\Ruby23-x64\bin`

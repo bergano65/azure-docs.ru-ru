@@ -12,18 +12,18 @@ ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: pryerram
 ms.custom: mvc
-ms.openlocfilehash: 26b5b16e3eb016edbe53c3526e51c3aa44f307b5
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: cced3d363f9eb7418d6f453eccb1bf1d7ac20ead
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52583590"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53972351"
 ---
-# <a name="tutorial-how-to-use-azure-key-vault-with-azure-windows-virtual-machine-in-python"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Windows в Azure (Python)
+# <a name="tutorial-how-to-use-azure-key-vault-with-azure-windows-virtual-machine-in-python"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Windows (Python)
 
 Azure Key Vault помогает защитить секреты, такие как ключи API, строки подключения к базам данных, необходимые для доступа к приложениям, службам и ИТ-ресурсам.
 
-В этом руководстве описано, как в веб-приложении Azure настроить чтение данных из Azure Key Vault с помощью управляемых удостоверений для ресурсов Azure. Это руководство основано на [веб-приложениях Azure](../app-service/app-service-web-overview.md). Далее вы узнаете:
+В этом руководстве описано, как в веб-приложении Azure настроить чтение данных из Azure Key Vault с помощью управляемых удостоверений для ресурсов Azure. Далее вы узнаете:
 
 > [!div class="checklist"]
 > * Создать хранилище ключей.
@@ -80,9 +80,9 @@ az group create --name "<YourResourceGroupName>" --location "West US"
 
 Теперь создайте хранилище ключей в группе ресурсов, созданной на предыдущем шаге. Введите следующие сведения:
 
-* Имя хранилища ключей: это должна быть строка, состоящая из 3–24 таких символов: 0–9, a–z, A–Z и -.
+* Имя хранилища ключей. Имя должно быть строкой длиной от 3 до 24 символов, содержащей только цифры (0–9), буквы (a–z, A–Z) и символ "-".
 * Имя группы ресурсов.
-* Расположение: **Западная часть США**.
+* Расположение. **Западная часть США**.
 
 ```azurecli
 az keyvault create --name "<YourKeyVaultName>" --resource-group "<YourResourceGroupName>" --location "West US"
@@ -137,7 +137,7 @@ az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssigned
 
 ## <a name="create-and-run-sample-python-app"></a>Создание и запуск примера приложения Python
 
-Ниже приведен пример файла с именем Sample.py. Он использует библиотеку [requests](http://docs.python-requests.org/master/) для выполнения вызовов HTTP GET.
+Ниже приведен пример файла с именем Sample.py. Он использует библиотеку [requests](http://docs.python-requests.org/en/master/) для выполнения вызовов HTTP GET.
 
 ## <a name="edit-samplepy"></a>Редактирование файла Sample.py
 Откройте созданный файл Sample.py и скопируйте приведенный ниже код.

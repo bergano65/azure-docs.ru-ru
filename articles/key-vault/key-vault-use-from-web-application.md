@@ -1,5 +1,5 @@
 ---
-title: Руководство по использованию Azure Key Vault из веб-приложения | Документы Майкрософт
+title: Руководство по использованию Azure Key Vault из веб-приложения | Документация Майкрософт
 description: В этом учебнике показано, как использовать хранилище ключей Azure из веб-приложения.
 services: key-vault
 author: barclayn
@@ -9,16 +9,16 @@ ms.assetid: 9b7d065e-1979-4397-8298-eeba3aec4792
 ms.service: key-vault
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/09/2018
+ms.date: 01/02/2019
 ms.author: barclayn
-ms.openlocfilehash: b66c9912ba0b6508c2beb786d2327efa779c6645
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 79bccbcbcf78de18504c5cb0235e29930d90ede8
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49079469"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53999311"
 ---
-# <a name="tutorial-use-azure-key-vault-from-a-web-application"></a>Руководство по использованию Azure Key Vault из веб-приложения
+# <a name="tutorial-use-azure-key-vault-from-a-web-application"></a>Руководство. Использование Azure Key Vault из веб-приложения
 
 В этом учебнике показано, как использовать хранилище ключей Azure из веб-приложения Azure. Здесь приводится процесс доступа к секрету из Azure Key Vault для использования в веб-приложении. Затем в этом руководстве вместо секрета клиента используется сертификат. Этот учебник поможет веб-разработчикам понять принципы создания веб-приложений в Azure.
 
@@ -40,9 +40,9 @@ ms.locfileid: "49079469"
 * Идентификатор клиента и секрет клиента для веб-приложения, зарегистрированного в Azure Active Directory, которое имеет доступ к вашему хранилищу ключей
 * Веб-приложение. В этом руководстве показаны действия для приложения ASP.NET MVC, развернутого в Azure в качестве веб-приложения.
 
-Выполните действия, описанные в статье по [началу работы с Azure Key Vault](key-vault-get-started.md), чтобы получить URI секрета, идентификатор клиента, секрет клиента и зарегистрировать приложение. Веб-приложение будет обращаться к хранилищу и должно быть зарегистрировано в Azure Active Directory. Ему также требуются права доступа к хранилищу ключей. Если эти условия не выполнены, вернитесь к разделу "Регистрация приложения" в учебнике "Приступая к работе" и повторите перечисленные шаги. Дополнительные сведения о веб-приложениях Azure см. в статье [Обзор веб-приложений](../app-service/app-service-web-overview.md).
+Выполните действия, описанные в статье по [началу работы с Azure Key Vault](key-vault-get-started.md), чтобы получить URI секрета, идентификатор клиента, секрет клиента и зарегистрировать приложение. Веб-приложение будет обращаться к хранилищу и должно быть зарегистрировано в Azure Active Directory. Ему также требуются права доступа к хранилищу ключей. Если эти условия не выполнены, вернитесь к разделу "Регистрация приложения" в учебнике "Приступая к работе" и повторите перечисленные шаги. Дополнительные сведения о веб-приложениях Azure см. в статье [Обзор веб-приложений](../app-service/overview.md).
 
-В этом примере удостоверения Azure Active Directory подготавливаются вручную. Вам же для автоматической подготовки удостоверений Azure AD нужно использовать [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md). Для получения дополнительных сведений см. пример на сайте [GitHub](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet/) и статью [Использование управляемых удостоверений в Службе приложений и Функциях Azure](https://docs.microsoft.com/azure/app-service/app-service-managed-service-identity). Кроме того, дополнительные сведения можно найти в статье [Руководство по настройке веб-приложения Azure для считывания секрета из Key Vault](tutorial-web-application-keyvault.md).
+В этом примере удостоверения Azure Active Directory подготавливаются вручную. Вам же для автоматической подготовки удостоверений Azure AD нужно использовать [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md). Для получения дополнительных сведений см. пример на сайте [GitHub](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet/) и статью [Использование управляемых удостоверений в Службе приложений и Функциях Azure](https://docs.microsoft.com/azure/app-service/overview-managed-identity). Кроме того, дополнительные сведения можно найти в статье [Руководство по настройке веб-приложения Azure для считывания секрета из Key Vault](tutorial-web-application-keyvault.md).
 
 ## <a id="packages"></a>Добавление пакетов NuGet
 
@@ -71,8 +71,6 @@ Install-Package Microsoft.Azure.KeyVault
     <add key="SecretUri" value="secreturi" />
     <!-- If you aren't hosting your app as an Azure Web App, then you should use the actual ClientId, Client Secret, and Secret URI values -->
 ```
-
-
 
 ## <a id="gettoken"></a>Добавление метода для получения маркера доступа
 
@@ -159,7 +157,7 @@ Export-PfxCertificate -cert $Cert -FilePath $PFXFilePath -Password $SecStringPw
 Export-Certificate -cert $Cert -FilePath $CerFilePath 
 ```
 
-Запишите дату окончания и пароль для PFX-файла (в этом примере: 15 мая 2019 г. и test123). Они потребуются для приведенного ниже сценария. 
+Запишите дату окончания и пароль для PFX-файла (в этом примере: 15.05.2019 и MyPassword). Они потребуются для приведенного ниже сценария. 
 ### <a name="associate-the-certificate-with-an-azure-ad-application"></a>Связывание сертификата с приложением Azure AD
 
 Теперь, когда у вас есть сертификат, необходимо связать его с приложением Azure AD. Связь можно выполнить с помощью PowerShell. Чтобы связать сертификат с приложением Azure AD, выполните следующие команды:
@@ -188,11 +186,11 @@ $x509.Thumbprint
 
 Теперь в веб-приложение будет добавлен код для доступа к сертификату и его использования для проверки подлинности. 
 
-Во-первых, есть код для доступа к сертификату. Обратите внимание, что параметр StoreLocation имеет значение CurrentUser вместо LocalMachine и что мы указали false для метода Find, поскольку используем тестовый сертификат.
+Во-первых, есть код для доступа к сертификату. Параметр расположения хранилища имеет значение CurrentUser вместо LocalMachine. и что мы указали false для метода Find, поскольку используем тестовый сертификат.
 
 ```cs
 //Add this using statement
-using System.Security.Cryptography.X509Certificates;  
+using System.Security.Cryptography.X509Certificates;  
 
 public static class CertificateHelper
 {

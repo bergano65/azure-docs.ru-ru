@@ -9,14 +9,14 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 09/22/2018
 ms.author: spelluru
-ms.openlocfilehash: 8beabfb8c77d4d62b9b15dca8ae3146c34c3b20a
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 522447b73454016bff5188d07b27702fa21cb748
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52634818"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53998682"
 ---
-# <a name="quickstart-send-and-receive-messages-using-azure-cli-and-java"></a>Краткое руководство по отправке и получению сообщений с помощью интерфейса командной строки Azure и Java
+# <a name="quickstart-send-and-receive-messages-using-azure-cli-and-java"></a>Краткое руководство. Отправка и получение сообщений с помощью интерфейса командной строки Azure и Java
 
 Служебная шина Microsoft Azure представляет собой брокер интеграции сообщений корпоративного уровня, который гарантирует защищенную и надежную доставку сообщений. Типичный сценарий применения служебной шины подразумевает функциональное разделение двух или более приложений, служб либо процессов, позволяя им обмениваться данными или сведениями о состоянии, а также отправлять друг другу сообщения. При этом приложениям не обязательно подключаться к сети одновременно. 
 
@@ -66,7 +66,7 @@ connectionString=$(az servicebus namespace authorization-rule keys list \
 
 ## <a name="send-and-receive-messages"></a>Отправка и получение сообщений
 
-Создав пространство имен и очередь и получив необходимые учетные данные, вы можете приступать к отправке и получению сообщений. Этот код можно изучить в [папке с примером на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/quickstarts-and-tutorials/quickstart-java/src/main/java/samples/quickstart/SendAndReceiveMessages.java).
+Создав пространство имен и очередь и получив необходимые учетные данные, вы можете приступать к отправке и получению сообщений. Этот код можно изучить в [папке с примером на GitHub](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/azure-servicebus/TopicFilters).
 
 1. Убедитесь, что открыто окно Cloud Shell и в нем отображается строка Bash.
 
@@ -108,7 +108,7 @@ az group delete --resource-group myResourceGroup
 
 ## <a name="understand-the-sample-code"></a>Разбор примера кода
 
-Этот раздел содержит дополнительные сведения о ключевых фрагментах нашего примера кода. Вы можете просмотреть этот код в репозитории GitHub [здесь](https://github.com/Azure/azure-service-bus/blob/master/samples/Java/quickstarts-and-tutorials/quickstart-java/src/main/java/samples/quickstart/SendAndReceiveMessages.java).
+Этот раздел содержит дополнительные сведения о ключевых фрагментах нашего примера кода. Вы можете просмотреть этот код в репозитории GitHub [здесь](https://github.com/Azure/azure-service-bus/tree/master/samples/Java/azure-servicebus/TopicFilters).
 
 ### <a name="get-connection-string-and-queue"></a>Получение строки подключения и очереди
 

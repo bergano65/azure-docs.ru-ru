@@ -10,12 +10,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 8b0f1cfe56923cbd8a5b1c517cfdc3b174088715
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 5634d812b3fbd4e904516767b008f63104b3d7b7
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53086145"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53632744"
 ---
 # <a name="troubleshoot-apache-storm-by-using-azure-hdinsight"></a>Устранение неполадок в Apache Storm с помощью Azure HDInsight
 
@@ -54,7 +54,7 @@ https://\<DNS-имя кластера\>/stormui
 
 Выполните скрипт [stormmeta.sh](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/tools/zkdatatool-1.0/bash/stormmeta.sh) из узлов ZooKeeper для экспорта, а затем импорта данных. Обновите скрипт до правильной версии платформы данных Hortonworks Data Platform (HDP). (Мы работаем над универсальностью этих скриптов в HDInsight. Универсальные скрипты могут запускаться с любого узла кластера без необходимости внесения изменений пользователем.)
 
-Команда экспорта записывает метаданные по пути распределенной файловой системы Apache Hadoop (HDFS) (в хранилище BLOB-объектов Azure или хранилище Azure Data Lake Store) в указанном расположении.
+Команда экспорта записывает метаданные по пути распределенной файловой системы Apache Hadoop (HDFS) (в хранилище BLOB-объектов Azure или хранилище Azure Data Lake Storage) в указанном расположении.
 
 ### <a name="examples"></a>Примеры
 
@@ -87,7 +87,7 @@ https://\<DNS-имя кластера\>/stormui
  
 Для определенных версий HDP в /usr/hdp (например, /usr/hdp/2.5.0.1233/storm) может существовать несколько двоичных файлов. Папка /usr/hdp/current/storm-client представляет символическую ссылку на последнюю версию, запущенную в кластере.
 
-Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix) и [Apache Storm](http://storm.apache.org/).
+Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix) и [Apache Storm](https://storm.apache.org/).
  
 ## <a name="how-do-i-determine-the-deployment-topology-of-a-storm-cluster"></a>Как определить топологию развертывания кластера Storm?
 Сначала определяются все компоненты, установленные с помощью HDInsight Storm. Кластер Storm состоит из четырех категорий узлов:

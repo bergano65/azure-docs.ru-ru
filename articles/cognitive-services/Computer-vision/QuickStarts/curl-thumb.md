@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание эскиза с помощью API компьютерного зрения, REST и cURL
+title: Краткое руководство. Создание эскиза — REST, cURL
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как создать эскиз изображения с помощью API компьютерного зрения в cURL.
 services: cognitive-services
@@ -10,12 +10,13 @@ ms.component: computer-vision
 ms.topic: quickstart
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: 9d748afa67b2925445fdc59f684daa94c5bc8c7d
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.custom: seodec18
+ms.openlocfilehash: 9931737cde1b6c13f3edb9772d0080cd4431aa39
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52962374"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53579759"
 ---
 # <a name="quickstart-generate-a-thumbnail-using-the-rest-api-and-curl-in-computer-vision"></a>Краткое руководство. Создание эскиза с помощью API компьютерного зрения, REST API и cURL
 

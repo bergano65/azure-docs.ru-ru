@@ -1,5 +1,5 @@
 ---
-Title: Synonyms for query expansion over a search index  - Azure Search
+title: Синонимы для расширения запроса через индекс поиска. Поиск Azure
 description: Создайте карту синонимов, чтобы расширить область запроса поиска в индексе службы "Поиск Azure". В область поиска включаются эквивалентные термины, указанные в списке.
 author: brjohnstmsft
 services: search
@@ -10,12 +10,12 @@ ms.date: 04/20/2018
 manager: jlembicz
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: ce9eb8ed099a232128ba924da1466917df542fbb
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: cea95756f115e9efd6dc184fc85a0485ab49d1b9
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53315673"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53634666"
 ---
 # <a name="synonyms-in-azure-search"></a>Синонимы в службе "Поиск Azure"
 

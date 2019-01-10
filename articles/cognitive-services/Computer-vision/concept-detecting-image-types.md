@@ -1,7 +1,7 @@
 ---
 title: Определение типов изображений. Компьютерное зрение
 titleSuffix: Azure Cognitive Services
-description: Понятия, связанные с определением типов изображений с помощью API компьютерного зрения.
+description: Понятия, связанные с функцией определения типа изображений API компьютерного зрения.
 services: cognitive-services
 author: PatrickFarley
 manager: cgronlun
@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: conceptual
 ms.date: 08/29/2018
 ms.author: pafarley
-ms.openlocfilehash: ecdbdd60af41ee14070f2f45dfe50875e38ac3b3
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.custom: seodec18
+ms.openlocfilehash: 04062d5625126712c5f14c41d610d55caf4c28b5
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49342013"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53583108"
 ---
-# <a name="detecting-image-types"></a>Определение типов изображений
+# <a name="detecting-image-types-with-computer-vision"></a>Определение типов изображений с помощью API компьютерного зрения
 
 Компьютерное зрение может анализировать тип содержимого изображений и указывать, является ли изображение графическим или же это картинка, оценивая вероятность по шкале.
 
@@ -36,7 +37,7 @@ ms.locfileid: "49342013"
 
 В приведенных ниже ответах JSON показано, что именно возвращает компьютерное зрение при оценке вероятности того, что примеры изображений являются картинками.
 
-![Анализ изображения. Картинка с сыром](./Images/cheese_clipart.png)
+![Картинка с ломтиком сыра](./Images/cheese_clipart.png)
 
 ```json
 {
@@ -53,7 +54,7 @@ ms.locfileid: "49342013"
 }
 ```
 
-![Анализ изображения. Двор дома](./Images/house_yard.png)
+![Синий дом и передний двор](./Images/house_yard.png)
 
 ```json
 {
@@ -78,7 +79,7 @@ ms.locfileid: "49342013"
 
 В приведенных ниже ответах JSON показано, что именно возвращает компьютерное зрение при определении того, являются ли примеры изображений графическими.
 
-![Анализ изображения. Рисунок льва](./Images/lion_drawing.png)
+![Графическое изображение льва](./Images/lion_drawing.png)
 
 ```json
 {
@@ -95,7 +96,7 @@ ms.locfileid: "49342013"
 }
 ```
 
-![Анализ изображения. Цветок](./Images/flower.png)
+![Белый цветок на зеленом фоне](./Images/flower.png)
 
 ```json
 {

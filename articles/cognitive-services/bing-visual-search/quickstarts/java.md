@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Создание запроса для визуального поиска на Java — Визуальный поиск Bing
+title: Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API визуального поиска Bing и Java
 titleSuffix: Azure Cognitive Services
-description: В этой статье показано, как отправить изображение в API визуального поиска Bing и получить аналитические сведения об этом изображении.
+description: Узнайте, как отправить изображение в API визуального поиска Bing и получить аналитические сведения об этом изображении.
 services: cognitive-services
 author: swhite-msft
 manager: cgronlun
@@ -10,18 +10,18 @@ ms.component: bing-visual-search
 ms.topic: quickstart
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: c1b63b12a48f5ccfb1a396ffa9282249b03893fe
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: 148d145dae01fffdf7a4c650a0e2b20f8387295a
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52445180"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53742190"
 ---
-# <a name="quickstart-your-first-bing-visual-search-query-in-java"></a>Краткое руководство: первый запрос для API визуального поиска Bing на Java
+# <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-java"></a>Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API визуального поиска Bing и Java
 
-API Bing для наглядного поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих параметрах см. в статье [What is Bing Visual Search API?](../overview.md) (Что такое API Bing для наглядного поиска?) В этой статье показано, как отправлять изображения. Отправка изображения может быть полезна в сценариях с использованием мобильных устройств, когда вы фотографируете какую-то достопримечательность и получаете сведения о ней. Например, аналитические сведения могут содержать любопытные факты об этой достопримечательности. 
+В этом кратком руководстве вы узнаете, как сделать первый вызов API визуального поиска Bing и просмотреть результаты поиска. Это простое приложение C# отправляет изображение в API и отображает возвращенные данные о нем. Хотя это приложение создается на языке Java, API представляет собой веб-службу RESTful, совместимую с большинством языков программирования.
 
-При отправке локального изображения отображаются данные формы, которые необходимо включить в текст запроса POST. Эти данные формы должны содержать заголовок Content-Disposition. Его параметру `name` необходимо присвоить значение "image", а для параметра `filename` можно задать любую строку. Содержимым формы является двоичный файл изображения. Максимально допустимый размер отправляемого изображения — 1 МБ. 
+При отправке локального изображения данные формы должны содержать заголовок Content-Disposition. Его параметру `name` необходимо присвоить значение "image", а для параметра `filename` можно задать любую строку. Содержимым формы является двоичный файл изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
 
 ```
 --boundary_1234-abcd
@@ -32,132 +32,102 @@ Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
 --boundary_1234-abcd--
 ```
 
-В этой статье приводится простое консольное приложение, которое отправляет запрос к API Bing для наглядного поиска и отображает результаты поиска в формате JSON. Хотя это приложение написано на Java, API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON. 
-
-
 ## <a name="prerequisites"></a>Предварительные требования
-Для выполнения действий, описанных в этом кратком руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
 
-Чтобы создать подписку на портале Azure:
-1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` в верхней части страницы на портале Azure.  
-2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
-3. В поле `Name` (Имя) введите имя нового ресурса.
-4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
-5. Выберите ценовую категорию `S9`.
-6. Щелкните `Enable` (Активировать), чтобы создать подписку.
+* [Комплект разработчика Java (JDK) 7 или 8](https://aka.ms/azure-jdks).
+* [Библиотека Gson](https://github.com/google/gson).
+* [Apache HttpComponents](http://hc.apache.org/downloads.cgi).
 
-Для компиляции и запуска этого кода вам потребуется [пакет JDK 7 или 8](https://aka.ms/azure-jdks). При желании можно воспользоваться интегрированной средой разработки Java, но и обычного текстового редактора будет достаточно.
 
-## <a name="running-the-application"></a>Запуск приложения
+[!INCLUDE [cognitive-services-bing-visual-search-signup-requirements](../../../../includes/cognitive-services-bing-visual-search-signup-requirements.md)]
 
-Ниже показано, как отправлять изображения с помощью MultipartEntityBuilder в Java.
+## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-Чтобы запустить это приложение, сделайте следующее:
+1. Создайте проект Java в любой интегрированной среде разработки или редакторе, а затем импортируйте в него следующие библиотеки.
 
-1. Скачайте или установите [библиотеку gson](https://github.com/google/gson). Ее также можно получить с помощью Maven.
-2. Создайте проект Java в используемой вами интегрированной среде разработки или редакторе.
-3. Добавьте указанный код в файл с именем `VisualSearch.java`.
-4. Замените значение `subscriptionKey` своим ключом подписки.
-4. Замените значение `imagePath` путем к отправляемому изображению.
-5. Запустите программу.
+    ```java
+    import java.util.*;
+    import java.io.*;
+    import com.google.gson.Gson;
+    import com.google.gson.GsonBuilder;
+    import com.google.gson.JsonObject;
+    import com.google.gson.JsonParser;
+    
+    // HttpClient libraries
+    
+    import org.apache.http.HttpEntity;
+    import org.apache.http.HttpResponse;
+    import org.apache.http.client.methods.HttpPost;
+    import org.apache.http.entity.ContentType;
+    import org.apache.http.entity.mime.MultipartEntityBuilder;
+    import org.apache.http.impl.client.CloseableHttpClient;
+    import org.apache.http.impl.client.HttpClientBuilder;
+    ```
 
+2. Создайте переменные для конечной точки API, ключ подписки и путь к изображению. 
+
+    ```java
+    static String endpoint = "https://api.cognitive.microsoft.com/bing/v7.0/images/visualsearch";
+    static String subscriptionKey = "your-key-here";
+    static String imagePath = "path-to-your-image";
+    ```
+
+## <a name="create-the-json-parser"></a>Создание средства синтаксического анализа JSON
+
+Создайте метод, чтобы сделать ответ JSON от API более удобным для чтения с помощью `JsonParser`.
+
+    ```java
+    public static String prettify(String json_text) {
+            JsonParser parser = new JsonParser();
+            JsonObject json = parser.parse(json_text).getAsJsonObject();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            return gson.toJson(json);
+        }
+    ```
+
+## <a name="construct-the-search-request-and-query"></a>Создание поискового запроса и запроса
+
+1. В методе main приложения создайте клиент Http с помощью `HttpClientBuilder.create().build();`.
+
+    ```java
+    CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+    ```
+
+2. Создайте `HttpEntity` для отправки изображения в API.
+
+    ```java
+    HttpEntity entity = MultipartEntityBuilder
+        .create()
+        .addBinaryBody("image", new File(imagePath))
+        .build();
+    ```
+
+3. Создайте объект `httpPost` с конечной точкой и задайте заголовок, чтобы использовать ключ подписки.
+
+    ```java
+    HttpPost httpPost = new HttpPost(endpoint);
+    httpPost.setHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+    httpPost.setEntity(entity);
+    ```
+
+## <a name="receive-and-process-the-json-response"></a>Получение и обработка ответа в формате JSON
+
+1. Используйте `HttpClient.execute()` для отправки запроса в API и сохраните ответ в объекте `InputStream`.
+    
+    ```java
+    HttpResponse response = httpClient.execute(httpPost);
+    InputStream stream = response.getEntity().getContent();
+    ```
+
+2. Сохраните строку JSON и выведите ответ.
 
 ```java
-package uploadimage;
-
-import java.util.*;
-import java.io.*;
-
-/*
- * Gson: https://github.com/google/gson
- * Maven info:
- *     groupId: com.google.code.gson
- *     artifactId: gson
- *     version: 2.8.2
- *
- * Once you have compiled or downloaded gson-2.8.2.jar, assuming you have placed it in the
- * same folder as this file (BingImageSearch.java), you can compile and run this program at
- * the command line as follows.
- *
- * javac BingImageSearch.java -classpath .;gson-2.8.2.jar -encoding UTF-8
- * java -cp .;gson-2.8.2.jar BingImageSearch
- */
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-// http://hc.apache.org/downloads.cgi (HttpComponents Downloads) HttpClient 4.5.5
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ContentType;
-import org.apache.http.entity.mime.MultipartEntityBuilder;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-
-
-public class UploadImage2 {
-
-    static String endpoint = "https://api.cognitive.microsoft.com/bing/v7.0/images/visualsearch";
-    static String subscriptionKey = "<yoursubscriptionkeygoeshere";
-    static String imagePath = "<pathtoyourimagetouploadgoeshere>";
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-        CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-        
-        try {
-            HttpEntity entity = MultipartEntityBuilder
-                .create()
-                .addBinaryBody("image", new File(imagePath))
-                .build();
-
-            HttpPost httpPost = new HttpPost(endpoint);
-            httpPost.setHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-            httpPost.setEntity(entity);
-            HttpResponse response = httpClient.execute(httpPost);
-
-            InputStream stream = response.getEntity().getContent();
-            String json = new Scanner(stream).useDelimiter("\\A").next();
-
-            System.out.println("\nJSON Response:\n");
-            System.out.println(prettify(json));
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace(System.out);
-            System.exit(1);
-        }
-        catch (Exception e) {
-            e.printStackTrace(System.out);
-            System.exit(1);
-        }
-    }
-    
-    // pretty-printer for JSON; uses GSON parser to parse and re-serialize
-    public static String prettify(String json_text) {
-        JsonParser parser = new JsonParser();
-        JsonObject json = parser.parse(json_text).getAsJsonObject();
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        return gson.toJson(json);
-    }
-    
-}
+String json = new Scanner(stream).useDelimiter("\\A").next();
+System.out.println("\nJSON Response:\n");
+System.out.println(prettify(json));
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Получение полезных сведений об изображении с помощью токена аналитики](../use-insights-token.md)  
-[Руководство по передаче изображения в Bing Visual Search](../tutorial-visual-search-image-upload.md)
-[Руководство по одностраничным веб-приложениям для Bing Visual Search](../tutorial-bing-visual-search-single-page-app.md)  
-[Общие сведения об API Bing для наглядного поиска](../overview.md)  
-[Попробовать](https://aka.ms/bingvisualsearchtryforfree)  
-[Получить ключ доступа бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api)  
-[Справочник по API Bing для наглядного поиска](https://aka.ms/bingvisualsearchreferencedoc)
-
+> [!div class="nextstepaction"]
+> [Создание веб-страницы пользовательского поиска](../tutorial-bing-visual-search-single-page-app.md)

@@ -6,13 +6,14 @@ ms.author: rafats
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/06/2018
+ms.reviewer: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 0519bb78b01cd7cab6abaf453efd7a4595101ef4
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 011bb74a10b12c5170579d3b4c507fcfe0fc01b1
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53133763"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54040733"
 ---
 # <a name="change-feed-in-azure-cosmos-db"></a>Канал изменений в Azure Cosmos DB
 
@@ -32,7 +33,7 @@ Azure Cosmos DB используется для приложений Интер�
 
 Этот компонент сейчас поддерживается следующими API Cosmos DB и клиентскими пакетами SDK:
 
-| **Клиентские драйверы**; | **Интерфейс командной строки Azure** | **API SQL**; | **API Cassandra**; | **API MongoDB**; | **API Gremlin**;|**API таблицы**; |
+| **Клиентские драйверы**; | **Интерфейс командной строки Azure** | **API SQL**; | **API Cassandra**; | **API Azure Cosmos DB для MongoDB** | **API Gremlin**;|**API таблицы**; |
 | --- | --- | --- | --- | --- | --- | --- |
 | .NET | Нет данных | Yes | Нет  | Нет  | Yes | Нет  |
 |Java|Нет данных|Yes|Нет |Нет |Yes|Нет |

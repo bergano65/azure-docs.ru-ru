@@ -10,15 +10,15 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: eaf69ffdd7aa0964860f90b1f98d542175ea086b
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 46b201b2b5d8a3ee774f759326afae885ad6cb30
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52315415"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53651850"
 ---
-# <a name="what-is-apache-hbase-in-hdinsight-a-nosql-database-that-provides-bigtable-like-capabilities-for-apache-hadoop"></a>Что такое Apache HBase в HDInsight: база данных NoSQL, которая предоставляет возможности, схожие с BigTable, для Apache Hadoop
-[Apache HBase](http://hbase.apache.org/) — это база данных NoSQL с открытым кодом, созданная на основе [Apache Hadoop](https://hadoop.apache.org/) по типу [Google BigTable](https://cloud.google.com/bigtable/). HBase обеспечивает прямой доступ и строгую согласованность для больших объемов неструктурированных и слабоструктурированных данных, упорядоченных в семейства столбцов.
+# <a name="what-is-apache-hbase-in-hdinsight-a-nosql-database-that-provides-bigtable-like-capabilities-for-apache-hadoop"></a>Что такое Apache HBase в HDInsight: база данных NoSQL, которая предоставляет возможности, схожие с BigTable, для Apache Hadoop
+[Apache HBase](https://hbase.apache.org/) — это база данных NoSQL с открытым кодом, созданная на основе [Apache Hadoop](https://hadoop.apache.org/) по типу [Google BigTable](https://cloud.google.com/bigtable/). HBase обеспечивает прямой доступ и строгую согласованность для больших объемов неструктурированных и слабоструктурированных данных, упорядоченных в семейства столбцов.
 
 С точки зрения пользователя HBase напоминает базу данных. Данные хранятся в строках и столбцах таблицы, данные в строке группируются по семейству столбцов. База данных HBase не имеет схемы в том смысле, что ни столбцы, ни типы хранимых в них данных не нужно определять до использования. Открытый код линейно масштабируется, чтобы обрабатывать петабайты данных на тысячах узлов. Он может полагаться на избыточность данных, пакетную обработку и другие особенности, которые предусмотрены распределенными приложениями в экосистеме Hadoop.
 
@@ -31,13 +31,12 @@ HDInsight HBase предлагается в форме управляемого 
 Реализация HDInsight использует масштабируемую архитектуру HBase для обеспечения автоматического сегментирования таблиц, строгой согласованности для чтения и записи, а также автоматического перехода на другой ресурс. Производительность повышается за счет кэширования операций чтения в памяти и потоковой записи с высокой пропускной способностью Также для HDInsight HBase доступна подготовка виртуальных сетей. Кластер HBase можно создать внутри виртуальной сети. Дополнительные сведения см. в статье [Create HBase clusters on HDInsight in Azure Virtual Network](./apache-hbase-provision-vnet.md) (Создание кластеров HBase в виртуальной сети Azure).
 
 ## <a name="how-is-data-managed-in-hdinsight-hbase"></a>Как происходит управление данными в HDInsight HBase?
-Управление данными в HBase может осуществляться с помощью команд `create`, `get`, `put` и `scan` из оболочки HBase. Данные записываются в базу данных с использованием команды `put` и считываются с помощью команды `get`. Команда `scan` используется для получения данных из нескольких строк таблицы. Данными также можно управлять с использованием интерфейса HBase API для C#, для которого имеется клиентская библиотека, работающая поверх HBase REST API. Запросы к базе данных HBase также могут осуществляться с помощью [Apache Hive](https://hive.apache.org/). Начальные сведения об этих моделях программирования приведены в статье [Get started with an Apache HBase example in HDInsight](./apache-hbase-tutorial-get-started-linux.md) (Приступая к работе с Hadoop в HDInsight). Также доступны сопроцессоры, что позволяет обрабатывать данные в узлах, на которых размещена база данных.
+Управление данными в HBase может осуществляться с помощью команд `create`, `get`, `put` и `scan` из оболочки HBase. Данные записываются в базу данных с использованием команды `put` и считываются с помощью команды `get`. Команда `scan` используется для получения данных из нескольких строк таблицы. Данными также можно управлять с использованием интерфейса HBase API для C#, для которого имеется клиентская библиотека, работающая поверх HBase REST API. Запросы к базе данных HBase также могут осуществляться с помощью [Apache Hive](https://hive.apache.org/). Начальные сведения об этих моделях программирования приведены в статье [Начало работы с Apache HBase с Apache Hadoop в HDInsight](./apache-hbase-tutorial-get-started-linux.md). Также доступны сопроцессоры, что позволяет обрабатывать данные в узлах, на которых размещена база данных.
 
-> [!NOTE]
+> [!NOTE]  
 > Thrift не поддерживается HBase в HDInsight.
->
 
-## <a name="scenarios-use-cases-for-apache-hbase"></a>Сценарии: варианты использования Apache HBase
+## <a name="scenarios-use-cases-for-apache-hbase"></a>Сценарии: варианты использования Apache HBase
 Классическим вариантом использования (для которого, собственно и была создана технология BigTable и HBase как ее расширение) является веб-поиск. Поисковые системы строят индексы, которые сопоставлены терминам, содержащимся на веб-страницах. Но есть много других вариантов использования, для которых подходит HBase; некоторые из них перечислены в этом разделе.
 
 * Хранилище ключ-значение
@@ -51,7 +50,7 @@ HDInsight HBase предлагается в форме управляемого 
     [Apache Phoenix](https://phoenix.apache.org/) — это система запросов SQL для Apache HBase. Доступ к системе осуществляется с помощью драйвера JDBC, она позволяет создавать запросы и управлять таблицами HBase с использованием SQL.
 * HBase как платформа
   
-    Поверх HBase могут выполняться приложения, используя ее как хранилище данных. Например, это используется в Phoenix, [OpenTSDB](http://opentsdb.net/), Kiji и Titan. Также возможна интеграция приложений с HBase. К ним относятся [Apache Hive](https://hive.apache.org/), [Apache Pig](https://pig.apache.org/), [Solr](http://lucene.apache.org/solr/), [Apache Storm](http://storm.apache.org/), [Apache Flume](https://flume.apache.org/), [Apache Impala](https://impala.apache.org/), [Apache Spark](https://spark.apache.org/), [Ganglia](http://ganglia.info/) и [Apache Drill](https://drill.apache.org/).
+    Поверх HBase могут выполняться приложения, используя ее как хранилище данных. Например, это используется в Phoenix, [OpenTSDB](http://opentsdb.net/), Kiji и Titan. Также возможна интеграция приложений с HBase. К ним относятся [Apache Hive](https://hive.apache.org/), [Apache Pig](https://pig.apache.org/), [Solr](https://lucene.apache.org/solr/), [Apache Storm](https://storm.apache.org/), [Apache Flume](https://flume.apache.org/), [Apache Impala](https://impala.apache.org/), [Apache Spark](https://spark.apache.org/), [Ganglia](http://ganglia.info/) и [Apache Drill](https://drill.apache.org/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Начало работы с примером Apache HBase в HDInsight](./apache-hbase-tutorial-get-started-linux.md)
@@ -62,7 +61,7 @@ HDInsight HBase предлагается в форме управляемого 
 ## <a name="see-also"></a>Дополнительные материалы
 * [Apache HBase](https://hbase.apache.org/)
 * [Справочное руководство по Apache HBase](https://hbase.apache.org/book.html)
-* [Bigtable: распределенная система хранения структурированных данных](http://research.google.com/archive/bigtable.html)
+* [Bigtable: распределенная система хранения структурированных данных](https://research.google.com/archive/bigtable.html)
 * [Apache HBase/Phoenix – Tips, Tricks & Best Practices in Azure HDInsight](https://blogs.msdn.microsoft.com/ashish/2016/08/28/hdinsight-hbase-faq/) (Полезные советы и рекомендации по использованию Apache HBase и Phoenix в Azure HDInsight)
 
 

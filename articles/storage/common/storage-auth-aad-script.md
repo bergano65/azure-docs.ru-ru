@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/15/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: 345e7c6985f03081048019912d636bba8e9a2361
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: b5a129c2a92c18b979a3b0c2eeea7fa19791551c
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49426487"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53633771"
 ---
 # <a name="use-an-azure-ad-identity-to-access-azure-storage-with-cli-or-powershell-preview"></a>Использование удостоверения Azure AD для доступа к службе хранилища Azure с помощью интерфейса командной строки или PowerShell (предварительная версия)
 
@@ -56,10 +56,7 @@ az storage blob download --account-name storagesamples --container sample-contai
 
 ## <a name="call-powershell-commands-with-an-azure-ad-identity"></a>Вызов команд PowerShell с помощью удостоверения Azure AD
 
-Azure PowerShell поддерживает вход с использованием удостоверения Azure AD только с одним из следующих модулей предварительной версии: 
-
-- 4.4.0-preview; 
-- 4.4.1-preview. 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 Чтобы использовать Azure PowerShell для входа с удостоверением Azure AD, сделайте следующее.
 
@@ -78,23 +75,23 @@ Azure PowerShell поддерживает вход с использование
 1. Установите Azure PowerShell последней версии:
 
     ```powershell
-    Install-Module AzureRM –Repository PSGallery –AllowClobber
+    Install-Module Az –Repository PSGallery –AllowClobber
     ```
 
-1. Установите один из модулей службы хранилища Azure, используемых в режиме предварительной версии, которые поддерживают Azure AD:
-
-    ```powershell
-    Install-Module Azure.Storage –Repository PSGallery -RequiredVersion 4.4.1-preview  –AllowPrerelease –AllowClobber –Force 
-    ```
+1. Установите модуль службы хранилища Azure, используемый в режиме предварительной версии, который поддерживает Azure AD.
+   
+   ```powershell
+   Install-Module Az.Storage -Repository PSGallery -AllowPrerelease -AllowClobber -Force
+   ```
 1. Закройте и снова откройте окно PowerShell.
-1. Вызовите командлет [New-AzureStorageContext](https://docs.microsoft.com/powershell/module/azure.storage/new-azurestoragecontext) для создания контекста, добавив параметр `-UseConnectedAccount`. 
+1. Вызовите командлет [New-AzStorageContext](https://docs.microsoft.com/powershell/module/azure.storage/new-AzStoragecontext) для создания контекста, добавив параметр `-UseConnectedAccount`. 
 1. Чтобы вызвать командлет с помощью удостоверения Azure AD, передайте созданный контекст в этот командлет.
 
 В приведенном ниже примере показано, как перечислить большие двоичные объекты в контейнер из Azure PowerShell с помощью удостоверения Azure AD. Обязательно замените заполнители имен учетной записи и контейнера собственными значениями: 
 
 ```powershell
-$ctx = New-AzureStorageContext -StorageAccountName storagesamples -UseConnectedAccount 
-Get-AzureStorageBlob -Container sample-container -Context $ctx 
+$ctx = New-AzStorageContext -StorageAccountName storagesamples -UseConnectedAccount 
+Get-AzStorageBlob -Container sample-container -Context $ctx 
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

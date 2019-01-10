@@ -8,20 +8,20 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: quickstart
-ms.date: 11/06/2018
+ms.date: 12/18/2018
 ms.author: wolfma
-ms.openlocfilehash: e26190b46a79d581e5996e51bfd104f1d4beb6f6
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: d741550fc64ef7544e33304f8608ad6e6ee3426e
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53094038"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53723657"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-linux-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для Linux с помощью пакета SDK для службы "Речь"
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-В этой статье вы создадите консольное приложение C++ для Ubuntu Linux 16.04. Вы будете использовать[пакет SDK для службы "Речь"](speech-sdk.md) в Cognitive Services, чтобы преобразовать речь в текст в режиме реального времени с микрофона вашего ПК. Приложение создано с помощью [пакета SDK для службы "Речь" для Linux](https://aka.ms/csspeech/linuxbinary) и компилятора C++ дистрибутива Linux (например, `g++`).
+В этой статье вы создадите консольное приложение C++ для Ubuntu Linux версии 16.04 или 18.04. Вы будете использовать [пакет SDK для службы "Речь"](speech-sdk.md) в Cognitive Services, чтобы преобразовать речь с микрофона вашего ПК в текст в реальном времени. Приложение создано с помощью [пакета SDK для службы "Речь" для Linux](https://aka.ms/csspeech/linuxbinary) и компилятора C++ дистрибутива Linux (например, `g++`).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -31,7 +31,7 @@ ms.locfileid: "53094038"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.1.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.2.0`.
 
 Пакет SDK для службы "Речь" может использоваться для создания как 64-разрядных, так и 32-разрядных приложений. Необходимые библиотеки и файлы заголовков можно скачать в виде TAR-файла по ссылке: https://aka.ms/csspeech/linuxbinary.
 
@@ -129,16 +129,12 @@ ms.locfileid: "53094038"
    We recognized: What's the weather like?
    ```
 
-[!INCLUDE [Download this sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
-Этот пример можно найти в папке `quickstart/cpp-linux`.
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Распознавание намерений на основе речи с помощью пакета SDK службы "Речь" для C++](how-to-recognize-intents-from-speech-cpp.md)
+> [Ознакомьтесь с примерами на C++ на сайте GitHub](https://aka.ms/csspeech/samples)
 
 ## <a name="see-also"></a>См. также
 
-- [Translate speech using Speech service](how-to-translate-speech-csharp.md) (Перевод речи с помощью службы распознавания речи)
 - [Настройка акустических моделей](how-to-customize-acoustic-models.md)
 - [Настройка языковых моделей](how-to-customize-language-model.md)

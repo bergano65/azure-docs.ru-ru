@@ -1,24 +1,21 @@
 ---
 title: Подключение к Базе данных Azure для PostgreSQL с использованием языка Go
 description: В этом кратком руководстве представлен пример кода на языке программирования Go, который можно использовать для подключения к базе данных Azure для PostgreSQL и запроса данных из нее.
-services: postgresql
 author: rachel-msft
 ms.author: raagyema
-manager: kfile
-editor: jasonwhowell
 ms.service: postgresql
 ms.custom: mvc
 ms.devlang: go
 ms.topic: quickstart
 ms.date: 02/28/2018
-ms.openlocfilehash: eef5d9b6878b46d402a91f3adbfd965c47493c25
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 026913e8afbc1eca5742e21d28ed65c1f1f04d96
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49986487"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53549526"
 ---
-# <a name="azure-database-for-postgresql-use-go-language-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: подключение и запросы данных с помощью языка Go
+# <a name="azure-database-for-postgresql-use-go-language-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: подключение и запрос данных с помощью Go
 В этом кратком руководстве описывается, как подключиться к базе данных Azure для PostgreSQL с помощью кода на языке [Go](https://golang.org/) (golang). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на Go, и вы только начали работу с базой данных Azure для PostgreSQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -29,7 +26,7 @@ ms.locfileid: "49986487"
 ## <a name="install-go-and-pq-connector"></a>Установка Go и соединителя pq
 Установите язык [Go](https://golang.org/doc/install) и [драйвер Pure Go Postgres](https://github.com/lib/pq) на своем компьютере. В зависимости от используемой платформы выполните соответствующие действия.
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 1. [Скачайте](https://golang.org/dl/) и установите Go для Microsoft Windows [согласно инструкциям по установке](https://golang.org/doc/install).
 2. Запустите командную строку из меню "Пуск".
 3. Создайте папку для проекта, например `mkdir  %USERPROFILE%\go\src\postgresqlgo`.

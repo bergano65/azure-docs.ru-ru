@@ -1,5 +1,5 @@
 ---
-title: Руководство по использованию API компьютерного зрения для JavaScript
+title: Руководство. Выполнение операций с изображениями — JavaScript
 titlesuffix: Azure Cognitive Services
 description: Изучите базовое приложение JavaScript, в котором используется API компьютерного зрения в Azure Cognitive Services. Узнайте, как выполнять распознавание текста, создавать эскизы и работать с визуальными компонентами в изображении.
 services: cognitive-services
@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: tutorial
 ms.date: 09/19/2017
 ms.author: kefre
-ms.openlocfilehash: c024e517eb59c7d3b61408e477c94004ccb01a54
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.custom: seodec18
+ms.openlocfilehash: 46d992fc44a0c3b2d355861d5753aa6f8c22215e
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49341316"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53581381"
 ---
-# <a name="tutorial-computer-vision-api-javascript"></a>Руководство по использованию API компьютерного зрения для JavaScript
+# <a name="tutorial-computer-vision-api-javascript"></a>Руководство. Использование API компьютерного зрения для JavaScript
 
 В этом руководстве демонстрируются функции REST API компьютерного зрения в Azure Cognitive Services.
 
@@ -494,7 +495,7 @@ function getThumbnail (sourceImageUrl, smartCropping, imageElement, responseText
 
 Чтобы завершить функцию OCR учебного приложения, выполните следующие действия.
 
-### <a name="ocr-step-1-add-the-event-handler-code-for-the-form-button"></a>Распознавание текста, шаг 1. Добавление кода обработчика событий для кнопки формы
+### <a name="ocr-step-1-add-the-event-handler-code-for-the-form-button"></a>Распознавание текста, шаг 1. Добавление кода обработчика событий для кнопки формы
 
 Откройте файл **ocr.html** в текстовом редакторе и найдите функцию **ocrButtonClick** в нижней части этого файла.
 

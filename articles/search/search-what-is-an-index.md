@@ -1,6 +1,6 @@
 ---
 title: Определение и понятия индекса в службе "Поиск Azure"
-description: Общие сведения о понятии индексов в службе "Поиск Azure" и их использовании.
+description: Термины и понятия индексирования в службе поиска Azure, включая физические структуры инвертированного индекса.
 author: brjohnstmsft
 manager: jlembicz
 ms.author: brjohnst
@@ -9,12 +9,12 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 11/08/2017
 ms.custom: seodec2018
-ms.openlocfilehash: e1ff28434dab4e63e10d6b14eb671260650d4ada
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 40291b105eb39b44da0b0697f5808d819291e457
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53317072"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53630219"
 ---
 # <a name="indexes-in-azure-search"></a>Индексы в службе поиска Azure
 > [!div class="op_single_selector"]

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для C#
+title: Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK для Пользовательского визуального распознавания для C#
 titlesuffix: Azure Cognitive Services
 description: Создайте проект, добавьте теги, загрузите изображения, обучите проект и удаляйте объекты с помощью .NET SDK с C#.
 services: cognitive-services
@@ -10,20 +10,20 @@ ms.component: custom-vision
 ms.topic: quickstart
 ms.date: 10/31/2018
 ms.author: areddish
-ms.openlocfilehash: 926e9feaa5061c84ce8de6d828da820e133700ce
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 1ffe75b088b3e6db5717746ab2fc00ef4b350e8b
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51278866"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53971875"
 ---
-# <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-net-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK Пользовательской службы визуального распознавания для .NET
+# <a name="quickstart-create-an-object-detection-project-with-the-custom-vision-net-sdk"></a>Краткое руководство. Создание проекта обнаружения объектов с помощью пакета SDK для Пользовательской службы визуального распознавания для .NET
 
 Эта статья содержит сведения и примеры кода, которые помогут вам приступить к работе с использованием пакета SDK Пользовательской службы визуального распознавания с C#, чтобы создать модель обнаружения объекта. Создав проект, вы можете добавить регионы с тегами, загрузить изображения, обучить проект, получить URL-адрес конечной точки прогнозирования по умолчанию и с помощью конечной точки программными средствами протестировать изображение. Этот пример можно использовать как шаблон для создания приложения .NET. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/)
+- Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
 
 ## <a name="get-the-custom-vision-sdk-and-sample-code"></a>Получение пакета SDK для Пользовательской службы визуального распознавания и примеров кода
 Чтобы написать приложение .NET, которое использует Пользовательскую службу визуального распознавания, вам потребуются пакеты Пользовательской службы визуального распознавания NuGet. Эти элементы включены в скачиваемый пример проекта, однако будут доступны по отдельности здесь.
@@ -31,7 +31,7 @@ ms.locfileid: "51278866"
 * [Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Training/);
 * [Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.CustomVision.Prediction/).
 
-Клонируйте или скачайте проект [Примеры .NET в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples). Перейдите в папку **CustomVision/ObjectDetection** и откройте ObjectDetection.csproj_ в Visual Studio.
+Клонируйте или скачайте проект [Примеры .NET в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples). Перейдите в папку **CustomVision/ObjectDetection** и откройте файл _ObjectDetection.csproj_ в Visual Studio.
 
 Этот проект Visual Studio создает проект Пользовательской службы визуального распознавания с именем __Мой новый проект__, доступ к которому можно получить через [веб-сайт Пользовательской службы визуального распознавания](https://customvision.ai/). Затем приложение передает изображения для обучения и тестирует модель обнаружения. В этом проекте модель обучена обнаруживать вилки и ножницы на изображениях.
 

@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/28/2018
 ms.author: glenga
-ms.openlocfilehash: e59c0b6994a64972b1458c0f295f24d0a615d871
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: 4ec2e9b931e6405aca5b4237bc044647af3b8bb3
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50740116"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608585"
 ---
 # <a name="use-azure-functions-to-connect-to-an-azure-sql-database"></a>Подключение к базе данных SQL Azure с помощью Функций Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "50740116"
 
 1. Перейдите на вкладку **Обзор**, выполните поиск по запросу ```System.Data.SqlClient``` и выберите его по завершении поиска.
 
-1. На странице **System.Data.SqlClient** щелкните **Установить**.
+1. На странице **System.Data.SqlClient** выберите версию `4.5.1` и щелкните **Установить**.
 
 1. После завершения установки просмотрите изменения, а затем нажмите кнопку **ОК**, чтобы закрыть окно **предварительного просмотра**.
 
@@ -139,6 +139,6 @@ ms.locfileid: "50740116"
 Дополнительные сведения о Функциях см. в следующих статьях:
 
 + [Справочник разработчика по функциям Azure](functions-reference.md)  
-  Справочник программиста по созданию функций, а также определению триггеров и привязок.
+   Справочник программиста по созданию функций, а также определению триггеров и привязок.
 + [Testing Azure Functions](functions-test-a-function.md)  
-  (Тестирование функций Azure) Описание различных средств и методов тестирования функций.  
+   (Тестирование функций Azure) Описание различных средств и методов тестирования функций.  

@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 09/22/2017
-ms.openlocfilehash: 7e1f2411db828917d7a3c5e21348b553a5a5a3bb
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: d83a27d87ffadd15a27196a11ae3f69d84232efa
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50087514"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53719608"
 ---
 # <a name="secure-calls-to-custom-apis-from-azure-logic-apps"></a>Защита вызовов к пользовательским API из Azure Logic Apps
 
@@ -24,12 +24,12 @@ ms.locfileid: "50087514"
 
 Защитить вызовы к настраиваемому API можно следующими способами:
 
-* [Без изменения кода.](#no-code) Защитите API с помощью [Azure Active Directory (Azure AD)](../active-directory/fundamentals/active-directory-whatis.md) на портале Azure, чтобы не обновлять код и не развертывать API повторно.
+* [Без изменения кода](#no-code): защитите API с помощью [Azure Active Directory (Azure AD)](../active-directory/fundamentals/active-directory-whatis.md) на портале Azure, чтобы не обновлять код и не развертывать API повторно.
 
   > [!NOTE]
   > По умолчанию проверка подлинности Azure AD, которую можно включить на портале Azure, не обеспечивает детального уровня авторизации. Например, при такой проверке подлинности API блокируется только для конкретного арендатора, а не для определенного пользователя или приложения. 
 
-* [Обновление кода API.](#update-code): Защитите API, применив [проверку подлинности на основе сертификата](#certificate), [обычную проверку подлинности](#basic) или [проверку подлинности Azure AD](#azure-ad-code) с помощью кода.
+* [Обновление кода API](#update-code): защитите API, применив [проверку подлинности на основе сертификата](#certificate), [обычную проверку подлинности](#basic) или [проверку подлинности Azure AD](#azure-ad-code) с помощью кода.
 
 <a name="no-code"></a>
 
@@ -43,7 +43,7 @@ ms.locfileid: "50087514"
 
 3. Добавьте идентификаторы приложений в определение приложения логики.
 
-#### <a name="part-1-create-an-azure-ad-application-identity-for-your-logic-app"></a>Часть 1. Создание удостоверения приложения Azure AD для приложения логики
+#### <a name="part-1-create-an-azure-ad-application-identity-for-your-logic-app"></a>Часть 1. Создание удостоверения приложения Azure AD для приложения логики
 
 Приложение логики использует это удостоверение приложения Azure AD для проверки подлинности в Azure AD. Для вашего каталога это удостоверение необходимо настроить только один раз. Например, вы можете использовать одно удостоверение для всех приложений логики или создать отдельные удостоверения для каждого из них. Вы можете настроить эти удостоверения на портале Azure или с помощью [PowerShell](#powershell).
 
@@ -106,7 +106,7 @@ ms.locfileid: "50087514"
 
 Дополнительные сведения см. в статье [Использование Azure PowerShell для создания субъекта-службы и доступа к ресурсам](../active-directory/develop/howto-authenticate-service-principal-powershell.md).
 
-#### <a name="part-2-create-an-azure-ad-application-identity-for-your-web-app-or-api-app"></a>Часть 2. Создание удостоверения приложения Azure AD для веб-приложения или приложения API
+#### <a name="part-2-create-an-azure-ad-application-identity-for-your-web-app-or-api-app"></a>Часть 2. Создание удостоверения приложения Azure AD для веб-приложения или приложения API
 
 Если веб-приложение или приложение API уже развернуты, можно включить проверку подлинности и создать удостоверение приложения на портале Azure. В противном случае вы можете [включить проверку подлинности при развертывании с использованием шаблона Azure Resource Manager](#authen-deploy). 
 
@@ -266,7 +266,7 @@ ms.locfileid: "50087514"
 
 <!-- Going further, to implement this authentication entirely in your own code, 
 and not use the Azure portal, learn how to 
-[authenticate with on-premises Active Directory in your Azure app](../app-service/app-service-authentication-overview.md).
+[authenticate with on-premises Active Directory in your Azure app](../app-service/overview-authentication-authorization.md).
 
 To create an application identity for your logic app and use that identity to call your API, 
 you must follow the previous steps. -->

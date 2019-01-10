@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: quickstart
-ms.date: 11/06/2018
+ms.date: 12/13/2018
 ms.author: chlandsi
-ms.openlocfilehash: eaa44f942082c6bd062599dbdd0401fe4505daf4
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 75411ebd50448c5f490a1f03fbbf25a61dbffaf8
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53090217"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53718118"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-ios-using-the-speech-service-sdk"></a>Краткое руководство. Распознавание речи в Objective-C на iOS с помощью пакета SDK для службы "Речь"
 
@@ -35,7 +35,7 @@ ms.locfileid: "53090217"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.1.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.2.0`.
 
 В настоящее время пакет SDK службы "Речь" для Cognitive Services для Mac и iOS распределяется под названием Cocoa Framework.
 Его можно скачать по ссылке: https://aka.ms/csspeech/iosbinary. Загрузите файл в домашний каталог.
@@ -49,7 +49,7 @@ ms.locfileid: "53090217"
 
 1. Диалоговое окно Project Options (Параметры проекта)
     1. Введите имя приложения быстрого запуска, например `helloworld`.
-    1. Если у вас уже есть учетная запись разработчика Apple, введите соответствующие название и идентификатор организации. В целях тестирования вы можете выбрать любое имя, например `testorg`. Чтобы подписать приложение, вам также нужен соответствующий профиль подготовки. Детали см. на [сайте разработчиков Apple](https://developer.apple.com/).
+    1. Если у вас уже есть учетная запись разработчика Apple, введите соответствующие название и идентификатор организации. В целях тестирования вы можете выбрать любое имя, например `testorg`. Чтобы подписать приложение, вам нужен соответствующий профиль подготовки. Дополнительные сведения см. на [сайте разработчиков Apple](https://developer.apple.com/).
     1. Убедитесь в том, что для проекта выбран язык Objective-C.
     1. Снимите все флажки тестов и основных данных.
     ![Параметры проекта](media/sdk/qs-objectivec-project-settings.png)
@@ -57,7 +57,7 @@ ms.locfileid: "53090217"
     1. Выберите свой домашний каталог, чтобы поместить в него проект. Это создаст в вашем домашнем каталоге каталог `helloworld`, содержащий все файлы проекта Xcode.
     1. Для этого примера проекта отключите создание репозитория Git.
     1. Измените пути к пакету SDK в *Параметрах проекта*.
-        1. На вкладке **Общие** в разделе **Embedded Binaries** (Внедренные двоичные файлы) добавьте в качестве платформы библиотеку пакета SDK: Последовательно выберите **Add embedded binaries (Добавить внедренные двоичные файлы)** > **Add other... (Добавить другое...)**, перейдите к корневому каталогу и выберите файл `MicrosoftCognitiveServicesSpeech.framework`. Это также автоматически добавит библиотеку пакета SDK в заголовок **Связанные платформы и библиотеки**.
+        1. На вкладке **Общие** в разделе **Embedded Binaries** (Внедренные двоичные файлы) добавьте в качестве платформы библиотеку пакета SDK: Последовательно выберите **Add embedded binaries (Добавить внедренные двоичные файлы)** > **Add other... (Добавить другое...)**, перейдите к корневому каталогу и выберите файл `MicrosoftCognitiveServicesSpeech.framework`. Также автоматически добавится библиотека пакета SDK в заголовок **Linked Framework and Libraries** (Связанные платформы и библиотеки).
         ![Добавленная платформа](media/sdk/qs-objectivec-framework.png)
         1. Перейдите на вкладку **Build Settings** (Параметры сборки) и активируйте **Все** параметры.
         1. Добавьте каталог `$(SRCROOT)/..` в *Пути поиска платформы* под заголовком **Пути поиска**.
@@ -68,7 +68,7 @@ ms.locfileid: "53090217"
 В примере приложения будет очень простой пользовательский интерфейс: две кнопки для запуска распознавания речи из файла или из данных, поступающих в микрофон, и текстовая подпись для отображения результата.
 Пользовательский интерфейс настраивается в элементе проекта `Main.storyboard`.
 Откройте XML-представление раскадровки, щелкнув правой кнопкой мыши запись `Main.storyboard` в дереве проекта и выбрав **Open As...**(Открыть как...) > **Source Code**(Исходный код).
-Замените автоматически сгенерированный XML на:
+Замените автоматически сгенерированный XML на этот код:
 
 [!code-xml[](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-ios/helloworld/helloworld/Base.lproj/Main.storyboard)]
 
@@ -81,7 +81,7 @@ ms.locfileid: "53090217"
    [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-ios/helloworld/helloworld/ViewController.m#code)]
 1. Замените строку `YourSubscriptionKey` своим ключом подписки.
 1. Замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
-1. Добавьте запрос на доступ к микрофону. В дереве проекта щелкните правой кнопкой мыши запись `Info.plist` и выберите **Open As...** (Открыть как...)  > **Source Code** (Исходный код). Добавьте в раздел `<dict>` следующие строки, а затем сохраните файл.
+1. Добавьте запрос на доступ к микрофону. В дереве проекта щелкните правой кнопкой мыши запись `Info.plist` и выберите **Open As...** > **Source Code** ("Открыть как..." > "Исходный код"). Добавьте в раздел `<dict>` следующие строки, а затем сохраните файл.
     ```xml
     <key>NSMicrophoneUsageDescription</key>
     <string>Need microphone access for speech recognition from microphone.</string>
@@ -99,10 +99,7 @@ ms.locfileid: "53090217"
 
 1. Нажав кнопку Recognize (Microphone) (Распознать (микрофон)) в приложении и сказав несколько слов, вы должны увидеть произнесенный текст в нижней части экрана.
 
-[!INCLUDE [Download the sample](../../../includes/cognitive-services-speech-service-speech-sdk-sample-download-h2.md)]
-Этот пример можно найти в папке `quickstart/objectivec-ios`.
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Получить примеры](speech-sdk.md#get-the-samples)
+> [Ознакомьтесь с примерами на Objective-C на сайте GitHub](https://aka.ms/csspeech/samples)

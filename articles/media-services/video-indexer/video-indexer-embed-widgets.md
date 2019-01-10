@@ -7,18 +7,22 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 11/19/2018
+ms.date: 12/25/2018
 ms.author: juliako
-ms.openlocfilehash: a051f40cb5586cae58d8e4939f4fcee35438bf69
-ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
+ms.openlocfilehash: 2c07cfcba473e2e27f14ff0118e6ca8a8f484df1
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52292082"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53791831"
 ---
 # <a name="embed-video-indexer-widgets-into-your-applications"></a>Внедрение мини-приложений Индексатора видео в приложения
 
 В этой статье показано, как внедрить мини-приложения Индексатора видео в приложение. Индексатор видео поддерживает два типа мини-приложений, которые можно внедрить в приложение: **Cognitive Insights** и **Player**. 
+
+> [!NOTE]
+> Начиная с 1 февраля 2018 г. версия 1 мини-приложения **Cognitive Insights** станет нерекомендуемой. По умолчанию будет использоваться встроенная версия URL-адреса `version=2`.
+
 ## <a name="widget-types"></a>Типы мини-приложений
 
 ### <a name="cognitive-insights-widget"></a>Мини-приложение Cognitive Insights
@@ -39,7 +43,7 @@ ms.locfileid: "52292082"
 |t|Число секунд от начала видео.|Позволяет проигрывателю воспроизводить видео с определенной точки во времени.<br/>Пример: t=60|
 |captions|Код языка|Позволяет получать субтитры на указанном языке при загрузке мини-приложения, чтобы они были доступны в соответствующем меню.<br/>Пример: captions=en-Us.|
 |showCaptions|Логическое значение.|Позволяет проигрывателю загружаться с уже включенными субтитрами.<br/>Пример: showCaptions=true|
-|Тип||Активирует обложку аудиопроигрывателя (видеочасть удаляется).<br/>Пример: type=audio|
+|Тип||Активирует обложку аудиопроигрывателя (видеочасть удаляется).<br/>Пример: type=audio|"
 |autoplay|Логическое значение.|Указывает, должен ли проигрыватель начать воспроизведение видео при загрузке (значение по умолчанию — true).<br/>Пример: autoplay=false|
 |Язык|Код языка|Язык элементов управления проигрывателя (значение по умолчанию — en-US)<br/>Пример: language=de-DE|
 

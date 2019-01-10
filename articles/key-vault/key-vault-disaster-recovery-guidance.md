@@ -1,5 +1,5 @@
 ---
-title: Что делать, если прерывание работы службы Azure влияет на хранилище ключей Azure | Документация Майкрософт
+title: Что делать, если прерывание работы службы Azure влияет на Azure Key Vault — Azure Key Vault | Документация Майкрософт
 description: Узнайте, что делать, если прерывание работы службы Azure влияет на хранилище ключей Azure.
 services: key-vault
 documentationcenter: ''
@@ -10,18 +10,18 @@ ms.assetid: 19a9af63-3032-447b-9d1a-b0125f384edb
 ms.service: key-vault
 ms.workload: key-vault
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/07/2017
+ms.date: 01/07/2019
 ms.author: barclayn
-ms.openlocfilehash: 5ab6fc207d8a7732062a51a6215c25a4a0fac006
-ms.sourcegitcommit: 06724c499837ba342c81f4d349ec0ce4f2dfd6d6
+ms.openlocfilehash: a8f9b1a9ac72498e2e8374926ba3ae47a3eaff09
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46465849"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54078343"
 ---
 # <a name="azure-key-vault-availability-and-redundancy"></a>Доступность и избыточность хранилища ключей Azure
+
 Хранилище ключей Azure имеет несколько уровней избыточности, благодаря которым ключи и секреты остаются доступными для приложения даже при сбое отдельных компонентов службы.
 
 Содержимое хранилища ключей реплицируется в пределах региона, а также в дополнительный регион, расположенный на расстоянии не менее 240 км от основного, но в той же географической области. Это обеспечивает высокий уровень надежности ключей и секретов. В разделе [Непрерывность бизнес-процессов и аварийное восстановление в службах BizTalk: пары регионов Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions) можно получить сведения об определенных парах регионов.

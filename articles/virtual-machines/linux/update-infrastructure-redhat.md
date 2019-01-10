@@ -14,17 +14,19 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: borisb
-ms.openlocfilehash: 20fe724d32e31e1bacbad024cc934f89af12f112
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 0755d472ef6b2566d7faa51019da7d49266fa199
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53139934"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53993218"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
 
 Образы Red Hat Enterprise Linux (RHEL) с оплатой по мере использования (PAYG) предварительно настроены для доступа к Azure RHUI. Никаких дополнительных настроек не требуется. Чтобы получить последние обновления, выполните `sudo yum update`, когда экземпляр RHEL будет готов. Плата за эту службу входит в стоимость программного обеспечения RHEL (PAYG).
+
+Дополнительные сведения об образах RHEL в Azure, включая политики публикации и хранения, можно найти [здесь](./rhel-images.md).
 
 ## <a name="important-information-about-azure-rhui"></a>Важные сведения об Azure RHUI
 * Сейчас Azure RHUI поддерживает только последний вспомогательный выпуск в каждом семействе RHEL (RHEL6 или RHEL7). Чтобы обновить экземпляр виртуальной машины RHEL, подключенный к RHUI, до версии с последним дополнительным номером, выполните команду `sudo yum update`.
@@ -35,9 +37,37 @@ ms.locfileid: "53139934"
 
 * В стоимость образа RHEL (PAYG) входит плата за доступ к инфраструктуре RHUI, размещенной в Azure. Отмена регистрации виртуальной машины RHEL (PAYG) в инфраструктуре RHUI в Azure не приведет к ее преобразованию в виртуальную машину с использованием собственной лицензии (BYOL). В случае регистрации одной и той же виртуальной машины в другом источнике обновлений вы можете нести двойные _косвенные_ расходы. Первая плата будет взиматься за использование программного обеспечения Azure RHEL. Вторая плата будет взиматься за подписки Red Hat, которые были приобретены ранее. Если требуется использовать другую инфраструктуру обновлений (не инфраструктуру RHUI, размещенную в Azure), рекомендуется создать и развернуть собственные образы (с использованием собственной лицензии). Этот процесс описан в разделе [Подготовка виртуальной машины на основе Red Hat для Azure](redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
-* Оба класса образов RHEL (PAYG) в Azure (RHEL for SAP HANA и RHEL for SAP Business Applications) подключаются к выделенным каналам RHUI, которые остаются на определенной версии RHEL с дополнительным номером, что требуется для сертификации SAP.
+* Образы RHEL (SAP PAYG) в Azure (RHEL for SAP, RHEL for SAP HANA и RHEL for SAP Business Applications) подключаются к выделенным каналам RHUI, которые остаются на определенной версии RHEL с дополнительным номером, что требуется для сертификации SAP.
 
 * Доступ к размещенной в Azure инфраструктуре RHUI могут получать виртуальные машины с IP-адресами в рамках [диапазонов IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Если весь трафик виртуальной машины перенаправляется через локальную сетевую инфраструктуру, может потребоваться настройка определяемых пользователем маршрутов, чтобы виртуальные машины RHEL (PAYG) могли получить доступ к инфраструктуре RHUI в Azure.
+
+### <a name="rhel-eus-and-version-locking-rhel-vms"></a>Предложение RHEl EUS и фиксация версии виртуальных машин RHEL
+Некоторым клиентам может потребоваться зафиксировать определенную дополнительную версию RHEL для своих виртуальных машин RHEL. Вы можете зафиксировать определенный дополнительный номер версии для виртуальной машины RHEL, изменив репозитории таким образом, чтобы они указывали на репозитории Extended Update Support (EUS). Ниже приведены инструкции по фиксации конкретного дополнительного номера версии для ВМ RHEL.
+
+>[!NOTE]
+> Эта процедура применяется только для RHEL 7.2–7.5
+
+1. Отключите репозитории без поддержки EUS:
+    ```
+    sudo yum --disablerepo=* remove rhui-azure-rhel7
+    ```
+
+1. Добавьте репозитории EUS:
+    ```
+    yum --config=https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel7-eus.config install rhui-azure-rhel7-eus
+    ```
+
+1. Заблокируйте переменную releasever:
+    ```
+    echo $(. /etc/os-release && echo $VERSION_ID) > /etc/yum/vars/releasever
+    ```
+
+    >[!NOTE]
+    > Выполнив приведенные выше инструкции, вы зафиксируете текущий дополнительный номер версии в качестве дополнительного номера версии RHEL. Введите конкретный дополнительный номер версии, если вам нужно обновить систему и зафиксировать дополнительный номер версии, который не является последним. Например, команда `echo 7.5 > /etc/yum/vars/releasever` зафиксирует версию RHEL 7.5
+1. Обновление виртуальной машины RHEL
+    ```bash
+    sudo yum update
+    ```
 
 ### <a name="the-ips-for-the-rhui-content-delivery-servers"></a>IP-адреса для серверов доставки содержимого RHUI
 
@@ -76,7 +106,13 @@ ms.locfileid: "53139934"
 sudo yum update -y --disablerepo=* --enablerepo=rhui-microsoft-* rhui-azure-rhel7
 ```
 
-Кроме того, с помощью команды `sudo yum update` также можно обновить этот пакет, несмотря на ошибки "Срок действия SSL-сертификата истек", которые будут отображаться для других репозиториев. После обновления нормальное подключение к другим репозиториям RHUI должно быть восстановлено.
+Если виртуальная машина RHEL размещена в облаке US Government, используйте следующую команду.
+```bash
+sudo yum update -y --disablerepo=* --enablerepo=rhui-microsoft-* rhui-usgov-rhel7
+```
+
+Кроме того, с помощью команды `sudo yum update` также можно обновить пакет сертификата клиента, несмотря на ошибки "Срок действия SSL-сертификата истек", которые будут отображаться для других репозиториев. После обновления нормальное подключение к другим репозиториям RHUI должно быть восстановлено, как и возможность успешного запуска команды `sudo yum update`.
+
 
 ### <a name="troubleshoot-connection-problems-to-azure-rhui"></a>Устранение неполадок подключения к инфраструктуре RHUI в Azure
 Если вы столкнулись с проблемами при подключении к инфраструктуре RHUI в Azure с виртуальной машины RHEL (PAYG) в Azure, выполните следующие действия.
@@ -179,5 +215,6 @@ sudo yum update -y --disablerepo=* --enablerepo=rhui-microsoft-* rhui-azure-rhel
 1. По завершении убедитесь, что вы можете получить доступ к инфраструктуре RHUI в Azure с виртуальной машины.
 
 ## <a name="next-steps"></a>Дополнительная информация
-Сведения о создании виртуальной машины Red Hat Enterprise Linux на основе образа с оплатой по мере использования (PAYG) и о применении размещенной в Azure инфраструктуры RHUI см. на странице [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/redhat/).
+* Сведения о создании виртуальной машины Red Hat Enterprise Linux на основе образа с оплатой по мере использования (PAYG) и о применении размещенной в Azure инфраструктуры RHUI см. на странице [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/redhat/).
+* Дополнительные сведения об образах Red Hat в Azure можно найти на [странице документации](./rhel-images.md).
 

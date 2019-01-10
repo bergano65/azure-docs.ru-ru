@@ -1,7 +1,7 @@
 ---
 title: Анализ мнений
 titleSuffix: Azure Cognitive Services
-description: В этом руководстве создается приложение, демонстрирующее, как извлечь позитивные, негативные и нейтральные тональности из фраз. Тональность определяется на основе всего высказывания.
+description: В этом руководстве создается приложение, демонстрирующее, как получить позитивные, негативные и нейтральные тональности из речевых фрагментов. Тональность определяется на основе всего высказывания.
 services: cognitive-services
 author: diberry
 manager: cgronlun
@@ -9,56 +9,64 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 09/09/2018
+ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: d93c7619bb670a81372ab83359836a78b8956b09
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: ee50907d7965a66d09dc57113e87edecb1932083
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53098946"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53754294"
 ---
-# <a name="tutorial-9--extract-sentiment-of-overall-utterance"></a>Руководство 9.  Извлечение тональности из всего высказывания
-В этом руководстве создается приложение, демонстрирующее, как извлечь позитивные, негативные и нейтральные тональности из фраз. Тональность определяется на основе всего высказывания.
+# <a name="tutorial--get-sentiment-of-utterance"></a>Руководство.  Получение данных о тональности речевого фрагмента
 
-Анализ тональности — это возможность определить, является ли фраза пользователя позитивной, негативной или нейтральной. 
+В этом руководстве создается приложение, демонстрирующее, как определить позитивные, негативные и нейтральные тональности из речевых фрагментов. Тональность определяется на основе всего высказывания.
+
+**В этом руководстве рассмотрено, как выполнять следующие задачи.**
+
+<!-- green checkmark -->
+> [!div class="checklist"]
+> * Создание нового приложения
+> * Добавление анализа тональности как параметра публикации.
+> * Обучать приложения
+> * Публикация приложения
+> * Получение данных о тональности высказывания из конечной точки
+
+[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+
+## <a name="sentiment-analysis-is-a-publish-setting"></a>Анализ тональности — параметр публикации
 
 Ниже приведены примеры фраз, передающие тональность.
 
 |Мнение|Оценка|Фраза|
 |:--|:--|:--|
 |Позитивная|0,91 |Тарас Хмелев проделал отличную работу на презентации в Париже.|
-|Позитивная|0,84 |Сотрудник jill-jones@mycompany.com отлично поработал над презентацией Parker.|
+|Позитивная|0,84 |Инженеры Сиэтла отлично поработали над презентацией Parker.|
 
-Анализ тональности — это параметр публикации, который применяется к каждому высказыванию. Вам не нужно искать и выделять слова, указывающие на тональность в каждой фразе, так как анализ тональности применяется ко всей фразе целиком. 
+Анализ тональности — это параметр публикации, который применяется к каждому высказыванию. Вам не нужно находить слова, указывающие на тональность в речевом фрагменте, и отмечать их. 
 
 Так как это параметр публикации, вы не увидите его на страницах намерений или сущностей. Он будет отображаться в области [интерактивного тестирования](luis-interactive-test.md#view-sentiment-results) или при тестировании на странице по URL-адресу конечной точки. 
 
-**Из этого руководства вы узнаете, как выполнить следующие задачи:**
 
-<!-- green checkmark -->
-> [!div class="checklist"]
-> * Использование существующего приложения из руководства. 
-> * Добавление анализа тональности как параметра публикации.
-> * Train
-> * Опубликовать
-> * Получение данных о тональности высказывания из конечной точки
+## <a name="create-a-new-app"></a>Создание нового приложения
 
-[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+[!INCLUDE [Follow these steps to create a new LUIS app](../../../includes/cognitive-services-luis-create-new-app-steps.md)]
 
-## <a name="use-existing-app"></a>Использование существующего приложения
+## <a name="add-personname-prebuilt-entity"></a>Добавление предварительно созданной сущности PersonName 
 
-Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
 
-Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
+1. Выберите **Сущности** в меню навигации слева.
 
-1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-keyphrase-HumanResources.json).
+1. Нажмите кнопку **Add prebuilt entity** (Добавить предварительно созданную сущность).
 
-2. Импортируйте JSON-файл в новое приложение.
+1. Выберите следующую сущность из списка предварительно созданных сущностей, а затем выберите **Готово**:
 
-3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `sentiment`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
+    * **[PersonName](luis-reference-prebuilt-person.md)** 
 
-## <a name="employeefeedback-intent"></a>Намерение EmployeeFeedback 
+    ![Снимок экрана выбора сущности number в диалоговом окне предварительно созданных сущностей](./media/luis-quickstart-intent-and-sentiment-analysis/add-personname-prebuilt-entity.png)
+
+## <a name="create-an-intent-to-determine-employee-feedback"></a>Создание намерения для определения отзывов о работе сотрудников
+
 Добавьте новое намерение, чтобы получить отзывы о сотрудниках от других работников компании. 
 
 1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
@@ -71,122 +79,66 @@ ms.locfileid: "53098946"
 
 4. Добавьте несколько выражений, чтобы указать на хорошую работу сотрудника или область, в которой требуются улучшения:
 
-    Помните, что в этом приложении для управления персоналом сотрудники определяются в сущности списка `Employee` по имени, электронной почте, добавочному номеру телефона, номеру мобильного телефона и номеру социального страхования в США. 
-
     |Высказывания|
     |--|
-    |Сотрудник 425-555-1212 хорошо проявил себя при организации встречи для коллеги, вернувшейся из декретного отпуска.|
-    |Сотрудник 234-56-7891 хорошо проявил себя, оказав поддержку коллеге во время траура.|
-    |Сотрудник jill-jones@mycompany.com не располагал всеми необходимыми счетами для оформления документов.|
-    |Сотрудник john.w.smith@mycompany.com вернул необходимые бланки с опозданием на месяц и без подписей.|
-    |Сотрудник x23456 не явился на важную выездную встречу маркетологов.|
-    |Сотрудник x12345 пропустил собрание для обсуждения показателей за июнь.|
-    |Мария Шевченко подготовила прекрасное коммерческое предложение для встречи в Лондоне.|
-    |Тарас Хмелев проделал отличную работу на презентации в Мюнхене.|
+    |Джон Смит хорошо проявил себя при организации встречи для коллеги, вернувшейся из декретного отпуска.|
+    |Джилл Джонс хорошо проявила себя, оказав поддержку коллеге во время траура.|
+    |Боб Барнс не располагал всеми необходимыми счетами для оформления документов.|
+    |Тодд Томас вернул необходимые бланки с опозданием на месяц и без подписей.|
+    |Кэтрин Келли не явилась на важную выездную встречу маркетологов.|
+    |Денис Диллард пропустил собрание для обсуждения показателей за июнь.|
+    |Марк Мэтьюз подготовил прекрасное коммерческое предложение для встречи в Гарварде.|
+    |Волтер Вильямс проделал отличную работу на презентации в Стэнфорде.|
 
     [ ![Снимок экрана с приложением LUIS и примерами фраз в намерении EmployeeFeedback](./media/luis-quickstart-intent-and-sentiment-analysis/hr-utterance-examples.png)](./media/luis-quickstart-intent-and-sentiment-analysis/hr-utterance-examples.png#lightbox)
 
-## <a name="train"></a>Train
+## <a name="add-example-utterances-to-the-none-intent"></a>Добавление примеров речевых фрагментов в намерение None 
+
+[!INCLUDE [Follow these steps to add the None intent to the app](../../../includes/cognitive-services-luis-create-the-none-intent.md)]
+
+## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Обучение приложения для проверки изменений намерения 
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
 ## <a name="configure-app-to-include-sentiment-analysis"></a>Настройка приложения для включения анализа тональности
+
 1. На правой верхней панели навигации выберите **Управление** и щелкните **Параметры публикации** в меню слева.
 
-2. Переключите параметр **Анализ тональности**, чтобы включить его. 
+1. Выберите параметр **Анализ тональности**, чтобы включить его. 
 
     ![Добавление анализа тональности как параметра публикации](./media/luis-quickstart-intent-and-sentiment-analysis/turn-on-sentiment-analysis-as-publish-setting.png)
 
-## <a name="publish"></a>Опубликовать
+## <a name="publish-the-app-so-the-trained-model-is-queryable-from-the-endpoint"></a>Публикация приложения, чтобы в обученную модель можно было отправлять запросы из конечной точки
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-## <a name="get-sentiment-of-utterance-from-endpoint"></a>Получение данных о тональности высказывания из конечной точки
+## <a name="get-the-sentiment-of-an-utterance-from-the-endpoint"></a>Получение тональности речевого фрагмента из конечной точки
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
-2. Перейдите в конец URL-адреса и введите `Jill Jones work with the media team on the public portal was amazing`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `EmployeeFeedback` с извлечением анализа тональности.
+1. Перейдите в конец URL-адреса и введите `Jill Jones work with the media team on the public portal was amazing`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `EmployeeFeedback` с извлечением анализа тональности.
     
     ```json
     {
       "query": "Jill Jones work with the media team on the public portal was amazing",
       "topScoringIntent": {
         "intent": "EmployeeFeedback",
-        "score": 0.4983256
+        "score": 0.9616192
       },
       "intents": [
         {
           "intent": "EmployeeFeedback",
-          "score": 0.4983256
-        },
-        {
-          "intent": "MoveEmployee",
-          "score": 0.06617523
-        },
-        {
-          "intent": "GetJobInformation",
-          "score": 0.04631853
-        },
-        {
-          "intent": "ApplyForJob",
-          "score": 0.0103248553
-        },
-        {
-          "intent": "Utilities.StartOver",
-          "score": 0.007531875
-        },
-        {
-          "intent": "FindForm",
-          "score": 0.00344597152
-        },
-        {
-          "intent": "Utilities.Help",
-          "score": 0.00337914471
-        },
-        {
-          "intent": "Utilities.Cancel",
-          "score": 0.0026357458
+          "score": 0.9616192
         },
         {
           "intent": "None",
-          "score": 0.00214573368
-        },
-        {
-          "intent": "Utilities.Stop",
-          "score": 0.00157622492
-        },
-        {
-          "intent": "Utilities.Confirm",
-          "score": 7.379545E-05
+          "score": 0.09347677
         }
       ],
       "entities": [
         {
           "entity": "jill jones",
-          "type": "Employee",
-          "startIndex": 0,
-          "endIndex": 9,
-          "resolution": {
-            "values": [
-              "Employee-45612"
-            ]
-          }
-        },
-        {
-          "entity": "media team",
-          "type": "builtin.keyPhrase",
-          "startIndex": 25,
-          "endIndex": 34
-        },
-        {
-          "entity": "public portal",
-          "type": "builtin.keyPhrase",
-          "startIndex": 43,
-          "endIndex": 55
-        },
-        {
-          "entity": "jill jones",
-          "type": "builtin.keyPhrase",
+          "type": "builtin.personName",
           "startIndex": 0,
           "endIndex": 9
         }
@@ -198,11 +150,19 @@ ms.locfileid: "53098946"
     }
     ```
 
-    Анализ тональности является положительным с оценкой 0,86. 
+    Анализ тональности является положительным с оценкой 86 %. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
+
+## <a name="related-information"></a>Связанные сведения
+
+* Анализ тональности предоставляется службой [Анализ текста](../Text-Analytics/index.yml) Cognitive Services. Эта функция ограничивается [поддерживаемыми языками](luis-language-support.md##languages-supported) Анализа текста.
+* [Обучение активной версии приложения LUIS](luis-how-to-train.md)
+* [Как опубликовать предложение](luis-how-to-publish-app.md)
+* [Тестирование приложения LUIS на портале LUIS](luis-interactive-test.md)
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 В рамках этого руководства вы добавили анализ тональности как параметр публикации, чтобы извлечь значения тональности из всего высказывания.

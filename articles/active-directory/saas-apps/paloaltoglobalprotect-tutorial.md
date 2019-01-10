@@ -1,268 +1,247 @@
 ---
-title: Руководство по интеграции Azure Active Directory c Palo Alto Networks (GlobalProtect) | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory c Palo Alto Networks (GlobalProtect) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Palo Alto Networks (GlobalProtect).
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
-ms.reviewer: joflore
+ms.reviewer: barbkess
 ms.assetid: 03bef6f2-3ea2-4eaa-a828-79c5f1346ce5
-ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 11/01/2017
+ms.topic: tutorial
+ms.date: 12/11/2018
 ms.author: jeedes
-ms.openlocfilehash: d3fdf52d07faa4242a0267ebc929946bbc95418a
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 16bcd61d226fe97e9f3e4eb5c40f2fdf6c304a12
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39427624"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53808287"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---globalprotect"></a>Руководство по интеграции Azure Active Directory c Palo Alto Networks (GlobalProtect)
+# <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---globalprotect"></a>Руководство. Интеграция Azure Active Directory c Palo Alto Networks (GlobalProtect)
 
 В этом руководстве описано, как интегрировать Palo Alto Networks (GlobalProtect) с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с Palo Alto Networks (GlobalProtect) обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать предоставление доступа к Palo Alto Networks (GlobalProtect).
-- Вы можете включить автоматический вход пользователей в Palo Alto Networks (GlobalProtect) (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+* С помощью Azure AD вы можете контролировать предоставление доступа к Palo Alto Networks (GlobalProtect).
+* Вы можете включить автоматический вход пользователей в Palo Alto Networks (GlobalProtect) (единый вход) с использованием учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно — на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Palo Alto Networks (GlobalProtect), вам потребуется:
 
-- подписка Azure AD;
-- подписка Palo Alto Networks (GlobalProtect) с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Palo Alto Networks (GlobalProtect) с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Palo Alto Networks (GlobalProtect) из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+
+* Palo Alto Networks (GlobalProtect) поддерживает единый вход, инициированный **поставщиком услуг**.
+* Palo Alto Networks (GlobalProtect) поддерживает **JIT**-подготовку пользователей.
 
 ## <a name="adding-palo-alto-networks---globalprotect-from-the-gallery"></a>Добавление Palo Alto Networks (GlobalProtect) из коллекции
+
 Чтобы настроить интеграцию Palo Alto Networks (GlobalProtect) с Azure AD, необходимо добавить Palo Alto Networks (GlobalProtect) из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Palo Alto Networks (GlobalProtect) из коллекции, сделайте следующее:**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Новое приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Palo Alto Networks (GlobalProtect)** и выберите **Palo Alto Networks (GlobalProtect)** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
-    ![Palo Alto Networks (GlobalProtect) в списке результатов](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoglobal_addfromgallery.png)
+4. В поле поиска введите **Palo Alto Networks (GlobalProtect)** и выберите **Palo Alto Networks (GlobalProtect)** на панели результатов, а затем нажмите кнопку **Добавить**, чтобы добавить приложение.
+
+     ![Palo Alto Networks (GlobalProtect) в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Palo Alto Networks (GlobalProtect) с использованием тестового пользователя Britta Simon.
-
-Чтобы активировать единый вход, Azure AD необходима информация о том, какой пользователь в Palo Alto Networks (GlobalProtect) соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем Palo Alto Networks (GlobalProtect).
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения поля **имени пользователя** в Palo Alto Networks (GlobalProtect).
+В этом разделе описана настройка и проверка единого входа Azure AD в Palo Alto Networks (GlobalProtect) с использованием тестового пользователя **Britta Simon**.
+Для правильной работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем Palo Alto Networks (GlobalProtect).
 
 Чтобы настроить и проверить единый вход Azure AD в Palo Alto Networks (GlobalProtect), вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Palo Alto Networks (GlobalProtect)](#create-a-palo-alto-networks---globalprotect-test-user)** требуется, чтобы в Palo Alto Networks (GlobalProtect) существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-1. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Настройка единого входа в Palo Alto Networks (GlobalProtect)](#configure-palo-alto-networks---globalprotect-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Palo Alto Networks (GlobalProtect)](#create-palo-alto-networks---globalprotect-test-user)** требуется, чтобы в Palo Alto Networks (GlobalProtect) существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в Palo Alto Networks (GlobalProtect).
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD с Palo Alto Networks (GlobalProtect), сделайте следующее:**
+Чтобы настроить единый вход Azure AD с Palo Alto Networks (GlobalProtect), сделайте следующее:
 
-1. На портале Azure на странице интеграции с приложением **Palo Alto Networks (GlobalProtect)** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Palo Alto Networks (GlobalProtect)** щелкните **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoglobal_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Palo Alto Networks (GlobalProtect)** сделайте следующее:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа для Palo Alto Networks (GlobalProtect)](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoglobal_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<Customer Firewall URL>`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<Customer Firewall URL>/SAML20/SP`
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Для получения этих значений обратитесь в [службу поддержки клиентов Palo Alto Networks (GlobalProtect)](https://support.paloaltonetworks.com/support). 
- 
-1. Приложение Palo Alto Networks (GlobalProtect) ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На следующем снимке экрана приведен пример.
-    
-    ![Настройка единого входа](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoglobal_attribute.png)
-    
-1. В разделе **Атрибуты пользователя** диалогового окна **Единый вход** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия:
-    
-    | Имя атрибута | Значение атрибута |
-    | --- | --- |    
-    | Имя пользователя | user.userprincipalname |
+    ![Сведения о домене и URL-адресах единого входа для Palo Alto Networks (GlobalProtect)](common/sp-identifier.png)
 
-    a. Щелкните **Добавить атрибут**, чтобы открыть диалоговое окно **Добавление атрибута**.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<Customer Firewall URL>`.
 
-    ![Настройка единого входа](./media/paloaltoglobalprotect-tutorial/tutorial_attribute_04.png)
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<Customer Firewall URL>/SAML20/SP`.
 
-    ![Настройка единого входа](./media/paloaltoglobalprotect-tutorial/tutorial_attribute_05.png)
-    
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Для получения этих значений обратитесь в [службу поддержки клиентов Palo Alto Networks (GlobalProtect)](https://support.paloaltonetworks.com/support). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
+
+5. Приложение Palo Alto Networks (GlobalProtect) ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
+
+    ![изображение](common/edit-attribute.png)
+
+6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
+
+    | ИМЯ | Исходный атрибут|
+    | ------|--------- |
+    | Имя пользователя  | user.userprincipalname  |
+    | | |
+
+    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
+
+    ![изображение](common/new-save-attribute.png)
+
+    ![изображение](common/new-attribute-details.png)
+
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
-    
-    c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки. Мы сопоставили значение со значением user.userprincipalname в качестве примера, но вы можете сопоставить его со своим соответствующим значением. 
-    
-    d. Нажмите кнопку **ОК**.
 
+    c. Оставьте пустым поле **Пространство имен**.
 
-1. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+    d. В качестве источника выберите **Атрибут**.
 
-    ![Ссылка для скачивания сертификата](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoglobal_certificate.png) 
+    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-1. Нажмите кнопку **Сохранить** .
+    Е. Нажмите кнопку **ОК**.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/paloaltoglobalprotect-tutorial/tutorial_general_400.png)
+    ж. Выберите команду **Сохранить**.
+
+7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных**, и сохраните его на компьютере.
+
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
+
+8. Скопируйте требуемый URL-адрес из раздела **Настройка Palo Alto Networks (GlobalProtect)**.
+
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    a. URL-адрес входа.
+
+    b. Идентификатор Azure AD.
+
+    c. URL-адрес выхода
+
+### <a name="configure-palo-alto-networks---globalprotect-single-sign-on"></a>Настройка Palo Alto Networks (GlobalProtect) с поддержкой единого входа
 
 1. В другом окне браузера откройте пользовательский интерфейс администратора брандмауэров Palo Alto с правами администратора.
 
-1. Щелкните **Device** (Устройство).
+2. Щелкните **Device** (Устройство).
 
     ![Настройка единого входа в Palo Alto](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoadmin_admin1.png)
 
-1. Чтобы импортировать файл метаданных, в левой области навигации выберите **SAML Identity Provider** (Поставщик удостоверений SAML) и нажмите кнопку Import (Импорт).
+3. Чтобы импортировать файл метаданных, в левой области навигации выберите **SAML Identity Provider** (Поставщик удостоверений SAML) и нажмите кнопку Import (Импорт).
 
     ![Настройка единого входа в Palo Alto](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoadmin_admin2.png)
 
-1. Сделайте следующее в окне Import (Импорт).
+4. Сделайте следующее в окне Import (Импорт).
 
     ![Настройка единого входа в Palo Alto](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoadmin_admin3.png)
 
     a. Укажите имя в текстовом поле **Profile Name** (Имя профиля), например Azure AD GlobalProtect.
-    
-    b. В разделе **Identity Provider Metadata** (Метаданные поставщика удостоверений) щелкните **Browse** (Обзор) и выберите файл metadata.xml, загруженный ранее с портала Azure.
-    
-    c. Щелкните **ОК**
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+    b. В разделе **Identity Provider Metadata** (Метаданные поставщика удостоверений) щелкните **Browse** (Обзор) и выберите файл metadata.xml, загруженный ранее с портала Azure.
+
+    c. Щелкните **ОК**
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Azure Active Directory"](./media/paloaltoglobalprotect-tutorial/create_aaduser_01.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/paloaltoglobalprotect-tutorial/create_aaduser_02.png)
-
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
-
-    ![Кнопка "Добавить"](./media/paloaltoglobalprotect-tutorial/create_aaduser_03.png)
-
-1. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/paloaltoglobalprotect-tutorial/create_aaduser_04.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="create-a-palo-alto-networks---globalprotect-test-user"></a>Создание тестового пользователя в Palo Alto Networks (GlobalProtect)
-
-Palo Alto Networks (GlobalProtect) поддерживает JIT-подготовку пользователей, поэтому после успешной проверки подлинности в системе будет автоматически создан пользователь, если он еще не существует. В этом разделе не нужно выполнять никаких действий. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как предоставить пользователю Britta Simon доступ к Palo Alto Networks (GlobalProtect), чтобы он мог использовать единый вход Azure.
 
-![Назначение роли пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Palo Alto Networks (GlobalProtect)**.
 
-**Чтобы назначить пользователя Britta Simon для приложения Palo Alto Networks (GlobalProtect), сделайте следующее:**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений введите **Palo Alto Networks (GlobalProtect)** и выберите его.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Palo Alto Networks (GlobalProtect) в списке приложений](common/all-applications.png)
 
-1. Выберите **Palo Alto Networks (GlobalProtect)** из списка приложений.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка на Palo Alto Networks (GlobalProtect) в списке приложений](./media/paloaltoglobalprotect-tutorial/tutorial_paloaltoglobal_app.png)  
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Область "Добавление назначения"][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-palo-alto-networks---globalprotect-test-user"></a>Создание тестового пользователя в Palo Alto Networks (GlobalProtect)
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
+В этом разделе создается пользователь Britta Simon в приложении Palo Alto Networks (GlobalProtect). Приложение Palo Alto Networks (GlobalProtect) поддерживает JIT-подготовку пользователей, которая включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Palo Alto Networks (GlobalProtect), он создается после проверки подлинности.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку "Palo Alto Networks (GlobalProtect)" на панели доступа, вы автоматически войдете в приложение Palo Alto Networks (GlobalProtect).
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку Palo Alto Networks (GlobalProtect) на панели доступа, вы автоматически войдете в приложение Palo Alto Networks (GlobalProtect), для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/paloaltoglobalprotect-tutorial/tutorial_general_01.png
-[2]: ./media/paloaltoglobalprotect-tutorial/tutorial_general_02.png
-[3]: ./media/paloaltoglobalprotect-tutorial/tutorial_general_03.png
-[4]: ./media/paloaltoglobalprotect-tutorial/tutorial_general_04.png
-
-[100]: ./media/paloaltoglobalprotect-tutorial/tutorial_general_100.png
-
-[200]: ./media/paloaltoglobalprotect-tutorial/tutorial_general_200.png
-[201]: ./media/paloaltoglobalprotect-tutorial/tutorial_general_201.png
-[202]: ./media/paloaltoglobalprotect-tutorial/tutorial_general_202.png
-[203]: ./media/paloaltoglobalprotect-tutorial/tutorial_general_203.png
-
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

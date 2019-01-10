@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 12/27/2018
 ms.author: raynew
-ms.openlocfilehash: ef914318174ee3ce738769fcae910c82b35b21b4
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 0c70d3b5166b0e3719aa621091920d2c91696bf1
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52998550"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53973542"
 ---
 # <a name="azure-site-recovery-frequently-asked-questions-faq"></a>Azure Site Recovery: вопросы и ответы
 Данная статья содержит часто задаваемые вопросы об Azure Site Recovery. Если после прочтения статьи у вас возникли какие-либо вопросы, вы можете задать их на [форуме, посвященном службам восстановления Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
@@ -91,7 +91,7 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 Azure Site Recovery реплицирует данные в учетную запись хранения Azure через общедоступную конечную точку. Репликация не выполняется через VPN-подключение типа "сеть — сеть". Вы можете создать такое подключение с помощью виртуальной сети Azure. Это никак не повлияет на репликацию Site Recovery.
 
 ### <a name="can-i-use-expressroute-to-replicate-virtual-machines-to-azure"></a>Можно ли использовать ExpressRoute для репликации виртуальных машин в Azure?
-Да, [ExpressRoute можно использовать](concepts-expressroute-with-site-recovery.md) для репликации локальных виртуальных машин в Azure. Azure Site Recovery реплицирует данные в учетную запись хранения Azure через общедоступную конечную точку. Чтобы использовать ExpressRoute для репликации Site Recovery, необходимо настроить [общедоступный пиринг](../expressroute/expressroute-circuit-peerings.md#publicpeering) или [пиринг Майкрософт](../expressroute/expressroute-circuit-peerings.md#microsoftpeering). Пиринг Майкрософт является рекомендуемым доменом маршрутизации для репликации. После отработки отказа виртуальных машин в виртуальную сеть Azure доступ к можно получать с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#privatepeering), настроенного в виртуальной сети Azure. Репликация через частный пиринг не поддерживается.
+Да, [ExpressRoute можно использовать](concepts-expressroute-with-site-recovery.md) для репликации локальных виртуальных машин в Azure. Azure Site Recovery реплицирует данные в учетную запись хранения Azure через общедоступную конечную точку. Чтобы использовать ExpressRoute для репликации Site Recovery, необходимо настроить [общедоступный пиринг](../expressroute/expressroute-circuit-peerings.md#publicpeering) или [пиринг Майкрософт](../expressroute/expressroute-circuit-peerings.md#microsoftpeering). Пиринг Майкрософт является рекомендуемым доменом маршрутизации для репликации. Убедитесь, что [требования к сети](vmware-azure-configuration-server-requirements.md#network-requirements) также выполняются для репликации. После отработки отказа виртуальных машин в виртуальную сеть Azure доступ к можно получать с помощью [частного пиринга](../expressroute/expressroute-circuit-peerings.md#privatepeering), настроенного в виртуальной сети Azure. Репликация через частный пиринг не поддерживается.
 
 ### <a name="are-there-any-prerequisites-for-replicating-virtual-machines-to-azure"></a>Существуют ли предварительные требования для репликации виртуальных машин в Azure?
 Виртуальные машины [VMware](vmware-physical-azure-support-matrix.md#replicated-machines) и [Hyper-V](hyper-v-azure-support-matrix.md#replicated-vms), которые необходимо реплицировать в Azure, должны соответствовать требованиям Azure.

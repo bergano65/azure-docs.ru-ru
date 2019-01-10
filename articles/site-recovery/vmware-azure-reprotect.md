@@ -5,14 +5,14 @@ author: rajani-janaki-ram
 manager: gauravd
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 12/17/2018
 ms.author: rajanaki
-ms.openlocfilehash: e965848b0c3c009444762dafdf42acc080b6915e
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 06337e205c472d26024289222dc8876d23b4184f
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52834972"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53791886"
 ---
 # <a name="reprotect-and-fail-back-machines-to-an-on-premises-site-after-failover-to-azure"></a>Повторное включение защиты и восстановление размещения машин на локальном сайте после отработки отказа в Azure
 
@@ -61,8 +61,8 @@ ms.locfileid: "52834972"
 
 Главный целевой сервер принимает данные восстановления размещения. По умолчанию главный целевой сервер работает на локальном сервере конфигурации. Но в зависимости от объема трафика восстановления размещения для него может потребоваться создать отдельный главный целевой сервер. Вот как это сделать:
 
-* [Создайте главный целевой сервер Linux](vmware-azure-install-linux-master-target.md) для восстановления размещения виртуальных машин Linux. Это обязательный шаг.
-* При необходимости создайте отдельный главный целевой сервер для восстановления размещения виртуальных машин Windows. Для этого снова запустите унифицированную установку и выберите создание главного целевого сервера. [Узнайте больше](site-recovery-plan-capacity-vmware.md#deploy-additional-master-target-servers).
+* [Создайте главный целевой сервер Linux](vmware-azure-install-linux-master-target.md) для восстановления размещения виртуальных машин Linux. Это обязательный шаг. Обратите внимание, что главный целевой сервер на диспетчере логических томов не поддерживается.
+* При необходимости создайте отдельный главный целевой сервер для восстановления размещения виртуальных машин Windows. Для этого снова запустите унифицированную установку и выберите создание главного целевого сервера. [Узнайте больше](site-recovery-plan-capacity-vmware.md#deploy-additional-master-target-servers). 
 
 После создания главного целевого сервера выполните следующие задачи:
 

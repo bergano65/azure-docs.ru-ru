@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/28/2018
 ms.author: jaredro
 ms.custom: seodec18
-ms.openlocfilehash: 0621c2d1632dead41463810b9e71ebf0404a8cbe
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 6de5fefa3d70c1daecf00909d3ce44d4a4d8561c
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53077755"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53543569"
 ---
 # <a name="expressroute-faq"></a>Вопросы и ответы по ExpressRoute
 
@@ -166,7 +166,7 @@ ExpressRoute поддерживает [три домена маршрутиза�
 
 ### <a name="i-have-multiple-azure-subscriptions-that-contain-virtual-networks-can-i-connect-virtual-networks-that-are-in-separate-subscriptions-to-a-single-expressroute-circuit"></a>У меня есть несколько подписок Azure, содержащих виртуальные сети. Можно ли подключить к одному каналу ExpressRoute виртуальные сети, являющиеся отдельными подписками?
 
-Да. Вы можете авторизовать до 10 разных подписок Azure для использования одного канала ExpressRoute. Это ограничение можно увеличить, подключив расширенную функцию ExpressRoute.
+Да. Можно связать до 10 виртуальных сетей в той же подписке, что и канал, или в разных подписках, используя один канал ExpressRoute. Это ограничение можно увеличить, подключив расширенную функцию ExpressRoute.
 
 Дополнительные сведения см. в статье [Подключение виртуальной сети к каналу ExpressRoute](expressroute-howto-linkvnet-arm.md).
 

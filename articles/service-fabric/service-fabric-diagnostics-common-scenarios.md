@@ -14,16 +14,16 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/16/2018
 ms.author: srrengar
-ms.openlocfilehash: 146ea6431516f7b78d23cd4b36aff43110639e83
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: e91ca12c06a1582b9bb715031a9c379b1a47b04b
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52633101"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53713465"
 ---
 # <a name="diagnose-common-scenarios-with-service-fabric"></a>Диагностика распространенных сценариев с помощью Service Fabric
 
-В этой статье показаны общие сценарии, с которыми сталкиваются пользователи в области мониторинга и диагностики с помощью Service Fabric. Представленные сценарии охватывают все 3 уровня Service Fabric: приложение, кластер и инфраструктуру. Для каждого сценария каждое решение использует Application Insights, Log Analytics и средства мониторинга Azure. Шаги в каждом решении позволяют пользователям понять, как использовать Application Insights и Log Analytics в контексте Service Fabric.
+В этой статье показаны общие сценарии, с которыми сталкиваются пользователи в области мониторинга и диагностики с помощью Service Fabric. Представленные сценарии охватывают все три уровня Service Fabric: приложения, кластеры и инфраструктуры. Для каждого сценария каждое решение использует Application Insights, Log Analytics и средства мониторинга Azure. Шаги в каждом решении позволяют пользователям понять, как использовать Application Insights и Log Analytics в контексте Service Fabric.
 
 ## <a name="prerequisites-and-recommendations"></a>Предварительные требования и рекомендации
 
@@ -56,7 +56,7 @@ ms.locfileid: "52633101"
 
     ![Колонка схемы приложения AI](media/service-fabric-diagnostics-common-scenarios/app-map-blade.png) ![Схема приложения AI](media/service-fabric-diagnostics-common-scenarios/app-map-new.png)
 
-    Дополнительные сведения о схеме приложения см. в документации [по схеме приложения](../application-insights/app-insights-app-map.md).
+    Дополнительные сведения о схеме приложения см. в документации [по схеме приложения](../azure-monitor/app/app-map.md).
 
 ## <a name="how-do-i-create-an-alert-when-a-node-goes-down"></a>Как создать оповещение, когда узел выходит из строя
 
@@ -139,7 +139,7 @@ ms.locfileid: "52633101"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Настройте оповещения в Application Insights](../application-insights/app-insights-alerts.md), чтобы узнавать об изменениях в производительности или характере использования.
+* [Настройте оповещения в Application Insights](../azure-monitor/app/alerts.md), чтобы узнавать об изменениях в производительности или характере использования.
 * [Интеллектуальное обнаружение в Application Insights](../application-insights/app-insights-proactive-diagnostics.md) осуществляет упреждающий анализ данных телеметрии, отправляемых в Application Insights, и предупреждает о потенциальных проблемах с производительностью.
 * Подробнее об [оповещениях](../log-analytics/log-analytics-alerts.md) Log Analytics, которые помогут в обнаружении и диагностике.
 * Для локальных кластеров Log Analytics предлагает шлюз (прокси-сервер переадресации HTTP), который можно использовать для отправки данных в Log Analytics. Дополнительные сведения см. в разделе [Подключение компьютеров к Log Analytics с помощью шлюза Log Analytics без доступа к Интернету](../azure-monitor/platform/gateway.md).

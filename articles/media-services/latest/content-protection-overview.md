@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/08/2018
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: cb7e867ea4304cf8b8741eac183e60d325c752c7
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 09c8b63cddde547b0dc42cf1f15a8ac5002d0a3e
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53141855"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53725144"
 ---
 # <a name="content-protection-overview"></a>Обзор системы защиты содержимого
 
@@ -180,7 +180,7 @@ PlayReady, Widevine и FairPlay обеспечивают более высоки
 
 Правильный подход заключается в использовании STS (службы токенов безопасности).
 
-В службе токенов безопасности, в зависимости от профиля пользователя, добавьте разные утверждения (например, "Пользователь (цен.категория "Премиум")", "Пользователь (цен.категория "Базовый")", "Пользователь бесплатной пробной версии"). С различными утверждениями в JWT пользователь может видеть разное содержимое. Конечно, для разного содержимого или ресурса параметр ContentKeyPolicyRestriction будет иметь соответствующие утверждения RequiredClaims.
+В службе токенов безопасности, в зависимости от профиля пользователя, добавьте разные утверждения (например, "Пользователь (ценовая категория "Премиум")", "Пользователь (ценовая категория "Базовый")", "Пользователь бесплатной пробной версии"). С различными утверждениями в JWT пользователь может видеть разное содержимое. Конечно, для разного содержимого или ресурса параметр ContentKeyPolicyRestriction будет иметь соответствующие утверждения RequiredClaims.
 
 Используйте API Служб мультимедиа Azure для настройки доставки лицензий и ключей и шифрования ресурсов (как показано в [этом примере](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs).
 

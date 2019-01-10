@@ -10,12 +10,12 @@ ms.component: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: v-jaswel
-ms.openlocfilehash: b98b528d2d78d2285977dec49da18081df47e9d6
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 3d029c91debfc8ed3ac24e831224426a2780b763
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53166138"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53791078"
 ---
 # <a name="create-a-conversation-learner-model-using-nodejs"></a>Использование Node.js для создания модели Conversation Learner
 
@@ -112,14 +112,11 @@ Project Conversation Learner содержит пакет SDK, добавляем
   npm run demo-password
   npm run demo-pizza
   npm run demo-storage
-  npm run demo-vrapp
   ```
 
 4. Если вы этого еще не сделали, переключитесь на пользовательский веб-интерфейс Conversation Learner в Chrome, загрузив http://localhost:5050/home. 
 
-5. Щелкните "Import tutorials" (Импортировать руководства) (достаточно выполнить один раз).  Этот процесс займет около минуты. Модели Conversation Learner для всех руководств будут скопированы в вашу учетную запись Conversation Learner.
-
-6. В пользовательском интерфейсе Conversation Learner щелкните демонстрационную модель, соответствующую запущенному примеру.
+5. В пользовательском интерфейсе Conversation Learner щелкните "Импортировать учебники" и выберите демонстрационную модель, соответствующую запущенному примеру.
 
 Исходные файлы для демонстрационных версий находятся в `cl-bot-01/src/demos`.
 
@@ -181,4 +178,4 @@ Microsoft Open Source Code of Conduct [Microsoft Open Source Code of Conduct](ht
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Hello world](./tutorials/1-hello-world.md)
+> [Hello world](./tutorials/01-hello-world.md)

@@ -6,16 +6,16 @@ author: tamram
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
-ms.date: 11/14/2018
+ms.date: 12/14/2018
 ms.author: tamram
-ms.openlocfilehash: dd304bd4a53094605149483c0996cd5f12040a84
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: 94e9d19302c4a51d1401a88248431f237bf59758
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51713186"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53743515"
 ---
-# <a name="quickstart-upload-download-and-list-blobs-with-python"></a>Краткое руководство по передаче, скачиванию и составлению списка больших двоичных объектов с помощью языка Python
+# <a name="quickstart-upload-download-and-list-blobs-with-python"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью Python
 
 Из этого краткого руководства вы узнаете, как использовать Python для отправки, скачивания и перечисления блочных BLOB-объектов в контейнере в хранилище BLOB-объектов Azure. 
 
@@ -53,7 +53,7 @@ block_blob_service = BlockBlobService(account_name='accountname', account_key='a
 
 Сначала установите зависимости, выполнив команду `pip install`:
 
-    pip install azure-storage
+    pip install azure-storage-blob
 
 Далее запустите образец. Результат будет выглядеть примерно так:
   

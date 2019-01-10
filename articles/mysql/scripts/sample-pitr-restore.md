@@ -1,22 +1,19 @@
 ---
 title: Скрипт Azure CLI. Восстановление сервера службы "База данных Azure для MySQL" до предыдущей точки во времени
 description: Этот пример скрипта CLI позволяет восстановить сервер службы "База данных Azure для MySQL" до предыдущей точки во времени.
-services: mysql
 author: ajlam
 ms.author: andrela
-manager: kfile
-editor: jasonwhowell
 ms.service: mysql
-ms.devlang: azure-cli
+ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc
 ms.date: 02/28/2018
-ms.openlocfilehash: 5e59468897b04dd5f017480bcf7b5abc4656a5c2
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 8506e6eaac51730cb3d7a20f1d21f1c8bce03bee
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582179"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53540033"
 ---
 # <a name="restore-an-azure-database-for-mysql-server-using-azure-cli"></a>Восстановление сервера службы "База данных Azure для MySQL" с помощью Azure CLI
 Этот пример скрипта CLI позволяет восстановить один сервер службы "База данных Azure для MySQL" до предыдущей точки во времени.
@@ -45,4 +42,4 @@ ms.locfileid: "52582179"
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения об Azure CLI см. в [документации по Azure CLI](/cli/azure).
-- Попробуйте использовать другие скрипты на основе [примеров Azure CLI для базы данных Azure для MySQL](../sample-scripts-azure-cli.md).
+- Попробуйте использовать дополнительные сценарии: [Примеры Azure CLI для базы данных Azure для MySQL](../sample-scripts-azure-cli.md)

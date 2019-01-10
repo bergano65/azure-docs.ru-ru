@@ -1,22 +1,19 @@
 ---
 title: Подключение к Базе данных Azure для MySQL с помощью Python
 description: В этом кратком руководстве представлены примеры кода Python, которые можно использовать для подключения к базе данных Azure для MySQL и запроса данных из нее.
-services: mysql
 author: jasonwhowell
 ms.author: jasonh
-manager: kfile
-editor: jasonwhowell
 ms.service: mysql
 ms.custom: mvc
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 02/28/2018
-ms.openlocfilehash: 54b25aa141da15224d5d8034ba54783d3633f5be
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.openlocfilehash: 3adfe85be46c338bcdb0eb429d7e81b8787cf12e
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50914742"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53539642"
 ---
 # <a name="azure-database-for-mysql-use-python-to-connect-and-query-data"></a>База данных Azure для MySQL: подключение и запрос данных с помощью Python
 Это краткое руководство демонстрирует, как использовать [Python](https://python.org) для подключения к базе данных Azure для MySQL. Здесь используются инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных из платформ Windows, Mac OS и Ubuntu Linux. В этой статье предполагается, что у вас уже есть опыт разработки на языке Python и вы только начали работу с базой данных Azure для MySQL.
@@ -33,7 +30,7 @@ ms.locfileid: "50914742"
 > В этом кратком руководстве при подключении к MySQL для выполнения запросов используются простые SQL-запросы. Если вы применяете веб-платформу, используйте для нее рекомендуемый соединитель. Например, [mysqlclient](https://pypi.org/project/mysqlclient/) рекомендуется использовать с Django.
 >
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 1. Скачайте и установите Python 2.7 с веб-сайта [python.org](https://www.python.org/downloads/windows/). 
 2. Проверьте установку Python, запустив командную строку. Выполните команду `C:\python27\python.exe -V`, используя параметр V в верхнем регистре, чтобы узнать номер версии.
 3. Установите соединитель Python для MySQL с веб-сайта [mysql.com](https://dev.mysql.com/downloads/connector/python/) в соответствии с версией Python.

@@ -9,22 +9,22 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: carlrab
+ms.reviewer: jrasnik
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: e5480e5e071d541d12e96ddd549e496c7f974f81
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: f55d3eb67bb9c494a3d055e39d970c9a440dfc67
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53271051"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53603444"
 ---
 # <a name="performance-recommendations-for-sql-database"></a>Рекомендации по производительности для базы данных SQL
 
 База данных SQL Azure развивается и адаптируется вместе с вашим приложением. Она предоставляет пользовательские рекомендации, которые позволяют максимально увеличить производительность баз данных SQL. База данных SQL постоянно оценивает и анализирует журнал использования баз данных SQL. Предоставляемые рекомендации основаны на уникальном шаблоне рабочей нагрузки базы данных и помогают повысить ее производительность.
 
 > [!TIP]
-> [Автоматическая настройка](sql-database-automatic-tuning.md). Это рекомендуемый способ настройки производительности. [Intelligent Insights](sql-database-intelligent-insights.md). Это рекомендуемое средство мониторинга производительности. 
+> [Автоматическая настройка](sql-database-automatic-tuning.md) — рекомендуемый способ для автоматического разрешения некоторых наиболее распространенных проблем производительности баз данных. [Анализ производительности запросов](sql-database-query-performance.md) — рекомендуемый способ для решения основных потребностей мониторинга производительности баз данных SQL в Azure. [Аналитика SQL Azure](../azure-monitor/insights/azure-sql.md) — рекомендуемый способ для расширенного масштабного мониторинга производительности баз данных со встроенными средствами аналитики для автоматического устранения неполадок, связанных с производительностью.
 >
 
 ## <a name="create-index-recommendations"></a>Рекомендации по созданию индексов

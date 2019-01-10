@@ -12,16 +12,19 @@ ms.author: xiwu
 ms.reviewer: douglasl
 manager: craigg
 ms.date: 08/09/2018
-ms.openlocfilehash: 6963bb44e6377bcfbb2cb647f1508f075b4268be
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: a287f985ce015ac6b886f4e5c2b86d6b3793e7d5
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53101856"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53721841"
 ---
 # <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-sql-data-sync"></a>Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL
 
 Синхронизация данных SQL — это служба, созданная на основе базы данных SQL Azure, которая позволяет в двунаправленном режиме синхронизировать выбранные данные в нескольких базах данных SQL и экземплярах SQL Server.
+
+> [!IMPORTANT]
+> Служба синхронизации данных SQL Azure пока **не** поддерживает управляемые экземпляры базы данных SQL Azure.
 
 ## <a name="architecture-of-sql-data-sync"></a>Архитектура синхронизации данных SQL
 

@@ -1,5 +1,5 @@
 ---
-title: Метрики, оповещения и журналы диагностики для пакетной службы Azure | Документация Майкрософт
+title: Метрики, оповещения и журналы диагностики. Пакетная служба Azure | Документация Майкрософт
 description: Запись и анализ событий журнала диагностики для ресурсов учетной записи пакетной службы Azure, таких как пулы и задачи.
 services: batch
 documentationcenter: ''
@@ -14,18 +14,18 @@ ms.tgt_pltfrm: multiple
 ms.workload: big-compute
 ms.date: 12/05/2018
 ms.author: danlep
-ms.custom: ''
-ms.openlocfilehash: 8efa8088bca3eb6221c49ec5f14334342149795d
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.custom: seodec18
+ms.openlocfilehash: cd3e671a00f7f8b0a13ed95bfd43795a24244a66
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53438444"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53537109"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
  
-В этой статье описывается, как выполнять мониторинг учетной записи пакетной службы с помощью функций [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../azure-monitor/platform/data-collection.md#metrics) и [журналы диагностики](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) для ресурсов в учетной записи пакетной службы. Эти данные можно собирать и использовать разными способами. Они позволяют выполнять мониторинг и диагностику проблем для учетной записи пакетной службы. Вы также можете настроить [метрики оповещений](../azure-monitor/platform/alerts-overview.md), чтобы получать уведомления о достижении определенных значений. 
+В этой статье описывается, как выполнять мониторинг учетной записи пакетной службы с помощью функций [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../azure-monitor/platform/data-collection.md#metrics) и [журналы диагностики](../azure-monitor/platform/diagnostic-logs-overview.md) для ресурсов в учетной записи пакетной службы. Эти данные можно собирать и использовать разными способами. Они позволяют выполнять мониторинг и диагностику проблем для учетной записи пакетной службы. Вы также можете настроить [метрики оповещений](../azure-monitor/platform/alerts-overview.md), чтобы получать уведомления о достижении определенных значений. 
 
 ## <a name="batch-metrics"></a>Метрики пакетной службы
 
@@ -109,7 +109,7 @@ ms.locfileid: "53438444"
 
     ![Диагностика пакетной службы](media/batch-diagnostics/diagnostics-portal.png)
 
-Вот еще несколько методов, которые позволяют включить сбор данных журналов: настройка параметров диагностики для Azure Monitor на портале, использование [шаблона Resource Manager](../azure-monitor/platform/diagnostic-logs-stream-template.md), а также использование Azure PowerShell или Azure CLI. См. дополнительные сведения о [сборе и использовании данных журнала из ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md#how-to-enable-collection-of-diagnostic-logs).
+Вот еще несколько методов, которые позволяют включить сбор данных журналов: настройка параметров диагностики для Azure Monitor на портале, использование [шаблона Resource Manager](../azure-monitor/platform/diagnostic-logs-stream-template.md), а также использование Azure PowerShell или Azure CLI. См. дополнительные сведения о [сборе и использовании данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md#how-to-enable-collection-of-diagnostic-logs).
 
 
 ### <a name="access-diagnostics-logs-in-storage"></a>Доступ к журналам диагностики в хранилище

@@ -11,13 +11,13 @@ author: vainolo
 ms.author: vainolo
 ms.reviewer: vanto
 manager: craigg
-ms.date: 10/25/2018
-ms.openlocfilehash: e947c284843074cf36c2d85dd240df23a1958cd5
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.date: 01/03/2019
+ms.openlocfilehash: 598d2b86e7aeeac9525f37b1ab9422d854e75392
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52971527"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54034035"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -182,6 +182,8 @@ ms.locfileid: "52971527"
 
     >[!IMPORTANT]
     >При использовании аудита на уровне базы данных настройки хранилища для базы данных-получателя будут совпадать с настройками для базы данных-источника, что приведет к появлению трафика между регионами. Рекомендуем включать аудит только на уровне сервера, а на уровне баз данных отключить все параметры аудита для всех баз данных.
+    > [!WARNING]
+    > Использование Центра событий или аналитики журнала в качестве целевых объектов для журналов аудита на уровне сервера в настоящее время не поддерживается для географически реплицированных баз данных — получателей.
 
 ### <a id="subheading-6">Повторное создание ключа к хранилищу данных</a>
 
@@ -220,12 +222,12 @@ ms.locfileid: "52971527"
 
 ## <a id="subheading-7"></a>Управление аудитом базы данных SQL с помощью Azure PowerShell
 
-**Командлеты PowerShell**
+**Командлеты PowerShell (включая поддержку предложения WHERE для дополнительной фильтрации)**.
 
-- [Создание или обновление политики аудита больших двоичных объектов базы данных (Set-AzureRMSqlDatabaseAuditing)][105]
-- [Создание или обновление политики аудита больших двоичных объектов сервера (Set-AzureRMSqlServerAuditing)][106]
-- [Получение политики аудита баз данных (Get-AzureRMSqlDatabaseAuditing)][101]
-- [Получение политики аудита больших двоичных объектов сервера (Get-AzureRMSqlDatabaseAuditing)][102]
+- [Создание или обновление политики аудита больших двоичных объектов базы данных (Set-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabaseauditing)
+- [Создание или обновление политики аудита больших двоичных объектов сервера (Set-AzSqlServerAuditing)](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserverauditing)
+- [Получение политики аудита баз данных (Get-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/get-azsqldatabaseauditing)
+- [Получение политики аудита больших двоичных объектов сервера (Get-AzSqlDatabaseAuditing)](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserverauditing)
 
 Пример сценария см. в статье [Настройка аудита и обнаружения угроз для базы данных SQL с помощью PowerShell](scripts/sql-database-auditing-and-threat-detection-powershell.md).
 
@@ -245,6 +247,14 @@ ms.locfileid: "52971527"
 - [Получение *расширенной* политики аудита BLOB-объектов базы данных](https://docs.microsoft.com/rest/api/sql/database%20extended%20auditing%20settings/get)
 - [Получение *расширенной* политики аудита BLOB-объектов сервера](https://docs.microsoft.com/rest/api/sql/server%20auditing%20settings/get)
 
+## <a id="subheading-10"></a>Управление аудитом базы данных SQL с помощью шаблонов ARM
+
+Вы можете управлять аудитом базы данных Azure SQL с помощью шаблонов [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview), как показано в следующих примерах.
+
+- [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в учетную запись хранения BLOB-объектов Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-blob-storage)
+- [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Log Analytics](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-oms)
+- [Развертывание сервера SQL Azure с поддержкой аудита, чтобы записывать журналы аудита в Центры событий](https://github.com/Azure/azure-quickstart-templates/tree/master/201-sql-auditing-server-policy-to-eventhub)
+
 <!--Anchors-->
 [Azure SQL Database Auditing overview]: #subheading-1
 [Set up auditing for your database]: #subheading-2
@@ -254,6 +264,7 @@ ms.locfileid: "52971527"
 [Manage SQL database auditing using Azure PowerShell]: #subheading-7
 [Blob/Table differences in Server auditing policy inheritance]: (#subheading-8)
 [Manage SQL database auditing using REST API]: #subheading-9
+[Manage SQL database auditing using ARM templates]: #subheading-10
 
 <!--Image references-->
 [1]: ./media/sql-database-auditing-get-started/1_auditing_get_started_settings.png
@@ -266,10 +277,3 @@ ms.locfileid: "52971527"
 [8]: ./media/sql-database-auditing-get-started/8_auditing_get_started_blob_audit_records.png
 [9]: ./media/sql-database-auditing-get-started/9_auditing_get_started_ssms_1.png
 [10]: ./media/sql-database-auditing-get-started/10_auditing_get_started_ssms_2.png
-
-[101]: /powershell/module/azurerm.sql/get-azurermsqldatabaseauditing
-[102]: /powershell/module/azurerm.sql/Get-AzureRMSqlServerAuditing
-[103]: /powershell/module/azurerm.sql/Remove-AzureRMSqlDatabaseAuditing
-[104]: /powershell/module/azurerm.sql/Remove-AzureRMSqlServerAuditing
-[105]: /powershell/module/azurerm.sql/Set-AzureRMSqlDatabaseAuditing
-[106]: /powershell/module/azurerm.sql/Set-AzureRMSqlServerAuditing

@@ -1,24 +1,21 @@
 ---
-title: Руководство по проектированию службы "База данных Azure для MySQL" с помощью Azure CLI
+title: Руководство. Разработка базы данных Azure для MySQL с помощью Azure CLI
 description: Это руководство содержит сведения о создании базы данных и сервера базы данных Azure для MySQL и управлении ими с помощью Azure CLI 2.0 из командной строки.
-services: mysql
 author: ajlam
 ms.author: andrela
-manager: kfile
-editor: jasonwhowell
 ms.service: mysql
-ms.devlang: azure-cli
+ms.devlang: azurecli
 ms.topic: tutorial
 ms.date: 04/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 60cfb5e1c5fa44952ca6a5e6fc411f4a6ab0e8be
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 352444dcb3beace0e1618aadba50b56cdcd9d003
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46966985"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53545796"
 ---
-# <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство по проектированию службы "База данных Azure для MySQL" с помощью Azure CLI
+# <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство. Разработка базы данных Azure для MySQL с помощью Azure CLI
 
 База данных Azure для MySQL — это служба реляционной базы данных в Microsoft Cloud на основе ядра СУБД MySQL Community Edition. Из этого руководства вы узнаете, как с помощью Azure CLI (интерфейса командной строки) и других служебных программ выполнять следующие операции:
 
@@ -178,16 +175,16 @@ SELECT * FROM inventory;
 - Точка восстановления. Выберите время до того момента, когда был изменен сервер. Значение точки восстановления должно быть не меньше значения самой старой резервной копии исходной базы данных.
 - Целевой сервер. Укажите новое имя сервера, который нужно восстановить.
 - Исходный сервер. Укажите имя сервера, из которого требуется выполнить восстановление.
-- Расположение. Вы не сможете выбрать регион, по умолчанию он совпадает с исходным сервером.
+- Расположение. Регион выбрать нельзя. По умолчанию он совпадает с исходным сервером.
 
 ```azurecli-interactive
 az mysql server restore --resource-group myresourcegroup --name mydemoserver-restored --restore-point-in-time "2017-05-4 03:10" --source-server-name mydemoserver
 ```
 
 Для команды `az mysql server restore` необходимо настроить следующие параметры:
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
 | --- | --- | --- |
-| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
+| resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
 | restore-point-in-time | 2017-04-13T13:59:00Z | Выберите точку во времени, до которой необходимо выполнить восстановление. Значения даты и времени должны находиться в пределах срока хранения резервной копии исходного сервера. Используйте формат даты и времени ISO8601. Например, вы можете использовать свой местный часовой пояс, например `2017-04-13T05:59:00-08:00`, или использовать формат UTC Zulu `2017-04-13T13:59:00Z`. |
 | source-server | mydemoserver | Имя или идентификатор исходного сервера, с которого необходимо выполнить восстановление. |

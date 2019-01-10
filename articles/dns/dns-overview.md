@@ -7,18 +7,18 @@ ms.service: dns
 ms.topic: overview
 ms.date: 9/24/2018
 ms.author: victorh
-ms.openlocfilehash: 9535ad73300406408a94a6f38f001e45ba7409a2
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: df890eb0e07c13d0757c706a3cabbbad67b6eac2
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50093101"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53716282"
 ---
 # <a name="what-is-azure-dns"></a>Что такое Azure DNS?
 
 Azure DNS является службой размещения доменов DNS, осуществляющей разрешение имен на базе инфраструктуры Microsoft Azure. Размещая домены в Azure, вы можете управлять своими записями DNS с помощью тех же учетных данных, API и инструментов и оплачивать использование, как и другие службы Azure.
 
-Невозможно использовать Azure DNS для приобретения имени домена. Уплатив ежегодный сбор, можно приобрести имя домена, используя [Веб-приложения Azure](https://docs.microsoft.com/azure/app-service/custom-dns-web-site-buydomains-web-app#buy-the-domain) или регистратор сторонних доменных имен. Затем можно разместить домены в Azure DNS, чтобы управлять записями. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](dns-domain-delegation.md).
+Невозможно использовать Azure DNS для приобретения имени домена. Уплатив ежегодный сбор, можно приобрести имя домена, используя [домены Службы приложений Azure](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain#buy-the-domain) или регистратор сторонних доменных имен. Затем можно разместить домены в Azure DNS, чтобы управлять записями. Дополнительные сведения см. в статье [Делегирование домена в Azure DNS](dns-domain-delegation.md).
 
 Azure DNS включает следующие функции.
 

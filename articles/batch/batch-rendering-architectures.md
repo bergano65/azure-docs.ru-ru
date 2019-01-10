@@ -1,18 +1,19 @@
 ---
-title: Рендеринг в Azure. Эталонные архитектуры
+title: Эталонные архитектуры рендеринга в Azure — пакетная служба Azure
 description: Архитектуры для применения пакетной службы Azure и других служб Azure для расширения локальных ферм рендеринга в облако
 services: batch
 author: davefellows
 manager: jeconnoc
-ms.author: danlep
+ms.author: lahugh
 ms.date: 08/13/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0fe101ee6eb88094034b90c4d39f06ba509c9512
-ms.sourcegitcommit: 0fcd6e1d03e1df505cf6cb9e6069dc674e1de0be
+ms.custom: seodec18
+ms.openlocfilehash: d5102ba94e2b7808a457df00a87b35ef7022c454
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "40099749"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53543501"
 ---
 # <a name="reference-architectures-for-azure-rendering"></a>Эталонные архитектуры для рендеринга в Azure
 
@@ -24,9 +25,9 @@ ms.locfileid: "40099749"
 
 * **Служба вычислений** — пул пакетной службы Azure или масштабируемый набор виртуальных машин.
 
-* **Сеть** — Azure ExpressRoute или VPN в локальной сети. Виртуальная сеть Azure.
+* **Сеть** — локальная сеть: Azure ExpressRoute или VPN. Azure Виртуальная сеть Azure.
 
-* **Хранилище** — входные и выходные файлы NFS или CFS на базе виртуальных машин Azure, синхронизируемые с локальным хранилищем через службу синхронизации файлов Azure или RSync.
+* **Хранилище** — входные и выходные файлы NFS или CFS на базе виртуальных машин Azure, синхронизируемые с локальным хранилищем через службу синхронизации файлов Azure или RSync.
 
   ![Выход в облако — гибридное развертывание с NFS или CFS](./media/batch-rendering-architectures/hybrid-nfs-cfs.png)
 
@@ -36,9 +37,9 @@ ms.locfileid: "40099749"
 
 * **Служба вычислений** — пул пакетной службы Azure или масштабируемый набор виртуальных машин.
 
-* **Сеть** — Azure ExpressRoute или VPN в локальной сети. Виртуальная сеть Azure.
+* **Сеть** — локальная сеть: Azure ExpressRoute или VPN. Azure Виртуальная сеть Azure.
 
-* **Хранилище** — входные и выходные файлы в хранилище BLOB-объектов, подключенном к вычислительным ресурсам через Azure Blobfuse.
+* **Хранилище** — входные и выходные файлы в хранилище BLOB-объектов, подключенном к вычислительным ресурсам через Azure Blobfuse.
 
   ![Выход в облако — гибридное развертывание с Blobfuse](./media/batch-rendering-architectures/hybrid-blob-fuse.png)
 
@@ -48,9 +49,9 @@ ms.locfileid: "40099749"
 
 * **Служба вычислений** — пул пакетной службы Azure или масштабируемый набор виртуальных машин.
 
-* **Сеть** — Azure ExpressRoute или VPN в локальной сети. Виртуальная сеть Azure.
+* **Сеть** — локальная сеть: Azure ExpressRoute или VPN. Azure Виртуальная сеть Azure.
 
-* **Хранилище** — Avere vFXT между локальными средами. Опционально можно архивировать локальные файлы через Azure Data Box в хранилище BLOB-объектов.
+* **Хранилище** — между локальными средами: Avere vFXT. Опционально можно архивировать локальные файлы через Azure Data Box в хранилище BLOB-объектов.
 
   ![Выход в облако — гибридное развертывание служб вычислений и хранения](./media/batch-rendering-architectures/hybrid-compute-storage.png)
 

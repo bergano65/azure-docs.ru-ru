@@ -9,18 +9,36 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 12/07/2018
+ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: e8a1575527f906fab130e08cda715f6c8e904275
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: c0c79e3d85a8ced2b868c9fa7741a14105c1de05
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53166274"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53753054"
 ---
-# <a name="tutorial-7-extract-names-with-simple-entity-and-phrase-list"></a>Руководство 7. Извлечение имен с использованием простой сущности и списка фраз
+# <a name="tutorial-extract-names-with-simple-entity-and-a-phrase-list"></a>Руководство. Извлечение имен с использованием простой сущности и списка фраз
 
 В этом руководстве описано извлечение данных машинного обучения о названии должности из высказывания с помощью **простой** сущности. Чтобы повысить точность извлечения, добавьте список фраз, состоящий из терминов, относящихся к простой сущности.
+
+Простая сущность обнаруживает единую концепцию данных, содержащуюся в слове или фразе.
+
+**В этом руководстве рассмотрено, как выполнять следующие задачи.**
+
+<!-- green checkmark -->
+> [!div class="checklist"]
+> * Импорт примера приложения
+> * Добавление простой сущности 
+> * Добавление списка фраз для усиления сигнальных слов
+> * Train 
+> * Опубликовать 
+> * Получать намерения и сущности из конечной точки.
+
+[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
+
+
+## <a name="simple-entity"></a>Простая сущность
 
 В этом руководстве добавляется новая сущность для извлечения названия должности. Назначение простой сущности в этом приложении LUIS — научить LUIS тому, что такое имя должности и где его можно найти во фразе. Часть фразы, означающая название должности, может изменяться в разных высказываниях в зависимости от подобранных слов и длины высказывания. LUIS нуждается в примерах названий должностей во всех намерениях, которые их используют.  
 
@@ -31,34 +49,6 @@ ms.locfileid: "53166274"
 * данные необычные, например предварительно созданная сущность телефонного номера или данных;
 * данные не соответствуют точному списку известных слов, например сущность списка;
 * данные не содержат другие элементы данных, например составную или иерархическую сущность.
-
-**Из этого руководства вы узнаете о следующем.**
-
-<!-- green checkmark -->
-> [!div class="checklist"]
-> * Использовать существующее приложение из руководства
-> * Добавление простой сущности для извлечения заданий из приложения
-> * Добавление списка фраз для усиления сигналов по словам, связанным с работой
-> * Train 
-> * Опубликовать 
-> * Получать намерения и сущности из конечной точки.
-
-[!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
-
-## <a name="use-existing-app"></a>Использование существующего приложения
-
-Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
-
-Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
-
-1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-composite-HumanResources.json).
-
-2. Импортируйте JSON-файл в новое приложение.
-
-3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `simple`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
-
-## <a name="simple-entity"></a>Простая сущность
-Простая сущность обнаруживает единую концепцию данных, содержащуюся в слове или фразе.
 
 Рассмотрите следующие высказывания чат-бота.
 
@@ -87,25 +77,38 @@ ms.locfileid: "53166274"
 
 После того как объекты помечены в примерах высказываний, необходимо добавить список фраз для увеличения сигнала простой сущности. Список фраз **не** используется в качестве точного совпадения и не обязательно содержит все возможные ожидаемые значения. 
 
+## <a name="import-example-app"></a>Импорт примера приложения
+
+1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/build-app/intentonly.json) из руководства намерений.
+
+2. Импортируйте JSON-файл в новое приложение.
+
+3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `simple`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе.
+
+## <a name="mark-entities-in-example-utterances-of-an-intent"></a>Маркировка сущностей в примерах высказываний намерения
+
 1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
-2. На странице **намерений** выберите намерение **ApplyForJob**. 
+1. На странице **намерений** выберите намерение **ApplyForJob**. 
 
-3. В выражении `I want to apply for the new accounting job` выберите `accounting`, введите `Job` в поле сверху всплывающего меню, а затем во всплывающем меню выберите **Create new entity** (Создать сущность). 
+1. В выражении `I want to apply for the new accounting job` выберите `accounting`, введите `Job` в поле сверху всплывающего меню, а затем во всплывающем меню выберите **Create new entity** (Создать сущность). 
 
     [![Снимок экрана LUIS с намерением ApplyForJob и выделенными шагами создания сущности](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png "Screenshot of LUIS with 'ApplyForJob' intent with create entity steps highlighted")](media/luis-quickstart-primary-and-secondary-data/hr-create-entity.png#lightbox)
 
-4. Во всплывающем окне проверьте имя и тип сущности, а затем выберите **Готово**.
+1. Во всплывающем окне проверьте имя и тип сущности, а затем выберите **Готово**.
 
     ![Создание модального диалога простой сущности с названием должности и простым типом](media/luis-quickstart-primary-and-secondary-data/hr-create-simple-entity-popup.png)
 
-5. Во фразе `Submit resume for engineering position` обозначьте слово `engineering` как сущность должности. Выберите слово `engineering`, а затем **Должность** во всплывающем меню. 
+1. В оставшихся высказываниях пометьте слова, связанные с заданием, с помощью сущности **Должность**, выбрав слово или фразу, а затем выбрав **Должность** в контекстном меню. 
 
     [![Снимок экрана LUIS с выделенной сущностью должности, используемой для добавления метки](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png "Screenshot of LUIS labeling job entity highlighted")](media/luis-quickstart-primary-and-secondary-data/hr-label-simple-entity.png#lightbox)
 
-    Все фразы помечены, но пять фраз недостаточно, чтобы обучить LUIS связанным с должностями словам и фразам. Нам не нужны дополнительные примеры должностей, использующих значение номера, так как используется сущность регулярного выражения. Нужно по крайней мере 15 дополнительных примеров должностей, являющихся словами или фразами. 
 
-6. Добавьте больше фраз и отметьте слова или фразы, связанные с должностями, в качестве сущности **Должность**. Типы должностей являются общими в службе по трудоустройству. Если нужны должности, связанные с определенной отраслью, слова должности должны отражать это. 
+## <a name="add-more-example-utterances-and-mark-entity"></a>Добавление дополнительных примеров высказываний и метки сущности
+
+Простые сущности нуждаются во многих примерах, чтобы иметь высокую достоверность прогнозирования. 
+ 
+1. Добавьте больше фраз и отметьте слова или фразы, связанные с должностями, в качестве сущности **Должность**. 
 
     |Фраза|Сущность должности|
     |:--|:--|
@@ -126,100 +129,64 @@ ms.locfileid: "53166274"
     |Моя краткая биография для получения должности профессора биологии прилагается.|профессор биологии|
     |Я хотел бы подать заявку на должность фотографа.|фотограф|git 
 
-## <a name="label-entity-in-example-utterances"></a>Добавление метки к сущности в примерах высказываний
-
-Добавление метки (или _маркировки_) к сущности позволяет LUIS определить, где сущность находится в примере высказывания.
+## <a name="mark-job-entity-in-other-intents"></a>Маркировка сущности должности в других намерениях
 
 1. Выберите **намерения** в меню слева.
 
-2. Выберите **GetJobInformation** из списка намерений. 
+1. Выберите **GetJobInformation** из списка намерений. 
 
-3. Обозначьте должности в примерах фраз:
+1. Метка должности в примере высказываний
 
-    |Фраза|Сущность должности|
-    |:--|:--|
-    |Есть ли должность для работы с базами данных?|databases|
-    |Ищу новую работу с обязанностями в бухгалтерском учете|учет|
-    |Какие должности доступны для старших инженеров?|старшие инженеры|
+    Если в одном намерении больше примеров высказываний, чем в другом, то это намерение имеет более высокую вероятность того, что оно является самым предсказуемым в тексте. 
 
-    Существуют и другие примеры фраз, но в них нет слов, связанных с должностью.
-
-## <a name="train"></a>Train
+## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Обучение приложения для проверки изменений намерения 
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
-## <a name="publish"></a>Опубликовать
+## <a name="publish-the-app-so-the-trained-model-is-queryable-from-the-endpoint"></a>Публикация приложения, чтобы в обученную модель можно было отправлять запросы из конечной точки
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-## <a name="get-intent-and-entities-from-endpoint"></a>Получение намерения и сущностей из конечной точки 
+## <a name="get-intent-and-entity-prediction-from-endpoint"></a>Получение намерения и прогнозирование сущности из конечной точки 
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
-2. Перейдите в конец URL-адреса и введите `Here is my c.v. for the programmer job`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должны быть возвращены фразы `ApplyForJob`.
+2. Перейдите в конец URL-адреса и введите `Here is my c.v. for the engineering job`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должны быть возвращены фразы `ApplyForJob`.
 
     ```json
     {
-      "query": "Here is my c.v. for the programmer job",
+      "query": "Here is my c.v. for the engineering job",
       "topScoringIntent": {
         "intent": "ApplyForJob",
-        "score": 0.9826467
+        "score": 0.98052007
       },
       "intents": [
         {
           "intent": "ApplyForJob",
-          "score": 0.9826467
+          "score": 0.98052007
         },
         {
           "intent": "GetJobInformation",
-          "score": 0.0218927357
-        },
-        {
-          "intent": "MoveEmployee",
-          "score": 0.007849265
-        },
-        {
-          "intent": "Utilities.StartOver",
-          "score": 0.00349470088
-        },
-        {
-          "intent": "Utilities.Confirm",
-          "score": 0.00348804821
+          "score": 0.03424581
         },
         {
           "intent": "None",
-          "score": 0.00319909188
-        },
-        {
-          "intent": "FindForm",
-          "score": 0.00222647213
-        },
-        {
-          "intent": "Utilities.Help",
-          "score": 0.00211193133
-        },
-        {
-          "intent": "Utilities.Stop",
-          "score": 0.00172086991
-        },
-        {
-          "intent": "Utilities.Cancel",
-          "score": 0.00138010911
+          "score": 0.0015820954
         }
       ],
       "entities": [
         {
-          "entity": "programmer",
+          "entity": "engineering",
           "type": "Job",
           "startIndex": 24,
-          "endIndex": 33,
-          "score": 0.5230502
+          "endIndex": 34,
+          "score": 0.668959737
         }
       ]
     }
     ```
     
-    LUIS находит правильное намерение (**ApplyForJob**) и извлекает правильную сущность (**Job**) со значением `programmer`.
+    LUIS находит правильное намерение (**ApplyForJob**) и извлекает правильную сущность (**Job**) со значением `engineering`.
 
 
 ## <a name="names-are-tricky"></a>Сложности с извлечением названия
@@ -229,51 +196,23 @@ ms.locfileid: "53166274"
 
 ```json
 {
-  "query": "This is the lead welder paperwork.",
+  "query": "This is the lead welder paperwork",
   "topScoringIntent": {
     "intent": "ApplyForJob",
-    "score": 0.468558252
+    "score": 0.860295951
   },
   "intents": [
     {
       "intent": "ApplyForJob",
-      "score": 0.468558252
+      "score": 0.860295951
     },
     {
       "intent": "GetJobInformation",
-      "score": 0.0102701457
-    },
-    {
-      "intent": "MoveEmployee",
-      "score": 0.009442534
-    },
-    {
-      "intent": "Utilities.StartOver",
-      "score": 0.00639619166
+      "score": 0.07265678
     },
     {
       "intent": "None",
-      "score": 0.005859333
-    },
-    {
-      "intent": "Utilities.Cancel",
-      "score": 0.005087704
-    },
-    {
-      "intent": "Utilities.Stop",
-      "score": 0.00315379258
-    },
-    {
-      "intent": "Utilities.Help",
-      "score": 0.00259344373
-    },
-    {
-      "intent": "FindForm",
-      "score": 0.00193389168
-    },
-    {
-      "intent": "Utilities.Confirm",
-      "score": 0.000420796918
+      "score": 0.00482481951
     }
   ],
   "entities": []
@@ -282,94 +221,76 @@ ms.locfileid: "53166274"
 
 Так как имя может быть любым, LUIS спрогнозирует сущности точнее, если у него есть список фраз, усиливающих сигнал.
 
-## <a name="to-boost-signal-add-phrase-list"></a>Добавление списка фраз для усиления сигнала
+## <a name="to-boost-signal-of-the-job-related-words-add-a-phrase-list-of-job-related-words"></a>Добавление списка фраз со словами, связанными с должностями для усиления сигнала слов, связанных с должностями
 
-Откройте файл [jobs-phrase-list.csv](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/quickstarts/job-phrase-list.csv) из репозитория GitHub примеров LUIS. Список содержит более тысячи слов и фраз, связанных с должностями. Ознакомьтесь со списком важных слов, связанных с должностями. Если слов или фраз нет в списке, добавьте собственные.
+Откройте [jobs-phrase-list.csv](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/quickstarts/job-phrase-list.csv) из репозитория GitHub примеров Azure. Список содержит более 1000 слов и фраз, связанных с должностями. Ознакомьтесь со списком важных слов, связанных с должностями. Если слов или фраз нет в списке, добавьте собственные.
 
 1. В разделе **Build** (Сборка) приложения LUIS и в меню **Improve app performance** (Повышение производительности приложения) выберите **Phrase lists** (Списки фраз).
 
-2. Выберите **Create new phrase list** (Создать список фраз). 
+1. Выберите **Create new phrase list** (Создать список фраз). 
 
-3. Присвойте списку фраз имя `Job` и скопируйте список из файла jobs-phrase-list.csv в текстовое поле **Значения**. Нажмите клавишу "ВВОД". 
+1. Присвойте списку фраз имя `JobNames` и скопируйте список из файла jobs-phrase-list.csv в текстовое поле **Значения**. Нажмите клавишу "ВВОД". 
 
     [![Снимок экрана, на котором показано всплывающее диалоговое окно для создания списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png "Screenshot of create new phrase list dialog pop-up")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-1.png#lightbox)
 
     Если вы хотите добавить в список фраз другие слова, просмотрите **Связанные значения** и добавьте те, что вам необходимы. 
 
-4. Выберите **Сохранить**, чтобы активировать список фраз.
+1. Выберите **Сохранить**, чтобы активировать список фраз.
 
     [![Снимок экрана, на котором показано всплывающее диалоговое окно для создания списка фраз со словами в области значений списка фраз](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png "Screenshot of create new phrase list dialog pop-up with words in phrase list values box")](media/luis-quickstart-primary-and-secondary-data/hr-create-phrase-list-2.png#lightbox)
 
-5. [Обучите](#train) и [опубликуйте](#publish) приложение еще раз, чтобы использовать список фраз.
+1. [Обучите](#train) и [опубликуйте](#publish) приложение еще раз, чтобы использовать список фраз.
 
-6. Сделайте повторный запрос к конечной точке с той же фразой: `This is the lead welder paperwork.`
+1. Сделайте повторный запрос к конечной точке с той же фразой: `This is the lead welder paperwork.`
 
     Ответ JSON содержит извлеченные сущности:
 
     ```json
-    {
-        "query": "This is the lead welder paperwork.",
-        "topScoringIntent": {
-            "intent": "ApplyForJob",
-            "score": 0.920025647
+      {
+      "query": "This is the lead welder paperwork.",
+      "topScoringIntent": {
+        "intent": "ApplyForJob",
+        "score": 0.983076453
+      },
+      "intents": [
+        {
+          "intent": "ApplyForJob",
+          "score": 0.983076453
         },
-        "intents": [
-            {
-            "intent": "ApplyForJob",
-            "score": 0.920025647
-            },
-            {
-            "intent": "GetJobInformation",
-            "score": 0.003800706
-            },
-            {
-            "intent": "Utilities.StartOver",
-            "score": 0.00299335527
-            },
-            {
-            "intent": "MoveEmployee",
-            "score": 0.0027167045
-            },
-            {
-            "intent": "None",
-            "score": 0.00259556063
-            },
-            {
-            "intent": "FindForm",
-            "score": 0.00224019377
-            },
-            {
-            "intent": "Utilities.Stop",
-            "score": 0.00200693542
-            },
-            {
-            "intent": "Utilities.Cancel",
-            "score": 0.00195913855
-            },
-            {
-            "intent": "Utilities.Help",
-            "score": 0.00162656687
-            },
-            {
-            "intent": "Utilities.Confirm",
-            "score": 0.0002851904
-            }
-        ],
-        "entities": [
-            {
-            "entity": "lead welder",
-            "type": "Job",
-            "startIndex": 12,
-            "endIndex": 22,
-            "score": 0.8295959
-            }
-        ]
+        {
+          "intent": "GetJobInformation",
+          "score": 0.0120766377
+        },
+        {
+          "intent": "None",
+          "score": 0.00248388131
+        }
+      ],
+      "entities": [
+        {
+          "entity": "lead welder",
+          "type": "Job",
+          "startIndex": 12,
+          "endIndex": 22,
+          "score": 0.8373154
+        }
+      ]
     }
     ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
+
+## <a name="related-information"></a>Связанные сведения
+
+* [Руководство 1. Создание пользовательского приложения для определения намерений пользователя](luis-quickstart-intents-only.md)
+* [Типы сущностей и их задачи в LUIS](luis-concept-entity-types.md) — основные сведения
+* [Признаки списков фраз в приложении LUIS](luis-concept-feature.md) — основные сведения
+* [Обучение активной версии приложения LUIS](luis-how-to-train.md)
+* [Как опубликовать предложение](luis-how-to-publish-app.md)
+* [Тестирование приложения LUIS на портале LUIS](luis-interactive-test.md)
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 

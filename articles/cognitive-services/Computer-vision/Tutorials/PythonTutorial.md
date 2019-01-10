@@ -1,5 +1,5 @@
 ---
-title: Руководство по API компьютерного зрения для Python
+title: Руководство. Выполнение операций с изображениями — Python
 titlesuffix: Azure Cognitive Services
 description: Узнайте о том, как использовать API компьютерного зрения с Python с помощью записных книжек Jupyter. Визуализируйте результаты с помощью популярных библиотек.
 services: cognitive-services
@@ -8,24 +8,25 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: computer-vision
 ms.topic: tutorial
-ms.date: 11/6/2018
+ms.date: 11/06/2018
 ms.author: kefre
-ms.openlocfilehash: 16054d19c1ce6f211ebd3e2f0bbc4d152a255dda
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.custom: seodec18
+ms.openlocfilehash: 55e5168c36eb16944142c2deaae9bc94d60d2fe4
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51276973"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53582020"
 ---
-# <a name="tutorial-computer-vision-api-python"></a>Руководство по API компьютерного зрения для Python
+# <a name="tutorial-computer-vision-api-python"></a>Руководство. API компьютерного зрения с Python
 
-В этом руководстве показано, как использовать API компьютерного зрения в Python и как визуализировать результаты с помощью популярных библиотек. Для работы с руководством используется Jupyter. Чтобы узнать, как приступить к работе с интерактивными записными книжками Jupyter Notebook, обратитесь к [документации по Jupyter](http://jupyter.readthedocs.io/en/latest/index.html).
+В этом руководстве показано, как использовать API компьютерного зрения в Python и как визуализировать результаты с помощью популярных библиотек. Для работы с руководством используется Jupyter. Чтобы узнать, как приступить к работе с интерактивными записными книжками Jupyter Notebook, обратитесь к [документации по Jupyter](https://jupyter.readthedocs.io/en/latest/index.html).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [Python 2.7 или 3.5+](https://www.python.org/downloads/).
 - Средство [PIP](https://pip.pypa.io/en/stable/installing/).
-- Установленная записная книжка [Jupyter Notebook](http://jupyter.org/install).
+- Установленная записная книжка [Jupyter Notebook](https://jupyter.org/install).
 
 ## <a name="open-the-tutorial-notebook-in-jupyter"></a>Открытие примера записной книжки в Jupyter 
 

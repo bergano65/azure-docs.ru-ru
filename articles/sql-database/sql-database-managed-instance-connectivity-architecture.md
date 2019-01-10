@@ -12,12 +12,12 @@ ms.author: srbozovi
 ms.reviewer: bonova, carlrab
 manager: craigg
 ms.date: 12/10/2018
-ms.openlocfilehash: 964f91f412645e141ca003d511480f6f6eb438a3
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: e69f6869911555730fe723b340e224c0d5a1e4bb
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53343312"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53536055"
 ---
 # <a name="azure-sql-database-managed-instance-connectivity-architecture"></a>Архитектура подключения к Управляемому экземпляру Базы данных SQL Azure
 
@@ -113,7 +113,10 @@ ms.locfileid: "53343312"
 
   > [!Note]
   > Несмотря на то, что обязательные правила безопасности входящего трафика разрешают трафик из _любого_ источника на портах 9000 9003, 1438, 1440, 1452, эти порты защищены с помощью встроенного брандмауэра. В этой [статье](sql-database-managed-instance-find-management-endpoint-ip-address.md) показано, как обнаружить IP-адрес конечной точки управления и проверить правила брандмауэра. 
-
+  
+  > [!Note]
+  > Если используется репликация транзакций в управляемом экземпляре и любая база данных в управляемом экземпляре используется как издатель или распространитель, порт 445 (исходящий TCP-порт) также должен быть открыт в правилах безопасности подсети для доступа к файловому ресурсу Azure.
+  
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения см. в статье  [Общие сведения об Управляемом экземпляре Базы данных SQL Azure (предварительная версия)](sql-database-managed-instance.md).

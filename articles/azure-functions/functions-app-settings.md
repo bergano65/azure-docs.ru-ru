@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: e8d880534a39651024b60ef10a9fbadb9e109a4e
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 336fe8241a65009e9e100dccd12d88f45df4751d
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53138251"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53999362"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -179,7 +179,7 @@ ms.locfileid: "53138251"
 
 |Ключ|Значение|ОПИСАНИЕ|
 |-|-|-|
-|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|Да|Вызовы с URL-адресом внутреннего сервера, который указывает на функцию в локальной Функции, больше не будут отправляться непосредственно в функцию, а вместо этого будут направляться во внешний интерфейс HTTP для приложения-функции|
+|AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|Да|Вызовы с URL-адресом внутреннего сервера, который указывает на функцию в локальном приложении-функции, больше не будут отправляться непосредственно в функцию, а вместо этого будут направляться во внешний интерфейс HTTP для приложения-функции|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|false|Это значение по умолчанию. Вызовы с URL-адреса внутреннего сервера, указывающего на функцию в локальном приложении-функции, будут перенаправляться непосредственно к этой Функции|
 
 

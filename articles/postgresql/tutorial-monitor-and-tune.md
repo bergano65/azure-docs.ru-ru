@@ -1,20 +1,19 @@
 ---
 title: Руководство по мониторингу и настройке базы данных Azure для PostgreSQL
 description: В этом руководстве описывается мониторинг и настройка базы данных Azure для PostgreSQL.
-services: postgresql
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: tutorial
 ms.date: 09/24/2018
-ms.openlocfilehash: ef8809afa2da36f44384d784e32532b7b121e3a9
-ms.sourcegitcommit: 3a7c1688d1f64ff7f1e68ec4bb799ba8a29a04a8
+ms.openlocfilehash: f05e0eef7680b08ce116cc0243d944f6a1db597c
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49379150"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53536447"
 ---
-# <a name="tutorial-monitor-and-tune-azure-database-for-postgresql"></a>Руководство. Мониторинг и настройка базы данных Azure для PostgreSQL
+# <a name="tutorial-monitor-and-tune-azure-database-for-postgresql"></a>Руководство. Мониторинг и настройка Базы данных Azure для PostgreSQL
 
 База данных Azure для PostgreSQL включает компоненты, которые помогут вам понять и улучшить производительность сервера. Из этого учебного курса вы узнаете следующее:
 > [!div class="checklist"]

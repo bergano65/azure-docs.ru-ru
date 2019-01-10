@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: article
 ms.date: 08/28/2018
 ms.author: pafarley
-ms.openlocfilehash: d1fa468874cdc51bad3421f700a69f3ffb268635
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.custom: seodec18
+ms.openlocfilehash: 8640d89c5fb9e38fc6c982e21147361ad690964a
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49342659"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53584451"
 ---
-# <a name="tutorial-build-an-image-processing-app---c35"></a>Руководство. Создание приложения для обработки изображений — C#
+# <a name="tutorial-build-an-image-processing-app---c35"></a>Руководство. Создание приложения для обработки изображений — C&#35;
 
 Изучите базовое приложение Windows, в котором используется API компьютерного зрения для оптического распознавания символов и создания интеллектуально обрезанных эскизов, а также для обнаружения, классификации, добавления тегов и описания визуальных признаков изображения, включая лица. Приведенный ниже пример позволяет отправить URL-адрес изображения или локально хранящийся файл. Вы можете использовать этот пример с открытым кодом в качестве шаблона для создания собственного приложения для Windows с использованием API компьютерного зрения и Windows Presentation Foundation (WPF), входящего в состав .NET Framework.
 
@@ -32,7 +33,7 @@ ms.locfileid: "49342659"
 Прежде чем исследовать пример приложения, убедитесь, что выполнены следующие предварительные требования:
 
 * У вас должна быть [Visual Studio 2015 или более поздней версии](https://visualstudio.microsoft.com/downloads/).
-* У вас должен быть ключ подписки для API компьютерного зрения. Получение ключа подписки описано в статье [Obtaining Subscription Keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
+* У вас должен быть ключ подписки для Компьютерного зрения. Получение ключа подписки описано в статье [How to obtain subscription keys](../Vision-API-How-to-Topics/HowToSubscribe.md) (Получение ключей подписки).
 
 ## <a name="get-the-sample-app"></a>Получение примера приложения
 
@@ -101,7 +102,7 @@ git clone --recurse-submodules https://github.com/Microsoft/Cognitive-Face-Windo
    > Корпорация Майкрософт получает переданные изображения и может использовать их для улучшения API компьютерного зрения и связанных с ним служб. Отправляя изображение, вы подтверждаете, что выполнили наши [правила поведения разработчиков](https://azure.microsoft.com/support/legal/developer-code-of-conduct/).
 
    На снимке экрана показана страница, предоставленная для сценария анализа изображений после анализа примера изображения.
-   ![Страница сценария анализа изображений](../Images/Analyze_Image_Example.PNG)
+   ![Снимок экрана страницы "Анализ изображений"](../Images/Analyze_Image_Example.PNG)
 
 ## <a name="explore-the-sample-app"></a>Изучите пример приложения
 

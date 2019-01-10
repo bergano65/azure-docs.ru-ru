@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.date: 04/24/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: dddb42f53d4bb59113df937799bd4de10d31491c
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 5102f2b43819c279d0087754b29a616812e5a5f2
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43338785"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53556566"
 ---
-# <a name="walkthrough-integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-an-orchestration-step"></a>Пошаговое руководство. Интеграция обмена утверждениями REST API в пути взаимодействия пользователя Azure AD B2C как этап оркестрации
+# <a name="walkthrough-integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-an-orchestration-step"></a>Пошаговое руководство Интеграция обмена утверждениями REST API в пути взаимодействия пользователя Azure AD B2C как этап оркестрации
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
@@ -33,7 +33,7 @@ ms.locfileid: "43338785"
 
 Полученные утверждения могут позже использоваться для изменения процедуры выполнения.
 
-Взаимодействие можно также реализовать как профиль проверки. Дополнительные сведения см. в статье [Пошаговое руководство. Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных](active-directory-b2c-rest-api-validation-custom.md).
+Взаимодействие можно также реализовать как профиль проверки. Дополнительные сведения см. в статье [Пошаговое руководство. Интеграция обмена утверждениями REST API в пути взаимодействия пользователей Azure AD B2C как проверка входных данных](active-directory-b2c-rest-api-validation-custom.md).
 
 В сценарии (когда пользователь изменяет профиль) выполняются следующие действия:
 
@@ -45,9 +45,9 @@ ms.locfileid: "43338785"
 
 - Клиент Azure AD B2C, необходимый для регистрации или входа с использованием локальной учетной записи, как описано в статье [Azure Active Directory B2C. Приступая к работе с настраиваемыми политиками](active-directory-b2c-get-started-custom.md).
 - Конечная точка REST API, с которой устанавливается взаимодействие. В этом пошаговом руководстве в качестве примера используется простой веб-перехватчик приложения-функции Azure.
-- *Мы рекомендуем* ознакомиться с [пошаговым руководством по использованию обмена утверждениями REST API как проверки](active-directory-b2c-rest-api-validation-custom.md).
+- *Рекомендуемые*: ознакомиться с [пошаговым руководством по использованию обмена утверждениями REST API как проверки](active-directory-b2c-rest-api-validation-custom.md).
 
-## <a name="step-1-prepare-the-rest-api-function"></a>Шаг 1. Подготовка функции REST API
+## <a name="step-1-prepare-the-rest-api-function"></a>Шаг 1. Подготовка функции REST API
 
 > [!NOTE]
 > В рамках этой статьи настройка функций REST API не рассматривается. [Функции Azure](https://docs.microsoft.com/azure/azure-functions/functions-reference) предоставляют отличный набор инструментов для создания служб RESTful в облаке.
@@ -79,7 +79,7 @@ return request.CreateResponse<ResponseContent>(
 
 С помощью приложения-функции Azure можно легко получить URL-адрес функции, который включает идентификатор определенной функции. В этом случае URL-адрес — https://wingtipb2cfuncs.azurewebsites.net/api/LookUpLoyaltyWebHook?code=MQuG7BIE3eXBaCZ/YCfY1SHabm55HEphpNLmh1OP3hdfHkvI2QwPrw==. Вы можете его использовать для тестирования.
 
-## <a name="step-2-configure-the-restful-api-claims-exchange-as-a-technical-profile-in-your-trustframeworextensionsxml-file"></a>Шаг 2. Настройка обмена утверждениями RESTful API как технического профиля в файле TrustFrameworkExtensions.xml
+## <a name="step-2-configure-the-restful-api-claims-exchange-as-a-technical-profile-in-your-trustframeworextensionsxml-file"></a>Шаг 2. Настройка обмена утверждениями RESTful API как технического профиля в файле TrustFrameworkExtensions.xml
 
 Технический профиль представляет собой полную конфигурацию обмена, заданную с помощью службы RESTful. Откройте файл TrustFrameworkExtensions.xml и добавьте следующий фрагмент XML-кода в элемент `<ClaimsProvider>`.
 
@@ -97,6 +97,7 @@ return request.CreateResponse<ResponseContent>(
                 <Item Key="ServiceUrl">https://wingtipb2cfuncs.azurewebsites.net/api/LookUpLoyaltyWebHook?code=MQuG7BIE3eXBaCZ/YCfY1SHabm55HEphpNLmh1OP3hdfHkvI2QwPrw==</Item>
                 <Item Key="AuthenticationType">None</Item>
                 <Item Key="SendClaimsIn">Body</Item>
+                <Item Key="AllowInsecureAuthInProduction">true</Item>
             </Metadata>
             <InputClaims>
                 <InputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="email" />
@@ -114,7 +115,7 @@ return request.CreateResponse<ResponseContent>(
 
 Элемент `<OutputClaims>` определяет утверждения, которые инфраструктура процедур идентификации ожидает получить из службы REST. Несмотря на количество полученных утверждений, инфраструктура процедур идентификации будет использовать только те, которые указаны здесь. В этом примере утверждение, полученное как `city`, будет сопоставлено с утверждением инфраструктуры процедур идентификации `city`.
 
-## <a name="step-3-add-the-new-claim-city-to-the-schema-of-your-trustframeworkextensionsxml-file"></a>Шаг 3. Добавление нового утверждения `city` в схему файла TrustFrameworkExtensions.xml
+## <a name="step-3-add-the-new-claim-city-to-the-schema-of-your-trustframeworkextensionsxml-file"></a>Шаг 3. Добавление нового утверждения `city` в схему файла TrustFrameworkExtensions.xml
 
 Утверждение `city` еще нигде не определено в схеме. Поэтому добавьте определение внутрь элемента `<BuildingBlocks>`. Этот элемент можно найти в начале файла TrustFrameworkExtensions.xml.
 
@@ -133,7 +134,7 @@ return request.CreateResponse<ResponseContent>(
 </BuildingBlocks>
 ```
 
-## <a name="step-4-include-the-rest-service-claims-exchange-as-an-orchestration-step-in-your-profile-edit-user-journey-in-trustframeworkextensionsxml"></a>Шаг 4. Включение обмена утверждениями службы REST как этап оркестрации в пути взаимодействия пользователя для изменения профиля в файле TrustFrameworkExtensions.xml
+## <a name="step-4-include-the-rest-service-claims-exchange-as-an-orchestration-step-in-your-profile-edit-user-journey-in-trustframeworkextensionsxml"></a>Шаг 4. Включение обмена утверждениями службы REST как этап оркестрации в пути взаимодействия пользователя для изменения профиля в файле TrustFrameworkExtensions.xml
 
 Добавьте этап в путь взаимодействия пользователя для изменения профиля после аутентификации пользователя (этапы оркестрации 1–4 в приведенном ниже XML-коде) и предоставления обновленных сведений о профиле (шаг 5).
 
@@ -211,7 +212,7 @@ return request.CreateResponse<ResponseContent>(
 </UserJourney>
 ```
 
-## <a name="step-5-add-the-claim-city-to-your-relying-party-policy-file-so-the-claim-is-sent-to-your-application"></a>Шаг 5. Добавление утверждения `city` в файл политики проверяющей стороны для отправки утверждения приложению
+## <a name="step-5-add-the-claim-city-to-your-relying-party-policy-file-so-the-claim-is-sent-to-your-application"></a>Шаг 5. Добавление утверждения `city` в файл политики проверяющей стороны для отправки утверждения приложению
 
 Необходимо изменить файл проверяющей стороны ProfileEdit.xml, а также элемент `<TechnicalProfile Id="PolicyProfile">` для добавления `<OutputClaim ClaimTypeReferenceId="city" />`.
 
@@ -232,8 +233,8 @@ return request.CreateResponse<ResponseContent>(
 
 Перезапишите существующие версии политики.
 
-1.  (Необязательно) Прежде чем продолжить, сохраните существующую версию файла расширений (скачав ее). Чтобы не усложнять работу, не рекомендуется передавать несколько версий файла расширений.
-2.  (Необязательно) Переименуйте новую версию идентификатора политики для файла изменения политики, изменив `PolicyId="B2C_1A_TrustFrameworkProfileEdit"`.
+1.  (Необязательно.) Прежде чем продолжить, сохраните существующую версию файла расширений (скачав ее). Чтобы не усложнять работу, не рекомендуется передавать несколько версий файла расширений.
+2.  (Необязательно.) Переименуйте новую версию идентификатора политики для файла изменения политики, изменив `PolicyId="B2C_1A_TrustFrameworkProfileEdit"`.
 3.  Передайте файл расширений.
 4.  Отправьте файл проверяющей стороны для изменения политики.
 5.  Используйте параметр **Запустить сейчас**, чтобы проверить политику. Просмотрите маркер, возвращаемый инфраструктурой процедур идентификации в приложение.

@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: sngun
-ms.openlocfilehash: f0f0308233334e2662704e818c765c625a80019d
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 1d013f2cdd9f33f55d579638386355e5cbaccb7e
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52878340"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53714956"
 ---
 # <a name="serverless-database-computing-using-azure-cosmos-db-and-azure-functions"></a>Обработка данных бессерверных баз данных с помощью Azure Cosmos DB и Функций Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "52878340"
 * Можно привязать функцию к контейнеру Azure Cosmos DB с помощью **выходной привязки**. Выходные привязки записывают данные в контейнер после завершения выполнения функции.
 
 > [!NOTE]
-> В настоящее время триггер, входные и выходные привязки Azure Cosmos DB поддерживаются для использования только с API SQL. Для всех других API Azure Cosmos DB доступ к базе данных из функции должен осуществляться с использованием статического клиента для API, включая API MongoDB, API Cassandra, API Gremlin и API таблиц.
+> В настоящее время триггер, входные и выходные привязки Azure Cosmos DB поддерживаются для использования только с API SQL. Для всех других API Azure Cosmos DB доступ к базе данных из функции должен осуществляться с использованием статического клиента для API.
 
 
 На следующей схеме показаны все три способа интеграции. 

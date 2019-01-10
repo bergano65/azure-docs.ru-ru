@@ -15,12 +15,12 @@ ms.devlang: powershell
 ms.topic: sample
 ms.date: 11/07/2017
 ms.author: tamram
-ms.openlocfilehash: f6f421e780bfbb7922a4b11f758330f2a9a0b84b
-ms.sourcegitcommit: 9a61faf3463003375a53279e3adce241b5700879
+ms.openlocfilehash: b41366b89a0598d52ae973e2a6d27e60ed548765
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2017
-ms.locfileid: "24814581"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53634462"
 ---
 # <a name="calculate-the-size-of-a-blob-storage-container"></a>Вычисление размера контейнера в хранилище BLOB-объектов
 
@@ -42,17 +42,17 @@ ms.locfileid: "24814581"
 Выполните команду ниже, чтобы удалить группу ресурсов, контейнер и все связанные ресурсы.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name bloblisttestrg
+Remove-AzResourceGroup -Name bloblisttestrg
 ```
 
 ## <a name="script-explanation"></a>Описание скрипта
 
 Ниже приведены команды, на основе которых скрипт вычисляет размер контейнера в хранилище BLOB-объектов. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help | Заметки |
+| Get-Help | Примечания |
 |---|---|
-| [Get-AzureRmStorageAccount](/powershell/module/azurerm.storage/get-azurermstorageaccount) | Возвращает определенную учетную запись хранения или все учетные записи хранения в группе ресурсов или подписке. |
-| [Get-AzureStorageBlob](/powershell/module/azure.storage/get-azurestorageblob) | Возвращает список больших двоичных объектов в контейнере. ||
+| [Get-AzStorageAccount](/powershell/module/az.storage/get-azstorageaccount) | Возвращает определенную учетную запись хранения или все учетные записи хранения в группе ресурсов или подписке. |
+| [Get-AzStorageBlob](/powershell/module/azure.storage/get-AzStorageblob) | Возвращает список больших двоичных объектов в контейнере. ||
 
 ## <a name="next-steps"></a>Дополнительная информация
 

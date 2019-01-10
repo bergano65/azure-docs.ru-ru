@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.author: ramamill
 ms.date: 12/12/2018
-ms.openlocfilehash: 748f4e56b4b7fa52928f8f6507960ec35b5fe6e5
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: fef0cfd05fe0d44966cbb9f15ba1148f8473207d
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53314403"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53789913"
 ---
 # <a name="troubleshoot-mobility-service-push-installation-issues"></a>Устранение неполадок с принудительной установкой службы Mobility Service
 
@@ -135,9 +135,8 @@ ms.locfileid: "53314403"
 
 ## <a name="unsupported-operating-systems"></a>Неподдерживаемая операционная система
 
-Еще одной частой причиной сбоя может быть неподдерживаемая операционная система. Убедитесь, что используете поддерживаемую версию операционной системы или ядра, для успешной установки службы Mobility Service.
-
-Чтобы узнать, какие операционные системы поддерживаются службой Azure Site Recovery, см. [таблицу поддержки](vmware-physical-azure-support-matrix.md#replicated-machines).
+Еще одной частой причиной сбоя может быть неподдерживаемая операционная система. Убедитесь, что используете поддерживаемую версию операционной системы или ядра, для успешной установки службы Mobility Service. Избегайте использования закрытого исправления.
+Чтобы просмотреть полный список версий операционных систем и ядра, которые поддерживаются службой Azure Site Recovery, см. [таблицу поддержки](vmware-physical-azure-support-matrix.md#replicated-machines).
 
 ## <a name="boot-and-system-partitions--volumes-are-not-the-same-disk-errorid-95309"></a>Загрузочные и системные разделы или тома находятся на разных дисках (код ошибки: 95309)
 
@@ -146,6 +145,10 @@ ms.locfileid: "53314403"
 ## <a name="system-partition-on-multiple-disks-errorid-95313"></a>Системный раздел на нескольких дисках (код ошибки: 95313)
 
 До версии 9.20 конфигурация, в которой корневой раздел или том расположен на нескольких дисках, не поддерживалась. Начиная с [версии 9.20](https://support.microsoft.com/en-in/help/4478871/update-rollup-31-for-azure-site-recovery) такая конфигурация поддерживается. Используйте последнюю версию для поддержки этой возможности.
+
+## <a name="grub-uuid-failure-errorid-95320"></a>Сбой GRUB UUID (код ошибки: 95320)
+
+Если GRUB на исходном компьютере использует имя устройства вместо UUID, происходит сбой установки агента мобильности. Обратитесь к администратору системы, чтобы внести изменения в файл GRUB.
 
 ## <a name="lvm-support-from-920-version"></a>Поддержка диспетчера логических томов (LVM) начиная с версии 9.20
 

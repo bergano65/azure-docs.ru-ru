@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 08/27/2018
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: beda9fa096dd8308822a5cd5a816b569712b8c05
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 9945b0aad32fe9abc6a51132a287da10f1b28daa
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53086093"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53557756"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-linux-x64"></a>Установка среды выполнения Azure IoT Edge в Linux (x64)
 
@@ -206,7 +206,39 @@ sudo iotedge list
 
 Если в вашей сети используется прокси-сервер, выполните действия, описанные в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md).
 
+## <a name="uninstall-iot-edge"></a>Удаление IoT Edge
+
+Если вы хотите удалить установку IoT Edge с устройства Linux, используйте следующие команды из командной строки. 
+
+Удалите среду выполнения IoT Edge. 
+
+```bash
+sudo apt-get remove --purge iotedge
+```
+
+При удалении среды выполнения IoT Edge созданные с ее помощью контейнеры остановятся, но будут по-прежнему храниться на устройстве. Просмотрите все контейнеры, чтобы увидеть, какие из них остаются. 
+
+```bash
+sudo docker ps -a
+```
+
+Удалите контейнеры с устройства, включая два контейнера в среде выполнения. 
+
+```bash
+sudo docker rm -f <container name>
+```
+
+Наконец, удалите среду выполнения контейнера с устройства. 
+
+```bash 
+sudo apt-get remove --purge moby-cli
+sudo apt-get remove --purge moby-engine
+```
+
 ## <a name="next-steps"></a>Дополнительная информация
+
+Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
 
 Если вам не удается установить среду выполнения Edge, перейдите на страницу со сведениями об [устранении неполадок](troubleshoot.md).
 
+Чтобы обновить существующую установку до последней версии IoT Edge, см. раздел [Обновление управляющей программы безопасности и среды выполнения IoT Edge](how-to-update-iot-edge.md).

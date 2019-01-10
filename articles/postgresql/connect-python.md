@@ -1,22 +1,19 @@
 ---
 title: Подключение к базе данных Azure для PostgreSQL с помощью Python
 description: В этом кратком руководстве представлен пример кода Python, который можно использовать для подключения к базе данных Azure для PostgreSQL и запроса данных из нее.
-services: postgresql
 author: rachel-msft
 ms.author: raagyema
-manager: kfile
-editor: jasonwhowell
 ms.service: postgresql
 ms.custom: mvc, devcenter
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 02/28/2018
-ms.openlocfilehash: 557d4217819449cd0513d4a21e331e660e37037b
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: eb6b23d8f8c476ba41bea918456fdf7fb9782920
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49987687"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53541138"
 ---
 # <a name="azure-database-for-postgresql-use-python-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: подключение и запрос данных с помощью Python
 Это краткое руководство демонстрирует, как использовать [Python](https://python.org) для подключения к базе данных Azure для PostgreSQL. Здесь также используются инструкции по использованию инструкций SQL для вставки, обновления и удаления данных в базе данных с платформ Windows, Mac OS и Ubuntu Linux. В этой статье предполагается, что у вас уже есть опыт разработки на Python и вы только начали работу с базой данных Azure для PostgreSQL.
@@ -66,7 +63,7 @@ ms.locfileid: "49987687"
 -  Чтобы запустить код, введите команду Python, за которой следует имя файла, например `Python postgres.py`
 
 > [!NOTE]
-> Начиная с Python версии 3, при выполнении приведенных ниже фрагментов кода может появиться ошибка `SyntaxError: Missing parentheses in call to 'print'`. В этом случае замените каждый вызов команды `print "string"` вызовом функции в скобках, например `print("string")`.
+> Начиная с версии Python 3, при выполнении следующих блоков кода может появиться ошибка `SyntaxError: Missing parentheses in call to 'print'`. Если это произойдет, замените каждый вызов к команде `print "string"` вызовом функции, используя скобки, например `print("string")`.
 
 ## <a name="connect-create-table-and-insert-data"></a>Подключение, создание таблицы и вставка данных
 Используйте указанный ниже код для подключения и загрузки данных с помощью функции [psycopg2.connect](http://initd.org/psycopg/docs/connection.html) с инструкцией SQL **INSERT**. Функция [cursor.execute](http://initd.org/psycopg/docs/cursor.html#execute) используется для выполнения SQL-запроса к базе данных PostgreSQL. Замените значения параметров host, dbname, user и password значениями, указанными при создании сервера и базы данных.

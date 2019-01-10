@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/21/2018
-ms.openlocfilehash: 2ae11afe1ecbe500a4851aab6d56e612fbe79ee6
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: b7cde3a8990a51e95a8ce9ad85bca524d5669e0c
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52976750"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53721127"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-apache-hadoop-in-azure-hdinsight"></a>Использование Azure Data Lake Storage 2-го поколения с Apache Hadoop в Azure HDInsight
 
@@ -45,7 +45,7 @@ Azure HDInsight использует управляемые удостовере
 
 Ранее драйвер файловой системы Hadoop преобразовывал все операции файловой системы в вызовы REST API службы хранилища Azure на стороне клиента, а затем вызывал REST API. Это преобразование на стороне клиента привело к нескольким вызовам REST API на одну операцию файловой системы, например переименование файла. В ABFS определенная логика файловой системы Hadoop перемещена со стороны клиента на сторону сервера. Теперь API ADLS 2-го поколения выполняется параллельно с API BLOB-объектов. Такая миграция повышает производительность, так как теперь общие операции файловой системы Hadoop выполняются с помощью одного вызова REST API.
 
-Дополнительные сведения см. в [The Azure Blob Filesystem driver (ABFS): A dedicated Azure Storage driver for Hadoop](../storage/data-lake-storage/abfs-driver.md) (Драйвер файловой системы BLOB-объектов Azure (ABFS) — выделенный драйвер службы хранилища Azure Storage для Hadoop).
+Дополнительные сведения см. в [The Azure Blob Filesystem driver (ABFS): выделенный драйвер службы хранилища Azure для Apache Hadoop](../storage/data-lake-storage/abfs-driver.md).
 
 ### <a name="adls-gen-2-uri-scheme"></a>Схема универсального кода ресурса ADLS 2-го поколения
 
@@ -68,7 +68,7 @@ abfss://myfilesystempath@myaccount.dfs.core.windows.net/example/jars/hadoop-mapr
 abfss:///example/jars/hadoop-mapreduce-examples.jar /example/jars/hadoop-mapreduce-examples.jar
 ```
 
-> [!Note]
+> [!NOTE]  
 > В кластерах HDInsight версий 2.1 и 1.6 файл называется `hadoop-examples.jar`. При работе с файлами вне HDInsight большинство программ не распознают формат ABFS и вместо этого ожидают формат базового пути, например `example/jars/hadoop-mapreduce-examples.jar`.
 
 Дополнительные сведения см. в статье [Use the Azure Data Lake Storage Gen2 URI](../storage/data-lake-storage/introduction-abfs-uri.md) (Использование универсального кода ресурса в Azure Data Lake Storage 2-го поколения).

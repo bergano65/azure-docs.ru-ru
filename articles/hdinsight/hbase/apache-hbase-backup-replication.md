@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: ashishth
-ms.openlocfilehash: 568d63f984980e91b4dc059211dcf0eaceb73820
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: d7be248e49baf4e7fd10d6b37df1473e92ccfce7
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53164234"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53651730"
 ---
 # <a name="set-up-backup-and-replication-for-apache-hbase-and-apache-phoenix-on-hdinsight"></a>Настройка резервного копирования и репликации Apache HBase и Apache Phoenix в HDInsight
 
@@ -26,7 +26,7 @@ Apache HBase поддерживает несколько способов защ
 * Моментальные снимки
 * Репликация
 
-> [!NOTE]
+> [!NOTE]  
 > Apache Phoenix хранит метаданные в таблицах HBase. За счет этого при резервном копировании таблиц системного каталога HBase также создаются резервные копии метаданных.
 
 В разделах ниже описаны сценарии использования каждого из этих подходов.
@@ -35,7 +35,7 @@ Apache HBase поддерживает несколько способов защ
 
 При использовании этого подхода копируются все данные HBase. В этом случае выбирать определенные подмножества семейств столбцов или таблиц нельзя. Последующие подходы предоставляют более широкие возможности управления.
 
-HBase в HDInsight использует хранилище по умолчанию, выбранное при создании кластера. Это могут быть большие двоичные объекты службы хранилища Azure или Azure Data Lake Store. В любом случае HBase хранит файлы данных и метаданных по следующему пути:
+HBase в HDInsight использует хранилище по умолчанию, выбранное при создании кластера. Это могут быть большие двоичные объекты службы хранилища Azure или Azure Data Lake Storage. В любом случае HBase хранит файлы данных и метаданных по следующему пути:
 
     /hbase
 
@@ -45,7 +45,7 @@ HBase в HDInsight использует хранилище по умолчани
     wasbs://<containername>@<accountname>.blob.core.windows.net/hbase
     ```
 
-* В Azure Data Lake Store папка `hbase` находится по корневому пути, указанному во время подготовки кластера: Обычно этот путь к корневому каталогу имеет папку `clusters` с вложенной папкой, имя которой совпадает с кластером HDInsight:
+* В Azure Data Lake Storage папка `hbase` находится по корневому пути, указанному во время подготовки кластера: Обычно этот путь к корневому каталогу имеет папку `clusters` с вложенной папкой, имя которой совпадает с кластером HDInsight:
 
     ```
     /clusters/<clusterName>/hbase
@@ -57,7 +57,7 @@ HBase в HDInsight использует хранилище по умолчани
 
 * Создайте экземпляр HDInsight, указывающий на текущее место хранения. Созданный экземпляр будет содержать все имеющиеся данные.
 
-* Скопируйте папку `hbase` в другой контейнер больших двоичных объектов службы хранилища Azure или другое расположение Data Lake Store, а затем запустите новый кластер с этими данными. Для службы хранилища Azure используйте служебную программу [AzCopy](../../storage/common/storage-use-azcopy.md), а для Data Lake Store — [AdlCopy](../../data-lake-store/data-lake-store-copy-data-azure-storage-blob.md).
+* Скопируйте папку `hbase` в другой контейнер больших двоичных объектов службы хранилища Azure или другое расположение Data Lake Storage, а затем запустите новый кластер с этими данными. Для службы хранилища Azure используйте служебную программу [AzCopy](../../storage/common/storage-use-azcopy.md), а для Data Lake Storage — [AdlCopy](../../data-lake-store/data-lake-store-copy-data-azure-storage-blob.md).
 
 ## <a name="export-then-import"></a>Экспорт и импорт
 
@@ -75,7 +75,7 @@ HBase в HDInsight использует хранилище по умолчани
 
     wasbs://<containername>@<accountname>.blob.core.windows.net/<path>
 
-В Azure Data Lake Store используется следующий синтаксис:
+В Azure Data Lake Storage используется следующий синтаксис.
 
     adl://<accountName>.azuredatalakestore.net:443/<path>
 
@@ -117,7 +117,7 @@ HBase в HDInsight использует хранилище по умолчани
 
 CopyTable сканирует все содержимое исходной таблицы, которое нужно скопировать в целевую таблицу. Это может привести к снижению производительности кластера HBase.
 
-> [!NOTE]
+> [!NOTE]  
 > Автоматизировать копирование данных между таблицами можно с помощью скрипта `hdi_copy_table.sh` в репозитории со [служебными программами HBase Azure](https://github.com/Azure/hbase-utils/tree/master/replication) в GitHub.
 
 ### <a name="manually-collect-the-apache-zookeeper-quorum-list"></a>Сбор списка кворума Apache ZooKeeper вручную

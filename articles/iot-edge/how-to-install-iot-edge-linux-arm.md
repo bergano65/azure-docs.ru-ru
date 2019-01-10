@@ -7,14 +7,14 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 services: iot-edge
 ms.topic: conceptual
-ms.date: 08/27/2018
+ms.date: 12/10/2018
 ms.author: kgremban
-ms.openlocfilehash: ccd38dd7570dc451a1a5b87163bfdd7aea51dad5
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: dbe9f18f5a38284e2b263d636656c88b1743d7ea
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51567440"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555648"
 ---
 # <a name="install-azure-iot-edge-runtime-on-linux-arm32v7armhf"></a>Установка среды выполнения Azure IoT Edge в Linux (ARM32v7/armhf)
 
@@ -76,7 +76,7 @@ sudo apt-get install -f
 
 Одно устройство IoT Edge можно подготовить к работе вручную, используя строку подключения устройства, предоставленную Центром Интернета вещей. Вы также можете использовать службу подготовки устройств, что удобно, если нужно автоматически подготовить несколько устройств. В зависимости от выбранного способа подготовки выберите соответствующий скрипт установки. 
 
-### <a name="option-1-manual-provisioning"></a>Вариант 1. Подготовка вручную
+### <a name="option-1-manual-provisioning"></a>Вариант 1. Подготовка вручную
 
 Чтобы вручную подготовить устройство, вам необходимо предоставить ему [​​строку подключения устройства](how-to-register-device-portal.md), которую вы можете создать, зарегистрировав новое устройство в Центре Интернета вещей.
 
@@ -111,7 +111,7 @@ sudo nano /etc/iotedge/config.yaml
 sudo systemctl restart iotedge
 ```
 
-### <a name="option-2-automatic-provisioning"></a>Вариант 2. Автоматическая подготовка
+### <a name="option-2-automatic-provisioning"></a>Вариант 2. Автоматическая подготовка
 
 Для автоматической подготовки устройства [настройте службу подготовки устройств и получите идентификатор регистрации устройства](how-to-auto-provision-simulated-device-linux.md). Автоматическая подготовка работает только с устройствами, которые содержат микросхему доверенного платформенного модуля (TPM). Например, устройства Raspberry Pi не поставляются с TPM по умолчанию. 
 
@@ -175,6 +175,39 @@ sudo iotedge list
 
 Если в вашей сети используется прокси-сервер, выполните действия, описанные в статье [Настройка устройства IoT Edge для обмена данными через прокси-сервер](how-to-configure-proxy-support.md).
 
+## <a name="uninstall-iot-edge"></a>Удаление IoT Edge
+
+Если вы хотите удалить установку IoT Edge с устройства Linux, используйте следующие команды из командной строки. 
+
+Удалите среду выполнения IoT Edge. 
+
+```bash
+sudo apt-get remove --purge iotedge
+```
+
+При удалении среды выполнения IoT Edge созданные с ее помощью контейнеры остановятся, но будут по-прежнему храниться на устройстве. Просмотрите все контейнеры, чтобы увидеть, какие из них остаются. 
+
+```bash
+sudo docker ps -a
+```
+
+Удалите контейнеры с устройства, включая два контейнера в среде выполнения. 
+
+```bash
+sudo docker rm -f <container name>
+```
+
+Наконец, удалите среду выполнения контейнера с устройства. 
+
+```bash 
+sudo apt-get remove --purge moby-cli
+sudo apt-get remove --purge moby-engine
+```
+
 ## <a name="next-steps"></a>Дополнительная информация
 
+Теперь, когда подготовлено устройство IoT Edge и установлена среда выполнения, вы можете [развернуть модули IoT Edge](how-to-deploy-modules-portal.md).
+
 Если вам не удается установить среду выполнения IoT Edge надлежащим образом, см. страницу [со сведениями об устранении неполадок](troubleshoot.md#stability-issues-on-resource-constrained-devices).
+
+Чтобы обновить существующую установку до последней версии IoT Edge, см. раздел [Обновление управляющей программы безопасности и среды выполнения IoT Edge](how-to-update-iot-edge.md).

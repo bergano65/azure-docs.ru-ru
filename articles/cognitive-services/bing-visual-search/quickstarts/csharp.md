@@ -1,7 +1,7 @@
 ---
-title: 'Краткое руководство: создание запроса для визуального поиска, C# — Визуальный поиск Bing'
+title: Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API визуального поиска Bing и C#
 titleSuffix: Azure Cognitive Services
-description: В этой статье показано, как передать изображение в API Bing для наглядного поиска и получить о нем аналитические сведения.
+description: Узнайте, как отправить изображение в API визуального поиска Bing и получить аналитические сведения об этом изображении.
 services: cognitive-services
 author: swhite-msft
 manager: cgronlun
@@ -10,178 +10,97 @@ ms.component: bing-visual-search
 ms.topic: quickstart
 ms.date: 5/16/2018
 ms.author: scottwhi
-ms.openlocfilehash: 2f22c240eedf9a720912e96bc8f3c7ac269c1bc7
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: f8a9602248ce579431622b11471eba14c5a7035e
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52441185"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53742139"
 ---
-# <a name="quickstart-your-first-bing-visual-search-query-in-c"></a>Краткое руководство: первый запрос для API визуального поиска Bing на C#
+# <a name="quickstart-get-image-insights-using-the-bing-visual-search-rest-api-and-c"></a>Краткое руководство. Получение аналитических сведений об изображениях с помощью REST API визуального поиска Bing и C#
 
-API Bing для наглядного поиска возвращает сведения об изображении, которое вы предоставляете. Изображение можно предоставить с помощью URL-адреса изображения, токена аналитики или через отправку изображения. Сведения об этих параметрах см. в статье [What is Bing Visual Search API?](../overview.md) (Что такое API Bing для наглядного поиска?) В этой статье показано, как отправлять изображения. Отправка изображения может быть полезна в сценариях с использованием мобильных устройств, когда вы фотографируете какую-то достопримечательность и получаете сведения о ней. Например, аналитические сведения могут содержать любопытные факты об этой достопримечательности. 
-
-При отправке локального изображения отображаются данные формы, которые необходимо включить в текст запроса POST. Эти данные формы должны содержать заголовок Content-Disposition. Его параметру `name` необходимо присвоить значение "image", а для параметра `filename` можно задать любую строку. Содержимым формы является двоичный файл изображения. Максимально допустимый размер отправляемого изображения — 1 МБ. 
-
-```
---boundary_1234-abcd
-Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
-
-ÿØÿà JFIF ÖÆ68g-¤CWŸþ29ÌÄøÖ‘º«™æ±èuZiÀ)"óÓß°Î= ØJ9á+*G¦...
-
---boundary_1234-abcd--
-```
-
-В этой статье описано простое консольное приложение, которое отправляет запрос к API Bing для наглядного поиска и отображает результаты поиска в формате JSON. Хотя это приложение написано на C#, API является веб-службой RESTful, совместимой с любым языком программирования, который может выполнять HTTP-запросы и анализировать JSON. 
-
-В примере программы используются только классы .NET Core. Он выполняется в Windows с помощью среды CLR .NET, а также в Linux или macOS с помощью [Mono](http://www.mono-project.com/).
-
+В этом кратком руководстве вы узнаете, как сделать первый вызов API визуального поиска Bing и просмотреть результаты поиска. Это простое приложение C# отправляет изображение в API и отображает возвращенные данные о нем.
 
 ## <a name="prerequisites"></a>Предварительные требования
-Для выполнения действий, описанных в этом кратком руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
 
-Чтобы создать подписку на портале Azure:
-1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` в верхней части страницы на портале Azure.  
-2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
-3. В поле `Name` (Имя) введите имя нового ресурса.
-4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
-5. Выберите ценовую категорию `S9`.
-6. Щелкните `Enable` (Активировать), чтобы создать подписку.
+* Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
+* Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
+* Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](http://www.mono-project.com/).
 
-Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Будет работать бесплатный выпуск Community Edition.)  
+[!INCLUDE [cognitive-services-bing-visual-search-signup-requirements](../../../../includes/cognitive-services-bing-visual-search-signup-requirements.md)]
 
-## <a name="running-the-application"></a>Запуск приложения
+## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-Ниже показано, как отправить сообщение с использованием HttpWebRequest. Пример с использованием HttpClient, HttpRequestMessage и MultipartFormDataContent см. в разделе [Использование HttpClient](#using-httpclient).
+1. Создайте консольное решение `BingSearchApisQuickStart` в Visual Studio. Затем добавьте следующие пространства имен в основной файл кода.
 
-Чтобы запустить это приложение, сделайте следующее:
+    ```csharp
+    using System;
+    using System.Text;
+    using System.Net;
+    using System.IO;
+    using System.Collections.Generic;
+    ```
 
-1. Создайте консольное приложение в Visual Studio.
-1. Замените содержимое `Program.cs` кодом, приведенным в этом кратком руководстве.
-2. Замените значение `accessKey` своим ключом подписки.
-2. Замените значение `imagePath` путем к отправляемому изображению.
-3. Запустите программу.
+2. Добавьте переменные для ключа подписки, конечной точки и пути изображения, которое нужно отправить.
 
-
-```csharp
-using System;
-using System.Text;
-using System.Net;
-using System.IO;
-using System.Collections.Generic;
-
-namespace VisualSearchUpload
-{
-
-    class Program
-    {
-        // **********************************************
-        // *** Update and verify the following values. ***
-        // **********************************************
-
-        // Replace the accessKey string value with your valid subscription key.
+    ```csharp
         const string accessKey = "<yoursubscriptionkeygoeshere>";
-
         const string uriBase = "https://api.cognitive.microsoft.com/bing/v7.0/images/visualsearch";
-
-        // Set the path to the image that you want to get insights of. 
         static string imagePath = @"<pathtoimagegoeshere>";
-
-        // Boundary strings for form data in body of POST.
-        const string CRLF = "\r\n";
-        static string BoundaryTemplate = "batch_{0}";
-        static string StartBoundaryTemplate = "--{0}";
-        static string EndBoundaryTemplate = "--{0}--";
-
-        const string CONTENT_TYPE_HEADER_PARAMS = "multipart/form-data; boundary={0}";
-        const string POST_BODY_DISPOSITION_HEADER = "Content-Disposition: form-data; name=\"image\"; filename=\"{0}\"" + CRLF +CRLF;
+    ```
 
 
-        static void Main()
-        {
-            try
+1. Создайте метод с именем `GetImageFileName()`, чтобы получить путь для изображения.
+    
+    ```csharp
+    static string GetImageFileName(string path)
             {
-                Console.OutputEncoding = System.Text.Encoding.UTF8;
-
-                if (accessKey.Length == 32)
-                {
-                    if (IsImagePathSet(imagePath))
-                    {
-                        var filename = GetImageFileName(imagePath);
-                        Console.WriteLine("Getting image insights for image: " + filename);
-                        var imageBinary = GetImageBinary(imagePath);
-
-                        // Set up POST body.
-                        var boundary = string.Format(BoundaryTemplate, Guid.NewGuid());
-                        var startFormData = BuildFormDataStart(boundary, filename);
-                        var endFormData = BuildFormDataEnd(boundary);
-                        var contentTypeHdrValue = string.Format(CONTENT_TYPE_HEADER_PARAMS, boundary);
-
-                        var json = BingImageSearch(startFormData, endFormData, imageBinary, contentTypeHdrValue);
-
-                        Console.WriteLine("\nJSON Response:\n");
-                        Console.WriteLine(JsonPrettyPrint(json));
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Bing Visual Search API subscription key!");
-                    Console.WriteLine("Please paste yours into the source code.");
-                }
-
-                Console.Write("\nPress Enter to exit ");
-                Console.ReadLine();
+                return new FileInfo(path).Name;
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-        }
+    ```
 
+2. Создайте метод, чтобы получить двоичные символы изображения.
 
+    ```csharp
+    static byte[] GetImageBinary(string path)
+    {
+        return File.ReadAllBytes(path);
+    }
+    ```
 
-        /// <summary>
-        /// Verify that imagePath exists.
-        /// </summary>
-        static Boolean IsImagePathSet(string path)
-        {
-            if (string.IsNullOrEmpty(path))
-                throw new ArgumentException("Image path is null or empty.");
+## <a name="build-the-form-data"></a>Создание данных формы
 
-            if (!File.Exists(path))
-                throw new ArgumentException("Image path does not exist.");
+При отправке локального изображения данные формы, отправленные в API, должны быть правильно отформатированы. Они должны содержать заголовок Content-Disposition, его параметру `name` необходимо присвоить значение image, а для параметра `filename` можно задать любую строку. Содержимое формы имеет двоичный файл изображения. Максимально допустимый размер отправляемого изображения — 1 МБ.
 
-            var size = new FileInfo(path).Length;
+    ```
+    --boundary_1234-abcd
+    Content-Disposition: form-data; name="image"; filename="myimagefile.jpg"
+    
+    ÿØÿà JFIF ÖÆ68g-¤CWŸþ29ÌÄøÖ‘º«™æ±èuZiÀ)"óÓß°Î= ØJ9á+*G¦...
+    
+    --boundary_1234-abcd--
+    ```
 
-            if (size > 1000000)
-                throw new ArgumentException("Image is greater than the 1 MB maximum size.");
+1. Чтобы правильно отформатировать данные формы POST, добавьте строки границ, которые определяют символы начала, конца и новой строки для данных.
 
-            return true;
-        }
+    ```csharp
+    // Boundary strings for form data in body of POST.
+    const string CRLF = "\r\n";
+    static string BoundaryTemplate = "batch_{0}";
+    static string StartBoundaryTemplate = "--{0}";
+    static string EndBoundaryTemplate = "--{0}--";
+    ```
 
+2. Следующие переменные будут использоваться для добавления параметров к данным формы. 
 
+    ```csharp
+    const string CONTENT_TYPE_HEADER_PARAMS = "multipart/form-data; boundary={0}";
+    const string POST_BODY_DISPOSITION_HEADER = "Content-Disposition: form-data; name=\"image\"; filename=\"{0}\"" + CRLF +CRLF;
+    ```
 
-        /// <summary>
-        /// Get the binary characters of an image.
-        /// </summary>
-        static byte[] GetImageBinary(string path)
-        {
-            return File.ReadAllBytes(path);
-        }
-
-
-        /// <summary>
-        /// Get the image's filename.
-        /// </summary>
-        static string GetImageFileName(string path)
-        {
-            return new FileInfo(path).Name;
-        }
-
-
-        /// <summary>
-        /// Build the beginning part of the form data.
-        /// </summary>
+3. Создайте функцию с именем `BuildFormDataStart()`, чтобы создать начальную часть необходимых данных формы, используя строки границ и путь к изображению.
+    
+    ```csharp
         static string BuildFormDataStart(string boundary, string filename)
         {
             var startBoundary = string.Format(StartBoundaryTemplate, boundary);
@@ -191,21 +110,26 @@ namespace VisualSearchUpload
 
             return requestBody;
         }
+    ```
 
-
-        /// <summary>
-        /// Build the ending part of the form data.
-        /// </summary>
+4. Создайте функцию с именем `BuildFormDataEnd()`, чтобы создать конечную часть необходимых данных формы, используя строки границ.
+    
+    ```csharp
         static string BuildFormDataEnd(string boundary)
         {
             return CRLF + CRLF + string.Format(EndBoundaryTemplate, boundary) + CRLF;
         }
+    ```
 
+## <a name="call-the-bing-visual-search-api"></a>Вызов API визуального поиска Bing
 
+1. Создайте функцию, чтобы вызвать конечную точку визуального поиска Bing и вернуть ответ json. В функции следует использовать начальную и конечную части данных формы, массив байтов, содержащий данные изображения, и значение contentType.
 
-        /// <summary>
-        /// Calls the Bing visual search endpoint and returns the JSON response.
-        /// </summary>
+2. Используйте `WebRequest` для хранения универсального кода ресурса, значения contentType и заголовков.  
+
+3. Используйте `request.GetRequestStream()` для записи данных формы и изображения. Затем получите ответ. Эта функция должна выглядеть как следующий код:
+        
+    ```csharp
         static string BingImageSearch(string startFormData, string endFormData, byte[] image, string contentTypeValue)
         {
             WebRequest request = HttpWebRequest.Create(uriBase);
@@ -226,89 +150,45 @@ namespace VisualSearchUpload
                 writer.Close();
             }
 
-
             HttpWebResponse response = (HttpWebResponse)request.GetResponseAsync().Result;
             string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
 
             return json;
         }
+    ```
 
+## <a name="create-the-main-method"></a>Создание метода Main
 
-        /// <summary>
-        /// Formats the given JSON string by adding line breaks and indents.
-        /// </summary>
-        /// <param name="json">The raw JSON string to format.</param>
-        /// <returns>The formatted JSON string.</returns>
-        static string JsonPrettyPrint(string json)
-        {
-            if (string.IsNullOrEmpty(json))
-                return string.Empty;
+1. В методе Main приложения получите имя файла и двоичный файл для изображения. 
 
-            json = json.Replace(Environment.NewLine, "").Replace("\t", "");
+    ```csharp
+    var filename = GetImageFileName(imagePath);
+    var imageBinary = GetImageBinary(imagePath);
+    ```
 
-            StringBuilder sb = new StringBuilder();
-            bool quote = false;
-            bool ignore = false;
-            char last = ' ';
-            int offset = 0;
-            int indentLength = 2;
+2. Настройте текст запроса POST, отформатировав для него границы. Затем вызовите `startFormData()` и `endFormData`, чтобы создать данные формы. 
 
-            foreach (char ch in json)
-            {
-                switch (ch)
-                {
-                    case '"':
-                        if (!ignore) quote = !quote;
-                        break;
-                    case '\\':
-                        if (quote && last != '\\') ignore = true;
-                        break;
-                }
+    ```csharp
+    // Set up POST body.
+    var boundary = string.Format(BoundaryTemplate, Guid.NewGuid());
+    var startFormData = BuildFormDataStart(boundary, filename);
+    var endFormData = BuildFormDataEnd(boundary);
+    ```
 
-                if (quote)
-                {
-                    sb.Append(ch);
-                    if (last == '\\' && ignore) ignore = false;
-                }
-                else
-                {
-                    switch (ch)
-                    {
-                        case '{':
-                        case '[':
-                            sb.Append(ch);
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', ++offset * indentLength));
-                            break;
-                        case '}':
-                        case ']':
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', --offset * indentLength));
-                            sb.Append(ch);
-                            break;
-                        case ',':
-                            sb.Append(ch);
-                            sb.Append(Environment.NewLine);
-                            sb.Append(new string(' ', offset * indentLength));
-                            break;
-                        case ':':
-                            sb.Append(ch);
-                            sb.Append(' ');
-                            break;
-                        default:
-                            if (quote || ch != ' ') sb.Append(ch);
-                            break;
-                    }
-                }
-                last = ch;
-            }
+3. Создайте значение ContentType, отформатировав `CONTENT_TYPE_HEADER_PARAMS` и границы данных формы.
 
-            return sb.ToString().Trim();
-        }
-    }
-}
-```
+    ```csharp
+    var contentTypeHdrValue = string.Format(CONTENT_TYPE_HEADER_PARAMS, boundary);
+    ```
 
+4. Получите ответ API путем вызова `BingImageSearch()`. Затем выполните вывод ответа.
+
+    ```csharp
+    var json = BingImageSearch(startFormData, endFormData, imageBinary, contentTypeHdrValue);
+    Console.WriteLine(json);
+    Console.WriteLine("enter any key to continue");
+    Console.readKey();
+    ```
 
 ## <a name="using-httpclient"></a>Использование HttpClient
 
@@ -388,15 +268,7 @@ namespace VisualSearchUpload
         }
 ```
 
-
-
-
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Получение полезных сведений об изображении с помощью токена аналитики](../use-insights-token.md)  
-[Руководство по передаче изображения в Bing Visual Search](../tutorial-visual-search-image-upload.md)
-[Руководство по одностраничным веб-приложениям для Bing Visual Search](../tutorial-bing-visual-search-single-page-app.md)
-[Обзор Bing Visual Search](../overview.md)  
-[Попробовать](https://aka.ms/bingvisualsearchtryforfree)  
-[Получить ключ доступа бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api)  
-[Справочник по API Bing для наглядного поиска](https://aka.ms/bingvisualsearchreferencedoc)
+> [!div class="nextstepaction"]
+> [Создание веб-страницы пользовательского поиска](../tutorial-bing-visual-search-single-page-app.md)

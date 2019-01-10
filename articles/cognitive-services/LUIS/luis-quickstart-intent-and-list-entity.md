@@ -9,34 +9,25 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 09/09/2018
+ms.date: 12/21/2018
 ms.author: diberry
-ms.openlocfilehash: 5706e0b124bb9ceaf1abf7228faf088dc4e510ce
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: bf4fd5d2a3a9bb06882dcd1b4674ccdf8ad894ee
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53096695"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53971415"
 ---
-# <a name="tutorial-4-extract-exact-text-matches"></a>Руководство 4. Извлечение точных текстовых совпадений
-В этом руководстве вы узнаете, как получить данные, соответствующие предварительно определенному списку элементов. Каждый элемент в списке может содержать список синонимов. Для приложения для управления персоналом можно выбрать сотрудника с помощью нескольких ключевых факторов (имени, адреса электронной почты, номера телефона и федерального ИНН США). 
+# <a name="tutorial-get-exact-text-matched-data-from-an-utterance"></a>Руководство. Получение точных данных, сравниваемых с текстом, на основе речевого фрагмента
 
-Приложение "Управление персоналом" необходимо для того, чтобы определить, какой сотрудник перемещается из одного здания в другое. Для высказывания о перемещении сотрудника LUIS определяет намерение и извлекает сущность сотрудника, чтобы стандартный заказ на его перемещение мог быть создан клиентским приложением.
+В этом руководстве вы узнаете, как получить данные сущности, соответствующие предварительно определенному списку элементов. 
 
-Это приложение использует сущность списка для извлечения сущности сотрудника. Сотрудник может быть указан с использованием имени, добавочного номера компании, номера телефона, электронной почты или федерального номера социального страхования (SSN) США. 
-
-Сущность списка оптимальна для данных такого типа в таких случаях:
-
-* Значения данных являются известным набором.
-* Набор не превышает максимальные [ограничения](luis-boundaries.md) LUIS для этого типа сущности.
-* Текст в высказывании в точности совпадает с синонимом или каноническим именем. 
-
-**Из этого руководства вы узнаете, как выполнять следующие задачи:**
+**В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
 <!-- green checkmark -->
 > [!div class="checklist"]
-> * Использовать существующее приложение из руководства
-> * Добавление намерения MoveEmployee
+> * Создание приложения
+> * Добавление намерения
 > * Добавление сущности списка 
 > * Train 
 > * Опубликовать
@@ -44,25 +35,31 @@ ms.locfileid: "53096695"
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
 
-## <a name="use-existing-app"></a>Использование существующего приложения
-Продолжите работу с приложением **HumanResources**, созданным в рамках последнего руководства. 
+## <a name="what-is-a-list-entity"></a>Что такое сущность списка?
 
-Если у вас нет приложения HumanResources из предыдущего руководства, выполните приведенные ниже шаги.
+Сущность списка представляет собой точное текстовое совпадение со словами в речевом фрагменте. 
 
-1.  Загрузите и сохраните [JSON-файл приложения](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/tutorials/custom-domain-regex-HumanResources.json).
+Каждый элемент в списке может содержать список синонимов. Для приложения по управлению персоналом отдел компании может определяться по нескольким ключевым компонентам, таким как официальное название, общеупотребительные сокращения и коды отделов выставления счетов. 
 
-2. Импортируйте JSON-файл в новое приложение.
+Приложение по управлению персоналом должно определить отдел, в который переводится сотрудник. 
 
-3. Из раздела **Управление** на вкладке **Версии** скопируйте версию и назовите ее `list`. Клонирование — это отличный способ поэкспериментировать с различными функциями LUIS без влияния на исходную версию. Так как имя версии используется в маршруте URL-адреса, оно не может содержать символы, которые недопустимы в URL-адресе. 
+Сущность списка оптимальна для данных такого типа в таких случаях:
 
+* Значения данных являются известным набором.
+* Набор не превышает максимальные [ограничения](luis-boundaries.md) LUIS для этого типа сущности.
+* Текст в высказывании в точности совпадает с синонимом или каноническим именем. LUIS не использует список вне точных текстовых совпадений. Сущность списка не используется для разрешения выделения корней, множественных форм и других вариантов. Для управления вариантами рекомендуется применять [шаблон](luis-concept-patterns.md#syntax-to-mark-optional-text-in-a-template-utterance) с синтаксисом, имеющим необязательный текст. 
 
-## <a name="moveemployee-intent"></a>Намерение MoveEmployee
+## <a name="create-a-new-app"></a>Создание нового приложения
+
+[!INCLUDE [Follow these steps to create a new LUIS app](../../../includes/cognitive-services-luis-create-new-app-steps.md)]
+
+## <a name="create-an-intent-to-transfer-employees-to-a-different-department"></a>Создание намерения для перевода сотрудников в другой отдел
 
 1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
 
 2. Выберите **Create new intent**. (Создать намерение). 
 
-3. Введите `MoveEmployee` во всплывающем диалоговом окне и нажмите кнопку **Done** (Готово). 
+3. Введите `TransferEmployeeToDepartment` во всплывающем диалоговом окне и нажмите кнопку **Done** (Готово). 
 
     ![Снимок экрана диалогового окна создания намерения с](./media/luis-quickstart-intent-and-list-entity/hr-create-new-intent-ddl.png)
 
@@ -70,205 +67,122 @@ ms.locfileid: "53096695"
 
     |Примеры высказываний|
     |--|
-    |переместить John W. Smith из B-1234 в H-4452|
-    |переместить john.w.smith@mycompany.com из офиса b-1234 в офис h-4452|
-    |сдвинуть x12345 к h-1234 завтра|
-    |поместить 425-555-1212 в HH-2345|
-    |переместить 123-45-6789 из A-4321 в J-23456|
-    |переместить Jill Jones из D-2345 в J-23456|
-    |сдвинуть jill-jones@mycompany.com в M-12345|
-    |x23456 в M-12345|
-    |425-555-0000 в h-4452|
-    |234-56-7891 в hh-2345|
+    |Перевести Джона Смита в бухгалтерию.|
+    |Перевести Джил Джонс в отдел научных исследований и разработки.|
+    |В отделе 1234 появился новый сотрудник Билл Брадстрит.|
+    |Перевести Джона Джексона в инженерный отдел. |
+    |Перевести Дебру Дотери в отдел продаж.|
+    |Направить Джил Джонс в IT-отдел.|
+    |Перевести Елис Андерсон в отдел разработки и эксплуатации.|
+    |Направить Карла Чамерлина в отдел финансов.|
+    |Стив Стандиш — в отдел 1234.|
+    |Таннер Томпсон — в отдел 3456.|
 
-    [ ![Снимок экрана страницы намерения с выделенными фразами](./media/luis-quickstart-intent-and-list-entity/hr-enter-utterances.png) ](./media/luis-quickstart-intent-and-list-entity/hr-enter-utterances.png#lightbox)
-
-    Помните, что номер и datetimeV2 были добавлены в предыдущем руководстве и будут назначаться автоматически при их обнаружении в любом примере высказывания.
+    [![Снимок экрана намерения с примерами речевых фрагментов](media/luis-quickstart-intent-and-list-entity/intent-transfer-employee-to-department.png "Screenshot of intent with example utterances")](media/luis-quickstart-intent-and-list-entity/intent-transfer-employee-to-department.png#lightbox)
 
     [!INCLUDE [Do not use too few utterances](../../../includes/cognitive-services-luis-too-few-example-utterances.md)]  
 
-## <a name="employee-list-entity"></a>Сущность списка сотрудников
-Теперь, когда намерение **MoveEmployee** содержит высказывания, интеллектуальная служба распознавания речи должна распознавать сотрудников. 
+## <a name="department-list-entity"></a>Сущности списка отделов
 
-Первичное _каноническое_ имя для каждого элемента является номером сотрудника. Далее приведены примеры синонимов для этой тематики. 
+Теперь, когда намерение **TransferEmployeeToDepartment** содержит высказывания, LUIS должна распознавать, что такое отдел. 
 
-|Цель синонима|Значение синонима|
+Первичное _каноническое_ имя для каждого элемента является названием отдела. Примеры синонимов для этой тематики. 
+
+|Каноническое имя|синонимы;|
 |--|--|
-|Действие|John W. Smith|
-|Адрес электронной почты|john.w.smith@mycompany.com|
-|Добавочный номер|x12345|
-|Персональный номер мобильного телефона|425-555-1212|
-|Номер социального страхования в США|123-45-6789|
-
+|Учет|Бухг.<br>Бухгалт.<br>3456|
+|Разработка и эксплуатация|Разработка и операции<br>4949|
+|Engineering|Инж.<br>Инженер.<br>4567|
+|Финансы|Фин.<br>2020|
+|Информационные технологии|IT<br>2323|
+|Продажи|Прод.<br>Продаж.<br>1414|
+|Научные исследования и разработки|НИИР<br>1234|
 
 1. В области слева выберите **Entities** (Сущности).
 
-2. Нажмите кнопку **Создать сущность**.
+1. Нажмите кнопку **Создать сущность**.
 
-3. Во всплывающем диалоговом окне сущности введите имя сущности `Employee` и **Список** для типа сущности. Нажмите кнопку **Готово**.  
+1. Во всплывающем диалоговом окне сущности введите имя сущности `Department` и **Список** для типа сущности. Нажмите кнопку **Готово**.  
 
-    [![Снимок экрана со всплывающим диалоговым окном для создания сущности](media/luis-quickstart-intent-and-list-entity/hr-list-entity-ddl.png "Screenshot of creating new entity pop-up dialog")](media/luis-quickstart-intent-and-list-entity/hr-list-entity-ddl.png#lightbox)
+    [![Снимок экрана со всплывающим диалоговым окном для создания сущности](media/luis-quickstart-intent-and-list-entity/create-new-list-entity-named-department.png "Screenshot of creating new entity pop-up dialog")](media/luis-quickstart-intent-and-list-entity/create-new-list-entity-named-department.png#lightbox)
 
-4. На странице сущности Employee введите `Employee-24612` в качестве нового значения.
+1. На странице сущности Department введите `Accounting` в качестве нового значения.
 
     [![Снимок экрана, на котором показан ввод значений](media/luis-quickstart-intent-and-list-entity/hr-emp1-value.png "Screenshot of entering value")](media/luis-quickstart-intent-and-list-entity/hr-emp1-value.png#lightbox)
 
-5. В синонимы добавьте следующие значения:
-
-    |Цель синонима|Значение синонима|
-    |--|--|
-    |Действие|John W. Smith|
-    |Адрес электронной почты|john.w.smith@mycompany.com|
-    |Добавочный номер|x12345|
-    |Персональный номер мобильного телефона|425-555-1212|
-    |Номер социального страхования в США|123-45-6789|
+1. В графу синонимов добавьте синонимы из приведенной выше таблицы.
 
     [![Снимок экрана, на котором показан ввод синонимов](media/luis-quickstart-intent-and-list-entity/hr-emp1-synonyms.png "Screenshot of entering synonyms")](media/luis-quickstart-intent-and-list-entity/hr-emp1-synonyms.png#lightbox)
 
-6. Введите `Employee-45612` в качестве нового значения.
+1. Продолжайте добавлять канонические имена и синонимы. 
 
-7. В синонимы добавьте следующие значения:
+## <a name="add-example-utterances-to-the-none-intent"></a>Добавление примеров речевых фрагментов в намерение None 
 
-    |Цель синонима|Значение синонима|
-    |--|--|
-    |ИМЯ|Jill Jones|
-    |Адрес электронной почты|jill-jones@mycompany.com|
-    |Добавочный номер|x23456|
-    |Персональный номер мобильного телефона|425-555-0000|
-    |Номер социального страхования в США|234-56-7891|
+[!INCLUDE [Follow these steps to add the None intent to the app](../../../includes/cognitive-services-luis-create-the-none-intent.md)]
 
-## <a name="train"></a>Train
+## <a name="train-the-app-so-the-changes-to-the-intent-can-be-tested"></a>Обучение приложения для проверки изменений намерения 
 
 [!INCLUDE [LUIS How to Train steps](../../../includes/cognitive-services-luis-tutorial-how-to-train.md)]
 
-## <a name="publish"></a>Опубликовать
+## <a name="publish-the-app-so-the-trained-model-is-queryable-from-the-endpoint"></a>Публикация приложения, чтобы в обученную модель можно было отправлять запросы из конечной точки
 
 [!INCLUDE [LUIS How to Publish steps](../../../includes/cognitive-services-luis-tutorial-how-to-publish.md)]
 
-## <a name="get-intent-and-entities-from-endpoint"></a>Получение намерения и сущностей из конечной точки
+## <a name="get-intent-and-entity-prediction-from-endpoint"></a>Получение намерения и прогнозирование сущности из конечной точки
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)] 
 
-2. Перейдите в конец URL-адреса и введите `shift 123-45-6789 from Z-1242 to T-54672`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом и должна возвращать намерение `MoveEmployee` с извлеченным `Employee`.
+1. Перейдите в конец URL-адреса и введите `shift Joe Smith to IT`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом и должна возвращать намерение `TransferEmployeeToDepartment` с извлеченным `Department`.
 
   ```json
-  {
-    "query": "shift 123-45-6789 from Z-1242 to T-54672",
-    "topScoringIntent": {
-      "intent": "MoveEmployee",
-      "score": 0.9882801
-    },
-    "intents": [
-      {
-        "intent": "MoveEmployee",
-        "score": 0.9882801
+    {
+      "query": "shift Joe Smith to IT",
+      "topScoringIntent": {
+        "intent": "TransferEmployeeToDepartment",
+        "score": 0.9775754
       },
-      {
-        "intent": "FindForm",
-        "score": 0.016044287
-      },
-      {
-        "intent": "GetJobInformation",
-        "score": 0.007611245
-      },
-      {
-        "intent": "ApplyForJob",
-        "score": 0.007063288
-      },
-      {
-        "intent": "Utilities.StartOver",
-        "score": 0.00684710965
-      },
-      {
-        "intent": "None",
-        "score": 0.00304174074
-      },
-      {
-        "intent": "Utilities.Help",
-        "score": 0.002981
-      },
-      {
-        "intent": "Utilities.Confirm",
-        "score": 0.00212222221
-      },
-      {
-        "intent": "Utilities.Cancel",
-        "score": 0.00191026414
-      },
-      {
-        "intent": "Utilities.Stop",
-        "score": 0.0007461446
-      }
-    ],
-    "entities": [
-      {
-        "entity": "123 - 45 - 6789",
-        "type": "Employee",
-        "startIndex": 6,
-        "endIndex": 16,
-        "resolution": {
-          "values": [
-            "Employee-24612"
-          ]
+      "intents": [
+        {
+          "intent": "TransferEmployeeToDepartment",
+          "score": 0.9775754
+        },
+        {
+          "intent": "None",
+          "score": 0.0154493852
         }
-      },
-      {
-        "entity": "123",
-        "type": "builtin.number",
-        "startIndex": 6,
-        "endIndex": 8,
-        "resolution": {
-          "value": "123"
+      ],
+      "entities": [
+        {
+          "entity": "it",
+          "type": "Department",
+          "startIndex": 19,
+          "endIndex": 20,
+          "resolution": {
+            "values": [
+              "Information Technology"
+            ]
+          }
         }
-      },
-      {
-        "entity": "45",
-        "type": "builtin.number",
-        "startIndex": 10,
-        "endIndex": 11,
-        "resolution": {
-          "value": "45"
-        }
-      },
-      {
-        "entity": "6789",
-        "type": "builtin.number",
-        "startIndex": 13,
-        "endIndex": 16,
-        "resolution": {
-          "value": "6789"
-        }
-      },
-      {
-        "entity": "-1242",
-        "type": "builtin.number",
-        "startIndex": 24,
-        "endIndex": 28,
-        "resolution": {
-          "value": "-1242"
-        }
-      },
-      {
-        "entity": "-54672",
-        "type": "builtin.number",
-        "startIndex": 34,
-        "endIndex": 39,
-        "resolution": {
-          "value": "-54672"
-        }
-      }
-    ]
-  }
+      ]
+    }
   ```
-
-  Сотрудник найден и возвращен как тип `Employee` со значением разрешения `Employee-24612`.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [LUIS How to clean up resources](../../../includes/cognitive-services-luis-tutorial-how-to-clean-up-resources.md)]
 
+## <a name="related-information"></a>Связанные сведения
+
+* [Типы сущностей и их задачи в LUIS](luis-concept-entity-types.md#list-entity) — основные сведения
+* [Обучение активной версии приложения LUIS](luis-how-to-train.md)
+* [Как опубликовать предложение](luis-how-to-publish-app.md)
+* [Тестирование приложения LUIS на портале LUIS](luis-interactive-test.md)
+
+
 ## <a name="next-steps"></a>Дополнительная информация
 Из этого руководства вы узнали, как создать новое намерение, добавить примеры высказываний, а затем создать сущность списка для извлечения точного текстового совпадения из высказывания. После обучения и публикации приложения запрос к конечной точке идентифицировал намерение и вернул извлеченные данные.
+
+Продолжите работу с этим приложением, [добавив составную сущность](luis-tutorial-composite-entity.md).
 
 > [!div class="nextstepaction"]
 > [Добавление иерархической сущности в приложение](luis-quickstart-intent-and-hier-entity.md)

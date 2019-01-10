@@ -1,23 +1,23 @@
 ---
 title: Функция срока жизни на уровне документа MongoDB в Azure Cosmos DB
-description: Узнайте, как задать срок жизни для документов Azure Cosmos DB, созданных с помощью API MongoDB, чтобы система автоматически удаляла их по истечении определенного периода.
+description: Узнайте, как задать срок жизни для документов с помощью API Azure Cosmos DB для MongoDB, чтобы система автоматически удаляла их по истечении определенного периода.
 services: cosmos-db
-author: orestis-ms
-ms.author: orkostak
+author: rimman
+ms.author: rimman
 ms.service: cosmos-db
 ms.devlang: javascript
 ms.topic: quickstart
-ms.date: 08/10/2018
-ms.openlocfilehash: 547ee489581b7e7e9203151fbfcdaad45dca8ea1
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.date: 12/26/2018
+ms.openlocfilehash: d7c811dba3ad9b894fd5dae47e898f51ec4d05e5
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52868767"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53790101"
 ---
-# <a name="expire-data-in-azure-cosmos-db-mongodb-api"></a>Прекращение хранения данных в API MongoDB Azure Cosmos DB
+# <a name="expire-data-with-azure-cosmos-dbs-api-for-mongodb"></a>Завершение срока действия данных с помощью API Azure Cosmos DB для MongoDB
 
-Функция срока жизни позволяет автоматически прекращать хранение данных в базе данных. В API MongoDB можно настраивать срок жизни Azure Cosmos DB. Поддерживаются два режима: установка срока жизни по умолчанию для всей коллекции и выбор отдельных значений срока жизни для каждого документа. В API MongoDB индексы срока жизни и значения срока жизни для документов управляются с помощью [той же логики, что и в Azure Cosmos DB](../cosmos-db/mongodb-indexing.md).
+Функция срока жизни позволяет автоматически прекращать хранение данных в базе данных. API Azure Cosmos DB для MongoDB использует основные возможности срока жизни Cosmos DB. Поддерживаются два режима: установка срока жизни по умолчанию для всей коллекции и выбор отдельных значений срока жизни для каждого документа. В API Cosmos DB для MongoDB индексы срока жизни и значения срока жизни для документов управляются с помощью [той же логики, что и в Cosmos DB](../cosmos-db/mongodb-indexing.md).
 
 ## <a name="ttl-indexes"></a>Индексы срока жизни
 Чтобы установить срок жизни для всей коллекции, нужно создать [индекс срока жизни](../cosmos-db/mongodb-indexing.md). Это индекс для поля _ts со значением expireAfterSeconds.
@@ -72,10 +72,11 @@ globaldb:PRIMARY> db.coll.insert({id:1, location: "Paris", ttl: NumberLong(21474
 ``` 
 
 ## <a name="how-to-activate-the-per-document-ttl-feature"></a>Как активировать функцию срока жизни на уровне документа
-Функцию срока жизни на уровне документа можно активировать с помощью учетной записи API MongoDB на вкладке "Предварительная версия функций" на портале Azure.
+
+Функция срока жизни для каждого документа может быть активирована с помощью API Azure Cosmos DB для MongoDB.
 
 ![Снимок экрана, демонстрирующий активацию функции срока жизни для документа на портале](./media/mongodb-ttl/mongodb_portal_ttl.png) 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Автоматическое завершение срока действия данных в коллекциях Azure Cosmos DB с использованием срока жизни](../cosmos-db/time-to-live.md)
-* [Индексирование в Azure Cosmos DB: API MongoDB](../cosmos-db/mongodb-indexing.md)
+* [Срок жизни для данных Azure Cosmos DB](../cosmos-db/time-to-live.md)
+* [Индексирование в Azure Cosmos DB. API MongoDB](../cosmos-db/mongodb-indexing.md)

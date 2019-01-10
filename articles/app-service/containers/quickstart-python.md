@@ -1,5 +1,5 @@
 ---
-title: Создание веб-приложения Python в Службе приложений Azure на платформе Linux | Документация Майкрософт
+title: Создание приложения Python в Службе приложений Azure в Linux | Документация Майкрософт
 description: Быстрое развертывание первого приложения Hello World на Python в Службе приложений Azure на платформе Linux.
 services: app-service\web
 documentationcenter: ''
@@ -15,14 +15,14 @@ ms.topic: quickstart
 ms.date: 10/09/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: d9d6f3549ec5db914536400fac53de60f2ad4a94
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 3af8f57cab6e420a7c7515bdf32b7ef382441cf9
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53261856"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53633153"
 ---
-# <a name="create-a-python-web-app-in-azure-app-service-on-linux-preview"></a>Создание веб-приложения Python в Службе приложений Azure на платформе Linux (предварительная версия)
+# <a name="create-a-python-app-in-azure-app-service-on-linux-preview"></a>Создание приложения Python в Службе приложений Azure в Linux (предварительная версия)
 
 [Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом кратком руководстве показано, как развернуть приложение Python на основе встроенного образа Python (предварительная версия) в службе приложений в Linux с помощью [Azure CLI](/cli/azure/install-azure-cli).
 
@@ -85,17 +85,17 @@ flask run
 
 ## <a name="create-a-web-app"></a>Создание веб-приложения
 
-[!INCLUDE [Create app service plan](../../../includes/app-service-web-create-web-app-python-linux-no-h.md)]
+[!INCLUDE [Create web app](../../../includes/app-service-web-create-web-app-python-linux-no-h.md)]
 
-Перейдите на сайт, чтобы просмотреть созданное веб-приложение со встроенным образом. Замените _&lt;имя_приложения>_ уникальным именем веб-приложения.
+Перейдите на сайт, чтобы просмотреть созданное приложение со встроенным образом. Замените _&lt;app name>_ именем своего приложения.
 
 ```bash
 http://<app_name>.azurewebsites.net
 ```
 
-Новое веб-приложение должно выглядеть так:
+Новое приложение должно выглядеть следующим образом.
 
-![Пустая страница веб-приложения](media/quickstart-php/app-service-web-service-created.png)
+![Пустая страница приложения](media/quickstart-php/app-service-web-service-created.png)
 
 [!INCLUDE [Push to Azure](../../../includes/app-service-web-git-push-to-azure.md)] 
 
@@ -129,7 +129,7 @@ To https://user2234@cephalin-python.scm.azurewebsites.net/cephalin-python.git
 http://<app_name>.azurewebsites.net
 ```
 
-Пример кода Python выполняется в веб-приложении со встроенным образом.
+Пример кода Python выполняется в Службе приложений в Linux со встроенным образом.
 
 ![Пример приложения, выполняющегося в Azure](media/quickstart-python/hello-world-in-browser.png)
 
@@ -154,15 +154,15 @@ git push azure master
 
 ![Обновленный пример приложения, выполняющегося в Azure](media/quickstart-python/hello-azure-in-browser.png)
 
-## <a name="manage-your-new-azure-web-app"></a>Управление новым веб-приложением Azure
+## <a name="manage-your-new-azure-app"></a>Управление новым приложением Azure
 
-Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a> для управления созданным веб-приложением.
+Перейдите на <a href="https://portal.azure.com" target="_blank">портал Azure</a>, чтобы управлять созданным приложением.
 
-В меню слева выберите **Службы приложений**, а затем щелкните имя своего веб-приложения Azure.
+В меню слева щелкните **Службы приложений**, а затем — имя своего приложения Azure.
 
-![Переход к веб-приложению Azure на портале](./media/quickstart-python/app-service-list.png)
+![Переход к приложению Azure на портале](./media/quickstart-python/app-service-list.png)
 
-Отобразится страница обзора вашего веб-приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
+Отобразится страница обзора вашего приложения. Вы можете выполнять базовые задачи управления: обзор, завершение, запуск, перезагрузку и удаление.
 
 ![Страница службы приложений на портале Azure](media/quickstart-python/app-service-detail.png)
 

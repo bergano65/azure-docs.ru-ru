@@ -5,14 +5,14 @@ author: nsoneji
 manager: garavd
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
-ms.author: nisoneji
-ms.openlocfilehash: 9dec4314bb99b2cb32d62f40b76591ecb03e4d56
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.date: 12/28/2018
+ms.author: mayg
+ms.openlocfilehash: 5de8bc9acd97016b401bd1c2bcce46f5ab851430
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52838758"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53811568"
 ---
 # <a name="run-the-azure-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Запуск Планировщика развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -138,6 +138,9 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 ## <a name="generate-report"></a>Создание отчета
 Планировщик создает отчет в формате XLSM (файл Microsoft Excel с поддержкой макросов). В нем содержатся все рекомендации по развертыванию. Этот отчет называется DeploymentPlannerReport_<unique numeric identifier>.xlsm и помещается в указанный каталог.
 
+>[!NOTE]
+>В качестве десятичного разделителя для отчета необходимо выбрать точку — это требуется для проведения оценки затрат на сервере, где выполняется планировщик развертывания. Если на компьютере Windows в качестве десятичного разделителя задана запятая, выберите на панели управления раздел "Изменение даты, времени или числовых форматов", откройте "Дополнительные параметры" и измените десятичный разделитель на точку.
+
 После завершения профилирования планировщик можно запустить в режиме создания отчетов. В таблице ниже приведен список обязательных и необязательных параметров для запуска программы в режиме создания отчетов.
 
 `ASRDeploymentPlanner.exe -Operation GenerateReport /?`
@@ -160,7 +163,7 @@ ASRDeploymentPlanner.exe -Operation StartProfiling -Virtualization VMware -Direc
 | -EndDate | (Необязательно.) Дата и время окончания в формате ММ-ДД-ГГГГ:ЧЧ:ММ (24-часовой цикл). Параметр *EndDate* необходимо указать с параметром *StartDate*. Если указать параметр EndDate, отчет будет создан на основе данных, собранных в период между датой начала и окончания. |
 | -GrowthFactor | (Необязательно.) Коэффициент роста в процентах. Значение по умолчанию — 30 процентов. |
 | -UseManagedDisks | (Необязательно) UseManagedDisks — "Да" или "Нет". Значение по умолчанию — "Да". Число виртуальных машин, которые можно разместить в одной учетной записи хранения, вычисляется с учетом того, где выполняется отработка отказа или тестовая отработка отказа виртуальных машин — на управляемом или на неуправляемом диске. |
-|-SubscriptionId |(Необязательно.) Идентификатор GUID подписки. Используйте этот параметр, чтобы создать отчет об оценке затрат с последними ценами на основе вашей подписки, предложения, связанного с подпиской, а также для указанного вами целевого региона Azure в указанной валюте.|
+|-SubscriptionId |(Необязательно.) Идентификатор GUID подписки. Этот параметр требуется при создании отчета об оценке затрат с последними ценами на основе вашей подписки, предложения, связанного с подпиской, а также для указанного вами целевого региона Azure в **указанной валюте**.|
 |-TargetRegion|(Необязательно.) Целевой регион Azure для репликации. Используйте этот параметр, чтобы создать отчет для целевого региона Azure, так как цены в Azure устанавливаются отдельно для каждого региона.<br>Значение по умолчанию — WestUS2 или последний указанный целевой регион.<br>Ознакомьтесь со списком [поддерживаемых целевых регионов](site-recovery-vmware-deployment-planner-cost-estimation.md#supported-target-regions).|
 |-OfferId|(Необязательно.) Предложение, связанное с определенной подпиской. Значение по умолчанию — MS-AZR-0003P (оплата по мере использования).|
 |-Currency|(Необязательно.) Валюта, в которой отображается стоимость в созданном отчете. Значение по умолчанию — доллар США ($) или последняя указанная валюта.<br>Ознакомьтесь со списком [поддерживаемых валют](site-recovery-vmware-deployment-planner-cost-estimation.md#supported-currencies).|
@@ -204,6 +207,8 @@ ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware -Serve
 ```
 
 #### <a name="example-7-generate-a-report-for-south-india-azure-region-with-indian-rupee-and-specific-offer-id"></a>Пример 7. Создание отчета для региона Azure "Южная Индия" со значением валюты "индийская рупия" и указанием идентификатора предложения
+
+Идентификатор подписки требуется для создания отчета о затратах в определенной валюте.
 ```
 ASRDeploymentPlanner.exe -Operation GenerateReport -Virtualization VMware  -Directory “E:\vCenter1_ProfiledData” -VMListFile “E:\vCenter1_ProfiledData\ProfileVMList1.txt”  -SubscriptionID 4d19f16b-3e00-4b89-a2ba-8645edf42fe5 -OfferID MS-AZR-0148P -TargetRegion southindia -Currency INR
 ```

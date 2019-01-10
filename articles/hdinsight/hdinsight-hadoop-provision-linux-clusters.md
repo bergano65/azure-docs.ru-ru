@@ -10,12 +10,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017,seodec18
 ms.topic: conceptual
 ms.date: 08/27/2018
-ms.openlocfilehash: e760b67c1b971613de6b21102687c8ffeb556ed8
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: ce39b431adfd333db1e771913ed28881a193b327
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53386882"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53790848"
 ---
 # <a name="set-up-clusters-in-hdinsight-with-apache-hadoop-apache-spark-apache-kafka-and-more"></a>Установка кластеров в HDInsight с использованием Apache Hadoop, Apache Spark, Apache Kafka и других технологий
 
@@ -107,12 +107,12 @@ ms.locfileid: "53386882"
 
 ## <a name="storage-endpoints-for-clusters"></a>Конечные точки хранилища для кластеров
 
-Хотя при локальной установке кластера Hadoop для хранилища используется распределенная файловая система Hadoop (HDFS), в облаке применяются конечные точки хранилища, подключенные к кластеру. Для кластеров HDInsight используется [Azure Data Lake Store](hdinsight-hadoop-use-data-lake-store.md) или [BLOB-объекты в службе хранилища Azure](hdinsight-hadoop-use-blob-storage.md). Использование службы хранилища Azure или Data Lake Store означает, что вы можете спокойно удалять кластеры HDInsight, используемые для вычислений, не теряя данные. 
+Хотя при локальной установке кластера Hadoop для хранилища используется распределенная файловая система Hadoop (HDFS), в облаке применяются конечные точки хранилища, подключенные к кластеру. Для кластеров HDInsight используется [Azure Data Lake Storage](hdinsight-hadoop-use-data-lake-store.md) или [BLOB-объекты в службе хранилища Azure](hdinsight-hadoop-use-blob-storage.md). Использование службы хранилища Azure или Data Lake Storage означает, что вы можете спокойно удалять кластеры HDInsight, используемые для вычислений, не теряя данные. 
 
 > [!WARNING]  
 > Использование дополнительной учетной записи хранения, местоположение которой отличается от местоположения кластера HDInsight, не поддерживается.
 
-Во время настройки вы указываете контейнер BLOB-объектов в учетной записи хранения Azure или хранилище Data Lake Store для конечной точки хранилища по умолчанию. Хранилище по умолчанию содержит журналы приложений и системный журнал. При необходимости вы можете указать дополнительные связанные учетные записи хранения Azure и учетные записи Data Lake Store, к которым кластер может получать доступ. Кластер HDInsight должен находиться в том же расположении Azure, что и зависимые учетные записи хранения.
+Во время настройки вы указываете контейнер BLOB-объектов в учетной записи хранения Azure или хранилище Data Lake Storage для конечной точки хранилища по умолчанию. Хранилище по умолчанию содержит журналы приложений и системный журнал. При необходимости вы можете указать дополнительные связанные учетные записи хранения Azure и учетные записи Data Lake Storage, к которым кластер может получать доступ. Кластер HDInsight должен находиться в том же расположении Azure, что и зависимые учетные записи хранения.
 
 ![Параметры системы хранения данных кластера: конечные точки хранилища, совместимого с HDFS](./media/hdinsight-hadoop-provision-linux-clusters/hdinsight-cluster-creation-storage.png)
 
@@ -247,7 +247,7 @@ ms.locfileid: "53386882"
 
 ## <a name="troubleshoot-access-control-issues"></a>Устранение неполадок управления доступом
 
-Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](hdinsight-administer-use-portal-linux.md#create-clusters).
+Если при создании кластеров HDInsight возникли проблемы, см. раздел [Создание кластеров](hdinsight-hadoop-create-linux-clusters-portal.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

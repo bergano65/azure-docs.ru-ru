@@ -13,12 +13,12 @@ ms.workload: identity
 ms.date: 11/26/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 22af5b4b757fed83e5c9b23426283d2fb4c4867f
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: fb72de7e9a61c874d4449a5b9c0422c787a7bdc0
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53410539"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53728454"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -1867,12 +1867,12 @@ ms.locfileid: "53410539"
 > | Действие | Microsoft.Devices/provisioningServices/certificates/verify/Action | Проверка ресурса сертификата. |
 > | Действие | Microsoft.Devices/provisioningServices/certificates/Write | Создание или обновление сертификата. |
 > | Действие | Microsoft.Devices/provisioningServices/Delete | Удаление ресурса службы политики диагностики (DPS) Центра Интернета вещей. |
-> | Действие | Microsoft.Devices/provisioningServices/diagnosticSettings/read | Возвращает параметр диагностики для ресурса. |
+> | Действие | Microsoft.Devices/provisioningServices/diagnosticSettings/read | Получение параметра диагностики для ресурса. Примечание: может также потребоваться `Microsoft.Insights/diagnosticSettings/read`.  |
 > | Действие | Microsoft.Devices/provisioningServices/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
 > | Действие | Microsoft.Devices/provisioningServices/keys/listkeys/Action | Получение ключей DPS Центра Интернета вещей для имени ключа. |
 > | Действие | Microsoft.Devices/provisioningServices/listkeys/Action | Получение ключей DPS Центра Интернета вещей. |
-> | Действие | Microsoft.Devices/provisioningServices/logDefinitions/read | Получение доступных определений журналов для службы подготовки. |
-> | Действие | Microsoft.Devices/provisioningServices/metricDefinitions/read | Получение доступных метрик для службы подготовки. |
+> | Действие | Microsoft.Devices/provisioningServices/logDefinitions/read | Получение доступных определений журналов для службы подготовки. Примечание: может также потребоваться `Microsoft.Insights/logDefinitions/read`. |
+> | Действие | Microsoft.Devices/provisioningServices/metricDefinitions/read | Получение доступных метрик для службы подготовки. Примечание: может также потребоваться `Microsoft.Insights/metricDefinitions/read`. |
 > | Действие | Microsoft.Devices/provisioningServices/operationresults/Read | Получение результата операции DPS. |
 > | Действие | Microsoft.Devices/provisioningServices/Read | Получение ресурса DPS Центра Интернета вещей. |
 > | Действие | Microsoft.Devices/provisioningServices/skus/Read | Получение действительных номеров SKU для DPS Центра Интернета вещей. |

@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 author: nacharya1
 ms.author: nilesha
-ms.date: 12/04/2018
+ms.date: 12/12/2018
 ms.custom: seodec18
-ms.openlocfilehash: 7e55304fb02078c71b91b2904475a4bee4bcc018
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 9e3297b2493ea12f9da50556e4fc9e72d625fd25
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436965"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53583465"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -65,9 +65,10 @@ ms.locfileid: "53436965"
 ## <a name="next-steps"></a>Дополнительная информация
 
 Примеры и сведения о создании моделей с помощью автоматического машинного обучения:
++ [Примеры: использование записных книжек Jupyter в Службе машинного обучения Azure](samples-notebooks.md#automated-ml-setup)
 
-+ [Руководство. Автоматическое обучение модели классификации с помощью автоматического машинного обучения Azure](tutorial-auto-train-models.md)
++ [Руководство Автоматическое обучение модели классификации с помощью автоматического машинного обучения Azure](tutorial-auto-train-models.md)
+
++ [Использование автоматического обучения для удаленного ресурса](how-to-auto-train-remote.md)
 
 + [Настройка параметров автоматического обучения](how-to-configure-auto-train.md)
-
-+ [Использование автоматического обучения для удаленного ресурса](how-to-auto-train-remote.md) 

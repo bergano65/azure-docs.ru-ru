@@ -9,24 +9,24 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 4/05/2018
-ms.openlocfilehash: bbd06ae8927e6c21607ac1c997f1e5cf37f092bf
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: a85e7c46aa41309bc031f59ed841dc8149d878b3
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43667242"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53723966"
 ---
 # <a name="use-terraform-to-provision-infrastructure-with-azure-deployment-slots"></a>Использование Terraform для подготовки инфраструктуры со слотами развертывания Azure
 
-Вы можете использовать [слоты развертывания Azure](/azure/app-service/web-sites-staged-publishing) для переключения между разными версиями приложения. Эту возможность помогает минимизировать влияние неработающих развертываний. 
+Вы можете использовать [слоты развертывания Azure](/azure/app-service/deploy-staging-slots) для переключения между разными версиями приложения. Эту возможность помогает минимизировать влияние неработающих развертываний. 
 
 В этой статье показан пример использования слотов развертывания. Мы рассмотрим развертывание двух приложений через GitHub и Azure. Одно из приложений размещается в рабочем слоте, а второе — в промежуточном. (Названия "рабочий" и "промежуточный" произвольны и их можно изменить в зависимости от сценария.) После настройки слотов развертывания для переключения между двумя слотами можно использовать Terraform.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+- **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
 
-- **Учетная запись GitHub**. Учетная запись [GitHub](http://www.github.com) необходима для разветвления и использования тестового репозитория GitHub.
+- **Учетная запись GitHub**. Учетная запись [GitHub](http://www.github.com) необходима для создания вилки и использования тестового репозитория GitHub.
 
 ## <a name="create-and-apply-the-terraform-plan"></a>Создание и применение плана Terraform
 

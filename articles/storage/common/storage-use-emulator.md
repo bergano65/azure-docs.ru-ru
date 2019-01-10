@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 08/10/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: 529612aeecfcea1d775c2f4359c5135ca3c6885e
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: 22c7adc5db044568b4aa49dbbb0e36d2c919f6a6
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44052549"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53629634"
 ---
 # <a name="use-the-azure-storage-emulator-for-development-and-testing"></a>Использование эмулятора хранения Azure для разработки и тестирования
 
@@ -88,21 +88,24 @@ ms.locfileid: "44052549"
 Дополнительные сведения о строках подключения см. в разделе [Настройка строк подключения службы хранилища Azure](../storage-configure-connection-string.md).
 
 ### <a name="authorize-with-a-shared-access-signature"></a>Авторизация с помощью подписанного URL-адреса
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 Некоторые клиентские библиотеки хранилища Azure, такие как библиотека Xamarin, поддерживают только проверку подлинности с помощью маркера подписанного URL-адреса (SAS). Вы можете создать токен SAS, используя такое средство, как [обозреватель хранилищ](http://storageexplorer.com/), либо другое приложение, поддерживающее проверку подлинности с помощью общего ключа.
 
 Кроме того, для этого можно использовать Azure PowerShell. Следующий пример создает токен SAS с полными правами на контейнер BLOB-объектов:
 
-1. Установите Azure PowerShell, если это еще не сделано (рекомендуется использовать последнюю версию командлетов Azure PowerShell). Инструкции по установке см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/install-azurerm-ps).
+1. Установите Azure PowerShell, если это еще не сделано (рекомендуется использовать последнюю версию командлетов Azure PowerShell). Инструкции по установке см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/install-Az-ps).
 2. Откройте Azure PowerShell и выполните приведенные ниже команды, заменив `CONTAINER_NAME` именем на свой выбор.
 
 ```powershell
-$context = New-AzureStorageContext -Local
+$context = New-AzStorageContext -Local
 
-New-AzureStorageContainer CONTAINER_NAME -Permission Off -Context $context
+New-AzStorageContainer CONTAINER_NAME -Permission Off -Context $context
 
 $now = Get-Date
 
-New-AzureStorageContainerSASToken -Name CONTAINER_NAME -Permission rwdl -ExpiryTime $now.AddDays(1.0) -Context $context -FullUri
+New-AzStorageContainerSASToken -Name CONTAINER_NAME -Permission rwdl -ExpiryTime $now.AddDays(1.0) -Context $context -FullUri
 ```
 
 Полученный универсальный код ресурса (URI) для подписанного URL-адреса нового контейнера должен быть аналогичен следующему:
@@ -170,7 +173,7 @@ http://127.0.0.1:10000/devstoreaccount1/sascontainer?sv=2012-02-12&se=2015-07-08
 | **Остановить** |Останавливает эмулятор хранения. |`AzureStorageEmulator.exe stop` | |
 | **Состояние** |Печатает состояние эмулятора хранения. |`AzureStorageEmulator.exe status` | |
 | **Clear** |Очищает данные во всех службах, указанных в командной строке. |`AzureStorageEmulator.exe clear [blob] [table] [queue] [all]                                                    ` |*blob*: удаляет данные о больших двоичных объектах. <br/>*queue*: удаляет данные об очередях. <br/>*table*: удаляет данные о таблицах. <br/>*all*: удаляет все данные во всех службах. |
-| **Init** |Выполняет одноразовую инициализацию для настройки эмулятора. |<code>AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate&#124;-skipcreate] [-reserveports&#124;-unreserveports] [-inprocess]</code> |*-server serverName\instanceName*: указывает сервер для размещения экземпляра SQL. <br/>*-sqlinstance имя_экземпляра*: указывает имя экземпляра SQL, используемого на сервере по умолчанию. <br/>*-forcecreate*: принудительно создает базу данных SQL, даже если она уже существует. <br/>*-skipcreate*: пропускает создание базы данных SQL. Имеет приоритет над -forcecreate.<br/>*-reserveports*: пытается зарезервировать порты HTTP, связанные со службами.<br/>*-unreserveports*: пытается отменить резервирование портов HTTP, связанных со службами. Имеет приоритет над -reserveports.<br/>*-inprocess*: выполняет инициализацию в текущем процессе вместо порождения нового процесса. При изменении резервирований портов нужно запустить текущий процесс с повышенными привилегиями. |
+| **Init** |Выполняет одноразовую инициализацию для настройки эмулятора. |<code>AzureStorageEmulator.exe init [-server serverName] [-sqlinstance instanceName] [-forcecreate&#124;-skipcreate] [-reserveports&#124;-unreserveports] [-inprocess]</code> |*-server serverName\имя_экземпляра*: указывает сервер для размещения экземпляра SQL. <br/>*-sqlinstance имя_экземпляра*: указывает имя экземпляра SQL, используемого на сервере по умолчанию. <br/>*-forcecreate*: принудительно создает базу данных SQL, даже если она уже существует. <br/>*-skipcreate*: пропускает создание базы данных SQL. Имеет приоритет над -forcecreate.<br/>*-reserveports*: пытается зарезервировать порты HTTP, связанные со службами.<br/>*-unreserveports*: пытается отменить резервирование портов HTTP, связанных со службами. Имеет приоритет над -reserveports.<br/>*-inprocess*: выполняет инициализацию в текущем процессе вместо порождения нового процесса. При изменении резервирований портов нужно запустить текущий процесс с повышенными привилегиями. |
 
 ## <a name="differences-between-the-storage-emulator-and-azure-storage"></a>Различия между эмулятором хранения и службой хранилища Azure
 Эмулятор хранения представляет собой эмулированную среду, выполняемую в локальном экземпляре SQL. Поэтому между эмулятором и учетной записью хранения Azure в облаке существуют функциональные различия.

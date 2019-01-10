@@ -4,18 +4,17 @@ description: Узнайте о том, как использовать служ�
 services: storage
 author: tamram
 ms.service: storage
-ms.tgt_pltfrm: na
 ms.devlang: python
 ms.topic: article
-ms.date: 12/08/2016
+ms.date: 12/14/2018
 ms.author: tamram
 ms.component: queues
-ms.openlocfilehash: 827d3ceac267c78be9740adba6c890460ca3f2e9
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 0edb90ca7324d47beaa5133d423928e615ff33a9
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53162993"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53742819"
 ---
 # <a name="how-to-use-queue-storage-from-python"></a>Использование хранилища очередей из Python
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -31,7 +30,7 @@ ms.locfileid: "53162993"
 
 ## <a name="download-and-install-azure-storage-sdk-for-python"></a>Скачивание и установка пакета SDK службы хранилища Azure для Python
 
-Для установки пакета SDK службы хранилища Azure для Python потребуется Python 2.7, 3.3, 3.4, 3.5 или 3.6. Как правило, этот пакет бывает 4 видов: `azure-storage-blob`, `azure-storage-file`, `azure-storage-table` и `azure-storage-queue`. В этом руководстве мы будем использовать пакет `azure-storage-queue`.
+[Пакет SDK службы хранилища Azure для Python](https://github.com/azure/azure-storage-python) требует Python 2.7, 3.3, 3.4, 3.5 или 3.6.
  
 ### <a name="install-via-pypi"></a>Установка с помощью PyPI
 
@@ -41,15 +40,19 @@ ms.locfileid: "53162993"
 pip install azure-storage-queue
 ```
 
-
 > [!NOTE]
-> Если вы обновляете пакет SDK службы хранилища Azure для Python с версии 0.36 или более ранней, сначала удалите эту версию с помощью команды `pip uninstall azure-storage`, так как этот пакет больше не выпускается отдельно.
-> 
-> 
+> Если вы обновляете пакет SDK службы хранилища Azure для Python версии 0.36 или более ранней, удалите старый пакет SDK с помощью `pip uninstall azure-storage`, прежде чем устанавливать последнюю версию пакета.
 
-Другие методы установки см. в статье [Microsoft Azure Storage SDK for Python](https://github.com/Azure/azure-storage-python/) (Пакет SDK службы хранилища Microsoft Azure для Python) на сайте Github.
+Другие методы установки см. в статье [Пакет SDK службы хранилища Azure для Python](https://github.com/Azure/azure-storage-python/).
+
+## <a name="view-the-sample-application"></a>Просмотр примера приложения
+
+Для просмотра и запуска примера приложения, который показывает, как использовать Python с очередями Azure, см. раздел [Служба хранилища Azure. Начало работы с очередями Azure в Python](https://github.com/Azure-Samples/storage-queue-python-getting-started). 
+
+Чтобы запустить пример приложения, убедитесь, что установили оба пакета: `azure-storage-queue` и `azure-storage-common`.
 
 ## <a name="how-to-create-a-queue"></a>Практическое руководство. Создание очереди
+
 Объект **QueueService** позволяет работать с очередями. Следующий код создает объект **QueueService** . Добавьте следующий код в начало любого файла Python, из которого планируется получать доступ к хранилищу Azure программным способом:
 
 ```python
@@ -129,8 +132,6 @@ queue_service.delete_queue('taskqueue')
 
 * [Центр по разработке для Python](https://azure.microsoft.com/develop/python/)
 * [API-интерфейс REST служб хранилища Azure](https://msdn.microsoft.com/library/azure/dd179355)
-* [Блог рабочей группы службы хранилища Azure]
-* [пакет SDK для службы хранилища Microsoft Azure для Python]
 
-[Блог рабочей группы службы хранилища Azure]: http://blogs.msdn.com/b/windowsazurestorage/
+[Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
 [пакет SDK для службы хранилища Microsoft Azure для Python]: https://github.com/Azure/azure-storage-python

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/26/2018
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 25b23d280aca9ef13b8820596686a1f9dbecd2a1
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 3984ac84271728b9066aba15a582065ea3121c76
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53085949"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53581765"
 ---
 # <a name="how-to-manage-keys-in-qna-maker"></a>Управление ключами в QnA Maker
 
@@ -24,9 +24,9 @@ ms.locfileid: "53085949"
 
 ![Управление ключами](../media/qnamaker-how-to-key-management/key-management.png)
 
-1. **Ключи подписки** используются для доступа к [API службы управления QnA Maker](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff). Эти API позволяют выполнять разные операции CRUD с базой знаний.  
+1. **Ключи подписки** используются для доступа к [API службы управления QnA Maker](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff). Эти API-интерфейсы позволяют редактировать базу знаний.  
 
-2. **Ключи конечной точки** используются для доступа к конечной точке базы знаний, чтобы пользователь мог получить ответ на свой вопрос. Эта конечная точка обычно используется в коде бота или приложения, использующего службу QnA Maker.
+2. **Ключи конечной точки** используются для доступа к конечной точке базы знаний, чтобы пользователь мог получить ответ на свой вопрос. Эта конечная точка обычно используется в коде бота или клиентского приложения, использующего службу QnA Maker.
  
 ## <a name="subscription-keys"></a>Ключи подписки
 Можно просмотреть и сбросить ключи подписки на портале Azure, где был создан ресурс QnA Maker. 
@@ -42,7 +42,7 @@ ms.locfileid: "53085949"
 
 Ключами конечной точки можно управлять на [портале QnA Maker](https://qnamaker.ai).
 
-1. Войдите на [портал QnA Maker](https://qnamaker.ai)и перейдите в раздел **Управление ключами**.
+1. Войдите на [портал QnA Maker](https://qnamaker.ai) и перейдите в раздел **Параметры службы**.
 
     ![Ключ конечной точки](../media/qnamaker-how-to-key-management/Endpoint-keys.png)
 
@@ -51,7 +51,7 @@ ms.locfileid: "53085949"
     ![Диспетчер ключей конечной точки](../media/qnamaker-how-to-key-management/Endpoint-keys1.png)
 
     >[!NOTE]
-    >Если вы подозреваете, что ключи были скомпрометированы, обновите их. Для этого нужно внести соответствующие изменения в код приложения или бота.
+    >Если вы подозреваете, что ключи были скомпрометированы, обновите их. Для этого может потребоваться внести соответствующие изменения в код клиентского приложения или бота.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -4,15 +4,15 @@ description: Получите ответы на некоторые часто з
 services: storage
 author: RenaShahMSFT
 ms.service: storage
-ms.date: 10/04/2018
+ms.date: 01/02/2019
 ms.author: renash
 ms.component: files
-ms.openlocfilehash: 761637a9c44cc490d6633aeb1a9b8d81f8885583
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 70370db841a08ae8ee62bda83bec4b1b9e2e7cf2
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52972088"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54001538"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью функции "Синхронизация файлов Azure", чтобы получить быстрый доступ из расположения, где используются данные.
@@ -182,7 +182,7 @@ ms.locfileid: "52972088"
 * <a id="ad-support-regions"></a>
 **Доступна ли предварительная версия Azure AD по протоколу SMB для службы файлов Azure во всех регионах Azure?**
 
-    Предварительная версия доступна во всех общедоступных регионах, кроме Северной Европы.
+    Предварительная версия доступна во всех общедоступных регионах.
 
 * <a id="ad-support-on-premises"></a>
 **Поддерживает ли проверка подлинности Azure AD по протоколу SMB для службы файлов Azure (предварительная версия) проверку подлинности с помощью Azure AD с локальных компьютеров?**

@@ -11,18 +11,18 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 5d4c564ac797f40d7f6e9b169a6c864d3ef8147b
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: f95dec8a539a92a0397421fbde411f646eeca3ca
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53165169"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53720090"
 ---
-# <a name="find-endpoint-region-with-c"></a>Поиск региона конечной точки с использованием C# 
+# <a name="programmatically-find-endpoint-region-with-c"></a>Программный поиск региона конечной точки с использованием C# 
 При наличии идентификатора приложения LUIS и идентификатора подписки LUIS можно определить, какой регион будет использоваться для запросов конечной точки.
 
 > [!NOTE] 
-> Полное решение C# доступно в разделе [**LUIS-Samples** репозитория GitHub](https://github.com/Microsoft/LUIS-Samples/blob/master/documentation-samples/find-region/csharp/).
+> Полное решение C# доступно в разделе [**Azure-Samples** репозитория GitHub](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/find-region/csharp/).
 
 ## <a name="luis-endpoint-query-strategy"></a>Стратегия запросов конечной точки LUIS
 Для каждого запроса конечной точки LUIS требуется:

@@ -14,14 +14,18 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/28/2018
 ms.author: adsolank
-ms.openlocfilehash: 268e679bb052bce4c972c940333147edc5c7d721
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 3b361202d2d80f879ae6d23ec29782bc6f837f96
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242591"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53632880"
 ---
 # <a name="hyperlapse-media-files-with-azure-media-hyperlapse"></a>Файлы мультимедиа Hyperlapse с Azure Media Hyperlapse
+
+> [!NOTE]
+> Этот компонент предварительной версии Служб мультимедиа Azure скоро перестанет использоваться. Начиная с 19 декабря 2018 г. прекращается внесение изменений и улучшений в компонент Media Hyperlapse Служб мультимедиа. 29 марта 2019 г. этот компонент будет выведен из эксплуатации.
+
 Azure Media Hyperlapse представляет собой обработчик мультимедиа, создающий плавное замедленное видео от первого лица или содержимое, характерное для экшн-камер.  Microsoft Hyperlapse для служб мультимедиа Azure, облачный аналог [настольной системы Hyperlapse Pro и телефонной системы Hyperlapse Mobile от Microsoft Research](https://aka.ms/hyperlapse), использует обширные возможности масштабирования платформы обработки мультимедиа служб мультимедиа Azure, чтобы реализовать горизонтальное масштабирование и параллелизовать массовую обработку Hyperlapse.
 
 > [!IMPORTANT]

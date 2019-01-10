@@ -1,7 +1,7 @@
 ---
-title: Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью Node.js
+title: Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью Node.js | Документация Майкрософт
 titlesuffix: Azure Cognitive Services
-description: В этом кратком руководстве показано, как для запрашивать результаты поиска из экземпляра службы пользовательского поиска с помощью Node.js для вызова конечной точки службы пользовательского поиска Bing.
+description: Сведения из этого краткого руководства помогут вам приступить к выполнению запросов к результатам поиска из экземпляра службы "Пользовательский поиск Bing" с помощью Node.js
 services: cognitive-services
 author: aahill
 manager: cgronlun
@@ -10,77 +10,71 @@ ms.component: bing-custom-search
 ms.topic: quickstart
 ms.date: 05/07/2018
 ms.author: aahi
-ms.openlocfilehash: c0c97dd52f8fc3ff590c86f32f794beeb00f4b05
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 3af35a9aea9115971d1fbd251da3fbaddb011c5f
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52310258"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555801"
 ---
-# <a name="quickstart-call-bing-custom-search-endpoint-nodejs"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" (Node.js)
+# <a name="quickstart-call-your-bing-custom-search-endpoint-using-nodejs"></a>Краткое руководство. Вызов конечной точки службы "Пользовательский поиск Bing" с помощью Node.js
 
-В этом кратком руководстве показано, как запрашивать результаты поиска из экземпляра службы пользовательского поиска с помощью Node.js для вызова конечной точки службы пользовательского запроса Bing. 
+Сведения из этого краткого руководства помогут вам приступить к созданию запросов результатов поиска из экземпляра "Пользовательский поиск Bing". Хотя это приложение создается на языке JavaScript, API пользовательского поиска Bing представляет собой веб-службу RESTful, совместимую с большинством языков программирования. Исходный код этого примера доступен на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/nodejs/Search/BingCustomSearchv7.js).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством вам понадобится:
+- Экземпляр службы "Пользовательский поиск Bing". См. [Quickstart: Создание первого экземпляра службы "Пользовательский поиск Bing"](quick-start.md), чтобы получить дополнительные сведения.
 
-- Готовый экземпляр службы пользовательского поиска. Ознакомьтесь с разделом [Create your first Bing Custom Search instance](quick-start.md) (Создание первого экземпляра службы "Пользовательский поиск Bing").
-- Установленный компонент [Node.js](https://www.nodejs.org/).
-- ключ подписки; Ключ подписки можно получить при активации [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search). Кроме того, вы можете использовать ключ платной подписки из панели мониторинга Azure (см. раздел об [учетной записи API Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account)).   См. также [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/pricing/details/cognitive-services/search-api/).
+- [Node.js](https://www.nodejs.org/)
 
-## <a name="run-the-code"></a>Выполнение кода
+- [Библиотека запросов JavaScript](https://github.com/request/request)
 
-Чтобы запустить этот пример, выполните следующее.
+[!INCLUDE [cognitive-services-bing-custom-search-prerequisites](../../../includes/cognitive-services-bing-custom-search-signup-requirements.md)]
 
-1. Создайте папку для своего кода.  
-  
-2. Из командной строки или терминала перейдите в эту папку.  
-  
-3. Установите модуль Node **request**.
-    <pre>
-    npm install request
-    </pre>  
-    
-4. Создайте файл с именем BingCustomSearch.js в созданной папке и скопируйте в него следующий код. Замените **YOUR-SUBSCRIPTION-KEY** и **YOUR-CUSTOM-CONFIG-ID** своими ключом подписки и идентификатором конфигурации.  
-  
-    ``` javascript
+## <a name="create-and-initialize-the-application"></a>Создание и инициализация приложения
+
+1. Создайте файл JavaScript в избранной интегрированной среде разработки или редакторе и добавьте оператор `require()` для библиотеки запросов. Создайте переменные для ключа подписки, идентификатор пользовательской конфигурации и условие поиска. 
+
+    ```javascript
     var request = require("request");
     
     var subscriptionKey = 'YOUR-SUBSCRIPTION-KEY';
     var customConfigId = 'YOUR-CUSTOM-CONFIG-ID';
     var searchTerm = 'microsoft';
-    
-    var options = {
+    ```
+
+## <a name="send-and-receive-a-search-request"></a>Отправка и получение поискового запроса 
+
+1. Создайте переменную для хранения сведений, отправляемых в запросе. Создайте URL-адрес запроса, добавив условие поиска к параметру запроса `q=` и идентификатор пользовательской конфигурации экземпляра поиска к `customconfig=`. Разделяйте параметры символом `&`. 
+
+    ```javascript
+    var info = {
         url: 'https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search?' + 
-          'q=' + searchTerm + 
-          '&customconfig=' + customConfigId,
+            'q=' + searchTerm + "&" +
+            'customconfig=' + customConfigId,
         headers: {
             'Ocp-Apim-Subscription-Key' : subscriptionKey
         }
     }
-    
-    request(options, function(error, response, body){
-        var searchResponse = JSON.parse(body);
-        for(var i = 0; i < searchResponse.webPages.value.length; ++i){
-            var webPage = searchResponse.webPages.value[i];
-            console.log('name: ' + webPage.name);
-            console.log('url: ' + webPage.url);
-            console.log('displayUrl: ' + webPage.displayUrl);
-            console.log('snippet: ' + webPage.snippet);
-            console.log('dateLastCrawled: ' + webPage.dateLastCrawled);
-            console.log();
-        }
-    })
-    ```  
-  
-6. Выполните код с помощью приведенной ниже команды:  
-  
-    ```    
-    node BingCustomSearch.js
-    ``` 
+    ```
+
+1. Используйте библиотеку запросов JavaScript для отправки поискового запроса к экземпляру службы "Пользовательский поиск Bing" и выведите сведения о результатах, включая его имя, URL-адрес и дату последнего просмотра веб-страницы.
+
+    ```javascript
+    request(info, function(error, response, body){
+            var searchResponse = JSON.parse(body);
+            for(var i = 0; i < searchResponse.webPages.value.length; ++i){
+                var webPage = searchResponse.webPages.value[i];
+                console.log('name: ' + webPage.name);
+                console.log('url: ' + webPage.url);
+                console.log('displayUrl: ' + webPage.displayUrl);
+                console.log('snippet: ' + webPage.snippet);
+                console.log('dateLastCrawled: ' + webPage.dateLastCrawled);
+                console.log();
+            }
+    ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Настройка размещенного пользовательского интерфейса](./hosted-ui.md)
-- [Use decoration markers to highlight text](./hit-highlighting.md) (Использование маркеров оформления для выделения текста)
-- [Разбивка веб-страниц на страницы](./page-webpages.md)
+
+> [!div class="nextstepaction"]
+> [Создание веб-страницы пользовательского поиска](./tutorials/custom-search-web-page.md)

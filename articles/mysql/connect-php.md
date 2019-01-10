@@ -1,23 +1,20 @@
 ---
 title: Подключение к Базе данных Azure для MySQL с помощью PHP
 description: В этом кратком руководстве представлены примеры кода PHP, которые можно использовать для подключения к базе данных Azure для MySQL и запроса данных из нее.
-services: mysql
 author: ajlam
 ms.author: andrela
-manager: kfile
-editor: jasonwhowell
 ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 02/28/2018
-ms.openlocfilehash: 7fa9272a8609d933a3f12abb0f33e78c4bdc1b12
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 76d721ca102ae0affeba23c46d5da9fd44743f5b
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49984814"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608772"
 ---
-# <a name="azure-database-for-mysql-use-php-to-connect-and-query-data"></a>База данных Azure для MySQL: подключение и запрос данных с помощью PHP
+# <a name="azure-database-for-mysql-use-php-to-connect-and-query-data"></a>База данных Azure для MySQL: использование PHP для подключения и создания запросов данных
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для MySQL с помощью приложения [PHP](https://secure.php.net/manual/intro-whatis.php). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на языке PHP и вы только начали работу с базой данных Azure для MySQL.
 
 ## <a name="prerequisites"></a>Предварительные требования
@@ -26,7 +23,7 @@ ms.locfileid: "49984814"
 - [Create an Azure Database for MySQL server using Azure CLI](./quickstart-create-mysql-server-database-using-azure-cli.md) (Создание сервера базы данных Azure для MySQL с помощью Azure CLI)
 
 ## <a name="install-php"></a>Установка PHP
-Установите PHP на своем сервере или создайте [веб-приложение](../app-service/app-service-web-overview.md) Azure с PHP.
+Установите PHP на своем сервере или создайте [веб-приложение](../app-service/overview.md) Azure с PHP.
 
 ### <a name="macos"></a>MacOS
 - Скачайте [PHP версии 7.1.4](https://secure.php.net/downloads.php).
@@ -36,7 +33,7 @@ ms.locfileid: "49984814"
 - Скачайте [PHP 7.1.4 (x64) непотокобезопасной версии](https://secure.php.net/downloads.php).
 - Установите PHP и выполните настройку согласно инструкциям в [руководстве по PHP](https://secure.php.net/manual/install.unix.php).
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 - Скачайте [PHP 7.1.4 (x64) непотокобезопасной версии](https://windows.php.net/download#php-7.1).
 - Установите PHP и выполните настройку согласно инструкциям в [руководстве по PHP](https://secure.php.net/manual/install.windows.php).
 
