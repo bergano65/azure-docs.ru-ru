@@ -9,16 +9,15 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 0971122ee7b9cde0664ee661454a8b7824f4b7d5
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 3d82becf209e44fe66711c964f825ce78d691b2d
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53093915"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54024844"
 ---
 #  <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -358,7 +357,7 @@ GO
 | rejectType | Указывает, является ли параметр **rejectValue** литеральным или процентным.<br/><br/>Допустимые значения: **Значение** (по умолчанию) и **Процент**. | Нет  |
 | rejectSampleValue | Определяет количество строк, которое PolyBase следует получить до повторного вычисления процента отклоненных строк.<br/><br/>Допустимые значения: 1, 2, … | Да, если **rejectType** имеет значение **percentage**. |
 | useTypeDefault | Указывает способ обработки отсутствующих значений в текстовых файлах с разделителями, когда PolyBase получает данные из текстового файла.<br/><br/>Дополнительные сведения об этом свойстве см. в подразделе "Аргументы" раздела [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://msdn.microsoft.com/library/dn935026.aspx).<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет  |
-| writeBatchSize | Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение: **целое число** (количество строк). |  Нет. Значение по умолчанию — 10000. |
+| writeBatchSize | Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение: **целое число** (количество строк). | № Значение по умолчанию — 10000. |
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение — **timespan**. Пример: "00:30:00" (30 минут). | Нет  |
 | preCopyScript | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в хранилище данных SQL Azure при каждом выполнении. Это свойство используется для очистки предварительно загруженных данных. | Нет  | (#repeatability-during-copy). | Инструкция запроса. | Нет  |
 

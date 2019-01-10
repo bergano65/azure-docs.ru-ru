@@ -12,15 +12,15 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/14/2017
 ms.author: mbullwin
-ms.openlocfilehash: 63ee308c50a2d5399dd395dc90c2666fae0bbf49
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 952dd97a06718d0c29f9c6f5abc79da592e6f3ae
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999464"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54117816"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
-Узнайте о производительности и использовании своей веб-страницы или приложения. Если добавить [Application Insights](../../application-insights/app-insights-overview.md) в скрипт страницы, вы узнаете время загрузки страницы и вызовов AJAX, сведения об исключениях браузера, ошибках AJAX и их количестве, а также количество пользователей и сеансов. Все эти данные можно разбить по страницам, версии клиентской ОС и браузера, географическому расположению и другим показателям. Можно также настроить оповещения для определенного количества сбоев или медленной загрузки страниц. Кроме того, вставив вызовы трассировки в код JavaScript, вы можете отслеживать использование различных функций приложения веб-страницы.
+Узнайте о производительности и использовании своей веб-страницы или приложения. Если добавить [Application Insights](../../azure-monitor/app/app-insights-overview.md) в скрипт страницы, вы узнаете время загрузки страницы и вызовов AJAX, сведения об исключениях браузера, ошибках AJAX и их количестве, а также количество пользователей и сеансов. Все эти данные можно разбить по страницам, версии клиентской ОС и браузера, географическому расположению и другим показателям. Можно также настроить оповещения для определенного количества сбоев или медленной загрузки страниц. Кроме того, вставив вызовы трассировки в код JavaScript, вы можете отслеживать использование различных функций приложения веб-страницы.
 
 Application Insights можно использовать с любыми веб-страницами — просто добавьте небольшой фрагмент кода JavaScript. Для веб-службы [Java](java-get-started.md) или [ASP.NET](../../azure-monitor/app/asp-net.md) можно интегрировать данные телеметрии, полученные с сервера и клиентских компьютеров.
 
@@ -44,7 +44,7 @@ Application Insights можно использовать с любыми веб-
 
 ![Последовательно выберите пункты «Создать», «Службы для разработчиков», «Application Insights»](./media/javascript/01-create.png)
 
-*Уже появились вопросы?* [Дополнительная информация о создании ресурса](../../application-insights/app-insights-create-new-resource.md).
+*Уже появились вопросы?* [Дополнительная информация о создании ресурса](../../azure-monitor/app/create-new-resource.md ).
 
 ### <a name="add-the-sdk-script-to-your-app-or-web-pages"></a>Добавление сценария пакета SDK в приложение или на веб-страницу
 
@@ -70,7 +70,7 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 Вставьте сценарий непосредственно перед тегом `</head>` каждой страницы, которую вы хотите отслеживать. Если на вашем веб-сайте есть главная страница, можно разместить сценарий на ней. Например: 
 
 * В проекте ASP.NET MVC разместите сценарий на странице `View\Shared\_Layout.cshtml`
-* На сайте SharePoint на панели управления откройте [Параметры сайта/Главная страница](../../application-insights/app-insights-sharepoint.md).
+* На сайте SharePoint на панели управления откройте [Параметры сайта/Главная страница](../../azure-monitor/app/sharepoint.md).
 
 Сценарий содержит ключ инструментирования, который направляет данные к ресурсу Application Insights. 
 
@@ -118,7 +118,7 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 
 ![На сайте portal.azure.com откройте ресурс приложения и щелкните "Параметры", а затем "Браузер".](./media/javascript/03.png)
 
-Данные отсутствуют? Щелкните **Обновить** в верхней части страницы. По-прежнему нет данных? См. раздел [Устранение неполадок](../../application-insights/app-insights-troubleshoot-faq.md).
+Данные отсутствуют? Щелкните **Обновить** в верхней части страницы. По-прежнему нет данных? См. раздел [Устранение неполадок](../../azure-monitor/app/troubleshoot-faq.md).
 
 Колонка "Браузер" — это [колонка обозревателя метрик](../../azure-monitor/app/metrics-explorer.md) с предустановленными фильтрами и предварительно выбранными параметрами диаграмм. При необходимости можно изменить диапазон времени, фильтры и конфигурацию диаграмм и сохранить результат в избранном. Щелкните **Восстановить значения по умолчанию**, чтобы вернуться к исходной конфигурации колонки.
 
@@ -227,7 +227,7 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 ## <a name="usage-tracking"></a>Отслеживание использования
 Хотите узнать, что пользователи делают в вашем приложении?
 
-* [Сведения о средствах для анализа поведения пользователей](../../application-insights/app-insights-usage-overview.md)
+* [Сведения о средствах для анализа поведения пользователей](../../azure-monitor/app/usage-overview.md)
 * [Дополнительные сведения об API пользовательских событий и метрик](../../azure-monitor/app/api-custom-events-metrics.md).
 
 ## <a name="video"></a> Видео
@@ -238,7 +238,7 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 
 
 ## <a name="next"></a>Дальнейшие действия
-* [Отслеживание использования](../../application-insights/app-insights-usage-overview.md)
+* [Отслеживание использования](../../azure-monitor/app/usage-overview.md)
 * [Пользовательские события и метрики](../../azure-monitor/app/api-custom-events-metrics.md)
-* [Сборка, измерение и обучение](../../application-insights/app-insights-usage-overview.md)
+* [Сборка, измерение и обучение](../../azure-monitor/app/usage-overview.md)
 

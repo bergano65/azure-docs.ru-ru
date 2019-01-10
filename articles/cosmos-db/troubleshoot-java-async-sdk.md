@@ -1,20 +1,20 @@
 ---
 title: Диагностика и устранение неполадок с пакетом SDK Java Async для Azure Cosmos DB
 description: Воспользуйтесь такими функциями, как ведение журнала на стороне клиента, и другими сторонними инструментами для выявления, диагностики и устранения проблем, связанных с Azure Cosmos DB.
-services: cosmos-db
 author: moderakh
 ms.service: cosmos-db
 ms.topic: troubleshooting
 ms.date: 10/28/2018
 ms.author: moderakh
 ms.devlang: java
-ms.component: cosmosdb-sql
-ms.openlocfilehash: 951c26ea5b5c77cf205e7793834d564889b9a635
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.subservice: cosmosdb-sql
+ms.reviewer: sngun
+ms.openlocfilehash: 86e5a0a0cf4c820efdcc65505d11e2fb0c198f0b
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52876109"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54039849"
 ---
 # <a name="troubleshoot-issues-when-you-use-the-java-async-sdk-with-azure-cosmos-db-sql-api-accounts"></a>Устранение неполадок при использовании пакета SDK Async Java с учетными записями API SQL для Azure Cosmos DB
 В этой статье рассматриваются распространенные проблемы при использовании [пакета SDK Java Async](sql-api-sdk-async-java.md) с учетными записями API SQL для Azure Cosmos DB, а также связанные с этим обходные пути, средства и действия для диагностики.

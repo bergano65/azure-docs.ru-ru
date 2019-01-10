@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 10/10/2018
 ms.author: mbullwin
-ms.openlocfilehash: 8b2d409ceb6f659a078f48ba71f0f4c72663f6f0
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 812478c13ef39b369471a731c52dc38ba6a4368c
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54002099"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54119753"
 ---
 # <a name="data-collection-retention-and-storage-in-application-insights"></a>Сбор и хранение данных в Application Insights
 
@@ -87,7 +87,7 @@ ms.locfileid: "54002099"
 
 Статистические данные (то есть счетчики, средние значения и другие статистические данные, которые отображаются в обозревателе метрик) сохраняются со степенью детализации в 1 минуту в течение 90 дней.
 
-[Отладочные моментальные снимки](../../application-insights/app-insights-snapshot-debugger.md) хранятся в течение 7 дней. Такая политика хранения установлена для каждого приложения. Если нужно изменить этот параметр, вы можете запросить изменения, открыв окно Службы Поддержки на портале Microsoft Azure.
+[Отладочные моментальные снимки](../../azure-monitor/app/snapshot-debugger.md) хранятся в течение 7 дней. Такая политика хранения установлена для каждого приложения. Если нужно изменить этот параметр, вы можете запросить изменения, открыв окно Службы Поддержки на портале Microsoft Azure.
 
 ## <a name="who-can-access-the-data"></a>Кто может получить доступ к данным?
 Данные видны вам и, если у вас есть учетная запись организации, членам вашей группы. 
@@ -101,7 +101,7 @@ ms.locfileid: "54002099"
 * В США, Европе и юго-восточной Азии. Расположение можно выбрать при создании нового ресурса Application Insights. 
 
 #### <a name="does-that-mean-my-app-has-to-be-hosted-in-the-usa-europe-or-southeast-asia"></a>Значит ли это, что мое приложение должно размещаться в США, Европе или юго-восточной Азии?
-*  Нет. Ваше приложение может выполняться где угодно, будь то ваш собственный локальный узел или облако.
+* № Ваше приложение может выполняться где угодно, будь то ваш собственный локальный узел или облако.
 
 ## <a name="how-secure-is-my-data"></a>Насколько защищены мои данные?
 Application Insights — это служба Azure. Политики безопасности описаны в [техническом документе Azure о безопасности, конфиденциальности и соответствии требованиям](https://go.microsoft.com/fwlink/?linkid=392408).
@@ -202,7 +202,7 @@ services.AddSingleton(typeof(ITelemetryChannel), new ServerTelemetryChannel () {
 |.NET | Поддерживается, конфигурация зависит от версии. | Подробную информацию о конфигурации для .NET 4.7 и более ранних версий см. в [этих инструкциях](https://docs.microsoft.com/dotnet/framework/network-programming/tls#support-for-tls-12).  |
 |Монитор состояния | Поддерживается, требуется настройка | Монитор состояния зависит от [Конфигурации ОС](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings) + [Конфигурации .NET](https://docs.microsoft.com/dotnet/framework/network-programming/tls#support-for-tls-12) для поддержки протокола TLS 1.2.
 |Node.js |  Поддерживается, для версии 10.5.0 может потребоваться настройка. | Для определения точной конфигурации приложения используйте [официальную документацию Node.js по протоколу TLS/SSL](https://nodejs.org/api/tls.html). |
-|Java | Поддерживается, в JDK поддержка протокола TLS 1.2 добавлена в [обновлении 121 для JDK 6](https://www.oracle.com/technetwork/java/javase/overview-156328.html#R160_121) и [JDK 7](http://www.oracle.com/technetwork/java/javase/7u131-relnotes-3338543.html). | JDK 8 использует [протокол TLS 1.2 по умолчанию](https://blogs.oracle.com/java-platform-group/jdk-8-will-use-tls-12-as-default).  |
+|Java | Поддерживается, в JDK поддержка протокола TLS 1.2 добавлена в [обновлении 121 для JDK 6](https://www.oracle.com/technetwork/java/javase/overview-156328.html#R160_121) и [JDK 7](https://www.oracle.com/technetwork/java/javase/7u131-relnotes-3338543.html). | JDK 8 использует [протокол TLS 1.2 по умолчанию](https://blogs.oracle.com/java-platform-group/jdk-8-will-use-tls-12-as-default).  |
 |Linux | Как правило, дистрибутивы Linux для поддержки протокола TLS 1.2 используют [OpenSSL](https://www.openssl.org).  | Убедитесь, что ваша версия OpenSSL поддерживается, проверив [журнал изменений OpenSSL](https://www.openssl.org/news/changelog.html).|
 | Windows 8.0–10 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings).  |
 | Windows Server 2012–2016 | Поддерживается и включена по умолчанию. | Убедитесь, что вы все еще используете [параметры по умолчанию](https://docs.microsoft.com/windows-server/security/tls/tls-registry-settings). |
@@ -297,5 +297,5 @@ openssl s_client -connect bing.com:443 -tls1_2
 [platforms]: ../../azure-monitor/app/platforms.md
 [pricing]: https://azure.microsoft.com/pricing/details/application-insights/
 [redfield]: ../../azure-monitor/app/monitor-performance-live-website-now.md
-[start]: ../../application-insights/app-insights-overview.md
+[start]: ../../azure-monitor/app/app-insights-overview.md
 
