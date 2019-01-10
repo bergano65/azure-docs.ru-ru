@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2017
 ms.author: wesmc
-ms.openlocfilehash: 0978e906467fd5b16f25bd2e053980dda4510127
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: 906ab6c433df7cf452d1f5ab4660abce8d4674fc
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53022143"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54107520"
 ---
 # <a name="introduction-to-the-azure-cache-for-redis-premium-tier"></a>Общие сведения о кэше Azure для Redis уровня "Премиум"
 Кэш Azure для Redis – это распределенный управляемый кэш, который позволяет создавать быстрые приложения с высокой степенью масштабируемости благодаря тому, что обеспечивается сверхбыстрый доступ к данным. 
@@ -34,7 +34,7 @@ ms.locfileid: "53022143"
 Дополнительные сведения о размере, пропускной способности и полосе пропускания для кэшей уровня "Премиум" см. в статье [Вопросы и ответы по кэшу Azure для Redis](cache-faq.md#what-azure-cache-for-redis-offering-and-size-should-i-use)
 
 ## <a name="redis-data-persistence"></a>Сохраняемость данных Redis
-Уровень Премиум позволяет сохранить данные кэша в учетной записи хранения Azure. В кэше Базовый и Стандартный все данные хранятся только в памяти. При возникновении проблем с базовой инфраструктурой это может привести к потере данных. Для повышения устойчивости к потере данных рекомендуется использовать функцию постоянного хранения данных Redis уровня Премиум. Кэш Azure для Redis предлагает варианты RDB и AOF(ожидается в ближайшее время) для [сохраняемости Redis](http://redis.io/topics/persistence). 
+Уровень Премиум позволяет сохранить данные кэша в учетной записи хранения Azure. В кэше Базовый и Стандартный все данные хранятся только в памяти. При возникновении проблем с базовой инфраструктурой это может привести к потере данных. Для повышения устойчивости к потере данных рекомендуется использовать функцию постоянного хранения данных Redis уровня Премиум. Кэш Azure для Redis предлагает варианты RDB и AOF(ожидается в ближайшее время) для [сохраняемости Redis](https://redis.io/topics/persistence). 
 
 Инструкции по настройке сохраняемости см. в статье [How to configure persistence for a Premium Azure Cache for Redis](cache-how-to-premium-persistence.md) (Настройка сохраняемости для кэша Azure для Redis уровня "Премиум").
 

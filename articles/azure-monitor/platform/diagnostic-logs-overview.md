@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: johnkem
 ms.component: logs
-ms.openlocfilehash: 50eb70799506ecd5203ff4fd0c2649726658b3e4
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 08ad8964fee2d94677832fa664ed2e18cb9f772c
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53551175"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54104987"
 ---
 # <a name="collect-and-consume-log-data-from-your-azure-resources"></a>Сбор и использование данных журнала из ресурсов Azure
 
@@ -83,7 +83,7 @@ ms.locfileid: "53551175"
 
 Сбор журналов диагностики ресурсов на портале Azure после создания ресурса можно включить, перейдя к конкретному ресурсу или к Azure Monitor. Чтобы выполнить это с помощью Azure Monitor, сделайте следующее:
 
-1. На [портале Azure](http://portal.azure.com) перейдите к Azure Monitor и щелкните **Параметры диагностики**
+1. На [портале Azure](https://portal.azure.com) перейдите к Azure Monitor и щелкните **Параметры диагностики**
 
     ![Раздел мониторинга Azure Monitor](media/diagnostic-logs-overview/diagnostic-settings-blade.png)
 

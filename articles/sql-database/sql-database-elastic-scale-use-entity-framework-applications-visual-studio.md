@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/01/2018
-ms.openlocfilehash: 030ec9db16f90430a544ca8715a4e1dea02e2c62
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 71f024c81983fcb9c3e99bdf633a5bde306452b8
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52873246"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54051243"
 ---
 # <a name="elastic-database-client-library-with-entity-framework"></a>Использование клиентской библиотеки эластичных баз данных с Entity Framework
 В этом документе показаны изменения, которые следует внести в приложение Entity Framework для интеграции со [средствами эластичных баз данных](sql-database-elastic-scale-introduction.md). Основное внимание уделяется совмещению методов [управления картой сегментов](sql-database-elastic-scale-shard-map-management.md) и [маршрутизации, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md), с помощью подхода Entity Framework **Code First**. Руководство [Code First — создание базы данных](https://msdn.microsoft.com/data/jj193542.aspx) для Entity Framework используется в этом документе как пример. Примером кода для этого документа является часть набора примеров для эластичной базы данных в Visual Studio.
@@ -236,13 +236,13 @@ ms.locfileid: "52873246"
         } 
 
         // Only static methods are allowed in calls into base class c'tors 
-        private static string SetInitializerForConnection(string connnectionString) 
+        private static string SetInitializerForConnection(string connectionString) 
         { 
             // You want existence checks so that the schema can get deployed 
             Database.SetInitializer<ElasticScaleContext<T>>( 
         new CreateDatabaseIfNotExists<ElasticScaleContext<T>>()); 
 
-            return connnectionString; 
+            return connectionString; 
         } 
 
 Можно использовать версию конструктора, унаследованную от базового класса. Однако при подключении код должен обеспечить использование для EF инициализатора по умолчанию. Поэтому присутствует вызов статического метода перед вызовом конструктора базового класса со строкой подключения. Обратите внимание, что регистрация сегментов должна выполняться в другом домене приложения или процесса, чтобы параметры инициализатора EF не конфликтовали. 

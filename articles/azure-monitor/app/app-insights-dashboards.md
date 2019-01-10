@@ -12,15 +12,15 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/14/2017
 ms.author: mbullwin
-ms.openlocfilehash: 83bf45c93648ca768243a2208f6a91cc9011a919
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 1b0c991c09d1235215dc9b930c529a219d492a8c
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54002524"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54117083"
 ---
 # <a name="navigation-and-dashboards-in-the-application-insights-portal"></a>Навигация и панели мониторинга на портале Application Insights
-После [настройки Application Insights для проекта](../../application-insights/app-insights-overview.md) данные телеметрии о производительности и использовании вашего приложения будут отображаться в ресурсе Application Insights на [портале Azure](https://portal.azure.com).
+После [настройки Application Insights для проекта](../../azure-monitor/app/app-insights-overview.md) данные телеметрии о производительности и использовании вашего приложения будут отображаться в ресурсе Application Insights на [портале Azure](https://portal.azure.com).
 
 ## <a name="find-your-telemetry"></a>Поиск телеметрии
 Выполните вход на [портале Azure](https://portal.azure.com) и перейдите к ресурсу Application Insights, созданному для приложения.
@@ -34,7 +34,7 @@ ms.locfileid: "54002524"
 Вы можете настроить любую диаграмму или сетку и закрепить ее на панели мониторинга. Таким образом можно объединить на центральной панели мониторинга ключевые данные телеметрии из разных приложений.
 
 ## <a name="dashboards"></a>Панели мониторинга
-Выполнив вход на [портал Microsoft Azure](https://portal.azure.com) , вы попадаете на панель мониторинга. Здесь можно собрать самые нужные диаграммы из всех ресурсов Azure, в том числе данные телеметрии из [ Application Insights](../../application-insights/app-insights-overview.md).
+Выполнив вход на [портал Microsoft Azure](https://portal.azure.com) , вы попадаете на панель мониторинга. Здесь можно собрать самые нужные диаграммы из всех ресурсов Azure, в том числе данные телеметрии из [ Application Insights](../../azure-monitor/app/app-insights-overview.md).
 
 ![Настроенная панель мониторинга.](./media/app-insights-dashboards/31.png)
 
@@ -96,7 +96,7 @@ ms.locfileid: "54002524"
 
 ![Щелкните общую папку в заголовке панели мониторинга.](./media/app-insights-dashboards/41.png)
 
-Дополнительные сведения о [ролях и контроле доступа](../../application-insights/app-insights-resources-roles-access-control.md).
+Дополнительные сведения о [ролях и контроле доступа](../../azure-monitor/app/resources-roles-access-control.md).
 
 ## <a name="create-dashboards-programmatically"></a>Создание панелей мониторинга с помощью программных средств
 С помощью [Azure Resource Manager](https://docs.microsoft.com/azure/azure-portal/azure-portal-dashboards-create-programmatically) и простого редактора JSON можно автоматизировать создание панелей мониторинга.
@@ -113,28 +113,28 @@ ms.locfileid: "54002524"
 * [**Поиск**](../../azure-monitor/app/diagnostic-search.md) необходим, чтобы изучать определенные экземпляры таких событий, как запросы, исключения или трассировки журналов.
 * [**Аналитика**](../../azure-monitor/app/analytics.md) подойдет для эффективных запросов телеметрии.
 * **Диапазон времени** необходим для настройки диапазона, который отображается во всех диаграммах в колонке.
-* **Удалить.** Удалите ресурс Application Insights для этого приложения. Следует также удалить пакеты Application Insights из кода приложения или изменить [ключ инструментирования](../../application-insights/app-insights-create-new-resource.md#copy-the-instrumentation-key) в приложении, чтобы направлять данные телеметрии на другой ресурс Application Insights.
+* **Удалить.** Удалите ресурс Application Insights для этого приложения. Следует также удалить пакеты Application Insights из кода приложения или изменить [ключ инструментирования](../../azure-monitor/app/create-new-resource.md #copy-the-instrumentation-key) в приложении, чтобы направлять данные телеметрии на другой ресурс Application Insights.
 
 ### <a name="essentials-tab"></a>Вкладка "Основное"
-* [Ключ инструментирования](../../application-insights/app-insights-create-new-resource.md#copy-the-instrumentation-key) определяет ресурс этого приложения.
+* [Ключ инструментирования](../../azure-monitor/app/create-new-resource.md #copy-the-instrumentation-key) определяет ресурс этого приложения.
 
 ### <a name="app-navigation-bar"></a>Панель навигации приложения
 ![Левая панель навигации](./media/app-insights-dashboards/app-left-nav-bar.png)
 
 * **Обзор** позволяет вернуться к колонке обзора приложения.
 * **Журнал действий** предоставляет доступ к оповещениям и административным событиям Azure.
-* [**Контроль доступа**](../../application-insights/app-insights-resources-roles-access-control.md) предоставляет доступ к членам группы и другим пользователям.
+* [**Контроль доступа**](../../azure-monitor/app/resources-roles-access-control.md) предоставляет доступ к членам группы и другим пользователям.
 * [**Теги**](../../azure-resource-manager/resource-group-using-tags.md) можно использовать для группирования приложения с другими приложениями.
 
 ИЗУЧЕНИЕ
 
 * [**Схема сопоставления приложений**](app-map.md) — это активная карта, на которой показаны компоненты приложения, основанные на сведениях о зависимостях.
-* [**Интеллектуальное обнаружение**](../../application-insights/app-insights-proactive-diagnostics.md) предназначено для просмотра последних оповещений о производительности.
+* [**Интеллектуальное обнаружение**](../../azure-monitor/app/proactive-diagnostics.md) предназначено для просмотра последних оповещений о производительности.
 * [**Динамический поток**](../../azure-monitor/app/live-stream.md) представляет собой фиксированный набор почти мгновенных метрик, полезных при отладке или развертывании новой сборки.
 * [**Доступность и веб-тесты**](../../azure-monitor/app/monitor-web-app-availability.md) позволяют регулярно отправлять запросы в веб-приложение со всего мира.*
-* [**Сбои и производительность**](../../application-insights/app-insights-web-monitor-performance.md) предназначены для проверки исключений, частоты сбоев и времени отклика на запросы приложения и из приложения к [зависимостям](../../azure-monitor/app/asp-net-dependencies.md).
-* [**Производительность**](../../application-insights/app-insights-web-monitor-performance.md) — это время отклика, время отклика зависимостей.
-* [Серверы](../../application-insights/app-insights-web-monitor-performance.md) — счетчики производительности. Доступны, если [установить монитор состояния](../../azure-monitor/app/monitor-performance-live-website-now.md).
+* [**Сбои и производительность**](../../azure-monitor/app/web-monitor-performance.md) предназначены для проверки исключений, частоты сбоев и времени отклика на запросы приложения и из приложения к [зависимостям](../../azure-monitor/app/asp-net-dependencies.md).
+* [**Производительность**](../../azure-monitor/app/web-monitor-performance.md) — это время отклика, время отклика зависимостей.
+* [Серверы](../../azure-monitor/app/web-monitor-performance.md) — счетчики производительности. Доступны, если [установить монитор состояния](../../azure-monitor/app/monitor-performance-live-website-now.md).
 * **Браузер** — производительность просмотра страниц и вызовов технологии AJAX. Доступно, если [инструментировать веб-страницы](../../azure-monitor/app/javascript.md).
 * **Использование** — число просмотров страниц, пользователей и сеансов. Доступно, если [инструментировать веб-страницы](../../azure-monitor/app/javascript.md).
 
@@ -145,7 +145,7 @@ ms.locfileid: "54002524"
 * [Оповещения](../../azure-monitor/app/alerts.md) — конфигурация оповещений для метрик.
 * [Непрерывный экспорт](../../azure-monitor/app/export-telemetry.md) — настройка экспорта данных телеметрии в службе хранилища Azure.
 * [Тестирование производительности](../../azure-monitor/app/monitor-web-app-availability.md#performance-tests) — настройка искусственной нагрузки на веб-сайт.
-* [Квота и цены](../../azure-monitor/app/pricing.md) и [выборка приема](../../application-insights/app-insights-sampling.md).
+* [Квота и цены](../../azure-monitor/app/pricing.md) и [выборка приема](../../azure-monitor/app/sampling.md).
 * **Доступ к API** используется для создания [аннотаций к выпуску](annotations.md) и для API доступа к данным.
 * [**Рабочие элементы**](../../azure-monitor/app/diagnostic-search.md#create-work-item) подключаются к системе отслеживания работы, позволяющей создавать ошибки при проверке данных телеметрии.
 

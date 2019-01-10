@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/12/2018
 ms.author: dugill
-ms.openlocfilehash: 69127702a7d8e7027e78a8e04a4e8e1bc3e36b65
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: d7beab66bdaed312f32adef74ceb4b2944e6853e
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49956346"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54103897"
 ---
 # <a name="use-resource-manager-authentication-api-to-access-subscriptions"></a>Использование API аутентификации Resource Manager для доступа к подпискам
 ## <a name="introduction"></a>Введение
@@ -156,7 +156,7 @@ Azure AD также поддерживает учетные данные сер�
 
 При работе с учетными данными сертификата создайте веб-токен JSON (JWT) и подпишите его (RSA-SHA256) с помощью закрытого ключа сертификата приложения. Сборка этого токена показана в описании [потока учетных данных клиента](../active-directory/develop/v1-oauth2-client-creds-grant-flow.md#second-case-access-token-request-with a-certificate).  Справочную информацию по подписыванию маркеров JWT утверждений клиента см. на странице с [кодом библиотеки аутентификации Active Directory (.NET)](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/blob/dev/src/ADAL.PCL.Desktop/CryptographyHelper.cs).
 
-Дополнительные сведения об аутентификации клиента см. на странице [характеристик Open ID Connect](http://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication).
+Дополнительные сведения об аутентификации клиента см. на странице [характеристик Open ID Connect](https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication).
 
 В следующем примере показан запрос на токен предоставления кода с использованием учетных данных сертификата:
 

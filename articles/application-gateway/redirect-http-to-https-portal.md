@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 12/7/2018
 ms.author: victorh
-ms.openlocfilehash: 1d30ddfb97b065d0d2fdf3bf91a73d3f7eb1b70f
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: a10314d4c396298f018459e56252d0d0d1656f08
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53111344"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54107792"
 ---
 # <a name="create-an-application-gateway-with-http-to-https-redirection-using-the-azure-portal"></a>Создание шлюза приложений с перенаправлением трафика HTTP в HTTPS с помощью портала Azure
 
@@ -65,7 +65,7 @@ Export-PfxCertificate `
 
 Виртуальная сеть необходима для обмена данными между создаваемыми ресурсами. В этом примере создаются две подсети: одна для шлюза приложений, а другая — для внутренних серверов. Вы можете создать виртуальную сеть во время создания шлюза приложений.
 
-1. Войдите на портал Azure по адресу [http://portal.azure.com](http://portal.azure.com).
+1. Войдите на портал Azure по адресу [https://portal.azure.com](https://portal.azure.com).
 2. Выберите **Создать ресурс** в верхнем левом углу окна на портале Azure.
 3. Щелкните **Сети**, а затем в списке "Рекомендованные" выберите **Шлюз приложений**.
 4. Введите следующие значения для шлюза приложений:

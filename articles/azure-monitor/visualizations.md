@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/24/2018
 ms.author: bwren
-ms.openlocfilehash: 862380a35dcc4d50dce8d709bd1dbea1aa38e37a
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 9b160c011a8a9507698443446ad5fe908b32fb9e
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53728352"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54049968"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -71,7 +71,7 @@ ms.locfileid: "53728352"
 
 
 ## <a name="application-insights-workbooks"></a>Книги Application Insights
-[Книги](../application-insights/app-insights-usage-workbooks.md) — это интерактивные документы, которые дают полное представление о данных и позволяют проводить анализ и выполнять совместную работу в группе. Конкретными примерами, в которых книги могут оказаться весьма полезными источниками данных, являются руководства по устранению неполадок и инцидентов.
+[Книги](../azure-monitor/app/usage-workbooks.md) — это интерактивные документы, которые дают полное представление о данных и позволяют проводить анализ и выполнять совместную работу в группе. Конкретными примерами, в которых книги могут оказаться весьма полезными источниками данных, являются руководства по устранению неполадок и инцидентов.
 
 ![Книга](media/visualizations/workbook.png)
 
@@ -140,7 +140,7 @@ ms.locfileid: "53728352"
 - Дополнительные сведения о [данных, собранных Azure Monitor](platform/data-collection.md).
 - Дополнительные сведения о [панелях мониторинга Azure](../azure-portal/azure-portal-dashboards.md).
 - Дополнительные сведения о [представлениях в Azure Monitor](platform/view-designer.md).
-- Дополнительные сведения о [книгах в Application Insights](../application-insights/app-insights-usage-workbooks.md).
+- Дополнительные сведения о [книгах в Application Insights](../azure-monitor/app/usage-workbooks.md).
 - Дополнительные сведения об [импорте данных журналов в Power BI](../azure-monitor/platform/powerbi.md).
 - Дополнительные сведения о [подключаемом модуле источника данных Grafana для Azure Monitor](../azure-monitor/platform/grafana-plugin.md).
 

@@ -11,13 +11,13 @@ author: aamalvea
 ms.author: aamalvea
 ms.reviewer: jrasnik, carlrab
 manager: craigg
-ms.date: 12/06/2018
-ms.openlocfilehash: 5b0543b28117d349ceaef173a1201574cf2b3682
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 01/03/2019
+ms.openlocfilehash: 36a448a861bdfdcd85e532578383b14e56f54b1a
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53604554"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54039101"
 ---
 # <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database"></a>Устранение неполадок подключения для Базы данных SQL Azure с помощью службы "Работоспособность ресурсов Azure"
 
@@ -77,6 +77,6 @@ ms.locfileid: "53604554"
 
 - Узнайте подробнее о [логике повторных попыток для временных ошибок](./sql-database-connectivity-issues.md#retry-logic-for-transient-errors)
 - [Устранение, диагностика и предотвращение ошибок подключения SQL и временных ошибок для базы данных SQL](./sql-database-connectivity-issues.md)
-- Узнайте подробнее о [настройке оповещений службы "Работоспособность ресурсов Azure"](/articles/service-health/resource-health-alert-arm-template-guide.md)
-- Общие сведения о [службе "Работоспособность ресурсов Azure"](/articles/service-health/resource-health-overview.md)
-- [Часто задаваемые вопросы о службе "Работоспособность ресурсов Azure"](/articles/service-health/resource-health-faq.md)
+- Узнайте подробнее о [настройке оповещений службы "Работоспособность ресурсов Azure"](../service-health/resource-health-alert-arm-template-guide.md)
+- Общие сведения о [службе "Работоспособность ресурсов Azure"](../service-health/resource-health-overview.md)
+- [Часто задаваемые вопросы о службе "Работоспособность ресурсов Azure"](../service-health/resource-health-faq.md)

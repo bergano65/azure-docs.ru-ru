@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2017
 ms.author: wesmc
-ms.openlocfilehash: 0186882183ed0848fd8b14d186b55ad1a5ff58ea
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: 746e1c082d370cdcf1fca6597923b0e38b9a6d62
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53022092"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54105242"
 ---
 # <a name="manage-azure-cache-for-redis-with-azure-powershell"></a>Управление кэшем Azure для Redis с использованием Azure PowerShell
 > [!div class="op_single_selector"]
@@ -148,11 +148,11 @@ ms.locfileid: "53022092"
 | maxmemory-reserved |Определяет [объем памяти, зарезервированный](cache-configure.md#maxmemory-policy-and-maxmemory-reserved) для процессов, не связанных с кэшем. |"Стандартный" и "Премиум" |
 | maxmemory-policy |Определяет [политику вытеснения](cache-configure.md#maxmemory-policy-and-maxmemory-reserved) для кэша. |Все ценовые категории |
 | notify-keyspace-events |Настраивает [уведомления пространства ключей](cache-configure.md#keyspace-notifications-advanced-settings) |"Стандартный" и "Премиум" |
-| hash-max-ziplist-entries |Настраивает [оптимизацию памяти](http://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
-| hash-max-ziplist-value |Настраивает [оптимизацию памяти](http://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
-| set-max-intset-entries |Настраивает [оптимизацию памяти](http://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
-| zset-max-ziplist-entries |Настраивает [оптимизацию памяти](http://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
-| zset-max-ziplist-value |Настраивает [оптимизацию памяти](http://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
+| hash-max-ziplist-entries |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
+| hash-max-ziplist-value |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
+| set-max-intset-entries |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
+| zset-max-ziplist-entries |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
+| zset-max-ziplist-value |Настраивает [оптимизацию памяти](https://redis.io/topics/memory-optimization) для небольших сводных данных. |"Стандартный" и "Премиум" |
 | databases |Определяет количество баз данных. Это свойство можно настроить только в момент создания кэша. |"Стандартный" и "Премиум" |
 
 ## <a name="to-create-an-azure-cache-for-redis"></a>Создание экземпляра кэша Azure для Redis
@@ -237,7 +237,7 @@ ms.locfileid: "53022092"
             This cmdlet supports the common parameters: Verbose, Debug,
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
-            about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+            about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 
 Чтобы создать кэш с параметрами по умолчанию, выполните следующую команду:
 
@@ -317,7 +317,7 @@ ms.locfileid: "53022092"
             This cmdlet supports the common parameters: Verbose, Debug,
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
-            about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+            about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 
 Командлет `Set-AzureRmRedisCache` можно использовать для обновления таких свойств, как значения `Size`, `Sku`, `EnableNonSslPort` и `RedisConfiguration`. 
 
@@ -421,7 +421,7 @@ ms.locfileid: "53022092"
             This cmdlet supports the common parameters: Verbose, Debug,
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
-            about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+            about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 
 Чтобы получить сведения обо всех кэшах в текущей подписке, выполните командлет `Get-AzureRmRedisCache` без параметров.
 
@@ -488,7 +488,7 @@ ms.locfileid: "53022092"
             This cmdlet supports the common parameters: Verbose, Debug,
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
-            about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+            about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 
 Чтобы получить ключи к кэшу, вызовите командлет `Get-AzureRmRedisCacheKey` и передайте имя кэша и имя группы ресурсов, содержащей этот кэш.
 
@@ -533,7 +533,7 @@ ms.locfileid: "53022092"
             This cmdlet supports the common parameters: Verbose, Debug,
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
-            about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+            about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 
 Чтобы повторно создать первичный или вторичный ключ кэша, вызовите командлет `New-AzureRmRedisCacheKey`, передайте имя и группу ресурсов и укажите значение `Primary` или `Secondary` для параметра `KeyType`. В приведенном ниже примере создается вторичный ключ доступа для кэша.
 
@@ -584,7 +584,7 @@ ms.locfileid: "53022092"
             This cmdlet supports the common parameters: Verbose, Debug,
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
-            about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+            about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 
 В приведенном ниже примере удаляется кэш с именем `myCache` .
 
@@ -648,7 +648,7 @@ ms.locfileid: "53022092"
             This cmdlet supports the common parameters: Verbose, Debug,
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
-            about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+            about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 
 
 Приведенная ниже команда импортирует данные из большого двоичного объекта, указанного в универсальном коде ресурса (URI) SAS, в кэш Azure для Redis.
@@ -707,7 +707,7 @@ ms.locfileid: "53022092"
             This cmdlet supports the common parameters: Verbose, Debug,
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
-            about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+            about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 
 
 Приведенная ниже команда экспортирует данные из экземпляра кэша Azure для Redis в контейнер, указанный универсальным кодом ресурса SAS.
@@ -768,7 +768,7 @@ ms.locfileid: "53022092"
             This cmdlet supports the common parameters: Verbose, Debug,
             ErrorAction, ErrorVariable, WarningAction, WarningVariable,
             OutBuffer, PipelineVariable, and OutVariable. For more information, see
-            about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+            about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
 
 
 Перезапустить оба узла указанного кэша можно с помощью такой команды:
@@ -785,5 +785,5 @@ ms.locfileid: "53022092"
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и портала Azure](../azure-resource-manager/resource-group-template-deploy-portal.md) — сведения о создании групп ресурсов и управлении ими на портале Azure.
 * [Блог Azure](https://azure.microsoft.com/blog/) — сведения о новых возможностях в Azure.
 * [Блог Windows PowerShell](https://blogs.msdn.com/powershell) — сведения о новых возможностях в Windows PowerShell.
-* [Блог "Hey, Scripting Guy!"](http://blogs.technet.com/b/heyscriptingguy/) — реальные советы и рекомендации от сообщества Windows PowerShell.
+* [Блог "Hey, Scripting Guy!"](https://blogs.technet.com/b/heyscriptingguy/) — реальные советы и рекомендации от сообщества Windows PowerShell.
 

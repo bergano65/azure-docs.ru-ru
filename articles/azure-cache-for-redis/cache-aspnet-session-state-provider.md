@@ -14,12 +14,12 @@ ms.tgt_pltfrm: azure-cache-for-redis
 ms.workload: tbd
 ms.date: 05/01/2017
 ms.author: wesmc
-ms.openlocfilehash: c9b843bfd448c05cb2b11165e54d19db0a7ad60e
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: a7f3e23cd74baa2e1fdef178be8c5b213a3905ef
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53022134"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54105293"
 ---
 # <a name="aspnet-session-state-provider-for-azure-cache-for-redis"></a>Поставщик состояний сеансов ASP.NET для кэша Azure для Redis
 Кэш Azure для Redis предоставляет поставщика состояний сеансов, который вы можете использовать для сохранения состояния сеанса в памяти с помощью кэша Azure для Redis вместо базы данных SQL Server. Для использования поставщика состояний сеансов с кэшированием сначала настройте кэш, а затем настройте приложение ASP.NET для кэша с помощью пакета кэша Azure для Redis NuGet для состояний сеансов.
@@ -83,7 +83,7 @@ Install-Package Microsoft.Web.RedisSessionStateProvider
 
 Раздел с комментариями содержит пример атрибутов и возможные настройки для каждого из них.
 
-Задайте для атрибутов значения из колонки своего кэша на портале Microsoft Azure и настройте другие параметры по своему усмотрению. Инструкции по доступу к свойствам кэша см. в разделе [Configure Azure Cache for Redis settings](cache-configure.md#configure-azure-cache-for-redis-settings) (Настройка параметров кэша Azure для Redis).
+Задайте для атрибутов значения из колонки своего кэша на портале Microsoft Azure и настройте другие параметры по своему усмотрению. Инструкции по доступу к свойствам кэша см. в разделе [Настройка параметров кэша Azure для Redis](cache-configure.md#configure-azure-cache-for-redis-settings).
 
 * **host** — укажите конечную точку кэша.
 * **port** — используйте порт без или с SSL в зависимости от параметров SSL.
@@ -127,7 +127,7 @@ Install-Package Microsoft.Web.RedisSessionStateProvider
 * Поставщик состояний сеансов в базе данных SQL Server сохраняет состояние сеанса в базе данных SQL Server. Используйте этот поставщик, если требуется сохранять состояние сеанса в постоянном хранилище. Вы можете масштабировать свое веб-приложение, но использование SQL Server для сеанса может негативно повлиять на производительность веб-приложения. Кроме того, вы можете повысить производительность, применяя этот поставщик с [конфигурацией выполняющейся в памяти OLTP](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2017/11/28/asp-net-session-state-with-sql-server-in-memory-oltp/).
 * Распределенный в памяти поставщик состояний сеансов, например поставщик состояний сеансов для кэша Azure для Redis, обладает преимуществами предыдущих двух поставщиков. Веб-приложение может использовать простой, быстрый и масштабируемый поставщик состояний сеансов. Этот поставщик сохраняет состояние сеанса в кэше, поэтому ваше приложение должно принимать в расчет все характеристики, связанные с распределенным кэшем в памяти, например временные неполадки в сети. Рекомендации по использованию кэша см. в статье [Руководство по кэшированию](../best-practices-caching.md) из коллекции шаблонов и рекомендаций Майкрософт [Руководство по разработке и реализации облачного приложения Azure](https://github.com/mspnp/azure-guidance).
 
-Дополнительные сведения о состоянии сеанса и другие рекомендации см. в статье [Рекомендации по веб-разработке (создание реальных облачных приложений с помощью Azure)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices).
+Дополнительные сведения о состоянии сеанса и другие рекомендации см. в статье [Рекомендации по веб-разработке (создание реальных облачных приложений с помощью Azure)](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices).
 
 ## <a name="next-steps"></a>Дополнительная информация
 Ознакомьтесь со статьей [ASP.NET Output Cache Provider for Azure Cache for Redis](cache-aspnet-output-cache-provider.md) (Поставщик кэша вывода ASP.NET для кэша Azure для Redis).

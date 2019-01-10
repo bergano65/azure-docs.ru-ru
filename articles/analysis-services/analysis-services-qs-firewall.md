@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: quickstart
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 0351ab3213ac75559cc025f2ef71e2f098a7504c
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 198e7d8d32e7142a266881e2f4ddbc3ed573c521
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52993200"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54187289"
 ---
 # <a name="quickstart-configure-server-firewall---portal"></a>Краткое руководство. Настройка брандмауэра сервера с помощью портала
 
@@ -46,4 +46,4 @@ ms.locfileid: "52993200"
 Из этого краткого руководства вы узнали, как настроить брандмауэр для сервера. Теперь, когда сервер защищен брандмауэром, можно добавить к нему базовый образец модели данных с портала. Наличие образца модели полезно, чтобы изучить настройку ролей шаблонов базы данных и тестирование клиентских подключений. Для получения дополнительных сведений перейдите к руководству по добавлению образца модели.
 
 > [!div class="nextstepaction"]
-> [Руководство. Добавление образца модели на сервер](analysis-services-create-sample-model.md)
+> [Руководство. Добавление примера модели на сервер](analysis-services-create-sample-model.md)

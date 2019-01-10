@@ -12,15 +12,15 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: mbullwin
-ms.openlocfilehash: a9c9ac9ada6dfab051deda14cddb4ba6c07f48df
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: dfbaabd3d27804909334a7a370bcc89115e625c4
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53998903"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54119176"
 ---
 # <a name="using-search-in-application-insights"></a>Поиск в Application Insights
-Поиск — это функция [Application Insights](../../application-insights/app-insights-overview.md), которая позволяет искать и изучать отдельные элементы телеметрии, например просмотры страниц, исключения и веб-запросы. Также можно просматривать журнал трассировки и события, которые были закодированы.
+Поиск — это функция [Application Insights](../../azure-monitor/app/app-insights-overview.md), которая позволяет искать и изучать отдельные элементы телеметрии, например просмотры страниц, исключения и веб-запросы. Также можно просматривать журнал трассировки и события, которые были закодированы.
 
 (Для более сложных запросов к данным используйте [Analytics](../../azure-monitor/log-query/get-started-portal.md).)
 
@@ -129,7 +129,7 @@ ms.locfileid: "53998903"
 ## <a name="sampling"></a>Выборка
 Если приложение генерирует много данных телеметрии (а вы используете пакет SDK ASP.NET 2.0.0-beta3 или более поздней версии), модуль адаптивной выборки автоматически сокращает объем отправляемых на портал данных, пересылая только репрезентативную часть событий. При этом связанные с тем же запросом события отбираются как группа, что позволяет перемещаться между связанными событиями. 
 
-[Дополнительная информация о выборке](../../application-insights/app-insights-sampling.md).
+[Дополнительная информация о выборке](../../azure-monitor/app/sampling.md).
 
 ## <a name="create-work-item"></a>Создание рабочего элемента
 В GitHub или Azure DevOps можно создать ошибку и указать в ней сведения из любого элемента телеметрии. 
@@ -166,4 +166,4 @@ ms.locfileid: "53998903"
 * [Создание сложных запросов в Analytics](../../azure-monitor/log-query/get-started-portal.md)
 * [Журналы, исключения и пользовательские средства диагностики для ASP.NET в Application Insights](../../azure-monitor/app/asp-net-trace-logs.md)
 * [Наблюдение за доступностью и скоростью реагирования веб-сайта](../../azure-monitor/app/monitor-web-app-availability.md)
-* [Устранение неполадок](../../application-insights/app-insights-troubleshoot-faq.md)
+* [Устранение неполадок](../../azure-monitor/app/troubleshoot-faq.md)
