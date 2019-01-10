@@ -28,6 +28,7 @@
 # Справочные материалы
 ## [Примеры кода](https://azure.microsoft.com/resources/samples/?service=data-catalog)
 ## [REST](/rest/api/datacatalog/)
+## [Шаблон Resource Manager](/azure/templates/microsoft.datacatalog/catalogs)
 ## [Справочник по синтаксису поиска](/rest/api/datacatalog/data-catalog-search-syntax-reference)
 ## [Понятия, используемые разработчиками](data-catalog-developer-concepts.md)
 

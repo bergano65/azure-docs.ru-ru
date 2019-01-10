@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/08/2017
 ms.author: mbullwin
-ms.openlocfilehash: aaa34d27e73c1691e69ea2f6860226639217f0c6
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 752f28eed3a6be5f7f136999c66e405bf7785a42
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54004741"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54120977"
 ---
 # <a name="exploring-metrics-in-application-insights"></a>Исследование метрик в Application Insights
 Метрики в [Application Insights][start] — это измеренные значения и счетчики событий, которые передаются как данные телеметрии из приложения. Они помогают обнаруживать проблемы производительности и отслеживать тенденции в использовании приложения. Существует широкий спектр стандартных метрик, и можно также создавать собственные пользовательские метрики и события.
@@ -193,18 +193,18 @@ ms.locfileid: "54004741"
 
     Если вы хотите задать разные фильтры для различных диаграмм, создайте их на разных колонках и по отдельности сохраните в избранное. Если необходимо, вы можете закрепить их на панели мониторинга, чтобы их можно было видеть вместе.
 * Если сгруппировать диаграмму по свойству, которое не определено в метрике, то на диаграмме ничего не отобразится. Попробуйте убрать группировку или выберите другое свойство для группировки.
-* Данные о производительности (ЦП, скорость ввода-вывода и т. д.) доступны для веб-служб Java, классических приложений Windows, [веб-приложений и служб IIS, если установлен монитор состояния](../../azure-monitor/app/monitor-performance-live-website-now.md), а также [облачных служб Azure](../../application-insights/app-insights-overview.md). Такие данные для веб-сайтов Azure недоступны.
+* Данные о производительности (ЦП, скорость ввода-вывода и т. д.) доступны для веб-служб Java, классических приложений Windows, [веб-приложений и служб IIS, если установлен монитор состояния](../../azure-monitor/app/monitor-performance-live-website-now.md), а также [облачных служб Azure](../../azure-monitor/app/app-insights-overview.md). Такие данные для веб-сайтов Azure недоступны.
 
 ## <a name="video"></a>Видео
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Отслеживание использования Application Insights.](../../application-insights/app-insights-usage-overview.md)
+* [Отслеживание использования Application Insights.](../../azure-monitor/app/usage-overview.md)
 * [Использование диагностического поиска](../../azure-monitor/app/diagnostic-search.md)
 
 <!--Link references-->
 
 [alerts]: ../../azure-monitor/app/alerts.md
-[start]: ../../application-insights/app-insights-overview.md
+[start]: ../../azure-monitor/app/app-insights-overview.md
 [track]: ../../azure-monitor/app/api-custom-events-metrics.md

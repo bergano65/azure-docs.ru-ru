@@ -1,19 +1,18 @@
 ---
 title: 'Общие сведения об Azure Cosmos DB: API Gremlin'
 description: Узнайте, как можно использовать базу данных Azure Cosmos DB, чтобы хранить, запрашивать и передавать массивные графы с минимальной задержкой с помощью языка запросов графа Gremlin в Apache TinkerPop.
-services: cosmos-db
 author: LuisBosquez
 ms.service: cosmos-db
-ms.component: cosmosdb-graph
+ms.subservice: cosmosdb-graph
 ms.topic: overview
 ms.date: 09/05/2018
 ms.author: lbosq
-ms.openlocfilehash: 833b9e7ce65a566757c739feebdfc8e0f1d268e9
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: a0d782ac1ba14e58e3cc377bb55ea25bb923c5c4
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53976347"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54038914"
 ---
 # <a name="introduction-to-azure-cosmos-db-gremlin-api"></a>Знакомство с Azure Cosmos DB: API Gremlin
 
@@ -84,7 +83,7 @@ ms.locfileid: "53976347"
 
 В таблице ниже приведены распространенные драйверы Gremlin, которые вы можете использовать для базы данных Azure Cosmos DB.
 
-| Загрузка | Документация | Приступая к работе | Поддерживаемая версия соединителя |
+| Download (Скачать) | Документация | Приступая к работе | Поддерживаемая версия соединителя |
 | --- | --- | --- | --- |
 | [.NET](https://tinkerpop.apache.org/docs/3.3.1/reference/#gremlin-DotNet) | [Gremlin.NET в GitHub](https://github.com/apache/tinkerpop/tree/master/gremlin-dotnet) | [Создание приложения Graph с помощью .NET](create-graph-dotnet.md) | 3.4.0-RC2 |
 | [Java](https://mvnrepository.com/artifact/com.tinkerpop.gremlin/gremlin-java) | [Документация по Gremlin для Java](https://tinkerpop.apache.org/javadocs/current/full/) | [Создание приложения Graph с помощью Java](create-graph-java.md) | 3.2.0 и выше |

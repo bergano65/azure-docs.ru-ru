@@ -11,12 +11,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 11/23/2016
 ms.author: mbullwin
-ms.openlocfilehash: 81bfd5e0354fefea4690e6871dd5e846f41dc6d8
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 6bd8d0cee01853547efd028feef0a97f9398024e
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53982119"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54015528"
 ---
 # <a name="filter-telemetry-in-your-java-web-app"></a>Фильтрация данных телеметрии в веб-приложении Java
 
@@ -31,7 +31,7 @@ ms.locfileid: "53982119"
 
 > [!NOTE]
 > Фильтры искажают значения метрик приложения. Например, вы можете задать фильтр для отклонения небольших значений времени ответа, чтобы диагностировать медленные ответы. Однако необходимо иметь в виду, что в этом случае среднее время ответа, отображаемое Application Insights, будет медленнее, а количество запросов — меньше, чем на самом деле.
-> Если это представляет собой проблему, то используйте [выборки](../../application-insights/app-insights-sampling.md).
+> Если это представляет собой проблему, то используйте [выборки](../../azure-monitor/app/sampling.md).
 
 ## <a name="setting-filters"></a>Задание фильтров
 
@@ -262,4 +262,4 @@ ms.locfileid: "53982119"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Использование [выборки](../../application-insights/app-insights-sampling.md) — альтернативный метод, который не искажает метрики.
+* Использование [выборки](../../azure-monitor/app/sampling.md) — альтернативный метод, который не искажает метрики.

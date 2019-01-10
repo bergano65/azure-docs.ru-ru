@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/15/2018
+ms.date: 1/08/2019
 ms.author: mabrigg
 ms.reviewer: alfredo
-ms.openlocfilehash: 67e1e22bc5569e7d6e20332ee86ffe4c7dd6a354
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 6d28eea434b081602f0e2455b22fcc58022a800e
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49343849"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54117119"
 ---
 # <a name="manage-tenant-registration-in-azure-stack"></a>Управление регистрацией клиента в Azure Stack
 
@@ -59,7 +59,7 @@ ms.locfileid: "49343849"
 
 ### <a name="powershell"></a>PowerShell
 
-Обновите ресурс регистрации при помощи командлета New-AzureRmResource. Войдите в Azure (`Add-AzureRmAccount`) с помощью учетной записи, которую вы использовали для первоначальной регистрации. Пример добавления клиента:
+Обновите ресурс регистрации при помощи командлета New-AzureRmResource. Пример добавления клиента:
 
 ```powershell
   New-AzureRmResource -ResourceId "subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/{customerSubscriptionId}" -ApiVersion 2017-06-01 -Properties
@@ -67,11 +67,11 @@ ms.locfileid: "49343849"
 
 ### <a name="api-call"></a>Вызов API
 
-**Операция**: PUT  
+**Operation:** ОТПРАВКА  
 **URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}  /providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/  
 {customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
-**Ответ**: 201, создано  
-**Текст ответа**: отсутствует  
+**Ответ**: 201 Создано  
+**Текст ответа**: Empty  
 
 ## <a name="list-all-registered-tenants"></a>Перечисление всех зарегистрированных клиентов
 
@@ -100,7 +100,7 @@ ms.locfileid: "49343849"
 
 Список всех сопоставлений клиента можно получить с помощью операции GET.
 
-**Операция**: GET  
+**Operation:** ПОЛУЧЕНИЕ  
 **URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}  
 /providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions?  
 api-version=2017-06-01 HTTP/1.1`  
@@ -149,12 +149,12 @@ api-version=2017-06-01 HTTP/1.1`
 
 Вы можете удалить сопоставления клиента с помощью операции DELETE.
 
-**Операция**: DELETE  
+**Operation:** УДАЛИТЬ  
 **URI запроса**: `subscriptions/{registrationSubscriptionId}/resourceGroups/{resourceGroup}  
 /providers/Microsoft.AzureStack/registrations/{registrationName}/customerSubscriptions/  
 {customerSubscriptionId}?api-version=2017-06-01 HTTP/1.1`  
-**Ответ**: 204, нет содержимого  
-**Текст ответа**: отсутствует
+**Ответ**: 204 No Content (содержимое отсутствует)  
+**Текст ответа**: Empty
 
 ## <a name="next-steps"></a>Дополнительная информация
 

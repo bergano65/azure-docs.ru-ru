@@ -1,20 +1,19 @@
 ---
 title: API, пакет SDK и ресурсы обработчика канала изменений в .NET для Azure Cosmos DB
 description: Сведения об API и пакете SDK для обработчика канала изменений, включая даты выхода, даты прекращения, а также изменения, внесенные в каждую версию пакета SDK для обработчика канала изменений в .NET.
-services: cosmos-db
 author: ealsur
 ms.service: cosmos-db
-ms.component: cosmosdb-sql
+ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 10/24/2018
 ms.author: maquaran
-ms.openlocfilehash: 7b6fefd575901648a99bb3a67a05e705622bb74a
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: f7c8313e6216f10dccdfbb298bbf02036e21c138
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53407870"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54043011"
 ---
 # <a name="net-change-feed-processor-sdk-download-and-release-notes"></a>Пакет SDK обработчика канала изменений: заметки о скачивании и выпуске
 > [!div class="op_single_selector"]

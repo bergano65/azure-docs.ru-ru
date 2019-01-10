@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: procedural
 ms.date: 10/31/2018
 ms.author: v-erkell
-ms.openlocfilehash: d38fe1cab27cfade3e6e4d2f6764f455896ac470
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: a7036f6fbab771dc090e97034a6191cf82b707a7
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53001973"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190857"
 ---
 # <a name="configure-storage"></a>Настройка хранилища
 
@@ -38,7 +38,7 @@ ms.locfileid: "53001973"
 
 ## <a name="create-a-core-filer"></a>Создание основного файлового хранилища
 
-Основное файловое хранилище — это термин vFXT для серверной системы хранения. Хранилище может быть аппаратным устройством NAS, таким как NetApp или Isilon, или же облачным хранилищем объектов. Более подробную информацию об основных файловых хранилищах можно найти [в руководстве по настройке кластера Avere](http://library.averesystems.com/ops_guide/4_7/settings_overview.html#managing-core-filers).
+Основное файловое хранилище — это термин vFXT для серверной системы хранения. Хранилище может быть аппаратным устройством NAS, таким как NetApp или Isilon, или же облачным хранилищем объектов. Более подробную информацию об основных файловых хранилищах можно найти [в руководстве по настройке кластера Avere](https://azure.github.io/Avere/legacy/ops_guide/4_7/html/settings_overview.html#managing-core-filers).
 
 Чтобы добавить основное файловое хранилище, выберите один из двух основных типов хранилищ:
 
@@ -70,7 +70,7 @@ ms.locfileid: "53001973"
   
    * Нажмите кнопку **Next** (Далее) и выберите политику кэширования. 
    * Щелкните **Add Filer** (Добавить файловое хранилище).
-   * Дополнительные сведения см. в разделе [Adding a New Core Filer - NAS Core Filer](http://library.averesystems.com/ops_guide/4_7/new_core_filer_nas.html) (Добавление нового основного файлового хранилища NAS) руководства по параметрам кластера Avere.
+   * Дополнительные сведения см. в разделе [Adding a New Core Filer - NAS Core Filer](https://azure.github.io/Avere/legacy/ops_guide/4_7/html/new_core_filer_nas.html) (Добавление нового основного файлового хранилища NAS) руководства по параметрам кластера Avere.
 
 Затем перейдите к [созданию соединения](#create-a-junction).  
 
@@ -156,7 +156,7 @@ ms.locfileid: "53001973"
    * При необходимости задайте для параметра **Encryption type** (Тип шифрования) значение **None** (Нет).  Служба хранилища Azure шифруется по умолчанию.
    * Щелкните **Add Filer** (Добавить файловое хранилище).
 
-  Дополнительные сведения см. в статье [Adding a New Core Filer - Cloud Core Filer](<http://library.averesystems.com/ops_guide/4_7/new_core_filer_cloud.html>) (Добавление нового облачного основного файлового хранилища) руководства по параметрам кластера Avere. 
+  Дополнительные сведения см. в статье [Adding a New Core Filer - Cloud Core Filer](<https://azure.github.io/Avere/legacy/ops_guide/4_7/html/new_core_filer_cloud.html>) (Добавление нового облачного основного файлового хранилища) руководства по параметрам кластера Avere. 
 
 Страница будет обновлена или вы можете сами обновить страницу, чтобы отобразить новое основное файловое хранилище.
 
@@ -168,7 +168,7 @@ ms.locfileid: "53001973"
 
 Например, вы можете создать `/avere/files` для сопоставления с папкой экспорта файлового хранилища NetApp `/vol0/data` и подкаталогом `/project/resources`.
 
-Дополнительные сведения о соединениях см. в [разделе о пространствах имен в руководстве по настройке кластера Avere](http://library.averesystems.com/ops_guide/4_7/gui_namespace.html).
+Дополнительные сведения о соединениях см. в [разделе о пространствах имен в руководстве по настройке кластера Avere](https://azure.github.io/Avere/legacy/ops_guide/4_7/html/gui_namespace.html).
 
 Выполните следующие действия в интерфейсе настройки на панели управления Avere.
 

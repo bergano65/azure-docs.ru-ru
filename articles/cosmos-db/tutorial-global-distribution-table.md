@@ -1,21 +1,19 @@
 ---
 title: Руководство по настройке глобального распределения Azure Cosmos DB с помощью API таблиц | Документация Майкрософт
 description: Сведения о настройке глобального распределения Azure Cosmos DB с помощью API таблицы.
-services: cosmos-db
-keywords: глобальное распределение, таблица
-author: SnehaGunda
-ms.author: sngun
+author: wmengmsft
+ms.author: wmeng
 ms.service: cosmos-db
-ms.component: cosmosdb-table
+ms.subservice: cosmosdb-table
 ms.topic: tutorial
-ms.custom: mvc
 ms.date: 12/13/2017
-ms.openlocfilehash: 92ae0c3dc07c6dada80e081c65484e4f6bf4f947
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.reviewer: sngun
+ms.openlocfilehash: d7d68c2dbdf5ca32fb2936e92daafac838c97a06
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52874878"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54042536"
 ---
 # <a name="set-up-azure-cosmos-db-global-distribution-using-the-table-api"></a>Настройка глобального распределения Azure Cosmos DB с помощью API таблицы
 

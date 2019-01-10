@@ -5,15 +5,15 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: include
-ms.date: 12/12/2018
+ms.date: 1/8/2019
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: 856d702bcf1f566d0cc455cdd2676e6c2e23d179
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 203168f27e06d58c192bc5009db077461738011a
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53326513"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54122791"
 ---
 Фабрика данных — это мультитенантная служба со следующими ограничениями по умолчанию, которые гарантируют, что подписки клиентов защищены от рабочих нагрузок друг друга. Многие ограничения для подписки можно легко увеличить до максимального значения, обратившись в службу поддержки.
 
@@ -23,7 +23,7 @@ ms.locfileid: "53326513"
 | -------- | ------------- | ------------- |
 | Число фабрик данных в подписке Azure. | 50 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 | Общее число сущностей (конвейеры, наборы данных, триггеры, связанные службы, среды выполнения интеграции) в фабрике данных | 5000 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
-| Общее количество ядер ЦП для сред выполнения интеграции Azure-SSIS в рамках одной подписки. | 128 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
+| Общее количество ядер ЦП для сред выполнения интеграции Azure-SSIS в рамках одной подписки. | 256 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 | Число параллельных запусков конвейера в одной фабрике данных (для всех конвейеров в фабрике) | 10 000  | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 | Максимальное число действий в одном конвейере (в том числе внутренние действия для контейнеров) | 40 | 40 |
 | Максимальное число параметров на конвейер. | 50 | 50 |

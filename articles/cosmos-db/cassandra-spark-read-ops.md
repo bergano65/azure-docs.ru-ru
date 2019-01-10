@@ -3,19 +3,19 @@ title: Чтения табличных данных API Cassandra с помощ�
 titleSufix: Azure Cosmos DB
 description: В этой статье рассказывается, как читать данные из таблиц API Cassandra в Azure Cosmos DB.
 author: kanshiG
+ms.author: govindk
+ms.reviewer: sngun
 ms.service: cosmos-db
-ms.component: cosmosdb-cassandra
-ms.devlang: spark-scala
+ms.subservice: cosmosdb-cassandra
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.author: govindk
 ms.custom: seodec18
-ms.openlocfilehash: 2fc5ac1af503eff2f9186266d977c4ee972fcc94
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 01a9582062d8eb0d039473a03901fc83fe179020
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53133440"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54033423"
 ---
 # <a name="read-data-from-azure-cosmos-db-cassandra-api-tables-using-spark"></a>Чтения данных из таблиц API Cassandra в Azure Cosmos DB с помощью Spark
 

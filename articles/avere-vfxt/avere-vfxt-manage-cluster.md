@@ -6,12 +6,12 @@ ms.service: avere-vfxt
 ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: v-erkell
-ms.openlocfilehash: 82b5e175f0340aae7e35b177d9faa4831982984c
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: a47b18972e945e495e5a5d3dd90e383390612865
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52999057"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54189615"
 ---
 # <a name="manage-the-avere-vfxt-cluster"></a>Управление кластером Avere vFXT
 
@@ -63,11 +63,11 @@ ms.locfileid: "52999057"
 > [!NOTE] 
 > При изменении количества активных узлов IP-адреса могут перемещаться между узлами кластера.
 
-Дополнительные сведения см. в разделе [Cluster > FXT Nodes](<http://library.averesystems.com/ops_guide/4_7/gui_fxt_nodes.html#gui-fxt-nodes>) (Кластер > Узлы FXT) в руководстве по параметрам кластера Avere.
+Дополнительные сведения см. в разделе [Cluster > FXT Nodes](<https://azure.github.io/Avere/legacy/ops_guide/4_7/html/gui_fxt_nodes.html#gui-fxt-nodes>) (Кластер > Узлы FXT) в руководстве по параметрам кластера Avere.
 
 ### <a name="stop-or-reboot-the-cluster-with-avere-control-panel"></a>Остановка или перезагрузка кластера на панели управления Avere
 
-На странице параметров **System Maintenance** (Обслуживание системы) содержатся команды для перезапуска служб кластеров, перезагрузки кластера или безопасного выключения кластера. Дополнительные сведения см. в разделе [Administration > System Maintenance](<http://library.averesystems.com/ops_guide/4_7/gui_system_maintenance.html#gui-system-maintenance>) (Администрирование > Обслуживание системы) в руководстве по параметрам кластера Avere.
+На странице параметров **System Maintenance** (Обслуживание системы) содержатся команды для перезапуска служб кластеров, перезагрузки кластера или безопасного выключения кластера. Дополнительные сведения см. в разделе [Administration > System Maintenance](<https://azure.github.io/Avere/legacy/ops_guide/4_7/html/gui_system_maintenance.html#gui-system-maintenance>) (Администрирование > Обслуживание системы) в руководстве по параметрам кластера Avere.
 
 Когда кластер завершает работу, сначала на вкладке **Dashboard** (Панель мониторинга) появляются сообщения о состоянии. Через несколько секунд сеанс панели управления Avere перестает отвечать на запросы. Это означает, что кластер завершил работу.
 

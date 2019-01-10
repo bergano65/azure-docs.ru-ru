@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: kumud
-ms.openlocfilehash: 521a9dd49abee8fdeaa42b1ea8c13b9a648f1875
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: d4a51551fb0f9067929df1fdf074e7286938004b
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53187374"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54187711"
 ---
 # <a name="configure-multivalue-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации MultiValue в диспетчере трафика
 
@@ -47,9 +47,9 @@ ms.locfileid: "53187374"
     | Подписка            | Выберите свою подписку.                          |
     | Группа ресурсов          | Выберите *myResourceGroupTM1*. |
     | Расположение                | Этот параметр задает расположение группы ресурсов и не влияет на профиль диспетчера трафика, который будет развернут глобально.                              |
-    
+   |        |           | 
   
-    ![Создание профиля диспетчера трафика](./media/traffic-manager-multivalue-routing-method/create-traffic-manager-profile.png)
+  ![Создание профиля диспетчера трафика](./media/traffic-manager-multivalue-routing-method/create-traffic-manager-profile.png)
 
 ## <a name="add-traffic-manager-endpoints"></a>Добавление конечных точек диспетчера трафика
 
@@ -69,7 +69,7 @@ ms.locfileid: "53187374"
 4. Повторите шаги 2 и 3, чтобы добавить еще одну конечную точку с именем *myEndpoint2*. В поле **Полное доменное имя (FQDN) или IP-адрес** введите общедоступный IP-адрес второй конечной точки.
 5.  После добавления обе конечные точки отобразятся в колонке **Профиль диспетчера трафика** с состоянием **В сети**.
 
-    ![Добавление конечной точки диспетчера трафика](./media/traffic-manager-multivalue-routing-method/add-endpoint.png)
+   ![Добавление конечной точки диспетчера трафика](./media/traffic-manager-multivalue-routing-method/add-endpoint.png)
  
 ## <a name="next-steps"></a>Дополнительная информация
 

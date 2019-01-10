@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 11/20/2018
 ms.author: mbullwin
-ms.openlocfilehash: a4e4ca1ca4878a2a405b12413e4378a2cb79aef6
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 3ea7d6562965debda2c146fedab2ea9ab19f6cc8
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999124"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54077459"
 ---
 # <a name="monitor-docker-applications-in-application-insights"></a>Мониторинг приложений Docker в Application Insights
 
@@ -36,9 +36,9 @@ ms.locfileid: "53999124"
 
 ## <a name="set-up-your-application-insights-resource"></a>Настройка ресурса Application Insights
 
-1. Выполните вход на [портал Microsoft Azure](https://azure.com) и [создайте ресурс Application Insights](../../application-insights/app-insights-create-new-resource.md) для своего приложения или откройте имеющийся. 
+1. Выполните вход на [портал Microsoft Azure](https://azure.com) и [создайте ресурс Application Insights](../../azure-monitor/app/create-new-resource.md ) для своего приложения или откройте имеющийся. 
    
-    *Какой ресурс использовать?* Если приложения, которые выполняются на узле, были созданы другим разработчиком, вам потребуется [создать новый ресурс Application Insights](../../application-insights/app-insights-create-new-resource.md). Там вы можете просматривать и анализировать данные телеметрии. (Выберите тип приложения "Общее".)
+    *Какой ресурс использовать?* Если приложения, которые выполняются на узле, были созданы другим разработчиком, вам потребуется [создать новый ресурс Application Insights](../../azure-monitor/app/create-new-resource.md ). Там вы можете просматривать и анализировать данные телеметрии. (Выберите тип приложения "Общее".)
    
     Но если разработчиком приложений являетесь вы, мы надеемся, что вы [добавили пакет SDK для Application Insights](../../azure-monitor/app/java-live.md) в каждое из них. Если все они действительно являются компонентами одного бизнес-приложения, вы можете настроить их на отправку данных телеметрии в один ресурс, а затем использовать этот ресурс для отображения данных о производительности и жизненном цикле Docker. 
    

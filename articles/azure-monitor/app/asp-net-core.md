@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 06/03/2018
 ms.author: mbullwin
-ms.openlocfilehash: 19830ade92e5d2a046abc8a2ad00c086a5bf62ec
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 24132fdb23ff89045f2b497327997d95e4ceecac
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53972793"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54054849"
 ---
 # <a name="application-insights-for-aspnet-core"></a>Application Insights для ASP.NET Core
 
@@ -62,7 +62,7 @@ Azure Application Insights обеспечивает детализированн
    ![Снимок экрана "Поиск по Application Insights" в Visual Studio](./media/asp-net-core/006-search.png)
 
 > [!NOTE]
-> Для получения дополнительных сведений о том, как в Visual Studio локально используются такие компоненты, как [поиск по Application Insights](../../application-insights/app-insights-visual-studio.md) и [CodeLens](../../application-insights/app-insights-visual-studio-codelens.md), перед добавлением Application Insights в свой проект ASP.NET Core ознакомьтесь с разделом [Больше сведений о поиске по Application Insights](#application-insights-search-continued).
+> Для получения дополнительных сведений о том, как в Visual Studio локально используются такие компоненты, как [поиск по Application Insights](../../azure-monitor/app/visual-studio.md) и [CodeLens](../../azure-monitor/app/visual-studio-codelens.md), перед добавлением Application Insights в свой проект ASP.NET Core ознакомьтесь с разделом [Больше сведений о поиске по Application Insights](#application-insights-search-continued).
 
 ## <a name="add-application-insights-telemetry"></a>Добавление телеметрии Application Insights
 
@@ -404,7 +404,7 @@ CoreCLR будет по-прежнему загружать файлы _Microsof
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player] 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* [Изучите маршруты пользователей](../../application-insights/app-insights-usage-flows.md), чтобы понять, как пользователи перемещаются через приложение.
+* [Изучите маршруты пользователей](../../azure-monitor/app/usage-flows.md), чтобы понять, как пользователи перемещаются через приложение.
 * [Настройте коллекцию моментальных снимков](https://docs.microsoft.com/azure/application-insights/app-insights-snapshot-debugger#configure-snapshot-collection-for-aspnet-core-20-applications) для отображения состояния исходного кода и переменных в момент создания исключения.
 * [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки собственных событий и метрик для более четкого представления о производительности и использовании приложения.
 * Используйте [тесты доступности](../../azure-monitor/app/monitor-web-app-availability.md), чтобы постоянно проверять работу приложения из всех точек мира.

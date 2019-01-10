@@ -1,20 +1,19 @@
 ---
 title: Пакет SDK для .NET и ресурсы API таблиц для базы данных Azure Cosmos DB
 description: Сведения об API таблиц Azure Cosmos DB, в том числе даты выпуска и даты вывода из эксплуатации, а также изменения, внесенные в каждую версию.
-services: cosmos-db
-author: rnagpal
+author: wmengmsft
+ms.author: wmeng
 ms.service: cosmos-db
-ms.component: cosmosdb-table
+ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/17/2018
-ms.author: rnagpal
-ms.openlocfilehash: 7092daa7cf3a1cfcbeac06db308fa53e18d27131
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: f2492e3d49f9b7e965c33ed4419f566e81dd62ed
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52878590"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54043470"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблиц .NET для базы данных Azure Cosmos DB: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]

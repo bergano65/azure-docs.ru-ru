@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: 61cefe762b639dcc58c2e10fc845dd9729cb2cb2
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 4fcb692d7189c84e32f55995538ffc692cb67dd6
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53078247"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54064719"
 ---
 # <a name="azure-active-directory-premium-p2-licensing-feature-checklist"></a>Контрольный список лицензирования компонентов Azure Active Directory Premium P2
 
@@ -84,7 +84,7 @@ ms.locfileid: "53078247"
 - Используйте комплексное управление жизненным циклом пользователей
    - В Azure AD реализован подход к управлению жизненным циклом удостоверений
    - Чтобы предотвратить несанкционированный доступ, устраните выполняемые вручную этапы из жизненного цикла учетных записей сотрудников
-      - Синхронизируйте удостоверения из источника достоверных данных (системы управления персоналом) с Azure AD. ссылка на поддерживаемые системы управления персоналом)
+      - Синхронизируйте удостоверения из источника достоверных данных (системы управления персоналом) с Azure AD.
       - [Используйте динамические группы для автоматического назначения пользователей группам на основе атрибутов, например отдела, должности, региона и других, из системы управления персоналом (или другого источника достоверных данных).](../users-groups-roles/groups-dynamic-membership.md)
       - [Используйте подготовку для управления доступом на основе групп с целью автоматической подготовки пользователей для приложений SaaS.](../manage-apps/what-is-access-management.md)
 

@@ -7,12 +7,12 @@ services: site-recovery
 ms.topic: conceptual
 ms.date: 12/31/2018
 ms.author: raynew
-ms.openlocfilehash: 10e73cf7fde019b4b4fe54d23f02c5afc0c582c9
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 3ad3438f02ead9063a683a39d4ac5823274d55f7
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53976857"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54155177"
 ---
 # <a name="what-workloads-can-you-protect-with-azure-site-recovery"></a>Какие рабочие нагрузки можно защитить с помощью службы Azure Site Recovery?
 
@@ -48,7 +48,7 @@ Site Recovery помогает реализовать защиту и восст
 | Active Directory, DNS |Да |Да |Да |Да |Да|
 | Веб-приложения (IIS, SQL) |Да |Да |Да |Да |Да|
 | System Center Operations Manager |Да |Да |Да |Да |Да|
-| Sharepoint |Да |Да |Да |Да |Да|
+| SharePoint |Да |Да |Да |Да |Да|
 | SAP<br/><br/>Репликация сайта SAP в Azure без кластера |Y (испытан корпорацией Майкрософт) |Y (испытан корпорацией Майкрософт) |Y (испытан корпорацией Майкрософт) |Y (испытан корпорацией Майкрософт) |Y (испытан корпорацией Майкрософт)|
 | Exchange (не DAG) |Да |Да |Да |Да |Да|
 | Удаленный рабочий стол/VDI |Да |Да |Да |Да |Да|

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/17/2018
 ms.author: cynthn
-ms.openlocfilehash: e75758c5a4171adc7af56581026a727db2ef4740
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: bc556991cc304aa8c5edc04dba1d333dc77ad230
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52850981"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54073413"
 ---
 # <a name="log-in-to-a-linux-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Вход на виртуальную машину Linux в Azure с аутентификацией Azure Active Directory (предварительная версия)
 
@@ -150,7 +150,7 @@ To sign in, use a web browser to open the page https://microsoft.com/devicelogin
 
 ## <a name="sudo-and-aad-login"></a>Вход с использованием sudo и Azure AD
 
-При первом выполнении sudo вам нужно пройти проверку подлинности во второй раз. Чтобы не проходить повторную проверку подлинности при выполнении sudo, вы можете изменить в файле sudoers `/aad/etc/sudoers.d/aad_admins` следующую строку:
+При первом выполнении sudo вам нужно пройти проверку подлинности во второй раз. Чтобы не проходить повторную проверку подлинности при выполнении sudo, вы можете изменить в файле sudoers `/etc/sudoers.d/aad_admins` следующую строку:
 
 ```bash
 %aad_admins ALL=(ALL) ALL

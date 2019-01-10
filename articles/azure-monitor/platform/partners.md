@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: johnkem
 ms.component: ''
-ms.openlocfilehash: 95e4140125f064d4e279c90f60b390c4762e8cf8
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 6ed8bae2e1571722f7a9a0030a48e64c4f7fbc60
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53580218"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54106670"
 ---
 # <a name="azure-monitor-partner-integrations"></a>Интеграция Azure Monitor с продуктами партнеров
 | Партнеры |  |  |
@@ -126,7 +126,7 @@ PagerDuty, ведущее решение по управлению инциде�
 [Ознакомьтесь с документацией][pagerduty-doc]
 
 ## <a name="qradar"></a>QRadar
-Модуль устройства (DSM) Microsoft Azure и протокол концентратора событий Microsoft Azure доступны для загрузки на [веб-сайте поддержки IBM](http://www.ibm.com/support). [Дополнительные сведения об интеграции с Azure][qradar-doc].
+Модуль устройства (DSM) Microsoft Azure и протокол концентратора событий Microsoft Azure доступны для загрузки на [веб-сайте поддержки IBM](https://www.ibm.com/support). [Дополнительные сведения об интеграции с Azure][qradar-doc].
 
 ## <a name="sciencelogic"></a>ScienceLogic
 ScienceLogic предоставляет платформу контроля качества ИТ-услуг следующего поколения для управления любой технологией и в любом месте. ScienceLogic обеспечивает возможности масштабирования, защиты, автоматизации и устойчивости, необходимые, чтобы упростить управление ИТ-ресурсами, службами и приложениями. Платформа ScienceLogic использует интерфейсы API Azure для взаимодействия с Microsoft Azure. ScienceLogic позволяет контролировать службы и ресурсы Azure в режиме реального времени, чтобы вы могли сразу же определить неисправность и быстро устранить ее. Наряду с другими системами и службами центров обработки данных и облаков вы можете также управлять Azure.
@@ -230,8 +230,8 @@ Sumo Logic — это безопасное облачное решение сл�
 [botmetric-doc]: https://www.botmetric.com/blog/announcing-botmetric-cost-governance-beta-microsoft-azure/ "Общие сведения о Botmetric."
 [circonus-doc]: https://support.circonus.com/support/solutions/articles/24000013515-azure-integration 
 [cloudhealth-doc]: https://www.cloudhealthtech.com/azure
-[cloudmonix-doc]: http://cloudmonix.com/features/azure-management/ "Общие сведения о CloudMonix."
-[datadog-doc]: http://docs.datadoghq.com/integrations/azure/ "Документация по DataDog."
+[cloudmonix-doc]: https://cloudmonix.com/features/azure-management/ "Общие сведения о CloudMonix."
+[datadog-doc]: https://docs.datadoghq.com/integrations/azure/ "Документация по DataDog."
 [dynatrace-doc]: https://help.dynatrace.com/infrastructure-monitoring/paas/how-do-i-monitor-microsoft-azure-web-apps/ "Документация по Dynatrace."
 [elastic-doc]: https://www.elastic.co/guide/en/logstash/master/azure-module.html "Документация по Elastic"
 [grafana-doc]: ./grafana-plugin.md "Интеграция Grafana Azure Monitor."

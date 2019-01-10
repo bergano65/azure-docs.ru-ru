@@ -12,24 +12,24 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 08/24/2016
 ms.author: mbullwin
-ms.openlocfilehash: a57422b4bbac4b929a67495bfffeec7bf0476e9c
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: c8320a0f504927830c47400f1f1ef0369c0e1cad
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54000229"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54116540"
 ---
 # <a name="collectd-linux-performance-metrics-in-application-insights"></a>Средство collectd: метрики производительности Linux в Application Insights
 
 
-Для работы с метриками производительности Linux в [Application Insights](../../application-insights/app-insights-overview.md) установите инструмент [collectd](https://collectd.org/) вместе с его подключаемым модулем Application Insights. Это решение с открытым исходным кодом собирает разнообразные данные системной и сетевой статистики.
+Для работы с метриками производительности Linux в [Application Insights](../../azure-monitor/app/app-insights-overview.md) установите инструмент [collectd](https://collectd.org/) вместе с его подключаемым модулем Application Insights. Это решение с открытым исходным кодом собирает разнообразные данные системной и сетевой статистики.
 
 Обычно collectd используется, если вы уже [инструментировали веб-службу Java с помощью Application Insights][java]. Это средство предоставляет больше данных, помогая вам повысить производительность приложения или диагностировать неполадки. 
 
 ![Примеры диаграмм](./media/java-collectd/sample.png)
 
 ## <a name="get-your-instrumentation-key"></a>Получение ключа инструментирования
-На [портале Microsoft Azure](https://portal.azure.com) откройте ресурс [Application Insights](../../application-insights/app-insights-overview.md), в котором требуется отобразить данные. (Либо [создайте новый ресурс](../../application-insights/app-insights-create-new-resource.md).)
+На [портале Microsoft Azure](https://portal.azure.com) откройте ресурс [Application Insights](../../azure-monitor/app/app-insights-overview.md), в котором требуется отобразить данные. (Либо [создайте новый ресурс](../../azure-monitor/app/create-new-resource.md ).)
 
 Скопируйте ключ инструментирования, идентифицирующий этот ресурс.
 

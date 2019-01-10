@@ -4,14 +4,16 @@ description: Пример скрипта Azure CLI. Получение ключ�
 author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
+ms.subservice: cosmosdb-sql
 ms.topic: sample
 ms.date: 10/26/2018
-ms.openlocfilehash: 354184313e541dfa0cbe32c36abbd097c9a97b3c
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.reviewer: sngun
+ms.openlocfilehash: 1e080b7826d845e7278208af2fb09b487c67e865
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52965894"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54038686"
 ---
 # <a name="get-account-keys-for-azure-cosmos-db-using-the-azure-cli"></a>Получение ключей учетной записи для базы данных Azure Cosmos DB с помощью Azure CLI
 
@@ -37,7 +39,7 @@ az group delete --name $resourceGroupName
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az cosmosdb list-keys](/cli/azure/cosmosdb#az-cosmosdb-list-keys) | Получите список ключей доступа для учетной записи Cosmos DB. |

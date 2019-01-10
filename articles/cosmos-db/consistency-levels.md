@@ -1,20 +1,17 @@
 ---
 title: Уровни согласованности в Azure Cosmos DB
 description: В Azure Cosmos DB есть пять уровней согласованности, что позволяет сбалансировать компромиссы между согласованностью в конечном счете, доступностью и задержками.
-keywords: согласованность в конечном счете, azure cosmos db, azure, Microsoft Azure
-services: cosmos-db
-author: aliuy
-ms.author: andrl
+author: markjbrown
+ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b509c7eceb3c2e2fb2e53f20791976b0322ad744
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 914933e4e0489d68640edb58ceb91dc73a963eb3
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53089740"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54034970"
 ---
 # <a name="consistency-levels-in-azure-cosmos-db"></a>Уровни согласованности в Azure Cosmos DB
 
@@ -72,7 +69,7 @@ ms.locfileid: "53089740"
 | - | - |
 | **Строгая** | 2:5 |
 | **Ограниченное устаревание** | Счета, устаревшие не более чем на один иннинг: 2:3, 2:4, 2:5 |
-| **Согласованность сеанса** | <ul><li>Для того экземпляра, который выполняет запись: 2:5.</li><li> Для всех остальных: 0:0, 0:1, 0:2, 0:3, 0:4, 0:5, 1:0, 1:1, 1:2, 1:3, 1:4, 1:5, 2:0, 2:1, 2:2, 2:3, 2:4, 2:5.</li><li>После того, как будет считано значение 1:3: 1:3, 1:4, 1:5, 2:3, 2:4, 2:5.</li> |
+| **Согласованность сеанса** | <ul><li>Для того экземпляра, который выполняет запись: 2:5</li><li> Для всех остальных: 0:0, 0:1, 0:2, 0:3, 0:4, 0:5, 1:0, 1:1, 1:2, 1:3, 1:4, 1:5, 2:0, 2:1, 2:2, 2:3, 2:4, 2:5</li><li>После того, как будет считано значение 1:3: 1:3, 1:4, 1:5, 2:3, 2:4, 2:5.</li> |
 | **Постоянный префикс** | 0:0, 0:1, 1:1, 1:2, 1:3, 2:3, 2:4, 2:5 |
 | **Итоговая** | 0:0, 0:1, 0:2, 0:3, 0:4, 0:5, 1:0, 1:1, 1:2, 1:3, 1:4, 1:5, 2:0, 2:1, 2:2, 2:3, 2:4, 2:5 |
 

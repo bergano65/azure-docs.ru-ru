@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/04/2017
 ms.author: mbullwin
-ms.openlocfilehash: c8ff6abe72a55be24b35b254a4bfc2a446b13c0b
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 5e22a3f3b362811fd87460ec41b61a990f4d83fb
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999687"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54074212"
 ---
 # <a name="how-do-i--in-application-insights"></a>Как работать с Application Insights
 ## <a name="get-an-email-when-"></a>Получать уведомление по электронной почте, если...
@@ -83,18 +83,18 @@ ms.locfileid: "53999687"
 ## <a name="separate-telemetry-from-different-versions"></a>Разделение телеметрии разных версий
 
 * Несколько ролей в приложении. Используйте единый ресурс Application Insights и выполните фильтрацию по [cloud_Rolename](../../azure-monitor/app/app-map.md).
-* Отдельные этапы разработки, тестирования и выпуска версий. Используйте разные ресурсы Application Insights. Получите ключи инструментирования из файла web.config. [Подробнее](../../application-insights/app-insights-separate-resources.md)
-* Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Подробнее](../../application-insights/app-insights-separate-resources.md)
+* Отдельные этапы разработки, тестирования и выпуска версий. Используйте разные ресурсы Application Insights. Получите ключи инструментирования из файла web.config. [Подробнее](../../azure-monitor/app/separate-resources.md)
+* Отчеты о версиях сборки. Добавьте свойство с помощью инициализатора телеметрии. [Подробнее](../../azure-monitor/app/separate-resources.md)
 
 ## <a name="monitor-backend-servers-and-desktop-apps"></a>Мониторинг внутренних серверов и классических приложений
-[Используйте модуль пакета SDK для Windows Server](../../application-insights/app-insights-windows-desktop.md).
+[Используйте модуль пакета SDK для Windows Server](../../azure-monitor/app/windows-desktop.md).
 
 ## <a name="visualize-data"></a>Визуализируйте данные
 #### <a name="dashboard-with-metrics-from-multiple-apps"></a>Панель мониторинга с метрикой для нескольких приложений
 * В [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md)настройте диаграмму и сохраните ее в списке избранного. Закрепите ее на панели мониторинга Azure.
 
 #### <a name="dashboard-with-data-from-other-sources-and-application-insights"></a>Панель мониторинга с данными из других источников и Application Insights
-* [Экспорт телеметрии в Power BI](../../application-insights/app-insights-export-power-bi.md).
+* [Экспорт телеметрии в Power BI](../../azure-monitor/app/export-power-bi.md ).
 
 или
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2017
 ms.author: glenga
-ms.openlocfilehash: 84d8d3838740ec5d448b14b5c4539f7d78c96b5e
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 7c4eefa09f0a70d42601a5b1fe8694500b5c6be2
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53714361"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54118257"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Руководство по началу работы для разработчиков Azure
 
@@ -178,7 +178,7 @@ Service Fabric поддерживает веб-API благодаря испол
 
 -   **Visual Studio Application Insights**. Расширяемая служба аналитики, размещенная в Azure, которая интегрируется с Visual Studio и позволяет отслеживать работающие веб-приложения. Она предоставляет данные, необходимые для постоянного повышения производительности и удобства использования приложений вне зависимости от того, размещены они в Azure или нет.
 
-    >**Приступая к работе**. Изучите [руководство по Application Insights](../../application-insights/app-insights-overview.md).
+    >**Приступая к работе**. Изучите [руководство по Application Insights](../../azure-monitor/app/app-insights-overview.md).
 
 -   **Azure Monitor**. Служба, которая позволяет визуализировать, запрашивать, перенаправлять, архивировать метрики и журналы, созданные инфраструктурой и ресурсами Azure, а также выполнять действия на основе этих метрик и журналов. Monitor предоставляет представления данных, отображаемые на портале Azure, и является единственным источником данных мониторинга ресурсов Azure.
  

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 12/18/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: cc96da060a7a91e0e3118c436a93bdafca3b0372
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 1c2f7b46daf7b96d3a6f47dac647d5ed90461e8e
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53633016"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54156261"
 ---
 # <a name="customize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C
 
@@ -121,7 +121,7 @@ ms.locfileid: "53633016"
 3. Откройте файл расширения, Например, *TrustFrameworkExtensions.xml*. Найдите элемент **BuildingBlocks**. Если такой элемент не существует, добавьте его.
 4. Вставьте содержимое скопированного элемента **ContentDefinitions** в качестве дочернего элемента **BuildingBlocks**. 
 5. Найдите элемент **ContentDefinition**, содержащий `Id="api.signuporsignin"` в скопированном файле XML.
-6. Измените значение **LoadUri** на URL-адрес файла HTML, который был передан в хранилище. Например, https://your-storage-account.blob.core.windows.net/your-container/customize-ui.html.
+6. Измените значение **LoadUri** на URL-адрес файла HTML, который был передан в хранилище. Например, `https://your-storage-account.blob.core.windows.net/your-container/customize-ui.html`.
     
     Пользовательская политика должна выглядеть следующим образом:
 

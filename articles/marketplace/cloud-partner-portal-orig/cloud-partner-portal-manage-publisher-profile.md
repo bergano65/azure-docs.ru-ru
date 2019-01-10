@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 8459866aa192f2364ae52d0d5d68eace693e127e
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: c73c846db4b22d8c19ccdaa2ec99a3fe7fdadf78
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52832689"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54076711"
 ---
 # <a name="manage-azure-marketplace-and-appsource-publisher-profile"></a>Управление профилем издателя Azure Marketplace и AppSource
 
@@ -51,6 +51,6 @@ ms.locfileid: "52832689"
 >[!NOTE]
 >Регистрация учетной записи Центра разработки является обязательной для публикации платных номеров SKU в Marketplace.
 
-Если у вас нет [учетной записи Центра разработки](~/articles/marketplace-publishing/marketplace-publishing-accounts-creation-registration.md), вы можете создать ее. Затем добавьте зарегистрированный адрес электронной почты в качестве владельца на Портал Cloud Partner для своего предложения. Владелец может только добавить зарегистрированный адрес электронной почты в профиль публикации из раздела **Пользователь**, а затем войти на портал, используя тот же адрес электронной почты, и привязать свою учетную запись Центра разработки.
+Если у вас нет [учетной записи Центра разработки](./cloud-partner-portal-dev-center-accounts-registration.md), вы можете создать ее. Затем добавьте зарегистрированный адрес электронной почты в качестве владельца на Портал Cloud Partner для своего предложения. Владелец может только добавить зарегистрированный адрес электронной почты в профиль публикации из раздела **Пользователь**, а затем войти на портал, используя тот же адрес электронной почты, и привязать свою учетную запись Центра разработки.
 
 ![Сведения о профиле публикации (Описание профиля публикации)](./media/cloud-partner-portal-how-to-manage-publisher-profile/publisherprofiledescription.png)

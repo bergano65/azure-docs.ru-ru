@@ -11,12 +11,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 01/26/2018
 ms.author: victorh
-ms.openlocfilehash: 12ef6447e53ba0da3fbd3d56749d7798c49a2cfe
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: b368ef3b5503d90b0eb928113e8154aabca9c04a
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52993949"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54157145"
 ---
 # <a name="create-an-application-gateway-with-a-web-application-firewall-using-the-azure-portal"></a>Создание шлюза приложений с брандмауэром веб-приложения с помощью портала Azure
 
@@ -120,7 +120,7 @@ ms.locfileid: "52993949"
 
 1. Выберите **Все ресурсы**, а затем щелкните **myAppGateway**.
 2. Щелкните **Серверные пулы**. Пул по умолчанию был создан автоматически с помощью шлюза приложений. Щелкните **appGatewayBackendPool**.
-3. Нажмите кнопку **Добавить целевой объект**, чтобы добавить в серверный пул каждую созданную виртуальную машину.
+3. Щелкните **Добавить цель**, чтобы добавить в серверный пул каждую созданную виртуальную машину.
 
     ![Добавление внутренних серверов](./media/application-gateway-web-application-firewall-portal/application-gateway-backend.png)
 

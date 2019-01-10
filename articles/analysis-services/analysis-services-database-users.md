@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: ab238e31ba022427dc55fec842f3e89e72fa530a
-ms.sourcegitcommit: dbfd977100b22699823ad8bf03e0b75e9796615f
+ms.openlocfilehash: 7f8c410f368c5c63bd24bed25b9807b8061180be
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50238885"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54189802"
 ---
 # <a name="manage-database-roles-and-users"></a>Управление ролями и пользователями базы данных
 
@@ -63,6 +63,7 @@ ms.locfileid: "50238885"
 
 
 ## <a name="to-add-or-manage-roles-and-users-in-ssms"></a>Добавление ролей и пользователей в SSDT и управление ими
+
 Чтобы добавить роли и пользователей в развернутый шаблон базы данных, вы должны быть подключены к серверу от имени администратора сервера или роли базы данных с разрешениями администратора.
 
 1. В обозревателе объекта щелкните правой кнопкой мыши **Роли** > **Новая роль**.
@@ -83,6 +84,7 @@ ms.locfileid: "50238885"
 5. Если у роли, которую вы создаете, есть разрешение "Чтение", вы можете добавить фильтры строк с помощью формулы DAX. Щелкните **Фильтры строк**, выберите таблицу, а затем введите формулу DAX в поле **Фильтр DAX**. 
 
 ## <a name="to-add-roles-and-users-by-using-a-tmsl-script"></a>Добавление ролей и пользователей с помощью сценария TMSL
+
 Вы можете выполнить сценарий TMSL в окне XMLA в SSMS или с помощью PowerShell. Используйте команду [CreateOrReplace](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-commands/createorreplace-command-tmsl) и объект [Роли](https://docs.microsoft.com/sql/analysis-services/tabular-models-scripting-language-objects/roles-object-tmsl).
 
 **Пример скрипта TMSL**
@@ -116,6 +118,7 @@ ms.locfileid: "50238885"
 ```
 
 ## <a name="to-add-roles-and-users-by-using-powershell"></a>Добавление ролей и пользователей с помощью PowerShell
+
 Модуль [SqlServer](https://msdn.microsoft.com/library/hh758425.aspx) предоставляет командлеты для конкретных задач управления базой данных, а также командлет общего назначения Invoke-ASCmd, который принимает запрос TMSL или сценарий. Следующие командлеты используются для управления ролями базы данных и пользователями.
   
 |Командлет|ОПИСАНИЕ|
@@ -125,6 +128,7 @@ ms.locfileid: "50238885"
 |[Invoke-ASCmd](https://msdn.microsoft.com/library/hh479579.aspx)|Выполнение сценария TMSL.|
 
 ## <a name="row-filters"></a>Фильтры строк  
+
 Фильтры строк определяют, какие строки в таблице могут запросить участники определенной роли. Фильтры строк определяются для каждой таблицы в модели с помощью формул DAX.  
   
 Они могут быть определены только для ролей с разрешениями "Чтение" и "Чтение и обработка". По умолчанию если фильтр строк не определен для конкретной таблицы, участники могут запросить все строки в таблице при условии, что не применена перекрестная фильтрация из другой таблицы.
@@ -144,6 +148,7 @@ ms.locfileid: "50238885"
  Вы можете использовать фильтр *=FALSE()*, чтобы запретить доступ ко всем строкам для всей таблицы.
 
 ## <a name="next-steps"></a>Дополнительная информация
+
   [Управление администраторами сервера](analysis-services-server-admins.md)   
   [Управление службами Azure Analysis Services с помощью PowerShell](analysis-services-powershell.md)  
   [Справочник по языку TMSL](https://docs.microsoft.com/sql/analysis-services/tabular-model-scripting-language-tmsl-reference)

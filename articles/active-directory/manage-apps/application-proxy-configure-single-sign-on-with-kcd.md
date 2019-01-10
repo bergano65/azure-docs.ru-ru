@@ -15,12 +15,12 @@ ms.date: 05/24/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017, it-pro
-ms.openlocfilehash: 565e7379ad12222e459bd61ed50fa38f9f9b12fc
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 26b0bd3c6bec2427cd95deb05cc19c4dd3b22aa3
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53136252"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159542"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для поддержки единого входа в приложения с помощью прокси приложения
 
@@ -66,13 +66,15 @@ ms.locfileid: "53136252"
 1. Список предварительных требований для работы с ограниченным делегированием Kerberos в разных доменах см. в статье [Ограниченное делегирование Kerberos в разных доменах](https://technet.microsoft.com/library/hh831477.aspx).
 2. Используйте свойство `principalsallowedtodelegateto` на сервере соединителя, чтобы разрешить прокси приложения делегировать полномочия серверу соединителя. Сервер приложений указан в свойстве `sharepointserviceaccount`, а делегирующий сервер — в свойстве `connectormachineaccount`. Следующий пример содержит код для Windows 2012 R2:
 
-        $connector= Get-ADComputer -Identity connectormachineaccount -server dc.connectordomain.com
+```powershell
+$connector= Get-ADComputer -Identity connectormachineaccount -server dc.connectordomain.com
 
-        Set-ADComputer -Identity sharepointserviceaccount -PrincipalsAllowedToDelegateToAccount $connector
+Set-ADComputer -Identity sharepointserviceaccount -PrincipalsAllowedToDelegateToAccount $connector
 
-        Get-ADComputer sharepointserviceaccount -Properties PrincipalsAllowedToDelegateToAccount
+Get-ADComputer sharepointserviceaccount -Properties PrincipalsAllowedToDelegateToAccount
+```
 
-Sharepointserviceaccount может содержать учетную запись компьютера Microsoft SharePoint Server или учетную запись службы, с учетными данными которой выполняется пул приложений Microsoft SharePoint Server.
+`sharepointserviceaccount` может быть учетной записью компьютера SPS или учетной записью службы, под которой выполняется пул приложений SPS.
 
 ## <a name="configure-single-sign-on"></a>Настройка единого входа 
 1. Опубликуйте приложение в соответствии с инструкциями, описанными в статье [Публикация приложений с помощью прокси приложения](application-proxy-add-on-premises-application.md). Обязательно выберите значение **Azure Active Directory** для параметра **Метод предварительной проверки подлинности**.

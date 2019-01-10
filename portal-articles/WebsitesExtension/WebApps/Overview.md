@@ -8,18 +8,18 @@ ms.service: app-service
 ms.topic: article
 ms.date: 04/27/2017
 ms.author: sewatson
-ms.openlocfilehash: 50e6b714bc28ce383f06580d0e35b0b0e4066835
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: be918ecef3a9fb346d9aa441bef9b4c3991009d6
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47432229"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53606475"
 ---
 # <a name="app-service-documentation"></a>Документация по службе приложений
-Служба приложений Azure позволяет создавать и размещать веб-приложения на любых языках программирования без необходимости управлять инфраструктурой, языком или средой выполнения платформы. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps или любого репозитория Git. Узнайте, как использовать службу приложений Azure, изучив краткие инструкции, примеры и руководства.
+Служба приложений Azure позволяет создавать и размещать веб-приложения на любых языках программирования без необходимости управлять инфраструктурой, языком или средой выполнения платформы. Служба обеспечивает автоматическое масштабирование и высокий уровень доступности, поддерживает Windows и Linux и обеспечивает автоматическое развертывание из GitHub, Azure DevOps Services или любого репозитория Git. Узнайте, как использовать службу приложений Azure, изучив краткие инструкции, примеры и руководства.
 
 ## <a name="windows-linux-and-docker"></a>Windows, Linux и Docker
-[Веб-приложения](/app-service/app-service-web-overview) службы приложений используются для создания и размещения веб-приложений с использованием сред Windows. Разработчикам, которые предпочитают работать с Linux, предлагается [служба приложений для Linux](/app-service/containers/app-service-linux-intro). Для развертывания пользовательских сред выполнения и платформ разработчики могут развертывать образы Docker непосредственно в службу приложений для Linux.
+[Веб-приложения](/app-service/overview) службы приложений используются для создания и размещения веб-приложений с использованием сред Windows. Разработчикам, которые предпочитают работать с Linux, предлагается [служба приложений для Linux](/app-service/containers/app-service-linux-intro). Для развертывания пользовательских сред выполнения и платформ разработчики могут развертывать образы Docker непосредственно в службу приложений для Linux.
 
 ## <a name="5-minute-quickstarts"></a>5-минутные руководства по началу работы
 
@@ -53,8 +53,8 @@ ms.locfileid: "47432229"
 
 Поиск скриптов для выполнения типовых задач.
 
-- [интерфейс командной строки Azure](/azure/app-service/app-service-cli-sample)
-- [Azure PowerShell](/azure/app-service/app-service-powershell-samples)
+- [Интерфейс командной строки Azure](/azure/app-service/app-service-cli-sample)
+- [Azure PowerShell](/azure/app-service/samples-powershell)
 
 ## <a name="more"></a>Подробнее
 
