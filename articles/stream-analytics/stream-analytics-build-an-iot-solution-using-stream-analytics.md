@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 4817efcb5cfa5f8692f2b7e5c65d411bc0d21942
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 820a918b9ab5dd7a399dc43bcfed29fb3b94e99b
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53317395"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53971109"
 ---
 # <a name="build-an-iot-solution-by-using-stream-analytics"></a>Создание решения IoT с помощью Stream Analytics
 
@@ -31,7 +31,7 @@ ms.locfileid: "53317395"
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для создания описанного здесь решения вам потребуется:
-* [Подписка Azure](https://azure.microsoft.com/pricing/free-trial/)
+*  [Подписка Azure](https://azure.microsoft.com/pricing/free-trial/)
 
 ## <a name="scenario-introduction-hello-toll"></a>Общие сведения о сценарии Hello, Toll!
 Станции сбора дорожной платы представляют собой распространенное явление. Они встречаются на многих скоростных дорогах, мостах и туннелях по всему миру. Каждая станция имеет несколько пунктов сбора платы. В пунктах, работающих в ручном режиме, водитель останавливается и передает деньги служащему. В пунктах, работающих в автоматическом режиме, размещенный на крыше пункта датчик сканирует RFID-карту, прикрепленную на ветровом стекле автомобиля, во время его проезда через пункт. Проезд автомобилей через станции сбора платы можно легко представить в виде потока событий, в котором выполняются интересные операции.
@@ -185,7 +185,7 @@ ms.locfileid: "53317395"
 ## <a name="review-the-cosmosdb-output-data"></a>Просмотр выходных данных Cosmos DB
 1. Найдите группу ресурсов, в которой содержатся ресурсы TollApp.
 
-2. Выберите учетную запись Azure Cosmos DB с таким шаблоном имени: **tollapp<random>-cosmos**.
+2. Выберите учетную запись Azure Cosmos DB с таким шаблоном имени: **tollapp\<random\>-cosmos**.
 
 3. Выберите заголовок **Обозреватель данных**, чтобы открыть страницу обозревателя данных.
 

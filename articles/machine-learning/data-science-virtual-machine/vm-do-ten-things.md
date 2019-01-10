@@ -17,12 +17,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: gokuma
-ms.openlocfilehash: 52f0a298b1a9e9f3f209f51c1bc0362b8ddf2c4e
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 1c56be7a7d9b03d115516b05c10c0b87c6956c47
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53075693"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53727672"
 ---
 # <a name="ten-things-you-can-do-on-the-windows-data-science-virtual-machine"></a>10 задач, которые можно выполнить на виртуальной машине Windows для обработки и анализа данных
 
@@ -102,36 +102,41 @@ ms.locfileid: "53075693"
 ### <a name="build-and-operationalize-python-models"></a>Создание и ввод в эксплуатацию моделей Python
 Ниже приведен фрагмент кода, разработанный в записной книжке Jupyter Python, который создает простую модель с помощью библиотеки SciKit-learn.
 
-    #IRIS classification
-    from sklearn import datasets
-    from sklearn import svm
-    clf = svm.SVC()
-    iris = datasets.load_iris()
-    X, y = iris.data, iris.target
-    clf.fit(X, y)
+```python
+#IRIS classification
+from sklearn import datasets
+from sklearn import svm
+clf = svm.SVC()
+iris = datasets.load_iris()
+X, y = iris.data, iris.target
+clf.fit(X, y)
+```
 
 Метод, используемый для развертывания моделей Python в службе машинного обучения Azure, обертывает прогноз модели в функцию и добавляет в нее атрибуты, которые предоставляются предустановленной библиотекой Python службы машинного обучения Azure и обозначают ИД рабочей области, ключ API, а также входные и возвращаемые параметры службы машинного обучения.  
 
-    from azureml import services
-    @services.publish(workspaceid, auth_token)
-    @services.types(sep_l = float, sep_w = float, pet_l=float, pet_w=float)
-    @services.returns(int) #0, or 1, or 2
-    def predictIris(sep_l, sep_w, pet_l, pet_w):
-     inputArray = [sep_l, sep_w, pet_l, pet_w]
-    return clf.predict(inputArray)
+```python
+from azureml import services
+@services.publish(workspaceid, auth_token)
+@services.types(sep_l = float, sep_w = float, pet_l=float, pet_w=float)
+@services.returns(int) #0, or 1, or 2
+def predictIris(sep_l, sep_w, pet_l, pet_w):
+    inputArray = [sep_l, sep_w, pet_l, pet_w]
+return clf.predict(inputArray)
+```
 
 Теперь клиент может выполнять вызовы веб-службы. Существуют удобные оболочки для создания запросов REST API. Ниже приведен пример кода использования веб-службы.
 
-    # Consume through web service URL and keys
-    from azureml import services
-    @services.service(url, api_key)
-    @services.types(sep_l = float, sep_w = float, pet_l=float, pet_w=float)
-    @services.returns(float)
-    def IrisPredictor(sep_l, sep_w, pet_l, pet_w):
-    pass
+```python
+# Consume through web service URL and keys
+from azureml import services
+@services.service(url, api_key)
+@services.types(sep_l = float, sep_w = float, pet_l=float, pet_w=float)
+@services.returns(float)
+def IrisPredictor(sep_l, sep_w, pet_l, pet_w):
+pass
 
-    IrisPredictor(3,2,3,4)
-
+IrisPredictor(3,2,3,4)
+```
 
 > [!NOTE]
 > Библиотека машинного обучения Azure в настоящее время поддерживается только в Python 2.7.   
@@ -153,44 +158,50 @@ ms.locfileid: "53075693"
 
 структура файла Settings.json:
 
-    {"workspace":{
-    "id"                  : "ENTER YOUR AZUREML WORKSPACE ID",
-    "authorization_token" : "ENTER YOUR AZUREML AUTH TOKEN"
-    }}
-
+```json
+{"workspace":{
+"id"                  : "ENTER YOUR AZUREML WORKSPACE ID",
+"authorization_token" : "ENTER YOUR AZUREML AUTH TOKEN"
+}}
+```
 
 #### <a name="build-a-model-in-r-and-publish-it-in-azure-machine-learning"></a>Создание модели на языке R и ее публикация в службе машинного обучения Azure
-    library(AzureML)
-    ws <- workspace(config="~/.azureml/settings.json")
 
-    if(!require("lme4")) install.packages("lme4")
-    library(lme4)
-    set.seed(1)
-    train <- sleepstudy[sample(nrow(sleepstudy), 120),]
-    m <- lm(Reaction ~ Days + Subject, data = train)
+```r
+library(AzureML)
+ws <- workspace(config="~/.azureml/settings.json")
 
-    # Define a prediction function to publish based on the model:
-    sleepyPredict <- function(newdata){
-          predict(m, newdata=newdata)
-    }
+if(!require("lme4")) install.packages("lme4")
+library(lme4)
+set.seed(1)
+train <- sleepstudy[sample(nrow(sleepstudy), 120),]
+m <- lm(Reaction ~ Days + Subject, data = train)
 
-    ep <- publishWebService(ws, fun = sleepyPredict, name="sleepy lm", inputSchema = sleepstudy, data.frame=TRUE)
+# Define a prediction function to publish based on the model:
+sleepyPredict <- function(newdata){
+        predict(m, newdata=newdata)
+}
+
+ep <- publishWebService(ws, fun = sleepyPredict, name="sleepy lm", inputSchema = sleepstudy, data.frame=TRUE)
+```
 
 #### <a name="consume-the-model-deployed-in-azure-machine-learning"></a>Использование модели, развернутой в службе машинного обучения Azure
 Для использования модели из клиентского приложения мы используем библиотеку службы машинного обучения Azure, чтобы найти опубликованную веб-службу по имени с помощью вызова API `services` для определения конечной точки. Затем нужно просто вызвать функцию `consume` и передать блок данных для прогноза.
 Приведенный ниже код позволяет использовать модель, опубликованную как веб-служба машинного обучения Azure.
 
-    library(AzureML)
-    library(lme4)
-    ws <- workspace(config="~/.azureml/settings.json")
+```r
+library(AzureML)
+library(lme4)
+ws <- workspace(config="~/.azureml/settings.json")
 
-    s <-  services(ws, name = "sleepy lm")
-    s <- tail(s, 1) # use the last published function, in case of duplicate function names
+s <-  services(ws, name = "sleepy lm")
+s <- tail(s, 1) # use the last published function, in case of duplicate function names
 
-    ep <- endpoints(ws, s)
+ep <- endpoints(ws, s)
 
-    # OK, try this out, and compare with raw data
-    ans = consume(ep, sleepstudy)$ans
+# OK, try this out, and compare with raw data
+ans = consume(ep, sleepstudy)$ans
+```
 
 Дополнительные сведения о библиотеке R машинного обучения Azure можно найти [здесь](https://cran.r-project.org/web/packages/AzureML/AzureML.pdf).
 
@@ -210,33 +221,35 @@ DSVM позволяет не только создавать аналитиче�
 
 Общую папку службы файлов Azure можно создать с помощью Azure PowerShell. Далее приведен сценарий, выполняемый в Azure PowerShell для создания общего ресурса службы файлов Azure.
 
-    # Authenticate to Azure.
-    Connect-AzureRmAccount
-    # Select your subscription
-    Get-AzureRmSubscription –SubscriptionName "<your subscription name>" | Select-AzureRmSubscription
-    # Create a new resource group.
-    New-AzureRmResourceGroup -Name <dsvmdatarg>
-    # Create a new storage account. You can reuse existing storage account if you wish.
-    New-AzureRmStorageAccount -Name <mydatadisk> -ResourceGroupName <dsvmdatarg> -Location "<Azure Data Center Name For eg. South Central US>" -Type "Standard_LRS"
-    # Set your current working storage account
-    Set-AzureRmCurrentStorageAccount –ResourceGroupName "<dsvmdatarg>" –StorageAccountName <mydatadisk>
+```powershell
+# Authenticate to Azure.
+Connect-AzureRmAccount
+# Select your subscription
+Get-AzureRmSubscription –SubscriptionName "<your subscription name>" | Select-AzureRmSubscription
+# Create a new resource group.
+New-AzureRmResourceGroup -Name <dsvmdatarg>
+# Create a new storage account. You can reuse existing storage account if you wish.
+New-AzureRmStorageAccount -Name <mydatadisk> -ResourceGroupName <dsvmdatarg> -Location "<Azure Data Center Name For eg. South Central US>" -Type "Standard_LRS"
+# Set your current working storage account
+Set-AzureRmCurrentStorageAccount –ResourceGroupName "<dsvmdatarg>" –StorageAccountName <mydatadisk>
 
-    # Create a Azure File Service Share
-    $s = New-AzureStorageShare <<teamsharename>>
-    # Create a directory under the FIle share. You can give it any name
-    New-AzureStorageDirectory -Share $s -Path <directory name>
-    # List the share to confirm that everything worked
-    Get-AzureStorageFile -Share $s
-
+# Create a Azure File Service Share
+$s = New-AzureStorageShare <<teamsharename>>
+# Create a directory under the FIle share. You can give it any name
+New-AzureStorageDirectory -Share $s -Path <directory name>
+# List the share to confirm that everything worked
+Get-AzureStorageFile -Share $s
+```
 
 Созданную общую папку Azure можно подключить к любой виртуальной машине в Azure. Настоятельно рекомендуется, чтобы виртуальная машина находилась в одном центре обработки данных Azure с учетной записью хранения. Это необходимо, чтобы исключить задержки и избежать платы за передачу данных. Далее приведены команды для подключения диска к DSVM, которые выполняются в Azure PowerShell.
 
-    # Get storage key of the storage account that has the Azure file share from Azure portal. Store it securely on the VM to avoid prompted in next command.
-    cmdkey /add:<<mydatadisk>>.file.core.windows.net /user:<<mydatadisk>> /pass:<storage key>
+```powershell
+# Get storage key of the storage account that has the Azure file share from Azure portal. Store it securely on the VM to avoid prompted in next command.
+cmdkey /add:<<mydatadisk>>.file.core.windows.net /user:<<mydatadisk>> /pass:<storage key>
 
-    # Mount the Azure file share as Z: drive on the VM. You can chose another drive letter if you wish
-    net use z:  \\<mydatadisk>.file.core.windows.net\<<teamsharename>>
-
+# Mount the Azure file share as Z: drive on the VM. You can chose another drive letter if you wish
+net use z:  \\<mydatadisk>.file.core.windows.net\<<teamsharename>>
+```
 
 Теперь к этому диску можно обращаться как к обычному диску на виртуальной машине.
 
@@ -251,7 +264,7 @@ DSVM уже поставляется с набором клиентских ин
 
 В Visual Studio можно выполнить ту же операцию клонирования. На следующем снимке экрана показано, как получить доступ к средствам Git и GitHub в Visual Studio.
 
-![Снимок экрана Visual Studio с отображением соединения с GitHub](./media/vm-do-ten-things/VSGit.PNG)
+![Снимок экрана Visual Studio с отображением соединения с GitHub](./media/vm-do-ten-things/VSGit.PNG)
 
 Дополнительные сведения об использовании Git для работы с репозиторием GitHub доступны в ряде ресурсов на сайте github.com. Вы также найдете полезную информацию в этой [памятке](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf) .
 
@@ -282,14 +295,14 @@ DSVM уже поставляется с набором клиентских ин
 
 Выполните команду AzCopy в PowerShell или из командной строки. Далее приведен пример использования команды AzCopy.
 
-    # Copy *.sql from local machine to a Azure Blob
-    "C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy" /Source:"c:\Aaqs\Data Science Scripts" /Dest:https://[ENTER STORAGE ACCOUNT].blob.core.windows.net/[ENTER CONTAINER] /DestKey:[ENTER STORAGE KEY] /S /Pattern:*.sql
+```powershell
+# Copy *.sql from local machine to a Azure Blob
+"C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy" /Source:"c:\Aaqs\Data Science Scripts" /Dest:https://[ENTER STORAGE ACCOUNT].blob.core.windows.net/[ENTER CONTAINER] /DestKey:[ENTER STORAGE KEY] /S /Pattern:*.sql
 
-    # Copy back all files from Azure Blob container to Local machine
+# Copy back all files from Azure Blob container to Local machine
 
-    "C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy" /Dest:"c:\Aaqs\Data Science Scripts\temp" /Source:https://[ENTER STORAGE ACCOUNT].blob.core.windows.net/[ENTER CONTAINER] /SourceKey:[ENTER STORAGE KEY] /S
-
-
+"C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\azcopy" /Dest:"c:\Aaqs\Data Science Scripts\temp" /Source:https://[ENTER STORAGE ACCOUNT].blob.core.windows.net/[ENTER CONTAINER] /SourceKey:[ENTER STORAGE KEY] /S
+```
 
 Вскоре после выполнения команды AzCopy для копирования в большой двоичный объект Azure файл появится в обозревателе службы хранилища Azure.
 
@@ -314,43 +327,47 @@ DSVM уже поставляется с набором клиентских ин
 
 Сначала импортируйте необходимые пакеты.
 
-    import pandas as pd
-    from pandas import Series, DataFrame
-    import numpy as np
-    import matplotlib.pyplot as plt
-    from time import time
-    import pyodbc
-    import os
-    from azure.storage.blob import BlobService
-    import tables
-    import time
-    import zipfile
-    import random
+```python
+import pandas as pd
+from pandas import Series, DataFrame
+import numpy as np
+import matplotlib.pyplot as plt
+from time import time
+import pyodbc
+import os
+from azure.storage.blob import BlobService
+import tables
+import time
+import zipfile
+import random
+```
 
 Затем подключите учетные данные BLOB-объекта Azure и считайте данные из BLOB-объекта.
 
-    CONTAINERNAME = 'xxx'
-    STORAGEACCOUNTNAME = 'xxxx'
-    STORAGEACCOUNTKEY = 'xxxxxxxxxxxxxxxx'
-    BLOBNAME = 'nyctaxidataset/nyctaxitrip/trip_data_1.csv'
-    localfilename = 'trip_data_1.csv'
-    LOCALDIRECTORY = os.getcwd()
-    LOCALFILE =  os.path.join(LOCALDIRECTORY, localfilename)
+```python
+CONTAINERNAME = 'xxx'
+STORAGEACCOUNTNAME = 'xxxx'
+STORAGEACCOUNTKEY = 'xxxxxxxxxxxxxxxx'
+BLOBNAME = 'nyctaxidataset/nyctaxitrip/trip_data_1.csv'
+localfilename = 'trip_data_1.csv'
+LOCALDIRECTORY = os.getcwd()
+LOCALFILE =  os.path.join(LOCALDIRECTORY, localfilename)
 
-    #download from blob
-    t1 = time.time()
-    blob_service = BlobService(account_name=STORAGEACCOUNTNAME,account_key=STORAGEACCOUNTKEY)
-    blob_service.get_blob_to_path(CONTAINERNAME,BLOBNAME,LOCALFILE)
-    t2 = time.time()
-    print(("It takes %s seconds to download "+BLOBNAME) % (t2 - t1))
+#download from blob
+t1 = time.time()
+blob_service = BlobService(account_name=STORAGEACCOUNTNAME,account_key=STORAGEACCOUNTKEY)
+blob_service.get_blob_to_path(CONTAINERNAME,BLOBNAME,LOCALFILE)
+t2 = time.time()
+print(("It takes %s seconds to download "+BLOBNAME) % (t2 - t1))
 
-    #unzipping downloaded files if needed
-    #with zipfile.ZipFile(ZIPPEDLOCALFILE, "r") as z:
-    #    z.extractall(LOCALDIRECTORY)
+#unzipping downloaded files if needed
+#with zipfile.ZipFile(ZIPPEDLOCALFILE, "r") as z:
+#    z.extractall(LOCALDIRECTORY)
 
-    df1 = pd.read_csv(LOCALFILE, header=0)
-    df1.columns = ['medallion','hack_license','vendor_id','rate_code','store_and_fwd_flag','pickup_datetime','dropoff_datetime','passenger_count','trip_time_in_secs','trip_distance','pickup_longitude','pickup_latitude','dropoff_longitude','dropoff_latitude']
-    print 'the size of the data is: %d rows and  %d columns' % df1.shape
+df1 = pd.read_csv(LOCALFILE, header=0)
+df1.columns = ['medallion','hack_license','vendor_id','rate_code','store_and_fwd_flag','pickup_datetime','dropoff_datetime','passenger_count','trip_time_in_secs','trip_distance','pickup_longitude','pickup_latitude','dropoff_longitude','dropoff_latitude']
+print 'the size of the data is: %d rows and  %d columns' % df1.shape
+```
 
 Данные считываются в виде блока данных, как показано ниже.
 
@@ -389,45 +406,45 @@ DSVM уже поставляется с набором клиентских ин
 
 В Visual Studio можно использовать следующие запросы U-SQL:
 
-    @a =
-        EXTRACT medallion string,
-                hack_license string,
-                vendor_id string,
-                rate_code string,
-                store_and_fwd_flag string,
-                pickup_datetime string,
-                dropoff_datetime string,
-                passenger_count int,
-                trip_time_in_secs double,
-                trip_distance double,
-                pickup_longitude string,
-                pickup_latitude string,
-                dropoff_longitude string,
-                dropoff_latitude string
+```usql
+@a =
+    EXTRACT medallion string,
+            hack_license string,
+            vendor_id string,
+            rate_code string,
+            store_and_fwd_flag string,
+            pickup_datetime string,
+            dropoff_datetime string,
+            passenger_count int,
+            trip_time_in_secs double,
+            trip_distance double,
+            pickup_longitude string,
+            pickup_latitude string,
+            dropoff_longitude string,
+            dropoff_latitude string
 
-        FROM "wasb://<Container name>@<Azure Blob Storage Account Name>.blob.core.windows.net/<Input Data File Name>"
-        USING Extractors.Csv();
+    FROM "wasb://<Container name>@<Azure Blob Storage Account Name>.blob.core.windows.net/<Input Data File Name>"
+    USING Extractors.Csv();
 
-    @b =
-        SELECT vendor_id,
-        COUNT(medallion) AS cnt_medallion,
-        SUM(passenger_count) AS cnt_passenger,
-        AVG(trip_distance) AS avg_trip_dist,
-        MIN(trip_distance) AS min_trip_dist,
-        MAX(trip_distance) AS max_trip_dist,
-        AVG(trip_time_in_secs) AS avg_trip_time
-        FROM @a
-        GROUP BY vendor_id;
+@b =
+    SELECT vendor_id,
+    COUNT(medallion) AS cnt_medallion,
+    SUM(passenger_count) AS cnt_passenger,
+    AVG(trip_distance) AS avg_trip_dist,
+    MIN(trip_distance) AS min_trip_dist,
+    MAX(trip_distance) AS max_trip_dist,
+    AVG(trip_time_in_secs) AS avg_trip_time
+    FROM @a
+    GROUP BY vendor_id;
 
-    OUTPUT @b   
-    TO "swebhdfs://<Azure Data Lake Storage Account Name>.azuredatalakestore.net/<Folder Name>/<Output Data File Name>"
-    USING Outputters.Csv();
+OUTPUT @b   
+TO "swebhdfs://<Azure Data Lake Storage Account Name>.azuredatalakestore.net/<Folder Name>/<Output Data File Name>"
+USING Outputters.Csv();
 
-    OUTPUT @b   
-    TO "wasb://<Container name>@<Azure Blob Storage Account Name>.blob.core.windows.net/<Output Data File Name>"
-    USING Outputters.Csv();
-
-
+OUTPUT @b   
+TO "wasb://<Container name>@<Azure Blob Storage Account Name>.blob.core.windows.net/<Output Data File Name>"
+USING Outputters.Csv();
+```
 
 После отправки запроса на сервер отображается схема, демонстрирующая состояние задания.
 
@@ -474,94 +491,95 @@ Azure HDInsight является управляемой службой Apache Ha
 
 * Загрузите данные с помощью IPython Notebook. Сначала импортируйте необходимые пакеты, подключите учетные данные, создайте базу данных в своей учетной записи хранения, а затем загрузите данные в кластеры HDI.
 
-        #Import required Packages
-        import pyodbc
-        import time as time
-        import json
-        import os
-        import urllib
-        import urllib2
-        import warnings
-        import re
-        import pandas as pd
-        import matplotlib.pyplot as plt
-        from azure.storage.blob import BlobService
-        warnings.filterwarnings("ignore", category=UserWarning, module='urllib2')
+```python
+#Import required Packages
+import pyodbc
+import time as time
+import json
+import os
+import urllib
+import urllib2
+import warnings
+import re
+import pandas as pd
+import matplotlib.pyplot as plt
+from azure.storage.blob import BlobService
+warnings.filterwarnings("ignore", category=UserWarning, module='urllib2')
 
 
-        #Create the connection to Hive using ODBC
-        SERVER_NAME='xxx.azurehdinsight.net'
-        DATABASE_NAME='nyctaxidb'
-        USERID='xxx'
-        PASSWORD='xxxx'
-        DB_DRIVER='Microsoft Hive ODBC Driver'
-        driver = 'DRIVER={' + DB_DRIVER + '}'
-        server = 'Host=' + SERVER_NAME + ';Port=443'
-        database = 'Schema=' + DATABASE_NAME
-        hiveserv = 'HiveServerType=2'
-        auth = 'AuthMech=6'
-        uid = 'UID=' + USERID
-        pwd = 'PWD=' + PASSWORD
-        CONNECTION_STRING = ';'.join([driver,server,database,hiveserv,auth,uid,pwd])
-        connection = pyodbc.connect(CONNECTION_STRING, autocommit=True)
-        cursor=connection.cursor()
+#Create the connection to Hive using ODBC
+SERVER_NAME='xxx.azurehdinsight.net'
+DATABASE_NAME='nyctaxidb'
+USERID='xxx'
+PASSWORD='xxxx'
+DB_DRIVER='Microsoft Hive ODBC Driver'
+driver = 'DRIVER={' + DB_DRIVER + '}'
+server = 'Host=' + SERVER_NAME + ';Port=443'
+database = 'Schema=' + DATABASE_NAME
+hiveserv = 'HiveServerType=2'
+auth = 'AuthMech=6'
+uid = 'UID=' + USERID
+pwd = 'PWD=' + PASSWORD
+CONNECTION_STRING = ';'.join([driver,server,database,hiveserv,auth,uid,pwd])
+connection = pyodbc.connect(CONNECTION_STRING, autocommit=True)
+cursor=connection.cursor()
 
 
-        #Create Hive database and tables
-        queryString = "create database if not exists nyctaxidb;"
-        cursor.execute(queryString)
+#Create Hive database and tables
+queryString = "create database if not exists nyctaxidb;"
+cursor.execute(queryString)
 
-        queryString = """
-                        create external table if not exists nyctaxidb.trip
-                        (
-                            medallion string,
-                            hack_license string,
-                            vendor_id string,
-                            rate_code string,
-                            store_and_fwd_flag string,
-                            pickup_datetime string,
-                            dropoff_datetime string,
-                            passenger_count int,
-                            trip_time_in_secs double,
-                            trip_distance double,
-                            pickup_longitude double,
-                            pickup_latitude double,
-                            dropoff_longitude double,
-                            dropoff_latitude double)  
-                        PARTITIONED BY (month int)
-                        ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' lines terminated by '\\n'
-                        STORED AS TEXTFILE LOCATION 'wasb:///nyctaxidbdata/trip' TBLPROPERTIES('skip.header.line.count'='1');
-                    """
-        cursor.execute(queryString)
+queryString = """
+                create external table if not exists nyctaxidb.trip
+                (
+                    medallion string,
+                    hack_license string,
+                    vendor_id string,
+                    rate_code string,
+                    store_and_fwd_flag string,
+                    pickup_datetime string,
+                    dropoff_datetime string,
+                    passenger_count int,
+                    trip_time_in_secs double,
+                    trip_distance double,
+                    pickup_longitude double,
+                    pickup_latitude double,
+                    dropoff_longitude double,
+                    dropoff_latitude double)  
+                PARTITIONED BY (month int)
+                ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' lines terminated by '\\n'
+                STORED AS TEXTFILE LOCATION 'wasb:///nyctaxidbdata/trip' TBLPROPERTIES('skip.header.line.count'='1');
+            """
+cursor.execute(queryString)
 
-        queryString = """
-                        create external table if not exists nyctaxidb.fare
-                        (
-                            medallion string,
-                            hack_license string,
-                            vendor_id string,
-                            pickup_datetime string,
-                            payment_type string,
-                            fare_amount double,
-                            surcharge double,
-                            mta_tax double,
-                            tip_amount double,
-                            tolls_amount double,
-                            total_amount double)
-                        PARTITIONED BY (month int)
-                        ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' lines terminated by '\\n'
-                        STORED AS TEXTFILE LOCATION 'wasb:///nyctaxidbdata/fare' TBLPROPERTIES('skip.header.line.count'='1');
-                    """
-        cursor.execute(queryString)
+queryString = """
+                create external table if not exists nyctaxidb.fare
+                (
+                    medallion string,
+                    hack_license string,
+                    vendor_id string,
+                    pickup_datetime string,
+                    payment_type string,
+                    fare_amount double,
+                    surcharge double,
+                    mta_tax double,
+                    tip_amount double,
+                    tolls_amount double,
+                    total_amount double)
+                PARTITIONED BY (month int)
+                ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' lines terminated by '\\n'
+                STORED AS TEXTFILE LOCATION 'wasb:///nyctaxidbdata/fare' TBLPROPERTIES('skip.header.line.count'='1');
+            """
+cursor.execute(queryString)
 
 
-        #Upload data from blob storage to HDI cluster
-        for i in range(1,13):
-            queryString = "LOAD DATA INPATH 'wasb:///nyctaxitripraw2/trip_data_%d.csv' INTO TABLE nyctaxidb2.trip PARTITION (month=%d);"%(i,i)
-            cursor.execute(queryString)
-            queryString = "LOAD DATA INPATH 'wasb:///nyctaxifareraw2/trip_fare_%d.csv' INTO TABLE nyctaxidb2.fare PARTITION (month=%d);"%(i,i)  
-            cursor.execute(queryString)
-
+#Upload data from blob storage to HDI cluster
+for i in range(1,13):
+    queryString = "LOAD DATA INPATH 'wasb:///nyctaxitripraw2/trip_data_%d.csv' INTO TABLE nyctaxidb2.trip PARTITION (month=%d);"%(i,i)
+    cursor.execute(queryString)
+    queryString = "LOAD DATA INPATH 'wasb:///nyctaxifareraw2/trip_fare_%d.csv' INTO TABLE nyctaxidb2.fare PARTITION (month=%d);"%(i,i)  
+    cursor.execute(queryString)
+```
 
 * Или выполните инструкции по передаче данных о поездках в такси по Нью-Йорку из этого [пошагового руководства](../team-data-science-process/hive-walkthrough.md). Ниже перечислены основные действия.
   
@@ -575,214 +593,224 @@ Azure HDInsight является управляемой службой Apache Ha
 
 Поскольку данные хранятся в кластере Hadoop, можно воспользоваться пакетом pyodbc для подключения к кластерам Hadoop и с помощью Hive выполнить запрос к базе данных на просмотр данных и проектирование характеристик. Вы можете просматривать существующие таблицы, созданные на предыдущем шаге.
 
-    queryString = """
-        show tables in nyctaxidb2;
-        """
-    pd.read_sql(queryString,connection)
-
+```python
+queryString = """
+    show tables in nyctaxidb2;
+    """
+pd.read_sql(queryString,connection)
+```
 
 ![Просмотр имеющихся таблиц](./media/vm-do-ten-things/Python_View_Existing_Tables_Hive_v3.PNG)
 
 Давайте взглянем в таблице trip на количество записей по каждому месяцу и посмотрим данные по частоте поездок с чаевыми и без.
 
-    queryString = """
-        select month, count(*) from nyctaxidb.trip group by month;
-        """
-    results = pd.read_sql(queryString,connection)
+```python
+queryString = """
+    select month, count(*) from nyctaxidb.trip group by month;
+    """
+results = pd.read_sql(queryString,connection)
 
-    %matplotlib inline
+%matplotlib inline
 
-    results.columns = ['month', 'trip_count']
-    df = results.copy()
-    df.index = df['month']
-    df['trip_count'].plot(kind='bar')
-
+results.columns = ['month', 'trip_count']
+df = results.copy()
+df.index = df['month']
+df['trip_count'].plot(kind='bar')
+```
 
 ![Диаграмма количества записей за каждый месяц](./media/vm-do-ten-things/Exploration_Number_Records_by_Month_v3.PNG)
 
-    queryString = """
-        SELECT tipped, COUNT(*) AS tip_freq
-        FROM
-        (
-            SELECT if(tip_amount > 0, 1, 0) as tipped, tip_amount
-            FROM nyctaxidb.fare
-        )tc
-        GROUP BY tipped;
-        """
-    results = pd.read_sql(queryString,connection)
+```python
+queryString = """
+    SELECT tipped, COUNT(*) AS tip_freq
+    FROM
+    (
+        SELECT if(tip_amount > 0, 1, 0) as tipped, tip_amount
+        FROM nyctaxidb.fare
+    )tc
+    GROUP BY tipped;
+    """
+results = pd.read_sql(queryString,connection)
 
-    results.columns = ['tipped', 'trip_count']
-    df = results.copy()
-    df.index = df['tipped']
-    df['trip_count'].plot(kind='bar')
-
+results.columns = ['tipped', 'trip_count']
+df = results.copy()
+df.index = df['tipped']
+df['trip_count'].plot(kind='bar')
+```
 
 ![Диаграмма частотности чаевых](./media/vm-do-ten-things/Exploration_Frequency_tip_or_not_v3.PNG)
 
 Вы также можете вычислить расстояние между расположениями посадки и высадки, а затем сравнить это значение с дальностью поездки.
 
-    queryString = """
-                    select pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, trip_distance, trip_time_in_secs,
-                        3959*2*2*atan((1-sqrt(1-pow(sin((dropoff_latitude-pickup_latitude)
-                        *radians(180)/180/2),2)-cos(pickup_latitude*radians(180)/180)
-                        *cos(dropoff_latitude*radians(180)/180)*pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2)))
-                        /sqrt(pow(sin((dropoff_latitude-pickup_latitude)*radians(180)/180/2),2)
-                        +cos(pickup_latitude*radians(180)/180)*cos(dropoff_latitude*radians(180)/180)*
-                        pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2))) as direct_distance
-                        from nyctaxidb.trip
-                        where month=1
-                            and pickup_longitude between -90 and -30
-                            and pickup_latitude between 30 and 90
-                            and dropoff_longitude between -90 and -30
-                            and dropoff_latitude between 30 and 90;
-                """
-    results = pd.read_sql(queryString,connection)
-    results.head(5)
-
+```python
+queryString = """
+                select pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, trip_distance, trip_time_in_secs,
+                    3959*2*2*atan((1-sqrt(1-pow(sin((dropoff_latitude-pickup_latitude)
+                    *radians(180)/180/2),2)-cos(pickup_latitude*radians(180)/180)
+                    *cos(dropoff_latitude*radians(180)/180)*pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2)))
+                    /sqrt(pow(sin((dropoff_latitude-pickup_latitude)*radians(180)/180/2),2)
+                    +cos(pickup_latitude*radians(180)/180)*cos(dropoff_latitude*radians(180)/180)*
+                    pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2))) as direct_distance
+                    from nyctaxidb.trip
+                    where month=1
+                        and pickup_longitude between -90 and -30
+                        and pickup_latitude between 30 and 90
+                        and dropoff_longitude between -90 and -30
+                        and dropoff_latitude between 30 and 90;
+            """
+results = pd.read_sql(queryString,connection)
+results.head(5)
+```
 
 ![Верхние строки таблицы данных о посадке и высадке](./media/vm-do-ten-things/Exploration_compute_pickup_dropoff_distance_v2.PNG)
 
-    results.columns = ['pickup_longitude', 'pickup_latitude', 'dropoff_longitude',
-                       'dropoff_latitude', 'trip_distance', 'trip_time_in_secs', 'direct_distance']
-    df = results.loc[results['trip_distance']<=100] #remove outliers
-    df = df.loc[df['direct_distance']<=100] #remove outliers
-    plt.scatter(df['direct_distance'], df['trip_distance'])
-
+```python
+results.columns = ['pickup_longitude', 'pickup_latitude', 'dropoff_longitude',
+                    'dropoff_latitude', 'trip_distance', 'trip_time_in_secs', 'direct_distance']
+df = results.loc[results['trip_distance']<=100] #remove outliers
+df = df.loc[df['direct_distance']<=100] #remove outliers
+plt.scatter(df['direct_distance'], df['trip_distance'])
+```
 
 ![Диаграмма сравнения расстояний между расположениями посадки и высадки с дальностью поездки](./media/vm-do-ten-things/Exploration_direct_distance_trip_distance_v2.PNG)
 
 Подготовим сокращенный набор данных (1 %) для моделирования. Эти данные можно использовать в модуле "Читатель" машинного обучения.
 
-        queryString = """
-        create  table if not exists nyctaxi_downsampled_dataset_testNEW (
-        medallion string,
-        hack_license string,
-        vendor_id string,
-        rate_code string,
-        store_and_fwd_flag string,
-        pickup_datetime string,
-        dropoff_datetime string,
-        pickup_hour string,
-        pickup_week string,
-        weekday string,
-        passenger_count int,
-        trip_time_in_secs double,
-        trip_distance double,
-        pickup_longitude double,
-        pickup_latitude double,
-        dropoff_longitude double,
-        dropoff_latitude double,
-        direct_distance double,
-        payment_type string,
-        fare_amount double,
-        surcharge double,
-        mta_tax double,
-        tip_amount double,
-        tolls_amount double,
-        total_amount double,
-        tipped string,
-        tip_class string
-        )
-        row format delimited fields terminated by ','
-        lines terminated by '\\n'
-        stored as textfile;
-        """
-        cursor.execute(queryString)
+```python
+queryString = """
+create  table if not exists nyctaxi_downsampled_dataset_testNEW (
+medallion string,
+hack_license string,
+vendor_id string,
+rate_code string,
+store_and_fwd_flag string,
+pickup_datetime string,
+dropoff_datetime string,
+pickup_hour string,
+pickup_week string,
+weekday string,
+passenger_count int,
+trip_time_in_secs double,
+trip_distance double,
+pickup_longitude double,
+pickup_latitude double,
+dropoff_longitude double,
+dropoff_latitude double,
+direct_distance double,
+payment_type string,
+fare_amount double,
+surcharge double,
+mta_tax double,
+tip_amount double,
+tolls_amount double,
+total_amount double,
+tipped string,
+tip_class string
+)
+row format delimited fields terminated by ','
+lines terminated by '\\n'
+stored as textfile;
+"""
+cursor.execute(queryString)
+```
 
-        --- now insert contents of the join into the preceding internal table
+Теперь вставьте содержимое соединения в предыдущую внутреннюю таблицу.
 
-        queryString = """
-        insert overwrite table nyctaxi_downsampled_dataset_testNEW
-        select
-        t.medallion,
-        t.hack_license,
-        t.vendor_id,
-        t.rate_code,
-        t.store_and_fwd_flag,
-        t.pickup_datetime,
-        t.dropoff_datetime,
-        hour(t.pickup_datetime) as pickup_hour,
-        weekofyear(t.pickup_datetime) as pickup_week,
-        from_unixtime(unix_timestamp(t.pickup_datetime, 'yyyy-MM-dd HH:mm:ss'),'u') as weekday,
-        t.passenger_count,
-        t.trip_time_in_secs,
-        t.trip_distance,
-        t.pickup_longitude,
-        t.pickup_latitude,
-        t.dropoff_longitude,
-        t.dropoff_latitude,
-        t.direct_distance,
-        f.payment_type,
-        f.fare_amount,
-        f.surcharge,
-        f.mta_tax,
-        f.tip_amount,
-        f.tolls_amount,
-        f.total_amount,
-        if(tip_amount>0,1,0) as tipped,
-        if(tip_amount=0,0,
-        if(tip_amount>0 and tip_amount<=5,1,
-        if(tip_amount>5 and tip_amount<=10,2,
-        if(tip_amount>10 and tip_amount<=20,3,4)))) as tip_class
-        from
-        (
-        select
-        medallion,
-        hack_license,
-        vendor_id,
-        rate_code,
-        store_and_fwd_flag,
-        pickup_datetime,
-        dropoff_datetime,
-        passenger_count,
-        trip_time_in_secs,
-        trip_distance,
-        pickup_longitude,
-        pickup_latitude,
-        dropoff_longitude,
-        dropoff_latitude,
-        3959*2*2*atan((1-sqrt(1-pow(sin((dropoff_latitude-pickup_latitude)
-        radians(180)/180/2),2)-cos(pickup_latitude*radians(180)/180)
-        *cos(dropoff_latitude*radians(180)/180)*pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2)))
-        /sqrt(pow(sin((dropoff_latitude-pickup_latitude)*radians(180)/180/2),2)
-        +cos(pickup_latitude*radians(180)/180)*cos(dropoff_latitude*radians(180)/180)*pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2))) as direct_distance,
-        rand() as sample_key
+```python
+queryString = """
+insert overwrite table nyctaxi_downsampled_dataset_testNEW
+select
+t.medallion,
+t.hack_license,
+t.vendor_id,
+t.rate_code,
+t.store_and_fwd_flag,
+t.pickup_datetime,
+t.dropoff_datetime,
+hour(t.pickup_datetime) as pickup_hour,
+weekofyear(t.pickup_datetime) as pickup_week,
+from_unixtime(unix_timestamp(t.pickup_datetime, 'yyyy-MM-dd HH:mm:ss'),'u') as weekday,
+t.passenger_count,
+t.trip_time_in_secs,
+t.trip_distance,
+t.pickup_longitude,
+t.pickup_latitude,
+t.dropoff_longitude,
+t.dropoff_latitude,
+t.direct_distance,
+f.payment_type,
+f.fare_amount,
+f.surcharge,
+f.mta_tax,
+f.tip_amount,
+f.tolls_amount,
+f.total_amount,
+if(tip_amount>0,1,0) as tipped,
+if(tip_amount=0,0,
+if(tip_amount>0 and tip_amount<=5,1,
+if(tip_amount>5 and tip_amount<=10,2,
+if(tip_amount>10 and tip_amount<=20,3,4)))) as tip_class
+from
+(
+select
+medallion,
+hack_license,
+vendor_id,
+rate_code,
+store_and_fwd_flag,
+pickup_datetime,
+dropoff_datetime,
+passenger_count,
+trip_time_in_secs,
+trip_distance,
+pickup_longitude,
+pickup_latitude,
+dropoff_longitude,
+dropoff_latitude,
+3959*2*2*atan((1-sqrt(1-pow(sin((dropoff_latitude-pickup_latitude)
+radians(180)/180/2),2)-cos(pickup_latitude*radians(180)/180)
+*cos(dropoff_latitude*radians(180)/180)*pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2)))
+/sqrt(pow(sin((dropoff_latitude-pickup_latitude)*radians(180)/180/2),2)
++cos(pickup_latitude*radians(180)/180)*cos(dropoff_latitude*radians(180)/180)*pow(sin((dropoff_longitude-pickup_longitude)*radians(180)/180/2),2))) as direct_distance,
+rand() as sample_key
 
-        from trip
-        where pickup_latitude between 30 and 90
-            and pickup_longitude between -90 and -30
-            and dropoff_latitude between 30 and 90
-            and dropoff_longitude between -90 and -30
-        )t
-        join
-        (
-        select
-        medallion,
-        hack_license,
-        vendor_id,
-        pickup_datetime,
-        payment_type,
-        fare_amount,
-        surcharge,
-        mta_tax,
-        tip_amount,
-        tolls_amount,
-        total_amount
-        from fare
-        )f
-        on t.medallion=f.medallion and t.hack_license=f.hack_license and t.pickup_datetime=f.pickup_datetime
-        where t.sample_key<=0.01
-        """
-        cursor.execute(queryString)
+from trip
+where pickup_latitude between 30 and 90
+    and pickup_longitude between -90 and -30
+    and dropoff_latitude between 30 and 90
+    and dropoff_longitude between -90 and -30
+)t
+join
+(
+select
+medallion,
+hack_license,
+vendor_id,
+pickup_datetime,
+payment_type,
+fare_amount,
+surcharge,
+mta_tax,
+tip_amount,
+tolls_amount,
+total_amount
+from fare
+)f
+on t.medallion=f.medallion and t.hack_license=f.hack_license and t.pickup_datetime=f.pickup_datetime
+where t.sample_key<=0.01
+"""
+cursor.execute(queryString)
+```
 
 Через некоторое время вы увидите, что данные были загружены в кластеры Hadoop.
 
-    queryString = """
-        select * from nyctaxi_downsampled_dataset limit 10;
-        """
-    cursor.execute(queryString)
-    pd.read_sql(queryString,connection)
-
+```python
+queryString = """
+    select * from nyctaxi_downsampled_dataset limit 10;
+    """
+cursor.execute(queryString)
+pd.read_sql(queryString,connection)
+```
 
 ![Верхние строки данных из таблицы](./media/vm-do-ten-things/DownSample_Data_For_Modeling_v2.PNG)
 
@@ -828,17 +856,17 @@ Azure Cosmos DB — это база данных NoSQL в облаке. Она 
 
 Вместо выполнения описанных выше шагов можно вставить следующий код. Он создает скрипт на основе действий, примененных в расширенном редакторе Power BI, позволяя записывать преобразования данных на языке запросов.
 
-    let
-        Source = Json.Document(Web.Contents("https://cahandson.blob.core.windows.net/samples/volcano.json")),
-        #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
-        #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"Volcano Name", "Country", "Region", "Location", "Elevation", "Type", "Status", "Last Known Eruption", "id"}, {"Volcano Name", "Country", "Region", "Location", "Elevation", "Type", "Status", "Last Known Eruption", "id"}),
-        #"Expanded Location" = Table.ExpandRecordColumn(#"Expanded Column1", "Location", {"coordinates"}, {"coordinates"}),
-        #"Added Custom" = Table.AddColumn(#"Expanded Location", "LatLong", each Text.From([coordinates]{1})&","&Text.From([coordinates]{0})),
-        #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"Elevation", type number}})
-    in
-        #"Changed Type"
-
-
+```pqfl
+let
+    Source = Json.Document(Web.Contents("https://cahandson.blob.core.windows.net/samples/volcano.json")),
+    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"Volcano Name", "Country", "Region", "Location", "Elevation", "Type", "Status", "Last Known Eruption", "id"}, {"Volcano Name", "Country", "Region", "Location", "Elevation", "Type", "Status", "Last Known Eruption", "id"}),
+    #"Expanded Location" = Table.ExpandRecordColumn(#"Expanded Column1", "Location", {"coordinates"}, {"coordinates"}),
+    #"Added Custom" = Table.AddColumn(#"Expanded Location", "LatLong", each Text.From([coordinates]{1})&","&Text.From([coordinates]{0})),
+    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"Elevation", type number}})
+in
+    #"Changed Type"
+```
 
 Теперь ваши данные находятся в модели данных Power BI. Рабочий стол Power BI Desktop должен выглядеть так:
 

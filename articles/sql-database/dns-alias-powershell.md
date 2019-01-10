@@ -9,15 +9,15 @@ ms.devlang: PowerShell
 ms.topic: conceptual
 author: oslake
 ms.author: moslake
-ms.reviewer: genemi,amagarwa,maboja
+ms.reviewer: genemi,amagarwa,maboja, jrasnick
 manager: craigg
 ms.date: 02/05/2018
-ms.openlocfilehash: 095e6c6d59bf73bb74e2d8fbe3d1506601ab533e
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: fcba91780f5ef05099feee70cc96eb5aeb667c7a
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49471124"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53600956"
 ---
 # <a name="powershell-for-dns-alias-to-azure-sql-database"></a>Управление псевдонимом DNS для Базы данных SQL Azure с помощью PowerShell
 
@@ -25,10 +25,10 @@ ms.locfileid: "49471124"
 
 В примере кода используются следующие командлеты:
 
-- [New-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/New-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). Создает псевдоним DNS в системе службы "База данных SQL Azure". Псевдоним ссылается на сервер 1 Базы данных SQL Azure.
-- [Get-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/Get-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). Получает и выводит все псевдонимы DNS, назначены серверу 1 Базы данных SQL.
-- [Set-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/Set-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). Изменяет имя сервера базы данных SQL, на который ссылается псевдоним, с "Сервер 1" на "Сервер 2".
-- [Remove-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/Remove-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). С помощью имени псевдонима удаляет псевдоним DNS с сервера 2 Базы данных SQL.
+- [New-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/New-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). Создает псевдоним DNS в системе службы "База данных SQL Azure". Псевдоним ссылается на сервер 1 Базы данных SQL Azure.
+- [Get-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/Get-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). Получает и выводит все псевдонимы DNS, назначенные серверу 1 базы данных SQL.
+- [Set-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/Set-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). Изменяет имя сервера базы данных SQL, на который ссылается псевдоним, с "Сервер 1" на "Сервер 2".
+- [Remove-AzureRMSqlServerDNSAlias](https://docs.microsoft.com/powershell/module/AzureRM.Sql/Remove-AzureRmSqlServerDnsAlias?view=azurermps-5.1.1). С помощью имени псевдонима удаляет псевдоним DNS с сервера 2 базы данных SQL.
 
 Предыдущие командлеты PowerShell доступны в модуле **AzureRM.Sql**, начиная с версии 5.1.1.
 

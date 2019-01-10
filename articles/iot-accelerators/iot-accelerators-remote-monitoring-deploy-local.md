@@ -8,18 +8,18 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/25/2018
 ms.topic: conceptual
-ms.openlocfilehash: 5068f0277726b7c468aa24d0629c4350b60b78b5
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: a30311f8b171d80e036b4e554b2f1026b43c8a67
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51287614"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53604777"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---visual-studio"></a>Локальное развертывание акселератора решений для удаленного мониторинга в Visual Studio
 
 [!INCLUDE [iot-accelerators-selector-local](../../includes/iot-accelerators-selector-local.md)]
 
-В этой статье показано, как развернуть акселератор решений для удаленного мониторинга на локальном компьютере в целях тестирования и разработки. Вы узнаете, как запустить микрослужбы в Visual Studio. Для развертывания локальных микрослужб используются следующие облачные службы: Центр Интернета вещей, Cosmos DB, Azure Streaming Analytics и службы Аналитики временных рядов Azure.
+В этой статье показано, как развернуть акселератор решений для удаленного мониторинга на локальном компьютере в целях тестирования и разработки. Вы узнаете, как запустить микрослужбы в Visual Studio. При локальном развертывании микрослужб используются следующие облачные службы: Службы центра Интернета вещей, Cosmos DB, Azure Streaming Analytics и Azure Time Series Insights в облаке.
 
 Если вы хотите запустить акселератор решений для удаленного мониторинга в Docker на локальном компьютере, см. статью [Deploy the Remote Monitoring solution accelerator locally — Docker](iot-accelerators-remote-monitoring-deploy-local-docker.md) (Локальное развертывание ускорителя решения удаленного мониторинга в Docker).
 
@@ -36,7 +36,7 @@ ms.locfileid: "51287614"
 * [Git](https://git-scm.com/)
 * [Docker](https://www.docker.com)
 * [Visual Studio](https://visualstudio.microsoft.com/)
-* [Nginx](http://nginx.org/en/download.html)
+* [Nginx](https://nginx.org/en/download.html)
 * [Node.js версии 8](https://nodejs.org/). Это программное обеспечение является необходимым компонентом для интерфейса командной строки PCS, который используется в сценариях для создания ресурсов Azure. Не используйте Node.js версии 10.
 
 > [!NOTE]
@@ -101,7 +101,7 @@ npm start
 * Скопируйте файл **nginx.conf** из папки **webui\scripts\localhost** в каталог установки **nginx\conf**.
 * Запустите **nginx**.
 
-Дополнительные сведения о запуске **nginx** см. в разделе [nginx для Windows](http://nginx.org/en/docs/windows.html).
+Дополнительные сведения о запуске **nginx** см. в разделе [nginx для Windows](https://nginx.org/en/docs/windows.html).
 
 ### <a name="connect-to-the-dashboard"></a>Подключение к панели мониторинга
 

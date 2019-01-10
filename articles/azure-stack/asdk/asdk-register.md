@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/19/2018
+ms.date: 11/28/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: 84924900403a4aa2a65143c65a0b26f2c95a1e5b
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 00c4d750d0617d36ab476719ce31c8038065511c
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52962653"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53807216"
 ---
 # <a name="azure-stack-registration"></a>Регистрация Azure Stack
 Вы можете зарегистрировать устанавливаемый Пакет средств разработки Azure Stack (ASDK) в Azure, чтобы скачивать элементы Marketplace из Azure и настраивать передачу коммерческих данных в корпорацию Майкрософт. Регистрация требуется для поддержки полной функциональности Azure Stack, включая синдикацию marketplace. Рекомендуем использовать регистрацию, так как она позволяет протестировать важные функции Azure Stack, например синдикацию Marketplace и отчеты о потреблении. После регистрации Azure Stack данные о потреблении передаются в коммерческий отдел Azure. Вы сможете увидеть их в той подписке, которую использовали для регистрации. Но с пользователей ASDK не взимается плата на основе отчетов о потреблении.
@@ -201,21 +201,21 @@ $ExecutionContext.SessionState.LanguageMode
 После завершения активации вы увидите сообщение, информирующее о том, что **среда зарегистрирована и активирована**.
 
 ## <a name="verify-the-registration-was-successful"></a>Подтверждение успешного выполнения регистрации
-Выполните следующие действия, чтобы проверить регистрацию ASDK в Azure **в подключенных средах**.
+
+Для проверки успешной регистрации Azure Stack можно использовать плитку **Управление регионами**. На портале администрирования эта плитка размещается на панели мониторинга по умолчанию.
 
 1. Войдите на [портал администрирования Azure Stack](https://adminportal.local.azurestack.external).
 
-2. Щелкните **Marketplace Management** (Управление Marketplace) > **Add from Azure** (Добавить из Azure).
+2. На панели мониторинга выберите плитку **Управление регионами**.
 
-    ![](media/asdk-register/2.PNG)
+    [ ![Плитка "Управление регионами"](media/asdk-register/admin1sm.png "Плитка \"Управление регионами\"") ](media/asdk-register/admin1.png#lightbox)
 
-3. Если отобразится список элементов, доступных в Azure, значит активация прошла успешно.
-
-    ![](media/asdk-register/3.PNG)
+3. Выберите **Свойства**. В этой колонке отображаются данные о состоянии и сведения о вашей среде. Состояние может иметь значение **Зарегистрировано** или **Не зарегистрировано**. Если отображается состояние "Зарегистрировано", вы можете увидеть идентификатор подписки, использовавшийся для регистрации Azure Stack, а также группу и имя ресурса регистрации.
 
 ## <a name="move-a-registration-resource"></a>Перемещение ресурса регистрации
 Перемещение ресурса регистрации между группами ресурсов в одной подписке **поддерживается**. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources).
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-[Добавление элемента Marketplace Azure Stack](../azure-stack-marketplace.md)
+
+- [Добавление элемента Marketplace Azure Stack](../azure-stack-marketplace.md)

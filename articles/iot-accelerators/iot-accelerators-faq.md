@@ -1,5 +1,5 @@
 ---
-title: Часто задаваемые вопросы об акселераторах решений для Интернета вещей Azure | Документация Майкрософт
+title: Часто задаваемые вопросы об акселераторах решений для Интернета вещей Azure | Документация Майкрософт
 description: Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 author: dominicbetts
 manager: timlt
@@ -8,12 +8,12 @@ services: iot-accelerators
 ms.topic: conceptual
 ms.date: 02/15/2018
 ms.author: dobett
-ms.openlocfilehash: 294eae1dd5e591d12fdb82f62ea013ba54489686
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 59271a96c5ad1a92483ca585fc30f1e9de0ed4f7
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51253352"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608755"
 ---
 # <a name="frequently-asked-questions-for-iot-solution-accelerators"></a>Часто задаваемые вопросы об акселераторах решений для Интернета вещей
 
@@ -32,7 +32,7 @@ ms.locfileid: "51253352"
 
 Ссылки на пакеты SDK для устройств Интернета вещей для других языков (C, .NET, Java, Node.js, Python) можно найти в репозиториях GitHub для [пакетов SDK Microsoft Azure для Интернета вещей](https://github.com/Azure/azure-iot-sdks).
 
-Если вы используете устройство DevKit, ресурсы и примеры можно найти в репозитории GitHub для [пакета SDK для DevKit](https://github.com/Microsoft/devkit-sdk).
+Если вы используете устройство DevKit, ресурсы и примеры можно найти в репозитории GitHub для [пакета SDK для DevKit IoT](https://github.com/Microsoft/devkit-sdk).
 
 ### <a name="is-the-new-microservices-architecture-available-for-all-the-three-solution-accelerators"></a>Доступна ли новая архитектура микрослужб для всех трех типов акселераторов решений?
 
@@ -40,7 +40,28 @@ ms.locfileid: "51253352"
 
 ### <a name="what-advantages-does-the-new-open-sourced-microservices-based-architecture-provide-in-the-new-update"></a>Каковы преимущества новой архитектуры на базе микрослужб с открытым кодом в новом обновлении?
 
-За последние два года облачная архитектура значительно улучшилась. Микрослужбы стали оптимальным вариантом, который обеспечивает масштабируемость и гибкость без снижения скорости разработки. В некоторых службах Майкрософт по умолчанию используется шаблон архитектуры, который обеспечивает высокую надежность и масштабируемость. Мы реализуем полученные знания на практике, чтобы предоставить своим клиентам преимущества.
+За последние два года облачная архитектура значительно улучшилась. Микрослужбы стали оптимальным вариантом, который обеспечивает масштабируемость и гибкость без снижения скорости разработки. В некоторых службах Майкрософт по умолчанию используется шаблон архитектуры, который обеспечивает высокую надежность и масштабируемость. Майкрософт воплощает эти знания на практике, предлагая акселераторы решений для клиентов.
+
+### <a name="im-a-service-administrator-and-id-like-to-change-the-directory-mapping-between-my-subscription-and-a-specific-azure-ad-tenant-how-do-i-complete-this-task"></a>Я являюсь администратором службы и хочу изменить сопоставление каталогов подписки и конкретного клиента Azure AD. Как выполнить эту задачу?
+
+Ознакомьтесь с разделом [Добавление существующей подписки в каталог Azure AD](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md#to-associate-an-existing-subscription-to-your-azure-ad-directory)
+
+### <a name="i-want-to-change-a-service-administrator-or-co-administrator-when-logged-in-with-an-organizational-account"></a>Я хочу сменить администратора службы и соадминистратора при входе в систему с использованием рабочей учетной записи.
+
+См. справочную статью [Смена администратора службы и соадминистратора при входе в систему с использованием учетной записи организации](https://azure.microsoft.com/support/changing-service-admin-and-co-admin).
+
+### <a name="why-am-i-seeing-this-error-your-account-does-not-have-the-proper-permissions-to-create-a-solution-please-check-with-your-account-administrator-or-try-with-a-different-account"></a>Почему появляется ошибка «У вашей учетной записи нет необходимых разрешений для создания решения. Обратитесь к администратору учетной записи или попробуйте использовать другую учетную запись»
+
+Руководствуйтесь следующей схемой:
+
+![Блок-схема разрешений](media/iot-accelerators-faq/flowchart.png)
+
+> [!NOTE]
+> Вы выполнили проверку, которая подтверждает ваши права глобального администратора на клиенте Azure AD и соадминистратора подписки, но ошибка не устранена. В таком случае администратор учетной записи должен удалить этого пользователя и повторно назначить необходимые разрешения в указанном порядке. Сначала добавить пользователя в качестве глобального администратора, а затем — пользователя в качестве соадминистратора подписки Azure. Если проблемы не удается устранить, обратитесь в службу [справки и поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+
+### <a name="why-am-i-seeing-this-error-when-i-have-an-azure-subscription-an-azure-subscription-is-required-to-create-pre-configured-solutions-you-can-create-a-free-trial-account-in-just-a-couple-of-minutes"></a>Почему эта ошибка появляется при наличии подписки Azure? "Для создания предварительно настроенных решений требуется подписка Azure. Вы можете создать бесплатную пробную учетную запись всего за несколько минут".
+
+Если точно известно, что у вас есть подписка Azure, проверьте сопоставление клиентов для своей подписки и убедитесь, что в раскрывающемся списке выбран правильный клиент. Если клиент выбран правильно, следуйте приведенной выше схеме и проверьте сопоставление подписки и этого клиента Azure AD.
 
 ### <a name="where-can-i-find-information-about-the-previous-version-of-the-remote-monitoring-solution"></a>Где можно найти сведения о предыдущей версии решения удаленного мониторинга?
 
@@ -52,7 +73,7 @@ ms.locfileid: "51253352"
 
 ### <a name="whats-the-difference-between-deleting-a-resource-group-in-the-azure-portal-and-clicking-delete-on-a-solution-accelerator-in-azureiotsuitecom"></a>В чем разница между удалением группы ресурсов на портале Azure и нажатием кнопки "Удалить" в акселераторе решений на сайте azureiotsuite.com?
 
-* Если вы удаляете акселератор решений на сайте [azureiotsuite.com](https://www.azureiotsolutions.com/), вместе с ним будут удалены все ресурсы, подготовленные при его создании. Если вы добавляли в группу ресурсов дополнительные ресурсы, они также будут удалены.
+* Если вы удаляете акселератор решений на сайте [azureiotsuite.com](https://www.azureiotsolutions.com/), вместе с ним будут удалены все ресурсы, развернутые при его создании. Если вы добавляли в группу ресурсов дополнительные ресурсы, они также будут удалены.
 * Если удалить группу ресурсов на [портале Azure](https://portal.azure.com), будут удалены ресурсы в этой группе. Вам также придется удалить приложение Azure Active Directory, связанное с акселератором решений.
 
 ### <a name="can-i-continue-to-leverage-my-existing-investments-in-azure-iot-solution-accelerators"></a>Можно ли и дальше использовать существующие системы на базе акселераторов решений для Интернета вещей Azure?
@@ -78,7 +99,7 @@ ms.locfileid: "51253352"
 
 Сейчас вы не можете создать акселератор решений с использованием учетной записи [Microsoft Azure для DreamSpark](https://azure.microsoft.com/pricing/member-offers/imagine/). Но вы можете всего за пару минут создать [бесплатную пробную учетную запись Azure](https://azure.microsoft.com/free/), которая позволит создать акселератор решений.
 
-### <a name="how-do-i-delete-an-aad-tenant"></a>Как удалить клиент AAD?
+### <a name="how-do-i-delete-an-azure-ad-tenant"></a>Как удалить клиент Azure AD?
 
 Ознакомьтесь с записью блога Эрика Голпа (Eric Golpe) [Walkthrough of Deleting an Azure AD Tenant](https://blogs.msdn.com/b/ericgolpe/archive/2015/04/30/walkthrough-of-deleting-an-azure-ad-tenant.aspx) (Пошаговое руководство по удалению клиента Azure AD).
 

@@ -9,12 +9,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 603aa8d85d42167accd2a5e71c4ab3e5245f5d07
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 8e651f516254d408b15ab4aeae718861dfc2b3e6
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52499260"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608295"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Чтение данных из базы данных SQL Azure и запись в нее с использованием кластера HDInsight Spark
 
@@ -26,9 +26,9 @@ ms.locfileid: "52499260"
 
 * **База данных SQL Azure**. Инструкции см. в статье [Создание базы данных SQL Azure на портале Azure](../../sql-database/sql-database-get-started-portal.md). Создайте базу данных с примером схемы и данными **AdventureWorksLT**. Создайте также правило брандмауэра на уровне сервера, чтобы предоставить клиентским IP-адресам доступ к базе данных SQL на сервере. Инструкции по добавлению правила брандмауэра находятся в той же статье. После создания базы данных SQL Azure сохраните следующие значения. Они понадобятся вам для подключения к базе данных из кластера Spark.
 
-    * Имя сервера, на котором размещена база данных SQL Azure.
-    * Имя базы данных SQL Azure
-    * Имя и пароль администратора базы данных SQL Azure.
+    * Имя сервера, на котором размещена база данных SQL Azure.
+    * Имя базы данных SQL Azure.
+    * Имя и пароль администратора базы данных SQL Azure.
 
 * **SQL Server Management Studio.** Инструкции см. в статье [Подключайтесь к базе данных Azure SQL и создавайте запросы к ней с помощью SQL Server Management Studio](../../sql-database/sql-database-connect-query-ssms.md).
 
@@ -41,12 +41,10 @@ ms.locfileid: "52499260"
 
     ![Записная книжка Jupyter в Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Записная книжка Jupyter в Spark")
    
-   > [!NOTE]
+   > [!NOTE]  
    > Вы также можете получить доступ к записной книжке Jupyter в кластере Spark, открыв следующий URL-адрес в браузере. Замените **CLUSTERNAME** именем кластера:
    >
    > `https://CLUSTERNAME.azurehdinsight.net/jupyter`
-   > 
-   > 
 
 1. Чтобы создать записную книжку Scala, в записной книжке Jupyter в правом верхнем углу щелкните **New** (Создать), а затем — **Spark**. Записные книжки Jupyter в кластере HDInsight Spark предоставляют ядро **PySpark** для приложений Python2 и ядро **PySpark3** для приложений Python3. В этой статье мы создаем записную книжку Scala.
    
@@ -54,9 +52,8 @@ ms.locfileid: "52499260"
 
     Дополнительные сведения о ядрах см. в статье [Ядра для записных книжек Jupyter с кластерами Apache Spark в HDInsight](apache-spark-jupyter-notebook-kernels.md).
 
-   > [!NOTE]
+   > [!NOTE]  
    > В этой статье используется ядро Spark (Scala), так как в настоящее время потоковая передача данных из Spark в базу данных SQL поддерживается только на Scala и Java. Несмотря на то что чтение и запись в SQL можно выполнить с помощью Python, для обеспечения согласованности в этой статье мы используем Scala для всех трех операций.
-   >
 
 1. После этого откроется новая записная книжка с именем по умолчанию **Untitled** (Без имени). Щелкните это имя и введите имя по своему усмотрению.
 
@@ -235,6 +232,6 @@ ms.locfileid: "52499260"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Использование кластера HDInsight Spark для анализа данных в Data Lake Store](apache-spark-use-with-data-lake-store.md)
+* [Использование кластера HDInsight Spark для анализа данных в Data Lake Storage](apache-spark-use-with-data-lake-store.md)
 * [Структурированная потоковая передача Apache Spark в HDInsight для обработки событий из концентраторов событий](apache-spark-eventhub-structured-streaming.md)
 * [Использование структурированной потоковой передачи Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-kafka-spark-structured-streaming.md)

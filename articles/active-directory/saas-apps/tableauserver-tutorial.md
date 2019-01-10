@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/29/2018
+ms.date: 12/12/2018
 ms.author: jeedes
-ms.openlocfilehash: 84ea1d999a26ce0ce1d548da92549c6a718d5978
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: c727cddf41c269c214b541134cd9f688017ee687
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52850369"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53789727"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-server"></a>Руководство. Интеграция Azure Active Directory с Tableau Server
 
@@ -86,13 +86,14 @@ ms.locfileid: "52850369"
 
 Чтобы настроить и проверить единый вход Azure AD в Tableau Server, вам потребуется выполнить действия в следующих стандартных блоках:
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Tableau Server](#creating-a-tableau-server-test-user)** требуется для создания в Tableau Server пользователя Britta Simon, связанного с представлением этого пользователя в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Tableau Server](#configure-tableau-server-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Создание тестового пользователя Tableau Server](#create-tableau-server-test-user)** требуется для того, чтобы существовал аналог пользователя Britta Simon в Cisco Umbrella, связанный с представлением этого же пользователя в Azure AD.
+5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Tableau Server.
 
@@ -112,9 +113,9 @@ ms.locfileid: "52850369"
 
 4. В разделе **Утверждения пользователя** диалогового окна **User Attributes & Claims** (Атрибуты пользователя и утверждения) настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
     
-    | Имя атрибута | Значение атрибута |
-    | ---------------| --------------- |    
-    | Имя пользователя | user.userprincipalname |
+    | Имя атрибута | Значение атрибута | Пространство имен |
+    | ---------------| --------------- | ----------- |   
+    | Имя пользователя | user.userprincipalname | `http://schemas.xmlsoap.org/ws/2005/05/identity/claims` |
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
@@ -151,33 +152,41 @@ ms.locfileid: "52850369"
 
 7. На странице **Сертификат подписи SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **XML-файл метаданных федерации**, а затем сохраните его на компьютере.
 
-    ![Ссылка для скачивания сертификата](./media/tableauserver-tutorial/tutorial-tableauserver-certificate.png) 
+    ![Ссылка для скачивания сертификата](./media/tableauserver-tutorial/tutorial-tableauserver-certificate.png)
 
-8. Чтобы единый вход был настроен для вашего приложения, войдите в клиент Tableau Server с правами администратора.
+### <a name="configure-tableau-server-single-sign-on"></a>Настройка единого входа в Tableau Server 
 
-9. На странице **Tableau Server Configuration** (Настройка Tableau Server) выполните следующие действия:
-   
-    ![Настройка единого входа](./media/tableauserver-tutorial/tutorial-tableauserver-001.png)
+1. Чтобы единый вход был настроен для вашего приложения, войдите в клиент Tableau Server с правами администратора.
 
-    a. В окне конфигурации Tableau Server откройте вкладку **SAML** . 
-  
-    b. Установите флажок **Использовать SAML для единого входа**.
-   
+2. На вкладке **Конфигурация** выберите **Удостоверения пользователя и доступ**, а затем вкладку **Метод проверки подлинности**.
+
+    ![Настройка единого входа](./media/tableauserver-tutorial/tutorial-tableauserver-auth.png)
+
+3. На странице **Конфигурация** сделайте следующее.
+
+    ![Настройка единого входа](./media/tableauserver-tutorial/tutorial-tableauserver-config.png)
+
+    a. В качестве **метода проверки подлинности** выберите SAML.
+    
+    b. Установите флажок **Включить проверку подлинности SAML для сервера**.
+
     c. URL-адрес возврата Tableau Server — URL-адрес для доступа пользователей Tableau Server, например http://tableau_server. Не рекомендуем использовать http://localhost. URL-адреса с конечной косой чертой (например, http://tableau_server/) не поддерживаются. Скопируйте **URL-адрес возврата Tableau Server** и вставьте его в текстовое поле **URL-адрес входа** Azure AD в разделе **Домены и URL-адреса Tableau Server**.
-   
+
     d. Идентификатор сущности SAML — идентификатор сущности однозначно определяет установку Tableau Server для поставщика удостоверений. Если нужно, здесь можно еще раз ввести URL-адрес Tableau Server, но это необязательно должен быть URL-адрес Tableau Server. Скопируйте **Идентификатор сущности SAML** и вставьте его в текстовое поле **Идентификатор** Azure AD в разделе **Домены и URL-адреса Tableau Server**.
-     
-    д. Нажмите кнопку **Экспортировать файл метаданных** и откройте его в текстовом редакторе. Найдите URL-адрес службы обработчика утверждений с Http Post и индексом 0 и скопируйте URL-адрес. Вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса Tableau Server**.
-   
+
+    д. Нажмите кнопку **Скачать XML-файл метаданных** и откройте его в текстовом редакторе. Найдите URL-адрес службы обработчика утверждений с Http Post и индексом 0 и скопируйте URL-адрес. Вставьте его в текстовое поле **URL-адрес ответа** в разделе **Домены и URL-адреса Tableau Server**.
+
     Е. Найдите файл метаданных федерации, скачанный с портала Azure, и отправьте его в разделе **файл метаданных поставщика удостоверений SAML**.
-   
-    ж. Нажмите кнопку **ОК** на странице конфигурации Tableau Server.
-   
+
+    ж. Введите имена атрибутов, которые поставщик удостоверений использует для хранения имен пользователей, отображаемых имен и адресов электронной почты.
+
+    h. Нажмите кнопку **Сохранить**
+
     >[!NOTE] 
     >Клиенту необходимо отправить любой сертификат во время настройки единого входа SAML Tableau Server, и этот сертификат будет проигнорирован в потоке единого входа.
-    >Более подробные сведения о настройке SAML в Tableau Server см. в статье о [настройке SAML](https://onlinehelp.tableau.com/current/server/en-us/config_saml.htm).
+    >Более подробные сведения о настройке SAML в Tableau Server см. в статье о [настройке SAML](https://onlinehelp.tableau.com/v2018.2/server/en-us/saml_config_steps_tsm_ui.htm).
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
@@ -202,7 +211,7 @@ ms.locfileid: "52850369"
 
     d. Нажмите кнопку **Создать**.
   
-### <a name="creating-a-tableau-server-test-user"></a>Создание тестового пользователя Tableau Server
+### <a name="create-tableau-server-test-user"></a>Создание тестового пользователя Tableau Server
 
 Цель этого раздела — создать в приложении Tableau Server пользователя с именем Britta Simon. Необходимо подготовить всех пользователей в приложении Tableau Server. 
 
@@ -211,7 +220,7 @@ ms.locfileid: "52850369"
 >[!NOTE]
 >Если необходимо создать пользователя вручную, обратитесь к администратору Tableau Server в вашей организации.
 
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как включить единый вход Azure для пользователя Britta Simon и предоставить этому пользователю доступ к Tableau Server.
 
@@ -235,7 +244,7 @@ ms.locfileid: "52850369"
 
 6. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

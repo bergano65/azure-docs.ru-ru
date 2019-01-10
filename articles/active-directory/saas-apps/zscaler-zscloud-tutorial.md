@@ -1,10 +1,11 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Zscaler ZSCloud | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Zscaler ZSCloud | Документы Майкрософт
 description: Вы можете узнать, как настроить единый вход Azure Active Directory в Zscaler ZSCloud.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: femila
+ms.reviewer: joflore
 ms.assetid: 411d5684-a780-410a-9383-59f92cf569b5
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -12,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/17/2017
+ms.date: 12/10/2018
 ms.author: jeedes
-ms.openlocfilehash: a23d68e0b48a01cf98a5d1cc136a6af46895b0ee
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 311cf4ad22f8e7fdcee976e0cb4b26b9dd2a13a5
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39440649"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53794278"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-zscloud"></a>Руководство. Интеграция Azure Active Directory с Zscaler ZSCloud
 
@@ -29,7 +30,7 @@ ms.locfileid: "39440649"
 
 - С помощью Azure AD вы можете контролировать доступ к Zscaler ZSCloud.
 - Вы можете включить автоматический вход пользователей в Zscaler ZSCloud (единый вход) с использованием учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+- Вы можете управлять учетными записями централизованно — на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -46,54 +47,50 @@ ms.locfileid: "39440649"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
+
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Zscaler ZSCloud из коллекции
-1. настройка и проверка единого входа в Azure AD.
+2. настройка и проверка единого входа в Azure AD.
 
 ## <a name="adding-zscaler-zscloud-from-the-gallery"></a>Добавление Zscaler ZSCloud из коллекции
+
 Чтобы настроить интеграцию Zscaler ZSCloud с Azure AD, нужно добавить Zscaler ZSCloud из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Zscaler ZSCloud из коллекции, выполните следующие действия:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
-    ![Active Directory][1]
+    ![Кнопка "Azure Active Directory"][1]
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"][2]
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Zscaler ZSCloud**.
+    ![Кнопка "Новое приложение"][3]
 
-    ![Создание тестового пользователя Azure AD](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_search.png)
+4. В поле поиска введите **Zscaler ZSCloud**, выберите **Zscaler ZSCloud** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **Zscaler ZSCloud** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Zscaler ZSCloud в списке результатов](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_addfromgallery.png)
 
-    ![Создание тестового пользователя Azure AD](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
 Этот раздел описывает настройку и проверку единого входа Azure AD в Zscaler ZSCloud с использованием тестового пользователя Britta Simon.
 
 Чтобы настроить единый вход в Azure AD, нужно знать, какой пользователь в Zscaler ZSCloud соответствует пользователю в Azure AD. Иными словами, нужно установить связь между пользователем Azure AD и соответствующим пользователем в Zscaler ZSCloud.
 
-Чтобы установить эту связь, следует назначить **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Zscaler ZSCloud.
-
 Чтобы настроить и проверить единый вход Azure AD в Zscaler ZSCloud, вам потребуется выполнить действия в следующих стандартных блоках:
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Настройка параметров прокси-сервера](#configuring-proxy-settings)** нужна для настройки параметров прокси-сервера в Internet Explorer.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Zscaler ZSCloud](#creating-a-zscaler-zscloud-test-user)** требуется для создания в Zscaler ZSCloud пользователя Britta Simon, связанного с представлением этого пользователя в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
+3. **[Создание тестового пользователя Zscaler ZSCloud](#creating-a-zscaler-zscloud-test-user)** требуется для создания в Zscaler ZSCloud пользователя Britta Simon, связанного с представлением этого пользователя в Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
+5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
 
@@ -103,70 +100,101 @@ ms.locfileid: "39440649"
 
 1. На портале Azure на странице интеграции с приложением **Zscaler ZSCloud** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"][4]
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Zscaler ZSCloud** сделайте следующее:
+    ![Настройка единого входа](common/tutorial_general_301.png)
 
-    ![Настройка единого входа](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-     В текстовом поле **URL-адрес входа** введите URL-адрес, используемый пользователями для входа в приложение Zscaler ZSCloud.
-    
+    ![Настройка единого входа](common/editconfigure.png)
+
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+
+    ![Сведения о домене и URL-адресах единого входа приложения Zscaler ZSCloud](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_url.png)
+
+    В текстовом поле **URL-адрес входа** введите URL-адрес, используемый пользователями для входа в приложение Zscaler ZSCloud.
+
     > [!NOTE] 
-    > Вместо него нужно указать фактический URL-адрес для входа. Для получения этого значения обратитесь в [службу поддержки клиентов Zscaler ZSCloud](https://help.zscaler.com/zia). 
- 
-1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
+    > Вместо него нужно указать фактический URL-адрес для входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Zscaler Two](https://help.zscaler.com/).
 
-    ![Настройка единого входа](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_certificate.png) 
+5. Приложение Zscaler ZSCloud ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **User Attributes & Claims** (Атрибуты пользователя и утверждения) на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **User Attributes & Claims** (Атрибуты пользователя и утверждения).
 
-1. Нажмите кнопку **Сохранить** .
+    ![Ссылка "Атрибуты"](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_attribute.png)
 
-    ![Настройка единого входа](./media/zscaler-zscloud-tutorial/tutorial_general_400.png)
+6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
-1. В разделе **Конфигурация Zscaler ZSCloud** щелкните **настроить Zscaler ZSCloud**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+    | ИМЯ  | Исходный атрибут  |
+    | ---------| ------------ |
+    | memberOf     | user.assignedroles |
 
-    ![Настройка единого входа](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_configure.png) 
+    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-1. В другом окне браузера войдите на свой корпоративный сайт Zscaler ZSCloud в качестве администратора.
+    ![изображение](./common/new_save_attribute.png)
+    
+    ![изображение](./common/new_attribute_details.png)
 
-1. В верхнем меню щелкните **Администрирование**.
+    b. В списке **Источник атрибута** выберите значение атрибута.
+
+    c. Нажмите кнопку **ОК**.
+
+    d. Выберите команду **Сохранить**.
+
+    > [!NOTE]
+    > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management), чтобы прочитать о настройке роли в Azure Active Directory.
+
+7. На странице **сертификата подписи SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+
+    ![Ссылка для скачивания сертификата](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_certificate.png) 
+
+8. Требуемый URL-адрес можно скопировать из раздела **Настройка Zscaler ZSCloud**.
+
+    a. URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода
+
+    ![Конфигурация Zscaler ZSCloud](common/configuresection.png)
+
+9. В другом окне браузера войдите на свой корпоративный сайт Zscaler ZSCloud в качестве администратора.
+
+10. Выберите **Administration (Администрирование) > Authentication (Проверка подлинности) > Authentication Settings (Параметры проверки подлинности)** и выполните следующие действия:
    
     ![Администрирование](./media/zscaler-zscloud-tutorial/ic800206.png "Администрирование")
 
-1. В разделе **Manage Administrators & Roles** (Управление администраторами и ролями) щелкните **Manage Users & Authentication** (Управление пользователями и проверкой подлинности).   
+    a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
+
+    b. Нажмите кнопку **Configure SAML** (Настроить SAML).
+
+11. В окне **Изменить параметры SAML** выполните следующие действия и нажмите кнопку "Сохранить".  
             
-    ![Управление пользователями и проверкой подлинности](./media/zscaler-zscloud-tutorial/ic800207.png "Управление пользователями и проверкой подлинности")
-
-1. В разделе **Выбор параметров проверки подлинности для организации** выполните следующие действия.   
-                
-    ![Аутентификация](./media/zscaler-zscloud-tutorial/ic800208.png "Аутентификация")
-   
-    a. Выберите параметр **Проверка подлинности с помощью единого входа SAML**.
-
-    b. Щелкните **Настроить параметры единого входа SAML**.
-
-1. На странице диалогового окна **Configure SAML Single Sign-On Parameters** (Настройка параметров единого входа в SAML) выполните указанные ниже действия и нажмите кнопку **Готово**.
-
-    ![Единый вход](./media/zscaler-zscloud-tutorial/ic800209.png "Единый вход")
+    ![Управление пользователями и проверкой подлинности](./media/zscaler-zscloud-tutorial/ic800208.png "Управление пользователями и проверкой подлинности")
     
-    a. Вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML) в текстовое поле **URL of the SAML Portal to which users are sent for authentication** (URL-адрес портала SAML, куда пользователи направляются для проверки подлинности).
-    
-    b. В текстовом поле **Attribute containing Login Name** (Атрибут, содержащий имя входа) введите **NameID**.
-    
-    c. Чтобы передать скачанный сертификат, щелкните **Zscaler pem**.
-    
-    d. Выберите параметр **Включить автоматическую подготовку SAML**.
+    a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-1. На странице **Настройка проверки подлинности пользователей** выполните следующие действия.
+    b. В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
 
-    ![Администрирование](./media/zscaler-zscloud-tutorial/ic800210.png "Администрирование")
-    
-    a. Выберите команду **Сохранить**.
+    c. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
 
-    b. Щелкните **Активировать сейчас**.
+    d. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
+
+    д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
+
+    Е. В текстовое поле **Group Name Attribute** (Атрибут имени группы) введите **memberOf**, если вы хотите включить автоматическую подготовку SAML для атрибутов memberOf.
+
+    ж. В поле **Department Name Attribute** (Атрибут имени отдела) введите **department**, если вы хотите включить автоматическую подготовку SAML для атрибутов department.
+
+    i. Выберите команду **Сохранить**.
+
+12. На странице **Настройка проверки подлинности пользователей** выполните следующие действия.
+
+    ![Администрирование](./media/zscaler-zscloud-tutorial/ic800207.png)
+
+    a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
+
+    b. Щелкните **Активировать**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
@@ -189,7 +217,7 @@ ms.locfileid: "39440649"
 
     a. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
-    b. В текстовом поле "Адрес" введите **gateway.zscalerone.net**.
+    b. В текстовом поле "Адрес" введите **gateway.Zscaler ZSCloud.net**.
 
     c. В текстовом поле "Порт" введите **80**.
 
@@ -200,105 +228,74 @@ ms.locfileid: "39440649"
 1. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Свойства браузера**.
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Создание пользователя Azure AD][100]
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/zscaler-zscloud-tutorial/create_aaduser_01.png) 
+    ![Создание тестового пользователя Azure AD](common/create_aaduser_01.png) 
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/zscaler-zscloud-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее.
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/zscaler-zscloud-tutorial/create_aaduser_03.png) 
+    ![Создание тестового пользователя Azure AD](common/create_aaduser_02.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/zscaler-zscloud-tutorial/create_aaduser_04.png) 
+    a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
-
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
-
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+    c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
 
 ### <a name="creating-a-zscaler-zscloud-test-user"></a>Создание тестового пользователя Zscaler ZSCloud
 
-Чтобы пользователи Azure AD могли входить в ZScaler ZSCloud, их нужно подготовить для ZScaler ZSCloud.  
-В случае с ZScaler ZSCloud подготовка выполняется вручную.
-
-### <a name="to-configure-user-provisioning-perform-the-following-steps"></a>Чтобы настроить подготовку учетных записей пользователей, выполните следующие действия.
-
-1. Войдите в клиент **ZScaler** .
-
-1. Щелкните **Администрирование**.   
-   
-    ![Администрирование](./media/zscaler-zscloud-tutorial/ic781035.png "Администрирование")
-
-1. Щелкните **Управление пользователями**.   
-        
-     ![Добавление](./media/zscaler-zscloud-tutorial/ic781037.png "Добавление")
-
-1. На вкладке **Users** (Пользователи) нажмите кнопку **Add** (Добавить).
-      
-    ![Добавление](./media/zscaler-zscloud-tutorial/ic781037.png "Добавление")
-
-1. В разделе "Добавить пользователя" выполните следующие действия.
-        
-    ![Добавление пользователя](./media/zscaler-zscloud-tutorial/ic781038.png "Добавление пользователя")
-   
-    a. Заполните текстовые поля **UserID** (Идентификатор пользователя), **User Display Name** (Отображаемое имя пользователя), **Password** (Пароль), **Confirm Password** (Подтверждение пароля) и выберите **Groups** (Группы) и **Department** (Отдел) действующей учетной записи AAD, которую необходимо подготовить.
-
-    b. Выберите команду **Сохранить**.
-
-> [!NOTE]
-> Вы можете использовать любые другие средства создания учетной записи пользователя ZScaler ZSCloud или API, предоставляемые ZScaler ZSCloud для подготовки учетных записей пользователя AAD.
+Цель этого раздела — создать пользователя с именем Britta Simon в Zscaler ZSCloud. Приложение Zscaler ZSCloud поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к Zscaler ZSCloud (если он еще не создан).
+>[!Note]
+>Если вам нужно создать пользователя вручную, обратитесь в  [службу поддержки Zscaler ZSCloud](https://help.zscaler.com/).
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 Этот раздел описывает, как позволить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Zscaler ZSCloud.
 
-![Назначение пользователя][200] 
+1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-**Чтобы назначить пользователя Britta Simon приложению Zscaler ZSCloud, выполните следующие действия:**
+    ![Назначение пользователя][201]
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Zscaler ZSCloud**.
 
-    ![Назначение пользователя][201] 
+    ![Настройка единого входа](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_app.png)
 
-1. В списке приложений выберите **Zscaler ZSCloud**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Настройка единого входа](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_app.png) 
+    ![Назначение пользователя][202]
 
-1. В меню слева выберите **Пользователи и группы**.
-
-    ![Назначение пользователя][202] 
-
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Назначение пользователя][203]
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+    ![изображение](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_users.png)
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
+6. В диалоговом окне **Выбор роли** выберите соответствующие роли пользователей из списка, а затем нажмите кнопку **Выбрать** в нижней части экрана.
+
+    ![изображение](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_roles.png)
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+    ![изображение](./media/zscaler-zscloud-tutorial/tutorial_zscalerzscloud_assign.png)
+
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 
-Если вы хотите проверить параметры единого входа, откройте панель доступа.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку "Zscaler ZSCloud" на панели доступа, вы автоматически войдете в приложение Zscaler ZSCloud.
-
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -307,15 +304,13 @@ ms.locfileid: "39440649"
 
 <!--Image references-->
 
-[1]: ./media/zscaler-zscloud-tutorial/tutorial_general_01.png
-[2]: ./media/zscaler-zscloud-tutorial/tutorial_general_02.png
-[3]: ./media/zscaler-zscloud-tutorial/tutorial_general_03.png
-[4]: ./media/zscaler-zscloud-tutorial/tutorial_general_04.png
+[1]: common/tutorial_general_01.png
+[2]: common/tutorial_general_02.png
+[3]: common/tutorial_general_03.png
+[4]: common/tutorial_general_04.png
 
-[100]: ./media/zscaler-zscloud-tutorial/tutorial_general_100.png
+[100]: common/tutorial_general_100.png
 
-[200]: ./media/zscaler-zscloud-tutorial/tutorial_general_200.png
-[201]: ./media/zscaler-zscloud-tutorial/tutorial_general_201.png
-[202]: ./media/zscaler-zscloud-tutorial/tutorial_general_202.png
-[203]: ./media/zscaler-zscloud-tutorial/tutorial_general_203.png
-
+[201]: common/tutorial_general_201.png
+[202]: common/tutorial_general_202.png
+[203]: common/tutorial_general_203.png

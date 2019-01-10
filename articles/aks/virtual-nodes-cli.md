@@ -6,12 +6,12 @@ author: iainfoulds
 ms.service: container-service
 ms.date: 12/03/2018
 ms.author: iainfou
-ms.openlocfilehash: ee16165352edbacddac0c91f1ff68109982577de
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 7d12e0f53796713df83b1cbb9e55695598c29077
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52854835"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53607393"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов с помощью Azure CLI
 
@@ -23,6 +23,26 @@ ms.locfileid: "52854835"
 ## <a name="before-you-begin"></a>Перед началом работы
 
 Виртуальные узлы обеспечивают взаимодействие контейнеров pod в сети, которые выполняются в кластерах ACI и AKS. Для обеспечения этого взаимодействия создается подсеть виртуальной сети и назначаются делегированные разрешения. Виртуальные узлы работают только с кластерами AKS, созданными с помощью сетевого взаимодействия уровня *Расширенный*. По умолчанию кластеры AKS создаются с помощью сетевого взаимодействия уровня *Базовый*. В этой статье показано, как создать виртуальную сеть и подсети, а затем развернуть кластер AKS, использующий сетевое взаимодействие уровня "Расширенный".
+
+Если вы не использовали ACI ранее, зарегистрируйте поставщик служб в подписке. Вы можете проверить состояние регистрации поставщика ACI с помощью команды [az provider list][az-provider-list], как показано в следующем примере.
+
+```azurecli-interactive
+az provider list --query "[?contains(namespace,'Microsoft.ContainerInstance')]" -o table
+```
+
+Поставщик *Microsoft.ContainerInstance* должен иметь состояние *Registered*, как показано в следующем примере выходных данных.
+
+```
+Namespace                    RegistrationState
+---------------------------  -------------------
+Microsoft.ContainerInstance  Registered
+```
+
+Если поставщик имеет состояние *NotRegistered*, зарегистрируйте поставщик с помощью команды [az provider register][az-provider-register], как показано в следующем примере.
+
+```azurecli-interactive
+az provider register --namespace Microsoft.ContainerInstance
+```
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
@@ -161,7 +181,7 @@ az aks get-credentials --resource-group myResourceGroup --name myAKSCluster
 kubectl get nodes
 ```
 
-В следующем примере выходных данных мы видим создание одного узла виртуальной машины и одного виртуального узла для Linux с именем *virtual-node-aci-linux*:
+В следующем примере выходных данных показано создание одного узла виртуальной машины и одного виртуального узла для Linux с именем *virtual-node-aci-linux*:
 
 ```
 $ kubectl get nodes
@@ -212,7 +232,7 @@ spec:
 kubectl apply -f virtual-node.yaml
 ```
 
-Чтобы вывести список pod и назначенный узел, выполните команду [kubectl get pods][kubectl-get] с аргументом `-o wide`. Обратите внимание, что pod `aci-helloworld` был назначен на узел `virtual-node-aci-linux`.
+Чтобы вывести список групп pod и назначенный узел, выполните команду [kubectl get pods][kubectl-get] с аргументом `-o wide`. Обратите внимание, что pod `aci-helloworld` был назначен на узел `virtual-node-aci-linux`.
 
 ```
 $ kubectl get pods -o wide
@@ -221,11 +241,11 @@ NAME                            READY     STATUS    RESTARTS   AGE       IP     
 aci-helloworld-9b55975f-bnmfl   1/1       Running   0          4m        10.241.0.4   virtual-node-aci-linux
 ```
 
-Pod получает внутренний IP-адрес из подсети виртуальной сети Azure, которая делегирована для использования с виртуальными узлами.
+Группа pod получает внутренний IP-адрес из подсети виртуальной сети Azure, которая делегирована для использования с виртуальными узлами.
 
-## <a name="test-the-virtual-node-pod"></a>Тестирование pod на виртуальном узле
+## <a name="test-the-virtual-node-pod"></a>Тестирование группы pod на виртуальном узле
 
-Чтобы протестировать выполнение pod на виртуальном узле, откройте демонстрационную версию приложения из веб-клиента. Так как pod получает внутренний IP-адрес, вы можете быстро проверить это подключение с другого pod в том же кластере AKS. Создайте тестовый системный модуль pod и свяжите с ним сеанс терминала.
+Чтобы протестировать выполнение группы pod на виртуальном узле, откройте демонстрационную версию приложения в веб-клиенте. Так как группа pod получает внутренний IP-адрес, вы можете быстро проверить это подключение с другой группой pod в том же кластере AKS. Создайте тестовый системный модуль pod и свяжите с ним сеанс терминала.
 
 ```console
 kubectl run -it --rm virtual-node-test --image=debian
@@ -237,13 +257,13 @@ kubectl run -it --rm virtual-node-test --image=debian
 apt-get update && apt-get install -y curl
 ```
 
-Теперь откройте адрес этого pod с помощью `curl`, например так: *http://10.241.0.4*. Укажите внутренний IP-адрес, который вы получили от предыдущей команды `kubectl get pods`.
+Теперь откройте адрес этой группы pod с помощью `curl`, например, *http://10.241.0.4*. Укажите внутренний IP-адрес, который вы получили от предыдущей команды `kubectl get pods`.
 
 ```console
 curl -L http://10.241.0.4
 ```
 
-Отображается демонстрационное приложение, как показано в следующем сокращенном примере выходных данных:
+Отобразится демонстрационное приложение, как показано в следующем сокращенном примере выходных данных:
 
 ```
 $ curl -L 10.241.0.4
@@ -255,7 +275,7 @@ $ curl -L 10.241.0.4
 [...]
 ```
 
-Закройте сеанс подключения терминала к pod, выполнив `exit`. Когда сеанс завершится, pod автоматически удаляется.
+Закройте сеанс подключения терминала к проверяемой группе pod, выполнив `exit`. Когда сеанс завершится, pod автоматически удаляется.
 
 ## <a name="remove-virtual-nodes"></a>Удаление виртуальных узлов
 
@@ -278,23 +298,23 @@ NETWORK_PROFILE_ID=$(az network profile list --resource-group $RES_GROUP --query
 az network profile delete --id $NETWORK_PROFILE_ID -y
 
 # Get the service association link (SAL) ID
-SAL_ID=$(az network vnet subnet show --resource-group $RES_GROUP --vnet-name myVnet --name myAKSSubnet --query id --output tsv)/providers/Microsoft.ContainerInstance/serviceAssociationLinks/default
+SAL_ID=$(az network vnet subnet show --resource-group $RES_GROUP --vnet-name myVnet --name myVirtualNodeSubnet --query id --output tsv)/providers/Microsoft.ContainerInstance/serviceAssociationLinks/default
 
 # Delete the default SAL ID for the subnet
 az resource delete --ids $SAL_ID --api-version 2018-07-01
 
 # Delete the subnet delegation to Azure Container Instances
-az network vnet subnet update --resource-group $RES_GROUP --vnet-name myVnet --name myAKSSubnet --remove delegations 0
+az network vnet subnet update --resource-group $RES_GROUP --vnet-name myVnet --name myVirtualNodeSubnet --remove delegations 0
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье мы назначили pod на виртуальный узел и присвоили ему частный внутренний IP-адрес. В качестве альтернативы вы можете создать развертывание службы и направлять трафик в pod через подсистему балансировки нагрузки или контроллер входящего трафика. Дополнительные сведения см. в статье [Создание контроллера входящего трафика в Службе Azure Kubernetes (AKS)][aks-basic-ingress].
+В этой статье мы назначили выполнение группы pod в виртуальном узле и присвоили частный внутренний IP-адрес. В качестве альтернативы вы можете создать развертывание службы и направлять трафик в группу pod через подсистему балансировки нагрузки или контроллер входящего трафика. Дополнительные сведения см. в статье [Создание контроллера входящего трафика в Службе Azure Kubernetes (AKS)][aks-basic-ingress].
 
 Виртуальные узлы — это зачастую лишь один из компонентов, необходимых для масштабирования решения в AKS. Дополнительные сведения о таких решениях см. в следующих статьях.
 
-- [Руководство. Масштабирование приложений в Службе Azure Kubernetes (AKS)][aks-hpa]
-- [Автомасштабирование кластера с помощью службы Azure Kubernetes (AKS) — предварительная версия][aks-cluster-autoscaler]
+- [Масштабирование приложений в Службе Azure Kubernetes (AKS)][aks-hpa]
+- [Автомасштабирование кластера с помощью службы Azure Kubernetes (AKS)][aks-cluster-autoscaler]
 
 <!-- LINKS - external -->
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
@@ -319,3 +339,5 @@ az network vnet subnet update --resource-group $RES_GROUP --vnet-name myVnet --n
 [aks-hpa]: tutorial-kubernetes-scale.md
 [aks-cluster-autoscaler]: autoscaler.md
 [aks-basic-ingress]: ingress-basic.md
+[az-provider-list]: /cli/azure/provider#az-provider-list
+[az-provider-register]: /cli/azure/provider#az-provider-register

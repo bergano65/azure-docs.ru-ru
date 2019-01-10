@@ -10,14 +10,14 @@ ms.component: bing-speech
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: zhouwang
-ms.openlocfilehash: a9f74f4032a78ee51ea2a8f020cd1418bb3330ca
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 5cbdad82e25baa95c0342eb514f39c7026f1618b
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49345362"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53753085"
 ---
-# <a name="quickstart-use-the-bing-speech-recognition-rest-api"></a>Краткое руководство. Использование REST API распознавания речи Bing
+# <a name="quickstart-use-the-bing-speech-recognition-rest-api"></a>Краткое руководство. Использование REST API распознавания речи Bing
 
 [!INCLUDE [Deprecation note](../../../../includes/cognitive-services-bing-speech-api-deprecation-note.md)]
 
@@ -76,8 +76,8 @@ https://speech.platform.bing.com/speech/recognition/<RECOGNITION_MODE>/cognitive
 
 В заголовке запроса необходимо установить следующие поля.
 
-- `Ocp-Apim-Subscription-Key`. Каждый раз при вызове службы в заголовок `Ocp-Apim-Subscription-Key` необходимо вводить ключ подписки. Служба речи также поддерживает маркеры авторизации вместо ключей подписки. Дополнительные сведения см. в разделе [Authenticate to the Speech API](../How-to/how-to-authentication.md) (Аутентификация в API речи).
-- `Content-type`. Поле `Content-type` описывает формат и кодек звукового потока. В настоящее время поддерживаются только файлы формата WAV (Один канал PCM (канал импульсно-кодовой модуляции), 16 кГц). Значением параметра Content-type для данного формата будет `audio/wav; codec=audio/pcm; samplerate=16000`.
+- `Ocp-Apim-Subscription-Key`: Каждый раз при вызове службы в заголовок `Ocp-Apim-Subscription-Key` необходимо вводить ключ подписки. Служба речи также поддерживает маркеры авторизации вместо ключей подписки. Дополнительные сведения см. в разделе [Authenticate to the Speech API](../How-to/how-to-authentication.md) (Аутентификация в API речи).
+- `Content-type`: Поле `Content-type` описывает формат и кодек звукового потока. В настоящее время поддерживаются только файлы формата WAV (Один канал PCM (канал импульсно-кодовой модуляции), 16 кГц). Значением параметра Content-type для данного формата будет `audio/wav; codec=audio/pcm; samplerate=16000`.
 
 Поле `Transfer-Encoding` является необязательным. Если вы зададите значение `chunked` для этого поля, то сможете разделить звук на мелкие блоки. Для получения дополнительных сведений см. раздел [Chunked transfer encoding](../How-to/how-to-chunked-transfer.md) (Поблочная передача кодировки).
 
@@ -100,7 +100,7 @@ Expect: 100-continue
 > [!NOTE]
 > Замените `YOUR_AUDIO_FILE` путем к предварительно записанному звуковому файлу. Замените `YOUR_SUBSCRIPTION_KEY` фактическим ключом подписки.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/Powershell)
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```Powershell
 
@@ -135,7 +135,7 @@ $RecoResponse
 curl -v -X POST "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=en-us&format=detailed" -H "Transfer-Encoding: chunked" -H "Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY" -H "Content-type: audio/wav; codec=audio/pcm; samplerate=16000" --data-binary @YOUR_AUDIO_FILE
 ```
 
-# <a name="ctabcsharp"></a>[C#](#tab/CSharp)
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```cs
 HttpWebRequest request = null;
@@ -184,7 +184,7 @@ using (FileStream fs = new FileStream(YOUR_AUDIO_FILE, FileMode.Open, FileAccess
 
 Следующий фрагмент кода — пример того, как можно прочитать ответ из потока.
 
-# <a name="powershelltabpowershell"></a>[PowerShell](#tab/Powershell)
+# <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 
 ```Powershell
 # show the response in JSON format
@@ -199,7 +199,7 @@ ConvertTo-Json $RecoResponse
 curl -X POST "https://speech.platform.bing.com/speech/recognition/interactive/cognitiveservices/v1?language=en-us&format=detailed" -H "Transfer-Encoding: chunked" -H "Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY" -H "Content-type: audio/wav; codec=audio/pcm; samplerate=16000" --data-binary @YOUR_AUDIO_FILE | jq
 ```
 
-# <a name="ctabcsharp"></a>[C#](#tab/CSharp)
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
 ```cs
 /*

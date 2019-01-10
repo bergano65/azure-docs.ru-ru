@@ -6,14 +6,14 @@ ms.service: security
 ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
-ms.date: 12/13/2018
+ms.date: 01/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 116f1f0a93c09ed751f0720ae74a2c24df7541eb
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: efb8c885daf78ad279a229257492a34c6dbf1c6a
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53342516"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54156516"
 ---
 # <a name="azure-disk-encryption-prerequisites"></a>Предварительные требования для шифрования дисков Azure
 
@@ -21,8 +21,9 @@ ms.locfileid: "53342516"
 
 Ниже перечислены предварительные требования для включения шифрования дисков Azure на виртуальных машинах IaaS Azure в сценариях, которые обсуждались в статье [Azure Disk Encryption for IaaS VMs](azure-security-disk-encryption-overview.md) (Шифрование дисков Azure для виртуальных машин IaaS). Эти требования обязательно должны быть выполнены. 
 
-> [!NOTE]
-> Выполнение некоторых приведенных рекомендаций может привести к более интенсивному использованию данных, сети или вычислительных ресурсов, а следовательно к дополнительным затратам на лицензии или подписки. Необходима действующая подписка Azure, которая позволяет создавать ресурсы Azure в поддерживаемых регионах.
+> [!WARNING]
+> - Если вы уже использовали [шифрование дисков Azure с помощью приложения Azure AD](azure-security-disk-encryption-prerequisites-aad.md) для шифрования этой виртуальной машины, этот способ нужно применять и далее для шифрования виртуальной машины. На этой зашифрованной виртуальной машине нельзя использовать [шифрование дисков Azure](azure-security-disk-encryption-prerequisites.md), так как этот сценарий не работает — переключение из приложения AAD для данной зашифрованной виртуальной машины сейчас не поддерживается.
+> - Выполнение некоторых приведенных рекомендаций может привести к более интенсивному использованию данных, сети или вычислительных ресурсов, а следовательно к дополнительным затратам на лицензии или подписки. Необходима действующая подписка Azure, которая позволяет создавать ресурсы Azure в поддерживаемых регионах.
 
 
 ## <a name="bkmk_OSs"></a> Поддерживаемые операционные системы
@@ -66,12 +67,10 @@ ms.locfileid: "53342516"
 
 ### <a name="install-azure-powershell-for-use-on-your-local-machine-optional"></a>Установите Azure PowerShell для использования на вашем локальном компьютере (необязательно): 
 1. Следуйте инструкциям по ссылкам для вашей операционной системы, а затем перейдите к остальным шагам.      
-    - [Установка и настройка Azure PowerShell для Windows](/powershell/azure/install-azurerm-ps). 
+    - [Установка и настройка Azure PowerShell для Windows](/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0). 
         - Установите PowerShellGet, Azure PowerShell и загрузите модуль AzureRM. 
-    - [Установка и настройка Azure PowerShell в macOS и Linux](/powershell/azure/install-azurermps-maclinux).
-        -  Установите PowerShell Core, Azure PowerShell для .NET Core и загрузите модуль Az.
 
-2. Проверьте версии установленных модулей AzureRM. При необходимости [обновите модуль Azure PowerShell](/powershell/azure/install-azurerm-ps#update-the-azure-powershell-module).
+2. Проверьте версии установленных модулей AzureRM. При необходимости [обновите модуль Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0#update-the-azure-powershell-module).
     -  Версия модуля AzureRM должна быть не ниже 6.0.0.
     - Рекомендуется использовать последнюю версию модуля AzureRM.
 

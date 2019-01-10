@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/03/2018
+ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: e4f15da8464c2103b5f6540d342cb7c741a67c5f
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 05a0e0d88f09853274d6bc6b65f66cf66369f77d
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994842"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54044201"
 ---
 # <a name="azure-marketplace-items-available-for-azure-stack"></a>Элементы Azure Marketplace, доступные для Azure Stack
 
@@ -234,7 +234,9 @@ Microsoft Azure Stack поддерживает указанные ниже ви�
 | ![Commvault](media/azure-stack-marketplace-azure-items/commvault.png) | [Commvault](https://azuremarketplace.microsoft.com/marketplace/apps/commvault.commvault) | Это комплексное решение для резервного копирования и восстановления, переноса приложений и виртуальных машин в Azure Stack, а также аварийного восстановления для сред Azure Stack. | Commvault |
 | ![CloudLink SecureVM](media/azure-stack-marketplace-azure-items/cloudlink.png) | [ CloudLink SecureVM](https://azuremarketplace.microsoft.com/marketplace/apps/cloudlink.cloudlink-securevm)  | Легкость и надежность в отслеживании и шифровании виртуальных машин, а также управлении ими. **Скачайте все элементы CloudLink SecureVM.** | Dell EMC |
 | ![EventTracker SIEM](media/azure-stack-marketplace-azure-items/eventtracker.png) | [EventTracker SIEM](https://azuremarketplace.microsoft.com/marketplace/apps/eventtracker.eventtracker-siem)  | EventTracker SIEM — комплексная платформа защиты, предоставляющая расширенные средства безопасности с возможностями соответствия требованиям аудита. | EventTracker |
+| ![Exivity — гибридное облачное решение для выставления счетов](media/azure-stack-marketplace-azure-items/exivity.png) | [Exivity — гибридное облачное решение для выставления счетов](https://azuremarketplace.microsoft.com/marketplace/apps/exivity.exivity-vm)  | Инструмент для выставления счетов, способный удовлетворить требования практически любой модели предоставления ИТ-услуг, независимо от того, установлена ли она на локальном компьютере, в облаке или в гибридной среде. | Exivity |
 | ![f5](media/azure-stack-marketplace-azure-items/f5.png) | [f5 Big-IP Virtual Edition](https://azuremarketplace.microsoft.com/marketplace/apps/f5-networks.f5-big-ip-best)  | Расширенная балансировка нагрузки, глобальная балансировка нагрузки сервера (GSLB), сетевой брандмауэр, DNS, WAF и доступ к приложениям. | F5 Networks |
+| ![Брандмауэр следующего поколения FortiGate](media/azure-stack-marketplace-azure-items/fortinetsquare.png) | [Брандмауэр следующего поколения FortiGate](https://azuremarketplace.microsoft.com/marketplace/apps/fortinet.fortinet-fortigate-singlevm) | Технология брандмауэра обеспечивает полную защиту контента и сети с помощью универсального пакета эффективных функций безопасности. Сюда входят контроль приложений, антивирус, IPS, веб-фильтрация, VPN, а также такие дополнительные компоненты, как управление уязвимостью, что позволяет выявлять и устранять новейшие комплексные угрозы безопасности. | Fortinet |
 | ![Песочница Hortonworks Data Platform (HDP)](media/azure-stack-marketplace-azure-items/hortonworks.png) | [Песочница Hortonworks Data Platform (HDP)](https://azuremarketplace.microsoft.com/marketplace/apps/hortonworks.hortonworks-sandbox) | Платформа с полностью открытым кодом на базе HDP 2.5 для Hadoop, Spark, Storm, HBase, Kafka, Hive и Ambari. | Hortonworks |
 | ![Kaspersky](media/azure-stack-marketplace-azure-items/kaspersky.png) | [Kaspersky Hybrid Cloud Security](https://azuremarketplace.microsoft.com/marketplace/apps/kaspersky_lab.kaspersky_hybrid_cloud_security?tab=Overview) | Kaspersky Hybrid Cloud Security позволяет легко организовать и адаптировать экосистему кибербезопасности. | Kaspersky Lab |
 | ![Подсистема балансировки нагрузки LoadMaster с переключением контента контроллера доставки приложений](media/azure-stack-marketplace-azure-items/kemp.png) | [Подсистема балансировки нагрузки LoadMaster с переключением контента контроллера доставки приложений](https://azuremarketplace.microsoft.com/marketplace/apps/kemptech.vlm-azure) | Подсистема балансировки нагрузки уровня 4–7 контроллера доставки приложений (ADC), переключение контента и диспетчер трафика. | KEMP Technologies Inc. |

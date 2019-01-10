@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с SuccessFactors | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SuccessFactors | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SuccessFactors.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/13/2018
 ms.author: jeedes
-ms.openlocfilehash: 89224b32efaecdf7a2797b034b1beac7ad191ee5
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 467db4046c0600142338dcfa39e136f45255caba
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685231"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53976755"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-successfactors"></a>Руководство. Интеграция Azure Active Directory с SuccessFactors
+# <a name="tutorial-azure-active-directory-integration-with-successfactors"></a>Руководство. Интеграция Azure Active Directory с SuccessFactors
 
 В этом руководстве описано, как интегрировать SuccessFactors с Azure Active Directory (Azure AD).
 
@@ -150,7 +150,7 @@ ms.locfileid: "51685231"
     | `https://<companyname>.sapsf.cn/<companyname>`|
          
     > [!NOTE] 
-    > Эти значения приведены в качестве примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы узнать эти адреса, обратитесь в [службу поддержки клиентов SuccessFactors](https://www.successfactors.com/support.html). 
+    > Эти значения приведены в качестве примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы узнать эти адреса, обратитесь в [службу поддержки клиентов SuccessFactors](https://www.successfactors.com/content/ssf-site/en/support.html). 
 
 5. На странице **сертификата подписи SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
 
@@ -261,7 +261,7 @@ ms.locfileid: "51685231"
 Чтобы пользователи Azure AD могли выполнять вход в SuccessFactors, они должны быть подготовлены для работы с SuccessFactors.  
 В случае SuccessFactors подготовка пользователей осуществляется вручную.
 
-Чтобы создать пользователей в SuccessFactors, необходимо обратиться в [службу поддержки SuccessFactors](https://www.successfactors.com/support.html).
+Чтобы создать пользователей в SuccessFactors, необходимо обратиться в [службу поддержки SuccessFactors](https://www.successfactors.com/content/ssf-site/en/support.html).
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

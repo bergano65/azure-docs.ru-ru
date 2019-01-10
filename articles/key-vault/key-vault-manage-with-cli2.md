@@ -1,5 +1,5 @@
 ---
-title: Управление Azure Key Vault с помощью интерфейса командной строки | Документация Майкрософт
+title: Управление Azure Key Vault с помощью интерфейса командной строки — Azure Key Vault | Документация Майкрософт
 description: Из этой статьи вы узнаете об автоматизации основных задач в Key Vault с использованием Azure CLI.
 services: key-vault
 documentationcenter: ''
@@ -10,16 +10,15 @@ ms.assetid: ''
 ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/28/2018
+ms.date: 01/07/2019
 ms.author: barclayn
-ms.openlocfilehash: f3b91e73cbfe9972969f5a061768a2c2bbfa7d1b
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 3d97ce7588642462920e98eb90c5c6b5d3748067
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51256463"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54076369"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Управление Key Vault с помощью интерфейса командной строки Azure 
 
@@ -228,18 +227,18 @@ az keyvault set-policy --name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec
 
 Включите политики расширенного доступа к хранилищу ключей с помощью команды [az keyvault update](/cli/azure/keyvault#az-keyvault-update). 
 
- Включение хранилища ключей для развертывания — позволяет виртуальным машинам получать сертификаты, хранимые в виде секретов, из хранилища.
+ Включение хранилища ключей для развертывания: позволяет виртуальным машинам получать сертификаты, хранимые в виде секретов, из хранилища.
  ```azurecli
  az keyvault update --name 'ContosoKeyVault' --resource-group 'ContosoResourceGroup' --enabled-for-deployment 'true'
  ``` 
 
-Включение хранилища ключей для шифрования диска — требуется при использовании хранилища для шифрования диска Azure.
+Включение хранилища ключей для шифрования дисков: требуется при использовании хранилища для шифрования дисков Azure.
 
  ```azurecli
  az keyvault update --name 'ContosoKeyVault' --resource-group 'ContosoResourceGroup' --enabled-for-disk-encryption 'true'
  ```  
 
-Включение хранилища ключей для развертывания шаблона — позволяет диспетчеру ресурсов получать секреты из хранилища.
+Включение хранилища ключей для развертывания шаблона: позволяет Resource Manager получать секреты из хранилища.
  ```azurecli 
  az keyvault update --name 'ContosoKeyVault' --resource-group 'ContosoResourceGroup' --enabled-for-template-deployment 'true'
  ```

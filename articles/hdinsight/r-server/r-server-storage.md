@@ -9,24 +9,24 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: 578479d43279dc1edb9edd24fd57d6841784166a
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 4aae44745981951fa61836fe52d8d6b799c6cadf
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52498140"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54001521"
 ---
 # <a name="azure-storage-solutions-for-ml-services-on-azure-hdinsight"></a>Решения службы хранилища Azure для служб машинного обучения в Azure HDInsight
 
 Службы машинного обучения в HDInsight могут использовать множество решений для хранения данных, кода и объектов с результатами анализа. К ним относятся следующие решения:
 
 - [Хранилище BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/)
-- [Хранилище озера данных Azure](https://azure.microsoft.com/services/data-lake-store/)
+- [Хранилище озера данных Azure](https://azure.microsoft.com/services/storage/data-lake-storage/)
 - [Хранилище файлов Azure](https://azure.microsoft.com/services/storage/files/)
 
 Кроме того, из кластера HDInsight вы можете обращаться к нескольким учетным записям хранения или контейнерам Azure. Хранилище файлов Azure — это удобный способ хранения данных на граничном узле, который позволяет подключить общую папку службы хранилища Azure, например, к файловой системе Linux. Общие папки Azure можно подключить и использовать на любом устройстве с поддерживаемой операционной системой, например Windows или Linux. 
 
-При создании кластера Apache Hadoop в HDInsight нужно указать **учетную запись хранения Azure** или **Data Lake Store**. Определенный контейнер хранилища в этой учетной записи используется для хранения файловой системы создаваемого кластера, например распределенной файловой системы Hadoop (HDFS). Дополнительные сведения и рекомендации см. в следующих статьях:
+При создании кластера Apache Hadoop в HDInsight нужно указать **учетную запись хранения Azure** или **Data Lake Storage**. Определенный контейнер хранилища в этой учетной записи используется для хранения файловой системы создаваемого кластера, например распределенной файловой системы Hadoop (HDFS). Дополнительные сведения и рекомендации см. в следующих статьях:
 
 - [Использование службы хранилища Azure с HDInsight](../hdinsight-hadoop-use-blob-storage.md)
 - [Использование Data Lake Store с кластерами Azure HDInsight](../hdinsight-hadoop-use-data-lake-store.md)
@@ -35,7 +35,7 @@ ms.locfileid: "52498140"
 
 Ниже объясняется, как получить доступ к данным и операциям кластера служб машинного обучения с помощью дополнительной учетной записи, если при создании кластера этих служб вы указали несколько учетных записей хранения. Предположим, что у вас есть две учетные записи хранения (**storage1** для контейнера по умолчанию **container1** и **storage2** для **container2**).
 
-> [!WARNING]
+> [!WARNING]  
 > Для повышения производительности кластер HDInsight создается в том же центре обработки данных, где находится заданная вами основная учетная запись хранения. Использование учетной записи хранения, расположение которой отличается от расположения кластера HDInsight, не поддерживается.
 
 ### <a name="use-the-default-storage-with-ml-services-on-hdinsight"></a>Использование хранилища по умолчанию для служб машинного обучения в HDInsight
@@ -102,29 +102,29 @@ ms.locfileid: "52498140"
     hadoop fs -mkdir wasb://container2@storage2.blob.core.windows.net/user/RevoShare
     hadoop fs -mkdir wasb://container2@storage2.blob.core.windows.net/user/RevoShare/<RDP username>
 
-## <a name="use-an-azure-data-lake-store-with-ml-services-cluster"></a>Использование Azure Data Lake Store для кластера служб машинного обучения 
+## <a name="use-azure-data-lake-storage-with-ml-services-cluster"></a>Использование Azure Data Lake Storage в кластере служб машинного обучения 
 
-Чтобы использовать Data Lake Store в кластере HDInsight, следует предоставить кластеру доступ к каждому из хранилищ Azure Data Lake Store, которые вы хотите использовать. Инструкции по созданию кластера HDInsight с учетной записью Azure Data Lake Store в качестве хранилища по умолчанию или дополнительного хранилища на портале Azure см. в статье [Создание кластеров HDInsight, использующих Data Lake Store, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
+Чтобы использовать Data Lake Storage в кластере HDInsight, следует предоставить кластеру доступ к каждому из хранилищ Azure Data Lake Storage, которые вы хотите использовать. Инструкции по созданию кластера HDInsight с учетной записью Azure Data Lake Storage в качестве хранилища по умолчанию или дополнительного хранилища на портале Azure см. в статье [Создание кластеров HDInsight, использующих Data Lake Storage, с помощью портала Azure](../../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md).
 
 Затем вы можете использовать такое хранилище в скрипте R примерно так же, как дополнительную учетную запись хранения Azure, как описано в предыдущей процедуре.
 
-### <a name="add-cluster-access-to-your-azure-data-lake-stores"></a>Предоставление кластеру доступа к хранилищам Azure Data Lake Store
-Доступ к хранилищу озера данных Azure осуществляется с помощью субъекта-службы Azure Active Directory (AAD), связанного с кластером HDInsight.
+### <a name="add-cluster-access-to-your-azure-data-lake-storage"></a>Предоставление кластеру доступа к Azure Data Lake Storage
+Доступ к Data Lake Storage осуществляется с помощью субъекта-службы Azure Active Directory (Azure AD), связанного с кластером HDInsight.
 
 1. При создании кластера HDInsight выберите на вкладке **Источник данных** вариант **Удостоверение кластера AAD**.
 
 2. В диалоговом окне **Удостоверение кластера AAD** в разделе **Выбрать субъект-службу AD** выберите **Создать**.
 
-Присвоив имя субъекту-службе и создав для него пароль, щелкните **Управление доступом ADLS**, чтобы связать субъект-службу с Data Lake Store.
+Присвоив имя субъекту-службе и создав для него пароль, щелкните **Управление доступом ADLS**, чтобы связать субъект-службу с Data Lake Storage.
 
-Вы также можете настроить доступ кластера к одному или нескольким учетным записям Data Lake Store после создания кластера. На портале Azure откройте запись Data Lake Store и выберите пункты **Обозреватель данных > Доступ > Добавить**. 
+Вы также можете добавить доступ кластера к одной учетной записи Data Lake Storage или нескольким после создания кластера. На портале Azure откройте запись Data Lake Storage и выберите пункты **Обозреватель данных > Доступ > Добавить**. 
 
-### <a name="how-to-access-the-data-lake-store-from-ml-services-on-hdinsight"></a>Доступ к Data Lake Store из кластера служб машинного обучения в HDInsight
+### <a name="how-to-access-data-lake-storage-from-ml-services-on-hdinsight"></a>Доступ к Data Lake Storage из служб машинного обучения в HDInsight
 
-Когда вы получите доступ к Data Lake Store, вы сможете применить это хранилище для кластера служб машинного обучения в HDInsight так же, как дополнительную учетную запись хранения Azure. Единственное отличие состоит в том, что вместо префикса **wasb://** используется **adl://**.
+Когда вы получите доступ к Data Lake Storage, вы сможете применить это хранилище для кластера служб машинного обучения в HDInsight так же, как дополнительную учетную запись хранения Azure. Единственное отличие состоит в том, что вместо префикса **wasb://** используется **adl://**.
 
 
-    # Point to the ADL store (e.g. ADLtest)
+    # Point to the ADL Storage (e.g. ADLtest)
     myNameNode <- "adl://rkadl1.azuredatalakestore.net"
     myPort <- 0
 
@@ -143,7 +143,7 @@ ms.locfileid: "52498140"
     # Specify the input file in HDFS to analyze
     inputFile <-file.path(bigDataDirRoot,"mysamplefile.csv")
 
-Приведенные ниже команды позволяют настроить учетную запись Data Lake Store для каталога RevoShare и добавить CSV-файл из приведенного выше примера.
+Приведенные ниже команды позволяют настроить учетную запись хранилища Data Lake Storage c каталогом RevoShare и добавить образец CSV-файла из предыдущего примера.
 
 
     hadoop fs -mkdir adl://rkadl1.azuredatalakestore.net/user

@@ -5,20 +5,21 @@ author: Rajeswari-Mamilla
 manager: rochakm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 11/27/2018
+ms.date: 12/17/2018
 ms.author: ramamill
-ms.openlocfilehash: ae2f32a02005bc015d2521e576ea5625bef2d377
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 1c37b764b47856d3a369228d3f224f2a464029bb
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52846017"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53790662"
 ---
 # <a name="troubleshoot-replication-issues-for-vmware-vms-and-physical-servers"></a>Устранение неполадок с репликацией виртуальных машин VMware и физических серверов
 
 Вы можете получить определенные сообщения об ошибках при защите виртуальных машин VMware или физических серверов с помощью Azure Site Recovery. В этой статье описаны распространенные неполадки, которые могут возникнуть при репликации физических серверов и виртуальных машин VMware в Azure с помощью [Azure Site Recovery](site-recovery-overview.md).
 
-## <a name="initial-replication-issues"></a>Проблемы с начальной репликацией.
+
+## <a name="initial-replication-issues"></a>Проблемы с начальной репликацией
 
 В большинстве случаев, проблемы с начальной репликацией, с которой сталкивается служба поддержки, вызваны ошибками подключения между исходным сервером и сервером обработки или сервером обработки и Azure. В большинстве случаев вы можете устранить эти проблемы, выполнив приведенные ниже действия.
 
@@ -33,7 +34,7 @@ ms.locfileid: "52846017"
 
 * Проверьте состояние службы `InMage Scout VX Agent – Sentinel/OutpostStart`, если она не выполняется, и проверьте, не исчезла ли проблема.   
 
-## <a name="verify-the-process-server"></a>Проверка сервера обработки
+### <a name="verify-the-process-server"></a>Проверка сервера обработки
 
 * **Проверьте, отправляет ли принудительно сервер обработки данные в Azure.**
 
@@ -87,6 +88,19 @@ ms.locfileid: "52846017"
 
 
 * **Проверьте, не ограничено ли регулирование пропускной способности на сервере обработки**.  Увеличьте пропускную способность и проверьте, не исчезла ли проблема.
+
+## <a name="source-machine-to-be-protected-through-site-recovery-is-not-listed-on-azure-portal"></a>Исходная виртуальная машина, которую требуется защитить с помощью Site Recovery, не отображается на портале Azure
+
+При попытке выбрать исходную машину для включения репликации с помощью Azure Site Recovery она может быть недоступна из-за следующих причин.
+
+* Если в vCenter есть две виртуальные машины с одинаковым UUID экземпляра, на портале отображается первая виртуальная машина, обнаруженная сервером конфигурации. Для устранения этой проблемы убедитесь, что виртуальным машинам назначены уникальные UUID экземпляра.
+* Убедитесь, что вы добавили правильные учетные данные vCenter во время настройки конфигурации с помощью шаблона OVF или единой настройки. Чтобы проверить добавленные учетные данные, выполните рекомендации, приведенные [здесь](vmware-azure-manage-configuration-server.md#modify-credentials-for-automatic-discovery).
+* Если разрешения, предоставленные для доступа к vCenter, не обеспечивают достаточные права, это может привести к ошибке обнаружения виртуальных машин. Убедитесь, что указанные [здесь](vmware-azure-tutorial-prepare-on-premises.md#prepare-an-account-for-automatic-discovery) разрешения добавлены в учетную запись пользователя vCenter.
+* Если виртуальная машина уже защищена с помощью Site Recovery, она будет недоступна для защиты. Убедитесь, что виртуальная машина, которую вы ищете на портале, не защищена другим пользователем или в рамках других подписок.
+
+## <a name="protected-virtual-machines-are-greyed-out-in-the-portal"></a>Защищенные виртуальные машины отображаются на портале серым цветом.
+
+Виртуальные машины, которые реплицируются в рамках Site Recovery, неактивны (отображаются серым цветом), если существуют повторяющиеся записи в системе. См. инструкции по удалению устаревших записей и устранению проблемы в [этой статье](https://social.technet.microsoft.com/wiki/contents/articles/32026.asr-vmware-to-azure-how-to-cleanup-duplicatestale-entries.aspx).
 
 ## <a name="next-steps"></a>Дополнительная информация
 Если вам нужна дополнительная помощь, отправьте свой запрос на [форум Azure Site Recovery](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr). У нас есть активное сообщество и один из наших инженеров сможет помочь вам.

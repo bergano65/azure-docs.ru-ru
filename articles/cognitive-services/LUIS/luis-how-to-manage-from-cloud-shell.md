@@ -1,7 +1,7 @@
 ---
 title: Данные об использовании в Cloud Shell
 titleSuffix: Language Understanding - Azure Cognitive Services
-description: Узнайте, как получить сведения об использовании LUIS в Azure Cloud Shell.
+description: Узнайте, как получить сведения о количестве обращений к конечной точке в LUIS в Azure Cloud Shell.
 services: cognitive-services
 author: diberry
 manager: cgronlun
@@ -9,21 +9,25 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 12/07/2018
+ms.date: 12/18/2018
 ms.author: diberry
-ms.openlocfilehash: d4f1a76fe587a34448cf218dbfef10f6b0e2ea46
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 703332ece0208856bfbedb852b4b1e985d157dc9
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53133486"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53605963"
 ---
 # <a name="usage-data-for-luis-service-from-azure-cloud-shell"></a>Получение сведений об использовании LUIS из Azure Cloud Shell
+
+Узнайте, как получить сведения о количестве обращений к конечной точке в LUIS в Azure Cloud Shell.
+
 С помощью портала Azure можно использовать командлеты PowerShell для работы с ресурсами LUIS. 
 
 Эти командлеты позволяют [создать](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/new-azurermcognitiveservicesaccount?view=azurermps-6.0.0) подписку LUIS, получить сведения о подписке, в том числе об [использовании](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/get-azurermcognitiveservicesaccountusage?view=azurermps-6.0.0), а также [удалить](https://docs.microsoft.com/powershell/module/azurerm.cognitiveservices/remove-azurermcognitiveservicesaccount?view=azurermps-6.0.0) подписку. 
 
 ## <a name="cloud-shell-storage-account-and-authentication"></a>Учетная запись хранения Cloud Shell и аутентификация
+
 Чтобы использовать PowerShell в [Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/quickstart-powershell) на портале Azure, вам нужна учетная запись хранения Azure. Если у вас нет [учетной записи хранения](https://docs.microsoft.com/azure/cloud-shell/persisting-shell-storage), вам будет предложено ее создать. Учетная запись хранения позволяет сохранять скрипты PowerShell в Cloud Shell.  
 
 Также для доступа к любым ресурсам необходимо выполнить аутентификацию Azure в Cloud Shell. 
@@ -31,6 +35,7 @@ ms.locfileid: "53133486"
 После получения учетной записи хранения и аутентификации вы можете запускать командлеты PowerShell.
 
 ## <a name="open-cloud-shell"></a>Открытие Cloud Shell
+
 Для работы с Cloud Shell на портале Azure всегда используется самая последняя версия PowerShell. 
 
 Чтобы открыть Cloud Shell, воспользуйтесь кнопкой **Запустить Cloud Shell** или откройте в браузере [https://shell.azure.com](https://shell.azure.com). Выберите Power Shell в качестве среды. Если у вас нет учетной записи службы хранилища Azure, вам потребуется ее создать. 

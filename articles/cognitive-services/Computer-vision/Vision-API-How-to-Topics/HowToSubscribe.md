@@ -1,5 +1,5 @@
 ---
-title: Получение ключей подписки для API компьютерного зрения
+title: Получение ключей подписки — компьютерное зрение
 titlesuffix: Azure Cognitive Services
 description: Узнайте, как получить ключи подписки для вызовов API компьютерного зрения в Cognitive Services.
 services: cognitive-services
@@ -10,16 +10,17 @@ ms.component: computer-vision
 ms.topic: article
 ms.date: 05/19/2017
 ms.author: kefre
-ms.openlocfilehash: db4d589bb0c7611e632a90f2174ad8e9c415bf6a
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.custom: seodec18
+ms.openlocfilehash: 820531cc2254d9cbc7aaf7e758dd0457b282d892
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45985428"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53580813"
 ---
 # <a name="how-to-obtain-subscription-keys"></a>Получение ключей подписки
 
-Для служб компьютерного зрения требуются специальные ключи подписки. Каждый вызов API компьютерного зрения требует ключа подписки. Этот ключ должен быть либо передан через параметр строки запроса, либо указан в заголовке запроса.
+Для служб компьютерного зрения требуются специальные ключи подписки. Каждый вызов API компьютерного зрения требует ключ подписки. Этот ключ должен быть либо передан через параметр строки запроса, либо указан в заголовке запроса.
 
 Сведения о том, как зарегистрироваться для получения ключей подписки, см. в статье [Подписки](https://azure.microsoft.com/try/cognitive-services/). Регистрация бесплатна. Цены на эти службы могут измениться.
 

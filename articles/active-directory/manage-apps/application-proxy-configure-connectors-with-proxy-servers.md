@@ -2,25 +2,21 @@
 title: Работа с имеющимися локальными прокси-серверами в Azure AD | Документация Майкрософт
 description: В этой статье описывается, как работать с существующими локальными прокси-серверами.
 services: active-directory
-documentationcenter: ''
 author: barbkess
 manager: mtillman
 ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/12/2018
 ms.author: barbkess
 ms.reviewer: japere
-ms.custom: it-pro
-ms.openlocfilehash: 06df705aabce06c37f04de3fb5046d822f9f981e
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 6409b9313aa9b036e24ea50435659b3653ac01e0
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49404959"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53720107"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Работа с имеющимися локальными прокси-серверами
 
@@ -107,15 +103,16 @@ ms.locfileid: "49404959"
 * проверка SSL.
 
 #### <a name="proxy-outbound-rules"></a>правила для исходящих подключений прокси-сервера;
-Разрешите доступ к следующих конечным точкам, чтобы получить доступ к службе соединителя:
+Разрешите доступ к следующим URL-адресам.
 
-* *.msappproxy.net;
-* *.servicebus.windows.net
+| URL-адрес | Как он используется |
+| --- | --- |
+| \*.msappproxy.net;<br>\*.servicebus.windows.net. | Связь между соединителем и облачной службой прокси приложения |
+| mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | Azure использует эти URL-адреса для проверки сертификатов |
+| login.windows.net<br>login.microsoftonline.com | Соединитель использует эти URL-адреса во время регистрации. |
 
-Для первоначальной регистрации нужно разрешить доступ к следующим конечным точкам:
+Если брандмауэр или прокси-сервер поддерживают внесение DNS в список разрешений, можно добавить подключения к \*.msappproxy.net и \*.servicebus.windows.net в список разрешений. Если нет, необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
 
-* login.windows.net
-* login.microsoftonline.com
 
 Невозможно разрешить подключения по полному доменному имени. Вместо этого укажите диапазоны IP-адресов. Используйте следующие параметры:
 

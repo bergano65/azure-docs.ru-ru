@@ -11,12 +11,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 09/06/2018
 ms.author: diberry
-ms.openlocfilehash: 836449dad621cf6a0efe6c8534edc9f3982869b3
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: d355e14d15dc6a393a6fabb90418cb3949fe0cf5
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53141583"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53601973"
 ---
 # <a name="test-your-luis-app-in-the-luis-portal"></a>Тестирование приложения LUIS на портале LUIS
 <a name="train-your-app"></a>
@@ -51,11 +51,11 @@ ms.locfileid: "53141583"
  
 1. На открытой выдвигающейся панели **Test** (Тестирование) нажмите кнопку **Inspect** (Проверить) рядом с высказыванием, которое нужно сравнить. 
 
-    ![Кнопка "Inspect" (Проверить)](./media/luis-how-to-interactive-test/inspect.png)
+    ![Нажмите кнопку "Инспектировать" для получения дополнительных сведений о результатах теста.](./media/luis-how-to-interactive-test/inspect.png)
 
 2. Появится панель **Inspection** (Проверка). На панели находится намерение с высокой оценкой, а также любые идентифицированные сущности. На панели отображается результат выбранного высказывания.
 
-    ![Кнопка "Inspect" (Проверить)](./media/luis-how-to-interactive-test/inspect-panel.png)
+    ![На панели находится намерение с высокой оценкой, а также любые идентифицированные сущности. На панели отображается результат выбранного высказывания.](./media/luis-how-to-interactive-test/inspect-panel.png)
 
 ## <a name="correct-top-scoring-intent"></a>Исправление намерения с высокой оценкой
 

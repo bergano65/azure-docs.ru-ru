@@ -1,28 +1,27 @@
 ---
 title: Управление ресурсами Azure Cosmos DB с помощью Обозревателя службы хранилища Azure
 description: Узнайте, как подключиться к Azure Cosmos DB и управлять своими ресурсами с помощью Обозревателя службы хранилища Azure.
-author: Jejiang
-tags: Azure Cosmos DB
+author: deborahc
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/07/2018
-ms.author: jejiang
+ms.author: dech
 ms.custom: seodec18
-ms.openlocfilehash: 1ce483a88c1f57912dfe30efa98f46335e97c01c
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: d19aaa6e486732cb1453e3299c8e598e8fd2f507
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53138132"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54044626"
 ---
 # <a name="manage-azure-cosmos-db-resources-using-azure-storage-explorer"></a>Управление ресурсами Azure Cosmos DB с помощью Обозревателя службы хранилища Azure
 
-В Обозревателе службы хранилища Azure можно управлять объектами Azure Cosmos DB и работать с данными, хранимыми процедурами и триггерами, а также другими объектами Azure, такими как хранилища BLOB-объектов и очереди. Теперь это средство можно использовать для управления всеми объектами Azure в одном месте. Сейчас Обозреватель службы хранилища Azure поддерживает учетные записи SQL, MongoDB, Graph и службы таблиц.
+В Обозревателе службы хранилища Azure можно управлять объектами Azure Cosmos DB и работать с данными, хранимыми процедурами и триггерами, а также другими объектами Azure, такими как хранилища BLOB-объектов и очереди. Теперь это средство можно использовать для управления всеми объектами Azure в одном месте. Сейчас обозреватель службы хранилища Azure поддерживает учетные записи Cosmos, настроенные для SQL, MongoDB, Graph и API таблиц.
 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Учетная запись Azure Cosmos DB для API SQL<!--or MongoDB API-->. Если у вас нет учетной записи, вы можете создать ее на портале Azure, как описано в разделе [Краткое руководство. Создание веб-приложения .NET при помощи Azure Cosmos DB с использованием API SQL и портала Azure](create-sql-api-dotnet.md).
+Учетная запись Cosmos с API SQL или API Azure Cosmos DB для MongoDB. Если у вас нет учетной записи, вы можете создать ее на портале Azure, как описано в разделе [Краткое руководство. Создание веб-приложения .NET при помощи Azure Cosmos DB с использованием API SQL и портала Azure](create-sql-api-dotnet.md).
 
 ## <a name="installation"></a>Установка
 

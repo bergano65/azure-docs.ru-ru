@@ -1,5 +1,5 @@
 ---
-title: Запись данных Apache Storm в службу хранилища или Data Lake Store в Azure HDInsight
+title: Запись данных Apache Storm в службу хранилища или Data Lake Storage в Azure HDInsight
 description: Сведения об использовании Apache Storm для записи данных в HDFS-совместимое хранилище для HDInsight.
 services: hdinsight
 ms.service: hdinsight
@@ -9,19 +9,19 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/27/2018
-ms.openlocfilehash: 524195372abde91b302ee03c13152f234ef56406
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: b11e1f35578eef07acb823081f0bbfdbaf467f9c
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52498263"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53632473"
 ---
 # <a name="write-to-apache-hadoop-hdfs-from-apache-storm-on-hdinsight"></a>Запись данных в Apache Hadoop HDFS из Apache Storm в HDInsight
 
-Сведения о том, как с помощью [Apache Storm](http://storm.apache.org/) записывать данные в HDFS-совместимое хранилище, используемое Apache Storm в HDInsight. HDInsight может использовать службу хранилища Azure и Azure Data Lake Store в качестве HDFS-совместимого хранилища. Storm предоставляет компонент [HdfsBolt](http://storm.apache.org/releases/current/javadocs/org/apache/storm/hdfs/bolt/HdfsBolt.html), который записывает данные в HDFS. В этой статье предоставляются сведения о записи данных в хранилища обоих типов из HdfsBolt. 
+Сведения о том, как с помощью [Apache Storm](https://storm.apache.org/) записывать данные в HDFS-совместимое хранилище, используемое Apache Storm в HDInsight. HDInsight может использовать службу хранилища Azure и Azure Data Lake Storage в качестве HDFS-совместимого хранилища. Storm предоставляет компонент [HdfsBolt](https://storm.apache.org/releases/current/javadocs/org/apache/storm/hdfs/bolt/HdfsBolt.html), который записывает данные в HDFS. В этой статье предоставляются сведения о записи данных в хранилища обоих типов из HdfsBolt. 
 
-> [!IMPORTANT]
-> Пример топологии, используемый в этом документе, зависит от компонентов, которые входят в состав Storm в HDInsight. Может потребоваться изменить его для работы с Azure Data Lake Store при использовании с другими кластерами Apache Storm.
+> [!IMPORTANT]  
+> Пример топологии, используемый в этом документе, зависит от компонентов, которые входят в состав Storm в HDInsight. Может потребоваться изменить его для работы с Azure Data Lake Storage при использовании с другими кластерами Apache Storm.
 
 ## <a name="get-the-code"></a>Получение кода
 
@@ -44,24 +44,24 @@ ms.locfileid: "52498263"
 
 ## <a name="how-to-use-the-hdfsbolt-with-hdinsight"></a>Как использовать HdfsBolt с HDInsight
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Перед использованием HdfsBolt Storm в HDInsight необходимо выполнить действие скрипта, чтобы скопировать необходимые JAR-файлы в `extpath` для Storm. Дополнительные сведения см. в статье [Использование Azure Data Lake Store с помощью Apache Storm в HDInsight (Java)](#configure).
 
 HdfsBolt использует предоставленную схему файла, чтобы понять, как выполнять запись данных в HDFS. Для HDInsight используйте одну из следующих схем:
 
-* `wasb://` — используется с учетной записью хранения Azure.
-* `adl://` — используется с Azure Data Lake Store.
+* `wasb://`: используется с учетной записью хранения Azure.
+* `adl://`: используется с Azure Data Lake Storage.
 
 Следующая таблица содержит примеры использования схемы файлов для разных сценариев.
 
 | Схема | Примечания |
 | ----- | ----- |
 | `wasb:///` | Учетная запись хранения по умолчанию — это контейнер больших двоичных объектов в учетной записи хранения Azure. |
-| `adl:///` | Учетная запись хранения по умолчанию представляет собой каталог в Azure Data Lake Store. Во время создания кластера укажите каталог в Data Lake Store, который является корнем системы HDFS кластера. Например, каталог `/clusters/myclustername/`. |
+| `adl:///` | Учетная запись хранения по умолчанию представляет собой каталог в Azure Data Lake Storage. Во время создания кластера укажите каталог в Data Lake Storage, который является корнем системы HDFS кластера. Например, каталог `/clusters/myclustername/`. |
 | `wasb://CONTAINER@ACCOUNT.blob.core.windows.net/` | Учетная запись хранения Azure не по умолчанию (дополнительная), связанная с кластером. |
-| `adl://STORENAME/` | Корень Data Lake Store, используемый кластером. Эта схема позволяет получить доступ к данным, размещенным вне каталога, в котором содержится файловая система кластера. |
+| `adl://STORENAME/` | Корень Data Lake Storage, используемый кластером. Эта схема позволяет получить доступ к данным, размещенным вне каталога, в котором содержится файловая система кластера. |
 
-Дополнительные сведения см. в [справочнике HdfsBolt](http://storm.apache.org/releases/current/javadocs/org/apache/storm/hdfs/bolt/HdfsBolt.html) на сайте Apache.org.
+Дополнительные сведения см. в [справочнике HdfsBolt](https://storm.apache.org/releases/current/javadocs/org/apache/storm/hdfs/bolt/HdfsBolt.html) на сайте Apache.org.
 
 ### <a name="example-configuration"></a>Пример конфигурации
 
@@ -123,21 +123,21 @@ bolts:
 
 Это YAML-файл определяет следующие элементы:
 
-* `syncPolicy` — определяет, когда файлы синхронизируются или записываются в файловую систему. В этом примере это происходит после каждой 1000 кортежей.
-* `fileNameFormat` — определяет шаблон пути и имени файла, используемый при записи файлов. В этом примере путь предоставляется во время выполнения с помощью фильтра, а файл имеет расширение `.txt`.
-* `recordFormat` — определяет внутренний формат записанных файлов. В этом примере поля разделяются с помощью символа `|`.
-* `rotationPolicy` — определяет, когда чередуются файлы. В этом примере чередование не выполняется.
-* `hdfs-bolt` — использует предыдущие компоненты в качестве параметров конфигурации для класса `HdfsBolt`.
+* `syncPolicy`: определяет, когда файлы синхронизируются или записываются в файловую систему. В этом примере это происходит после каждой 1000 кортежей.
+* `fileNameFormat`: определяет шаблон пути и имени файла, используемый при записи файлов. В этом примере путь предоставляется во время выполнения с помощью фильтра, а файл имеет расширение `.txt`.
+* `recordFormat`: определяет внутренний формат записанных файлов. В этом примере поля разделяются с помощью символа `|`.
+* `rotationPolicy`: определяет, когда чередуются файлы. В этом примере чередование не выполняется.
+* `hdfs-bolt`: использует предыдущие компоненты в качестве параметров конфигурации для класса `HdfsBolt`.
 
 Дополнительные сведения о платформе Flux см. здесь: [https://storm.apache.org/releases/current/flux.html](https://storm.apache.org/releases/current/flux.html).
 
 ## <a name="configure-the-cluster"></a>Настройка кластера
 
-По умолчанию Storm в HDInsight не содержит компоненты, которые HdfsBolt использует для взаимодействия с хранилищем Azure или Data Lake Store в пути к классу Storm. Используйте следующее действие скрипта, чтобы добавить эти компоненты в каталог `extlib` для Storm в кластере:
+По умолчанию Storm в HDInsight не содержит компоненты, которые HdfsBolt использует для взаимодействия с хранилищем Azure или Data Lake Storage в пути к классу Storm. Используйте следующее действие скрипта, чтобы добавить эти компоненты в каталог `extlib` для Storm в кластере:
 
 * URI-адрес сценария: `https://hdiconfigactions.blob.core.windows.net/linuxstormextlibv01/stormextlib.sh`
-* Узлы, к которым применяется: Nimbus, Supervisor
-* Параметры: нет
+* Узлы, к которым это применимо: Nimbus, Supervisor
+* Параметры Нет
 
 Сведения об использовании этого скрипта с кластером см. в статье [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](./../hdinsight-hadoop-customize-cluster-linux.md).
 
@@ -159,7 +159,7 @@ bolts:
    
     При появлении запроса введите пароль, который применялся при создании пользователя SSH для кластера. Если вместо пароля используется открытый ключ, может потребоваться использовать параметр `-i` и указать путь к соответствующему закрытому ключу.
    
-   > [!NOTE]
+   > [!NOTE]  
    > Дополнительные сведения об использовании `scp` с HDInsight см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
 2. После завершения отправки используйте следующую команду для подключения к кластеру HDInsight с помощью SSH. Замените **USER** именем пользователя SSH, используемым при создании кластера. Замените **CLUSTERNAME** именем кластера.
@@ -179,10 +179,10 @@ bolts:
         hdfs.write.dir: /stormdata/
         hdfs.url: wasb:///
 
-    > [!IMPORTANT]
-    > В этом примере предполагается, что кластер использует учетную запись хранения Azure в качестве хранилища по умолчанию. Если ваш кластер использует Azure Data Lake Store, используйте `hdfs.url: adl:///`.
+    > [!IMPORTANT]  
+    > В этом примере предполагается, что кластер использует учетную запись хранения Azure в качестве хранилища по умолчанию. Если ваш кластер использует Azure Data Lake Storage, используйте `hdfs.url: adl:///`.
     
-    Чтобы сохранить этот файл, нажмите клавиши __CTRL+X__, введите __Y__ и нажмите клавишу __ВВОД__. Значения в этом файле позволяют задать URL-адрес Data Lake Store и имя каталога, в который записываются данные.
+    Чтобы сохранить этот файл, нажмите клавиши __CTRL+X__, введите __Y__ и нажмите клавишу __ВВОД__. Значения в этом файле позволяют задать URL-адрес Data Lake Storage и имя каталога, в который записываются данные.
 
 3. Запустите топологию, используя следующую команду.
    
@@ -219,5 +219,5 @@ bolts:
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда вы узнали, как применять Apache Storm для записи в хранилище Azure и Azure Data Lake Store, изучите другие [примеры Apache Storm для HDInsight](apache-storm-example-topology.md).
+Теперь, когда вы узнали, как применять Apache Storm для записи в хранилище Azure и Azure Data Lake Storage, изучите другие [примеры Apache Storm для HDInsight](apache-storm-example-topology.md).
 

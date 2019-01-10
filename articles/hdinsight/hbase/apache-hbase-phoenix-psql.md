@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/10/2017
 ms.author: ashishth
-ms.openlocfilehash: 8b14550adf89f866cf3b736db049cc671db5b765
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 04a923a8bc022aefb667489702c0e74493df94a8
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52314513"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53652767"
 ---
 # <a name="bulk-load-data-into-apache-phoenix-using-psql"></a>Массовая загрузка данных в Apache Phoenix с помощью psql
 
-[Apache Phoenix](http://phoenix.apache.org/) — это реляционная база данных на основе [Apache HBase](../hbase/apache-hbase-overview.md) с открытым кодом и высоким уровнем параллелизма. Phoenix поддерживает запросы к HBase в стиле SQL. Phoenix использует драйверы JDBC. Это позволяет создавать, удалять и изменять SQL-таблицы, индексы, представления и последовательности, а также вставлять строки по одной или в пакетном режиме. Phoenix использует для сборки запросов компиляцию в машинный код noSQL, а не MapReduce, что позволяет создавать на основе HBase приложения с низким уровнем задержки. Также Phoenix поддерживает сопроцессоры для выполнения пользовательского кода в адресном пространстве сервера, то есть прямо в месте размещения данных. Это сводит к минимуму трафик между клиентом и сервером.  Чтобы применить Phoenix для работы с данными в HDInsight, сначала создайте таблицы и загрузите в них данные.
+[Apache Phoenix](https://phoenix.apache.org/) — это реляционная база данных на основе [Apache HBase](../hbase/apache-hbase-overview.md) с открытым кодом и высоким уровнем параллелизма. Phoenix поддерживает запросы к HBase в стиле SQL. Phoenix использует драйверы JDBC. Это позволяет создавать, удалять и изменять SQL-таблицы, индексы, представления и последовательности, а также вставлять строки по одной или в пакетном режиме. Phoenix использует для сборки запросов компиляцию в машинный код noSQL, а не MapReduce, что позволяет создавать на основе HBase приложения с низким уровнем задержки. Также Phoenix поддерживает сопроцессоры для выполнения пользовательского кода в адресном пространстве сервера, то есть прямо в месте размещения данных. Это сводит к минимуму трафик между клиентом и сервером.  Чтобы применить Phoenix для работы с данными в HDInsight, сначала создайте таблицы и загрузите в них данные.
 
 ## <a name="bulk-loading-with-apache-phoenix"></a>Массовая загрузка с помощью Apache Phoenix
 
@@ -73,7 +73,7 @@ ms.locfileid: "52314513"
     python psql.py ZookeeperQuorum createCustomersTable.sql /tmp/customers.csv listCustomers.sql
     ```
 
-    > [!NOTE] 
+    > [!NOTE]   
     > Чтобы определить имя `ZookeeperQuorum`, найдите в файле `/etc/hbase/conf/hbase-site.xml` строку кворума [Apache ZooKeeper](https://zookeeper.apache.org/) с именем свойства `hbase.zookeeper.quorum`.
 
 5. Когда операция `psql` завершится, вы увидите в окне командной строки следующее сообщение:
@@ -141,7 +141,7 @@ ms.locfileid: "52314513"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* [Массовая загрузка данных с помощью Apache Phoenix](http://phoenix.apache.org/bulk_dataload.html)
+* [Массовая загрузка данных с помощью Apache Phoenix](https://phoenix.apache.org/bulk_dataload.html)
 * [Использование Apache Phoenix с кластерами Apache HBase под управлением Linux в HDInsight](../hbase/apache-hbase-phoenix-squirrel-linux.md)
 * [Salted Tables](https://phoenix.apache.org/salted.html) (Таблицы с солью)
-* [Грамматика Phoenix](http://phoenix.apache.org/language/index.html)
+* [Грамматика Apache Phoenix](https://phoenix.apache.org/language/index.html)

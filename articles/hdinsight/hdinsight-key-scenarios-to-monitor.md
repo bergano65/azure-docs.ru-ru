@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: arindamc
-ms.openlocfilehash: 22b9a63ab595b4d0b003d999bcd0f131e50aeabf
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 83cbb2a54ed712f8aa5084408ab852432470b73c
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53383941"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53742479"
 ---
 # <a name="monitor-cluster-performance"></a>Мониторинг производительности кластера
 
@@ -77,11 +77,11 @@ YARN позволяет выделять ресурсы для этих очер
 
 Если вы используете службу хранилища Azure, то сведения об отслеживании проблем, связанных с хранилищем, включая сведения о регулировании, можно получить в разделе [Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure](https://docs.microsoft.com/azure/storage/storage-monitoring-diagnosing-troubleshooting).
 
-Если резервным хранилищем кластера является Azure Data Lake Store (ADLS), то регулирование, вероятнее всего, возникает из-за ограничения пропускной способности. В данном случае регулирование можно заметить, отслеживая ошибки регулирования в журналах задач. Сведения об использовании ADLS приведены в разделе о регулировании для соответствующей службы в следующих статьях:
+Если резервным хранилищем кластера является Azure Data Lake Storage (ADLS), то регулирование, вероятнее всего, возникает из-за ограничения пропускной способности. В данном случае регулирование можно заметить, отслеживая ошибки регулирования в журналах задач. Сведения об использовании ADLS приведены в разделе о регулировании для соответствующей службы в следующих статьях:
 
-* [Рекомендации по настройке производительности для Hive в HDInsight и Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-performance-tuning-hive.md)
-* [Рекомендации по настройке производительности для MapReduce в HDInsight и Azure Data Lake Store](../data-lake-store/data-lake-store-performance-tuning-mapreduce.md)
-* [Рекомендации по настройке производительности для Storm в HDInsight и Azure Data Lake Storage 1-го поколения](../data-lake-store/data-lake-store-performance-tuning-storm.md)
+* [Рекомендации по настройке производительности для Hive в HDInsight и Azure Data Lake Storage](../data-lake-store/data-lake-store-performance-tuning-hive.md)
+* [Рекомендации по настройке производительности для MapReduce в HDInsight и Azure Data Lake Storage](../data-lake-store/data-lake-store-performance-tuning-mapreduce.md)
+* [Рекомендации по настройке производительности для Storm в HDInsight и Azure Data Lake Storage](../data-lake-store/data-lake-store-performance-tuning-storm.md)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

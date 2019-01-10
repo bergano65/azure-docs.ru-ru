@@ -1,20 +1,17 @@
 ---
 title: Создание пользователей на сервере базы данных Azure для MySQL
 description: В этой статье описывается создание учетных записей пользователей для взаимодействия с сервером базы данных Azure для MySQL.
-services: mysql
 author: jasonwhowell
 ms.author: jasonh
-editor: jasonwhowell
-manager: kfile
 ms.service: mysql
-ms.topic: article
+ms.topic: conceptual
 ms.date: 02/28/2018
-ms.openlocfilehash: ee74ea9e114f6401bfcafe44ca3caedfcd0005c5
-ms.sourcegitcommit: 1b8665f1fff36a13af0cbc4c399c16f62e9884f3
+ms.openlocfilehash: e8714777b1f9f08de4d02fcb44c25197cdc48899
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35265624"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53546017"
 ---
 # <a name="create-users-in-azure-database-for-mysql-server"></a>Создание пользователей на сервере базы данных Azure для MySQL 
 В этой статье описывается создание пользователей на сервере базы данных Azure для MySQL.
@@ -85,6 +82,6 @@ ms.locfileid: "35265624"
    ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение. Для этого ознакомьтесь с разделом [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md) или [Azure CLI](howto-manage-firewall-using-cli.md).
+Откройте брандмауэр для IP-адресов компьютеров новых пользователей, чтобы обеспечить их подключение: [Создание правил брандмауэра базы данных Azure для MySQL и управление ими с помощью портала Azure](howto-manage-firewall-using-portal.md) или [интерфейса командной строки Azure](howto-manage-firewall-using-cli.md).
 
 Чтобы получить дополнительные сведения об управлении учетными записями пользователей, ознакомьтесь с [управлением учетными записями пользователей](https://dev.mysql.com/doc/refman/5.7/en/user-account-management.html), [синтаксисом GRANT](https://dev.mysql.com/doc/refman/5.7/en/grant.html) и [привилегиями](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html) в документации по продукту MySQL.

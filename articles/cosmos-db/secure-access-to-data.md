@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 08/19/2018
 ms.author: rafats
-ms.openlocfilehash: 1d1bc011de579588567fac3debe9d0b4af5d29f7
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: c203334b0ea1b47aa1884155f477e34bd8f2e1db
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52878354"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53724765"
 ---
 # <a name="securing-access-to-azure-cosmos-db-data"></a>Защита доступа к данным Azure Cosmos DB
 В этой статье приведены общие сведения о защите доступа к данным, хранящимся в [Microsoft Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/).
@@ -188,7 +188,7 @@ DocumentClient userClient = new DocumentClient(new Uri(endpointUrl), permList);
 Теперь сущность может считывать ресурсы Azure Cosmos DB.
 
 ## <a name="delete-or-export-user-data"></a>Удаление и экспорт сведений о пользователях
-Azure Cosmos DB позволяет искать, выбирать, изменять и удалять любые персональные данные, расположенные в базе данных или в коллекциях. Azure Cosmos DB предоставляет интерфейсы API для удаления персональных данных. Однако вы сами должны использовать эти интерфейсы API и определить логику, необходимую для удаления персональных данных. Каждый мультимодельный интерфейс API (API SQL, API MongoDB, API Gremlin, API Cassandra и API таблиц) предоставляет различные языковые пакеты SDK, содержащие методы для поиска и удаления персональных данных. Вы также можете включить функцию [срока жизни (TTL)](time-to-live.md) для автоматического удаления данных по истечении указанного периода времени без дополнительных затрат.
+Azure Cosmos DB позволяет искать, выбирать, изменять и удалять любые персональные данные, расположенные в базе данных или в коллекциях. Azure Cosmos DB предоставляет интерфейсы API для удаления персональных данных. Однако вы сами должны использовать эти интерфейсы API и определить логику, необходимую для удаления персональных данных. Каждый мультимодельный интерфейс API (SQL, MongoDB, Gremlin, Cassandra и API таблиц) предоставляет различные языковые пакеты SDK, содержащие методы для поиска и удаления персональных данных. Вы также можете включить функцию [срока жизни (TTL)](time-to-live.md) для автоматического удаления данных по истечении указанного периода времени без дополнительных затрат.
 
 [!INCLUDE [GDPR-related guidance](../../includes/gdpr-dsr-and-stp-note.md)]
 

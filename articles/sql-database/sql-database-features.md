@@ -11,13 +11,13 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: bonova, carlrab
 manager: craigg
-ms.date: 12/03/2018
-ms.openlocfilehash: 77291029dd15b887ea9d2fd3f0e3a31e71a2f537
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.date: 01/02/2019
+ms.openlocfilehash: 2f7f317f11bba96e17791ed751c60099457a299a
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53384366"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54002592"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение возможностей службы "База данных SQL Azure" и SQL Server
 
@@ -131,7 +131,7 @@ ms.locfileid: "53384366"
 | [SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) | Yes | Yes |
 | [SQL Server PowerShell](https://docs.microsoft.com/sql/relational-databases/scripting/sql-server-powershell) | Yes | Yes |
 | [SQL Server Profiler](https://docs.microsoft.com/sql/tools/sql-server-profiler/sql-server-profiler) | Нет. Дополнительные сведения см. в статье о [расширенных событиях](sql-database-xevent-db-diff-from-svr.md). | Yes |
-| [Репликация SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/sql-server-replication) | [Только для подписчиков репликации транзакций и репликации моментального снимка](sql-database-cloud-migrate.md) | Да, [репликация с использованием Управляемого экземпляра Базы данных SQL](https://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance) |
+| [Репликация SQL Server](https://docs.microsoft.com/sql/relational-databases/replication/sql-server-replication) | [Только для подписчиков репликации транзакций и репликации моментального снимка](sql-database-cloud-migrate.md) | Да (общедоступная предварительная версия) — [репликация с помощью управляемого экземпляра базы данных SQL](https://docs.microsoft.com/sql/relational-databases/replication/replication-with-sql-database-managed-instance) |
 | [SQL Server Reporting Services (SSRS)](https://docs.microsoft.com/sql/reporting-services/create-deploy-and-manage-mobile-and-paginated-reports) | Нет. Ознакомьтесь с [Power BI](https://docs.microsoft.com/power-bi/). | Нет. Ознакомьтесь с [Power BI](https://docs.microsoft.com/power-bi/). |
 | [Хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) | Yes | Yes |
 | [Системные хранимые функции](https://docs.microsoft.com/sql/relational-databases/system-functions/system-functions-for-transact-sql) | Большинство. Дополнительные сведения см. в разделах по отдельным функциям. | Да. См. раздел [Stored procedures, functions, triggers](sql-database-managed-instance-transact-sql-information.md#stored-procedures-functions-triggers) (Хранимые процедуры, функции и триггеры). |

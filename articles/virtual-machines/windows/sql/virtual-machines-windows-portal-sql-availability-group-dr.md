@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 05/02/2017
 ms.author: mikeray
-ms.openlocfilehash: 43f3628878654a32be8aeafe1ba0d2e42e03d82f
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: d64c55857cda0aa64dc010566490e1696fffdea0
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51240415"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53972385"
 ---
 # <a name="configure-an-always-on-availability-group-on-azure-virtual-machines-in-different-regions"></a>Настройка группы доступности AlwaysOn на виртуальных машинах Azure в разных регионах
 
@@ -84,6 +84,7 @@ ms.locfileid: "51240415"
    - включать в себя внутренний пул, состоящий только из виртуальных машин, размещенных в том же регионе, что и подсистема балансировки нагрузки;
    - использовать пробу TCP-порта для IP-адреса;
    - использовать правило балансировки нагрузки для SQL Server в том же регионе.  
+   - являться подсистемой Load Balancer уровня "Стандартный", если виртуальные машины в серверном пуле не входят ни в отдельную группу доступности, ни в масштабируемый набор виртуальных машин. Дополнительные сведения см. в разделе [Обзор Azure Load Balancer уровня "Стандартный"](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-overview).
 
 1. [Добавьте компонент отказоустойчивой кластеризации на новый сервер SQL Server](virtual-machines-windows-portal-sql-availability-group-prereq.md#add-failover-clustering-features-to-both-sql-server-vms).
 

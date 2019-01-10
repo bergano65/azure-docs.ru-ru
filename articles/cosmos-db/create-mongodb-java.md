@@ -1,21 +1,19 @@
 ---
 title: Создание консольного приложения с помощью API Azure Cosmos DB для MongoDB на Java и портале Azure
 description: В этой статье представлен пример кода Java, который можно использовать для подключения и выполнения запросов c помощью API Azure Cosmos DB для MongoDB.
-services: cosmos-db
 author: rimman
 ms.service: cosmos-db
-ms.component: cosmosdb-mongo
-ms.custom: quickstart
+ms.subservice: cosmosdb-mongo
 ms.devlang: java
 ms.topic: quickstart
 ms.date: 12/26/2017
 ms.author: rimman
-ms.openlocfilehash: 6a27958a38006d8ef81fab469bbf3c9d97e90a69
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 36e07fa7d0dadd93f44e1e1ebd13d171fbd6e2a9
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53793154"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54033746"
 ---
 # <a name="build-a-web-app-using-azure-cosmos-dbs-api-for-mongodb-and-java-sdk"></a>Создание веб-приложения с помощью API Azure Cosmos DB для MongoDB и пакета SDK для Java
 
@@ -137,7 +135,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого краткого руководства вы узнали, как создать учетную запись и коллекцию Cosmos и запустить консольное приложение. Теперь дополнительные данные можно импортировать в базу данных Cosmos.
+Из этого краткого руководства вы узнали, как создать учетную запись и коллекцию Cosmos и запустить консольное приложение. Теперь вы можете импортировать дополнительные данные в базу данных Cosmos.
 
 > [!div class="nextstepaction"]
 > [Перенос данных MongoDB в Azure Cosmos DB](mongodb-migrate.md)

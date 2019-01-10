@@ -1,96 +1,105 @@
 ---
-title: 'Руководство: область и результаты обрезки изображения — Визуальный поиск Bing'
-description: Сведения об использовании пакета SDK для визуального поиска Bing с целью получения URL-адресов изображений, аналогичных области обрезки отправленного изображения.
+title: Руководство. Обрезка изображения при помощи SDK визуального поиска Bing
+description: Используйте пакет SDK визуального поиска Bing, чтобы извлекать ценные сведения из определенных областей изображения.
 services: cognitive-services
 author: mikedodaro
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-visual-search
-ms.topic: tutorial
+ms.topic: article
 ms.date: 06/20/2018
 ms.author: rosh
-ms.openlocfilehash: 27141c014c9ccdf9d62c9bde5c96bd31abfc025e
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: c3a06eef594ef3a7b2dda146ad76f648c07dc666
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52447101"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53742156"
 ---
-# <a name="tutorial-bing-visual-search-sdk-image-crop-area-and-results"></a>Руководство по выбору области обрезки для изображения в пакете SDK для визуального поиска Bing и результаты применения
-В пакет SDK для визуального поиска входит возможность выбора области изображения и поиска изображений в Интернете, аналогичных области обрезки более крупного изображения.  В этом примере указывается область обрезки, на которой показан один человек с изображения, содержащего несколько человек.  Код отправляет область обрезки и URL-адрес более крупного изображения и возвращает результаты, содержащие URL-адреса поиска Bing и URL-адреса схожих изображений, найденных в Интернете.
+# <a name="tutorial-crop-an-image-with-the-bing-visual-search-sdk-for-c"></a>Руководство. Обрезка изображения при помощи SDK визуального поиска Bing — C#
+
+Пакет SDK визуального поиска Bing позволяет обрезать изображение перед поиском похожих изображений в Интернете. Это приложение вырезает изображение человека со снимка, содержащего несколько человек, и затем возвращает результаты, содержащие похожие изображения, найденные в Интернете.
+
+Полный исходный код этого приложения с дополнительными возможностями по обработке ошибок и аннотациями можно получить на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/Tutorials/Bing-Visual-Search/BingVisualSearchCropImage.cs).
+
+Учебное приложение иллюстрирует приведенные ниже задачи.
+
+> [!div class="checklist"]
+> * Отправка запроса при помощи пакета SDK визуального поиска Bing
+> * Обрезка области изображения для поиска с помощью визуального поиска Bing
+> * Отправка запроса и обработка ответа
+> * Поиск URL-адресов действия в ответе
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Будет работать бесплатный выпуск Community Edition.)
+* Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
+* Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](http://www.mono-project.com/).
+- Установленный пакет [NuGet для пользовательского поиска](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/1.2.0). 
+    - В обозревателе решений в Visual Studio щелкните правой кнопкой мыши проект и выберите `Manage NuGet Packages` в меню. Установите пакет `Microsoft.Azure.CognitiveServices.Search.CustomSearch`. При установке пакета NuGet для пользовательского поиска также будут установлены следующие сборки:
+        - Microsoft.Rest.ClientRuntime
+        - Microsoft.Rest.ClientRuntime.Azure
+        - Newtonsoft.Json.
 
-Для выполнения действий, описанных в этом руководстве, нужно создать подписку в ценовой категории S9, как указано на странице [Цены на Cognitive Services. API-интерфейсы поиска Bing](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/search-api/). 
+[!INCLUDE [cognitive-services-bing-image-search-signup-requirements](../../../includes/cognitive-services-bing-visual-search-signup-requirements.md)]
 
-Чтобы создать подписку на портале Azure:
-1. Введите запрос BingSearchV7 в строке поиска с текстом `Search resources, services, and docs` в верхней части страницы на портале Azure.  
-2. В меню Marketplace в раскрывающемся списке выберите `Bing Search v7`.
-3. В поле `Name` (Имя) введите имя нового ресурса.
-4. Выберите подписку `Pay-As-You-Go` (Оплата по мере использования).
-5. Выберите ценовую категорию `S9`.
-6. Щелкните `Enable` (Активировать), чтобы создать подписку.
+## <a name="specify-the-image-crop-area"></a>Укажите обрезаемую область изображения.
 
-## <a name="application-dependencies"></a>Зависимости приложения
-Чтобы настроить консольное приложение с помощью пакета SDK для поиска в Интернете Bing, в Visual Studio в обозревателе решений перейдите к параметру "Управление пакетами NuGet". Добавьте пакет Microsoft.Azure.CognitiveServices.Search.VisualSearch.
-
-При установке пакета NuGet SDK для поиска в Интернете также устанавливаются зависимости, включая следующие:
-
-* Microsoft.Rest.ClientRuntime
-* Microsoft.Rest.ClientRuntime.Azure
-* Newtonsoft.Json.
-
-## <a name="image-and-crop-area"></a>Изображение и область обрезки
-На следующем изображении показана группа представителей высшего руководства корпорации Майкрософт.  Используя пакет SDK для визуального поиска, мы отправляем область обрезки изображения и находим другие изображения и веб-страницы, содержащие сущность в выделенной области более крупного изображения.  В этом случае сущностью является человек.
+Это приложение обрезает область изображения группы разработчиков Майкрософт. Область обрезки определяется с помощью координат верхнего левого и правого нижнего углов, представленных в виде процентных значений от размера всего изображения.  
 
 ![Группа представителей высшего руководства корпорации Майкрософт](./media/MS_SrLeaders.jpg)
 
-## <a name="specify-the-crop-area-as-imageinfo-in-visualsearchrequest"></a>Указание области обрезки как ImageInfo в VisualSearchRequest
-В этом примере используется область обрезки предыдущего изображения, которая указывает верхнюю левую и нижнюю правую координаты в процентах от всего изображения.  Следующий код создает объект `ImageInfo` из области обрезки и загружает объект `ImageInfo` в `VisualSearchRequest`.  Объект `ImageInfo` также содержит URL-адрес изображения в Интернете.
+Это изображение обрезается путем создания объекта `ImageInfo` из области обрезки и загрузки `ImageInfo` в `VisualSearchRequest`. Объект `ImageInfo` также содержит URL-адрес изображения.
 
-```
+```csharp
 CropArea CropArea = new CropArea(top: (float)0.01, bottom: (float)0.30, left: (float)0.01, right: (float)0.20);
 string imageURL = "https://docs.microsoft.com/azure/cognitive-services/bing-visual-search/media/ms_srleaders.jpg;
 ImageInfo imageInfo = new ImageInfo(cropArea: CropArea, url: imageURL);
 
 VisualSearchRequest visualSearchRequest = new VisualSearchRequest(imageInfo: imageInfo);
 ```
-## <a name="search-for-images-similar-to-crop-area"></a>Поиск изображений, аналогичных области обрезки
-`VisualSearchRequest` содержит сведения области обрезки об изображении и его URL-адрес.  Метод `VisualSearchMethodAsync` получает результаты.
-```
+
+## <a name="search-for-images-similar-to-the-crop-area"></a>Поиск изображений, аналогичных области обрезки
+
+Переменная `VisualSearchRequest` содержит сведения об области обрезки изображения и ее URL-адрес. Метод `VisualSearchMethodAsync()` получает результаты.
+
+```csharp
 Console.WriteLine("\r\nSending visual search request with knowledgeRequest that contains URL and crop area");
 var visualSearchResults = client.Images.VisualSearchMethodAsync(knowledgeRequest: visualSearchRequest).Result; 
 
 ```
 
 ## <a name="get-the-url-data-from-imagemoduleaction"></a>Получение данных URL-адреса из ImageModuleAction
-Результатами визуального поиска являются объекты `ImageTag`.  Каждый тег содержит список объектов `ImageAction`.  Каждый `ImageAction` содержит поле `Data`, которое представляет собой список значений, зависящих от типа действия:
 
-С помощью следующего кода можно получить различные типы:
-```
+Результатами визуального поиска Bing являются объекты `ImageTag`.  Каждый тег содержит список объектов `ImageAction`.  Каждый `ImageAction` содержит поле `Data`, которое представляет собой список значений, зависящих от типа действия.
+
+С помощью следующего кода можно печатать различные типы.
+
+```csharp
 Console.WriteLine("\r\n" + "ActionType: " + i.ActionType + " -> WebSearchUrl: " + i.WebSearchUrl);
-
 ```
+
 Готовое приложение возвращает:
 
-* ActionType: PagesIncluding WebSearchURL:
-* ActionType: MoreSizes WebSearchURL:
-* ActionType: VisualSearch WebSearchURL:
-* ActionType: ImageById WebSearchURL: 
-* ActionType: RelatedSearches  WebSearchURL:
-* ActionType: Entity -> WebSearchUrl: https://www.bing.com/cr?IG=E40D0E1A13404994ACB073504BC937A4&CID=03DCF882D7386A442137F49BD6596BEF&rd=1&h=BvvDoRtmZ35Xc_UZE4lZx6_eg7FHgcCkigU1D98NHQo&v=1&r=https%3a%2f%2fwww.bing.com%2fsearch%3fq%3dSatya%2bNadella&p=DevEx,5380.1
-* ActionType: TopicResults -> WebSearchUrl: https://www.bing.com/cr?IG=E40D0E1A13404994ACB073504BC937A4&CID=03DCF882D7386A442137F49BD6596BEF&rd=1&h=3QGtxPb3W9LemuHRxAlW4CW7XN4sPkUYCUynxAqI9zQ&v=1&r=https%3a%2f%2fwww.bing.com%2fdiscover%2fnadella%2bsatya&p=DevEx,5382.1
-* ActionType: ImageResults -> WebSearchUrl: https://www.bing.com/cr?IG=E40D0E1A13404994ACB073504BC937A4&CID=03DCF882D7386A442137F49BD6596BEF&rd=1&h=l-WNHO89Kkw69AmIGe2MhlUp6MxR6YsJszgOuM5sVLs&v=1&r=https%3a%2f%2fwww.bing.com%2fimages%2fsearch%3fq%3dSatya%2bNadella&p=DevEx,5384.1
 
-Как показано в предыдущем списке `Entity` `ActionType` содержит запрос поиска Bing, который возвращает сведения о распознаваемом человеке, месте или предмете.  Типы `TopicResults` и `ImageResults` содержат запросы для связанных изображений. URL-адреса в списке ведут на результаты поиска Bing.
+|Тип действия  |URL-адрес  | |
+|---------|---------|---------|
+|PagesIncluding WebSearchURL     |         |         
+|MoreSizes WebSearchURL     |         |         
+|VisualSearch WebSearchURL    |         |         
+|ImageById WebSearchURL     |         |         
+|RelatedSearches WebSearchURL     |         |         
+|Entity -> WebSearchUrl     | https://www.bing.com/cr?IG=E40D0E1A13404994ACB073504BC937A4&CID=03DCF882D7386A442137F49BD6596BEF&rd=1&h=BvvDoRtmZ35Xc_UZE4lZx6_eg7FHgcCkigU1D98NHQo&v=1&r=https%3a%2f%2fwww.bing.com%2fsearch%3fq%3dSatya%2bNadella&p=DevEx,5380.1        |         
+|TopicResults -> WebSearchUrl    |  https://www.bing.com/cr?IG=E40D0E1A13404994ACB073504BC937A4&CID=03DCF882D7386A442137F49BD6596BEF&rd=1&h=3QGtxPb3W9LemuHRxAlW4CW7XN4sPkUYCUynxAqI9zQ&v=1&r=https%3a%2f%2fwww.bing.com%2fdiscover%2fnadella%2bsatya&p=DevEx,5382.1        |         
+|ImageResults -> WebSearchUrl    |  https://www.bing.com/cr?IG=E40D0E1A13404994ACB073504BC937A4&CID=03DCF882D7386A442137F49BD6596BEF&rd=1&h=l-WNHO89Kkw69AmIGe2MhlUp6MxR6YsJszgOuM5sVLs&v=1&r=https%3a%2f%2fwww.bing.com%2fimages%2fsearch%3fq%3dSatya%2bNadella&p=DevEx,5384.1        |         
+
+Как показано выше, тип действия `Entity` содержит запрос поиска Bing, который возвращает сведения о распознаваемом человеке, месте или предмете.  Типы `TopicResults` и `ImageResults` содержат запросы для связанных изображений. URL-адреса в списке ведут на результаты поиска Bing.
 
 
-## <a name="pagesincluding-actiontype-urls-of-images-found-by-visual-search"></a>URL-адреса ActionType PagesIncluding изображений, обнаруженных визуальным поиском
+## <a name="get-urls-for-pagesincluding-actiontype-images"></a>Получение URL-адресов для изображений PagesIncluding ActionType
 
 Для получения URL-адресов фактических изображений требуется приведение к типу, который считывает `ActionType` как `ImageModuleAction`, содержащий элемент `Data` со списком значений.  Каждое значение является URL-адресом изображения.  Далее показано приведение типа действия `PagesIncluding` к `ImageModuleAction` и считывание значений.
-```
+
+```csharp
     if (i.ActionType == "PagesIncluding")
     {
         foreach(ImageObject o in (i as ImageModuleAction).Data.Value)
@@ -100,94 +109,8 @@ Console.WriteLine("\r\n" + "ActionType: " + i.ActionType + " -> WebSearchUrl: " 
     }
 ```
 
-## <a name="complete-code"></a>Полный код
-
-Далее приводится код для выполнения предыдущих примеров. Он отправляет двоичный файл изображения в тексте запроса POST вместе с объектом cropArea и выводит URL-адреса Bing для каждого типа действия. Если тип действия — PagesIncluding, код получает элементы ImageObject в ImageObject Data.  Data содержит список значений, которые являются URL-адресами изображений на веб-страницах.  Скопируйте и вставьте полученные URL-адреса визуального поиска в браузер, чтобы показать результаты. Скопируйте и вставьте элементы ContentUrl в браузер, чтобы показать изображения.
-
-```
-using System;
-using System.IO;
-using System.Linq;
-using Microsoft.Azure.CognitiveServices.Search.VisualSearch;
-using Microsoft.Azure.CognitiveServices.Search.VisualSearch.Models;
-using Microsoft.Azure.CognitiveServices.Search.ImageSearch;
-
-namespace VisualSearchFeatures
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            String subscriptionKey = "YOUR-ACCESS-KEY";
-
-            VisualSearchImageBinaryWithCropArea(subscriptionKey);
-
-            Console.WriteLine("Any key to quit...");
-            Console.ReadKey();
-
-        }
-
-        public static void VisualSearchImageBinaryWithCropArea(string subscriptionKey)
-        {
-            var client = new VisualSearchAPI(new Microsoft.Azure.CognitiveServices.Search.VisualSearch.ApiKeyServiceClientCredentials(subscriptionKey));
-
-            try
-            {
-                CropArea CropArea = new CropArea(top: (float)0.01, bottom: (float)0.30, left: (float)0.01, right: (float)0.20);
-                
-                // The ImageInfo struct specifies the crop area in the image and the URL of the larger image. 
-                string imageURL = "https://docs.microsoft.com/azure/cognitive-services/bing-visual-search/media/ms_srleaders.jpg";
-                ImageInfo imageInfo = new ImageInfo(cropArea: CropArea, url: imageURL);
-                
-                VisualSearchRequest visualSearchRequest = new VisualSearchRequest(imageInfo: imageInfo);
-
-                var visualSearchResults = client.Images.VisualSearchMethodAsync(knowledgeRequest: visualSearchRequest).Result; 
-
-                Console.WriteLine("\r\nVisual search request with image from URL and crop area combined in knowledgeRequest");
-
-                if (visualSearchResults == null)
-                {
-                    Console.WriteLine("No visual search result data.");
-                }
-                else
-                {
-                    // List of tags
-                    if (visualSearchResults.Tags.Count > 0)
-                    {
-
-                        foreach(ImageTag t in visualSearchResults.Tags)
-                        {
-                            foreach (ImageAction i in t.Actions)
-                            { 
-                                Console.WriteLine("\r\n" + "ActionType: " + i.ActionType + " -> WebSearchUrl: " + i.WebSearchUrl);
-
-                                if (i.ActionType == "PagesIncluding")
-                                {
-                                    foreach(ImageObject o in (i as ImageModuleAction).Data.Value)
-                                    {
-                                        Console.WriteLine("ContentURL: " + o.ContentUrl);
-                                    }
-                                }
-                            }
-
-                        }
-
-                    }
-                    else
-                    {
-                        Console.WriteLine("Couldn't find image tags!");
-                    }
-                }
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine("Encountered exception. " + ex.Message);
-            }
-        }
-    }
-}
-
-```
 ## <a name="next-steps"></a>Дополнительная информация
+> [!div class="nextstepaction"]
+> [Создание одностраничного веб-приложения](tutorial-bing-visual-search-single-page-app.md).
+
 [Ответ визуального поиска](https://docs.microsoft.com/azure/cognitive-services/bing-visual-search/overview#the-response)

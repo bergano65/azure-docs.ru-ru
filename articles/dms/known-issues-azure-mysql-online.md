@@ -4,19 +4,19 @@ description: Узнайте об известных проблемах и огр
 services: database-migration
 author: HJToland3
 ms.author: scphang
-manager: ''
-ms.reviewer: ''
-ms.service: database-migration
+manager: craigg
+ms.reviewer: douglasl
+ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 10/09/2018
-ms.openlocfilehash: 6e82c10d8e9109279045095c1b856520245a5a6f
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: ebe2af858aafaff62a7e3b629c0a8c84bbf49584
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48884516"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53721654"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-db-for-mysql"></a>Известные проблемы и ограничения при сетевых миграциях в Базу данных Azure для MySQL
 
@@ -75,12 +75,12 @@ ms.locfileid: "48884516"
 
     **Возможное решение**: замените первичный ключ другими типами данных или столбцами, которые не относятся к LOB.
 
-- **Ограничение**: данные могут быть усечены на целевом объекте, если длина столбца больших объектов (LOB) превышает 32 КБ. Вы можете проверить длину столбца LOB с помощью этого запроса:
+- **Ограничение**: данные могут быть усечены в целевом объекте, если длина столбца больших объектов (LOB) превышает 32 КБ. Вы можете проверить длину столбца LOB с помощью этого запроса:
     ```
     SELECT max(length(description)) as LEN from catalog;
     ```
 
-    **Возможное решение**: если у вас есть объект LOB, размер которого превышает 32 КБ, обратитесь в техническую службу по адресу [dmsfeedback@microsoft.com](mailto:dmsfeedback@microsoft.com). 
+    **Возможное решение**: если у вас есть объект LOB, размер которого превышает 32 КБ, обратитесь в техническую службу по адресу [dmsfeedback@microsoft.com](mailto:dmsfeedback@microsoft.com). 
 
 ## <a name="other-limitations"></a>Другие ограничения
 - Строка пароля, которая в начале и конце содержит открывающие и закрывающие фигурные скобки {  }, не поддерживается. Это ограничение применяется при подключении как к исходной базе данных MySQL, так и к целевой базе данных Azure для MySQL.

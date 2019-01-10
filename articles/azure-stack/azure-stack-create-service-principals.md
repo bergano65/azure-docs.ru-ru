@@ -1,24 +1,23 @@
 ---
-title: Создание субъекта-службы для Azure Stack | Документация Майкрософт
-description: Описывается создание субъекта-службы, который можно использовать в Azure Resource Manager в сочетании с контролем доступа на основе ролей для управления доступом к ресурсам.
+title: Управление субъектом-службой для Azure Stack | Документация Майкрософт
+description: Описывается управление новым субъектом-службой, который можно использовать в Azure Resource Manager в сочетании с контролем доступа на основе ролей для управления доступом к ресурсам.
 services: azure-resource-manager
 documentationcenter: na
 author: sethmanheim
 manager: femila
-ms.assetid: 7068617b-ac5e-47b3-a1de-a18c918297b6
 ms.service: azure-resource-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/26/2018
+ms.date: 12/18/2018
 ms.author: sethm
-ms.openlocfilehash: a6d8ef698c005429c1184b5565b1a9387d05e062
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 50ece9edbc4bee1dea2cc61f2cdd851b278aa7b0
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230120"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53720447"
 ---
 # <a name="provide-applications-access-to-azure-stack"></a>Предоставление приложениям доступа к Azure Stack
 
@@ -30,28 +29,35 @@ ms.locfileid: "50230120"
 
 Субъекты-службы предпочтительнее использовать для запуска приложения с вашими учетными данными по следующим причинам:
 
-* Для субъекта-службы можно назначить разрешения, которые отличаются от ваших разрешений учетной записи. Как правило, приложение получает именно те разрешения, которые требуются для его работы.
-* Не требуется изменять учетные данные приложения в случае изменения ваших обязанностей.
-* Можно использовать сертификат, чтобы автоматизировать аутентификацию при выполнении автоматического сценария.  
+ - Для субъекта-службы можно назначить разрешения, которые отличаются от ваших разрешений учетной записи. Как правило, приложение получает именно те разрешения, которые требуются для его работы.
+ - Не требуется изменять учетные данные приложения в случае изменения ваших обязанностей.
+ - Можно использовать сертификат, чтобы автоматизировать аутентификацию при выполнении автоматического сценария.  
 
 ## <a name="getting-started"></a>Приступая к работе
 
-Прежде всего нужно создать субъект-службу. Процесс будет разным в зависимости от способа развертывания Azure Stack. В этом документе описывается создание субъекта-службы для [Azure Active Directory (Azure AD)](#create-service-principal-for-azure-ad) и [службы федерации Active Directory (AD FS)](#create-service-principal-for-ad-fs). Создав субъект-службу, вы [делегируете разрешения](#assign-role-to-service-principal) для этой роли, используя единый процесс для AD FS и Azure AD.     
+Прежде всего нужно создать субъект-службу. Процесс будет разным в зависимости от способа развертывания Azure Stack. В этом документе описывается создание субъекта-службы для
 
-## <a name="create-service-principal-for-azure-ad"></a>Создание субъекта-службы для Azure AD
+- [Azure Active Directory (Azure AD).](#create-service-principal-for-azure-ad) Azure AD — это мультитенантный облачный каталог и служба управления удостоверениями. Azure AD можно использовать с подключенной инфраструктурой Azure Stack.
+- [Служба федерации Active Directory (AD FS)](#create-service-principal-for-ad-fs). В AD FS представлены возможности упрощенной безопасной федерации удостоверений и единого входа. AD FS можно использовать с подключенными и отключенными экземплярами Azure Stack.
 
-Если Azure Stack развернут с использованием Azure AD в качестве хранилища идентификаторов, создание субъекта-службы выполняется точно так же, как для Azure. В этом разделе описан процесс с использованием портала. Прежде чем начать, проверьте [необходимые разрешения Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
+Создав субъект-службу, вы [делегируете разрешения](#assign-role-to-service-principal) для этой роли, используя единый процесс для AD FS и Azure AD.
+
+## <a name="manage-service-principal-for-azure-ad"></a>Управление субъектом-службой для Azure AD
+
+Если вы развернули Azure Stack с помощью Azure Active Directory (Azure AD) как службу управления удостоверениями, субъекты-службы можно создать так же, как в Azure. В этом разделе описан процесс с использованием портала. Прежде чем начать, проверьте [необходимые разрешения Azure AD](../active-directory/develop/howto-create-service-principal-portal.md#required-permissions).
 
 ### <a name="create-service-principal"></a>Создание субъекта-службы
+
 В этом разделе вы создадите в Azure AD приложение (субъект-службу), которое будет представлять ваше приложение.
 
 1. Войдите в учетную запись Azure через [портал Azure](https://portal.azure.com).
-2. Последовательно выберите элементы **Azure Active Directory** > **Регистрация приложений** > **Регистрация нового приложения**.   
+2. Последовательно выберите элементы **Azure Active Directory** > **Регистрация приложений** > **Регистрация нового приложения**.
 3. Укажите имя и URL-адрес для приложения. Выберите тип создаваемого приложения: **веб-приложение или API** или **собственное приложение**. Выбрав нужные значения, нажмите кнопку **Создать**.
 
 Субъект-служба для приложения создан.
 
 ### <a name="get-credentials"></a>Получение учетных данных
+
 Если вход выполняется программными средствами, вам потребуются идентификатор приложения и ключ аутентификации для веб-приложения или API. Получить эти значения можно следующим образом.
 
 1. В Active Directory в разделе **регистрации приложений** выберите нужное приложение.
@@ -67,27 +73,45 @@ ms.locfileid: "50230120"
 
 ![сохраненный ключ](./media/azure-stack-create-service-principal/image15.png)
 
-После этого [назначьте приложению роль](#assign-role-to-service-principal).
+После завершения можно [назначить роль приложению](#assign-role-to-service-principal).
 
-## <a name="create-service-principal-for-ad-fs"></a>Создание субъекта-службы для AD FS
-Когда вы развернете Azure Stack с использованием AD FS, для создания субъекта-службы, назначения роли для доступа и входа с этим идентификатором можно использовать PowerShell.
+## <a name="manage-service-principal-for-ad-fs"></a>Управление субъектом-службой для AD FS
 
-Этот скрипт выполняется из привилегированной конечной точки на виртуальной машине ERCS.
+Если вы развернули Azure Stack с помощью служб федерации Active Directory (AD FS) как службу управления удостоверениями, используйте PowerShell для создания субъекта-службы, назначения роли для доступа и входа с помощью этого удостоверения.
 
-Требования:
-- Требуется сертификат.
+Создать субъект-службу с помощью AD FS можно одним из двух способов. Вы можете:
+ - [создать субъект-службу с помощью сертификата](azure-stack-create-service-principals.md#create-a-service-principal-using-a-certificate);
+ - [создать субъект-службу с помощью секрета клиента](azure-stack-create-service-principals.md#create-a-service-principal-using-a-client-secret).
 
-Требования к сертификатам:
+Задачи для управления субъектами-службами AD FS
+
+| type | Действие |
+| --- | --- |
+| Сертификат AD FS | [Создание](azure-stack-create-service-principals.md#create-a-service-principal-using-a-certificate) |
+| Сертификат AD FS | [Обновление](azure-stack-create-service-principals.md#update-certificate-for-service-principal-for-AD-FS). |
+| Сертификат AD FS | [Remove](azure-stack-create-service-principals.md#remove-a-service-principal-for-AD-FS) |
+| Секрет клиента AD FS | [Создание](azure-stack-create-service-principals.md#create-a-service-principal-using-a-client-secret) |
+| Секрет клиента AD FS | [Обновление](azure-stack-create-service-principals.md#create-a-service-principal-using-a-client-secret). |
+| Секрет клиента AD FS | [Remove](azure-stack-create-service-principals.md##remove-a-service-principal-for-AD-FS) |
+
+### <a name="create-a-service-principal-using-a-certificate"></a>Создание субъекта-службы с помощью сертификата
+
+При создании субъекта-службы с использованием AD FS для удостоверений можно применить сертификат.
+
+#### <a name="certificate"></a>Сертификат
+
+Требуется сертификат.
+
+**Требования к сертификатам**
+
  - Поставщик служб шифрования (CSP) должен быть поставщиком ключей.
  - Сертификат должен быть PFX-файлом, так как и открытый, и закрытый ключи являются обязательными. Серверы Windows используют PFX-файлы, содержащие файлы открытого ключа (файл SSL-сертификата) и связанные файлы закрытого ключа.
- - Сертификаты должны быть выданы внутренним или общедоступным центром сертификации. Используя общедоступный центр сертификации, необходимо включить центр в базовый образ операционной системы как часть программы "Доверенный корневой центр сертификации Майкрософт". Вы можете ознакомиться с полным списком здесь: [Microsoft Trusted Root Certificate Program: Participants](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca) (Список участников программы доверенных корневых центров сертификации Майкрософт).
+ - Сертификаты должны быть выданы внутренним или общедоступным центром сертификации. Используя общедоступный центр сертификации, необходимо включить центр в базовый образ операционной системы как часть программы "Доверенный корневой центр сертификации Майкрософт". Вы можете ознакомиться с полным списком здесь: [Microsoft Trusted Root Certificate Program: Participants](https://gallery.technet.microsoft.com/Trusted-Root-Certificate-123665ca).
  - У инфраструктуры Azure Stack должен быть сетевой доступ к расположению списка отзыва сертификатов (CRL) центра сертификации, опубликованного в сертификате. Этот список отзыва сертификатов должен быть конечной точкой HTTP.
-
 
 #### <a name="parameters"></a>Параметры
 
 Необходимо указать следующие сведения в качестве входных для параметров службы автоматизации:
-
 
 |Параметр|ОПИСАНИЕ|Пример|
 |---------|---------|---------|
@@ -95,12 +119,9 @@ ms.locfileid: "50230120"
 |ClientCertificates|Массив объектов сертификата|Сертификат X509|
 |ClientRedirectUris<br>(необязательный параметр)|URI перенаправления приложения|-|
 
-#### <a name="example"></a>Пример
+#### <a name="use-powershell-to-create-a-service-principal"></a>Использование PowerShell для создания субъекта-службы
 
-1. Откройте сеанс Windows PowerShell с повышенными правами и выполните следующие команды.
-
-   > [!NOTE]
-   > Этот пример создает самозаверяющий сертификат. При выполнении этих команд в рабочей среде используйте команду [Get-Item](/powershell/module/Microsoft.PowerShell.Management/Get-Item), чтобы получить объект сертификата для сертификата, который вы хотите использовать.
+1. Откройте сеанс Windows PowerShell с повышенными правами и выполните следующие командлеты.
 
    ```PowerShell  
     # Credential for accessing the ERCS PrivilegedEndpoint, typically domain\cloudadmin
@@ -109,9 +130,11 @@ ms.locfileid: "50230120"
     # Creating a PSSession to the ERCS PrivilegedEndpoint
     $session = New-PSSession -ComputerName <ERCS IP> -ConfigurationName PrivilegedEndpoint -Credential $creds
 
-    # This produces a self signed cert for testing purposes. It is preferred to use a managed certificate for this.
-    $cert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -Subject "CN=<yourappname>" -KeySpec KeyExchange
-
+    # If you have a managed certificate use the Get-Item command to retrieve your certificate from your certificate location.
+    # If you don't want to use a managed certificate, you can produce a self signed cert for testing purposes: 
+    # $cert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -Subject "CN=<yourappname>" -KeySpec KeyExchange
+    $cert = Get-Item "<yourcertificatelocation>"
+    
     $ServicePrincipal = Invoke-Command -Session $session -ScriptBlock { New-GraphApplication -Name '<yourappname>' -ClientCertificates $using:cert}
     $AzureStackInfo = Invoke-Command -Session $session -ScriptBlock { get-azurestackstampinformation }
     $session|remove-pssession
@@ -146,8 +169,15 @@ ms.locfileid: "50230120"
     $ServicePrincipal
 
    ```
+   > [!Note]  
+   > В целях проверки можно создать самозаверяющий сертификат на основе приведенного ниже примера.
 
-2. Когда работа службы автоматизации завершится, будут отображены необходимые сведения для использования имени субъекта-службы. 
+   ```PowerShell  
+   $cert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -Subject "CN=<yourappname>" -KeySpec KeyExchange
+   ```
+
+
+2. Когда работа службы автоматизации завершится, будут отображены необходимые сведения для использования имени субъекта-службы. Рекомендуется сохранить выходные данные для последующего использования.
 
    Например: 
 
@@ -160,21 +190,176 @@ ms.locfileid: "50230120"
    RunspaceId            : a78c76bb-8cae-4db4-a45a-c1420613e01b
    ```
 
-### <a name="assign-a-role"></a>Назначение роли
-Созданному субъекту-службе необходимо [назначить роль](#assign-role-to-service-principal).
+### <a name="update-certificate-for-service-principal-for-ad-fs"></a>Обновление сертификата для субъекта-службы для AD FS
 
-### <a name="sign-in-through-powershell"></a>Вход с помощью PowerShell
-Назначив нужную роль, вы сможете войти в Azure Stack с помощью следующей команды, используя созданный субъект-службу:
+Если вы развернули Azure Stack с помощью AD FS, обновите секрет субъекта-службы с помощью PowerShell.
 
-```powershell
-Add-AzureRmAccount -EnvironmentName "<AzureStackEnvironmentName>" `
- -ServicePrincipal `
- -CertificateThumbprint $servicePrincipal.Thumbprint `
- -ApplicationId $servicePrincipal.ClientId ` 
- -TenantId $directoryTenantId
+Этот скрипт выполняется из привилегированной конечной точки на виртуальной машине ERCS.
+
+#### <a name="parameters"></a>Параметры
+
+Необходимо указать следующие сведения в качестве входных для параметров службы автоматизации:
+
+|Параметр|ОПИСАНИЕ|Пример|
+|---------|---------|---------|
+|ИМЯ|Имя учетной записи имени субъекта-службы|MyAPP|
+|ApplicationIdentifier|Уникальный идентификатор|S-1-5-21-1634563105-1224503876-2692824315-2119|
+|ClientCertificate|Массив объектов сертификата|Сертификат X509|
+
+#### <a name="example-of-updating-service-principal-for-ad-fs"></a>Пример обновления субъекта-службы для AD FS
+
+В этом примере показано создание самозаверяющего сертификата. При выполнении этих командлетов в рабочей среде используйте команду [Get-Item](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-Item), чтобы получить объект сертификата для сертификата, который вы хотите использовать.
+
+1. Откройте сеанс Windows PowerShell с повышенными правами и выполните следующие командлеты.
+
+     ```powershell
+          # Creating a PSSession to the ERCS PrivilegedEndpoint
+          $session = New-PSSession -ComputerName <ERCS IP> -ConfigurationName PrivilegedEndpoint -Credential $creds
+
+          # This produces a self signed cert for testing purposes. It is preferred to use a managed certificate for this.
+          $Newcert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -Subject "CN=<yourappname>" -KeySpec KeyExchange
+
+          $RemoveServicePrincipal = Invoke-Command -Session $session -ScriptBlock {Set-GraphApplication -ApplicationIdentifier  S-1-5-21-1634563105-1224503876-2692824315-2120 -ClientCertificates $Newcert}
+
+          $session|remove-pssession
+     ```
+
+2. Когда работа службы автоматизации завершится, будет отображено обновленное значение эскиза, необходимое для проверки подлинности SPN.
+
+     ```Shell  
+          ClientId              : 
+          Thumbprint            : AF22EE716909041055A01FE6C6F5C5CDE78948E9
+          ApplicationName       : Azurestack-ThomasAPP-3e5dc4d2-d286-481c-89ba-57aa290a4818
+          ClientSecret          : 
+          RunspaceId            : a580f894-8f9b-40ee-aa10-77d4d142b4e5
+     ```
+
+### <a name="create-a-service-principal-using-a-client-secret"></a>Создание субъекта-службы с помощью секрета клиента
+
+При создании субъекта-службы с использованием AD FS для удостоверений можно применить сертификат. Для выполнения командлетов будет использоваться привилегированная конечная точка.
+
+Эти скрипты выполняются из привилегированной конечной точки на виртуальной машине ERCS. Дополнительные сведения о привилегированной конечной точке см. в статье [Использование привилегированной конечной точки в Azure Stack](https://docs.microsoft.com/azure/azure-stack/azure-stack-privileged-endpoint).
+
+#### <a name="parameters"></a>Параметры
+
+Необходимо указать следующие сведения в качестве входных для параметров службы автоматизации:
+
+| Параметр | ОПИСАНИЕ | Пример |
+|----------------------|--------------------------|---------|
+| ИМЯ | Имя учетной записи имени субъекта-службы | MyAPP |
+| GenerateClientSecret | Создание секрета |  |
+
+#### <a name="use-the-ercs-privilegedendpoint-to-create-the-service-principal"></a>Использование привилегированной конечной точки ERCS для создания субъекта-службы
+
+1. Откройте сеанс Windows PowerShell с повышенными правами и выполните следующие командлеты.
+
+     ```PowerShell  
+      # Credential for accessing the ERCS PrivilegedEndpoint, typically domain\cloudadmin
+     $creds = Get-Credential
+
+     # Creating a PSSession to the ERCS PrivilegedEndpoint
+     $session = New-PSSession -ComputerName <ERCS IP> -ConfigurationName PrivilegedEndpoint -Credential $creds
+
+     # Creating a SPN with a secre
+     $ServicePrincipal = Invoke-Command -Session $session -ScriptBlock { New-GraphApplication -Name '<yourappname>' -GenerateClientSecret}
+     $AzureStackInfo = Invoke-Command -Session $session -ScriptBlock { get-azurestackstampinformation }
+     $session|remove-pssession
+
+     # Output the SPN details
+     $ServicePrincipal
+     ```
+
+2. После выполнения командлетов в оболочке будут отображены необходимые сведения для использования имени субъекта-службы. Сохраните секрет клиента.
+
+     ```PowerShell  
+     ApplicationIdentifier : S-1-5-21-1634563105-1224503876-2692824315-2623
+     ClientId              : 8e0ffd12-26c8-4178-a74b-f26bd28db601
+     Thumbprint            : 
+     ApplicationName       : Azurestack-YourApp-6967581b-497e-4f5a-87b5-0c8d01a9f146
+     ClientSecret          : 6RUZLRoBw3EebMDgaWGiowCkoko5_j_ujIPjA8dS
+     PSComputerName        : 192.168.200.224
+     RunspaceId            : 286daaa1-c9a6-4176-a1a8-03f543f90998
+     ```
+
+#### <a name="update-client-secret-for-a-service-principal-for-ad-fs"></a>Обновление секрета клиента для субъекта-службы для AD FS
+
+Новый секрет клиента создается автоматически с помощью командлета PowerShell.
+
+Этот скрипт выполняется из привилегированной конечной точки на виртуальной машине ERCS.
+
+##### <a name="parameters"></a>Параметры
+
+Необходимо указать следующие сведения в качестве входных для параметров службы автоматизации:
+
+| Параметр | ОПИСАНИЕ | Пример |
+|-----------------------|-----------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| ApplicationIdentifier | Уникальный идентификатор. | S-1-5-21-1634563105-1224503876-2692824315-2119 |
+| ChangeClientSecret | Изменяет секрет клиента с периодом смены в 2880 минут, где старый секрет все еще является допустимым. |  |
+| ResetClientSecret | Немедленно изменяет секрет клиента |  |
+
+##### <a name="example-of-updating-a-client-secret-for-ad-fs"></a>Пример обновления секрета клиента для AD FS
+
+В примере используется параметр **resetclientsecret**, который немедленно изменяет секрет клиента.
+
+1. Откройте сеанс Windows PowerShell с повышенными правами и выполните следующие командлеты.
+
+     ```PowerShell  
+          # Creating a PSSession to the ERCS PrivilegedEndpoint
+          $session = New-PSSession -ComputerName <ERCS IP> -ConfigurationName PrivilegedEndpoint -Credential $creds
+
+          # This produces a self signed cert for testing purposes. It is preferred to use a managed certificate for this.
+          $Newcert = New-SelfSignedCertificate -CertStoreLocation "cert:\CurrentUser\My" -Subject "CN=<yourappname>" -KeySpec KeyExchange
+
+          $UpdateServicePrincipal = Invoke-Command -Session $session -ScriptBlock {Set-GraphApplication -ApplicationIdentifier  S-1-5-21-1634563105-1224503876-2692824315-2120 -ResetClientSecret}
+
+          $session|remove-pssession
+     ```
+
+2. Когда работа службы автоматизации завершится, будет отображен созданный секрет, необходимый для проверки подлинности SPN. Сохраните новый секрет клиента.
+
+     ```PowerShell  
+          ApplicationIdentifier : S-1-5-21-1634563105-1224503876-2692824315-2120
+          ClientId              :  
+          Thumbprint            : 
+          ApplicationName       : Azurestack-Yourapp-6967581b-497e-4f5a-87b5-0c8d01a9f146
+          ClientSecret          : MKUNzeL6PwmlhWdHB59c25WDDZlJ1A6IWzwgv_Kn
+          RunspaceId            : 6ed9f903-f1be-44e3-9fef-e7e0e3f48564
+     ```
+
+### <a name="remove-a-service-principal-for-ad-fs"></a>Удаление субъекта-службы для AD FS
+
+Если вы развернули Azure Stack с помощью AD FS, удалите субъект-службу с помощью PowerShell.
+
+Этот скрипт выполняется из привилегированной конечной точки на виртуальной машине ERCS.
+
+#### <a name="parameters"></a>Параметры
+
+Необходимо указать следующие сведения в качестве входных для параметров службы автоматизации:
+
+|Параметр|ОПИСАНИЕ|Пример|
+|---------|---------|---------|
+| Параметр | ОПИСАНИЕ | Пример |
+| ApplicationIdentifier | Уникальный идентификатор | S-1-5-21-1634563105-1224503876-2692824315-2119 |
+
+> [!Note]  
+> Просмотреть список всех имеющихся субъектов-служб и их идентификаторов приложений можно с помощью команды get-graphapplication.
+
+#### <a name="example-of-removing-the-service-principal-for-ad-fs"></a>Пример удаления субъекта-службы для AD FS
+
+```powershell  
+     Credential for accessing the ERCS PrivilegedEndpoint, typically domain\cloudadmin
+     $creds = Get-Credential
+
+     # Creating a PSSession to the ERCS PrivilegedEndpoint
+     $session = New-PSSession -ComputerName <ERCS IP> -ConfigurationName PrivilegedEndpoint -Credential $creds
+
+     $UpdateServicePrincipal = Invoke-Command -Session $session -ScriptBlock { Remove-GraphApplication -ApplicationIdentifier S-1-5-21-1634563105-1224503876-2692824315-2119}
+
+     $session|remove-pssession
 ```
 
-## <a name="assign-role-to-service-principal"></a>Назначение роли субъекту-службе
+## <a name="assign-a-role"></a>Назначение роли
+
 Чтобы обеспечить доступ к ресурсам в подписке, необходимо назначить приложению роль. Укажите, какая роль предоставит приложению необходимые разрешения. Дополнительные сведения о доступных ролях см. в статье [RBAC: встроенные роли](../role-based-access-control/built-in-roles.md).
 
 Вы можете задать область действия на уровне подписки, группы ресурсов или ресурса. Разрешения наследуют более низкие уровни области действия. Например, добавление приложения в роль читателя для группы ресурсов означает, что оно может считывать группу ресурсов и все содержащиеся в ней ресурсы.
@@ -189,7 +374,7 @@ Add-AzureRmAccount -EnvironmentName "<AzureStackEnvironmentName>" `
 
      ![выбрать доступ](./media/azure-stack-create-service-principal/image17.png)
 
-4. Выберите **Добавить**.
+4. Выберите **Добавить назначение ролей**.
 
 5. Выберите роль, которая будет назначена приложению.
 
@@ -201,5 +386,7 @@ Add-AzureRmAccount -EnvironmentName "<AzureStackEnvironmentName>" `
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-См. сведения о [добавлении пользователей для служб федерации Active Directory](azure-stack-add-users-adfs.md) и 
-[управлении разрешениями пользователей](azure-stack-manage-permissions.md).
+[Добавление пользователей для AD FS](azure-stack-add-users-adfs.md)  
+[Управление разрешениями пользователей](azure-stack-manage-permissions.md)  
+[Документация по Azure Active Directory](https://docs.microsoft.com/azure/active-directory)  
+[Active Directory Federation Services](https://docs.microsoft.com/windows-server/identity/active-directory-federation-services) (Службы федерации Active Directory)

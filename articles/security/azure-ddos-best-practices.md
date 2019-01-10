@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/06/2018
 ms.author: barclayn
-ms.openlocfilehash: 37748aaa7f34a51d24091ee04608496ebd45fa90
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 4496a0fd3ec220d03c4cc279876234b503b0dbb6
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51231640"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53720872"
 ---
-# <a name="azure-ddos-protection-best-practices-and-reference-architectures"></a>Защита от атак DDoS Azure. Рекомендации и эталонные образцы архитектуры
+# <a name="azure-ddos-protection-best-practices-and-reference-architectures"></a>Защита от атак DDoS Azure: рекомендации и эталонная архитектура
 
 Эта статья предназначена для ответственных за принятие решений в сфере ИТ, а также для сотрудников служб безопасности. Предполагается, что вы уже ознакомлены с Azure, сетью и безопасностью.
 
@@ -81,7 +81,7 @@ Azure предоставляет постоянную защиту от атак
 
 Масштабируемость — это способность системы успешно обрабатывать повышенную нагрузку. Необходимо проектировать свои приложения таким образом, чтобы они могли выполнять [горизонтальное масштабирование](https://docs.microsoft.com/azure/architecture/guide/design-principles/scale-out) для удовлетворения запроса на усиленную нагрузку, особенно в случае атаки DDoS. Если приложение зависит от одного экземпляра службы, создается единая точка отказа. Подготовка нескольких экземпляров улучшает как отказоустойчивость, так и масштабируемость системы.
 
-Для [службы приложений Azure](../app-service/app-service-value-prop-what-is.md) выберите [план служб приложений](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md), где есть несколько экземпляров. Для облачных служб Azure настройте каждую роль для применения [нескольких экземпляров](../cloud-services/cloud-services-choose-me.md). Для [виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-about/?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) убедитесь, что архитектура виртуальных машин содержит несколько виртуальных машин, а также что каждая виртуальная машина входит в [группу доступности](../virtual-machines/virtual-machines-windows-manage-availability.md). Мы рекомендуем использовать [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md), чтобы получить возможности автомасштабирования.
+Для [службы приложений Azure](../app-service/app-service-value-prop-what-is.md) выберите [план служб приложений](../app-service/overview-hosting-plans.md), где есть несколько экземпляров. Для облачных служб Azure настройте каждую роль для применения [нескольких экземпляров](../cloud-services/cloud-services-choose-me.md). Для [виртуальных машин Azure](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-about/?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) убедитесь, что архитектура виртуальных машин содержит несколько виртуальных машин, а также что каждая виртуальная машина входит в [группу доступности](../virtual-machines/virtual-machines-windows-manage-availability.md). Мы рекомендуем использовать [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md), чтобы получить возможности автомасштабирования.
 
 ### <a name="defense-in-depth"></a>Глубинная защита
 
@@ -96,7 +96,7 @@ Azure предоставляет постоянную защиту от атак
 
 ## <a name="azure-offerings-for-ddos-protection"></a>Предложения Azure для защиты от атак DDoS
 
-Azure предлагает два вида услуг DDoS, которые обеспечивают защиту от сетевых атак (уровня 3 и 4): защита от атак DDoS уровня "Базовый" и "Стандартный". 
+В Azure есть два предложения служб, предоставляющих защиту от сетевых атак DDoS (уровни 3 и 4): защита от атак DDoS уровня "Базовый" и защита от атак DDoS уровня "Стандартный". 
 
 ### <a name="ddos-protection-basic"></a>Защита от атак DDoS уровня "Базовый"
 

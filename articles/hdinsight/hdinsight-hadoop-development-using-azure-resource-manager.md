@@ -9,25 +9,23 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/21/2018
 ms.author: hrasheed
-ms.openlocfilehash: 7722076c3b0031da8580dd88efdc0b575fd5a3be
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 33bb3186493b2ea2a0d676f250282574b27f7988
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52875575"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53718529"
 ---
 # <a name="migrating-to-azure-resource-manager-based-development-tools-for-hdinsight-clusters"></a>Переход к средствам разработки на основе Azure Resource Manager для кластеров HDInsight
 
 Средства для HDInsight на основе диспетчера служб Azure (ASM) устарели. Если для работы с кластерами HDInsight вы используете Azure PowerShell, классический Azure CLI или пакет SDK для HDInsight .NET, рекомендуем перейти на версии PowerShell, CLI и пакета SDK для .NET на основе Azure Resource Manager. В этой статье рассказывается, как перейти на средства, основанные на Azure Resource Manager. В этом документе везде, где это применимо, подчеркиваются различия между подходами ASM и Resource Manager для HDInsight.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Поддержка PowerShell, интерфейса командной строки и пакета SDK для .NET на основе ASM будет прекращена **1 января 2017 года**.
-> 
-> 
 
 ## <a name="migrating-azure-classic-cli-to-azure-resource-manager"></a>Переход с классического Azure CLI на Azure Resource Manager
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Azure CLI не обеспечивает поддержку работы с кластерами HDInsight. Хотя классический Azure CLI устарел, его все еще можно использовать для HDInsight.
 
 Ниже приведены основные команды для работы с HDInsight посредством классического Azure CLI:
@@ -51,11 +49,11 @@ ms.locfileid: "52875575"
 ### <a name="deprecated-commands"></a>Устаревшие команды
 При использовании команд `azure hdinsight job` для отправки заданий в кластер HDInsight эти команды недоступны в списке команд диспетчера ресурсов. Если задания из сценариев необходимо отправлять в HDInsight программными средствами, используйте API REST, предоставляемый в HDInsight. Дополнительные сведения об отправке заданий с использованием API REST см. в следующих документах:
 
-* [Запуск заданий MapReduce в среде Apache Hadoop, размещенной в HDInsight, с помощью REST](hadoop/apache-hadoop-use-mapreduce-curl.md)
+* [Выполнение заданий MapReduce с помощью cURL с использованием Hadoop в HDInsight](hadoop/apache-hadoop-use-mapreduce-curl.md)
 * [Выполнение запросов Hive в Apache Hadoop в HDInsight с использованием REST](hadoop/apache-hadoop-use-hive-curl.md)
 * [Выполнение заданий Pig с помощью REST с использованием Apache Hadoop в HDInsight](hadoop/apache-hadoop-use-pig-curl.md)
 
-Сведения о других методах интерактивного выполнения Apache Hadoop MapReduce, Apache Hive и Apache Pig см. в статьях [Использование MapReduce в Apache Hadoop в HDInsight](hadoop/hdinsight-use-mapreduce.md), [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md) и [Использование Apache Pig с Apache Hadoop в HDInsight](hadoop/hdinsight-use-pig.md).
+Сведения о других методах интерактивного выполнения Apache Hadoop MapReduce, Apache Hive и Apache Pig см. в статьях [Использование MapReduce в HDInsight](hadoop/hdinsight-use-mapreduce.md), [Обзор Apache Hive и HiveQL в Azure HDInsight](hadoop/hdinsight-use-hive.md) и [Использование Apache Pig с Apache Hadoop в HDInsight](hadoop/hdinsight-use-pig.md).
 
 ### <a name="examples"></a>Примеры
 **Создание кластера**
@@ -73,10 +71,8 @@ ms.locfileid: "52875575"
 * Старая команда (ASM) — `azure hdinsight cluster list`
 * Новая команда — `azure hdinsight cluster list`
 
-> [!NOTE]
+> [!NOTE]  
 > Для команды списка при добавлении `-g` к группе ресурсов возвращаются только кластеры, входящие в указанную группу ресурсов.
-> 
-> 
 
 **Отображение данных кластера**
 
@@ -145,7 +141,7 @@ ms.locfileid: "52875575"
 
 **Командлеты, связанные с идентификатором кластера:**
 
-* **Add-AzureRmHDInsightClusterIdentity**. Добавляет идентификатор кластера в объект конфигурации кластера, чтобы кластер HDInsight мог получать доступ к Azure Data Lake Store. См. статью [Создание кластера HDInsight с хранилищем озера данных с помощью Azure PowerShell](../data-lake-store/data-lake-store-hdinsight-hadoop-use-powershell.md).
+* **Add-AzureRmHDInsightClusterIdentity**. Добавляет идентификатор кластера в объект конфигурации кластера, чтобы кластер HDInsight мог получать доступ к Azure Data Lake Storage. См. статью [Создание кластера HDInsight с Data Lake Storage с помощью Azure PowerShell](../data-lake-store/data-lake-store-hdinsight-hadoop-use-powershell.md).
 
 ### <a name="examples"></a>Примеры
 **Создать кластер**

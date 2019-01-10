@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/30/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: e3d938c4464fc5141b97f85220bf096920e17d00
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: b8718e02bc0306db1ac8cd4f5b133ebdb17a4ec3
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43339599"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53557297"
 ---
 # <a name="integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-of-user-input"></a>Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных
 
@@ -27,9 +27,9 @@ ms.locfileid: "43339599"
 Azure AD B2C позволяет добавлять собственную бизнес-логику в пути взаимодействия пользователя с помощью вызова службы RESTful. Инфраструктура процедур идентификации отправляет данные в службу RESTful в коллекции *входящих утверждений* и получает данные из RESTful в коллекции *исходящих утверждений*. Благодаря интеграции со службой RESTful вы можете:
 
 * **Проверять входные данные пользователя.** Это действие позволяет предотвратить сохранение в Azure AD неправильно сформированных данных. Если значение, полученное от пользователя, является недопустимым, служба RESTful возвращает сообщение об ошибке, которое инструктирует пользователя предоставить запись. Например, вы можете проверить, что адрес электронной почты, предоставленный пользователем, существует в базе данных ваших клиентов.
-* **Перезаписывать входящие утверждения.** Например, если пользователь вводит имя в нижнем или в верхнем регистре, вы можете отформатировать имя и сделать прописной только первую букву.
-* **Дополнять данные пользователя за счет дальнейшей интеграции с корпоративными бизнес-приложениями.** Служба RESTful может получать адрес электронной почты пользователя, запрашивать базу данных клиентов и возвращать номер лояльности пользователя в Azure AD B2C. Возвратные утверждения могут храниться в учетной записи Azure AD пользователя, проверяться в следующих *действиях оркестрации* или быть включены в маркер доступа.
-* **Запускать пользовательскую бизнес-логику.** Вы можете отправлять push-уведомления, обновлять корпоративные базы данных, запускать процесс переноса пользователей, управлять разрешениями, выполнять аудит баз данных и многое другое.
+* **Перезаписывать входящие утверждения**. Например, если пользователь вводит имя только строчными или заглавными буквами, вы можете изменить его формат, оставив прописной только первую букву.
+* **Дополнять данные пользователя за счет дальнейшей интеграции с корпоративным бизнес-приложением**. Например, служба RESTful может получить адрес электронной почты пользователя, обратиться к базе данных клиента и вернуть в Azure AD B2C номер личного счета пользователя. Возвратные утверждения могут храниться в учетной записи Azure AD пользователя, проверяться в следующих *действиях оркестрации* или быть включены в маркер доступа.
+* **Запускать пользовательскую бизнес-логику**. Вы можете отправлять push-уведомления, обновлять корпоративные базы данных, запускать процесс переноса пользователей, управлять разрешениями, выполнять аудит баз данных и многое другое.
 
 Интеграцию со службами RESTful можно спроектировать одним из следующих способов:
 
@@ -76,7 +76,7 @@ Azure AD B2C позволяет добавлять собственную биз
 
 ## <a name="step-2-prepare-the-rest-api-endpoint"></a>Шаг 2. Подготовка конечной точки REST API
 
-### <a name="step-21-add-data-models"></a>Шаг 2.1. Добавление моделей данных
+### <a name="step-21-add-data-models"></a>Шаг 2.1. Добавление моделей данных
 Модели представляют данные входящих и исходящих утверждений в службе RESTful. Ваш код считывает входные данные, десериализуя модель входящих утверждений из строки JSON в объект C# (ваша модель). Веб-API ASP.NET автоматически десериализует модель исходящих утверждений обратно в JSON, а затем записывает сериализованные данные в текст сообщения HTTP-ответа. 
 
 Создайте модель, предоставляющую входящие утверждения, сделав следующее:
@@ -133,7 +133,7 @@ Azure AD B2C позволяет добавлять собственную биз
     }
     ```
 
-### <a name="step-22-add-a-controller"></a>Шаг 2.2. Добавление контроллера
+### <a name="step-22-add-a-controller"></a>Шаг 2.2. Добавление контроллера
 В веб-API _контроллер_ — это объект, который обрабатывает HTTP-запросы. Контроллер возвращает исходящие утверждения или, если первое имя недопустимо, выдает сообщение об ошибке HTTP "Конфликт".
 
 1. В обозревателе решений щелкните правой кнопкой мыши папку **Контроллеры**, выберите **Добавить**, а затем щелкните **Контроллер**.
@@ -203,7 +203,7 @@ Azure AD B2C позволяет добавлять собственную биз
     }
     ```
 
-## <a name="step-3-publish-the-project-to-azure"></a>Шаг 3. Публикация проекта в Azure
+## <a name="step-3-publish-the-project-to-azure"></a>Шаг 3. Публикация проекта в Azure
 1. В обозревателе решений щелкните правой кнопкой мыши проект **Contoso.AADB2C.API**, а затем выберите **Опубликовать**.
 
     ![Публикация в службе приложений Microsoft Azure](media/aadb2c-ief-rest-api-netfw/aadb2c-ief-rest-api-netfw-publish-to-azure-1.png)
@@ -226,7 +226,7 @@ Azure AD B2C позволяет добавлять собственную биз
 
 6. Скопируйте URL-адрес веб-приложения.
 
-## <a name="step-4-add-the-new-loyaltynumber-claim-to-the-schema-of-your-trustframeworkextensionsxml-file"></a>Шаг 4. Добавление нового утверждения `loyaltyNumber` в схему файла TrustFrameworkExtensions.xml
+## <a name="step-4-add-the-new-loyaltynumber-claim-to-the-schema-of-your-trustframeworkextensionsxml-file"></a>Шаг 4. Добавление нового утверждения `loyaltyNumber` в схему файла TrustFrameworkExtensions.xml
 Утверждение `loyaltyNumber` еще не определено в схеме. Добавьте определение внутрь элемента `<BuildingBlocks>`, который расположен в начале файла *TrustFrameworkExtensions.xml*.
 
 ```xml
@@ -241,63 +241,63 @@ Azure AD B2C позволяет добавлять собственную биз
 </BuildingBlocks>
 ```
 
-## <a name="step-5-add-a-claims-provider"></a>Шаг 5. Добавление поставщика утверждений 
+## <a name="step-5-add-a-claims-provider"></a>Шаг 5. Добавление поставщика утверждений 
 Каждый поставщик утверждений должен иметь один или несколько технических профилей, которые определяют конечные точки и протоколы, необходимые для связи с этим поставщиком утверждений. 
 
 Поставщик утверждений может иметь несколько технических профилей по различным причинам. Например, может быть определено несколько технических профилей, так как поставщик утверждений поддерживает несколько протоколов, конечные точки могут иметь различные возможности, а выпуски могут содержать утверждения с различными уровнями безопасности. Это может быть приемлемым для выдачи конфиденциальных утверждений в одном пути взаимодействия пользователя, а в другом нет. 
 
 Следующий фрагмент XML-кода содержит узел поставщика утверждений с двумя техническими профилями:
 
-* **TechnicalProfile Id="REST-API-SignUp"** — определяет службу RESTful. 
+* **TechnicalProfile Id="REST-API-SignUp"**: определяет службу RESTful. 
    * `Proprietary` описан как протокол для поставщика на основе RESTful. 
    * `InputClaims` определяет утверждения, которые отправляются из Azure AD B2C в службу REST. 
 
    В этом примере содержимое утверждения `givenName` отправляется в службу REST в качестве `firstName`, содержимое утверждения `surname` отправляется в службу REST в качестве `lastName`, а `email` отправляется как есть. Элемент `OutputClaims` определяет утверждения, извлекаемые из службы RESTful обратно в Azure AD B2C.
 
-* **TechnicalProfile Id="LocalAccountSignUpWithLogonEmail"** — добавляет технический профиль проверки в имеющийся технический профиль (определяемый в базовой политике). Во время регистрации технический профиль проверки вызывает предыдущий технический профиль. Если служба RESTful возвращает сообщение об ошибке HTTP 409 (ошибка из-за конфликта), сообщение об ошибке отображается пользователю. 
+* **TechnicalProfile Id="LocalAccountSignUpWithLogonEmail"**: добавляет технический профиль проверки в существующий технический профиль (определяемый в базовой политике). Во время регистрации технический профиль проверки вызывает предыдущий технический профиль. Если служба RESTful возвращает сообщение об ошибке HTTP 409 (ошибка из-за конфликта), сообщение об ошибке отображается пользователю. 
 
 Найдите узел `<ClaimsProviders>`, а затем добавьте следующий фрагмент XML-кода в узел `<ClaimsProviders>`:
 
 ```xml
 <ClaimsProvider>
-    <DisplayName>REST APIs</DisplayName>
-    <TechnicalProfiles>
+  <DisplayName>REST APIs</DisplayName>
+  <TechnicalProfiles>
     
     <!-- Custom Restful service -->
     <TechnicalProfile Id="REST-API-SignUp">
-        <DisplayName>Validate user's input data and return loyaltyNumber claim</DisplayName>
-        <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-        <Metadata>
+      <DisplayName>Validate user's input data and return loyaltyNumber claim</DisplayName>
+      <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.RestfulProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+      <Metadata>
         <Item Key="ServiceUrl">https://your-app-name.azurewebsites.NET/api/identity/signup</Item>
         <Item Key="AuthenticationType">None</Item>
         <Item Key="SendClaimsIn">Body</Item>
-        </Metadata>
-        <InputClaims>
+        <Item Key="AllowInsecureAuthInProduction">true</Item>
+      </Metadata>
+      <InputClaims>
         <InputClaim ClaimTypeReferenceId="email" />
         <InputClaim ClaimTypeReferenceId="givenName" PartnerClaimType="firstName" />
         <InputClaim ClaimTypeReferenceId="surname" PartnerClaimType="lastName" />
-        </InputClaims>
-        <OutputClaims>
+      </InputClaims>
+      <OutputClaims>
         <OutputClaim ClaimTypeReferenceId="loyaltyNumber" PartnerClaimType="loyaltyNumber" />
-        </OutputClaims>
-        <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
+      </OutputClaims>
+      <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
     </TechnicalProfile>
 
-<!-- Change LocalAccountSignUpWithLogonEmail technical profile to support your validation technical profile -->
+    <!-- Change LocalAccountSignUpWithLogonEmail technical profile to support your validation technical profile -->
     <TechnicalProfile Id="LocalAccountSignUpWithLogonEmail">
-        <OutputClaims>
+      <OutputClaims>
         <OutputClaim ClaimTypeReferenceId="loyaltyNumber" PartnerClaimType="loyaltyNumber" />
-        </OutputClaims>
-        <ValidationTechnicalProfiles>
+      </OutputClaims>
+      <ValidationTechnicalProfiles>
         <ValidationTechnicalProfile ReferenceId="REST-API-SignUp" />
-        </ValidationTechnicalProfiles>
+      </ValidationTechnicalProfiles>
     </TechnicalProfile>
-
-    </TechnicalProfiles>
+  </TechnicalProfiles>
 </ClaimsProvider>
 ```
 
-## <a name="step-6-add-the-loyaltynumber-claim-to-your-relying-party-policy-file-so-the-claim-is-sent-to-your-application"></a>Шаг 6. Добавление утверждения `loyaltyNumber` в файл политики проверяющей стороны для отправки утверждения приложению
+## <a name="step-6-add-the-loyaltynumber-claim-to-your-relying-party-policy-file-so-the-claim-is-sent-to-your-application"></a>Шаг 6. Добавление утверждения `loyaltyNumber` в файл политики проверяющей стороны для отправки утверждения приложению
 Необходимо изменить файл проверяющей стороны *SignUpOrSignIn.xml*, а также элемент TechnicalProfile Id="PolicyProfile" для добавления `<OutputClaim ClaimTypeReferenceId="loyaltyNumber" />`.
 
 После добавления нового утверждения код проверяющей стороны должен выглядеть следующим образом:
@@ -323,7 +323,7 @@ Azure AD B2C позволяет добавлять собственную биз
 </TrustFrameworkPolicy>
 ```
 
-## <a name="step-7-upload-the-policy-to-your-tenant"></a>Шаг 7. Отправка политики в клиент
+## <a name="step-7-upload-the-policy-to-your-tenant"></a>Шаг 7. Отправка политики в клиент
 
 1. На [портале Azure](https://portal.azure.com) переключитесь в [контекст клиента Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) и откройте **Azure AD B2C**.
 

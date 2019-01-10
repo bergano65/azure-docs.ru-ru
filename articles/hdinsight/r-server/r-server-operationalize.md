@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.openlocfilehash: ce701c029c63256714452aa13f646af77991cb67
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: d0cae4210fa313c5d6e1f33987422e7b0d53e76a
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52496925"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53579963"
 ---
 # <a name="operationalize-ml-services-cluster-on-azure-hdinsight"></a>Ввод в эксплуатацию кластера служб машинного обучения в Azure HDInsight
 
@@ -22,13 +22,13 @@ ms.locfileid: "52496925"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Кластер служб машинного обучения в HDInsight**. Инструкции см. в статье [Начало работы со службами машинного обучения в HDInsight](r-server-get-started.md).
+* **Кластер служб машинного обучения в HDInsight**. Инструкции см. в статье [Начало работы со службами машинного обучения в Azure HDInsight](r-server-get-started.md).
 
-* **Клиент Secure Shell (SSH)**. Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Клиент Secure Shell (SSH)**. Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ## <a name="operationalize-ml-services-cluster-with-one-box-configuration"></a>Ввод в эксплуатацию кластера служб машинного обучения в универсальной конфигурации
 
-> [!NOTE]
+> [!NOTE]  
 > Приведенные ниже действия применимы к R Server 9.0 и Machine Learning Server (ML Server) 9.1. Действия для ML Server 9.3 см. в статье [Launch the administration tool/CLI to manage the operationalization configuration](https://docs.microsoft.com/machine-learning-server/operationalize/configure-admin-cli-launch) (Запуск средства администрирования или CLI для управления конфигурацией ввода в эксплуатацию).
 
 1. Подключитесь к граничному узлу по протоколу SSH.
@@ -137,7 +137,7 @@ ms.locfileid: "52496925"
 
 Чтобы масштабировать вычислительные узлы, сначала нужно вывести рабочие узлы из эксплуатации, а затем настроить вычислительные узлы на выведенных из эксплуатации рабочих узлах.
 
-### <a name="step-1-decommission-the-worker-nodes"></a>Шаг 1. Вывод рабочих узлов из эксплуатации
+### <a name="step-1-decommission-the-worker-nodes"></a>Шаг 1. Вывод рабочих узлов из эксплуатации
 
 Управление кластером служб Машинного обучения не осуществляется через [Apache Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html). Если вы не выведете из эксплуатации рабочие узлы, диспетчер ресурсов YARN будет действовать неправильно из-за отсутствия информации об использовании ресурсов сервером. Чтобы этого избежать, мы рекомендуем вывести из эксплуатации рабочие узлы, прежде чем масштабировать вычислительные узлы.
 
@@ -159,7 +159,7 @@ ms.locfileid: "52496925"
 * Отмените выбор рабочих узлов и выберите головные узлы.
 * Выберите **Actions** (Действия) > **Selected Hosts** (Выбранные узлы) > **Hosts** (Узлы) > **Restart All Components** (Перезапустить все компоненты).
 
-### <a name="step-2-configure-compute-nodes-on-each-decommissioned-worker-nodes"></a>Шаг 2. Настройка вычислительных узлов на каждом из рабочих узлов, выведенных из эксплуатации
+### <a name="step-2-configure-compute-nodes-on-each-decommissioned-worker-nodes"></a>Шаг 2. Настройка вычислительных узлов на каждом из рабочих узлов, выведенных из эксплуатации
 
 1. Поочередно откройте сеанс SSH для каждого рабочего узла, выведенного из эксплуатации.
 
@@ -173,7 +173,7 @@ ms.locfileid: "52496925"
 
 1. Выйдите из служебной программы администрирования.
 
-### <a name="step-3-add-compute-nodes-details-on-web-node"></a>Шаг 3. Добавление сведений о вычислительных узлах на веб-узел
+### <a name="step-3-add-compute-nodes-details-on-web-node"></a>Шаг 3. Добавление сведений о вычислительных узлах на веб-узел
 
 Когда вы настроите функции вычислительных узлов на всех рабочих узлах, выведенных из эксплуатации, вернитесь на граничный узел и добавьте IP-адреса этих рабочих узлов в конфигурацию веб-узла ML Server.
 

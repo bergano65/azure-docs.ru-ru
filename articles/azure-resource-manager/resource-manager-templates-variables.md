@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/12/2017
+ms.date: 12/18/2018
 ms.author: tomfitz
-ms.openlocfilehash: 08728a3c0b4d4578939004e2d1b1ee2d30a682ab
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: f6c629182fdcce83c566869860480d9c70488797
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34359294"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53712752"
 ---
 # <a name="variables-section-of-azure-resource-manager-templates"></a>Раздел Variables в шаблонах Azure Resource Manager
 В разделе переменных вы создаете значения, которые можно использовать в разных частях шаблона. Переменные определять не обязательно, однако они часто упрощают шаблон, снижая число сложных выражений.
@@ -269,26 +269,19 @@ ms.locfileid: "34359294"
 }
 ```
 
-## <a name="recommendations"></a>Рекомендации
-Ниже приведены некоторые рекомендации по работе с переменными.
-
-* Применяйте переменные для значений, которые необходимо использовать в шаблоне более одного раза. Если значение используется только один раз, жестко задайте его. Это облегчит чтение шаблона.
-* Нельзя использовать функцию [reference](resource-group-template-functions-resource.md#reference) в разделе **переменных** шаблона. Функция **reference** получает свое значение из состояния среды выполнения ресурса, а переменные разрешаются при начальной обработке шаблона. Сформируйте значения, которым требуется функция **reference**, непосредственно в разделе **resources** или **outputs** шаблона.
-* Добавьте переменные для имен ресурсов, которые должны быть уникальными.
-
 ## <a name="example-templates"></a>Образцы шаблонов
 
 Эти примеры шаблонов демонстрируют разные сценарии использования переменных. Разверните их и изучите, как обрабатываются переменные в различных сценариях. 
 
 |Шаблон  |ОПИСАНИЕ  |
 |---------|---------|
-| [variable definitions](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variables.json) | Демонстрирует различные типы переменных. Этот шаблон не развертывает ресурсы. При его помощи только создаются и возвращаются значения переменных. |
-| [configuration variable](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variablesconfigurations.json) | Демонстрирует использование переменной, определяющей значения конфигурации. Этот шаблон не развертывает ресурсы. При его помощи только создаются и возвращаются значения переменных. |
+| [variable definitions](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variables.json) | Демонстрирует различные типы переменных. Шаблон не развертывает ресурсы. При его помощи только создаются и возвращаются значения переменных. |
+| [configuration variable](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variablesconfigurations.json) | Демонстрирует использование переменной, определяющей значения конфигурации. Шаблон не развертывает ресурсы. При его помощи только создаются и возвращаются значения переменных. |
 | [network security rules](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) и [parameter file](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json) | Отвечает за создание массива в правильном формате для назначения правил безопасности в группе безопасности сети. |
 
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Полные шаблоны для различных типов решений доступны на странице [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/).
 * Дополнительные сведения о функциях, которые можно использовать в шаблонах, см. в статье [Функции шаблонов Azure Resource Manager](resource-group-template-functions.md).
-* Инструкции по объединению нескольких шаблонов при развертывании см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
+* Дополнительные рекомендации по созданию шаблонов см. в статье [Рекомендации по работе с шаблонами Azure Resource Manager](template-best-practices.md).
 * Может потребоваться использовать ресурсы, которые существуют в другой группе ресурсов. Это распространенная ситуация при работе с учетными записями хранения или виртуальными сетями, которые совместно используются в нескольких группах ресурсов. Дополнительные сведения см. в описании [функции resourceId](resource-group-template-functions-resource.md#resourceid).

@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/15/2018
 ms.author: juliako
-ms.openlocfilehash: 9370cdfc75995f36101804d2a9f7dc9cf275243c
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: aa2a059dd470e671aa3483f2259bcf91796c070d
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53186316"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53631674"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 В этих заметках для служб мультимедиа Azure описаны изменения по сравнению с предыдущими выпусками, а также известные проблемы.
@@ -44,6 +44,10 @@ ms.locfileid: "53186316"
 
 ## <a name="a-idrestversionhistoryrest-api-version-history"></a><a id="rest_version_history"/>Журнал версий интерфейса API REST
 Сведения о журнале версий интерфейса REST API служб мультимедиа см. в [этой статье].
+
+## <a name="december-2018"></a>Декабрь 2018 г.
+
+Компонент [Media Hyperlapse Preview](media-services-hyperlapse-content.md) Служб мультимедиа Azure скоро будет выведен из эксплуатации. Начиная с 19 декабря 2018 г. прекращается внесение изменений и улучшений в компонент Media Hyperlapse Служб мультимедиа. 29 марта 2019 г. этот компонент будет выведен из эксплуатации.
 
 ## <a name="october-2018"></a>Октябрь 2018 г.
 

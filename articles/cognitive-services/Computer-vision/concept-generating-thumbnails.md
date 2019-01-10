@@ -10,14 +10,15 @@ ms.component: computer-vision
 ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: pafarley
-ms.openlocfilehash: 7d914f394ecfcf02ed26f41cd8fe2ef799cf6103
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.custom: seodec18
+ms.openlocfilehash: 371fa639b2edc300e44cc495393e89c9fce9c4bf
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52966744"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53580864"
 ---
-# <a name="generating-thumbnails"></a>Создание эскизов
+# <a name="generating-smart-cropped-thumbnails-with-computer-vision"></a>Использование компьютерного зрения для создания эскизов с примененной интеллектуальной обрезкой
 
 Эскиз — это уменьшенное представление изображения. Эскизы используются для представления изображений и других данных как более экономичный в плане занимаемого места способ. Используя интеллектуальный алгоритм обрезки изображения и изменяя его размеры, API компьютерного зрения создает для заданного изображения понятные эскизы.
 
@@ -42,9 +43,9 @@ ms.locfileid: "52966744"
 
 | Образ — | Эскиз |
 |-------|-----------|
-|![Гора](./Images/mountain_vista.png) | ![Эскиз горы](./Images/mountain_vista_thumbnail.png) |
-|![Анализ изображения. Цветок](./Images/flower.png) | ![Анализ изображения. Эскиз цветка](./Images/flower_thumbnail.png) |
-|![Женщина на крыше](./Images/woman_roof.png) | ![Эскиз женщины на крыше](./Images/woman_roof_thumbnail.png) |
+|![Человек, стоящий на скале на закате](./Images/mountain_vista.png) | ![Эскиз горы](./Images/mountain_vista_thumbnail.png) |
+|![Белый цветок на зеленом фоне](./Images/flower.png) | ![Анализ изображения. Эскиз цветка](./Images/flower_thumbnail.png) |
+|![Женщина на крыше жилого дома](./Images/woman_roof.png) | ![Эскиз женщины на крыше](./Images/woman_roof_thumbnail.png) |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,5 +1,5 @@
 ---
-title: Подготовка сертификатов инфраструктуры открытых ключей Azure Stack для развертывания интегрированных систем Azure Stack | Документация Майкрософт
+title: Подготовка сертификатов инфраструктуры открытых ключей Azure Stack для смены секретов и развертывания интегрированных систем Azure Stack | Документация Майкрософт
 description: В этой статье описано, как подготовить сертификаты PKI Azure Stack для интегрированных систем Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -14,19 +14,19 @@ ms.topic: article
 ms.date: 09/10/2018
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: c26dcbc2fab7cff3134846234cafaa481fd5ba1a
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 7a4c0d62fd1ea675c6569840c26ed1fb8e388850
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52972041"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53631487"
 ---
-# <a name="prepare-azure-stack-pki-certificates-for-deployment"></a>Подготовка сертификатов PKI Azure Stack к развертыванию
+# <a name="prepare-azure-stack-pki-certificates-for-use-in-deployment-or-rotation"></a>Подготовка сертификатов PKI Azure Stack для развертывания или смены секретов
 Файлы сертификатов, [полученные из выбранного центра сертификации](azure-stack-get-pki-certs.md), необходимо импортировать и экспортировать со свойствами, которые соответствуют требованиям к сертификату Azure Stack.
 
 
 ## <a name="prepare-certificates-for-deployment"></a>Подготовка сертификатов к развертыванию
-Для подготовки и проверки сертификатов PKI Azure Stack выполните следующие действия: 
+Для подготовки и проверки сертификатов Azure Stack PKI, которые будут использоваться для развертывания новой среды Azure Stack или для смены секретов в имеющейся среде Azure Stack, выполните следующие действия. 
 
 ### <a name="import-the-certificate"></a>Импорт сертификата
 

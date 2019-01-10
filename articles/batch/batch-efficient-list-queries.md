@@ -3,7 +3,7 @@ title: Проектирование эффективных запросов сп
 description: 'Сведения о повышении производительности за счет фильтрации запросов, а именно при запросе сведений о ресурсах пакетной службы: пулах, заданиях, задачах и вычислительных узлах.'
 services: batch
 documentationcenter: .net
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 editor: ''
 ms.assetid: 031fefeb-248e-4d5a-9bc2-f07e46ddd30d
@@ -12,15 +12,15 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
-ms.date: 06/26/2018
-ms.author: danlep
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6bc31e8541797930583e41fb6efbb6473cd4b894
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.date: 12/07/2018
+ms.author: lahugh
+ms.custom: seodec18
+ms.openlocfilehash: fc873f68be3e7aad67980ec2e8ee0b2e473777ec
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39004461"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53537907"
 ---
 # <a name="create-queries-to-list-batch-resources-efficiently"></a>Эффективное создание запросов на вывод списка ресурсов пакетной службы
 
@@ -147,8 +147,8 @@ List<CloudPool> testPools =
 Имена и регистр свойств в строках фильтрации, выборки и развертывания *должны* полностью соответствовать аналогичным элементам в REST API. В таблицах ниже приведено сопоставление элементов API в .NET и REST.
 
 ### <a name="mappings-for-filter-strings"></a>Сопоставления для строк фильтрации
-* **Методы списка .NET** — каждый из методов API для .NET в этом столбце принимает объект [ODATADetailLevel][odata] в качестве параметра.
-* **Запросы списка REST**— каждая страница REST API, связанная с этим столбцом, содержит таблицу со свойствами и операциями, разрешенными в строках *фильтрации* . Эти имена свойств и операции будут использоваться при создании строки [ODATADetailLevel.FilterClause][odata_filter].
+* **Методы списка .NET**: каждый из методов API для .NET в этом столбце принимает объект [ODATADetailLevel][odata] в качестве параметра.
+* **Запросы списка REST**: каждая страница REST API, связанная с этим столбцом, содержит таблицу со свойствами и операциями, разрешенными в строках *фильтрации*. Эти имена свойств и операции будут использоваться при создании строки [ODATADetailLevel.FilterClause][odata_filter].
 
 | Методы списка .NET | Запросы списка REST |
 | --- | --- |
@@ -164,8 +164,8 @@ List<CloudPool> testPools =
 | [PoolOperations.ListPools][net_list_pools] |[Получение списка пулов учетной записи][rest_list_pools] |
 
 ### <a name="mappings-for-select-strings"></a>Сопоставления для строк выборки
-* **Типы пакетной службы для .NET**— типы API пакетной службы для .NET.
-* **Сущности REST API**— каждая страница в этом столбце содержит одну или несколько таблиц с именами свойств API REST для соответствующих типов. Эти имена свойств используются при создании строк *выборки* . Они также будут использоваться при создании строки [ODATADetailLevel.SelectClause][odata_select].
+* **Типы пакетной службы для .NET**: типы API пакетной службы для .NET.
+* **Сущности REST API**: каждая страница в этом столбце содержит одну таблицу или несколько с именами свойств API REST для соответствующих типов. Эти имена свойств используются при создании строк *выборки* . Они также будут использоваться при создании строки [ODATADetailLevel.SelectClause][odata_select].
 
 | Типы пакетной службы для .NET | Сущности REST API |
 | --- | --- |
@@ -246,9 +246,9 @@ internal static ODATADetailLevel OnlyChangedAfter(DateTime time)
 Еще одна статья, посвященная производительности приложения пакетной службы — [Повышение эффективности вычислительных ресурсов в пакетной службе Azure благодаря параллельному выполнению задач на узлах](batch-parallel-node-tasks.md). Для эффективной обработки некоторых типов рабочих нагрузок можно применять параллельное выполнение задач на меньшем количестве более крупных вычислительных узлов. Дополнительные сведения о таком сценарии см. [здесь](batch-parallel-node-tasks.md#example-scenario).
 
 
-[api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
+[api_net]: https://docs.microsoft.com/dotnet/api/microsoft.azure.batch?view=azure-dotnet
 [api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
-[api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
+[api_rest]: https://docs.microsoft.com/rest/api/batchservice/
 [batch_metrics]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchMetrics
 [efficient_query_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/EfficientListQueries
 [github_samples]: https://github.com/Azure/azure-batch-samples

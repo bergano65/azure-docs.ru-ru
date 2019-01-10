@@ -9,21 +9,24 @@ ms.devlang: ''
 ms.topic: conceptual
 author: allenwux
 ms.author: xiwu
-ms.reviewer: ''
+ms.reviewer: douglasl
 manager: craigg
 ms.date: 10/22/2018
-ms.openlocfilehash: fa5ce7264fd003e0a49d6408acae070577879cdd
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: a7289ba5ab1f4e94adc099978591d69cac6ff786
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51686625"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53721603"
 ---
 # <a name="best-practices-for-sql-data-sync"></a>Рекомендации по синхронизации данных SQL 
 
 В этой статье описываются рекомендации по синхронизации данных SQL Azure.
 
 Общие сведения о синхронизации данных SQL см. в статье [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL Azure](sql-database-sync-data.md).
+
+> [!IMPORTANT]
+> Служба синхронизации данных SQL Azure пока **не** поддерживает управляемые экземпляры базы данных SQL Azure.
 
 ## <a name="security-and-reliability"></a> Безопасность и надежность
 
@@ -196,7 +199,7 @@ ms.locfileid: "51686625"
 1. Группа синхронизации A была создана с использованием экземпляра базы данных SQL и локальной базы данных SQL Server, которая связана с локальным агентом 1.
 2. Та же самая локальная база данных регистрируется в локальном агенте 2 (этот агент не связан с какой-либо группой синхронизации).
 3. При отмене регистрации локальной базы данных в локальном агенте 2 удаляются таблицы отслеживания и метаданных из группы синхронизации A для локальной базы данных.
-4. Операции группы синхронизации A завершаются такой ошибкой: The current operation could not be completed because the database is not provisioned for sync or you do not have permissions to the sync configuration tables (Текущая операция не может быть завершена, потому что база данных не подготовлена для синхронизации или у вас нет разрешений для таблиц конфигурации синхронизации).
+4. Операции группы синхронизации A завершаются такой ошибкой: "The current operation could not be completed because the database is not provisioned for sync or you do not have permissions to the sync configuration tables" (Текущая операция не может быть завершена, потому что база данных не подготовлена для синхронизации или у вас нет разрешений для таблиц конфигурации синхронизации).
 
 #### <a name="solution"></a>Решение
 
@@ -221,7 +224,7 @@ ms.locfileid: "51686625"
 
 -   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).
 -   Настройка синхронизации данных
-    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md).
+    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md)
     - С помощью PowerShell
         -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)

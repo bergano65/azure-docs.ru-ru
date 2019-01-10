@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: sujayt
-ms.openlocfilehash: 84462b98e1006cadf34adecf948efd39ad4f69d6
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: e120c10468ca95b604ef8f857959607d3a066ea0
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53313978"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53973559"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-issues"></a>Устранение неполадок репликации виртуальных машин из Azure в Azure
 
@@ -278,6 +278,14 @@ ms.locfileid: "53313978"
 
 Вы можете открыть консоль "Службы" и проверить, не задано ли для типа запуска службы системных приложений COM+ и службы теневого копирования томов значение "Отключено".
   ![com-error](./media/azure-to-azure-troubleshoot-errors/com-error.png)
+
+## <a name="unsupported-managed-disk-size-error-code-150172"></a>Неподдерживаемый размер управляемого диска (код ошибки 150172)
+
+
+**Код ошибки** | **Возможные причины** | **рекомендации**;
+--- | --- | ---
+150172<br></br>**Сообщение**. Не удалось включить защиту для виртуальной машины, так как она содержит (имя_диска) размером (размер_диска), который меньше минимального поддерживаемого размера, равного 10 ГБ. | Размер диска меньше поддерживаемого размера, равного 1024 МБ| Убедитесь, что размеры дисков находятся в диапазоне поддерживаемых размеров, и повторите операцию. 
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 [Репликация виртуальных машин Azure](site-recovery-replicate-azure-to-azure.md)

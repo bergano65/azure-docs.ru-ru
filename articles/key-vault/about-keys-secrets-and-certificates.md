@@ -10,15 +10,16 @@ ms.assetid: abd1b743-1d58-413f-afc1-d08ebf93828a
 ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
+ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/07/2019
+ms.date: 10/12/2018
 ms.author: bryanla
-ms.openlocfilehash: 0dcfd1bd75fa54a1bbea93497a0cc872ad6d5184
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 464574716971388f3785879ba40ad3e8a624fc7f
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54078377"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54002626"
 ---
 # <a name="about-keys-secrets-and-certificates"></a>Сведения о ключах, секретах и сертификатах
 

@@ -1,5 +1,5 @@
 ---
-title: Рабочие нагрузки контейнера в пакетной службе Azure | Документация Майкрософт
+title: Рабочие нагрузки контейнера — Пакетная служба Azure | Документация Майкрософт
 description: Выполнение приложения из образов контейнеров в пакетной службе Azure.
 services: batch
 author: dlepow
@@ -10,12 +10,13 @@ ms.topic: article
 ms.workload: na
 ms.date: 11/19/2018
 ms.author: danlep
-ms.openlocfilehash: 1d915482a3a8b1f6416b50ab52de997a9d33294f
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.custom: seodec18
+ms.openlocfilehash: 4d4dc5d01959406e71859fcbde6de1e36b5871aa
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52262437"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53541002"
 ---
 # <a name="run-container-applications-on-azure-batch"></a>Выполнение контейнерных приложений в пакетной службе Azure
 

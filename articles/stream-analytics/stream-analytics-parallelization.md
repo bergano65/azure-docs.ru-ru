@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.openlocfilehash: 7a1577e3c352c24983cc3a586c11ad43c416acc4
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 0b68819ba032d7655433aadd30fe2852941096ce
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53091049"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54000552"
 ---
 # <a name="leverage-query-parallelization-in-azure-stream-analytics"></a>Использование параллелизации запросов в Azure Stream Analytics
 В этой статье показано, как воспользоваться преимуществами параллелизма в Azure Stream Analytics. Узнайте, как масштабировать задания Stream Analytics с помощью настройки входных разделов, настройки аналитики определения запроса.
@@ -41,12 +41,13 @@ ms.locfileid: "53091049"
 -   Функции Azure
 -   таблице Azure
 -   Хранилище BLOB-объектов (требуется явно задать ключ раздела).
--   CosmosDB (требуется явно задать ключ раздела).
--   Концентратор событий (требуется явно задать ключ раздела).
+-   Cosmos DB (требуется явно задать ключ раздела).
+-   Центры событий (требуется явно задать ключ раздела).
 -   Центр Интернета вещей (требуется явно задать ключ раздела).
 -   Служебная шина Azure
+- SQL и хранилище данных SQL с необязательным секционированием. Дополнительные сведения см. на странице [Вывод в базу данных SQL Azure](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-sql-output-perf).
 
-Выходные данные PowerBI, SQL и хранилища данных SQL не поддерживают секционирование. Однако можно по-прежнему секционировать входные данные как описано в [этом разделе](#multi-step-query-with-different-partition-by-values). 
+Power BI не поддерживает секционирование. Однако можно по-прежнему секционировать входные данные как описано в [этом разделе](#multi-step-query-with-different-partition-by-values). 
 
 Дополнительные сведения об этих секциях см. в следующих статьях:
 
@@ -115,9 +116,9 @@ ms.locfileid: "53091049"
 
 ### <a name="query-using-non-partitioned-output"></a>Запрос с использованием несекционированных выходных данных
 * Входные данные: концентратор событий с 8 секциями.
-* Выходные данные: PowerBI
+* Выходные данные: Power BI
 
-В настоящее время выходные данные PowerBI не поддерживают секционирование. Таким образом этот сценарий не считается сценарием с усложненным параллелизмом.
+В настоящее время выходные данные Power BI не поддерживают секционирование. Таким образом этот сценарий не считается сценарием с усложненным параллелизмом.
 
 ### <a name="multi-step-query-with-different-partition-by-values"></a>Многоэтапный запрос с разными значениями параметра PARTITION BY
 * Входные данные: концентратор событий с 8 секциями.

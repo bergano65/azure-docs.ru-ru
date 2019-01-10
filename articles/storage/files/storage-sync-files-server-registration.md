@@ -8,17 +8,19 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
 ms.component: files
-ms.openlocfilehash: 1aa1bd085a312e379dc996a860c7f97b2e0dfe73
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.openlocfilehash: a296576d3d7983b710727923043091f5660b693d
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42918882"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54002558"
 ---
 # <a name="manage-registered-servers-with-azure-file-sync"></a>Управление зарегистрированными серверами в службе "Синхронизация файлов Azure"
 Служба "Синхронизация файлов Azure" позволяет централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования серверов Windows Server в быстрый кэш общей папки Azure. Для локального доступа к данным вы можете использовать любой протокол (в том числе SMB, NFS и FTPS), доступный в Windows Server. Кроме того, вы можете создать любое число кэшей в любом регионе.
 
 Следующая статья содержит сведения о регистрации сервера и управлении им в службе синхронизации хранилища. Сведения о комплексном процессе развертывания службы "Синхронизация файлов Azure" см. в [этой статье](storage-sync-files-deployment-guide.md).
+
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="registerunregister-a-server-with-storage-sync-service"></a>Регистрация и отмена регистрации сервера в службе синхронизации хранилища
 Регистрация сервера в службе синхронизации файлов Azure устанавливает отношения доверия между Windows Server и Azure. На основе этой связи на сервере можно создать *конечные точки сервера*, которые представляют определенные папки, синхронизируемые с общим файловым ресурсом Azure (которые также называется *облачная конечная точка*). 
@@ -33,10 +35,10 @@ ms.locfileid: "42918882"
     
     ![Пользовательский интерфейс диспетчера сервера с выделенной конфигурацией усиленной безопасности Internet Explorer](media/storage-sync-files-server-registration/server-manager-ie-config.png)
 
-* Убедитесь, что на сервере установлен модуль AzureRM PowerShell. Если сервер входит в отказоустойчивый кластер, для каждого узла кластера потребуется модуль AzureRM. Дополнительные сведения об установке модуля AzureRM см. в статье [Install and configure Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps) (Установка и настройка Azure PowerShell).
+* Убедитесь, что на сервере установлен модуль Azure PowerShell. Если сервер входит в отказоустойчивый кластер, для каждого узла кластера потребуется модуль Az. Дополнительные сведения об установке модуля Az см. в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps).
 
     > [!Note]  
-    > Мы рекомендуем использовать последнюю версию модуля AzureRM PowerShell для регистрации или отмены регистрации сервера. Если пакет AzureRM был ранее установлен на этом сервере (и на этом сервере используется версия PowerShell 5.* или выше), выполните командлет `Update-Module`, чтобы обновить этот пакет. 
+    > Мы рекомендуем использовать последнюю версию модуля Az PowerShell для регистрации или отмены регистрации сервера. Если пакет Az был ранее установлен на этом сервере (и на этом сервере используется версия PowerShell 5.* или выше), выполните командлет `Update-Module`, чтобы обновить этот пакет. 
 * Если вы используете сетевой прокси-сервер в своей среде, настройте его параметры на сервере для использования агентом синхронизации.
     1. Определение IP-адреса и номера порта прокси-сервера
     2. Измените следующие два файла:
@@ -135,8 +137,8 @@ Invoke-StorageSyncFileRecall -Path <a-volume-with-server-endpoints-on-it>
 ```PowerShell
 Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.PowerShell.Cmdlets.dll"
 
-$accountInfo = Connect-AzureRmAccount
-Login-AzureRmStorageSync -SubscriptionId $accountInfo.Context.Subscription.Id -TenantId $accountInfo.Context.Tenant.Id -ResourceGroupName "<your-resource-group>"
+$accountInfo = Connect-AzAccount
+Login-AzStorageSync -SubscriptionId $accountInfo.Context.Subscription.Id -TenantId $accountInfo.Context.Tenant.Id -ResourceGroupName "<your-resource-group>"
 
 $StorageSyncService = "<your-storage-sync-service>"
 

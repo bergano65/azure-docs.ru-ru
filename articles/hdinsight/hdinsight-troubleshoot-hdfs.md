@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: d3ae15193b5e2d759825e60f880dea4355329837
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: fca763d04cc8cbf22d1578b18d504ec3ce9656d9
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53407059"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53993031"
 ---
 # <a name="troubleshoot-apache-hadoop-hdfs-by-using-azure-hdinsight"></a>Устранение неполадок рабочих нагрузок Apache Hadoop HDFS с помощью Azure HDInsight
 
@@ -23,7 +23,7 @@ ms.locfileid: "53407059"
 
 ### <a name="issue"></a>Проблема
 
-Вместо хранилища BLOB-объектов Azure или Azure Data Lake Store для доступа к локальной системе HDFS в пределах кластера HDInsight используется командная строка и код приложения.   
+Вместо хранилища BLOB-объектов Azure или Azure Data Lake Storage для доступа к локальной системе HDFS в пределах кластера HDInsight используется командная строка и код приложения.   
 
 ### <a name="resolution-steps"></a>Способы устранения
 

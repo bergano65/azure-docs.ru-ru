@@ -5,21 +5,24 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: include
-ms.date: 11/28/2018
+ms.date: 12/20/2018
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: a5959e19c7d6470abe5487fe7c8f08ccb543fa35
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 38b630b14a7425b4f8854ea88d6ba7e7a4335bea
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53111967"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54069879"
 ---
 | Категория | Хранилище данных |
 |:--- |:--- |
 | **Таблицы Azure** |[хранилище BLOB-объектов Azure](../articles/data-factory/connector-azure-blob-storage.md) |
 | &nbsp; |[Azure Cosmos DB (SQL API)](../articles/data-factory/connector-azure-cosmos-db.md) |
+| &nbsp; |[Azure Cosmos DB (MongoDB API)](../articles/data-factory/connector-azure-cosmos-db-mongodb-api.md) |
 | &nbsp; |[Хранилище Azure Data Lake Gen1](../articles/data-factory/connector-azure-data-lake-store.md) |
+| &nbsp; |[Хранилище Azure Data Lake Storage 2-го поколения](../articles/data-factory/connector-azure-data-lake-storage.md) |
+| &nbsp; |[База данных Azure для MariaDB](../articles/data-factory/connector-azure-database-for-mariadb.md) |
 | &nbsp; |[База данных Azure для MySQL](../articles/data-factory/connector-azure-database-for-mysql.md) |
 | &nbsp; |[База данных Azure для PostgreSQL](../articles/data-factory/connector-azure-database-for-postgresql.md) |
 | &nbsp; |[Файлы Azure](../articles/data-factory/connector-azure-file-storage.md) |
@@ -57,11 +60,13 @@ ms.locfileid: "53111967"
 | **File** |[Amazon S3](../articles/data-factory/connector-amazon-simple-storage-service.md) |
 | &nbsp; |[Перемещение данных в локальную файловую систему или из нее с помощью фабрики данных Azure](../articles/data-factory/connector-file-system.md) |
 | &nbsp; |[FTP](../articles/data-factory/connector-ftp.md) |
+| &nbsp; |[Google Cloud Storage](../articles/data-factory/connector-google-cloud-storage.md) |
 | &nbsp; |[HDFS](../articles/data-factory/connector-hdfs.md) |
 | &nbsp; |[SFTP](../articles/data-factory/connector-sftp.md) |
 | **Универсальный протокол** |[Базовый HTTP-запрос](../articles/data-factory/connector-http.md) |
 | &nbsp; |[Generic OData](../articles/data-factory/connector-odata.md) |
 | &nbsp; |[Универсальные данные ODBC](../articles/data-factory/connector-odbc.md) |
+| &nbsp; |[Универсальные данные REST](../articles/data-factory/connector-rest.md) |
 | **Службы и приложения** |[Веб-служба Amazon Marketplace (предварительная версия)](../articles/data-factory/connector-amazon-marketplace-web-service.md) |
 | &nbsp; |[Common Data Service для приложений](../articles/data-factory/connector-dynamics-crm-office-365.md) |✓
 | &nbsp; |[Concur (предварительная версия)](../articles/data-factory/connector-concur.md) |

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: b1fbf77bfb771bd94ed9acdecb3c54e4c6894687
-ms.sourcegitcommit: 5b8d9dc7c50a26d8f085a10c7281683ea2da9c10
+ms.openlocfilehash: 183afaeb40b90de078a44f4677dd0218b8d86ba8
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47182116"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53968995"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-facebook-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Facebook через Azure Active Directory B2C
 
@@ -38,7 +38,7 @@ ms.locfileid: "47182116"
 13. Выберите **Продукты**, а затем **Настройка** в разделе **Вход в Facebook**.
 14. Выберите **Параметры** в разделе **Вход в Facebook**.
 15. В поле **Valid OAuth redirect URIs** (Допустимые URI перенаправления OAuth) введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp`. Замените `your-tenant-name` именем вашего клиента. Нажмите кнопку **Save Changes** (Сохранить изменения) в нижней части страницы.
-16. Чтобы приложение Facebook стало доступным в Azure AD B2C, выберите **Проверка приложения**, установите в поле **Make My Application public?** (Сделать мое приложение общедоступным) значение **Да** и щелкните **Подтвердить**.
+16. Чтобы сделать приложение Facebook доступным в Azure AD B2C, щелкните селектор состояния в верхней правой части страницы и установите его в положение **Вкл.** для предоставления общего доступа к приложению, а затем нажмите кнопку **Подтвердить**.  На этом этапе состояние должно измениться с **Development** (Разработка) на **Live** (Активно).
 
 ## <a name="configure-a-facebook-account-as-an-identity-provider"></a>Настройка учетной записи Facebook в качестве поставщика удостоверений
 

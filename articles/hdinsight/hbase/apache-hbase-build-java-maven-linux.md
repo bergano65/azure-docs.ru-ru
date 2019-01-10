@@ -9,30 +9,30 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,seodec18
 ms.topic: conceptual
 ms.date: 11/27/2018
-ms.openlocfilehash: dbcb031b49c529bc2b2524cd0984bbef1945d485
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 1eab8b248fd8ad42adf8c0a747565fed9bbc14e8
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53164064"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53652563"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Создание приложений Java для Apache HBase
 
-Узнайте, как создать приложение [Apache HBase](http://hbase.apache.org/) в среде Java. Затем вы будете использовать приложение с HBase в Azure HDInsight.
+Узнайте, как создать приложение [Apache HBase](https://hbase.apache.org/) в среде Java. Затем вы будете использовать приложение с HBase в Azure HDInsight.
 
 В этом руководстве для создания и сборки проекта используется [Apache Maven](https://maven.apache.org/). Maven — это инструмент для управления и повышения обозримости проектов программного обеспечения, позволяющий создавать ПО, документацию и отчеты для проектов Java.
 
-> [!NOTE]
+> [!NOTE]  
 > Действия, описанные в этом документе, в последний раз были протестированы с помощью HDInsight 3.6.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Для выполнения действий, описанных в этом документе, необходим кластер HDInsight под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
 
 ## <a name="requirements"></a>Требования
 
 * [Пакет JDK для платформы Java](https://aka.ms/azure-jdks) версии 8 или более поздней.
 
-    > [!NOTE]
+    > [!NOTE]  
     > Для HDInsight 3.5 и более поздних версий требуется Java 8. Для работы более ранних версий HDInsight требуется Java 7.
 
 * [Apache Maven](https://maven.apache.org/)
@@ -49,14 +49,14 @@ ms.locfileid: "53164064"
     mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=hbaseapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     ```
 
-    > [!NOTE]
+    > [!NOTE]  
     > При использовании PowerShell параметры `-D` необходимо заключить в кавычки.
     >
     > `mvn archetype:generate "-DgroupId=com.microsoft.examples" "-DartifactId=hbaseapp" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DinteractiveMode=false"`
 
     При этом будет создан каталог, имя которого будет совпадать с именем параметра **artifactID** (в нашем случае **hbaseapp**). Этот каталог содержит следующие элементы:
 
-   * **pom.xml** —  это модель объекта проекта ([POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)), которая содержит информацию и подробности конфигурации, учитывающиеся при сборке проекта;
+   * **pom.xml** —  это модель объекта проекта ([POM](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)), которая содержит информацию и подробности конфигурации, учитывающиеся при сборке проекта.
    * **src** — каталог, содержащий каталог **main/java/com/microsoft/examples**, в котором создается приложение.
 
 3. Удалите файл `src/test/java/com/microsoft/examples/apptest.java`. Он не используется в этом примере.
@@ -78,9 +78,9 @@ ms.locfileid: "53164064"
     </dependency>
    ```
 
-    В этом разделе показано, что для проекта требуются компоненты **hbase-client** и **phoenix-core**. При компиляции эти зависимости скачиваются из репозитория Maven по умолчанию. Можно воспользоваться [поиском в центральном репозитории Maven](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) , чтобы получить дополнительную информацию об этой зависимости.
+    В этом разделе показано, что для проекта требуются компоненты **hbase-client** и **phoenix-core**. При компиляции эти зависимости скачиваются из репозитория Maven по умолчанию. Можно воспользоваться [поиском в центральном репозитории Maven](https://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) , чтобы получить дополнительную информацию об этой зависимости.
 
-   > [!IMPORTANT]
+   > [!IMPORTANT]  
    > Номер версии hbase-client должен соответствовать версии Apache HBase, которая поставляется с кластером HDInsight. Воспользуйтесь следующей таблицей, чтобы найти правильный номер версии.
 
    | Версия кластера HDInsight | Используемая версия Apache HBase |
@@ -88,7 +88,7 @@ ms.locfileid: "53164064"
    | 3.2 |0.98.4-hadoop2 |
    | 3.3, 3.4, 3.5 и 3.6 |1.1.2 |
 
-    Дополнительные сведения о версиях и компонентах HDInsight см. в статье [Что представляют собой различные компоненты Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)
+    Дополнительные сведения о версиях и компонентах HDInsight см. в статье [Что представляют собой различные компоненты Apache Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)
 
 3. Добавьте в файл **pom.xml** следующий код. Эти строки должны находиться в файле внутри тегов `<project>...</project>` (например, между тегами `</dependencies>` и `</project>`).
 
@@ -139,10 +139,10 @@ ms.locfileid: "53164064"
 
     В этом разделе настраивается ресурс (`conf/hbase-site.xml`), который содержит информацию о конфигурации для HBase.
 
-   > [!NOTE]
+   > [!NOTE]  
    > Также можно настроить значения конфигурации непосредственно из кода. Ознакомьтесь с комментариями к примеру `CreateTable`.
 
-    В разделе также будут настроены подключаемые модули [компилятора Maven](http://maven.apache.org/plugins/maven-compiler-plugin/) и[Maven Shade](http://maven.apache.org/plugins/maven-shade-plugin/). Подключаемый модуль компилятора используется для компиляции топологии. Подключаемый модуль shade используется для предотвращения дублирования лицензии в JAR-файле, собранном Maven. Этот подключаемый модуль используется для предотвращения ошибки с дублированием файлов лицензий, которая появляется во время выполнения на кластере HDInsight. Использование maven-shade-plugin с реализацией `ApacheLicenseResourceTransformer` позволяет избежать этой ошибки.
+    В этом разделе также будут настроены подключаемые модули [Apache Maven Compiler](https://maven.apache.org/plugins/maven-compiler-plugin/) и [Apache Maven Shade](https://maven.apache.org/plugins/maven-shade-plugin/). Подключаемый модуль компилятора используется для компиляции топологии. Подключаемый модуль shade используется для предотвращения дублирования лицензии в JAR-файле, собранном Maven. Этот подключаемый модуль используется для предотвращения ошибки с дублированием файлов лицензий, которая появляется во время выполнения на кластере HDInsight. Использование maven-shade-plugin с реализацией `ApacheLicenseResourceTransformer` позволяет избежать этой ошибки.
 
     maven-shade-plugin также создает так называемый uber jar, который содержит все зависимости, требуемые для приложения.
 
@@ -357,7 +357,7 @@ ms.locfileid: "53164064"
 
 2. После выполнения команды каталог `hbaseapp/target` будет содержать файл с именем `hbaseapp-1.0-SNAPSHOT.jar`.
 
-   > [!NOTE]
+   > [!NOTE]  
    > Файл `hbaseapp-1.0-SNAPSHOT.jar` относится к типу uber jar. Он содержит все зависимости, необходимые для запуска приложения.
 
 

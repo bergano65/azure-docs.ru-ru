@@ -1,20 +1,20 @@
 ---
 title: Скрипт Azure PowerShell для создания учетной записи API Azure Cosmos DB для MongoDB
 description: Пример скрипта Azure PowerShell для создания учетной записи API Azure Cosmos DB для MongoDB
-services: cosmos-db
 ms.service: cosmos-db
 author: SnehaGunda
 ms.author: sngun
-ms.custom: mvc
 ms.devlang: PowerShell
+ms.subservice: cosmosdb-mongo
 ms.topic: sample
 ms.date: 05/29/2018
-ms.openlocfilehash: c12f2f86e56ac90fbea366e43959dd934c89d931
-ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
+ms.reviewer: sngun
+ms.openlocfilehash: 59a6907e3f015bba657bc395aee2e97f601fcf7f
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53811058"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54037690"
 ---
 # <a name="create-an-azure-cosmos-db-account-with-azure-cosmos-dbs-api-for-mongodb-using-powershell"></a>Создание учетной записи с API Azure Cosmos DB для MongoDB с помощью PowerShell
 
@@ -38,7 +38,7 @@ Remove-AzureRmResourceGroup -ResourceGroupName "myResourceGroup"
 
 Этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [New-AzureRmResourceGroup](https://docs.microsoft.com/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzureRmResource](https://docs.microsoft.com/powershell/module/azurerm.resources/new-azurermresource?view=azurermps-3.8.0) | Создает логический сервер, на котором размещена база данных или эластичный пул. |

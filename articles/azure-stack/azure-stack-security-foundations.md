@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/9/2018
 ms.author: patricka
-ms.openlocfilehash: 32c268c1e4a0ff4d17c5b03f0ffd33b0ddf5b927
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
+ms.openlocfilehash: 8b478c1ba60df679d69d5fced660836c16079e6a
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48901487"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53727095"
 ---
 # <a name="azure-stack-infrastructure-security-posture"></a>Система безопасности для инфраструктуры Azure Stack
 
@@ -40,7 +40,7 @@ ms.locfileid: "48901487"
 Azure Stack предоставляется в виде интегрированной системы, поэтому безопасность в инфраструктуре Azure Stack обеспечивается корпорацией Майкрософт. Как и в Azure, клиенты сами определяют уровень защиты своих рабочих нагрузок. Этот документ содержит базовые сведения о системе обеспечения безопасности в инфраструктуре Azure Stack.
 
 ## <a name="data-at-rest-encryption"></a>Шифрование данных при хранении
-Все данные инфраструктуры и клиентов Azure Stack при хранении шифруются с помощью Bitlocker. Это шифрование обеспечивает защиту на случай физической потери или кражи компонентов из хранилища Azure Stack. 
+Все данные инфраструктуры и клиентов Azure Stack при хранении шифруются с помощью Bitlocker. Это шифрование обеспечивает защиту на случай физической потери или кражи компонентов из хранилища Azure Stack. Дополнительные сведения см. в разделе [Шифрование неактивных данных в Azure Stack](azure-stack-security-bitlocker.md).
 
 ## <a name="data-in-transit-encryption"></a>Шифрование данных при передаче
 Компоненты инфраструктуры Azure Stack при обмене данными шифруют каналы взаимодействия с помощью TLS 1.2. Управление сертификатами шифрования выполняется полностью автоматически. 

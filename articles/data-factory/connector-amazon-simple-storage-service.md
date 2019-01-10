@@ -8,17 +8,17 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 12/20/2018
 ms.author: jingwang
-ms.openlocfilehash: 9098e8e6af76ed14ad42d5fe5917fcd36097c222
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 7373cc23654e2168963a364e4b4069331bf196c5
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53103291"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53969936"
 ---
 # <a name="copy-data-from-amazon-simple-storage-service-using-azure-data-factory"></a>Копирование данных из Amazon Simple Storage Service с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
+> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-amazon-simple-storage-service-connector.md)
 > * [Текущая версия](connector-amazon-simple-storage-service.md)
 
@@ -29,6 +29,9 @@ ms.locfileid: "53103291"
 Данные Amazon S3 можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
 В частности, этот соединитель Amazon S3 поддерживает копирование файлов "как есть" или анализ файлов с использованием [поддерживаемых форматов файлов и кодеков сжатия](supported-file-formats-and-compression-codecs.md).
+
+>[!TIP]
+>Этот соединитель Amazon S3 можно использовать для копирования данных из **всех поставщиков хранилища, совместимых с S3**, например [Google Cloud Storage](#copy-from-google-cloud-storage). Укажите соответствующий URL-адрес службы в конфигурации связанной службы.
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
@@ -54,7 +57,11 @@ ms.locfileid: "53103291"
 | Тип | Для свойства типа необходимо задать значение **AmazonS3**. | Yes |
 | accessKeyId | Идентификатор секретного ключа доступа. |Yes |
 | secretAccessKey | Сам секретный ключ доступа. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
+| serviceUrl | Укажите настраиваемую конечную точку S3, если вы копируете данные из поставщика хранилища, совместимого с S3, но отличного от официальной службы Amazon S3. Например, для [копирования данных из Google Cloud Storage](#copy-from-google-cloud-storage) укажите `https://storage.googleapis.com`. | Нет  |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+
+>[!TIP]
+>Укажите настраиваемый URL-адрес службы S3, если вы копируете данные из хранилища, совместимого с S3, но отличного от официальной службы Amazon S3.
 
 >[!NOTE]
 >Для этого соединителя требуются ключи доступа к учетной записи IAM для копирования данных из Amazon S3. [Временные учетные данные безопасности](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) не поддерживаются.
@@ -70,8 +77,8 @@ ms.locfileid: "53103291"
         "typeProperties": {
             "accessKeyId": "<access key id>",
             "secretAccessKey": {
-                    "type": "SecureString",
-                    "value": "<secret access key>"
+                "type": "SecureString",
+                "value": "<secret access key>"
             }
         },
         "connectVia": {
@@ -172,7 +179,7 @@ ms.locfileid: "53103291"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь следующее значение: **FileSystemSource** |Yes |
+| Тип | Свойство type источника действия копирования должно иметь следующее значение: **FileSystemSource**. |Yes |
 | recursive | Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. Обратите внимание, что если для свойства recursive задано значение true, а приемником является файловое хранилище, в приемнике не будут создаваться пустые папки и вложенные папки.<br/>Допустимые значения: **true** (по умолчанию), **false**. | Нет  |
 
 **Пример.**
@@ -206,5 +213,35 @@ ms.locfileid: "53103291"
     }
 ]
 ```
+
+## <a name="copy-from-google-cloud-storage"></a>Копирование из Google Cloud Storage
+
+Так как Google Cloud Storage обеспечивает совместимость по взаимодействию с S3, соединитель Amazon S3 можно использовать для копирования данных из Google Cloud Storage в любой [поддерживаемый приемник хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats). 
+
+В коллекции соединителей пользовательского интерфейса разработки ADF можно найти конкретную запись Google Cloud Storage, которая автоматически заполняет URL-адрес службы как `https://storage.googleapis.com`. Чтобы найти ключ доступа и секрет, перейдите в раздел **Google Cloud Storage**  >  **Параметры**  >  **Взаимодействие**. См. в начале этой статьи подробный обзор использования соединителя S3 для копирования данных.
+
+**Образец связанной службы**
+
+```json
+{
+    "name": "GoogleCloudStorageLinkedService",
+    "properties": {
+        "type": "AmazonS3",
+        "typeProperties": {
+            "accessKeyId": "<access key id>",
+            "secretAccessKey": {
+                "type": "SecureString",
+                "value": "<secret access key>"
+            },
+            "serviceUrl": "https://storage.googleapis.com"
+        },
+        "connectVia": {
+            "referenceName": "<name of Integration Runtime>",
+            "type": "IntegrationRuntimeReference"
+        }
+    }
+}
+```
+
 ## <a name="next-steps"></a>Дополнительная информация
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

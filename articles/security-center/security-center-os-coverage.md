@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/28/2018
+ms.date: 12/18/2018
 ms.author: rkarlin
-ms.openlocfilehash: 4108355415d1230f98db36a4f83497de2fa848f7
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 2dcc72e0e3b9caef9ab01d9f754671cb0365a358
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53185585"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608840"
 ---
 # <a name="platforms-and-features-supported-by-azure-security-center"></a>Поддерживаемые платформы и возможности в центре безопасности Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "53185585"
 >
 >
 
-## <a name="supported-platforms"></a>Поддерживаемые платформы 
+## <a name="platforms-that-support-the-data-collection-agent"></a>Платформы, которые поддерживают агент сбора данных 
 
 В этом разделе перечислены платформы, на которых можно запустить агент центра безопасности Azure и с которых он может собирать данные.
 
@@ -43,6 +43,10 @@ ms.locfileid: "53185585"
 * Windows Server 2012 R2
 * Windows Server 2016
 
+> [!NOTE]
+> Интеграция с ATP в Защитнике Windows поддерживается только для Windows Server 2012 R2 и Windows Server 2016.
+>
+>
 
 ### <a name="supported-platforms-for-linux-computers-and-vms"></a>Поддерживаемые платформы для компьютеров и виртуальных машин Linux
 Поддерживаются перечисленные ниже операционные системы Linux.
@@ -55,11 +59,6 @@ ms.locfileid: "53185585"
 * Oracle Linux версий 5, 6 и 7.
 * Amazon Linux с сентября 2012 г. по 2017 г.
 * OpenSSL 1.1.0 поддерживается только на платформах x86_64 (64-разрядная версия).
-
-> [!NOTE]
-> Аналитика поведения виртуальной машины еще не доступна для операционных систем Linux.
->
->
 
 ## <a name="vms-and-cloud-services"></a>Виртуальные машины и облачные службы
 Поддерживаются также виртуальные машины, запущенные в облачной службе. Мониторинг выполняется только для облачных служб и рабочих ролей, запущенных в слотах рабочей среды. Дополнительные сведения см. в статье [Общие сведения об облачных службах Azure](../cloud-services/cloud-services-choose-me.md).

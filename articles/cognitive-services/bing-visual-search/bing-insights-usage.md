@@ -10,20 +10,20 @@ ms.component: bing-visual-search
 ms.topic: conceptual
 ms.date: 04/17/2018
 ms.author: scottwhi
-ms.openlocfilehash: 40b9685c56dd494e82c05bff9ed75f425a3006ff
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: 39468a4a143d184fcc964ae88f82ad7254e4f3b0
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48886633"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53741748"
 ---
 # <a name="examples-of-bing-insights-usage"></a>Примеры использования аналитических сведений Bing
 
-В этом разделе содержатся примеры того, как служба Bing могла бы отображать аналитические сведения на Bing.com.
+В этой статье содержатся примеры того, как служба Bing может использовать и отображать аналитические сведения на Bing.com.
 
 ## <a name="pagesincluding-insight-example"></a>Пример аналитических сведений PagesIncluding
 
-Ниже показано, как служба Bing может отображать веб-страницы, содержащие определенное изображение. В этом примере служба Bing отображает ссылку на первую веб-страницу и позволяет пользователю разворачивать и сворачивать список других веб-страниц, содержащих это изображение.
+В следующем примере служба Bing отображает ссылку на первую веб-страницу и позволяет пользователю разворачивать и сворачивать список других веб-страниц, содержащих это изображение.
 
 ![Развернутые страницы, содержащие изображение](./media/pages-including.PNG)
 
@@ -83,9 +83,7 @@ ms.locfileid: "48886633"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Чтобы извлечь данные из этих примеров в формате JSON, см. статью [Сведения об изображениях по умолчанию](default-insights-tag.md) и раздел [Ответ JSON](overview.md#the-response).
-
-Сведения о том, как быстро создать первый запрос, см. в следующих кратких руководствах: [C#](quickstarts/csharp.md) | [Java](quickstarts/java.md) | [node.js](quickstarts/nodejs.md) | [Python](quickstarts/python.md).
+Сведения о том, как быстро создать первый запрос, см. в кратких руководствах: [C#](quickstarts/csharp.md)  |  [Java](quickstarts/java.md)  |  [node.js](quickstarts/nodejs.md)  |  [Python](quickstarts/python.md)
 
 
 

@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 01/02/2019
 ms.author: diberry
-ms.openlocfilehash: c050c8ed338a019b34302e87a53d4a40306f9a22
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: b0b2c8d0e3484538ca5c988a7fad56fb82b97902
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53133153"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53993169"
 ---
 # <a name="batch-testing-with-1000-utterances-in-luis-portal"></a>Пакетное тестирование 1000 высказываний на портале LUIS
 
@@ -48,7 +48,7 @@ ms.locfileid: "53133153"
 
 Пакетный файл содержит высказывания. Каждое высказывание должно сопровождаться ожидаемым прогнозом намерения, а также всеми [сущностями машинного обучения](luis-concept-entity-types.md#types-of-entities), которые должны быть в нем обнаружены. 
 
-## <a name="batch-syntax-template"></a>Шаблон синтаксиса пакета
+## <a name="batch-syntax-template-for-intents-with-entities"></a>Шаблон синтаксиса пакета для намерений с сущностями
 
 Чтобы запустить файл пакета, используйте следующий шаблон.
 
@@ -75,6 +75,22 @@ ms.locfileid: "53133153"
 ```
 
 Чтобы уведомить о начале и конце сущности, в файле пакета используются свойства **startPos** и **endPos**. Их значения отсчитываются, начиная с нуля, и не должны начинаться или заканчиваться пробелом. В этом и состоит основное отличие от журналов запросов, для которых используются свойства startIndex и endIndex. 
+
+## <a name="batch-syntax-template-for-intents-without-entities"></a>Шаблон синтаксиса пакета для намерений без сущностей
+
+Чтобы запустить файл пакета без сущностей, используйте следующий шаблон.
+
+```JSON
+[
+  {
+    "text": "example utterance goes here",
+    "intent": "intent name goes here",
+    "entities": []
+  }
+]
+```
+
+Если вы не хотите тестировать сущности, включите свойство `entities` и задайте в качестве значения пустой массив `[]`.
 
 
 ## <a name="common-errors-importing-a-batch"></a>Распространенные ошибки при импорте пакета

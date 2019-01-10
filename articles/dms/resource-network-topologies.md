@@ -4,19 +4,19 @@ description: Сведения об исходной и целевой конфи
 services: database-migration
 author: pochiraju
 ms.author: rajpo
-manager: ''
-ms.reviewer: ''
-ms.service: database-migration
+manager: craigg
+ms.reviewer: douglasl
+ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 11/8/2018
-ms.openlocfilehash: cd62b60718a35aed9129db61413086266bb9f2c7
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.date: 12/19/2018
+ms.openlocfilehash: bc54b3dbcdb304b18f916e5fbd4866ff54d1bfa2
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52971085"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53713202"
 ---
 # <a name="network-topologies-for-azure-sql-db-managed-instance-migrations-using-the-azure-database-migration-service"></a>Сетевые топологии для переноса Управляемого экземпляра Базы данных Azure SQL с помощью Azure Database Migration Service
 Эта статья описывает различные сетевые топологии, поддерживаемые Azure Database Migration Service для комплексного переноса Управляемого экземпляра базы данных SQL Azure из локальных систем SQL Server.
@@ -87,4 +87,5 @@ ms.locfileid: "52971085"
 - [Создание виртуальной сети с помощью портала Azure](https://docs.microsoft.com/azure/virtual-network/quick-create-portal)
 
 ## <a name="next-steps"></a>Дополнительная информация
-Общие сведения о службе Azure Database Migration Service и доступности по регионам в период действия общедоступной предварительной версии см. в статье [Что такое предварительная версия службы Azure Database Migration Service?](dms-overview.md) 
+- Общие сведения о службе Azure Database Migration Service см. в статье [Что такое Azure Database Migration Service?](dms-overview.md).
+- Актуальные сведения о доступности Azure Database Migration Service в регионах см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=database-migration).

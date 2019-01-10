@@ -8,18 +8,18 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: qna-maker
 ms.topic: article
-ms.date: 09/12/2018
+ms.date: 12/18/2018
 ms.author: tulasim88
-ms.openlocfilehash: 97fb59a9a483753c6c2b5a4ae027bb358f7050e1
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 004f09eb77d1bc32e44e1940186e8a631c45846d
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53166597"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608483"
 ---
 # <a name="using-metadata-and-the-generateanswer-api"></a>Использование метаданных и API GenerateAnswer.
 
-QnA Maker позволяет добавлять метаданные в виде пар "ключ-значение" в наборы вопросов и ответов. Эти сведения можно использовать, чтобы отфильтровать результаты запросов пользователей и сохранить дополнительную информацию, которая может использоваться в дальнейших диалогах. Дополнительные сведения см. в разделе [Knowledge base](../Concepts/knowledge-base.md) (База знаний).
+QnA Maker позволяет добавлять метаданные в виде пар "ключ — значение" в наборы вопросов и ответов. Эти сведения можно использовать, чтобы отфильтровать результаты запросов пользователей и сохранить дополнительную информацию, которая может использоваться в дальнейших диалогах. Дополнительные сведения см. в разделе [Knowledge base](../Concepts/knowledge-base.md) (База знаний).
 
 ## <a name="qna-entity"></a>Сущность QnA
 
@@ -113,11 +113,11 @@ API GenerateAnswer можно использовать в боте или при
 
 ## <a name="metadata-example"></a>Пример метаданных
 
-Рассмотрим приведенные ниже данные часто задаваемых вопросов о ресторанах в городе Хайдерабаде. Добавьте метаданные в базу знаний, щелкнув значок шестеренки.
+Рассмотрим приведенные ниже данные часто задаваемых вопросов. Добавьте метаданные в базу знаний, щелкнув значок метаданных.
 
 ![Добавление метаданных](../media/qnamaker-how-to-metadata-usage/add-metadata.png)
 
-### <a name="filter-results-with-strictfilters"></a>Фильтрация результатов с помощью strictFilters
+### <a name="filter-results-with-strictfilters-for-metadata-tags"></a>Фильтрация результатов с помощью strictFilters по тегам метаданных
 
 Рассмотрим вопрос пользователя "Когда закрывается этот отель?", когда подразумевается ресторан "Paradise".
 

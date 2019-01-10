@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 02/02/2018
 ms.author: ashish
-ms.openlocfilehash: 3e664fc83fde937b26a4726f997da4c0cb4d8f8a
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 30f96c54dd916188296ca0245d4095a32ae0bbe4
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53407887"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53742887"
 ---
 # <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
 
@@ -152,7 +152,7 @@ hdfs dfsadmin -D 'fs.default.name=hdfs://mycluster/' -safemode get
 ![Безопасный режим отключен](./media/hdinsight-scaling-best-practices/safe-mode-off.png)
 
 > [!NOTE]  
-> Требуется параметр `-D`, так как в HDInsight файловой системой по умолчанию является служба хранилища Azure или Azure Data Lake Store. Параметр `-D` указывает, что команды выполняются в локальной файловой системе HDFS.
+> Требуется параметр `-D`, так как в HDInsight файловой системой по умолчанию является служба хранилища Azure или Azure Data Lake Storage. Параметр `-D` указывает, что команды выполняются в локальной файловой системе HDFS.
 
 Затем можно просмотреть отчет, в котором содержатся дополнительные сведения о состоянии HDFS:
 

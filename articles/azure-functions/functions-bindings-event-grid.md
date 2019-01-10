@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/04/2018
 ms.author: cshoe
-ms.openlocfilehash: e5c5c7f667959426f015e207cd32d716c493e31e
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 78290f6d1b31788c3f2de99996739cc8e7b20419
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52995035"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53810940"
 ---
 # <a name="event-grid-trigger-for-azure-functions"></a>Триггер службы "Сетка событий" для службы "Функции Azure"
 
@@ -48,7 +48,7 @@ ms.locfileid: "52995035"
 
 * [C#](#c-example)
 * [Скрипт C# (CSX)](#c-script-example)
-* [Java](#trigger---java-example)
+* [Java](#trigger---java-examples)
 * [JavaScript](#javascript-example)
 * [Python](#python-example)
 
@@ -221,9 +221,14 @@ def main(event: func.EventGridEvent):
     logging.info("  Data: %s", event.get_json())
 ```
 
-### <a name="trigger---java-example"></a>Пример Java в триггере
+### <a name="trigger---java-examples"></a>Триггер — пример для Java
 
-В следующем примере показана привязка триггера в файле *function.json* и [функция Java](functions-reference-java.md), которая использует привязку и распечатывает события.
+В этом разделе содержатся следующие примеры:
+
+* [Триггер сетки событий, строковый параметр](#event-grid-trigger-string-parameter-java)
+* [Триггер сетки событий, параметр POJO](#event-grid-trigger-pojo-parameter-java)
+
+В следующих примерах показана привязка триггера в файле *function.json* и [функции Java](functions-reference-java.md), использующая привязку и печатающая событие; сначала событие принимается как ```String```, затем — как POJO.
 
 ```json
 {
@@ -237,16 +242,60 @@ def main(event: func.EventGridEvent):
 }
 ```
 
-Ниже приведен код Java.
+#### <a name="event-grid-trigger-string-parameter-java"></a>Триггер сетки событий, строковый параметр (Java)
 
 ```java
-@FunctionName("eventGridMonitor")
+  @FunctionName("eventGridMonitorString")
   public void logEvent(
-     @EventGridTrigger(name = "event") String content,
-      final ExecutionContext context
-  ) {
-      context.getLogger().info(content);
-    }
+    @EventGridTrigger(
+      name = "event"
+    ) 
+    String content, 
+    final ExecutionContext context) {
+      // log 
+      context.getLogger().info("Event content: " + content);      
+  }
+```
+
+#### <a name="event-grid-trigger-pojo-parameter-java"></a>Триггер сетки событий, параметр POJO (Java)
+
+В этом примере используется следующий POJO, представляющий свойства верхнего уровня события сетки событий.
+
+```java
+import java.util.Date;
+import java.util.Map;
+
+public class EventSchema {
+
+  public String topic;
+  public String subject;
+  public String eventType;
+  public Date eventTime;
+  public String id;
+  public String dataVersion;
+  public String metadataVersion;
+  public Map<String, Object> data;
+
+}
+```
+
+По прибытии полезные данные JSON события десериализуются в ```EventSchema``` POJO для использования функцией. Это позволяет функции использовать свойства событий в объектно-ориентированном стиле.
+
+```java
+  @FunctionName("eventGridMonitor")
+  public void logEvent(
+    @EventGridTrigger(
+      name = "event"
+    ) 
+    EventSchema event, 
+    final ExecutionContext context) {
+      // log 
+      context.getLogger().info("Event content: ");
+      context.getLogger().info("Subject: " + event.subject);
+      context.getLogger().info("Time: " + event.eventTime); // automatically converted to Date by the runtime
+      context.getLogger().info("Id: " + event.id);
+      context.getLogger().info("Data: " + event.data);
+  }
 ```
 
 В [библиотеке выполнения функций Java](/java/api/overview/azure/functions/runtime) используйте заметку `EventGridTrigger` для параметров, значение которых должно быть получено от EventGrid. Параметры с этими заметками запускают функцию, когда происходит событие.  Эта заметка может использоваться с собственными типами Java, объектами POJO или значениями, допускающими значения NULL, используя `Optional<T>`.

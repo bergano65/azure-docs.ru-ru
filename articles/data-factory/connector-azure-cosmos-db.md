@@ -1,6 +1,6 @@
 ---
 title: Копирование данных в службу Azure Cosmos DB (API SQL) или из нее с помощью фабрики данных | Документация Майкрософт
-description: Узнайте, как копировать данные из поддерживаемых исходных хранилищ данных в службу Azure Cosmos DB или из нее в поддерживаемые хранилища-приемники с помощью фабрики данных.
+description: Узнайте, как копировать данные из поддерживаемых исходных хранилищ данных в службу Azure Cosmos DB (SQL API) или из нее в поддерживаемые хранилища-приемники с помощью фабрики данных.
 services: data-factory, cosmosdb
 documentationcenter: ''
 author: linda33wj
@@ -11,37 +11,37 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/19/2018
+ms.date: 12/20/2018
 ms.author: jingwang
-ms.openlocfilehash: 16c02f1f47f556f550519feec78e7dd26b302e18
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: d927842dfc15c089225531c9718145ab20e329dc
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53103801"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53808865"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-db-sql-api-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure Cosmos DB (API SQL) или из нее с помощью Фабрики данных Azure
 
-> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
+> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-azure-documentdb-connector.md)
 > * [Текущая версия](connector-azure-cosmos-db.md)
 
 Из этой статьи вы узнаете, как с помощью действия копирования в Фабрике данных Azure копировать данные в базу данных Azure Cosmos DB и из нее (API SQL). Это продолжение статьи о [действии копирования в Фабрике данных Azure](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
+>[!NOTE]
+>Этот соединитель поддерживает только копирование данных из API SQL Cosmos DB и из него. Для API MongoDB см. раздел [Соединитель API Cosmos DB MongoDB](connector-azure-cosmos-db-mongodb-api.md). Другие типы API сейчас не поддерживаются.
+
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-Данные можно скопировать из Azure Cosmos DB в любое поддерживаемое хранилище данных-приемник или скопировать данные из любого исходного хранилища данных в Azure Cosmos DB. Список хранилищ данных, поддерживаемых действием копирования в качестве источников и приемников, приведен в разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
+Данные можно скопировать из Azure Cosmos DB (SQL API) в любое поддерживаемое хранилище данных — приемник или скопировать данные из любого исходного хранилища данных в Azure Cosmos DB (SQL API). Список хранилищ данных, поддерживаемых действием копирования в качестве источников и приемников, приведен в разделе [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-Возможности соединителя Azure Cosmos DB:
+Возможности соединителя Azure Cosmos DB (SQL API)
 
 - Копирование данных из службы Azure Cosmos DB и в нее с помощью [API SQL](https://docs.microsoft.com/azure/cosmos-db/documentdb-introduction).
 - Запись данных в Azure Cosmos DB с помощью операции **INSERT** или **UPSERT**.
 - Импорт и экспорт документов JSON "как есть" либо копирование данных из набора табличных данных или в него. К примерам можно отнести базу данных SQL и CSV-файл. Сведения о копировании документов "как есть" в JSON-файлы или другую коллекцию Azure Cosmos DB либо из них см. в разделе [Импорт и экспорт документов JSON](#importexport-json-documents).
 
 Фабрика данных интегрируется с [библиотекой массового исполнителя Azure Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started), чтобы обеспечить оптимальную производительность при операциях записи в Azure Cosmos DB.
-
->[!NOTE]
->Этот соединитель поддерживает только копирование данных из API SQL Cosmos DB и из него.
 
 > [!TIP]
 > [Видео о переносе данных](https://youtu.be/5-SRNiC_qOU) поможет вам выполнить копирование данных из хранилища BLOB-объектов Azure в Azure Cosmos DB. Кроме того, в видео приведены общие рекомендации по настройке производительности приема данных в Azure Cosmos DB.
@@ -50,11 +50,11 @@ ms.locfileid: "53103801"
 
 [!INCLUDE [data-factory-v2-connector-get-started](../../includes/data-factory-v2-connector-get-started.md)]
 
-Следующие разделы содержат сведения о свойствах, которые можно использовать для определения сущностей фабрики данных, характерных для Azure Cosmos DB.
+Следующие разделы содержат сведения о свойствах, которые можно использовать для определения сущностей фабрики данных, характерных для Azure Cosmos DB (SQL API).
 
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 
-Для связанной службы Azure Cosmos DB поддерживаются следующие свойства.
+Для связанной службы Azure Cosmos DB (SQL API) поддерживаются следующие свойства.
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
@@ -66,7 +66,7 @@ ms.locfileid: "53103801"
 
 ```json
 {
-    "name": "CosmosDbLinkedService",
+    "name": "CosmosDbSQLAPILinkedService",
     "properties": {
         "type": "CosmosDb",
         "typeProperties": {
@@ -85,11 +85,11 @@ ms.locfileid: "53103801"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Этот раздел содержит список свойств, поддерживаемых набором данных Azure Cosmos DB. 
+Этот раздел содержит список свойств, поддерживаемых набором данных Azure Cosmos DB (SQL API). 
 
 Полный список разделов и свойств, используемых для определения наборов данных, приведен в статье [Наборы данных и связанные службы в фабрике данных Azure](concepts-datasets-linked-services.md). 
 
-Чтобы скопировать данные из службы Azure Cosmos DB или в нее, задайте для свойства **type** набора данных значение **DocumentDbCollection**. Поддерживаются следующие свойства:
+Чтобы скопировать данные из службы Azure Cosmos DB (SQL API) или в нее, задайте для свойства **type** набора данных значение **DocumentDbCollection**. Поддерживаются следующие свойства:
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
@@ -100,7 +100,7 @@ ms.locfileid: "53103801"
 
 ```json
 {
-    "name": "CosmosDbDataset",
+    "name": "CosmosDbSQLAPIDataset",
     "properties": {
         "type": "DocumentDbCollection",
         "linkedServiceName":{
@@ -127,13 +127,13 @@ ms.locfileid: "53103801"
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
-Этот раздел содержит список свойств, поддерживаемых источником и приемником Azure Cosmos DB.
+Этот раздел содержит список свойств, поддерживаемых источником и приемником Azure Cosmos DB (SQL API).
 
 Полный список разделов и свойств, доступных для определения действий, см. в статье, посвященной [конвейерам и действиям в Фабрике данных Azure](concepts-pipelines-activities.md).
 
-### <a name="azure-cosmos-db-as-source"></a>Azure DB Cosmos в качестве источника
+### <a name="azure-cosmos-db-sql-api-as-source"></a>Azure Cosmos DB (SQL API) как источник
 
-Чтобы скопировать данные из Azure Cosmos DB, в действии копирования в качестве типа **source** задайте значение **DocumentDbCollectionSource**. 
+Чтобы скопировать данные из Azure Cosmos DB (SQL API), в действии копирования в качестве типа **source** задайте значение **DocumentDbCollectionSource**. 
 
 В разделе **source** действия копирования поддерживаются следующие свойства:
 
@@ -148,11 +148,11 @@ ms.locfileid: "53103801"
 ```json
 "activities":[
     {
-        "name": "CopyFromCosmosDB",
+        "name": "CopyFromCosmosDBSQLAPI",
         "type": "Copy",
         "inputs": [
             {
-                "referenceName": "<Document DB input dataset name>",
+                "referenceName": "<Cosmos DB SQL API input dataset name>",
                 "type": "DatasetReference"
             }
         ],
@@ -175,9 +175,9 @@ ms.locfileid: "53103801"
 ]
 ```
 
-### <a name="azure-cosmos-db-as-sink"></a>Azure DB Cosmos в качестве приемника
+### <a name="azure-cosmos-db-sql-api-as-sink"></a>Azure Cosmos DB (SQL API) как приемник
 
-Чтобы скопировать данные в Azure Cosmos DB, в действии копирования задайте для типа **sink** значение **DocumentDbCollectionSink**. 
+Чтобы скопировать данные в Azure Cosmos DB (SQL API), в действии копирования задайте для типа **sink** значение **DocumentDbCollectionSink**. 
 
 В разделе **source** действия копирования поддерживаются следующие свойства:
 
@@ -185,7 +185,7 @@ ms.locfileid: "53103801"
 |:--- |:--- |:--- |
 | Тип | Свойство **type** приемника действия копирования должно иметь значение **DocumentDbCollectionSink**. |Yes |
 | writeBehavior |Описывает способ записи данных в Azure Cosmos DB. Допустимые значения: **insert** и **upsert**.<br/><br/>Поведение **upsert** — замена документа, если документ с таким идентификатором уже существует. В противном выполняется вставка документа.<br /><br />**Примечание**. Фабрика данных автоматически создает идентификатор для документа, если идентификатор не указан в исходном документе или с помощью сопоставления столбцов. Это означает, что для правильной работы **upsert** у документа должен быть идентификатор. |Нет <br />(По умолчанию используется **insert**.) |
-| writeBatchSize | Фабрика данных использует [библиотеку массового исполнителя Azure Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started) для записи данных в Azure Cosmos DB. Свойство **writeBatchSize** определяет размер документов, которые мы передаем в библиотеку. Вы можете увеличить значение **writeBatchSize** для повышения производительности или уменьшить значение, если документ большого размера. См. рекомендации ниже. |Нет <br />(Значение по умолчанию — **10 000**.) |
+| writeBatchSize | Фабрика данных использует [библиотеку массового исполнителя Azure Cosmos DB](https://github.com/Azure/azure-cosmosdb-bulkexecutor-dotnet-getting-started) для записи данных в Azure Cosmos DB. Свойство **writeBatchSize** определяет размер документов, которые ADF передает в библиотеку. Вы можете увеличить значение **writeBatchSize** для повышения производительности или уменьшить значение, если документ большого размера. См. рекомендации ниже. |Нет <br />(Значение по умолчанию — **10 000**.) |
 | nestingSeparator |Специальный знак в имени **исходного** столбца, который указывает, что нужен вложенный документ. <br/><br/>Например, `Name.First` в выходной структуре набора данных создает приведенную ниже структуру JSON в документе Azure Cosmos DB, в которой **nestedSeparator** является точкой (**.** ) `"Name": {"First": "[value maps to this column from source]"}`  |Нет <br />Значение по умолчанию — **.** (точка). |
 
 >[!TIP]
@@ -196,7 +196,7 @@ ms.locfileid: "53103801"
 ```json
 "activities":[
     {
-        "name": "CopyToCosmosDB",
+        "name": "CopyToCosmosDBSQLAPI",
         "type": "Copy",
         "inputs": [
             {
@@ -225,7 +225,7 @@ ms.locfileid: "53103801"
 
 ## <a name="import-or-export-json-documents"></a>Импорт или экспорт документов JSON
 
-Соединитель Azure Cosmos DB помогает легко:
+Соединитель Azure Cosmos DB (SQL API) помогает легко:
 
 * импортировать документы JSON из различных источников в Azure Cosmos DB, включая хранилище BLOB-объектов Azure, Azure Data Lake Store или другие файловые хранилища, поддерживаемые Фабрикой данных Azure;
 * экспортировать документы JSON из коллекции Azure Cosmos DB в различные файловые хранилища;

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: rogarana
 ms.component: common
-ms.openlocfilehash: 75a3dcb5aeb3e30da570eb57d0d1495710624e54
-ms.sourcegitcommit: d2f2356d8fe7845860b6cf6b6545f2a5036a3dd6
+ms.openlocfilehash: 842a9354cf20648393c3262736c0a1e9654a3c70
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "42143058"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53628346"
 ---
 # <a name="managing-storage-in-the-azure-independent-clouds-using-powershell"></a>Управление службой хранилища в независимых от Azure облаках с помощью Azure PowerShell
 
@@ -23,6 +23,8 @@ ms.locfileid: "42143058"
 * [Облако Azure для Китая (обслуживается 21Vianet в Китае)](http://www.windowsazure.cn/).
 * [Облако Azure для Германии](../../germany/germany-welcome.md).
 
+[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
+
 ## <a name="using-an-independent-cloud"></a>Использование независимого облака 
 
 Чтобы использовать службу хранилища Azure в одном из независимых облаков, нужно подключиться к нему вместо общедоступного облака Azure. Чтобы использовать одно из независимых облаков Azure вместо общедоступного, выполните следующие инструкции:
@@ -31,28 +33,28 @@ ms.locfileid: "42143058"
 * Определите и используйте доступные регионы.
 * Используйте правильный суффикс конечной точки, который отличается от суффикса общедоступного облака Azure.
 
-Для работы с этим руководством требуется модуль Azure PowerShell 4.4.0 или более поздней версии. В окне PowerShell выполните `Get-Module -ListAvailable AzureRM`, чтобы найти версию. Если версия не отображается или необходимо обновить модуль, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). 
+Для работы с этим руководством требуется модуль Az в Azure PowerShell 0.7 или более поздней версии. В окне PowerShell выполните `Get-Module -ListAvailable Az`, чтобы найти версию. Если версия не отображается или необходимо обновить модуль, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). 
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
-Запустите командлет [Get-AzureRmEnvironment](/powershell/module/servicemanagement/azurerm.profile/get-azurermenvironment), чтобы просмотреть доступные среды Azure:
+Запустите командлет [Get-AzEnvironment](/powershell/module/az.profile/get-Azenvironment), чтобы просмотреть доступные среды Azure.
    
 ```powershell
-Get-AzureRmEnvironment
+Get-AzEnvironment
 ```
 
 Войдите в учетную запись с доступом к облаку, к которому требуется подключиться, и укажите среду. В этом примере показано, как войти в учетную запись облака Azure для государственных организаций.   
 
 ```powershell
-Connect-AzureRmAccount –Environment AzureUSGovernment
+Connect-AzAccount –Environment AzureUSGovernment
 ```
 
 Для доступа к облаку для Китая используйте среду **AzureChinaCloud**. Для доступа к облаку для Германии используйте среду**AzureGermanCloud**.
 
-На этом этапе для создания учетной записи хранения иди другого ресурса вам может потребоваться список расположений в выбранном облаке. Подайте запрос на список с помощью командлета [Get AzureRmLocation](/powershell/module/azurerm.resources/get-azurermlocation).
+На этом этапе для создания учетной записи хранения иди другого ресурса вам может потребоваться список расположений в выбранном облаке. Запросите этот список с помощью командлета [Get AzLocation](/powershell/module/az.resources/get-azlocation).
 
 ```powershell
-Get-AzureRmLocation | select Location, DisplayName
+Get-AzLocation | select Location, DisplayName
 ```
 
 В следующей таблице показаны расположения, доступные в облаке для Германии.
@@ -67,14 +69,14 @@ Get-AzureRmLocation | select Location, DisplayName
 
 Суффикс конечной точки для каждой из этих сред отличается от суффикса конечной точки общедоступного облака Azure. Например, суффикс конечной точки большого двоичного объекта в общедоступном облаке Azure — **blob.core.windows.net**. В облаке Azure для государственных организаций суффикс конечной точки большого двоичного объекта — **blob.core.usgovcloudapi.net**. 
 
-### <a name="get-endpoint-using-get-azurermenvironment"></a>Получение конечной точки с помощью командлета Get-AzureRMEnvironment 
+### <a name="get-endpoint-using-get-azenvironment"></a>Получение конечной точки с помощью командлета Get-AzEnvironment 
 
-Получите суффикс конечной точки с помощью командлета [Get AzureRMEnvironment](/powershell/module/azurerm.profile/get-azurermenvironment). Конечная точка — это свойство среды *StorageEndpointSuffix*. В приведенном ниже фрагменте кода показано, как это сделать. Все эти команды возвращают такие значения, как core.cloudapp.net или core.cloudapi.de и т. д. Добавьте это значение в службу хранилища для доступа к ней. Например, конечная точка queue.core.cloudapi.de получит доступ к службе очередей в облаке для Германии.
+Получите суффикс конечной точки с помощью командлета [Get AzEnvironment](/powershell/module/az.profile/get-azenvironment). Конечная точка — это свойство среды *StorageEndpointSuffix*. В приведенном ниже фрагменте кода показано, как это сделать. Все эти команды возвращают такие значения, как core.cloudapp.net или core.cloudapi.de и т. д. Добавьте это значение в службу хранилища для доступа к ней. Например, конечная точка queue.core.cloudapi.de получит доступ к службе очередей в облаке для Германии.
 
 Этот фрагмент кода позволяет получить все среды и суффикс конечной точки для каждой из них.
 
 ```powershell
-Get-AzureRmEnvironment | select Name, StorageEndpointSuffix 
+Get-AzEnvironment | select Name, StorageEndpointSuffix 
 ```
 
 Эта команда возвращает следующие результаты:
@@ -86,10 +88,10 @@ Get-AzureRmEnvironment | select Name, StorageEndpointSuffix
 | AzureGermanCloud | core.cloudapi.de|
 | AzureUSGovernment; | core.usgovcloudapi.net |
 
-Чтобы получить все свойства для указанной среды, вызовите **Get AzureRmEnvironment** и укажите имя облака. Этот фрагмент кода позволяет получить список свойств. Найдите **StorageEndpointSuffix** в списке. Следующий пример касается облака для Германии.
+Чтобы получить все свойства для указанной среды, вызовите **Get AzEnvironment** и укажите имя облака. Этот фрагмент кода позволяет получить список свойств. Найдите **StorageEndpointSuffix** в списке. Следующий пример касается облака для Германии.
 
 ```powershell
-Get-AzureRmEnvironment -Name AzureGermanCloud 
+Get-AzEnvironment -Name AzureGermanCloud 
 ```
 
 Результаты должны выглядеть следующим образом:
@@ -111,7 +113,7 @@ Get-AzureRmEnvironment -Name AzureGermanCloud
 Чтобы получить только свойство суффикса конечной точки хранилища, обратитесь к определенному облаку и подайте запрос только на это свойство.
 
 ```powershell
-$environment = Get-AzureRmEnvironment -Name AzureGermanCloud
+$environment = Get-AzEnvironment -Name AzureGermanCloud
 Write-Host "Storage EndPoint Suffix = " $environment.StorageEndpointSuffix 
 ```
 
@@ -129,7 +131,7 @@ Storage Endpoint Suffix = core.cloudapi.de
 # Get a reference to the storage account.
 $resourceGroup = "myexistingresourcegroup"
 $storageAccountName = "myexistingstorageaccount"
-$storageAccount = Get-AzureRmStorageAccount `
+$storageAccount = Get-AzStorageAccount `
   -ResourceGroupName $resourceGroup `
   -Name $storageAccountName 
   # Output the endpoints.
@@ -157,7 +159,7 @@ table endpoint = http://myexistingstorageaccount.table.core.usgovcloudapi.net/
 Если вы создали новую группу ресурсов и учетную запись хранения для этого примера, удалите их, удалив группу ресурсов. При этом будут также удалены все ресурсы, содержащиеся в группе. В этом случае происходит удаление созданной учетной записи хранения и самой группы ресурсов.
 
 ```powershell
-Remove-AzureRmResourceGroup -Name $resourceGroup
+Remove-AzResourceGroup -Name $resourceGroup
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

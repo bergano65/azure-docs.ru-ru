@@ -10,12 +10,12 @@ ms.component: qna-maker
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: tulasim
-ms.openlocfilehash: 71b0739bacd8df586267b61a9135f448aa76479d
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: f732391cc73f0a7cb417409cd6f6f2b3c54f93d6
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53082243"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53994136"
 ---
 # <a name="data-sources-for-qna-maker-content"></a>Источники данных для содержимого QnA Maker
 
@@ -25,9 +25,9 @@ QnA Maker автоматически извлекает пары "вопрос �
 
 |Тип источника|Тип содержимого| Примеры|
 |--|--|--|
-|URL-адрес|Часто задаваемые вопросы (неструктурированные, с разделами или темами на домашней страницей)|[простые вопросы и ответы](https://docs.microsoft.com/azure/cognitive-services/qnamaker/faqs), [часто задаваемые вопросы со ссылками](https://www.microsoft.com/software-download/faq), [часто задаваемые вопросы с темами на домашней странице](https://support.microsoft.com/products/windows?os=windows-10)|
-|PDF/DOC|Часто задаваемые вопросы, руководство по продуктам, брошюры, документы, объявления политики, руководства поддержки, структурированные вопросы и ответы (QnA) и т. д.|[Структурированные вопросы и ответы.doc](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/semi-structured.docx), [Пример руководства по продукту.pdf](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/product-manual.pdf), [Пример слабоструктурированного файла.doc](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/semi-structured.docx), [Пример технического документа.pdf](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/white-paper.pdf)|
-|Excel|Файл структурированных вопросов и ответов (включая поддержку RTF, HTML)|[Пример часто задаваемых вопросов QnA.xls](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx)|
+|URL-адрес|Часто задаваемые вопросы<br> (неструктурированные, с разделами или темами на домашней странице)<br>Страницы поддержки <br> (одностраничные руководства, устранение неполадок и т. д.)|[Простая страница вопросов и ответов](https://docs.microsoft.com/azure/cognitive-services/qnamaker/faqs) <br>[Часто задаваемые вопросы о со ссылками](https://www.microsoft.com/software-download/faq)<br> [Вопросы и ответы с домашней страницей разделов](https://support.microsoft.com/products/windows?os=windows-10)<br>[Статья службы поддержки](https://docs.microsoft.com/azure/cognitive-services/qnamaker/concepts/best-practices)|
+|PDF/DOC|Часто задаваемые вопросы и ответы<br> Руководство по продукту<br> Брошюры<br> Бумажные документы<br> Политика в отношении флаеров<br> Руководство по поддержке<br> Файл структурированных вопросов и ответов (QnA)<br> и т. д.|[Файл структурированных вопросов и ответов (QnA).doc](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/semi-structured.docx)<br> [Пример руководства по продукту.pdf](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/product-manual.pdf)<br> [Пример слабоструктурированного раздела.doc](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/semi-structured.docx)<br> [Пример технического документа.pdf](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/white-paper.pdf)|
+|Excel|Файл структурированных вопросов и ответов (QnA)<br> (включая поддержку RTF, HTML)|[Пример часто задаваемых вопросов QnA.xls](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/QnA%20Maker%20Sample%20FAQ.xlsx)|
 |TXT/TSV|Файл структурированных вопросов и ответов (QnA)|[Пример беседы.tsv](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/qna-maker/data-source-formats/Scenario_Responses_Friendly.tsv)|
 
 ## <a name="data-source-locations"></a>Расположение источника данных
@@ -63,6 +63,16 @@ QnA Maker может поддерживать веб-страницы вопро
 Ниже приведен пример страницы вопросов и ответов, в которой темы домашней страницы имеют ссылки на разделы вопросов и ответов с разных страниц. 
 
  ![Прямая ссылка на страницу с вопросами и ответами для базы знаний](../media/qnamaker-concepts-datasources/topics-faq.png) 
+
+
+### <a name="support-urls"></a>URL-адреса для получения поддержки
+
+QnA Maker может обрабатывать полуструктурированные веб-страницы поддержки, такие как статьи в Интернете, описывающие способы выполнения определенной задачи, способы диагностики и устранения проблемы и рекомендации для процесса. Извлечение лучше всего работает с документами, которые имеют четкую структуру с иерархической структурой заголовков.
+
+> [!NOTE]
+> Извлечение для статьи о поддержке — это новая функция, которая находится на ранних стадиях. Она лучше всего подходит для простых страниц, которые хорошо структурированы и не содержат сложные колонтитулы.
+
+![QnA Maker поддерживает извлечение из частично структурированных веб-страниц, где есть четкая структура и иерархические заголовки.](../media/qnamaker-concepts-datasources/support-web-pages-with-heirarchical-structure.png)
 
 
 ## <a name="pdf-doc-files"></a>PDF- или DOC-файлы

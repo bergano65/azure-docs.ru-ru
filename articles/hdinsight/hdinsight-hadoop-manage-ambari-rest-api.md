@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/23/2018
 ms.author: hrasheed
-ms.openlocfilehash: b5083a2af335bd40dc55f7f325ac0a4ad125b682
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: 03b4cc919086ff2a8eb038ad9c4f45200e9a6246
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53384237"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53715115"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-rest-api"></a>Управление кластерами HDInsight с помощью Apache Ambari REST API
 
@@ -26,7 +26,7 @@ Apache Ambari упрощает управление кластером Hadoop и
 
 ## <a id="whatis"></a>Что такое Apache Ambari
 
-[Apache Ambari](http://ambari.apache.org) предоставляет веб-интерфейс, который можно использовать для мониторинга кластеров Hadoop и управления ими. Разработчики могут интегрировать эти возможности в своих приложениях с помощью [интерфейсов REST API Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
+[Apache Ambari](https://ambari.apache.org) предоставляет веб-интерфейс, который можно использовать для мониторинга кластеров Hadoop и управления ими. Разработчики могут интегрировать эти возможности в своих приложениях с помощью [интерфейсов REST API Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md).
 
 Ambari предоставляется по умолчанию с кластерами HDInsight на платформе Linux.
 
@@ -232,7 +232,7 @@ foreach($item in $respObj.items) {
 
 ## <a name="example-get-the-default-storage"></a>Пример: Получение хранилища по умолчанию
 
-При создании кластера HDInsight в качестве хранилища по умолчанию для кластера необходимо использовать учетную запись хранения Azure или Data Lake Store. Для получения этой информации после создания кластера можно использовать Ambari. Например, если нужно выполнить операции чтения или записи в контейнере за пределами HDInsight.
+При создании кластера HDInsight в качестве хранилища по умолчанию для кластера необходимо использовать учетную запись хранения Azure или Data Lake Storage. Для получения этой информации после создания кластера можно использовать Ambari. Например, если нужно выполнить операции чтения или записи в контейнере за пределами HDInsight.
 
 Следующие примеры извлекают конфигурацию хранилища, используемого в кластере по умолчанию.
 
@@ -255,9 +255,9 @@ $respObj.items.configurations.properties.'fs.defaultFS'
 
 * `wasb://CONTAINER@ACCOUNTNAME.blob.core.windows.net` — это значение указывает, что кластер использует учетную запись хранения Azure в качестве хранилища по умолчанию. Значение `ACCOUNTNAME` — имя учетной записи хранилища. Часть `CONTAINER` — это имя контейнера больших двоичных объектов в учетной записи хранения. Контейнер является корнем совместимого хранилища HDFS для кластера.
 
-* `adl://home` — это значение указывает, что кластер использует Azure Data Lake Store в качестве хранилища по умолчанию.
+* `adl://home` — это значение указывает, что кластер использует Azure Data Lake Storage в качестве хранилища по умолчанию.
 
-    Чтобы найти имя учетной записи Data Lake Store, используйте следующие примеры:
+    Чтобы найти имя учетной записи Data Lake Storage, используйте следующие примеры.
 
     ```bash
     curl -u admin -sS -G "https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" \
@@ -271,9 +271,9 @@ $respObj.items.configurations.properties.'fs.defaultFS'
     $respObj.items.configurations.properties.'dfs.adls.home.hostname'
     ```
 
-    Возвращается похожее значение: `ACCOUNTNAME.azuredatalakestore.net`, где `ACCOUNTNAME` — имя учетной записи Data Lake Store.
+    Возвращается похожее значение: `ACCOUNTNAME.azuredatalakestore.net`, где `ACCOUNTNAME` — имя учетной записи Data Lake Storage.
 
-    Чтобы найти каталог в Data Lake Store, содержащий хранилище кластера, используйте следующие примеры:
+    Чтобы найти каталог в Data Lake Storage, содержащий хранилище кластера, используйте следующие примеры.
 
     ```bash
     curl -u admin -sS -G "https://$CLUSTERNAME.azurehdinsight.net/api/v1/clusters/$CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" \
@@ -287,7 +287,7 @@ $respObj.items.configurations.properties.'fs.defaultFS'
     $respObj.items.configurations.properties.'dfs.adls.home.mountpoint'
     ```
 
-    Вернется похожее значение: `/clusters/CLUSTERNAME/`. Это значение представляет путь в учетной записи Data Lake Store. Путь является корнем совместимой файловой системы HDFS для кластера. 
+    Вернется похожее значение: `/clusters/CLUSTERNAME/`. Это значение представляет путь в учетной записи Data Lake Storage. Путь является корнем совместимой файловой системы HDFS для кластера. 
 
 > [!NOTE]  
 > Командлет `Get-AzureRmHDInsightCluster`, доступный в [Azure PowerShell](/powershell/azure/overview), также возвращает сведения о хранилище для кластера.

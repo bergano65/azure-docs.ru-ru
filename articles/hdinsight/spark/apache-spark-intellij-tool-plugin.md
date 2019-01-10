@@ -1,5 +1,5 @@
 ---
-title: 'Создание приложений Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ '
+title: 'Набор средств Azure для IntelliJ: создание приложений Spark для кластера HDInsight '
 description: Сведения о разработке приложений Spark на языке Scala и их отправке в кластер HDInsight Spark с помощью набора средств Azure для IntelliJ.
 services: hdinsight
 author: hrasheed-msft
@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: maxluk
-ms.openlocfilehash: b2bf79d90c741e09c683e4520b05b31ba2fee1da
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 621d41c5c9558b5cb17d2a1e5a03d68f8af0df19
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582774"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53600647"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ
 
@@ -26,7 +26,7 @@ ms.locfileid: "52582774"
 
 Чтобы создать проект, просмотрите видео о [создании приложений Apache Spark с помощью Azure Toolkit for IntelliJ](https://channel9.msdn.com/Series/AzureDataLake/Create-Spark-Applications-with-the-Azure-Toolkit-for-IntelliJ).
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Вы можете использовать этот подключаемый модуль, чтобы создавать и отправлять приложения только в кластер HDInsight Spark на Linux.
 > 
 
@@ -182,20 +182,20 @@ ms.locfileid: "52582774"
 
     * Поле **Имя основного класса**. В выбранном файле основной класс является значением по умолчанию. Класс можно изменить, выбрав кнопку с многоточием (**...**) и другой класс.   
 
-    * Поле **Задание конфигурации**. Значения по умолчанию устанавливаются, как показано выше на изображении. Вы можете изменить значение или добавить новый ключ и значение для отправки задания. Дополнительные сведения см. в разделе [Apache Livy REST API](http://livy.incubator.apache.org./docs/latest/rest-api.html)
+    * Поле **Задание конфигурации**.  Значения по умолчанию устанавливаются, как показано выше на изображении. Вы можете изменить значение или добавить новый ключ и значение для отправки задания. Дополнительные сведения [API Apache Livy REST](http://livy.incubator.apache.org./docs/latest/rest-api.html)
 
       ![Диалоговое окно отправки в Spark, конфигурация задания](./media/apache-spark-intellij-tool-plugin/submit-job-configurations.png)
 
     * Поле **Аргументы командной строки**. При необходимости вы можете ввести значения аргументов для основного класса, разделив их пробелом.
 
-    * Поля **Ссылка на JAR-файлы** и **Ссылка на файлы**. Вы можете указать пути ссылки на JAR-файлы и обычные файлы, если они есть. Дополнительные сведения о конфигурации Apache Spark см. [здесь](https://spark.apache.org/docs/latest/configuration.html#runtime-environment). 
+    * Поля **Ссылки на JAR-файлы** и **Ссылки на файлы**. Вы можете указать пути ссылки на JAR-файлы и обычные файлы, если они есть. Дополнительные сведения [Сведения о конфигурации Spark](https://spark.apache.org/docs/latest/configuration.html#runtime-environment) 
 
       ![Диалоговое окно отправки в Spark, JAR-файлы](./media/apache-spark-intellij-tool-plugin/jar-files-meaning.png)
 
-       > [!NOTE]
-       > Для получения дополнительных сведений об отправке ссылок на JAR-файлы и обычные файлы ознакомьтесь со статьей [о загрузке ресурсов для кластера](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-storage-explorer)
+       > [!NOTE]  
+       > Для получения дополнительных сведений об отправке ссылок на JAR-файлы и обычные файлы ознакомьтесь со статьей [Отправка ресурсов в кластер](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-storage-explorer).
                          
-    * **Передача пути**. Можно указать местоположение хранилища для подачи ресурсов проекта Jar или Scala. Поддерживаются четыре типа хранилища: **Azure Blob**, **использование интерактивного сеанса Spark для отправки артефактов**, **использование учетной записи хранения кластера по умолчанию** и **ADLS 1-го поколения**. Снимок экрана, приведенный ниже, является примером для Azure Blob.
+    * **Передача пути**. Можно указать местоположение хранилища для подачи ресурсов проекта Jar или Scala. Поддерживаются три типа хранилища: **Azure Blob**, **использование интерактивного сеанса Spark для отправки артефактов**, **использование учетной записи хранения кластера по умолчанию** и **ADLS 1-го поколения**. Снимок экрана, приведенный ниже, является примером для Azure Blob.
 
         ![Диалоговое окно Spark Submission (Отправка в Spark)](./media/apache-spark-intellij-tool-plugin/hdi-submit-spark-upload-storage-types.png)
 
@@ -310,7 +310,7 @@ ms.locfileid: "52582774"
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-### <a name="error-in-local-run-please-use-a-larger-heap-size"></a>Ошибка *Please use a larger heap size* (Используйте больший размер кучи) в локальной среде
+### <a name="error-in-local-run-please-use-a-larger-heap-size"></a>Ошибка в локальной среде. *Используйте больший размер кучи*.
 В Spark 1.6 при использовании 32-разрядного пакета SDK для Java в локальной среде выполнения могут возникать следующие ошибки:
 
     Exception in thread "main" java.lang.IllegalArgumentException: System memory 259522560 must be at least 4.718592E8. Please use a larger heap size.
@@ -347,29 +347,29 @@ ms.locfileid: "52582774"
 С любыми отзывами и предложениями, а также в случае возникновения проблем при работе с этим подключаемым модулем вы можете отправить сообщение по электронному адресу hdivstool@microsoft.com.
 
 ## <a name="seealso"></a>Дальнейшие действия
-* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="demo"></a>Демонстрация
-* Создание проекта Scala (видео): [создание приложений Apache Spark Scala](https://channel9.msdn.com/Series/AzureDataLake/Create-Spark-Applications-with-the-Azure-Toolkit-for-IntelliJ)
-* Удаленная отладка (видео): [удаленная отладка приложений Apache Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ](https://channel9.msdn.com/Series/AzureDataLake/Debug-HDInsight-Spark-Applications-with-Azure-Toolkit-for-IntelliJ)
+* Создание проекта Scala (видео): [Создание приложений Apache Spark Scala](https://channel9.msdn.com/Series/AzureDataLake/Create-Spark-Applications-with-the-Azure-Toolkit-for-IntelliJ)
+* Удаленная отладка (видео): [Удаленная отладка приложений Apache Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ](https://channel9.msdn.com/Series/AzureDataLake/Debug-HDInsight-Spark-Applications-with-Azure-Toolkit-for-IntelliJ)
 
 ### <a name="scenarios"></a>Сценарии
-* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
-* [Руководство. Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
-* [Использование Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журналов веб-сайтов с помощью пользовательской библиотеки Python и кластера Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
+* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
+* [Использование Apache Spark MLlib для Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
+* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
+* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="creating-and-running-applications"></a>Создание и запуск приложений
 * [Создание автономного приложения с использованием Scala](apache-spark-create-standalone-application.md)
-* [Удаленная отправка заданий Spark в кластер Azure HDInsight с помощью Apache Spark REST API](apache-spark-livy-rest-interface.md)
+* [Удаленный запуск заданий с помощью Apache Livy в кластере Apache Spark](apache-spark-livy-rest-interface.md)
 
 ### <a name="tools-and-extensions"></a>Средства и расширения
 * [Удаленная отладка приложений Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Удаленная или локальная отладка приложений Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ через SSH](apache-spark-intellij-tool-debug-remotely-through-ssh.md)
 * [Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks](../hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox.md)
-* [Создание приложений Spark для кластера HDInsight с помощью Azure Toolkit for Eclipse](apache-spark-eclipse-tool-plugin.md)
+* [Использование средств HDInsight в Azure Toolkit for Eclipse для создания приложений Apache Spark](apache-spark-eclipse-tool-plugin.md)
 * [Использование записных книжек Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)
-* [Ядра для записной книжки Jupyter в кластерах Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
+* [Ядра для записной книжки Jupyter в кластерах Apache Spark в Azure HDInsight](apache-spark-jupyter-notebook-kernels.md)
 * [Использование внешних пакетов с записными книжками Jupyter](apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](apache-spark-jupyter-notebook-install-locally.md)
 

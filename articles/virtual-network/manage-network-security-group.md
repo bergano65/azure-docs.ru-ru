@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/05/2018
 ms.author: jdial
-ms.openlocfilehash: 3ac7ab0aac190ab53075a6a4ee24fca3ee7eeb84
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: d6dfd88f9349312cc81d760a2c473f32ff932885
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47227526"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53543093"
 ---
 # <a name="create-change-or-delete-a-network-security-group"></a>Создание, изменение и удаление группы безопасности сети
 
@@ -68,7 +68,7 @@ ms.locfileid: "47227526"
 1. В поле поиска в верхней части портала введите *группы безопасности сети*. Когда элемент **Группы безопасности сети** появится в результатах поиска, выберите его.
 2. Выберите из списка группу безопасности сети, о которой нужно просмотреть сведения. В разделе **Параметры** можно просмотреть **правила безопасности для входящего трафика** и **правила безопасности для исходящего трафика**, **сетевые интерфейсы** и **подсети**, связанные с группой безопасности сети. Можно также включить или отключить **журналы диагностики** и просмотреть **действующие правила безопасности**. Чтобы узнать больше, ознакомьтесь с разделами [Аналитика журналов для групп безопасности сети](virtual-network-nsg-manage-log.md) и [Устранение проблем с группами безопасности сети на портале Azure](diagnose-network-traffic-filter-problem.md).
 3. Дополнительные сведения о перечисленных общих параметрах Azure доступны в следующих статьях:
-    *   [Журнал действий](../monitoring-and-diagnostics/monitoring-overview-activity-logs.md)
+    *   [Журнал действий](../azure-monitor/platform/activity-logs-overview.md)
     *   [Управление доступом (IAM)](../azure-resource-manager/resource-group-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#access-control)
     *   [Теги](../azure-resource-manager/resource-group-using-tags.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
     *   [Блокировки](../azure-resource-manager/resource-group-lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
@@ -233,7 +233,7 @@ ms.locfileid: "47227526"
 3. Выберите группу безопасности приложений, параметры которой хотите изменить. Вы можете добавлять и удалять теги или назначать и удалять разрешения для группы безопасности приложений.
 
 - Azure CLI: [az network asg update](/cli/azure/network/asg#az-network-asg-update)
-- PowerShell: соответствующий командлет PowerShell отсутствует.
+- PowerShell: нет командлета PowerShell.
 
 ### <a name="delete-an-application-security-group"></a>Удаление группы безопасности приложений
 

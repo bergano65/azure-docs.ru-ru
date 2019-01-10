@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 12/12/2017
 ms.author: manayar
 ms.custom: na
-ms.openlocfilehash: 1bba25d0b7fd6bbe4efeb9c2164fc663b22bed11
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 2a33283d735532d4cc4c11bc3910377f15aaa730
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53139373"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54002694"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -167,48 +167,16 @@ ms.locfileid: "53139373"
 Дополнительные сведения см. в разделе о [создании и обновлении масштабируемого набора виртуальных машин](https://msdn.microsoft.com/library/mt589035.aspx).
 
 
-### <a name="example-of-self-signed-certificate"></a>Пример самозаверяющего сертификата
+### <a name="example-of-self-signed-certificates-provisioned-for-azure-service-fabric-clusters"></a>Пример самозаверяющих сертификатов, подготовленных для кластеров Azure Service Fabric
+Чтобы получить последний пример, используйте следующую инструкцию CLI Azure в оболочке Azure, прочите документацию к примеру модуля CLI Service Fabrics, которая будет выведена в stdout.
 
-1.  Создайте самозаверяющий сертификат в хранилище ключей.
+```bash
+az sf cluster create -h
+```
 
-    Используйте следующие команды PowerShell:
+Актуальные поддерживаемые операции с сертификатами в Azure см. в документации к хранилищам ключей.
 
-    ```powershell
-    Import-Module "C:\Users\mikhegn\Downloads\Service-Fabric-master\Scripts\ServiceFabricRPHelpers\ServiceFabricRPHelpers.psm1"
-
-    Connect-AzureRmAccount
-
-    Invoke-AddCertToKeyVault -SubscriptionId <Your SubID> -ResourceGroupName KeyVault -Location westus -VaultName MikhegnVault -CertificateName VMSSCert -Password VmssCert -CreateSelfSignedCertificate -DnsName vmss.mikhegn.azure.com -OutputPath c:\users\mikhegn\desktop\
-    ```
-
-    Таким образом вы получите входные данные для шаблона Azure Resource Manager.
-
-    Пример создания самозаверяющего сертификата в хранилище ключей см. в статье [Сценарии защиты кластера Service Fabric](https://azure.microsoft.com/documentation/articles/service-fabric-cluster-security/).
-
-2.  Измените шаблон Resource Manager.
-
-    Добавьте это свойство в раздел **virtualMachineProfile** как часть ресурса масштабируемого набора виртуальных машин:
-
-    ```json 
-    "osProfile": {
-        "computerNamePrefix": "[variables('namingInfix')]",
-        "adminUsername": "[parameters('adminUsername')]",
-        "adminPassword": "[parameters('adminPassword')]",
-        "secrets": [
-            {
-                "sourceVault": {
-                    "id": "[resourceId('KeyVault', 'Microsoft.KeyVault/vaults', 'MikhegnVault')]"
-                },
-                "vaultCertificates": [
-                    {
-                        "certificateUrl": "https://mikhegnvault.vault.azure.net:443/secrets/VMSSCert/20709ca8faee4abb84bc6f4611b088a4",
-                        "certificateStore": "My"
-                    }
-                ]
-            }
-        ]
-    }
-    ```
+Самозаверяющие сертификаты нельзя использовать для отношений распределенного доверия, предоставляемых центром сертификации, и для кластеров Service Fabric, предназначенных для размещения корпоративных рабочих решений. Дополнительные рекомендации по безопасности Service Fabric см. в статьях [Рекомендации по безопасности Azure Service Fabric](https://docs.microsoft.com/en-us/azure/security/azure-service-fabric-security-best-practices) и [Сценарии защиты кластера Service Fabric](https://azure.microsoft.com/documentation/articles/service-fabric-cluster-security/).
   
 
 ### <a name="can-i-specify-an-ssh-key-pair-to-use-for-ssh-authentication-with-a-linux-virtual-machine-scale-set-from-a-resource-manager-template"></a>Можно ли определить пару ключей SSH, используемых в процессе проверки подлинности SSH с помощью масштабируемого набора виртуальных машин Linux, развернутого из шаблона Resource Manager?  
@@ -389,7 +357,7 @@ Update-AzureRmVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssN
 
 ### <a name="does-managed-identities-for-azure-resourceshttpsdocsmicrosoftcomazureactive-directorymsi-overview-work-with-virtual-machine-scale-sets"></a>Работают ли [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/msi-overview) с масштабируемыми наборами виртуальных машин?
 
-Да. Некоторые примеры шаблонов MSI доступны в шаблонах быстрого запуска Azure. Для Linux — [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-msi-linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-msi-linux). Для Windows — [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-msi-windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-msi-windows).
+Да. Некоторые примеры шаблонов MSI доступны в шаблонах быстрого запуска Azure. Для Linux — [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi). Для Windows — [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi).
 
 
 ## <a name="extensions"></a>расширения.

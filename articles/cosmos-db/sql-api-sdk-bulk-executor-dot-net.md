@@ -3,17 +3,17 @@ title: Azure Cosmos DB — API-интерфейс, пакет SDK и ресу
 description: Сведения об API и пакетах SDK .NET для библиотеки Bulk Executor, в том числе даты выхода, даты снятия с учета и изменения, внесенные в каждую версию пакета SDK .NET для Bulk Executor в Azure Cosmos DB.
 author: tknandu
 ms.service: cosmos-db
-ms.component: cosmosdb-sql
+ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 11/19/2018
 ms.author: ramkris
-ms.openlocfilehash: 8be453ae479e88d441a240ce472f3314b3f4de31
-ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
+ms.openlocfilehash: 8675c5ff90f7be2dc0b3ac80eb593adb613ba860
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53809749"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54039764"
 ---
 # <a name="net-bulk-executor-library-download-information"></a>Библиотека Bulk Executor для .NET: информация о скачивании 
 

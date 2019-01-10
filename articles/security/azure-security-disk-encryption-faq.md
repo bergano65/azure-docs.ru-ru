@@ -6,14 +6,14 @@ ms.service: security
 ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
-ms.date: 12/07/2018
+ms.date: 12/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: ba955e9e71926a513f6c083acb6508b3ec330d17
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 4f940170168147e4e778714e947ab6b558cb2bd5
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53094565"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54076677"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -44,10 +44,10 @@ ms.locfileid: "53094565"
 | --- | --- |--- |
 | Ubuntu | 16.04-DAILY-LTS | Диск операционной системы и данных |
 | Ubuntu | 14.04.5-DAILY-LTS | Диск операционной системы и данных |
-| RHEL | 7.5 | Диск данных* |
-| RHEL | 7.4 | Диск данных* |
-| RHEL | 7.3 | Диск данных* |
-| RHEL | 7,2 | Диск данных* |
+| RHEL | 7.5 | Диск операционной системы и данных * |
+| RHEL | 7.4 | Диск операционной системы и данных * |
+| RHEL | 7.3 | Диск операционной системы и данных * |
+| RHEL | 7,2 | Диск операционной системы и данных * |
 | RHEL | 6,8 | Диск данных* |
 | RHEL | 6.7 | Диск данных* |
 | CentOS | 7.4 | Диск операционной системы и данных |
@@ -67,7 +67,7 @@ ms.locfileid: "53094565"
 | SLES | 11 SP4 | Диск данных |
 
 
-*__ADE поддерживается для RHEL для дисков данных. Текущая реализация ADE будет работать для дисков ОС, но сейчас совместная поддержка не предоставляется. Корпорация Майкрософт и Red Hat работают над решением с совместной поддержкой. Тем временем вы можете ознакомиться со статьей о [шифровании дисков Azure для Linux](azure-security-disk-encryption-linux.md).__
+*__Новая реализация ADE поддерживается для операционной системы RHEL и диска данных для образов RHEL7 с оплатой по мере использования. Для образов RHEL, предоставляемых по подписке, ADE пока не поддерживается. Дополнительные сведения см. в статье [Шифрование дисков Azure для Linux](azure-security-disk-encryption-linux.md).__
 
 ## <a name="how-can-i-start-using-azure-disk-encryption"></a>Как приступить к работе с шифрованием дисков Azure?
 

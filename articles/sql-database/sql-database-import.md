@@ -3,25 +3,25 @@ title: Импорт BACPAC-файла для создания базы данн�
 description: Создайте базу данных SQL Azure, импортировав BACPAC-файл.
 services: sql-database
 ms.service: sql-database
-ms.subservice: data-movement
+ms.subservice: migration
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: CarlRabeler
-ms.author: carlrab
-ms.reviewer: ''
+author: douglaslMS
+ms.author: douglasl
+ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/05/2018
-ms.openlocfilehash: 6753666f1747c95ad3486444ed41e3cad0b8e905
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 9e79aa2315118bcd9ce4328e74d51d7a22ea6247
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53084182"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53744570"
 ---
 # <a name="quickstart-import-a-bacpac-file-to-a-new-azure-sql-database"></a>Краткое руководство. Импорт BACPAC-файла в новую базу данных SQL Azure
 
-Вы можете перенести базу данных SQL Server в базу данных SQL Azure с помощью файла [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4) (ZIP-файл с расширением `.bacpac`, содержащий метаданные и данные базы данных). BACPAC-файл можно импортировать из хранилища BLOB-объектов Azure (только уровня "Стандартный") или из локального хранилища. Чтобы обеспечить максимальную скорость импорта, рекомендуем указать более высокий уровень служб и объем вычислительных ресурсов (например, P6), а затем, после успешного импорта, понизить его. Уровень совместимости импортированной базы данных основан на уровне совместимости базы данных-источника.
+Вы можете перенести базу данных SQL Server в Базу данных SQL Azure с помощью файла [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4) (ZIP-файл с расширением `.bacpac`, содержащий метаданные и данные базы данных). BACPAC-файл можно импортировать из хранилища BLOB-объектов Azure (только уровня "Стандартный") или из локального хранилища. Для увеличения скорости импорта можно указать более высокий уровень служб и объем вычислительных ресурсов (например, P6). После завершения импорта эти значения можно уменьшить. Уровень совместимости импортированной базы данных основан на уровне совместимости базы данных-источника.
 
 > [!IMPORTANT]
 > После импорта базы данных вы можете работать с ней при текущем уровне совместимости (уровень 100 для базы данных AdventureWorks2008R2) или при более высоком уровне. Дополнительные сведения о последствиях и параметрах работы базы данных с определенным уровнем совместимости см. в разделе [ALTER DATABASE (Transact-SQL) Compatibility Level](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-compatibility-level) (Уровень совместимости ALTER DATABASE (Transact-SQL)). Кроме того, в статье [ALTER DATABASE SCOPED CONFIGURATION (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql) вы можете получить сведения о дополнительных настройках уровня базы данных, связанных с уровнем совместимости.
@@ -41,13 +41,13 @@ ms.locfileid: "53084182"
 
 ### <a name="monitor-imports-progress"></a>Отслеживание хода выполнения импорта
 
-Чтобы отслеживать ход выполнения импорта, откройте страницу логического сервера импортируемой базы данных. Прокрутите ее вниз до раздела **Параметры** и выберите **журнал импорта и экспорта**. При успешном выполнении импорта отображается состояние **Завершено**.
+Чтобы отслеживать ход выполнения импорта, откройте страницу логического сервера импортируемой базы данных. В разделе **Параметры** выберите **Журнал импорта и экспорта**. При успешном выполнении импорта отображается состояние **Завершено**.
 
 Выберите **Базы данных SQL**, чтобы проверить активность базы данных на сервере, и убедитесь, что для новой базы данных задано состояние **В сети**.
 
 ## <a name="import-from-a-bacpac-file-using-sqlpackage"></a>Импорт из BACPAC-файла с помощью SqlPackage
 
-Импорт базы данных SQL с помощью программы командной строки [SqlPackage](https://docs.microsoft.com/sql/tools/sqlpackage) описывается в разделе о [параметрах и свойствах операции импорта](https://docs.microsoft.com/sql/tools/sqlpackage#import-parameters-and-properties). SqlPackage поставляется вместе с последними версиями [SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) и [SQL Server Data Tools для Visual Studio](https://msdn.microsoft.com/library/mt204009.aspx). Кроме того, новую версию [SqlPackage](https://www.microsoft.com/download/details.aspx?id=53876) можно скачать в Центре загрузки Майкрософт.
+Импорт базы данных SQL с помощью программы командной строки [SqlPackage](https://docs.microsoft.com/sql/tools/sqlpackage) описывается в разделе о [параметрах и свойствах операции импорта](https://docs.microsoft.com/sql/tools/sqlpackage#import-parameters-and-properties). В состав SqlPackage входят последние версии [SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) и [SQL Server Data Tools для Visual Studio](https://msdn.microsoft.com/library/mt204009.aspx). Кроме того, новую версию [SqlPackage](https://www.microsoft.com/download/details.aspx?id=53876) можно скачать в Центре загрузки Майкрософт.
 
 Рекомендуем использовать SqlPackage для масштабирования и обеспечения производительности в большинстве рабочих сред. Сведения о миграции из SQL Server в базу данных SQL Azure с использованием BACPAC-файлов см. в [блоге группы консультирования клиентов SQL Server](https://blogs.msdn.microsoft.com/sqlcat/2016/10/20/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files/).
 
@@ -73,12 +73,12 @@ SqlPackage.exe /a:Import /sf:testExport.bacpac /tdn:NewDacFX /tsn:apptestserver.
 
  ```powershell
  $importRequest = New-AzureRmSqlDatabaseImport 
-    -ResourceGroupName "myResourceGroup" `
-    -ServerName "myLogicalServer" `
-    -DatabaseName "MyImportSample" `
-    -DatabaseMaxSizeBytes "262144000" `
+    -ResourceGroupName "<your_resource_group>" `
+    -ServerName "<your_server>" `
+    -DatabaseName "<your_database>" `
+    -DatabaseMaxSizeBytes "<database_size_in_bytes>" `
     -StorageKeyType "StorageAccessKey" `
-    -StorageKey $(Get-AzureRmStorageAccountKey -ResourceGroupName "myResourceGroup" -StorageAccountName "myStorageAccount").Value[0] `
+    -StorageKey $(Get-AzureRmStorageAccountKey -ResourceGroupName "<your_resource_group>" -StorageAccountName "<your_storage_account").Value[0] `
     -StorageUri "https://myStorageAccount.blob.core.windows.net/importsample/sample.bacpac" `
     -Edition "Standard" `
     -ServiceObjectiveName "P6" `

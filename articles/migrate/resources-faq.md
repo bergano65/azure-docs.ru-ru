@@ -4,14 +4,14 @@ description: В этой статье рассматриваются часто 
 author: snehaamicrosoft
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 12/05/2018
+ms.date: 01/02/2019
 ms.author: snehaa
-ms.openlocfilehash: ebc4393341341b3b73165a166a650ae1a6f431ff
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 787e3f53cb75b33b03c29b61b319270fdf7a63ca
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53257800"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53975480"
 ---
 # <a name="azure-migrate---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Миграция Azure"
 
@@ -48,12 +48,13 @@ ms.locfileid: "53257800"
 
 ### <a name="which-azure-geographies-are-supported-by-azure-migrate"></a>Какие географические регионы Azure поддерживает служба "Миграция Azure"?
 
-Служба "Миграция Azure" в настоящее время поддерживает США и Azure для государственных организаций в качестве географических регионов проекта. Хотя проекты миграции можно создавать только в этих географических регионах, вы все равно можете оценить компьютеры для [нескольких целевых расположений](https://docs.microsoft.com/azure/migrate/how-to-modify-assessment#edit-assessment-properties). Географический регион проекта используется только для хранения обнаруженных метаданных.
+Служба "Миграция Azure" в настоящее время поддерживает Европу, США и Azure для государственных организаций в качестве географических регионов проекта. Хотя проекты миграции можно создавать только в этих географических регионах, вы все равно можете оценить компьютеры для [нескольких целевых расположений](https://docs.microsoft.com/azure/migrate/how-to-modify-assessment#edit-assessment-properties). Географический регион проекта используется только для хранения обнаруженных метаданных.
 
 **География** | **Место хранения метаданных**
 --- | ---
-США | Центрально-западная часть США или восточная часть США
 Azure Government | Правительство штата Вирджиния
+Европа | Северная или Западная Европа
+США | Восточная часть США или центрально-западная часть США
 
 ### <a name="how-does-the-on-premises-site-connect-to-azure-migrate"></a>Как локальный сайт подключается к службе "Миграция Azure"?
 

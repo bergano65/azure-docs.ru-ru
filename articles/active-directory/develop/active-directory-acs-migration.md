@@ -16,12 +16,12 @@ ms.workload: identity
 ms.date: 10/03/2018
 ms.author: celested
 ms.reviewer: jlu, annaba, hirsin
-ms.openlocfilehash: e68099609e5a4a27dfae7956fa43634d38311a22
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: 01781725e3224e2cab49a5e7cc7dcc33030ce9fb
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53015778"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53971558"
 ---
 # <a name="how-to-migrate-from-the-azure-access-control-service"></a>Практическое руководство: Перенос из службы контроля доступа Azure
 
@@ -151,7 +151,7 @@ https://<mynamespace>.accesscontrol.windows.net
 
 | Функция | Руководство |
 | ------- | -------- |
-| Аутентификация пользователей из Azure AD | Ранее в Azure AD не поддерживались маркеры SAML 1.1, необходимые SharePoint для аутентификации, и служба контроля доступа использовалась в качестве посредника, обеспечивающего совместимость SharePoint с форматами маркеров Azure AD. Теперь вы можете [подключить SharePoint непосредственно к Azure AD, используя локальное приложение SharePoint из коллекции приложений Azure AD](https://docs.microsoft.com/azure/active-directory/saas-apps/sharepoint-on-premises-tutorial). |
+| Аутентификация пользователей из Azure AD | Ранее в Azure AD не поддерживались маркеры SAML 1.1, необходимые SharePoint для аутентификации, и служба контроля доступа использовалась в качестве посредника, обеспечивающего совместимость SharePoint с форматами маркеров Azure AD. Теперь вы можете [подключить SharePoint непосредственно к Azure AD, используя локальное приложение SharePoint из коллекции приложений Azure AD](https://docs.microsoft.com/azure/active-directory/saas-apps/sharepoint-on-premises-tutorial). |
 | [Аутентификация приложений и аутентификация между серверами в локальной среде SharePoint](https://technet.microsoft.com/library/jj219571(v=office.16).aspx) | Не зависит от прекращения использования службы контроля доступа. Какие-либо изменения не требуются. | 
 | [Авторизация с низким уровнем доверия для надстроек SharePoint (при размещении у поставщика и размещении в SharePoint)](https://docs.microsoft.com/sharepoint/dev/sp-add-ins/three-authorization-systems-for-sharepoint-add-ins) | Не зависит от прекращения использования службы контроля доступа. Какие-либо изменения не требуются. |
 | [Гибридный поиск в облаке SharePoint](https://blogs.msdn.microsoft.com/spses/2015/09/15/cloud-hybrid-search-service-application/) | Не зависит от прекращения использования службы контроля доступа. Какие-либо изменения не требуются. |

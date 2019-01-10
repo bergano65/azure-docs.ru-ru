@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/29/2018
 ms.author: hrushib
-ms.openlocfilehash: 57848a7a4d8e627e952a9f46d438b073c73d833a
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: a9b90fe119bc56620a7bd3087d4842f604fc18f0
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52725868"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53582547"
 ---
 # <a name="periodic-backup-and-restore-in-azure-service-fabric"></a>Периодическое резервное копирование и восстановление в Azure Service Fabric 
 > [!div class="op_single_selector"]
@@ -150,6 +150,9 @@ $url = "https://mysfcluster.southcentralus.cloudapp.azure.com:19080/BackupRestor
 Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/json' -CertificateThumbprint '1b7ebe2174649c45474a4819dafae956712c31d3'
 ```
 
+> [!IMPORTANT]
+> Из-за проблемы в среде выполнения убедитесь, что длительность хранения в политике хранения составляет не менее 24 дней. В противном случае в службе резервного копирования и восстановления произойдет потеря кворума после отработки отказа реплики.
+
 ### <a name="enable-periodic-backup"></a>Включение периодического резервного копирования
 После определения политики архивации для соответствия требованиям защиты данных приложения необходимо связать ее с приложением. В зависимости от требований политику резервного копирования можно связать с приложением, службой или секцией.
 
@@ -228,8 +231,10 @@ FailureError            :
 
 ## <a name="limitation-caveats"></a>Ограничения и предупреждения
 - Отсутствие встроенных командлетов PowerShell для платформы Service Fabric.
-- Отсутствие поддержки интерфейса командной строки Service Fabric.
 - Отсутствие поддержки кластеров Service Fabric в Linux.
+
+## <a name="known-issues"></a>Известные проблемы
+- Убедитесь, что настроенная длительность хранения не превышает 24 дня. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 - [Основные сведения о настройке периодического резервного копирования](./service-fabric-backuprestoreservice-configure-periodic-backup.md)

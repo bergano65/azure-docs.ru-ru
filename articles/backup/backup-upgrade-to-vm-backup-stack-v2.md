@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 10/3/2018
 ms.author: trinadhk
-ms.openlocfilehash: 8882970471b554f6d05a9cf3028e7be572292ef6
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 605ce97f786b6b674a4adf8d6b1ee50957ef25fa
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582706"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53582751"
 ---
 # <a name="upgrade-to-azure-vm-backup-stack-v2"></a>Обновление до стека резервного копирования виртуальных машин Azure версии 2
 
@@ -147,3 +147,6 @@ az feature show --namespace Microsoft.RecoveryServices --name InstantBackupandRe
 
 ### <a name="how-to-get-standard-ssd-managed-disk-support-for-a-virtual-machine"></a>Как получить поддержку Управляемых дисков SSD категории "Стандартный" для виртуальной машины?
 Обновите стек Azure VM Backup V2, чтобы получить поддержку Azure Backup для [Управляемых дисков SSD категории "Стандартный"](https://azure.microsoft.com/blog/announcing-general-availability-of-standard-ssd-disks-for-azure-virtual-machine-workloads/).
+
+### <a name="what-happens-if-i-select-retention-period-of-restore-point-tier-2-less-than-snapshot-tier1"></a>Что произойдет, если выбрать срок хранения точки восстановления (уровень 2) меньше, чем у моментального снимка (уровня 1)?
+Стек резервного копирования виртуальной машины v2 не поддерживает удаление точки восстановления (уровень 2), если удаляется моментальный снимок (уровень 1). В настоящее время мы поддерживаем период хранения в семь дней для удаления моментального снимка (уровня 1), поэтому срок хранения точки восстановления (уровень 2) меньше семи дней не учитывается. Мы рекомендуем отводить для точки восстановления (уровень 2) срок хранения более семи дней.

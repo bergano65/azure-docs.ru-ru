@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: andrl
 ms.custom: seodec18
-ms.openlocfilehash: 5b75f620194a58aa7801fe390148a327a319c4a3
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 0197c11673f49214dc2cea09b53290993a00c6b3
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53166648"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53744944"
 ---
 # <a name="modeling-document-data-for-nosql-databases"></a>Моделирование данных документов для базы данных NoSQL
 
@@ -71,7 +71,7 @@ ms.locfileid: "53166648"
         ] 
     }
 
-Согласно описанному выше подходу, мы выполнили **денормализацию** записи человека, куда была **внедрена** такая информация, как сведения о контактах и адреса, получив отдельный документ JSON.
+Согласно описанному выше подходу мы выполнили **денормализацию** записи человека, куда была **внедрена** такая информация, как сведения о контактах и адреса, получив отдельный документ JSON.
 Кроме того, отсутствие привязки к фиксированной схеме повышает гибкость работы, например, мы можем использовать сведения о контактах в самых разных формах. 
 
 Получение всей записи человека из базы данных теперь обеспечивается одной операцией чтения, выполняемой для одной коллекции и отдельного документа. Обновление сведений о контактах и адресов в записи человека также обеспечивается одной операцией записи, выполняемой для одного документа.
@@ -259,7 +259,7 @@ ms.locfileid: "53166648"
     ...
     {"id": "100", "name": "Learn about Azure Cosmos DB" }
     ...
-    {"id": "1000", "name": "Deep Dive in to Azure Cosmos DB" }
+    {"id": "1000", "name": "Deep Dive into Azure Cosmos DB" }
 
 Если на издателя приходится небольшое число книг, а рост ограничен, то может оказаться удобным хранить ссылку на книгу в документе издателя. Однако если число книг на издателя не имеет ограничений, эта модель данных приведет к изменяемым и разрастающимся массивам, как в приведенном выше примере с документом издателя. 
 
@@ -278,7 +278,7 @@ ms.locfileid: "53166648"
     ...
     {"id": "100","name": "Learn about Azure Cosmos DB", "pub-id": "mspress"}
     ...
-    {"id": "1000","name": "Deep Dive in to Azure Cosmos DB", "pub-id": "mspress"}
+    {"id": "1000","name": "Deep Dive into Azure Cosmos DB", "pub-id": "mspress"}
 
 В приведенном выше примере мы помещали неограниченную коллекцию в документ издателя. Вместо этого мы просто воспользуемся ссылкой на издателя в каждом документе книги.
 
@@ -298,7 +298,7 @@ ms.locfileid: "53166648"
     {"id": "b2", "name": "Azure Cosmos DB for RDBMS Users" }
     {"id": "b3", "name": "Taking over the world one JSON doc at a time" }
     {"id": "b4", "name": "Learn about Azure Cosmos DB" }
-    {"id": "b5", "name": "Deep Dive in to Azure Cosmos DB" }
+    {"id": "b5", "name": "Deep Dive into Azure Cosmos DB" }
 
     Joining documents: 
     {"authorId": "a1", "bookId": "b1" }
@@ -319,7 +319,7 @@ ms.locfileid: "53166648"
     {"id": "b1", "name": "Azure Cosmos DB 101", "authors": ["a1", "a2"]}
     {"id": "b2", "name": "Azure Cosmos DB for RDBMS Users", "authors": ["a1"]}
     {"id": "b3", "name": "Learn about Azure Cosmos DB", "authors": ["a1"]}
-    {"id": "b4", "name": "Deep Dive in to Azure Cosmos DB", "authors": ["a2"]}
+    {"id": "b4", "name": "Deep Dive into Azure Cosmos DB", "authors": ["a2"]}
 
 Если у меня есть автор, я сразу же узнаю, какие книги он написал, и наоборот, если у меня загружен документ книги, я получу сведения об авторе. Это позволяет отказаться от промежуточного запроса к таблице JOIN и сократить количество круговых путей для вашего приложения. 
 

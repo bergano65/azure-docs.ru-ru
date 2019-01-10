@@ -1,5 +1,5 @@
 ---
-title: Устранение неполадок службы "Аналитика временных рядов Azure" — диагностика и решение проблем в службе "Аналитика временных рядов Azure" | Документация Майкрософт
+title: Диагностика и решение проблем в службе "Аналитика временных рядов Azure" | Документация Майкрософт
 description: В этой статье описываются способы диагностики, устранения неполадок и решения распространенных проблем, с которыми вы можете столкнуться в среде службы "Аналитика временных рядов Azure".
 ms.service: time-series-insights
 services: time-series-insights
@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: troubleshooting
 ms.date: 04/09/2018
 ms.custom: seodec18
-ms.openlocfilehash: 8e9a2bc8378f71e510d11b3e28438489d620ff6f
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: 36ea2b8d3649fbda5a5cd6cc5f2cd05cdc095902
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53322334"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555818"
 ---
 # <a name="diagnose-and-solve-issues-in-your-time-series-insights-environment"></a>Диагностика и устранение неполадок в среде "Аналитика временных рядов Azure"
 

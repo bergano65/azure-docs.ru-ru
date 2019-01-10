@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по установке одного экземпляра SAP HANA вручную на виртуальных машинах Azure | Документация Майкрософт
+title: Краткое руководство. Установка одного экземпляра SAP HANA вручную на виртуальных машинах Azure | Документация Майкрософт
 description: Краткое руководство по установке одного экземпляра SAP HANA вручную на виртуальных машинах Azure
 services: virtual-machines-linux
 documentationcenter: ''
@@ -16,14 +16,14 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/06/2018
 ms.author: hermannd
-ms.openlocfilehash: 6355a7ce203f2bf75b5c93d225502f961deeee43
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.openlocfilehash: c1d9047de814b7a80210fe2502d219921f5829a4
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47032090"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53976908"
 ---
-# <a name="quickstart-manual-installation-of-single-instance-sap-hana-on-azure-vms"></a>Краткое руководство по установке одного экземпляра SAP HANA вручную на виртуальных машинах Azure
+# <a name="quickstart-manual-installation-of-single-instance-sap-hana-on-azure-vms"></a>Краткое руководство. Установка одного экземпляра SAP HANA вручную на виртуальных машинах Azure
 ## <a name="introduction"></a>Введение
 Это руководство поможет вам настроить один экземпляр SAP HANA на виртуальных машинах Azure при установке SAP NetWeaver 7.5 и SAP HANA 1.0 SP12 вручную. В этом руководстве описывается развертывание SAP HANA в Azure. Оно не заменяет документацию по SAP. 
 
@@ -62,20 +62,20 @@ ms.locfileid: "47032090"
 Сведения об использовании библиотеки SAP Cloud Appliance Library для развертывания S/4HANA или BW/4HANA см. в статье [Развертывание SAP S/4HANA или BW/4HANA в Microsoft Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/cal-s4h).
 
 ### <a name="sap-hana-supported-operating-systems"></a>Операционные системы, поддерживаемые платформой SAP HANA
-Сведения о поддерживаемых операционных системах для SAP HANA см. в [примечании по поддержке SAP № 2235581](https://launchpad.support.sap.com/#/notes/2235581/E). На виртуальных машинах Azure поддерживаются только эти операционные системы. Следующие операционные системы поддерживаются для развертывания SAP HANA в Azure: 
+Сведения о поддерживаемых операционных системах для SAP HANA см. по ссылке [SAP Support Note #2235581 — SAP HANA: Supported Operating Systems](https://launchpad.support.sap.com/#/notes/2235581/E) (Примечание по поддержке SAP № 2235581. Операционные системы, поддерживаемые платформой SAP HANA). На виртуальных машинах Azure поддерживаются только эти операционные системы. Следующие операционные системы поддерживаются для развертывания SAP HANA в Azure: 
 
 * SUSE Linux Enterprise Server 12.x;
 * Red Hat Enterprise Linux 7.2
 
 Дополнительную документацию SAP по платформе SAP HANA и разным дистрибутивах Linux см. по ссылкам ниже.
 
-* [SAP Support Note #171356 – SAP Software on Linux: General Information](https://launchpad.support.sap.com/#/notes/1984787) (Примечание по поддержке SAP №171356. Общие сведения о ПО SAP на платформе Linux).
+* [SAP Support Note #171356 — SAP Software on Linux:  General Information](https://launchpad.support.sap.com/#/notes/1984787) (Примечание по поддержке SAP № 171356. Общие сведения о ПО SAP на платформе Linux)
 * [SAP Support Note #1944799 – SAP HANA Guidelines for SLES Operating System Installation](http://go.sap.com/documents/2016/05/e8705aae-717c-0010-82c7-eda71af511fa.html) (Примечание по поддержке SAP №1944799. Рекомендации по установке SAP HANA в ОС SLES).
 * [SAP Support Note #2205917 – SAP HANA DB Recommended OS Settings for SLES 12 for SAP Applications](https://launchpad.support.sap.com/#/notes/2205917/E) (Примечание по поддержке SAP №2205917. База данных SAP HANA: рекомендуемые параметры ОС для SLES 12 для приложений SAP).
-* [SAP Support Note #1984787 – SUSE Linux Enterprise Server 12: Installation Notes](https://launchpad.support.sap.com/#/notes/1984787) (Примечание по поддержке SAP №1984787. Заметки об установке SUSE Linux Enterprise Server 12).
+* [SAP Support Note #1984787 — SUSE Linux Enterprise Server 12:  Installation Notes](https://launchpad.support.sap.com/#/notes/1984787) (Примечание по поддержке SAP № 1984787. Замечания по установке SUSE Linux Enterprise Server 12)
 * [SAP Support Note #1391070 – Linux UUID Solutions](https://launchpad.support.sap.com/#/notes/1391070) (Примечание по поддержке SAP №1391070. Решения UUID для Linux).
 * [SAP Support Note #2009879 - SAP HANA Guidelines for Red Hat Enterprise Linux (RHEL) Operating System](https://launchpad.support.sap.com/#/notes/2009879) (Примечание по поддержке SAP № 2009879. Рекомендации для установки SAP HANA на ОС Red Hat Enterprise Linux (RHEL));
-* [2292690 - SAP HANA DB: Recommended OS settings for RHEL 7](https://launchpad.support.sap.com/#/notes/2292690/E) (Примечание по поддержке SAP № 2292690. База данных SAP HANA: рекомендуемые параметры операционной системы для RHEL 7).
+* [2292690 — SAP HANA DB: Recommended OS settings for RHEL 7](https://launchpad.support.sap.com/#/notes/2292690/E) (Примечание по поддержке SAP № 2292690. База данных SAP HANA: рекомендуемые параметры операционной системы для RHEL 7)
 
 ### <a name="sap-monitoring-in-azure"></a>Мониторинг SAP в Azure
 Сведения о мониторинге SAP в Azure см. по ссылкам ниже.
@@ -87,7 +87,7 @@ ms.locfileid: "47032090"
 ### <a name="azure-vm-types"></a>Типы виртуальных машин Azure
 Типы виртуальных машин Azure и поддерживаемые сценарии рабочих нагрузок SAP, используемых с SAP HANA, описаны на [странице сертифицированных платформ IaaS](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html). 
 
-Типы виртуальных машин Azure, которые сертифицированы SAP для уровня приложения SAP NetWeaver или S/4HANA, описаны здесь: [SAP Note 1928533 - SAP Applications on Azure: Supported Products and Azure VM types](https://launchpad.support.sap.com/#/notes/1928533/E) (Примечание по поддержке SAP № 1928533. Приложения SAP в Azure: поддерживаемые продукты и типы виртуальных машин Azure).
+Типы виртуальных машин Azure, которые сертифицированы SAP для уровня приложения SAP NetWeaver или S/4HANA, описаны здесь: [SAP Note 1928533 — SAP Applications on Azure: Supported Products and Azure VM types](https://launchpad.support.sap.com/#/notes/1928533/E) (Примечание по поддержке SAP № 1928533. Приложения SAP в Azure: поддерживаемые продукты и типы виртуальных машин Azure).
 
 >[!Note]
 >Интеграция SAP, Linux и Azure поддерживается только в модели развертывания с помощью Azure Resource Manager и не поддерживается в классической модели развертывания. 
@@ -208,7 +208,7 @@ ms.locfileid: "47032090"
 
 Хранилище Azure класса Premium позволяет определять режимы кэширования диска. Для чередующегося набора, который содержит тома /hana/data и /hana/log, кэширование диска нужно отключить. Для других томов (дисков) для режима кэширования необходимо установить значение **Только для чтения**.
 
-Дополнительные сведения см. в статье [Хранилище класса "Премиум": высокопроизводительная служба хранилища для рабочих нагрузок виртуальных машин Azure](../../windows/premium-storage.md).
+Дополнительные сведения см. в статье [Высокопроизводительное хранилище класса Premium и управляемые диски для виртуальных машин Azure](../../windows/premium-storage.md).
 
 Примеры шаблонов JSON для создания виртуальных машин см. на странице с [шаблонами быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates).
 Шаблон vm-simple-sles является базовым. Оно содержит раздел хранилища с дополнительным диском данных размером 100 ГБ. Этот шаблон можно использовать в качестве базы. Шаблон можно адаптировать для конкретной конфигурации.
@@ -404,7 +404,7 @@ ms.locfileid: "47032090"
 Дополнительные сведения о средстве HDBLCM HANA см. в следующих источниках:
 
 * [Choosing the Correct SAP HANA HDBLCM for Your Task (Выбор подходящего средства SAP HANA HDBLCM для выполнения определенных заданий)](https://help.sap.com/saphelp_hanaplatform/helpdata/en/68/5cff570bb745d48c0ab6d50123ca60/content.htm)
-* [SAP HANA Lifecycle Management Tools (Средства управления жизненным циклом SAP Hana)](http://saphanatutorial.com/sap-hana-lifecycle-management-tools/)
+* [SAP HANA Lifecycle Management Tools (Средства управления жизненным циклом SAP Hana)](https://www.tutorialspoint.com/sap_hana_administration/sap_hana_administration_lifecycle_management.htm)
 * [SAP HANA Server Installation and Update Guide (Руководство по установке и обновлению сервера SAP Hana)](http://help.sap.com/hana/SAP_HANA_Server_Installation_Guide_en.pdf)
 
 Чтобы избежать проблем с настройкой идентификатора группы по умолчанию для пользователя `\<HANA SID\>adm user` (созданного с помощью средства HDBLCM), перед установкой SAP HANA с помощью HDBLCM необходимо определить новую группу `sapsys` с помощью идентификатора группы `1001`:

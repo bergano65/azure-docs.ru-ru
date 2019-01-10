@@ -9,16 +9,16 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: ashish
-ms.openlocfilehash: d2aeb41c2fcc11c37ec56707932eabcf63e026a0
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 4be346163fd54c0c5f962d15bc2433c7fab49e0b
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52497211"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53650949"
 ---
 # <a name="install-published-application---h2o-sparkling-water"></a>Установка опубликованного приложения H2O Sparkling Water
 
-В этой статье объясняется, как установить и запустить опубликованное приложение [Apache Hadoop](https://hadoop.apache.org/) [H20 Sparkling Water](http://www.h2o.ai/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
+В этой статье объясняется, как установить и запустить опубликованное приложение [Apache Hadoop](https://hadoop.apache.org/) [H20 Sparkling Water](https://www.h2o.ai/) в Azure HDInsight. Обзор платформы приложений HDInsight и список доступных опубликованных приложений независимых поставщиков программного обеспечения приведены в статье [Установка сторонних приложений Hadoop в Azure HDInsight](hdinsight-apps-install-applications.md). Инструкции по установке собственного приложения см. в статье [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md).
 
 ## <a name="about-h2o-sparkling-water"></a>Об H2O Sparkling Water
 
@@ -34,7 +34,7 @@ H2O Sparkling Water обеспечивает:
 ### <a name="resource-links"></a>Ссылки на ресурсы
 
 * [Стратегия разработки H2O.ai](http://jira.h2o.ai/)
-* [Домашняя страница H2O.ai](http://www.h2o.ai/)
+* [Домашняя страница H2O.ai](https://www.h2o.ai/)
 * [Документация по H2O.ai](http://docs.h2o.ai/)
 * [Служба поддержки H2O.ai](https://support.h2o.ai/)
 * [База открытого кода H2O.ai](https://github.com/h2oai/)
@@ -43,9 +43,9 @@ H2O Sparkling Water обеспечивает:
 
 Для установки этого приложения на новый кластер HDInsight или на имеющийся кластер требуется следующая конфигурация:
 
-* уровни кластера: "Стандартный" или "Премиум";
-* тип кластера: Spark;
-* версии кластера: 3.5 или 3.6.
+* Уровни кластера: Standard или Premium
+* Тип кластера: Spark
+* Версии кластера: 3.5 или 3.6.
 
 ## <a name="install-the-h2o-sparkling-water-published-application"></a>Установка опубликованного приложения H2O Sparkling Water
 
@@ -55,7 +55,7 @@ H2O Sparkling Water обеспечивает:
 
 1. После установки можно приступить к использованию H2O Sparkling Water (h2o-sparklingwater) в кластере на портале Azure, открыв записные книжки [Jupyter Notebook](https://jupyter.org/) (`https://<ClusterName>.azurehdinsight.net/jupyter`). Кроме того, перейти к Jupyter можно, выбрав **панель мониторинга кластера** в области своего кластера на портале и щелкнув **Записная книжка Jupyter**. Появится запрос на ввод учетных данных. Введите учетные данные кластера Hadoop, указанные при его создании.
 
-2. В Jupyter отображаются три папки: H2O-PySparkling-Examples, PySpark Examples и Scala Examples. Выберите папку **H2O-PySparkling-Examples**.
+2. В Jupyter отображаются три папки: H2O-PySparkling-Examples, PySpark Examples и Scala Examples. Выберите папку **H2O-PySparkling-Examples**.
 
     ![Домашняя страница записных книжек Jupyter](./media/hdinsight-apps-install-h2o/jupyter-home.png)
 
@@ -69,7 +69,7 @@ H2O Sparkling Water обеспечивает:
 
 5. После настройки и запуска кластера H2O откройте H2O Flow, перейдя по адресу **`https://<ClusterName>-h2o.apps.azurehdinsight.net:443`**.
 
-    > [!NOTE]
+    > [!NOTE]  
     > Если вам не удалось открыть H2O Flow, попробуйте очистить кэш браузера. Если вам по-прежнему не удается получить доступ к H2O Flow, возможно, в кластере недостаточно ресурсов. Попробуйте увеличить число рабочих узлов в разделе **Изменить масштаб кластера** в области кластера.
 
     ![Панель мониторинга H2O Flow](./media/hdinsight-apps-install-h2o/h2o-flow.png)
@@ -95,8 +95,8 @@ H2O Sparkling Water обеспечивает:
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Документация по H2O](http://docs.h2o.ai/h2o/latest-stable/h2o-docs/index.html)
-* [Установка пользовательских приложений Hadoop в Azure HDInsight](hdinsight-apps-install-custom-applications.md) — узнайте, как развернуть в HDInsight неопубликованное приложение HDInsight.
-* [Публикация приложений HDInsight в Azure Marketplace](hdinsight-apps-publish-applications.md)— узнайте, как опубликовать пользовательские приложения HDInsight в Azure Marketplace.
-* [Install an HDInsight application](https://msdn.microsoft.com/library/mt706515.aspx)(Установка приложения HDInsight) — узнайте, как определить приложения HDInsight.
-* [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md) — узнайте, как использовать действие скрипта для установки дополнительных приложений.
-* [Использование пустых граничных узлов в кластерах Hadoop в HDInsight](hdinsight-apps-use-edge-node.md) — узнайте, как использовать пустой граничный узел для доступа к кластерам HDInsight, а также тестирования и размещения приложений HDInsight.
+* [Установка пользовательских приложений HDInsight](hdinsight-apps-install-custom-applications.md). Узнайте, как развернуть в HDInsight неопубликованное приложение HDInsight.
+* [Публикация приложения HDInsight в Azure Marketplace](hdinsight-apps-publish-applications.md). Узнайте, как опубликовать пользовательские приложения HDInsight в Microsoft Azure Marketplace.
+* [MSDN. Application](https://msdn.microsoft.com/library/mt706515.aspx) (Приложение). Узнайте, как определить приложения HDInsight.
+* [Настройка кластеров HDInsight под управлением Linux с помощью действия сценария](hdinsight-hadoop-customize-cluster-linux.md). Узнайте, как использовать действие сценария для установки дополнительных приложений.
+* [Использование пустых граничных узлов в HDInsight](hdinsight-apps-use-edge-node.md). Узнайте, как использовать пустой граничный узел для доступа к кластерам HDInsight, а также для тестирования и размещения приложений HDInsight.

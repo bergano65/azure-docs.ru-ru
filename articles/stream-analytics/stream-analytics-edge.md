@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: bf290343634f9f9f836a87ab15f13cc1dac6f86f
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 9d5a0cf9fa4f9ad8b5a673cd2420416f92edda91
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53141957"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53994986"
 ---
 # <a name="azure-stream-analytics-on-iot-edge"></a>Azure Stream Analytics в IoT Edge
  
@@ -144,7 +144,7 @@ IoT Edge предоставляет способ декларативно мар
 ### <a name="current-limitations-for-iot-edge-jobs-compared-to-cloud-jobs"></a>Текущие ограничения заданий IoT Edge в сравнении с облачными заданиями
 Целью является обеспечение соответствия между заданиями IoT Edge и облачными заданиями. Большинство функций языка запросов SQL уже поддерживаются.
 Тем не менее для заданий Edge пока не поддерживаются следующие компоненты:
-* Определяемые пользователем функции (UDF) в JavaScript. Определяемые пользователем функции доступны в [C# для заданий IoT Edge](https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-edge-csharp-udf) (предварительная версия).
+* Определяемые пользователем функции (UDF) в JavaScript. Определяемые пользователем функции доступны в [C# для заданий IoT Edge](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-edge-csharp-udf) (предварительная версия).
 * Определяемые пользователем статистические функции (UDA).
 * Функции Машинного обучения Azure.
 * Использование более 14 статических выражений за один шаг.
@@ -167,7 +167,7 @@ IoT Edge предоставляет способ декларативно мар
 
 В ASA и Azure IoT Edge используются контейнеры **Docker** для предоставления переносимого решения, которое выполняется на нескольких ОС узла (Windows, Linux).
 
-ASA в IoT Edge доступна в качестве образов Windows и Linux, работающих под управлением архитектуры x86–64 или Azure Resource Manager. 
+ASA в IoT Edge доступна в качестве образов Windows и Linux, работающих под управлением архитектур x86–64 или ARM (Advanced RISC Machines). 
 
 
 ### <a name="input-and-output"></a>Входные и выходные данные

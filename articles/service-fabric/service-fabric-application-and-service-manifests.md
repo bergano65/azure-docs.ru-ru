@@ -12,17 +12,20 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 10/29/2018
+ms.date: 12/19/2018
 ms.author: ryanwi
-ms.openlocfilehash: 78315409c5d83a98321e16913b1090e8996ed8ce
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 3e390763255878384e7a767158210d0515b09958
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50230290"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53653555"
 ---
 # <a name="service-fabric-application-and-service-manifests"></a>Манифесты службы и приложения Service Fabric
 В этой статье описывается, как с помощью файлов ApplicationManifest.xml и ServiceManifest.xml определяются приложения и службы Service Fabric и выполняется управление их версиями.  Более подробные примеры см. [здесь](service-fabric-manifest-examples.md).  Сведения о схеме XML для этих файлов манифеста см. в статье [Документация по схеме ServiceFabricServiceModel.xsd](service-fabric-service-model-schema.md).
+
+> [!WARNING]
+> Схема файла XML обеспечивает правильное упорядочение дочерних элементов.  Чтобы частично обойти эту проблему, откройте C:\Program Files\Microsoft SDKs\Service Fabric\schemas\ServiceFabricServiceModel.xsd в Visual Studio во время создания или изменения любого манифеста Service Fabric. Так вы сможете проверить упорядочение дочерних элементов и получить доступ к функции автозавершения.
 
 ## <a name="describe-a-service-in-servicemanifestxml"></a>Описание службы в ServiceManifest.xml
 Манифест службы декларативно определяет тип и версию службы. Он задает метаданные службы, такие как тип службы, свойства работоспособности, метрики балансировки нагрузки, двоичные файлы службы и файлы конфигурации.  Другими словами, в нем описывается код, конфигурация и пакеты данных, из которых состоит пакет службы, для поддержки одного или нескольких типов служб. Манифест служб может содержать множество пакетов кода, конфигураций и данных, чьи версии устанавливаются независимо. [Вот](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart) манифест службы для веб-интерфейса службы ASP.NET Core из примера приложения для голосования, а [вот](service-fabric-manifest-examples.md) более подробные примеры.

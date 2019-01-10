@@ -17,17 +17,17 @@ ms.workload: iaas-sql-server
 ms.date: 08/30/2018
 ms.author: mikeray
 ms.openlocfilehash: 42a4ea1e4dc352e56fbd65f69c9ed71e3b0c1038
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
+ms.lasthandoff: 12/21/2018
 ms.locfileid: "51238081"
 ---
 # <a name="configure-always-on-availability-group-in-azure-vm-manually"></a>Настройка группы доступности AlwaysOn на виртуальной машине Azure вручную
 
 В этом руководстве показано, как создать группу доступности AlwaysOn SQL Server на виртуальных машинах Azure. Полная версия руководства позволяет создать группу доступности с репликой базы данных на двух серверах SQL Server.
 
-**Оценка времени**. Потребуется около 30 минут (при условии, что предварительные требования уже выполнены).
+**Оценка времени**. Потребуется около 30 минут (при условии что предварительные требования уже выполнены).
 
 На схеме ниже показаны шаги, которые описываются в этом руководстве.
 
@@ -45,7 +45,7 @@ ms.locfileid: "51238081"
 |![Маркер](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/square.png)| Windows Server | Файловый ресурс для свидетеля кластера. |  
 |![Маркер](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/square.png)|Учетная запись службы SQL Server | Доменная учетная запись. |
 |![Маркер](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/square.png)|Учетная запись службы агента SQL Server | Доменная учетная запись. |  
-|![Маркер](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/square.png)|Открытые порты брандмауэра | SQL Server: порт **1433** для экземпляра по умолчанию. <br/> Конечная точка зеркального отображения базы данных: порт **5022** или любой доступный порт. <br/> Группа доступности подсистемы балансировки нагрузки для IP-адреса: **59999** или любой доступный порт <br/> Работоспособность IP-адреса ядра кластера подсистемы балансировки нагрузки: **58888** или любой доступный порт |
+|![Маркер](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/square.png)|Открытые порты брандмауэра | — SQL Server: **1433** для экземпляра по умолчанию. <br/> — Конечная точка зеркального отображения базы данных: **5022** или любой доступный порт. <br/> — Проверка работоспособности группы доступности подсистемы балансировки нагрузки для IP-адреса: **59999** или любой доступный порт. <br/> — Проверка работоспособности ядра кластера подсистемы балансировки нагрузки для IP-адреса: **58888** или любой доступный порт. |
 |![Маркер](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/square.png)|Добавление компонента отказоустойчивой кластеризации | Этот компонент нужен на обоих серверах SQL Server. |
 |![Маркер](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/square.png)|Доменная учетная запись для установки | Локальный администратор на каждом сервере SQL Server. <br/> Участник фиксированной роли сервера SQL Server sysadmin для каждого экземпляра SQL Server.  |
 

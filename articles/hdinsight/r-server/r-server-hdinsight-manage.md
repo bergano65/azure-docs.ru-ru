@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: bdb2e355b29306c8a78a3a773269baeee13fc9d1
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.openlocfilehash: 7e135432ce8490c505e7d3a1022407dd5d9b9776
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52497540"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53584400"
 ---
 # <a name="manage-ml-services-cluster-on-azure-hdinsight"></a>Управление кластером служб машинного обучения в Azure HDInsight
 
@@ -22,9 +22,9 @@ ms.locfileid: "52497540"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Кластер служб машинного обучения в HDInsight**. Инструкции см. в статье [Начало работы со службами машинного обучения в HDInsight](r-server-get-started.md).
+* **Кластер служб машинного обучения в HDInsight**. Инструкции см. в статье [Начало работы со службами машинного обучения в Azure HDInsight](r-server-get-started.md).
 
-* **Клиент Secure Shell (SSH)**. Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
+* **Клиент Secure Shell (SSH)**. Клиент SSH используется для удаленного подключения к кластеру HDInsight и выполнения команд непосредственно в кластере. Дополнительные сведения см. в статье [Подключение к HDInsight (Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
 
 ## <a name="enable-multiple-concurrent-users"></a>Включение нескольких параллельных подключений пользователей
@@ -50,11 +50,11 @@ ms.locfileid: "52497540"
 2. добавить нескольких пользователей Linux на граничный узел;
 3. использовать версию RStudio Community с помощью созданного пользователя.
 
-### <a name="step-1-use-the-created-ssh-user-to-sign-in-to-the-edge-node"></a>Шаг 1. Вход на граничный узел с помощью созданного пользователя SSH
+### <a name="step-1-use-the-created-ssh-user-to-sign-in-to-the-edge-node"></a>Шаг 1. Вход на граничный узел с помощью созданного пользователя SSH
 
 Чтобы получить доступ к граничному узлу, следуйте инструкциям по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md). Адрес граничного узла кластера служб машинного обучения в HDInsight: `CLUSTERNAME-ed-ssh.azurehdinsight.net`.
 
-### <a name="step-2-add-more-linux-users-in-edge-node"></a>Шаг 2. Добавление дополнительных пользователей Linux на граничный узел
+### <a name="step-2-add-more-linux-users-in-edge-node"></a>Шаг 2. добавить нескольких пользователей Linux на граничный узел;
 
 Чтобы добавить пользователя на граничный узел, выполните эти команды:
 
@@ -70,7 +70,7 @@ ms.locfileid: "52497540"
 
 При появлении запроса на ввод текущего пароля Kerberos нажмите клавишу **ВВОД**, чтобы игнорировать его. Параметр `-m` в команде `useradd` указывает, что система создаст домашнюю папку пользователя, которая обязательна для версии RStudio Community.
 
-### <a name="step-3-use-rstudio-community-version-with-the-user-created"></a>Шаг 3. Использование версии RStudio Community с помощью созданного пользователя
+### <a name="step-3-use-rstudio-community-version-with-the-user-created"></a>Шаг 3. использовать версию RStudio Community с помощью созданного пользователя.
 
 Войдите в RStudio из https://CLUSTERNAME.azurehdinsight.net/rstudio/. Если вы впервые входите в систему после создания кластера, сначала введите учетные данные администратора кластера, а затем созданные учетные данные пользователя SSH. Если это уже не первый вход, достаточно ввести учетные данные нового пользователя SSH.
 
@@ -80,7 +80,7 @@ ms.locfileid: "52497540"
 
 ## <a name="connect-remotely-to-microsoft-ml-services"></a>Удаленное подключение к серверу или клиенту служб машинного обучения Microsoft
 
-Вы можете получить доступ к контексту вычислений Spark в HDInsight из удаленного экземпляра ML Client, запущенного на персональном компьютере. Для этого укажите на ноутбуке параметры dfsShareDir, shareDir, sshUsername, sshHostname, sshSwitches и sshProfileScript, определяя контекст вычислений RxSpark.
+Вы можете получить доступ к контексту вычислений Spark в HDInsight из удаленного экземпляра ML Client, запущенного на персональном компьютере. Для этого укажите на ПК параметры dfsShareDir, shareDir, sshUsername, sshHostname, sshSwitches и sshProfileScript, определяя контекст вычислений RxSpark. Например: 
 
     myNameNode <- "default"
     myPort <- 0
@@ -299,10 +299,8 @@ ms.locfileid: "52497540"
 
 Чтобы установить пакеты R на рабочие узлы кластера, необходимо использовать действие скрипта. Действия скриптов — это скрипты Bash, которые используются для изменения конфигурации кластера HDInsight или установки дополнительного программного обеспечения, например дополнительных пакетов R. 
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Использовать действия сценария для установки дополнительных пакетов R можно только после создания кластера. Не используйте эту процедуру во время создания кластера, так как скрипту требуется полностью настроенные службы машинного обучения.
->
->
 
 1. Выполните действия по [настройке кластеров с помощью действия скрипта](../hdinsight-hadoop-customize-cluster-linux.md).
 
@@ -312,11 +310,11 @@ ms.locfileid: "52497540"
 
    * В поле **Имя** укажите имя для действия скрипта.
 
-    * В поле **URI bash-скрипта** введите `http://mrsactionscripts.blob.core.windows.net/rpackages-v01/InstallRPackages.sh`. Этот скрипт устанавливает дополнительные пакеты R на рабочий узел.
+    * В поле **URI bash-скрипта** введите `https://mrsactionscripts.blob.core.windows.net/rpackages-v01/InstallRPackages.sh`. Этот скрипт устанавливает дополнительные пакеты R на рабочий узел.
 
    * Установите флажок только для параметра **Рабочая роль**.
 
-   * **Параметры**: устанавливаемые пакеты R. Например, `bitops stringr arules`
+   * **Параметры.** Устанавливаемые пакеты R. Например, `bitops stringr arules`
 
    * Установите флажок **Persist this script action** (Сохранить это действие скрипта).  
 

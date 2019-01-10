@@ -10,24 +10,24 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: c0687ec94af60d3683d3f129eff2bad8fb97d786
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 5f4b7994ad5061c64021f3625f42ac028cbee859
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53165812"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53653413"
 ---
 # <a name="apache-spark-streaming-dstream-example-with-apache-kafka-on-hdinsight"></a>Пример потоковой передачи Apache Spark (DStream) с использованием Apache Kafka в HDInsight
 
 Узнайте об использовании [Apache Spark](https://spark.apache.org/) для двунаправленного потокового обмена данными с [Apache Kafka](https://kafka.apache.org/) в HDInsight с помощью [DStreams](https://spark.apache.org/docs/latest/api/java/org/apache/spark/streaming/dstream/DStream.html). В этом примере используется средство [Jupyter Notebook](https://jupyter.org/), которое выполняется на кластере Spark.
 
-> [!NOTE]
+> [!NOTE]  
 > Вы узнаете, как создать группу ресурсов Azure, которая содержит кластеры Spark и Kafka в HDInsight. Оба этих кластера находятся в виртуальной сети Azure, что позволяет кластеру Spark напрямую обмениваться данными с кластером Kafka.
 >
 > Выполнив инструкции, не забудьте удалить кластеры, чтобы избежать ненужных расходов.
 
-> [!IMPORTANT]
-> В этом примере используется DStreams (старая технология потоковой передачи Spark). Пример, использующий новые функции потоковой передачи Spark, см. в статье [Использование структурированной потоковой передачи Spark с Kafka в HDInsight](hdinsight-apache-kafka-spark-structured-streaming.md).
+> [!IMPORTANT]  
+> В этом примере используется DStreams (старая технология потоковой передачи Spark). Пример, использующий новые функции потоковой передачи Spark, см. в статье [Использование структурированной потоковой передачи Spark с Apache Kafka в HDInsight](hdinsight-apache-kafka-spark-structured-streaming.md).
 
 ## <a name="create-the-clusters"></a>Создание кластеров
 
@@ -35,7 +35,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 ![Схема кластеров Spark и Kafka в виртуальной сети Azure](./media/hdinsight-apache-spark-with-kafka/spark-kafka-vnet.png)
 
-> [!NOTE]
+> [!NOTE]  
 > Хотя само решение Kafka ограничено связью в пределах виртуальной сети, другие службы в кластере, например SSH и Ambari, доступны через Интернет. Дополнительные сведения об общих портах, доступных в HDInsight, см. в статье [Порты и универсальные коды ресурсов (URI), используемые кластерами HDInsight](hdinsight-hadoop-port-settings-for-services.md).
 
 Хотя виртуальную сеть Azure, а также кластеры Kafka и Spark можно создать вручную, проще использовать шаблон Azure Resource Manager. Выполните следующие действия, чтобы развернуть виртуальную сеть Azure, а также кластеры Kafka и Spark в подписке Azure.
@@ -46,7 +46,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
     
     Шаблон Azure Resource Manager доступен по адресу **https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-kafka-spark-cluster-in-vnet-v4.1.json**.
 
-    > [!WARNING]
+    > [!WARNING]  
     > Чтобы обеспечить доступность Kafka в HDInsight, кластер должен содержать не менее трех рабочих узлов. Этот шаблон создает кластер Kafka, содержащий три рабочих узла.
 
     Этот шаблон создает кластер HDInsight 3.6 для Kafka и Spark.
@@ -63,11 +63,11 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
     * **Имя пользователя для входа в кластер**. Имя администратора для кластеров Spark и Kafka.
 
-    * **Cluster Login User Password** (Пароль пользователя для входа в кластер). Пароль администратора для кластеров Spark и Kafka.
+    * **Пароль пользователя для входа в кластер.** Пароль администратора для кластеров Spark и Kafka.
 
-    * **Имя пользователя SSH**. Создаваемый пользователь SSH для кластеров Spark и Kafka.
+    * **Имя пользователя SSH.** Создаваемый пользователь SSH для кластеров Spark и Kafka.
 
-    * **Пароль SSH**. Пароль пользователя SSH для кластеров Spark и Kafka.
+    * **Пароль SSH.** Пароль пользователя SSH для кластеров Spark и Kafka.
 
 3. Прочтите **условия использования** и установите флажок **Я принимаю указанные выше условия**.
 
@@ -77,7 +77,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 
 ![Сводные сведения о группе ресурсов для виртуальной сети и кластеров](./media/hdinsight-apache-spark-with-kafka/groupblade.png)
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Обратите внимание, что кластерам HDInsight присвоены имена **spark-BASENAME** и **kafka-BASENAME**, где BASENAME — имя, указанное в шаблоне. Эти имена будут использоваться позже при подключении к кластерам.
 
 ## <a name="use-the-notebooks"></a>Использование записных книжек

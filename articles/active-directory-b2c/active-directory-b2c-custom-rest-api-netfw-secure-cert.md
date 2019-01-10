@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/25/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 7bf7add75f60bf64f64119979e5eee81be0f6e7b
-ms.sourcegitcommit: 0c64460a345c89a6b579b1d7e273435a5ab4157a
+ms.openlocfilehash: 89663db23962cbc82ead331f05cb39c0ef5d2e87
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43344971"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53722572"
 ---
 # <a name="secure-your-restful-service-by-using-client-certificates"></a>Защита служб RESTful с помощью сертификатов клиента
 
@@ -37,16 +37,16 @@ ms.locfileid: "43344971"
 * Выполните действия, описанные в статье [Azure Active Directory B2C. Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных](active-directory-b2c-custom-rest-api-netfw.md).
 * Получите действительный сертификат (PFX-файл с закрытым ключом).
 
-## <a name="step-1-configure-a-web-app-for-client-certificate-authentication"></a>Шаг 1. Настройка веб-приложения для проверки подлинности по сертификату клиента
+## <a name="step-1-configure-a-web-app-for-client-certificate-authentication"></a>Шаг 1. Настройка веб-приложения для проверки подлинности по сертификату клиента
 Чтобы в **службе приложений Azure** подавался запрос на сертификат клиента, установите для параметра `clientCertEnabled` веб-приложения значение *True*. Чтобы внести это изменение, откройте страницу своего веб-приложения на портале Azure. На панели навигации слева в разделе **Параметры** выберите **Параметры SSL**. В разделе **Сертификаты клиента** включите параметр **Входящий сертификат клиента**.
 
 >[!NOTE]
->Ваш план службы приложений Azure должен иметь уровень "Стандартный" или выше. Дополнительные сведения см. в статье [Подробный обзор планов службы приложений Azure](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview).
+>Ваш план службы приложений Azure должен иметь уровень "Стандартный" или выше. Дополнительные сведения см. в статье [Подробный обзор планов службы приложений Azure](https://docs.microsoft.com/azure/app-service/overview-hosting-plans).
 
 >[!NOTE]
 >Дополнительные сведения об установке свойства **clientCertEnabled** см. в статье [Настройка взаимной проверки подлинности TLS для веб-приложения](https://docs.microsoft.com/azure/app-service-web/app-service-web-configure-tls-mutual-auth).
 
-## <a name="step-2-upload-your-certificate-to-azure-ad-b2c-policy-keys"></a>Шаг 2. Отправка сертификата в хранилище ключей политики Azure AD B2C
+## <a name="step-2-upload-your-certificate-to-azure-ad-b2c-policy-keys"></a>Шаг 2. Отправка сертификата в хранилище ключей политики Azure AD B2C
 Когда вы установите для `clientCertEnabled` значение *True*, обмен данными с RESTful API будет выполняться только при наличии сертификата клиента. Чтобы получить сертификат клиента, а также отправить его в клиент Azure AD B2C и сохранить в нем, сделайте следующее: 
 1. В клиенте Azure AD B2C выберите **B2C Settings** (Параметры B2C)  >  **Identity Experience Framework**.
 
@@ -70,7 +70,7 @@ ms.locfileid: "43344971"
 
 8. Чтобы просмотреть все доступные в клиенте ключи и проверить создание ключа `B2C_1A_B2cRestClientCertificate`, выберите **Ключи политики**.
 
-## <a name="step-3-change-the-technical-profile"></a>Шаг 3. Изменение технического профиля
+## <a name="step-3-change-the-technical-profile"></a>Шаг 3. Изменение технического профиля
 Для поддержи проверки подлинности по сертификату клиента в вашей пользовательской политике измените технический профиль, сделав следующее:
 
 1. В рабочей папке откройте файл политики расширения *TrustFrameworkExtensions.xml*.
@@ -97,7 +97,7 @@ ms.locfileid: "43344971"
 
     ![Настройка XML-элементов ClientCertificate для аутентификации](media/aadb2c-ief-rest-api-netfw-secure-cert/rest-api-netfw-secure-client-cert-tech-profile.png)
 
-## <a name="step-4-upload-the-policy-to-your-tenant"></a>Шаг 4. Отправка политики в клиент
+## <a name="step-4-upload-the-policy-to-your-tenant"></a>Шаг 4. Отправка политики в клиент
 
 1. На [портале Azure](https://portal.azure.com) переключитесь в [контекст клиента Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) и выберите **Azure AD B2C**.
 
@@ -111,7 +111,7 @@ ms.locfileid: "43344971"
 
 6. Отправьте файл *TrustFrameworkExtensions.xml* и немного подождите, чтобы удостовериться, что он прошел проверку.
 
-## <a name="step-5-test-the-custom-policy-by-using-run-now"></a>Шаг 5. Тестирование настраиваемой политики с помощью команды Run Now (Запустить сейчас)
+## <a name="step-5-test-the-custom-policy-by-using-run-now"></a>Шаг 5. Тестирование настраиваемой политики с помощью команды "Запустить сейчас"
 1. Откройте **параметры Azure AD B2C** и выберите **Identity Experience Framework**.
 
     >[!NOTE]
@@ -152,7 +152,7 @@ ms.locfileid: "43344971"
    >Если отобразится сообщение об ошибке *The name is not valid, please provide a valid name* (Недопустимое имя. Введите допустимое имя), это значит, что Azure AD B2C успешно вызвал службу RESTful во время предоставления сертификата клиента. Теперь нам нужно проверить этот сертификат.
 
 ## <a name="step-6-add-certificate-validation"></a>Шаг 6. Добавление проверки сертификата
-Сертификат клиента, который Azure AD B2C отправляет в службу RESTful, не проходит никаких проверок на платформе веб-приложений Azure (проверяется только наличие сертификата). За проверку этого сертификата отвечает веб-приложение. 
+Сертификат клиента, который Azure AD B2C отправляет в службу RESTful, не проходит никаких проверок в платформе службы приложений Azure (проверяется только наличие сертификата). За проверку этого сертификата отвечает веб-приложение. 
 
 В этом разделе вы добавите пример кода ASP.NET, который проверяет свойства сертификата для проверки подлинности.
 
