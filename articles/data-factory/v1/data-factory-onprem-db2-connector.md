@@ -22,7 +22,7 @@ ms.lasthandoff: 06/27/2018
 ms.locfileid: "37046536"
 ---
 # <a name="move-data-from-db2-by-using-azure-data-factory-copy-activity"></a>Перемещение данных из DB2 с помощью действия копирования в фабрике данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
 > * [Версия 1](data-factory-onprem-db2-connector.md)
 > * [Версия 2 (текущая)](../connector-db2.md)
 
