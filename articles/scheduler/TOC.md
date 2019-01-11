@@ -26,6 +26,7 @@
 # Справочные материалы
 ## [Azure PowerShell](/powershell/module/azurerm.scheduler)
 ## [REST API](/rest/api/scheduler)
+## [Шаблон Resource Manager](/azure/templates/microsoft.scheduler/allversions)
 
 # Ресурсы
 ## [Стратегия развития планировщика Azure](https://azure.microsoft.com/updates/?product=scheduler)

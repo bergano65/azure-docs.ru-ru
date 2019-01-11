@@ -8,17 +8,16 @@ manager: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 7a5c0866bc08c5a73888d9baca41980106a62ae2
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 0c0e0e3983344bba76f5f305ecaf73f91110f3bc
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49954949"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54020087"
 ---
 # <a name="updating-azure-machine-learning-models-using-update-resource-activity"></a>Обновление моделей машинного обучения Azure с помощью действия "Обновить ресурс"
 
@@ -38,7 +37,7 @@ ms.locfileid: "49954949"
 > [!NOTE]
 > В этой статье рассматривается служба "Фабрика данных Azure" версии 1. Если вы используете текущую версию Фабрики данных, см. статью об [обновлении моделей машинного обучения с помощью службы "Фабрика данных"](../update-machine-learning-models.md).
 
-Эта статья дополняет основную статью, посвященную интеграции фабрики данных Azure и машинного обучения Azure: [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md). Перед прочтением этой статьи ознакомьтесь с основной статьей, если вы еще этого не сделали. 
+Эта статья дополняет основную статью об интеграции фабрики данных Azure и машинного обучения Azure: [Создание прогнозирующих конвейеров с помощью машинного обучения Azure и фабрики данных Azure](data-factory-azure-ml-batch-execution-activity.md). Перед прочтением этой статьи ознакомьтесь с основной статьей, если вы еще этого не сделали. 
 
 ## <a name="overview"></a>Обзор
 Со временем прогнозные модели из оценивающих экспериментов машинного обучения Azure потребуют повторного обучения с помощью новых наборов входных данных. Когда повторное обучение будет завершено, вам потребуется обновить веб-службу оценки на основании обновленной модели машинного обучения. Для использования новых данных и обновления моделей машинного обучения Azure через веб-службы выполните следующие действия.
