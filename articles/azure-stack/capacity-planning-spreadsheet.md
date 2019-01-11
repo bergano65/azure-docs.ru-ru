@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 12/11/2018
 ms.author: jeffgilb
 ms.reviewer: prchint
-ms.openlocfilehash: a37575e6e6e8902dc2dd89a26011031c2e1419c4
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: 6f6e680f7ce613d7a6d9f227765ce599c537e2d3
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53557263"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54106517"
 ---
 # <a name="azure-stack-capacity-planner"></a>Планировщик ресурсов Azure Stack
 Планировщик ресурсов Azure Stack представляет собой электронную таблицу для планирования емкости ресурсов Azure Stack. Планировщик ресурсов дает возможность проектировать разные распределения вычислительных ресурсов и анализировать, как они соответствуют существующим аппаратным решениям. Ниже приведены подробные инструкции по использованию калькулятора Azure Stack.
 
 ## <a name="worksheet-descriptions"></a>Описания рабочих листов
-Ниже представлено краткое описание рабочих листов в электронной таблице планировщика ресурсов Azure Stack, который можно загрузить по адресу [http://aka.ms/azstackcapacityplanner](https://aka.ms/azstackcapacityplanner):
+Ниже представлено краткое описание рабочих листов в электронной таблице планировщика ресурсов Azure Stack, который можно загрузить по адресу [https://aka.ms/azstackcapacityplanner](https://aka.ms/azstackcapacityplanner):
 
 |Имя вкладки|ОПИСАНИЕ|
 |-----|-----|
