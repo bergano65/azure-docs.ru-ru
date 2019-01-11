@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/20/2018
 ms.author: jingwang
-ms.openlocfilehash: 7373cc23654e2168963a364e4b4069331bf196c5
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 8a0808c0e82ee31a5fd684d449fa30cd331d3dba
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53969936"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54063873"
 ---
 # <a name="copy-data-from-amazon-simple-storage-service-using-azure-data-factory"></a>Копирование данных из Amazon Simple Storage Service с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -31,7 +31,7 @@ ms.locfileid: "53969936"
 В частности, этот соединитель Amazon S3 поддерживает копирование файлов "как есть" или анализ файлов с использованием [поддерживаемых форматов файлов и кодеков сжатия](supported-file-formats-and-compression-codecs.md).
 
 >[!TIP]
->Этот соединитель Amazon S3 можно использовать для копирования данных из **всех поставщиков хранилища, совместимых с S3**, например [Google Cloud Storage](#copy-from-google-cloud-storage). Укажите соответствующий URL-адрес службы в конфигурации связанной службы.
+>Этот соединитель Amazon S3 можно использовать для копирования данных из **всех поставщиков хранилища, совместимых с S3**, например [Google Cloud Storage](connector-google-cloud-storage.md). Укажите соответствующий URL-адрес службы в конфигурации связанной службы.
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
@@ -212,35 +212,6 @@ ms.locfileid: "53969936"
         }
     }
 ]
-```
-
-## <a name="copy-from-google-cloud-storage"></a>Копирование из Google Cloud Storage
-
-Так как Google Cloud Storage обеспечивает совместимость по взаимодействию с S3, соединитель Amazon S3 можно использовать для копирования данных из Google Cloud Storage в любой [поддерживаемый приемник хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats). 
-
-В коллекции соединителей пользовательского интерфейса разработки ADF можно найти конкретную запись Google Cloud Storage, которая автоматически заполняет URL-адрес службы как `https://storage.googleapis.com`. Чтобы найти ключ доступа и секрет, перейдите в раздел **Google Cloud Storage**  >  **Параметры**  >  **Взаимодействие**. См. в начале этой статьи подробный обзор использования соединителя S3 для копирования данных.
-
-**Образец связанной службы**
-
-```json
-{
-    "name": "GoogleCloudStorageLinkedService",
-    "properties": {
-        "type": "AmazonS3",
-        "typeProperties": {
-            "accessKeyId": "<access key id>",
-            "secretAccessKey": {
-                "type": "SecureString",
-                "value": "<secret access key>"
-            },
-            "serviceUrl": "https://storage.googleapis.com"
-        },
-        "connectVia": {
-            "referenceName": "<name of Integration Runtime>",
-            "type": "IntegrationRuntimeReference"
-        }
-    }
-}
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

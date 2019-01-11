@@ -6,19 +6,18 @@ documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/26/2018
 author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: f5305c2d077f909a4b6c7c5e6905376d655dd60d
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: b772aa314316906a4079e3d6b8b4e0aeb0f54fba
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53794572"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54022994"
 ---
 # <a name="create-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure-SSIS в фабрике данных Azure
 В этой статье представлены шаги по подготовке среды выполнения интеграции Azure-SSIS в фабрике данных Azure. Затем можно использовать SQL Server Data Tools (SSDT) ​​или SQL Server Management Studio (SSMS) для запуска и развертывания пакетов служб SQL Server Integration Services (SSIS) в этой среде выполнения интеграции в Azure. 
@@ -32,7 +31,7 @@ ms.locfileid: "53794572"
 ## <a name="overview"></a>Обзор
 В этой статье показаны различные способы подготовки среды выполнения интеграции Azure SSIS IR. 
 
-- [Портал Azure](#azure-portal) 
+- [портал Azure](#azure-portal) 
 - [Azure PowerShell](#azure-powershell) 
 - [Шаблон Azure Resource Manager](#azure-resource-manager-template) 
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/18/2018
 ms.author: iainfou
 ms.custom: H1Hack27Feb2017, mvc, devcenter
-ms.openlocfilehash: 3a606d3faab5c7034397c30801a9057c55aac3f2
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: 7c7881f08828572c01a5e0decb270c653416ef9b
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53652818"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54024269"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью Azure CLI
 
@@ -21,7 +21,7 @@ ms.locfileid: "53652818"
 
 ![Изображение перехода к приложению Azure для голосования](media/container-service-kubernetes-walkthrough/azure-vote.png)
 
-В этом руководстве предполагается, что у вас есть некоторое представление о функциях Kubernetes. Дополнительные сведения см. в статье [Ключевые концепции Kubernetes для Службы Azure Kubernetes (AKS)][kubernetes-concepts].
+В этом руководстве предполагается, что у вас есть некоторое представление о функциях Kubernetes. Дополнительные сведения см. в статье [Ключевые концепции Kubernetes для службы Azure Kubernetes (AKS)][kubernetes-concepts].
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -46,7 +46,7 @@ az group create --name myResourceGroup --location eastus
   "id": "/subscriptions/<guid>/resourceGroups/myResourceGroup",
   "location": "eastus",
   "managedBy": null,
-  "name": "myAKSCluster",
+  "name": "myResourceGroup",
   "properties": {
     "provisioningState": "Succeeded"
   },
@@ -192,7 +192,7 @@ spec:
 kubectl apply -f azure-vote.yaml
 ```
 
-В следующем примере выходных данных показано, что развертывания и службы успешно созданы:
+В следующем примере выходных данных показано, что развертывания и службы успешно созданы.
 
 ```
 deployment "azure-vote-back" created
@@ -218,7 +218,7 @@ NAME               TYPE           CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
 azure-vote-front   LoadBalancer   10.0.37.27   <pending>     80:30572/TCP   6s
 ```
 
-Когда значение *EXTERNAL-IP* изменится с состояния *pending* на фактический общедоступный IP-адрес, используйте команду `CTRL-C`, чтобы остановить процесс отслеживания `kubectl`. В следующем примере выходных данных показан общедоступный IP-адрес, присвоенный службе:
+Когда значение *EXTERNAL-IP* изменится с состояния *pending* на фактический общедоступный IP-адрес, используйте команду `CTRL-C`, чтобы остановить процесс отслеживания `kubectl`. В следующем примере выходных данных показан общедоступный IP-адрес, присвоенный службе.
 
 ```
 azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m

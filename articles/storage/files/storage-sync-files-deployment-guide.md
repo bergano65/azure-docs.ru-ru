@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.author: wgries
 ms.component: files
-ms.openlocfilehash: eeaedc84e860cebc0b001300ace4fe1594375af2
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 737cb31fd4e33229e0317e6a0610fb098beed6f4
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999413"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191910"
 ---
 # <a name="deploy-azure-file-sync"></a>Развертывание Синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -66,7 +66,7 @@ Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Componen
 
 # Force Internet Explorer closed, if open. This is required to fully apply the setting.
 # Save any work you have open in the IE browser. This will not affect other browsers,
-# including Edge.
+# including Microsoft Edge.
 Stop-Process -Name iexplore -ErrorAction SilentlyContinue
 ``` 
 

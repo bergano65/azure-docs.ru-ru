@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/17/2018
 ms.author: lahugh
-ms.openlocfilehash: 4663cb467d7d1d864425f4899c829b6618b9547c
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 3c3d534392431e79feabe37fe940ea87f586c660
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53584468"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54051702"
 ---
 # <a name="use-rdma-or-gpu-instances-in-batch-pools"></a>Использование экземпляров RDMA или GPU в пулах пакетной службы
 
@@ -100,7 +100,7 @@ ms.locfileid: "53584468"
 
 Чтобы запустить приложения CUDA в пуле узлов NC под управлением Windows, необходимо установить драйверы GPU NVDIA. Ниже приведен пример процедуры с использованием пакета приложения для установки драйверов GPU NVIDIA. Вы можете выбрать этот вариант, если рабочая нагрузка зависит от конкретной версии драйвера GPU.
 
-1. Скачайте пакет установки для драйверов GPU в Windows Server 2016 с [веб-сайта NVIDIA](http://us.download.nvidia.com/Windows/), например [версию 411.82](http://us.download.nvidia.com/Windows/Quadro_Certified/411.82/411.82-tesla-desktop-winserver2016-international.exe). Сохраните файл локально, используя короткое имя, например *GPUDriverSetup.exe*.
+1. Скачайте пакет установки для драйверов GPU в Windows Server 2016 с [веб-сайта NVIDIA](https://www.nvidia.com/Download/index.aspx), например [версию 411.82](http://us.download.nvidia.com/Windows/Quadro_Certified/411.82/411.82-tesla-desktop-winserver2016-international.exe). Сохраните файл локально, используя короткое имя, например *GPUDriverSetup.exe*.
 2. Создайте ZIP-файл пакета.
 3. Отправьте пакет в учетную запись пакетной службы. Пошаговые инструкции см. в руководстве для [пакетов приложений](batch-application-packages.md). Укажите идентификатор приложения, например *GPUDriver*, и его версию, например *411.82*.
 1. Используйте API пакетной службы или портал Azure для создания пула в конфигурации виртуальных машин с нужным количеством узлов и необходимым масштабом. В следующей таблице показаны примеры параметров для автоматической установки драйверов GPU NVIDIA с помощью задачи запуска.

@@ -1,19 +1,18 @@
 ---
 title: Общие сведения об API таблиц Azure Cosmos DB
 description: Узнайте, как использовать Azure Cosmos DB для хранения больших объемов данных типа "ключ — значение" и выполнения запросов к ним с минимальной задержкой с помощью API таблиц Azure.
-services: cosmos-db
 author: SnehaGunda
 ms.service: cosmos-db
-ms.component: cosmosdb-table
+ms.subservice: cosmosdb-table
 ms.topic: overview
 ms.date: 11/20/2017
 ms.author: sngun
-ms.openlocfilehash: 393a64cb62bcaf3623f77850ff43437396d7db81
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 68190ad15ed70ac831c21582d60bc54da5d3c14b
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53720158"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54043929"
 ---
 # <a name="introduction-to-azure-cosmos-db-table-api"></a>Знакомство с Azure Cosmos DB. API таблицы
 

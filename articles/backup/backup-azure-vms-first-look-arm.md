@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 12/17/2018
 ms.author: raynew
-ms.openlocfilehash: 0c394a92bff3ace210ee0db156f47bb8912bf45d
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: c1bd92b9c4611465b680f195e4881a447f4bb701
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631589"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54044405"
 ---
 # <a name="back-up-azure-vms-with-the-azure-backup-service"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup
 
@@ -290,7 +290,7 @@ ms.locfileid: "53631589"
   Уведомления о развертывании извещают о том, что задание архивации запущено и что ход его выполнения можно отслеживать на странице заданий архивации. В зависимости от размера виртуальной машины создание начального архива может занять некоторое время.
 
   > [!NOTE]
-  > Все данные, для которых служба Azure Backup создает резервные копии, шифруются при хранении с помощью функции [Шифрование службы хранилища (SSE)](../storage/common/storage-service-encryption.md).
+  > - Все данные, для которых служба Azure Backup создает резервные копии, шифруются при хранении с помощью функции [Шифрование службы хранилища (SSE)](../storage/common/storage-service-encryption.md).
   >
   >
 
@@ -339,4 +339,3 @@ ms.locfileid: "53631589"
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Управление](backup-azure-manage-vms.md) резервными копиями.
-

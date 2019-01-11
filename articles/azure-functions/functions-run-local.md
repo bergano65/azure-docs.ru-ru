@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: glenga
-ms.openlocfilehash: 3239cbc957d2a79c7a5411604759f86f0268bd70
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: c99d5e9d64e9e9715589ecf2c0de57ce660917aa
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53976313"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54103695"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -307,6 +307,7 @@ func host start
 | **`--password`** | Пароль или файл, содержащий пароль для PFX-файла. Используется только с `--cert`. Только версия 2.x. |
 | **`--port -p`** | Локальный порт для прослушивания. Значение по умолчанию: 7071. |
 | **`--pause-on-error`** | Приостановка для получения дополнительных входных данных перед выходом из процесса. Используется только при запуске набора инструментов Core Tools из интегрированной среды разработки.|
+| **`--script-root --prefix`** | Используется для указания пути к корню приложения-функции, которое необходимо запустить или развернуть. Используется для скомпилированных проектов, которые создают файлы проекта во вложенной папке. Например, при сборке проекта библиотеки классов C# файлы host.json, local.settings.json и function.json создаются в *корневой* вложенной папке с путем, таким как `MyProject/bin/Debug/netstandard2.0`. В этом случае задайте для префикса значение `--script-root MyProject/bin/Debug/netstandard2.0`. Это корень приложения-функции, работающего в Azure. |
 | **`--timeout -t`** | Время ожидания для запуска узла службы "Функции" в секундах. Значение по умолчанию: 20 секунд.|
 | **`--useHttps`** | Привязка к `https://localhost:{port}`, а не к `http://localhost:{port}`. По умолчанию этот параметр создает доверенный сертификат на компьютере.|
 

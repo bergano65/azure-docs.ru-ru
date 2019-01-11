@@ -12,15 +12,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 08/28/2018
+ms.date: 11/20/2018
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: ae37befe2ae2220feaf17ae4354b6fc780147f7e
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 2a6378406272f502af107a151e69fe33954f7780
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53634241"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54187865"
 ---
 # <a name="create-a-static-html-web-app-in-azure"></a>Создание статического веб-приложения HTML в Azure
 
@@ -31,22 +31,6 @@ ms.locfileid: "53634241"
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
-
-## <a name="install-web-app-extension-for-cloud-shell"></a>Установка расширения веб-приложения для Cloud Shell
-
-Чтобы выполнить задачи этого краткого руководства, необходимо добавить расширение веб-приложения с помощью команды [az web app extension](https://docs.microsoft.com/cli/azure/extension?view=azure-cli-latest#az-extension-add). Если расширение уже установлено, обновите его до последней версии. Чтобы обновить расширение веб-приложения, введите команду `az extension update -n webapp`.
-
-Чтобы установить расширение веб-приложения, выполните следующую команду:
-
-```bash
-az extension add --name webapp
-```
-
-После установки расширения в Cloud Shell отображаются примерно такие сведения:
-
-```bash
-The installed extension 'webapp' is in preview.
-```
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 

@@ -9,17 +9,16 @@ ms.assetid: 13b137c7-1033-406f-aea7-b66f25b313c0
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: c31c57cc28b1e817cbb772154cfb2f04ff349640
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: e1fe5af1769a0a1a83a3ce849a7eb1874369ce9a
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53973712"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54023375"
 ---
 # <a name="pipelines-and-activities-in-azure-data-factory"></a>Конвейеры и действия в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
