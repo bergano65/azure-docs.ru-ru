@@ -9,18 +9,18 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 10/22/2018
+ms.date: 12/20/2018
 ms.author: juliako
-ms.openlocfilehash: cb34855fc9451679c885eebb0ef5a2fab0be8c57
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: 658843fd5acbe0d4e29947e99c00edf4909fe9f4
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50086851"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53742751"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
-Чтобы предоставить клиентам URL-адрес, предназначенный для воспроизведения видео или звуковых файлов, необходимо создать [StreamingLocator](https://docs.microsoft.com/rest/api/media/streaminglocators) и компилировать URL-адреса потоковой передачи. Дополнительные сведения см. в статье [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md).
+Чтобы предоставить клиентам URL-адрес, предназначенный для воспроизведения закодированных видео или звуковых файлов, необходимо создать [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators) и компилировать URL-адреса потоковой передачи. Дополнительные сведения см. в статье [Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md).
 
 ## <a name="streaminglocator-definition"></a>Определение StreamingLocator
 
@@ -29,16 +29,16 @@ ms.locfileid: "50086851"
 |ИМЯ|ОПИСАНИЕ|
 |---|---|
 |id |Полный идентификатор ресурса.|
-|name   |Имя ресурса.|
+|name|Имя ресурса.|
 |properties.alternativeMediaId|Идентификатор мультимедиа этого указателя потоковой передачи.|
-|properties.assetName   |Имя ресурса|
-|properties.contentKeys |Указатель потоковой передачи использует ContentKeys.|
-|properties.created |Время создания указателя потоковой передачи.|
+|properties.assetName|Имя ресурса|
+|properties.contentKeys|Указатель потоковой передачи использует ContentKeys.|
+|properties.created|Время создания указателя потоковой передачи.|
 |properties.defaultContentKeyPolicyName|Указатель потоковой передачи использует имя по умолчанию ContentKeyPolicy.|
-|properties.endTime |Время окончания работы указателя потоковой передачи.|
+|properties.endTime|Время окончания работы указателя потоковой передачи.|
 |properties.startTime|Время начала работы указателя потоковой передачи.|
 |properties.streamingLocatorId|StreamingLocatorId указателя потоковой передачи.|
-|properties.streamingPolicyName |Указатель потоковой передачи использует имя политики потоковой передачи. Можно указать имя созданной вами политики потоковой передачи или использовать одну из предопределенных политик. В настоящее время доступны следующие предопределенные политики потоковой передачи: Predefined_DownloadOnly, Predefined_ClearStreamingOnly, Predefined_DownloadAndClearStreaming, Predefined_ClearKey, Predefined_MultiDrmCencStreaming и Predefined_MultiDrmStreaming.|
+|properties.streamingPolicyName |Указатель потоковой передачи использует имя политики потоковой передачи. Можно указать имя созданной вами политики потоковой передачи или использовать одну из предопределенных политик. Доступные предопределенные политики потоковой передачи: Predefined_DownloadOnly, Predefined_ClearStreamingOnly, Predefined_DownloadAndClearStreaming, Predefined_ClearKey, Predefined_MultiDrmCencStreaming и Predefined_MultiDrmStreaming.|
 |Тип|Тип ресурса.|
 
 Полное определение см. на странице [указателей потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators).

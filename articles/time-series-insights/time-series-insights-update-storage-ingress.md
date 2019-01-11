@@ -1,5 +1,5 @@
 ---
-title: Данные предварительной версии службы "Аналитика временных рядов Azure". Хранилище данных и входящий трафик в предварительной версии службы "Аналитика временных рядов Azure" | Документация Майкрософт
+title: Хранилище данных и входящий трафик в службе "Аналитике временных рядов Azure" (предварительная версия) | Документация Майкрософт
 description: Основные сведения о хранилище данных и входящем трафике в Аналитике временных рядов Azure (предварительная версия).
 author: ashannon7
 ms.author: anshan
@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: 9504e62ea99c835f43f0d86ec2cfa57a9afcb4e4
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: f0326e6f05f44b5f2c4416a1c1db09bc5816a297
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53269997"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53558317"
 ---
 # <a name="data-storage-and-ingress-in-azure-time-series-insights-preview"></a>Хранилище данных и входящий трафик в Аналитике временных рядов Azure (предварительная версия)
 

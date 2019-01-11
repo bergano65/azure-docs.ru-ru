@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: wesmc
-ms.openlocfilehash: 311a576381927536386f5852336c3713fca5c3bf
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: aee91f6d9b8d16db7f14bbc2372d7c465377ce28
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53260758"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53971534"
 ---
 # <a name="azure-cache-for-redis-faq"></a>Вопросы и ответы по кэшу Azure для Redis
 Ответы на часто задаваемые вопросы, шаблоны и рекомендации по поводу кэша Azure для Redis.
@@ -83,7 +83,7 @@ ms.locfileid: "53260758"
 * [Какой кэш Azure подходит мне?](#which-azure-cache-offering-is-right-for-me)
 
 ### <a name="what-is-azure-cache-for-redis"></a>Что такое кэш Azure для Redis?
-Кэш Microsoft Azure для Redis основан на популярном продукте с открытым кодом – [кэше Azure для Redis](http://redis.io). Он предоставляет вам доступ к безопасному выделенному кэшу Azure для Redis, управляемому корпорацией Майкрософт и доступному из любых приложений в Azure. Более подробный обзор представлен на странице [кэша Azure для Redis](https://azure.microsoft.com/services/cache/) на сайте Azure.com.
+Кэш Azure для Redis основан на популярном программном обеспечении [Redis](https://redis.io/) с открытым кодом. Он предоставляет вам доступ к безопасному выделенному кэшу Azure для Redis, управляемому корпорацией Майкрософт и доступному из любых приложений в Azure. Более подробный обзор представлен на странице [кэша Azure для Redis](https://azure.microsoft.com/services/cache/) на сайте Azure.com.
 
 ### <a name="how-can-i-get-started-with-azure-cache-for-redis"></a>Как мне начать работу с кэшем Azure для Redis?
 Существует несколько способов приступить к работе с кэшем Azure для Redis.
@@ -174,7 +174,7 @@ ms.locfileid: "53260758"
 Дополнительные сведения о рекомендациях по использованию кэша Azure для Redis с другими облаками см. в следующих ссылках.
 
 - [Azure Government Databases – Azure Cache for Redis](../azure-government/documentation-government-services-database.md#azure-cache-for-redis) (Базы данных Azure для государственных организаций – кэш Azure для Redis)
-- [Azure China Cloud – Azure Cache for Redis](https://www.azure.cn/documentation/services/azure-cache-for-redis/) (Облако Azure для Китая – кэш Redis для Azure)
+- [Azure China Cloud – Azure Cache for Redis](https://www.azure.cn/home/features/redis-cache/) (Облако Azure для Китая – кэш Redis для Azure)
 - [Microsoft Azure для Германии](https://azure.microsoft.com/overview/clouds/germany/)
 
 Сведения об использовании кэша Azure для Redis с помощью PowerShell в облаке Azure для государственных организаций, Azure для Китая или Microsoft Azure – Германия см. в статье [How to connect to other clouds – Azure Cache for Redis PowerShell](cache-howto-manage-redis-cache-powershell.md#how-to-connect-to-other-clouds) (Подключение к другим облакам – Управление кэшем Azure для Redis с использованием Azure PowerShell).

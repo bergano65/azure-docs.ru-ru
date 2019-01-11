@@ -9,23 +9,25 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 12/08/2018
+ms.date: 12/20/2018
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 541713677184d93eb78856e3c3373ab432d5f0cf
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: f12632b20d516c81e21a50cfdda7e40d4163afc1
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53141536"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53742224"
 ---
 # <a name="content-key-policies"></a>Политики ключа содержимого
 
 Службы мультимедиа Azure позволяют защитить данные мультимедиа, покидающие ваш компьютер, на этапах их хранения, обработки и доставки, а также доставлять в режиме реального времени и по требованию содержимое, зашифрованное динамически с помощью Advanced Encryption Standard (AES-128) или трех основных систем управления цифровыми правами (DRM): Microsoft PlayReady, Google Widevine и Apple FairPlay. Они также обеспечивают службу доставки ключей AES и лицензий DRM (PlayReady, Widevine и FairPlay) авторизованным клиентам.
 
-В Службах мультимедиа Azure версии 3 политики ключа содержимого позволяют указать, каким образом ключ содержимого доставляется конечным клиентам через компонент доставки ключей Служб мультимедиа. Дополнительные сведения см. в статье [Обзор системы защиты содержимого](content-protection-overview.md).
+В Службах мультимедиа Azure версии 3 [политика ключа содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies) позволяет указать, каким образом ключ содержимого доставляется конечным клиентам через компонент доставки ключей Служб мультимедиа. Дополнительные сведения см. в статье [Обзор системы защиты содержимого](content-protection-overview.md).
 
-## <a name="contentkeypolicies-definition"></a>Определение ContentKeyPolicies
+Рекомендуется использовать один и тот же ContentKeyPolicy для всех ваших ресурсов. ContentKeyPolicies можно обновлять, поэтому, если вы хотите выполнить смену ключей, можете добавить новый ContentKeyPolicyOption к существующему ContentKeyPolicy с ограничением по маркеру для новых ключей. Или вы можете обновить первичный ключ проверки и список альтернативных ключей проверки в существующей политике и параметре. Обновление и получение обновленной политики кэшей доставки ключей может занять до 15 минут.
+
+## <a name="contentkeypolicy-definition"></a>Определение ContentKeyPolicy
 
 В следующей таблице представлены свойства ContentKeyPolicy и их определения.
 
@@ -37,8 +39,8 @@ ms.locfileid: "53141536"
 |properties.description |Описание политики.|
 |properties.lastModified|Дата последнего изменения политики.|
 |properties.options |Параметры политик ключей.|
-|properties.policyId    |Устаревший идентификатор политики.|
-|Тип   |Тип ресурса.|
+|properties.policyId|Устаревший идентификатор политики.|
+|Тип|Тип ресурса.|
 
 Полное определение см. на странице [политик ключа содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies).
 
@@ -62,7 +64,7 @@ ms.locfileid: "53141536"
 
 ### <a name="filteringordering"></a>Фильтрация и упорядочение
 
-В следующей таблице показано, как можно применить эти параметры к свойствам StreamingPolicy: 
+В следующей таблице показано, как можно применить эти параметры к свойствам ContentKeyPolicies. 
 
 |ИМЯ|Фильтр|Порядок|
 |---|---|---|
@@ -70,10 +72,10 @@ ms.locfileid: "53141536"
 |name|Eq, ne, ge, le, gt, lt|По возрастанию и по убыванию|
 |properties.created |Eq, ne, ge, le, gt, lt|По возрастанию и по убыванию|
 |properties.description |Eq, ne, ge, le, gt, lt||
-|properties.lastModified    |Eq, ne, ge, le, gt, lt|По возрастанию и по убыванию|
+|properties.lastModified|Eq, ne, ge, le, gt, lt|По возрастанию и по убыванию|
 |properties.options |||
-|properties.policyId    |Eq, ne||
-|Тип   |||
+|properties.policyId|Eq, ne||
+|Тип|||
 
 ### <a name="pagination"></a>Разбиение на страницы
 
@@ -84,7 +86,7 @@ ms.locfileid: "53141536"
 
 Если ответ на запрос содержит большое количество элементов, служба возвращает свойство \@odata.nextLink, чтобы получить следующую страницу результатов. Это можно использовать для просмотра всего результирующего набора. Вы не можете настроить размер страницы. 
 
-Если StreamingPolicy создается или удаляется во время разбивки коллекции на страницы, изменения отражаются в возвращаемых результатах (если эти изменения находятся в той части коллекции, которая не была загружена). 
+Если ContentKeyPolicies создаются или удаляются во время разбивки коллекции на страницы, изменения отражаются в возвращаемых результатах (если эти изменения находятся в той части коллекции, которая не была загружена). 
 
 В следующем примере C# показано перечисление всех ContentKeyPolicies в учетной записи.
 

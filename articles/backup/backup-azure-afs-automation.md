@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: pullabhk
 ms.assetid: 80da8ece-2cce-40dd-8dce-79960b6ae073
-ms.openlocfilehash: 90623981f67bbed15ade743192525676e58a0a83
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 30fc36f29a7602e2bc3f192b445474bfc50e9434
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53318430"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53632641"
 ---
 # <a name="use-powershell-to-back-up-and-restore-azure-file-shares"></a>Использование PowerShell для резервного копирования и восстановления файловых ресурсов Azure
 
@@ -34,11 +34,11 @@ ms.locfileid: "53318430"
 ## <a name="setup-and-registration"></a>Настройка и регистрация
 
 > [!NOTE]
-> Как отмечено [здесь](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.13.0), поддержка новых функций в модуле AzureRM заканчивается в ноябре 2018 года. Таким образом, мы предоставляем поддержку резервного копирования файловых ресурсов Azure с помощью нового модуля PS Az. Мы также планируем выпустить общедоступную версию модуля Az.
+> Как отмечено [здесь](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.13.0), поддержка новых функций в модуле AzureRM заканчивается в ноябре 2018 года. Таким образом, мы предоставляем поддержку резервного копирования общих ресурсов файлов Azure с новым модулем PS "Az" (сейчас в общедоступной версии).
 
 Чтобы начать работу, сделайте следующее:
 
-1. [Скачайте последнюю версию Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azurermps-6.13.0) (минимальная требуемая версия: 0.7.0)
+1. [Скачайте последнюю версию Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps?view=azurermps-6.13.0) (минимальная требуемая версия: 1.0.0)
 
 2. Чтобы получить список доступных командлетов PowerShell для службы архивации Azure, введите следующую команду:
 
@@ -158,6 +158,8 @@ Name                 WorkloadType       BackupManagementType BackupTime         
 ----                 ------------       -------------------- ----------                ----------
 NewAFSPolicy           AzureFiles            AzureStorage              10/24/2017 1:30:00 AM
 ```
+
+"NewAFSPolicy" выполняет ежедневное резервное копирование и хранит его в течение 30 дней.
 
 ### <a name="enable-protection"></a>Включить защиту
 

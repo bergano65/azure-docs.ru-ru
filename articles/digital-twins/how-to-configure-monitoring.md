@@ -1,19 +1,20 @@
 ---
 title: Настройка мониторинга в Azure Digital Twins | Документация Майкрософт
-description: Настройка мониторинга в Azure Digital Twins
+description: Настройка мониторинга в Azure Digital Twins.
 author: kingdomofends
 manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 10/22/2018
+ms.date: 12/26/2018
 ms.author: adgera
-ms.openlocfilehash: 1c8f1931a29ae9769f7d8ad57a184e3240105a1a
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.custom: seodec18
+ms.openlocfilehash: 2749a5c6c4e6003c51523d83c46b48d3b55b3d45
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49945827"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53807590"
 ---
 # <a name="how-to-configure-monitoring-in-azure-digital-twins"></a>Настройка мониторинга в Azure Digital Twins
 
@@ -23,7 +24,7 @@ Azure Digital Twins поддерживает надежные механизмы
 
 ## <a name="review-activity-logs"></a>Просмотр журналов действий
 
-[Журналы действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) Azure дают возможность быстрого анализа истории операций и событий на уровне подписки по каждому экземпляру службы Azure.
+[Журналы действий](../azure-monitor/platform/activity-logs-overview.md) Azure дают возможность быстрого анализа истории операций и событий на уровне подписки по каждому экземпляру службы Azure.
 
 События уровня подписки включают:
 
@@ -54,7 +55,7 @@ Azure Digital Twins поддерживает надежные механизмы
 
 ## <a name="enable-customer-diagnostic-logs"></a>Включение журналов диагностики для клиента
 
-В Azure можно настроить не только ведение журнала действий, но и [параметры диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs) для каждого экземпляра Azure. Журналы действий относятся к событиям на уровне подписки, а журналы диагностики дают информацию об истории операций самих ресурсов.
+В Azure можно настроить не только ведение журнала действий, но и [параметры диагностики](../azure-monitor/platform/diagnostic-logs-overview.md) для каждого экземпляра Azure. Журналы действий относятся к событиям на уровне подписки, а журналы диагностики дают информацию об истории операций самих ресурсов.
 
 Примеры данных в журнале диагностики:
 
@@ -74,7 +75,7 @@ Azure Digital Twins поддерживает надежные механизмы
 
     ![Параметры диагностики, экран второй][5]
 
-    Журналы диагностики часто сохраняются с использованием параметра [Хранилище файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-deployment-guide) и предоставляются с помощью [Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-analytics-portal). Вы можете выбрать оба варианта.
+    Журналы диагностики часто сохраняются с использованием параметра [Хранилище файлов Azure](../storage/files/storage-files-deployment-guide.md) и предоставляются с помощью [Azure Log Analytics](../azure-monitor/log-query/get-started-portal.md). Вы можете выбрать оба варианта.
 
 >[!TIP]
 >Используйте **журналы диагностики**, чтобы получить ценные сведения об операциях с ресурсами.
@@ -91,7 +92,7 @@ Azure Monitor включает мощную службу Log Analytics, кото
 * просмотр журналов для нескольких определяемых пользователем функций;
 * отображение журналов для двух или нескольких служб за определенный промежуток времени.
 
-Запрашивание подробных данных журналов обеспечивается [Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-queries). Чтобы настроить эти мощные функции:
+Запрашивание подробных данных журналов обеспечивается [Azure Log Analytics](../azure-monitor/log-query/log-query-overview.md). Чтобы настроить эти мощные функции:
 
 1. Найдите **Log Analytics** на портале Azure.
 1. Вы увидите доступные экземпляры **Log Analytics**. Выберите один из них и щелкните **Журналы**, чтобы создать запрос.
@@ -106,7 +107,7 @@ Azure Monitor включает мощную службу Log Analytics, кото
 
    ![Управление журналами][8]
 
-Дополнительные сведения о мощных операциях с запросами см. в статье [о начале работы с запросами](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries).
+Дополнительные сведения о мощных операциях с запросами см. в статье [о начале работы с запросами](../azure-monitor/log-query/get-started-queries.md).
 
 > [!NOTE]
 > При первой отправке событий в **Log Analytics** возможна задержка до 5 минут.
@@ -120,15 +121,15 @@ Azure Monitor включает мощную службу Log Analytics, кото
 
 ## <a name="other-options"></a>Другие варианты
 
-Azure Digital Twins также поддерживает ведение журналов для отдельных приложений и аудит безопасности. Подробный обзор всех вариантов ведения журналов Azure, доступных для экземпляра Azure Digital Twins, вы найдете в статье [Аудит журналов Azure](https://docs.microsoft.com/azure/security/azure-log-audit).
+Azure Digital Twins также поддерживает ведение журналов для отдельных приложений и аудит безопасности. Подробный обзор всех вариантов ведения журналов Azure, доступных для экземпляра Azure Digital Twins, вы найдете в статье [Аудит журналов Azure](../security/azure-log-audit.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Узнайте больше о [журналах действий](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) Azure.
+- Узнайте больше о [журналах действий](../azure-monitor/platform/activity-logs-overview.md) Azure.
 
-Глубже изучите параметры системы диагностики Azure в [обзоре журналов диагностики](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs).
+- Глубже изучите параметры системы диагностики Azure в [обзоре журналов диагностики](../azure-monitor/platform/diagnostic-logs-overview.md).
 
-Получите дополнительные сведения об [Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-analytics-portal).
+- Получите дополнительные сведения об [Azure Log Analytics](../azure-monitor/log-query/get-started-portal.md).
 
 <!-- Images -->
 [1]: media/how-to-configure-monitoring/activity-log.png

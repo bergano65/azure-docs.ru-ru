@@ -1,10 +1,11 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Zscaler Three | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Zscaler Three | Документация Майкрософт
 description: Вы можете узнать, как настроить единый вход Azure Active Directory в Zscaler Three.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: femila
+ms.reviewer: joflore
 ms.assetid: f352e00d-68d3-4a77-bb92-717d055da56f
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -12,16 +13,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/25/2018
+ms.date: 12/12/2018
 ms.author: jeedes
-ms.openlocfilehash: b148967af0882993d8ab113bdf0fd3ad3835296f
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 442d7478669a206f04cb799cb86b807cfe7b0624
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50092616"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53790172"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-zscaler-three"></a>Руководство по интеграции Azure Active Directory с Zscaler Three
+# <a name="tutorial-azure-active-directory-integration-with-zscaler-three"></a>Руководство. Интеграция Azure Active Directory с Zscaler Three
 
 Это руководство описывает, как интегрировать Zscaler Three с Azure Active Directory (Azure AD).
 
@@ -29,7 +30,7 @@ ms.locfileid: "50092616"
 
 - С помощью Azure AD вы можете контролировать доступ к Zscaler Three.
 - Вы можете включить автоматический вход пользователей в Zscaler Three (единый вход) с использованием учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+- Вы можете управлять учетными записями централизованно — на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
@@ -46,12 +47,11 @@ ms.locfileid: "50092616"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде.
-Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
+В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
 1. Добавление Zscaler Three из коллекции
 2. настройка и проверка единого входа в Azure AD.
@@ -62,23 +62,23 @@ ms.locfileid: "50092616"
 
 **Чтобы добавить Zscaler Three из коллекции, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
 
-    ![Active Directory][1]
+    ![Кнопка "Azure Active Directory"][1]
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
+    ![Колонка "Корпоративные приложения"][2]
 
-3. В верхней части диалогового окна нажмите кнопку **Создать приложение**.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![ПРИЛОЖЕНИЯ][3]
+    ![Кнопка "Новое приложение"][3]
 
-4. На панели результатов выберите **Zscaler Three** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Zscaler Three**, выберите **Zscaler Three** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Создание тестового пользователя Azure AD](./media/zscaler-three-tutorial/tutorial_zscalerthree_addfromgallery.png)
+    ![Zscaler Three в списке результатов](./media/zscaler-three-tutorial/tutorial_zscalerthree_addfromgallery.png)
 
-## <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
 В этом разделе описана настройка и проверка единого входа Azure AD в Zscaler Three с использованием тестового пользователя Britta Simon.
 
@@ -86,14 +86,14 @@ ms.locfileid: "50092616"
 
 Чтобы настроить и проверить единый вход Azure AD в Zscaler Three, вам потребуется выполнить действия в следующих стандартных блоках.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка параметров прокси-сервера](#configuring-proxy-settings)** нужна для настройки параметров прокси-сервера в Internet Explorer.
-3. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-4. **[Создание тестового пользователя Zscaler Three](#creating-a-zscaler-three-test-user)** требуется для того, чтобы в Zscaler Three существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-5. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-6. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Zscaler Three](#configure-zscaler-three-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Создание тестового пользователя Zscaler Three](#create-zscaler-three-test-user)** требуется для того, чтобы существовал аналог пользователя Britta Simon в Cisco Umbrella, связанный с представлением этого же пользователя в Azure AD.
+5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Zscaler Three.
 
@@ -101,95 +101,123 @@ ms.locfileid: "50092616"
 
 1. На портале Azure на странице интеграции с приложением **Zscaler Three** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"][4]
 
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
+2. В диалоговом окне **Выбрать метод единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
 
-    ![Настройка единого входа](./media/zscaler-three-tutorial/tutorial_general_301.png)
+    ![Настройка единого входа](common/tutorial_general_301.png)
 
-3. Если вам нужно переключиться на режим **SAML** из любого другого режима, щелкните **Изменить режим единого входа** в верхней части экрана.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Настройка единого входа](./media/zscaler-three-tutorial/tutorial_general_300.png)
+    ![Настройка единого входа](common/editconfigure.png)
 
-4. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    ![Настройка единого входа](./media/zscaler-three-tutorial/tutorial_general_302.png)
+    ![Сведения о домене и URL-адресах единого входа приложения Zscaler Three](./media/zscaler-three-tutorial/tutorial_zscalerthree_url.png)
 
-5. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+    В текстовом поле **URL-адрес для входа** введите URL-адрес в формате `https://login.zscalerthree.net/sfc_sso`.
 
-    ![Настройка единого входа](./media/zscaler-three-tutorial/tutorial_zscalerthree_url.png)
+5. Приложение Zscaler Three ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **User Attributes & Claims** (Атрибуты пользователя и утверждения) на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **User Attributes & Claims** (Атрибуты пользователя и утверждения).
 
-    В текстовом поле "URL-адрес для входа" введите URL-адрес: `https://login.zscalerthree.net/sfc_sso`.
+    ![Ссылка "Атрибуты"](./media/zscaler-three-tutorial/tutorial_zscalerthree_attribute.png)
 
-6. В разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
-    ![Настройка единого входа](./media/zscaler-three-tutorial/tutorial_zscalerthree_certificate.png)
+    | ИМЯ  | Исходный атрибут  |
+    | ---------| ------------ |
+    | memberOf     | user.assignedroles |
 
-8. В разделе **Настройка Zscaler Three** скопируйте **URL-адрес входа**.
+    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![Настройка единого входа](./media/zscaler-three-tutorial/tutorial_zscalerthree_configure.png)
+    ![изображение](./common/new_save_attribute.png)
+    
+    ![изображение](./common/new_attribute_details.png)
+
+    b. В списке **Источник атрибута** выберите значение атрибута.
+
+    c. Нажмите кнопку **ОК**.
+
+    d. Выберите команду **Сохранить**.
+
+    > [!NOTE]
+    > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/active-directory-enterprise-app-role-management), чтобы прочитать о настройке роли в Azure Active Directory.
+
+7. На странице **сертификата подписи SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+
+    ![Ссылка для скачивания сертификата](./media/zscaler-three-tutorial/tutorial_zscalerthree_certificate.png) 
+
+8. Требуемый URL-адрес можно скопировать из раздела **Настройка Zscaler Three**.
+
+    a. URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода
+
+    ![Конфигурация Zscaler Three](common/configuresection.png)
+
+### <a name="configure-zscaler-three-single-sign-on"></a>Настройка единого входа для Zscaler Three
 
 9. В другом окне веб-браузера войдите на свой корпоративный сайт Zscaler Three в качестве администратора.
 
-10. В верхнем меню щелкните **Администрирование**.
-
+10. Выберите **Administration (Администрирование) > Authentication (Проверка подлинности) > Authentication Settings (Параметры проверки подлинности)** и выполните следующие действия:
+   
     ![Администрирование](./media/zscaler-three-tutorial/ic800206.png "Администрирование")
 
-9. В разделе **Manage Administrators & Roles** (Управление администраторами и ролями) щелкните **Manage Users & Authentication** (Управление пользователями и проверкой подлинности).
+    a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
 
-    ![Управление пользователями и проверкой подлинности](./media/zscaler-three-tutorial/ic800207.png "Управление пользователями и проверкой подлинности")
+    b. Нажмите кнопку **Configure SAML** (Настроить SAML).
 
-10. В разделе **Выбор параметров проверки подлинности для организации** выполните следующие действия.
+11. В окне **Изменить параметры SAML** выполните следующие действия и нажмите кнопку "Сохранить".  
+            
+    ![Управление пользователями и проверкой подлинности](./media/zscaler-three-tutorial/ic800208.png "Управление пользователями и проверкой подлинности")
+    
+    a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
 
-    ![Аутентификация](./media/zscaler-three-tutorial/ic800208.png "Аутентификация")
+    b. В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
 
-    a. Выберите параметр **Проверка подлинности с помощью единого входа SAML**.
+    c. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
 
-    b. Щелкните **Настроить параметры единого входа SAML**.
+    d. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
 
-11. На странице диалогового окна **Configure SAML Single Sign-On Parameters** (Настройка параметров единого входа в SAML) выполните указанные ниже действия и нажмите кнопку **Готово**.
+    д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
 
-    ![Единый вход](./media/zscaler-three-tutorial/ic800209.png "Единый вход")
+    Е. В текстовое поле **Group Name Attribute** (Атрибут имени группы) введите **memberOf**, если вы хотите включить автоматическую подготовку SAML для атрибутов memberOf.
 
-    a. Вставьте значение **URL-адрес входа**, скопированное на портале Azure, в текстовое поле **URL of the SAML Portal to which users are sent for authentication** (URL-адрес портала SAML, куда пользователи направляются для аутентификации).
+    ж. В поле **Department Name Attribute** (Атрибут имени отдела) введите **department**, если вы хотите включить автоматическую подготовку SAML для атрибутов department.
 
-    b. В текстовом поле **Attribute containing Login Name** (Атрибут, содержащий имя входа) введите **NameID**.
-
-    c. Чтобы передать скачанный сертификат, щелкните **Zscaler pem**.
-
-    d. Выберите параметр **Включить автоматическую подготовку SAML**.
+    i. Выберите команду **Сохранить**.
 
 12. На странице **Настройка проверки подлинности пользователей** выполните следующие действия.
 
-    ![Администрирование](./media/zscaler-three-tutorial/ic800210.png "Администрирование")
+    ![Администрирование](./media/zscaler-three-tutorial/ic800207.png)
 
-    a. Выберите команду **Сохранить**.
+    a. Наведите указатель мыши на меню **Activation** (Активация) в нижнем левом углу.
 
-    b. Щелкните **Активировать сейчас**.
+    b. Щелкните **Активировать**.
 
 ## <a name="configuring-proxy-settings"></a>Настройка параметров прокси-сервера
-
 ### <a name="to-configure-the-proxy-settings-in-internet-explorer"></a>Настройка параметров прокси-сервера в Internet Explorer
 
 1. Запустите **Internet Explorer**.
 
-2. В меню **Сервис** выберите **Свойства браузера**, чтобы открыть диалоговое окно **Свойства браузера**.
-
+1. В меню **Сервис** выберите **Свойства браузера**, чтобы открыть диалоговое окно **Свойства браузера**.   
+    
      ![Свойства браузера](./media/zscaler-three-tutorial/ic769492.png "Свойства браузера")
 
-3. Щелкните вкладку **Подключения** .
+1. Щелкните вкладку **Подключения** .   
   
      ![Подключения](./media/zscaler-three-tutorial/ic769493.png "Подключения")
 
-4. Нажмите кнопку **Настройка сети**, чтобы открыть диалоговое окно **Настройка сети**.
+1. Нажмите кнопку **Настройка сети**, чтобы открыть диалоговое окно **Настройка сети**.
 
-5. В разделе "Прокси-сервер" выполните следующие действия.
-
+1. В разделе "Прокси-сервер" выполните следующие действия.   
+   
     ![Прокси-сервер](./media/zscaler-three-tutorial/ic769494.png "Прокси-сервер")
 
     a. Установите флажок **Использовать прокси-сервер для локальной сети**.
 
-    b. В текстовом поле "Адрес" введите **gateway.zscalerthree.net**.
+    b. В текстовом поле "Адрес" введите **gateway.Zscaler Three.net**.
 
     c. В текстовом поле "Порт" введите **80**.
 
@@ -197,9 +225,9 @@ ms.locfileid: "50092616"
 
     д. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Настройка параметров локальной сети**.
 
-6. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Свойства браузера**.
+1. Нажмите кнопку **ОК**, чтобы закрыть диалоговое окно **Свойства браузера**.
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
@@ -209,11 +237,11 @@ ms.locfileid: "50092616"
 
 2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/zscaler-three-tutorial/create_aaduser_01.png) 
+    ![Создание тестового пользователя Azure AD](common/create_aaduser_01.png) 
 
 3. В разделе свойств пользователя сделайте следующее.
 
-    ![Создание тестового пользователя Azure AD](./media/zscaler-three-tutorial/create_aaduser_02.png)
+    ![Создание тестового пользователя Azure AD](common/create_aaduser_02.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
@@ -224,38 +252,13 @@ ms.locfileid: "50092616"
 
     d. Нажмите кнопку **Создать**.
 
-### <a name="creating-a-zscaler-three-test-user"></a>Создание тестового пользователя Zscaler Three
+### <a name="create-zscaler-three-test-user"></a>Создание тестового пользователя Zscaler Three
 
-Чтобы пользователи Azure AD могли выполнять вход в Zscaler Three, их необходимо подготовить в Zscaler Three. В случае с Zscaler Three подготовка выполняется вручную.
+Цель этого раздела — создать пользователя с именем Britta Simon в Zscaler Three. Приложение Zscaler Three поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь будет создан при попытке получить доступ к Zscaler Three (если он еще не создан).
+>[!Note]
+>Если вам нужно создать пользователя вручную, обратитесь в  [службу поддержки Zscaler Three](https://www.zscaler.com/company/contact).
 
-### <a name="to-configure-user-provisioning-perform-the-following-steps"></a>Чтобы настроить подготовку учетных записей пользователей, выполните следующие действия.
-
-1. Войдите в клиент **Zscaler Three**.
-
-2. Щелкните **Администрирование**.
-
-    ![Администрирование](./media/zscaler-three-tutorial/ic781035.png "Администрирование")
-
-3. Щелкните **Управление пользователями**.
-
-     ![Добавление](./media/zscaler-three-tutorial/ic781036.png "Добавление")
-
-4. На вкладке **Users** (Пользователи) нажмите кнопку **Add** (Добавить).
-
-    ![Добавление](./media/zscaler-three-tutorial/ic781037.png "Добавление")
-
-5. В разделе "Добавить пользователя" выполните следующие действия.
-
-    ![Добавление пользователя](./media/zscaler-three-tutorial/ic781038.png "Добавление пользователя")
-
-    a. Заполните текстовые поля **UserID** (Идентификатор пользователя), **User Display Name** (Отображаемое имя пользователя), **Password** (Пароль), **Confirm Password** (Подтверждение пароля) и выберите **Groups** (Группы) и **Department** (Отдел) для действительной учетной записи Azure AD, которую необходимо подготовить.
-
-    b. Выберите команду **Сохранить**.
-
-> [!NOTE]
-> Вы можете использовать любые другие инструменты создания учетных записей пользователя Zscaler Three или API, предоставляемые Zscaler Three для подготовки учетных записей пользователя Azure Active Directory.
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Zscaler Three.
 
@@ -271,20 +274,28 @@ ms.locfileid: "50092616"
 
     ![Назначение пользователя][202]
 
-4. Нажмите кнопку **Добавить пользователя**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
     ![Назначение пользователя][203]
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 
-6. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+    ![изображение](./media/zscaler-three-tutorial/tutorial_zscalerthree_users.png)
 
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+6. В диалоговом окне **Выбор роли** выберите соответствующие роли пользователей из списка, а затем нажмите кнопку **Выбрать** в нижней части экрана.
+
+    ![изображение](./media/zscaler-three-tutorial/tutorial_zscalerthree_roles.png)
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+    ![изображение](./media/zscaler-three-tutorial/tutorial_zscalerthree_assign.png)
+
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "Zscaler Three" на панели доступа, вы автоматически войдете в приложение Zscaler Three.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -293,14 +304,13 @@ ms.locfileid: "50092616"
 
 <!--Image references-->
 
-[1]: ./media/zscaler-three-tutorial/tutorial_general_01.png
-[2]: ./media/zscaler-three-tutorial/tutorial_general_02.png
-[3]: ./media/zscaler-three-tutorial/tutorial_general_03.png
-[4]: ./media/zscaler-three-tutorial/tutorial_general_04.png
+[1]: common/tutorial_general_01.png
+[2]: common/tutorial_general_02.png
+[3]: common/tutorial_general_03.png
+[4]: common/tutorial_general_04.png
 
-[100]: ./media/zscaler-three-tutorial/tutorial_general_100.png
+[100]: common/tutorial_general_100.png
 
-[200]: ./media/zscaler-three-tutorial/tutorial_general_200.png
-[201]: ./media/zscaler-three-tutorial/tutorial_general_201.png
-[202]: ./media/zscaler-three-tutorial/tutorial_general_202.png
-[203]: ./media/zscaler-three-tutorial/tutorial_general_203.png
+[201]: common/tutorial_general_201.png
+[202]: common/tutorial_general_202.png
+[203]: common/tutorial_general_203.png

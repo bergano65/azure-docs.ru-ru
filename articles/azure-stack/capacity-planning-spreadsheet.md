@@ -1,5 +1,5 @@
 ---
-title: Таблица планирования емкости для Azure Stack | Документация Майкрософт
+title: Таблица планирования ресурсов для Azure Stack | Документация Майкрософт
 description: Сведения о таблице планирования емкости для развертываний Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 12/11/2018
 ms.author: jeffgilb
 ms.reviewer: prchint
-ms.openlocfilehash: 7b8276281b8b550492fed17adc516e9539380987
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: a37575e6e6e8902dc2dd89a26011031c2e1419c4
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53269742"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53557263"
 ---
 # <a name="azure-stack-capacity-planner"></a>Планировщик ресурсов Azure Stack
 Планировщик ресурсов Azure Stack представляет собой электронную таблицу для планирования емкости ресурсов Azure Stack. Планировщик ресурсов дает возможность проектировать разные распределения вычислительных ресурсов и анализировать, как они соответствуют существующим аппаратным решениям. Ниже приведены подробные инструкции по использованию калькулятора Azure Stack.

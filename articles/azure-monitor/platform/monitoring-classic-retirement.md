@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 5e882bf0a9b7cbc8a3e96c0184cc1ad53893e989
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 15a3073cde3f9e9ec8c70212cc3b1a591e703915
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999226"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54052229"
 ---
 # <a name="unified-alerting--monitoring-in-azure-monitor-replaces-classic-alerting--monitoring"></a>Унифицированные оповещения и мониторинг в Azure Monitor заменяют классические оповещения и мониторинг
 
@@ -51,7 +51,7 @@ Azure Monitor стала единой службой мониторинга по
 
 - Старые (классические) метрики и оповещения для ресурсов Azure, находящиеся в настоящее время в разделе [Оповещения (классические)](../../azure-monitor/platform/alerts-classic.overview.md) портала Azure. Доступны как ресурс [microsoft.insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules).
 - Старая (классическая) платформа и пользовательские метрики для Application Insights, а также оповещения о них, которые в настоящее время находятся в разделе [Оповещения (классические)](../../azure-monitor/platform/alerts-classic.overview.md) портала Azure. Доступны как ресурс [microsoft.insights/alertrules](https://docs.microsoft.com/rest/api/monitor/alertrules).
-- Старые (классические) оповещения по аномалиям сбоев, которые в настоящее время доступны в виде [интеллектуального обнаружения в Application Insights](../../application-insights/app-insights-proactive-diagnostics.md) на портале Azure. Настроенные оповещения находятся в разделе [Оповещения (классические)](../../azure-monitor/platform/alerts-classic.overview.md) портала Azure.
+- Старые (классические) оповещения по аномалиям сбоев, которые в настоящее время доступны в виде [интеллектуального обнаружения в Application Insights](../../azure-monitor/app/proactive-diagnostics.md) на портале Azure. Настроенные оповещения находятся в разделе [Оповещения (классические)](../../azure-monitor/platform/alerts-classic.overview.md) портала Azure.
 
 Все классические системы мониторинга и оповещений, включая соответствующие [API](https://msdn.microsoft.com/library/azure/dn931945.aspx), [PowerShell](../../azure-monitor/platform/alerts-classic-portal.md), [CLI](../../azure-monitor/platform/alerts-classic-portal.md), [страницу портала Azure](../../azure-monitor/platform/alerts-classic-portal.md) и [шаблон ресурса](../../azure-monitor/platform/alerts-enable-template.md), будут доступны до конца июня 2019 года. 
 

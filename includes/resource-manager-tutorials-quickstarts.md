@@ -14,12 +14,12 @@ ms.workload: multiple
 ms.date: 12/05/2018
 ms.author: jgao
 ms.custom: include file
-ms.openlocfilehash: 46618b76f43247199e85c2023a5391c5566f3394
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 711688b5b414e7b9a931190de3f7e6321d97ba3e
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978693"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53729345"
 ---
 ## <a name="quickstarts-and-tutorials"></a>Краткие руководства
 
@@ -39,6 +39,7 @@ ms.locfileid: "52978693"
     |------|-----|
     |[Руководство. Создание шаблона Azure Resource Manager для развертывания зашифрованной учетной записи хранения](../articles/azure-resource-manager/resource-manager-tutorial-create-encrypted-storage-accounts.md)|Используйте справочную документацию по шаблонам, чтобы разработать шаблон. В этом руководстве вы найдете схему учетной записи хранения, а также узнаете, как создать зашифрованную учетную запись.|
     |[Развертывание нескольких экземпляров ресурсов в шаблонах Azure Resource Manager](../articles/azure-resource-manager/resource-manager-tutorial-create-multiple-instances.md)|Создайте несколько экземпляров ресурсов Azure. В этом руководстве вы узнаете, как создать несколько экземпляров учетной записи хранения.|
+    |[Перемещение ресурсов](../articles/azure-resource-manager/resource-manager-tutorial-move-resources.md)|Описывается перемещение ресурсов из одной группы ресурсов в другую. В этом руководстве вы запустите существующий шаблон, чтобы создать две группы ресурсов и одну учетную запись хранения, а затем запустите командлет Azure PowerShell для перемещения учетной записи хранения в другую группу ресурсов.|
     |[Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](../articles/azure-resource-manager/resource-manager-tutorial-create-templates-with-dependent-resources.md)|Определите зависимости ресурсов. В этом руководстве вы узнаете, как создать виртуальную сеть, виртуальную машину и зависимые ресурсы Azure. Вы узнаете, как определяются зависимости.|
     |[Использование условий](../articles/azure-resource-manager/resource-manager-tutorial-use-conditions.md)|Разверните ресурсы на основе некоторых значений параметров. В этом руководстве вы узнаете, как определить шаблон, чтобы создать учетную запись хранения или использовать имеющуюся на основе значения параметра.|
     |[Руководство. Интеграция Azure Key Vault в развертывание шаблона Resource Manager](../articles/azure-resource-manager/resource-manager-tutorial-use-key-vault.md)|Извлекайте секреты или пароли из Azure Key Vault. В этом руководстве вы узнаете, как создать виртуальную машину.  Пароль администратора виртуальной машины извлекается из Azure Key Vault.|

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: 425c1019a9c67ac726d03955d60d1389bef7cae2
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: a034e41f5b12ffb8f043f14d90284617316f18d2
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53084946"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53723048"
 ---
 # <a name="access-cloud-data-in-a-notebook"></a>Доступ к облачным данным в записной книжке
 
@@ -69,7 +69,7 @@ if response.status_code == 200:
 Azure Cosmos DB предоставляет полностью индексируемое хранилище NoSQL для документов JSON. В следующих статьях представлены различные способы работы с Cosmos DB с помощью Python:
 
 - [Azure Cosmos DB — Создание приложения API SQL с помощью Python и портала Azure](https://docs.microsoft.com/azure/cosmos-db/create-sql-api-python)
-- [Azure Cosmos DB — Создание приложения Flask с использованием API MongoDB](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-flask)
+- [Создание приложения Flask с использованием API Azure Cosmos DB для MongoDB](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-flask)
 - [Azure Cosmos DB — Создание графовой базы данных с помощью Python и портала Azure](https://docs.microsoft.com/azure/cosmos-db/create-graph-python)
 - [Краткое руководство. Создание приложения Cassandra с помощью Python и Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-cassandra-python)
 - [Краткое руководство. Создание приложения API таблиц с помощью Python и Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/create-table-python)

@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: d39a271f33cb86bf870c3a7692c38d780093efa2
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 86b33bfa0f5383ac68080e2f8f7f9a004a1364a0
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53100044"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53652629"
 ---
 # <a name="prepare-to-deploy-your-iot-edge-solution-in-production"></a>Подготовка к развертыванию решения IoT Edge в рабочей среде
 
@@ -162,6 +162,17 @@ ms.locfileid: "53100044"
 Во всех трех случаях имя DNS соответствует шаблону \*.azure-devices.net. 
 
 Кроме того, **модуль контейнеров** совершает вызовы реестров контейнеров по протоколу HTTPS. Чтобы получить образы контейнеров для среды выполнения IoT Edge, используйте имя DNS mcr.microsoft.com. Модуль контейнеров подключается к другим реестрам в соответствии с настройками развертывания. 
+
+Этот контрольный список является отправной точкой для настройки правил брандмауэра:
+
+   | URL-адрес (\* = подстановочный знак) | Исходящие порты TCP | Использование |
+   | ----- | ----- | ----- |
+   | mcr.microsoft.com  | 443 | Реестр контейнеров Майкрософт |
+   | global.azure-devices-provisioning.net  | 443 | Доступ к DPS (необязательно) |
+   | \*.azurecr.io | 443 | Реестры личных и сторонних контейнеров |
+   | \*.blob.core.windows.net | 443 | Скачивание изменений образа | 
+   | \*.azure-devices.net | 5671, 8883, 443 | Доступ к Центру Интернета вещей |
+   | \*.docker.io  | 443 | Доступ к Docker (необязательно) |
 
 ### <a name="configure-communication-through-a-proxy"></a>Настройка связи через прокси-сервер
 

@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: fundamentals
 ms.topic: conceptual
-ms.date: 09/06/2018
+ms.date: 12/17/2018
 ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: 5f747d90368b636cb2ab8cf0e20ef5e676f99af6
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 066c9189e0c3cea409a99217e0ab4b46002df1f9
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53080509"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53556787"
 ---
 # <a name="restore-or-remove-a-recently-deleted-user-using-azure-active-directory"></a>Восстановление или удаление недавно удаленного пользователя с помощью Azure Active Directory
 После удаления пользователя его учетная запись остается в заблокированном состоянии в течение 30 дней. В течение этого времени учетную запись пользователя и все ее свойства можно восстановить. По истечении 30 дней пользователь удаляется автоматически без возможности восстановления.
@@ -59,6 +59,9 @@ ms.locfileid: "53080509"
 2. Выберите **Восстановить учетную запись пользователя**.
 
     ![Страница "Пользователи — Удаленные пользователи" с выделенной командой "Восстановить пользователя"](media/active-directory-users-restore/users-deleted-users-restore-user.png)
+
+>[!NOTE]
+>Ранее, когда пользователя удаляли из локальной области синхронизации и из облака, состояние DirSyncEnabled учетной записи ошибочно указывалось как "False". Если впоследствии этот пользователь вручную восстанавливался из корзины Azure AD, в ней отображалось неверное состояние учетной записи "Только для облака". Теперь это исправлено, и состояние DirSyncEnabled всегда имеет значение "True", когда пользователя удаляют из области синхронизации, а затем обратимо удаляют и вручную восстанавливают из корзины Azure AD.
 
 ## <a name="permanently-delete-a-user"></a>окончательно удалить пользователя.
 Вы можете окончательно удалить пользователя из каталога, не дожидаясь, пока он будет удален автоматически через 30 дней. Восстановить окончательно удаленного пользователя не сможете ни вы, ни другой администратор, ни служба поддержки клиентов Майкрософт.

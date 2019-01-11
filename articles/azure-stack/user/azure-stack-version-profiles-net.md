@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 12/07/2018
 ms.author: sethm
 ms.reviewer: sijuman
-ms.openlocfilehash: cfebbdb9b88a1de6a05f06e6ed72ebc9cddddcf6
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 20e96ad7a99fdb8c90f3b7990965d7225aef8be0
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53074457"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555019"
 ---
 # <a name="use-api-version-profiles-with-net-in-azure-stack"></a>Использование профилей версий API и .NET в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Пакет SDK .NET для Azure Stack Resource Manager предоставляет средства для создания и администрирования инфраструктуры. В этом пакете SDK представлены поставщики ресурсов вычислений, сети, хранилища, служб приложений и [KeyVault](../../key-vault/key-vault-whatis.md). Пакет SDK для .NET включает 14 пакетов NuGet, которые необходимо скачивать в каждое решение проекта, где используются сведения о профилях. Но вы можете явным образом указать поставщик ресурсов, который будет использоваться для профиля 2018-03-01-hybrid или 2017-03-09-profile, чтобы оптимизировать использование памяти в приложении. Каждый пакет содержит поставщик ресурсов, соответствующую версию API и профиль API, к которой она принадлежит. Профили API в пакете SDK .NET упрощают разработку гибридных облачных приложений, помогая переключаться между глобальными ресурсами Azure и ресурсами в Azure Stack.
+Пакет SDK .NET для Azure Stack Resource Manager предоставляет средства для создания и администрирования инфраструктуры. В этом пакете SDK представлены поставщики ресурсов вычислений, сети, хранилища, служб приложений и [KeyVault](../../key-vault/key-vault-whatis.md). Пакет SDK для .NET включает в себя 14 пакетов NuGet. Эти пакеты необходимо скачивать в каждое решение проекта, где используются сведения о профилях. Но вы можете явным образом указать поставщик ресурсов, который будет использоваться для профиля 2018-03-01-hybrid или 2017-03-09-profile, чтобы оптимизировать использование памяти в приложении. Каждый пакет содержит поставщик ресурсов, соответствующую версию API и профиль API, к которой она принадлежит. Профили API в пакете SDK .NET упрощают разработку гибридных облачных приложений, помогая переключаться между глобальными ресурсами Azure и ресурсами в Azure Stack.
 
 ## <a name="net-and-api-version-profiles"></a>Профили версии API и .NET
 
@@ -44,7 +44,7 @@ ms.locfileid: "53074457"
 
 -   Чтобы использовать конкретные версии API для некоторого типа ресурса от конкретного поставщика, выберите соответствующую версию API в пакете.
 
-Обратите внимание, что все описанные выше варианты можно сочетать в одном приложении.
+Можно объединить все параметры в одном приложении.
 
 ## <a name="install-the-azure-net-sdk"></a>Установка пакета SDK .NET для Azure
 
@@ -62,7 +62,7 @@ ms.locfileid: "53074457"
 
 5.  Создайте подписку, если ее еще нет, и сохраните ее идентификатор для дальнейшего использования. Инструкции по созданию подписки см. в статье [Create subscriptions to offers in Azure Stack][].
 
-6.  Создайте субъект-службу и сохраните идентификатор клиента и секрет клиента. Инструкции по созданию субъекта-службы для Azure Stack см. в статье [Provide applications access to Azure Stack][]. Обратите внимание, что идентификатор клиента при создании субъекта-службы называется идентификатором приложения.
+6.  Создайте субъект-службу и сохраните идентификатор клиента и секрет клиента. Инструкции по созданию субъекта-службы для Azure Stack см. в статье [Provide applications access to Azure Stack][]. Идентификатор клиента при создании субъекта-службы называется идентификатором приложения.
 
 7.  Убедитесь, что субъект-служба имеет роль участника или владельца в вашей подписке. Сведения о том, как назначить роль субъекту-службе, см. в статье [Provide applications access to Azure Stack][].
 
@@ -77,8 +77,9 @@ ms.locfileid: "53074457"
 | Идентификатор подписки           | AZURE_SUBSCRIPTION_ID | [*Идентификатор подписки*][] для доступа к предложениям в Azure Stack.                                                      |
 | Секрет клиента             | AZURE_CLIENT_SECRET   | Секрет приложения субъекта-службы, сохраненный во время создания субъекта-службы.                                      |
 | Конечная точка Resource Manager | ARM_ENDPOINT           | См. дополнительные сведения о [*конечной точке Resource Manager для Azure Stack*][].                                                                    |
+| Расположение                  | RESOURCE_LOCATION     | Расположение для Azure Stack.
 
-Чтобы узнать идентификатор клиента для Azure Stack, выполните приведенные [здесь](../azure-stack-csp-ref-operations.md) инструкции. Чтобы настроить переменные среды, сделайте следующее:
+Чтобы узнать идентификатор клиента для Azure Stack, выполните приведенные [здесь](../azure-stack-csp-ref-operations.md) инструкции. Чтобы настроить переменные среды, выполните следующие шаги.
 
 ### <a name="microsoft-windows"></a>Microsoft Windows
 
@@ -135,148 +136,63 @@ Microsoft Azure Resource Manager — это платформа управлен�
 
 ## <a name="azure-net-sdk-api-profile-usage"></a>Использование профиля API пакета Azure SDK .NET
 
-Чтобы создать экземпляр профиля клиента, используйте следующий код. Этот параметр требуется только для Azure Stack и других частных облаков. В глобальной среде Azure эти параметры используются по умолчанию.
-
-Следующий код необходим для проверки подлинности субъекта-службы в Azure Stack. Он создает маркер, используя идентификатор клиента и базу аутентификации для Azure Stack.
+Чтобы создать экземпляр клиента управления ресурсами, используйте следующий код. Подобный код можно использовать для создания других экземпляров клиентов поставщика ресурсов (например, вычисления, сети и хранилища). 
 
 ```csharp
-public class CustomLoginCredentials : ServiceClientCredentials
+var client = new ResourceManagementClient(armEndpoint, credentials)
 {
-    private string clientId;
-    private string clientSecret;
-    private string resourceId;
-    private string tenantId;
-
-    private const string authenticationBase = "https://login.windows.net/{0}";
-
-    public CustomLoginCredentials(string servicePrincipalId, string servicePrincipalSecret, string azureEnvironmentResourceId, string azureEnvironmentTenandId)
-    {
-        clientId = servicePrincipalId;
-        clientSecret = servicePrincipalSecret;
-        resourceId = azureEnvironmentResourceId;
-        tenantId = azureEnvironmentTenandId;
-    }
+    SubscriptionId = subscriptionId
+};
 ```
 
-Так вы сможете использовать пакеты NuGet профиля API для успешного развертывания приложения в Azure Stack.
-
-## <a name="define-azure-stack-environment-setting-functions"></a>Определение функций параметров среды Azure Stack
-
-Для проверки подлинности субъекта-службы в среде Azure Stack используйте следующий код:
+Параметр `credentials` в приведенном выше коде необходим для создания экземпляра клиента. Следующий код создает токен проверки подлинности на основе идентификатора клиента и субъекта-службы.
 
 ```csharp
-private string AuthenticationToken { get; set; }
-public override void InitializeServiceClient<T>(ServiceClient<T> client)
+var azureStackSettings = getActiveDirectoryServiceSettings(armEndpoint);
+var credentials = ApplicationTokenProvider.LoginSilentAsync(tenantId, servicePrincipalId, servicePrincipalSecret, azureStackSettings).GetAwaiter().GetResult();
+```
+Вызов `getActiveDirectoryServiceSettings` в этом коде извлекает конечные точки Azure Stack из конечной точки метаданных. Он использует переменные среды из выполняемого вызова: 
+
+```csharp
+public static ActiveDirectoryServiceSettings getActiveDirectoryServiceSettings(string armEndpoint)
 {
-    var authenticationContext = new AuthenticationContext(String.Format(authenticationBase, tenantId));
-    var credential = new ClientCredential(clientId, clientSecret);
-    var result = authenticationContext.AcquireTokenAsync(resource: resourceId,
-    clientCredential: credential).Result;
-    if (result == null)
+    var settings = new ActiveDirectoryServiceSettings();
+    try
     {
-        throw new InvalidOperationException("Failed to obtain the JWT token");
+        var request = (HttpWebRequest)HttpWebRequest.Create(string.Format("{0}/metadata/endpoints?api-version=1.0", armEndpoint));
+        request.Method = "GET";
+        request.UserAgent = ComponentName;
+        request.Accept = "application/xml";
+        using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+        {
+            using (StreamReader sr = new StreamReader(response.GetResponseStream()))
+            {
+                var rawResponse = sr.ReadToEnd();
+                var deserialized = JObject.Parse(rawResponse);
+                var authenticationObj = deserialized.GetValue("authentication").Value<JObject>();
+                var loginEndpoint = authenticationObj.GetValue("loginEndpoint").Value<string>();
+                var audiencesObj = authenticationObj.GetValue("audiences").Value<JArray>();
+                settings.AuthenticationEndpoint = new Uri(loginEndpoint);
+                settings.TokenAudience = new Uri(audiencesObj[0].Value<string>());
+                settings.ValidateAuthority = loginEndpoint.TrimEnd('/').EndsWith("/adfs", StringComparison.OrdinalIgnoreCase) ? false : true;
+            }
+        }
     }
-    AuthenticationToken = result.AccessToken;
+    catch (Exception ex)
+    {
+        Console.WriteLine(String.Format("Could not get AD service settings. Exception: {0}", ex.Message));
+    }
+    return settings;
 }
 ```
-
-Здесь переназначаются настройки клиента инициализации службы, чтобы аутентификация выполнялась через Azure Stack.
+Так вы сможете использовать пакеты NuGet профиля API для успешного развертывания приложения в Azure Stack.
 
 ## <a name="samples-using-api-profiles"></a>Примеры с профилями API
 
-Вы можете использовать следующие примеры, опубликованные в репозитории GitHub, в качестве рекомендаций при создании решений с профилями API Azure Stack и .NET:
-
--   [Тестовый проект с виртуальной машиной, виртуальной сетью, группой ресурсов и учетной записью хранения][]
--   Управление виртуальными машинами с помощью .NET
-
-### <a name="sample-unit-test-project"></a>Пример проекта модульного теста 
-
-1.  Клонируйте репозиторий, используя следующую команду:
-
-    ```shell
-    git clone https://github.com/Azure-Samples/hybrid-compute-dotnet-manage-vm.git
-    ```
-
-2.  Создайте субъект-службу Azure и назначьте роль для доступа к подписке. См. дополнительные сведения о [Use Azure PowerShell to create a service principal with a certificate][].
-
-3.  Получите следующие обязательные значения:
-
-    1.  Tenant ID
-    2.  Идентификатор клиента
-    3.  Секрет клиента
-    4.  Идентификатор подписки
-    5.  Конечная точка Resource Manager
-
-4.  С помощью командной строки настройте следующие переменные среды, используя данные, полученные от созданного субъекта-службы.
-
-    1.  export AZURE_TENANT_ID={your tenant id}
-    2.  export AZURE_CLIENT_ID={your client id}
-    3.  export AZURE_CLIENT_SECRET={your client secret}
-    4.  export AZURE_SUBSCRIPTION_ID={your subscription id}
-    5.  export ARM_ENDPOINT={URL-адрес диспетчера ресурсов Azure Stack}
-
-   В Windows используйте **set** вместо **export**.
-
-5.  Убедитесь, что в переменной расположения правильно указано расположение Azure Stack. Например, LOCAL = "local".
-
-6.  Задайте пользовательские учетные данные, которые позволят пройти аутентификацию в Azure Stack. Обратите внимание, что эта часть кода в этом примере размещена в папке Authorization.
-
-   ```csharp
-   public class CustomLoginCredentials : ServiceClientCredentials
-   {
-       private string clientId;
-       private string clientSecret;
-       private string resourceId;
-       private string tenantId;
-       private const string authenticationBase = "https://login.windows.net/{0}";
-       public CustomLoginCredentials(string servicePrincipalId, string servicePrincipalSecret, string azureEnvironmentResourceId, string azureEnvironmentTenandId)
-       {
-           clientId = servicePrincipalId;
-           clientSecret = servicePrincipalSecret;
-           resourceId = azureEnvironmentResourceId;
-           tenantId = azureEnvironmentTenandId;
-       }
-   private string AuthenticationToken { get; set; }
-   ```
-
-7.  Если вы используете Azure Stack, добавьте следующий код для перенастройки клиента инициализации службы на аутентификацию Azure Stack. Обратите внимание, что часть этого кода в этом примере уже размещена в папке Authorization.
-
-   ```csharp
-   public override void InitializeServiceClient<T>(ServiceClient<T> client)
-   {
-      var authenticationContext = new AuthenticationContext(String.Format(authenticationBase, tenantId));
-      var credential = new ClientCredential(clientId, clientSecret);
-      var result = authenticationContext.AcquireTokenAsync(resource: resourceId,
-                clientCredential: credential).Result;
-      if (result == null)
-      {
-          throw new InvalidOperationException("Failed to obtain the JWT token");
-      }
-      AuthenticationToken = result.AccessToken;
-   }
-   ```
- 
-8.  С помощью диспетчера пакетов NuGet найдите профиль 2018-03-01-hybrid и установите все связанные с ним пакеты поставщиков ресурсов служб вычислений, приложений и хранилища, а также Сети и Key Vault.
-
-2.  В пределах каждой задачи в файле с расширением CS задайте параметры для работы с Azure Stack. Ниже приведен пример для задачи `CreateResourceGroupTest`:
-
-   ```csharp
-   var location = Environment.GetEnvironmentVariable("AZURE_LOCATION");
-   var baseUriString = Environment.GetEnvironmentVariable("AZURE_BASE_URL");
-   var resourceGroupName = Environment.GetEnvironmentVariable("AZURE_RESOURCEGROUP");
-   var servicePrincipalId = Environment.GetEnvironmentVariable("AZURE_CLIENT_ID");
-   var servicePrincipalSecret = Environment.GetEnvironmentVariable("AZURE_CLIENT_SECRET");
-   var azureResourceId = Environment.GetEnvironmentVariable("AZURE_RESOURCE_ID");
-   var tenantId = Environment.GetEnvironmentVariable("AZURE_TENANT_ID");
-   var subscriptionId = Environment.GetEnvironmentVariable("AZURE_SUBSCRIPTION_ID");
-   var credentials = new CustomLoginCredentials(servicePrincipalId, servicePrincipalSecret, azureResourceId, tenantId);
-   ```
-
-1.  Поочередно щелкните каждую задачу правой кнопкой мыши и выберите действие **Запустить тест**.
-
-    1.  Зеленые галочки на боковой панели обозначают, что соответствующие задачи успешно созданы с указанными параметрами. Проверьте подписку Azure Stack, чтобы убедиться в успешном создании этих ресурсов.
-
-    2.  См. дополнительные сведения о [Run unit tests with Test Explorer][].
+Вы можете использовать следующие примеры в качестве рекомендаций при создании решений с профилями API Azure Stack и .NET.
+- [Управление группами ресурсов](https://github.com/Azure-Samples/hybrid-resources-dotnet-manage-resource-group)
+- [Управление учетными записями хранения](https://github.com/Azure-Samples/hybird-storage-dotnet-manage-storage-accounts)
+- [Управление виртуальной машиной](https://github.com/Azure-Samples/hybrid-compute-dotnet-manage-vm)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -292,8 +208,8 @@ public override void InitializeServiceClient<T>(ServiceClient<T> client)
   [Provide applications access to Azure Stack]: ../azure-stack-create-service-principals.md (Предоставление приложениям доступа к Azure Stack)
   [*tenant ID*]: ../azure-stack-identity-overview.md (Идентификатор клиента)
   [*subscription ID*]: ../azure-stack-plan-offer-quota-overview.md#subscriptions (Идентификатор подписки)
-  [*the Azure Stack resource manager endpoint*]: ../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint (Конечная точка Resource Manager для Azure Stack)
+  [*the Azure Stack Resource Manager endpoint*]: ../user/azure-stack-version-profiles-ruby.md#the-azure-stack-resource-manager-endpoint (Конечная точка Resource Manager для Azure Stack)
   [Summary of API profiles]: ../user/azure-stack-version-profiles.md#summary-of-api-profiles (Сводка по профилям API)
-  [Тестовый проект с виртуальной машиной, виртуальной сетью, группой ресурсов и учетной записью хранения]: https://github.com/seyadava/azure-sdk-for-net-samples/tree/master/TestProject
-  [Use Azure PowerShell to create a service principal with a certificate]: ../azure-stack-create-service-principals.md (Использование Azure PowerShell для создания субъекта-службы с сертификатом)
-  [Run unit tests with Test Explorer]: /visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2017 (Выполнение модульных тестов с помощью обозревателя тестов)
+  [Test Project to Virtual Machine, vNet, resource groups, and storage account]: https://github.com/seyadava/azure-sdk-for-net-samples/tree/master/TestProject
+  [Use Azure PowerShell to create a service principal with a certificate]: ../azure-stack-create-service-principals.md
+  [Run unit tests with Test Explorer.]: /visualstudio/test/run-unit-tests-with-test-explorer?view=vs-2017

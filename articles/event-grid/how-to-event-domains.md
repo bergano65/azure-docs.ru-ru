@@ -6,13 +6,13 @@ author: banisadr
 ms.service: event-grid
 ms.author: babanisa
 ms.topic: conceptual
-ms.date: 11/08/2018
-ms.openlocfilehash: ad23599d1df5d07e912f634435f8b44b441d87e6
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.date: 12/17/2018
+ms.openlocfilehash: 08faef2eaf5c9cd09172d455c464531e293d5f3e
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51298540"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53554594"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Управление разделами и публикация событий с помощью доменов событий
 
@@ -139,7 +139,7 @@ New-AzureRmEventGridSubscription `
 
 ## <a name="publish-events-to-an-event-grid-domain"></a>Публикация событий в Домен службы "Сетка событий"
 
-Публикация событий в домен совпадает с публикацией [в настраиваемый раздел](./post-to-custom-topic.md). Единственное различие заключается в том, что вам нужно указать раздел, к которому должно перенаправляться каждое событие. Следующий массив событий приведет к публикации события с идентификатором `"id": "1111"` в раздел `foo`, а событие с идентификатором `"id": "2222"` будет отправлено в раздел `bar`:
+Публикация событий в домен совпадает с публикацией [в настраиваемый раздел](./post-to-custom-topic.md). Тем не менее вместо публикации в пользовательском разделе публикуйте все события на конечную точку домена. В данных события JSON укажите раздел, к которому вы хотите добавить события. Следующий массив событий приведет к публикации события с идентификатором `"id": "1111"` в раздел `demotopic1`, а событие с идентификатором `"id": "2222"` будет отправлено в раздел `demotopic2`:
 
 ```json
 [{
@@ -168,7 +168,15 @@ New-AzureRmEventGridSubscription `
 }]
 ```
 
-Чтобы получить ключи, которые будет использовать домен, с помощью Azure CLI:
+Чтобы получить конечную точку домена с помощью Azure CLI, выполните следующую команду:
+
+```azurecli-interactive
+az eventgrid domain show \
+  -g <my-resource-group> \
+  -n <my-domain>
+```
+
+Чтобы получить ключи, которые будет использовать домен, выполните команду ниже:
 
 ```azurecli-interactive
 az eventgrid domain key list \
@@ -176,7 +184,15 @@ az eventgrid domain key list \
   -n <my-domain>
 ```
 
-Для PowerShell используйте команду:
+Чтобы получить конечную точку домена с помощью PowerShell, выполните следующую команду:
+
+```azurepowershell-interactive
+Get-AzureRmEventGridDomain `
+  -ResourceGroupName <my-resource-group> `
+  -Name <my-domain>
+```
+
+Чтобы получить ключи, которые будет использовать домен, выполните команду ниже:
 
 ```azurepowershell-interactive
 Get-AzureRmEventGridDomainKey `

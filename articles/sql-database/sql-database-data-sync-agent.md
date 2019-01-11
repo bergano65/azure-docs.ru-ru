@@ -12,16 +12,19 @@ ms.author: xiwu
 ms.reviewer: douglasl
 manager: craigg
 ms.date: 11/12/2018
-ms.openlocfilehash: bb80b512176e8fe260eb4572ea9fa801a6ffc80a
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: b5916b781c636752ada6898cfa0c03bc02891501
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685146"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53715024"
 ---
 # <a name="data-sync-agent-for-azure-sql-data-sync"></a>Агент синхронизации данных для синхронизации данных SQL Azure
 
 Синхронизируйте данные с локальными базами данных SQL Server с помощью установки и настройки Агента синхронизации данных для синхронизации данных SQL Azure. Дополнительные сведения о синхронизации данных SQL см. в статье [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL](sql-database-sync-data.md).
+
+> [!IMPORTANT]
+> Служба "Синхронизация данных SQL Azure" пока **не** поддерживает Управляемые экземпляры Базы данных SQL Azure.
 
 ## <a name="download-and-install"></a>Загрузка и установка
 
@@ -136,7 +139,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 
 ### <a name="agent-start"></a> Агент клиента не запускается (ошибка 1069)
 
-Вы обнаружили, что агент не работает на компьютере, на котором размещен сервер SQL Server. При попытке запустить агент вручную отображается диалоговое окно с сообщением об ошибке: "Ошибка 1069. Служба не запущена из-за ошибки входа в систему".
+Вы обнаружили, что агент не работает на компьютере, на котором размещен сервер SQL Server. При попытке запустить агент вручную отображается диалоговое окно с сообщением об ошибке: "Ошибка 1069. Служба не запущена из-за ошибки входа в систему".
 
 ![Диалоговое окно ошибки с синхронизацией данных 1069](media/sql-database-troubleshoot-data-sync/sync-error-1069.png)
 
@@ -316,9 +319,9 @@ SqlDataSyncAgentCommand.exe -action "updatecredential" -serverName localhost -da
 
 Дополнительные сведения о Синхронизации данных SQL см. в следующих статьях:
 
--   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL](sql-database-sync-data.md).
+-   Обзор: [Синхронизация данных в нескольких облачных и локальных базах данных с помощью функции синхронизации данных SQL Azure](sql-database-sync-data.md).
 -   Настройка синхронизации данных
-    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md).
+    - На портале: [Руководство по настройке синхронизации данных SQL между Базой данных SQL Azure и локальной базой данных SQL Server](sql-database-get-started-sql-data-sync.md)
     - С помощью PowerShell
         -  [Использование PowerShell для синхронизации данных между несколькими базами данных SQL Azure](scripts/sql-database-sync-data-between-sql-databases.md)
         -  [Использование PowerShell для синхронизации данных между базой данных SQL Azure и локальной базой данных SQL Server](scripts/sql-database-sync-data-between-azure-onprem.md)

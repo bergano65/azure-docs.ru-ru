@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 11/28/2018
 ms.author: danlep
-ms.openlocfilehash: e03a35b31c9089abe973c7e4388b508f668a3970
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: 172ddd11cb956ab6d74e1ce870e2378205dd1613
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52619849"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53993300"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Развертывание экземпляров контейнеров в виртуальной сети Azure
 
@@ -47,6 +47,7 @@ ms.locfileid: "52619849"
 * Северная Европа (northeurope)
 * Западная Европа (westeurope).
 * Западная часть США (westus).
+* Восточная часть США (eastus).
 
 **Неподдерживаемые** сетевые ресурсы:
 
@@ -183,11 +184,11 @@ index.html           100% |*******************************|  1663   0:00:00 ETA
 
 Группу контейнеров можно также развернуть в существующей виртуальной сети с помощью YAML-файла. Для развертывания в подсети виртуальной сети следует указать несколько дополнительных свойств в YAML:
 
-* `ipAddress` — параметры IP-адреса для группы контейнеров.
-  * `ports` — открываемые порты, если таковые имеются.
-  * `protocol` — протокол (TCP или UDP) для открытого порта.
-* `networkProfile` — позволяет задать параметры сети, такие как виртуальная сеть и подсеть для ресурса Azure.
-  * `id` — полный идентификатор ресурса Resource Manager для `networkProfile`.
+* `ipAddress`: параметры IP-адреса для группы контейнеров.
+  * `ports`: открываемые порты, если таковые имеются.
+  * `protocol`: протокол (TCP или UDP) для открытого порта.
+* `networkProfile`: позволяет задать параметры сети, например, виртуальную сеть и подсеть для ресурса Azure.
+  * `id`: полный идентификатор ресурса Resource Manager для `networkProfile`.
 
 Чтобы развернуть группу контейнеров в виртуальной сети с помощью файла YAML, сначала необходимо получить идентификатор сетевого профиля. Выполните команду [az network profile list][az-network-profile-list], указав имя группы ресурсов, которая содержит вашу виртуальную сеть и делегированную подсеть.
 

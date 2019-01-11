@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 10/12/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 97352cdc89aabe312bf500901347acaf5238e871
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: b05b3fee5c49f69979f5e778f897d4be863a3715
+ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436999"
+ms.lasthandoff: 12/28/2018
+ms.locfileid: "53809885"
 ---
 # <a name="azure-ad-connectconfigure-ad-ds-connector-account-permissions"></a>Azure AD Connect выполняет следующие функции: Настройка разрешений учетной записи соединителя AD DS 
 
@@ -219,7 +219,7 @@ Set-ADSyncExchangeHybridPermissions -ADConnectorAccountDN <String> [-ADobjectDN 
 |-----|-----|-----|-----| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Универсальное чтение/запись |Дочерние объекты группы| 
 |РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Создать/удалить дочерний объект |Этот объект и все дочерние объекты| 
-|РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Удалить/Удалить объект и все его дочерние элементы |Этот объект и все дочерние объекты|
+|РАЗРЕШИТЬ |Учетная запись соединителя AD DS |Создать или удалить объект и все его дочерние элементы |Этот объект и все дочерние объекты|
 
 ### <a name="permissions-for-exchange-hybrid-deployment"></a>Разрешения для гибридного развертывания Exchange 
 Чтобы задать разрешения для учетной записи соединителя AD DS при использовании гибридного развертывания Exchange, запустите: 

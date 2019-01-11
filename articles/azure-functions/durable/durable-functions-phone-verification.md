@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: beb6650125bdf7526b8167ba0f076b079e4e84a8
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 827990e03ca1bbb4bfd2ca9cf8bf0a9ceccfb51b
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53342873"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53719393"
 ---
 # <a name="human-interaction-in-durable-functions---phone-verification-sample"></a>Участие пользователя в устойчивых функциях. Пример проверки номера телефона
 
@@ -155,6 +155,9 @@ Content-Length: 145
 ## <a name="visual-studio-sample-code"></a>Пример кода для Visual Studio
 
 Пример описанной оркестрации, реализованной в одном файле C# в проекте Visual Studio:
+
+> [!NOTE]
+> Вам нужно установить пакет Nuget `Microsoft.Azure.WebJobs.Extensions.Twilio`, чтобы запустить пример кода ниже.
 
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/PhoneVerification.cs)]
 

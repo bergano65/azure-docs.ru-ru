@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: rimman
-ms.openlocfilehash: d5e10e04ea9567e2656f592407855a53a70d7b0f
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 0ec603df7005b9151f1cf760df80de9aaffc78b3
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53263359"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53539710"
 ---
 # <a name="optimize-the-cost-for-multi-region-deployments-in-azure-cosmos-db"></a>Оптимизация затрат для развертываний в нескольких регионах в Azure Cosmos DB
 
@@ -21,7 +21,7 @@ ms.locfileid: "53263359"
 
 1. `T x (N+1) RU/s`, если для учетной записи Azure Cosmos настроены все регионы, способные обрабатывать операции записи. 
 
-Подготовленная пропускная способность с одним регионом стоит 0,008 долларов США в час на 100 ЕЗ/с, а подготовленная пропускная способность с несколькими регионами для записи стоит 0,016 долларов США в час на 100 ЕЗ/с. Дополнительные сведения см. на [странице цен](https://azure.microsoft.com/pricing/details/cosmos-db/) Cosmos DB.
+Подготовленная пропускная способность с одним регионом стоит 0,008 долларов США в час на 100 ЕЗ/с, а подготовленная пропускная способность с несколькими регионами для записи стоит 0,016 долларов США в час на 100 ЕЗ/с. Дополнительные сведения см. на странице [Цены на Azure Cosmos DB](https://azure.microsoft.com/pricing/details/cosmos-db/).
 
 ## <a name="costs-for-multiple-write-regions"></a>Затраты нескольких регионов записи
 
@@ -54,9 +54,9 @@ ms.locfileid: "53263359"
 Теперь вы можете перейти к подробным сведениям об оптимизации затрат в Azure Cosmos DB, которые представлены в следующих статьях.
 
 * Дополнительные сведения [об оптимизации для разработки и тестирования](optimize-dev-test.md).
-* Дополнительные сведения о [расшифровке счета за использование Azure Cosmos DB](understand-your-bill.md).
-* Дополнительные сведения об [оптимизации расходов на пропускную способность](optimize-cost-throughput.md).
-* Дополнительные сведения об [оптимизации затрат на хранение](optimize-cost-storage.md).
-* Дополнительные сведения об [оптимизации расходов на операции чтения и записи](optimize-cost-reads-writes.md).
+* Дополнительные сведения о [расшифровке счета Azure Cosmos DB](understand-your-bill.md)
+* Дополнительные сведения об [оптимизации расходов на пропускную способность](optimize-cost-throughput.md)
+* Дополнительные сведения об [оптимизации расходов на хранилище](optimize-cost-storage.md)
+* Дополнительные сведения об [оптимизации затрат на операции чтения и записи](optimize-cost-reads-writes.md).
 * Дополнительные сведения об [оптимизации расходов на запросы](optimize-cost-queries.md).
 

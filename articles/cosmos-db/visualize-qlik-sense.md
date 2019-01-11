@@ -1,33 +1,33 @@
 ---
 title: Подключение Qlik Sense к Azure Cosmos DB и визуализация данных
 description: В этой статье описываются шаги, необходимые для подключения Azure Cosmos DB к Qlik Sense и визуализации данных.
-services: cosmos-db
 ms.service: cosmos-db
 author: SnehaGunda
 ms.author: sngun
 ms.topic: conceptual
 ms.date: 10/22/2018
-ms.openlocfilehash: 57832b59d8b43f5aa157b278e67c50b25084c86c
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.reviewer: sngun
+ms.openlocfilehash: 4b37b6cd35526d6a76625dd03d1325f1688e698e
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52962841"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54044473"
 ---
 # <a name="connect-qlik-sense-to-azure-cosmos-db-and-visualize-your-data"></a>Подключение Qlik Sense к Azure Cosmos DB и визуализация данных
 
 Средство визуализации данных Qlik Sense позволяет объединить данные из разных источников в одно представление. Qlik Sense индексирует все связи в данных, чтобы вы могли оперативно получить аналитические сведения. С помощью Qlik Sense вы можете визуализировать данные из Azure Cosmos DB. В этой статье описываются шаги, необходимые для подключения Azure Cosmos DB к Qlik Sense и визуализации данных. 
 
 > [!NOTE]
-> Подключение Qlik Sense к Azure Cosmos DB в настоящее время поддерживается только для учетных записей API SQL Azure Cosmos DB и API MongoDB.
+> Подключение Qlik Sense к Azure Cosmos DB в настоящее время поддерживается только для учетных записей API SQL и API Azure Cosmos DB для MongoDB.
 
 Вы можете подключить Qlik Sense к Azure Cosmos DB следующими способами:
 
 * через API SQL для Cosmos DB с помощью соединителя ODBC;
 
-* через API MongoDB для Cosmos DB с помощью соединителя Qlik Sense MongoDB (в настоящее время доступна предварительная версия);
+* через API Azure Cosmos DB для MongoDB с помощью соединителя Qlik Sense MongoDB (сейчас доступна предварительная версия);
 
-* через API MongoDB и SQL для Cosmos DB с помощью соединителя REST API в Qlik Sense;
+* через API Azure Cosmos DB для MongoDB и SQL с помощью соединителя REST API в Qlik Sense;
 
 * через API MongoDB для Cosmos DB с помощью соединителя gRPC для Qlik Core.
 В этой статье подробно описан процесс подключения к API SQL для Cosmos DB с помощью соединителя ODBC.

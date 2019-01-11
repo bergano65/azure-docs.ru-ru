@@ -1,21 +1,22 @@
 ---
-title: Общие сведения об использовании Swagger с Azure Digital Twins | Документация Майкрософт
-description: Использование Swagger с Digital Twins
+title: Общие сведения об использовании Swagger с Azure Digital Twins | Документация Майкрософт
+description: Справочная документация об использовании Swagger с Azure Digital Twins.
 author: kingdomofends
 manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 11/13/2018
+ms.date: 12/31/2018
 ms.author: adgera
-ms.openlocfilehash: 737c33f6b8cdf9bcb2530816601ff9b5eb994087
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.custom: seodec18
+ms.openlocfilehash: 7d079f543f8b564c396560c97225897c12f3cd24
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51624256"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53975650"
 ---
-# <a name="use-azure-digital-twins-swagger"></a>Использование Swagger с Digital Twins
+# <a name="azure-digital-twins-swagger-reference-documentation"></a>Справочная документация о Swagger с Azure Digital Twins
 
 Каждый подготовленный экземпляр Azure Digital Twins содержит собственную автоматически созданную справочную документацию Swagger.
 
@@ -34,19 +35,19 @@ Swagger предоставляет интерактивную сводку по 
 * Пример сведений ответа для проверки и подтверждения ответов HTTP.
 * Сведения о коде ошибки.
 
-Таким образом, Swagger является удобным средством для разработки и тестирования вызовов к API управления.
+Таким образом, Swagger является удобным средством для разработки и тестирования вызовов к API управления Azure Digital Twins.
 
 [!INCLUDE [Digital Twins Swagger](../../includes/digital-twins-swagger.md)]
 
 ## <a name="reference-material"></a>Справочные материалы
 
-В автоматически созданном справочном материале объясняются критически важные понятия и модели объекта.
+Автоматически сгенерированный справочный материал о Swagger содержит краткий обзор важных концепций, доступных конечных точек API управления и описание каждой объектной модели, помогающей в разработке и тестировании.
 
 В краткой сводке описывается API.
 
 ![Верхняя панель Swagger][1]
 
-Кроме того, перечислены модели объекта Core API.
+Кроме того, перечислены модели объекта API управления.
 
 ![Модели Swagger][2]
 
@@ -58,7 +59,7 @@ Swagger предоставляет интерактивную сводку по 
 
 ## <a name="endpoint-summary"></a>Сводка конечных точек
 
-Swagger также предоставляет полный обзор всех конечных точек, которые составляют API.
+Swagger также предоставляет полный обзор всех конечных точек, которые составляют API управления.
 
 Каждая указанная конечная точка также содержит обязательную информацию о запросе, пример приведен ниже.
 

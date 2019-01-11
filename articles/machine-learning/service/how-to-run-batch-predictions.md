@@ -11,23 +11,23 @@ ms.author: jordane
 author: jpe316
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: a711b80471da0677c5e2d0dd0ee5e371e5a16f75
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: adac498b2f1e3331497c08f41558575c06b5823c
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53268655"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54102947"
 ---
 # <a name="run-batch-predictions-on-large-data-sets-with-azure-machine-learning-service"></a>Пакетное прогнозирование на больших наборах данных с помощью Службы машинного обучения Azure
 
-В этой статье вы узнаете, как быстро и эффективно создавать прогнозы на больших объемах данных в асинхронном режиме с помощью Службы машинного обучения Azure.
+В этой статье вы узнаете, как создавать прогнозы на больших объемах данных в асинхронном режиме с помощью Службы машинного обучения Azure.
 
 Пакетное прогнозирование (или пакетная оценка) обеспечивает экономичное получение выводов с непревзойденной пропускной способностью для асинхронных приложений. Конвейеры пакетного прогнозирования могут масштабировать свои ресурсы, чтобы получать выводы на основе терабайтов рабочих данных. Пакетное прогнозирование оптимизировано для обеспечения высокой пропускной способности и получения мгновенных прогнозов для большой коллекции данных.
 
->[!NOTE]
+>[!TIP]
 > Если вашей системе требуется обработка с низкой задержкой (для быстрой обработки отдельных документов или небольшого набора документов), используйте [оценку в реальном времени](how-to-consume-web-service.md) вместо пакетного прогнозирования.
 
-Далее вы создадите [конвейер машинного обучения](concept-ml-pipelines.md), чтобы зарегистрировать предварительно обученную модель компьютерного зрения ([Inception-V3](https://arxiv.org/abs/1512.00567)). Затем с помощью этой модели вы выполните пакетное прогнозирование изображений в своей учетной записи хранения BLOB-объектов Azure. Для оценки будут использоваться изображения без меток из набора данных [ImageNet](http://image-net.org/).
+На следующих шагах создается [конвейер машинного обучения](concept-ml-pipelines.md) для регистрации предварительно обученной модели компьютерного зрения ([Inception-V3](https://arxiv.org/abs/1512.00567)). Затем эта предварительно обученная модель используется для пакетной оценки на основе изображений, доступных в вашей учетной записи хранилища BLOB-объектов Azure. Для оценки будут использоваться изображения без меток из набора данных [ImageNet](http://image-net.org/).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -48,11 +48,11 @@ ms.locfileid: "53268655"
 
 ## <a name="set-up-machine-learning-resources"></a>Настройка ресурсов машинного обучения
 
-На следующих шагах будут настроены ресурсы, необходимые для запуска конвейера.
+На следующих шагах настраиваются ресурсы, необходимые для запуска конвейера.
 
 - Получение доступа к хранилищу данных, содержащему предварительно обученную модель, входные метки и изображения для оценки (все это уже настроено для вас).
 - Настройка хранилища данных для хранения выходных данных.
-- Настройка объектов DataReference для указания на данные в описанных выше хранилищах данных.
+- Настройка объектов `DataReference` для указания на данные в описанных выше хранилищах данных.
 - Настройка вычислительных компьютеров или кластеров, на которых будут выполняться действия конвейера.
 
 ### <a name="access-the-datastores"></a>Доступ к хранилищам данных
@@ -76,7 +76,7 @@ batchscore_blob = Datastore.register_azure_blob_container(ws,
 
 Затем настройте хранилище данных по умолчанию для выходных данных.
 
-При создании рабочей области к ней по умолчанию подключаются  [хранилище файлов Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) и  [хранилище BLOB-объектов.](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction)  Хранилище файлов Azure — это хранилище данных по умолчанию для рабочей области, но можно также использовать хранилище BLOB-объектов для хранения данных. Узнайте больше о возможностях  [службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks).
+При создании рабочей области к ней по умолчанию подключаются [Файлы Azure](https://docs.microsoft.com/azure/storage/files/storage-files-introduction) и [хранилище BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction) . Файлы Azure — это хранилище данных по умолчанию для рабочей области, но вы можете также использовать хранилище BLOB-объектов для хранения данных. Дополнительные сведения см. в статье [Выбор между большими двоичными объектами Azure, службой файлов Azure и дисками Azure](https://docs.microsoft.com/azure/storage/common/storage-decide-blobs-files-disks).
 
 ```python
 def_data_store = ws.get_default_datastore()
@@ -86,7 +86,7 @@ def_data_store = ws.get_default_datastore()
 
 Теперь добавьте в конвейер ссылки на данные в качестве входных данных шагов.
 
-Источник данных в конвейере представлен объектом [DataReference](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference) . Объект DataReference указывает на данные, которые хранятся или доступны в хранилище данных. Объекты DataReference требуются для каталога, используемого для входных изображений, каталога, в котором хранится предварительно обученная модель, каталога для меток и каталога выходных данных.
+Источник данных в конвейере представлен объектом [DataReference](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference) . Объект `DataReference` указывает на данные, которые хранятся или доступны в хранилище данных. Объекты `DataReference` требуются для каталога, используемого для входных изображений, каталога, в котором хранится предварительно обученная модель, каталога для меток и каталога выходных данных.
 
 ```python
 input_images = DataReference(datastore=batchscore_blob, 
@@ -111,7 +111,7 @@ output_dir = PipelineData(name="scores",
 
 ### <a name="set-up-compute-target"></a>Настройка целевого объекта для вычислений
 
-В Машинном обучении Azure вычислительной средой (или целевым объектом вычислений) считаются компьютеры или кластеры, которые выполняют вычислительные операции конвейера машинного обучения. Например, вы можете создать `Azure Machine Learning compute`.
+В Машинном обучении Azure *вычислительной средой* (или *целевым объектом вычислений*) считаются компьютеры или кластеры, которые выполняют вычислительные операции конвейера машинного обучения. Например, вы можете создать `Azure Machine Learning compute`.
 
 ```python
 compute_name = "gpucluster"
@@ -148,7 +148,7 @@ else:
 
 ### <a name="download-the-pretrained-model"></a>Скачивание предварительно обученной модели
 
-Скачайте предварительно обученную модель компьютерного зрения (InceptionV3) отсюда: <http://download.tensorflow.org/models/inception_v3_2016_08_28.tar.gz>. Извлеките содержимое скачанного файла во вложенную папку `models`.
+Скачайте предварительно обученную модель компьютерного зрения (InceptionV3) отсюда: <http://download.tensorflow.org/models/inception_v3_2016_08_28.tar.gz>. Извлеките содержимое во вложенную папку `models`.
 
 ```python
 import os
@@ -167,6 +167,8 @@ tar.extractall(model_dir)
 
 ### <a name="register-the-model"></a>Регистрация модели
 
+Вот как можно зарегистрировать модель:
+
 ```python
 import shutil
 from azureml.core.model import Model
@@ -183,7 +185,7 @@ model = Model.register(
 ## <a name="write-your-scoring-script"></a>Создание сценария оценки
 
 >[!Warning]
->Приведенный ниже код является только примером содержимого файла [batch_score.py](https://github.com/Azure/MachineLearningNotebooks/tree/master/pipeline/batch_score.py), используемого [примером записной книжки](https://github.com/Azure/MachineLearningNotebooks/tree/master/pipeline/pipeline-batch-scoring.ipynb). Вам потребуется создать собственный сценарий оценки, подходящий для вашей ситуации.
+>Приведенный ниже код является только примером содержимого файла [batch_score.py](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/pipeline-batch-scoring/batch_scoring.py), используемого [примером записной книжки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/pipeline-batch-scoring/pipeline-batch-scoring.ipynb). Вам потребуется создать собственный сценарий оценки, подходящий для вашей ситуации.
 
 Сценарий `batch_score.py` принимает входные изображения из папки  *dataset_path* и обученные модели из папки  *model_dir*, а файл результатов *results-label.txt*  сохраняет в папку  *output_dir*.
 
@@ -241,7 +243,7 @@ def main(_):
 
 ### <a name="prepare-the-run-environment"></a>Подготовка среды выполнения
 
-Укажите зависимости Conda для своего сценария. Этот объект потребуется позже, при создании шага конвейера.
+Укажите зависимости Conda для своего сценария. Этот объект потребуется позже, когда будет создаваться шаг конвейера.
 
 ```python
 from azureml.core.runconfig import DEFAULT_GPU_IMAGE
@@ -258,7 +260,7 @@ amlcompute_run_config.environment.spark.precache_packages = False
 
 ### <a name="specify-the-parameter-for-your-pipeline"></a>Указание параметра для конвейера
 
-Создайте параметр конвейера, используя объект  [PipelineParameter](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py) со значением по умолчанию.
+Создайте параметр конвейера, используя объект [PipelineParameter](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py) со значением по умолчанию.
 
 ```python
 batch_size_param = PipelineParameter(
@@ -290,14 +292,14 @@ batch_score_step = PythonScriptStep(
 
 ### <a name="run-the-pipeline"></a>Запуск конвейера
 
-Теперь запустите конвейер и изучите полученные выходные данные. Выходные данные будут содержать оценку, соответствующую каждому входному изображению.
+Теперь запустите конвейер и изучите полученные выходные данные. Выходные данные содержат оценку, соответствующую каждому входному изображению.
 
 ```python
 # Run the pipeline
 pipeline = Pipeline(workspace=ws, steps=[batch_score_step])
 pipeline_run = Experiment(ws, 'batch_scoring').submit(pipeline, pipeline_params={"param_batch_size": 20})
 
-# Wait for the run to finish (this may take several minutes)
+# Wait for the run to finish (this might take several minutes)
 pipeline_run.wait_for_completion(show_output=True)
 
 # Download and review the output
@@ -312,7 +314,7 @@ df.head()
 
 ## <a name="publish-the-pipeline"></a>Публикация конвейера
 
-Если результат запуска конвейера вас устраивает, опубликуйте этот конвейер, чтобы позже вы могли запустить его с другими входными значениями. При публикации конвейера вы получите конечную точку REST, которая принимает вызов запуска конвейера с набором параметров, которые вы уже добавили с помощью объекта [PipelineParameter](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py).
+Когда результат запуска конвейера вас устроит, опубликуйте этот конвейер, чтобы позже вы могли запустить его с другими входными значениями. При публикации конвейера вы получаете конечную точку REST. Эта конечная точка принимает вызов запуска конвейера с набором параметров, которые вы уже добавили с помощью объекта [PipelineParameter](https://docs.microsoft.com/python/api/azureml-pipeline-core/azureml.pipeline.core.graph.pipelineparameter?view=azure-ml-py).
 
 ```python
 published_pipeline = pipeline_run.publish_pipeline(
@@ -321,7 +323,7 @@ published_pipeline = pipeline_run.publish_pipeline(
     version="1.0")
 ```
 
-## <a name="rerun-the-pipeline-using-the-rest-endpoint"></a>Повторный запуск конвейера с помощью конечной точки REST
+## <a name="rerun-the-pipeline-by-using-the-rest-endpoint"></a>Повторный запуск конвейера с помощью конечной точки REST
 
 Чтобы повторно запустить конвейер, потребуется маркер заголовка аутентификации Azure Active Directory, как описывается в [классе AzureCliAuthentication](https://docs.microsoft.com/python/api/azureml-core/azureml.core.authentication.azurecliauthentication?view=azure-ml-py).
 
@@ -344,7 +346,7 @@ RunDetails(published_pipeline_run).show()
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Чтобы увидеть, как это работает от начала до конца, опробуйте записную книжку пакетной оценки ([how-to-use-azureml/machine-learning-pipelines](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines). 
+Чтобы увидеть, как это работает от начала до конца, опробуйте записную книжку пакетной оценки на сайте [GitHub](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines). 
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 

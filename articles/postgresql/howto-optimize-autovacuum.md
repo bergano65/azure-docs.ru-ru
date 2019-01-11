@@ -3,16 +3,15 @@ title: Оптимизация автоматической очистки на �
 description: В этой статье описывается оптимизация автоматической очистки на сервере службы "База данных Azure для PostgreSQL".
 author: dianaputnam
 ms.author: dianas
-editor: jasonwhowell
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/22/2018
-ms.openlocfilehash: 3f35779337082b7280398bd13ef870c74f3ec082
-ms.sourcegitcommit: db2cb1c4add355074c384f403c8d9fcd03d12b0c
+ms.openlocfilehash: 0f8db7dd3a90e06587a7e0e05f33cb6fba5c72e1
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51685996"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53539795"
 ---
 # <a name="optimizing-autovacuum-on-azure-database-for-postgresql-server"></a>Оптимизация автоматической очистки на сервере службы "База данных Azure для PostgreSQL" 
 В этой статье описывается эффективная оптимизация автоматической очистки в службе "База данных Azure для PostgreSQL".
@@ -34,7 +33,7 @@ PostgreSQL использует MVCC, чтобы обеспечить больш
 - увеличению числа операций ввода-вывода.
 
 ## <a name="monitoring-bloat-with-autovacuum-queries"></a>Отслеживание раздувания с помощью запросов автоматической очистки
-Следующий пример запроса призван определить количества неиспользуемых и активных кортежей и таблице под названием "XYZ": "SELECT relname, n_dead_tup, n_live_tup, (n_dead_tup/ n_live_tup) AS DeadTuplesRatio, last_vacuum, last_autovacuum FROM pg_catalog.pg_stat_all_tables WHERE relname = 'XYZ' order by n_dead_tup DESC;"
+Следующий пример запроса предназначен для определения числа неиспользуемых и активных кортежей в таблице с именем "XYZ": SELECT relname, n_dead_tup, n_live_tup, (n_dead_tup/ n_live_tup) AS DeadTuplesRatio, last_vacuum, last_autovacuum FROM pg_catalog.pg_stat_all_tables WHERE relname = 'XYZ' order by n_dead_tup DESC;
 
 ## <a name="autovacuum-configurations"></a>Конфигурации автоматической очистки
 Параметры конфигурации, управляющие автоматической очисткой, связаны с двумя ключевыми вопросами:
