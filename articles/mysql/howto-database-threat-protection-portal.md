@@ -1,19 +1,17 @@
 ---
 title: Расширенная защита от угроз для Базы данных Azure для MySQL | Документация Майкрософт
 description: Система защиты от угроз обнаруживает подозрительные действия в базе данных, указывающие на наличие потенциальных угроз безопасности.
-services: mysql
 author: bolzmj
-manager: kfile
-ms.service: mysql
-ms.topic: article
-ms.date: 09/20/2018
 ms.author: mbolz
-ms.openlocfilehash: dfb4d104d3dfdb3e6ae7466fa3776dd5e7155aa7
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
+ms.service: mysql
+ms.topic: conceptual
+ms.date: 09/20/2018
+ms.openlocfilehash: 12497f6a5173e2e4ea9c919fb6500c34f85749fa
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47046719"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53534760"
 ---
 # <a name="advanced-threat-protection-for-azure-database-for-mysql"></a>Расширенная защита от угроз для Базы данных Azure для MySQL
 
@@ -22,7 +20,7 @@ ms.locfileid: "47046719"
 Расширенная защита от угроз входит в состав предложения "Расширенная защита данных", которое представляет собой унифицированный пакет расширенных возможностей безопасности. Перейти к службе "Расширенная защита от угроз" и управлять ею можно на [портале Azure](https://portal.azure.com). Она сейчас доступна в предварительной версии.
 
 > [!NOTE]
-> Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах облака правительства и национального облака Azure: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
+> Компонент "Расширенная защита от угроз" **недоступен** в следующих регионах Azure для национальных облаков и облаков для государственных организаций: US Gov (Техас), US Gov (Аризона), US Gov (Айова), US Gov (Вирджиния), восточный регион US DoD, центральный регион US DoD, Центральная Германия, Северная Германия, Восточный Китай, Восточный Китай — 2. Сведения об общей доступности продукта по регионам см. на [этой странице](https://azure.microsoft.com/global-infrastructure/services/).
 >
 
 ## <a name="set-up-threat-detection"></a>Настройка обнаружения угроз

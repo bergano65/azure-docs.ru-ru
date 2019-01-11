@@ -1,5 +1,5 @@
 ---
-title: 'Конвейеры: оптимизации Машинного обучения для быстродействия, переносимости и повторного использования'
+title: 'Конвейеры: оптимизация рабочих процессов машинного обучения'
 titleSuffix: Azure Machine Learning service
 description: В этой статье описываются конвейеры машинного обучения, которые можно создать с помощью пакета SDK для службы "Машинное обучение Azure" для Python, и преимущества их использования. Конвейеры машинного обучения используются специалистами по обработке и анализу данных для создания, оптимизации и администрирования рабочих процессов машинного обучения.
 services: machine-learning
@@ -11,12 +11,12 @@ ms.author: sanpil
 author: sanpil
 ms.date: 11/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: e2874c4a40a2347fd47e93c99fdec7ff5e81aec1
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: e8532e9821501c7b10fbb47c531228e439a8b289
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53308215"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53556889"
 ---
 # <a name="build-machine-learning-pipelines-with-the-azure-machine-learning-service"></a>Создание конвейеров машинного обучения с помощью Службы машинного обучения Azure
 

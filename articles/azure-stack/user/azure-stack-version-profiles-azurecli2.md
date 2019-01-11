@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/08/2018
+ms.date: 12/06/2018
 ms.author: sethm
 ms.reviewer: sijuman
-ms.openlocfilehash: 6251a0c7fd43a12dbe02a0013f1530557d142d25
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: dacc28c1cfe2ee896597aeaf92a22c7f6e13c306
+ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52969963"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53726618"
 ---
 # <a name="use-api-version-profiles-with-azure-cli-in-azure-stack"></a>Использование профилей версий API и Azure CLI в Azure Stack
 
@@ -128,7 +128,6 @@ Write-Host "Python Cert store was updated for allowing the azure stack CA root c
         --suffix-keyvault-dns ".adminvault.local.azurestack.external" \ 
         --endpoint-vm-image-alias-doc <URI of the document which contains virtual machine image aliases>
       ```
-
    b. Чтобы зарегистрировать среду *пользователя*, используйте команду:
 
       ```azurecli
@@ -151,9 +150,22 @@ Write-Host "Python Cert store was updated for allowing the azure stack CA root c
         --endpoint-active-directory-resource-id=<URI of the ActiveDirectoryServiceEndpointResourceID> \
         --profile 2018-03-01-hybrid
       ```
+    d. Чтобы зарегистрировать пользователя в среде AD FS, используйте команду:
 
+      ```azurecli
+      az cloud register \
+        -n AzureStack  \
+        --endpoint-resource-manager "https://management.local.azurestack.external" \
+        --suffix-storage-endpoint "local.azurestack.external" \
+        --suffix-keyvault-dns ".vault.local.azurestack.external"\
+        --endpoint-active-directory-resource-id "https://management.adfs.azurestack.local/<tenantID>" \
+        --endpoint-active-directory-graph-resource-id "https://graph.local.azurestack.external/"\
+        --endpoint-active-directory "https://adfs.local.azurestack.external/adfs/"\
+        --endpoint-vm-image-alias-doc <URI of the document which contains virtual machine image aliases> \
+        --profile "2018-03-01-hybrid"
+      ```
 1. Следующие команды позволяют выбрать активную среду:
-
+   
    a. В среде *администратора облака* используйте такую команду:
 
       ```azurecli
@@ -180,7 +192,7 @@ Write-Host "Python Cert store was updated for allowing the azure stack CA root c
 
 1. Войдите в среду Azure Stack с помощью команды `az login`. Вы можете войти в среду Azure Stack от имени пользователя или [субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/active-directory-application-objects). 
 
-    * Среды AAD
+    * Среды Azure AD
       * Вход от имени *пользователя*. Можно указать имя пользователя и пароль непосредственно в команде `az login` или выполнить аутентификацию в браузере. Если для вашей учетной записи включена многофакторная аутентификация, возможным будет только второй вариант.
 
       ```azurecli
@@ -194,7 +206,7 @@ Write-Host "Python Cert store was updated for allowing the azure stack CA root c
    
       * Войдите в систему как *субъект-служба*. Для входа от имени субъекта-службы следует заранее [создать субъект-службу с помощью портала Azure](azure-stack-create-service-principals.md) или CLI, а также назначить ему роль. После этого выполните такую команду для входа:
 
-      ```azurecli
+      ```azurecli  
       az login \
         --tenant <Azure Active Directory Tenant name. For example: myazurestack.onmicrosoft.com> \
         --service-principal \
@@ -203,20 +215,33 @@ Write-Host "Python Cert store was updated for allowing the azure stack CA root c
       ```
     * Среды AD FS
 
-        * Войдите в систему как *субъект-служба*. 
-          1.    Подготовьте PEM-файл для использования для входа субъект-службы.
-                * На клиентском компьютере, где был создан субъект, экспортируйте сертификат субъект-службы как PFX-файл с закрытым ключом (расположен по пути cert:\CurrentUser\My; имя сертификата совпадает с именем субъекта).
+        * Войдите в систему как пользователь в веб-браузере:  
+              ```azurecli  
+              az login
+              ```
+        * Войдите в систему как пользователь с помощью веб-браузера с кодом устройства:  
+              ```azurecli  
+              az login --use-device-code
+              ```
+        > [!Note]  
+        >При отсутствии этого параметра команда возвращает URL-адрес и код, которые следует использовать для аутентификации.
 
-                *   Преобразуйте PFX в PEM (используйте служебную программу OpenSSL).
+        * Войдите в систему как субъект-служба:
+        
+          1. Подготовьте PEM-файл для использования для входа субъект-службы.
 
-          1.    Войдите в интерфейс командной строки. :
-                ```azurecli
-                az login --service-principal \
-                 -u <Client ID from the Service Principal details> \
-                 -p <Certificate's fully qualified name. Eg. C:\certs\spn.pem>
-                 --tenant <Tenant ID> \
-                 --debug 
-                ```
+            * На клиентском компьютере, где был создан субъект, экспортируйте сертификат субъект-службы как PFX-файл с закрытым ключом (расположен по пути `cert:\CurrentUser\My;`; имя сертификата совпадает с именем субъекта).
+        
+            * Преобразуйте PFX в PEM (используйте служебную программу OpenSSL).
+
+          2.  Вход в интерфейс командной строки:
+            ```azurecli  
+            az login --service-principal \
+              -u <Client ID from the Service Principal details> \
+              -p <Certificate's fully qualified name, such as, C:\certs\spn.pem>
+              --tenant <Tenant ID> \
+              --debug 
+            ```
 
 ## <a name="test-the-connectivity"></a>Проверка подключения
 

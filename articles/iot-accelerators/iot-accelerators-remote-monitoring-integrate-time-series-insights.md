@@ -1,5 +1,5 @@
 ---
-title: Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга | Документы Майкрософт
+title: Интеграция службы "Аналитика временных рядов" с решением удаленного мониторинга Azure| Документация Майкрософт
 description: В этом практическом руководстве вы узнаете, как настроить Аналитику временных рядов для существующего решения удаленного мониторинга, в котором еще нет этой службы.
 author: aditidugar
 manager: timlt
@@ -8,12 +8,12 @@ ms.date: 09/12/2018
 ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
-ms.openlocfilehash: e6dcbf9d185b45c18261e47e9d575adf40812611
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 655d65ebfbb0141acd829a64414d9ba20dd2c697
+ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53253822"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53633748"
 ---
 # <a name="integrate-azure-time-series-insights-with-remote-monitoring"></a>Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
 
@@ -49,7 +49,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
 Далее разверните Аналитику временных рядов в качестве дополнительного ресурса в решении удаленного мониторинга и подключите ее к центру Интернета вещей.
 
-1. Войдите на [портале Azure](http://portal.azure.com/).
+1. Войдите на [портале Azure](https://portal.azure.com/).
 
 1. Выберите **Создать ресурс** > **Интернет вещей** > **Аналитика временных рядов**.
 
@@ -164,12 +164,13 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
 .NET: 
 
-```
+```cmd/sh
 docker pull azureiotpcs/asa-manager-dotnet:1.0.2
 ```
 
 Java:
-```
+
+```cmd/sh
 docker pull azureiotpcs/asa-manager-java:1.0.2
 ```
 
@@ -178,13 +179,14 @@ docker pull azureiotpcs/asa-manager-java:1.0.2
 Извлеките последнюю микрослужбу телеметрии, введя в командной строке следующую команду:
 
 .NET:
-```
+
+```cmd/sh
 docker pull azureiotpcs/telemetry-dotnet:1.0.2
 ```
 
 Java:
 
-```
+```cmd/sh
 docker pull azureiotpcs/telemetry-java:1.0.2
 ```
 
@@ -192,7 +194,7 @@ docker pull azureiotpcs/telemetry-java:1.0.2
 
 Чтобы можно было легко просматривать данные в обозревателе Аналитики временных рядов, мы рекомендуем настроить пользовательский интерфейс, связав его со средой. Для этого извлеките последние изменения в пользовательский веб-интерфейс с помощью следующей команды:
 
-```
+```cmd/sh
 docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 ```
 
@@ -220,7 +222,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 
 1. Добавьте следующие переменные среды в каждую микрослужбу в YAML-файле Docker Compose и скрипте `env-setup` в виртуальной машине:
 
-    ```
+    ```sh
     PCS_TELEMETRY_STORAGE_TYPE=tsi
     PCS_TSI_FQDN={TSI Data Access FQDN}
     PCS_AAD_TENANT={AAD Tenant Id}
@@ -244,7 +246,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 
 1. Найдите карту конфигурации и добавьте следующие новые переменные среды для TSI:
 
-    ```
+    ```yaml
     telemetry.storage.type: "tsi"
     telemetry.tsi.fqdn: "{TSI Data Access FQDN}"
     security.auth.serviceprincipal.secret: "{AAD application service principal secret}"
@@ -252,7 +254,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 
 4. Измените шаблон YAML-файла для группы pod службы телеметрии:
 
-    ```
+    ```yaml
     - name: PCS_AAD_TENANT
         valueFrom:
         configMapKeyRef:
@@ -282,7 +284,7 @@ docker pull azureiotpcs/pcs-remote-monitoring-webui:1.0.2
 
 5. Измените шаблон YAML-файла для группы pod службы диспетчера ASA:
 
-    ```
+    ```yaml
     - name: PCS_TELEMETRY_STORAGE_TYPE
         valueFrom:
         configMapKeyRef:

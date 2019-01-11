@@ -11,20 +11,22 @@ ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/30/2018
+ms.date: 12/20/2018
 ms.author: douglasl
-ms.openlocfilehash: ef93c62a2e2084a43eeda578c889a568d04db4f1
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 4b185236e5925152acb5f8a733e117186a2318cf
+ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52855215"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53740898"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
 
 Действие функции Azure позволяет запускать [Функции Azure](../azure-functions/functions-overview.md) в конвейере Фабрики данных. Чтобы запустить функцию Azure, необходимо создать подключение к связанной службе и действие, определяющее функцию Azure, которую вы планируете выполнить.
 
 ## <a name="azure-function-linked-service"></a>Связанные службы функции Azure
+
+Тип возвращаемого значения функции Azure должен быть допустимым объектом JObject. При указании других типов происходит сбой и выдается общая пользовательская ошибка *Ошибка вызова конечной точки*.
 
 | **Свойство** | **Описание** | **Обязательный** |
 | --- | --- | --- |
@@ -43,10 +45,16 @@ ms.locfileid: "52855215"
 | function name  | Имя функции, которую вызывает это действие в приложении-функции Azure | Строка | Да |
 | метод  | Метод REST API для вызова функции | Поддерживаемые типы строки: "GET", "POST", "PUT"   | Да |
 | Верхний колонтитул  | Заголовки, которые отправляются в запрос. Например, задать язык и тип в запросе: "headers": { "Accept-Language": "en-us", "Content-Type": "application/json" } | Строка (или выражение с типом результата "строка") | Нет  |
-| текст  | Текст, который отправляется вместе с запросом для функции метода API  | Строка (или выражение с типом результата "строка").   | Необходимо для методов PUT или POST |
+| текст  | Текст, который отправляется вместе с запросом для функции метода API  | Строка (или выражение с типом результата "строка") или объект.   | Необходимо для методов PUT или POST |
 |   |   |   | |
 
 Просмотрите схему полезных данных запроса в разделе  [Схема полезных данных запроса](control-flow-web-activity.md#request-payload-schema) .
+
+## <a name="more-info"></a>Подробнее
+
+Действие функции Azure поддерживает **маршрутизацию**. Например, если приложение использует маршрутизацию `https://functionAPP.azurewebsites.net/api/functionName/{value}?code=<secret>`, то `functionName` представляет собой `functionName/{value}`, которое можно параметризовать для получения нужного `functionName` во время выполнения.
+
+Действие функции Azure поддерживает **запросы**. Запрос должен быть частью `functionName`, например `HttpTriggerCSharp2?name=hello`, где `function name` равно `HttpTriggerCSharp2`.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

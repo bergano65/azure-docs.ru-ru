@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/28/2018
+ms.date: 12/18/2018
 ms.author: juliako
-ms.openlocfilehash: b110a57526d6e23ba53afce0a91d735fad6d247c
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 06ecdf31c2627eda5bf651667703ddcf39c9d307
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50215906"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53604105"
 ---
 # <a name="configure-postman-for-media-services-rest-api-calls"></a>Настройка Postman для вызовов REST API служб мультимедиа
 
@@ -26,11 +26,11 @@ ms.locfileid: "50215906"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Создайте учетную запись Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
+- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
 - Получите информацию, необходимую для [доступа к API-интерфейсам](access-api-cli-how-to.md).
 - Установите клиент REST [Postman](https://www.getpostman.com/) для выполнения REST API, как показано в некоторых руководствах по REST AMS. 
 
-    Мы используем **Postman**, но подойдет любое средство REST. Другие варианты включают **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
+    Мы используем **Postman**, но подойдет любое средство REST. Другие варианты включают: **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
 
 ## <a name="download-postman-files"></a>Скачивание файлов Postman
 
@@ -75,7 +75,7 @@ ms.locfileid: "50215906"
 
 Прежде чем вы сможете работать с ресурсами AMS версии 3, вам нужно получить и задать маркер Azure AD для аутентификации субъекта-службы.
 
-1. В левом окне Postman выберите Step 1: Get AAD Auth token (Шаг 1. Получение маркера проверки подлинности AAD).
+1. В левом окне Postman выберите "Шаг 1. Получить маркер проверки подлинности AAD".
 2. Затем выберите Get Azure AD Token for Service Principal Authentication (Получение маркера безопасности Azure AD для аутентификации субъекта-службы).
 3. Нажмите кнопку **Отправить**.
 
@@ -85,7 +85,7 @@ ms.locfileid: "50215906"
     https://login.microsoftonline.com/:tenantId/oauth2/token
     ```
 
-4. Ответ на этот запрос возвращает маркер и присваивает его значение переменной среды AccessToken. Чтобы просмотреть код, изменяющий значение AccessToken, щелкните вкладку **Тесты**. 
+4. Ответ на этот запрос возвращает маркер и присваивает его значение переменной среды AccessToken.  
 
     ![Получение маркера AAD](./media/develop-with-postman/postman-get-aad-auth-token.png)
 

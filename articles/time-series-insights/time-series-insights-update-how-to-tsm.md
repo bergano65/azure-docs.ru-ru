@@ -1,5 +1,5 @@
 ---
-title: Моделирование данных в службе "Аналитика временных рядов". Моделирование данных в предварительной версии службы "Аналитика временных рядов" | Документация Майкрософт
+title: Моделирование данных с помощью службы "Аналитика временных рядов Azure" (предварительная версия) | Документация Майкрософт
 description: Общие сведения о моделировании данных в предварительной версии службы "Аналитика временных рядов".
 author: ashannon7
 ms.author: anshan
@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/10/2018
 ms.custom: seodec18
-ms.openlocfilehash: e68bc01d2c0781333454fa753992d0136fac0c06
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 1686b52c9dacf5c78335f76bd19b41c4c7d15cee
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53269096"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555410"
 ---
 # <a name="data-modeling-in-azure-time-series-insights-preview"></a>Моделирование данных в предварительной версии службы "Аналитика временных рядов"
 

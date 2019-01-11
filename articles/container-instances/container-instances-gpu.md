@@ -8,16 +8,16 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 11/29/2018
 ms.author: danlep
-ms.openlocfilehash: d02ae48bab6a17cbf5568996b30ccb39ccb81c59
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 2cbfb21469df45f29a70b5d10d8c99ecd894c30c
+ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994016"
+ms.lasthandoff: 12/22/2018
+ms.locfileid: "53755025"
 ---
 # <a name="deploy-container-instances-that-use-gpu-resources"></a>Развертывание экземпляров контейнеров, использующих ресурсы GPU
 
-Чтобы выполнить определенные ресурсоемкие рабочие нагрузки в Экземплярах контейнеров Azure, разверните группы контейнеров с *ресурсами GPU*. Экземпляры контейнеров могут получить доступ к одному или нескольким графическим процессорам NVIDIA Tesla при выполнении рабочих нагрузок контейнеров, таких как CUDA и приложения глубокого обучения.
+Чтобы выполнить определенные ресурсоемкие рабочие нагрузки в Экземплярах контейнеров Azure, разверните [группы контейнеров](container-instances-container-groups.md) с *ресурсами GPU*. Экземпляры контейнеров в группе могут получить доступ к одному графическому процессору NVIDIA Tesla или нескольким при выполнении рабочих нагрузок контейнеров, таких как CUDA и приложения глубокого обучения.
 
 Как указано в этой статье, вы можете добавлять ресурсы GPU при развертывании группы контейнеров с использованием [файла YAML](container-instances-multi-container-yaml.md) или [шаблона Resource Manager](container-instances-multi-container-group.md).
 
@@ -87,7 +87,7 @@ ms.locfileid: "52994016"
 
 ## <a name="yaml-example"></a>Пример YAML
 
-Скопируйте следующий YAML-файл в новый файл с именем *gpu-deploy-aci.yaml*, а затем сохраните его. Этот YAML-файл создает группу контейнеров с именем *gpucontainergroup*, в которой указывается экземпляр контейнера с графическим процессором K80. Экземпляр запускает пример приложения сложения векторов CUDA. Запросов ресурсов достаточно для запуска рабочей нагрузки.
+Чтобы добавить группы GPU, можно развернуть группу контейнеров с помощью [YAML-файла](container-instances-multi-container-yaml.md). Скопируйте следующий YAML-файл в новый файл с именем *gpu-deploy-aci.yaml*, а затем сохраните его. Этот YAML-файл создает группу контейнеров с именем *gpucontainergroup*, в которой указывается экземпляр контейнера с графическим процессором K80. Экземпляр запускает пример приложения сложения векторов CUDA. Запросов ресурсов достаточно для запуска рабочей нагрузки.
 
 ```YAML
 additional_properties: {}
@@ -134,7 +134,7 @@ Done
 
 ## <a name="resource-manager-template-example"></a>Пример шаблона Resource Manager
 
-Начните с создания файла с именем `gpudeploy.json` и скопируйте в него приведенный ниже код JSON. В этом примере развертывается экземпляр контейнера с графическим процессором V100, который выполняет задание обучения [TensorFlow](https://www.tensorflow.org/versions/r1.1/get_started/mnist/beginners) для [набора данных MNIST](http://yann.lecun.com/exdb/mnist/). Запросов ресурсов достаточно для запуска рабочей нагрузки.
+Чтобы развернуть группу контейнеров с ресурсами GPU, также можно воспользоваться [шаблоном Resource Manager](container-instances-multi-container-group.md). Начните с создания файла с именем `gpudeploy.json` и скопируйте в него приведенный ниже код JSON. В этом примере развертывается экземпляр контейнера с графическим процессором V100, который выполняет задание обучения [TensorFlow](https://www.tensorflow.org/versions/r1.1/get_started/mnist/beginners) для [набора данных MNIST](http://yann.lecun.com/exdb/mnist/). Запросов ресурсов достаточно для запуска рабочей нагрузки.
 
 ```JSON
 {

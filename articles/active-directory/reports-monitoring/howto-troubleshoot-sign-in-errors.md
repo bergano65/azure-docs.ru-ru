@@ -13,14 +13,14 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 2bba11cd8b0e90f7835872e496c790aa56fcddc8
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: 47a89da808e2f53cf8dfc901c64eba3d78842d13
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52276986"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53652036"
 ---
-# <a name="how-to-troubleshoot-sign-in-errors-using-azure-active-directory-reports"></a>Практическое руководство. Устранение ошибок входа с помощью отчетов Azure Active Directory
+# <a name="how-to-troubleshoot-sign-in-errors-using-azure-active-directory-reports"></a>Практическое руководство: Устранение ошибок входа с помощью отчетов Azure Active Directory
 
 [Отчет о событиях входа](concept-sign-ins.md) в Azure Active Directory (Azure AD) позволяет найти ответы на вопросы по управлению доступом к приложениям в вашей организации, включая:
 
@@ -35,7 +35,7 @@ ms.locfileid: "52276986"
 
 Вам необходимы:
 
-* Клиент Azure AD с лицензией Premium (P1/P2). 
+* Клиент Azure AD с лицензией Premium (P1/P2). Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md).
 * Пользователь в роли **глобального администратора**, **администратора безопасности**, **читателя безопасности** или **читателя отчетов** для клиента, а также любой пользователь, который может получить доступ к своим собственным событиям входов. 
 
 ## <a name="troubleshoot-sign-in-errors-using-the-sign-ins-report"></a>Устранение ошибок входа с помощью отчета о событиях входа

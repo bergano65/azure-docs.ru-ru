@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 11/28/2018
+ms.date: 12/17/2018
 ms.author: juliako
-ms.openlocfilehash: 5cc670a94958b123ac71b49cbf25661d567e4629
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 32b9664d12d6fe3a44329665c730dbc8709430f2
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53083417"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53650847"
 ---
 # <a name="creating-filters-with-media-services-rest-api"></a>Создание фильтров с помощью REST API Служб мультимедиа
 
@@ -31,12 +31,13 @@ ms.locfileid: "53083417"
 Чтобы выполнить действия, описанные в этом разделе, необходимо сделать следующее:
 
 - См. дополнительные сведения о [фильтрах и динамических манифестах](filters-dynamic-manifest-overview.md).
-- [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
 - [Настройте Postman для вызовов REST API Служб мультимедиа Azure](media-rest-apis-with-postman.md).
+
+    Не забудьте выполнить последний шаг, указанный в разделе [Получение токена Azure AD](media-rest-apis-with-postman.md#get-azure-ad-token). 
 
 ## <a name="define-a-filter"></a>Определение фильтра  
 
-Ниже приведен пример **текста запроса**, определяющего условия выбора дорожки, которые добавляются в манифест. Этот фильтр включает в себя любые звуковые дорожки на английском языке с EC-3 и любые видеодорожки со скоростью в диапазоне 0–1 000 000.
+Ниже приведен пример **текста запроса**, определяющего условия выбора дорожки, которые добавляются в манифест. Этот фильтр включает любые аудиодорожки в формате EC3 и любые видеодорожки со скоростью в диапазоне 0–1 000 000.
 
 ```json
 {
@@ -50,14 +51,9 @@ ms.locfileid: "53083417"
                         "operation": "Equal"
                     },
                     {
-                        "property": "Language",
-                        "value": "en",
-                        "operation": "Equal"
-                    },
-                    {
                         "property": "FourCC",
                         "value": "EC-3",
-                        "operation": "NotEqual"
+                        "operation": "Equal"
                     }
                 ]
             },
@@ -86,7 +82,9 @@ ms.locfileid: "53083417"
 
 Метод HTTP-запроса **PUT** аналогичен следующему:
 
+```
 PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/accountFilters/{filterName}?api-version=2018-07-01
+```
 
 Выберите вкладку **Текст** и вставьте код json, который был [определен ранее](#define-a-filter).
 
@@ -96,13 +94,15 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Дополнительные сведения см. в статье о [создании или обновлении фильтров учетной записи](https://docs.microsoft.com/rest/api/media/accountfilters/createorupdate). Также см. [примеры JSON для фильтров учетной записи](https://docs.microsoft.com/rest/api/media/accountfilters/createorupdate#create_an_account_filter).
 
-## <a name="create-asset-filters"></a>Создание фильтров ресурса-контейнера  
+## <a name="create-asset-filters"></a>Создание фильтров ресурсов  
 
-В загруженной ранее коллекции Postman "Media Services v3" (Службы мультимедиа версии 3) последовательно выберите **Ресурсы-контейнеры**->**Create or update Asset Filter (Создать или обновить фильтр ресурса-контейнера).
+В загруженной ранее коллекции Postman "Службы мультимедиа версии 3" выберите **Ресурсы-контейнеры**->**Создать или обновить фильтр ресурса-контейнера**.
 
 Метод HTTP-запроса **PUT** аналогичен следующему:
 
+```
 PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaServices/{accountName}/assets/{assetName}/assetFilters/{filterName}?api-version=2018-07-01
+```
 
 Выберите вкладку **Текст** и вставьте код json, который был [определен ранее](#define-a-filter).
 

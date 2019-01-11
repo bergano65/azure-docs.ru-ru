@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 11/13/2018
+ms.date: 12/18/2018
 ms.author: adgera
-ms.openlocfilehash: b22bf34a06966f917cdcdd07c28ead2d042061c1
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 92ff8cb732c7c10c525d8a8ec76180cb435bd466
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52164002"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53975021"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -31,7 +31,7 @@ ms.locfileid: "52164002"
 
 1. Чтобы создать собственное приложение Azure AD, воспользуйтесь сведениями из статьи [Краткое руководство. Регистрация приложения в конечной точке Azure Active Directory версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/quickstart-v1-integrate-apps-with-azure-ad). Кроме того, можно повторно использовать имеющуюся регистрацию собственного приложения.
 
-1. В разделе **Требуемые разрешения** введите `Azure Digital Twins` и выберите **Делегированные разрешения**. Затем выберите **Предоставить разрешения**.
+1. В разделе **Необходимые разрешения** выберите **Добавить** и введите **Azure Digital Twins** в разделе **Добавить доступ через API**. Если найти API не удается, выполните поиск по запросу **Azure Smart Spaces**. Затем выберите **Предоставление разрешений > Делегированные разрешения** и нажмите **Готово**.
 
     ![API добавления регистраций приложений в Azure AD](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)
 
@@ -65,7 +65,7 @@ ms.locfileid: "52164002"
     | Поле  | Значение |
     |---------|---------|
     | Тип предоставления разрешения | `Implicit` |
-    | URL-адрес обратного вызова | [`https://www.getpostman.com/oauth2/callback`](https://www.getpostman.com/oauth2/callback) |
+    | URL-адрес обратного вызова | `https://www.getpostman.com/oauth2/callback` |
     | URL-адрес аутентификации | Используйте **URL-адрес авторизации** из шага 2 |
     | Идентификатор клиента | Используйте **идентификатор приложения** для приложения Azure AD, созданного или перепрофилированного на предыдущем шаге |
     | Область | Не указывайте |

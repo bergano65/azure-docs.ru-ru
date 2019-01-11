@@ -1,6 +1,6 @@
 ---
 title: Подключение к хранилищу данных SQL Azure (sqlcmd) | Документация Майкрософт
-description: Подключайтесь к хранилищу данных SQL Azure и создавайте запросы к нему с помощью служебной программы командной строки [sqlcmd][sqlcmd].
+description: Подключайтесь к хранилищу данных SQL Azure и создавайте запросы к нему с помощью служебной программы командной строки sqlcmd.
 services: sql-data-warehouse
 author: kavithaj
 manager: craigg
@@ -10,12 +10,12 @@ ms.component: consume
 ms.date: 04/17/2018
 ms.author: kavithaj
 ms.reviewer: igorstan
-ms.openlocfilehash: 94f3955f9ce94fa52e89180fa649c4e412b80109
-ms.sourcegitcommit: 2b2129fa6413230cf35ac18ff386d40d1e8d0677
+ms.openlocfilehash: 2534d668132db4c66b5e54c33849b76a8f93c348
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43247719"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53976415"
 ---
 # <a name="connect-to-sql-data-warehouse-with-sqlcmd"></a>Подключение к хранилищу данных SQL с помощью sqlcmd
 > [!div class="op_single_selector"]
@@ -32,14 +32,14 @@ ms.locfileid: "43247719"
 ## <a name="1-connect"></a>1. Подключение
 Чтобы начать использовать [sqlcmd][sqlcmd], откройте командную строку и введите **sqlcmd** и строку подключения к базе данных хранилища данных SQL. В строке подключения обязательно укажите следующие параметры.
 
-* **Server (-S)**  — сервер в формате `<`имя_сервера`>`.database.windows.net
-* **Database (-D)**  — имя базы данных.
-* **Enable Quoted Identifiers (-I)** — для подключения к экземпляру хранилища данных SQL необходимо включить заключенные в кавычки идентификаторы.
+* **Server (-S):** сервер в формате `<`имя_сервера`>`.database.windows.net
+* **Database (-d):** имя базы данных.
+* **Enable Quoted Identifiers (-I):** для подключения к экземпляру хранилища данных SQL необходимо включить заключенные в кавычки идентификаторы.
 
 Чтобы использовать проверку подлинности SQL Server, необходимо добавить параметры имени пользователя и пароля.
 
-* **User (-U)**  — пользователь сервера в формате `<`Пользователь`>`.
-* **Password (-P)** — пароль, связанный с пользователем.
+* **User (-U):** пользователь сервера в формате `<`Пользователь`>`.
+* **Password (-P):** пароль, связанный с пользователем.
 
 Например, строка подключения может выглядеть так:
 

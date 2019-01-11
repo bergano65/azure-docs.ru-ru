@@ -2,20 +2,17 @@
 title: Устранение проблем с подключением к Базе данных Azure для MariaDB | Документация Майкрософт
 description: Узнайте, как устранить проблемы с подключением к Базе данных Azure для MariaDB.
 keywords: mariadb connection,connection string,connectivity issues,transient error,connection error
-services: mariadb
 author: jan-eng
 ms.author: janeng
-manager: kfile
-editor: jasonwhowell
 ms.service: mariadb
-ms.topic: article
+ms.topic: conceptual
 ms.date: 11/09/2018
-ms.openlocfilehash: 0100fa6d9691c864de9ac4aaea04b647e1705872
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: c7e1ff10f9698bf57ce86a7e9686ef13e5248db7
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51565145"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53545915"
 ---
 # <a name="troubleshoot-connection-issues-to-azure-database-for-mariadb"></a>Устранение проблем с подключением к Базе данных Azure для MariaDB
 
@@ -49,9 +46,9 @@ ms.locfileid: "51565145"
 
 При подключении к Базе данных Azure для MariaDB в приложении постоянно возникают сбои по перечисленным ниже причинам:
 
-* Конфигурация брандмауэра: сервер Базы данных Azure для MariaDB или клиентский брандмауэр блокирует подключения.
-* Перенастройка сети на стороне клиента: был добавлен новый IP-адрес или прокси-сервер.
-* Ошибка пользователя: например, неправильно введенные параметры подключения (имя сервера в строке подключения или суффикс *@servername* в имени пользователя отсутствует).
+* Настройка брандмауэра: Сервер Базы данных Azure для MariaDB или клиентский брандмауэр блокирует подключения.
+* Перенастройка сети на стороне клиента: добавлен новый IP-адрес или прокси-сервер.
+* Ошибка пользователя. Неправильно введенные параметры подключения, например неправильное имя сервера в строке подключения или отсутствующий суффикс *@servername* в имени пользователя.
 
 ### <a name="steps-to-resolve-persistent-connectivity-issues"></a>Порядок устранения постоянных проблем подключения
 
