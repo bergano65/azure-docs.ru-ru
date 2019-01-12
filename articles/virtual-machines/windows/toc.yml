@@ -30,7 +30,7 @@ items:
     href: tutorial-create-vmss.md
   - name: 7. Балансировка нагрузки виртуальных машин
     href: tutorial-load-balancer.md
-  - name: 8. Подключение виртуальных машин к сетевой инфраструктуре
+  - name: 8. Управление сетями
     href: tutorial-virtual-network.md
   - name: 9. Резервное копирование виртуальных машин
     href: tutorial-backup-vms.md
@@ -39,7 +39,7 @@ items:
     href: tutorial-govern-resources.md
   - name: 11. Мониторинг и обновление виртуальных машин
     href: tutorial-monitoring.md
-  - name: 12. Центр безопасности для виртуальных машин
+  - name: 12. Управление безопасностью виртуальных машин
     href: tutorial-azure-security.md
   - name: 13. Установка стека SQL\IIS\.NET
     href: tutorial-iis-sql.md
@@ -244,6 +244,8 @@ items:
       items:
       - name: Обзор
         href: shared-image-galleries.md
+      - name: Создание общих образов с помощью PowerShell
+        href: shared-images.md
       - name: Создание общих образов с помощью CLI
         href: ../linux/shared-images.md
       - name: Устранение неполадок с общими образами
@@ -409,6 +411,8 @@ items:
         href: migration-classic-resource-manager-community-tools.md
       - name: Часто задаваемые вопросы
         href: migration-classic-resource-manager-faq.md
+- name: Устранение неполадок
+  href: ../troubleshooting/index.md
 - name: Справочные материалы
   items:
   - name: Инфраструктура CLI Azure
@@ -427,6 +431,8 @@ items:
     href: /rest/api/compute
   - name: REST для управляемых дисков
     href: /rest/api/compute/disks
+  - name: Шаблон Resource Manager
+    href: /azure/templates/microsoft.compute/allversions
 - name: Ресурсы
   items:
   - name: Создание шаблонов
@@ -447,11 +453,9 @@ items:
     href: https://azure.microsoft.com/documentation/videos/index/?services=virtual-machines
   - name: Часто задаваемые вопросы
     href: faq.md
-- name: Устранение неполадок
-  href: ../troubleshooting/index.md
-ms.openlocfilehash: bb8bf3fdd1b49987013fbb6b2f508019cedc811e
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 1b0aa58f551a7fc03a9fa4b32a1ead9e0024bd08
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52958258"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54246778"
