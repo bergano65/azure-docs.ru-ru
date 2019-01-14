@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 11/26/2018
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: a16024ad5d8b9d2355b579b9b508ef0de91f2ccd
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 471277433f0fc9a54a28baa158f1e20f1efb613f
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53133865"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54000528"
 ---
 # <a name="creating-filters-with-cli"></a>Создание фильтров с помощью CLI 
 
@@ -37,7 +37,7 @@ ms.locfileid: "53133865"
 
 ## <a name="define-a-filter"></a>Определение фильтра 
 
-В следующем примере определяются условия выбора дорожки, которые добавляются в манифест. Этот фильтр включает любые аудиодорожки на английском языке в формате EC3 и любые видеодорожки со скоростью в диапазоне 0–1 000 000.
+В следующем примере определяются условия выбора дорожки, которые добавляются в манифест. Этот фильтр включает любые аудиодорожки в формате EC3 и любые видеодорожки со скоростью в диапазоне 0–1 000 000.
 
 Фильтры, определенные в REST, включают объект JSON программы-оболочки для указания свойств.  
 
@@ -48,11 +48,6 @@ ms.locfileid: "53133865"
             {
                 "property": "Type",
                 "value": "Audio",
-                "operation": "Equal"
-            },
-            {
-                "property": "Language",
-                "value": "en",
                 "operation": "Equal"
             },
             {
@@ -83,8 +78,17 @@ ms.locfileid: "53133865"
 
 Следующая команда [az ams account-filter](https://docs.microsoft.com/cli/azure/ams/account-filter?view=azure-cli-latest) создает фильтр учетной записи с выбранными дорожками для отслеживания, которые были [определены ранее](#define-a-filter). 
 
+Команде можно передать необязательный параметр `--tracks`, который содержит код JSON, представляющий выбранные элементы для отслеживания.  Чтобы загрузить JSON из файла, используйте синтаксис @{файл}. Если вы используете Azure CLI локально, укажите путь к файлу полностью.
+
+
 ```azurecli
-az ams account-filter create -a amsAccount -g resourceGroup -n filterName --tracks @C:\tracks.json
+az ams account-filter create -a amsAccount -g resourceGroup -n filterName --tracks @c:\tracks.json
+```
+
+Если вы используете Azure Cloud Shell, отправьте файл в Cloud Shell (для этого найдите кнопки для отправки и скачивания файлов в верхней части окна оболочки). После этого можно сослаться на файл следующим образом.
+
+```azurecli
+az ams account-filter create -a amsAccount -g resourceGroup -n filterName --tracks @tracks.json
 ```
 
 Также см. [примеры JSON для фильтров](https://docs.microsoft.com/rest/api/media/accountfilters/createorupdate#create_an_account_filter).
@@ -93,8 +97,11 @@ az ams account-filter create -a amsAccount -g resourceGroup -n filterName --trac
 
 Следующая команда [az ams asset-filter](https://docs.microsoft.com/cli/azure/ams/asset-filter?view=azure-cli-latest) создает фильтр ресурса с выбранными дорожками для отслеживания, которые были [определены ранее](#define-a-filter). 
 
+> [!TIP]
+> См. сведения об указании расположения имени файла в предыдущем разделе.
+
 ```azurecli
-az ams asset-filter create -a amsAccount -g resourceGroup -n filterName --asset-name assetName --tracks @C:\tracks.json
+az ams asset-filter create -a amsAccount -g resourceGroup -n filterName --asset-name assetName --tracks @tracks.json
 ```
 
 Также см. [примеры JSON для фильтров](https://docs.microsoft.com/rest/api/media/assetfilters/createorupdate#create_an_asset_filter).

@@ -1,21 +1,18 @@
 ---
 title: Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью Azure CLI
 description: В этой статье описывается, как создать правила брандмауэра Базы данных Azure для MariaDB и управлять ими с помощью интерфейса командной строки Azure.
-services: mariadb
 author: ajlam
 ms.author: andrela
-manager: kfile
-editor: jasonwhowell
 ms.service: mariadb
-ms.devlang: azure-cli
-ms.topic: article
+ms.devlang: azurecli
+ms.topic: conceptual
 ms.date: 11/10/2018
-ms.openlocfilehash: 1dba4b99dc50d1908b7b3d0488ba6ebf2f85c2a4
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: a2f0d775f061ab221092c9354d9d04b9241c9430
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51516554"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53543892"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-firewall-rules-by-using-the-azure-cli"></a>Создание правил брандмауэра Базы данных Azure для MariaDB и управление ими с помощью Azure CLI
 Правила брандмауэра уровня сервера позволяют администраторам управлять доступом к серверу Базы данных Azure для MariaDB с указанного IP-адреса или диапазона IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Обзор брандмауэров Базы данных Azure для MariaDB приведен в разделе [Правила брандмауэра сервера Базы данных Azure для MariaDB](./concepts-firewall-rules.md).
@@ -28,11 +25,11 @@ ms.locfileid: "51516554"
 Команда **az mariadb server firewall-rule** используется в Azure CLI для создания, удаления, вывода списка, отображения и обновления правил брандмауэра.
 
 Команды:
-- **create**: создание правила брандмауэра сервера Azure MariaDB.
-- **delete**: удаление правила брандмауэра сервера Azure MariaDB.
-- **list**: вывод списка правил брандмауэра сервера Azure MariaDB.
-- **show**: отображение сведений о правиле брандмауэра сервера Azure MariaDB.
-- **update**: обновление правила брандмауэра сервера Azure MariaDB.
+- **create**: Создание правила брандмауэра сервера Azure MariaDB.
+- **delete**: Удаление правила брандмауэра сервера Azure MariaDB.
+- **list**: Вывод списка правил брандмауэра сервера Azure MariaDB.
+- **show**: Отображение сведений о правиле брандмауэра сервера Azure MariaDB.
+- **update**: Обновление правила брандмауэра сервера Azure MariaDB.
 
 ## <a name="log-in-to-azure-and-list-your-azure-database-for-mariadb-servers"></a>Вход в Azure и вывод списка серверов базы данных Azure для MariaDB
 Безопасно подключитесь к Azure CLI с помощью своей учетной записи Azure, используя команду **az login**.

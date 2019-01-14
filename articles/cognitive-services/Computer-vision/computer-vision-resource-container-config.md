@@ -1,24 +1,24 @@
 ---
-title: Настройка контейнеров
-titlesuffix: Computer Vision - Azure Cognitive Services
-description: Параметры конфигурации для контейнеров в Компьютерном зрении.
+title: Настройка контейнеров — компьютерное зрение
+titlesuffix: Azure Cognitive Services
+description: Настройка различных параметров для контейнеров распознавания текста в функции компьютерного зрения.
 services: cognitive-services
 author: diberry
 manager: cgronlun
-ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: diberry
-ms.openlocfilehash: f71cbe965e70dfce1b29cf0e5f9ea44faf0a4e27
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.custom: seodec18
+ms.openlocfilehash: 48d3bc7ecdd66565372be8347897202cae3ec158
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53077024"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53579793"
 ---
-# <a name="configure-containers"></a>Настройка контейнеров
+# <a name="configure-recognize-text-containers"></a>Настройка контейнера распознавания текста
 
 Компьютерное зрение предоставляет контейнер для Распознавания текста с помощью общей платформы конфигурации, что позволяет легко настроить хранилище, ведение журнала, данные телеметрии и параметры безопасности для контейнеров, а также управлять ими.
 
@@ -41,7 +41,7 @@ ms.locfileid: "53077024"
 
 ### <a name="configuration-settings-as-environment-variables"></a>Параметры конфигурации в виде переменных среды
 
-Для определения параметров конфигурации можно использовать [синтаксис переменных среды ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration#configuration-by-environment).
+Для определения параметров конфигурации можно использовать [синтаксис переменных среды ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration#environment-variables-configuration-provider).
 
 Контейнер считывает переменные среды пользователя при создании контейнера. Если существует переменная среды, ее значение переопределяет значение по умолчанию для указанного параметра конфигурации. Преимущество использования переменных среды — перед созданием контейнеров можно задать несколько параметров конфигурации и несколько контейнеров могут автоматически использовать тот же набор параметров конфигурации.
 
@@ -99,7 +99,7 @@ ms.locfileid: "53077024"
 > [!IMPORTANT]
 > Параметры конфигурации [`ApiKey`](#apikey-configuration-setting), [`Billing`](#billing-configuration-setting) и [`Eula`](#eula-configuration-setting) используются совместно, и для всех трех параметров необходимо указать допустимые значения. В противном случае контейнер не запустится. Дополнительные сведения об использовании этих параметров конфигурации для создания экземпляра контейнера см. в разделе [Выставление счетов](computer-vision-how-to-install-containers.md#billing).
 
-Лицензия на использование контейнеров Cognitive Services предоставляется в рамках [вашего соглашения](https://go.microsoft.com/fwlink/?linkid=2018657) об использовании Azure. Если вы не заключали соглашения, регламентирующего использование Azure, вы соглашаетесь, что ваше соглашение об использовании Azure является [соглашением Microsoft Online Subscription](https://go.microsoft.com/fwlink/?linkid=2018755), которое содержит [Условия использования Online Services](https://go.microsoft.com/fwlink/?linkid=2018760). Что касается предварительных версий, вы также соглашаетесь с [Дополнительными условиями использования предварительных версий Microsoft Azure](https://go.microsoft.com/fwlink/?linkid=2018815). Факт использования вами контейнера подтверждает ваше согласие с этими условиями.
+Лицензия на использование контейнеров Cognitive Services предоставляется в рамках [вашего соглашения](https://go.microsoft.com/fwlink/?linkid=2018657) об использовании Azure. Если вы не заключали соглашение, регламентирующее использование Azure, вы подтверждаете, что ваше соглашение об использовании Azure является [соглашением Microsoft Online Subscription](https://go.microsoft.com/fwlink/?linkid=2018755), которое содержит [условия использования веб-служб](https://go.microsoft.com/fwlink/?linkid=2018760). Что касается предварительных версий, вы также принимаете [Дополнительные условия использования предварительных версий Microsoft Azure](https://go.microsoft.com/fwlink/?linkid=2018815). Факт использования вами контейнера подтверждает ваше согласие с этими условиями.
 
 ## <a name="fluentd-configuration-settings"></a>Параметры конфигурации Fluentd
 
@@ -130,10 +130,10 @@ ms.locfileid: "53077024"
 
   | ИМЯ | Тип данных | ОПИСАНИЕ |
   |------|-----------|-------------|
-  | `Format` | Строка | Выходной формат файлов журналов.<br/> **Примечание.** Чтобы включить поставщика ведения журнала, для этого параметра необходимо задать значение `json`. Если это значение задано без указания выходного подключения, при создании экземпляра контейнера возникает ошибка. |
+  | `Format` | Строка | Выходной формат файлов журналов.<br/> **Примечание.** Чтобы включить регистратор, необходимо указать значение `json`. Если это значение задано без указания выходного подключения, при создании экземпляра контейнера возникает ошибка. |
   | `MaxFileSize` | Целое число  | Максимальный размер файла журнала в мегабайтах (МБ). Когда размер текущего файла журнала достигает этого значения или превышает его, поставщик ведения журнала создает файл журнала. Если задано значение –1, то размер файла журнала ограничивается только максимальным размером файла (если он задан) для выходного подключения. Значение по умолчанию — 1. |
 
-Дополнительные сведения о настройке поддержки ведения журналов для ASP.NET Core см. в разделе [Настройка файла параметров](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#settings-file-configuration).
+Дополнительные сведения о настройке поддержки ведения журналов для ASP.NET Core см. в разделе [Ведение журнала ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging/?view=aspnetcore-2.1#configuration).
 
 ## <a name="mounts-configuration-settings"></a>Параметры конфигурации подключений
 

@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 12/13/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: c226eb19dbd2049c486acfb1ffb9423fdb1dad43
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: cad368cb968b94d1327cc99ed4dfa6df0aedd2cd
+ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53410267"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53555104"
 ---
 # <a name="migrate-from-federation-to-password-hash-synchronization-for-azure-ad"></a>Переход с федеративной аутентификации на синхронизацию хэша паролей для Azure AD
 В следующем документе приведены инструкции по переходу с AD FS на синхронизацию хэша паролей.
@@ -336,7 +336,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
    > [!IMPORTANT]
    > На данном этапе процесс входа пользователей никак не изменится.  
    
-   7. На портале Azure AD убедитесь, что федерации по-прежнему включена, а теперь еще включен и простой единый вход.
+   7. На портале Azure AD убедитесь в том, что федерация по-прежнему включена и что простой единый вход также включен.
    ![Рисунок 42](media/plan-migrate-adfs-password-hash-sync/migrating-adfs-to-phs_image16.png)
 
 #### <a name="convert-domains-from-federated-to-managed"></a>Преобразование федеративных доменов в управляемые

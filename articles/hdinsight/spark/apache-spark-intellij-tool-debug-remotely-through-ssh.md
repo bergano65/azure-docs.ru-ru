@@ -1,5 +1,5 @@
 ---
-title: 'Удаленная отладка приложений Spark через SSH с помощью Azure Toolkit for IntelliJ '
+title: 'Набор средств Azure для IntelliJ: удаленная отладка приложений Spark с использованием протокола SSH '
 description: Пошаговые инструкции по использованию инструментов HDInsight из набора средств Azure для IntelliJ для удаленной отладки приложений на кластерах HDInsight через SSH.
 keywords: удаленная отладка intellij, ssh, intellij, hdinsight, отладка intellij, отладка
 services: hdinsight
@@ -10,21 +10,21 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/25/2017
-ms.openlocfilehash: ae22319c54335695a52e803c0c030858e2782c38
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 1c94f184e57c125ce2520b857b47a9da99a9e517
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52582485"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53601616"
 ---
-# <a name="debug-spark-applications-locally-or-remotely-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Удаленная или локальная отладка приложений Spark в кластере HDInsight с помощью набора средств Azure для IntelliJ через SSH
+# <a name="debug-apache-spark-applications-locally-or-remotely-on-an-hdinsight-cluster-with-azure-toolkit-for-intellij-through-ssh"></a>Удаленная или локальная отладка приложений Apache Spark в кластере HDInsight с помощью набора средств Azure для IntelliJ через SSH
 
 В этой статье описано, как использовать инструменты HDInsight из [Azure Toolkit for IntelliJ](https://docs.microsoft.com/java/azure/intellij/azure-toolkit-for-intellij?view=azure-java-stable) для удаленной отладки приложений в кластере HDInsight. Для отладки проекта можно также просмотреть видео [Debug HDInsight Spark applications with Azure Toolkit for IntelliJ](https://channel9.msdn.com/Series/AzureDataLake/Debug-HDInsight-Spark-Applications-with-Azure-Toolkit-for-IntelliJ) (Отладка приложений HDInsight Spark с помощью набора средств Azure для IntelliJ).
 
 **Предварительные требования**
 * **Средства HDInsight из набора средств Azure для IntelliJ**. Этот инструмент входит в состав набора средств Azure для IntelliJ. Дополнительные сведения см. в статье [Установка набора средств Azure для IntelliJ](https://docs.microsoft.com/azure/azure-toolkit-for-intellij-installation). Также ознакомьтесь с **набором средств Azure для IntelliJ**. Этот набор средств используется для создания приложений Apache Spark для кластера HDInsight. См. дополнительные сведения о [создании приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ](https://docs.microsoft.com/azure/hdinsight/hdinsight-apache-spark-intellij-tool-plugin).
 
-* **Служба SSH HDInsight с функцией управления именем пользователя и паролем.** См. дополнительные сведения о [подключении к HDInsight (Apache Hadoop) с помощью SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix) и [использовании туннелирования SSH для доступа к пользовательскому веб-интерфейсу Ambari, JobHistory, NameNode, Oozie и другим пользовательским веб-интерфейсам](https://docs.microsoft.com/azure/hdinsight/hdinsight-linux-ambari-ssh-tunnel). 
+* **Служба SSH HDInsight с функцией управления именем пользователя и паролем.** См. дополнительные сведения о [подключении к HDInsight (Apache Hadoop) с помощью SSH](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-linux-use-ssh-unix) и [использовании туннелирования SSH для доступа к пользовательскому веб-интерфейсу Ambari, JobHistory, NameNode, Apache Oozie и другим пользовательским веб-интерфейсам](https://docs.microsoft.com/azure/hdinsight/hdinsight-linux-ambari-ssh-tunnel). 
  
 ## <a name="learn-how-to-perform-local-run-and-debugging"></a>Инструкции по выполнению локального запуска и отладки
 ### <a name="scenario-1-create-a-spark-scala-application"></a>Сценарий 1. Создание приложения Spark Scala 
@@ -70,7 +70,7 @@ ms.locfileid: "52582485"
 ### <a name="prerequisite-for-windows"></a>Предварительные требования для Windows
 При запуске локального приложения Spark Scala на компьютере с Windows может возникнуть исключение, описанное в статье о [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356). Это исключение возникает, так как в Windows отсутствует файл WinUtils.exe. 
 
-Чтобы устранить эту ошибку, [скачайте этот исполняемый файл](http://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe), например в папку **C:\WinUtils\bin**. После этого добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils**.
+Чтобы устранить эту ошибку, [скачайте этот исполняемый файл](https://public-repo-1.hortonworks.com/hdp-win-alpha/winutils.exe), например в папку **C:\WinUtils\bin**. После этого добавьте переменную среды **HADOOP_HOME** и присвойте ей значение **C\WinUtils**.
 
 ### <a name="scenario-2-perform-local-run"></a>Сценарий 2. Выполнение локального запуска
 1. Откройте скрипт **SparkCore_wasbloTest**, щелкните правой кнопкой мыши редактор скриптов и выберите параметр **Run '[Spark Job]XXX'**, чтобы выполнить локальный запуск.
@@ -80,8 +80,8 @@ ms.locfileid: "52582485"
 1. С помощью наших средств при локальном запуске и локальной отладке по умолчанию настраивается конфигурацию локального запуска. Откройте конфигурацию **[Spark Job] XXX** в правом верхнем углу. Вы увидите, что в разделе **Azure HDInsight Spark Job** уже создано задание **[Spark Job]XXX**. Откройте вкладку **Locally Run** (Локальный запуск).
 
     ![Конфигурация локального запуска](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/local-run-configuration.png)
-    - [Переменные среды.](#prerequisite-for-windows) Если вы уже задали переменную среды **HADOOP_HOME** для **C:\WinUtils**, она определяется автоматически и добавлять ее вручную не нужно.
-    - [Расположение WinUtils.exe.](#prerequisite-for-windows) Если вы не задали переменную среды, найдите расположение, нажав соответствующую кнопку.
+    - [Переменные среды](#prerequisite-for-windows). Если вы уже задали переменную среды **HADOOP_HOME** для **C:\WinUtils**, она определяется автоматически и добавлять ее вручную не нужно.
+    - [Расположение WinUtils.exe](#prerequisite-for-windows). Если вы не задали переменную среды, найдите расположение, нажав соответствующую кнопку.
     - Просто выберите один из вариантов (в MacOS и Linux в этом нет необходимости).
 1. Кроме того, вы можете вручную задать конфигурацию перед локальным запуском и локальной отладкой. На предыдущем снимке экрана щелкните знак плюса (**+**). Выберите параметр **Azure HDInsight Spark Job** (Задание Azure HDInsight Spark). Укажите **имя** и **имя класса Main**, чтобы сохранить их, а затем нажмите кнопку локального запуска.
 
@@ -154,17 +154,17 @@ ms.locfileid: "52582485"
    ![Отладка без исключений](./media/apache-spark-intellij-tool-debug-remotely-through-ssh/hdinsight-debug-without-exception.png)
 
 ## <a name="seealso"></a>Дальнейшие действия
-* [Обзор: Apache Spark в Azure HDInsight](apache-spark-overview.md)
+* [Apache Spark в Azure HDInsight](apache-spark-overview.md)
 
 ### <a name="demo"></a>Демонстрация
-* Создание проекта Scala (видео): [создание приложений Scala Apache Spark](https://channel9.msdn.com/Series/AzureDataLake/Create-Spark-Applications-with-the-Azure-Toolkit-for-IntelliJ)
-* Удаленная отладка (видео): [Use Azure Toolkit for IntelliJ to debug Spark applications remotely on an HDInsight cluster](https://channel9.msdn.com/Series/AzureDataLake/Debug-HDInsight-Spark-Applications-with-Azure-Toolkit-for-IntelliJ) (Удаленная отладка приложений Apache Spark в кластере HDInsight с помощью набора средств Azure для IntelliJ)
+* Создание проекта Scala (видео): [Создание приложений Apache Spark Scala](https://channel9.msdn.com/Series/AzureDataLake/Create-Spark-Applications-with-the-Azure-Toolkit-for-IntelliJ)
+* Удаленная отладка (видео): [Удаленная отладка приложений Apache Spark в кластере HDInsight с помощью Azure Toolkit for IntelliJ](https://channel9.msdn.com/Series/AzureDataLake/Debug-HDInsight-Spark-Applications-with-Azure-Toolkit-for-IntelliJ)
 
 ### <a name="scenarios"></a>Сценарии
-* [Apache Spark и бизнес-аналитика: анализ интерактивных данных с помощью Apache Spark в HDInsight с помощью средств бизнес-аналитики](apache-spark-use-bi-tools.md)
-* [Apache Spark и Машинное обучение: использование Spark в HDInsight для анализа температуры в здании с помощью данных HVAC](apache-spark-ipython-notebook-machine-learning.md)
-* [Apache Spark и Машинное обучение: использование Spark в HDInsight для прогнозирования результатов контроля качества пищевых продуктов](apache-spark-machine-learning-mllib-ipython.md)
-* [Анализ журнала веб-сайта с помощью Spark в HDInsight](../hdinsight-apache-spark-custom-library-website-log-analysis.md)
+* [Руководство. Анализ данных Apache Spark с использованием Power BI в HDInsight](apache-spark-use-bi-tools.md)
+* [Использование Apache Spark MLlib для Создание приложения машинного обучения Apache Spark в HDInsight](apache-spark-ipython-notebook-machine-learning.md)
+* [Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных](apache-spark-machine-learning-mllib-ipython.md)
+* [Анализ журналов веб-сайтов с помощью Apache Spark в HDInsight](../hdinsight-apache-spark-custom-library-website-log-analysis.md)
 
 ### <a name="create-and-run-applications"></a>Создание и запуск приложений
 * [Создание автономного приложения с использованием Scala](../hdinsight-apache-spark-create-standalone-application.md)
@@ -172,7 +172,7 @@ ms.locfileid: "52582485"
 
 ### <a name="tools-and-extensions"></a>Средства и расширения
 * [Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin.md)
-* [Удаленная отладка приложений Apache Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
+* [Удаленная отладка приложений Spark в HDInsight через VPN с помощью Azure Toolkit for IntelliJ](apache-spark-intellij-tool-plugin-debug-jobs-remotely.md)
 * [Использование инструментов HDInsight для IntelliJ с песочницей Hortonworks](../hadoop/hdinsight-tools-for-intellij-with-hortonworks-sandbox.md)
 * [Использование средств HDInsight в Azure Toolkit for Eclipse для создания приложений Apache Spark](../hdinsight-apache-spark-eclipse-tool-plugin.md)
 * [Использование записных книжек Apache Zeppelin с кластером Apache Spark в Azure HDInsight](apache-spark-zeppelin-notebook.md)

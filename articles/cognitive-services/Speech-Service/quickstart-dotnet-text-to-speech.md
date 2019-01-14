@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: conceptual
-ms.date: 11/28/2018
+ms.date: 12/13/2018
 ms.author: erhopf
-ms.openlocfilehash: 3a0304a69cdff15cddf325be8abe336a42ea4fc1
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 6d463ca73fb533b8a44c2019a478f2df0162cb23
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53089876"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53791451"
 ---
 # <a name="quickstart-convert-text-to-speech-using-net-core"></a>Краткое руководство. Преобразование текста в речь с использованием .NET Core
 
@@ -27,7 +27,7 @@ ms.locfileid: "53089876"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [ПАКЕТ SDK .NET](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial)
+* [Базовый пакет SDK для .NET](https://dotnet.microsoft.com/download)
 * [Visual Studio](https://visualstudio.microsoft.com/downloads/), [Visual Studio Code](https://code.visualstudio.com/download) или любой другой редактор кода;
 * ключ подписки Azure для службы "Речь".
 
@@ -72,7 +72,7 @@ using System.Threading.Tasks;
 
 REST API преобразования текста в речь требует предоставить маркер доступа для аутентификации. Чтобы получить маркер доступа, нужно выполнить обмен. Этот пример меняет ключ подписки службы "Речь" на маркер доступа через конечную точку `issueToken`.
 
-В этом примере предполагается, что подписка службы "Речь" размещена в регионе "Западная часть США". Если вы используете другой регион, измените значение `FetchTokenUri`. Полный список регионов можно получить [здесь](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
+В этом примере предполагается, что подписка службы "Речь" размещена в регионе "Западная часть США". Если вы используете другой регион, измените значение `FetchTokenUri`. См. [полный список регионов](https://docs.microsoft.com/azure/cognitive-services/speech-service/regions#rest-apis).
 
 ```csharp
 public class Authentication
@@ -109,7 +109,7 @@ public class Authentication
 ```
 
 > [!NOTE]
-> Дополнительные сведения см. в разделе [о получении маркера доступа](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#how-to-get-an-access-token).
+> Дополнительные сведения о проверке подлинности см. в разделе [Проверка подлинности с помощью маркера доступа](https://docs.microsoft.com/azure/cognitive-services/authentication#authenticate-with-an-authentication-token).
 
 ## <a name="get-an-access-token-and-set-the-host-url"></a>Получение маркера доступа и настройка URL-адреса узла
 
@@ -162,7 +162,7 @@ string body = @"<speak version='1.0' xmlns='http://www.w3.org/2001/10/synthesis'
 ```
 
 > [!NOTE]
-> В этом примере используется голосовой шрифт `ZiraRUS`. См. [полный список предоставляемых корпорацией Майкрософт голосов и языков](https://review.docs.microsoft.com/azure/cognitive-services/speech-service/language-support). Если вы хотите создать для своего бренда уникальный и узнаваемый голос, изучите статью [Создание настраиваемого голоса](https://review.docs.microsoft.com/azure/cognitive-services/speech-service/how-to-customize-voice-font).
+> В этом примере используется голосовой шрифт `ZiraRUS`. См. [полный список предоставляемых корпорацией Майкрософт голосов и языков](language-support.md). Если вы хотите создать для своего бренда уникальный и узнаваемый голос, изучите статью [Создание настраиваемого голоса](how-to-customize-voice-font.md).
 
 ## <a name="instantiate-the-client-make-a-request-and-save-synthesized-audio-to-a-file"></a>Создание экземпляра клиента, выполнение запроса и сохранение созданного аудио в файл
 

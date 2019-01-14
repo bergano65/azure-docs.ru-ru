@@ -712,6 +712,8 @@ items:
         items:
         - name: Данные приложения
           href: app/analytics.md
+        - name: Централизация ресурсов данных приложения
+          href: log-query/unify-app-resource-data.md
         - name: Стандартные свойства
           href: platform/log-standard-properties.md
         - name: Анализ текстовых данных
@@ -748,6 +750,8 @@ items:
         items:
         - name: Создание, просмотр и администрирование оповещений журналов
           href: platform/alerts-log.md
+        - name: Запросы оповещений журналов
+          href: platform/alerts-log-query.md
         - name: Действия веб-перехватчика для оповещений журнала
           href: platform/alerts-log-webhook.md
         - name: Устранение неполадок с оповещениями журналов
@@ -1005,9 +1009,9 @@ items:
     href: https://stackoverflow.com/search?q=monitoring
   - name: Примеры кода
     href: https://azure.microsoft.com/resources/samples/?service=monitor
-ms.openlocfilehash: 02748b429bf7122dd0f1531d45c8af1217ceaa43
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: ab0a3de001a775480f46f5a434a313f62e82623d
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54120931"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54231059"

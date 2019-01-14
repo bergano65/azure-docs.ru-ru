@@ -3,17 +3,15 @@ title: Журналы сервера в базе данных Azure для Maria
 description: Описание журналов, доступных в базе данных Azure для MariaDB, и параметров для включения различных уровней ведения журналов.
 author: rachel-msft
 ms.author: raagyema
-editor: jasonwhowell
-services: mariadb
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: d982af64517ed452d907f62a39e975d472951392
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a26f61eb199d8f370e1a9dd010932dc868b74ae4
+ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46992989"
+ms.lasthandoff: 12/17/2018
+ms.locfileid: "53545184"
 ---
 # <a name="server-logs-in-azure-database-for-mariadb"></a>Журналы сервера в базе данных Azure для MariaDB
 В базе данных Azure для MariaDB пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
@@ -23,7 +21,7 @@ ms.locfileid: "46992989"
 ## <a name="access-server-logs"></a>Доступ к журналам сервера
 Чтобы просмотреть и скачать журналы сервера в базе данных Azure для MariaDB, можно воспользоваться порталом Azure или Azure CLI.
 
-На портале Azure выберите нужный сервер базы данных Azure для MariaDB. В разделе **Мониторинг** найдите страницу **Журналы сервера**.
+На портале Azure выберите нужный сервер Базы данных Azure для MariaDB. В разделе **Мониторинг** найдите страницу **Журналы сервера**.
 
 <!-- For more information on Azure CLI, see [Configure and access server logs using Azure CLI](howto-configure-server-logs-in-cli.md).-->
 
@@ -40,7 +38,7 @@ ms.locfileid: "46992989"
 - **long_query_time.** Если запрос занимает больше времени, чем задано значением long_query_time (в секундах), информация о нем заносится в журнал. По умолчанию это 10 секунд.
 - **log_slow_admin_statements.** Указывает, нужно ли сохранять в журнал slow_query_log административные инструкции, например ALTER_TABLE и ANALYZE_TABLE.
 - **log_queries_not_using_indexes**. Указывает, нужно ли сохранять в журнал slow_query_log запросы, не использующие индексы.
-- **log_throttle_queries_not_using_indexes.** Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
+- **log_throttle_queries_not_using_indexes**: Ограничивает число не использующих индексы запросов, сохраняемых в журнале медленных запросов. Этот параметр применяется, только если log_queries_not_using_indexes имеет значение "ON" (Включено).
 
 Полное описание параметров журнала медленных запросов см. в [соответствующей документации к MariaDB](https://mariadb.com/kb/en/library/slow-query-log-overview/).
 

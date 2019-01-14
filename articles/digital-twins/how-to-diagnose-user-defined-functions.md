@@ -1,23 +1,27 @@
 ---
 title: Отладка пользовательских функций в Azure Digital Twins | Документация Майкрософт
-description: Рекомендации по отладке пользовательских функций в Azure Digital Twins
+description: Рекомендации по отладке пользовательских функций в Azure Digital Twins
 author: stefanmsft
 manager: deshner
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 11/13/2018
+ms.date: 12/27/2018
 ms.author: stefanmsft
-ms.openlocfilehash: 9476db888a4bfae2d43ae4eec340972d4c2eb714
-ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
+ms.custom: seodec18
+ms.openlocfilehash: e373e7c3ca83a0200cd1b6b945c5e4cb43b77a51
+ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53413019"
+ms.lasthandoff: 01/02/2019
+ms.locfileid: "53974868"
 ---
-# <a name="how-to-debug-issues-with-user-defined-functions-in-azure-digital-twins"></a>Отладка проблем с пользовательскими функциями в Azure Digital Twins
+# <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Сведения о том, как выполнять отладку пользовательских функций в Azure Digital Twins
 
-В этой статье описаны способы диагностики пользовательских функций. Также она описывает некоторые наиболее распространенных сценарии, которые возникают при работе с ними.
+В этой статье описаны способы диагностики пользовательских функций. В ней также описаны некоторые наиболее распространенных сценарии, которые возникают при работе с этими функциями.
+
+>[!TIP]
+> Дополнительные сведения о настройке средств отладки в Azure Digital Twins с использованием журналов действий, журналов диагностики и Azure Monitor см. в разделе [Настройка мониторинга и ведения журнала](./how-to-configure-monitoring.md).
 
 ## <a name="debug-issues"></a>Отладка проблем
 
@@ -28,9 +32,14 @@ ms.locfileid: "53413019"
 Журналы и метрики для экземпляра Azure Digital Twins предоставляются через Azure Monitor. В этой документации предполагается, что вы уже создали рабочую область [Azure Log Analytics](../azure-monitor/log-query/log-query-overview.md) с помощью [портала Azure](../azure-monitor/learn/quick-create-workspace.md), [Azure CLI](../azure-monitor/learn/quick-create-workspace-cli.md) или [ PowerShell](../azure-monitor/learn/quick-create-workspace-posh.md).
 
 > [!NOTE]
-> При первой отправке событий в **Log Analytics** возможна задержка до 5 минут.
+> При первой отправке событий в Azure Log Analytics возможна задержка до пяти минут.
 
-В статье [Сбор и использование данных журнала из ресурсов Azure](../monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs.md) описано, как включить параметры диагностики для экземпляра Azure Digital Twins с помощью портала, Azure CLI или PowerShell. Не забудьте выбрать все категории журналов, метрики и рабочую область Azure Log Analytics.
+Чтобы настроить мониторинг и ведение журнала для ресурсов Azure Digital Twins, обратитесь к разделу [Настройка мониторинга и ведения журнала](./how-to-configure-monitoring.md).
+
+В статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md) подробно описано, как включить параметры диагностики для экземпляра Azure Digital Twins с помощью портала Azure, Azure CLI или PowerShell.
+
+>[!IMPORTANT]
+> Не забудьте выбрать все категории журналов, метрики и рабочую область Azure Log Analytics.
 
 ### <a name="trace-sensor-telemetry"></a>Отслеживание телеметрии от датчика
 
@@ -56,11 +65,11 @@ AzureDiagnostics
 | where Category == 'UserDefinedFunction'
 ```
 
-Дополнительные сведения о мощных операциях с запросами см. в статье [о начале работы с запросами](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries).
+Дополнительные сведения о мощных операциях с запросами см. в статье [Приступая к работе с запросами](../azure-monitor/log-query/get-started-queries.md).
 
 ## <a name="identify-common-issues"></a>Выявление стандартных проблем
 
-Диагностика и выявление стандартных проблем одинаково важны для устранения неполадок, возникающих в решении. Ниже представлены несколько распространенных проблем, возникающих при разработке пользовательских функций.
+Диагностика и выявление стандартных проблем одинаково важны для устранения неполадок, возникающих в решении. Ниже представлено несколько распространенных проблем, возникающих при разработке пользовательских функций.
 
 [!INCLUDE [Digital Twins Management API](../../includes/digital-twins-management-api.md)]
 
@@ -74,11 +83,11 @@ AzureDiagnostics
 GET YOUR_MANAGEMENT_API_URL/roleassignments?path=/&traverse=Down&objectId=YOUR_USER_DEFINED_FUNCTION_ID
 ```
 
-| Параметр | Заменить на |
+| Значение параметра | Заменить на |
 | --- | --- |
-| *YOUR_USER_DEFINED_FUNCTION_ID* | Идентификатор пользовательской функции, для которой нужно извлечь назначенные роли|
+| YOUR_USER_DEFINED_FUNCTION_ID | Идентификатор пользовательской функции, для которой нужно извлечь назначенные роли|
 
-Если назначения ролей извлечь не удается, выполните инструкции из статьи [Использование пользовательских функций в Azure Digital Twins](./how-to-user-defined-functions.md).
+Если назначения роли не существует, обратитесь к статье [Создание назначения роли для пользовательской функции](./how-to-user-defined-functions.md).
 
 ### <a name="check-if-the-matcher-will-work-for-a-sensors-telemetry"></a>Проверка работы сопоставителя для используемых датчиков телеметрии
 
@@ -159,7 +168,7 @@ var customNotification = {
 sendNotification(telemetry.SensorId, "Space", JSON.stringify(customNotification));
 ```
 
-Такой сценарий возникает, если используемый идентификатор ссылается на датчик, а для объекта топологии указан тип "Место".
+Такой сценарий возникает, если используемый идентификатор ссылается на датчик, а для объекта топологии указан тип `Space`.
 
 **Правильный** пример:
 
@@ -200,4 +209,4 @@ function process(telemetry, executionContext) {
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о включении [журналов и мониторинга](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) для Azure Digital Twins.
+Дополнительные сведения о включении [журналов и мониторинга](../azure-monitor/platform/activity-logs-overview.md) для Azure Digital Twins.

@@ -9,15 +9,15 @@ ms.devlang: ''
 ms.topic: conceptual
 author: danimir
 ms.author: danil
-ms.reviewer: carlrab
+ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 12/10/2018
-ms.openlocfilehash: 9e8b9b24707577aba5df754984953ef2f59b9ff9
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 3c809638cef89d111a032e5876b1f2f1b2c1eb7b
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53272870"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53602352"
 ---
 # <a name="monitoring-and-performance-tuning"></a>Мониторинг и настройка производительности
 
@@ -91,7 +91,7 @@ ms.locfileid: "53272870"
 
 Существует несколько обходных решений для разрешения проблем, каждое из которых имеет свои преимущества и недостатки.
 
-- Использование указания запроса [RECOMPILE](https://docs.microsoft.com/sql/t-sql/queries/hints-transact-sql-query) при каждом выполнении запроса. Этот метод заменяет время компиляции и увеличивает загрузку ЦП для улучшения качества плана. Использование параметра `RECOMPILE` часто недопустимо для рабочих нагрузок, требующих высокую пропускную способность.
+- Использование указания запроса [RECOMPILE](https://docs.microsoft.com/sql/t-sql/queries/hints-transact-sql-query) при каждом выполнении запроса. Этот метод позволяет заменить время компиляции и увеличение загрузки ЦП на улучшение качества плана. Использование параметра `RECOMPILE` часто недопустимо для рабочих нагрузок, требующих высокую пропускную способность.
 - Использование указания запроса [OPTION (OPTIMIZE FOR…)](https://docs.microsoft.com/sql/t-sql/queries/hints-transact-sql-query), чтобы переопределить фактическое значение параметра типичным значением, которое обеспечивает достаточно хороший план для большинства возможных значений параметра.   Для этого варианта требуется хорошее понимание оптимальных значений параметров и связанных с ними характеристик плана.
 - Использование указания запроса [OPTION (OPTIMIZE FOR UNKNOWN)](https://docs.microsoft.com/sql/t-sql/queries/hints-transact-sql-query), чтобы переопределить фактическое значение параметра в обмен на использование среднего значения вектора плотности. Другой способ сделать это – записать входящие значения параметров в локальные переменные, а затем использовать локальные переменные внутри предикатов вместо использования самих параметров. Средняя плотность должна быть *достаточно хорошей* для конкретного исправления.
 - Полное отключение сканирования параметров с помощью указания запроса [DISABLE_PARAMETER_SNIFFING](https://docs.microsoft.com/sql/t-sql/queries/hints-transact-sql-query).
@@ -104,7 +104,7 @@ ms.locfileid: "53272870"
 
 - Запись блога о [выявлении проблемных параметров](https://blogs.msdn.microsoft.com/queryoptteam/2006/03/31/i-smell-a-parameter/).
 - Запись блога о [проблемах сканирования параметра и обходных путях ее решения](https://blogs.msdn.microsoft.com/turgays/2013/09/10/parameter-sniffing-problem-and-possible-workarounds/).
-- Запись блога о [сканировании параметров "слона" и "мыши"](ttps://www.brentozar.com/archive/2013/06/the-elephant-and-the-mouse-or-parameter-sniffing-in-sql-server/).
+- Запись блога о [сканировании параметров "слона" и "мыши"](https://www.brentozar.com/archive/2013/06/the-elephant-and-the-mouse-or-parameter-sniffing-in-sql-server/).
 - Запись блога о [динамическом SQL и качестве плана для параметризованных запросов](https://blogs.msdn.microsoft.com/conor_cunningham_msft/2009/06/03/conor-vs-dynamic-sql-vs-procedures-vs-plan-quality-for-parameterized-queries/).
 
 ### <a name="troubleshooting-compile-activity-due-to-improper-parameterization"></a>Устранение неполадок компиляции активности из-за неправильной параметризации

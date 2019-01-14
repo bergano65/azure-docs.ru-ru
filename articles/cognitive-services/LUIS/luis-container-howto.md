@@ -1,5 +1,5 @@
 ---
-title: Контейнеры Docker
+title: контейнеры Docker;
 titleSuffix: Language Understanding - Azure Cognitive Services
 description: Контейнер LUIS загружает обученное или опубликованное приложение в контейнер Docker и предоставляет доступ к прогнозам запросов из конечных точек API контейнера.
 services: cognitive-services
@@ -11,14 +11,14 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: diberry
-ms.openlocfilehash: a6170d51e1a8756020b4f2caa733c388b2ce4060
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: 1398db59199c62e90f8cf5654586bda1c24f2541
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53013822"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54055053"
 ---
-# <a name="install-and-run-containers"></a>Установка и запуск контейнеров
+# <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
 Контейнер Интеллектуальной службы распознавания речи (LUIS) загружает обученную или опубликованную модель Интеллектуальной службы распознавания речи ([приложение LUIS](https://www.luis.ai)) в контейнер Docker и предоставляет доступ к прогнозам запросов из конечных точек API контейнера. Можно собирать журналы запросов из контейнера и отправлять их обратно в модель Интеллектуальной службы распознавания речи Azure для повышения точности прогнозов приложения.
 
@@ -34,7 +34,7 @@ ms.locfileid: "53013822"
 
 |Обязательно|Назначение|
 |--|--|
-|Модуль Docker| Для работы с этой предварительной версией необходимо, чтобы модуль Docker был установлен на [главном компьютере](#the-host-computer). Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
+|Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
 |Ресурс Интеллектуальной службы распознавания речи (LUIS) и связанное приложение |Для использования контейнера необходимо следующее:<br><br>* [Ресурс _Интеллектуальной службы распознавания речи_ Azure](luis-how-to-azure-subscription.md) и связанный ключ конечной точки и URI конечной точки (используется в качестве конечной точки выставления счетов).<br>* Обученное или опубликованное приложение, упакованное в виде подключенных входных данных к контейнеру со связанным идентификатором приложения.<br>* Ключ разработки для скачивания пакета установки, если эти действия выполняются из API.<br><br>Эти требования используются для передачи аргументов командной строки в следующие переменные:<br><br>**{AUTHORING_KEY}**. Этот ключ используется для получения упакованного приложения из службы LUIS в облаке и отправки журналов запросов обратно в облако. Формат — `xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`.<br><br>**{APPLICATION_ID}**. Этот идентификатор используется для выбора приложения. Формат — `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`.<br><br>**{ENDPOINT_KEY}**. Этот ключ используется для запуска контейнера. Ключ конечной точки можно найти в двух местах: на портале Azure в списке ключей ресурса _Language Understanding_, а также на портале LUIS на странице параметров ключей и конечных точек. Не используйте ключ starter.<br><br>**{BILLING_ENDPOINT}**. Значение конечной точки выставления счетов доступно на странице обзора Интеллектуальной службы распознавания речи на портале Azure. Пример: `https://westus.api.cognitive.microsoft.com/luis/v2.0`.<br><br>[Ключ разработки и ключ конечной точки](luis-boundaries.md#key-limits) служат для разных целей. Не используйте их как взаимозаменяемые. |
 
@@ -42,9 +42,9 @@ ms.locfileid: "53013822"
 
 **Главным** является компьютер, на котором выполняется контейнер Docker. Это может быть компьютер в локальной среде или служба размещения Docker в Azure, включая следующие решения:
 
-* [Служба Azure Kubernetes (AKS)](/azure/aks/);
-* [Экземпляры контейнеров Azure](/azure/container-instances/);
-* кластер [Kubernetes](https://kubernetes.io/), развернутый в [Azure Stack](/azure/azure-stack/). Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](/azure/azure-stack/user/azure-stack-solution-template-kubernetes-deploy).
+* [Служба Azure Kubernetes (AKS)](../../aks/index.yml)
+* [Экземпляры контейнеров Azure](../../container-instances/index.yml);
+* кластер [Kubernetes](https://kubernetes.io/), развернутый в [Azure Stack](../../azure-stack/index.yml). Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](../../azure-stack/user/azure-stack-solution-template-kubernetes-deploy.md).
 
 ### <a name="container-requirements-and-recommendations"></a>Требования к контейнеру и рекомендации
 
@@ -66,7 +66,7 @@ ms.locfileid: "53013822"
 docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 ```
 
-Полное описание доступных тегов, таких как `latest` из предыдущей команды, см. в разделе [LUIS](https://hub.docker.com/r/microsoft/azure-cognitive-services-luis/) на сайте Docker Hub.
+Полное описание доступных тегов, таких как `latest` из предыдущей команды, см. в разделе [LUIS](https://go.microsoft.com/fwlink/?linkid=2043204) на сайте Docker Hub.
 
 > [!TIP]
 > Используйте команду [docker images](https://docs.docker.com/engine/reference/commandline/images/), чтобы получить список скачанных образов контейнеров. Например, следующая команда возвращает таблицу со списком идентификаторов, репозиториев и тегов для каждого скачанного образа контейнера:
@@ -236,7 +236,7 @@ ApiKey={ENDPOINT_KEY}
 ```
 
 > [!Note] 
-> Предыдущая команда использует каталог с диска `c:`, чтобы избежать конфликтов разрешений в Windows. Если вам нужен конкретный каталог для входных данных, может потребоваться предоставить соответствующие разрешения службе Docker. Предыдущая команда Docker использует обратную косую черту (`\`) как символ продолжения строки. Замените или удалите его в соответствии с требованиями операционной системы [главного компьютера](#the-host-computer). Не изменяйте порядок аргументов, если вы не являетесь уверенным пользователем контейнеров Docker.
+> Предыдущая команда использует каталог с диска `c:`, чтобы избежать конфликтов разрешений в Windows. Если вам нужен конкретный каталог для входных данных, может потребоваться предоставить соответствующие разрешения службе Docker. В предыдущей команде Docker используется обратная косая черта (`\`) как символ продолжения строки. Замените или удалите ее в соответствии с требованиями операционной системы [главного компьютера](#the-host-computer). Не изменяйте порядок аргументов, если вы не являетесь уверенным пользователем контейнеров Docker.
 
 
 Эта команда:

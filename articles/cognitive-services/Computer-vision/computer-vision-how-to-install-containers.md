@@ -1,24 +1,24 @@
 ---
-title: Установка и запуск контейнеров
-titlesuffix: Computer Vision - Azure Cognitive Services
+title: Установка и запуск контейнеров — API компьютерного зрения
+titlesuffix: Azure Cognitive Services
 description: В этом пошаговом руководстве показано, как скачивать, устанавливать и выполнять контейнеры компьютерного зрения.
 services: cognitive-services
 author: diberry
 manager: cgronlun
-ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: diberry
-ms.openlocfilehash: 9964be07c578cd1cafd93328bffe972483123e03
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.custom: seodec18
+ms.openlocfilehash: 6a6468cd71cf83c627f6dd72e5a1fc5564361d50
+ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53077041"
+ms.lasthandoff: 12/18/2018
+ms.locfileid: "53579861"
 ---
-# <a name="install-and-run-containers"></a>Установка и запуск контейнеров
+# <a name="install-and-run-recognize-text-containers"></a>Установка и запуск контейнеров распознавания текста
 
 Контейнеризация — это подход к распространению программного обеспечения, в котором приложение или служба входит в состав образа контейнера. Конфигурация и зависимости приложения или службы включены в образ контейнера. Образ контейнера может быть развернут на узле контейнера с незначительной модификацией или без нее. Контейнеры изолированы друг от друга и от базовой операционной системы. При этом они расходуют меньше ресурсов, чем виртуальная машина. Контейнеры для краткосрочных задач можно создавать из образов контейнеров и удалять, когда они станут ненужными.
 
@@ -32,7 +32,7 @@ ms.locfileid: "53077041"
 
 Прежде чем использовать контейнер распознавания текста, необходимо выполнить следующие условия:
 
-**Модуль Docker**. Модуль Docker должен быть установлен в локальной среде. Docker предоставляет пакеты для настройки среды с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Linux](https://docs.docker.com/engine/installation/#supported-platforms) и [Windows](https://docs.docker.com/docker-for-windows/). В Windows Docker должен быть настроен для поддержки контейнеров Linux. Контейнеры Docker также можно развертывать непосредственно в [Службе Azure Kubernetes](/azure/aks/), [Экземплярах контейнеров Azure](/azure/container-instances/) или в кластере [Kubernetes](https://kubernetes.io/), развернутом в [Azure Stack](/azure/azure-stack/). Дополнительные сведения о развертывании Kubernetes в Azure Stack см. в [этой статье](/azure/azure-stack/user/azure-stack-solution-template-kubernetes-deploy).
+**Модуль Docker**. Модуль Docker должен быть установлен в локальной среде. Docker предоставляет пакеты для настройки среды с Docker для [macOS](https://docs.docker.com/docker-for-mac/), [Linux](https://docs.docker.com/engine/installation/#supported-platforms) и [Windows](https://docs.docker.com/docker-for-windows/). В Windows Docker должен быть настроен для поддержки контейнеров Linux. Контейнеры Docker также можно развертывать непосредственно в [Службе Azure Kubernetes](../../aks/index.yml), [Экземплярах контейнеров Azure](../../container-instances/index.yml) или в кластере [Kubernetes](https://kubernetes.io/), развернутом в [Azure Stack](../../azure-stack/index.yml). Дополнительные сведения о развертывании Kubernetes в Azure Stack см. в [этой статье](../../azure-stack/user/azure-stack-solution-template-kubernetes-deploy.md).
 
 Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure.
 

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: bb17748968d0875cae132730a02f490eab966690
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: ad27a7eaf88ae57f730609e2b0f43a2f5ea182a1
+ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53388701"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53653515"
 ---
 # <a name="operating-system-functionality-on-azure-app-service"></a>Функциональные возможности операционной системы для службы приложений Azure
 В этой статье описываются базовые функциональные возможности операционной системы, доступные для всех приложений в [Службе приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714). Данные функциональные возможности включают в себя доступ к файлам, сети и реестру, а также диагностику и журналы событий. 
@@ -131,11 +131,5 @@ ms.locfileid: "53388701"
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-[Песочница веб-приложений Azure](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox): самые последние сведения о среде выполнения службы приложений. Эта страница поддерживается непосредственно командой разработчиков службы приложений.
-
-> [!NOTE]
-> Чтобы приступить к работе со службой приложений Azure до создания учетной записи Azure, перейдите к разделу [Пробное использование службы приложений](https://azure.microsoft.com/try/app-service/), где вы можете быстро создать кратковременное веб-приложение начального уровня в службе приложений. Никаких кредитных карт и обязательств.
-> 
-> 
-
+[Песочница Службы приложений Azure](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox): последние сведения о среде выполнения Службы приложений. Эта страница поддерживается непосредственно командой разработчиков службы приложений.
 

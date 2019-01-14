@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 12/11/2018
+ms.date: 12/18/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 5e13f21971c7babaeaebc9714fe2a040229eebb2
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 780a4c5cd590b4fa1b4dd5b29fab738cb9a8bb6a
+ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53278684"
+ms.lasthandoff: 12/19/2018
+ms.locfileid: "53608449"
 ---
 # <a name="azure-ad-connect-version-release-history"></a>Azure AD Connect выполняет следующие функции: Журнал выпуска версий
 Команда Azure Active Directory (Azure AD) регулярно обновляет службу Azure AD Connect, добавляя новые функции и возможности. Не все эти дополнения применимы для всех пользователей.
@@ -36,6 +36,17 @@ ms.locfileid: "53278684"
 Необходимые разрешения | Разрешения, необходимые для установки обновления, см. в [этом](reference-connect-accounts-permissions.md#upgrade) разделе.
 
 Скачивание | [Скачать Azure AD Connect ](https://go.microsoft.com/fwlink/?LinkId=615771).
+
+## <a name="12700"></a>1.2.70.0
+
+### <a name="release-status"></a>Состояние выпуска
+
+18.12.2018 выпущена версия для скачивания.
+
+### <a name="fixed-issues"></a>Исправленные проблемы
+
+Эта сборка обновляет нестандартные соединители (например, универсальный соединитель LDAP и универсальный соединитель SQL), поставляемые с Azure AD Connect. Дополнительные сведения о применимых соединителях см. в разделе о версии 1.1.911.0 в [истории выпусков версий соединителей](/microsoft-identity-manager/reference/microsoft-identity-manager-2016-connector-version-history).
+
 
 ## <a name="12690"></a>1.2.69.0
 

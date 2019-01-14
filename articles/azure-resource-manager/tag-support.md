@@ -4,14 +4,14 @@ description: В этой статье описываются типы ресур
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 11/20/2018
+ms.date: 01/02/2019
 ms.author: tomfitz
-ms.openlocfilehash: 580955d3c6fd7a33c152e49e601d8078eb169a22
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 50ea7a2446b5560bd208b2da128fa877068ce452
+ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53409672"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "54000297"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [добавления тегов](resource-group-using-tags.md).
@@ -24,15 +24,20 @@ ms.locfileid: "53409672"
 ## <a name="ad-hybrid-health-service"></a>служба работоспособности гибридного AD;
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| services; | Нет  | 
-| addsservices | Нет  | 
-| Конфигурация | Нет  | 
-| agents | Нет  | 
+| addsservices | Нет  |
 | aadsupportcases | Нет  | 
-| reports | Нет  | 
-| servicehealthmetrics | Нет  | 
-| журналы | Нет  | 
+| agents | Нет  | 
 | anonymousapiusers | Нет  | 
+| Конфигурация | Нет  | 
+| журналы | Нет  | 
+| reports | Нет  | 
+| services; | Нет  | 
+| servicehealthmetrics | Нет  | 
+
+## <a name="aks"></a>AKS
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| managedClusters | Yes | 
 
 ## <a name="analysis-services"></a>Analysis Services
 | Тип ресурса | Поддержка тегов |
@@ -43,11 +48,11 @@ ms.locfileid: "53409672"
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | apiManagementAccounts | Нет  | 
-| apiManagementAccounts/connectionProviders | Нет  | 
-| apiManagementAccounts/connections | Нет  | 
-| apiManagementAccounts/connectionAcls | Нет  | 
-| apiManagementAccounts/connectionProviderAcls | Нет  | 
 | apiManagementAccounts/apis | Нет  | 
+| apiManagementAccounts/connectionAcls | Нет  | 
+| apiManagementAccounts/connectionProviders | Нет  | 
+| apiManagementAccounts/connectionProviderAcls | Нет  | 
+| apiManagementAccounts/connections | Нет  | 
 
 ## <a name="api-management"></a>Управление API
 | Тип ресурса | Поддержка тегов |
@@ -58,11 +63,48 @@ ms.locfileid: "53409672"
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | automationAccounts | Yes | 
-| automationAccounts/runbooks | Yes | 
 | automationAccounts/configurations | Yes | 
-| automationAccounts/webhooks | Нет  | 
-| automationAccounts/softwareUpdateConfigurations | Нет  | 
 | automationAccounts/jobs | Нет  | 
+| automationAccounts/runbooks | Yes | 
+| automationAccounts/softwareUpdateConfigurations | Нет  | 
+| automationAccounts/webhooks | Нет  | 
+
+## <a name="azure-database-for-mariadb"></a>База данных Azure для MariaDB
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| servers | Yes | 
+| servers/configurations | Нет  |
+| servers/databases | Нет  |
+| servers/firewallRules | Нет  |
+| servers/recoverableServers | Нет  | 
+| servers/securityAlertPolicies | Нет  |
+| servers/virtualNetworkRules | Нет  | 
+
+## <a name="azure-database-for-mysql"></a>База данных Azure для MySQL
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| servers | Yes | 
+| servers/configurations | Нет  |
+| servers/databases | Нет  |
+| servers/firewallRules | Нет  |
+| servers/recoverableServers | Нет  | 
+| servers/securityAlertPolicies | Нет  |
+| servers/virtualNetworkRules | Нет  | 
+
+## <a name="azure-database-for-postgresql"></a>База данных Azure для PostgreSQL
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| servers | Yes | 
+| servers/advisors | Нет  | 
+| servers/configurations | Нет  |
+| servers/databases | Нет  |
+| servers/firewallRules | Нет  |
+| servers/queryTexts | Нет  | 
+| servers/recoverableServers | Нет  | 
+| servers/securityAlertPolicies | Нет  |
+| servers/topQueryStatistics | Нет  | 
+| servers/virtualNetworkRules | Нет  | 
+| servers/waitStatistics | Нет  | 
 
 ## <a name="batch"></a>Пакетная служба Azure
 | Тип ресурса | Поддержка тегов |
@@ -87,12 +129,12 @@ ms.locfileid: "53409672"
 ## <a name="cdn"></a>CDN
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
+| edgenodes | Нет  | 
 | профили | Yes | 
 | profiles/endpoints | Yes | 
-| profiles/endpoints/origins | Нет  | 
 | profiles/endpoints/customdomains | Нет  | 
+| profiles/endpoints/origins | Нет  | 
 | validateProbe | Нет  | 
-| edgenodes | Нет  | 
 
 ## <a name="classic-compute"></a>Классические вычислительные ресурсы
 | Тип ресурса | Поддержка тегов |
@@ -114,8 +156,8 @@ ms.locfileid: "53409672"
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | virtualNetworks | Нет  | 
-| virtualNetworks/virtualNetworkPeerings | Нет  | 
 | virtualNetworks/remoteVirtualNetworkPeeringProxies | Нет  | 
+| virtualNetworks/virtualNetworkPeerings | Нет  | 
 
 ## <a name="classic-storage"></a>Классическая служба хранилища
 | Тип ресурса | Поддержка тегов |
@@ -127,23 +169,23 @@ ms.locfileid: "53409672"
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | availabilitySets | Yes | 
-| virtualMachines | Yes | 
-| virtualMachines/extensions | Yes | 
-| virtualMachineScaleSets | Yes | 
-| virtualMachineScaleSets/extensions | Нет  | 
-| virtualMachineScaleSets/virtualMachines | Нет  | 
-| virtualMachineScaleSets/networkInterfaces | Нет  | 
-| virtualMachineScaleSets/virtualMachines/networkInterfaces | Нет  | 
-| virtualMachineScaleSets/publicIPAddresses | Нет  | 
+| disks | Yes | 
+| images | Yes | 
 | restorePointCollections | Yes | 
 | restorePointCollections/restorePoints | Нет  | 
-| virtualMachines/diagnosticSettings | Нет  | 
-| virtualMachines/metricDefinitions | Нет  | 
 | sharedVMImages | Yes | 
 | sharedVMImages/versions | Yes | 
-| disks | Yes | 
 | snapshots | Yes | 
-| images | Yes | 
+| virtualMachines | Yes | 
+| virtualMachines/diagnosticSettings | Нет  | 
+| virtualMachines/extensions | Yes | 
+| virtualMachines/metricDefinitions | Нет  | 
+| virtualMachineScaleSets | Yes | 
+| virtualMachineScaleSets/extensions | Нет  | 
+| virtualMachineScaleSets/networkInterfaces | Нет  | 
+| virtualMachineScaleSets/publicIPAddresses | Нет  | 
+| virtualMachineScaleSets/virtualMachines | Нет  | 
+| virtualMachineScaleSets/virtualMachines/networkInterfaces | Нет  | 
 
 ## <a name="container"></a>Контейнер
 | Тип ресурса | Поддержка тегов |
@@ -155,6 +197,14 @@ ms.locfileid: "53409672"
 | ------------- | ----------- |
 | containerGroups | Yes | 
 | serviceAssociationLinks | Нет  | 
+
+## <a name="container-registry"></a>Реестр контейнеров
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| registries | Yes | 
+| registries/replications | Yes |
+| registries/tasks | Yes |
+| registries/webhooks | Yes |
 
 ## <a name="container-service"></a>Служба контейнеров
 | Тип ресурса | Поддержка тегов |
@@ -177,6 +227,11 @@ ms.locfileid: "53409672"
 | ------------- | ----------- |
 | Соединители | Yes | 
 
+## <a name="data-box"></a>Data Box
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| jobs | Yes | 
+
 ## <a name="data-box-edge"></a>Data Box Edge
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
@@ -196,11 +251,11 @@ ms.locfileid: "53409672"
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | dataFactories | Yes | 
-| factories | Yes | 
-| factories/integrationRuntimes | Нет  | 
 | dataFactories/diagnosticSettings | Нет  | 
 | dataFactories/metricDefinitions | Нет  | 
 | dataFactorySchema | Нет  | 
+| factories | Yes | 
+| factories/integrationRuntimes | Нет  | 
 
 ## <a name="devices"></a>Устройства
 | Тип ресурса | Поддержка тегов |
@@ -218,9 +273,24 @@ ms.locfileid: "53409672"
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | labs | Yes | 
-| schedules | Yes | 
-| labs/virtualMachines | Yes | 
+| labs/artifactsources | Yes |
+| labs/costs | Yes |
+| labs/customimages | Yes |
+| labs/formulas | Yes |
+| labs/notificationchannels | Yes |
+| labs/policysets/policies | Yes |
+| labs/schedules | Yes |
 | labs/serviceRunners | Yes | 
+| labs/users | Yes |
+| labs/users/disks | Yes |
+| labs/users/environments | Yes |
+| labs/users/secrets | Yes |
+| labs/users/servicefabrics | Yes |
+| labs/users/servicefabrics/schedules | Yes |
+| labs/virtualMachines | Yes | 
+| labs/virtualmachines/schedules | Yes |
+| labs/virtualnetworks | Yes |
+| schedules | Yes | 
 
 ## <a name="dynamics-lcs"></a>Dynamics LCS.
 | Тип ресурса | Поддержка тегов |
@@ -232,18 +302,23 @@ ms.locfileid: "53409672"
 ## <a name="event-grid"></a>Сетка событий Azure
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| eventSubscriptions | Нет  | 
-| topics | Yes | 
 | domains | Yes | 
 | domains/topics | Нет  | 
-| topicTypes | Нет  | 
+| eventSubscriptions | Нет  | 
 | extensionTopics | Нет  | 
+| topics | Yes | 
+| topicTypes | Нет  | 
 
 ## <a name="event-hub"></a>Концентратор событий
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| namespaces | Yes | 
 | clusters | Yes | 
+| namespaces | Yes | 
+| namespaces/AuthorizationRules | Нет  |
+| namespaces/disasterRecoveryConfigs | Нет  |
+| namespaces/eventhubs | Нет  |
+| namespaces/eventhubs/authorizationRules | Нет  |
+| namespaces/eventhubs/consumergroups | Нет  |
 
 ## <a name="hana-on-azure"></a>HANA в Azure
 | Тип ресурса | Поддержка тегов |
@@ -264,28 +339,32 @@ ms.locfileid: "53409672"
 ## <a name="insights"></a>Аналитика
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| components | Yes | 
-| components/query | Нет  | 
-| components/metrics | Нет  | 
-| components/events | Нет  | 
-| webtests | Yes | 
-| Запросы | Нет  | 
-| scheduledqueryrules | Yes | 
-| components/pricingPlans | Нет  | 
-| migrateToNewPricingModel | Нет  | 
-| rollbackToLegacyPricingModel | Нет  | 
+| actionGroups | Yes |
+| activityLogAlerts | Yes |
+| alertrules | Yes |
 | automatedExportSettings | Нет  | 
-| workbooks | Yes | 
-| myWorkbooks | Нет  | 
+| components | Yes | 
+| components/events | Нет  | 
+| components/metrics | Нет  | 
+| components/pricingPlans | Нет  | 
+| components/query | Нет  | 
 | журналы | Нет  | 
+| metricAlerts | Yes |
+| migrateToNewPricingModel | Нет  | 
+| myWorkbooks | Нет  | 
+| Запросы | Нет  | 
+| rollbackToLegacyPricingModel | Нет  | 
+| scheduledqueryrules | Yes | 
+| webtests | Yes | 
+| workbooks | Yes | 
 
 ## <a name="key-vault"></a>Key Vault
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| vaults | Yes | 
-| vaults/secrets | Нет  | 
-| vaults/accessPolicies | Нет  | 
 | deletedVaults | Нет  | 
+| vaults | Yes | 
+| vaults/accessPolicies | Нет  | 
+| vaults/secrets | Нет  | 
 
 ## <a name="log-analytics"></a>Log Analytics
 | Тип ресурса | Поддержка тегов |
@@ -295,8 +374,8 @@ ms.locfileid: "53409672"
 ## <a name="logic"></a>Логика
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| workflows | Yes | 
 | integrationAccounts | Yes | 
+| workflows | Yes | 
 
 ## <a name="machine-learning-services"></a>Службы машинного обучения
 | Тип ресурса | Поддержка тегов |
@@ -309,13 +388,6 @@ ms.locfileid: "53409672"
 | ------------- | ----------- |
 | Identities | Нет  | 
 | userAssignedIdentities | Yes | 
-
-## <a name="mariadb"></a>MariaDB
-| Тип ресурса | Поддержка тегов |
-| ------------- | ----------- |
-| servers | Yes | 
-| servers/recoverableServers | Нет  | 
-| servers/virtualNetworkRules | Нет  | 
 
 ## <a name="marketplace-apps"></a>Приложения Microsoft Azure Marketplace
 | Тип ресурса | Поддержка тегов |
@@ -332,64 +404,57 @@ ms.locfileid: "53409672"
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | mediaservices | Yes | 
+| mediaservices/accountFilters | Нет  | 
 | mediaservices/assets | Нет  | 
+| mediaservices/assets/assetFilters | Нет  | 
 | mediaservices/contentKeyPolicies | Нет  | 
-| mediaservices/streamingLocators | Нет  | 
-| mediaservices/streamingPolicies | Нет  | 
 | mediaservices/eventGridFilters | Нет  | 
-| mediaservices/transforms | Нет  | 
-| mediaservices/transforms/jobs | Нет  | 
-| mediaservices/streamingEndpoints | Yes | 
+| mediaservices/liveEventOperations | Нет  | 
 | mediaservices/liveEvents | Yes | 
 | mediaservices/liveEvents/liveOutputs | Нет  | 
-| mediaservices/streamingEndpointOperations | Нет  | 
-| mediaservices/liveEventOperations | Нет  | 
 | mediaservices/liveOutputOperations | Нет  | 
-| mediaservices/assets/assetFilters | Нет  | 
-| mediaservices/accountFilters | Нет  | 
-
-## <a name="mysql"></a>MySQL
-| Тип ресурса | Поддержка тегов |
-| ------------- | ----------- |
-| servers | Yes | 
-| servers/recoverableServers | Нет  | 
-| servers/virtualNetworkRules | Нет  | 
+| mediaservices/streamingEndpoints | Yes | 
+| mediaservices/streamingEndpointOperations | Нет  | 
+| mediaservices/streamingLocators | Нет  | 
+| mediaservices/streamingPolicies | Нет  | 
+| mediaservices/transforms | Нет  | 
+| mediaservices/transforms/jobs | Нет  | 
 
 ## <a name="network"></a>Сеть
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| virtualNetworks | Yes | 
-| publicIPAddresses | Yes | 
-| networkInterfaces | Yes | 
+| applicationGateways | Yes | 
+| applicationSecurityGroups | Yes | 
+| azureFirewalls | Yes | 
+| connections | Yes | 
+| ddosProtectionPlans | Yes | 
+| expressRouteCircuits | Yes | 
+| frontdoors | Yes | 
+| frontdoorWebApplicationFirewallPolicies | Yes | 
 | interfaceEndpoints | Yes | 
 | loadBalancers | Yes | 
-| networkSecurityGroups | Yes | 
-| applicationSecurityGroups | Yes | 
-| serviceEndpointPolicies | Yes | 
+| localNetworkGateways | Yes | 
 | networkIntentPolicies | Yes | 
-| routeTables | Yes | 
-| publicIPPrefixes | Yes | 
+| networkInterfaces | Yes | 
+| networkProfiles | Yes | 
+| networkSecurityGroups | Yes | 
 | networkWatchers | Yes | 
 | networkWatchers/connectionMonitors | Yes | 
 | networkWatchers/lenses | Yes | 
 | networkWatchers/pingMeshes | Yes | 
-| virtualNetworkGateways | Yes | 
-| localNetworkGateways | Yes | 
-| connections | Yes | 
-| applicationGateways | Yes | 
-| expressRouteCircuits | Yes | 
-| routeFilters | Yes | 
-| virtualWans | Yes | 
-| vpnSites | Yes | 
-| virtualHubs | Yes | 
-| vpnGateways | Yes | 
-| azureFirewalls | Yes | 
-| virtualNetworkTaps | Yes | 
 | privateLinkServices | Yes | 
-| ddosProtectionPlans | Yes | 
-| networkProfiles | Yes | 
-| frontdoors | Yes | 
-| frontdoorWebApplicationFirewallPolicies | Yes | 
+| publicIPAddresses | Yes | 
+| publicIPPrefixes | Yes | 
+| routeFilters | Yes | 
+| routeTables | Yes | 
+| serviceEndpointPolicies | Yes | 
+| virtualHubs | Yes | 
+| virtualNetworks | Yes | 
+| virtualNetworkGateways | Yes | 
+| virtualNetworkTaps | Yes | 
+| virtualWans | Yes | 
+| vpnGateways | Yes | 
+| vpnSites | Yes | 
 | webApplicationFirewallPolicies | Yes | 
 
 ## <a name="notification-hubs"></a>Центры уведомлений
@@ -397,6 +462,20 @@ ms.locfileid: "53409672"
 | ------------- | ----------- |
 | namespaces | Yes | 
 | namespaces/notificationHubs | Yes | 
+
+## <a name="operational-insights"></a>Operational Insights;
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| workspaces | Yes |
+| workspaces/dataSources | Yes |
+| workspaces/linkedServices | Yes |
+| workspaces/savedSearches | Нет  |
+| workspaces/storageInsightConfigs | Yes |
+
+## <a name="operations-management"></a>Пакет Operations Management
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| solutions | Нет  |
 
 ## <a name="portal"></a>Microsoft Azure
 | Тип ресурса | Поддержка тегов |
@@ -408,17 +487,6 @@ ms.locfileid: "53409672"
 | ------------- | ----------- |
 | rootResources | Yes | 
 
-## <a name="postgresql"></a>PostgreSQL
-| Тип ресурса | Поддержка тегов |
-| ------------- | ----------- |
-| servers | Yes | 
-| servers/recoverableServers | Нет  | 
-| servers/virtualNetworkRules | Нет  | 
-| servers/topQueryStatistics | Нет  | 
-| servers/queryTexts | Нет  | 
-| servers/waitStatistics | Нет  | 
-| servers/advisors | Нет  | 
-
 ## <a name="power-bi"></a>Power BI
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
@@ -427,8 +495,8 @@ ms.locfileid: "53409672"
 ## <a name="recovery-services"></a>Службы восстановления
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| vaults | Yes | 
 | backupProtectedItems | Нет  | 
+| vaults | Yes | 
 
 ## <a name="relay"></a>Передача
 | Тип ресурса | Поддержка тегов |
@@ -450,8 +518,8 @@ ms.locfileid: "53409672"
 ## <a name="search"></a>поиска
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| searchServices | Yes | 
 | resourceHealthMetadata | Нет  | 
+| searchServices | Yes | 
 
 ## <a name="security"></a>Безопасность
 | Тип ресурса | Поддержка тегов |
@@ -494,6 +562,64 @@ ms.locfileid: "53409672"
 | applicationDefinitions | Yes | 
 | jitRequests | Yes | 
 
+## <a name="sql"></a>SQL
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| locations/instanceFailoverGroups | Нет  |
+| managedInstances | Yes |
+| managedInstances/databases | Yes |
+| managedInstances/databases/backupShortTermRetentionPolicies | Нет  |
+| managedInstances/databases/schemas/tables/columns/sensitivityLabels | Нет  |
+| managedInstances/databases/vulnerabilityAssessments | Нет  |
+| managedInstances/databases/vulnerabilityAssessments/rules/baselines | Нет  |
+| managedInstances/encryptionProtector | Нет  |
+| managedInstances/keys | Нет  |
+| managedInstances/restorableDroppedDatabases/backupShortTermRetentionPolicies | Нет  |
+| managedInstances/vulnerabilityAssessments | Нет  |
+| servers | Yes |
+| servers/administrators | Нет  |
+| servers/advisors | Нет  |
+| servers/auditingSettings | Нет  |
+| servers/backupLongTermRetentionVaults | Нет  |
+| servers/communicationLinks | Нет  |
+| servers/connectionPolicies | Нет  |
+| servers/databases | Yes |
+| servers/databases/advisors | Нет  |
+| servers/databases/auditingSettings | Нет  |
+| servers/databases/backupLongTermRetentionPolicies | Нет  |
+| servers/databases/backupShortTermRetentionPolicies | Нет  |
+| servers/databases/connectionPolicies | Нет  |
+| servers/databases/dataMaskingPolicies | Нет  |
+| servers/databases/dataMaskingPolicies/rules | Нет  |
+| servers/databases/extendedAuditingSettings | Нет  |
+| servers/databases/extensions | Нет  |
+| servers/databases/geoBackupPolicies | Нет  |
+| servers/databases/schemas/tables/columns/sensitivityLabels | Нет  |
+| servers/databases/securityAlertPolicies | Нет  |
+| servers/databases/syncGroups | Нет  |
+| servers/databases/syncGroups/syncMembers | Нет  |
+| servers/databases/transparentDataEncryption | Нет  |
+| servers/databases/vulnerabilityAssessments | Нет  |
+| servers/databases/vulnerabilityAssessments/rules/baselines | Нет  |
+| servers/disasterRecoveryConfiguration | Нет  |
+| servers/dnsAliases | Нет  |
+| servers/elasticPools | Yes |
+| servers/encryptionProtector | Нет  |
+| servers/extendedAuditingSettings | Нет  |
+| servers/failoverGroups | Yes |
+| servers/firewallRules | Нет  |
+| servers/jobAgents | Yes |
+| servers/jobAgents/credentials | Нет  |
+| servers/jobAgents/jobs | Нет  |
+| servers/jobAgents/jobs/executions | Нет  |
+| servers/jobAgents/jobs/steps | Нет  |
+| servers/jobAgents/targetGroups | Нет  |
+| servers/keys | Нет  |
+| servers/securityAlertPolicies | Нет  |
+| servers/syncAgents | Нет  |
+| servers/virtualNetworkRules | Нет  |
+| servers/vulnerabilityAssessments | Нет  |
+
 ## <a name="sql-virtual-machine"></a>Виртуальная машина SQL
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
@@ -504,20 +630,20 @@ ms.locfileid: "53409672"
 | ------------- | ----------- |
 | storageAccounts | Yes | 
 | storageAccounts/blobServices | Нет  | 
-| storageAccounts/tableServices | Нет  | 
-| storageAccounts/queueServices | Нет  | 
 | storageAccounts/fileServices | Нет  | 
+| storageAccounts/queueServices | Нет  | 
 | storageAccounts/services | Нет  | 
 | storageAccounts/services/metricDefinitions | Нет  | 
+| storageAccounts/tableServices | Нет  | 
 
 ## <a name="storage-sync"></a>Синхронизация службы хранилища
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | storageSyncServices | Yes | 
+| storageSyncServices/registeredServers | Нет  | 
 | storageSyncServices/syncGroups | Нет  | 
 | storageSyncServices/syncGroups/cloudEndpoints | Нет  | 
 | storageSyncServices/syncGroups/serverEndpoints | Нет  | 
-| storageSyncServices/registeredServers | Нет  | 
 | storageSyncServices/workflows | Нет  | 
 
 ## <a name="storsimple"></a>StorSimple
@@ -547,53 +673,50 @@ ms.locfileid: "53409672"
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | учетная запись | Yes | 
-| account/project | Yes | 
 | account/extension | Yes | 
-| учетная запись | Yes | 
 | account/project | Yes | 
-| account/extension | Yes | 
 
 ## <a name="web"></a>Web
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| sites/instances | Нет  | 
-| sites/slots/instances | Нет  | 
-| sites/instances/extensions | Нет  | 
-| sites/slots/instances/extensions | Нет  | 
-| publishingUsers | Нет  | 
-| validate | Нет  | 
-| sourceControls | Нет  | 
-| sites/hostNameBindings | Нет  | 
-| sites/domainOwnershipIdentifiers | Нет  | 
-| sites/slots/hostNameBindings | Нет  | 
+| apiManagementAccounts | Нет  | 
+| apiManagementAccounts/apiAcls | Нет  | 
+| apiManagementAccounts/apis | Нет  | 
+| apiManagementAccounts/apis/apiAcls | Нет  | 
+| apiManagementAccounts/apis/connectionAcls | Нет  | 
+| apiManagementAccounts/apis/connections | Нет  | 
+| apiManagementAccounts/apis/connections/connectionAcls | Нет  | 
+| apiManagementAccounts/apis/localizedDefinitions | Нет  | 
+| apiManagementAccounts/connectionAcls | Нет  | 
+| apiManagementAccounts/connections | Нет  | 
+| billingMeters | Нет  | 
 | certificates | Yes | 
+| connectionGateways | Yes | 
+| connections | Yes | 
+| customApis | Yes | 
+| deletedSites | Нет  | 
+| functions | Нет  | 
+| hostingEnvironments | Yes | 
+| hostingEnvironments/metrics | Нет  | 
+| hostingEnvironments/multiRolePools | Нет  | 
+| hostingEnvironments/workerPools | Нет  | 
+| publishingUsers | Нет  | 
 | serverFarms | Yes | 
 | serverFarms/workers | Нет  | 
 | sites | Yes | 
-| sites/slots | Yes | 
+| sites/domainOwnershipIdentifiers | Нет  | 
+| sites/hostNameBindings | Нет  | 
+| sites/instances | Нет  | 
+| sites/instances/extensions | Нет  | 
 | sites/metrics | Нет  | 
-| sites/slots/metrics | Нет  | 
 | sites/premieraddons | Yes | 
-| hostingEnvironments | Yes | 
-| hostingEnvironments/multiRolePools | Нет  | 
-| hostingEnvironments/workerPools | Нет  | 
-| hostingEnvironments/metrics | Нет  | 
-| functions | Нет  | 
-| deletedSites | Нет  | 
-| apiManagementAccounts | Нет  | 
-| apiManagementAccounts/connections | Нет  | 
-| apiManagementAccounts/connectionAcls | Нет  | 
-| apiManagementAccounts/apis/connections/connectionAcls | Нет  | 
-| apiManagementAccounts/apis/connectionAcls | Нет  | 
-| apiManagementAccounts/apiAcls | Нет  | 
-| apiManagementAccounts/apis/apiAcls | Нет  | 
-| apiManagementAccounts/apis | Нет  | 
-| apiManagementAccounts/apis/localizedDefinitions | Нет  | 
-| apiManagementAccounts/apis/connections | Нет  | 
-| connections | Yes | 
-| customApis | Yes | 
-| connectionGateways | Yes | 
-| billingMeters | Нет  | 
+| sites/slots | Yes | 
+| sites/slots/hostNameBindings | Нет  | 
+| sites/slots/instances | Нет  | 
+| sites/slots/instances/extensions | Нет  | 
+| sites/slots/metrics | Нет  | 
+| sourceControls | Нет  | 
+| validate | Нет  | 
 | verifyHostingEnvironmentVnet | Нет  | 
 
 ## <a name="xrm"></a>XRM
