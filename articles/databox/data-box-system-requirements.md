@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 09/24/2018
+ms.date: 12/27/2018
 ms.author: alkohli
-ms.openlocfilehash: 957100e042da1d41fb7c8fa27a5663cf99a41c20
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: af7bcf2a83259b9d883a824b05312316f9f1f4f8
+ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49093941"
+ms.lasthandoff: 12/27/2018
+ms.locfileid: "53794011"
 ---
 # <a name="azure-data-box-system-requirements"></a>Требования к системе для Azure Data Box
 
@@ -36,7 +36,7 @@ ms.locfileid: "49093941"
 | **Операционная система** | **Версии** | 
 | --- | --- | 
 | Windows Server |2008 R2 с пакетом обновления 1 (SP1) <br> 2012 <br> 2012 R2 <br> 2016 | 
-| Windows |7, 8, 10 | 
+|  Windows |7, 8, 10 | 
 |Linux    |         |
 
 ### <a name="supported-file-systems-for-linux-clients"></a>Поддерживаемые файловые системы для клиентов Linux
@@ -55,6 +55,9 @@ ms.locfileid: "49093941"
 | Классический | Стандартная |
 | Универсальные  |"Стандартный" (поддерживаются версии V1 и V2). |
 | BLOB-объект |Поддерживаются и "горячие" и "холодные" уровни. |
+
+>[!NOTE]
+> Учетные записи второго поколения Azure Data Lake Storage не поддерживаются.
 
 
 ### <a name="supported-storage-types"></a>Поддерживаемые типы хранилищ

@@ -13,7 +13,7 @@
 
 ### Развертывание
 #### [Подготовка к развертыванию](storsimple-virtual-array-deploy1-portal-prep.md)
-##### [Развертывание службы StorSimple Manager](storsimple-virtual-array-manage-service.md)
+#####  [Развертывание службы StorSimple Manager](storsimple-virtual-array-manage-service.md)
 ##### [Настройка параметров аутентификации](storsimple-virtual-array-aad-registration-key.md)
 #### [Подготовка в Hyper-V](storsimple-virtual-array-deploy2-provision-hyperv.md)
 #### [Подготовка в VMware](storsimple-virtual-array-deploy2-provision-vmware.md)
@@ -109,7 +109,7 @@
 ##### [Управление учетными записями хранения](storsimple-8000-manage-storage-accounts.md)
 ##### [Управление контейнерами томов](storsimple-8000-manage-volume-containers.md)
 ##### [Управление томами (текущая версия)](storsimple-8000-manage-volumes-u2.md)
-###### [Часто задаваемые вопросы: локально закрепленные тома](storsimple-8000-local-volume-faq.md)
+###### [Вопросы и ответы. Локально закрепленные тома](storsimple-8000-local-volume-faq.md)
 ##### [Управление доступом на основе ролей](storsimple-8000-role-based-access-control.md)
 ##### [Управление записями ACR](storsimple-8000-manage-acrs.md)
 ##### [Управление шаблонами пропускной способности](storsimple-8000-manage-bandwidth-templates.md)
@@ -209,7 +209,7 @@
 ## Справочные материалы
 ### [REST API](https://docs.microsoft.com/rest/api/storsimple)
 ### [Windows PowerShell для командлетов StorSimple](https://technet.microsoft.com/library/dn688168.aspx)
-
+### [Шаблон Resource Manager](/azure/templates/microsoft.storsimple/allversions)
 
 # Диспетчер данных StorSimple
 
@@ -235,7 +235,7 @@
 ## Заметки о выпуске
 ### [Заметки о выпуске StorSimple](https://aka.ms/storsimple-virtual-array-latest-relnote)
 ### [Заметки о выпуске CSP](https://partner.microsoft.com/Support/whats-new)
-### [StorSimple для CSP: вопросы и ответы](storsimple-partner-csp-faq.md)
+### [StorSimple для CSP. Вопросы и ответы](storsimple-partner-csp-faq.md)
 
 # Сопутствующие материалы
 ## [Хранилище StorSimple серии 5000–7000](http://onlinehelp.storsimple.com)
