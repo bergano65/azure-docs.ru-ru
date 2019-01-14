@@ -7,12 +7,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 12/08/2018
 ms.author: raynew
-ms.openlocfilehash: 9d1acabd07e7c01445c55a57be9b0c9a36140aa5
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: b8ff1ae2f4c07dc59bd1ffb631378817493b96b0
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53163775"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53995054"
 ---
 # <a name="best-practices-for-costing-and-sizing-workloads-migrated-to-azure"></a>Рекомендации по оценке затрат на рабочие нагрузки, перенесенные в Azure, и определению их размеров
 
@@ -117,7 +117,7 @@ Azure предоставляет различные типы учетных за
 
 **Тип учетной записи** | **Дополнительные сведения** | **Использование**
 --- | --- | ---
-**Общего назначения версии 2 (ценовая категория "Стандартный")** | Поддерживает BLOB-объекты (блок, страница, добавление), файлы, диски, очереди и таблицы.<br/><br/> Поддерживает горячий, холодный и архивный уровни доступа. Поддерживается ZRS. | Используется для большинства сценариев и типов данных. Учетные записи хранения ценовой категории "Стандартный" могут быть на накопителя половинной высоты или SSD.
+**Общего назначения версии 2 (ценовая категория "Стандартный")** | Поддерживает BLOB-объекты (блок, страница, добавление), файлы, диски, очереди и таблицы.<br/><br/> Поддерживает горячий, холодный и архивный уровни доступа. Поддерживается ZRS. | Используется для большинства сценариев и типов данных. Учетные записи хранения ценовой категории "Стандартный" могут быть основаны на HDD- или SSD-дисках.
 **Общего назначения версии 2 (ценовая категория "Премиум")** | Поддерживает данные хранилища BLOB-объектов (страничные BLOB-объекты). Поддерживает горячий, холодный и архивный уровни доступа. Поддерживается ZRS.<br/><br/> Хранение на SSD. | Майкрософт рекомендует использовать для всех виртуальных машин.
 **Общего назначения версии 1** | Распределение по уровням доступа не поддерживается. Не поддерживает ZRS. | Используется, если приложениям необходима классическая модель развертывания Azure.
 **Большой двоичный объект** | Специализированная учетная запись хранения для хранения неструктурированных объектов. Предоставляет только блочные и добавочные BLOB-объекты (служб хранилища "Файл", "Очередь", "Таблица" или "Диск"). Обеспечивает такие же устойчивость, доступность, масштабируемость и производительность, как и учетная запись общего назначения версии 2. | В этих учетных записях нельзя хранить страничные BLOB-объекты, поэтому там нельзя хранить и файлы VHD. Можно задать горячий или холодный уровень доступа.
@@ -173,7 +173,7 @@ Azure предоставляет различные типы учетных за
 
 **Дополнительные сведения**
 - [Общие сведения об Azure Reserved VM Instances](https://docs.microsoft.com/azure/billing/billing-save-compute-costs-reservations).
-- ](https://azure.microsoft.com/pricing/reserved-vm-instances/#faq)Часто задаваемые вопросы по зарезервированным экземплярам[.
+- [Часто задаваемые вопросы по зарезервированным экземплярам](https://azure.microsoft.com/pricing/reserved-vm-instances/#faq).
 - [Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-pricing-guidance#bring-your-own-license-byol).
 
 
@@ -248,7 +248,7 @@ Azure предоставляет различные типы учетных за
 **Дополнительные сведения**
 - Общие сведения о [службе Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview) и [Azure Advisor](https://docs.microsoft.com/azure/advisor/advisor-overview).
 - [Рекомендации Azure Advisor по затратам](https://docs.microsoft.com/azure/advisor/advisor-cost-recommendations).
-- [Руководство. Рекомендации по оптимизации затрат](https://docs.microsoft.com/azure/cost-management/tutorial-acm-opt-recommendations?toc=/azure/billing/TOC.json) и [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](https://docs.microsoft.com/en-us/azure/billing/billing-getting-started).
+- [Руководство. Рекомендации по оптимизации затрат](https://docs.microsoft.com/azure/cost-management/tutorial-acm-opt-recommendations?toc=/azure/billing/TOC.json) и [Предотвращение непредвиденных расходов с помощью функции выставления счетов и управления затратами в Azure](https://docs.microsoft.com/azure/billing/billing-getting-started).
 - [Сведения о наборе средств оптимизации ресурсов Azure (ARO)](https://github.com/Azure/azure-quickstart-templates/tree/master/azure-resource-optimization-toolkit/).
 
 ## <a name="best-practice-implement-resource-group-budgets"></a>Рекомендация. Реализация бюджетов группы ресурсов
