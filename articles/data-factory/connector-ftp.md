@@ -21,7 +21,7 @@ ms.lasthandoff: 06/27/2018
 ms.locfileid: "37050528"
 ---
 # <a name="copy-data-from-ftp-server-by-using-azure-data-factory"></a>Копирование данных с FTP-сервера с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
 > * [Версия 1](v1/data-factory-ftp-connector.md)
 > * [Текущая версия](connector-ftp.md)
 
