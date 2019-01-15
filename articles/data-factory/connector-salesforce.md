@@ -21,7 +21,7 @@ ms.lasthandoff: 10/18/2018
 ms.locfileid: "49409583"
 ---
 # <a name="copy-data-from-and-to-salesforce-by-using-azure-data-factory"></a>Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
 > * [Версия 1](v1/data-factory-salesforce-connector.md)
 > * [Текущая версия](connector-salesforce.md)
 
