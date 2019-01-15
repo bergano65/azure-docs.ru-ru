@@ -1,5 +1,6 @@
 # Обзор
-## [About Azure virtual machines (Сведения о виртуальных машинах Azure)](../../virtual-machines-windows-about.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json)
+## [Расширения виртуальной машины](agents-and-extensions-classic.md)
+## [Доступность](configure-availability-classic.md)
 ## [Часто задаваемые вопросы](faq-classic.md)
 
 # Начало работы
@@ -29,20 +30,17 @@
 ### [Обслуживание](planned-maintenance-schedule-classic.md)
 
 ## управление
-### [Переход с классической модели на модель Resource Manager](../../virtual-machines-windows-migration-classic-resource-manager-deep-dive.md)
+### [Переход с классической модели на модель Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-deep-dive)
 ### [Управление виртуальными машинами с помощью Azure PowerShell](manage-psh-classic.md)
 ### [Сведения об агенте и расширениях виртуальной машины](agents-and-extensions-classic.md)
 ### [Управление расширениями виртуальной машины](manage-extensions-classic.md)
 
 ## Управление рабочими нагрузками
-### [Высокопроизводительные вычислительные системы (HPC)](../../virtual-machines-windows-hpcpack-cluster-options.md)
+### Высокопроизводительные вычислительные системы (HPC)
 #### [Автоматическое масштабирование ресурсов](hpcpack-cluster-node-autogrowshrink.md)
 #### [Управление вычислительными узлами](hpcpack-cluster-node-manage.md)
 #### [Создание кластера](hpcpack-cluster-powershell-script.md)
 #### [Настройка кластера для выполнения приложений MPI](hpcpack-rdma-cluster.md)
-#### [Запуск рабочих нагрузок Excel и SOA](../../virtual-machines-windows-excel-cluster-hpcpack.md)
-#### [Создание головного узла с помощью образа Marketplace](../../virtual-machines-windows-hpcpack-cluster-headnode.md)
-#### [Отправка заданий из локальной среды в Azure](../../virtual-machines-windows-hpcpack-cluster-submit-jobs.md)
 ### [MySQL](mysql-2008r2.md)
 ### [Tomcat](java-run-tomcat-app-server.md)
 
@@ -57,7 +55,6 @@
 ## [Интерфейс командной строки Azure](/cli/azure/vm)
 ## [Java](/java/api)
 ## [.NET](/dotnet/api/microsoft.azure.management.compute)
-## [Создание шаблонов Resource Manager](../../../resource-group-authoring-templates.md)
 ## [Шаблоны, созданные сообществом](https://azure.microsoft.com/documentation/templates)
 ## [REST для вычислений](https://msdn.microsoft.com/library/jj157206.aspx)
 ## [REST для сети](https://msdn.microsoft.com/library/jj157182.aspx)

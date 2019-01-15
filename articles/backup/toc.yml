@@ -122,8 +122,6 @@ items:
         href: backup-azure-vms-encryption.md
       - name: Включение резервного копирования виртуальной машины во время ее создания
         href: backup-during-vm-creation.md
-      - name: Обновление до стека резервного копирования виртуальных машин версии 2
-        href: backup-upgrade-to-vm-backup-stack-v2.md
     - name: Контроль и мониторинг виртуальных машин
       items:
       - name: Управление резервным копированием виртуальных машин Azure на портале Azure
@@ -136,6 +134,8 @@ items:
         href: backup-azure-restore-files-from-vm.md
       - name: Восстановление виртуальных машин на портале Azure
         href: backup-azure-arm-restore-vms.md
+      - name: Возможность мгновенного восстановления
+        href: backup-instant-restore-capability.md
       - name: Восстановление зашифрованных виртуальных машин
         href: backup-azure-vms-encryption.md
       - name: Восстановление ключа и секрета в Key Vault для зашифрованных виртуальных машин
@@ -240,6 +240,8 @@ items:
     href: /rest/api/backup/
   - name: REST (хранилище служб восстановления)
     href: /rest/api/recoveryservices/
+  - name: Шаблон Resource Manager
+    href: /azure/templates/microsoft.recoveryservices/allversions
 - name: Ресурсы
   items:
   - name: Стратегия развития Azure
@@ -254,9 +256,9 @@ items:
     href: https://azure.microsoft.com/updates/?product=backup
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=backup
-ms.openlocfilehash: dfa3bca01fc237aa62cc893e707aa08b9055dd7d
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 4f5d8a19fe45aa493183fd5de027a1ecd159622e
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104818"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54267493"

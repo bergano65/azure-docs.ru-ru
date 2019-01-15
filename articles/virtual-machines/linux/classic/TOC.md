@@ -1,4 +1,4 @@
-# [Обзор](../overview.md)
+# Обзор
 ## [Расширения виртуальной машины](agents-and-extensions-classic.md)
 ## [Доступность](configure-availability-classic.md)
 ## [Часто задаваемые вопросы](faq-classic.md)
@@ -49,7 +49,6 @@
 ## [Azure PowerShell](/powershell/azure/overview)
 ## [Интерфейс командной строки Azure](/cli/azure/vm)
 ## [Java](/java/api)
-## [Создание шаблонов Resource Manager](../../../azure-resource-manager/resource-group-authoring-templates.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 ## [Шаблоны, созданные сообществом](https://azure.microsoft.com/documentation/templates)
 ## [REST для вычислений](https://msdn.microsoft.com/library/jj157206.aspx)
 ## [REST для сети](https://msdn.microsoft.com/library/jj157182.aspx)
