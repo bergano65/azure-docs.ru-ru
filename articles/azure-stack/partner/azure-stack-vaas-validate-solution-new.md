@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 11/26/2018
+ms.date: 12/20/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 7949e764baa7a4e20eb988c78817b6b4f0045593
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: e6cfdca207b114871a478262f14ea960be5985df
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52333774"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54104970"
 ---
 # <a name="validate-a-new-azure-stack-solution"></a>Проверка нового решения Azure Stack
 
@@ -35,32 +35,53 @@ ms.locfileid: "52333774"
 ## <a name="create-a-solution-validation-workflow"></a>Создание рабочего процесса проверки решений
 
 1. [!INCLUDE [azure-stack-vaas-workflow-step_select-solution](includes/azure-stack-vaas-workflow-step_select-solution.md)]
-2. Щелкните **Start** (Начать) на плитке **Solution Validations** (Проверка решений).
+
+3. Щелкните **Start** (Начать) на плитке **Solution Validations** (Проверка решений).
 
     ![Плитка рабочего процесса проверки решений](media/tile_validation-solution.png)
 
-3. [!INCLUDE [azure-stack-vaas-workflow-step_naming](includes/azure-stack-vaas-workflow-step_naming.md)]
-4. Выберите **конфигурацию решения**:
+4. [!INCLUDE [azure-stack-vaas-workflow-step_naming](includes/azure-stack-vaas-workflow-step_naming.md)]
+
+5. Выберите **конфигурацию решения**:
     - **Минимум** — для решения, настроенного с минимальным числом поддерживаемых узлов.
     - **Максимум** — для решения, настроенного с максимальным числом поддерживаемых узлов.
-5. [!INCLUDE [azure-stack-vaas-workflow-step_upload-stampinfo](includes/azure-stack-vaas-workflow-step_upload-stampinfo.md)]
+6. [!INCLUDE [azure-stack-vaas-workflow-step_upload-stampinfo](includes/azure-stack-vaas-workflow-step_upload-stampinfo.md)]
 
     ![Сведения о проверке решения](media/workflow_validation-solution_info.png)
 
-6. [!INCLUDE [azure-stack-vaas-workflow-step_test-params](includes/azure-stack-vaas-workflow-step_test-params.md)]
+7. [!INCLUDE [azure-stack-vaas-workflow-step_test-params](includes/azure-stack-vaas-workflow-step_test-params.md)]
 
     > [!NOTE]
     > Параметры среды невозможно изменить после создания рабочего процесса.
 
-7. [!INCLUDE [azure-stack-vaas-workflow-step_tags](includes/azure-stack-vaas-workflow-step_tags.md)]
-8. [!INCLUDE [azure-stack-vaas-workflow-step_submit](includes/azure-stack-vaas-workflow-step_submit.md)]
+8. [!INCLUDE [azure-stack-vaas-workflow-step_tags](includes/azure-stack-vaas-workflow-step_tags.md)]
+9. [!INCLUDE [azure-stack-vaas-workflow-step_submit](includes/azure-stack-vaas-workflow-step_submit.md)]
     Вы будете перенаправлены на страницу сводок по тестам.
 
-## <a name="execute-solution-validation-tests"></a>Выполнение тестов проверки решений
+## <a name="run-solution-validation-tests"></a>Выполнение тестов проверки решений
 
 На странице **сводки по тестам проверки решений** вы увидите список тестов, необходимых для завершения проверки.
 
-[!INCLUDE [azure-stack-vaas-workflow-validation-section_schedule](includes/azure-stack-vaas-workflow-validation-section_schedule.md)]
+В рабочих процессах проверки при **планировании** теста используются общие параметры уровня рабочего процесса, которые вы указали во время его создания (см. раздел [Workflow common parameters for Azure Stack Validation as a Service](azure-stack-vaas-parameters.md) (Общие параметры рабочих процессов для проверки как услуги в Azure Stack)). Если какие-либо из значений параметров станут недействительными, необходимо указать их повторно, как описано в разделе об [изменении параметров рабочего процесса](azure-stack-vaas-monitor-test.md#change-workflow-parameters).
+
+> [!NOTE]
+> При планировании проверочного теста через существующий экземпляр на портале будет создан новый экземпляр вместо старого. Журналы для старого экземпляра будут сохранены, но недоступны на портале.  
+После успешного завершения теста действие **Расписание** становится недоступным.
+
+1. [!INCLUDE [azure-stack-vaas-workflow-step_select-agent](includes/azure-stack-vaas-workflow-step_select-agent.md)]
+
+2. Выберите следующие тесты:
+    - Cloud Simulation Engine;
+    - Compute SDK Operational Suite;
+    - Disk Identification Test;
+    - KeyVault Extension SDK Operational Suite;
+    - KeyVault SDK Operational Suite;
+    - Network SDK Operational Suite;
+    - Storage Account SDK Operational Suite.
+
+3. В контекстном меню выберите **Расписание**, чтобы открыть командную строку для планирования выполнения тестового экземпляра.
+
+4. Проверьте параметры теста, а затем выберите **Отправить**, чтобы запланировать выполнение теста.
 
 ![Выполнение теста проверки решений](media/workflow_validation-solution_schedule-test.png)
 

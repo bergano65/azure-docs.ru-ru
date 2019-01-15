@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск других вариантов перевода, PHP — API перевода текстов
+title: Поиск слов в двуязычном словаре с помощью PHP — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как искать варианты перевода и контекстуальные термины, используя API перевода текстов и PHP.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 06/22/2018
 ms.author: erhopf
-ms.openlocfilehash: 4d48ab8d0178b2d3fbcba2ee631ee97b30518f88
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: ff1f0a97667260fa19c46bec6901113ff696aaab
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49649779"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54156890"
 ---
-# <a name="quickstart-find-alternate-translations-with-the-translator-text-rest-api-php"></a>Краткое руководство. Поиск других вариантов перевода с помощью REST API перевода текстов (PHP)
+# <a name="quickstart-look-up-words-with-bilingual-dictionary-using-php"></a>Краткое руководство. Поиск слов в двуязычном словаре с помощью PHP
 
 Из этого краткого руководства вы узнаете, как с помощью API перевода текстов найти варианты перевода определенного термина и примеры их использования.
 

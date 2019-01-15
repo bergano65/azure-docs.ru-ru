@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 24503a821445bbf1610588d7f69ec87948a812b9
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 4674428cf96562670b0e24e5ac93a2f2979128da
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53793076"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54042059"
 ---
 # <a name="migrate-amazon-web-services-aws-vms-to-azure"></a>Перенос виртуальных машин Amazon Web Services (AWS) в Azure
 
@@ -33,12 +33,14 @@ ms.locfileid: "53793076"
 
 ## <a name="prerequisites"></a>Предварительные требования
 - Убедитесь, что виртуальные машины, которые нужно перенести, работают под управлением поддерживаемой версии ОС. К таким версиям относятся: 
-  - Windows Server 2016 
-  - Windows Server 2012 R2
-  - Windows Server 2012 
-  - 64-разрядная версия Windows Server 2008 R2 с пакетом обновления 1 (SP1) или выше.
-  - Red Hat Enterprise Linux 6.7 (только виртуализированные экземпляры HVM) с драйверами Citrix PV или AWS PV. Экземпляры, работающие с драйверами RedHat PV, *не* поддерживаются.
- - Служба Mobility Service должна быть установлена на каждой виртуальной машине, которую вы хотите реплицировать. 
+      - Windows Server 2016 
+      - Windows Server 2012 R2
+      - Windows Server 2012 
+      - 64-разрядная версия Windows Server 2008 R2 с пакетом обновления 1 (SP1) или выше.
+      - Red Hat Enterprise Linux версий 6.4–6.10, 7.1–7.6 (только виртуализированные экземпляры HVM). *Экземпляры, работающие с драйверами RedHat PV, не поддерживаются.*
+      - CentOS версий 6.4–6.10, 7.1–7.6 (только виртуализированные экземпляры HVM).
+ 
+- Служба Mobility Service должна быть установлена на каждой виртуальной машине, которую вы хотите реплицировать. 
 
     > [!IMPORTANT]
     > Site Recovery устанавливает эту службу автоматически при включении репликации для виртуальной машины. Для автоматической установки следует подготовить учетную запись на экземплярах EC2, которые Site Recovery будет использовать для доступа к виртуальной машине. Вы можете использовать доменную или локальную учетную запись. 

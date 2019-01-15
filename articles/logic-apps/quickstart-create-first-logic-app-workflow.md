@@ -1,6 +1,6 @@
 ---
-title: Создание и автоматизация первого рабочего процесса в Azure Logic Apps | Документация Майкрософт
-description: В этом руководстве показано, как создать первое приложение логики для автоматизации задач, операций и рабочих процессов с помощью Azure Logic Apps. Создавайте приложения логики для решений интеграции системы и корпоративных приложений (EAI) для своих систем и облачных служб.
+title: Краткое руководство. Создание и автоматизация первого рабочего процесса в Azure Logic Apps | Документация Майкрософт
+description: Создание первого приложения логики для автоматизации задач, операций и рабочих процессов с помощью Azure Logic Apps. Создавайте приложения логики для решений интеграции системы и корпоративных приложений (EAI) для своих систем и облачных служб.
 services: logic-apps
 ms.service: logic-apps
 author: ecfan
@@ -11,12 +11,12 @@ ms.custom: mvc
 ms.date: 07/20/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: fe2ca48c1cab3789f2bb501eaf00aeb9cd866b8c
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: cc0f452cf9dc27354124437acc8d9a7c99fa80f4
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233690"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54065194"
 ---
 # <a name="quickstart-create-your-first-automated-workflow-with-azure-logic-apps---azure-portal"></a>Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "50233690"
 
    ![Создание приложения логики](./media/quickstart-create-first-logic-app-workflow/create-logic-app.png)
 
-3. В разделе **Создание приложения логики** предоставьте сведения о приложении логики, как показано здесь. По завершении выберите **Закрепить на панели мониторинга** > **Создать**.
+3. В разделе **Создание приложения логики** предоставьте сведения о приложении логики, как показано здесь. Когда все будет готово, выберите **Создать**.
 
    ![Ввод данных приложения логики](./media/quickstart-create-first-logic-app-workflow/create-logic-app-settings.png)
 
@@ -61,9 +61,9 @@ ms.locfileid: "50233690"
 
 ## <a name="check-rss-feed-with-a-trigger"></a>Проверка RSS-канала с помощью триггера
 
-1. В конструкторе введите rss в поле поиска. Выберите этот триггер: **RSS - When a feed item is published** (RSS — при публикации элемента веб-канала).
+1. В конструкторе введите rss в поле поиска. Выберите триггер **RSS — при публикации элемента веб-канала**.
 
-   ![Выбор триггера RSS - When a feed item is published (RSS — при публикации элемента веб-канала)](./media/quickstart-create-first-logic-app-workflow/add-trigger-rss.png)
+   ![Выбор триггера "RSS — при публикации элемента веб-канала"](./media/quickstart-create-first-logic-app-workflow/add-trigger-rss.png)
 
 2. Предоставьте сведения для триггера, как показано и описано далее: 
 
@@ -91,13 +91,13 @@ ms.locfileid: "50233690"
 
 Теперь добавьте [действие](../logic-apps/logic-apps-overview.md#logic-app-concepts), которое отправляет сообщение электронной почты, когда новый элемент появляется в веб-канале RSS. 
 
-1. В разделе триггера **When a feed item is published** (При публикации элемента веб-канала) выберите **+ New step** (Создать шаг)  > **Add an action** (Добавить действие).
+1. В разделе триггера **При публикации элемента веб-канала** выберите **Новый шаг**.
 
    ![Добавление действия](./media/quickstart-create-first-logic-app-workflow/add-new-action.png)
 
-2. В разделе **Choose an action** (Выбрать действие) введите "отправить сообщения электронной почты" для фильтрации. В списке действий выберите "отправить сообщения электронной почты" для нужного вам поставщика услуг электронной почты. 
+2. В разделе **Выберите действие** введите "отправить сообщения электронной почты" в поле поиска. Под полем поиска выберите **Все**. В списке действий выберите "отправить сообщения электронной почты" для нужного вам поставщика услуг электронной почты. 
 
-   ![Выберите действие Office 365 Outlook - Send an email (Office 365 Outlook — отправка сообщения электронной почты).](./media/quickstart-create-first-logic-app-workflow/add-action-send-email.png)
+   ![Выбор действия "Office 365 Outlook — отправка сообщения электронной почты".](./media/quickstart-create-first-logic-app-workflow/add-action-send-email.png)
 
    Чтобы отфильтровать список действий для определенного приложения или службы, можно сначала выбрать это приложение или службу.
 

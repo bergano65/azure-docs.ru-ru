@@ -5,15 +5,15 @@ services: site-recovery
 author: rayne-wiselman
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 12/31/2018
+ms.date: 01/08/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 947e5d4004565fd10e81e703111daf26fce10368
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: da71857e84b27b9e9a063d707f75fdf33e5d6a96
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53973525"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159015"
 ---
 # <a name="prepare-azure-resources-for-disaster-recovery-of-on-premises-machines"></a>Подготовка ресурсов Azure для аварийного восстановления локальных компьютеров
 
@@ -68,11 +68,12 @@ ms.locfileid: "53973525"
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
-1. На портале Azure последовательно выберите **Создать ресурс** > **Хранилище** > **Backup and Site Recovery (OMS)**.
-2. В поле **Имя**введите понятное имя для идентификации хранилища. В этой серии руководств используется имя **ContosoVMVault**.
-3. В поле **Группа ресурсов** мы указали значение **contosoRG**.
-4. Для параметра **Расположение** выбираем значение **Западная Европа**.
-5. Для быстрого доступа к новому хранилищу с панели мониторинга выберите **Закрепить на панели мониторинга** > **Create** (Создать).
+1. На портале Azure щелкните **+Создать ресурс**, а затем в Marketplace выберите **Службы восстановления**.
+2. Щелкните **Backup and Site Recovery (OMS)** и на соответствующей странице нажмите кнопку **Создать**. 
+1. В поле **Хранилище служб восстановления** > **Имя** введите понятное имя для идентификации хранилища. В этой серии руководств используется имя **ContosoVMVault**.
+2. В разделе **Группа ресурсов** создайте группу ресурсов или выберите имеющуюся. При работе с этим руководством используется **contosoRG**.
+3. В поле **Расположение** выберите регион, в котором будет размещаться хранилище. выбираем значение **Западная Европа**.
+4. Для быстрого доступа к новому хранилищу с панели мониторинга выберите **Закрепить на панели мониторинга** > **Create** (Создать).
 
    ![Создание хранилища](./media/tutorial-prepare-azure/new-vault-settings.png)
 

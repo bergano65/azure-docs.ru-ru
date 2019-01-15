@@ -3,17 +3,17 @@ title: Установка Ansible на виртуальные машины Azure
 description: Узнайте, как установить и настроить Ansible для управления ресурсами Azure в Ubuntu, CentOS и SLES.
 ms.service: ansible
 keywords: ansible, azure, devops, bash, cloudshell, сборник тренировочных заданий, bash
-author: tomarcher
+author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: quickstart
 ms.date: 08/21/2018
-ms.openlocfilehash: b714470cd12bb7a0cd2d2a00b4f09467726f505d
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 227f3baf67bd65a8c6eeb170ce219a3ddf79606a
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46987056"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54078054"
 ---
 # <a name="install-ansible-on-azure-virtual-machines"></a>Установка Ansible на виртуальные машины Azure
 
@@ -25,7 +25,7 @@ Ansible позволяет автоматизировать развертыва
 
 - **Доступ к Linux или виртуальной машине Linux.** Вы можете [создать виртуальную машину Linux с помощью Ansible](https://docs.microsoft.com/azure/virtual-network/quick-create-cli), если у вас нет доступа к ней.
 
-- **Субъект-служба Azure.** Следуйте указаниям, приведенным в разделе **Создание субъекта-службы** статьи [Создание субъекта-службы Azure с помощью Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#create-the-service-principal). Запишите значения **appId**, **displayName**, **password** и **tenant**.
+- **Субъект-служба Azure.** Следуйте указаниям, приведенным в разделе **Создание субъекта-службы** статьи о [создании субъекта-службы Azure с помощью Azure CLI 2.0](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest#create-the-service-principal). Запишите значения **appId**, **displayName**, **password** и **tenant**.
 
 ## <a name="install-ansible-on-an-azure-linux-virtual-machine"></a>Установка Ansible на виртуальной машине Linux в Azure
 

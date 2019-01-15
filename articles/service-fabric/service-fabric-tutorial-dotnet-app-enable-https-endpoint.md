@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 04/12/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 4333a234efe96f32541254819c9c5f21bb031757
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 2e631a0605385f8d55c652a26739b23a0945674f
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49115082"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54077256"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство. Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
@@ -54,10 +54,10 @@ ms.locfileid: "49115082"
 
 ## <a name="obtain-a-certificate-or-create-a-self-signed-development-certificate"></a>Получение сертификата или создание самозаверяющего сертификат разработки
 
-Для рабочих приложений в качестве сертификата нужно использовать сертификат [из центра сертификации (ЦС)](https://wikipedia.org/wiki/Certificate_authority). В целях тестирования и разработки вы можете создать и использовать самозаверяющий сертификат. SDK Service Fabric предоставляет скрипт *CertSetup.ps1*, который создает самозаверяющий сертификат и импортирует его в хранилище сертификатов `Cert:\LocalMachine\My`. Откройте командную строку с правами администратора и выполните следующую команду для создания сертификата с субъектом CN=localhost:
+Для рабочих приложений в качестве сертификата нужно использовать сертификат [из центра сертификации (ЦС)](https://wikipedia.org/wiki/Certificate_authority). В целях тестирования и разработки вы можете создать и использовать самозаверяющий сертификат. SDK Service Fabric предоставляет скрипт *CertSetup.ps1*, который создает самозаверяющий сертификат и импортирует его в хранилище сертификатов `Cert:\LocalMachine\My`. Откройте командную строку с правами администратора и выполните следующую команду для создания сертификата с субъектом CN=mytestcert:
 
 ```powershell
-PS C:\program files\microsoft sdks\service fabric\clustersetup\secure> .\CertSetup.ps1 -Install -CertSubjectName CN=localhost
+PS C:\program files\microsoft sdks\service fabric\clustersetup\secure> .\CertSetup.ps1 -Install -CertSubjectName CN=mytestcert
 ```
 
 Если у вас уже есть файл сертификата PFX, для импорта сертификата в хранилище сертификатов `Cert:\LocalMachine\My` выполните следующие действия:
@@ -158,7 +158,7 @@ serviceContext =>
         }))
 ```
 
-Кроме того, добавьте следующий метод, чтобы Kestrel мог найти сертификат в хранилище `Cert:\LocalMachine\My` с использованием субъекта.  Замените &lt;your_CN_value&gt; на localhost, если вы создали самозаверяющий сертификат с помощью предыдущей команды PowerShell или используете CN своего сертификата.
+Кроме того, добавьте следующий метод, чтобы Kestrel мог найти сертификат в хранилище `Cert:\LocalMachine\My` с использованием субъекта.  Замените &lt;your_CN_value&gt; на mytestcert, если вы создали самозаверяющий сертификат с помощью предыдущей команды PowerShell или используете CN своего сертификата.
 
 ```csharp
 private X509Certificate2 GetCertificateFromStore()
@@ -238,7 +238,7 @@ powershell.exe -ExecutionPolicy Bypass -Command ".\SetCertAccess.ps1"
 В обозревателе решений щелкните правой кнопкой мыши **VotingWeb** и щелкните **Добавить**->**Новый элемент** и добавьте новый файл с именем SetCertAccess.ps1.  Измените файл *SetCertAccess.ps1* и добавьте следующий скрипт:
 
 ```powershell
-$subject="localhost"
+$subject="mytestcert"
 $userGroup="NETWORK SERVICE"
 
 Write-Host "Checking permissions to certificate $subject.." -ForegroundColor DarkCyan
@@ -349,7 +349,7 @@ if ($cert -eq $null)
 
 Перед развертыванием приложения в Azure установите сертификат в хранилище удаленных узлов кластера `Cert:\LocalMachine\My`.  Когда интерфейсная веб-служба запускается на узле кластера, скрипт запуска будет искать сертификат и настраивать разрешения доступа.
 
-Экспортируйте его в формате PFX-файла. Откройте приложение certlm.msc и щелкните **Личные**>**Сертификаты**.  В файле *localhost* щелкните сертификат правой кнопкой мыши и выберите **Все задачи**>**Экспорт**.
+Экспортируйте его в формате PFX-файла. Откройте приложение certlm.msc и щелкните **Личные**>**Сертификаты**.  В файле *mytestcert* щелкните сертификат правой кнопкой мыши и выберите **Все задачи**>**Экспорт**.
 
 ![Экспорт сертификата][image4]
 

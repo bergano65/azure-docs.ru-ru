@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: get-started-article
-ms.date: 11/05/2018
+ms.date: 1/07/2018
 ms.author: mabrigg
 ms.reviewer: kivenkat
-ms.openlocfilehash: a0dc3405cc0e1deb25c1f2772a5018dad95b87e9
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 9f5f3c4ce08cde81c883bfdac87012dcfd80b8a4
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51036603"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54119736"
 ---
 # <a name="make-a-virtual-machine-image-available-in-azure-stack"></a>Размещение образа виртуальной машины через Azure Stack
 
@@ -154,7 +154,7 @@ ms.locfileid: "51036603"
 
 3. Войдите в Azure Stack с правами оператора. Этот процесс описан в статье [Configure the Azure Stack PowerShell environment](azure-stack-powershell-configure-admin.md) (Настройка окружения Azure Stack PowerShell).
 
-4. Создайте на глобальной платформе Azure или в Azure Stack учетную запись хранения, где будет храниться пользовательский образ виртуальной машины. Дополнительные сведения см. в [кратком руководстве по передаче, скачиванию и составлению списка больших двоичных объектов с помощью портала Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
+4. Создайте на глобальной платформе Azure или в Azure Stack учетную запись хранения, где будет храниться пользовательский образ виртуальной машины. Инструкции см. в статье [Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal).
 
 5. Подготовьте образ операционной системы Windows или Linux в формате VHD (не VHDX), отправьте этот образ в учетную запись хранения и запишите URI, по которому можно получить этот образ виртуальной машины из PowerShell.  
 

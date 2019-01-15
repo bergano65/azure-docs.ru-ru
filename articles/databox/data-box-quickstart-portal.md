@@ -6,20 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: quickstart
-ms.date: 10/04/2018
+ms.date: 01/09/2019
 ms.author: alkohli
-ms.openlocfilehash: a2f8d295ca161ff2263f53b8faa407c7a42a4c6b
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: ae6ab0eb4c966ef57c7859098217b5b6b560614b
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49385849"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188561"
 ---
 # <a name="quickstart-deploy-azure-data-box-using-the-azure-portal"></a>Краткое руководство. Развертывание Azure Data Box с помощью портала Azure
 
 В этом кратком руководстве описано развертывание Azure Data Box с помощью портала Azure. Описанные действия охватывают подключение кабелей, настройку и копирование данных в Data Box таким образом, чтобы они передавались в Azure. Задачи, описанные в этом кратком руководстве, выполняются на портале Azure, а также в локальном веб-интерфейсе устройства.
 
-Подробные пошаговое инструкции по развертыванию и отслеживанию см. в статье [Tutorial: Order Azure Data Box](data-box-deploy-ordered.md) (Руководство. Заказ Azure Data Box).
+Подробные пошаговое инструкции по развертыванию и отслеживанию см. в статье [Руководство. Заказ Azure Data Box](data-box-deploy-ordered.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -28,7 +28,6 @@ ms.locfileid: "49385849"
 - Убедитесь, что тип подписки, которую вы используете для службы Data Box, является одним из следующих:
     - Соглашение Microsoft Enterprise (EA). См. дополнительные сведения о [подписке EA](https://azure.microsoft.com/pricing/enterprise-agreement/).
     - Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
-    - Потребление. Оплата по мере использования. Дополнительные сведения см. в статье о [подписках Azure с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/).
     - Спонсорское предложение Microsoft Azure. Дополнительные сведения см. в статье о [спонсорском предложении Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). 
 
 - Убедитесь, что у вас есть доступ владельца или участника подписки для заказа Data Box.

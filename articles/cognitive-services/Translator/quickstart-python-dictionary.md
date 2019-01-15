@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Получение альтернативных вариантов перевода с помощью API перевода текстов (Python)
+title: Краткое руководство. Поиск слов в двуязычном словаре с помощью Python — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как найти другие варианты перевода и использования для выбранного языка с помощью Python и REST API перевода текстов.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 10/21/2018
 ms.author: erhopf
-ms.openlocfilehash: ab8a6d5b6d4bb52863e77b844a4008bb80d840be
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 52820a9162a20b680b85d07f8c49ac5305d4979a
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52993956"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54158017"
 ---
-# <a name="quickstart-use-the-translator-text-api-to-get-alternate-translations-using-python"></a>Краткое руководство. Получение альтернативных вариантов перевода с помощью API перевода текстов и Python
+# <a name="quickstart-look-up-words-with-bilingual-dictionary-using-python"></a>Краткое руководство. Поиск слов в двуязычном словаре с помощью Python
 
 В этом кратком руководстве описано, как найти другие варианты перевода и использования для выбранного языка с помощью Python и REST API перевода текстов.
 
@@ -167,7 +167,7 @@ python dictionary-lookup.py
 
 ## <a name="see-also"></a>См. также
 
-Узнайте, как использовать API перевода текстов, чтобы выполнять такие задачи:
+Узнайте, как с помощью API перевода текстов выполнять следующие задачи:
 
 * [перевод текста](quickstart-python-translate.md);
 * [транслитерация текста](quickstart-python-transliterate.md);

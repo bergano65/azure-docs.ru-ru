@@ -3,17 +3,17 @@ title: Развертывание приложений в масштабируе
 description: Узнайте, как настроить масштабируемый набор виртуальных машин и развернуть в нем приложение в Azure
 ms.service: ansible
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
-author: tomarcher
+author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 09/11/2018
-ms.openlocfilehash: 049fc711d0cf6a69b584ad3926bd9e9c0fc9e27d
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 4f3712a45fdb2474eedeb8d4eac034060723010d
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53408380"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54156550"
 ---
 # <a name="deploy-applications-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Вы можете использовать Ansible для развертывания приложений в Azure. В этой статье показано, как развернуть приложение Java в масштабируемом наборе виртуальных машин (VMSS) Azure.  
@@ -150,7 +150,7 @@ Ansible позволяет автоматизировать развертыва
 Вы можете сохранить предыдущий пример сборника схем Ansible как `vmss-setup-deploy.yml` или [загрузить весь пример сборника схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss). 
 
 Чтобы использовать тип SSH-подключения с паролями, необходимо установить программу sshpass. 
-  - Для Ubunto версии 16.04 выполните команду `apt-get install sshpass`.
+  - Для Ubuntu версии 16.04 выполните команду `apt-get install sshpass`.
   - Для CentOS версии 7.4 выполните команду `yum install sshpass`.
 
 Могут появиться следующие сообщения об ошибке. **Использование пароля SSH вместо ключа невозможно, так как проверка ключа узла включена и sshpass не поддерживает ее. Добавьте отпечаток узла в файл known_hosts для управления этим узлом.** Если вы видите эту ошибку, можно отключить проверку ключа узла, добавив следующую строку в файл `/etc/ansible/ansible.cfg` или `~/.ansible.cfg`:

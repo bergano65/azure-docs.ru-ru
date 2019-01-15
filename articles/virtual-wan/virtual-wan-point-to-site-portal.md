@@ -5,17 +5,17 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: tutorial
-ms.date: 10/29/2018
+ms.date: 01/07/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to connect remote users to my VNets using Virtual WAN and I don't want to go through a Virtual WAN partner.
-ms.openlocfilehash: e3d1a79dc7dd775cea71df2f36a5f34d85f3e240
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 9d5533932ef9ab521b623c18a0c3a27b663c56f8
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51261814"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54077408"
 ---
-# <a name="tutorial-create-a-point-to-site-connection-using-azure-virtual-wan-preview"></a>Руководство. Создание подключения типа "точка — сеть" с помощью Виртуальной глобальной сети Azure (предварительная версия)
+# <a name="tutorial-create-a-point-to-site-connection-using-azure-virtual-wan-preview"></a>Руководство. Создание подключения "точка — сеть" с помощью Виртуальной глобальной сети Azure (предварительная версия)
 
 В этом руководстве показано, как создать подключение к ресурсам в Azure через VPN-соединение IPsec/IKE (IKEv2) или OpenVPN с помощью Виртуальной глобальной сети. Этот тип подключения требует, чтобы клиент был настроен на клиентском компьютере. Дополнительные сведения о Виртуальной глобальной сети см. в [этой статье](virtual-wan-about.md).
 
@@ -42,7 +42,7 @@ ms.locfileid: "51261814"
 
 ## <a name="register"></a>Регистрация этой возможности
 
-Нажмите кнопку **Попробовать**, чтобы зарегистрировать эту возможность с помощью Azure Cloud Shell.
+Нажмите кнопку **Попробовать**, чтобы зарегистрировать эту возможность с помощью Azure Cloud Shell. Если PowerShell лучше запустить локально, убедитесь, что используете последнюю версию и выполните вход с помощью команд **Connect-AzureRmAccount** и **Select-AzureRmSubscription**.
 
 >[!NOTE]
 >Если не зарегистрировать эту возможность, вы не сможете ею пользоваться и не увидите ее на портале.
@@ -149,7 +149,7 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
 #### <a name="openvpn"></a>OpenVPN
 
 1.  С официального веб-сайта загрузите и установите клиент OpenVPN.
-2.  Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с "New-AzureRmVpnClientConfiguration" в PowerShell.
+2.  Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с помощью New-AzureRmVpnClientConfiguration в PowerShell.
 3.  Распакуйте профиль. Откройте файл конфигурации vpnconfig.ovpn из папки OpenVPN в Notepad.
 4.  Заполните раздел сертификата клиента подключения "точка — сеть" открытым ключом сертификата клиента P2S в формате base64. В сертификате с форматированием PEM вы можете просто открыть файл CER и скопировать ключ в формате base64, находящийся между заголовками сертификата. Сведения о том, как экспортировать сертификат, чтобы получить закодированный открытый ключ, см. ниже.
 5.  Заполните раздел секретного ключа закрытым ключом сертификата клиента P2S в base64. Как извлечь закрытый ключ, см. в этом разделе.
@@ -168,7 +168,7 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
 #### <a name="openvpn"></a>OpenVPN
 
 1.  Скачайте и установите клиент OpenVPN, например TunnelBlik с https://tunnelblick.net/downloads.html. 
-2.  Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с "New-AzureRmVpnClientConfiguration" в PowerShell.
+2.  Загрузите профиль VPN для шлюза. Это можно сделать со вкладки конфигурации "точка — сеть" на портале Azure или с помощью New-AzureRmVpnClientConfiguration в PowerShell.
 3.  Распакуйте профиль. Откройте файл конфигурации vpnconfig.ovpn из папки OpenVPN в Notepad.
 4.  Заполните раздел сертификата клиента подключения "точка — сеть" открытым ключом сертификата клиента P2S в формате base64. В сертификате с форматированием PEM вы можете просто открыть файл CER и скопировать ключ в формате base64, находящийся между заголовками сертификата. Сведения о том, как экспортировать сертификат, чтобы получить закодированный открытый ключ, см. ниже.
 5.  Заполните раздел секретного ключа закрытым ключом сертификата клиента P2S в base64. Как извлечь закрытый ключ, см. в этом разделе.

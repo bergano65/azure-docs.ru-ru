@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 12/10/2018
 ms.author: msangapu
 ms.custom: mvc
-ms.openlocfilehash: 0c72318f6c80563d138d9c885ea5984a22c5c7fa
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: fe134591a979569048072877632260ea9728b4fc
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653906"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159763"
 ---
 # <a name="quickstart-create-a-java-app-in-app-service-on-linux"></a>Краткое руководство. Создание приложения Java в Службе приложений на платформе Linux
 
@@ -108,9 +108,9 @@ mvn package azure-webapp:deploy
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве описано, как использовать Maven для создания приложения Java, настроить [подключаемый модуль Maven для веб-приложений Azure](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin) и развернуть веб-архив упакованного приложения Java в службе приложений в Linux. Дополнительные сведения о размещении приложений Java в Службе приложений на платформе Linux см. в следующих руководствах и статьях с инструкциями:
+В этом кратком руководстве описано, как использовать Maven для создания приложения Java, настроить [подключаемый модуль Maven для веб-приложений Azure](https://github.com/Microsoft/azure-maven-plugins/tree/develop/azure-webapp-maven-plugin) и развернуть веб-архив упакованного приложения Java в службе приложений в Linux. Дополнительные сведения о размещении приложений Java в Службе приложений в Linux см. в следующих руководствах и статьях с инструкциями.
 
-- [Руководство по развертыванию приложения Java Enterprise с использованием PostgreSQL](tutorial-java-enterprise-postgresql-app.md)
+- [Руководство развертыванию приложения Java Enterprise с использованием PostgreSQL](tutorial-java-enterprise-postgresql-app.md)
 - [Настройка источника данных Tomcat](app-service-linux-java.md#connecting-to-data-sources)
 - [CI/CD с использованием Jenkins](/azure/jenkins/deploy-jenkins-app-service-plugin)
 - [Настройка средств мониторинга производительности приложения](how-to-java-apm-monitoring.md)

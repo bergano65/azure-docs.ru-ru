@@ -6,24 +6,20 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: overview
-ms.date: 08/28/2018
+ms.date: 01/09/2019
 ms.author: alkohli
-ms.openlocfilehash: f4ea5e282e9b915cffeac7daff07f5934be1a424
-ms.sourcegitcommit: 8314421d78cd83b2e7d86f128bde94857134d8e1
+ms.openlocfilehash: 6b6d0d1a7e14035f7a1b7998ec4b3e68761539f5
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2018
-ms.locfileid: "51974995"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54158114"
 ---
-# <a name="use-azure-portal-to-administer-your-data-box-disk-preview"></a>Администрирование Диска Data Box (предварительная версия) с помощью портала Azure
+# <a name="use-azure-portal-to-administer-your-data-box-disk"></a>Администрирование Диска Data Box с помощью портала Azure
 
 Рекомендации, приведенные в этой статье, применяются к диску Microsoft Azure Data Box на время действия предварительной версии. В этой статье описываются некоторые сложные рабочие процессы и задачи управления, которые могут выполняться на диске Data Box. 
 
 Вы можете управлять диском Data Box на портале Azure. В этой статье речь идет о задачах, выполняемых с использованием портала Azure. На портале Azure можно управлять заказами, администрировать диски и отслеживать состояние заказа, пока он не перейдет на последнюю стадию.
-
-> [!IMPORTANT]
-> Диск Data Box находится в режиме предварительной версии. Прежде чем развертывать это решение, просмотрите [условия использования Azure для предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
-
 
 ## <a name="cancel-an-order"></a>Отмена заказа
 

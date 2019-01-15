@@ -5,16 +5,16 @@ services: iot-edge
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 11/25/2018
+ms.date: 01/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: f099d280615607382bd424063d39bb26cdeea793
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: 1b2692df51afb50822ec542fbda423f598bcb8e4
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53557870"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54054747"
 ---
 # <a name="tutorial-develop-a-java-iot-edge-module-and-deploy-to-your-simulated-device"></a>Руководство. Разработка модуля IoT Edge с кодом Java и его развертывание на имитированном устройстве
 
@@ -47,7 +47,7 @@ ms.locfileid: "53557870"
 
 * [Visual Studio Code](https://code.visualstudio.com/). 
 * [Пакет расширения Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) для Visual Studio Code.
-* [Расширение Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge). 
+* [Средства Azure IoT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) для Visual Studio Code. 
 * [Пакет SDK для Java SE 10](https://aka.ms/azure-jdks) и [переменная среды `JAVA_HOME`,](https://docs.oracle.com/cd/E19182-01/820-7851/inst_cli_jdk_javahome_t/) которая указывает на эту установку JDK.
 * [Maven](https://maven.apache.org/)
 * [Docker CE](https://docs.docker.com/install/)
@@ -56,7 +56,7 @@ ms.locfileid: "53557870"
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
-В этом руководстве описано, как создать модуль с помощью расширения Azure IoT Edge для Visual Studio Code и **образ контейнера** из файлов. Затем вы отправите этот образ в **реестр**, содержащий ваши образы и управляющий ими. Наконец, вы развернете свой образ из реестра для выполнения на устройстве IoT Edge.  
+В этом руководстве описано, как с помощью средств Azure IoT для Visual Studio Code создать модуль и **образ контейнера** из файлов. Затем вы отправите этот образ в **реестр**, содержащий ваши образы и управляющий ими. Наконец, вы развернете свой образ из реестра для выполнения на устройстве IoT Edge.  
 
 Для хранения образов контейнеров можно использовать любые реестры, совместимые с Docker. Две популярные службы реестров Docker — [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) и [Docker Hub](https://docs.docker.com/docker-hub/repos/#viewing-repository-tags). В этом руководстве используется реестр контейнеров Azure. 
 
@@ -82,7 +82,7 @@ ms.locfileid: "53557870"
 7. Скопируйте значения **Сервер входа**, **Имя пользователя** и **Пароль**. Они потребуются позже в этом руководстве для предоставления доступа к реестру контейнеров. 
 
 ## <a name="create-an-iot-edge-module-project"></a>Создание проекта модуля IoT Edge
-Ниже описана процедура создания проекта модуля IoT Edge на основе пакета шаблонов Maven для Azure IoT Edge и пакета SDK для устройств Интернета вещей Azure для Java. Для создания проекта используется Visual Studio Code и расширение Azure IoT Edge.
+Ниже описана процедура создания проекта модуля IoT Edge на основе пакета шаблонов Maven для Azure IoT Edge и пакета SDK для устройств Интернета вещей Azure для Java. Для создания проекта используется Visual Studio Code и средства Azure IoT.
 
 ### <a name="create-a-new-solution"></a>Создание решения
 
@@ -216,13 +216,19 @@ ms.locfileid: "53557870"
     client.getTwin();
     ```
 
-11. Сохраните этот файл.
+11. Сохраните файл App.java.
 
-12. В обозревателе VS Code откройте файл deployment.template.json в рабочей области IoT Edge. Этот файл указывает, что **$edgeAgent** должен развернуть два модуля: **tempSensor** и **JavaModule**. На панели состояния VS Code для устройства IoT Edge указана платформа по умолчанию **amd64**, т. е. модуль **JavaModule** использует версию образа для Linux amd64. При необходимости измените платформу по умолчанию на панели состояния с **amd64** на **arm32v7** или **windows-amd64** в соответствии с архитектурой вашего устройства IoT Edge. 
+12. В обозревателе VS Code откройте файл **deployment.template.json** в рабочей области решения IoT Edge. Этот файл указывает агенту IoT Edge на модуль для развертывания, в нашем случае это **tempSensor** и **JavaModule**, а центру IoT Edge на то, как маршрутизировать сообщения между ними. Расширение Visual Studio Code автоматически заполняет шаблон развертывания большинством нужной информации, но проверьте, все ли подходит для вашего решения: 
 
-   Общие сведения о манифестах развертывания см. в статье [Сведения об использовании, настройке и повторном использовании модулей Azure IoT Edge (предварительная версия)](module-composition.md).
+   1. На панели состояния VS Code для устройства IoT Edge указана платформа по умолчанию **amd64**, т. е. модуль **JavaModule** использует версию образа для Linux amd64. При необходимости измените платформу по умолчанию на панели состояния с **amd64** на **arm32v7** или **windows-amd64** в соответствии с архитектурой вашего устройства IoT Edge. 
 
-   В файле deployment.template.json есть раздел **registryCredentials**, который хранит учетные данные реестра Docker. Фактическое имя пользователя хранится в файле ENV, который Git игнорирует.  
+      ![Снимок экрана обновления модуля платформы](./media/tutorial-java-module/image-platform.png)
+
+   2. Убедитесь, что шаблон содержит правильное имя модуля, а не имя **SampleModule** по умолчанию, которое можно изменить при создании решения IoT Edge.
+
+   3. В разделе **registryCredentials** хранятся ваши учетные данные реестра Docker, чтобы агент IoT Edge мог извлекать ваш образ модуля. Фактическое имя пользователя хранится в файле ENV, который Git игнорирует. Если это еще не сделано, добавьте ваши учетные данные в файл с расширением .env.  
+
+   4. Для получения дополнительных сведений о манифестах развертывания см. статью [Сведения о развертывании модулей и установлении маршрутов в IoT Edge](module-composition.md).
 
 13. Добавьте двойник модуля **JavaModule** в манифест развертывания. Вставьте следующее содержимое JSON в нижней части раздела **moduleContent** после двойника модуля **$edgeHub**: 
 
@@ -236,7 +242,7 @@ ms.locfileid: "53557870"
 
    ![Добавление двойника модуля в шаблон развертывания](./media/tutorial-java-module/module-twin.png)
 
-14. Сохраните этот файл.
+14. Сохраните файл deployment.template.json.
 
 ## <a name="build-your-iot-edge-solution"></a>Сборка решения IoT Edge
 

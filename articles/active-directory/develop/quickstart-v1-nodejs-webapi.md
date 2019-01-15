@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 09/24/2018
 ms.author: celested
 ms.custom: aaddev
-ms.openlocfilehash: f6f804ea9121d1728e31f1e694280e841f4b7f4e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 9683eb8cbfcabb946f8b364ac9cc8aeeb167d023
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46946550"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54120297"
 ---
 # <a name="quickstart-secure-a-web-api-with-azure-active-directory"></a>Краткое руководство. Защита веб-API с помощью Azure Active Directory
 
@@ -108,7 +108,7 @@ module.exports.credentials = {
 
 Модуль [passport-azure-ad](https://github.com/AzureAD/passport-azure-ad#5-usage) имеет две стратегии проверки подлинности: [OIDC](https://github.com/AzureAD/passport-azure-ad#51-oidcstrategy) и [Носитель](https://github.com/AzureAD/passport-azure-ad#52-bearerstrategy). Сервер, реализованный в этой статье, использует стратегию на основе носителя для защиты конечной точки API.
 
-### <a name="step-1-import-dependencies"></a>Шаг 1. Импорт зависимостей
+### <a name="step-1-import-dependencies"></a>Шаг 1. Импорт зависимостей
 
 Создайте файл с именем `app.js` и вставьте в него следующий текст:
 
@@ -132,7 +132,7 @@ const
 - Для `authenticatedUserTokens` создается массив, в котором сохраняются маркеры пользователей, когда они передаются в защищенные конечные точки.
 - `serverPort` определяется на основе порта среды обработки или из файла конфигурации.
 
-### <a name="step-2-instantiate-an-authentication-strategy"></a>Шаг 2. Создание экземпляра стратегии проверки подлинности
+### <a name="step-2-instantiate-an-authentication-strategy"></a>Шаг 2. Создание экземпляра стратегии проверки подлинности
 
 При защите конечной точки нужно предоставить стратегию для определения того, исходит ли текущий запрос от пользователя, прошедшего проверку подлинности. Переменная `authenticatonStrategy` является экземпляром класса `BearerStrategy` `passport-azure-ad`. Добавьте приведенный ниже код после инструкций `require`.
 
@@ -161,19 +161,19 @@ const authenticationStrategy = new BearerStrategy(config.credentials, (token, do
 passport.use(authenticationStrategy);
 ```
 
-### <a name="step-3-server-configuration"></a>Шаг 3. Настройка сервера
+### <a name="step-3-server-configuration"></a>Шаг 3. Конфигурация сервера
 
 Определив стратегию проверки подлинности, можно настроить сервер Restify с основными параметрами и настроить использование Passport для обеспечения безопасности.
 
 ```JavaScript
-const server = restify.createServer({ name: 'Azure Active Directroy with Node.js Demo' });
+const server = restify.createServer({ name: 'Azure Active Directory with Node.js Demo' });
 server.use(restifyPlugins.authorizationParser());
 server.use(passport.initialize());
 server.use(passport.session());
 ```
 Этот сервер инициализирован и настроен для анализа заголовков авторизации и настройки использования Passport.
 
-### <a name="step-4-define-routes"></a>Шаг 4. Определение маршрутов
+### <a name="step-4-define-routes"></a>Шаг 4. Определение маршрутов
 
 Теперь вы можете определить маршруты и решить, какие из них необходимо защитить с помощью AAD. Этот проект включает два маршрута, где корневой уровень является открытым, а для маршрута `/api` установлено требование проверки подлинности.
 
@@ -221,7 +221,7 @@ curl -isS -X GET http://127.0.0.1:3000/
 
 ```shell
 HTTP/1.1 200 OK
-Server: Azure Active Directroy with Node.js Demo
+Server: Azure Active Directory with Node.js Demo
 Content-Type: application/json
 Content-Length: 49
 Date: Tue, 10 Oct 2017 18:35:13 GMT
@@ -240,7 +240,7 @@ curl -isS -X GET http://127.0.0.1:3000/api
 
 ```shell
 HTTP/1.1 401 Unauthorized
-Server: Azure Active Directroy with Node.js Demo
+Server: Azure Active Directory with Node.js Demo
 WWW-Authenticate: token is not found
 Date: Tue, 10 Oct 2017 16:22:03 GMT
 Connection: keep-alive

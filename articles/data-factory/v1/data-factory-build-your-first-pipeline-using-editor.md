@@ -10,22 +10,21 @@ ms.assetid: d5b14e9e-e358-45be-943c-5297435d402d
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: f3dc27b35f35f3aaa649b03777ff13d385561673
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 426a8f3df67ee00ded0591024447770e4cfedc32
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45732232"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54020716"
 ---
 # <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Руководство. Создание первой фабрики данных с помощью портала Azure
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
-> * [портала Azure](data-factory-build-your-first-pipeline-using-editor.md)
+> * [портал Azure](data-factory-build-your-first-pipeline-using-editor.md)
 > * [Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
 > * [PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 > * [Шаблон Azure Resource Manager](data-factory-build-your-first-pipeline-using-arm.md)
@@ -33,14 +32,14 @@ ms.locfileid: "45732232"
 
 
 > [!NOTE]
-> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной. Если вы используете текущую версию службы "Фабрика данных", см. с [краткое руководство по созданию фабрики данных с помощью службы "Фабрика данных Azure"](../quickstart-create-data-factory-dot-net.md).
+> Статья относится к версии 1 фабрики данных Azure, которая является общедоступной. Если вы используете текущую версию службы "Фабрика данных", ознакомьтесь с [кратким руководством по созданию фабрики данных с помощью службы "Фабрика данных"](../quickstart-create-data-factory-dot-net.md).
 
 Из этой статьи вы узнаете, как создать свою первую фабрику данных с помощью [портала Azure](https://portal.azure.com/). Чтобы выполнить приведенные здесь инструкции с помощью других средств или пакетов SDK, выберите в раскрывающемся списке один из доступных вариантов. 
 
 В этом руководстве конвейеру доступно одно действие — действие Hive HDInsight Azure. Это действие запускает сценарий Hive в кластере HDInsight, который преобразует входные данные в выходные. Конвейер запускается раз в месяц по расписанию. Время начала и окончания запуска также указаны. 
 
 > [!NOTE]
-> Описанный в этом руководстве конвейер данных преобразовывает входные данные в выходные. Инструкции по копированию данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных см. в [этой статье](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
+> Описанный в этом руководстве конвейер данных преобразовывает входные данные в выходные. Инструкции по копированию данных с помощью службы "Фабрика данных" см. в статье [Копирование данных из хранилища BLOB-объектов Azure в Базу данных SQL Azure с помощью Фабрики данных Azure](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 > 
 > Конвейер может содержать сразу несколько действий. Два действия можно объединить в цепочку (выполнить одно действие вслед за другим), настроив выходной набор данных одного действия как входной набор данных другого действия. Дополнительные сведения см. в разделе [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md#multiple-activities-in-a-pipeline).
 
@@ -65,7 +64,7 @@ ms.locfileid: "45732232"
    ![Создать колонку "Фабрика данных"](./media/data-factory-build-your-first-pipeline-using-editor/new-data-factory-blade.png)
 
    > [!IMPORTANT]
-   > Имя фабрики данных должно быть глобально уникальным. Если появится сообщение об ошибке "Data factory name GetStartedDF is not available" (Имя GetStartedDF фабрики данных недоступно), измените имя фабрики данных. Например, используйте "ваше_имя_GetStartedDF" и снова создайте фабрику данных. Дополнительные сведения о правилах именования в фабрике данных см. в [этой статье](data-factory-naming-rules.md).
+   > Имя фабрики данных должно быть глобально уникальным. Если появится сообщение об ошибке "Data factory name GetStartedDF is not available" (Имя GetStartedDF фабрики данных недоступно), измените имя фабрики данных. Например, используйте "ваше_имя_GetStartedDF" и снова создайте фабрику данных. Дополнительные сведения о правилах именования в службе "Фабрика данных Azure" см. в [ этой статье](data-factory-naming-rules.md).
    >
    > В будущем имя фабрики данных может быть зарегистрировано в качестве DNS-имени и может стать отображаемым.
    >
@@ -327,7 +326,7 @@ ms.locfileid: "45732232"
 
     Активный период конвейера задается с помощью свойств **start** и **end**.
 
-    В действии JSON укажите, что сценарий Hive будет выполняться в среде вычислений, указанной в свойстве **linkedServiceName**: **HDInsightOnDemandLinkedService**.
+    В действии JSON укажите, что сценарий Hive будет выполняться в вычислительной среде, указанной в свойстве **linkedServiceName**: **HDInsightOnDemandLinkedService**.
 
    > [!NOTE]
    > Сведения о свойствах JSON, используемых в этом примере, см. в разделе "Конвейер JSON" статьи [Конвейеры и действия в фабрике данных Azure](data-factory-create-pipelines.md).

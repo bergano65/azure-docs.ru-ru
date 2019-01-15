@@ -8,12 +8,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 11/19/2018
-ms.openlocfilehash: 316d2b4ebf0a9b0799e2bdcdfda1d517713f413f
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: 21eb28611c1e40695356d502c262c23013591986
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52277103"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54117373"
 ---
 # <a name="quickstart-ingest-data-from-kafka-into-azure-data-explorer"></a>Краткое руководство. Прием данных из Kafka в Azure Data Explorer
  
@@ -35,7 +35,7 @@ Kafka Connect — это средство для масштабируемой и
 ### <a name="bundle"></a>Пакет 
 С помощью Kafka можно загрузить `.jar` как подключаемый модуль, который будет выступать в качестве настраиваемого соединителя. Для создания такого `.jar` мы клонируем код локально и выполним сборку с помощью Maven. 
 
-#### <a name="clone"></a>Клонировать
+#### <a name="clone"></a>Clone (Клонировать)
 
 ```bash
 git clone git://github.com:Azure/kafka-sink-azure-kusto.git
@@ -111,7 +111,7 @@ kusto.sink.flush_size=1000
 
 Теперь, когда ADX подключен к кластеру Kafka, используйте [пример приложения](https://github.com/Azure-Samples/event-hubs-dotnet-ingest), скачанный для создания данных.
 
-### <a name="clone"></a>Клонировать
+### <a name="clone"></a>Clone (Клонировать)
 Клонируйте пример приложения локально.
 
 ```cmd
@@ -159,4 +159,4 @@ cd ./azure-kusto-samples-dotnet/kafka/
 ## <a name="next-steps"></a>Дополнительная информация
  
 > [!div class="nextstepaction"]
-> [Краткое руководство. Запрос данных в обозревателе данных Azure](web-query-data.md)
+> [Краткое руководство. Запрос данных в Azure Data Explorer](web-query-data.md)

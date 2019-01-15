@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Поиск других вариантов перевода, Go — API перевода текстов
+title: Краткое руководство. Поиск слов в двуязычном словаре с помощью Go — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве вы узнаете, как искать варианты перевода и контекстуальные термины, используя API перевода текстов и Go.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 12/05/2018
 ms.author: erhopf
-ms.openlocfilehash: bcda716d143bd675f9510b1ecf5974ab9c28a394
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: c1a75a32e60e337d07bda9d6f6d39efa58c679e2
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53000588"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54158573"
 ---
-# <a name="quickstart-use-the-translator-text-api-to-get-alternate-translations-using-go"></a>Краткое руководство. Получение других вариантов перевода с помощью API перевода текстов и Go
+# <a name="quickstart-look-up-words-with-bilingual-dictionary-using-go"></a>Краткое руководство. Поиск слов в двуязычном словаре с помощью Go
 
 В этом кратком руководстве описано, как найти другие варианты перевода и использования для выбранного языка с помощью Go и REST API перевода текстов.
 
@@ -88,7 +88,7 @@ func altTranslations(subscriptionKey string) {
 }
 ```
 
-Затем давайте создадим URL-адрес. URL-адрес создается с помощью методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`. В этом примере мы переводим с английского на испанский.
+Теперь давайте создадим URL-адрес. URL-адрес создается с помощью методов `Parse()` и `Query()`. При этом параметры добавляются с помощью метода `Add()`. В этом примере мы переводим с английского на испанский.
 
 Скопируйте этот код в функцию `altTranslations`.
 
@@ -120,7 +120,7 @@ b, _ := json.Marshal(body)
 
 ## <a name="build-the-request"></a>Создание запроса
 
-Теперь, когда вы закодировали текст запроса как объект JSON, создайте запрос POST и вызовите API перевода текстов.
+Теперь, когда вы закодировали текст запроса в формате JSON, можно создать запрос POST и вызвать API перевода текстов.
 
 ```go
 // Build the HTTP POST request
@@ -141,7 +141,7 @@ if err != nil {
 
 ## <a name="handle-and-print-the-response"></a>Обработка и вывод ответа
 
-Добавьте этот код в функцию `altTranslations`, чтобы декодировать ответ JSON, а затем отформатировать и вывести результат.
+Добавьте следующий код в функцию `altTranslations`, чтобы декодировать ответ JSON, а затем отформатировать и вывести результат.
 
 ```go
 // Decode the JSON response
@@ -234,7 +234,7 @@ go run alt-translations.go
 
 ## <a name="see-also"></a>См. также
 
-Узнайте, как использовать API перевода текстов, чтобы выполнять такие задачи:
+Узнайте, как с помощью API перевода текстов выполнять следующие задачи:
 
 * [перевод текста](quickstart-go-translate.md);
 * [транслитерация текста](quickstart-go-transliterate.md);

@@ -1,33 +1,35 @@
 ---
 title: Создание блокчейн-приложения в Azure Blockchain Workbench
-description: Сведения о создании блокчейн-приложения в Azure Blockchain Workbench
+description: Руководство по созданию блокчейн-приложения в Azure Blockchain Workbench.
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 10/1/2018
-ms.topic: article
+ms.date: 1/8/2019
+ms.topic: tutorial
 ms.service: azure-blockchain
-ms.reviewer: zeyadr
+ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: a7ca3f42874bc844bc0036e37a790ffebdc5f8d8
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: 570d7a51bd6796a6360a4e52e637e1621a29deea
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48242081"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54104392"
 ---
-# <a name="create-a-blockchain-application-in-azure-blockchain-workbench"></a>Создание блокчейн-приложения в Azure Blockchain Workbench
+# <a name="tutorial-create-a-blockchain-application-in-azure-blockchain-workbench"></a>Руководство. Создание блокчейн-приложения в Azure Blockchain Workbench
 
 Вы можете использовать Azure Blockchain Workbench для создания блокчейн-приложений, которые представляют собой многосторонние рабочие процессы, определенные конфигурацией и кодом интеллектуального контракта.
 
-Вы узнаете, как выполнять следующие задачи:
+Вы узнаете, как:
 
 > [!div class="checklist"]
 > * настроить блокчейн-приложение;
 > * создать файл с кодом интеллектуального контракта;
 > * добавить блокчейн-приложение в Blockchain Workbench;
 > * добавить участников в блокчейн-приложение.
+
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -236,56 +238,17 @@ ms.locfileid: "48242081"
   pragma solidity ^0.4.20;
   ```
 
-### <a name="base-class"></a>Базовый класс
-
-Базовый класс **WorkbenchBase** позволяет Blockchain Workbench создавать обновление контракта. Этот класс является обязательным для конкретного кода интеллектуального контракта Blockchain Workbench. Контракт должен наследовать значения от базового класса **WorkbenchBase**.
-
-В файл кода интеллектуального контракта `HelloBlockchain.sol` добавьте класс **WorkbenchBase** в начале файла. 
-
-```
-contract WorkbenchBase {
-    event WorkbenchContractCreated(string applicationName, string workflowName, address originatingAddress);
-    event WorkbenchContractUpdated(string applicationName, string workflowName, string action, address originatingAddress);
-
-    string internal ApplicationName;
-    string internal WorkflowName;
-
-    function WorkbenchBase(string applicationName, string workflowName) internal {
-        ApplicationName = applicationName;
-        WorkflowName = workflowName;
-    }
-
-    function ContractCreated() internal {
-        WorkbenchContractCreated(ApplicationName, WorkflowName, msg.sender);
-    }
-
-    function ContractUpdated(string action) internal {
-        WorkbenchContractUpdated(ApplicationName, WorkflowName, action, msg.sender);
-    }
-}
-```
-Базовый класс включает две важные функции:
-
-|Функция базового класса  | Назначение  | Когда вызывать  |
-|---------|---------|---------|
-| ContractCreated() | Уведомляет Blockchain Workbench о создании контракта | Перед выходом из конструктора контракта |
-| ContractUpdated() | Уведомляет Blockchain Workbench об обновлении состояния контракта | Перед выходом из функции контракта |
-
 ### <a name="configuration-and-smart-contract-code-relationship"></a>Связь между конфигурацией и кодом интеллектуального контракта
 
 Blockchain Workbench использует файл конфигурации и файл с кодом интеллектуального контракта для создания блокчейн-приложения. Между конфигурацией и кодом интеллектуального контракта есть определенная связь. Для создания приложения необходимо сопоставить подробные сведения о контракте, функции, параметры и типы. Перед созданием приложения Blockchain Workbench проверяет файлы. 
 
 ### <a name="contract"></a>Контракт
 
-Для Blockchain Workbench контракты должны наследовать значения от базового класса **WorkbenchBase**. При объявлении контракта вам необходимо передать имя приложения и рабочего процесса в качестве аргументов.
-
-Добавьте заголовок **contract** в файл кода интеллектуального контракта `HelloBlockchain.sol`. 
+Добавьте заголовок **contract** в файл кода интеллектуального контракта `HelloBlockchain.sol`.
 
 ```
-contract HelloBlockchain is WorkbenchBase('HelloBlockchain', 'HelloBlockchain') {
+contract HelloBlockchain {
 ```
-
-Контракт должен наследовать значения от базового класса **WorkbenchBase** и передавать параметры **ApplicationName** и **имя** рабочего процесса, как определено в файле конфигурации. В этом случае имя приложения и имя рабочего процесса совпадают.
 
 ### <a name="state-variables"></a>Переменные состояния
 
@@ -312,8 +275,6 @@ contract HelloBlockchain is WorkbenchBase('HelloBlockchain', 'HelloBlockchain') 
 
 Перед созданием контракта в функции конструктора напишите любую бизнес-логику, которую вы хотите выполнить. Например, инициализируйте переменные состояния с начальными значениями.
 
-Перед выходом из функции конструктора вызовите функцию `ContractCreated()`. Эта функция уведомит Blockchain Workbench о создании контракта.
-
 Добавьте функцию конструктора в контракт в файле кода интеллектуального контракта `HelloBlockchain.sol`. 
 
 ```
@@ -323,9 +284,6 @@ contract HelloBlockchain is WorkbenchBase('HelloBlockchain', 'HelloBlockchain') 
         Requestor = msg.sender;
         RequestMessage = message;
         State = StateType.Request;
-    
-        // call ContractCreated() to create an instance of this workflow
-        ContractCreated();
     }
 ```
 
@@ -334,8 +292,6 @@ contract HelloBlockchain is WorkbenchBase('HelloBlockchain', 'HelloBlockchain') 
 Функции являются исполняемыми единицами бизнес-логики в контракте. Обязательные параметры для функции определяются как параметры функции в файле конфигурации. Количество, порядок и тип параметров должны совпадать в обоих файлах. Функции связаны с переходами в рабочем процессе Blockchain Workbench в файле конфигурации. Переход — это действие, выполняемое, чтобы перейти к следующему этапу рабочего процесса приложения, как определено в контракте.
 
 Напишите любую бизнес-логику, которую вы хотите выполнить в функции. Например, чтобы изменить значение переменной состояния.
-
-Перед выходом из функции вызовите функцию `ContractUpdated()`. Она уведомит Blockchain Workbench об обновлении состояния контракта. Чтобы отменить изменения состояния, внесенные в функцию, вызовите функцию revert(). Эта функция отменит изменения состояния, произошедшие со времени последнего вызова функции ContractUpdated().
 
 1. Добавьте следующие функции в контракт в файле кода интеллектуального контракта `HelloBlockchain.sol`. 
 
@@ -347,12 +303,8 @@ contract HelloBlockchain is WorkbenchBase('HelloBlockchain', 'HelloBlockchain') 
             {
                 revert();
             }
-    
             RequestMessage = requestMessage;
             State = StateType.Request;
-    
-            // call ContractUpdated() to record this action
-            ContractUpdated('SendRequest');
         }
     
         // call this function to send a response
@@ -360,10 +312,8 @@ contract HelloBlockchain is WorkbenchBase('HelloBlockchain', 'HelloBlockchain') 
         {
             Responder = msg.sender;
     
-            // call ContractUpdated() to record this action
             ResponseMessage = responseMessage;
             State = StateType.Respond;
-            ContractUpdated('SendResponse');
         }
     }
     ```

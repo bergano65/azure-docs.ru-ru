@@ -3,17 +3,17 @@ title: Развертывание в службе Azure Kubernetes (AKS) с по
 description: Сведения о развертывании в службе Azure Kubernetes (AKS) с использованием Jenkins и сине-зеленого шаблона развертывания.
 ms.service: jenkins
 keywords: jenkins, azure, devops, kubernetes, k8s, aks, blue green deployment, continuous delivery, cd
-author: tomarcher
+author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 10/11/2018
-ms.openlocfilehash: 6cd3938844d7f6977c7b0912acffbfb1679dc42e
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 9bd601aee87ab0776069c80bfdeffb70b06c3c86
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49387395"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54073889"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks-by-using-jenkins-and-the-bluegreen-deployment-pattern"></a>Развертывание в службе Azure Kubernetes (AKS) с помощью Jenkins и сине-зеленого шаблона развертывания
 
@@ -32,9 +32,9 @@ ms.locfileid: "49387395"
 
 ## <a name="prerequisites"></a>Предварительные требования
 - [Учетная запись GitHub](https://github.com). Вам понадобится учетная запись GitHub, чтобы клонировать пример из репозитория.
-- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Для создания кластера Kubernetes используйте Azure CLI 2.0.
+- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest). Для создания кластера Kubernetes используйте Azure CLI 2.0.
 - [Chocolatey](https://chocolatey.org). Это диспетчер пакетов, используемый для установки kubectl.
-- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). Интерфейс командной строки, используемый для выполнения команд кластеров Kubernetes.
+- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) Интерфейс командной строки, используемый для выполнения команд кластеров Kubernetes.
 - [jq](https://stedolan.github.io/jq/download/). Небольшой процессор командной строки JSON.
 
 ## <a name="clone-the-sample-app-from-github"></a>Клонирование примера приложения из GitHub
@@ -259,7 +259,7 @@ ms.locfileid: "49387395"
 
 ## <a name="run-the-job"></a>Выполнение задания
 
-1. Убедитесь, что ваш проект успешно выполнен в локальной среде. Вот инструкции [выполнения проекта на локальном компьютере](https://github.com/Microsoft/todo-app-java-on-azure/blob/master/README.md#run-it).
+1. Убедитесь, что ваш проект успешно выполнен в локальной среде. Вот инструкции по [выполнению проекта на локальном компьютере](https://github.com/Microsoft/todo-app-java-on-azure/blob/master/README.md#run-it).
 
 1. Выполните задания Jenkins При выполнении задания в первый раз Jenkins развертывает приложение списка задач в синей среде, которая является неактивной по умолчанию. 
 

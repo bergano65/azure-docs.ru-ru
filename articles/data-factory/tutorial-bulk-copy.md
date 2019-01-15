@@ -9,16 +9,15 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 1bf93ce9aa1733634b46c2a15b587d4cc0826ba1
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: c15c79e90b69fd72ed6b8968d35be95da50f838b
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43090939"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54023878"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 В этом руководстве показано **копирование нескольких таблиц из базы данных SQL Azure в хранилище данных SQL Azure**. Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в базу данных SQL Azure, хранилище данных или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы базы данных SQL Azure.
@@ -108,7 +107,7 @@ ms.locfileid: "43090939"
         ```
 
     * Чтобы создавать экземпляры фабрики данных, вы должны быть участником или администратором подписки Azure.
-    * Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+    * Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
 ## <a name="create-linked-services"></a>Создание связанных служб
 
@@ -116,7 +115,7 @@ ms.locfileid: "43090939"
 
 ### <a name="create-the-source-azure-sql-database-linked-service"></a>Создание исходной связанной службы базы данных SQL Azure
 
-1. Создайте файл JSON с именем **AzureSqlDatabaseLinkedService.json** в папке **C:\ADFv2TutorialBulkCopy** и добавьте в него приведенное ниже содержимое. Если папка ADFv2TutorialBulkCopy отсутствует, создайте ее.
+1. Создайте файл JSON с именем **AzureSqlDatabaseLinkedService.json** в папке **C:\ADFv2TutorialBulkCopy** с приведенным ниже содержимым. (Создайте папку ADFv2TutorialBulkCopy, если она еще не существует.)
 
     > [!IMPORTANT]
     > Перед сохранением файла замените &lt;servername&gt;, &lt;databasename&gt;, &lt;username&gt;@&lt;servername&gt; и &lt;password&gt; значениями своей базы данных SQL Azure.
@@ -214,7 +213,7 @@ ms.locfileid: "43090939"
     }
     ```
 
-2. Чтобы создать связанную службу **AzureStorageLinkedService.json**, выполните командлет **Set-AzureRmDataFactoryV2LinkedService**.
+2. Чтобы создать связанную службу **AzureStorageLinkedService**, выполните командлет **Set-AzureRmDataFactoryV2LinkedService**.
 
     ```powershell
     Set-AzureRmDataFactoryV2LinkedService -DataFactoryName $dataFactoryName -ResourceGroupName $resourceGroupName -Name "AzureStorageLinkedService" -File ".\AzureStorageLinkedService.json"
@@ -271,7 +270,7 @@ ms.locfileid: "43090939"
 
 ### <a name="create-a-dataset-for-sink-sql-data-warehouse"></a>Создание набора данных для хранилища данных-приемника SQL
 
-1. Создайте файл JSON с именем **AzureSqlDWDataset.json** в папке **C:\ADFv2TutorialBulkCopy** со следующим содержимым: tableName задается в качестве параметра, позже действие копирования, которое ссылается на этот набор данных, передает фактическое значение в набор данных.
+1. Создайте файл JSON с именем **AzureSqlDWDataset.json** в папке **C:\ADFv2TutorialBulkCopy** со приведенным ниже содержимым. tableName задается в качестве параметра, позже действие копирования, которое ссылается на этот набор данных, передает фактическое значение в набор данных.
 
     ```json
     {

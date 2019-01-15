@@ -1,251 +1,229 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Blackboard Learn | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Blackboard Learn | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Blackboard Learn.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 0b8ca505-61ea-487c-9a3e-fa50c936df0c
-ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 06/19/2017
+ms.topic: tutorial
+ms.date: 12/25/2018
 ms.author: jeedes
-ms.openlocfilehash: 9b7e7a84059f8393e8f900733602e32ca3ad833b
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 9aa03146608796f1a2d26d44b4e76b0331f8c5be
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39423663"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54063562"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-blackboard-learn"></a>Учебник. Интеграция Azure Active Directory с Blackboard Learn
+# <a name="tutorial-azure-active-directory-integration-with-blackboard-learn"></a>Руководство. Интеграция Azure Active Directory с Blackboard Learn
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Blackboard Learn.
-
 Интеграция Blackboard Learn с Azure AD обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к Blackboard Learn.
-- Вы можете включить автоматический вход пользователей в Blackboard Learn (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к Blackboard Learn.
+* Вы можете включить автоматический вход пользователей в Blackboard Learn (единый вход) с использованием учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно — на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Blackboard Learn, вам потребуется:
 
-- подписка Azure AD;
-- подписка Blackboard Learn — Shibboleth с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка Blackboard Learn с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Blackboard Learn из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+
+* Blackboard Learn поддерживает единый вход инициированного **пакета обновления**.
+* Blackboard Learn поддерживает **JIT**-подготовку пользователей.
 
 ## <a name="adding-blackboard-learn-from-the-gallery"></a>Добавление Blackboard Learn из коллекции
+
 Чтобы настроить интеграцию Blackboard Learn с Azure AD, необходимо добавить Blackboard Learn из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Blackboard Learn из коллекции, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Blackboard Learn**.
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/blackboard-learn-tutorial/tutorial_blackboardlearn_search.png)
+4. В поле поиска введите **Blackboard Learn**, выберите **Blackboard Learn** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. В области результатов выберите **Blackboard Learn** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+     ![Blackboard Learn в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/blackboard-learn-tutorial/tutorial_blackboardlearn_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в Blackboard Learn с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Blackboard Learn соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Blackboard Learn.
-
-Чтобы установить эту связь, следует назначить **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Blackboard Learn.
+В этом разделе описана настройка и проверка единого входа Azure AD с помощью Blackboard Learn с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Blackboard Learn.
 
 Чтобы настроить и проверить единый вход Azure AD в Blackboard Learn, вам потребуется выполнить действия в следующих стандартных блоках.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Blackboard Learn](#creating-a-blackboard-learn-test-user)** нужно для того, чтобы в Blackboard Learn также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Blackboard Learn](#configure-blackboard-learn-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Создание тестового пользователя Blackboard Learn](#create-blackboard-learn-test-user)** нужно для того, чтобы в Blackboard Learn также существовал пользователь Britta Simon, связанный с представлением пользователя в Azure AD.
+5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В данном разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Blackboard Learn.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Blackboard Learn, выполните следующие действия.**
+Чтобы настроить единый вход Azure AD в Blackboard Learn, выполните следующие действия.
 
-1. На портале Azure на странице интеграции с приложением **Blackboard Learn** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Blackboard Learn** выберите **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/blackboard-learn-tutorial/tutorial_blackboardlearn_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Blackboard Learn** сделайте следующее.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/blackboard-learn-tutorial/tutorial_blackboardlearn_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.blackboard.com/`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.blackboard.com/auth-saml/saml/SSO/entity-id/SAML_AD`
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+
+    ![Сведения о едином входе домена и URL-адресов для приложения Blackboard Learn](common/sp-identifier.png)
+
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.blackboard.com/`.
+
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<subdomain>.blackboard.com/auth-saml/saml/SSO/entity-id/SAML_AD`.
+
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Blackboard Learn](https://www.blackboard.com/support/index.aspx). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
+
+5. Приложение Blackboard Learn ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
+
+    ![изображение](common/edit-attribute.png)
+
+6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибуты токена SAML, как показано на рисунке, и выполните следующие действия. Мы сопоставили Userprincipalname как уникальный атрибут пользователя, но вы можете сопоставить его с соответствующим значением, которое однозначно идентифицирует пользователя в организации и сопоставляется с полем имени пользователя Blackboard Learn.
     
-    > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Blackboard Learn](https://www.blackboard.com/support/index.aspx). 
+    | ИМЯ | Исходный атрибут|
+    | ---------------| --------------- |
+    | urn:oid:1.3.6.1.4.1.5923.1.1.1.6 | user.userprincipalname |
 
-1. Приложение Blackboard Learn ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения.
- На следующем снимке экрана показан пример.
+    a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![Настройка единого входа](./media/blackboard-learn-tutorial/tutorial_attribute.png)
+    ![изображение](common/new-save-attribute.png)
 
-1. В разделе **Атрибуты пользователя** диалогового окна **Единый вход** настройте атрибут токена SAML, как показано на рисунке, и выполните следующие действия. Мы сопоставили Userprincipalname как уникальный атрибут пользователя, но вы можете сопоставить его с соответствующим значением, которое однозначно идентифицирует пользователя в организации и сопоставляется с полем имени пользователя Blackboard Learn.
-           
-    | Имя атрибута | Значение атрибута |   
-    | ---------------| ----------------|
-    | urn:oid:1.3.6.1.4.1.5923.1.1.1.6 |user.userprincipalname |
-
-    a. Щелкните **Добавить атрибут**, чтобы открыть диалоговое окно **Добавление атрибута**.
-
-    ![Настройка единого входа](./media/blackboard-learn-tutorial/tutorial_attribute_04.png)
-    
-    ![Настройка единого входа](./media/blackboard-learn-tutorial/tutorial_attribute_05.png)
+    ![изображение](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
-    c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
-    
-    d. Нажмите кнопку **ОК**.
+    c. Оставьте пустым поле **Пространство имен**.
 
-1. В разделе **Сертификат подписи SAML** щелкните **XML метаданных** и сохраните XML-файл на компьютере.
+    d. В качестве источника выберите **Атрибут**.
 
-    ![Настройка единого входа](./media/blackboard-learn-tutorial/tutorial_blackboardlearn_certificate.png)
+    д. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-1. Нажмите кнопку **Сохранить** .
+    Е. Нажмите кнопку **ОК**.
 
-    ![Настройка единого входа](./media/blackboard-learn-tutorial/tutorial_general_400.png)
+    ж. Выберите команду **Сохранить**.
 
-1. В разделе **Конфигурация Blackboard Learn** щелкните **Настроить Blackboard Learn**, чтобы открыть окно **Настройка единого входа**. Скопируйте значение **SAML Entity ID** (Идентификатор сущности SAML) из раздела **Краткий справочник**.
+4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-    ![Настройка единого входа](./media/blackboard-learn-tutorial/tutorial_blackboardlearn_configure.png) 
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-1. Для настройки единого входа на стороне приложения **Blackboard Learn** необходимо отправить скачанный **XML-файл метаданных** и **идентификатор сущности SAML** [группе поддержки Blackboard Learn](https://www.blackboard.com/support/index.aspx).
+6. Скопируйте требуемый URL-адрес из раздела **Set up Blackboard Learn** (Настройка Blackboard Learn).
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    a. URL-адрес входа.
+
+    b. Идентификатор Azure AD.
+
+    c. URL-адрес выхода
+
+### <a name="configure-blackboard-learn-single-sign-on"></a>Настройка единого входа для Blackboard Learn
+
+Для настройки единого входа на стороне приложения **Blackboard Learn** необходимо отправить скачанный **XML метаданных федерации** и **Идентификатор Azure AD** [группе поддержки Blackboard Learn](https://www.blackboard.com/support/index.aspx).
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/blackboard-learn-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/blackboard-learn-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее.
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/blackboard-learn-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/blackboard-learn-tutorial/create_aaduser_04.png) 
+    a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
-
-    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
-
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="creating-a-blackboard-learn-test-user"></a>Создание тестового пользователя Blackboard Learn
-В этом разделе описано, как создать пользователя Britta Simon в приложении Blackboard Learn. 
 
-Приложение Blackboard Learn поддерживает JIT-подготовку пользователей. Убедитесь, что утверждения настроены, как описано в разделе **[Настройка единого входа в Azure AD](#configuring-azure-ad-single-sign-on)**.
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Blackboard Learn.
 
-![Назначение пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Blackboard Learn**.
 
-**Чтобы назначить пользователя Britta Simon в Blackboard Learn, выполните следующие действия.**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Blackboard Learn**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Blackboard Learn в списке приложений](common/all-applications.png)
 
-1. В списке приложений выберите **Blackboard Learn**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Настройка единого входа](./media/blackboard-learn-tutorial/tutorial_blackboardlearn_app.png) 
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202] 
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Назначение пользователя][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-blackboard-learn-test-user"></a>Создание тестового пользователя Blackboard Learn
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+В этом разделе описано, как создать пользователя Britta Simon в приложении Blackboard Learn. Приложение Blackboard Learn поддерживает JIT-подготовку пользователей. Убедитесь, что утверждения настроены, как описано в разделе **[Настройка единого входа в Azure AD](#configuring-azure-ad-single-sign-on)**.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "Blackboard Learn — Shibboleth" на панели доступа, вы автоматически войдете в приложение Blackboard Learn — Shibboleth. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку "Blackboard Learn" на панели доступа, вы автоматически войдете в приложение Blackboard Learn, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/blackboard-learn-tutorial/tutorial_general_01.png
-[2]: ./media/blackboard-learn-tutorial/tutorial_general_02.png
-[3]: ./media/blackboard-learn-tutorial/tutorial_general_03.png
-[4]: ./media/blackboard-learn-tutorial/tutorial_general_04.png
-
-[100]: ./media/blackboard-learn-tutorial/tutorial_general_100.png
-
-[200]: ./media/blackboard-learn-tutorial/tutorial_general_200.png
-[201]: ./media/blackboard-learn-tutorial/tutorial_general_201.png
-[202]: ./media/blackboard-learn-tutorial/tutorial_general_202.png
-[203]: ./media/blackboard-learn-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

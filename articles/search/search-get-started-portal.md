@@ -7,15 +7,15 @@ tags: azure-portal
 services: search
 ms.service: search
 ms.topic: tutorial
-ms.date: 01/02/2019
+ms.date: 01/07/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 3f75cd61d948f3f6df34124a9b16b333f6c5e6d5
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 9bdc2e197b4d7aea270c954305a96a01a1371945
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54001793"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54121555"
 ---
 # <a name="quickstart-use-built-in-portal-tools-for-azure-search-import-indexing-and-queries"></a>Краткое руководство. Использование встроенных инструментов на портале для импорта, индексирования и отправки запросов в Поиске Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "54001793"
 
 Разделы на информационной панели службы содержат сведения о количестве имеющихся индексов, индексаторов и источников данных. 
 
-![Список индексов, индексаторов и источников данных][media/search-get-started-portal/tiles-indexers-datasources2.png]
+![Список индексов, индексаторов и источников данных](media/search-get-started-portal/tiles-indexers-datasources2.png)
 
 ## <a name="create-index"></a> Создание индекса и загрузка данных
 
@@ -124,9 +124,13 @@ ms.locfileid: "54001793"
 
 ## <a name="view-the-index"></a>Просмотр индекса
 
-Плитка **Индексы** отображает существующие индексы, включая индекс *realestate-us-sample*, который вы только что создали в мастере.
+На основной странице службы содержатся ссылки на ресурсы, созданные в службе "Поиск Azure".  Для просмотра индекса, который вы только что создали, щелкните **Индексы** в списке ссылок. 
 
-Из этого списка вы можете просмотреть схему индекса и добавить новые поля, если потребуется, но не можете изменить существующие поля. Существующие поля имеют физическое представление в службе поиска Azure. Поэтому они не изменяются даже в коде. Чтобы существенным образом изменить существующее поле, создайте новый индекс и уделите старый.
+   ![Список индексов на панели мониторинга службы](media/search-get-started-portal/indexes-list.png)
+
+В этом списке можно щелкнуть индекс *realestate-us-sample*, который вы только что создали, чтобы просмотреть схему индекса и при необходимости добавить новые поля. 
+
+На вкладке **Поля** отображается схема индекса. Прокрутите до нижней части списка, чтобы добавить новое поле. В большинстве случаев существующие поля нельзя изменить. Существующие поля имеют физическое представление в службе поиска Azure. Поэтому они не изменяются даже в коде. Чтобы существенным образом изменить существующее поле, создайте новый индекс и уделите старый.
 
    ![Пример определения индексов](media/search-get-started-portal/sample-index-def.png)
 
@@ -137,6 +141,8 @@ ms.locfileid: "54001793"
 ## <a name="query-index"></a> Создание запроса с помощью обозревателя поиска
 
 У вас уже должен быть индекс службы поиска, который можно запрашивать, используя встроенный в страницу запроса [**проводник поиска**](search-explorer.md). Это поле для поиска, с помощью которого можно проверить произвольные строки запроса.
+
+**Обозреватель поиска** используется только для обработки [запросов REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents). Но он также поддерживает [простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search) и [средство полного синтаксического анализа запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), а также все параметры поиска, доступные в операциях [REST API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents#bkmk_examples).
 
 > [!TIP]
 > В [обзорном видео о службе "Поиск Azure"](https://channel9.msdn.com/Events/Connect/2016/138) следующие действия демонстрируются начиная с 6:08.
@@ -152,9 +158,7 @@ ms.locfileid: "54001793"
 
 3. В строке поиска введите приведенные ниже строки запроса и нажмите кнопку **Поиск**.
 
-    > [!NOTE]
-    > **Обозреватель поиска** умеет обрабатывать только [запросы REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents). Он поддерживает и [простой синтаксис запросов](https://docs.microsoft.com/rest/api/searchservice/simple-query-syntax-in-azure-search), и [средство полного синтаксического анализа запросов Lucene](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search), а также все параметры поиска, доступные в операциях [поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents).
-    >
+   ![Строка запроса и кнопка поиска](media/search-get-started-portal/search-explorer-query-string-example.png)
 
 ## <a name="example-queries"></a>Примеры запросов
 

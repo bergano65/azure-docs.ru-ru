@@ -6,26 +6,23 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: quickstart
-ms.date: 09/07/2018
+ms.date: 01/09/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to quickly deploy Data Box Disk so as to import data into Azure.
-ms.openlocfilehash: fbe286313bce9b735665b134a5ea18ba4995548b
-ms.sourcegitcommit: a4e4e0236197544569a0a7e34c1c20d071774dd6
+ms.openlocfilehash: 3b158e0743a811f0d8f478c15b64c2b8b99a748a
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51712268"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54156006"
 ---
-# <a name="quickstart-deploy-azure-data-box-disk-using-the-azure-portal-preview"></a>Краткое руководство. Развертывание диска Azure Data Box с помощью портала Azure (предварительная версия)
+# <a name="quickstart-deploy-azure-data-box-disk-using-the-azure-portal"></a>Краткое руководство. Развертывание решения "Диск Azure Data Box" с помощью портала Azure
 
 В этом кратком руководстве описывается развертывание диска Azure Data Box с помощью портала Azure. В этих действиях описано как быстро создать заказ, получить диски, распаковать, подключить и копировать данные на диски, таким образом, чтобы оны отправлялись в Azure. 
 
-Подробное пошаговое развертывание и отслеживание инструкции, см. в статье [Руководство: Заказ диска Azure Data Box](data-box-disk-deploy-ordered.md). 
+Подробные пошаговое инструкции по развертыванию и отслеживанию см. в статье [Руководство. Заказ Диска Azure Data Box (предварительная версия)](data-box-disk-deploy-ordered.md). 
 
 Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-
-> [!IMPORTANT]
-> Диск Data Box находится в режиме предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем развертывать это решение.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

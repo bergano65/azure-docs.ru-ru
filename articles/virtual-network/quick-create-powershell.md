@@ -1,14 +1,12 @@
 ---
-title: Краткое руководство. Создание виртуальной сети с помощью Azure PowerShell | Документация Майкрософт
+title: Краткое руководство. Создание виртуальной сети с помощью Azure PowerShell
+titlesuffix: Azure Virtual Network
 description: Из этого краткого руководства вы узнаете, как создать виртуальную сеть с помощью портала Azure. Виртуальная сеть позволяет ресурсам Azure, таким как виртуальные машины, обмениваться данными в частном порядке и взаимодействовать через Интернет.
 services: virtual-network
 documentationcenter: virtual-network
 author: jimdial
-manager: jeconnoc
-editor: ''
 tags: azure-resource-manager
 Customer intent: I want to create a virtual network so that virtual machines can communicate with privately with each other and with the internet.
-ms.assetid: ''
 ms.service: virtual-network
 ms.devlang: ''
 ms.topic: quickstart
@@ -16,13 +14,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: jdial
-ms.custom: mvc
-ms.openlocfilehash: 4e2808df56684b257898f3e03f8e9ca36682063b
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 725e03ded6d6f2e3b5d7a41d2053f418a5933ef8
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53341921"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54023249"
 ---
 # <a name="quickstart-create-a-virtual-network-using-powershell"></a>Краткое руководство. Создание виртуальной сети с помощью PowerShell
 

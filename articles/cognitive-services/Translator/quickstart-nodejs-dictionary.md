@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Получение других вариантов перевода с помощью API перевода текстов (Node.js)
+title: Краткое руководство. Поиск слов в двуязычном словаре с помощью Node.js — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как найти другие варианты перевода и использования для выбранного языка с помощью Node.js и REST API перевода текстов.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 10/29/2018
 ms.author: erhopf
-ms.openlocfilehash: 191afcdfb7a401755fffc028ce4119526f1e693d
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: f7f779ccd10eeffc9ddfcba5dbb9abde00e1f735
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035634"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54160018"
 ---
-# <a name="quickstart-use-the-translator-text-api-to-get-alternate-translations-with-nodejs"></a>Краткое руководство. Получение других вариантов перевода с помощью API перевода текстов (Node.js)
+# <a name="quickstart-look-up-words-with-bilingual-dictionary-using-nodejs"></a>Краткое руководство. Поиск слов в двуязычном словаре с помощью Node.js
 
 В этом кратком руководстве описано, как найти другие варианты перевода и использования для выбранного языка с помощью Node.js и REST API перевода текстов.
 
@@ -68,7 +68,7 @@ if (!subscriptionKey) {
 Метод `request()`, доступный через модуль запросов, позволяет передавать метод HTTP, URL-адрес, параметры запроса, заголовки и текст JSON как объект `options`. В этом фрагменте кода мы настроим запрос:
 
 >[!NOTE]
-> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в статье [API перевода текстов 3.0: Dictionary Lookup](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-dictionary-lookup).
+> Дополнительные сведения о конечных точках, маршрутах и параметрах запросов см. в руководстве по [определениям в поиск по словарю](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-dictionary-lookup).
 
 ```javascript
 let options = {

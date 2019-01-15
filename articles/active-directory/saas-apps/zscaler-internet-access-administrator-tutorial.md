@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/7/2018
 ms.author: jeedes
-ms.openlocfilehash: 1a28a4f8dd5087377d559c50ef3432251510810b
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 088fc2b7aeb318481a81387770f1dcef2883241d
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53195144"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54064106"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-internet-access-administrator"></a>Руководство. Интеграция Azure Active Directory с Zscaler Internet Access Administrator
 
@@ -38,7 +38,7 @@ ms.locfileid: "53195144"
 Чтобы настроить интеграцию Azure Active Directory с Zscaler Internet Access Administrator, вам потребуется:
 
 * подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
-* Подписка Zscaler Internet Access Administrator с поддержкой единого входа.
+* Подписка Zscaler Internet Access Administrator
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -105,6 +105,7 @@ ms.locfileid: "53195144"
     ![Сведения о домене и URL-адресах единого входа для Zscaler Internet Access Administrator](common/idp-intiated.png)
 
     a. В текстовом поле **Идентификатор** введите требуемый URL-адрес:
+    
     | |
     |--|
     | `https://admin.zscaler.net` |
@@ -115,6 +116,7 @@ ms.locfileid: "53195144"
     | `https://admin.zscalerbeta.net` |
 
     b. В текстовом поле **URL-адрес ответа** введите требуемый URL-адрес:
+    
     | |
     |--|
     | `https://admin.zscaler.net/adminsso.do` |
@@ -165,37 +167,19 @@ ms.locfileid: "53195144"
 
 ### <a name="configure-zscaler-internet-access-administrator-single-sign-on"></a>Настройка единого входа в Zscaler Internet Access Administrator
 
-9. В другом окне веб-браузера войдите на сайт компании Zscaler Internet Access Administrator в качестве администратора.
+1. В другом окне веб-браузера войдите в пользовательский интерфейс администратора Zscaler Internet Access.
 
-10. Выберите **Administration (Администрирование) > Authentication (Проверка подлинности) > Authentication Settings (Параметры проверки подлинности)** и выполните следующие действия:
+2. Выберите **Administration > Administrator Management** (Администрирование) > Управление администраторами), выполните следующие действия и щелкните Save (Сохранить):
    
-    ![Администрирование](./media/zscaler-internet-access-administrator-tutorial/ic800206.png "Администрирование")
+    ![Администрирование](./media/zscaler-internet-access-administrator-tutorial/AdminSSO.png "Администрирование")
 
-    a. В разделе Authentication Type (Тип проверки подлинности) выберите **SAML**.
+    a. Установите флажок **Enable SAML Authentication** (Включить аутентификацию SAML).
 
-    b. Нажмите кнопку **Configure SAML** (Настроить SAML).
-
-11. В окне **Edit SAML** (Изменить параметры SAML) выполните следующие действия и нажмите кнопку Save (Сохранить).  
-            
-    ![Управление пользователями и проверкой подлинности](./media/zscaler-internet-access-administrator-tutorial/ic800208.png "Управление пользователями и проверкой подлинности")
+    b. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
     
-    a. В текстовое поле **SAML Portal URL** (URL-адрес портала SAML) вставьте **URL-адрес входа**, скопированный на портале Azure.
+    c. При необходимости для обеспечения дополнительной безопасности добавьте сведения об **издателе** для проверки издателя ответа SAML.
 
-    b. В текстовое поле **Login Name Attribute** (Атрибут имени входа) введите **NameID**.
-
-    c. Нажмите **Upload** (Отправить), чтобы загрузить сертификат для подписи SAML, который вы скачали на портале Azure в разделе **Public SSL Certificate** (Публичный SSL-сертификат).
-
-    d. Включите параметр **Enable SAML Auto-Provisioning** (Включить автоматическую подготовку SAML).
-
-    д. В текстовое поле **User Display Name Attribute** (Атрибут отображаемого имени пользователя) введите **displayName**, если вы хотите включить автоматическую подготовку SAML для атрибутов displayName.
-
-    Е. В текстовое поле **Group Name Attribute** (Атрибут имени группы) введите **memberOf**, если вы хотите включить автоматическую подготовку SAML для атрибутов memberOf.
-
-    ж. В поле **Department Name Attribute** (Атрибут имени отдела) введите **department**, если вы хотите включить автоматическую подготовку SAML для атрибутов department.
-
-    i. Выберите команду **Сохранить**.
-
-12. На странице **Настройка проверки подлинности пользователей** выполните следующие действия.
+3. В пользовательском интерфейсе администратора выполните следующие действия:
 
     ![Администрирование](./media/zscaler-internet-access-administrator-tutorial/ic800207.png)
 
@@ -256,15 +240,16 @@ ms.locfileid: "53195144"
 
 ### <a name="create-zscaler-internet-access-administrator-test-user"></a>Создание тестового пользователя Zscaler Internet Access Administrator
 
-Цель этого раздела — создать пользователя с именем Britta Simon в Zscaler Internet Access Administrator. Приложение Zscaler Internet Access Administrator поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. При попытке получить доступ к приложению Zscaler Internet Access Administrator создается учетная запись пользователя (если она еще не создана).
->[!Note]
->Если вам нужно создать пользователя вручную, обратитесь в  [службу поддержки Zscaler Internet Access Administrator](Phone: +1-408-701-0534 URL: help.zscaler.com).
+Цель этого раздела — создать пользователя с именем Britta Simon в Zscaler Internet Access Administrator. Zscaler Internet Access не поддерживает JIT-подготовку для единого входа администратора. Необходимо вручную создать учетную запись администратора.
+Инструкции по созданию учетной записи администратора см. в документации по Zscaler:
+
+https://help.zscaler.com/zia/adding-admins
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Zscaler Internet Access Administrator на панели доступа, вы автоматически войдете в приложение Zscaler Internet Access Administrator, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку Zscaler Internet Access Administrator на панели доступа, вы автоматически войдете в пользовательский интерфейс администратора Zscaler Internet Access, для которого настроен единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

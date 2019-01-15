@@ -8,16 +8,15 @@ manager: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: douglasl
-ms.openlocfilehash: 94269056a7bf0a89c3d1b2f4968ad9ff90abbc82
-ms.sourcegitcommit: f6e2a03076679d53b550a24828141c4fb978dcf9
+ms.openlocfilehash: e062495b9a16474cef70e9a19bdd62b6e9e13752
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43106650"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54013905"
 ---
 # <a name="transform-data-in-azure-virtual-network-using-hive-activity-in-azure-data-factory"></a>Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure
 В этом руководстве с помощью Azure PowerShell вы создадите конвейер Фабрики данных, который преобразует данные, используя действие Hive в кластере HDInsight, находящемся в виртуальной сети Azure (VNet). В этом руководстве вы выполните следующие шаги:
@@ -89,7 +88,7 @@ ms.locfileid: "43106650"
     ```powershell
     $selfHostedIntegrationRuntimeName = "MySelfHostedIR09142017" 
     ```
-2. Запустите **PowerShell**. Не закрывайте Azure PowerShell, пока выполняются описанные в этом кратком руководстве инструкции. Если закрыть и снова открыть это окно, то придется вновь выполнять эти команды. Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+2. Запустите **PowerShell**. Не закрывайте Azure PowerShell, пока выполняются описанные в этом кратком руководстве инструкции. Если закрыть и снова открыть это окно, то придется вновь выполнять эти команды. Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
     Выполните следующую команду и введите имя пользователя и пароль, которые используются для входа на портал Azure.
         
@@ -106,7 +105,7 @@ ms.locfileid: "43106650"
     ```powershell
     Select-AzureRmSubscription -SubscriptionId "<SubscriptionId>"    
     ```  
-3. Создайте группу ресурсов ADFTutorialResourceGroup, если она не существует в вашей подписке. 
+3. Создайте группу ресурсов: Создайте группу ресурсов ADFTutorialResourceGroup, если она не существует в вашей подписке. 
 
     ```powershell
     New-AzureRmResourceGroup -Name $resourceGroupName -Location "East Us" 
@@ -152,9 +151,9 @@ ms.locfileid: "43106650"
 
    ![Регистрация среды выполнения интеграции](media/tutorial-transform-data-using-hive-in-vnet/register-integration-runtime.png)
 
-   Когда локальная среда выполнения интеграции будет успешно зарегистрирована, вы увидите следующее сообщение: ![Зарегистрировано успешно](media/tutorial-transform-data-using-hive-in-vnet/registered-successfully.png).
+   Когда локальная среда выполнения интеграции будет успешно зарегистрирована, вы увидите следующее сообщение: Сообщение об ![успешной регистрации](media/tutorial-transform-data-using-hive-in-vnet/registered-successfully.png)
 
-   Когда узел будет подключен к облачной службе, появится следующая страница: ![Узел подключен](media/tutorial-transform-data-using-hive-in-vnet/node-is-connected.png).
+   Когда узел будет подключен к облачной службе, отобразится следующая страница: Страница ![Node is connected](media/tutorial-transform-data-using-hive-in-vnet/node-is-connected.png) (Узел подключен)
 
 ## <a name="author-linked-services"></a>Создание связанных служб
 

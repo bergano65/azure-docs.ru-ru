@@ -1,179 +1,202 @@
 ---
-title: Руководство по интеграции Azure Active Directory с GoToMeeting | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с GoToMeeting | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и GoToMeeting.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: bcaf19f2-5809-4e1c-acbc-21a8d3498ccf
-ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 01/02/2018
+ms.topic: tutorial
+ms.date: 01/02/2019
 ms.author: jeedes
-ms.openlocfilehash: b62b3b7f9f3bfd55237ed4d894954a0bde48e7fc
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: f1632ffa6bf4f0896fe4155b9a3fe938d0e672fc
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39043726"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54065024"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-gotomeeting"></a>Руководство по интеграции Azure Active Directory с GoToMeeting
+# <a name="tutorial-azure-active-directory-integration-with-gotomeeting"></a>Руководство. Интеграция Azure Active Directory с GoToMeeting
 
 В этом руководстве описано, как интегрировать GoToMeeting с Azure Active Directory (Azure AD).
-
 Интеграция GoToMeeting с Azure AD обеспечивает перечисленные ниже преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к GoToMeeting.
-- Вы можете включить автоматический вход пользователей в GoToMeeting (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к GoToMeeting.
+* Вы можете включить автоматический вход пользователей в GoToMeeting (единый вход) с помощью учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно — на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с GoToMeeting, вам потребуется:
 
-- подписка Azure AD;
-- подписка GoToMeeting с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка GoToMeeting с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление GoToMeeting из коллекции.
-2. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
+
+* GoToMeeting поддерживает единый вход инициированного **пакета обновления**.
 
 ## <a name="adding-gotomeeting-from-the-gallery"></a>Добавление GoToMeeting из коллекции.
+
 Чтобы настроить интеграцию GoToMeeting с Azure AD, вам нужно добавить GoToMeeting из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить GoToMeeting из коллекции, выполните указанные ниже действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Новое приложение"][3]
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **GoToMeeting**, выберите **GoToMeeting** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![GoToMeeting в списке результатов](./media/citrix-gotomeeting-tutorial/tutorial_gotomeeting_addfromgallery.png)
+     ![GoToMeeting в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в GoToMeeting с использованием тестового пользователя Britta Simon.
-
-Чтобы единый вход работал, Azure AD необходимо знать, какой пользователь в GoToMeeting соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем GoToMeeting.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в GoToMeeting.
+В этом разделе описана настройка и проверка единого входа Azure AD в GoToMeeting с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в GoToMeeting.
 
 Чтобы настроить и проверить единый вход Azure AD в GoToMeeting, вам нужно выполнить действия в перечисленных ниже стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя приложения GoToMeeting](#create-a-gotomeeting-test-user)** требуется для того, чтобы в GoToMeeting существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+2. **[Настройка единого входа в GoToMeeting](#configure-gotomeeting-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+5. **[Создание тестового пользователя приложения GoToMeeting](#create-gotomeeting-test-user)** требуется для того, чтобы в GoToMeeting существовал пользователь Britta Simon, связанный с представлением такого же пользователя в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении GoToMeeting.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в GoToMeeting, выполните указанные ниже действия.**
+Чтобы настроить единый вход Azure AD в GoToMeeting, выполните указанные ниже действия.
 
-1. На портале Azure на странице интеграции с приложением **GoToMeeting** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **GoToMeeting** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Диалоговое окно "Единый вход"](./media/citrix-gotomeeting-tutorial/tutorial_gotomeeting_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-3. В разделе **Домены и URL-адреса приложения GoToMeeting** сделайте следующее:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Сведения о домене и URL-адресах единого входа для приложения GoToMeeting](./media/citrix-gotomeeting-tutorial/tutorial_gotomeeting_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    В текстовом поле **Идентификатор** введите URL-адрес `https://authentication.logmeininc.com/saml/sp`.
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. Щелкните **Show Advanced URL configuration** (Показать расширенную конфигурацию URL-адресов) и настройте URL-адреса ниже.
+4. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    **URL-адрес входа** (оставьте это поле пустым).
-    
-    **URL-адреса ответа**: `https://authentication.logmeininc.com/saml/acs`
-    
-    **RelayState**:
-    
+    ![Сведения о домене и URL-адресах единого входа для приложения GoToMeeting](common/both-allurls.png)
+
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://authentication.logmeininc.com/saml/sp`.
+
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://authentication.logmeininc.com/saml/acs`.
+
+    c. Щелкните **Задать дополнительные URL-адреса** и настройте следующие URL-адреса.
+
+    d. **URL-адрес входа** (оставьте это поле пустым).
+
+    д. В текстовом поле **RelayState** введите URL-адрес в таком формате:
+
     - Для приложения GoToMeeting используйте `https://global.gotomeeting.com`
-    
+
     - Для GoToTraining используйте `https://global.gototraining.com`
-    
+
     - Для GoToWebinar используйте `https://global.gotowebinar.com` 
-    
+
     - Для GoToAssist используйте `https://app.gotoassist.com`
-    
-5. Нажмите кнопку **Сохранить** .
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/citrix-gotomeeting-tutorial/tutorial_general_400.png)
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов GoToMeeting](https://go.microsoft.com/fwlink/?linkid=845985). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. В другом окне браузера войдите в [центр организации GoToMeeting](https://organization.logmeininc.com/). Вы увидите запрос на подтверждение обновления IdP.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
-7. Установите флажок My Identity Provider has been updated with the new domain (Мой поставщик удостоверений обновлен с помощью нового домена). По завершении нажмите кнопку **Готово**.
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
+6. Требуемый URL-адрес можно скопировать из раздела **Настройка GoToMeeting**.
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    a. URL-адрес входа.
+
+    b. Идентификатор Azure AD.
+
+    c. URL-адрес выхода
+
+### <a name="configure-gotomeeting-single-sign-on"></a>Настройка единого входа в GoToMeeting
+
+1. В другом окне браузера войдите в [центр организации GoToMeeting](https://organization.logmeininc.com/). Вы увидите запрос на подтверждение обновления поставщика удостоверений.
+
+2. Установите флажок My Identity Provider has been updated with the new domain (Мой поставщик удостоверений обновлен с помощью нового домена). По завершении нажмите кнопку **Готово**.
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Azure Active Directory"](./media/citrix-gotomeeting-tutorial/create_aaduser_01.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/citrix-gotomeeting-tutorial/create_aaduser_02.png)
-
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
-
-    ![Кнопка "Добавить"](./media/citrix-gotomeeting-tutorial/create_aaduser_03.png)
-
-4. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/citrix-gotomeeting-tutorial/create_aaduser_04.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="create-a-gotomeeting-test-user"></a>Создание тестового пользователя GoToMeeting
+
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как предоставить пользователю Britta Simon доступ к GoToMeeting, чтобы он мог использовать единый вход Azure.
+
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **GoToMeeting**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. В списке приложений выберите **GoToMeeting**.
+
+    ![Ссылка на GoToMeeting в списке "Приложения"](common/all-applications.png)
+
+3. В меню слева выберите **Пользователи и группы**.
+
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Область "Добавление назначения"](common/add-assign-user.png)
+
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-gotomeeting-test-user"></a>Создание тестового пользователя GoToMeeting
 
 В этом разделе вы создадите в GoToMeeting пользователя с именем Britta Simon. Приложение GoToMeeting поддерживает JIT-подготовку. Эта функция включена по умолчанию.
 
@@ -182,61 +205,17 @@ ms.locfileid: "39043726"
 > [!NOTE]
 > Чтобы создать пользователя вручную, обратитесь в [службу поддержки GoToMeeting](https://support.logmeininc.com/gotomeeting).
 
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как предоставить пользователю Britta Simon доступ к GoToMeeting, чтобы он мог использовать единый вход Azure.
-
-![Назначение роли пользователя][200] 
-
-**Чтобы назначить пользователя Britta Simon в GoToMeeting, выполните указанные ниже действия.**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
-
-2. В списке приложений выберите **GoToMeeting**.
-
-    ![Ссылка на GoToMeeting в списке "Приложения"](./media/citrix-gotomeeting-tutorial/tutorial_gotomeeting_app.png)  
-
-3. В меню слева выберите **Пользователи и группы**.
-
-    ![Ссылка "Пользователи и группы"][202]
-
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Область "Добавление назначения"][203]
-
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку GoToMeeting на панели доступа, вы автоматически войдете в приложение GoToMeeting.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув плитку "GoToMeeting" на панели доступа, вы автоматически войдете в приложение GoToMeeting, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-* [Руководство по настройке Google Apps для автоматической подготовки пользователей](https://docs.microsoft.com/azure/active-directory/active-directory-saas-citrixgotomeeting-provisioning-tutorial)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-<!--Image references-->
-
-[1]: ./media/gotomeeting-tutorial/tutorial_general_01.png
-[2]: ./media/gotomeeting-tutorial/tutorial_general_02.png
-[3]: ./media/gotomeeting-tutorial/tutorial_general_03.png
-[4]: ./media/gotomeeting-tutorial/tutorial_general_04.png
-
-[100]: ./media/gotomeeting-tutorial/tutorial_general_100.png
-
-[200]: ./media/gotomeeting-tutorial/tutorial_general_200.png
-[201]: ./media/gotomeeting-tutorial/tutorial_general_201.png
-[202]: ./media/gotomeeting-tutorial/tutorial_general_202.png
-[203]: ./media/gotomeeting-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

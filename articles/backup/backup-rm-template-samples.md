@@ -9,16 +9,16 @@ ms.topic: sample
 ms.date: 04/18/2018
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: bf6bca668ff97b30789a99dab2f1f3d409ab0624
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: ffd153490938c232bdf8b5d4e40a2d43ced9f57b
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52867921"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54063275"
 ---
 # <a name="azure-resource-manager-templates-for-azure-backup"></a>Шаблоны Azure Resource Manager для Azure Backup
 
-В приведенной ниже таблице представлены ссылки на шаблоны Azure Resource Manager для хранилищ служб восстановления и функций Azure Backup.
+В приведенной ниже таблице представлены ссылки на шаблоны Azure Resource Manager для хранилищ служб восстановления и функций Azure Backup. Сведения о синтаксисе и свойствах JSON см. в статье о [типах ресурсов Microsoft.RecoveryServices](/azure/templates/microsoft.recoveryservices/allversions).
 
 |   |   |
 |---|---|

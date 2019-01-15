@@ -1,19 +1,18 @@
 ---
 title: Настройка конвейера CI/CD с использованием задачи сборки эмулятора Azure Cosmos DB
 description: Руководство по настройке рабочего процесса сборки и выпуска в Azure DevOps с использованием задачи сборки эмулятора Cosmos DB.
-services: cosmos-db
-keywords: Эмулятор Azure Cosmos DB
 author: deborahc
 ms.service: cosmos-db
 ms.topic: tutorial
 ms.date: 11/02/2018
 ms.author: dech
-ms.openlocfilehash: 83178abab84679dcfb36a361950097f9224eda81
-ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
+ms.reviewer: sngun
+ms.openlocfilehash: 58b97dd2df29a829b843d20c14cdb15644357653
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53810650"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54053710"
 ---
 # <a name="set-up-a-cicd-pipeline-with-the-azure-cosmos-db-emulator-build-task-in-azure-devops"></a>Настройка конвейера CI/CD с использованием задачи сборки эмулятора Azure Cosmos DB в Azure DevOps
 
@@ -66,7 +65,7 @@ ms.locfileid: "53810650"
 
 Теперь давайте настроим тесты, чтобы они использовали эмулятор. Задача сборки эмулятора экспортирует переменную среды с именем CosmosDbEmulator.Endpoint, значение которой может использовать любая задача, расположенная дальше в конвейере сборки. 
 
-В этом руководстве описано, как использовать [задачу Visual Studio Test](https://github.com/Microsoft/azure-pipelines-tasks/blob/master/Tasks/VsTestV2/README.md) для запуска модульных тестов, которые настраиваются в файле **.runsettings**. См. дополнительные сведения о [настройке модульных тестов](https://docs.microsoft.com/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2017).
+В этом руководстве описано, как использовать [задачу Visual Studio Test](https://github.com/Microsoft/azure-pipelines-tasks/blob/master/Tasks/VsTestV2/README.md) для запуска модульных тестов, которые настраиваются в файле **.runsettings**. См. дополнительные сведения о [настройке модульных тестов](https://docs.microsoft.com/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file?view=vs-2017). Полный пример кода приложения со списком задач, которое используется при работе с этим документом, можно найти на сайте [GitHub](https://github.com/Azure-Samples/documentdb-dotnet-todo-app).
 
 Ниже приведен пример файла **.runsettings**, в котором определены параметры для передачи в модульные тесты приложения. Обратите внимание, что используемая переменная `authKey` является [известным ключом](https://docs.microsoft.com/azure/cosmos-db/local-emulator#authenticating-requests) эмулятора. Задача сборки эмулятора ожидает именно этот ключ `authKey`, который нужно определить в файле **.runsettings**.
 

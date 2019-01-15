@@ -10,12 +10,12 @@ ms.workload: big-data
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/12/2018
-ms.openlocfilehash: 793aa52c0eb49d122f520ead3ee80a869e7b62d9
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 88538aa9528059458f6e73485f4839693caa943b
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53251340"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54054500"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-resource-manager-template"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью шаблона Azure Resource Manager
 
@@ -178,9 +178,9 @@ ms.locfileid: "53251340"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этой статье вы создали кластер Spark в Azure Databricks и запустили задание Spark, используя данные в хранилище Azure. Вы также можете просмотреть [источники данных Spark](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Можно также ознакомиться с шаблоном Resource Manager для [создания рабочей области Azure Databricks с настраиваемым адресом виртуальной сети](https://github.com/Azure/azure-quickstart-templates/tree/master/101-databricks-workspace-with-custom-vnet-address).
+В этой статье вы создали кластер Spark в Azure Databricks и запустили задание Spark, используя данные в хранилище Azure. Вы также можете просмотреть [источники данных Spark](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html), чтобы узнать, как импортировать данные из источников данных в Azure Databricks. Можно также ознакомиться с шаблоном Resource Manager для [создания рабочей области Azure Databricks с настраиваемым адресом виртуальной сети](https://github.com/Azure/azure-quickstart-templates/tree/master/101-databricks-workspace-with-custom-vnet-address). Синтаксис и свойства JSON, используемые в шаблоне, см. в справочнике по шаблону [Microsoft.Databricks/workspaces](/azure/templates/microsoft.databricks/workspaces).
 
-Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечение, преобразование и загрузка данных) с помощью Azure Databricks.
+Перейдите к следующей статье, чтобы узнать, как выполнять операции ETL (извлечения, преобразование и загрузка данных) с помощью Azure Databricks.
 
 > [!div class="nextstepaction"]
 > [Извлечение, преобразование и загрузка данных с помощью Azure Databricks](databricks-extract-load-sql-data-warehouse.md)

@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Получение других вариантов перевода с помощью API перевода текстов и C#
+title: Краткое руководство. Поиск слов в двуязычном словаре с помощью C# — API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: Из этого краткого руководства вы узнаете, как с помощью API перевода текстов и .NET Core найти варианты перевода определенного термина и примеры их использования.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: translator-text
 ms.topic: quickstart
 ms.date: 11/26/2018
 ms.author: erhopf
-ms.openlocfilehash: 034b6e102d008039ddd138798900dbee17faf51d
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 3460c1c62f26e2bb0a4a14238e110cdd363a7a87
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52887956"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159576"
 ---
-# <a name="quickstart-use-the-translator-text-api-to-get-alternate-translations-using-c"></a>Краткое руководство. Получение других вариантов перевода с помощью API перевода текстов и C#
+# <a name="quickstart-look-up-words-with-bilingual-dictionary-using-c"></a>Краткое руководство. Поиск слов в двуязычном словаре с помощью C#
 
 Из этого краткого руководства вы узнаете, как с помощью API перевода текстов и .NET Core найти варианты перевода определенного термина и примеры их использования.
 
@@ -183,7 +183,7 @@ dotnet run
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Удалите все конфиденциальные сведения из исходного кода примера приложения, например ключи подписки.
+Удалите из исходного кода примера приложения все конфиденциальные сведения, например ключи подписки.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

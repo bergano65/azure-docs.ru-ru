@@ -1,25 +1,33 @@
 ---
 title: Использование приложений в Azure Blockchain Workbench
-description: Использование контрактов приложения в Azure Blockchain Workbench.
+description: Руководство по использованию контрактов приложения в Azure Blockchain Workbench.
 services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 10/1/2018
-ms.topic: article
+ms.date: 1/8/2019
+ms.topic: tutorial
 ms.service: azure-blockchain
-ms.reviewer: zeyadr
+ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: 4fe6f164882ffce7bf22ec0c0b94107abcf6a20e
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: b43b125f7e96ac58a9094fc1e0e18b38f10d3e2f
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48242091"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54107078"
 ---
-# <a name="using-applications-in-azure-blockchain-workbench"></a>Использование приложений в Azure Blockchain Workbench
+# <a name="tutorial-using-applications-in-azure-blockchain-workbench"></a>Руководство. Использование приложений в Azure Blockchain Workbench
 
 Blockchain Workbench позволяет создавать контракты и выполнять действия по ним. Также вы здесь можете просмотреть некоторые сведения, например текущее состояние и журнал транзакций.
+
+Вы узнаете, как:
+
+> [!div class="checklist"]
+> * создать контейнер;
+> * выполнить действие с контрактом.
+
+[!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -82,4 +90,4 @@ Blockchain Workbench позволяет создавать контракты и
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Как устранить неполадки в Azure Blockchain Workbench](troubleshooting.md)
+> [Управление версиями приложения Azure Blockchain Workbench](version-app.md)

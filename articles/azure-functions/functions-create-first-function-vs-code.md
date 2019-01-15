@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.date: 09/07/2018
 ms.author: glenga
 ms.custom: mvc, devcenter
-ms.openlocfilehash: c5889d89ec8c913d9300fa85318a16b4eb452d3b
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: d265c391b12a46f509c8663c64892372c8d806ba
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52633764"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54104528"
 ---
 # <a name="create-your-first-function-using-visual-studio-code"></a>Создание функции в Azure с помощью Visual Studio Code
 
@@ -27,7 +27,7 @@ ms.locfileid: "52633764"
 
 ![Код функций Azure в проекте Visual Studio](./media/functions-create-first-function-vs-code/functions-vscode-intro.png)
 
-Сейчас это расширение поддерживает функции C#, JavaScript и Java. Описанные в этой статье шаги могут различаться в зависимости от выбранного языка для проекта Функции Azure. Расширение сейчас доступно в режиме предварительной версии. Дополнительные сведения см. в разделе [Расширение "Функции Azure" для Visual Studio Code].
+Сейчас расширение полностью поддерживает функции C#, JavaScript и Java. Поддержка Python сейчас предоставляется в предварительной версии. Описанные в этой статье шаги могут различаться в зависимости от выбранного языка для проекта Функции Azure. Расширение сейчас доступно в режиме предварительной версии. Дополнительные сведения см. в разделе [Расширение "Функции Azure" для Visual Studio Code].
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -55,7 +55,7 @@ ms.locfileid: "52633764"
 
 ## <a name="create-an-http-triggered-function"></a>Создание функции, активируемой HTTP
 
-1. В расширении "**Функции Azure**" щелкните значок Create Function (Создать функцию).
+1. Выберите **Azure: Functions** (Azure: Функции) и щелкните значок Create Function (Создать функцию).
 
     ![Создание функции](./media/functions-create-first-function-vs-code/create-function.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "52633764"
 
     ![Ответ функции localhost в браузере](./media/functions-create-first-function-vs-code/functions-test-local-browser.png)
 
-1. Нажмите клавиши SHIFT+F1, чтобы остановить отладку.
+1. Нажмите клавиши SHIFT+F5, чтобы остановить отладку.
 
 Убедившись, что функция выполняется правильно на локальном компьютере, опубликуйте проект в Azure.
 

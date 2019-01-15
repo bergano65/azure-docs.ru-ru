@@ -7,14 +7,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: overview
-ms.date: 12/10/2018
+ms.date: 01/09/2018
 ms.author: diberry
-ms.openlocfilehash: ca92a6a2eb92e3b7fed9452d135c0a6bce55a57c
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: f587791dd1b864d0088408c377001c23546654c5
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53273244"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191281"
 ---
 # <a name="what-is-language-understanding-luis"></a>Что такое служба "Распознавание речи" (LUIS)?
 
@@ -115,6 +115,10 @@ LUIS предоставляет инструменты, функцию упра�
 * [Служба "Речь"](../Speech-Service/overview.md) преобразует запросы на разговорном языке в текст. 
 * [Средство для обучения ведению диалога](https://docs.microsoft.com/azure/cognitive-services/labs/conversation-learner/overview). Позволяет создавать диалоги с чат-ботом быстрее с помощью LUIS.
 * [Индивидуальный чат в проекте](https://docs.microsoft.com/azure/cognitive-services/project-personality-chat/overview), позволяющий чат-боту обрабатывать непринужденные разговоры на общие темы.
+
+Примеры использования LUIS:
+* Репозиторий GitHub с примерами использования [искусственного интеллекта для общения](https://github.com/Microsoft/AI).
+* Примеры [использования службы "Распознавание речи"](https://github.com/Azure-Samples/cognitive-services-language-understanding) для Azure.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

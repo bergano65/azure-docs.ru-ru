@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 10/10/2018
+ms.date: 01/09/2019
 ms.author: alkohli
-ms.openlocfilehash: d02557ecd84ea14db297ee07f7055a08304e7fcd
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 00c001b5c0c2c3dab86477fca798ec651f7b6c93
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49091221"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54189972"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Руководство. Заказ Azure Data Box
 
@@ -38,7 +38,7 @@ Azure Data Box — это гибридное решение, которое по
 - Убедитесь, что тип подписки, которую вы используете для службы Data Box, является одним из следующих:
     - Соглашение Microsoft Enterprise (EA). См. дополнительные сведения о [подписке EA](https://azure.microsoft.com/pricing/enterprise-agreement/).
     - Поставщик облачных решений (CSP). Дополнительные сведения см. в статье [Обзор Azure CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-overview).
-    - Потребление. Оплата по мере использования. Дополнительные сведения см. в статье о [подписках Azure с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0003p/).
+    - Спонсорское предложение Microsoft Azure. Дополнительные сведения см. в статье о [спонсорском предложении Microsoft Azure](https://azure.microsoft.com/offers/ms-azr-0036p/). 
 
 - Убедитесь, что у вас есть доступ владельца или участника подписки для заказа Data Box.
 

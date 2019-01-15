@@ -4,17 +4,17 @@ description: Сведения о том, как установить и испо
 services: terraform
 ms.service: terraform
 keywords: terraform, azure, devops, visual studio code, extension
-author: tomarcher
+author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 08/31/2018
-ms.openlocfilehash: be0140606302335884d62ba60c875a049949b495
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: 137a57638207a05f797692b25a5d5a31bd66ce3d
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49353056"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54074586"
 ---
 # <a name="install-and-use-the-azure-terraform-visual-studio-code-extension"></a>Установка и использование расширения Visual Studio Code для Azure Terraform
 
@@ -27,7 +27,7 @@ ms.locfileid: "49353056"
 > * использование Visual Studio Code для разработки, проектирования и выполнения планов Terraform.
 
 ## <a name="prerequisites"></a>Предварительные требования
-- **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
+- **Подписка Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) , прежде чем начинать работу.
 
 - **Terraform**. [Установите и настройте Terraform](/azure/virtual-machines/linux/terraform-install-configure).
 
@@ -95,7 +95,7 @@ ms.locfileid: "49353056"
 
 Теперь вы можете выполнять из Visual Studio Code все поддерживаемые команды Terraform в среде Cloud Shell.
 
-## <a name="exercise-1-basic-terraform-commands-walk-through"></a>Упражнение 1. Пошаговое руководство по основным командам Terraform
+## <a name="exercise-1-basic-terraform-commands-walk-through"></a>Упражнение 1. Пошаговые инструкции по основным командам Terraform
 
 В этом упражнении вы создадите и выполните базовый файл конфигурации Terraform, который подготавливает новую группу ресурсов Azure.
 
@@ -138,7 +138,7 @@ ms.locfileid: "49353056"
 
     ![Файл main.tf](media/terraform-vscode-extension/tf-main-tf.png)
 
-1. В строке меню выберите **Просмотр > Палитра команд > Azure Terraform: init**.
+1. В строке меню выберите **Просмотр > Палитра команд... > Azure Terraform: init**.
 
 1. Когда появится запрос на подтверждение, щелкните **ОК**.
 
@@ -235,7 +235,7 @@ ms.locfileid: "49353056"
 
     ![Проверка удаления группы ресурсов](media/terraform-vscode-extension/tf-refresh-resource-groups-button.png)
 
-## <a name="exercise-2-terraform-compute-module"></a>Упражнение 2. Модуль Terraform *compute*
+## <a name="exercise-2-terraform-compute-module"></a>Упражнение 2. Модуль Terraform *compute*
 
 В этом упражнении показано, как загрузить модуль Terraform *compute* в среду Visual Studio Code.
 

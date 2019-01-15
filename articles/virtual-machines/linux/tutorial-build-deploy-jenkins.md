@@ -1,7 +1,7 @@
 ---
 title: Руководство. Непрерывная интеграция и непрерывное развертывание из Jenkins на виртуальных машинах Azure с помощью Azure DevOps | Документация Майкрософт
 description: В этом руководстве описано, как настроить непрерывную интеграцию (CI) и непрерывное развертывание (CD) приложения Node.js с помощью Jenkins на виртуальных машинах Azure из Release Management в Visual Studio Team Services или Microsoft Team Foundation Server.
-author: tomarcher
+author: tomarchermsft
 manager: jpconnock
 tags: azure-resource-manager
 ms.assetid: ''
@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 07/31/2018
 ms.author: tarcher
 ms.custom: jenkins
-ms.openlocfilehash: 4e91c0287bfe50b297b9a3ef118ececb67909f21
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 651e8505c6d3a3952347bba5e598ec9a0a518e8e
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49388498"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54074773"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-with-using-jenkins-and-azure-devops-services"></a>Руководство. Развертывание приложения на виртуальных машинах Linux в Azure с помощью Jenkins и Azure DevOps Services
 
@@ -164,7 +164,7 @@ ms.locfileid: "49388498"
 
 1. Щелкните **+ Release** (+ Выпуск) и выберите **Создать выпуск**.
 2. Щелкните созданную сборку в выделенном раскрывающемся списке и выберите **Очередь**.
-3. Перейдите по ссылке на выпуск во всплывающем сообщении. Пример: Создан выпуск **Release-1**.
+3. Перейдите по ссылке на выпуск во всплывающем сообщении. Например:  Создан выпуск **Release-1**.
 4. Откройте вкладку **Журналы**, чтобы просмотреть выходные данные консоли для выпуска.
 5. Откройте в браузере URL-адрес одного из серверов, добавленных в группу развертывания. Например, введите **http://{IP-адрес_вашего_сервера}**.
 6. Перейдите в исходный репозиторий Git и измените содержимое заголовка **h1** в файле app/views/index.jade, заменив его текст.

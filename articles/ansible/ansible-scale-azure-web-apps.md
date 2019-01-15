@@ -3,17 +3,17 @@ title: Масштабирование веб-приложений Службы �
 description: Узнайте, как с помощью Ansible создать веб-приложение со средой выполнения контейнера Java 8 и Tomcat в службе приложений на платформе Linux.
 ms.service: ansible
 keywords: ansible, azure, devops, bash, playbook, Azure App Service, Web App, scale, Java
-author: tomarcher
+author: tomarchermsft
 manager: jeconnoc
-ms.author: kyliel
+ms.author: tarcher
 ms.topic: tutorial
 ms.date: 12/08/2018
-ms.openlocfilehash: 740ff6d6a636377f9d58a5231692c87f935ae6d2
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 4ef8320d3eba841ee64557e31e63b4e79ee3aa92
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53601871"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159899"
 ---
 # <a name="scale-azure-app-service-web-apps-by-using-ansible"></a>Масштабирование веб-приложений Службы приложений Azure с помощью Ansible
 [Веб-приложения Службы приложений Azure](https://docs.microsoft.com/azure/app-service/overview) (или просто "Веб-приложения") размещают веб-приложения, REST API и серверные части мобильных приложений. Вы можете выполнять разработку на привычном языке: &mdash;.NET, .NET Core, Java, Ruby, Node.js, PHP или Python.
@@ -39,7 +39,7 @@ Ansible позволяет автоматизировать развертыва
     location: eastus
 
   tasks:
-  - name: Get facts of existing App serivce plan
+  - name: Get facts of existing App service plan
     azure_rm_appserviceplan_facts:
       resource_group: "{{ resource_group }}"
       name: "{{ plan_name }}"
@@ -73,14 +73,14 @@ Ansible позволяет автоматизировать развертыва
 ansible-playbook webapp_scaleup.yml
 ```
 
-После запуска сборника схем выходные данные (как в следующем примере) показывают, что план Службы приложений обновлен до уровня S2 с тремя рабочими ролями.
+После запуска сборника схем в выходным данных (как в следующем примере) показано, что план Службы приложений обновлен до уровня S2 с тремя рабочими ролями.
 ```Output
 PLAY [localhost] **************************************************************
 
 TASK [Gathering Facts] ********************************************************
 ok: [localhost]
 
-TASK [Get facts of existing App serivce plan] **********************************************************
+TASK [Get facts of existing App service plan] **********************************************************
  [WARNING]: Azure API profile latest does not define an entry for WebSiteManagementClient
 
 ok: [localhost]

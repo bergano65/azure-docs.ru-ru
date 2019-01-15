@@ -6,27 +6,21 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: overview
-ms.date: 10/30/2018
+ms.date: 01/09/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand what Data Box Disk is and how it works so I can use it to import on-premises data into Azure.
-ms.openlocfilehash: f965d455b3ada48caabb80458d44e841329cf787
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 874142df31d96de36b2b5be81a863c2f31317c52
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51229617"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54158046"
 ---
-# <a name="what-is-azure-data-box-disk-preview"></a>Что такое диск Azure Data Box (предварительная версия)
+# <a name="what-is-azure-data-box-disk"></a>Что такое диск Azure Data Box
 
 Решение диска Microsoft Azure Data Box позволяет передавать терабайты локальных данных в Azure быстрым, недорогим и надежным способом. Безопасная передача данных ускоряется за счет отправки от 1 до 5 твердотельных дисков (SSD). Зашифрованные диски объемом 8 ТБ отправляются в центр обработки данных через регионального перевозчика. 
 
 Эти диски можно быстро настроить, подключить и разблокировать с помощью службы Data Box на портале Azure. Скопируйте свои данные на диски и отправьте диски обратно в Azure. В центре обработки данных Azure ваши данные автоматически передаются с дисков в облако с помощью быстрого соединения для отправки по частной сети.
-
-
-> [!IMPORTANT]
-> - Диск Data Box находится в режиме предварительной версии. Прежде чем развертывать это решение, просмотрите [условия использования Azure для предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). 
-> - Вам необходимо зарегистрироваться для использования этой службы. Для этого войдите на [портал предварительной версии](https://aka.ms/azuredataboxfromdiskdocs).
-> - На этапе предварительной версии диск Data Box можно отправить клиентам в США и Европейском Союзе. Дополнительные сведения см. в разделе [Регионы доступности](#region-availability).
 
 ## <a name="use-cases"></a>Варианты использования
 
@@ -95,7 +89,7 @@ ms.locfileid: "51229617"
 
 ## <a name="region-availability"></a>Регионы доступности
 
-На этапе предварительной версии диск Data Box может передавать данные в следующие регионы Azure:
+Сейчас Диск Data Box может передавать данные в следующие регионы Azure:
 
 
 |Регион Azure  |Регион Azure  |
@@ -112,7 +106,7 @@ ms.locfileid: "51229617"
 
 ## <a name="pricing"></a>Цены
 
-Сведения о ценах см. на странице с [ценами на предварительную версию](https://azure.microsoft.com/pricing/details/storage/databox/disk/).
+Сведения о ценах см. на [странице с ценами](https://azure.microsoft.com/pricing/details/storage/databox/disk/).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

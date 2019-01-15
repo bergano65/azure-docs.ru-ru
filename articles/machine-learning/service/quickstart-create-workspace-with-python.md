@@ -11,12 +11,12 @@ author: hning86
 ms.author: haining
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: da84d6361d80db8aea797827ed3d7bc612e2eda3
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 2c8edd73a287d5bca2f3deb68448ba951b7a3367
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999056"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54106568"
 ---
 # <a name="quickstart-use-the-python-sdk-to-get-started-with-azure-machine-learning"></a>Краткое руководство. Начало работы со службой "Машинное обучение Azure" с использованием пакета SDK для Python
 
@@ -76,7 +76,7 @@ ms.locfileid: "53999056"
 
 В активированной среде conda установите пакет SDK. Этот код устанавливает основные компоненты пакета SDK для Машинного обучения. Он также устанавливает сервер Jupyter Notebook в среду conda. Установка занимает несколько минут в зависимости от конфигурации компьютера.
 
-```sh
+```shell
 # Install Jupyter
 conda install nb_conda
 
@@ -86,7 +86,7 @@ pip install azureml-sdk[notebooks]
 
 Для установки других компонентов пакета SDK можно использовать дополнительные ключевые слова:
 
-```sh
+```shell
 # Install the base SDK and auto ml components
 pip install azureml-sdk[automl]
 
@@ -97,13 +97,8 @@ pip install azureml-sdk[explain]
 pip install azureml-sdk[contrib]
 ```
 
-В среде Azure Databricks используйте следующие команды установки:
-
-```
-# Install the base SDK and automl components in the Azure Databricks environment.
-# For more information, see https://github.com/Azure/MachineLearningNotebooks/tree/master/databricks.
-pip install azureml-sdk[databricks]
-```
+В среде Azure Databricks выполните вместо этого [шаги установки Databricks](how-to-configure-environment.md#azure-databricks
+).
 
 
 ## <a name="create-a-workspace"></a>Создание рабочей области
@@ -143,11 +138,7 @@ pip install azureml-sdk[databricks]
 
 Сохраните сведения рабочей области в файле конфигурации в текущем каталоге. Этот файл называется *aml_config\config.json*.  
 
-Этот файл конфигурации рабочей области упрощает дальнейшую загрузку этой же рабочей области. Вы можете загрузить ее с помощью других записных книжек и скриптов в том же каталоге или подкаталоге. 
-
-[!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=writeConfig)]
-
-Вызов API `write_config()` позволяет создать файл конфигурации в текущем каталоге. Файл *config.json* содержит следующий скрипт.
+Вызов API `write_config()` позволяет создать файл конфигурации в текущем каталоге. Файл *config.json* содержит следующее:
 
 ```json
 {
@@ -156,6 +147,12 @@ pip install azureml-sdk[databricks]
     "workspace_name": "myworkspace"
 }
 ```
+
+Этот файл конфигурации рабочей области упрощает дальнейшую загрузку этой же рабочей области. Вы можете загрузить ее с помощью других записных книжек и скриптов в том же каталоге или подкаталоге. 
+
+[!code-python[](~/aml-sdk-samples/ignore/doc-qa/quickstart-create-workspace-with-python/quickstart.py?name=writeConfig)]
+
+
 
 ## <a name="use-the-workspace"></a>Используйте рабочую область
 
@@ -190,7 +187,7 @@ print(run.get_portal_url())
 
 1. Закройте записную книжку в браузере.
 1. В окне командной строки используйте клавиши CTRL+C, чтобы остановить работу сервера Jupyter Notebook.
-1. Установите дополнительные пакеты.
+1. Установите дополнительные пакеты.  Если вы не установили `azureml-sdk[automl]` в одном из предыдущих шагов, обязательно сделайте это сейчас.
 
     ```shell
     conda install -y cython matplotlib scikit-learn pandas numpy

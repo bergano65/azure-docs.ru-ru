@@ -9,14 +9,14 @@ manager: cjgronlund
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: tutorial
-ms.date: 09/25/2018
+ms.date: 01/09/2019
 ms.author: diberry
-ms.openlocfilehash: 113e5769ee6a58785a46182064684bea5825c12c
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: d233f1df40d9580edfaaeb6b819c014952ad3b0c
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53138945"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54189283"
 ---
 # <a name="tutorial-luis-bot-in-c-with-the-bot-framework-4x-and-the-azure-web-app-bot"></a>Руководство. Создание бота Интеллектуальной службы распознавания речи на C# с помощью Bot Framework 4.x и бота веб-приложения Azure.
 С помощью C# можно создавать чат-боты, интегрированные со службой распознавания речи (LUIS). Этот бот использует приложение HomeAutomation, чтобы реализовать решение ботов. Бот создается с помощью [бота веб-приложения Azure](https://docs.microsoft.com/azure/bot-service/) и [Bot Framework версии 4](https://github.com/Microsoft/botbuilder-js).
@@ -301,6 +301,7 @@ ms.locfileid: "53138945"
 
 Вы создали службу Azure Bot, скопировали секрет бота и путь к файлу с расширением `.bot`, а также скачали ZIP-файл кода. Вы добавили предварительно созданный домен HomeAutomation к приложению LUIS, созданному как часть новой службы Azure Bot, а затем обучили и опубликовали приложение снова. Вы извлекли проект кода, создали файл среды (`.env`) и задали секрет бота и путь к файлу с расширением `.bot`. Вы добавили код для обработки двух новых намерений в файл bot.js. Затем вы протестировали бота в Bot Emulator, чтобы увидеть ответ LUIS для высказывания одного из новых намерений. 
 
+См. дополнительные [примеры](https://github.com/Microsoft/AI) чат-ботов. 
 
 > [!div class="nextstepaction"]
 > [Руководство: 1. Создание приложения с личным доменом](luis-quickstart-intents-only.md)

@@ -4,18 +4,19 @@ titleSuffix: Azure Cosmos DB
 description: Часть 3 серии руководств по созданию в Azure Cosmos DB приложения MongoDB с помощью Angular, Node и тех же API, которые используются для MongoDB.
 author: johnpapa
 ms.service: cosmos-db
-ms.component: cosmosdb-mongo
+ms.subservice: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 12/26/2018
 ms.author: jopapa
 ms.custom: seodec18
-ms.openlocfilehash: 462d0ea036ee50a3eea6812d87772bba9559125c
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.reviewer: sngun
+ms.openlocfilehash: 286ccfe84f511ffccdc8919b2e717cd21f124c2b
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53788588"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54158709"
 ---
 # <a name="create-an-angular-app-with-azure-cosmos-dbs-api-for-mongodb---build-the-ui-with-angular"></a>Создание приложения Angular с помощью API Azure Cosmos DB для MongoDB. Создание пользовательского интерфейса с помощью Angular
 
@@ -416,7 +417,7 @@ ms.locfileid: "53788588"
 
 2. В Visual Studio Code вернитесь к **heroes.components.ts**. Обратите внимание, что в строке `constructor(private heroService: HeroService) {}` (строка 13), термин `HeroService` подчеркнут красной линией. Щелкните `HeroService`, и в левой части блока кода отобразится значок лампочки. Щелкните его и выберите **Import HeroService from "./hero.service ".** (Импортировать HeroService из ./hero.service.) или **Import HeroService from "/app/hero.service"** (Импортировать HeroService из папки /app/hero.service).
 
-    Если щелкнуть значок лампочки, в строку 2 вставляется новая строка кода. Если в строке 2 есть ссылка на папку /app/hero.service, измените ее таким образом, чтобы ссылка указывала на файл Hero в локальной папке (./hero.service). Строка 2 должна выглядеть так:
+    Если щелкнуть значок лампочки, в строку 2 вставляется новая строка кода. Если в строке 2 есть ссылка на папку /app/hero.service, измените ее таким образом, чтобы ссылка указывала на файл Hero в локальной папке (./hero.service). Строка 2 должна выглядеть так:
     
     ```javascript
     import { HeroService } from "./hero.service"

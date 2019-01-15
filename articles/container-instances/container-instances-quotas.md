@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: overview
 ms.date: 12/17/2018
 ms.author: danlep
-ms.openlocfilehash: 86c169c84e905362e8fdb069e8ceadcb5e19fe67
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 647890517e6f08a4602ebed8ee1057cb45f10cbe
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53602398"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54075504"
 ---
 # <a name="quotas-and-region-availability-for-azure-container-instances"></a>Квоты и доступность по регионам для службы "Экземпляры контейнеров Azure"
 
@@ -24,7 +24,7 @@ ms.locfileid: "53602398"
 
 ## <a name="region-availability"></a>Регионы доступности
 
-Служба "Экземпляры контейнеров Azure" доступна в следующих регионах с указанными ограничениями для ЦП и памяти. Значения актуальны на момент публикации. Чтобы получить последние сведения, воспользуйтесь [API List Capabilities](/rest/api/container-instances/listcapabilities/listcapabilities).
+Служба "Экземпляры контейнеров Azure" доступна в следующих регионах с указанными ограничениями для ЦП и памяти. Значения актуальны на момент публикации. Чтобы получить последние сведения, воспользуйтесь [API List Capabilities](/rest/api/container-instances/listcapabilities/listcapabilities). Доступность и ограничения ресурсов могут отличаться при использовании Экземпляров контейнеров Azure с [виртуальными сетями](container-instances-vnet.md) (предварительная версия) или с [ресурсами GPU](container-instances-gpu.md) (предварительная версия).
 
 | Расположение | ОС | ЦП | Память (ГБ) |
 | -------- | -- | :---: | :-----------: |

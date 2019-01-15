@@ -4,17 +4,17 @@ description: Применение Terraform и настраиваемого яз
 services: terraform
 ms.service: terraform
 keywords: terraform, devops, виртуальная машина, сеть, модули
-author: tomarcher
+author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 11/13/2017
-ms.openlocfilehash: fffaf275a98791885b87ee8ffdc275e911b26341
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: 9870eac87204f24993ab71e373dcab3a8ead3e89
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43667606"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54075364"
 ---
 # <a name="create-a-vm-cluster-with-terraform-and-hcl"></a>Создание кластера виртуальных машин с помощью Terraform и HCL
 
@@ -62,7 +62,7 @@ ms.locfileid: "43667606"
 
 6. Создайте новый файл, содержащий значения для переменных Terraform. Файл переменных Terraform чаще всего получает имя `terraform.tfvars`, поскольку Terraform автоматически загружает все файлы с именем `terraform.tfvars` (или с любым именем формата `*.auto.tfvars`), присутствующие в текущем каталоге. 
 
-7. Скопируйте в файл переменных следующий код: Не забудьте правильно заменить строки заполнителей. Замените `subscription_id` идентификатором подписки Azure, который вы указали при выполнении `az account set`. Вместо `tenant_id` укажите значение `tenant`, полученное от `az ad sp create-for-rbac`. Вместо `client_id` укажите значение `appId`, полученное от `az ad sp create-for-rbac`. Вместо `client_secret` укажите значение `password`, полученное от `az ad sp create-for-rbac`.
+7. Скопируйте в файл переменных следующий код: Обязательно замените строки заполнителей. Вместо `subscription_id` укажите идентификатор подписки Azure, который вы указали при выполнении `az account set`. Вместо `tenant_id` укажите значение `tenant`, полученное от `az ad sp create-for-rbac`. Вместо `client_id` укажите значение `appId`, полученное от `az ad sp create-for-rbac`. Вместо `client_secret` укажите значение `password`, полученное от `az ad sp create-for-rbac`.
 
   ```tf
   subscription_id = "<azure-subscription-id>"

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/24/2018
 ms.author: jeedes
-ms.openlocfilehash: 2fc81cc06063c0fee0a4f875b4b0f8bd1343cf85
-ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
+ms.openlocfilehash: 789f58699f39f4b7eac453f4cf79ea55a5bfc8d3
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53810463"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159508"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство. Интеграция Azure Active Directory с локальной версией SharePoint
 
@@ -118,7 +118,7 @@ ms.locfileid: "53810463"
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
     > [!Note]
-    > Запишите путь к файлу, по которому вы загрузили файл сертификата, так как вам нужно будет использовать его позже в сценарии PowerShell для настройки.
+    > Запишите путь к файлу, куда вы скачали файл сертификата. Этот файл вам понадобится позже в скрипте PowerShell для конфигурации.
 
 6. Скопируйте требуемый URL-адрес из раздела **Настройка локальной версии SharePoint**. Для **URL-адреса службы единого входа** используйте значение из следующих форматов: `https://login.microsoftonline.com/_my_directory_id_/wsfed` 
 
@@ -134,7 +134,7 @@ ms.locfileid: "53810463"
     c. URL-адрес выхода
 
     > [!NOTE]
-    > В локальном приложении SharePoint используется токен SAML 1.1, поэтому Azure AD ожидает запроса WS Fed от сервера SharePoint и после аутентификации создает токен SAML 1.1.
+    > В локальном приложении SharePoint используется токен SAML 1.1, поэтому Azure AD ожидает запроса WS Fed от сервера SharePoint и после аутентификации создает токен SAML 1.1.
 
 ### <a name="configure-sharepoint-on-premises-single-sign-on"></a>Настройка локальной версии SharePoint с поддержкой единого входа
 
@@ -175,7 +175,7 @@ ms.locfileid: "53810463"
     ![Настройка поставщика проверки подлинности](./media/sharepoint-on-premises-tutorial/fig10-configauthprovider.png)
 
     > [!NOTE]
-    > Некоторые внешние пользователи не смогут использовать эту единую интеграцию входа, так как их UPN будет искажать значение, подобное `MYEMAIL_outlook.com#ext#@TENANT.onmicrosoft.com`. Вскоре мы предоставим клиентам возможность конфигурации приложений для обработки UPN в зависимости от типа пользователя. После этого все ваши гостевые пользователи смогут использовать SSO без проблем в качестве сотрудников организации.
+    > Некоторые внешние пользователи не смогут использовать эту интеграцию для единого входа, так как их UPN будет искажать значение, подобное `MYEMAIL_outlook.com#ext#@TENANT.onmicrosoft.com`. Вскоре мы предоставим возможность настройки клиентских приложений для обработки UPN в зависимости от типа пользователя. После этого все ваши гостевые пользователи смогут использовать SSO без проблем в качестве сотрудников организации.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 

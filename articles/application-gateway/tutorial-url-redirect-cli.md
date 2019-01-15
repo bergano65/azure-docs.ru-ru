@@ -10,14 +10,14 @@ ms.workload: infrastructure-services
 ms.date: 7/14/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 8489cf79848eb41e3c6334242ca607e925ae0b31
-ms.sourcegitcommit: 6b7c8b44361e87d18dba8af2da306666c41b9396
+ms.openlocfilehash: 60dacaa6b8a813c3e77bbd2d661740510e903b26
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2018
-ms.locfileid: "51568154"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54160001"
 ---
-# <a name="tutorial-create-an-application-gateway-with-url-path-based-redirection-using-the-azure-cli"></a>Руководство по созданию шлюза приложений с перенаправлением на основе URL-пути при помощи Azure CLI
+# <a name="tutorial-create-an-application-gateway-with-url-path-based-redirection-using-the-azure-cli"></a>Руководство. Создание шлюза приложений с перенаправлением на основе URL-пути при помощи Azure CLI
 
 Для настройки [правил маршрутизации на основе URL-пути](application-gateway-url-route-overview.md) при создании [шлюза приложений](application-gateway-introduction.md) можно использовать Azure CLI. В этом руководстве мы создадим внутренние пулы с использованием [масштабируемых наборов виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md). Затем вы создадите правила маршрутизации на основе URL-адресов, которые обеспечивают перенаправление веб-трафика в соответствующий внутренний пул.
 
@@ -77,7 +77,7 @@ az network public-ip create \
 
 ## <a name="create-an-application-gateway"></a>Создание шлюза приложений
 
-Выполните команду [az network application-gateway create](/cli/azure/network/application-gateway#create), чтобы создать шлюз приложений myAppGateway. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myPublicIPSddress*, созданным ранее.
+Выполните команду [az network application-gateway create](/cli/azure/network/application-gateway#create), чтобы создать шлюз приложений myAppGateway. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myPublicIPAddressddress*, созданным ранее.
 
 ```azurecli-interactive
 az network application-gateway create \

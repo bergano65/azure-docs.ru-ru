@@ -2,31 +2,32 @@
 title: Создание задания Stream Analytics с помощью Azure PowerShell
 description: В этом кратком руководстве описывается, как с помощью модуля Azure PowerShell развернуть и запустить задание Azure Stream Analytics.
 services: stream-analytics
-author: sidramadoss
-ms.author: sidram
-ms.date: 05/14/2018
+author: mamccrea
+ms.author: mamccrea
+ms.date: 12/20/2018
 ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc
-manager: kfile
-ms.openlocfilehash: 126677df01ad34d488863dd83e2f8c9a2d947824
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 42cca961d58b9fd58e8a9c1b2fc2ddc369deb6d0
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49958896"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54017204"
 ---
-# <a name="quickstart-create-a-stream-analytics-job-by-using-azure-powershell"></a>Краткое руководство по созданию задания Stream Analytics с помощью Azure PowerShell
+# <a name="quickstart-create-a-stream-analytics-job-using-azure-powershell"></a>Краткое руководство. Создание задания Stream Analytics с помощью Azure PowerShell
 
 Модуль PowerShell используется для создания ресурсов Azure и управления ими с помощью командлетов или скриптов PowerShell. В этом кратком руководстве описывается, как с помощью модуля Azure PowerShell развернуть и запустить задание Azure Stream Analytics. 
- 
-Пример задания считывает данные потоковой передачи из большого двоичного объекта в хранилище BLOB-объектов Azure. Файл входных данных, используемый в этом кратком руководстве, содержит статические данные только для демонстрации. В реальной ситуации используйте потоковые входные данные для задания Stream Analytics. Затем задание преобразует данные с помощью языка запросов Stream Analytics, чтобы рассчитать среднюю температуру при превышении 100°. Наконец, оно записывает результирующие выходные события в другой файл. 
+
+Пример задания считывает данные потоковой передачи из устройства Центра Интернета вещей. Входные данные создаются онлайн-симулятором Raspberry Pi. Далее задание Stream Analytics преобразует данные с использованием языка запросов Stream Analytics для фильтрации сообщений с температурой больше 27 градусов. Наконец, оно записывает результирующие выходные события в файл в хранилище BLOB-объектов. 
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
 * Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/).  
 
-* Для работы с этим кратким руководством требуется модуль Azure PowerShell 3.6 или более поздней версии. Запустите `Get-Module -ListAvailable AzureRM`, чтобы найти версию, установленную на вашем локальном компьютере. Если вам необходимо выполнить установку или обновление, см. сведения в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps). 
+* Для работы с этим кратким руководством требуется модуль Azure PowerShell 3.6 или более поздней версии. Запустите `Get-Module -ListAvailable AzureRM`, чтобы найти версию, установленную на вашем локальном компьютере. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps).
+
+* Некоторые действия Центра Интернета вещей не поддерживаются в Azure PowerShell и должны быть выполнены с помощью Azure CLI версии 2.0.24 или более поздней и расширения Интернета вещей для Azure CLI. [Установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) и используйте `az extension add --name azure-cli-iot-ext` для установки расширения Интернета вещей.
 
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
@@ -34,11 +35,11 @@ ms.locfileid: "49958896"
 Войдите в свою подписку Azure с помощью команды `Connect-AzureRmAccount` и введите учетные данные Azure во всплывающем окне браузера.
 
 ```powershell
-# Log in to your Azure account
+# Connect to your Azure account
 Connect-AzureRmAccount
 ```
 
-После входа в систему, если у вас есть несколько подписок, выберите ту, которую вы хотите использовать при работе с этим кратким руководством, запустив следующие командлеты. Не забудьте заменить <your subscription name> именем своей подписки:  
+Если у вас есть несколько подписок, выберите ту, которую вы хотите использовать при работе с этим кратким руководством, запустив следующие командлеты. Не забудьте заменить `<your subscription name>` именем своей подписки:  
 
 ```powershell
 # List all available subscriptions.
@@ -64,20 +65,62 @@ New-AzureRmResourceGroup `
 
 Прежде чем определить задание Stream Analytics, подготовьте данные, которые настроены как входные данные задания.
 
-1. Загрузите [пример данных датчика](https://raw.githubusercontent.com/Azure/azure-stream-analytics/master/Samples/GettingStarted/HelloWorldASA-InputStream.json) с сайта GitHub. Щелкните ссылку правой кнопкой мыши и выберите пункт **Сохранить ссылку как...** или **Сохранить объект как**.
+Следующий блок кода Azure CLI выполняет много команд, чтобы подготовить входные данные, необходимые для задания. Просмотрите разделы, чтобы понять код.
 
-2. Следующий блок кода PowerShell выполняет несколько команд, чтобы подготовить входные данные, необходимые для задания. Просмотрите разделы, чтобы понять код. 
+1. В окне PowerShell запустите команду [az login](https://docs.microsoft.com/cli/azure/authenticate-azure-cli?view=azure-cli-latest), чтобы войти в учетную запись Azure. 
 
-   1. Создайте стандартную учетную запись хранения общего назначения с помощью командлета [New-AzureRmStorageAccount](https://docs.microsoft.com/powershell/module/azurerm.storage/New-AzureRmStorageAccount).  В этом примере создается учетная запись хранения mystorageaccount с включенными по умолчанию локально избыточным хранилищем (LRS) и шифрованием больших двоичных объектов.  
+   После успешного входа Azure CLI возвращает список подписок. Скопируйте подписку, используемую для этого краткого руководства, и выполните команду [az account set](https://docs.microsoft.com/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest#change-the-active-subscription), чтобы выбрать эту подписку. Выберите ту же подписку, что и в предыдущем разделе при использовании PowerShell. Не забудьте заменить `<your subscription name>` именем своей подписки.
 
-   2. Получите контекст учетной записи хранения `$storageAccount.Context`, определяющий необходимую учетную запись хранения. Работая в учетной записи хранения, ссылайтесь на контекст, вместо того чтобы многократно предоставлять учетные данные. 
+   ```azurecli
+   az login
+   
+   az account set --subscription "<your subscription>"
+   ```
 
-   3. Создайте контейнер хранилища с помощью командлета [New-AzureStorageContainer](https://docs.microsoft.com/powershell/module/azure.storage/new-azurestoragecontainer) и передайте [пример данных датчика](https://github.com/Azure/azure-stream-analytics/blob/master/Samples/GettingStarted/HelloWorldASA-InputStream.json), загруженный ранее. 
+2. Создайте Центр Интернета вещей с помощью команды [az iot hub create](../iot-hub/iot-hub-create-using-cli.md#create-an-iot-hub). Этот пример создает Центр Интернета вещей с именем **MyASAIoTHub**. Так как имена Центров Интернета вещей являются уникальными, необходимо придумать собственное имя Центра Интернета вещей. Задайте для номера SKU значение F1, чтобы использовать уровень "Бесплатный", если он доступен с вашей подпиской. В противном случае выберите следующий самый низкий уровень.
 
-   4. Скопируйте ключ к хранилищу данных, который выводится кодом, и вставьте этот ключ в файлы JSON для последующего создания входных и выходных данных задания потоковой передачи.
+   ```azurecli
+   az iot hub create --name "<your IoT Hub name>" --resource-group $resourceGroup --sku S1
+   ```
+
+   После создания Центра Интернета вещей получите его строку подключения с помощью команды [az iot hub show-connection-string](https://docs.microsoft.com/cli/azure/iot/hub?view=azure-cli-latest). Скопируйте всю строку подключения и сохраните ее, чтобы использовать во время добавления Центра Интернета вещей в качестве источника входных данных в задание Stream Analytics.
+   
+   ```azurecli
+   az iot hub show-connection-string --hub-name "MyASAIoTHub"
+   ```
+
+3. Добавьте устройство к Центру Интернета вещей с помощью команды [az iothub device-identity create](../iot-hub/quickstart-send-telemetry-c.md#register-a-device). В этом примере создается устройство с именем **MyASAIoTDevice**.
+
+   ```azurecli
+   az iot hub device-identity create --hub-name "MyASAIoTHub" --device-id "MyASAIoTDevice"
+   ```
+
+4. Получите строку подключения устройства с помощью команды [az iot hub device-identity show-connection-string](). Скопируйте всю строку подключения и сохраните ее для использования при создании симулятора Raspberry Pi.
+
+   ```azurecli
+   az iot hub device-identity show-connection-string --hub-name "MyASAIoTHub" --device-id "MyASAIoTDevice" --output table
+   ```
+
+   **Пример выходных данных.**
+
+   ```azurecli
+   HostName=MyASAIoTHub.azure-devices.net;DeviceId=MyASAIoTDevice;SharedAccessKey=a2mnUsg52+NIgYudxYYUNXI67r0JmNubmfVafojG8=
+   ```
+
+## <a name="create-blob-storage"></a>Создание хранилища BLOB-объектов
+
+Следующий блок кода Azure PowerShell использует команды для создания хранилища BLOB-объектов, принимающего выходные данные задания. Просмотрите разделы, чтобы понять код.
+
+1. Создайте стандартную учетную запись хранения общего назначения с помощью командлета [New-AzureRmStorageAccount](https://docs.microsoft.com/powershell/module/azurerm.storage/New-AzureRmStorageAccount).  В этом примере создается учетная запись хранения **myasaquickstartstorage** с локально избыточным хранилищем (LRS) и шифрованием больших двоичных объектов (включено по умолчанию).  
+   
+2. Получите контекст учетной записи хранения `$storageAccount.Context`, определяющий необходимую учетную запись хранения. Работая в учетной записи хранения, ссылайтесь на контекст, вместо того чтобы многократно предоставлять учетные данные. 
+
+3. Создайте контейнер хранилища с помощью командлета [New-AzureStorageContainer](https://docs.microsoft.com/powershell/module/azure.storage/new-azurestoragecontainer).
+
+4. Скопируйте ключ к хранилищу данных, который выводится в коде, и сохраните этот ключ, чтобы позднее создать выходные данные задания потоковой передачи.
 
    ```powershell
-   $storageAccountName = "mystorageaccount"
+   $storageAccountName = "myasaquickstartstorage"
    $storageAccount = New-AzureRmStorageAccount `
      -ResourceGroupName $resourceGroup `
      -Name $storageAccountName `
@@ -86,29 +129,23 @@ New-AzureRmResourceGroup `
      -Kind Storage
    
    $ctx = $storageAccount.Context
-   $containerName = "streamanalytics"
+   $containerName = "container1"
    
    New-AzureStorageContainer `
      -Name $containerName `
      -Context $ctx
    
-   Set-AzureStorageBlobContent `
-     -File "c:\HelloWorldASA-InputStream.json" `
-     -Blob "input/HelloWorldASA-InputStream.json" `
-     -Container $containerName `
-     -Context $ctx  
-   
    $storageAccountKey = (Get-AzureRmStorageAccountKey `
      -ResourceGroupName $resourceGroup `
      -Name $storageAccountName).Value[0]
    
-   Write-Host "The <storage account key> placeholder needs to be replaced in your input and output json files with this key value:" 
+   Write-Host "The <storage account key> placeholder needs to be replaced in your output json files with this key value:" 
    Write-Host $storageAccountKey -ForegroundColor Cyan
    ```
 
 ## <a name="create-a-stream-analytics-job"></a>Создание задания Stream Analytics
 
-Создайте задание Stream Analytics с помощью командлета [New-AzureRmStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/azurerm.streamanalytics/new-azurermstreamanalyticsjob?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя группы ресурсов и определение задания в качестве параметров. Для задания можно присвоить любое понятное описательное имя. Оно может содержать только буквенно-цифровые символы, дефисы и знаки подчеркивания. Длина должна составлять от 3 до 63 символов. Определение задания — это JSON-файл, содержащий свойства, необходимые для создания задания. На вашем локальном компьютере создайте файл с именем `JobDefinition.json` и добавьте в него следующие данные JSON:
+Создайте задание Stream Analytics с помощью командлета [New-AzureRmStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/azurerm.streamanalytics/new-azurermstreamanalyticsjob?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя группы ресурсов и определение задания в качестве параметров. Для задания можно присвоить любое понятное описательное имя. Оно может содержать только буквенно-цифровые символы, дефисы и знаки подчеркивания. Длина должна составлять от 3 до 63 символов. Определение задания — это JSON-файл, содержащий свойства, необходимые для создания задания. На вашем локальном компьютере создайте файл с именем `JobDefinition.json` и добавьте в него следующие данные JSON:
 
 ```json
 {    
@@ -124,7 +161,7 @@ New-AzureRmResourceGroup `
 }
 ```
 
-Затем выполните командлет `New-AzureRmStreamAnalyticsJob`. Не забудьте заменить значение переменной `jobDefinitionFile` путем, по которому вы сохранили JSON-файл с определением задания. 
+Затем выполните командлет `New-AzureRmStreamAnalyticsJob`. Замените значение переменной `jobDefinitionFile` путем, по которому вы сохранили JSON-файл с определением задания. 
 
 ```powershell
 $jobName = "MyStreamingJob"
@@ -138,27 +175,26 @@ New-AzureRmStreamAnalyticsJob `
 
 ## <a name="configure-input-to-the-job"></a>Настройка входных данных для задания
 
-Добавьте входные данные в задание с помощью командлета [New-AzureRmStreamAnalyticsInput](https://docs.microsoft.com/powershell/module/azurerm.streamanalytics/new-azurermstreamanalyticsinput?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя входных данных задания, имя группы ресурсов и определение входных данных задания в качестве параметров. Определение входных данных задания — это JSON-файл, содержащий свойства, необходимые для настройки входных данных задания. В этом примере показано, как создать хранилище BLOB-объектов в качестве входных данных. 
+Добавьте входные данные в задание с помощью командлета [New-AzureRmStreamAnalyticsInput](https://docs.microsoft.com/powershell/module/azurerm.streamanalytics/new-azurermstreamanalyticsinput?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя входных данных задания, имя группы ресурсов и определение входных данных задания в качестве параметров. Определение входных данных задания — это JSON-файл, содержащий свойства, необходимые для настройки входных данных задания. В этом примере показано, как создать хранилище BLOB-объектов в качестве источника входных данных. 
 
-На вашем локальном компьютере создайте файл с именем `JobInputDefinition.json` и добавьте в него следующие данные JSON. Не забудьте заменить значение `accountKey` ключом доступа к учетной записи хранения, который являет собой значение, хранящееся в $storageAccountKey. 
+На вашем локальном компьютере создайте файл с именем `JobInputDefinition.json` и добавьте в него следующие данные JSON. Не забудьте заменить значение для параметра `accesspolicykey` частью `SharedAccessKey` строки подключения Центра Интернета вещей, сохраненной в предыдущем разделе.
 
 ```json
 {
     "properties": {
         "type": "Stream",
         "datasource": {
-            "type": "Microsoft.Storage/Blob",
+            "type": "Microsoft.Devices/IotHubs",
             "properties": {
-                "storageAccounts": [
-                {
-                   "accountName": "mystorageaccount",
-                   "accountKey":"<storage account key>"
-                }],
-                "container": "streamanalytics",
-                "pathPattern": "input/",
-                "dateFormat": "yyyy/MM/dd",
-                "timeFormat": "HH"
-            }
+                "iotHubNamespace": "MyASAIoTHub",
+                "sharedAccessPolicyName": "iothubowner",
+                "sharedAccessPolicyKey": "accesspolicykey",
+                "endpoint": "messages/events",
+                "consumerGroupName": "$Default"
+                }
+        },
+        "compression": {
+            "type": "None"
         },
         "serialization": {
             "type": "Json",
@@ -167,7 +203,7 @@ New-AzureRmStreamAnalyticsJob `
             }
         }
     },
-    "name": "MyBlobInput",
+    "name": "IoTHubInput",
     "type": "Microsoft.StreamAnalytics/streamingjobs/inputs"
 }
 ```
@@ -175,7 +211,7 @@ New-AzureRmStreamAnalyticsJob `
 Затем выполните командлет `New-AzureRmStreamAnalyticsInput`. Не забудьте заменить значение переменной `jobDefinitionFile` путем, по которому вы сохранили JSON-файл с определением входных данных задания. 
 
 ```powershell
-$jobInputName = "MyBlobInput"
+$jobInputName = "IoTHubInput"
 $jobInputDefinitionFile = "C:\JobInputDefinition.json"
 New-AzureRmStreamAnalyticsInput `
   -ResourceGroupName $resourceGroup `
@@ -198,10 +234,10 @@ New-AzureRmStreamAnalyticsInput `
             "properties": {
                 "storageAccounts": [
                     {
-                      "accountName": "mystorageaccount",
+                      "accountName": "asaquickstartstorage",
                       "accountKey": "<storage account key>"
                     }],
-                "container": "streamanalytics",
+                "container": "container1",
                 "pathPattern": "output/",
                 "dateFormat": "yyyy/MM/dd",
                 "timeFormat": "HH"
@@ -215,7 +251,7 @@ New-AzureRmStreamAnalyticsInput `
             }
         }
     },
-    "name": "MyBlobOutput",
+    "name": "BlobOutput",
     "type": "Microsoft.StreamAnalytics/streamingjobs/outputs"
 }
 ```
@@ -223,7 +259,7 @@ New-AzureRmStreamAnalyticsInput `
 Затем выполните командлет `New-AzureRmStreamAnalyticsOutput`. Не забудьте заменить значение переменной `jobOutputDefinitionFile` путем, по которому вы сохранили JSON-файл с определением выходных данных задания. 
 
 ```powershell
-$jobOutputName = "MyBlobOutput"
+$jobOutputName = "BlobOutput"
 $jobOutputDefinitionFile = "C:\JobOutputDefinition.json"
 New-AzureRmStreamAnalyticsOutput `
   -ResourceGroupName $resourceGroup `
@@ -243,7 +279,7 @@ New-AzureRmStreamAnalyticsOutput `
    "properties":{    
       "streamingUnits":1,  
       "script":null,  
-      "query":" SELECT System.Timestamp AS OutputTime, dspl AS SensorName, Avg(temp) AS AvgTemperature INTO MyBlobOutput FROM MyBlobInput TIMESTAMP BY time GROUP BY TumblingWindow(second,30),dspl HAVING Avg(temp)>100"  
+      "query":" SELECT * INTO BlobOutput FROM IoTHubInput HAVING Temperature > 27"  
    }  
 }
 ```
@@ -259,24 +295,32 @@ New-AzureRmStreamAnalyticsTransformation `
   -File $jobTransformationDefinitionFile `
   -Name $jobTransformationName -Force
 ```
+## <a name="run-the-iot-simulator"></a>Запуск IoT-симулятора
+
+1. Откройте [онлайн-симулятор Raspberry Pi для Интернета вещей Azure](https://azure-samples.github.io/raspberry-pi-web-simulator/).
+
+2. Замените значения заполнителя в 15-й строке строкой подключения устройства Центра Интернета вещей, которую вы сохранили при работе с предыдущим разделом.
+
+3. Щелкните **Выполнить**. В выходных данных должны присутствовать показания датчика и сообщения, отправляемые в Центр Интернета вещей.
+
+   ![Онлайн-симулятор Raspberry Pi для Интернета вещей Azure.](./media/stream-analytics-quick-create-powershell/ras-pi-connection-string.png)
 
 ## <a name="start-the-stream-analytics-job-and-check-the-output"></a>Запуск задания Stream Analytics и просмотр выходных данных
 
-Запустите задание с помощью командлета [Start-AzureRmStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/azurerm.streamanalytics/start-azurermstreamanalyticsjob?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя группы ресурсов, режим начала вывода задания и время запуска в качестве параметров. `OutputStartMode` принимает значения `JobStartTime`, `CustomTime` или `LastOutputEventTime`. Дополнительные сведения о том, к чему относится каждое из этих значений, см. в разделе [параметров](https://docs.microsoft.com/powershell/module/azurerm.streamanalytics/start-azurermstreamanalyticsjob?view=azurermps-5.4.0) в документации по PowerShell. В этом примере укажите режим как `CustomTime` и укажите значение для `OutputStartTime`. 
+Запустите задание с помощью командлета [Start-AzureRmStreamAnalyticsJob](https://docs.microsoft.com/powershell/module/azurerm.streamanalytics/start-azurermstreamanalyticsjob?view=azurermps-5.4.0). Этот командлет принимает имя задания, имя группы ресурсов, режим начала вывода задания и время запуска в качестве параметров. `OutputStartMode` принимает значения `JobStartTime`, `CustomTime` или `LastOutputEventTime`. Дополнительные сведения о том, к чему относится каждое из этих значений, см. в разделе [параметров](https://docs.microsoft.com/powershell/module/azurerm.streamanalytics/start-azurermstreamanalyticsjob?view=azurermps-5.4.0) в документации по PowerShell. 
 
-Для значения времени выберите `2018-01-01`. Эта дата начала выбирается, так как она предшествует отметке времени для события из демонстрационных данных. После запуска следующего командлета, если задание запустится, будет возвращено значение `True` в качестве выходных данных. В контейнере хранилища будет создана выходная папка с преобразованными данными. 
+После запуска следующего командлета, если задание запустится, будет возвращено значение `True` в качестве выходных данных. В контейнере хранилища будет создана выходная папка с преобразованными данными. 
 
 ```powershell
 Start-AzureRmStreamAnalyticsJob `
   -ResourceGroupName $resourceGroup `
   -Name $jobName `
-  -OutputStartMode CustomTime `
-  -OutputStartTime 2018-01-01T00:00:00Z 
+  -OutputStartMode 'JobStartTime'
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Ставшие ненужными группу ресурсов, задание потоковой передачи и все связанные ресурсы можно удалить. При удалении задания будет прекращена тарификация за единицы потоковой передачи, потребляемые заданием. Если вы планируете использовать задание в дальнейшем, остановите его и не выполняйте процедуру его удаления. Если вам больше не нужно это задание, удалите все ресурсы, созданные в ходе работы с этим кратким руководством, выполнив следующий командлет:
+Ставшие ненужными группу ресурсов, задание потоковой передачи и все связанные ресурсы можно удалить. При удалении задания будет прекращена тарификация за единицы потоковой передачи, потребляемые заданием. Если вы планируете использовать задание в дальнейшем, остановите его и не выполняйте процедуру его удаления. Если вам больше не нужно это задание, удалите все ресурсы, созданные в ходе работы с этим кратким руководством, выполнив следующий командлет.
 
 ```powershell
 Remove-AzureRmResourceGroup `

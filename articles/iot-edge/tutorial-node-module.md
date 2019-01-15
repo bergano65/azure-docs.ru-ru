@@ -5,16 +5,16 @@ services: iot-edge
 author: shizn
 manager: philmea
 ms.author: xshi
-ms.date: 11/25/2018
+ms.date: 01/04/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: f69babb4520b4829a8cf59e2dac7763471a2db65
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: 62ea3e3ee13ee52462e1c93ac34e98ae179d251c
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53557107"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54053931"
 ---
 # <a name="tutorial-develop-and-deploy-a-nodejs-iot-edge-module-to-your-simulated-device"></a>Руководство по разработке модуля IoT Edge на Node.js и его развертывание на имитированном устройстве
 
@@ -45,13 +45,13 @@ ms.locfileid: "53557107"
 Ресурсы разработки.
 
 * [Visual Studio Code](https://code.visualstudio.com/). 
-* [Расширение Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge). 
+* [Средства Azure IoT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) для Visual Studio Code. 
 * [Docker CE](https://docs.docker.com/engine/installation/). 
 * [Node.js и NPM](https://nodejs.org). Пакет NPM распределяется с Node.js. Это означает, что при загрузке Node.js NPM автоматически устанавливается на компьютер.
 
 ## <a name="create-a-container-registry"></a>Создание реестра контейнеров
 
-В этом руководстве описано, как создать модуль с помощью расширения Azure IoT Edge для Visual Studio Code и **образ контейнера** из файлов. Затем вы отправите этот образ в **реестр**, содержащий ваши образы и управляющий ими. Наконец, вы развернете свой образ из реестра для выполнения на устройстве IoT Edge.  
+В этом руководстве описано, как с помощью средств Azure IoT для Visual Studio Code создать модуль и **образ контейнера** из файлов. Затем вы отправите этот образ в **реестр**, содержащий ваши образы и управляющий ими. Наконец, вы развернете свой образ из реестра для выполнения на устройстве IoT Edge.  
 
 Для хранения образов контейнеров можно использовать любые реестры, совместимые с Docker. Две популярные службы реестров Docker — [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/) и [Docker Hub](https://docs.docker.com/docker-hub/repos/#viewing-repository-tags). В этом руководстве используется реестр контейнеров Azure. 
 
@@ -77,7 +77,7 @@ ms.locfileid: "53557107"
 7. Скопируйте значения **Сервер входа**, **Имя пользователя** и **Пароль**. Они потребуются позже в этом руководстве для предоставления доступа к реестру контейнеров. 
 
 ## <a name="create-an-iot-edge-module-project"></a>Создание проекта модуля IoT Edge
-Описанный ниже процесс позволяет создать модуль Node.js для IoT Edge с использованием Visual Studio Code и расширения Azure IoT Edge.
+Описанный ниже процесс позволяет создать модуль Node.js для IoT Edge с использованием Visual Studio Code и средств Azure IoT.
 
 ### <a name="create-a-new-solution"></a>Создание решения
 
@@ -180,15 +180,21 @@ ms.locfileid: "53557107"
     });
     ```
 
-9. Сохраните этот файл.
+9. Сохраните файл app.js.
 
-10. В обозревателе VS Code откройте файл **deployment.template.json** в рабочей области решения IoT Edge. 
+10. В обозревателе VS Code откройте файл **deployment.template.json** в рабочей области решения IoT Edge. Этот файл указывает агенту IoT Edge на модуль для развертывания, в нашем случае это **tempSensor** и **NodeModule**, а центру IoT Edge на то, как маршрутизировать сообщения между ними. Расширение Visual Studio Code автоматически заполняет шаблон развертывания большинством нужной информации, но проверьте, все ли подходит для вашего решения: 
 
-   Этот файл указывает `$edgeAgent` развернуть два модуля: **tempSensor**, который моделирует данные устройства, и **NodeModule**. На панели состояния VS Code для устройства IoT Edge указана платформа по умолчанию **amd64**, т. е. модуль **NodeModule** использует версию образа для Linux amd64. При необходимости измените платформу по умолчанию на панели состояния с **amd64** на **arm32v7** или **windows-amd64** в соответствии с архитектурой вашего устройства IoT Edge. Общие сведения о манифестах развертывания см. в статье [Сведения об использовании, настройке и повторном использовании модулей Azure IoT Edge (предварительная версия)](module-composition.md). 
+   1. На панели состояния VS Code для устройства IoT Edge указана платформа по умолчанию **amd64**, т. е. модуль **NodeModule** использует версию образа для Linux amd64. При необходимости измените платформу по умолчанию на панели состояния с **amd64** на **arm32v7** или **windows-amd64** в соответствии с архитектурой вашего устройства IoT Edge. 
 
-   Этот файл также содержит учетные данные реестра. В файле шаблона в качестве имени пользователя и пароля указываются заполнители. При создании манифеста развертывания поля обновляются с помощью значений, добавленных в файл с расширением**ENV**. 
+      ![Снимок экрана обновления модуля платформы](./media/tutorial-node-module/image-platform.png)
 
-12. Добавьте двойник модуля NodeModule в манифест развертывания. Вставьте следующее содержимое JSON в нижней части раздела `moduleContent` после двойника модуля `$edgeHub`: 
+   2. Убедитесь, что шаблон содержит правильное имя модуля, а не имя **SampleModule** по умолчанию, которое можно изменить при создании решения IoT Edge.
+
+   3. В разделе **registryCredentials** хранятся ваши учетные данные реестра Docker, чтобы агент IoT Edge мог извлекать ваш образ модуля. Фактическое имя пользователя хранится в файле ENV, который Git игнорирует. Если это еще не сделано, добавьте ваши учетные данные в файл с расширением .env.  
+
+   4. Для получения дополнительных сведений о манифестах развертывания см. статью [Сведения о развертывании модулей и установлении маршрутов в IoT Edge](module-composition.md).
+
+11. Добавьте двойник модуля NodeModule в манифест развертывания. Вставьте следующее содержимое JSON в нижней части раздела `moduleContent` после двойника модуля `$edgeHub`: 
 
    ```json
        "NodeModule": {
@@ -200,7 +206,7 @@ ms.locfileid: "53557107"
 
    ![Добавление двойника модуля в шаблон развертывания](./media/tutorial-node-module/module-twin.png)
 
-13. Сохраните этот файл.
+12. Сохраните файл deployment.template.json.
 
 
 ## <a name="build-your-iot-edge-solution"></a>Сборка решения IoT Edge

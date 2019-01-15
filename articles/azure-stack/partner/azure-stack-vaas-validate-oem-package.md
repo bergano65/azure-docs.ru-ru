@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/19/2018
+ms.date: 1/07/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 8268a6b04d7ddbb35821999142d3a33bdd2bedcc
-ms.sourcegitcommit: fa758779501c8a11d98f8cacb15a3cc76e9d38ae
+ms.openlocfilehash: e3b0de577186cb7eb032a2042d234a0ffa2e3bb9
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52261808"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54105549"
 ---
 # <a name="validate-oem-packages"></a>Проверка пакетов OEM
 
@@ -56,7 +56,7 @@ ms.locfileid: "52261808"
 
 При создании рабочего процесса **проверки пакета** на портале VaaS необходимо будет указать URL-адрес Azure Storage Blob, содержащего пакет.
 
-#### <a name="option-1-generating-an-account-sas-url"></a>Вариант 1. Создание URL-адреса SAS учетной записи
+#### <a name="option-1-generating-an-account-sas-url"></a>Вариант 1. Создание подписанного URL-адреса учетной записи
 
 1. Перейдите в свою учетную запись хранения на [портале Azure](https://portal.azure.com/) и откройте ZIP-архив с вашим пакетом.
 
@@ -70,7 +70,7 @@ ms.locfileid: "52261808"
 
 Используйте **URL-адрес SAS большого двоичного объекта** при запуске нового рабочего процесса **проверки пакета** на портале VaaS.
 
-#### <a name="option-2-using-public-read-container"></a>Вариант 2. Использование контейнера с общим доступом на чтение
+#### <a name="option-2-using-public-read-container"></a>Вариант 2. Использование контейнера с общим доступом на чтение
 
 > [!CAUTION]
 > Благодаря этому параметру контейнер открывается для анонимного доступа только для чтения.
@@ -93,7 +93,7 @@ ms.locfileid: "52261808"
 
 3. Выберите **Start** (Начать) на плитке **Package Validation** (Проверка пакета).
 
-    ![Плитка рабочего процесса проверок пакета](media/tile_validation-package.png)
+    ![Плитка рабочего процесса проверки пакета](media/tile_validation-package.png)
 
 4. [!INCLUDE [azure-stack-vaas-workflow-step_naming](includes/azure-stack-vaas-workflow-step_naming.md)]
 
@@ -113,9 +113,23 @@ ms.locfileid: "52261808"
 
 ## <a name="run-package-validation-tests"></a>Запуск тестов проверки пакета
 
-На странице **Package validation tests summary** (Сводки по тестам проверки пакета) вы увидите список тестов, необходимых для завершения проверки. В этом рабочем процессе тесты выполняются примерно в течение 24 часов.
+1. На странице **Package validation tests summary** (Сводки по тестам проверки пакета) вы увидите список тестов, необходимых для завершения проверки. В этом рабочем процессе тесты выполняются примерно в течение 24 часов.
 
-[!INCLUDE [azure-stack-vaas-workflow-validation-section_schedule](includes/azure-stack-vaas-workflow-validation-section_schedule.md)]
+    В рабочих процессах проверки при **планировании** теста используются общие параметры уровня рабочего процесса, которые вы указали во время его создания (см. раздел [Workflow common parameters for Azure Stack Validation as a Service](azure-stack-vaas-parameters.md) (Общие параметры рабочих процессов для проверки как услуги в Azure Stack)). Если какие-либо из значений параметров станут недействительными, необходимо указать их повторно, как описано в разделе об [изменении параметров рабочего процесса](azure-stack-vaas-monitor-test.md#change-workflow-parameters).
+
+    > [!NOTE]
+    > При планировании проверочного теста через существующий экземпляр на портале будет создан новый экземпляр вместо старого. Журналы для старого экземпляра будут сохранены, но недоступны на портале.  
+    После успешного завершения теста действие **Расписание** становится недоступным.
+
+2. Выберите агент, с помощью которого будет выполняться тест. Дополнительные сведения о добавлении локальных агентов для тестирования см. в статье [Развертывание локального агента](azure-stack-vaas-local-agent.md).
+
+3. Для каждого из следующих тестов выполните шаги 4 и 5:
+    - OEM Extension Package Verification;
+    - Cloud Simulation Engine.
+
+4. В контекстном меню выберите **Расписание**, чтобы открыть командную строку для планирования выполнения тестового экземпляра.
+
+5. Проверьте параметры теста, а затем выберите **Отправить**, чтобы запланировать выполнение теста.
 
 Когда все тесты будут успешно выполнены, отправьте имя своей проверки пакета и решения VaaS по адресу [vaashelp@microsoft.com](mailto:vaashelp@microsoft.com) для запроса на подписание пакета.
 

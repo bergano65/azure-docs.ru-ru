@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: get-started-article
-ms.date: 09/12/2018
+ms.date: 01/09/2019
 ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: ec8fabfce8c26aef98217947da33a56222288b3c
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 6399e1838b00fc533ab42a76e4f1f1667e3a434a
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49077568"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159525"
 ---
 # <a name="create-a-plan-in-azure-stack"></a>Создание плана в Azure Stack
 
@@ -28,9 +28,9 @@ ms.locfileid: "49077568"
 
 [Планы](azure-stack-key-features.md) — это группы, содержащие одну или несколько служб. Вы как поставщик создаете планы, чтобы предложить их пользователям. В свою очередь, пользователи подписываются на предложения, чтобы использовать содержащиеся в них планы и службы. В этом примере показано, как создать план, включающий в себя поставщики вычислительных и сетевых ресурсов, а также ресурсов хранилища. Этот план даст подписчикам возможность подготавливать виртуальные машины.
 
-1. Войдите на портал администратора Azure Stack (https://adminportal.local.azurestack.external).
+1. Войдите на [портал администратора Azure Stack](https://adminportal.local.azurestack.external).
 
-2. Чтобы создать план и предложение, на которое могут подписываться пользователи, щелкните **Создать ресурс** > **Offers + Plans** (Предложения и планы) > **План**.
+2. Чтобы создать план и предложение, на которое могут подписываться пользователи, щелкните **+Создать ресурс**, **Предложения и планы** и **План**.
   
    ![Выбор плана](media/azure-stack-create-plan/select-plan.png)
 
@@ -72,4 +72,4 @@ ms.locfileid: "49077568"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Создание предложения](azure-stack-create-offer.md)
+* [Создание предложения](azure-stack-create-offer.md)

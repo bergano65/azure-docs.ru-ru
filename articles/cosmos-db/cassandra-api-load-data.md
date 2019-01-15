@@ -3,18 +3,18 @@ title: Руководство. Загрузка примера данных в �
 description: Данное руководство описывает, как в Azure Cosmos DB загрузить пример данных пользователя в таблицу учетной записи API Cassandra с помощью приложения Java.
 author: kanshiG
 ms.service: cosmos-db
-ms.component: cosmosdb-cassandra
+ms.subservice: cosmosdb-cassandra
 ms.topic: tutorial
 ms.date: 12/03/2018
 ms.author: govindk
 ms.reviewer: sngun
 Customer intent: As a developer, I want to build a Java application to load data to a Cassandra API table in Azure Cosmos DB so that customers can store and manage the key/value data and utilize the global distribution, elastic scaling, multi-master, and other capabilities offered by Azure Cosmos DB.
-ms.openlocfilehash: fad6d34a3d3712a036e0275717754f75d5314aae
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 68baffea86ce5c877217ec05d477288b71830a42
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52863659"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54037435"
 ---
 # <a name="tutorial-load-sample-data-into-a-cassandra-api-table-in-azure-cosmos-db"></a>Руководство. Загрузка примера данных в таблицу API Cassandra в Azure Cosmos DB
 

@@ -1,6 +1,6 @@
 ---
-title: Руководство. Подготовка Базы данных Azure для сервера MySQL с помощью шаблонов Azure Resource Manager
-description: В этом руководстве объясняется, как подготовить и автоматизировать развертывание Базы данных Azure для сервера MySQL с помощью шаблонов Azure Resource Manager.
+title: Руководство. Подготовка сервера Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager
+description: В этом руководстве объясняется, как подготовить и автоматизировать развертывания на сервере Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager.
 author: savjani
 ms.author: pariks
 ms.service: mysql
@@ -8,23 +8,23 @@ ms.devlang: json
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.custom: mvc
-ms.openlocfilehash: 45a4a43ae95b42174f368122f89831a356410f2b
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 3c89c5cc0b299852f85836dd416b5bb270757719
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54004083"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54061046"
 ---
-# <a name="tutorial-provision-an-azure-database-for-mysql-server-using-azure-resource-manager-templates"></a>Руководство. Подготовка Базы данных Azure для сервера MySQL с помощью шаблонов Azure Resource Manager
+# <a name="tutorial-provision-an-azure-database-for-mysql-server-using-azure-resource-manager-template"></a>Руководство. Подготовка сервера Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager
 
 [REST API Базы данных Azure для MySQL](https://docs.microsoft.com/en-us/rest/api/mysql/) позволяет инженерам DevOps автоматизировать и интегрировать процессы подготовки, настройки и эксплуатации управляемых серверов MySQL и баз данных в Azure.  Этот интерфейс API позволяет создавать, перечислять, настраивать и удалять серверы MySQL и базы данных в службе Базы данных Azure для MySQL.
 
-Шаблоны Azure Resource Manager с помощью базового API REST объявляют и программируют ресурсы Azure, необходимые для развертывания в любом масштабе, соблюдая концепцию "инфраструктура как код". Шаблон параметризует имя ресурса Azure, номер SKU, конфигурацию брандмауэра и другие параметры, что позволяет один раз создать шаблон для многократного использования.  Шаблоны Azure Resource Manager можно легко создать с помощью [портала Azure](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal) или [Visual Studio Code](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-visual-studio-code?tabs=CLI). Они позволяют организовать упаковку приложений, стандартизацию и автоматизацию развертывания, а также интеграцию в конвейер DevOps CI/CD.  Например, если вы намерены быстро развернуть службу веб-приложений с серверной частью на основе Базы данных Azure для MySQL, полное развертывание можно выполнить с помощью этого [шаблона быстрого запуска](https://azure.microsoft.com/en-us/resources/templates/101-webapp-managed-mysql/) из коллекции GitHub.
+Azure Resource Manager с помощью базового REST API объявляет и программирует ресурсы Azure, необходимые для развертывания в любом масштабе, соблюдая концепцию "инфраструктура как код". Шаблон параметризует имя ресурса Azure, номер SKU, конфигурацию брандмауэра и другие параметры, что позволяет один раз создать шаблон для многократного использования.  Шаблоны Azure Resource Manager можно легко создать с помощью [портала Azure](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal) или [Visual Studio Code](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-visual-studio-code?tabs=CLI). Они позволяют организовать упаковку приложений, стандартизацию и автоматизацию развертывания, а также интеграцию в конвейер DevOps CI/CD.  Например, если вы намерены быстро развернуть службу веб-приложений с серверной частью на основе Базы данных Azure для MySQL, полное развертывание можно выполнить с помощью этого [шаблона быстрого запуска](https://azure.microsoft.com/en-us/resources/templates/101-webapp-managed-mysql/) из коллекции GitHub.
 
-В этом руководстве вы примените шаблоны Azure Resource Manager и другие средства, чтобы выполнить следующие операции:
+При работе с этим руководством вы будете использовать шаблон Azure Resource Manager и другие средства, чтобы выполнить следующие операции:
 
 > [!div class="checklist"]
-> * создание Базы данных Azure для сервера MySQL с конечной точкой службы в виртуальной сети с помощью шаблона Azure Resource Manager;
+> * Создание Базы данных Azure для сервера MySQL с конечной точкой службы в виртуальной сети с помощью шаблона Azure Resource Manager
 > * использование [программы командной строки MySQL](https://dev.mysql.com/doc/refman/5.6/en/mysql.html) для создания базы данных.
 > * Загрузка примера данных
 > * Запрос данных
@@ -32,7 +32,7 @@ ms.locfileid: "54004083"
 
 ## <a name="create-an-azure-database-for-mysql-server-with-vnet-service-endpoint-using-azure-resource-manager-template"></a>Создание Базы данных Azure для сервера MySQL с конечной точкой службы в виртуальной сети с помощью шаблона Azure Resource Manager
 
-Чтобы получить ссылку на шаблон JSON, устанавливающий Базу данных Azure для сервера MySQL, откройте страницу шаблона сервера Microsoft.DBforMySQL (https://docs.microsoft.com/en-us/azure/templates/microsoft.dbformysql/servers). Ниже приведен пример шаблона JSON, который позволяет создать новый сервер с Базой данных Azure для MySQL и конечной точкой службы в виртуальной сети.
+Чтобы получить ссылку на шаблон JSON для сервера Базы данных Azure для MySQL, откройте страницу шаблона для [сервера Microsoft.DBforMySQL](/azure/templates/microsoft.dbformysql/servers). Ниже приведен пример шаблона JSON, который позволяет создать новый сервер с Базой данных Azure для MySQL и конечной точкой службы в виртуальной сети.
 ```json
 {
   "apiVersion": "2017-12-01",

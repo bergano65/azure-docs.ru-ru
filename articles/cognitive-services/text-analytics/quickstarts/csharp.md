@@ -8,16 +8,16 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: quickstart
-ms.date: 10/01/2018
-ms.author: ashmaka
-ms.openlocfilehash: 59469b6c27ceb0ed96659198edd6ddbca12685e2
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.date: 01/02/2019
+ms.author: assafi
+ms.openlocfilehash: 7c26117c9c36b3004df0d85b1a739fcebd9a1e4e
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52283967"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54119413"
 ---
-# <a name="quickstart-using-c-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство по использованию C# для вызова API анализа текста Cognitive Services
+# <a name="quickstart-using-c-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование C# для вызова API анализа текста Cognitive Services
 <a name="HOLTop"></a>
 
 В этой статье содержатся сведения о распознавании языка, анализе тональности и извлечении ключевых фраз с использованием  [API анализа текста ](//go.microsoft.com/fwlink/?LinkID=759711) и C#. Код был написан для работы в приложении .NET Core с минимальными ссылками на внешние библиотеки, поэтому его также можно выполнять в Linux или MacOS.
@@ -28,11 +28,11 @@ ms.locfileid: "52283967"
 
 [!INCLUDE [cognitive-services-text-analytics-signup-requirements](../../../../includes/cognitive-services-text-analytics-signup-requirements.md)]
 
-Также требуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации. 
+Также требуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации.
 
 
 ## <a name="install-the-nuget-sdk-package"></a>Установка пакета SDK для пакетов NuGet
-1. В Visual Studio создайте консольное приложение.
+1. Создайте консольное приложение в Visual Studio.
 1. Щелкните решение правой кнопкой мыши и выберите пункт **Управление пакетами NuGet для решения**.
 1. Установите флажок **Включить предварительные выпуски**.
 1. Откройте вкладку **Обзор** и найдите **Microsoft.Azure.CognitiveServices.Language.TextAnalytics**.
@@ -47,7 +47,7 @@ ms.locfileid: "52283967"
 
 
 ## <a name="call-the-text-analytics-api-using-the-sdk"></a>Вызов API анализа текста с помощью пакета SDK
-1. Замените файл Program.cs на код, указанный ниже. Эта программа показывает возможности API анализа текста в трех разделах (извлечение языка, извлечение ключевой фразы и анализ тональности).
+1. Замените файл Program.cs кодом, указанным ниже. Эта программа показывает возможности API анализа текста в трех разделах (извлечение языка, извлечение ключевой фразы и анализ тональности).
 1. Замените значение заголовка `Ocp-Apim-Subscription-Key` с ключом доступа, допустимым для вашей подписки.
 1. Замените расположение в `Endpoint` конечной точкой, на которой в зарегистрированы. Эту конечную точку можно найти в ресурсе на портале Azure. Как правило, конечная точка начинается с "https://[регион].api.cognitive.microsoft.com". Здесь нужно указать только протокол и имя узла.
 1. Запустите программу.
@@ -68,13 +68,14 @@ namespace ConsoleApp1
     {
         /// <summary>
         /// Container for subscription credentials. Make sure to enter your valid key.
-        string subscriptionKey = ""; //Insert your Text Anaytics subscription key
+        private const string SubscriptionKey = ""; //Insert your Text Anaytics subscription key
+
         /// </summary>
         class ApiKeyServiceClientCredentials : ServiceClientCredentials
         {
             public override Task ProcessHttpRequestAsync(HttpRequestMessage request, CancellationToken cancellationToken)
             {
-                request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
+                request.Headers.Add("Ocp-Apim-Subscription-Key", SubscriptionKey);
                 return base.ProcessHttpRequestAsync(request, cancellationToken);
             }
         }
@@ -104,7 +105,7 @@ namespace ConsoleApp1
             // Printing language results.
             foreach (var document in result.Documents)
             {
-                Console.WriteLine("Document ID: {0} , Language: {1}", document.Id, document.DetectedLanguages[0].Name);
+                Console.WriteLine($"Document ID: {document.Id} , Language: {document.DetectedLanguages[0].Name}");
             }
 
             // Getting key-phrases
@@ -122,13 +123,13 @@ namespace ConsoleApp1
             // Printing keyphrases
             foreach (var document in result2.Documents)
             {
-                Console.WriteLine("Document ID: {0} ", document.Id);
+                Console.WriteLine($"Document ID: {document.Id} ");
 
                 Console.WriteLine("\t Key phrases:");
 
                 foreach (string keyphrase in document.KeyPhrases)
                 {
-                    Console.WriteLine("\t\t" + keyphrase);
+                    Console.WriteLine($"\t\t{keyphrase}");
                 }
             }
 
@@ -149,14 +150,14 @@ namespace ConsoleApp1
             // Printing sentiment results
             foreach (var document in result3.Documents)
             {
-                Console.WriteLine("Document ID: {0} , Sentiment Score: {1:0.00}", document.Id, document.Score);
+                Console.WriteLine($"Document ID: {document.Id} , Sentiment Score: {document.Score:0.00}");
             }
 
 
             // Identify entities
             Console.WriteLine("\n\n===== ENTITIES ======");
 
-            EntitiesBatchResult result4 = client.EntitiesAsync(
+            EntitiesBatchResultV2dot1 result4 = client.EntitiesAsync(
                     new MultiLanguageBatchInput(
                         new List<MultiLanguageInput>()
                         {
@@ -166,13 +167,13 @@ namespace ConsoleApp1
             // Printing entities results
             foreach (var document in result4.Documents)
             {
-                Console.WriteLine("Document ID: {0} ", document.Id);
+                Console.WriteLine($"Document ID: {document.Id} ");
 
                 Console.WriteLine("\t Entities:");
 
-                foreach (EntityRecord entity in document.Entities)
+                foreach (EntityRecordV2dot1 entity in document.Entities)
                 {
-                    Console.WriteLine("\t\t" + entity.Name);
+                    Console.WriteLine($"\t\t{entity.Name}\t\t{entity.WikipediaUrl}\t\t{entity.Type}\t\t{entity.SubType}");
                 }
             }
 
@@ -187,8 +188,7 @@ namespace ConsoleApp1
 > [!div class="nextstepaction"]
 > [Text Analytics with Power BI](../tutorials/tutorial-power-bi-key-phrases.md) (Анализ текста с использованием Power BI)
 
-## <a name="see-also"></a>См. также 
+## <a name="see-also"></a>См. также
 
- [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)  
- [Часто задаваемые вопросы](../text-analytics-resource-faq.md)
+ API анализа текста: [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)
 
