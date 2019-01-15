@@ -3,43 +3,39 @@ items:
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое API Bing для поиска новостей?
+  - name: Общие сведения об API Bing для поиска новостей
     href: search-the-web.md
-- name: Краткие руководства по REST API
-  items:
-  - name: Начало работы
-    href: quickstart.md
-  - name: C#
-    href: csharp.md
-  - name: Java
-    href: java.md
-  - name: Node.js
-    href: nodejs.md
-  - name: PHP
-    href: php.md
-  - name: Python
-    href: python.md
-  - name: Ruby
-    href: ruby.md
   expanded: true
-- name: Краткие руководства по пакетам SDK
+- name: Быстрое начало работы
   items:
-  - name: Общие сведения о примерах пакетов SDK
-    href: sdk.md
-  - name: Краткое руководство по пакету SDK для поиска новостей для C#
-    href: news-search-sdk-quickstart.md
-  - name: Краткое руководство по пакету SDK для поиска новостей для Node.js
-    href: news-search-sdk-node-quickstart.md
-  - name: Краткое руководство по пакету SDK для поиска новостей для Python
-    href: news-sdk-python-quickstart.md
-  - name: Краткое руководство по пакету SDK для поиска новостей для Java
-    href: news-sdk-java-quickstart.md
+  - name: REST API
+    items:
+    - name: Использование C#
+      href: csharp.md
+    - name: Использование Java
+      href: java.md
+    - name: Использование Node.js
+      href: nodejs.md
+    - name: Использование PHP
+      href: php.md
+    - name: Использование Python
+      href: python.md
+    - name: Использование Ruby
+      href: ruby.md
+  - name: SDK
+    items:
+    - name: Использование C#
+      href: news-search-sdk-quickstart.md
+    - name: Использование Node.js
+      href: news-search-sdk-node-quickstart.md
+    - name: Использование Python
+      href: news-sdk-python-quickstart.md
+    - name: Использование Java
+      href: news-sdk-java-quickstart.md
 - name: Учебники
   items:
-  - name: Одностраничные веб-приложения
+  - name: Создание одностраничного веб-приложения
     href: tutorial-bing-news-search-single-page-app.md
-  - name: Одностраничные веб-приложения (исходный код)
-    href: tutorial-bing-news-search-single-page-app-source.md
 - name: Примеры
   items:
   - name: Примеры кода
@@ -54,12 +50,18 @@ items:
     href: paging-news.md
   - name: Изменение размера и обрезка эскизов
     href: resize-and-crop-thumbnails.md
-  - name: Обновление с версии 5 до версии 7
+  - name: Обновление API с версии 5 до версии 7
     href: bing-news-upgrade-guide-v5-to-v7.md
   - name: Работа с Visual Studio
     items:
     - name: Использование подключенной службы API Bing для поиска новостей
       href: vs-bing-news-search-connected-service.md
+- name: Основные понятия
+  items:
+  - name: Отправка поисковых запросов
+    href: concepts/send-search-queries.md
+  - name: Поиск новостей
+    href: concepts/search-for-news.md
 - name: Справочные материалы
   items:
   - name: API Bing для поиска новостей версии 7
@@ -102,9 +104,9 @@ items:
     href: language-support.md
   - name: Аналитика для API Bing для поиска новостей
     href: bing-news-stats.md
-ms.openlocfilehash: 9f702884dba94169eae71f98253a3ae1a94d8510
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: ed425db68d5c617f6442e9757531f02b0ab1cd38
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53790549"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54266218"
