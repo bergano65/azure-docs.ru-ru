@@ -21,7 +21,7 @@ ms.lasthandoff: 08/07/2018
 ms.locfileid: "39590336"
 ---
 # <a name="copy-data-from-sap-business-warehouse-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
 > * [Версия 1](v1/data-factory-sap-business-warehouse-connector.md)
 > * [Текущая версия](connector-sap-business-warehouse.md)
 
