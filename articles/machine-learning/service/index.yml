@@ -1,68 +1,49 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: da46b78d764465d8b9e5ce438b0843e0b79e16a9
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 9fe3efba6cc18839f7d65d2f19dfb165bbdecc05
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53271153"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54331288"
 documentType: LandingData
 title: Документация по службе "Машинное обучение Azure"
 metadata:
   title: 'Документация по службе "Машинное обучение Azure": руководства и справочник по API | Документация Майкрософт'
   description: Узнайте, как встраивать интеллектуальные алгоритмы в приложения и веб-сайты. Используйте scikit-learn, Tensorflow, Pytorch или любую другую платформу на базе Python для создания моделей машинного обучения и ее обучения локально или в облаке. Руководства, краткие инструкции, справочники по API и примеры использования.
   services: machine-learning
-  author: j-martens
-  manager: jhubbard
   ms.service: machine-learning
   ms.component: core
+  ms.topic: landing-page
+  manager: jhubbard
+  author: j-martens
+  ms.author: jmartens
+  ms.date: 12/04/2018
+  ms.custom: seodec18
   ms.tgt_pltfrm: na
   ms.devlang: na
-  ms.topic: landing-page
-  ms.date: 12/04/2018
-  ms.author: jmartens
-  ms.custom: seodec18
 abstract:
   description: Узнайте, как встраивать интеллектуальные алгоритмы в приложения и веб-сайты. Используйте scikit-learn, Tensorflow, Pytorch или любую другую платформу на базе Python для создания моделей машинного обучения и ее обучения локально или в облаке. Руководства, краткие инструкции, справочники по API и примеры использования.
 sections:
-- items:
-  - type: list
-    style: cards
-    className: cardsFTitle
-    items:
-    - title: Приступите к ознакомлению со службой "Машинное обучение Azure"
-      href: /azure/machine-learning/service/overview-what-is-azure-ml
-      image:
-        src: /azure/machine-learning/media/index/i_machine-learning.svg
-        href: /azure/machine-learning/service/overview-what-is-azure-ml
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: Настройте ресурсы для службы "Машинное обучение Azure".
+    text: 'Узнайте, как настроить рабочую область и ресурсы для Службы машинного обучения Azure, из руководств по началу работы:'
   - type: list
     style: unordered
     items:
-    - html: <a href="quickstart-get-started.md">Начало работы на портале Azure </a>
-    - html: <a href="quickstart-create-workspace-with-python.md">Начало работы с Python</a>
+    - html: Начало работы с использованием <a href="quickstart-get-started">портала Azure</a>.
+    - html: Начало работы с использованием <a href="quickstart-create-workspace-with-python">Python</a>.
 - title: Пошаговые руководства
   items:
   - type: paragraph
-    text: Узнайте, как настроить эксперимент подготовить модели у использованию.
-  - type: paragraph
-    text: <b>Руководство по классификации изображений с использованием данных MNIST</b>
+    text: 'Узнайте, как подготовить данные, настроить эксперименты и ввести в эксплуатацию модели машинного обучения:'
   - type: list
     style: unordered
     items:
-    - html: Часть 1&#58; <a href="tutorial-train-models-with-aml">Обучение собственной модели машинного обучения</a>
-    - html: Часть 2&#58; <a href="tutorial-deploy-models-with-aml">Развертывание этой модели</a>
+    - html: <a href="tutorial-train-models-with-aml">Обучение и развертывание модели классификации изображений</a> (<b>руководство в двух частях</b>).
+    - html: <a href="tutorial-data-prep">Подготовка данных и использование автоматического машинного обучения</a> для обучения и настройки моделей регрессии (<b>руководство в двух частях</b>).<br>&nbsp;
   - type: paragraph
-    text: <b>Руководство по моделированию регрессии с данными о поездках в такси Нью-Йорка</b>
-  - type: list
-    style: unordered
-    items:
-    - html: Часть 1&#58; <a href="tutorial-data-prep">Подготовка данных о такси Нью-Йорка к моделированию</a>
-    - html: Часть 2&#58; <a href="tutorial-auto-train-models">Использование автоматического машинного обучения для создания моделей</a>
-  - type: paragraph
-    text: <b>Примеры записных книжек</b> Ознакомьтесь с возможностями службы на примере этих <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://aka.ms/aml-notebooks">записных книжек Jupyter</a> на сайте GitHub.
+    text: <b>Примеры.</b> Ознакомьтесь с возможностями службы с помощью этих <a href="https://aka.ms/aml-notebooks">записных книжек Jupyter</a> на сайте GitHub.
 - title: Справочные материалы
   items:
   - type: list
