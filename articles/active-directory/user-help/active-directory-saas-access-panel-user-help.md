@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 01/15/2018
 ms.author: lizross
 ms.reviewer: japere
-ms.openlocfilehash: b4229ca7ff96a9806ac82cf9452de496d858f6b4
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: a761e6a42e478aafca75709689a022edec2a64db
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51705690"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191043"
 ---
 # <a name="troubleshoot-issues-with-accessing-and-using-the-myapps-portal"></a>Устранение неполадок, возникающих при использовании портала MyApps, и получении доступа к нему
 
@@ -49,7 +49,7 @@ ms.locfileid: "51705690"
 
 Убедитесь, что выполнены следующие требования к браузеру:
 
-- **Edge** — в Windows 10 Anniversary Edition или более поздней версии;
+- **Microsoft Edge**: в Windows 10 Anniversary Edition или более поздней версии;
 - **Chrome** — начиная с Windows 7 и Mac OS X;
 - **Firefox 26.0 или более поздней версии** — в Windows XP с пакетом обновления 2 (SP2) или более поздней версии и в Mac OS X 10.6 или более поздней версии;
 - **Internet Explorer 11** — в ОС Windows 7 или более поздней версии (ограниченная поддержка).

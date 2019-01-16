@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/23/2018
 ms.author: genli
-ms.openlocfilehash: ce171aa32e4f17e974a6d8a9752189ac78bf73fe
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: dd7351d2948526905c91f2eac52e48b25cf063ac
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53387001"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191434"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Проблемы конфигурации и управления для облачных служб Azure. Часто задаваемые вопросы (FAQ)
 
@@ -208,7 +208,7 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 Когда все будет готово, проверьте наличие HTTP/2 с помощью одного из следующих методов.
 
 - Включите версию протокола для журналов IIS и изучите журналы IIS. HTTP/2 будет отображаться в журналах. 
-- Включите средства разработчика клавишей F12 в браузере Internet Explorer или Edge и перейдите на вкладку "Сети", чтобы проверить версию протокола. 
+- Включите средства разработчика клавишей F12 в браузере Internet Explorer или Microsoft Edge и перейдите на вкладку "Сети", чтобы проверить версию протокола. 
 
 Дополнительные сведения см. в статье [HTTP/2 on IIS](https://blogs.iis.net/davidso/http2) (HTTP/2 в IIS).
 

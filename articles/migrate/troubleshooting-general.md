@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.author: raynew
-ms.openlocfilehash: 4ebd6eb860a6b102d1a3b12642510c429c18baa7
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 9a6b40aa86d4d81482d9c3724f0e230e0b811276
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53259160"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54189502"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
@@ -136,7 +136,7 @@ esourceGroups/ContosoDemo/providers/Microsoft.Migrate/projects/Demo/groups/conto
 2. Перейдите в каталог C:\ProgramFiles\ProfilerService\VMWare\Scripts\.
 3. Запустите сценарий InstallPowerCLI.ps1.
 
-### <a name="error-unhandledexception-internal-error-occured-systemiofilenotfoundexception"></a>Ошибка UnhandledException. Произошла внутренняя ошибка: System.IO.FileNotFoundException
+### <a name="error-unhandledexception-internal-error-occurred-systemiofilenotfoundexception"></a>Ошибка UnhandledException. Произошла внутренняя ошибка: System.IO.FileNotFoundException
 
 Эта ошибка может возникать из-за проблемы с установкой VMware PowerCLI. Устранить проблему можно следующим образом:
 
@@ -245,14 +245,14 @@ esourceGroups/ContosoDemo/providers/Microsoft.Migrate/projects/Demo/groups/conto
 2. Нажмите клавишу F12, чтобы открыть средства для разработчиков. При необходимости снимите флажок **Clear entries on navigation** (Очищать записи при переходе).
 3. Щелкните вкладку **Network** (Сеть) и начните сбор журналов сетевого трафика.
  - В Chrome установите флажок **Preserve log** (Сохранить журнал). Запись должна начаться автоматически. Красный кружок указывает, что данные трафика записываются. Если он не отображается, щелкните черный кружок, чтобы начать запись.
- - В Edge или Internet Explorer запись должна начаться автоматически. Если это не так, нажмите зеленую кнопку воспроизведения.
+ - В Microsoft Edge или Internet Explorer запись должна начаться автоматически. Если это не так, нажмите зеленую кнопку воспроизведения.
 4. Попробуйте воспроизвести ошибку.
 5. Если при записи возникла ошибка, остановите запись и сохраните копию записанных действий.
  - В Chrome щелкните запись правой кнопкой мыши и выберите **Save as HAR with content** (Сохранить как HAR-файл с содержимым). Журналы будут заархивированы в формате ZIP и экспортированы в виде HAR-файла.
- - В Edge или Internet Explorer щелкните значок **Экспорт собранного трафика**. Журнал будет заархивирован в формате ZIP и экспортирован.
+ - В Microsoft Edge или Internet Explorer щелкните значок **Экспорт собранного трафика**. Журнал будет заархивирован в формате ZIP и экспортирован.
 6. Перейдите на вкладку **Консоль**, чтобы проверить наличие предупреждений или ошибок. Чтобы сохранить журнал консоли, сделайте следующее.
  - В Chrome щелкните правой кнопкой мыши в любом месте в журнале консоли. Выберите **Save as** (Сохранить как), чтобы заархивировать журнал в формате ZIP и экспортировать его.
- - В Edge или Internet Explorer щелкните правой кнопкой мыши ошибки и выберите **Копировать все**.
+ - В Microsoft Edge или Internet Explorer щелкните правой кнопкой мыши ошибки и выберите **Копировать все**.
 7. Закройте средства для разработчиков.
 
 ## <a name="collector-error-codes-and-recommended-actions"></a>Коды ошибок сборщика и рекомендуемые действия

@@ -5,30 +5,29 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 14453a1603eb414441008ef1381800009f4268e4
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 5c46d4e4d23744cf07ccf7857a33990bf405a6a1
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52994434"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54189020"
 ---
 # <a name="connect-with-excel"></a>Подключение с помощью Excel
 
 После создания сервера и развертывания на нем табличной модели клиенты смогут подключиться к нему для работы с данными. 
 
 ## <a name="before-you-begin"></a>Перед началом работы
+
 Учетная запись, с помощью которой вы вошли в систему, должна принадлежать к роли шаблона базы данных по крайней мере с правами на чтение. Дополнительные сведения см. в руководстве по [аутентификации и настройке пользовательских разрешений](analysis-services-manage-users.md). 
 
 ## <a name="connect-in-excel"></a>Подключение в Excel
 
-Подключиться к серверу из Excel можно с помощью функции "Получить данные" в Excel 2016. Подключение с помощью мастера импорта таблиц в Power Pivot не поддерживается. 
+Подключиться к серверу из Excel можно с помощью функции "Получить данные" в Excel 2016 и более поздних версий. Подключение с помощью мастера импорта таблиц в Power Pivot не поддерживается. 
 
-**Подключение в Excel 2016**
-
-1. В Excel 2016 на ленте **Данные** последовательно выберите **Получить внешние данные** > **Из других источников** > **Из служб Analysis Services**.
+1. В Excel на ленте **Данные** щелкните **Получить внешние данные** > **Из других источников** > **Из служб Analysis Services**.
 
 2. В мастере подключения к данным введите имя сервера, включая протокол и универсальный код ресурса (URI), в поле **Имя сервера**. Например, asazure://westcentralus.asazure.windows.net/advworks. Затем для параметра **Учетные данные** выберите значение **Использовать следующие имя пользователя и пароль**, введите имя пользователя, например nancy@adventureworks.com, и пароль для него.
 
@@ -43,6 +42,7 @@ ms.locfileid: "52994434"
 
 
 ## <a name="see-also"></a>См. также
+
 [Клиентские библиотеки](analysis-services-data-providers.md)   
 [Управление службами Analysis Services](analysis-services-manage.md)     
 

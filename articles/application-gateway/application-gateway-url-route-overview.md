@@ -1,18 +1,17 @@
 ---
-title: Общие сведения о маршрутизации содержимого на основе URL-адресов | Документация Майкрософт
-description: Эта страница содержит общие сведения о маршрутизации содержимого шлюза приложений на основе URL-адресов, настройки UrlPathMap и правила PathBasedRouting.
+title: Общие сведения о маршрутизации содержимого на основе URL-адресов с помощью службы "Шлюз приложений Azure"
+description: Эта страница содержит общие сведения о маршрутизации содержимого Шлюза приложений Azure на основе URL-адресов, настройки UrlPathMap и правила PathBasedRouting.
 services: application-gateway
 author: vhorne
-manager: jpconnock
 ms.service: application-gateway
-ms.date: 11/7/2018
+ms.date: 1/8/2019
 ms.author: victorh
-ms.openlocfilehash: bc123307a3cc3a5040e93e517c60604dc75fc7e7
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: 1ada74f5c85ef327957ec4981e83f68bcafea858
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51218429"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188765"
 ---
 # <a name="url-path-based-routing-overview"></a>Общие сведения о маршрутизации на основе URL-путей
 
@@ -20,7 +19,7 @@ ms.locfileid: "51218429"
 
 Один из сценариев — это маршрутизация запросов содержимого различных типов в различные пулы тыловых серверов.
 
-В следующем примере шлюз приложений обслуживает трафик веб-сайта contoso.com с трех пулов тыловых серверов, например VideoServerPool, ImageServerPool и DefaultServerPool.
+В следующем примере Шлюз приложений обслуживает трафик веб-сайта contoso.com с трех пулов тыловых серверов, например VideoServerPool, ImageServerPool и DefaultServerPool.
 
 ![imageURLroute](./media/application-gateway-url-route-overview/figure1.png)
 
@@ -62,8 +61,37 @@ ms.locfileid: "51218429"
 }]
 ```
 
-> [!NOTE]
-> Параметр PathPattern представляет список шаблонов пути для сопоставления. Каждый шаблон должен начинаться с косой черты (/). Символ * может быть только в конце после косой черты. Строка, передаваемая в сопоставитель путей, не должна содержать текст после первого символа "?" или "#", и сами эти символы не допускаются. В остальных случаях все допустимые символы в URL-адресе допускаются и в PathPattern.
+### <a name="pathpattern"></a>PathPattern
+
+PathPattern — это список шаблонов пути для сопоставления. Каждый шаблон должен начинаться с косой черты (/). Символ * может быть только в конце после косой черты. Строка, передаваемая в сопоставитель путей, не должна содержать текст после первого символа "?" или "#", и сами эти символы не допускаются. В остальных случаях все допустимые символы в URL-адресе допускаются и в PathPattern.
+
+Поддерживаемые шаблоны зависят от того, какой Шлюз приложений развернут: версий 1 или 2.
+
+#### <a name="v1"></a>Версия 1
+
+В правилах для путей не учитывается регистр.
+
+|Шаблон пути версии 1  |Поддерживается?  |
+|---------|---------|
+|`/images/*`     |Да|
+|`/images*`     |Нет|
+|`/images/*.jpg`     |Нет|
+|`/*.jpg`     |Нет|
+|`/Repos/*/Comments/*`     |Нет|
+|`/CurrentUser/Comments/*`     |Да|
+
+#### <a name="v2"></a>версия 2
+
+В правилах для путей учитывается регистр.
+
+|Шаблон пути версии 2  |Поддерживается?  |
+|---------|---------|
+|`/images/*`     |Да|
+|`/images*`     |Да|
+|`/images/*.jpg`     |Нет|
+|`/*.jpg`     |Нет|
+|`/Repos/*/Comments/*`     |Нет|
+|`/CurrentUser/Comments/*`     |Да|
 
 Дополнительные сведения см. в статье [Resource Manager template using URL-based routing](https://azure.microsoft.com/documentation/templates/201-application-gateway-url-path-based-routing) (Шаблон Resource Manager с использованием маршрутизации на основе URL-адресов).
 

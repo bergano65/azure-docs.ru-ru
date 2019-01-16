@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/11/2017
 ms.author: barbkess
 ms.reviwer: japere,asteen
-ms.openlocfilehash: ac07a0aa9c324c7e44d68ea2674d0fa2af5dbba5
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: d2670d8f018fc26b7017fba40b5aff4310900dab
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355984"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188697"
 ---
 # <a name="problem-signing-in-to-the-access-panel-website"></a>Проблема при входе на веб-сайт панели доступа
 
@@ -64,7 +64,7 @@ ms.locfileid: "44355984"
 
 -   Internet Explorer 8, 9, 10, 11 (в Windows 7 или более поздней версии);
 
--   Edge в Windows 10 Anniversary Edition или более поздней версии; 
+-   Microsoft Edge в Windows 10 Anniversary Edition или более поздней версии; 
 
 -   Chrome (начиная с Windows 7 и Mac OS X);
 

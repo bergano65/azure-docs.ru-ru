@@ -1,28 +1,28 @@
 ---
-title: 'Учебник по службам Azure Analysis Services: занятие 13 "Развертывание" | Документы Майкрософт'
+title: Руководство по службам Azure Analysis Services. Урок 13. Развертывание | Документация Майкрософт
 description: Описывает развертывание учебного проекта в службах Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f0528af5f3a6b7309d81c36ca5bc7a3faccfa293
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 780853644125c8fa6d5edcef642cfad724516ef2
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49427118"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188391"
 ---
 # <a name="deploy"></a>Развертывание
 
 На этом уроке вы настроите свойства развертывания, указав сервер Azure Analysis Services, на котором оно будет выполняться, развертывания и имя модели. Затем вы развернете модель на этом экземпляре. После развертывания модели пользователи смогут подключаться к ней с помощью клиентского приложения по созданию отчетов. Дополнительные сведения см. в статье [Deploy to Azure Analysis Services](https://docs.microsoft.com/azure/analysis-services/analysis-services-deploy) (Развертывание в службы Azure Analysis Services).  
   
-Предполагаемое время выполнения этого занятия: **5 минут**  
+Предполагаемое время выполнения этого урока: **5 минут**.  
   
 ## <a name="prerequisites"></a>Предварительные требования  
-Эта статья является одной из частей руководства по созданию табличных моделей. Эти части следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, нужно завершить предыдущее занятие: [Занятие 12. Анализ в Excel](../tutorials/aas-lesson-12-analyze-in-excel.md).  
+Эта статья является одной из частей руководства по созданию табличных моделей. Эти части следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом уроке, вам нужно завершить предыдущий урок: [Урок 12. Анализ в Excel](../tutorials/aas-lesson-12-analyze-in-excel.md).  
 
 > [!IMPORTANT]  
 > Вы должны иметь [права администратора](../analysis-services-server-admins.md) на удаленном сервере служб Analysis Services для его развертывания.  

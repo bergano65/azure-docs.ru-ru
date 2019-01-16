@@ -5,15 +5,15 @@ services: virtual-wan
 author: cherylmc
 ms.service: virtual-wan
 ms.topic: conceptual
-ms.date: 12/11/2018
+ms.date: 01/09/2019
 ms.author: cherylmc
 Customer intent: As someone with a networking background, I want to work with routing tables for NVA.
-ms.openlocfilehash: 821aecf5549548365d95ef83ea1fcdeb017a4a21
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: 7d5cd8aab0f368ffec636e6dfcacf127c910dafc
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53321449"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190176"
 ---
 # <a name="create-a-virtual-hub-route-table-to-steer-traffic-to-a-network-virtual-appliance"></a>Создание таблицы маршрутов виртуального концентратора для маршрутизации трафика к сетевому виртуальному модулю
 
@@ -21,7 +21,7 @@ ms.locfileid: "53321449"
 
 ![Схема Виртуальной глобальной сети](./media/virtual-wan-route-table/vwanroute.png)
 
-Из этой статьи вы узнаете о следующем.
+В этой статье раскрываются следующие темы:
 
 * Создание глобальной сети.
 * Создание концентратора.
@@ -43,7 +43,7 @@ ms.locfileid: "53321449"
 
 ## <a name="signin"></a>1. Вход
 
-Убедитесь, что вы установили последнюю версию командлетов PowerShell для Resource Manager. Дополнительные сведения об установке командлетов PowerShell см. в статье [Overview of Azure PowerShell](/powershell/azure/overview) (Обзор Azure PowerShell). Это важно, так как более ранние версии командлетов не содержат текущие значения, необходимые в этом сценарии.
+Убедитесь, что вы установили последнюю версию командлетов PowerShell для Resource Manager. Дополнительные сведения об установке командлетов PowerShell см. в статье [Overview of Azure PowerShell](/powershell/azure/azurerm/overview) (Обзор Azure PowerShell). Это важно, так как более ранние версии командлетов не содержат текущие значения, необходимые в этом сценарии. В следующих примерах используются модули Azure RM. В эту статью будут добавлены сведения для Azure Az в будущем.
 
 1. Откройте консоль PowerShell с повышенными привилегиями и войдите в свою учетную запись Azure. Этот командлет запрашивает учетные данные входа. После выполнения входа он загружает параметры учетной записи, чтобы они были доступны в Azure PowerShell.
 

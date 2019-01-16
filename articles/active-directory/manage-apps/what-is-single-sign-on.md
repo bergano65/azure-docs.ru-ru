@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: barbkess
 ms.reviewer: arvindh
-ms.openlocfilehash: 627bd114504de20517abcd05f45dc6c58fe80117
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: b7e75753f8d7a9316dd1cc644dc22c42ef284736
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53322710"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190098"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Единый вход в приложениях в Azure Active Directory
 Узнайте, как выбрать наиболее подходящий способ единого входа при настройке приложений в Azure Active Directory (Azure AD). 
@@ -79,7 +79,7 @@ ms.locfileid: "53322710"
 Единый вход на основе пароля поддерживается для любого облачного приложения со страницей входа на базе HTML. Пользователь может использовать любой из следующих браузеров:
 
 - Internet Explorer 11 (в Windows 7 или более поздней версии);
-- Microsoft Edge в Windows 10 Anniversary Edition или более поздней версии; 
+- Microsoft Edge в Windows 10 Anniversary Edition или более поздней версии; 
 - Chrome в Windows 7 или более поздней версии и в Mac OS X;
 - Firefox 26.0 или более поздней версии в Windows XP с пакетом обновления 2 (SP2) или более поздней версии и в Mac OS X 10.6 или более поздней версии.
 

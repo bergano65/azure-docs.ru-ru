@@ -1,20 +1,20 @@
 ---
-title: Импорт данных в индекс службы "Поиск Azure" с помощью портала Azure
+title: Импорт данных в индекс поиска в Поиске Azure с помощью портала Azure
 description: Узнайте, как использовать мастер импорта данных на портале Azure для сканирования данных Azure из Cosmos DB, хранилища BLOB-объектов, хранилища таблиц, Базы данных SQL и SQL Server на виртуальных машинах Azure.
 author: HeidiSteen
 manager: cgronlun
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 07/10/2018
+ms.date: 01/10/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: ceca9b8e89a963cd9a9226be143d24ed5429747b
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 8eb319538b409287538dd1e9d2856d9080d671b8
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53316479"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188799"
 ---
 # <a name="how-to-import-data-into-azure-search-index-using-the-azure-portal"></a>Импорт данных в индекс службы "Поиск Azure" с помощью портала Azure
 

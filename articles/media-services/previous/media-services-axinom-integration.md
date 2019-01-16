@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
 ms.author: willzhan;Mingfeiy;rajputam;Juliako
-ms.openlocfilehash: 81247863eb86752113989f6e48e79f5c8bc75505
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: d269818e82261c51b63379bb41f69efdc21de18a
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37061160"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191264"
 ---
 # <a name="using-axinom-to-deliver-widevine-licenses-to-azure-media-services"></a>Использование Axinom для доставки лицензий Widevine в службы мультимедиа Azure
 > [!div class="op_single_selector"]
@@ -29,9 +29,9 @@ ms.locfileid: "37061160"
 > 
 
 ## <a name="overview"></a>Обзор
-В службы мультимедиа Azure (AMS) добавлена динамическая защита Google Widevine (подробные сведения см. в [блоге Мингфей Ян (Mingfei Yan)](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)). Кроме того, в Проигрыватель мультимедиа Azure (AMP) добавлена поддержка Widevine (подробные сведения см. в [документации по AMP](http://amp.azure.net/libs/amp/latest/docs/)). Это большое достижение в потоковой передаче содержимого DASH, защищенного с помощью CENC с несколькими собственными технологиями DRM (PlayReady и Widevine) в современных браузерах, оснащенных MSE и EME.
+В службы мультимедиа Azure (AMS) добавлена динамическая защита Google Widevine (подробные сведения см. в [блоге Минфэй Ян (Mingfei Yan)](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)). Кроме того, в Проигрыватель мультимедиа Azure (AMP) добавлена поддержка Widevine (подробные сведения см. в [документации по AMP](http://amp.azure.net/libs/amp/latest/docs/)). Это большое достижение в потоковой передаче содержимого DASH, защищенного с помощью CENC с несколькими собственными технологиями DRM (PlayReady и Widevine) в современных браузерах, оснащенных MSE и EME.
 
-Начиная с версии 3.5.2 пакета SDK служб мультимедиа для .NET, службы мультимедиа позволяют настраивать шаблоны лицензии Widevine и получать лицензии Widevine. Для доставки лицензий Widevine можно использовать следующих партнеров AMS: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
+Начиная с версии 3.5.2 пакета SDK служб мультимедиа для .NET, службы мультимедиа позволяют настраивать шаблоны лицензии Widevine и получать лицензии Widevine. Вы можете также использовать следующих партнеров AMS для доставки лицензий Widevine: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/) и [castLabs](http://castlabs.com/company/partners/azure/).
 
 В этой статье описывается интеграция и тестирование сервера лицензирования Widevine под управлением Axinom. В частности, рассматриваются следующие операции:  
 
@@ -44,7 +44,7 @@ ms.locfileid: "37061160"
 ![DASH и CENC](./media/media-services-axinom-integration/media-services-axinom1.png)
 
 ## <a name="content-protection"></a>Система защиты содержимого
-Сведения о настройке динамической защиты и политики доставки ключей см. в блоге Мингфей Ян (Mingfei Yan) [Как настроить упаковку Widevine с помощью служб мультимедиа Azure](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services).
+Настройка динамической защиты и описание политики доставки ключей приведены в блоге Минфэй Ян: [How to configure Widevine packaging with Azure Media Services](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services) (Как настроить упаковку Widevine с помощью Служб мультимедиа Azure).
 
 Вы можете настроить динамическую защиту CENC c помощью нескольких технологий DRM для потоковой передачи DASH при наличии двух следующих типов защиты.
 
@@ -200,5 +200,5 @@ ms.locfileid: "37061160"
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 
 ### <a name="acknowledgments"></a>Благодарности
-Мы выражаем признательность тем, кто помог нам в составлении этого документа, — это Кристджан Джоги из Axinom (Kristjan Jõgi), Мингфей Ян (Mingfei Yan) и Амит Раджпут (Amit Rajput).
+Мы выражаем признательность тем, кто помог нам в составлении этого документа, — это Кристджан Джоги из Axinom (Kristjan Jõgi), Минфэй Ян (Mingfei Yan) и Амит Раджпут (Amit Rajput).
 

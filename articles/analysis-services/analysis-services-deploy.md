@@ -1,24 +1,26 @@
 ---
-title: Развертывание в службах Azure Analysis Services с помощью SSDT | Документация Майкрософт
+title: Развертывание в службах Azure Analysis Services с помощью Visual Studio (SSDT) | Документация Майкрософт
 description: Сведения о развертывании табличной модели на сервере служб Azure Analysis Services с помощью SSDT.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5f56ee65cd2ec5dfb39929f6985c26ebc339953e
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: a9f3dfba4c79b2369e99b95c13557557ed930c24
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49429054"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188595"
 ---
-# <a name="deploy-a-model-from-ssdt"></a>Развертывание модели из SSDT
+# <a name="deploy-a-model-from-visual-studio"></a>Развертывание модели из Visual Studio
+
 После создания сервера в подписке Azure все готово к развертыванию на нем базы данных табличной модели. Для создания и развертывания проекта табличной модели, над которым вы работаете, можно использовать средства SQL Server Data Tools (SSDT). 
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 Для начала работы необходимы перечисленные ниже компоненты и данные.
 
 * **Сервер Analysis Services** в Azure. См. дополнительные сведения о [создании сервера Azure Analysis Services](analysis-services-create-server.md).
@@ -53,10 +55,12 @@ ms.locfileid: "49429054"
 
 
 ## <a name="troubleshooting"></a>Устранение неполадок
+
 Если при развертывании метаданных возникает ошибка, вероятная ее причина заключается в том, что средству SSDT не удалось подключиться к серверу. Убедитесь, что можно подключиться к серверу с помощью среды SSMS. Убедитесь, что правильно указано свойство сервера развертывания для проекта.
 
 Если возникает сбой развертывания на таблице, скорее всего, причина в том, что серверу не удалось подключиться к источнику данных. Если источник данных является локальным в сети организации, не забудьте установить [Локальный шлюз данных](analysis-services-gateway.md).
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 После развертывания табличной модели на сервере к нему можно подключиться. Чтобы управлять сервером, вы можете [подключиться к нему с помощью SSMS](analysis-services-manage.md). Также вы можете [подключиться к серверу с помощью клиентского средства](analysis-services-connect.md), например Power BI, Power BI Desktop или Excel, и начать создавать отчеты.
 

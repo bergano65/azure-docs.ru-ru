@@ -1,19 +1,19 @@
 ---
-title: 'Учебник по службам Azure Analysis Services: занятие 9 "Создание иерархий" | Документы Майкрософт'
+title: Руководство по службам Azure Analysis Services. Урок 9. Создание иерархий | Документация Майкрософт
 description: Узнайте, как создать иерархии в табличной модели.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 2e6591dc25ab498b496f6abff1041e448240896d
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: f34b2fd2ba5f6e3e1433fb8dac04d931a36920d0
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49426077"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188969"
 ---
 # <a name="create-hierarchies"></a>Создание иерархий
 
@@ -21,10 +21,10 @@ ms.locfileid: "49426077"
   
 Для создания иерархий используется конструктор моделей в *представлении схемы*. Создание иерархий и управление ими не поддерживается в представлении данных.  
   
-Предполагаемое время выполнения этого занятия: **20 минут**  
+Предполагаемое время выполнения этого урока: **20 минут**.  
   
 ## <a name="prerequisites"></a>Предварительные требования  
-Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, необходимо завершить предыдущее занятие: [Занятие 8. Создание перспектив](../tutorials/aas-lesson-8-create-perspectives.md).  
+Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом уроке, вам нужно завершить предыдущий урок: [Урок 8. Создание перспектив](../tutorials/aas-lesson-8-create-perspectives.md).  
   
 ## <a name="create-hierarchies"></a>Создание иерархий  
   
@@ -73,6 +73,6 @@ ms.locfileid: "49426077"
     *  DayNumberOfWeek
   
  ## <a name="whats-next"></a>Что дальше?
-[Занятие 10. Создание разделов](../tutorials/aas-lesson-10-create-partitions.md). 
+[Урок 10. Создание секций](../tutorials/aas-lesson-10-create-partitions.md). 
   
   

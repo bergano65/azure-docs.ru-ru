@@ -1,5 +1,5 @@
 ---
-title: 'Azure Active Directory Connect: устранение неполадок с простым единым входом | Документы Майкрософт'
+title: Azure Active Directory Connect. Устранение неполадок с простым единым входом | Документация Майкрософт
 description: В этом разделе описывается устранение неполадок с простым единым входом Azure Active Directory.
 services: active-directory
 author: billmath
@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 09/24/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: a020f0f22f16d8aaa959c41a912ca5839be05312
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: 308623b4643724d95777d7e21d1138f808e9c1c9
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47055906"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190431"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Устранение неполадок с простым единым входом Azure Active Directory
 
@@ -36,23 +36,23 @@ ms.locfileid: "47055906"
 - Если пользователь входит в состав слишком большого количества групп в Active Directory, скорее всего, билет Kerberos этого пользователя будет слишком большим для обработки, что приведет к сбою простого единого входа. HTTPS-запросы Azure AD могут включать в себя заголовки, максимальный размер которых составляет 50 КБ. Размер билетов Kerberos должен быть меньше, чтобы вместить другие артефакты Azure AD (как правило, он равен 2–5 КБ), такие как файлы cookie. Рекомендуем сократить количество членов в группах и повторить попытку.
 - При синхронизации 30 лесов Active Directory или больше простой единый вход через Azure AD Connect включить невозможно. Чтобы избежать этого, можно [вручную включить](#manual-reset-of-the-feature) эту функцию на своем клиенте.
 - Добавление URL-адреса службы Azure AD (https://autologon.microsoftazuread-sso.com) в зону "Надежные сайты" вместо зоны "Местная интрасеть" *блокирует вход пользователей*.
-- Простой единый вход использует для Kerberos тип шифрования **RC4_HMAC_MD5**. Отключение типа шифрования **RC4_HMAC_MD5** в настройках Active Directory нарушит работу простого единого входа. В редакторе "Управление групповыми политиками" убедитесь, что для параметра политики **RC4_HMAC_MD5** задано значению **Включено** (щелкните **Конфигурация компьютера > Параметры Windows > Параметры безопасности > Локальные политики > Параметры безопасности > "Network Security: Configure encryption types allowed for Kerberos" (Сетевая безопасность: настройка типов шифрования, разрешенных для Kerberos)**). Кроме того, простой единый вход не может использовать другие типы шифрования, поэтому убедитесь, что они **отключены**.
+- Простой единый вход использует для Kerberos тип шифрования **RC4_HMAC_MD5**. Отключение типа шифрования **RC4_HMAC_MD5** в настройках Active Directory нарушит работу простого единого входа. В редакторе "Управление групповыми политиками" убедитесь, что для параметра политики **RC4_HMAC_MD5** (щелкните **Конфигурация компьютера > Параметры Windows > Параметры безопасности > Локальные политики > Параметры безопасности > "Network Security: Configure encryption types allowed for Kerberos"** (Сетевая безопасность: настройка типов шифрования, разрешенных для Kerberos)) задано значение **Включено**. Кроме того, простой единый вход не может использовать другие типы шифрования, поэтому убедитесь, что они **отключены**.
 
 ## <a name="check-status-of-feature"></a>Проверка состояния функции
 
 Убедитесь, что функция простого единого входа по-прежнему **включена** в клиенте. Можно проверить состояние, перейдя в область **Azure AD Connect** в [центре администрирования Azure Active Directory](https://aad.portal.azure.com/).
 
-![Центр администрирования Active Directory Azure — область "Azure AD Connect"](./media/tshoot-connect-sso/sso10.png)
+![Центр администрирования Azure Active Directory: область Azure AD Connect](./media/tshoot-connect-sso/sso10.png)
 
 С помощью мыши просмотрите все леса AD, которые были настроены для использования простого единого входа.
 
-![Центр администрирования Azure Active Directory — область простого единого входа](./media/tshoot-connect-sso/sso13.png)
+![Центр администрирования Azure Active Directory: Область простого единого входа](./media/tshoot-connect-sso/sso13.png)
 
 ## <a name="sign-in-failure-reasons-in-the-azure-active-directory-admin-center-needs-a-premium-license"></a>Причины сбоя единого входа в центре администрирования Azure Active Directory (требуется лицензия Premium)
 
 Если к клиенту привязана лицензия Azure AD Premium, вы можете также изучить [отчет о действиях при входе](../reports-monitoring/concept-sign-ins.md) в [центре администрирования Azure Active Directory](https://aad.portal.azure.com/).
 
-![Центр администрирования Azure Active Directory — отчет о действиях входа](./media/tshoot-connect-sso/sso9.png)
+![Центр администрирования Azure Active Directory: Отчет о входе](./media/tshoot-connect-sso/sso9.png)
 
 Перейдите в раздел **Azure Active Directory** > **Вход в систему** в [центре администрирования Azure Active Directory](https://aad.portal.azure.com/) и щелкните конкретное действие входа пользователя. Найдите поле **КОД ОШИБКИ ВХОДА**. Сопоставьте значение этого поля c причиной сбоя и способом разрешения с помощью следующей таблицы.
 
@@ -104,18 +104,18 @@ ms.locfileid: "47055906"
 
 Если устранение неполадок не помогло, можно сбросить вручную эту функцию на клиенте. Выполните следующие действия на локальном сервере, на котором выполняется Azure AD Connect.
 
-### <a name="step-1-import-the-seamless-sso-powershell-module"></a>Шаг 1. Импортируйте модуль PowerShell для простого единого входа
+### <a name="step-1-import-the-seamless-sso-powershell-module"></a>Шаг 1. Импорт модуля PowerShell для простого единого входа
 
 1. Сначала скачайте и установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/active-directory/overview).
 2. Перейдите в папку `%programfiles%\Microsoft Azure Active Directory Connect`.
 3. Импортируйте модуль PowerShell для простого единого входа с помощью следующей команды: `Import-Module .\AzureADSSO.psd1`.
 
-### <a name="step-2-get-the-list-of-active-directory-forests-on-which-seamless-sso-has-been-enabled"></a>Шаг 2. Получение списка лесов Active Directory, для которых включен простой единый вход
+### <a name="step-2-get-the-list-of-active-directory-forests-on-which-seamless-sso-has-been-enabled"></a>Шаг 2. Получение списка лесов Active Directory, для которых включен простой единый вход
 
 1. Откройте сеанс PowerShell от имени администратора. В PowerShell вызовите `New-AzureADSSOAuthenticationContext`. При запросе введите учетные данные глобального администратора своего клиента.
 2. Вызовите `Get-AzureADSSOStatus`. Эта команда выводит список лесов Active Directory (см. список "Домены"), в которых включена эта функция.
 
-### <a name="step-3-disable-seamless-sso-for-each-active-directory-forest-where-youve-set-up-the-feature"></a>Шаг 3. Отключение простого единого входа для каждого леса Active Directory, в котором настроена эта функция
+### <a name="step-3-disable-seamless-sso-for-each-active-directory-forest-where-youve-set-up-the-feature"></a>Шаг 3. Отключение простого единого входа для каждого леса Active Directory, в котором настроена эта функция
 
 1. Вызовите `$creds = Get-Credential`. При запросе введите свои учетные данные администратора домена для нужного леса Active Directory.
 
@@ -125,7 +125,7 @@ ms.locfileid: "47055906"
 2. Вызовите `Disable-AzureADSSOForest -OnPremCredentials $creds`. Эта команда удаляет учетную запись компьютера `AZUREADSSOACCT` с локального контроллера домена для конкретного леса Active Directory.
 3. Повторите предыдущие шаги для каждого леса Active Directory, в котором настроена эта функция.
 
-### <a name="step-4-enable-seamless-sso-for-each-active-directory-forest"></a>Шаг 4. Включение простого единого входа для каждого леса Active Directory
+### <a name="step-4-enable-seamless-sso-for-each-active-directory-forest"></a>Шаг 4. Включение простого единого входа для каждого леса Active Directory
 
 1. Вызовите `Enable-AzureADSSOForest`. При запросе введите свои учетные данные администратора домена для нужного леса Active Directory.
 

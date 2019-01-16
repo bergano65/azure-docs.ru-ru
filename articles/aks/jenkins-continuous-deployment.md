@@ -6,13 +6,13 @@ ms.service: container-service
 author: iainfoulds
 ms.author: iainfou
 ms.topic: article
-ms.date: 09/27/2018
-ms.openlocfilehash: d252e275280ed2a5c2129f6b228e9989a33b37fd
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.date: 01/09/2019
+ms.openlocfilehash: 470ba6df76741dd5c9e9eed055cd7848d341082f
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51853638"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188459"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-aks-with-jenkins-continuous-integration-and-deployment"></a>Руководство. Развертывание из GitHub в Службе Azure Kubernetes (AKS) с использованием непрерывной интеграции и непрерывного развертывания Jenkins
 
@@ -229,11 +229,6 @@ az role assignment create --assignee 626dd8ea-042d-4043-a8df-4ef56273670f --role
 1. Введите *azure-vote* в качестве имени задания. Выберите **Freestyle project** (Универсальный проект) и нажмите кнопку **ОК**.
 1. В разделе **General** (Общие) выберите **проект GitHub** и введите URL-адрес разветвления репозитория, например *https://github.com/\<your-github-account\>/azure-voting-app-redis*.
 1. В разделе **Source code management** (Управление исходным кодом) выберите **Git** и введите URL-адрес *GIT-файла* разветвления репозитория, например *https://github.com/\<your-github-account\>/azure-voting-app-redis.git*.
-    - Чтобы добавить учетные данные, выберите **Add** > **Jenkins** (Добавить > Jenkins).
-    - В разделе **Kind** (Вид) выберите **Secret text** (Секретный текст) и введите [личный маркер доступа GitHub][git-access-token] в качестве секрета.
-    - Щелкните **Add** (Добавить) после завершения.
-
-    ![Учетные данные GitHub](media/aks-jenkins/github-creds.png)
 
 1. В разделе **Build Triggers** (Создание триггеров) выберите **GitHub hook trigger for GITScm polling** (Обработчик триггера GitHub для опроса GITScm).
 1. В разделе **Build Environment** (Среда сборки) выберите **Use secret texts or files** (Использовать секретные тексты или файлы).

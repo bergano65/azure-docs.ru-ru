@@ -1,19 +1,19 @@
 ---
-title: 'Дополнительное занятие для учебника по службам Azure Analysis Services: "Неоднородные иерархии" | Документы Майкрософт'
+title: Руководство по службам Azure Analysis Services. Дополнительный урок. Неоднородные иерархии | Документация Майкрософт
 description: Описывает исправление неоднородных иерархий в учебном проекте служб Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f5bd679c11139b7ac439247df81a7adb0b02b0fe
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 50926b7c8b06668770d9a00b8342d209fdb94649
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49426339"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191111"
 ---
 # <a name="supplemental-lesson---ragged-hierarchies"></a>Дополнительное занятие. Неоднородные иерархии
 
@@ -23,7 +23,7 @@ ms.locfileid: "49426339"
 
 Табличные модели на уровне совместимости 1400 имеют дополнительное свойство **Скрыть члены** для иерархий. Значение **По умолчанию** предполагает отсутствие пустых членов на всех уровнях. Значение **Скрыть пустые члены** исключает пустые члены из иерархии при добавлении в сводную таблицу или отчет.  
   
-Предполагаемое время выполнения этого занятия: **20 минут**  
+Предполагаемое время выполнения этого урока: **20 минут**.  
   
 ## <a name="prerequisites"></a>Предварительные требования  
 Это дополнительное занятие входит в учебник по табличному моделированию. Прежде чем выполнять задачи из этого дополнительного занятия, следует завершить все предыдущие занятия или располагать готовым учебным проектом модели интернет-продаж Adventure Works. 
@@ -87,7 +87,7 @@ ms.locfileid: "49426339"
     =LOOKUPVALUE(DimEmployee[FullName],DimEmployee[EmployeeKey],PATHITEM([Path],5,1)) 
     ```
 
-6.  В таблице **DimEmployee** создайте [иерархию](../tutorials/aas-lesson-9-create-hierarchies.md) с именем **Organization**. Добавьте следующие столбцы в указанном порядке: **Level1**, **Level2**, **Level3**, **Level4**, **Level5**.
+6.  В таблице **DimEmployee** создайте [иерархию](../tutorials/aas-lesson-9-create-hierarchies.md) с именем **Organization**. Добавьте следующие столбцы по порядку: **Level1**, **Level2**, **Level3**, **Level4**, **Level5**.
 
 7.  В таблице **FactResellerSales** создайте следующую [меру](../tutorials/aas-lesson-6-create-measures.md):
 
@@ -118,6 +118,6 @@ ms.locfileid: "49426339"
     Теперь все выглядит гораздо лучше!
 
 ## <a name="see-also"></a>См. также   
-[Занятие 9. Создание иерархий](../tutorials/aas-lesson-9-create-hierarchies.md)  
+[Урок 9. Создание иерархий](../tutorials/aas-lesson-9-create-hierarchies.md)  
 [Дополнительное занятие. Динамическая безопасность](../tutorials/aas-supplemental-lesson-dynamic-security.md)  
 [Дополнительное занятие. Строки детализации](../tutorials/aas-supplemental-lesson-detail-rows.md)  

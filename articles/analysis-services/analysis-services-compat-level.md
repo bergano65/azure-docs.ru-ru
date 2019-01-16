@@ -5,21 +5,24 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 87e6c19268ad8aeb486ce32cf8bfb668e4538a2a
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 31ca6deef6d81ca7beb08f6df1a15d52ef381a46
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49428221"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190397"
 ---
 # <a name="compatibility-level-for-analysis-services-tabular-models"></a>Уровень совместимости табличных моделей Analysis Services
 
 *Уровень совместимости* относится к поведению различных выпусков ядра Analysis Services. Изменения уровня совместимости обычно происходят одновременно с выпуском основных версий SQL Server. Эти изменения также реализуются в Azure Analysis Services, чтобы обеспечить функциональную совместимость обеих платформ. Изменения уровня совместимости также влияют на функции, доступные в табличных моделях. Например, DirectQuery и метаданные табличных объектов имеют разные реализации в зависимости от уровня совместимости. Уровень совместимости указывается в проекте табличной модели в Visual Studio (SSDT). Табличные модели, которые создаются в приложении Power BI Desktop и импортируются из него, могут иметь только уровень совместимости 1400.
 
 Службы Azure Analysis Services поддерживают табличные модели на уровнях совместимости 1200 и 1400. 
+
+> [!NOTE]
+> Power BI Desktop за сентябрь 2018 г. и более поздние версии имеют уровень совместимости PBIX 1465. Этот уровень совместимости поддерживается в службах Azure Analysis Services. Однако не рекомендуется импортировать файл Power BI Desktop в рабочие среды. Дополнительные сведения см. в статье [Импорт файла Power BI Desktop](analysis-services-import-pbix.md).
 
 Последний уровень совместимости — 1400. Этот уровень совпадает с уровнем SQL Server 2017 Analysis Services. Ниже перечислены основные функции уровня совместимости 1400.
 
@@ -29,8 +32,9 @@ ms.locfileid: "49428221"
 *  Безопасность на уровне объекта, применяемая к именам таблиц и столбцов, помимо защиты содержащихся в них данных.
 *  Расширенная поддержка несбалансированных иерархий.
 *  Усовершенствованный мониторинг и повышение производительности.
-  
-## <a name="set-compatibility-level"></a>Установка уровня совместимости 
+ 
+## <a name="set-compatibility-level"></a>Установка уровня совместимости
+
  При создании нового проекта табличной модели в SSDT уровень совместимости можно указать в диалоговом окне **Конструктор табличных моделей**. 
   
  ![ssas_tabularproject_compat1200](./media/analysis-services-compat-level/aas-tabularproject-compat.png)  
@@ -40,13 +44,16 @@ ms.locfileid: "49428221"
  Чтобы обновить существующий проект табличной модели в SSDT, задайте свойство **Уровень совместимости** в окне **Свойства** модели. Имейте в виду, изменение уровня совместимости является необратимым.
   
 ## <a name="check-compatibility-level-for-a-tabular-model-database-in-sql-server-management-studio"></a>Проверка уровня совместимости базы данных табличной модели в SQL Server Management Studio 
+
  В SSMS щелкните правой кнопкой мыши имя базы данных и выберите **Свойства** > **Уровень совместимости**.  
   
 ## <a name="check-supported-compatibility-level-for-a-server-in-ssms"></a>Проверка поддерживаемого уровня совместимости сервера в SSMS  
+
  В SSMS щелкните правой кнопкой мыши имя сервера и выберите **Свойства** > **Поддерживаемый уровень совместимости**.  
   
  Это свойство задает максимальный уровень совместимости базы данных, которая будет выполняться на сервере (за исключением предварительной версии). Поддерживаемый уровень совместимости невозможно изменить.  
 
 ## <a name="next-steps"></a>Дополнительная информация
+
   [Создание модели на портале Azure](analysis-services-create-model-portal.md)   
   [Управление службами Analysis Services](analysis-services-manage.md)  

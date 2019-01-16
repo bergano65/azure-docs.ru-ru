@@ -1,0 +1,125 @@
+---
+title: включение файла
+description: включение файла
+services: virtual-machines
+author: cynthn
+ms.service: virtual-machines
+ms.topic: include
+ms.date: 12/10/2018
+ms.author: cynthn
+ms.custom: include file
+ms.openlocfilehash: 3ec5b9c6357f0d075ddd9b0fd5c8a88ee2846209
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54192774"
+---
+## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
+
+Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. 
+
+Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/powershell](https://shell.azure.com/powershell). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
+
+
+## <a name="preview-register-the-feature"></a>Предварительный просмотр: регистрация компонента
+
+Коллекция общих образов находится в предварительной версии, но прежде чем ее можно использовать, необходимо зарегистрировать компонент. Регистрация компонента коллекции общих образов происходит следующим образом.
+
+```azurepowershell-interactive
+Register-AzureRmProviderFeature `
+   -FeatureName GalleryPreview `
+   -ProviderNamespace Microsoft.Compute
+Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Compute
+```
+
+## <a name="get-the-managed-image"></a>Получение управляемого образа
+
+Список образов, доступных в группе ресурсов, можно просмотреть с помощью команды [Get-AzureRmImage](/powershell/module/AzureRM.Compute/get-azurermimage). Зная имя образа и группу ресурсов, в которой он находится, можно снова выполнить команду `Get-AzureRmImage`, чтобы получить объект образа и сохранить его в переменной для последующего использования. Этот пример получает образ с именем *myImage* из группы ресурсов myResourceGroup и присваивает его переменной *$managedImage*. 
+
+```azurepowershell-interactive
+$managedImage = Get-AzureRmImage `
+   -ImageName myImage `
+   -ResourceGroupName myResourceGroup
+```
+
+## <a name="create-an-image-gallery"></a>Создание коллекции образов 
+
+Коллекция образов является основным ресурсом, который позволяет обмен изображениями. Имена коллекций должны быть уникальным в пределах вашей подписки. Создайте коллекцию образов, используя команду [New-AzureRmGallery](/powershell/module/AzureRM.Compute/new-azurermgallery). В следующем примере показано, как создать коллекцию с именем *myGallery* в группе ресурсов *myGalleryRG*.
+
+```azurepowershell-interactive
+$resourceGroup = New-AzureRMResourceGroup `
+   -Name 'myGalleryRG' `
+   -Location 'West Central US'  
+$gallery = New-AzureRmGallery `
+   -GalleryName 'myGallery' `
+   -ResourceGroupName $resourceGroup.ResourceGroupName `
+   -Location $resourceGroup.Location `
+   -Description 'Shared Image Gallery for my organization'  
+```
+   
+## <a name="create-an-image-definition"></a>Создание определения образа 
+
+Создайте определение образа коллекции с помощью команды [New-AzureRmGalleryImageDefinition](/powershell/module/azurerm.compute/new-azurermgalleryimageversion). В этом примере используется образ коллекции с именем *myGalleryImage*.
+
+```azurepowershell-interactive
+$galleryImage = New-AzureRmGalleryImageDefinition `
+   -GalleryName $gallery.Name `
+   -ResourceGroupName $resourceGroup.ResourceGroupName `
+   -Location $gallery.Location `
+   -Name 'myImageDefinition' `
+   -OsState generalized `
+   -OsType Windows `
+   -Publisher 'myPublisher' `
+   -Offer 'myOffer' `
+   -Sku 'mySKU'
+```
+
+В следующем выпуске вы сможете использовать личные значения **-Publisher**, **-Offer** и **-Sku**, чтобы найти и указать определение образа, а затем создать виртуальную машину, используя последнюю версию образа из соответствующего определения образа. В качестве примера ниже приведены три определения образа и их значения.
+
+|Определение образа|ИЗДАТЕЛЬ|ПРЕДЛОЖЕНИЕ|Sku|
+|---|---|---|---|
+|myImage1|myPublisher|myOffer|mySku|
+|myImage2|myPublisher|standardOffer|mySku|
+|myImage3|Тестирование|standardOffer|testSku|
+
+Все три определения образа имеют уникальные наборы значений. В следующем выпуске вы сможете объединить эти значения, чтобы запросить последнюю версию определенного образа. 
+
+```powershell
+# The following should set the source image as myImage1 from the table above
+$vmConfig = Set-AzureRmVMSourceImage `
+   -VM $vmConfig `
+   -PublisherName myPublisher `
+   -Offer myOffer `
+   -Skus mySku 
+```
+
+Это похоже на указание этих значений для [образов Azure Marketplace](../articles/virtual-machines/windows/cli-ps-findimage.md) с целью создания виртуальной машины. С учетом этого каждое определение образа должно иметь уникальный набор этих значений. У вас могут быть версии образов, которые совместно используют одно или два, но не все три значения. 
+
+##<a name="create-an-image-version"></a>Создание версии образа
+
+Создайте версию образа из управляемого образа с помощью команды [New-AzureRmGalleryImageVersion](/powershell/module/AzureRM.Compute/new-azurermgalleryimageversion). В этом примере используется версия образа *1.0.0*, которая реплицируется в центры обработки данных в регионах *центрально-западная часть США* и *центрально-южная часть США*.
+
+
+```azurepowershell-interactive
+$region1 = @{Name='South Central US';ReplicaCount=1}
+$region2 = @{Name='West Central US';ReplicaCount=2}
+$targetRegions = @($region1,$region2)
+$job = $imageVersion = New-AzureRmGalleryImageVersion `
+   -GalleryImageDefinitionName $galleryImage.Name `
+   -GalleryImageVersionName '1.0.0' `
+   -GalleryName $gallery.Name `
+   -ResourceGroupName $resourceGroup.ResourceGroupName `
+   -Location $resourceGroup.Location `
+   -TargetRegion $targetRegions  `
+   -Source $managedImage.Id.ToString() `
+   -PublishingProfileEndOfLifeDate '2020-01-01' `
+   -asJob 
+```
+
+Репликация образа во все целевые регионы может занять некоторое время, поэтому мы создали задание, чтобы отслеживать ход выполнения. Чтобы просмотреть ход выполнения задания, введите `$job.State`.
+
+```azurepowershell-interactive
+$job.State
+```
+

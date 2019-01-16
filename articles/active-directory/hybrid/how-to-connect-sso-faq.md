@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect: простой единый вход — часто задаваемые вопросы | Документы Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: простой единый вход — часто задаваемые вопросы | Документация Майкрософт'
 description: Ответы на часто задаваемые вопросы о простом едином входе Azure Active Directory.
 services: active-directory
 keywords: что такое Azure AD Connect, установка Active Directory, необходимые компоненты для Azure AD, единый вход
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 11/14/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: e47dcda90682bd1f83dbb5fdc6a106f80853d2d0
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 0672fc06130ce58ae3155672c66ac06ae96bc7b9
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52424839"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190641"
 ---
-# <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Часто задаваемые вопросы о простом едином входе Azure Active Directory
+# <a name="azure-active-directory-seamless-single-sign-on-frequently-asked-questions"></a>Простой единый вход Azure Active Directory: Часто задаваемые вопросы
 
 В этой статье представлены часто задаваемые вопросы о простом едином входе Azure Active Directory. Следите за новым содержимым.
 
@@ -36,7 +36,7 @@ ms.locfileid: "52424839"
 
 ## <a name="is-seamless-sso-available-in-the-microsoft-azure-germany-cloudhttpswwwmicrosoftdecloud-deutschland-and-the-microsoft-azure-government-cloudhttpsazuremicrosoftcomfeaturesgov"></a>Доступен ли компонент "Простой единый вход" в облаке [Microsoft Azure — Германия](https://www.microsoft.de/cloud-deutschland) и [Azure для государственных организаций](https://azure.microsoft.com/features/gov/)?
 
- Нет. Компонент "Простой единый вход" доступен только в международном экземпляре Azure AD.
+№ Компонент "Простой единый вход" доступен только в международном экземпляре Azure AD.
 
 ## <a name="what-applications-take-advantage-of-domainhint-or-loginhint-parameter-capability-of-seamless-sso"></a>Какие приложения используют возможность параметра `domain_hint` или `login_hint` простого единого входа?
 
@@ -65,7 +65,7 @@ ms.locfileid: "52424839"
 
 ## <a name="what-is-the-difference-between-the-single-sign-on-experience-provided-by-azure-ad-joinactive-directory-azureadjoin-overviewmd-and-seamless-sso"></a>В чем разница между технологией единого входа, предоставленной после [присоединения к Azure AD](../active-directory-azureadjoin-overview.md), и простым единым входом?
 
-После [присоединения к Azure AD](../active-directory-azureadjoin-overview.md) пользователи могут воспользоваться возможностями единого входа, если их устройства зарегистрированы в Azure AD. Эти устройства не должны быть присоединены к домену. Возможность единого входа обеспечивается с помощью *основных токенов обновления* (*PRT*), а не протокола Kerberos. Лучше всего эта возможность работает на устройствах с Windows 10. В браузере Edge единый вход выполняется автоматически. Эта возможность также работает в Chrome с использованием расширения браузера.
+После [присоединения к Azure AD](../active-directory-azureadjoin-overview.md) пользователи могут воспользоваться возможностями единого входа, если их устройства зарегистрированы в Azure AD. Эти устройства не должны быть присоединены к домену. Возможность единого входа обеспечивается с помощью *основных токенов обновления* (*PRT*), а не протокола Kerberos. Лучше всего эта возможность работает на устройствах с Windows 10. В браузере Microsoft Edge единый вход выполняется автоматически. Эта возможность также работает в Chrome с использованием расширения браузера.
 
 В клиенте можно настроить и технологию единого входа, предоставленную после присоединения к Azure AD, и простой единый вход. Эти две возможности дополняют друг друга. Если включены обе эти технологии, приоритет имеет единый вход, предоставленный после присоединения к Azure AD.
 
@@ -107,7 +107,7 @@ ms.locfileid: "52424839"
 
 ### <a name="step-1-disable-the-feature-on-your-tenant"></a>Шаг 1. Отключение функции в своем клиенте
 
-#### <a name="option-a-disable-using-azure-ad-connect"></a>Вариант 1. Использование Azure AD Connect
+#### <a name="option-a-disable-using-azure-ad-connect"></a>Вариант А. Использование Azure AD Connect
 
 1. Запустите Azure AD Connect, перейдите на страницу **Изменение параметров входа пользователя** и щелкните **Далее**.
 2. Затем снимите флажок **Включить единый вход**. Продолжайте выполнять указания мастера.

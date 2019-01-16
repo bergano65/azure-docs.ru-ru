@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: e92e86f59058f1f226c67f873530cd9c06b5d5fc
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: c26da5d047a1e904510f96b44d81632b6e98689e
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49428340"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190975"
 ---
 # <a name="create-perspectives"></a>Создание перспектив
 
@@ -23,10 +23,10 @@ ms.locfileid: "49428340"
   
 Это занятие описывает создание перспектив и помогает ознакомиться со средствами разработки табличных моделей. Если позднее вы расширите эту модель, чтобы включить дополнительные таблицы, можете создать дополнительные перспективы для определения других точек наблюдения, например для запасов и продаж.  
   
-Предполагаемое время выполнения этого занятия: **5 минут**  
+Предполагаемое время выполнения этого урока: **5 минут**.  
   
 ## <a name="prerequisites"></a>Предварительные требования  
-Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, нужно завершить предыдущее занятие: [Занятие 7. Создание ключевых показателей эффективности](../tutorials/aas-lesson-7-create-key-performance-indicators.md).  
+Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом уроке, вам нужно завершить предыдущий урок: [Урок 7. Создание ключевых показателей эффективности](../tutorials/aas-lesson-7-create-key-performance-indicators.md).  
   
 ## <a name="create-perspectives"></a>Создание перспектив  
   
@@ -45,7 +45,7 @@ ms.locfileid: "49428340"
     В одном из следующих занятий вы будете использовать функцию "Анализ в Excel" для тестирования этой возможности. Список полей сводной таблицы Excel будет содержать все таблицы, кроме DimCustomer.  
 
 ## <a name="whats-next"></a>Что дальше?
-[Занятие 9. Создание иерархий](../tutorials/aas-lesson-9-create-hierarchies.md).
+[Урок 9. Создание иерархий](../tutorials/aas-lesson-9-create-hierarchies.md).
   
   
   

@@ -1,28 +1,28 @@
 ---
-title: 'Учебник по службам Azure Analysis Services: занятие 10 "Создание секций" | Документы Майкрософт'
+title: Руководство по службам Azure Analysis Services. Урок 10. Создание секций | Документация Майкрософт
 description: Описывает создание секций в учебном проекте служб Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5aaaee6f9a69f9cb619935f18f614d7572a755d7
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 11be6d10589d981335d1f63d06933dba5265348a
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49429711"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191842"
 ---
 # <a name="create-partitions"></a>Создание секций
 
 В этом занятии вы создадите секции, чтобы разделить таблицу FactInternetSales на более мелкие логические части, которые можно обрабатывать (обновлять) независимо от других секций. По умолчанию каждая таблица, включенная в модель, состоит из одной секции, которая содержит все столбцы и строки. Для таблицы FactInternetSales нам нужно разделить данные по годам — по одной секции на каждые пять лет. После этого каждую секцию можно будет обрабатывать отдельно. Дополнительные сведения см. в статье [Секции](https://docs.microsoft.com/sql/analysis-services/tabular-models/partitions-ssas-tabular). 
   
-Предполагаемое время выполнения этого занятия: **15 минут**  
+Предполагаемое время выполнения этого урока: **15 минут**.  
   
 ## <a name="prerequisites"></a>Предварительные требования  
-Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, нужно завершить предыдущее занятие: [Занятие 9. Создание иерархий](../tutorials/aas-lesson-9-create-hierarchies.md).  
+Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом уроке, вам нужно завершить предыдущий урок: [Урок 9. Создание иерархий](../tutorials/aas-lesson-9-create-hierarchies.md).  
   
 ## <a name="create-partitions"></a>Создание секций  
   
@@ -40,7 +40,7 @@ ms.locfileid: "49429711"
 
     ![aas-lesson10-query-editor](../tutorials/media/aas-lesson10-query-editor.png)
 
-6.  В поле **Показать строки со значением: OrderDate** диалогового окна "Фильтрация строк" оставьте значение **позже или одновременно** и введите в поле даты **1/1/2010**. Оставьте выбранным оператор **И**, выберите **ранее**, введите **1/1/2011** в поле даты и нажмите кнопку **ОК**.
+6.  В диалоговом окне "Фильтрация строк" в поле **Показать строки со значением: OrderDate** оставьте значение **позже или одновременно** и введите в поле даты **1/1/2010**. Оставьте выбранным оператор **И**, выберите **ранее**, введите **1/1/2011** в поле даты и нажмите кнопку **ОК**.
 
     ![aas-lesson10-filter-rows](../tutorials/media/aas-lesson10-filter-rows.png)
     
@@ -109,4 +109,4 @@ ms.locfileid: "49429711"
     ![aas-lesson10-process-complete](../tutorials/media/aas-lesson10-process-complete.png)
   
  ## <a name="whats-next"></a>Что дальше?
-Перейдите к следующему разделу: [Занятие 11. Создание ролей](../tutorials/aas-lesson-11-create-roles.md). 
+Перейдите к следующему уроку: [Урок 11. Создание ролей](../tutorials/aas-lesson-11-create-roles.md). 

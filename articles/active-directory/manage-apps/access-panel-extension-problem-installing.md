@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 5/4/18
 ms.author: barbkess
 ms.reviewer: japere,asteen
-ms.openlocfilehash: aa0602ec0ecb97e9174fe6ef552b88fc30900d09
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 46f1d49e210a483b8e7645d7eba84ad21ed477da
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44355526"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190530"
 ---
 # <a name="install-the-access-panel-browser-extension"></a>Установка расширения браузера для панели доступа
 
@@ -36,7 +36,7 @@ ms.locfileid: "44355526"
 
 Для единого входа с паролем можно использовать любой из этих браузеров:
 
-- **Edge** в Windows 10 Anniversary Edition или более поздней версии; 
+- **Microsoft Edge**: в Windows 10 Anniversary Edition или более поздней версии; 
 - **Chrome** — версии для Windows 7 и MacOS X или более поздней версии;
 - **Firefox 26.0 или более поздней версии** — в Windows XP с пакетом обновления 2 (SP2) или более поздней версии и в Mac OS X 10.6 или более поздней версии;
 
@@ -93,7 +93,7 @@ ms.locfileid: "44355526"
     4. Теперь вы можете просматривать внутренний URL-адрес компании даже при удаленном подключении.
 
 > [!NOTE]
-> Описанные выше параметры доступны только в Edge, Chrome и Firefox.
+> Описанные выше параметры доступны только в Microsoft Edge, Chrome и Firefox.
 
 ## <a name="set-up-a-group-policy-for-internet-explorer"></a>Настройка групповой политики для Internet Explorer
 

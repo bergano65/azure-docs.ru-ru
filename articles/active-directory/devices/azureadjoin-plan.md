@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/21/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 3154d5401389d46eb1b9fad335aa18362c5f21f7
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: cb604bec1860da25e18c1c3a56a012882e5ea58e
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53310380"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54189519"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Практическое руководство: Планирование реализации присоединения к Azure AD
 
@@ -113,7 +113,7 @@ ms.locfileid: "53310380"
 
 - **Azure AD**, дополнительная настройка не требуется.
 
-[Альтернативные имена пользователей](https://docs.microsoft.com/windows-server/identity/ad-fs/operations/configuring-alternate-login-id) не поддерживаются на устройствах, подключенных к Azure AD. Если пользователи применяют альтернативное имя для входа, то следует запланировать переход на использование основного имени участника-пользователя в Azure AD.
+Локальные имена участников-пользователей, которые отличаются от имен участников-пользователей Azure AD, не поддерживаются на устройствах, присоединенных к Azure AD. Если пользователи применяют локальное имя участника-пользователя, то следует запланировать переход на использование основного имени участника-пользователя в Azure AD.
 
 
 
@@ -167,7 +167,7 @@ ms.locfileid: "53310380"
 
 ### <a name="cloud-based-applications"></a>Облачные приложения
 
-Если приложение добавлено в коллекцию приложений Azure AD, пользователи получают возможность единого входа с устройств, присоединенных к Azure AD. В этом случае дополнительная настройка не требуется. Пользователям доступен единый вход через браузеры Edge и Chrome. Для Chrome необходимо развернуть [расширение Windows 10 Accounts](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). 
+Если приложение добавлено в коллекцию приложений Azure AD, пользователи получают возможность единого входа с устройств, присоединенных к Azure AD. В этом случае дополнительная настройка не требуется. Пользователям доступен единый вход через браузеры Microsoft Edge и Chrome. Для Chrome необходимо развернуть [расширение Windows 10 Accounts](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji). 
 
 Все приложения Win32, которые:
 

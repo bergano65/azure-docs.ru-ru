@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/13/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 8cfbc72e239a7a5b38cee6752803e79735e2adc9
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 775de554f39df8359c3852a2d7fa876fd12199d2
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49321280"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190851"
 ---
 # <a name="azure-analysis-services-scale-out"></a>Горизонтальное масштабирование служб Azure Analysis Services
 
@@ -74,15 +74,19 @@ ms.locfileid: "49321280"
 ![Ползунок горизонтального масштабирования](media/analysis-services-scale-out/aas-scale-out-sync.png)
 
 ### <a name="rest-api"></a>REST API
+
 Используйте операцию **sync**.
 
 #### <a name="synchronize-a-model"></a>Синхронизация модели:   
+
 `POST https://<region>.asazure.windows.net/servers/<servername>:rw/models/<modelname>/sync`
 
 #### <a name="get-sync-status"></a>Получение состояния синхронизации  
+
 `GET https://<region>.asazure.windows.net/servers/<servername>/models/<modelname>/sync`
 
 ### <a name="powershell"></a>PowerShell
+
 Перед использованием PowerShell [установите модуль AzureRM или обновите его до последней версии](https://github.com/Azure/azure-powershell/releases). 
 
 Чтобы задать число реплик запросов, используйте [Set-AzureRmAnalysisServicesServer](https://docs.microsoft.com/powershell/module/azurerm.analysisservices/set-azurermanalysisservicesserver). Укажите необязательный параметр `-ReadonlyReplicaCount`.

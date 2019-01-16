@@ -11,15 +11,16 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 manager: craigg
-ms.date: 03/31/2018
-ms.openlocfilehash: f98c09a7e51fa729ef4a940e5f3c03de55d8dfd2
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.date: 01/03/2019
+ms.openlocfilehash: ce5ba5f827b790e4ca91d1aed91dfad47cedac4e
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52875286"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191400"
 ---
 # <a name="performance-counters-for-shard-map-manager"></a>Счетчики производительности для диспетчера карты сегментов
+
 Вы можете сохранять данные о производительности [диспетчера карты сегментов](sql-database-elastic-scale-shard-map-management.md), особенно при использовании [маршрутизации, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md). Счетчики создаются с помощью методов класса Microsoft.Azure.SqlDatabase.ElasticScale.Client.  
 
 Счетчики используются для отслеживания показателей производительности в операциях [маршрутизации, зависящей от данных](sql-database-elastic-scale-data-dependent-routing.md) . Эти счетчики можно найти в системном мониторе в категории "Эластичная база данных: управление сегментами".
@@ -27,43 +28,48 @@ ms.locfileid: "52875286"
 **Последняя версия**: перейдите к [Microsoft.Azure.SqlDatabase.ElasticScale.Client](https://www.nuget.org/packages/Microsoft.Azure.SqlDatabase.ElasticScale.Client/). См. также статью [Обновление приложения для использования новой версии клиентской библиотеки эластичной базы данных](sql-database-elastic-scale-upgrade-client-library.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 * Чтобы пользователь мог создавать категории производительности и счетчики, он должен быть членом локальной группы **Администраторы** на компьютере, где размещается приложение.  
-* Чтобы пользователь мог создавать экземпляры счетчика производительности и обновлять показания счетчиков, он должен быть членом группы **Администраторы** или **Пользователи системного монитора**. 
+* Чтобы пользователь мог создавать экземпляры счетчика производительности и обновлять показания счетчиков, он должен быть членом группы **Администраторы** или **Пользователи системного монитора**.
 
 ## <a name="create-performance-category-and-counters"></a>Создание счетчиков и категорий производительности
-Чтобы создать счетчик, вызовите метод CreatePeformanceCategoryAndCounters класса [ShardMapManagementFactory](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.aspx). Этот метод может выполнять только администратор: 
+
+Чтобы создать счетчик, вызовите метод CreatePerformanceCategoryAndCounters класса [ShardMapManagementFactory](https://docs.microsoft.com/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory). Этот метод может выполнять только администратор:
 
     ShardMapManagerFactory.CreatePerformanceCategoryAndCounters()  
 
-Для выполнения метода можно также использовать [этот](https://gallery.technet.microsoft.com/scriptcenter/Elastic-DB-Tools-for-Azure-17e3d283) сценарий PowerShell. Этот метод создает следующие счетчики производительности.  
+Для выполнения метода можно также использовать [этот](https://gallery.technet.microsoft.com/scriptcenter/Elastic-DB-Tools-for-Azure-17e3d283) сценарий PowerShell.
+Этот метод создает следующие счетчики производительности.  
 
 * **Кэшированные сопоставления**: число сопоставлений, кэшируемых для карты сегментов.
-* **Число операций DDR в секунду**: число операций маршрутизации, зависящих от данных, для карты сегментов. Этот счетчик обновляется при успешном подключении к целевому сегменту после вызова метода [OpenConnectionForKey()](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmap.openconnectionforkey.aspx). 
-* **Число попаданий при поиске сопоставлений в кэше в секунду**: число успешных операций поиска сопоставлений в кэше для карты сегментов. 
+* **Число операций DDR в секунду**: число операций маршрутизации, зависящих от данных, для карты сегментов. Этот счетчик обновляется при успешном подключении к целевому сегменту после вызова метода [OpenConnectionForKey()](https://docs.microsoft.com/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmap.openconnectionforkey).
+* **Число попаданий при поиске сопоставлений в кэше в секунду**: число успешных операций поиска сопоставлений в кэше для карты сегментов.
 * **Число промахов при поиске сопоставлений в кэше в секунду**: число неуспешных операций поиска сопоставлений в кэше для карты сегментов.
-* **Число добавляемых или обновляемых сопоставлений в кэше в секунду**: число добавления или обновления сопоставлений в кэше для карты сегментов. 
-* **Число удаляемых из кэша сопоставлений в секунду**: число удаления сопоставлений из кэша для карты сегментов. 
+* **Число добавляемых или обновляемых сопоставлений в кэше в секунду**: число добавления или обновления сопоставлений в кэше для карты сегментов.
+* **Число удаляемых из кэша сопоставлений в секунду**: число удаления сопоставлений из кэша для карты сегментов.
 
 Счетчики производительности создаются для каждой кэшированной карты сегментов каждого процесса.  
 
 ## <a name="notes"></a>Примечания
+
 Создание счетчиков производительности инициируется следующими событиями.  
 
-* Инициализация объекта [ShardMapManager](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager.aspx) с [безотложной загрузкой](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerloadpolicy.aspx), если в ShardMapManager есть карты сегментов. Сюда относятся методы [GetSqlShardMapManager](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.getsqlshardmapmanager.aspx?f=255&MSPPError=-2147217396#M:Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.ShardMapManagerFactory.GetSqlShardMapManager%28System.String,Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.ShardMapManagerLoadPolicy%29) и [TryGetSqlShardMapManager](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.trygetsqlshardmapmanager.aspx).
-* Успешный поиск карты сегментов (с помощью [GetShardMap()](https://msdn.microsoft.com/library/azure/dn824215.aspx), [GetListShardMap()](https://msdn.microsoft.com/library/azure/dn824212.aspx) или [GetRangeShardMap()](https://msdn.microsoft.com/library/azure/dn824173.aspx)). 
+* Инициализация объекта [ShardMapManager](https://docs.microsoft.com/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanager) с [безотложной загрузкой](https://docs.microsoft.com/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerloadpolicy), если в ShardMapManager есть карты сегментов. Сюда относятся методы [GetSqlShardMapManager](https://docs.microsoft.com/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.getsqlshardmapmanager?f=255&MSPPError=-2147217396#M:Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.ShardMapManagerFactory.GetSqlShardMapManager%28System.String,Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.ShardMapManagerLoadPolicy%29) и [TryGetSqlShardMapManager](https://docs.microsoft.com/dotnet/api/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmapmanagerfactory.trygetsqlshardmapmanager).
+* Успешный поиск карты сегментов (с помощью [GetShardMap()](https://msdn.microsoft.com/library/azure/dn824215.aspx), [GetListShardMap()](https://msdn.microsoft.com/library/azure/dn824212.aspx) или [GetRangeShardMap()](https://msdn.microsoft.com/library/azure/dn824173.aspx)).
 * Успешное создание карты сегментов с помощью CreateShardMap().
 
 Счетчики производительности обновляются при выполнении любых операций кэширования, связанных с картой сегментов или сопоставлениями. Успешное удаление сегментов с помощью метода DeleteShardMap() приводит к удалению экземпляра счетчика производительности.  
 
 ## <a name="best-practices"></a>Рекомендации
+
 * Создание категории производительности и счетчиков следует выполнять только один раз, до создания объекта ShardMapManager. При каждом выполнении команды CreatePerformanceCategoryAndCounters() предыдущие значения счетчиков удаляются (данные теряются во всех экземплярах) и создаются новые.  
 * Экземпляры счетчиков производительности создаются для каждого процесса. Любой сбой приложения или удаление карты сегментов из кэша приведет к удалению экземпляров счетчиков производительности.  
 
 ### <a name="see-also"></a>См. также
+
 [Общие сведения о возможностях эластичных баз данных](sql-database-elastic-scale-introduction.md)  
 
 [!INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
 <!--Anchors-->
 <!--Image references-->
-

@@ -1,19 +1,19 @@
 ---
-title: 'Учебник по службам Azure Analysis Services: занятие 6 "Создание мер" | Документы Майкрософт'
+title: Руководство по службам Azure Analysis Services. Урок 6. Создание мер | Документация Майкрософт
 description: Описывает создание мер в учебном проекте служб Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: ce38cac7a0b175004fbb670069ddbeefb53e96e7
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 0e9f798917b557d99259ece4773cce0853b15237
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49428578"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191689"
 ---
 # <a name="create-measures"></a>Создание мер
 
@@ -25,10 +25,10 @@ ms.locfileid: "49428578"
   
 На этом занятии вы создадите меры путем ввода формулы DAX в строке формул и с помощью функции "Автосумма".  
   
-Предполагаемое время выполнения этого занятия: **30 минут**  
+Предполагаемое время выполнения этого урока: **30 минут**  
   
 ## <a name="prerequisites"></a>Предварительные требования  
-Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, нужно завершить предыдущее занятие: [Занятие 5. Создание вычисляемых столбцов](../tutorials/aas-lesson-5-create-calculated-columns.md).  
+Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом уроке, вам нужно завершить предыдущий урок: [Урок 5. Создание вычисляемых столбцов](../tutorials/aas-lesson-5-create-calculated-columns.md).  
   
 ## <a name="create-measures"></a>Создание мер  
   
@@ -122,6 +122,6 @@ ms.locfileid: "49428578"
 Меры, созданные для таблицы FactInternetSales, можно использовать для анализа критических финансовых данных, таких как продажи, затраты и удельная прибыль, для элементов, определенных с помощью выбранного пользователем фильтра.  
   
 ## <a name="whats-next"></a>Что дальше?
-[Занятие 7. Создание ключевых показателей эффективности](../tutorials/aas-lesson-7-create-key-performance-indicators.md).  
+[Урок 7. Создание ключевых показателей эффективности](../tutorials/aas-lesson-7-create-key-performance-indicators.md).  
 
   

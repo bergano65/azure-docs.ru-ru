@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 146467ef50c605f730fe6f65c349fc8a3a1fd045
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 92bab3e6dcea0b6b234d361a346698be15088fc0
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49426249"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191519"
 ---
 # <a name="azure-analysis-services---adventure-works-tutorial"></a>Azure Analysis Services — учебник по Adventure Works
 
@@ -45,7 +45,7 @@ ms.locfileid: "49426249"
 
 -   [Хранилище данных Azure SQL](../../sql-data-warehouse/create-data-warehouse-portal.md) с **примером базы данных AdventureWorksDW** или хранилище данных SQL Server с примером [базы данных Adventure Works](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks).
 
-    **Важно!** При установке примера базы данных в хранилище данных SQL Server и развертывании модели на сервере служб Azure Analysis Services [локальный шлюз данных](../analysis-services-gateway.md) является обязательным.
+    **Важно!** При установке примера базы данных в локальное Хранилище данных SQL Server и развертывании модели на сервере служб Azure Analysis Services [локальный шлюз данных](../analysis-services-gateway.md) является обязательным.
 
 -   Последняя версия [SQL Server Data Tools (SSDT)](https://msdn.microsoft.com/library/mt204009.aspx) для Visual Studio.
 
@@ -93,7 +93,7 @@ ms.locfileid: "49426249"
 
   
 ## <a name="next-steps"></a>Дополнительная информация  
-Для начала работы см. [Занятие 1. Создание нового проекта табличной модели](../tutorials/aas-lesson-1-create-a-new-tabular-model-project.md).  
+Чтобы начать работу, перейдите к [уроку 1 "Создание проекта табличной модели"](../tutorials/aas-lesson-1-create-a-new-tabular-model-project.md).  
   
   
   

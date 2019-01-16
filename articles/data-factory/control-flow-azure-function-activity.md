@@ -9,16 +9,15 @@ editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/20/2018
+ms.date: 01/09/2019
 ms.author: douglasl
-ms.openlocfilehash: 4b185236e5925152acb5f8a733e117186a2318cf
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: 0fd9b679411dd06336fd65bcb400b152316146fa
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53740898"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188646"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
 
@@ -26,7 +25,7 @@ ms.locfileid: "53740898"
 
 ## <a name="azure-function-linked-service"></a>Связанные службы функции Azure
 
-Тип возвращаемого значения функции Azure должен быть допустимым объектом JObject. При указании других типов происходит сбой и выдается общая пользовательская ошибка *Ошибка вызова конечной точки*.
+Тип возвращаемого значения функции Azure должен быть допустимым объектом `JObject`. (Имейте в виду, что [JArray](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JArray.htm)*не* является `JObject`.) При указании типов, отличных от `JObject`, происходит сбой и выдается общая пользовательская ошибка *Ошибка вызова конечной точки*.
 
 | **Свойство** | **Описание** | **Обязательный** |
 | --- | --- | --- |

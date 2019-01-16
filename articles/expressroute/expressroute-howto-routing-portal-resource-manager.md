@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 10/23/2018
+ms.date: 01/09/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 5c42b54cf41eed3df9ffe1fbd082ac6c27035769
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 2ed6d23d9fe89715e41c8a40f70534f5edc44236
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53139084"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54189989"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit"></a>Создание и изменение пиринга для канала ExpressRoute
 
@@ -29,6 +29,7 @@ ms.locfileid: "53139084"
 > * [PowerShell (классическая модель)](expressroute-howto-routing-classic.md)
 > 
 
+Для каждого канала ExpressRoute можно настроить один, два или три пиринга (частный пиринг Azure, общедоступный пиринг Azure и пиринг Microsoft). Пиринги можно настраивать в любом порядке, главное, выполнять их конфигурацию по очереди. Дополнительные сведения о доменах маршрутизации и пиринге см. в статье [о каналах и пирингах](expressroute-circuit-peerings.md).
 
 ## <a name="configuration-prerequisites"></a>Предварительные требования для настройки
 
@@ -42,8 +43,6 @@ ms.locfileid: "53139084"
 > Мы пока не предлагаем использовать пиринги, которые настроены поставщиками услуг на портале управления службами. Такая возможность будет предоставлена позже. Перед настройкой пирингов BGP уточните информацию у поставщика услуг.
 > 
 > 
-
-Для каждого канала ExpressRoute можно настроить один, два или три пиринга (частный пиринг Azure, общедоступный пиринг Azure и пиринг Microsoft). Пиринги можно настраивать в любом порядке, главное, выполнять их конфигурацию по очереди. Дополнительную информацию о доменах маршрутизации и пиринге см. в статье [Каналы ExpressRoute и домены маршрутизации](expressroute-circuit-peerings.md).
 
 ## <a name="msft"></a>Пиринг Майкрософт
 

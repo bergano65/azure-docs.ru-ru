@@ -5,17 +5,18 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/08/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: e797f1faf249a1ad1eebbd46984829de5f087936
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: f10bae780ebb05d3450f4dab7e53fa87fe25b022
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49958675"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54189559"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
+
 Вы можете задать асинхронное обновление данных в табличных моделях Azure Analysis Services, используя любой язык программирования, с помощью которого можно вызвать REST. Обновление предусматривает также синхронизацию реплик только для чтения для развертывания запросов. 
 
 Обновление данных может занимать некоторое время в зависимости от ряда факторов, в том числе объема данных и уровня оптимизации с использованием секций и т. п. Эти операции обычно вызывают имеющимися методами, например, используя [табличную модель объектов](https://docs.microsoft.com/sql/analysis-services/tabular-model-programming-compatibility-level-1200/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo), командлеты [PowerShell](https://docs.microsoft.com/sql/analysis-services/powershell/analysis-services-powershell-reference) или язык [TMSL](https://docs.microsoft.com/sql/analysis-services/tabular-model-scripting-language-tmsl-reference) (Tabular Model Scripting Language). Но для использования этих методов может понадобиться применить ненадежные длительные HTTP-подключения.
@@ -94,6 +95,7 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 ```
 
 ### <a name="parameters"></a>Параметры
+
 Указывать параметры не обязательно. Применяются значения по умолчанию.
 
 |ИМЯ  |type  |ОПИСАНИЕ  |значение по умолчанию  |
@@ -184,11 +186,11 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 
 Значения для `syncstate`:
 
-- 0 — репликация. Файлы базы данных реплицируются в целевую папку.
-- 1 — восстановление. База данных восстанавливается на серверных экземплярах только для чтения.
-- 2 — завершено. Синхронизация успешно выполнена.
-- 3 — сбой операции.
-- 4 — финализация. Синхронизация завершена, но еще выполняется очистка.
+- 0 — репликация. Файлы базы данных реплицируются в целевую папку.
+- 1: восстановление. База данных восстанавливается на серверных экземплярах только для чтения.
+- 2. завершено. Синхронизация успешно выполнена.
+- 3: сбой. операции.
+- 4: финализация. Синхронизация завершена, но еще выполняется очистка.
 
 ## <a name="code-sample"></a>Пример кода
 

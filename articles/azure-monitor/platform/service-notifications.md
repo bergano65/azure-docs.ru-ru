@@ -5,15 +5,15 @@ author: dkamstra
 services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 4/12/2017
+ms.date: 4/12/2018
 ms.author: dukek
 ms.component: logs
-ms.openlocfilehash: 8603ccf4643d7b1abd977cc372cde3fe24f98e07
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 2dec2b1f9bdca8c83669b753d424204218f7a9ae
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53724878"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54190703"
 ---
 # <a name="view-service-health-notifications-by-using-the-azure-portal"></a>Просмотр уведомлений о работоспособности служб на портале Azure
 
@@ -49,52 +49,36 @@ category | Это свойство всегда имеет значение **Se
 ResourceId | Идентификатор затронутого ресурса.
 Properties.title | Локализованное название этого сообщения. По умолчанию используется английский язык.
 Properties.communication | Локализованные сведения сообщения с разметкой HTML. По умолчанию используется английский язык.
-Properties.incidentType | Одно из следующих значений: **ActionRequired**, **Information**, **Incident**, **Maintenance** или **Security**.
+Properties.incidentType | Одно из следующих значений: **ActionRequired**, **Informational**, **Incident**, **Maintenance** или **Security**.
 Properties.trackingId | Инцидент, с которым связано это событие. Используйте его для сопоставления событий, связанных с инцидентом.
 Properties.impactedServices | Экранированный большой двоичный объект в формате JSON, описывающий службы и регионы, на которые влияет инцидент. Это свойство содержит список служб, у каждой из которых есть имя **ServiceName**, и список затронутых регионов, у каждого из которых есть регион **RegionName**.
 Properties.defaultLanguageTitle | Сообщение на английском языке.
 Properties.defaultLanguageContent | Сообщение на английском языке с разметкой HTML или в виде обычного текста.
-Properties.stage | Возможные значения параметров **Incident** и **Security**: **Active,** **Resolved** или **RCA**. У параметров **ActionRequired** и **Information** может быть только одно значение — **Active**. Значения параметра **Maintenance**: **Active**, **Planned**, **InProgress**, **Canceled**, **Rescheduled**, **Resolved** или **Complete**.
+Properties.stage | Возможные значения параметров **Incident** и **Security**: **Active,** **Resolved** или **RCA**. У параметров **ActionRequired** и **Informational** может быть только одно значение — **Active**. Значения параметра **Maintenance**: **Active**, **Planned**, **InProgress**, **Canceled**, **Rescheduled**, **Resolved** или **Complete**.
 Properties.communicationId | Сообщение, с которым связано это событие.
 
 ### <a name="details-on-service-health-level-information"></a>Подробнее о сведениях уровня работоспособности служб
-  <ul>
-    <li><b>Требуется действие</b> (properties.incidentType == ActionRequired) <dl>
-            <dt>Информация</dt>
-            <dd>Требуется участие администратора, чтобы предотвратить влияние на существующие службы.</dd>
-        </dl>
-    </li>
-    <li><b>Обслуживание</b> (properties.incidentType == Maintenance) <dl>
-            <dt>Предупреждение</dt>
-            <dd>Экстренное обслуживание.<dd>
-            <dt>Информация</dt>
-            <dd>Обычное плановое обслуживание.</dd>
-        </dl>
-    </li>
-    <li><b>Информация</b> (properties.incidentType == Information) <dl>
-            <dt>Информация</dt>
-            <dd>Может потребоваться участие администратора, чтобы предотвратить влияние на существующие службы.</dd>
-        </dl>
-    </li>
-    <li><b>Безопасность</b> (properties.incidentType == Security) <dl>
-            <dt>Ошибка</dt>
-            <dd>Масштабные проблемы с доступом к нескольким службам в нескольких регионах, затрагивающие широкий круг клиентов.</dd>
-            <dt>Предупреждение</dt>
-            <dd>Проблемы с доступом к отдельным службам и/или регионам, затрагивающие определенную группу клиентов.</dd>
-            <dt>Информация</dt>
-            <dd>Проблемы с задержками и/или операциями управления, не влияющие на доступность службы.</dd>
-        </dl>
-    </li>
-    <li><b>Проблемы со службами</b> (properties.incidentType == Incident) <dl>
-            <dt>Ошибка</dt>
-            <dd>Масштабные проблемы с доступом к нескольким службам в нескольких регионах, затрагивающие широкий круг клиентов.</dd>
-            <dt>Предупреждение</dt>
-            <dd>Проблемы с доступом к отдельным службам и/или регионам, затрагивающие определенную группу клиентов.</dd>
-            <dt>Информация</dt>
-            <dd>Проблемы с задержками и/или операциями управления, не влияющие на доступность службы.</dd>
-        </dl>
-    </li>
-  </ul>
+
+**Требуется действие** (properties.incidentType == ActionRequired)
+    - "Информационный" — требуется участие администратора, чтобы предотвратить влияние на существующие службы.
+    
+**Обслуживание** (properties.incidentType == Maintenance)
+    - "Предупреждение" — экстренное обслуживание.
+    - "Информационный" — обычное плановое обслуживание.
+
+**Информация** (properties.incidentType == Information)
+    - "Информационный" — требуется участие администратора, чтобы предотвратить влияние на существующие службы.
+
+**Безопасность** (properties.incidentType == Security)
+    - "Ошибка" — масштабные проблемы с доступом к нескольким службам в нескольких регионах, затрагивающие широкий круг клиентов.
+    - "Предупреждение" — проблемы с доступом к отдельным службам и/или регионам, затрагивающие определенное подмножество клиентов.
+    - "Информационный" — проблемы с задержками и/или операциями управления, не влияющие на доступность службы.
+
+**Проблемы со службами** (properties.incidentType == Incident)
+    - "Ошибка" — масштабные проблемы с доступом к нескольким службам в нескольких регионах, затрагивающие широкий круг клиентов.
+    - "Предупреждение" — проблемы с доступом к отдельным службам и/или регионам, затрагивающие определенное подмножество клиентов.
+    - "Информационный" — проблемы с задержками и/или операциями управления, не влияющие на доступность службы.
+
 
 ## <a name="view-your-service-health-notifications-in-the-azure-portal"></a>Просмотр уведомлений о работоспособности службы на портале Azure
 1.  На [портале Azure](https://portal.azure.com) выберите **Монитор**.

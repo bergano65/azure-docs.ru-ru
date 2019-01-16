@@ -11,12 +11,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 09/24/2018
 ms.author: diberry
-ms.openlocfilehash: 951a202f8d57c736af8c17af91859ce89e9efc7d
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 4e2feb1f5b0cad9a05f796d160a0a641622d6b59
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53717965"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54189225"
 ---
 # <a name="luis-bot-in-c-with-the-bot-framework-3x-and-the-azure-web-app-bot"></a>Создание бота Интеллектуальной службы распознавания речи на C# с помощью Bot Framework 3.x и бота веб-приложения Azure
 
@@ -161,6 +161,8 @@ ms.locfileid: "53717965"
 ## <a name="next-steps"></a>Дополнительная информация
 
 Добавьте намерения LUIS и диалоговые окна службы Bot для обработки намерений **Help** (Справка), **Cancel** (Отмена) и **Greeting** (Приветствие). Обучите, опубликуйте и выполните [сборку](#build-the-bot) бота веб-приложения. LUIS и бот должны иметь одинаковые намерения.
+
+См. дополнительные [примеры](https://github.com/Microsoft/AI) чат-ботов. 
 
 > [!div class="nextstepaction"]
 > [Добавление намерений](./luis-how-to-add-intents.md)

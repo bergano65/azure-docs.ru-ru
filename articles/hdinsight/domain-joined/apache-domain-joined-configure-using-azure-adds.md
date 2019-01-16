@@ -9,12 +9,12 @@ ms.reviewer: hrasheed
 ms.topic: conceptual
 ms.date: 10/09/2018
 ms.custom: seodec18
-ms.openlocfilehash: ced7964fc96138ad7b18ab72d6c479e8db7eab8a
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 115604d9b2aa21018742bbedbc737405b52599e4
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436234"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188952"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -82,6 +82,8 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 После установки пиринговой связи между виртуальными сетями настройте виртуальную сеть HDInsight, чтобы использовать настраиваемый DNS-сервер, и введите частные IP-адреса Azure AD DS в качестве адресов DNS-сервера. Если обе виртуальные сети используют одни DNS-серверы, настраиваемое доменное имя разрешится к правильному IP-адресу и будет доступно в HDInsight. Например, для доменного имени "contoso.com" после выполнения этого шага при проверке связи с "contoso.com" должен быть выведен правильный IP-адрес Azure AD DS. 
 
 ![Настройка пользовательских DNS-серверов для пиринговой виртуальной сети](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-aadds-peered-vnet-configuration.png)
+
+Если вы используете правила групп безопасности сети (NSG) в подсети HDInsight, следует разрешить [необходимые IP-адреса](https://docs.microsoft.com/en-us/azure/hdinsight/hdinsight-extend-hadoop-virtual-network#hdinsight-ip-1) для входящего и исходящего трафика. 
 
 **Чтобы проверить** правильность установки сети, присоедините виртуальную машину Windows к виртуальной сети или подсети HDInsight и проверьте связь по доменному имени (оно должно разрешить протокол IP), а затем запустите **ldp.exe** для доступа к домену Azure AD DS. Затем **присоедините эту виртуальную машину Windows к домену, чтобы подтвердить**, что все необходимые вызовы RPC между клиентом и сервером успешно выполнены. Можно также использовать **nslookup** для подтверждения сетевого доступа к учетной записи хранения или любой внешней базе данных (например, внешнему хранилищу метаданных Hive или базе данных Ranger).
 Если доменные службы AAD защищены группой безопасности сети, убедитесь, что все [необходимые порты](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)#communication-to-domain-controllers) находятся в списке разрешений в правилах NSG подсети AAD DS. Если присоединение к домену этого окна виртуальной машины прошло успешно, можно переходить к следующему шагу и создавать кластеры ESP.

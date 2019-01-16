@@ -1,5 +1,5 @@
 ---
-title: Как выполнять запросы к журналам из Azure Monitor для виртуальных машин (предварительная версия) | Документация Майкрософт
+title: Как выполнять запросы к журналам из Azure Monitor для виртуальных машин (предварительная версия) | Документация Майкрософт
 description: Решение Azure Monitor для виртуальных машин перенаправляет метрики и данные журналов в службу Log Analytics. В этой статье описаны эти записи и приведены примеры запросов.
 services: azure-monitor
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: magoedte
-ms.openlocfilehash: 676baa6947eaf8b3842b0100657f42a1e6438061
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: e9e00dd9d05ff7339a6b5fd93e86bae61fbbf5ee
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53184888"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188440"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms-preview"></a>Как выполнять запросы к журналам из Azure Monitor для виртуальных машин (предварительная версия)
 Azure Monitor для виртуальных машин собирает метрики производительности и подключений, данные инвентаризации компьютеров и процессов, а также сведения о работоспособности и перенаправляет их в хранилище данных Log Analytics в службе Azure Monitor.  Вы можете выполнять [поиск](../../azure-monitor/log-query/log-query-overview.md) этих данных в службе Log Analytics. Эти данные используются в различных сценариях, таких как планирование миграции, анализ емкости, обнаружение и устранение проблем с производительностью по требованию.

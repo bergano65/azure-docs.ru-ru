@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 12/10/2018
 ms.author: jeffgilb
 ms.reviewer: asganesh
-ms.openlocfilehash: db33deaa9bb0bf9a4c3f766fbae883df4075c431
-ms.sourcegitcommit: e37fa6e4eb6dbf8d60178c877d135a63ac449076
+ms.openlocfilehash: 554fd9c32c9831d45a40c62a871e3a8d5f8d7cb9
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53323377"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54191757"
 ---
-# <a name="azure-stack-customer-journey"></a>Взаимодействие с клиентом Azure Stack
+# <a name="azure-stack-datacenter-integration"></a>Интеграция центра обработки данных Azure Stack
 
 В этой статье описывается рабочий процесс клиента Azure Stack, начиная от приобретения интегрированного решения до успешного развертывания поставщиком решения. Ознакомившись с этой статьей, вы, как клиент Azure Stack, будете знать, что ожидать от интеграции Azure Stack в центр обработки данных.
 
