@@ -6,21 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: article
-ms.date: 09/06/2018
+ms.date: 01/09/2019
 ms.author: alkohli
-ms.openlocfilehash: d10ca5d704892ae0a1494d729b46abf0fc06aa64
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: b2f8a299dfc52bcc1f2eaa17e658b841d27bf62c
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49092258"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54154935"
 ---
-# <a name="azure-data-box-disk-system-requirements-preview"></a>Системные требования для диска Azure Data Box (предварительная версия)
+# <a name="azure-data-box-disk-system-requirements"></a>Системные требования для Диска Azure Data Box
 
 В этой статье описываются важные требования к системе и рекомендации для решения на основе диска Microsoft Azure Data Box и клиентов, подключающихся к нему. Прежде чем развертывать диск Data Box, внимательно ознакомьтесь с приведенной ниже информацией и по мере необходимости возвращайтесь к ней во время развертывания и последующих действий.
-
-> [!IMPORTANT]
-> Диск Data Box предоставляется в режиме предварительной версии. Изучите [условия использования для предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем развертывать это решение. 
 
 В системных требованиях перечислены поддерживаемые платформы для клиентов, подключающихся к дискам, поддерживаемые типы учетных записей хранения и хранилищ.
 
@@ -32,7 +29,7 @@ ms.locfileid: "49092258"
 | **Операционная система** | **Проверенные версии** |
 | --- | --- |
 | Windows Server |2008 R2 с пакетом обновления 1 (SP1) <br> 2012 <br> 2012 R2 <br> 2016 |
-| Windows |7, 8, 10 |
+|  Windows |7, 8, 10 |
 |Linux <br> <li> Ubuntu </li><li> Debian </li><li> Red Hat Enterprise Linux (RHEL) </li><li> CentOS| <br>14.04, 16.04, 18.04 <br> 8.11, 9 <br> 7.0 <br> 6.5, 6.9, 7.0, 7.5 |  
 
 ## <a name="other-required-software-for-windows-clients"></a>Другое необходимое программное обеспечение для клиентов Windows
@@ -61,6 +58,9 @@ ms.locfileid: "49092258"
 | --- | --- |
 | Классический | Стандартная |
 | Общего назначения  |"Стандартный" (поддерживаются версии V1 и V2). Поддерживаются "горячий" и "холодный" уровни. |
+
+>[!NOTE]
+> Учетные записи второго поколения Azure Data Lake Storage не поддерживаются.
 
 
 ## <a name="supported-storage-types"></a>Поддерживаемые типы хранилищ

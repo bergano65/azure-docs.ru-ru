@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/18/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 74cde720af012b3355b813cf6da2b2bdf10b9b8e
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: a6357640ceeb7c5f1bde4eea85aa5265990935f4
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51257213"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54157162"
 ---
 # <a name="publish-a-cortana-intelligence-offer-using-the-cloud-partner-portal"></a>Публикация предложения Cortana Intelligence с помощью портала Cloud Partner
 
@@ -126,7 +126,7 @@ ms.locfileid: "51257213"
 3. [Начните запись](https://support.office.com/article/Share-sites-or-documents-with-people-outside-your-organization-80e49744-e30f-44db-8d51-16661b1d4232).
 4. После остановки записи [используйте диспетчер записи для публикации](https://support.office.com/article/Recording-Manager-save-and-publish-59a3beb7-c700-40cf-ab21-bc82a2b06351).
 
-Отправьте записанное видео в службу, создающую общий URL-адрес. Например, это может быть [гостевая ссылка в OneDrive или Sharepoint](https://support.office.com/article/Share-sites-or-documents-with-people-outside-your-organization-80e49744-e30f-44db-8d51-16661b1d4232).
+Отправьте записанное видео в службу, создающую общий URL-адрес. Например, это может быть [гостевая ссылка в OneDrive или SharePoint](https://support.office.com/article/Share-sites-or-documents-with-people-outside-your-organization-80e49744-e30f-44db-8d51-16661b1d4232).
 
 ### <a name="supported-regions"></a>Поддерживаемые регионы
 
@@ -292,7 +292,7 @@ ms.locfileid: "51257213"
 
 Выберите систему CRM, где будут храниться сведения о потенциальных клиентах. 
 
-Выберите **Azure Table** (Таблица Azure), если вы пользуетесь одной из следующих систем CRM: Salesforce, Marketo или Microsoft Dynamics CRM. 
+Выберите **таблицу Azure**, если у вас одна из следующих систем CRM: Salesforce, Marketo или Microsoft Dynamics CRM. 
 
 Чтобы получить дополнительные сведения о системе CRM, которую планируется использовать, выберите одну из следующих ссылок на поддерживаемые системы.
 

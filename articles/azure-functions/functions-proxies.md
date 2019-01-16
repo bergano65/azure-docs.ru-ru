@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: alkarche
-ms.openlocfilehash: 18398326e21ac6f3d64e43a577cf7d57cfb23438
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 81f76b31f7af3643e2b654e8e26c70d0481d60b8
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53139526"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54017112"
 ---
 # <a name="work-with-azure-functions-proxies"></a>Работа с функцией "Прокси-серверы Функций Azure"
 
@@ -161,7 +161,7 @@ ms.locfileid: "53139526"
             "matchCondition": {
                 "route": "/example"
             },
-            "backendUri": "www.example.com"
+            "backendUri": "https://<AnotherApp>.azurewebsites.net/api/<FunctionName>"
         }
     }
 }
@@ -176,12 +176,13 @@ ms.locfileid: "53139526"
 
 ### <a name="reservedChars"></a> Зарезервированные символы (форматирование строк)
 
-Прокси-серверы считывают все строки без интерпретации, кроме тех, которые заключены в фигурные скобки и косые черты.
+Прокси-серверы считывают все строки из JSON-файла, используя \ как escape-символ. Кроме того, прокси-серверы интерпретируют фигурные скобки. См. полный список примеров ниже.
 
 |Character|Экранируемый символ|Пример|
 |-|-|-|
 |{ или }|{{ или }}|`{{ example }}` --> `{ example }`
-|/|///| `example.com///text.html` --> `example.com/text.html`
+| \ | \\\\ | `example.com\\text.html` --> `example.com\text.html`
+|"|\\\"| `\"example\"` --> `"example"`
 
 ### <a name="requestOverrides"></a>Определение объекта requestOverrides
 

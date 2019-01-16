@@ -12,21 +12,21 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/19/2018
+ms.date: 01/05/2019
 ms.author: sethm
 ms.reviewer: ''
-ms.openlocfilehash: 3be22e7f8e69ded8ccc8956cc7fd7c6d71fe5fa1
-ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
+ms.openlocfilehash: 51f3861d53ac5dac80b53fad9a4efe7b276807fe
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46497742"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54065415"
 ---
 # <a name="develop-for-azure-stack"></a>Разработка для Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
-Вы можете сразу приступить к разработке приложений даже при отсутствии доступа к среде Azure Stack. Так как Azure Stack предоставляет службы Microsoft Azure, выполняемые в вашем центре обработки данных, при разработке в среде Azure Stack вы можете использовать те же средства и процессы, что и для Azure. 
+Вы можете сразу приступить к разработке приложений даже при отсутствии доступа к среде Azure Stack. Так как Azure Stack предоставляет службы Microsoft Azure, выполняемые в вашем центре обработки данных, при разработке в среде Azure Stack вы можете использовать те же средства и процессы, что и для Azure.
 
 ## <a name="development-considerations"></a>Вопросы разработки
 
@@ -40,5 +40,5 @@ ms.locfileid: "46497742"
 
 Дополнительные сведения о разработке в Stack см. в следующих статьях:
 
-- [Рекомендации по работе с шаблонами Azure Resource Manager](azure-stack-develop-templates.md)
-- [Шаблоны быстрого запуска Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates)
+* [Рекомендации по работе с шаблонами Azure Resource Manager](azure-stack-develop-templates.md)
+* [Microsoft Azure Stack Quickstart Templates](https://github.com/Azure/AzureStack-QuickStart-Templates) (Шаблоны быстрого запуска Microsoft Azure Stack](https://github.com/Azure/AzureStack-QuickStart-Templates)

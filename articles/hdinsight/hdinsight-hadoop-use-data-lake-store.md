@@ -9,16 +9,16 @@ ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/06/2018
-ms.openlocfilehash: dfbce1afcefe7f03636d42ffa363fe29b47259e8
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: a174ae5eb31620646167f36a6f3e13605db5eac6
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53742564"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54052774"
 ---
 # <a name="use-data-lake-storage-with-azure-hdinsight-clusters"></a>Использование Data Lake Storage с кластерами Azure HDInsight
 
-Для анализа данных в кластере HDInsight можно сохранить данные в [службе хранилища Azure](../storage/common/storage-introduction.md), в [Azure Data Lake Storage](../data-lake-store/data-lake-store-overview.md) или в обоих этих хранилищах. Оба варианта хранилища позволяют безопасно и без потери пользовательских данных удалять используемые для расчетов кластеры HDInsight.
+Данные для анализа в кластере HDInsight можно хранить в [службе хранилища Azure](../storage/common/storage-introduction.md) или в [Azure Data Lake Storage](../data-lake-store/data-lake-store-overview.md)[ (1-го или 2-го поколения)](../storage/blobs/data-lake-storage-introduction.md) либо в обеих службах сразу. Оба варианта хранилища позволяют безопасно и без потери пользовательских данных удалять используемые для расчетов кластеры HDInsight.
 
 Из этой статьи вы узнаете, как Data Lake Storage работает с кластерами HDInsight. Дополнительные сведения о работе службы хранилища Azure с кластерами HDInsight см. в разделе [Использование службы хранилища Azure с кластерами Azure HDInsight](hdinsight-hadoop-use-blob-storage.md). Дополнительные сведения о создании кластера HDInsight см. в статье [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](hdinsight-hadoop-provision-linux-clusters.md).
 

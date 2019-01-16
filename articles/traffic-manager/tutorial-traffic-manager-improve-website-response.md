@@ -1,13 +1,10 @@
 ---
-title: Руководство. Перенаправление трафика для улучшения отклика веб-сайта с помощью диспетчера трафика Azure | Документация Майкрософт
+title: Руководство. Перенаправление трафика для улучшения отклика веб-сайта с помощью диспетчера трафика Azure
 description: В этом руководстве показано, как создать профиль диспетчера трафика для создания быстродействующего веб-сайта.
 services: traffic-manager
 documentationcenter: ''
 author: kumudd
-manager: jeconnoc
-editor: ''
 Customer intent: As an IT Admin, I want to route traffic so I can improve website response by choosing the endpoint with lowest latency.
-ms.assetid: ''
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
@@ -15,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/23/2018
 ms.author: kumud
-ms.openlocfilehash: 087dcda5826d96ad064c472fc897be7e61133387
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.openlocfilehash: fcbacb14ae1cf0d8fa31d84e281c96fab5e3b0d3
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47392525"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54052093"
 ---
 # <a name="tutorial-improve-website-response-using-traffic-manager"></a>Руководство. Улучшение отклика веб-сайта с помощью диспетчера трафика 
 
@@ -93,7 +90,7 @@ ms.locfileid: "47392525"
 
 #### <a name="install-iis-and-customize-the-default-web-page"></a>Установка IIS и настройка веб-страницы по умолчанию
 
-В этом разделе вы установите сервер IIS на две виртуальные машины — *myIISVMEastUS* и *myIISVMWEurope*, а затем обновите страницу веб-сайта по умолчанию. На настроенной странице веб-сайта отображается имя виртуальной машины, к которой вы подключаетесь при посещении веб-сайта в веб-браузере.
+В этом разделе вы установите сервер IIS на две виртуальные машины — *myIISVMEastUS*  &  и *myIISVMWEurope*, а затем обновите страницу веб-сайта по умолчанию. На настроенной странице веб-сайта отображается имя виртуальной машины, к которой вы подключаетесь при посещении веб-сайта в веб-браузере.
 
 1. В меню слева щелкните **Все ресурсы**, а затем в списке ресурсов выберите виртуальную машину *myIISVMEastUS*, расположенную в группе ресурсов *myResourceGroupTM1*.
 2. На странице **Обзор** щелкните **Подключить**, а затем в разделе **подключения к виртуальной машине** выберите **Скачать RDP-файл**. 

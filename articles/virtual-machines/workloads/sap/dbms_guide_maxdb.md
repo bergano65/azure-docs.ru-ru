@@ -16,23 +16,23 @@ ms.workload: infrastructure
 ms.date: 07/12/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 408d43f07179f9f18c05f22fdd4ea36a3a90cb49
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: c5f71e104e97ab886483d50760f0a42936a16717
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39075621"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54157315"
 ---
 # <a name="sap-maxdb-livecache-and-content-server-deployment-on-azure-vms"></a>Развертывание SAP MaxDB, liveCache и сервера содержимого на виртуальных машинах Azure
 
 [767598]:https://launchpad.support.sap.com/#/notes/767598
 [773830]:https://launchpad.support.sap.com/#/notes/773830
-[826037;]:https://launchpad.support.sap.com/#/notes/826037
+[826037]:https://launchpad.support.sap.com/#/notes/826037
 [965908]:https://launchpad.support.sap.com/#/notes/965908
 [1031096]:https://launchpad.support.sap.com/#/notes/1031096
 [1114181]:https://launchpad.support.sap.com/#/notes/1114181
-[1139904;]:https://launchpad.support.sap.com/#/notes/1139904
-[1173395.]:https://launchpad.support.sap.com/#/notes/1173395
+[1139904]:https://launchpad.support.sap.com/#/notes/1139904
+[1173395]:https://launchpad.support.sap.com/#/notes/1173395
 [1245200]:https://launchpad.support.sap.com/#/notes/1245200
 [1409604]:https://launchpad.support.sap.com/#/notes/1409604
 [1558958]:https://launchpad.support.sap.com/#/notes/1558958
@@ -331,7 +331,7 @@ ms.locfileid: "39075621"
 
 ### <a name="sap-maxdb-configuration-guidelines-for-sap-installations-in-azure-vms"></a>Рекомендации по конфигурации SAP MaxDB для установки SAP на виртуальные машины Azure
 #### <a name="b48cfe3b-48e9-4f5b-a783-1d29155bd573"></a>Конфигурация хранилища
-Рекомендации для службы хранилища Azure и SAP MaxDB соответствуют общим рекомендациям, приведенным в разделе [Структура развертывания реляционной СУБД][dbms-guide-2].
+Рекомендации для службы хранилища Azure и SAP MaxDB соответствуют общим рекомендациям, приведенным в разделе [Структура хранилища виртуальной машины для развертывания реляционной СУБД](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_general#65fa79d6-a85f-47ee-890b-22e794f51a64).
 
 > [!IMPORTANT]
 > Как и в других базах данных, в SAP MaxDB тоже есть файлы данных и файлы журналов, но в терминологии SAP MaxDB вместо понятия "файл" используется "том". Например, в SAP MaxDB существуют тома данных и тома журналов. Не путайте их с томами жестких дисков. 
@@ -376,9 +376,9 @@ ms.locfileid: "39075621"
 Все остальные общие вопросы, такие как группы доступности Azure и мониторинг SAP, изложенные в разделе [Вопросы развертывания СУБД для рабочей нагрузки SAP на виртуальных машинах Azure](dbms_guide_general.md),  также применяются к развертываниям виртуальных машин в базе данных SAP MaxDB 
 Другие параметры SAP MaxDB прозрачны для виртуальных машин Azure и описаны в различных документах, перечисленных в примечании к SAP [767598], а также в следующих примечаниях к SAP:
 
-* [826037;] 
-* [1139904;]
-* [1173395.]
+* [826037] 
+* [1139904]
+* [1173395]
 
 ## <a name="specifics-for-sap-livecache-deployments-on-windows"></a>Особенности развертываний SAP liveCache в Windows
 ### <a name="sap-livecache-version-support"></a>Поддерживаемые версии SAP liveCache
@@ -458,7 +458,7 @@ ms.locfileid: "39075621"
 
 1. **Клиентом выступает внутренняя система SAP.** Если во внутренней системе SAP настроен доступ к серверу содержимого SAP, то клиентом выступает система SAP. Так как система SAP и сервер содержимого SAP развернуты в одном и том же регионе Azure (в одном центре обработки данных Azure), они находятся физически близко друг к другу. В этом случае вам не нужен выделенный сервер кэширования SAP. Клиенты пользовательского интерфейса SAP (графического пользовательского интерфейса SAP или веб-браузера) обращаются к системе SAP напрямую, и система SAP извлекает документы с сервера содержимого SAP.
 2. **Клиентом выступает локальный веб-браузер.** Сервер содержимого SAP можно настроить так, чтобы к нему можно было обращаться напрямую из веб-браузера. В таком случае клиентом сервера содержимого SAP выступает локальный веб-браузер. Локальный центр обработки данных и центр обработки данных Azure физически расположены в разных местах (в идеальном случае вблизи друг от друга). Ваш локальный ЦОД соединен с Azure через канал ExpressRoute или VPN-подключение типа "сайт — сайт". Хотя оба варианта предлагают безопасное VPN-подключение к Azure, подключение типа "сайт — сайт" не обеспечивает высокую пропускную способность и низкие задержки для соединения между локальным ЦОД и ЦОД Azure. Ускорить доступ к документам можно двумя способами:
-   1. установить SAP Cache Server локально, поблизости от локального веб-браузера (см. [рисунок][dbms-guide-900-sap-cache-server-on-premises] ниже);
+   1. установить SAP Cache Server локально, поблизости от локального веб-браузера (см. рисунок ниже);
    2. настроить канал Azure ExpressRoute, который обеспечивает выделенное высокоскоростное сетевое подключение с низкой задержкой между локальным ЦОД и ЦОД Azure.
 
 ![Вариант локальной установки сервера кэширования SAP](./media/dbms_maxdb_deployment_guide/900-sap-cache-server-on-premises.png)
