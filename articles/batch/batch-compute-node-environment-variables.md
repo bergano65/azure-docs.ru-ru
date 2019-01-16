@@ -1,8 +1,8 @@
 ---
-title: Переменные среды вычислительного узла пакетной службы Azure | Документы Майкрософт
+title: Переменные среды вычислительного узла — пакетная служба Azure | Документация Майкрософт
 description: Справочник по переменным среды вычислительного узла для пакетной аналитики Azure.
 services: batch
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 ms.assetid: ''
 ms.service: batch
@@ -10,16 +10,17 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: big-compute
-ms.date: 05/05/2017
-ms.author: danlep
-ms.openlocfilehash: ca8d6a6484cd1f145e7d807681bf2d012f2399e0
-ms.sourcegitcommit: 20d103fb8658b29b48115782fe01f76239b240aa
+ms.date: 01/03/2019
+ms.author: lahugh
+ms.openlocfilehash: 48c2172e02e935dde28ac323c776c8895b1d36b2
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/03/2018
-ms.locfileid: "30312707"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54017367"
 ---
 # <a name="azure-batch-compute-node-environment-variables"></a>Переменные среды вычислительного узла пакетной службы Azure
+
 [Пакетная служба Azure](https://azure.microsoft.com/services/batch/) задает на вычислительных узлах указанные ниже переменные среды. Вы можете ссылаться на них в командных строках задач, а также в программах и сценариях, запускаемых этими командными строками.
 
 Дополнительные сведения об использовании переменных среды в пакетной службе см. в статье [Параметры среды для задач](https://docs.microsoft.com/azure/batch/batch-api-basics#environment-settings-for-tasks).
@@ -41,6 +42,7 @@ ms.locfileid: "30312707"
 | Имя переменной                     | ОПИСАНИЕ                                                              | Доступность | Пример |
 |-----------------------------------|--------------------------------------------------------------------------|--------------|---------|
 | AZ_BATCH_ACCOUNT_NAME           | Имя учетной записи пакетной службы, к которой относится задача.                  | Все задачи.   | mybatchaccount |
+| AZ_BATCH_AUTHENTICATION_TOKEN   | Маркер проверки подлинности, который предоставляет доступ к ограниченному набору операций пакетной службы. Эта переменная среды присутствует, только если [authenticationTokenSettings](/rest/api/batchservice/task/add#authenticationtokensettings) устанавливается при [добавлении задачи](/rest/api/batchservice/task/add#request-body). В API пакетной службы, например в [API BatchClient.Open() для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.batch.batchclient.open#Microsoft_Azure_Batch_BatchClient_Open_Microsoft_Azure_Batch_Auth_BatchTokenCredentials_), значение маркера используется в качестве учетных данных для создания клиента пакетной службы. | Все задачи. | Маркер доступа OAuth2 |
 | AZ_BATCH_CERTIFICATES_DIR       | Каталог в [рабочем каталоге задачи][files_dirs], где хранятся сертификаты для вычислительных узлов Linux. Обратите внимание, что эта переменная среды не применяется к вычислительным узлам Windows.                                                  | Все задачи.   |  /mnt/batch/tasks/workitems/batchjob001/job-1/task001/certs |
 | AZ_BATCH_JOB_ID                 | Идентификатор задания, к которому относится задача | Все задачи, кроме задачи запуска. | batchjob001 |
 | AZ_BATCH_JOB_PREP_DIR           | Полный путь к [каталогу задачи][files_dirs] подготовки задания на узле. | Все задачи, кроме задачи запуска и задачи подготовки задания. Доступна, только если для задания настроена задача подготовки задания. | C:\user\tasks\workitems\jobprepreleasesamplejob\job-1\jobpreparation |

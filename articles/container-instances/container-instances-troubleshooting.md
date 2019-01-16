@@ -6,15 +6,15 @@ author: seanmck
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 07/19/2018
+ms.date: 01/08/2019
 ms.author: seanmck
 ms.custom: mvc
-ms.openlocfilehash: 062308622e3170a4eb8f75a96300f04f683a90e7
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: 609d52f9f2c5dce1bbfd668e94db25aca3d52f69
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51820364"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54119056"
 ---
 # <a name="troubleshoot-common-issues-in-azure-container-instances"></a>Устранение распространенных неполадок с помощью службы "Экземпляры контейнеров Azure"
 
@@ -48,7 +48,7 @@ ms.locfileid: "51820364"
 
 Эта ошибка часто возникает при развертывании образов Windows, основанных на выпуске Semi-Annual Channel (SAC). Например, версии Windows 1709 и 1803 являются выпусками SAC и вызывают такую ошибку при развертывании.
 
-Служба "Экземпляры контейнеров Azure" поддерживает образы Windows на основе версий канала долгосрочного обслуживания (LTSC). Чтобы устранить эту проблему, при развертывании контейнеров Windows всегда следует развертывать образы на основе LTSC.
+Служба "Экземпляры контейнеров Azure" сейчас поддерживает только образы Windows на основе выпуска **Windows Server 2016 Long-Term Servicing Channel (LTSC)**. Чтобы избежать проблем, при развертывании контейнеров Windows следует развертывать образы на основе Windows Server 2016 (LTSC). Образы на основе Windows Server 2019 (LTSC) не поддерживаются.
 
 Дополнительные сведения о версиях LTSC и SAC Windows см. в статье [Обзор Semi-Annual Channel для Windows Server][windows-sac-overview].
 

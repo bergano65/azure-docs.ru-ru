@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: yijenj
-ms.openlocfilehash: fad023b7593b0e13b05d081a11333f5e92c8ecef
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: da8fd886afa6028959247caa0c6e007df20fdd1b
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53602177"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54077748"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -36,10 +36,8 @@ ms.locfileid: "53602177"
 
 ## <a name="use-resource-manager-templates"></a>Использование шаблонов Resource Manager
 
-Многие решения партнеров развертываются в подписке клиента с помощью шаблонов Resource Manager. Если ваш шаблон Resource Manager уже размещен в Azure Marketplace, GitHub или репозитории шаблонов быстрого запуска, вам будет легко изменить этот шаблон, чтобы реализовать новый метод отслеживания. Если вы еще не работали с шаблонами Azure Resource Manager, следующие ссылки помогут вам понять, что такое шаблоны Azure Resource Manager и как их создавать: 
+Многие решения партнеров развертываются в подписке клиента с помощью шаблонов Resource Manager. Если ваш шаблон Resource Manager уже размещен в Azure Marketplace, GitHub или репозитории шаблонов быстрого запуска, вам будет легко изменить этот шаблон, чтобы реализовать новый метод отслеживания. Дополнительные сведения см. в статье [Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-create-first-template).
 
-*   [Краткое руководство по созданию и развертыванию шаблонов Azure Resource Manager с помощью портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-create-first-template)
-*   [Руководство по созданию шаблона решения для Azure Marketplace](https://docs.microsoft.com/azure/marketplace-publishing/marketplace-publishing-solution-template-creation)
 
 ## <a name="add-a-guid-to-your-template"></a>Добавление GUID в шаблон
 
@@ -270,11 +268,15 @@ foreach ($deployment in $deployments){
 
 **Кто может добавить GUID в шаблон?**
 
-Ресурс отслеживания позволяет сопоставить решения партнера с данными о потреблении клиентами ресурсов Azure. Данные о потреблении привязываются к идентификатору партнера Microsoft Partner Network (MPN ID). 
+Ресурс отслеживания позволяет сопоставить решения партнера с данными о потреблении клиентами ресурсов Azure. Данные о потреблении привязываются к идентификатору партнера Microsoft Partner Network (MPN ID). Отчеты доступны для партнеров на Портале Cloud Partner.
 
 **Можно ли изменить добавленный ранее GUID?**
  
 Да, клиент или партнер по реализации может изменять шаблон, удалять GUID или указывать другой GUID. Мы рекомендуем партнерам, чтобы они заранее описывали роль ресурса и GUID для своих клиентов и партнеров, чтобы предотвратить удаление или изменение GUID для отслеживания. Изменение GUID влияет только на новые развертывания и ресурсы, но не затрагивает уже существующие.
+
+**Когда будут доступны отчеты?**
+
+В скором времени будет выпущена бета-версия функции создания отчетов. Отчеты будут интегрированы в Портал Cloud Partner.
 
 **Можно ли отслеживать шаблоны, развертываемые из репозитория сторонних производителей, например GitHub?**
 

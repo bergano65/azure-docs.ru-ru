@@ -10,12 +10,12 @@ ms.date: 05/30/2018
 ms.service: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
-ms.openlocfilehash: c0f2802bae366637fd93d47e33619746b7142f53
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: bb84c7d5e483b0a2abc3b7d1a37de8760513d203
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50231633"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54063222"
 ---
 # <a name="create-variables-for-saving-and-managing-values-in-azure-logic-apps"></a>Создание переменных для сохранения значений и управления ими в Azure Logic Apps
 
@@ -28,7 +28,10 @@ ms.locfileid: "50231633"
 * назначить переменной другое значение;
 * вставить или *добавить* значение переменной в конце строки или массива.
 
-Переменные существуют и являются глобальными только в рамках экземпляра создавшего их приложения логики. Кроме того, они сохраняются между итерациями циклов в экземпляре приложения логики. Ссылаясь на переменную, используйте в качестве токена ее имя, а не имя действия.
+Переменные существуют и являются глобальными только в рамках экземпляра создавшего их приложения логики. Кроме того, они сохраняются между итерациями циклов в экземпляре приложения логики. Ссылаясь на переменную, используйте в качестве токена ее имя, а не имя действия. 
+
+> [!IMPORTANT]
+> По умолчанию в цикле for each итерации выполняются параллельно. При использовании переменных в циклах запустите цикл [последовательно](../logic-apps/logic-apps-control-flow-loops.md#sequential-foreach-loop), чтобы переменные вернули предсказуемые результаты. 
 
 Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">получите бесплатную учетную запись Azure</a>. 
 
@@ -38,7 +41,7 @@ ms.locfileid: "50231633"
 
 * Приложение логики, в котором нужно создать переменную 
 
-  Если вы не работали с приложениями логики, см. руководства по [Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [созданию первого приложения логики](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+  Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md).
 
 * [Триггер](../logic-apps/logic-apps-overview.md#logic-app-concepts) в качестве первого шага приложения логики 
 

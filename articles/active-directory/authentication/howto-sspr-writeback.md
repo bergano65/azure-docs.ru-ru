@@ -10,16 +10,14 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: e8a09a9fc87bff692b5d5b4c54f87839f2591b63
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: ce1bcb26b3a3510b22ced57471016999156bb0cf
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50086953"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54040665"
 ---
-# <a name="how-to-configure-password-writeback"></a>Сведения о настройке компонента обратной записи паролей
-
-Мы советуем применять функцию автоматического обновления [Azure AD Connect](../hybrid/how-to-connect-install-express.md), если вы хотите использовать компонент обратной записи паролей.
+# <a name="how-to-configure-password-writeback"></a>Практическое руководство. Настройка компонента обратной записи паролей
 
 В инструкциях ниже предполагается, что вы уже настроили Azure AD Connect в своей среде с помощью параметров [Экспресс](../hybrid/how-to-connect-install-express.md) или [Пользовательский](../hybrid/how-to-connect-install-custom.md).
 
@@ -38,7 +36,25 @@ ms.locfileid: "50086953"
 > [!WARNING]
 > Компонент обратной записи паролей перестанет работать для клиентов, которые используют Azure AD Connect версии 1.0.8641.0 и выше, когда [поддержка службы контроля доступа Azure (ACS) будет прекращена, 7 ноября 2018 года](../develop/active-directory-acs-migration.md). Версии Azure AD Connect 1.0.8641.0 и выше больше не будут допускать использование функции обратной записи паролей, так как они зависят от ACS.
 >
-> Чтобы избежать перебоев в работе службы, обновите предыдущую версию Azure AD Connect до более новой. Для этого ознакомьтесь со статьей [Azure AD Connect: обновление до последней версии](../hybrid/how-to-upgrade-previous-version.md)
+> Чтобы избежать перебоев в работе службы, обновите предыдущую версию Azure AD Connect до более новой. Для этого ознакомьтесь со статьей [Azure AD Connect: обновление до последней версии](../hybrid/how-to-upgrade-previous-version.md).
+>
+
+## <a name="licensing-requirements-for-password-writeback"></a>Требования к лицензированию для обратной записи паролей
+
+**Самостоятельный сброс пароля, изменение и разблокировка при помощи локальной обратной записи — это возможности Azure AD уровня "Премиум"**. Дополнительные сведения о лицензировании см. на [веб-сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
+
+Чтобы использовать компонент обратной записи паролей, клиенту должна быть назначена одна из приведенных ниже лицензий:
+
+* Azure AD Premium P1
+* Azure AD Premium P2
+* Enterprise Mobility + Security E3 или A3;
+* Enterprise Mobility + Security E5 или A5;
+* Microsoft 365 E3 или A3;
+* Microsoft 365 E5 или A5;
+* Microsoft 365 F1
+
+> [!WARNING]
+> Автономные планы лицензирования Office 365 *не поддерживают функции самостоятельного сброса пароля, изменения пароля или разблокировки при помощи локальной обратной записи*. Для работы этих функций требуется один из указанных выше планов.
 >
 
 ## <a name="active-directory-permissions"></a>Разрешения Active Directory

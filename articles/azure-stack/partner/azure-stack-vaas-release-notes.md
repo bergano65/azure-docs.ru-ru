@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 11/26/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: a6245472f0fc3f65dcbeebdf251387efed5f02b8
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 687e47eff000679f24088a59297a258a1469f3fd
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52333030"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54106279"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Заметки о выпуске для проверки как службы
 
@@ -49,7 +49,7 @@ ms.locfileid: "52333030"
 
 - Изменения для предварительных требований VaaS и виртуального жесткого диска
 
-    Теперь `Install-VaaSPrerequisites` требуются учетные данные администратора облака для устранения проблемы при проверке пакета. В документацию из раздела [Скачивание и установка агента](azure-stack-vaas-local-agent.md#download-and-install-the-agent) были внесены следующие изменения:
+    Теперь `Install-VaaSPrerequisites` требуются учетные данные администратора облака для устранения проблемы при проверке решения. В документацию из раздела [Скачивание и установка агента](azure-stack-vaas-local-agent.md#download-and-install-the-agent) были внесены следующие изменения:
 
     ```PowerShell
     $ServiceAdminCreds = New-Object System.Management.Automation.PSCredential "<aadServiceAdminUser>", (ConvertTo-SecureString "<aadServiceAdminPassword>" -AsPlainText -Force)
@@ -76,7 +76,7 @@ ms.locfileid: "52333030"
 
   - Уведомления о подписании пакета
 
-    Когда пакет настройки OEM отправляется в рамках рабочего процесса проверки пакета, формат пакета будет проверен, чтобы подтвердить его соответствие опубликованной спецификации. Если пакет не соответствует, происходит сбой выполнения. Уведомления по электронной почте направляются на адрес электронной почты зарегистрированного контактного лица Azure Active Directory для клиента.
+    Когда пакет настройки OEM отправляется в рамках рабочего процесса проверки решения, формат пакета будет проверен, чтобы подтвердить его соответствие опубликованной спецификации. Если пакет не соответствует, происходит сбой выполнения. Уведомления по электронной почте направляются на адрес электронной почты зарегистрированного контактного лица Azure Active Directory для клиента.
 
   - Категория интерактивных тестов
 

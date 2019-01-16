@@ -1,28 +1,31 @@
 ---
-title: Создание оповещений для базы данных SQL с помощью портала Azure | Документация Майкрософт
+title: Настройка оповещений и уведомлений с помощью портала Azure | Документация Майкрософт
 description: Используйте портал Azure для создания оповещений базы данных SQL, которые могут активировать уведомления или автоматизированные операции при выполнении заданных условий.
 services: sql-database
 ms.service: sql-database
 ms.subservice: monitor
 ms.custom: ''
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: howto
 author: aamalvea
 ms.author: aamalvea
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 11/02/2018
-ms.openlocfilehash: ddd704b41e6d1463bc635f13135cc9a388e677fe
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 64e743010b3ae615817639d9b2531b2f99979498
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53634615"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54156908"
 ---
-# <a name="use-azure-portal-to-create-alerts-for-azure-sql-database-and-data-warehouse"></a>Создание оповещений для базы данных SQL Azure и хранилища данных с помощью портала Azure
+# <a name="create-alerts-for-azure-sql-database-and-data-warehouse-using-azure-portal"></a>Создание оповещений для Базы данных SQL Azure и хранилища данных с помощью портала Azure
 
 ## <a name="overview"></a>Обзор
-В этой статье показано, как настроить оповещения для базы данных SQL Azure и хранилища данных с помощью портала Azure. В этой статье также приведены рекомендации по настройке периодов оповещений.    
+В этой статье показано, как настроить оповещения для базы данных SQL Azure и хранилища данных с помощью портала Azure. Оповещения могут отправить электронное сообщение или вызвать веб-перехватчик, когда какая-либо метрика достигает порога (например, размер базы данных или использование ЦП). В этой статье также приведены рекомендации по настройке периодов оповещений.    
+
+> [!IMPORTANT]
+> В Управляемом экземпляре эта функция пока недоступна. В качестве альтернативы можно использовать агент SQL, чтобы отправлять оповещения по электронной почте для некоторых метрик на основе [динамических административных представлений](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views).
 
 Вы можете получать оповещения на основе отслеживания метрик или событий в службах Azure.
 

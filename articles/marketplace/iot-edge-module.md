@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 09/22/2018
 ms.author: qianw211
-ms.openlocfilehash: 0468c41f0813277b6ba6d3be8ad89c3178dd1420
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: f13d3f780e24d71babb1bda48a9b85d1208e3c4c
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50094682"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54074603"
 ---
 # <a name="iot-edge-modules"></a>Модули Edge Интернета вещей
 
@@ -95,3 +95,4 @@ Marketplace в настоящее время поддерживает **бесп
 Если вы зарегистрированы и создаете предложение или работаете над существующим,
 
 - [Войдите на Портал Cloud Partner](https://cloudpartner.azure.com/), чтобы создать или завершить предложение.
+- Сведения о том, как опубликовать предложение модуля IoT Edge, см. в статье [Общие сведения о публикации предложения модуля IoT Edge](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/iot-edge-module/cpp-offer-process-parts).

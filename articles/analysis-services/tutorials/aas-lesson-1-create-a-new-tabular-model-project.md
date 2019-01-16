@@ -1,25 +1,25 @@
 ---
-title: 'Учебник по службам Azure Analysis Services: занятие 1 "Создание проекта табличной модели" | Документы Майкрософт'
+title: Руководство по службам Azure Analysis Services. Урок 1. Создание проекта табличной модели | Документация Майкрософт
 description: Описывает создание проекта для учебника по службам Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 08/15/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: b9d3e9df62ffd31a6a01ea427fec8d5a3d168bfa
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 3291721847d34b0fa9a6259bfeb6ec6fa06ed2b5
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42143883"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188017"
 ---
 # <a name="create-a-tabular-model-project"></a>Создание проекта табличной модели
 
 На этом занятии вы создадите проект табличной модели на уровне совместимости 1400, используя Visual Studio с проектами служб Analysis Services или SQL Server Data Tools (SSDT). После этого можно приступать к добавлению данных и созданию модели. Кроме того, это занятие содержит краткое описание для среды создания табличных моделей в Visual Studio.  
   
-Предполагаемое время выполнения этого занятия: **10 минут**  
+Предполагаемое время выполнения этого урока: **10 минут**.  
   
 ## <a name="prerequisites"></a>Предварительные требования  
 Это первый раздел в учебнике по созданию табличной модели. Для прохождения этого занятия требуется выполнить несколько предварительных условий. Дополнительные сведения см. в разделе [Azure Analysis Services — учебник по Adventure Works](../tutorials/aas-adventure-works-tutorial.md).  
@@ -74,7 +74,7 @@ ms.locfileid: "42143883"
   
 
 ## <a name="whats-next"></a>Что дальше?
-[Занятие 2. Получение данных](../tutorials/aas-lesson-2-get-data.md).
+[2. Получение данных](../tutorials/aas-lesson-2-get-data.md).
 
   
   

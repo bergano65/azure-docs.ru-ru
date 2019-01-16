@@ -8,12 +8,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 01/02/2019
 ms.author: alinast
-ms.openlocfilehash: 915c57033209ff982946163c408cf8557515e2f5
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 897a350c345e6e284f30040c0d4fcf07d5a6f466
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999209"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54106847"
 ---
 # <a name="data-processing-and-user-defined-functions"></a>Обработка данных и определяемые пользователем функции
 
@@ -102,6 +102,15 @@ Azure Digital Twins предлагает расширенные вычислит
 - присоединять метаданные графа перед отправкой уведомления к показаниям датчика.
 
 Дополнительные сведения об [использовании определяемых пользователем функций](./how-to-user-defined-functions.md).
+
+
+#### <a name="examples"></a>Примеры
+
+[Репозиторий GitHub с примером Digital Twins на C#](https://github.com/Azure-Samples/digital-twins-samples-csharp/) содержит несколько примеров определяемых пользователем функций:
+- [Эта функция](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/userDefinedFunctions/availabilityForTutorial.js) проверяет значения уровня углекислого газа, температуры и движения, чтобы определить, есть ли свободная комната, для которой эти значения находятся в указанном диапазоне. В [руководствах по Digital Twins](tutorial-facilities-udf.md) эта функция рассматривается более подробно. 
+- [Эта функция](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/userDefinedFunctions/multiplemotionsensors.js) получает данные от нескольких датчиков движения и определяет, что помещение свободно, если ни один из датчиков не обнаруживает никакого движения. Вы можете легко заменить определяемую пользователем функцию, которая используется в этом [кратком руководстве](quickstart-view-occupancy-dotnet.md), или этих [руководствах](tutorial-facilities-setup.md), внеся изменения, указанные в разделе комментариев файла. 
+
+
 
 ### <a name="role-assignment"></a>Назначение роли
 

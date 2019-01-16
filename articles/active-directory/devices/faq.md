@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.author: markvi
 ms.reviewer: jairoc
-ms.openlocfilehash: a0cfd65aa2444956336e5363d20acab61a404c68
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 8d1e44eae7e87a450ac5f36e621d559fca92ca74
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53309184"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54016160"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Часто задаваемые вопросы об управлении устройствами в Azure Active Directory
 
@@ -180,6 +180,9 @@ ms.locfileid: "53309184"
 
 - [Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory](troubleshoot-hybrid-join-windows-legacy.md)
  
+**Вопрос. Почему в списке устройств обнаружена дублирующаяся зарегистрированная запись Azure AD для присоединенного устройства гибридной Azure AD Windows 10 в Azure AD?**
+
+**Ответ.** Когда пользователи добавляют свои учетные записи к приложениям на устройстве, присоединенном к домену, им будет предложено действие "Добавить учетную запись в Windows?". После нажатия "Да" ваше устройство будет зарегистрировано в Azure AD, и его тип доверия определено как зарегистрированное в Azure AD. Включив гибридное присоединение к Azure AD для вашей организации, вы также присоедините устройство к гибридной Azure AD. В результате для одного устройства будут отображаться два состояния устройства. Однако присоединение к гибридной Azure AD имеет приоритет над регистрацией в Azure AD. Поэтому для всех проверок подлинности и оценок условного доступа ваше устройство буде считаться присоединенным к гибридной Azure AD. Следовательно, вы можете удалять запись устройства об регистрации в Azure AD на портале Azure AD. Чтобы понять, как избежать этого двойственного состояния для компьютера с Windows 10, см. [этот раздел](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-plan#review-things-you-should-know) статьи о присоединении к гибридной Azure AD. 
 
 ---
 

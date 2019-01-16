@@ -14,12 +14,12 @@ ms.workload: na
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: a28ae46a449d4aacf046636793585a84adc5ba83
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 2b4fcb42c913149f8caf05a72fb089586ee21e2a
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53089639"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54106127"
 ---
 # <a name="receive-events-from-azure-event-hubs-using-event-processor-host"></a>Получение событий от Центров событий Azure с помощью узла обработчика событий
 
@@ -123,7 +123,9 @@ public class SimpleEventProcessor : IEventProcessor
 
 ## <a name="receive-messages"></a>Получение сообщений
 
-Каждый вызов [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync) обеспечивает сбор событий. Пользователь управляет событиями самостоятельно. Рекомендуется выполнять это относительно быстро, то есть делать как можно меньше обработки. Вместо этого используйте группы потребителей. Если необходимо выполнить запись в хранилище и некоторую маршрутизацию, обычно лучше использовать две группы потребителей и иметь две реализации [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor), работающие отдельно.
+Каждый вызов [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync) обеспечивает сбор событий. Пользователь управляет событиями самостоятельно. Если вы хотите убедиться, что узел обработчика обрабатывает каждое сообщение по крайней мере один раз, необходимо написать собственный код выполнения повторных попыток. Но учитывайте при этом возможность получения поврежденных сообщений.
+
+Рекомендуется выполнять это относительно быстро, то есть делать как можно меньше обработки. Вместо этого используйте группы потребителей. Если необходимо выполнить запись в хранилище и некоторую маршрутизацию, обычно лучше использовать две группы потребителей и иметь две реализации [IEventProcessor](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor), работающие отдельно.
 
 В какой-то момент во время обработки вам может потребоваться список того, что вы прочитали и завершили. Отслеживание важно в том случае, если необходимо перезапустить чтение, чтобы не вернуться в начало потока. [EventProcessorHost](/dotnet/api/microsoft.azure.eventhubs.processor.eventprocessorhost) упрощает отслеживание с помощью *контрольных точек*. Контрольная точка — это расположение или смещение (для данной секции в рамках определенной группы потребителей), которое поможет вам убедиться, что сообщение обработано. Пометка контрольной точки в **EventProcessorHost** достигается за счет вызова метода [CheckpointAsync](/dotnet/api/microsoft.azure.eventhubs.processor.partitioncontext.checkpointasync) объекта [PartitionContext](/dotnet/api/microsoft.azure.eventhubs.processor.partitioncontext). Эта операция выполняется в рамках метода [ProcessEventsAsync](/dotnet/api/microsoft.azure.eventhubs.processor.ieventprocessor.processeventsasync), но также может осуществляться в [CloseAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.closeasync).
 

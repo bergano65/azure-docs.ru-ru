@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
-ms.openlocfilehash: 9af0a8cc8e1e0cd57aa3baf79bbe5a552aa2ef12
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: ae3716654f40322205212ca02a99993326a1cf35
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50087599"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54073362"
 ---
 # <a name="support-for-the-marketplace"></a>Поддержка Marketplace  
 Ниже приведены варианты поддержки Marketplace.  
@@ -28,7 +28,7 @@ ms.locfileid: "50087599"
 
 ## <a name="onboarding"></a>Переход
 
-Откройте билет в [поддержку издателя Microsoft Marketplace](https://support.microsoft.com/en-us/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&locale=en-us&supportregion=en-us&pesid=16230&forceorigin=esmc&ccsid=636595105151894820) для всех проблем с подключением и началом работы.
+Откройте билет в [поддержку издателя Microsoft Marketplace](https://support.microsoft.com/getsupport?wf=0&tenant=classiccommercial&oaspworkflow=start_1.0.0.0&locale=en-us&supportregion=en-us&pesid=16230&forceorigin=esmc&ccsid=636595105151894820) для всех проблем с подключением и началом работы.
 
 ## <a name="cloud-partner-portal"></a>Облачный портал для партнеров  
 
@@ -41,8 +41,8 @@ ms.locfileid: "50087599"
 | Канал поддержки | ОПИСАНИЕ |  
 |:--- |:--- |  
 | Slack: [join.marketplace.azure.com](https://social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket) | Среда Slack для решения технических проблем партнеров. Более 350 партнеров в настоящее время работает в этой среде. |  
-| Форумы MSDN по Marketplace, расположенные по адресу [social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket](https://social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket) | Форум Microsoft Developer Network. |  
-| Вопросы в Stack Overflow по Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure](https://stackoverflow.com/questions/tagged/azure) | Среда Stack Overflow, где можно получить решения и задать вопросы, относящиеся к Azure и Marketplace:<ul> <li>Вопросы в Stack Overflow по Azure Marketplace, расположенные по адресу [stackoverflow.com/questions/tagged/azure-marketplace](https://stackoverflow.com/questions/tagged/azure-marketplace)</li> <li>Вопросы в Stack Overflow по Azure Resource Manager, расположенные по адресу [stackoverflow.com/questions/tagged/azure-resource-manager](https://stackoverflow.com/questions/tagged/azure-resource-manager)</li> <li>Вопросы в Stack Overflow по виртуальным машинам Azure: [stackoverflow.com/questions/tagged/azure-virtual-machine](https://stackoverflow.com/questions/tagged/azure-virtual-machine)</li> <li>Вопросы в Stack Overflow по контейнерам Azure: [stackoverflow.com/search?q=azure+container](https://stackoverflow.com/search?q=azure+container)</li> </ul> |
+| Форумы MSDN: По Marketplace, расположенные по адресу [social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket](https://social.msdn.microsoft.com/Forums/azure/home?forum=DataMarket) | Форум Microsoft Developer Network. |  
+| Stack Overflow. Вопросы по Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure](https://stackoverflow.com/questions/tagged/azure) | Среда Stack Overflow, где можно получить решения и задать вопросы, относящиеся к Azure и Marketplace:<ul> <li>Stack Overflow. Вопросы по Azure Marketplace, расположенные по адресу [stackoverflow.com/questions/tagged/azure-marketplace](https://stackoverflow.com/questions/tagged/azure-marketplace)</li> <li>Stack Overflow. Вопросы по Azure Resource Manager, расположенные по адресу [stackoverflow.com/questions/tagged/azure-resource-manager](https://stackoverflow.com/questions/tagged/azure-resource-manager)</li> <li>Stack Overflow. Вопросы по виртуальным машинам Azure, расположенные по адресу [stackoverflow.com/questions/tagged/azure-virtual-machine](https://stackoverflow.com/questions/tagged/azure-virtual-machine)</li> <li>Stack Overflow. Вопросы по контейнерам Azure, расположенные по адресу [stackoverflow.com/search?q=azure+container](https://stackoverflow.com/search?q=azure+container)</li> </ul> |
 | Поддержка AppSource: [appsourcecrm@Microsoft.com](mailto:appsourcecrm@microsoft.com) | Поддержка публикации приложений Dynamics |
 
 ## <a name="marketing-resources"></a>Маркетинговые ресурсы  

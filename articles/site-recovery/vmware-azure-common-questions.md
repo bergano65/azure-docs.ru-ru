@@ -8,12 +8,12 @@ services: site-recovery
 ms.date: 12/31/2018
 ms.topic: conceptual
 ms.author: rayne
-ms.openlocfilehash: 920ae8ff09cb8e936a1ba70b2c862bd9bc076046
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: e229fcc2c9eb6b8e1b49293dfd741a2f96f62871
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53974698"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54077391"
 ---
 # <a name="common-questions---vmware-to-azure-replication"></a>Часто задаваемые вопросы о репликации из VMware в Azure
 
@@ -109,6 +109,12 @@ Site Recovery реплицирует данные из локальной сре
 
 Для репликации VMware в Azure можно изменить размер диска. Если вы хотите добавить новые диски, вам необходимо добавить диск и повторно включить защиту для виртуальной машины.
 
+### <a name="can-i-migrate-on-prem-machines-to-a-new-vcenter-without-impacting-ongoing-replication"></a>Можно ли перенести локальные компьютеры на новый сервер vCenter без последствий для выполняющейся репликации?
+Нет, изменение сервера vCenter или миграция повлияет на текущую репликацию. Необходимо настроить для Azure Site Recovery (ASR) новый сервер vCenter и включить репликацию для виртуальных машин.
+
+### <a name="can-i-replicate-to-cachetarget-storage-account-which-has-a-vnet-with-azure-storage-firewalls-configured-on-it"></a>Можно ли реплицировать данные в учетную запись хранения кэша или целевую учетную запись хранения, в которой настроена виртуальная сеть (с использованием брандмауэров службы хранилища Azure)?
+Нет, Azure Site Recovery не поддерживает репликацию в хранилище в виртуальной сети.
+
 ## <a name="configuration-server"></a>Сервер конфигурации
 
 ### <a name="what-does-the-configuration-server-do"></a>Что делает сервер конфигурации?
@@ -130,7 +136,7 @@ Site Recovery реплицирует данные из локальной сре
 Мы рекомендуем использовать последнюю версию шаблона OVF для [создания виртуальной машины сервера конфигурации.](vmware-azure-deploy-configuration-server.md) Если по какой-то причине вы не можете этого сделать, например, у вас нет доступа к серверу VMware, можно загрузить [файл единой установки](physical-azure-set-up-source.md) с портала и запустить его на виртуальной машине.
 
 ### <a name="can-a-configuration-server-replicate-to-more-than-one-region"></a>Может ли сервер конфигурации выполнять репликацию больше, чем в один регион?
- Нет. Чтобы сделать это, необходимо настроить сервер конфигурации в каждом регионе.
+№ Чтобы сделать это, необходимо настроить сервер конфигурации в каждом регионе.
 
 ### <a name="can-i-host-a-configuration-server-in-azure"></a>Можно ли разместить сервер конфигурации в Azure?
 Это возможно, однако на виртуальной машине Azure, где запущен сервер конфигурации, необходимо настроить обмен данными с локальными инфраструктурой и виртуальными машинами VMware. Это может вызвать задержки и повлиять на текущую репликацию.
@@ -154,7 +160,7 @@ Site Recovery реплицирует данные из локальной сре
 Нет, вы должны настроить новый сервер конфигурации, чтобы избежать проблем с регистрацией.
 
 ### <a name="can-i-change-the-vault-registered-in-the-configuration-server"></a>Можно ли изменить хранилище, зарегистрированное на сервере конфигурации?
- Нет. После регистрации хранилища на сервере конфигурации его нельзя изменить. Действия по повторной регистрации см. в [этой статье](vmware-azure-manage-configuration-server.md#register-a-configuration-server-with-a-different-vault).
+№ После регистрации хранилища на сервере конфигурации его нельзя изменить. Действия по повторной регистрации см. в [этой статье](vmware-azure-manage-configuration-server.md#register-a-configuration-server-with-a-different-vault).
 
 ### <a name="can-i-use-the-same-configuration-server-for-disaster-recovery-of-both-vmware-vms-and-physical-servers"></a>Можно ли использовать тот же сервер конфигурации для аварийного восстановления виртуальных машин и физических серверов VMware
 Да, но обратите внимание, что для физического компьютера можно выполнить восстановление размещения только на виртуальную машину VMware.
@@ -225,9 +231,10 @@ Site Recovery имеет сертификаты ISO 27001:2013, 27018, HIPAA, DP
 Да, если отработка отказа выполнена в Azure, можно восстановить размещение в другом расположении, если изначальное расположение недоступно. [Узнайте больше](concepts-types-of-failback.md#alternate-location-recovery-alr).
 
 ### <a name="why-do-i-need-a-vpn-or-expressroute-to-fail-back"></a>Почему для восстановления размещения требуется VPN или ExpressRoute?
-
 При восстановлении размещения из Azure данные из Azure копируются обратно на локальную виртуальную машину и требуется закрытый доступ.
 
+### <a name="can-i-resize-the-azure-vm-after-failover"></a>Можно ли изменить размер виртуальной машины Azure после отработки отказа?
+Нет, изменить размер целевой виртуальной машины после отработки отказа невозможно.
 
 
 ## <a name="automation-and-scripting"></a>Автоматизация и использование скриптов

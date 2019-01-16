@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/25/2018
 ms.author: ergreenl
-ms.openlocfilehash: 1df9b07d5a0a9e5018fc024038e65723c606ef71
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
+ms.openlocfilehash: ae51151bd20d2c715d868e916f7bc633040efa40
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52442987"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54121536"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-your-managed-domain"></a>Настройка синхронизации определенных учетных записей из Azure AD с управляемым доменом
 В этой статье показано, как настроить синхронизацию учетных записей только определенных пользователей из каталога Azure AD с управляемым доменом доменных служб Azure AD.
@@ -58,12 +58,12 @@ ms.locfileid: "52442987"
 Чтобы настроить синхронизацию определенных учетных записей на основе группы с управляемым доменом, сделайте следующее:
 
 1. Выполните следующие задачи:
-  * [Задача 1. Установка необходимых модулей PowerShell](active-directory-ds-enable-using-powershell.md#task-1-install-the-required-powershell-modules).
-  * [Задача 2. Создание обязательного субъекта-службы в каталоге Azure AD](active-directory-ds-enable-using-powershell.md#task-2-create-the-required-service-principal-in-your-azure-ad-directory).
-  * [Задача 3. Создание и настройка группы "Администраторы контроллера домена AAD"](active-directory-ds-enable-using-powershell.md#task-3-create-and-configure-the-aad-dc-administrators-group).
-  * [Задача 4. Регистрация поставщика ресурсов доменных служб Azure AD](active-directory-ds-enable-using-powershell.md#task-4-register-the-azure-ad-domain-services-resource-provider).
-  * [Задача 5. Создание группы ресурсов](active-directory-ds-enable-using-powershell.md#task-5-create-a-resource-group).
-  * [Задача 6. Создание и настройка виртуальной сети](active-directory-ds-enable-using-powershell.md#task-6-create-and-configure-the-virtual-network).
+  * [Задача 1. Установка необходимых модулей PowerShell](active-directory-ds-enable-using-powershell.md#task-1-install-the-required-powershell-modules).
+  * [Задача 2. Создание обязательного субъекта-службы в каталоге Azure AD](active-directory-ds-enable-using-powershell.md#task-2-create-the-required-service-principal-in-your-azure-ad-directory).
+  * [Задача 3. Создание и настройка группы "Администраторы контроллера домена AAD"](active-directory-ds-enable-using-powershell.md#task-3-create-and-configure-the-aad-dc-administrators-group).
+  * [Задача 4. Регистрация поставщика ресурсов доменных служб Azure AD](active-directory-ds-enable-using-powershell.md#task-4-register-the-azure-ad-domain-services-resource-provider).
+  * [Задача 5. Создание группы ресурсов](active-directory-ds-enable-using-powershell.md#task-5-create-a-resource-group).
+  * [Задача 6. Создание и настройка виртуальной сети](active-directory-ds-enable-using-powershell.md#task-6-create-and-configure-the-virtual-network).
 
 2. Выберите группы, которые необходимо синхронизировать, и укажите отображаемое имя групп, которые необходимо синхронизировать с управляемым доменом.
 
@@ -79,7 +79,7 @@ ms.locfileid: "52442987"
   > Необходимо добавить группу "Администраторы контроллера домена AAD" в список групп, для которых настроена синхронизация определенных учетных записей. Если эта группа не будет добавлена, управляемый домен станет непригодным для использования.
   >
 
-4. Теперь создайте управляемый домен и включите синхронизацию определенных учетных записей на основе группы для управляемого домена. Добавьте свойство ```"filteredSync" = "Enabled"``` в параметр ```Properties```. Ниже приведен фрагмент скрипта, скопированный из раздела [Задача 7. Подготовка управляемого домена доменных служб Azure AD](active-directory-ds-enable-using-powershell.md#task-7-provision-the-azure-ad-domain-services-managed-domain).
+4. Теперь создайте управляемый домен и включите синхронизацию определенных учетных записей на основе группы для управляемого домена. Добавьте свойство ```"filteredSync" = "Enabled"``` в параметр ```Properties```. Например, см. следующий фрагмент сценария, скопированный из раздела [Задача 7. Подготовка управляемого домена доменных служб Azure AD](active-directory-ds-enable-using-powershell.md#task-7-provision-the-azure-ad-domain-services-managed-domain).
 
   ```powershell
   $AzureSubscriptionId = "YOUR_AZURE_SUBSCRIPTION_ID"
@@ -173,7 +173,7 @@ foreach ($id in $newGroupIds)
     }
     catch
     {
-        Write-Error "Exception occured assigning Object-ID: $id. Exception: $($_.Exception)."
+        Write-Error "Exception occurred assigning Object-ID: $id. Exception: $($_.Exception)."
     }
 }
 

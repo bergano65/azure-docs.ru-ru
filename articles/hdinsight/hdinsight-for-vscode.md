@@ -10,12 +10,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 10/27/2017
-ms.openlocfilehash: 23cbdb4d72a6b88563d9d2c2bd0e4e3c8223377f
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: c86fd2affa08999ae574f55315c6a0b32fa58fca
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53723677"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54076796"
 ---
 # <a name="use-azure-hdinsight-tools-for-visual-studio-code"></a>Использование средств Azure HDInsight для Visual Studio Code
 
@@ -127,7 +127,7 @@ ms.locfileid: "53723677"
 
 1. Откройте палитру команд, нажав кнопку **CTRL+SHIFT+P**, и введите **HDInsight: Связывание кластера**.
 2. Выберите **Generic Livy Endpoint** (Общая конечная точка Livy).
-3. Введите универсальную конечную точку Livy, например http://10.172.41.42:18080.
+3. Введите универсальную конечную точку Livy, например http\://10.172.41.42:18080.
 4. Если для универсальной конечной точки Livy требуется авторизация, выберите **Basic** (Базовая). Если нет, выберите **None** (Нет).
 5. Введите имя пользователя, если на шаге 4 вы выбрали **Basic** (Базовая).
 6. Введите пароль, если на шаге 4 вы выбрали **Basic** (Базовая).

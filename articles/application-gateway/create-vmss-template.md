@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/31/2017
 ms.author: victorh
-ms.openlocfilehash: d6180156e1a8f3fa053c7fbb247e38831f86e76a
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: f7050514d5f0de0cade09c6be672d7dfd3568da3
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52998405"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54037418"
 ---
 # <a name="create-an-application-gateway-by-using-the-azure-resource-manager-template"></a>Создание шлюза приложений с помощью шаблона диспетчера ресурсов Azure
 
@@ -68,7 +68,7 @@ ms.locfileid: "52998405"
 
    * **type**. Тип ресурса, созданного на основе шаблона. В этом случае используется тип `Microsoft.Network/applicationGateways`, представляющий шлюз приложений.
    * **name**. Имя ресурса. Обратите внимание на применение `[parameters('applicationGatewayName')]`. Эта строка кода означает, что имя предоставляется пользователем или извлекается из файла параметров при развертывании.
-   * **properties**. Список свойств для ресурса. Во время создания шлюза приложений этот шаблон использует виртуальную сеть и общедоступный IP-адрес.
+   * **properties**. Список свойств для ресурса. Во время создания шлюза приложений этот шаблон использует виртуальную сеть и общедоступный IP-адрес. Сведения о синтаксисе JSON и свойствах шлюза приложений в шаблоне см. в справочнике по шаблонам [Microsoft.Network/applicationGateways](/azure/templates/microsoft.network/applicationgateways).
 
 1. Вернитесь к [https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-waf/](https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-waf).
 1. Щелкните **azuredeploy-parameters.json** и нажмите кнопку **RAW**.
@@ -118,7 +118,7 @@ ms.locfileid: "52998405"
 
 ## <a name="deploy-the-azure-resource-manager-template-by-using-powershell"></a>Развертывание шаблона диспетчера ресурсов Azure с помощью PowerShell
 
-Если вы ранее не использовали Azure PowerShell, ознакомьтесь со статьей [Установка и настройка Azure PowerShell](/powershell/azure/overview). Следуйте инструкциям в статье, чтобы войти в Azure и выбрать подписку.
+Если вы ранее не использовали Azure PowerShell, ознакомьтесь со статьей об [установке и настройке этой среды](/powershell/azure/overview). Следуйте инструкциям в статье, чтобы войти в Azure и выбрать подписку.
 
 1. Войдите в PowerShell.
 
@@ -226,9 +226,9 @@ az group delete --name appgatewayRG
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Если вы хотите настроить разгрузку SSL, см. [Руководство. Создание шлюза приложений с завершением SSL-запросов с помощью Azure CLI](tutorial-ssl-cli.md).
+Если нужно настроить разгрузку SSL, см. статью [Настройка шлюза приложений для разгрузки SSL с помощью классической модели развертывания](tutorial-ssl-cli.md).
 
-Указания по настройке шлюза приложений для использования с внутренним балансировщиком нагрузки см. в статье [Создание шлюза приложений с внутренней подсистемой балансировки нагрузки (ILB)](redirect-internal-site-cli.md).
+Указания по настройке шлюза приложений для использования с внутренним балансировщиком нагрузки см. в статье [Создание шлюза приложений с помощью шаблона диспетчера ресурсов Azure](redirect-internal-site-cli.md).
 
 Дополнительные сведения о параметрах балансировки нагрузки в целом см. в статьях:
 

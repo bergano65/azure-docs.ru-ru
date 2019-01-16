@@ -1,5 +1,5 @@
 ---
-title: Подключение Raspberry Pi к приложению Azure IoT Central (C#) | Документация Майкрософт
+title: Подключение Raspberry Pi к приложению Azure IoT Central (C#) | Документация Майкрософт
 description: Вы узнаете, как разработчик устройства может подключать устройство Raspberry Pi к приложению Azure IoT Central, используя язык C#.
 author: viv-liu
 ms.author: viviali
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: 489a644bd2d17e2be3232ec522b9ed7e37d246ad
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: f0232c8d2627cd600f4f05b5b501db85fa7d2ec4
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50956729"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54051396"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-c"></a>Подключение Raspberry Pi к приложению Azure IoT Central (C#)
 
@@ -26,7 +26,7 @@ ms.locfileid: "50956729"
 Чтобы выполнить действия, описанные в этой статье, вам потребуются следующие компоненты:
 
 * [.NET Core 2](https://www.microsoft.com/net) на компьютере, на котором ведется разработка. Также необходимо наличие подходящего редактора кода, например [Visual Studio Code](https://code.visualstudio.com/).
-* Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
+* Приложение Azure IoT Central, созданное на основе шаблона приложения **Sample Devkits** (Образец Devkits). Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
 * Устройство Raspberry Pi с операционной системой Raspbian.
 
 
@@ -45,7 +45,7 @@ ms.locfileid: "50956729"
     - Напряжение
     - Текущее значение
     - Скорость вращения вентилятора
-    - ИК-переключатель
+    - ИК-переключатель.
 - properties
     - Свойство серийного номера устройства
     - Свойство расположения облака

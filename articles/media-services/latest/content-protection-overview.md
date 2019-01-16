@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/08/2018
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 09c8b63cddde547b0dc42cf1f15a8ac5002d0a3e
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 2a5383952f64edb08717b1a100c74352c9b4246f
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53725144"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54187983"
 ---
 # <a name="content-protection-overview"></a>Обзор системы защиты содержимого
 
@@ -60,7 +60,7 @@ ms.locfileid: "53725144"
 
     Для тестирования зашифрованного содержимого AES или CENC (Widevine и (или) PlayReady) можно использовать [Проигрыватель мультимедиа Azure](https://ampdemo.azureedge.net/azuremediaplayer.html). Обязательно щелкните "Дополнительные параметры" и проверьте параметры шифрования.
 
-    Если необходимо протестировать зашифрованное содержимое FairPlay, используйте [этот тестовый проигрыватель](https://aka.ms/amtest). Проигрыватель поддерживает DRM Widevine, PlayReady и FairPlay, а также шифрование незащищенного ключа AES-128. Необходимо выбрать правильный браузер для тестирования различных систем управления цифровыми правами: Chrome/Opera/Firefox для Widevine, MS Edge и IE 11 для PlayReady, Safari в Mac OS для FairPlay.
+    Если необходимо протестировать зашифрованное содержимое FairPlay, используйте [этот тестовый проигрыватель](https://aka.ms/amtest). Проигрыватель поддерживает DRM Widevine, PlayReady и FairPlay, а также шифрование незащищенного ключа AES-128. Необходимо выбрать правильный браузер для тестирования различных систем управления цифровыми правами: Chrome/Opera/Firefox для Widevine, Microsoft Edge и IE 11 для PlayReady, Safari в macOS для FairPlay.
 
 3. Служба токенов безопасности (STS), которая выдает JSON Web Token (JWT) в качестве маркера доступа для доступа к серверному ресурсу. Как серверный ресурс можно использовать службу доставки лицензий AMS. Служба токенов безопасности должна определять следующие данные.
 

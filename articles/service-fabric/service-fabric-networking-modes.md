@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: twhitney, subramar
-ms.openlocfilehash: 55f388ed15167c5bc7262e194e09e4a92ba50af4
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: a42236af7e301a21a91a3c1294b20167824dfc84
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52866072"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54024796"
 ---
 # <a name="service-fabric-container-networking-modes"></a>Сетевые режимы контейнеров Service Fabric
 
@@ -35,7 +35,7 @@ ms.locfileid: "52866072"
 
 ## <a name="set-up-open-networking-mode"></a>Настройка открытого сетевого режима
 
-1. Подготовьте шаблон Azure Resource Manager. В разделе **fabricSettings** включите службу DNS и поставщика IP-адресов: 
+1. Подготовьте шаблон Azure Resource Manager. В разделе кластерного ресурса **fabricSettings** включите службу DNS и поставщик IP-адресов. 
 
     ```json
     "fabricSettings": [
@@ -77,8 +77,10 @@ ms.locfileid: "52866072"
                 }
             ],
     ```
+    
+2. Настройте раздел сетевого профиля ресурса "Набор масштабирования виртуальной машины". Это разрешает настройку нескольких IP-адресов на каждом узле кластера. Следующий пример устанавливает пять IP-адресов на каждом узле для кластера Service Fabric на Windows или Linux. Это означает, что на каждом узле могут существовать по пять экземпляров службы, прослушивающих один порт. Чтобы пять IP-адресов были доступны из Azure Load Balancer, зарегистрируйте эти пять IP-адресов в пуле адресов серверной части Azure Load Balancer, как показано ниже.  Вам также необходимо добавить переменные в начало шаблона в разделе переменных.
 
-2. Настройте раздел с профилем сети, разрешив настройку нескольких IP-адресов на каждом узле кластера. Следующий пример устанавливает пять IP-адресов на каждом узле для кластера Service Fabric на Windows или Linux. Это означает, что на каждом узле могут существовать по пять экземпляров службы, прослушивающих один порт. Чтобы пять IP-адресов были доступны из Azure Load Balancer, зарегистрируйте эти пять IP-адресов в пуле адресов серверной части Azure Load Balancer, как показано ниже.
+    Добавьте этот раздел в "Переменные".
 
     ```json
     "variables": {
@@ -97,6 +99,11 @@ ms.locfileid: "52866072"
         "lbHttpProbeID0": "[concat(variables('lbID0'),'/probes/FabricHttpGatewayProbe')]",
         "lbNatPoolID0": "[concat(variables('lbID0'),'/inboundNatPools/LoadBalancerBEAddressNatPool')]"
     }
+    ```
+    
+    Добавьте следующий раздел в "Набор масштабирования виртуальной машины".
+
+    ```json   
     "networkProfile": {
                 "networkInterfaceConfigurations": [
                   {

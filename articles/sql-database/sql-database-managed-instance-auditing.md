@@ -9,28 +9,29 @@ ms.devlang: ''
 ms.topic: conceptual
 f1_keywords:
 - mi.azure.sqlaudit.general.f1
-author: ronitr
-ms.author: ronitr
+author: vainolo
+ms.author: vainolo
 ms.reviewer: vanto
 manager: craigg
 ms.date: 09/20/2018
-ms.openlocfilehash: b295f7a2a454e3987e8639814f785b7457dd452b
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 045314980d0051e8b5ef71bdf95023084eff1880
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53973100"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54063883"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Приступая к аудиту управляемого экземпляра Базы данных SQL Azure
 
 Аудит [управляемого экземпляра Базы данных SQL](sql-database-managed-instance.md) отслеживает события базы данных и сохраняет их в журнал аудита в учетной записи хранения Azure. Аудит также дает следующие возможности:
+
 - Аудит может помочь вам соблюсти требования нормативов, проанализировать работу с базой данных и получить представление о расхождениях и аномалиях, которые могут указывать на бизнес-проблемы или предполагаемые нарушения безопасности.
 - Средства аудита способствуют соблюдению стандартов соответствия, но не гарантируют их выполнение. Дополнительную информацию о программах Azure, поддерживающих проверку соблюдения стандартов, см. в [Центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/).
 
-
-## <a name="set-up-auditing-for-your-server"></a>Настройка аудита для сервера
+## <a name="set-up-auditing-for-your-server-to-azure-storage"></a>Настройка аудита для сервера в службе хранилища Azure 
 
 В следующем разделе описывается настройка аудита для управляемого экземпляра.
+
 1. Перейдите на [портал Azure](https://portal.azure.com).
 2. С помощью следующих шагов вы создадите **контейнер** службы хранилища Azure для хранения журналов аудита.
 
@@ -124,15 +125,69 @@ ms.locfileid: "53973100"
     GO
     ```
 
-## <a name="analyze-audit-logs"></a>Анализ журналов аудита
+## <a name="set-up-auditing-for-your-server-to-event-hub-or-log-analytics"></a>Настройка аудита для сервера в концентраторе событий или Log Analytics
+
+Журналы аудита из Управляемого экземпляра могут отправляться даже в концентраторы событий или Log Analytics с помощью Azure Monitor. В этом разделе описывается, как это настроить.
+
+1. Откройте [портал Azure](https://portal.azure.com/) и перейдите к Управляемому экземпляру SQL.
+
+2. Щелкните **Параметры диагностики**.
+
+3. Щелкните **Включить диагностику**. Если диагностика уже включена, будет отображена кнопка *+Add diagnostic setting* (+ Добавить параметр диагностики).
+
+4. Выберите **SQLSecurityAuditEvents** из списка журналов.
+
+5. Выберите место назначения для событий аудита — концентратор событий, Log Analytics или оба варианта. Настройте необходимые параметры (например, рабочую область Log Analytics) для каждой цели.
+
+6. Выберите команду **Сохранить**.
+
+  ![Область навигации][9]
+
+7. Подключитесь к Управляемому экземпляру, используя **SQL Server Management Studio (SSMS)** или любой другой поддерживаемый клиент.
+
+8. Выполните следующую инструкцию T-SQL для создания аудита сервера.
+
+    ```SQL
+    CREATE SERVER AUDIT [<your_audit_name>] TO EXTERNAL_MONITOR;
+    GO
+    ```
+
+9. Создайте спецификацию аудита сервера или спецификацию аудита базы данных, как для обычного сервера SQL Server.
+
+   - [Руководство по созданию спецификации T-SQL для аудита сервера](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-specification-transact-sql)
+   - [Руководство по созданию спецификации T-SQL для аудита базы данных](https://docs.microsoft.com/sql/t-sql/statements/create-database-audit-specification-transact-sql)
+
+10. Включите аудит сервера, созданный на шаге 7.
+ 
+    ```SQL
+    ALTER SERVER AUDIT [<your_audit_name>] WITH (STATE=ON);
+    GO
+    ```
+
+## <a name="consume-audit-logs"></a>Использование журналов аудита
+
+### <a name="consume-logs-stored-in-azure-storage"></a>Использование журналов аудита, которые хранятся в службе хранилища Azure
+
 Просмотреть журналы аудита больших двоичных объектов можно несколькими способами.
 
 - Системная функция `sys.fn_get_audit_file` (T-SQL) возвращает данные журнала аудита в табличном формате. Дополнительные сведения об использовании этой функции см. в статье [sys.fn_get_audit_file (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-functions/sys-fn-get-audit-file-transact-sql).
 
+- Журналы аудита можно просматривать с помощью таких инструментов, как Обозреватель службы хранилища Azure. В службе хранилища Azure журналы аудита сохраняются в виде коллекции файлов больших двоичных объектов в контейнере sqldbauditlogs. Дополнительные сведения об иерархии папки для хранения, соглашении об именовании и формате журнала доступны в документации по формату больших двоичных объектов журнала аудита.
+
 - Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](https://docs.microsoft.com/ azure/sql-database/sql-database-auditing).
 
 > [!IMPORTANT]
-> Метод просмотра записей аудита на портале Azure (на панели "Записи аудита") сейчас не поддерживает управляемые экземпляры.
+> Просмотр записей аудита на портале Azure (на панели "Записи аудита") сейчас не поддерживается для Управляемого экземпляра.
+
+### <a name="consume-logs-stored-in-event-hub"></a>Использование журналов аудита, которые хранятся в концентраторе событий
+
+Чтобы работать с данными журналов аудита из концентратора событий, необходимо настроить потоковую передачу для получения событий и их записи в целевой объект. Дополнительные сведения доступны в документации по Центрам событий Azure.
+
+### <a name="consume-and-analyze-logs-stored-in-log-analytics"></a>Использование и анализ журналов, хранящихся в Log Analytics
+
+Если журналы аудита записываются в Log Analytics, они будут доступны в рабочей области Log Analytics. В ней можно выполнять расширенный поиск в данных аудита. Перейдите в Log Analytics. В разделе *Общие* щелкните *Журналы* и введите простой запрос, например `search "SQLSecurityAuditEvents"`, чтобы просмотреть журналы аудита.  
+
+Log Analytics предоставляет аналитические данные по работе систем в режиме реального времени, используя встроенный поиск и настраиваемые панели мониторинга для быстрого анализа миллионов записей по всем рабочим нагрузкам и серверам. Дополнительную полезную информацию о языке поиска и командах Log Analytics см. в [документации по поиску Log Analytics](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview).
 
 ## <a name="auditing-differences-between-managed-instance-azure-sql-database-and-sql-server"></a>Различия между аудитом управляемых экземпляров, Базы данных SQL Azure и SQL Server
 
@@ -145,22 +200,17 @@ ms.locfileid: "53973100"
 Аудит XEvent в Управляемом экземпляре поддерживает цели хранилища BLOB-объектов Azure. Журналы файловой системы и журналы Windows **не поддерживаются**.
 
 Основные различия в синтаксисе `CREATE AUDIT` для аудита в хранилище BLOB-объектов Azure:
+
 - Новый синтаксис `TO URL` позволяет указать URL-адрес контейнера в хранилище BLOB-объектов Azure, куда будут помещены файлы `.xel`.
+- Новый синтаксис `TO EXTERNAL MONITOR` позволяет использовать концентратор событий и Log Analytics в качестве назначения.
 - Синтаксис `TO FILE` **не поддерживается**, так как управляемый экземпляр не может использовать файловые ресурсы Windows.
 - Параметр завершения работы **не поддерживается**.
 - Значение 0 для `queue_delay` **не поддерживается**.
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Полный список методов использования журналов аудита см. в статье о [начале работы с аудитом базы данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-auditing).
 - Дополнительную информацию о программах Azure, поддерживающих проверку соблюдения стандартов, см. в [Центре управления безопасностью Azure](https://azure.microsoft.com/support/trust-center/compliance/).
-
-
-<!--Anchors-->
-[Set up auditing for your server]: #subheading-1
-[Analyze audit logs]: #subheading-2
-[Auditing differences between Managed Instance, Azure SQL DB and SQL Server]: #subheading-3
 
 <!--Image references-->
 [1]: ./media/sql-managed-instance-auditing/1_blobs_widget.png
@@ -171,3 +221,4 @@ ms.locfileid: "53973100"
 [6]: ./media/sql-managed-instance-auditing/6_storage_settings_menu.png
 [7]: ./media/sql-managed-instance-auditing/7_sas_configure.png
 [8]: ./media/sql-managed-instance-auditing/8_sas_copy.png
+[9]: ./media/sql-managed-instance-auditing/9_mi_configure_diagnostics.png

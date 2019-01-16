@@ -10,12 +10,12 @@ ms.author: shwinne
 author: swinner95
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 898fd7d0416d1e1b27a25cabf524e72a7de44fde
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 902c659d2c51d69f2e9d0ef3a7401326e0e530eb
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53269601"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54013151"
 ---
 # <a name="get-started-with-azure-machine-learning-for-visual-studio-code"></a>Приступая к работе с Azure Machine Learning for Visual Studio Code
 
@@ -80,7 +80,8 @@ ms.locfileid: "53269601"
 
 1. Щелкните значок Azure на панели действий Visual Studio Code. Появится боковая панель "Машинное обучение Azure".
 
-   [![Боковая панель](./media/vscode-tools-for-ai/CreateNewWorkspace.gif)](./media/vscode-tools-for-ai/CreateNewWorkspace.gif#lightbox)
+   [![Установка](./media/vscode-tools-for-ai/CreateaWorkspace.gif)](./media/vscode-tools-for-ai/CreateaWorkspace.gif#lightbox)
+
 
 1. Щелкните правой кнопкой мыши подписку Azure и выберите **Create Workspace** (Создать рабочую область). Появится список. В примере, показанном на анимированном изображении, имя подписки — Free Trial, а рабочее пространство — TeamWorkspace. 
 
@@ -96,11 +97,11 @@ ms.locfileid: "53269601"
  
 1. Нажмите клавишу ВВОД для создания эксперимента. Он отобразится в древовидной структуре под именем рабочей области.
 
-1. Щелкните правой кнопкой мыши имя эксперимента и выберите **Attach Folder to Experiment** (Подключить папку к эксперименту). В этой папке должны находиться локальные скрипты Python. Эта папка будет подключена к эксперименту в облаке. 
+1. В рабочей области щелкните правой кнопкой мыши эксперимент и выберите Set as Active Experiment (Установить в качестве активного эксперимента). **Активным** называется эксперимент, который вы сейчас используете. Папка, открытая в VS Code, будет связана с этим экспериментом в облаке. В этой папке должны находиться локальные скрипты Python.
 
    Теперь все выполняемые операции связаны с экспериментом, благодаря чему все ключевые метрики будут храниться в журнале эксперимента, а обученные модели будут автоматически отправляться в службу "Машинное обучение Azure" и храниться вместе с метриками и журналами эксперимента.
 
-   [![Присоединение папки в VS Code](./media/vscode-tools-for-ai/CreateNewExperimentandFolder.gif)](./media/vscode-tools-for-ai/CreateNewExperimentandFolder.gif#lightbox)
+   [![Присоединение папки в VS Code](./media/vscode-tools-for-ai/CreateAnExperiment.gif)](./media/vscode-tools-for-ai/CreateAnExperiment.gif#lightbox)
 
 ### <a name="use-keyboard-shortcuts"></a>Использование сочетаний клавиш
 

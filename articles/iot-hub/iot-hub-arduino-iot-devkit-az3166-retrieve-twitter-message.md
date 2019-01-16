@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 03/07/2018
 ms.author: liydu
-ms.openlocfilehash: 722f350c4f11648753465e302e84949fc340e281
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.openlocfilehash: f488f8aa991b3d4baae05097af9b6e2f2db481cc
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "42144532"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54158930"
 ---
 # <a name="shake-shake-for-a-tweet----retrieve-a-twitter-message-with-azure-functions"></a>Shake, Shake: получение сообщений из Twitter с помощью решения "Функции Azure"
 
@@ -52,7 +52,7 @@ ms.locfileid: "42144532"
 Разверните раздел **Arduino Examples** (Примеры Arduino) слева, перейдите в папку **Examples for MXCHIP AZ3166 (Примеры для MXCHIP AZ3166) > AzureIoT** и выберите **ShakeShake**. Откроется новое окно VS Code с папкой проекта. Если не видите раздел с MXCHIP AZ3166, проверьте правильность подключения устройства и перезапустите Visual Studio Code.  
 ![Мини-решение: примеры](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/vscode_examples.png)
 
-Пример проекта также можно открыть из палитры команд. Нажмите `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) для вызова палитры команд. Введите **Arduino**, а затем найдите и выберите **Arduino: Examples** (Arduino: примеры).
+Пример проекта также можно открыть из палитры команд. Нажмите `Ctrl+Shift+P` (macOS: `Cmd+Shift+P`) для вызова палитры команд. Введите **Arduino**, затем найдите и выберите **Arduino: Examples** (Arduino: примеры).
 
 ## <a name="provision-azure-services"></a>Подготовка служб Azure
 
@@ -88,7 +88,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 Долее создайте и передайте код устройства.
 
-### <a name="windows"></a>Windows
+### <a name="windows"></a> Windows
 
 1. Нажмите `Ctrl+P`, чтобы запустить задачу `task device-upload`.
 
@@ -157,7 +157,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 Эскиз Arduino отправляет событие в Центр Интернета вещей Azure. Это событие запускает приложение решения "Функции Azure". Приложение решения "Функции Azure" содержит логику для подключения к API Twitter и получения твитов. Полученный твит упаковывается в сообщение C2D (из облака на устройство) и отправляется на вызывающее устройство.
 
-## <a name="optional-use-your-own-twitter-bearer-token"></a>Необязательный шаг: настройка собственного маркера носителя Twitter
+## <a name="optional-use-your-own-twitter-bearer-token"></a>Необязательно: настройка собственного маркера носителя Twitter
 
 Для тестирования в этом примере используется предварительно настроенный тестовый маркер носителя Twitter. Но для каждой учетной записи Twitter существует [ограничение скорости](https://dev.twitter.com/rest/reference/get/search/tweets). Если вы хотите применить собственный маркер, выполните следующие действия:
 
@@ -167,7 +167,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 
 3. С помощью подходящей [служебной программы](https://gearside.com/nebula/utilities/twitter-bearer-token-generator/) создайте из этих двух ключей маркер носителя Twitter.
 
-4. На [портале Azure](https://portal.azure.com/){:target="_blank"} откройте **группу ресурсов** и найдите функцию Azure (тип: служба приложений) для проекта "Shake, Shake". Это имя обязательно содержит строку "shake...".
+4. На [портале Azure](https://portal.azure.com/){:target="_blank"} откройте **Группа ресурсов** и найдите функцию Azure (Тип: Служба приложений) для проекта "Shake, Shake". Это имя обязательно содержит строку "shake...".
 
    ![azure-function](media/iot-hub-arduino-iot-devkit-az3166-retrieve-twitter-message/azure-function.png)
 
@@ -202,7 +202,7 @@ static const char* iot_event = "{\"topic\":\"iot\"}";
 Если вы столкнулись с другими проблемами, изучите [часто задаваемые вопросы по IoT DevKit](https://microsoft.github.io/azure-iot-developer-kit/docs/faq/) или свяжитесь с нами по любому из доступных каналов:
 
 * [Gitter.im](http://gitter.im/Microsoft/azure-iot-developer-kit)
-* [Stackoverflow](https://stackoverflow.com/questions/tagged/iot-devkit)
+* [Stack Overflow](https://stackoverflow.com/questions/tagged/iot-devkit)
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -9,12 +9,12 @@ ms.date: 12/12/2018
 ms.topic: troubleshooting
 ms.service: service-fabric-mesh
 manager: jeanpaul.connock
-ms.openlocfilehash: 2f9800deedb2e8d55362920fed2493a42290e764
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: 8d6dcdd4de8fb56935d2f66bfff045b2115d4004
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53555852"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54063579"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
 
@@ -93,9 +93,9 @@ ms.locfileid: "53555852"
 
 ## <a name="developer-experience-issues"></a>Проблемы, с которыми может столкнуться разработчик
 
-### <a name="dns-resolution-from-an-outbound-container-doesnt-work"></a>Разрешение DNS из исходящего контейнера не работает
+### <a name="dns-resolution-from-a-container-doesnt-work"></a>Разрешение DNS из контейнера не работает
 
-Обмен данными между службами может прерваться при определенных обстоятельствах. Эта проблема рассматривается. Чтобы устранить эту проблему, сделайте следующее.
+Исходящие запросы DNS из контейнера в службу DNS Service Fabric могут завершиться ошибкой при определенных обстоятельствах. Эта проблема рассматривается. Чтобы устранить эту проблему, сделайте следующее.
 
 - Используйте обновление Windows Fall Creators (версии 1709) или выше как базовый образ контейнера.
 - Если само имя службы не работает, попробуйте полное имя: ServiceName.ApplicationName.

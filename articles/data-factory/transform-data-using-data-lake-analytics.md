@@ -9,19 +9,18 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/01/2018
 ms.author: abnarain
-ms.openlocfilehash: cbe4d3931a5e7b279218a1f56a3842efbc238780
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: 1874473b3ad091ce1da0a48367548cd4432737a2
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44053573"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54016500"
 ---
 # <a name="transform-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics 
-> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
+> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-usql-activity.md)
 > * [Текущая версия](transform-data-using-data-lake-analytics.md)
 
@@ -60,7 +59,7 @@ ms.locfileid: "44053573"
 | **servicePrincipalKey** | Укажите ключ приложения.           | Yes      |
 | **tenant**              | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Эти сведения можно получить, наведя указатель мыши на правый верхний угол страницы портала Azure. | Yes      |
 
-**Пример. Проверка подлинности на основе субъекта-службы**
+**Пример. Проверка подлинности субъекта-службы**
 ```json
 {
     "name": "AzureDataLakeAnalyticsLinkedService",
@@ -130,7 +129,7 @@ ms.locfileid: "44053573"
 | priority            | Определяет, какие задания из всех в очереди должны запускаться в первую очередь. Чем меньше число, тем выше приоритет. | Нет        |
 | parameters          | Параметры для передачи в скрипт U-SQL.    | Нет        |
 | runtimeVersion      | Версия среды выполнения обработчика U-SQL, которую нужно использовать. | Нет        |
-| compilationMode     | <p>Режим компиляции U-SQL. Может иметь одно из следующих значений: **Semantic**: выполнение только семантических проверок и необходимых проверок работоспособности. **Full**: выполнение полной компиляции, включая проверку синтаксиса, оптимизацию, создание кода и т. д. **SingleBox**: выполнение полной компиляции с параметром TargetType для SingleBox. Если не указать значение для этого свойства, сервер определит оптимальный режим компиляции. | Нет  |
+| compilationMode     | <p>Режим компиляции U-SQL. Может иметь одно из следующих значений. **Semantic**: выполнение только семантических проверок и необходимых проверок работоспособности. **Full**: выполнение полной компиляции, включая проверку синтаксиса, оптимизацию, создание кода и т. д. **SingleBox**: выполнение полной компиляции с параметром TargetType, заданным для SingleBox. Если не указать значение для этого свойства, сервер определит оптимальный режим компиляции. | Нет  |
 
 Определение скрипта, отправляемого фабрикой данных, см. в разделе [Пример скрипта U-SQL](#sample-u-sql-script). 
 

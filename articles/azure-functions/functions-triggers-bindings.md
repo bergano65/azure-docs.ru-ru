@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 09/24/2018
 ms.author: cshoe
-ms.openlocfilehash: ba2441044d63e63b969054e84e163352d2b376e8
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: a44b348e0c41e96c575555f2b5c275e196284c5b
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993827"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54074549"
 ---
 # <a name="azure-functions-triggers-and-bindings-concepts"></a>Основные понятия триггеров и привязок в Функциях Azure
 
@@ -674,6 +674,10 @@ public class BlobName
 ## <a name="functionjson-file-schema"></a>Схема файла function.json
 
 Схему файла *function.json* можно найти здесь: [http://json.schemastore.org/function](http://json.schemastore.org/function).
+
+## <a name="testing-bindings"></a>Тестирование привязок
+
+При разработке функции в локальной среде привязки можно проверить с помощью Visual Studio 2017 или Visual Studio Code. Дополнительные сведения см. в статье [Методика тестирования кода с помощью Функций Azure](functions-test-a-function.md). Вы также можете вызвать не использующие HTTP привязки с помощью REST API. Дополнительные сведения см. в статье [Запуск функции, не активируемой HTTP-запросом, вручную](functions-manually-run-non-http.md).
 
 ## <a name="handling-binding-errors"></a>Обработка ошибок привязки
 

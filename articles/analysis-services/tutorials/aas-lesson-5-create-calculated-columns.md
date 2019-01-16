@@ -1,19 +1,19 @@
 ---
-title: 'Учебник по службам Azure Analysis Services: занятие 5 "Создание вычисляемых столбцов" | Документы Майкрософт'
+title: Руководство по службам Azure Analysis Services. Урок 5. Создание вычисляемых столбцов | Документация Майкрософт
 description: Описывает создание вычисляемых столбцов в учебном проекте служб Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 2d92edd0bda15ecd57a5a29375adae3a51c661c2
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: bb0a17d4b7e11dd83439d943abf0bdd34ef915ae
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49428136"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54187456"
 ---
 # <a name="create-calculated-columns"></a>Создание вычисляемых столбцов
 
@@ -23,10 +23,10 @@ ms.locfileid: "49428136"
 
 Кроме того, на этом занятии вы впервые воспользуетесь выражениями анализа данных (DAX). DAX — это специальный язык, позволяющий создавать сложные настраиваемые выражения формул для табличных моделей. В этом руководстве вы будете использовать DAX для создания вычисляемых столбцов, мер и фильтров ролей. Дополнительные сведения см. в разделе [DAX в табличных моделях](https://docs.microsoft.com/sql/analysis-services/tabular-models/understanding-dax-in-tabular-models-ssas-tabular). 
   
-Предполагаемое время выполнения этого занятия: **15 минут**  
+Предполагаемое время выполнения этого урока: **15 минут**.  
   
 ## <a name="prerequisites"></a>Предварительные требования  
-Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, нужно завершить предыдущее занятие: [Занятие 4. Создание связей](../tutorials/aas-lesson-4-create-relationships.md). 
+Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом уроке, вам нужно завершить предыдущий урок: [Урок 4. Создание связей](../tutorials/aas-lesson-4-create-relationships.md). 
   
 ## <a name="create-calculated-columns"></a>Создание вычисляемых столбцов  
   
@@ -125,7 +125,7 @@ ms.locfileid: "49428136"
     Вычисляемый столбец Margin используется при анализе рентабельности для каждой продажи.  
   
 ## <a name="whats-next"></a>Что дальше?
-[Занятие 6. Создание мер](../tutorials/aas-lesson-6-create-measures.md).
+[Урок 6. Создание мер](../tutorials/aas-lesson-6-create-measures.md).
   
   
   

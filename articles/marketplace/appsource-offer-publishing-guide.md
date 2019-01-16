@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 07/09/2018
 ms.author: ellacroi
-ms.openlocfilehash: 236859cca623643b9bc7a4484f6ce4e6aa11aad6
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 943f3a4739e5dffb2a7d218bf3a82a4e882538a6
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45579791"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54075674"
 ---
 # <a name="office-365-dynamics-365-power-apps-and-power-bi-offer-publishing-guide"></a>Руководство по публикации предложения, касающегося приложений Office 365, Dynamics 365, Power Apps и Power BI
 
@@ -35,7 +35,7 @@ ms.locfileid: "45579791"
 
 ### <a name="power-apps"></a>Power Apps
 
-Узнайте, как клиенты могут [протестировать приложение в AppSource.](https://powerapps.microsoft.com/en-us/blog/appsource-test-drive/)
+Узнайте, как клиенты могут [протестировать приложение в AppSource.](https://powerapps.microsoft.com/blog/appsource-test-drive/)
 
 ### <a name="power-bi"></a>Power BI
 
@@ -46,10 +46,14 @@ ms.locfileid: "45579791"
 #### <a name="dynamics-365-for-finance-and-operations"></a>Dynamics 365 for Finance and Operations.
 При создании для выпуска Enterprise ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/dynamics365/unified-operations/dev-itpro/lcs-solutions/lcs-solutions-app-source)
 
-### <a name="dynamics-365-for-customer-engagement"></a>Dynamics 365 для взаимодействия с клиентами
+Сведения о публикации предложения на портале Cloud Partner см. в статье [Предложение Dynamics 365 for Finance and Operations](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-dynamics-365-operations-offer).
+
+### <a name="dynamics-365-for-customer-engagement"></a>Dynamics 365 for Customer Engagement
 Ознакомьтесь с [процессом публикации и рекомендациями](https://docs.microsoft.com/dynamics365/customer-engagement/developer/publish-app-appsource).
 
-## <a name="next-steps"></a>Дальнейшие действия
+Сведения о публикации предложения на портале Cloud Partner см. в статье [Предложение Dynamics 365 for Customer Engagements](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cpp-customer-engagement-offer).
+
+## <a name="next-steps"></a>Дополнительная информация
 
 Если это еще не сделано, 
 
@@ -57,4 +61,4 @@ ms.locfileid: "45579791"
 
 Если вы зарегистрированы и работаете на портале Cloud Partner, 
 
-- [войдите на портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать или завершить предложение.
+- [войдите на Портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать или завершить предложение.

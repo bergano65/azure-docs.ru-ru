@@ -1,21 +1,19 @@
 ---
 title: Azure Cosmos DB — API, пакет SDK и ресурсы для SQL .NET Core
 description: Сведения об API-интерфейсе и пакете SDK для SQL .NET Core, в том числе даты выхода, даты прекращения использования и внесенные изменения по каждой версии пакета SDK .NET Core для Azure Cosmos DB.
-services: cosmos-db
-author: rnagpal
+author: SnehaGunda
 ms.service: cosmos-db
-ms.component: cosmosdb-sql
+ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
-ms.author: rnagpal
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d947974575cf996ed880f2c1b5f8f7700b81ffd3
-ms.sourcegitcommit: b254db346732b64678419db428fd9eb200f3c3c5
+ms.author: sngun
+ms.openlocfilehash: 5eb04f30fd6766b8df65998b8a4d53797b8341ba
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53413512"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54053557"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для .NET Core для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -57,6 +55,14 @@ ms.locfileid: "53413512"
 * Новая объектная модель и класс верхнего уровня CosmosClient с методами, разделенными между соответствующими классами (CosmosDatabases, CosmosContainers и CosmosItems).
 * Поддержка потоков.
 * Обновлен класс сервера CosmosResponseMessage. Теперь он возвращает код состояния и выдает исключение только в случае отсутствия ответа.
+
+### <a name="a-name221221"></a><a name="2.2.1"/>2.2.1
+
+* Улучшения в логике повторных попыток во время отработки отказа для выполнения вызовов StoredProcedure.
+
+* Создана отдельная база данных DocumentClientEventSource. 
+
+* Исправлена ошибка со временем ожидания GatewayAddressCache, при которой не учитывалось ConnectionPolicy RequestTimeout.
 
 ### <a name="a-name220220"></a><a name="2.2.0"/>2.2.0
 
@@ -227,6 +233,7 @@ ms.locfileid: "53413512"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.2.1](#2.2.1) |24 декабря 2018 г. |--- |
 | [2.2.0](#2.2.0) |7 декабря 2018 г. |--- |
 | [2.1.3](#2.1.3) |15 октября 2018 г. |--- |
 | [2.1.2](#2.1.2) |04 октября 2018 г. |--- |

@@ -1,22 +1,23 @@
 ---
-title: Общие сведения о группах безопасности в Azure | Документация Майкрософт
+title: Общие сведения о группах безопасности в Azure
+titlesuffix: Azure Virtual Network
 description: Узнайте о группах безопасности приложений и сети. Группы безопасности помогают отфильтровывать сетевой трафик между ресурсами Azure.
 services: virtual-network
 documentationcenter: na
 author: jimdial
 ms.service: virtual-network
 ms.devlang: NA
-ms.topic: get-started-article
+ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/26/2018
 ms.author: jdial
-ms.openlocfilehash: ad5205bcf063cd3375e68ef609c71ced2f551b61
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 52cac856fbec79842cc4661f38342cb972ea40df
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53311768"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159066"
 ---
 # <a name="security-groups"></a>Группы безопасности
 <a name="network-security-groups"></a>
@@ -70,15 +71,18 @@ ms.locfileid: "53311768"
 * **MicrosoftContainerRegistry** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы "Реестр контейнеров Майкрософт". Значение *MicrosoftContainerRegistry* отвечает за разрешение или запрет трафика в Реестр контейнеров Майкрософт. Если вы хотите разрешить доступ к Реестру контейнеров Майкрософт только в определенном [регионе](https://azure.microsoft.com/regions), укажите этот регион в формате "MicrosoftContainerRegistry.[имя региона]". 
 * **AzureContainerRegistry** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы "Реестр контейнеров Azure". Значение *AzureContainerRegistry* отвечает за разрешение или запрет трафика в Реестр контейнеров Azure. Если вы хотите разрешить доступ к Реестру контейнеров Azure только в определенном [регионе](https://azure.microsoft.com/regions), укажите этот регион в формате "AzureContainerRegistry.[имя региона]". 
 * **AppService** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для Службы приложений Azure. Значение *AppService* отвечает за разрешение или запрет трафика в Службу приложений. Если вы хотите разрешить доступ к Службе приложений только в определенном [регионе](https://azure.microsoft.com/regions), укажите этот регион в формате "AppService.[имя региона]". 
-* **AppServiceManagement** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы "Управление Службой приложений Azure". Значение *AppServiceManagement* отвечает за разрешение или запрет трафика в службу "Управление Службой приложений". Если вы хотите разрешить доступ к службе "Управление Службой приложений" только в определенном [регионе](https://azure.microsoft.com/regions), укажите этот регион в формате "AppServiceManagement.[имя региона]". 
-* **ApiManagement** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы "Управление API Azure". Значение *ApiManagement* отвечает за разрешение или запрет трафика в службу управления API. Если вы хотите разрешить доступ к службе управления API только в определенном [регионе](https://azure.microsoft.com/regions), укажите этот регион в формате "ApiManagement.[имя региона]". 
+* **AppServiceManagement** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы "Управление Службой приложений Azure". Значение *AppServiceManagement* отвечает за разрешение или запрет трафика в службу "Управление Службой приложений". 
+* **ApiManagement** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы "Управление API Azure". Значение *ApiManagement* отвечает за разрешение или запрет трафика в службу управления API.  
 * **AzureConnectors** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы "Соединители Azure". Значение *AzureConnectors* отвечает за разрешение или запрет трафика в Соединители Azure. Если вы хотите разрешить доступ к Соединителям Azure только в определенном [регионе](https://azure.microsoft.com/regions), укажите этот регион в формате "AzureConnectors.[имя региона]". 
-* **GatewayManager** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы "Диспетчер шлюзов Azure". Значение *GatewayManager* отвечает за разрешение или запрет трафика в Диспетчер шлюзов. Если вы хотите разрешить доступ к Диспетчеру шлюзов только в определенном [регионе](https://azure.microsoft.com/regions), укажите этот регион в формате "GatewayManager.[имя региона]". 
+* **GatewayManager** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы "Диспетчер шлюзов Azure". Значение *GatewayManager* отвечает за разрешение или запрет трафика в Диспетчер шлюзов.  
 * **AzureDataLake** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы Azure Data Lake. Значение *AzureDataLake* отвечает за разрешение или запрет трафика в Azure Data Lake. 
 * **AzureActiveDirectory** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы Azure Active Directory. Значение *AzureActiveDirectory* отвечает за разрешение или запрет трафика в Azure Active Directory.  
+* **AzureMonitor** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы AzureMonitor. Значение *AzureMonitor* отвечает за разрешение или запрет трафика в AzureMonitor. 
+* **ServiceFabric** (только для развертываний с помощью Resource Manager). Этот тег определяет префиксы адресов для службы ServiceFabric. Значение *ServiceFabric* отвечает за разрешение или запрет трафика в службе ServiceFabric. 
+* **AzureMachineLearning** (только для Resource Manager). Этот тег определяет префиксы адресов для службы AzureMachineLearning. Значение *AzureMachineLearning* отвечает за разрешение или запрет трафика в службе AzureMachineLearning. 
 
 > [!NOTE]
-> Теги службы для служб Azure обозначают используемые префиксы адресов из определенного облака. Теги региональных служб не поддерживаются в национальных облаках, их можно использовать только в глобальном формате. Например, *Storage* и *Sql*.
+> Теги службы для служб Azure обозначают используемые префиксы адресов из определенного облака. 
 
 > [!NOTE]
 > Если вы реализуете [конечную точку службы виртуальной сети](virtual-network-service-endpoints-overview.md) для службы, такой как служба хранилища Azure или "База данных SQL Azure", Azure добавляет для нее [маршрут](virtual-networks-udr-overview.md#optional-default-routes) в подсеть виртуальной сети. Префиксы адресов для маршрута — это те же префиксы или диапазоны CIDR, которые заданы в теге соответствующей службы.

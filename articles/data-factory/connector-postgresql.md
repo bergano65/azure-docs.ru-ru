@@ -9,19 +9,18 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/23/2018
 ms.author: jingwang
-ms.openlocfilehash: 1c321d96efc7af387fb30b6ed608eb871cb7de5f
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 43e7425890d8799272aa782ceef3d3b89fd6ce78
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51230501"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54025493"
 ---
 # <a name="copy-data-from-postgresql-by-using-azure-data-factory"></a>Копирование данных из PostgreSQL с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
+> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-onprem-postgresql-connector.md)
 > * [Текущая версия](connector-postgresql.md)
 
@@ -51,7 +50,7 @@ ms.locfileid: "51230501"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **PostgreSql** | Yes |
+| Тип | Свойству type необходимо задать значение **PostgreSql**. | Yes |
 | connectionString | Строка подключения к базе данных Azure для PostgreSQL через интерфейс ODBC. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
 
@@ -117,7 +116,7 @@ ms.locfileid: "51230501"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type для набора данных должно иметь значение **RelationalTable**. | Yes |
+| Тип | Для набора данных необходимо задать значение **RelationalTable**. | Yes |
 | tableName | Имя таблицы в базе данных PostgreSQL. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -147,7 +146,7 @@ ms.locfileid: "51230501"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **RelationalSource**. | Yes |
+| Тип | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Yes |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"query": "SELECT * FROM \"MySchema\".\"MyTable\""`. | Нет (если для набора данных задано свойство tableName) |
 
 > [!NOTE]

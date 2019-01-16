@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 09/24/2018
 ms.author: nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: d044b1ad18df6eee1235e881038bbb9734a999ff
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 99ea7e7db9d0cc80bfd37a256fc1be388feaa530
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52317353"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54043895"
 ---
 # <a name="quickstart-sign-in-users-and-acquire-an-access-token-from-a-javascript-application"></a>Краткое руководство. Выполнение входа пользователей и получение маркера доступа из приложения JavaScript
 
@@ -31,7 +31,18 @@ ms.locfileid: "52317353"
 ![Как работает пример приложения, созданный в этом кратком руководстве](media/quickstart-v2-javascript/javascriptspa-intro.png)
 
 > [!div renderon="docs"]
-> ## <a name="register-your-application-and-download-your-quickstart-app"></a>Регистрация и скачивание приложения, используемого в кратком руководстве
+> ## <a name="register-and-download-your-quickstart-application"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
+> У вас есть два варианта запуска приложения, используемого в этом кратком руководстве:
+> * [Экспресс-способ] [Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода](#option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample)
+> * [Вручную] [Вариант 2. Регистрация и настройка приложения и примера кода вручную](#option-2-register-and-manually-configure-your-application-and-code-sample)
+>
+> ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
+>
+> 1. Откройте [Регистрация приложений (предварительная версия)](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs) на портале Azure.
+> 1. Введите имя своего приложения и щелкните **Зарегистрировать**.
+> 1. Следуйте инструкциям для загрузки и автоматической настройки нового приложения одним щелчком мыши.
+>
+> ### <a name="option-2-register-and-manually-configure-your-application-and-code-sample"></a>Вариант 2. Регистрация и настройка приложения и примера кода вручную
 >
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 >
@@ -55,7 +66,7 @@ ms.locfileid: "52317353"
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-javascript/green-check.png). Ваше приложение настроено с помощью этих атрибутов.
 
-#### <a name="step-2-download-the-project"></a>Шаг 2. Скачивание проекта
+#### <a name="step-2-download-the-project"></a>Шаг 2. Скачивание проекта
 
 Вы можете выбрать один из этих вариантов, подходящий для вашей среды разработки.
 * [Скачайте основные файлы проекта для веб-сервера, например Node.js](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2/archive/quickstart.zip).
@@ -63,7 +74,7 @@ ms.locfileid: "52317353"
 
 Извлеките ZIP-файл в локальную папку (например, **C:\Azure-Samples**).
 
-#### <a name="step-3-configure-your-javascript-app"></a>Шаг 3. Настройка приложения JavaScript
+#### <a name="step-3-configure-your-javascript-app"></a>Шаг 3. Настройка приложения JavaScript
 
 > [!div renderon="docs"]
 > Измените `index.html` и задайте `clientID` и `authority` для `applicationConfig`.
@@ -95,7 +106,7 @@ var applicationConfig = {
 > Сервер настроен на прослушивание порта 30662 в файле *server.js* проекта [Node.js](https://nodejs.org/en/download/) и файле *.csproj* проекта [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
 >
 
-#### <a name="step-4-run-the-project"></a>Шаг 4. Запуск проекта
+#### <a name="step-4-run-the-project"></a>Шаг 4. Запуск проекта
 
 * Если вы используете Node.js:
 

@@ -9,16 +9,15 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 37e7281af87a8cfc57aae95411eb2d4cce9eef65
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: e9fd818990c8a985a77c2e7eeea19bf63c440e4e
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51228068"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54018999"
 ---
 # <a name="copy-data-from-teradata-using-azure-data-factory"></a>Копирование данных из Teradata с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -55,7 +54,7 @@ ms.locfileid: "51228068"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **Teradata** | Yes |
+| Тип | Свойству type необходимо задать значение **Teradata** | Yes |
 | server | Имя сервера Teradata. | Yes |
 | authenticationType | Тип проверки подлинности, используемый для подключения к базе данных Teradata.<br/>Допустимые значения: **Basic** и **Windows**. | Yes |
 | Имя пользователя | Укажите имя пользователя для подключения к базе данных Teradata. | Yes |
@@ -94,7 +93,7 @@ ms.locfileid: "51228068"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type для набора данных должно иметь значение **RelationalTable**. | Yes |
+| Тип | Для набора данных необходимо задать значение **RelationalTable**. | Yes |
 | tableName | Имя таблицы в базе данных Teradata. | Нет (если свойство query указано в источнике действия) |
 
 **Пример.**
@@ -123,7 +122,7 @@ ms.locfileid: "51228068"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **RelationalSource**. | Yes |
+| Тип | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Yes |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**

@@ -9,19 +9,18 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 1ded69225319e447ad210aed267741b2803889ac
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: cdd83c3ff9d34a5e8b7f2c164136ab82f498ffb5
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37048090"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54022977"
 ---
 # <a name="copy-data-from-sap-hana-using-azure-data-factory"></a>Копирование данных из SAP HANA с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
+> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-sap-hana-connector.md)
 > * [Текущая версия](connector-sap-hana.md)
 
@@ -40,7 +39,7 @@ ms.locfileid: "37048090"
 > [!NOTE]
 > Чтобы скопировать данные **в** хранилище данных SAP HANA, используйте универсальный соединитель ODBC. Подробные сведения см. в разделе о [приемнике SAP HANA](connector-odbc.md#sap-hana-sink). Обратите внимание, что связанные службы для соединителя SAP HANA и соединитель ODBC нельзя использовать повторно, так как они имеют разные типы.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы использовать этот соединитель SAP HANA, сделайте следующее:
 
@@ -59,9 +58,9 @@ ms.locfileid: "37048090"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **SapHana** | Yes |
+| Тип | Свойству type необходимо задать значение **SapHana** | Yes |
 | server | Имя сервера, на котором размещен экземпляр SAP HANA. Если ваш сервер использует настроенный порт, укажите `server:port`. | Yes |
-| authenticationType | Тип проверки подлинности, используемый для подключения к базе данных SAP HANA.<br/>Допустимые значения: **Базовый**, **Windows**. | Yes |
+| authenticationType | Тип проверки подлинности, используемый для подключения к базе данных SAP HANA.<br/>Допустимые значения: **Basic** и **Windows**. | Yes |
 | userName | Имя пользователя, имеющего доступ к серверу SAP. | Yes |
 | password | Пароль для пользователя Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Yes |
@@ -122,7 +121,7 @@ ms.locfileid: "37048090"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **RelationalSource**. | Yes |
+| Тип | Свойству type источника действия копирования необходимо задать значение **RelationalSource** | Yes |
 | query | Указывает SQL-запрос для чтения данных из экземпляра SAP HANA. | Yes |
 
 **Пример.**

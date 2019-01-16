@@ -1,6 +1,6 @@
 ---
-title: Журналы IIS в Azure Monitor | Документация Майкрософт
-description: Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor.  В этой статье описано, как настроить сбор журналов IIS и сведения о записях, созданных ими в службе Azure Monitor.
+title: Журналы IIS в службе Log Analytics | Документация Майкрософт
+description: Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Log Analytics.  В этой статье описано, как настроить сбор журналов IIS и сведения о записях, созданных ими в службе Log Analytics.
 services: log-analytics
 documentationcenter: ''
 author: bwren
@@ -13,28 +13,28 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: bwren
-ms.openlocfilehash: cd28eef249ae6b07b9e3f74b80c32a4b53370215
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: cd63c63344f322f7d761a2907f52e97f1009e3b8
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53436745"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54101961"
 ---
-# <a name="collect-iis-logs-in-azure-monitor"></a>Сбор журналов IIS в Azure Monitor
-Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor и сохраняемых как [данные журнала](data-collection.md).
+# <a name="collect-iis-logs-in-log-analytics"></a>Сбор журналов IIS в Log Analytics
+Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Log Analytics и сохраняемых как [данные журнала](data-collection.md).
 
 ![Журналы IIS](media/data-sources-iis-logs/overview.png)
 
 ## <a name="configuring-iis-logs"></a>Настройка журналов IIS
-Служба Azure Monitor собирает записи из файлов журналов, созданных службами IIS, поэтому вам необходимо [настроить IIS для ведения журнала](https://technet.microsoft.com/library/hh831775.aspx).
+Служба Log Analytics собирает записи из файлов журналов, созданных службами IIS, поэтому вам необходимо [настроить IIS для ведения журнала](https://technet.microsoft.com/library/hh831775.aspx).
 
-Служба Azure Monitor поддерживает только те файлы журналов IIS, которые хранятся в формате W3C, и не поддерживает настраиваемые поля или расширенное ведение журналов IIS. Она не собирает журналы в формате NCSA или в собственном формате IIS.
+Служба Log Analytics поддерживает только те файлы журналов IIS, которые хранятся в формате W3C, и не поддерживает настраиваемые поля или расширенное ведение журналов IIS. Она не собирает журналы в формате NCSA или в собственном формате IIS.
 
-Журналы IIS настраиваются в Azure Monitor в меню [Дополнительные параметры](agent-data-sources.md#configuring-data-sources).  Никакие настройки, кроме выбора параметра **Сбор файлов журналов IIS в формате W3C**, не требуются.
+Журналы IIS настраиваются в Log Analytics в меню [Дополнительные параметры](agent-data-sources.md#configuring-data-sources).  Никакие настройки, кроме выбора параметра **Сбор файлов журналов IIS в формате W3C**, не требуются.
 
 
 ## <a name="data-collection"></a>Сбор данных
-Служба Azure Monitor собирает записи журналов IIS от каждого агента каждый раз, когда журнал закрывается и создается новый. Эта частота определяется с помощью параметра **Log File Rollover Schedule** (Расписание переключения на файл продолжения журнала) для сайта IIS. Значение по умолчанию — один раз в день. Например, если для этого параметра задано значение **Ежечасно**, служба Azure Monitor будет собирать данные журнала каждый час.  Если задано значение **Ежедневно**, служба Azure Monitor будет собирать данные журнала каждые 24 часа.
+Служба Log Analytics собирает записи журналов IIS от каждого агента каждый раз, когда журнал закрывается и создается новый. Эта частота определяется с помощью параметра **Log File Rollover Schedule** (Расписание переключения на файл продолжения журнала) для сайта IIS. Значение по умолчанию — один раз в день. Например, если для этого параметра задано значение **Ежечасно**, служба Log Analytics будет собирать данные журнала каждый час.  Если задано значение **Ежедневно**, служба Log Analytics будет собирать данные журнала каждые 24 часа.
 
 
 ## <a name="iis-log-record-properties"></a>Свойства записей в журналах IIS
@@ -76,5 +76,5 @@ ms.locfileid: "53436745"
 | W3CIISLog &#124; summarize sum(csBytes) by Computer &#124; take 500000 |Общее количество байтов, полученных каждым компьютером IIS. |
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Настройте службу Azure Monitor для сбора других [источников данных](agent-data-sources.md) для анализа.
+* Настройте службу Log Analytics для сбора других [источников данных](agent-data-sources.md) для анализа.
 * Узнайте больше о [запросах журнала](../../log-analytics/log-analytics-queries.md), которые можно применять для анализа данных, собираемых из источников данных и решений.

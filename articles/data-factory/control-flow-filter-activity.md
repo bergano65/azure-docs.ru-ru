@@ -9,16 +9,15 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: shlo
-ms.openlocfilehash: b3b26869a84b8519ced19a4c93a6d39d6ed20f9b
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 787c9393e2700bd7ed349b501e70abc4a0687b9c
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37050358"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54021838"
 ---
 # <a name="filter-activity-in-azure-data-factory"></a>Действие Filter в фабрике данных Azure
 Вы можете использовать действие Filter в конвейере для применения выражения фильтра к входному массиву. 
@@ -47,7 +46,7 @@ items | Входной массив, к которому должен приме
 
 ## <a name="example"></a>Пример
 
-В этом примере конвейер имеет два вида действий: **Filter** и **ForEach**. Действие Filter настроено для фильтрации входного массива на наличие элементов со значением больше 3. Затем действие ForEach выполняет итерацию по отфильтрованным значениям и ожидает в течение времени, заданного текущим значением ( в секундах).
+В этом примере конвейер содержит два действия: **Filter** и **ForEach**. Действие Filter настроено для фильтрации входного массива на наличие элементов со значением больше 3. Затем действие ForEach выполняет итерацию по отфильтрованным значениям и ожидает в течение времени, заданного текущим значением ( в секундах).
 
 ```json
 {

@@ -6,21 +6,21 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/28/2018
+ms.date: 01/02/2019
 ms.author: adgera
 ms.custom: seodec18
-ms.openlocfilehash: 604093dcec048b0991bbc9beac3ef998cc47e351
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 36f4caac38f2f4891af6f61b78b55c7eff15eae4
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53974525"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54116744"
 ---
 # <a name="add-blobs-to-objects-in-azure-digital-twins"></a>Добавление больших двоичных объектов к объектам в Azure Digital Twins
 
 Большие двоичные объекты представляют собой неструктурированные представления распространенных типов файлов, например изображения и журналы. Большие двоичные объекты отслеживают, какие данные они представляют с помощью типа MIME (например: image/jpeg) и метаданных (имя, описание, тип и т. д.).
 
-Azure Digital Twins поддерживает присоединение больших двоичных объектов к устройствам, пространствам и пользователям. Большие двоичные объекты могут представлять фотографию профиля пользователя, фото устройства, видео, карты или журналы.
+Azure Digital Twins поддерживает присоединение больших двоичных объектов к устройствам, пространствам и пользователям. Большие двоичные объекты могут представлять фотографию профиля пользователя, фото устройства, видео, карты, индекс встроенного ПО, данные JSON или журналы.
 
 [!INCLUDE [Digital Twins Management API familiarity](../../includes/digital-twins-familiarity.md)]
 
@@ -28,27 +28,11 @@ Azure Digital Twins поддерживает присоединение боль
 
 Вы можете использовать составные запросы для отправки больших двоичных объектов в определенные конечные точки и их соответствующие компоненты.
 
-> [!IMPORTANT]
-> Для составных запросов требуются три компонента:
-> * Заголовок **Content-Type**:
->   * `application/json; charset=utf-8`
->   * `multipart/form-data; boundary="USER_DEFINED_BOUNDARY"`
-> * Объект **Content-Disposition**: `form-data; name="metadata"`.
-> * Содержимое файла для отправки.
->
-> Компоненты **Content-Type** и **Content-Disposition** могут различаться в зависимости от сценария использования.
-
-Составные запросы к API управления Azure Digital Twins состоят из двух частей:
-
-* Метаданные больших двоичных объектов, такие как связанный тип MIME в компонентах **Content-Type** и **Content-Disposition**.
-
-* Содержимое большого двоичного объекта (неструктурированное содержимое файла).  
-
-Ни одна из двух частей не требуется для запросов **PATCH**. Они необходимы для **POST** или операций создания.
+[!INCLUDE [Digital Twins multipart requests](../../includes/digital-twins-multipart.md)]
 
 ### <a name="blob-metadata"></a>Метаданные больших двоичных объектов
 
-В дополнение к **Content-Type** и **Content-Disposition** составные запросы должны также указывать правильный текст JSON. Текст JSON для отправки зависит от типа выполняемой операции HTTP-запроса.
+В дополнение к **Content-Type** и **Content-Disposition** составные запросы больших двоичных объектов Azure Digital Twins должны также указывать правильный текст JSON. Текст JSON для отправки зависит от типа выполняемой операции HTTP-запроса.
 
 Ниже приведены четыре основные схемы JSON:
 
@@ -64,12 +48,15 @@ Azure Digital Twins поддерживает присоединение боль
 
 [!INCLUDE [Digital Twins Management API](../../includes/digital-twins-management-api.md)]
 
-Чтобы выполнить запрос **POST**, который отправляет текстовый файл как большой двоичный объект и связывает его с пространством, используйте следующий код:
+Для отправки текстового файла в виде большого двоичного объекта и связывания его с пространством создайте аутентифицированный запрос HTTP POST:
 
 ```plaintext
-POST YOUR_MANAGEMENT_API_URL/spaces/blobs HTTP/1.1
-Content-Type: multipart/form-data; boundary="USER_DEFINED_BOUNDARY"
+YOUR_MANAGEMENT_API_URL/spaces/blobs
+```
 
+Текст должен быть следующим:
+
+```plaintext
 --USER_DEFINED_BOUNDARY
 Content-Type: application/json; charset=utf-8
 Content-Disposition: form-data; name="metadata"
@@ -112,6 +99,16 @@ multipartContent.Add(fileContents, "contents");
 var response = await httpClient.PostAsync("spaces/blobs", multipartContent);
 ```
 
+В обоих примерах:
+
+1. Убедитесь, что заголовки включают `Content-Type: multipart/form-data; boundary="USER_DEFINED_BOUNDARY"`.
+1. Убедитесь, что текст состоит из нескольких частей:
+
+   - Первая часть содержит необходимые метаданные больших двоичных объектов.
+   - Вторая часть содержит текстовый файл.
+
+1. Убедитесь, что текстовый файл указан как `Content-Type: text/plain`.
+
 ## <a name="api-endpoints"></a>Конечные точки API
 
 В следующих разделах описываются основные конечные точки API, связанные с большими двоичными объектами, и их функциональность.
@@ -122,7 +119,7 @@ var response = await httpClient.PostAsync("spaces/blobs", multipartContent);
 
 ![Большие двоичные объекты устройств][2]
 
-Например, для обновления или создания большого двоичного объекта, а затем подключения объекта к устройству выполняется запрос **PATCH**:
+Например, для обновления или создания большого двоичного объекта, а затем подключения объекта к устройству выполняется аутентифицированный запрос HTTP PATCH к:
 
 ```plaintext
 YOUR_MANAGEMENT_API_URL/devices/blobs/YOUR_BLOB_ID
@@ -148,7 +145,7 @@ YOUR_MANAGEMENT_API_URL/devices/blobs/YOUR_BLOB_ID
 
 ![Большие двоичные объекты пространства][3]
 
-Например, для возврата больших двоичных объектов, присоединенных к пространству, выполняется запрос **GET**:
+Например, для возврата больших двоичных объектов, присоединенных к пространству, выполняется аутентифицированный запрос HTTP GET к:
 
 ```plaintext
 YOUR_MANAGEMENT_API_URL/spaces/blobs/YOUR_BLOB_ID
@@ -158,7 +155,7 @@ YOUR_MANAGEMENT_API_URL/spaces/blobs/YOUR_BLOB_ID
 | --- | --- |
 | *YOUR_BLOB_ID* | Идентификатор требуемого большого двоичного объекта |
 
-Отправление запроса **PATCH** к той же конечной точке позволяет вам обновить описание метаданных и создать версию большого двоичного объекта. HTTP-запрос выполняется с использованием метода **PATCH** вместе с любыми необходимыми метаданными и составными данными.
+Запрос PATCH к той же конечной точке обновляет описание метаданных и создает новые версии большого двоичного объекта. HTTP-запрос выполняется с использованием метода PATCH вместе с любыми необходимыми метаданными и составными данными.
 
 Успешные операции возвращают объект **SpaceBlob**, который соответствует следующей схеме. Вы можете использовать его для применения возвращенных данных.
 
@@ -173,7 +170,7 @@ YOUR_MANAGEMENT_API_URL/spaces/blobs/YOUR_BLOB_ID
 
 ![Большие двоичные объекты пользователей][4]
 
-Например, для получения большого двоичного объекта, подключенного к пользователю, выполняется запрос **GET** с необходимыми данными формы:
+Например, для получения большого двоичного объекта, подключенного к пользователю, выполняется аутентифицированный запрос HTTP GET (с необходимыми данными формы) к:
 
 ```plaintext
 YOUR_MANAGEMENT_API_URL/users/blobs/YOUR_BLOB_ID
@@ -205,7 +202,7 @@ YOUR_MANAGEMENT_API_URL/users/blobs/YOUR_BLOB_ID
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о справочной документации Swagger для Azure Digital Twins см. в статье [Использование Swagger с Digital Twins](how-to-use-swagger.md).
+- Дополнительные сведения о справочной документации Swagger для Azure Digital Twins см. в статье [Использование Swagger с Digital Twins](how-to-use-swagger.md).
 
 <!-- Images -->
 [1]: media/how-to-add-blobs/blob-models.PNG

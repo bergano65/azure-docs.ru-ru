@@ -9,16 +9,15 @@ editor: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
-ms.openlocfilehash: aace01fedd0c2ab538d4e11b418907f962128d0e
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: f36d9eed11685d1bb35a46a97eb58fe870970075
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52163129"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54019441"
 ---
 # <a name="execute-pipeline-activity-in-azure-data-factory"></a>Действие выполнения конвейера в фабрике данных Azure
 Действие выполнения конвейера позволяет конвейеру фабрики данных вызвать другой конвейер.
@@ -63,7 +62,7 @@ ms.locfileid: "52163129"
 Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно
 -------- | ----------- | -------------- | --------
 name | Имя действия выполнения конвейера. | Строка | Yes
-Тип | Должно иметь значение **ExecutePipeline**. | Строка | Yes
+Тип | Нужно задать значение **ExecutePipeline**. | Строка | Yes
 pipeline | Ссылка на зависимый конвейер, вызывающий этот конвейер. Объект ссылки конвейера имеет два свойства: **referenceName** и **type**. Свойство referenceName указывает имя конвейера в ссылке. Для свойства type необходимо задать значение PipelineReference. | PipelineReference | Yes
 parameters | Параметры для передачи в вызванный конвейер | Объект JSON, сопоставляющий имена параметров со значениями аргументов | Нет 
 waitOnCompletion | Определяет, будет ли при выполнении действия ожидаться завершение выполнения зависимого конвейера. | Значение по умолчанию — false. | Логическое | Нет 

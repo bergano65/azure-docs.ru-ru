@@ -8,20 +8,19 @@ manager: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/12/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: c22d2cba23e8bae965fa7c5746c9fff69ad3fa9e
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 2aa272c126e06b758dc3903a8ec71b7043491057
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37054421"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54017656"
 ---
 # <a name="move-data-from-an-sftp-server-using-azure-data-factory"></a>Перемещение данных с SFTP-сервера с использованием фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
+> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](data-factory-sftp-connector.md)
 > * [Версия 2 (текущая)](../connector-sftp.md)
 
@@ -43,9 +42,9 @@ ms.locfileid: "37054421"
 ## <a name="getting-started"></a>Приступая к работе
 Вы можете создать конвейер с действием копирования, которое перемещает данные с SFTP-сервера с помощью разных инструментов и API-интерфейсов.
 
-- Проще всего создать конвейер с помощью **мастера копирования**. В статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md) приведены краткие пошаговые указания по созданию конвейера с помощью мастера копирования данных.
+- Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведены краткие пошаговые указания по созданию конвейера с помощью мастера копирования данных.
 
-- Также для создания конвейера можно использовать следующие инструменты: **портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). Примеры JSON для копирования данных с SFTP-сервера в хранилище BLOB-объектов Azure см. в разделе [Пример JSON. Копирование данных с FTP-сервера в большой двоичный объект Azure](#json-example-copy-data-from-sftp-server-to-azure-blob) этой статьи.
+- Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). Примеры JSON для копирования данных с SFTP-сервера в хранилище BLOB-объектов Azure см. в разделе [Пример JSON. Копирование данных с SFTP-сервера в большой двоичный объект Azure](#json-example-copy-data-from-sftp-server-to-azure-blob) далее в этой статье.
 
 ## <a name="linked-service-properties"></a>Свойства связанной службы
 В следующей таблице содержится описание элементов JSON, которые относятся к связанной службе FTP.
@@ -54,12 +53,12 @@ ms.locfileid: "37054421"
 | --- | --- | --- | --- |
 | Тип | Задайте для свойства type значение `Sftp`. |Yes |
 | host | Имя или IP-адрес SFTP-сервера. |Yes |
-| порт |Порт, прослушиваемый SFTP-сервером. По умолчанию используется значение 21. |Нет  |
+| порт |Порт, прослушиваемый SFTP-сервером. По умолчанию используется значение 21 |Нет  |
 | authenticationType |Укажите тип аутентификации. Допустимые значения: **Basic**, **SshPublicKey**. <br><br> Описание свойств и примеры JSON для каждого типа см. ниже в разделах [использование обычной аутентификации](#using-basic-authentication) и [использование аутентификации с открытым ключом SSH](#using-ssh-public-key-authentication) соответственно. |Yes |
-| skipHostKeyValidation | Указывает, нужно ли пропустить проверку ключа узла. | Нет. По умолчанию имеет значение False. |
+| skipHostKeyValidation | Указывает, нужно ли пропустить проверку ключа узла. | № По умолчанию имеет значение False. |
 | hostKeyFingerprint | Содержит отпечаток ключа узла. | Да, если для `skipHostKeyValidation` указано значение False.  |
 | gatewayName |Имя шлюза управления данными для подключения к локальному SFTP-серверу. | Да, если копирование выполняется с локального SFTP-сервера. |
-| encryptedCredential | Зашифрованные учетные данные для доступа к SFTP-серверу. Генерируются автоматически, когда вы выбираете обычную аутентификацию (имя пользователя и пароль) или аутентификацию SshPublicKey (имя пользователя и путь к закрытому ключу или содержимое ключа) в мастере копирования или во всплывающем диалоговом окне ClickOnce. | Нет. Применимо, только если копирование выполняется с локального SFTP-сервера. |
+| encryptedCredential | Зашифрованные учетные данные для доступа к SFTP-серверу. Генерируются автоматически, когда вы выбираете обычную аутентификацию (имя пользователя и пароль) или аутентификацию SshPublicKey (имя пользователя и путь к закрытому ключу или содержимое ключа) в мастере копирования или во всплывающем диалоговом окне ClickOnce. | № Применимо, только если копирование выполняется с локального SFTP-сервера. |
 
 ### <a name="using-basic-authentication"></a>Использование обычной аутентификации
 
@@ -70,7 +69,7 @@ ms.locfileid: "37054421"
 | Имя пользователя | Пользователь, имеющий доступ к SFTP-серверу. |Yes |
 | password | Пароль пользователя, указанного в свойстве имя пользователя. | Yes |
 
-#### <a name="example-basic-authentication"></a>Пример обычной аутентификации
+#### <a name="example-basic-authentication"></a>Пример: Обычная аутентификация
 ```json
 {
     "name": "SftpLinkedService",
@@ -90,7 +89,7 @@ ms.locfileid: "37054421"
 }
 ```
 
-#### <a name="example-basic-authentication-with-encrypted-credential"></a>Пример обычной аутентификации с шифрованием учетных данных
+#### <a name="example-basic-authentication-with-encrypted-credential"></a>Пример: обычная аутентификация и шифрование учетных данных
 
 ```JSON
 {
@@ -125,7 +124,7 @@ ms.locfileid: "37054421"
 > [!NOTE]
 > Соединитель SFTP поддерживает только ключ OpenSSH RSA/DSA. Содержимое файла ключа должно начинаться с текста "-----BEGIN [RSA/DSA] PRIVATE KEY-----". Если файл закрытого ключа имеет формат PPK, используйте средство Putty для преобразования из формата PPK в OpenSSH.
 
-#### <a name="example-sshpublickey-authentication-using-private-key-filepath"></a>Пример аутентификации с закрытым ключом SSH, для которого указан путь к файлу
+#### <a name="example-sshpublickey-authentication-using-private-key-filepath"></a>Пример: аутентификация SshPublicKey с закрытым ключом SSH, для которого указан путь к файлу
 
 ```json
 {
@@ -146,7 +145,7 @@ ms.locfileid: "37054421"
 }
 ```
 
-#### <a name="example-sshpublickey-authentication-using-private-key-content"></a>Пример аутентификации с закрытым ключом SSH, для которого указано содержимое
+#### <a name="example-sshpublickey-authentication-using-private-key-content"></a>Пример: аутентификация SshPublicKey с закрытым ключом SSH, для которого указано содержимое
 
 ```json
 {
@@ -174,12 +173,12 @@ ms.locfileid: "37054421"
 | Свойство | ОПИСАНИЕ | Обязательно |
 | --- | --- | --- |
 | folderPath |Подпуть к папке. Чтобы указать специальные знаки в строке, используйте escape-знак "\". Примеры приведены в разделе [Примеры определений связанной службы и набора данных](#sample-linked-service-and-dataset-definitions).<br/><br/>Вы можете использовать это свойство вместе с параметром **partitionBy**, чтобы в путях к папкам учитывались дата и время начала и окончания среза. |Yes |
-| fileName |Укажите имя файла в папке **folderPath** , если таблица должна ссылаться на определенный файл в папке. Если этому свойству не присвоить значение, таблица будет указывать на все файлы в папке.<br/><br/>Если свойство fileName не указано для выходного набора данных, то имя созданного файла будет иметь следующий формат: <br/><br/>Data.<Guid>.txt (например, Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt |Нет  |
+| fileName |Укажите имя файла в папке **folderPath** , если таблица должна ссылаться на определенный файл в папке. Если этому свойству не присвоить значение, таблица будет указывать на все файлы в папке.<br/><br/>Если свойство fileName не указано для выходного набора данных, то имя созданного файла будет иметь следующий формат: <br/><br/>Data.<Guid>.txt (например, Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt) |Нет  |
 | fileFilter |Укажите фильтр для выбора подмножества файлов из folderPath. Фильтр дает возможность выбирать только некоторые файлы, а не все.<br/><br/>Допустимые значения: `*` (несколько знаков) и `?` (один знак).<br/><br/>Пример 1: `"fileFilter": "*.log"`<br/>Пример 2: `"fileFilter": 2014-1-?.txt"`<br/><br/> Свойство fileFilter применяется к входному набору данных FileShare. HDFS не поддерживает это свойство. |Нет  |
 | partitionedBy |Чтобы указать для временного ряда данных динамические путь к папке и имя файла, используйте свойство partitionedBy. Например, путь к папке folderPath каждый час будет другим. |Нет  |
-| свойства | Поддерживаются следующие типы формата: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [ формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если требуется скопировать файлы между файловыми хранилищами **как есть** (двоичное копирование), можно пропустить раздел форматирования в определениях входного и выходного наборов данных. |Нет  |
-| compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
-| useBinaryTransfer |Укажите, использовать ли режим передачи в двоичном формате. Значение true, если использовать двоичный режим, и false, если ASCII. Значение по умолчанию: True. Это свойство можно использовать, только когда тип связанной службы является FTP-сервер. |Нет  |
+| свойства | Поддерживаются следующие форматы файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [ формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если требуется скопировать файлы между файловыми хранилищами **как есть** (двоичное копирование), можно пропустить раздел форматирования в определениях входного и выходного наборов данных. |Нет  |
+| compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Оптимальный** и **Самый быстрый**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
+| useBinaryTransfer |Укажите, использовать ли режим передачи в двоичном формате. Значение true, если использовать двоичный режим, и false, если ASCII. Значение по умолчанию: True. Это свойство можно использовать, только когда тип связанной службы — FtpServer. |Нет  |
 
 > [!NOTE]
 > Свойства filename и fileFilter нельзя использовать одновременно.
@@ -225,7 +224,7 @@ ms.locfileid: "37054421"
 ## <a name="supported-file-and-compression-formats"></a>Поддерживаемые форматы файлов и сжатия
 Дополнительные сведения см. в статье [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md).
 
-## <a name="json-example-copy-data-from-sftp-server-to-azure-blob"></a>Пример JSON. Копирование данных с FTP-сервера в большой двоичный объект Azure
+## <a name="json-example-copy-data-from-sftp-server-to-azure-blob"></a>Пример JSON. Копирование данных с SFTP-сервера в большой двоичный объект Azure
 Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Вы узнаете, как копировать данные из источника SFTP в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать **непосредственно** из любых источников в любой указанный [здесь](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемник. Это делается с помощью действия копирования в фабрике данных Azure.
 
 > [!IMPORTANT]
@@ -309,7 +308,7 @@ ms.locfileid: "37054421"
 
 **Выходной набор данных BLOB-объекта Azure**
 
-Данные записываются в новый BLOB-объект каждый час (frequency: hour, interval: 1). Путь к папке BLOB-объекта вычисляется динамически на основе времени начала обрабатываемого среза. В пути к папке используется год, месяц, день и час времени начала.
+Данные записываются в новый большой двоичный объект каждый час (frequency: hour, interval: 1). Путь к папке BLOB-объекта вычисляется динамически на основе времени начала обрабатываемого среза. В пути к папке используется год, месяц, день и час времени начала.
 
 ```JSON
 {

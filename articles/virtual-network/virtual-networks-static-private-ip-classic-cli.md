@@ -1,13 +1,10 @@
 ---
-title: Настройка частных IP-адресов для классических виртуальных машин с помощью классического Azure CLI | Документация Майкрософт
+title: Настройка частных IP-адресов для классических виртуальных машин  — классический Azure CLI | Документация Майкрософт
+titlesuffix: Azure Virtual Network
 description: Узнайте, как настроить частные IP-адреса для классических виртуальных машин с помощью классического интерфейса командной строки Azure.
 services: virtual-network
 documentationcenter: na
 author: genlin
-manager: cshepard
-editor: tysonn
-tags: azure-service-management
-ms.assetid: 17386acf-c708-4103-9b22-ff9bf04b778d
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: article
@@ -15,13 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: genli
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: abc551f796cb2d8921b6b1f67fb6a6714655ffde
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 2f71dc2bcd5463f81ae286bbe3099124eb3fa539
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53134681"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54023895"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-classic-using-the-azure-classic-cli"></a>Настройка частных IP-адресов для классической виртуальной машины с помощью классического Azure CLI
 
@@ -103,7 +99,7 @@ ms.locfileid: "53134681"
     info:    vm static-ip remove command OK
 
 ## <a name="how-to-add-a-static-private-ip-to-an-existing-vm"></a>Как добавить статический частный IP-адрес для существующей виртуальной машины
-Чтобы добавить статический внутренний IP-адрес для виртуальной машины, созданной с помощью приведенного выше сценария, выполните следующую команду:
+Чтобы добавить статический частный IP-адрес для виртуальной машины, созданной с помощью приведенного ранее скрипта, выполните такую команду:
 
     azure vm static-ip set DNS01 192.168.1.101
 
@@ -118,7 +114,7 @@ ms.locfileid: "53134681"
 
 ## <a name="set-ip-addresses-within-the-operating-system"></a>Настройка IP-адресов в операционной системе
 
-Не рекомендуется без необходимости статически назначать виртуальной машине Azure частный IP-адрес в ее операционной системе. Если вы будете вручную устанавливать частный IP-адрес в операционной системе, убедитесь, что он соответствует частному IP-адресу, назначенному виртуальной машине Azure, иначе соединение с виртуальной машиной может быть потеряно. Никогда не следует вручную назначать общедоступный IP-адрес для виртуальной машины Azure в ее операционной системе.
+Не рекомендуется без необходимости статически назначать виртуальной машине Azure частный IP-адрес в ее операционной системе. Если вы будете вручную устанавливать частный IP-адрес в операционной системе, убедитесь, что он соответствует частному IP-адресу, назначенному виртуальной машине Azure, иначе соединение с виртуальной машиной может быть потеряно. Не следует вручную назначать общедоступный IP-адрес для виртуальной машины Azure в ее операционной системе.
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Ознакомьтесь с информацией о [зарезервированных общедоступных IP-адресах](virtual-networks-reserved-public-ip.md) .

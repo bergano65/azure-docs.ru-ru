@@ -13,38 +13,36 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 05/27/2017
 ms.author: bwren
-ms.openlocfilehash: 2ecb50bdf44b93e8620d6d98a98fc735da6e87c3
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 75ed69d749e23f39c03afb09f70a18cc1aed600b
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53186724"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54078581"
 ---
 # <a name="collect-data-in-log-analytics-with-an-azure-automation-runbook"></a>Сбор данных в Log Analytics с использованием модуля runbook в службе автоматизации Azure
-В Log Analytics можно собрать значительный объем данных из различных источников, включая [источники данных](../../azure-monitor/platform/agent-data-sources.md) в агентах и [данные, собранные в Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md).  Но иногда требуется собирать данные, недоступные в этих стандартных источниках.  В таких случаях вы можете использовать [API сборщика данных HTTP](../../azure-monitor/platform/data-collector-api.md), чтобы записать данные в Log Analytics из любого клиента REST API.  Чаще всего такие данные собираются с помощью модулей runbook в службе автоматизации Azure.   
+В Log Analytics можно собрать значительный объем данных из различных источников, включая [источники данных](../../azure-monitor/platform/agent-data-sources.md) в агентах и [данные, собранные в Azure](../../azure-monitor/platform/collect-azure-metrics-logs.md). Но иногда требуется собирать данные, недоступные в этих стандартных источниках. В таких случаях вы можете использовать [API сборщика данных HTTP](../../azure-monitor/platform/data-collector-api.md), чтобы записать данные в Log Analytics из любого клиента REST API. Чаще всего такие данные собираются с помощью модулей runbook в службе автоматизации Azure.
 
 В этом руководстве описан пошаговый процесс создания модуля runbook и расписания для него в службе автоматизации Azure, позволяющий записывать данные в Log Analytics.
 
-
 ## <a name="prerequisites"></a>Предварительные требования
-Для выполнения этого сценария нужно настроить в подписке Azure указанные ниже ресурсы.  Их можно использовать с бесплатной учетной записью.
+Для выполнения этого сценария нужно настроить в подписке Azure указанные ниже ресурсы. Их можно использовать с бесплатной учетной записью.
 
 - [Рабочая область Log Analytics](../../azure-monitor/learn/quick-create-workspace.md).
 - [Учетная запись службы автоматизации Azure](../..//automation/automation-quickstart-create-account.md).
 
 ## <a name="overview-of-scenario"></a>Обзор сценария
-В этом руководстве вы создадите модуль runbook, который собирает сведения о заданиях службы автоматизации.  Модули runbook в службе автоматизации Azure реализуются с помощью PowerShell, поэтому начнем с написания и тестирования скрипта в редакторе службы автоматизации Azure.  Убедившись, что вы собрали необходимые сведения, запишите эти данные в Log Analytics и проверьте тип пользовательских данных.  В завершение создайте расписание для запуска модуля runbook через регулярные интервалы.
+В этом руководстве вы создадите модуль runbook, который собирает сведения о заданиях службы автоматизации. Модули runbook в службе автоматизации Azure реализуются с помощью PowerShell, поэтому начнем с написания и тестирования скрипта в редакторе службы автоматизации Azure. Убедившись, что вы собрали необходимые сведения, запишите эти данные в Log Analytics и проверьте тип пользовательских данных. В завершение создайте расписание для запуска модуля runbook через регулярные интервалы.
 
 > [!NOTE]
-> Службу автоматизации Azure можно настроить таким образом, чтобы сведения о задании отправлялись в Log Analytics без этого модуля runbook.  Этот сценарий в основном используется для работы с руководством. Рекомендуем отправлять данные в тестовую рабочую область.  
-
+> Службу автоматизации Azure можно настроить таким образом, чтобы сведения о задании отправлялись в Log Analytics без этого модуля runbook. Этот сценарий в основном используется для работы с руководством. Рекомендуем отправлять данные в тестовую рабочую область.
 
 ## <a name="1-install-data-collector-api-module"></a>1. Установка модуля API сборщика данных
-Каждый [запрос от API сборщика данных HTTP](../../azure-monitor/platform/data-collector-api.md#create-a-request) должен быть правильно отформатирован и содержать заголовок авторизации.  Это можно сделать в модуле runbook, но вы можете уменьшить объем требуемого кода с помощью модуля, упрощающего процесс.  Один из модулей, которые можно использовать, — это [модуль OMSIngestionAPI](https://www.powershellgallery.com/packages/OMSIngestionAPI) в коллекции PowerShell.
+Каждый [запрос от API сборщика данных HTTP](../../azure-monitor/platform/data-collector-api.md#create-a-request) должен быть правильно отформатирован и содержать заголовок авторизации. Это можно сделать в модуле runbook, но вы можете уменьшить объем требуемого кода с помощью модуля, упрощающего процесс. Один из модулей, которые можно использовать, — это [модуль OMSIngestionAPI](https://www.powershellgallery.com/packages/OMSIngestionAPI) в коллекции PowerShell.
 
-Чтобы использовать [модуль](../../automation/automation-integration-modules.md) в runbook, установите его в своей учетной записи службы автоматизации.  После этого любой модуль runbook в той же учетной записи сможет использовать функции из модуля.  Вы можете установить новый модуль, последовательно выбрав в своей учетной записи службы автоматизации **Ресурсы** > **Модули** > **Добавить модуль**.  
+Чтобы использовать [модуль](../../automation/automation-integration-modules.md) в runbook, установите его в своей учетной записи службы автоматизации.  После этого любой модуль runbook в той же учетной записи сможет использовать функции из модуля. Вы можете установить новый модуль, последовательно выбрав в своей учетной записи службы автоматизации **Ресурсы** > **Модули** > **Добавить модуль**.
 
-Кроме того, коллекция PowerShell позволяет быстро развернуть модуль непосредственно в учетной записи службы автоматизации. Воспользуемся этой возможностью для работы с нашим руководством.  
+Кроме того, коллекция PowerShell позволяет быстро развернуть модуль непосредственно в учетной записи службы автоматизации. Воспользуемся этой возможностью для работы с нашим руководством.
 
 ![Модуль OMSIngestionAPI](media/runbook-datacollect/OMSIngestionAPI.png)
 
@@ -53,9 +51,8 @@ ms.locfileid: "53186724"
 3. Нажмите кнопку **Deploy to Azure Automation** (Развертывание в службе автоматизации Azure).
 4. Выберите учетную запись службы автоматизации и нажмите кнопку **ОК**, чтобы установить модуль.
 
-
 ## <a name="2-create-automation-variables"></a>2. Создание переменных службы автоматизации
-[Переменные службы автоматизации](../../automation/automation-variables.md) содержат значения, которые могут использоваться всеми модулями runbook в учетной записи службы автоматизации.  Вы можете изменить эти значения, не изменяя сам модуль runbook, чтобы повысить его гибкость. Для каждого запроса API сборщика данных HTTP требуется идентификатор и ключ рабочей области Log Analytics, а ресурсы переменных отлично подходят для хранения таких данных.  
+[Переменные службы автоматизации](../../automation/automation-variables.md) содержат значения, которые могут использоваться всеми модулями runbook в учетной записи службы автоматизации. Вы можете изменить эти значения, не изменяя сам модуль runbook, чтобы повысить его гибкость. Для каждого запроса API сборщика данных HTTP требуется идентификатор и ключ рабочей области Log Analytics, а ресурсы переменных отлично подходят для хранения таких данных.
 
 ![Переменные](media/runbook-datacollect/variables.png)
 
@@ -70,76 +67,74 @@ ms.locfileid: "53186724"
 | Значение | Вставьте идентификатор рабочей области Log Analytics. | Вставьте первичный или вторичный ключ рабочей области Log Analytics. |
 | зашифрованные; | Нет  | Yes |
 
-
-
 ## <a name="3-create-runbook"></a>3. Создание модуля Runbook
 
-На портале для службы автоматизации Azure предусмотрен редактор, с помощью которого можно изменять и тестировать модуль runbook.  Вы можете использовать редактор скриптов для [работы непосредственно с PowerShell](../../automation/automation-edit-textual-runbook.md) или [создать графический модуль runbook](../../automation/automation-graphical-authoring-intro.md).  В этом руководстве мы будем работать со скриптом PowerShell. 
+На портале для службы автоматизации Azure предусмотрен редактор, с помощью которого можно изменять и тестировать модуль runbook. Вы можете использовать редактор скриптов для [работы непосредственно с PowerShell](../../automation/automation-edit-textual-runbook.md) или [создать графический модуль runbook](../../automation/automation-graphical-authoring-intro.md). В этом руководстве мы будем работать со скриптом PowerShell.
 
 ![Изменение модуля runbook](media/runbook-datacollect/edit-runbook.png)
 
-1. Перейдите к учетной записи службы автоматизации.  
+1. Перейдите к учетной записи службы автоматизации.
 2. Щелкните **Модули Runbook** > **Добавить Runbook** > **Создание нового модуля Runbook**.
-3. В качестве имени модуля runbook введите **Collect-Automation-jobs**.  Для типа runbook выберите значение **PowerShell**.
+3. В качестве имени модуля runbook введите **Collect-Automation-jobs**. Для типа runbook выберите значение **PowerShell**.
 4. Щелкните **Создать**, чтобы создать модуль runbook и запустить текстовый редактор.
-5. Скопируйте приведенный ниже код и вставьте его в модуль runbook.  См. комментарии в скрипте для объяснения кода.
+5. Скопируйте приведенный ниже код и вставьте его в модуль runbook. См. комментарии в скрипте для объяснения кода.
+    ```
+    # Get information required for the automation account from parameter values when the runbook is started.
+    Param
+    (
+        [Parameter(Mandatory = $True)]
+        [string]$resourceGroupName,
+        [Parameter(Mandatory = $True)]
+        [string]$automationAccountName
+    )
     
-        # Get information required for the automation account from parameter values when the runbook is started.
-        Param
-        (
-            [Parameter(Mandatory = $True)]
-            [string]$resourceGroupName,
-            [Parameter(Mandatory = $True)]
-            [string]$automationAccountName
-        )
-        
-        # Authenticate to the Automation account using the Azure connection created when the Automation account was created.
-        # Code copied from the runbook AzureAutomationTutorial.
-        $connectionName = "AzureRunAsConnection"
-        $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName         
-        Connect-AzureRmAccount `
-            -ServicePrincipal `
-            -TenantId $servicePrincipalConnection.TenantId `
-            -ApplicationId $servicePrincipalConnection.ApplicationId `
-            -CertificateThumbprint $servicePrincipalConnection.CertificateThumbprint 
-        
-        # Set the $VerbosePreference variable so that we get verbose output in test environment.
-        $VerbosePreference = "Continue"
-        
-        # Get information required for Log Analytics workspace from Automation variables.
-        $customerId = Get-AutomationVariable -Name 'WorkspaceID'
-        $sharedKey = Get-AutomationVariable -Name 'WorkspaceKey'
-        
-        # Set the name of the record type.
-        $logType = "AutomationJob"
-        
-        # Get the jobs from the past hour.
-        $jobs = Get-AzureRmAutomationJob -ResourceGroupName $resourceGroupName -AutomationAccountName $automationAccountName -StartTime (Get-Date).AddHours(-1)
-        
-        if ($jobs -ne $null) {
-            # Convert the job data to json
-            $body = $jobs | ConvertTo-Json
-        
-            # Write the body to verbose output so we can inspect it if verbose logging is on for the runbook.
-            Write-Verbose $body
-        
-            # Send the data to Log Analytics.
-            Send-OMSAPIIngestionFile -customerId $customerId -sharedKey $sharedKey -body $body -logType $logType -TimeStampField CreationTime
-        }
-
+    # Authenticate to the Automation account using the Azure connection created when the Automation account was created.
+    # Code copied from the runbook AzureAutomationTutorial.
+    $connectionName = "AzureRunAsConnection"
+    $servicePrincipalConnection=Get-AutomationConnection -Name $connectionName
+    Connect-AzureRmAccount `
+        -ServicePrincipal `
+        -TenantId $servicePrincipalConnection.TenantId `
+        -ApplicationId $servicePrincipalConnection.ApplicationId `
+        -CertificateThumbprint $servicePrincipalConnection.CertificateThumbprint 
+    
+    # Set the $VerbosePreference variable so that we get verbose output in test environment.
+    $VerbosePreference = "Continue"
+    
+    # Get information required for Log Analytics workspace from Automation variables.
+    $customerId = Get-AutomationVariable -Name 'WorkspaceID'
+    $sharedKey = Get-AutomationVariable -Name 'WorkspaceKey'
+    
+    # Set the name of the record type.
+    $logType = "AutomationJob"
+    
+    # Get the jobs from the past hour.
+    $jobs = Get-AzureRmAutomationJob -ResourceGroupName $resourceGroupName -AutomationAccountName $automationAccountName -StartTime (Get-Date).AddHours(-1)
+    
+    if ($jobs -ne $null) {
+        # Convert the job data to json
+        $body = $jobs | ConvertTo-Json
+    
+        # Write the body to verbose output so we can inspect it if verbose logging is on for the runbook.
+        Write-Verbose $body
+    
+        # Send the data to Log Analytics.
+        Send-OMSAPIIngestionFile -customerId $customerId -sharedKey $sharedKey -body $body -logType $logType -TimeStampField CreationTime
+    }
+    ```
 
 ## <a name="4-test-runbook"></a>4. Тестирование модуля runbook
-Служба автоматизации Azure содержит среду для [тестирования модуля runbook](../../automation/automation-testing-runbook.md) перед публикацией.  Можно проверить данные, собранные модулем runbook, и убедиться, что он надлежащим образом записывает их в Log Analytics перед публикацией в производственной среде. 
- 
+Служба автоматизации Azure содержит среду для [тестирования модуля runbook](../../automation/automation-testing-runbook.md) перед публикацией. Можно проверить данные, собранные модулем runbook, и убедиться, что он надлежащим образом записывает их в Log Analytics перед публикацией в производственной среде.
+
 ![Тестирование модуля runbook](media/runbook-datacollect/test-runbook.png)
 
 6. Нажмите кнопку **Сохранить**, чтобы сохранить модуль runbook.
 1. Щелкните **Область тестирования**, чтобы открыть runbook в тестовой среде.
-3. Когда в модуле runbook станут доступны параметры, для них будет предложено ввести значения.  Введите имя группы ресурсов и учетной записи службы автоматизации, из которых вы будете собирать сведения о задании.
+3. Когда в модуле runbook станут доступны параметры, для них будет предложено ввести значения. Введите имя группы ресурсов и учетной записи службы автоматизации, из которых вы будете собирать сведения о задании.
 4. Щелкните **Пуск**, чтобы запустить модуль runbook.
-3. Модуль runbook запустится с состоянием **В очереди**, а затем перейдет в состояние **Выполняется**.  
-3. Для модуля runbook должны отображаться подробные выходные данные с собранными заданиями в формате JSON.  Если в списке нет заданий, возможно, за последний час в учетной записи службы автоматизации задания не создавались.  Попробуйте запустить любой модуль runbook в учетной записи службы автоматизации и выполнить тестирование еще раз.
-4. Убедитесь, что в выходных данных не отображаются сообщения об ошибках команды POST для Log Analytics.  Должно появиться примерно такое сообщение:
+3. Модуль runbook запустится с состоянием **В очереди**, а затем перейдет в состояние **Выполняется**.
+3. Для модуля runbook должны отображаться подробные выходные данные с собранными заданиями в формате JSON. Если в списке нет заданий, возможно, за последний час в учетной записи службы автоматизации задания не создавались. Попробуйте запустить любой модуль runbook в учетной записи службы автоматизации и выполнить тестирование еще раз.
+4. Убедитесь, что в выходных данных не отображаются сообщения об ошибках команды POST для Log Analytics. Должно появиться примерно такое сообщение:
 
     ![Выходные данные POST](media/runbook-datacollect/post-output.png)
 
@@ -150,12 +145,11 @@ ms.locfileid: "53186724"
 
 1. На портале Azure выберите рабочую область Log Analytics.
 2. Щелкните **Поиск по журналам**.
-3. Введите команду `Type=AutomationJob_CL` и нажмите кнопку поиска. Обратите внимание, что тип записи включает суффикс _CL, не указанный в скрипте.  Этот суффикс автоматически добавляется в тип журнала, чтобы указать, что журнал пользовательский.
+3. Введите команду `Type=AutomationJob_CL` и нажмите кнопку поиска. Обратите внимание, что тип записи включает суффикс _CL, не указанный в скрипте. Этот суффикс автоматически добавляется в тип журнала, чтобы указать, что журнал пользовательский.
 4. Должна отобразиться одна или несколько возвращенных записей. Это указывает на то, что модуль runbook работает правильно.
 
-
 ## <a name="6-publish-the-runbook"></a>6. Публикация модуля runbook
-Убедившись, что модуль runbook работает правильно, необходимо опубликовать его, чтобы запустить в рабочей среде.  Вы можете и дальше изменять и тестировать модуль runbook без изменения опубликованной версии.  
+Убедившись, что модуль runbook работает правильно, необходимо опубликовать его, чтобы запустить в рабочей среде. Вы можете и дальше изменять и тестировать модуль runbook без изменения опубликованной версии.
 
 ![Публикация модуля runbook](media/runbook-datacollect/publish-runbook.png)
 
@@ -164,8 +158,8 @@ ms.locfileid: "53186724"
 3. Щелкните **Правка** и выберите **Опубликовать**.
 4. Нажмите **Да** при запросе на подтверждение перезаписи для ранее опубликованной версии.
 
-## <a name="7-set-logging-options"></a>7. Настройка параметров ведения журнала 
-Для тестирования можно было просмотреть [подробные выходные данные](../../automation/automation-runbook-output-and-messages.md#message-streams), так как в скрипте была задана переменная $VerbosePreference.  Если вы хотите просмотреть подробные выходные данные в рабочей среде, задайте для модуля runbook свойства ведения журнала.  Для модуля runbook, используемого в этом руководстве, отобразятся данные JSON, отправляемые в Log Analytics.
+## <a name="7-set-logging-options"></a>7. Настройка параметров ведения журнала
+Для тестирования можно было просмотреть [подробные выходные данные](../../automation/automation-runbook-output-and-messages.md#message-streams), так как в скрипте была задана переменная $VerbosePreference. Если вы хотите просмотреть подробные выходные данные в рабочей среде, задайте для модуля runbook свойства ведения журнала. Для модуля runbook, используемого в этом руководстве, отобразятся данные JSON, отправляемые в Log Analytics.
 
 ![Ведение журнала и трассировка](media/runbook-datacollect/logging.png)
 
@@ -174,7 +168,7 @@ ms.locfileid: "53186724"
 3. Выберите команду **Сохранить**.
 
 ## <a name="8-schedule-runbook"></a>8. Создание расписания для модуля runbook
-Наиболее распространенным способом запуска модуля runbook, который собирает данные мониторинга, является автоматический запуск по расписанию.  Для этого создайте [расписание в службе автоматизации Azure](../../automation/automation-schedules.md) и подключите его к модулю runbook.
+Наиболее распространенным способом запуска модуля runbook, который собирает данные мониторинга, является автоматический запуск по расписанию. Для этого создайте [расписание в службе автоматизации Azure](../../automation/automation-schedules.md) и подключите его к модулю runbook.
 
 ![Создание расписания для модуля runbook](media/runbook-datacollect/schedule-runbook.png)
 
@@ -194,10 +188,10 @@ ms.locfileid: "53186724"
 
 6. Щелкните **Настройка параметров и настроек запуска**.
 7. Укажите значения для **ResourceGroupName** и **AutomationAccountName**.
-8. Последовательно выберите **ОК**. 
+8. Последовательно выберите **ОК**.
 
 ## <a name="9-verify-runbook-starts-on-schedule"></a>9. Проверка запуска модуля runbook по расписанию
-При каждом запуске модуля Runbook [создается задание](../../automation/automation-runbook-execution.md) и все выходные данные записываются в журнал.  Фактически это те же задания, которые собирает модуль runbook.  Вы можете убедиться, что модуль runbook запускается правильно, проверив задания для него после момента запуска по расписанию.
+При каждом запуске модуля Runbook [создается задание](../../automation/automation-runbook-execution.md) и все выходные данные записываются в журнал. Фактически это те же задания, которые собирает модуль runbook. Вы можете убедиться, что модуль runbook запускается правильно, проверив задания для него после момента запуска по расписанию.
 
 ![Задания](media/runbook-datacollect/jobs.png)
 
@@ -207,8 +201,6 @@ ms.locfileid: "53186724"
 4. Щелкните **Все журналы**, чтобы просмотреть журналы и выходные данные модуля runbook.
 5. Прокрутите вниз, чтобы найти запись, как на изображении ниже.<br>![Подробная информация](media/runbook-datacollect/verbose.png)
 6. Щелкните эту запись для просмотра подробных данных JSON, отправленных в Log Analytics.
-
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 - При помощи [конструктора представлений](../../azure-monitor/platform/view-designer.md) создайте представление с данными, собранными в репозитории Log Analytics.

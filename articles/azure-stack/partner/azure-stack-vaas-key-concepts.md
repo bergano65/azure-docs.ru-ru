@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/26/2018
+ms.date: 1/07/2019
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 871df693878611b0322a0f06634c62a7a9efd90a
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ms.openlocfilehash: 6a14a806b48b30d84b021a84a1ef0a2f4318ea94
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52335169"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54106482"
 ---
 # <a name="validation-as-a-service-key-concepts"></a>Проверка как услуга: основные понятия
 
@@ -44,7 +44,7 @@ ms.locfileid: "52335169"
 ![Плитки рабочего процесса VaaS](media/tile_all-workflows.png)
 
 > [!NOTE]
-> Рабочий процесс **Проверка пакетов** сейчас поддерживает два сценария: [Проверка пакетов OEM](azure-stack-vaas-validate-oem-package.md) и [Проверка обновлений программного обеспечения от корпорации Майкрософт](azure-stack-vaas-validate-microsoft-updates.md).
+> Рабочий процесс **Проверка решения** сейчас поддерживает два сценария: [Проверка пакетов OEM](azure-stack-vaas-validate-oem-package.md) и [Проверка обновлений программного обеспечения от корпорации Майкрософт](azure-stack-vaas-validate-microsoft-updates.md).
 
 Дополнительные сведения о типах рабочих процессов см. в статье [Что такое проверка как услуга для Azure Stack?](azure-stack-vaas-overview.md).
 
@@ -52,10 +52,10 @@ ms.locfileid: "52335169"
 
 1. На панели мониторинга решения создайте новое или выберите существующее решение. При этом страница будет обновлена и появятся плитки рабочего процесса.
 2. Чтобы создать рабочий процесс, выберите **Запустить** для любой плитки. Конкретные сведения о каждом рабочем процессе см. в следующих статьях:
-    - "Тестовый проход": [Краткое руководство. Планирование первого теста с помощью портала проверки как услуги](azure-stack-vaas-schedule-test-pass.md)
-    - "Проверка решения": [Проверка нового решения Azure Stack](azure-stack-vaas-validate-solution-new.md)
-    - "Проверка пакета": [Проверка обновлений программного обеспечения от корпорации Майкрософт](azure-stack-vaas-validate-microsoft-updates.md)
-    - "Проверка пакета": [Проверка пакетов OEM](azure-stack-vaas-validate-oem-package.md)
+    - Тестовый проход: [Краткое руководство Планирование первого теста](azure-stack-vaas-schedule-test-pass.md);
+    - Проверка решения: [Проверка нового решения Azure Stack](azure-stack-vaas-validate-solution-new.md)
+    - Проверка решения: [Проверка обновлений программного обеспечения от корпорации Майкрософт](azure-stack-vaas-validate-microsoft-updates.md)
+    - Проверка решения: [Проверка пакетов OEM](azure-stack-vaas-validate-oem-package.md)
 
 3. Для управления существующим рабочим процессом и его отслеживания выберите **Управление** на плитке рабочего процесса. Выберите имя рабочего процесса и используйте кнопку **Изменить**, чтобы просмотреть свойства или изменить общие параметры тестирования.
 

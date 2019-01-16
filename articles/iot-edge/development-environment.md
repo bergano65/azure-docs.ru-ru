@@ -4,16 +4,16 @@ description: Сведения о поддерживаемых системах �
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 12/17/2018
+ms.date: 01/04/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 46b007cfa7156c0c7718b7f4bd4f735a58c722fc
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: f3d1fb393138aeb590bc0645d6abe93652a52a5b
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53797552"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54052587"
 ---
 # <a name="prepare-your-development-and-test-environment-for-iot-edge"></a>Подготовка среды разработки и тестирования для IoT Edge
 
@@ -45,7 +45,7 @@ Visual Studio и Visual Studio Code включают дополнительн
 
 Расширение Azure IoT Edge для Visual Studio Code предоставляет шаблоны модулей IoT Edge, основанные на таких языках программирования, как C, C#, Java, Node.js и Python, а также функциях Azure в C#. 
 
-Дополнительные сведения и ссылки для загрузки см. в разделе [Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge).
+Дополнительные сведения и ссылки для загрузки см. на странице [средств Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools).
 
 Помимо расширений IoT Edge, может оказаться полезной установка дополнительных расширений для разработки. Например, можно использовать [поддержку Docker для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker) для управления образами, контейнерами и реестрами. Кроме того, все основные поддерживаемые языки включают расширения для Visual Studio Code, которые могут помочь при разработке модулей. 
 

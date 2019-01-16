@@ -6,15 +6,15 @@ author: jeffpatt24
 tags: storage
 ms.service: storage
 ms.topic: article
-ms.date: 10/30/2018
+ms.date: 01/02/2019
 ms.author: jeffpatt
 ms.component: files
-ms.openlocfilehash: caa078aa522e20a0e09d0b4d97461358c1698fc7
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: a7ab2e76280458326539fe83d3507dfb4e4a486e
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53744245"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54023107"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -261,6 +261,15 @@ Windows 8, Windows Server 2012 или более поздние версии э�
  
 Например, его можно присвоить 0x100000 и просмотреть станет ли производительность лучше.
 
+## <a name="error-aaddstenantnotfound-in-enabling-azure-active-directory-authentication-for-azure-files-unable-to-locate-active-tenants-with-tenant-id-aad-tenant-id"></a>Ошибка AadDsTenantNotFound при включении аутентификации Azure Active Directory для службы "Файлы Azure": Unable to locate active tenants with tenant Id aad-tenant-id (Не удалось найти активного клиента с идентификатором aad-tenant-id)
+
+### <a name="cause"></a>Причина:
+
+Ошибка AadDsTenantNotFound происходит при попытке [включить аутентификацию Azure Active Directory (AAD) для службы "Файлы Azure"](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-enable) в учетной записи хранения, где [доменная служба AAD (AAD DS)](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/active-directory-ds-overview) не создана в клиенте AAD связанной подписки.  
+
+### <a name="solution"></a>Решение
+
+Включите доменную службу AAD в клиенте AAD подписки, в которой развернута учетная запись хранения. Вам необходимы права администратора клиента AAD, чтобы создать управляемый домен. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/active-directory-ds-getting-started).
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

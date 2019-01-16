@@ -13,12 +13,12 @@ ms.date: 09/05/2018
 ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: 6cf3e9a9b767dfaa6f04d151864f64123e3d6ae7
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 0d3f417b5a169b3d8d91d85b5f47496064c8f5f3
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53077467"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54063358"
 ---
 # <a name="assign-or-remove-licenses-using-the-azure-active-directory-portal"></a>Назначение или удаление лицензий с помощью портала Azure Active Directory
 Многие службы Azure Active Directory (Azure AD) требуют активации продукта Azure AD и наличия лицензии для каждого пользователя или группы (и их участников). Только пользователи с действующими лицензиями могут использовать лицензированные службы Azure AD.
@@ -57,7 +57,8 @@ ms.locfileid: "53077467"
 ## <a name="assign-licenses-to-users-or-groups"></a>Назначение лицензий пользователям или группам
 Убедитесь, что все пользователи, которым необходимо использовать лицензированные службы Azure AD, имеют соответствующую лицензию. Вы сами решаете, нужно ли назначать лицензии отдельным пользователям или целой группе.
 
->[Примечание] Групповое лицензирование — это предварительная версия функции, доступная в рамках любого платного плана лицензирования Azure AD. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).<br><br>Подробные сведения о добавлении пользователей см. в разделе [Добавление или удаление пользователей в Azure Active Directory](add-users-azure-active-directory.md). Подробные сведения о том, как создавать группы и добавлять участников, см. в разделе [Создание простой группы и добавление в нее участников](active-directory-groups-create-azure-portal.md).
+>[!Note]
+>Групповое лицензирование — это предварительная версия функции, доступная в рамках любого платного плана лицензирования Azure AD. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).<br><br>Подробные сведения о добавлении пользователей см. в разделе [Добавление или удаление пользователей в Azure Active Directory](add-users-azure-active-directory.md). Подробные сведения о том, как создавать группы и добавлять участников, см. в разделе [Создание простой группы и добавление в нее участников](active-directory-groups-create-azure-portal.md).
 
 ### <a name="to-assign-a-license-to-a-specific-user"></a>Назначение лицензии конкретному пользователю
 1. На странице **Продукты** выберите название выпуска, который вы хотите назначить пользователю. Например, _Azure Active Directory Premium (план 2)_.

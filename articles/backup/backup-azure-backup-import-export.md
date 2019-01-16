@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/17/2018
 ms.author: saurse
-ms.openlocfilehash: dcedf27f6105dcc1ea6e43feb32d254b491842c7
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 9d91ccd04ed06fb6c256a2d9911202d7df6d08a5
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53974443"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188306"
 ---
 # <a name="offline-backup-workflow-in-azure-backup"></a>Автономное резервное копирование в службе архивации Azure
 В службу архивации Azure встроено несколько эффективных методов, которые позволяют экономить затраты на сеть и хранилище во время передачи начальных полных резервных копий данных в Azure. Обычно при этом выполняется передача больших объемов данных. Служба Azure Backup может использовать диски для передачи автономных резервных копий данных в Azure в рамках автономного заполнения.
@@ -109,7 +109,7 @@ ms.locfileid: "53974443"
     * Промежуточное расположение, используемое для рабочего процесса автономного заполнения, доступно на целевом компьютере по тому же сетевому пути, который был задан во время **запуска автономного резервного копирования** .
     * На компьютере копирования включен инструмент BitLocker.
     * Установите Azure PowerShell 3.7.0.
-    * Установите последние совместимые браузеры (Microsoft Edge или Internet Explorer 11) и включите JavaScript. 
+    * Установите последние совместимые браузеры (Microsoft Edge или Internet Explorer 11) и включите JavaScript. 
     * Компьютер копирования имеет доступ к порталу Azure. При необходимости целевым компьютером может быть исходный компьютер.
     
     > [!IMPORTANT] 

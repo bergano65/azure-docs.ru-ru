@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 10/08/2018
+ms.date: 01/09/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Data Box Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: f4ca513e3c2e2345dc0005b95ddb7927c0164ffe
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: e5f2ecd2cdff0ae5f3f5f086bde0741f7f6d2dbb
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53383023"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54121623"
 ---
 # <a name="tutorial-connect-set-up-and-activate-azure-data-box-edge-preview"></a>Руководство. Подключение, настройка и активация Azure Data Box Edge (предварительная версия) 
 
@@ -85,7 +85,10 @@ ms.locfileid: "53383023"
     - Если в среде включен DHCP, сетевые интерфейсы настраиваются автоматически. IP-адрес, подсеть, шлюз и DNS назначаются автоматически.
     - Если протокол DHCP не включен, при необходимости вы можете назначить статические IP-адреса.
     - Сетевой интерфейс можно настроить как IPv4.
-   
+
+    >[!NOTE] 
+    > Мы советуем не переключать локальный IP-адрес сетевого интерфейса со статического на DCHP при отсутствии другого IP-адреса для подключения к устройству. Если, используя один сетевой интерфейс, вы переключитесь на DHCP, вы не сможете определить адрес DHCP. Если вы хотите переключиться на адрес DHCP, дождитесь, пока устройство зарегистрируется в службе, а затем измените адрес. Затем вы сможете просмотреть IP-адреса всех адаптеров в **свойствах устройства** на портале Azure для службы.
+
 1. (Необязательно.) В левой области выберите **Параметры веб-прокси**, а затем настройте сервер веб-прокси. Хотя конфигурация веб-прокси не является обязательной, если вы используете веб-прокси, вы можете настроить его только на этой странице.
    
    ![Страница "Параметры веб-прокси"](./media/data-box-edge-deploy-connect-setup-activate/set-up-activate-4.png)

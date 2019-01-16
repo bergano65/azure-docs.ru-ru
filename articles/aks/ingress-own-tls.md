@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/23/2018
 ms.author: iainfou
-ms.openlocfilehash: 4e3f2f33cfffeacbcbeccc4f17f55b7d0e1a985c
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: c4a79571d22276f4874d6b8bb5fda3d86ca5f929
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50129163"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54154986"
 ---
 # <a name="create-an-https-ingress-controller-and-use-your-own-tls-certificates-on-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика HTTPS и использование собственных сертификатов TLS в Службе Azure Kubernetes (AKS)
 
@@ -179,7 +179,7 @@ $ curl -v -k --resolve demo.azure.com:443:40.87.46.190 https://demo.azure.com
 [...]
 ```
 
-Параметр *-v* в команде `curl` позволяет вывести подробные сведения, в том числе данные полученного сертификата TLS. В выходных данных curl можно проверить, использовался ли собственный сертификат TLS. При использовании параметра *-k* по-прежнему загружается страница, несмотря на то что используется самозаверяющий сертификат. В приведенном ниже примере показано, что использован сертификат *issuer: CN=demo.azure.com; O=aks-ingress-tls*.
+Параметр *-v* в команде `curl` позволяет вывести подробные сведения, в том числе данные полученного сертификата TLS. В выходных данных curl можно проверить, использовался ли собственный сертификат TLS. При использовании параметра *-k* по-прежнему загружается страница, несмотря на то что используется самозаверяющий сертификат. В следующем примере показано, что использовался сертификат *issuer: CN=demo.azure.com; O=aks-ingress-tls*:
 
 ```
 [...]
@@ -192,7 +192,7 @@ $ curl -v -k --resolve demo.azure.com:443:40.87.46.190 https://demo.azure.com
 [...]
 ```
 
-Теперь добавьте к адресу путь */hello-world-two*, например *https://demo.azure.com/hello-world-two*. Второе демонстрационное приложение с настраиваемым заголовком возвращается, как показано в следующем сокращенном примере выходных данных:
+Теперь добавьте к адресу путь */hello-world-two*, например `https://demo.azure.com/hello-world-two`. Второе демонстрационное приложение с настраиваемым заголовком возвращается, как показано в следующем сокращенном примере выходных данных:
 
 ```
 $ curl -v -k --resolve demo.azure.com:443:137.117.36.18 https://demo.azure.com/hello-world-two

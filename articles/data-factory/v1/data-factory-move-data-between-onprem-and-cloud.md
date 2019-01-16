@@ -9,17 +9,16 @@ ms.assetid: 7bf6d8fd-04b5-499d-bd19-eff217aa4a9c
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: 1bf915bf702cdf9492cce1f32886c0049fbf9867
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: bd9df4553a50f162a4fb2142b7085f813311754f
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242846"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54015837"
 ---
 # <a name="move-data-between-on-premises-sources-and-the-cloud-with-data-management-gateway"></a>Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными
 > [!NOTE]
@@ -63,13 +62,13 @@ ms.locfileid: "51242846"
     ![Добавить на начальную панель](./media/data-factory-move-data-between-onprem-and-cloud/OnPremNewDataFactoryAddToStartboard.png)
 
    > [!IMPORTANT]
-   > Имя фабрики данных Azure должно быть глобально уникальным. Получив сообщение об ошибке **Имя фабрики данных "ADFTutorialOnPremDF" недоступно**, измените имя фабрики данных (например, на yournameADFTutorialOnPremDF) и попробуйте создать ее еще раз. Выполняя оставшиеся действия, описанные в этом руководстве, вместо ADFTutorialOnPremDF используйте именно это имя.
+   > Имя фабрики данных Azure должно быть глобально уникальным. Если возникнет ошибка, сделайте следующее. **Имя фабрики данных "ADFTutorialOnPremDF" недоступно**, измените имя фабрики данных (например, на yournameADFTutorialOnPremDF) и попробуйте создать еще раз. Выполняя оставшиеся действия, описанные в этом руководстве, вместо ADFTutorialOnPremDF используйте именно это имя.
    >
    > В будущем имя фабрики данных может быть зарегистрировано в качестве **DNS-имени** и, следовательно, стать отображаемым.
    >
    >
 4. Выберите **подписку Azure** , в рамках которой вы хотите создать фабрику данных.
-5. Выберите имеющуюся **группу ресурсов** или создайте новую. Для примера в этом руководстве создайте группу ресурсов с именем **ADFTutorialResourceGroup**.
+5. Выберите имеющуюся **группу ресурсов** или создайте новую. Для примера в этом руководстве создайте группу ресурсов с именем: **ADFTutorialResourceGroup**.
 6. На странице **Новая фабрика данных** нажмите кнопку **Создать**.
 
    > [!IMPORTANT]
@@ -106,7 +105,7 @@ ms.locfileid: "51242846"
 
     ![Шлюз — страница "Настройка"](./media/data-factory-move-data-between-onprem-and-cloud/OnPremGatewayConfigureBlade.png)
 
-    Это самый простой способ (одним щелчком) скачать, установить, настроить и зарегистрировать шлюз в один прием. Вы увидите, что на компьютере установлено приложение **Microsoft Data Management Gateway Configuration Manager** . Вы также можете найти исполняемый файл **ConfigManager.exe** в папке по следующему пути: **C:\Program Files\Microsoft Data Management Gateway\2.0\Shared**.
+    Это самый простой способ (одним щелчком) скачать, установить, настроить и зарегистрировать шлюз в один прием. Вы увидите, что на компьютере установлено приложение **Microsoft Data Management Gateway Configuration Manager** . Можно также найти исполняемый файл **ConfigManager.exe** в папке: **C:\Program Files\Microsoft Data Management Gateway\2.0\Shared**.
 
     Шлюз также можно скачать и установить вручную, используя ссылки на этой странице. Затем вы можете зарегистрировать его с помощью ключа, указанного в текстовом поле **Создать ключ**.
 
@@ -119,7 +118,7 @@ ms.locfileid: "51242846"
 5. Подождите несколько минут или пока не появится следующее уведомление:
 
     ![Установка шлюза успешно выполнена](./media/data-factory-move-data-between-onprem-and-cloud/gateway-install-success.png)
-6. Запустите на компьютере приложение **Диспетчер конфигурации шлюза управления данными**. Для этого введите текст **шлюз управления данными** в окне **Поиск**. Вы также можете найти исполняемый файл **ConfigManager.exe** в папке по следующему пути: **C:\Program Files\Microsoft Data Management Gateway\2.0\Shared**.
+6. Запустите на компьютере приложение **Диспетчер конфигурации шлюза управления данными**. Для этого введите текст **шлюз управления данными** в окне **Поиск**. Можно также найти исполняемый файл **ConfigManager.exe** в папке: **C:\Program Files\Microsoft Data Management Gateway\2.0\Shared**
 
     ![Диспетчер конфигурации шлюза](./media/data-factory-move-data-between-onprem-and-cloud/OnPremDMGConfigurationManager.png)
 7. Убедитесь, что отображается сообщение `adftutorialgateway is connected to the cloud service`. В строке состояния внизу отображается надпись **Подключение к облачной службе установлено** и **зеленая галочка**.
@@ -154,7 +153,7 @@ ms.locfileid: "51242846"
 12. В иерархической структуре слева найдите элемент **adftutorialgateway** в узле **Шлюзы данных**.  Щелкните его, чтобы увидеть связанные файлы JSON.
 
 ## <a name="create-linked-services"></a>Создание связанных служб
-На этом этапе вы создадите две связанные службы: **AzureStorageLinkedService** и **SqlServerLinkedService**. Служба **SqlServerLinkedService** связывает с фабрикой данных локальную базу данных SQL Server, а служба **AzureStorageLinkedService** — хранилище BLOB-объектов Azure. Далее, это руководство поможет вам создать конвейер, который копирует данные из локальной базы данных SQL Server в службу хранилища BLOB-объектов Azure.
+На этом шаге создайте две связанные службы: **AzureStorageLinkedService** и **SqlServerLinkedService**. Служба **SqlServerLinkedService** связывает с фабрикой данных локальную базу данных SQL Server, а служба **AzureStorageLinkedService** — хранилище BLOB-объектов Azure. Далее, это руководство поможет вам создать конвейер, который копирует данные из локальной базы данных SQL Server в службу хранилища BLOB-объектов Azure.
 
 #### <a name="add-a-linked-service-to-an-on-premises-sql-server-database"></a>Добавление связанной службы в локальную базу данных SQL Server
 1. В **редакторе фабрики данных** щелкните **Создать хранилище данных** на панели инструментов и выберите **SQL Server**.
@@ -281,7 +280,7 @@ ms.locfileid: "51242846"
    * **folderPath** имеет значение **adftutorial/outfromonpremdf**, где outfromonpremdf — это папка в контейнере adftutorial. Если контейнер **adftutorial** еще не существует, создайте его.
    * Параметр **availability** имеет значение **hourly** (параметру **frequency** присваивается значение **hour**, а параметру **interval** — значение **1**).  Служба фабрики данных каждый час создает срез выходных данных в таблице **emp** в базе данных SQL Azure.
 
-   Если не указать **fileName** для **выходной таблицы**, то созданные в **folderPath** файлы получают имена в следующем формате: Data<Guid>.txt (например: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt.).
+   Если не указать **fileName** для **выходной таблицы**, то созданные в **folderPath** файлы получают имена в следующем формате: Data.<Guid>.txt (например: : Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt.).
 
    Чтобы динамически установить параметры **folderPath** и **fileName** на основе времени **SliceStart**, используйте свойство partitionedBy. В следующем примере folderPath использует год, месяц и день из SliceStart (время начала обработки среза), а в fileName используется время (часы) из SliceStart. Например, если срез выполняется для временной отметки 2014-10-20T08:00:00, folderName получает значение wikidatagateway/wikisampledataout/2014/10/20, а fileName – 08.csv.
 
@@ -363,7 +362,7 @@ ms.locfileid: "51242846"
    * В разделе **typeProperties** в качестве **типа источника** указано значение **SqlSink**, а в качестве **типа приемника** — **BlobSource**.
    * Для свойства **sqlReaderQuery** типа **SqlSource** задан тип SQL-запроса `select * from emp`.
 
-   Даты начала и окончания должны быть в [формате ISO](http://en.wikipedia.org/wiki/ISO_8601). Например, 2014-10-14T16:32:41Z. Время **окончания** указывать не обязательно, однако в этом примере мы будем его использовать.
+   Даты начала и окончания должны быть в [формате ISO](http://en.wikipedia.org/wiki/ISO_8601). Например:  2014-10-14T16:32:41Z. Время **окончания** указывать не обязательно, однако в этом примере мы будем его использовать.
 
    Если не указать значение свойства **end**, оно вычисляется по формуле "**время начала + 48 часов**". Чтобы запустить конвейер в течение неопределенного срока, укажите значение **9/9/9999** в качестве значения свойства **end**.
 

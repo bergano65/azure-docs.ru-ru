@@ -9,16 +9,15 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/28/2018
 ms.author: jingwang
-ms.openlocfilehash: e254c9b18d86debad7ba914a0a4d41369795bc58
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: cbf8a70dae566dcc22b5c5caa84d0781dc2467f9
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37050020"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54022178"
 ---
 # <a name="copy-data-from-azure-database-for-mysql-using-azure-data-factory"></a>Копирование данных из базы данных Azure для MySQL с помощью фабрики данных Azure
 
@@ -42,7 +41,7 @@ ms.locfileid: "37050020"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **AzureMySql**. | Yes |
+| Тип | Свойству type необходимо задать значение **AzureMySql** | Yes |
 | connectionString | Укажите сведения, необходимые для подключения к экземпляру базы данных Azure для MySQL. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду IR (если хранилище данных расположено в частной сети). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
 
@@ -82,7 +81,7 @@ ms.locfileid: "37050020"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type набора данных должно иметь значение **AzureMySqlTable**. | Yes |
+| Тип | Для свойства type набора данных необходимо задать следующее значение: **AzureMySqlTable** | Yes |
 | tableName | Имя таблицы в базе данных MySQL. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -113,7 +112,7 @@ ms.locfileid: "37050020"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **AzureMySqlSource**. | Yes |
+| Тип | Свойству type источника действия копирования необходимо задать значение **AzureMySqlSource** | Yes |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**

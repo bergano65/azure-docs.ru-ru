@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
-ms.openlocfilehash: 8bf0eac5391ea2d9bbb9ba42887b0a53e075589d
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: fb12fe381cb4df6139fae7289279220f72984484
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52847241"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54078020"
 ---
 # <a name="azure-marketplace-listing-guidelines"></a>Рекомендации по публикации в Azure Marketplace
 
@@ -99,8 +99,8 @@ ms.locfileid: "52847241"
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения о разных типах предложений в Marketplace: <br>[Приложения SaaS](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide) <br>[Контейнеры](https://docs.microsoft.com/azure/marketplace/marketplace-containers) <br>[Консультационные услуги](https://docs.microsoft.com/azure/marketplace/consulting-services)
-*   [Определение типа перечисления для решения](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type)
+* Дополнительные сведения о разных типах предложений в Marketplace. <br>[Приложения SaaS](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide) <br>[Контейнеры](https://docs.microsoft.com/azure/marketplace/marketplace-containers) <br>[Консультационные услуги](https://docs.microsoft.com/azure/marketplace/consulting-services)
+*   [Определение типа перечисления для решения](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type).
 
  
 ---  

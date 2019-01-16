@@ -11,17 +11,17 @@ ms.service: azure-monitor
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/06/2018
+ms.date: 01/09/2019
 ms.author: magoedte
-ms.openlocfilehash: da11bb0669bf6bde2c65b2a7a0badaa1ae35abda
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 1a51e9b636e15f178de072af8372404af1dc47e2
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53189135"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54188000"
 ---
 # <a name="how-to-view-container-logs-real-time-with-azure-monitor-for-containers-preview"></a>Как представить журналы контейнеров в реальном времени с помощью службы "Azure Monitor для контейнеров" (предварительная версия)
-Эта функция, которая в настоящее время находится в предварительной версии, обеспечивает представление журналов контейнеров Службы Azure Kubernetes (stdout/stderr) в реальном времени без необходимости выполнять команды kubectl. Если этот вариант выбран, в представлении **Контейнеры** под таблицей данных производительности контейнеров появится новая область, в которой показано динамическое ведение журнала, создаваемое модулем контейнера для помощи в устранении проблем в режиме реального времени.  
+Эта функция, которая в настоящее время находится в предварительной версии, обеспечивает представление журналов контейнеров Службы Azure Kubernetes (stdout/stderr) в реальном времени без необходимости выполнять команды kubectl. Если выбрать этот вариант, в представлении **Контейнеры** под таблицей данных производительности контейнеров появится новая область.  В ней будет показано динамическое ведение журнала, создаваемое модулем контейнера для помощи в устранении проблем в режиме реального времени.  
 
 Динамические журналы поддерживают три метода управления доступом к ним:
 
@@ -39,33 +39,33 @@ ms.locfileid: "53189135"
 1. Скопируйте и вставьте YAML-файл, а затем сохраните его как LogReaderRBAC.yaml.  
 
    ```
-   kind: ClusterRole 
    apiVersion: rbac.authorization.k8s.io/v1 
-   metadata:   
+   kind: ClusterRole 
+   metadata: 
       name: containerHealth-log-reader 
    rules: 
-      - apiGroups: [""]   
-        resources: ["pods/log"]   
+      - apiGroups: [""] 
+        resources: ["pods/log"] 
         verbs: ["get"] 
    --- 
-   kind: ClusterRoleBinding 
    apiVersion: rbac.authorization.k8s.io/v1 
-   metadata:   
+   kind: ClusterRoleBinding 
+   metadata: 
       name: containerHealth-read-logs-global 
-   subjects:   
-      - kind: User     
-        name: clusterUser
-        apiGroup: rbac.authorization.k8s.io 
-    roleRef:   
-       kind: ClusterRole
-       name: containerHealth-log-reader
+   roleRef: 
+       kind: ClusterRole 
+       name: containerHealth-log-reader 
        apiGroup: rbac.authorization.k8s.io 
+   subjects: 
+      - kind: User 
+        name: clusterUser 
+        apiGroup: rbac.authorization.k8s.io 
    ```
 
 2. Создайте привязку правила кластера, выполнив следующую команду: `kubectl create -f LogReaderRBAC.yaml`. 
 
 ## <a name="configure-aks-with-azure-active-directory"></a>Настройка AKS с Azure Active Directory
-Службу Azure Kubernetes можно настроить на использование Azure Active Directory (AD) для аутентификации пользователей. Если вы выполняете настройку впервые, ознакомьтесь со статьей [Интеграция Azure Active Directory со Службой Azure Kubernetes](../../aks/aad-integration.md). Во время создания [клиентского приложения](../../aks/aad-integration.md#create-client-application) и указания **универсального кода ресурса (URI) перенаправления** вам требуется добавить другой URI в список ** https://ininprodeusuxbase.microsoft.com/***.  
+Службу Azure Kubernetes можно настроить на использование Azure Active Directory (AD) для аутентификации пользователей. Если вы выполняете настройку впервые, ознакомьтесь со статьей [Интеграция Azure Active Directory со Службой Azure Kubernetes](../../aks/aad-integration.md). Во время создания [клиентского приложения](../../aks/aad-integration.md#create-client-application) и указания **универсального кода ресурса (URI) перенаправления** вам требуется добавить другой URI в список `https://ininprodeusuxbase.microsoft.com/*`.  
 
 >[!NOTE]
 >Настройку аутентификации с помощью Azure Active Directory для единого входа можно выполнить только при первоначальном развертывании нового кластера AKS. Настроить единый вход для кластера AKS, который уже развернут, невозможно.  

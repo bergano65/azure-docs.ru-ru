@@ -1,28 +1,28 @@
 ---
-title: 'Учебник по службам Azure Analysis Services: занятие 4 "Создание связей" | Документы Майкрософт'
+title: Руководство по службам Azure Analysis Services. Урок 4. Создание связей | Документация Майкрософт
 description: Описывает создание связей в учебном проекте служб Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 7e791514cc25c645775de260e7f190ee20812d4b
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 4a595e4c955b08bda6fcf49b9ca6a050e8440621
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49428498"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54187507"
 ---
 # <a name="create-relationships"></a>Создание связей
 
 В этом занятии вы проверите связи, созданные автоматически при импорте данных, а также добавите новые связи между различными таблицами. Связь — это соединение между двумя таблицами, определяющее, как именно должны соотноситься данные в них. Например, таблицы DimProduct и DimProductSubcategory имеют связь, основанную на том факте, что каждый продукт принадлежит подкатегории. Дополнительные сведения см. в статье [Связи](https://docs.microsoft.com/sql/analysis-services/tabular-models/relationships-ssas-tabular).
   
-Предполагаемое время выполнения этого занятия: **10 минут**  
+Предполагаемое время выполнения этого урока: **10 минут**.  
   
 ## <a name="prerequisites"></a>Предварительные требования  
-Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, нужно завершить предыдущее занятие: [Занятие 3. Обозначение таблицы дат](../tutorials/aas-lesson-3-mark-as-date-table.md). 
+Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом уроке, вам нужно завершить предыдущий урок: [Урок 3. Обозначение таблицы дат](../tutorials/aas-lesson-3-mark-as-date-table.md). 
   
 ## <a name="review-existing-relationships-and-add-new-relationships"></a>Просмотр существующих и добавление новых связей  
 При импорте данных с помощью функции получения данных вы получили из базы данных AdventureWorksDW2014 семь таблиц. В общем случае при импорте данных из реляционного источника вместе с ними автоматически импортируются и существующие связи. Чтобы функция получения данных могла автоматически создать связи в модели данных, должны быть установлены связи между таблицами в источнике данных.
@@ -60,7 +60,7 @@ ms.locfileid: "49428498"
     |Yes|**FactInternetSales [CustomerKey]**|**DimCustomer [CustomerKey]**|  
     |Yes|**FactInternetSales [ProductKey]**|**DimProduct [ProductKey]**|  
   
-    При отсутствии связей убедитесь, что модель включает в себя следующие таблицы: DimCustomer, DimDate, DimGeography, DimProduct, DimProductCategory, DimProductSubcategory и FactInternetSales. Если таблицы из одного подключения к источнику данных импортируются в разное время, связи между ними не создаются автоматически, поэтому их нужно настроить вручную. Если связи не отображаются, это значит, что в источнике данных нет связей. Их можно создать вручную в модели данных.
+    Если какие-либо связи отсутствуют, убедитесь, что модель содержит следующие таблицы: DimCustomer, DimDate, DimGeography, DimProduct, DimProductCategory, DimProductSubcategory и FactInternetSales. Если таблицы из одного подключения к источнику данных импортируются в разное время, связи между ними не создаются автоматически, поэтому их нужно настроить вручную. Если связи не отображаются, это значит, что в источнике данных нет связей. Их можно создать вручную в модели данных.
 
 ### <a name="take-a-closer-look"></a>Более подробный взгляд
 В представлении схемы на линиях, обозначающих связи между таблицами, отображается стрелка, звездочка и число.
@@ -95,7 +95,7 @@ ms.locfileid: "49428498"
      ![aas-lesson4-newinactive](../tutorials/media/aas-lesson4-newinactive.png)
   
 ## <a name="whats-next"></a>Что дальше?
-[Занятие 5. Создание вычисляемых столбцов](../tutorials/aas-lesson-5-create-calculated-columns.md).
+[Урок 5. Создание вычисляемых столбцов](../tutorials/aas-lesson-5-create-calculated-columns.md).
   
   
   

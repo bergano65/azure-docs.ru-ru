@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.openlocfilehash: 9f0a4369d794eda047185844d5fafa49bc8a2e0d
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 24644faab85305f18fe4b657d3e982a306a41c16
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53337926"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54157082"
 ---
 # <a name="developer-guidance-for-azure-active-directory-conditional-access"></a>Руководство для разработчиков по условному доступу в Azure Active Directory
 
@@ -92,11 +92,11 @@ claims={"access_token":{"polids":{"essential":true,"Values":["<GUID>"]}}}
 
 ## <a name="scenario-app-accessing-microsoft-graph"></a>Сценарий: приложение, обращающееся к Microsoft Graph
 
-В этом сценарии вы узнаете, как веб-приложение запрашивает доступ к Microsoft Graph. В этом случае политику условного доступа можно присвоить SharePoint, Exchange или другой службе, к которой осуществляется доступ как к рабочей нагрузке через Microsoft Graph. В этом примере предположим, что для Sharepoint Online имеется политика условного доступа.
+В этом сценарии вы узнаете, как веб-приложение запрашивает доступ к Microsoft Graph. В этом случае политику условного доступа можно присвоить SharePoint, Exchange или другой службе, к которой осуществляется доступ как к рабочей нагрузке через Microsoft Graph. В этом примере предположим, что для SharePoint Online имеется политика условного доступа.
 
 ![Схема приложения, получающего доступ к потоку Microsoft Graph](./media/conditional-access-dev-guide/app-accessing-microsoft-graph-scenario.png)
 
-Сначала приложение запрашивает авторизацию для инструмента Microsoft Graph, которому требуется доступ к подчиненным рабочим нагрузкам без условного доступа. Запрос успешно завершается без вызова политики, а приложение получает маркеры для Microsoft Graph. На этом этапе приложение может использовать маркер доступа в запросе носителя для запрашиваемой конечной точки. Теперь приложению требуется доступ к конечной точке Sharepoint Online Microsoft Graph, например: `https://graph.microsoft.com/v1.0/me/mySite`.
+Сначала приложение запрашивает авторизацию для инструмента Microsoft Graph, которому требуется доступ к подчиненным рабочим нагрузкам без условного доступа. Запрос успешно завершается без вызова политики, а приложение получает маркеры для Microsoft Graph. На этом этапе приложение может использовать маркер доступа в запросе носителя для запрашиваемой конечной точки. Теперь приложению требуется доступ к конечной точке SharePoint Online Microsoft Graph, например: `https://graph.microsoft.com/v1.0/me/mySite`
 
 Приложение уже имеет допустимый маркер Microsoft Graph, поэтому он может выполнить новый запрос без выдачи нового маркера. Этот запрос завершается сбоем, а вызовы утверждений выводятся в Microsoft Graph в виде ошибки HTTP 403 (запрещено) с запросом ```WWW-Authenticate```.
 
@@ -108,7 +108,7 @@ error=insufficient_claims
 www-authenticate="Bearer realm="", authorization_uri="https://login.windows.net/common/oauth2/authorize", client_id="<GUID>", error=insufficient_claims, claims={"access_token":{"polids":{"essential":true,"values":["<GUID>"]}}}"
 ```
 
-Запрос утверждения находится внутри заголовка ```WWW-Authenticate```, который можно проанализировать для извлечения параметров утверждения для следующего запроса. Когда они добавлены к новому запросу, Azure AD оценивает политику условного доступа при входе пользователя. Теперь приложение соответствует политике условного доступа. Повторный запрос к конечной точке Sharepoint Online завершается успешно.
+Запрос утверждения находится внутри заголовка ```WWW-Authenticate```, который можно проанализировать для извлечения параметров утверждения для следующего запроса. Когда они добавлены к новому запросу, Azure AD оценивает политику условного доступа при входе пользователя. Теперь приложение соответствует политике условного доступа. Повторный запрос к конечной точке SharePoint Online завершается успешно.
 
 Заголовок ```WWW-Authenticate``` имеет уникальную структуру. Для него сложно выполнить синтаксический анализ для извлечения значений. Вот краткий вспомогательный метод.
 

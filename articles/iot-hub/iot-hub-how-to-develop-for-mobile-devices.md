@@ -7,12 +7,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 04/16/2018
 ms.author: yizhon
-ms.openlocfilehash: 4a94abe69b525dc1b03fe2c1ae9593f3c6399f56
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 5256a58a2b68584888abcac915392d8e389e9772
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49339759"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54054543"
 ---
 # <a name="develop-for-mobile-devices-using-azure-iot-sdks"></a>Разработка для мобильных устройств с помощью пакетов SDK для Центра Интернета вещей Azure
 
@@ -23,28 +23,32 @@ ms.locfileid: "49339759"
 Пакеты SDK Центра Интернета вещей Azure обеспечивают поддержку собственной платформы iOS с помощью пакета SDK для Центра Интернета вещей Azure для C.  Его можно применять как пакет SDK для iOS, который можно внедрить в проекте Swift или Objective-C XCode.  В iOS пакет SDK для C можно использовать двумя способами.
 
 * Использовать библиотеки CocoaPod в проекте XCode напрямую.  
-
 * Скачать исходный код для пакета SDK для C и создавать приложения для платформы iOS в соответствии с [инструкциями по созданию](https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md) для MacOS.  
 
 Пакет SDK для Центра Интернета вещей Azure для C записывается в C99 для обеспечения максимальной переносимости на различные платформы.  Процесс переноса включает написание тонкого слоя внедрения для компонентов на основе платформ, которые можно найти здесь для [iOS](https://github.com/Azure/azure-c-shared-utility/tree/master/pal/ios-osx).  Возможности в пакете SDK для C будут доступны на платформе iOS, включая поддерживаемые примитивы Центра Интернета вещей Azure и функции пакета SDK (например, политика повтора для обеспечения надежности сети).  Интерфейс для пакета SDK iOS также похож на интерфейс для пакета SDK для Центра Интернета вещей Azure для C.  
 
 В этой документации приведены шаги по разработке приложения для устройства или службы приложения на устройстве iOS.
 
-* [Руководства по началу работы с Центром Интернета вещей Azure](quickstart-send-telemetry-ios.md)  
-
+* [Краткое руководство по отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-ios.md)  
 * [Отправка сообщений из облака на устройство с помощью Центра Интернета вещей (iOS)](iot-hub-ios-swift-c2d.md) 
 
-## <a name="develop-with-azure-iot-hub-cocoapod-libraries"></a>Разработка с библиотеками CocoaPod Центра Интернета вещей Azure
+### <a name="develop-with-azure-iot-hub-cocoapod-libraries"></a>Разработка с библиотеками CocoaPod Центра Интернета вещей Azure
 
 Для разработки iOS пакеты SDK для Центра Интернета вещей Azure выпускают набор библиотек CocoaPod Objective-C.  Чтобы просмотреть последний список библиотек CocoaPod, см. раздел о [CocoaPods для Центра Интернета вещей Microsoft Azure](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/samples/ios/CocoaPods.md).  После регистрации соответствующих библиотек в проекте XCode имеется два способа для написания кода, связанного с Центром Интернета вещей.
 
-* Функция Objective-C. Если проект написан на языке Objective-C, можно вызывать API непосредственно из пакета SDK для Центра Интернета вещей Azure C.  Если проект написан на языке Swift, вы можете вызвать `@objc func` перед созданием функции и перейти к записи логики, относящейся к Центру Интернета вещей Azure, с использованием кода C или Objective-C.  Набор примеров, демонстрирующих, как можно найти эти коды в [репозитории примеров](https://github.com/Azure-Samples/azure-iot-samples-ios).  
+* Функция Objective-C. Если проект написан на языке Objective-C, вы можете вызывать API непосредственно из пакета SDK для Центра Интернета вещей Azure C.  Если проект написан на языке Swift, вы можете вызвать `@objc func` перед созданием функции и перейти к записи логики, относящейся к Центру Интернета вещей Azure, с использованием кода C или Objective-C.  Набор примеров, демонстрирующих, как можно найти эти коды в [репозитории примеров](https://github.com/Azure-Samples/azure-iot-samples-ios).  
 
 * Внедрение примеров C. Если вы написали приложение для устройства с помощью кода C, его можно найти непосредственно в проекте XCode.
-
     * Добавьте файл sample.c в проект XCode из XCode.  
-    
     * Добавьте файл заголовка к зависимости.  Файл заголовка включается в [репозиторий примеров](https://github.com/Azure-Samples/azure-iot-samples-ios) в качестве примера. Для получения дополнительной информации об [Objective-C](https://developer.apple.com/documentation/objectivec) посетите страницу документации компании Apple.
+
+## <a name="develop-for-android-platform"></a>Разработка для платформы Android
+Пакет SDK Java для Центра Интернета вещей Azure поддерживает платформу Android.  Чтобы узнать конкретную протестированную версию API, посетите [страницу по поддержке платформ](iot-hub-device-sdk-platform-support.md), где содержатся последние обновления.
+
+В этой документации приведены шаги по разработке приложения для устройства или службы на устройстве Android с помощью Gradle и Android Studio.
+
+* [Краткое руководство по отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-android.md)  
+* [Краткое руководство по управлению устройством](quickstart-control-device-android.md) 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

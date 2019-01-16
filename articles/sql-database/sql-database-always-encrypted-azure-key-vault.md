@@ -1,5 +1,5 @@
 ---
-title: 'Always Encrypted: База данных SQL и Azure Key Vault | Документация Майкрософт'
+title: Always Encrypted. База данных SQL — Azure Key Vault | Документация Майкрософт
 description: В этой статье показано, как защитить конфиденциальные данные в базе данных SQL с помощью шифрования данных, используя мастер настройки Always Encrypted в SQL Server Management Studio.
 keywords: шифрование данных, ключ шифрования, шифрование в облаке
 services: sql-database
@@ -12,15 +12,15 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: ''
 manager: craigg
-ms.date: 10/05/2018
-ms.openlocfilehash: 5499193ba96d5a32ac6d3b310eee531c68fd52fb
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.date: 01/03/2019
+ms.openlocfilehash: e988a3c86302b875f8393264279e4a65c45ba1eb
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51255933"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54041243"
 ---
-# <a name="always-encrypted-protect-sensitive-data-and-store-encryption-keys-in-azure-key-vault"></a>Always Encrypted: защита конфиденциальных данных и хранение ключей шифрования в Azure Key Vault
+# <a name="always-encrypted-protect-sensitive-data-and-store-encryption-keys-in-azure-key-vault"></a>Always Encrypted. защита конфиденциальных данных и хранение ключей шифрования в Azure Key Vault
 
 В этой статье показано, как защитить конфиденциальные данные в базе данных SQL с помощью шифрования данных, используя [мастер настройки Always Encrypted](https://msdn.microsoft.com/library/mt459280.aspx) в [SQL Server Management Studio (SSMS)](https://msdn.microsoft.com/library/hh213248.aspx). Она также содержит инструкции, с помощью которых вы узнаете, как сохранить каждый ключ шифрования в хранилище ключей Azure.
 
@@ -60,6 +60,7 @@ Always Encrypted — это новая технология шифровани�
     $userPrincipalName = '<username@domain.com>'
     $applicationId = '<application ID from your AAD application>'
     $resourceGroupName = '<resource group name>'
+    # Use the same resource group name when creating your SQL Database below
     $location = '<datacenter location>'
     $vaultName = 'AeKeyVault'
 

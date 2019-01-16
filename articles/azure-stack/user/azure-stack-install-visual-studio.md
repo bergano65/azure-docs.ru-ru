@@ -12,15 +12,15 @@ ms.workload: azure-vs
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 08/15/2018
+ms.date: 01/04/2019
 ms.author: sethm
 ms.reviewer: unknown
-ms.openlocfilehash: 2afbea68c017805e9bd7db43b03face0705608b7
-ms.sourcegitcommit: fab878ff9aaf4efb3eaff6b7656184b0bafba13b
+ms.openlocfilehash: 6bb3215e63e2fc672cde5746e6a9867df899ee88
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "42358753"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54016704"
 ---
 # <a name="install-visual-studio-and-connect-to-azure-stack"></a>Установка Visual Studio и подключение к Azure Stack
 
@@ -65,8 +65,8 @@ ms.locfileid: "42358753"
 3. Разверните раскрывающееся меню **Среда** в **области навигации** и выберите **Учетные записи**.
 
 4. Выберите **Добавить** и введите конечную точку Azure Resource Manager пользователя.  
-  Если вам нужен пакет средств разработки Azure Stack, используйте адрес `https://management.local.azurestack/external`.  
-  Если вам нужны интегрированные системы Azure Stack, используйте адрес `https://management.[Region}.[External FQDN]`.
+  Если вам нужен пакет средств разработки Azure Stack, используйте адрес: `https://management.local.azurestack/external`.  
+  Если вам нужны интегрированные системы Azure Stack, используйте адрес: `https://management.[Region}.[External FQDN]`.
 
     ![X](./media/azure-stack-install-visual-studio/image5.png)
 
@@ -77,17 +77,18 @@ ms.locfileid: "42358753"
     ![Снимок экрана. Cloud Explorer после входа и подключения к Azure Stack](./media/azure-stack-install-visual-studio/image6.png)
 
 6. В меню **Представление** выберите **Cloud Explorer**.
-7. Выберите **Добавить ученую запись** и выполните вход с помощью учетных данных служб федерации Active Directory.  
 
-    ![X](./media/azure-stack-install-visual-studio/image7.png)
+1. Выберите **Добавить ученую запись** и выполните вход с помощью учетных данных служб федерации Active Directory.  
+
+    ![Cloud Explorer](./media/azure-stack-install-visual-studio/image7.png)
 
     Cloud Explorer запрашивает доступные подписки. Вы можете выбрать одну доступную подписку для управления.
 
-    ![X](./media/azure-stack-install-visual-studio/image8.png)
+    ![Cloud Explorer](./media/azure-stack-install-visual-studio/image8.png)
 
 8. Просмотрите имеющиеся ресурсы, группы ресурсов или шаблоны развертывания.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
- - Прочитайте больше о [сосуществовании](https://msdn.microsoft.com/library/ms246609.aspx) с другими версиями Visual Studio.
- - [Разработка шаблонов для Azure Stack](azure-stack-develop-templates.md)
+ - Дополнительные сведения см. в рекомендациях по [параллельной](https://msdn.microsoft.com/library/ms246609.aspx) установке разных версий Visual Studio.
+ - [Разработка шаблонов для Azure Stack](azure-stack-develop-templates.md).

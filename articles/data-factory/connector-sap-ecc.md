@@ -9,16 +9,15 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/26/2018
 ms.author: jingwang
-ms.openlocfilehash: f9f6d2e43fff9a3e57145f39863f66eed64869b2
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: ab9d28212e471a9fe3d59ff30a8225b7440655d7
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37048589"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54022501"
 ---
 # <a name="copy-data-from-sap-ecc-using-azure-data-factory"></a>Копирование данных из SAP ECC с помощью фабрики данных Azure
 
@@ -34,7 +33,7 @@ ms.locfileid: "37048589"
 - копирование данных из любых объектов, предоставляемых службами SAP ECC OData (например, таблиц и представлений SAP, BAPI, средств извлечения данных и т. д.), или данных и документов IDOC, отправляемых в SAP PI, которые могут быть получены как OData через относительные адаптеры;
 - Копирование данных с помощью базовой проверки подлинности.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Как правило, SAP ECC предоставляет сущности через службы OData посредством шлюза SAP. Чтобы использовать этот соединитель SAP ECC, сделайте следующее:
 
@@ -54,7 +53,7 @@ ms.locfileid: "37048589"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **SapEcc** | Yes |
+| Тип | Свойству type необходимо задать значение **SapEcc**. | Yes |
 | URL-адрес | URL-адрес службы SAP ECC OData. | Yes |
 | Имя пользователя | Имя пользователя, применяемое для подключения к SAP ECC. | Нет  |
 | password | Пароль (открытым текстом), применяемый для подключения к SAP ECC. | Нет  |
@@ -121,7 +120,7 @@ ms.locfileid: "37048589"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **SapEccSource**. | Yes |
+| Тип | Свойству type источника действия копирования необходимо задать значение **SapEccSource**. | Yes |
 | query | Параметры запроса OData для фильтрации данных. Пример: $select=Name,Description&$top=10.<br/><br/>Соединитель SAP ECC копирует данные из комбинированного URL-адреса: (URL-адрес, указанный в связанной службе)/(путь, указанный в наборе данных)?(запрос, указанный в источнике действия копирования). См. статью о [компонентах URL-адреса OData](http://www.odata.org/documentation/odata-version-3-0/url-conventions/). | Нет  |
 
 **Пример.**

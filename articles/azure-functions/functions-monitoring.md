@@ -11,16 +11,16 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 11/15/2018
 ms.author: glenga
-ms.openlocfilehash: da676b5d1cb3c25adc72d04882915ee0440c2d98
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: d0c24fbd749a344d9041e9c50c34e6e58ab8fd38
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54002337"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54121232"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
 
-Решение [Функции Azure](functions-overview.md) предлагает встроенную интеграцию со службой [Azure Application Insights](../application-insights/app-insights-overview.md) для мониторинга функций. В этой статье показано, как настроить отправку файлов журнала, созданных системой, из Функций в Application Insights.
+Решение [Функции Azure](functions-overview.md) предлагает встроенную интеграцию со службой [Azure Application Insights](../azure-monitor/app/app-insights-overview.md) для мониторинга функций. В этой статье показано, как настроить отправку файлов журнала, созданных системой, из Функций в Application Insights.
 
 ![Обозреватель метрик в Application Insights](media/functions-monitoring/metrics-explorer.png)
 
@@ -329,7 +329,7 @@ traces
 
 ## <a name="configure-sampling"></a>Настройка выборки
 
-В Application Insights есть функция [выборки](../application-insights/app-insights-sampling.md), которая позволят избежать создания слишком большого объема данных телеметрии в периоды пиковой нагрузки. Если скорость входящей телеметрии превышает заданное пороговое значение, служба Application Insights будет случайным образом игнорировать часть поступающих элементов. Максимальное количество элементов в секунду по умолчанию — 5. Вы можете настроить выборку в файле [host.json](functions-host-json.md).  Ниже приведен пример:
+В Application Insights есть функция [выборки](../azure-monitor/app/sampling.md), которая позволят избежать создания слишком большого объема данных телеметрии в периоды пиковой нагрузки. Если скорость входящей телеметрии превышает заданное пороговое значение, служба Application Insights будет случайным образом игнорировать часть поступающих элементов. Максимальное количество элементов в секунду по умолчанию — 5. Вы можете настроить выборку в файле [host.json](functions-host-json.md).  Ниже приведен пример:
 
 ### <a name="version-2x"></a>Версия 2.x 
 
@@ -360,7 +360,7 @@ traces
 ```
 
 > [!NOTE]
-> [Выборка](../application-insights/app-insights-sampling.md) включена по умолчанию. Если кажется, что некоторые данные отсутствуют, вам просто нужно настроить параметры выборки в соответствии с конкретным сценарием мониторинга.
+> [Выборка](../azure-monitor/app/sampling.md) включена по умолчанию. Если кажется, что некоторые данные отсутствуют, вам просто нужно настроить параметры выборки в соответствии с конкретным сценарием мониторинга.
 
 ## <a name="write-logs-in-c-functions"></a>Запись журналов в функциях C#
 
@@ -414,7 +414,7 @@ logger.LogInformation("partitionKey={partitionKey}, rowKey={rowKey}", partitionK
 В функциях на языке C# вы можете использовать метод расширения `LogMetric` для `ILogger`, чтобы создать пользовательские метрики в Application Insights. Ниже приведен пример вызова метода.
 
 ```csharp
-logger.LogMetric("TestMetric", 1234); 
+logger.LogMetric("TestMetric", 1234);
 ```
 
 Этот пример кода действует так же, как вызов `TrackMetric` с использованием [API Application Insights для .NET](#custom-telemetry-in-c-functions).
@@ -429,10 +429,10 @@ context.log('JavaScript HTTP trigger function processed a request.' + context.in
 
 ### <a name="logging-custom-metrics"></a>Сохранение в журнале пользовательских метрик  
 
-В функциях Node.js вы можете использовать метод `context.log.metric`, чтобы создать пользовательские метрики в Application Insights. Ниже приведен пример вызова метода.
+При работе в среде выполнения Функций Azure [версии 1.x](functions-versions.md#creating-1x-apps) в функциях Node.js вы можете использовать метод `context.log.metric`, чтобы создавать пользовательские метрики в Application Insights. Этот метод не поддерживается в версии 2.x. Ниже приведен пример вызова метода.
 
 ```javascript
-context.log.metric("TestMetric", 1234); 
+context.log.metric("TestMetric", 1234);
 ```
 
 Этот пример кода действует так же, как вызов `trackMetric` с использованием [пакета SDK Node.js для Application Insights](#custom-telemetry-in-javascript-functions).

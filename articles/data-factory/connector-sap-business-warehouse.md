@@ -9,19 +9,18 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 52bbf93d73af281f3959e056a4d5b959e7286cb5
-ms.sourcegitcommit: 1f0587f29dc1e5aef1502f4f15d5a2079d7683e9
+ms.openlocfilehash: 9a0abcd70b4aeb2369604bafa924136122206e0a
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39590336"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54022297"
 ---
 # <a name="copy-data-from-sap-business-warehouse-using-azure-data-factory"></a>Копирование данных из SAP Business Warehouse с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
+> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-sap-business-warehouse-connector.md)
 > * [Текущая версия](connector-sap-business-warehouse.md)
 
@@ -61,7 +60,7 @@ ms.locfileid: "39590336"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type необходимо задать значение **SapBw** | Yes |
+| Тип | Свойству type необходимо задать значение **SapBw**. | Yes |
 | server | Имя сервера, на котором размещен экземпляр SAP Business Warehouse. | Yes |
 | systemNumber | Номер системы SAP Business Warehouse.<br/>Допустимые значения: двузначное десятичное число, представленное в виде строки. | Yes |
 | clientid | Идентификатор клиента в системе SAP Business Warehouse.<br/>Допустимые значения: трехзначное десятичное число, представленное в виде строки. | Yes |
@@ -126,7 +125,7 @@ ms.locfileid: "39590336"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type источника действия копирования должно иметь значение **RelationalSource**. | Yes |
+| Тип | Свойству type источника действия копирования необходимо задать значение **RelationalSource**. | Yes |
 | query | Указывает запрос многомерных выражений для чтения данных из экземпляра SAP Business Warehouse. | Yes |
 
 **Пример.**

@@ -1,13 +1,10 @@
 ---
-title: Создание, изменение или удаление сетевых интерфейсов Azure | Документация Майкрософт
+title: Создание, изменение или удаление сетевого интерфейса Azure
+titlesuffix: Azure Virtual Network
 description: Узнайте, что такое сетевой интерфейс, как создать и удалить сетевые интерфейсы, а также изменить их параметры.
 services: virtual-network
 documentationcenter: na
 author: jimdial
-manager: jeconnoc
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-network
 ms.devlang: NA
 ms.topic: article
@@ -15,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/24/2017
 ms.author: jdial
-ms.openlocfilehash: ffbd36beda179afc4bee6fb2d102215ac8f5f5c2
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: c5667d5fafdc01e8568f459b675d91ace9b8869a
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53539421"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54023759"
 ---
 # <a name="create-change-or-delete-a-network-interface"></a>Создание, изменение или удаление сетевых интерфейсов
 
@@ -69,7 +66,7 @@ ms.locfileid: "53539421"
 
 **Команды**
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network nic create](/cli/azure/network/nic#az_network_nic_create)|
 |PowerShell|[New-AzureRmNetworkInterface](/powershell/module/azurerm.network/new-azurermnetworkinterface#create)|
@@ -94,7 +91,7 @@ ms.locfileid: "53539421"
 
 Если IPv6-адрес назначается сетевому интерфейсу, в выходных данных PowerShell указывается, что адрес назначен, но сам назначенный адрес не возвращается. Аналогично в выходных данных интерфейса командной строки указывается, что адрес назначен, но для адреса возвращается значение *null*.
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network nic list](/cli/azure/network/nic#az_network_nic_list) для просмотра сетевых интерфейсов в подписке, [az network nic show](/cli/azure/network/nic#az_network_nic_show) для просмотра параметров сетевого интерфейса.|
 |PowerShell|[Get-AzureRmNetworkInterface](/powershell/module/azurerm.network/get-azurermnetworkinterface) для просмотра сетевых интерфейсов в подписке или для просмотра параметров сетевого интерфейса.|
@@ -113,7 +110,7 @@ DNS-сервер для сетевого интерфейса в ОС вирту
 
 **Команды**
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network nic update](/cli/azure/network/nic#az_network_nic_update)|
 |PowerShell|[Set-AzureRmNetworkInterface](/powershell/module/azurerm.network/set-azurermnetworkinterface)|
@@ -134,7 +131,7 @@ DNS-сервер для сетевого интерфейса в ОС вирту
 
 **Команды**
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network nic update](/cli/azure/network/nic#az_network_nic_update)|
 |PowerShell|[Set-AzureRmNetworkInterface](/powershell/module/azurerm.network/set-azurermnetworkinterface)|
@@ -154,7 +151,7 @@ DNS-сервер для сетевого интерфейса в ОС вирту
 
 **Команды**
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network nic ip-config update](/cli/azure/network/nic/ip-config#az_network_nic_ip_config_update)|
 |PowerShell|[Set-AzureRmNetworkInterfaceIpConfig](/powershell/module/azurerm.network/set-azurermnetworkinterfaceipconfig)|
@@ -168,7 +165,7 @@ DNS-сервер для сетевого интерфейса в ОС вирту
 
 **Команды**
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network nic update](/cli/azure/network/nic#az_network_nic_update)|
 |PowerShell|[Set-AzureRmNetworkInterface](/powershell/module/azurerm.network/set-azurermnetworkinterface)|
@@ -200,7 +197,7 @@ DNS-сервер для сетевого интерфейса в ОС вирту
 
 **Команды**
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network nic delete](/cli/azure/network/nic#az_network_nic_delete)|
 |PowerShell|[Remove-AzureRmNetworkInterface](/powershell/module/azurerm.network/remove-azurermnetworkinterface)|

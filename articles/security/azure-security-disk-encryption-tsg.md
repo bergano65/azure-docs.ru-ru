@@ -6,14 +6,14 @@ ms.service: security
 ms.subservice: Azure Disk Encryption
 ms.topic: article
 ms.author: mstewart
-ms.date: 12/07/2018
+ms.date: 01/08/2018
 ms.custom: seodec18
-ms.openlocfilehash: a6cf415112f245421b3225c2e2ccb07a7bbf9332
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 36ecfe8942d263ed84e430b01727743ed2cad00c
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53098309"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54103171"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -72,6 +72,9 @@ ProgressMessage            : OS disk successfully encrypted, please reboot the V
 
 ### <a name="azure-key-vault-behind-a-firewall"></a>Azure Key Vault за брандмауэром
 Виртуальная машина должна иметь доступ к хранилищу ключей. Дополнительные сведения о получении доступа к хранилищу ключей за брандмауэром, который поддерживает группа, работающая с Azure Key Vault, см. в статье [Доступ к хранилищу ключей Azure из-за брандмауэра](../key-vault/key-vault-access-behind-firewall.md). 
+
+### <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure 
+Виртуальная машина должна иметь доступ к конечной точке [службы метаданных экземпляров Azure](../virtual-machines/windows/instance-metadata-service.md), использующей известный немаршрутизируемый IP-адрес (`169.254.169.254`), доступ к которому можно получить только из виртуальной машины.
 
 ### <a name="linux-package-management-behind-a-firewall"></a>Управление пакетами Linux из-за брандмауэра
 

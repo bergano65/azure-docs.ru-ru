@@ -9,16 +9,15 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
-ms.openlocfilehash: cd4b58dea43e497a2d7a5b977379d95f7004af45
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 9a1623cca1c185ff3dba07ad5fbe354d8662dc68
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37052313"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54020971"
 ---
 # <a name="until-activity-in-azure-data-factory"></a>Действие Until в фабрике данных Azure
 Действие Until предоставляет те же функциональные возможности, что и циклическая структура do-until в языках программирования. Оно выполняет набор действий в цикле, пока условие, связанное с действием, не получит значение true. Можно указать значение времени ожидания для действия until в фабрике данных. 
@@ -58,7 +57,7 @@ ms.locfileid: "37052313"
 name | Имя действия `Until`. | Строка | Yes
 Тип | Необходимо задать **Until**. | Строка | Yes
 expression | Выражение, для которого возвращается значение true или false. | Выражение.  | Yes
-timeout | Цикл do-until выполняется, пока не истечет указанное здесь время ожидания. | Строка. `d.hh:mm:ss` (или) `hh:mm:ss`. Значение по умолчанию — 7 дней. Максимальное значение — 90 дней. | Нет 
+timeout | Цикл do-until выполняется, пока не истечет указанное здесь время ожидания. | Строка. `d.hh:mm:ss` (или) `hh:mm:ss`. Значение по умолчанию — 7 дней. Максимальное значение 90 дней. | Нет 
 Действия | Набор действий, которые выполняются до тех пор, пока выражение не получит значение `true`. | Массив действий. |  Yes
 
 ## <a name="example-1"></a>Пример 1
@@ -248,7 +247,7 @@ timeout | Цикл do-until выполняется, пока не истечет
 ```
 
 ### <a name="powershell-commands"></a>Команды PowerShell
-Эти команды предполагают, что вы сохранили файлы JSON в папку C:\ADF. 
+Выполнение этих команды предполагает, что вы сохранили файлы JSON в папку C:\ADF. 
 
 ```powershell
 Connect-AzureRmAccount

@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 12/11/2018
+ms.date: 01/04/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: seodec18
-ms.openlocfilehash: ab2ea762ac8cc289ff24136f3cafac2b80fa1a9f
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 7ffceaf761d459667e4118e3e10b733898ea2710
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53268450"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54053982"
 ---
 # <a name="tutorial-create-and-manage-azure-budgets"></a>Руководство. Создание бюджетов Azure и управление ими
 
@@ -51,9 +51,7 @@ ms.locfileid: "53268450"
 
 ## <a name="create-a-budget-in-the-azure-portal"></a>Создание бюджета на портале Azure
 
-Бюджет подписки Azure можно создать на месячный, квартальный или годовой период. Навигационное содержимое на портале Azure определяет, создаете ли вы бюджет для подписки или для группы ресурсов.
-
-На портале Azure перейдите в раздел **Cost Management + Billing** (Управление затратами и выставление счетов) &gt; **Подписки** &gt;Выбрать подписку &gt; **Бюджеты**. В этом примере бюджет, который вы создаете, предназначен для выбранной подписки.
+Бюджет подписки Azure можно создать на месячный, квартальный или годовой период. Навигационное содержимое на портале Azure определяет, создаете ли вы бюджет для подписки или для группы ресурсов. Например, на портале Azure перейдите в раздел **Подписки** &gt;Выбрать подписку &gt; **Бюджеты**. В этом примере бюджет, который вы создаете, предназначен для выбранной подписки. Если вы хотите создать бюджет для группы ресурсов, перейдите в раздел **Группы ресурсов** > Выбрать группу ресурсов > **Бюджеты**.
 
 После создания бюджетов вы увидите упрощенную схему текущих затрат.
 

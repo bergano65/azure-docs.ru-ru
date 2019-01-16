@@ -10,16 +10,16 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 83054c505689768c14d168841764a4557c3e1f8b
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 6da0bddc3f6c90d0ecd3a554988f510e1063caac
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39159004"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54043045"
 ---
 # <a name="licensing-requirements-for-azure-ad-self-service-password-reset"></a>Требования к лицензированию самостоятельного сброса пароля в Azure AD
 
-Предлагаются четыре выпуска Azure Active Directory: "Бесплатный", "Базовый", "Премиум P1" и "Премиум P2". Существует несколько различных функций, которые включают в себя самостоятельный сброс пароля. К ним можно отнести изменение, сброс, разблокировку и обратную запись, которые доступны в разных выпусках Azure AD. В статье описывается разница между выпусками. Дополнительные сведения о функциях, предоставляемых в каждом из выпусков Azure AD, можно найти на странице [Цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
+Azure Active Directory (Azure AD) предлагается в четырех выпусках: Free, Basic, Premium P1 и Premium P2. Существует несколько различных функций, которые включают в себя самостоятельный сброс пароля. К ним можно отнести изменение, сброс, разблокировку и обратную запись, которые доступны в разных выпусках Azure AD. В статье описывается разница между выпусками. Дополнительные сведения о функциях, предоставляемых в каждом из выпусков Azure AD, можно найти на странице [Цены на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
 ## <a name="compare-editions-and-features"></a>Сравнение выпусков и функций
 
@@ -41,7 +41,7 @@ ms.locfileid: "39159004"
    * Данная функция включена в такие выпуски Azure AD, как "Премиум P1" и "Премиум P2".
 
 > [!WARNING]
-> Автономные планы лицензирования Office 365 **не поддерживают компонент обратной записи паролей** и для работы этой функции требуют таких выпусков Azure AD, как "Премиум P1" и "Премиум P2".
+> Автономные планы лицензирования Office 365 *не поддерживают функцию Self-Service Password Reset/Change/Unlock with on-premises writeback* (Самостоятельный сброс пароля / изменение / разблокировка при помощи локальной обратной записи). Для работы этой функции необходим план с выпусками Azure AD Premium P1 или Premium P2.
 >
 
 Дополнительные сведения о лицензировании, включая расходы, можно найти на следующих страницах:

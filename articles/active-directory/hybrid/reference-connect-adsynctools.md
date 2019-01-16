@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect: справочник по модулю PowerShell ADSyncTools | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: Справочник по модулю PowerShell ADSyncTools | Документация Майкрософт'
 description: Этот документ содержит справочные сведения о модуле PowerShell ADSyncTools.psm1.
 author: billmath
 manager: mtillman
@@ -8,14 +8,14 @@ ms.workload: identity
 ms.date: 10/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 586f3c81fad79f49b3506b0bd84a4f7b218d8605
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 54d23bca29c38f258334d7b641b8c1f480da55e1
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52426491"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54054969"
 ---
-# <a name="azure-ad-connect--adsynctools-powershell-reference"></a>Azure AD Connect: справочник по модулю PowerShell ADSyncTools
+# <a name="azure-ad-connect--adsynctools-powershell-reference"></a>Azure AD Connect выполняет следующие функции:  Справочник по модулю PowerShell ADSyncTools
 Приведенная ниже документация содержит справочные сведения о модуле PowerShell ADSyncTools.psm1, который входит в состав Azure AD Connect.
 
 ## <a name="clear-adsynctoolsconsistencyguid"></a>Clear-ADSyncToolsConsistencyGuid
@@ -470,7 +470,7 @@ Accept wildcard characters: False
 ## <a name="get-adsynctoolsrunhistory"></a>Get-ADSyncToolsRunHistory
 
 ### <a name="synopsis"></a>Краткий обзор
-Получение журнала выполнения AAD Connnect.
+Получение журнала выполнения AAD Connect.
 
 ### <a name="syntax"></a>Синтаксис
 
@@ -479,7 +479,7 @@ Get-ADSyncToolsRunHistory [[-Days] <Int32>] [<CommonParameters>]
 ```
 
 ### <a name="description"></a>Описание
-Функция, возвращающая журнал выполнения AAD Connnect в формате XML.
+Функция, возвращающая журнал выполнения AAD Connect в формате XML.
 
 ### <a name="examples"></a>Примеры
 
@@ -526,7 +526,7 @@ Get-ADSyncToolsSourceAnchorChanged [-sourcePath] <Object> [-outputPath] <Object>
 ```
 
 ### <a name="description"></a>Описание
-Функция запрашивает журнал выполнения AAD Connect и экспортирует всех пользователей с сообщением об ошибке: "SourceAnchor attribute has changed" (Атрибут SourceAnchor изменен).
+Функция запрашивает журнал выполнения AAD Connect и экспортирует всех пользователей с сообщением об ошибке: SourceAnchor attribute has changed (Атрибут SourceAnchor изменен).
 
 ### <a name="examples"></a>Примеры
 

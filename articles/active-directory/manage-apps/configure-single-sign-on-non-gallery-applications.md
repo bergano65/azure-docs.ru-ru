@@ -1,37 +1,33 @@
 ---
-title: Настройка единого входа Azure AD для приложений | Документация Майкрософт
-description: Узнайте, как самостоятельно подключить приложения к Azure Active Directory с использованием SAML и единого входа на основе пароля
+title: Единый вход в приложения не из коллекции — Azure Active Directory | Документация Майкрософт
+description: Настройка единого входа для приложений, которых нет в коллекции приложений Azure Active Directory
 services: active-directory
 author: barbkess
-documentationcenter: na
 manager: mtillman
 ms.service: active-directory
 ms.component: app-mgmt
-ms.devlang: na
 ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/12/2018
+ms.date: 01/08/2019
 ms.author: barbkess
 ms.reviewer: asmalser,luleon
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: dd42f6317f684fcc5ad9da94c1b09ab1870ccf76
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: bb2fcbad3d415a8ac7a8e0c3237fcb97042defd7
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53408139"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54121351"
 ---
-# <a name="configure-single-sign-on-to-applications-that-are-not-in-the-azure-active-directory-application-gallery"></a>Настройка единого входа для приложений, которых нет в коллекции приложений Azure Active Directory
+# <a name="configure-single-sign-on-to-non-gallery-applications-in-azure-active-directory"></a>Настройка единого входа для приложений не из коллекции в Azure Active Directory
 
-Эта статья о функциях, с помощью которых администраторы могут настроить единый вход для приложений, не принадлежащих к коллекции приложений Azure Active Directory, *без написания кода*. Эта возможность добавлена 18 ноября 2015 года в составе технической предварительной версии и включена в [Azure Active Directory Premium](../fundamentals/active-directory-whatis.md). Если вам все же необходимо руководство для разработчиков по интеграции пользовательских приложений в Azure AD с использованием кода, см. статью [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md).
+Эта статья о функциях, с помощью которых администраторы могут настроить единый вход для приложений, не принадлежащих к коллекции приложений Azure Active Directory, *без написания кода*. Если вам все же необходимо руководство для разработчиков по интеграции пользовательских приложений в Azure AD с использованием кода, см. статью [Сценарии аутентификации в Azure Active Directory](../develop/authentication-scenarios.md).
 
 Коллекция приложений Azure Active Directory содержит список приложений, которые поддерживают единый вход с помощью Azure Active Directory. Эта функция описана в [этой статье](what-is-single-sign-on.md). Когда вы (как специалист ИТ-отдела или системный интегратор) найдете приложение, которое нужно подключить, сначала выполните пошаговые инструкции по включению единого входа, которые предложены на портале Azure.
 
-Клиенты, у которых есть лицензия [Azure Active Directory Premium](../fundamentals/active-directory-whatis.md), также получают приведенные ниже дополнительные возможности:
+Эти возможности также доступны в соответствии с условиями вашего лицензионного соглашения. Дополнительные сведения см. на [странице с расценками](https://azure.microsoft.com/pricing/details/active-directory/). 
 
-* самостоятельная интеграция любого приложения, которое совместимо с поставщиками удостоверений SAML 2.0 (инициированная поставщиком услуг или поставщиком удостоверений);
-* самостоятельная интеграция любого веб-приложения, где есть HTML-страница входа, с использованием функции [единого входа на основе пароля](what-is-single-sign-on.md#password-based-sso)
+- самостоятельная интеграция любого приложения, которое совместимо с поставщиками удостоверений SAML 2.0 (инициированная поставщиком услуг или поставщиком удостоверений);
+- самостоятельная интеграция любого веб-приложения, где есть HTML-страница входа, с использованием функции [единого входа на основе пароля](what-is-single-sign-on.md#password-based-sso)
 * Самостоятельное подключение приложений, которые используют протокол SCIM для подготовки пользователей ([процесс описан здесь](use-scim-to-provision-users-and-groups.md))
 * Возможность добавлять ссылки на любые приложения в [Средство запуска приложений Office 365](https://blogs.office.com/2014/10/16/organize-office-365-new-app-launcher-2/) или [Панель доступа Azure AD](what-is-single-sign-on.md#linked-sso).
 

@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 01/02/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: 7a4c0d62fd1ea675c6569840c26ed1fb8e388850
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 5f31d995ba4390eb5a893c3ebde49ee4e96e8023
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631487"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54021141"
 ---
 # <a name="prepare-azure-stack-pki-certificates-for-use-in-deployment-or-rotation"></a>Подготовка сертификатов PKI Azure Stack для развертывания или смены секретов
 Файлы сертификатов, [полученные из выбранного центра сертификации](azure-stack-get-pki-certs.md), необходимо импортировать и экспортировать со свойствами, которые соответствуют требованиям к сертификату Azure Stack.
@@ -73,7 +73,14 @@ ms.locfileid: "53631487"
 
 1. Выберите **Yes, Export the Private Key** (Да, экспортировать закрытый ключ), а затем нажмите кнопку **Далее**.
 
-1. В разделе "Формат экспортируемого файла" выберите **Export all Extended Properties** (Экспортировать все расширенные свойства) и нажмите кнопку **Далее**.
+1. В разделе "Формат экспортируемого файла":
+    
+    - Выберите **Include all certificates in the certificate if possible** (Включить, по возможности, все сертификаты в сертификат).  
+    - Выберите **Export all Extended Properties** (Экспортировать все расширенные свойства).  
+    - Выберите **Включить конфиденциальность сертификата**.  
+    - Щелкните **Далее**.  
+    
+    ![Мастер экспорта сертификатов с выбранными параметрами](./media/prepare-pki-certs\azure-stack-save-cert.png)
 
 1. Выберите **Пароль** и укажите пароль для сертификатов. Запомните этот пароль, так как он используется в качестве параметра развертывания. Щелкните **Далее**.
 
@@ -82,4 +89,5 @@ ms.locfileid: "53631487"
 1. Выберите **Готово**.
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 [Validate Azure Stack PKI certificates](azure-stack-validate-pki-certs.md) (Проверка сертификатов PKI Azure Stack)

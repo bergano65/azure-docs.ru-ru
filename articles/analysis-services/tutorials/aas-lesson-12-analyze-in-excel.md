@@ -1,19 +1,19 @@
 ---
-title: 'Учебник по службам Azure Analysis Services: занятие 12 "Анализ в Excel" | Документы Майкрософт'
+title: Руководство по службам Azure Analysis Services. Урок 12. Анализ в Excel | Документация Майкрософт
 description: Описывает анализ данных в Excel в учебном проекте служб Azure Analysis Services.
 author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/18/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 425c3a351c75c63cb07df66d6122f4d900b4932e
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: e5ac04c7bd8174f823cacc67401af8a98b3d8170
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49429768"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54186487"
 ---
 # <a name="analyze-in-excel"></a>Анализ в Excel
 
@@ -21,10 +21,10 @@ ms.locfileid: "49429768"
   
 Для этого занятия нужно установить Excel на том же компьютере, где находится Visual Studio.
   
-Предполагаемое время выполнения этого занятия: **5 минут**  
+Предполагаемое время выполнения этого урока: **5 минут**.  
   
 ## <a name="prerequisites"></a>Предварительные требования  
-Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом разделе, нужно завершить предыдущее занятие: [Занятие 11. Создание ролей](../tutorials/aas-lesson-11-create-roles.md).  
+Этот раздел входит в учебник по табличному моделированию, который следует изучать в предложенном порядке. Прежде чем выполнять задачи в этом уроке, вам нужно завершить предыдущий урок: [Урок 11. Создание ролей](../tutorials/aas-lesson-11-create-roles.md).  
   
 ## <a name="browse-using-the-default-and-internet-sales-perspectives"></a>Просмотр с помощью перспективы по умолчанию и перспективы Internet Sales  
 В этих первых задачах вам нужно просмотреть модель как с помощью перспективы по умолчанию, включающей в себя все объекты модели, так и с помощью созданной ранее перспективы Internet Sales. Перспектива Internet Sales исключает объект таблицы Customer.  
@@ -69,7 +69,7 @@ ms.locfileid: "49429768"
 3.  Закройте Excel без сохранения книги.  
   
 ## <a name="whats-next"></a>Что дальше?
-Перейдите к следующему разделу: [Занятие 13. Развертывание](../tutorials/aas-lesson-13-deploy.md).
+Перейдите к следующему уроку: [Урок 13. Развертывание](../tutorials/aas-lesson-13-deploy.md).
 
   
   

@@ -9,17 +9,16 @@ ms.assetid: 38fd14c1-5bb7-4eef-a9f5-b289ff9a6942
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: douglasl
 robots: noindex
-ms.openlocfilehash: cbd51c48ec5b1801062e7aaf0b77e7b347018b31
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: c41f03494720c9283bb3ce91fda6e3981f305084
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37051871"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54023028"
 ---
 # <a name="troubleshoot-data-factory-issues"></a>Устранение неполадок фабрики данных
 > [!NOTE]
@@ -28,7 +27,7 @@ ms.locfileid: "37051871"
 В этой статье приводятся советы по устранению неполадок, возникающих при использовании фабрики данных Azure. В этой статье перечислены не все возможные проблемы использования службы, однако рассматриваются некоторые вопросы и приводятся общие рекомендации по устранению неполадок.   
 
 ## <a name="troubleshooting-tips"></a>Советы по устранению неполадок
-### <a name="error-the-subscription-is-not-registered-to-use-namespace-microsoftdatafactory"></a>Ошибка "Подписка не зарегистрирована для использования пространства имен Microsoft.DataFactory"
+### <a name="error-the-subscription-is-not-registered-to-use-namespace-microsoftdatafactory"></a>Ошибка: "Подписка не зарегистрирована для использования пространства имен Microsoft.DataFactory"
 Если эта ошибка возникает, поставщик ресурсов фабрики данных Azure не был зарегистрирован на компьютере. Выполните следующее:
 
 1. Запустите Azure PowerShell.
@@ -43,14 +42,14 @@ ms.locfileid: "37051871"
     Register-AzureRmResourceProvider -ProviderNamespace Microsoft.DataFactory
     ```
 
-### <a name="problem-unauthorized-error-when-running-a-data-factory-cmdlet"></a>Проблема: ошибка авторизации при выполнении командлета фабрики данных
+### <a name="problem-unauthorized-error-when-running-a-data-factory-cmdlet"></a>Проблема. Ошибка авторизации при выполнении командлета Фабрики данных
 Скорее всего, для Azure PowerShell используется неправильная учетная запись или подписка Azure. Чтобы выбрать правильную учетную запись и подписку Azure для Azure PowerShell, используйте такие командлеты:
 
 1. Connect-AzureRmAccount — использование правильного идентификатора пользователя и пароля.
 2. Get-AzureRmSubscription — просмотр всех подписок в учетной записи.
 3. Select-AzureRmSubscription &lt;имя_подписки&gt; — выбор нужной подписки. Используйте подписку, которая использовалась для создания фабрики данных на портале Azure.
 
-### <a name="problem-fail-to-launch-data-management-gateway-express-setup-from-azure-portal"></a>Проблема: не удается запустить экспресс-установку шлюза управления данными с портала Azure
+### <a name="problem-fail-to-launch-data-management-gateway-express-setup-from-azure-portal"></a>Проблема. Не удается запустить экспресс-установку шлюза управления данными с портала Azure
 Для экспресс-установки шлюза управления данными требуется Internet Explorer или другой веб-браузер, совместимый с Microsoft ClickOnce. Если не удается запустить экспресс-установку, выполните одно из следующих действий:
 
 * Используйте Internet Explorer или другой веб-браузер, совместимый с Microsoft ClickOnce.
@@ -60,10 +59,10 @@ ms.locfileid: "37051871"
     То же самое (установку надстройки) сделайте и в случае с браузером Firefox. Нажмите кнопку "Открыть меню" на панели инструментов (три горизонтальные линии в правом верхнем углу), нажмите кнопку "Надстройки", введите "ClickOnce" в строку поиска, выберите одно из расширений ClickOnce и установите его.
 * Щелкните ссылку **Установка вручную** в той же колонке на портале. Этот подход используется для скачивания файла установки и его запуска вручную. После успешного завершения установки откроется диалоговое окно настройки шлюза управления данными. Скопируйте **ключ** на экране портала и используйте его в диспетчере конфигурации, чтобы вручную зарегистрировать шлюз в службе.  
 
-### <a name="problem-fail-to-connect-to-on-premises-sql-server"></a>Проблема: не удается подключиться к локальному серверу SQL Server
+### <a name="problem-fail-to-connect-to-on-premises-sql-server"></a>Проблема. Не удается подключиться к локальному SQL Server
 Запустите **диспетчер конфигурации шлюза управления данными** на компьютере шлюза и используйте вкладку **Устранение неполадок**, чтобы проверить подключение к SQL Server с компьютера шлюза. Советы по устранению неполадок, связанных со шлюзом или подключением, см. в разделе [Устранение неполадок в работе шлюза](data-factory-data-management-gateway.md#troubleshooting-gateway-issues).   
 
-### <a name="problem-input-slices-are-in-waiting-state-for-ever"></a>Проблема: срезы входных данных постоянно находятся в состоянии "Waiting"
+### <a name="problem-input-slices-are-in-waiting-state-for-ever"></a>Проблема. Срезы входных данных постоянно находятся в состоянии ожидания
 Срезы могут находиться в состоянии **ожидания** по разным причинам. Одна из распространенных причин — для свойства **external** не задано значение **true**. Все наборы данных, созданные вне фабрики данных Azure, должны быть помечены свойством **external** . Это свойство указывает на то, что данные являются внешними и не поддерживаются какими-либо конвейерами в фабрике данных. После того как данные станут доступны в соответствующем хранилище, срезы данных помечаются флагом **Ready** (готово).
 
 Пример использования свойства **external** приведен ниже. При необходимости можно указать свойство **externalData*** , если для свойства external задано значение true.
@@ -98,10 +97,10 @@ ms.locfileid: "37051871"
 
 Чтобы устранить эту ошибку, добавьте свойство **external** и дополнительный раздел **externalData** в определение JSON входной таблицы и повторно создайте эту таблицу.
 
-### <a name="problem-hybrid-copy-operation-fails"></a>Проблема: сбой гибридной операции копирования
+### <a name="problem-hybrid-copy-operation-fails"></a>Проблема. Сбой гибридной операции копирования
 Действия по устранению неполадок с копированием в локальное хранилище данных и из него с помощью шлюза управления данными см. в статье [Устранение неполадок в работе шлюза](data-factory-data-management-gateway.md#troubleshooting-gateway-issues).
 
-### <a name="problem-on-demand-hdinsight-provisioning-fails"></a>Проблема: сбой подготовки HDInsight по запросу
+### <a name="problem-on-demand-hdinsight-provisioning-fails"></a>Проблема. Сбой подготовки HDInsight по запросу
 При использовании связанной службы типа HDInsightOnDemandLinkedService нужно задать имя linkedServiceName, указывающее на хранилище BLOB-объектов Azure. Фабрика данных использует это хранилище для хранения журналов и вспомогательных файлов для кластера HDInsight по запросу.  Иногда подготовка кластера HDInsight по запросу завершается следующей ошибкой:
 
 ```
@@ -112,7 +111,7 @@ Failed to create cluster. Exception: Unable to complete the cluster create opera
 
 Есть еще одно свойство JSON, additionalLinkedServiceNames, где можно указать дополнительные учетные записи хранения в HDInsight по запросу. Эти дополнительные связанные учетные записи хранения должны находиться в том же расположении, что и кластер HDInsight, иначе происходит сбой с той же ошибкой.
 
-### <a name="problem-custom-net-activity-fails"></a>Проблема: сбой настраиваемого действия .NET
+### <a name="problem-custom-net-activity-fails"></a>Проблема. Сбой настраиваемого действия .NET
 Подробные действия см. в разделе [Отладка конвейера с помощью настраиваемого действия](data-factory-use-custom-activities.md#troubleshoot-failures).
 
 ## <a name="use-azure-portal-to-troubleshoot"></a>Устранение неполадок с помощью портала Azure

@@ -12,15 +12,15 @@ ms.date: 09/14/2018
 ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: 53536604ed2f371d1ae7e63b286b17501b260c8c
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 286c46f760dda4991fd89651bc3a01424d8a5502
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53100724"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54054798"
 ---
 # <a name="sign-up-your-organization-to-use-azure-active-directory"></a>Регистрация организации для использования Azure Active Directory
-Зарегистрируйтесь в службе Azure Active Directory (Azure AD) с новой подпиской Microsoft Azure через:
+Зарегистрируйтесь в службе Azure Active Directory (Azure AD) или в новой подписке Microsoft Azure, используя:
 
 - **Учетную запись Майкрософт.** Используйте персональную учетную запись Майкрософт, чтобы получить доступ к Azure и ко всем потребительским продуктам и облачным службам Майкрософт, таким как Outlook (Hotmail), Messenger, OneDrive, MSN, Xbox LIVE или Office 365. Регистрация почтового ящика Outlook.com автоматически создает учетную запись Майкрософт. Дополнительные сведения см. в статье [Общие сведения об учетной записи Майкрософт](https://account.microsoft.com/account).
 

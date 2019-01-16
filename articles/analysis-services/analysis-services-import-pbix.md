@@ -5,25 +5,24 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 10/11/2018
+ms.date: 01/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 3adf0c9c2e2b264904e66b82716447d634aaeee7
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: 47223f22c797d892bc7cbdc0086439ee9cae9fcb
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50209655"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54187728"
 ---
 # <a name="import-a-power-bi-desktop-file"></a>Импорт файла Power BI Desktop
 
-Вы можете импортировать модель данных в файл Power BI Desktop в Azure Analysis Services. Импортируются метаданные модели, кэшированные данные и подключения к источникам данных. Отчеты и визуализации не импортируются. Импортированные модели данных из Power BI Desktop имеют уровень совместимости 1400.
+Вы можете импортировать модель данных в файл Power BI Desktop в Azure Analysis Services. Импортируются метаданные модели, кэшированные данные и подключения к источникам данных. Отчеты и визуализации не импортируются. Импортированные модели данных из Power BI Desktop имеют уровни совместимости 1400 и 1465.
 
 > [!IMPORTANT]
 > Эту функцию не рекомендуется использовать. В будущем обновлении она может быть удалена или значительно изменена. Рекомендуется прекратить использование этой функции в новых и существующих проектах, чтобы обеспечить совместимость с последующими обновлениями. Для разработки и тестирования более сложных моделей лучше использовать Visual Studio (SSDT) и SQL Server Management Studio (SSMS).
 
-**Ограничения**   
-
+## <a name="restrictions"></a>Ограничения  
 
 - Если ваша модель данных создана в Power BI Desktop с обновлением за июль 2018 г. (2.60.5169.3201) или более поздней версии, убедитесь, что в ней не включены предварительные версии функций. Предварительные версии функций еще не поддерживаются в Azure Analysis Services. Если при импорте появится следующая ошибка, в PBIX-файле включены предварительные версии функций, которые пока не поддерживаются в Azure Analysis Services.
 

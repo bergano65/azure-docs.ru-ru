@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 11/11/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: b702d375f7a66843918a960ca3783c078eac541e
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.openlocfilehash: a4737f4308f49547178bb216b90589c596f604c9
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51579312"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54118444"
 ---
 # <a name="azure-sql-data-warehouse-release-notes"></a>Заметки о выпуске для Хранилища данных SQL Azure
 
@@ -23,6 +23,7 @@ ms.locfileid: "51579312"
 
 Щелкните ссылки ниже, чтобы подробнее узнать о новых функциях и улучшениях в последней версии Хранилища данных SQL Azure. Получение этих служебных обновлений можно ожидать в течение указанного периода обслуживания.
 
+- [Декабрь 2018 г.](./release-notes-december-2018.md)
 - [Октябрь 2018 г.](./release-notes-october-2018.md)
 - [Сентябрь 2018 г.](./release-notes-september-2018.md)
 - [Август 2018 г.](./release-notes-august-2018.md)
@@ -38,7 +39,7 @@ ms.locfileid: "51579312"
 SELECT @@VERSION AS 'SQL Data Warehouse';
 ```
 
-Пример выходных данных: ![версия Хранилища данных SQL](./media/release-notes/sql_data_warehouse_version.png)
+Выходные данные примера: ![Версия Хранилища данных SQL](./media/release-notes/sql_data_warehouse_version.png)
 
 Используйте полученные даты, чтобы проверить, какой выпуск применялся к Хранилищу данных SQL Azure. 
 

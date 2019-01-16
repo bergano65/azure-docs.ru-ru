@@ -12,12 +12,12 @@ ms.date: 10/19/2018
 ms.author: lizross
 ms.custom: it-pro, seodec18
 ms.reviewer: krbain
-ms.openlocfilehash: 12f557e9453db0d8bff2ab91fe8453e026e0320c
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: c13be8cbe9c05b9dcf513588825a22722c66e529
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53104277"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54061901"
 ---
 # <a name="add-or-remove-a-group-from-another-group-using-azure-active-directory"></a>Добавление группы в другую группу или удаление из нее с помощью Azure Active Directory
 В этой статье описано, как добавить или удалить группу из другой группы в Azure Active Directory.
@@ -29,7 +29,7 @@ ms.locfileid: "53104277"
 Существующую группу безопасности можно добавить в другую существующую группу безопасности (вложение группы). Для этого нужно создать группу-участник (подгруппу) и родительскую группу. Группа-участник наследует атрибуты и свойства родительской группы, позволяя сэкономить время на настройке.
 
 >[!Important]
->Сейчас не поддерживается:<ul><li>Добавление группы в другую группу, синхронизированную с локальной службой Active Directory</li><li>добавление групп безопасности в группы Office 365;</li><li>добавление групп Office 365 в группы безопасности или другие группы Office 365;</li><li>назначение приложений вложенным группам;</li><li>применение лицензий ко вложенным группам.</li></ul>
+>Сейчас не поддерживается:<ul><li>добавление группы в другую группу, синхронизированную с локальной службой Active Directory;</li><li>добавление групп безопасности в группы Office 365;</li><li>добавление групп Office 365 в группы безопасности или другие группы Office 365;</li><li>назначение приложений вложенным группам;</li><li>применение лицензий ко вложенным группам.</li></ul>
 
 ### <a name="to-add-a-group-as-a-member-of-another-group"></a>Добавление группы в качестве элемента другой группы
 

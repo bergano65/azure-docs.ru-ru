@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/08/2018
 ms.author: cwatson
-ms.openlocfilehash: 096cf8e7a03f00cd5854ac4ce9569b14fe4b761b
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: cdcb4e06afab2cccff7baa92989ccf904f42cf88
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52581482"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54118019"
 ---
 # <a name="understand-how-the-azure-reservation-discount-is-applied-to-virtual-machines"></a>Сведения о применении скидки к зарезервированному экземпляру виртуальной машины Azure
 
@@ -53,6 +53,10 @@ ms.locfileid: "52581482"
 
 Если используются экземпляры виртуальных машин Windows, резервирование покрывает затраты на инфраструктуру. Резервирование применяется к затратам на инфраструктуру виртуальных машин Windows так же, как и для виртуальных машин с другими ОС. За программное обеспечение Windows плата взимается отдельно для каждого виртуального ЦП. См. статью о [затратах на программное обеспечение Windows с резервированием](https://go.microsoft.com/fwlink/?linkid=862756). Вы можете покрыть расходы на лицензии Windows, используя [Преимущество гибридного использования Azure для Windows Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing).
 
+## <a name="discount-applies-to-different-sizes-with-instance-size-flexibility"></a>Применение скидки для различных размеров виртуальной машины с гибкостью размера экземпляра
+
+Если при покупке зарезервированного экземпляра виртуальной машины вы выбираете **Оптимизировано для**: **гибкость размера экземпляра**, покрытие скидки зависит от выбранного размера виртуальной машины. Резервирование можно применить к размерам в группе виртуальных машин серии того же размера. Дополнительные сведения см. в статье [Гибкость размеров виртуальных машин при использовании зарезервированных экземпляров виртуальных машин](../virtual-machines/windows/reserved-vm-instance-size-flexibility.md).
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о резервировании в Azure см. по следующим ссылкам:
@@ -68,4 +72,4 @@ ms.locfileid: "52581482"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

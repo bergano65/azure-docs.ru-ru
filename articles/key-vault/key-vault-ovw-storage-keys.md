@@ -5,16 +5,16 @@ description: Ключи учетной записи хранения обесп�
 ms.topic: conceptual
 services: key-vault
 ms.service: key-vault
-author: bryanla
-ms.author: bryanla
+author: prashanthyv
+ms.author: pryerram
 manager: mbaldwin
 ms.date: 10/03/2018
-ms.openlocfilehash: e110a24af6a0d49ea949db6bc30ab344c81d0f48
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: 3ee0d19c174490d558a8ff06d3f5e038ffff211f
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52619288"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54064446"
 ---
 # <a name="azure-key-vault-managed-storage-account---cli"></a>Учетная запись хранения, управляемая с помощью Azure Key Vault, — CLI
 
@@ -32,7 +32,7 @@ ms.locfileid: "52619288"
 1. Установите [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).   
 2. [Создайте учетную запись хранения](https://azure.microsoft.com/services/storage/).
     - Следуйте [инструкциям](https://docs.microsoft.com/azure/storage/) по созданию учетной записи хранения.  
-    - **Рекомендации по именованию**. Имя учетной записи хранения должно содержать от 3 до 24 знаков и состоять только из цифр и строчных букв.        
+    - **Рекомендации по именованию**. Имя учетной записи хранения должно содержать от 3 до 24 символов и состоять только из цифр и строчных букв.        
       
 <a name="step-by-step-instructions-on-how-to-use-key-vault-to-manage-storage-account-keys"></a>Пошаговые инструкции по использованию Key Vault для управления ключами учетной записи хранения
 --------------------------------------------------------------------------------

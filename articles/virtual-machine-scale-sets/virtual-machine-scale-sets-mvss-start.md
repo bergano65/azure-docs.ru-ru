@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/01/2017
 ms.author: manayar
-ms.openlocfilehash: 29c0a1a15db7670d83ff384a1ba0f37499389ef7
-ms.sourcegitcommit: ae45eacd213bc008e144b2df1b1d73b1acbbaa4c
+ms.openlocfilehash: a476af9ceb1b664a458f7f07a5a7b3945b1ad881
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50741893"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54036568"
 ---
 # <a name="learn-about-virtual-machine-scale-set-templates"></a>Подробнее о шаблонах масштабируемых наборов виртуальных машин
 [Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#template-deployment) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон минимального приемлемого масштабируемого набора и изменить его в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss). 
@@ -70,7 +70,7 @@ ms.locfileid: "50741893"
    "resources": [
 ```
 
-Каждый ресурс должен иметь свойства `type`, `name`, `apiVersion` и `location`. В этом примере для первого ресурса указан тип `Microsft.Network/virtualNetwork`, имя `myVnet` и версия API `2016-03-30`. (Последнюю версию API для типа ресурса см. в [документации по REST API Azure](https://docs.microsoft.com/rest/api/).)
+Каждый ресурс должен иметь свойства `type`, `name`, `apiVersion` и `location`. В этом примере первого ресурса указан тип [Microsft.Network/virtualNetwork](/azure/templates/microsoft.network/virtualnetworks) с именем `myVnet` и apiVersion `2016-03-30`. (Последнюю версию API для типа ресурса см. в [справочнике по шаблонам Azure Resource Manager](/azure/templates/).)
 
 ```json
      {
@@ -124,7 +124,7 @@ ms.locfileid: "50741893"
        ],
 ```
 ## <a name="specify-scale-set-properties"></a>Определение свойств масштабируемого набора
-Масштабируемый набор имеет множество свойств, позволяющих настроить входящие в этот набор виртуальные машины. Полный список этих свойств см. в [документации по REST API для масштабируемого набора](https://docs.microsoft.com/rest/api/virtualmachinescalesets/create-or-update-a-set). Лишь несколько наиболее распространенных свойств определены в этом руководстве.
+Масштабируемый набор имеет множество свойств, позволяющих настроить входящие в этот набор виртуальные машины. Полный список этих свойств см. в [справочнике по шаблонам](/azure/templates/microsoft.compute/virtualmachinescalesets). Лишь несколько наиболее распространенных свойств определены в этом руководстве.
 ### <a name="supply-vm-size-and-capacity"></a>Определение размера и емкости виртуальных машин
 Для масштабируемого набора следует указать размер виртуальной машины, которую следует создать (имя SKU), и число создаваемых виртуальных машин (емкость SKU). Сведения о доступных размерах (именах SKU) для виртуальных машин см. в [документации по размерам виртуальных машин](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-sizes).
 

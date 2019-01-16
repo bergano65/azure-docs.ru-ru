@@ -9,17 +9,16 @@ ms.assetid: c0538b90-2695-4c4c-a6c8-82f59111f4ab
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 417425a6982ca92e486ccfb578131ebc898a0466
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 03127dc777588f669ef07af52c8f73d986bfe0ea
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37046094"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54020818"
 ---
 # <a name="azure-data-factory---samples"></a>Фабрика данных Azure — примеры
 > [!NOTE]
@@ -31,7 +30,7 @@ ms.locfileid: "37046094"
 
 | Образец | ОПИСАНИЕ |
 |:--- |:--- |
-| [Пошаговое руководство по ADF](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ADFWalkthrough) |Этот пример представляет собой сквозное руководство по обработке файлов журналов с помощью фабрики данных Azure для преобразования данных из файлов журналов в аналитические данные. <br/><br/>В этом руководстве конвейер фабрики данных собирает примеры журналов, обрабатывает и дополняет их эталонными данными из журналов, а также преобразует сведения, чтобы оценить эффективность недавно запущенной маркетинговой кампании. |
+| [Пошаговое руководство по ADF](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/ADFWalkthrough) |Этот пример представляет собой сквозное руководство по обработке файлов журналов с помощью фабрики данных Azure для преобразования данных из файлов журналов в аналитические данные. <br/><br/> В этом руководстве конвейер фабрики данных собирает примеры журналов, обрабатывает и дополняет их эталонными данными из журналов, а также преобразует сведения, чтобы оценить эффективность недавно запущенной маркетинговой кампании. |
 | [Примеры JSON](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/JSON) |В этой выборке представлены примеры кода JSON для распространенных сценариев. |
 | [Пример загрузчика данных HTTP](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/HttpDataDownloaderSample) |В этой выборке демонстрируется скачивание данных из конечной точки HTTP в хранилище BLOB-объектов Azure с помощью настраиваемого действия .NET. |
 | [Пример действия перекрестного домена приложения .NET](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/CrossAppDomainDotNetActivitySample) |Этот пример позволяет создать настраиваемое действие .NET, не ограниченное версиями сборок, которые используются средством запуска фабрики данных Azure (например, WindowsAzure.Storage версии 4.3.0, Newtonsoft.Json версии 6.0.x и т. д.). |
@@ -78,12 +77,12 @@ ms.locfileid: "37046094"
     ![Колонка "Фабрика данных"](./media/data-factory-samples/DataFactoryBladeAfter.png)
 
 ## <a name="samples-in-visual-studio"></a>Примеры в Visual Studio
-### <a name="prerequisites"></a>предварительным требованиям
+### <a name="prerequisites"></a>Предварительные требования
 На вашем компьютере должны быть установлены следующие компоненты:
 
 * Visual Studio 2013 или Visual Studio 2015.
 * Загрузите пакет SDK Azure для Visual Studio 2013 или Visual Studio 2015. Перейдите на [cтраницу загрузки Azure](https://azure.microsoft.com/downloads/) и щелкните **VS 2013** или **VS2015** в разделе **.NET**.
-* Скачайте последнюю версию подключаемого модуля фабрики данных Azure для Visual Studio: [VS 2013](https://visualstudiogallery.msdn.microsoft.com/754d998c-8f92-4aa7-835b-e89c8c954aa5) или [VS 2015](https://visualstudiogallery.msdn.microsoft.com/371a4cf9-0093-40fa-b7dd-be3c74f49005). При использовании Visual Studio 2013 также можно обновить подключаемый модуль, выполнив следующие действия. В меню выберите **Сервис** -> **Расширения и обновления** -> **В сети** -> **Галерея Visual Studio** -> **Microsoft Azure Data Factory Tools for Visual Studio**(Инструменты фабрики данных Microsoft Azure для Visual Studio) -> **Обновить**.
+* Скачайте последнюю версию подключаемого модуля фабрики данных Azure для Visual Studio: [VS 2013](https://visualstudiogallery.msdn.microsoft.com/754d998c-8f92-4aa7-835b-e89c8c954aa5) или [VS 2015](https://visualstudiogallery.msdn.microsoft.com/371a4cf9-0093-40fa-b7dd-be3c74f49005). Если вы используете Visual Studio 2013, вы также можете обновить подключаемый модуль, выполнив следующие действия. В меню выберите **Сервис** -> **Расширения и обновления** -> **В сети** -> **Галерея Visual Studio** -> **Средства фабрики данных Microsoft Azure для Visual Studio** -> **Обновить**.
 
 ### <a name="use-data-factory-templates"></a>Использование шаблонов фабрики данных
 1. Щелкните **Файл**, наведите указатель мыши на пункт **Создать** и щелкните **Проект**.
@@ -106,7 +105,7 @@ ms.locfileid: "37046094"
    3. Выберите **подписку Azure** , в рамках которой вы хотите создать фабрику данных.
    4. Выберите **группу ресурсов** для фабрики данных.
    5. В качестве **региона** выберите **западную часть США**, **восточную часть США** или **Северную Европу**.
-   6. Нажмите кнопку **Далее**.
+   6. Щелкните **Далее**.
 6. На странице **Configure data stores** (Настройка хранилищ данных) укажите существующую **базу данных SQL Azure** и **учетную запись хранения Azure** (или создайте новые), а затем нажмите кнопку "Далее".
 7. На странице **Настройка вычислений** выберите значения по умолчанию и нажмите кнопку **Далее**.
 8. На странице **Сводка** проверьте все параметры и нажмите кнопку **Далее**.

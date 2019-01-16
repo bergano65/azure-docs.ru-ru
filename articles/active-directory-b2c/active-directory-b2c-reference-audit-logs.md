@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 08/04/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 67e57faf37697697bee74597a40db39149699fe5
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 31f0517cd4d61fa324072eae954404c899451cc3
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49320243"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54117407"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -39,7 +39,7 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 > Сведения о действиях CRUD для объектов пользователя см. в категории **основного каталога**.
 
 ## <a name="example-activity"></a>Пример действия
-Приведенный ниже пример показывает данные, полученные при входе пользователя с помощью внешнего поставщика удостоверений: ![Журналы аудита — пример](./media/active-directory-b2c-reference-audit-logs/audit-logs-example.png)
+Приведенный ниже пример показывает данные, полученные при входе пользователя с помощью внешнего поставщика удостоверений: ![Журналы аудита — пример](./media/active-directory-b2c-reference-audit-logs/audit-logs-example.png)
 
 ## <a name="accessing-audit-logs-through-the-azure-portal"></a>Доступ к журналам аудита через портал Azure
 1. Перейдите на [портал Azure](https://portal.azure.com). Перейдите в каталог B2C.
@@ -68,7 +68,7 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 ### <a name="prerequisites"></a>Предварительные требования
 Чтобы проверить подлинность в API отчетов Azure AD, нужно сначала зарегистрировать приложение. Выполните действия из раздела [Предварительные требования для доступа к интерфейсам API отчетов Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-reporting-api-getting-started/).
 
-### <a name="accesing-the-api"></a>Доступ к API
+### <a name="accessing-the-api"></a>Получение доступа к API
 Чтобы скачать журналы аудита Azure AD B2C через API, нужно отфильтровать журналы категории **B2C**. Для фильтрации по категории используйте параметр строки запроса при вызове конечной точки API отчетов Azure AD, как показано ниже:
 
 `https://graph.windows.net/your-b2c-tentant.onmicrosoft.com/activities/audit?api-version=beta&$filter=category eq 'B2C'`

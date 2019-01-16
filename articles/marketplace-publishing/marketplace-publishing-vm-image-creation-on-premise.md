@@ -3,7 +3,7 @@ title: Локальное создание образа виртуальной �
 description: Узнайте и выполните действия по созданию локального образа виртуальной машины, а затем разверните его в Azure Marketplace и сделайте доступным для покупки.
 services: marketplace-publishing
 documentationcenter: ''
-author: HannibalSII
+author: v-miclar
 manager: hascipio
 editor: ''
 ms.assetid: 26dfbd5a-8685-4b19-987e-c20ca60540ec
@@ -14,12 +14,13 @@ ms.tgt_pltfrm: Azure
 ms.workload: na
 ms.date: 04/29/2016
 ms.author: hascipio; v-divte
-ms.openlocfilehash: e5571a0933284a52d5567db0505ecaced6c6c336
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ROBOTS: NOINDEX
+ms.openlocfilehash: b9fbb2f50905b1b80a092ba13f860f30cb9423a9
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51253505"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54077799"
 ---
 # <a name="develop-an-on-premises-virtual-machine-image-for-the-azure-marketplace"></a>Локальная разработка образа виртуальной машины для Azure Marketplace
 Настоятельно рекомендуется разрабатывать виртуальные жесткие диски (VHD) Azure прямо в облаке, используя для этого протокол удаленного рабочего стола. Однако при необходимости вы можете загрузить VHD и выполнить разработку в локальной инфраструктуре.  
@@ -144,7 +145,7 @@ ms.locfileid: "51253505"
         Add-AzureVhd –Destination “http://mystorageaccount.blob.core.windows.net/containername/vmsku.vhd” -LocalFilePath “C:\Users\Administrator\Desktop\vmsku.vhd”
 
 ### <a name="upload-a-vhd-by-using-the-command-line-tool-for-mac-and-linux"></a>Отправка VHD с помощью программы командной строки для Mac и Linux
-В [программе командной строки Linux](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2) введите следующее: azure vm image create <image name> --location <Location of the data center> --OS Linux <LocationOfLocalVHD>
+В [программе командной строки Linux](https://docs.microsoft.com/cli/azure/get-started-with-az-cli2) выполните следующую команду: `azure vm image create <image name> --location <Location of the data center> --OS Linux <LocationOfLocalVHD>`
 
 ## <a name="see-also"></a>См. также
 * [Создание образа виртуальной машины для Marketplace](marketplace-publishing-vm-image-creation.md)

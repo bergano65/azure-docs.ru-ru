@@ -10,19 +10,19 @@ ms.service: active-directory
 ms.component: users-groups-roles
 ms.topic: article
 ms.workload: identity
-ms.date: 04/06/2017
+ms.date: 01/08/2019
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: c07b87d88b884b22f44fe108bb28877cb30f973e
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 8e11d370f58028ee4c1665d84d0e48541e7d3344
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52837177"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54121198"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
-В этой статье описывается два способа смены доменного имени DNS в неуправляемом каталоге в Azure Active Directory (Azure AD). Когда пользователь самостоятельно регистрируется в облачной службе, использующей Azure AD, он добавляется в неуправляемый каталог Azure AD на основе домена электронной почты. Дополнительные сведения о самостоятельной (или "вирусной") регистрации в службе см. в разделе [What is self-service signup for Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-self-service-signup) (Что такое самостоятельная регистрация для Azure Active Directory?).
+В этой статье описывается два способа смены доменного имени DNS в неуправляемом каталоге в Azure Active Directory (Azure AD). Когда пользователь самостоятельно регистрируется в облачной службе, использующей Azure AD, он добавляется в неуправляемый каталог Azure AD на основе домена электронной почты. Дополнительные сведения о самостоятельной (или "вирусной") регистрации в службе см. в статье [Что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)
 
 ## <a name="decide-how-you-want-to-take-over-an-unmanaged-directory"></a>Выбор способа смены неуправляемого каталога
 В процессе смены администратором можно подтвердить права владельца, как описано в статье [Краткое руководство. Добавление личного домена в Azure Active Directory](../fundamentals/add-custom-domain.md). В следующем разделе возможности администрирования описываются более подробно, но если вкратце, то:
@@ -41,7 +41,7 @@ ms.locfileid: "52837177"
 
 3. В сообщении электронной почты с подтверждением от Power BI выберите **Yes, that's me** (Да, это я).
 
-4. Войдите в [Центр администрирования Office 365](https://portal.office.com/adminportal/Home), используя учетную запись пользователя Power BI. Вы получите сообщение, предлагающее вам **Become the Admin** (Стать администратором) доменного имени, которое уже было проверено в неуправляемом клиенте. Выберите **Yes, I want to be the admin** (Да, я хочу стать администратором).
+4. Войдите в [Центр администрирования Office 365](https://portal.office.com/admintakeover), используя учетную запись пользователя Power BI. Вы получите сообщение, предлагающее вам **Become the Admin** (Стать администратором) доменного имени, которое уже было проверено в неуправляемом клиенте. Выберите **Yes, I want to be the admin** (Да, я хочу стать администратором).
   
   ![Первый снимок экрана для "Become the Admin" (Стать администратором)](./media/domains-admin-takeover/become-admin-first.png)
   
@@ -53,9 +53,9 @@ ms.locfileid: "52837177"
 
 Если вы выполнили описанные выше шаги, то теперь вы являетесь глобальным администратором клиента Fourth Coffee в Office 365. Чтобы интегрировать доменное имя с другими службами Azure, можно удалить его из Office 365 и добавить в другой управляемый клиент в Azure.
 
-### <a name="adding-the-domain-name-to-a-managed-tenant-in-azure-ad"></a>Добавление доменного имени в управляемый клиент в Azure AD 
+### <a name="adding-the-domain-name-to-a-managed-tenant-in-azure-ad"></a>Добавление доменного имени в управляемый клиент в Azure AD
 
-1. Откройте [Центр администрирования Office 365](https://portal.office.com/adminportal/Home).
+1. Откройте [Центр администрирования Office 365](https://portal.office.com/admintakeover).
 2. Выберите вкладку **Пользователи** и создайте учетную запись пользователя с именем, таким как *user@fourthcoffeexyz.onmicrosoft.com*, где не используется имя личного домена. 
 3. Убедитесь, что у этой новой учетной записи пользователя есть права глобального администратора для клиента Azure AD.
 4. В Центре администрирования Office 365 откройте вкладку **Домены**, выберите доменное имя и нажмите кнопку **Удалить**. 

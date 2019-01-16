@@ -12,12 +12,12 @@ ms.topic: troubleshooting
 ms.workload: infrastructure
 ms.date: 5/22/2017
 ms.author: xujing
-ms.openlocfilehash: b996d42e5c543235d09b46d29889bc5eaeafd52a
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 80b99880362c3979ae5ead6d1cdff4091d23d065
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47412136"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54118981"
 ---
 # <a name="understand-common-error-messages-when-you-manage-virtual-machines-in-azure"></a>Сведения о сообщениях об ошибках, часто возникающих при управлении виртуальными машинами в Azure
 
@@ -171,7 +171,7 @@ ms.locfileid: "47412136"
 |  OperationNotAllowed  |  Не удалось изменить размер виртуальной машины, так как запрошенный размер {0} недоступен в кластере, где сейчас находится группа доступности. Доступные размеры: {1}. Ознакомьтесь с дополнительными сведениями о стратегии изменения разм5ра виртуальных машин: https://aka.ms/azure-resizevm.  |
 |  OperationNotAllowed  |  Не удалось изменить размер виртуальной машины, так как запрошенный размер {0} недоступен в кластере, в котором сейчас находится виртуальная машина. Чтобы изменить размер виртуальной машины на {1}, отмените ее распределение (операция "Остановить" на портале Azure) и повторите попытку. Ознакомьтесь с дополнительными сведениями о стратегии изменения разм5ра виртуальных машин: https://aka.ms/azure-resizevm.  |
 |  OSProvisioningClientError  |  Не удалось подготовить ОС для виртуальной машины "{0}", так как сейчас идет подготовка гостевой ОС.  |
-|  OSProvisioningClientError  |  Не удалось подготовить ОС для виртуальной машины "{0}". Сведения об ошибке: "{1}". Образ должен быть подготовлен соответствующим образом (он должен быть универсальным). <ul><li>Инструкции для Windows: https://azure.microsoft.com/documentation/articles/virtual-machines-windows-upload-image/.  </li></ul> |
+|  OSProvisioningClientError  |  Не удалось подготовить ОС для виртуальной машины "{0}". Сведения об ошибке: {1}. Убедитесь, что образ был подготовлен соответствующим образом (обобщен). <ul><li>Инструкции для Windows: https://azure.microsoft.com/documentation/articles/virtual-machines-windows-upload-image/.  </li></ul> |
 |  OSProvisioningClientError  |  При создании ключа узла SSH произошел сбой. Сведения об ошибке: {0}. Чтобы устранить эту проблему, убедитесь, что агент Linux настроен правильно. <ul><li>Инструкции приведены здесь: https://docs.microsoft.com/azure/virtual-machines/extensions/agent-linux/ </li></ul> |
 |  OSProvisioningClientError  |  Имя пользователя, указанное для виртуальной машины, недопустимо для этого дистрибутива Linux. Сведения об ошибке: {0}.  |
 |  OSProvisioningInternalError  |  Не удалось подготовить ОС для виртуальной машины "{0}" из-за внутренней ошибки.  |
@@ -202,7 +202,7 @@ ms.locfileid: "47412136"
 |  VMArtifactRepositoryInternalError  |  При извлечении данных артефакта ВМ из хранилища артефактов произошла внутренняя ошибка.  |
 |  VMExtensionHandlerNonTransientError  |  Обработчик "{0}" сообщил о сбое расширения виртуальной машины "{1}". Окончательный код ошибки: "{2}", сообщение об ошибке: "{3}"  |
 |  VMExtensionManagementInternalError  |  Произошла внутренняя ошибка при обработке расширения виртуальной машины "{0}".  |
-|  VMExtensionManagementInternalError  |  Произошло несколько ошибок при обработке расширений ВМ. Подробности см. в представлении экземпляров расширений ВМ.  |
+|  VMExtensionManagementInternalError  |  Произошло несколько ошибок при обработке расширений виртуальной машины. Подробности см. в представлении экземпляров расширений ВМ.  |
 |  VMExtensionProvisioningError  |  Виртуальная машина сообщила о сбое при обработке расширения "{0}". Сообщение об ошибке: "{1}".  |
 |  VMExtensionProvisioningError  |  Не удалось подготовить несколько расширений ВМ на этой ВМ. Подробности см. в представлении экземпляров расширений ВМ.  |
 |  VMExtensionProvisioningTimeout  |  Превышено время ожидания подготовки расширения виртуальной машины "{0}". Установка расширения продолжается слишком долго, или не удалось получить состояние расширения.  |

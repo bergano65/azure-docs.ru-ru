@@ -15,11 +15,11 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/22/2017
 ms.author: yushwang
-ms.openlocfilehash: d2f3da47f1d4eebe1b81964790ff6612dd78155d
-ms.sourcegitcommit: 6fcd9e220b9cd4cb2d4365de0299bf48fbb18c17
+ms.openlocfilehash: 060e647badcc3bad7b44d7cef3530c36b8ecdf57
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/05/2018
+ms.lasthandoff: 01/07/2019
 ms.locfileid: "23125182"
 ---
 # <a name="about-cryptographic-requirements-and-azure-vpn-gateways"></a>Требования к шифрованию и VPN-шлюзы Azure
@@ -29,7 +29,7 @@ ms.locfileid: "23125182"
 ## <a name="about-ipsec-and-ike-policy-parameters-for-azure-vpn-gateways"></a>Параметры политики IPsec и IKE для VPN-шлюзов Azure
 Стандарт протоколов IPsec и IKE поддерживает широкий набор алгоритмов шифрования в различных сочетаниях. Если клиенты не запрашивают конкретную комбинацию алгоритмов шифрования и параметров, VPN-шлюзы Azure используют набор предложений по умолчанию. Наборы политик по умолчанию были выбраны, чтобы обеспечить максимально эффективное взаимодействие с широким диапазоном VPN-устройств сторонних производителей в конфигурациях по умолчанию. Соответственно, такие политики и количество предложений не могут охватывать все возможные сочетания доступных алгоритмов шифрования и значений длины ключа.
 
-Набор политик по умолчанию для VPN-шлюза Azure приведен в документе: [VPN-устройства и параметры IPsec/IKE для подключений типа "сеть-сеть" через VPN-шлюз](vpn-gateway-about-vpn-devices.md).
+Политика по умолчанию для VPN-шлюза Azure описана в статье [VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз](vpn-gateway-about-vpn-devices.md).
 
 ## <a name="cryptographic-requirements"></a>Требования к шифрованию
 Для операций обмена данными, требующих определенные алгоритмы шифрования или параметры (обычно из-за требований к соответствию или к безопасности), клиенты теперь могут настроить для своих VPN-шлюзов Azure использование настраиваемой политики IPsec/IKE с конкретными алгоритмами шифрования и значениями длины ключа, вместо выбора наборов политик Azure по умолчанию.

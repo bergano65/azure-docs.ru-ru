@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 10/25/2018
+ms.date: 01/03/2019
 ms.author: iainfou
-ms.openlocfilehash: 5d8aa2c25bf79278b10b96f93733e3abf89e4783
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 9cf0c378271841277e6dfd770bf8d186494b9d48
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52971187"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54040750"
 ---
 # <a name="enable-and-review-kubernetes-master-node-logs-in-azure-kubernetes-service-aks"></a>Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -31,18 +31,15 @@ ms.locfileid: "52971187"
 1. Выберите группу ресурсов для кластера AKS, например *myResourceGroup*. Не выбирайте группу ресурсов, которая содержит отдельные ресурсы кластера AKS, например *MC_myResourceGroup_myAKSCluster_eastus*.
 1. В области слева выберите **Параметры диагностики**.
 1. Выберите свой кластер AKS, например *myAKSCluster*, а затем — **Включить диагностику**.
-1. Введите имя, например *myAKSLogs*, а затем выберите **Отправить в Log Analytics**.
+1. Введите имя, например *myAKSClusterLogs*, а затем выберите **Отправить в Log Analytics**.
     * Выберите команду *настройки* Log Analytics, а затем — имеющуюся рабочую область или щелкните **Создать рабочую область**.
     * Если вам нужно создать рабочую область, укажите имя, группу ресурсов и расположение.
-1. В списке доступных журналов выберите журналы, которые нужно включить, например *kube-apiserver*, *kube-controller-manager* и *kube-scheduler*. Когда служба Log Analytics будет включена, вы сможете вернуть или изменить собранные журналы.
+1. В списке доступных журналов выберите журналы, которые вы хотите включить. По умолчанию включены журналы *kube-apiserver*, *kube-controller-manager* и *kube-scheduler*. Вы можете включить дополнительные журналы, такие как *kube-audit* и *cluster-autoscaler*. Когда служба Log Analytics будет включена, вы сможете вернуть или изменить собранные журналы.
 1. Когда настройка будет завершена, нажмите кнопку **Сохранить**, чтобы включить сбор выбранных журналов.
 
 На следующем снимке экрана портала показано окно *параметров диагностики* и параметр создания рабочей области Log Analytics:
 
 ![Включение рабочей области Log Analytics для кластера Log Analytics или AKS](media/view-master-logs/enable-oms-log-analytics.png)
-
->[!NOTE]
->Рабочие области OMS теперь называются рабочими областями Log Analytics.
 
 ## <a name="schedule-a-test-pod-on-the-aks-cluster"></a>Планирование запуска тестового модуля pod в кластере AKS
 

@@ -5,14 +5,14 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: article
-ms.date: 07/27/2018
+ms.date: 01/04/2019
 ms.author: danlep
-ms.openlocfilehash: a1644f68465cffa8cce27257bb91100c111af8a1
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.openlocfilehash: b18638057def03a02024200edb157e5caf08a669
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48857777"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54065177"
 ---
 # <a name="delete-container-images-in-azure-container-registry"></a>Удаление образов контейнеров в службе "Реестр контейнеров Azure"
 
@@ -60,7 +60,7 @@ product-returns/legacy-integrator:20180715
 myregistry.azurecr.io/marketing/campaign10-18/web:v2
 ```
 
-Дополнительные сведения по добавлению тегов к образам см. на странице блога MSDN в статье [Docker Tagging: Best practices for tagging and versioning docker images][tagging-best-practices] (Добавление тегов в Docker. Рекомендации по добавлению тегов и версий в образы Docker).
+Дополнительные сведения по добавлению тегов к образам см. в записи блога MSDN [Docker Tagging: Best practices for tagging and versioning docker images][tagging-best-practices] (Добавление тегов в Docker. Рекомендации по добавлению тегов и версий в образы Docker).
 
 ### <a name="layer"></a>Слой
 
@@ -131,7 +131,7 @@ $ docker pull myregistry.azurecr.io/acr-helloworld@sha256:0a2e01852872580b2c2fea
 
 * Удаление [репозитория](#delete-repository). Это действие удаляет из репозитория все образы и все уникальные слои.
 * Удаление [тегов](#delete-by-tag). Это действие удаляет образ, тег и все уникальные слои, связанные с образом, и все другие теги, связанные с образом.
-* Удаление [дайджеста манифеста](#delete-by-manifest-digest). Удаление образа, все уникальных слоев в образе и всех тегов, связанных с образом.
+* Удаление [дайджеста манифеста](#delete-by-manifest-digest). Удаление образа, всех уникальных слоев в образе и всех тегов, связанных с образом.
 
 ## <a name="delete-repository"></a>Удаление репозитория
 
@@ -239,20 +239,20 @@ Are you sure you want to continue? (y/n): y
      },
      {
        "digest": "sha256:d2bdc0c22d78cde155f53b4092111d7e13fe28ebf87a945f94b19c248000ceec",
-       "tags": null,
+       "tags": [],
        "timestamp": "2018-07-11T21:32:21.1400513Z"
      }
    ]
    ```
 
-Результатом выходных данных последнего шага в последовательности является потерянный манифест со свойством `"tags"`, которому соответствует значение `null`. Этот манифест существует в реестре вместе с уникальными данными слоя, на которые он ссылается. **Чтобы удалить потерянные образы и их данные слоя, необходимо удалить дайджест манифеста**.
+Результатом выходных данных последнего шага в последовательности является потерянный манифест, свойство `"tags"` которого является пустым массивом. Этот манифест существует в реестре вместе с уникальными данными слоя, на которые он ссылается. **Чтобы удалить потерянные образы и их данные слоя, необходимо удалить дайджест манифеста**.
 
 ### <a name="list-untagged-images"></a>Список образов без тегов
 
 С помощью следующей команды Azure CLI можно вывести список всех образов репозитория без тегов. Замените `<acrName>` и `<repositoryName>` значениями, уместными для вашей среды.
 
 ```azurecli
-az acr repository show-manifests --name <acrName> --repository <repositoryName>  --query "[?tags==null].digest"
+az acr repository show-manifests --name <acrName> --repository <repositoryName> --query "[?!(tags[?'*'])].digest"
 ```
 
 ### <a name="delete-all-untagged-images"></a>Удаление всех образов без тегов
@@ -283,7 +283,7 @@ REPOSITORY=myrepository
 # Delete all untagged (orphaned) images
 if [ "$ENABLE_DELETE" = true ]
 then
-    az acr repository show-manifests --name $REGISTRY --repository $REPOSITORY  --query "[?tags==null].digest" -o tsv \
+    az acr repository show-manifests --name $REGISTRY --repository $REPOSITORY  --query "[?!(tags[?'*'])].digest" -o tsv \
     | xargs -I% az acr repository delete --name $REGISTRY --image $REPOSITORY@% --yes
 else
     echo "No data deleted. Set ENABLE_DELETE=true to enable image deletion."
@@ -310,7 +310,7 @@ $registry = "myregistry"
 $repository = "myrepository"
 
 if ($enableDelete) {
-    az acr repository show-manifests --name $registry --repository $repository --query "[?tags==null].digest" -o tsv `
+    az acr repository show-manifests --name $registry --repository $repository --query "[?!(tags[?'*'])].digest" -o tsv `
     | %{ az acr repository delete --name $registry --image $repository@$_ --yes }
 } else {
     Write-Host "No data deleted. Set `$enableDelete = `$TRUE to enable image deletion."

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 8/10/2017
 ms.author: dekapur
-ms.openlocfilehash: f91a6b305a3d531aa1c733685f6d896ed07054ae
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 321a69768935a9cb220bf5c2ae96c30274dc590d
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51257611"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159458"
 ---
 # <a name="create-a-standalone-cluster-running-on-windows-server"></a>Создание изолированного кластера под управлением Windows Server
 Azure Service Fabric позволяет создавать кластеры Service Fabric на любых виртуальных машинах или компьютерах под управлением Windows Server. Это означает, что вы сможете разворачивать и запускать приложения Service Fabric в любой среде с набором подключенных друг к другу компьютеров с Windows Server как в локальной среде, так и у любого поставщика облачных служб. Service Fabric предоставляет установочный пакет для создания кластеров Service Fabric, который называется изолированным пакетом Windows Server.
@@ -61,7 +61,7 @@ Azure Service Fabric позволяет создавать кластеры Serv
 
 Кластер, созданный в этой статье, не защищен.  Любой пользователь может анонимно подключиться и выполнять операции управления, поэтому рабочие кластеры нужно обязательно защищать с помощью сертификатов X.509 или средств обеспечения безопасности Windows.  Безопасность настраивается только во время создания кластера. После этого ее невозможно включить. Обновите файл конфигурации, включив в нем [безопасность сертификата](service-fabric-windows-cluster-x509-security.md) или [безопасность Windows](service-fabric-windows-cluster-windows-security.md). См. дополнительные сведения о безопасности кластера Service Fabric в статье о [защите кластеров](service-fabric-cluster-security.md).
 
-### <a name="step-1a-create-an-unsecured-local-development-cluster"></a>Шаг 1А. Создание незащищенного локального кластера разработки
+### <a name="step-1a-create-an-unsecured-local-development-cluster"></a>Шаг 1A. Создание незащищенного локального кластера разработки
 Service Fabric можно развернуть на кластере с одним компьютером разработки с помощью файла *ClusterConfig.Unsecure.DevCluster.json* из [примеров](https://github.com/Azure-Samples/service-fabric-dotnet-standalone-cluster-configuration/tree/master/Samples).
 
 Распакуйте изолированный пакет на свой компьютер, скопируйте пример файла конфигурации на локальный компьютер, а затем в папке изолированного пакета запустите сценарий *CreateServiceFabricCluster.ps1* в сеансе PowerShell с правами администратора.
@@ -74,7 +74,7 @@ Service Fabric можно развернуть на кластере с одни
 
 После завершения выполнения сценариев разработки кластер Service Fabric можно будет удалить с компьютера с помощью действий, описанных в разделе [Удаление кластера](#removecluster_anchor). 
 
-### <a name="step-1b-create-a-multi-machine-cluster"></a>Шаг 1Б. Создание кластера с несколькими компьютерами
+### <a name="step-1b-create-a-multi-machine-cluster"></a>Шаг 1Б. Создание кластера с несколькими компьютерами
 Выполнив этапы планирования и подготовки для развертывания кластера, как описано в [этом разделе](service-fabric-cluster-standalone-deployment-preparation.md), вы будете готовы создать рабочий кластер с помощью своего файла конфигурации кластера.
 
 У администратора кластера, который развертывает и настраивает кластер, должны быть привилегии администратора на компьютере. Пакет Service Fabric нельзя установить на контроллере домена.
@@ -85,7 +85,7 @@ Service Fabric можно развернуть на кластере с одни
     .\TestConfiguration.ps1 -ClusterConfigFilePath .\ClusterConfig.json
     ```
 
-    Вы должны увидеть результат, аналогичный приведенному ниже: Если для нижнего поля "Passed" (Выполнено) возвращено значение True, значит, проверка работоспособности пройдена и кластер готов к развертыванию на основе входной конфигурации.
+    Вы должны увидеть результат, аналогичный приведенному ниже. Если для нижнего поля "Passed" (Выполнено) возвращено значение True, значит, проверка работоспособности пройдена и кластер готов к развертыванию на основе входной конфигурации.
 
     ```powershell
     Trace folder already exists. Traces will be written to existing trace folder: C:\temp\Microsoft.Azure.ServiceFabric.WindowsServer\DeploymentTraces
@@ -104,7 +104,7 @@ Service Fabric можно развернуть на кластере с одни
     Passed                     : True
     ```
 
-2. Создайте кластер: запустите сценарий *CreateServiceFabricCluster.ps1* для развертывания кластера Service Fabric на каждом компьютере в конфигурации. 
+2. Создайте кластер:  запустите сценарий *CreateServiceFabricCluster.ps1* для развертывания кластера Service Fabric на каждом компьютере в конфигурации. 
     ```powershell
     .\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.json -AcceptEULA
     ```
@@ -114,7 +114,7 @@ Service Fabric можно развернуть на кластере с одни
 > 
 > 
 
-### <a name="step-1c-create-an-offline-internet-disconnected-cluster"></a>Шаг 1в. Создание кластера в автономном состоянии (не подключенного к Интернету)
+### <a name="step-1c-create-an-offline-internet-disconnected-cluster"></a>Шаг 1В. Создание кластера в автономном состоянии (не подключенного к Интернету)
 Пакет среды выполнения Service Fabric автоматически скачивается во время создания кластера. При развертывании кластера на компьютерах, не подключенных к Интернету, необходимо скачать пакет среды выполнения Service Fabric отдельно и указать путь к нему во время создания кластера.
 Пакет среды выполнения можно скачать отдельно, с другого компьютера, подключенного к Интернету, по [ссылке для скачивания среды выполнения Service Fabric для Windows Server](https://go.microsoft.com/fwlink/?linkid=839354). Скопируйте пакет среды выполнения туда, откуда вы развертываете не подключенный к Интернету кластер, и создайте кластер, выполнив `CreateServiceFabricCluster.ps1` с включенным параметром `-FabricRuntimePackagePath`, как показано ниже: 
 
@@ -124,7 +124,7 @@ Service Fabric можно развернуть на кластере с одни
 
 *.\ClusterConfig.json* и *.\MicrosoftAzureServiceFabric.cab* — это пути к файлу конфигурации кластера и CAB-файлу среды выполнения соответственно.
 
-### <a name="step-2-connect-to-the-cluster"></a>Шаг 2. Подключение к кластеру
+### <a name="step-2-connect-to-the-cluster"></a>Шаг 2. Подключение к кластеру
 Подключитесь к кластеру, чтобы убедиться, что кластер запущен и доступен. Модуль PowerShell ServiceFabric устанавливается вместе со средой выполнения.  Вы можете подключиться к кластеру с одного из узлов кластера или с удаленного компьютера с помощью среды выполнения Service Fabric.  Подключитесь к кластеру, используя командлет [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps).
 
 Для подключения к незащищенному кластеру выполните следующую команду PowerShell.
@@ -150,7 +150,7 @@ NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion  ConfigVersi
                      vm0      localhost       NodeType0 5.6.220.9494 0                     Up 00:02:43   00:00:00              OK
 ```
 
-### <a name="step-3-visualize-the-cluster-using-service-fabric-explorer"></a>Шаг 3. Визуализация кластера с помощью Service Fabric Explorer
+### <a name="step-3-visualize-the-cluster-using-service-fabric-explorer"></a>Шаг 3. Визуализация кластера с помощью Service Fabric Explorer
 [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) — хорошее средство для визуализации кластера и управления приложениями.  Service Fabric Explorer — это служба, которая выполняется в кластере. Чтобы получить к ней доступ, перейдите в браузере по адресу [http://localhost:19080/Explorer](http://localhost:19080/Explorer).
 
 На панели мониторинга кластера представлены общие сведения о кластере, включая общие сведения о приложении и работоспособности узла кластера. В представлении "Узлы" отображается физическая структура кластера. Для каждого узла можно просмотреть, какие приложения были развернуты на этом узле
@@ -200,8 +200,8 @@ NodeDeactivationInfo NodeName IpAddressOrFQDN NodeType  CodeVersion  ConfigVersi
 * длина очереди единиц с отработкой отказа;
 * длина очереди фиксаций;
 * количество узлов;
-* выполнен ли контекст: значение True или False;
-* идентификатор кластера — это глобальный уникальный идентификатор, который случайным образом формируется для каждого кластера;
+* выполнен ли контекст: значение True или False
+* идентификатор кластера — это глобальный уникальный идентификатор, который случайным образом формируется для каждого кластера;
 * версия Service Fabric;
 * IP-адрес виртуальной машины или компьютера, с которых отправляются данные телеметрии.
 

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/02/2018
 ms.author: ergreenl
-ms.openlocfilehash: c4aa5786ea1dfbef32c40306de6291ebeb2fe6f8
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: c30e18c42f310172b07995e0ad88a505a01c4218
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51036144"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159610"
 ---
 # <a name="azure-ad-domain-services---troubleshoot-alerts"></a>Доменные службы Azure Active Directory. Устранение неполадок: предупреждения
 В этой статье содержатся руководства по устранению любых неполадок, возникающих в управляемом домене.
@@ -56,7 +56,7 @@ ms.locfileid: "51036144"
 
 
 
-## <a name="aadds100-missing-directory"></a>AADDS100: отсутствующий каталог
+## <a name="aadds100-missing-directory"></a>AADDS100. Отсутствующий каталог
 **Оповещение.**
 
 *Возможно, каталог Azure AD, связанный с управляемым доменом, был удален. Управляемый домен больше не является поддерживаемой конфигурацией. Корпорация Майкрософт не может отслеживать, исправлять и синхронизировать управляемый домен, а также управлять им.*
@@ -67,7 +67,7 @@ ms.locfileid: "51036144"
 
 Эта ошибка является неисправимой. Чтобы устранить ее, необходимо [удалить имеющийся управляемый домен](active-directory-ds-disable-aadds.md) и повторно создать его в новом каталоге. Если у вас возникли трудности с удалением, свяжитесь с командой разработки продукта, отвечающей за доменные службы Azure Active Directory [для поддержки](active-directory-ds-contact-us.md).
 
-## <a name="aadds101-azure-ad-b2c-is-running-in-this-directory"></a>AADDS101: Azure AD B2C выполняется в этом каталоге
+## <a name="aadds101-azure-ad-b2c-is-running-in-this-directory"></a>AADDS101. В этом каталоге выполняется Azure AD B2C
 **Оповещение.**
 
 *В каталоге Azure AD B2C невозможно включить доменные службы Azure AD*
@@ -83,7 +83,7 @@ ms.locfileid: "51036144"
 2. Создайте каталог, который не является каталогом Azure AD B2C.
 3. Следуйте шагам, описанным в руководстве [Enable Azure Active Directory Domain Services using the Azure portal](active-directory-ds-getting-started.md) (Включение доменных служб Azure Active Directory с помощью портала Azure), чтобы повторно создать управляемый домен.
 
-## <a name="aadds103-address-is-in-a-public-ip-range"></a>AADDS103: адрес находится в общедоступном диапазоне IP-адресов
+## <a name="aadds103-address-is-in-a-public-ip-range"></a>AADDS103. Адрес находится в диапазоне общедоступных IP-адресов
 
 **Оповещение.**
 
@@ -114,7 +114,7 @@ ms.locfileid: "51036144"
 4. Чтобы соединить виртуальные машины с доменом следуйте [этому руководству](active-directory-ds-admin-guide-join-windows-vm-portal.md).
 8. Чтобы убедиться, что причина оповещения устранена, проверьте работоспособность домена через два часа.
 
-## <a name="aadds106-your-azure-subscription-is-not-found"></a>AADDS106. Подписка Azure не найдена
+## <a name="aadds106-your-azure-subscription-is-not-found"></a>AADDS106. Ваша подписка Azure не найдена
 
 **Оповещение.**
 
@@ -140,7 +140,7 @@ ms.locfileid: "51036144"
 1. [Почему подписка Azure отключена и как активировать ее повторно?](https://docs.microsoft.com/azure/billing/billing-subscription-become-disable)
 2. После продления подписки доменные службы Azure AD получат уведомление от Azure о повторном включении управляемого домена.
 
-## <a name="aadds108-subscription-moved-directories"></a>AADDS108. Подписка перемещенная в каталоги
+## <a name="aadds108-subscription-moved-directories"></a>AADDS108. Подписка перемещена в другой каталог
 
 **Оповещение.**
 
@@ -179,7 +179,7 @@ ms.locfileid: "51036144"
 
 Эта ошибка является неисправимой. Чтобы устранить ее, необходимо [удалить имеющийся управляемый домен](active-directory-ds-disable-aadds.md) и [повторно его создать](active-directory-ds-getting-started.md).
 
-## <a name="aaddds111-service-principal-unauthorized"></a>AADDDS111. Субъект-службу не авторизовано
+## <a name="aadds111-service-principal-unauthorized"></a>AADDS111. Субъект-службу не авторизовано
 
 **Оповещение.**
 
@@ -193,7 +193,7 @@ ms.locfileid: "51036144"
 2. Проверьте доступ субъект-службы с идентификатором ```abba844e-bc0e-44b0-947a-dc74e5d09022``` и предоставьте доступ, который был запрещен ранее.
 
 
-## <a name="aadds112-not-enough-ip-address-in-the-managed-domain"></a>AADDS112. Недостаточно IP-адресов в управляемом домене
+## <a name="aadds112-not-enough-ip-address-in-the-managed-domain"></a>AADDS112. Недостаточно доступных IP-адресов в управляемом домене
 
 **Оповещение.**
 
@@ -224,7 +224,7 @@ ms.locfileid: "51036144"
 
 Эта ошибка является неисправимой. Чтобы устранить ее, необходимо [удалить имеющийся управляемый домен](active-directory-ds-disable-aadds.md) и [повторно его создать](active-directory-ds-getting-started.md).
 
-## <a name="aadds114-subnet-invalid"></a>AADDS114. Подсеть недопустимая
+## <a name="aadds114-subnet-invalid"></a>AADDS114. Недопустимая подсеть
 
 **Оповещение.**
 
@@ -258,7 +258,7 @@ ms.locfileid: "51036144"
 
 
 
-## <a name="aadds500-synchronization-has-not-completed-in-a-while"></a>AADDS500: синхронизация не выполнена спустя некоторое время
+## <a name="aadds500-synchronization-has-not-completed-in-a-while"></a>AADDS500. Синхронизация не выполнена спустя некоторое время
 
 **Оповещение.**
 
@@ -272,7 +272,7 @@ ms.locfileid: "51036144"
 - Сетевое подключение блокируется в управляемом домене. Дополнительные сведения о проверке сети на наличие проблем см. в статьях об [устранении неполадок с группами безопасности сети](active-directory-ds-troubleshoot-nsg.md) и [сетевых требованиях для доменных служб Azure AD](active-directory-ds-networking.md).
 -  Синхронизация паролей не настроена или не завершена. Чтобы настроить синхронизацию паролей, см. [эту статью](active-directory-ds-getting-started-password-sync.md).
 
-## <a name="aadds501-a-backup-has-not-been-taken-in-a-while"></a>AADDS501: резервная копия не создана спустя некоторое время
+## <a name="aadds501-a-backup-has-not-been-taken-in-a-while"></a>AADDS501. Резервная копия не создана спустя некоторое время
 
 **Оповещение.**
 
@@ -283,7 +283,7 @@ ms.locfileid: "51036144"
 [Проверьте работоспособность своего домена](active-directory-ds-check-health.md) для всех предупреждений, которые могут указывать на проблемы в конфигурации управляемого домена. Иногда из-за проблем с конфигурацией корпорации Майкрософт не удается создать резервную копию управляемого домена. Если вы можете разрешить предупреждения, подождите два часа и снова проверьте, выполнена ли резервная копия.
 
 
-## <a name="aadds503-suspension-due-to-disabled-subscription"></a>AADDS503: блокировка из-за неактивной подписки
+## <a name="aadds503-suspension-due-to-disabled-subscription"></a>AADDS503. Блокировка из-за неактивной подписки
 
 **Оповещение.**
 
@@ -296,7 +296,7 @@ ms.locfileid: "51036144"
 
 Чтобы восстановить службу, [возобновите подписку Azure](https://docs.microsoft.com/azure/billing/billing-subscription-become-disable), связанную с управляемым доменом.
 
-## <a name="aadds504-suspension-due-to-an-invalid-configuration"></a>AADDS504: блокировка из-за неправильной конфигурации
+## <a name="aadds504-suspension-due-to-an-invalid-configuration"></a>AADDS504. Блокировка из-за неправильной конфигурации
 
 **Оповещение.**
 

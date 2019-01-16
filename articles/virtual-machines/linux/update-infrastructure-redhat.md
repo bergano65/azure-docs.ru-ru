@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 11/27/2018
+ms.date: 1/7/2019
 ms.author: borisb
-ms.openlocfilehash: 0755d472ef6b2566d7faa51019da7d49266fa199
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: 1a1038bec66cd90e2cd0cbc8b125857403317d89
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993218"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54078258"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -41,29 +41,30 @@ ms.locfileid: "53993218"
 
 * Доступ к размещенной в Azure инфраструктуре RHUI могут получать виртуальные машины с IP-адресами в рамках [диапазонов IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Если весь трафик виртуальной машины перенаправляется через локальную сетевую инфраструктуру, может потребоваться настройка определяемых пользователем маршрутов, чтобы виртуальные машины RHEL (PAYG) могли получить доступ к инфраструктуре RHUI в Azure.
 
-### <a name="rhel-eus-and-version-locking-rhel-vms"></a>Предложение RHEl EUS и фиксация версии виртуальных машин RHEL
+### <a name="rhel-eus-and-version-locking-rhel-vms"></a>Предложение RHEL EUS и фиксация версии виртуальных машин RHEL
 Некоторым клиентам может потребоваться зафиксировать определенную дополнительную версию RHEL для своих виртуальных машин RHEL. Вы можете зафиксировать определенный дополнительный номер версии для виртуальной машины RHEL, изменив репозитории таким образом, чтобы они указывали на репозитории Extended Update Support (EUS). Ниже приведены инструкции по фиксации конкретного дополнительного номера версии для ВМ RHEL.
 
 >[!NOTE]
-> Эта процедура применяется только для RHEL 7.2–7.5
+> Это применяется только для версий RHEL, для которых доступна EUS. На момент написания этой статьи это версии RHEL 7.2–7.6. Дополнительные сведения можно найти на странице [Red Hat Enterprise Linux Life Cycle](https://access.redhat.com/support/policy/updates/errata) (Жизненный цикл Red Hat Enterprise Linux).
 
 1. Отключите репозитории без поддержки EUS:
-    ```
+    ```bash
     sudo yum --disablerepo=* remove rhui-azure-rhel7
     ```
 
 1. Добавьте репозитории EUS:
-    ```
+    ```bash
     yum --config=https://rhelimage.blob.core.windows.net/repositories/rhui-microsoft-azure-rhel7-eus.config install rhui-azure-rhel7-eus
     ```
 
 1. Заблокируйте переменную releasever:
-    ```
+    ```bash
     echo $(. /etc/os-release && echo $VERSION_ID) > /etc/yum/vars/releasever
     ```
 
     >[!NOTE]
     > Выполнив приведенные выше инструкции, вы зафиксируете текущий дополнительный номер версии в качестве дополнительного номера версии RHEL. Введите конкретный дополнительный номер версии, если вам нужно обновить систему и зафиксировать дополнительный номер версии, который не является последним. Например, команда `echo 7.5 > /etc/yum/vars/releasever` зафиксирует версию RHEL 7.5
+
 1. Обновление виртуальной машины RHEL
     ```bash
     sudo yum update

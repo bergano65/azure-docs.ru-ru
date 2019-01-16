@@ -1,6 +1,6 @@
 ---
 title: Конечная точка HTTPS | Документация Майкрософт
-description: Настройка управления интересами для HTTPS.
+description: Настройка управления интересами для конечной точки HTTPS.
 services: Azure, Marketplace, Cloud Partner Portal,
 documentationcenter: ''
 author: dan-wesley
@@ -12,71 +12,108 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 09/17/2018
+ms.date: 12/24/2018
 ms.author: pbutlerm
-ms.openlocfilehash: fd13a7281c7e8702fd199364261ebcd458db0555
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 0d14b2eeb90bd360b71b315d7b4f4459f17f5672
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807151"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54073774"
 ---
 # <a name="configure-lead-management-using-an-https-endpoint"></a>Настройка управления интересами с помощью конечной точки HTTPS
 
-Вы можете использовать конечную точку HTTPS для обработки приложений Azure Marketplace и AppSource, которые могут быть записаны в систему управления отношениями с клиентами. В этой статье описывается настройка управления интересами с помощью службы автоматизации Microsoft Flow.
-
+Вы можете использовать конечную точку HTTPS для обработки интересов Azure Marketplace и AppSource. Сведения об этих интересах можно записать в систему управления отношениями с клиентами (CRM) или отправить как уведомление по электронной почте. В этой статье описана настройка управления интересами с помощью службы автоматизации [Microsoft Flow](https://powerapps.microsoft.com/automate-processes/).
 
 ## <a name="create-a-flow-using-microsoft-flow"></a>Создание потока с помощью Microsoft Flow
 
-1.  Откройте веб-страницу [Поток](https://flow.microsoft.com/). Чтобы создать бесплатную учетную запись потока, нажмите **Войти** или выберите **Бесплатная регистрация**.
+1. Откройте веб-страницу [Поток](https://flow.microsoft.com/). Чтобы создать бесплатную учетную запись потока, нажмите **Войти** или выберите **Бесплатная регистрация**.
 
-2.  Войдите и выберите **Мои потоки** в строке меню.
+2. Войдите и выберите **Мои потоки** в строке меню.
 
-    ![Мои последовательности](./media/cloud-partner-portal-lead-management-instructions-https/image001.png)
+    ![Мои последовательности](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows.png)
 
-3.  Выберите **Создать с нуля**.
+3. Выберите **+ Создать с нуля**.
 
-    ![Создание с нуля](./media/cloud-partner-portal-lead-management-instructions-https/image003.png)
+    ![Создание с нуля](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-create-fromblank.png)
 
+4. Выберите **Создать с нуля**.
 
-4.  Выберите соединитель **Запрос/Ответ** и выполните поиск триггера запроса. 
+    ![Создание с нуля](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-create-fromblank2.png)
 
-    ![Создание с нуля](./media/cloud-partner-portal-lead-management-instructions-https/image005.png)
+5. В поле **Поиск соединителей и триггеров** введите "запрос", чтобы найти соединитель "Запрос".
+6. На вкладке **Триггеры** выберите триггер **При получении HTTP-запроса**. 
 
-5. Выберите триггер **Запрос**.
-    ![Триггер запросов](./media/cloud-partner-portal-lead-management-instructions-https/image007.png)
+    ![Выбор триггера "При получении HTTP-запроса"](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-pick-request-trigger.png)
 
+7. Настройте **схему текста запроса JSON** одним из следующих способов:
 
-6.  Скопируйте **пример JSON** в конце этой статьи в **Схему текста запроса JSON**.
+   - Скопируйте [схему JSON](#JSON-schema) в конце этой статьи в текстовое поле **Схема JSON текста запроса**.
+   - Выберите **Использовать пример полезной нагрузки, чтобы создать схему**. В текстовое поле **Enter or paste a sample JSON payload** (Введите или вставьте пример полезных данных JSON) вставьте [пример JSON](#JSON-example). Выберите **Готово**, чтобы создать схему.
 
-7.  Добавьте новый шаг и выберите систему управления отношениями с клиентами по своему усмотрению и с помощью действия создайте новую запись. В качестве примера на следующем экране отобразится **Dynamics 365 (создание новой записи)**.
+   >[!Note]
+   >На этом этапе потока можно подключиться к системе CRM или настроить уведомление по электронной почте.
 
-    ![Создание записи](./media/cloud-partner-portal-lead-management-instructions-https/image009.png)
+### <a name="to-connect-to-a-crm-system"></a>Подключение к системе CRM
 
-8.  Предоставьте входные данные для подключения соединителя и выберите сущность **Потенциальные клиенты**.
+1. Выберите **+ Новый шаг**.
+2. Выберите систему управления отношениями с клиентами по своему усмотрению и с помощью действия создайте новую запись. На приведенном ниже снимке экрана показан пример действия **Dynamics 365 для создания записи**.
 
-    ![Выбор потенциальных клиентов](./media/cloud-partner-portal-lead-management-instructions-https/image011.png)
+    ![Создание записи](./media/cloud-partner-portal-lead-management-instructions-https/https-image009.png)
 
-9.  Потоки показывают форму для предоставления информации о потенциальном клиенте. Вы можете сопоставить элементы из запроса ввода, выбрав динамическое содержимое.
+3. Укажите **имя организации**, которое является входными данными для подключения соединителя. Выберите **Интересы** в раскрывающемся списке **Имя сущности**.
 
-    ![Добавление динамического содержимого](./media/cloud-partner-portal-lead-management-instructions-https/image013.png)
+    ![Выбор потенциальных клиентов](./media/cloud-partner-portal-lead-management-instructions-https/https-image011.png)
 
-10.  Сопоставьте нужные поля и сохраните поток нажав **эту** кнопку.
+4. В службе Flow отобразится форма для предоставления информации о потенциальном клиенте. Вы можете сопоставить элементы из запроса ввода, выбрав динамическое содержимое. На приведенном ниже снимке экрана показан пример **LeadTitle**.
 
-11. В запросе создается URL-адрес HTTP POST. Скопируйте этот URL-адрес и используйте его в качестве конечной точки HTTPS.
+    ![Добавление динамического содержимого](./media/cloud-partner-portal-lead-management-instructions-https/https-image013.png)
 
-    ![URL-адрес HTTP POST](./media/cloud-partner-portal-lead-management-instructions-https/image015.png)
+5. Сопоставьте нужные поля и сохраните поток нажав **эту** кнопку.
+
+6. В запросе создается URL-адрес HTTP POST. Скопируйте этот URL-адрес и используйте его в качестве конечной точки HTTPS.
+
+    ![URL-адрес HTTP POST](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-get-post-url.png)
+
+### <a name="to-set-up-email-notification"></a>Настройка уведомлений по электронной почте
+
+1. Выберите **+ Новый шаг**.
+2. В разделе **Выберите действие** выберите **Действия**.
+3. В разделе **Действия** выберите **Отправить электронное письмо**.
+
+    ![Добавление действия электронной почты](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-add-email-action.png)
+
+4. В разделе **Отправить электронное письмо** настройте следующие обязательные поля:
+
+   - **To** (Кому) — укажите не менее одного допустимого адреса электронной почты.
+   - **Subject** (Тема) — Flow дает возможность добавить динамическое содержимое, например **LeadSource**, как показано на приведенном ниже снимке экрана.
+
+    ![Добавление действия электронной почты с помощью динамического содержимого](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-configure-email-dynamic-content.png)
+
+   - **Body** (Текст) — добавьте нужные сведения в текст электронного письма из списка динамического содержимого. Например, LastName (фамилия), FirstName (имя), Email (адрес электронной почты) и Company (компания).
+
+   После настройки уведомление по электронной почте будет выглядеть, как в примере на приведенном ниже снимке экрана.
+
+   ![Добавление действия электронной почты](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-configure-email-action.png)
+
+5. Нажмите кнопку **Сохранить**, чтобы завершить поток.
+6. В запросе создается URL-адрес HTTP POST. Скопируйте этот URL-адрес и используйте его в качестве конечной точки HTTPS.
+
+    ![URL-адрес HTTP POST](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows-get-post-url.png)
 
 ## <a name="configure-your-offer-to-send-leads-to-the-https-endpoint"></a>Настройка предложения для отправки списка потенциальных клиентов в конечную точку HTTPS
 
-Когда вы настраиваете информацию управления интересами для своего предложения, выберите **Конечную точку HTTPS** для назначения потенциального клиента и вставьте URL-адрес HTTP POST, который был скопирован на предыдущем шаге.  
+Когда вы настраиваете информацию управления интересами для своего предложения, выберите **конечную точку HTTPS** в качестве **назначения интереса** и вставьте URL-адрес HTTP POST, который был скопирован на предыдущем шаге.  
 
-![Добавление динамического содержимого](./media/cloud-partner-portal-lead-management-instructions-https/image017.png)
+![Добавление динамического содержимого](./media/cloud-partner-portal-lead-management-instructions-https/https-image017.png)
 
-При создании потенциальных клиентов, корпорация Майкрософт отправит их в поток, который направится в систему управления отношениями с клиентами, настроенную вами.
+При создании интересов корпорация Майкрософт отправляет их в службу Flow. Затем выполняется маршрутизация в систему CRM или на адрес электронной почты, настроенные вами.
 
+## <a name="json-schema-and-example"></a>Пример и схема JSON
 
-## <a name="json-example"></a>Пример JSON
+В тестовом примере JSON используется следующая схема:
+
+### <a name="json-schema"></a>Схема JSON
 
 ``` json
 {
@@ -134,3 +171,27 @@ ms.locfileid: "48807151"
   "type": "object"
 }
 ```
+
+Можно скопировать и изменить приведенный ниже пример JSON, чтобы использовать его в качестве теста в Microsoft Flow.
+
+### <a name="json-example"></a>Пример JSON-файла
+
+```json
+{
+"OfferTitle": "Test Microsoft",
+"LeadSource": "Test run through MS Flow",
+"UserDetails": {
+"Company": "Contoso",
+"Country": "USA",
+"Email": "someone@contoso.com",
+"FirstName": "Some",
+"LastName": "One",
+"Phone": "16175555555",
+"Title": "Esquire"
+}
+}
+```
+
+## <a name="next-steps"></a>Дополнительная информация
+
+Настройте получение сведений об [интересах](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads) на Портале Cloud Partner, если это еще не сделано.

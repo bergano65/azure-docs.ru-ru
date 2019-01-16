@@ -9,16 +9,15 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
-ms.openlocfilehash: 5077982bdef4d0e8fbf1ab485566909b4dc97a8a
-ms.sourcegitcommit: 0b4da003fc0063c6232f795d6b67fa8101695b61
+ms.openlocfilehash: 799348c14bba80909d6e443f09d232e5a4783f25
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37857384"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54015157"
 ---
 # <a name="if-condition-activity-in-azure-data-factory"></a>Действие условия If в фабрике данных Azure
 Действие условия If предоставляет те же функциональные возможности, что и инструкция if в языках программирования. Оно определяет набор действий, если условие принимает значение `true`, и другой набор действий, если условие принимает значение `false`. 
@@ -246,7 +245,7 @@ ifFalseActivities | Набор действий, которые выполняю
 ```
 
 ### <a name="powershell-commands"></a>Команды PowerShell
-Эти команды предполагают, что вы сохранили файлы JSON в папку C:\ADF. 
+Выполнение этих команды предполагает, что вы сохранили файлы JSON в папку C:\ADF. 
 
 ```powershell
 Connect-AzureRmAccount

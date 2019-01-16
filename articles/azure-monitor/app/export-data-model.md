@@ -10,17 +10,17 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 03/21/2016
+ms.date: 01/08/2018
 ms.author: mbullwin
-ms.openlocfilehash: 2ce302f78de2cd344c82300a808b125c3443179f
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 12025dfb93bbcfc86ae301f8fb63e7ac74697cf2
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54000042"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54119278"
 ---
 # <a name="application-insights-export-data-model"></a>Экспорт модели данных Application Insights
-В этой таблице перечислены свойства телеметрии, отправляемой из различных пакетов SDK для [Application Insights](../../application-insights/app-insights-overview.md) на портал.
+В этой таблице перечислены свойства телеметрии, отправляемой из различных пакетов SDK для [Application Insights](../../azure-monitor/app/app-insights-overview.md) на портал.
 Вы увидите эти свойства в выходных данных [непрерывного экспорта](export-telemetry.md).
 Они также отображаются в фильтрах свойств в [обозревателе метрик](../../azure-monitor/app/metrics-explorer.md) и при [диагностическом поиске](../../azure-monitor/app/diagnostic-search.md).
 
@@ -130,9 +130,11 @@ ms.locfileid: "54000042"
 | context.device.locale |строка |en-GB, de-DE… |
 | context.device.network |строка | |
 | context.device.oemName |строка | |
+| context.device.os |строка | |
 | context.device.osVersion |строка |ОС узла |
 | context.device.roleInstance |строка |Идентификатор узла сервера |
 | context.device.roleName |строка | |
+| context.device.screenResolution |строка | |
 | context.device.type |строка |ПК, браузер… |
 | context.location |object |На основе значения clientip. |
 | context.location.city |строка |На основе значения clientip (если известно) |
@@ -146,10 +148,13 @@ ms.locfileid: "54000042"
 | context.session.id |строка |Идентификатор группы операций из одного источника. 30-минутный период без операций указывает на завершение сеанса. |
 | context.session.isFirst |Логическое | |
 | context.user.accountAcquisitionDate |строка | |
+| context.user.accountId |строка | |
 | context.user.anonAcquisitionDate |строка | |
 | context.user.anonId |строка | |
 | context.user.authAcquisitionDate |строка |[Прошедший проверку пользователь.](../../azure-monitor/app/api-custom-events-metrics.md#authenticated-users) |
+| context.user.authId |строка | |
 | context.user.isAuthenticated |Логическое | |
+| context.user.storeRegion |строка | |
 | internal.data.documentVersion |строка | |
 | internal.data.id |строка | Уникальный идентификатор, присваиваемый при передаче элемента в Application Insights |
 
@@ -158,7 +163,7 @@ ms.locfileid: "54000042"
 
 | Путь | type | Примечания |
 | --- | --- | --- |
-| event [0] count |целое число |100/(частота[выборки](../../application-insights/app-insights-sampling.md) ). Например, 4 = &gt; 25 %. |
+| event [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | event [0] name |строка |Имя события.  Максимальная длина: 250 |
 | event [0] url |строка | |
 | event [0] urlData.base |строка | |
@@ -170,7 +175,7 @@ ms.locfileid: "54000042"
 | Путь | type | Примечания |
 | --- | --- | --- |
 | basicException [0] assembly |строка | |
-| basicException [0] count |целое число |100/(частота[выборки](../../application-insights/app-insights-sampling.md) ). Например, 4 = &gt; 25 %. |
+| basicException [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | basicException [0] exceptionGroup |строка | |
 | basicException [0] exceptionType |строка | |
 | basicException [0] failedUserCodeMethod |строка | |
@@ -211,7 +216,7 @@ ms.locfileid: "54000042"
 | remoteDependency [0] async |Логическое | |
 | remoteDependency [0] baseName |строка | |
 | remoteDependency [0] commandName |строка |Например, home/index |
-| remoteDependency [0] count |целое число |100/(частота[выборки](../../application-insights/app-insights-sampling.md) ). Например, 4 = &gt; 25 %. |
+| remoteDependency [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | remoteDependency [0] dependencyTypeName |строка |HTTP, SQL, … |
 | remoteDependency [0] durationMetric.value |number |Время от вызова до завершения отклика зависимостью. |
 | remoteDependency [0] id |строка | |
@@ -229,7 +234,7 @@ ms.locfileid: "54000042"
 
 | Путь | type | Примечания |
 | --- | --- | --- |
-| request [0] count |целое число |100/(частота[выборки](../../application-insights/app-insights-sampling.md) ). Например:  4 =&gt; 25%. |
+| request [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например:  4 =&gt; 25%. |
 | request [0] durationMetric.value |number |Время от поступления запроса до отклика. 1e7 = 1 с. |
 | request [0] id |строка |Идентификатор операции |
 | request [0] name |строка |GET или POST + базовый URL-адрес.  Максимальная длина: 250 |
@@ -264,7 +269,7 @@ ms.locfileid: "54000042"
 
 | Путь | type | Примечания |
 | --- | --- | --- |
-| view [0] count |целое число |100/(частота[выборки](../../application-insights/app-insights-sampling.md) ). Например, 4 =&gt; 25 %. |
+| view [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 =&gt; 25 %. |
 | view [0] durationMetric.value |целое число |При необходимости значение можно указать в методе trackPageView() или с помощью метода start/stopTrackPage(). Не совпадает со значениями clientPerformance. |
 | view [0] name |строка |Заголовок страницы.  Максимальная длина: 250 |
 | view [0] url |строка | |
@@ -279,7 +284,7 @@ ms.locfileid: "54000042"
 | --- | --- | --- |
 | availability [0] availabilityMetric.name |строка |Доступность |
 | availability [0] availabilityMetric.value |number |1,0 или 0,0. |
-| availability [0] count |целое число |100/(частота[выборки](../../application-insights/app-insights-sampling.md) ). Например, 4 = &gt; 25 %. |
+| availability [0] count |целое число |100/(частота[выборки](../../azure-monitor/app/sampling.md) ). Например, 4 = &gt; 25 %. |
 | availability [0] dataSizeMetric.name |строка | |
 | availability [0] dataSizeMetric.value |целое число | |
 | availability [0] durationMetric.name |строка | |
@@ -341,12 +346,12 @@ ms.locfileid: "54000042"
 
 В таблицах выше мы опустили редко используемые поля count, min, max, stdDev и sampledValue.
 
-Вместо предварительного статистического вычисления метрик вы можете использовать [выборки](../../application-insights/app-insights-sampling.md) , чтобы сократить объем данных телеметрии.
+Вместо предварительного статистического вычисления метрик вы можете использовать [выборки](../../azure-monitor/app/sampling.md) , чтобы сократить объем данных телеметрии.
 
 ### <a name="durations"></a>Длительность
 За исключением оговоренных случаев, показатели длительности представлены в десятых долях микросекунды, то есть 10 000 000,0 — это 1 с.
 
 ## <a name="see-also"></a>См. также
-* [Application Insights](../../application-insights/app-insights-overview.md)
+* [Application Insights](../../azure-monitor/app/app-insights-overview.md)
 * [Непрерывный экспорт](export-telemetry.md)
 * [Примеры кода](export-telemetry.md#code-samples)

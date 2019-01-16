@@ -14,12 +14,12 @@ ms.date: 08/28/2017
 ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: d67b53d80b74d0a6ad3c4264a55a5e277acffd20
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: ddf4763b8f5abb81c7d884d9d978c85843410ccb
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53083909"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54064952"
 ---
 # <a name="find-help-and-open-a-support-ticket-for-azure-active-directory"></a>Поиск справки и создание запроса в службу поддержки — Azure Active Directory
 Корпорация Майкрософт предоставляет услуги глобальной технической и предпродажной поддержки, а также поддержки по выставлению счетов и подписке для Azure Active Directory (Azure AD). Поддержка доступна как через Интернет, так и по телефону для платных и пробных подписок Microsoft Azure. Техническая поддержка по телефону и поддержка через Интернет по выставлению счетов доступны на разных языках. 
@@ -51,7 +51,7 @@ ms.locfileid: "53083909"
    
 4. Для **службы** выберите **Azure Active Directory**, а затем нажмите **Далее**.
 
-5. В колонке **Проблема** выберите [серьезность](https://azure.microsoft.com/support/plans/response/).
+5. В колонке **Проблема** выберите [Серьезность](https://azure.microsoft.com/support/plans/response/).
   
 6. Выберите **тип проблемы**, а затем **категорию** для этого типа. На этом этапе также предоставляются сведения для самостоятельного разрешения вашей проблемы данной категории.
   

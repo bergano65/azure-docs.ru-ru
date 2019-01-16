@@ -12,16 +12,16 @@ ms.workload: ''
 ms.tgt_pltfrm: ''
 ms.devlang: ''
 ms.topic: article
-ms.date: 07/09/2018
+ms.date: 12/19/2018
 ms.author: ellacroi
-ms.openlocfilehash: c8ead3dc34faefce0f113dee2074960fddfa11a1
-ms.sourcegitcommit: a1140e6b839ad79e454186ee95b01376233a1d1f
+ms.openlocfilehash: ae50562a9354b9c1e5b2711e5bbeec7b1e0fbbb8
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43144597"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54078802"
 ---
-# <a name="azure-applications-managed-application-offer-publishing-guide"></a>Руководство по публикации предложения "Приложения Azure: управляемое приложение"
+# <a name="azure-applications-managed-application-offer-publishing-guide"></a>Приложения Azure. Руководство по публикации предложения "Управляемое приложение"
 
 Управляемое приложение является одним из основных способов публикации решения в Azure Marketplace. Сведения в этом руководстве помогут понять требования к этому предложению. 
 
@@ -41,17 +41,17 @@ ms.locfileid: "43144597"
 |Развернуто в подписке Azure клиента | Управляемые приложения должны быть развернуты в подписке клиента и могут управляться третьей стороной | 
 |Выставление счетов и ценообразование    |  Ресурсы будут подготовлены в подписке Azure клиента. Транзакции, связанные с виртуальными машинами с оплатой по мере использования (PAYGO), будут проводиться через корпорацию Майкрософт, а выставление счетов будет осуществляться по подписке Azure клиента (PAYGO). 
 Несмотря на то, что в случае использования собственной лицензии корпорация Майкрософт будет выставлять счета на расходы на инфраструктуру по подписке клиента, вы будете напрямую выставлять клиенту счета на лицензирование ПО.        |
-|Совместимый с Azure виртуальный жесткий диск (VHD)    |   Виртуальные машины должны быть созданы на платформе Windows или Linux.<ul> <li>Дополнительные сведения о создании виртуального жесткого диска Linux см. в разделе "Создание виртуального жесткого диска, совместимого с Azure (для Linux)" по адресу [docs.microsoft.com/azure/marketplace-publishing/marketplace-publishing-vm-image-creation#2-create-an-azure-compatible-vhd-linux-based](https://docs.microsoft.com/azure/marketplace-publishing/marketplace-publishing-vm-image-creation#2-create-an-azure-compatible-vhd-linux-based).</li> <li>Дополнительные сведения о создании виртуального жесткого диска Windows см. в разделе "Создание виртуального жесткого диска, совместимого с Azure (на основе Windows)" по адресу [docs.microsoft.com/azure/marketplace-publishing/marketplace-publishing-vm-image-creation#3-create-an-azure-compatible-vhd-windows-based](https://docs.microsoft.com/azure/marketplace-publishing/marketplace-publishing-vm-image-creation#3-create-an-azure-compatible-vhd-windows-based).</li> </ul>      |
+|Совместимый с Azure виртуальный жесткий диск (VHD)    |   Виртуальные машины должны быть созданы на платформе Windows или Linux.<ul> <ul> <li>Дополнительные сведения о создании виртуального жесткого диска Linux см. в статье [Дистрибутивы Linux, рекомендованные для использования в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros).</li> <li>Дополнительные сведения о создании виртуального жесткого диска Windows см. в статье [Создание виртуального жесткого диска, совместимого с Azure](./cloud-partner-portal/virtual-machine/cpp-create-vhd.md).</li> </ul> |
 
 >[!NOTE]
 > Управляемые приложения должны быть развернуты в Marketplace. Если вас беспокоит общение с пользователями, то следует связываться с заинтересованными клиентам после включения общего доступа к данным о потенциальных клиентах.  
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Если это еще не сделано, 
 
 - [зарегистрируйтесь](https://azuremarketplace.microsoft.com/sell) в Marketplace.
 
 Если вы зарегистрированы и создаете предложение или работаете над существующим,
 
-- [войдите на портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать или завершить предложение.
+- [войдите на Портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать или завершить предложение.

@@ -14,15 +14,15 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/27/2018
 ms.author: ellacroi
-ms.openlocfilehash: 71b6fa765ff8223cf3b128cae1c672984e370738
-ms.sourcegitcommit: 248c2a76b0ab8c3b883326422e33c61bd2735c6c
+ms.openlocfilehash: fdb55cab87c3b04f814e7a5738da8c26d0c97166
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39213390"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54077290"
 ---
 # <a name="preferred-solutions-in-azure-marketplace-and-appsource"></a>Рекомендуемые решения в Azure Marketplace и AppSource
 
-Решение, рекомендуемое Майкрософт, — это облачное приложение, выбранное за такие преимущества, как качество, производительность и удовлетворение требований клиентов в определенной отрасли или области решений. Команда, состоящая из специалистов Майкрософт в разных отраслях и представителей отдела продаж, выбирает решения партнеров, участвующих в программе Microsoft Partner Network, с [компетенцией уровня Gold](https://partner.microsoft.com/en-us/membership/core-benefits). Эти решения представлены в наших облачных онлайн-магазинах — Azure Marketplace и AppSource. Рекомендуемые решения в AppSource можно искать по отраслевым вертикалям, а в Azure Marketplace – по категориям, соответствующим областям решений. 
+Решение, рекомендуемое Майкрософт, — это облачное приложение, выбранное за такие преимущества, как качество, производительность и удовлетворение требований клиентов в определенной отрасли или области решений. Команда, состоящая из специалистов Майкрософт в разных отраслях и представителей отдела продаж, выбирает решения партнеров, участвующих в программе Microsoft Partner Network, с [компетенцией уровня Gold](https://partner.microsoft.com/membership/core-benefits). Эти решения представлены в наших облачных онлайн-магазинах — Azure Marketplace и AppSource. Рекомендуемые решения в AppSource можно искать по отраслевым вертикалям, а в Azure Marketplace – по категориям, соответствующим областям решений. 
 
 Корпорация Майкрософт связывается с поставщиками решений, если их решения были выбраны как рекомендуемые.

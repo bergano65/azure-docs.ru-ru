@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/10/2018
+ms.date: 1/09/2019
 ms.author: jeffgilb
 ms.reviewer: georgel
-ms.openlocfilehash: 7bcec2d17f61345986c1676d13011946a0036666
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 5cbbc3c1c2371264e3e29028d4b9d68533cc59ff
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53164734"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54154952"
 ---
 # <a name="sql-resource-provider-11300-release-notes"></a>Заметки о выпуске для поставщика ресурсов SQL 1.1.30.0
 
@@ -81,7 +81,10 @@ ms.locfileid: "53164734"
     ```powershell
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
     ```
+- **Поставщику ресурсов SQL не удается добавить прослушиватель SQL Server Always On**. При использовании IP-адреса прослушивателя SQL Server AlwaysOn на виртуальной машине поставщика ресурсов SQL не удается разрешить имя узла прослушивателя.
 
+    **Возможное решение**: Убедитесь, что DNS работает правильно, чтобы IP-адрес прослушивателя преобразовывался в имя узла прослушивателя.
+    
 ### <a name="known-issues-for-cloud-admins-operating-azure-stack"></a>Известные проблемы для облачных администраторов, работающих с Azure Stack
 Обратитесь к документации в статье о [политике обслуживания Azure Stack](azure-stack-servicing-policy.md).
 

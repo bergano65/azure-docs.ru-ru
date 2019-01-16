@@ -1,5 +1,5 @@
 ---
-title: Заметки о выпуске Служб мультимедиа Azure версии 3 | Документация Майкрософт
+title: 'Новые возможности Заметки о выпуске: Службы мультимедиа Azure версии 3 | Документация Майкрософт'
 description: Чтобы вы оставались в курсе последних разработок, в этой статье предоставлены последние обновления Служб мультимедиа Azure версии 3.
 services: media-services
 documentationcenter: ''
@@ -7,18 +7,18 @@ author: Juliako
 manager: femila
 editor: ''
 ms.service: media-services
-ms.workload: ''
+ms.workload: na
 ms.topic: article
 ms.date: 11/21/2018
 ms.author: juliako
-ms.openlocfilehash: 598587a0fe726ccf65f062833f84b352ca03c077
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: 4db84deb344921d329e81e0f0c9c3a97923430f3
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52315534"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54156499"
 ---
-# <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3 
+# <a name="whats-new-in-azure-media-services-v3"></a>Новые возможности в Службах мультимедиа Azure версии 3
 
 Чтобы вы оставались в курсе последних разработок, в этой статье предоставлены такие сведения:
 
@@ -26,7 +26,6 @@ ms.locfileid: "52315534"
 * Известные проблемы
 * Исправления ошибок
 * Нерекомендуемые функции.
-* Планы по изменениям.
 
 ## <a name="known-issues"></a>Известные проблемы
 

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 07/09/2018
 ms.author: ellacroi
-ms.openlocfilehash: d2ff854d291f65848c7e87b88d8020a835b3bdaa
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: fcfb3943109adbc095b90073f041662fb5c65b56
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50958667"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54078887"
 ---
 # <a name="virtual-machine-offer-publishing-guide"></a>Руководство по публикации предложения "Виртуальная машина"
 
@@ -66,9 +66,9 @@ ms.locfileid: "50958667"
 | Требование | Сведения |  
 |:--- |:--- | 
 | Выставление счетов и ценообразование | Виртуальная машина должна поддерживать ежемесячное выставление счетов в режиме BYOL или оплаты по мере использования. |  
-| Совместимый с Azure виртуальный жесткий диск (VHD) | Виртуальные машины должны быть созданы на платформе Windows или Linux.<ul> <li>Дополнительные сведения о создании виртуального жесткого диска Linux см. в разделе "Создание виртуального жесткого диска, совместимого с Azure (для Linux)" по адресу [docs.microsoft.com/azure/marketplace-publishing/marketplace-publishing-vm-image-creation#2-create-an-azure-compatible-vhd-linux-based](https://docs.microsoft.com/azure/marketplace-publishing/marketplace-publishing-vm-image-creation#2-create-an-azure-compatible-vhd-linux-based).</li> <li>Дополнительные сведения о создании виртуального жесткого диска Windows см. в разделе "Создание виртуального жесткого диска, совместимого с Azure (на основе Windows)" по адресу [docs.microsoft.com/azure/marketplace-publishing/marketplace-publishing-vm-image-creation#3-create-an-azure-compatible-vhd-windows-based](https://docs.microsoft.com/azure/marketplace-publishing/marketplace-publishing-vm-image-creation#3-create-an-azure-compatible-vhd-windows-based).</li> </ul> |  
+| Совместимый с Azure виртуальный жесткий диск (VHD) | Виртуальные машины должны быть созданы на платформе Windows или Linux. <ul> <li>Дополнительные сведения о создании виртуального жесткого диска Linux см. в статье [Дистрибутивы Linux, рекомендованные для использования в Azure](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros).</li> <li>Дополнительные сведения о создании виртуального жесткого диска Windows см. в статье [Создание виртуального жесткого диска, совместимого с Azure](./cloud-partner-portal/virtual-machine/cpp-create-vhd.md).</li> </ul> |  
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Если это еще не сделано, 
 
@@ -76,4 +76,5 @@ ms.locfileid: "50958667"
 
 Если вы зарегистрированы и создаете предложение или работаете над существующим,
 
-- [войдите на портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать или завершить предложение.
+- [войдите на Портал Cloud Partner](https://cloudpartner.azure.com), чтобы создать или завершить предложение.
+- См. дополнительные сведения о [предложении виртуальной машины](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-virtual-machine-offer).

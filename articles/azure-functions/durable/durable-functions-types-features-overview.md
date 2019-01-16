@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 359594ab91b903033ecc303eccd270988be19810
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: fbfee92343bfecfbe8395f95775ae1f107b99299
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53336533"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54037282"
 ---
 # <a name="overview-of-function-types-and-features-for-durable-functions-azure-functions"></a>Общие сведения о типах и возможностях функций в устойчивых функциях в Azure (Функции Azure)
 
@@ -37,7 +37,7 @@ ms.locfileid: "53336533"
 
 ### <a name="orchestrator-functions"></a>Функции оркестратора
 
-Функции оркестратора являются ядром устойчивой функции.  Они описывают способ и порядок выполнения действий.  Функции оркестратора описывают оркестрацию в коде (C# или JavaScript), как показано в статье с [обзором устойчивых функций](durable-functions-overview.md).  Оркестрация может поддерживать различные типы действий, например [функции действий](#activity-functions), [вложенные оркестрации](#sub-orchestrations), [ожидание внешних событий](#external-events) и [таймеры](#durable-timers).  
+Функции оркестратора являются ядром устойчивой функции.  Они описывают способ и порядок выполнения действий.  Функции оркестратора описывают оркестрацию в коде (C# или JavaScript), как показано в статье с описанием [шаблонов устойчивых функций и технических концепций](durable-functions-concepts.md).  Оркестрация может поддерживать различные типы действий, например [функции действий](#activity-functions), [вложенные оркестрации](#sub-orchestrations), [ожидание внешних событий](#external-events) и [ таймеры](#durable-timers).  
 
 Функция оркестратора должена активироваться [триггером оркестрации](durable-functions-bindings.md#orchestration-triggers).
 

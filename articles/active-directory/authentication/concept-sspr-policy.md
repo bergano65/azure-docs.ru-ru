@@ -5,21 +5,21 @@ services: active-directory
 ms.service: active-directory
 ms.component: authentication
 ms.topic: conceptual
-ms.date: 12/10/2018
+ms.date: 01/08/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 3a16977f2d3bc7321de2d2a1538276f182e7fa10
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 1d7f364ac5863c70cd0034d9c458e94cfb164cba
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53190998"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54116965"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Политики и ограничения для паролей в Azure Active Directory
 
-В этой статье описываются политики паролей и требования к сложности, связанные с учетными записями пользователей, которые хранятся в клиенте Azure Active Directory (Azure AD).
+В этой статье описываются политики паролей и требования к сложности, связанные с учетными записями пользователей в клиенте Azure Active Directory (Azure AD).
 
 ## <a name="administrator-reset-policy-differences"></a>Различия политики сброса администратора
 
@@ -79,7 +79,7 @@ ms.locfileid: "53190998"
 | Свойство | Требования |
 | --- | --- |
 | Допустимые символы |<ul><li>A–Z</li><li>a–z</li><li>0–9</li> <li>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ‘ , . ? / ` ~ " ( ) ;</li></ul> |
-| Недопустимые символы |<ul><li>Знаки Юникода.</li><li>Пробелы.</li><li> Используйте только надежные пароли</li></ul> |
+| Недопустимые символы |<ul><li>Знаки Юникода.</li><li>Пробелы.</li><li> Используйте только надежные пароли. Не может содержать знак точки "." непосредственно перед символом "\@\"".</li></ul> |
 | Ограничения для пароля |<ul><li>От 8 до 16 знаков.</li><li>Используйте только надежные пароли. Необходимо выполнить 3 из 4 следующих условий:<ul><li>строчные буквы;</li><li>прописные буквы;</li><li>числа (0–9);</li><li>символы (см. ограничения для пароля выше).</li></ul></li></ul> |
 | Длительность срока действия пароля |<ul><li>Значение по умолчанию: **90** дней.</li><li>Значение можно изменить с помощью командлета `Set-MsolPasswordPolicy` из модуля Azure Active Directory для Windows PowerShell.</li></ul> |
 | Уведомление об окончании срока действия пароля |<ul><li>Значение по умолчанию: **14** дней (до истечения срока действия пароля).</li><li>Это значение можно настроить с помощью командлета `Set-MsolPasswordPolicy`.</li></ul> |

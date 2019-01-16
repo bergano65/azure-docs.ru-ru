@@ -9,19 +9,18 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: jingwang
-ms.openlocfilehash: cd137462235431f0a0c1562e15a32951fe2a41c5
-ms.sourcegitcommit: 96527c150e33a1d630836e72561a5f7d529521b7
+ms.openlocfilehash: fcf5b5d0064292c11abeb361b0c046b5a3388457
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51346717"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54025697"
 ---
 # <a name="copy-data-to-or-from-azure-sql-database-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Выберите версию услуги Data Factory, которую вы используете:"]
+> [!div class="op_single_selector" title1="Select the version of Data Factory service you use:"]
 > * [Версия 1](v1/data-factory-azure-sql-connector.md)
 > * [Текущая версия](connector-azure-sql-database.md)
 
@@ -62,9 +61,9 @@ ms.locfileid: "51346717"
 
 В разделах ниже описываются требования и приводятся примеры JSON для разных типов проверки подлинности.
 
-- [Проверка подлинности SQL.](#sql-authentication)
-- [Аутентификация по маркеру приложения Azure AD на основе субъекта-службы.](#service-principal-authentication)
-- [Аутентификация по маркеру безопасности приложения Azure AD на основе управляемых удостоверений для ресурсов Azure](#managed-identity)
+- [Проверка подлинности SQL](#sql-authentication).
+- [Аутентификация по маркеру безопасности приложения Azure AD на основе субъекта-службы](#service-principal-authentication).
+- [Аутентификация по маркеру безопасности приложения Azure AD на основе управляемых удостоверений для ресурсов Azure](#managed-identity).
 
 >[!TIP]
 >Если вы получили ошибку с кодом ошибки UserErrorFailedToConnectToSqlServer и сообщение типа "Предел сеанса для базы данных — XXX, и он был достигнут", добавьте `Pooling=false` в строку подключения и повторите попытку.
@@ -343,8 +342,8 @@ GO
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
 | Тип | Свойство **type** приемника действия копирования должно иметь значение **SqlSink**. | Yes |
-| writeBatchSize | Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**.<br/> Допустимое значение: **целое число** (количество строк). | Нет. Значение по умолчанию — 10000. |
-| writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия.<br/> Допустимое значение — **timespan**. Пример: 00:30:00 (30 минут). | Нет  |
+| writeBatchSize | Вставляет данные в таблицу SQL, когда размер буфера достигает значения **writeBatchSize**.<br/> Допустимое значение: **целое число** (количество строк). | № Значение по умолчанию — 10000. |
+| writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия.<br/> Допустимое значение — **timespan**. Пример: "00:30:00" (30 минут). | Нет  |
 | preCopyScript | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в базу данных SQL Azure. Он вызывается однократно при каждом запуске копирования. Это свойство используется для очистки предварительно загруженных данных. | Нет  |
 | sqlWriterStoredProcedureName | Имя хранимой процедуры, в которой определяется, как применить исходные данные в целевой таблице. Например, можно определить выполнение операций upsert или преобразований с помощью вашей собственной бизнес-логики. <br/><br/>Эта хранимая процедура будет **вызываться для каждого пакета**. Для операций, которые выполняются только один раз и не имеют ничего общего с исходными данными, используйте свойство `preCopyScript`. Примеры операций: delete и truncate. | Нет  |
 | storedProcedureParameters |Параметры для хранимой процедуры.<br/>Допустимые значения: пары "имя — значение". Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. | Нет  |
@@ -603,7 +602,7 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 | sql_variant |Object * |
 | текст |String, Char[] |
 | Twitter в режиме реального |Интервал времени |
-| timestamp |Byte[] |
+|  timestamp |Byte[] |
 | tinyint; |Byte |
 | uniqueidentifier |Guid |
 | varbinary; |Byte[] |

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: bc6e77643783e1e9f124bc98ea1eb910304a5f32
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 33edfdc58d82530bc1a5d0245b5e18e94b0a6dc1
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52846476"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54077561"
 ---
 # <a name="become-a-cloud-marketplace-publisher"></a>Регистрация в качестве издателя в облаке Marketplace
 
@@ -97,15 +97,15 @@ ms.locfileid: "52846476"
 Выполнив регистрацию в [Центре разработки](https://developer.microsoft.com/store/register), свяжите свой профиль на Портале Cloud Partner с учетной записью [Центра разработки](https://developer.microsoft.com/store/register) (см. подробные инструкции здесь). Этот шаг необходимо выполнить перед публикацией предложения типа "Транзакция". 
 
 >[!Note]
->Чтобы не платить регистрационный сбор Центра разработчиков в размере 99 долл. США, заполните [форму регистрации Marketplace](https://azuremarketplace.microsoft.com/en-us/sell/signup) и получите рекламный код по электронной почте. 
+>Чтобы не платить регистрационный сбор Центра разработчиков в размере 99 долл. США, заполните [форму регистрации Marketplace](https://azuremarketplace.microsoft.com/sell/signup) и получите рекламный код по электронной почте. 
 
 >[!Important]
 >Прежде чем создавать учетную запись Центра разработки Майкрософт, убедитесь, что у вашей организации еще нет такой учетной записи во избежание повторяющихся учетных записей. Дополнительные сведения см. в статье [Регистрация в центре разработки](https://docs.microsoft.com/azure/marketplace/register-dev-center).
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Дополнительные сведения об онлайн-магазинах Azure Marketplace и AppSource [Сравнение AppSource и Azure Marketplace](https://docs.microsoft.com/azure/marketplace/comparing-appsource-azure-marketplace)
-*   [Определение типа перечисления для решения](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type)
+* Дополнительные сведения об онлайн-магазинах Azure Marketplace и AppSource [Сравнение AppSource и Azure Marketplace](https://docs.microsoft.com/azure/marketplace/comparing-appsource-azure-marketplace).
+*   [Выбор варианта публикации](https://docs.microsoft.com/azure/marketplace/determine-your-listing-type).
 
  
 ---  

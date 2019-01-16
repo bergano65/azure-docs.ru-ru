@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
-ms.openlocfilehash: 790d05201550461b095cfefd32f0330f37697e0b
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 4a7e3e9ff414c8f7ba1c49924f1d8659d72ae3e2
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52970337"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54158216"
 ---
 # <a name="azure-api-management-template-resources"></a>Ресурсы шаблонов управления API Azure
 Служба управления API Azure предоставляет следующие типы ресурсов для использования в шаблонах портала разработчика:  
@@ -108,7 +108,7 @@ ms.locfileid: "52970337"
 |----------|----------|  
 |WebDevelopersAppDeleteConfirmation|Вы действительно хотите удалить приложение?|  
 |WebDevelopersAppNotPublished|Не опубликовано|  
-|WebDevelopersAppNotSubminted|Не отправлено|  
+|WebDevelopersAppNotSubmitted|Не отправлено|  
 |WebDevelopersAppTableCategoryHeader|Категория|  
 |WebDevelopersAppTableNameHeader|ИМЯ|  
 |WebDevelopersAppTableStateHeader|Состояние|  
@@ -361,7 +361,7 @@ ms.locfileid: "52970337"
 |WebProductsUsageLimitsHeader|Ограничения использования|  
 |WebProductsYouAreNotSubscribed|Вы подписаны на продукт.|  
 |WebProductsYouRequestedSubscription|Вы запросили подписку на этот продукт.|  
-|ErrorYouNeedtoAgreeWithLegalTerms|Прежде чем продолжить, необходимо принять условия использования.|  
+|ErrorYouNeedToAgreeWithLegalTerms|Прежде чем продолжить, необходимо принять условия использования.|  
 |ButtonLabelAddSubscription|Добавить подписку|  
 |LinkLabelChangeSubscriptionName|Изменить|  
 |ButtonLabelConfirm|Подтверждение|  
@@ -517,7 +517,7 @@ ms.locfileid: "52970337"
 |WebDevelopersSecondaryKey|Вторичный ключ|  
 |ButtonLabelShowKey|Показать|  
 |ButtonLabelRenewSubscription|Возобновление|  
-|WebDevelopersSubscriptionReqested|Дата запроса: {0}.|  
+|WebDevelopersSubscriptionRequested|Дата запроса: {0}.|  
 |WebDevelopersSubscriptionRequestedState|Запрошено|  
 |WebDevelopersSubscriptionTableNameHeader|ИМЯ|  
 |WebDevelopersSubscriptionTableStateHeader|Состояние|  

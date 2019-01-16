@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 11/06/2018
 ms.author: spelluru
-ms.openlocfilehash: c616ad86e6846800d214feeaf100f63e311f78b0
-ms.sourcegitcommit: ba4570d778187a975645a45920d1d631139ac36e
+ms.openlocfilehash: 248ac7ed2a855dd1df71e6e44d1aa7065ddd8ba4
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51282736"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54062073"
 ---
 # <a name="create-a-service-bus-namespace-using-an-azure-resource-manager-template"></a>Создание пространства имен служебной шины с помощью шаблона диспетчера ресурсов Azure
 Из этого краткого руководства вы узнаете, как создать шаблон Azure Resource Manager, создающий пространство имен служебной шины типа **Messaging** с номером SKU уровня **Стандартный**. В этой статье также определяются параметры, которые задаются во время развертывания. Этот шаблон можно использовать для собственных развертываний или настроить его в соответствии с вашими требованиями. Дополнительные сведения о создании шаблонов см. в статье [Создание шаблонов Azure Resource Manager][Authoring Azure Resource Manager templates]. Полный шаблон приведен в разделе [Service Bus namespace template][Service Bus namespace template] (Шаблон пространства имен служебной шины) на сайте GitHub.
@@ -96,7 +96,7 @@ ms.locfileid: "51282736"
 }
 ```
 
-Этот шаблон создает стандартное пространство имен служебной шины.
+Этот шаблон создает стандартное пространство имен служебной шины. Сведения о синтаксисе и свойствах JSON см. в справочнике по шаблонам о [пространствах имен](/azure/templates/microsoft.servicebus/namespaces).
 
 ## <a name="create-the-parameters-json"></a>Создание JSON-кода для параметров
 В шаблоне, созданном на предыдущем шаге, есть раздел `Parameters`. Можно определить параметры для тех значений, которые отличаются, в зависимости от разворачиваемого проекта или целевой среды. В этом шаблоне определены следующие параметры: **serviceBusNamespaceName**, **serviceBusSku** и **location**. Для получения дополнительных сведений ознакомьтесь с [номерами SKU служебной шины](https://azure.microsoft.com/pricing/details/service-bus/), которые нужно создать.

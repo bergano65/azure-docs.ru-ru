@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: sashan, moslake
 manager: craigg
-ms.date: 01/02/2019
-ms.openlocfilehash: f756f043a7ab3c9086b21b8bdb88a5a6a7ed60df
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.date: 01/08/2019
+ms.openlocfilehash: 9d5a1493316fbfa9a703655f37a40276ee3ffaf7
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54001606"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54156822"
 ---
 # <a name="vcore-service-tiers-azure-hybrid-benefit-and-migration"></a>Уровни служб на основе виртуальных ядер, Преимущество гибридного использования Azure и миграция
 
@@ -66,6 +66,29 @@ ms.locfileid: "54001606"
 В модели приобретения на основе виртуальных ядер можно обменять имеющиеся лицензии, чтобы получить сниженные тарифы на Базу данных SQL при использовании программы [Преимущества гибридного использования Azure для SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/). При этом благодаря локальным лицензиям SQL Server и подписке Software Assurance вы сможете сэкономить до 30 % на базу данных SQL Azure.
 
 ![цены](./media/sql-database-service-tiers/pricing.png)
+
+С помощью Преимущества гибридного использования Azure вы можете платить только за базовую инфраструктуру Azure, используя имеющуюся лицензию SQL Server для ядра СУБД SQL (**BasePrice**), или платить за базовую инфраструктуру и лицензию SQL Server (**LicenseIncluded**). Модель лицензирования можно выбрать или изменить с помощью портала Azure или одного из указанных ниже интерфейсов API.
+
+- Чтобы установить или обновить тип лицензии с помощью PowerShell, можно использовать:
+
+  - [New-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql/new-azsqldatabase)
+  - [Set-AzSqlDatabase](https://docs.microsoft.com/powershell/module/az.sql)
+  - [New-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlinstance)
+  - [Set-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql)
+
+- Чтобы установить или обновить тип лицензии с помощью Azure CLI, можно использовать команды:
+
+  - [az sql db create](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-create)
+  - [az sql db update](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update)
+  - [az sql mi create](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-create)
+  - [az sql mi update](https://docs.microsoft.com/cli/azure/sql/mi#az-sql-mi-update)
+
+- Чтобы установить или обновить тип лицензии с помощью REST API, воспользоваться следующими инструкциями:
+
+  - [Базы данных: создание или обновление](https://docs.microsoft.com/rest/api/sql/databases/createorupdate)
+  - [Базы данных: обновление](https://docs.microsoft.com/rest/api/sql/databases/update)
+  - [Управляемые экземпляры. Создание или обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/createorupdate)
+  - [Управляемые экземпляры. Обновление](https://docs.microsoft.com/rest/api/sql/managedinstances/update)
 
 ## <a name="migration-from-dtu-model-to-vcore-model"></a>Переход с модели DTU на модель с виртуальными ядрами
 

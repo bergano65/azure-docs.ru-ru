@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 12/22/2018
 ms.author: sethm
 ms.reviewer: justini
-ms.openlocfilehash: f3994c2be50939a837256224030e5284cc6f385b
-ms.sourcegitcommit: 7862449050a220133e5316f0030a259b1c6e3004
+ms.openlocfilehash: 97b7defded39e572a1fecae3e93d389014b15a6b
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/22/2018
-ms.locfileid: "53754056"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54077969"
 ---
 # <a name="azure-stack-1809-update"></a>Обновление 1809 для Azure Stack
 
@@ -48,6 +48,8 @@ ms.locfileid: "53754056"
    Дополнительные сведения см. в статье [Интеграция центра обработки данных Azure Stack. Безопасность](azure-stack-integrate-security.md).
 
 - Теперь можно [перемещать ресурс регистрации](azure-stack-registration.md#move-a-registration-resource) в Azure между группами ресурсов без необходимости повторной регистрации. Поставщики облачных решений (CSP) также могут перемещать ресурсы регистрации между подписками при условии, что новая и старая подписки сопоставлены с одним и тем же идентификатором партнера CSP. Это не влияет на существующие сопоставления клиента. 
+
+- Добавлена поддержка назначение нескольких IP-адресов для каждого сетевого интерфейса.  Дополнительные сведения см. в статье [Назначение виртуальным машинам нескольких IP-адресов с помощью PowerShell](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-multiple-ip-addresses-powershell).
 
 ### <a name="fixed-issues"></a>Исправленные проблемы
 

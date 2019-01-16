@@ -9,12 +9,12 @@ ms.date: 10/16/2018
 ms.topic: conceptual
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: 6ee89f3d57ded382b4d4519e4054448c144b10c5
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 7d79e7aca0e8aa506abba174668c60fcd2fd4bc2
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52632699"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54065449"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions"></a>Подключение решений для управления обновлениями, отслеживания изменений и инвентаризации
 
@@ -31,6 +31,24 @@ ms.locfileid: "52632699"
 Чтобы включить решение, выберите рабочую область Log Analytics и учетную запись службы автоматизации, а затем щелкните **Включить**. Процесс включения решения может занять до 15 минут.
 
 ![Подключение решения для инвентаризации](media/automation-onboard-solutions-from-automation-account/onboardsolutions.png)
+
+При включении решений только определенные регионы поддерживают связывание рабочей области Log Analytics и учетной записи службы автоматизации.
+
+Поддерживаемое сопоставление показано в следующей таблице.
+
+|**Регион рабочей области Log Analytics**|**Регион учетной записи службы автоматизации**|
+|---|---|
+|AustraliaSoutheast|AustraliaSoutheast|
+|CanadaCentral|CanadaCentral|
+|CentralIndia|CentralIndia|
+|EastUS|EastUS2|
+|JapanEast|JapanEast|
+|SoutheastAsia|SoutheastAsia|
+|WestCentralUS|WestCentralUS|
+|WestEurope|WestEurope|
+|UKSouth|UKSouth|
+|USGovVirginia|USGovVirginia|
+|EastUS2EUAP|CentralUSEUAP|
 
 Решение для отслеживания изменений и инвентаризации позволяет [отслеживать изменения](automation-vm-change-tracking.md) и [выполнять инвентаризацию](automation-vm-inventory.md) на виртуальных машинах. На этом этапе нужно включить решение на виртуальной машине.
 

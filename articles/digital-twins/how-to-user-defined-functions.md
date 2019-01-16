@@ -1,20 +1,20 @@
 ---
 title: Создание определяемых пользователем функций в Azure Digital Twins | Документация Майкрософт
-description: Руководство по созданию определяемых пользователем функций, сопоставителей и назначений ролей с помощью Azure Digital Twins.
+description: Создание определяемых пользователем функций, сопоставителей и назначений ролей с помощью Azure Digital Twins.
 author: alinamstanciu
 manager: bertvanhoof
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/27/2018
+ms.date: 01/02/2019
 ms.author: alinast
 ms.custom: seodec18
-ms.openlocfilehash: 91c0b5700fbc648f1fcd1355a438694cecc07a04
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: 7208f96d99127247b51510e0c43c1733bb327dfb
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993412"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54076252"
 ---
 # <a name="how-to-create-user-defined-functions-in-azure-digital-twins"></a>Создание определяемых пользователем функций в Azure Digital Twins
 
@@ -73,21 +73,17 @@ YOUR_MANAGEMENT_API_URL/matchers
 
 ## <a name="create-a-user-defined-function"></a>создание определяемой пользователем функции;
 
-После создания сопоставления загрузите фрагмент функции со следующим аутентифицированным запросом HTTP **POST**.
+Создание определяемой пользователем функции включает в себя составной HTTP-запрос к API управления Azure Digital Twins.
+
+[!INCLUDE [Digital Twins multipart requests](../../includes/digital-twins-multipart.md)]
+
+После создания сопоставления загрузите фрагмент функции со следующим аутентифицированным составным HTTP-запросом POST в следующее расположение.
 
 ```plaintext
 YOUR_MANAGEMENT_API_URL/userdefinedfunctions
 ```
 
-> [!IMPORTANT]
-> - Убедитесь, что заголовки включают `Content-Type: multipart/form-data; boundary="USER_DEFINED_BOUNDARY"`.
-> - Поставляемый текст состоит из нескольких частей.
->   - Первая часть содержит необходимые метаданные определяемой пользователем функции.
->   - Вторая часть содержит логику вычислений на JavaScript.
-> - В разделе **USER_DEFINED_BOUNDARY** замените значения **spaceId** (`YOUR_SPACE_IDENTIFIER`) и **matchers**(`YOUR_MATCHER_IDENTIFIER`).
-> - Обратите внимание, Javascript UDF поставляется в виде `Content-Type: text/javascript`.
-
-Используйте следующий текст JSON:
+Используйте следующий текст.
 
 ```plaintext
 --USER_DEFINED_BOUNDARY
@@ -116,6 +112,15 @@ function process(telemetry, executionContext) {
 | USER_DEFINED_BOUNDARY | Имя границы составного содержимого |
 | YOUR_SPACE_IDENTIFIER | Идентификатор пространства  |
 | YOUR_MATCHER_IDENTIFIER | Идентификатор необходимого сопоставителя |
+
+1. Убедитесь, что заголовки включают `Content-Type: multipart/form-data; boundary="USER_DEFINED_BOUNDARY"`.
+1. Убедитесь, что текст состоит из нескольких частей:
+
+   - Первая часть содержит необходимые метаданные определяемой пользователем функции.
+   - Вторая часть содержит логику вычислений на JavaScript.
+
+1. В разделе **USER_DEFINED_BOUNDARY** замените значения **spaceId** (`YOUR_SPACE_IDENTIFIER`) и **matchers** (`YOUR_MATCHER_IDENTIFIER`).
+1. Убедитесь, что определяемая пользователем функция JavaScript указана как `Content-Type: text/javascript`.
 
 ### <a name="example-functions"></a>Примеры функций
 
@@ -190,9 +195,9 @@ function process(telemetry, executionContext) {
 
 ## <a name="create-a-role-assignment"></a>Создание назначения роли
 
-Создайте назначение роли для выполнения определяемой пользователем функции. Если для пользовательской функции не назначено никакой роли, у нее не будет надлежащих разрешений для взаимодействия с API управления или доступа к выполнению действий над графическими объектами. Действия, которые может выполнять определяемая пользователем функция, задаются и определяются с помощью управления доступом на основе ролей в API управления Azure Digital Twins. Например, функции, определенные пользователем, можно ограничить по областям, указав определенные роли или пути управления доступом. Дополнительные сведения см. в статье [Управление доступом на основе ролей в службе автоматизации Azure Digital Twins](./security-role-based-access-control.md).
+Создайте назначение роли для выполнения определяемой пользователем функции. Если для определяемой пользователем функции не назначена никакая роль, у нее не будет нужных разрешений для взаимодействия с API управления или доступа к выполнению действий над графическими объектами. Действия, которые может выполнять определяемая пользователем функция, задаются и определяются с помощью управления доступом на основе ролей в API управления Azure Digital Twins. Например, функции, определенные пользователем, можно ограничить по областям, указав определенные роли или пути управления доступом. Дополнительные сведения см. в статье [Управление доступом на основе ролей в службе автоматизации Azure Digital Twins](./security-role-based-access-control.md).
 
-1. [Запросите API систему](./security-create-manage-role-assignments.md#all) для всех ролей, чтобы получить идентификатор роли, которой необходимо назначить определяемой пользователем функции. Сделайте это, создавая аутентифицированный запрос HTTP GET.
+1. [Запросите API системы](./security-create-manage-role-assignments.md#all) для всех ролей, чтобы получить идентификатор роли, которую необходимо назначить определяемой пользователем функции. Сделайте это, создавая аутентифицированный запрос HTTP GET.
 
     ```plaintext
     YOUR_MANAGEMENT_API_URL/system/roles
@@ -211,7 +216,7 @@ function process(telemetry, executionContext) {
     | --- | --- |
     | YOUR_SPACE_NAME | Имя необходимого пространства |
 
-1. Вставьте возвращенное значение `spacePaths` в **path**, чтобы создать назначение роли определяемой пользователем функции, сделав аутентифицированный запрос HTTP POST.
+1. Вставьте возвращенное значение `spacePaths` в **path**, чтобы создать назначение роли определяемой пользователем функции, сделав аутентифицированный HTTP-запрос POST в следующее расположение.
 
     ```plaintext
     YOUR_MANAGEMENT_API_URL/roleassignments
@@ -230,12 +235,12 @@ function process(telemetry, executionContext) {
     | Значение | Заменить на |
     | --- | --- |
     | YOUR_DESIRED_ROLE_IDENTIFIER | Идентификатор необходимой роли |
-    | YOUR_USER_DEFINED_FUNCTION_ID | Идентификатор необходимой UDF |
+    | YOUR_USER_DEFINED_FUNCTION_ID | Идентификатор необходимой определяемой пользователем функции |
     | YOUR_USER_DEFINED_FUNCTION_TYPE_ID | Идентификатор типа для определяемой пользователем функции |
     | YOUR_ACCESS_CONTROL_PATH | Путь для управления доступом |
 
 >[!TIP]
-> Дополнительные сведения об операциях API управления, связанных с UDF и конечными точками, см. в статье [Создание назначений ролей и управление ими в Azure Digital Twins](./security-create-manage-role-assignments.md).
+> Дополнительные сведения об операциях API управления, связанных с определяемой пользователем функцией и конечными точками, см. в статье [Создание назначений ролей и управление ими в Azure Digital Twins](./security-create-manage-role-assignments.md).
 
 ## <a name="send-telemetry-to-be-processed"></a>Отправка данных телеметрии для обработки
 

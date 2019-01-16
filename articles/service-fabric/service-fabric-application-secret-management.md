@@ -1,6 +1,6 @@
 ---
 title: Управление секретами приложения Azure Service Fabric | Документация Майкрософт
-description: Узнайте, как защитить значения секретов в приложении Service Fabric.
+description: Узнайте, как защитить значения секретов в приложении Service Fabric (не зависимо от платформы).
 services: service-fabric
 documentationcenter: .net
 author: vturecek
@@ -12,46 +12,32 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 03/21/2018
+ms.date: 01/04/2019
 ms.author: vturecek
-ms.openlocfilehash: 85eb1cd40986bd6fb83c80a274046bbae3756b7e
-ms.sourcegitcommit: 1438b7549c2d9bc2ace6a0a3e460ad4206bad423
+ms.openlocfilehash: a0003ee02c09ad8c99d6fa94935f96527c146e7d
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36295459"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54063817"
 ---
-# <a name="manage-secrets-in-service-fabric-applications"></a>Управление секретами в приложениях Service Fabric
+# <a name="manage-encrypted-secrets-in-service-fabric-applications"></a>Управление зашифрованными секретами в приложениях Service Fabric
 В этом руководстве описаны шаги по управлению секретами в приложении Service Fabric. Секретом может считаться любая конфиденциальная информации, например строка подключения к хранилищу, пароль или другое значение, которое не должно обрабатываться в виде обычного текста.
 
-В качестве безопасного расположения для хранения сертификатов здесь используется [хранилище ключей Azure][key-vault-get-started]. С его помощью сертификаты также устанавливаются в кластеры Service Fabric в Azure. Если вы не выполняете развертывание в Azure, то использование хранилища ключей для управления секретами в приложениях Service Fabric не требуется. Однако *использование* секретов в приложении осуществляется без привязки к определенной облачной платформе, чтобы приложения могли быть развернуты в кластере, размещенном в любом месте. 
+Использование зашифрованных секретов в приложении Service Fabric состоит из трех этапов:
+* настройка шифрования секретов и сертификата шифрования;
+* указание зашифрованных секретов в приложении;
+* расшифровка зашифрованных секретов из кода службы.
 
-## <a name="obtain-a-data-encipherment-certificate"></a>Получение сертификата шифрования данных
-Сертификат шифрования данных используются исключительно для шифрования и расшифровки значений конфигурации в файле Settings.xml службы и не применяется при аутентификации или подписывании зашифрованного текста. Сертификат должен отвечать приведенным ниже требованиям.
+## <a name="set-up-an-encryption-certificate-and-encrypt-secrets"></a>Настройка шифрования секретов и сертификата шифрования
+Настройка сертификата шифрования и его использование для шифрования секретов отличается в Windows и Linux.
+* [Set up an encryption certificate and encrypt secrets on Windows clusters][secret-management-windows-specific-link] (Настройка шифрование секретов и сертификата шифрования в кластерах Windows).
+* [Set up an encryption certificate and encrypt secrets on Linux clusters][secret-management-linux-specific-link] (Настройка шифрование секретов и сертификата шифрования в кластерах Linux).
 
-* Сертификат должен содержать закрытый ключ.
-* Сертификат должен быть создан для обмена ключами, которые можно экспортировать в файл обмена личной информацией (PFX-файл).
-* Использование ключа сертификата должно включать шифрование данных (10) и не должно включать аутентификацию сервера или клиента. 
-  
-  Например, при создании самозаверяющего сертификата с помощью PowerShell для флага `KeyUsage` необходимо задать значение `DataEncipherment`:
-  
-  ```powershell
-  New-SelfSignedCertificate -Type DocumentEncryptionCert -KeyUsage DataEncipherment -Subject mydataenciphermentcert -Provider 'Microsoft Enhanced Cryptographic Provider v1.0'
-  ```
+## <a name="specify-encrypted-secrets-in-an-application"></a>Указание зашифрованных секретов в приложении
+Предыдущий шаг описывает, как зашифровать секрет с помощью сертификата и создать строку в формате base-64 для использования в приложении. Эта строка в формате base-64 может быть указана как зашифрованный [параметр][parameters-link] в файле Settings.xml службы или как зашифрованная [переменная среды][environment-variables-link] в ServiceManifest.xml службы.
 
-## <a name="install-the-certificate-in-your-cluster"></a>Установка сертификата в кластере
-Этот сертификат должен быть установлен на каждом узле в кластере. Он будет использоваться в среде выполнения для расшифровки значений, хранящихся в файле Settings.xml службы. Инструкции по созданию и настройке кластера с помощью Azure Resource Manager см. в [этой статье][service-fabric-cluster-creation-via-arm]. 
-
-## <a name="encrypt-application-secrets"></a>Шифрование секретов приложений
-При развертывании приложения зашифруйте значения секретов с помощью сертификата и включите их в файл конфигурации Settings.xml для службы. Пакет SDK для Service Fabric содержит встроенные функции шифрования и расшифровки секретов. Значения секретов могут шифроваться в процессе сборки, а затем программно расшифровываться и считываться в коде службы. 
-
-Для шифрования секрета используется следующая команда PowerShell. Эта команда шифрует только значение; она **не** подписывает зашифрованный текст. Чтобы создать зашифрованные данные для значений секретов, необходимо использовать тот же сертификат шифрования, установленный в кластере.
-
-```powershell
-Invoke-ServiceFabricEncryptText -CertStore -CertThumbprint "<thumbprint>" -Text "mysecret" -StoreLocation CurrentUser -StoreName My
-```
-
-Результирующая строка в кодировке Base-64 содержит как зашифрованные данные секрета, так и сведения о сертификате, с помощью которого выполнено шифрование секрета.  Эту строку в кодировке Base-64 можно вставить в параметр в файле конфигурации Settings.xml службы. При этом атрибуту `IsEncrypted` необходимо задать значение `true`:
+Укажите зашифрованный [параметр][parameters-link] в файле конфигурации Settings.xml службы. При этом атрибуту `IsEncrypted` необходимо задать значение `true`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -60,6 +46,14 @@ Invoke-ServiceFabricEncryptText -CertStore -CertThumbprint "<thumbprint>" -Text 
     <Parameter Name="MySecret" IsEncrypted="true" Value="I6jCCAeYCAxgFhBXABFxzAt ... gNBRyeWFXl2VydmjZNwJIM=" />
   </Section>
 </Settings>
+```
+Укажите зашифрованную [переменную среды][environment-variables-link] в файле ServiceManifest.xml службы. При этом атрибуту `Type` необходимо задать значение `Encrypted`.
+```xml
+<CodePackage Name="Code" Version="1.0.0">
+  <EnvironmentVariables>
+    <EnvironmentVariable Name="MyEnvVariable" Type="Encrypted" Value="I6jCCAeYCAxgFhBXABFxzAt ... gNBRyeWFXl2VydmjZNwJIM=" />
+  </EnvironmentVariables>
+</CodePackage>
 ```
 
 ### <a name="inject-application-secrets-into-application-instances"></a>Включение секретов приложений в экземпляры приложений
@@ -103,7 +97,7 @@ Invoke-ServiceFabricEncryptText -CertStore -CertThumbprint "<thumbprint>" -Text 
 При использовании PowerShell параметр передается в команду `New-ServiceFabricApplication` в виде [хэш-таблицы](https://technet.microsoft.com/library/ee692803.aspx):
 
 ```powershell
-PS C:\Users\vturecek> New-ServiceFabricApplication -ApplicationName fabric:/MyApp -ApplicationTypeName MyAppType -ApplicationTypeVersion 1.0.0 -ApplicationParameter @{"MySecret" = "I6jCCAeYCAxgFhBXABFxzAt ... gNBRyeWFXl2VydmjZNwJIM="}
+New-ServiceFabricApplication -ApplicationName fabric:/MyApp -ApplicationTypeName MyAppType -ApplicationTypeVersion 1.0.0 -ApplicationParameter @{"MySecret" = "I6jCCAeYCAxgFhBXABFxzAt ... gNBRyeWFXl2VydmjZNwJIM="}
 ```
 
 При использовании языка C# параметры приложения указываются в `ApplicationDescription` как `NameValueCollection`:
@@ -124,49 +118,28 @@ ApplicationDescription applicationDescription = new ApplicationDescription(
 await fabricClient.ApplicationManager.CreateApplicationAsync(applicationDescription);
 ```
 
-## <a name="decrypt-secrets-from-service-code"></a>Расшифровка секретов из кода службы
-Вы можете считывать зашифрованные значения из файла Settings.xml, расшифровав их при помощи сертификата, который использовался для шифрования секрета. В Windows службы Service Fabric по умолчанию выполняются от имени учетной записи СЕТЕВОЙ СЛУЖБЫ (NetworkService) и не имеют доступа к сертификатам, установленным на узле, если не внести в настройки дополнительные изменения.
-
-При использовании сертификата шифрования данных необходимо убедиться, что СЕТЕВАЯ СЛУЖБА или любая другая учетная запись, от имени которой выполняется служба, имеет доступ к закрытому ключу сертификата. Service Fabric будет выполнять обработку, автоматически предоставляя доступ для вашей службы, если ее настроить соответствующим образом. Такую конфигурацию можно настроить в файле ApplicationManifest.xml, определив пользователей и политики безопасности для сертификатов. В следующем примере учетной записи СЕТЕВОЙ СЛУЖБЫ предоставляется доступ на чтение к сертификату, определенному его отпечатком:
-
-```xml
-<ApplicationManifest … >
-    <Principals>
-        <Users>
-            <User Name="Service1" AccountType="NetworkService" />
-        </Users>
-    </Principals>
-  <Policies>
-    <SecurityAccessPolicies>
-      <SecurityAccessPolicy GrantRights=”Read” PrincipalRef="Service1" ResourceRef="MyCert" ResourceType="Certificate"/>
-    </SecurityAccessPolicies>
-  </Policies>
-  <Certificates>
-    <SecretsCertificate Name="MyCert" X509FindType="FindByThumbprint" X509FindValue="[YourCertThumbrint]"/>
-  </Certificates>
-</ApplicationManifest>
-```
-
-> [!NOTE]
-> При копировании отпечатка сертификата из оснастки хранилища сертификатов в Windows в начале строки отпечатка помещается невидимый знак. Этот невидимый знак может приводить к ошибке при попытке найти сертификат по отпечатку, поэтому не забудьте его удалить.
-> 
-> 
-
-### <a name="use-application-secrets-in-service-code"></a>Использование секретов приложений в коде службы
-Интерфейс API для доступа к значениям конфигурации из файла Settings.xml в пакете конфигурации позволяет легко расшифровать данные, для которых атрибуту `IsEncrypted` задано значение `true`. Поскольку зашифрованный текст содержит информацию о сертификате, использованном для шифрования, то находить сертификат вручную не требуется. Необходимо только установить сертификат на узле, на котором выполняется данная служба. Для получения исходного значения секрета просто вызовите метод `DecryptValue()` :
+## <a name="decrypt-encrypted-secrets-from-service-code"></a>Расшифровка зашифрованных секретов из кода службы
+Интерфейсы API для доступа к [параметрам] [parameters-link] и [переменным среды][environment-variables-link] позволяют легко расшифровать зашифрованные значения. Поскольку зашифрованная строка содержит сведения о сертификате, использованном для шифрования, то указывать сертификат вручную не требуется. Необходимо только установить сертификат на узле, на котором выполняется данная служба.
 
 ```csharp
-ConfigurationPackage configPackage = this.Context.CodePackageActivationContext.GetConfigurationPackageObject("Config");
-SecureString mySecretValue = configPackage.Settings.Sections["MySettings"].Parameters["MySecret"].DecryptValue()
+// Access decrypted parameters from Settings.xml
+ConfigurationPackage configPackage = FabricRuntime.GetActivationContext().GetConfigurationPackageObject("Config");
+bool MySecretIsEncrypted = configPackage.Settings.Sections["MySettings"].Parameters["MySecret"].IsEncrypted;
+if (MySecretIsEncrypted)
+{
+    SecureString MySecretDecryptedValue = configPackage.Settings.Sections["MySettings"].Parameters["MySecret"].DecryptValue();
+}
+
+// Access decrypted environment variables from ServiceManifest.xml
+// Note: you do not have to call any explicit API to decrypt the environment variable.
+string MyEnvVariable = Environment.GetEnvironmentVariable("MyEnvVariable");
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 Ознакомьтесь с дополнительными сведениями о [безопасности приложений и служб](service-fabric-application-and-service-security.md).
 
 <!-- Links -->
-[key-vault-get-started]:../key-vault/key-vault-get-started.md
-[config-package]: service-fabric-application-and-service-manifests.md
-[service-fabric-cluster-creation-via-arm]: service-fabric-cluster-creation-via-arm.md
-
-<!-- Images -->
-[overview]:./media/service-fabric-application-secret-management/overview.png
+[parameters-link]:service-fabric-how-to-parameterize-configuration-files.md
+[environment-variables-link]: service-fabric-how-to-specify-environment-variables.md
+[secret-management-windows-specific-link]: service-fabric-application-secret-management-windows.md
+[secret-management-linux-specific-link]: service-fabric-application-secret-management-linux.md

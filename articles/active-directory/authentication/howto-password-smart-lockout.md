@@ -10,12 +10,12 @@ ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: rogoya
-ms.openlocfilehash: 9f701f0f6d00d2913eaf5b237435fd375b2030e0
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 80b1896c55d00a4ac8e5dea62afc08ace1a84249
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53435282"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54078530"
 ---
 # <a name="azure-active-directory-smart-lockout"></a>Смарт-блокировка Azure Active Directory
 
@@ -70,6 +70,14 @@ ms.locfileid: "53435282"
 > Если первый вход после блокировки завершится ошибкой, учетная запись будет снова заблокирована. Если учетная запись будет заблокирована несколько раз, продолжительность блокировки увеличится.
 
 ![Настройка политики смарт-блокировки Azure AD на портале Azure](./media/howto-password-smart-lockout/azure-active-directory-custom-smart-lockout-policy.png)
+
+## <a name="how-to-determine-if-the-smartlockout-feature-is-working-or-not"></a>Как определить, работает ли компонент Smartlockout
+
+При превышении порогового значения smartlockout учетная запись будет заблокирована и вы получите следующее сообщение:
+
+**Ваша учетная запись временно заблокирована, чтобы предотвратить ее несанкционированное использование. Повторите попытку позже. Если проблема не устранена, обратитесь к администратору.**
+
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Настройка пользовательского списка заблокированных паролей](howto-password-ban-bad.md)

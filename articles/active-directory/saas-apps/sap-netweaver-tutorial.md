@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory с SAP NetWeaver | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SAP NetWeaver | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP NetWeaver.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2018
 ms.author: jeedes
-ms.openlocfilehash: fac22508e679c1e1c93ec62a5b120ba9c7c52317
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 607d05818966e62407795640d223f1aed2f59bbb
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52162393"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54156754"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство. Интеграция Azure Active Directory с SAP NetWeaver
 
@@ -142,7 +142,7 @@ ms.locfileid: "52162393"
 
     ![Ссылка для скачивания сертификата](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_userpwd.png)
 
-6. Замените **Имя поставщика** T01122, указав **http://T01122**, и нажмите **Сохранить**.
+6. Замените **Имя поставщика** T01122, указав `http://T01122`, и щелкните **Сохранить**.
 
     > [!NOTE]
     > Имя поставщика по умолчанию указывается в формате <sid><client>, но Azure AD ожидает имя в формате <protocol>://<name>, рекомендуя поддерживать имя поставщика как https://<sid><client>, чтобы разрешить многим обработчикам SAP NetWeaver ABAP выполнять настройку в Azure AD.
@@ -275,7 +275,7 @@ ms.locfileid: "52162393"
 
 29. Обратите внимание, что значения **Источник идентификатора пользователя** и **Режим сопоставления идентификатора пользователя** определяют связь между пользователем SAP и утверждением Azure AD.  
 
-    ####<a name="scenario-sap-user-to-azure-ad-user-mapping"></a>Сценарий: сопоставление пользователя SAP и пользователя Azure AD.
+    ####<a name="scenario-sap-user-to-azure-ad-user-mapping"></a>Сценарий. Сопоставление пользователя SAP и пользователя Azure AD.
 
     a. Снимок экрана сведений NameID в SAP.
 
@@ -285,7 +285,7 @@ ms.locfileid: "52162393"
 
     ![Настройка единого входа](./media/sapnetweaver-tutorial/claimsaad1.png)
 
-    ####<a name="scenario-select-sap-user-id-based-on-configured-email-address-in-su01-in-this-case-email-id-should-be-configured-in-su01-for-each-user-who-requires-sso"></a>Сценарий: выберите идентификатор пользователя SAP с учетом указанного электронного адреса в SU01. В этом случае идентификатор электронной почты должен быть настроен в su01 для каждого пользователя, которому требуется единый вход.
+    ####<a name="scenario-select-sap-user-id-based-on-configured-email-address-in-su01-in-this-case-email-id-should-be-configured-in-su01-for-each-user-who-requires-sso"></a>Сценарий. Выбор идентификатора пользователя SAP с учетом указанного электронного адреса в SU01. В этом случае идентификатор электронной почты должен быть настроен в su01 для каждого пользователя, которому требуется единый вход.
 
     a.  Снимок экрана сведений NameID в SAP.
 

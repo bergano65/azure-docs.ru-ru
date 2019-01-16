@@ -1,6 +1,6 @@
 ---
-title: Доступ к локальным источникам данных в Azure Logic Apps | Документация Майкрософт
-description: Создание и настройка локального шлюза данных для доступа к локальным источникам данных из приложений логики
+title: Доступ к локальным источникам данных из Azure Logic Apps | Документация Майкрософт
+description: Подключение к локальным источникам данных из приложений логики с помощью создания локального шлюза данных
 services: logic-apps
 ms.service: logic-apps
 ms.suite: integration
@@ -9,16 +9,19 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
-ms.openlocfilehash: e8e8d85d2c95c1dda7271de72491594562b7d3c1
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 2b9e1c153c3fa9b17145eb6c3c8f3ed02e3bf40f
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50413712"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54064072"
 ---
-# <a name="connect-to-data-sources-on-premises-from-azure-logic-apps-with-on-premises-data-gateway"></a>Подключение к локальным источникам данных из Azure Logic Apps с помощью локального шлюза данных
+# <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Подключение к локальным источникам данных из Azure Logic Apps
 
-Для доступа к локальным источникам данных из приложений логики в Azure можно создать ресурс шлюза данных, чтобы приложения логики могли использовать [локальные соединители](../logic-apps/logic-apps-gateway-install.md#supported-connections). В этой статье показано, как создать ресурс шлюза Azure *после* [загрузки и установки шлюза на локальном компьютере](../logic-apps/logic-apps-gateway-install.md). 
+Чтобы получить доступ к источникам данных из ваших логических приложений, создайте ресурс локального шлюза данных на портале Azure. Затем приложения логики могут использовать [локальные соединители](../logic-apps/logic-apps-gateway-install.md#supported-connections). В этой статье показано, как создать ресурс шлюза Azure *после* [загрузки и установки шлюза на локальном компьютере](../logic-apps/logic-apps-gateway-install.md). 
+
+> [!TIP]
+> Чтобы подключиться к виртуальным сетям Azure, вместо этого рассмотрите возможность создания среды службы интеграции. Для этого см. статью [*Доступ к ресурсам виртуальных сетей Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)*](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md). 
 
 Сведения о том, как использовать шлюз с другими службами, см. в следующих статьях:
 

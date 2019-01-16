@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: e16506773e38f1732a55161cdd58ffb7523602d4
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: bbe843f3481c6cd15f2c14386088cbb8d2d355d6
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53277290"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54053131"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning-service"></a>Использование расширения интерфейса командной строки для Службы машинного обучения Azure
 
@@ -52,7 +52,7 @@ CLI для Машинного обучения Azure является расши
 Чтобы установить расширение интерфейса командной строки Машинного обучения, выполните следующую команду:
 
 ```azurecli-interactive
-az extension add -s https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-release/Preview/E7501C02541B433786111FE8E140CAA1/azure_cli_ml-1.0.2-py2.py3-none-any.whl --pip-extra-index-urls  https://azuremlsdktestpypi.azureedge.net/sdk-release/Preview/E7501C02541B433786111FE8E140CAA1
+az extension add -s https://azuremlsdktestpypi.blob.core.windows.net/wheels/sdk-release/Preview/E7501C02541B433786111FE8E140CAA1/azure_cli_ml-1.0.6-py2.py3-none-any.whl --pip-extra-index-urls  https://azuremlsdktestpypi.azureedge.net/sdk-release/Preview/E7501C02541B433786111FE8E140CAA1
 ```
 
 При появлении запроса выберите `y`, чтобы установить расширение.
@@ -119,11 +119,15 @@ az extension remove -n azure-cli-ml
     az ml project attach --experiment-name myhistory
     ```
 
-* Запустите выполнение эксперимента. При использовании этой команды укажите целевой объект вычислений. В этом примере `local` использует локальный компьютер, чтобы обучить модель с помощью скрипта `train.py`:
+* Запустите выполнение эксперимента. При использовании этой команды укажите имя файла `.runconfig`, который содержит конфигурацию запуска. Целевой объект вычисления использует конфигурацию запуска для создания среды обучения для модели. В этом примере конфигурация запуска загружается из файла `./aml_config/myrunconfig.runconfig`.
 
     ```azurecli-interactive
-    az ml run submit -c local train.py
+    az ml run submit -c myrunconfig train.py
     ```
+
+    По умолчанию файлы `.runconfig` с именами `docker.runconfig` и `local.runconfig` создаются при подключении проекта с помощью команды `az ml project attach`. Возможно, вам придется изменить их, прежде чем использовать для обучения модели. 
+
+    Вы также можете создать конфигурацию запуска программным способом с помощью класса RunConfiguration, описанного [здесь](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py). После создания вы можете использовать метод `save()`, чтобы создать файл `.runconfig`.
 
 * Просмотрите список отправленных экспериментов.
 

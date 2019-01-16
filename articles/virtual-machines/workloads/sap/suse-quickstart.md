@@ -3,8 +3,8 @@ title: Тестирование SAP NetWeaver на виртуальных маш
 description: Тестирование SAP NetWeaver на виртуальных машинах SUSE Linux Microsoft Azure
 services: virtual-machines-linux
 documentationcenter: ''
-author: hermanndms
-manager: jeconnoc
+author: msjuergent
+manager: patfilot
 editor: ''
 tags: azure-resource-manager
 keywords: ''
@@ -15,17 +15,18 @@ ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/14/2017
-ms.author: hermannd
-ms.openlocfilehash: 8a16fa9f639a6a4a17d6904d6bc9a0e31f774e0c
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.author: juergent
+ms.custom: H1Hack27Feb2017
+ms.openlocfilehash: 032ab2a221f64d01af25056a4eff3ee3384de0c3
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46950052"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54157230"
 ---
 # <a name="running-sap-netweaver-on-microsoft-azure-suse-linux-vms"></a>Запуск SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure
-В этой статье описываются различные моменты, которые следует учитывать при запуске SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure. По состоянию на 19 мая 2016 года SAP NetWeaver официально поддерживается на виртуальных машинах SUSE Linux в Azure. Все сведения о версиях Linux, версиях ядра SAP и других необходимых компонентах можно найти в примечании SAP 1928533 "Приложения SAP в Azure: поддерживаемые продукты и типы виртуальных машин Azure".
-Дополнительную документацию по SAP на виртуальных машинах Linux можно найти здесь: [Размещение и выполнение сценариев рабочей нагрузки SAP с помощью Azure](get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+В этой статье описываются различные моменты, которые следует учитывать при запуске SAP NetWeaver на виртуальных машинах SUSE Linux в Microsoft Azure. По состоянию на 19 мая 2016 года SAP NetWeaver официально поддерживается на виртуальных машинах SUSE Linux в Azure. Все сведения о версиях Linux, версиях ядра SAP и других необходимых компонентах можно найти в примечании SAP 1928533 "SAP Applications on Azure: Supported Products and Azure VM types" (Приложения SAP в Azure: поддерживаемые продукты и типы виртуальных машин Azure).
+Дополнительную документацию по SAP на виртуальных машинах Linux можно найти здесь: [Размещение и выполнение сценариев рабочей нагрузки SAP с помощью Azure](get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
 
 Следующие сведения помогут избежать некоторых подводных камней.
 
@@ -75,7 +76,7 @@ ms.locfileid: "46950052"
 * [SUSE](https://www.suse.com/communities/blog/suse-linux-enterprise-server-configuration-for-windows-azure/)
 
 ## <a name="sap-enhanced-monitoring"></a>"Расширенный мониторинг" SAP
-"Расширенный мониторинг" SAP является обязательным компонентом для запуска SAP в Azure. Ознакомьтесь с информацией в примечании SAP 2191498 "SAP on Linux with Azure: Enhanced Monitoring" (SAP на платформе Linux в Azure: расширенный мониторинг).
+"Расширенный мониторинг" SAP является обязательным компонентом для запуска SAP в Azure. Ознакомьтесь с дополнительными сведениями в примечании SAP 2191498 "SAP on Linux with Azure: Enhanced Monitoring" (SAP на платформе Linux в Azure: расширенный мониторинг).
 
 ## <a name="attaching-azure-data-disks-to-an-azure-linux-vm"></a>Подключение дисков данных Azure к виртуальной машине Linux Azure
 Никогда не подключайте диски данных Azure к виртуальной машине Linux Azure через идентификатор устройства. Вместо этого используйте универсальный уникальный идентификатор (UUID). Будьте внимательны, например, при использовании графических средств для подключения дисков данных Azure. Дважды проверьте записи в /etc/fstab.
@@ -125,7 +126,7 @@ ms.locfileid: "46950052"
 Для официальной сертификации SAP-Azure был представлен новый механизм для вычисления ключа оборудования SAP, который используется для лицензии SAP. Ядро SAP было адаптировано для использования нового алгоритма. В предыдущих версиях ядра SAP для Linux такое изменение кода отсутствует. Поэтому в определенных ситуациях (например, при изменении размера виртуальной машины Azure) ключ оборудования SAP изменяется, что делает лицензию SAP недействительной. Решение предоставлено с более поздними версиями ядра SAP Linux.  Подробные исправления ядра SAP задокументированы в примечании SAP 1928533.
 
 ## <a name="suse-sapconf-package--tuned-adm"></a>Пакет SUSE sapconf / tuned-adm
-В SUSE есть пакет под названием sapconf, который содержит набор параметров SAP. Дополнительные сведения о функциях данного пакета, его установке и применении см. в статьях [Using sapconf to prepare a SUSE Linux Enterprise Server to run SAP systems](https://www.suse.com/communities/blog/using-sapconf-to-prepare-suse-linux-enterprise-server-to-run-sap-systems/) (Использование sapconf для подготовки SUSE Linux Enterprise Server для запуска систем SAP) и [What is sapconf or how to prepare a SUSE Linux Enterprise Server for running SAP systems?](http://scn.sap.com/community/linux/blog/2014/03/31/what-is-sapconf-or-how-to-prepare-a-suse-linux-enterprise-server-for-running-sap-systems) (Что такое sapconf или как подготовить SUSE Linux Enterprise Server для запуска систем SAP?).
+В SUSE есть пакет под названием sapconf, который содержит набор параметров SAP. Дополнительные сведения о функциях данного пакета, его установке и применении см. в статьях  [Using sapconf to prepare a SUSE Linux Enterprise Server to run SAP systems](https://www.suse.com/communities/blog/using-sapconf-to-prepare-suse-linux-enterprise-server-to-run-sap-systems/) (Использование sapconf для подготовки SUSE Linux Enterprise Server для запуска систем SAP) и [What is sapconf or how to prepare a SUSE Linux Enterprise Server for running SAP systems?](http://scn.sap.com/community/linux/blog/2014/03/31/what-is-sapconf-or-how-to-prepare-a-suse-linux-enterprise-server-for-running-sap-systems) (Что такое sapconf или как подготовить SUSE Linux Enterprise Server для запуска систем SAP?)
 
 Вместо пакета sapconf также доступен новый инструмент — tuned-adm. С дополнительными сведениями можно ознакомиться по двум ссылкам, указанным ниже.
 

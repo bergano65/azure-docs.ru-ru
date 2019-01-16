@@ -14,16 +14,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/18/2017
 ms.author: billmath
-ms.openlocfilehash: f3684a1fa22982b62992db28cccd88d67738bc94
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 08d1589b8b215471983dc76a836dd89f83fd8204
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52161707"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54053404"
 ---
-# <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health: история выпусков версий
+# <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health. Журнал выпуска версий
 Команда Azure Active Directory регулярно добавляет в Azure AD Connect Health новые функции и возможности. В этой статье перечислены выпущенные версии и компоненты.
-Агент Azure AD Connect Health для синхронизации интегрируется с установленным средством Azure AD Connect. Дополнительные сведения см. в [истории выпусков версий Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history). Вы можете оставить отзыв и проголосовать за функцию на [канале Connnect Health на сайте User Voice](https://feedback.azure.com/forums/169401-azure-active-directory/filters/new?category_id=165591).
+Агент Azure AD Connect Health для синхронизации интегрируется с установленным средством Azure AD Connect. Дополнительные сведения см. в [истории выпусков версий Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history). Вы можете оставить отзыв и проголосовать за функцию на [канале Connect Health на сайте User Voice](https://feedback.azure.com/forums/169401-azure-active-directory/filters/new?category_id=165591).
 
 ## <a name="november-2018"></a>Ноябрь 2018 г.
 **Новые функции общедоступной версии:** 

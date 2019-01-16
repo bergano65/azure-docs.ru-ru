@@ -11,24 +11,24 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/09/2018
+ms.date: 1/08/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: f3a83352e5aa7591d3f7b325adb542ba89e57fe5
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: 1205bb636c01ff03e7e5d6f245c7469c186fca6f
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51515834"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54121181"
 ---
 # <a name="validate-azure-stack-pki-certificates"></a>Проверка сертификатов PKI Azure Stack
 
-Инструмент проверки готовности Azure Stack, описанный в этой статье, доступен в [коллекции PowerShell](https://aka.ms/AzsReadinessChecker). Вы можете использовать этот инструмент, чтобы проверить, что [сгенерированные сертификаты PKI](azure-stack-get-pki-certs.md) подходят для предварительного развертывания. Вы должны проверить сертификаты, оставив достаточно времени для проверки и повторной выдачи сертификатов при необходимости.
+Инструмент проверки готовности Azure Stack, описанный в этой статье, доступен в [коллекции PowerShell](https://aka.ms/AzsReadinessChecker). Вы можете использовать этот инструмент, чтобы проверить, что [сгенерированные сертификаты PKI](azure-stack-get-pki-certs.md) подходят для предварительного развертывания. Проверьте сертификаты, оставив достаточно времени для проверки и повторной выдачи сертификатов при необходимости.
 
 Средство проверки готовности выполняет следующие проверки сертификата:
 
 - **Чтение PFX-файла**.  
-    Проверяет наличие допустимого PFX-файла и правильность пароля, а также выдает предупреждения, если общедоступная информация не защищена паролем. 
+    Проверяет наличие допустимого PFX-файла и не защищена ли паролем общедоступная информация. 
 - **Алгоритм подписи**.  
     Проверяет, не используется ли алгоритм подписи SHA1.
 - **Закрытый ключ**.  
@@ -86,8 +86,8 @@ ms.locfileid: "51515834"
     
      - Поместите сертификаты в соответствующие каталоги, созданные на предыдущем шаге. Например:   
         - `c:\certificates\ACSBlob\CustomerCertificate.pfx`
-        - `c:\certificates\Certs\Admin Portal\CustomerCertificate.pfx`
-        - `c:\certificates\Certs\ARM Admin\CustomerCertificate.pfx`
+        - `c:\certificates\Admin Portal\CustomerCertificate.pfx`
+        - `c:\certificates\ARM Admin\CustomerCertificate.pfx`
 
 3. В окне PowerShell измените значения **RegionName** и **FQDN** в соответствии со средой Azure Stack и выполните команду ниже:
 
@@ -147,7 +147,7 @@ Invoke-AzsCertificateValidation Completed
 
 **Признак**. Проверки пропускаются.
 
-**Причина**. AzsReadinessChecker пропускает определенные проверки, если не установлена зависимость.
+**Причина.** AzsReadinessChecker пропускает определенные проверки, если не установлена зависимость.
 
  - Проверка других сертификатов пропускается, если цепочка сертификатов нецелостна.
 
@@ -172,7 +172,7 @@ Invoke-AzsCertificateValidation Completed
     Invoke-AzsCertificateValidation Completed
     ```
 
-**Решение**. Следуйте указаниям в руководстве по инструментам в разделе сведений о каждом наборе проверок сертификата.
+**Решение**. Следуйте указаниям из руководства по инструментам в разделе сведений о каждом наборе проверок сертификата.
 
 ## <a name="perform-platform-as-a-service-certificate-validation"></a>Выполнение проверки сертификата платформы как услуги
 

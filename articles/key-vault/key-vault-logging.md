@@ -10,16 +10,15 @@ ms.assetid: 43f96a2b-3af8-4adc-9344-bc6041fface8
 ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/02/2019
+ms.date: 01/07/2019
 ms.author: barclayn
-ms.openlocfilehash: 8e3076f2176739f5b9df5776f27d7483c9fd2692
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 2a36993e9406613ad9182d01c3681056114dca18
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54000416"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159967"
 ---
 # <a name="azure-key-vault-logging"></a>Ведение журнала хранилища ключей Azure
 
@@ -39,7 +38,7 @@ ms.locfileid: "54000416"
 > [!NOTE]
 > В этом руководстве нет инструкций по созданию хранилищ ключей, ключей и секретов. Соответствующие сведения см. в статье [Приступая к работе с хранилищем ключей Azure](key-vault-get-started.md). Инструкции по кроссплатформенному интерфейсу командной строки см. в [этом руководстве](key-vault-manage-with-cli2.md).
 >
-> В настоящее время нельзя настроить хранилище ключей Azure на портале Azure. Вместо этого используйте эти указания по работе с Azure PowerShell.
+> В этой статье приведены инструкции по обновлению журнала ведения диагностики с помощью Azure PowerShell. То же самое можно сделать с помощью Azure Monitor на портале Azure в разделе **Журналы диагностики**. 
 >
 >
 
@@ -113,7 +112,7 @@ $kv = Get-AzureRmKeyVault -VaultName 'ContosoKeyVault'
 Set-AzureRmDiagnosticSetting -ResourceId $kv.ResourceId -StorageAccountId $sa.Id -Enabled $true -Categories AuditEvent
 ```
 
-Результат будет выглядеть так:
+Выходные данные будут выглядеть следующим образом:
 
     StorageAccountId   : /subscriptions/<subscription-GUID>/resourceGroups/ContosoResourceGroup/providers/Microsoft.Storage/storageAccounts/ContosoKeyVaultLogs
     ServiceBusRuleId   :
@@ -156,7 +155,7 @@ $container = 'insights-logs-auditevent'
 Get-AzureStorageBlob -Container $container -Context $sa.Context
 ```
 
-Вы получите приблизительно такой результат:
+Выходные данные будут выглядеть следующим образом.
 
 **URI контейнера: https://contosokeyvaultlogs.blob.core.windows.net/insights-logs-auditevent**
 
@@ -230,6 +229,7 @@ Get-AzureRmKeyVault -VaultName 'contosokeyvault'`
 
 Это действие возвращает запись журнала, аналогичную представленной ниже.
 
+```json
     {
         "records":
         [
@@ -250,6 +250,7 @@ Get-AzureRmKeyVault -VaultName 'contosokeyvault'`
             }
         ]
     }
+```
 
 В следующей таблице перечислены имена полей и описания.
 

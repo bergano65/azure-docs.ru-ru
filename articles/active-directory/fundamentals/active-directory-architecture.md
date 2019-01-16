@@ -12,12 +12,12 @@ ms.date: 08/23/2018
 ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: c23bdba74ab528a0774b73598dbee8888ebfdc7e
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 6d53de431ea619dfc8865ef23439146517d37764
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53076123"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54013304"
 ---
 # <a name="what-is-the-azure-active-directory-architecture"></a>Что такое архитектура Azure Active Directory?
 Azure Active Directory (Azure AD) позволяет безопасно управлять доступом к службам и ресурсам Azure пользователей, а также содержит полный набор возможностей управления удостоверениями. Дополнительные сведения о возможностях Azure AD см. в статье [Что такое Microsoft Azure Active Directory](active-directory-whatis.md).

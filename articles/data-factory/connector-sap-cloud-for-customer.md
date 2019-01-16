@@ -9,16 +9,15 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/17/2018
 ms.author: jingwang
-ms.openlocfilehash: df45613105c8fb005fc8ba0c796ef768e293c57e
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 360cf92686682e65cf5348ee717bbb80cdc85cb4
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37052438"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54016177"
 ---
 # <a name="copy-data-from-sap-cloud-for-customer-c4c-using-azure-data-factory"></a>Копирование данных из SAP Cloud for Customer (C4C) с помощью фабрики данных Azure
 
@@ -42,7 +41,7 @@ ms.locfileid: "37052438"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type нужно задать значение **SapCloudForCustomer**. | Yes |
+| Тип | Свойству type необходимо задать значение **SapCloudForCustomer**. | Yes |
 | URL-адрес | URL-адрес службы SAP C4C OData. | Yes |
 | Имя пользователя | Укажите имя пользователя для подключения к SAP C4C. | Yes |
 | password | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
@@ -82,7 +81,7 @@ ms.locfileid: "37052438"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Свойство type для набора данных должно иметь значение **SapCloudForCustomerResource**. |Yes |
+| Тип | Для свойства type набора данных необходимо задать следующее значение: **SapCloudForCustomerResource**. |Yes |
 | path | Укажите путь к сущности SAP C4C OData. |Yes |
 
 **Пример.**
@@ -113,7 +112,7 @@ ms.locfileid: "37052438"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type нужно задать значение **SapCloudForCustomerSource**.  | Yes |
+| Тип | Свойству type необходимо задать значение **SapCloudForCustomerSource**.  | Yes |
 | query | Укажите пользовательский запрос OData для чтения данных. | Нет  |
 
 Образец запроса для получения данных за определенный день: `"query": "$filter=CreatedOn ge datetimeoffset'2017-07-31T10:02:06.4202620Z' and CreatedOn le datetimeoffset'2017-08-01T10:02:06.4202620Z'"`
@@ -156,9 +155,9 @@ ms.locfileid: "37052438"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 |:--- |:--- |:--- |
-| Тип | Для свойства type нужно задать значение **SapCloudForCustomerSink**.  | Yes |
-| writeBehavior | Поведение операции при записи. Может иметь значение "Insert", "Update". | Нет. По умолчанию "Insert". |
-| writeBatchSize | Размер пакета операции записи. Размер пакета для обеспечения максимальной производительности может различаться для разных таблиц или серверов. | Нет. По умолчанию 10. |
+| Тип | Свойству type необходимо задать значение **SapCloudForCustomerSink**.  | Yes |
+| writeBehavior | Поведение операции при записи. Может иметь значение "Insert", "Update". | № По умолчанию "Insert". |
+| writeBatchSize | Размер пакета операции записи. Размер пакета для обеспечения максимальной производительности может различаться для разных таблиц или серверов. | № По умолчанию 10. |
 
 **Пример.**
 
@@ -205,14 +204,14 @@ ms.locfileid: "37052438"
 
 | Тип данных OData SAP C4C | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
-| Edm.Binary | Byte[] |
+| Edm.Binary | Byte[] |
 | Edm.Boolean | Bool |
-| Edm.Byte | Byte[] |
+| Edm.Byte | Byte[] |
 | Edm.DateTime | Datetime |
 | Edm.Decimal | Decimal |
 | Edm.Double | Double |
 | Edm.Single | Single |
-| Edm.Guid | Guid |
+| Edm.Guid | Guid |
 | Edm.Int16 | Int16 |
 | Edm.Int32 | Int32 |
 | Edm.Int64 | Int64 |

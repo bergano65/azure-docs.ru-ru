@@ -1,5 +1,5 @@
 ---
-title: Развертывание служб приложений в Azure Stack | Документация Майкрософт
+title: 'Развертывание служб приложений: Azure Stack | Документация Майкрософт'
 description: Подробное руководство по развертыванию службы приложений в Azure Stack.
 services: azure-stack
 documentationcenter: ''
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/29/2018
 ms.author: anwestg
-ms.openlocfilehash: cd16bf400c5a5e5a07c7e2dc459d801e6fc810b9
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 504cd5a0bfbae1ff91f7914abe12aa35b699ee80
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52635379"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54104766"
 ---
 # <a name="add-an-app-service-resource-provider-to-azure-stack"></a>Добавление поставщика ресурсов службы приложений в Azure Stack
 
@@ -204,15 +204,15 @@ ms.locfileid: "52635379"
 
     Если развертывание происходит в существующую виртуальную сеть и используется внутренний IP-адрес для подключения к файловому серверу, необходимо добавить правило безопасности для исходящего трафика. Это правило разрешает SMB-трафик между рабочей подсетью и файловым сервером.  Для этого перейдите к группе безопасности сети WorkersNsg на портале администрирования и добавьте правило безопасности для исходящего трафика со следующими свойствами.
 
-    - Источник: "Любой".
+    - Источник: Любой
     - Диапазон исходных портов: *.
-    - Назначение: "IP-адреса".
-    - Диапазон IP-адресов назначения: диапазон IP-адресов вашего файлового сервера.
-    - Диапазон конечных портов: 445.
-    - Протокол: TCP.
-    - Действие: "Разрешить".
-    - Приоритет: 700.
-    - Имя: Outbound_Allow_SMB445.
+    - Назначение: IP-адреса
+    - Диапазон конечных IP-адресов: диапазон IP-адресов для файлового сервера
+    - Диапазон конечных портов: 445
+    - Протокол: TCP
+    - Действие: РАЗРЕШИТЬ
+    - Приоритет: 700
+    - Имя: Outbound_Allow_SMB445
 
 ## <a name="test-drive-app-service-on-azure-stack"></a>Тестовая эксплуатация службы приложений в Azure Stack
 
@@ -260,9 +260,9 @@ ms.locfileid: "52635379"
  - [Use MySQL databases on Microsoft Azure Stack](azure-stack-mysql-resource-provider-deploy.md) (Использование баз данных MySQL в Microsoft Azure Stack)
 
 <!--Links-->
-[Azure_Stack_App_Service_preview_installer]: http://go.microsoft.com/fwlink/?LinkID=717531
-[App_Service_Deployment]: http://go.microsoft.com/fwlink/?LinkId=723982
-[AppServiceHelperScripts]: http://go.microsoft.com/fwlink/?LinkId=733525
+[Azure_Stack_App_Service_preview_installer]: https://go.microsoft.com/fwlink/?LinkID=717531
+[App_Service_Deployment]: https://go.microsoft.com/fwlink/?LinkId=723982
+[AppServiceHelperScripts]: https://go.microsoft.com/fwlink/?LinkId=733525
 
 <!--Image references-->
 [1]: ./media/azure-stack-app-service-deploy/app-service-installer.png

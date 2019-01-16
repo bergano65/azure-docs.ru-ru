@@ -1,5 +1,5 @@
 ---
-title: Просмотр зависимостей приложения с помощью Azure Monitor для виртуальных машин (предварительная версия) | Документация Майкрософт
+title: Просмотр зависимостей приложения с помощью Azure Monitor для виртуальных машин (предварительная версия) | Документация Майкрософт
 description: "\"Схема\" — это функция службы Azure Monitor для виртуальных машин, которая автоматически обнаруживает компоненты приложений в системах Windows и Linux и отображает связи между службами. В этой статье рассказывается о том, как использовать эту функцию в различных сценариях."
 services: azure-monitor
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: magoedte
-ms.openlocfilehash: f460c063ded489c8ec0ef23b35ab304c62943a98
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 73c94b79bb315c317d39ade704e2ee70a241a348
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53337076"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54187751"
 ---
 # <a name="using-azure-monitor-for-vms-preview-map-to-understand-application-components"></a>Использование сопоставления Azure Monitor для виртуальных машин (предварительная версия), чтобы получать сведения о компонентах приложения
 При просмотре обнаруженных компонентов приложений в виртуальных машинах с ОС Windows и Linux, работающих в Azure, за средой можно наблюдать двумя способами с помощью Azure Monitor для виртуальных машин: непосредственно из виртуальной машины либо в группах виртуальных машин в Azure Monitor. 

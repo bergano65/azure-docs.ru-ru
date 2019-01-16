@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
-ms.openlocfilehash: 8bb964308e11d238def4eed3f194ffc9ef8ab086
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: abaad7eabf92b6f3f53d7807af132959533552b9
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52840169"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54076966"
 ---
 # <a name="lead-management-for-cloud-marketplace"></a>Управление интересами облачного Marketplace
 
@@ -60,7 +60,7 @@ ms.locfileid: "52840169"
 
 ## <a name="common-lead-configuration-errors-during-publishing-on-cloud-partner-portal"></a>Распространенные ошибки конфигурации интересов во время публикации на портале Cloud Partner 
 
-**Не удалось сохранить интерес в Dynamics CRM. Проверьте параметры учетной записи Dynamics CRM. LastCRMError: Unable to Login to Dynamics CRM, LastCRMException:** 
+**Не удалось сохранить интерес в Dynamics CRM. Проверьте параметры учетной записи Dynamics CRM. LastCRMError: Unable to Login to Dynamics CRM, LastCRMException:** (Не удалось выполнить вход в Dynamics CRM, LastCRMException:) 
 
 > Если выбрано аутентификацию O365, проверьте допустимость учетной записи пользователя и пароля. Если выбрано AAD, проверьте, соответствуют ли идентификатор клиента, идентификатор приложения и секретный ключ приложения тем, что были настроены на AAD. Следуйте [этим](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) инструкциям. Если имя пользователя/пароль учетной записи является допустимым, убедитесь, что она имеет доступ к Dynamics 365, и ему присвоено лицензию (шаги 11–15, если при использовании пользователя Office используются Azure Active Directory или параметры безопасности). 
 
@@ -87,7 +87,7 @@ ms.locfileid: "52840169"
 
 **Не удалось сохранить интерес в Dynamics CRM, используя AAD. Exception:: Error validating credentials.: Invalid client secret is provided.** 
 
-> Способы устранения: войдите на портал Azure и проверьте, соответствует ли ключ приложения значениям на портале Cloud Partner. Получите сгенерированный пароль в соответствии с инструкциями в шаге 10 (в Azure Active Directory, [отсюда](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)). 
+> Способы устранения: Войдите на портал Azure и проверьте, соответствует ли ключ приложения значениям на портале Cloud Partner. Получите сгенерированный пароль в соответствии с инструкциями в шаге 10 (в Azure Active Directory, [отсюда](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics)). 
 
 **Не удалось сохранить интерес в Dynamics CRM. LastCRMError: The request channel timed out while waiting for a reply after 00:02:00. Увеличьте значение времени ожидания, которое передается во время вызова запроса, или значение SendTimeout в привязке. Время, назначенное для выполнения этой операции, может быть составной частью более длинного времени ожидания.**  
 

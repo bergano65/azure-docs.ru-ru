@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.author: hrasheed
-ms.openlocfilehash: 280d56951053870d5dc1bb8fba52cc089e842757
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: 3cf13dc7b3a57435e4e93d6f01da482a2b992bb9
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53743873"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54065313"
 ---
 # <a name="use-ssh-tunneling-to-access-apache-ambari-web-ui-jobhistory-namenode-apache-oozie-and-other-web-uis"></a>Использование туннелирования SSH для доступа к пользовательскому веб-интерфейсу Apache Ambari, JobHistory, NameNode, Apache Oozie и другим пользовательским веб-интерфейсам
 
@@ -126,10 +126,10 @@ ssh -C2qTnNf -D 9876 sshuser@clustername-ssh.azurehdinsight.net
 
 После настройки кластера выполните следующие действия, чтобы удостовериться, что веб-интерфейсы служб доступны из веб-интерфейса Ambari.
 
-1. В браузере перейдите по адресу http://headnodehost:8080. Адрес `headnodehost` отправляется через туннель в кластер и разрешается в головном узле, где выполняется Ambari. При появлении запроса введите имя пользователя (admin) и пароль учетной записи администратора кластера. Веб-интерфейс Ambari может потребовать повторного ввода имени пользователя и пароля. В этом случае повторно введите имя пользователя и пароль.
+1. В браузере перейдите по адресу: http\://headnodehost:8080. Адрес `headnodehost` отправляется через туннель в кластер и разрешается в головном узле, где выполняется Ambari. При появлении запроса введите имя пользователя (admin) и пароль учетной записи администратора кластера. Веб-интерфейс Ambari может потребовать повторного ввода имени пользователя и пароля. В этом случае повторно введите имя пользователя и пароль.
 
    > [!NOTE]  
-   > При использовании адреса http://headnodehost:8080 для подключения к кластеру вы подключаетесь через туннель. Безопасность обмена данными обеспечивает туннель SSH, а не протокол HTTPS. Для подключения через Интернет по протоколу HTTPS используйте https://clustername.azurehdinsight.net, где **clustername** — это имя кластера.
+   > При использовании адреса http\://headnodehost:8080 для подключения к кластеру вы подключаетесь через туннель. Безопасность обмена данными обеспечивает туннель SSH, а не протокол HTTPS. Для подключения через Интернет по протоколу HTTPS используйте https\://clustername.azurehdinsight.net, где **clustername** — имя кластера.
 
 2. В веб-интерфейсе Ambari выберите HDFS в списке в левой части страницы.
 
@@ -149,7 +149,7 @@ ssh -C2qTnNf -D 9876 sshuser@clustername-ssh.azurehdinsight.net
     ![Изображение пользовательского интерфейса NameNode](./media/hdinsight-linux-ambari-ssh-tunnel/namenode.png)
 
    > [!NOTE]  
-   > URL-адрес для этой страницы должен быть в таком формате: **http://hn1-CLUSTERNAME.randomcharacters.cx.internal.cloudapp.net:8088/cluster**. Этот URI использует полное внутреннее доменное имя узла (FQDN), и он доступен только при использовании туннеля SSH.
+   > Обратите внимание на URL-адрес этой страницы. Он должен иметь вид **http\://hn1-имя_кластера.randomcharacters.cx.internal.cloudapp.net:8088/cluster**. Этот URI использует полное внутреннее доменное имя узла (FQDN), и он доступен только при использовании туннеля SSH.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

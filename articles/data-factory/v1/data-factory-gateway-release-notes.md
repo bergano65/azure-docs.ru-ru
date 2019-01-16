@@ -8,17 +8,16 @@ ms.assetid: 14762e82-76d9-41c4-ba9f-14a54da29c36
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: abnarain
 robots: noindex
-ms.openlocfilehash: ac0e1945e75ee7aea346c103a671b4a47b9e5994
-ms.sourcegitcommit: 0c490934b5596204d175be89af6b45aafc7ff730
+ms.openlocfilehash: 865bfdae199bca7ebee888be527db239d34511d1
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37048620"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54017622"
 ---
 # <a name="release-notes-for-data-management-gateway"></a>Заметки о выпуске шлюза управления данными
 > [!NOTE]
@@ -63,12 +62,12 @@ ms.locfileid: "37048620"
 
 ## <a name="2762401"></a>2.7.6240.1
 ### <a name="enhancements-"></a>Улучшения
-- Исправлено. Неправильное считывание десятичного значения Null из источника Oracle.
+- Исправлено. Неправильное считывание десятичного значения NULL из источника Oracle.
 
 ## <a name="2661922"></a>2.6.6192.2
 ### <a name="whats-new"></a>Новые возможности
 - Клиенты могут оставлять отзывы о регистрации шлюза.
-- Поддерживается сжатие в формате ZIP (Deflate).
+- Поддерживается сжатие в формате ZIP (Deflate)
 
 ### <a name="enhancements-"></a>Улучшения
 - Повышение производительности приемника Oracle и источника HDFS.

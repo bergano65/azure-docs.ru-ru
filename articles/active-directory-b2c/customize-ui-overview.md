@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 94f7239bdcdc5ddc91f3ed8b49b59378309711e8
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 08cd16cb9edc5606a18fc5d425910185f7747179
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52844963"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54187558"
 ---
 # <a name="about-user-interface-customization-in-azure-active-directory-b2c"></a>О настройке пользовательского интерфейса в Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "52844963"
 - Azure AD B2C объединяет содержимое HTML с вашими страницами. Не следует копировать и пытаться изменить стандартное содержимое, которое предоставляет Azure AD B2C. Лучше всего создать содержимое HTML с нуля, используя стандартное содержимое в качестве образца.
 - В целях безопасности мы запрещаем добавлять в содержимое какие-либо сценарии JavaScript.
 - Поддерживаемые версии браузеров: 
-    - Internet Explorer 11, Internet Explorer 10 и Edge;
+    - Internet Explorer 11, 10 и Microsoft Edge
     - ограниченная поддержка Internet Explorer 9 и Internet Explorer 8;
     - Google Chrome 42.0 и выше
     - Mozilla Firefox 38.0 и выше

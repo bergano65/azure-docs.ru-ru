@@ -1,13 +1,10 @@
 ---
-title: Создание, изменение или удаление префикса общедоступного IP-адреса Azure | Документы Майкрософт
+title: Создание, изменение или удаление префикса общедоступного IP-адреса Azure
+titlesuffix: Azure Virtual Network
 description: Сведения о создании, изменении и удалении префикса общедоступного IP-адреса.
 services: virtual-network
 documentationcenter: na
 author: anavinahar
-manager: narayan
-editor: ''
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-network
 ms.devlang: NA
 ms.topic: article
@@ -15,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: anavin
-ms.openlocfilehash: a0ae1f3fbf9189068cae4b18ac92f0bea0498f67
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 4207698c57b907cf60fd860bc409c8f8d5a4c565
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52427579"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54015293"
 ---
 # <a name="create-change-or-delete-a-public-ip-address-prefix"></a>Создание, изменение и удаление префикса общедоступного IP-адреса
 
@@ -29,7 +26,7 @@ ms.locfileid: "52427579"
 ## <a name="before-you-begin"></a>Перед началом работы
 
 > [!IMPORTANT]
-> Префикс общедоступного IP-адреса находится в общедоступной предварительной версии в ограниченном числе регионов. Вы можете [узнать, что означает предварительная версия](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Префикс общедоступного IP-адреса в настоящее время доступен в следующих регионах: центральная часть США, Западная часть США, Западная часть США 2, Центральная часть США, Северная Европа, Западная Европа и Юго-Восточная Азия. Обновленный список регионов можно найти в разделе [Обновления Azure](https://azure.microsoft.com/updates/?product=virtual-network).
+> Префикс общедоступного IP-адреса находится в общедоступной предварительной версии в ограниченном числе регионов. Вы можете [узнать, что означает предварительная версия](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Префикс общедоступного IP-адреса сейчас доступен в следующих регионах: центрально-западная часть США, западная часть США, западная часть США 2, центральная часть США, Северная Европа, Западная Европа и Юго-Восточная Азия. Обновленный список регионов можно найти в разделе [Обновления Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 
 Перед выполнением действий, описанных в любом разделе этой статьи, выполните следующие задачи.
 
@@ -60,7 +57,7 @@ ms.locfileid: "52427579"
 **Команды**
 
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network public-ip prefix create](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-create)|
 |PowerShell|[New-AzureRmPublicIpPrefix](/powershell/module/azurerm.network/new-azurermpublicipprefix)|
@@ -85,11 +82,11 @@ ms.locfileid: "52427579"
 2. Выберите из списка имя префикса общедоступного IP-адреса для просмотра, изменения параметров или удаления.
 3. Выполните одно из следующих действий (в зависимости от того, нужно ли просмотреть, удалить или изменить этот префикс общедоступного IP-адреса).
     - **Просмотр**. В разделе **Обзор** отображаются основные параметры префикса общедоступного IP-адреса, такие как префикс.
-    - **Удаление**. Чтобы удалить префикс общедоступного IP-адреса, в разделе **Обзор** щелкните **Удалить**. Если адреса в пределах префикса связаны с ресурсами общедоступных IP-адресов, необходимо сначала удалить ресурсы общедоступных IP-адресов. См. раздел [Удаление общедоступного IP-адреса](virtual-network-public-ip-address.md#view-change-settings-for-or-delete-a-public-ip-address).
+    - **Удалить**. Чтобы удалить префикс общедоступного IP-адреса, в разделе **Обзор** щелкните **Удалить**. Если адреса в пределах префикса связаны с ресурсами общедоступных IP-адресов, необходимо сначала удалить ресурсы общедоступных IP-адресов. См. раздел [Удаление общедоступного IP-адреса](virtual-network-public-ip-address.md#view-change-settings-for-or-delete-a-public-ip-address).
 
 **Команды**
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|Команда [az network public-ip prefix list](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-list) выводит список общедоступных IP-адресов, [az network public-ip prefix show](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-show) — отображает параметры, [az network public-ip prefix update](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-update) — обновляет, а [az network public-ip prefix delete](/cli/azure/network/public-ip/prefix#az-network-public-ip-prefix-delete) — удаляет|
 |PowerShell|Командлет [Get-AzureRmPublicIpPrefix](/powershell/module/azurerm.network/get-azurermpublicipprefix) позволяет получить объект общедоступного IP-адреса и просмотреть его параметры, командлет [Set-AzureRmPublicIpPrefix](/powershell/module/azurerm.network/set-azurermpublicipprefix) позволяет обновить параметры, а командлет [Remove-AzureRmPublicIpPrefix](/powershell/module/azurerm.network/remove-azurermpublicipprefix) удаляет объект.|

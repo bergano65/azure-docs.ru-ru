@@ -1,6 +1,6 @@
 ---
 title: Использование настраиваемых маршрутов Azure для активации сервера управления ключами с помощью принудительного туннелирования | Документация Майкрософт
-description: Узнайте, как использовать настраиваемые маршруты Azure для активации сервера управления ключами с помощью принудительного туннелирования в Azure.
+description: Узнайте, как использовать настраиваемые маршруты Azure для активации сервера управления ключами с использованием принудительного туннелирования в Azure.
 services: virtual-machines-windows, azure-resource-manager
 documentationcenter: ''
 author: genlin
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 12/20/2018
 ms.author: genli
-ms.openlocfilehash: f1e2ab6a954361a7807d78dc2baf5d24af52a679
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 71330e72ef27b62472622472b37e2ec8c78211d7
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53797585"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54075572"
 ---
 # <a name="windows-activation-fails-in-forced-tunneling-scenario"></a>Активация Windows завершается ошибкой в случае принудительного туннелирования
 
@@ -27,17 +27,17 @@ ms.locfileid: "53797585"
 
 ## <a name="symptom"></a>Симптом
 
-Вы включаете [принудительное туннелирование](../../vpn-gateway/vpn-gateway-forced-tunneling-rm.md) в подсетях виртуальной сети Azure, чтобы направить весь интернет-трафик обратно в локальную сеть. В этом случае виртуальные машины Azure под управлением Windows Server 2012 R2 или более поздних версий могут успешно активировать Windows. Но виртуальные машины под управлением более ранней версии Windows не могут активировать Windows. 
+Вы включаете [принудительное туннелирование](../../vpn-gateway/vpn-gateway-forced-tunneling-rm.md) в подсетях виртуальной сети Azure, чтобы направить весь интернет-трафик обратно в локальную сеть. В этом случае виртуальные машины Azure под управлением Windows Server 2012 R2 или более поздних версий могут успешно активировать Windows. Но виртуальные машины под управлением более ранней версии Windows не могут активировать Windows.
 
 ## <a name="cause"></a>Причина:
 
-Виртуальные машины Windows Azure должны подключиться к серверу управления ключами Azure для активации Windows. Для активации требуется, чтобы запрос на активацию поступал с общедоступного IP-адреса Azure. В случае принудительного туннелирования активация будет завершаться ошибкой, так как запрос на активацию поступает из вашей локальной сети вместо общедоступного IP-адреса Azure. 
+Виртуальные машины Windows Azure должны подключиться к серверу управления ключами Azure для активации Windows. Для активации требуется, чтобы запрос на активацию поступал с общедоступного IP-адреса Azure. В случае принудительного туннелирования активация будет завершаться ошибкой, так как запрос на активацию поступает из вашей локальной сети вместо общедоступного IP-адреса Azure.
 
 ## <a name="solution"></a>Решение
 
-Чтобы устранить эту проблему, используйте настраиваемый маршрут Azure для направления трафика активации на сервер управления ключами Azure (23.102.135.246). 
+Чтобы устранить эту проблему, используйте настраиваемый маршрут Azure для направления трафика активации на сервер управления ключами Azure.
 
-IP-адрес 23.102.135.246 — это IP-адрес сервера управления ключами для глобального облака Azure. Имя DNS — kms.core.windows.net. Если вы используете другие платформы Azure, например Azure для Германии, необходимо использовать IP-адрес соответствующего сервера управления ключами. Дополнительные сведения приведены в таблице ниже.
+IP-адрес сервера управления ключами для глобального облака Azure — 23.102.135.246. Имя DNS — kms.core.windows.net. Если вы используете другие платформы Azure, например Azure для Германии, необходимо использовать IP-адрес соответствующего сервера управления ключами. Дополнительные сведения приведены в таблице ниже.
 
 |платформа| DNS СЕРВЕРА УПРАВЛЕНИЯ КЛЮЧАМИ|IP-АДРЕС СЕРВЕРА УПРАВЛЕНИЯ КЛЮЧАМИ|
 |------|-------|-------|
@@ -55,11 +55,11 @@ IP-адрес 23.102.135.246 — это IP-адрес сервера управ
 2. Выполните следующие команды:
 
     ```powershell
-    # First, we will get the virtual network hosts the VMs that has activation problems. In this case, I get virtual network ArmVNet-DM in Resource Group ArmVNet-DM
+    # First, get the virtual network that hosts the VMs that have activation problems. In this case, we get virtual network ArmVNet-DM in Resource Group ArmVNet-DM:
 
     $vnet = Get-AzureRmVirtualNetwork -ResourceGroupName "ArmVNet-DM" -Name "ArmVNet-DM"
 
-    # Next, we create a route table and specify that traffic bound to the KMS IP (23.102.135.246) will go directly out
+    # Next, create a route table and specify that traffic bound to the KMS IP (23.102.135.246) will go directly out:
 
     $RouteTable = New-AzureRmRouteTable -Name "ArmVNet-DM-KmsDirectRoute" -ResourceGroupName "ArmVNet-DM" -Location "centralus"
 
@@ -67,11 +67,11 @@ IP-адрес 23.102.135.246 — это IP-адрес сервера управ
 
     Set-AzureRmRouteTable -RouteTable $RouteTable
     ```
-3. Перейдите к виртуальной машине, которая имеет проблемы с активацией, и используйте [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping) для проверки доступа к серверу управления ключами.
+3. Перейдите на виртуальную машину, на которой возникла проблема с активацией. Используйте команду [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping), чтобы проверить возможность доступа к серверу управления ключами.
 
         psping kms.core.windows.net:1688
 
-4. Попробуйте активировать Windows и убедитесь, что проблема устранена.
+4. Попробуйте активировать Windows, чтобы увидеть, устранена ли проблема.
 
 ### <a name="for-classic-vms"></a>Классические виртуальные машины
 
@@ -79,25 +79,25 @@ IP-адрес 23.102.135.246 — это IP-адрес сервера управ
 2. Выполните следующие команды:
 
     ```powershell
-    # First, we will create a new route table
+    # First, create a new route table:
     New-AzureRouteTable -Name "VNet-DM-KmsRouteGroup" -Label "Route table for KMS" -Location "Central US"
 
-    # Next, get the routetable that was created
+    # Next, get the route table that was created:
     $rt = Get-AzureRouteTable -Name "VNet-DM-KmsRouteTable"
 
-    # Next, create a route
+    # Next, create a route:
     Set-AzureRoute -RouteTable $rt -RouteName "AzureKMS" -AddressPrefix "23.102.135.246/32" -NextHopType Internet
 
-    # Apply KMS route table to the subnet that host the problem VMs (in this case, I will apply it to the subnet named Subnet-1)
+    # Apply the KMS route table to the subnet that hosts the problem VMs (in this case, we apply it to the subnet that's named Subnet-1):
     Set-AzureSubnetRouteTable -VirtualNetworkName "VNet-DM" -SubnetName "Subnet-1" 
     -RouteTableName "VNet-DM-KmsRouteTable"
     ```
 
-3. Перейдите к виртуальной машине, которая имеет проблемы с активацией, и используйте [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping) для проверки доступа к серверу управления ключами.
+3. Перейдите на виртуальную машину, на которой возникла проблема с активацией. Используйте команду [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping), чтобы проверить возможность доступа к серверу управления ключами.
 
         psping kms.core.windows.net:1688
 
-4. Попробуйте активировать Windows и убедитесь, что проблема устранена.
+4. Попробуйте активировать Windows, чтобы увидеть, устранена ли проблема.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

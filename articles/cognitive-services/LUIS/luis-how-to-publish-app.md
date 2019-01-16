@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: conceptual
-ms.date: 09/10/2018
+ms.date: 01/08/2019
 ms.author: diberry
-ms.openlocfilehash: a3d27e7be97901c6757ca6991a7404f3b00f21e7
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 241227270aeede93b74d3d94c782dfe7eaf1fbf2
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53605574"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54121708"
 ---
 # <a name="publish-your-active-trained-app-to-a-staging-or-production-endpoint"></a>Публикация активного обученного приложения в промежуточной или рабочей конечной точке
 
@@ -56,11 +56,9 @@ ms.locfileid: "53605574"
 
 Вам не нужно предоставлять ключ Анализа текста и за использование этой службы в вашей учетной записи Azure нет оплаты. Вы проверили этот параметр один раз и он стает постоянным. 
 
-Данные тональности представляют собой оценку между 1 и 0, означающую положительную (ближе к 1) или отрицательную (ближе к 0) тональность данных.
+Данные тональности представляют собой оценку между 1 и 0, означающую положительную (ближе к 1) или отрицательную (ближе к 0) тональность данных. Метки тональности `positive`, `neutral` и `negative` соответствуют поддерживаемой культуре. Сейчас поддерживаются только английские метки тональности. 
 
 Для получения дополнительной информации об ответе конечной точки JSON с анализом мнений см. раздел[Анализ мнений](luis-concept-data-extraction.md#sentiment-analysis)
-
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 

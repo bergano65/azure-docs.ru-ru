@@ -10,17 +10,16 @@ ms.assetid: fd98931c-cab5-4d66-97cb-4c947861255c
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 2c00e42284783439b0a01f6ba6bab31be053b1c9
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 95c49eec6964984894f75ecd0a9e50c9c947683b
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45736416"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54015820"
 ---
 # <a name="invoke-spark-programs-from-azure-data-factory-pipelines"></a>Вызов программ Spark из конвейеров фабрики данных Azure
 
@@ -46,7 +45,7 @@ ms.locfileid: "45736416"
 > - Действие Spark не поддерживает кластеры HDInsight Spark, использующие Azure Data Lake Store в качестве основного хранилища.
 > - Оно поддерживает только имеющиеся (собственные) кластеры HDInsight Spark. Связанная служба HDInsight по запросу не поддерживается.
 
-## <a name="walkthrough-create-a-pipeline-with-a-spark-activity"></a>Пошаговое руководство по созданию конвейера с действием Spark
+## <a name="walkthrough-create-a-pipeline-with-a-spark-activity"></a>Пошаговое руководство Создание конвейера с действием Spark
 Ниже приведены стандартные действия, необходимые для создания конвейера фабрики данных с действием Spark. 
 
 * Создали фабрику данных.
@@ -74,7 +73,7 @@ ms.locfileid: "45736416"
 1. В колонке **Новая фабрика данных** в поле **Имя** введите **SparkDF**.
 
    > [!IMPORTANT]
-   > Имя фабрики данных Azure должно быть глобально уникальным. Если появится сообщение об ошибке "Имя SparkDF фабрики данных недоступно", измените имя фабрики данных. Например, используйте "ваше_имя_SparkDFdate" и снова создайте фабрику данных. Дополнительные сведения о правилах именования в фабрике данных Azure см. в [этой статье](data-factory-naming-rules.md).
+   > Имя фабрики данных Azure должно быть глобально уникальным. Если появится сообщение об ошибке "Имя SparkDF фабрики данных недоступно", измените имя фабрики данных. Например, используйте "ваше_имя_SparkDFdate" и снова создайте фабрику данных. Дополнительные сведения о правилах именования см. в статье [Фабрика данных Azure — правила именования](data-factory-naming-rules.md).
 
 1. В разделе **Подписка** выберите подписку Azure, в рамках которой необходимо создать фабрику данных.
 
@@ -338,7 +337,7 @@ ms.locfileid: "45736416"
 | className | Основной класс Java или Spark приложения. | Нет  |
 | arguments | Список аргументов командной строки для программы Spark. | Нет  |
 | proxyUser | Учетная запись пользователя для олицетворения, используемая для выполнения программы Spark. | Нет  |
-| sparkConfig | Укажите значения для свойств конфигурации Spark, перечисленных в разделе [свойств приложения документа о конфигурации Spark](https://spark.apache.org/docs/latest/configuration.html#available-properties). | Нет  |
+| sparkConfig | Укажите значения для свойств конфигурации Spark, перечисленных в разделе [свойств приложения документа о конфигурации Spark ](https://spark.apache.org/docs/latest/configuration.html#available-properties). | Нет  |
 | getDebugInfo | Указывает, когда файлы журнала Spark копируются в хранилище, используемое кластером HDInsight или определенное sparkJobLinkedService. Допустимые значения: None, Always или Failure. По умолчанию используется None. | Нет  |
 | sparkJobLinkedService | Связанная служба хранилища, в которой хранятся файл задания Spark, зависимости и журналы. Если значение этого свойства не указано, используется хранилище, связанное с кластером HDInsight. | Нет  |
 

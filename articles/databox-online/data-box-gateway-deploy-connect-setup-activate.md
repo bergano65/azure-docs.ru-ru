@@ -6,16 +6,16 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: article
-ms.date: 09/27/2018
+ms.date: 01/09/2019
 ms.author: alkohli
-ms.openlocfilehash: 2126871472b044f9b8c0df99c7cb14df348eab0e
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: 5e83eb46a4d62c6aaf0862d4bb1aa046c5d64dde
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49166752"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54120519"
 ---
-# <a name="tutorial-connect-set-up-activate-azure-data-box-gateway-preview"></a>Руководство. Подключение, настройка, активация шлюза Azure Data Box (предварительная версия) 
+# <a name="tutorial-connect-set-up-activate-azure-data-box-gateway-preview"></a>Руководство. Подключение, настройка, активация Шлюза Azure Data Box (предварительная версия) 
 
 ## <a name="introduction"></a>Введение
 
@@ -84,7 +84,10 @@ ms.locfileid: "49166752"
     - Если в среде включен DHCP, сетевые интерфейсы настраиваются автоматически. Таким образом, IP-адрес, подсеть, шлюз и DNS назначаются автоматически.
     - Если DHCP не включен, при необходимости вы можете назначить статические IP-адреса.
     - Сетевой интерфейс можно настроить как IPv4.
-   
+
+    >[!NOTE] 
+    > Мы советуем не переключать локальный IP-адрес сетевого интерфейса со статического на DCHP при отсутствии другого IP-адреса для подключения к устройству. Если, используя один сетевой интерфейс, вы переключитесь на DHCP, вы не сможете определить адрес DHCP. Если вы хотите переключиться на адрес DHCP, дождитесь, пока устройство зарегистрируется в службе, а затем измените адрес. Затем вы сможете просмотреть IP-адреса всех адаптеров в **свойствах устройства** на портале Azure для службы.
+
 4. (Необязательно) Настройте прокси-сервер доступа в Интернет. Хотя использовать прокси-сервер доступа в Интернет не обязательно, следует знать, что, если в вашей сети он имеется, настройку для работы с ним можно выполнить только в этом разделе.
    
    ![](./media/data-box-gateway-deploy-connect-setup-activate/image8.png)

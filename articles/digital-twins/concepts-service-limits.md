@@ -6,14 +6,14 @@ manager: deshner
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 10/26/2018
+ms.date: 01/03/2019
 ms.author: dwalthermsft
-ms.openlocfilehash: 86ae75118dd1311ea2ae92fb718fe4c58b8e5673
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 1e7b6ed7c401bed741142dfc02efc7990cf67f6e
+ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50961761"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54118823"
 ---
 # <a name="public-preview-service-limits"></a>Ограничения в общедоступной предварительной версии службы
 
@@ -35,21 +35,25 @@ ms.locfileid: "50961761"
 
 В свою очередь, на каждый экземпляр Azure Digital Twins выделяется следующее:
 
-- один ресурс **IoTHub**;
-- одна конечная точка **EventHub** для типа событий **DeviceMessage**;
+- Только один ресурс **IoTHub**.
+- Только одна конечная точка **EventHub** для типа событий **DeviceMessage**.
 - до трех конечных точек **EventHub**, **ServiceBus** или **EventGrid** с типами событий **SensorChange**, **SpaceChange**, **TopologyOperation** или **UdfCustom**.
 
-## <a name="management-api-limits"></a>Ограничения API управления
+> [!NOTE]
+> Некоторые параметры, которые обычно определяются при создании приведенных выше сущностей Интернета вещей Azure, не требуются на этапе общедоступной предварительной версии.
+> - Самые последние спецификации API см. в [справочной документации по Swagger](./how-to-use-swagger.md).
 
-Ограничения частоты запросов для API управления:
+## <a name="azure-digital-twins-management-api-limits"></a>Ограничения API управления Azure Digital Twins
 
-- 100 запросов в секунду для API управления.
-- Один запрос API управления может возвращать не более 1000 объектов. 
+Ограничения частоты запросов для API управления Azure Digital Twins:
+
+- 100 запросов в секунду для API управления Azure Digital Twins.
+- Один запрос API управления Azure Digital Twins может возвращать не более 1000 объектов.
 
 > [!IMPORTANT]
 > Если вы превысите ограничение в 1000 объектов, появится сообщение об ошибке, после чего нужно будет упростить запрос.
 
-## <a name="udf-rate-limits"></a>Ограничения частоты определяемых пользователем функций
+## <a name="user-defined-functions-rate-limits"></a>Ограничения частоты определяемых пользователем функций
 
 В следующих ограничениях задано общее число всех вызовов определяемых пользователем функций, выполненных в экземпляре Azure Digital Twins:
 
@@ -59,7 +63,7 @@ ms.locfileid: "50961761"
 > [!NOTE]
 > Следующие действия могут привести к временному применению дополнительных ограничений частоты:
 > - изменения, внесенные в метаданные объекта топологии;
-> - обновления, внесенные в определение определяемой пользователем функции;
+> - изменения, внесенные в определение определяемой пользователем функции;
 > - устройства, отправляющие данные телеметрии в первый раз.
 
 ## <a name="device-telemetry-limits"></a>Ограничения на данные телеметрии устройств
@@ -70,4 +74,4 @@ ms.locfileid: "50961761"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомиться с примером Azure Digital Twins на практике можно в статье [Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins](./quickstart-view-occupancy-dotnet.md).
+- Ознакомиться с примером Azure Digital Twins на практике можно в статье [Краткое руководство. Поиск свободных помещений с помощью Azure Digital Twins](./quickstart-view-occupancy-dotnet.md).

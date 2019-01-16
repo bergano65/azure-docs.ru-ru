@@ -5,15 +5,15 @@ services: expressroute
 author: charwen
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 11/05/2018
+ms.date: 01/07/2019
 ms.author: charwen
 ms.custom: seodec18
-ms.openlocfilehash: 1aeb5ca447a3058962483b640f742e4a7ec4a414
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: a35bde6e89290fd2282ba6ec829f46cb4c6fc225
+ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53104039"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54103321"
 ---
 # <a name="configure-expressroute-and-site-to-site-coexisting-connections-using-powershell"></a>Настройка параллельных подключений "сеть — сеть" и ExpressRoute с помощью PowerShell
 > [!div class="op_single_selector"]
@@ -43,6 +43,7 @@ ms.locfileid: "53104039"
 * **Номера SKU класса "Базовый" для шлюза не поддерживаются.** Используйте для [ExpressRoute](expressroute-about-virtual-network-gateways.md) и [VPN-шлюза](../vpn-gateway/vpn-gateway-about-vpngateways.md) номера SKU другого класса.
 * **Поддерживается только VPN-шлюз на основе маршрутов.** Необходимо использовать [VPN-шлюз](../vpn-gateway/vpn-gateway-about-vpngateways.md) на основе маршрутов.
 * **Для VPN-шлюза необходимо настроить статический маршрут.** Если локальная сеть подключена и к ExpressRoute, и к VPN типа "сеть — сеть", необходимо использовать статический маршрут, настроенный в локальной сети для маршрутизации VPN-подключения типа "сеть — сеть" к Интернету.
+* **VPN-шлюз по умолчанию равен ASN 65515, если не указано.** VPN-шлюз Azure поддерживает протокол маршрутизации BGP. Для этой виртуальной сети вы можете указать ASN (номер AS), добавив параметр -Asn. Если не указать этот параметр, номер AS по умолчанию равен 65515. Вы можете использовать любой ASN для конфигурации, но если выбрать отличный от 65515, необходимо сбросить шлюз, чтобы параметр вступил в силу.
 
 ## <a name="configuration-designs"></a>Схемы конфигурации
 ### <a name="configure-a-site-to-site-vpn-as-a-failover-path-for-expressroute"></a>Настройка VPN типа "сеть-сеть" как пути отработки отказа для ExpressRoute

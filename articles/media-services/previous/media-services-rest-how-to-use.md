@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 10/29/2018
 ms.author: juliako;johndeu
-ms.openlocfilehash: 38310ce64335e03c6728092bf1b8ce4752740a83
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 7ea2a84daaa22e0fc7ff4dc90ca41dd906b808c8
+ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233469"
+ms.lasthandoff: 01/09/2019
+ms.locfileid: "54159746"
 ---
 # <a name="media-services-operations-rest-api-overview"></a>Обзор REST API операций служб мультимедиа
 [!INCLUDE [media-services-selector-setup](../../../includes/media-services-selector-setup.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "50233469"
 
 Службы мультимедиа предоставляют REST API, поддерживающий XML-формат JSON или atom+pub. Этот интерфейс помимо набора дополнительных заголовков требует определенные HTTP-заголовки, которые каждый клиент должен отправлять при подключении к Службам мультимедиа. В следующих разделах описываются заголовки и HTTP-команды, которые можно использовать при создании запросов и получения ответов из служб мультимедиа.
 
-Проверка подлинности в REST API Служб мультимедиа выполняется через Azure Active Directory. Дополнительные сведения см. в статье [Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью REST](media-services-rest-connect-with-aad.md).
+Аутентификация в REST API Служб мультимедиа выполняется через Azure Active Directory. Дополнительные сведения см. в статье [Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью REST](media-services-rest-connect-with-aad.md).
 
 ## <a name="considerations"></a>Рекомендации
 
@@ -73,7 +73,7 @@ ms.locfileid: "50233469"
 | --- | --- | --- |
 | Дата |RFC 1123 date |Метка времени запроса |
 | Принять |Тип содержимого |Запрошенный тип содержимого для ответа, например:<p> application/json;odata=verbose<p> application/atom+xml<p> Ответы могут принадлежать к разным типам содержимого, например, при получении больших двоичных объектов полезными данными в успешном ответе считается поток больших двоичных объектов. |
-| Accept-Encoding |Gzip, deflate |Кодировка GZIP и, в соответствующих случаях, DEFLATE. Примечание. Для больших ресурсов службы мультимедиа могут пропустить этот заголовок и вернуть несжатые данные. |
+| Accept-Encoding |Gzip, deflate |Кодировка GZIP и, в соответствующих случаях, DEFLATE. Примечание. Для больших ресурсов Службы мультимедиа могут пропустить этот заголовок и вернуть несжатые данные. |
 | Accept-Language |"en", "ru" и т. д. |Указывает предпочитаемый язык для ответа. |
 | Accept-Charset |Тип кодировки, например "UTF-8" |По умолчанию — UTF-8. |
 | X-HTTP-Method |Метод HTTP |Позволяет клиентам или брандмауэрам, которые не поддерживают методы HTTP, например PUT или DELETE, использовать эти методы, туннелированные посредством вызова GET. |

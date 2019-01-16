@@ -10,16 +10,16 @@ ms.reviewer: estfan, LADocs
 ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.topic: article
 ms.date: 03/15/2018
-ms.openlocfilehash: 1c8abc153084f0c6491cab3677b93f8c450ad908
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 638b29dd2a15d0467c41e20ecfed9f333b34c04d
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50229423"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54061063"
 ---
 # <a name="create-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps
 
-Azure предлагает беcсерверные средства для быстрого создания и размещения приложений в облаке, не задумываясь об инфраструктуре. В этом руководстве мы создадим панель мониторинга, которая будет запускаться при получении отзывов от клиентов, анализировать отзывы с помощью машинного обучения и публиковать аналитику в источник, например Power BI или Azure Data Lake.
+Azure предлагает средства [Бессерверные приложения в Azure](https://azure.microsoft.com/solutions/serverless/) для быстрого создания и размещения приложений в облаке, не задумываясь об инфраструктуре. В этом руководстве мы создадим панель мониторинга, которая будет запускаться при получении отзывов от клиентов, анализировать отзывы с помощью машинного обучения и публиковать аналитику в источник, например Power BI или Azure Data Lake.
 
 Для этого решения вы используете такие ключевые компоненты Azure для бессерверных приложений: [Функции Azure](https://azure.microsoft.com/services/functions/) и [Azure Logic Apps](https://azure.microsoft.com/services/logic-apps/).
 Azure Logic Apps представляет беcсерверный обработчик рабочего процесса в облаке, поэтому вы можете создавать оркестрации бессерверных компонентов и подключаться к более чем 200 службам и API. Функции Azure предоставляют беcсерверные вычисления в облаке. В этом решении Функции Azure используются для пометки пользовательских твитов на основе предопределенных ключевых слов.
@@ -34,7 +34,7 @@ Azure Logic Apps представляет беcсерверный обработ
 
    Если вы не знакомы с приложениями логики, перейдите к [краткому руководству по его созданию на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md) или [в Visual Studio](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md).
 
-2. В конструкторе приложений логики найдите и добавьте триггер Twitter, в котором есть действие **When a new tweet is posted** (При публикации нового твита).
+2. В конструкторе приложений логики найдите и добавьте триггер Twitter, в котором есть действие: **When a new tweet is posted**
 
 3. Настройте триггер для прослушивания твитов по ключевому слову или хэштегу.
 

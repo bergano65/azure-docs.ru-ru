@@ -1,5 +1,5 @@
 ---
-title: Руководство по интеграции Azure Active Directory со SkyDesk Email | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory со SkyDesk Email | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SkyDesk Email.
 services: active-directory
 documentationCenter: na
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/11/2017
 ms.author: jeedes
-ms.openlocfilehash: 058aad72ea8e5741bc632b3c27c032613683ae78
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 4dc34a390303ffe5e4bafc6b71d77a19e554374c
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444088"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54052195"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-skydesk-email"></a>Учебник. Интеграция Azure Active Directory со SkyDesk Email
+# <a name="tutorial-azure-active-directory-integration-with-skydesk-email"></a>Руководство. Интеграция Azure Active Directory со SkyDesk Email
 
 В этом руководстве описано, как интегрировать SkyDesk Email с Azure Active Directory (Azure AD).
 
@@ -115,7 +115,7 @@ ms.locfileid: "39444088"
     В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://mail.skydesk.jp/portal/<companyname>`
 
     > [!NOTE] 
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки клиентов SkyDesk Email](https://www.skydesk.sg/support/). 
+    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки клиентов SkyDesk Email](https://www.skydesk.jp/apps/support/). 
  
 1. В разделе **Сертификат для подписи токена SAML** щелкните **Certificate (Base64)** (Сертификат (Base64)), а затем сохраните файл сертификата на компьютере.
 
@@ -177,7 +177,7 @@ ms.locfileid: "39444088"
     Е. Нажмите кнопку **ОК** , чтобы сохранить изменения.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -220,7 +220,7 @@ ms.locfileid: "39444088"
     ![Настройка единого входа](./media/skydeskemail-tutorial/tutorial_skydeskemail_58.png)
 
 >[!NOTE] 
->Если вам нужно массово создать пользователей, обратитесь к [группе поддержки клиентов SkyDesk Email](https://www.skydesk.sg/support/).
+>Если вам нужно массово создать пользователей, обратитесь к [группе поддержки клиентов SkyDesk Email](https://www.skydesk.jp/apps/support/).
 
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD

@@ -12,14 +12,14 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 1/09/2018
+ms.date: 1/4/2019
 ms.author: twhitney
-ms.openlocfilehash: 07c227c198166254eb130604685a4ba5884b783a
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: e02acb0d283257658d4466295e3be323072210b5
+ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51299883"
+ms.lasthandoff: 01/07/2019
+ms.locfileid: "54062372"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -193,6 +193,11 @@ docker push myregistry.azurecr.io/samples/helloworldapp
    </ServiceManifestImport>
 ``` 
 
+Рекомендуется зашифровать пароль репозитория. Инструкции см. в статье [Управление секретами в приложениях Service Fabric](service-fabric-application-secret-management.md).
+
+### <a name="configure-cluster-wide-credentials"></a>Настройка учетных данных на уровне кластера
+Дополнительные сведения см. в [этой](
+service-fabric-get-started-containers.md#configure-cluster-wide-credentials) документации.
 
 ## <a name="configure-isolation-mode"></a>Настройка режима изоляции
 Выпуск среды выполнения 6.3 обеспечивает поддержку изоляции виртуальных машин для контейнеров Linux, поэтому поддерживаются два режима изоляции для контейнеров: изоляция процессов и изоляция Hyper-V. В режиме изоляции Hyper-V все контейнеры и узлы контейнера используют отдельные ядра. Режим изоляции Hyper-V реализуется с помощью [Clear Containers](https://software.intel.com/en-us/articles/intel-clear-containers-2-using-clear-containers-with-docker). Режим изоляции кластеров Linux указывается в элементе `ServicePackageContainerPolicy` в файле манифеста приложения. Вы можете указать следующие режимы изоляции: `process`, `hyperv` и `default`. По умолчанию используется режим изоляции процессов. В указанном ниже фрагменте кода показано, как режим изоляции указывается в файле манифеста приложения.
@@ -210,7 +215,7 @@ docker push myregistry.azurecr.io/samples/helloworldapp
 
 
 ## <a name="configure-resource-governance"></a>Настройка управления ресурсами
-[Управление ресурсами](service-fabric-resource-governance.md) позволяет ограничить ресурсы, которые контейнер может использовать на узле. Элемент `ResourceGovernancePolicy`, определяемый в манифесте приложения, позволяет объявить ограничения для ресурсов, доступных из пакета кода службы. Ограничения можно задать для следующих ресурсов: Memory, MemorySwap, CpuShares (относительный вес ЦП), MemoryReservationInMB, BlkioWeight (относительный вес BlockIO). В этом примере пакет службы Guest1Pkg получает одно ядро на узлах кластера, где он размещается. Ограничения по памяти абсолютны, так что пакет кода получает только 1024 МБ (и имеет соответствующие мягкие гарантии резервирования). Пакеты кода (контейнеры или процессы) не могут выделить больше памяти, чем задано ограничением, а при попытке сделать это возникнет проблема нехватки памяти. Чтобы принудительное ограничение ресурсов работало, для всех пакетов кода в пакете службы должны быть указаны ограничения по памяти.
+[Управление ресурсами](service-fabric-resource-governance.md) позволяет ограничить ресурсы, которые контейнер может использовать на узле. Элемент `ResourceGovernancePolicy`, определяемый в манифесте приложения, позволяет объявить ограничения для ресурсов, доступных из пакета кода службы. Ограничения ресурсов можно задать для следующих ресурсов: Memory, MemorySwap, CpuShares (относительный вес ЦП), MemoryReservationInMB, BlkioWeight (относительный вес BlockIO). В этом примере пакет службы Guest1Pkg получает одно ядро на узлах кластера, где он размещается. Ограничения по памяти абсолютны, так что пакет кода получает только 1024 МБ (и имеет соответствующие мягкие гарантии резервирования). Пакеты кода (контейнеры или процессы) не могут выделить больше памяти, чем задано ограничением, а при попытке сделать это возникнет проблема нехватки памяти. Чтобы принудительное ограничение ресурсов работало, для всех пакетов кода в пакете службы должны быть указаны ограничения по памяти.
 
 ```xml
 <ServiceManifestImport>

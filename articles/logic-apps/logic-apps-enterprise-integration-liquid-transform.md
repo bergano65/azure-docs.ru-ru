@@ -10,12 +10,12 @@ ms.reviewer: estfan, LADocs
 ms.suite: integration
 ms.topic: article
 ms.date: 08/16/2018
-ms.openlocfilehash: 140c92d260ac6423127e478e304cbebcf9c42124
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 27686cf036f69a9a4597c499e9b8b7d66d77e1e9
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42143416"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54019679"
 ---
 # <a name="perform-advanced-json-transformations-with-liquid-templates-in-azure-logic-apps"></a>Выполнение сложных преобразований JSON с помощью шаблонов Liquid в Azure Logic Apps
 
@@ -34,7 +34,7 @@ ms.locfileid: "42143416"
 ## <a name="create-liquid-template-or-map-for-your-integration-account"></a>Создание шаблона или сопоставления Liquid в учетной записи интеграции
 
 1. Для данного примера создайте образец шаблона Liquid, описанный на этом шаге.
-Если в шаблоне Liquid требуется использовать какие-либо фильтры, убедитесь, что их имена начинаются с прописной буквы. Дополнительные сведения о фильтрах Liquid можно узнать на [сайте Liquid](https://shopify.github.io/liquid/basics/introduction/#filters). 
+Если в шаблоне Liquid требуется использовать какие-либо фильтры, убедитесь, что их имена начинаются с прописной буквы. Дополнительные сведения о [фильтрах Liquid](https://shopify.github.io/liquid/basics/introduction/#filters), использующих [DotLiquid](https://dotliquidmarkup.org/) и соглашения об именовании C#.
 
    ```json
    {%- assign deviceList = content.devices | Split: ', ' -%}
@@ -80,7 +80,7 @@ ms.locfileid: "42143416"
 
 2. В конструкторе приложений логики добавьте [триггер запроса](../connectors/connectors-native-reqres.md#use-the-http-request-trigger) в приложение логики.
 
-3. В разделе триггера выберите **Добавить шаг**. В качестве фильтра в поле поиска введите "liquid" и выберите действие **Transform JSON to JSON - Liquid** (Преобразование JSON в JSON с помощью сопоставления Liquid)
+3. В разделе триггера выберите **Добавить шаг**. В поле поиска в качестве фильтра введите Liquid и выберите действие **Преобразование JSON в JSON — Liquid**.
 
    ![Поиск и выбор действия Liquid](./media/logic-apps-enterprise-integration-liquid-transform/search-action-liquid.png)
 
@@ -117,7 +117,7 @@ Liquid не ограничивается преобразованием форм
    ``` json
    {{content.firstName | Append: ' ' | Append: content.lastName}}
    ```
-   Примеры входных и выходных данных:
+   Вот пример входных и выходных данных.
   
    ![Пример выходных данных преобразования JSON в текст](./media/logic-apps-enterprise-integration-liquid-transform/example-output-jsontotext.png)
 
@@ -130,7 +130,7 @@ Liquid не ограничивается преобразованием форм
         {{item}}
     {% endJSONArrayFor -%}]
    ```
-   Примеры входных и выходных данных:
+   Вот пример входных и выходных данных.
 
    ![Пример выходных данных преобразования XML в JSON](./media/logic-apps-enterprise-integration-liquid-transform/example-output-xmltojson.png)
 
@@ -142,7 +142,7 @@ Liquid не ограничивается преобразованием форм
    {{content.firstName | Append: ' ' | Append: content.lastName}}
    ```
 
-   Примеры входных и выходных данных:
+   Вот пример входных и выходных данных.
 
    ![Пример выходных данных преобразования XML в текст](./media/logic-apps-enterprise-integration-liquid-transform/example-output-xmltotext.png)
 

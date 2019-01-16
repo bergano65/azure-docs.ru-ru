@@ -3,7 +3,7 @@ title: Предварительное утверждение с помощью �
 description: Узнайте о партнерской программе сертификации Microsoft Azure и о том, как продать образ виртуальной машины, шаблон решения, службу разработчика или службу данных в Azure Marketplace.
 services: marketplace-publishing
 documentationcenter: na
-author: HannibalSII
+author: v-miclar
 manager: hascipio
 editor: ''
 tags: ''
@@ -15,12 +15,13 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/05/2016
 ms.author: hascipio
-ms.openlocfilehash: 300b94aea0c06092a5fb6bdecd49771ef1cd517d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ROBOTS: NOINDEX
+ms.openlocfilehash: d0bfb4112aabda00355e670e1e20735bbe40a26b
+ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51234193"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54073779"
 ---
 # <a name="get-pre-approved-via-the-microsoft-azure-certified-program"></a>Предварительное утверждение с помощью программы сертификации Microsoft Azure
 В этой статье представлены инструкции о том, как пройти сертификацию Microsoft Azure, чтобы публиковать решение в Azure Marketplace и получать маркетинговые преимущества. Подробный обзор программы сертификации Microsoft Azure и ее преимуществ см. на странице [http://azure.com/certified](http://azure.com/certified).
@@ -38,7 +39,7 @@ ms.locfileid: "51234193"
 
 
 ## <a name="next-step"></a>Дальнейшие действия
-Получив предварительное утверждение по программе сертификации Microsoft Azure, можно перейти к [ регистрации учетной записи Майкрософт в качестве продавца Майкрософт](marketplace-publishing-accounts-creation-registration.md).
+Получив предварительное утверждение по программе сертификации Microsoft Azure, можно [зарегистрировать свою учетную запись Майкрософт в качестве продавца Майкрософт](marketplace-publishing-accounts-creation-registration.md).
 
 ## <a name="see-also"></a>См. также
-* [Приступая к работе: как опубликовать предложение в Azure Marketplace](marketplace-publishing-getting-started.md)
+* руководство по началу работы [Публикация предложения и управление им в Azure Marketplace](marketplace-publishing-getting-started.md)

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: site-recovery
 ms.date: 12/27/2018
 ms.author: raynew
-ms.openlocfilehash: 02e6d6407a515314d99ea747dac3646d665c47ae
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: c353c40cc838dc4082d3d4b843a48a5fedb6e1f5
+ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53976585"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54039475"
 ---
 # <a name="replicate-azure-stack-vms-to-azure"></a>Репликация виртуальных машин Azure Stack в Azure
 
@@ -142,7 +142,7 @@ ms.locfileid: "53976585"
 
 ## <a name="step-2-create-a-vault-and-select-a-replication-goal"></a>Шаг 2. Создание хранилища и выбор цели репликации
 
-1. На портале Azure выберите **Создать ресурс** > **Мониторинг и управление** > **Backup and Site Recovery** (Backup и Site Recovery).
+1. На портале Azure выберите **Создать ресурс** > **Средства управления** > **Backup and Site Recovery**.
 2. В поле **Имя**введите понятное имя для идентификации хранилища. 
 3. В поле **Группа ресурсов** создайте или выберите группу ресурсов. Мы используем **contosoRG**.
 4. В поле **Расположение** введите регион Azure. выбираем значение **Западная Европа**.
