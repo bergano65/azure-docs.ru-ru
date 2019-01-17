@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
-ms.openlocfilehash: b7201f2a5d2e1b3967bd84ddb78797debdf14aeb
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: 29d99a6114f1a8dafa2e3a837fe807a1bbee1343
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54065704"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54260709"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-servicenow"></a>Руководство. Интеграция Azure Active Directory с ServiceNow
 
@@ -214,7 +214,7 @@ ms.locfileid: "54065704"
         * Скопируйте значение **ServiceNow Homepage** (Домашняя страница ServiceNow) и вставьте его в текстовое поле **URL-адрес для входа** в разделе **Домены и URL-адреса приложения ServiceNow** на портале Azure.
 
             > [!NOTE]
-            > URL-адрес домашней страницы экземпляра ServiceNow состоит из **URL-адреса клиента ServiceNow** и **/navpage.do** (например, `https://fabrikam.service-now.com/navpage.do`).
+            > URL-адрес домашней страницы экземпляра ServiceNow состоит из **URL-адреса клиента ServiceNow** и **/navpage.do** (например:`https://fabrikam.service-now.com/navpage.do`).
 
         * Скопируйте значение **Entity ID / Issuer** (Идентификатор сущности или издатель) и вставьте его в текстовое поле **Идентификатор** в разделе **Домены и URL-адреса приложения ServiceNow** на портале Azure.
 

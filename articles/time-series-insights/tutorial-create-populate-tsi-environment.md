@@ -9,12 +9,12 @@ ms.date: 12/05/2018
 ms.author: anshan
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: c2aeab6888cf93be75742028b0354c45a1834d51
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 58b19a039bb6aebcd2687ab80cdd29c5f378645e
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53537288"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54200213"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Руководство. Создание среды службы "Аналитика временных рядов Azure"
 
@@ -41,7 +41,7 @@ ms.locfileid: "53537288"
 
 ## <a name="overview"></a>Обзор
 
-Среда TSI собирает и хранит данные устройств. К данным, сохраненным в среде TSI, можно применять запросы и анализ с помощью [TSI Explorer](time-series-quickstart.md) и [API-интерфейса запросов TSI](/rest/api/time-series-insights/time-series-insights-reference-queryapi).
+Среда TSI собирает и хранит данные устройств. К данным, сохраненным в среде TSI, можно применять запросы и анализ с помощью [TSI Explorer](time-series-quickstart.md) и [API-интерфейса запросов TSI](/rest/api/time-series-insights/ga-query-api).
 
 Как и любые физические или имитированные устройства, Центр Интернета вещей представляет собой точку подключения, к которому устройства подключаются для защищенной передачи данных в облако Azure. Как уже обсуждалось в [обзоре TSI](time-series-insights-overview.md), Центр Интернета вещей выполняет роль источника событий для потоковой передачи данных в среду TSI. 
 

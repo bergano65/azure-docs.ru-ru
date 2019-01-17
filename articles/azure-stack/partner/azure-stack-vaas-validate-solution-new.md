@@ -13,12 +13,13 @@ ms.topic: quickstart
 ms.date: 12/20/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: e6cfdca207b114871a478262f14ea960be5985df
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ROBOTS: NOINDEX
+ms.openlocfilehash: c8a723137761c12ab335af79dfffb9e124348eac
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104970"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54246608"
 ---
 # <a name="validate-a-new-azure-stack-solution"></a>Проверка нового решения Azure Stack
 
@@ -72,11 +73,11 @@ ms.locfileid: "54104970"
 
 2. Выберите следующие тесты:
     - Cloud Simulation Engine;
-    - Compute SDK Operational Suite;
-    - Disk Identification Test;
-    - KeyVault Extension SDK Operational Suite;
-    - KeyVault SDK Operational Suite;
-    - Network SDK Operational Suite;
+    - Compute SDK Operational Suite (Операционный набор для пакета SDK для вычислений);
+    - Disk Identification Test (Тест на идентификацию диска);
+    - KeyVault Extension SDK Operational Suite (Операционный набор для пакета SDK для расширения хранилища ключей);
+    - KeyVault SDK Operational Suite (Операционный набор для пакета SDK для хранилища ключей);
+    - Network SDK Operational Suite (Операционный набор для пакета SDK для сети);
     - Storage Account SDK Operational Suite.
 
 3. В контекстном меню выберите **Расписание**, чтобы открыть командную строку для планирования выполнения тестового экземпляра.

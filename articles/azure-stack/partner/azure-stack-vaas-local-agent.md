@@ -13,12 +13,13 @@ ms.topic: quickstart
 ms.date: 11/26/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 0608da33e816b40f7fadbeb1b5da3feb926c28aa
-ms.sourcegitcommit: 922f7a8b75e9e15a17e904cc941bdfb0f32dc153
+ROBOTS: NOINDEX
+ms.openlocfilehash: f0ffb4a4c4ea12292639b5a94b7f2990db6e45bd
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52334063"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54247815"
 ---
 # <a name="deploy-the-local-agent"></a>Развертывание локального агента.
 
@@ -138,4 +139,4 @@ Azure Stack является тестируемой системы. Компью
 
 - [Проверка как услуга: устранение неполадок](azure-stack-vaas-troubleshoot.md)
 - [Validation as a Service key concepts](azure-stack-vaas-key-concepts.md) (Проверка как услуга: основные понятия)
-- [Schedule your first test](azure-stack-vaas-schedule-test-pass.md) (Планирование первого теста)
+- [Краткое руководство Планирование первого теста](azure-stack-vaas-schedule-test-pass.md);

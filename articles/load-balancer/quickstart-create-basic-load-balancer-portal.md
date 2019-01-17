@@ -5,6 +5,7 @@ description: В рамках этого краткого руководства 
 services: load-balancer
 documentationcenter: na
 author: KumudD
+manager: twooley
 Customer intent: I want to create a Basic Load balancer so that I can load balance internet traffic to VMs.
 ms.service: load-balancer
 ms.devlang: na
@@ -14,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: kumud
 ms.custom: seodec18
-ms.openlocfilehash: e7055e016abd06d20206d25cb1d7b9eac35142f0
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 64c0a42ac3cc074e5fd9e2824180009431b11e1e
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53260231"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54231977"
 ---
 # <a name="quickstart-create-a-public-basic-load-balancer-by-using-the-azure-portal"></a>Краткое руководство. Создайте общедоступную подсистему балансировки нагрузки уровня "Базовый" с помощью портала Azure.
 
@@ -173,7 +174,7 @@ ms.locfileid: "53260231"
    - **Порт**. Введите *80*. 
    - **Путь**. Примите */* для универсального кода ресурса (URI) по умолчанию. Это значение можно заменить любым другим URI. 
    - **Интервал**. Введите *15*. Интервал — количество секунд между попытками выполнения пробы.
-   - **Порог состояния неработоспособности**. Введите *2*. Это значение количества последовательных сбоев пробы, которые произойдут, прежде чем виртуальная машина будет считаться неработоспособной.
+   - **Пороговое значение сбоя**. Введите *2*. Это значение количества последовательных сбоев пробы, которые произойдут, прежде чем виртуальная машина будет считаться неработоспособной.
    
 1. Нажмите кнопку **ОК**.
    
@@ -198,7 +199,7 @@ ms.locfileid: "53260231"
    - **Внешний IP-адрес**. Введите *LoadBalancerFrontend*.
    - **Протокол**. Выберите **TCP**.
    - **Порт**. Введите *80*.
-   - **Внутренний порт**. Введите *80*.
+   - **Серверный порт**. Введите *80*.
    - **Серверный пул**. Выберите **MyBackendPool**.
    - **Зонд работоспособности**. Выберите **MyHealthProbe**. 
    

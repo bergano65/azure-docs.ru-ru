@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 10/24/2018
 ms.author: sngun
-ms.openlocfilehash: 70aa5c62afb6706fa9084d1ed081f70517d8d89e
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 8fd99b1c68be08ca7c2f4b7cdeaaa8b5b64859e4
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54039441"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54197426"
 ---
 # <a name="create-and-manage-resources-of-an-azure-cosmos-db-sql-api-account-using-a-java-application"></a>Создание ресурсов учетной записи API SQL для Azure Cosmos DB и управление ими с помощью приложения Java
 
@@ -75,7 +75,7 @@ ms.locfileid: "54039441"
 
 Этот шаг не является обязательным. Если вы хотите узнать, как создать в коде ресурсы базы данных, изучите приведенные ниже фрагменты кода. Вы можете сразу перейти к [запуску приложения](#run-the-app). 
 
-* Инициализация `AsyncDocumentClient`. [AsyncDocumentClient](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.rx._async_document_client) является логическим представлением службы баз данных Azure Cosmos DB на стороне клиента. Этот клиент позволяет настраивать и выполнять запросы к службе.
+* Инициализация `AsyncDocumentClient`. [AsyncDocumentClient](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.rx.asyncdocumentclient) является логическим представлением службы баз данных Azure Cosmos DB на стороне клиента. Этот клиент позволяет настраивать и выполнять запросы к службе.
 
     ```java
     client = new AsyncDocumentClient.Builder()
@@ -86,7 +86,7 @@ ms.locfileid: "54039441"
              .build();
     ```
 
-* Создание [Database](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb._database).
+* Создание [Database](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.database).
 
     ```java
     Database databaseDefinition = new Database();
@@ -97,7 +97,7 @@ ms.locfileid: "54039441"
             .await();
     ```
 
-* Создание [DocumentCollection](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb._document_collection).
+* Создание [DocumentCollection](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.documentcollection).
 
     ```java
     DocumentCollection collectionDefinition = new DocumentCollection();
@@ -110,7 +110,7 @@ ms.locfileid: "54039441"
             .await();
     ```
 
-* Создание документа с помощью метода [createDocument](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb._document).
+* Создание документа с помощью метода [createDocument](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.document).
 
     ```java
     // Any Java object within your code
@@ -127,7 +127,7 @@ ms.locfileid: "54039441"
 
     ```
 
-* SQL-запросы к JSON можно выполнить с помощью метода [queryDocuments](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.rx._async_document_client.querydocuments?view=azure-java-stable).
+* SQL-запросы к JSON можно выполнить с помощью метода [queryDocuments](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.rx.asyncdocumentclient.querydocuments?view=azure-java-stable).
 
     ```java
     FeedOptions queryOptions = new FeedOptions();
