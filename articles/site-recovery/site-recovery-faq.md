@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 12/27/2018
 ms.author: raynew
-ms.openlocfilehash: bd5c3a6fc4a2d6f6a8b4f07154c02d7d29211ec9
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 1300ac9b6ba0eee8698e268fb9cc613955deb74e
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54078598"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321929"
 ---
 # <a name="azure-site-recovery-frequently-asked-questions-faq"></a>Azure Site Recovery: вопросы и ответы
 Данная статья содержит часто задаваемые вопросы об Azure Site Recovery. Если после прочтения статьи у вас возникли какие-либо вопросы, вы можете задать их на [форуме, посвященном службам восстановления Azure](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
@@ -119,7 +119,7 @@ Azure Site Recovery реплицирует данные в учетную зап
 * **VMware и физические серверы.** Здесь частота репликации не имеет значения. Репликация является непрерывной.
 
 ### <a name="can-i-extend-replication-from-existing-recovery-site-to-another-tertiary-site"></a>Можно ли расширить репликацию с существующего сайта восстановления до сайта третьего уровня?
-Расширенная репликация и цепочка репликации не поддерживаются. Запросите эту функцию на [форуме отзывов и предложений](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959-support-for-exisiting-extended-replication).
+Расширенная репликация и цепочка репликации не поддерживаются. Запросите эту функцию на [форуме отзывов и предложений](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959).
 
 ### <a name="can-i-do-an-offline-replication-the-first-time-i-replicate-to-azure"></a>Можно ли выполнить первую процедуру репликации в Azure в автономном режиме?
 Эта возможность не поддерживается. Запросите эту функцию на [форуме отзывов и предложений](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6227386-support-for-offline-replication-data-transfer-from).

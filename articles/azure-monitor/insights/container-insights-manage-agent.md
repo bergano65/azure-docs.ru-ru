@@ -8,18 +8,17 @@ manager: carmonm
 editor: ''
 ms.assetid: ''
 ms.service: azure-monitor
-ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/06/2018
 ms.author: magoedte
-ms.openlocfilehash: 566ab8d14ebce04a2cba208dd72efc3782d5ad41
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 6bfcb17d0a81c6e23c4bfa3dd4f4dd8cc3079379
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53256304"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54331476"
 ---
 # <a name="how-to-manage-the-azure-monitor-for-containers-agent"></a>Как управлять агентом Azure Monitor для контейнеров
 Решение "Azure Monitor для контейнеров" использует контейнерную версию агента Log Analytics для Linux. После первоначального развертывания агента есть некоторые рутинные или необязательные задачи, которые нужно будет выполнить в течение его жизненного цикла. В этой статье подробно описывается, как вручную обновить агент и отключить коллекцию переменных среды для определенного контейнера. 
@@ -27,7 +26,7 @@ ms.locfileid: "53256304"
 ## <a name="how-to-upgrade-the-azure-monitor-for-containers-agent"></a>Способы обновления агента решения "Azure Monitor для контейнеров"
 Решение "Azure Monitor для контейнеров" использует контейнерную версию агента Log Analytics для Linux. При выпуске новой версии агент обновляется автоматически в управляемых кластерах Kubernetes, размещенных в Службе Azure Kubernetes (AKS).  
 
-В статье описывается, как обновить агент вручную если произойдет сбой автоматического обновления. Выпущенные версии см. в [объявлениях о выпусках агента](https://github.com/microsoft/docker-provider/tree/ci_feature_prod).   
+В статье описывается, как обновить агент вручную, если произойдет сбой автоматического обновления. Выпущенные версии см. в [объявлениях о выпусках агента](https://github.com/microsoft/docker-provider/tree/ci_feature_prod).   
 
 ### <a name="upgrading-agent-on-monitored-kubernetes-cluster"></a>Обновление агента на отслеживаемых кластерах Kubernetes
 Процесс обновления агента состоит из двух простых шагов. Первым шагом является отключение мониторинга с использованием решения "Azure Monitor для контейнеров" с помощью Azure CLI.  Выполните действия, описанные в [этой статье](container-insights-optout.md?toc=%2fazure%2fmonitoring%2ftoc.json#azure-cli). С помощью Azure CLI можно удалить агент из узлов в кластере, не влияя на решение и соответствующие данные, хранящиеся в рабочей области. 

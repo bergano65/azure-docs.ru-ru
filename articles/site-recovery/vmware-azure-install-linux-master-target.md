@@ -1,17 +1,19 @@
 ---
 title: Установка главного целевого сервера Linux для восстановления размещения на локальный сайт | Документация Майкрософт
 description: Сведения о том, как установить главный целевой сервер Linux для восстановления размещения на локальный сайт во время аварийного восстановления виртуальных машин VMware в Azure с помощью Azure Site Recovery.
-author: nsoneji
+author: mayurigupta13
+services: site-recovery
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
-ms.author: nisoneji
-ms.openlocfilehash: 09f4637c24b146394dc0299e60e729c07420150a
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.author: mayg
+ms.openlocfilehash: befc979b84c5ace3b8c787b184e52f09ada9ea2b
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53974389"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321418"
 ---
 # <a name="install-a-linux-master-target-server-for-failback"></a>Установка главного целевого сервера Linux для восстановления размещения
 После отработки отказа виртуальных машин в Azure для них можно восстановить размещение на локальном сайте. Для восстановления размещения из Azure на локальном сайте необходимо повторно включить защиту виртуальной машины. Для этого понадобится локальный главный целевой сервер, который будет получать трафик. 

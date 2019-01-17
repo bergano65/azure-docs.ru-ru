@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 05/15/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 1ccf66da14bbbd4993f29da2e40d996cb564864e
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: aa6f891cc68d19e638bb2b7281f4b332de26bd26
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54024915"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54332648"
 ---
 # <a name="copy-data-to-or-from-oracle-on-premises-by-using-azure-data-factory"></a>Копирование данных в локальную базу данных Oracle и обратно с помощью Фабрики данных Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "54024915"
 
     Если вы выбрали **установку XCopy**, то следуйте инструкциям в файле readme.htm. Мы рекомендуем выбрать установщик, который включает пользовательский интерфейс (не установщик XCopy).
 
-    После установки поставщика перезапустите на компьютере службу узла шлюза управления данными, используя приложение "Службы" или диспетчер конфигурации шлюза управления данными.  
+    После установки поставщика перезапустите на компьютере службу узла шлюза управления данными, используя приложение "Службы" или диспетчер конфигурации шлюза управления данными.
 
 При использовании мастера копирования для создания конвейера копирования тип драйвера будет определен автоматически. Драйвер Майкрософт используется по умолчанию, если только вы не используете версию шлюза ниже 2.7 или выбрали Oracle в качестве приемника.
 
@@ -87,12 +87,12 @@ ms.locfileid: "54024915"
 
 Независимо от используемого инструмента или интерфейса API для создания конвейера, который перемещает данные из исходного хранилища данных в приемник, необходимо выполнить указанные ниже действия.
 
-1. Создание **фабрики данных**. Фабрика данных может содержать один или несколько конвейеров. 
+1. Создание **фабрики данных**. Фабрика данных может содержать один или несколько конвейеров.
 2. Создайте **связанные службы**, чтобы связать входные и выходные данные с фабрикой данных. Например, при копировании данных из базы данных Oracle в хранилище BLOB-объектов Azure создайте две связанные службы, чтобы связать базу данных Oracle и учетную запись хранения Azure с фабрикой данных. Сведения о свойствах связанной службы, относящихся к Oracle, см. в разделе [свойств связанной службы](#linked-service-properties).
 3. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования. В примере, упомянутом на последнем шаге, создайте набор данных, чтобы указать таблицу в базе данных Oracle, содержащую входные данные. Создайте другой набор данных, чтобы указать контейнер больших двоичных объектов и папку, содержащую данные, скопированные из базы данных Oracle. Сведения о свойствах набора данных, относящихся к Oracle, см. в [этом разделе](#dataset-properties).
-4. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. В примере выше **OracleSource** используется как источник, а **BlobSink** — как приемник для действия копирования. Аналогично при копировании из хранилища BLOB-объектов Azure в базу данных Oracle в действии копирования используются **BlobSource** и **OracleSink**. Сведения о свойствах действия копирования, относящихся к базе данных Oracle, см. в [этом разделе](#copy-activity-properties). Для получения сведений о том, как использовать хранилище данных в качестве источника или приемника, щелкните ссылку в предыдущем разделе. 
+4. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. В примере выше **OracleSource** используется как источник, а **BlobSink** — как приемник для действия копирования. Аналогично при копировании из хранилища BLOB-объектов Azure в базу данных Oracle в действии копирования используются **BlobSource** и **OracleSink**. Сведения о свойствах действия копирования, относящихся к базе данных Oracle, см. в [этом разделе](#copy-activity-properties). Для получения сведений о том, как использовать хранилище данных в качестве источника или приемника, щелкните ссылку в предыдущем разделе.
 
-Если вы используете мастер, то он автоматически создает определения JSON для сущностей Фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов или интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности Фабрики данных в формате JSON.  Примеры с определениями JSON для сущностей Фабрики данных, которые используются для копирования данных в локальную базу данных Oracle и обратно, см. в разделе [Примеры JSON](#json-examples-for-copying-data-to-and-from-oracle-database).
+Если вы используете мастер, то он автоматически создает определения JSON для сущностей Фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов или интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности Фабрики данных в формате JSON. Примеры с определениями JSON для сущностей Фабрики данных, которые используются для копирования данных в локальную базу данных Oracle и обратно, см. в разделе [Примеры JSON](#json-examples-for-copying-data-to-and-from-oracle-database).
 
 Следующие разделы содержат сведения о свойствах JSON, которые используются для определения сущностей Фабрики данных.
 
@@ -136,8 +136,7 @@ ms.locfileid: "54024915"
     "properties": {
         "type": "OnPremisesOracle",
         "typeProperties": {
-            "connectionString": "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=<host name>)(PORT=<port number>))(CONNECT_DATA=(SERVICE_NAME=<service ID>)));
-User Id=<user name>;Password=<password>;",
+            "connectionString": "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=<host name>)(PORT=<port number>))(CONNECT_DATA=(SERVICE_NAME=<service ID>))); User Id=<user name>;Password=<password>;",
             "gatewayName": "<gateway name>"
         }
     }
@@ -146,7 +145,7 @@ User Id=<user name>;Password=<password>;",
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, используемых для определения наборов данных, см. в статье [Наборы данных в фабрике данных Azure](data-factory-create-datasets.md). 
+Полный список разделов и свойств, используемых для определения наборов данных, см. в статье [Наборы данных в фабрике данных Azure](data-factory-create-datasets.md).
 
 Разделы файла JSON в наборе данных, такие как структура, доступность и политика, одинаковы для всех типов наборов данных (например, база данных Oracle, хранилище BLOB-объектов Azure и табличное хранилище Azure).
 
@@ -158,7 +157,7 @@ User Id=<user name>;Password=<password>;",
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
-Полный список разделов и свойств, доступных для определения действий, см. в статье, посвященной [конвейерам и действиям в Фабрике данных Azure](data-factory-create-pipelines.md). 
+Полный список разделов и свойств, доступных для определения действий, см. в статье, посвященной [конвейерам и действиям в Фабрике данных Azure](data-factory-create-pipelines.md).
 
 Свойства (включая имя, описание, входные и выходные таблицы, политику и т. д.) доступны для всех типов действий.
 
@@ -188,7 +187,7 @@ User Id=<user name>;Password=<password>;",
 
 ## <a name="json-examples-for-copying-data-to-and-from-the-oracle-database"></a>Примеры JSON для копирования данных в базу данных Oracle и обратно
 
-Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В примерах показано, как копировать данные из базы данных Oracle и хранилища BLOB-объектов Azure и обратно. Однако данные можно копировать в любые приемники, указанные в статье о [поддерживаемых хранилищах данных и форматах](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Для этого применяется действие копирования в Фабрике данных.   
+Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В примерах показано, как копировать данные из базы данных Oracle и хранилища BLOB-объектов Azure и обратно. Однако данные можно копировать в любые приемники, указанные в статье о [поддерживаемых хранилищах данных и форматах](data-factory-data-movement-activities.md#supported-data-stores-and-formats). Для этого применяется действие копирования в Фабрике данных.
 
 **Пример. Копирование данных из Oracle в хранилище BLOB-объектов Azure**
 
@@ -254,12 +253,12 @@ User Id=<user name>;Password=<password>;",
             "anchorDateTime": "2014-02-27T12:00:00",
             "frequency": "Hour"
         },
-        "policy": {     
-            "externalData": {        
-                "retryInterval": "00:01:00",    
-                "retryTimeout": "00:10:00",       
-                "maximumRetry": 3       
-            }     
+        "policy": {
+            "externalData": {
+                "retryInterval": "00:01:00",
+                "retryTimeout": "00:10:00",
+                "maximumRetry": 3
+            }
         }
     }
 }
@@ -327,16 +326,16 @@ User Id=<user name>;Password=<password>;",
 
 **Конвейер с действием копирования**
 
-Конвейер содержит действие копирования, которое использует входные и выходные наборы данных и выполняется ежечасно. В определении JSON конвейера для типа **source** устанавливается значение **OracleSource**, а для типа **sink** — значение **BlobSink**.  SQL-запрос, указанный с помощью свойства **oracleReaderQuery**, выбирает для копирования данные за последний час.
+Конвейер содержит действие копирования, которое использует входные и выходные наборы данных и выполняется ежечасно. В определении JSON конвейера для типа **source** устанавливается значение **OracleSource**, а для типа **sink** — значение **BlobSink**. SQL-запрос, указанный с помощью свойства **oracleReaderQuery**, выбирает для копирования данные за последний час.
 
 ```json
-{  
+{
     "name":"SamplePipeline",
-    "properties":{  
+    "properties":{
         "start":"2014-06-01T18:00:00",
         "end":"2014-06-01T19:00:00",
         "description":"pipeline for a copy activity",
-        "activities":[  
+        "activities":[
             {
                 "name": "OracletoBlob",
                 "description": "copy activity",
@@ -378,7 +377,7 @@ User Id=<user name>;Password=<password>;",
 
 **Пример. Копирование данных из хранилища BLOB-объекта Azure в Oracle**
 
-В этом примере показано, как скопировать данные из хранилища BLOB-объектов Azure в локальную базу данных Oracle. Тем не менее вы можете скопировать данные *непосредственно* из любых источников, перечисленных в статье о [поддерживаемых хранилищах данных и форматах](data-factory-data-movement-activities.md#supported-data-stores-and-formats), с помощью действия копирования в Фабрике данных Azure.  
+В этом примере показано, как скопировать данные из хранилища BLOB-объектов Azure в локальную базу данных Oracle. Тем не менее вы можете скопировать данные *непосредственно* из любых источников, перечисленных в статье о [поддерживаемых хранилищах данных и форматах](data-factory-data-movement-activities.md#supported-data-stores-and-formats), с помощью действия копирования в Фабрике данных Azure.
 
 Пример содержит следующие сущности фабрики данных.
 
@@ -503,16 +502,16 @@ User Id=<user name>;Password=<password>;",
 
 **Конвейер с действием копирования**
 
-Конвейер содержит действие копирования, которое использует входной и выходной наборы данных и выполняется каждый час. В определении JSON конвейера для типа **source** устанавливается значение **BlobSource**, а для типа **sink** — значение **OracleSink**.  
+Конвейер содержит действие копирования, которое использует входной и выходной наборы данных и выполняется каждый час. В определении JSON конвейера для типа **source** устанавливается значение **BlobSource**, а для типа **sink** — значение **OracleSink**.
 
 ```json
-{  
+{
     "name":"SamplePipeline",
-    "properties":{  
+    "properties":{
         "start":"2014-06-01T18:00:00",
         "end":"2014-06-05T19:00:00",
         "description":"pipeline with a copy activity",
-        "activities":[  
+        "activities":[
             {
                 "name": "AzureBlobtoOracle",
                 "description": "Copy Activity",
@@ -558,7 +557,7 @@ User Id=<user name>;Password=<password>;",
 
 **Сообщение об ошибке**
 
-    Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: Unable to find the requested .Net Framework Data Provider. It may not be installed.  
+    Copy activity met invalid parameters: 'UnknownParameterName', Detailed message: Unable to find the requested .Net Framework Data Provider. It may not be installed.
 
 **Возможные причины**
 
@@ -584,7 +583,7 @@ User Id=<user name>;Password=<password>;",
 
 Необходимо настроить строку запроса в действии копирования в зависимости от того, как настроены даты в базе данных Oracle. Ниже приведен пример (с использованием функции **to_date**):
 
-    "oracleReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= to_date(\\'{0:MM-dd-yyyy HH:mm}\\',\\'MM/DD/YYYY HH24:MI\\')  AND timestampcolumn < to_date(\\'{1:MM-dd-yyyy HH:mm}\\',\\'MM/DD/YYYY HH24:MI\\') ', WindowStart, WindowEnd)"
+    "oracleReaderQuery": "$$Text.Format('select * from MyTable where timestampcolumn >= to_date(\\'{0:MM-dd-yyyy HH:mm}\\',\\'MM/DD/YYYY HH24:MI\\') AND timestampcolumn < to_date(\\'{1:MM-dd-yyyy HH:mm}\\',\\'MM/DD/YYYY HH24:MI\\') ', WindowStart, WindowEnd)"
 
 
 ## <a name="type-mapping-for-oracle"></a>Сопоставление типов для Oracle

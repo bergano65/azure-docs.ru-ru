@@ -3,7 +3,7 @@ title: Эффективное управление затратами на SQL S
 description: Рекомендации по выбору подходящей модели ценообразования для виртуальны машин SQL Server.
 services: virtual-machines-windows
 documentationcenter: na
-author: rothja
+author: MashaMSFT
 manager: craigg
 editor: ''
 tags: azure-service-management
@@ -14,13 +14,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/09/2018
-ms.author: jroth
-ms.openlocfilehash: b19cf9cd4b67479d811a590cb80a618680f3b3d5
-ms.sourcegitcommit: 345b96d564256bcd3115910e93220c4e4cf827b3
+ms.author: mathoma
+ms.reviewer: jroth
+ms.openlocfilehash: 19ba6896d9186cae32249fc8eb51319f9b37a6ff
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52496481"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54330796"
 ---
 # <a name="pricing-guidance-for-sql-server-azure-vms"></a>Руководство по выбору ценовой категории для виртуальных машин SQL Server в Azure
 

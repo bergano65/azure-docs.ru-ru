@@ -1,18 +1,18 @@
 ---
 title: Просмотр отчета об оценке затрат в Планировщике развертывания Azure Site Recovery | Документация Майкрософт
 description: В этой статье описано, как просмотреть отчет об оценке затрат в Планировщике ресурсов Azure Site Recovery для VMware при аварийном восстановлении в Azure.
-author: nsoneji
-manager: garavd
+author: mayurigupta13
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
-ms.author: nisoneji
-ms.openlocfilehash: 46ec116b357df8cc5de889f64d4620544c062979
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.author: mayg
+ms.openlocfilehash: d1e406567b5f56f6ad08e4d276202ebf43d92534
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52848346"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321498"
 ---
 # <a name="review-the-cost-estimation-report-in-the-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Просмотр отчета об оценке затрат в планировщике развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
 
@@ -28,13 +28,13 @@ ms.locfileid: "52848346"
  
 Можно просмотреть расходы за месяц или за год. Узнайте больше о поддерживаемых [целевых регионах](./site-recovery-vmware-deployment-planner-cost-estimation.md#supported-target-regions) и [валютах](./site-recovery-vmware-deployment-planner-cost-estimation.md#supported-currencies).
 
-**Cost by components** (Затраты по составляющим). Расходы на аварийное восстановление разделены на четыре составляющие: стоимость вычислительной среды, хранилища, сети и лицензии Azure Site Recovery. Затраты рассчитываются на основе данных потребления при репликации и тестировании DR. Сюда входит стоимость вычислительных ресурсов, хранилища (классы Premium и Standard), подключения ExpressRoute или VPN, настроенного между локальной средой и Azure, а также лицензии Azure Site Recovery.
+**Cost by components** (Затраты по составляющим). Расходы на аварийное восстановление разделены на четыре составляющие: стоимость вычислительных ресурсов, хранилища, сети и лицензии Azure Site Recovery. Затраты рассчитываются на основе данных потребления при репликации и тестировании DR. Сюда входит стоимость вычислительных ресурсов, хранилища (классы Premium и Standard), подключения ExpressRoute или VPN, настроенного между локальной средой и Azure, а также лицензии Azure Site Recovery.
 
 **Cost by states** (Затраты по состояниям). Общие расходы на аварийное восстановление (DR) рассчитываются на основе двух состояний: репликации и тестирования DR. 
 
 **Replication cost** (Затраты на репликацию).  Стоимость репликации. Сюда входит стоимость хранилища, сети и лицензии Azure Site Recovery. 
 
-**DR-Drill cost** (Затраты на тестирование DR). Стоимость тестовой отработки отказа. Azure Site Recovery запускает виртуальные машины при тестовой отработке отказа. Затраты на тестирование DR включают расходы на вычислительные ресурсы и хранилище для работающих виртуальных машин. 
+**DR-Drill cost** (Затраты на тестирование аварийного восстановления). Стоимость тестовой отработки отказа. Azure Site Recovery запускает виртуальные машины при тестовой отработке отказа. Затраты на тестирование DR включают расходы на вычислительные ресурсы и хранилище для работающих виртуальных машин. 
 
 **Azure storage cost per Month/Year** (Месячные или годовые затраты на хранилище). Это общие расходы на хранилище классов Premium и Standard при репликации и тестировании DR.
 

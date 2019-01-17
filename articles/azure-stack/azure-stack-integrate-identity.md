@@ -10,12 +10,12 @@ ms.date: 01/08/19
 ms.author: jeffgilb
 ms.reviewer: wfayed
 keywords: ''
-ms.openlocfilehash: ff7fb909e3f6e26846114c4b7bfdddccd07526ec
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 63ac30728cceae76f869f5529905cd6d3dde9ae2
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188902"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54263803"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 Azure Stack можно развернуть с помощью Azure Active Directory (Azure AD) или служб федерации Active Directory (AD FS) в качестве поставщика удостоверений. Сделать выбор следует перед развертыванием Azure Stack. Развертывание с помощью AD FS также называется развертыванием Azure Stack в отключенном режиме.
@@ -319,7 +319,7 @@ Graph поддерживает только интеграцию с отдель
 2. Затем выполните следующий командлет.
 
    ```PowerShell  
-   Reset-DatacenterIntegationConfiguration
+   Reset-DatacenterIntegrationConfiguration
    ```
 
    После выполнения отката откатываются все изменения конфигурации. Возможна будет только аутентификация с использованием встроенного пользователя **CloudAdmin**.

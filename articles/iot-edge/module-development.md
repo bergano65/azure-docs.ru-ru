@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 878ff5901df80398afff7f429c41f102da3edba4
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 3dd5005312e1c59fa53a0d917951c89033374192
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53793603"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54200638"
 ---
 # <a name="develop-your-own-iot-edge-modules"></a>Разработка собственных модулей IoT Edge
 
@@ -60,7 +60,7 @@ ms.locfileid: "53793603"
 1. Создайте экземпляр ModuleClient в приложении.
 2. Убедитесь, что приложение принимает сертификат, предоставленный центром IoT Edge на этом устройстве.
 
-Создайте экземпляр ModuleClient для подключения модуля к центру IoT Edge, запущенному на устройстве, аналогично тому, как экземпляры DeviceClient подключают устройства Интернета вещей к Центру Интернета вещей. Дополнительные сведения о классе ModuleClient и его методах обмена данными см. в справочнике по API для предпочитаемого языка пакета SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C и Python](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device._module_client?view=azure-java-stable) или [Node.js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
+Создайте экземпляр ModuleClient для подключения модуля к центру IoT Edge, запущенному на устройстве, аналогично тому, как экземпляры DeviceClient подключают устройства Интернета вещей к Центру Интернета вещей. Дополнительные сведения о классе ModuleClient и его методах обмена данными см. в справочнике по API для предпочитаемого языка пакета SDK: [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.moduleclient?view=azure-dotnet), [C и Python](https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/iothub-module-client-h), [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.sdk.iot.device.moduleclient?view=azure-java-stable) или [Node.js](https://docs.microsoft.com/javascript/api/azure-iot-device/moduleclient?view=azure-node-latest).
 
 
 ## <a name="next-steps"></a>Дополнительная информация

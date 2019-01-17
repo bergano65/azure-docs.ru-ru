@@ -3,7 +3,7 @@ title: Подключение к виртуальной машине SQL Server 
 description: Узнайте, как подключиться к системе SQL Server, выполняемой на виртуальной машине в Azure. В этом разделе используется классическая модель развертывания. Сценарии различаются в зависимости от конфигурации сети и расположения клиента.
 services: virtual-machines-windows
 documentationcenter: na
-author: rothja
+author: MashaMSFT
 manager: craigg
 tags: azure-resource-manager
 ms.assetid: aa5bf144-37a3-4781-892d-e0e300913d03
@@ -13,13 +13,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/12/2017
-ms.author: jroth
-ms.openlocfilehash: 522ece2528e43c1037dc6bb707201ecda8074dd9
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.author: mathoma
+ms.reviewer: jroth
+ms.openlocfilehash: 3baa4a9b91e76b9072714229b6a46e9fca69bcdd
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38705968"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54331390"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Подключение к виртуальной машине SQL Server в Azure
 
@@ -146,6 +147,6 @@ Server=mysqlvm;Integrated Security=true
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Инструкции по подготовке и действия по подключению приведены в статье [Подготовка виртуальной машины SQL Server на портале Azure](virtual-machines-windows-portal-sql-server-provision.md).
+Инструкции по подготовке и действия по подключению приведены в статье [Подготовка виртуальной машины SQL Server в Azure](virtual-machines-windows-portal-sql-server-provision.md).
 
 Другие темы, связанные с запуском SQL Server на виртуальных машинах Azure, рассматриваются в статье [SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-overview.md).

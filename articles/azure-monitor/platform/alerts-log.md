@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: 1516410952dfdfef0a0ef12c450040d1e3fb8a27
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 047b173339e2b3c0715d7843f581c1df231d6030
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54103775"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54230940"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor  
 
@@ -149,7 +149,7 @@ ms.locfileid: "54103775"
     "alertLocation": "southcentralus",
     "alertName": "samplelogalert",
     "alertTag": "hidden-link:/subscriptions/a123d7efg-123c-1234-5678-a12bc3defgh4/resourceGroups/myRG/providers/microsoft.insights/components/sampleAIapplication",
-    "alertDesription": "Sample log search alert",
+    "alertDescription": "Sample log search alert",
     "alertStatus": "true",
     "alertSource":{
         "Query":"requests",
@@ -180,7 +180,7 @@ ms.locfileid: "54103775"
     "location": "[variables('alertLocation')]",
     "tags":{"[variables('alertTag')]": "Resource"},
     "properties":{
-       "description": "[variables('alertDesription')]",
+       "description": "[variables('alertDescription')]",
        "enabled": "[variables('alertStatus')]",
        "source": {
            "query": "[variables('alertSource').Query]",

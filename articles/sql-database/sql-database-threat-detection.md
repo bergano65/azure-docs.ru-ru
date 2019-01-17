@@ -11,19 +11,19 @@ author: rmatchoro
 ms.author: ronmat
 ms.reviewer: vanto, carlrab
 manager: craigg
-ms.date: 01/03/2019
-ms.openlocfilehash: 3f4a120e2aaf2925805bec26f721d5cfb4194bf1
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.date: 01/11/2019
+ms.openlocfilehash: 330726eecc19659d978b1072ad02ad6d5a4ccb8b
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54041549"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54244381"
 ---
 # <a name="azure-sql-database-threat-detection-for-single-database"></a>Оповещение об обнаружении угроз для отдельной базы данных SQL Azure
 
 [Система обнаружения угроз](sql-database-threat-detection-overview.md) SQL Azure выявляет аномальные действия, указывающие на нестандартные и потенциально вредоносные попытки получить доступ к базам данных или воспользоваться их уязвимостями в отдельных [базах данных SQL](sql-database-technical-overview.md). Система обнаружения угроз может определить **потенциальную атаку путем внедрения кода SQL**, **доступ из необычного центра обработки данных или расположения**, **доступ из незнакомого субъекта или потенциально опасного приложения**, а также **подбор учетных данных SQL** (см. дополнительные сведения об [оповещениях системы обнаружения угроз](sql-database-threat-detection-overview.md#azure-sql-database-threat-detection-alerts)).
 
-Вы можете получать уведомления об обнаруженных угрозах с помощью [уведомлений по электронной почте](sql-database-threat-detection-overview.md#explore-anomalous-database-activities-upon-detection-of-a-suspicious-event) или [портала Azure](sql-database-threat-detection.md#explore-threat-detection-alerts-for-your-database-in-the-azure-portal)
+Вы можете получать уведомления об обнаруженных угрозах с помощью [уведомлений по электронной почте](sql-database-threat-detection-overview.md#explore-anomalous-database-activities-upon-detection-of-a-suspicious-event) или [портала Azure](sql-database-threat-detection-overview.md#explore-threat-detection-alerts-for-your-database-in-the-azure-portal)
 
 [Система обнаружения угроз](sql-database-threat-detection-overview.md) входит в состав предложения [Расширенная защита от угроз SQL](sql-advanced-threat-protection.md), которое представляет собой единый пакет расширенных средств обеспечения безопасности SQL. Доступ к системе обнаружения угроз можно получить через центральный портал SQL ATP. Там же ею можно управлять. За использование системы обнаружения угроз взимается плата в размере 15 долл. США в месяц для каждого логического сервера. При этом первые 30 дней системой можно пользоваться бесплатно.
 

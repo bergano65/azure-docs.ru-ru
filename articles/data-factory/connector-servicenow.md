@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 1e91bcdf3980b0f03967c09b0b7a75aa3d3a520a
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 234b78a97c2663121d0d585154695887a58b9522
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54014630"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54351749"
 ---
 # <a name="copy-data-from-servicenow-using-azure-data-factory"></a>Копирование данных из ServiceNow с помощью фабрики данных Azure
 
@@ -115,7 +115,7 @@ ms.locfileid: "54014630"
 Указывая в запросе схему и столбец для ServiceNow, обратите внимание на следующую информацию. Также просмотрите **советы по [улучшению производительности](#performance-tips) копирования**.
 
 - **Схема.** В запросе к ServiceNow укажите схему как `Actual` или `Display`, что можно рассматривать как параметр `sysparm_display_value` со значением true или false при вызове [REST API ServiceNow](https://developer.servicenow.com/app.do#!/rest_api_doc?v=jakarta&id=r_AggregateAPI-GET). 
-- **Столбец.** Имя столбца для фактического значения в схеме `Actual` — это `[columne name]_value`, а отображаемое имя в `Display` — это `[columne name]_display_value`. Обратите внимание, что имя столбца должно соответствовать имени в схеме, используемой в запросе.
+- **Столбец.** Имя столбца для фактического значения в схеме `Actual` — это `[column name]_value`, а отображаемое имя в `Display` — это `[column name]_display_value`. Обратите внимание, что имя столбца должно соответствовать имени в схеме, используемой в запросе.
 
 **Пример запроса:**
 `SELECT col_value FROM Actual.alm_asset` или 

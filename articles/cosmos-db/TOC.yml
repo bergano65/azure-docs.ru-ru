@@ -459,8 +459,6 @@ items:
   items:
   - name: Управление учетной записью базы данных
     href: how-to-manage-database-account.md
-  - name: Настройка срока жизни
-    href: how-to-time-to-live.md
   - name: Глобальное распределение
     items:
     - name: Управление согласованностью
@@ -479,10 +477,12 @@ items:
       href: how-to-create-container.md
     - name: Запрашивание контейнера
       href: how-to-query-container.md
-  - name: Индексация
-    items:
-    - name: Настройка индексирования
-      href: how-to-manage-indexing-policy.md
+    - name: Настройка срока жизни
+      href: how-to-time-to-live.md
+    - name: Индексация
+      items:
+      - name: Настройка индексирования
+        href: how-to-manage-indexing-policy.md
   - name: Безопасность
     items:
     - name: Настройка брандмауэра IP-адресов
@@ -617,9 +617,9 @@ items:
       href: use-cases.md
     - name: Приложения социальных сетей
       href: social-media-apps.md
-ms.openlocfilehash: 55b388b24d5526160423fa61c46620fc09796b24
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 75984b49a5af0538c7534fb326808dcb3c35b46c
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189632"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359805"

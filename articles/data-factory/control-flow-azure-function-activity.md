@@ -12,16 +12,20 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: douglasl
-ms.openlocfilehash: 0fd9b679411dd06336fd65bcb400b152316146fa
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: ee99733440d74424f98a2ed16de83c88bae53ff1
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188646"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321795"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
 
 Действие функции Azure позволяет запускать [Функции Azure](../azure-functions/functions-overview.md) в конвейере Фабрики данных. Чтобы запустить функцию Azure, необходимо создать подключение к связанной службе и действие, определяющее функцию Azure, которую вы планируете выполнить.
+
+Общие сведения об этой функции и ее демонстрацию см. в следующем 8-минутном видео:
+
+> [!VIDEO https://channel9.msdn.com/shows/azure-friday/Run-Azure-Functions-from-Azure-Data-Factory-pipelines/player]
 
 ## <a name="azure-function-linked-service"></a>Связанные службы функции Azure
 

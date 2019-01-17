@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 12/5/2018
+ms.date: 01/09/2019
 ms.author: roiyz
-ms.openlocfilehash: 2a29cae6e7f391dfee75e89ea91525268db3fa62
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 4bb27959bb57f3d59621e5bbbfaba9aa0c331432
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52971969"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54200689"
 ---
 # <a name="nvidia-gpu-driver-extension-for-windows"></a>Расширение драйвера GPU NVIDIA для Windows
 
@@ -37,7 +37,7 @@ ms.locfileid: "52971969"
 
 | Дистрибутив | Version (версия) |
 |---|---|
-| Windows 10 | Core |
+| Windows 10 (до версии 1803)| Core |
 | Windows Server 2016 | Core |
 | Windows Server 2012R2 | Core |
 

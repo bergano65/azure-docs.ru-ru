@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
-ms.openlocfilehash: a2213ac9b31623aed18855ce87e7e00870b05247
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: c3aef8c0c05c8f018a3218e15fd102163b89084f
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54107233"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214748"
 ---
 # <a name="log-analytics-faq"></a>Часто задаваемые вопросы по Log Analytics
 В этом списке вопросов и ответов от Майкрософт приведены часто задаваемые вопросы о Log Analytics в Microsoft Azure. Если у вас возникли дополнительные вопросы о Log Analytics, задайте их на [форуме](https://social.msdn.microsoft.com/Forums/azure/home?forum=opinsights). Если вопрос задается часто, мы добавим его в эту статью, чтобы его можно было найти быстро и легко.
@@ -63,7 +63,7 @@ ms.locfileid: "54107233"
 
 ### <a name="q-why-can-i-can-access-my-workspace-in-oms-portal-but-i-get-the-error-you-have-no-access-in-the-azure-portal"></a>В. Почему я могу получить доступ к своей рабочей области на портале OMS, но на портале Azure возникает ошибка "У вас нет доступа"?  
 
-Ответ. Чтобы получить доступ к рабочей области в Azure, вам должны быть назначены разрешения Azure. В некоторых случаях у вас может не оказаться соответствующих разрешений на доступ. В этих случаях ваш администратор должен предоставить вам разрешения в Azure. Дополнительные сведения см. в статье [Перемещение портала OMS в Azure](/../../azure-monitor/platform/oms-portal-transition.md).
+Ответ. Чтобы получить доступ к рабочей области в Azure, вам должны быть назначены разрешения Azure. В некоторых случаях у вас может не оказаться соответствующих разрешений на доступ. В этих случаях ваш администратор должен предоставить вам разрешения в Azure. Дополнительные сведения см. в статье [Перемещение портала OMS в Azure](oms-portal-transition.md).
 
 ### <a name="q-why-cant-i-cant-see-view-designer-entry-in-logs"></a>В. Почему я не вижу запись "Конструктор представлений" в журналах? 
 Ответ. Конструктор представлений доступен только в журналах для пользователей, которым назначены разрешения участника или роли с большими правами.

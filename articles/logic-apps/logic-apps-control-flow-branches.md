@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 10/10/2018
-ms.openlocfilehash: 68f7df2ab004477fae5df1d200fcd44929465e93
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 2e1c155a371fa96e4f772f632a9585948b012e54
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233129"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54232249"
 ---
 # <a name="create-or-join-parallel-branches-for-workflow-actions-in-azure-logic-apps"></a>Создание или присоединение параллельных ветвей для действий рабочих процессов в Azure Logic Apps
 
@@ -37,7 +37,7 @@ ms.locfileid: "50233129"
 
 ![Выполнение шагов в параллельном режиме](media/logic-apps-control-flow-branches/parallel.png)
 
-Перед продолжением рабочего процесса приложение логики ожидает завершения всех ветвей. Параллельные ветви выполняются, только если их значения свойств `runAfter` соответствуют состоянию завершенного родительского шага. Например, оба действия `branchAction1` и `branchAction2` настроены для выполнения только тогда, когда действие `parentAction` завершается с состоянием `Succeded`.
+Перед продолжением рабочего процесса приложение логики ожидает завершения всех ветвей. Параллельные ветви выполняются, только если их значения свойств `runAfter` соответствуют состоянию завершенного родительского шага. Например, оба действия `branchAction1` и `branchAction2` настроены для выполнения только тогда, когда действие `parentAction` завершается с состоянием `Succeeded`.
 
 > [!NOTE]
 > Прежде чем приступать, в приложении логики уже должен присутствовать шаг, на котором можно добавить параллельные ветви.

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/15/2018
 ms.author: tamram
 ms.component: common
-ms.openlocfilehash: b5a129c2a92c18b979a3b0c2eeea7fa19791551c
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 29b44e4b281ded635359148e251527c44efaa6d4
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53633771"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214051"
 ---
 # <a name="use-an-azure-ad-identity-to-access-azure-storage-with-cli-or-powershell-preview"></a>Использование удостоверения Azure AD для доступа к службе хранилища Azure с помощью интерфейса командной строки или PowerShell (предварительная версия)
 
@@ -84,7 +84,7 @@ az storage blob download --account-name storagesamples --container sample-contai
    Install-Module Az.Storage -Repository PSGallery -AllowPrerelease -AllowClobber -Force
    ```
 1. Закройте и снова откройте окно PowerShell.
-1. Вызовите командлет [New-AzStorageContext](https://docs.microsoft.com/powershell/module/azure.storage/new-AzStoragecontext) для создания контекста, добавив параметр `-UseConnectedAccount`. 
+1. Вызовите командлет [New-AzStorageContext](https://docs.microsoft.com/powershell/module/az.storage/new-azstoragecontext) для создания контекста, добавив параметр `-UseConnectedAccount`. 
 1. Чтобы вызвать командлет с помощью удостоверения Azure AD, передайте созданный контекст в этот командлет.
 
 В приведенном ниже примере показано, как перечислить большие двоичные объекты в контейнер из Azure PowerShell с помощью удостоверения Azure AD. Обязательно замените заполнители имен учетной записи и контейнера собственными значениями: 

@@ -1,17 +1,19 @@
 ---
 title: Исключение дисков из репликации при настройке аварийного восстановления с помощью службы Azure Site Recovery | Документация Майкрософт
 description: В статье объясняется, как исключать диски виртуальных машин из репликации во время аварийного восстановления в Azure.
-author: nsoneji
+author: mayurigupta13
+manager: rochakm
 ms.service: site-recovery
+services: site-recovery
 ms.topic: conceptual
-ms.date: 11/27/2018
-ms.author: nisoneji
-ms.openlocfilehash: 7de9dc497b1c9ee29b46aa0d645b7b28676cb22d
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.date: 01/19/2019
+ms.author: mayg
+ms.openlocfilehash: 9b26c80b59a57b4a9b2423e1a9028cf723f40fb1
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52849026"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321234"
 ---
 # <a name="exclude-disks-from-replication"></a>Исключение дисков из репликации
 В этой статье описывается, как исключать диски из репликации. Благодаря этому можно оптимизировать использование пропускной способности при репликации или же ресурсы целевой стороны, используемые такими дисками.
@@ -165,7 +167,7 @@ DB-Disk4 | Диск 4 | G:\ | База данных пользователя Da
 Рассмотрим виртуальную машину с диском с файлом подкачки, который можно исключить из репликации.
 Есть два способа.
 
-### <a name="case-1-the-paging-file-is-configured-on-the-d-drive"></a>Вариант 1. Файл подкачки настроен на диске "D:"
+### <a name="case-1-the-paging-file-is-configured-on-the-d-drive"></a>Вариант 1. Файл подкачки настроен на диске "D:"
 Конфигурация дисков.
 
 **Имя диска** | **№ диска операционной системы на виртуальной машине** | **Буква диска** | **Тип данных на диске**
@@ -194,7 +196,7 @@ DB-Disk3 | Диск 3 | F:\ | Пользовательские данные 2
 
 ![Параметры файла подкачки на виртуальной машине Azure](./media/hyper-v-exclude-disk/pagefile-on-Azure-vm-after-failover.png)
 
-### <a name="case-2-the-paging-file-is-configured-on-another-drive-other-than-d-drive"></a>Вариант 2. Файл подкачки настроен на другом диске (отличном от диска "D:")
+### <a name="case-2-the-paging-file-is-configured-on-another-drive-other-than-d-drive"></a>Вариант 2. Файл подкачки настроен на другом диске (отличном от диска "D:")
 
 Ниже приведена конфигурация дисков исходной виртуальной машины.
 

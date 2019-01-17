@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 08/28/2018
 ms.author: pafarley
 ms.custom: seodec18
-ms.openlocfilehash: 8640d89c5fb9e38fc6c982e21147361ad690964a
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: f4f588ad9123ec98cbae9f9bf03c08ec551a31a5
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53584451"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54232759"
 ---
 # <a name="tutorial-build-an-image-processing-app---c35"></a>Руководство. Создание приложения для обработки изображений — C&#35;
 
@@ -97,9 +97,6 @@ git clone --recurse-submodules https://github.com/Microsoft/Cognitive-Face-Windo
    |Распознавание текста (OCR) | Использует операцию [OCR](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fc), чтобы распознать и извлечь печатный текст из изображения. Вы можете выбрать язык самостоятельно или разрешить API компьютерного зрения определить язык автоматически. |
    |Распознавание текста V2 (на английском языке) | Использует операции [Распознавание текста](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2c6a154055056008f200) и [Получить результат операции распознавания текста](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/587f2cf1154055056008f201), чтобы асинхронно распознать и извлечь рукописный или печатный текст из изображения. |
    |Получение эскиза | Использует операцию [Получить эскиз](https://westcentralus.dev.cognitive.microsoft.com/docs/services/5adf991815e1060e6355ad44/operations/56f91f2e778daf14a499e1fb), чтобы создать эскиз для локального или удаленного изображения. |
-
-   > [!IMPORTANT]
-   > Корпорация Майкрософт получает переданные изображения и может использовать их для улучшения API компьютерного зрения и связанных с ним служб. Отправляя изображение, вы подтверждаете, что выполнили наши [правила поведения разработчиков](https://azure.microsoft.com/support/legal/developer-code-of-conduct/).
 
    На снимке экрана показана страница, предоставленная для сценария анализа изображений после анализа примера изображения.
    ![Снимок экрана страницы "Анализ изображений"](../Images/Analyze_Image_Example.PNG)

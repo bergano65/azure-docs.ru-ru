@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 1/14/2019
 ms.author: mabrigg
-ms.openlocfilehash: 67f363d14489340755251369b422475032d1e671
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: ca09427de2f18612146ff03e4eef705006823ca8
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47222502"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54302618"
 ---
 # <a name="manage-updates-in-azure-stack-overview"></a>Общие сведения об управлении обновлениями в Azure Stack
 
@@ -47,7 +47,7 @@ Azure Stack включает в себя поставщик ресурсов "О
 Настоятельно рекомендуем уведомлять пользователей о любых операциях технического обслуживания и планировать стандартные окна обслуживания по возможности в нерабочее время. Операции технического обслуживания могут влиять как на рабочие нагрузки клиентов, так и на операции портала.
 
 
-- Перед началом установки этого обновления запустите команду [Test-AzureStack](azure-stack-diagnostic-test.md) со следующими параметрами для проверки состояния Azure Stack и устраните все найденные проблемы с работой, включая все предупреждения и сбои. Кроме того, просмотрите активные предупреждения и решите проблемы с теми, которые требуют действия.  
+- Перед началом установки этого обновления запустите [Test-AzureStack](azure-stack-diagnostic-test.md) со следующими параметрами для проверки состояния Azure Stack и устраните все найденные операционные проблемы, включая все предупреждения и сбои. Кроме того, просмотрите активные предупреждения и решите проблемы с теми, которые требуют действия.  
 
   ```PowerShell
   Test-AzureStack -Include AzsControlPlane, AzsDefenderSummary, AzsHostingInfraSummary, AzsHostingInfraUtilization, AzsInfraCapacity, AzsInfraRoleSummary, AzsPortalAPISummary, AzsSFRoleSummary, AzsStampBMCSummary

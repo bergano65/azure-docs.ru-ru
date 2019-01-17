@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 4d3c67974bc1dd0e52d3de457071d550a6379e36
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 7ad328eec7e16b5368b78a0dfccbf5c09adb5c13
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54023104"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54330013"
 ---
 # <a name="push-data-to-an-azure-search-index-by-using-azure-data-factory"></a>Передача данных в индекс Поиска Azure с использованием фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -38,17 +38,17 @@ ms.locfileid: "54023104"
 ## <a name="getting-started"></a>Приступая к работе
 Вы можете создать конвейер с действием копирования, который перемещает данные из исходного хранилища данных в индекс Поиска Azure, с помощью различных инструментов и интерфейсов API.
 
-Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве по созданию конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных.
+Проще всего создать конвейер с помощью **мастера копирования**. Пошаговые инструкции см. в [руководстве Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md), где приведено краткое пошаговое руководство по созданию конвейера с помощью мастера копирования данных.
 
-Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). 
+Для создания конвейера можно использовать указанные ниже средства. **Портал Azure**, **Visual Studio**, **Azure PowerShell**, **шаблон Azure Resource Manager**, **API .NET** и **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в [руководстве по действию копирования](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md).
 
-Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги: 
+Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
 1. Создайте **связанные службы**, чтобы связать входные и выходные данные с фабрикой данных.
-2. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования. 
-3. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. 
+2. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования.
+3. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных.
 
-Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON.  Пример определений JSON для сущностей Фабрики данных, которые используются для копирования данных в индекс Поиска Azure, доступен в разделе [Пример JSON. Копирование данных с локального SQL Server в индекс поиска Azure](#json-example-copy-data-from-on-premises-sql-server-to-azure-search-index) далее в этой статье. 
+Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON.  Пример определений JSON для сущностей Фабрики данных, которые используются для копирования данных в индекс Поиска Azure, доступен в разделе [Пример JSON. Копирование данных с локального SQL Server в индекс поиска Azure](#json-example-copy-data-from-on-premises-sql-server-to-azure-search-index) далее в этой статье.
 
 Следующие разделы содержат сведения о свойствах JSON, которые используются для определения сущностей фабрики данных, относящихся к индексу Поиска Azure.
 
@@ -113,11 +113,11 @@ AzureSearchSink проявляет два типа поведения upsert (с
 
 В примере ниже используется следующее:
 
-1.  Связанная служба типа [AzureSqlDW](#linked-service-properties).
-2.  Связанная служба типа [OnPremisesSqlServer](data-factory-sqlserver-connector.md#linked-service-properties).
-3.  Входной [набор данных](data-factory-create-datasets.md) типа [SqlServerTable](data-factory-sqlserver-connector.md#dataset-properties).
-4.  Выходной [набор данных](data-factory-create-datasets.md) типа [AzureSearchIndex](#dataset-properties).
-4.  [Конвейер](data-factory-create-pipelines.md) с действием копирования, в котором используются [SqlSource](data-factory-sqlserver-connector.md#copy-activity-properties) и [AzureSearchIndexSink](#copy-activity-properties).
+1. Связанная служба типа [AzureSqlDW](#linked-service-properties).
+2. Связанная служба типа [OnPremisesSqlServer](data-factory-sqlserver-connector.md#linked-service-properties).
+3. Входной [набор данных](data-factory-create-datasets.md) типа [SqlServerTable](data-factory-sqlserver-connector.md#dataset-properties).
+4. Выходной [набор данных](data-factory-create-datasets.md) типа [AzureSearchIndex](#dataset-properties).
+4. [Конвейер](data-factory-create-pipelines.md) с действием копирования, в котором используются [SqlSource](data-factory-sqlserver-connector.md#copy-activity-properties) и [AzureSearchIndexSink](#copy-activity-properties).
 
 В этом примере каждый час копируются данные временных рядов из локальной базы данных SQL Server в индекс Поиска Azure. Используемые в этом примере свойства JSON описаны в разделах, следующих за примерами.
 
@@ -201,7 +201,7 @@ AzureSearchSink проявляет два типа поведения upsert (с
             "frequency": "Minute",
             "interval": 15
         }
-   }
+    }
 }
 ```
 
@@ -210,13 +210,13 @@ AzureSearchSink проявляет два типа поведения upsert (с
 Конвейер содержит действие копирования, которое использует входной и выходной наборы данных и выполняется каждый час. В определении JSON конвейера для свойства type параметра **source** установлено значение **SqlSource**, а для свойства type параметра **sink** — значение **AzureSearchIndexSink**. SQL-запрос, указанный для свойства **SqlReaderQuery** , выбирает для копирования данные за последний час.
 
 ```JSON
-{  
-    "name":"SamplePipeline",
-    "properties":{  
+{
+  "name":"SamplePipeline",
+  "properties":{
     "start":"2014-06-01T18:00:00",
     "end":"2014-06-01T19:00:00",
     "description":"pipeline for copy activity",
-    "activities":[  
+    "activities":[
       {
         "name": "SqlServertoAzureSearchIndex",
         "description": "copy activity",
@@ -240,7 +240,7 @@ AzureSearchSink проявляет два типа поведения upsert (с
             "type": "AzureSearchIndexSink"
           }
         },
-       "scheduler": {
+        "scheduler": {
           "frequency": "Hour",
           "interval": 1
         },
@@ -251,8 +251,8 @@ AzureSearchSink проявляет два типа поведения upsert (с
           "timeout": "01:00:00"
         }
       }
-     ]
-   }
+    ]
+  }
 }
 ```
 
@@ -288,7 +288,7 @@ AzureSearchSink проявляет два типа поведения upsert (с
 
 Также можно сопоставить столбцы из набора данных, используемого в качестве источника, со столбцами из приемника в определении действия копирования. Дополнительные сведения см. в статье [Сопоставление столбцов исходного набора данных со столбцами целевого набора данных](data-factory-map-columns.md).
 
-## <a name="performance-and-tuning"></a>Производительность и настройка  
+## <a name="performance-and-tuning"></a>Производительность и настройка
 Сведения о ключевых факторах, влияющих на производительность перемещения данных (действие копирования), и различных способах оптимизации этого процесса см. в статье [Руководство по настройке производительности действия копирования](data-factory-copy-activity-performance.md).
 
 ## <a name="next-steps"></a>Дополнительная информация

@@ -9,12 +9,12 @@ ms.topic: reference
 ms.date: 09/20/2018
 ms.author: robb
 ms.component: diagnostic-extension
-ms.openlocfilehash: 1d092d0afcb4c9689a55f9af2940884867a17089
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: b5f1247c43dcbd836c684dbf41bafd0d319e5f7c
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104596"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54230481"
 ---
 # <a name="azure-diagnostics-13-and-later-configuration-schema"></a>Схема конфигурации системы диагностики Azure версии 1.3 и более поздней
 > [!NOTE]
@@ -613,7 +613,7 @@ http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration
 |Атрибут|type|ОПИСАНИЕ|  
 |---------------|----------|-----------------|  
 |**bufferQuotaInMB**|**unsignedInt**|Необязательный элемент. Указывает максимальный объем хранилища файловой системы, который доступен для указанных данных.<br /><br /> Значение по умолчанию — 0.|  
-|**scheduledTransferLogLevelFilterr**|**string**|Необязательный элемент. Указывает минимальный уровень серьезности для передаваемых записей журнала. Значение по умолчанию — **Undefined**, при котором передаются все журналы. Другие возможные значения (в порядке убывания информативности): **Verbose**, **Information**, **Warning**, **Error** и **Critical**.|  
+|**scheduledTransferLogLevelFilter**|**string**|Необязательный элемент. Указывает минимальный уровень серьезности для передаваемых записей журнала. Значение по умолчанию — **Undefined**, при котором передаются все журналы. Другие возможные значения (в порядке убывания информативности): **Verbose**, **Information**, **Warning**, **Error** и **Critical**.|  
 |**scheduledTransferPeriod**|**duration**|Необязательный элемент. Указывает интервал между запланированными передачами данных, округленный с точностью до ближайшей минуты.<br /><br /> По умолчанию используется значение PT0S.|  
 |**Приемники** |**string**| Добавлено в версии 1.5. Необязательный элемент. Указывает расположение приемника для отправки диагностических данных. Например, Application Insights или Центры событий Azure.|  
 

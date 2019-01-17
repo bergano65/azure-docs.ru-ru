@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 11/13/2018
 ms.author: genli
-ms.openlocfilehash: 2299dd6c723aa3059c293170c655918e5236ca0e
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 5842c5edd0402d61f564ab15e34e8f69c0e718d7
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53138166"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54213456"
 ---
 #  <a name="cannot-rdp-to-azure-virtual-machines-because-the-dhcp-client-service-is-disabled"></a>Не удается подключиться по протоколу удаленного рабочего стола к виртуальным машинам Azure из-за того, что отключена служба DHCP-клиента
 
@@ -62,8 +62,8 @@ ms.locfileid: "53138166"
 
 ### <a name="use-serial-control"></a>Использование последовательной консоли
 
-1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](./serial-console-windows.md#use-cmd-or-powershell-in-serial-console
-). Если последовательная консоль на нужной виртуальной машине не включена, ознакомьтесь со сведениями о том, как [сбросить сетевой интерфейс](reset-network-interface.md).
+1. Подключитесь к [последовательной консоли и откройте экземпляр командной строки](serial-console-windows.md#use-cmd-or-powershell-in-serial-console).
+Иначе будет отображено такое сообщение об ошибке несоответствия встроенного ПО: "Невозможно продолжить сброс параметров к значениям по умолчанию из-за несоответствия версий встроенного ПО". Если последовательная консоль на нужной виртуальной машине не включена, ознакомьтесь со сведениями о том, как [сбросить сетевой интерфейс](reset-network-interface.md).
 2. Проверьте, отключен ли протокол DHCP в сетевом интерфейсе:
 
         sc query DHCP
@@ -95,7 +95,7 @@ ms.locfileid: "53138166"
 
 #### <a name="dhcp-client-service-is-stopped-because-of-an-access-denied-error"></a>Служба DHCP-клиента остановлена из-за ошибки отказа в доступе
 
-1. Подключитесь к [последовательной консоли](serial-console-windows.md#) и откройте экземпляр PowerShell.
+1. Подключитесь к [последовательной консоли](serial-console-windows.md) и откройте экземпляр PowerShell.
 2. Скачайте средство Process Monitor, выполнив следующий скрипт:
 
    ```

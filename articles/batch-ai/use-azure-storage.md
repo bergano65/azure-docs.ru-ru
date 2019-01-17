@@ -12,12 +12,12 @@ ms.date: 08/14/2018
 ms.author: danlep
 ms.custom: mvc
 ROBOTS: NOINDEX
-ms.openlocfilehash: 1e9a4c6355c60b18bb78aae362c1e2f142e2d864
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: c1ebcae04b51fbf18da22872e3e4160a37a7e2fe
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53408006"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54201165"
 ---
 # <a name="store-batch-ai-job-input-and-output-with-azure-storage"></a>Хранение входных и выходных данных задания Batch AI с помощью хранилища Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "53408006"
 - <FILE_SHARE_NAME> — имя общей папки
 - <BLOB_CONTAINER_NAME> — имя контейнера BLOB-объектов
 
-Чтобы подключить тома хранилища Azure с помощью пакетов SDK Azure Batch AI, задайте свойство `mount_volumes` (Python) или `MountVolumes` (C#, Java) в `JobCreateParameters`. При подключении тома с помощью пакетов SDK Azure Batch AI, необходимо предоставить учетные данные учетной записи хранения. Ознакомьтесь со схемами для подключения томов в [Python](https://docs.microsoft.com/python/api/azure-mgmt-batchai/azure.mgmt.batchai.models.MountVolumes?view=azure-python), [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.batchai.models.mountvolumes?view=azure-dotnet) и [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.management.batchai._mount_volumes?view=azure-java-stable).
+Чтобы подключить тома хранилища Azure с помощью пакетов SDK Azure Batch AI, задайте свойство `mount_volumes` (Python) или `MountVolumes` (C#, Java) в `JobCreateParameters`. При подключении тома с помощью пакетов SDK Azure Batch AI, необходимо предоставить учетные данные учетной записи хранения. Ознакомьтесь со схемами для подключения томов в [Python](https://docs.microsoft.com/python/api/azure-mgmt-batchai/azure.mgmt.batchai.models.MountVolumes?view=azure-python), [C#](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.batchai.models.mountvolumes?view=azure-dotnet) и [Java](https://docs.microsoft.com/java/api/com.microsoft.azure.management.batchai.mountvolumes?view=azure-java-stable).
 
 ### <a name="mount-volumes-to-a-cluster"></a>Подключение томов к кластеру
 

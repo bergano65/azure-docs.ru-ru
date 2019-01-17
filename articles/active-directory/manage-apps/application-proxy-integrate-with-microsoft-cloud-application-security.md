@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 12/19/2018
 ms.author: barbkess
 ms.reviewer: japere
-ms.openlocfilehash: 33da0b09339460d66650c492ec125461bc0980b0
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 3be75f2fe004939eff6bf6cc960759db69bfb93a
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53730579"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54215105"
 ---
 # <a name="configure-real-time-application-access-monitoring-with-microsoft-cloud-app-security-and-azure-active-directory"></a>Настройка мониторинга доступа к приложениям в режиме реального времени с помощью Microsoft Cloud App Security и Azure Active Directory
 Настройте локальное приложение в Azure Active Directory (Azure AD) для использования Microsoft Cloud App Security (MCAS) в целях мониторинга в режиме реального времени. MCAS поддерживает функцию управления условным доступом к приложениям для мониторинга сеансов и управления ими в режиме реального времени на основе политик условного доступа. Эти политики можно применять к локальным приложениям, использующим Application Proxy в Azure Active Directory (Azure AD).
@@ -27,7 +27,7 @@ ms.locfileid: "53730579"
 - Использование сертификатов клиентов или принципов соответствия устройств для блокировки доступа к определенным приложениям с неуправляемых устройств.
 - Ограничение сеансов пользователей из некорпоративных сетей. Пользователям, обращающимся к приложениям из-за пределов корпоративной сети, можно предоставить ограниченные права доступа. Например, этот ограниченный доступ может блокировать скачивание конфиденциальных документов пользователем.
 
-Дополнительные сведения см. в статье о [защите приложений с помощью управления условным доступом к приложениям для Microsoft Cloud App Security](/cloud-app-security/proxy-intro-aad.md).
+Дополнительные сведения см. в статье о [защите приложений с помощью управления условным доступом к приложениям для Microsoft Cloud App Security](/cloud-app-security/proxy-intro-aad).
 
 ## <a name="requirements"></a>Требования
 
