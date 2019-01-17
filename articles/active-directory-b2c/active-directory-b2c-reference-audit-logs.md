@@ -10,19 +10,19 @@ ms.workload: identity
 ms.date: 08/04/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 31f0517cd4d61fa324072eae954404c899451cc3
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 93ca61c610856ebba64bff46b2338090f317ad56
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54117407"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54302040"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
 Azure Active Directory B2C (Azure AD B2C) создает журналы аудита, содержащие сведения о действиях для ресурсов B2C, выданных токенах и доступе с правами администратора. Эта статья содержит краткий обзор данных, предоставляемых через журналы аудита, и инструкции о том, как получить доступ к этим данным для вашего клиента Azure AD B2C.
 
 > [!IMPORTANT]
-> Журналы аудита хранятся всего семь дней. Если требуется более длительный срок хранения, спланируйте скачивание и хранение журналов с помощью одного из описанных ниже методов. 
+> Журналы аудита хранятся всего семь дней. Если требуется более длительный срок хранения, спланируйте скачивание и хранение журналов с помощью одного из описанных ниже методов.
 
 ## <a name="overview-of-activities-available-in-the-b2c-category-of-audit-logs"></a>Общие сведения о действиях, доступных в категории B2C для журналов аудита
 Категория **B2C** в журналах аудита содержит следующие типы действий:
@@ -43,7 +43,7 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 
 ## <a name="accessing-audit-logs-through-the-azure-portal"></a>Доступ к журналам аудита через портал Azure
 1. Перейдите на [портал Azure](https://portal.azure.com). Перейдите в каталог B2C.
-2. Щелкните **Azure Active Directory** на панели "Избранное" слева. 
+2. Щелкните **Azure Active Directory** на панели "Избранное" слева.
     
     ![Журналы аудита — кнопка "Azure Active Directory"](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-aad.png)
 
@@ -56,14 +56,14 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 
     ![Журналы аудита — категория](./media/active-directory-b2c-reference-audit-logs/audit-logs-portal-category.png)
 
-Вы увидите список действий, внесенных в журнал за последние семь дней. 
+Вы увидите список действий, внесенных в журнал за последние семь дней.
 - Используйте раскрывающийся список **Тип ресурса действия** для фильтрации указанных выше типов действий.
 - Используйте раскрывающийся список **Диапазон дат**, чтобы отфильтровать диапазон дат для указанных действий.
 - Если щелкнуть определенную строку в списке, справа отображается контекстно-зависимое окно с дополнительными атрибутами, связанными с этим действием.
 - Нажмите кнопку **Скачать**, чтобы скачать действия в виде CSV-файла.
 
 ## <a name="accessing-audit-logs-through-the-azure-ad-reporting-api"></a>Доступ к журналам аудита через API отчетов Azure AD
-Журналы аудита публикуются в том же конвейере, что и другие действия для Azure Active Directory, поэтому к ним можно обратиться через [API отчетов Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-audit-reference). 
+Журналы аудита публикуются в том же конвейере, что и другие действия для Azure Active Directory, поэтому к ним можно обратиться через [API отчетов Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-reporting-api-audit-reference).
 
 ### <a name="prerequisites"></a>Предварительные требования
 Чтобы проверить подлинность в API отчетов Azure AD, нужно сначала зарегистрировать приложение. Выполните действия из раздела [Предварительные требования для доступа к интерфейсам API отчетов Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-reporting-api-getting-started/).
@@ -82,7 +82,7 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 # Constants
 $ClientID       = "your-client-application-id-here"       # Insert your application's Client ID, a Globally Unique ID (registered by Global Admin)
 $ClientSecret   = "your-client-application-secret-here"   # Insert your application's Client Key/Secret string
-$loginURL       = "https://login.microsoftonline.com"     
+$loginURL       = "https://login.microsoftonline.com"
 $tenantdomain   = "your-b2c-tenant.onmicrosoft.com"       # AAD B2C Tenant; for example, contoso.onmicrosoft.com
 $resource       = "https://graph.windows.net"             # Azure AD Graph API resource URI
 $7daysago       = "{0:s}" -f (get-date).AddDays(-7) + "Z" # Use 'AddMinutes(-5)' to decrement minutes, for example
@@ -93,13 +93,13 @@ $body       = @{grant_type="client_credentials";resource=$resource;client_id=$Cl
 $oauth      = Invoke-RestMethod -Method Post -Uri $loginURL/$tenantdomain/oauth2/token?api-version=1.0 -Body $body
 
 # Parse audit report items, save output to file(s): auditX.json, where X = 0 thru n for number of nextLink pages
-if ($oauth.access_token -ne $null) {   
+if ($oauth.access_token -ne $null) {
     $i=0
     $headerParams = @{'Authorization'="$($oauth.token_type) $($oauth.access_token)"}
-    $url = 'https://graph.windows.net/' + $tenantdomain + '/activities/audit?api-version=beta&$filter=category eq ''B2C''and activityDate gt ' + $7daysago 
+    $url = 'https://graph.windows.net/' + $tenantdomain + '/activities/audit?api-version=beta&$filter=category eq ''B2C''and activityDate gt ' + $7daysago
 
     # loop through each query page (1 through n)
-    Do{
+    Do {
         # display each event on the console window
         Write-Output "Fetching data using Uri: $url"
         $myReport = (Invoke-WebRequest -UseBasicParsing -Headers $headerParams -Uri $url)
@@ -117,4 +117,3 @@ if ($oauth.access_token -ne $null) {
     Write-Host "ERROR: No Access Token"
 }
 ```
-

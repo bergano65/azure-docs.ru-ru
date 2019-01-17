@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/04/2018
 ms.author: bwren
-ms.openlocfilehash: 03268981bcfe90f14f35c74effe5799dd31e4ac0
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 0d589156824c7b9f3f6a8c31591d69479d11780a
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53185789"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214136"
 ---
 # <a name="parse-text-data-in-log-analytics"></a>Анализ текстовых данных в Log Analytics
 Некоторые данные, собранные Log Analytics, будут содержать в одном свойстве несколько частей информации. Анализ этих данных в нескольких свойствах облегчает использование в запросах. Типичным примером является [особый журнал](../../log-analytics/log-analytics-data-sources-custom-logs.md), который собирает всю запись журнала с несколькими значениями в одно свойство. Создавая отдельные свойства для разных значений, вы можете выполнять поиск и вычисления в каждом из них.
@@ -98,7 +98,7 @@ AzureActivity
 
 
 ### <a name="regular-expressions"></a>Регулярные выражения
-Если ваши данные можно идентифицировать с помощью регулярного выражения, вы можете использовать [функции, которые используют регулярные выражения](/azure/kusto/query/re2) для извлечения отдельных значений. В следующем примере [извлечь](/kusto/query/extractfunction) используется для выделения поля _UPN_ из записей _AzureActivity_, а затем для возврата отдельных пользователей.
+Если ваши данные можно идентифицировать с помощью регулярного выражения, вы можете использовать [функции, которые используют регулярные выражения](/azure/kusto/query/re2) для извлечения отдельных значений. В следующем примере [извлечь](/azure/kusto/query/extractfunction) используется для выделения поля _UPN_ из записей _AzureActivity_, а затем для возврата отдельных пользователей.
 
 ```Kusto
 AzureActivity

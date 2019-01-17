@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/09/2018
 ms.author: scottwhi
 ms.custom: include file
-ms.openlocfilehash: a8d588b186652ab86ee1e8152bd9be08f0f1ef04
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 6016b13fe7d3e1f3b673bd2446d2f68b04878cd6
+ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978706"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54193466"
 ---
 Статистика Bing предоставляет данные аналитики для API-интерфейсов поиска Bing. Аналитика включает в себя вызов тома, часто используемые строки запроса, географическое распределение и многое другое. Чтобы включить статистику Bing в вашей платной подписке на Поиск Bing, перейдите к [панели мониторинга Azure](https://portal.azure.com/#create/Microsoft.CognitiveServicesBingSearch-v7), выберите свою платную подписку и нажмите кнопку "Включить статистику Bing". Включение статистики Bing слегка увеличивает цену на подписку (см. [цены](https://aka.ms/bingstatisticspricing)).
 

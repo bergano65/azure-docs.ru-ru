@@ -12,30 +12,23 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/21/2017
+ms.date: 01/14/2019
 ms.author: terrylan
-ms.openlocfilehash: 8ca9f0b75627e7ad366b3c02ec3126713a283ed2
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.openlocfilehash: 4945978fdc27a298daf4de0604b894c53ba51dbe
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50233741"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321424"
 ---
 # <a name="application-architecture-on-azure"></a>Архитектура приложения в Azure
 Для защиты облачных решений на платформе Microsoft Azure крайне важно иметь надежную архитектурную основу. Глубокое понимание архитектуры приложений и служб обеспечит серьезные преимущества архитекторам, проектировщикам и разработчикам программного обеспечения. Эти базовые знания помогут вам понять все компоненты облачных решений и упростить интеграцию решений по обеспечению безопасности на всех этапах разработки и реализации.
 
 Мы предлагаем следующие возможности для изучения и проектирования архитектуры:
 
-* инфографика по архитектурам;
 * проекты архитектуры;
 * облачный и корпоративный набор символов;
 * шаблон трехмерных проектов Visio.
-
-## <a name="architectural-infographics"></a>инфографика по архитектурам;
-Корпорация Майкрософт опубликовала несколько постеров и инфографических материалов на тему проектирования архитектуры. К ним относятся следующие:
-
-* [Building Real-World Cloud Applications](https://azure.microsoft.com/documentation/infographics/building-real-world-cloud-apps/)
-* [Scaling with Cloud Services](https://azure.microsoft.com/documentation/infographics/cloud-services/)
 
 ## <a name="architectural-blueprints"></a>проекты архитектуры;
 Корпорация Майкрософт опубликовала пакет обобщенных [проектов архитектуры](https://aka.ms/azblueprints) , демонстрирующих механизм создания систем определенных типов с помощью продуктов Майкрософт.

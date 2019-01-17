@@ -9,12 +9,12 @@ ms.date: 12/26/2018
 author: sivethe
 ms.author: sivethe
 ms.custom: seodec18
-ms.openlocfilehash: 34ec22550106f03bc90c95b407af088327b7837f
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 6cdfa7492a9916cc3e2300ad71e21acfb68e3d30
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036177"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352246"
 ---
 # <a name="connect-a-nodejs-mongoose-application-to-azure-cosmos-db"></a>Подключение приложения Mongoose Node.js к Azure Cosmos DB
 
@@ -183,7 +183,7 @@ Mongoose также использует концепцию, называему�
 
 1. Теперь при входе на портал Azure вы увидите две коллекции, созданные в Cosmos DB.
 
-    ![Руководство по Node.js. Снимок экрана: портал Azure с учетной записью Azure Cosmos DB и выделенными именами коллекций. База данных Node][mutiple-coll]
+    ![Руководство по Node.js. Снимок экрана: портал Azure с учетной записью Azure Cosmos DB и выделенными именами коллекций. База данных Node][multiple-coll]
 
 1. Наконец, выполните считывание данных из Cosmos DB. Так как используется стандартная операционная модель Mongoose, операции чтения идентичны таким же операциям с Mongoose.
 
@@ -313,4 +313,4 @@ Mongoose также использует концепцию, называему�
 - Ознакомьтесь с [примерами](mongodb-samples.md) MongoDB с API Azure Cosmos DB для MongoDB.
 
 [alldata]: ./media/mongodb-mongoose/mongo-collections-alldata.png
-[mutiple-coll]: ./media/mongodb-mongoose/mongo-mutliple-collections.png
+[multiple-coll]: ./media/mongodb-mongoose/mongo-mutliple-collections.png

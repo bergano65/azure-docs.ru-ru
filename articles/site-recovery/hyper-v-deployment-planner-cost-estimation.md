@@ -2,18 +2,18 @@
 title: Просмотр отчета об оценке затрат Планировщика развертывания Azure Site Recovery для аварийного восстановления виртуальных машин Hyper-V в Azure | Документация Майкрософт
 description: В этой статье описано, как просмотреть отчет об оценке затрат, сформированный Планировщиком ресурсов Azure Site Recovery при аварийном восстановлении Hyper-V в Azure.
 services: site-recovery
-author: nsoneji
-manager: garavd
+author: mayurigupta13
+manager: rochakm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
-ms.author: nisoneji
-ms.openlocfilehash: eaccbc93fa1e78132527798dcef27babc8a2cc09
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.author: mayg
+ms.openlocfilehash: 03f71e4e10b65d9f295e13cdd8bc6881622c523d
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52845031"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54320288"
 ---
 # <a name="cost-estimation-report-by-azure-site-recovery-deployment-planner"></a>Отчет об оценке затрат, созданный в планировщике развертывания Azure Site Recovery 
 

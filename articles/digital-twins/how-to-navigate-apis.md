@@ -2,18 +2,18 @@
 title: Переход по API-интерфейсам Azure Digital Twins | Документация Майкрософт
 description: Сведения об общих шаблонах запросов API управления Azure Digital Twins.
 author: dsk-2015
-manager: bertvanhoof
+manager: philmea
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 1/7/2019
 ms.author: dkshir
-ms.openlocfilehash: 2221e8b22450a353da42564e5b93342a11e59f71
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 9cfcdc879e36b93e21bff6f91886536d799553bb
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54109399"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54200961"
 ---
 # <a name="how-to-use-azure-digital-twins-management-apis"></a>Как использовать API управления Azure Digital Twins
 
@@ -25,11 +25,11 @@ API управления Azure Digital Twins предоставляют эффе
 
 * [/spaces](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Spaces). Эти программные интерфейсы взаимодействуют с физическими расположениями в вашем экземпляре настройки. Они помогают создавать и удалять цифровые сопоставления физических расположений, а также управлять ими в виде [пространственного графа](concepts-objectmodel-spatialgraph.md#spatial-intelligence-graph).
 
-* [/resources](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Resources). Эти программные интерфейсы помогают настроить ресурсы, такие как центр Интернета вещей, для экземпляра Digital Twins.
-
 * [/devices](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Devices). Эти программные интерфейсы взаимодействуют с устройствами в экземпляре настройки. Эти устройства могут управлять одними или несколькими датчиками. Например, устройством может быть телефон, датчик Raspberry Pi, шлюз Lora и т. д.
 
 * [/sensors](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Sensors). Эти программные интерфейсы помогают взаимодействовать с датчиками, связанными с устройствами и физическими расположениями. Датчики записывают и отправляют значения окружающей среды, которые затем можно использовать, чтобы управлять условиями окружающей среды.  
+
+* [/resources](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Resources). Эти программные интерфейсы помогают настроить ресурсы, такие как центр Интернета вещей, для экземпляра Digital Twins.
 
 * [/types](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index#!/Types). Эти программные интерфейсы позволяют связать расширенные типы с объектами Digital Twins, чтобы добавить к ним определенные характеристики. Эти типы позволяют легко фильтровать и группировать объекты в пользовательском интерфейсе и настраиваемых функциях, обрабатывающих данные телеметрии. Примерами расширенных типов являются *DeviceType*, *SensorType*, *SensorDataType*, *SpaceType*, *SpaceSubType*, *SpaceBlobType*, *SpaceResourceType* и другие.
 

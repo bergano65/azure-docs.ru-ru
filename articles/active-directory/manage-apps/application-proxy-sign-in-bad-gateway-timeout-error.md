@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 05/21/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: c26f9c319a8260f4c19933d640310923b9c36db7
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 768a9d930314882f88eab630365475d69aa5f83b
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53134834"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54213728"
 ---
 # <a name="cant-access-this-corporate-application-error-when-using-an-application-proxy-application"></a>Ошибка "Can't Access this Corporate Application" (Не удается обратиться к этому корпоративному приложению) при использовании приложения прокси приложения
 
@@ -62,7 +62,7 @@ ms.locfileid: "53134834"
 
 Если вы видите ошибку с запретом, значит пользователь не назначен этому приложению. Эта ошибка может возникнуть либо в Azure Active Directory, либо в серверном приложении.
 
-Чтобы узнать, как назначить пользователям приложению в Azure, см. [документацию по конфигурации](https://docs.microsoft.com/azure/active-directory/application-proxy-add-on-premises-application#add-a-test-user).
+Чтобы узнать, как назначить пользователям приложению в Azure, см. [документацию по конфигурации](application-proxy-add-on-premises-application.md#test-the-application).
 
 Если вы подтверждаете, что пользователь назначен приложению в Azure, проверьте конфигурацию пользователей в серверном приложении. При использовании ограниченного делегирования Kerberos или встроенной проверки подлинности Windows рекомендации можно получить на странице устранения неполадок с KCD.
 

@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
-ms.openlocfilehash: 0bc44dc31de4a45127468b956d01d7c3f8d92985
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 47b58e74f57640098751b38c1a4fb504838c9ced
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54122825"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54242347"
 ---
 Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/azure-monitor/app/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
 
@@ -31,7 +31,7 @@ ms.locfileid: "54122825"
 
 ## <a name="alerts"></a>Оповещения
 
-На основе метрик производительности можно создавать [оповещения](../articles/azure-monitor/platform/alerts-overview.md). Например, вы можете использовать оповещения для уведомления о том, что средняя загрузка ЦП превышает пороговое значение или показатель свободного места на диске ниже определенного значения. Оповещения можно настроить на [портале Azure](../articles/monitoring-and-diagnostics/insights-alerts-portal.md) с использованием [Azure PowerShell](../articles/monitoring-and-diagnostics/insights-alerts-powershell.md) или [Azure CLI](../articles/monitoring-and-diagnostics/insights-alerts-command-line-interface.md).
+На основе метрик производительности можно создавать [оповещения](../articles/azure-monitor/platform/alerts-overview.md). Например, вы можете использовать оповещения для уведомления о том, что средняя загрузка ЦП превышает пороговое значение или показатель свободного места на диске ниже определенного значения. Оповещения можно настроить на [портале Azure](../articles/azure-monitor/platform/alerts-classic-portal.md) с использованием [Azure PowerShell](../articles/azure-monitor/platform/alerts-classic-portal.md#with-powershell) или [Azure CLI](../articles/azure-monitor/platform/alerts-classic-portal.md#with-azure-cli).
 
 ## <a name="azure-service-health"></a>Работоспособность служб Azure
 

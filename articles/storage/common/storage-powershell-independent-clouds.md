@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/24/2017
 ms.author: rogarana
 ms.component: common
-ms.openlocfilehash: 842a9354cf20648393c3262736c0a1e9654a3c70
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: f7d5fcf1905200bc214a3ff42db9b7b511768dd0
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53628346"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214901"
 ---
 # <a name="managing-storage-in-the-azure-independent-clouds-using-powershell"></a>Управление службой хранилища в независимых от Azure облаках с помощью Azure PowerShell
 
@@ -37,7 +37,7 @@ ms.locfileid: "53628346"
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
-Запустите командлет [Get-AzEnvironment](/powershell/module/az.profile/get-Azenvironment), чтобы просмотреть доступные среды Azure.
+Запустите командлет [Get-AzEnvironment](/powershell/module/az.accounts/get-azenvironment), чтобы просмотреть доступные среды Azure.
    
 ```powershell
 Get-AzEnvironment
@@ -71,7 +71,7 @@ Get-AzLocation | select Location, DisplayName
 
 ### <a name="get-endpoint-using-get-azenvironment"></a>Получение конечной точки с помощью командлета Get-AzEnvironment 
 
-Получите суффикс конечной точки с помощью командлета [Get AzEnvironment](/powershell/module/az.profile/get-azenvironment). Конечная точка — это свойство среды *StorageEndpointSuffix*. В приведенном ниже фрагменте кода показано, как это сделать. Все эти команды возвращают такие значения, как core.cloudapp.net или core.cloudapi.de и т. д. Добавьте это значение в службу хранилища для доступа к ней. Например, конечная точка queue.core.cloudapi.de получит доступ к службе очередей в облаке для Германии.
+Получите суффикс конечной точки с помощью командлета [Get AzEnvironment](/powershell/module/az.accounts/get-azenvironment). Конечная точка — это свойство среды *StorageEndpointSuffix*. В приведенном ниже фрагменте кода показано, как это сделать. Все эти команды возвращают такие значения, как core.cloudapp.net или core.cloudapi.de и т. д. Добавьте это значение в службу хранилища для доступа к ней. Например, конечная точка queue.core.cloudapi.de получит доступ к службе очередей в облаке для Германии.
 
 Этот фрагмент кода позволяет получить все среды и суффикс конечной точки для каждой из них.
 

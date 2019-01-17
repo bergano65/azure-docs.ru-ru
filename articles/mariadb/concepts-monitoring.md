@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 11/10/2018
-ms.openlocfilehash: 476e74a4d167fb3e9158f07cc5c073f129a74daa
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: 2ad641ae054f9542ec1ef42f5ebbe724ba4ecf87
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53545898"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54354031"
 ---
 # <a name="monitoring-in-azure-database-for-mariadb"></a>Мониторинг в Базе данных Azure для MariaDB
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для MariaDB предоставляет различные метрики, позволяющие понять действия сервера.
@@ -19,7 +19,7 @@ ms.locfileid: "53545898"
 ## <a name="metrics"></a>Метрики
 Все метрики Azure записываются ежеминутно, и каждая из них предоставляет данные за последние 30 дней. Вы можете настроить оповещения на основе метрик. Другие задачи включают настройку автоматических действий, выполнение расширенной аналитики и архивирование журнала. Дополнительные сведения см. в статье [Данные мониторинга, собираемые службой Azure Monitor] (../monitoring-and-diagnostics/monitoring-overview-metrics.md).
 
-<!--For step by step guidance, see [How to set up alerts](howto-alert-on-metric.md). -->
+Пошаговые инструкции см. в статье [Использование портала Azure для настройки оповещений на основе метрик для базы данных Azure для MySQL](howto-alert-metric.md).
 
 ### <a name="list-of-metrics"></a>Список метрик
 Для Базы данных Azure для MariaDB доступны следующие метрики:
@@ -45,5 +45,4 @@ ms.locfileid: "53545898"
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).
-
-<!-- - See [How to set up alerts](howto-alert-on-metric.md) for guidance on creating an alert on a metric.-->
+ - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-metric.md).

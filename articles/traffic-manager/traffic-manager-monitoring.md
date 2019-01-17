@@ -2,7 +2,6 @@
 title: Мониторинг конечных точек диспетчера трафика Azure | Документация Майкрософт
 description: Из этой статьи вы узнаете, каким образом благодаря мониторингу и автоматической отработке отказа конечных точек в диспетчере трафика пользователи Azure могут развертывать высокодоступные приложения.
 services: traffic-manager
-documentationcenter: ''
 author: KumudD
 ms.service: traffic-manager
 ms.devlang: na
@@ -11,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/04/2018
 ms.author: kumud
-ms.openlocfilehash: 27057f16d10d0859a486551091e135bfb9160813
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 923c2aae6d426e736e34c06fc84025ca98fe4f48
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52890353"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54199636"
 ---
 # <a name="traffic-manager-endpoint-monitoring"></a>Мониторинг конечных точек в диспетчере трафика
 

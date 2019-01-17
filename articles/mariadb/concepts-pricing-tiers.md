@@ -6,12 +6,12 @@ ms.author: janeng
 ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.openlocfilehash: b85737adb8f1c9481fb4b7b2005d2856d2bce9f5
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: bb6e27f92f60712cce71ba6fca53b40af00ee714
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53544589"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54354456"
 ---
 # <a name="azure-database-for-mariadb-pricing-tiers"></a>Ценовые категории службы "База данных Azure для MariaDB"
 
@@ -53,8 +53,7 @@ ms.locfileid: "53544589"
 
 Вы можете добавить дополнительную емкость во время и после создания сервера. Для ценовой категории "Базовый" фиксированное число операций ввода-вывода в секунду не гарантируется. В категориях "Общего назначения" и "С оптимизацией для операций в памяти" показатель операций ввода-вывода в секунду соотносится с подготовленным размером хранилища как 3 к 1.
 
-Вы можете отслеживать показатель операций ввода-вывода на портале Azure или с помощью команд Azure CLI. Следует отслеживать такие метрики, как размер хранилища, процентное соотношение для хранилища, используемое хранилище и процент операций ввода-вывода данных.
-<!--[storage limit, storage percentage, storage used, and IO percent](concepts-monitoring.md)-->
+Вы можете отслеживать показатель операций ввода-вывода на портале Azure или с помощью команд Azure CLI. Следует отслеживать такие метрики, как [размер хранилища, процентное соотношение для хранилища, используемое хранилище и процент операций ввода-вывода данных](concepts-monitoring.md).
 
 ### <a name="reaching-the-storage-limit"></a>Достигнут размер хранилища
 
@@ -64,7 +63,7 @@ ms.locfileid: "53544589"
 
 Мы рекомендуем настроить оповещение для получения уведомления о приближении к порогу емкости хранилища сервера, чтобы избежать перехода в состояние только для чтения. 
 
-<!--For more information, see the documentation on [how to set up an alert](howto-alert-on-metric.md).-->
+Дополнительные сведения см. в статье о том, [как настроить оповещение](howto-alert-metric.md).
 
 ## <a name="backup"></a>Azure Backup
 

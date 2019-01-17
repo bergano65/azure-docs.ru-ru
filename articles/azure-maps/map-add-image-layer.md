@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: d36179685e2098455e00186827d35e6de18bf975
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 5396fefca3a60dea7a503f8b4e84cc575753ea30
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52893313"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54229121"
 ---
 # <a name="add-an-image-layer-to-a-map"></a>Добавление слоя изображений на карту
 
@@ -31,7 +31,7 @@ ms.locfileid: "52893313"
 
 ## <a name="add-an-image-layer"></a>Добавление слоя изображений
 
-В этом примере показано, как наложить изображение [карты Ньюарка, Нью-Джерси, (1922 г.)]((https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg)) на карту.
+В этом примере показано, как наложить изображение [карты Ньюарка, Нью-Джерси, (1922 г.)](https://www.lib.utexas.edu/maps/historical/newark_nj_1922.jpg) на карту.
 
 <br/>
 
@@ -40,7 +40,7 @@ ms.locfileid: "52893313"
 
 В первом блоке приведенного выше кода создается объект карты. См. инструкции по [созданию карты](./map-create.md).
 
-Во втором блоке кода [ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) создается с помощью передачи URL-адреса изображения и координат четырех углов в формате `[Top Left Corner, Top Right Corner, Bottom Right Conter, Bottom Left Corner]`.
+Во втором блоке кода [ImageLayer](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.layer.imagelayer?view=azure-iot-typescript-latest) создается с помощью передачи URL-адреса изображения и координат четырех углов в формате `[Top Left Corner, Top Right Corner, Bottom Right Corner, Bottom Left Corner]`.
 
 ## <a name="import-a-kml-ground-overlay"></a>Импорт наземного наложения KML
 

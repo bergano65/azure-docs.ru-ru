@@ -11,14 +11,14 @@ ms.service: key-vault
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/07/2019
+ms.date: 01/10/2019
 ms.author: barclayn
-ms.openlocfilehash: 3d97ce7588642462920e98eb90c5c6b5d3748067
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 9ebfb01071257c8879531c1879b6f8b3ba4493ef
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54076369"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54198904"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Управление Key Vault с помощью интерфейса командной строки Azure 
 
@@ -103,7 +103,7 @@ az account set --subscription <subscription name or ID>
 При использовании диспетчера ресурсов Azure все связанные ресурсы создаются внутри группы ресурсов. Хранилище ключей можно создать в существующей группе ресурсов. Чтобы использовать новую группу ресурсов, создайте ее.
 
 ```azurecli
-az group create -n 'ContosoResourceGroup' -l 'East Asia'
+az group create -n "ContosoResourceGroup" -l "East Asia"
 ```
 
 Первый параметр — имя группы ресурсов, а второй параметр — его расположение. Чтобы получить список доступных расположений, введите следующую команду:
@@ -127,7 +127,7 @@ az provider register -n Microsoft.KeyVault
 Чтобы создать новое хранилище с именем **ContosoKeyVault**, в группе ресурсов **ContosoResourceGroup**, находящейся в местоположении **Восточная Азия**, введите: 
 
 ```azurecli
-az keyvault create --name 'ContosoKeyVault' --resource-group 'ContosoResourceGroup' --location 'East Asia'
+az keyvault create --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --location "East Asia"
 ```
 
 В выходных данных команды будут показаны свойства созданного хранилища ключей. Среди всех свойств есть два самых важных:
@@ -142,13 +142,13 @@ az keyvault create --name 'ContosoKeyVault' --resource-group 'ContosoResourceGro
 Если вам необходимо создать для себя ключ с программной защитой с помощью Azure Key Vault, используйте команду `az key create`.
 
 ```azurecli
-az keyvault key create --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey' --protection software
+az keyvault key create --vault-name "ContosoKeyVault" --name "ContosoFirstKey" --protection software
 ```
 
 Если у вас уже есть ключ в PEM-файле, его можно загрузить в Azure Key Vault. Вы можете защитить ключ с помощью программного обеспечения или HSM. Используйте следующую команду для импорта ключа из PEM-файла и его защиты с помощью программного обеспечения:
 
 ```azurecli
-az keyvault key import --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey' --pem-file './softkey.pem' --pem-password 'Pa$$w0rd' --protection software
+az keyvault key import --vault-name "ContosoKeyVault" --name "ContosoFirstKey" --pem-file "./softkey.pem" --pem-password "Pa$$w0rd" --protection software
 ```
 
 Теперь для доступа к ключу, созданному или загруженному в хранилище ключей Azure, вы сможете использовать его URI. **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey** всегда предоставляет актуальную версию. https://[keyvault-name].vault.azure.net/keys/[keyname]/[key-unique-id] предоставляет эту конкретную версию. (например, **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**). 
@@ -156,7 +156,7 @@ az keyvault key import --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey' -
 Добавьте в Azure Key Vault секрет, который представляет собой пароль с именем SQLPassword и значением Pa$$w0rd. 
 
 ```azurecli
-az keyvault secret set --vault-name 'ContosoKeyVault' --name 'SQLPassword' --value 'Pa$$w0rd'
+az keyvault secret set --vault-name "ContosoKeyVault" --name "SQLPassword" --value "Pa$$w0rd"
 ```
 
 Ссылайтесь на этот пароль с помощью URI. **https://ContosoVault.vault.azure.net/secrets/SQLPassword** всегда предоставляет актуальную версию, а https://[keyvault-name].vault.azure.net/secret/[secret-name]/[secret-unique-id] предоставляет эту конкретную версию. (например, **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**).
@@ -164,7 +164,7 @@ az keyvault secret set --vault-name 'ContosoKeyVault' --name 'SQLPassword' --val
 Импортируйте сертификат в хранилище с помощью PEM- или PFX-файла.
 
 ```azurecli
-az keyvault certificate import --vault-name 'ContosoKeyVault' --file 'c:\cert\cert.pfx' --name 'ContosoCert' --password 'Pa$$w0rd'
+az keyvault certificate import --vault-name "ContosoKeyVault" --file "c:\cert\cert.pfx" --name "ContosoCert" --password "Pa$$w0rd"
 ```
 
 Давайте посмотрим на созданный вами ключ, секрет или сертификат:
@@ -172,19 +172,19 @@ az keyvault certificate import --vault-name 'ContosoKeyVault' --file 'c:\cert\ce
 * Чтобы просмотреть свои ключи, введите: 
 
 ```azurecli
-az keyvault key list --vault-name 'ContosoKeyVault'
+az keyvault key list --vault-name "ContosoKeyVault"
 ```
 
 * Чтобы просмотреть свои секреты, введите: 
 
 ```azurecli
-az keyvault secret list --vault-name 'ContosoKeyVault'
+az keyvault secret list --vault-name "ContosoKeyVault"
 ```
 
 * Чтобы просмотреть сертификаты, введите: 
 
 ```azurecli
-az keyvault certificate list --vault-name 'ContosoKeyVault'
+az keyvault certificate list --vault-name "ContosoKeyVault"
 ```
 
 ## <a name="registering-an-application-with-azure-active-directory"></a>Регистрация приложения в Azure Active Directory
@@ -203,7 +203,7 @@ az keyvault certificate list --vault-name 'ContosoKeyVault'
 Чтобы зарегистрировать приложение в Azure Active Directory:
 
 ```azurecli
-az ad sp create-for-rbac -n "MyApp" --password 'Pa$$w0rd' --skip-assignment
+az ad sp create-for-rbac -n "MyApp" --password "Pa$$w0rd" --skip-assignment
 # If you don't specify a password, one will be created for you.
 ```
 
@@ -214,33 +214,35 @@ az ad sp create-for-rbac -n "MyApp" --password 'Pa$$w0rd' --skip-assignment
 Например, если имя хранилища — ContosoKeyVault, идентификатор приложения — 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed, и вам нужно авторизовать это приложение для расшифровки и подписи с использованием ключей в вашем хранилище, выполните следующую команду:
 
 ```azurecli
-az keyvault set-policy --name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --key-permissions decrypt sign
+az keyvault set-policy --name "ContosoKeyVault" --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --key-permissions decrypt sign
 ```
 
 Чтобы разрешить этому же приложению читать секреты в хранилище, выполните следующую команду:
 
 ```azurecli
-az keyvault set-policy --name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --secret-permissions get
+az keyvault set-policy --name "ContosoKeyVault" --spn 8f8c4bbd-485b-45fd-98f7-ec6300b7b4ed --secret-permissions get
 ```
 
 ## <a name="bkmk_KVperCLI"></a> Установка политик расширенного доступа к хранилищу ключей
 
-Включите политики расширенного доступа к хранилищу ключей с помощью команды [az keyvault update](/cli/azure/keyvault#az-keyvault-update). 
+Включите политики расширенного доступа к хранилищу ключей с помощью команды [az keyvault update](/cli/azure/keyvault#az-keyvault-update).
 
  Включение хранилища ключей для развертывания: позволяет виртуальным машинам получать сертификаты, хранимые в виде секретов, из хранилища.
+
  ```azurecli
- az keyvault update --name 'ContosoKeyVault' --resource-group 'ContosoResourceGroup' --enabled-for-deployment 'true'
- ``` 
+ az keyvault update --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --enabled-for-deployment "true"
+ ```
 
 Включение хранилища ключей для шифрования дисков: требуется при использовании хранилища для шифрования дисков Azure.
 
  ```azurecli
- az keyvault update --name 'ContosoKeyVault' --resource-group 'ContosoResourceGroup' --enabled-for-disk-encryption 'true'
+ az keyvault update --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --enabled-for-disk-encryption "true"
  ```  
 
 Включение хранилища ключей для развертывания шаблона: позволяет Resource Manager получать секреты из хранилища.
- ```azurecli 
- az keyvault update --name 'ContosoKeyVault' --resource-group 'ContosoResourceGroup' --enabled-for-template-deployment 'true'
+
+```azurecli 
+ az keyvault update --name "ContosoKeyVault" --resource-group "ContosoResourceGroup" --enabled-for-template-deployment "true"
  ```
 
 ## <a name="working-with-hardware-security-modules-hsms"></a>Работа с аппаратными модулями безопасности (HSM)
@@ -252,25 +254,25 @@ az keyvault set-policy --name 'ContosoKeyVault' --spn 8f8c4bbd-485b-45fd-98f7-ec
 При создании хранилища добавьте параметр sku:
 
 ```azurecli
-az keyvault create --name 'ContosoKeyVaultHSM' --resource-group 'ContosoResourceGroup' --location 'East Asia' --sku 'Premium'
+az keyvault create --name "ContosoKeyVaultHSM" --resource-group "ContosoResourceGroup" --location "East Asia" --sku "Premium"
 ```
 
 В это хранилище можно добавлять ключи с программной защитой (как показано выше) и ключи, защищенные аппаратным модулем безопасности. Чтобы создать ключ, защищенный аппаратным модулем безопасности, задайте значение HSM для параметра Destination:
 
 ```azurecli
-az keyvault key create --vault-name 'ContosoKeyVaultHSM' --name 'ContosoFirstHSMKey' --protection 'hsm'
+az keyvault key create --vault-name "ContosoKeyVaultHSM" --name "ContosoFirstHSMKey" --protection "hsm"
 ```
 
 Вы можете использовать следующую команду для импорта ключа из PEM-файла на своем компьютере. Эта команда импортирует ключ в аппаратные модули безопасности в службе хранилища ключей:
 
 ```azurecli
-az keyvault key import --vault-name 'ContosoKeyVaultHSM' --name 'ContosoFirstHSMKey' --pem-file '/.softkey.pem' --protection 'hsm' --pem-password 'PaSSWORD'
+az keyvault key import --vault-name "ContosoKeyVaultHSM" --name "ContosoFirstHSMKey" --pem-file "/.softkey.pem" --protection "hsm" --pem-password "PaSSWORD"
 ```
 
 Следующая команда импортирует пакет собственного ключа клиента (BYOK). Это дает возможность создать ключ в своем локальном аппаратном модуле безопасности и передать его в аппаратные модули безопасности в службе хранилища ключей так, чтобы ключ не покидал их пределы:
 
 ```azurecli
-az keyvault key import --vault-name 'ContosoKeyVaultHSM' --name 'ContosoFirstHSMKey' --byok-file './ITByok.byok' --protection 'hsm'
+az keyvault key import --vault-name "ContosoKeyVaultHSM" --name "ContosoFirstHSMKey" --byok-file "./ITByok.byok" --protection "hsm"
 ```
 
 Более подробные инструкции по созданию пакета BYOK см. в статье [Создание ключей, защищенных аппаратным модулем безопасности, и их передача в хранилище ключей Azure](key-vault-hsm-protected-keys.md).
@@ -280,13 +282,13 @@ az keyvault key import --vault-name 'ContosoKeyVaultHSM' --name 'ContosoFirstHSM
 Если хранилище ключей и его ключи и секреты больше не нужны, хранилище можно удалить, используя команду `az keyvault delete`:
 
 ```azurecli
-az keyvault delete --name 'ContosoKeyVault'
+az keyvault delete --name "ContosoKeyVault"
 ```
 
 Как вариант, можно удалить всю группу ресурсов Azure, которая включает в себя хранилище ключей и другие ресурсы, которые вы добавили в эту группу:
 
 ```azurecli
-az group delete --name 'ContosoResourceGroup'
+az group delete --name "ContosoResourceGroup"
 ```
 
 ## <a name="miscellaneous-azure-cross-platform-command-line-interface-commands"></a>Прочие команды в межплатформенном интерфейсе командной строки Azure
@@ -296,31 +298,31 @@ az group delete --name 'ContosoResourceGroup'
 Эта команда перечисляет все ключи и выбранные свойства в виде таблицы:
 
 ```azurecli
-az keyvault key list --vault-name 'ContosoKeyVault'
+az keyvault key list --vault-name "ContosoKeyVault"
 ```
 
 Эта команда отображает полный список свойств для указанного ключа:
 
 ```azurecli
-az keyvault key show --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey'
+az keyvault key show --vault-name "ContosoKeyVault" --name "ContosoFirstKey"
 ```
 
 Эта команда перечисляет все имена секретов и выбранные свойства в виде таблицы:
 
 ```azurecli
-az keyvault secret list --vault-name 'ContosoKeyVault'
+az keyvault secret list --vault-name "ContosoKeyVault"
 ```
 
 Пример удаления конкретного ключа:
 
 ```azurecli
-az keyvault key delete --vault-name 'ContosoKeyVault' --name 'ContosoFirstKey'
+az keyvault key delete --vault-name "ContosoKeyVault" --name "ContosoFirstKey"
 ```
 
 Пример удаления конкретного секрета:
 
 ```azurecli
-az keyvault secret delete --vault-name 'ContosoKeyVault' --name 'SQLPassword'
+az keyvault secret delete --vault-name "ContosoKeyVault" --name "SQLPassword"
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

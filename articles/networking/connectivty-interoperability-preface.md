@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 10/18/2018
 ms.author: rambala
-ms.openlocfilehash: 4e077e496479d146306bd301f303b4e8c0f97d05
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: b090633ee33582a235a92ab7100741e0be48cb27
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/10/2019
-ms.locfileid: "54191876"
+ms.locfileid: "54200162"
 ---
 # <a name="interoperability-in-azure-back-end-connectivity-features-test-setup"></a>Взаимодействие в функциях при подключении к серверной части в Azure. Тестирование настройки
 
@@ -43,7 +43,7 @@ ms.locfileid: "54191876"
 
 ###  <a name="site-to-site-vpn-over-expressroute"></a>VPN типа "сеть — сеть" через ExpressRoute
 
-VPN типа "сеть — сеть" можно настроить с использованием пиринга Microsoft ExpressRoute, чтобы организовать закрытый обмен данными между локальной сетью и виртуальными сетями Azure. Такая конфигурация гарантирует конфиденциальность, подлинность и целостность при обмене данными. Обмен данными также защищается от повторов. Дополнительные сведения о настройке VPN IPSec типа "сеть — сеть" в туннельном режиме с использованием пиринга Microsoft ExpressRoute см. в статье [Настройка VPN типа "сеть — сеть" через пиринговый канал Майкрософт ExpressRoute][S2S-Over-ExR]. 
+VPN типа "сеть — сеть" можно настроить с использованием пиринга Microsoft ExpressRoute, чтобы организовать закрытый обмен данными между локальной сетью и виртуальными сетями Azure. Такая конфигурация гарантирует конфиденциальность, подлинность и целостность при обмене данными. Обмен данными также защищается от повторов. Дополнительные сведения о настройке VPN IPSec типа "сеть — сеть" в туннельном режиме с использованием пиринга Microsoft ExpressRoute см. [в этой статье][S2S-Over-ExR]. 
 
 Основным ограничением настройки VPN типа "сеть — сеть" с использованием пиринга Майкрософт является пропускная способность. Пропускная способность туннеля IPsec ограничена емкостью VPN-шлюза. Пропускная способность VPN-шлюза всегда ниже пропускной способности ExpressRoute. В такой ситуации можно оптимизировать использование пропускной способности ExpressRoute, используя туннель IPSec для трафика, требующего высокого уровня безопасности, и частный пиринг для всего остального трафика.
 
@@ -51,7 +51,7 @@ VPN типа "сеть — сеть" можно настроить с испол
 
 ExpressRoute предоставляется в виде пары каналов, что обеспечивает избыточность и высокий уровень доступности. Вы можете настроить географически избыточное подключение ExpressRoute в разных регионах Azure. Как и в нашей тестовой конфигурации, вы можете создать путь отработки отказа для подключения ExpressRoute в пределах определенного региона Azure с помощью VPN типа "сеть — сеть". Если одни и те же префиксы объявляются через ExpressRoute и VPN типа "сеть — сеть", Azure отдает предпочтение ExpressRoute. Чтобы избежать асимметричной маршрутизации между ExpressRoute и VPN типа "сеть — сеть", в локальной сети следует также настроить конфигурацию ExpressRoute, прежде чем использовать VPN типа "сеть — сеть".
 
-Дополнительные сведения о настройке параллельных подключений ExpressRoute и VPN типа "сеть — сеть" см. в статье [Настройка параллельных подключений "сеть — сеть" и ExpressRoute с помощью PowerShell][ExR-S2S-CoEx].
+Дополнительные сведения о настройке параллельных подключений ExpressRoute и VPN типа "сеть — сеть" см. в [этой статье][ExR-S2S-CoEx].
 
 ## <a name="extend-back-end-connectivity-to-spoke-vnets-and-branch-locations"></a>Предоставление периферийным виртуальным сетям и расположениям филиалов доступа к подключениям серверной части
 
@@ -71,11 +71,11 @@ ExpressRoute предоставляется в виде пары каналов,
 
 Ознакомьтесь со [сведениями о конфигурации для тестовой топологии][Configuration].
 
-Изучите сведения об [анализе уровня управления][Control-Analysis] для тестовой конфигурации и представления разных виртуальных сетей или виртуальных локальных сетей в топологии.
+Ознакомьтесь со [сведениями об анализе уровня управления][Control-Analysis] настройки теста и представлений различных виртуальных сетей или виртуальных ЛС в топологии.
 
-Изучите сведения об [анализе уровня данных][Data-Analysis] тестовой конфигурации и представлениях функций мониторинга сети Azure.
+Сведения об анализе уровня данных настройки теста и представлениях функций мониторинга сети Azure см. в [этой статье][Data-Analysis].
 
-В статье [Вопросы и ответы по ExpressRoute][ExR-FAQ] представлены следующие сведения:
+В статье [Вопросы и ответы по ExpressRoute][ExR-FAQ] см. следующие сведения:
 -   количество каналов ExpressRoute, которые можно подключить к шлюзу ExpressRoute;
 -   количество шлюзов ExpressRoute, которые можно подключить к каналу ExpressRoute;
 -   Дополнительные ограничения масштаба ExpressRoute.
@@ -89,6 +89,12 @@ ExpressRoute предоставляется в виде пары каналов,
 [VPN]: https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways
 [VNet]: https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal
 [Configuration]: connectivty-interoperability-configuration.md
-[Control-Analysis]connectivty-interoperability-control-plane.md [Data-Analysis]: connectivty-interoperability-data-plane.md [ExR-FAQ]: https://docs.microsoft.com/azure/expressroute/expressroute-faqs [S2S-Over-ExR]: https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering [ExR-S2S-CoEx]: https://docs.microsoft.com/azure/expressroute/expressroute-howto-coexist-resource-manager [Hub-n-Spoke]: https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke [Deploy-NVA]: https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/nva-haa
+[Control-Analysis]: connectivty-interoperability-control-plane.md
+[Data-Analysis]: connectivty-interoperability-data-plane.md
+[ExR-FAQ]: https://docs.microsoft.com/azure/expressroute/expressroute-faqs
+[S2S-Over-ExR]: https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering
+[ExR-S2S-CoEx]: https://docs.microsoft.com/azure/expressroute/expressroute-howto-coexist-resource-manager
+[Hub-n-Spoke]: https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke
+[Deploy-NVA]: https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/nva-ha
 
 

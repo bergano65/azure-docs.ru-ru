@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.date: 12/27/2018
 ms.topic: conceptual
 ms.author: raynew
-ms.openlocfilehash: 8ba188db87ffc0d428c7349c902cf60bec65d30f
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 11e29aa8d85ed7e3cf5ce7b4a8360e4b5eb628f9
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53788486"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54319223"
 ---
 # <a name="common-questions---hyper-v-to-azure-disaster-recovery"></a>Часто задаваемые вопросы. Аварийное восстановление Hyper-V в Azure
 
@@ -140,7 +140,7 @@ Site Recovery реплицирует данные из локальной сре
 Виртуальные машины Hyper-V можно реплицировать каждые 30 секунд (но не для хранилища класса Premium), 5 или 15 минут.
 
 ###<a name="can-i-extend-replication"></a>Можно ли расширить репликацию?
-Расширенная репликация и цепочка репликации не поддерживаются. Запросите эту функцию на [форуме отзывов и предложений](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959-support-for-exisiting-extended-replication).
+Расширенная репликация и цепочка репликации не поддерживаются. Запросите эту функцию на [форуме отзывов и предложений](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6097959).
 
 ### <a name="can-i-do-an-offline-initial-replication"></a>Можно ли выполнить начальную репликацию в автономном режиме?
 Эта возможность не поддерживается. Запросите эту функцию на [форуме отзывов и предложений](http://feedback.azure.com/forums/256299-site-recovery/suggestions/6227386-support-for-offline-replication-data-transfer-from).

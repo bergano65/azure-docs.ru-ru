@@ -13,12 +13,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.date: 01/22/2018
 ms.author: shlo
-ms.openlocfilehash: 1b6326f9b3d9565739d97b32b119a2f362f24e65
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 7d456ed76ea425f8870b2045283df5cc307d05fd
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49954629"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54302482"
 ---
 # <a name="create-a-data-factory-and-pipeline-using-python"></a>Создание фабрики данных и конвейера с помощью Python
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -47,7 +47,7 @@ ms.locfileid: "49954629"
 2.  При помощи таких средств, как [обозреватель службы хранилища Azure](http://storageexplorer.com/), создайте контейнер **adfv2tutorial** с папкой **input**. Затем отправьте файл **input.txt** в папку **input**.
 
 ## <a name="install-the-python-package"></a>Установка пакета Python
-1. Откройте терминал или командную строку с правами администратора. 
+1. Откройте терминал или командную строку с правами администратора. 
 2. Сначала установите пакет Python для ресурсов управления Azure:
 
     ```
@@ -97,18 +97,18 @@ ms.locfileid: "49954629"
     def print_activity_run_details(activity_run):
         """Print activity run details."""
         print("\n\tActivity run details\n")
-        print("\tActivity run status: {}".format(activity_run.status))    
+        print("\tActivity run status: {}".format(activity_run.status))
         if activity_run.status == 'Succeeded':
-            print("\tNumber of bytes read: {}".format(activity_run.output['dataRead']))       
-            print("\tNumber of bytes written: {}".format(activity_run.output['dataWritten']))           
-            print("\tCopy duration: {}".format(activity_run.output['copyDuration']))           
+            print("\tNumber of bytes read: {}".format(activity_run.output['dataRead']))
+            print("\tNumber of bytes written: {}".format(activity_run.output['dataWritten']))
+            print("\tCopy duration: {}".format(activity_run.output['copyDuration']))
         else:
             print("\tErrors: {}".format(activity_run.error['message']))
 
     ```
-3. Добавьте в метод **Main** приведенный ниже код, создающий экземпляр класса DataFactoryManagementClient. Этот объект используется не только для создания фабрики данных, связанной службы, наборов данных и конвейера, но и для отслеживания подробностей выполнения конвейера. Задайте переменную **subscription_id** для идентификатора вашей подписки Azure. Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+3. Добавьте в метод **Main** приведенный ниже код, создающий экземпляр класса DataFactoryManagementClient. Этот объект используется не только для создания фабрики данных, связанной службы, наборов данных и конвейера, но и для отслеживания подробностей выполнения конвейера. Задайте переменную **subscription_id** для идентификатора вашей подписки Azure. Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
-    ```python   
+    ```python
     def main():
 
         # Azure subscription ID
@@ -126,7 +126,7 @@ ms.locfileid: "49954629"
         adf_client = DataFactoryManagementClient(credentials, subscription_id)
 
         rg_params = {'location':'eastus'}
-        df_params = {'location':'eastus'}    
+        df_params = {'location':'eastus'}
     ```
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
@@ -203,7 +203,7 @@ ms.locfileid: "49954629"
 
 ```python
     # Create a copy activity
-    act_name =  'copyBlobtoBlob'
+    act_name = 'copyBlobtoBlob'
     blob_source = BlobSource()
     blob_sink = BlobSink()
     dsin_ref = DatasetReference(ds_name)
@@ -211,7 +211,7 @@ ms.locfileid: "49954629"
     copy_activity = CopyActivity(act_name,inputs=[dsin_ref], outputs=[dsOut_ref], source=blob_source, sink=blob_sink)
 
     #Create a pipeline with the copy activity
-    p_name =  'copyPipeline'
+    p_name = 'copyPipeline'
     params_for_pipeline = {}
     p_obj = PipelineResource(activities=[copy_activity], parameters=params_for_pipeline)
     p = adf_client.pipelines.create_or_update(rg_name, df_name, p_name, p_obj)
@@ -271,7 +271,7 @@ def print_item(group):
         print("\tTags: {}".format(group.tags))
     if hasattr(group, 'properties'):
         print_properties(group.properties)
-    print("\n")        
+    print("\n")
 
 def print_properties(props):
     """Print a ResourceGroup properties instance."""
@@ -283,11 +283,11 @@ def print_properties(props):
 def print_activity_run_details(activity_run):
     """Print activity run details."""
     print("\n\tActivity run details\n")
-    print("\tActivity run status: {}".format(activity_run.status))    
+    print("\tActivity run status: {}".format(activity_run.status))
     if activity_run.status == 'Succeeded':
-        print("\tNumber of bytes read: {}".format(activity_run.output['dataRead']))       
-        print("\tNumber of bytes written: {}".format(activity_run.output['dataWritten']))           
-        print("\tCopy duration: {}".format(activity_run.output['copyDuration']))           
+        print("\tNumber of bytes read: {}".format(activity_run.output['dataRead']))
+        print("\tNumber of bytes written: {}".format(activity_run.output['dataWritten']))
+        print("\tCopy duration: {}".format(activity_run.output['copyDuration']))
     else:
         print("\tErrors: {}".format(activity_run.error['message']))
 
@@ -300,7 +300,7 @@ def main():
     rg_name = '<Azure resource group name>'
 
     # The data factory name. It must be globally unique.
-    df_name = '<Your data factory name>'        
+    df_name = '<Your data factory name>'
 
     # Specify your Active Directory client ID, client secret, and tenant ID
     credentials = ServicePrincipalCredentials(client_id='<Active Directory client ID>', secret='<client secret>', tenant='<tenant ID>')
@@ -349,7 +349,7 @@ def main():
     print_item(dsOut)
 
     # Create a copy activity
-    act_name =  'copyBlobtoBlob'
+    act_name = 'copyBlobtoBlob'
     blob_source = BlobSource()
     blob_sink = BlobSink()
     dsin_ref = DatasetReference(ds_name)
@@ -357,7 +357,7 @@ def main():
     copy_activity = CopyActivity(act_name,inputs=[dsin_ref], outputs=[dsOut_ref], source=blob_source, sink=blob_sink)
 
     # Create a pipeline with the copy activity
-    p_name =  'copyPipeline'
+    p_name = 'copyPipeline'
     params_for_pipeline = {}
     p_obj = PipelineResource(activities=[copy_activity], parameters=params_for_pipeline)
     p = adf_client.pipelines.create_or_update(rg_name, df_name, p_name, p_obj)
@@ -373,7 +373,7 @@ def main():
     time.sleep(30)
     pipeline_run = adf_client.pipeline_runs.get(rg_name, df_name, run_response.run_id)
     print("\n\tPipeline run status: {}".format(pipeline_run.status))
-    activity_runs_paged = list(adf_client.activity_runs.list_by_pipeline_run(rg_name, df_name, pipeline_run.run_id, datetime.now() - timedelta(1),  datetime.now() + timedelta(1)))
+    activity_runs_paged = list(adf_client.activity_runs.list_by_pipeline_run(rg_name, df_name, pipeline_run.run_id, datetime.now() - timedelta(1), datetime.now() + timedelta(1)))
     print_activity_run_details(activity_runs_paged[0])
 
 # Start the main method

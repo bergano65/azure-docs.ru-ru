@@ -3,7 +3,7 @@ title: Автоматизированная установка исправле�
 description: Описывает функцию автоматической установки исправлений для виртуальных машин SQL Server в Azure для модели Resource Manager.
 services: virtual-machines-windows
 documentationcenter: na
-author: rothja
+author: MashaMSFT
 manager: craigg
 editor: ''
 tags: azure-resource-manager
@@ -14,13 +14,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 03/07/2018
-ms.author: jroth
-ms.openlocfilehash: 398e682db6c42bd7f4864113ddf10a6a75e2b65b
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.author: mathoma
+ms.reviewer: jroth
+ms.openlocfilehash: 0f6677cce369117886a8b4534423414c2fd56d0c
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29850622"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54331067"
 ---
 # <a name="automated-patching-for-sql-server-in-azure-virtual-machines-resource-manager"></a>Автоматическая установка исправлений SQL Server на виртуальных машинах Azure (Resource Manager)
 > [!div class="op_single_selector"]
@@ -34,7 +35,7 @@ ms.locfileid: "29850622"
 
 Автоматическая установка исправлений зависит от [Расширения агента IaaS для SQL Server](virtual-machines-windows-sql-server-agent-extension.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Для использования автоматической установки исправлений необходимо выполнить следующие предварительные требования.
 
 **Операционная система**

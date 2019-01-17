@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2017
 ms.author: jdial
-ms.openlocfilehash: 3540d68491d6f2c8282aa1ef0b385300aaa190cf
-ms.sourcegitcommit: 8899e76afb51f0d507c4f786f28eb46ada060b8d
+ms.openlocfilehash: 3e7a03f1235dab7eefd63b6611890897285d86ea
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/16/2018
-ms.locfileid: "51822489"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54332342"
 ---
 # <a name="configuring-network-security-group-flow-logs-with-azure-cli"></a>Настройка журналов потоков для групп безопасности сети с помощью Azure CLI
 
@@ -34,7 +34,7 @@ ms.locfileid: "51822489"
 Для выполнения действий, описанных в этой статье, требуется [установить Azure CLI для Mac, Linux и Windows](/cli/azure/install-azure-cli).
 
 > [!NOTE] 
-> Журналы последовательностей версии 2 доступны только в центрально-западной части США. Настройку можно выполнить на портале Azure или с помощью REST API. Если включить версию 2 в неподдерживаемом регионе, в учетной записи хранения будут сохраняться журналы версии 1.
+> Журналы последовательностей версии 2 доступны только в центрально-западной части США. Если включить ведение журналов для версии 2 в неподдерживаемом регионе, в учетной записи хранения будут сохраняться журналы версии 1.
 
 ## <a name="register-insights-provider"></a>Регистрация поставщика Microsoft Insights
 
@@ -50,6 +50,8 @@ az provider register --namespace Microsoft.Insights
 
 ```azurecli
 az network watcher flow-log configure --resource-group resourceGroupName --enabled true --nsg nsgName --storage-account storageAccountName
+# Configure 
+az network watcher flow-log configure --resource-group resourceGroupName --enabled true --nsg nsgName --storage-account storageAccountName  --format JSON --log-version 2
 ```
 
 В указанной учетной записи хранения не может быть настроенных сетевых правил, ограничивающих доступ к сети только службами Майкрософт или конкретными виртуальными сетями. Учетная запись хранения может быть в той же подписке Azure, что и NSG, для которой включается журнал потока, или в другой подписке Azure. Если используются разные подписки, они должны быть связаны с одним клиентом Azure Active Directory. Используемая учетная запись для каждой подписки должна иметь [необходимые разрешения](required-rbac-permissions.md). 
@@ -68,7 +70,7 @@ az network watcher flow-log configure --resource-group resourceGroupName --enabl
 
 Место хранения журнала потоков определяется при его создании. Удобное средство для доступа к этим журналам потоков, сохраненным в учетной записи хранения, — обозреватель службы хранилища Microsoft Azure, который можно скачать по адресу http://storageexplorer.com/
 
-При указании учетной записи хранения файлы записи пакетов сохраняются в ней по следующему адресу:
+При указании учетной записи хранения файлы журнала потоков сохраняются в ней по следующему адресу:
 
 ```
 https://{storageAccountName}.blob.core.windows.net/insights-logs-networksecuritygroupflowevent/resourceId=/SUBSCRIPTIONS/{subscriptionID}/RESOURCEGROUPS/{resourceGroupName}/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/{nsgName}/y={year}/m={month}/d={day}/h={hour}/m=00/macAddress={macAddress}/PT1H.json

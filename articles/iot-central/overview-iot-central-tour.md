@@ -1,20 +1,20 @@
 ---
 title: Общие сведения о пользовательском интерфейсе Azure IoT Central | Документация Майкрософт
 description: Ознакомьтесь с ключевыми областями пользовательского интерфейса Azure IoT Central, с помощью которого сборщики создают решения IoT.
-author: tbhagwat3
-ms.author: tanmayb
+author: dominicbetts
+ms.author: dobett
 ms.date: 04/13/2018
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-manager: peterpr
-ms.openlocfilehash: 11112e01e38f85db9f71280c53c27b130275d86f
-ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
+manager: philmea
+ms.openlocfilehash: 13d2c1028cc712092774a3f81d8eeaa5cb109edf
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46498272"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54199687"
 ---
 # <a name="take-a-tour-of-the-azure-iot-central-ui"></a>Общие сведения о пользовательском интерфейсе Azure IoT Central
 

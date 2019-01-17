@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2018
 ms.author: szark
-ms.openlocfilehash: 5aa998ef7af157f84a3985fdb458c2800f2575f4
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 8ecc29e9422c1d427dd76059f1a427f3d49da38f
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51249376"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54262377"
 ---
 # <a name="prepare-a-sles-or-opensuse-virtual-machine-for-azure"></a>Подготовка виртуальной машины SLES или openSUSE для Azure
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
@@ -49,7 +49,7 @@ ms.locfileid: "51249376"
         # sudo zypper update
 5. Установите агент Linux для Azure из репозитория SLES:
    
-        # sudo zypper install WALinuxAgent
+        # sudo zypper install python-azure-agent
 6. Убедитесь, что waagent в chkconfig имеет значение on. Если указано другое значение, включите для службы waagent автоматический запуск.
    
         # sudo chkconfig waagent on
@@ -140,7 +140,7 @@ ms.locfileid: "51249376"
 7. Рекомендуется отредактировать файл /etc/sysconfig/network/dhcp и изменить параметр `DHCLIENT_SET_HOSTNAME` следующим образом:
    
      DHCLIENT_SET_HOSTNAME="no"
-8. **Внимание!** В файле /etc/sudoers закомментируйте или удалите следующие строки, если они существуют:
+8. **Важно!** В "/etc/sudoers" закомментируйте или удалите следующие строки, если они существуют:
    
      Defaults targetpw   # ask for the password of the target user i.e. root ALL    ALL=(ALL) ALL   # WARNING! Используйте только вместе с Defaults targetpw!
 9. Убедитесь, что SSH-сервер установлен и настроен для включения во время загрузки.  Обычно это сделано по умолчанию.

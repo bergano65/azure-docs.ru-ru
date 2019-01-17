@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/16/2018
 ms.author: sethm
-ms.reviewer: ''
-ms.openlocfilehash: 3154c3a5a677f208973d442ff3875bb5ee8df6a1
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.reviewer: unknown
+ms.openlocfilehash: 98a1235532ec4cc225ac6a5117265e145b21034b
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52160636"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54245178"
 ---
 # <a name="add-linux-images-to-azure-stack"></a>Добавление образов Linux в Azure Stack
 

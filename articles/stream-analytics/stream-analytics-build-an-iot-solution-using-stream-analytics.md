@@ -9,12 +9,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 820a918b9ab5dd7a399dc43bcfed29fb3b94e99b
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: f372c2a85a9a03c7ead779bd4db64722891c9a4c
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53971109"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321574"
 ---
 # <a name="build-an-iot-solution-by-using-stream-analytics"></a>Создание решения IoT с помощью Stream Analytics
 
@@ -36,7 +36,7 @@ ms.locfileid: "53971109"
 ## <a name="scenario-introduction-hello-toll"></a>Общие сведения о сценарии Hello, Toll!
 Станции сбора дорожной платы представляют собой распространенное явление. Они встречаются на многих скоростных дорогах, мостах и туннелях по всему миру. Каждая станция имеет несколько пунктов сбора платы. В пунктах, работающих в ручном режиме, водитель останавливается и передает деньги служащему. В пунктах, работающих в автоматическом режиме, размещенный на крыше пункта датчик сканирует RFID-карту, прикрепленную на ветровом стекле автомобиля, во время его проезда через пункт. Проезд автомобилей через станции сбора платы можно легко представить в виде потока событий, в котором выполняются интересные операции.
 
-![Изображение автомобилей в пунктах сбора платы](media/stream-analytics-build-an-iot-solution-using-stream-analytics/cars-in-toll-booth .jpg)
+![Изображение автомобилей в пунктах сбора платы](media/stream-analytics-build-an-iot-solution-using-stream-analytics/cars-in-toll-booth.jpg)
 
 ## <a name="incoming-data"></a>Входящие данные
 В этом решении используется два потока данных. Датчики, установленные на въездах и выездах станций сбора платы, создают первый поток. Второй поток — это статический набор данных, содержащий данные регистрации транспортного средства.

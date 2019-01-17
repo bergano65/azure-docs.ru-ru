@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/10/2018
 ms.author: jeffgilb
-ms.reviewer: georgel
-ms.openlocfilehash: 2f300e496873c0b048ccc1acc078bf1650e6bd9c
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.reviewer: jiahan
+ms.openlocfilehash: 0b8bf94ba99f36662f03a48ca1f09366ddf2aa40
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53166291"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54243514"
 ---
 # <a name="mysql-resource-provider-11300--release-notes"></a>Заметки о выпуске для поставщика ресурсов MySQL 1.1.30.0
 
@@ -70,7 +70,7 @@ ms.locfileid: "53166291"
 
   Если **Tls12** отсутствует в выходных данных команды, это значит, что поддержка TLS 1.2 не включена на компьютере.
 
-    **Возможное решение**: Выполните следующую команду PowerShell, чтобы включить поддержку TLS 1.2, а затем начните развертывание поставщика ресурсов или обновите скрипт в том же сеансе PowerShell:
+    **Возможное решение**: Выполните следующую команду PowerShell, чтобы включить поддержку TLS 1.2, а затем начните развертывание поставщика ресурсов или обновите скрипт в том же сеансе PowerShell:
 
     ```powershell
     [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12

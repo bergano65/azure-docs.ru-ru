@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: required
 ms.date: 06/30/2017
 ms.author: pakunapa
-ms.openlocfilehash: 3215ee4adf907524626b4919b637ce23b9e0e782
-ms.sourcegitcommit: 6eb14a2c7ffb1afa4d502f5162f7283d4aceb9e2
+ms.openlocfilehash: 686d736798a4d949e3590d988f399d7da82d4fee
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36750186"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54231994"
 ---
 # <a name="service-remoting-in-java-with-reliable-services"></a>Удаленное взаимодействие службы в Java с Reliable Services
 > [!div class="op_single_selector"]
@@ -91,8 +91,8 @@ CompletableFuture<String> message = helloWorldClient.helloWorldAsync();
 Создание ServiceProxy не требует больших ресурсов, поэтому вы можете создавать такие объекты в любых количествах. Экземпляры ServiceProxy можно использовать повторно. Если удаленный вызов процедуры создает исключение, вы по-прежнему можете использовать тот же экземпляр прокси-сервера. Каждый объект ServiceProxy содержит клиент обмена данными, используемый для отправки сообщений по сети. При запуске удаленных вызовов проводятся внутренние проверки для определения работоспособности этого клиента. В зависимости от результата проверки клиент может быть создан повторно. Поэтому, если возникает исключение, вам не нужно заново создавать `ServiceProxy`.
 
 ### <a name="serviceproxyfactory-lifetime"></a>Время существования ServiceProxyFactory
-[FabricServiceProxyFactory](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.remoting.client._fabric_service_proxy_factory) — это фабрика, которая создает прокси-сервер для различных интерфейсов удаленного взаимодействия. Если вы используете API `ServiceProxyBase.create` для создания прокси-сервера, то платформа создает `FabricServiceProxyFactory`.
-При необходимости переопределить свойства [ServiceRemotingClientFactory](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.remoting.client._service_remoting_client_factory) имеет смысл создать фабрику вручную.
+[FabricServiceProxyFactory](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.remoting.client.fabricserviceproxyfactory) — это фабрика, которая создает прокси-сервер для различных интерфейсов удаленного взаимодействия. Если вы используете API `ServiceProxyBase.create` для создания прокси-сервера, то платформа создает `FabricServiceProxyFactory`.
+При необходимости переопределить свойства [ServiceRemotingClientFactory](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.remoting.client.serviceremotingclientfactory) имеет смысл создать фабрику вручную.
 Создание фабрики — ресурсоемкая операция. `FabricServiceProxyFactory` хранит кэш клиента обмена данными.
 Рекомендуется кэшировать `FabricServiceProxyFactory` на как можно больший период времени.
 
@@ -102,7 +102,8 @@ CompletableFuture<String> message = helloWorldClient.helloWorldAsync();
 ServiceProxy обрабатывает все исключения отработки отказа для секции службы, для которого он создан. Он повторно разрешает конечные точки в случае исключений отработки отказа (повторяющихся исключений) и повторяет вызов к правильной конечной точке. Число повторных попыток для исключения отработки отказа не ограничено.
 В случае исключений TransientException только повторяется попытка вызова.
 
-Параметры повтора по умолчанию определяются [OperationRetrySettings] https://docs.microsoft.com/java/api/microsoft.servicefabric.services.communication.client._operation_retry_settings) Вы можете настроить эти значения, передав объект OperationRetrySettings в конструктор ServiceProxyFactory.
+Параметры повтора по умолчанию определяются [OperationRetrySettings](https://docs.microsoft.com/java/api/microsoft.servicefabric.services.communication.client.operationretrysettings).
+Вы можете настроить эти значения, передав объект OperationRetrySettings в конструктор ServiceProxyFactory.
 
 ## <a name="next-steps"></a>Дополнительная информация
 * [Защита обмена данными для Reliable Services](service-fabric-reliable-services-secure-communication-java.md)

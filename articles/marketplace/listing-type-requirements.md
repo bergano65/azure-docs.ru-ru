@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 12/19/2018
 ms.author: ellacroi
-ms.openlocfilehash: 3cd0766fa4308df41172c323aa933e1c048f1e9d
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: c02bc75a978325f8cb0dc8733fb8d296e8710975
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54074008"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54264688"
 ---
 # <a name="requirements-by-listing-type"></a>Требования по типам приложений  
 Технические требования и требования к маркетинговому содержимому различаются в зависимости от онлайн-магазина, типа предложения и типа приложения. Ознакомьтесь со следующими характеристиками для проверки соответствия.  

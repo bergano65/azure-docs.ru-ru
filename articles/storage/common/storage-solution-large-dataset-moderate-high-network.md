@@ -8,12 +8,12 @@ ms.subservice: blob
 ms.topic: article
 ms.date: 12/07/2018
 ms.author: alkohli
-ms.openlocfilehash: 7243edbe0b51a3cca69bec018d6cbb15e9aa1674
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: bc5668d826395fb71ee70907f095303a43f1ec7f
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53263509"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214323"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Передача больших наборов данных со средней или высокой пропускной способностью сети
  
@@ -65,9 +65,9 @@ ms.locfileid: "53263509"
 |                                     |    Диск Data Box (предварительная версия)    |    Data Box                                      |    Data Box Heavy (предварительная версия)              |    Импорт и экспорт                       |
 |-------------------------------------|---------------------------------|--------------------------------------------------|------------------------------------------|----------------------------------------|
 |    Размер данных                        |    До 35 ТБ                 |    До 80 ТБ на устройство                       |    До 800 ТБ на устройство               |    Переменная                            |
-|    Тип данных                        |    BLOB-объекты Azure                  |    BLOB-объекты Azure<br>Файлы Azure                    |    BLOB-объекты Azure<br>Файлы Azure            |    BLOB-объекты Azure<br>Файлы Azure          |
-|    Форм-фактор                      |    Не более 5 SSD в одном заказе             |    1 x 23 кг одно устройство в заказе размером с настольный компьютер    |    1 × 230 кг большое устройство в заказе    |    До 10 жестких дисков или твердотельных накопителей в одном заказе        |
-|    Время начальной настройки               |    Низкий <br>(15 мин)            |    Малое или среднее <br> (не более 30 мин)               |    Средний<br>(1–2 ч)               |    От среднего до большого<br>(разные варианты) |
+|    Тип данных                        |    Большие двоичные объекты Azure                  |    Большие двоичные объекты Azure<br>Файлы Azure                    |    Большие двоичные объекты Azure<br>Файлы Azure            |    Большие двоичные объекты Azure<br>Файлы Azure          |
+|    Форм-фактор                      |    Не более 5 SSD в одном заказе             |    1 x 23 кг одно устройство в заказе размером с настольный компьютер    |    1 X ~227 кг большое устройство в заказе    |    До 10 жестких дисков или твердотельных накопителей в одном заказе        |
+|    Время начальной настройки               |    Низкий <br>(15 мин)            |    От низкой до умеренной сложности <br> (менее 30 мин)               |    Средний<br>(1–2 ч)               |    От умеренной до высокой сложности<br>(переменная) |
 |    Отправка данных в Azure               |    Yes                          |    Да                                           |    Да                                   |    Yes                                 |
 |    Экспорт данных из Azure           |    Нет                            |    Нет                                             |    Нет                                     |    Yes                                 |
 |    Шифрование                       |    AES, 128-битное                  |    AES, 256-битное                                   |    AES, 256-битное                           |    AES, 128-битное                         |
@@ -91,7 +91,7 @@ ms.locfileid: "53263509"
 |    Предварительная обработка данных              |    Нет                                         |    Нет                                         |    Да (с пограничными вычислениями)                               |    Yes                                                                |
 |    Перенос из других облаков       |    Нет                                         |    Нет                                         |    Нет                                                     |    Yes                                                                |
 |    Тип пользователя                        |    ИТ-специалист или разработчик                                       |    Разработка                                       |    ИТ-специалист                                                |    ИТ-специалист                                                             |
-|    Цены                          |    Бесплатно, с обычной оплатой за исходящий трафик         |    Бесплатно, с обычной оплатой за исходящий трафик         |    [Цены](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                                               |    [Цены](https://azure.microsoft.com/pricing/details/data-factory/)                                                            |
+|    Цены                          |    Бесплатно, с обычной оплатой исходящего трафика         |    Бесплатно, с обычной оплатой за исходящий трафик         |    [Цены](https://azure.microsoft.com/pricing/details/storage/databox/edge/)                                               |    [Цены](https://azure.microsoft.com/pricing/details/data-factory/)                                                            |
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -102,7 +102,7 @@ ms.locfileid: "53263509"
     - [передаче данных с помощью Data Box](https://docs.microsoft.com/azure/databox/data-box-quickstart-portal).
 - [Сведения о передаче данных с помощью AzCopy](/azure/storage/common/storage-use-azcopy-v10).
 - Практические руководства по:
-    - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](https://docs.microsoft.com/azure/databox-online/data-box-gateway-deploy-add-shares.md).
+    - [Руководство по передаче данных с помощью Шлюза Data Box (предварительная версия)](https://docs.microsoft.com/azure/databox-online/data-box-gateway-deploy-add-shares).
     - [преобразованию данных с помощью Data Box Edge перед отправкой в Azure](https://docs.microsoft.com/azure/databox-online/data-box-edge-deploy-configure-compute).
 - [Сведения о передаче данных с помощью службы "Фабрика данных Azure"](https://docs.microsoft.com/azure/data-factory/quickstart-create-data-factory-portal).
 - Использование интерфейсов REST API для передачи данных:

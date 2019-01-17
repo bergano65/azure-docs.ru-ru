@@ -7,13 +7,13 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 12/07/2018
-ms.openlocfilehash: 9b721ab614bf1797604fe342de117c78ba703f96
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.date: 01/10/2019
+ms.openlocfilehash: c84b814ddc06c583fc2f07288c7aa5cd65cc70a0
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53557603"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54232130"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Предварительная версия функций Azure Stream Analytics
 
@@ -26,10 +26,6 @@ ms.locfileid: "53557603"
 ### <a name="integration-with-azure-machine-learning"></a>Интеграция со службой "Машинное обучение Azure"
 
 Задания Stream Analytics можно масштабировать с помощью функций Машинного обучения. Дополнительные сведения об использовании функций Машинного обучения в задании Stream Analytics см. в статье [Масштабирование заданий Stream Analytics с помощью функций машинного обучения Azure](stream-analytics-scale-with-machine-learning-functions.md). Ознакомьтесь с реальным сценарием в статье [Выполнение анализа тональности с помощью Azure Stream Analytics и Машинного обучения Azure](stream-analytics-machine-learning-integration-tutorial.md).
-
-### <a name="session-windows"></a>Окна сеанса
-
-В Stream Analytics имеется встроенная поддержка функций управления окнами. Это позволяет разработчикам выполнять сложные задания по обработке потоков с минимальными усилиями. [Окна сеанса](https://msdn.microsoft.com/azure/stream-analytics/reference/session-window-azure-stream-analytics) группируют события, поступающие одновременно, отфильтровывая периоды времени, в течение которых данные отсутствовали. Дополнительные сведения о функции управления окнами см. [здесь](stream-analytics-window-functions.md).
 
 ### <a name="blob-output-partitioning-by-custom-time"></a>Секционирование выходных данных больших двоичных объектов по настраиваемому времени
 

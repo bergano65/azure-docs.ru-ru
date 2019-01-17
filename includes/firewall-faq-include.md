@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/14/2018
 ms.author: victorh
 ms.custom: include file
-ms.openlocfilehash: b1550fc07ee4edfe98482a2e880f201ceb66705f
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 3d76f25fc4382c8f03fac682fa7286a4a329a1db
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53995767"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54300668"
 ---
 ### <a name="what-is-azure-firewall"></a>Что такое брандмауэр Azure?
 
@@ -100,6 +100,7 @@ Set-AzureRmFirewall -AzureFirewall $azfw
 ```azurepowershell
 #Start a firewall
 
+$azfw = Get-AzureRmFirewall -Name "FW Name" -ResourceGroupName "RG Name"
 $vnet = Get-AzureRmVirtualNetwork -ResourceGroupName "RG Name" -Name "VNet Name"
 $publicip = Get-AzureRmPublicIpAddress -Name "Public IP Name" -ResourceGroupName " RG Name"
 $azfw.Allocate($vnet,$publicip)
@@ -127,4 +128,4 @@ Set-AzureRmFirewall -AzureFirewall $azfw
 
 ### <a name="when-configuring-dnat-for-inbound-network-traffic-do-i-also-need-to-configure-a-corresponding-network-rule-to-allow-that-traffic"></a>Настраивая DNAT для входящего трафика, нужно ли также настроить соответствующее правило сети для разрешения этого трафика?
 
- Нет. Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](../articles/firewall/rule-processing.md).
+№ Правила NAT позволяют неявно добавить соответствующее правило сети, чтобы разрешить преобразованный трафик. Чтобы переопределить эту реакцию, явно добавьте коллекцию правил сети с запрещающими правилами, которые соответствуют преобразованному трафику. Дополнительные сведения о логике обработки правил Брандмауэра Azure см. в [соответствующей статье](../articles/firewall/rule-processing.md).

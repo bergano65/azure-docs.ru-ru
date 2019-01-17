@@ -1,5 +1,5 @@
 ---
-title: Пример. Анализ видео в режиме реального времени с помощью API компьютерного зрения
+title: 'Пример: Анализ видео в режиме реального времени с помощью API компьютерного зрения'
 titlesuffix: Azure Cognitive Services
 description: Узнайте, как выполнить анализ практически в реальном времени по кадрам, взятым из видеотрансляции, с помощью API компьютерного зрения.
 services: cognitive-services
@@ -11,12 +11,12 @@ ms.topic: sample
 ms.date: 01/20/2017
 ms.author: kefre
 ms.custom: seodec18
-ms.openlocfilehash: 140e45270cf29eec48df260efa29b8aacac2d855
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: cb8964bdbdfe575630f6e65a79d53aac76a76d45
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53580473"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54232113"
 ---
 # <a name="how-to-analyze-videos-in-real-time"></a>Анализ видео в реальном времени
 В этом руководстве показано, как выполнить анализ практически в реальном времени по кадрам, взятым из видеотрансляции. Базовые операции этой системы:
@@ -195,12 +195,6 @@ namespace VideoFrameConsoleApplication
         
 
 Когда все будет готово к интеграции, **просто создайте ссылку на библиотеку VideoFrameAnalyzer из собственных проектов**. 
-
-
-
-## <a name="developer-code-of-conduct"></a>Правила поведения разработчиков
-Как и для всех служб Cognitive Services, разработчики, работающие с нашими API-интерфейсами и примерами, должны следовать [правилам поведения разработчиков служб Microsoft Cognitive Services](https://azure.microsoft.com/support/legal/developer-code-of-conduct/). 
-
 
 В функциях библиотеки VideoFrameAnalyzer для распознавания изображений, речи, видео или текста используются службы Azure Cognitive Services. Корпорация Майкрософт будет получать изображения, аудио, видео и другие данные, отправленные вами (с помощью этого приложения), чтобы использовать их для улучшения служб. Мы просим вас внимательно относиться к данным людей, которые ваше приложение отправляет в службы Azure Cognitive Services. 
 

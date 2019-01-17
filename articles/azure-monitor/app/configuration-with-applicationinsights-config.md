@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 09/19/2018
 ms.reviewer: olegan
 ms.author: mbullwin
-ms.openlocfilehash: 3c7b855588b45cd61bb13848720d6e926bbecba4
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: d17b1b754afc5067a885025dba83cd0fba2370d5
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121113"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214578"
 ---
 # <a name="configuring-the-application-insights-sdk-with-applicationinsightsconfig-or-xml"></a>Настройка пакета SDK для Application Insights с использованием файла ApplicationInsights.config или ApplicationInsights.xml
 Пакет SDK .NET Application Insights состоит из нескольких пакетов NuGet. [Основной пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights) предоставляет API для отправки телеметрии в Application Insights. [Дополнительные пакеты](https://www.nuget.org/packages?q=Microsoft.ApplicationInsights) предоставляют *модули* и *инициализаторы* телеметрии для автоматического отслеживания телеметрии вашего приложения и его контекста. При настройке файла конфигурации можно включить или отключить модули телеметрии и задать для них параметры.
@@ -233,7 +233,7 @@ ms.locfileid: "54121113"
 
 #### <a name="local-forwarder"></a>Локальный сервер пересылки
 
-[Локальный сервер пересылки](https://docs.microsoft.com/azure/application-insights/opencensus-local-forwarder) — это агент, который собирает данные телеметрии Application Insights или [OpenCensus](https://opencensus.io/) из разных платформ и пакетов SDK и направляет их в Application Insights. Он может работать под управлением Windows и Linux. В сочетании с Java SDK Application Insights локальный экспедитор обеспечивает полную поддержку [​​Live Metrics](../../azure-monitor/app/live-stream.md) и адаптивной выборки.
+[Локальный сервер пересылки](opencensus-local-forwarder.md) — это агент, который собирает данные телеметрии Application Insights или [OpenCensus](https://opencensus.io/) из разных платформ и пакетов SDK и направляет их в Application Insights. Он может работать под управлением Windows и Linux. В сочетании с Java SDK Application Insights локальный экспедитор обеспечивает полную поддержку [​​Live Metrics](../../azure-monitor/app/live-stream.md) и адаптивной выборки.
 
 ```xml
 <Channel type="com.microsoft.applicationinsights.channel.concrete.localforwarder.LocalForwarderTelemetryChannel">

@@ -3,9 +3,9 @@ title: Устранение рисков. Средство моделирова�
 description: Страница устранения рисков для средства моделирования угроз от Майкрософт с описанием возможных способов устранения самых распространенных угроз.
 services: security
 documentationcenter: na
-author: RodSan
-manager: RodSan
-editor: RodSan
+author: jegeib
+manager: jegeib
+editor: jegeib
 ms.assetid: na
 ms.service: security
 ms.workload: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
-ms.openlocfilehash: 07ef1fd3d81d795c9164741d22b5a689f86bd720
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: 24aa49fd4ccccda372d2632ef4aee22bd5cb2bf6
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23043439"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359142"
 ---
 # <a name="microsoft-threat-modeling-tool-mitigations"></a>Устранение рисков с помощью средства моделирования угроз от Майкрософт
 

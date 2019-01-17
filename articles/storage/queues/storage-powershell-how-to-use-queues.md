@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 09/14/2017
 ms.author: rogarana
 ms.component: queues
-ms.openlocfilehash: fef6858383028d62a16472bd530bf456d01ee7d3
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 016d6b1991085e3ed881deb68317dbde0ee46326
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53634428"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54213235"
 ---
 # <a name="perform-azure-queue-storage-operations-with-azure-powershell"></a>Выполнение операций хранилища очередей Azure с помощью Azure PowerShell
 
@@ -77,7 +77,7 @@ $ctx = $storageAccount.Context
 
 ## <a name="create-a-queue"></a>Создание очереди
 
-Сначала в этом примере устанавливается соединение со службой хранилища Azure, используя контекст учетной записи хранения, который включает имя учетной записи хранения и ее ключ доступа. Затем вызывается командлет [New-AzStorageQueue](/powershell/module/azure.storage/new-AzStoragequeue), чтобы создать очередь с именем queuename.
+Сначала в этом примере устанавливается соединение со службой хранилища Azure, используя контекст учетной записи хранения, который включает имя учетной записи хранения и ее ключ доступа. Затем вызывается командлет [New-AzStorageQueue](/powershell/module/az.storage/New-AzStorageQueue), чтобы создать очередь с именем queuename.
 
 ```powershell
 $queueName = "howtoqueue"
@@ -88,7 +88,7 @@ $queue = New-AzStorageQueue –Name $queueName -Context $ctx
 
 ## <a name="retrieve-a-queue"></a>Извлечение очереди
 
-Можно запрашивать и получать указанную очередь или список всех очередей в учетной записи хранения. В следующих примерах демонстрируется извлечение всех очередей в учетной записи хранения и определенной очереди. Обе команды используют командлет [Get-AzStorageQueue](/powershell/module/azure.storage/get-AzStoragequeue).
+Можно запрашивать и получать указанную очередь или список всех очередей в учетной записи хранения. В следующих примерах демонстрируется извлечение всех очередей в учетной записи хранения и определенной очереди. Обе команды используют командлет [Get-AzStorageQueue](/powershell/module/az.storage/Get-AzStorageQueue).
 
 ```powershell
 # Retrieve a specific queue

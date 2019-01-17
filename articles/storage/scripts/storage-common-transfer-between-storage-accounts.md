@@ -13,12 +13,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 02/01/2018
 ms.author: rogarana
-ms.openlocfilehash: 2c83526ac5fd6fb6c757bffab08414d940694998
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: eddf85df3f9efb6a742e226e9582e2e284cbd4cf
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53635431"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54215139"
 ---
 # <a name="migrate-blobs-across-storage-accounts-using-azcopy-on-windows"></a>Перенос больших двоичных объектов между различными учетными записями хранения с помощью AzCopy в ОС Windows
 
@@ -66,10 +66,10 @@ AzCopyPath: C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy\AzCopy.exe
 
 В этом сценарии для копирования данных между учетными записями хранения используются следующие команды: Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
-| [Get-AzStorageContainer](/powershell/module/azure.storage/Get-AzStorageContainer) | Возвращает контейнеры, связанные с этой учетной записью хранения. |
-| [New-AzStorageContext](/powershell/module/azure.storage/New-AzStorageContext) | Создает контекст службы хранилища Azure. |
+| [Get-AzStorageContainer](/powershell/module/az.storage/Get-AzStorageContainer) | Возвращает контейнеры, связанные с этой учетной записью хранения. |
+| [New-AzStorageContext](/powershell/module/az.storage/New-AzStorageContext) | Создает контекст службы хранилища Azure. |
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -3,9 +3,9 @@ title: Угрозы. Средство моделирования угроз (М�
 description: Страница категорий угроз для средства моделирования угроз (Майкрософт) с описанием категорий всех представленных создаваемых угроз
 services: security
 documentationcenter: na
-author: RodSan
-manager: RodSan
-editor: RodSan
+author: jegeib
+manager: jegeib
+editor: jegeib
 ms.assetid: na
 ms.service: security
 ms.workload: na
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/17/2017
 ms.author: rodsan
-ms.openlocfilehash: 704f9995828866d4d2e4969e3aa922ed1e23c4ea
-ms.sourcegitcommit: 6699c77dcbd5f8a1a2f21fba3d0a0005ac9ed6b7
+ms.openlocfilehash: fd7c5fd929163dc7fcd22fbb045dee0fe3070394
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2017
-ms.locfileid: "23043309"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359040"
 ---
 # <a name="microsoft-threat-modeling-tool-threats"></a>Угрозы, входящие в средство моделирования угроз (Майкрософт)
 

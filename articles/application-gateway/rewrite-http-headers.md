@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 12/20/2018
 ms.author: absha
-ms.openlocfilehash: ccdfbc38cb39f2c0aa839dc56022192e9e389d95
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 3e40dbb96b27df4b228c52e7a8f70d047a556c31
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/10/2019
-ms.locfileid: "54187423"
+ms.locfileid: "54198531"
 ---
 # <a name="rewrite-http-headers-with-application-gateway-public-preview"></a>Повторное создание заголовков HTTP с помощью Шлюза приложений (общедоступная предварительная версия)
 
@@ -116,8 +116,6 @@ ms.locfileid: "54187423"
 ## <a name="limitations"></a>Ограничения
 
 - Возможность повторного создания HTTP-заголовков в настоящее время доступна только через Azure PowerShell, Azure API и Azure SDK. Скоро будет доступна поддержка с помощью портала и Azure CLI.
-
-- После применения повторного создания заголовка в Шлюзе приложений не следует использовать портал для внесения последующих изменений к этому Шлюзу приложений, пока эта возможность поддерживается на портале. Если вы используете портал для внесения изменений в Шлюз приложений после применения правила повторного создания, правило повторно создаст заголовок. Вы можете вносить изменения с помощью Azure PowerShell, API-интерфейсов Azure или пакета Azure SDK.
 
 - Поддержка повторного создания заголовка HTTP поддерживается только новым номером SKU [Standard_V2](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant). Эта возможность не будет поддерживаться предыдущим номером SKU.
 

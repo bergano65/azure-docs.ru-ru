@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/16/2016
-ms.openlocfilehash: 9b3fc80d129a42e68e877f4d1210e3ab10e0664a
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: d017a2758ccd1530c4558f3dc92559f807df36b9
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631827"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54332104"
 ---
 # <a name="scp-programming-guide"></a>Руководство по программированию для SCP
 SPC — это платформа для создания надежного, согласованного и высокопроизводительного приложения для обработки данных в реальном времени. Она основана на [Apache Storm](https://storm.incubator.apache.org/) — системе обработки потоковых данных, созданной сообществами разработчиков OSS. Создателем Storm является Натан Марц (Nathan Marz), программа имеет открытый код и распространяется компанией Twitter. В платформе используется [Apache ZooKeeper](https://zookeeper.apache.org/)— еще один проект Apache для обеспечения высоконадежной распределенной координации и управления состоянием. 
@@ -228,7 +228,7 @@ Context обеспечивает рабочую среду для приложе
     /// <summary>
     /// Retrieve all states that were previously uncommitted, excluding all aborted states 
     /// </summary>
-    /// <returns>Uncommited States</returns>
+    /// <returns>Uncommitted States</returns>
     public IEnumerable<State> GetUnCommitted();
 
     /// <summary>
@@ -249,7 +249,7 @@ Context обеспечивает рабочую среду для приложе
     /// List all the committed states
     /// </summary>
     /// <returns>Registries contain the Committed State </returns> 
-    public IEnumerable<Registry> Commited();
+    public IEnumerable<Registry> Committed();
 
     /// <summary>
     /// List all the Aborted State in the StateStore

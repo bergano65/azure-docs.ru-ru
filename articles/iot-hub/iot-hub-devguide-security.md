@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 07/18/2018
 ms.author: dobett
-ms.openlocfilehash: 6d15715379b06f55e1e190ebf5410995e3703d70
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 3b49d568b1ca19a99359314bb181712f56ca5615
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54053336"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54201063"
 ---
 # <a name="control-access-to-iot-hub"></a>Управление доступом к Центру Интернета вещей
 
@@ -418,7 +418,7 @@ var deviceClient = DeviceClient.Create("<IotHub DNS HostName>", authMethod);
 4. Устройство или модуль используют маркер непосредственно для подключения к Центру Интернета вещей.
 
 > [!NOTE]
-> Для создания маркера в службе маркеров можно использовать класс .NET [SharedAccessSignatureBuilder](https://msdn.microsoft.com/library/microsoft.azure.devices.common.security.sharedaccesssignaturebuilder.aspx) или класс Java [IotHubServiceSasToken](/java/api/com.microsoft.azure.sdk.iot.service.auth._iot_hub_service_sas_token).
+> Для создания маркера в службе маркеров можно использовать класс .NET [SharedAccessSignatureBuilder](https://msdn.microsoft.com/library/microsoft.azure.devices.common.security.sharedaccesssignaturebuilder.aspx) или класс Java [IotHubServiceSasToken](/java/api/com.microsoft.azure.sdk.iot.service.auth.iothubservicesastoken).
 
 При необходимости служба маркеров может задать срок действия маркера. По истечении срока действия маркера Центр Интернета вещей разрывает подключение к устройству или модулю. После этого устройство или модуль должны запросить новый маркер у службы маркеров. Короткий срок действия увеличит нагрузку как на устройства и модули, так и на службу маркеров.
 

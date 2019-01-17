@@ -1,19 +1,19 @@
 ---
 title: Отправка изображений в приложение Azure IoT Central | Документация Майкрософт
 description: Как конструктор вы узнаете, как подготовить и отправить изображения в приложение Azure IoT Central.
-author: tbhagwat3
-ms.author: tanmayb
+author: dominicbetts
+ms.author: dobett
 ms.date: 10/31/2018
 ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
-manager: peterpr
-ms.openlocfilehash: b55b9929129b882f893b1fea58b7061131daffb8
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+manager: philmea
+ms.openlocfilehash: 9d4de2a8be13718f7989f064b76b586407ca3a48
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51005144"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54198615"
 ---
 # <a name="prepare-and-upload-images-to-your-azure-iot-central-application"></a>Подготовка и отправка изображений в приложение Azure IoT Central
 
@@ -23,7 +23,7 @@ ms.locfileid: "51005144"
 
 Чтобы выполнить действия, описанные в этой статье, необходимо следующее:
 
-1. Приложение Azure IoT Central. Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
+1. Приложение Azure IoT Central. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
 1. Средство для масштабирования и изменения размеров файлов изображений.
 
 ## <a name="choose-where-to-use-custom-images"></a>Выбор места для вставки пользовательских изображений

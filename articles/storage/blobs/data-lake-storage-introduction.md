@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: jamesbak
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: ac36499475ffe02ae4d5140f35507530e6cf089e
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: 898080f445c54c93543a481bdd0487c70e772160
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53994340"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214406"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2-preview"></a>Общие сведения о хранилище Azure Data Lake Storage Gen2 (предварительная версия)
 
@@ -51,7 +51,7 @@ Data Lake Storage 2-го поколения использует службу х
 
 ### <a name="cost-effectiveness"></a>Экономичность
 
-Одно из многих преимуществ создания Data Lake Storage 2-го поколения на основе хранилища BLOB-объектов Azure — это низкая стоимость приобретения емкости хранилища и выполнения транзакций. В отличие от других облачных служб хранения, хранимые данные в Data Lake Storage 2-го поколения не нужно перемещать или преобразовывать перед выполнением анализа. Дополнительные сведения о ценах см. на [странице цен на службу хранилища Azure]((https://azure.microsoft.com/pricing/details/storage)).
+Одно из многих преимуществ создания Data Lake Storage 2-го поколения на основе хранилища BLOB-объектов Azure — это низкая стоимость приобретения емкости хранилища и выполнения транзакций. В отличие от других облачных служб хранения, хранимые данные в Data Lake Storage 2-го поколения не нужно перемещать или преобразовывать перед выполнением анализа. Дополнительные сведения о ценах см. на [странице цен на службу хранилища Azure](https://azure.microsoft.com/pricing/details/storage).
 
 Кроме того, такие возможности, как [иерархическое пространство имен](data-lake-storage-namespace.md), значительно повышают общую производительность большинства аналитических заданий. Это улучшение означает, что для обработки такого же объема данных требуется меньше вычислительной мощности, что снижает совокупную стоимость владения комплексных заданий аналитики.
 

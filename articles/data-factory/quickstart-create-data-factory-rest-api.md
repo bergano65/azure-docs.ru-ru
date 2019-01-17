@@ -13,19 +13,19 @@ ms.devlang: rest-api
 ms.topic: quickstart
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: 4fd7d47313b67a0014919b14546926f5d78972a0
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 3fc09255c38b4bbe8d416b97ea14a77a4b3014a0
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51240330"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54305593"
 ---
 # <a name="create-an-azure-data-factory-and-pipeline-by-using-the-rest-api"></a>Создание фабрики данных Azure и конвейера с помощью REST API
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
 > * [Текущая версия](quickstart-create-data-factory-rest-api.md)
 
-Фабрика данных Azure — это облачная служба интеграции данных, которая позволяет создавать управляемые данными рабочие процессы в облаке для оркестрации и автоматизации перемещения и преобразования данных. С помощью фабрики данных Azure можно создавать и включать в расписание управляемые данными рабочие процессы (конвейеры), которые могут принимать данные из разнородных хранилищ данных, обрабатывать и преобразовывать эти данные с помощью служб вычислений (например, Azure HDInsight Hadoop, Spark, Azure Data Lake Analytics и машинного обучения Azure), а также публиковать выходные данные в хранилища данных (например, хранилище данных SQL Azure) для использования приложениями бизнес-аналитики. 
+Фабрика данных Azure — это облачная служба интеграции данных, которая позволяет создавать управляемые данными рабочие процессы в облаке для оркестрации и автоматизации перемещения и преобразования данных. С помощью фабрики данных Azure можно создавать и включать в расписание управляемые данными рабочие процессы (конвейеры), которые могут принимать данные из разнородных хранилищ данных, обрабатывать и преобразовывать эти данные с помощью служб вычислений (например, Azure HDInsight Hadoop, Spark, Azure Data Lake Analytics и машинного обучения Azure), а также публиковать выходные данные в хранилища данных (например, хранилище данных SQL Azure) для использования приложениями бизнес-аналитики.
 
 В этом кратком руководстве описано создание фабрики данных Azure с помощью REST API. В этой фабрике данных конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure.
 
@@ -44,10 +44,10 @@ ms.locfileid: "51240330"
 1. Запустите **PowerShell**. Не закрывайте Azure PowerShell, пока выполняются описанные в этом кратком руководстве инструкции. Если закрыть и снова открыть это окно, то придется вновь выполнять эти команды.
 
     Выполните следующую команду и введите имя пользователя и пароль, которые используются для входа на портал Azure.
-        
+    
     ```powershell
     Connect-AzureRmAccount
-    ```        
+    ```
     Чтобы просмотреть все подписки для этой учетной записи, выполните следующую команду:
 
     ```powershell
@@ -56,7 +56,7 @@ ms.locfileid: "51240330"
     Выполните следующую команду, чтобы выбрать подписку, с которой вы собираетесь работать. Замените значение **SubscriptionId** на идентификатор подписки Azure:
 
     ```powershell
-    Select-AzureRmSubscription -SubscriptionId "<SubscriptionId>"       
+    Select-AzureRmSubscription -SubscriptionId "<SubscriptionId>"
     ```
 2. Выполните следующие команды после замены заполнителей собственными значениями, чтобы задать глобальные переменные, используемые в последующих шагах.
 
@@ -82,7 +82,7 @@ $authHeader = @{
 'Content-Type'='application/json'
 'Accept'='application/json'
 'Authorization'=$result.CreateAuthorizationHeader()
-} 
+}
 ```
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
@@ -112,17 +112,15 @@ $response | ConvertTo-Json
     ```
     Data factory name "ADFv2QuickStartDataFactory" is not available.
     ```
-* Чтобы получить список регионов Azure, в которых в настоящее время доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
+* Чтобы получить список регионов Azure, в которых сейчас доступна Фабрика данных, выберите интересующие вас регионы на следующей странице, а затем разверните раздел **Аналитика**, чтобы найти пункт **Фабрика данных**: [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/). Хранилища данных (служба хранилища Azure, база данных SQL Azure и т. д.) и вычисления (HDInsight и т. д.), используемые фабрикой данных, могут располагаться в других регионах.
 
 Ниже приведен пример ответа:
 
 ```json
-
 {
-    "name":  "<dataFactoryName>",
+    "name": "<dataFactoryName>",
     "tags": {
-
-            },
+    },
     "properties":  {
         "provisioningState":  "Succeeded",
         "loggingStorageAccountKey":  "**********",
@@ -137,8 +135,7 @@ $response | ConvertTo-Json
     "id":  "dataFactoryName",
     "type":  "Microsoft.DataFactory/factories",
     "location":  "East US"
-} 
-
+}
 ```
 
 ## <a name="create-linked-services"></a>Создание связанных служб
@@ -176,11 +173,11 @@ $response | ConvertTo-Json
     "id":  "/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.DataFactory/factories/<dataFactoryName>/linkedservices/AzureStorageLinkedService",
     "name":  "AzureStorageLinkedService",
     "properties":  {
-                       "type":  "AzureStorage",
-                       "typeProperties":  {
-                                              "connectionString":  "@{value=**********; type=SecureString}"
-                                          }
-                   },
+        "type":  "AzureStorage",
+        "typeProperties":  {
+            "connectionString":  "@{value=**********; type=SecureString}"
+        }
+    },
     "etag":  "0000c552-0000-0000-0000-59b1459c0000"
 }
 ```
@@ -225,25 +222,25 @@ $response | ConvertTo-Json
     "id":  "/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.DataFactory/factories/<dataFactoryName>/datasets/BlobDataset",
     "name":  "BlobDataset",
     "properties":  {
-                       "type":  "AzureBlob",
-                       "typeProperties":  {
-                                              "folderPath":  "@{value=@{dataset().path}; type=Expression}"
-                                          },
-                       "linkedServiceName":  {
-                                                 "referenceName":  "AzureStorageLinkedService",
-                                                 "type":  "LinkedServiceReference"
-                                             },
-                       "parameters":  {
-                                          "path":  "@{type=String}"
-                                      }
-                   },
+        "type":  "AzureBlob",
+        "typeProperties":  {
+            "folderPath":  "@{value=@{dataset().path}; type=Expression}"
+        },
+        "linkedServiceName":  {
+            "referenceName":  "AzureStorageLinkedService",
+            "type":  "LinkedServiceReference"
+        },
+        "parameters":  {
+            "path":  "@{type=String}"
+        }
+    },
     "etag":  "0000c752-0000-0000-0000-59b1459d0000"
 }
 ```
 
 ## <a name="create-pipeline"></a>Создание конвейера
 
-В этом примере этот конвейер содержит одно действие и принимает два параметра: путь входного и выходного большого двоичного объекта. Значения для этих параметров устанавливаются при активации или выполнении конвейера. Действие копирования ссылается на тот же набор данных большого двоичного объекта, который был создан на предыдущем шаге, в качестве входного и выходного. Если набор данных используется в качестве входного, указывается путь к входным данным. И если набор данных используется в качестве выходного, указывается путь к выходным данным. 
+В этом примере этот конвейер содержит одно действие и принимает два параметра: путь входного и выходного большого двоичного объекта. Значения для этих параметров устанавливаются при активации или выполнении конвейера. Действие копирования ссылается на тот же набор данных большого двоичного объекта, который был создан на предыдущем шаге, в качестве входного и выходного. Если набор данных используется в качестве входного, указывается путь к входным данным. И если набор данных используется в качестве выходного, указывается путь к выходным данным.
 
 ```powershell
 $request = "https://management.azure.com/subscriptions/${subsId}/resourceGroups/${resourceGroup}/providers/Microsoft.DataFactory/factories/${dataFactoryName}/pipelines/Adfv2QuickStartPipeline?api-version=${apiVersion}"
@@ -305,14 +302,14 @@ $response | ConvertTo-Json
     "id":  "/subscriptions/<subscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.DataFactory/factories/<dataFactoryName>/pipelines/Adfv2QuickStartPipeline",
     "name":  "Adfv2QuickStartPipeline",
     "properties":  {
-                       "activities":  [
-                                          "@{name=CopyFromBlobToBlob; type=Copy; inputs=System.Object[]; outputs=System.Object[]; typeProperties=}"
-                                      ],
-                       "parameters":  {
-                                          "inputPath":  "@{type=String}",
-                                          "outputPath":  "@{type=String}"
-                                      }
-                   },
+        "activities":  [
+            "@{name=CopyFromBlobToBlob; type=Copy; inputs=System.Object[]; outputs=System.Object[]; typeProperties=}"
+        ],
+        "parameters":  {
+            "inputPath":  "@{type=String}",
+            "outputPath":  "@{type=String}"
+        }
+    },
     "etag":  "0000c852-0000-0000-0000-59b1459e0000"
 }
 ```
@@ -375,19 +372,19 @@ $runId = $response.runId
         "dataFactoryName":  "<dataFactoryName>",
         "pipelineName":  "Adfv2QuickStartPipeline",
         "parameters":  [
-                        "inputPath: <inputBlobPath>",
-                        "outputPath: <outputBlobPath>"
-                    ],
+            "inputPath: <inputBlobPath>",
+            "outputPath: <outputBlobPath>"
+        ],
         "parametersCount":  2,
         "parameterNames":  [
-                            "inputPath",
-                            "outputPath"
-                        ],
+            "inputPath",
+            "outputPath"
+        ],
         "parameterNamesCount":  2,
         "parameterValues":  [
-                                "<inputBlobPath>",
-                                "<outputBlobPath>"
-                            ],
+            "<inputBlobPath>",
+            "<outputBlobPath>"
+        ],
         "parameterValuesCount":  2,
         "runStart":  "2017-09-07T13:12:00.3710792Z",
         "runEnd":  "2017-09-07T13:12:39.5561795Z",
@@ -410,24 +407,24 @@ $runId = $response.runId
     ```json
     {
         "value":  [
-                    {
-                        "id":  "000000000-0000-0000-0000-00000000000",
-                        "timestamp":  "2017-09-07T13:12:38.4780542Z",
-                        "pipelineRunId":  "000000000-0000-00000-0000-0000000000000",
-                        "pipelineName":  "Adfv2QuickStartPipeline",
-                        "status":  "Succeeded",
-                        "failureType":  "",
-                        "linkedServiceName":  "",
-                        "activityName":  "CopyFromBlobToBlob",
-                        "activityType":  "Copy",
-                        "activityStart":  "2017-09-07T13:12:02.3299261Z",
-                        "activityEnd":  "2017-09-07T13:12:38.4780542Z",
-                        "duration":  36148,
-                        "input":  "@{source=; sink=}",
-                        "output":  "@{dataRead=331452208; dataWritten=331452208; copyDuration=22; throughput=14712.9; errors=System.Object[]; effectiveIntegrationRuntime=DefaultIntegrationRuntime (West US); usedDataIntegrationUnits=2; billedDuration=22}",
-                        "error":  "@{errorCode=; message=; failureType=; target=CopyFromBlobToBlob}"
-                    }
-                ]
+            {
+                "id":  "000000000-0000-0000-0000-00000000000",
+                "timestamp":  "2017-09-07T13:12:38.4780542Z",
+                "pipelineRunId":  "000000000-0000-00000-0000-0000000000000",
+                "pipelineName":  "Adfv2QuickStartPipeline",
+                "status":  "Succeeded",
+                "failureType":  "",
+                "linkedServiceName":  "",
+                "activityName":  "CopyFromBlobToBlob",
+                "activityType":  "Copy",
+                "activityStart":  "2017-09-07T13:12:02.3299261Z",
+                "activityEnd":  "2017-09-07T13:12:38.4780542Z",
+                "duration":  36148,
+                "input":  "@{source=; sink=}",
+                "output":  "@{dataRead=331452208; dataWritten=331452208; copyDuration=22; throughput=14712.9; errors=System.Object[]; effectiveIntegrationRuntime=DefaultIntegrationRuntime (West US); usedDataIntegrationUnits=2; billedDuration=22}",
+                "error":  "@{errorCode=; message=; failureType=; target=CopyFromBlobToBlob}"
+            }
+        ]
     }
     ```
 
@@ -438,16 +435,16 @@ $runId = $response.runId
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 Вы можете удалить ресурсы, созданные в ходе работы с этим руководством, двумя способами. Вы можете удалить [группу ресурсов Azure](../azure-resource-manager/resource-group-overview.md), которая содержит все связанные ресурсы. Если же вы хотите сохранить другие ресурсы, удалите только фабрику данных, созданную в этом руководстве.
 
-Выполните следующую команду, чтобы удалить всю группу ресурсов: 
+Выполните следующую команду, чтобы удалить всю группу ресурсов:
 ```powershell
 Remove-AzureRmResourceGroup -ResourceGroupName $resourcegroupname
 ```
 
-Выполните следующую команду для удаления только фабрики данных: 
+Выполните следующую команду для удаления только фабрики данных:
 
 ```powershell
 Remove-AzureRmDataFactoryV2 -Name "<NameOfYourDataFactory>" -ResourceGroupName "<NameOfResourceGroup>"
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
-В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Перейдите к [руководствам](tutorial-copy-data-dot-net.md), чтобы узнать об использовании фабрики данных в различных сценариях. 
+В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Перейдите к [руководствам](tutorial-copy-data-dot-net.md), чтобы узнать об использовании фабрики данных в различных сценариях.

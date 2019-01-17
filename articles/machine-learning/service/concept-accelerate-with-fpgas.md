@@ -11,12 +11,12 @@ author: tedway
 ms.reviewer: jmartens
 ms.date: 10/24/2018
 ms.custom: seodec18
-ms.openlocfilehash: bc08025f070fb31d83fed26bfec00cec11cee061
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 3aa98026d7293f1486f5450cc9ab17057807c031
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53313638"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54306131"
 ---
 # <a name="what-are-fpgas-and-project-brainwave"></a>Что такое ППВМ и Project Brainwave?
 
@@ -39,7 +39,7 @@ ms.locfileid: "53313638"
 
 ## <a name="project-brainwave-on-azure"></a>Project Brainwave в Azure
 
-[Project Brainwave](https://www.microsoft.com/research/project/project-brainwave/) — это аппаратная архитектура от корпорации Майкрософт. Она основана на устройствах ППВМ Intel, которые специалисты по анализу и обработке данных и разработчики используют для ускорения вычислений с использованием ИИ в реальном времени. Эта архитектура с поддержкой ППВМ доступна в Azure и обеспечивает производительность, гибкость и масштабирование.
+[Project Brainwave](https://www.microsoft.com/en-us/research/project/project-brainwave/) — это аппаратная архитектура от корпорации Майкрософт. Она основана на устройствах ППВМ Intel, которые специалисты по анализу и обработке данных и разработчики используют для ускорения вычислений с использованием ИИ в реальном времени. Эта архитектура с поддержкой ППВМ доступна в Azure и обеспечивает производительность, гибкость и масштабирование.
 
 FPGA позволяют добиться низкой задержки для запросов в режиме реального времени. Асинхронные запросы (пакетная обработка) не нужны. Пакетная обработка может повысить задержку, так как необходимо обработать больше данных. Для реализации нейроморфных процессоров Project Brainwave не требуется пакетная обработка. Таким образом, задержка может быть намного ниже по сравнению с ЦП и GPU.
 

@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/03/2019
-ms.openlocfilehash: 30efbcd5ba36ea912a7238eef9e300085cb1d3d1
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.date: 01/11/2019
+ms.openlocfilehash: 43ee1cb33d5d747671cde7463c8f2fcb6e020662
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54040206"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54246523"
 ---
 # <a name="managed-api-reference-for-azure-sql-database-managed-instances"></a>Справочник по API управления для Управляемых экземпляров Базы данных SQL Azure
 
@@ -62,7 +62,6 @@ ms.locfileid: "54040206"
 |[az sql midb create](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-create) |Создает управляемую базу данных|
 |[az sql midb list](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-list)|Выводит список доступных управляемых баз данных|
 |[az sql midb restore](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-restore)|Восстанавливает управляемую базу данных|
-|[az sql midb update](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-update)|Обновляет управляемую базу данных|
 |[az sql midb delete](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-delete)|Удаляет управляемую базу данных|
 
 ## <a name="transact-sql-manage-logical-servers-and-databases"></a>Transact-SQL: Управление логическими серверами и базами данных

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/06/2018
 ms.author: magoedte
-ms.openlocfilehash: 26337f8d1112c4903ee84e8b4300667b49d1d916
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 7f70ab407e38797aae24530ea8fa5193e4fffda1
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53186605"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54260913"
 ---
 # <a name="how-to-onboard-azure-monitor-for-containers"></a>Подключение Azure Monitor для контейнеров  
 В этой статье объясняется, как настроить Azure Monitor для контейнеров, чтобы отслеживать производительность рабочих нагрузок, развернутых в средах Kubernetes и размещенных в [Службе Azure Kubernetes](https://docs.microsoft.com/azure/aks/).
@@ -31,7 +31,7 @@ Azure Monitor для контейнеров можно включить для �
 ## <a name="prerequisites"></a>Предварительные требования 
 Чтобы начать, у вас должны быть следующие компоненты:
 
-- Рабочая область Log Analytics. Ее можно создать при включении мониторинга нового кластера AKS. Кроме того, средство подключения может создать рабочую область по умолчанию в стандартной группе ресурсов подписки кластера AKS. Если вы хотите создать ее самостоятельно, используйте [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md), [PowerShell](https://docs.microsoft.com/azure/log-analytics/scripts/log-analytics-powershell-sample-create-workspace?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../../azure-monitor/learn/quick-create-workspace.md).
+- Рабочая область Log Analytics. Ее можно создать при включении мониторинга нового кластера AKS. Кроме того, средство подключения может создать рабочую область по умолчанию в стандартной группе ресурсов подписки кластера AKS. Если вы хотите создать ее самостоятельно, используйте [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md), [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../../azure-monitor/learn/quick-create-workspace.md).
 - Включить мониторинг контейнера может пользователь с ролью участника в Log Analytics. Дополнительные сведения о том, как управлять доступом к рабочей области Log Analytics, см. в статье [Управление рабочими областями](../../azure-monitor/platform/manage-access.md).
 
 [!INCLUDE [log-analytics-agent-note](../../../includes/log-analytics-agent-note.md)]
@@ -167,7 +167,7 @@ provisioningState       : Succeeded
 >Развертывание шаблона должно проходить в той же группе ресурсов, что и у кластера.
 >
 
-Рабочую область Log Analytics нужно создавать вручную. Для создания рабочей области можно использовать [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md), [PowerShell](https://docs.microsoft.com/azure/log-analytics/scripts/log-analytics-powershell-sample-create-workspace?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../../azure-monitor/learn/quick-create-workspace.md).
+Рабочую область Log Analytics нужно создавать вручную. Для создания рабочей области можно использовать [Azure Resource Manager](../../azure-monitor/platform/template-workspace-configuration.md), [PowerShell](../scripts/powershell-sample-create-workspace.md?toc=%2fpowershell%2fmodule%2ftoc.json) или [портал Azure](../../azure-monitor/learn/quick-create-workspace.md).
 
 Если вы не знакомы с концепцией развертывания ресурсов с помощью шаблона, ознакомьтесь со статьями:
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](../../azure-resource-manager/resource-group-template-deploy.md)
@@ -275,7 +275,7 @@ provisioningState       : Succeeded
        "contentVersion": "1.0.0.0",
        "parameters": {
          "aksResourceId": {
-           "value": "/subscriptions/<SubscriptiopnId>/resourcegroups/<ResourceGroup>/providers/Microsoft.ContainerService/managedClusters/<ResourceName>"
+           "value": "/subscriptions/<SubscriptionId>/resourcegroups/<ResourceGroup>/providers/Microsoft.ContainerService/managedClusters/<ResourceName>"
        },
        "aksResourceLocation": {
          "value": "<aksClusterLocation>"
@@ -372,7 +372,7 @@ omsagent   2         2         2         2            2           beta.kubernete
 С помощью команды `aks show` можно получить определенные сведения, например включено ли решение, идентификатор ресурса рабочей области Log Analytics, а также сводные данные о кластере.  
 
 ```azurecli
-az aks show -g <resoourceGroupofAKSCluster> -n <nameofAksCluster>
+az aks show -g <resourceGroupofAKSCluster> -n <nameofAksCluster>
 ```
 
 Через несколько минут выполнение команды завершается и отображаются сведения о решении в формате JSON.  В результатах выполнения команды должен отобразиться профиль надстройки наблюдения. Вы должны увидеть результат, аналогичный следующему:

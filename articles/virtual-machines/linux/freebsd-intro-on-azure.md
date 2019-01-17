@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 09/13/2017
 ms.author: huishao
-ms.openlocfilehash: e6f284b2a3483b21901dc4ad26bff83b8fcd8848
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 1f2d3c40352d60d3cc7366aca6f38a8255a7a629
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52843025"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54302397"
 ---
 # <a name="introduction-to-freebsd-on-azure"></a>Введение в FreeBSD в Azure
 В этой статье представлен обзор запуска виртуальной машины FreeBSD в Azure.
@@ -42,7 +42,6 @@ FreeBSD для Microsoft Azure — это расширенная операци�
 В развертывании образа виртуальной машины FreeBSD с помощью образа из Azure Marketplace и портала Azure нет ничего сложного:
 
 - [FreeBSD 10.4 в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD104)
-- [FreeBSD 11.1 на Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD111)
 - [FreeBSD 11.2 в Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD112)
 
 ### <a name="create-a-freebsd-vm-through-azure-cli-on-freebsd"></a>Создайте виртуальную машину FreeBSD с помощью Azure CLI в FreeBSD.
@@ -134,4 +133,4 @@ $ sudo <COMMAND>
 [Гостевой агент виртуальной машины Azure](https://github.com/Azure/WALinuxAgent/) версии 2.2.2 имеет [известную проблему](https://github.com/Azure/WALinuxAgent/pull/517), вызывающую сбой подготовки виртуальной машины FreeBSD в Azure. Ошибка исправлена в [гостевом агенте виртуальной машины Azure](https://github.com/Azure/WALinuxAgent/) версии 2.2.3 и более поздних выпусках. 
 
 ## <a name="next-steps"></a>Дополнительная информация
-* Перейдите на сайт [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD111) , чтобы создать виртуальную машину FreeBSD.
+* Перейдите на сайт [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/Microsoft.FreeBSD112) , чтобы создать виртуальную машину FreeBSD.

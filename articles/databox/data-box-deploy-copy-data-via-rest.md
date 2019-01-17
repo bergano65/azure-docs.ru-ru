@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 12/07/2018
 ms.author: alkohli
-ms.openlocfilehash: 88880fbfe0f6020a0a982c42b6df0e9eb71b2fc9
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: fa0883c18e0d586e6e9b35fb19dbe304388045b5
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53550512"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54215292"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство. Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
 
@@ -30,7 +30,7 @@ ms.locfileid: "53550512"
 
 Перед тем как начать, убедитесь в следующем.
 
-1. Вы завершили работу с [руководством по настройке Azure Data Box](data-box-deploy-set-up.md).
+1. Вы завершили работу со статьей [Руководство: присоединение кабелей и подключение к Azure Data Box](data-box-deploy-set-up.md).
 2. Вы получили Data Box. Состояние заказа на портале — **Доставлено**.
 3. Вы проверили [системные требования для хранилища BLOB-объектов Data Box](data-box-system-requirements-rest.md) и знакомы с поддерживаемыми версиями API, пакетов SDK и инструментов.
 4. У вас есть доступ к главному компьютеру с данными, которые необходимо скопировать в Data Box. На главном компьютере должно быть следующее ПО:
@@ -154,7 +154,7 @@ ms.locfileid: "53550512"
 
    ![Контекстное меню для создания контейнеров BLOB-объектов](media/data-box-deploy-copy-data-via-rest/create-blob-container-1.png)
 
-4. Под папкой **Контейнеры больших двоичных объектов** отобразится текстовое поле. Введите имя контейнера больших двоичных объектов. В разделе о [создании контейнера и настройке разрешений](/articles/storage/blobs/storage-quickstart-blobs-dotnet.md#create-the-container-and-set-permissions) см. сведения о правилах и ограничениях для именования контейнеров больших двоичных объектов.
+4. Под папкой **Контейнеры больших двоичных объектов** отобразится текстовое поле. Введите имя контейнера больших двоичных объектов. В разделе о [создании контейнера и настройке разрешений](../storage/blobs/storage-quickstart-blobs-dotnet.md#create-the-container-and-set-permissions) см. сведения о правилах и ограничениях для именования контейнеров больших двоичных объектов.
 5. Нажмите клавишу **ВВОД**, чтобы создать контейнер больших двоичных объектов, или **ESC** для отмены. После успешного создания контейнера больших двоичных объектов он отобразится в папке **Контейнеры больших двоичных объектов** выбранной учетной записи хранения.
 
    ![Контейнер больших двоичных объектов создан](media/data-box-deploy-copy-data-via-rest/create-blob-container-2.png)

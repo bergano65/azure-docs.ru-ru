@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/20/2018
 ms.author: sharadag
-ms.openlocfilehash: c4032f7c33cec7b7a7864ccff07a05b87c945949
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 68da9a0255cde6cbad5c675901c80193888bf255
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49988607"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214884"
 ---
 # <a name="how-to-set-up-a-geo-filtering-policy-for-your-front-door"></a>Настройка политики геофильтрации для службы AFD
 В этом руководстве показано, как с помощью Azure PowerShell создать простую политику геофильтрации и связать ее с имеющимся узлом внешнего интерфейса Front Door. Этот пример политики геофильтрации будет блокировать запросы от других стран, кроме США.
@@ -47,7 +47,7 @@ Install-Module -Name AzureRM.FrontDoor -AllowPrerelease
 ```
 
 ## <a name="2-define-geo-filtering-match-conditions"></a>2. Определение условий соответствия геофильтрации
-Сначала создайте пример условия соответствия, которое выбирает запросы, поступающие не от "США". Ознакомьтесь с [руководством](https://docs.microsoft.com/azure/frontdoor/new-azurermfrontdoormatchconditionobject) по параметрам PowerShell при создании условия соответствия. [Здесь](/Protection/GeoFiltering) находится двухбуквенный код страны для сопоставления страны.
+Сначала создайте пример условия соответствия, которое выбирает запросы, поступающие не от "США". Ознакомьтесь с [руководством](https://docs.microsoft.com/azure/frontdoor/new-azurermfrontdoormatchconditionobject) по параметрам PowerShell при создании условия соответствия. [Здесь](front-door-geo-filtering.md) находится двухбуквенный код страны для сопоставления страны.
 
 ```
 $nonUSGeoMatchCondition = New-AzureRmFrontDoorMatchConditionObject -MatchVariable RemoteAddr -OperatorProperty GeoMatch -NegateCondition $true -MatchValue "US"
