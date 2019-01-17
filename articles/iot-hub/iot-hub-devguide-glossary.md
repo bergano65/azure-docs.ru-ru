@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 01/29/2018
 ms.author: dobett
-ms.openlocfilehash: 7599fbe05b99466ed1d1a3db17156888cf9ea353
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 26bccc07e402288db696bce8a2371cab9ef7aff9
+ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53338300"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54055087"
 ---
 # <a name="glossary-of-iot-hub-terms"></a>Глоссарий терминов, связанных с Центром Интернета вещей
 В этой статье перечислены некоторые распространенные термины, используемые в статьях на тему Центра Интернета вещей.
@@ -40,8 +40,8 @@ ms.locfileid: "53338300"
 ## <a name="azure-iot-service-sdks"></a>Пакеты SDK для служб Azure IoT
 Для нескольких языков доступны _пакеты SDK для служб_, которые позволяют создавать [внутренние приложения](#back-end-app), взаимодействующие с Центром Интернета вещей. Учебники, посвященные Центру Интернета вещей, демонстрируют, как использовать эти пакеты SDK. Исходный код и дополнительные сведения о пакетах SDK для служб можно найти в этом [репозиторий](https://github.com/Azure/azure-iot-sdks) на сайте GitHub.
 
-## <a name="azure-iot-hub-toolkit"></a>Набор средств Центра Интернета вещей Azure
-[Набор средств Центра Интернета вещей Azure](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) (ранее — "Набор средств Интернета вещей Azure") — это кроссплатформенное расширение Visual Studio Code с открытым кодом, которое помогает управлять Центром Интернета вещей и устройствами в VS Code. С помощью набора средств Центра Интернета вещей Azure разработчики могут без труда создавать проекты Интернета вещей в VS Code.
+## <a name="azure-iot-tools"></a>Средства Azure IoT
+[Средства Azure IoT](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools) — это кроссплатформенное расширение Visual Studio Code с открытым кодом, которое помогает управлять Центром Интернета вещей и устройствами в VS Code. С помощью средств Azure IoT разработчики могут без труда создавать проекты Интернета вещей в VS Code.
 
 ## <a name="azure-portal"></a>Портал Azure
 [Портал Microsoft Azure](https://portal.azure.com) — это централизованное место, где можно подготавливать ресурсы Azure и управлять ими. Содержимое портала упорядочено с помощью _колонок_.
