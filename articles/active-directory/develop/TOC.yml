@@ -89,7 +89,7 @@ items:
         items:
         - name: OpenID Connect
           href: v1-protocols-openid-connect-code.md
-        - name: Последовательность предоставления неявных разрешений OAuth 2.0
+        - name: Процесс предоставления неявных разрешений OAuth 2.0
           href: v1-oauth2-implicit-grant-flow.md
         - name: Предоставление кода аутентификации OAuth 2.0
           href: v1-protocols-oauth-code.md
@@ -329,7 +329,7 @@ items:
         items:
         - name: OpenID Connect
           href: v2-protocols-oidc.md
-        - name: Последовательность предоставления неявных разрешений OAuth 2.0
+        - name: Процесс предоставления неявных разрешений OAuth 2.0
           href: v2-oauth2-implicit-grant-flow.md
         - name: Предоставление кода аутентификации OAuth 2.0
           href: v2-oauth2-auth-code-flow.md

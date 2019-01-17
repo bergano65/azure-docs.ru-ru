@@ -1314,7 +1314,7 @@ using (StreamWriter streamWriter = new StreamWriter(output.BaseStream, this._enc
 В противном случае — после каждой итерации вызывайте явным образом метод Flush(). Это описано в примере ниже.
 
 ### <a name="set-headers-and-footers-for-user-defined-outputter"></a>Установка колонтитулов для пользовательского средства вывода
-Чтобы задать верхний колонтитул, используйте последовательность однократного выполнения.
+Чтобы задать верхний колонтитул, используйте процедуру однократного выполнения.
 
 ```
 public override void Output(IRow row, IUnstructuredWriter output)

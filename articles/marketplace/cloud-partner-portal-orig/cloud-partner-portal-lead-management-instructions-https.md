@@ -31,7 +31,7 @@ ms.locfileid: "54073774"
 
 2. Войдите и выберите **Мои потоки** в строке меню.
 
-    ![Мои последовательности](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows.png)
+    ![Мои потоки](./media/cloud-partner-portal-lead-management-instructions-https/https-myflows.png)
 
 3. Выберите **+ Создать с нуля**.
 

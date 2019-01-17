@@ -22,7 +22,7 @@ ms.lasthandoff: 10/11/2017
 ms.locfileid: "23109902"
 ---
 # <a name="use-the-storsimple-device-manager-service-to-administer-your-storsimple-virtual-array"></a>Администрирование виртуального массива StorSimple с помощью службы диспетчера устройств StorSimple
-![последовательность операций процесса настройки](./media/storsimple-virtual-array-manager-service-administration/manage4.png)
+![Последовательность операций процесса настройки](./media/storsimple-virtual-array-manager-service-administration/manage4.png)
 
 ## <a name="overview"></a>Обзор
 В этой статье описываются интерфейс службы диспетчера устройств StorSimple, способы подключения, разные доступные параметры и др. Здесь также приведены ссылки на некоторые рабочие процессы, которые можно выполнять через этот пользовательский интерфейс.

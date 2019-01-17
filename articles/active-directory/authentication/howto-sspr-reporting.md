@@ -136,7 +136,7 @@ ms.locfileid: "50025011"
 * **Причина сбоя состояния действия**: 
   * _FuzzyPolicyViolationInvalidPassword_. Администратор выбрал пароль, автоматически заблокированный функцией обнаружения запрещенных паролей Майкрософт (распространенных или ненадежных паролей).
 
-### <a name="activity-type-self-serve-password-reset-flow-activity-progress"></a>Тип действия: Self serve password reset flow activity progress (Ход выполнения процесса самостоятельного сброса пароля)
+### <a name="activity-type-self-serve-password-reset-flow-activity-progress"></a>Тип действия: ход выполнения самостоятельного сброса пароля
 
 В приведенном ниже списке подробно описано это действие.
 

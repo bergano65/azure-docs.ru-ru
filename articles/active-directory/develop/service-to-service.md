@@ -1,6 +1,6 @@
 ---
 title: Приложения для взаимодействия между службами в Azure Active Directory
-description: Узнайте о приложениях веб-API и основных понятиях о последовательности протокола, а также регистрации и сроке действия маркера для приложений такого типа.
+description: Узнайте о приложениях веб-API и основных понятиях о потоке использования протокола, а также регистрации и сроке действия маркера для приложений такого типа.
 services: active-directory
 documentationcenter: ''
 author: CelesteDG
@@ -39,7 +39,7 @@ ms.locfileid: "46972901"
 
 ![Схема "из управляющей программы или серверного приложения в веб-интерфейс API"](./media/authentication-scenarios/daemon_server_app_to_web_api.png)
 
-## <a name="dprotocol-flow"></a>Последовательность DProtocol
+## <a name="dprotocol-flow"></a>Поток DProtocol
 
 ### <a name="application-identity-with-oauth-20-client-credentials-grant"></a>Удостоверение приложения с предоставлением учетных данных клиента OAuth 2.0
 

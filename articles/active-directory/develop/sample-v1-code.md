@@ -76,7 +76,7 @@ ms.locfileid: "49957780"
 
 - интерактивно;
 - автоматически (с использованием встроенной проверки подлинности Windows или имени пользователя и пароля); 
-- делегируя интерактивный вход в систему на другое устройство (последовательность кода устройства, используемая на устройствах, которые не предоставляют веб-элементы управления).
+- делегируя интерактивный вход в систему на другое устройство (поток кода устройства, используемая на устройствах, которые не предоставляют веб-элементы управления).
 
 Клиентское приложение | платформа | Поток или предоставление | Вызывает Microsoft Graph | Вызывает веб-API ASP.NET или ASP.NET Core 2.x
 ------------------ | -------- | ---------- | -------------------- | -------------------------
@@ -87,7 +87,7 @@ ms.locfileid: "49957780"
 Мобильное приложение (iOS)           | ![iOS, Objective-C или swift](media/sample-v2-code/logo_iOS.png) | Interactive |   [nativeClient-iOS](https://github.com/azureadquickstarts/nativeclient-ios) |
 Классическое приложение (консольное)          | ![.NET и C#](media/sample-v2-code/logo_NET.png) | Имя пользователя и пароль </p>  Встроенная проверка подлинности Windows | | [dotnet-native-headless](https://github.com/azure-samples/active-directory-dotnet-native-headless)
 Классическое приложение (консольное)          | ![Консоль Java](media/sample-v2-code/logo_Java.png) | Имя пользователя и пароль | | [java-native-headless](https://github.com/Azure-Samples/active-directory-java-native-headless)
-Классическое приложение (консольное)           | ![.NET Core и C#](media/sample-v2-code/logo_NETcore.png) | Последовательность кода устройства | | [dotnet-deviceprofile](https://github.com/Azure-Samples/active-directory-dotnet-deviceprofile)
+Классическое приложение (консольное)           | ![.NET Core и C#](media/sample-v2-code/logo_NETcore.png) | Поток кода устройства | | [dotnet-deviceprofile](https://github.com/Azure-Samples/active-directory-dotnet-deviceprofile)
 
 ## <a name="daemon-applications-accessing-web-apis-with-the-applications-identity"></a>Управляющая программа (которая обращается к веб-API с удостоверением приложения)
 

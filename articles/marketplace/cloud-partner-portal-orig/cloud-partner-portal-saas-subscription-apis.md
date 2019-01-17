@@ -40,7 +40,7 @@ ms.locfileid: "53790339"
 
 На следующей диаграмме показана последовательность действий при подписке нового клиента, а также этапы, на которых используются эти API:
 
-![Последовательность использования API для предложения SaaS](media/saas-offer-publish-with-subscription-apis/saas-offer-publish-api-flow.png)
+![Процесс использования API для предложения SaaS](media/saas-offer-publish-with-subscription-apis/saas-offer-publish-api-flow.png)
 
 <a name="service-to-service-authentication-between-saas-service-and-azure-marketplace"></a>Аутентификация между службой SaaS и Azure Marketplace
 ----------------------------------------------------------------------------

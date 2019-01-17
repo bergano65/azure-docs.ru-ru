@@ -24,7 +24,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 12/17/2018
 ms.locfileid: "53549586"
 ---
-# <a name="v20-protocols---oauth-20-authorization-code-flow"></a>Протоколы версии 2.0 — последовательность кода авторизации OAuth 2.0
+# <a name="v20-protocols---oauth-20-authorization-code-flow"></a>Протоколы версии 2.0 — поток кода авторизации OAuth 2.0
 
 [!INCLUDE [active-directory-develop-applies-v2](../../../includes/active-directory-develop-applies-v2.md)]
 

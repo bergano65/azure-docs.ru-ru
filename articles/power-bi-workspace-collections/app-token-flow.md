@@ -150,7 +150,7 @@ Body
 |Изменение и сохранение существующего отчета.|Отчет|Report.ReadWrite|
 |Сохранение копии отчета ("Сохранить как").|Отчет|* Report.Read<br>* Workspace.Report.Copy|
 
-## <a name="heres-how-the-flow-works"></a>Вот как выглядит процедура
+## <a name="heres-how-the-flow-works"></a>Выполнение процесса
 1. Скопируйте ключи API для своего приложения. Их можно получить на **портале Azure**.
    
     ![Где найти ключи API на портале Azure](media/get-started-sample/azure-portal.png)

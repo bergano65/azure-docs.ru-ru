@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 10/09/2018
-ms.openlocfilehash: 816b67488acc567d81bf1916735d13c0e480fe5d
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.date: 01/11/2019
+ms.openlocfilehash: b066c7f6c32b6e9fe1c1f63b5db88b4deaa2edae
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53719563"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54231824"
 ---
 # <a name="known-issuesmigration-limitations-with-online-migrations-to-azure-sql-db"></a>Известные проблемы и ограничения при сетевых миграциях в Базу данных SQL Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "53719563"
 Данные могут быть усечены в целевом объекте, если длина столбца больших объектов (LOB) превышает 32 КБ. Вы можете проверить длину столбца LOB с помощью приведенного ниже запроса: 
 
 ``` 
-SELECT max(len(ColumnName)) as LEN from TableName
+SELECT max(DATALENGTH(ColumnName)) as LEN from TableName
 ```
 
 **Возможное решение**
