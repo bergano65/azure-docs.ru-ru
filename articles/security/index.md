@@ -10,14 +10,14 @@ ms.service: security
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: landing-page
-ms.date: 01/15/2019
+ms.date: 01/16/2019
 ms.author: angrobe
-ms.openlocfilehash: 4d260a870bca3218b1c17c28ddf132ca10f3f4fb
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.openlocfilehash: e83a49f83fd8ac890a6c89eba3ef1c4a88f52df0
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/17/2019
-ms.locfileid: "54359754"
+ms.locfileid: "54390586"
 ---
 # <a name="azure-security-documentation"></a>Документация по системе безопасности Azure
 
@@ -216,10 +216,10 @@ ms.locfileid: "54359754"
                                 <a class="barLink" href="/azure/security/azure-security-iaas">Защита IaaS</a>
                             </li>
                             <li style="list-style: none;">
-                                <a class="barLink" href="/azure/security/azure-service-fabric-security-best-practices">Защита Service Fabric</a>
+                                <a class="barLink" href="/azure/security/security-paas-deployments">Обеспечение безопасности развертываний PaaS</a>
                             </li>
                             <li style="list-style: none;">
-                                <a class="barLink" href="/azure/security/azure-security-global-admin">Защита учетных записей администраторов Azure</a>
+                                <a class="barLink" href="/azure/security/azure-security-global-admin">Защита учетных записей администратора Azure</a>
                             </li>
                         </ul>
                     </div>
