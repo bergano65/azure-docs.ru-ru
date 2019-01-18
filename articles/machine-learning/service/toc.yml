@@ -61,7 +61,7 @@ items:
     href: how-to-manage-workspace.md
   - name: Настройка среды разработки 
     items:
-    - name: Настройка среды разработки
+    - name: Настройка сред разработки
       displayName: local, remote, azure notebooks, notebook, jupyter, dsvm, Databricks, ADB
       href: how-to-configure-environment.md
     - name: Расширение Visual Studio Code
@@ -107,9 +107,7 @@ items:
       displayName: automl automated auto ml
       href: how-to-auto-train-remote.md
   - name: Модели ONNX
-    items:
-    - name: Создание и развертывание
-      href: how-to-build-deploy-onnx.md
+    href: how-to-build-deploy-onnx.md
   - name: Развертывание моделей
     items:
     - name: Где и как развернуть
@@ -131,6 +129,7 @@ items:
   - name: Мониторинг веб-служб
     items:
     - name: Сбор и оценка данных модели
+      displayName: track production
       href: how-to-enable-data-collection.md
     - name: Мониторинг с помощью Application Insights
       href: how-to-enable-app-insights.md
@@ -143,7 +142,7 @@ items:
     displayName: vnet
     href: how-to-enable-virtual-network.md
   - name: Использование интерфейса командной строки службы "Машинное обучение"
-    displayName: cli command line command-line az ci/cd automate automated
+    displayName: cli extension command line command-line az ci/cd automate automated
     href: reference-azure-machine-learning-cli.md
   - name: Экспорт и удаление данных
     displayName: gdpr
@@ -176,9 +175,9 @@ items:
     href: support-for-aml-services.md
   - name: Сравнение продуктов Машинного обучения от корпорации Майкрософт
     href: overview-more-machine-learning.md
-ms.openlocfilehash: a6975a6aaefb3a750ee73b1e9738f534be24f2ba
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: 471928ec98a4fe037078e121a38286f30919d186
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54319734"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359210"

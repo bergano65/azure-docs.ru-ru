@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 050eb5e51ec4f589d160ac20322ffc02f77efc61
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54358615"
+---
 # Обзор
 ## [Сведения о виртуальных машинах Windows SQL Server](virtual-machines-windows-sql-server-iaas-overview.md) 
 ## [Заметки о выпуске](virtual-machines-windows-sql-server-iaas-release-notes.md) 
@@ -11,6 +19,12 @@
 ### [Рекомендации по производительности](virtual-machines-windows-sql-performance.md)
 ### [Вопросы безопасности](virtual-machines-windows-sql-security.md)
 ### [Шаблоны приложений](virtual-machines-windows-sql-server-app-patterns-dev-strategies.md)
+## Непрерывность бизнес-процессов
+### [Варианты высокой доступности](virtual-machines-windows-sql-high-availability-dr.md) 
+### [Группы доступности AlwaysOn](virtual-machines-windows-portal-sql-availability-group-overview.md)
+### [Резервное копирование и восстановление](virtual-machines-windows-sql-backup-recovery.md)
+### [Автоматизированное резервное копирование для SQL Server 2014](virtual-machines-windows-sql-automated-backup.md)
+### [Автоматизированное резервное копирование для SQL Server 2016+](virtual-machines-windows-sql-automated-backup-v2.md)
 ## управления
 ### [Подключение к виртуальной машине](virtual-machines-windows-sql-connect.md)
 ### [Настройка хранилища](virtual-machines-windows-sql-server-storage-configuration.md)
@@ -18,22 +32,19 @@
 #### [Использование расширения агента IaaS для SQL Server](virtual-machines-windows-sql-server-agent-extension.md)
 #### [Автоматическое исправление](virtual-machines-windows-sql-automated-patching.md)
 #### [Настройка интеграции с хранилищем ключей Azure](virtual-machines-windows-ps-sql-keyvault.md)
-## Архивация и восстановление
-### [Резервное копирование и восстановление](virtual-machines-windows-sql-backup-recovery.md)
-### [Автоматизированное резервное копирование для SQL Server 2014](virtual-machines-windows-sql-automated-backup.md)
-### [Автоматизированное резервное копирование для SQL Server 2016+](virtual-machines-windows-sql-automated-backup-v2.md)
-### [Использование службы хранилища Azure для резервного копирования и восстановления](virtual-machines-windows-use-storage-sql-server-backup-restore.md)
 
 # Практические руководства
 ## Создание виртуальной машины SQL
 ### [Использование портала](virtual-machines-windows-portal-sql-server-provision.md)
 ### [Использование Azure PowerShell](virtual-machines-windows-ps-sql-create.md)
+## [Изменение модели лицензирования для виртуальной машины SQL](virtual-machines-windows-sql-ahb.md)
 ## Миграция
 ### [Перенос базы данных SQL Server](virtual-machines-windows-migrate-sql.md)
 ## Настройка высокой доступности
-### [Варианты высокой доступности](virtual-machines-windows-sql-high-availability-dr.md) 
-### [Группы доступности AlwaysOn](virtual-machines-windows-portal-sql-availability-group-overview.md)
-#### [Автоматически — с помощью шаблона](virtual-machines-windows-portal-sql-alwayson-availability-groups.md)
+### [Использование службы хранилища Azure для резервного копирования и восстановления](virtual-machines-windows-use-storage-sql-server-backup-restore.md)
+### Группа доступности AlwaysOn
+#### [Использование шаблона с портала Azure](virtual-machines-windows-portal-sql-alwayson-availability-groups.md)
+#### [Использование шаблонов быстрого запуска](virtual-machines-windows-sql-availability-group-quickstart-template.md)
 #### [Вручную — предварительные требования](virtual-machines-windows-portal-sql-availability-group-prereq.md)
 #### [Вручную — руководство](virtual-machines-windows-portal-sql-availability-group-tutorial.md)
 #### [Управление подсистемой балансировки нагрузки с помощью портала Azure](virtual-machines-windows-portal-sql-alwayson-int-listener.md)
@@ -41,7 +52,7 @@
 #### [Различные регионы](virtual-machines-windows-portal-sql-availability-group-dr.md)
 ### Экземпляр отказоустойчивого кластера
 #### [Настройка](virtual-machines-windows-portal-sql-create-failover-cluster.md)
-## [Изменение модели лицензирования для виртуальной машины SQL](virtual-machines-windows-sql-ahb.md)
+
 
 # Справочные материалы
 ## [Azure PowerShell](/powershell/azure/overview)

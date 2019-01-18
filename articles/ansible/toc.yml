@@ -16,33 +16,45 @@ items:
   - name: Управление виртуальной машиной Linux
     href: /azure/virtual-machines/linux/ansible-manage-linux-vm
     maintainContext: true
+  - name: Запуск playbook в Cloud Shell
+    href: ./ansible-run-playbook-in-cloudshell.md
   expanded: true
 - name: Учебники
   items:
-  - name: Запуск playbook в Cloud Shell
-    href: ./ansible-run-playbook-in-cloudshell.md
-    maintainContext: true
-  - name: Управление динамическими списками
-    href: ./ansible-manage-azure-dynamic-inventories.md
-    maintainContext: true
-  - name: Создание и настройка VMSS
-    href: ./ansible-create-configure-vmss.md
-  - name: Развертывание приложения в VMSS
-    href: ./ansible-deploy-app-vmss.md
-  - name: Автомасштабирование VMSS
-    href: ./ansible-auto-scale-vmss.md
-  - name: Создание и настройка кластеров AKS
-    href: ./ansible-create-configure-aks.md
-  - name: Создание и настройка Шлюза приложений Azure
-    href: ./ansible-create-configure-application-gateway.md
-  - name: Создание и настройка базы данных Azure для MySQL
-    href: ./ansible-create-configure-mysql.md
-  - name: Создание и настройка веб-приложений Azure
-    href: ./ansible-create-configure-azure-web-apps.md
-  - name: Масштабирование веб-приложений Azure
-    href: ./ansible-scale-azure-web-apps.md
-  - name: Создание и настройка таблиц маршрутов
-    href: ./ansible-create-configure-route-table.md
+  - name: AKS
+    items:
+    - name: Создание и настройка кластеров AKS
+      href: ./ansible-create-configure-aks.md
+  - name: Служба приложений
+    items:
+    - name: Создание и настройка веб-приложений Azure
+      href: ./ansible-create-configure-azure-web-apps.md
+    - name: Масштабирование веб-приложений Azure
+      href: ./ansible-scale-azure-web-apps.md
+  - name: Шлюз приложений
+    items:
+    - name: Создание и настройка Шлюза приложений Azure
+      href: ./ansible-create-configure-application-gateway.md
+  - name: Базы данных
+    items:
+    - name: Создание и настройка базы данных Azure для MySQL
+      href: ./ansible-create-configure-mysql.md
+  - name: Динамический список
+    items:
+    - name: Управление динамическими списками
+      href: ./ansible-manage-azure-dynamic-inventories.md
+  - name: Виртуальная сеть
+    items:
+    - name: Создание и настройка таблиц маршрутов
+      href: ./ansible-create-configure-route-table.md
+  - name: Масштабируемый набор виртуальных машин
+    items:
+    - name: Создание и настройка VMSS
+      href: ./ansible-create-configure-vmss.md
+    - name: Развертывание приложения в VMSS
+      href: ./ansible-deploy-app-vmss.md
+    - name: Автомасштабирование VMSS
+      href: ./ansible-auto-scale-vmss.md
 - name: Справочные материалы
   items:
   - name: Роли Playbook
@@ -67,9 +79,9 @@ items:
   items:
   - name: Расширение Visual Studio Code для Ansible
     href: https://marketplace.visualstudio.com/items?itemName=vscoss.vscode-ansible
-ms.openlocfilehash: a54936953aa812cbe943394b9d083d8957f770ae
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 914987ee58a2ba09295d425c2107ba7eb192c131
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53789846"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359244"

@@ -234,17 +234,19 @@ items:
     href: https://azure.microsoft.com/pricing/details/machine-learning/
   - name: Стратегия развития Azure
     href: https://azure.microsoft.com/roadmap/
-  - name: Язык нейронных сетей Net#
-    href: azure-ml-netsharp-reference-guide.md
   - name: Форум MSDN
     href: https://social.msdn.microsoft.com/forums/azure/home?forum=MachineLearning
   - name: Переполнение стека
     href: http://stackoverflow.com/questions/tagged/azure-machine-learning
   - name: Руководство для разработчиков R
     href: ../r-developers-guide.md
-ms.openlocfilehash: f8fa65cfb7c61cd3d359331f1872d279ab113d19
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+  - name: Пользовательские нейронные сети с использованием Net#
+    href: azure-ml-netsharp-reference-guide.md
+  - name: Сравнить наши продукты Машинного обучения
+    href: ../service/overview-more-machine-learning.md
+ms.openlocfilehash: 821a6ffb787aef0d75dbc0f9e1ab331ad35dafa0
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54320520"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54389921"

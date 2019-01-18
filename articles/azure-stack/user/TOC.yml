@@ -105,17 +105,19 @@ items:
     - name: Key Vault
       items:
       - name: Обзор
-        href: azure-stack-kv-intro.md
+        href: azure-stack-key-vault-intro.md
       - name: Управление с помощью портала
-        href: azure-stack-kv-manage-portal.md
+        href: azure-stack-key-vault-manage-portal.md
       - name: Управление с помощью PowerShell
-        href: azure-stack-kv-manage-powershell.md
+        href: azure-stack-key-vault-manage-powershell.md
       - name: Создание виртуальной машины с помощью секрета
-        href: azure-stack-kv-deploy-vm-with-secret.md
+        href: azure-stack-key-vault-deploy-vm-with-secret.md
       - name: Создание виртуальной машины с помощью сертификата
-        href: azure-stack-kv-push-secret-into-vm.md
+        href: azure-stack-key-vault-push-secret-into-vm.md
+      - name: Хранение учетных данных в Key Vault
+        href: azure-stack-key-vault-store-credentials.md
       - name: Пример приложения для Key Vault
-        href: azure-stack-kv-sample-app.md
+        href: azure-stack-key-vault-sample-app.md
     - name: Azure Monitor
       href: azure-stack-metrics-azure-data.md
       items:
@@ -129,10 +131,13 @@ items:
         href: azure-stack-ethereum.md
       - name: Развертывание кластера Service Fabric
         href: azure-stack-solution-template-service-fabric-cluster.md
-      - name: Добавление кластера Kubernetes
+      - name: Развертывание кластера Kubernetes
+        href: azure-stack-solution-template-kubernetes-deploy.md
         items:
-        - name: Развертывание кластера Kubernetes
-          href: azure-stack-solution-template-kubernetes-deploy.md
+        - name: Развертывание Kubernetes с помощью Azure AD
+          href: azure-stack-solution-template-kubernetes-azuread.md
+        - name: Развертывание Kubernetes с помощью AD FS
+          href: azure-stack-solution-template-kubernetes-adfs.md
         - name: Устранение неполадок кластера Kubernetes
           href: azure-stack-solution-template-kubernetes-trouble.md
       - name: Развертывание Cognitive Services
@@ -218,9 +223,9 @@ items:
     href: http://stackoverflow.com/questions/tagged/azure-stack
   - name: Обучение и сертификация
     href: https://docs.microsoft.com/azure/azure-stack/azure-stack-train-and-cert
-ms.openlocfilehash: 2ee94296c840c2ec9eca1e954139bb7da47819c2
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 256560806e1065ec1ca9cfa9ba1d9f4521755ee8
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54049543"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54351766"
