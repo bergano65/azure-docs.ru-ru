@@ -8,17 +8,16 @@ manager: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 06eb11132d7e3968850aadb4bfdaa53261f14ada
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: f7e070788d2fc11addcafc30d9f232f194f44782
+ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49167483"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54017265"
 ---
 # <a name="move-data-from-an-http-source-by-using-azure-data-factory"></a>Перемещение данных из источника HTTP с помощью фабрики данных Azure
 
@@ -36,7 +35,7 @@ ms.locfileid: "49167483"
 
 ## <a name="supported-scenarios-and-authentication-types"></a>Поддерживаемые сценарии и типы аутентификации
 
-Вы можете использовать этот соединитель HTTP, чтобы получить данные *из локальной и облачной конечных точек HTTP/S* с помощью методов HTTP **GET** или **POST**. Поддерживаемые типы аутентификации: **Anonymous**, **Basic**, **Digest**, **Windows** и **ClientCertificate**. Обратите внимание, как отличаются между собой этот соединитель и [соединитель веб-таблиц](data-factory-web-table-connector.md). Соединитель веб-таблиц извлекает содержимое таблицы со страницы HTML.
+Вы можете использовать этот соединитель HTTP, чтобы получить данные *из локальной и облачной конечных точек HTTP/S* с помощью методов HTTP **GET** или **POST**. Поддерживаются такие типы проверки подлинности: **Anonymous**, **Basic**, **Digest**, **Windows** и **ClientCertificate**. Обратите внимание, как отличаются между собой этот соединитель и [соединитель веб-таблиц](data-factory-web-table-connector.md). Соединитель веб-таблиц извлекает содержимое таблицы со страницы HTML.
 
 При копировании данных из локальной конечной точки HTTP вы должны установить шлюз управления данными в локальной среде или на виртуальной машине Azure. См. дополнительные сведения о шлюзе управления данными и пошаговые инструкции по его настройке в статье [Перемещение данных между локальными источниками и облаком с помощью шлюза управления данными](data-factory-move-data-between-onprem-and-cloud.md).
 
@@ -44,7 +43,7 @@ ms.locfileid: "49167483"
 
 Вы можете создать конвейер с действием копирования, которое перемещает данные из источника HTTP с помощью разных инструментов и интерфейсов API:
 
-- Проще всего создать конвейер с помощью мастера копирования данных. Краткие пошаговые указания по созданию конвейера с помощью мастера копирования данных см. в статье [Руководство. Создание конвейера с действием копирования с помощью мастера копирования фабрики данных](data-factory-copy-data-wizard-tutorial.md).
+- Проще всего создать конвейер с помощью мастера копирования данных. Краткие пошаговые указания по созданию конвейера с помощью мастера копирования данных приведены в [руководстве по созданию конвейера с помощью мастера копирования](data-factory-copy-data-wizard-tutorial.md).
 
 - Также для создания конвейера вы можете использовать такие инструменты, как **портал Azure**, **Visual Studio**, **Azure PowerShell**, **Шаблон Azure Resource Manager**, **.NET API** или **REST API**. Пошаговые инструкции по созданию конвейера с действием копирования см. в статье [Руководство. Копирование данных из хранилища BLOB-объектов Azure в базу данных SQL с помощью фабрики данных](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md). Примеры JSON для копирования данных из источника HTTP в хранилище BLOB-объектов Azure см. в разделе [Примеры JSON](#json-examples).
 
@@ -65,14 +64,14 @@ ms.locfileid: "49167483"
 
 ### <a name="using-basic-digest-or-windows-authentication"></a>Использование типов проверки подлинности Basic, Digest или Windows
 
-Задайте параметру **authenticationType** значение **Basic**, **** или **Windows**. В дополнение к общим свойствам соединителя HTTP, описанных в предыдущих разделах, установите следующие свойства:
+Задайте параметру **authenticationType** значение **Basic**, **Digest** или **Windows**. В дополнение к общим свойствам соединителя HTTP, описанных в предыдущих разделах, установите следующие свойства:
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 | --- | --- | --- |
 | Имя пользователя | Имя пользователя для доступа к конечной точке HTTP. | Yes |
 | password | Пароль пользователя (**username**). | Yes |
 
-**Пример: использование проверки подлинности типов Basic, Digest или Windows**
+**Пример. Использование типов проверки подлинности Basic, Digest или Windows**
 
 ```json
 {
@@ -108,7 +107,7 @@ ms.locfileid: "49167483"
 3. Щелкните правой кнопкой мыши сертификат в личном хранилище, а затем выберите **Все задачи** >**Управление закрытыми ключами**.
 3. На вкладке **Безопасность** добавьте учетную запись пользователя, под которой запущена служба узла шлюза управления данными с доступом на чтение к сертификату.  
 
-**Пример: использование сертификата клиента**
+**Пример. Использование сертификата клиента**
 
 Эта связанная служба связывает фабрику данных с локальным веб-сервером HTTP. Она использует сертификат клиента, установленный на компьютере со шлюзом управления данными.
 
@@ -130,7 +129,7 @@ ms.locfileid: "49167483"
 }
 ```
 
-**Пример: использование сертификата клиента в файле**
+**Пример. Использование сертификата клиента в файле**
 
 Эта связанная служба связывает фабрику данных с локальным веб-сервером HTTP. Она использует файл сертификата клиента на компьютере, где установлен шлюз управления данными.
 
@@ -166,10 +165,10 @@ ms.locfileid: "49167483"
 | requestMethod | Метод HTTP. Допустимые значения: **GET** и **POST**. | Нет  <br />(значение по умолчанию — **GET**) |
 | additionalHeaders | Дополнительные заголовки HTTP-запроса. | Нет  |
 | requestBody | Текст HTTP-запроса. | Нет  |
-| свойства | Если вы хотите *извлечь данные из конечной точки HTTP "как есть"*  — без анализа, пропустите параметр **format**. <br><br> Поддерживаемые форматы для выполнения анализа содержимого ответа HTTP в процессе выполнения операции копирования: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Дополнительные сведения см. в разделах о [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Нет  |
-| compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
+| свойства | Если вы хотите *извлечь данные из конечной точки HTTP "как есть"*  — без анализа, пропустите параметр **format**. <br><br> Для выполнения анализа содержимого ответа HTTP в процессе копирования поддерживаются следующие типы форматов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Дополнительные сведения см. в разделах о [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Нет  |
+| compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Оптимальный** и **Самый быстрый**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
 
-**Пример: использование метода GET (по умолчанию)**
+**Пример. Использование метода GET (по умолчанию)**
 
 ```json
 {
@@ -190,7 +189,7 @@ ms.locfileid: "49167483"
 }
 ```
 
-**Пример: использование метода POST**
+**Пример. Использование метода POST**
 
 ```json
 {
@@ -224,7 +223,7 @@ ms.locfileid: "49167483"
 
 | Свойство | ОПИСАНИЕ | Обязательно |
 | -------- | ----------- | -------- |
-| httpRequestTimeout | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это интервал времени для получения ответа, а не считывания данных ответа. | Нет <br />(значение по умолчанию  — **00:01:40**) |
+| httpRequestTimeout | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это интервал времени для получения ответа, а не считывания данных ответа. | Нет <br />(значение по умолчанию: **00:01:40**) |
 
 ## <a name="supported-file-and-compression-formats"></a>Поддерживаемые форматы файлов и сжатия
 
@@ -234,7 +233,7 @@ ms.locfileid: "49167483"
 
 Ниже приведены примеры с определениями JSON, которые можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). Это пример процесса копирования данных из источника HTTP в хранилище BLOB-объектов Azure. Тем не менее данные можно копировать *непосредственно* из любых источников в любой [поддерживаемый](data-factory-data-movement-activities.md#supported-data-stores-and-formats) приемник используя действие копирования в фабрике данных Azure.
 
-**Пример: копирование данных из источника HTTP в хранилище BLOB-объектов Azure**
+**Пример. Копирование данных из источника HTTP в хранилище BLOB-объектов Azure**
 
 Решение фабрики данных для этого примера содержит следующие сущности фабрики данных.
 
