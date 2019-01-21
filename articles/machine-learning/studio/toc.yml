@@ -57,34 +57,13 @@ items:
     href: r-quickstart.md
 - name: Примеры
   items:
+  - name: Примеры экспериментов
+    displayName: gallery
+    href: sample-experiments.md
   - name: Типовые наборы данных
     href: use-sample-datasets.md
-  - name: Пример оттока клиентов
-    href: azure-ml-customer-churn-scenario.md
   - name: Коллекция решений ИИ Azure
-    items:
-    - name: Обзор
-      href: gallery-how-to-use-contribute-publish.md
-    - name: Примеры экспериментов
-      href: sample-experiments.md
-    - name: Отрасли
-      href: gallery-industries.md
-    - name: Решения
-      href: gallery-solutions.md
-    - name: Эксперименты
-      href: gallery-experiments.md
-    - name: Записные книжки Jupyter
-      href: gallery-jupyter-notebooks.md
-    - name: Соревнования
-      href: gallery-competitions.md
-    - name: Вопросы и ответы по соревнованиям
-      href: competition-faq.md
-    - name: Учебники
-      href: gallery-tutorials.md
-    - name: Коллекции
-      href: gallery-collections.md
-    - name: Пользовательские модули
-      href: gallery-custom-modules.md
+    href: gallery-how-to-use-contribute-publish.md
 - name: Основные понятия
   items:
   - name: Управление моделями
@@ -102,9 +81,6 @@ items:
       href: troubleshooting-creating-ml-workspace.md
     - name: Развертывание с помощью ARM
       href: deploy-with-resource-manager-template.md
-    - name: Просмотр и удаление данных учетной записи Studio
-      displayName: export
-      href: export-delete-personal-data-dsr.md
   - name: Импорт данных для обучения
     items:
     - name: Обзор
@@ -128,15 +104,9 @@ items:
       displayName: endpoint, endpoints
       href: create-models-and-endpoints-with-powershell.md
     - name: Выбор алгоритмов
-      items:
-      - name: Выбор алгоритмов
-        href: algorithm-choice.md
-      - name: Памятка по алгоритмам
-        href: algorithm-cheat-sheet.md
-      - name: Использование линейной регрессии
-        href: linear-regression-in-azure.md
-      - name: Использование текстовой аналитики
-        href: text-analytics-module-tutorial.md
+      href: algorithm-choice.md
+    - name: Памятка по алгоритмам
+      href: algorithm-cheat-sheet.md
     - name: Оценка и интерпретация результатов
       items:
       - name: Оценка производительности
@@ -212,7 +182,19 @@ items:
       href: consume-web-service-with-web-app-template.md
     - name: Использование пула пакетной службы
       href: dedicated-capacity-for-bes-jobs.md
-  - name: Просмотр и удаление данных учетной записи
+  - name: Примеры
+    items:
+    - name: Отток клиентов
+      href: azure-ml-customer-churn-scenario.md
+    - name: Анализ мнений
+      href: text-analytics-module-tutorial.md
+    - name: Перенос аналитики из Excel в Студию
+      href: linear-regression-in-azure.md
+  - name: Просмотр и удаление данных Студии
+    displayName: export
+    href: export-delete-personal-data-dsr.md
+  - name: Просмотр и удаление данных коллекции
+    displayName: export
     href: ai-gallery-control-personal-data-dsr.md
 - name: Справочные материалы
   items:
@@ -244,9 +226,9 @@ items:
     href: azure-ml-netsharp-reference-guide.md
   - name: Сравнить наши продукты Машинного обучения
     href: ../service/overview-more-machine-learning.md
-ms.openlocfilehash: 821a6ffb787aef0d75dbc0f9e1ab331ad35dafa0
-ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
+ms.openlocfilehash: a79ff2e7b2fba67e5c341468b462eacd07e2693c
+ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54389921"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54401951"
