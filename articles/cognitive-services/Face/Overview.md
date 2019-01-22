@@ -9,12 +9,12 @@ ms.component: face-api
 ms.topic: overview
 ms.date: 10/29/2018
 ms.author: sbowles
-ms.openlocfilehash: a15b6678b15bf5d1a3078494e12da3a08c57bed3
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 1916aa94dcf7528ce898ef37eac29c1017f03f15
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51633467"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54231892"
 ---
 # <a name="what-is-the-azure-face-api"></a>Что такое API распознавания лиц Azure?
 
@@ -72,10 +72,14 @@ API идентификации может использоваться для и
 
 Следующие примеры приложений демонстрируют несколько способов использования API распознавания лиц.
 
-- [API распознавания лиц Майкрософт: клиентская библиотека Windows с примерами](https://github.com/Microsoft/Cognitive-Face-Windows) — приложение WPF, демонстрирующее несколько сценариев обнаружения, анализа и идентификации лиц.
+- [API распознавания лиц Майкрософт: клиентская библиотека Windows с примерами](https://github.com/Microsoft/Cognitive-Face-Windows) — приложение WPF, демонстрирующее несколько сценариев обнаружения, анализа и идентификации лиц.
 - [Приложение UWP FamilyNotes](https://github.com/Microsoft/Windows-appsample-familynotes) — приложение UWP, которое использует идентификацию лиц вместе с речью, рукописным вводом, Cortana и камерами в сценарии совместного доступа к семейным заметкам.
+
+## <a name="data-privacy-and-security"></a>Конфиденциальность и безопасность данных
+
+Как и в случае со всеми другими Cognitive Services, разработчикам, использующим API распознавания лиц, следует учитывать политику корпорации Майкрософт касательно клиентских данных. Дополнительные сведения см. на [странице о Cognitive Services](https://www.microsoft.com/en-us/trustcenter/cloudservices/cognitiveservices) Центра управления безопасностью Майкрософт.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 В следующем кратком руководстве показано, как реализовать простой сценарий определения лиц в коде.
-- [Краткое руководство: обнаружение лиц на изображении с помощью REST API и C#](quickstarts/csharp.md) (доступны руководства для других языков)
+- [Краткое руководство Определение лиц на изображении с помощью REST API распознавания лиц и C#](quickstarts/csharp.md) (доступны руководства для других языков)

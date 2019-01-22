@@ -10,14 +10,14 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 08/27/2018
 ms.author: wesmc
-ms.openlocfilehash: 1bb21f6decc725c47f135c9842a2ba6d8989f693
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: df183f73feb1c87fb9deda8f647c5107f6c460cc
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51515177"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54245457"
 ---
-# <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-the-telemetry-from-the-hub-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей и чтение данных телеметрии из центра с помощью внутреннего приложения (C)
+# <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-c"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (C)
 
 [!INCLUDE [iot-hub-quickstarts-1-selector](../../includes/iot-hub-quickstarts-1-selector.md)]
 
@@ -48,7 +48,7 @@ ms.locfileid: "51515177"
 
 * **Arduino**: если вы разрабатываете приложения на платформе Arduino, то вы можете использовать библиотеку Azure IoT, доступную в диспетчере библиотек интегрированной среды разработки Arduino. Дополнительные сведения см. в разделе [The Azure IoT Hub library for Arduino](https://github.com/azure/azure-iot-arduino) (Библиотека Центра Интернета вещей Azure для Arduino).
 
-* **iOS**: пакет SDK для устройств центра Интернета вещей доступен в CocoaPods для разработки для устройств Mac и iOS. Дополнительные сведения можно найти в разделе [iOS Samples for Microsoft Azure IoT](https://cocoapods.org/pods/AzureIoTHubClient) (Примеры iOS для Центра Интернета вещей Microsoft Azure).
+* **iOS**: пакет SDK для устройств Центра Интернета вещей доступен в CocoaPods для разработки для устройств Mac и iOS. Дополнительные сведения можно найти в разделе [iOS Samples for Microsoft Azure IoT](https://cocoapods.org/pods/AzureIoTHubClient) (Примеры iOS для Центра Интернета вещей Microsoft Azure).
 
 Тем не менее в этом кратком руководстве вы подготовите среду разработки, которая используется для клонирования и сборки [пакета SDK Azure IoT для C](https://github.com/Azure/azure-iot-sdk-c) с сайта GitHub. Пакет SDK на сайте GitHub содержит пример кода, используемый в этом кратком руководстве. 
 
@@ -122,9 +122,9 @@ ms.locfileid: "51515177"
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы добавить расширение CLI Центра Интернета вещей и создать удостоверение устройства. 
 
-   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
-   **MyCDevice** — это имя, присвоенное зарегистрированному устройству. Используйте имя MyCDevice, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyCDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте имя MyCDevice, как показано в примере. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az extension add --name azure-cli-iot-ext
@@ -133,7 +133,7 @@ ms.locfileid: "51515177"
 
 2. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства.
 
-   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyCDevice --output table
@@ -192,7 +192,7 @@ ms.locfileid: "51515177"
 
 1. С помощью Azure Cloud Shell выполните следующую команду для установки подключения к центру Интернета вещей и чтения поступающих из него сообщений:
 
-   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub monitor-events --hub-name YourIoTHubName --output table

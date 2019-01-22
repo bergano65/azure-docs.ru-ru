@@ -15,12 +15,12 @@ ms.topic: get-started-article
 ms.date: 10/15/2018
 ms.author: jeffgilb
 ms.reviewer: comartin
-ms.openlocfilehash: 6b73cf04d768381bcc0e27cc76b6c2a25d4d9a2c
-ms.sourcegitcommit: 1aacea6bf8e31128c6d489fa6e614856cf89af19
+ms.openlocfilehash: 190a80d5807dcc8ad9666d3ba450691bc6453b41
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49341061"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54265623"
 ---
 # <a name="azure-stack-telemetry"></a>Телеметрия Azure Stack
 
@@ -112,7 +112,7 @@ ms.locfileid: "49341061"
 Прежде чем развертывать Azure Stack в узле комплекта разработки, выполните загрузку в Cloudbuilder.vhdx и запустите следующий скрипт в окне PowerShell с повышенными привилегиями:
 
 ```powershell
-### Get current AllowTelmetry value on DVM Host
+### Get current AllowTelemetry value on DVM Host
 (Get-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DataCollection" `
 -Name AllowTelemetry).AllowTelemetry
 ### Set & Get updated AllowTelemetry value for ASDK-Host

@@ -1,13 +1,10 @@
 ---
-title: Пример скрипта PowerShell. Распределение трафика на виртуальных машинах для обеспечения высокой доступности в Azure | Документация Майкрософт
+title: Пример скрипта PowerShell. Распределение трафика на виртуальных машинах для обеспечения высокой доступности в Azure
+titlesuffix: Azure Load Balancer
 description: В этом примере скрипта Azure PowerShell показано, как распределить трафик на виртуальных машинах для обеспечения высокой доступности
 services: load-balancer
 documentationcenter: load-balancer
 author: KumudD
-manager: jeconnoc
-editor: tysonn
-tags: ''
-ms.assetid: ''
 ms.service: load-balancer
 ms.devlang: powershell
 ms.topic: sample
@@ -15,14 +12,14 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: kumud
-ms.openlocfilehash: 31fd1e7d10692a1fbb552a483ae00e0088785a67
-ms.sourcegitcommit: e2adef58c03b0a780173df2d988907b5cb809c82
+ms.openlocfilehash: 0440c7e2d2e79e2b954f975167389cf7698a6370
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2018
-ms.locfileid: "32181258"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54201029"
 ---
-# <a name="azure-powershell-script-example-load-balance-traffic-to-vms-for-high-availability"></a>Пример скрипта Azure PowerShell. Распределение трафика на виртуальных машинах для обеспечения высокой доступности
+# <a name="azure-powershell-script-example-load-balance-traffic-to-vms-for-high-availability"></a>Пример скрипта Azure PowerShell. Балансировка трафика на виртуальных машинах для обеспечения высокой доступности
 
 Этот пример скрипта Azure PowerShell позволяет создать все необходимые компоненты для запуска нескольких виртуальных машин Windows, настроенных в высокодоступной конфигурации с распределением нагрузки. После выполнения этого сценария будут созданы три виртуальные машины, которые будут добавлены в группу доступности Azure. Доступ к ним можно будет получить через Azure Load Balancer.
 
@@ -46,7 +43,7 @@ Remove-AzureRmResourceGroup -Name myResourceGroup
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Команда | Примечания |
 |---|---|
 | [New-AzureRmResourceGroup](/powershell/module/azurerm.resources/new-azurermresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzureRmVirtualNetworkSubnetConfig](/powershell/module/azurerm.network/new-azurermvirtualnetworksubnetconfig) | Создает конфигурацию подсети. Эта конфигурация используется в процессе создания виртуальной сети. |

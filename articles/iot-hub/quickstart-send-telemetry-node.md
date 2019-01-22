@@ -10,14 +10,14 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 06/19/2018
 ms.author: dobett
-ms.openlocfilehash: 379d6cf589012e7b7e4d0f1ec2dc3ba40cec075f
-ms.sourcegitcommit: 5a1d601f01444be7d9f405df18c57be0316a1c79
+ms.openlocfilehash: b33039dab609cb457f1228a958f6a18070c675ac
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/10/2018
-ms.locfileid: "51514933"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54247560"
 ---
-# <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-the-telemetry-from-the-hub-with-a-back-end-application-nodejs"></a>Краткое руководство. Отправка данных телеметрии с устройства в Центр Интернета вещей и чтение данных телеметрии из центра с помощью внутреннего приложения (Node.js)
+# <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-nodejs"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Node.js)
 
 [!INCLUDE [iot-hub-quickstarts-1-selector](../../includes/iot-hub-quickstarts-1-selector.md)]
 
@@ -31,7 +31,7 @@ ms.locfileid: "51514933"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Примеры приложений, запускаемых в рамках этого краткого руководства, написаны на языке Node.js. Вам потребуется установить Node.js 4.x.x или более позднюю версию на компьютере для разработки.
+Два примера приложений, запускаемых в рамках этого краткого руководства, написаны на языке Node.js. Вам потребуется установить Node.js 4.x.x или более позднюю версию на компьютере для разработки.
 
 Node.js, предназначенный для нескольких платформ, можно скачать здесь: [nodejs.org](https://nodejs.org).
 
@@ -54,9 +54,9 @@ node --version
 
 1. Выполните приведенные ниже команды в Azure Cloud Shell, чтобы добавить расширение CLI Центра Интернета вещей и создать удостоверение устройства. 
 
-   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
-   **MyNodeDevice** — это имя, присвоенное зарегистрированному устройству. Используйте MyNodeDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
+   **MyNodeDevice**. Это имя, присвоенное зарегистрированному устройству. Используйте MyNodeDevice, как показано ниже. Если вы выбрали другое имя для устройства, используйте его при работе с этим руководством и обновите имя устройства в примерах приложений перед их запуском.
 
     ```azurecli-interactive
     az extension add --name azure-cli-iot-ext
@@ -65,7 +65,7 @@ node --version
 
 1. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
-   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyNodeDevice --output table
@@ -79,7 +79,7 @@ node --version
 
 1. Чтобы разрешить внутреннему приложению подключаться к центру Интернета вещей и получать сообщения, необходима _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
    
-   **YourIoTHubName.** Замените этот заполнитель именем центра Интернета вещей.
+   **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub show-connection-string --hub-name YourIoTHubName --output table
@@ -145,4 +145,4 @@ node --version
 Чтобы узнать, как управлять имитированным устройством из внутреннего приложения, перейдите к следующему краткому руководству.
 
 > [!div class="nextstepaction"]
-> [Краткое руководство по управлению подключенным к Центру Интернета вещей устройством (Java)](quickstart-control-device-node.md)
+> [Краткое руководство. Управление подключенным к Центру Интернета вещей устройством](quickstart-control-device-node.md)

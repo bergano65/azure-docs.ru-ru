@@ -13,13 +13,13 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/18/2018
 ms.author: mabrigg
-ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: e4da34be5b1e9eb2675f540fe4069cfd3dc1d056
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.reviewer: anajod
+ms.openlocfilehash: 1629c4b62fb04e057c38261a33fd3bc759b279c1
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49409951"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54267408"
 ---
 # <a name="tutorial-deploy-a-hybrid-cloud-solution-with-azure-and-azure-stack"></a>Руководство. Развертывание гибридного облачного решения с помощью Azure и Azure Stack
 
@@ -79,11 +79,11 @@ ms.locfileid: "49409951"
 
     ![Azure Stack Marketplace](media/azure-stack-solution-hybrid-cloud/image1.png)
 
-3. В **Marketplace** выберите **Вычисления**, а затем выберите **Дополнительно**. В разделе **Дополнительно** выберите образ **Free SQL Server License: SQL Server 2017 Developer on Windows Server**.
+3. В **Marketplace** выберите **Вычисления**, а затем выберите **Дополнительно**. В разделе **Дополнительно** выберите образ **Free SQL Server License: SQL Server 2017 Developer on Windows Server** (Бесплатная лицензия на SQL Server: SQL Server 2017 Developer на базе Windows Server 2016).
 
     ![Выбор образа виртуальной машины](media/azure-stack-solution-hybrid-cloud/image2.png)
 
-4. В образе **Free SQL Server License: SQL Server 2017 Developer on Windows Server** нажмите кнопку **Создать**.
+4. В разделе **Free SQL Server License: SQL Server 2017 Developer on Windows Server** (Бесплатная лицензия на SQL Server: SQL Server 2017 Developer на базе Windows Server 2016) выберите **Create** (Создать).
 
 5. Выберите **Основные сведения > Настройка базовых параметров**, заполните поле **Имя** именем виртуальной машины, поле **Имя пользователя** для сопоставления безопасности SQL Server и **Пароль** для сопоставления безопасности.  В раскрывающемся списке **Подписка** выберите подписку, в которую выполняется развертывание. Для параметра **Группа ресурсов** выберите значение **Выбрать существующее** и поместите виртуальную машину в ту же группу ресурсов, что и веб-приложение Azure Stack.
 

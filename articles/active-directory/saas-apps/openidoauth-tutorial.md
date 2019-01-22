@@ -4,22 +4,22 @@ description: Инструкции по настройке приложения O
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: eedebb76-e78c-428f-9cf0-5891852e79fb
-ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/25/2018
+ms.topic: tutorial
+ms.date: 01/07/2019
 ms.author: jeedes
-ms.openlocfilehash: 04639e6d27854d9c25b97936b163cfaaa25fc375
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
+ms.openlocfilehash: 1215e0060662e0d5261d3aeac4874e5833131ba3
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51287444"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54260845"
 ---
 # <a name="configure-an-openidoauth-application-from-the-azure-ad-app-gallery"></a>Настройка приложения OpenID или OAuth из коллекции приложений Azure AD
 
@@ -27,19 +27,19 @@ ms.locfileid: "51287444"
 
 1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory**. 
 
-    ![Кнопка "Azure Active Directory"](./media/openidoauth-tutorial/tutorial_general_01.png)
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png))
 
 2. Выберите **Корпоративные приложения** > **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"](./media/openidoauth-tutorial/tutorial_general_02.png)
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 3. В верхней части диалогового окна выберите **Создать приложение**.
 
-    ![Кнопка "Новое приложение"](./media/openidoauth-tutorial/tutorial_general_03.png)
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
 4. В поле поиска введите имя приложения. Выберите нужное приложение на панели результатов и выполните его регистрацию.
 
-    ![Добавление приложения](./media/openidoauth-tutorial/addfromgallery.png)
+    ![OpenID в списке результатов](common/search-new-app.png)
 
     > [!NOTE]
     > Для приложений OpenID Connect и OAuth кнопка **Добавить** отключена по умолчанию. Администратор клиента должен нажать кнопку "Регистрация" и дать согласие на регистрацию приложения. Затем приложение добавляется к клиенту пользователя, где выполняется конфигурация. Нет необходимости явно добавлять приложение.

@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/18/2018
+ms.date: 01/11/2019
 ms.author: ryanwi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: af733b75780787f07ec28ff45bda6810c3d96baa
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 70620b5ec57f6bf4403ac959c4c69026ae80b887
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52888126"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261406"
 ---
 # <a name="tutorial-scale-an-application-running-in-service-fabric-mesh"></a>Руководство. Масштабирование приложения, работающего в Сетке Service Fabric
 
@@ -53,7 +53,7 @@ ms.locfileid: "52888126"
 
 Одним из основных преимуществ развертывания приложений в Сетке Service Fabric является возможность легко масштабировать службы. Это можно использовать для обработки изменяющихся объемов нагрузки в службах или для повышения уровня доступности.
 
-В этом руководстве используется пример To Do List, который был [развернут ранее](service-fabric-mesh-tutorial-template-deploy-app.md) и должен быть запущен. Приложение содержит две службы: WebFrontEnd и ToDoService. Каждая служба изначально была развернута с одной репликой.  Чтобы просмотреть количество работающих реплик службы WebFrontEnd, используйте следующую команду.
+В этом руководстве используется пример To Do List, который был [развернут ранее](service-fabric-mesh-tutorial-template-deploy-app.md) и должен быть запущен. Приложение имеет две службы: WebFrontEnd и ToDoService. Каждая служба изначально была развернута с одной репликой.  Чтобы просмотреть количество работающих реплик службы WebFrontEnd, используйте следующую команду.
 
 ```azurecli
 az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-name todolistapp --query "replicaCount"

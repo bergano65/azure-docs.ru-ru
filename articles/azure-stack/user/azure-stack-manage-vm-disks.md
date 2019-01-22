@@ -14,12 +14,12 @@ ms.topic: get-started-article
 ms.date: 12/03/2018
 ms.author: mabrigg
 ms.reviewer: jiahan
-ms.openlocfilehash: 2e3cec4564c509cd225a9bcd43185f6f5b344e8c
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 473fb95de5da4a14c81d0fa3a5aafa33302d9ab2
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52833467"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54258685"
 ---
 # <a name="provision-virtual-machine-disk-storage-in-azure-stack"></a>Подготовка хранилища для дисков виртуальных машин в Azure Stack
 
@@ -73,7 +73,7 @@ ms.locfileid: "52833467"
     ![Пример. Панель мониторинга виртуальных машин](media/azure-stack-manage-vm-disks/vm-dashboard.png)
 
 2.  Выберите виртуальную машину, которая была подготовлена ранее.   
-    ![Пример. Выбор виртуальной машины на панели мониторинга](media/azure-stack-manage-vm-disks/select-a-vm.png)
+    ![Пример: выбор виртуальной машины на панели мониторинга](media/azure-stack-manage-vm-disks/select-a-vm.png)
 
 3.  Для виртуальной машины последовательно выберите **Диски** > **Подключить новый**.       
     ![Пример. Подключение нового диска к виртуальной машине](media/azure-stack-manage-vm-disks/Attach-disks.png)    
@@ -96,13 +96,13 @@ ms.locfileid: "52833467"
 1.  [Подготовьте VHD-файл](https://docs.microsoft.com/azure/virtual-machines/windows/classic/createupload-vhd), который будет использоваться в качестве диска данных для виртуальной машины. Отправьте этот VHD-файл в учетную запись хранения для использования с виртуальной машиной, к которой нужно подключить этот VHD-файл.
 
   Запланируйте размещение VHD-файла в контейнере, отличном от того, в котором хранится диск ОС.   
-  ![Пример. Отправка VHD-файла](media/azure-stack-manage-vm-disks/upload-vhd.png)
+  ![Пример: Отправка VHD-файла](media/azure-stack-manage-vm-disks/upload-vhd.png)
 
 2.  После отправки VHD-файла можно подключить VHD к виртуальной машине. В меню слева выберите **Виртуальные машины**.  
  ![Пример. Выбор виртуальной машины на панели мониторинга](media/azure-stack-manage-vm-disks/vm-dashboard.png)
 
 3.  Выберите виртуальную машину из списка.    
-  ![Пример. Выбор виртуальной машины на панели мониторинга](media/azure-stack-manage-vm-disks/select-a-vm.png)
+  ![Пример: выбор виртуальной машины на панели мониторинга](media/azure-stack-manage-vm-disks/select-a-vm.png)
 
 4.  На странице виртуальной машины выберите **Диски** > **Подключить существующий**.   
   ![Пример. Подключение существующего диска](media/azure-stack-manage-vm-disks/attach-disks2.png)
@@ -129,45 +129,45 @@ ms.locfileid: "52833467"
 В приведенных ниже примерах используются команды PowerShell для создания виртуальной машины с тремя дисками данных, размещенными в различных контейнерах.
 
 Первая команда создает объект виртуальной машины и сохраняет его в переменной *$VirtualMachine*. Команда присваивает имя и размер виртуальной машине.
-  ```
+  ```powershell
   $VirtualMachine = New-AzureRmVMConfig -VMName "VirtualMachine" `
                                       -VMSize "Standard_A2"
   ```
 
 Следующие три команды присваивают пути трех дисков данных переменным *$DataDiskVhdUri01*, *$DataDiskVhdUri02* и *$DataDiskVhdUri03*. Задайте имя другого пути в URL-адресе для распределения дисков в различные контейнеры.     
-  ```
+  ```powershell
   $DataDiskVhdUri01 = "https://contoso.blob.local.azurestack.external/test1/data1.vhd"
   ```
 
-  ```
+  ```powershell
   $DataDiskVhdUri02 = "https://contoso.blob.local.azurestack.external/test2/data2.vhd"
   ```
 
-  ```
+  ```powershell
   $DataDiskVhdUri03 = "https://contoso.blob.local.azurestack.external/test3/data3.vhd"
   ```
 
 Три окончательные команды добавляют диски данных на виртуальную машину, заданную в переменной *$VirtualMachine*. Каждая команда указывает имя, расположение и дополнительные свойства диска. Универсальный код ресурса (URI) каждого диска хранится в переменных *$DataDiskVhdUri01*, *$DataDiskVhdUri02* и *$DataDiskVhdUri03*.
-  ```
+  ```powershell
   $VirtualMachine = Add-AzureRmVMDataDisk -VM $VirtualMachine -Name 'DataDisk1' `
                   -Caching 'ReadOnly' -DiskSizeInGB 10 -Lun 0 `
                   -VhdUri $DataDiskVhdUri01 -CreateOption Empty
   ```
 
-  ```
+  ```powershell
   $VirtualMachine = Add-AzureRmVMDataDisk -VM $VirtualMachine -Name 'DataDisk2' `
                  -Caching 'ReadOnly' -DiskSizeInGB 11 -Lun 1 `
                  -VhdUri $DataDiskVhdUri02 -CreateOption Empty
   ```
 
-  ```
+  ```powershell
   $VirtualMachine = Add-AzureRmVMDataDisk -VM $VirtualMachine -Name 'DataDisk3' `
                   -Caching 'ReadOnly' -DiskSizeInGB 12 -Lun 2 `
                   -VhdUri $DataDiskVhdUri03 -CreateOption Empty
   ```
 
 Используйте следующие команды PowerShell, чтобы добавить конфигурацию диска ОС и сети на виртуальную машину, а затем запустите новую виртуальную машину.
-  ```
+  ```powershell
   #set variables
   $rgName = "myResourceGroup"
   $location = "local"
@@ -192,7 +192,7 @@ ms.locfileid: "52833467"
   $pip = New-AzureRmPublicIpAddress -Name $ipName -ResourceGroupName $rgName -Location $location `
       -AllocationMethod Dynamic
 
-  # Create a network security group cnfiguration
+  # Create a network security group configuration
   $nsgName = "myNsg"
   $rdpRule = New-AzureRmNetworkSecurityRuleConfig -Name myRdpRule -Description "Allow RDP" `
       -Access Allow -Protocol Tcp -Direction Inbound -Priority 110 `
@@ -218,34 +218,34 @@ ms.locfileid: "52833467"
 ### <a name="add-data-disks-to-an-existing-virtual-machine"></a>Добавление дисков данных к имеющейся виртуальной машине
 В следующих примерах используются команды PowerShell для добавления трех дисков данных в имеющуюся виртуальную машину.
 Первая команда получает виртуальную машину с именем VirtualMachine с помощью командлета **Get-AzureRmVM**. Она сохраняет имя виртуальной машины в переменной *$VirtualMachine* .
-  ```
+  ```powershell
   $VirtualMachine = Get-AzureRmVM -ResourceGroupName "myResourceGroup" `
                                   -Name "VirtualMachine"
   ```
 Следующие три команды присваивают пути трех дисков данных переменным $DataDiskVhdUri01, $DataDiskVhdUri02 и $DataDiskVhdUri03.  Разные имена путей в vhduri указывают различные контейнеры для размещения диска.
-  ```
+  ```powershell
   $DataDiskVhdUri01 = "https://contoso.blob.local.azurestack.external/test1/data1.vhd"
   ```
-  ```
+  ```powershell
   $DataDiskVhdUri02 = "https://contoso.blob.local.azurestack.external/test2/data2.vhd"
   ```
-  ```
+  ```powershell
   $DataDiskVhdUri03 = "https://contoso.blob.local.azurestack.external/test3/data3.vhd"
   ```
 
 
   Следующие три команды добавляют диски данных к виртуальной машине, заданной в переменной *$VirtualMachine*. Каждая команда указывает имя, расположение и дополнительные свойства диска. Универсальный код ресурса (URI) каждого диска хранится в переменных *$DataDiskVhdUri01*, *$DataDiskVhdUri02* и *$DataDiskVhdUri03*.
-  ```
+  ```powershell
   Add-AzureRmVMDataDisk -VM $VirtualMachine -Name "disk1" `
                         -VhdUri $DataDiskVhdUri01 -LUN 0 `
                         -Caching ReadOnly -DiskSizeinGB 10 -CreateOption Empty
   ```
-  ```
+  ```powershell
   Add-AzureRmVMDataDisk -VM $VirtualMachine -Name "disk2" `
                         -VhdUri $DataDiskVhdUri02 -LUN 1 `
                         -Caching ReadOnly -DiskSizeinGB 11 -CreateOption Empty
   ```
-  ```
+  ```powershell
   Add-AzureRmVMDataDisk -VM $VirtualMachine -Name "disk3" `
                         -VhdUri $DataDiskVhdUri03 -LUN 2 `
                         -Caching ReadOnly -DiskSizeinGB 12 -CreateOption Empty
@@ -253,7 +253,7 @@ ms.locfileid: "52833467"
 
 
   Последняя команда обновляет состояние виртуальной машины, заданной в переменной *$VirtualMachine*, в -*ResourceGroupName*.
-  ```
+  ```powershell
   Update-AzureRmVM -ResourceGroupName "myResourceGroup" -VM $VirtualMachine
   ```
 <!-- Pending scripts  

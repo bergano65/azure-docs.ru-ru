@@ -6,14 +6,14 @@ author: dsk-2015
 ms.custom: seodec18
 ms.service: digital-twins
 ms.topic: tutorial
-ms.date: 10/15/2018
+ms.date: 12/17/2018
 ms.author: dkshir
-ms.openlocfilehash: b21e5a87561757e2991a7b9addce0d1f3383204f
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
+ms.openlocfilehash: 28433f8f3f181c507521cb12f064df045ae21d9d
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53557722"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54212198"
 ---
 # <a name="tutorial-deploy-azure-digital-twins-and-configure-a-spatial-graph"></a>Руководство. Развертывание Azure Digital Twins и настройка пространственного графа
 
@@ -33,9 +33,7 @@ ms.locfileid: "53557722"
 > * Изменение примера приложения Digital Twins.
 > * Подготовка сборки.
 
-
 В этих руководствах для более детального и глубокого освещения концепций используются и изменяются те же примеры, что и [в руководстве по обнаружению свободных комнат](quickstart-view-occupancy-dotnet.md).
-
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -45,7 +43,7 @@ ms.locfileid: "53557722"
 
 - [Visual Studio Code](https://code.visualstudio.com/) для изучения примера кода. 
 
-<a id="deploy" />
+<a id="deploy"></a>
 
 ## <a name="deploy-digital-twins"></a>развертывание Azure Digital Twins;
 
@@ -53,8 +51,7 @@ ms.locfileid: "53557722"
 
 [!INCLUDE [create-digital-twins-portal](../../includes/digital-twins-create-portal.md)]
 
-
-<a id="permissions" />
+<a id="permissions"></a>
 
 ## <a name="grant-permissions-to-your-app"></a>предоставление разрешений приложению;
 
@@ -64,19 +61,20 @@ ms.locfileid: "53557722"
 
 [!INCLUDE [digital-twins-permissions](../../includes/digital-twins-permissions.md)]
 
-
 ## <a name="configure-the-digital-twins-sample"></a>Настройка примера Digital Twins
 
 В этом разделе рассматривается приложение Azure Digital Twins, которое обменивается данными с [REST API Digital Twins](https://docs.westcentralus.azuresmartspaces.net/management/swagger/ui/index). 
 
 ### <a name="download-the-sample"></a>Скачивание примера приложения
+
 Если вы уже скачали примеры для руководства [по обнаружению свободных комнат](quickstart-view-occupancy-dotnet.md), то можете пропустить эти шаги.
 
-1. Скачайте [примеры Digital Twins на .NET](https://github.com/Azure-Samples/digital-twins-samples-csharp/archive/master.zip). 
-2. Извлеките содержимое папки ZIP на свой компьютер. 
+1. Скачайте [примеры Digital Twins на .NET](https://github.com/Azure-Samples/digital-twins-samples-csharp/archive/master.zip).
+2. Извлеките содержимое папки ZIP на свой компьютер.
 
 ### <a name="explore-the-sample"></a>Анализ примера
-В извлеченной папке с примерами откройте файл **digital-twins-samples-csharp\digital-twins-samples.code-workspace** в Visual Studio Code. Этот файл содержит два проекта: 
+
+В извлеченной папке с примерами откройте файл **digital-twins-samples-csharp\digital-twins-samples.code-workspace** в Visual Studio Code. Этот файл содержит два проекта:
 
 * Вы можете использовать пример подготовки **occupancy-quickstart** для настройки и подготовки [пространственного интеллектуального графа](concepts-objectmodel-spatialgraph.md#graph). Этот граф представляет собой цифровое изображение физических пространств и ресурсов в них. В этом примере используется [объектная модель](concepts-objectmodel-spatialgraph.md#model), которая определяет объекты для интеллектуального здания. Полный список объектов Digital Twins и интерфейсов REST API см. в [этой документации по REST API](https://docs.westcentralus.azuresmartspaces.net/management/swagger) или по URL-адресу API управления, который был создан для [вашего экземпляра](#deploy).
 
@@ -89,6 +87,7 @@ ms.locfileid: "53557722"
 * Пример моделирования **device-connectivity** имитирует данные датчиков и отправляет их в центр Интернета вещей, подготовленный для вашего экземпляра Digital Twins. Вы будете использовать этот пример в [следующем руководстве после подготовки пространственного графа](tutorial-facilities-udf.md#simulate). Идентификаторы датчиков и устройств, используемые для настройки этого примера, должны быть такими же, как и для вашего графа.
 
 ### <a name="configure-the-provisioning-sample"></a>Настройка подготовленного примера
+
 1. Откройте окно команд и перейдите к скачанному примеру. Выполните следующую команду:
 
     ```cmd/sh
@@ -101,10 +100,10 @@ ms.locfileid: "53557722"
     dotnet restore
     ```
 
-1. В Visual Studio Code откройте файл **appSettings.json** в проекте **occupancy-quickstart**. Обновите следующие значения:
+1. В Visual Studio Code откройте файл [appSettings.json](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/appSettings.json) в проекте **occupancy-quickstart**. Обновите следующие значения:
    * **ClientId:** введите идентификатор приложения из регистрации приложения Azure AD. Вы записали этот идентификатор в разделе, в котором [устанавливали разрешения приложения](#permissions).
    * **Tenant:** введите идентификатор каталога своего [клиента Azure AD](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant). Вы также записали этот идентификатор в разделе, в котором [устанавливали разрешения приложения](#permissions).
-   * **BaseUrl:** введите URL-адрес экземпляра Digital Twins. Чтобы получить этот URL-адрес, замените заполнители в этом URL-адресе значениями для вашего экземпляра: _https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/_. Вы также можете получить этот URL-адрес, изменив URL-адрес API управления, указанный в [разделе развертывания](#deploy). Замените **swagger/** на **api/v1.0/**.
+   * **BaseUrl:** введите URL-адрес экземпляра Digital Twins. Чтобы получить этот URL-адрес, замените заполнители в этом URL-адресе значениями для вашего экземпляра: `https://yourDigitalTwinsName.yourLocation.azuresmartspaces.net/management/api/v1.0/`. Вы также можете получить этот URL-адрес, изменив URL-адрес API управления, указанный в [разделе развертывания](#deploy). Замените **swagger/** на **api/v1.0/**.
 
 1. Просмотрите список функций Digital Twins, которые вы можете исследовать с помощью примера. Выполните следующую команду:
 
@@ -112,10 +111,11 @@ ms.locfileid: "53557722"
     dotnet run
     ```
 
-<a id="provision-spaces" />
+<a id="provision-spaces"></a>
 
 ## <a name="understand-the-provisioning-process"></a>Сведения о процессе подготовки
-В этом разделе показано, как пример положения подготавливает пространственный граф здания. 
+
+В этом разделе показано, как пример положения подготавливает пространственный граф здания.
 
 В Visual Studio Code перейдите в папку **occupancy-quickstart\src\actions** и откройте файл **provisionSample.cs**. Обратите внимание на следующую функцию:
 
@@ -137,15 +137,16 @@ public static async Task<IEnumerable<ProvisionResults.Space>> ProvisionSample(Ht
 
 ```
 
-Эта функция использует файл **provisionSample.yaml** в той же папке. Откройте этот файл и обратите внимание на иерархию офисного здания: *место проведения*, *этаж*, *область* и *комнаты*. В любой из этих физических областей могут быть *устройства* и *датчики*. Каждая запись содержит предопределенный тип (`type`), например Floor (Этаж), Room (Комната). 
+Эта функция использует файл [provisionSample.yaml](https://github.com/Azure-Samples/digital-twins-samples-csharp/blob/master/occupancy-quickstart/src/actions/provisionSample.yaml) в той же папке. Откройте этот файл и обратите внимание на иерархию офисного здания: *место проведения*, *этаж*, *область* и *комнаты*. В любой из этих физических областей могут быть *устройства* и *датчики*. Каждая запись содержит предопределенный тип (`type`), например Floor (Этаж), Room (Комната).
 
 В файле **yaml** показан пространственный граф, использующий объектную модель Digital Twins `Default`. Эта модель предоставляет универсальные имена для большинства типов, чего вполне достаточно для здания. Например, Temperature для SensorDataType, Map для SpaceBlobType и Room с подтипами FocusRoom, ConferenceRoom и т. д. для типов пространств. 
 
 Если вам нужно создать пространственный граф для другого типа помещения, например фабрики, вам может потребоваться другая объектная модель. Можно выяснить, какие модели доступны для использования, выполнив команду `dotnet run GetOntologies` в командной строке в примере подготовки. 
 
-Дополнительные сведения о пространственных графах и объектных моделях Digital Twins см. в [этой статье](concepts-objectmodel-spatialgraph.md). 
+Дополнительные сведения о пространственных графах и объектных моделях Digital Twins см. в [этой статье](concepts-objectmodel-spatialgraph.md).
 
 ### <a name="modify-the-sample-spatial-graph"></a>Изменение примера пространственного графа
+
 Файл **provisionSample.yaml** содержит следующие узлы:
 
 - **resources:** узел `resources` создает ресурс Центра Интернета вещей для взаимодействия с устройствами в вашем экземпляре настройки. Центр Интернета вещей в корневом узле графа может взаимодействовать со всеми устройствами и датчиками в графе.  
@@ -168,22 +169,19 @@ public static async Task<IEnumerable<ProvisionResults.Space>> ProvisionSample(Ht
 > [!TIP]
 > Вы можете просмотреть и изменить пространственный граф с помощью [средства просмотра графов Azure Digital Twins](https://github.com/Azure/azure-digital-twins-graph-viewer).
 
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы хотите прекратить изучение Azure Digital Twins на этом этапе, можете удалить ресурсы, созданные во время работы с этим руководством:
 
 1. На [портале Azure](http://portal.azure.com) в меню слева щелкните **Все ресурсы**, выберите группу ресурсов Digital Twins, а затем щелкните **Удалить**.
-   
+
     > [!TIP]
     > Если при удалении экземпляра Digital Twins у вас возникла проблема, запустите обновление службы, в котором эта проблема исправлена. Затем повторите попытку удалить свой экземпляр.
 
-1. При необходимости удалите пример приложения на компьютере. 
-
+1. При необходимости удалите пример приложения на компьютере.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы узнать, как реализовать пользовательскую логику для мониторинга условий в вашем примере здания, перейдите к следующему руководству в серии: 
 > [!div class="nextstepaction"]
 > [Руководство по подготовке примера здания и мониторинге условий работы с помощью Azure Digital Twins](tutorial-facilities-udf.md)
-

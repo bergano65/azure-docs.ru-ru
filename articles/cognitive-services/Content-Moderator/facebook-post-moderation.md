@@ -1,25 +1,25 @@
 ---
 title: Руководство. Модерация контента с помощью Azure Content Moderator
 titlesuffix: Azure Cognitive Services
-description: Модерация страниц Facebook с помощью Content Moderator.
+description: Из этого руководства вы узнаете, как использовать Content Moderator на основе машинного обучения для модерации комментариев и записей на Facebook.
 services: cognitive-services
 author: sanjeev3
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: tutorial
-ms.date: 09/18/2017
+ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 048f2f40714fd7675c073337825d75443e58039b
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 085ddaf757f2a11b4db4aadb22ad16009d29231e
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53255437"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54260453"
 ---
 # <a name="tutorial-facebook-content-moderation-with-content-moderator"></a>Руководство. Модерация контента Facebook с помощью Azure Content Moderator
 
-В этом руководстве вы узнаете, как использовать машинное обучение и Content Moderator для модерации комментариев и записей на Facebook.
+Из этого руководства вы узнаете, как использовать Content Moderator на основе машинного обучения для модерации комментариев и записей на Facebook.
 
 В данном руководстве описываются следующие шаги:
 
@@ -35,7 +35,7 @@ ms.locfileid: "53255437"
 
 ## <a name="create-a-content-moderator-team"></a>Создание команды Content Moderator
 
-Обратитесь к странице [краткого руководства](quick-start.md), чтобы зарегистрироваться в Content Moderator и создать команду.
+См. статью [Краткое руководство. Знакомство с Content Moderator](quick-start.md), чтобы зарегистрироваться в Content Moderator и создать команду.
 
 ## <a name="configure-image-moderation-workflow-threshold"></a>Настройка рабочего процесса модерации изображений (порога)
 
@@ -152,10 +152,6 @@ ms.locfileid: "53255437"
 ## <a name="license"></a>Лицензия
 
 Все пакеты SDK и примеры для Microsoft Cognitive Services регулируются лицензией MIT. Дополнительные сведения см. в разделе о [лицензировании](https://microsoft.mit-license.org/).
-
-## <a name="developer-code-of-conduct"></a>Правила поведения для разработчиков
-
-Ожидается, что разработчики, использующие Cognitive Services, включая эту клиентскую библиотеку и пример, следуют правилам поведения разработчиков для служб Microsoft Cognitive Services, доступным здесь: http://go.microsoft.com/fwlink/?LinkId=698895.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

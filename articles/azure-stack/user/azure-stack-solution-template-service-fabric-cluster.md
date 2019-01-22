@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 10/22/2018
 ms.author: mabrigg
 ms.reviewer: shnatara
-ms.openlocfilehash: abb77f59e49a98c1195dcd2e7b622b2b8e3fd7b8
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: 151f6fa7880db03909c522147d9c1f74508f51a1
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50087290"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54351855"
 ---
 # <a name="deploy-a-service-fabric-cluster-in-azure-stack"></a>Развертывание кластера Service Fabric в Azure Stack
 
@@ -118,7 +118,7 @@ ms.locfileid: "50087290"
    ``` 
 
 
-Дополнительные сведения см. в статье [Управление Key Vault в Azure Stack с использованием PowerShell](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-kv-manage-powershell).
+Дополнительные сведения см. в статье [Управление Key Vault в Azure Stack с использованием PowerShell](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-key-vault-manage-powershell).
 
 ## <a name="deploy-the-marketplace-item"></a>Развертывание элемента Marketplace
 
@@ -138,10 +138,10 @@ ms.locfileid: "50087290"
 
    В *соответствующем поле* введите отпечаток *сертификата клиента администрирования*. (См. раздел [Предварительные требования](#prerequisites).)
    
-   - В поле "Исходное Key Vault" укажите всю строку *идентификатора Key Vault*, содержащуюся в результатах скрипта. 
+   - В поле "Исходное Key Vault"  укажите всю строку *идентификатора Key Vault*, содержащуюся в результатах скрипта. 
    - В поле URL-адреса сертификата кластера укажите полный URL-адрес из *идентификатора секрета*, содержащегося в результатах скрипта. 
-   - В соответствующем поле укажите *отпечаток сертификата кластера* из результатов скрипта.
-   - В соответствующем поле укажите *отпечаток сертификата клиента администрирования*, созданный при выполнении предварительных требований. 
+   - В поле отпечатка сертификата кластера укажите *отпечаток сертификата кластера* из результатов скрипта.
+   - В поле отпечатков сертификата клиента администрирования укажите *отпечаток сертификата клиента администрирования*, созданный при выполнении предварительных требований. 
 
    ![Выходные данные скрипта](media/azure-stack-solution-template-service-fabric-cluster/image5.png)
 

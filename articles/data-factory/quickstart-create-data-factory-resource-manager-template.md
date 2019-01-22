@@ -12,36 +12,36 @@ ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 11/28/2018
 ms.author: douglasl
-ms.openlocfilehash: 5a883d922944552b53b152546cc891a0a2f4a31f
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 5e0d13593fb807f95ba024d527b6720b6abb4a86
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54042739"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54306154"
 ---
 # <a name="tutorial-create-an-azure-data-factory-using-azure-resource-manager-template"></a>Руководство. Создание фабрики данных Azure с помощью шаблона Azure Resource Manager
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-build-your-first-pipeline-using-arm.md)
-> * [Текущая версия](quickstart-create-data-factory-resource-manager-template.md) 
+> * [Текущая версия](quickstart-create-data-factory-resource-manager-template.md)
 
-В этом руководстве объясняется, как создать фабрику данных Azure с использованием шаблона Azure Resource Manager. Конвейер, который вы создадите в этой фабрике данных, **копирует** данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по **преобразованию** данных с помощью Фабрики данных Azure см. в статье [Преобразование данных с помощью действия Spark в фабрике данных Azure](transform-data-using-spark.md). 
+В этом руководстве объясняется, как создать фабрику данных Azure с использованием шаблона Azure Resource Manager. Конвейер, который вы создадите в этой фабрике данных, **копирует** данные из одной папки в другую в хранилище BLOB-объектов Azure. Инструкции по **преобразованию** данных с помощью Фабрики данных Azure см. в статье [Преобразование данных с помощью действия Spark в фабрике данных Azure](transform-data-using-spark.md).
 
 > [!NOTE]
 > Эта статья не содержит подробный обзор службы фабрики данных. Общие сведения о службе фабрики данных Azure см. в статье [Введение в фабрику данных Azure](introduction.md).
 
-[!INCLUDE [data-factory-quickstart-prerequisites](../../includes/data-factory-quickstart-prerequisites.md)] 
+[!INCLUDE [data-factory-quickstart-prerequisites](../../includes/data-factory-quickstart-prerequisites.md)]
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 Чтобы установить модули Azure PowerShell, выполните инструкции из статьи [Установка и настройка Azure PowerShell](/powershell/azure/install-azurerm-ps).
 
 ## <a name="resource-manager-templates"></a>Шаблоны диспетчера ресурсов
-Общие сведения о шаблонах Azure Resource Manager см. в руководстве по [созданию шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md). 
+Общие сведения о шаблонах Azure Resource Manager см. в руководстве по [созданию шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
 
 В следующем разделе содержится полный шаблон Resource Manager для определения сущностей фабрики данных. Таким образом, вы сможете быстро изучить это руководство и протестировать шаблон. Дополнительные сведения о том, как определяется каждая сущность фабрики данных, см. в разделе [Сущности фабрики данных в шаблоне](#data-factory-entities-in-the-template).
 
 Дополнительные сведения о синтаксисе JSON и свойствах для ресурсов Фабрики данных в шаблоне см. в статье о [типах ресурсов Microsoft.DataFactory](/azure/templates/microsoft.datafactory/allversions).
 
-## <a name="data-factory-json"></a>JSON-файл фабрики данных 
+## <a name="data-factory-json"></a>JSON-файл фабрики данных
 Создайте в папке **C:\ADFTutorial** файл JSON с именем **ADFTutorialARM.json** и следующим содержимым:
 
 ```json
@@ -265,11 +265,11 @@ ms.locfileid: "54042739"
 ```
 
 ## <a name="parameters-json"></a>JSON-файл параметров
-Создайте JSON-файл с именем **ADFTutorialARM Parameters.json**, содержащий параметры для шаблона Azure Resource Manager.  
+Создайте JSON-файл с именем **ADFTutorialARM Parameters.json**, содержащий параметры для шаблона Azure Resource Manager.
 
 > [!IMPORTANT]
-> - Укажите значения имени и ключа вашей учетной записи хранения Azure для параметров **storageAccountName** и **storageAccountKey** в этом файле параметров. Вы создали контейнер adftutorial и передали пример файла (emp.txt) в папку входных данных в этом хранилище больших двоичных объектов Azure. 
-> - Укажите глобально уникальное имя фабрики данных для параметра **dataFactoryName**. Например:  ARMTutorialFactoryJohnDoe11282017. 
+> - Укажите значения имени и ключа вашей учетной записи хранения Azure для параметров **storageAccountName** и **storageAccountKey** в этом файле параметров. Вы создали контейнер adftutorial и передали пример файла (emp.txt) в папку входных данных в этом хранилище больших двоичных объектов Azure.
+> - Укажите глобально уникальное имя фабрики данных для параметра **dataFactoryName**. Например:  ARMTutorialFactoryJohnDoe11282017.
 > - Для параметра **triggerStartTime** укажите текущую дату в таком формате: `2017-11-28T00:00:00`.
 > - Для параметра **triggerEndTime** укажите завтрашнюю дату в таком формате: `2017-11-29T00:00:00`. Также можно проверить текущее время UTC и указать следующий час или два часа как время окончания. Например, если текущее время UTC — 1:32:00, укажите `2017-11-29:03:00:00` в качестве времени окончания. В этом случае триггер запустит конвейер дважды (в 2:00 и 3:00).
 
@@ -280,7 +280,7 @@ ms.locfileid: "54042739"
   "parameters": {
     "dataFactoryName": {
       "value": "<datafactoryname>"
-    },    
+    },
     "dataFactoryLocation": {
       "value": "East US"
     },
@@ -316,16 +316,16 @@ ms.locfileid: "54042739"
 ```
 
 > [!IMPORTANT]
-> Можно создать отдельные JSON-файлы параметров для сред разработки, тестирования и рабочей среды, которые можно использовать с одним и тем же шаблоном JSON фабрики данных. Скрипт PowerShell позволяет автоматизировать развертывание сущностей фабрики данных в этих средах. 
+> Можно создать отдельные JSON-файлы параметров для сред разработки, тестирования и рабочей среды, которые можно использовать с одним и тем же шаблоном JSON фабрики данных. Скрипт PowerShell позволяет автоматизировать развертывание сущностей фабрики данных в этих средах.
 
-## <a name="deploy-data-factory-entities"></a>Развертывание сущностей фабрики данных 
-Чтобы развернуть сущности фабрики данных с помощью шаблона Resource Manager, созданного на шаге 1, выполните следующую команду в PowerShell. 
+## <a name="deploy-data-factory-entities"></a>Развертывание сущностей фабрики данных
+Чтобы развернуть сущности фабрики данных с помощью шаблона Resource Manager, созданного на шаге 1, выполните следующую команду в PowerShell.
 
 ```PowerShell
 New-AzureRmResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile C:\ADFTutorial\ADFTutorialARM.json -TemplateParameterFile C:\ADFTutorial\ADFTutorialARM-Parameters.json
 ```
 
-Вы увидите похожий результат: 
+Вы увидите похожий результат:
 
 ```
 DeploymentName          : MyARMDeployment
@@ -355,21 +355,21 @@ DeploymentDebugLogLevel :
 
 ## <a name="start-the-trigger"></a>Запуск триггера
 
-Шаблон развертывает следующие сущности фабрики данных: 
+Шаблон развертывает следующие сущности фабрики данных:
 
 - Связанная служба хранения Azure
 - Наборы данных больших двоичных объектов Azure (входной и выходной)
 - Конвейер с действием копирования
 - Триггер для активации конвейера
 
-Развернутый триггер находится в остановленном состоянии. Один из способов запуска триггера — использование командлета PowerShell **Start-AzureRmDataFactoryV2Trigger**. Ниже приведены подробные инструкции. 
+Развернутый триггер находится в остановленном состоянии. Один из способов запуска триггера — использование командлета PowerShell **Start-AzureRmDataFactoryV2Trigger**. Ниже приведены подробные инструкции.
 
-1. В окне PowerShell создайте переменную для хранения имени группы ресурсов. Скопируйте следующую команду в окно PowerShell и нажмите клавишу ВВОД. Если вы указали другое имя группы ресурсов для команды New-AzureRmResourceGroupDeployment, обновите значение здесь. 
+1. В окне PowerShell создайте переменную для хранения имени группы ресурсов. Скопируйте следующую команду в окно PowerShell и нажмите клавишу ВВОД. Если вы указали другое имя группы ресурсов для команды New-AzureRmResourceGroupDeployment, обновите значение здесь.
 
     ```powershell
     $resourceGroupName = "ADFTutorialResourceGroup"
-    ``` 
-1. Создайте переменную для хранения имени фабрики данных. Укажите то же имя, которое вы указали в файле ADFTutorialARM-Parameters.json.   
+    ```
+1. Создайте переменную для хранения имени фабрики данных. Укажите то же имя, которое вы указали в файле ADFTutorialARM-Parameters.json.
 
     ```powershell
     $dataFactoryName = "<yourdatafactoryname>"
@@ -385,7 +385,7 @@ DeploymentDebugLogLevel :
     Get-AzureRmDataFactoryV2Trigger -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $triggerName
     ```
 
-    Пример выходных данных: 
+    Пример выходных данных:
 
     ```json
     TriggerName       : ArmTemplateTestTrigger
@@ -395,14 +395,14 @@ DeploymentDebugLogLevel :
     RuntimeState      : Stopped
     ```
     
-    Обратите внимание, что среда выполнения триггера находится в состоянии **Остановлено**. 
-5. **Запустите триггер**. Триггер выполняет конвейер во время, определенное в шаблоне. То есть при выполнении этой команды в 14:25 триггер впервые выполняет конвейер в 15:00. Затем он будет запускать конвейер каждый час, пока не истечет время завершения, указанное для триггера. 
+    Обратите внимание, что среда выполнения триггера находится в состоянии **Остановлено**.
+5. **Запустите триггер**. Триггер выполняет конвейер во время, определенное в шаблоне. То есть при выполнении этой команды в 14:25 триггер впервые выполняет конвейер в 15:00. Затем он будет запускать конвейер каждый час, пока не истечет время завершения, указанное для триггера.
 
     ```powershell
     Start-AzureRmDataFactoryV2Trigger -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -TriggerName $triggerName
     ```
     
-    Пример выходных данных: 
+    Пример выходных данных:
     
     ```
     Confirm
@@ -410,7 +410,7 @@ DeploymentDebugLogLevel :
     [Y] Yes  [N] No  [S] Suspend  [?] Help (default is "Y"): y
     True
     ```
-6. Обязательно запустите триггер с помощью команды Get-AzureRmDataFactoryV2Trigger еще раз.  
+6. Обязательно запустите триггер с помощью команды Get-AzureRmDataFactoryV2Trigger еще раз.
 
     ```powershell
     Get-AzureRmDataFactoryV2Trigger -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -TriggerName $triggerName
@@ -430,37 +430,37 @@ DeploymentDebugLogLevel :
 1. На [портале Azure](https://portal.azure.com/) в разделе **Все службы** выполните поиск по ключевому слову, например **фабрики да**, и выберите **Фабрики данных**.
 
     ![Обзор меню фабрик данных](media/quickstart-create-data-factory-resource-manager-template/browse-data-factories-menu.png)
-2. На странице **Фабрики данных** щелкните созданную фабрику данных. При необходимости отфильтруйте список по имени фабрики данных.  
+2. На странице **Фабрики данных** щелкните созданную фабрику данных. При необходимости отфильтруйте список по имени фабрики данных.
 
     ![Выбор фабрики данных](media/quickstart-create-data-factory-resource-manager-template/select-data-factory.png)
-3. На странице фабрики данных, щелкните плитку **Мониторинг и управление**. 
+3. На странице фабрики данных, щелкните плитку **Мониторинг и управление**.
 
     ![Плитка "Мониторинг и управление"](media/quickstart-create-data-factory-resource-manager-template/monitor-manage-tile.png)
-4. Откройте **приложение интеграции данных** на отдельной вкладке в веб-браузере. Если вкладка мониторинга неактивна, переключитесь на **вкладку мониторинга**. Обратите внимание, что запуск конвейера активирован **триггером планировщика**. 
+4. Откройте **приложение интеграции данных** на отдельной вкладке в веб-браузере. Если вкладка мониторинга неактивна, переключитесь на **вкладку мониторинга**. Обратите внимание, что запуск конвейера активирован **триггером планировщика**.
 
-    ![Мониторинг выполнения конвейера](media/quickstart-create-data-factory-resource-manager-template/monitor-pipeline-run.png)    
+    ![Мониторинг выполнения конвейера](media/quickstart-create-data-factory-resource-manager-template/monitor-pipeline-run.png)
 
     > [!IMPORTANT]
-    > Как видите, конвейер запускается только по часам (например, в 4:00, 5: 00, 6:00 и т. д.). Нажмите кнопку **Обновить** на панели инструментов, чтобы обновить список, когда наступит следующий час. 
-5. Щелкните ссылку в столбцах **Действия**. 
+    > Как видите, конвейер запускается только по часам (например, в 4:00, 5: 00, 6:00 и т. д.). Нажмите кнопку **Обновить** на панели инструментов, чтобы обновить список, когда наступит следующий час.
+5. Щелкните ссылку в столбцах **Действия**.
 
     ![Ссылка на действия конвейера](media/quickstart-create-data-factory-resource-manager-template/pipeline-actions-link.png)
-6. Вы увидите, что выполняется действие, связанное с выполнением конвейера. В этом кратком руководстве конвейер содержит только один тип действия: копирование. Поэтому вы видите выполнение этого действия. 
+6. Вы увидите, что выполняется действие, связанное с выполнением конвейера. В этом кратком руководстве конвейер содержит только один тип действия: копирование. Поэтому вы видите выполнение этого действия.
 
     ![Выполнение действия](media/quickstart-create-data-factory-resource-manager-template/activity-runs.png)
-1. Щелкните ссылку под столбцом **Вывод**. Вы увидите результат операции копирования в окне **Вывод**. Чтобы просмотреть все результаты, нажмите кнопку "Развернуть". Можно закрыть развернутое окно вывода. 
+1. Щелкните ссылку под столбцом **Вывод**. Вы увидите результат операции копирования в окне **Вывод**. Чтобы просмотреть все результаты, нажмите кнопку "Развернуть". Можно закрыть развернутое окно вывода.
 
     ![Окно вывода](media/quickstart-create-data-factory-resource-manager-template/output-window.png)
-7. Остановите триггер, после успешного выполнения или сбоя выполнения. Триггер запускает конвейер раз в час. Конвейер копирует один и тот же файл из входной папки в выходную для каждого запуска. Чтобы остановить триггер, в окне PowerShell введите следующую команду. 
+7. Остановите триггер, после успешного выполнения или сбоя выполнения. Триггер запускает конвейер раз в час. Конвейер копирует один и тот же файл из входной папки в выходную для каждого запуска. Чтобы остановить триггер, в окне PowerShell введите следующую команду.
     
     ```powershell
     Stop-AzureRmDataFactoryV2Trigger -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $triggerName
     ```
 
-[!INCLUDE [data-factory-quickstart-verify-output-cleanup.md](../../includes/data-factory-quickstart-verify-output-cleanup.md)] 
+[!INCLUDE [data-factory-quickstart-verify-output-cleanup.md](../../includes/data-factory-quickstart-verify-output-cleanup.md)]
 
 ## <a name="data-factory-entities-in-the-template"></a> Определения JSON для сущностей
-В шаблоне JSON определены следующие сущности фабрики данных: 
+В шаблоне JSON определены следующие сущности фабрики данных:
 
 - [Связанная служба хранения Azure](#azure-storage-linked-service)
 - [Входной набор данных большого двоичного объекта Azure](#azure-blob-input-dataset)
@@ -469,7 +469,7 @@ DeploymentDebugLogLevel :
 - [Триггер](#trigger)
 
 #### <a name="azure-storage-linked-service"></a>Связанная служба хранения Azure
-Связанная служба хранилища Azure связывает учетную запись хранения Azure с фабрикой данных. Вы создали контейнер и отправили данные в эту учетную запись хранения для выполнения предварительных требований. В этом разделе вы укажете имя и ключ вашей учетной записи хранения Azure. Дополнительные сведения о свойствах JSON для определения связанной службы хранилища Azure см. в разделе [Связанная служба хранилища Azure](connector-azure-blob-storage.md#linked-service-properties). 
+Связанная служба хранилища Azure связывает учетную запись хранения Azure с фабрикой данных. Вы создали контейнер и отправили данные в эту учетную запись хранения для выполнения предварительных требований. В этом разделе вы укажете имя и ключ вашей учетной записи хранения Azure. Дополнительные сведения о свойствах JSON для определения связанной службы хранилища Azure см. в разделе [Связанная служба хранилища Azure](connector-azure-blob-storage.md#linked-service-properties).
 
 ```json
 {
@@ -492,108 +492,102 @@ DeploymentDebugLogLevel :
 }
 ```
 
-Для connectionString используются параметры storageAccountName и storageAccountKey. Значения для этих параметров передаются с помощью файла конфигурации. В этом определении также используются переменные azureStroageLinkedService и dataFactoryName, заданные в шаблоне. 
+Для connectionString используются параметры storageAccountName и storageAccountKey. Значения для этих параметров передаются с помощью файла конфигурации. В этом определении также используются переменные azureStroageLinkedService и dataFactoryName, заданные в шаблоне.
 
 #### <a name="azure-blob-input-dataset"></a>Входной набор данных большого двоичного объекта Azure
-Связанная служба хранилища Azure указывает строку подключения, которую фабрика данных использует во время выполнения, чтобы подключиться к учетной записи хранения Azure. В определении набора данных большого двоичного объекта Azure укажите имена контейнера больших двоичных объектов, папки и файла, содержащего входные данные. Подробные сведения о свойствах JSON, которые используюся для определения набора данных большого двоичного объекта Azure, см. в разделе [Свойства типа "Набор данных большого двоичного объекта Azure"](connector-azure-blob-storage.md#dataset-properties). 
+Связанная служба хранилища Azure указывает строку подключения, которую фабрика данных использует во время выполнения, чтобы подключиться к учетной записи хранения Azure. В определении набора данных большого двоичного объекта Azure укажите имена контейнера больших двоичных объектов, папки и файла, содержащего входные данные. Подробные сведения о свойствах JSON, которые используюся для определения набора данных большого двоичного объекта Azure, см. в разделе [Свойства типа "Набор данных большого двоичного объекта Azure"](connector-azure-blob-storage.md#dataset-properties).
 
 ```json
 {
     "type": "datasets",
     "name": "[variables('inputDatasetName')]",
     "dependsOn": [
-    "[parameters('dataFactoryName')]",
-    "[variables('azureStorageLinkedServiceName')]"
+        "[parameters('dataFactoryName')]",
+        "[variables('azureStorageLinkedServiceName')]"
     ],
     "apiVersion": "2017-09-01-preview",
     "properties": {
-    "type": "AzureBlob",
-    "typeProperties": {
-        "folderPath": "[concat(parameters('blobContainer'), '/', parameters('inputBlobFolder'), '/')]",
-        "fileName": "[parameters('inputBlobName')]"
-    },
-    "linkedServiceName": {
-        "referenceName": "[variables('azureStorageLinkedServiceName')]",
-        "type": "LinkedServiceReference"
-    }
+        "type": "AzureBlob",
+        "typeProperties": {
+            "folderPath": "[concat(parameters('blobContainer'), '/', parameters('inputBlobFolder'), '/')]",
+            "fileName": "[parameters('inputBlobName')]"
+        },
+        "linkedServiceName": {
+            "referenceName": "[variables('azureStorageLinkedServiceName')]",
+            "type": "LinkedServiceReference"
+        }
     }
 },
 
 ```
 
 #### <a name="azure-blob-output-dataset"></a>Выходной набор данных BLOB-объекта Azure
-Укажите имя папки в хранилище BLOB-объектов Azure, которая содержит скопированные данные из входной папки. Подробные сведения о свойствах JSON, которые используюся для определения набора данных большого двоичного объекта Azure, см. в разделе [Свойства типа "Набор данных большого двоичного объекта Azure"](connector-azure-blob-storage.md#dataset-properties). 
+Укажите имя папки в хранилище BLOB-объектов Azure, которая содержит скопированные данные из входной папки. Подробные сведения о свойствах JSON, которые используюся для определения набора данных большого двоичного объекта Azure, см. в разделе [Свойства типа "Набор данных большого двоичного объекта Azure"](connector-azure-blob-storage.md#dataset-properties).
 
 ```json
 {
     "type": "datasets",
     "name": "[variables('outputDatasetName')]",
     "dependsOn": [
-    "[parameters('dataFactoryName')]",
-    "[variables('azureStorageLinkedServiceName')]"
+        "[parameters('dataFactoryName')]",
+        "[variables('azureStorageLinkedServiceName')]"
     ],
     "apiVersion": "2017-09-01-preview",
     "properties": {
-    "type": "AzureBlob",
-    "typeProperties": {
-        "folderPath": "[concat(parameters('blobContainer'), '/', parameters('outputBlobFolder'), '/')]",
-        "fileName": "[parameters('outputBlobName')]"
-    },
-    "linkedServiceName": {
-        "referenceName": "[variables('azureStorageLinkedServiceName')]",
-        "type": "LinkedServiceReference"
-    }
+        "type": "AzureBlob",
+        "typeProperties": {
+            "folderPath": "[concat(parameters('blobContainer'), '/', parameters('outputBlobFolder'), '/')]",
+            "fileName": "[parameters('outputBlobName')]"
+        },
+        "linkedServiceName": {
+            "referenceName": "[variables('azureStorageLinkedServiceName')]",
+            "type": "LinkedServiceReference"
+        }
     }
 }
 ```
 
 #### <a name="data-pipeline"></a>Конвейер данных
-Определите конвейер, который копирует данные из набора данных большого двоичного объекта Azure в другой такой набор данных. В разделе [Конвейер JSON](concepts-pipelines-activities.md#pipeline-json) описаны элементы JSON, используемые для определения конвейера в этом примере. 
+Определите конвейер, который копирует данные из набора данных большого двоичного объекта Azure в другой такой набор данных. В разделе [Конвейер JSON](concepts-pipelines-activities.md#pipeline-json) описаны элементы JSON, используемые для определения конвейера в этом примере.
 
 ```json
 {
     "type": "pipelines",
     "name": "[variables('pipelineName')]",
     "dependsOn": [
-    "[parameters('dataFactoryName')]",
-    "[variables('azureStorageLinkedServiceName')]",
-    "[variables('inputDatasetName')]",
-    "[variables('outputDatasetName')]"
+        "[parameters('dataFactoryName')]",
+        "[variables('azureStorageLinkedServiceName')]",
+        "[variables('inputDatasetName')]",
+        "[variables('outputDatasetName')]"
     ],
     "apiVersion": "2017-09-01-preview",
     "properties": {
-    "activities": [
-        {
-        "type": "Copy",
-        "typeProperties": {
-            "source": {
-            "type": "BlobSource"
+        "activities": [{
+            "type": "Copy",
+            "typeProperties": {
+                "source": {
+                    "type": "BlobSource"
+                },
+                "sink": {
+                    "type": "BlobSink"
+                }
             },
-            "sink": {
-            "type": "BlobSink"
-            }
-        },
-        "name": "MyCopyActivity",
-        "inputs": [
-            {
-            "referenceName": "[variables('inputDatasetName')]",
-            "type": "DatasetReference"
-            }
-        ],
-        "outputs": [
-            {
-            "referenceName": "[variables('outputDatasetName')]",
-            "type": "DatasetReference"
-            }
-        ]
-        }
-    ]
+            "name": "MyCopyActivity",
+            "inputs": [{
+                "referenceName": "[variables('inputDatasetName')]",
+                "type": "DatasetReference"
+            }],
+            "outputs": [{
+                "referenceName": "[variables('outputDatasetName')]",
+                "type": "DatasetReference"
+            }]
+        }]
     }
 }
 ```
 
 #### <a name="trigger"></a>Триггер
-Определите триггер, который выполняет конвейер раз в час. Развернутый триггер находится в остановленном состоянии. Запустите триггер с помощью командлета **Start-AzureRmDataFactoryV2Trigger**. Дополнительные сведения см. в руководстве по [выполнению конвейера и использованию триггеров](concepts-pipeline-execution-triggers.md#triggers). 
+Определите триггер, который выполняет конвейер раз в час. Развернутый триггер находится в остановленном состоянии. Запустите триггер с помощью командлета **Start-AzureRmDataFactoryV2Trigger**. Дополнительные сведения см. в руководстве по [выполнению конвейера и использованию триггеров](concepts-pipeline-execution-triggers.md#triggers).
 
 ```json
 {
@@ -615,7 +609,7 @@ DeploymentDebugLogLevel :
                 "interval": 1,
                 "startTime": "2017-11-28T00:00:00",
                 "endTime": "2017-11-29T00:00:00",
-                "timeZone": "UTC"               
+                "timeZone": "UTC"
             }
         },
         "pipelines": [{
@@ -630,9 +624,9 @@ DeploymentDebugLogLevel :
 ```
 
 ## <a name="reuse-the-template"></a>Повторное использование шаблона
-В этом руководстве описывается создание шаблона для определения сущностей фабрики данных, а также шаблона, передающего значения для параметров. Чтобы использовать один шаблон для развертывания сущностей фабрики данных в разных средах, нужно создать файл параметров для каждой среды и использовать его при развертывании в определенной среде.     
+В этом руководстве описывается создание шаблона для определения сущностей фабрики данных, а также шаблона, передающего значения для параметров. Чтобы использовать один шаблон для развертывания сущностей фабрики данных в разных средах, нужно создать файл параметров для каждой среды и использовать его при развертывании в определенной среде.
 
-Пример:  
+Пример:
 
 ```PowerShell
 New-AzureRmResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile ADFTutorialARM.json -TemplateParameterFile ADFTutorialARM-Parameters-Dev.json
@@ -641,10 +635,9 @@ New-AzureRmResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFT
 
 New-AzureRmResourceGroupDeployment -Name MyARMDeployment -ResourceGroupName ADFTutorialResourceGroup -TemplateFile ADFTutorialARM.json -TemplateParameterFile ADFTutorialARM-Parameters-Production.json
 ```
-Обратите внимание, что первая команда использует файл параметров для среды разработки, вторая — для среды тестирования, а третья — для рабочей среды.  
+Обратите внимание, что первая команда использует файл параметров для среды разработки, вторая — для среды тестирования, а третья — для рабочей среды.
 
-Шаблон можно снова использовать для выполнения повторяющихся задач. Например, создайте несколько фабрик данных с одним или с несколькими конвейерами, которые реализуют одинаковую логику, но чтобы каждая фабрика данных использовала разные учетные записи хранения Azure. В этом сценарии для создания фабрик данных используется один шаблон в той же среде (разработки, тестирования или рабочей) с различными файлами параметров. 
-
+Шаблон можно снова использовать для выполнения повторяющихся задач. Например, создайте несколько фабрик данных с одним или с несколькими конвейерами, которые реализуют одинаковую логику, но чтобы каждая фабрика данных использовала разные учетные записи хранения Azure. В этом сценарии для создания фабрик данных используется один шаблон в той же среде (разработки, тестирования или рабочей) с различными файлами параметров.
 
 ## <a name="next-steps"></a>Дополнительная информация
-В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Перейдите к [руководствам](tutorial-copy-data-dot-net.md), чтобы узнать об использовании фабрики данных в различных сценариях. 
+В этом примере конвейер копирует данные из одного расположения в другое в хранилище BLOB-объектов Azure. Перейдите к [руководствам](tutorial-copy-data-dot-net.md), чтобы узнать об использовании фабрики данных в различных сценариях.

@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: overview
-ms.date: 10/22/2018
+ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 076948e7434802af7f0ad47f279335009817d40e
-ms.sourcegitcommit: 6e09760197a91be564ad60ffd3d6f48a241e083b
+ms.openlocfilehash: f7fef00cfff9295036d7545470f86e27314e6451
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/29/2018
-ms.locfileid: "50209600"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54258704"
 ---
 # <a name="what-is-azure-content-moderator"></a>Что такое Azure Content Moderator?
 
@@ -58,6 +58,9 @@ API Azure Content Moderator — это когнитивная служба, ко
 
 API-интерфейсы проверки можно использовать для настройки проверки текста, изображений и видео в соответствии с указанными фильтрами. После этого модераторы помогут в принятии окончательных решений модерации. Пользовательские входные данные не обучают службу, но объединенная работа службы и команд пользовательской проверки позволяет разработчикам найти баланс между эффективностью и точностью.
 
+## <a name="data-privacy-and-security"></a>Конфиденциальность и безопасность данных
+Как и в случае со всеми другими Cognitive Services, разработчикам, использующим службу Content Moderator, следует учитывать политику корпорации Майкрософт касательно клиентских данных. Дополнительные сведения см. на [странице о Cognitive Services](https://www.microsoft.com/trustcenter/cloudservices/cognitiveservices) Центра управления безопасностью Майкрософт.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
-Начните работу с Content Moderator, выполнив инструкции из [краткого руководства](quick-start.md).
+Инструкции по началу работы со службой Content Moderator см. в статье [Краткое руководство. Знакомство с Content Moderator](quick-start.md).

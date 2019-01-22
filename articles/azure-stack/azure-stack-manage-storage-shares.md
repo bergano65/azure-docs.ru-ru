@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: get-started-article
-ms.date: 09/28/2018
+ms.date: 01/14/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.openlocfilehash: 00fa1a78155e1add547b8b165f52cf3c1fba2dfe
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 6d4a40b07ef70d8dd43eb410ba396057551cd483
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51249903"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54304416"
 ---
 # <a name="manage-storage-capacity-for-azure-stack"></a>Управление емкостью хранилища для Azure Stack 
 
@@ -90,7 +90,7 @@ ms.locfileid: "51249903"
 1. Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
 2. Выберите **Все службы** > **Хранилище**, чтобы открыть список общих файловых ресурсов, в котором можно просмотреть сведения об использовании. 
 
-  ![Пример. Общие файловые ресурсы хранилища](media/azure-stack-manage-storage-shares/storage-file-shares.png)
+  ![Пример: общие файловые ресурсы хранилища](media/azure-stack-manage-storage-shares/storage-file-shares.png)
 
   - **Всего**. Это общее место в байтах, доступное в общем ресурсе. Это пространство используется для данных и метаданных, обрабатываемых службами хранения.
   - **Используется**. Это объем данных в байтах, используемый всеми экстентами из файлов, в которых хранятся данные клиента и связанные метаданные.
@@ -101,12 +101,12 @@ ms.locfileid: "51249903"
 > [!IMPORTANT]
 > Как оператор облака предотвращайте полное использование общих ресурсов. Если общий ресурс используется полностью, служба хранения больше не функционирует для него. Чтобы освободить пространство и восстановить операции в общем ресурсе, который полностью используется, нужно обратиться в службу поддержки Майкрософт.
 
-**Предупреждение**. Когда общий файловый ресурс используется на более чем 80 %, вы получите оповещение типа *Предупреждение* на портале администрирования ![Пример. Предупреждающее оповещение](media/azure-stack-manage-storage-shares/alert-warning.png).
+**Предупреждение**. Когда общий файловый ресурс используется на более чем 80 %, вы получите оповещение типа *Предупреждение* на портале администрирования. ![Пример. Предупреждающее оповещение](media/azure-stack-manage-storage-shares/alert-warning.png)
 
 
-**Критическое**. Когда общий файловый ресурс используется более чем на 90 %, вы получите оповещение типа *Критическое* на портале администрирования ![Пример. Критическое оповещение](media/azure-stack-manage-storage-shares/alert-critical.png).
+**Критический.** Когда общий файловый ресурс используется на более чем 90 %, вы получите оповещение типа *Критическое* на портале администрирования. ![Пример. Критическое оповещение](media/azure-stack-manage-storage-shares/alert-critical.png)
 
-**Просмотр сведений**. На портале администрирования можно открыть сведения для просмотра параметров устранения оповещения. ![Пример. Просмотр сведений о предупреждении](media/azure-stack-manage-storage-shares/alert-details.png).
+**Просмотр сведений**. На портале администрирования можно открыть область сведений для просмотра параметров устранения оповещения. ![Пример. Сведения об оповещении](media/azure-stack-manage-storage-shares/alert-details.png)
 
 
 ## <a name="manage-available-space"></a>Управление доступным местом
@@ -188,7 +188,7 @@ ms.locfileid: "51249903"
   Get-AzsStorageContainerMigrationStatus -JobId $job_id -FarmName $farm_name
   ````
 
-  ![Пример. Состояние переноса](media/azure-stack-manage-storage-shares/migration-status1.png)
+  ![Пример: Состояние миграции](media/azure-stack-manage-storage-shares/migration-status1.png)
 
 6.  Вы можете отменить выполняющиеся задания переноса. Отмененные задания переноса обрабатываются асинхронно. Отслеживать отмену можно с помощью $jobid:
 
@@ -196,11 +196,11 @@ ms.locfileid: "51249903"
   Stop-AzsStorageContainerMigration -JobId $job_id -FarmName $farm_name
   ````
 
-  ![Пример. Состояние отката](media/azure-stack-manage-storage-shares/rollback.png)
+  ![Пример: Состояние отката](media/azure-stack-manage-storage-shares/rollback.png)
 
 7. Вы можете выполнить команду из шага 6 еще раз, пока состояние задания переноса не получит значение **Canceled**:  
 
-    ![Пример. Состояние "Canceled" (Отменено)](media/azure-stack-manage-storage-shares/cancelled.png)
+    ![Пример: Состояние "Canceled" (Отменено)](media/azure-stack-manage-storage-shares/cancelled.png)
 
 ### <a name="move-vm-disks"></a>Перемещение дисков виртуальной машины
 *Этот вариант применяется только к системам с несколькими узлами.*

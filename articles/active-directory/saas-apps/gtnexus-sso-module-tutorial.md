@@ -1,6 +1,6 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Flex Global View | Документация Майкрософт
-description: Узнайте, как настроить единый вход между Azure Active Directory и Flex Global View.
+title: Руководство. Интеграция Azure Active Directory с GTNexus SSO System | Документация Майкрософт
+description: Сведения о настройке единого входа между Azure Active Directory и GTNexus SSO System.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -12,22 +12,22 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/02/2019
+ms.date: 01/08/2019
 ms.author: jeedes
-ms.openlocfilehash: ae466dc4bce6ab7068622272651c22d70fc84fff
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: 646c9b1c3a1f10cae678e6788379eb6bbd144e78
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54067502"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54263498"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-flex-global-view"></a>Руководство. Интеграция Azure Active Directory с Flex Global View
+# <a name="tutorial-azure-active-directory-integration-with-gtnexus-sso-system"></a>Руководство. Интеграция Azure Active Directory с GTNexus SSO System
 
-В этом руководстве описано, как интегрировать Flex Global View с Azure Active Directory (Azure AD).
-Интеграция Azure AD с приложением Flex Global View обеспечивает следующие преимущества:
+В этом руководстве описано, как интегрировать GTNexus SSO System с Azure Active Directory (Azure AD).
+Интеграция Azure AD с приложением GTNexus SSO System обеспечивает следующие преимущества:
 
-* С помощью Azure AD вы можете контролировать доступ к Flex Global View.
-* Вы можете включить автоматический вход пользователей в Flex Global View (единый вход) с помощью учетной записи Azure AD.
+* С помощью Azure AD вы можете управлять доступом к GTNexus SSO System.
+* Вы можете включить автоматический вход пользователей в GTNexus SSO System (единый вход) с помощью учетных записей Azure AD.
 * Вы можете управлять учетными записями централизованно — на портале Azure.
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
@@ -35,22 +35,22 @@ ms.locfileid: "54067502"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы настроить интеграцию Azure AD с Flex Global View, вам потребуется:
+Чтобы настроить интеграцию Azure AD с GTNexus SSO System, вам потребуется следующее:
 
 * подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
-* Подписка Flex Global View с поддержкой единого входа.
+* GTNexus SSO System с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
 
 В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
 
-* Flex Global View поддерживает единый вход, инициированный **поставщиком удостоверений**.
+* GTNexus SSO System поддерживает инициированный единый вход **выдающей точки распространения**.
 
-## <a name="adding-flex-global-view-from-the-gallery"></a>Добавление Flex Global View из коллекции
+## <a name="adding-gtnexus-sso-system-from-the-gallery"></a>Добавление GTNexus SSO System из коллекции
 
-Чтобы настроить интеграцию Flex Global View с Azure AD, необходимо добавить Flex Global View из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию GTNexus SSO System с Azure AD, необходимо добавить GTNexus SSO System из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Flex Global View из коллекции, выполните следующие действия.**
+**Чтобы добавить приложение GTNexus SSO System из коллекции, сделайте следующее:**
 
 1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
@@ -64,31 +64,31 @@ ms.locfileid: "54067502"
 
     ![Кнопка "Новое приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Flex Global View**, выберите **Flex Global View** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **GTNexus SSO System**, выберите **GTNexus SSO System** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Flex Global View в списке результатов](common/search-new-app.png)
+     ![GTNexus SSO System в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Flex Global View с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Flex Global View.
+В этом разделе описана настройка и проверка единого входа Azure AD в GTNexus SSO System с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в GTNexus SSO System.
 
-Чтобы настроить и проверить единый вход Azure AD в Flex Global View, вам потребуется выполнить следующие стандартные блоки.
+Чтобы настроить и проверить единый вход Azure AD в GTNexus SSO System, выполните действия в следующих стандартных блоках:
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Flex Global View](#configure-flex-global-view-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+2. **[Настройка единого входа в GTNexus SSO System](#configure-gtnexus-sso-system-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя приложения Flex Global View](#create-flex-global-view-test-user)** требуется для того, чтобы во Flex Global View существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+5. **[Создание тестового пользователя GTNexus SSO System](#create-gtnexus-sso-system-test-user)** требуется для того, чтобы в GTNexus SSO System существовал пользователь Britta Simon, связанный с представлением пользователя в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить единый вход Azure AD в Flex Global View, выполните следующие действия.
+Чтобы настроить единый вход Azure AD в GTNexus SSO System, сделайте следующее:
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Flex Global View** выберите **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **GTNexus SSO System** выберите **Единый вход**.
 
     ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
@@ -110,7 +110,7 @@ ms.locfileid: "54067502"
 
     ![изображение](common/browse-upload-metadata.png)
 
-    c. После успешной передачи файла метаданных поля **Идентификатор** и **URL-адрес ответа** в разделе Flex Global View автоматически заполняются значениями:
+    c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** заполняются автоматически в разделе текстового поля "GTNexus SSO System".
 
     ![изображение](common/idp-intiated.png)
 
@@ -121,9 +121,9 @@ ms.locfileid: "54067502"
 
     ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-### <a name="configure-flex-global-view-single-sign-on"></a>Настройка единого входа в Flex Global View
+### <a name="configure-gtnexus-sso-system-single-sign-on"></a>Настройка единого входа в GTNexus SSO System
 
-Чтобы настроить единый вход на стороне **Flex Global View**, нужно отправить **XML метаданных федерации** [группе поддержки Flex Global View](mailto:support@gtnexus.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **GTNexus SSO System**, нужно отправить **XML метаданных федерации** [группе поддержки GTNexus SSO System](mailto:support@gtnexus.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -152,15 +152,15 @@ ms.locfileid: "54067502"
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как предоставить пользователю Britta Simon доступ к Flex Global View, чтобы он мог использовать единый вход Azure.
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставляя доступ к GTNexus SSO System.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Flex Global View**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем **GTNexus SSO System**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **Flex Global View**.
+2. В списке приложений выберите **GTNexus SSO System**.
 
-    ![Ссылка на Flex Global View в списке приложений](common/all-applications.png)
+    ![Ссылка на GTNexus SSO System в списке приложений](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
@@ -176,15 +176,15 @@ ms.locfileid: "54067502"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-### <a name="create-flex-global-view-test-user"></a>Создание тестового пользователя Flex Global View
+### <a name="create-gtnexus-sso-system-test-user"></a>Создание тестового пользователя GTNexus SSO System
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Flex Global View. Обратитесь в [группу поддержки Flex Global View,](mailto:support@gtnexus.com) чтобы добавить пользователей на платформу Flex Global View. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении GTNexus SSO System. Чтобы добавить пользователей в платформу GTNexus SSO System, обратитесь в  [группу поддержки GTNexus SSO System](mailto:support@gtnexus.com) . Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув плитку Flex Global View на панели доступа, вы автоматически войдете в приложение Flex Global View, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
+Щелкнув плитку "GTNexus SSO System" на панели доступа, вы автоматически войдете в приложение GTNexus SSO System, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

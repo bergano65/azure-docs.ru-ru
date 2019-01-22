@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 09/18/2018
+ms.date: 01/11/2019
 ms.author: ryanwi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: f617be79cb61932f79728feef76f056ce72ae0ab
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: d27cc555a8cf96a07818e83b342cf145d9e98a96
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52891135"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54265913"
 ---
 # <a name="tutorial-upgrade-a-service-fabric-application-running-in-service-fabric-mesh"></a>Руководство. Обновление приложения Service Fabric, работающего в Сетке Service Fabric
 
@@ -53,7 +53,7 @@ ms.locfileid: "52891135"
 
 Одним из основных преимуществ развертывания приложений в Сетке Service Fabric является возможность легкого обновления конфигураций приложения.  Например, ресурсов ЦП или памяти для служб.
 
-В этом руководстве используется пример To Do List, который был [развернут ранее](service-fabric-mesh-tutorial-template-deploy-app.md) и должен быть запущен. Приложение содержит две службы: WebFrontEnd и ToDoService. Каждая служба изначально была развернута с использованием 0,5 ресурсов ЦП.  Чтобы просмотреть ресурсы ЦП службы WebFrontEnd, используйте следующую команду:
+В этом руководстве используется пример To Do List, который был [развернут ранее](service-fabric-mesh-tutorial-template-deploy-app.md) и должен быть запущен. Приложение имеет две службы: WebFrontEnd и ToDoService. Каждая служба изначально была развернута с использованием 0,5 ресурсов ЦП.  Чтобы просмотреть ресурсы ЦП службы WebFrontEnd, используйте следующую команду:
 
 ```azurecli
 az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-name todolistapp

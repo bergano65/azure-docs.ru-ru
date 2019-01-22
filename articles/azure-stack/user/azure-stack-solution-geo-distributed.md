@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/24/2018
+ms.date: 01/14/2019
 ms.author: mabrigg
-ms.reviewer: Anjay.Ajodha
-ms.openlocfilehash: f1151c845797d74bbb9a5e50feeeb288a4ab349b
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.reviewer: anajod
+ms.openlocfilehash: da6c9fa416d19916243860178d15619306aaf3c0
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53714854"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54305321"
 ---
 # <a name="tutorial-create-a-geo-distributed-app-solution-with-azure-and-azure-stack"></a>Руководство. Создание решения для географически распределенного приложения с помощью Azure и Azure Stack
 
@@ -41,7 +41,7 @@ ms.locfileid: "53714854"
 
 #### <a name="scalability-considerations"></a>Вопросы масштабируемости
 
-Создаваемое в рамках этого руководства решение не включает механизмов масштабирования. Но его можно сочетать с другими локальными или облачными технологиями и решениями, чтобы учесть требования к масштабируемости. Сведения о создании гибридного решения для автоматического масштабирования в нескольких облаках в Azure с помощью диспетчера трафика вы найдете в [этом руководстве](azure-stack-solution-cloud-burst.md).
+Создаваемое в рамках этого руководства решение не включает механизмов масштабирования. Но его можно сочетать с другими локальными или облачными технологиями и решениями, чтобы учесть требования к масштабируемости. Сведения о создании гибридного решения для автоматического масштабирования в нескольких облаках в Azure с помощью диспетчера трафика см. в статье [Руководство. Создание решений для масштабирования в нескольких облаках в Azure](azure-stack-solution-cloud-burst.md).
 
 #### <a name="availability-considerations"></a>Вопросы доступности
 
@@ -93,7 +93,7 @@ ms.locfileid: "53714854"
 
 ### <a name="obtain-a-custom-domain-and-configure-dns"></a>Получение личного домена и настройка DNS
 
-Обновление файла зоны DNS. Создание веб-приложений и публикация домена. Azure AD сможет проверить принадлежность имени личного домена. Вы можете использовать [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) для записей Azure, Office 365 и внешних записей DNS в Azure или добавить запись DNS [в другой регистратор DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Обновите файл зоны DNS для домена. Azure AD сможет проверить принадлежность имени личного домена. Вы можете использовать [Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) для записей Azure, Office 365 и внешних записей DNS в Azure или добавить запись DNS [в другой регистратор DNS](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 1. Зарегистрируйте личный домен в общедоступном регистраторе.
 
@@ -106,7 +106,7 @@ ms.locfileid: "53714854"
 Настройте гибридный конвейер непрерывной интеграции и непрерывной поставки, чтобы развернуть веб-приложение в Azure и Azure Stack, а также автоматически отправлять изменения в оба облака.
 
 > [!Note]  
-> Вам необходим Azure Stack с подходящими образами, объединенными для запуска (Windows Server и SQL), и развернутой службой приложений. Дополнительные сведения об операторе Azure Stack см. в документации по Службе приложений в разделе о [подготовке к работе в Azure Stack](/articles/azure-stack/azure-stack-app-service-before-you-get-started).
+> Вам необходим Azure Stack с подходящими образами, объединенными для запуска (Windows Server и SQL), и развернутой службой приложений. Дополнительные сведения об операторе Azure Stack см. в статье [Подготовка к работе со службой приложений в Azure Stack](../azure-stack-app-service-before-you-get-started.md).
 
 #### <a name="add-code-to-azure-repos"></a>Добавление кода в Azure Repos
 
@@ -122,7 +122,7 @@ ms.locfileid: "53714854"
 
 ### <a name="create-web-app-deployment-in-both-clouds"></a>Создание развертывания веб-приложений в обоих облаках
 
-1.  Измените файл **WebApplication.csproj**: Выберите Runtimeidentifier и добавьте **win10-х64**. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
+1.  Измените файл **WebApplication.csproj**: Выберите **Runtimeidentifier** и добавьте **win10-х64**. (См. документацию по [автономному развертыванию](https://docs.microsoft.com/dotnet/core/deploying/#self-contained-deployments-scd)).
 
     ![Alt text](media/azure-stack-solution-geo-distributed/image3.png)
 
@@ -273,7 +273,7 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
 -   Обновите файл зоны DNS для соответствующего домена, добавив предоставленную службой Azure AD DNS-запись.
 
-Например, чтобы добавить записи DNS www.northwindcloud.com fornorthwindcloud.comand, настройте параметры DNS для корневого домена thenorthwindcloud.com.
+Например, чтобы добавить записи DNS для northwindcloud.com и www.northwindcloud.com, настройте параметры DNS для корневого домена northwindcloud.com.
 
 > [!Note]  
 >  Доменное имя можно приобрести через [портал Azure](https://docs.microsoft.com/azure/app-service/manage-custom-dns-buy-domain).  
@@ -302,7 +302,7 @@ Azure DevOps и Azure DevOps Server предоставляют конвейер 
 
 2.  Добавьте запись CNAME, чтобы сопоставить поддомен с именем узла по умолчанию для приложения.
 
-  Например, для домена www.northwindcloud.com добавьте запись CNAME, которая сопоставляет namewwwto<app\_name>.azurewebsites.net.
+  Например, для домена www.northwindcloud.com добавьте запись CNAME, которая сопоставляет имя с <app\_name>.azurewebsites.net.
 
 После добавления этой записи CNAME страница управления записями DNS выглядит так:
 

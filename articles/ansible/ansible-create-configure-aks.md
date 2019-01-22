@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 08/23/2018
-ms.openlocfilehash: be9de3c10fdfd040b249dd8da568259c599d7215
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: c4f78d8bb43b26814dc3a4b94109dfd8719cb48f
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54050393"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54258838"
 ---
 # <a name="create-and-configure-azure-kubernetes-service-clusters-in-azure-using-ansible"></a>Создание и настройка кластеров службы Azure Kubernetes в Azure с помощью Ansible
 Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления службой Azure Kubernetes (AKS). В этой статье приводятся сведения об использовании Ansible для создания и настройки кластера службы Azure Kubernetes.
@@ -28,7 +28,10 @@ Ansible позволяет автоматизировать развертыва
 > Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.6. 
 
 ## <a name="create-a-managed-aks-cluster"></a>Создание управляемого кластера AKS
-В следующем примере сборника схем Ansible создается группа ресурсов и кластер AKS, который находится в группе ресурсов:
+В этом разделе представлен пример кода сборника схем Ansible для создания группы ресурсов и кластера AKS, который находится в группе ресурсов.
+
+> [!Tip]
+> Для заполнителя `your_ssh_key` укажите свой открытый ключ RSA в однострочном формате, начиная с ssh-rsa. 
 
   ```yaml
   - name: Create Azure Kubernetes Service
@@ -99,7 +102,8 @@ Ansible позволяет автоматизировать развертыва
 
 Сборник схем из предыдущего раздела определяет два узла. Если вам требуется больше или меньше рабочих нагрузок контейнеров в кластере, вы можете легко изменить количество узлов. В этом разделе тот же сборник схем увеличивает количество узлов с двух до трех. Изменение количества узлов выполняется путем изменения значения **count** в блоке **agent_pool_profiles**. 
 
-В блоке **service_principal** введите собственные значения `ssh_key`, `client_id` и `client_secret`:
+> [!Tip]
+> Для заполнителя `your_ssh_key` укажите свой открытый ключ RSA в однострочном формате, начиная с ssh-rsa. 
 
 ```yaml
 - name: Scale AKS cluster

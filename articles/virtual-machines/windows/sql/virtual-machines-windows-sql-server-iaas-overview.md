@@ -3,7 +3,7 @@ title: Обзор SQL Server на виртуальных машинах Windows 
 description: Из этой статьи вы узнаете, как запускать полные выпуски SQL Server на виртуальных машинах Azure.
 services: virtual-machines-windows
 documentationcenter: ''
-author: rothja
+author: MashaMSFT
 manager: craigg
 tags: azure-service-management
 ms.assetid: c505089e-6bbf-4d14-af0e-dd39a1872767
@@ -13,13 +13,14 @@ ms.topic: get-started-article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 12/12/2018
-ms.author: jroth
-ms.openlocfilehash: 416d1c7d45902735f58e397dd9195185ba0867df
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.author: mathoma
+ms.reviewer: jroth
+ms.openlocfilehash: 43305efc146151d131152e712869e283af65f0b2
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53315253"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359771"
 ---
 # <a name="what-is-sql-server-on-azure-virtual-machines-windows"></a>Что собой представляет SQL Server на виртуальных машинах Azure (Windows)
 
@@ -81,6 +82,14 @@ ms.locfileid: "53315253"
 | **SQL Server 2016 с пакетом обновления 2 (SP2)** |Windows Server 2016 |[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2016SP2EnterpriseWindowsServer2016), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2016SP2StandardWindowsServer2016) |
 | **SQL Server 2014 SP2** |Windows Server 2012 R2 |[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2014SP2EnterpriseWindowsServer2012R2), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2014SP2StandardWindowsServer2012R2) |
 | **SQL Server 2012 SP4** |Windows Server 2012 R2 |[Enterprise BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2012SP4EnterpriseWindowsServer2012R2), [Standard BYOL](https://portal.azure.com/#create/Microsoft.BYOLSQLServer2012SP4StandardWindowsServer2012R2) |
+
+С помощью PowerShell вы можете развернуть старую версию образа SQL Server, недоступного на портале Azure. Чтобы просмотреть все доступные образы с помощью PowerShell, воспользуйтесь приведенной ниже командой.
+
+  ```PowerShell
+  Get-AzureRmVMImageOffer -Location $Location -Publisher 'MicrosoftSQLServer'
+  ```
+
+Дополнительные сведения о том, как развернуть виртуальные машины SQL Server с помощью PowerShell, см. в статье [Как подготовить виртуальные машины SQL Server с помощью Azure PowerShell](virtual-machines-windows-ps-sql-create.md).
 
 
 ### <a name="connect-to-the-vm"></a>Подключение к виртуальной машине

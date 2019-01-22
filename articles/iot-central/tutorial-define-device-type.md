@@ -1,22 +1,22 @@
 ---
 title: Определение типа нового устройства в Azure IoT Central | Документация Майкрософт
 description: В этом руководстве показано, как разработчики могут определить тип нового устройства в своем приложении Azure IoT Central. Вы определите телеметрию, состояние, свойства и параметры для вашего типа.
-author: tbhagwat3
-ms.author: tanmayb
+author: dominicbetts
+ms.author: dobett
 ms.date: 10/30/2018
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 ms.custom: mvc
-manager: peterpr
-ms.openlocfilehash: dd81c10bcda6665de7ffabe94a4c1be991687797
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+manager: philmea
+ms.openlocfilehash: d50059fb6fe03309609c91b56fb3763bad32e46b
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50963608"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54199975"
 ---
-# <a name="tutorial-define-a-new-device-type-in-your-azure-iot-central-application"></a>Руководство по определению типа нового устройства в приложении Azure IoT Central
+# <a name="tutorial-define-a-new-device-type-in-your-azure-iot-central-application"></a>Руководство. Определение типа нового устройства в приложении Azure IoT Central
 
 В этом руководстве показано, как разработчики могут использовать шаблон устройства для определения типа нового устройства в приложении Microsoft Azure IoT Central. Шаблон устройства определяет телеметрию, состояние, свойства и параметры для типа устройства.
 
@@ -71,7 +71,7 @@ ms.locfileid: "50963608"
 
     ![Страница создания приложения Azure IoT Central](./media/tutorial-define-device-type/iotcentralcreate.png)
 
-    Дополнительные сведения см. в статье [Создание приложения Azure IoT Central](quick-deploy-iot-central.md).
+    Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
 
 ## <a name="create-a-new-custom-device-template"></a>Создание шаблона нового пользовательского устройства
 

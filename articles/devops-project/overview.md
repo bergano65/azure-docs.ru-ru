@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: ''
 ms.date: 05/03/2018
 ms.author: mlearned
-ms.openlocfilehash: 9efb3c9bae790efed3d09274b1a77d7b8161d479
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: 9e425662a698f077c3a1b9b3ff1270384fd61374
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52165248"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261253"
 ---
 # <a name="overview-of-azure-devops-projects"></a>Общие сведения об Azure DevOps Projects
 
@@ -29,7 +29,7 @@ ms.locfileid: "52165248"
 
 ## <a name="why-should-i-use-devops-projects"></a>Зачем использовать Azure DevOps Projects?
 
-  DevOps Projects автоматизирует настройку всего конвейера непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.  Можно начать работу, используя собственный код или один из предлагаемых примеров приложений. Затем приложение можно быстро развернуть в различных службах Azure, таких как, "Виртуальные машины", Служба приложений, Служба Azure Kubernetes (AKS), База данных SQL Azure и Azure Service Fabric.  
+  DevOps Projects автоматизирует настройку всего конвейера непрерывной интеграции (CI) и непрерывной поставки (CD) в Azure.  Можно начать работу, используя собственный код или один из предлагаемых примеров приложений. Затем приложение можно быстро развернуть в различных службах Azure, таких как "Виртуальные машины", Служба приложений, Служба Azure Kubernetes (AKS), База данных SQL Azure и Azure Service Fabric.  
 
   Служба DevOps Projects выполняет всю работу по начальной настройке конвейера DevOps, включая настройку начального репозитория Git, настройку конвейера CI/CD и создание ресурса Application Insights для мониторинга. Кроме того, она обеспечивает единое представление всего решения, создавая панель мониторинга DevOps Projects на портале Azure.
 

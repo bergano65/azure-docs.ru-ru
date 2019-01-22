@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
-ms.openlocfilehash: e30ede3e69711fefcf5026202ed7b004d00cb02e
-ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
+ms.openlocfilehash: ebd9f2115116e8f9cf976c86e4914f0b7f6beb39
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53810820"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54322118"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-jamf-pro"></a>Руководство. Интеграция Azure Active Directory с Jamf Pro
 
@@ -155,7 +155,7 @@ ms.locfileid: "53810820"
 
     д. Вставьте значение `http://schemas.microsoft.com/ws/2008/06/identity/claims/groups` в текстовое поле **GROUP ATTRIBUTE NAME** (Имя атрибута группы).
 
-7. Прокрутите эту страницу вниз до элемента **IDENTITY PROVIDER** (Поставщик удостоверений) в разделе **Single Sign-On** (Единый вход) и выполните следующие действия:
+7. Прокрутите эту страницу до элемента **IDENTITY PROVIDER** (Поставщик удостоверений) в разделе **Single Sign-On** (Единый вход) и выполните следующие действия:
 
     ![Конфигурация Jamf Pro](./media/jamfprosamlconnector-tutorial/configure3.png)
 

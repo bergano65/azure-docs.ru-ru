@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по использованию API перевода речи с C#
+title: Краткое руководство. API перевода речи с C#
 titlesuffix: Azure Cognitive Services
 description: Сведения и примеры кода для быстрого начала работы с API перевода речи.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.component: translator-speech
 ms.topic: quickstart
 ms.date: 3/5/2018
 ms.author: v-jaswel
-ms.openlocfilehash: a05ab716c8aea958e13ebba0dc9ceb09bf3d7cce
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.openlocfilehash: b873dbd3132e549c529280400d5a9644174232f9
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50913535"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54259028"
 ---
-# <a name="quickstart-translator-speech-api-with-c"></a>Краткое руководство по использованию API перевода речи с C# 
+# <a name="quickstart-translator-speech-api-with-c"></a>Краткое руководство. API перевода речи с C# 
 <a name="HOLTop"></a>
 
 [!INCLUDE [Deprecation note](../../../../includes/cognitive-services-translator-speech-deprecation-note.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "50913535"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Будет работать бесплатный выпуск Community Edition.) Если вы используете Mac OS или Linux, в качестве альтернативы можно также применить текстовый редактор [Visual Studio Code] (https://code.visualstudio.com/Download).
+Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Будет работать бесплатный выпуск Community Edition.) Если вы используете Mac OS или Linux, в качестве альтернативы можно также применить текстовый редактор [Visual Studio Code](https://code.visualstudio.com/Download).
 
 Вам необходимо иметь файл WAV, который называется "speak.wav" в той же папке, что и исполняемый файл, который будете компилировать из приведенного ниже кода. Этот файл WAV должен быть в стандартном формате PCM: 16 бит, 16 кГц, моно.
 

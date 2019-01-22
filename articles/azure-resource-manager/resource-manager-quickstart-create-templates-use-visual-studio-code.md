@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 11/13/2018
+ms.date: 01/11/2019
 ms.topic: quickstart
 ms.author: jgao
-ms.openlocfilehash: 6a52355360ef2c892cb45af77366e09864cd7837
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: f4657209dfda2b515e29b4d462368ae6b5c1eae7
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51611800"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54302499"
 ---
 # <a name="quickstart-create-azure-resource-manager-templates-by-using-visual-studio-code"></a>Краткое руководство. Создание шаблона Azure Resource Manager c помощью Visual Studio Code
 
@@ -55,7 +55,7 @@ ms.locfileid: "51611800"
 
 ## <a name="edit-the-template"></a>Изменение шаблона
 
-Чтобы узнать, как изменить шаблон с помощью Visual Studio Code, в разделе `outputs` необходимо добавить еще один элемент.
+Чтобы узнать, как изменить шаблон с помощью Visual Studio Code, в разделе `outputs` необходимо добавить еще один элемент для отображения URI хранилища.
 
 1. Добавьте один или несколько элементов выходных данных в экспортированный шаблон:
 
@@ -89,12 +89,12 @@ ms.locfileid: "51611800"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-Существует множество методов по развертыванию шаблонов.  В этом кратком руководстве используется Azure Cloud Shell. Cloud Shell поддерживает как Azure CLI, так и Azure PowerShell.
+Существует множество методов по развертыванию шаблонов.  В этом кратком руководстве используется Azure Cloud Shell. Cloud Shell — это веб-приложение, которое не нужно настраивать. Оно поддерживает как Azure CLI, так и Azure PowerShell.
 
 1. Войдите в [Azure Cloud Shell](https://shell.azure.com).
 
     ![Cloud Shell CLI на портале Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-choose-cli.png)
-2. В верхнем левом углу Cloud Shell показано **PowerShell** или **Bash**. Чтобы использовать CLI, необходимо открыть сеанс Bash. Чтобы запустить PowerShell, нужно открыть сеанс PowerShell. Выберите стрелку вниз, чтобы переключаться между Bash и PowerShell. См. предыдущий снимок экрана. После переключения желательно перезагрузить оболочку.
+2. В левом верхнем углу выберите используемую среду — **PowerShell** или **Bash**. Чтобы использовать CLI, необходимо открыть сеанс Bash. Чтобы запустить Azure PowerShell, нужно открыть сеанс PowerShell. Выберите стрелку вниз, чтобы переключаться между Bash и PowerShell. См. предыдущий снимок экрана. После переключения желательно перезагрузить оболочку.
 3. Выберите **Отправка и скачивание файлов**, а затем **Отправить**.
 
     # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
@@ -107,9 +107,9 @@ ms.locfileid: "51611800"
     
     ---
 
-    Чтобы развернуть файл шаблона из оболочки, сначала его нужно отправить.
-5. Выберите файл, сохраненный ранее. **azuredeploy.json** — имя по умолчанию.
-6. Чтобы проверить, что файл загружен успешно, в командной строке Cloud Shell необходимо выполнить команду **ls**. Для проверки содержимого шаблона также можно использовать команду **cat**. На следующем рисунке показано, как выполнить команду из Bash.  Вы используете те же команды из сеанса PowerShell.
+    Выберите файл, сохраненный ранее. **azuredeploy.json** — имя по умолчанию. Файл шаблона должен быть доступным из облака.
+
+    При необходимости можно использовать команды **ls** и **cat**, чтобы проверить отправку файла. 
 
     # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
 
@@ -120,7 +120,7 @@ ms.locfileid: "51611800"
     ![Файл списка оболочки Cloud портала Azure](./media/resource-manager-quickstart-create-templates-use-visual-studio-code/azure-portal-cloud-shell-list-file-powershell.png)
     
     ---
-7. Выполните следующие команды в Cloud Shell. Выберите вкладку, чтобы отобразить код PowerShell или код CLI.
+4. Выполните следующие команды в Cloud Shell. Выберите вкладку, чтобы отобразить код PowerShell или код CLI.
 
     # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
     ```azurecli
@@ -163,7 +163,7 @@ ms.locfileid: "51611800"
 
     Имя учетной записи хранения и URL-адрес хранилища в разделе выходных данных выделены на снимке экрана ниже. Чтобы продолжить, необходимо ввести имя учетной записи хранения.
 
-7. Чтобы перечислить созданные учетные записи хранения, выполните следующую команду PowerShell или CLI:
+5. Чтобы перечислить созданные учетные записи хранения, выполните следующую команду PowerShell или CLI:
 
     # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
     ```azurecli
@@ -183,6 +183,8 @@ ms.locfileid: "51611800"
     ```
     
     ---
+
+Дополнительные сведения об использовании учетных записях хранения Azure см. в статье [Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

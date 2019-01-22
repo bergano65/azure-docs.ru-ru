@@ -8,266 +8,52 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: bing-news-search
 ms.topic: overview
-ms.date: 06/21/2016
+ms.date: 01/10/2019
 ms.author: scottwhi
 ms.custom: seodec2018
-ms.openlocfilehash: 17383d38b1401149003ad9d1794b3e69284f9033
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 32c18508d07fc911366ffc77ebe347efd3c1b6fa
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53253098"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261457"
 ---
 # <a name="what-is-the-bing-news-search-api"></a>Общие сведения об API Bing для поиска новостей
 
-API Bing для поиска новостей работает по похожему (но не аналогичному) принципу, по которому работает служба [Новости Bing](https://www.bing.com/news). API Bing для поиска новостей позволяет отправлять поисковый запрос в Bing и получать список соответствующих новостных статей.
+API Bing для поиска новостей позволяет легко интегрировать возможности когнитивного поиска новости Bing в приложениях. Интерфейс API предоставляет аналогичное взаимодействие для [новостей Bing](https://www.bing.com/news), позволяя отправлять поисковые запросы и получать соответствующие статьи.
 
-Если вы создаете страницу результатов поиска только для новостей, чтобы найти новости, относящиеся к поисковому запросу пользователя, вызовите этот API вместо вызова более общего [API Bing для поиска в Интернете](../bing-web-search/search-the-web.md). Если вам нужны новости и другие типы содержимого, такие как веб-страницы, изображения и видеоролики, вызовите API Bing для поиска в Интернете.
+Имейте в виду, что API Bing для поиска новостей предоставляет только результаты поиска новостей. Используйте [API Bing для поиска в Интернете](../bing-web-search/search-the-web.md), [API для поиска видео](../bing-video-search/search-the-web.md) и [API Bing для поиска изображений](../bing-image-search/overview.md) для других типов веб-содержимого.
 
-## <a name="suggesting--using-search-terms"></a>Заполнение и использование условий поиска
+## <a name="bing-news-search-api-features"></a>Возможности API Bing для поиска новостей
 
-Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
+API Bing для поиска новостей в основном находит и возвращает соответствующие статьи, а также предоставляет несколько функций для интеллектуального и тематического поиска новостей в Интернете.
 
-После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки*, установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
+|Функция  |ОПИСАНИЕ  |
+|---------|---------|
+|[Предложение и использование условий поиска](concepts/search-for-news.md#suggest-and-use-search-terms)     | Улучшите возможности поиска, используя [API автозаполнения Bing](../bing-autosuggest/get-suggested-search-terms.md) для отображения предлагаемых условий поиска по мере их ввода.         |
+|[Получение общих новостей](concepts/search-for-news.md#get-general-news)     | Ищите новости, отправляя поисковый запрос в API Bing для поиска новостей и получая список соответствующих новостных статей.           |
+|[Главные новости за сегодня](concepts/search-for-news.md#get-todays-top-news)      | Получите главные новости дня по всем категориям.       |
+|[Новости по категории](concepts/search-for-news.md)     | Ищите новости в определенной категории.        | 
+|[Сводка новостей](concepts/search-for-news.md)     | Ищите главные заголовки по всем категориям.         |
 
-## <a name="getting-general-news"></a>Получение общих новостей
+## <a name="workflow"></a>Рабочий процесс
 
-Чтобы получить общие новостные статьи, связанные с условием поиска пользователя, из Интернета, отправьте следующий запрос GET.
+API Bing для поиска новостей является веб-службой RESTful, которую легко вызвать с любого языка программирования, поддерживающего выполнение HTTP-запросов и анализа JSON. Вы можете использовать службу с помощью REST API или пакета SDK.
 
-```http
-GET https://api.cognitive.microsoft.com/bing/v7.0/news/search?q=sailing+dinghies&mkt=en-us HTTP/1.1
-Ocp-Apim-Subscription-Key: 123456789ABCDE
-User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 822)
-X-Search-ClientIP: 999.999.999.999
-X-Search-Location: lat:47.60357;long:-122.3295;re:100
-X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
-Host: api.cognitive.microsoft.com
-```
+1. Создайте учетную запись API Cognitive Services с доступом к API-интерфейсам поиска Bing. Если у вас нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-news-api).
 
-Если вы впервые вызовете любой из интерфейсов API Bing, не включайте заголовок идентификатора клиента. Включите идентификатор клиента, только если вы ранее вызывали API Bing, а Bing возвратил идентификатор клиента для комбинации пользователей и устройств.
+2. Отправьте запрос к API с допустимым поисковым запросом.
 
-Чтобы получить новости с определенного домена, используйте оператор запроса [site:](https://msdn.microsoft.com/library/ff795613.aspx).
-
-```http
-GET https://api.cognitive.microsoft.com/bing/v7.0/news/search?q=sailing+dinghies+site:contososailing.com&mkt=en-us HTTP/1.1
-```
-
-Ниже показан ответ на предыдущий запрос. Все новостные статьи должны отображаться в порядке, указанном в ответе. Если статья содержит сгруппированные статьи, необходимо указать, что существуют связанные статьи, и отображать их, если пользователь запрашивает их просмотр.
-
-```json
-{
-    "_type" : "News",
-    "readLink" : "https:\/\/api.cognitive.microsoft.com\/bing\/v5\/news\/search?q=sailing+dinghies",
-    "totalEstimatedMatches" : 88400,
-    "value" : [{
-        "name" : "Sailing Vies for Four Trophies",
-        "url" : "http:\/\/www.bing.com\/cr?IG=CCE2F06CA750455891FE99A72...",
-        "image" : {
-            "thumbnail" : {
-                "contentUrl" : "https:\/\/www.bing.com\/th?id=ON.9C23AA5...",
-                "width" : 650,
-                "height" : 341
-            }
-        },
-        "description" : "College Rankings, presented by Zim...",
-        "provider" : [{
-            "_type" : "Organization",
-            "name" : "contoso.com"
-        }],
-        "datePublished" : "2017-04-14T15:28:00"
-    },
-
-    ...
-
-    {
-        "name" : "Fabrikam Sailing Club to host Mirror Dinghy...",
-        "url" : "http:\/\/www.bing.com\/cr?IG=CCE2F06CA750455891F...",
-        "image" : {
-            "thumbnail" : {
-                "contentUrl" : "https:\/\/www.bing.com\/th?id=ON.36...",
-                "width" : 448,
-                "height" : 300
-            }
-        },
-        "description" : "The sailing club that trained Olympian Ben...",
-        "provider" : [{
-            "_type" : "Organization",
-            "name" : "Contoso"
-        }],
-        "datePublished" : "2017-04-04T11:02:00",
-        "category" : "Sports"
-    }]
-}
-```
-
-В ответе [Новости](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v5-reference#news) перечислены новостные статьи, которые система Bing посчитала соответствующими запросу. Поле `totalEstimatedMatches` содержит оценку количества статей, доступных для просмотра. Сведения о разбиении статей на страницы см. в разделе [Разбиение новостей по страницам](./paging-news.md).
-
-Каждый объект [новостной статьи](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v5-reference#newsarticle) в списке содержит название, описание и URL-адрес статьи на исходном веб-сайте. Если статья содержит изображение, то объект включает эскиз этого изображения. Используйте свойства `name` и `url`, чтобы создать гиперссылку, направляющую пользователя к новостной статье на исходном сайте. Если статья содержит изображение, также сделайте его интерактивным с помощью свойства `url`. Обязательно используйте свойство `provider`, чтобы указать источник статьи.
-
-Если Bing может определить категорию новостной статьи, значит в ней содержится поле `category`.
-
-## <a name="getting-todays-top-news"></a>Получение главных новостей за сегодняшний день
-
-Чтобы получить главные новостные статьи за сегодняшний день, вы должны сделать тот же запрос, что и на получение общих новостей, за исключением того, что нужно удалить `q`.
-
-```http
-GET https://api.cognitive.microsoft.com/bing/v7.0/news/search?q=&mkt=en-us HTTP/1.1
-Ocp-Apim-Subscription-Key: 123456789ABCDE
-User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 822)
-X-Search-ClientIP: 999.999.999.999
-X-Search-Location: lat:47.60357;long:-122.3295;re:100
-X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
-Host: api.cognitive.microsoft.com
-```
-
-Ответ на получение главных новостей почти такой же, как и на получение общих новостей. Однако ответ `news` не включает поле `totalEstimatedMatches`, потому что есть определенное количество результатов. Количество главных новостных статей может различаться в зависимости от цикла новостей. Обязательно используйте свойство `provider`, чтобы указать источник статьи.
-
-## <a name="getting-news-by-category"></a>Получение новостей по категориям
-
-Чтобы получать новости по категориям, например лучшие спортивные или развлекательные статьи, отправьте следующий запрос GET в Bing.
-
-```http
-GET https://api.cognitive.microsoft.com/bing/v7.0/news?category=sports&mkt=en-us HTTP/1.1
-Ocp-Apim-Subscription-Key: 123456789ABCDE
-User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 822)
-X-Search-ClientIP: 999.999.999.999
-X-Search-Location: lat:47.60357;long:-122.3295;re:100
-X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
-Host: api.cognitive.microsoft.com
-```
-
-Используйте параметр запроса [Категория](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#category), чтобы указать категорию статей для получения. Список возможных категорий новостей, которые можно указать, см. в разделе [News Categories by Market](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#news-categories-by-market) (Категории новостей по рынку).
-
-Ответ на получение новостей по категориям почти такой же, как и на получение общих новостей. Однако все статьи принадлежат к указанной категории.
-
-## <a name="getting-headline-news"></a>Получение краткой сводки новостей
-
-Чтобы запрашивать краткую сводку новостей и получать статьи из всех категорий, отправьте следующий запрос GET в Bing.
-
-```http
-GET https://api.cognitive.microsoft.com/bing/v7.0/news?mkt=en-us HTTP/1.1
-Ocp-Apim-Subscription-Key: 123456789ABCDE
-User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 822)
-X-MSEdge-ClientIP: 999.999.999.999
-X-Search-Location: lat:47.60357;long:-122.3295;re:100
-X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
-Host: api.cognitive.microsoft.com
-```
-
-Не включайте параметр запроса [Категория](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#category).
-
-Ответ на получение краткой сводки новостей почти такой же, как и на получение главных новостей за сегодняшний день. Если статья является новостной сводкой, полю `headline` присваивается значение **true**.
-
-По умолчанию ответ включает до 12 новостных сводок. Чтобы изменить количество новостных сводок для возврата, укажите параметр запроса [headlineCount](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#headlinecount). Ответ также включает до четырех информационных статей по каждой категории новостей.
-
-Ответ считает сгруппированные статьи как одну. Поскольку в группе несколько статей, ответ может включать более 12 новостных сводок и более четырех информационных статей по каждой категории.
-
-## <a name="getting-trending-news"></a>Получение популярных новостей
-
-Чтобы получить темы новостей, популярные в социальных сетях, отправьте следующий запрос GET в Bing.
-
-```http
-GET https://api.cognitive.microsoft.com/bing/v7.0/news/trendingtopics?mkt=en-us HTTP/1.1
-Ocp-Apim-Subscription-Key: 123456789ABCDE
-User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 822)
-X-Search-ClientIP: 999.999.999.999
-X-Search-Location: lat:47.60357;long:-122.3295;re:100
-X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
-X-MSAPI-UserState: <blobFromPriorResponseGoesHere>
-Host: api.cognitive.microsoft.com
-```
-
-> [!NOTE]
-> Популярные темы доступны только на рынках en-US и zh-CN.
-
-Следующий JSON — это ответ на предыдущий запрос. Каждая популярная новостная статья включает связанное изображение, пометку "последние новости" и URL-адрес результатов поиска Bing для статьи. Используйте URL-адрес из поля `webSearchUrl`, чтобы переадресовать пользователя на страницу результатов поиска Bing. Или используйте текст запроса для вызова [API для Поиска в Интернете](../bing-web-search/search-the-web.md), чтобы отобразить результаты самостоятельно.
-
-```json
-{
-    "_type" : "TrendingTopics",
-    "value" : [{
-        "name" : "Canada pot measure",
-        "image" : {
-            "url" : "https:\/\/www.bing.com\/th?id=OPN.RTNews_hHD...",
-            "provider" : [{
-                "_type" : "Organization",
-                "name" : "Contoso Images"
-            }]
-        },
-        "webSearchUrl" : "https:\/\/www.bing.com\/cr?IG=070292D8CEDD...",
-        "isBreakingNews" : false,
-        "query" : {
-            "text" : "Canada marijuana"
-        }
-    },
-    {
-        "name" : "Down on Vegas move",
-        "image" : {
-            "url" : "https:\/\/www.bing.com\/th?id=OPN.RTNews_Bfbmg8h...",
-            "provider" : [{
-                "_type" : "Organization",
-                "name" : "Contoso"
-            }]
-        },
-        "webSearchUrl" : "https:\/\/www.bing.com\/cr?IG=070292D8CEDD...",
-        "isBreakingNews" : false,
-        "query" : {
-            "text" : "Marcus Appel Las Vegas"
-        }
-    },
-
-    ...
-
-    ]
-}
-```
-
-## <a name="getting-related-news"></a>Получение похожих новостей
-
-Если есть другие статьи, связанные с новостной статьей, то она может включать в себя поле [clusteredArticles](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#newsarticle-clusteredarticles). Ниже показаны сгруппированные статьи.
-
-```json
-    {
-        "name" : "Playoffs 2017: Betting lines, point spreads...",
-        "url" : "http:\/\/www.bing.com\/cr?IG=4B7056CEC271408997D115...",
-        "image" : {
-            "thumbnail" : {
-                "contentUrl" : "https:\/\/www.bing.com\/th?id=ON.D7B1...",
-                "width" : 700,
-                "height" : 393
-            }
-        },
-        "description" : "April 14, 2017 3:37pm EDT April 14, 2017 3:34pm...",
-        "provider" : [{
-            "_type" : "Organization",
-            "name" : "Contoso"
-        }],
-        "datePublished" : "2017-04-14T19:43:00",
-        "category" : "Sports",
-        "clusteredArticles" : [{
-            "name" : "Playoffs 2017: Betting odds, favorites to win...",
-            "url" : "http:\/\/www.bing.com\/cr?IG=4B7056CEC271408997D1159E...",
-            "description" : "April 14, 2017 3:30pm EDT April 14, 2017 3:27pm...",
-            "provider" : [{
-                "_type" : "Organization",
-                "name" : "Contoso"
-            }],
-            "datePublished" : "2017-04-14T19:37:00",
-            "category" : "Sports"
-        }]
-    },
-```
-
-## <a name="throttling-requests"></a>Запросы на регулирование
-
-[!INCLUDE [cognitive-services-bing-throttling-requests](../../../includes/cognitive-services-bing-throttling-requests.md)]
+3. Обработайте ответ API путем анализа возвращенного сообщения JSON.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Сведения о том, как быстро создать первый запрос, см. в [этой статье](./quickstart.md).
+Сначала попробуйте [интерактивную демоверсию](https://azure.microsoft.com/services/cognitive-services/bing-news-search-api/) API Bing для поиска новостей. В этой демоверсии показано, как можно быстро настроить поисковый запрос и найти новости в Интернете.
 
-Ознакомьтесь со справочными материалами по [API Bing для поиска новостей версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference). Руководство содержит список конечных точек, заголовков и параметров запроса, которые будут использоваться для запроса результатов поиска. Оно также содержит определения объектов ответа.
+Чтобы быстро приступить к работе с первым запросом API, изучите статью [Краткое руководство. Поиск новостей с помощью C# и REST API Bing для поиска новостей](quickstart.md) или [Краткое руководство. Поиск новостей с помощью пакета SDK Поиска новостей Bing для C#](sdk.md).
 
-Дополнительные сведения о том, как улучшить работу пользователя в окне поиска, см. в статье [What is Bing Autosuggest?](../bing-autosuggest/get-suggested-search-terms.md) (Что такое Автозаполнение Bing?). Когда пользователь вводит условие поиска, вы можете вызвать этот API для получения релевантных условий запроса, которые использовались другими.
+## <a name="see-also"></a>См. также
 
-Обязательно прочтите [эту статью](./useanddisplayrequirements.md), чтобы не нарушать какие-либо правила использования результатов поиска.
+* В [этой статье](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference) содержатся определения и сведения о конечных точках, заголовках, ответах API и параметрах запроса, которые вы можете использовать для запроса результатов поиска на основе изображения.
+
+* В статье [Требования к использованию и отображению API поиска Bing](./useanddisplayrequirements.md) рассматриваются приемлемые варианты использования содержимого и информации, получаемой с помощью API Bing для поиска.

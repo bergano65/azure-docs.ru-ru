@@ -7,19 +7,19 @@ ms.author: jamesbak
 ms.component: data-lake-storage-gen2
 ms.service: storage
 ms.topic: quickstart
-ms.date: 12/06/2018
-ms.openlocfilehash: c820d2172c3e38d9d744e645d7c0e8b4749b42cd
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.date: 01/14/2019
+ms.openlocfilehash: 49039e742ebd4354f9a52572ffdc69e95bf7f85e
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53743380"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321217"
 ---
 # <a name="quickstart-run-a-spark-job-on-azure-databricks-using-the-azure-portal"></a>Краткое руководство. Запуск задания Spark в Azure Databricks с помощью портала Azure
 
-В этом кратком руководстве объясняется, как запускать задания Apache Spark с помощью Azure Databricks для анализа данных, которые хранятся в учетной записи хранения с поддержкой Azure Data Lake Storage 2-го поколения (предварительная версия).
+В этом кратком руководстве объясняется, как запускать задания Apache Spark с помощью Azure Databricks для выполнения аналитики хранимых данных в учетной записи хранения с поддержкой Azure Data Lake Storage 2-го поколения (предварительная версия).
 
-В рамках задания Spark показано как анализировать данные подписки на радиоканал, чтобы получить сведения о бесплатном и оплачиваемом использовании на основе демографических данных.
+В рамках задания Spark показано, как анализировать данные подписки на радиоканал, чтобы получить сведения о бесплатном или оплачиваемом использовании на основе демографических данных.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -27,12 +27,31 @@ ms.locfileid: "53743380"
 
 - [Создание учетной записи хранения с поддержкой Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md)
 
+<a id="config"/>
+
 ## <a name="set-aside-storage-account-configuration"></a>Отдельная настройка учетной записи хранения
 
-> [!IMPORTANT]
-> Для этого руководства необходимо иметь доступ к имени учетной записи хранилища и к ключу доступа. На портале Azure выберите **Все службы** и фильтр *Хранилище*. Выберите **Учетные записи хранения** и найдите учетную запись, созданную для этого руководства.
->
-> Скопируйте **имя учетной записи хранения** из окна **Обзор** в текстовый редактор. Затем выберите **Ключи доступа** и скопируйте значение для **key1** в текстовый редактор, так как оба значения будут необходимы для команд позднее.
+Вам потребуется имя учетной записи хранения и URI конечной точки файловой системы.
+
+Чтобы получить имя учетной записи хранения на портале Azure, выберите **Все службы** и выполните фильтрацию по термину *хранилище*. Затем выберите **Учетные записи хранения** и перейдите к учетной записи хранения.
+
+Чтобы получить URI конечной точки файловой системы, выберите **Свойства** и на панели свойств найдите значение поля **Первичная конечная точка файловой системы ADLS**.
+
+Вставьте оба значения в текстовый файл. Они вам скоро понадобятся.
+
+<a id="service-principal"/>
+
+## <a name="create-a-service-principal"></a>Создание субъекта-службы
+
+Создайте субъект-службу, следуя инструкциям в статье [How to: Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+
+Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
+
+:heavy_check_mark: Выполняя действия из раздела [Создание приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application) той статьи, укажите URI только что собранной конечной точки в поле **URL-адрес для входа** диалогового окна **Создание**.
+
+:heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить приложению **роль участника хранилища BLOB-объектов**.
+
+:heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
 
 ## <a name="create-an-azure-databricks-workspace"></a>Создание рабочей области Azure Databricks
 
@@ -58,7 +77,7 @@ ms.locfileid: "53743380"
 
     Выберите **Закрепить на панели мониторинга** и щелкните **Создать**.
 
-3. Создание рабочей области займет несколько минут. Во время создания рабочей области на портале с правой стороны отображается плитка **Идет отправка развертывания для Azure Databricks**. Возможно, вам потребуется прокрутить панель мониторинга, чтобы увидеть эту плитку. В верхней части экрана также будет отображаться индикатор хода выполнения. Следить за выполнением можно с помощью любого из этих элементов.
+3. Создание рабочего пространства занимает некоторое время. Во время создания рабочей области на портале с правой стороны отображается плитка **Submitting deployment for Azure Databricks** (Отправка развертывания для Azure Databricks). Чтобы увидеть заголовок, возможно, вам придется прокрутить вправо на панели мониторинга. В верхней части экрана также будет отображаться индикатор хода выполнения. Следить за выполнением можно с помощью любого из этих элементов.
 
     ![Плитка развертывания Databricks](./media/data-lake-storage-quickstart-create-databricks-account/databricks-deployment-tile.png "Databricks deployment tile")
 
@@ -77,7 +96,7 @@ ms.locfileid: "53743380"
     Для всех остальных параметров, кроме следующих, примите значения по умолчанию:
 
     * Введите имя кластера.
-    * Создайте кластер со средой выполнения **5.1 (бета-версия)**.
+    * Создайте кластер со средой выполнения **5.1**.
     * Убедитесь, что установлен флажок **Terminate after 120 minutes of activity** (Завершить работу после 120 минут отсутствия активности). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
 4. Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
@@ -100,49 +119,26 @@ ms.locfileid: "53743380"
 
     Нажмите кнопку **Создать**.
 
-4. Подключите рабочую область Databricks к учетной записи ADLS 2-го поколения. Для этого можно использовать один из трех поддерживаемых механизмов: подключение с помощью OAuth, прямой доступ с помощью OAuth и прямой доступ с помощью общего ключа. 
+4. Скопируйте и вставьте следующий блок кода в первую ячейку, но не запускайте этот код.
 
-    В примерах ниже показан каждый из этих механизмов. При тестировании примеров не забудьте заменить значения заполнителей, показанные в примере в скобках, собственными значениями.
+   ```scala
+   spark.conf.set("fs.azure.account.auth.type.<storage-account-name>.dfs.core.windows.net", "OAuth")
+   spark.conf.set("fs.azure.account.oauth.provider.type.<storage-account-name>.dfs.core.windows.net", org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
+   spark.conf.set("fs.azure.account.oauth2.client.id.<storage-account-name>.dfs.core.windows.net", "<application-id>")
+   spark.conf.set("fs.azure.account.oauth2.client.secret.<storage-account-name>.dfs.core.windows.net", "<authentication-key>")
+   spark.conf.set("fs.azure.account.oauth2.client.endpoint.<account-name>.dfs.core.windows.net", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
+   spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
+   dbutils.fs.ls("abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/")
+   spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
 
-    **Подключение с помощью OAuth**     
-        
-    ```scala
-    %python%
-    configs = {"fs.azure.account.auth.type": "OAuth",
-        "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
-        "fs.azure.account.oauth2.client.id": "<service-client-id>",
-        "fs.azure.account.oauth2.client.secret": "<service-credentials>",
-        "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/<tenant-id>/oauth2/token"}
-    
-    dbutils.fs.mount(
-        source = "abfss://<file-system-name>@<account-name>.dfs.core.windows.net/[<directory-name>]",
-        mount_point = "/mnt/<mount-name>",
-        extra_configs = configs)
-    ```
+   ```
+ 
+    > [!NOTE]
+    > Этот блок кода напрямую обращается к конечной точке Data Lake 2-го поколения с помощью OAuth, но есть и другие способы подключения рабочей области Databricks к вашей учетной записи Data Lake Storage 2-го поколения. Например, вы можете вставить файловую систему с помощью OAuth или использовать прямой доступ с общим ключом. <br>Примеры таких подходов см. в статье [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
 
-    **Прямой доступ с помощью OAuth**
+5. В этом блоке кода замените значения заполнителя `storage-account-name`, `application-id`, `authentication-id` и `tenant-id` значениями, собранными после завершения действий в разделах [Отдельная настройка учетной записи хранения](#config) и [Создание субъекта-службы](#service-principal) этой статьи.  Задайте значение заполнителя `file-system-name` имени файловой системы.
 
-    ```scala
-    spark.conf.set("fs.azure.account.auth.type.<account-name>.dfs.core.windows.net": "OAuth")
-    spark.conf.set("fs.azure.account.oauth.provider.type.<account-name>.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
-    spark.conf.set("fs.azure.account.oauth2.client.id.<account-name>.dfs.core.windows.net": "<service-client-id>")
-    spark.conf.set("fs.azure.account.oauth2.client.secret.<account-name>.dfs.core.windows.net": "<service-credentials>")
-    spark.conf.set("fs.azure.account.oauth2.client.endpoint.<account-name>.dfs.core.windows.net": "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
-
-    dbutils.fs.ls("abfss://<file-system-name>@<account-name>.dfs.core.windows.net/")
-    ```
-        
-    **Прямой доступ с помощью общего ключа** 
-
-    ```scala    
-    spark.conf.set("fs.azure.account.key.<account-name>.dfs.core.windows.net", "<account-key>")
-
-    dbutils.fs.ls("abfss://<file-system-name>@<account-name>.dfs.core.windows.net/")
-    ```
-
-5. Введите код в первую ячейку и нажмите клавиши **SHIFT+ВВОД** для его выполнения.
-
-Теперь файловая система учетной записи хранения создана.
+6. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
 ## <a name="ingest-sample-data"></a>Принятие демонстрационных данных
 
@@ -154,7 +150,7 @@ ms.locfileid: "53743380"
 
 В ячейке нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
-Теперь в новую ячейку под этой ячейкой введите следующий код, заменив значения в скобках значениями, использованными ранее:
+Теперь в новую ячейку под этой введите следующий код и замените значения, которые отображаются в скобках, использованными ранее.
 
     dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<file-system>@<account-name>.dfs.core.windows.net/")
 
@@ -172,7 +168,7 @@ ms.locfileid: "53743380"
     CREATE TABLE radio_sample_data
     USING json
     OPTIONS (
-     path  "abfss://<file-system-name>@<account-name>.dfs.core.windows.net/<PATH>/small_radio_json.json"
+     path  "abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/<PATH>/small_radio_json.json"
     )
     ```
 
@@ -214,11 +210,11 @@ ms.locfileid: "53743380"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-После завершения выполнения задачи из статьи можно будет завершить работу кластера. В рабочей области Azure Databricks выберите **Кластеры** и найдите кластер, работу которого необходимо завершить. Наведите указатель мыши на многоточие в столбце **Действия** и выберите значок **Завершить**.
+Изучив эту статью, вы можете завершить работу кластера. В рабочей области Azure Databricks выберите **Кластеры** и найдите кластер, работу которого необходимо завершить. Наведите указатель мыши на многоточие в столбце **Действия** и выберите значок **Завершить**.
 
 ![Завершение работы кластера Databricks](./media/data-lake-storage-quickstart-create-databricks-account/terminate-databricks-cluster.png "Stop a Databricks cluster")
 
-Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после \_\_ мин бездействия). Если установить эту опцию, кластер завершит роботу после того, как не будет активен в течение заданного промежутка времени.
+Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершать работу после __ мин бездействия). Если установить эту опцию, кластер завершит роботу после того, как не будет активен в течение заданного промежутка времени.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

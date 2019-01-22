@@ -6,14 +6,14 @@ author: vhorne
 ms.service: application-gateway
 ms.topic: overview
 ms.custom: mvc
-ms.date: 10/11/2018
+ms.date: 1/11/2019
 ms.author: victorh
-ms.openlocfilehash: 6badfabb3ad20b5c17b3bb2bf09ae13f63568d05
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 21aac318542f9d30cb44d940392d05367f1f7b9f
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53714758"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54246472"
 ---
 # <a name="what-is-azure-application-gateway"></a>Что такое шлюз приложений Azure?
 
@@ -78,7 +78,7 @@ ms.locfileid: "53714758"
 
 ## <a name="multiple-site-hosting"></a>Размещение нескольких сайтов
 
-Размещение нескольких сайтов позволяет настроить в одном экземпляре шлюза приложений несколько веб-сайтов. Эта функция позволяет настроить более эффективную топологию развернутых служб, добавляя до 20 веб-сайтов в один шлюз приложений. Каждый веб-сайт может быть направлен к собственному пулу. Например, шлюз приложений может обслуживать трафик для `contoso.com` и `fabrikam.com` из двух пулов серверов с именами ContosoServerPool и FabrikamServerPool.
+Размещение нескольких сайтов позволяет настроить в одном экземпляре шлюза приложений несколько веб-сайтов. Эта функция позволяет настроить более эффективную топологию развернутых служб, добавляя до 100 веб-сайтов в один шлюз приложений. Каждый веб-сайт может быть направлен к собственному пулу. Например, шлюз приложений может обслуживать трафик для `contoso.com` и `fabrikam.com` из двух пулов серверов с именами ContosoServerPool и FabrikamServerPool.
 
 Запросы для `http://contoso.com` маршрутизируются в ContosoServerPool, а запросы для `http://fabrikam.com` — в FabrikamServerPool.
 

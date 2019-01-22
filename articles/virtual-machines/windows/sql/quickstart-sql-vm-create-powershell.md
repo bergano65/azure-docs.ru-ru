@@ -3,7 +3,7 @@ title: Создание виртуальной машины SQL Server под у
 description: Это руководство содержит инструкции по созданию виртуальной машины SQL Server 2017 под управлением Windows с помощью Azure PowerShell.
 services: virtual-machines-windows
 documentationcenter: na
-author: rothja
+author: MashaMSFT
 manager: craigg
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
@@ -11,16 +11,17 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: infrastructure-services
-ms.date: 02/15/2018
-ms.author: jroth
-ms.openlocfilehash: bebb153d5ff840a0eed7d6afffccd03a5236592d
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.date: 12/21/2018
+ms.author: mathoma
+ms.reviewer: jroth
+ms.openlocfilehash: aa4ea4e724ec383fc9f22bd56572d2fd0e844abc
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "42022543"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54332444"
 ---
-# <a name="quickstart-create-a-sql-server-windows-virtual-machine-with-azure-powershell"></a>Краткое руководство по созданию виртуальной машины SQL Server под управлением Windows с помощью Azure PowerShell
+# <a name="quickstart-create-a-sql-server-windows-virtual-machine-with-azure-powershell"></a>Краткое руководство. Создание виртуальной машины SQL Server под управлением Windows с помощью Azure PowerShell
 
 В этом кратком руководстве перечислены основные действия по созданию виртуальной машины SQL Server с помощью Azure PowerShell.
 
@@ -47,7 +48,7 @@ ms.locfileid: "42022543"
    Connect-AzureRmAccount
    ```
 
-1. Должно отобразиться окно входа, в котором необходимо ввести свои учетные данные. Используйте тот же адрес электронной почты и пароль, который вы используете для входа на портал Azure.
+1. Должно отобразиться окно для ввода своих учетных данных. Используйте тот же адрес электронной почты и пароль, который вы используете для входа на портал Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -122,11 +123,11 @@ ms.locfileid: "42022543"
 
 ## <a name="create-the-sql-vm"></a>Создание виртуальной машины SQL
 
-1. Определите учетные данные для входа на виртуальную машину. Используйте имя пользователя azureadmin. Перед выполнением команды измените пароль.
+1. Определите учетные данные для входа на виртуальную машину. Используйте имя пользователя azureadmin. Перед выполнением команды убедитесь, что вы изменили \<password>.
 
    ``` PowerShell
    # Define a credential object
-   $SecurePassword = ConvertTo-SecureString 'Change.This!000' `
+   $SecurePassword = ConvertTo-SecureString '<password>' `
       -AsPlainText -Force
    $Cred = New-Object System.Management.Automation.PSCredential ("azureadmin", $securePassword)
    ```
@@ -136,7 +137,7 @@ ms.locfileid: "42022543"
    ```PowerShell
    # Create a virtual machine configuration
    $VMName = $ResourceGroupName + "VM"
-   $VMConfig = New-AzureRmVMConfig -VMName $VMName -VMSize Standard_DS13 | `
+   $VMConfig = New-AzureRmVMConfig -VMName $VMName -VMSize Standard_DS13_V2 | `
       Set-AzureRmVMOperatingSystem -Windows -ComputerName $VMName -Credential $Cred -ProvisionVMAgent -EnableAutoUpdate | `
       Set-AzureRmVMSourceImage -PublisherName "MicrosoftSQLServer" -Offer "SQL2017-WS2016" -Skus "SQLDEV" -Version "latest" | `
       Add-AzureRmVMNetworkInterface -Id $Interface.Id
@@ -150,7 +151,7 @@ ms.locfileid: "42022543"
 
 ## <a name="install-the-sql-iaas-agent"></a>Установка агента SQL IaaS
 
-Для интеграции с порталом и получения компонентов виртуальной машины SQL необходимо установить [расширение агента SQL Server IaaS](virtual-machines-windows-sql-server-agent-extension.md). Чтобы установить агент на новой виртуальной машине, после его создания выполните следующую команду:
+Для интеграции с порталом и получения компонентов виртуальной машины SQL необходимо установить [расширение агента SQL Server IaaS](virtual-machines-windows-sql-server-agent-extension.md). Чтобы установить агент на новую виртуальную машину, после ее создания выполните следующую команду.
 
    ```PowerShell
    Set-AzureRmVMSqlServerExtension -ResourceGroupName $ResourceGroupName -VMName $VMName -name "SQLIaasExtension" -version "1.2" -Location $Location
@@ -174,21 +175,21 @@ ms.locfileid: "42022543"
 
 ## <a name="connect-to-sql-server"></a>Подключение к SQL Server
 
-1. После входа в сеанс удаленного рабочего стола в меню "Пуск" запустите **SQL Server Management Studio 2017**.
+1. После входа в сеанс удаленного рабочего стола в меню "Пуск" запустите **SQL Server Management Studio 2017**.
 
-1. В диалоговом окне **Подключение к серверу** оставьте значения по умолчанию. Имя сервера указано в качестве имени виртуальной машины. В параметрах проверки подлинности установлено значение **Проверка подлинности Windows**. Щелкните **Подключить**.
+1. В диалоговом окне **Подключение к серверу** оставьте значения по умолчанию. Имя сервера указано в качестве имени виртуальной машины. В параметрах проверки подлинности установлено значение **Проверка подлинности Windows**. Нажмите кнопку **Подключиться**.
 
-Теперь вы подключены к серверу SQL Server локально. Если вы хотите подключиться удаленно, необходимо [настроить подключение](virtual-machines-windows-sql-connect.md) на портале или вручную.
+Теперь вы подключены к серверу SQL Server локально. Если вы хотите подключиться удаленно, необходимо настроить подключение на портале или вручную. Дополнительные сведения об этом см. в [этой статье](virtual-machines-windows-sql-connect.md).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если не требуется, чтобы виртуальная машина работала постоянно, можно избежать ненужных затрат, останавливая ее, когда она не используется. С помощью следующей команды можно остановить виртуальную машину, оставив ее доступной для использования в будущем.
+Если постоянная работа виртуальной машины не требуется, вы можете избежать ненужных затрат, останавливая ее, когда она не используется. С помощью следующей команды можно остановить виртуальную машину, оставив ее доступной для использования в будущем.
 
 ```PowerShell
 Stop-AzureRmVM -Name $VMName -ResourceGroupName $ResourceGroupName
 ```
 
-А с помощью команды **Remove-AzureRmResourceGroup** можно удалить все ресурсы, связанные с виртуальной машиной, без возможности восстановления. Это также приведет к окончательному удалению самой виртуальной машины, поэтому указанную команду следует использовать с осторожностью.
+А с помощью команды **Remove-AzureRmResourceGroup** можно удалить все ресурсы, связанные с виртуальной машиной, без возможности восстановления. Это также приведет к окончательному удалению самой виртуальной машины, поэтому используйте указанную команду с осторожностью.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

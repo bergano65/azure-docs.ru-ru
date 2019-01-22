@@ -16,12 +16,12 @@ ms.custom: mvc
 ms.date: 10/25/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: 345d62f4045e7b9279d52acf70cc340d088f5db0
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: d2e849b4a6101cd10ce17e52056efdfe2f903381
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52961337"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54267119"
 ---
 # <a name="what-is-the-azure-stack-development-kit"></a>Что такое Пакет средств разработки Azure Stack?
 [Интегрированные системы Microsoft Azure Stack](../azure-stack-poc.md) размером от 4 до 16 узлов, которые совместно поддерживают партнер по оборудованию и корпорация Майкрософт. Использование интегрированных систем Azure Stack позволяет реализовать новые сценарии для производственных рабочих нагрузок. Если вы оператор Azure Stack, который управляет инфраструктурой интегрированных систем и предлагает службы, ознакомьтесь с нашей [документацией для операторов](https://docs.microsoft.com/azure/azure-stack).

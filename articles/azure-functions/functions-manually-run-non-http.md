@@ -9,12 +9,12 @@ ms.service: azure-functions
 ms.topic: tutorial
 ms.date: 12/12/2018
 ms.author: cshoe
-ms.openlocfilehash: 00a72c8c7fb42c763a8b0bad1fa3914ac27c496f
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 6c77e58e626ba370a6278a0f01b09578930cba09
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406936"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54247118"
 ---
 # <a name="manually-run-a-non-http-triggered-function"></a>Запуск функции, не активируемой HTTP-запросом, вручную
 
@@ -51,19 +51,20 @@ ms.locfileid: "53406936"
 
 Откройте Postman и выполните следующие действия:
 
-1. В текстовом поле URL-адреса введите **запрашиваемое расположение**. 
-2. **Щелкните** вкладку **Headers** (Заголовки).
-3. Введите **x-functions-key** как первый **ключ** и вставьте главный ключ (из буфера обмена) в поле **Value** (Значение).
-4. Введите **Content-Type** как второй **ключ** и введите **application/json** как **значение**.
+1. В текстовом поле URL-адреса введите **запрашиваемое расположение**.
+2. Для метода HTTP задается тип **POST**.
+3. **Щелкните** вкладку **Headers** (Заголовки).
+4. Введите **x-functions-key** как первый **ключ** и вставьте главный ключ (из буфера обмена) в поле **Value** (Значение).
+5. Введите **Content-Type** как второй **ключ** и введите **application/json** как **значение**.
 
     ![Параметры заголовков в Postman](./media/functions-manually-run-non-http/functions-manually-run-non-http-headers.png)
 
-5. **Щелкните** вкладку **Body** (Текст).
-6. Введите **{ "input": "test" }** как текст для запроса.
+6. **Щелкните** вкладку **Body** (Текст).
+7. Введите **{ "input": "test" }** как текст для запроса.
 
     ![Параметры текста Postman](./media/functions-manually-run-non-http/functions-manually-run-non-http-body.png)
 
-7. Нажмите кнопку **Отправить**.
+8. Нажмите кнопку **Отправить**.
 
     ![Отправка запроса с помощью Postman](./media/functions-manually-run-non-http/functions-manually-run-non-http-send.png)
 

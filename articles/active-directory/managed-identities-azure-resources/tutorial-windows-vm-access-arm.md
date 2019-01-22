@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: 53f9850d794061f5aaebc556743291ae8f3305fb
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: e4f2362e6baca14c540070a47b2c71fd99465f33
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52721295"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54305423"
 ---
 # <a name="use-a-windows-vm-system-assigned-managed-identity-to-access-resource-manager"></a>Использование назначаемого системой управляемого удостоверения на виртуальной машине Windows для доступа к Resource Manager
 
@@ -50,15 +50,15 @@ ms.locfileid: "52721295"
 
 ## <a name="get-an-access-token-using-the-vms-system-assigned-managed-identity-and-use-it-to-call-azure-resource-manager"></a>Получение маркера доступа с использованием назначаемого системой управляемого удостоверения виртуальной машины и вызов Azure Resource Manager с помощью этого маркера 
 
-На этом этапе понадобится использовать **PowerShell**.  Если среда **PowerShell** не установлена, загрузите ее [отсюда](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1). 
+На этом этапе понадобится использовать **PowerShell**.  Если среда **PowerShell** не установлена, загрузите ее [отсюда](https://docs.microsoft.com/powershell/azure/overview). 
 
 1.  На портале перейдите к разделу **Виртуальные машины**, выберите свою виртуальную машину Windows и в разделе **Обзор** щелкните **Подключить**. 
 2.  Введите **имя пользователя** и **пароль**, добавленные при создании виртуальной машины Windows. 
 3.  Теперь, когда создано **подключение к удаленному рабочему столу** с виртуальной машиной, откройте **PowerShell** в удаленном сеансе. 
-4.  С помощью командлета PowerShell Invoke-WebRequest выполните запрос к локальной конечной точке управляемых удостоверений для ресурсов Azure, чтобы получить маркер доступа к Azure Resource Manager.
+4.  С помощью командлета Invoke-WebRequest выполните запрос к локальной конечной точке управляемых удостоверений для ресурсов Azure, чтобы получить маркер доступа к Azure Resource Manager.
 
     ```powershell
-       $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F' -Method GET -Headers @{Metadata="true"}
+       $response = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com/' -Method GET -Headers @{Metadata="true"}
     ```
     
     > [!NOTE]
@@ -75,7 +75,7 @@ ms.locfileid: "52721295"
     $ArmToken = $content.access_token
     ```
     
-    Теперь вызовите Azure Resource Manager с использованием маркера доступа. В этом примере мы также используем команду Invoke-WebRequest PowerShell для вызова Azure Resource Manager и включаем маркер доступа в заголовок авторизации.
+    Теперь вызовите Azure Resource Manager с использованием маркера доступа. В этом примере также используется командлет Invoke-WebRequest для вызова Azure Resource Manager и включения маркер доступа в заголовок авторизации.
     
     ```powershell
     (Invoke-WebRequest -Uri https://management.azure.com/subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP>?api-version=2016-06-01 -Method GET -ContentType "application/json" -Headers @{ Authorization ="Bearer $ArmToken"}).content

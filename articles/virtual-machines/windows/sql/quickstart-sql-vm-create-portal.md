@@ -3,7 +3,7 @@ title: Создание виртуальной машины SQL Server на пл
 description: Это руководство содержит сведения о создании виртуальной машины SQL Server 2017 на базе Windows на портале Azure.
 services: virtual-machines-windows
 documentationcenter: na
-author: rothja
+author: MashaMSFT
 manager: craigg
 tags: azure-resource-manager
 ms.service: virtual-machines-sql
@@ -12,15 +12,16 @@ ms.topic: quickstart
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: infrastructure-services
 ms.date: 05/11/2018
-ms.author: jroth
-ms.openlocfilehash: aeeee58242a5f6ea41b9ba354efc4f5d5087151c
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.author: mathoma
+ms.reviewer: jroth
+ms.openlocfilehash: 234625825c1d9729d4f06f2bb0c96325cdd81f22
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38720130"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54329351"
 ---
-# <a name="quickstart-create-a-sql-server-2017-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство по созданию виртуальной машины SQL Server 2017 на платформе Windows с помощью портала Azure
+# <a name="quickstart-create-a-sql-server-2017-windows-virtual-machine-in-the-azure-portal"></a>Краткое руководство. Создание виртуальной машины SQL Server 2017 на платформе Windows с помощью портала Azure
 
 > [!div class="op_single_selector"]
 > * [Windows](quickstart-sql-vm-create-portal.md)
@@ -46,7 +47,7 @@ ms.locfileid: "38720130"
 
 1. В поле поиска введите **SQL Server 2017 Developer on Windows Server 2016** и нажмите клавишу ВВОД.
 
-1. Выберите образ **Free SQL Server License: SQL Server 2017 Developer on Windows Server 2016**.
+1. Выберите образ **Free SQL Server License: SQL Server 2017 Developer on Windows Server 2016** (Бесплатная лицензия на SQL Server: SQL Server 2017 Developer на базе Windows Server 2016).
 
    ![Окно поиска](./media/quickstart-sql-vm-create-portal/newsearch.png)
 

@@ -1,5 +1,5 @@
 ---
-title: 'Руководство. Динамическое членство в группах: автоматическое добавление и удаление пользователей в Azure Active Directory'
+title: 'Руководство. Динамическое членство в группах: добавление и удаление пользователей в Azure Active Directory'
 description: В этом руководстве вы используете группы с правилами членства пользователя, чтобы автоматически добавлять или удалять пользователей
 services: active-directory
 documentationcenter: ''
@@ -14,14 +14,14 @@ ms.date: 08/07/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: 2119bb60cbdc36f62623ce0db52885e17f3d3006
-ms.sourcegitcommit: 30c7f9994cf6fcdfb580616ea8d6d251364c0cd1
+ms.openlocfilehash: 6efb649142f43a98ea08c99ae853de0fc0c8ea3c
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/18/2018
-ms.locfileid: "40209177"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321269"
 ---
-# <a name="tutorial-add-or-remove-group-members-automatically"></a>Руководство по автоматическому добавлению или удалению участников группы
+# <a name="tutorial-add-or-remove-group-members-automatically"></a>Руководство. Автоматическое добавление или удаление участников группы
 
 В Azure Active Directory (Azure AD) можно автоматически добавлять или удалять пользователей в группах безопасности или Office 365, поэтому не обязательно всегда делать это вручную. Всякий раз, когда какие-либо свойства пользователя или устройства меняются, Azure AD оценивает все динамические групповые правила в клиенте, чтобы узнать, следует ли добавлять или удалять участников.
 

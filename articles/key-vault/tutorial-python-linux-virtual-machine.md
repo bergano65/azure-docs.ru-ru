@@ -1,6 +1,6 @@
 ---
-title: Руководство. Использование Azure Key Vault с виртуальной машиной Linux в Azure (Python) | Документация Майкрософт
-description: Руководство по настройке веб-приложения ASP.NET Core для считывания секрета из Key Vault
+title: Руководство. Использование Azure Key Vault с виртуальной машиной Azure на языке Python | Документация Майкрософт
+description: В этом руководстве вы настроите приложение Python для чтения секрета из хранилища ключей.
 services: key-vault
 documentationcenter: ''
 author: prashanthyv
@@ -12,47 +12,47 @@ ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: pryerram
 ms.custom: mvc
-ms.openlocfilehash: f5d74c2283d25d5774bd46bb9fe94795ff98fe9b
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 8c816d17807432d75b6102190fc37d25a525d7cf
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53720583"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54244177"
 ---
-# <a name="tutorial-how-to-use-azure-key-vault-with-azure-linux-virtual-machine-in-python"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Linux в Azure (Python)
+# <a name="tutorial-use-azure-key-vault-with-an-azure-virtual-machine-in-python"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Azure на языке Python
 
-Azure Key Vault помогает защитить секреты, такие как ключи API, строки подключения к базам данных, необходимые для доступа к приложениям, службам и ИТ-ресурсам.
+Azure Key Vault помогает защитить секреты (например, ключи API и строки подключения к базе данных), необходимые для доступа к приложениям, службам и ИТ-ресурсам.
 
-В этом руководстве описано, как в веб-приложении Azure настроить чтение данных из Azure Key Vault с помощью управляемых удостоверений для ресурсов Azure. Далее вы узнаете:
+В этом руководстве описано, как настроить веб-приложение Azure, чтобы оно считывало данные из Azure Key Vault с помощью управляемых удостоверений для ресурсов Azure. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создать хранилище ключей.
 > * сохранение секрета в хранилище ключей;
-> * получение секрета из хранилища ключей;
-> * Создать виртуальную машину Azure.
-> * Включить [управляемое удостоверение](../active-directory/managed-identities-azure-resources/overview.md) для виртуальной машины.
+> * Создайте виртуальную машину Azure.
+> * Включите [управляемое удостоверение](../active-directory/managed-identities-azure-resources/overview.md) для виртуальной машины.
 > * Предоставить разрешения, необходимые консольному приложению для чтения данных из хранилища ключей.
-> * Получить секреты из Key Vault.
+> * получение секрета из хранилища ключей;
 
-Прежде чем мы продолжим, ознакомьтесь с [основными понятиями](key-vault-whatis.md#basic-concepts).
+Прежде чем продолжить, ознакомьтесь с разделом [Основные понятия](key-vault-whatis.md#basic-concepts).
 
 ## <a name="prerequisites"></a>Предварительные требования
-* Для всех платформ.
-  * Git ([скачать](https://git-scm.com/downloads)).
-  * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
-  * [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) версии 2.0.4 или более поздней. Он доступен для Windows, Mac и Linux.
+Для всех платформ необходимо:
 
-В этом руководстве используется Управляемое удостоверение службы.
+* Git ([скачать](https://git-scm.com/downloads)).
+* Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) версии 2.0.4 или более поздней. Доступно для Windows, Mac и Linux.
 
-## <a name="what-is-managed-service-identity-and-how-does-it-work"></a>Что такое управляемое удостоверение службы, и как это работает?
-Прежде чем мы продолжим, давайте разберем MSI. Azure Key Vault может безопасно хранить учетные данные, чтобы их не было в коде, но чтобы получить их, необходимо пройти проверку подлинности в хранилище ключей Azure. Для проверки подлинности в Key Vault необходимы учетные данные! Классическая задача начальной загрузки. Используя магию Azure и Azure AD, MSI предоставляет "загрузочное удостоверение", что значительно упрощает начало работы.
+### <a name="managed-service-identity-and-how-it-works"></a>Управляемое удостоверение службы и принцип его работы
+В этом руководстве используется Управляемое удостоверение службы (MSI).
 
-Вот как это работает При включении MSI для службы Azure, такой как виртуальные машины, служба приложений или Функции, Azure создает [субъект-службу](key-vault-whatis.md#basic-concepts) для экземпляра службы в Azure Active Directory и вводит учетные данные для субъекта-службы в экземпляр службы. 
+Azure Key Vault может надежно хранить учетные данные, исключая их передачу в код. Для их извлечения вам необходима проверка подлинности в Key Vault. А для проверки подлинности в Key Vault требуются учетные данные. Это классическая проблема начальной загрузки. Используя Azure и Azure Active Directory, MSI предоставляет "удостоверение начальной загрузки", что значительно упрощает начало работы.
+
+При активации MSI для службы Azure (Виртуальные машины, Служба приложений или Функции), Azure создает [субъект-службу](key-vault-whatis.md#basic-concepts) для экземпляра службы в Azure AD. Azure внедряет учетные данные субъект-службы в экземпляр службы. 
 
 ![MSI](media/MSI.png)
 
-Далее код вызывает локальную службу метаданных, доступную в ресурсе Azure, для получения маркера доступа.
-Код использует маркер доступа, который он получает от локального MSI_ENDPOINT для проверки подлинности в службе Azure Key Vault. 
+Далее, чтобы получить маркер доступа, код вызывает локальную службу метаданных, доступную в ресурсе Azure.
+Код использует маркер доступа, который получает от локальной конечной точки MSI для проверки подлинности в службе Azure Key Vault. 
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -80,9 +80,9 @@ az group create --name "<YourResourceGroupName>" --location "West US"
 
 Теперь создайте хранилище ключей в группе ресурсов, созданной на предыдущем шаге. Введите следующие сведения:
 
-* Имя хранилища ключей: это должна быть строка, состоящая из 3–24 таких знаков: 0–9, a–z, A–Z и -.
+* Имя хранилища ключей: это должна быть строка, состоящая из 3–24 символов, которые содержат: 0–9, a–z, A–Z и дефисы (-).
 * Имя группы ресурсов.
-* Расположение. **Западная часть США**.
+* Расположение. **западная часть США**.
 
 ```azurecli
 az keyvault create --name "<YourKeyVaultName>" --resource-group "<YourResourceGroupName>" --location "West US"
@@ -93,7 +93,7 @@ az keyvault create --name "<YourKeyVaultName>" --resource-group "<YourResourceGr
 
 Теперь мы добавим секрет, чтобы продемонстрировать этот процесс. Вы можете хранить здесь строки подключения SQL и прочие сведения, которые должны храниться безопасно, но быть доступны для приложения.
 
-Введите следующие команды, чтобы создать секрет с именем **AppSecret** в хранилище ключей. Этот секрет будет хранить значение **MySecret**.
+Введите следующие команды, чтобы создать секрет с именем *AppSecret* в хранилище ключей. Этот секрет будет хранить значение **MySecret**.
 
 ```azurecli
 az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --value "MySecret"
@@ -103,7 +103,7 @@ az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --va
 
 Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az_vm_create).
 
-В следующем примере создается виртуальная машина *myVM* и добавляется учетная запись пользователя *azureuser*. Параметр `--generate-ssh-keys` автоматически создает ключ SSH и сохраняет его в стандартное расположение (*~/.ssh*). Чтобы использовать определенный набор ключей, примените параметр `--ssh-key-value`.
+В следующем примере создается виртуальная машина *myVM* и добавляется учетная запись пользователя *azureuser*. Параметр `--generate-ssh-keys` автоматически создает ключ SSH и отправляет его в расположение ключа по умолчанию (*~/.ssh*). Чтобы использовать определенный набор ключей, примените параметр `--ssh-key-value`.
 
 ```azurecli-interactive
 az vm create \
@@ -114,7 +114,7 @@ az vm create \
   --generate-ssh-keys
 ```
 
-Создание виртуальной машины и вспомогательных ресурсов занимает несколько минут. В следующем примере выходных данных показано, что виртуальная машина успешно создана.
+Создание виртуальной машины и вспомогательных ресурсов занимает несколько минут. В следующем примере выходных данных показано успешное создание виртуальной машины.
 
 ```
 {
@@ -131,14 +131,14 @@ az vm create \
 
 Запишите значение `publicIpAddress`, которое появится в выходных данных виртуальной машины. Этот адрес будет использоваться для доступа к виртуальной машине на следующих шагах.
 
-## <a name="assign-identity-to-virtual-machine"></a>Назначение удостоверения виртуальной машине
-На этом шаге мы создадим назначаемое системой удостоверение для виртуальной машины, выполнив следующую команду в Azure CLI.
+## <a name="assign-an-identity-to-the-virtual-machine"></a>Назначение удостоверения виртуальной машине
+На этом шаге мы создадим назначаемое системой удостоверение для виртуальной машины. Выполните следующую команду в Azure CLI.
 
 ```
 az vm identity assign --name <NameOfYourVirtualMachine> --resource-group <YourResourceGroupName>
 ```
 
-Запишите указанное ниже удостоверение systemAssignedIdentity. Выходные данные приведенной выше команды выглядят следующим образом: 
+Выходные данные команды выглядят следующим образом. Запишите значение **systemAssignedIdentity**. 
 
 ```
 {
@@ -147,55 +147,53 @@ az vm identity assign --name <NameOfYourVirtualMachine> --resource-group <YourRe
 }
 ```
 
-## <a name="give-virtual-machine-identity-permission-to-key-vault"></a>Предоставление удостоверению виртуальной машины разрешения на доступ к Key Vault
-Теперь мы можем предоставить созданному выше удостоверению разрешение для Key Vault, выполнив следующую команду:
+## <a name="give-the-virtual-machine-identity-permission-to-the-key-vault"></a>Предоставление удостоверению виртуальной машины разрешения на доступ к хранилищу ключей
+Сейчас мы можем предоставить разрешение удостоверения хранилищу ключей. Выполните следующую команду:
 
 ```
 az keyvault set-policy --name '<YourKeyVaultName>' --object-id <VMSystemAssignedIdentity> --secret-permissions get list
 ```
 
-## <a name="login-to-the-virtual-machine"></a>Вход на виртуальную машину
+## <a name="log-in-to-the-virtual-machine"></a>Войдите на виртуальную машину.
 
-Выполните инструкции из этого [руководства](https://docs.microsoft.com/azure/virtual-machines/windows/connect-logon).
+Войдите на виртуальную машину с помощью [этого руководства](https://docs.microsoft.com/azure/virtual-machines/windows/connect-logon).
 
-## <a name="create-and-run-sample-python-app"></a>Создание и запуск примера приложения Python
+## <a name="create-and-run-the-sample-python-app"></a>Создание и запуск примера приложения Python
 
-Ниже приведен пример файла с именем Sample.py. Он использует библиотеку [requests](https://pypi.org/project/requests/2.7.0/) для выполнения вызовов HTTP GET.
+Следующий пример файла — *Sample.py*. Он использует библиотеку [requests](https://pypi.org/project/requests/2.7.0/) для выполнения вызовов HTTP GET.
 
 ## <a name="edit-samplepy"></a>Редактирование файла Sample.py
-Откройте созданный файл Sample.py и скопируйте приведенный ниже код.
-
-Описанный ниже процесс содержит два шага. 
-1. Получите маркер из локальной конечной точки MSI на виртуальной машине, которая извлекает маркер из Azure Active Directory.
-2. Передайте маркер в Key Vault и получите секрет. 
+После создания Sample.py откройте файл и скопируйте следующий код. Код представляет собой двухэтапный процесс. 
+1. Получение токена из локальной конечной точки MSI на виртуальной машине. Затем конечная точка получает токен из Azure Active Directory.
+2. Передача токена в хранилище ключей и получение секрета. 
 
 ```
     # importing the requests library 
     import requests 
 
-    # Step 1: Fetch an access token from a Managed Identity enabled azure resource      
-    # Note that the resource here is https://vault.azure.net for public cloud and api-version is 2018-02-01
+    # Step 1: Fetch an access token from an MSI-enabled Azure resource      
+    # Note that the resource here is https://vault.azure.net for the public cloud, and api-version is 2018-02-01
     MSI_ENDPOINT = "http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fvault.azure.net"
     r = requests.get(MSI_ENDPOINT, headers = {"Metadata" : "true"}) 
       
-    # extracting data in json format 
-    # This request gets a access_token from Azure Active Directory using the local MSI endpoint
+    # Extracting data in JSON format 
+    # This request gets an access token from Azure Active Directory by using the local MSI endpoint
     data = r.json() 
     
-    # Step 2: Pass the access_token received from previous HTTP GET call to Key Vault
+    # Step 2: Pass the access token received from the previous HTTP GET call to the key vault
     KeyVaultURL = "https://prashanthwinvmvault.vault.azure.net/secrets/RandomSecret?api-version=2016-10-01"
     kvSecret = requests.get(url = KeyVaultURL, headers = {"Authorization": "Bearer " + data["access_token"]})
     
     print(kvSecret.json()["value"])
 ```
 
-Выполнив такую команду, вы должны увидеть значение секрета. 
+Выполнив следующую команду, вы должны увидеть значение секрета. 
 
 ```
 python Sample.py
 ```
 
-В приведенном выше коде показано, как выполнять операции с Azure Key Vault в виртуальной машине Windows в Azure. 
+В указанном коде показано, как выполнять операции с Azure Key Vault на виртуальной машине Windows. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

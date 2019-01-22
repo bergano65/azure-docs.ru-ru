@@ -12,17 +12,17 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 06/28/2018
+ms.date: 01/14/2019
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 1af74cc44391c95fba781cbce14e9118ca36c14b
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: 038a70f5cce5b78f6c0e95316e66de42fa529954
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078500"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321744"
 ---
-# <a name="tutorial-create-and-deploy-an-application-with-an-aspnet-core-web-api-front-end-service-and-a-stateful-back-end-service"></a>Руководство по созданию и развертыванию приложения с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния
+# <a name="tutorial-create-and-deploy-an-application-with-an-aspnet-core-web-api-front-end-service-and-a-stateful-back-end-service"></a>Руководство. Создание и развертывание приложения с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния
 
 Это руководство представляет первую часть цикла.  Здесь описывается, как создать приложение Azure Service Fabric с интерфейсной службой веб-API ASP.NET Core и серверной службой с отслеживанием состояния для хранения данных. После завершения этого руководства вы получите приложение для голосования с клиентской частью в виде веб-приложения ASP.NET Core, которое сохраняет результаты голосования во внутренней службе с отслеживанием состояния в кластере. Если вы не хотите вручную создавать приложение для голосования, вы можете [скачать исходный код](https://github.com/Azure-Samples/service-fabric-dotnet-quickstart/) для завершенного приложения и сразу перейти к [описанию примера приложения для голосования](#walkthrough_anchor).  При желании вы можете просмотреть [видео-инструкцию](https://channel9.msdn.com/Events/Connect/2017/E100) к этому руководству.
 
@@ -326,8 +326,6 @@ namespace VotingWeb.Controllers
 
 Обновите значение свойства "URL-адрес приложения" в проекте Voting, чтобы в веб-браузере открывался правильный порт при отладке с помощью клавиши F5.  В обозревателе решений выберите проект **Voting** и измените значение свойства **URL-адрес приложения** на **8080**.
 
-![URL-адрес приложения](./media/service-fabric-tutorial-deploy-app-to-party-cluster/application-url.png)
-
 ### <a name="deploy-and-run-the-voting-application-locally"></a>Локальное развертывание и запуск приложения Voting
 Теперь можно запустить приложение Voting для отладки. В Visual Studio нажмите клавишу **F5**, чтобы развернуть приложение в локальном кластере Service Fabric в режиме отладки. Если среда Visual Studio не была открыта ранее с правами **администратора**, приложение завершается неудачно.
 
@@ -454,12 +452,7 @@ namespace VotingData.Controllers
 
 Service Fabric позволяет пользователям самим определять способ взаимодействия со службами Reliable Services. В составе одного приложения одни службы могут быть доступны по протоколу TCP. Другие службы могут быть доступны через API REST HTTP, третьи — через веб-сокеты. Сведения о доступных возможностях и их преимуществах и недостатках см. в статье [Подключение к службам в Service Fabric и взаимодействие с ними](service-fabric-connect-and-communicate-with-services.md).
 
-Для выполнения задач этого руководства используется [веб-API ASP.NET Core](service-fabric-reliable-services-communication-aspnetcore.md) и [обратный прокси-сервер Service Fabric](service-fabric-reverseproxy.md). Это позволяет интерфейсной веб-службе VotingWeb взаимодействовать с серверной службой VotingData. Обратный прокси-сервер по умолчанию использует порт 19081 и должен работать в этом руководстве. Порт задан в шаблоне ARM, используемом для настройки кластера. Чтобы узнать, какой порт используется, посмотрите на шаблон кластера в ресурсе **Microsoft.ServiceFabric/clusters** или взгляните на элемент HttpApplicationGatewayEndpoint в манифесте кластера.
-
-> [!NOTE]
-> Обратный прокси-сервер поддерживается только в кластере под управлением Windows 8 и более поздних версий либо Windows Server 2012 и более поздних версий.
-
-<u>Ресурс Microsoft.ServiceFabric/clusters reverseProxyEndpointPort</u>
+Для выполнения задач этого руководства используется [веб-API ASP.NET Core](service-fabric-reliable-services-communication-aspnetcore.md) и [обратный прокси-сервер Service Fabric](service-fabric-reverseproxy.md). Это позволяет интерфейсной веб-службе VotingWeb взаимодействовать с серверной службой VotingData. Обратный прокси-сервер по умолчанию использует порт 19081 и должен работать в этом руководстве. Порт обратного прокси-сервера указан в шаблоне Azure Resource Manager, используемом для настройки кластера. Чтобы определить, какой порт будет использоваться, просмотрите ресурс **Microsoft.ServiceFabric/clusters** в шаблоне кластера: 
 
 ```json
 "nodeTypes": [
@@ -472,13 +465,10 @@ Service Fabric позволяет пользователям самим опре
           }
         ],
 ```
-Чтобы просмотреть элемент HttpApplicationGatewayEndpoint в локальном кластере Service Fabric манифеста, выполните следующие действия.
-1. Запустите окно браузера и перейдите по адресу http://localhost:19080.
-2. Щелкните **Манифест**.
+Чтобы найти порт обратного прокси-сервера, используемого на локальном кластере разработки, просмотрите данные об элементе **HttpApplicationGatewayEndpoint** в манифесте локального кластера Service Fabric.
+1. Откройте окно браузера и перейдите по адресу http://localhost:19080, чтобы открыть средство Service Fabric Explorer.
+2. Выберите **Кластер -> Манифест**.
 3. Запомните порт элемента HttpApplicationGatewayEndpoint. По умолчанию это должен быть порт 19081. Если это не порт 19081, необходимо изменить порт в методе GetProxyAddress следующего кода VotesController.cs.
-
-
-
 
 <a id="updatevotecontroller" name="updatevotecontroller_anchor"></a>
 
@@ -622,9 +612,9 @@ public class VotesController : Controller
 
 Чтобы посмотреть, как выполняется код, сделайте следующее:
 
-1. Откройте файл **VotingWeb\VotesController.cs** и установите точку останова в методе **Put** этого веб-API (строка 63).
+1. Откройте файл **VotingWeb\VotesController.cs** и установите точку останова в методе **Put** этого веб-API (строка 72).
 
-2. Откройте файл **VotingData\VoteDataController.cs** и установите точку останова в методе **Put** этого веб-API (строка 53).
+2. Откройте файл **VotingData\VoteDataController.cs** и установите точку останова в методе **Put** этого веб-API (строка 54).
 
 3. Нажмите клавишу **F5**, чтобы запустить приложение в режиме отладки.
 

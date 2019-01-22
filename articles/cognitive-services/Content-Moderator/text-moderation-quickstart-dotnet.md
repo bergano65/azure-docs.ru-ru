@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Анализ текста для выявления нежелательного содержимого с помощью C#
+title: Краткое руководство. Проверка содержимого текста с помощью C# в Content Moderator
 titlesuffix: Azure Cognitive Services
 description: Как анализировать содержимое текста на наличие различных нежелательных материалов с помощью пакета SDK Content Moderator для .NET
 services: cognitive-services
@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: quickstart
-ms.date: 10/31/2018
+ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 74c2142e8f6839422446767cd0c70b34daa3f1ad
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 1502b3b33d8ab9af7509a7b63e87f80927c528ce
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53103253"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54266677"
 ---
 # <a name="quickstart-analyze-text-content-for-objectionable-material-in-c"></a>Краткое руководство. Анализ текста для выявления нежелательного содержимого с помощью C# 
 

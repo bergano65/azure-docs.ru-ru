@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/20/2017
 ms.author: daveba
-ms.openlocfilehash: f00de9095e45901f92fcf3004a5f51cfdd709da2
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: ee26db80e3219c170c77a2bd90f7d1416676333e
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52724780"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352756"
 ---
-# <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство по использованию назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure
+# <a name="tutorial-use-a-linux-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Linux для доступа к службе хранилища Azure с помощью ключа доступа
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
 
@@ -61,7 +61,7 @@ ms.locfileid: "52724780"
 
 ## <a name="grant-your-vms-system-assigned-managed-identity-access-to-use-storage-account-access-keys"></a>Предоставление назначаемому системой управляемому удостоверению виртуальной машины прав на использование ключей доступа для учетных записей хранения
 
-В службе хранилища Azure не встроена поддержка проверки подлинности Azure AD.  Управляемые удостоверения можно использовать в ресурсах Azure для извлечения ключей доступа к учетной записи хранения из Resource Manager и последующего доступа к хранилищу с помощью ключа.  На этом шаге мы предоставим назначаемому системой управляемому удостоверению виртуальной машины доступ к ключам учетной записи хранения.   
+На этом шаге мы предоставим назначаемому системой управляемому удостоверению виртуальной машины доступ к ключам учетной записи хранения.   
 
 1. Вернитесь к только что созданной учетной записи хранения.
 2. Щелкните ссылку **Управление доступом (IAM)** на панели слева.  

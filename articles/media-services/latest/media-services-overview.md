@@ -13,15 +13,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 12/14/2018
+ms.date: 01/14/2019
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: f959ce8d29975fc7c667185ef5bc2547825bccc0
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: c58c31a0d6238720d643d5b1508a7ec04749887b
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53406919"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352127"
 ---
 # <a name="what-is-azure-media-services-v3"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -34,11 +34,11 @@ ms.locfileid: "53406919"
 * Доставка видеосодержимого в различных форматах для воспроизведения на разных устройствах и в разных браузерах. Для доставки по требованию и доставки потоковой трансляции разным клиентам (мобильных устройств, ТВ, ПК и т. д.) видео- и аудиосодержимое необходимо зашифровать и упаковать соответствующим образом. Чтобы узнать, как выполнить доставку и потоковую передачу такого содержимого, см. статью [ Краткое руководство по потоковой передаче видеофайлов — .NET](stream-files-dotnet-quickstart.md).
 * Потоковая передача спортивных событий в прямой трансляции для большой аудитории в Интернете (например, футбол, бейсбол, спортивная жизнь в высших и средних учебных заведениях и многое другое). 
 * Широковещательная передача открытых заседаний и событий (например, совещание в мэрии, городском совете и законодательных органах).
-* Анализ записанного видео- или аудиосодержимого. Например, для достижения высшего качества обслуживания клиентов организации могут извлекать текст с помощью технологии преобразования речи в текст и создавать индексы поиска и панели мониторинга. Затем они могут извлекать аналитику по распространенным жалобам, источникам жалоб и другим связанным данным. 
+* Анализ записанного видео- или аудиосодержимого. Например, для достижения высшего качества обслуживания клиентов организации могут извлекать текст с помощью технологии преобразования речи в текст и создавать индексы поиска и панели мониторинга. Затем они могут извлекать аналитику по распространенным жалобам, источникам жалоб и другим связанным данным.
 * Создание видеослужбы подписки и потоковая передача содержимого, защищенного с помощью DRM, если необходимо ограничить доступ и использовать произведение, защищенное авторским правом клиента (например, для киностудии).
 * Доставка автономного содержимого для воспроизведения на самолетах, в поездах и автомобилях. Возможно, пользователю потребуется загрузить содержимое на телефон или планшет для воспроизведения в автономном режиме (в случае отсутствия подключения к сети).
-* Добавление субтитров и заголовков в видео для более широкой аудитории (например, для людей с нарушениями слуха или пользователей, которым во время просмотра необходимо одновременно читать титры на другом языке). 
-* Реализация образовательной видеоплатформы электронного обучения со Службами мультимедиа Azure и [API-интерфейсами Cognitive Services Azure](https://docs.microsoft.com/azure/#pivot=products&panel=ai) для ввода субтитров с помощью технологии преобразования речи в текст, перевода текста на несколько языков и т. д.
+* Реализация образовательной видеоплатформы электронного обучения со Службами мультимедиа Azure и [API-интерфейсами Cognitive Services Azure](https://docs.microsoft.com/azure/#pivot=products&panel=ai) для ввода субтитров с помощью технологии преобразования речи в текст, перевода текста на несколько языков и т. д. 
+* Используйте Службы мультимедиа Azure с [API-интерфейсами Cognitive Services](https://docs.microsoft.com/azure/#pivot=products&panel=ai), чтобы добавить субтитры и заголовки в видео для более широкой аудитории (например, для людей с нарушениями слуха или пользователей, которым во время просмотра необходимо одновременно читать титры на другом языке).
 * Активация Azure CDN для достижения более высокого уровня масштабирования, который улучшает обработку кратковременных пиковых нагрузок (например, при запуске нового продукта). 
 
 ## <a name="v3-capabilities"></a>Возможности версии 3
@@ -72,41 +72,7 @@ ms.locfileid: "53406919"
 * невыполнение возврата ключей ограничения в запросе Get ContentKeyPolicy, 
 * невыполнение возврата части строки запроса URL-адреса (чтобы удалить подпись) URL-адресов ввода заданий HTTP.
 
-В следующем примере .NET показано, как получить ключ подписывания из существующей политики. Для получения ключа нужно использовать **GetPolicyPropertiesWithSecretsAsync**.
-
-```csharp
-private static async Task<ContentKeyPolicy> GetOrCreateContentKeyPolicyAsync(
-    IAzureMediaServicesClient client,
-    string resourceGroupName,
-    string accountName,
-    string contentKeyPolicyName)
-{
-    ContentKeyPolicy policy = await client.ContentKeyPolicies.GetAsync(resourceGroupName, accountName, contentKeyPolicyName);
-
-    if (policy == null)
-    {
-        // Configure and create a new policy.
-        
-        . . . 
-        policy = await client.ContentKeyPolicies.CreateOrUpdateAsync(resourceGroupName, accountName, contentKeyPolicyName, options);
-    }
-    else
-    {
-        var policyProperties = await client.ContentKeyPolicies.GetPolicyPropertiesWithSecretsAsync(resourceGroupName, accountName, contentKeyPolicyName);
-        var restriction = policyProperties.Options[0].Restriction as ContentKeyPolicyTokenRestriction;
-        if (restriction != null)
-        {
-            var signingKey = restriction.PrimaryVerificationKey as ContentKeyPolicySymmetricTokenKey;
-            if (signingKey != null)
-            {
-                TokenSigningKey = signingKey.KeyValue;
-            }
-        }
-    }
-
-    return policy;
-}
-```
+См. пример [Политика получения ключа содержимого — .NET](get-content-key-policy-dotnet-howto.md).
 
 ## <a name="how-can-i-get-started-with-v3"></a>Как начать работу с версией 3?
 

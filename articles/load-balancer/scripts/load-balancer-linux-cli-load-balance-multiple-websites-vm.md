@@ -15,14 +15,14 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: kumud
-ms.openlocfilehash: a8a7514624387d0fc00d32e4d47042e4a3b130f0
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 41f8a403694eec897ba4a6eb147ab71757d5caa5
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444425"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54263942"
 ---
-# <a name="azure-cli-script-example-load-balance-multiple-websites"></a>Пример скрипта Azure CLI. Распределение нагрузки веб-сайтов
+# <a name="azure-cli-script-example-load-balance-multiple-websites"></a>Пример скрипта Azure CLI. Балансировка нагрузки на нескольких веб-сайтах
 
 Этот пример скрипта Azure CLI создает виртуальную сеть с двумя виртуальными машинами, которые входят в группу доступности. Подсистема балансировки нагрузки направляет трафик с двух отдельных IP-адресов на две виртуальные машины. После выполнения сценария можно развернуть ПО веб-сервера на виртуальных машин и разместить несколько веб-сайтов, каждый из которых имеет собственный IP-адрес.
 
@@ -47,7 +47,7 @@ az group delete --name myResourceGroup --yes
 
 Для создания группы ресурсов, виртуальной сети, подсистемы балансировки нагрузки и всех связанных ресурсов этот сценарий использует приведенные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet#az-network-vnet-create) | Создает виртуальную сеть и подсеть Azure. |

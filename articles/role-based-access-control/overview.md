@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/30/2018
+ms.date: 01/14/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9ddad471236877977fec620565d8f110e265ff72
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: c614ae9d157c6e4121701cb22213706020ee20a7
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52867904"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54303331"
 ---
 # <a name="what-is-role-based-access-control-rbac"></a>Что такое управление доступом на основе ролей (RBAC)?
 
@@ -78,7 +78,7 @@ RBAC — это система авторизации на основе [Azure 
 
 ### <a name="scope"></a>Область
 
-*Область* — это граница, в пределах которой предоставляется доступ. При назначении роли можно точнее ограничить разрешенные действия, определив их область. Это удобно, если вы хотите привлечь какого-либо пользователя к [работе над веб-сайтом](built-in-roles.md#website-contributor), но только для одной группы ресурсов.
+*Область* — это набор ресурсов, к которым предоставляется доступ. При назначении роли можно точнее ограничить разрешенные действия, определив их область. Это удобно, если вы хотите привлечь какого-либо пользователя к [работе над веб-сайтом](built-in-roles.md#website-contributor), но только для одной группы ресурсов.
 
 В Azure область действия можно задать на нескольких уровнях: на [уровне группы управления](../azure-resource-manager/management-groups-overview.md), уровне подписки, группы ресурсов или ресурса. Структура областей строится на отношениях "родитель-потомок".
 
@@ -99,6 +99,12 @@ RBAC — это система авторизации на основе [Azure 
 ![Назначение ролей для управления доступом](./media/overview/rbac-overview.png)
 
 Создавать назначения ролей можно с помощью портала Azure, Azure CLI, Azure PowerShell, пакетов SDK Azure или интерфейсов REST API. В каждой подписке вы можете назначить до 2000 ролей. Для создания и удаления назначений ролей требуется разрешение `Microsoft.Authorization/roleAssignments/*`. Оно предоставляется с помощью ролей [владельца](built-in-roles.md#owner) или [администратора доступа пользователей](built-in-roles.md#user-access-administrator).
+
+## <a name="multiple-role-assignments"></a>Несколько назначений ролей
+
+Что произойдет, если у вас будет несколько перекрывающихся назначений ролей? RBAC — это аддитивная модель, поэтому ваши действующие разрешения являются добавлениями назначений ролей. Рассмотрим следующий пример, где пользователю предоставляется роль участника на уровне подписки и роль читателя для группы ресурсов. Добавление разрешения участника и разрешения читателя представляет по сути роль участника для группы ресурсов. Следовательно, в этом примере назначение роли читателя не играет роли.
+
+![Несколько назначений ролей](./media/overview/rbac-multiple-roles.png)
 
 ## <a name="deny-assignments"></a>Запрет назначений
 
@@ -126,7 +132,7 @@ RBAC — это система авторизации на основе [Azure 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Quickstart: Grant access for a user using RBAC and the Azure portal](quickstart-assign-role-user-portal.md) (Краткое руководство по предоставлению доступа пользователю с помощью RBAC и портала Azure)
+- [Краткое руководство Предоставление доступа пользователю с помощью RBAC и портала Azure](quickstart-assign-role-user-portal.md)
 - [Управление доступом с помощью RBAC и портала Azure](role-assignments-portal.md)
 - [Сведения о различных ролях в Azure](rbac-and-directory-admin-roles.md)
 - [Внедрение облачных решений в организации. Управление доступом к ресурсам в Azure](/azure/architecture/cloud-adoption/getting-started/azure-resource-access)

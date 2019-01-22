@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 12/18/2018
 ms.author: iainfou
 ms.custom: H1Hack27Feb2017, mvc, devcenter
-ms.openlocfilehash: 7c7881f08828572c01a5e0decb270c653416ef9b
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: de11ebdc38ae5085fef274181084310ccc02a329
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54024269"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54304012"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью Azure CLI
 
@@ -31,7 +31,7 @@ ms.locfileid: "54024269"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов Azure — это логическая группа, в которой выполняется развертывание и администрирование ресурсов Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположении будут выполняться ваши ресурсы в Azure. Создайте группу ресурсов с помощью команды [az group create][az-group-create].
+Группа ресурсов Azure — это логическая группа, в которой выполняется развертывание и администрирование ресурсов Azure. Во время создания группы ресурсов вам будет предложено указать расположение. В этом расположение сохраняются метаданные группы ресурсов, а также выполняется их работа в Azure, если вы не указывали другой регион во время создания ресурса. Создайте группу ресурсов с помощью команды [az group create][az-group-create].
 
 В следующем примере создается группа ресурсов *myAKSCluster* в расположении *eastus*.
 
@@ -268,7 +268,7 @@ az group delete --name myResourceGroup --yes --no-wait
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-С помощью этого краткого руководства мы развернули кластер Kubernetes, а затем развернули в нем многоконтейнерное приложение.
+С помощью этого краткого руководства мы развернули кластер Kubernetes, а затем развернули в нем многоконтейнерное приложение.  Чтобы выполнить доступ к панели мониторинга кластера Kubernetes, который вы создали, см. статью [Подключение веб-панели мониторинга Kubernetes в Службе Azure Kubernetes (AKS)][kubernetes-dashboard].
 
 Дополнительные сведения о AKS и инструкции по созданию полного кода для примера развертывания см. в руководстве по кластерам Kubernetes.
 
@@ -297,3 +297,4 @@ az group delete --name myResourceGroup --yes --no-wait
 [azure-portal]: https://portal.azure.com
 [kubernetes-deployment]: concepts-clusters-workloads.md#deployments-and-yaml-manifests
 [kubernetes-service]: concepts-network.md#services
+[kubernetes-dashboard]: kubernetes-dashboard.md

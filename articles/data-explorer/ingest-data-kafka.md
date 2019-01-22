@@ -8,16 +8,16 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 11/19/2018
-ms.openlocfilehash: 21eb28611c1e40695356d502c262c23013591986
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: b53c26f265cc5d944c8e15ae5bf436e8f71dcc2f
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54117373"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352739"
 ---
 # <a name="quickstart-ingest-data-from-kafka-into-azure-data-explorer"></a>Краткое руководство. Прием данных из Kafka в Azure Data Explorer
  
-Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure Data Explorer позволяет принимать (загружать) данные из Kafka. Kafka — это распределенная платформа потоковой передачи, которая позволяет в режиме реального времени выполнять сборку конвейеров потоковой передачи данных, обеспечивающих надежный обмен данными между системами и приложениями. 
+Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure Data Explorer позволяет принимать (загружать) данные из Kafka. Kafka — это распределенная платформа потоковой передачи, которая позволяет в режиме реального времени выполнять сборку конвейеров потоковой передачи данных, обеспечивающих надежный обмен данными между системами и приложениями.
  
 ## <a name="prerequisites"></a>Предварительные требования
  
@@ -30,9 +30,11 @@ ms.locfileid: "54117373"
 * [Visual Studio 2017 версии 15.3.2 или более поздней](https://www.visualstudio.com/vs/) для выполнения примера приложения
  
 ## <a name="kafka-connector-setup"></a>Настройка соединителя Kafka
-Kafka Connect — это средство для масштабируемой и надежной потоковой передачи данных между Apache Kafka и другими системами. Это средство позволяет легко и быстро определять соединители, перемещающие большие наборы данных в Kafka и из Kafka. ADX Kafka Sink служит соединителем для данных со стороны Kafka.
+
+Kafka Connect — это средство для масштабируемой и надежной потоковой передачи данных между Apache Kafka и другими системами. Это средство позволяет легко и быстро определять соединители, перемещающие большие наборы данных в Kafka и из Kafka. ADX Kafka Sink служит соединителем для данных со стороны Kafka.
  
-### <a name="bundle"></a>Пакет 
+### <a name="bundle"></a>Пакет
+
 С помощью Kafka можно загрузить `.jar` как подключаемый модуль, который будет выступать в качестве настраиваемого соединителя. Для создания такого `.jar` мы клонируем код локально и выполним сборку с помощью Maven. 
 
 #### <a name="clone"></a>Clone (Клонировать)
@@ -41,7 +43,7 @@ Kafka Connect — это средство для масштабируемой и
 git clone git://github.com:Azure/kafka-sink-azure-kusto.git
 cd ./kafka-sink-azure-kusto/kafka/
 ```
- 
+
 #### <a name="build"></a>Создание
 
 Выполните сборку локально с помощью Maven, чтобы создать `.jar` с зависимостями.
@@ -55,9 +57,9 @@ cd ./kafka-sink-azure-kusto/kafka/
 ```bash
 mvn clean compile assembly:single
 ```
- 
+
 ### <a name="deploy"></a>Развертывание 
- 
+
 Загрузка подключаемого модуля в Kafka. Пример развертывания с помощью Docker находится здесь: [kafka-sink-azure-kusto](https://github.com/Azure/kafka-sink-azure-kusto#deploy).
  
 
@@ -112,13 +114,16 @@ kusto.sink.flush_size=1000
 Теперь, когда ADX подключен к кластеру Kafka, используйте [пример приложения](https://github.com/Azure-Samples/event-hubs-dotnet-ingest), скачанный для создания данных.
 
 ### <a name="clone"></a>Clone (Клонировать)
+
 Клонируйте пример приложения локально.
 
 ```cmd
 git clone git://github.com:Azure/azure-kusto-samples-dotnet.git
 cd ./azure-kusto-samples-dotnet/kafka/
 ```
+
 ### <a name="run-the-app"></a>Запуск приложения
+
 1. Откройте решение для примера приложения в Visual Studio.
 
 1. В файле `Program.cs` обновите константу `connectionString` в строке подключения к Kafka.
@@ -127,11 +132,11 @@ cd ./azure-kusto-samples-dotnet/kafka/
     const string connectionString = @"<YourConnectionString>";
     ```
 
-1. Выполните сборку и запустите приложение. Приложение отправляет сообщения в кластер Kafka, и каждые десять секунд он сообщает о своем состоянии.
+1. Выполните сборку и запустите приложение. Приложение отправляет сообщения в кластер Kafka, и каждые 10 секунд он сообщает о своем состоянии.
 
 1. Когда приложение отправит нескольких сообщений, переходите к следующему шагу.
  
-## <a name="query-and-review-the-data"></a>Запрос и просмотр данных 
+## <a name="query-and-review-the-data"></a>Запрос и просмотр данных
 
 1. Чтобы убедиться в том, что прием выполнен без ошибок, выполните следующее:
 
@@ -159,4 +164,4 @@ cd ./azure-kusto-samples-dotnet/kafka/
 ## <a name="next-steps"></a>Дополнительная информация
  
 > [!div class="nextstepaction"]
-> [Краткое руководство. Запрос данных в Azure Data Explorer](web-query-data.md)
+> [Краткое руководство Запрос данных в Azure Data Explorer](web-query-data.md)

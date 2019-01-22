@@ -1,6 +1,7 @@
 ---
-title: Общие сведения. Студия машинного обучения Azure | Документация Майкрософт
-description: Обзор Студии машинного обучения Azure, инструмента с поддержкой функции перетаскивания объектов, предназначенного для быстрого создания моделей на основе библиотеки готовых алгоритмов и модулей.
+title: Основные сведения.
+titleSuffix: Azure Machine Learning Studio
+description: Студия машинного обучения Azure — это инструмент с поддержкой функции перетаскивания объектов, предназначенный для быстрого создания моделей на основе библиотеки готовых алгоритмов и модулей.
 keywords: машинное обучение azure, azure mlazure ml, студия машинного обучения
 services: machine-learning
 documentationcenter: ''
@@ -15,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
 ms.date: 03/28/2018
-ms.openlocfilehash: b1c0d3da6dba4bf56baaf583d89c58fdc13ef83f
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: 04c9803909fb5dfd1072840a0c1d7e33814ad1a3
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53250524"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54264366"
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>Что такое Студия машинного обучения Azure
 Студия машинного обучения Microsoft Azure — это инструмент для совместной работы, поддерживающий функцию перетаскивания объектов и предназначенный для создания, тестирования и развертывания решений для прогнозного анализа данных. Студия машинного обучения публикует модели как веб-службы, которые затем можно использовать в пользовательских приложениях и средствах бизнес-аналитики (например, в Excel).

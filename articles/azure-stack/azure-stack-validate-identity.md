@@ -14,13 +14,13 @@ ms.devlang: na
 ms.topic: get-started-article
 ms.date: 12/04/2018
 ms.author: sethm
-ms.reviewer: ''
-ms.openlocfilehash: 61562450d484f34385b4e6e111bf62326eaca159
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.reviewer: unknown
+ms.openlocfilehash: 9ca777275aa4aa09a16c0248f6e3b1ecc76ac5b2
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52888381"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54267340"
 ---
 # <a name="validate-azure-identity"></a>Проверка удостоверения Azure 
 Средство проверки готовности Azure Stack (AzsReadinessChecker) позволяет убедиться, что ваша служба Azure Active Directory (Azure AD) готова к работе с Azure Stack. Прежде чем развертывать Azure Stack, проверьте решение для работы с удостоверениями Azure.  
@@ -48,7 +48,7 @@ ms.locfileid: "52888381"
 **В среде Azure Active Directory:**
  - Определите учетную запись Azure AD, которую вы намерены использовать для Azure Stack и убедитесь, что она предоставляет права глобального администратора Azure Active Directory.
  - Определите имя клиента Azure AD. Это имя должно совпадать с *основным* доменным именем в Azure Active Directory. Например, *contoso.onmicrosoft.com*. 
- - Задайте параметр AzureEnvironement, который будет использоваться. Поддерживаемые значения имени параметра среды: AzureCloud, AzureChinaCloud или AzureUSGovernment в зависимости от используемой подписки Azure.
+ - Задайте параметр AzureEnvironment, который будет использоваться. Поддерживаемые значения имени параметра среды: AzureCloud, AzureChinaCloud или AzureUSGovernment в зависимости от используемой подписки Azure.
 
 ## <a name="validate-azure-identity"></a>Проверка удостоверения Azure 
 1. На компьютере, который соответствует всем предварительным требованиям, откройте командную строку PowerShell с правами администратора и выполните следующую команду, чтобы установить AzsReadinessChecker:  
@@ -137,7 +137,7 @@ Invoke-AzsAzureIdentityValidation Completed
 ````
 **Причина** — вход в указанный каталог Azure Active Directory (AADDirectoryTenantName) с помощью данной учетной записи невозможен. В нашем примере параметр *AzureChinaCloud* имеет значение *AzureEnvironment*.
 
-**Решение** — убедитесь, что учетная запись существует в указанном окружении Azure. Выполните в PowerShell следующую команду, чтобы проверить допустимость учетной записи для конкретного окружения: Login-AzureRmAccount – EnvironmentName AzureChinaCloud. 
+**Решение** — убедитесь, что учетная запись существует в указанном окружении Azure. Выполните в PowerShell следующую команду, чтобы проверить допустимость учетной записи для конкретной среды:   Login-AzureRmAccount — EnvironmentName AzureChinaCloud 
 ### <a name="account-is-not-an-administrator"></a>Учетная запись не предоставляет права администратора 
  
 ````PowerShell

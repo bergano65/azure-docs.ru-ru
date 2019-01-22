@@ -7,12 +7,12 @@ services: iot-fundamentals
 ms.topic: overview
 ms.date: 10/11/2018
 ms.author: robinsh
-ms.openlocfilehash: 2480aa92dec8d8e8879db813b1cfcddc26f77b7e
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: e1cb588d68153a88d8b55b2696b376c4eb8704f5
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53792532"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54199289"
 ---
 # <a name="what-is-azure-internet-of-things-iot"></a>Что такое Интернет вещей Azure
 
@@ -34,6 +34,8 @@ ms.locfileid: "53792532"
 * датчики обнаружения в комнате.
 
 Два устройства, которые часто используются для создания прототипов — это базовое устройство MXChip IoT DevKit от Майкрософт и устройство Raspberry PI. В MXChip Devkit входят датчики температуры, давления, влажности, а также гироскоп и акселерометр, магнитометр и микросхема Wi-Fi. Raspberry PI — это устройство Интернета вещей, к которому можно присоединить датчики различных типов, поэтому вы можете выбрать именно тот, который необходим для вашего сценария. 
+
+Дополнительные сведения о существующих устройствах Интернета вещей см. в крупнейшем отраслевом [каталоге устройств, сертифицированных для IoT](https://catalog.azureiotsolutions.com/alldevices).
 
 [Пакеты SDK для устройств Интернета вещей](../iot-hub/iot-hub-devguide-sdks.md) позволяют создавать приложения, которые работают на устройствах и выполняют необходимые задачи. С помощью пакетов SDK можно отправлять данные телеметрии в центр Интернета вещей, получать сообщения и обновления из центра Интернета вещей и так далее.
 

@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: quickstart
 ms.date: 11/07/2018
 ms.author: azfuncdf, cotresne, glenga
-ms.openlocfilehash: 0db76e80b2ff7400e7c2914efbd2bbcb24d9b005
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 4ee1c9edf8cb10cae1a8a6e1c15f9bcf6e9a8ff8
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54034324"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359465"
 ---
 # <a name="create-your-first-durable-function-in-javascript"></a>Создание устойчивой функции с помощью JavaScript
 
@@ -94,7 +94,7 @@ ms.locfileid: "54034324"
 
 ## <a name="create-an-activity-function"></a>Создание функции действия
 
-1. Повторите шаги из предыдущих разделов, чтобы создать третью функцию с помощью шаблона триггера HTTP. Дайте этой функции имя `SayHello`.
+1. Повторите шаги из предыдущих разделов, чтобы создать третью функцию с помощью шаблона триггера HTTP. Дайте этой функции имя `E1_SayHello`.
 
 2. Откройте файл index.js новой функции и замените его содержимое следующим кодом.
 
@@ -121,9 +121,11 @@ ms.locfileid: "54034324"
 
     ![Локальные выходные данные в Azure](../media/functions-create-first-function-vs-code/functions-vscode-f5.png)
 
-4. Вставьте URL-адрес HTTP-запроса в адресную строку браузера и просмотрите состояние оркестрации.
+4. Замените `{functionName}` на `OrchestratorFunction`.
 
-5. Нажмите клавиши SHIFT+F1, чтобы остановить отладку.
+5. Отправьте запрос HTTP POST к конечной точке URL-адреса, используя средства наподобие [Postman](https://www.getpostman.com/) или [cURL](https://curl.haxx.se/).
+
+6. В VS Code нажмите клавиши SHIFT+F1, чтобы остановить отладку.
 
 Убедившись, что функция выполняется правильно на локальном компьютере, опубликуйте проект в Azure.
 

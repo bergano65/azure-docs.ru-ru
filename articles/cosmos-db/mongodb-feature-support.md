@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 12/26/2018
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 7bf8258524b0b5e73c1a499fb6d3578098a0821e
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 08638f0b55c84a6b0e42d3782246ef5b2ce833f3
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54039169"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359074"
 ---
 # <a name="use-azure-cosmos-dbs-api-for-mongodb-support-for-mongodb-features-and-syntax"></a>Использование API Azure Cosmos DB для поддержки возможностей и синтаксиса MongoDB
 
@@ -20,13 +20,13 @@ Azure Cosmos DB — это глобально распределенная мн
 
 С помощью API Azure Cosmos DB для MongoDB вы можете пользоваться всеми функциями MongoDB, к которым вы привыкли, и возможностями Cosmos DB для организаций: [глобальное распространение](distribute-data-globally.md), [автоматическое сегментирование](partition-data.md), гарантии по уровням доступности и задержкам, автоматическое индексирование каждого поля, шифрование хранимых данных, резервное копирование и многое другое.
 
-## <a name="mongodb-protocol-support"></a>Поддержка протокола MongoDB
+## <a name="protocol-support"></a>Поддержка протоколов
 
 API Azure Cosmos DB для MongoDB совместим с сервером MongoDB версии **3.2** по умолчанию. Ниже перечислены поддерживаемые операторы, а также ограничения и исключения. Функции или операторы запросов, добавленные в MongoDB версии **3.4**, сейчас доступны в режиме предварительной версии. Любой драйвер клиента, который распознает эти протоколы, должен иметь возможность подключения к API Azure Cosmos DB для MongoDB.
 
 [Конвейер агрегирования MongoDB](#aggregation-pipeline) сейчас доступен как отдельный компонент в режиме предварительной версии.
 
-## <a name="mongodb-query-language-support"></a>Поддержка языка запросов MongoDB
+## <a name="query-language-support"></a>Поддержка языка запросов
 
 API Azure Cosmos DB для MongoDB предоставляет полную поддержку всех конструкций языка запросов MongoDB. Ниже приводится подробный список поддерживаемых операций, операторов, этапов, команд и параметров.
 

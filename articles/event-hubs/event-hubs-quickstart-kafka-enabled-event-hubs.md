@@ -8,12 +8,12 @@ ms.service: event-hubs
 ms.topic: quickstart
 ms.custom: seodec18
 ms.date: 12/06/2018
-ms.openlocfilehash: d6e293b80df1ab227a3100040a54b189f48d8027
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 19d903a4083c432ac3932189ad8a6890be9014fb
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53102815"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54354235"
 ---
 # <a name="stream-into-event-hubs-for-the-apache-kafka"></a>Потоковая передача данных в Центры событий для Apache Kafka
 В этом кратком руководстве показано, как выполнять потоковую передачу данных в Центры событий с поддержкой Kafka без необходимости менять клиенты протоколов или запускать собственные кластеры. Вы узнаете, как обеспечить взаимодействие отправителей и объектов-получателей с Центрами событий с поддержкой Kafka, изменив конфигурацию в приложениях. Центры событий Azure поддерживают [Apache Kafka 1.0.](https://kafka.apache.org/10/documentation.html)
@@ -34,13 +34,13 @@ ms.locfileid: "53102815"
 
 ## <a name="create-a-kafka-enabled-event-hubs-namespace"></a>Создание пространства имен Центров событий с поддержкой Kafka
 
-1. Войдите на [портал Azure] и щелкните **Создать ресурс** в левой верхней части экрана.
+1. Войдите на [портал Azure](https://portal.azure.com) и щелкните **Создать ресурс** в левой верхней части экрана.
 
 2. Найдите Центры событий и выберите отображаемые параметры:
     
     ![Поиск Центров событий на портале](./media/event-hubs-create-kafka-enabled/event-hubs-create-event-hubs.png)
  
-3. Укажите уникальное имя и включите Kafka в пространстве имен. Нажмите кнопку **Создать**.
+3. Укажите уникальное имя и включите Kafka в пространстве имен. Нажмите кнопку **Создать**. Примечание. Центры событий для Kafka поддерживаются только Центрами событий ценовых категорий "Стандартный"и "Выделенный". Центр событий цен. категории "Базовый" будет возвращать ошибку авторизации раздела в ответ на любые операции Kafka.
     
     ![Создание пространства имен](./media/event-hubs-create-kafka-enabled/create-kafka-namespace.jpg)
  

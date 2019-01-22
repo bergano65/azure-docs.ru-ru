@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/11/2018
 ms.author: yexu
-ms.openlocfilehash: ad490630d3ce5d625bce05c75c20fa71a7aa2d29
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: b9e9c0b141987f8af563944c8eee216b8218846c
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54014546"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352892"
 ---
 # <a name="incrementally-load-data-from-an-azure-sql-database-to-azure-blob-storage"></a>Пошаговая загрузка данных из базы данных SQL Azure в хранилище BLOB-объектов Azure
 В этом руководстве вы создадите фабрику данных Azure с конвейером, который загружает разностные данные из таблицы в базе данных SQL Azure в хранилище BLOB-объектов Azure. 
@@ -135,7 +135,7 @@ ms.locfileid: "54014546"
 Выполните указанную ниже команду, чтобы создать хранимую процедуру в базе данных SQL.
 
 ```sql
-CREATE PROCEDURE sp_write_watermark @LastModifiedtime datetime, @TableName varchar(50)
+CREATE PROCEDURE usp_write_watermark @LastModifiedtime datetime, @TableName varchar(50)
 AS
 
 BEGIN
@@ -302,7 +302,7 @@ END
     ![Действие хранимой процедуры — учетная запись SQL](./media/tutorial-incremental-copy-portal/sp-activity-sql-account-settings.png)
 26. Перейдите на вкладку **Хранимая процедура** и выполните здесь следующие действия: 
 
-    1. В качестве **имени хранимой процедуры** выберите **sp_write_watermark**. 
+    1. В качестве **имени хранимой процедуры** выберите **usp_write_watermark**. 
     2. Чтобы указать значения для параметров хранимой процедуры, щелкните **Импорт параметров** и введите следующие значения: 
 
         | ИМЯ | type | Значение | 

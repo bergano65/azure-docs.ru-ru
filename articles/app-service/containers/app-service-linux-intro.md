@@ -4,8 +4,8 @@ description: Информация о службе приложений Azure н�
 keywords: служба приложений azure, linux, oss
 services: app-service
 documentationcenter: ''
-author: naziml
-manager: cfowler
+author: msangapu
+manager: jeconnoc
 editor: ''
 ms.assetid: bc85eff6-bbdf-410a-93dc-0f1222796676
 ms.service: app-service
@@ -13,15 +13,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 10/09/2018
-ms.author: wesmc
+ms.date: 1/11/2019
+ms.author: msangapu;yili
 ms.custom: seodec18
-ms.openlocfilehash: 2dc12c7250e6747359c8f3813a84537f98bc69d6
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: 898d663f3ef9a71944d96b0978947d10a3e26b06
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993883"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54232793"
 ---
 # <a name="introduction-to-azure-app-service-on-linux"></a>Вводные сведения о службе приложений Azure на платформе Linux
 
@@ -36,7 +36,7 @@ ms.locfileid: "53993883"
 | Node.js | 4.4, 4.5, 4.8, 6.2, 6.6, 6.9, 6.10, 6.11, 8.0, 8.1, 8.2, 8.8, 8.9, 8.11, 9.4, 10.1,10.10 |
 | Java * | Tomcat 8.5, 9.0, Java SE, WildFly 14 (все версии, работающие в JRE 8) |
 | PHP | 5.6, 7.0, 7.2 |
-| Python (предварительная версия) | 3.6, 3.7 |
+| Python (предварительная версия) | 2.7, 3.6, 3.7 |
 | .NET Core | 1.0, 1.1, 2.0, 2.1 |
 | Ruby | 2.3 |
 

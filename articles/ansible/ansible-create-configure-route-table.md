@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 12/17/2018
-ms.openlocfilehash: 5d7a16ebda088d0ed42021e9def20a398e914ad9
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 29672a75408e42fb9239e5d826784b46e7280805
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54158132"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54332274"
 ---
 # <a name="create-change-or-delete-an-azure-route-table-using-ansible"></a>Создание, изменение или удаление таблицы маршрутов Azure с помощью Ansible
 Azure автоматически направляет трафик между подсетями Azure, виртуальными и локальными сетями. Если нужно изменить какой-либо из стандартных маршрутов в Azure, это можно сделать путем создания [таблицы маршрутов](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview).
@@ -51,7 +51,7 @@ ansible-playbook route_table_create.yml
 ## <a name="associate-a-route-table-to-a-subnet"></a>Связывание таблицы маршрутов с подсетью
 Подсеть может иметь не более одной таблицы маршрутов, связанной с ней. Таблица маршрутов может быть не связана с подсетями или связана с несколькими. Так как таблицы маршрутов не связаны с виртуальными сетями, вам необходимо связать таблицу маршрутов с каждой соответствующей подсетью. Весь трафик, исходящий из подсети, направляется на основе маршрутов, созданных в таблицах маршрутов, [стандартных маршрутах](https://docs.microsoft.com/azure/virtual-network/virtual-networks-udr-overview#default) и маршрутах, распространяемых из локальной сети, если виртуальная сеть подключена к шлюзу виртуальной сети Azure (ExpressRoute или VPN при использовании BGP со шлюзом VPN). Вы можете связать таблицы маршрутов только с теми подсетями в виртуальной сети, которые находятся в том же расположении и той же подписке Azure, что и таблица маршрутов.
 
-В этом разделе представлен пример сборника схем Ansible, который создает виртуальную сеть и отправку, а затем связывает таблицу маршрутов с подсетью.
+В этом разделе представлен пример сборника схем Ansible, который создает виртуальную сеть и подсеть, а затем связывает таблицу маршрутов с подсетью.
 
 ```yml
 - hosts: localhost

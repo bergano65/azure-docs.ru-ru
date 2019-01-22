@@ -16,16 +16,16 @@ ms.workload: web
 ms.date: 12/11/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 12f7a4cb5db084d6e2c179bf8acd641c814dcbd0
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 68c69413322d87fc557686701c474730d2ed8405
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53719801"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54358296"
 ---
 # <a name="connect-an-app-service-app-to-cosmos-db-using-cli"></a>Подключение приложения Службы приложений к Cosmos DB с помощью интерфейса командной строки
 
-Этот пример сценария создает учетную запись Azure Cosmos DB, используя API Cosmos DB для MongoDB и приложение Службы приложений. Затем он связывает строку подключения MongoDB с веб-приложением с помощью параметров приложения.
+Этот пример скрипта создает учетную запись Azure Cosmos DB, используя API Cosmos DB для MongoDB и приложение Службы приложений. Затем он связывает строку подключения MongoDB с веб-приложением с помощью параметров приложения.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -43,7 +43,7 @@ ms.locfileid: "53719801"
 
 Для создания группы ресурсов, приложения Службы приложений, базы данных Cosmos DB и всех связанных ресурсов этот сценарий использует указанные ниже команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [`az group create`](/cli/azure/group?view=azure-cli-latest#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [`az appservice plan create`](/cli/azure/appservice/plan?view=azure-cli-latest#az-appservice-plan-create) | Создает план службы приложений. |

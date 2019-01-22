@@ -1,6 +1,6 @@
 ---
-title: Краткое руководство. Отправка сообщений в Служебную шину Azure и получение сообщений из нее | Документация Майкрософт
-description: В этом кратком руководстве описано, как отправлять и получать сообщения Служебной шины Azure с помощью PowerShell и клиента .NET Standard
+title: Краткое руководство. Создание очереди Служебной шины Azure с помощью Azure PowerShell | Документация Майкрософт
+description: Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать очередь Служебной шины Azure. Затем вы отправите сообщения в очередь и получите сообщения из нее, используя пример клиентского приложения.
 services: service-bus-messaging
 author: spelluru
 manager: timlt
@@ -8,17 +8,16 @@ ms.service: service-bus-messaging
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.custom: mvc
-ms.date: 09/22/2018
+ms.date: 01/12/2019
 ms.author: spelluru
-ms.openlocfilehash: 2669b3ad9abc2370b4ecb66596d6edde17c82ddd
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 9fe9952c3885e0e6145141bac7db13694dcdbd11
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51242438"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54259671"
 ---
-# <a name="quickstart-send-and-receive-messages-using-azure-powershell-and-net"></a>Краткое руководство. Отправка и получение сообщений Служебной шины Azure с помощью PowerShell и .NET
-
+# <a name="quickstart-use-azure-powershell-to-create-a-service-bus-queue"></a>Краткое руководство. Создание очереди Служебной шины с помощью Azure PowerShell
 Служебная шина Microsoft Azure представляет собой брокер интеграции сообщений корпоративного уровня, который гарантирует защищенную и абсолютно надежную доставку сообщений. Типичный сценарий применения служебной шины подразумевает функциональное разделение двух или более приложений, служб либо процессов, которым нужно обмениваться данными или сведениями о состоянии. В таких сценариях часто требуется назначать несколько пакетных заданий для других приложений и служб или запускать обработку заказов. Например, розничная компания может отправлять данные из точек продаж во вспомогательный офис или региональный центр дистрибуции для пополнения запасов и сбора сведений о товарах. В этом сценарии клиентское приложение отправляет сообщения в очередь служебной шины и получает сообщения из нее.
 
 ![очередь](./media/service-bus-quickstart-powershell/quick-start-queue.png)

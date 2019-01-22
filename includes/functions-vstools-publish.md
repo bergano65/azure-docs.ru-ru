@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 11/02/2018
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: b290cada86401d91313939a7673998810cb82551
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: 3ac7d8cc4705fe1b6e80f1e0c7e26d847d761cf6
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51028151"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54356991"
 ---
 1. Щелкните правой кнопкой мыши проект в **обозревателе решений** и выберите пункт **Опубликовать**.
 
@@ -21,7 +21,7 @@ ms.locfileid: "51028151"
 
     ![Выбор целевого объекта публикации](./media/functions-vstools-publish/functions-visual-studio-publish-profile.png)
 
-    При включении параметра **Запуск из ZIP-файла** приложение-функция в Azure будет запущено непосредственно из пакета развертывания. Дополнительные сведения см. в руководстве по [запуску Функций Azure из файла пакета](../articles/azure-functions/run-functions-from-deployment-package.md).
+    При включении параметра **Запуск из ZIP-файла** приложение-функция Azure переходит в режим только для чтения и запускается непосредственно из пакета развертывания. Дополнительные сведения см. в руководстве по [запуску Функций Azure из файла пакета](../articles/azure-functions/run-functions-from-deployment-package.md).
      
     >[!CAUTION]
     >Если выбрать параметр **Выбрать существующее**, все файлы в существующем приложении-функции в Azure будут перезаписаны файлами из локального проекта. Используйте этот параметр только при повторной публикации обновлений для существующего приложения-функции.

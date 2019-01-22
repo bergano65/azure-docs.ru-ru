@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство по запуску заданий модерации в Content Moderator с помощью .NET
+title: Краткое руководство. Запуск заданий модерации в Content Moderator с помощью .NET
 titlesuffix: Azure Cognitive Services
 description: Как запускать задания модерации с использованием пакета SDK Azure Content Moderator для .NET.
 services: cognitive-services
@@ -8,16 +8,16 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: quickstart
-ms.date: 09/10/2018
+ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 6045d6daf2abace6e2b38bd6fd6e22516e3a60a0
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: f55906aa9de6faa5979ecedbc3ef288f164fd6c8
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47227446"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261951"
 ---
-# <a name="quickstart-start-moderation-jobs-using-net"></a>Краткое руководство по запуску заданий модерации с помощью .NET
+# <a name="quickstart-start-moderation-jobs-using-net"></a>Краткое руководство. Запуск заданий модерации с помощью .NET
 
 В этой статье содержатся сведения и примеры кода, которые помогут вам приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
  
@@ -30,8 +30,7 @@ ms.locfileid: "47227446"
 
 ## <a name="sign-up-for-content-moderator"></a>Регистрация в службе Content Moderator
 
-Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ подписки.
-Изучите [краткое руководство](quick-start.md) о том, как можно получить ключ.
+Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ подписки. Следуйте инструкциям в статье [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 
 ## <a name="sign-up-for-a-review-tool-account-if-not-completed-in-the-previous-step"></a>Регистрация учетной записи средства проверки (если не сделано на предыдущем этапе)
 
@@ -83,7 +82,7 @@ ms.locfileid: "47227446"
 
 ### <a name="create-the-content-moderator-client"></a>Создание клиента Content Moderator
 
-Чтобы создать для своей подписки клиент Content Moderator, добавьте следующий фрагмент кода.
+Добавьте следующий фрагмент кода, чтобы создать клиент Content Moderator для своей подписки.
 
 > [!IMPORTANT]
 > Укажите в полях **AzureRegion** и **CMSubscriptionKey** значения идентификатора региона и ключа подписки соответственно.
@@ -321,4 +320,4 @@ ms.locfileid: "47227446"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение для Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator). Они вам понадобятся для работы с этим и другими руководствами по Content Moderator для .NET, а также для реализации ваших интеграционных решений.
+Получите [пакет SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/) и [решение Visual Studio](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/ContentModerator) для выполнения инструкций из этого и других кратких руководств по Content Moderator для .NET и приступите к интеграции.

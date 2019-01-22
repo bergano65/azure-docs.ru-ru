@@ -6,14 +6,14 @@ author: dineshmurthy
 ms.component: data-lake-storage-gen2
 ms.service: storage
 ms.topic: tutorial
-ms.date: 12/06/2018
+ms.date: 01/14/2019
 ms.author: dineshm
-ms.openlocfilehash: b0382d31f9d16228ca3447ace9c7d4f171b206f6
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.openlocfilehash: e72a4f71a42a892d14fad076b124426f0c32ac7d
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53548992"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321812"
 ---
 # <a name="tutorial-access-data-lake-storage-gen2-preview-data-with-azure-databricks-using-spark"></a>Руководство. Получение доступа к данным предварительной версии Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
 
@@ -36,12 +36,31 @@ ms.locfileid: "53548992"
 2. Выберите **Загрузить** и сохраните результаты на компьютер.
 3. Запишите имя файла и путь скачивания. Они понадобятся вам на следующем шаге.
 
-Для работы с этим руководством необходима учетная запись хранения с поддержкой возможностей аналитики. Мы рекомендуем ознакомиться с [кратким руководством](data-lake-storage-quickstart-create-account.md) по этой теме для создания учетной записи хранения. Перейдите к учетной записи хранения после ее создания, чтобы получить параметры конфигурации.
+Для работы с этим руководством необходима учетная запись хранения с поддержкой возможностей аналитики. Мы рекомендуем ознакомиться с [кратким руководством](data-lake-storage-quickstart-create-account.md) по этой теме для создания учетной записи хранения. 
 
-1. В разделе **Параметры** выберите **Ключи доступа**.
-2. Нажмите кнопку **Копировать** рядом с **Key1**, чтобы скопировать значение ключа.
+## <a name="set-aside-storage-account-configuration"></a>Отдельная настройка учетной записи хранения
 
-В рамках этого руководства ключ и имя учетной записи необходимы для выполнения следующих действий. Откройте текстовый редактор и скопируйте в него имя учетной записи и ключ для дальнейшего использования.
+Вам потребуется имя учетной записи хранения и URI конечной точки файловой системы.
+
+Чтобы получить имя учетной записи хранения на портале Azure, выберите **Все службы** и выполните фильтрацию по термину *хранилище*. Затем выберите **Учетные записи хранения** и перейдите к учетной записи хранения.
+
+Чтобы получить URI конечной точки файловой системы, выберите **Свойства** и на панели свойств найдите значение поля **Первичная конечная точка файловой системы ADLS**.
+
+Вставьте оба значения в текстовый файл. Они вам скоро понадобятся.
+
+<a id="service-principal"/>
+
+## <a name="create-a-service-principal"></a>Создание субъекта-службы
+
+Создайте субъект-службу, следуя инструкциям в статье [How to: Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+
+Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
+
+:heavy_check_mark: Выполняя действия из раздела [Создание приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application) той статьи, укажите URI только что собранной конечной точки в поле **URL-адрес для входа** диалогового окна **Создание**.
+
+:heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить приложению **роль участника хранилища BLOB-объектов**.
+
+:heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
 
 ## <a name="create-a-databricks-cluster"></a>Создание кластера Databricks
 
@@ -63,22 +82,24 @@ ms.locfileid: "53548992"
 14. Введите имя по своему усмотрению в поле **Имя** и выберите **Python** в качестве языка.
 15. Во всех остальных полях можно оставить значения по умолчанию.
 16. Нажмите кнопку **Создать**.
-17. Скопируйте приведенный ниже код и вставьте его в ячейку **Cmd 1**. Замените значения заполнителей, показанные в примере в скобках, собственными значениями.
+17. Скопируйте и вставьте следующий блок кода в первую ячейку, но не запускайте этот код.
 
-    ```scala
-    %python%
+    ```Python
     configs = {"fs.azure.account.auth.type": "OAuth",
-        "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
-        "fs.azure.account.oauth2.client.id": "<service-client-id>",
-        "fs.azure.account.oauth2.client.secret": "<service-credentials>",
-        "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/<tenant-id>/oauth2/token"}
-        
+           "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+           "fs.azure.account.oauth2.client.id": "<application-id>",
+           "fs.azure.account.oauth2.client.secret": "<authentication-id>",
+           "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/<tenant-id>/oauth2/token",
+           "fs.azure.createRemoteFileSystemDuringInitialization": "true"}
+
     dbutils.fs.mount(
-        source = "abfss://dbricks@<account-name>.dfs.core.windows.net/folder1",
-        mount_point = "/mnt/flightdata",
-        extra_configs = configs)
+    source = "abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/folder1",
+    mount_point = "/mnt/flightdata",
+    extra_configs = configs)
     ```
-18. Чтобы выполнить ячейку кода, нажмите клавиши **SHIFT+ВВОД**.
+18. В этом блоке кода замените значения заполнителя `storage-account-name`, `application-id`, `authentication-id` и `tenant-id` значениями, собранными после завершения действий в разделах [Отдельная настройка учетной записи хранения](#config) и [Создание субъекта-службы](#service-principal) этой статьи. Замените заполнитель `file-system-name` любым именем, которое вы хотите предоставить вашей файловой системе.
+
+19. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
 ## <a name="ingest-data"></a>Прием данных
 

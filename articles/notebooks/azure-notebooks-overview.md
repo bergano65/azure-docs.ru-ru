@@ -11,14 +11,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: overview
-ms.date: 12/04/2018
+ms.date: 01/11/2019
 ms.author: kraigb
-ms.openlocfilehash: 2640316ce8915018df30fc94df0e1fbb207e894b
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: ba06e568b3d7b0125d5868c1ad4a85e5e42f7e18
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53713613"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54246217"
 ---
 # <a name="overview-of-azure-notebooks"></a>Общие сведения о службе "Записные книжки Azure"
 
@@ -57,7 +57,7 @@ ms.locfileid: "53713613"
 
 Записные книжки Azure — это бесплатная служба, но каждый проект ограничен 4 ГБ памяти и 1 ГБ данных во избежание злоупотребления. Уполномоченные пользователи, превысившие эти ограничения, должны ответить на запрос Captcha, чтобы продолжить использование записных книжек.
 
-Чтобы убрать все ограничения, свяжите учетную запись с подпиской Azure. Это позволит вам выбрать уровень среды выполнения ценовой категории Premium.
+Чтобы снять все ограничения, войдите в службу "Записные книжки Azure" с учетной записью с помощью Azure Active Directory (например, с учетной записью организации). Если эта учетная запись связана с подпиской Azure, можно использовать уровень среды выполнения приложений Azure "Виртуальная машина для обработки и анализа данных".
 
 ## <a name="available-kernels-and-environments"></a>Доступные ядра и среды
 

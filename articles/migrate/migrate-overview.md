@@ -4,15 +4,15 @@ description: Обзор службы "Миграция Azure".
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: overview
-ms.date: 01/02/2019
+ms.date: 01/11/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: c511ef8fc4ae580f869ef90da3e2c8764a146881
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 737dc40bafa519d59bcbc0ff6510a89cb3a840fa
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53969137"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54263209"
 ---
 # <a name="about-azure-migrate"></a>Сведения о службе "Миграция Azure"
 
@@ -29,7 +29,7 @@ ms.locfileid: "53969137"
 
 ## <a name="current-limitations"></a>Текущие ограничения
 
-- Переход на виртуальные машины Azure можно оценить только для локальных виртуальных машин VMware. Виртуальные машины VMware должны работать под управлением vCenter Server (версии 5.5, 6.0 или 6.5).
+- Переход на виртуальные машины Azure можно оценить только для локальных виртуальных машин VMware. Виртуальные машины VMware должны работать под управлением vCenter Server (версии 5.5, 6.0, 6.5 или 6.7).
 - Если вы хотите оценить виртуальные машины Hyper-V и физические серверы, используйте [Планировщик развертывания Azure Site Recovery](https://aka.ms/asr-dp-hyperv-doc) для Hyper-V и наши [партнерские средства](https://azure.microsoft.com/migration/partners/) для физических компьютеров.
 - Вы можете обработать до 1500 виртуальных машин при помощи одной операции обнаружения и до 1500 виртуальных машин в одном проекте. Кроме того, можно обработать до 1500 виртуальных машин при помощи одной операции оценки.
 - Если нужно обнаружить среду большего размера, можно разделить операцию обнаружения и создать несколько проектов. [Узнайте больше](how-to-scale-assessment.md). Служба "Миграция Azure" поддерживает до 20 проектов на подписку.
@@ -38,6 +38,7 @@ ms.locfileid: "53969137"
     **География** | **Место хранения**
     --- | ---
     Azure Government | Правительство штата Вирджиния
+    Азия | Юго-Восточная Азия
     Европа | Северная или Западная Европа
     США | Восточная или центрально-западная часть США
 

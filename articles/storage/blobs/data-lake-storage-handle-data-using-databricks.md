@@ -6,14 +6,14 @@ author: jamesbak
 ms.service: storage
 ms.author: jamesbak
 ms.topic: tutorial
-ms.date: 12/06/2018
+ms.date: 01/14/2019
 ms.component: data-lake-storage-gen2
-ms.openlocfilehash: 6b2812e31174c4e5d61ae9941563e39357de9522
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: e4e75c65178c4bbedcf781c2fbf2149a94a702cd
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54107095"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321200"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -42,6 +42,30 @@ ms.locfileid: "54107095"
 * [Создайте учетную запись Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
 * Загрузите (**small_radio_json.json**) из репозитория [Примеры U-SQL и отслеживание вопросов](https://github.com/Azure/usql/blob/master/Examples/Samples/Data/json/radiowebsite/small_radio_json.json) и запишите путь, куда сохраняете файл.
 * Войдите на [портале Azure](https://portal.azure.com/).
+
+## <a name="set-aside-storage-account-configuration"></a>Отдельная настройка учетной записи хранения
+
+Вам потребуется имя учетной записи хранения и URI конечной точки файловой системы.
+
+Чтобы получить имя учетной записи хранения на портале Azure, выберите **Все службы** и выполните фильтрацию по термину *хранилище*. Затем выберите **Учетные записи хранения** и перейдите к учетной записи хранения.
+
+Чтобы получить URI конечной точки файловой системы, выберите **Свойства** и на панели свойств найдите значение поля **Первичная конечная точка файловой системы ADLS**.
+
+Вставьте оба значения в текстовый файл. Они вам скоро понадобятся.
+
+<a id="service-principal"/>
+
+## <a name="create-a-service-principal"></a>Создание субъекта-службы
+
+Создайте субъект-службу, следуя инструкциям в статье [Практическое руководство. Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+
+Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
+
+:heavy_check_mark: Выполняя действия из раздела [Создание приложения Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application) той статьи, укажите URI только что собранной конечной точки в поле **URL-адрес для входа** диалогового окна **Создание**.
+
+:heavy_check_mark: При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить приложению **роль участника хранилища BLOB-объектов**.
+
+:heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
 
 ## <a name="create-the-workspace"></a>Создание рабочей области
 
@@ -87,7 +111,7 @@ ms.locfileid: "54107095"
 
     * Введите имя кластера.
     * В рамках этой статьи создайте кластер со средой выполнения **5.1**.
-    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of inactivity** (Завершить через \_\_ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
+    * Убедитесь, что установлен флажок **Terminate after \_\_ minutes of inactivity** (Завершить через __ минут бездействия). Укажите длительность (в минутах) для завершения работы кластера, если тот не используется.
 
 1. Выберите **Create cluster** (Создать кластер).
 
@@ -101,35 +125,36 @@ ms.locfileid: "54107095"
 
 1. На [портале Azure](https://portal.azure.com) перейдите к созданной рабочей области Azure Databricks и выберите **Launch Workspace** (Запустить рабочую область).
 
-1. В левой области выберите **Рабочая область**. В раскрывающемся списке **Рабочая область** выберите **Создать** > **Notebook** (Записная книжка).
+2. В левой области выберите **Рабочая область**. В раскрывающемся списке **Рабочая область** выберите **Создать** > **Notebook** (Записная книжка).
 
     ![Создание записной книжки в Databricks](./media/data-lake-storage-handle-data-using-databricks/databricks-create-notebook.png "Создание записной книжки в Databricks")
 
-1. В диалоговом окне **создания записной книжки** введите имя записной книжки. Выберите **Scala** в качестве языка, а затем выберите созданный ранее кластер Spark.
+3. В диалоговом окне **создания записной книжки** введите имя записной книжки. Выберите **Scala** в качестве языка, а затем выберите созданный ранее кластер Spark.
 
     ![Предоставление сведений для записной книжки в Databricks](./media/data-lake-storage-handle-data-using-databricks/databricks-notebook-details.png "Предоставление сведений для записной книжки в Databricks")
 
     Нажмите кнопку **Создать**.
 
-1. Введите следующий код в первую ячейку записной книжки и выполните его. Замените значения заполнителей, показанные в примере в скобках, собственными значениями.
+4. Скопируйте и вставьте следующий блок кода в первую ячейку, но не запускайте этот код.
 
     ```scala
-    %python%
-    configs = {"fs.azure.account.auth.type": "OAuth",
-        "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
-        "fs.azure.account.oauth2.client.id": "<service-client-id>",
-        "fs.azure.account.oauth2.client.secret": "<service-credentials>",
-        "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/<tenant-id>/oauth2/token"}
-     
+    val configs = Map(
+    "fs.azure.account.auth.type" -> "OAuth",
+    "fs.azure.account.oauth.provider.type" -> "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+    "fs.azure.account.oauth2.client.id" -> "<application-id>",
+    "fs.azure.account.oauth2.client.secret" -> "<authentication-key>"),
+    "fs.azure.account.oauth2.client.endpoint" -> "https://login.microsoftonline.com/<tenant-id>/oauth2/token",
+    "fs.azure.createRemoteFileSystemDuringInitialization"->"true")
+
     dbutils.fs.mount(
-        source = "abfss://<file-system-name>@<account-name>.dfs.core.windows.net/[<directory-name>]",
-        mount_point = "/mnt/<mount-name>",
-        extra_configs = configs)
+    source = "abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/<directory-name>",
+    mountPoint = "/mnt/<mount-name>",
+    extraConfigs = configs)
     ```
 
-1. Нажмите клавиши SHIFT+ENTER, чтобы выполнить код.
+5. В этом блоке кода замените значения заполнителя `storage-account-name`, `application-id`, `authentication-id` и `tenant-id` значениями, собранными после завершения действий в разделах [Отдельная настройка учетной записи хранения](#config) и [Создание субъекта-службы](#service-principal) этой статьи. Вместо значений заполнителей `file-system-name`, `directory-name` и `mount-name` задайте нужные имена файловой системы, каталога и точки подключения.
 
-Теперь файловая система учетной записи хранения создана.
+6. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
 ## <a name="upload-the-sample-data"></a>Отправка примеров данных
 
@@ -336,7 +361,7 @@ renamedColumnsDF.write
 
 ![Завершение работы кластера Databricks](./media/data-lake-storage-handle-data-using-databricks/terminate-databricks-cluster.png "Stop a Databricks cluster")
 
-Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершить через \_\_ минут бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
+Если не завершить работу кластера вручную, она завершится автоматически, если во время создания кластера вы установили флажок **Terminate after \_\_ minutes of inactivity** (Завершить через __ минут бездействия). В этом случае работа кластера автоматически завершается, если он был неактивным в течение определенного времени.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

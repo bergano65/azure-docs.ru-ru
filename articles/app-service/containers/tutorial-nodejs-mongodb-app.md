@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 10/10/2017
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 44f5ea606efafbb310e4740d75cbf86b7069e7ca
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: f2c9385e55559e53c9118e047bdddbe178a10770
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53722521"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359567"
 ---
 # <a name="build-a-nodejs-and-mongodb-app-in-azure-app-service-on-linux"></a>Разработка приложения на основе Node.js и MongoDB в Службе приложений Azure в Linux
 
@@ -28,14 +28,14 @@ ms.locfileid: "53722521"
 > В этой статье мы развернем приложение в службе приложений на платформе Linux. Сведения о развертывании в Службе приложений на платформе _Windows_ см. в руководстве по [разработке веб-приложения на основе Node.js и MongoDB в Azure](../app-service-web-tutorial-nodejs-mongodb-app.md).
 >
 
-[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать приложение Node.js, подключить его локально к базе данных MongoDB, а затем развернуть как базу данных Azure Cosmos DB для API MongoDB. Выполнив действия, описанные в этом руководстве, вы получите приложение MEAN (MongoDB, Express, AngularJS и Node.js), работающее в службе приложений на платформе Linux. Для простоты в примере приложения используется [веб-платформа MEAN.js](https://meanjs.org/).
+[Служба приложений на платформе Linux](app-service-linux-intro.md) — это высокомасштабируемая служба размещения с самостоятельной установкой исправлений на основе операционной системы Linux. В этом руководстве показано, как создать приложение Node.js, подключить его локально к базе данных MongoDB, а затем развернуть для базы данных в API Azure Cosmos DB для MongoDB. Выполнив действия, описанные в этом руководстве, вы получите приложение MEAN (MongoDB, Express, AngularJS и Node.js), работающее в службе приложений на платформе Linux. Для простоты в примере приложения используется [веб-платформа MEAN.js](https://meanjs.org/).
 
 ![Приложение MEAN.js, которое запущено в службе приложений Azure](./media/tutorial-nodejs-mongodb-app/meanjs-in-azure.png)
 
 Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание базы данных с помощью Azure Cosmos DB для API MongoDB.
+> * Создание базы данных с помощью API Azure Cosmos DB для MongoDB
 > * Подключение приложения Node.js к базе данных MongoDB.
 > * Развертывание приложения в Azure
 > * Обновление модели данных и повторное развертывание приложения.
@@ -121,7 +121,7 @@ MEAN.JS version: 0.5.0
 
 ## <a name="create-production-mongodb"></a>Создание рабочей базы данных MongoDB
 
-На этом шаге вы создадите в Azure базу данных Cosmos, настроенную с помощью API MongoDB. При развертывании приложения в Azure используется эта облачная база данных.
+На этом шаге вы создадите учетную запись для базы данных с помощью API Azure Cosmos DB для MongoDB. При развертывании приложения в Azure используется эта облачная база данных.
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -157,7 +157,7 @@ az cosmosdb create --name <cosmosdb_name> --resource-group myResourceGroup --kin
 }
 ```
 
-## <a name="connect-app-to-production-cosmos-db-configured-with-mongodb-api"></a>Подключение приложения к рабочей базе данных Cosmos DB, настроенной с помощью API MongoDB
+## <a name="connect-app-to-production-configured-with-azure-cosmos-dbs-api-for-mongodb"></a>Подключение приложения к базе данных, настроенной с помощью API Azure Cosmos DB для MongoDB, в рабочей среде
 
 На этом шаге вы подключите пример приложения MEAN.js к только что созданной базе данных Cosmos DB с помощью строки подключения MongoDB.
 
@@ -317,7 +317,7 @@ http://<app_name>.azurewebsites.net
 
 Щелкните **Зарегистрироваться** в верхнем меню и создайте фиктивного пользователя.
 
-Если все прошло успешно и вы автоматически вошли в приложение от имени созданного пользователя, это означает, что приложение MEAN.js в Azure подключено к Azure Cosmos DB для API MongoDB.
+Если все прошло успешно и вы автоматически вошли в приложение от имени созданного пользователя, это означает, что приложение MEAN.js в Azure подключено к API Azure Cosmos DB для MongoDB.
 
 ![Приложение MEAN.js, которое запущено в службе приложений Azure](./media/tutorial-nodejs-mongodb-app/meanjs-in-azure.png)
 
@@ -472,7 +472,7 @@ git push azure master
 Вы научились выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание базы данных с помощью Azure Cosmos DB для API MongoDB
+> * Создание базы данных с помощью API Azure Cosmos DB для MongoDB
 > * Подключение приложения Node.js к базе данных
 > * Развертывание приложения в Azure
 > * Обновление модели данных и повторное развертывание приложения.

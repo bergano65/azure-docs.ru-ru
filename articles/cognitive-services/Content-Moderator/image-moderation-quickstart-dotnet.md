@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Анализ изображений для выявления нежелательного содержимого с помощью C#
+title: Краткое руководство. Анализ изображений на наличие нежелательного содержимого с помощью C# — Content Moderator
 titlesuffix: Azure Cognitive Services
 description: Как анализировать содержимое изображения на наличие нежелательного содержимого с помощью пакета SDK Content Moderator для .NET
 services: cognitive-services
@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: quickstart
-ms.date: 10/26/2018
+ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 7a8341d4189b90a67525fd0fba25aa0f321b21b1
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: e11e037e7be8ca308f7924654c4f28b1634dc5fd
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53084759"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54260777"
 ---
 # <a name="quickstart-analyze-image-content-for-objectionable-material-in-c"></a>Краткое руководство. Анализ изображений для выявления нежелательного содержимого с помощью C#
 

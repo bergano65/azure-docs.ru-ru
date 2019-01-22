@@ -10,14 +10,14 @@ ms.topic: quickstart
 ms.date: 11/27/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 13ed37dddefc5e71e972248545c3e9242bd233ad
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: f1d949c4ea13cd9329f1e1049a1de7778246e7f6
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52678206"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54302448"
 ---
-# <a name="quickstart-run-your-first-batch-job-with-the-python-api"></a>Краткое руководство по выполнению первого пакетного задания с помощью API Python
+# <a name="quickstart-run-your-first-batch-job-with-the-python-api"></a>Краткое руководство. Выполнение пакетного задания с помощью API Python
 
 В этом кратком руководстве описаны действия по запуску задания пакетной службы Azure из приложения, созданного в API Python пакетной службы Azure. Приложение отправляет несколько файлов входных данных в службу хранилища Azure, а затем создает *пул* вычислительных узлов пакетной службы (виртуальных машин). Затем оно создает образец *задания*, которое запускает *задачи* для обработки каждого входного файла в пуле путем использования основных команд. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
  
@@ -64,8 +64,6 @@ _BATCH_ACCOUNT_URL = 'https://mybatchaccount.mybatchregion.batch.azure.com'
 _STORAGE_ACCOUNT_NAME = 'mystorageaccount'
 _STORAGE_ACCOUNT_KEY = 'xxxxxxxxxxxxxxxxy4/xxxxxxxxxxxxxxxxfwpbIC5aAWA8wDu+AFXZB827Mt9lybZB1nUcQbQiUrkPtilK5BQ=='
 ```
-
-[!INCLUDE [batch-credentials-include](../../includes/batch-credentials-include.md)]
 
 ## <a name="run-the-app"></a>Запуск приложения
 

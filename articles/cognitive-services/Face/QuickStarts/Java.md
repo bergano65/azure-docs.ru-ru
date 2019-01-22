@@ -1,5 +1,5 @@
 ---
-title: Краткое руководство. Определение лиц на изображении с помощью Azure REST API и Java
+title: Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Java
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как определить лица на изображении с помощью REST API распознавания лиц Azure и Java.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.component: face-api
 ms.topic: quickstart
 ms.date: 11/09/2018
 ms.author: pafarley
-ms.openlocfilehash: 7656d8247cfb16df9989638b7e8ad2ffd3ff445f
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: 2c035734d443eba01af6f167681ae289401dbcb4
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51851676"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54212878"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-rest-api-and-java"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API и Java
 
@@ -31,8 +31,10 @@ ms.locfileid: "51851676"
 ## <a name="create-the-java-project"></a>Создание проекта Java
 
 Создайте приложение командной строки Java в своей среде IDE и добавьте класс **Main** с методом **main**. Затем скачайте следующие глобальные библиотеки из репозитория Maven в каталог `lib` в своем проекте:
-* `org.apache.httpcomponents:httpclient:4.2.4`
+* `org.apache.httpcomponents:httpclient:4.5.6`
+* `org.apache.httpcomponents:httpcore:4.4.10`
 * `org.json:json:20170516`
+* `commons-logging:commons-logging:1.1.2`
 
 ## <a name="add-face-detection-code"></a>Добавление кода определения лиц
 
@@ -54,7 +56,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.client.utils.URIBuilder;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -92,7 +94,7 @@ private static final String faceAttributes =
 Добавьте следующий метод в метод **main**. Он создает вызов REST к API распознавания лиц, чтобы определить информацию о лицах на удаленном изображении (строка `faceAttributes` указывает, какие атрибуты лица нужно получить). Затем он записывает выходные данные в строку JSON.
 
 ```Java
-HttpClient httpclient = new DefaultHttpClient();
+HttpClient httpclient = HttpClientBuilder.create().build();
 
 try
 {
@@ -249,4 +251,4 @@ catch (Exception e)
 В этом кратком руководстве вы создали простое консольное приложение Java, которое использует вызовы REST с API распознавания лиц Azure для определения лиц на изображении и возврата их атрибутов. Узнайте, что еще можно делать с помощью этой функции в приложении Android.
 
 > [!div class="nextstepaction"]
-> [Руководство. Создание приложения Android для обнаружения и выделения лиц на изображении](../Tutorials/FaceAPIinJavaForAndroidTutorial.md)
+> [Руководство Создание приложения Android для обнаружения и выделения лиц на изображении](../Tutorials/FaceAPIinJavaForAndroidTutorial.md)

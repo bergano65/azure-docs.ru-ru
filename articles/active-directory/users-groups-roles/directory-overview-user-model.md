@@ -1,23 +1,23 @@
 ---
-title: Пользователи, группы, лицензирование и роли для крупных организаций в Azure Active Directory | Документация Майкрософт
+title: Общие сведения о пользователях, группах, лицензировании и ролях — Azure Active Directory | Документация Майкрософт
 description: Связь между пользователями и назначенными лицензиями, ролями администратора, членством в группе в Azure Active Directory
 keywords: ''
 author: curtand
 manager: mtillman
 ms.author: curtand
 ms.reviewer: vincesm
-ms.date: 10/01/2018
+ms.date: 01/14/2019
 ms.topic: overview
 ms.service: active-directory
 ms.workload: identity
 services: active-directory
 ms.custom: it-pro
-ms.openlocfilehash: 7f588766ead19f2cbca22aab596e6dc9d0210791
-ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
+ms.openlocfilehash: 2689ec400b7d29c9f086481056e5f554d7fde95a
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48019928"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321965"
 ---
 # <a name="users-groups-licensing-and-roles-for-large-organizations"></a>Пользователи, группы, лицензирование и роли для крупных организаций
 
