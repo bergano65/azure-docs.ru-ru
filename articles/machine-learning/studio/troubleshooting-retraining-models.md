@@ -1,26 +1,8 @@
 ---
-title: Устранение неполадок при повторном обучении классической веб-службы Студии машинного обучения Azure | Документация Майкрософт
-description: С помощью этой статьи вы сможете выявить и исправить распространенные проблемы, которые возникают при повторном обучении модели для веб-службы Студии машинного обучения Azure.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 75cac53c-185c-437d-863a-5d66d871921e
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 11/01/2017
-ms.openlocfilehash: 97116c4ad6efbaad28aec6451b02fc0dee1ac79f
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54054866"
+заголовок: Устранение неполадок при повторном обучении классической веб-службы Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: С помощью этой статьи вы сможете выявить и исправить распространенные проблемы, которые возникают при повторном обучении модели для веб-службы Студии машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT ms.date: 11/01/2017
 ---
 # <a name="troubleshooting-the-retraining-of-an-azure-machine-learning-studio-classic-web-service"></a>Устранение неполадок при повторном обучении классической веб-службы Студии машинного обучения Azure
 ## <a name="retraining-overview"></a>Сведения о повторном обучении

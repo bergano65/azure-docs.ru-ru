@@ -5,15 +5,15 @@ author: johnkemnetz
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: reference
-ms.date: 4/12/2018
+ms.date: 1/16/2019
 ms.author: dukek
 ms.component: logs
-ms.openlocfilehash: 64b92a758d3d5f713b58a5e310a897ac1f11024d
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: d5e57442a163c8a93adc39517285bd88affab2fe
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53714837"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54353062"
 ---
 # <a name="azure-activity-log-event-schema"></a>Схема событий журнала действий Azure
 **Журнал действий Azure** — это журнал с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этой статье описывается схема событий по категориям данных. Схема данных зависит от того, считываются ли данные через портал, PowerShell, CLI или напрямую через REST API и [передачу потока данных в хранилище или Центры событий с помощью профиля журнала](./../../azure-monitor/platform/activity-logs-overview.md#export-the-activity-log-with-a-log-profile). В примерах ниже приведена схема, доступная на портале, в PowerShell, CLI и REST API. Сопоставление этих свойств со [схемой журналов системы диагностики Azure](./tutorial-dashboards.md) приведено в конце статьи.
@@ -648,6 +648,123 @@ ms.locfileid: "53714837"
 | properties.recommendationCategory | Категория рекомендации. Возможные значения: "Высокая доступность", "Производительность", "Безопасность" и "Стоимость" |
 | properties.recommendationImpact| Влияние рекомендации Возможные значения: High, Medium или Low |
 | properties.recommendationRisk| Риск рекомендации. Возможные значения: Error, Warning, None |
+
+## <a name="policy"></a>Политика
+
+Эта категория содержит записи всех операций действия эффекта, выполняемых [Политикой Azure](../../governance/policy/overview.md). Примеры типов событий, которые отобразятся в этой категории, включают _Audit_ и _Deny_. Каждое действие, выполняемое Политикой, моделируется как операция для ресурса.
+
+### <a name="sample-policy-event"></a>Пример события Политики
+
+```json
+{
+    "authorization": {
+        "action": "Microsoft.Resources/checkPolicyCompliance/read",
+        "scope": "/subscriptions/<subscriptionID>"
+    },
+    "caller": "33a68b9d-63ce-484c-a97e-94aef4c89648",
+    "channels": "Operation",
+    "claims": {
+        "aud": "https://management.azure.com/",
+        "iss": "https://sts.windows.net/1114444b-7467-4144-a616-e3a5d63e147b/",
+        "iat": "1234567890",
+        "nbf": "1234567890",
+        "exp": "1234567890",
+        "aio": "A3GgTJdwK4vy7Fa7l6DgJC2mI0GX44tML385OpU1Q+z+jaPnFMwB",
+        "appid": "1d78a85d-813d-46f0-b496-dd72f50a3ec0",
+        "appidacr": "2",
+        "http://schemas.microsoft.com/identity/claims/identityprovider": "https://sts.windows.net/1114444b-7467-4144-a616-e3a5d63e147b/",
+        "http://schemas.microsoft.com/identity/claims/objectidentifier": "f409edeb-4d29-44b5-9763-ee9348ad91bb",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "b-24Jf94A3FH2sHWVIFqO3-RSJEiv24Jnif3gj7s",
+        "http://schemas.microsoft.com/identity/claims/tenantid": "1114444b-7467-4144-a616-e3a5d63e147b",
+        "uti": "IdP3SUJGtkGlt7dDQVRPAA",
+        "ver": "1.0"
+    },
+    "correlationId": "b5768deb-836b-41cc-803e-3f4de2f9e40b",
+    "description": "",
+    "eventDataId": "d0d36f97-b29c-4cd9-9d3d-ea2b92af3e9d",
+    "eventName": {
+        "value": "EndRequest",
+        "localizedValue": "End request"
+    },
+    "category": {
+        "value": "Policy",
+        "localizedValue": "Policy"
+    },
+    "eventTimestamp": "2019-01-15T13:19:56.1227642Z",
+    "id": "/subscriptions/<subscriptionID>/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/contososqlpolicy/events/13bbf75f-36d5-4e66-b693-725267ff21ce/ticks/636831551961227642",
+    "level": "Warning",
+    "operationId": "04e575f8-48d0-4c43-a8b3-78c4eb01d287",
+    "operationName": {
+        "value": "Microsoft.Authorization/policies/audit/action",
+        "localizedValue": "Microsoft.Authorization/policies/audit/action"
+    },
+    "resourceGroupName": "myResourceGroup",
+    "resourceProviderName": {
+        "value": "Microsoft.Sql",
+        "localizedValue": "Microsoft SQL"
+    },
+    "resourceType": {
+        "value": "Microsoft.Resources/checkPolicyCompliance",
+        "localizedValue": "Microsoft.Resources/checkPolicyCompliance"
+    },
+    "resourceId": "/subscriptions/<subscriptionID>/resourceGroups/myResourceGroup/providers/Microsoft.Sql/servers/contososqlpolicy",
+    "status": {
+        "value": "Succeeded",
+        "localizedValue": "Succeeded"
+    },
+    "subStatus": {
+        "value": "",
+        "localizedValue": ""
+    },
+    "submissionTimestamp": "2019-01-15T13:20:17.1077672Z",
+    "subscriptionId": "<subscriptionID>",
+    "properties": {
+        "isComplianceCheck": "True",
+        "resourceLocation": "westus2",
+        "ancestors": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+        "policies": "[{\"policyDefinitionId\":\"/subscriptions/<subscriptionID>/providers/Microsoft.
+            Authorization/policyDefinitions/5775cdd5-d3d3-47bf-bc55-bb8b61746506/\",\"policyDefiniti
+            onName\":\"5775cdd5-d3d3-47bf-bc55-bb8b61746506\",\"policyDefinitionEffect\":\"Deny\",\"
+            policyAssignmentId\":\"/subscriptions/<subscriptionID>/providers/Microsoft.Authorization
+            /policyAssignments/991a69402a6c484cb0f9b673/\",\"policyAssignmentName\":\"991a69402a6c48
+            4cb0f9b673\",\"policyAssignmentScope\":\"/subscriptions/<subscriptionID>\",\"policyAssig
+            nmentParameters\":{}}]"
+    },
+    "relatedEvents": []
+}
+```
+
+### <a name="policy-event-property-descriptions"></a>Описания свойств события Политики
+
+| Имя элемента | ОПИСАНИЕ |
+| --- | --- |
+| authorization | Массив со свойствами RBAC события. Для новых ресурсов — это действие и область запроса, вызвавшего вычисление. Для имеющихся ресурсов действием является "Microsoft.Resources/checkPolicyCompliance/read". |
+| caller | Для новых ресурсов — это удостоверение, которое запустило развертывание. Для имеющихся ресурсов — глобальный уникальный идентификатор поставщика ресурсов Microsoft Azure Policy Insights. |
+| каналов | События политики используют только канал "Operation". |
+| claims | Токен JWT, который используется Active Directory для аутентификации пользователя или приложения при выполнении этой операции в Resource Manager. |
+| correlationId | Обычно GUID в строковом формате. События, которые совместно используют идентификатор correlationId, принадлежат к одному общему действию. |
+| description | Это поле будет пустым для событий Политики. |
+| eventDataId | Уникальный идентификатор события. |
+| eventName | "BeginRequest" или "EndRequest". "BeginRequest" используется для отложенной оценки auditIfNotExists и deployIfNotExists, а также при запуске эффектом deployIfNotExists развертывания шаблона. Все остальные операции возвращают "EndRequest". |
+| category | Объявляет события журнала действий как относящиеся к "Policy". |
+| eventTimestamp | Метка времени, когда служба Azure создала событие при обработке соответствующего этому событию запроса. |
+| id | Уникальный идентификатор события для конкретного ресурса. |
+| level | Уровень события. Audit использует значение "Warning", а Deny — "Error". Ошибка auditIfNotExists или deployIfNotExists может создать значения "Warning" и "Error" в зависимости от серьезности. Все события Политики используют значение "Informational". |
+| operationId | События, относящиеся к одной операции, совместно используют один GUID. |
+| operationName | Имя операции непосредственно коррелируется c эффектом Политики. |
+| имя_группы_ресурсов | Имя группы ресурсов для оцениваемого ресурса. |
+| resourceProviderName | Имя поставщика ресурсов для оцениваемого ресурса. |
+| тип_ресурса | Для новых ресурсов — это оцениваемый тип. Для имеющихся ресурсов — возвращает "Microsoft.Resources/checkPolicyCompliance/read". |
+| ResourceId | Идентификатор оцениваемого ресурса. |
+| status | Строка, описывающая состояние результата оценки Политики. Большинство оценок Политики возвращают значение "Succeeded", но эффект Deny возвращает значение "Failed". Ошибки в auditIfNotExists или deployIfNotExists также возвращают значение "Failed". |
+| subStatus | Это поле будет пустым для событий Политики. |
+| submissionTimestamp | Метка времени, когда событие стало доступно для запросов. |
+| subscriptionId | Идентификатор подписки Azure. |
+| properties.isComplianceCheck | Возвращает значение "False" при развертывании нового ресурса или обновлении свойств Azure Resource Manager имеющегося ресурса. Все остальные [триггеры оценки](../../governance/policy/how-to/get-compliance-data.md#evaluation-triggers) приводят к значению "True". |
+| properties.resourceLocation | Регион Azure оцениваемого ресурса. |
+| properties.ancestors | Разделенный запятыми список родительских групп управления, упорядоченный от непосредственно родительской к самой дальней родительской. |
+| properties.policies | Содержит сведения об определении политики, назначении, влиянии и параметрах, результатом которых является эта оценка Политики. |
+| relatedEvents | Это поле будет пустым для событий Политики. |
 
 ## <a name="mapping-to-diagnostic-logs-schema"></a>Сопоставление со схемой журналов диагностики
 

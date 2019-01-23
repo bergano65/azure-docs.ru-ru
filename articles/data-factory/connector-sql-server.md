@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: jingwang
-ms.openlocfilehash: 776b1eb71b4f15c3376644de92205a4eeb77e4b2
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 54db7cc65e05b383b251c21aa95569c6c2d58194
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54020529"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54306171"
 ---
 # <a name="copy-data-to-and-from-sql-server-using-azure-data-factory"></a>Копирование данных в базу данных SQL Server и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -95,11 +95,11 @@ ms.locfileid: "54020529"
                 "type": "SecureString",
                 "value": "Data Source=<servername>\\<instance name if using named instance>;Initial Catalog=<databasename>;Integrated Security=True;"
             },
-             "userName": "<domain\\username>",
-             "password": {
+            "userName": "<domain\\username>",
+            "password": {
                 "type": "SecureString",
                 "value": "<password>"
-             }
+            }
         },
         "connectVia": {
             "referenceName": "<name of Integration Runtime>",
@@ -238,9 +238,9 @@ CREATE PROCEDURE CopyTestSrcStoredProcedureWithParameters
 AS
 SET NOCOUNT ON;
 BEGIN
-     select *
-     from dbo.UnitTestSrcTable
-     where dbo.UnitTestSrcTable.stringData != stringData
+    select *
+    from dbo.UnitTestSrcTable
+    where dbo.UnitTestSrcTable.stringData != stringData
     and dbo.UnitTestSrcTable.identifier != identifier
 END
 GO
@@ -343,8 +343,8 @@ GO
 ```sql
 create table dbo.SourceTbl
 (
-       name varchar(100),
-       age int
+    name varchar(100),
+    age int
 )
 ```
 
@@ -353,9 +353,9 @@ create table dbo.SourceTbl
 ```sql
 create table dbo.TargetTbl
 (
-       identifier int identity(1,1),
-       name varchar(100),
-       age int
+    identifier int identity(1,1),
+    name varchar(100),
+    age int
 )
 ```
 
@@ -475,7 +475,7 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
 Функциональность хранимой процедуры использует преимущества [параметров с табличным значением](https://msdn.microsoft.com/library/bb675163.aspx).
 
 >[!NOTE]
->Если запись в тип данных Money и Smallmoney осуществляется путем вызова хранимой процедуры, значения могут округляться. Чтобы избежать этого, в возвращающем табличное значение параметре вместо типов данных Money и Smallmoney укажите тип Decimal. 
+>Если запись в тип данных Money и Smallmoney осуществляется путем вызова хранимой процедуры, значения могут округляться. Чтобы избежать этого, в возвращающем табличное значение параметре вместо типов данных Money и Smallmoney укажите тип Decimal.
 
 ## <a name="data-type-mapping-for-sql-server"></a>Сопоставление типов SQL Server
 
@@ -531,10 +531,9 @@ CREATE TYPE [dbo].[MarketingType] AS TABLE(
     Подробные сведения и альтернативные способы включения протокола TCP/IP см. в статье [Включение или отключение сетевого протокола сервера](https://msdn.microsoft.com/library/ms191294.aspx).
 
 3. В этом же окне дважды щелкните **TCP/IP**, чтобы открыть окно **TCP/IP Properties** (Свойства TCP/IP).
-4. Перейдите на вкладку **IP-адреса** . Прокрутите вниз до раздела **IPAll** . Запишите значение параметра **TCP-порт** (по умолчанию — **1433**).
+4. Перейдите на вкладку **IP-адреса** . Прокрутите вниз до раздела **IPAll** . Запишите значение параметра **Порт TCP** (**1433** по умолчанию).
 5. Создайте на компьютере **правило брандмауэра Windows** , чтобы разрешить входящий трафик через этот порт.  
 6. **Проверьте подключение**. Чтобы подключиться к SQL Server, используя полное имя, используйте SQL Server Management Studio с другого компьютера. Например, `"<machine>.<domain>.corp.<company>.com,1433"`.
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

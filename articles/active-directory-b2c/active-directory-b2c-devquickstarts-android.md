@@ -10,14 +10,14 @@ ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: a5bf15289e91cc568524e8110702b5608118bc2d
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 413a69f31125c6c8f18401bb997a490c0f99f948
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52833930"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352093"
 ---
-# <a name="azure-ad-b2c-sign-in-using-an-android-application"></a>Azure AD B2C. Вход с помощью приложения Android
+# <a name="sign-in-using-an-android-application-in-azure-active-directory-b2c"></a>Вход с помощью приложения Android в Azure Active Directory B2C
 
 Платформа Microsoft Identity использует открытые стандарты, такие как OAuth2 и OpenID Connect. Эти стандарты позволяют использовать любую библиотеку, которую необходимо интегрировать с Azure Active Directory B2C. Чтобы помочь вам использовать другие библиотеки, мы написали несколько подобных этому пошаговых руководств по настройке сторонних библиотек для подключения к платформе Microsoft Identity. Большинство библиотек, в которых реализована [спецификация RFC6749 OAuth2](https://tools.ietf.org/html/rfc6749), могут подключаться к платформе Microsoft Identity.
 
@@ -30,7 +30,7 @@ ms.locfileid: "52833930"
 
 ## <a name="get-an-azure-ad-b2c-directory"></a>Создание каталога Azure AD B2C
 
-Перед использованием Azure AD B2C необходимо создать каталог или клиент. Каталог — это контейнер для данных всех ваших пользователей, приложений, групп и т. д. Если каталог B2C еще не создан, [создайте его](active-directory-b2c-get-started.md), прежде чем продолжить.
+Перед использованием Azure AD B2C необходимо создать каталог или клиент. Каталог — это контейнер для данных всех ваших пользователей, приложений, групп и т. д. Если каталог B2C еще не создан, [создайте его](tutorial-create-tenant.md), прежде чем продолжить.
 
 ## <a name="create-an-application"></a>Создание приложения
 
@@ -42,13 +42,11 @@ ms.locfileid: "52833930"
 
 ## <a name="create-your-user-flows"></a>Создание потоков пользователей
 
-В Azure AD B2C все действия пользователя регулируются [потоком пользователя](active-directory-b2c-reference-policies.md). Это набор политик для управления поведением Azure AD. Это приложение предусматривает одну процедуру идентификации, сочетающую в себе поток пользователя входа и регистрации. Создайте такой поток пользователя, как описано в [этой справочной статье](active-directory-b2c-reference-policies.md#create-a-sign-up-user-flow). При создании потока пользователя обязательно сделайте следующее:
+В Azure AD B2C все действия пользователя регулируются [потоком пользователя](active-directory-b2c-reference-policies.md). Это набор политик для управления поведением Azure AD. Для этого приложения требуется пользовательский сценарий входа в систему и регистрации. При создании потока пользователя обязательно сделайте следующее:
 
 * Укажите **отображаемое имя** в качестве атрибута входа для потока пользователя.
 * Выберите утверждения приложения **Отображаемое имя** и **Идентификатор объекта** для каждого потока пользователя. Можно также выбрать другие утверждения.
 * Скопируйте **имя** каждого созданного потока пользователя. У него должен быть префикс `b2c_1_`.  Оно понадобится вам позже.
-
-[!INCLUDE [active-directory-b2c-devquickstarts-policy](../../includes/active-directory-b2c-devquickstarts-policy.md)]
 
 Создав потоки пользователей, можно приступать к сборке приложения.
 
@@ -134,6 +132,4 @@ AuthorizationRequest req = new AuthorizationRequest.Builder(
 ```
 
 Дополнительные сведения о завершении остальной части процесса см. в [руководстве по AppAuth](https://openid.github.io/AppAuth-Android/). Если вам нужно быстро приступить к работе с приложением, ознакомьтесь с [нашим примером](https://github.com/Azure-Samples/active-directory-android-native-appauth-b2c). Следуйте указаниям в файле [README.md](https://github.com/Azure-Samples/active-directory-android-native-appauth-b2c/blob/master/README.md), чтобы ввести собственные значения для настройки Azure AD B2C.
-
-Мы всегда рады вашим отзывам и предложениям! Если у вас возникли трудности с выполнением действий, описанных в этой статье или у вас есть рекомендации по улучшению этого материала, поделитесь с нами своими наблюдениями, воспользовавшись формой внизу страницы. Запросы функций оставляйте на форуме [UserVoice](https://feedback.azure.com/forums/169401-azure-active-directory/category/160596-b2c).
 

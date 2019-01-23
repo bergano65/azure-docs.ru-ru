@@ -3,7 +3,7 @@ title: Интеграция Key Vault с SQL Server на виртуальных 
 description: Узнайте, как автоматизировать настройку шифрования SQL Server для использования с хранилищем ключей Azure. В этой статье описываются способы использования интеграции хранилища ключей Azure с виртуальными машинами SQL Server, созданными в классической модели развертывания.
 services: virtual-machines-windows
 documentationcenter: ''
-author: rothja
+author: MashaMSFT
 manager: craigg
 editor: ''
 tags: azure-service-management
@@ -14,14 +14,14 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 02/17/2017
-ms.author: jroth
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e5e156166ec9e085cf7a3c2dcb72aa9e87bbadf1
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.author: mathoma
+ms.reviewer: jroth
+ms.openlocfilehash: 3711277ca11346cf73ff37c37ef4185d8bfdf6b9
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51244952"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54329877"
 ---
 # <a name="configure-azure-key-vault-integration-for-sql-server-on-azure-virtual-machines-classic"></a>Настройка интеграции хранилища ключей Azure для SQL Server на виртуальных машинах Azure (классическая модель)
 > [!div class="op_single_selector"]
@@ -34,7 +34,7 @@ ms.locfileid: "51244952"
 Существует несколько функций шифрования SQL Server, например [прозрачное шифрование данных (TDE)](https://msdn.microsoft.com/library/bb934049.aspx), [шифрование на уровне столбцов (CLE)](https://msdn.microsoft.com/library/ms173744.aspx) и [шифрование резервной копии](https://msdn.microsoft.com/library/dn449489.aspx). Эти формы шифрования требуют хранить используемые для шифрования ключи и управлять ими. Хранилище ключей Azure (AKV) предназначено для повышения безопасности и управления этими ключами в расположении высокой надежности и безопасности. [Соединитель SQL Server](https://www.microsoft.com/download/details.aspx?id=45344) позволяет SQL Server использовать эти ключи из хранилища ключей Azure.
 
 > [!IMPORTANT] 
-> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
+> В Azure предлагаются две модели развертывания для создания ресурсов и работы с ними: [модель развертывания с помощью Resource Manager и классическая модель](../../../azure-resource-manager/resource-manager-deployment-model.md). В этой статье рассматривается использование классической модели развертывания. Для большинства новых развертываний Майкрософт рекомендует использовать модель диспетчера ресурсов.
 
 Если вы используете SQL Server с локальными машинами, выполните [шаги для доступа к хранилищу ключей Azure с локальной виртуальной машины SQL Server](https://msdn.microsoft.com/library/dn198405.aspx). Однако в случае SQL Server на виртуальных машинах Azure можно сэкономить время, воспользовавшись функцией *интеграции хранилища ключей Azure* . С помощью нескольких командлетов Azure PowerShell для включения этой функции можно автоматизировать настройки, необходимые виртуальной машине SQL для доступа к вашему хранилищу ключей.
 
@@ -56,9 +56,9 @@ ms.locfileid: "51244952"
 | **$akvURL** |**URL-адрес хранилища ключей** |"https://contosokeyvault.vault.azure.net/" |
 | **$spName** |**Имя субъекта-службы** |fde2b411-33d5-4e11-af04eb07b669ccf2 |
 | **$spSecret** |**Секрет субъекта-службы** |9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM= |
-| **$credName** |**Учетное имя**: интеграция AKV создает учетные данные в рамках SQL Server, позволяя виртуальной машине иметь доступ к хранилищу ключей. Выберите имя для этих учетных данных. |mycred1 |
-| **$vmName** |**Имя виртуальной машины**: имя ранее созданной виртуальной машины с SQL. |myvmname |
-| **$serviceName** |**Имя службы**: имя облачной службы, связанной с виртуальной машиной с SQL. |mycloudservicename |
+| **$credName** |**Учетное имя**. Интеграция AKV создает учетные данные в рамках SQL Server, с помощью которых VM будет получать доступ к хранилищу ключей. Выберите имя для этих учетных данных. |mycred1 |
+| **$vmName** |**Имя виртуальной машины**. Имя ранее созданной виртуальной машины с SQL. |myvmname |
+| **$serviceName** |**Имя службы**. Имя облачной службы, связанной с виртуальной машиной с SQL. |mycloudservicename |
 
 ### <a name="enable-akv-integration-with-powershell"></a>Включение интеграции AKV с помощью PowerShell
 Командлет **New-AzureVMSqlServerKeyVaultCredentialConfig** создает объект конфигурации для интеграции хранилища ключей Azure. **Set-AzureVMSqlServerExtension** настраивает эту интеграцию с помощью параметра **KeyVaultCredentialSettings**. Ниже показано, как использовать эти команды.

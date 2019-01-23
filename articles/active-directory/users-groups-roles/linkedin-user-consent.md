@@ -1,5 +1,5 @@
 ---
-title: Согласие пользователя на подключение к учетной записи LinkedIn для предоставления общего доступа к данным в Azure Active Directory | Документы Майкрософт
+title: Совместное использование данных интеграции LinkedIn в Azure Active Directory | Документация Майкрософт
 description: Сведения о том, как подключения к учетным записям LinkedIn предоставляют общий доступ к данным через приложения Майкрософт в Azure Active Directory
 services: active-directory
 author: curtand
@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.component: users-groups-roles
 ms.topic: article
-ms.date: 09/13/2018
+ms.date: 01/14/2019
 ms.author: curtand
 ms.reviewer: beengen
 ms.custom: it-pro
-ms.openlocfilehash: 3f11ae3d5f6e686133b0f5ef355734ce09c00fed
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
+ms.openlocfilehash: 25060f41528c59d252adbc854704c6060becd907
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45734647"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54319127"
 ---
 # <a name="user-consent-and-linkedin-account-connections-data-sharing"></a>Согласие пользователя и предоставление общего доступа к данным через подключение к учетной записи LinkedIn
 

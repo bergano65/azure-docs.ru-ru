@@ -10,15 +10,14 @@ ms.topic: conceptual
 ms.date: 01/07/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 47b501fef8d6e0e3fecf944e3b67d563b8cce5eb
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 5c89673f6154c77a40fb71ae483151998596e7fb
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54117917"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54354422"
 ---
-# <a name="azure-ad-b2c-secure-a-web-api-by-using-nodejs"></a>Azure AD B2C. Защита веб-API с помощью Node.js
-<!-- TODO [AZURE.INCLUDE [active-directory-b2c-devquickstarts-web-switcher](../../includes/active-directory-b2c-devquickstarts-web-switcher.md)]-->
+# <a name="secure-a-web-api-by-using-nodejs-in-azure-active-directory-b2c"></a>Защита веб-API с помощью Node.js в Azure Active Directory B2C
 
 С помощью Azure Active Directory (Azure AD) B2C можно защитить веб-API с помощью маркера доступа OAuth 2.0. Эти маркеры позволяют клиентским приложениям, использующим Azure AD B2C, проходить проверку подлинности для API. В этой статье показано, как создать интерфейс веб-API .NET "Список дел", который позволяет пользователям добавлять и просматривать задачи. Этот веб-API защищен с помощью Azure AD B2C. Управлять списком дел могут только пользователи, прошедшие проверку подлинности.
 
@@ -36,7 +35,7 @@ ms.locfileid: "54117917"
 3. настроить клиентское приложение для вызова веб-API с именем to-do list.
 
 ## <a name="get-an-azure-ad-b2c-directory"></a>Создание каталога Azure AD B2C
-Перед использованием Azure AD B2C необходимо создать каталог или клиент.  Каталог — это контейнер для всех пользователей, приложений, групп и т. д.  Если каталог B2C еще не создан, [создайте его](active-directory-b2c-get-started.md), прежде чем продолжить.
+Перед использованием Azure AD B2C необходимо создать каталог или клиент.  Каталог — это контейнер для всех пользователей, приложений, групп и т. д.  Если каталог B2C еще не создан, [создайте его](tutorial-create-tenant.md), прежде чем продолжить.
 
 ## <a name="create-an-application"></a>Создание приложения
 Затем необходимо создать приложение в каталоге B2C. Оно будет передавать в Azure AD сведения, необходимые для безопасного взаимодействия с вашим приложением. В нашем примере и клиентское приложение, и веб-API представлены одним **идентификатором приложения**, так как они представляют одно приложение логики. Создайте приложение, выполнив [эти указания](active-directory-b2c-app-registration.md). Не забудьте сделать следующее.
@@ -47,17 +46,13 @@ ms.locfileid: "54117917"
 * Скопируйте **идентификатор приложения** , назначенный приложению. Эти данные понадобятся позже.
 
 ## <a name="create-your-policies"></a>Создание политик
-В Azure AD B2C любое взаимодействие с пользователем определяется [политикой](active-directory-b2c-reference-policies.md). Это приложение содержит два действия с удостоверениями: регистрация и вход. Вам нужно создать по одной политике каждого типа, как описано в [справочной статье о политиках](active-directory-b2c-reference-policies.md#create-a-sign-up-user-flow).  При создании трех политик обязательно выполните указанные ниже действия.
+В Azure AD B2C любое взаимодействие с пользователем определяется [политикой](active-directory-b2c-reference-policies.md). Это приложение содержит два действия с удостоверениями: регистрация и вход. Создайте по одной политике каждого типа.  При создании политик обязательно сделайте следующее:
 
 * В политике регистрации укажите **отображаемое имя** и другие атрибуты регистрации.
 * Выберите утверждения приложения **Отображаемое имя** и **Идентификатор объекта** для каждой политики.  Можно также выбрать другие утверждения.
 * Скопируйте **имя** каждой политики после ее создания. У него должен быть префикс `b2c_1_`.  Имена политик понадобятся вам позже.
 
-[!INCLUDE [active-directory-b2c-devquickstarts-policy](../../includes/active-directory-b2c-devquickstarts-policy.md)]
-
-Создав три политики, можно приступать к сборке приложения.
-
-Дополнительные сведения о работе политик в Azure AD B2C см. в [руководстве по началу работы с веб-приложениями .NET](active-directory-b2c-devquickstarts-web-dotnet.md).
+После создания политик можно приступать к сборке приложения.
 
 ## <a name="download-the-code"></a>Загрузка кода
 Код для этого руководства размещен на портале [GitHub](https://github.com/AzureADQuickStarts/B2C-WebAPI-NodeJS). Чтобы выполнить сборку примера, [скачайте схему проекта в ZIP-архиве](https://github.com/AzureADQuickStarts/B2C-WebAPI-NodeJS/archive/skeleton.zip). Ее также можно клонировать:

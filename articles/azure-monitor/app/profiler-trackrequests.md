@@ -1,6 +1,6 @@
 ---
 title: Написание кода для отслеживания запросов с помощью Azure Application Insights | Документация Майкрософт
-description: Написание кода для отслеживания запросов с помощью Application Insights, что позволяет получить профили для ваших запросов
+description: Написание кода для отслеживания запросов с помощью Application Insights, что позволяет получить профили для ваших запросов.
 services: application-insights
 documentationcenter: ''
 author: mrbullwinkle
@@ -12,19 +12,20 @@ ms.topic: conceptual
 ms.reviewer: cawa
 ms.date: 08/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: 20f408d9dd32c3fd7a0e319e4051483e3aa54dd9
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 978f9a341eec2f16b9f6fe3d164e97805d7a8e93
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54082031"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359649"
 ---
 # <a name="write-code-to-track-requests-with-application-insights"></a>Написание кода для отслеживания запросов с помощью Azure Application Insights
 
-Чтобы просмотреть профили для приложения на странице "Производительность", Application Insights нужно отслеживать запросы для вашего приложения. Application Insights может автоматически отслеживать запросы для приложений, построенных на уже инструментированных платформах например ASP.net и ASP.Net Core. Но для других приложений, например рабочих ролей в облачной службе Azure и интерфейсов API без отслеживания состояния в Service Fabric, нужно добавить новый код, который сообщит Application Insights о начале и завершении запроса. Когда этот код будет готов, телеметрия запросов будут направляться в Application Insights, вы увидите эти данные на странице "Производительность" и для соответствующих запросов будут собираться профили. 
+Чтобы просмотреть профили для приложения на странице производительности, Application Insights нужно отслеживать запросы для вашего приложения. Application Insights может автоматически отслеживать запросы для приложений, построенных на уже инструментированных платформах. Например, ASP.net и ASP.Net Core. 
 
-Ниже приведены шаги, которые позволяют вручную настроить отслеживание запросов.
+Но для других приложений, например, для рабочих ролей в облачной службе Azure и интерфейсов API без отслеживания состояния в Service Fabric, нужно добавить новый код, который сообщит Application Insights о начале и завершении запроса. После добавления кода телеметрия запросов отправляется в Application Insights. Вы можете просмотреть телеметрию на странице производительности. Для этих запросов собираются профили. 
 
+Чтобы вручную отслеживать запросы, сделайте следующее:
 
   1. Добавьте следующий код в раннюю точку во времени существования приложения:  
 
@@ -36,7 +37,7 @@ ms.locfileid: "54082031"
         ```
       Дополнительные сведения об этой глобальной конфигурации ключа инструментирования см. в статье [Using Service Fabric with Application Insights](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/blob/dev/appinsights/ApplicationInsights.md) (Использование Service Fabric с Application Insights).  
 
-  1. Для всех фрагментов кода, которые необходимо инструментировать, добавьте оператор `StartOperation<RequestTelemetry>` **USING**, как показано в следующем примере:
+  1. Для всех фрагментов кода, которые необходимо инструментировать, добавьте инструкцию **using** `StartOperation<RequestTelemetry>`, как показано в следующем примере.
 
         ```csharp
         using Microsoft.ApplicationInsights;

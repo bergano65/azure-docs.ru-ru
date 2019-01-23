@@ -12,12 +12,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/08/2017
 ms.author: cshoe
-ms.openlocfilehash: bc7ed9051f95877760bccec65ff2fa7f49e44993
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 1df948d2b3127ede7129d26401cd5f0c80e964fb
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53002156"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54331747"
 ---
 # <a name="azure-event-hubs-bindings-for-azure-functions"></a>Привязки Центров событий Azure для службы "Функции Azure"
 
@@ -423,6 +423,7 @@ public static void Run([EventHubTrigger("samples-workitems", Connection = "Event
 |**consumerGroup** |**ConsumerGroup** | Необязательное свойство, которое используется для задания [группы потребителей](../event-hubs/event-hubs-features.md#event-consumers), используемой для подписки на события в концентраторе. Если аргумент опущен, используется группа потребителей `$Default`. |
 |**кратность** | Недоступно | Для JavaScript. Задайте значение `many`, чтобы включить пакетную обработку.  Если опустить это значение или задать `one`, функции будет передано одно сообщение. |
 |**подключение** |**Connection** | Имя параметра приложения, содержащего строку подключения к пространству имен концентратора событий. Скопируйте эту строку подключения, нажав кнопку **Сведения о подключении** для [пространства имен](../event-hubs/event-hubs-create.md#create-an-event-hubs-namespace), а не сам концентратор событий. Для активации триггера эта строка подключения должна обладать, по крайней мере, правами на чтение.|
+|**path**|**EventHubName**|Имя концентратора событий. Ссылаться на него можно с помощью параметров приложения `%eventHubName%`.|
 
 [!INCLUDE [app settings to local.settings.json](../../includes/functions-app-settings-local.md)]
 

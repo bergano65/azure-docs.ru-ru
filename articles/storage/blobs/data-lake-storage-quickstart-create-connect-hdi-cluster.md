@@ -6,14 +6,14 @@ author: jamesbak
 ms.component: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 01/15/2019
 ms.author: jamesbak
-ms.openlocfilehash: 95aff0bb37a91c1e2ac117f2f3b90c726e9f88d8
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 791598da593c25a135c05d72b6846053af3ff344
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53792895"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54353861"
 ---
 # <a name="quickstart-set-up-clusters-in-hdinsight"></a>Краткое руководство по настройке кластеров в HDInsight
 
@@ -25,6 +25,10 @@ ms.locfileid: "53792895"
 >Начисление оплаты начинается после создания кластера HDInsight и прекращается только после его удаления. Кластеры оплачиваются поминутно, поэтому всегда следует удалять кластер, когда он больше не нужен. Узнайте, как [удалить кластер](../../hdinsight/hdinsight-delete-cluster.md).
 
 В качестве уровня данных для выполнения задач этого краткого руководства используется учетная запись хранения с поддержкой Data Lake Storage 2-го поколения. Благодаря наличию службы иерархических пространств имен и [драйвера Hadoop](data-lake-storage-abfs-driver.md) решение Data Lake Storage 2-го поколения оптимизировано для процессов распределенной обработки и анализа. Данные, размещенные в учетной записи хранения с поддержкой Data Lake Storage 2-го поколения, сохраняются даже после удаления кластера HDInsight.
+
+## <a name="prerequisites"></a>Предварительные требования
+
+- Вам потребуется создать управляемое удостоверение, назначаемое пользователем, и назначить ему **роль участника хранилища BLOB-объектов**. См. статью [Создание, получение списка, удаление ролей и их назначение для управляемого удостоверения, назначаемого пользователем, с помощью портала Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal).
 
 ## <a name="cluster-setup-methods"></a>Способы установки кластера
 
@@ -104,8 +108,7 @@ ms.locfileid: "53792895"
 
 ![Параметры системы хранения данных кластера: конечные точки хранилища, совместимого с HDFS](media/data-lake-storage-quickstart-create-connect-hdi-cluster/hdinsight-cluster-creation-storage2.png)
 
-> [!IMPORTANT]
-> Не забудьте **отключить доступ к Data Lake Store**. Эти настройки относятся к старой функции *Data Lake Store*, и их необходимо отключить для правильной работы *Data Lake Storage*.
+В поле **Управляемое удостоверение, назначаемое пользователем** обязательно выберите удостоверение, созданное в начале работы с этой статьей.
 
 [!INCLUDE [secure-transfer-enabled-storage-account](../../../includes/hdinsight-secure-transfer.md)]
 

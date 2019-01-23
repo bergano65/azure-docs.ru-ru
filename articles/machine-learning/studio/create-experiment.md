@@ -1,28 +1,10 @@
 ---
-title: Простой эксперимент в Студии машинного обучения Azure | Документация Майкрософт
-description: В этом пошаговом руководстве по машинному обучению описано, как создать простой эксперимент по обработке и анализу данных. Мы предскажем цену автомобиля, используя алгоритм регрессии.
-keywords: эксперимент,линейная регрессия,алгоритмы машинного обучения,руководство по машинному обучению,приемы прогнозного моделирования,эксперимент по обработке и анализу данных
-services: machine-learning
-documentationcenter: ''
-author: garyericson
-ms.custom: seodec18
-ms.author: garye
-editor: cgronlun
-ms.assetid: b6176bb2-3bb6-4ebf-84d1-3598ee6e01c6
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: tutorial
-ms.date: 03/20/2017
-ms.openlocfilehash: b3d8aa709fefcf0eb8c16117f62cbe3bab8e319a
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53262424"
+заголовок: Простой эксперимент titleSuffix: Студия машинного обучения Azure description: В этом пошаговом руководстве по машинному обучению описано, как создать простой эксперимент по обработке и анализу данных. Мы предскажем цену автомобиля, используя алгоритм регрессии.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: tutorial
+
+author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 20.03.2017
 ---
+
 # <a name="tutorial-create-your-first-data-science-experiment-in-azure-machine-learning-studio"></a>Руководство. Создание первого эксперимента по обработке и анализу данных в студии машинного обучения Azure
 
 Если вы еще не использовали **студию машинного обучения Azure**, это руководство предназначено для вас.

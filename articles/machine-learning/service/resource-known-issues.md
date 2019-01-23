@@ -11,12 +11,12 @@ ms.component: core
 ms.topic: article
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 4a4f1691162ab9c9fbd5bc8802ecf7ebc4894d74
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: e143c0c8ef09af49aed656d479bcad4dd35e2211
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53193677"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54351804"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning-service"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
  
@@ -44,12 +44,8 @@ pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML
 ## <a name="databricks"></a>Databricks
 
 Ниже описаны проблемы, которые могут возникать в службе "Машинное обучение Azure" и Databricks.
-
-1. Рекомендации относительно кластера Databricks:
-   
-   Создайте кластер Azure Databricks v4.x с помощью Python 3. Мы рекомендуем использовать кластер с высокой степенью параллелизма.
  
-2. Сбой установки пакета SDK для службы "Машинное обучение Azure" в Databricks, если установлены дополнительные пакеты.
+1. Сбой установки пакета SDK для службы "Машинное обучение Azure" в Databricks, если установлены дополнительные пакеты.
 
    Некоторые пакеты, такие как `psutil`, могут приводить к конфликтам. Чтобы избежать ошибок установки, установите пакеты, заморозив версию lib. Эта проблема связана с Databricks и не связана с пакетом SDK для Машинного обучения Azure. Вы можете столкнуться с ней и при использовании других библиотек. Пример:
    ```python
@@ -57,9 +53,10 @@ pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML
    ```
    В качестве альтернативы можно использовать сценарии инициализации, если проблемы при установке библиотек Python не исчезли. Этот подход не является официальным. Вы можете ознакомиться с этим [документом](https://docs.azuredatabricks.net/user-guide/clusters/init-scripts.html#cluster-scoped-init-scripts).
 
-3. Если при использовании автоматического машинного обучения в Databricks вы видите `Import error: numpy.core.multiarray failed to import`
+2. Если при использовании автоматического машинного обучения в Databricks, нужно отменить выполнение и запустить новый эксперимент, перезапустите кластер Azure Databricks.
 
-   Возможное решение. Импортируйте библиотеку Python `numpy==1.14.5` в свой кластер Databricks с помощью параметра создания библиотеки, чтобы [установить и подключить](https://docs.databricks.com/user-guide/libraries.html#create-a-library) ее.
+3. Если выполняется больше 10 итераций, в параметрах автоматического машинного обучения укажите для show_output значение False при отправке задачи на выполнение.
+
 
 ## <a name="azure-portal"></a>Портал Azure
 При переходе непосредственно к просмотру рабочей области с помощью ссылки для общего доступа из пакета SDK или на портале невозможно будет отобразить обычную страницу обзора со сведениями о подписке в расширении. Кроме того, вы не сможете переключиться на другую рабочую область. Если вам нужно просмотреть другую рабочую область, можно перейти непосредственно на [портал Azure](https://portal.azure.com) и выполнить поиск рабочей области по имени.

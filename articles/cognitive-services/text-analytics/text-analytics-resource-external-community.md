@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: conceptual
-ms.date: 09/12/2018
+ms.date: 01/14/2019
 ms.author: heidist
-ms.openlocfilehash: fbea686ba0f67cdab79f1553344bd99dd105fc00
-ms.sourcegitcommit: 616e63d6258f036a2863acd96b73770e35ff54f8
+ms.openlocfilehash: 139699fac1a84273174f2c3bd30da2a911de46b8
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45605255"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54302265"
 ---
 # <a name="external--community-content-for-the-text-analytics-cognitive-service"></a>Внешнее содержимое и материалы сообщества для API анализа текста (Cognitive Service)
 
@@ -25,7 +25,7 @@ ms.locfileid: "45605255"
 
 + [Первоначальное объявление об API анализа текста (блог Azure)](https://blogs.technet.microsoft.com/machinelearning/2015/04/08/introducing-text-analytics-in-the-azure-ml-marketplace/)
 
-+ [Использование API ключевых фраз для анализа текста в Cognitive Services из PowerShell (блог MSDN)](https://blogs.msdn.microsoft.com/riteshmodi/2017/03/24/text-analytics-key-phrase-cognitive-services-powershell/)
++ [Использование API ключевых фраз для анализа текста в Cognitive Services из PowerShell (блог AutomationNext)](https://automationnext.wordpress.com/tag/text-analytics/)
 
 + [Совет по R. API анализа текста Microsoft Cognitive Services (R-Bloggers)](https://www.r-bloggers.com/r-quick-tip-microsoft-cognitive-services-text-analytics-api/)
 

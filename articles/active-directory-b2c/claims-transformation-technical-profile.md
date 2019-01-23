@@ -10,22 +10,22 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: fd1e2aa5162ce9263d521edf3ae11e0508353b46
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: cd17c146091cd9d35ce35cf2099aa7c6109c9e34
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44382987"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54303334"
 ---
 # <a name="define-a-claims-transformation-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля преобразования утверждений в пользовательской политике в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
- Технический профиль преобразования утверждений позволяет вызывать исходящие преобразования утверждений для обработки значений утверждений, проверки утверждений или установки значений по умолчанию для набора исходящих утверждений.
+Технический профиль преобразования утверждений позволяет вызывать исходящие преобразования утверждений для обработки значений утверждений, проверки утверждений или установки значений по умолчанию для набора исходящих утверждений.
 
 ## <a name="protocol"></a>Протокол
 
-Атрибуту **Name** элемента **Protocol** необходимо задать значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C: `Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
+Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C: `Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
 
 В следующем примере показан технический профиль для преобразования утверждений:
 
@@ -33,7 +33,7 @@ ms.locfileid: "44382987"
 <TechnicalProfile Id="Facebook-OAUTH-UnLink">
     <DisplayName>Unlink Facebook</DisplayName>
     <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
-  ...    
+  ...
 ```
 
 ## <a name="output-claims"></a>Исходящие утверждения
@@ -53,16 +53,16 @@ ms.locfileid: "44382987"
 
 ```XML
 <ClaimsTransformations>
-  <ClaimsTransformation Id="RemoveAlternativeSecurityIdByIdentityProvider" 
+  <ClaimsTransformation Id="RemoveAlternativeSecurityIdByIdentityProvider"
 TransformationMethod="RemoveAlternativeSecurityIdByIdentityProvider">
     <InputClaims>
       <InputClaim ClaimTypeReferenceId="IdentityProvider2"
 TransformationClaimType="identityProvider" />
-      <InputClaim ClaimTypeReferenceId="AlternativeSecurityIds" 
+      <InputClaim ClaimTypeReferenceId="AlternativeSecurityIds"
 TransformationClaimType="collection" />
     </InputClaims>
     <OutputClaims>
-      <OutputClaim ClaimTypeReferenceId="AlternativeSecurityIds" 
+      <OutputClaim ClaimTypeReferenceId="AlternativeSecurityIds"
 TransformationClaimType="collection" />
     </OutputClaims>
   </ClaimsTransformation>
@@ -85,7 +85,7 @@ TransformationClaimType="collection" />
 
 ```XML
 <UserJourney Id="AccountUnLink">
-  <OrchestrationSteps>    
+  <OrchestrationSteps>
     ...
     <OrchestrationStep Order="8" Type="ClaimsExchange">
       <ClaimsExchanges>
@@ -98,7 +98,6 @@ TransformationClaimType="collection" />
   </OrchestrationSteps>
 </UserJourney>
 ```
-
 
 ## <a name="use-a-validation-technical-profile"></a>Использование технического профиля проверки
 
@@ -122,19 +121,19 @@ TransformationClaimType="collection" />
 
 ```XML
 <TechnicalProfile Id="Validate-Email">
-    <DisplayName>Unlink Facebook</DisplayName>
-    <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  <DisplayName>Unlink Facebook</DisplayName>
+  <Protocol Name="Proprietary" Handler="Web.TPEngine.Providers.ClaimsTransformationProtocolProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
   <InputClaims>
     <InputClaim ClaimTypeReferenceId="emailRepeat" />
   </InputClaims>
   <OutputClaims>
     <OutputClaim ClaimTypeReferenceId="email" />
-  </OutputClaims>          
+  </OutputClaims>
   <OutputClaimsTransformations>
-        <OutputClaimsTransformation ReferenceId="AssertEmailAreEqual" />
-    </OutputClaimsTransformations>
-    <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
-</TechnicalProfile> 
+    <OutputClaimsTransformation ReferenceId="AssertEmailAreEqual" />
+  </OutputClaimsTransformations>
+  <UseTechnicalProfileForSessionManagement ReferenceId="SM-Noop" />
+</TechnicalProfile>
 ```
 
 Самоподтвержденный технический профиль может вызвать технический профиль проверки и отобразить сообщение об ошибке, указанное в метаданных **UserMessageIfClaimsTransformationStringsAreNotEqual**.
@@ -155,5 +154,5 @@ TransformationClaimType="collection" />
   <ValidationTechnicalProfiles>
     <ValidationTechnicalProfile ReferenceId="Validate-Email" />
   </ValidationTechnicalProfiles>
-</TechnicalProfile>  
+</TechnicalProfile>
 ```

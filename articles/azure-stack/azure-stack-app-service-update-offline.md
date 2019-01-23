@@ -12,23 +12,21 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/13/2018
+ms.date: 01/16/2019
 ms.author: anwestg
-ms.openlocfilehash: 740a3ce36dde953cb92c52a10cbebf12544adae0
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 21c43bdd9f872841c3adaf5293177efe23fc3021
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52968158"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54358972"
 ---
 # <a name="offline-update-of-azure-app-service-on-azure-stack"></a>Автономное обновление службы приложений Azure в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!IMPORTANT]
-> Прежде чем развертывать службу приложений Azure, примените обновление 1809 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack 1.4.
->
->
+> Прежде чем развертывать службу приложений Azure, примените обновление 1809 или более поздней версии к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack 1.4. Перед обновлением поставщика ресурсов просмотрите примечания к выпуску, чтобы узнать о новых функциях, исправлениях и любых известных проблемах, которые могут повлиять на развертывание.
 
 Выполнив инструкции в этой статье, вы обновите [поставщик ресурсов службы приложений](azure-stack-app-service-overview.md), развернутый в среде Azure Stack со следующими характеристиками:
 

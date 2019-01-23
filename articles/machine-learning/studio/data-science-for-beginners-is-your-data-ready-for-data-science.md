@@ -1,27 +1,8 @@
 ---
-title: Оценка данных в Студии машинного обучения Azure | Документация Майкрософт
-description: Четыре критерия, которым должны соответствовать ваши данные, чтобы быть готовыми для обработки и анализа данных. Это видео содержит конкретные примеры общей оценки данных.
-keywords: соответствующие данные,оценить данные,подготовить данные,критерии данных,данные готовы
-services: machine-learning
-documentationcenter: na
-author: garyericson
-ms.custom: seodec18
-ms.author: garye
-editor: cjgronlund
-ms.assetid: d502062c-da70-4b21-9054-0bfd9902612e
-ms.service: machine-learning
-ms.component: studio
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/03/2018
-ms.openlocfilehash: 2a9101ed510c617df81f422aea92ca1ef2b28cd8
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53261234"
+заголовок: Оценка данных titleSuffix: Студия машинного обучения Azure description: Четыре критерия, которым должны соответствовать ваши данные, чтобы быть готовыми для обработки и анализа данных. Это видео содержит конкретные примеры общей оценки данных.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 03.01.2018
 ---
 # <a name="is-your-data-ready-for-data-science"></a>Готовы ли ваши данные к обработке и анализу?
 ## <a name="video-2-data-science-for-beginners-series"></a>Видео 2. Обработка и анализ данных для начинающих

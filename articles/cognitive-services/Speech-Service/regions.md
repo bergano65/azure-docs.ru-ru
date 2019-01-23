@@ -8,15 +8,15 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: conceptual
-ms.date: 12/06/2018
+ms.date: 01/14/2019
 ms.author: mahilleb
 ms.custom: seodec18
-ms.openlocfilehash: d41213d72d40555d8dc5aeab76040fc556dae774
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: d302fc67225213ad55687797c97c7a2a8a17cc6d
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53091651"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54329513"
 ---
 # <a name="speech-service-supported-regions"></a>Поддерживаемые регионы для службы "Речь"
 
@@ -46,11 +46,24 @@ ms.locfileid: "53091651"
 
 ### <a name="intent-recognition"></a>Распознавание намерений
 
-**Распознавание намерений** для пакета SDK службы "Речь" поддерживает те же регионы, что и LUIS. Полный список доступных регионов см. в руководстве по [регионам и конечным точкам публикации (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions).
+Регионы, доступные для **распознавания намерений** через пакет средств разработки службы "Речь", перечислены ниже:
 
-Доступные регионы для **распознавания намерений** с помощью пакета SDK для службы "Речь" перечислены на [странице регионов службы "Распознавание речи"](/azure/cognitive-services/luis/luis-reference-regions).
+ Глобальный регион | Регион | Параметр пакета SDK для службы "Речь"
+ ------|-------|--------
+ Азия | Восточная Азия | `eastasia`
+ Азия | Юго-Восточная Азия | `southeastasia`
+ Австралия | Восточная часть Австралии | `australiaeast`
+ Европа | Северная Европа | `northeurope`
+ Европа | Западная Европа | `westeurope`
+ Северная Америка | Восточная часть США | `eastus`
+ Северная Америка | Восток США 2 | `eastus2`
+ Северная Америка | Центрально-южная часть США | `southcentralus`
+ Северная Америка | Западно-центральная часть США | `westcentralus`
+ Северная Америка | Запад США | `westus`
+ Северная Америка | Западный регион США 2 | `westus2`
+ Северная Америка | Южная часть Бразилии | `brazilsouth`
 
-Для каждого региона публикации используйте предоставленное **имя региона API**. Например, используйте `westus` для региона "Западная часть США".
+Это подмножество поддерживаемых регионов для публикации [службы распознавания речи (LUIS)](/azure/cognitive-services/luis/luis-reference-regions).
 
 ## <a name="rest-apis"></a>Интерфейсы API REST
 

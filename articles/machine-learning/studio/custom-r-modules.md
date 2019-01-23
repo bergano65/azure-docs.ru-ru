@@ -1,26 +1,7 @@
 ---
-title: Определение пользовательских модулей R для Студии машинного обучения Azure | Документация Майкрософт
-description: В этой статье описывается процедура создания и развертывания пользовательского R-модуля в Машинном обучении Azure. Здесь поясняется, что такое пользовательский R-модуль, и какие файлы используются для его создания.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: seodec18
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 6cbc628a-7e60-42ce-9f90-20aaea7ba630
-ms.service: machine-learning
-ms.component: studio
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: tbd
-ms.date: 11/29/2017
-ms.openlocfilehash: 2bdc8b7b28bee37ae88e466874d2b3d22dcd7556
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53277936"
+заголовок: Определение пользовательских R-модулей titleSuffix: Студия машинного обучения Azure description: В этой статье описывается процедура создания и развертывания пользовательского R-модуля в Машинном обучении Azure. Здесь поясняется, что такое пользовательский R-модуль, и какие файлы используются для его создания. services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 29.11.2017
 ---
 # <a name="define-custom-r-modules-for-azure-machine-learning-studio"></a>Определение пользовательских модулей R для Студии машинного обучения Azure
 

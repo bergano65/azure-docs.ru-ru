@@ -16,12 +16,12 @@ ms.custom: ''
 ms.date: 11/05/2018
 ms.author: jeffgilb
 ms.reviewer: misainat
-ms.openlocfilehash: ecdfb0f062ebad903d35401a2f5303d3e6d04b5d
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 91ac75f3cb41f73ea18595138969dfb7b1444173
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51037385"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54263517"
 ---
 # <a name="redeploy-the-asdk"></a>Повторное развертывание ASDK
 Из этой статьи вы узнаете, как выполнить повторное развертывание Пакета средств разработки Azure Stack (ASDK) в нерабочей среде. Так как обновление ASDK не поддерживается, чтобы перейти на новую версию необходимо его повторное развертывание. Кроме того, ASDK можно повторно развернуть в любой момент, когда понадобится начать работу с начала.
@@ -32,7 +32,7 @@ ms.locfileid: "51037385"
 ## <a name="remove-azure-registration"></a>Удаление регистрации в Azure 
 Если установка ASDK уже была зарегистрирована в Azure, необходимо удалить ресурс регистрации перед повторным развертыванием ASDK. Повторно зарегистрируйте ASDK, чтобы элементы стали доступными в Marketplace при повторном развертывании ASDK. Если вы не регистрировали ASDK с подпиской Azure раньше, этот раздел можно пропустить.
 
-Чтобы удалить ресурс регистрации, используйте командлет **Remove-AzsRegistration** для отмены регистрации Azure Stack. Затем с помощью командлета **Remove-AzureRMRsourceGroup** удалите группу ресурсов Azure Stack из подписки Azure:
+Чтобы удалить ресурс регистрации, используйте командлет **Remove-AzsRegistration** для отмены регистрации Azure Stack. Затем с помощью командлета **Remove-AzureRMResourceGroup** удалите группу ресурсов Azure Stack из подписки Azure:
 
 1. На компьютере с доступом к привилегированной конечной точке откройте консоль PowerShell с правами администратора. Для ASDK этот компьютер является главным компьютером пакета средств разработки.
 

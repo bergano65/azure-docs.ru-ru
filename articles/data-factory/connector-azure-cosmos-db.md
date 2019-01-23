@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/20/2018
 ms.author: jingwang
-ms.openlocfilehash: 0d66c7d714aeac28a46adb31fdb73b4781ac81f3
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 6dd7707c489bbbad7a97a0ec0a76e7c631bd1465
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54024728"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359261"
 ---
 # <a name="copy-data-to-or-from-azure-cosmos-db-sql-api-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure Cosmos DB (API SQL) или из нее с помощью Фабрики данных Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "54024728"
 Из этой статьи вы узнаете, как с помощью действия копирования в Фабрике данных Azure копировать данные в базу данных Azure Cosmos DB и из нее (API SQL). Это продолжение статьи о [действии копирования в Фабрике данных Azure](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
 >[!NOTE]
->Этот соединитель поддерживает только копирование данных из API SQL Cosmos DB и из него. Для API MongoDB см. раздел [Соединитель API Cosmos DB MongoDB](connector-azure-cosmos-db-mongodb-api.md). Другие типы API сейчас не поддерживаются.
+>Этот соединитель поддерживает только копирование данных из API SQL Cosmos DB и из него. Сведения о MongoDB см. в статье [Копирование данных в базу данных Azure Cosmos DB (API MongoDB) или из нее с помощью Фабрики данных Azure](connector-azure-cosmos-db-mongodb-api.md). Другие типы API сейчас не поддерживаются.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 

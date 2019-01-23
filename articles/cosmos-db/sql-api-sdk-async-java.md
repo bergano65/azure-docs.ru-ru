@@ -6,14 +6,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: java
 ms.topic: reference
-ms.date: 11/29/2018
+ms.date: 1/15/2019
 ms.author: moderakh
-ms.openlocfilehash: fbb1757cfb1118380e2f7d79566f6dc9832fce23
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 760a54a09dd612cef93de0de1e8ac2fd59b04b26
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54041499"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54329384"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -36,7 +36,7 @@ ms.locfileid: "54041499"
 
 <tr><td>**Скачивание пакета SDK**</td><td>[Maven](https://mvnrepository.com/artifact/com.microsoft.azure/azure-cosmosdb)</td></tr>
 
-<tr><td>**Документация по API**</td><td>[Справочная документация по API Java](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.rx._asyncdocumentclient?view=azure-java-stable)</td></tr>
+<tr><td>**Документация по API**</td><td>[Справочная документация по API Java](https://docs.microsoft.com/java/api/com.microsoft.azure.cosmosdb.rx.asyncdocumentclient?view=azure-java-stable)</td></tr>
 
 <tr><td>**Участие в разработке пакета SDK**</td><td>[GitHub](https://github.com/Azure/azure-cosmosdb-java)</td></tr>
 
@@ -50,6 +50,11 @@ ms.locfileid: "54041499"
 </table></br>
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name231231"></a><a name="2.3.1"/>2.3.1
+* Исправлена обработка очень больших ответов на запросы.
+* Исправлена обработка маркера при инициализации клиента ([github #78](https://github.com/Azure/azure-cosmosdb-java/issues/78)).
+* Обновлены уязвимые зависимости jackson-databind ([github #77](https://github.com/Azure/azure-cosmosdb-java/pull/77)).
 
 ### <a name="a-name230230"></a><a name="2.3.0"/>2.3.0
 * Исправлена ошибка утечки ресурсов.
@@ -125,6 +130,7 @@ ms.locfileid: "54041499"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.3.1](#2.3.1) |15 января 2019 г.|--- |
 | [2.3.0](#2.3.0) |29 ноября 2018 г.|--- |
 | [2.2.2](#2.2.2) |8 ноября 2018 г.|--- |
 | [2.2.1](#2.2.1) |2 ноября 2018 г.|--- |

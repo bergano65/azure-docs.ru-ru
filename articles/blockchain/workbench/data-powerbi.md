@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 10/1/2018
+ms.date: 01/14/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: mmercuri
 manager: femila
-ms.openlocfilehash: b1020389ef28c18c03536d686cd47ef0c65b9204
-ms.sourcegitcommit: 1981c65544e642958917a5ffa2b09d6b7345475d
+ms.openlocfilehash: e50a82f0f141fec266a8348c0a1a8b5fbdb38b45
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48241443"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54329860"
 ---
 # <a name="using-azure-blockchain-workbench-data-with-microsoft-power-bi"></a>Использование данных Azure Blockchain Workbench с помощью Microsoft Power BI
 
@@ -25,9 +25,9 @@ Microsoft Power BI предоставляет возможность легко 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Скачайте [Power BI Desktop](https://aka.ms/pbidesktopstore).
+* Загрузите [Power BI Desktop](https://aka.ms/pbidesktopstore).
 
-## <a name="connecting-powerbi-to-data-in-azure-blockchain-workbench"></a>Подключение к данным PowerBI в Azure Blockchain Workbench
+## <a name="connecting-power-bi-to-data-in-azure-blockchain-workbench"></a>Подключение к данным Power BI в Azure Blockchain Workbench
 
 1.  Откройте Power BI Desktop.
 2.  Выберите **Получение данных**.
@@ -49,7 +49,7 @@ Microsoft Power BI предоставляет возможность легко 
 
     ![Навигатор](./media/data-powerbi/navigator.png)
 
-7.  Выберите представления, которые нужно включить. В демонстрационных целях мы включили **vwContractAction**, который предоставляет подробные сведения обо всех действиях, выполняемых в контракте.
+7.  Выберите представления, которые нужно включить. В демонстрационных целях мы включили **vwContractAction**, который предоставляет подробные сведения о действиях, выполняемых в контракте.
 
     ![Выбор представлений](./media/data-powerbi/select-views.png)
 

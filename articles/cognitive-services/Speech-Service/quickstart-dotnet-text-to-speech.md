@@ -10,12 +10,12 @@ ms.component: speech-service
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: erhopf
-ms.openlocfilehash: 6d463ca73fb533b8a44c2019a478f2df0162cb23
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 207836baaaa30dca24edeab93e9bd1c4a1ac67e6
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53791451"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359091"
 ---
 # <a name="quickstart-convert-text-to-speech-using-net-core"></a>Краткое руководство. Преобразование текста в речь с использованием .NET Core
 
@@ -232,9 +232,10 @@ dotnet run
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#text-to-speech-api)
+> [Примеры для .NET на сайте GitHub](https://github.com/Azure-Samples/Cognitive-Speech-TTS/tree/master/Samples-Http/NETCore)
 
 ## <a name="see-also"></a>См. также
 
+* [Справочник по API преобразования текста в речь](https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis#text-to-speech-api)
 * [Создание настраиваемого голоса](how-to-customize-voice-font.md)
 * [Запись примеров голоса для создания пользовательских голосовых моделей](record-custom-voice-samples.md)

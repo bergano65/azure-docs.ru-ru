@@ -8,12 +8,12 @@ services: digital-twins
 ms.topic: conceptual
 ms.date: 01/03/2019
 ms.author: dwalthermsft
-ms.openlocfilehash: 1e7b6ed7c401bed741142dfc02efc7990cf67f6e
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: cc873ad441c93a7fce54c275e9f7d52f0b044319
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54118823"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54302431"
 ---
 # <a name="public-preview-service-limits"></a>Ограничения в общедоступной предварительной версии службы
 
@@ -35,7 +35,7 @@ ms.locfileid: "54118823"
 
 В свою очередь, на каждый экземпляр Azure Digital Twins выделяется следующее:
 
-- Только один ресурс **IoTHub**.
+- Только один внедренный ресурс **IoTHub**, который создается автоматически во время подготовки службы.
 - Только одна конечная точка **EventHub** для типа событий **DeviceMessage**.
 - до трех конечных точек **EventHub**, **ServiceBus** или **EventGrid** с типами событий **SensorChange**, **SpaceChange**, **TopologyOperation** или **UdfCustom**.
 

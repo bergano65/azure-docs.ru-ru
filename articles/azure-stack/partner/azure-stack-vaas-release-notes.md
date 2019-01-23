@@ -13,18 +13,35 @@ ms.topic: article
 ms.date: 11/26/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 687e47eff000679f24088a59297a258a1469f3fd
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 735f1d7cce8621a29e5a582917d3eea8ee399b8f
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54106279"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54319654"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Заметки о выпуске для проверки как службы
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
 Эта статья содержит заметки о выпуске для проверки как службы Azure Stack.
+
+## <a name="version-402"></a>Версия 4.0.2
+
+7 января 2019 г.
+
+Если вы запускаете рабочий процесс проверки ежемесячного обновления Azure Stack, а версия вашего пакета обновлений изготовителя оборудования не 1810 или выше, вы получите сообщение об ошибке, как только перейдете к шагу обновления изготовителя оборудования. Это ошибка. Исправление разрабатывается. Далее приведены шаги по устранению рисков.
+
+1.  Запустите обновление изготовителя оборудования в обычном режиме.
+2.  Выполните Test-AzureStack после успешного применения пакета и сохраните выходные данные.
+3.  Отмените тест.
+4.  Отправьте сохраненные выходные данные в VaaSHelp@microsoft.com, чтобы получить результаты передачи для запуска.
+
+## <a name="version-402"></a>Версия 4.0.2
+
+30 ноября 2018 г.
+
+- Внутренние исправление ошибок
 
 ## <a name="version-401"></a>Версия 4.0.1
 

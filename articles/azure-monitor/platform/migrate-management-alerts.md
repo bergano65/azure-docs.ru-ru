@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/14/2017
 ms.author: johnkem
 ms.component: alerts
-ms.openlocfilehash: 8fd7161208f6303e03deaacca6a1e2fad24ec45e
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 130ea829e7f218648cf27650cd90b1e2163f94ae
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53580882"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321846"
 ---
 # <a name="migrate-azure-alerts-on-management-events-to-activity-log-alerts"></a>Перенос оповещений Azure о событиях управления в оповещения журнала действий
 

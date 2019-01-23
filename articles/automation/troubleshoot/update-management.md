@@ -8,12 +8,12 @@ ms.date: 12/05/2018
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: d0d6ed03b6e28df9767e24170ebf5ec92bb9fe9a
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 01f72b8d41c1a973c7d187f519a43ce62929a23e
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53434738"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359363"
 ---
 # <a name="troubleshooting-issues-with-update-management"></a>Устранение неполадок c помощью управления обновлениями
 
@@ -177,6 +177,11 @@ Unable to Register Machine for Patch Management, Registration Failed with Except
 |`0x8024402C`     | Используя сервер WSUS, убедитесь, что в разделе реестра `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate` значение реестра `WUServer` и `WUStatusServer` имеет правильный WSUS-сервер.        |
 |`The service cannot be started, either because it is disabled or because it has no enabled devices associated with it. (Exception from HRESULT: 0x80070422)`     | Убедитесь, что служба Центр обновления Windows (wuauserv) работает и не отключена.        |
 |Другое универсальное исключение     | Выполните поиск возможных решений и работы с локальной ИТ-поддержкой в Интернете.         |
+
+Кроме того, можно загрузить и запустить [средство устранения неполадок Центра обновления Windows](https://support.microsoft.com/help/4027322/windows-update-troubleshooter) для проверки возможных проблем с обновлениями Windows на компьютере.
+
+> [!NOTE]
+> [Средство устранения неполадок Центра обновления Windows](https://support.microsoft.com/help/4027322/windows-update-troubleshooter) предназначено для ОС Windows, но также работает в Windows Server.
 
 ## <a name="linux"></a>Linux
 

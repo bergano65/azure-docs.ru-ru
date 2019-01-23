@@ -1,26 +1,8 @@
 ---
-title: Переобучение модели в Студии машинного обучения Azure | Документация Майкрософт
-description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в службе машинного обучения Azure.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: seodec18
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: d1cb6088-4f7c-4c32-94f2-f7523dad9059
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 04/19/2017
-ms.openlocfilehash: 614a342dd28b711e3030c19f347fa432e3994a86
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53257596"
+заголовок: Переобучение модели Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в службе машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 19.04.2017
 ---
 # <a name="retrain-an-azure-machine-learning-studio-model"></a>Переобучение модели Студии машинного обучения Azure
 В рамках процесса операционализации моделей машинного обучения в Машинном обучении Azure модель обучается и сохраняется. После этого она используется для создания прогнозной веб-службы. Созданная веб-служба может впоследствии использоваться на веб-сайтах, панелях мониторинга и в мобильных приложениях. 

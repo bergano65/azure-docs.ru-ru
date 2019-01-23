@@ -1,26 +1,8 @@
 ---
-title: Управление итерациями экспериментов в Студии машинного обучения Azure | Документация Майкрософт
-description: Как управлять итерациями экспериментов в Студии машинного обучения Azure. В любой момент вы можете просмотреть данные предыдущих выполнений эксперимента, чтобы поставить под вопрос, пересмотреть и, в конечном счете, подтвердить или уточнить предыдущие предположения.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: seodec18
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 6a53530f-20d5-40ae-9b49-7b499ccb44b7
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 03/20/2017
-ms.openlocfilehash: ebcae3e8e8f13904936dbe122f285a01a2a71459
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53270456"
+заголовок: Управление итерациями экспериментов в Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Как управлять итерациями экспериментов в Студии машинного обучения Azure. В любой момент вы можете просмотреть данные предыдущих выполнений эксперимента, чтобы поставить под вопрос, пересмотреть и, в конечном счете, подтвердить или уточнить предыдущие предположения.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 20.03.2017
 ---
 # <a name="manage-experiment-iterations-in-azure-machine-learning-studio"></a>Управление итерациями экспериментов в Студии машинного обучения Azure
 Разработка модели прогнозной аналитики идет по итерациям — по мере изменения разных функций и параметров экспериментов выполняется сведение результатов, пока не будет получена обученная эффективная модель. Ключ к этому процессу — отслеживание различных итераций параметров и конфигураций эксперимента.

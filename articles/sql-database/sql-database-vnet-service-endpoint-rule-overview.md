@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: vanto, genemi
 manager: craigg
-ms.date: 12/20/2018
-ms.openlocfilehash: 33e0b66541e5ead5f3c05d2310ecc07e8a62324c
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.date: 1/16/2019
+ms.openlocfilehash: 2c022bd002700426eea2c6b38a667cd5a1381c02
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53728131"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359856"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-sql"></a>Использование конечных точек службы и правил виртуальной сети для SQL Azure
 
@@ -118,8 +118,9 @@ ms.locfileid: "53728131"
 
 - Правила виртуальной сети применяются только к виртуальным сетям Azure Resource Manager, но не к сетям на основе [классической модели развертывания][arm-deployment-model-568f].
 
-- Включение конечных точек службы виртуальной сети для базы данных SQL Azure также включает конечные точки для служб MySQL и PostgreSQL Azure. Тем не менее, если конечные точки включены в базе данных, подключиться через них к экземплярам MySQL или PostgreSQL не удастся.
-  - Основной причиной является то, что сейчас MySQL и PostgreSQL не поддерживают списки управления доступом (ACL).
+- Включение конечных точек службы виртуальной сети для базы данных SQL Azure также включает конечные точки для служб MySQL и PostgreSQL Azure. Тем не менее, если конечные точки включены в базе данных, подключение через них к экземплярам MySQL или PostgreSQL может завершиться ошибкой.
+  - В основном это происходит из-за того, что для MySQL и PostgreSQL не настроены правила виртуальной сети. Настройте правило виртуальной сети для Базы данных Azure для MySQL и PostgreSQL, чтобы установить подключение.
+
 - К приведенным ниже элементам сети применяются диапазоны IP-адресов в брандмауэре, а правила виртуальной сети — нет:
   - [виртуальная частная сеть (VPN) типа "сеть — сеть"][vpn-gateway-indexmd-608y].
   - локальная среда с подключением [ExpressRoute][expressroute-indexmd-744v].

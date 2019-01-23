@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/01/2018
 ms.author: vinagara
 ms.component: alerts
-ms.openlocfilehash: e7676213f9eee781fa7b8c19a30c6505ca5bf2ac
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 26c98a87b736132eb50cddffd06c1173d205c34d
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53720311"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54265436"
 ---
 # <a name="webhook-actions-for-log-alert-rules"></a>Действия веб-перехватчика для правил оповещений журнала
 При [создании оповещения в Azure](alerts-log.md) можно [настроить конфигурацию с помощью групп действий](action-groups.md) для выполнения одного или нескольких действий.  В этой статье описываются различные доступные действия веб-перехватчика и сведения о том, как настроить пользовательский веб-перехватчик на основе JSON.
@@ -198,7 +198,7 @@ ms.locfileid: "53720311"
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Узнайте больше об [оповещениях журналов в службе оповещений Azure](alerts-unified-log.md).
-- Дополнительные сведения об [управлении оповещениями журналов в Azure](alerts-log.md).
+- [Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor](alerts-log.md)
 - Создание [групп действий в Azure](action-groups.md) и управление ими
 - Дополнительные сведения об [Application Insights](../../azure-monitor/app/analytics.md)
 - Дополнительные сведения о [Log Analytics](../../azure-monitor/log-query/log-query-overview.md). 

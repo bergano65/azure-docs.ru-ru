@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 11/24/2018
 ms.author: bwren
-ms.openlocfilehash: 9b160c011a8a9507698443446ad5fe908b32fb9e
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: cea5cb924914cff1195520d6bd28a8b62fce8698
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54049968"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54264416"
 ---
 # <a name="visualizing-data-from-azure-monitor"></a>Визуализация данных из Azure Monitor
 В этой статье приводится обзор доступных методов для визуализации метрик и данных журналов, хранящихся в Azure Monitor.
@@ -32,7 +32,7 @@ ms.locfileid: "54049968"
 ### <a name="advantages"></a>Преимущества
 - Глубокая интеграция в Azure. Визуализации можно закрепить на панелях мониторинга на нескольких страницах Azure, включая аналитику метрик, Log Analytics и Application Insights.
 - Поддержка метрик и журналов.
-- Объединение данных из нескольких источников, включая выходные данные [обозревателя метрик](../azure-monitor/platform/metrics-charts.md), [запросы Log Analytics](../azure-monitor/log-query/log-query-overview.md) и [данные о сопоставлениях](../azure-monitor/app/app-map.md) и [доступности]() в Application Insights.
+- Объединение данных из нескольких источников, включая выходные данные [обозревателя метрик](../azure-monitor/platform/metrics-charts.md), [запросы Log Analytics](../azure-monitor/log-query/log-query-overview.md) и [данные о сопоставлениях](../azure-monitor/app/app-map.md) и доступности в Application Insights.
 - Возможность использования личных или общих панелей мониторинга. Интеграция с [проверкой подлинности на основе ролей (RBAC)](../role-based-access-control/overview.md) Azure.
 - Автоматическое обновление. Обновление метрик зависит от диапазона времени (минимум пять минут). Обновление журналов за одну минуту.
 - Панели мониторинга параметризованных метрик с отметкой времени и пользовательскими параметрами.

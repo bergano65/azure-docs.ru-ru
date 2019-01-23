@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/23/2018
+ms.date: 01/15/2019
 ms.author: jingwang
-ms.openlocfilehash: 1f3d6434c7226465f9e054d5e5bf35fbb228b311
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: c14bf7c108251a4ec00f5e2f0b1254f83121866e
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54014493"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321115"
 ---
 # <a name="copy-data-from-mysql-using-azure-data-factory"></a>Копирование данных из MySQL с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -30,7 +30,7 @@ ms.locfileid: "54014493"
 
 Данные из базы данных MySQL можно скопировать в любое хранилище данных, поддерживаемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
 
-В частности, этот соединитель MySQL поддерживает MySQL **версии 5.1 и более поздних версий**.
+В частности, этот соединитель MySQL поддерживает MySQL **версии 5.6 и 5.7**.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -70,8 +70,8 @@ ms.locfileid: "54014493"
         "type": "MySql",
         "typeProperties": {
             "connectionString": {
-                 "type": "SecureString",
-                 "value": "Server=<server>;Port=<port>;Database=<database>;UID=<username>;PWD=<password>"
+                "type": "SecureString",
+                "value": "Server=<server>;Port=<port>;Database=<database>;UID=<username>;PWD=<password>"
             }
         },
         "connectVia": {
@@ -227,7 +227,6 @@ ms.locfileid: "54014493"
 | `tinytext` |`String` |
 | `varchar` |`String` |
 | `year` |`Int` |
-
 
 ## <a name="next-steps"></a>Дополнительная информация
 В таблице [Поддерживаемые хранилища данных](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

@@ -1,26 +1,8 @@
 ---
-title: Переобучение новой веб-службы Студии машинного обучения Azure с помощью PowerShell | Документация Майкрософт
-description: Узнайте, как с помощью командлетов управления PowerShell для машинного обучения осуществить программное переобучение модели и обновить веб-службу так, чтобы она использовала заново обученную модель в машинном обучении Azure.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: seodec18
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 3953a398-6174-4d2d-8bbd-e55cf1639415
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 03/28/2017
-ms.openlocfilehash: 0dc41b001ecca26239c0a9e8f69e2709d6927fcd
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53250585"
+заголовок: Переобучение новой веб-службы Студии машинного обучения Azure с помощью PowerShell titleSuffix: Студия машинного обучения Azure description: Узнайте, как с помощью командлетов управления PowerShell для машинного обучения осуществить программное переобучение модели и обновить веб-службу так, чтобы она использовала заново обученную модель в машинном обучении Azure.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 28.03.2017
 ---
 # <a name="retrain-a-new-resource-manager-based-studio-web-service-using-powershell"></a>Переобучение новой веб-службы Студии машинного обучения на основе Resource Manager с помощью PowerShell
 При переобучении новой веб-службы следует обновить определение прогнозной веб-службы, чтобы оно ссылалось на новую обученную модель.

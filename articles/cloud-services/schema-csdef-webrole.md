@@ -13,12 +13,12 @@ caps.latest.revision: 60
 author: jpconnock
 ms.author: jeconnoc
 manager: timlt
-ms.openlocfilehash: e548841f334705aa71ada92c43ccde207a1f6318
-ms.sourcegitcommit: e0a678acb0dc928e5c5edde3ca04e6854eb05ea6
+ms.openlocfilehash: 0bb0946ea48a4c206d6bfe683da0835aca9b198b
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39002319"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54331951"
 ---
 # <a name="azure-cloud-services-definition-webrole-schema"></a>Схема WebRole для определения облачных служб Azure
 Веб-роль Azure — это роль, которая настраивается для программирования веб-приложений с поддержкой IIS 7, например ASP.NET, PHP, Windows Communication Foundation и FastCGI.
@@ -44,11 +44,11 @@ ms.locfileid: "39002319"
       <InputEndpoint certificate="<certificate-name>" ignoreRoleInstanceStatus="[true|false]" name="<input-endpoint-name>" protocol="[http|https|tcp|udp]" localPort="<port-number>" port="<port-number>" loadBalancerProbe="<load-balancer-probe-name>" />  
       <InternalEndpoint name="<internal-endpoint-name>" protocol="[http|tcp|udp|any]" port="<port-number>">  
          <FixedPort port="<port-number>"/>  
-         <FixedPortRange min="<minium-port-number>" max="<maximum-port-number>"/>  
+         <FixedPortRange min="<minimum-port-number>" max="<maximum-port-number>"/>  
       </InternalEndpoint>  
      <InstanceInputEndpoint name="<instance-input-endpoint-name>" localPort="<port-number>" protocol="[udp|tcp]">  
          <AllocatePublicPortFrom>  
-            <FixedPortRange min="<minium-port-number>" max="<maximum-port-number>"/>  
+            <FixedPortRange min="<minimum-port-number>" max="<maximum-port-number>"/>  
          </AllocatePublicPortFrom>  
       </InstanceInputEndpoint>  
     </Endpoints>  
@@ -150,7 +150,7 @@ ms.locfileid: "39002319"
 
 [Startup](#Startup)
 
-[Задача.](#Task)
+[Task](#Task)
 
 [Contents](#Contents)
 
@@ -224,7 +224,7 @@ ms.locfileid: "39002319"
 |порт|int|Обязательный элемент. Порт для внешней конечной точки. Можно задать любой номер порта на ваш выбор, но номера портов, указанные для каждой роли в службе, должны быть уникальными.<br /><br /> Возможный диапазон значений — от 1 до 65 535 включительно (пакет Azure SDK версии 1.7 и выше).|  
 |на основе сертификата.|строка|Обязательный для конечной точки HTTPS. Имя сертификата, определенное элементом `Certificate`.|  
 |localPort|int|Необязательный элемент. Указывает порт, используемый для внутренних подключений к конечной точке. Атрибут `localPort` сопоставляет внешний порт конечной точки с внутренним портом в роли. Это полезно в сценариях, где роль должна обмениваться данными с внутренним компонентом через порт, который отличается от того, который предоставляется наружу.<br /><br /> Если значение `localPort` не указано, оно совпадает со значением атрибута `port`. Установите для параметра `localPort` значение *, чтобы автоматически назначить любой свободный порт. Номер этого порта можно узнать через API среды выполнения.<br /><br /> Возможный диапазон значений — от 1 до 65 535 включительно (пакет Azure SDK версии 1.7 и выше).<br /><br /> Атрибут `localPort` доступен только при использовании пакета Azure SDK версии 1.3 или выше.|  
-|ignoreRoleInstanceStatus|Логическое|Необязательный элемент. Если этому атрибуту присвоено значение `true`, состояние службы не учитывается и конечная точка не удаляется подсистемой балансировки нагрузки. Присвоение этому параметру значения `true` будет полезно для отладки занятых экземпляров службы. По умолчанию используется значение `false`. **Примечание.** Конечная точка по-прежнему может получать трафик, даже в том случае, если роль не находится в состоянии готовности.|  
+|ignoreRoleInstanceStatus|Логическое|Необязательный элемент. Если этому атрибуту присвоено значение `true`, состояние службы не учитывается и конечная точка не удаляется подсистемой балансировки нагрузки. Присвоение этому параметру значения `true` будет полезно для отладки занятых экземпляров службы. По умолчанию используется значение `false`. **Примечание.**  Конечная точка по-прежнему может получать трафик, если роль не находится в состоянии готовности.|  
 |loadBalancerProbe|строка|Необязательный элемент. Имя подсистемы балансировки нагрузки, связанной со входной конечной точкой. Дополнительные сведения см. в статье [Azure Cloud Services Definition LoadBalancerProbe Schema](schema-csdef-loadbalancerprobe.md) (Определение облачных служб Azure. Схема LoadBalancerProbe).|  
 
 ##  <a name="InternalEndpoint"></a> InternalEndpoint  

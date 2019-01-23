@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/10/2018
 ms.author: douglasl
 robots: noindex
-ms.openlocfilehash: e1c563f33030795d52cc686bf52497f927ace6bc
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 3f13cb2626394d16a127b172bb69c4ab88121cdb
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54017707"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352535"
 ---
 # <a name="sql-server-stored-procedure-activity"></a>Действие "Хранимая процедура SQL Server"
 > [!div class="op_single_selector" title1="Transformation Activities"]
@@ -76,7 +76,7 @@ C его помощью можно вызвать хранимую процед�
 2. Создайте следующую **хранимую процедуру**, вставляющую данные в таблицу **sampletable**.
 
     ```SQL
-    CREATE PROCEDURE sp_sample @DateTime nvarchar(127)
+    CREATE PROCEDURE usp_sample @DateTime nvarchar(127)
     AS
 
     BEGIN
@@ -108,7 +108,7 @@ C его помощью можно вызвать хранимую процед�
    ![Домашняя страница фабрики данных](media/data-factory-stored-proc-activity/data-factory-home-page.png)
 
 ### <a name="create-an-azure-sql-linked-service"></a>Создание связанной службы SQL Azure
-После создания фабрики данных создайте связанную службу SQL Azure, которая связывает базу данных SQL Azure, содержащую упомянутую таблицу и хранимую процедуру, с фабрикой данных.
+После создания фабрики данных создайте связанную службу SQL Azure, которая связывает базу данных SQL Azure, содержащую таблицу sampletable и хранимую процедуру usp_sample, с фабрикой данных.
 
 1. В колонке **Фабрика данных** щелкните **Создать и развернуть** для **SProcDF**, чтобы запустить редактор фабрики данных.
 2. Щелкните **Новое хранилище данных** в командной строке и выберите **Azure SQL**. В редакторе отобразится сценарий JSON для создания связанной службы SQL Azure.
@@ -160,7 +160,7 @@ C его помощью можно вызвать хранимую процед�
 Обратите внимание на следующие свойства: 
 
 - Свойству **type** присвоено значение **SqlServerStoredProcedure**. 
-- Параметру **storedProcedureName** в свойствах типа присвоено значение **sp_sample** (имя хранимой процедуры).
+- Параметру **storedProcedureName** в свойствах типа присвоено значение **usp_sample** (имя хранимой процедуры).
 - Раздел **storedProcedureParameters** содержит один параметр с именем **DataTime**. Имя и регистр параметра в формате JSON должны совпадать с именем и регистром параметра в определении хранимой процедуры. Если для параметра необходимо передать значение null, используйте синтаксис `"param1": null` (все символы в нижнем регистре).
  
 1. Нажмите **... Дополнительно** на панели команд и выберите **Новый конвейер**.
@@ -174,7 +174,7 @@ C его помощью можно вызвать хранимую процед�
                 {
                     "type": "SqlServerStoredProcedure",
                     "typeProperties": {
-                        "storedProcedureName": "sp_sample",
+                        "storedProcedureName": "usp_sample",
                         "storedProcedureParameters": {
                             "DateTime": "$$Text.Format('{0:yyyy-MM-dd HH:mm:ss}', SliceStart)"
                         }
@@ -340,7 +340,7 @@ CREATE CLUSTERED INDEX ClusteredID ON dbo.sampletable2(Id);
 **Хранимая процедура:**
 
 ```SQL
-CREATE PROCEDURE sp_sample2 @DateTime nvarchar(127) , @Scenario nvarchar(127)
+CREATE PROCEDURE usp_sample2 @DateTime nvarchar(127) , @Scenario nvarchar(127)
 
 AS
 
@@ -355,7 +355,7 @@ END
 ```JSON
 "typeProperties":
 {
-    "storedProcedureName": "sp_sample",
+    "storedProcedureName": "usp_sample",
     "storedProcedureParameters":
     {
         "DateTime": "$$Text.Format('{0:yyyy-MM-dd HH:mm:ss}', SliceStart)",
@@ -394,7 +394,7 @@ END
             {
                 "type": "SqlServerStoredProcedure",
                 "typeProperties": {
-                    "storedProcedureName": "sp_sample2",
+                    "storedProcedureName": "usp_sample2",
                     "storedProcedureParameters": {
                         "DateTime": "$$Text.Format('{0:yyyy-MM-dd HH:mm:ss}', SliceStart)",
                         "Scenario": "Document sample"

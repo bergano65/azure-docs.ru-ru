@@ -1,23 +1,23 @@
 ---
 title: Модерация изображений — Content Moderator
 titlesuffix: Azure Cognitive Services
-description: Используйте модерацию изображений для модерации неподходящих изображений
+description: Модерация изображений Content Moderator с применением машинных алгоритмов и средства проверки с участием человека позволяют определять изображения с содержимым только для взрослых и непристойного характера.
 services: cognitive-services
 author: sanjeev3
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: conceptual
-ms.date: 01/20/2018
+ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 044aa9a127aa8130340719147314961ddb38167a
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: 952777af0a233f0233f14c749fe0ebfdeaa8344a
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51852713"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54262937"
 ---
-# <a name="image-moderation"></a>Модерация изображений
+# <a name="learn-image-moderation-concepts"></a>Изучение концепций модерации изображений
 
 Модерация изображений Content Moderator с применением машинных алгоритмов и [средства проверки с участием человека](Review-Tool-User-Guide/human-in-the-loop.md) позволяют определять изображения с содержимым только для взрослых и непристойного характера. Вы можете проверить наличие текста на изображениях, извлечь этот текст и (или) распознать лица. Вы можете сопоставить изображения с настраиваемым списком и предпринять соответствующие действия.
 

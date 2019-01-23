@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: article
-ms.date: 09/25/2018
+ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 5c170fd2871d0e487f705e1e7274fdfdda4049e6
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: 95e7f5ce52f4bcf45153b4e455c1427f7117641c
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52276386"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54263678"
 ---
 # <a name="language-support-for-content-moderator-api"></a>Поддержка языков в API Content Moderator
 

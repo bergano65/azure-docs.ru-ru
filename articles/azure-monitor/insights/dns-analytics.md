@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: magoedte
-ms.openlocfilehash: 5641792c058d10bba1bfd468f3c5c90b9217226e
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 29b76620494fbb325f8c43bf90a07c9df0faff56
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53187659"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54266339"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
 
@@ -76,11 +76,11 @@ ms.locfileid: "53187659"
 
 Если для подключения к рабочей области Log Analytics используется Microsoft Monitoring Agent, то устанавливается следующий пакет управления:
 
-- Пакет сбора данных Microsoft DNS (Microsft.IntelligencePacks.Dns)
+- Пакет сбора данных Microsoft DNS (Microsoft.IntelligencePacks.Dns)
 
 Если группа управления Operations Manager подключена к рабочей области Log Analytics, при добавлении этого решения в Operations Manager будут установлены следующие пакеты. Для этих пакетов управления не требуется никакая настройка или обслуживание:
 
-- Пакет сбора данных Microsoft DNS (Microsft.IntelligencePacks.Dns)
+- Пакет сбора данных Microsoft DNS (Microsoft.IntelligencePacks.Dns)
 - Конфигурация аналитики DNS для Microsoft System Center Advisor (Microsoft.IntelligencePack.Dns.Configuration)
 
 Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../../azure-monitor/platform/om-agents.md).

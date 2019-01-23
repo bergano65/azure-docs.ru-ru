@@ -1,25 +1,8 @@
 ---
-title: Надстройка Excel для веб-служб Студии машинного обучения Azure | Документация Майкрософт
-description: Использование веб-служб машинного обучения Azure непосредственно из Excel без написания кода.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: seodec18
-ms.author: amlstudiodocs
-ms.assetid: 9618079d-502f-4974-a3e2-8f924042a23f
-ms.service: machine-learning
-ms.component: studio
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: data-services
-ms.date: 02/01/2018
-ms.openlocfilehash: e836323ad452b86d89eee62936b574b2cc9d0337
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53269504"
+заголовок: Надстройка Excel для веб-службы titleSuffix: Студия машинного обучения Azure description: Использование веб-служб машинного обучения Azure непосредственно из Excel без написания кода.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 01.02.2018
 ---
 # <a name="excel-add-in-for-azure-machine-learning-studio-web-services"></a>Надстройка Excel для веб-служб Студии машинного обучения Microsoft Azure
 Excel упрощает непосредственный вызов веб-служб без необходимости написания какого-либо кода.

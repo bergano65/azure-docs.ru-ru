@@ -1,7 +1,7 @@
 ---
 title: Справочник по API — Content Moderator
 titlesuffix: Azure Cognitive Services
-description: Узнайте о модерации контента и интерфейсах API проверки для Content Moderator.
+description: Узнайте о модерации различного контента и интерфейсах API проверки для Content Moderator.
 services: cognitive-services
 author: sanjeev3
 manager: cgronlun
@@ -10,19 +10,19 @@ ms.component: content-moderator
 ms.topic: reference
 ms.date: 06/25/2017
 ms.author: sajagtap
-ms.openlocfilehash: ecc22b097c14fc7597d8ee0e31f9691098a2211d
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 4a64b2f7ce54d5ace26ad18c0ca1a9facb66245e
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51229753"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54266967"
 ---
 # <a name="content-moderator-api-reference"></a>Справочник по API Content Moderator
 
-Приступить к работе с интерфейсами API Azure Content Moderator можно следующим образом (ознакомьтесь также с [управлением учетными данными](review-tool-user-guide/credentials.md)).
+У вас есть несколько возможных путей для начала работы с API в Azure Content Moderator: (См. также статью [Управление учетными данными](review-tool-user-guide/credentials.md).)
 
 - [Подпишитесь на интерфейсы API Content Moderator](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesContentModerator) на портале Azure.
-- Зарегистрируйтесь для использования [инструмента проверки Content Moderator](https://contentmoderator.cognitive.microsoft.com/). Ознакомьтесь с [кратким руководством](quick-start.md).
+- Зарегистрируйтесь для использования [инструмента проверки Content Moderator](https://contentmoderator.cognitive.microsoft.com/). Дополнительные сведения см. в статье [Краткое руководство. Знакомство с Content Moderator](quick-start.md).
 
 ## <a name="moderation-apis"></a>API модерации
 

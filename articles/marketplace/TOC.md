@@ -1,11 +1,3 @@
----
-ms.openlocfilehash: f2561ab6589d5ee18d78bee38eb1386ce9fe8153
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54352817"
----
 # [Документация по Azure Marketplace и AppSource](index.md)
 
 ## [Общие сведения об Azure Marketplace и AppSource и их преимуществах](./marketplace-publishers-guide.md)  

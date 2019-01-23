@@ -1,27 +1,8 @@
 ---
-title: Копирование примеров обработки и анализа данных других пользователей в Студии машинного обучения Azure | Документация Майкрософт
-description: 'Секрет успешного процесса обработки и анализа данных: заставьте других работать за вас. Воспользуйтесь примерами машинного обучения из коллекции средств ИИ Azure.'
-keywords: примеры обработки и анализа данных,пример машинного обучения,алгоритм кластеризации,пример алгоритма кластеризации
-services: machine-learning
-documentationcenter: na
-author: garyericson
-ms.custom: seodec18
-ms.author: garye
-editor: cjgronlund
-ms.assetid: ec2be823-c325-4ad8-b8b2-3e664f1a44b4
-ms.service: machine-learning
-ms.component: studio
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/05/2018
-ms.openlocfilehash: acd0899396ac5a47dade5fac16e451b2029ec0c2
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53260384"
+заголовок: Копирование чужих примеров обработки и анализа данных titleSuffix: Студия машинного обучения Azure description: 'Секрет успешного процесса обработки и анализа данных. заставьте других работать за вас. Воспользуйтесь примерами машинного обучения из Коллекция решений ИИ Azure.'
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 05.01.2018
 ---
 # <a name="copy-other-peoples-work-to-do-data-science"></a>Копирование работы других пользователей для обработки и анализа данных
 ## <a name="video-5-data-science-for-beginners-series"></a>Видео 5. Обработка и анализ данных для начинающих

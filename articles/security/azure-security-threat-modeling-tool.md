@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/16/2017
 ms.author: jegeib
-ms.openlocfilehash: 8b0700e76bbcc0913b376e607f706f540b1df2bb
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 4e08491ae898fef16af1e199a76a4c07a6c226b9
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43307081"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54358666"
 ---
 # <a name="microsoft-threat-modeling-tool"></a>Средство моделирования угроз Microsoft
 
@@ -46,10 +46,10 @@ ms.locfileid: "43307081"
 
 | Шаг  | ОПИСАНИЕ                                                                                   |
 | ----- | --------------------------------------------------------------------------------------------- |
-| **1** | [Скачивание средства моделирования угроз](https://aka.ms/tmtpreview)                                |
+| **1** | [Скачивание средства моделирования угроз](https://aka.ms/threatmodelingtool)                                |
 | **2** | [Руководство по началу работы](./azure-security-threat-modeling-tool-getting-started.md)    |
 | **3** | [Общие сведения об этих функциях](./azure-security-threat-modeling-tool-feature-overview.md)   |
-| **4** | [Дополнительные сведения о категориях создаваемых угроз](./azure-security-threat-modeling-tool-threats.md)   |
+| **4..** | [Дополнительные сведения о категориях создаваемых угроз](./azure-security-threat-modeling-tool-threats.md)   |
 | **5** | [Поиск способов устранения рисков для созданных угроз](./azure-security-threat-modeling-tool-mitigations.md) |
 
 ## <a name="resources"></a>Ресурсы

@@ -1,27 +1,8 @@
 ---
-title: Обзорная схема возможностей Студии машинного обучения Azure | Документация Майкрософт
-description: Печатная схема возможностей Студии машинного обучения Azure, демонстрирующая варианты использования Студии для разработки экспериментальной программы прогнозной аналитики и введения ее в эксплуатацию в облаке Azure.
-keywords: студия машинного обучения, обзорная схема, скачивание
-services: machine-learning
-documentationcenter: ''
-author: garyericson
-ms.custom: previous-ms.author=haining, previous-author=hning86
-ms.author: garye
-editor: cgronlun
-ms.assetid: 5b302c6c-41fd-4551-a4ae-0f5b450e1e6b
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: overview
-ms.date: 04/04/2017
-ms.openlocfilehash: ce842d11d47529eca2be894a230b60417cea102f
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53278021"
+заголовок: Обзорная схема возможностей Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Печатная схема возможностей Студии машинного обучения Azure, демонстрирующая варианты использования Студии для разработки экспериментальной программы прогнозной аналитики и введения ее в эксплуатацию в облаке Azure.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: overview
+
+author: garyericson ms.author: garye ms.custom: previous-ms.author=haining, previous-author=hning86 ms.date: 04.04.2017
 ---
 # <a name="overview-diagram-of-azure-machine-learning-studio-capabilities"></a>Обзорная схема возможностей Студии машинного обучения Azure 
 Схема **Обзор возможностей Студии машинного обучения Microsoft Azure** предоставляет высокоуровневый обзор вариантов использования Студии машинного обучения для разработки модели прогнозной аналитики и введения ее в эксплуатацию в облаке Azure.

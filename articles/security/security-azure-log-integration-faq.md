@@ -12,22 +12,22 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload8: na
-ms.date: 06/07/2018
+ms.date: 01/14/2019
 ms.author: barclayn
 ms.custom: azlog
-ms.openlocfilehash: eb81e5202b5705c59bae8e07cbf2ade43b03f075
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: 928c7921ce184f5f17916c3b9e182ce3754b0115
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54064480"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54306273"
 ---
 # <a name="azure-log-integration-faq"></a>Часто задаваемые вопросы об интеграции журналов Azure
 
 В этой статье содержатся ответы на некоторые часто задаваемые вопросы о службе интеграции журналов Azure.
 
 >[!IMPORTANT]
-> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Загрузки AzLog будут отключены до 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
+> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Файлы для скачивания AzLog недоступны с 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
 
 Служба интеграции журналов Azure (служба ОС Windows) позволяет интегрировать необработанные журналы из ресурсов Azure с локальными системами SIEM. Такая интеграция обеспечивает единую панель мониторинга для всех локальных и облачных ресурсов. Интеграция также позволяет выполнять статистическое вычисление, сопоставление и анализ, а также предупреждать о событиях безопасности, связанных с приложениями.
 

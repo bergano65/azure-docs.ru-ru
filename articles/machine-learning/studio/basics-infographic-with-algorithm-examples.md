@@ -1,27 +1,8 @@
 ---
-title: Примеры алгоритмов для Студии машинного обучения Azure | Документация Майкрософт
-description: Доходчивый обзор основ машинного обучения включает примеры алгоритмов. Загружаемая инфографика охватывает большинство вопросов по машинному обучению.
-keywords: основы машины обучения, примеры алгоритмов,машинное обучение для начинающих, вопросы машины обучения, популярные алгоритмы, инфографика по алгоритмам
-services: machine-learning
-documentationcenter: ''
-author: garyericson
-ms.custom: seodc18
-ms.author: garye
-editor: cgronlun
-ms.assetid: cf4e2308-9285-4adc-9f00-408e3ee7931b
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 12/18/2017
-ms.openlocfilehash: df628447a441d1580fa1a3862275f2b461f8d18a
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53275743"
+заголовок: Примеры алгоритмов titleSuffix: Студия машинного обучения Azure description: Доходчивый обзор основ машинного обучения включает примеры алгоритмов. Загружаемая инфографика охватывает большинство вопросов по машинному обучению.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: garyericson ms.author: garye ms.custom: seodc18 ms.date: 18.12.2017
 ---
 # <a name="downloadable-infographic-machine-learning-basics-with-algorithm-examples"></a>Скачиваемая инфографика по основам машинного обучения с примерами алгоритмов
 Скачайте понятную инфографику по основам машинного обучения и ознакомьтесь с популярными алгоритмами, которые используются для ответа на распространенные вопросы о машинном обучении. Примеры алгоритмов помогут начинающему пользователю машинного обучения понять, какие алгоритмы используются и с какой целью.

@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/29/2018
+ms.date: 01/16/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.openlocfilehash: 0cac5658d5f6f32795b5988008b3b895024ecc06
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: e11db0cacb14ab94c40ebbf6cac356a08cc016f1
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52960540"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352688"
 ---
 # <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
 
@@ -28,7 +28,7 @@ ms.locfileid: "52960540"
 > [!note]  
 > Система Kubernetes доступна в Azure Stack в предварительной версии.
 
-Вы можете обеспечить своим пользователям доступ к Kubernetes из Azure Stack Marketplace. Развертывание Kubernetes выполняется за одну согласованную операцию.
+Вы можете обеспечить своим пользователям доступ к Kubernetes из Azure Stack Marketplace. Затем развертывание Kubernetes выполняется за одну согласованную операцию.
 
 В этой статье рассматривается развертывание и подготовка ресурсов для автономного кластера Kubernetes с помощью шаблона Azure Resource Manager. Для элемента 0.3.0 кластера Kubernetes из Marketplace требуется Azure Stack версии 1808. Прежде чем начать, проверьте настройки Azure Stack и глобальные параметры клиента Azure. Соберите необходимые сведения об Azure Stack. Добавьте необходимые ресурсы в клиент и Azure Stack Marketplace. Успешное добавление Kubernetes в Azure Stack Marketplace зависит от правильного выбора сервера Ubuntu, настраиваемого скрипта и элементов Kubernetes.
 
@@ -48,7 +48,7 @@ ms.locfileid: "52960540"
 
 1. Щелкните **Изменить состояние**. Щелкните **Общедоступный**.
 
-1. Чтобы создать подписку, последовательно выберите **+ Создать ресурс** > **Offers and Plans**(Предложения и планы) > **Подписка**.
+1. Чтобы создать подписку, последовательно выберите **+ Create a resource**(+ Создать ресурс) > **Offers and Plans**(Предложения и планы) > **Подписка**.
 
     a. Введите значение в поле **Отображаемое имя**.
 
@@ -59,6 +59,124 @@ ms.locfileid: "52960540"
     d. В поле **Клиент каталога** укажите клиент Azure AD для Azure Stack. 
 
     д. Выберите **Предложение**. Выберите имя созданного предложения. Запишите идентификатор подписки.
+
+## <a name="create-a-service-principle-and-credentials-in-ad-fs"></a>Создание субъекта-службы и учетных данных в AD FS
+
+Если вы используете службы федерации Active Directory (AD FS) для службы управления удостоверениями, необходимо будет создать субъект-службу для пользователей, развертывающих кластер Kubernetes.
+
+1. Создайте и экспортируйте сертификат, используемый для создания субъекта-службы. В следующем фрагменте кода показано, как создать самозаверяющий сертификат. 
+
+    - Вам понадобятся следующие сведения:
+
+       | Значение | ОПИСАНИЕ |
+       | ---   | ---         |
+       | Пароль | Пароль сертификата. |
+       | Локальный путь к сертификату | Путь и имя файла сертификата. Например: `path\certfilename.pfx` |
+       | Имя сертификата | Имя сертификата. |
+       | Расположение хранилища сертификатов |  Например, `Cert:\LocalMachine\My` |
+
+    - Откройте PowerShell с помощью командной строки с повышенными привилегиями. Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
+
+        ```PowerShell  
+        # Creates a new self signed certificate 
+        $passwordString = "<password>"
+        $certlocation = "<local certificate path>.pfx"
+        $certificateName = "<certificate name>"
+        #certificate store location. Eg. Cert:\LocalMachine\My
+        $certStoreLocation="<certificate store location>"
+        
+        $params = @{
+        CertStoreLocation = $certStoreLocation
+        DnsName = $certificateName
+        FriendlyName = $certificateName
+        KeyLength = 2048
+        KeyUsageProperty = 'All'
+        KeyExportPolicy = 'Exportable'
+        Provider = 'Microsoft Enhanced Cryptographic Provider v1.0'
+        HashAlgorithm = 'SHA256'
+        }
+        
+        $cert = New-SelfSignedCertificate @params -ErrorAction Stop
+        Write-Verbose "Generated new certificate '$($cert.Subject)' ($($cert.Thumbprint))." -Verbose
+        
+        #Exports certificate with password in a .pfx format
+        $pwd = ConvertTo-SecureString -String $passwordString -Force -AsPlainText
+        Export-PfxCertificate -cert $cert -FilePath $certlocation -Password $pwd
+        ```
+
+2. Создайте субъект-службу с помощью сертификата.
+
+    - Вам понадобятся следующие сведения:
+
+       | Значение | ОПИСАНИЕ                     |
+       | ---   | ---                             |
+       | IP-адрес ERCS | В ASDK привилегированная конечная точка — это, как правило, `AzS-ERCS01`. |
+       | имя приложения; | Простое имя субъекта-службы приложения. |
+       | Расположение хранилища сертификатов | Путь на компьютере, где был сохранен сертификат. Например: `Cert:\LocalMachine\My\<someuid>` |
+
+    - Откройте PowerShell с помощью командной строки с повышенными привилегиями. Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
+
+        ```PowerShell  
+        #Create service principle using the certificate
+        $privilegedendpoint="<ERCS IP>"
+        $applicationName="<application name>"
+        #certificate store location. Eg. Cert:\LocalMachine\My
+        $certStoreLocation="<certificate store location>"
+        
+        # Get certificate information
+        $cert = Get-Item $certStoreLocation
+        
+        # Credential for accessing the ERCS PrivilegedEndpoint, typically domain\cloudadmin
+        $creds = Get-Credential
+
+        # Creating a PSSession to the ERCS PrivilegedEndpoint
+        $session = New-PSSession -ComputerName $privilegedendpoint -ConfigurationName PrivilegedEndpoint -Credential $creds
+
+        # Get Service Principle Information
+        $ServicePrincipal = Invoke-Command -Session $session -ScriptBlock { New-GraphApplication -Name "$using:applicationName" -ClientCertificates $using:cert}
+
+        # Get Stamp information
+        $AzureStackInfo = Invoke-Command -Session $session -ScriptBlock { get-azurestackstampinformation }
+
+        # For Azure Stack development kit, this value is set to https://management.local.azurestack.external. This is read from the AzureStackStampInformation output of the ERCS VM.
+        $ArmEndpoint = $AzureStackInfo.TenantExternalEndpoints.TenantResourceManager
+
+        # For Azure Stack development kit, this value is set to https://graph.local.azurestack.external/. This is read from the AzureStackStampInformation output of the ERCS VM.
+        $GraphAudience = "https://graph." + $AzureStackInfo.ExternalDomainFQDN + "/"
+
+        # TenantID for the stamp. This is read from the AzureStackStampInformation output of the ERCS VM.
+        $TenantID = $AzureStackInfo.AADTenantID
+
+        # Register an AzureRM environment that targets your Azure Stack instance
+        Add-AzureRMEnvironment `
+        -Name "AzureStackUser" `
+        -ArmEndpoint $ArmEndpoint
+
+        # Set the GraphEndpointResourceId value
+        Set-AzureRmEnvironment `
+        -Name "AzureStackUser" `
+        -GraphAudience $GraphAudience `
+        -EnableAdfsAuthentication:$true
+        Add-AzureRmAccount -EnvironmentName "azurestackuser" `
+        -ServicePrincipal `
+        -CertificateThumbprint $ServicePrincipal.Thumbprint `
+        -ApplicationId $ServicePrincipal.ClientId `
+        -TenantId $TenantID
+
+        # Output the SPN details
+        $ServicePrincipal
+        ```
+
+    - Сведения о субъекте-службе выглядят как приведенный ниже фрагмент кода
+
+        ```Text  
+        ApplicationIdentifier : S-1-5-21-1512385356-3796245103-1243299919-1356
+        ClientId              : 3c87e710-9f91-420b-b009-31fa9e430145
+        Thumbprint            : 30202C11BE6864437B64CE36C8D988442082A0F1
+        ApplicationName       : Azurestack-MyApp-c30febe7-1311-4fd8-9077-3d869db28342
+        PSComputerName        : azs-ercs01
+        RunspaceId            : a78c76bb-8cae-4db4-a45a-c1420613e01b
+        ```
 
 ## <a name="add-an-ubuntu-server-image"></a>Добавление образа сервера Ubuntu
 
@@ -75,8 +193,8 @@ ms.locfileid: "52960540"
 1. Выберите последнюю версию сервера. Проверьте полный номер версии и убедитесь, что вы используете последнюю версию:
     - **Издатель**: Canonical
     - **Предложение**: UbuntuServer
-    - **Версия**: 16.04.201806120
-    - **Номер SKU**: 16.04-LTS
+    - **Версия.** 16.04.201806120 (или последняя версия)
+    - **SKU.** 16.04-LTS
 
 1. Выберите **Скачать**.
 
@@ -94,11 +212,11 @@ ms.locfileid: "52960540"
 
 1. Выберите скрипт со следующим профилем:
     - **Предложение**: Настраиваемый скрипт для Linux 2.0
-    - **Версия**: 2.0.6
+    - **Версия.** 2.0.6 (или последняя версия)
     - **Издатель**: Корпорация Майкрософт
 
     > [!Note]  
-    > Могут отображаться несколько версий настраиваемого скрипта для Linux. Необходимо добавить соответствующую версию. Для Kubernetes необходим настраиваемый скрипт определенной версии.
+    > Могут отображаться несколько версий настраиваемого скрипта для Linux. Необходимо добавить последнюю версию элемента.
 
 1. Выберите **Скачать**.
 
@@ -124,7 +242,7 @@ ms.locfileid: "52960540"
 
 ## <a name="update-or-remove-the-kubernetes"></a>Обновление или удаление Kubernetes 
 
-При обновлении Kubernetes необходимо удалить прежнюю версию Kubernetes из Azure Stack Marketplace. После этого можно выполнить инструкции из этой статьи по добавлению Kubernetes в Azure Stack Marketplace.
+При обновлении Kubernetes удалите предыдущий элемент в Marketplace. Выполните инструкции из этой статьи по добавлению обновления Kubernetes в Marketplace.
 
 Чтобы удалить Kubernetes, выполните такие действия:
 
@@ -149,7 +267,5 @@ ms.locfileid: "52960540"
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Развертывание Kubernetes в Azure Stack](https://docs.microsoft.com/azure/azure-stack/user/azure-stack-solution-template-kubernetes-deploy)
-
-
 
 [Общие сведения о предложении служб в Azure Stack](azure-stack-offer-services-overview.md)

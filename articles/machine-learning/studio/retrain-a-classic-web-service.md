@@ -1,26 +1,8 @@
 ---
-title: Переобучение классической веб-службы Студии машинного обучения Azure | Документация Майкрософт
-description: Узнайте о том, как осуществить программное переобучение модели и обновить веб-службу так, чтобы она использовала переобученную модель при задействовании функций машинного обучения Azure.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: e36e1961-9e8b-4801-80ef-46d80b140452
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 04/19/2017
-ms.openlocfilehash: 5aa52805afcd50ebf7a9ac0ddcae95f21dd329f1
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53554764"
+заголовок: Повторное обучение классической веб-службы titleSuffix: Студия машинного обучения Azure description: Узнайте о том, как осуществить программное переобучение модели и обновить веб-службу так, чтобы она использовала переобученную модель при задействовании функций машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT ms.date: 19.04.2017
 ---
 # <a name="retrain-a-classic-azure-machine-learning-studio-web-service"></a>Переобучение классической веб-службы Студии машинного обучения Azure
 Развернутая прогнозная веб-служба является конечной точкой оценки по умолчанию. Конечные точки по умолчанию синхронизируются с исходными экспериментами по обучению и оценке, поэтому обученную модель конечной точки по умолчанию нельзя заменить. Чтобы переобучить веб-службу, необходимо добавить в нее новую конечную точку.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
-ms.openlocfilehash: 3cf59db2e6f8fcffd9eefc38fcd22c25ba646456
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: b65bcfa5252a150c8101322eaf6d84ce46eef755
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54018642"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352297"
 ---
 # <a name="copy-data-from-oracle-service-cloud-using-azure-data-factory-preview"></a>Копирование данных из Oracle Cloud с помощью службы "Фабрика данных Azure" (предварительная версия)
 
@@ -47,7 +47,7 @@ ms.locfileid: "54018642"
 | Тип | Свойству type необходимо задать следующее значение: **OracleServiceCloud** | Yes |
 | host | URL-адрес экземпляра Oracle Cloud.  | Yes |
 | Имя пользователя | Имя пользователя, которое позволяет получить доступ к серверу Oracle Cloud.  | Yes |
-| password | Пароль, соответствующий имени пользователя, которое указано в ключе имени пользователя. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и передавать его оттуда в действие копирования ADF при фактическом копировании данных. Подробнее это описано в статье [о хранении учетных данных в Key Vault](store-credentials-in-key-vault.md). | Yes |
+| password | Пароль, соответствующий имени пользователя, которое указано в ключе имени пользователя. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и разрешить действию копирования ADF передавать его оттуда при копировании данных. Дополнительные сведения см. в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет  |
 | useHostVerification | Указывает, следует ли требовать, чтобы имя узла в сертификате сервера совпадало с именем узла сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет  |
 | usePeerVerification | Указывает, следует ли проверять удостоверение сервера при подключении по протоколу SSL. По умолчанию используется значение true.  | Нет  |

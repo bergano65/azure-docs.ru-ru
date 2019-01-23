@@ -1,18 +1,18 @@
 ---
-title: Настройка OpenVPN для VPN-шлюза Azure с помощью PowerShell | Документация Майкрософт
+title: Настройка OpenVPN для VPN-шлюза Azure — PowerShell | Документация Майкрософт
 description: Узнайте, как настроить OpenVPN для VPN-шлюза Azure
 services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 09/26/2018
+ms.date: 01/16/2019
 ms.author: cherylmc
-ms.openlocfilehash: 958f4f46ec6ba407df7c739b7c62aa1489458485
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 1dad960b0877cddf3be9afc01e3e687ebe4702c0
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47408282"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54357833"
 ---
 # <a name="configure-openvpn-for-azure-point-to-site-vpn-gateway-preview"></a>Настройка OpenVPN для подключения "точка — сеть" VPN-шлюза Azure (предварительная версия)
 
@@ -47,7 +47,7 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
 
 ## <a name="vnet"></a>1. Создание VPN-подключения "— сеть"
 
-Если у вас нет работающей среды "точка — сеть", следуйте инструкциям, чтобы создать ее. См. дополнительные сведения о [создании и настройке VPN-подключения "точка — сеть" с использованием аутентификации на основе собственного сертификата Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md).
+Если у вас нет работающей среды "точка — сеть", следуйте инструкциям, чтобы создать ее. См. дополнительные сведения о [создании и настройке VPN-подключения "точка — сеть" с использованием аутентификации на основе собственного сертификата Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md). Обратите внимание на то, что SKU уровня " Базовый" не поддерживает подключения типа "точка — сеть" по протоколу IKEv2.
 
 ## <a name="cmdlets"></a>2. Установка командлетов PowerShell
 

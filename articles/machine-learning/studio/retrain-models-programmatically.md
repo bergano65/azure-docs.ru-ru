@@ -1,26 +1,8 @@
 ---
-title: Программное переобучение моделей в Студии машинного обучения Azure | Документация Майкрософт
-description: Узнайте, как выполнить программное переобучение модели с помощью C# и службы пакетного выполнения Машинного обучения.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: seodec18
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 7ae4f977-e6bf-4d04-9dde-28a66ce7b664
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 04/19/2017
-ms.openlocfilehash: 7a1381ce43056607486a27710cd6ee6181b9a5c1
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53257399"
+заголовок: Программное переобучение моделей Студии машинного обучения titleSuffix: Студия машинного обучения Azure description: Узнайте, как выполнить программное переобучение модели с помощью C# и службы пакетного выполнения Машинного обучения.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 19.04.2017
 ---
 # <a name="retrain-azure-machine-learning-studio-models-programmatically"></a>Программное переобучение моделей Студии машинного обучения Azure
 В этом пошаговом руководстве вы узнаете, как выполнить программное переобучение веб-службы Студии машинного обучения Azure с использованием C# и службы пакетного выполнения машинного обучения.

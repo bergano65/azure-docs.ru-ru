@@ -5,17 +5,17 @@ services: active-directory
 ms.service: active-directory
 ms.component: authentication
 ms.topic: conceptual
-ms.date: 10/04/2018
+ms.date: 01/16/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: sahenry
-ms.openlocfilehash: 4d311794c1c0f2dd6b9a0b2a44983b47bfeef362
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 06a3ac4520a40369c095e57f8e92978fdb280b51
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54040546"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359598"
 ---
 # <a name="what-is-password-writeback"></a>Что такое компонент обратной записи паролей?
 
@@ -42,7 +42,7 @@ ms.locfileid: "54040546"
 * **Не требуется никаких правил брандмауэра для входящего трафика**. Компонент обратной записи паролей использует ретранслятор служебной шины Azure в качестве базового коммуникационного канала. Весь обмен данными является исходящим и осуществляется через порт 443.
 
 > [!Note]
-> Обратная запись паролей не поддерживается для учетных записей пользователей в защищенных группах в локальной службе Active Directory. Дополнительные сведения о защищенных группах см. в статье [Appendix C: Protected Accounts and Groups in Active Directory](https://technet.microsoft.com/library/dn535499.aspx) (Приложение В. Защищенные учетные записи и группы в Active Directory).
+> Обратная запись паролей не поддерживается для учетных записей пользователей в защищенных группах в локальной службе Active Directory. Обратная запись паролей не поддерживается для учетных записей администраторов в защищенных группах в локальной службе Active Directory. Дополнительные сведения о защищенных группах см. в статье [Appendix C: Protected Accounts and Groups in Active Directory](https://technet.microsoft.com/library/dn535499.aspx) (Приложение В. Защищенные учетные записи и группы в Active Directory).
 >
 
 ## <a name="licensing-requirements-for-password-writeback"></a>Требования к лицензированию для обратной записи паролей
@@ -58,6 +58,7 @@ ms.locfileid: "54040546"
 * Microsoft 365 E3 или A3;
 * Microsoft 365 E5 или A5;
 * Microsoft 365 F1
+* Microsoft 365 бизнес
 
 > [!WARNING]
 > Автономные планы лицензирования Office 365 *не поддерживают функции самостоятельного сброса пароля, изменения пароля или разблокировки при помощи локальной обратной записи*. Для работы этих функций требуется один из указанных выше планов.

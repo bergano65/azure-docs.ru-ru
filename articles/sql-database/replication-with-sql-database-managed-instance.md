@@ -1,59 +1,33 @@
 ---
-title: Репликация с использованием Управляемого экземпляра Базы данных SQL Azure | Документация Майкрософт
-description: Сведения о репликации SQL Server с использованием Управляемого экземпляра Базы данных SQL Azure
+title: Настройка репликации в Управляемом экземпляре Базы данных SQL Azure | Документация Майкрософт
+description: Дополнительные сведения о настройке репликации транзакций в Управляемом экземпляре Базы данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: data-movement
 ms.custom: ''
 ms.devlang: ''
-ms.topic: conceptual
+ms.topic: howto
 author: allenwux
 ms.author: xiwu
 ms.reviewer: mathoma
 manager: craigg
-ms.date: 09/25/2018
-ms.openlocfilehash: 4a272b028e1e3ef2778227f259c0b1b980af885d
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
+ms.date: 01/16/2019
+ms.openlocfilehash: 568b239cf41c802cc5d25b638f6d1501f58eccdf
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53547603"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54360094"
 ---
-# <a name="replication-with-sql-database-managed-instance"></a>Репликация с использованием Управляемого экземпляра Базы данных SQL
+# <a name="configure-replication-in-azure-sql-database-managed-instance"></a>Настройка репликации в Управляемом экземпляре Базы данных SQL Azure
 
-Репликация доступна в общедоступной предварительной версии в [Управляемом экземпляре Базы данных SQL Azure](sql-database-managed-instance.md). В Управляемом экземпляре может размещаться база данных издателя, распространителя и подписчика.
-
-## <a name="common-configurations"></a>Распространенные конфигурации
-
-Как правило, и издатель, и распространитель должны находиться либо в облаке, либо в локальной среде. Поддерживаются следующие конфигурации:
-
-- **Издатель с локальным распространителем в управляемом экземпляре**
-
-   ![Replication-with-azure-sql-db-single-managed-instance-publisher-distributor](./media/replication-with-sql-database-managed-instance/01-single-instance-asdbmi-pubdist.png)
-
-   Базы данных издателя и распространителя можно настроить на одном управляемом экземпляре.
-
-- **Издатель с удаленным распространителем в управляемом экземпляре**
-
-   ![Replication-with-azure-sql-db-separate-managed-instances-publisher-distributor](./media/replication-with-sql-database-managed-instance/02-separate-instances-asdbmi-pubdist.png)
-
-   Издателя и распространителя можно настроить в двух управляемых экземплярах. В этой конфигурации:
-
-  - Оба управляемые экземпляры находятся в той же виртуальной сети.
-
-  - Оба управляемые экземпляры находятся в том же расположении.
-
-- **Локальные издатель и распространитель с подписчиком в управляемом экземпляре**
-
-   ![Replication-from-on-premises-to-azure-sql-db-subscriber](./media/replication-with-sql-database-managed-instance/03-azure-sql-db-subscriber.png)
-
-   В этой конфигурации подписчиком является База данных SQL Azure. Эта конфигурация поддерживает миграцию из локальной среды в Azure. В роли подписчика базе данных SQL не нужен Управляемый экземпляр, однако вы можете использовать Управляемый экземпляр Базы данных SQL в качестве шага при миграции из локальной среды в Azure. Дополнительные сведения о подписчиках Базы данных SQL Azure см. в статье [Replication to SQL Database single and pooled databases](replication-to-sql-database.md) (Репликация в одну базу данных и базы данных в составе пула службы "База данных SQL").
+Репликация транзакций позволяет реплицировать данные из баз данных SQL Server или Управляемого экземпляра Базы данных SQL в Управляемый экземпляр или передавать внесенные изменения в SQL Server в отдельную базу данных или в другой Управляемой экземпляр. Репликация в общедоступной предварительной версии в [Управляемом экземпляре Базы данных SQL Azure](sql-database-managed-instance.md). В Управляемом экземпляре может размещаться база данных издателя, распространителя и подписчика. Сведения о доступных конфигурациях см. [здесь](sql-database-managed-instance-transactional-replication.md#common-configurations).
 
 ## <a name="requirements"></a>Требования
 
 Издателю и распространителю в Базе данных SQL Azure необходимо:
 
-- Управляемый экземпляр Базы данных SQL Azure.
+- Управляемый экземпляр Базы данных SQL Azure, который не находится в конфигурации Geo-DR.
 
    >[!NOTE]
    >Базы данных SQL Azure, не настроенные с помощью Управляемого экземпляра, могут быть только подписчиками.
@@ -74,7 +48,13 @@ ms.locfileid: "53547603"
 
 - Подписчики могут быть отдельными локальными базами данных в Базе данных SQL Azure или базами данных в эластичных пулах Базы данных SQL Azure.
 
-- Односторонняя или двунаправленная репликация
+- Односторонняя или двухсторонняя репликация.
+
+Следующие возможности не поддерживаются:
+
+- обновляемые подписки;
+
+- активная георепликация.
 
 ## <a name="configure-publishing-and-distribution-example"></a>Настройка примера публикации и распространения
 
@@ -87,7 +67,7 @@ ms.locfileid: "53547603"
 
    В следующих сценариях замените `<Publishing_DB>` именем этой базы данных.
 
-4. Создайте пользователя базы данных с использованием аутентификации SQL для распространителя. Дополнительные сведения см. в разделе [Создание пользователей базы данных](https://docs.microsoft.com/azure/sql-database/sql-database-security-tutorial#creating-database-users). Установите надежный пароль.
+4. Создайте пользователя базы данных с использованием аутентификации SQL для распространителя. Установите надежный пароль.
 
    В примерах сценариев ниже используйте `<SQL_USER>` и `<PASSWORD>` в качестве имени пользователя и пароля для этой учетной записи базы данных SQL Server.
 
@@ -188,15 +168,8 @@ ms.locfileid: "53547603"
                 @job_password = N'<PASSWORD>'
    GO
    ```
-
-## <a name="limitations"></a>Ограничения
-
-Следующие возможности не поддерживаются:
-
-- обновляемые подписки;
-
-- активная георепликация.
-
+   
 ## <a name="see-also"></a>См. также
 
+- [Репликация транзакций](sql-database-managed-instance-transactional-replication.md)
 - [Общие сведения об Управляемом экземпляре](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance)

@@ -9,14 +9,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/14/2018
+ms.date: 01/15/2018
 ms.author: tomfitz
-ms.openlocfilehash: 5b8247533a8bf51017767aac3a04e47ce6348a60
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 542993d803282bbf62e2e401cab1968a656a8971
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53435299"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352280"
 ---
 # <a name="create-resource-groups-and-resources-for-an-azure-subscription"></a>Создание групп ресурсов и ресурсов для подписки Azure
 
@@ -289,7 +289,7 @@ New-AzureRmDeployment `
 }
 ```
 
-Чтобы применить встроенную политику к подписке Azure, используйте следующие команды Azure CLI. В этом примере политика не имеет параметров.
+Чтобы применить встроенную политику к подписке Azure, используйте следующие команды Azure CLI.
 
 ```azurecli-interactive
 # Built-in policy that does not accept parameters
@@ -315,7 +315,7 @@ New-AzureRmDeployment `
   -policyName auditRGLocation
 ```
 
-Чтобы применить встроенную политику к подписке Azure, используйте следующие команды Azure CLI. В этом примере в политике есть параметры.
+Чтобы применить встроенную политику к подписке Azure, используйте следующие команды Azure CLI.
 
 ```azurecli-interactive
 # Built-in policy that accepts parameters
@@ -408,9 +408,9 @@ New-AzureRmDeployment `
   -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/policydefineandassign.json
 ```
 
-## <a name="assign-role"></a>Назначение роли
+## <a name="assign-role-at-subscription"></a>Назначение роли для подписки
 
-В следующем примере присваивается роль пользователю или группе.
+В следующем примере присваивается роль пользователю или группе для подписки. В этом примере вы не указываете область для назначения, так как область автоматически устанавливается к подписке.
 
 ```json
 {
@@ -468,6 +468,94 @@ New-AzureRmDeployment `
   -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/roleassign.json `
   -roleDefinitionId $role.Id `
   -principalId $adgroup.Id
+```
+
+## <a name="assign-role-at-scope"></a>Назначение роли в области
+
+Следующий шаблон уровня подписки назначает роль пользователю или группе, которая находится в группе ресурсов в пределах подписки. Область должна быть на уровне или ниже уровня развертывания. Вы можете выполнить развертывание в подписке и указать область назначения ролей в группе ресурсов в пределах этой подписки. Тем не менее нельзя выполнить развертывание в группе ресурсов и указать область назначения ролей для подписки.
+
+Чтобы назначить роль в области, используйте вложенное развертывание. Обратите внимание на то, что имя группы ресурсов указывается как в свойствах для ресурса развертывания, так и в свойстве области назначения ролей.
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.1",
+    "parameters": {
+        "principalId": {
+            "type": "string"
+        },
+        "roleDefinitionId": {
+            "type": "string"
+        },
+        "rgName": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2018-05-01",
+            "name": "assignRole",
+            "resourceGroup": "[parameters('rgName')]",
+            "properties": {
+                "mode": "Incremental",
+                "template": {
+                    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {},
+                    "variables": {},
+                    "resources": [
+                        {
+                            "type": "Microsoft.Authorization/roleAssignments",
+                            "name": "[guid(parameters('principalId'), deployment().name)]",
+                            "apiVersion": "2017-09-01",
+                            "properties": {
+                                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', parameters('roleDefinitionId'))]",
+                                "principalId": "[parameters('principalId')]",
+                                "scope": "[concat(subscription().id, '/resourceGroups/', parameters('rgName'))]"
+                            }
+                        }
+                    ],
+                    "outputs": {}
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}
+```
+
+Чтобы присвоить группу Active Directory роли для подписки, используйте следующие команды Azure CLI.
+
+```azurecli-interactive
+# Get ID of the role you want to assign
+role=$(az role definition list --name Contributor --query [].name --output tsv)
+
+# Get ID of the AD group to assign the role to
+principalid=$(az ad group show --group demogroup --query objectId --output tsv)
+
+az deployment create \
+  -n demoRole \
+  -l southcentralus \
+  --template-uri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/scopedRoleAssign.json \
+  --parameters principalId=$principalid roleDefinitionId=$role rgName demoRg
+```
+
+Развернуть этот шаблон с помощью PowerShell можно так:
+
+```azurepowershell-interactive
+$role = Get-AzureRmRoleDefinition -Name Contributor
+
+$adgroup = Get-AzureRmADGroup -DisplayName demogroup
+
+New-AzureRmDeployment `
+  -Name demoRole `
+  -Location southcentralus `
+  -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/scopedRoleAssign.json `
+  -roleDefinitionId $role.Id `
+  -principalId $adgroup.Id `
+  -rgName demoRg
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

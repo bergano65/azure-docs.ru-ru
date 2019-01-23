@@ -4,62 +4,100 @@ description: В этой статье описываются типы ресур
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 01/02/2019
+ms.date: 1/11/2019
 ms.author: tomfitz
-ms.openlocfilehash: 50ea7a2446b5560bd208b2da128fa877068ce452
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 4899409b225298c521935f2eeaf5e8e59a6833b3
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "54000297"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54267459"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
-В этой статье приводятся сведения о поддержке типом ресурса функции [добавления тегов](resource-group-using-tags.md).
+В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](resource-group-using-tags.md).
 
-## <a name="aad-domain-services"></a>Доменные службы AAD
+## <a name="microsoftaad"></a>Microsoft.AAD
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| domains | Нет  | 
+| DomainServices | Yes | 
+| DomainServices/oucontainer | Нет  | 
 
-## <a name="ad-hybrid-health-service"></a>служба работоспособности гибридного AD;
+## <a name="microsoftaadiam"></a>microsoft.aadiam
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| addsservices | Нет  |
+| diagnosticSettings | Нет  | 
+| diagnosticSettingsCategories | Нет  | 
+
+## <a name="microsoftaddons"></a>Microsoft.Addons
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| supportProviders | Нет  | 
+
+## <a name="microsoftadhybridhealthservice"></a>Microsoft.ADHybridHealthService
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
 | aadsupportcases | Нет  | 
+| addsservices | Нет  | 
 | agents | Нет  | 
 | anonymousapiusers | Нет  | 
 | Конфигурация | Нет  | 
 | журналы | Нет  | 
 | reports | Нет  | 
 | services; | Нет  | 
-| servicehealthmetrics | Нет  | 
 
-## <a name="aks"></a>AKS
+## <a name="microsoftadvisor"></a>Microsoft.Advisor
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| managedClusters | Yes | 
+| конфигурации | Нет  | 
+| generateRecommendations | Нет  | 
+| к просмотру фильмов | Нет  | 
+| suppressions | Нет  | 
 
-## <a name="analysis-services"></a>Analysis Services
+## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| actionRules | Нет  | 
+| оповещения | Нет  | 
+| alertsList | Нет  | 
+| alertsSummary | Нет  | 
+| alertsSummaryList | Нет  | 
+| smartDetectorAlertRules | Нет  | 
+| smartDetectorRuntimeEnvironments | Нет  | 
+| smartGroups | Нет  | 
+
+## <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | servers | Yes | 
 
-## <a name="api-hubs"></a>Концентраторы API
+## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| apiManagementAccounts | Нет  | 
-| apiManagementAccounts/apis | Нет  | 
-| apiManagementAccounts/connectionAcls | Нет  | 
-| apiManagementAccounts/connectionProviders | Нет  | 
-| apiManagementAccounts/connectionProviderAcls | Нет  | 
-| apiManagementAccounts/connections | Нет  | 
-
-## <a name="api-management"></a>Управление API
-| Тип ресурса | Поддержка тегов |
-| ------------- | ----------- |
+| reportFeedback | Нет  | 
 | свойства | Yes | 
+| validateServiceName | Нет  | 
 
-## <a name="automation"></a>Служба автоматизации
+## <a name="microsoftattestation"></a>Microsoft.Attestation
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| attestationProviders | Нет  | 
+
+## <a name="microsoftauthorization"></a>Microsoft.Authorization
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| classicAdministrators | Нет  | 
+| denyAssignments | Нет  | 
+| elevateAccess | Нет  | 
+| locks | Нет  | 
+| permissions | Нет  | 
+| policyAssignments | Нет  | 
+| policyDefinitions | Нет  | 
+| policySetDefinitions | Нет  | 
+| providerOperations | Нет  | 
+| roleAssignments | Нет  | 
+| roleDefinitions | Нет  | 
+
+## <a name="microsoftautomation"></a>Microsoft.Automation
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | automationAccounts | Yes | 
@@ -69,64 +107,140 @@ ms.locfileid: "54000297"
 | automationAccounts/softwareUpdateConfigurations | Нет  | 
 | automationAccounts/webhooks | Нет  | 
 
-## <a name="azure-database-for-mariadb"></a>База данных Azure для MariaDB
+## <a name="microsoftazuregeneva"></a>Microsoft.Azure.Geneva
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| servers | Yes | 
-| servers/configurations | Нет  |
-| servers/databases | Нет  |
-| servers/firewallRules | Нет  |
-| servers/recoverableServers | Нет  | 
-| servers/securityAlertPolicies | Нет  |
-| servers/virtualNetworkRules | Нет  | 
+| environments | Нет  | 
+| environments/accounts | Нет  | 
+| environments/accounts/namespaces | Нет  | 
+| environments/accounts/namespaces/configurations | Нет  | 
 
-## <a name="azure-database-for-mysql"></a>База данных Azure для MySQL
+## <a name="microsoftazureactivedirectory"></a>Microsoft.AzureActiveDirectory
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| servers | Yes | 
-| servers/configurations | Нет  |
-| servers/databases | Нет  |
-| servers/firewallRules | Нет  |
-| servers/recoverableServers | Нет  | 
-| servers/securityAlertPolicies | Нет  |
-| servers/virtualNetworkRules | Нет  | 
+| b2cDirectories | Yes | 
 
-## <a name="azure-database-for-postgresql"></a>База данных Azure для PostgreSQL
+## <a name="microsoftazurestack"></a>Microsoft.AzureStack
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| servers | Yes | 
-| servers/advisors | Нет  | 
-| servers/configurations | Нет  |
-| servers/databases | Нет  |
-| servers/firewallRules | Нет  |
-| servers/queryTexts | Нет  | 
-| servers/recoverableServers | Нет  | 
-| servers/securityAlertPolicies | Нет  |
-| servers/topQueryStatistics | Нет  | 
-| servers/virtualNetworkRules | Нет  | 
-| servers/waitStatistics | Нет  | 
+| registrations | Yes | 
+| registrations/customerSubscriptions | Нет  | 
+| registrations/products | Нет  | 
 
-## <a name="batch"></a>Пакетная служба Azure
+## <a name="microsoftbatch"></a>Microsoft.Batch
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | batchAccounts | Yes | 
 
-## <a name="bing-maps"></a>Карты Bing
+## <a name="microsoftbilling"></a>Microsoft.Billing
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| billingAccounts | Нет  | 
+| billingAccounts/billingProfiles | Нет  | 
+| billingAccounts/billingProfiles/billingSubscriptions | Нет  | 
+| billingAccounts/billingProfiles/invoices | Нет  | 
+| billingAccounts/billingProfiles/invoices/pricesheet | Нет  | 
+| billingAccounts/billingProfiles/operationStatus | Нет  | 
+| billingAccounts/billingProfiles/paymentMethods | Нет  | 
+| billingAccounts/billingProfiles/policies | Нет  | 
+| billingAccounts/billingProfiles/pricesheet | Нет  | 
+| billingAccounts/billingProfiles/products | Нет  | 
+| billingAccounts/billingProfiles/transactions | Нет  | 
+| billingAccounts/billingSubscriptions | Нет  | 
+| billingAccounts/departments | Нет  | 
+| billingAccounts/eligibleOffers | Нет  | 
+| billingAccounts/enrollmentAccounts | Нет  | 
+| billingAccounts/invoices | Нет  | 
+| billingAccounts/invoiceSections | Нет  | 
+| billingAccounts/invoiceSections/billingSubscriptions | Нет  | 
+| billingAccounts/invoiceSections/billingSubscriptions/transfer | Нет  | 
+| billingAccounts/invoiceSections/importRequests | Нет  | 
+| billingAccounts/invoiceSections/initiateImportRequest | Нет  | 
+| billingAccounts/invoiceSections/initiateTransfer | Нет  | 
+| billingAccounts/invoiceSections/operationStatus | Нет  | 
+| billingAccounts/invoiceSections/products | Нет  | 
+| billingAccounts/invoiceSections/transfers | Нет  | 
+| billingAccounts/products | Нет  | 
+| billingAccounts/projects | Нет  | 
+| billingAccounts/projects/billingSubscriptions | Нет  | 
+| billingAccounts/projects/importRequests | Нет  | 
+| billingAccounts/projects/initiateImportRequest | Нет  | 
+| billingAccounts/projects/operationStatus | Нет  | 
+| billingAccounts/projects/products | Нет  | 
+| billingAccounts/transactions | Нет  | 
+| billingPeriods | Нет  | 
+| BillingPermissions | Нет  | 
+| billingProperty | Нет  | 
+| BillingRoleAssignments | Нет  | 
+| BillingRoleDefinitions | Нет  | 
+| CreateBillingRoleAssignment | Нет  | 
+| departments | Нет  | 
+| enrollmentAccounts | Нет  | 
+| importRequests | Нет  | 
+| importRequests/acceptImportRequest | Нет  | 
+| importRequests/declineImportRequest | Нет  | 
+| invoices | Нет  | 
+| transfers | Нет  | 
+| transfers/acceptTransfer | Нет  | 
+| transfers/declineTransfer | Нет  | 
+| transfers/operationStatus | Нет  | 
+| usagePlans | Нет  | 
+
+## <a name="microsoftbingmaps"></a>Microsoft.BingMaps
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | mapApis | Yes | 
+| updateCommunicationPreference | Нет  | 
 
-## <a name="biztalk-services"></a>Службы BizTalk
+## <a name="microsoftbiztalkservices"></a>Microsoft.BizTalkServices
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | BizTalk | Yes | 
 
-## <a name="cache"></a>Кэш
+## <a name="microsoftblueprint"></a>Microsoft.Blueprint
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| blueprintAssignments | Нет  | 
+| blueprintAssignments/assignmentOperations | Нет  | 
+| blueprintAssignments/operations | Нет  | 
+| blueprints | Нет  | 
+| blueprints/artifacts | Нет  | 
+| blueprints/versions | Нет  | 
+| blueprints/versions/artifacts | Нет  | 
+
+## <a name="microsoftbotservice"></a>Microsoft.BotService
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| botServices | Yes | 
+| botServices/channels | Нет  | 
+| botServices/connections | Нет  | 
+
+## <a name="microsoftcache"></a>Microsoft.Cache
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | Redis | Yes | 
+| RedisConfigDefinition | Нет  | 
 
-## <a name="cdn"></a>CDN
+## <a name="microsoftcapacity"></a>Microsoft.Capacity
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| appliedReservations | Нет  | 
+| calculatePrice | Нет  | 
+| catalogs | Нет  | 
+| commercialReservationOrders | Нет  | 
+| reservationOrders | Нет  | 
+| reservationOrders/calculateRefund | Нет  | 
+| reservationOrders/merge | Нет  | 
+| reservationOrders/reservations | Нет  | 
+| reservationOrders/reservations/revisions | Нет  | 
+| reservationOrders/return | Нет  | 
+| reservationOrders/split | Нет  | 
+| reservationOrders/swap | Нет  | 
+| reservations | Нет  | 
+| ресурсов | Нет  | 
+| validateReservationOrder | Нет  | 
+
+## <a name="microsoftcdn"></a>Microsoft.Cdn
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | edgenodes | Нет  | 
@@ -136,36 +250,79 @@ ms.locfileid: "54000297"
 | profiles/endpoints/origins | Нет  | 
 | validateProbe | Нет  | 
 
-## <a name="classic-compute"></a>Классические вычислительные ресурсы
+## <a name="microsoftcertificateregistration"></a>Microsoft.CertificateRegistration
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
+| certificateOrders | Yes | 
+| certificateOrders/certificates | Нет  | 
+| validateCertificateRegistrationInformation | Нет  | 
+
+## <a name="microsoftclassiccompute"></a>Microsoft.ClassicCompute
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| capabilities | Нет  | 
 | domainNames | Нет  | 
+| domainNames/capabilities | Нет  | 
+| domainNames/internalLoadBalancers | Нет  | 
+| domainNames/serviceCertificates | Нет  | 
 | domainNames/slots | Нет  | 
 | domainNames/slots/roles | Нет  | 
+| moveSubscriptionResources | Нет  | 
+| operatingSystemFamilies | Нет  | 
+| operatingSystems | Нет  | 
+| quotas | Нет  | 
+| resourceTypes | Нет  | 
+| validateSubscriptionMoveAvailability | Нет  | 
 | virtualMachines | Нет  | 
 | virtualMachines/diagnosticSettings | Нет  | 
-| virtualMachines/metricDefinitions | Нет  | 
-| virtualMachines/metrics | Нет  | 
 
-## <a name="classic-infrastructure-migrate"></a>Миграция классической инфраструктуры
+## <a name="microsoftclassicinfrastructuremigrate"></a>Microsoft.ClassicInfrastructureMigrate
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | classicInfrastructureResources | Нет  | 
 
-## <a name="classic-network"></a>Классическая сеть
+## <a name="microsoftclassicnetwork"></a>Microsoft.ClassicNetwork
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
+| capabilities | Нет  | 
+| expressRouteCrossConnections | Нет  | 
+| expressRouteCrossConnections/peerings | Нет  | 
+| gatewaySupportedDevices | Нет  | 
+| networkSecurityGroups | Нет  | 
+| quotas | Нет  | 
+| reservedIps | Нет  | 
 | virtualNetworks | Нет  | 
 | virtualNetworks/remoteVirtualNetworkPeeringProxies | Нет  | 
 | virtualNetworks/virtualNetworkPeerings | Нет  | 
 
-## <a name="classic-storage"></a>Классическая служба хранилища
+## <a name="microsoftclassicstorage"></a>Microsoft.ClassicStorage
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
+| capabilities | Нет  | 
+| disks | Нет  | 
+| images | Нет  | 
+| osImages | Нет  | 
+| osPlatformImages | Нет  | 
+| publicImages | Нет  | 
+| quotas | Нет  | 
+| storageAccounts | Нет  | 
 | storageAccounts/services | Нет  | 
 | storageAccounts/services/diagnosticSettings | Нет  | 
+| storageAccounts/vmImages | Нет  | 
+| vmImages | Нет  | 
 
-## <a name="compute"></a>Службы вычислений
+## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| accounts | Yes | 
+
+## <a name="microsoftcommerce"></a>Microsoft.Commerce
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| RateCard | Нет  | 
+| UsageAggregates | Нет  | 
+
+## <a name="microsoftcompute"></a>Microsoft.Compute;
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | availabilitySets | Yes | 
@@ -179,7 +336,6 @@ ms.locfileid: "54000297"
 | virtualMachines | Yes | 
 | virtualMachines/diagnosticSettings | Нет  | 
 | virtualMachines/extensions | Yes | 
-| virtualMachines/metricDefinitions | Нет  | 
 | virtualMachineScaleSets | Yes | 
 | virtualMachineScaleSets/extensions | Нет  | 
 | virtualMachineScaleSets/networkInterfaces | Нет  | 
@@ -187,119 +343,234 @@ ms.locfileid: "54000297"
 | virtualMachineScaleSets/virtualMachines | Нет  | 
 | virtualMachineScaleSets/virtualMachines/networkInterfaces | Нет  | 
 
-## <a name="container"></a>Контейнер
+## <a name="microsoftconsumption"></a>Microsoft.Consumption
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| containerGroups | Yes | 
+| AggregatedCost | Нет  | 
+| сведения о балансе. | Нет  | 
+| сведения о бюджете; | Нет  | 
+| Расходы | Нет  | 
+| CostTags | Нет  | 
+| credits | Нет  | 
+| events | Нет  | 
+| Прогнозы | Нет  | 
+| lots | Нет  | 
+| Marketplace | Нет  | 
+| Pricesheets | Нет  | 
+| products | Нет  | 
+| ReservationDetails | Нет  | 
+| ReservationRecommendations | Нет  | 
+| ReservationSummaries | Нет  | 
+| ReservationTransactions | Нет  | 
+| Теги | Нет  | 
+| Термины | Нет  | 
+| UsageDetails | Нет  | 
 
-## <a name="container-instance"></a>Экземпляр контейнера
+## <a name="microsoftcontainerinstance"></a>Microsoft.ContainerInstance
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | containerGroups | Yes | 
 | serviceAssociationLinks | Нет  | 
 
-## <a name="container-registry"></a>Реестр контейнеров
+## <a name="microsoftcontainerregistry"></a>Microsoft.ContainerRegistry
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | registries | Yes | 
-| registries/replications | Yes |
-| registries/tasks | Yes |
-| registries/webhooks | Yes |
+| registries/builds | Нет  | 
+| registries/builds/cancel | Нет  | 
+| registries/builds/getLogLink | Нет  | 
+| registries/buildTasks | Yes | 
+| registries/buildTasks/steps | Нет  | 
+| registries/eventGridFilters | Нет  | 
+| registries/getBuildSourceUploadUrl | Нет  | 
+| registries/GetCredentials | Нет  | 
+| registries/importImage | Нет  | 
+| registries/queueBuild | Нет  | 
+| registries/regenerateCredential | Нет  | 
+| registries/regenerateCredentials | Нет  | 
+| registries/replications | Yes | 
+| registries/runs | Нет  | 
+| registries/runs/cancel | Нет  | 
+| registries/scheduleRun | Нет  | 
+| registries/tasks | Yes | 
+| registries/updatePolicies | Нет  | 
+| registries/webhooks | Yes | 
+| registries/webhooks/getCallbackConfig | Нет  | 
+| registries/webhooks/ping | Нет  | 
 
-## <a name="container-service"></a>Служба контейнеров
+## <a name="microsoftcontainerservice"></a>Microsoft.ContainerService
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | containerServices | Yes | 
+| managedClusters | Yes | 
 
-## <a name="cortana-analytics"></a>Cortana Analytics
+## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| веб-масштабированием; | Yes | 
+| updateCommunicationPreference | Нет  | 
+
+## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | accounts | Yes | 
 
-## <a name="cosmos-db"></a>База данных Cosmos
+## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| databaseAccounts | Yes | 
-| databaseAccountNames | Нет  | 
-
-## <a name="cost-management"></a>Управление затратами
-| Тип ресурса | Поддержка тегов |
-| ------------- | ----------- |
+| Оповещения | Нет  | 
+| BillingAccounts | Нет  | 
 | Соединители | Yes | 
+| Departments | Нет  | 
+| Измерения | Нет  | 
+| EnrollmentAccounts | Нет  | 
+| Запрос | Нет  | 
+| регистрация | Нет  | 
+| Reportconfigs | Нет  | 
+| Отчеты | Нет  | 
 
-## <a name="data-box"></a>Data Box
+## <a name="microsoftcustomerinsights"></a>Microsoft.CustomerInsights
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| hubs | Yes | 
+| hubs/authorizationPolicies | Нет  | 
+| hubs/connectors | Нет  | 
+| hubs/connectors/mappings | Нет  | 
+| hubs/interactions | Нет  | 
+| hubs/kpi | Нет  | 
+| hubs/links | Нет  | 
+| hubs/profiles | Нет  | 
+| hubs/roleAssignments | Нет  | 
+| hubs/roles | Нет  | 
+| hubs/suggestTypeSchema | Нет  | 
+| hubs/views | Нет  | 
+| hubs/widgetTypes | Нет  | 
+
+## <a name="microsoftdatabox"></a>Microsoft.DataBox
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | jobs | Yes | 
 
-## <a name="data-box-edge"></a>Data Box Edge
+## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | DataBoxEdgeDevices | Yes | 
 
-## <a name="data-catalog"></a>Каталог данных
+## <a name="microsoftdatabricks"></a>Microsoft.Databricks
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| workspaces | Yes | 
+| workspaces/virtualNetworkPeerings | Нет  | 
+
+## <a name="microsoftdatacatalog"></a>Microsoft.DataCatalog
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | catalogs | Yes | 
 
-## <a name="data-connect"></a>Подключение к данным
+## <a name="microsoftdataconnect"></a>Microsoft.DataConnect
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | connectionManagers | Yes | 
 
-## <a name="data-factory"></a>Фабрика данных
+## <a name="microsoftdatafactory"></a>Microsoft.DataFactory
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | dataFactories | Yes | 
 | dataFactories/diagnosticSettings | Нет  | 
-| dataFactories/metricDefinitions | Нет  | 
 | dataFactorySchema | Нет  | 
 | factories | Yes | 
 | factories/integrationRuntimes | Нет  | 
 
-## <a name="devices"></a>Устройства
+## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| accounts | Yes | 
+| accounts/dataLakeStoreAccounts | Нет  | 
+| accounts/storageAccounts | Нет  | 
+| accounts/storageAccounts/containers | Нет  | 
+
+## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| accounts | Yes | 
+| accounts/eventGridFilters | Нет  | 
+| accounts/firewallRules | Нет  | 
+
+## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| services; | Yes | 
+| services/projects | Yes | 
+
+## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| servers | Yes | 
+| servers/recoverableServers | Нет  | 
+| servers/virtualNetworkRules | Нет  | 
+
+## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| servers | Yes | 
+| servers/recoverableServers | Нет  | 
+| servers/virtualNetworkRules | Нет  | 
+
+## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| servers | Yes | 
+| servers/advisors | Нет  | 
+| servers/queryTexts | Нет  | 
+| servers/recoverableServers | Нет  | 
+| servers/topQueryStatistics | Нет  | 
+| servers/virtualNetworkRules | Нет  | 
+| servers/waitStatistics | Нет  | 
+
+## <a name="microsoftdevices"></a>Microsoft.Devices
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | IotHubs | Yes | 
 | IotHubs/eventGridFilters | Нет  | 
 | ProvisioningServices | Yes | 
+| usages | Нет  | 
 
-## <a name="devspaces"></a>Devspaces
+## <a name="microsoftdevspaces"></a>Microsoft.DevSpaces
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | controllers | Yes | 
 
-## <a name="devtest-lab"></a>DevTest Lab
+## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | labs | Yes | 
-| labs/artifactsources | Yes |
-| labs/costs | Yes |
-| labs/customimages | Yes |
-| labs/formulas | Yes |
-| labs/notificationchannels | Yes |
-| labs/policysets/policies | Yes |
-| labs/schedules | Yes |
 | labs/serviceRunners | Yes | 
-| labs/users | Yes |
-| labs/users/disks | Yes |
-| labs/users/environments | Yes |
-| labs/users/secrets | Yes |
-| labs/users/servicefabrics | Yes |
-| labs/users/servicefabrics/schedules | Yes |
 | labs/virtualMachines | Yes | 
-| labs/virtualmachines/schedules | Yes |
-| labs/virtualnetworks | Yes |
 | schedules | Yes | 
 
-## <a name="dynamics-lcs"></a>Dynamics LCS.
+## <a name="microsoftdocumentdb"></a>Microsoft.DocumentDB
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| databaseAccountNames | Нет  | 
+| databaseAccounts | Yes | 
+
+## <a name="microsoftdomainregistration"></a>Microsoft.DomainRegistration
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| domains | Yes | 
+| domains/domainOwnershipIdentifiers | Нет  | 
+| generateSsoRequest | Нет  | 
+| topLevelDomains | Нет  | 
+| validateDomainRegistrationInformation | Нет  | 
+
+## <a name="microsoftdynamicslcs"></a>Microsoft.DynamicsLcs
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | lcsprojects | Нет  | 
-| lcsprojects/connectors | Нет  | 
 | lcsprojects/clouddeployments | Нет  | 
+| lcsprojects/connectors | Нет  | 
 
-## <a name="event-grid"></a>Сетка событий Azure
+## <a name="microsofteventgrid"></a>Microsoft.EventGrid
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | domains | Yes | 
@@ -309,56 +580,118 @@ ms.locfileid: "54000297"
 | topics | Yes | 
 | topicTypes | Нет  | 
 
-## <a name="event-hub"></a>Концентратор событий
+## <a name="microsofteventhub"></a>Microsoft.EventHub
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | clusters | Yes | 
 | namespaces | Yes | 
-| namespaces/AuthorizationRules | Нет  |
-| namespaces/disasterRecoveryConfigs | Нет  |
-| namespaces/eventhubs | Нет  |
-| namespaces/eventhubs/authorizationRules | Нет  |
-| namespaces/eventhubs/consumergroups | Нет  |
+| namespaces/authorizationrules | Нет  | 
+| namespaces/disasterrecoveryconfigs | Нет  | 
+| namespaces/eventhubs | Нет  | 
+| namespaces/eventhubs/authorizationrules | Нет  | 
+| namespaces/eventhubs/consumergroups | Нет  | 
 
-## <a name="hana-on-azure"></a>HANA в Azure
+## <a name="microsoftfeatures"></a>Microsoft.Features
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| features | Нет  | 
+| providers | Нет  | 
+
+## <a name="microsoftgallery"></a>Microsoft.Gallery
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| enroll | Нет  | 
+| galleryitems | Нет  | 
+| generateartifactaccessuri | Нет  | 
+| myareas | Нет  | 
+| myareas/areas | Нет  | 
+| myareas/areas/areas | Нет  | 
+| myareas/areas/areas/galleryitems | Нет  | 
+| myareas/areas/galleryitems | Нет  | 
+| myareas/galleryitems | Нет  | 
+| регистрация | Нет  | 
+| ресурсов | Нет  | 
+| retrieveresourcesbyid | Нет  | 
+
+## <a name="microsoftguestconfiguration"></a>Microsoft.GuestConfiguration
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| guestConfigurationAssignments | Нет  | 
+| software | Нет  | 
+
+## <a name="microsofthanaonazure"></a>Microsoft.HanaOnAzure
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | hanaInstances | Yes | 
 
-## <a name="hdinsight"></a>HDInsight
+## <a name="microsofthdinsight"></a>Microsoft.HDInsight
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | clusters | Yes | 
 | clusters/applications | Нет  | 
 
-## <a name="import-export"></a>Импорт и экспорт
+## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | jobs | Yes | 
 
-## <a name="insights"></a>Аналитика
+## <a name="microsoftinformationprotection"></a>Microsoft.InformationProtection
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| actionGroups | Yes |
-| activityLogAlerts | Yes |
-| alertrules | Yes |
+| labelGroups | Нет  | 
+| labelGroups/labels | Нет  | 
+| labelGroups/labels/conditions | Нет  | 
+| labelGroups/labels/subLabels | Нет  | 
+| labelGroups/labels/subLabels/conditions | Нет  | 
+
+## <a name="microsoftinsights"></a>microsoft.insights
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| actiongroups | Yes | 
+| activityLogAlerts | Yes | 
+| alertrules | Yes | 
 | automatedExportSettings | Нет  | 
+| autoscalesettings | Yes | 
+| baseline | Нет  | 
+| calculatebaseline | Нет  | 
 | components | Yes | 
 | components/events | Нет  | 
-| components/metrics | Нет  | 
 | components/pricingPlans | Нет  | 
 | components/query | Нет  | 
+| diagnosticSettings | Нет  | 
+| diagnosticSettingsCategories | Нет  | 
+| eventCategories | Нет  | 
+| eventtypes | Нет  | 
+| extendedDiagnosticSettings | Нет  | 
+| logDefinitions | Нет  | 
+| logprofiles | Нет  | 
 | журналы | Нет  | 
-| metricAlerts | Yes |
 | migrateToNewPricingModel | Нет  | 
 | myWorkbooks | Нет  | 
 | Запросы | Нет  | 
 | rollbackToLegacyPricingModel | Нет  | 
 | scheduledqueryrules | Yes | 
+| vmInsightsOnboardingStatuses | Нет  | 
 | webtests | Yes | 
 | workbooks | Yes | 
 
-## <a name="key-vault"></a>Key Vault
+## <a name="microsoftintune"></a>Microsoft.Intune
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| diagnosticSettings | Нет  | 
+| diagnosticSettingsCategories | Нет  | 
+
+## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| IoTApps | Yes | 
+
+## <a name="microsoftiotspaces"></a>Microsoft.IoTSpaces
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| График | Yes | 
+
+## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | deletedVaults | Нет  | 
@@ -366,41 +699,117 @@ ms.locfileid: "54000297"
 | vaults/accessPolicies | Нет  | 
 | vaults/secrets | Нет  | 
 
-## <a name="log-analytics"></a>Log Analytics
+## <a name="microsoftkusto"></a>Microsoft.Kusto
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| clusters | Yes | 
+| clusters/databases | Нет  | 
+| clusters/databases/dataconnections | Нет  | 
+| clusters/databases/eventhubconnections | Нет  | 
+
+## <a name="microsoftlabservices"></a>Microsoft.LabServices
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| labaccounts | Yes | 
+| users | Нет  | 
+
+## <a name="microsoftlocationbasedservices"></a>Microsoft.LocationBasedServices
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| accounts | Yes | 
+
+## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| accounts | Yes | 
+
+## <a name="microsoftloganalytics"></a>Microsoft.LogAnalytics
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | журналы | Нет  | 
 
-## <a name="logic"></a>Логика
+## <a name="microsoftlogic"></a>Microsoft.Logic
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | integrationAccounts | Yes | 
 | workflows | Yes | 
 
-## <a name="machine-learning-services"></a>Службы машинного обучения
+## <a name="microsoftmachinelearning"></a>Microsoft.MachineLearning
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| commitmentPlans | Yes | 
+| webServices | Yes | 
+| Рабочие области | Yes | 
+
+## <a name="microsoftmachinelearningexperimentation"></a>Microsoft.MachineLearningExperimentation
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| accounts | Yes | 
+| accounts/workspaces | Yes | 
+| accounts/workspaces/projects | Yes | 
+| teamAccounts | Yes | 
+| teamAccounts/workspaces | Yes | 
+| teamAccounts/workspaces/projects | Yes | 
+
+## <a name="microsoftmachinelearningmodelmanagement"></a>Microsoft.MachineLearningModelManagement
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| accounts | Yes | 
+
+## <a name="microsoftmachinelearningservices"></a>Microsoft.MachineLearningServices
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | workspaces | Yes | 
 | workspaces/computes | Нет  | 
 
-## <a name="managed-identity"></a>Управляемое удостоверение
+## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | Identities | Нет  | 
 | userAssignedIdentities | Yes | 
 
-## <a name="marketplace-apps"></a>Приложения Microsoft Azure Marketplace
+## <a name="microsoftmanagement"></a>Microsoft.Management
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| getEntities | Нет  | 
+| managementGroups | Нет  | 
+| ресурсов | Нет  | 
+| startTenantBackfill | Нет  | 
+| tenantBackfillStatus | Нет  | 
+
+## <a name="microsoftmaps"></a>Microsoft.Maps
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| accounts | Yes | 
+| accounts/eventGridFilters | Нет  | 
+
+## <a name="microsoftmarketplace"></a>Microsoft.Marketplace
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| offers | Нет  | 
+| offerTypes | Нет  | 
+| offerTypes/publishers | Нет  | 
+| offerTypes/publishers/offers | Нет  | 
+| offerTypes/publishers/offers/plans | Нет  | 
+| offerTypes/publishers/offers/plans/agreements | Нет  | 
+| offerTypes/publishers/offers/plans/configs | Нет  | 
+| offerTypes/publishers/offers/plans/configs/importImage | Нет  | 
+| privategalleryitems | Нет  | 
+| products | Нет  | 
+
+## <a name="microsoftmarketplaceapps"></a>Microsoft.MarketplaceApps
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | classicDevServices | Yes | 
+| updateCommunicationPreference | Нет  | 
 
-## <a name="marketplace-ordering"></a>Упорядочение Microsoft Azure Marketplace
+## <a name="microsoftmarketplaceordering"></a>Microsoft.MarketplaceOrdering
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | agreements | Нет  | 
 | offertypes | Нет  | 
 
-## <a name="media"></a>Служба мультимедиа
+## <a name="microsoftmedia"></a>Microsoft.Media
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | mediaservices | Yes | 
@@ -413,27 +822,53 @@ ms.locfileid: "54000297"
 | mediaservices/liveEvents | Yes | 
 | mediaservices/liveEvents/liveOutputs | Нет  | 
 | mediaservices/liveOutputOperations | Нет  | 
-| mediaservices/streamingEndpoints | Yes | 
 | mediaservices/streamingEndpointOperations | Нет  | 
+| mediaservices/streamingEndpoints | Yes | 
 | mediaservices/streamingLocators | Нет  | 
 | mediaservices/streamingPolicies | Нет  | 
 | mediaservices/transforms | Нет  | 
 | mediaservices/transforms/jobs | Нет  | 
 
-## <a name="network"></a>Сеть
+## <a name="microsoftmigrate"></a>Microsoft.Migrate
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| projects | Yes | 
+
+## <a name="microsoftnetwork"></a>Microsoft.Network.
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | applicationGateways | Yes | 
 | applicationSecurityGroups | Yes | 
+| azureFirewallFqdnTags | Нет  | 
 | azureFirewalls | Yes | 
+| bgpServiceCommunities | Нет  | 
 | connections | Yes | 
+| ddosCustomPolicies | Yes | 
 | ddosProtectionPlans | Yes | 
+| dnsOperationStatuses | Нет  | 
+| dnszones | Yes | 
+| dnszones/A | Нет  | 
+| dnszones/AAAA | Нет  | 
+| dnszones/all | Нет  | 
+| dnszones/CAA | Нет  | 
+| dnszones/CNAME | Нет  | 
+| dnszones/MX | Нет  | 
+| dnszones/NS | Нет  | 
+| dnszones/PTR | Нет  | 
+| dnszones/recordsets | Нет  | 
+| dnszones/SOA | Нет  | 
+| dnszones/SRV | Нет  | 
+| dnszones/TXT | Нет  | 
 | expressRouteCircuits | Yes | 
+| expressRouteServiceProviders | Нет  | 
 | frontdoors | Yes | 
 | frontdoorWebApplicationFirewallPolicies | Yes | 
+| getDnsResourceReference | Нет  | 
 | interfaceEndpoints | Yes | 
+| internalNotify | Нет  | 
 | loadBalancers | Yes | 
 | localNetworkGateways | Yes | 
+| natGateways | Yes | 
 | networkIntentPolicies | Yes | 
 | networkInterfaces | Yes | 
 | networkProfiles | Yes | 
@@ -448,184 +883,248 @@ ms.locfileid: "54000297"
 | routeFilters | Yes | 
 | routeTables | Yes | 
 | serviceEndpointPolicies | Yes | 
+| trafficManagerGeographicHierarchies | Нет  | 
+| trafficmanagerprofiles | Yes | 
+| trafficmanagerprofiles/heatMaps | Нет  | 
 | virtualHubs | Yes | 
-| virtualNetworks | Yes | 
 | virtualNetworkGateways | Yes | 
+| virtualNetworks | Yes | 
 | virtualNetworkTaps | Yes | 
 | virtualWans | Yes | 
 | vpnGateways | Yes | 
 | vpnSites | Yes | 
 | webApplicationFirewallPolicies | Yes | 
 
-## <a name="notification-hubs"></a>Центры уведомлений
+## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | namespaces | Yes | 
 | namespaces/notificationHubs | Yes | 
 
-## <a name="operational-insights"></a>Operational Insights;
+## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| workspaces | Yes |
-| workspaces/dataSources | Yes |
-| workspaces/linkedServices | Yes |
-| workspaces/savedSearches | Нет  |
-| workspaces/storageInsightConfigs | Yes |
+| устройства | Нет  | 
+| linkTargets | Нет  | 
+| storageInsightConfigs | Нет  | 
+| workspaces | Yes | 
+| workspaces/dataSources | Нет  | 
+| workspaces/linkedServices | Нет  | 
+| workspaces/query | Нет  | 
 
-## <a name="operations-management"></a>Пакет Operations Management
+## <a name="microsoftoperationsmanagement"></a>Microsoft.OperationsManagement
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| solutions | Нет  |
+| managementassociations | Нет  | 
+| managementconfigurations | Yes | 
+| solutions | Yes | 
+| узел "Представления" | Yes | 
 
-## <a name="portal"></a>Microsoft Azure
+## <a name="microsoftpolicyinsights"></a>Microsoft.PolicyInsights
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
+| policyEvents | Нет  | 
+| policyStates | Нет  | 
+| policyTrackedResources | Нет  | 
+| remediations | Нет  | 
+
+## <a name="microsoftportal"></a>Microsoft.Portal
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| consoles | Нет  | 
 | dashboards | Yes | 
+| userSettings | Нет  | 
 
-## <a name="portal-sdk"></a>Пакет средств разработки портала
-| Тип ресурса | Поддержка тегов |
-| ------------- | ----------- |
-| rootResources | Yes | 
-
-## <a name="power-bi"></a>Power BI
+## <a name="microsoftpowerbi"></a>Microsoft.PowerBI
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | workspaceCollections | Yes | 
 
-## <a name="recovery-services"></a>Службы восстановления
+## <a name="microsoftpowerbidedicated"></a>Microsoft.PowerBIDedicated
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| capacities | Yes | 
+
+## <a name="microsoftprojectoxford"></a>Microsoft.ProjectOxford
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| accounts | Yes | 
+
+## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | backupProtectedItems | Нет  | 
 | vaults | Yes | 
 
-## <a name="relay"></a>Передача
+## <a name="microsoftrelay"></a>Microsoft.Relay
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | namespaces | Yes | 
+| namespaces/authorizationrules | Нет  | 
+| namespaces/hybridconnections | Нет  | 
+| namespaces/hybridconnections/authorizationrules | Нет  | 
+| namespaces/wcfrelays | Нет  | 
+| namespaces/wcfrelays/authorizationrules | Нет  | 
 
-## <a name="resources"></a>Ресурсы
+## <a name="microsoftresourcegraph"></a>Microsoft.ResourceGraph
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| resourceGroups | Yes | 
-| subscriptions/resourceGroups | Yes | 
+| ресурсов | Нет  | 
+| subscriptionsStatus | Нет  | 
 
-## <a name="scheduler"></a>Планировщик
+## <a name="microsoftresourcehealth"></a>Microsoft.ResourceHealth
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| jobcollections | Yes | 
+| availabilityStatuses | Нет  | 
+| childAvailabilityStatuses | Нет  | 
+| childResources | Нет  | 
+| events | Нет  | 
+| impactedResources | Нет  | 
+| Уведомления | Нет  | 
+
+## <a name="microsoftresources"></a>Microsoft.Resources
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| deployments | Нет  | 
+| deployments/operations | Нет  | 
+| links | Нет  | 
+| notifyResourceJobs | Нет  | 
+| providers | Нет  | 
+| resourceGroups | Нет  | 
+| ресурсов | Нет  | 
+| subscriptions | Нет  | 
+| subscriptions/providers | Нет  | 
+| subscriptions/resourceGroups | Нет  | 
+| subscriptions/resourcegroups/resources | Нет  | 
+| subscriptions/resources | Нет  | 
+| subscriptions/tagnames | Нет  | 
+| subscriptions/tagNames/tagValues | Нет  | 
+| tenants | Нет  | 
+
+## <a name="microsoftsaas"></a>Microsoft.SaaS
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| веб-масштабированием; | Yes | 
+| saasresources | Нет  | 
+
+## <a name="microsoftscheduler"></a>Microsoft.Scheduler
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
 | flows | Yes | 
+| jobcollections | Yes | 
 
-## <a name="search"></a>поиска
+## <a name="microsoftsearch"></a>Microsoft.Search
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | resourceHealthMetadata | Нет  | 
 | searchServices | Yes | 
 
-## <a name="security"></a>Безопасность
+## <a name="microsoftsecurity"></a>Microsoft.Security
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
+| advancedThreatProtectionSettings | Нет  | 
+| оповещения | Нет  | 
+| allowedConnections | Нет  | 
+| appliances | Нет  | 
+| applicationWhitelistings | Нет  | 
+| AutoProvisioningSettings | Нет  | 
+| Compliances | Нет  | 
 | dataCollectionAgents | Нет  | 
+| discoveredSecuritySolutions | Нет  | 
+| externalSecuritySolutions | Нет  | 
+| InformationProtectionPolicies | Нет  | 
+| jitNetworkAccessPolicies | Нет  | 
+| monitoring | Нет  | 
+| monitoring/antimalware | Нет  | 
+| monitoring/baseline | Нет  | 
+| monitoring/patch | Нет  | 
+| политики | Нет  | 
+| pricings | Нет  | 
+| securityContacts | Нет  | 
+| securitySolutions | Нет  | 
+| securitySolutionsReferenceData | Нет  | 
+| securityStatus | Нет  | 
+| securityStatus/endpoints | Нет  | 
+| securityStatus/subnets | Нет  | 
+| securityStatus/virtualMachines | Нет  | 
+| securityStatuses | Нет  | 
+| securityStatusesSummaries | Нет  | 
+| Параметры | Нет  | 
+| задачи; | Нет  | 
+| topologies | Нет  | 
+| workspaceSettings | Нет  | 
 
-## <a name="service-bus"></a>Служебная шина Azure
+## <a name="microsoftsecuritygraph"></a>Microsoft.SecurityGraph
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| diagnosticSettings | Нет  | 
+| diagnosticSettingsCategories | Нет  | 
+
+## <a name="microsoftservicebus"></a>Microsoft.ServiceBus
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | namespaces | Yes | 
+| namespaces/authorizationrules | Нет  | 
+| namespaces/disasterrecoveryconfigs | Нет  | 
 | namespaces/eventgridfilters | Нет  | 
+| namespaces/queues | Нет  | 
+| namespaces/queues/authorizationrules | Нет  | 
+| namespaces/topics | Нет  | 
+| namespaces/topics/authorizationrules | Нет  | 
+| namespaces/topics/subscriptions | Нет  | 
+| namespaces/topics/subscriptions/rules | Нет  | 
+| premiumMessagingRegions | Нет  | 
 
-## <a name="service-fabric"></a>Service Fabric
+## <a name="microsoftservicefabric"></a>Microsoft.ServiceFabric
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | clusters | Yes | 
 | clusters/applications | Нет  | 
 
-## <a name="service-fabric-mesh"></a>Служба Microsoft Azure Service Fabric
+## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | веб-масштабированием; | Yes | 
+| gateways | Yes | 
 | networks | Yes | 
+| секретные коды | Yes | 
 | volumes. | Yes | 
 
-## <a name="signalr-service"></a>Служба SignalR
+## <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | SignalR | Yes | 
 
-## <a name="site-recovery"></a>Site Recovery
+## <a name="microsoftsolutions"></a>Microsoft.Solutions
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| SiteRecoveryVault | Yes | 
-
-## <a name="solutions"></a>Решения
-| Тип ресурса | Поддержка тегов |
-| ------------- | ----------- |
-| веб-масштабированием; | Yes | 
+| applianceDefinitions | Yes | 
+| appliances | Yes | 
 | applicationDefinitions | Yes | 
+| веб-масштабированием; | Yes | 
 | jitRequests | Yes | 
 
-## <a name="sql"></a>SQL
+## <a name="microsoftsql"></a>Microsoft.SQL
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| locations/instanceFailoverGroups | Нет  |
-| managedInstances | Yes |
-| managedInstances/databases | Yes |
-| managedInstances/databases/backupShortTermRetentionPolicies | Нет  |
-| managedInstances/databases/schemas/tables/columns/sensitivityLabels | Нет  |
-| managedInstances/databases/vulnerabilityAssessments | Нет  |
-| managedInstances/databases/vulnerabilityAssessments/rules/baselines | Нет  |
-| managedInstances/encryptionProtector | Нет  |
-| managedInstances/keys | Нет  |
-| managedInstances/restorableDroppedDatabases/backupShortTermRetentionPolicies | Нет  |
-| managedInstances/vulnerabilityAssessments | Нет  |
-| servers | Yes |
-| servers/administrators | Нет  |
-| servers/advisors | Нет  |
-| servers/auditingSettings | Нет  |
-| servers/backupLongTermRetentionVaults | Нет  |
-| servers/communicationLinks | Нет  |
-| servers/connectionPolicies | Нет  |
-| servers/databases | Yes |
-| servers/databases/advisors | Нет  |
-| servers/databases/auditingSettings | Нет  |
-| servers/databases/backupLongTermRetentionPolicies | Нет  |
-| servers/databases/backupShortTermRetentionPolicies | Нет  |
-| servers/databases/connectionPolicies | Нет  |
-| servers/databases/dataMaskingPolicies | Нет  |
-| servers/databases/dataMaskingPolicies/rules | Нет  |
-| servers/databases/extendedAuditingSettings | Нет  |
-| servers/databases/extensions | Нет  |
-| servers/databases/geoBackupPolicies | Нет  |
-| servers/databases/schemas/tables/columns/sensitivityLabels | Нет  |
-| servers/databases/securityAlertPolicies | Нет  |
-| servers/databases/syncGroups | Нет  |
-| servers/databases/syncGroups/syncMembers | Нет  |
-| servers/databases/transparentDataEncryption | Нет  |
-| servers/databases/vulnerabilityAssessments | Нет  |
-| servers/databases/vulnerabilityAssessments/rules/baselines | Нет  |
-| servers/disasterRecoveryConfiguration | Нет  |
-| servers/dnsAliases | Нет  |
-| servers/elasticPools | Yes |
-| servers/encryptionProtector | Нет  |
-| servers/extendedAuditingSettings | Нет  |
-| servers/failoverGroups | Yes |
-| servers/firewallRules | Нет  |
-| servers/jobAgents | Yes |
-| servers/jobAgents/credentials | Нет  |
-| servers/jobAgents/jobs | Нет  |
-| servers/jobAgents/jobs/executions | Нет  |
-| servers/jobAgents/jobs/steps | Нет  |
-| servers/jobAgents/targetGroups | Нет  |
-| servers/keys | Нет  |
-| servers/securityAlertPolicies | Нет  |
-| servers/syncAgents | Нет  |
-| servers/virtualNetworkRules | Нет  |
-| servers/vulnerabilityAssessments | Нет  |
+| servers | Yes | 
+| servers/administrators | Нет  | 
+| servers/communicationLinks | Нет  | 
+| servers/databases | Yes | 
+| servers/encryptionProtector | Нет  | 
+| servers/keys | Нет  | 
+| servers/restorableDroppedDatabases | Нет  | 
+| servers/serviceobjectives | Нет  | 
+| servers/tdeCertificates | Нет  | 
 
-## <a name="sql-virtual-machine"></a>Виртуальная машина SQL
+## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| DWVM | Yes | 
+| SqlVirtualMachineGroups | Yes | 
+| SqlVirtualMachineGroups/AvailabilityGroupListeners | Нет  | 
+| SqlVirtualMachines | Yes | 
 
-## <a name="storage"></a>Хранилище
+## <a name="microsoftstorage"></a>Microsoft.Storage;
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | storageAccounts | Yes | 
@@ -633,10 +1132,10 @@ ms.locfileid: "54000297"
 | storageAccounts/fileServices | Нет  | 
 | storageAccounts/queueServices | Нет  | 
 | storageAccounts/services | Нет  | 
-| storageAccounts/services/metricDefinitions | Нет  | 
 | storageAccounts/tableServices | Нет  | 
+| usages | Нет  | 
 
-## <a name="storage-sync"></a>Синхронизация службы хранилища
+## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | storageSyncServices | Yes | 
@@ -646,37 +1145,51 @@ ms.locfileid: "54000297"
 | storageSyncServices/syncGroups/serverEndpoints | Нет  | 
 | storageSyncServices/workflows | Нет  | 
 
-## <a name="storsimple"></a>StorSimple
+## <a name="microsoftstorsimple"></a>Microsoft.StorSimple
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | managers | Yes | 
 
-## <a name="stream-analytics"></a>Stream Analytics
+## <a name="microsoftstreamanalytics"></a>Microsoft.StreamAnalytics
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | streamingjobs | Yes | 
 | streamingjobs/diagnosticSettings | Нет  | 
-| streamingjobs/metricDefinitions | Нет  | 
 
-## <a name="subscription"></a>Подписка
+## <a name="microsoftsubscription"></a>Microsoft.Subscription
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
+| CreateSubscription | Нет  | 
 | SubscriptionDefinitions | Нет  | 
 | SubscriptionOperations | Нет  | 
 
-## <a name="support"></a>Поддержка
+## <a name="microsoftsupport"></a>microsoft.support
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | supporttickets | Нет  | 
 
-## <a name="visual-studio"></a>Visual Studio
+## <a name="microsoftterraformoss"></a>Microsoft.TerraformOSS
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| providerRegistrations | Yes | 
+| ресурсов | Yes | 
+
+## <a name="microsofttimeseriesinsights"></a>Microsoft.TimeSeriesInsights
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| environments | Yes | 
+| environments/accessPolicies | Нет  | 
+| environments/eventsources | Yes | 
+| environments/referenceDataSets | Yes | 
+
+## <a name="microsoftvisualstudio"></a>microsoft.visualstudio
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | учетная запись | Yes | 
 | account/extension | Yes | 
 | account/project | Yes | 
 
-## <a name="web"></a>Web
+## <a name="microsoftweb"></a>Microsoft.Web
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
 | apiManagementAccounts | Нет  | 
@@ -697,10 +1210,14 @@ ms.locfileid: "54000297"
 | deletedSites | Нет  | 
 | functions | Нет  | 
 | hostingEnvironments | Yes | 
-| hostingEnvironments/metrics | Нет  | 
 | hostingEnvironments/multiRolePools | Нет  | 
+| hostingEnvironments/multiRolePools/instances | Нет  | 
 | hostingEnvironments/workerPools | Нет  | 
+| hostingEnvironments/workerPools/instances | Нет  | 
 | publishingUsers | Нет  | 
+| к просмотру фильмов | Нет  | 
+| resourceHealthMetadata | Нет  | 
+| runtimes | Нет  | 
 | serverFarms | Yes | 
 | serverFarms/workers | Нет  | 
 | sites | Yes | 
@@ -708,21 +1225,37 @@ ms.locfileid: "54000297"
 | sites/hostNameBindings | Нет  | 
 | sites/instances | Нет  | 
 | sites/instances/extensions | Нет  | 
-| sites/metrics | Нет  | 
 | sites/premieraddons | Yes | 
+| sites/recommendations | Нет  | 
+| sites/resourceHealthMetadata | Нет  | 
 | sites/slots | Yes | 
 | sites/slots/hostNameBindings | Нет  | 
 | sites/slots/instances | Нет  | 
 | sites/slots/instances/extensions | Нет  | 
-| sites/slots/metrics | Нет  | 
 | sourceControls | Нет  | 
 | validate | Нет  | 
 | verifyHostingEnvironmentVnet | Нет  | 
 
-## <a name="xrm"></a>XRM
+## <a name="microsoftwindowsdefenderatp"></a>Microsoft.WindowsDefenderATP
 | Тип ресурса | Поддержка тегов |
 | ------------- | ----------- |
-| organizations | Нет  | 
+| diagnosticSettings | Нет  | 
+| diagnosticSettingsCategories | Нет  | 
+
+## <a name="microsoftwindowsiot"></a>Microsoft.WindowsIoT
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| DeviceServices | Yes | 
+
+## <a name="microsoftworkloadmonitor"></a>Microsoft.WorkloadMonitor
+| Тип ресурса | Поддержка тегов |
+| ------------- | ----------- |
+| components | Нет  | 
+| componentsSummary | Нет  | 
+| monitorInstances | Нет  | 
+| monitorInstancesSummary | Нет  | 
+| monitors | Нет  | 
+| notificationSettings | Нет  | 
 
 ## <a name="next-steps"></a>Дополнительная информация
 Сведения о том, как применить теги к ресурсам, см. в статье, посвященной [использованию тегов для организации ресурсов Azure](resource-group-using-tags.md).

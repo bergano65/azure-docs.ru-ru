@@ -10,12 +10,12 @@ ms.component: manage
 ms.date: 08/13/2018
 ms.author: twounder
 ms.reviewer: twounder
-ms.openlocfilehash: c52fcd544e22c274d0e9053da93d2b9dee0df695
-ms.sourcegitcommit: f94f84b870035140722e70cab29562e7990d35a3
+ms.openlocfilehash: 11125fb1c78852a048787e99d78bf4cb941184fa
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43286638"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54320367"
 ---
 # <a name="whats-new-in-azure-sql-data-warehouse-august-2018"></a>Что нового в Хранилище данных SQL Azure? Август 2018 г.
 Хранилище данных SQL Azure постоянно совершенствуется. В этой статье описаны новые возможности и изменения, вступившие в силу с августа 2018 года.
@@ -23,9 +23,9 @@ ms.locfileid: "43286638"
 ## <a name="automatic-intelligent-insights"></a>Автоматический Intelligent Insights
 Корпорация Майкрософт представила [автоматический Intelligent Insights](https://azure.microsoft.com/blog/automatic-intelligent-insights-to-optimize-performance-with-sql-data-warehouse/), чтобы выполнить обязательство по внедрению автоматизации в хранилище данных в облаке. Больше не нужно будет отслеживать хранилище данных на неравномерное распределение данных и неоптимальную статистику таблиц. Без дополнительной платы хранилище данных SQL предоставляет Intelligent Insights для всех экземпляров Gen2. Благодаря интеграции с [Помощником по Azure](https://docs.microsoft.com/azure/advisor/advisor-performance-recommendations) можно автоматически получать лучшие практические рекомендации по повышению производительности активных рабочих нагрузок. Хранилище данных SQL анализирует рабочие нагрузки и выводит рекомендации на основе вашего использования. Этот анализ проводится ежедневно и дает возможность отслеживать отчеты об использовании и рекомендации по улучшению рабочей нагрузки.
 
-Рекомендации можно просмотреть на портале Помощника по Azure: ![рекомендации на портале Помощника по Azure для Хранилища данных SQL Azure](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/4e205b6d-df04-48db-8eec-d591f2592cf4.png)
+Рекомендации можно просмотреть на портале Помощника по Azure: ![Рекомендации на портале Помощника по Azure для Хранилища данных SQL Azure](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/4e205b6d-df04-48db-8eec-d591f2592cf4.png)
 
-Вы также можете детальнее рассмотреть каждую категорию, чтобы просмотреть рекомендации по определенному оповещению: ![сведения о рекомендации на портале Помощника по Azure для Хранилища данных SQL Azure](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/3c42426e-6969-46e3-9025-c34c0755a302.png)
+Вы также можете детальнее рассмотреть каждую категорию, чтобы просмотреть рекомендации по определенному оповещению: ![Сведения о рекомендации на портале Помощника по Azure для Хранилища данных SQL Azure](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/3c42426e-6969-46e3-9025-c34c0755a302.png)
 
 
 ## <a name="bug-fixes"></a>Исправления ошибок

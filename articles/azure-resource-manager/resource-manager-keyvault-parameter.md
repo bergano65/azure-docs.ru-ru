@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/10/2018
 ms.author: tomfitz
-ms.openlocfilehash: 06719f3a92dae805081ea85c346df97ebed0e0dc
-ms.sourcegitcommit: 4b1083fa9c78cd03633f11abb7a69fdbc740afd1
+ms.openlocfilehash: a885fda23bb76091705ebe388f40a6eae7b56416
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "49078076"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54351515"
 ---
 # <a name="use-azure-key-vault-to-pass-secure-parameter-value-during-deployment"></a>Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания
 
@@ -84,14 +84,14 @@ Add-Type -AssemblyName System.Web
 [System.Web.Security.Membership]::GeneratePassword(16,3)
 ```
 
-В случае использования шаблона Resource Manager см. раздел с [руководством по интеграции Azure Key Vault в развертывании шаблона Resource Manager](./resource-manager-tutorial-use-key-vault.md#prepare-the-key-vault).
+Сведения об использовании шаблона Resource Manager. Пошаговые инструкции см. в [руководстве Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./resource-manager-tutorial-use-key-vault.md#prepare-the-key-vault).
 
 > [!NOTE]
 > У каждой службы Azure есть определенные требования к паролю. Например, требования для виртуальных машин Azure см. в разделе.[Какие требования к паролю при создании виртуальной машины?](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm)
 
 ## <a name="enable-access-to-the-secret"></a>Разрешение доступа к секрету
 
-Кроме свойства `enabledForTemplateDeployment` с установленным значением `true` пользователь, развертывающий шаблон, должен иметь разрешение `Microsoft.KeyVault/vaults/deploy/action` для области, которая содержит Key Vault, в том числе группу ресурсов и хранилище ключей. Оно имеется у ролей [Владелец](../role-based-access-control/built-in-roles.md#owner) и [Участник](../role-based-access-control/built-in-roles.md#contributor). Если вы создаете хранилище ключей, у вас, как у владельца, есть разрешение. Если хранилище ключей находится в другой подписке, доступ предоставляется владельцем этого хранилища ключей.
+Кроме свойства `enabledForTemplateDeployment` с установленным значением `true` пользователь, развертывающий шаблон, должен иметь разрешение `Microsoft.KeyVault/vaults/deploy/action` для области, которая содержит Key Vault, в том числе группу ресурсов и хранилище ключей. Оно имеется у ролей [Владелец](../role-based-access-control/built-in-roles.md#owner) и [Участник](../role-based-access-control/built-in-roles.md#contributor). Если вы создаете хранилище ключей, у вас, как у владельца, есть разрешение. Если Key Vault находится в другой подписке, доступ предоставляется владельцем этого Key Vault.
 
 Ниже показано, как создать роль с минимальным разрешением и назначить пользователя
 1. Создание JSON-файла определения пользовательской роли

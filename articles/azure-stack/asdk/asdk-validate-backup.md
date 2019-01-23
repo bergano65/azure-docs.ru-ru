@@ -10,12 +10,12 @@ ms.topic: article
 ms.date: 09/05/2018
 ms.author: jeffgilb
 ms.reviewer: hectorl
-ms.openlocfilehash: 181f37fb72584e18cc963ba1ffde070379a1b0c6
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 12d5c2448bc6a5241f6aa4e283acdf9c5a0f602a
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52961471"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54265657"
 ---
 # <a name="use-the-asdk-to-validate-an-azure-stack-backup"></a>Проверка резервной копии Azure Stack с помощью ASDK
 После развертывания Azure Stack и подготовки ресурсов пользователей, таких как предложения, планы, квоты и подписки, следует [включить резервное копирование инфраструктуры Azure Stack](../azure-stack-backup-enable-backup-console.md). Регулярное резервное копирование инфраструктуры и его планирование гарантирует сохранность данных управления инфраструктурой в случае критического сбоя в работе оборудования или службы.

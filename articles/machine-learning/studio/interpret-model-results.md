@@ -1,26 +1,8 @@
 ---
-title: Интерпретация результатов модели в Студии машинного обучения Azure | Документация Майкрософт
-description: Выбор оптимального набора параметров для использования алгоритмов и визуализации выходных данных модели оценки.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 6230e5ab-a5c0-4c21-a061-47675ba3342c
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 11/29/2017
-ms.openlocfilehash: 9f8ff93efb74bca427cf74351af9d2442f9ab757
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53276491"
+заголовок: Интерпретация результатов модели в Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Выбор оптимального набора параметров для использования алгоритмов и визуализации выходных данных модели оценки.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 29.11.2017
 ---
 # <a name="interpret-model-results-in-azure-machine-learning-studio"></a>Интерпретация результатов модели в Студии машинного обучения Azure
 В этой статье объясняется, как визуализировать и интерпретировать результаты прогнозирования в студии машинного обучения Azure. Когда вы обучите модель и получите с ее помощью прогнозы (оценки модели), этот результат нужно интерпретировать.

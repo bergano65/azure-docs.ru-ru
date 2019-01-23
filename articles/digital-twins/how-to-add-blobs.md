@@ -6,15 +6,15 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 01/02/2019
+ms.date: 01/11/2019
 ms.author: adgera
 ms.custom: seodec18
-ms.openlocfilehash: 36f4caac38f2f4891af6f61b78b55c7eff15eae4
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: ffd7d71c33b569b396b9f8babf8105968ee525b9
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54116744"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54263073"
 ---
 # <a name="add-blobs-to-objects-in-azure-digital-twins"></a>Добавление больших двоичных объектов к объектам в Azure Digital Twins
 
@@ -24,7 +24,7 @@ Azure Digital Twins поддерживает присоединение боль
 
 [!INCLUDE [Digital Twins Management API familiarity](../../includes/digital-twins-familiarity.md)]
 
-## <a name="uploading-blobs-an-overview"></a>Отправка больших двоичных объектов: обзор
+## <a name="uploading-blobs-overview"></a>Обзор отправки больших двоичных объектов
 
 Вы можете использовать составные запросы для отправки больших двоичных объектов в определенные конечные точки и их соответствующие компоненты.
 
@@ -38,13 +38,94 @@ Azure Digital Twins поддерживает присоединение боль
 
 ![Схемы JSON][1]
 
+Метаданные большого двоичного объекта JSON соответствуют следующей модели:
+
+```JSON
+{
+    "parentId": "00000000-0000-0000-0000-000000000000",
+    "name": "My First Blob",
+    "type": "Map",
+    "subtype": "GenericMap",
+    "description": "A well chosen description",
+    "sharing": "None"
+  }
+```
+
+| Атрибут | type | ОПИСАНИЕ |
+| --- | --- | --- |
+| **parentId** | Строка | Родительская сущность, с которой связывается большой двоичный объект (пространства, устройства или пользователи) |
+| **name** |Строка | Понятное имя большого двоичного объекта |
+| **type** | Строка | Нельзя использовать типы большого двоичного объекта *type* и *typeId*.  |
+| **typeId** | Целое число  | Нельзя использовать идентификатор типов большого двоичного объекта *type* и *typeId*. |
+| **subtype** | Строка | Нельзя использовать подтипы большого двоичного объекта *subtype* и *subtypeId*. |
+| **subtypeId** | Целое число  | Нельзя использовать идентификатор подтипа большого двоичного объекта *subtype* и *subtypeId*. |
+| **description** | Строка | Настраиваемое описание большого двоичного объекта |
+| **Общий доступ** | Строка | Можно ли предоставить большой двоичный объект для общего доступа — перечисление [`None`, `Tree`, `Global`] |
+
+Метаданные большого двоичного объекта всегда передаются в качестве первого блока данных с помощью **Content-Type** `application/json` или как файл `.json`. Данные файла предоставляются во втором блоке и могут быть любого поддерживаемого типа MIME.
+
 Эти схемы модели подробно описаны в документации Swagger.
 
 [!INCLUDE [Digital Twins Swagger](../../includes/digital-twins-swagger.md)]
 
 Сведения об использовании справочной документации см. в статье [Использование Swagger с Digital Twins](./how-to-use-swagger.md).
 
-### <a name="examples"></a>Примеры
+<div id="blobModel"></div>
+
+### <a name="blobs-response-data"></a>Данные ответа большого двоичного объекта
+
+Возвращаемые по отдельности большие двоичные объекты соответствуют следующей схеме JSON:
+
+```JSON
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "name": "string",
+  "parentId": "00000000-0000-0000-0000-000000000000",
+  "type": "string",
+  "subtype": "string",
+  "typeId": 0,
+  "subtypeId": 0,
+  "sharing": "None",
+  "description": "string",
+  "contentInfos": [
+    {
+      "type": "string",
+      "sizeBytes": 0,
+      "mD5": "string",
+      "version": "string",
+      "lastModifiedUtc": "2019-01-12T00:58:08.689Z",
+      "metadata": {
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
+      }
+    }
+  ],
+  "fullName": "string",
+  "spacePaths": [
+    "string"
+  ]
+}
+```
+
+| Атрибут | type | ОПИСАНИЕ |
+| --- | --- | --- |
+| **id** | Строка | Уникальный идентификатор BLOB-объекта. |
+| **name** |Строка | Понятное имя большого двоичного объекта |
+| **parentId** | Строка | Родительская сущность, с которой связывается большой двоичный объект (пространства, устройства или пользователи) |
+| **type** | Строка | Нельзя использовать типы большого двоичного объекта *type* и *typeId*.  |
+| **typeId** | Целое число  | Нельзя использовать идентификатор типов большого двоичного объекта *type* и *typeId*. |
+| **subtype** | Строка | Нельзя использовать подтипы большого двоичного объекта *subtype* и *subtypeId*. |
+| **subtypeId** | Целое число  | Нельзя использовать идентификатор подтипа большого двоичного объекта *subtype* и *subtypeId*. |
+| **Общий доступ** | Строка | Можно ли предоставить большой двоичный объект для общего доступа — перечисление [`None`, `Tree`, `Global`] |
+| **description** | Строка | Настраиваемое описание большого двоичного объекта |
+| **contentInfos** | Массив, | Указывает неструктурированную информацию о метаданных, включая версию |
+| **fullName** | Строка | Полное имя большого двоичного объекта |
+| **spacePaths** | Строка | Путь к пространству |
+
+Метаданные большого двоичного объекта всегда передаются в качестве первого блока данных с помощью **Content-Type** `application/json` или как файл `.json`. Данные файла предоставляются во втором блоке и могут быть любого поддерживаемого типа MIME.
+
+### <a name="blob-multipart-request-examples"></a>Примеры составного запроса больших двоичных объектов
 
 [!INCLUDE [Digital Twins Management API](../../includes/digital-twins-management-api.md)]
 
@@ -92,6 +173,7 @@ var metadataContent = new StringContent(JsonConvert.SerializeObject(metaData), E
 metadataContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json; charset=utf-8");
 multipartContent.Add(metadataContent, "metadata");
 
+//MY_BLOB.txt is the String representation of your text file
 var fileContents = new StringContent("MY_BLOB.txt");
 fileContents.Headers.ContentType = MediaTypeHeaderValue.Parse("text/plain");
 multipartContent.Add(fileContents, "contents");
@@ -99,15 +181,27 @@ multipartContent.Add(fileContents, "contents");
 var response = await httpClient.PostAsync("spaces/blobs", multipartContent);
 ```
 
-В обоих примерах:
+Наконец, пользователи [cURL](https://curl.haxx.se/) могут выполнять запросы в составной форме таким же образом:
 
-1. Убедитесь, что заголовки включают `Content-Type: multipart/form-data; boundary="USER_DEFINED_BOUNDARY"`.
-1. Убедитесь, что текст состоит из нескольких частей:
+![Большие двоичные объекты устройств][5]
 
-   - Первая часть содержит необходимые метаданные больших двоичных объектов.
-   - Вторая часть содержит текстовый файл.
+```bash
+curl
+ -X POST "YOUR_MANAGEMENT_API_URL/spaces/blobs"
+ -H "Authorization: Bearer YOUR_TOKEN"
+ -H "Accept: application/json"
+ -H "Content-Type: multipart/form-data"
+ -F "meta={\"ParentId\": \"YOUR_SPACE_ID\",\"Name\":\"My CURL Blob",\"Type\":\"Map\",\"SubType\":\"GenericMap\",\"Description\": \"A well chosen description\", \"Sharing\": \"None\"};type=application/json"
+ -F "text=PATH_TO_FILE;type=text/plain"
+```
 
-1. Убедитесь, что текстовый файл указан как `Content-Type: text/plain`.
+| Значение | Заменить на |
+| --- | --- |
+| YOUR_TOKEN | Допустимый маркер OAuth 2.0 |
+| YOUR_SPACE_ID | Идентификатор пространства для связи с большим двоичным объектом |
+| PATH_TO_FILE | Путь к текстовому файлу |
+
+Успешно выполненный запрос POST возвращает идентификатор нового большого двоичного объекта (выделенного красным ранее).
 
 ## <a name="api-endpoints"></a>Конечные точки API
 
@@ -129,15 +223,7 @@ YOUR_MANAGEMENT_API_URL/devices/blobs/YOUR_BLOB_ID
 | --- | --- |
 | *YOUR_BLOB_ID* | Идентификатор требуемого большого двоичного объекта |
 
-Успешный запрос вернет объект **DeviceBlob** JSON в ответе. Объект **DeviceBlobs** соответствует следующей схеме JSON:
-
-| Атрибут | type | ОПИСАНИЕ | Примеры |
-| --- | --- | --- | --- |
-| **DeviceBlobType** | Строка | Категория большого двоичного объекта, который можно подключить к устройству | `Model` и `Specification` |
-| **DeviceBlobSubtype** | Строка | Подкатегория больших двоичных объектов, более точных, чем **DeviceBlobType** | `PhysicalModel`, `LogicalModel`, `KitSpecification` и `FunctionalSpecification` |
-
-> [!TIP]
-> Используйте приведенную выше таблицу для успешной обработки возвращаемых данных запроса.
+Успешно выполненные запросы возвращают объект JSON, как [было описано ранее](#blobModel).
 
 ### <a name="spaces"></a>Пробелы
 
@@ -155,14 +241,9 @@ YOUR_MANAGEMENT_API_URL/spaces/blobs/YOUR_BLOB_ID
 | --- | --- |
 | *YOUR_BLOB_ID* | Идентификатор требуемого большого двоичного объекта |
 
-Запрос PATCH к той же конечной точке обновляет описание метаданных и создает новые версии большого двоичного объекта. HTTP-запрос выполняется с использованием метода PATCH вместе с любыми необходимыми метаданными и составными данными.
+Успешно выполненные запросы возвращают объект JSON, как [было описано ранее](#blobModel).
 
-Успешные операции возвращают объект **SpaceBlob**, который соответствует следующей схеме. Вы можете использовать его для применения возвращенных данных.
-
-| Атрибут | type | ОПИСАНИЕ | Примеры |
-| --- | --- | --- | --- |
-| **SpaceBlobType** | Строка | Категория большого двоичного объекта, который можно подключить к пространству | `Map` и `Image` |
-| **SpaceBlobSubtype** | Строка | Подкатегория больших двоичных объектов, более точных, чем **SpaceBlobType** | `GenericMap`, `ElectricalMap`, `SatelliteMap` и `WayfindingMap` |
+Запрос PATCH к той же конечной точке обновляет описание метаданных и создает версии большого двоичного объекта. HTTP-запрос выполняется с использованием метода PATCH вместе с любыми необходимыми метаданными и составными данными.
 
 ### <a name="users"></a>Пользователи
 
@@ -180,16 +261,11 @@ YOUR_MANAGEMENT_API_URL/users/blobs/YOUR_BLOB_ID
 | --- | --- |
 | *YOUR_BLOB_ID* | Идентификатор требуемого большого двоичного объекта |
 
-Возвращенный JSON (объекты **UserBlobs**) соответствует следующим моделям JSON:
-
-| Атрибут | type | ОПИСАНИЕ | Примеры |
-| --- | --- | --- | --- |
-| **UserBlobType** | Строка | Категория большого двоичного объекта, который можно подключить к пользователю | `Image` и `Video` |
-| **UserBlobSubtype** |  Строка | Подкатегория больших двоичных объектов, более точных, чем **UserBlobType** | `ProfessionalImage`, `VacationImage` и `CommercialVideo`. |
+Успешно выполненные запросы возвращают объект JSON, как [было описано ранее](#blobModel).
 
 ## <a name="common-errors"></a>Распространенные ошибки
 
-Распространенной ошибкой является отсутствие правильной информации заголовка.
+Распространенной ошибкой является предоставление неправильной информации заголовка:
 
 ```JSON
 {
@@ -200,12 +276,22 @@ YOUR_MANAGEMENT_API_URL/users/blobs/YOUR_BLOB_ID
 }
 ```
 
+Чтобы устранить эту ошибку, убедитесь, что во всем запросе имеется соответствующий заголовок **Content-Type**:
+
+* `multipart/mixed`
+* `multipart/form-data`
+
+Кроме того, убедитесь, что при необходимости у каждого составного блока есть соответствующий **Content-Type**.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 - Дополнительные сведения о справочной документации Swagger для Azure Digital Twins см. в статье [Использование Swagger с Digital Twins](how-to-use-swagger.md).
+
+- Чтобы отправить большие двоичные объекты через Postman, ознакомьтесь со статьей [о настройке Postman](./how-to-configure-postman.md).
 
 <!-- Images -->
 [1]: media/how-to-add-blobs/blob-models.PNG
 [2]: media/how-to-add-blobs/blobs-device-api.PNG
 [3]: media/how-to-add-blobs/blobs-space-api.PNG
 [4]: media/how-to-add-blobs/blobs-users-api.PNG
+[5]: media/how-to-add-blobs/curl.PNG

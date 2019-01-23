@@ -1,5 +1,5 @@
 ---
-title: Руководство. Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault | Документация Майкрософт
+title: Руководство. Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault | Документация Майкрософт
 description: Как выполнять шифрование и расшифровку большого двоичного объекта путем шифрования на стороне клиента для службы хранилища Microsoft Azure с помощью Azure Key Vault.
 services: storage
 author: tamram
@@ -8,18 +8,18 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: tamram
 ms.component: blobs
-ms.openlocfilehash: 092ffa5ed34a8e0a05b69c3fae86ab7299760ac2
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 213190863702ec5a7f2ae764c8e2d892764740f9
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51233105"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54332206"
 ---
-# <a name="tutorial-encrypt-and-decrypt-blobs-in-microsoft-azure-storage-using-azure-key-vault"></a>Шифрование и расшифровка BLOB-объектов в хранилище Microsoft Azure с помощью хранилища ключей Azure
+# <a name="tutorial-encrypt-and-decrypt-blobs-in-microsoft-azure-storage-using-azure-key-vault"></a>Руководство. Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault
 ## <a name="introduction"></a>Введение
 В этом учебнике описывается, как использовать хранилище ключей Azure для шифрования хранилища на стороне клиента. Учебник включает пошаговое руководство по шифрованию и расшифровке большого двоичного объекта в консольном приложении с помощью этих технологий.
 
-**Предполагаемое время выполнения:** 20 минут
+**Предполагаемое время выполнения**: 20 минут
 
 Общие сведения о хранилище ключей Azure см. в статье [Что такое хранилище ключей Azure?](../../key-vault/key-vault-whatis.md)
 
@@ -52,7 +52,7 @@ ms.locfileid: "51233105"
 
 Запишите ClientID и ClientSecret, сформированные при регистрации приложения в Azure Active Directory.
 
-Создайте оба ключа в хранилище ключей. В этом учебнике подразумевается, что вы использовали следующие имена: ContosoKeyVault и TestRSAKey1.
+Создайте оба ключа в хранилище ключей. Мы предполагаем, что в этом руководстве вы используете следующие имена: ContosoKeyVault и TestRSAKey1.
 
 ## <a name="create-a-console-application-with-packages-and-appsettings"></a>Создание консольного приложения с пакетами и AppSettings
 Создайте новое консольное приложение в Visual Studio.
@@ -136,7 +136,7 @@ KeyVaultKeyResolver cloudResolver = new KeyVaultKeyResolver(GetToken);
 > 
 > Клиент хранилища ключей взаимодействует с REST API и понимает веб-ключи и секреты JSON для двух видов элементов, содержащихся в хранилище ключей.
 > 
-> Расширения хранилища ключей — это классы, которые специально созданы для шифрования на стороне клиента в хранилище Azure. Они содержат интерфейс для ключей (IKey) и классов, основанный на концепции сопоставителя ключей. Существуют две реализации IKey, которые необходимо знать, — RSAKey и SymmetricKey. Они совпадают с элементами, которые находятся в хранилище ключей, но на данный момент остаются независимыми классами (таким образом, ключ и секретный код, получаемые клиентом хранилища ключей, не реализуют IKey).
+> Расширения хранилища ключей — это классы, которые специально созданы для шифрования на стороне клиента в хранилище Azure. Они содержат интерфейс для ключей (IKey) и классов, основанный на концепции сопоставителя ключей. Существуют две реализации IKey, которые необходимо знать: RSAKey и SymmetricKey. Они совпадают с элементами, которые находятся в хранилище ключей, но на данный момент остаются независимыми классами (таким образом, ключ и секретный код, получаемые клиентом хранилища ключей, не реализуют IKey).
 > 
 > 
 
@@ -184,14 +184,14 @@ using (var np = File.Open(@"C:\data\MyFileDecrypted.txt", FileMode.Create))
 ```
 
 > [!NOTE]
-> Существует несколько других видов сопоставителей, которые облегчают управление ключами, например AggregateKeyResolver и CachingKeyResolver.
+> Существует несколько других видов сопоставителей, которые облегчают управление ключами, например: AggregateKeyResolver и CachingKeyResolver.
 > 
 > 
 
 ## <a name="use-key-vault-secrets"></a>Использование секретов хранилища ключей
 Секрет можно использовать для шифрования на стороне клиента с помощью класса SymmetricKey, так как он фактически является симметричным ключом. Но, как указано выше, секрет в хранилище ключей не сопоставляется точно с SymmetricKey. Необходимо понять несколько вещей.
 
-* Ключ в SymmetricKey должен быть фиксированной длины: 128, 192, 256, 384 или 512 бит.
+* Ключ в SymmetricKey должен быть фиксированной длины: 128, 192, 256, 384 или 512 бит.
 * Ключ в SymmetricKey должен быть в кодировке Base64.
 * Секрет хранилища ключей, который будет использоваться в качестве SymmetricKey, должен иметь тип содержимого application/octet-stream в хранилище ключей.
 
@@ -208,7 +208,7 @@ $enc = [System.Convert]::ToBase64String($b)
 $secretvalue = ConvertTo-SecureString $enc -AsPlainText -Force
 
 // Substitute the VaultName and Name in this command.
-$secret = Set-AzureKeyVaultSecret -VaultName 'ContoseKeyVault' -Name 'TestSecret2' -SecretValue $secretvalue -ContentType "application/octet-stream"
+$secret = Set-AzureKeyVaultSecret -VaultName 'ContosoKeyVault' -Name 'TestSecret2' -SecretValue $secretvalue -ContentType "application/octet-stream"
 ```
 
 Для получения этого секрета как SymmetricKey в консольном приложении можно использовать тот же вызов, что и ранее.

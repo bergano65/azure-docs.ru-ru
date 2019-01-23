@@ -1,26 +1,8 @@
 ---
-title: Шаг 4. Обучение моделей прогнозной аналитики в Студии машинного обучения Azure | Документация Майкрософт
-description: Пошаговое руководство по разработке решения прогнозирования (шаг 4). Обучение и оценка нескольких моделей в Студии машинного обучения Azure.
-services: machine-learning
-documentationcenter: ''
-author: garyericson
-ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
-ms.author: garye
-editor: cgronlun
-ms.assetid: d905f6b3-9201-4117-b769-5f9ed5ee1cac
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 03/23/2017
-ms.openlocfilehash: 2464ef0ba89f138834bedfdc9f29347092e5fe99
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53254519"
+заголовок: 'Шаг 4. Обучение моделей прогнозной аналитики' titleSuffix: Студия машинного обучения Azure description: 'Пошаговое руководство по разработке решения прогнозирования (шаг 4): обучение и оценка нескольких моделей в Студии машинного обучения Azure.'
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: garyericson ms.author: garye ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 23.03.2017
 ---
 # <a name="walkthrough-step-4-train-and-evaluate-the-predictive-analytic-models-in-machine-learning-studio"></a>Пошаговое руководство (шаг 4). Обучение и анализ моделей прогнозной аналитики в Студии машинного обучения
 Это четвертая часть пошагового руководства [по разработке решения для прогнозной аналитики в Машинном обучении Azure](walkthrough-develop-predictive-solution.md).

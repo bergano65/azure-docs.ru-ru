@@ -5,16 +5,16 @@ services: iot-edge
 author: shizn
 manager: philmea
 ms.author: xshi
-ms.date: 01/04/2019
+ms.date: 01/10/2019
 ms.topic: article
 ms.service: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 9a6c892a71c452a0c6c0dcd43509e345280a810e
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 3091e53b47d85e3e58c32b255dc9dcebd54ab2c5
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54054929"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54264943"
 ---
 # <a name="use-visual-studio-2017-to-develop-and-debug-c-modules-for-azure-iot-edge-preview"></a>Сведения об использовании Visual Studio 2017 для разработки и отладки модулей C# для Azure IoT Edge (предварительная версия)
 
@@ -27,8 +27,11 @@ ms.locfileid: "54054929"
 - программирование модулей Интернета вещей Azure на C#, сохраняя при этом все преимущества разработки в Visual Studio;
 - управление устройствами и модулями Azure IoT Edge с помощью пользовательского интерфейса.
 
-В этой статье объясняется, как использовать средства Azure IoT Edge для Visual Studio 2017 для разработки модулей IoT Edge на C#. Вы также узнаете, как развернуть свой проект на устройство Azure IoT Edge.
+В этой статье объясняется, как использовать средства Azure IoT Edge для Visual Studio 2017 для разработки модулей IoT Edge на C#. Вы также узнаете, как развернуть свой проект на устройство Azure IoT Edge. 
 
+  > [!TIP]
+  > Структура проекта IoT Edge, созданного в Visual Studio, отличается от структуры проекта Visual Studio Code.
+  
 ## <a name="prerequisites"></a>Предварительные требования
 
 В этой статье предполагается, что для разработки вы используете компьютер или виртуальную машину под управлением Windows. Устройство IoT Edge может быть другим физическим устройством.
@@ -58,7 +61,7 @@ ms.locfileid: "54054929"
 
 1. Откройте меню **Средства** и выберите пункт **Расширения и обновления**. Разверните **Установленные > Средства** и найдите **средства Azure IoT Edge** и **Cloud Explorer для Visual Studio**.
 
-1. Запишите номер установленной версии. Вы можете сравнить эту версию с последней версией в Visual Studio Marketplace ([Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS), [Azure IoT Edge](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge)).
+1. Запишите номер установленной версии. Вы можете сравнить эту версию с последней версией в Visual Studio Marketplace ([Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS), [Azure IoT Edge](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools)).
 
 1. Если вы используете более раннюю версию, чем та, которая доступна в Visual Studio Marketplace, обновите инструменты в Visual Studio, как показано в следующем разделе.
 

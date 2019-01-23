@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 08/07/2018
+ms.date: 01/15/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: 3d88ac7adc950e2c216824f74586ff6ef4f70712
-ms.sourcegitcommit: d16b7d22dddef6da8b6cfdf412b1a668ab436c1f
+ms.openlocfilehash: 065695f9ce0f0d8dfbb9a43877131c8ab7fada5e
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39715776"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54354323"
 ---
 # <a name="understand-role-definitions"></a>Определения ролей
 
@@ -166,12 +166,20 @@ AssignableScopes []
 | Средство  | Version (версия)  |
 |---------|---------|
 | [Azure PowerShell](/powershell/azure/install-azurerm-ps) | 5.6.0 или более поздней версии |
-| [интерфейс командной строки Azure](/cli/azure/install-azure-cli) | 2.0.30 или более поздней версии |
+| [Интерфейс командной строки Azure](/cli/azure/install-azure-cli) | 2.0.30 или более поздней версии |
 | [Azure для .NET](/dotnet/azure/) | 2.8.0-preview или более поздней версии |
 | [Пакет Azure SDK для Go](/go/azure/azure-sdk-go-install) | 15.0.0 или более поздней версии |
 | [Azure для Java](/java/azure/) | 1.9.0 или более поздней версии |
 | [Azure для Python](/python/azure) | 0.40.0 или более поздней версии |
 | [Пакет Azure SDK для Ruby ](https://rubygems.org/gems/azure_sdk) | 0.17.1 или более поздней версии |
+
+Чтобы просмотреть и использовать операции с данными в REST API, необходимо установить для параметра **api-version** следующую версию или более позднюю:
+
+- предварительная версия 2018-01-01
+
+Портал Azure также позволяет пользователям просматривать содержимое очередей и контейнеров BLOB-объектов и управлять ими с помощью предварительной версии Azure AD. Чтобы просмотреть содержимое очереди или контейнера BLOB-объектов и управлять им, щелкните **Explore data using Azure AD preview** (Просмотр данных с помощью предварительной версии Azure AD) в общих сведениях об учетной записи хранения.
+
+![Изучение очереди и контейнеров большого двоичного объекта с помощью предварительной версии Azure AD](./media/role-definitions/rbac-dataactions-browsing.png)
 
 ## <a name="actions"></a>Действия
 

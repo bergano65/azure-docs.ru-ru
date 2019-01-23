@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 10/1/2018
+ms.date: 01/14/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
-ms.openlocfilehash: e205fce8b718e68200face33447e37cd3317298f
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 9f0f32bc1fb6b88dc85f09e13aebc60ff74ec723
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49405490"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54329741"
 ---
 # <a name="azure-blockchain-workbench-troubleshooting"></a>Устранение неполадок в Azure Blockchain Workbench
 
@@ -26,7 +26,7 @@ ms.locfileid: "49405490"
 * Application Insights
 * мониторинг Azure (Log Analytics).
 
-Эти сведения помогут вам определиться с дальнейшими действиями и выяснить основную причину возникших проблем. 
+Эти сведения помогут вам определиться с дальнейшими действиями и выяснить основную причину возникших проблем.
 
 ## <a name="troubleshooting-script"></a>Скрипт для устранения неполадок
 
@@ -75,4 +75,4 @@ collectBlockchainWorkbenchTroubleshooting.ps1 -SubscriptionID "<subscription_id>
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Архитектура Azure Blockchain Workbench](architecture.md)
+> [Azure Blockchain Workbench Application Insights troubleshooting guide](https://aka.ms/workbenchtroubleshooting) (Руководство по устранению неполадок с Application Insights в Azure Blockchain Workbench)

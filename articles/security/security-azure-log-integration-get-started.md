@@ -12,21 +12,21 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ums.workload: na
-ms.date: 06/07/2018
+ms.date: 01/14/2019
 ms.author: barclayn
 ms.custom: azlog
-ms.openlocfilehash: a6bbc61afcc1ed25d5eac8673b9abfa59e72dba9
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: bf39e22c0edc23d2e452d96103c8933e0a47af9e
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53602194"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54304417"
 ---
 # <a name="azure-log-integration-with-azure-diagnostics-logging-and-windows-event-forwarding"></a>Интеграция журналов данных Azure с ведением журнала системы диагностики Azure и пересылкой событий Windows
 
 
 >[!IMPORTANT]
-> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Загрузки AzLog будут отключены до 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
+> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Файлы для скачивания AzLog недоступны с 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
 
 Интеграцию журналов Azure следует использовать, только если у вашего поставщика SIEM (Управление информационной безопасностью и событиями безопасности) еще нет соединителя для [Azure Monitor](../monitoring-and-diagnostics/monitoring-get-started.md).
 
@@ -85,7 +85,7 @@ ms.locfileid: "53602194"
 
 ## <a name="install-azure-log-integration"></a>Установка службы "Интеграция журналов данных Azure"
 
-Чтобы установить службу "Интеграция журналов данных Azure", необходимо скачать ее [файл установки](https://www.microsoft.com/download/details.aspx?id=53324). Выполните процесс установки. Выберите, следует ли отправлять данные телеметрии в корпорацию Майкрософт.
+Выполните процедуру установки. Выберите, следует ли отправлять данные телеметрии в корпорацию Майкрософт.
 
 Служба "Интеграция журналов данных Azure" собирает данные телеметрии с компьютера, на котором она установлена.  
 
@@ -245,7 +245,6 @@ ms.locfileid: "53602194"
 
 Чтобы узнать больше о службе "Интеграция журналов данных Azure", ознакомьтесь со следующими статьями. Перед выполнением действий в этой статье просмотрите статью о начале работы и выполните указанные в ней действия.
 
-* [Microsoft Azure Log Integration](https://www.microsoft.com/download/details.aspx?id=53324) (Служба "Интеграция журналов данных Microsoft Azure"). На этой странице Центра загрузки можно получить дополнительные сведения, изучить требования к системе и получить инструкции по установке службы "Интеграция журналов данных Azure".
 * [Введение в службу интеграции журналов Microsoft Azure](security-azure-log-integration-overview.md). В этой статье рассказывается о службе "Интеграция журналов данных Azure", ее основных возможностях и принципах работы.
 * [Azure Log Integration SIEM configuration steps](https://blogs.msdn.microsoft.com/azuresecurity/2016/08/23/azure-log-siem-configuration-steps/) (Настройка SIEM для службы "Интеграция журналов данных Azure"). В этой записи блога показано, как настроить службу "Интеграция журналов данных Azure" для работы с решениями таких партнеров, как Splunk, HP ArcSight и IBM QRadar. В настоящее время это наше руководство по настройке компонентов SIEM. Обратитесь к своему поставщику SIEM для получения дополнительных сведений.
 * [Интеграция журналов Azure: часто задаваемые вопросы](security-azure-log-integration-faq.md). Статья содержит ответы на часто задаваемые вопросы о службе "Интеграция журналов данных Azure".

@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: 5eb04f30fd6766b8df65998b8a4d53797b8341ba
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 95ebdd74fa8be433c7a31f79ad36d4645bc57318
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54053557"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54354524"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для .NET Core для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -68,7 +68,7 @@ ms.locfileid: "54053557"
 
 * Для прямой транспортной диагностики и транспортной диагностики по протоколу TCP добавлено исключение TransportException — внутренний тип исключений пакета SDK. Если этот тип присутствует в сообщениях об исключении, он выводит дополнительную информацию, которая помогает при устранении неполадок с проблемами подключения клиентов.
 
-* Добавлена новая перегрузка конструктора, которая принимает HttpMessageHandler (стек обработчика HTTP-данных) для использования при отправке запросов HttpClient (например, HttpClientHandler).
+* Добавлена новая перегрузка конструктора, которая принимает HttpMessageHandler (стек обработчика HTTP-данных) для использования при отправке запросов HttpClient (например HttpClientHandler).
 
 * Исправлена ошибка, при которой заголовок со значениями NULL не обрабатывался должным образом.
 
@@ -121,7 +121,7 @@ ms.locfileid: "54053557"
 ### <a name="a-name191191"></a><a name="1.9.1"/>1.9.1
 
 * Исправлено исключение KeyNotFoundException в сложных случаях для запросов ORDER BY между секциями.
-* Исправлена ошибка, из-за которой не учитывался атрибут JsonPropery в выбранном предложении запросов LINQ.
+* Исправлена ошибка, из-за которой не учитывался атрибут JsonProperty в выбранном предложении запросов LINQ.
 
 ### <a name="a-name182182"></a><a name="1.8.2"/>1.8.2
 

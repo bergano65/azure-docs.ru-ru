@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 01/05/2017
 ms.author: juliako;cenkd;anilmur
-ms.openlocfilehash: 8084f32ac8cc2184d93796468ad66fb73398e876
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: e3a3a9946c3352be0409d1a773408e17302911fc
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33783783"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54304811"
 ---
 # <a name="use-the-newtek-tricaster-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика NewTek TriCaster для отправки односкоростного обновляющегося потока
 > [!div class="op_single_selector"]
@@ -39,19 +39,22 @@ ms.locfileid: "33783783"
 >
 >
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
+
 * [Создайте учетную запись служб мультимедиа Azure](media-services-portal-create-account.md).
 * Убедитесь, что запущена конечная точка потоковой передачи. Дополнительные сведения см. в статье об [управлении конечными точками потоковой передачи с помощью учетной записи служб мультимедиа](media-services-portal-manage-streaming-endpoints.md).
 * Установите последнюю версию средства [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer) .
 * Запустите его и подключитесь к учетной записи AMS.
 
 ## <a name="tips"></a>Советы
+
 * По возможности используйте проводное подключение к Интернету.
 * Для получения необходимой пропускной способности рекомендуется удвоить скорость потоковой передачи. Это требование не является обязательным, но оно поможет уменьшить влияние перегрузки сети на пропускную способность.
 * При использовании программных кодировщиков закройте все ненужные программы.
 
 ## <a name="create-a-channel"></a>Создание канала
-1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...** в меню.
+
+1. В средстве AMSE откройте вкладку **Live** (Передача) и щелкните правой кнопкой мыши в области канала. Выберите **Создать канал...**  в меню.
 
     ![Tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster1.png)
 
@@ -75,7 +78,8 @@ ms.locfileid: "33783783"
 >
 >
 
-## <a id=configure_tricaster_rtmp></a>Настройка кодировщика NewTek TriCaster
+## <a name="a-idconfiguretricasterrtmpconfigure-the-newtek-tricaster-encoder"></a><a id="configure_tricaster_rtmp"/>Настройка кодировщика NewTek TriCaster
+
 В этом руководстве используются указанные ниже параметры вывода. В оставшейся части этого раздела этапы настройки описываются более подробно.
 
 **Видео:**
@@ -93,6 +97,7 @@ ms.locfileid: "33783783"
 * Частота выборки: 44,1 кГц
 
 ### <a name="configuration-steps"></a>Этапы настройки
+
 1. Создайте новый проект **NewTek TriCaster** в зависимости от того, какой входной источник видео используется.
 2. Создав проект, найдите кнопку **Stream** (Потоковая передача) и щелкните значок шестеренки рядом с ним для доступа к меню настройки потока.
 
@@ -131,6 +136,7 @@ ms.locfileid: "33783783"
 >
 
 ## <a name="test-playback"></a>Проверка воспроизведения
+
 Перейдите в средство AMSE и щелкните правой кнопкой мыши канал, который необходимо проверить. В меню наведите указатель мыши на пункт **Playback the Preview** (Воспроизведение для предварительного просмотра) и выберите пункт **with Azure Media Player** (с помощью Проигрывателя мультимедиа Azure).  
 
     ![tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster8.png)
@@ -140,6 +146,7 @@ ms.locfileid: "33783783"
 При получении ошибки необходимо сбросить канал и настроить параметры кодировщика. Дополнительные сведения см. в руководстве по [устранению неполадок](media-services-troubleshooting-live-streaming.md).  
 
 ## <a name="create-a-program"></a>Создание программы
+
 1. После проверки воспроизведения канала создайте программу. На вкладке **Live** (Передача) в инструменте AMSE щелкните правой кнопкой мыши в области программы и выберите команду **Create New Program** (Создать программу).  
 
     ![Tricaster](./media/media-services-tricaster-live-encoder/media-services-tricaster9.png)
@@ -156,12 +163,15 @@ ms.locfileid: "33783783"
 Теперь поток можно внедрить в проигрыватель или транслировать аудитории для просмотра в режиме реального времени.  
 
 ## <a name="troubleshooting"></a>Устранение неполадок
+
 Дополнительные сведения см. в руководстве по [устранению неполадок](media-services-troubleshooting-live-streaming.md).
 
 ## <a name="next-step"></a>Дальнейшие действия
+
 Просмотрите схемы обучения работе со службами мультимедиа.
 
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
+
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]

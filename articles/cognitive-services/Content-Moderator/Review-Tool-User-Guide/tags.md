@@ -1,5 +1,6 @@
 ---
-title: Использование тегов в Azure Content Moderator | Документация Майкрософт
+title: Модерация содержимого с помощью настраиваемых тегов — Content Moderator
+titlesuffix: Azure Cognitive Services
 description: Content Moderator содержит теги по умолчанию, а также позволяет создать настраиваемые теги модерации контента, относящегося к вашей организации.
 services: cognitive-services
 author: sanjeev3
@@ -7,20 +8,20 @@ manager: mikemcca
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: article
-ms.date: 06/25/2017
+ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: c462ff2937453f942db7fdd5b751f3356b6fe715
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.openlocfilehash: c1a547f99995d25d19dafb03276306c50a544c9a
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49310085"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54264722"
 ---
-# <a name="about-tags"></a>О тегах #
+# <a name="create-and-use-moderation-tags"></a>Создание и использование тегов для модерации
 
 Помимо двух тегов по умолчанию **isadult** (**a**) и **isracy** (**r**) можно создавать настраиваемые теги для более узконаправленной проверки. Затем эти настраиваемые теги используются при пользовательской проверке и могут назначаться изображениям или тексту.
 
-## <a name="create-tags"></a>Создание тегов ##
+## <a name="create-tags"></a>Создание тегов
 
 1.  Выберите "Tags" (Теги) на вкладке "Settings" (Параметры).
 
@@ -34,7 +35,7 @@ ms.locfileid: "49310085"
 
 ![Определение тегов модерации контента](images/tags-2-define.png)
 
-## <a name="using-custom-tags"></a>Использование настраиваемых тегов ##
+## <a name="using-custom-tags"></a>Использование настраиваемых тегов
 
 Настраиваемые теги используются во время пользовательской проверки. Они отображаются в области предварительного просмотра, и рецензент выбирает их щелчком мыши.
 
@@ -48,6 +49,6 @@ ms.locfileid: "49310085"
 
 ![Удаление тегов модерации контента](images/tags-5-delete.png)
 
-## <a name="next-steps"></a>Дополнительная информация ##
+## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы узнать, как использовать теги для модерации изображений, ознакомьтесь со статьей [Проверка прошедших модерацию изображений](Review-Moderated-Images.md).

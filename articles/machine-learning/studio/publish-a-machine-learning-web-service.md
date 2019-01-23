@@ -1,26 +1,8 @@
 ---
-title: Развертывание веб-службы Студии машинного обучения Azure | Документация Майкрософт
-description: Как преобразовать обучающий эксперимент в прогностический эксперимент, подготовить его к развертыванию, а затем развернуть как веб-службу Студии машинного обучения Azure.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 73a3e9c6-00d0-41d4-8cf1-2ec87713867e
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 01/06/2017
-ms.openlocfilehash: 71315b6c36a9e41e5805d5a15bde5b1d1d84f2b5
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53269929"
+заголовок: Развертывание веб-службы Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Как преобразовать обучающий эксперимент в прогностический эксперимент, подготовить его к развертыванию, а затем развернуть как веб-службу Студии машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT ms.date: 06.01.2017
 ---
 # <a name="deploy-an-azure-machine-learning-studio-web-service"></a>Развертывание веб-службы Студии машинного обучения Azure
 Машинное обучение Azure позволяет создавать, тестировать и развертывать решения для прогнозной аналитики.

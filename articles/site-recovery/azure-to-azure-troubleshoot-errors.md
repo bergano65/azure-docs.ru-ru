@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: sujayt
-ms.openlocfilehash: e120c10468ca95b604ef8f857959607d3a066ea0
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 8023129bf700793447b63f0686acd22f6ac2b25c
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53973559"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54265011"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-issues"></a>Устранение неполадок репликации виртуальных машин из Azure в Azure
 
@@ -92,7 +92,7 @@ ms.locfileid: "53973559"
 
 8.  Проверьте, были ли созданы для сертификатов хэши субъектов в виде символических ссылок.
 
-    - Get-Help
+    - Команда
 
       ``# ls -l | grep Baltimore``
 
@@ -101,7 +101,7 @@ ms.locfileid: "53973559"
       ``lrwxrwxrwx 1 root root   29 Jan  8 09:48 3ad48a91.0 -> Baltimore_CyberTrust_Root.pem
       -rw-r--r-- 1 root root 1303 Jun  5  2014 Baltimore_CyberTrust_Root.pem``
 
-    - Get-Help
+    - Команда
 
       ``# ls -l | grep VeriSign_Class_3_Public_Primary_Certification_Authority_G5``
 
@@ -110,7 +110,7 @@ ms.locfileid: "53973559"
       ``-rw-r--r-- 1 root root 1774 Jun  5  2014 VeriSign_Class_3_Public_Primary_Certification_Authority_G5.pem
       lrwxrwxrwx 1 root root   62 Jan  8 09:48 facacbc6.0 -> VeriSign_Class_3_Public_Primary_Certification_Authority_G5.pem``
 
-    - Get-Help
+    - Команда
 
       ``# ls -l | grep DigiCert_Global_Root``
 
@@ -134,7 +134,7 @@ ms.locfileid: "53973559"
 
 14. Убедитесь в наличии файлов.  
 
-    - Get-Help
+    - Команда
 
       ``# ls -l 653b494a.0 b204d74a.0 3513523f.0``
 
@@ -286,6 +286,39 @@ ms.locfileid: "53973559"
 --- | --- | ---
 150172<br></br>**Сообщение**. Не удалось включить защиту для виртуальной машины, так как она содержит (имя_диска) размером (размер_диска), который меньше минимального поддерживаемого размера, равного 10 ГБ. | Размер диска меньше поддерживаемого размера, равного 1024 МБ| Убедитесь, что размеры дисков находятся в диапазоне поддерживаемых размеров, и повторите операцию. 
 
+## <a name="enable-protection-failed-as-device-name-mentioned-in-the-grub-configuration-instead-of-uuid-error-code-151126"></a>Включение защити завершилось сбоем, поскольку имя устройства, указанное в конфигурации GRUB вместо UUID (код ошибки 151126)
 
-## <a name="next-steps"></a>Дополнительная информация
-[Репликация виртуальных машин Azure](site-recovery-replicate-azure-to-azure.md)
+**Возможная причина:** </br>
+Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Например:  </br>
+
+
+- Следующая строка из файла GRUB **/boot/grub2/grub.cfg**. <br>
+*linux   /boot/vmlinuz-3.12.49-11-default **root=/dev/sda2**  ${extra_cmdline} **resume=/dev/sda1** splash=silent quiet showopts*
+
+
+- Следующая строка из файла GRUB **/boot/grub/menu.lst**
+*kernel /boot/vmlinuz-3.0.101-63-default **root=/dev/sda2** **resume=/dev/sda1** splash=silent crashkernel=256M-:128M showopts vga=0x314*
+
+Если вы заметили строки, выделенные полужирным шрифтом, GRUB содержит фактические имена устройств для параметров "root" и "resume" вместо UUID.
+ 
+**Как исправить:**<br>
+Имена устройств должны быть заменены на соответствующий UUID.<br>
+
+
+1. Найдите UUID устройства, выполнив команду "blkid <device name>". Например: <br>
+```
+blkid /dev/sda1 
+```<br>
+```/dev/sda1: UUID="6f614b44-433b-431b-9ca1-4dd2f6f74f6b" TYPE="swap" ```<br>
+```blkid /dev/sda2```<br> 
+```/dev/sda2: UUID="62927e85-f7ba-40bc-9993-cc1feeb191e4" TYPE="ext3" 
+```<br>
+
+
+
+1. Now replace the device name with its UUID in the format like "root=UUID=<UUID>". For example, if we replace the device names with UUID for root and resume parameter mentioned above in the files "/boot/grub2/grub.cfg", "/boot/grub2/grub.cfg" or "/etc/default/grub: then the lines in the files looks like. <br>
+*kernel /boot/vmlinuz-3.0.101-63-default **root=UUID=62927e85-f7ba-40bc-9993-cc1feeb191e4** **resume=UUID=6f614b44-433b-431b-9ca1-4dd2f6f74f6b** splash=silent crashkernel=256M-:128M showopts vga=0x314*
+
+
+## Next steps
+[Replicate Azure virtual machines](site-recovery-replicate-azure-to-azure.md)

@@ -12,15 +12,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 12/22/2018
+ms.date: 01/12/2019
 ms.author: sethm
 ms.reviewer: justini
-ms.openlocfilehash: 97b7defded39e572a1fecae3e93d389014b15a6b
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: f4a1bf9e2fee9278713315c98f25dbc820a553a1
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077969"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352416"
 ---
 # <a name="azure-stack-1809-update"></a>Обновление 1809 для Azure Stack
 
@@ -134,7 +134,7 @@ ms.locfileid: "54077969"
 
 ### <a name="prerequisites"></a>Предварительные требования
 
-- Установите последнее исправление для Azure Stack версии 1808 перед применением версии 1809. Дополнительные сведения см. в статье базы знаний 4481066 [Azure Stack Hotfix 1.1808.9.117](https://support.microsoft.com/help/4481066/) (Исправление для Azure Stack версии 1.1808.9.117).
+- Установите последнее исправление для Azure Stack версии 1808 перед применением версии 1809. Дополнительные сведения см. в статье базы знаний 4481066 [Azure Stack Hotfix 1.1808.9.117](https://support.microsoft.com/help/4481066/) (Исправление для Azure Stack версии 1.1808.9.117). Хотя корпорация Майкрософт рекомендует использовать последнее доступное исправление, для установки 1809 необходимо иметь версию не ниже 1.1808.5.110.
 
   > [!TIP]  
   > Подпишитесь на следующие *каналы RRS* или *Atom*, чтобы следить за исправлениями Azure Stack:
@@ -251,6 +251,8 @@ ms.locfileid: "54077969"
 - Если оператор Azure Stack получает предупреждение о недостатке памяти, а при развертывании виртуальных машин клиента происходит сбой с **ошибкой создания виртуальной машины в структуре**, вероятно, для метки Azure Stack недостаточно памяти. Используйте [Azure Stack Capacity Planner](https://gallery.technet.microsoft.com/Azure-Stack-Capacity-24ccd822), чтобы разобраться с емкостью, доступной для рабочих нагрузок.
 
 ### <a name="compute"></a>Службы вычислений
+
+- При создании [виртуальной машины серии Dv2](./user/azure-stack-vm-considerations.md#virtual-machine-sizes) виртуальные машины D11-14v2 позволяют создавать диски данных 4, 8, 16 и 32 соответственно. Тем не менее на панели создания виртуальной машины отображаются диски данных 8, 16, 32 и 64.
 
 <!-- 3235634 – IS, ASDK -->
 - Чтобы развернуть виртуальные машины с размерами, содержащими суффикс **v2**, например **Standard_A2_v2**, укажите суффикс в следующем виде: **Standard_A2_v2** (строчная v). Не используйте запись **Standard_A2_V2** (прописная V). Это применимо ко всему порталу Azure, а в Azure Stack наблюдается несогласованность.

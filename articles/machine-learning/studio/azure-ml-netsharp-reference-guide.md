@@ -1,26 +1,8 @@
 ---
-title: Нейронные сети Net#. Студия машинного обучения Azure | Документация Майкрософт
-description: Синтаксис языка спецификации нейронных сетей Net# и примеры создания пользовательской модели нейронной сети с помощью Net# в Студии машинного обучения Azure.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: cfd1454b-47df-4745-b064-ce5f9b3be303
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: reference
-ms.date: 03/01/2018
-ms.openlocfilehash: ec33ac469d33a07d00f379beef2db9f4405e4679
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631131"
+заголовок: Язык нейронных сетей Net# titleSuffix: Студия машинного обучения Azure description: Синтаксис языка спецификации нейронных сетей Net# и примеры создания пользовательской модели нейронной сети с помощью Net# в Студии машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: reference
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 01.03.2018
 ---
 # <a name="guide-to-net-neural-network-specification-language-for-azure-machine-learning-studio"></a>Руководство по языку спецификаций нейронных сетей Net# для Студии машинного обучения Azure
 

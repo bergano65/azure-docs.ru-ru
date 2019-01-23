@@ -1,26 +1,8 @@
 ---
-title: Шаг 3. Создание эксперимента в Студии машинного обучения Azure | Документация Майкрософт
-description: Пошаговое руководство по разработке решения прогнозирования (шаг 3). Создание простого обучающего эксперимента в Студии машинного обучения Azure.
-services: machine-learning
-documentationcenter: ''
-author: garyericson
-ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
-ms.author: garye
-editor: cgronlun
-ms.assetid: 660e3c27-55ef-4c33-a4e9-dff4d1224630
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 03/23/2017
-ms.openlocfilehash: 5f3f73e2c2cb281887e795d974403a17cffd5978
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53260792"
+заголовок: 'Шаг 3. Создание эксперимента в Студии машинного обучения Azure' titleSuffix: Студия машинного обучения Azure description: Пошаговое руководство по разработке решения прогнозирования (шаг 3). Создание простого обучающего эксперимента в Студии машинного обучения Azure.'
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: garyericson ms.author: garye ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 23.03.2017
 ---
 # <a name="walkthrough-step-3-create-a-new-azure-machine-learning-studio-experiment"></a>Шаг 3. Создание эксперимента в Студии машинного обучения Azure
 Это третий этап из пошагового руководства [Разработка решения для прогнозной аналитики в службе машинного обучения Azure](walkthrough-develop-predictive-solution.md)

@@ -11,16 +11,36 @@ ms.author: haining
 ms.reviewer: j-martens
 ms.date: 12/20/2018
 ms.custom: seodec18
-ms.openlocfilehash: 157591897adb7495382b540dc1517c4c652a2632
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 5341c4901ca2a7aa0b4935e13d06c8fb5a1f0d1b
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54190739"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54304108"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Заметки о выпуске службы "Машинное обучение Azure"
 
 В статье рассказывается о выпусках службы "Машинное обучения Azure". 
+
+## <a name="2019-01-14"></a>14.01.2019
+
+### <a name="azure-machine-learning-sdk-for-python-v108"></a>Пакет SDK службы "Машинное обучение Azure" для Python версии 1.0.8
+
++ **Справочная документация по SDK**: https://aka.ms/aml-sdk
+
++ **Исправления ошибок**: этот выпуск в основном содержит исправления незначительных ошибок.
+
+### <a name="azure-machine-learning-data-prep-sdk-v107"></a>Пакет SDK службы "Машинное обучение Azure" для подготовки данных версии 1.0.7
+
++ **Справочная документация по SDK**: https://aka.ms/data-prep-sdk
+
++ **Новые функции**
+  + Улучшения хранилища данных (см. [практическое руководство по хранилищу данных](https://github.com/Microsoft/AMLDataPrepDocs/tree/master/how-to-guides/datastore.ipynb))
+    + Добавлена возможность чтения и записи для файлового хранилища Azure и хранилищ данных ADLS в вертикальном масштабировании.
+    + Теперь при использовании хранилищ данных для подготовки данных можно применять проверку подлинности субъекта-службы вместо интерактивной проверки подлинности.
+    + Добавлена поддержка URL-адресов WASB и WASBS.
+
+## <a name="2019-01-09"></a>09.01.2019
 
 ### <a name="azure-machine-learning-data-prep-sdk-v106"></a>Пакет SDK службы "Машинное обучение Azure" для подготовки данных версии 1.0.6
 
@@ -114,7 +134,7 @@ ms.locfileid: "54190739"
   + Узнайте, как [создать свой первый конвейер](how-to-create-your-first-pipeline.md).
   + Узнайте, как [выполнять пакетное прогнозирование с помощью конвейеров](how-to-run-batch-predictions.md).
 + Целевой объект вычислений Машинного обучения Azure
-  + [Примеры записных книжек] (https://aka.ms/aml-notebooks) теперь обновлены для использования новой управляемой вычислительной среды.
+  + [Примеры записных книжек](https://aka.ms/aml-notebooks) теперь обновлены для использования новой управляемой вычислительной среды.
   + [Сведения об этой вычислительной среде](how-to-set-up-training-targets.md#amlcompute).
 
 ### <a name="azure-portal-new-features"></a>Портал Azure: новые возможности
@@ -135,7 +155,7 @@ ms.locfileid: "54190739"
 
 + **Критические изменения** 
   * Пространство имен *azureml.train.widgets* было изменено на *azureml.widgets*.
-  * В *azureml.core.compute.AmlCompute* следующие классы становятся устаревшими: *azureml.core.compute.BatchAICompute* и *azureml.core.compute.DSVMCompute*. Последний класс будет удален в последующих выпусках. Класс AmlCompute теперь имеет более простое определение и просто требует свойств vm_size и max_nodes. Он будет автоматически масштабировать кластер от 0 до максимального числа узлов (max_nodes) при отправке задания. Наши [примеры записных книжек] (https://github.com/Azure/MachineLearningNotebooks/tree/master/training) были обновлены с учетом этой информации и должны отражать примеры использования. Мы надеемся, что вам понравится это упрощение и множество еще более интересных функций, которые будут представлены в будущих выпусках!
+  * В *azureml.core.compute.AmlCompute* следующие классы становятся устаревшими: *azureml.core.compute.BatchAICompute* и *azureml.core.compute.DSVMCompute*. Последний класс будет удален в последующих выпусках. Класс AmlCompute теперь имеет более простое определение и просто требует свойств vm_size и max_nodes. Он будет автоматически масштабировать кластер от 0 до максимального числа узлов (max_nodes) при отправке задания. Наши [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/training) были обновлены с учетом этой информации и должны отражать примеры использования. Мы надеемся, что вам понравится это упрощение и множество еще более интересных функций, которые будут представлены в будущих выпусках!
 
 ### <a name="azure-machine-learning-data-prep-sdk-v051"></a>Пакет SDK службы "Машинное обучение Azure" для подготовки данных версии 0.5.1 
 

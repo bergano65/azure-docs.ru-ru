@@ -1,27 +1,8 @@
 ---
-title: Управление веб-службами Студии машинного обучения с помощью службы управления API в Azure | Документация Майкрософт
-description: Руководство по управлению веб-службами AzureML с помощью управления API. Управление конечными точками REST API путем настройки доступа пользователей, регулирования использования и мониторинга панели мониторинга.
-keywords: машинное обучение, управление api
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: seodec18
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 05150ae1-5b6a-4d25-ac67-fb2f24a68e8d
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 11/03/2017
-ms.openlocfilehash: 8f82332b02d2e7bbf937a84de42714392e3fccd6
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53258191"
+заголовок: Управление веб-службами Студии машинного обучения Azure с помощью Управления API titleSuffix: Студия машинного обучения Azure description: Руководство по управлению веб-службами AzureML с помощью управления API. Управление конечными точками REST API путем настройки доступа пользователей, регулирования использования и мониторинга панели мониторинга.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 03.11.2017
 ---
 # <a name="manage-azure-machine-learning-studio-web-services-using-api-management"></a>Управление веб-службами Студии машинного обучения Azure с помощью службы управления API
 ## <a name="overview"></a>Обзор

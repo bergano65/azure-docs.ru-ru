@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 09/26/2018
+ms.date: 01/15/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 95355a6d1a0aff9829d75789df86f37768d25e22
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 94d948267286ad716aa200cb5aa858acf2eb2624
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53342244"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54330778"
 ---
 # <a name="source-control-integration-in-azure-automation"></a>Интеграция системы управления версиями в службе автоматизации Azure
 
@@ -59,6 +59,9 @@ ms.locfileid: "53342244"
 |ОПИСАНИЕ     | Текстовое поле для указания дополнительных сведений        |
 
 ![Сводка по системе управления версиями](./media/source-control-integration/source-control-summary.png)
+
+> [!NOTE]
+> Убедитесь, что вы выполняете вход с использованием правильной учетной записи при настройке системы управления версиями. Если есть сомнения, откройте новую вкладку в браузере, выйдите из visualstudio.com или github.com и повторите попытку подключения системы управления версиями.
 
 ## <a name="syncing"></a>Синхронизация
 

@@ -9,12 +9,12 @@ ms.date: 11/27/2018
 ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: jeconnoc
-ms.openlocfilehash: ecdb36af786d96a5b343d11cd689642d59528445
-ms.sourcegitcommit: 2bb46e5b3bcadc0a21f39072b981a3d357559191
+ms.openlocfilehash: 81d9fc7babef7c1d14a0acc420d0c16c05b83215
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52888542"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54354337"
 ---
 # <a name="state-management-with-service-fabric"></a>Управление состояниями с помощью Service Fabric
 
@@ -30,7 +30,7 @@ Service Fabric поддерживает множество разных спос
 
 ### <a name="service-fabric-reliable-volume"></a>Надежный том Service Fabric
 
-Надежный том Service Fabric — это драйвер тома Docker, используемый для подключения локального тома к контейнеру. Операции чтения и записи являются локальными и выполняются быстро. Данные реплицируются на дополнительные узлы, обеспечивая высокий уровень доступности. Отработка отказа также выполняется быстро. В случае сбоя контейнера выполняется отработка отказа с добавлением на тот узел, где уже есть копия ваших данных. Пример см. в статье [Развертывание приложения с помощью надежного тома Service Fabric](https://github.com/Azure-Samples/service-fabric-mesh/tree/2018-09-01-preview/templates/counter).
+Надежный том Service Fabric — это драйвер тома Docker, используемый для подключения локального тома к контейнеру. Операции чтения и записи являются локальными и выполняются быстро. Данные реплицируются на дополнительные узлы, обеспечивая высокий уровень доступности. Отработка отказа также выполняется быстро. В случае сбоя контейнера выполняется отработка отказа с добавлением на тот узел, где уже есть копия ваших данных. Пример см. в статье [Подключение тома надежного диска высокой доступности Service Fabric в приложении "Сетка Azure Service Fabric"](service-fabric-mesh-howto-deploy-app-sfreliable-disk-volume.md).
 
 ### <a name="azure-files-volume"></a>Том службы "Файлы Azure"
 

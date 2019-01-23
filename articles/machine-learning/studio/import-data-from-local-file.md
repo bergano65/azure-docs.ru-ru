@@ -1,27 +1,8 @@
 ---
-title: Импорт данных из файла в Студию машинного обучения Azure | Документация Майкрософт
-description: Узнайте, как отправить файл с данными для обучения с жесткого диска в Студию машинного обучения Azure. При этом в рабочей области создается модуль набора данных.
-keywords: импорт данных, формат данных, типы данных, источники данных, обучающие данные
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: seodec18
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: c0dd9e90-23c4-4f64-8b8f-489ad79f047b
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 03/20/2017
-ms.openlocfilehash: 096d2d4a8c1ee1727b124a5416ec77e8281c97d7
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53254866"
+заголовок: Импорт данных из файла titleSuffix: Студия машинного обучения Azure description: Узнайте, как отправить файл с данными для обучения с жесткого диска в Студию машинного обучения Azure. При этом в рабочей области создается модуль набора данных.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: seodec18 ms.date: 20.03.2017
 ---
 # <a name="import-training-data-from-a-file-on-your-hard-drive-into-azure-machine-learning-studio"></a>Импорт данных для обучения из файла на жестком диске в Студию машинного обучения Azure
 

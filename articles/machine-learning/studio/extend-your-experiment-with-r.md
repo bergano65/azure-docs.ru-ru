@@ -1,26 +1,8 @@
 ---
-title: Расширение возможностей эксперимента с помощью R в Студии машинного обучения Azure | Документация Майкрософт
-description: Рассматривается, как расширить функциональные возможности Студии машинного обучения Microsoft Azure с помощью языка R, используя модуль «Выполнение сценария R».
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 2c038a45-ba4d-42ea-9a88-e67391ef8c0a
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 03/20/2017
-ms.openlocfilehash: 74f08421de893a4fe8916a052f8a32134cd222a5
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53272071"
+заголовок: Расширение возможностей эксперимента с помощью R titleSuffix: Студия машинного обучения Azure description: Рассматривается, как расширить функциональные возможности Студии машинного обучения Microsoft Azure с помощью языка R, используя модуль «Выполнение сценария R».
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 20.03.2017
 ---
 # <a name="azure-machine-learning-studio-extend-your-experiment-with-r"></a>Студия машинного обучения Azure: Расширение возможностей эксперимента с помощью R 
 Вы можете расширить функциональные возможности Студии машинного обучения Azure с помощью языка R, используя модуль [Выполнение скрипта R][execute-r-script].

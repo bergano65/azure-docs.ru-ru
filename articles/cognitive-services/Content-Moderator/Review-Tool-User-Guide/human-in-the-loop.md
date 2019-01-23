@@ -1,22 +1,23 @@
 ---
-title: Машинная модерация содержимого и пользовательские проверки в Content Moderator | Документация Майкрософт
+title: Пользовательские проверки при модерации содержимого — Content Moderator
+titlesuffix: Azure Cognitive Services
 description: Как компьютеры и люди обеспечивают лучшие результаты при модерации содержимого.
 services: cognitive-services
 author: sanjeev3
 manager: mikemcca
-ms.date: 03/16/2018
+ms.date: 01/10/2019
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: article
 ms.author: sajagtap
-ms.openlocfilehash: f1a3a401363866bdd803093e894615d90536f408
-ms.sourcegitcommit: 7804131dbe9599f7f7afa59cacc2babd19e1e4b9
+ms.openlocfilehash: 7d2e87ac5353f103e654f4dcb6656916e4b271ae
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2018
-ms.locfileid: "51854226"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54264739"
 ---
-# <a name="review-tool-overview"></a>Обзор средства проверки
+# <a name="learn-about-the-review-tool"></a>Сведения об инструменте проверки
 
 Наилучшие результаты достигаются, когда люди и компьютеры вместе работают над модерацией содержимого. Компьютеры эффективно дополняют пользовательские проверки в случаях, когда достоверность прогноза должна быть подтверждена или опровергнута в контексте реального мира. В результате появился гибридный процесс модерации контента, который эффективнее, чем пользователи или компьютеры, работающие по-отдельности.
 

@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/11/2018
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: 1e51d55fcc20230dff20ca18d58a13e6ed32905b
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: ecac7216582fa07e9c25492ddeb25e9f155da563
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54192766"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54305176"
 ---
 # <a name="preview-create-a-shared-image-gallery-with-azure-powershell"></a>Предварительный просмотр: Создание коллекции общих образов с помощью Azure PowerShell 
 
@@ -49,7 +49,7 @@ ms.locfileid: "54192766"
  
 ## <a name="create-vms-from-an-image"></a>Создание виртуальных машин из образа
 
-Когда версия образа будет готова, вы можете создать одну или несколько новых виртуальных машин. При использовании упрощенного набора параметров для командлета [New-AzureRMVM]() вам просто нужно указать идентификатор версии образа. 
+Когда версия образа будет готова, вы можете создать одну или несколько виртуальных машин. При использовании упрощенного набора параметров для командлета [New-AzureRMVM](https://docs.microsoft.com/powershell/module/azurerm.compute/new-azurermvm) вам просто нужно указать идентификатор версии образа. 
 
 В этом примере создается виртуальная машина *myVMfromImage* в группе ресурсов *myResourceGroup* в регионе *Восточная часть США*.
 

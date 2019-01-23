@@ -6,22 +6,22 @@ documentationcenter: ''
 author: juliako
 manager: femila
 editor: ''
-ms.assetid: b197fce8-3b9b-4189-8d08-486810c0426f
 ms.service: media-services
 ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/30/2018
+ms.date: 01/15/2019
 ms.author: juliako;anilmur
-ms.openlocfilehash: 337ee0edc3d6e644415b2b3f7524d829d0e3c692
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
+ms.openlocfilehash: 5059e4c00fc3bcbee76f8f5a3746b4d8783d901b
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50246472"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359278"
 ---
 # <a name="media-encoder-premium-workflow-formats-and-codecs"></a>Форматы и кодеки рабочего процесса Premium Media Encoder
+
 > [!NOTE]
 > Вопросы о кодировщике ценовой категории "Премиум" направляйте по адресу mepd@microsoft.com.
 > 
@@ -38,9 +38,11 @@ ms.locfileid: "50246472"
 **Расширенный рабочий процесс кодировщика мультимедиа** поддерживает скрытые субтитры, описанные в [этом](#closed_captioning) разделе. 
 
 ## <a id="input_formats"></a>Входные форматы и кодеки расширенного рабочего процесса кодировщика мультимедиа
+
 В следующем разделе приводится список кодеков и форматов файлов, которые этот кодировщик мультимедиа поддерживает на входе.
 
 ### <a name="input-containerfile-formats"></a>Контейнер ввода/ форматы файлов
+
 * Adobe® Flash® F4V
 * MXF/SMPTE 377M
 * GXF
@@ -51,6 +53,7 @@ ms.locfileid: "50246472"
 * AVI (без сжатия 8 бит/10 бит)
 
 ### <a name="input-video-codecs"></a>Входные видеокодеки
+
 * AVC 8-разрядный/10-разрядный, до 4:2:2, включая AVCIntra
 * Avid DNxHD (в MXF)
 * DVCPro/DVCProHD (в MXF)
@@ -61,6 +64,7 @@ ms.locfileid: "50246472"
 * Windows Media Video/VC-1
 
 ### <a name="input-audio-codecs"></a>Входные аудиокодеки
+
 * AES (SMPTE 331M и 302M, AES3-2003)
 * Dolby® E
 * Dolby® Digital (AC3)
@@ -71,9 +75,11 @@ ms.locfileid: "50246472"
 * WAV/PCM
 
 ## <a id="output_format"></a>Выходные форматы и кодеки расширенного рабочего процесса кодировщика мультимедиа
+
 В следующем разделе приводится список кодеков и форматов файлов, которые этот кодировщик мультимедиа поддерживает на выходе.
 
 ### <a name="output-containerfile-formats"></a>Контейнер вывода/ форматы файлов
+
 * Adobe® Flash® F4V
 * MXF (OP1a, XDCAM и AS02)
 * DPP (включая AS11)
@@ -85,6 +91,7 @@ ms.locfileid: "50246472"
 * MPEG-TS 
 
 ### <a name="output-video-codecs"></a>Выходные видеокодеки
+
 * AVC (H.264; 8-разрядный; до High Profile, Level 5.2; 4K Ultra HD; AVC Intra)
 * Avid DNxHD (в MXF)
 * DVCPro/DVCProHD (в MXF)
@@ -92,8 +99,13 @@ ms.locfileid: "50246472"
 * MPEG-1
 * Windows Media Video/VC-1
 * Создание эскизов JPEG
+* HEVC (H.265; 8 и 10 бит, профиль Main и Main 10)
+
+  Поддержка HDR 10 доступна в определенных сценариях. Для получения дополнительной информации свяжитесь с нами: mepd@microsoft.com
+
 
 ### <a name="output-audio-codecs"></a>Выходные аудиокодеки
+
 * AES (SMPTE 331M и 302M, AES3-2003)
 * Dolby® Digital (AC3)
 * Dolby® Digital Plus (E-AC3) до 7.1
@@ -106,6 +118,7 @@ ms.locfileid: "50246472"
 >При кодировании в формат Dolby® Digital (AC3) выходные данные могут записываться только в MP4-файл ISO.
 
 ## <a id="closed_captioning"></a>Поддержка скрытых титров
+
 При приеме **расширенный рабочий процесс кодировщика мультимедиа** поддерживает:
 
 1. файлы SCC
@@ -122,14 +135,18 @@ ms.locfileid: "50246472"
 5. Файл подзаголовка SRT
 6. Потоки подзаголовка DVB
 
-Примечание: доставки через потоковую передачу в службах мультимедиа Azure поддерживаются не все указанные выше форматы.
+> [!NOTE]
+> Для доставки через потоковую передачу в службах мультимедиа Azure поддерживаются не все указанные выше форматы.
 
 ## <a name="known-issues"></a>Известные проблемы
+
 Если входящее видео не содержит скрытых субтитров, выходящий ресурс по-прежнему будет содержать пустой файл TTML. 
 
 ## <a name="media-services-learning-paths"></a>Схемы обучения работе со службами мультимедиа
+
 [!INCLUDE [media-services-learning-paths-include](../../../includes/media-services-learning-paths-include.md)]
 
 ## <a name="provide-feedback"></a>Отзывы
+
 [!INCLUDE [media-services-user-voice-include](../../../includes/media-services-user-voice-include.md)]
 

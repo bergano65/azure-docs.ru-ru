@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: 00e50d60ed7f13a2f28338891b39b1b55b7adbfa
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 2cec9e9b9724ca401778d4493d03def2aefc4ee9
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54074382"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54304488"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -483,7 +483,7 @@ o- / ...........................................................................
 
 Устройство STONITH использует субъект-службу для авторизации в Microsoft Azure. Чтобы создать субъект-службу, выполните следующее.
 
-1. Перейдите по адресу <https\://portal.azure.com>
+1. Перейдите по адресу [https://portal.azure.com](https://portal.azure.com).
 1. Откройте колонку "Azure Active Directory".  
    Перейдите в колонку "Свойства" и запишите идентификатор каталога. Это **идентификатор клиента**.
 1. Щелкните "Регистрация приложений".

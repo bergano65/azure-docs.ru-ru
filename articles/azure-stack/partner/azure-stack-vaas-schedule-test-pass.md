@@ -13,14 +13,14 @@ ms.topic: How to
 ms.date: 11/26/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 3021fafe7d74f71450eec9b3720c974b04ada224
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 0e9ad89e504ce1cb86daad48bec9ffe9423e2cf1
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52426933"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54319551"
 ---
-# <a name="schedule-your-first-test"></a>Планирование первого теста
+# <a name="scheduling-a-test"></a>Планирование теста
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
@@ -35,8 +35,8 @@ ms.locfileid: "52426933"
 Прежде чем приступить к этому краткому руководству, ознакомьтесь со следующими разделами:
 
 - [Настройка ресурсов службы VaaS](azure-stack-vaas-set-up-resources.md)
-- [Развертывание локального агента](azure-stack-vaas-local-agent.md) (рекомендуется)
-- [Проверка как услуга: основные понятия](azure-stack-vaas-key-concepts.md) (рекомендуется)
+- [Развертывание локального агента](azure-stack-vaas-local-agent.md) (обязательно)
+- [Проверка как услуга: основные понятия](azure-stack-vaas-key-concepts.md) (обязательно)
 
 ## <a name="start-a-workflow"></a>Запуск рабочего процесса
 

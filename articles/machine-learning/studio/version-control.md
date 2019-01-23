@@ -1,27 +1,7 @@
 ---
-title: Управление жизненным циклом приложений в Студии машинного обучения Azure | Документация Майкрософт
-description: Использование рекомендаций по управлению жизненным циклом приложений в студии машинного обучения Azure
-keywords: ALM, AML, Azure ML, управление жизненным циклом приложений, управление версиями
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: previous-ms.author=haining, previous-author=hning86
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 1be6577d-f2c7-425b-b6b9-d5038e52b395
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 10/27/2016
-ms.openlocfilehash: f331ebb85e1cf47dc1235138376704b08d217e82
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53249759"
+заголовок: Управление жизненным циклом приложений titleSuffix: Студия машинного обучения Azure description: Применяйте лучшие методики по управлению жизненным циклом приложений в службах студии машинного обучения Azure: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=haining, previous-author=hning86 ms.date: 27.10.2016
 ---
 # <a name="application-lifecycle-management-in-azure-machine-learning-studio"></a>Управление жизненным циклом приложений в студии машинного обучения Azure
 Студия машинного обучения Azure — это средство для разработки экспериментов машинного обучения и их применения на базе облачной платформы Azure. Это решение позволяет объединить в рамках одной платформы возможности Visual Studio IDE и масштабируемой облачной службы. Студия машинного обучения Azure поддерживает стандартные методы управления жизненным циклом приложения (ALM) — от управления версиями разных ресурсов до автоматического выполнения и развертывания. В этой статье рассматриваются некоторые возможности и подходы.

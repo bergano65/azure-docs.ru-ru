@@ -1,5 +1,5 @@
 ---
-title: Смена неуправляемого каталога или теневого клиента администратором в Azure Active Directory | Документация Майкрософт
+title: Смена неуправляемого каталога или теневого клиента администратором — Azure Active Directory | Документация Майкрософт
 description: Узнайте, как выполнить смену доменного имени DNS в неуправляемом каталоге (теневом клиенте) в Azure Active Directory.
 services: active-directory
 documentationcenter: ''
@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.component: users-groups-roles
 ms.topic: article
 ms.workload: identity
-ms.date: 01/08/2019
+ms.date: 01/14/2019
 ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
-ms.openlocfilehash: 8e11d370f58028ee4c1665d84d0e48541e7d3344
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 44fe3b54e2dfedb71b50a75befce96121ecebe05
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121198"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54320248"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 В этой статье описывается два способа смены доменного имени DNS в неуправляемом каталоге в Azure Active Directory (Azure AD). Когда пользователь самостоятельно регистрируется в облачной службе, использующей Azure AD, он добавляется в неуправляемый каталог Azure AD на основе домена электронной почты. Дополнительные сведения о самостоятельной (или "вирусной") регистрации в службе см. в статье [Что такое самостоятельная регистрация для Azure Active Directory?](directory-self-service-signup.md)

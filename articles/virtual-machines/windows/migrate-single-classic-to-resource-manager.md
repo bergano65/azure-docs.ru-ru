@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/15/2017
 ms.author: cynthn
-ms.openlocfilehash: d0307b26741a6bbbf29626e670467cdd72697646
-ms.sourcegitcommit: d98d99567d0383bb8d7cbe2d767ec15ebf2daeb2
+ms.openlocfilehash: a662a61d737dbb620d07fa6d114649e70c082796
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33943587"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54329775"
 ---
-# <a name="manually-migrate-a-classic-vm-to-a-new-arm-managed-disk-vm-from-the-vhd"></a>Ручная миграция классической виртуальной машины в новую виртуальную машину ARM с управляемыми дисками с помощью VHD 
+# <a name="migrate-a-classic-vm-to-use-a-managed-disk"></a>Миграция классической виртуальной машины для использования Управляемого диска 
 
 
 Этот раздел поможет перенести имеющиеся виртуальные машины из классической модели развертывания на [Управляемые диски](managed-disks-overview.md) в модели развертывания с помощью Resource Manager.
@@ -35,33 +35,33 @@ ms.locfileid: "33943587"
 
 ### <a name="location"></a>Расположение
 
-Выберите расположение, в котором доступны Управляемые диски Azure. Если миграция выполняется на управляемые диски уровня "Премиум", то в этом регионе должно быть также доступно хранилище уровня "Премиум". Актуальные сведения о поддерживаемых расположениях см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/regions/#services).
+Выберите расположение, в котором доступны управляемые диски. Если миграция выполняется на Управляемые диски, копия которых создана с помощью хранилища класса Premium, убедитесь, что это хранилище доступно в этом регионе. Актуальные сведения о поддерживаемых расположениях см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/regions/#services).
 
 ### <a name="vm-sizes"></a>Размеры виртуальной машины
 
-Если миграция выполняется на управляемые диски уровня "Премиум", то необходимо выбрать для виртуальной машины размер, поддерживающий хранилище уровня "Премиум", из числа доступных в регионе размещения виртуальной машины. Изучите размеры виртуальных машин, чтобы выбрать подходящий для хранилища уровня "Премиум". Спецификации размеров виртуальных машин Azure перечислены в статье [Размеры виртуальных машин](sizes.md).
+Если миграция выполняется на Управляемые диски с помощью хранилища класса Premium, то необходимо выбрать для виртуальной машины размер, который соответствует размеру хранилища класса Premium, в регионе размещения виртуальной машины. Изучите размеры виртуальных машин, чтобы выбрать подходящий для хранилища уровня "Премиум". Спецификации размеров виртуальных машин Azure перечислены в статье [Размеры виртуальных машин](sizes.md).
 Просмотрите характеристики виртуальных машин, которые работают с хранилищем класса Premium, и выберите размер виртуальной машины, наиболее подходящий для вашей рабочей нагрузки. Убедитесь, что виртуальная машина имеет достаточную пропускную способность для поддержки трафика диска.
 
 ### <a name="disk-sizes"></a>Размеры диска
 
-**Управляемые диски уровня "Премиум"**
+**Премиальный**
 
-Существует семь типов управляемых дисков уровня "Премиум", которые можно использовать с виртуальной машиной. Для каждого из них действуют определенные ограничения на пропускную способность и число операций ввода-вывода в секунду. Учитывайте эти ограничения при выборе типа диска уровня "Премиум" для виртуальной машины в зависимости от потребностей приложения с точки зрения емкости, производительности, масштабируемости и пиковых нагрузок.
+Существует семь типов хранилища класса Premium, которые можно использовать с виртуальной машиной. Для каждого из них действуют определенные ограничения на пропускную способность и число операций ввода-вывода в секунду. Учитывайте эти ограничения при выборе типа диска уровня "Премиум" для виртуальной машины в зависимости от потребностей приложения с точки зрения емкости, производительности, масштабируемости и пиковых нагрузок.
 
-| Диски уровня "Премиум"  | P4    | P6    | P10   | P20   | P30   | P40   | P50   | 
+| Диски уровня "Премиум"  | P4    | P6    | P10   | P20   | P30   | P40   | P50   | 
 |---------------------|-------|-------|-------|-------|-------|-------|-------|
-| Размер диска           | 128 ГБ| 512 ГБ| 128 ГБ| 512 ГБ            | 1024 ГБ (1 ТБ)    | 2048 ГБ (2 ТБ)    | 4095 ГБ (4 ТБ)    | 
-| Количество операций ввода-вывода в секунду на диск       | 120   | 240   | 500   | 2300              | 5000              | 7500              | 7500              | 
-| Пропускная способность на диск | 25 МБ в секунду  | 50 МБ в секунду  | 100 МБ в секунду | 150 МБ в секунду | 200 МБ в секунду | 250 МБ в секунду | 250 МБ в секунду | 
+| Размер диска           | 128 ГБ| 512 ГБ| 128 ГБ| 512 ГБ            | 1024 ГБ (1 ТБ)    | 2048 ГБ (2 ТБ)    | 4095 ГБ (4 ТБ)    | 
+| Количество операций ввода-вывода в секунду на диск       | 120   | 240   | 500   | 2300              | 5000              | 7500              | 7500              | 
+| Пропускная способность на диск | 25 МБ в секунду  | 50 МБ в секунду  | 100 МБ в секунду | 150 МБ в секунду | 200 МБ в секунду | 250 МБ в секунду | 250 МБ в секунду | 
 
-**Управляемые диски уровня "Стандартный"**
+**Стандартный**
 
-Существует семь типов управляемых дисков уровня "Стандартный", которые можно использовать с виртуальной машиной. У них разная емкость, но одинаковые ограничения пропускной способности и числа операций ввода-вывода в секунду. Выберите тип управляемых дисков уровня "Стандартный" в зависимости от потребностей в емкости своего приложения.
+Существует семь типов дисков (цен. категория "Стандартный"), которые можно использовать с виртуальной машиной. У них разная емкость, но одинаковые ограничения пропускной способности и числа операций ввода-вывода в секунду. Выберите тип управляемых дисков уровня "Стандартный" в зависимости от потребностей в емкости своего приложения.
 
-| Диски уровня "Стандартный"  | S4               | S6               | S10              | S20              | S30              | S40              | S50              | 
+| Диски уровня "Стандартный"  | S4               | S6               | S10              | S20              | S30              | S40              | S50              | 
 |---------------------|---------------------|---------------------|------------------|------------------|------------------|------------------|------------------| 
-| Размер диска           | 30 ГБ            | 64 ГБ            | 128 ГБ           | 512 ГБ           | 1024 ГБ (1 ТБ)   | 2048 ГБ (2 ТБ)    | 4095 ГБ (4 ТБ)   | 
-| Количество операций ввода-вывода в секунду на диск       | 500              | 500              | 500              | 500              | 500              | 500             | 500              | 
+| Размер диска           | 30 ГБ            | 64 ГБ            | 128 ГБ           | 512 ГБ           | 1024 ГБ (1 ТБ)   | 2048 ГБ (2 ТБ)    | 4095 ГБ (4 ТБ)   | 
+| Количество операций ввода-вывода в секунду на диск       | 500              | 500              | 500              | 500              | 500              | 500             | 500              | 
 | Пропускная способность на диск | 60 МБ в секунду | 60 МБ в секунду | 60 МБ в секунду | 60 МБ в секунду | 60 МБ в секунду | 60 МБ в секунду | 60 МБ в секунду | 
 
 
@@ -73,7 +73,7 @@ ms.locfileid: "33943587"
 
 ### <a name="pricing"></a>Цены
 
-Ознакомьтесь с [ценами на Управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks/). Цены на управляемые диски уровня "Премиум" совпадают с ценами на неуправляемые диски уровня "Премиум". При этом цены на управляемые диски уровня "Стандартный" отличаются от цен на неуправляемые диски уровня "Стандартный".
+Ознакомьтесь с [ценами на Управляемые диски](https://azure.microsoft.com/pricing/details/managed-disks/). Цены на управляемые диски (цен. категория "Премиум") совпадают с ценами на неуправляемые диски (цен. категория "Премиум"). При этом цены на управляемые диски (цен. категория "Стандартный") отличаются от цен на неуправляемые диски (цен. категория "Стандартный").
 
 
 ## <a name="checklist"></a>Контрольный список
@@ -96,77 +96,104 @@ ms.locfileid: "33943587"
 Для этой части требуется модуль Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Кроме того, нужно выполнить команду `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
 
 
-1.  Сначала задайте общие параметры.
+Создайте переменные для общих параметров.
 
-    ```powershell
-    $resourceGroupName = 'yourResourceGroupName'
-    
-    $location = 'your location' 
-    
-    $virtualNetworkName = 'yourExistingVirtualNetworkName'
-    
-    $virtualMachineName = 'yourVMName'
-    
-    $virtualMachineSize = 'Standard_DS3'
-    
-    $adminUserName = "youradminusername"
-    
-    $adminPassword = "yourpassword" | ConvertTo-SecureString -AsPlainText -Force
-    
-    $imageName = 'yourImageName'
-    
-    $osVhdUri = 'https://storageaccount.blob.core.windows.net/vhdcontainer/osdisk.vhd'
-    
-    $dataVhdUri = 'https://storageaccount.blob.core.windows.net/vhdcontainer/datadisk1.vhd'
-    
-    $dataDiskName = 'dataDisk1'
-    ```
+```powershell
+$resourceGroupName = 'yourResourceGroupName'
 
-2.  Создайте управляемый диск ОС с помощью виртуального жесткого диска из классической виртуальной машины.
+$location = 'your location' 
 
-    Обязательно укажите полный универсальный код ресурса (URI) виртуального жесткого диска ОС в параметре $osVhdUri. Также для параметра **-AccountType** укажите значение **Premium_LRS** или **Standard_LRS**, в зависимости от типа дисков ("Премиум" или "Стандартный"), на которые выполняется миграция.
+$virtualNetworkName = 'yourExistingVirtualNetworkName'
 
-    ```powershell
-    $osDisk = New-AzureRmDisk -DiskName $osDiskName -Disk (New-AzureRmDiskConfig '
-    -AccountType Premium_LRS -Location $location -CreateOption Import -SourceUri $osVhdUri) '
-    -ResourceGroupName $resourceGroupName
-    ```
+$virtualMachineName = 'yourVMName'
 
-3.  Подключите диск ОС к новой виртуальной машине.
+$virtualMachineSize = 'Standard_DS3'
 
-    ```powershell
-    $VirtualMachine = New-AzureRmVMConfig -VMName $virtualMachineName -VMSize $virtualMachineSize
-    $VirtualMachine = Set-AzureRmVMOSDisk -VM $VirtualMachine -ManagedDiskId $osDisk.Id '
-    -StorageAccountType Premium_LRS -DiskSizeInGB 128 -CreateOption Attach -Windows
-    ```
+$adminUserName = "youradminusername"
 
-4.  Создайте управляемый диск данных из VHD-файла данных и добавьте его в новую виртуальную машину.
+$adminPassword = "yourpassword" | ConvertTo-SecureString -AsPlainText -Force
 
-    ```powershell
-    $dataDisk1 = New-AzureRmDisk -DiskName $dataDiskName -Disk (New-AzureRmDiskConfig '
-    -AccountType Premium_LRS -Location $location -CreationDataCreateOption Import '
-    -SourceUri $dataVhdUri ) -ResourceGroupName $resourceGroupName
+$imageName = 'yourImageName'
+
+$osVhdUri = 'https://storageaccount.blob.core.windows.net/vhdcontainer/osdisk.vhd'
+
+$dataVhdUri = 'https://storageaccount.blob.core.windows.net/vhdcontainer/datadisk1.vhd'
+
+$dataDiskName = 'dataDisk1'
+```
+
+Создайте управляемый диск ОС с помощью виртуального жесткого диска из классической виртуальной машины. Обязательно укажите полный URI виртуального жесткого диска ОС в параметре $osVhdUri. Также для параметра **-AccountType** укажите значение **Premium_LRS** или **Standard_LRS**, в зависимости от типа дисков (цен. категория "Премиум" или "Стандартный"), на которые выполняется миграция.
+
+```powershell
+$osDisk = New-AzureRmDisk -DiskName $osDiskName '
+   -Disk (New-AzureRmDiskConfig '
+   -AccountType Premium_LRS '
+   -Location $location '
+   -CreateOption Import '
+   -SourceUri $osVhdUri) '
+   -ResourceGroupName $resourceGroupName
+```
+
+Подключите диск ОС к новой виртуальной машине.
+
+```powershell
+$VirtualMachine = New-AzureRmVMConfig -VMName $virtualMachineName -VMSize $virtualMachineSize
+$VirtualMachine = Set-AzureRmVMOSDisk '
+   -VM $VirtualMachine '
+   -ManagedDiskId $osDisk.Id '
+   -StorageAccountType Premium_LRS '
+   -DiskSizeInGB 128 '
+   -CreateOption Attach -Windows
+```
+
+Создайте управляемый диск данных из VHD-файла данных и добавьте его в новую виртуальную машину.
+
+```powershell
+$dataDisk1 = New-AzureRmDisk '
+   -DiskName $dataDiskName '
+   -Disk (New-AzureRmDiskConfig '
+   -AccountType Premium_LRS '
+   -Location $location '
+   -CreationOption Import '
+   -SourceUri $dataVhdUri ) '
+   -ResourceGroupName $resourceGroupName
     
-    $VirtualMachine = Add-AzureRmVMDataDisk -VM $VirtualMachine -Name $dataDiskName '
-    -CreateOption Attach -ManagedDiskId $dataDisk1.Id -Lun 1
-    ```
+$VirtualMachine = Add-AzureRmVMDataDisk '
+   -VM $VirtualMachine '
+   -Name $dataDiskName '
+   -CreateOption Attach '
+   -ManagedDiskId $dataDisk1.Id '
+   -Lun 1
+```
 
-5.  Создайте новую виртуальную машину, настроив ее общедоступный IP-адрес, виртуальную сеть и сетевую карту.
+Создайте новую виртуальную машину, настроив ее общедоступный IP-адрес, виртуальную сеть и сетевую карту.
 
-    ```powershell
-    $publicIp = New-AzureRmPublicIpAddress -Name ($VirtualMachineName.ToLower()+'_ip') '
-    -ResourceGroupName $resourceGroupName -Location $location -AllocationMethod Dynamic
+```powershell
+$publicIp = New-AzureRmPublicIpAddress '
+   -Name ($VirtualMachineName.ToLower()+'_ip') '
+   -ResourceGroupName $resourceGroupName '
+   -Location $location '
+   -AllocationMethod Dynamic
     
-    $vnet = Get-AzureRmVirtualNetwork -Name $virtualNetworkName -ResourceGroupName $resourceGroupName
+$vnet = Get-AzureRmVirtualNetwork '
+   -Name $virtualNetworkName '
+   -ResourceGroupName $resourceGroupName
     
-    $nic = New-AzureRmNetworkInterface -Name ($VirtualMachineName.ToLower()+'_nic') '
-    -ResourceGroupName $resourceGroupName -Location $location -SubnetId $vnet.Subnets[0].Id '
-    -PublicIpAddressId $publicIp.Id
+$nic = New-AzureRmNetworkInterface '
+   -Name ($VirtualMachineName.ToLower()+'_nic') '
+   -ResourceGroupName $resourceGroupName '
+   -Location $location '
+   -SubnetId $vnet.Subnets[0].Id '
+   -PublicIpAddressId $publicIp.Id
     
-    $VirtualMachine = Add-AzureRmVMNetworkInterface -VM $VirtualMachine -Id $nic.Id
+$VirtualMachine = Add-AzureRmVMNetworkInterface '
+   -VM $VirtualMachine '
+   -Id $nic.Id
     
-    New-AzureRmVM -VM $VirtualMachine -ResourceGroupName $resourceGroupName -Location $location
-    ```
+New-AzureRmVM -VM $VirtualMachine '
+   -ResourceGroupName $resourceGroupName '
+   -Location $location
+```
 
 > [!NOTE]
 >Чтобы обеспечить поддержку приложений, может потребоваться выполнить дополнительные шаги, не описанные в этом руководстве.

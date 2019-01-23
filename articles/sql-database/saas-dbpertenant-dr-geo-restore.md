@@ -1,5 +1,5 @@
 ---
-title: 'Приложения SaaS: использование геоизбыточных резервных копий базы данных SQL Azure для аварийного восстановления | Документация Майкрософт'
+title: Приложения SaaS. Геоизбыточные резервные копии базы данных SQL Azure для аварийного восстановления | Документация Майкрософт
 description: Узнайте, как использовать геоизбыточные резервные копии базы данных SQL Azure для восстановления мультитенантных приложений SaaS в случае сбоя
 services: sql-database
 ms.service: sql-database
@@ -12,12 +12,12 @@ ms.author: ayolubek
 ms.reviewer: sstein
 manager: craigg
 ms.date: 10/15/2018
-ms.openlocfilehash: a78632ed6215c467f53938569621cfb18f9e51ca
-ms.sourcegitcommit: 8e06d67ea248340a83341f920881092fd2a4163c
+ms.openlocfilehash: acc1b9e9561b9468a4638c7073a066e4cb34d911
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49352946"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54264756"
 ---
 # <a name="use-geo-restore-to-recover-a-multitenant-saas-application-from-database-backups"></a>Использование геовосстановления для восстановления мультитенантного приложения SaaS из резервных копий базы данных
 
@@ -114,7 +114,7 @@ ms.locfileid: "49352946"
 
 3. Задайте следующие параметры:
 
-    $DemoScenario = 1. Запуск фонового задания, которое синхронизирует данные о конфигурации сервера клиента и пула с каталогом.
+    $DemoScenario = 1. Запуск фонового задания, которое синхронизирует данные о конфигурации сервера клиента и пула в каталог.
 
 4. Нажмите клавишу F5, чтобы запустить скрипт синхронизации. 
 
@@ -174,7 +174,7 @@ ms.locfileid: "49352946"
 
 1. В интегрированной среде сценариев PowerShell откройте скрипт ...\Learning Modules\Business Continuity and Disaster Recovery\DR-RestoreFromBackup\Demo-RestoreFromBackup.ps1 и установите следующее значение.
 
-    $DemoScenario = 2. Восстановление приложения в регионе восстановления из геоизбыточных резервных копий.
+    $DemoScenario = 2. Восстановление приложения в регионе восстановления из геоизбыточных резервных копий.
 
 2. Нажмите клавишу F5, чтобы выполнить скрипт.  
 
@@ -209,9 +209,9 @@ ms.locfileid: "49352946"
 
 1. В интегрированной среде сценариев PowerShell откройте скрипт ...\Learning Modules\Business Continuity and Disaster Recovery\DR-RestoreFromBackup\Demo-RestoreFromBackup.ps1 и установите следующее свойство.
 
-    $DemoScenario = 3. Подготовка нового клиента в регионе восстановления.
+    $DemoScenario = 3. Подготовка нового клиента в регионе восстановления.
 
-2. Нажмите клавишу F5, чтобы выполнить скрипт синхронизации.
+2. Нажмите клавишу F5, чтобы выполнить скрипт.
 
 3. По завершении подготовки в браузере откроется страница событий для Hawthorn Hall. 
 
@@ -262,7 +262,7 @@ ms.locfileid: "49352946"
 
 2. В интегрированной среде сценариев PowerShell откройте скрипт ...\Learning Modules\Business Continuity and Disaster Recovery\DR-RestoreFromBackup\Demo-RestoreFromBackup.ps1 и установите следующее значение.
 
-    $DemoScenario = 4. Удаление события из клиента в регионе восстановления.
+    $DemoScenario = 4. Удаление события из клиента в регионе восстановления.
 
 3. Нажмите клавишу F5, чтобы выполнить скрипт.
 
@@ -320,13 +320,13 @@ ms.locfileid: "49352946"
   
 1. В интегрированной среде сценариев PowerShell откройте скрипт ...\Learning Modules\Business Continuity and Disaster Recovery\DR-RestoreFromBackup\Demo-RestoreFromBackup.ps1 и убедитесь, что процесс Catalog Sync еще выполняется в соответствующем экземпляре PowerShell. При необходимости перезапустите его, задав:
 
-    $DemoScenario = 1. Запуск синхронизации сведений о конфигурации сервера клиента, пула и базы данных с каталогом.
+    $DemoScenario = 1. Запуск синхронизации сведений о конфигурации сервера клиента, пула и базы данных с каталогом.
 
     Нажмите клавишу F5, чтобы выполнить скрипт.
 
 2.  Затем, чтобы начать процесс репатриации, установите:
 
-    $DemoScenario = 5. Возвращение приложения в исходный регион.
+    $DemoScenario = 5. Возвращение приложения в исходный регион.
 
     Нажмите клавишу F5, чтобы запустить скрипт восстановления в новом окне PowerShell. Возвращение займет несколько минут, а его состояние можно отслеживать в окне PowerShell.
 
@@ -352,7 +352,7 @@ ms.locfileid: "49352946"
 
 1. В интегрированной среде сценариев PowerShell откройте скрипт ...\Learning Modules\Business Continuity and Disaster Recovery\DR-RestoreFromBackup\Demo-RestoreFromBackup.ps1 и задайте следующее значение.
     
-    $DemoScenario = 6. Удаление устаревших ресурсов из региона восстановления.
+    $DemoScenario = 6. Удаление устаревших ресурсов из региона восстановления.
 
 2. Нажмите клавишу F5, чтобы выполнить скрипт.
 

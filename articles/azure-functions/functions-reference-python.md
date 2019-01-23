@@ -1,6 +1,6 @@
 ---
 title: Справочник разработчика Python. Функции Azure
-description: Сведения о разработке функций на языке Python.
+description: Сведения о разработке функций на языке Python
 services: functions
 documentationcenter: na
 author: ggailey777
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: na
 ms.date: 04/16/2018
 ms.author: glenga
-ms.openlocfilehash: 619db07204b88609314d0d3d06709eaa93cb7a43
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: dadb645067a0f6cac436d638a829ac4c0937bd60
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53188040"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54304393"
 ---
 # <a name="azure-functions-python-developer-guide"></a>Справочник разработчика Python. Функции Azure
 
@@ -151,7 +151,7 @@ def main(req: func.HttpRequest,
 
 При активации этой функции HTTP-запрос передается в функцию с помощью `req`. Запись извлекается из хранилища BLOB-объектов Azure по значению _идентификатора_, включенного в URL-адрес маршрута, и становится доступной в виде `obj` в тексте функции.
 
-## <a name="outputs"></a>Выходные данные
+## <a name="outputs"></a>outputs
 
 Выходные данные можно выразить как возвращаемое значение или параметры вывода. Если используется только один вывод, мы рекомендуем использовать возвращаемое значение. Для нескольких выводов нужно использовать параметры вывода.
 
@@ -317,7 +317,7 @@ The terminal process terminated with exit code: 1
 Чтобы автоматически компилировать и настраивать требуемые двоичные файлы, [установите Docker](https://docs.docker.com/install/) на локальном компьютере и выполните следующую команду для публикации с помощью [Azure Functions Core Tools](functions-run-local.md#v2) (функция). Не забудьте заменить `<app name>` именем приложения-функции, размещенного в Azure. 
 
 ```bash
-func azure functionapp <app name> --build-native-deps
+func azure functionapp publish <app name> --build-native-deps
 ```
 
 На системном уровне средства Core Tools используют Docker для запуска образа [mcr.microsoft.com/azure-functions/python](https://hub.docker.com/r/microsoft/azure-functions/) в виде контейнера на локальном компьютере. Затем на основе этой среды они компилируют и устанавливают необходимые модули из исходного дистрибутива, а затем упаковывают их для окончательного развертывания в Azure.

@@ -10,14 +10,14 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 09/27/2018
+ms.date: 01/14/2019
 ms.author: bwren
-ms.openlocfilehash: d2db9d426da58b3783b07210165a55cc6ec27658
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: abcf3100dc5252db9e3a5e7b446417333a9b37ca
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53185959"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321897"
 ---
 # <a name="standard-properties-in-log-analytics-records"></a>Стандартные свойства в записях Log Analytics
 Данные в [Log Analytics](../log-query/log-query-overview.md) хранятся в виде набора записей. Каждый набор имеет определенный тип данных с уникальным набором свойств. Большинство типов данных имеют стандартные свойства, которые являются общими для нескольких типов. В этой статье описаны эти свойства и приведены примеры по их использованию в запросах.
@@ -84,6 +84,70 @@ AzureActivity
    | summarize LoggedOnAccounts = makeset(Account) by _ResourceId 
 ) on _ResourceId  
 ```
+
+## <a name="isbillable"></a>\_IsBillable
+Свойство **\_IsBillable** указывает, являются ли входящие данные оплачиваемыми. Данные, которые имеют свойство **\_IsBillable** равно значению _false_, собираются бесплатно и не оплачиваются в вашей учетной записи Azure.
+
+### <a name="examples"></a>Примеры
+Чтобы получить список компьютеров, отправляющие счет за типы данных, используйте следующий запрос.
+
+> [!NOTE]
+> Используйте запросы `union withsource = tt *` только в случае необходимости, так как сканирование по типам данных требует больших затрат на выполнение. 
+
+```Kusto
+union withsource = tt * 
+| where _IsBillable == true 
+| extend computerName = tolower(tostring(split(Computer, '.')[0]))
+| where computerName != ""
+| summarize TotalVolumeBytes=sum(_BilledSize) by computerName
+```
+
+Это может быть расширено, чтобы возвращать количество компьютеров в час, которые отправляют счета за типы данных.
+
+```Kusto
+union withsource = tt * 
+| where _IsBillable == true 
+| extend computerName = tolower(tostring(split(Computer, '.')[0]))
+| where computerName != ""
+| summarize dcount(computerName) by bin(TimeGenerated, 1h) | sort by TimeGenerated asc
+```
+
+## <a name="billedsize"></a>\_BilledSize
+Свойство **\_BilledSize** определяет размер данных в байтах, которые будут оплачиваться в вашей учетной записи Azure, если свойство **\_IsBillable** имеет значение true.
+
+### <a name="examples"></a>Примеры
+Чтобы увидеть размер оплачиваемых событий для каждого компьютера, используйте свойство `_BilledSize`, которое предоставляет размер в байтах.
+
+```Kusto
+union withsource = tt * 
+| where _IsBillable == true 
+| summarize Bytes=sum(_BilledSize) by  Computer | sort by Bytes nulls last 
+```
+
+Чтобы узнать количество полученных событий для каждого компьютера, выполните следующий запрос.
+
+```Kusto
+union withsource = tt *
+| summarize count() by Computer | sort by count_ nulls last
+```
+
+Чтобы узнать количество полученных оплачиваемых событий для каждого компьютера, выполните следующий запрос. 
+
+```Kusto
+union withsource = tt * 
+| where _IsBillable == true 
+| summarize count() by Computer  | sort by count_ nulls last
+```
+
+Чтобы счетчики оплачиваемых типов данных отправляли данные на конкретный компьютер, выполните следующий запрос.
+
+```Kusto
+union withsource = tt *
+| where Computer == "computer name"
+| where _IsBillable == true 
+| summarize count() by tt | sort by count_ nulls last 
+```
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 08/30/2018
 ms.author: mikeray
-ms.openlocfilehash: 42a4ea1e4dc352e56fbd65f69c9ed71e3b0c1038
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: 65ccf45ea8ea1f8f553be0b2c599f5c1433fc3e8
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "51238081"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359720"
 ---
 # <a name="configure-always-on-availability-group-in-azure-vm-manually"></a>Настройка группы доступности AlwaysOn на виртуальной машине Azure вручную
 
@@ -51,6 +51,9 @@ ms.locfileid: "51238081"
 
 
 Прежде чем приступить к этому руководству, необходимо [настроить необходимые компонентов для создания групп доступности AlwaysOn на виртуальных машинах Azure](virtual-machines-windows-portal-sql-availability-group-prereq.md). Если эти предварительные условия уже выполнены, то можно перейти к [созданию кластера](#CreateCluster).
+
+  >[!NOTE]
+  > Многие действия, описанные в этом руководстве можно автоматизировать с помощью шаблона быстрого запуска Azure. Дополнительные сведения см. в статье [Create WSFC, listener, and configure ILB for an Always On availability group on a SQL Server VM with Azure Quickstart Template](virtual-machines-windows-sql-availability-group-quickstart-template.md) (Создание WSFC и прослушивателя и настройка внутреннего балансировщика нагрузки для группы доступности Always On с помощью шаблонов быстрого запуска Azure).
 
 
 <!--**Procedure**: *This is the first “step”. Make titles H2’s and short and clear – H2’s appear in the right pane on the web page and are important for navigation.*-->
@@ -296,7 +299,7 @@ Repeat these steps on the second SQL Server.
 
     ![Мастер создания групп доступности, выбор начальной синхронизации данных](./media/virtual-machines-windows-portal-sql-availability-group-tutorial/66-endpoint.png)
 
-8. На странице **Выбор начальной синхронизации данных** выберите **Полная** и укажите сетевую папку. Это должен быть [созданный вами общий ресурс для резервных копий](#backupshare). В примере это была папка **\\\\\<First SQL Server\>\Backup\**. Щелкните **Далее**.
+8. На странице **Выбор начальной синхронизации данных** выберите **Полная** и укажите сетевую папку. Это должен быть [созданный вами общий ресурс для резервных копий](#backupshare). В примере используется папка **\\\\\<First SQL Server\>\Backup\\**. Щелкните **Далее**.
 
    >[!NOTE]
    >При полной синхронизации полная резервная копия базы данных создается на первом экземпляре SQL Server и восстанавливается на втором экземпляре. Полная синхронизация не рекомендуется для больших баз данных, так как может занимать много времени. Это время можно сократить, вручную создав резервную копию базы данных и восстановив ее с параметром `NO RECOVERY`. Если база данных уже была восстановлена с параметром `NO RECOVERY` на втором сервере SQL Server перед настройкой группы доступности, выберите переключатель **Только присоединение**. Если вы хотите создать резервную копию после настройки группы доступности, выберите переключатель **Пропустить начальную синхронизацию данных**.

@@ -12,12 +12,12 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: fda0f600fa7cb130511f2bd8b53543acfbcc7759
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: 2478a5dd3f5d685253ef9145bec0a68ff324c6c3
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54054305"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54263821"
 ---
 # <a name="load-and-read-data-with-azure-machine-learning"></a>Загрузка и чтение данных с помощью службы "Машинное обучение Azure"
 
@@ -27,7 +27,25 @@ ms.locfileid: "54054305"
 * преобразование типов на основе зависимостей во время загрузки файла;
 * поддержка подключений к MS SQL Server и хранилищу Azure Data Lake.
 
-## <a name="load-text-line-data"></a>Загрузка строковых текстовых данных 
+## <a name="load-data-automatically"></a>Автоматическая загрузка данных
+
+Используйте функцию `auto_read_file()`, чтобы автоматически загружать данные без указания типа файла. Тип файла и аргументы для их чтения определяются автоматически.
+
+```python
+import azureml.dataprep as dprep
+
+dataflow = dprep.auto_read_file(path='./data/any-file.txt')
+```
+
+Эта функция используется для автоматического обнаружения типа файла, кодирования и других видов анализа аргументов из единой удобной точки входа. Функция также автоматически выполняет следующие действия, которые часто выполняются во время загрузки данных с разделителями:
+
+* определение и настройка разделителя;
+* пропуск пустых записей в начале файла;
+* определение и настройка строки заголовка.
+
+Кроме того, если вам заранее известен тип файла и вы хотите четко контролировать способ его обработки, следуйте указаниям из этой статьи, чтобы узнать о специализированных функциях предлагаемой SDK.
+
+## <a name="load-text-line-data"></a>Загрузка строковых текстовых данных
 
 Чтобы поместить в поток данных простые текстовые данные, используйте `read_lines()` без дополнительных параметров.
 
@@ -188,7 +206,7 @@ dataflow = dprep.read_fwf('./data/fixed_width_file.txt',
 
 Этот пакет SDK умеет загружать данные из источника SQL. В настоящее время поддерживается только Microsoft SQL Server. Чтобы прочитать данные с SQL Server, создайте объект `MSSQLDataSource`, который содержит параметры подключения. Параметр пароля `MSSQLDataSource` принимает объект `Secret`. Объект секрета можно создать двумя способами.
 
-* Зарегистрируйте секрет и его значение в подсистеме выполнения. 
+* Зарегистрируйте секрет и его значение в подсистеме выполнения.
 * Чтобы создать секрет только с полем `id` (если значение секрета уже зарегистрировано в среде выполнения), выполнив команду `dprep.create_secret("[SECRET-ID]")`.
 
 ```python
@@ -232,7 +250,7 @@ az account show --query tenantId
 dataflow = read_csv(path = DataLakeDataSource(path='adl://dpreptestfiles.azuredatalakestore.net/farmers-markets.csv', tenant='microsoft.onmicrosoft.com')) head = dataflow.head(5) head
 ```
 
-> [!NOTE] 
+> [!NOTE]
 > Если учетная запись пользователя является участником нескольких клиентов Azure, необходимо указать соответствующий клиент в форме имени хоста URL-адреса AAD.
 
 ### <a name="create-a-service-principal-with-the-azure-cli"></a>Создание субъекта-службы с помощью Azure CLI
@@ -256,7 +274,7 @@ openssl x509 -in adls-dpreptestfiles.crt -noout -fingerprint
 az ad sp show --id "8dd38f34-1fcb-4ff9-accd-7cd60b757174" --query objectId
 ```
 
-Чтобы настроить доступ `Read` и `Execute` для файловой системы Azure Data Lake Storage, настройте ACL для папок и файлов по отдельности. Это связано с тем, что базовая модель HDFS ACL не поддерживает наследование. 
+Чтобы настроить доступ `Read` и `Execute` для файловой системы Azure Data Lake Storage, настройте ACL для папок и файлов по отдельности. Это связано с тем, что базовая модель HDFS ACL не поддерживает наследование.
 
 ```azurecli
 az dls fs access set-entry --account dpreptestfiles --acl-spec "user:e37b9b1f-6a5e-4bee-9def-402b956f4e6f:r-x" --path /

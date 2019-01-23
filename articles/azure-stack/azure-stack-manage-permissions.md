@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 1/14/2019
 ms.author: mabrigg
 ms.reviewer: thoroet
-ms.openlocfilehash: ab61e1f892f46ad36df741b7a72afcfcbaa0ed87
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 26ce7139b856fc2f8d7d2cad549b3dd3c0f5e406
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44376941"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54304692"
 ---
 # <a name="manage-role-based-access-control"></a>Управление доступом на основе ролей
 
@@ -27,9 +27,9 @@ ms.locfileid: "44376941"
 
 Пользователь в Azure Stack может быть читателем, владельцем или участником каждого экземпляра подписки, группы ресурсов или службы. Например, пользователь A может иметь разрешения на чтение подписки 1, но иметь права владельца виртуальной машины 7.
 
- - Читатель: пользователь может все просматривать, но не может вносить изменения.
- - Участник: пользователь может управлять всем, кроме доступа к ресурсам.
- - Владелец: пользователь может управлять всем, включая доступ к ресурсам.
+ - Читатель. Может просматривать все, но не может вносить изменения.
+ - Участник. Может управлять всем, кроме доступа к ресурсам.
+ - Владелец. Может управлять всем, включая доступ к ресурсам.
 
 ## <a name="set-access-permissions-for-a-user"></a>Настройка прав доступа для пользователя
 

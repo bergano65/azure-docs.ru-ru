@@ -11,12 +11,12 @@ ms.component: text-analytics
 ms.topic: conceptual
 ms.date: 11/14/2018
 ms.author: diberry
-ms.openlocfilehash: 18c9eace306522f9ac9f04e19b9571db67561ae0
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: eabbe8d771520d5b1d5360a3d86b96d27ea08277
+ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53725067"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54359448"
 ---
 # <a name="configure-containers"></a>Настройка контейнеров
 
@@ -116,7 +116,7 @@ ms.locfileid: "53725067"
   Контейнер распознавания лиц использует службу хранилища Azure и Azure Cosmos DB для распределения данных этих четырех типов в постоянном хранилище. Большие двоичные данные и очереди данных обрабатывает служба хранилища Azure. Метаданные и данные кэша обрабатывает служба Azure Cosmos DB. При остановке или удалении контейнера распознавания лиц все данные в хранилище для этого контейнера остаются в службе хранилища Azure и Azure Cosmos DB.  
   К ресурсам, используемым в сценариях хранения Azure, применяются перечисленные ниже дополнительные требования.
   * Ресурс службы хранилища Azure должен использовать тип учетной записи StorageV2.
-  * Ресурс Azure Cosmos DB должен использовать API Azure Cosmos DB для MongoDB
+  * Ресурс Azure Cosmos DB должен использовать API Azure Cosmos DB для MongoDB.
 
 Сценариями хранения и соответствующими параметрами конфигурации управляет объект `Storage` в разделе конфигурации `CloudAI`. В объекте `Storage` доступны следующие параметры конфигурации:
 

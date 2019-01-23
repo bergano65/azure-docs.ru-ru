@@ -5,15 +5,15 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-ms.date: 03/21/2018
+ms.date: 01/14/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: c6c67f6f1500ee90a1e0e4a04309f3f7aa2f6d05
-ms.sourcegitcommit: baed5a8884cb998138787a6ecfff46de07b8473d
+ms.openlocfilehash: 894724b08876e96119bf72ce65e22c6ae884d8da
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "36338328"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54306885"
 ---
 ### <a name="is-bgp-supported-on-all-azure-vpn-gateway-skus"></a>VPN-шлюзы Azure поддерживают BGP для всех классов SKU?
 Нет, BGP поддерживается в VPN-шлюзах Azure класса **VpnGw1**, **VpnGw2**, **VpnGw3**, **Standard** и **HighPerformance**. **Basic** не поддерживается.
@@ -30,8 +30,8 @@ ms.locfileid: "36338328"
 ### <a name="are-there-asns-reserved-by-azure"></a>Существуют ли ASN, зарезервированные Azure?
 Да, следующие ASN зарезервированы Azure для внутреннего и внешнего пиринга:
 
-* общедоступные ASN — 8074, 8075, 12076;
-* частные ASN — 65515, 65517, 65518, 65519, 65520.
+* общедоступные ASN — 8074, 8075, 12076;
+* частные ASN — 65515, 65517, 65518, 65519, 65520.
 
 При подключении к VPN-шлюзам Azure эти ASN нельзя указывать для локальных VPN-устройств.
 
@@ -68,7 +68,7 @@ VPN-шлюз Azure объявляет следующие маршруты для
 Да, вы можете использовать подключения с BGP и без BGP на одном VPN-шлюзе Azure.
 
 ### <a name="does-azure-vpn-gateway-support-bgp-transit-routing"></a>Поддерживает ли VPN-шлюз Azure транзитную маршрутизацию BGP?
-Да, транзитная маршрутизация BGP поддерживается, но с одним исключением: VPN-шлюзы Azure **не будут** объявлять маршруты по умолчанию для других узлов BGP. Чтобы включить транзитную маршрутизацию между несколькими VPN-шлюзами Azure, необходимо включить BGP на всех промежуточных подключениях между виртуальными сетями.
+Да, транзитная маршрутизация BGP поддерживается, но с одним исключением: VPN-шлюзы Azure **не будут** объявлять маршруты по умолчанию для других узлов BGP. Чтобы включить транзитную маршрутизацию между несколькими VPN-шлюзами Azure, необходимо включить BGP на всех промежуточных подключениях между виртуальными сетями. Дополнительные сведения см. в статье [Обзор использования BGP с VPN-шлюзами Azure](../articles/vpn-gateway/vpn-gateway-bgp-overview.md).
 
 ### <a name="can-i-have-more-than-one-tunnel-between-azure-vpn-gateway-and-my-on-premises-network"></a>Можно ли создать несколько туннелей между VPN-шлюзом Azure и локальной сетью?
 Да, вы можете создать несколько VPN-туннелей S2S между VPN-шлюзом Azure и локальной сетью. Но обратите внимание, что все эти туннели будут учитываться в общем числе туннелей на ваших шлюзах Azure VPN. Кроме того, вы должны включить BGP для обоих туннелей.

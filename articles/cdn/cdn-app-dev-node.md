@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 46ae8cd9775432d126cbde856c1fb06ea319297e
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.openlocfilehash: 70bae1558860b763d17d04e10d5d926b39300101
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38301571"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321251"
 ---
 # <a name="get-started-with-azure-cdn-development"></a>Приступая к разработке для Azure CDN
 > [!div class="op_single_selector"]
@@ -340,7 +340,7 @@ function cdnDelete() {
 Теперь мы можем выполнить нашу программу Node.js в любом удобном отладчике или консоли.
 
 > [!TIP]
-> Если вы используете в качестве отладчика Visual Studio Code, вам потребуется настроить среду для передачи параметров командной строки.  Для этой цели в Visual Studio Code используется файл **lanuch.json** .  Найдите в нем свойство **args** и добавьте массив строковых значений со своими параметрами следующего вида: `"args": ["list", "profiles"]`.
+> Если вы используете в качестве отладчика Visual Studio Code, вам потребуется настроить среду для передачи параметров командной строки.  Для этой цели в Visual Studio Code используется файл **launch.json**.  Найдите в нем свойство **args** и добавьте массив строковых значений со своими параметрами следующего вида: `"args": ["list", "profiles"]`.
 > 
 > 
 

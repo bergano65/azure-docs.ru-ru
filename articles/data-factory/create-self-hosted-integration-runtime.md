@@ -9,14 +9,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 10/31/2018
+ms.date: 01/15/2019
 ms.author: abnarain
-ms.openlocfilehash: 9a3e061902de53859ea98791048453db8cf00085
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: f8827f3013ee83d8f4846e7e15d34ea7c6553f24
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54021124"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54331815"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Создание и настройка локальной среды выполнения интеграции
 Среда выполнения интеграции (IR) — это инфраструктура вычислений, которую Фабрика данных Azure использует для обеспечения интеграции данных в разных сетевых средах. Дополнительные сведения о среде выполнения интеграции см. [в этом обзоре](concepts-integration-runtime.md).
@@ -86,7 +86,7 @@ ms.locfileid: "54021124"
 ## <a name="install-and-register-self-hosted-ir-from-the-download-center"></a>Установка и регистрация локальной среды IR из Центра загрузки Майкрософт
 
 1. Перейдите на [страницу загрузки среды выполнения интеграции Майкрософт](https://www.microsoft.com/download/details.aspx?id=39717).
-2. Нажмите кнопку **Скачать**, выберите нужную версию (**32-разрядную** или **64-разрядную**) и нажмите кнопку **Далее**.
+2. Нажмите кнопку **Скачать**, выберите 64-разрядную версию (32-разрядная версия не поддерживается) и нажмите кнопку **Далее**.
 3. Выполните MSI-файл сразу или сохраните его на жесткий диск и затем выполните.
 4. На странице **приветствия** выберите язык и нажмите кнопку **Далее**.
 5. Примите условия лицензионного соглашения об использовании программного обеспечения Майкрософт и выберите **Далее**.

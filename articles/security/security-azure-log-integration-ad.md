@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ums.workload: na
-ms.date: 06/07/2018
+ms.date: 01/14/2019
 ms.author: barclayn
 ms.custom: azlog
-ms.openlocfilehash: 0b27cd314dd03375b2d2e6ba537cda74e2ec4310
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.openlocfilehash: c01d911a59647956914518aa62a616823241ab3b
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52313247"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54304930"
 ---
 # <a name="integrate-azure-active-directory-audit-logs"></a>Интеграция журналов аудита Azure Active Directory
 
@@ -28,7 +28,7 @@ ms.locfileid: "52313247"
 
 
 >[!IMPORTANT]
-> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Загрузки AzLog будут отключены до 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
+> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Файлы для скачивания AzLog недоступны с 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
 
 ## <a name="steps-to-integrate-azure-active-directory-audit-logs"></a>Интеграция журналов аудита Azure Active Directory
 
@@ -73,7 +73,7 @@ ms.locfileid: "52313247"
 ## <a name="next-steps"></a>Дополнительная информация
 Чтобы узнать больше об интеграции журналов Azure, ознакомьтесь со следующей информацией:
 
-* [Microsoft Azure Log Integration](https://www.microsoft.com/download/details.aspx?id=53324) (Служба интеграции журналов Microsoft Azure). На этой странице Центра загрузки можно получить дополнительные сведения, изучить требования к системе и получить инструкции по установке службы интеграции журналов Azure.
-* [Введение в службу интеграции журналов Microsoft Azure ](security-azure-log-integration-overview.md). В этой статье рассказывается о службе интеграции журналов Azure, ее основных возможностях и принципах работы.
-* [Интеграция журналов Azure: часто задаваемые вопросы](security-azure-log-integration-faq.md). В этой статье содержатся ответы на часто задаваемые вопросы об интеграции журналов Azure.
+* [Microsoft Azure Log Integration for Azure logs](https://www.microsoft.com/download/details.aspx?id=53324) (Служба "Интеграция журналов данных Microsoft Azure"). На этой странице Центра загрузки можно получить дополнительные сведения, изучить требования к системе и получить инструкции по установке службы "Интеграция журналов Azure".
+* [Общие сведения о службе "Интеграция журналов данных Azure"](security-azure-log-integration-overview.md). В этой статье рассказывается о службе "Интеграция журналов данных Azure", ее основных возможностях и принципах работы.
+* [Часто задаваемые вопросы об Интеграции журналов Azure](security-azure-log-integration-faq.md). Эта статья содержит ответы на часто задаваемые вопросы об интеграции журналов Azure.
 * [New features for Azure diagnostics and Azure Audit logs](https://azure.microsoft.com/blog/new-features-for-azure-diagnostics-and-azure-audit-logs/) (Новые возможности системы диагностики Azure и журналов аудита Azure). В этой записи блога рассказывается о журналах аудита Azure и других функциях, помогающих лучше понять, как работают ваши ресурсы Azure.

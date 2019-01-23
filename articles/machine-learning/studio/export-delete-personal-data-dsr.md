@@ -1,22 +1,10 @@
 ---
-title: Экспорт и удаление данных из службы "Студия машинного обучения" в Azure | Документация Майкрософт
-description: Внутренние данные продукта, хранимые службой "Студия машинного обучения", доступны для экспорта и удаления через портал Azure, а также через аутентифицированные REST API. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. В этой статье показано, как это сделать.
-services: machine-learning
-author: ericlicoding
-ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
-ms.author: amlstudiodocs
-ms.reviewer: jmartens, mldocs
-ms.service: machine-learning
-ms.component: studio
-ms.topic: conceptual
-ms.date: 05/25/2018
-ms.openlocfilehash: e69883022937ccb4ad0f83f144afef0b5b1e0e56
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53276270"
+заголовок: Экспорт и удаление данных из службы "Студия машинного обучения" titleSuffix: Студия машинного обучения Azure description: Внутренние данные продукта, хранимые службой "Студия машинного обучения", доступны для экспорта и удаления через портал Azure, а также через аутентифицированные REST API. Доступ к данным телеметрии может осуществляться через портал конфиденциальности Azure. В этой статье показано, как это сделать.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: conceptual
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 25.05.2018
 ---
+
 # <a name="export-and-delete-in-product-user-data-from-azure-machine-learning-studio"></a>Экспорт и удаление встроенных в продукт данных пользователей из Студии машинного обучения Azure
 
 Внутренние данные продукта, хранящиеся в службе "Студия машинного обучения Azure", можно удалять или экспортировать с помощью портала Azure, интерфейса Студии, PowerShell и аутентифицированных API REST. В этой статье описано, каким образом это можно сделать. 

@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/29/2018
+ms.date: 01/16/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.openlocfilehash: 472dfc04cea65cab39d177bb214c417d229b71d2
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: dc6994cd682997dd00e76b57b4996ebad1f73fbb
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52956726"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352400"
 ---
 # <a name="troubleshoot-your-deployment-to-kubernetes-to-azure-stack"></a>Устранение неполадок развертывания в Kubernetes (K8) в Azure Stack
 
@@ -90,7 +90,7 @@ ms.locfileid: "52956726"
 3.  Просмотрите файлы создания виртуальной машины. Возможно были следующие проблемы:  
     - Открытый ключ может быть недопустимым. Проверьте ключ, который вы создали.  
     - Создание виртуальной машины может вызывать внутреннюю ошибку или активировать ошибку создания. Ряд факторов могут быть причиной ошибок, включая ограничения емкости подписки Azure Stack.
-    - Убедитесь, что полное доменное имя для виртуальной машины начинается с символа повторяющегося префикса.
+    - Убедитесь, что полное доменное имя виртуальной машины начинается с повторяющегося префикса.
 4.  Если состояние виртуальной машины — **ОК**, оцените DVM. Если DVM содержит сообщение об ошибке:
 
     - Открытый ключ может быть недопустимым. Проверьте ключ, который вы создали.  

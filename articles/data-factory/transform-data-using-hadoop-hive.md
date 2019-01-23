@@ -8,15 +8,16 @@ manager: craigg
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
+ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/16/2018
+ms.date: 01/15/2019
 ms.author: douglasl
-ms.openlocfilehash: 6dc702b4bcffc0d1dec299093aa05ba480e9bbf8
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: d9a649e3b49c71a24d06656e0667765ef9cc5508
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54019985"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321341"
 ---
 # <a name="transform-data-using-hadoop-hive-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop Hive в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -55,17 +56,18 @@ ms.locfileid: "54019985"
 }
 ```
 ## <a name="syntax-details"></a>Сведения о синтаксисе
-| Свойство            | ОПИСАНИЕ                              | Обязательно |
-| ------------------- | ---------------------------------------- | -------- |
-| name                | Имя действия.                     | Yes      |
-| description         | Текст, описывающий, для чего используется действие | Нет        |
-| Тип                | Для действия Hive используется тип действия HDinsightHive. | Yes      |
+| Свойство            | ОПИСАНИЕ                                                  | Обязательно |
+| ------------------- | ------------------------------------------------------------ | -------- |
+| name                | Имя действия.                                         | Yes      |
+| description         | Текст, описывающий, для чего используется действие                | Нет        |
+| Тип                | Для действия Hive используется тип действия HDinsightHive.        | Yes      |
 | linkedServiceName   | Ссылка на кластер HDInsight, зарегистрированный в качестве связанной службы в фабрике данных. Дополнительные сведения об этой связанной службе см. в статье [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md). | Yes      |
 | scriptLinkedService | Ссылки на связанные службы хранилища Azure, используемые для хранения скрипта Hive, который следует выполнить. Если не указать эту связанную службу, будет использоваться связанная служба хранилища Azure, определенная в связанной службе HDInsight. | Нет        |
 | scriptPath          | Укажите путь к файлу скрипта, который хранится в службе хранилища Azure, на который ссылается scriptLinkedService. В имени файла учитывается регистр знаков. | Yes      |
 | getDebugInfo        | Указывает, когда файлы журнала копируются в службу хранилища Azure, используемую кластером HDInsight или определенную scriptLinkedService. Допустимые значения: None (никогда), Always (всегда) или Failure (в случае сбоя). Значение по умолчанию: Отсутствует. | Нет        |
 | arguments           | Указывает массив аргументов для задания Hadoop. Аргументы передаются в качестве аргументов командной строки в каждую задачу. | Нет        |
 | defines             | Параметры в виде пары "ключ — значение", ссылки на которые указываются в скрипте Hive. | Нет        |
+| queryTimeout        | Значение времени ожидания запроса (в минутах).  Применяется, если кластер HDInsight доступный с Корпоративными пакетами безопасности. | Нет        |
 
 ## <a name="next-steps"></a>Дополнительная информация
 Ознакомьтесь со следующими ссылками, в которых описаны способы преобразования данных другими способами: 

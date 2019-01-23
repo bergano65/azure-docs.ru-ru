@@ -1,27 +1,8 @@
 ---
-title: Прогнозирование ответов с помощью простой модели регрессии в Студии машинного обучения Azure | Документация Майкрософт
-description: Создание простой модели регрессии для прогнозирования цены в видео 4 из цикла "Обработка и анализ данных для начинающих". Содержит линейную регрессию с целевыми данными.
-keywords: создание модели,простая модель,прогнозирование цены,простая модель регрессии
-services: machine-learning
-documentationcenter: na
-author: garyericson
-ms.custom: seodec18
-ms.author: garye
-editor: cjgronlund
-ms.assetid: a28f1fab-e2d8-4663-aa7d-ca3530c8b525
-ms.service: machine-learning
-ms.component: studio
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/03/2018
-ms.openlocfilehash: e2c49b9da215c038cfa47689f11da22b2dffc2dc
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53253601"
+заголовок: Прогнозирования ответов с помощью моделей регрессии titleSuffix: Студия машинного обучения Azure description: Создание простой модели регрессии для прогнозирования цены в видео 4 из цикла "Обработка и анализ данных для начинающих". Содержит линейную регрессию с целевыми данными.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 03.01.2018
 ---
 # <a name="predict-an-answer-with-a-simple-model"></a>Прогнозирование ответа с помощью простой модели
 ## <a name="video-4-data-science-for-beginners-series"></a>Видео 4. Обработка и анализ данных для начинающих

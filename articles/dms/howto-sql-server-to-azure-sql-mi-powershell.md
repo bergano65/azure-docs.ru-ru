@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 10/09/2018
-ms.openlocfilehash: c4ccbe8a6f1e1923e83d2bdcbeb2d61429083aee
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.date: 01/15/2019
+ms.openlocfilehash: 93ab8b2aca49fcd0d2f27ec17f7fc519b19bf563
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53724204"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54305188"
 ---
 # <a name="migrate-sql-server-on-premises-to-azure-sql-database-managed-instance-using-azure-powershell"></a>Переход с локального сервера SQL Server на Управляемый экземпляр Базы данных SQL Azure с помощью Azure PowerShell
 В этой статье мы перенесем базу данных **Adventureworks2012**, восстановленную на локальный экземпляр SQL Server 2005 (или более поздней версии), в Управляемый экземпляр Базы данных SQL Azure с помощью Microsoft Azure PowerShell. Базы данных из локального экземпляра SQL Server можно перенести в Управляемый экземпляр Базы данных SQL Azure с помощью модуля `AzureRM.DataMigration` в Microsoft Azure PowerShell.
@@ -237,6 +237,13 @@ if (($mytask.ProjectTask.Properties.State -eq "Running") -or ($mytask.ProjectTas
 {
   write-host "migration task running"
 }
+```
+
+## <a name="deleting-the-dms-instance"></a>Удаление экземпляра DMS
+После завершения миграции можно удалить экземпляр Azure Database Migration Service.
+
+```powershell
+Remove-AzureRmDms -ResourceGroupName myResourceGroup -ServiceName MyDMS
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация

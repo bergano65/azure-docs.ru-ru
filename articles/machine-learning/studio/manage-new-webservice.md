@@ -1,26 +1,8 @@
 ---
-title: Использование портала веб-служб Студии машинного обучения Azure | Документация Майкрософт
-description: С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: b62cf2ca-dd2a-4a83-bb54-469f948fb026
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 02/28/2017
-ms.openlocfilehash: cf5a15ba88a3a4d678e6856d270b98697ecf5a3d
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53271782"
+заголовок: Использование портала веб-служб Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT ms.date: 28.02.2017
 ---
 # <a name="manage-a-web-service-using-the-azure-machine-learning-studio-web-services-portal"></a>Управление веб-службой с помощью портала веб-служб Студии машинного обучения Azure
 С помощью портала веб-служб машинного обучения Microsoft Azure можно управлять новыми и классическими веб-службами машинного обучения. Так как классические и новые веб-службы основаны на различных базовых технологиях, возможности управления для них слегка различаются.

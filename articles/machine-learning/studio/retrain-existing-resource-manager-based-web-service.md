@@ -1,26 +1,8 @@
 ---
-title: Переобучение имеющейся веб-службы прогнозной аналитики с помощью Студии машинного обучения Azure | Документация Майкрософт
-description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в Студии машинного обучения Azure.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: cc4c26a2-5672-4255-a767-cfd971e46775
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 11/07/2017
-ms.openlocfilehash: d24cfd8dce42ee920c87fa2c3593a860468a6160
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53250558"
+заголовок: Переобучение существующей прогнозной веб-службы Студии машинного обучения Azure titleSuffix: Студия машинного обучения Azure description: Узнайте, как переобучить модель и обновить веб-службу так, чтобы она использовала заново обученную модель в Студии машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-ms.author=yahajiza, previous-author=YasinMSFT ms.date: 07.11.2017
 ---
 # <a name="retrain-an-existing-predictive-azure-machine-learning-studio-web-service"></a>Переобучение имеющейся веб-службы Студии машинного обучения Azure
 

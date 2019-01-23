@@ -1,6 +1,6 @@
 ---
 title: Log Analytics для поставщиков служб | Документы Майкрософт
-description: Log Analytics позволяет поставщикам управляемых служб (MSP), крупным предприятиям, независимым поставщикам программного обеспечения (ISV) и поставщикам услуг размещения, управлять серверами, размещенными в локальной сети клиента или в облачной инфраструктуре, и осуществлять мониторинг таких серверов.
+description: Log Analytics позволяет поставщикам управляемых служб (MSP), крупным предприятиям, независимым поставщикам программного обеспечения (ISV) и поставщикам услуг размещения управлять серверами, размещенными в локальной сети клиента или в облачной инфраструктуре, и осуществлять мониторинг таких серверов.
 services: log-analytics
 documentationcenter: ''
 author: MeirMen
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: meirm
-ms.openlocfilehash: ac34cc467cc8ff7d231551683da130c0f7565800
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 294dd56a7eb62510c30f4fbb0dbeeafc81b790f2
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53340544"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54264778"
 ---
 # <a name="log-analytics-for-service-providers"></a>Log Analytics для поставщиков служб
 Log Analytics позволяет поставщикам управляемых служб (MSP), крупным предприятиям, независимым поставщикам программного обеспечения (ISV) и поставщикам услуг размещения управлять серверами, размещенными в локальной сети клиента или в облачной инфраструктуре, и осуществлять мониторинг таких серверов. 

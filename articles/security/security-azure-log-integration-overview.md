@@ -12,20 +12,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/07/2018
+ms.date: 01/14/2019
 ms.author: TomSh
 ms.custom: azlog
-ms.openlocfilehash: e9b547b6b582e38a51196815522132dd807c971b
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 93ed7620636535d45791a657d012a9c7056be09d
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54079040"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54303196"
 ---
 # <a name="introduction-to-azure-log-integration"></a>Общие сведения о службе "Интеграция журналов данных Azure"
 
 >[!IMPORTANT]
-> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Загрузки AzLog будут отключены до 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
+> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Файлы для скачивания AzLog недоступны с 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
 
 Служба "Интеграции журналов данных Azure" позволила упростить задачи интеграции журналов Azure из ресурсов Azure с локальной системой SIEM (Управление информационной безопасностью и событиями безопасности).
 

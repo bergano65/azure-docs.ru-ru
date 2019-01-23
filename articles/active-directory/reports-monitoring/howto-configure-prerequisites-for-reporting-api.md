@@ -16,12 +16,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: f72d15707d9f56b9e9b5a5d527d1204007c40afa
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 03acd7c283fd1296af06dd19d0170a4b3c65eeb3
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51621978"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352501"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
 
@@ -214,6 +214,42 @@ API отчетов использует [OAuth](https://msdn.microsoft.com/libra
 
     d. Скопируйте значение ключа.
 
+## <a name="troubleshoot-errors-in-the-reporting-api"></a>Устранение ошибок в API отчетов
+
+В этом разделе перечислены распространенные сообщения об ошибках, с которыми вы можете столкнуться при доступе к отчетам о действиях с помощью API MS Graph, а также меры по их устранению.
+
+### <a name="500-http-internal-server-error-while-accessing-microsoft-graph-v2-endpoint"></a>500 HTTP internal server error while accessing Microsoft Graph V2 endpoint (Внутренняя ошибка сервера 500 HTTP при обращении к конечной точке Microsoft Graph версии 2)
+
+Конечная точка Microsoft Graph версии 2 сейчас не поддерживается, для доступа к журналам действий используйте конечную точку Microsoft Graph версии 1.
+
+### <a name="error-failed-to-get-user-roles-from-ad-graph"></a>Ошибка: Failed to get user roles from AD Graph (Не удалось получить роли пользователей из AD Graph)
+
+Это сообщение об ошибке может появиться при попытке обращения ко входам с помощью песочницы Graph. Войдите в учетную запись, используя обе кнопки входа в пользовательском интерфейсе песочницы Graph, как показано на рисунке ниже. 
+
+![Песочница Graph](./media/troubleshoot-graph-api/graph-explorer.png)
+
+### <a name="error-failed-to-do-premium-license-check-from-ad-graph"></a>Ошибка: Failed to do premium license check from AD Graph (Не удалось проверить лицензию уровня "Премиум" от AD Graph) 
+
+Если при попытке обращения ко входам с помощью песочницы Graph появляется это сообщение об ошибке, выберите **Изменить разрешения** под своей учетной записью на левой панели навигации, а затем выберите **Tasks.ReadWrite** и **Directory.Read.All**. 
+
+![Пользовательский интерфейс для изменения разрешений](./media/troubleshoot-graph-api/modify-permissions.png)
+
+
+### <a name="error-neither-tenant-is-b2c-or-tenant-doesnt-have-premium-license"></a>Ошибка: Neither tenant is B2C or tenant doesn't have premium license (Клиент не относится к типу B2C или у него нет лицензии уровня "Премиум")
+
+Для доступа к отчетам о входе требуется лицензия Azure Active Directory Premium 1 (P1). Если вы видите это сообщение об ошибке при обращении ко входам, убедитесь, что клиент лицензируется по лицензии Azure AD P1.
+
+### <a name="error-user-is-not-in-the-allowed-roles"></a>Ошибка: User is not in the allowed roles (Пользователя нет в списке разрешенных ролей) 
+
+Если вы видите это сообщение об ошибке при обращении к журналам аудита или входам с помощью API, убедитесь, что ваша учетная запись является частью роли **Читатель безопасности** или **Читатель отчета** в клиенте Azure Active Directory. 
+
+### <a name="error-application-missing-aad-read-directory-data-permission"></a>Ошибка: Application missing AAD "Read directory data" permission (У приложения нет разрешения "Чтение данных каталога" AAD) 
+
+Выполните шаги, описанные в разделе [Предварительные требования для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md), чтобы убедиться в наличии подходящего набора разрешений для приложения. 
+
+### <a name="error-application-missing-msgraph-api-read-all-audit-log-data-permission"></a>Ошибка: Application missing MSGraph API "Read all audit log data" permission (У приложения нет разрешения "Чтение всех данных журнала аудита" API MS Graph)
+
+Выполните шаги, описанные в разделе [Предварительные требования для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md), чтобы убедиться в наличии подходящего набора разрешений для приложения. 
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -14,12 +14,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 16026adc2eb0179cd2b42f449494cbbc6547b946
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: c2d121106218c0965cd8f4e07776cf8d2578543f
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53651458"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54354167"
 ---
 # <a name="how-to-use-the-azure-active-directory-power-bi-content-pack"></a>Как использовать пакет содержимого Azure Active Directory Power BI
 
@@ -101,13 +101,45 @@ ms.locfileid: "53651458"
 
 Как только вы убедитесь, что новая версия пакета содержимого работает ожидаемым образом, можно при необходимости удалить старую. Для этого нужно удалить базовые отчеты и наборы данных, связанные со старым пакетом содержимого.
 
-## <a name="still-having-issues"></a>Возникли проблемы? 
+## <a name="troubleshoot-content-pack-errors"></a>Устранение ошибок пакетов содержимого
 
-См. [руководство по устранению неполадок](troubleshoot-content-pack.md). Общие сведения о Power BI см. в [справочных статьях](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
+При работе с пакетом содержимого могут произойти такие ошибки: 
+
+- [Сбой обновления](#refresh-failed) 
+- [Не удалось обновить учетные данные источников данных](#failed-to-update-data-source-credentials) 
+- [Importing of data is taking too long](#data-import-is-too-slow) (Импорт данных занимает слишком много времени) 
+
+Общие сведения о Power BI см. в [справочных статьях](https://powerbi.microsoft.com/documentation/powerbi-service-get-started/).
+
+### <a name="refresh-failed"></a>"Сбой обновления" 
+ 
+**Как отображается эта ошибка**: электронное сообщение от Power BI или состояние ошибки в журнале обновлений. 
+
+
+| Причина: | Как устранить |
+| ---   | ---        |
+| Сбои обновления могут возникнуть, если учетные данные пользователей, подключающихся к пакету содержимого, были сброшены, но не обновлены в параметрах подключения пакета содержимого. | В Power BI найдите набор данных, соответствующий панели мониторинга журналов действий Azure Active Directory (**журналы действий Azure Active Directory**), выберите "Запланировать обновление" и введите учетные данные AAD. |
+| Обновление может завершиться сбоем из-за проблем с данными в базовом пакете содержимого. | [Отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md).|
  
+ 
+### <a name="failed-to-update-data-source-credentials"></a>"Не удалось обновить учетные данные источников данных" 
+ 
+**Как отображается эта ошибка**: в Power BI при подключении к пакету содержимого журналов действий Azure Active Directory. 
+
+| Причина: | Как устранить |
+| ---   | ---        |
+| Подключающийся пользователь не является глобальным администратором, читателем данных безопасности или администратором безопасности. | Используйте учетную запись глобального администратора, читателя безопасности или администратора безопасности для доступа к пакетам содержимого. |
+| Клиент не имеет лицензии Premium или по крайней мере одного пользователя с файлом лицензии Premium. | [Отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md).|
  
+### <a name="data-import-is-too-slow"></a>Импорт данных выполняется слишком медленно 
+ 
+**Как отображается эта ошибка**: в Power BI после подключения к пакету содержимого процесс импорта данных приступает к подготовке панели мониторинга для журнала действий Azure Active Directory. Отобразится сообщение: **Импорт данных...** без каких-либо дальнейших изменений.  
+
+| Причина: | Как устранить |
+| ---   | ---        |
+| В зависимости от размера клиента шаг может длиться от нескольких минут до получаса. | Если в течение часа сообщение не исчезнет и не отобразится панель мониторинга, [отправьте запрос в службу поддержки](../fundamentals/active-directory-troubleshooting-support-howto.md).|
+  
 ## <a name="next-steps"></a>Дополнительная информация
 
 * [Краткое руководство. Установка пакета содержимого Power BI для Azure Active Directory](quickstart-install-power-bi-content-pack.md).
-* [Устранение ошибок пакетов содержимого, зарегистрированных в журналах действий Azure Active Directory](troubleshoot-content-pack.md)
 * [Что такое отчеты в Azure Active Directory](overview-reports.md).

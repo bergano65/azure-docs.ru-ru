@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 1/14/2019
 ms.author: mabrigg
 ms.reviewer: alfredop
-ms.openlocfilehash: ab5dad550e590cd70f54ad5c8d4727d0f6370190
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 5a9859fda2c6cac6acf08c8dcca3a0ce205d2e15
+ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44379718"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54302737"
 ---
 # <a name="tenant-resource-usage-api"></a>API использования ресурсов для клиентов
 
@@ -82,7 +82,7 @@ GET /subscriptions/sub1/providers/Microsoft.Commerce/UsageAggregates?reportedSta
 | *subscriptionId* |Идентификатор подписки пользователя Azure |
 | *usageStartTime* |Начальное время включения в контейнер использования, к которому относится статистическое выражение использования (в формате UTC) |
 | *usageEndTime* |Конечное время включения в контейнер использования, к которому относится статистическое выражение использования (в формате UTC) |
-| *instanceData* |Пары "ключ-значение" из сведений об экземпляре (в новом формате):<br>  *resourceUri*: полный идентификатор ресурса, включая группы ресурсов и имя экземпляра. <br>  *location*: область, в котором эта служба запущена. <br>  *tags*: теги ресурсов, указанные пользователем. <br>  *additionalInfo*: подробные сведения об используемом ресурсе, например версия ОС или тип образа. |
+| *instanceData* |Пары "ключ-значение" из сведений об экземпляре (в новом формате):<br>  *resourceUri*: полный идентификатор ресурса, включая группы ресурсов и имя экземпляра <br>  *location*: регион, в котором выполнялась эта служба <br>  *tags*: теги ресурсов, указанные пользователем <br>  *additionalInfo*: подробные сведения об использованном ресурсе, например версия ОС или тип образа |
 | *quantity* |Объем потребления ресурса за указанный промежуток времени |
 | *meterId* |Уникальный идентификатор использованного ресурса (также обозначается *ResourceID*) |
 

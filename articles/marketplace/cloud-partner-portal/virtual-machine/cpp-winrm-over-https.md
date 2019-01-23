@@ -14,18 +14,18 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 1a341bf36842e49faf8e39f4056232c97cc4232c
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 99c41dc010ae589cc43c093646fd1c05c1333f7e
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53196347"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54265130"
 ---
 # <a name="windows-remote-management-over-https"></a>Служба удаленного управления Windows по протоколу HTTPS
 
 В этом разделе описывается настройка размещенной в Azure виртуальной машины на базе Windows для удаленного управления и развертывания с помощью PowerShell.  Чтобы включить удаленное взаимодействие посредством PowerShell, на целевой виртуальной машине должна предоставляться конечная точка HTTPS для службы удаленного управления Windows (WinRM).  Дополнительные сведения об удаленном взаимодействии посредством PowerShell см. в разделе [Running Remote Commands](https://docs.microsoft.com/powershell/scripting/core-powershell/running-remote-commands?view=powershell-6) (Выполнение удаленных команд).  Дополнительные сведения о WinRM см. в статье [Windows Remote Management](https://docs.microsoft.com/windows/desktop/WinRM/portal) (Удаленное управление Windows).
 
-Если вы создали виртуальную машину одним из "классических" для Azure способов — на портале Azure Service Manager или (что не рекомендуется) с помощью API управления службами Azure (https://docs.microsoft.com/previous-versions/azure/ee460799(v=azure.100) — конечная точка WinRM настраивается на ней автоматически.  Тем не менее, если вы создаете виртуальную машину любым из следующих "современных" для Aure способов, на ней WinRM по протоколу HTTPS *не* настраивается.  
+Если вы создали виртуальную машину одним из "классических" для Azure способов — на портале Azure Service Manager или (что не рекомендуется) с помощью [API управления службами Azure](https://docs.microsoft.com/previous-versions/azure/ee460799(v=azure.100)) — конечная точка WinRM настраивается на ней автоматически.  Тем не менее, если вы создаете виртуальную машину любым из следующих "современных" для Azure способов, на ней WinRM по протоколу HTTPS *не* настраивается.  
 
 - С помощью [портала Azure](https://portal.azure.com/), обычно на основе утвержденного базового образа в соответствии с инструкциями в статье [Создание виртуального жесткого диска, совместимого с Azure](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/virtual-machine/cpp-create-vhd).
 - [С помощью шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/ps-template)

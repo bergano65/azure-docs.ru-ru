@@ -1,5 +1,6 @@
 ---
-title: Использование соединителей в Azure Content Moderator для доступа к другим интерфейсам API | Документация Майкрософт
+title: Подключение к другим службам при модерации содержимого — Content Moderator
+titlesuffix: Azure Cognitive Services
 description: Узнайте, как получить доступ к другим интерфейсам API для рабочих процессов Content Moderator с помощью соединителей.
 services: cognitive-services
 author: sanjeev3
@@ -7,23 +8,23 @@ manager: mikemcca
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: article
-ms.date: 06/22/2017
+ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: d8114457e7079ca8772cab830bd011dcddf372f5
-ms.sourcegitcommit: 95d9a6acf29405a533db943b1688612980374272
+ms.openlocfilehash: 99d8b3603278a9c6c432ca32a1d85e9abe34e1da
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "35380160"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54265589"
 ---
-# <a name="connectors"></a>Соединители
+# <a name="connect-to-other-cognitive-services"></a>Подключение к другим службам Cognitive Services
 
 Помимо интерфейсов API Content Moderator рабочие процессы Azure Content Moderator могут использовать другие интерфейсы API. Для доступа к другим интерфейсам API используется соответствующий соединитель в Content Moderator. Соединитель обеспечивает связь с другими интерфейсами API.
 
 Content Moderator включает в себя следующие соединители по умолчанию:
 
-* API распознавания эмоций;
-* API распознавания лиц;
+* API распознавания эмоций
+* API распознавания лиц
 * облачная служба PhotoDNA.
 
 ![Доступные соединители Content Moderator](images/connectors-1.png)

@@ -1,26 +1,8 @@
 ---
-title: Использование демонстрационных наборов данных в Студии машинного обучения Azure | Документация Майкрософт
-description: Описания наборов данных, используемых в примерах моделей, которые входят в состав Студии машинного обучения. Эти наборы данных можно использовать для собственных экспериментов.
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 03a0b844-e8a7-4896-996f-d3c7a0db7a50
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 01/19/2018
-ms.openlocfilehash: 2fde43417ffc907a93b4e568b90ebbda228c4cfe
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53270490"
+заголовок: Использование примеров наборов данных titleSuffix: Студия машинного обучения Azure description: Описания наборов данных, используемых в примерах моделей, которые входят в состав Студии машинного обучения. Эти наборы данных можно использовать для собственных экспериментов.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 19.01.2018
 ---
 # <a name="use-the-sample-datasets-in-azure-machine-learning-studio"></a>Используйте типовых наборов данных в Azure Machine Learning Studio
 [top]: #machine-learning-sample-datasets

@@ -1,27 +1,8 @@
 ---
-title: Обработка и анализ данных для начинающих с помощью Студии машинного обучения Azure | Документация Майкрософт
-description: Обработка и анализ данных для начинающих объясняет основные понятия в пяти коротких видеороликах. Первое видео содержит ответы на 5 вопросов об обработке и анализе данных. Из машинного обучения Azure.
-keywords: выполнение обработки и анализа данных,введение в обработку и анализ данных,обработка и анализ данных для начинающих,основы обработки и анализа данных,вопросы по обработке и анализу данных,видео по обработке и анализу данных,введение в обработку и анализ данных
-services: machine-learning
-documentationcenter: na
-author: garyericson
-ms.custom: seodec18
-ms.author: garye
-editor: cjgronlund
-ms.assetid: a01f93ee-01eb-4afe-abbd-cfa035c119b0
-ms.service: machine-learning
-ms.component: studio
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-ms.date: 01/03/2018
-ms.openlocfilehash: 9f6d951dcbb0a0a01961bf3f6c924a0c40fd4d29
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53252921"
+заголовок: Обработка и анализ данных для начинающих titleSuffix: Студия машинного обучения Azure description: Обработка и анализ данных для начинающих объясняет основные понятия в пяти коротких видеороликах. Первое видео содержит ответы на 5 вопросов об обработке и анализе данных. Из машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: garyericson ms.author: garye ms.custom: seodec18 ms.date: 03.01.2018
 ---
 # <a name="data-science-for-beginners-video-1-the-5-questions-data-science-answers"></a>Видео 1. Обработка и анализ данных для начинающих. 5 вопросов, на которые дают ответ обработка и анализ данных
 Ознакомьтесь с кратким введением *Обработка и анализ данных для начинающих*, которое состоит из пяти коротких видео с участием ведущих специалистов по обработке и анализу данных. Эти простые видео будут полезны как тем, кто только интересуется обработкой и анализом данных, так и тем, кто работает со специалистами в этой области.

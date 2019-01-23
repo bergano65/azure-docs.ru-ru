@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 11/27/2017
 ms.author: daveba
-ms.openlocfilehash: a29980da64775ca39f103b7430239f38c98a43fc
-ms.sourcegitcommit: 0fc99ab4fbc6922064fc27d64161be6072896b21
+ms.openlocfilehash: 4d4775169c40190e4cffb7b93c04abd58babc928
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51578462"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54320933"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-powershell"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью PowerShell
 
@@ -65,7 +65,7 @@ ms.locfileid: "51578462"
 
 ### <a name="enable-system-assigned-managed-identity-on-an-existing-azure-vm"></a>Включение управляемого удостоверения, назначаемого системой, для имеющейся виртуальной машины Azure
 
-Чтобы включить назначаемое системой управляемое удостоверение на виртуальной машине, которое было подготовлено до ее создания, вашей учетной записи должна быть назначена роль [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).  Назначать другие роли в каталоге Azure AD не требуется.
+Чтобы включить назначаемое системой управляемое удостоверение на виртуальной машине, которая была подготовлена без него, вашей учетной записи должна быть назначена роль [Участника виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).  Назначать другие роли в каталоге Azure AD не требуется.
 
 1. Войдите в Azure, используя команду `Login-AzureRmAccount`. Используйте учетную запись, связанную с подпиской Azure, которая содержит виртуальную машину.
 
@@ -88,6 +88,34 @@ ms.locfileid: "51578462"
    ```
     > [!NOTE]
     > Этот шаг необязателен, так как для получения токенов можно также использовать конечную точку службы метаданных экземпляров Azure (IMDS).
+
+### <a name="add-vm-system-assigned-identity-to-a-group"></a>Добавление назначаемого системой удостоверения виртуальной машины в группу
+
+После включения назначенного системной удостоверения на виртуальной машине, вы можете добавить его в группу.  Следующая процедура добавляет назначенное системой удостоверение в группу.
+
+1. Войдите в Azure, используя команду `Login-AzureRmAccount`. Используйте учетную запись, связанную с подпиской Azure, которая содержит виртуальную машину.
+
+   ```powershell
+   Login-AzureRmAccount
+   ```
+
+2. Получите и запишите `ObjectID` (как указано в поле `Id` возвращаемых значений) субъекта-службы виртуальной машины.
+
+   ```powerhshell
+   Get-AzureRmADServicePrincipal -displayname "myVM"
+   ```
+
+3. Получите и запишите `ObjectID` (как указано в поле `Id` возвращаемых значений) группы.
+
+   ```powershell
+   Get-AzureRmADGroup -searchstring "myGroup"
+   ```
+
+4. Добавление субъекта-службы виртуальной машины в группу.
+
+   ```powershell
+   Add-AzureADGroupMember -ObjectId "<objectID of group>" -RefObjectId "<object id of VM service principal>"
+   ```
 
 ## <a name="disable-system-assigned-managed-identity-from-an-azure-vm"></a>Отключение управляемого удостоверения, назначаемого системой, на виртуальной машине Azure
 
@@ -127,7 +155,7 @@ Update-AzureRmVm -ResourceGroupName myResourceGroup -VM $vm -IdentityType None
 
 ### <a name="assign-a-user-assigned-managed-identity-to-a-vm-during-creation"></a>Задание управляемого удостоверения, назначаемого пользователем, для виртуальной машины во время ее создания
 
-Чтобы назначить назначаемое пользователем удостоверение виртуальной машине, вашей учетной записи должны быть назначены роли [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) и [Оператор управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Назначать другие роли в каталоге Azure AD не требуется.
+Чтобы присвоить назначаемое пользователем удостоверение виртуальной машине, вашей учетной записи должны быть назначены роли [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) и [Оператор управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Назначать другие роли в каталоге Azure AD не требуется.
 
 1. Используя одно из кратких руководств ниже выполните действия только в нужных разделах ("Вход в Azure", "Создание группы ресурсов", "Создание группы сети", "Создание виртуальной машины"). 
   
@@ -151,7 +179,7 @@ Update-AzureRmVm -ResourceGroupName myResourceGroup -VM $vm -IdentityType None
 
 ### <a name="assign-a-user-assigned-managed-identity-to-an-existing-azure-vm"></a>Задание управляемого удостоверения, назначаемого пользователем, для имеющейся виртуальной машины Azure
 
-Чтобы назначить назначаемое пользователем удостоверение виртуальной машине, вашей учетной записи должны быть назначены роли [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) и [Оператор управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Назначать другие роли в каталоге Azure AD не требуется.
+Чтобы присвоить назначаемое пользователем удостоверение виртуальной машине, вашей учетной записи должны быть назначены роли [Участник виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) и [Оператор управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Назначать другие роли в каталоге Azure AD не требуется.
 
 1. Войдите в Azure, используя команду `Connect-AzureRmAccount`. Используйте учетную запись, связанную с подпиской Azure, которая содержит виртуальную машину.
 

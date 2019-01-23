@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: cherylmc
-ms.openlocfilehash: bf84ec16d5d13439796b386a8ab4f40840ca4eaa
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 682d1d123d3381a52c9d356cd1bf226d2a847df4
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53438427"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54352875"
 ---
 # <a name="about-point-to-site-vpn"></a>Сведения о VPN-подключениях типа "точка — сеть"
 
@@ -22,7 +22,7 @@ ms.locfileid: "53438427"
 
 В VPN-подключении "точка — сеть" может использоваться один из следующих протоколов:
 
-* OpenVPN, VPN-протокол на основе SSL/TLS. Это решение для VPN-подключений на основе SSL позволяет проходить через брандмауэры, так как большинство брандмауэров открывают для SSL TCP-порт 443. OpenVPN можно использовать для подключения с устройств Android, iOS, Linux м Mac (OSX версии 10.11 и выше).
+* OpenVPN, VPN-протокол на основе SSL/TLS. Это решение для VPN-подключений на основе SSL позволяет проходить через брандмауэры, так как большинство брандмауэров открывают для SSL TCP-порт 443. OpenVPN можно использовать для подключения с устройств Android, iOS (начиная с версии 11.0), Linux и Mac (OS X, начиная с версии 10.13).
 
 * SSTP (Secure Socket Tunneling Protocol) — разработанный корпорацией Майкрософт VPN-протокол на основе SSL. Это решение для VPN-подключений на основе SSL позволяет проходить через брандмауэры, так как большинство брандмауэров открывают для SSL TCP-порт 443. Протокол SSTP поддерживается только на устройствах Windows. Azure поддерживает все версии Windows с протоколом SSTP (Windows 7 и более поздние версии).
 

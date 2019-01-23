@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/22/2018
 ms.author: barbkess
 ms.reviewer: arvindh
-ms.openlocfilehash: 991199747f51f379ee6f3efe8009ab9166c33ac7
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 65ab6b62b1da925880b3197036f52407e868ece7
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52832012"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54263601"
 ---
 # <a name="configure-the-way-end-users-consent-to-an-application-in-azure-active-directory"></a>Настройка методов получения согласия пользователей для приложения в Azure Active Directory
 Сведения о том, как настроить метод для получения согласия пользователя на разрешения приложения. Взаимодействие с пользователем можно упростить, предоставив согласие администратора. В этой статье приводятся различные способы, позволяющие настроить согласие пользователя. Эти методы применяются для всех пользователей в клиенте Azure Active Directory (AAD). 
@@ -26,6 +26,8 @@ ms.locfileid: "52832012"
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы предоставить согласие администратора, следует войти от имени глобального администратора, администратора приложения или администратора облачных приложений.
+
+Чтобы ограничить доступ к приложениям, необходимо запросить назначение пользователя, а затем назначить пользователей или группы приложению.  Подробнее см. статью [Методы назначения пользователей и групп](methods-for-assigning-users-and-groups.md).
 
 ## <a name="grant-admin-consent-to-enterprise-apps-in-the-azure-portal"></a>Предоставление согласия администратора для корпоративных приложений на портале Azure
 

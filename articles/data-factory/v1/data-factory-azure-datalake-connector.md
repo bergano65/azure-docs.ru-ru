@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 3fec0952f4b164327942d5dee108f89b17613042
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 3b5425bd9f86bce289cc1f60c088febfd8f05ee3
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54015545"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54332631"
 ---
 # <a name="copy-data-to-and-from-data-lake-storage-gen1-by-using-data-factory"></a>Копирование данных в Azure Data Lake Storage Gen1 и обратно с помощью фабрики данных
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -45,7 +45,7 @@ ms.locfileid: "54015545"
 ## <a name="supported-authentication-types"></a>Поддерживаемые типы аутентификации
 Соединитель Data Lake Store поддерживает следующие типы проверки подлинности:
 * Проверка подлинности субъекта-службы
-* Проверка подлинности учетных данных пользователя (OAuth) 
+* Проверка подлинности учетных данных пользователя (OAuth)
 
 Мы рекомендуем использовать проверку подлинности субъекта-службы, особенно для копирования данных по расписанию. При проверке подлинности учетных данных пользователя может истечь срок действия маркера. Сведения о настройке см. в разделе [Свойства связанной службы](#linked-service-properties).
 
@@ -58,12 +58,12 @@ ms.locfileid: "54015545"
 
 Независимо от используемого средства или API-интерфейса, для создания конвейера, который перемещает данные из источника данных в приемник, выполняются следующие шаги:
 
-1. Создание **фабрики данных**. Фабрика данных может содержать один или несколько конвейеров. 
-2. Создайте **связанные службы**, чтобы связать входные и выходные данные с фабрикой данных. Например, при копировании данных из хранилища BLOB-объектов Azure в Azure Data Lake Store создайте две связанные службы, чтобы связать учетную запись хранения Azure и Azure Data Lake Store с фабрикой данных. Сведения о свойствах связанной службы, относящихся к Azure Data Lake Store, см. в разделе [Свойства связанной службы](#linked-service-properties). 
+1. Создание **фабрики данных**. Фабрика данных может содержать один или несколько конвейеров.
+2. Создайте **связанные службы**, чтобы связать входные и выходные данные с фабрикой данных. Например, при копировании данных из хранилища BLOB-объектов Azure в Azure Data Lake Store создайте две связанные службы, чтобы связать учетную запись хранения Azure и Azure Data Lake Store с фабрикой данных. Сведения о свойствах связанной службы, относящихся к Azure Data Lake Store, см. в разделе [Свойства связанной службы](#linked-service-properties).
 2. Создайте **наборы данных**, которые представляют входные и выходные данные для операции копирования. В примере, упомянутом на последнем этапе, создайте набор данных, чтобы указать контейнер BLOB-объектов и папку, содержащую входные данные. Также создайте другой набор данных, чтобы указать папку, содержащую данные, скопированные из хранилища BLOB-объектов, и путь к ней в Data Lake Store. Сведения о свойствах набора данных, относящихся к Azure Data Lake Store, см. в разделе [Свойства набора данных](#dataset-properties).
-3. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. В примере выше BlobSource используется как источник, а AzureDataLakeStoreSink — как приемник для действия копирования. Аналогично, при копировании из Azure Data Lake Store в хранилище BLOB-объектов Azure в действии копирования используются AzureDataLakeStoreSource и BlobSink. Сведения о свойствах действия копирования, относящихся к Azure Data Lake Store, см. в разделе [Свойства действия копирования](#copy-activity-properties). Для получения сведений о том, как использовать хранилище данных как источник или приемник, щелкните ссылку в предыдущем разделе об источнике данных.  
+3. Создайте **конвейер** с действием копирования, который принимает входной набор данных и возвращает выходной набор данных. В примере выше BlobSource используется как источник, а AzureDataLakeStoreSink — как приемник для действия копирования. Аналогично, при копировании из Azure Data Lake Store в хранилище BLOB-объектов Azure в действии копирования используются AzureDataLakeStoreSource и BlobSink. Сведения о свойствах действия копирования, относящихся к Azure Data Lake Store, см. в разделе [Свойства действия копирования](#copy-activity-properties). Для получения сведений о том, как использовать хранилище данных как источник или приемник, щелкните ссылку в предыдущем разделе об источнике данных.
 
-Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON.  Примеры с определениями JSON для сущностей фабрики данных, которые используются для копирования данных из Azure Data Lake Store, см. в разделе [Примеры определений JSON](#json-examples-for-copying-data-to-and-from-data-lake-store) этой статьи.
+Если вы используете мастер, то он автоматически создает определения JSON для сущностей фабрики данных (связанных служб, наборов данных и конвейера). При использовании инструментов и интерфейсов API (за исключением API .NET) вы самостоятельно определяете эти сущности фабрики данных в формате JSON. Примеры с определениями JSON для сущностей фабрики данных, которые используются для копирования данных из Azure Data Lake Store, см. в разделе [Примеры определений JSON](#json-examples-for-copying-data-to-and-from-data-lake-store) этой статьи.
 
 Следующие разделы содержат сведения о свойствах JSON, которые используются для определения сущностей фабрики данных, характерных для Data Lake Store.
 
@@ -80,7 +80,7 @@ ms.locfileid: "54015545"
 ### <a name="service-principal-authentication-recommended"></a>Проверка подлинности на основе субъекта-службы (рекомендуется)
 При использовании проверки подлинности на основе субъекта-службы необходимо зарегистрировать сущность приложения в Azure Active Directory (Azure AD) и предоставить ей доступ к Data Lake Store. Подробные инструкции см. в статье [Аутентификация между службами в Data Lake Store с помощью Azure Active Directory](../../data-lake-store/data-lake-store-authenticate-using-active-directory.md). Запишите следующие значения, которые используются для определения связанной службы:
 * Идентификатор приложения
-* Ключ приложения 
+* Ключ приложения
 * Tenant ID
 
 > [!IMPORTANT]
@@ -233,7 +233,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
     ```
 
 ## <a name="dataset-properties"></a>Свойства набора данных
-Чтобы указать набор данных, представляющий входные данные в Data Lake Store, присвойте свойству **типа** набора данных значение **AzureDataLakeStore**. Для свойства **linkedServiceName** набора данных задайте имя связанной службы Data Lake Store. Полный список разделов и свойств JSON, используемых для определения наборов данных, см. в статье [Наборы данных в фабрике данных Azure](data-factory-create-datasets.md). Разделы набора данных в JSON, такие как **structure**, **availability** и **policy**, одинаковы для всех типов наборов данных (таких как базы данных SQL, Blob-объекты Azure и таблицы Azure). Раздел **typeProperties** отличается для разных типов наборов данных. Он содержит такие сведения, как расположение данных в хранилище данных и формат данных. 
+Чтобы указать набор данных, представляющий входные данные в Data Lake Store, присвойте свойству **типа** набора данных значение **AzureDataLakeStore**. Для свойства **linkedServiceName** набора данных задайте имя связанной службы Data Lake Store. Полный список разделов и свойств JSON, используемых для определения наборов данных, см. в статье [Наборы данных в фабрике данных Azure](data-factory-create-datasets.md). Разделы набора данных в JSON, такие как **structure**, **availability** и **policy**, одинаковы для всех типов наборов данных (таких как базы данных SQL, Blob-объекты Azure и таблицы Azure). Раздел **typeProperties** отличается для разных типов наборов данных. Он содержит такие сведения, как расположение данных в хранилище данных и формат данных.
 
 Раздел **typeProperties** набора данных типа **AzureDataLakeStore** содержит следующие свойства.
 
@@ -264,14 +264,14 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 "folderPath": "wikidatagateway/wikisampledataout/{Year}/{Month}/{Day}",
 "fileName": "{Hour}.csv",
 "partitionedBy":
- [
+[
     { "name": "Year", "value": { "type": "DateTime", "date": "SliceStart", "format": "yyyy" } },
     { "name": "Month", "value": { "type": "DateTime", "date": "SliceStart", "format": "MM" } },
     { "name": "Day", "value": { "type": "DateTime", "date": "SliceStart", "format": "dd" } },
     { "name": "Hour", "value": { "type": "DateTime", "date": "SliceStart", "format": "hh" } }
 ],
 ```
-Дополнительные сведения о наборах данных временных рядов, планировании и срезах см. в статьях [Наборы данных в фабрике данных Azure](data-factory-create-datasets.md) и [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md). 
+Дополнительные сведения о наборах данных временных рядов, планировании и срезах см. в статьях [Наборы данных в фабрике данных Azure](data-factory-create-datasets.md) и [Планирование и исполнение с использованием фабрики данных](data-factory-scheduling-and-execution.md).
 
 
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
@@ -284,7 +284,6 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 | Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно |
 | --- | --- | --- | --- |
 | **recursive** |Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. |True (значение по умолчанию), False |Нет  |
-
 
 **AzureDataLakeStoreSink** поддерживает следующие свойства в разделе **typeProperties**:
 
@@ -308,7 +307,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 Дополнительные сведения см. в статье [Форматы файлов и сжатия данных, поддерживаемые фабрикой данных Azure](data-factory-supported-file-and-compression-formats.md).
 
 ## <a name="json-examples-for-copying-data-to-and-from-data-lake-store"></a>Примеры JSON для копирования данных в Data Lake Store и обратно
-Ниже приведены примеры определений JSON. Эти примеры определений можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В них показано, как копировать данные в Data Lake Store и хранилище BLOB-объектов Azure и обратно. Однако данные можно скопировать данные _непосредственно_ из любых источников на любой из поддерживаемых приемников. Дополнительные сведения см. в разделе "Поддерживаемые хранилища данных и форматы" статьи [Перемещение данных с помощью действия копирования](data-factory-data-movement-activities.md).  
+Ниже приведены примеры определений JSON. Эти примеры определений можно использовать для создания конвейера с помощью [портала Azure](data-factory-copy-activity-tutorial-using-azure-portal.md), [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) или [Azure PowerShell](data-factory-copy-activity-tutorial-using-powershell.md). В них показано, как копировать данные в Data Lake Store и хранилище BLOB-объектов Azure и обратно. Однако данные можно скопировать данные _непосредственно_ из любых источников на любой из поддерживаемых приемников. Дополнительные сведения см. в разделе "Поддерживаемые хранилища данных и форматы" статьи [Перемещение данных с помощью действия копирования](data-factory-data-movement-activities.md).
 
 ### <a name="example-copy-data-from-azure-blob-storage-to-azure-data-lake-store"></a>Пример: копирование данных из хранилища BLOB-объектов Azure в Azure Data Lake Store
 В примере кода в этом разделе показано следующее:
@@ -319,7 +318,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 * Выходной [набор данных](data-factory-create-datasets.md) типа [AzureDataLakeStore](#dataset-properties).
 * [Конвейер](data-factory-create-pipelines.md) с действием копирования, который использует [BlobSource](data-factory-azure-blob-connector.md#copy-activity-properties) и [AzureDataLakeStoreSink](#copy-activity-properties).
 
-В этом примере показано копирование данных временного ряда из хранилища BLOB-объектов Azure в Data Lake Store каждый час. 
+В этом примере показано копирование данных временного ряда из хранилища BLOB-объектов Azure в Data Lake Store каждый час.
 
 **Связанная служба хранения Azure**
 
@@ -428,68 +427,67 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 ```JSON
 {
     "name": "AzureDataLakeStoreOutput",
-      "properties": {
+    "properties": {
         "type": "AzureDataLakeStore",
         "linkedServiceName": "AzureDataLakeStoreLinkedService",
         "typeProperties": {
             "folderPath": "datalake/output/"
         },
         "availability": {
-              "frequency": "Hour",
-              "interval": 1
+            "frequency": "Hour",
+            "interval": 1
         }
-      }
+    }
 }
 ```
-
 
 **Действие копирования в конвейере с BLOB-объектом в качестве источника и Data Lake Store в качестве приемника**
 
 В следующем примере конвейер содержит действие копирования, которое использует входные и выходные наборы данных. Действие копирования выполняется по расписанию каждый час. В определении JSON конвейера для типа `source` задано значение `BlobSource`, а для типа `sink` — значение `AzureDataLakeStoreSink`.
 
 ```json
-{  
+{
     "name":"SamplePipeline",
     "properties":
-    {  
+    {
         "start":"2014-06-01T18:00:00",
         "end":"2014-06-01T19:00:00",
         "description":"pipeline with copy activity",
         "activities":
-        [  
-              {
+        [
+            {
                 "name": "AzureBlobtoDataLake",
                 "description": "Copy Activity",
                 "type": "Copy",
                 "inputs": [
-                  {
-                    "name": "AzureBlobInput"
-                  }
+                    {
+                        "name": "AzureBlobInput"
+                    }
                 ],
                 "outputs": [
-                  {
-                    "name": "AzureDataLakeStoreOutput"
-                  }
+                    {
+                        "name": "AzureDataLakeStoreOutput"
+                    }
                 ],
                 "typeProperties": {
                     "source": {
                         "type": "BlobSource"
-                      },
-                      "sink": {
+                    },
+                    "sink": {
                         "type": "AzureDataLakeStoreSink"
-                      }
+                    }
                 },
-                   "scheduler": {
-                      "frequency": "Hour",
-                      "interval": 1
+                "scheduler": {
+                    "frequency": "Hour",
+                    "interval": 1
                 },
                 "policy": {
-                      "concurrency": 1,
-                      "executionPriorityOrder": "OldestFirst",
-                      "retry": 0,
-                      "timeout": "01:00:00"
+                    "concurrency": 1,
+                    "executionPriorityOrder": "OldestFirst",
+                    "retry": 0,
+                    "timeout": "01:00:00"
                 }
-              }
+            }
         ]
     }
 }
@@ -504,7 +502,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 * Выходной [набор данных](data-factory-create-datasets.md) типа [AzureBlob](data-factory-azure-blob-connector.md#dataset-properties).
 * [Конвейер](data-factory-create-pipelines.md) с действием копирования, который использует [AzureDataLakeStoreSource](#copy-activity-properties) и [BlobSink](data-factory-azure-blob-connector.md#copy-activity-properties).
 
-В этом коде данные временного ряда каждый час копируются из Data Lake Store в Blob-объект Azure. 
+В этом коде данные временного ряда каждый час копируются из Data Lake Store в Blob-объект Azure.
 
 **Связанная служба Azure Data Lake Store**
 
@@ -547,7 +545,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 ```json
 {
     "name": "AzureDataLakeStoreInput",
-      "properties":
+    "properties":
     {
         "type": "AzureDataLakeStore",
         "linkedServiceName": "AzureDataLakeStoreLinkedService",
@@ -563,16 +561,16 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
         "external": true,
         "availability": {
             "frequency": "Hour",
-              "interval": 1
+            "interval": 1
         },
         "policy": {
-              "externalData": {
+            "externalData": {
                 "retryInterval": "00:01:00",
                 "retryTimeout": "00:10:00",
                 "maximumRetry": 3
-              }
+            }
         }
-      }
+    }
 }
 ```
 **Выходной набор данных большого двоичного объекта Azure**
@@ -640,47 +638,47 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 В следующем примере конвейер содержит действие копирования, которое использует входные и выходные наборы данных. Действие копирования выполняется по расписанию каждый час. В определении JSON конвейера для типа `source` задано значение `AzureDataLakeStoreSource`, а для типа `sink` — значение `BlobSink`.
 
 ```json
-{  
+{
     "name":"SamplePipeline",
-    "properties":{  
+    "properties":{
         "start":"2014-06-01T18:00:00",
         "end":"2014-06-01T19:00:00",
         "description":"pipeline for copy activity",
-        "activities":[  
-              {
+        "activities":[
+            {
                 "name": "AzureDakeLaketoBlob",
                 "description": "copy activity",
                 "type": "Copy",
                 "inputs": [
-                  {
-                    "name": "AzureDataLakeStoreInput"
-                  }
+                    {
+                        "name": "AzureDataLakeStoreInput"
+                    }
                 ],
                 "outputs": [
-                  {
-                    "name": "AzureBlobOutput"
-                  }
+                    {
+                        "name": "AzureBlobOutput"
+                    }
                 ],
                 "typeProperties": {
                     "source": {
                         "type": "AzureDataLakeStoreSource",
-                      },
-                      "sink": {
+                    },
+                    "sink": {
                         "type": "BlobSink"
-                      }
+                    }
                 },
-                   "scheduler": {
-                      "frequency": "Hour",
-                      "interval": 1
+                "scheduler": {
+                    "frequency": "Hour",
+                    "interval": 1
                 },
                 "policy": {
-                      "concurrency": 1,
-                      "executionPriorityOrder": "OldestFirst",
-                      "retry": 0,
-                      "timeout": "01:00:00"
+                    "concurrency": 1,
+                    "executionPriorityOrder": "OldestFirst",
+                    "retry": 0,
+                    "timeout": "01:00:00"
                 }
-              }
-         ]
+            }
+        ]
     }
 }
 ```

@@ -1,6 +1,6 @@
 ---
 title: Механизм интеграции Cloud Foundry с Azure | Документация Майкрософт
-description: Как Cloud Foundry использует службы Azure для улучшения взаимодействия на уровне предприятия
+description: Описание, как в Cloud Foundry службы Azure используются, чтобы улучшить взаимодействие на уровне предприятия
 services: virtual-machines-linux
 documentationcenter: ''
 author: ningk
@@ -15,17 +15,17 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 05/11/2018
 ms.author: ningk
-ms.openlocfilehash: a9f5f22cbd6e7cb39e1abb2ef712ffcfc27f55a4
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 908b7e40c0509d7034b86985ac0775635726a6b9
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49406149"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54329809"
 ---
 # <a name="integrate-cloud-foundry-with-azure"></a>Интеграция Cloud Foundry и Azure
 
 [Cloud Foundry](https://docs.cloudfoundry.org/) — это платформа PaaS, работающая поверх платформы IaaS поставщиков облачных служб. Она обеспечивает согласованный процесс развертывания приложений между поставщиками облачных услуг. Кроме того, ее можно интегрировать с разными службами Azure, обеспечивая высокую доступность корпоративного уровня, масштабируемость и сокращение затрат.
-Есть [шесть подсистем Cloud Foundry](https://docs.cloudfoundry.org/concepts/architecture/) с возможностью гибкого масштабирования через Интернет, которые предоставляют следующие возможности: маршрутизация, аутентификация, управление жизненным циклом приложений, управление службами, обмен сообщениями и мониторинг. Каждую из подсистем Cloud Foundry можно настроить для использования соответствующей службы Azure. 
+В [Cloud Foundry](https://docs.cloudfoundry.org/concepts/architecture/) существует 6 подсистем,  которые легко масштабируются онлайн, в том числе: маршрутизация, проверка подлинности, управление жизненным циклом приложений, управление службами, обмен сообщениями и мониторинг. Каждую из подсистем Cloud Foundry можно настроить для использования соответствующей службы Azure. 
 
 ![Архитектура интеграции Cloud Foundry и Azure](media/CFOnAzureEcosystem-colored.png)
 

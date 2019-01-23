@@ -1,27 +1,8 @@
 ---
-title: Краткое руководство по языку программирования R для Студии машинного обучения Azure | Документация Майкрософт
-description: Это руководство по языку программирования R поможет быстро создать прогностическое решение, используя язык R в Студии машинного обучения Azure.
-keywords: краткое руководство, язык r, язык программирования r, руководство по программированию на языке r
-services: machine-learning
-documentationcenter: ''
-author: ericlicoding
-ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
-ms.author: amlstudiodocs
-editor: cgronlun
-ms.assetid: 99a3a0fd-b359-481a-b236-66868deccd96
-ms.service: machine-learning
-ms.component: studio
-ms.workload: data-services
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-ms.date: 01/06/2017
-ms.openlocfilehash: ddd9c1fd8b51c6ae43878cf50ee16737511c82e9
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53278667"
+заголовок: Краткое руководство по языку R titleSuffix: Студия машинного обучения Azure description: Это руководство по языку программирования R поможет быстро создать прогностическое решение, используя язык R в Студии машинного обучения Azure.
+services: machine-learning ms.service: machine-learning ms.component: studio ms.topic: article
+
+author: ericlicoding ms.author: amlstudiodocs ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro ms.date: 06.01.2017
 ---
 # <a name="quickstart-tutorial-for-the-r-programming-language-for-azure-machine-learning-studio"></a>Краткое руководство по языку программирования R для Студии машинного обучения Azure
 

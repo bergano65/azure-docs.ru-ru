@@ -12,15 +12,15 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 11/20/2018
+ms.date: 01/15/2019
 ms.author: rolyon
 ms.reviewer: skwan
-ms.openlocfilehash: 4cfd3c38631778373e99872fd305d8316cdadb75
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: b824d122a5d26c17c41a0e2ea1c595c9e2dd7206
+ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52274744"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54354354"
 ---
 # <a name="manage-access-to-azure-management-with-conditional-access"></a>Управление доступом к функциям управления Azure с помощью условного доступа
 
@@ -32,7 +32,7 @@ ms.locfileid: "52274744"
 
 ![Условный доступ для управления Azure](./media/conditional-access-azure-management/conditional-access-azure-mgmt.png)
 
-Созданная вами политика применяется ко всем конечным точкам управления Azure, включая классический портал Azure, портал Azure, поставщик Azure Resource Manager, классические API управления службами и Azure PowerShell. Обратите внимание на то, что политика применяется к среде Azure PowerShell, которая вызывает API Azure Resource Manager. Она не применяется к [Azure AD PowerShell](/powershell/azure/active-directory/install-adv2), которая вызывает Microsoft Graph.
+Созданная вами политика применяется ко всем конечным точкам управления Azure, включая портал Azure, поставщик Azure Resource Manager, классические API управления службами, Azure PowerShell и портал администратора подписок Visual Studio. Обратите внимание на то, что политика применяется к среде Azure PowerShell, которая вызывает API Azure Resource Manager. Она не применяется к [Azure AD PowerShell](/powershell/azure/active-directory/install-adv2), которая вызывает Microsoft Graph.
 
 > [!CAUTION]
 > Перед настройкой политики для управления доступом к функциям управления Azure тщательно изучите принципы работы условного доступа. Убедитесь в отсутствии условий, которые могут заблокировать вам доступ к порталу.

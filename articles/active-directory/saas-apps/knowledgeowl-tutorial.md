@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/27/2018
 ms.author: jeedes
-ms.openlocfilehash: e902f5969611dd3b1074e899003abe5067857c04
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 80d8d1664100cdfbbf6d537b41823c2db0204040
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39446151"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54318923"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-knowledgeowl"></a>Руководство. Интеграция Azure Active Directory с KnowledgeOwl
 
@@ -254,7 +254,7 @@ ms.locfileid: "39446151"
 
 В этом разделе описано, как создать пользователя с именем Britta Simon в приложении KnowledgeOwl. Приложение KnowledgeOwl поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь создается при попытке получить доступ к KnowledgeOwl (если он еще не создан).
 >[!Note]
->Чтобы создать пользователя вручную, обратитесь к [группе поддержки KnowledgeOwl](mailto:support@knowledgeowl.com).
+>Чтобы создать пользователя вручную, обратитесь к  [группе поддержки KnowledgeOwl](mailto:support@knowledgeowl.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -291,7 +291,7 @@ ms.locfileid: "39446151"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент KnowledgeOwl на панели доступа, вы автоматически войдете в приложение KnowledgeOwl.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

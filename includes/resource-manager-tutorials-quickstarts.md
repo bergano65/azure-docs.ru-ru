@@ -11,15 +11,15 @@ ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: na
 ms.workload: multiple
-ms.date: 12/05/2018
+ms.date: 01/15/2019
 ms.author: jgao
 ms.custom: include file
-ms.openlocfilehash: 711688b5b414e7b9a931190de3f7e6321d97ba3e
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 11bcfa1b4719d6def5bfc4a6a189bd2b58896b5b
+ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53729345"
+ms.lasthandoff: 01/16/2019
+ms.locfileid: "54334367"
 ---
 ## <a name="quickstarts-and-tutorials"></a>Краткие руководства
 
@@ -48,5 +48,6 @@ ms.locfileid: "53729345"
     |[Развертывание расширений SQL](../articles/azure-resource-manager/resource-manager-tutorial-deploy-sql-extensions-bacpac.md)|Выполняйте задачи, требуемые после развертывания, с помощью расширений. В этом руководстве описано развертывание расширения для пользовательского скрипта установки веб-сервера на виртуальной машине. |
     |[Защита артефактов](../articles/azure-resource-manager/resource-manager-tutorial-secure-artifacts.md)|Защитите артефакты, необходимые для завершения развертывания. Из этого руководства вы узнаете, как защитить артефакт, используемый в руководстве по расширениям для развертывания SQL. |
     |[Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](../articles/azure-resource-manager/deployment-manager-tutorial.md)|Использование диспетчера развертывания Azure. |
+    |[Руководство Tutorial: Troubleshoot Resource Manager template deployments](../articles/azure-resource-manager/resource-manager-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)|Устранение неполадок развертывания шаблона.|
 
 Эти руководства можно использовать по отдельности или в рамках комплексного изучения основных принципов разработки шаблона Resource Manager.

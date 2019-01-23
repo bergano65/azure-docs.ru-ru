@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 570c427166c07e93d3c8a7d3be079d9007238243
-ms.sourcegitcommit: 266fe4c2216c0420e415d733cd3abbf94994533d
+ms.openlocfilehash: 05fda1b4f71f67714b4723e15533d3555d497249
+ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34656828"
+ms.lasthandoff: 01/15/2019
+ms.locfileid: "54321676"
 ---
 # <a name="create-an-sap-netweaver-multi-sid-configuration"></a>Создание конфигурации с несколькими идентификаторами безопасности SAP NetWeaver
 
@@ -55,7 +55,7 @@ ms.locfileid: "34656828"
 В этой статье основное внимание уделяется переходу от отдельной установки ASCS/SCS к конфигурации SAP с несколькими ИД безопасности с помощью установки дополнительных кластеризованных экземпляров SAP ASCS/SCS в существующем отказоустойчивом кластере Windows Server (WSFC). Выполнив эти действия, вы настроите кластер SAP с несколькими ИД безопасности.
 
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 Необходимо настроить кластер WSFC, используемый для одного экземпляра SAP ASCS/SCS, как описано в статье [SAP NetWeaver на виртуальных машинах Windows. Руководство по обеспечению высокого уровня доступности][sap-ha-guide] и как показано на этой диаграмме:
 
 ![Высокодоступный экземпляр SAP ASCS/SCS][sap-ha-guide-figure-6001]
@@ -72,7 +72,7 @@ ms.locfileid: "34656828"
 >Максимальное количество экземпляров SAP ASCS/SCS в одном кластере WSFC равно максимальному количеству частных внешних IP-адресов на одну внутреннюю подсистему балансировки нагрузки Azure.
 >
 
-Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в пункте "Частный внешний IP-адрес на балансировщик нагрузки" раздела [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
+Дополнительные сведения об ограничениях подсистемы балансировки нагрузки см. в пункте "Частный внешний IP-адрес на подсистему балансировки нагрузки" раздела [Ограничения сети — Azure Resource Manager][networking-limits-azure-resource-manager].
 
 Общая картина с двумя системами SAP высокого уровня доступности будет выглядеть следующим образом:
 
@@ -208,7 +208,7 @@ foreach ($Port in $Ports) {
 
 $ILB | Set-AzureRmLoadBalancer
 
-Write-Host "Succesfully added new IP '$ILBIP' to the internal load balancer '$ILBName'!" -ForegroundColor Green
+Write-Host "Successfully added new IP '$ILBIP' to the internal load balancer '$ILBName'!" -ForegroundColor Green
 
 ```
 После выполнения скрипта результаты отобразятся на портале Azure, как показано на следующем снимке экрана:
