@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: a9e46bdb97899957f09a847f0fef03a6fec5dc6a
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54452910"
+---
 # Обзор
 ## [Начало работы](get-started.md)
 ## [Сертификаты](sap-certifications.md)
@@ -68,7 +76,6 @@
 ### [Доступность SAP HANA в Azure в разных регионах Azure](sap-hana-availability-across-regions.md)
 ## [Использование SAP Business One на виртуальных машинах Azure](business-one-azure.md)
 ## [Руководство по развертыванию интегрированных сред разработки SAP и SAP CAL в Windows или SQL Server](cal-ides-erp6-erp7-sp3-sql.md)
-## [SAP NetWeaver на виртуальных машинах Azure под управлением Linux](suse-quickstart.md)
 ## [Соединитель SAP LaMa для Azure](lama-installation.md)
 ## Высокий уровень доступности в Windows и Linux
 ### [Обзор](sap-high-availability-guide-start.md)
