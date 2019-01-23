@@ -1,6 +1,6 @@
 ---
 title: Ошибки квоты Azure | Документация Майкрософт
-description: Описывается, как устранить ошибки квоты ресурсов.
+description: Описывается, как устранять ошибки квоты ресурсов.
 services: azure-resource-manager
 documentationcenter: ''
 author: tfitzmac
@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 03/09/2018
 ms.author: tomfitz
-ms.openlocfilehash: 6d9048ae531abedb89b70989ce1c962357c514cd
-ms.sourcegitcommit: b6319f1a87d9316122f96769aab0d92b46a6879a
+ms.openlocfilehash: 2cf9f914aeaee25cda8fd426454cb39a1afa0b4f
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34357050"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54260232"
 ---
 # <a name="resolve-errors-for-resource-quotas"></a>Устранение ошибок квот ресурсов
 

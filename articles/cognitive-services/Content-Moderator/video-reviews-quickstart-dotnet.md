@@ -1,25 +1,25 @@
 ---
 title: Создание проверок видео с помощью .NET в Content Moderator
 titlesuffix: Azure Cognitive Services
-description: Как создавать проверки видео с помощью пакета SDK Azure Content Moderator для .NET.
+description: 'В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе по созданию проверок видео с помощью пакета SDK Content Moderator для C#. Вы научитесь выполнять такие задачи:'
 services: cognitive-services
 author: sanjeev3
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: content-moderator
 ms.topic: conceptual
-ms.date: 01/18/2018
+ms.date: 01/10/2019
 ms.author: sajagtap
-ms.openlocfilehash: 284ee24bbb0a15d107acf85e2d58072a0ecbbc6e
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: e9fb82c864c721a9df2e3b31d04e68c824404f81
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47219046"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54262517"
 ---
 # <a name="create-video-reviews-using-net"></a>Создание проверок видео с помощью .NET
 
-В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с [пакетом SDK Content Moderator для .NET](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
+В этой статье содержатся сведения и примеры кода, которые помогут вам быстро приступить к работе с [пакетом SDK Content Moderator для C#](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.ContentModerator/). Вы научитесь выполнять такие задачи:
 
 - создание проверки видео для модераторов-пользователей;
 - добавление кадров в проверку;
@@ -35,8 +35,7 @@ ms.locfileid: "47219046"
 
 ## <a name="sign-up-for-content-moderator"></a>Регистрация в службе Content Moderator
 
-Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ подписки.
-Изучите [краткое руководство](quick-start.md) о том, как можно получить ключ.
+Прежде чем использовать службы Content Moderator через REST API или пакет SDK, необходимо получить ключ подписки. Следуйте инструкциям в статье [Create a Cognitive Services account](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) (Создание учетной записи Cognitive Services), чтобы получить подписку Content Moderator и свой ключ.
 
 ## <a name="sign-up-for-a-review-tool-account-if-not-completed-in-the-previous-step"></a>Регистрация учетной записи средства проверки (если не сделано на предыдущем этапе)
 

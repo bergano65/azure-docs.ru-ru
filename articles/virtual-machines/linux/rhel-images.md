@@ -13,15 +13,17 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 12/18/2018
 ms.author: borisb
-ms.openlocfilehash: f178ac06b4ebfeef534233c2782423a7358f0c10
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: dbef04710e1a91cfda8b039605b517de9524ee19
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53719635"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54229580"
 ---
 # <a name="red-hat-enterprise-linux-images-in-azure"></a>Образы Red Hat Enterprise Linux в Azure
 В этой статье описываются доступные образы Red Hat Enterprise Linux (RHEL) в Azure Marketplace, а также политики их именования и хранения.
+
+Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).
 
 ## <a name="images-available-in-the-ui"></a>Образы, доступные в пользовательском интерфейсе
 Если ввести Red Hat в Marketplace или начать создавать ресурс в пользовательском интерфейсе портала Azure, вы увидите подмножество доступных образов RHEL и связанных с ним продуктов Red Hat. Вы всегда можете получить полный набор доступных образов виртуальных машин с помощью Azure CLI, PowerShell или API.
@@ -108,3 +110,4 @@ RHEL-SAP-APPS | 6,8 | RAW | Агент Linux | RHEL 6.8 for SAP Business Applic
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Дополнительные сведения об Azure Red Hat Update Infrastructure см. [здесь](https://aka.ms/rhui-update).
+* Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).

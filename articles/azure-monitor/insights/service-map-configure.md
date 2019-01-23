@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/07/2018
 ms.author: bwren
-ms.openlocfilehash: ee0de5d03de29adddd8f77efbe7491603cc0e4c4
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: ea1c44d95dfb00fdb2b0af9e5cd8560fdee3d361
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53188798"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54231348"
 ---
 # <a name="configure-service-map-in-azure"></a>Настройка решения "Сопоставление служб" в Azure
 Служба схемы услуги автоматически обнаруживает компоненты приложений в системах Windows и Linux и сопоставляет взаимодействие между службами. Она позволяет рассматривать серверы как взаимосвязанные системы, предоставляющие важные службы. Схема услуги отображает сведения о подключениях между серверами, процессами и портами в любой подключенной по протоколу TCP архитектуре без дополнительной настройки. Пользователям требуется только установить агент.
@@ -335,7 +335,7 @@ Node localhost
 ```
 
 ## <a name="remove-the-dependency-agent"></a>Удаление Dependency Agent
-### <a name="uinstall-agent-on-windows"></a>Удаление агента в Windows
+### <a name="uninstall-agent-on-windows"></a>Удаление агента в Windows
 Администратор может удалить Dependency Agent для Windows через панель управления.
 
 Для удаления Dependency Agent администратор может также запустить файл %Programfiles%\Microsoft Dependency Agent\Uninstall.exe.

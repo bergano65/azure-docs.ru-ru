@@ -7,17 +7,17 @@ manager: mtillman
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/26/2018
+ms.date: 01/11/2019
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 7571e5f4d95320ab92fa3b69b0ea1f05ff9c771f
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 982932f538f13ac3cb8f842a32f9439f717d971f
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47408408"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54247781"
 ---
-# <a name="tutorial-create-an-azure-active-directory-b2c-tenant"></a>Руководство по созданию клиента Azure Active Directory B2C
+# <a name="tutorial-create-an-azure-active-directory-b2c-tenant"></a>Руководство. Создание клиента Azure Active Directory B2C
 
 Чтобы приложения могли взаимодействовать с Azure Active Directory (Azure AD) B2C, их нужно зарегистрировать в клиенте, которым вы управляете.
 
@@ -34,7 +34,7 @@ ms.locfileid: "47408408"
 ## <a name="create-an-azure-ad-b2c-tenant"></a>Создание клиента Azure AD B2C
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
-2. Убедитесь, что вы используете каталог, содержащий вашу подписку, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ее. Этот каталог отличен от того, в котором будет содержаться ваш клиент Azure AD B2C.
+2. Убедитесь, что вы используете каталог, содержащий вашу подписку, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ее. Этот каталог отличается от того, в котором будет содержаться ваш клиент Azure AD B2C.
 
     ![Переключение на каталог подписки](./media/tutorial-create-tenant/switch-directory-subscription.png)
 
@@ -44,10 +44,11 @@ ms.locfileid: "47408408"
 
     ![Создание клиента](./media/tutorial-create-tenant/create-tenant.png)
 
-    В этом примере имя клиента — contoso0926Tenant.onmicrosoft.com.
+    В этом примере имя клиента — contoso0926Tenant.onmicrosoft.com.
 
-6. На странице **Create new B2C Tenant or Link to an exiting Tenant** (Создание клиента B2C или привязывание существующего клиента) щелкните **Связывание существующего B2C-клиента Azure AD с вашей подпиской Azure**, выберите клиента, которого вы создали, выберите свою подписку, щелкните **Создать** и введите имя группы ресурсов, в которую будет входить клиент, выберите расположение, а затем нажмите кнопку **Создать**.
-7. Чтобы начать использовать новый клиент, убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
+6. На странице **Создать нового клиента B2C или ссылку на существующего клиента** выберите **Связать существующего клиента Azure AD B2C с вашей подпиской Azure**, выберите созданного арендатора, свою подписку, а затем нажмите кнопку **Создать**.
+7. Введите имя для группы ресурсов, которая будет содержать клиента, выберите расположение и нажмите кнопку **Создать**.
+8. Чтобы начать использовать новый клиент, убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 
     ![Переключение на каталог клиента](./media/tutorial-create-tenant/switch-directories.png)
 
@@ -60,4 +61,4 @@ ms.locfileid: "47408408"
 > * Привязка клиента к подписке
 
 > [!div class="nextstepaction"]
-> [Включение в веб-приложении аутентификации на основе учетных записей](active-directory-b2c-tutorials-web-app.md)
+> [Tutorial: Register your applications in Azure Active Directory B2C](tutorial-register-applications.md) (Руководство. Регистрация приложений в Azure Active Directory B2C)

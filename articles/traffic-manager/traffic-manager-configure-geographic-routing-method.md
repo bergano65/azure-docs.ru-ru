@@ -1,8 +1,7 @@
 ---
-title: Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика Azure | Документация Майкрософт
+title: Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика Azure
 description: В этой статье объясняется, как настроить метод маршрутизации трафика по географическому расположению с помощью диспетчера трафика Azure
 services: traffic-manager
-documentationcenter: ''
 author: kumudd
 ms.service: traffic-manager
 ms.devlang: na
@@ -11,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2017
 ms.author: kumud
-ms.openlocfilehash: 5346617c858ab3bc168781c76985729c2da6a768
-ms.sourcegitcommit: c2c279cb2cbc0bc268b38fbd900f1bac2fd0e88f
+ms.openlocfilehash: 8b47d57d21043de97e17b256a39ef88d73fbb1c1
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49984355"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54197613"
 ---
 # <a name="configure-the-geographic-traffic-routing-method-using-traffic-manager"></a>Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика
 

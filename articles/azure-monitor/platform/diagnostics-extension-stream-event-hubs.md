@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: robb
 ms.component: diagnostic-extension
-ms.openlocfilehash: 200f36ee5312c92bed7dc9a7ffa29a0ee4993c43
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: ddef3ba2f1fa14445b0a06670d8f18abe76911ab
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54103372"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54230362"
 ---
 # <a name="streaming-azure-diagnostics-data-in-the-hot-path-by-using-event-hubs"></a>Потоковая передача данных системы диагностики Azure по критическому пути с помощью Центров событий
 Система диагностики Azure позволяет удобно собирать данные метрик и журналов от виртуальных машин облачных служб и передавать результаты в службу хранилища Azure. Начиная с марта 2016 года (пакет SDK версии 2.9) появилась возможность отправлять диагностические данные в пользовательские источники данных и передавать данные критического пути за несколько секунд с помощью [Центров событий Azure](https://azure.microsoft.com/services/event-hubs/).
@@ -35,7 +35,7 @@ ms.locfileid: "54103372"
 * Как устранить неполадки подключения.  
 
 ## <a name="prerequisites"></a>Предварительные требования
-Прием данных из системы диагностики Azure с помощью Центров событий поддерживается для облачных служб, виртуальных машин, масштабируемых наборов виртуальных машин и Service Fabric, начиная с выпуска пакета SDK для Azure 2.9 и соответствующих средств Azure для Visual Studio.
+Прием данных из системы диагностики Azure с помощью Центров событий поддерживается для облачных служб, виртуальных машин, Масштабируемых наборов виртуальных машин и Service Fabric, начиная с выпуска пакета SDK для Azure 2.9 и соответствующих средств Azure для Visual Studio.
 
 * Расширение системы диагностики Azure версии 1.6 (в[пакете SDK для Azure для .NET 2.9 или более поздней версии](https://azure.microsoft.com/downloads/) оно используется по умолчанию).
 * [Visual Studio 2013 или более поздней версии](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)

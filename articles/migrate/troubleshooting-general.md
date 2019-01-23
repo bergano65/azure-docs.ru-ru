@@ -4,14 +4,14 @@ description: Эта статья содержит обзор известных 
 author: rayne-wiselman
 ms.service: azure-migrate
 ms.topic: conceptual
-ms.date: 12/05/2018
+ms.date: 01/10/2019
 ms.author: raynew
-ms.openlocfilehash: 9a6b40aa86d4d81482d9c3724f0e230e0b811276
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: f91f6386df01050cc67968d05a1e1562e0f9ed01
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189502"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261236"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
@@ -28,6 +28,18 @@ ms.locfileid: "54189502"
    ![Остановить обнаружение](./media/troubleshooting-general/stop-discovery.png)
 
 - Удаление виртуальных машин. Из-за особенностей конструкции модуля удаление виртуальных машин не отражается даже при остановке и повторном запуске обнаружения. Это связано с тем, что данные из последующих обнаружений добавляются к более старым обнаружениям, а не переопределяются. В этом случае вы можете просто игнорировать виртуальную машину на портале, удалив ее из своей группы и пересчитав оценку.
+
+### <a name="deletion-of-azure-migrate-projects-and-associated-log-analytics-workspace"></a>Удаление проектов службы "Миграция Azure" и связанной рабочей области Log Analytics
+
+При удалении проекта службы "Миграция Azure" удаляется проект миграции, а также все группы и оценки. Однако если к проекту была присоединена рабочая область Log Analytics, она не будет удаляться автоматически. Это обусловлено тем, что одна рабочая область Log Analytics может применяться в нескольких вариантах использования. Если вы также хотите удалить рабочую область Log Analytics, это необходимо сделать вручную.
+
+1. Перейдите к рабочей области Log Analytics, связанной с проектом.
+   a. Если вы не удалили проект миграции, ссылку на рабочую область можно найти на странице обзора проекта в разделе "Основное".
+
+   ![Рабочая область LA](./media/troubleshooting-general/LA-workspace.png)
+
+   b. Если вы уже удалили проект миграции, щелкните **Группы ресурсов** на панели слева на портале Azure и перейдите к группе ресурсов, в которой была создана рабочая область, а затем перейдите к нему.
+2. Следуйте инструкциям из [этой статьи](https://docs.microsoft.com/azure/azure-monitor/platform/delete-workspace), чтобы удалить рабочую область.
 
 ### <a name="migration-project-creation-failed-with-error-requests-must-contain-user-identity-headers"></a>Создание проекта миграции завершилось ошибкой *Requests must contain user identity headers* (Запросы должны содержать заголовки удостоверений пользователей)
 
@@ -80,13 +92,13 @@ esourceGroups/ContosoDemo/providers/Microsoft.Migrate/projects/Demo/groups/conto
 
    ![Расположение проекта](./media/troubleshooting-general/geography-location.png)
 
-## <a name="collector-errors"></a>Ошибки сборщика
+## <a name="collector-issues"></a>Проблемы сборщика
 
 ### <a name="deployment-of-azure-migrate-collector-failed-with-the-error-the-provided-manifest-file-is-invalid-invalid-ovf-manifest-entry"></a>Развертывание Сборщика миграции Azure завершается сбоем с ошибкой: The provided manifest file is invalid: Invalid OVF manifest entry (Предоставленный файл манифеста является недопустимым: недопустимая запись манифеста OVF).
 
 1. Убедитесь, что файл OVA Сборщика миграции Azure скачан правильно, проверив его хэш-код. Проверка хэш-кода описана в [этой статье](https://docs.microsoft.com/azure/migrate/tutorial-assessment-vmware#verify-the-collector-appliance). Если хэш-коды не совпадают, скачайте OVA-файл снова и повторите попытку развертывания.
 2. Если проблема не исчезла, а развертывание OVF выполняется с помощью клиента VMware vSphere, попробуйте развернуть его через веб-клиент vSphere. Если проблема так и не исчезла, попробуйте использовать другой браузер.
-3. Если вы применяете веб-клиент vSphere для развертывания на vCenter Server 6.5, попробуйте развернуть OVA-файл напрямую на узле ESXi, выполнив описанные ниже действия.
+3. Если вы применяете веб-клиент vSphere для развертывания в vCenter Server 6.5 или 6.7, попробуйте развернуть OVA-файл напрямую на узле ESXi, выполнив описанные ниже действия:
   - Подключитесь напрямую к узлу ESXi (вместо сервера vCenter Server) с помощью веб-клиента (https://<*IP-адрес узла*>/ui)
   - Откройте раздел "Домашняя страница" > "Список"
   - Щелкните "Файл" > "Развернуть шаблон OVF", затем найдите нужный OVA-файл и завершите развертывание.
@@ -156,6 +168,17 @@ esourceGroups/ContosoDemo/providers/Microsoft.Migrate/projects/Demo/groups/conto
 2. Если не удается выполнить шаг 1, попробуйте подключиться к серверу vCenter Server по IP-адресу.
 3. Определите правильный номер порта для подключения к серверу vCenter Server.
 4. Наконец, проверьте, работает ли сервер vCenter Server.
+
+### <a name="antivirus-exclusions"></a>Исключения антивирусной программы
+
+Для усиления защиты устройства "Миграция Azure" вам потребуется исключить следующие папки устройства из антивирусного сканирования:
+
+- Папка с двоичными файлами для службы "Миграция Azure". Исключите все вложенные папки.
+  %ProgramFiles%\ProfilerService  
+- Веб-приложение службы "Миграция Azure". Исключите все вложенные папки.
+  %SystemDrive%\inetpub\wwwroot
+- Локальный кэш для базы данных и файлов журнала. Службе "Миграция Azure" необходим доступ к этой папке с правами на чтение и запись.
+  %SystemDrive%\Profiler
 
 ## <a name="dependency-visualization-issues"></a>Неполадки с визуализацией зависимостей
 

@@ -11,21 +11,21 @@ ms.service: log-analytics
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 06/29/2018
+ms.date: 01/10/2019
 ms.author: magoedte
-ms.openlocfilehash: 6b725d7912fa4b0d6b46acb35eda80ae66e4a38c
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 4c9fe269ffa351c1efdb3f94a15a10bae65432d8
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121419"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54199656"
 ---
 # <a name="application-insights-connector-management-solution-preview"></a>Решение по управлению "Соединитель Application Insights" (предварительная версия)
 
 ![Символ Application Insights](./media/app-insights-connector/app-insights-connector-symbol.png)
 
 >[!NOTE]
-> Реализована поддержка [запросов между ресурсами](../../azure-monitor/log-query/cross-workspace-query.md). Поэтому решение по управлению соединителем Application Insights больше не требуется и будет отмечено как нерекомендуемое. Начиная с июля вы не сможете связывать новые ресурсы Application Insights с рабочими областями Log Analytics. Существующие связи и панели мониторинга продолжат функционировать до ноября 2018 г. Дополнительные сведения см. в статье [Перемещение портала OMS в Azure](../../azure-monitor/platform/oms-portal-transition.md).
+> Реализована поддержка [запросов между ресурсами](../../azure-monitor/log-query/cross-workspace-query.md) и [просмотра нескольких ресурсов Azure Monitor Application Insights](../log-query/unify-app-resource-data.md). Поэтому решение по управлению соединителем Application Insights больше не требуется. Соединитель Application Insights будет объявлен устаревшим и удален из Azure Marketplace, а портал OMS официально объявлен устаревшим 15 января 2019 года для коммерческого облака Azure и облака Azure для государственных организаций США, он будет официально удален 30 марта 2019 года. Существующие соединения будут работать до 30 июня 2019 года. В связи с устареванием портала OMS на нем невозможно настроить или удалить существующие подключения. Эта можно будет выполнить с помощью REST API, который будет доступен с января 2019 г. Соответствующее уведомление будет опубликовано в [обновлениях Azure](https://azure.microsoft.com/updates/). Дополнительные сведения см. в статье [Перемещение портала OMS в Azure](../../azure-monitor/platform/oms-portal-transition.md).
 
 С помощью решения "Соединитель Application Insights" можно диагностировать проблемы с производительностью, а также узнать, какие действия пользователи выполняют в вашем приложении, которое отслеживается с помощью [Application Insights](../../azure-monitor/app/app-insights-overview.md). В Log Analytics доступны представления данных телеметрии приложения, которые отображаются для разработчиков в Application Insights. Тем не менее при интеграции приложений Application Insights с Log Analytics видимость приложений увеличивается, так как данные операций и приложений находятся в одном месте. Наличие тех же представлений, что и у разработчиков, поможет вам сотрудничать с ними. Благодаря общим представлениям вы сможете быстрее обнаруживать проблемы с платформой и приложением, а также решать их.
 

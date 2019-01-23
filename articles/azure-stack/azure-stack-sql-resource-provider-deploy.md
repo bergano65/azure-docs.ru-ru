@@ -11,15 +11,16 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 01/11/2019
+ms.lastreviewed: 01/11/2019
 ms.author: jeffgilb
-ms.reviewer: georgel
-ms.openlocfilehash: 035284e23d3b600cbf1cbd5500a9821c2c628b05
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.reviewer: jiahan
+ms.openlocfilehash: ea8669189b5fc8d797fc03f579ea52e7c11a7078
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156210"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54246965"
 ---
 # <a name="deploy-the-sql-server-resource-provider-on-azure-stack"></a>Развертывание поставщика ресурсов SQL Server в Azure Stack
 
@@ -59,8 +60,11 @@ _Только для интегрированных систем_. Укажит�
 
 ## <a name="deploy-the-sql-resource-provider"></a>Развертывание поставщика ресурсов SQL
 
-Когда вы установите все необходимые компоненты, запустите скрипт **DeploySqlProvider.ps1**, чтобы развернуть поставщик ресурсов SQL. Сценарий DeploySqlProvider.ps1 входит в состав двоичного файла поставщика ресурсов SQL, загруженного для вашей версии Azure Stack.
+После установки всех необходимых компонентов запустите скрипт **DeploySqlProvider.ps1**, чтобы развернуть поставщик ресурсов SQL. Сценарий DeploySqlProvider.ps1 входит в состав двоичного файла поставщика ресурсов SQL, загруженного для вашей версии Azure Stack.
 
+ > [!IMPORTANT]
+ > Перед развертыванием поставщика ресурсов просмотрите примечания к выпуску, чтобы узнать о новых функциях, исправлениях и любых известных проблемах, которые могут повлиять на развертывание.
+ 
 Чтобы развернуть поставщик ресурсов SQL, откройте **новое** окно PowerShell с повышенными привилегиями (не интегрированную среду сценариев PowerShell) и перейдите в каталог, в который ранее извлекли двоичные файлы поставщика ресурсов SQL. Рекомендуем открыть новое окно PowerShell, чтобы избежать потенциальных проблем, вызванных уже загруженными модулями PowerShell.
 
 Запустите скрипт DeploySqlProvider.ps1, который выполняет следующие задачи:
@@ -133,6 +137,10 @@ $CloudAdminCreds = New-Object System.Management.Automation.PSCredential ("$domai
 
 # Change the following as appropriate.
 $PfxPass = ConvertTo-SecureString "P@ssw0rd1" -AsPlainText -Force
+
+# Clear the existing login information from the Azure PowerShell context.
+Clear-AzureRMContext -Scope CurrentUser -Force
+Clear-AzureRMContext -Scope Process -Force
 
 # Change to the directory folder where you extracted the installation files. Do not provide a certificate on ASDK!
 . $tempDir\DeploySQLProvider.ps1 `

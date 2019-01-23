@@ -14,19 +14,19 @@ ms.topic: article
 ms.date: 12/11/2018
 ms.author: mabrigg
 ms.reviewer: guanghu
-ms.openlocfilehash: 5af508714b5eae5cdd23c940af0ae21300c0c5b8
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: bf056c162684c021e3a8408edfdf82fe4590be48
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53195172"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54260640"
 ---
 # <a name="deploy-azure-cognitive-services-to-azure-stack"></a>Развертывание Azure Cognitive Services в Azure Stack
 
 *Область применения: интегрированные системы Azure Stack и Пакет средств разработки Azure Stack*
 
 > [!Note]  
-> Aure Cognitive Services предоставляются в Azure Stack в режиме предварительной версии.
+> Azure Cognitive Services предоставляются в Azure Stack в режиме предварительной версии.
 
 В Azure Stack можно использовать Azure Cognitive Services с поддержкой контейнеров. Поддержка контейнеров в Azure Cognitive Services позволяет использовать все многофункциональные интерфейсы API, которые доступны в Azure. Использование контейнеров позволяет гибко выбирать расположения для развертывания и размещения служб, поставляемых в [контейнерах Docker](https://www.docker.com/what-container). Сейчас поддержка контейнеров доступна в виде предварительной версии для нескольких служб Azure Cognitive Services, включая [Компьютерное зрение](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home), [Распознавание лиц](https://docs.microsoft.com/azure/cognitive-services/face/overview), [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) и [Распознавание речи](https://docs.microsoft.com/azure/cognitive-services/luis/luis-container-howto) (LUIS).
 

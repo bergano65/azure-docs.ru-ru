@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: wesmc
-ms.openlocfilehash: 444f1aaee496666745be548bcdfadf3a4f162699
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 5d70e4beb97a23212bc85d529382d8e89f09336d
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104069"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54199924"
 ---
 # <a name="azure-cache-for-redis-faq"></a>Вопросы и ответы по кэшу Azure для Redis
 Ответы на часто задаваемые вопросы, шаблоны и рекомендации по поводу кэша Azure для Redis.
@@ -120,7 +120,7 @@ ms.locfileid: "54104069"
 <a name="cache-performance"></a>
 
 ### <a name="azure-cache-for-redis-performance"></a>Производительность кэша Azure для Redis
-В следующей таблице показаны максимальные значения пропускной способности, наблюдаемые при тестировании разных размеров кэша уровней "Стандартный" или "Премиум" с помощью `redis-benchmark.exe` из виртуальной машины Iaas для конечной точки кэша Azure для Redis. Для пропускной способности SSL используется redis-benchmark со stunnel для подключения к конечной точке кэша Azure для Redis.
+В следующей таблице показаны максимальные значения пропускной способности, наблюдаемые при тестировании разных размеров кэша уровней "Стандартный" или "Премиум" с помощью `redis-benchmark.exe` из виртуальной машины IaaS для конечной точки кэша Azure для Redis. Для пропускной способности SSL используется redis-benchmark со stunnel для подключения к конечной точке кэша Azure для Redis.
 
 >[!NOTE] 
 >Эти значения не гарантируются и для них не предусмотрено соглашение об уровне обслуживания, однако они должны быть типичными. Чтобы определить подходящий объем кэша для вашего приложения, вам следует загрузить его тестирование.

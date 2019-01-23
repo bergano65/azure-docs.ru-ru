@@ -4,17 +4,17 @@ description: Узнайте, как устранять неполадки при
 services: blueprints
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 10/25/2018
+ms.date: 12/11/2018
 ms.topic: troubleshooting
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 40668fed2fcc2a04e39fa3a4d7e8e8923c75ae05
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 04c038eb11cc40cec3552feff183bea55b22bb57
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53315535"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261933"
 ---
 # <a name="troubleshoot-errors-using-azure-blueprints"></a>Устранение неполадок с помощью службы Azure Blueprint
 
@@ -52,6 +52,20 @@ ms.locfileid: "53315535"
 #### <a name="resolution"></a>Способы устранения:
 
 Измените схему, чтобы в сведениях об ошибке она не сталкивалась с политиками. Если это невозможно, следует изменить область назначения политики так, чтобы схема больше не сталкивалась с политикой.
+
+### <a name="escape-function-parameter"></a>Сценарий. Параметр схемы является функцией
+
+#### <a name="issue"></a>Проблема
+
+Параметры схемы, которые являются функциями, обрабатываются перед передачей в артефакты.
+
+#### <a name="cause"></a>Причина:
+
+Передача параметра схемы, которая использует функцию (например `[resourceGroup().tags.myTag]`) для результатов артефакта, приводит к тому, что обработанный результат функции устанавливается на артефакт вместо динамической функции.
+
+#### <a name="resolution"></a>Способы устранения:
+
+Чтобы передать функцию в качестве параметра, направьте всю строку с `[` так, чтобы параметр схемы был похож на `[[resourceGroup().tags.myTag]`. Escape-символ заставляет схемы обрабатывать значение как строку при обработке. Схемы затем помещают функцию на артефакт, позволяя ему быть динамичным, как и ожидалось.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

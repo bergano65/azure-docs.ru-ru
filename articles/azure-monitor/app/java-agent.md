@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 08/24/2016
+ms.date: 01/10/2019
 ms.author: mbullwin
-ms.openlocfilehash: c0478b320afca1b82a79fa43e7b60c29a2cb2e7c
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: dbca662f38f13833a4b9e642a4d8f690017d999a
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53997934"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54262138"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
@@ -34,7 +34,7 @@ ms.locfileid: "53997934"
 Чтобы использовать агент для Java, его необходимо установить на сервере. Веб-приложения необходимо инструментировать [пакетом SDK для Java Application Insights][java]. 
 
 ## <a name="install-the-application-insights-agent-for-java"></a>Установка агента Application Insights для Java
-1. [Скачайте агент](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) на компьютер с сервером Java. Обязательно скачайте агент Java той же версии, что и основной пакет, а также веб-пакеты SDK для Java Application Insights.
+1. [Скачайте агент](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) на компьютер с сервером Java. Обязательно скачайте агент Java той же версии, что и веб-пакеты и пакет SDK для Java Application Insights.
 2. Измените скрипт запуска сервера приложений, добавив следующую виртуальную машину Java:
    
     `javaagent:`*полный путь к файлу агента JAR*
@@ -89,6 +89,32 @@ ms.locfileid: "53997934"
 Необходимо включить прием отчетов и контроль времени выполнения отдельных методов.
 
 По умолчанию `reportExecutionTime` имеет значение true, а `reportCaughtExceptions` — значение false.
+
+### <a name="spring-boot-agent-additional-config"></a>Дополнительная конфигурация агента Spring Boot
+
+`java -javaagent:/path/to/agent.jar -jar path/to/TestApp.jar`
+
+> [!NOTE]
+> Файлы агента AI-Agent.xml и JAR-файл должны быть в одной папке. Они часто расположены вместе в папке `/resources` проекта. 
+
+#### <a name="enable-w3c-distributed-tracing"></a>Активация распределенной трассировки W3C
+
+Добавьте к файлу AI-Agent.xml следующее:
+
+```xml
+<Instrumentation>
+        <BuiltIn enabled="true">
+            <HTTP enabled="true" W3C="true" enableW3CBackCompat="true"/>
+        </BuiltIn>
+    </Instrumentation>
+```
+
+> [!NOTE]
+> Режим обратной совместимости включен по умолчанию, и параметр enableW3CBackCompat является необязательным и должен использоваться только в том случае, если вы хотите отключить эту функцию. 
+
+В идеале он может использоваться, когда все ваши службы обновлены к новой версии пакетов SDK, поддерживающих протокол консорциума W3C. Настоятельно рекомендуется как можно скорее перейти к новой версии пакетов SDK с поддержкой W3C.
+
+Убедитесь, что **оба [входящий](correlation.md#w3c-distributed-tracing) и исходящий (агенты) конфигурации** совпадают.
 
 ## <a name="view-the-data"></a>Просмотр данных
 В ресурсе Application Insights сводные данные по удаленным зависимостям и времени выполнения методов отображаются в [элементе "Производительность"][metrics].

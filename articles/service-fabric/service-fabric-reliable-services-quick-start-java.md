@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/02/2017
 ms.author: suhuruli
-ms.openlocfilehash: d4e3419241d44744f8a692896848edb6cebb56a0
-ms.sourcegitcommit: ebd06cee3e78674ba9e6764ddc889fc5948060c4
+ms.openlocfilehash: 84a495274ffadfe816ced21cd095f7a5e18d7f89
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44049700"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54199550"
 ---
 # <a name="get-started-with-reliable-services"></a>Приступая к работе с надежными службами
 > [!div class="op_single_selector"]
@@ -201,7 +201,7 @@ protected CompletableFuture<?> runAsync(CancellationToken cancellationToken) {
 ReliableHashMap<String,Long> map = this.stateManager.<String, Long>getOrAddReliableHashMapAsync("myHashMap")
 ```
 
-[ReliableHashMap](https://docs.microsoft.com/java/api/microsoft.servicefabric.data.collections._reliable_hash_map) — это реализация словаря, которая позволяет надежно хранить состояние службы. В Service Fabric с помощью Reliable HashMap можно хранить данные непосредственно в службе без использования внешнего постоянного хранилища. Reliable HashMap делает данные высокодоступными. Service Fabric выполняет эту задачу, автоматически создавая несколько *реплик* службы и управляя ими. Кроме того, платформа предоставляет API-интерфейс, который упрощает управление этими репликами и переходы между их состояниями.
+[ReliableHashMap](https://docs.microsoft.com/java/api/microsoft.servicefabric.data.collections.reliablehashmap) — это реализация словаря, которая позволяет надежно хранить состояние службы. В Service Fabric с помощью Reliable HashMap можно хранить данные непосредственно в службе без использования внешнего постоянного хранилища. Reliable HashMap делает данные высокодоступными. Service Fabric выполняет эту задачу, автоматически создавая несколько *реплик* службы и управляя ими. Кроме того, платформа предоставляет API-интерфейс, который упрощает управление этими репликами и переходы между их состояниями.
 
 В Reliable Collections можно хранить любые типы объектов Java, включая пользовательские типы. Необходимо только учитывать следующее.
 

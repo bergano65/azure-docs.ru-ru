@@ -5,17 +5,17 @@ services: multi-factor-authentication
 ms.service: active-directory
 ms.component: authentication
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 01/11/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: mtillman
 ms.reviewer: michmcla
-ms.openlocfilehash: 15a528bfdc1f23c932d1206dbca4b05af8bd58ba
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 0f85aa1a3efb4ea058c22870ae96069a2a1070ad
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53186707"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54247305"
 ---
 # <a name="how-to-get-azure-multi-factor-authentication"></a>Как получить службу Многофакторной идентификации Azure
 
@@ -31,7 +31,7 @@ ms.locfileid: "53186707"
 
 | Version (версия) | ОПИСАНИЕ |
 | --- | --- |
-| Многофакторная проверка подлинности для Office 365 |Эта версия работает исключительно с приложениями Office 365, и ей можно управлять с портала Office 365. Администраторы могут [защитить свои ресурсы Office 365 с помощью двухшаговой проверки подлинности](https://support.office.com/article/Set-up-multi-factor-authentication-for-Office-365-users-8f0454b2-f51a-4d9c-bcde-2c48e41621c6). Эта версия является частью подписки Office 365. |
+| Многофакторная проверка подлинности для Office 365 <br> Microsoft 365 бизнес |Эта версия работает исключительно с приложениями Office 365, и ей можно управлять с портала Office 365 или Microsoft 365. Администраторы могут [защитить свои ресурсы Office 365 с помощью двухшаговой проверки подлинности](https://support.office.com/article/Set-up-multi-factor-authentication-for-Office-365-users-8f0454b2-f51a-4d9c-bcde-2c48e41621c6). Эта версия является частью подписки Office 365 или Microsoft 365 бизнес. |
 | Многофакторная идентификация для администраторов Azure AD | Пользователи, которым назначена роль глобального администратора Azure AD в клиентах Azure AD, могут включить двухфакторную проверку подлинности без дополнительных затрат.|
 | Многофакторная идентификация Azure | Служба Многофакторной идентификации Azure, также называемая полной версией, предлагает широчайший набор возможностей. Доступны дополнительные варианты настройки с помощью [портала Azure](https://portal.azure.com), расширенные возможности отчетности и поддержка большого количества локальных и облачных приложений. Многофакторная идентификация Azure — это функция [Azure Active Directory Premium](https://www.microsoft.com/cloud-platform/azure-active-directory-features). Ее можно развернуть как в облаке, так и локально. |
 

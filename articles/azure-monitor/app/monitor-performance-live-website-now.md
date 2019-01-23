@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 1558d8e8392ff49e2661e9f8bc41e41c5bbc6dd5
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 463b2e8c7e349fa46737a9d630bd027fb28e7780
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189854"
+ms.locfileid: "54199391"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-status-monitor"></a>Инструментирование веб-приложений во время выполнения с помощью монитора состояний Application Insights
 
@@ -96,14 +96,14 @@ ms.locfileid: "54189854"
 - Убедитесь, что файл applicationinsights.config находится в целевом каталоге приложения и содержит ikey.
 
 - Если вы подозреваете, что данные отсутствуют, выполните простой запрос в [Analytics](../log-query/get-started-portal.md), чтобы перечислить все облачные роли, которые в данный момент отсылают данные телеметрии.
-
 ```Kusto
 union * | summarize count() by cloud_RoleName, cloud_RoleInstance
 ```
 
 - Если вам нужно подтвердить, что Application Insights успешно подключен, вы можете запустить программу [Sysinternals Handle](https://docs.microsoft.com/sysinternals/downloads/handle) в командном окне, чтобы подтвердить, что файл applicationinsights.dll был загружен службами IIS.
-
-`handle.exe /p w3wp.exe`
+```cmd
+handle.exe /p w3wp.exe
+```
 
 
 ### <a name="cant-connect-no-telemetry"></a>Проблемы с подключением? Отсутствие данных телеметрии
@@ -113,7 +113,7 @@ union * | summarize count() by cloud_RoleName, cloud_RoleInstance
 ### <a name="unable-to-login"></a>Не удалось войти в систему
 
 * Если монитор состояний не может войти в систему, установите командную строку. Монитор состояний пытается войти в систему для сбора ключа ikey, однако его можно указать вручную с помощью команды: 
-```
+```powershell
 Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\PowerShell\Microsoft.Diagnostics.Agent.StatusMonitor.PowerShell.dll
 Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-000-000-000-0000000
 ```
@@ -123,7 +123,7 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 Данная ошибка может возникать после включения Application Insights. Это связано с тем, что программа установки заменяет эту библиотеку DLL в вашем каталоге bin.
 Чтобы обновить файл web.config, внеся в него исправления:
 
-```
+```xml
 <dependentAssembly>
     <assemblyIdentity name="System.Diagnostics.DiagnosticSource" publicKeyToken="cc7b13ffcd2ddd51"/>
     <bindingRedirect oldVersion="0.0.0.0-4.*.*.*" newVersion="4.0.2.1"/>

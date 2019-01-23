@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 08/10/2018
 ms.author: mbullwin
-ms.openlocfilehash: 4a50cb5dc204a209c2b9d899c50ae7def55f4deb
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 4f8929182995445ff0b327bc22a9cdf75ec5641b
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54118172"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54262595"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
 [Power BI](https://www.powerbi.com/) — это набор бизнес-инструментов для анализа данных и обмена сведениями. На каждом устройстве доступны панели мониторинга с широкими возможностями. Вы можете объединять данные из различных источников, в том числе аналитические запросы из [ Application Insights](../../azure-monitor/app/app-insights-overview.md).

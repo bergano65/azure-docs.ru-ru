@@ -16,12 +16,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 883f521040c67cb8fe9578bc5c490bc3dfccba28
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 03206baf0e70e7be247e9848bfd5a80a1a1e1b35
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51624664"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54247764"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях аудита на портале Azure Active Directory 
 
@@ -45,7 +45,7 @@ ms.locfileid: "51624664"
 
 ## <a name="audit-logs"></a>Журналы аудита
 
-Журналы аудита Azure AD содержат записи о действиях системы (необходимые для соответствия требованиям). Чтобы получить доступ к отчету аудита, выберите **Журналы аудита** в разделе **Действие** в **Azure Active Directory**. 
+Журналы аудита Azure AD содержат записи о действиях системы (необходимые для соответствия требованиям). Чтобы получить доступ к отчету аудита, выберите **Журналы аудита** в разделе **Действие** в **Azure Active Directory**. Обратите внимание, что журналы аудита могут отображаться с задержкой до одного часа, поэтому столько же времени может потребоваться на отображение данных о действиях аудита на портале после завершения операции.
 
 ![Журналы аудита](./media/concept-audit-logs/61.png "Журналы аудита")
 
@@ -178,6 +178,11 @@ ms.locfileid: "51624664"
 
 ![Журналы аудита](./media/concept-audit-logs/25.png "Журналы аудита")
 
+## <a name="office-365-activity-logs"></a>Журналы действий Office 365
+
+Вы можете просмотреть журналы действий Office 365 из [Центра администрирования Office 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center). Несмотря на то что журналы активности Office 365 и Azure AD совместно используют много ресурсов каталога, только Центр администрирования Office 365 предоставляет возможность полностью просмотреть журналы действий Office 365. 
+
+Вы также можете получить программный доступ к журналам действий Office 365 с помощью [API управления Office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

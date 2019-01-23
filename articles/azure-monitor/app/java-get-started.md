@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 10/09/2018
+ms.date: 01/10/2019
 ms.author: lagayhar
-ms.openlocfilehash: b662f5c4baa9c4c6e7689f3f463761dbd456f33f
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: e16432022c8c8525c95fab46bc61197f67fb8f37
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54074183"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54260063"
 ---
 # <a name="get-started-with-application-insights-in-a-java-web-project"></a>Приступая к работе с Application Insights в веб-проекте Java
 
@@ -359,6 +359,14 @@ public class AppInsightsConfig {
 ## <a name="monitor-method-calls-and-external-dependencies"></a>Мониторинг вызовов методов и внешних зависимостей.
 [установить агент для Java](java-agent.md) .
 
+## <a name="w3c-distributed-tracing"></a>Распределенная трассировка W3C
+
+Пакет средств разработки для Java Application Insights теперь поддерживает [распределенную трассировку W3C](https://w3c.github.io/trace-context/).
+
+Конфигурация входящих параметров пакета средств разработки описана далее в статье о [корреляции](correlation.md#w3c-distributed-tracing).
+
+Конфигурация входящих параметров пакета средств разработки задана в файле [AI-Agent.xml](java-agent.md).
+
 ## <a name="performance-counters"></a>Счетчики производительности
 Чтобы отобразить диапазон счетчиков производительности, щелкните **Параметры**, **Серверы**.
 
@@ -433,7 +441,7 @@ public class AppInsightsConfig {
 </Channel>
 ```
 
-Если вы используете инициализатор SpringBoot, добавьте следующее в файл конфигурации (application.properies):
+Если вы используете инициализатор SpringBoot, добавьте следующее в файл конфигурации (application.properties):
 
 ```yml
 azure.application-insights.channel.local-forwarder.endpoint-address=<!--put the hostname:port of your LocalForwarder instance here-->

@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 10/19/18
 ms.author: tamram
 ms.component: blobs
-ms.openlocfilehash: 2bae07643407e8672ef26fb59da588661eb9f0d1
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 0663f569edd0dec47949053b6ecf7fe49fa24a17
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54191825"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54229308"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 Учетные записи хранения GPv2 Azure позволяют передавать статическое содержимое (HTML, CSS, JavaScript и файлы изображений) непосредственно из контейнера хранилища с именем *$web*. Преимущества размещения в службе хранилища Azure заключаются в использовании бессерверной архитектуры, в том числе [Функций Azure](/azure/azure-functions/functions-overview) и других служб PaaS.

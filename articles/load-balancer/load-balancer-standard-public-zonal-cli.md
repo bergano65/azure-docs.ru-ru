@@ -1,7 +1,7 @@
 ---
 title: Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью Azure CLI
 titlesuffix: Azure Load Balancer
-description: Сведения о создании общедоступного Load Balancer уровня "Стандартный" с зональным внешним интерфейсом с общедоступным IP-адресом с помощью Azure CLI
+description: Сведения о создании общедоступной подсистемы Load Balancer (цен. категория "Стандартный") с зональным внешним интерфейсом с общедоступным IP-адресом с помощью Azure CLI
 services: load-balancer
 documentationcenter: na
 author: KumudD
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2018
 ms.author: kumud
-ms.openlocfilehash: f1a6777a99c2237fc4d201fa5c87eaea88117866
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 813f11dae31261b4211480570a4801de19e74437
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53185636"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54199211"
 ---
-#  <a name="create-a-public-load-balancer-standard-with-zonal-frontend-using-azure-cli"></a>Создание общедоступного Load Balancer уровня "Стандартный" с зональным внешним интерфейсом с помощью Azure CLI
+#  <a name="create-a-standard-load-balancer-with-zonal-frontend-using-azure-cli"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью Azure CLI
 
-В этой статье приведены действия по созданию общедоступного [Load Balancer уровня "Стандартный"](https://aka.ms/azureloadbalancerstandard) с зональным внешним интерфейсом с помощью общедоступного стандартного IP-адреса. В этом сценарии нужно указать определенную зону для серверных и интерфейсных экземпляров, чтобы сопоставить ваш путь к данным и ресурсы с определенной зоной.
+В этой статье приведены действия по созданию общедоступного экземпляра [Load Balancer (цен. категория "Стандартный")](https://aka.ms/azureloadbalancerstandard) с зональным внешним интерфейсом и с использованием общедоступного стандартного IP-адреса. В этом сценарии нужно указать определенную зону для серверных и интерфейсных экземпляров, чтобы сопоставить ваш путь к данным и ресурсы с определенной зоной.
 
 Дополнительные сведения о том, как работают зоны доступности с Load Balancer уровня "Стандартный", см. в статье [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md).
 
@@ -61,7 +61,7 @@ az network public-ip create \
 --zone 1
 ```
 
-## <a name="create-azure-load-balancer-standard"></a>Создание Azure Load Balancer уровня "Стандартный"
+## <a name="create-azure-standard-load-balancer"></a>Создание общедоступной подсистемы Azure Load Balancer (цен. категория "Стандартный")
 В этом разделе описано, как создать и настроить следующие компоненты подсистемы балансировки нагрузки:
 - интерфейсный пул IP-адресов, который получает входящий трафик в подсистеме балансировки нагрузки;
 - внутренний пул IP-адресов, на который внешний пул отправляет трафик с балансировкой нагрузки;

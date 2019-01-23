@@ -1,9 +1,11 @@
 ---
-title: Создание общедоступного Load Balancer уровня "Стандартный" с зональным внешним интерфейсом с помощью Azure CLI | Документация Майкрософт
-description: Узнайте, как создать общедоступный Load Balancer уровня "Стандартный" с зональным внешним интерфейсом с помощью Azure CLI
+title: Создание подсистемы балансировки нагрузки с зональным внешним интерфейсом — Azure CLI
+titlesuffix: Azure Load Balancer
+description: Узнайте, как создать экземпляр Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью Azure CLI
 services: load-balancer
 documentationcenter: na
 author: KumudD
+manager: twooley
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -11,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2018
 ms.author: kumud
-ms.openlocfilehash: 3a0fc37b8e2865163ae6c55813d145a568d796e0
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: c9926b78955a193f750c1e5ca3ff7461b4192df5
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50414500"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54247017"
 ---
-#  <a name="create-a-public-load-balancer-standard-with-zonal-frontend-using-azure-cli"></a>Создание общедоступного Load Balancer уровня "Стандартный" с зональным внешним интерфейсом с помощью Azure CLI
+#  <a name="create-a-standard-load-balancer-with-zonal-frontend-using-azure-cli"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью Azure CLI
 
-В этой статье приведены действия по созданию общедоступного [Load Balancer уровня "Стандартный"](https://aka.ms/azureloadbalancerstandard) с зональным внешним интерфейсом. Наличие зонального внешнего интерфейса означает, что любой входящий и исходящий поток обслуживается одной зоной в регионе. Вы можете создать подсистему балансировки нагрузки с зональным внешним интерфейсом путем использования зонального общедоступного IP-адреса уровня "Стандартный" в конфигурации внешнего интерфейса. Чтобы понять, как работают зоны доступности с Load Balancer уровня "Стандартный", ознакомьтесь со статьей [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md). 
+В этой статье приведены действия по созданию общедоступного [Load Balancer (цен. категория "Стандартный")](https://aka.ms/azureloadbalancerstandard) с зональным внешним интерфейсом. Наличие зонального внешнего интерфейса означает, что любой входящий и исходящий поток обслуживается одной зоной в регионе. Вы можете создать подсистему балансировки нагрузки с зональным внешним интерфейсом путем использования зонального общедоступного IP-адреса уровня "Стандартный" в конфигурации внешнего интерфейса. Чтобы понять, как работают зоны доступности с Load Balancer уровня "Стандартный", ознакомьтесь со статьей [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md). 
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -50,7 +52,7 @@ az network public-ip create --resource-group myResourceGroupZLB --name myPublicI
 
 ## <a name="create-a-load-balancer"></a>Создание балансировщика нагрузки
 
-Создайте общедоступный балансировщик нагрузки уровня "Стандартный" с созданным на предыдущем шаге общедоступным стандартным IP-адресом с помощью следующей команды:
+Создайте общедоступный Load Balancer (цен. категория "Стандартный") с созданным на предыдущем шаге общедоступным стандартным IP-адресом с помощью следующей команды:
 
 ```azurecli-interactive
 az network lb create --resource-group myResourceGroupZLB --name myLoadBalancer --public-ip-address myPublicIPZonal --frontend-ip-name myFrontEnd --backend-pool-name myBackEndPool --sku Standard

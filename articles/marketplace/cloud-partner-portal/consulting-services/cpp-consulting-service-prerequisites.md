@@ -14,25 +14,25 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 126ad48ee5df9212d65750abde71dfc18b82566f
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 786be89b575246b92903ec968e956e9b25337ab8
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53345560"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54230090"
 ---
 # <a name="consulting-service-prerequisites"></a>Предварительные требования к консультационной услуге
 
-Чтобы отправить предложения консультационной услуги для любого из перечисленных ниже продуктов, необходимо сначала выполнить одно или несколько соответствующих требований.
+Чтобы отправить предложения консультационной услуги для любого из перечисленных ниже продуктов, выполните одно или несколько соответствующих требований:
 
-* **Dynamics 365 for customer engagement**. Партнеры должны иметь сертификацию Silver или Gold для [компетенции Cloud Customer Relationship Management](https://partner.microsoft.com/membership/cloud-customer-relationship-management-competency). 
-* **Dynamics 365 for Finance and Operations**. Партнеры должны иметь сертификацию Silver или Gold для [компетенции планирования ресурсов предприятия](https://partner.microsoft.com/membership/enterprise-resource-planning-competency) и минимальный доход от 25 тыс. долларов США в облачных операциях в течение 12 месяцев.
-* **Dynamics 365 Business Central**. Партнеры должны выступать в качестве поставщика облачных решений (CSP) или зарегистрированного цифрового партнера (DPOR) по крайней мере для одного клиента.
-    * **CSP**. См. раздел [Как стать CSP](https://partner.microsoft.com/cloud-solution-provider/get-started) для получения CSP.
-    * **DPOR**. См. раздел [Обзор DPOR](https://partner.microsoft.com/membership/digital-partner-of-record#Membership_Digital_Partner_of_Record_Navigated_Rich_Text_Node1), чтобы ознакомиться с требованиями для DPOR.
-* **Power BI**. Указан на портале Power BI Partner Showcase. См. раздел [Критерии Solution Partner](https://powerbi.microsoft.com/become-a-partner), чтобы получить дополнительные сведения.
-* **PowerApps**. Партнеры должны иметь решение, опубликованные на [Partner Showcase](https://powerapps.microsoft.com/partner-showcase).
+* **Dynamics 365 for Customer Engagement**. Партнеры должны иметь сертификацию Silver или Gold для [компетенции Cloud Customer Relationship Management](https://partner.microsoft.com/membership/cloud-customer-relationship-management-competency). 
+* **Dynamics 365 for Finance and Operations**. Партнеры должны иметь сертификацию уровня Silver или Gold для компетенции [Enterprise Resource Planning](https://partner.microsoft.com/membership/enterprise-resource-planning-competency). За последние 12 месяцев минимальный доход партнеров должен быть более чем 25 000 долларов США в облачных операциях.
+* **Dynamics 365 Business Central**. Партнеры должны выступать в качестве поставщика облачных решений (CSP) или иметь статус Digital Partner of Record (DPOR) по крайней мере для одного клиента.
+    * **CSP**. Дополнительные сведения см. на странице [Присоединяйтесь к программе Cloud Solution Provider](https://partner.microsoft.com/cloud-solution-provider/get-started).
+    * **DPOR**. См. раздел [Обзор](https://partner.microsoft.com/membership/digital-partner-of-record#Membership_Digital_Partner_of_Record_Navigated_Rich_Text_Node1), чтобы ознакомиться с требованиями для DPOR.
+* **Power BI**. Указан на портале Power BI Partner Showcase. Дополнительную информацию см. в статье [Станьте партнером Power BI мирового класса](https://powerbi.microsoft.com/become-a-partner).
+* **PowerApps**. Партнеры должны иметь решение, опубликованные на странице [Узнайте, как наши партнеры используют PowerApps](https://powerapps.microsoft.com/partner-showcase).
 
-**Дальнейшие действия**
+## <a name="next-steps"></a>Дополнительная информация
 
-Если вышеуказанные требования выполнены, вы сможете [создать предложение консультационных услуг](./cpp-consulting-service-create-offer.md).
+Если вы выполнили вышеуказанные требования, вы готовы к следующему шагу [Создание предложения](./cpp-consulting-service-create-offer.md).

@@ -14,35 +14,41 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: pbutlerm
-ms.openlocfilehash: 0b90f35da2176e890d6ec6fd4277cc32e02d156a
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: e543c24a8e3549bc53d6074c7008f3d01fcc96c4
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53345330"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54228765"
 ---
 # <a name="azure-and-dynamics-365-consulting-service-offer"></a>Предложение консультационных услуг в Dynamics 365 и Azure
 
-Из этого раздела можно узнать, как выполнять публикацию предложения консультационной услуги в Microsoft <a href="https://azuremarketplace.microsoft.com">Azure Marketplace</a> или в <a href="https://appsource.microsoft.com">AppSource Marketplace</a>. Решение о предоставлении услуг на базе Microsoft <a href="https://dynamics.microsoft.com">Dynamics 365</a>, <a href="https://powerbi.microsoft.com">Power BI</a> и<a href="https://powerapps.microsoft.com">PowerApps</a> могут размещаться в AppSource. Решения о предоставлении услуг на базе Microsoft <a href="https://azure.microsoft.com/services">служб Azure</a> могут размещаться в Azure Marketplace.
+В этой статье описано, как публиковать предложения консультационной услуги в Microsoft <a href="https://azuremarketplace.microsoft.com">Azure Marketplace</a> или в <a href="https://appsource.microsoft.com">AppSource</a>. Решение, основанные на Microsoft <a href="https://dynamics.microsoft.com">Dynamics 365</a>, <a href="https://powerbi.microsoft.com">Power BI</a> и <a href="https://powerapps.microsoft.com">PowerApps</a>, могут быть представлены в AppSource. Предложения, основанные на других <a href="https://azure.microsoft.com/services">службах Microsoft Azure</a>, могут размещаться в Azure Marketplace.
 
 ## <a name="publishing-benefits"></a>Преимущества публикации
 
-Публикация в любом из магазинов Майкрософт дает ряд преимуществ.
+Публикация в любом из Marketplace Майкрософт дает ряд преимуществ.
 
 - Продвижение вашей компании за счет использования бренда Майкрософт.
-- Возможность получить доступ к более чем 100 миллионам пользователей Office 365 и Dynamics 365, а также к более чем 200 тис. организаций с помощью Azure Marketplace.
-- Получение высококачественных сведений из этих рынков.
+- Возможность достичь более чем 100 миллионов пользователей Office 365 и Dynamics 365, а также более чем 200 000 организаций с помощью Azure Marketplace.
+- Получение высококачественных потенциальных клиентов из этих Marketplace.
 - Продвижение служб с помощью команд по продажам по телефону и реализации Майкрософт.
 
 ## <a name="publish-a-consulting-service-offer"></a>Публикация предложения консультационных услуг
 
-В этом разделе описаны элементы публикации предложения консультационных услуг. Публикация состоит из следующих основных частей:
+В этом разделе описаны элементы публикации предложения консультационных услуг. Публикация состоит из следующих основных этапов:
 
-1. [Предварительные требования консультационных услуг](./cpp-consulting-service-prerequisites.md). Перечень требований для публикации предложения консультационных услуг для **Dynamics 365 for Customer Engagement**, **Dynamics 365 for Finance & Operations**, **Dynamics 365 Business Central**, **Power BI** и **PowerApps**.
-1. [Создание нового предложения.](./cpp-consulting-service-create-offer.md) Перечислены шаги по созданию записи предложения консультационных услуг с использованием Портала Cloud Partner.
-    1. [Определение параметров предложения](./cpp-consulting-service-define-offer-settings.md)
-    1. [Ввод сведений об онлайн-магазине и выбор платформы публикации — Azure Marketplace или AppSource.](./cpp-consulting-service-storefront-details.md)
-1. [Публикация предложения](./cpp-consulting-service-publish-offer.md). Отправка предложения для публикации.
+- [Предварительные требования к консультационной услуге](./cpp-consulting-service-prerequisites.md) предлагают требования к публикации предложения консультационной услуги для:
+ 
+    - Dynamics 365 for Customer Engagement 
+    - Dynamics 365 for Finance and Operations 
+    - Dynamics 365 Business Central 
+    - Power BI 
+    - PowerApps.
+- [Создание предложения](./cpp-consulting-service-create-offer.md) предлагает шаги по созданию записи предложения консультационных услуг с помощью Портала Cloud Partner.
+    - [Вкладка с параметрами предложения](./cpp-consulting-service-define-offer-settings.md).
+    - [Вкладка со сведениями об онлайн-магазине](./cpp-consulting-service-storefront-details.md).
+- [Публикация предложения консультационных услуг](./cpp-consulting-service-publish-offer.md) описывается, как запустить предложения для публикации.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

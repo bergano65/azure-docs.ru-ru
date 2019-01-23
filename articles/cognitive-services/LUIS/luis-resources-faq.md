@@ -9,14 +9,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 12/04/2018
+ms.date: 01/11/2018
 ms.author: diberry
-ms.openlocfilehash: 9a8bfa2e89e6bc0cbbd5af2efdff60aa406b3f1d
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: e75fa6560feb01ae912ad2040df7a8748ed0077b
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53714208"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54246557"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -84,6 +84,14 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 Общее количество обращений конечной точки на панели мониторинга приложения периодически обновляется, но более часто обновляются показатели, связанные с ключом конечной точки LUIS на портале Azure.
 
 Если вам недоступны обновленные данные обращения конечной точки на панели мониторинга, войдите на портал Azure, найдите ресурс, связанный с ключом конечной точки LUIS, и выберите **Метрики**, чтобы установить метрику **Всего вызовов**. При использовании ключа конечной точки для более чем одного приложения LUIS метрики на портале Azure отображается совокупное количество вызовов от всех приложений LUIS, использующих этот ключ.
+
+### <a name="is-there-a-powershell-command-to-the-endpoint-quota"></a>Существует ли команда PowerShell для запроса сведений о квоте конечной точки?
+
+Чтобы просмотреть данные о квоте конечной точки, используйте следующую команду PowerShell:
+
+```powershell
+Get-AzureRmCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Name <your-resource-name>
+``` 
 
 ### <a name="my-luis-app-was-working-yesterday-but-today-im-getting-403-errors-i-didnt-change-the-app-how-do-i-fix-it"></a>Вчера приложение LUIS работало, но сейчас отображаются ошибки 403. Я не изменял приложение. Как ее исправить?
 Выполните [инструкции](#how-do-i-create-and-assign-a-luis-endpoint-key) в следующем разделе часто задаваемых вопросов, чтобы создать ключ конечной точки LUIS и назначить его приложению. Затем необходимо изменить HTTP-запрос к конечной точке, чтобы [использовать новый ключ конечной точки](luis-concept-keys.md#use-endpoint-key-in-query).
@@ -194,6 +202,12 @@ LUIS [помечает](luis-glossary.md#token) высказывание на о
 
 ### <a name="what-luis-regions-support-bot-framework-speech-priming"></a>Какие регионы LUIS поддерживают подготовку речи Bot Framework?
 [Подготовка речи](https://docs.microsoft.com/bot-framework/bot-service-manage-speech-priming) поддерживается только для приложений LUIS в центральном регионе экземпляра (США).
+
+## <a name="api-programming-strategies"></a>Стратегии программирования API
+
+### <a name="how-do-i-programmatically-get-the-luis-region-of-a-resource"></a>Как с помощью программных средств узнать регион для ресурса LUIS? 
+
+Используйте пример LUIS, чтобы [узнать регион](https://github.com/Azure-Samples/cognitive-services-language-understanding/tree/master/documentation-samples/find-region) с помощью программных средств для C# или Node.Js. 
 
 ## <a name="luis-service"></a>Служба LUIS
 

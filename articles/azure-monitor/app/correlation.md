@@ -9,15 +9,15 @@ ms.service: application-insights
 ms.workload: TBD
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 10/31/2018
+ms.date: 01/10/2019
 ms.reviewer: sergkanz
 ms.author: lagayhar
-ms.openlocfilehash: a6937b5b6b3b85dd51d80a928de02a00c361cc0e
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 8b31a85abf1c6034aaff511f23d96fae9ee64561
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54117611"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54230056"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Корреляция данных телеметрии в Application Insights
 
@@ -101,6 +101,43 @@ public void ConfigureServices(IServiceCollection services)
     // ....
 }
 ```
+
+#### <a name="enable-w3c-distributed-tracing-support-for-java-apps"></a>Включение поддержки распределенной трассировки консорциума W3C для приложений Java
+
+Входящие:
+
+**Приложения J2EE** добавляют следующее к тегу `<TelemetryModules>` в ApplicationInsights.xml.
+
+```xml
+<Add type="com.microsoft.applicationinsights.web.extensibility.modules.WebRequestTrackingTelemetryModule>
+   <Param name = "W3CEnabled" value ="true"/>
+   <Param name ="enableW3CBackCompat" value = "true" />
+</Add>
+```
+
+**Приложения Spring Boot** добавляют следующие свойства.
+
+`azure.application-insights.web.enable-W3C=true`
+`azure.application-insights.web.enable-W3C-backcompat-mode=true`
+
+Исходящие.
+
+Добавьте к файлу AI-Agent.xml следующее:
+
+```xml
+<Instrumentation>
+        <BuiltIn enabled="true">
+            <HTTP enabled="true" W3C="true" enableW3CBackCompat="true"/>
+        </BuiltIn>
+    </Instrumentation>
+```
+
+> [!NOTE]
+> Режим обратной совместимости включен по умолчанию, и параметр enableW3CBackCompat является необязательным и должен использоваться только в том случае, если вы хотите отключить эту функцию. 
+
+В идеале он может использоваться, когда все ваши службы обновлены к новой версии пакетов SDK, поддерживающих протокол консорциума W3C. Настоятельно рекомендуется перейти к новой версии пакетов SDK с поддержкой W3C как можно скорее. 
+
+Убедитесь, что **входящая и исходящая конфигурации точно совпадают**.
 
 ## <a name="open-tracing-and-application-insights"></a>OpenTracing и Application Insights
 

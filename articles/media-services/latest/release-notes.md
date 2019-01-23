@@ -1,5 +1,5 @@
 ---
-title: 'Новые возможности Заметки о выпуске: Службы мультимедиа Azure версии 3 | Документация Майкрософт'
+title: Заметки о выпуске Служб мультимедиа Azure версии 3 | Документация Майкрософт
 description: Чтобы вы оставались в курсе последних разработок, в этой статье предоставлены последние обновления Служб мультимедиа Azure версии 3.
 services: media-services
 documentationcenter: ''
@@ -9,16 +9,16 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 11/21/2018
+ms.date: 01/09/2019
 ms.author: juliako
-ms.openlocfilehash: 4db84deb344921d329e81e0f0c9c3a97923430f3
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: bf80f78cc464fe274e83eca2f8afa420c2a8c453
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156499"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54229962"
 ---
-# <a name="whats-new-in-azure-media-services-v3"></a>Новые возможности в Службах мультимедиа Azure версии 3
+# <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
 Чтобы вы оставались в курсе последних разработок, в этой статье предоставлены такие сведения:
 
@@ -33,6 +33,15 @@ ms.locfileid: "54156499"
 > В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-sdk), CLI или один из поддерживаемых пакетов SDK.
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
+
+## <a name="december-2018"></a>Декабрь 2018 г.
+
+Обновления от выпуска общедоступной версии API V3 включают:
+       
+* Свойства **PresentationTimeRange** больше не имеют значение "required" для **AssetFilters** и **AccountFilters**. 
+* Параметры запроса $top и $skip для **заданий** и **преобразований** были удалены, а $orderby добавлен. В рамках добавления новой функциональности упорядочивания было обнаружено, что параметры $top и $skip были случайно выставлены ранее, даже если они не реализованы.
+* Расширение перечисления было повторно включено. Эта функция была включена в предыдущих версиях пакета SDK и случайно отключена в общедоступной версии.
+* Две стандартные политики потоковой передачи были переименованы. **SecureStreaming** теперь — **MultiDrmCencStreaming**. **SecureStreamingWithFairPlay** — **Predefined_MultiDrmStreaming**.
 
 ## <a name="november-2018"></a>Ноябрь 2018 г.
 

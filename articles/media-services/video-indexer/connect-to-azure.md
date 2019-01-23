@@ -7,14 +7,14 @@ author: Juliako
 manager: femila
 ms.service: media-services
 ms.topic: article
-ms.date: 11/19/2018
+ms.date: 01/12/2019
 ms.author: juliako
-ms.openlocfilehash: f220aee3fa0d9a79723383fc31fec0eed2554bb4
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 55828ea2235e42920a5179846d81711b1ada5dc2
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52833692"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261559"
 ---
 # <a name="create-a-video-indexer-account-connected-to-azure"></a>Создание учетной записи Индексатора видео, подключенной к Azure
 
@@ -97,6 +97,9 @@ ms.locfileid: "52833692"
 ## <a name="connect-to-azure-manually-advanced-option"></a>Подключение к Azure вручную (вариант для продвинутых пользователей)
 
 Если подключение к Azure установить не удастся, для устранения проблемы прежде всего попробуйте подключиться вручную.
+
+> [!NOTE]
+> Настоятельно рекомендуется разместить эти три учетные записи в одном регионе: учетную запись Индексатора видео, подключаемую к учетной записи Служб мультимедиа, а также учетную запись хранения Azure, подключенную к этой же учетной записи Служб мультимедиа.
 
 ### <a name="create-and-configure-a-media-services-account"></a>Создание и настройка учетной записи Служб мультимедиа
 

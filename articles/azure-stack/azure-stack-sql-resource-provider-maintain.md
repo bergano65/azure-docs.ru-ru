@@ -11,15 +11,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 10/16/2018
+ms.date: 01/11/2019
 ms.author: jeffgilb
-ms.reviewer: quying
-ms.openlocfilehash: 360661402289ab9b06eb01be447dc98942c93302
-ms.sourcegitcommit: 6361a3d20ac1b902d22119b640909c3a002185b3
+ms.reviewer: jiahan
+ms.openlocfilehash: 68665cc588f8a6340de393330c7a248503b07125
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49364101"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54244993"
 ---
 # <a name="sql-resource-provider-maintenance-operations"></a>Операции поддержки для поставщиков ресурсов SQL
 
@@ -32,16 +32,6 @@ ms.locfileid: "49364101"
 ### <a name="provider-virtual-machine"></a>Виртуальная машина поставщика
 
 Так как поставщик ресурсов выполняется на *пользовательской* виртуальной машине, нужно применять необходимые исправления и обновления по мере их выпуска. Для применения обновлений к виртуальной машине можно использовать пакеты обновления Windows, предоставляемые в рамках цикла исправлений и обновлений.
-
-## <a name="backuprestoredisaster-recovery"></a>Резервное копирование, восстановление и аварийное восстановление
-
- Так как это дополнительный компонент, поставщик ресурсов SQL не архивируется в рамках процесса непрерывности бизнес-процессов и аварийного восстановления (BCDR) Azure Stack. Предоставляются сценарии для следующих операций:
-
-- Архивация сведений о состоянии (хранимых в учетной записи хранения Azure Stack).
-- Восстановление поставщика ресурсов, когда требуется полное восстановление стека.
-
->[!NOTE]
->Если требуется восстановление поставщика ресурсов, перед этим требуется восстановить серверы базы данных.
 
 ## <a name="updating-sql-credentials"></a>Обновление учетных данных SQL
 

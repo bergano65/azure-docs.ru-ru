@@ -6,15 +6,15 @@ ms.service: automation
 ms.component: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 12/11/2018
+ms.date: 01/04/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0066a4ea5d91369bf6724dbaea4743a10bd8db0b
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: d8df48511f2bfd2500dbc0a1dfaa95e488fad63b
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53631861"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54215003"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -125,6 +125,15 @@ ms.locfileid: "53631861"
 > [!NOTE]
 > Для полнофункционального управления системами с агентом Operations Manager при помощи решения "Управление обновлениями" агент необходимо обновить до Microsoft Monitoring Agent. Чтобы узнать, как обновить агент, см. [эту статью](https://docs.microsoft.com/system-center/scom/deploy-upgrade-agents).
 
+## <a name="onboard"></a>Включение решения "Управление обновлениями"
+
+Чтобы начать установку исправлений системы, нужно включить решение "Управление обновлениями". Подключить это решение на виртуальных машинах можно несколькими способами. Ниже приведены рекомендуемые и поддерживаемые способы подключения решения:
+
+* [на одной виртуальной машине](automation-onboard-solutions-from-vm.md);
+* [на нескольких виртуальных машинах](automation-onboard-solutions-from-browse.md);
+* [в учетной записи службы автоматизации](automation-onboard-solutions-from-automation-account.md);
+* [с помощью модуля runbook службы автоматизации Azure](automation-onboard-solutions.md).
+  
 ### <a name="confirm-that-non-azure-machines-are-onboarded"></a>Подтверждение подключения виртуальных машин, не относящихся к Azure
 
 Чтобы подтвердить, что подключенные напрямую виртуальные машины взаимодействуют с Log Analytics, вы можете выполнить следующий поиск по журналу:

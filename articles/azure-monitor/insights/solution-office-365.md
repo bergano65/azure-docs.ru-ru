@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 08/15/2018
 ms.author: bwren
-ms.openlocfilehash: a97a3330ff99cada3921f98b76cf08ed7a464bcc
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 3eb1228ed9d15fb976f94df114f8725a8c41599d
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156567"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54230464"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
@@ -516,7 +516,7 @@ At line:12 char:18
 | Операция | Имя действия пользователя или администратора.  |
 | OrganizationId | Идентификатор GUID для клиента Office 365 организации. Это значение для вашей организации всегда будет одинаковым независимо от службы Office 365, в которой оно встречается. |
 | RecordType | Тип выполняемой операции. |
-| ResultStatus | Указывает, было ли успешным действие (указанное в свойстве Operation). Возможные значения: Succeeded (Успешно), PartiallySucceded (Выполнено частично) и Failed (Сбой). Для действий администратора Exchange возможные значения — True (Истина) или False (Ложь). |
+| ResultStatus | Указывает, было ли успешным действие (указанное в свойстве Operation). Возможные значения: Succeeded (Успешно), PartiallySucceeded (Выполнено частично) и Failed (Сбой). Для действий администратора Exchange возможные значения — True (Истина) или False (Ложь). |
 | UserId | Имя участника-пользователя (UPN) для пользователя, который выполнил действие, приведшее к регистрации в журнале данной записи. Например, my_name@my_domain_name. Обратите внимание, что сюда также включаются записи для действий, выполняемых системными учетными записями (такими как SHAREPOINT\system или NTAUTHORITY\SYSTEM). | 
 | UserKey | Альтернативный идентификатор пользователя, определенного в свойстве UserId.  Например, значение этого свойства может заполняться уникальным идентификатором Passport (PUID) для событий, выполняемых пользователями в SharePoint, OneDrive для бизнеса и Exchange. Это свойство также может указывать то же значение, что и свойство UserID событий, происходящих в других службах, и событий, выполняемых системными учетными записями.|
 | UserType | Тип пользователя, выполнившего операцию.<br><br>Администратор<br>Приложение<br>DcAdmin<br>Обычный<br>Reserved<br>ServicePrincipal<br>системный; |

@@ -6,16 +6,16 @@ ms.service: automation
 ms.component: change-inventory-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 10/12/2018
+ms.date: 01/04/2019
 ms.topic: conceptual
 manager: carmonm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 27bacb12c66ac57a0bf1aea88a447d395b6dde8c
-ms.sourcegitcommit: c37122644eab1cc739d735077cf971edb6d428fe
+ms.openlocfilehash: 1d08471a3e0faa99cb245709cf72f9af097bc495
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53408924"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54213218"
 ---
 # <a name="track-changes-in-your-environment-with-the-change-tracking-solution"></a>Отслеживание изменений в среде с помощью решения для отслеживания изменений
 
@@ -51,15 +51,14 @@ ms.locfileid: "53408924"
 * Debian GNU/Linux 8 и 9
 * Ubuntu Linux 14.04 LTS и 16.04 LTS
 
-## <a name="enable-change-tracking-and-inventory"></a>Включение решения для отслеживания изменений и инвентаризации
+## <a name="onboard"></a>Включение решения для отслеживания изменений и инвентаризации
 
-Чтобы начать отслеживание изменений, включите решение отслеживания изменений и инвентаризации для учетной записи службы автоматизации.
+Чтобы начать отслеживание изменений, включите решение отслеживания изменений и инвентаризации. Подключить это решение на виртуальных машинах можно несколькими способами. Ниже приведены рекомендуемые и поддерживаемые способы подключения решения:
 
-1. На портале Azure перейдите к учетной записи службы автоматизации.
-2. Выберите **Отслеживание изменений** в разделе **Конфигурация**.
-3. Выберите имеющуюся рабочую область Log Analytics или **создайте новую** и нажмите кнопку **Включить**.
-
-Таким образом вы включите решение для вашей учетной записи службы автоматизации. Этот процесс может занять до 15 минут. После включения решения появится синий баннер. Чтобы управлять решением, вернитесь к странице **Отслеживание изменений**.
+* [на одной виртуальной машине](automation-onboard-solutions-from-vm.md);
+* [на нескольких виртуальных машинах](automation-onboard-solutions-from-browse.md);
+* [в учетной записи службы автоматизации](automation-onboard-solutions-from-automation-account.md);
+* [с помощью модуля runbook службы автоматизации Azure](automation-onboard-solutions.md).
 
 ## <a name="configuring-change-tracking-and-inventory"></a>Настройка решения для отслеживания изменений и инвентаризации
 

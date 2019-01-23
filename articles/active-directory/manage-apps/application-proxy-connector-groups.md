@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 11/08/2018
 ms.author: barbkess
 ms.reviewer: japere
-ms.openlocfilehash: e2e78eae924cf079ccc03d3f907cd64194b98921
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 52dc78b03a1be73763b5a3c494404f4d439d04ca
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53139031"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54198037"
 ---
 # <a name="publish-applications-on-separate-networks-and-locations-using-connector-groups"></a>Публикация приложений в отдельных сетях и расположениях с помощью групп соединителей
 
@@ -73,11 +73,11 @@ ms.locfileid: "53139031"
 
 В качестве примера можно рассмотреть организацию с несколькими виртуальными машинами, которые подключены к собственной виртуальной сети, размещенной в IaaS. Чтобы сотрудники могли использовать эти приложения, данные частные сети подключены к корпоративной сети с помощью VPN типа "сеть — сеть". Это удобно для сотрудников, компьютеры которых находятся в локальной среде. Но такое решение может быть неудобным для удаленных сотрудников, так как требуется дополнительная локальная инфраструктура для маршрутизации доступа. Это показано на схеме ниже:
 
-![Сеть Iaas Azure AD](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
+![Сеть IaaS Azure AD](./media/application-proxy-connector-groups/application-proxy-iaas-network.png)
   
 Используя группы соединителей прокси приложений Azure AD, вы можете обеспечить общую службу для безопасного доступа к приложениям, не создавая дополнительную зависимость для корпоративной сети.
 
-![Несколько поставщиков облачных решений Iaas Azure AD](./media/application-proxy-connector-groups/application-proxy-multiple-cloud-vendors.png)
+![Несколько поставщиков облачных решений IaaS Azure AD](./media/application-proxy-connector-groups/application-proxy-multiple-cloud-vendors.png)
 
 ### <a name="multi-forest--different-connector-groups-for-each-forest"></a>Несколько лесов: отдельная группа соединителей для каждого леса
 

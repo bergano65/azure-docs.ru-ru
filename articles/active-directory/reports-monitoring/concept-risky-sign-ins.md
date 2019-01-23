@@ -14,12 +14,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 2e4406a75ea1d9f1968d994ae2294b39ca7613d5
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 8e92288883a7779130e3b7f7a8433b61f76aa18c
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51623865"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54244721"
 ---
 # <a name="risky-sign-ins-report-in-the-azure-active-directory-portal"></a>Отчет о событиях входа, представляющих риск, на портале Azure Active Directory
 
@@ -85,12 +85,11 @@ Azure Active Directory (AAD) обнаруживает подозрительны
 
 ![события входа, представляющие риск.](./media/concept-risky-sign-ins/93.png)
 
-
 ## <a name="risky-sign-ins-report-for-azure-ad-premium-editions"></a>Отчет о событиях входа, представляющих риск, для выпусков Azure AD Premium
 
 Отчет о событиях входа, представляющих риск, в выпусках Azure AD Premium предоставляет следующее:
 
-- Сводная информация о [типах обнаруженных событий риска](concept-risk-events.md).
+- Сводная информация о [типах обнаруженных событий риска](concept-risk-events.md). С помощью **выпуска Azure AD Premium P1** обнаружения, которые не покрывает лицензия, отображаются как событие риска **Вход в систему с обнаруженным дополнительным риском**. С помощью **выпуска Azure AD Premium P2** вы можете получить самые подробные сведения обо всех основных обнаружениях.
 
 - Возможность скачать отчет.
 

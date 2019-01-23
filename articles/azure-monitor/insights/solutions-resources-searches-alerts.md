@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 06/18/2018
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6f16325183f0a13382dd4533fd867a518f1750c3
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: a2c45807f846dbe9d1c6bd91ce8c87958949ab17
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53344301"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54231331"
 ---
 # <a name="adding-log-analytics-saved-searches-and-alerts-to-management-solution-preview"></a>Добавление сохраненных поисковых запросов и оповещений Log Analytics в решение по управлению (предварительная версия)
 
@@ -153,7 +153,7 @@ ms.locfileid: "53344301"
 Структура действий оповещений приведена ниже.  Далее представлены общие переменные и параметры, чтобы этот фрагмент кода можно было скопировать и вставить в файл решения и изменить имена параметров. 
 
 
-```
+```json
     {
         "name": "[concat(parameters('workspaceName'), '/', variables('SavedSearch').Name, '/', variables('Schedule').Name, '/', variables('Alert').Name)]",
         "type": "Microsoft.OperationalInsights/workspaces/savedSearches/schedules/actions",
@@ -290,7 +290,7 @@ ms.locfileid: "53344301"
 |:--|:--|:--|
 | Тип | Yes | Тип действия.  Объект **Webhook** для действий веб-перехватчика. |
 | name | Yes | Отображаемое имя действия.  Оно не отображается в консоли. |
-| wehookUri | Yes | Универсальный код ресурса (URI) webhook. |
+| webhookUri | Yes | Универсальный код ресурса (URI) webhook. |
 | CustomPayload | Нет  | Пользовательские полезные данные, отправляемые в объект webhook. Формат зависит от того, какие данные ожидает веб-перехватчик. |
 
 
@@ -304,7 +304,7 @@ ms.locfileid: "53344301"
 
 В примере используются переменные [стандартных параметров решения]( solutions-solution-file.md#parameters), что является общепринятой практикой для решений, в отличие от жестко программируемых значений в определениях ресурсов.
 
-```
+```json
     {
         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
         "contentVersion": "1.0",
@@ -462,7 +462,7 @@ ms.locfileid: "53344301"
 ```
 
 Следующий файл параметров содержит примеры значений для такого решения.
-```
+```json
     {
         "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
         "contentVersion": "1.0.0.0",

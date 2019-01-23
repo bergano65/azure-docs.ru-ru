@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 01/09/2019
 ms.author: alkohli
-ms.openlocfilehash: 5e83eb46a4d62c6aaf0862d4bb1aa046c5d64dde
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 02780a9e9702a41f677595d74b9861ea6a51b572
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54120519"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54260441"
 ---
 # <a name="tutorial-connect-set-up-activate-azure-data-box-gateway-preview"></a>Руководство. Подключение, настройка, активация Шлюза Azure Data Box (предварительная версия) 
 
@@ -94,7 +94,7 @@ ms.locfileid: "54120519"
    
    На странице **Прокси-сервер доступа в Интернет** сделайте следующее:
    
-   1. Укажите **URL-адрес веб-прокси** в следующем формате: *http://&lt;IP-адрес узла или FDQN&gt;:номер порта*. Обратите внимание, что URL-адреса HTTP не поддерживаются.
+   1. Укажите **URL-адрес веб-прокси** в следующем формате: *http://&lt;IP-адрес узла или FQDN&gt;:номер порта*. Обратите внимание, что URL-адреса HTTP не поддерживаются.
    2. Выберите тип **аутентификации**: **Базовая** или **Нет**.
    3. Если аутентификация используется, то необходимо указать также **имя пользователя** и **пароль**.
    4. Нажмите кнопку **Применить**. Заданные параметры прокси-сервера доступа в Интернет будут проверены и применены.

@@ -5,15 +5,15 @@ services: data-factory
 author: linda33wj
 ms.service: data-factory
 ms.topic: include
-ms.date: 1/8/2019
+ms.date: 1/10/2019
 ms.author: jingwang
 ms.custom: include file
-ms.openlocfilehash: 203168f27e06d58c192bc5009db077461738011a
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 2e9e4fe06f4d3802f6c0b3ff13e6cf6cdc218050
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54122791"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54211898"
 ---
 Фабрика данных — это мультитенантная служба со следующими ограничениями по умолчанию, которые гарантируют, что подписки клиентов защищены от рабочих нагрузок друг друга. Многие ограничения для подписки можно легко увеличить до максимального значения, обратившись в службу поддержки.
 
@@ -26,6 +26,7 @@ ms.locfileid: "54122791"
 | Общее количество ядер ЦП для сред выполнения интеграции Azure-SSIS в рамках одной подписки. | 256 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 | Число параллельных запусков конвейера в одной фабрике данных (для всех конвейеров в фабрике) | 10 000  | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 | Максимальное число действий в одном конвейере (в том числе внутренние действия для контейнеров) | 40 | 40 |
+| Максимальное число связанных сред выполнения интеграции, которые могут быть созданы для одной локальной среды выполнения интеграции | 20 | [Обратитесь в службу поддержки.](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) |
 | Максимальное число параметров на конвейер. | 50 | 50 |
 | Элементы ForEach | 100 000 | 100 000 |
 | Параллелизм ForEach | 20 | 50 |

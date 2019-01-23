@@ -1,10 +1,11 @@
 ---
-title: Создание Load Balancer (цен. категория "Стандартный") с IP-адресом с зональным внешним интерфейсом на портале Azure
+title: Создание Load Balancer с зональным внешним интерфейсом — портал Azure
 titlesuffix: Azure Load Balancer
-description: Сведения о создании общедоступного Load Balancer уровня "Стандартный" с зональным внешним интерфейсом с общедоступным IP-адресом с помощью портала Azure
+description: Узнайте, как создать экземпляр Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью портала Azure
 services: load-balancer
 documentationcenter: na
 author: KumudD
+manager: twooley
 ms.service: load-balancer
 ms.custom: seodec18
 ms.devlang: na
@@ -13,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/26/2018
 ms.author: kumud
-ms.openlocfilehash: e109504fe8657436d73870cc022ed4bc81c559f5
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 0a746ace4806495b17462b506f030811247240e2
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53095342"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54247197"
 ---
-#  <a name="create-a-public-load-balancer-standard-with-zonal-public-ip-address-frontend-using-azure-portal"></a>Создание общедоступного Load Balancer уровня "Стандартный" с зональным внешним интерфейсом с общедоступным IP-адресом с использованием портала Azure
+#  <a name="create-a-standard-load-balancer-with-zonal-frontend-using-azure-portal"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью портала Azure
 
-В этой статье приведены действия по созданию общедоступного [Load Balancer уровня "Стандартный"](https://aka.ms/azureloadbalancerstandard) с зональным внешним интерфейсом. Чтобы понять, как работают зоны доступности с Load Balancer уровня "Стандартный", ознакомьтесь со статьей [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md). 
+В этой статье приведены действия по созданию общедоступного экземпляра [Load Balancer (цен. категория "Стандартный")](https://aka.ms/azureloadbalancerstandard) в конфигурации с зональным внешним интерфейсом с IP-адресом. Чтобы понять, как работают зоны доступности с Load Balancer уровня "Стандартный", ознакомьтесь со статьей [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md). 
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -48,7 +49,7 @@ ms.locfileid: "53095342"
 7. В разделе **Группа ресурсов** щелкните **Создать**, а затем введите имя группы ресурсов — **myResourceGroupZLB**.
 8. В разделе **Расположение** выберите **Западная Европа** и нажмите кнопку **ОК**. После этого подсистема балансировки нагрузки начнет развертывание. Этот процесс может занять несколько минут.
 
-    ![Создание избыточной между зонами подсистемы балансировки нагрузки уровня "Стандартный" с помощью портала Azure](./media/load-balancer-get-started-internet-availability-zones-zonal-portal/load-balancer-zonal-frontend.png)
+    ![Создание избыточного между зонами экземпляра Load Balancer (цен. категория "Стандартный") с помощью портала Azure](./media/load-balancer-get-started-internet-availability-zones-zonal-portal/load-balancer-zonal-frontend.png)
 
 
 ## <a name="next-steps"></a>Дополнительная информация

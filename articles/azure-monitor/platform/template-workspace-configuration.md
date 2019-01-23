@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/11/2018
 ms.author: magoedte
-ms.openlocfilehash: 4a56812a8a10e890f50afb669a54291ea064098d
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: e402cc214f25447407754bc6269300f4f052af4f
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54102724"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54232742"
 ---
 # <a name="manage-log-analytics-using-azure-resource-manager-templates"></a>Управление Log Analytics с помощью шаблонов Azure Resource Manager
 [Шаблоны Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) можно использовать, чтобы создавать и настраивать рабочие области Log Analytics. Примеры задач, которые можно выполнять с помощью шаблонов.
@@ -117,7 +117,7 @@ ms.locfileid: "54102724"
     ```
 2. Отредактируйте шаблон с учетом ваших требований.  Просмотрите справочник по [шаблону Microsoft.OperationalInsights/workspaces](https://docs.microsoft.com/azure/templates/microsoft.operationalinsights/workspaces) с описанием поддерживаемых свойств и значений. 
 3. Сохраните этот файл как **deploylaworkspacetemplate.json** в локальной папке.
-4. Теперь вы можете развернуть этот шаблон. Для создания рабочей области можно использовать или PowerShell, или командную строку.
+4. Теперь вы можете развернуть этот шаблон. Для создания рабочей области можно использовать PowerShell или командную строку.
 
    * Для PowerShell используйте следующие команды из папки с шаблоном.
    

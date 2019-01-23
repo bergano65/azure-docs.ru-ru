@@ -14,12 +14,12 @@ ms.date: 11/07/2018
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
-ms.openlocfilehash: a64f92df7592b4df419e5f70a32f631ca0504c6c
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.openlocfilehash: 148a657b1a5db5b1b33c94e27d695e7c24dfb265
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53994221"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214647"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -348,7 +348,7 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb__OfficeNumber -eq "123"
  AccountEnabled | true, false | (device.accountEnabled -eq true)
  displayName | Любое строковое значение |(device.displayName -eq "Rob Iphone”)
  deviceOSType | Любое строковое значение | (device.deviceOSType -eq "iPad") -or (device.deviceOSType -eq "iPhone")
- deviceOSVersion | Любое строковое значение | (device.OSVersion -eq "9.1")
+ deviceOSVersion | Любое строковое значение | (device.deviceOSVersion -eq "9.1")
  deviceCategory | Допустимое имя категории устройств. | (device.deviceCategory -eq "BYOD")
  deviceManufacturer | Любое строковое значение | (device.deviceManufacturer -eq "Samsung")
  deviceModel | Любое строковое значение | (device.deviceModel -eq "iPad Air")

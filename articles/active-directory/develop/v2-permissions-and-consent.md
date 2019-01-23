@@ -17,12 +17,12 @@ ms.date: 09/24/2018
 ms.author: celested
 ms.reviewer: hirsin, jesakowi, justhu
 ms.custom: aaddev
-ms.openlocfilehash: 5283782188eaebe3997b6de31b087da74cf10486
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: e118249cf2aaf07aeb4f337636a46d088102bca8
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52620138"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261185"
 ---
 # <a name="permissions-and-consent-in-the-azure-active-directory-v20-endpoint"></a>Разрешения и предоставление согласия в конечной точке Azure Active Directory версии 2.0
 
@@ -164,7 +164,7 @@ https%3A%2F%2Fgraph.microsoft.com%2Fmail.send
 2. Найдите раздел **Разрешения Microsoft Graph** и добавьте разрешения, необходимые для приложения.
 3. **Сохраните** регистрацию приложения.
 
-### <a name="recommended-sign-the-user-in-to-your-app"></a>Выполнение входа пользователя в приложение (рекомендуется)
+### <a name="recommended-sign-the-user-in-to-your-app"></a>Рекомендация: выполнение входа пользователя в приложение
 
 Как правило, при создании приложения, использующего конечную точку предоставления согласия администратора, для него нужно настроить страницу или представление, в котором администратор может утвердить разрешения приложения. Эта страница может быть частью потока регистрации приложения, параметров приложения или выделенного потока подключения. Во многих случаях разумно отображать это представление подключения в приложении только после того, как пользователь выполнил вход с помощью учебной или рабочей учетной записи Майкрософт.
 

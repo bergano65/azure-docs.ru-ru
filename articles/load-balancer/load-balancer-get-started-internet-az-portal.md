@@ -1,10 +1,11 @@
 ---
-title: Создание экземпляра Load Balancer (цен. категория "Стандартный") с избыточным между зонами интерфейсным сервером с помощью портала Azure
+title: Создание экземпляра Load Balancer с избыточным между зонами интерфейсным сервером — портал Azure
 titlesuffix: Azure Load Balancer
 description: Сведения о создании общедоступного экземпляра Load Balancer (цен. категория "Стандартный") с избыточным между зонами интерфейсным общедоступным IP-адресом с помощью портала Azure
 services: load-balancer
 documentationcenter: na
 author: KumudD
+manager: twooley
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -13,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2018
 ms.author: kumud
-ms.openlocfilehash: fc5dcd76ca8ecfb820a8d157fee9cc0a92bd2d5b
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 2b898a9228e251003a049b2d82c0b1039eb54114
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53135699"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54247441"
 ---
-#  <a name="create-a-public-standard-load-balancer-with-zone-redundant-frontend-using-azure-portal"></a>Создание общедоступного экземпляра Load Balancer (цен. категория "Стандартный") с избыточным между зонами интерфейсным сервером с помощью портала Azure
+#  <a name="create-a-standard-load-balancer-with-zone-redundant-frontend-using-azure-portal"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с избыточным между зонами интерфейсным сервером с помощью портала Azure
 
-В этой статье описываются действия по созданию общедоступного [балансировщика нагрузки уровня "Стандартный"](https://aka.ms/azureloadbalancerstandard) с избыточным между зонами интерфейсным сервером с помощью общедоступного стандартного IP-адреса. IP-адрес одного внешнего интерфейса в Load Balancer уровня "Стандартный" является избыточным между зонами по умолчанию.
+В этой статье описываются действия по созданию общедоступного [Load Balancer (цен. категория "Стандартный")](https://aka.ms/azureloadbalancerstandard) с избыточным между зонами интерфейсным сервером с помощью общедоступного стандартного IP-адреса. IP-адрес одного внешнего интерфейса в Load Balancer уровня "Стандартный" является избыточным между зонами по умолчанию.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

@@ -12,19 +12,19 @@ ms.author: carlrab
 ms.reviewer: sashan, moslake
 manager: craigg
 ms.date: 01/08/2019
-ms.openlocfilehash: 9d5a1493316fbfa9a703655f37a40276ee3ffaf7
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 6b5ff7294735048347c500d64b411f16bda5422f
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54156822"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54212945"
 ---
 # <a name="vcore-service-tiers-azure-hybrid-benefit-and-migration"></a>Уровни служб на основе виртуальных ядер, Преимущество гибридного использования Azure и миграция
 
 Модель приобретения на основе виртуальных ядер позволяет независимо масштабировать вычислительные ресурсы и ресурсы хранилища, обеспечивать производительность на уровне локальной среды и оптимизировать затраты. Она также позволяет выбрать поколение аппаратного обеспечения:
 
 - 4-е поколение — до 24 логических объектов ЦП на базе процессоров Intel E5-2673 v3 (Haswell) 2,4 ГГц, виртуальное ядро = 1 PP (физическое ядро), 7 ГБ на ядро, подключенные SSD
-- 5-е поколение — до 80 логических объектов ЦП на базе процессоров Intel E5-2673 V4 (Broadwell) 2,3 ГГц, виртуальное ядро = 1 LP (hyper-thread), 5,1 ГБ на ядро, быстрый накопитель SSD eNVM
+- 5-е поколение — до 80 логических объектов ЦП на базе процессоров Intel E5-2673 V4 (Broadwell) 2,3 ГГц, виртуальное ядро = 1 LP (hyper-thread), 5,1 ГБ на ядро, быстрый накопитель SSD eNVM
 
 Модель виртуального ядра также позволяет использовать [Преимущество гибридного использования Azure для SQL Server](https://azure.microsoft.com/pricing/hybrid-benefit/), чтобы добиться снижения затрат.
 

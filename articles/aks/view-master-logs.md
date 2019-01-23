@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: iainfou
-ms.openlocfilehash: 9cf0c378271841277e6dfd770bf8d186494b9d48
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: a8fefdf352507f0e0c0757625297f667907eb9bc
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54040750"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54230600"
 ---
 # <a name="enable-and-review-kubernetes-master-node-logs-in-azure-kubernetes-service-aks"></a>Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS)
 
@@ -36,6 +36,19 @@ ms.locfileid: "54040750"
     * Если вам нужно создать рабочую область, укажите имя, группу ресурсов и расположение.
 1. В списке доступных журналов выберите журналы, которые вы хотите включить. По умолчанию включены журналы *kube-apiserver*, *kube-controller-manager* и *kube-scheduler*. Вы можете включить дополнительные журналы, такие как *kube-audit* и *cluster-autoscaler*. Когда служба Log Analytics будет включена, вы сможете вернуть или изменить собранные журналы.
 1. Когда настройка будет завершена, нажмите кнопку **Сохранить**, чтобы включить сбор выбранных журналов.
+
+> [!NOTE]
+> AKS регистрирует журналы аудита только для кластеров, которые создаются или обновляются после включения флага компонента в вашей подписке. Чтобы зарегистрировать флаг компонента *AKSAuditLog*, используйте команду [az feature register][az-feature-register], как показано в следующем примере.
+>
+> `az feature register --name AKSAuditLog --namespace Microsoft.ContainerService`
+>
+> Подождите, пока состояние покажет *Зарегистрировано*. Состояние регистрации можно проверить с помощью команды [az feature list][az-feature-list].
+>
+> `az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/AKSAuditLog')].{Name:name,State:properties.state}"`
+>
+> Когда все будет готово, обновите регистрацию поставщика ресурсов AKS с помощью команды [az поставщика register][az-provider-register].
+>
+> `az provider register --namespace Microsoft.ContainerService`
 
 На следующем снимке экрана портала показано окно *параметров диагностики* и параметр создания рабочей области Log Analytics:
 
@@ -133,3 +146,6 @@ AzureDiagnostics
 [analyze-log-analytics]: ../azure-monitor/learn/tutorial-viewdata.md
 [kubelet-logs]: kubelet-logs.md
 [aks-ssh]: ssh.md
+[az-feature-register]: /cli/azure/feature#az-feature-register
+[az-feature-list]: /cli/azure/feature#az-feature-list
+[az-provider-register]: /cli/azure/provider#az-provider-register

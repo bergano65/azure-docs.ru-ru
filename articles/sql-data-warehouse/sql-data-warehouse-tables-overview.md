@@ -10,12 +10,12 @@ ms.component: implement
 ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: f09b9a93956c9d23e17c742c5f6ec4730591933b
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: 365b15f11409f985b71c9bba4372552321f162f2
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43302319"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54212555"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Проектирование таблиц в хранилище данных SQL Azure
 
@@ -103,7 +103,7 @@ CREATE TABLE MyTable (col1 int, col2 int );
 ## <a name="columnstore-indexes"></a>Индексы columnstore
 По умолчанию в хранилище данных SQL таблицы хранятся в виде кластеризованных индексов columnstore. Такая форма хранения данных обеспечивает высокое сжатие данных и производительность запросов в больших таблицах.  Кластеризованный индекс columnstore обычно является лучшим выбором, но в некоторых случаях подходящей структурой хранения являются кластеризованный индекс или куча.
 
-Список функций индексов columnstore см. в статье [Новые возможности индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-whats-new). Сведения о повышении производительности индекса columnstore см. в статье [Максимальное повышение качества группы строк для индекса columnstore](sql-data-warehouse-memory-optimizations-for-columnstore-compression.md).
+Список функций индексов columnstore см. в статье [Новые возможности индексов columnstore](/sql/relational-databases/indexes/columnstore-indexes-what-s-new). Сведения о повышении производительности индекса columnstore см. в статье [Максимальное повышение качества группы строк для индекса columnstore](sql-data-warehouse-memory-optimizations-for-columnstore-compression.md).
 
 ## <a name="statistics"></a>Статистика
 Оптимизатор запросов использует статистику уровня столбца при создании плана выполнения запроса. Чтобы повысить производительность запросов, важно создать статистику по отдельным столбцам, особенно столбцам, используемым в объединениях запросов. Создание и обновление статистики не происходит автоматически. [Создайте статистику](/sql/t-sql/statements/create-statistics-transact-sql) после создания таблицы. Обновите статистику после добавления или изменения значительного числа строк. Например, обновите статистику после загрузки. Дополнительные сведения см. в статье [Управление статистикой таблиц в хранилище данных SQL](sql-data-warehouse-tables-statistics.md).
@@ -133,7 +133,7 @@ CREATE TABLE MyTable (col1 int, col2 int );
 - [Индексированные представления](/sql/relational-databases/views/create-indexed-views)
 - [Последовательность](/sql/t-sql/statements/create-sequence-transact-sql)
 - [Разреженные столбцы](/sql/relational-databases/tables/use-sparse-columns)
-- [суррогатные ключи]() (реализация посредством [удостоверения](sql-data-warehouse-tables-identity.md));
+- Суррогатные ключи (реализация посредством [удостоверения](sql-data-warehouse-tables-identity.md));
 - [синонимы;](/sql/t-sql/statements/create-synonym-transact-sql)
 - [Триггеры](/sql/t-sql/statements/create-trigger-transact-sql)
 - [Уникальные индексы](/sql/t-sql/statements/create-index-transact-sql)

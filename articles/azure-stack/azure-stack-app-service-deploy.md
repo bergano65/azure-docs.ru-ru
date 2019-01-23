@@ -12,14 +12,14 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/29/2018
+ms.date: 01/11/2019
 ms.author: anwestg
-ms.openlocfilehash: 504cd5a0bfbae1ff91f7914abe12aa35b699ee80
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: bbb8e39e60500a2d8310159cfbac5659964fc387
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104766"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54230022"
 ---
 # <a name="add-an-app-service-resource-provider-to-azure-stack"></a>Добавление поставщика ресурсов службы приложений в Azure Stack
 
@@ -46,6 +46,9 @@ ms.locfileid: "54104766"
  - создание зоны DNS и записей для службы приложений;
  - регистрацию поставщика ресурсов службы приложений;
  - регистрацию элементов коллекции службы приложений.
+
+ > [!IMPORTANT]
+ > Перед развертыванием поставщика ресурсов просмотрите примечания к выпуску, чтобы узнать о новых функциях, исправлениях и любых известных проблемах, которые могут повлиять на развертывание.
 
 Чтобы развернуть поставщик ресурсов службы приложений, выполните следующие действия:
 

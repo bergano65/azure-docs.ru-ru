@@ -1,10 +1,11 @@
 ---
-title: Создание экземпляра Load Balancer (цен. категория "Стандартный") с избыточным между зонами интерфейсным сервером с помощью Azure PowerShell
+title: Создание экземпляра Load Balancer с избыточным между зонами интерфейсным сервером — Azure PowerShell
 titlesuffix: Azure Load Balancer
-description: Сведения о создании общедоступной подсистемы балансировки нагрузки уровня "Стандартный" с избыточным между зонами интерфейсным общедоступным IP-адресом с помощью PowerShell.
+description: Сведения о создании общедоступной подсистемы Load Balancer (цен. категория "Стандартный") с избыточным между зонами интерфейсным общедоступным IP-адресом с помощью PowerShell
 services: load-balancer
 documentationcenter: na
 author: KumudD
+manager: twooley
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
@@ -13,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/23/2018
 ms.author: kumud
-ms.openlocfilehash: b6730b624cc0416354fecfdbe747f643540f9e89
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 1a976344fd634e78fc5009ede4954ea578aa8db7
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53138751"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54244600"
 ---
-#  <a name="create-a-standard-balancer-with-zone-redundant-frontend-using-azure-powershell"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с избыточным между зонами интерфейсным сервером с помощью Azure PowerShell
+#  <a name="create-a-standard-load-balancer-with-zone-redundant-frontend-using-azure-powershell"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с избыточным между зонами интерфейсным сервером с помощью Azure PowerShell
 
-В этой статье описываются действия по созданию общедоступного [балансировщика нагрузки уровня "Стандартный"](https://aka.ms/azureloadbalancerstandard) с избыточным между зонами интерфейсным сервером с помощью общедоступного стандартного IP-адреса.
+В этой статье описываются действия по созданию общедоступного [Load Balancer (цен. категория "Стандартный")](https://aka.ms/azureloadbalancerstandard) с избыточным между зонами интерфейсным сервером с помощью общедоступного стандартного IP-адреса.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -86,7 +87,7 @@ $probe = New-AzureRmLoadBalancerProbeConfig -Name 'myHealthProbe' -Protocol Http
 ```
 
 ## <a name="create-a-load-balancer"></a>Создание балансировщика нагрузки
-Создайте подсистему балансировки нагрузки уровня "Стандартный" с помощью следующей команды:
+Создайте экземпляр Load Balancer (цен. категория "Стандартный") с помощью следующей команды:
 
 ```powershell
 $lb = New-AzureRmLoadBalancer -ResourceGroupName myResourceGroup -Name 'MyLoadBalancer' -Location westeurope `

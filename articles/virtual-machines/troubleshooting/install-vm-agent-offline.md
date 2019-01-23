@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 14b108a836424e92a251f50b42ed93963038a333
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: e9fc8351b5e9a4f2274f0906d4071f86dcbcff26
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53192062"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54259688"
 ---
 # <a name="install-the-azure-virtual-machine-agent-in-offline-mode"></a>Установка агента виртуальной машины Azure в автономном режиме 
 
@@ -35,6 +35,14 @@ ms.locfileid: "53192062"
 ## <a name="how-to-install-the-vm-agent-in-offline-mode"></a>Как установить агент виртуальной машины в автономном режиме
 
 Выполните шаги ниже, чтобы установить агент виртуальной машины в автономном режиме.
+
+> [!NOTE]
+> Вы можете автоматизировать процесс установки агента виртуальной машины в автономном режиме.
+> Чтобы все это выполнить, используйте сценарии восстановления виртуальной машины Azure, приведенные [здесь](https://github.com/Azure/azure-support-scripts/blob/master/VMRecovery/ResourceManager/README.md). Если вы решите использовать сценарии восстановления виртуальной машины Azure, вы можете использовать следующий процесс.
+> 1. Пропустите шаг 1 с помощью сценариев, чтобы подключить диск операционной системы уязвимой виртуальной машины к виртуальной машине восстановления.
+> 2. Выполните шаги 2–10, чтобы применить устранения рисков.
+> 3. Пропустите шаг 11 с помощью сценариев, чтобы повторно создать виртуальную машину.
+> 4. Выполните шаг 12.
 
 ### <a name="step-1-attach-the-os-disk-of-the-vm-to-another-vm-as-a-data-disk"></a>Шаг 1. Подключение диска операционной системы виртуальной машины к другой виртуальной машине в качестве диска данных
 

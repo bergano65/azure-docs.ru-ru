@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/28/2017
 ms.author: sogup
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6ac3c3d8f2a5ae37f1d32f9781f0cdbec0b293e8
-ms.sourcegitcommit: 17fe5fe119bdd82e011f8235283e599931fa671a
+ms.openlocfilehash: 85c284c2a0e49d7fa20c0ec342878ffdf9d47387
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/11/2018
-ms.locfileid: "42144529"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261168"
 ---
 # <a name="restore-key-vault-key-and-secret-for-encrypted-vms-using-azure-backup"></a>Восстановление ключа и секрета в хранилище ключей для зашифрованных виртуальных машин с помощью службы архивации Azure
 В этой статье рассказывается об использовании службы архивации виртуальных машин Azure для восстановления зашифрованных виртуальных машин Azure, когда ключ и секрет отсутствуют в хранилище ключей. Эта процедура будет также полезной, если нужно хранить отдельную копию ключа (ключ шифрования ключа) и секрета (ключ шифрования BitLocker) для восстанавливаемой виртуальной машины.
@@ -28,8 +28,8 @@ ms.locfileid: "42144529"
 
 > [!NOTE]
 > После восстановления диска для зашифрованной виртуальной машины убедитесь, что выполняются следующие требования:
-> 1. Переменная $details заполняется сведениями о задании восстановления диска, как описано в [разделе о восстановлении дисков с помощью PowerShell](backup-azure-vms-automation.md#restore-an-azure-vm).
-> 2. Создавать виртуальную машину из восстановленных дисков следует только **после восстановления ключа и секрета в хранилище ключей**.
+> * Переменная $details заполняется сведениями о задании восстановления диска, как описано в [разделе о восстановлении дисков с помощью PowerShell](backup-azure-vms-automation.md#restore-an-azure-vm).
+> * Создавать виртуальную машину из восстановленных дисков следует только **после восстановления ключа и секрета в хранилище ключей**.
 >
 >
 
@@ -61,7 +61,10 @@ PS C:\> Restore-AzureKeyVaultKey -VaultName '<target_key_vault_name>' -InputFile
 ```
 
 ## <a name="restore-secret"></a>Восстановление секрета
-Используйте созданный выше JSON-файл для получения имени и значения секрета и укажите его при выполнении командлета настройки секрета, чтобы поместить секрет (BEK) обратно в хранилище ключей. **Воспользуйтесь этими командлетами, если виртуальная машина зашифрована с помощью BEK и KEK.**
+
+Используйте созданный выше JSON-файл для получения имени и значения секрета и укажите его при выполнении командлета настройки секрета, чтобы поместить секрет (BEK) обратно в хранилище ключей. **Воспользуйтесь этими командлетами, если виртуальная машина зашифрована с помощью BEK и KEK.**
+
+**Воспользуйтесь этими командлетами, если виртуальная машина Windows зашифрована с помощью BEK и KEK.**
 
 ```
 PS C:\> $secretdata = $encryptionObject.OsDiskKeyAndSecretDetails.SecretData
@@ -71,17 +74,27 @@ PS C:\> $Tags = @{'DiskEncryptionKeyEncryptionAlgorithm' = 'RSA-OAEP';'DiskEncry
 PS C:\> Set-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -Name $secretname -SecretValue $Secret -ContentType  'Wrapped BEK' -Tags $Tags
 ```
 
-Если виртуальная машина **зашифрована только с помощью BEK**, то создайте секрет в формате файла большого двоичного объекта на основе JSON-файла и укажите его при выполнении командлета восстановления секрета, чтобы поместить секрет (BEK) обратно в хранилище ключей.
+**Воспользуйтесь этими командлетами, если виртуальная машина Linux зашифрована с помощью BEK и KEK.**
+
+```
+PS C:\> $secretdata = $encryptionObject.OsDiskKeyAndSecretDetails.SecretData
+PS C:\> $Secret = ConvertTo-SecureString -String $secretdata -AsPlainText -Force
+PS C:\> $secretname = 'B3284AAA-DAAA-4AAA-B393-60CAA848AAAA'
+PS C:\> $Tags = @{'DiskEncryptionKeyEncryptionAlgorithm' = 'RSA-OAEP';'DiskEncryptionKeyFileName' = 'LinuxPassPhraseFileName';'DiskEncryptionKeyEncryptionKeyURL' = $encryptionObject.OsDiskKeyAndSecretDetails.KeyUrl;'MachineName' = 'vm-name'}
+PS C:\> Set-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -Name $secretname -SecretValue $Secret -ContentType  'Wrapped BEK' -Tags $Tags
+```
+
+Используйте созданный выше JSON-файл для получения имени и значения секрета и укажите его при выполнении командлета настройки секрета, чтобы поместить секрет (BEK) обратно в хранилище ключей. **Воспользуйтесь этими командлетами, если виртуальная машина зашифрована только с помощью BEK.**
 
 ```
 PS C:\> $secretDestination = 'C:\secret.blob'
 PS C:\> [io.file]::WriteAllBytes($secretDestination, [System.Convert]::FromBase64String($encryptionObject.OsDiskKeyAndSecretDetails.KeyVaultSecretBackupData))
 PS C:\> Restore-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -InputFile $secretDestination -Verbose
-```
+  ```
 
 > [!NOTE]
-> 1. Значение переменной $secretname можно получить из выходных данных параметра $encryptionObject.OsDiskKeyAndSecretDetails.SecretUrl, используя текст после secrets/. Например, выходной URL-адрес секрета — https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163, а имя секрета — B3284AAA-DAAA-4AAA-B393-60CAA848AAAA.
-> 2. Значение тега DiskEncryptionKeyFileName совпадает с именем секрета.
+> * Значение переменной $secretname можно получить из выходных данных параметра $encryptionObject.OsDiskKeyAndSecretDetails.SecretUrl, используя текст после secrets/. Например, выходной URL-адрес секрета — https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163, а имя секрета — B3284AAA-DAAA-4AAA-B393-60CAA848AAAA.
+> * Значение тега DiskEncryptionKeyFileName совпадает с именем секрета.
 >
 >
 
@@ -111,9 +124,9 @@ PS C:\> Set-AzureKeyVaultSecret -VaultName '<target_key_vault_name>' -Name $secr
 ```
 
 > [!NOTE]
-> 1. Значение переменной $secretname можно получить из выходных данных параметра $rp1.KeyAndSecretDetails.SecretUrl, используя текст после secrets/. Например, выходной URL-адрес секрета — https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163, а имя секрета — B3284AAA-DAAA-4AAA-B393-60CAA848AAAA.
-> 2. Значение тега DiskEncryptionKeyFileName совпадает с именем секрета.
-> 3. Значение для DiskEncryptionKeyEncryptionKeyURL можно получить из хранилища ключей после восстановления ключей с помощью командлета [Get-AzureKeyVaultKey](https://docs.microsoft.com/powershell/module/azurerm.keyvault/get-azurekeyvaultkey).
+> * Значение переменной $secretname можно получить из выходных данных параметра $rp1.KeyAndSecretDetails.SecretUrl, используя текст после secrets/. Например, выходной URL-адрес секрета — https://keyvaultname.vault.azure.net/secrets/B3284AAA-DAAA-4AAA-B393-60CAA848AAAA/xx000000xx0849999f3xx30000003163, а имя секрета — B3284AAA-DAAA-4AAA-B393-60CAA848AAAA.
+> * Значение тега DiskEncryptionKeyFileName совпадает с именем секрета.
+> * Значение для DiskEncryptionKeyEncryptionKeyURL можно получить из хранилища ключей после восстановления ключей с помощью командлета [Get-AzureKeyVaultKey](https://docs.microsoft.com/powershell/module/azurerm.keyvault/get-azurekeyvaultkey).
 >
 >
 

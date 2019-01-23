@@ -10,14 +10,14 @@ ms.service: log-analytics
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/14/2018
+ms.date: 01/08/2019
 ms.author: bwren
-ms.openlocfilehash: d8d8e344ce9ee317a7f864492514162b1dc085f9
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 5db963b1ffea656455c06092c82ac95e85d87826
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52885722"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54213133"
 ---
 # <a name="data-ingestion-time-in-log-analytics"></a>Время приема данных в Log Analytics
 Azure Log Analytics — это высокомасштабируемая служба Azure Monitor, которая обслуживает тысячи клиентов, ежемесячно отправляющих терабайты данных. Часто возникают вопросы о времени, в течение которого собранные данные становятся доступными в Log Analytics. В этой статье объясняются факторы, влияющие на эту задержку.
@@ -46,7 +46,7 @@ Azure Log Analytics — это высокомасштабируемая служ
 Подтверждая простоту своего функционала, агент Log Analytics помещает журналы в буфер и периодически отправляет их в Log Analytics. В зависимости от типа данных частота отправки меняется от 30 секунд до 2 минут. Большая часть данных отправляется меньше чем через минуту. Состояние сети может отрицательно повлиять на задержку при достижении этими данными точки приема Log Analytics.
 
 ### <a name="azure-logs-and-metrics"></a>Журналы и метрики Azure 
-На обеспечение доступности данных журнала действий в Log Analytics требуется около 5 минут. В зависимости от службы Azure данные из журналов диагностики и метрики могут стать доступными через 1–5 минут. Отправка журналов в точку приема Log Analytics займет дополнительно 30–60 секунд, а отправка метрик — 3 минуты.
+На обеспечение доступности данных журнала действий в Log Analytics требуется около 5 минут. В зависимости от службы Azure данные из журналов диагностики и метрики могут стать доступными для обработки через 1–15 минут. После их получения отправка журналов в точку приема Log Analytics займет дополнительно 30–60 секунд, а отправка метрик — 3 минуты.
 
 ### <a name="management-solutions-collection"></a>Сбор данных решениями по управлению
 Некоторые решения не собирают свои данные с агента и могут использовать метод сбора, приводящий к дополнительной задержке. Некоторые решения собирают данные через регулярные интервалы, не предпринимая попыток сбора данных в режиме, близком к реальному времени. Вот несколько конкретных примеров.
@@ -73,22 +73,60 @@ Azure Log Analytics — это высокомасштабируемая служ
 
 
 ## <a name="checking-ingestion-time"></a>Проверка времени приема
-Чтобы узнать приблизительное значение задержки данных с агентов, воспользуйтесь таблицей **пакета пульса**. Так как пакет пульса отправляется один раз в минуту, разница между текущим временем и последней записью пакета пульса в идеальном случае будет максимально близка к минуте.
+В различных условиях время приема может меняться для разных ресурсов. Запросы журналов можно использовать для идентификации конкретного поведения среды.
 
-Используйте следующий запрос, чтобы получить список компьютеров с наибольшим показателем задержки.
+### <a name="ingestion-latency-delays"></a>Задержки приема данных
+Вы можете измерить задержку конкретной записи, сравнив результат функции [ingestion_time()](/azure/kusto/query/ingestiontimefunction) с полем _TimeGenerated_. Эти данные можно использовать в различных агрегатах, чтобы определить поведение при задержке приема данных. Изучите некоторый процентиль времени приема для получения аналитических сведений по большому объему данных. 
 
-    Heartbeat 
-    | summarize IngestionTime = now() - max(TimeGenerated) by Computer 
-    | top 50 by IngestionTime asc
+Например, в следующем запросе вы увидите компьютеры с наибольшим временем приема за текущий день. 
 
+``` Kusto
+Heartbeat
+| where TimeGenerated > ago(8h) 
+| extend E2EIngestionLatency = ingestion_time() - TimeGenerated 
+| summarize percentiles(E2EIngestionLatency,50,95) by Computer 
+| top 20 by percentile_E2EIngestionLatency_95 desc  
+```
  
-Используйте следующий запрос в крупных средах, чтобы суммировать задержку для различных процентных долей от общего числа компьютеров.
+Если вы хотите детализировать время приема для определенного компьютера за период времени, используйте следующий запрос, который также позволяет визуализировать данные в виде графа. 
 
-    Heartbeat 
-    | summarize IngestionTime = now() - max(TimeGenerated) by Computer 
-    | summarize percentiles(IngestionTime, 50,95,99)
+``` Kusto
+Heartbeat 
+| where TimeGenerated > ago(24h) and Computer == "ContosoWeb2-Linux"  
+| extend E2EIngestionLatencyMin = todouble(datetime_diff("Second",ingestion_time(),TimeGenerated))/60 
+| summarize percentiles(E2EIngestionLatencyMin,50,95) by bin(TimeGenerated,30m) 
+| render timechart  
+```
+ 
+Используйте следующий запрос, чтобы увидеть время приема компьютера в определенной стране, в которой они расположены, на основе IP-адреса. 
 
+``` Kusto
+Heartbeat 
+| where TimeGenerated > ago(8h) 
+| extend E2EIngestionLatency = ingestion_time() - TimeGenerated 
+| summarize percentiles(E2EIngestionLatency,50,95) by RemoteIPCountry 
+```
+ 
+У различных типов данных, исходящих от агента, может быть разное время задержки приема, поэтому предыдущие запросы могут использоваться с другими типами. Используйте следующий запрос для изучения времени приема разных служб Azure. 
 
+``` Kusto
+AzureDiagnostics 
+| where TimeGenerated > ago(8h) 
+| extend E2EIngestionLatency = ingestion_time() - TimeGenerated 
+| summarize percentiles(E2EIngestionLatency,50,95) by ResourceProvider
+```
+
+### <a name="resources-that-stop-responding"></a>Ресурсы, которые перестали отвечать на запросы 
+В некоторых случаях ресурс может остановить отправку данных. Чтобы понять, отправляет ли ресурс данные или нет, просмотрите его самую последнюю запись, которую можно определить стандартным полем _TimeGenerated_.  
+
+В таблице _по пакету пульса_ вы можете проверить доступность виртуальной машины, так как агент отправляет пакет пульса каждую минуту. Используйте следующий запрос, чтобы получить список активных компьютеров, которые в ближайшее время не передавали отчет пакета пульса. 
+
+``` Kusto
+Heartbeat  
+| where TimeGenerated > ago(1d) //show only VMs that were active in the last day 
+| summarize NoHeartbeatPeriod = now() - max(TimeGenerated) by Computer  
+| top 20 by NoHeartbeatPeriod desc 
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 * Ознакомьтесь с [соглашением об уровне обслуживания (SLA)](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_1/) для Log Analytics.

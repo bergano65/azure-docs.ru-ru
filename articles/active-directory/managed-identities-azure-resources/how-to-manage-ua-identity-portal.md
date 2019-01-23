@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/16/2018
 ms.author: daveba
-ms.openlocfilehash: d54820acf8742ad2f95e8cc8527d9e252ffe3c30
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 971d0181cb8e38b952c3dd3dd1d7e5e1cbec5128
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52720140"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54244656"
 ---
 # <a name="create-list-delete-or-assign-a-role-to-a-user-assigned-managed-identity-using-the-azure-portal"></a>Создание, получение списка, удаление ролей и их назначение для управляемого удостоверения, назначаемого пользователем, с помощью портала Azure
 
@@ -62,6 +62,8 @@ ms.locfileid: "52720140"
 ## <a name="delete-a-user-assigned-managed-identity"></a>Удаление управляемого удостоверения, назначаемого пользователем
 
 Чтобы удалить назначаемое пользователем управляемое удостоверение, учетной записи должна быть назначена роль [участника управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-contributor).
+
+При удалении удостоверения, назначаемого пользователем, оно не удаляется из виртуальной машины или ресурсов, которым было назначено.  Чтобы удалить назначенное пользовательское удостоверение из виртуальной машины, см. статью [Удаление управляемого удостоверения, назначаемого пользователем, из виртуальной машины](/azure/active-directory/managed-identities-azure-resources/qs-configure-portal-windows-vm#remove-a-user-assigned-managed-identity-from-a-vm).
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи, связанной с подпиской Azure, чтобы удалить управляемое удостоверение, назначаемое пользователем.
 2. Выберите управляемое удостоверение, назначаемое пользователем, и нажмите кнопку **Удалить**.

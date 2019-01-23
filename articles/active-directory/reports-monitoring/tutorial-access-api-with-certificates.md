@@ -15,12 +15,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 7535aad95f7410d25ada232b4946fe52ebc4ba67
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 5714ed552c81d28a253aa57ad6e2ba1d67e543a1
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52961966"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214272"
 ---
 # <a name="tutorial-get-data-using-the-azure-active-directory-reporting-api-with-certificates"></a>Руководство. Получение данных с помощью API отчетов Azure Active Directory с сертификатами
 
@@ -30,24 +30,28 @@ ms.locfileid: "52961966"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-1. Сначала выполните [Предварительные требования для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md). 
+1. Чтобы получить доступ к данным о входе в систему, вам потребуется клиент Azure Active Directory с лицензией Premium (P1 или P2). Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md). Обратите внимание, если до обновления данные о действиях отсутствовали, данные отобразятся в отчетах через несколько дней после обновления до лицензии Premium. 
 
-2. Скачайте и установите [Azure AD PowerShell V2](https://github.com/Azure/azure-docs-powershell-azuread/blob/master/docs-conceptual/azureadps-2.0/install-adv2.md).
+2. Создайте или перейдите в учетную запись с ролью **глобального администратора**, **администратора безопасности**, **читателя безопасности** или **читателя отчетов** для клиента. 
 
-3. Установите [MSCloudIdUtils](https://www.powershellgallery.com/packages/MSCloudIdUtils/). Этот модуль предоставляет несколько служебных командлетов, позволяющих получить:
+3. Выполните [предварительные требования для доступа к API отчетов Azure Active Directory](howto-configure-prerequisites-for-reporting-api.md). 
+
+4. Скачайте и установите [Azure AD PowerShell V2](https://github.com/Azure/azure-docs-powershell-azuread/blob/master/docs-conceptual/azureadps-2.0/install-adv2.md).
+
+5. Установите [MSCloudIdUtils](https://www.powershellgallery.com/packages/MSCloudIdUtils/). Этот модуль предоставляет несколько служебных командлетов, позволяющих получить:
     - Библиотеки ADAL, необходимые для проверки подлинности
     - маркеры доступа пользователя, ключи приложений и сертификаты с использованием ADAL;
     - обработку результатов с разбивкой на страницы с помощью API Graph.
 
-4. Если вы используете модуль впервые, выполните командлет **Install-MSCloudIdUtilsModule** или же импортируйте его с помощью команды PowerShell **Import-Module**. Сеанс должен выглядеть так, как показано ниже. ![Windows PowerShell](./media/tutorial-access-api-with-certificates/module-install.png)
+6. Если вы используете модуль впервые, выполните командлет **Install-MSCloudIdUtilsModule** или же импортируйте его с помощью команды PowerShell **Import-Module**. Сеанс должен выглядеть так, как показано ниже. ![Windows PowerShell](./media/tutorial-access-api-with-certificates/module-install.png)
   
-5. Используйте командлет Powershell **New-SelfSignedCertificate** для создания тестового сертификата.
+7. Используйте командлет Powershell **New-SelfSignedCertificate** для создания тестового сертификата.
 
    ```
    $cert = New-SelfSignedCertificate -Subject "CN=MSGraph_ReportingAPI" -CertStoreLocation "Cert:\CurrentUser\My" -KeyExportPolicy Exportable -KeySpec Signature -KeyLength 2048 -KeyAlgorithm RSA -HashAlgorithm SHA256
    ```
 
-6. Используйте командлет **Export-Certificate**, чтобы экспортировать его в файл сертификата.
+8. Используйте командлет **Export-Certificate**, чтобы экспортировать его в файл сертификата.
 
    ```
    Export-Certificate -Cert $cert -FilePath "C:\Reporting\MSGraph_ReportingAPI.cer"

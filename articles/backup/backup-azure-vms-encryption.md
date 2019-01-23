@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 7/10/2018
 ms.author: sogup
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 40f8f1e9470201292c9dee27187d2155c879e13b
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 6793a83002029c009e3d4e124b4386feabecd5f8
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53583074"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54201080"
 ---
 # <a name="back-up-and-restore-encrypted-virtual-machines-with-azure-backup"></a>Резервное копирование и восстановление зашифрованных виртуальных машин с помощью службы Azure Backup
 В этой статье рассказывается о действиях по резервному копированию и восстановлению виртуальных машин с помощью службы Azure Backup. Кроме того, здесь приведены поддерживаемые сценарии, предварительные требования и сведения об устранении неполадок при возникновении ошибок.
@@ -128,6 +128,8 @@ ms.locfileid: "53583074"
 После предоставления разрешений можно приступить к включению резервного копирования для зашифрованных виртуальных машин.
 
 ## <a name="restore-an-encrypted-vm"></a>Восстановление зашифрованной виртуальной машины
+В дополнение к предыдущему предложению поддержки восстановления виртуальной машины Azure с шифрованием с помощью Azure Active Directory в Azure Backup теперь поддерживается восстановление [виртуальной машины Azure с шифрованием без Azure Active Directory](https://docs.microsoft.com/azure/security/azure-security-disk-encryption-prerequisites-aad).<br>
+
 Для восстановления зашифрованной виртуальной машины сначала необходимо восстановить диски, выполнив инструкции по восстановлению заархивированных дисков в разделе [Выбор конфигурации восстановления для виртуальной машины](backup-azure-arm-restore-vms.md#choose-a-vm-restore-configuration). После этого можно выбрать один из следующих вариантов:
 
 * Выполните команды PowerShell, описанные в разделе [Создание виртуальной машины с восстановленного диска](backup-azure-vms-automation.md#create-a-vm-from-restored-disks), чтобы создать полную виртуальную машину из восстановленных дисков.

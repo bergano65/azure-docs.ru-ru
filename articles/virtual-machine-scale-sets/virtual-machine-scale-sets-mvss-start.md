@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/01/2017
 ms.author: manayar
-ms.openlocfilehash: a476af9ceb1b664a458f7f07a5a7b3945b1ad881
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 601c23bbcddeaeff89e1d1b1a4be8cb6b0256e51
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54036568"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54258787"
 ---
 # <a name="learn-about-virtual-machine-scale-set-templates"></a>Подробнее о шаблонах масштабируемых наборов виртуальных машин
 [Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#template-deployment) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон минимального приемлемого масштабируемого набора и изменить его в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss). 
@@ -70,7 +70,7 @@ ms.locfileid: "54036568"
    "resources": [
 ```
 
-Каждый ресурс должен иметь свойства `type`, `name`, `apiVersion` и `location`. В этом примере первого ресурса указан тип [Microsft.Network/virtualNetwork](/azure/templates/microsoft.network/virtualnetworks) с именем `myVnet` и apiVersion `2016-03-30`. (Последнюю версию API для типа ресурса см. в [справочнике по шаблонам Azure Resource Manager](/azure/templates/).)
+Каждый ресурс должен иметь свойства `type`, `name`, `apiVersion` и `location`. В этом примере первого ресурса указан тип [Microsoft.Network/virtualNetwork](/azure/templates/microsoft.network/virtualnetworks) с именем `myVnet` и apiVersion `2016-03-30`. (Последнюю версию API для типа ресурса см. в [справочнике по шаблонам Azure Resource Manager](/azure/templates/).)
 
 ```json
      {

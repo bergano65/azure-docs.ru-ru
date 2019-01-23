@@ -11,23 +11,23 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: douglasl
-ms.openlocfilehash: 7ba1c4e0f358a2168c06ab9172229525cd4c136c
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 4543982f731feb44a8f02581c11714dec2b206f9
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54016143"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54214510"
 ---
 # <a name="transform-data-using-hadoop-mapreduce-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Hadoop MapReduce в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-map-reduce.md)
 > * [Текущая версия](transform-data-using-hadoop-map-reduce.md)
 
-Действие MapReduce HDInsight в [конвейере](concepts-pipelines-activities.md) фабрики данных вызывает программу MapReduce для [вашего](compute-linked-services.md#azure-hdinsight-linked-service) кластера HDInsight или кластера HDInsight [по запросу](compute-linked-services.md#azure-hdinsight-on-demand-linked-service). Данная статья основана на материалах статьи о [действиях преобразования данных](transform-data.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
+Действие MapReduce HDInsight в [конвейере](concepts-pipelines-activities.md) Фабрики данных вызывает программу MapReduce для [вашего](compute-linked-services.md#azure-hdinsight-linked-service) кластера HDInsight или кластера HDInsight [по запросу](compute-linked-services.md#azure-hdinsight-on-demand-linked-service). Данная статья основана на материалах статьи о [действиях преобразования данных](transform-data.md) , в которой приведен общий обзор преобразования данных и список поддерживаемых действий преобразования.
 
-Если вы не знакомы с Фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](introduction.md) и руководством [Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-powershell.md) перед чтением этой статьи. 
+Если вы не знакомы с Фабрикой данных Azure, сначала ознакомьтесь со статьей [Введение в фабрику данных Azure](introduction.md) и руководством [Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure](tutorial-transform-data-spark-powershell.md) перед чтением этой статьи.
 
-Дополнительные сведения о выполнении скриптов Pig и Hive в кластере HDInsight из конвейера с помощью действий Pig и Hive в HDInsight см. в статьях о действии [Pig](transform-data-using-hadoop-pig.md) и [Hive](transform-data-using-hadoop-hive.md). 
+Дополнительные сведения о выполнении скриптов Pig и Hive в кластере HDInsight из конвейера с помощью действий Pig и Hive в HDInsight см. в статьях о действии [Pig](transform-data-using-hadoop-pig.md) и [Hive](transform-data-using-hadoop-hive.md).
 
 ## <a name="syntax"></a>Синтаксис
 
@@ -49,10 +49,10 @@ ms.locfileid: "54016143"
         "jarFilePath": "MyAzureStorage/jars/sample.jar",
         "getDebugInfo": "Failure",
         "arguments": [
-          "-SampleHadoopJobArgument1"
+            "-SampleHadoopJobArgument1"
         ],
         "defines": {
-          "param1": "param1Value"
+            "param1": "param1Value"
         }
     }
 }
@@ -79,7 +79,7 @@ ms.locfileid: "54016143"
 ## <a name="example"></a>Пример
 С помощью действия MapReduce можно выполнить JAR-файл MapReduce в кластере HDInsight. В приведенном ниже образце определения конвейера JSON действие HDInsight настроено на запуск JAR-файла Mahout.
 
-```json   
+```json
 {
     "name": "MapReduce Activity for Mahout",
     "description": "Custom MapReduce to generate Mahout result",
@@ -113,7 +113,7 @@ ms.locfileid: "54016143"
 Вы можете указать необходимые аргументы для программы MapReduce в разделе **arguments**. Во время выполнения вы увидите несколько дополнительных аргументов (например, mapreduce.job.tags) платформы MapReduce. Чтобы отличать свои аргументы от аргументов MapReduce, вы можете использовать параметр и значение в качестве аргументов, как показано в следующем примере (-s, --input, --output и т. д — параметры, за которыми сразу следуют их значения).
 
 ## <a name="next-steps"></a>Дополнительная информация
-Ознакомьтесь со следующими ссылками, в которых описаны способы преобразования данных другими способами: 
+Ознакомьтесь со следующими ссылками, в которых описаны способы преобразования данных другими способами:
 
 * [Действие U-SQL](transform-data-using-data-lake-analytics.md)
 * [Действие Hive](transform-data-using-hadoop-hive.md)

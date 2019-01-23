@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: article
 ms.date: 12/03/2018
 ms.author: alkarche
-ms.openlocfilehash: 042d41e9125e5d4fa0af04fd6edeba5f0b33123a
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 1140c23a0aa5344119c35434316ec73cc3918f90
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53001590"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54198377"
 ---
 # <a name="integrate-a-function-app-with-an-azure-virtual-network"></a>Интеграция приложения-функции с виртуальной сетью Azure
 В этом пошаговом руководстве показано, как подключиться из Функций Azure к ресурсам в виртуальной сети Azure. 
@@ -117,7 +117,7 @@ ms.locfileid: "53001590"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Функции Azure, запущенные в планах службы приложений, выполняются в той же службе, что и веб-приложения, а значит все рекомендации по веб-приложениям будет применимы и к выделенной функции.
+Функции Azure, запущенные в планах службы приложений, выполняются в той же службе, что и веб-приложения, а значит вся документация по веб-приложениям будет применима к выделенным Функциям Azure.
 
 1. [Интеграция приложения с виртуальной сетью Azure](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet)
 1. [Что такое виртуальная сеть Azure?](https://azure.microsoft.com/documentation/articles/virtual-networks-overview/)

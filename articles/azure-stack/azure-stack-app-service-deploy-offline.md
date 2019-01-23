@@ -12,14 +12,14 @@ ms.workload: app-service
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/13/2018
+ms.date: 01/11/2019
 ms.author: anwestg
-ms.openlocfilehash: a3703133e5dc5f0525638562fab98f9416bcf26e
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: db4c0f2d1197a190b33bd297bb597fd19057d875
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104664"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54230345"
 ---
 # <a name="add-an-app-service-resource-provider-to-a-disconnected-azure-stack-environment-secured-by-ad-fs"></a>Добавление поставщика ресурсов службы приложений в автономную среду Azure Stack, защищенную с помощью службы федерации Active Directory (AD FS)
 
@@ -27,14 +27,15 @@ ms.locfileid: "54104664"
 
 > [!IMPORTANT]
 > Прежде чем развертывать службу приложений Azure, примените обновление 1809 к интегрированной системе Azure Stack или разверните последний пакет средств разработки Azure Stack 1.4.
->
->
 
 Выполнив инструкции в этой статье, вы установите [поставщик ресурсов службы приложений](azure-stack-app-service-overview.md) в среду Azure Stack со следующими характеристиками:
 
 - без подключения к Интернету;
 - под защитой службы федерации Active Directory (AD FS).
 
+ > [!IMPORTANT]
+ > Перед развертыванием поставщика ресурсов просмотрите примечания к выпуску, чтобы узнать о новых функциях, исправлениях и любых известных проблемах, которые могут повлиять на развертывание.
+ 
 Чтобы добавить поставщик ресурсов службы приложений в автономное развертывание Azure Stack, необходимо выполнить три задачи верхнего уровня.
 
 1. Подготовьте все [предварительные условия](azure-stack-app-service-before-you-get-started.md) (например, приобретите сертификаты, получение которых может занять несколько дней).

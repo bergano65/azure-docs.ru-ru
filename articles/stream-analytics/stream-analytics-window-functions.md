@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/07/2018
-ms.openlocfilehash: 2650058e277bc0338c779655ce381be046fb120a
-ms.sourcegitcommit: 870d372785ffa8ca46346f4dfe215f245931dae1
+ms.openlocfilehash: 04c19e7e51777db4c59bfab3d5a8a7598560556a
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33893656"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54231654"
 ---
 # <a name="introduction-to-stream-analytics-windowing-functions"></a>Общие сведения о функциях управления окнами Stream Analytics
 При использовании потоковой передачи в реальном времени необходимо выполнять операции с теми данными, которые содержатся во временных окнах. В Stream Analytics имеется встроенная поддержка функций управления окнами. Это позволяет разработчикам выполнять сложные задания по обработке потоков с минимальными усилиями.
@@ -40,7 +40,7 @@ ms.locfileid: "33893656"
 
 !["Скользящее" окно Stream Analytics](media/stream-analytics-window-functions/stream-analytics-window-functions-sliding-intro.png)
 
-## <a name="session-window-preview"></a>"Сеансовое" окно (предварительная версия)
+## <a name="session-window"></a>"Сеансовое" окно
 Функции "сеансового" окна группируют события, поступающие одновременно, отфильтровывая периоды времени, в течение которых данные отсутствовали. У такого окна три основных параметра: время ожидания, максимальная длительность и ключ секционирования (необязательно).
 
 !["Сеансовое" окно Stream Analytics](media/stream-analytics-window-functions/stream-analytics-window-functions-session-intro.png)

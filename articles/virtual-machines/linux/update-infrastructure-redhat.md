@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 1/7/2019
 ms.author: borisb
-ms.openlocfilehash: 1a1038bec66cd90e2cd0cbc8b125857403317d89
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 61d2c82f875c4f40e370515fd249e23601e91678
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54078258"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54232062"
 ---
 # <a name="red-hat-update-infrastructure-for-on-demand-red-hat-enterprise-linux-vms-in-azure"></a>Red Hat Update Infrastructure для предоставляемых по запросу виртуальных машин Red Hat Enterprise Linux в Azure
  [Red Hat Update Infrastructure](https://access.redhat.com/products/red-hat-update-infrastructure) (RHUI) позволяет поставщикам облачных служб (например, Azure) создавать зеркальные копии размещенного с помощью Red Hat содержимого репозитория, создавать пользовательские репозитории с содержимым для Azure и предоставлять пользовательским виртуальным машинам доступ к этому содержимому.
@@ -27,6 +27,8 @@ ms.locfileid: "54078258"
 Образы Red Hat Enterprise Linux (RHEL) с оплатой по мере использования (PAYG) предварительно настроены для доступа к Azure RHUI. Никаких дополнительных настроек не требуется. Чтобы получить последние обновления, выполните `sudo yum update`, когда экземпляр RHEL будет готов. Плата за эту службу входит в стоимость программного обеспечения RHEL (PAYG).
 
 Дополнительные сведения об образах RHEL в Azure, включая политики публикации и хранения, можно найти [здесь](./rhel-images.md).
+
+Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).
 
 ## <a name="important-information-about-azure-rhui"></a>Важные сведения об Azure RHUI
 * Сейчас Azure RHUI поддерживает только последний вспомогательный выпуск в каждом семействе RHEL (RHEL6 или RHEL7). Чтобы обновить экземпляр виртуальной машины RHEL, подключенный к RHUI, до версии с последним дополнительным номером, выполните команду `sudo yum update`.
@@ -218,4 +220,4 @@ sudo yum update -y --disablerepo=* --enablerepo=rhui-microsoft-* rhui-usgov-rhel
 ## <a name="next-steps"></a>Дополнительная информация
 * Сведения о создании виртуальной машины Red Hat Enterprise Linux на основе образа с оплатой по мере использования (PAYG) и о применении размещенной в Azure инфраструктуры RHUI см. на странице [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/redhat/).
 * Дополнительные сведения об образах Red Hat в Azure можно найти на [странице документации](./rhel-images.md).
-
+* Сведения о политиках поддержки Red Hat для всех версий RHEL можно найти на странице [о жизненных циклах выпусков Red Hat Enterprise Linux](https://access.redhat.com/support/policy/updates/errata).

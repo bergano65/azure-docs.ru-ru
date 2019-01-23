@@ -16,12 +16,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 5607dd0f3c682915f1a64edcc5e946491bab5279
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: e1b1102594e7e4470c08cb0f18068dd368c0fe7a
+ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53653362"
+ms.lasthandoff: 01/12/2019
+ms.locfileid: "54245095"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -44,7 +44,7 @@ ms.locfileid: "53653362"
 * Кроме того, любой пользователь (не администратор) может получить доступ к своим данным о входах. 
 
 ### <a name="what-azure-ad-license-do-you-need-to-access-sign-in-activity"></a>Какие лицензии Azure AD требуются для доступа к действию входа?
-* Для просмотра отчета обо всех действиях входа с клиентом должна быть связана лицензия Azure AD Premium. Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md).
+* Для просмотра отчета обо всех действиях входа с клиентом должна быть связана лицензия Azure AD Premium. Чтобы обновить выпуск Azure Active Directory, ознакомьтесь со статьей [Регистрация для работы с выпусками Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md). Обратите внимание, если до обновления данные о действиях отсутствовали, данные отобразятся в отчетах через несколько дней после обновления до лицензии Premium.
 
 ## <a name="sign-ins-report"></a>Отчет о входе
 
@@ -54,7 +54,7 @@ ms.locfileid: "53653362"
 * Сколько пользователей входили в течение недели?
 * Каков статус их входа?
 
-Вы можете получить доступ к отчетам о входах в систему, выбрав **События входа** в разделе **Действие** колонки **Azure Active Directory** на [портале Azure](https://portal.azure.com).
+Вы можете получить доступ к отчетам о входах в систему, выбрав **События входа** в разделе **Действие** колонки **Azure Active Directory** на [портале Azure](https://portal.azure.com). Обратите внимание, что для отображения некоторых записей данных для входа в систему на портале может потребоваться около двух часов.
 
 ![Действие входа](./media/concept-sign-ins/61.png "Действие входа")
 
@@ -233,6 +233,12 @@ ms.locfileid: "53653362"
 С помощью параметра **Входов** можно полностью отобразить все события входа в ваши приложения.
 
 ![Действие входа](./media/concept-sign-ins/11.png "Действие входа")
+
+## <a name="office-365-activity-logs"></a>Журналы действий Office 365
+
+Вы можете просмотреть журналы действий Office 365 из [Центра администрирования Office 365](https://docs.microsoft.com/office365/admin/admin-overview/about-the-admin-center). Несмотря на то что журналы активности Office 365 и Azure AD совместно используют много ресурсов каталога, только Центр администрирования Office 365 предоставляет возможность полностью просмотреть журналы действий Office 365. 
+
+Вы также можете получить программный доступ к журналам действий Office 365 с помощью [API управления Office 365](https://docs.microsoft.com/office/office-365-management-api/office-365-management-apis-overview).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

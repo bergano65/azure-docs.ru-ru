@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 08/24/2018
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: 3c683b24db2899ee680988c7bedc760d6bb8ec73
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: fae5b9ee84c9352bbeb6f14b1f3a6006ce4804e8
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43052825"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261678"
 ---
 # <a name="submit-a-large-number-of-tasks-to-a-batch-job"></a>Отправка большого количества задач в пакетное задание
 
@@ -45,7 +45,7 @@ ms.locfileid: "43052825"
 * Следующие API-интерфейсы поддерживают гораздо большие коллекции задач и ограничиваются только доступностью ОЗУ в клиенте, выполняющем отправку. Эти API прозрачно обрабатывают разделение коллекции задач на "блоки" для API нижнего уровня и повторы при сбое добавления задач:
 
     * [API для .NET](/dotnet/api/microsoft.azure.batch.cloudjob.addtaskasync?view=azure-dotnet)
-    * [API Java](/java/api/com.microsoft.azure.batch.protocol._tasks.addcollectionasync?view=azure-java-stable)
+    * [API Java](/java/api/com.microsoft.azure.batch.protocol.tasks.addcollectionasync?view=azure-java-stable)
     * [расширение CLI пакетной службы Azure](batch-cli-templates.md) с шаблонами CLI пакетной службы;
     * [расширение пакета SDK для Python](https://pypi.org/project/azure-batch-extensions/).
 
@@ -61,11 +61,11 @@ ms.locfileid: "43052825"
 
 * **Ограничения подключения HTTP**. Количество параллельных подключений HTTP может регулировать производительность клиента пакетной службы, когда он добавляет большое количество задач. Для определенных API количество подключений HTTP ограничено. Например, при разработке с помощью API .NET свойству [ServicePointManager.DefaultConnectionLimit](/dotnet/api/system.net.servicepointmanager.defaultconnectionlimit) по умолчанию задается значение 2. Мы рекомендуем увеличить значение до числа, близкого к числу параллельных операций или более высокого.
 
-## <a name="example-batch-net"></a>Пример: .NET пакетной службы
+## <a name="example-batch-net"></a>Пример: .NET для пакетной службы
 
 В следующих фрагментах кода C# показаны параметры, которые нужно настроить при добавлении большого количества задач с помощью API .NET пакетной службы.
 
-Чтобы увеличить пропускную способность задачи, увеличьте значение свойства [MaxDegreeofParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient?view=azure-dotnet). Например: 
+Чтобы увеличить пропускную способность задачи, увеличьте значение свойства [MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient?view=azure-dotnet). Например: 
 
 ```csharp
 BatchClientParallelOptions parallelOptions = new BatchClientParallelOptions()

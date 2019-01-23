@@ -6,15 +6,14 @@ author: yushwang
 manager: rossort
 ms.service: vpn-gateway
 ms.topic: article
-ms.workload: infrastructure-services
-ms.date: 01/07/2019
+ms.date: 01/10/2019
 ms.author: yushwang
-ms.openlocfilehash: 8a2210e9917fa8676c767362cbce2facaf42d566
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 0110b6daa34d0bb24ad0abb7128ee6409bc4ff25
+ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54075130"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54215462"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-устройства и параметры IPsec/IKE для подключений типа "сеть — сеть" через VPN-шлюз
 
@@ -57,10 +56,11 @@ ms.locfileid: "54075130"
 | F5 |Серия BIG-IP |12.0 |[Руководство по настройке](https://devcentral.f5.com/articles/connecting-to-windows-azure-with-the-big-ip) |[Руководство по настройке](https://devcentral.f5.com/articles/big-ip-to-azure-dynamic-ipsec-tunneling) |
 | Fortinet |FortiGate |FortiOS 5.6 |  |[Руководство по настройке](http://cookbook.fortinet.com/ipsec-vpn-microsoft-azure-56/) |
 | Internet Initiative Japan (IIJ) |Серия SEIL |SEIL/X 4.60<br>SEIL/B1 4.60<br>SEIL/x86 3.20 |[Руководство по настройке](http://www.iij.ad.jp/biz/seil/ConfigAzureSEILVPN.pdf) |Не совместимо |
-| Juniper |SRX |PolicyBased: JunOS 10.2<br>RouteBased: JunOS 11.4 |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SRX) |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SRX) |
-| Juniper |Серия J |PolicyBased: JunOS 10.4r9<br>RouteBased: JunOS 11.4 |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/JSeries) |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/JSeries) |
-| Juniper |ISG |ScreenOS 6.3 |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/ISG) |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/ISG) |
-| Juniper |SSG |ScreenOS 6.2 |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SSG) |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SSG) |
+| Juniper |SRX |PolicyBased: JunOS 10.2<br>RouteBased: JunOS 11.4 |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SRX) |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
+| Juniper |Серия J |PolicyBased: JunOS 10.4r9<br>RouteBased: JunOS 11.4 |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/JSeries) |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
+| Juniper |ISG |ScreenOS 6.3 |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/ISG) |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
+| Juniper |SSG |ScreenOS 6.2 |[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SSG) |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
+| Juniper |MX |JunOS 12.x|[Примеры конфигурации](https://github.com/Azure/Azure-vpn-config-samples/tree/master/Juniper/Current/SRX) |[Скрипт настройки](vpn-gateway-download-vpndevicescript.md) |
 | Microsoft |Служба маршрутизации и удаленного доступа |Windows Server 2012 |Не совместимо |[Примеры конфигурации](https://go.microsoft.com/fwlink/p/?LinkId=717761) |
 | Open Systems AG |Шлюз безопасности Mission Control |Недоступно |[Руководство по настройке](https://www.open.ch/_pdf/Azure/AzureVPNSetup_Installation_Guide.pdf) |Не совместимо |
 | Palo Alto Networks |Все устройства под управлением PAN-OS |PAN-OS<br>PolicyBased: 6.1.5 или более поздней версии<br>RouteBased: 7.1.4 |[Руководство по настройке](https://live.paloaltonetworks.com/t5/Configuration-Articles/How-to-Configure-VPN-Tunnel-Between-a-Palo-Alto-Networks/ta-p/59065) |[Руководство по настройке](https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000Cm6WCAS) |

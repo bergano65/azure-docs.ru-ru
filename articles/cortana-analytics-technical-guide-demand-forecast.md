@@ -10,12 +10,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 05/16/2016
 ms.author: garye
-ms.openlocfilehash: 88f6a27d4092e638403c641d72916ed9d2540708
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: d055b6775c9c788ecbb3a868055fa2402a537a83
+ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52427069"
+ms.lasthandoff: 01/11/2019
+ms.locfileid: "54231178"
 ---
 # <a name="technical-guide-to-the-cortana-intelligence-solution-template-for-demand-forecast-in-energy"></a>Техническое руководство по шаблону решения Cortana Intelligence для прогнозирования спроса на энергию
 ## <a name="overview"></a>**Обзор**
@@ -163,8 +163,8 @@ ms.locfileid: "52427069"
 
 1. Добавьте выходные данные Power BI в Azure Stream Analytics (ASA).
 
-   * Чтобы настроить выходные данные задания Azure Stream Analytics в качестве панели мониторинга Power BI, следуйте инструкциям, приведенным в статье [Stream Analytics и Power BI. Панель мониторинга для анализа потоковой передачи данных](stream-analytics/stream-analytics-power-bi-dashboard.md).
-   * Найдите задание Stream Analytics на [портале Azure](https://portal.azure.com). Задание должно иметь имя в следующем формате: "имя_решения + streamingjob + случайное число + asapbi" (например, demostreamingjob123456asapbi).
+   * Чтобы настроить вывод данных задания Azure Stream Analytics в качестве панели мониторинга Power BI, следуйте инструкциям из статьи [Руководство. Stream Analytics и Power BI: панель мониторинга аналитики для потоковой передачи данных в режиме реального времени](stream-analytics/stream-analytics-power-bi-dashboard.md).
+   * Найдите задание Stream Analytics на [портале Azure](https://portal.azure.com). Задание должно иметь имя в следующем формате: "имя_решения+streamingjob+случайное число+asapbi" (например, demostreamingjob123456asapbi).
    * Добавьте выходные данные PowerBI для задания ASA. Задайте для параметра **Выходной псевдоним** значение **PBIoutput**. Для параметров **Имя набора данных** и **Имя таблицы** укажите **EnergyStreamData**. После добавления выходных данных щелкните **Запуск** в нижней части страницы, чтобы запустить задание Stream Analytics. Должно появиться сообщение с подтверждением (например, "Запуск задания Stream Analytics myteststreamingjob12345asablob выполнен успешно").
 2. Войдите в [Power BI Online](https://www.powerbi.com)
 
@@ -185,7 +185,7 @@ ms.locfileid: "52427069"
 В конвейере данных холодного пути основной целью является получение прогноза на спрос в каждом регионе. Power BI подключается к базе данных Azure SQL в качестве источника данных, где хранятся результаты прогноза.
 
 > [!NOTE]
-> 1) Сбор результатов прогноза, достаточных для панели мониторинга, занимает несколько часов. Рекомендуется начать этот процесс через 2-3 часа после запуска генератора данных. 2. На этом шаге необходимо скачать и установить бесплатное программное обеспечение [Power BI Desktop](https://powerbi.microsoft.com/desktop).
+> 1. Сбор результатов прогноза, достаточных для панели мониторинга, занимает несколько часов. Рекомендуется начать этот процесс через 2-3 часа после запуска генератора данных. 2. На этом шаге необходимо скачать и установить бесплатное программное обеспечение [Power BI Desktop](https://powerbi.microsoft.com/desktop).
 >
 >
 
@@ -200,7 +200,7 @@ ms.locfileid: "52427069"
 2. Обновите источник данных файла холодного пути Power BI.
 
    * Установите последнюю версию [Power BI Desktop](https://powerbi.microsoft.com/desktop).
-   * В скачанной папке **DemandForecastingDataGeneratorv1.0** дважды щелкните файл Power BI **Template\DemandForecastPowerBI.pbix**. Первоначальные визуализации основаны на фиктивных данных. **Примечание.** Если отображается сообщение об ошибке, установите последнюю версию Power BI Desktop.
+   * В скачанной папке **DemandForecastingDataGeneratorv1.0** дважды щелкните файл Power BI **Template\DemandForecastPowerBI.pbix**. Первоначальные визуализации основаны на фиктивных данных. **Примечание.** Если отображается сообщение об ошибке, установите последнюю версию Power BI Desktop.
 
      В верхней части файла нажмите кнопку **Изменить запросы**. Во всплывающем окне дважды щелкните **Источник** на правой панели.
      ![](media/cortana-analytics-technical-guide-demand-forecast/PowerBIpic1.png)
@@ -218,7 +218,7 @@ ms.locfileid: "52427069"
 4. Запланируйте обновление источника данных (необязательно).
 
    * Чтобы запланировать обновление данных, наведите указатель мыши на набор данных **EnergyBPI-Final**, щелкните ![](media/cortana-analytics-technical-guide-demand-forecast/PowerBIpic3.png) и выберите **Запланировать обновление**.
-     **Примечание.** При появлении предупреждения нажмите кнопку **Изменить учетные данные** и убедитесь, что учетные данные базы данных являются такими же, как описано на шаге 1.
+     **Примечание.** При появлении предупреждения нажмите кнопку **Изменить учетные данные** и убедитесь, что учетные данные базы данных являются такими же, как описано в шаге 1.
 
      ![](media/cortana-analytics-technical-guide-demand-forecast/PowerBIpic4.png)
    * Разверните раздел **Запланировать обновление** . Включите параметр "Поддерживать актуальность данных".
