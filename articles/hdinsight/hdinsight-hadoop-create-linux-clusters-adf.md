@@ -9,12 +9,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/29/2018
 ms.author: hrasheed
-ms.openlocfilehash: 7b20ceb61f522bea11e7256c824a851e587cbd49
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 40bfa8317effd25cf3d9aa28b8f63e292213a83b
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53975463"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54425988"
 ---
 # <a name="tutorial-create-on-demand-apache-hadoop-clusters-in-hdinsight-using-azure-data-factory"></a>Руководство. Создание кластеров Apache Hadoop в HDInsight по запросу с помощью Фабрики данных Azure
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -37,7 +37,7 @@ ms.locfileid: "53975463"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Установите Azure PowerShell. Инструкции см. в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-5.7.0).
+- Установите Azure PowerShell. Инструкции см. в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-5.7.0).
 
 - Субъект-служба Azure Active Directory. После создания субъект-службы, обязательно получите **идентификатор приложения** и **ключ проверки подлинности** с помощью инструкций в связанной статье. Эти значения вам понадобятся позже (в рамках этого руководства). Кроме того, убедитесь, что субъект-службе должна быть назначена роль *участника* подписки или группы ресурсов, в которой создается кластер. Инструкции по получению требуемых значений и назначению правильных ролей см. в разделе [Создание субъект-службы Azure Active Directory ](../active-directory/develop/howto-create-service-principal-portal.md).
 

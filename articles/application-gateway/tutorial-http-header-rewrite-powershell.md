@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 12/20/2018
 ms.author: absha
-ms.openlocfilehash: 8bc0d53080d0653ae630765d8a656cbe8d50b24c
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 4784ac8ac619a1b9a00f2e869d796d05dd9658df
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53971575"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54434416"
 ---
 # <a name="tutorial-create-an-application-gateway-and-rewrite-http-headers"></a>Руководство. Создание шлюза приложений и перезапись заголовков HTTP
 
@@ -37,7 +37,7 @@ ms.locfileid: "53971575"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством требуется запустить Azure PowerShell в локальной среде. Необходим модуль Az 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Import-Module Az` и затем команду `Get-Module Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
+Для работы с этим руководством требуется запустить Azure PowerShell в локальной среде. Необходим модуль Az 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Import-Module Az`, а затем команду `Get-Module Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps). После проверки версии PowerShell выполните командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -112,10 +112,10 @@ $setting = New-AzApplicationGatewayBackendHttpSettings -Name "BackendHttpSetting
 
 Настройте новые объекты, необходимые для перезаписи заголовков HTTP.
 
-- **RequestHeaderConfiguration**. Этот объект используется для указания полей заголовка запроса, которые нужно перезаписать, и нового значения, которое должно быть записано в этих полях заголовка.
-- **ResponseHeaderConfiguration**. Этот объект используется для указания полей заголовка ответа, которые нужно перезаписать, и нового значения, которое должно быть записано в этих полях заголовка.
-- **ActionSet**. Этот объект содержит конфигурации запросов и ответов заголовков, указанных выше. 
-- **RewriteRule**. Этот объект содержит все указанные выше наборы действий *actionSets*. 
+- **RequestHeaderConfiguration**: этот объект используется для указания полей заголовка запроса, которые нужно перезаписать, и нового значения, которое должно быть записано в этих полях заголовка.
+- **ResponseHeaderConfiguration**: этот объект используется для указания полей заголовка ответа, которые необходимо повторно создать, и нового значения, в котором нужно повторно создать исходные заголовки.
+- **ActionSet**: этот объект содержит конфигурации запросов и ответов заголовков, указанных выше. 
+- **RewriteRule**: этот объект содержит все указанные выше *actionSets*. 
 - **RewriteRuleSet**. Этот объект содержит все правила перезаписи *rewriteRules* и должен быть подключен к базовому правилу или правилу маршрутизации запроса на основе путей.
 
    ```azurepowershell

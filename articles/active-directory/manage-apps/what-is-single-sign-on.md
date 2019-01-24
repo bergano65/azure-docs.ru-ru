@@ -3,7 +3,7 @@ title: Единый вход в приложения в Azure Active Directory |
 description: Узнайте, как выбрать способ единого входа при настройке приложений в Azure Active Directory (Azure AD). Используйте единый вход, чтобы пользователям не приходилось запоминать пароли для каждого приложения, а также чтобы упростить администрирование управления учетными записями.
 services: active-directory
 author: barbkess
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: barbkess
 ms.reviewer: arvindh
-ms.openlocfilehash: b7e75753f8d7a9316dd1cc644dc22c42ef284736
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 452ec35f9a759bd09befb8c5a03a7fc5b3fb8ed2
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54190098"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54463360"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Единый вход в приложениях в Azure Active Directory
 Узнайте, как выбрать наиболее подходящий способ единого входа при настройке приложений в Azure Active Directory (Azure AD). 

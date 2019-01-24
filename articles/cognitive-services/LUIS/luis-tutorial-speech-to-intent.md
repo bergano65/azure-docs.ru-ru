@@ -11,12 +11,12 @@ ms.component: language-understanding
 ms.topic: tutorial
 ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 8e664e26a2cafc2f0b32ebea0f019918426d956c
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 2d212ae8f5a12c06f40e025a7a8d786a44194a92
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53714586"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438739"
 ---
 # <a name="integrate-speech-service-with-your-language-understanding-app"></a>Интеграция службы "Речь" с приложением службы "Распознавание речи"
 [Служба распознавания речи](https://docs.microsoft.com/azure/cognitive-services/Speech-Service/) позволяет использовать один запрос для получения аудио и возврата объектов JSON с предсказаниями LUIS. В этой статье описано, как загрузить и использовать проект C# в Visual Studio, чтобы произнести фразу в микрофон и получить информацию о предсказании LUIS. В этом проекте используется уже включенный в качестве ссылки пакет [NuGet](https://www.nuget.org/packages/Microsoft.CognitiveServices.Speech/) для распознавания речи. 
@@ -24,7 +24,7 @@ ms.locfileid: "53714586"
 Для работы с этой статьей требуется бесплатная учетная запись для веб-сайта [LUIS][LUIS], в которую вы импортируете приложение.
 
 ## <a name="create-luis-endpoint-key"></a>Создание ключа конечной точки LUIS
-На портале Azure [создайте](luis-how-to-azure-subscription.md#create-luis-endpoint-key) ключ **службы "Распознавание речи"** (LUIS). 
+На портале Azure [создайте](luis-how-to-azure-subscription.md) ключ **службы "Распознавание речи"** (LUIS). 
 
 ## <a name="import-human-resources-luis-app"></a>Импорт приложения LUIS Human Resources
 Намерения и фразы для этой статьи взяты из приложения LUIS Human Resources, доступного в репозитории GitHub [Azure-Samples](https://github.com/Azure-Samples/cognitive-services-language-understanding). Скачайте файл [HumanResources.json](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/documentation-samples/tutorials/HumanResources.json), сохраните его с расширением `.json`, а затем — [импортируйте](luis-how-to-start-new-app.md#import-new-app) в LUIS. 

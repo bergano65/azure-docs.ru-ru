@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 05/08/2018
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 7dcdca594949a3b20000b31db681370ee4f9eac3
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
+ms.openlocfilehash: fa6b4de9282eec75747ca87b26058a47320f2fd3
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53255291"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54428143"
 ---
 # <a name="quickstart-create-a-private-container-registry-using-azure-powershell"></a>Краткое руководство. Создание частного реестра контейнеров Docker с помощью Azure PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "53255291"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством требуется модуль Azure PowerShell 5.7.0 или более поздней версии. Выполните команду `Get-Module -ListAvailable AzureRM`, чтобы определить установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+Для работы с этим кратким руководством требуется модуль Azure PowerShell 5.7.0 или более поздней версии. Выполните команду `Get-Module -ListAvailable AzureRM`, чтобы определить установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 
 Также необходим локально установленный модуль Docker. Docker предоставляет пакеты для систем [macOS][docker-mac], [Windows][docker-windows] и [Linux][docker-linux].
 

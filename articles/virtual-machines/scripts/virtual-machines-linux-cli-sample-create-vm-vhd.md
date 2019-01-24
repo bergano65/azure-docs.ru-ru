@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 03/09/2017
 ms.author: allclark
 ms.custom: mvc
-ms.openlocfilehash: 271390757b7e79eb29c5a3c14ca9ee1b38b53e29
-ms.sourcegitcommit: 8ebcecb837bbfb989728e4667d74e42f7a3a9352
+ms.openlocfilehash: 6963a7d8541897940316d0fdfbea06f265884249
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "41919970"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54478320"
 ---
 # <a name="create-a-vm-with-a-virtual-hard-disk"></a>Создание виртуальной машины с помощью виртуального жесткого диска
 
@@ -51,17 +51,17 @@ az group delete -n az-cli-vhd
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account list](https://docs.microsoft.com/cli/azure/storage/account#az_storage_account_list) | Выводит список учетных записей хранения. |
 | [az storage account check-name](https://docs.microsoft.com/cli/azure/storage/account#az_storage_account_check_name) | Проверяет допустимость имени учетной записи хранения и что она еще не существует. |
-| [az storage account keys list](https://docs.microsoft.com/cli/azure/storage/account/keys#az_storage_account_keys_list) | Выводит список ключей для учетных записей хранения. |
+| [az storage account keys list](https://docs.microsoft.com/cli/azure/storage/account/keys) | Выводит список ключей для учетных записей хранения. |
 | [az storage blob exists](https://docs.microsoft.com/cli/azure/storage/blob#az_storage_blob_exists) | Проверяет, существует ли BLOB-объект. |
 | [az storage container create](https://docs.microsoft.com/cli/azure/storage/container#az_storage_container_create) | Создает контейнер в учетной записи хранения. |
 | [az storage blob upload](https://docs.microsoft.com/cli/azure/storage/blob#az_storage_blob_upload) | Создает BLOB-объект в контейнере путем отправки виртуального жесткого диска. |
 | [az vm list](https://docs.microsoft.com/cli/azure/vm#az_vm_list) | Используется с `--query`, чтобы проверить, используется ли имя виртуальной машины. | 
-| [az vm create](https://docs.microsoft.com/cli/azure/vm/availability-set#az_vm_availability_set_create) | Создает виртуальные машины. |
+| [az vm create](https://docs.microsoft.com/cli/azure/vm/availability-set) | Создает виртуальные машины. |
 | [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm#az_vm_list-ip-addresses) | Возвращает IP-адрес созданной виртуальной машины. |
 
 ## <a name="next-steps"></a>Дополнительная информация

@@ -4,7 +4,7 @@ description: В этом документе описываются задачи 
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: billmath
 ms.assetid: ''
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/10/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 16fc7f1bb69efe94ce87f213627b78a4afa0fcc2
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 31bf3c7ba2365f3fdfd6f2da1dbd1942ada1327e
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52999232"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54475464"
 ---
 # <a name="post-configuration-tasks-for-hybrid-azure-ad-join"></a>Задачи постконфигурации для гибридного присоединения устройств к Azure AD
 
@@ -69,7 +69,7 @@ ms.locfileid: "52999232"
 Чтобы поддерживать регистрацию устройств Windows нижнего уровня, необходимо убедиться, что политика Azure AD разрешает пользователям регистрировать устройства. 
 
 * Войдите в учетную запись на портале Azure.
-* Выберите  "Azure Active Directory" > "Устройства" > "Параметры устройств".
+* Справочные ресурсы:  "Azure Active Directory" > "Устройства" > "Параметры устройств".
 * Для параметра "Пользователи могут регистрировать устройства в Azure AD" выберите значение "Все".
 * Щелкните Сохранить
 

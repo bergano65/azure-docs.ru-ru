@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: johnkem
-ms.component: ''
-ms.openlocfilehash: 47a957453bf5962f59518719895edc0f13fe7dc8
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.subservice: ''
+ms.openlocfilehash: 4ca5803ca410e3250e025eb60b5c1ff9fc7216b1
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53584383"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54465247"
 ---
 # <a name="get-started-with-roles-permissions-and-security-with-azure-monitor"></a>Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor
 Многим командам необходимо строго регулировать доступ к данным и параметрам мониторинга. Например, если какие-либо участники команды работают исключительно с мониторингом (инженеры службы поддержки, инженеры по разработке и операциям) или вы пользуетесь услугами поставщика управляемых служб, то может потребоваться предоставить им доступ только к данным мониторинга, ограничив возможности для создания, изменения или удаления ресурсов. В этой статье показано, как быстро применить к пользователю в Azure встроенные роли RBAC для мониторинга или создать собственную настраиваемую роль для пользователя, которому нужен ограниченный набор разрешений для мониторинга. Далее в статье рассматриваются вопросы безопасности ресурсов, связанных с Azure Monitor, и способы ограничения доступа к данным, которые они содержат.
@@ -187,4 +187,5 @@ New-AzureRmRoleDefinition -Role $role
 ## <a name="next-steps"></a>Дополнительная информация
 * [Прочитайте о RBAC и разрешениях в Resource Manager](../../role-based-access-control/overview.md)
 * [Прочитайте общие сведения о мониторинге в Azure](../../azure-monitor/overview.md)
+
 

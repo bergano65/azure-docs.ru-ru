@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/15/2018
 ms.author: yagup;jdial
-ms.openlocfilehash: 120b97f69c8fad2daf3090441e8d0326e80115c3
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 3b0db93d44827e3f5d0543f28a6f4b5fb0c4818e
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53338589"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54429095"
 ---
 # <a name="traffic-analytics"></a>Аналитика трафика
 
@@ -99,9 +99,6 @@ ms.locfileid: "53338589"
 |                   | участник;            |
 |                   | Читатель                 |
 |                   | Участник сети    |
-|Классический            | Администратор учетной записи  |
-|                   | Администратор службы  |
-|                   | Соадминистратор       |
 
 Если вашей учетной записи не назначена ни одна из встроенных ролей, ей должна быть назначена [пользовательская роль](../role-based-access-control/custom-roles.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json), предоставляющая разрешения на уровне подписки:
 
@@ -176,7 +173,7 @@ New-AzureRmStorageAccount `
 
 Повторите шаги выше для любых других групп NSG, для которых нужно включить решение "Аналитика трафика". Данные из журналов потоков отправляются в рабочую область, поэтому проверьте, разрешено ли в соответствии с законом и правилами в вашей стране размещать хранилище данных в регионе, где есть рабочая область.
 
-Кроме того, аналитику трафика можно настроить с помощью командлета PowerShell [Set-AzureRmNetworkWatcherConfigFlowLog](/powershell/module/azurerm.network/set-azurermnetworkwatcherconfigflowlog) в модуле AzureRm PowerShell версии 6.2.1 или более поздней. Выполните `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+Кроме того, аналитику трафика можно настроить с помощью командлета PowerShell [Set-AzureRmNetworkWatcherConfigFlowLog](/powershell/module/azurerm.network/set-azurermnetworkwatcherconfigflowlog) в модуле AzureRm PowerShell версии 6.2.1 или более поздней. Выполните `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 
 ## <a name="view-traffic-analytics"></a>Просмотр решения "Аналитика трафика"
 

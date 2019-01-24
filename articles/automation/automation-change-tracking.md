@@ -3,19 +3,19 @@ title: Отслеживание изменений с помощью служб�
 description: Решение для отслеживания изменений помогает выявлять изменения программного обеспечения и служб Windows в среде.
 services: automation
 ms.service: automation
-ms.component: change-inventory-management
+ms.subservice: change-inventory-management
 author: georgewallace
 ms.author: gwallace
 ms.date: 01/04/2019
 ms.topic: conceptual
 manager: carmonm
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1d08471a3e0faa99cb245709cf72f9af097bc495
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.openlocfilehash: d29a2020d7e7a16e0bac0802a887a28e12630f03
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54213218"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54433022"
 ---
 # <a name="track-changes-in-your-environment-with-the-change-tracking-solution"></a>Отслеживание изменений в среде с помощью решения для отслеживания изменений
 
@@ -279,3 +279,4 @@ ms.locfileid: "54213218"
 > [Устранение неполадок при изменениях в среде](automation-tutorial-troubleshoot-changes.md)
 
 * Используйте [Поиск по журналам в Log Analytics](../log-analytics/log-analytics-log-searches.md) для просмотра подробных данных по отслеживанию изменений.
+

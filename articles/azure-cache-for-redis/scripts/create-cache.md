@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: tbd
 ms.date: 08/30/2017
 ms.author: wesmc
-ms.openlocfilehash: 4907bbc9ed7a32e74175a4c6a178ac41bc165961
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: df82c66f344b733ef61df35920aa5a702465b245
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53085218"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54464117"
 ---
 # <a name="create-an-azure-cache-for-redis"></a>Создание экземпляра кэша Azure для Redis
 
@@ -38,10 +38,10 @@ ms.locfileid: "53085218"
 
 Для создания группы ресурсов и кэша Azure для Redis этот сценарий использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
-| [az redis create](https://docs.microsoft.com/cli/azure/redis#az_redis_create) | Создает экземпляр кэша Azure для Redis. |
+| [az redis create](https://docs.microsoft.com/cli/azure/redis) | Создает экземпляр кэша Azure для Redis. |
 
 
 ## <a name="next-steps"></a>Дополнительная информация

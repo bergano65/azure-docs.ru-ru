@@ -3,18 +3,18 @@ title: Создание автономной учетной записи слу�
 description: В этой статье приводятся пошаговые инструкции по созданию и тестированию, а также пример проверки подлинности с помощью субъекта безопасности в службе автоматизации Azure.
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 01/15/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 2e419da4ed84f3d202113f9616050c3e7c29f240
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: 1590a02503a12be870dab14a1ccffdd3cf64a282
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54322050"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54426613"
 ---
 # <a name="create-a-standalone-azure-automation-account"></a>Создание автономной учетной записи службы автоматизации Azure
 
@@ -112,3 +112,4 @@ ms.locfileid: "54322050"
 * Сведения о том, как начать работу с модулями Runbook, см. в статье [Мой первый модуль Runbook PowerShell](automation-first-runbook-textual-powershell.md).
 * Чтобы приступить к работе с модулями Runbook рабочих процессов PowerShell, обратитесь к статье [Первый Runbook рабочего процесса PowerShell](automation-first-runbook-textual.md).
 * См. дополнительные сведения о начале работы с [модулями runbook Python2](automation-first-runbook-textual-python2.md).
+

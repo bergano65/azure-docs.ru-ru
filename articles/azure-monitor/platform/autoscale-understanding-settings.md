@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 12/18/2017
 ms.author: ancav
-ms.component: autoscale
-ms.openlocfilehash: af7e280c7dcd82c18e91ded759756c3826342cd3
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.subservice: autoscale
+ms.openlocfilehash: 02840b8a909f46c37130bdb7162674c694a0ff96
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53587462"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54474835"
 ---
 # <a name="understand-autoscale-settings"></a>Основные сведения о параметрах автомасштабирования
 С помощью параметров автомасштабирования можно настроить объем ресурсов, необходимый для управления колеблющейся нагрузкой приложения. Вы можете настроить активацию параметров автомасштабирования при достижении метрик нагрузки или производительности или запланировать дату и время активации. В этой статье подробно описывается настройка автомасштабирования. В начале статьи предоставлены схема и свойства параметров, а затем — различные типы профилей, которые можно настроить. В этой статье также рассматривается, как функция автоматического масштабирования в Azure вычисляет профиль, который необходимо выполнить в заданное время.
@@ -310,3 +310,4 @@ ms.locfileid: "53587462"
 * [Рекомендации по автомасштабированию в Azure Monitor](../../azure-monitor/platform/autoscale-best-practices.md)
 * [Использование действий автомасштабирования для отправки электронной почты и уведомлений об оповещениях веб-перехватчика в Azure Insights](../../azure-monitor/platform/autoscale-webhook-email.md)
 * [Create or update an autoscale setting in Azure Insights REST API (Создание и изменение параметров автомасштабирования в REST API Azure Insights)](https://msdn.microsoft.com/library/dn931953.aspx)
+

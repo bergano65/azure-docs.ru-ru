@@ -11,12 +11,12 @@ author: nishankgu
 ms.author: nigup
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 1ef0fc9037548a58d9b0a4f46c212a43796d529b
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.openlocfilehash: 6a08a5a79a8a072bd4621a7e200e84c2c71c9cd4
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54231603"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54475073"
 ---
 # <a name="manage-and-request-quotas-for-azure-resources"></a>Управление квотами для ресурсов Azure и их запрашивание
 
@@ -46,7 +46,7 @@ ms.locfileid: "54231603"
 
 [!INCLUDE [azure-subscription-limits-azure-resource-manager](../../../includes/azure-subscription-limits-azure-resource-manager.md)]
 
-Более подробный и актуальный список квот см. в [статье о квотах на уровне среды Azure](https://docs.microsoft.com/azure/azure-subscription-service-limits#subscription-limits-1).
+Более подробный и актуальный список квот см. в [статье о квотах на уровне среды Azure](https://docs.microsoft.com/azure/azure-subscription-service-limits).
 
 ### <a name="azure-machine-learning-compute"></a>Вычислительная среда Машинного обучения Azure
 В Вычислительной среде Машинного обучения Azure есть квота по умолчанию для количества ядер и уникальных ресурсов компьютера, разрешенных для каждого региона в подписке. Эта квота отделена от упомянутой выше квоты на ядра виртуальных машин. Сейчас ограничения на ядра не распределяются между двумя типами ресурсов.

@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: robb
-ms.component: alerts
-ms.openlocfilehash: b24b98760e276c207bb360687f32ae902b3306fb
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.subservice: alerts
+ms.openlocfilehash: 18a63497cb0df2ade495dfb721aaa881aa4e6ff7
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53976959"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54464125"
 ---
 # <a name="overview-of-alerts-in-microsoft-azure"></a>Обзор оповещений в Microsoft Azure 
 
@@ -183,6 +183,7 @@ ms.locfileid: "53976959"
 - [Дополнительные сведения о группах действий](../../azure-monitor/platform/action-groups.md)
 - [Управление экземплярами оповещений в Azure](https://aka.ms/managing-alert-instances)
 - [Управление смарт-группами](https://aka.ms/managing-smart-groups)
+
 
 
 
