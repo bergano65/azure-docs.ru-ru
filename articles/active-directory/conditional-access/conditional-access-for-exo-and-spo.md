@@ -4,7 +4,7 @@ description: Узнайте, как настроить SharePoint Online и Exch
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 62349fba-3cc0-4ab5-babe-372b3389eff6
 ms.service: active-directory
@@ -16,14 +16,14 @@ ms.workload: identity
 ms.date: 08/15/2018
 ms.author: markvi
 ms.reviewer: calebb
-ms.openlocfilehash: a5f0a17682f3481ad9a2dff5f144aa3d97f29920
-ms.sourcegitcommit: cc4fdd6f0f12b44c244abc7f6bc4b181a2d05302
+ms.openlocfilehash: 75f1e0e1cefedb439050e9ba653a8e415e0e6887
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47063852"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54447169"
 ---
-# <a name="how-to-set-up-sharepoint-online-and-exchange-online-for-azure-active-directory-conditional-access"></a>Узнайте, как настроить SharePoint Online и Exchange Online для условного доступа Azure Active Directory 
+# <a name="how-to-set-up-sharepoint-online-and-exchange-online-for-azure-active-directory-conditional-access"></a>Практическое руководство. Настройка SharePoint Online и Exchange Online для условного доступа Azure Active Directory 
 
 С помощью [условного доступа Azure Active Directory (Azure AD)](overview.md) можно контролировать доступ пользователей к облачным приложениям. Если вы хотите использовать условный доступ для управления доступом к SharePoint и Exchange Online, необходимо:
 

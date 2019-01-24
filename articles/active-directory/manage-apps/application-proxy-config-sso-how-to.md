@@ -4,7 +4,7 @@ description: В этой статье описывается, как быстр�
 services: active-directory
 documentationcenter: ''
 author: barbkess
-manager: mtillman
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.component: app-mgmt
@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 10/22/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: c27649bc92b9874c6a669911d2b86273cf7adf0f
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 41f4be83e04ad1bc476f1aa47281e4d35f898b45
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53136338"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54468623"
 ---
 # <a name="how-to-configure-single-sign-on-to-an-application-proxy-application"></a>Как настроить единый вход для приложения прокси приложения
 

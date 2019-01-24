@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 01/16/2018
 ms.author: alkohli
-ms.openlocfilehash: 1e5fcbee664271058ac1c7fa80bb285e09b8579a
-ms.sourcegitcommit: 7edfa9fbed0f9e274209cec6456bf4a689a4c1a6
+ms.openlocfilehash: 38852e80948f9937ce2711ee3d29d6a37e1da5c3
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2018
-ms.locfileid: "27862202"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54428585"
 ---
 # <a name="use-azure-automation-to-trigger-a-job"></a>Активация задания с помощью службы автоматизации Azure
 
@@ -30,11 +30,11 @@ ms.locfileid: "27862202"
  
 В этой статье подробно описывается создание модуля runbook службы автоматизации Azure, а затем запуск задания преобразования данных с его помощью. Дополнительные сведения о том, как запустить преобразование данных с помощью пакета SDK для .NET, см. в статье [Запуск преобразования данных с помощью пакета SDK для .NET (закрытая предварительная версия)](storsimple-data-manager-dotnet-jobs.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 
-*   Среда Azure PowerShell, установленная на клиентском компьютере. [Скачать Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps).
+*   Среда Azure PowerShell, установленная на клиентском компьютере. [Скачать Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps).
 *   Правильно настроенное определение задания в службе диспетчера данных StorSimple в одной группе ресурсов.
 *   Файл [`DataTransformationApp.zip`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/raw/master/Azure%20Automation%20For%20Data%20Manager/DataTransformationApp.zip), скачанный из репозитория GitHub. 
 *   Сценарий [`Trigger-DataTransformation-Job.ps1`](https://github.com/Azure-Samples/storsimple-dotnet-data-manager-get-started/blob/master/Azure%20Automation%20For%20Data%20Manager/Trigger-DataTransformation-Job.ps1), скачанный из репозитория GitHub.

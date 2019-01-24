@@ -2,22 +2,22 @@
 title: Схема Реестра контейнеров Сетки событий Azure
 description: В этой статье приведены свойства событий Реестра контейнеров, используемых со службой "Сетка событий Azure".
 services: event-grid
-author: tfitzmac
+author: spelluru
 manager: timlt
 ms.service: event-grid
 ms.topic: reference
-ms.date: 08/13/2018
-ms.author: tomfitz
-ms.openlocfilehash: d18a6718e4c29f3d04639644dc752b0733f15ba8
-ms.sourcegitcommit: 7b845d3b9a5a4487d5df89906cc5d5bbdb0507c8
+ms.date: 01/13/2019
+ms.author: spelluru
+ms.openlocfilehash: 6f00d4f249543ece0eb8db4a8e040300d55b2de8
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/14/2018
-ms.locfileid: "42144403"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54462850"
 ---
 # <a name="azure-event-grid-event-schema-for-container-registry"></a>Схема событий службы "Сетка событий Azure" для Реестра контейнеров
 
-В этой статье описаны свойства и схема для событий Реестра контейнеров. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
+В этой статье описаны свойства и схема для событий Реестра контейнеров. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
 ## <a name="available-event-types"></a>Доступные типы событий
 
@@ -113,7 +113,7 @@ ms.locfileid: "42144403"
 | Свойство | type | ОПИСАНИЕ |
 | -------- | ---- | ----------- |
 | id | строка | Идентификатор события. |
-| timestamp | строка | Время возникновения события. |
+|  timestamp | строка | Время возникновения события. |
 | action | строка | Действие, которое включает в себя указанное событие. |
 | target | object | Целевой объект события. |
 | запрос | object | Запрос, который создал событие. |

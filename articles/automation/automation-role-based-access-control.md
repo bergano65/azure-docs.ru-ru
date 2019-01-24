@@ -4,18 +4,18 @@ description: Контроль доступа на основе ролей (RBAC)
 keywords: автоматизация RBAC, контроль доступа на основе ролей, RBAC Azure
 services: automation
 ms.service: automation
-ms.component: shared-capabilities
+ms.subservice: shared-capabilities
 author: georgewallace
 ms.author: gwallace
 ms.date: 05/17/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 538208c39d6436c15b95760133e00c980e2e8277
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 4fb90dbdb02fc0a0448b8cb6723c980c0fe41bd6
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52727908"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54424325"
 ---
 # <a name="role-based-access-control-in-azure-automation"></a>Управление доступом на основе ролей в службе автоматизации Azure
 
@@ -428,3 +428,4 @@ New-AzureRmRoleAssignment -ObjectId $userId -RoleDefinitionName "Automation Runb
 * Сведения о различных способах настройки RBAC для службы автоматизации Azure см. в статье [Управление доступом на основе ролей с помощью Azure PowerShell](../role-based-access-control/role-assignments-powershell.md).
 * Дополнительные сведения о различных способах запуска модуля Runbook см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
 * Сведения о различных типах модуля Runbook см. в статье [Типы модулей Runbook в службе автоматизации Azure](automation-runbook-types.md).
+

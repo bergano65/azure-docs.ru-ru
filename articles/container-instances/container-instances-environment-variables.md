@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 11/19/2018
 ms.author: danlep
-ms.openlocfilehash: 4dde10c5cb4a764a268b8b9d3ebfaebc008e13ed
-ms.sourcegitcommit: ebf2f2fab4441c3065559201faf8b0a81d575743
+ms.openlocfilehash: ce6c3364c594bc515abd9f0c02bd69bf500e4f4e
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2018
-ms.locfileid: "52162534"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54436575"
 ---
 # <a name="set-environment-variables"></a>Настройка переменных среды
 
@@ -20,9 +20,9 @@ ms.locfileid: "52162534"
 
 Например, если используется образ контейнера [aci/microsoft-wordcount][aci-wordcount], вы можете изменить поведение, указав следующие переменные среды:
 
-*NumWords* задает число слов для вывода в STDOUT.
+*NumWords*. Число слов, отправленных в STDOUT.
 
-*MinLength* обозначает минимальную длину учитываемых слов в символах. Если увеличить это значение, скрипт будет пропускать самые распространенные слова, например of и the.
+*MinLength*. Минимальное количество учитываемых знаков в слове. Если увеличить это значение, скрипт будет пропускать самые распространенные слова, например of и the.
 
 Если нужно передать секреты в качестве переменных среды, служба "Экземпляры контейнеров Azure" поддерживает [безопасные значения](#secure-values) для контейнеров Windows и Linux.
 
@@ -255,6 +255,6 @@ my-secret-value
 [az-container-show]: /cli/azure/container#az-container-show
 [azure-cli-install]: /cli/azure/
 [azure-instance-log]: /powershell/module/azurerm.containerinstance/get-azurermcontainerinstancelog
-[azure-powershell-install]: /powershell/azure/install-azurerm-ps
+[azure-powershell-install]: /powershell/azure/azurerm/install-azurerm-ps
 [new-azurermcontainergroup]: /powershell/module/azurerm.containerinstance/new-azurermcontainergroup
 [portal]: https://portal.azure.com

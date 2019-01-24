@@ -3,18 +3,18 @@ title: Миграция из Orchestrator в службу автоматизац
 description: Описывает способ миграции пакетов Runbook и пакетов интеграции из System Center Orchestrator в службу автоматизации Azure.
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 80b0523f8442e30e6af329263be454fa545933d6
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: ae47cba8f8e9a7cdf914c0b3ea5dfb9fa6c259a9
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52275288"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54432903"
 ---
 # <a name="migrating-from-orchestrator-to-azure-automation-beta"></a>Миграция из Orchestrator в службу автоматизации Azure (бета-версия)
 Модули Runbook в [System Center Orchestrator](https://technet.microsoft.com/library/hh237242.aspx) основаны на действиях из пакетов интеграции, которые созданы специально для Orchestrator, а модули Runbook службы автоматизации Azure основаны на рабочих процессах Windows PowerShell.  [Графические модули Runbook](automation-runbook-types.md#graphical-runbooks) в службе автоматизации Azure имеют сходный вид с модулями Runbook в Orchestrator, при этом действия представляют собой командлеты PowerShell, зависимые модули Runbook и ресурсы-контейнеры.
@@ -134,3 +134,4 @@ ConvertFrom-SCORunbook -RunbookPath "c:\runbooks\MyRunbooks.ois_export" -Module 
 * [Гибридный компонент Runbook Worker](automation-hybrid-runbook-worker.md)
 * [Стандартные действия Orchestrator](https://technet.microsoft.com/library/hh403832.aspx)
 * [Скачивание набора средств для миграции System Center Orchestrator](https://www.microsoft.com/en-us/download/details.aspx?id=47323)
+

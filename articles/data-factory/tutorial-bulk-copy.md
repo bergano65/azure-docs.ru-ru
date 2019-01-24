@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
-ms.openlocfilehash: c15c79e90b69fd72ed6b8968d35be95da50f838b
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: d22ea75dff884adbfaaa7975eb1d1542b4721f16
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54023878"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438581"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory"></a>Копирование нескольких таблиц в пакетном режиме с помощью фабрики данных Azure
 В этом руководстве показано **копирование нескольких таблиц из базы данных SQL Azure в хранилище данных SQL Azure**. Этот подход можно применить и в других сценариях. Например, копирование таблиц из SQL Server или Oracle в базу данных SQL Azure, хранилище данных или большой двоичный объект Azure, копирование различных путей из большого двоичного объекта в таблицы базы данных SQL Azure.
@@ -46,7 +46,7 @@ ms.locfileid: "54023878"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/install-azurerm-ps).
+* **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 * **Учетная запись хранения Azure.** Учетная запись хранения Azure используется в качестве промежуточного хранилища больших двоичных объектов в операции массового копирования. 
 * **База данных SQL Azure**. Эта база данных содержит исходные данные. 
 * **Хранилище данных Azure SQL.** Это хранилище данных содержит данные, копируемые из базы данных SQL. 

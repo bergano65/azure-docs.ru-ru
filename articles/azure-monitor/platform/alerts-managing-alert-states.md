@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: anantr
-ms.component: alerts
-ms.openlocfilehash: 88601383df5015f9ea23184d65266974bb0f35e1
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.subservice: alerts
+ms.openlocfilehash: 2aa521b0552b60e5a875a5f46ab9887c6e5b6e3e
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53345361"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54472064"
 ---
 # <a name="manage-alert-and-smart-group-states"></a>Управление состоянием оповещений и смарт-групп
 У оповещений в Azure Monitor теперь есть [состояние предупреждения и условие мониторинга](https://aka.ms/azure-alerts-overview), и аналогично у смарт-групп есть [состояние смарт-группы](https://aka.ms/smart-groups). Изменения в состоянии теперь записываются в журнал, связанный с соответствующим оповещением или смарт-группой. В этой статье описывается процесс изменения состояния как для оповещения, так и для смарт-группы.
@@ -47,3 +47,4 @@ ms.locfileid: "53345361"
 
 1. После этого изменение состояния записывается в журнал соответствующей смарт-группы. Его можно просмотреть, открыв соответствующую страницу сведений и проверив раздел журнала.     
 ![Мониторинг](./media/alerts-managing-alert-states/state-sg-history.jpg)
+

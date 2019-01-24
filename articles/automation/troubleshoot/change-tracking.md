@@ -3,18 +3,18 @@ title: Устранение неполадок в службе Отслежив�
 description: В этой статье приводятся сведения об устранении неполадок в службе Отслеживания изменений.
 services: automation
 ms.service: automation
-ms.component: change-inventory-management
+ms.subservice: change-inventory-management
 author: georgewallace
 ms.author: gwallace
 ms.date: 10/24/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 686a2c0ef0766176658d42d5ca53ea1ce6d3241c
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 63dc7148904089a31ff95764898a8dac72c37049
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52722944"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54421342"
 ---
 # <a name="troubleshoot-change-tracking-and-inventory"></a>Устранение неполадок в службах "Отслеживание изменений" и "Учет"
 

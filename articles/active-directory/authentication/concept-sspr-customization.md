@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: sahenry
-ms.openlocfilehash: f523e2e2d55a34825bbb76a5a879c7c046b6b554
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 96e6e51ca9bc1c1f5c9df7169d6968d8b24a6a05
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49318968"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54428381"
 ---
 # <a name="customize-the-azure-ad-functionality-for-self-service-password-reset"></a>Настройка функции самостоятельного сброса пароля в Azure AD
 
@@ -67,7 +67,7 @@ Set-ADFSGlobalWebContent -SigninPageDescriptionText "<p><A href='https://passwor
 
 * После того, как пользователь вводит свое имя пользователя.
 * Когда пользователь обращается к настраиваемому URL-адресу:
-    * путем передачи параметра `whr` на страницу сброса пароля, например https://login.microsoftonline.com/?whr=contoso.com;
+    * путем передачи параметра `whr` на страницу сброса пароля, например https://login.microsoftonline.com/?whr=contoso.com.
     * путем передачи параметра `username` на страницу сброса пароля, например https://login.microsoftonline.com/?username=admin@contoso.com.
 
 Сведения о настройке фирменной символики компании см. в статье о [добавлении фирменной символики компании на страницу входа в Azure AD](../fundamentals/customize-branding.md).

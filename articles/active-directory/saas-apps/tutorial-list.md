@@ -4,7 +4,7 @@ description: Можно настроить интеграцию единого �
 services: active-directory
 documentationcenter: ''
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 08c0c52b-76d9-4250-936a-6bec0edb8816
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -16,12 +16,12 @@ ms.date: 09/26/2018
 ms.author: jeedes
 ms.custom: it-pro
 ms.reviewer: jeedes
-ms.openlocfilehash: 0a1cb952058c61b66bced88f27d8618af729ff36
-ms.sourcegitcommit: 3150596c9d4a53d3650cc9254c107871ae0aab88
+ms.openlocfilehash: 0cc501feea2e7c92ef448c8ca4820d75af0d1ce9
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47419769"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54827522"
 ---
 # <a name="tutorials-for-integrating-saas-applications-with-azure-active-directory"></a>Руководства по интеграции приложений SaaS с Azure Active Directory
 

@@ -3,22 +3,22 @@ title: Сеансы обмена сообщениями служебной ши�
 description: Обработка последовательностей сообщений служебной шины Azure с помощью сеансов.
 services: service-bus-messaging
 documentationcenter: ''
-author: clemensv
+author: axisc
 manager: timlt
-editor: ''
+editor: spelluru
 ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/02/2018
-ms.author: spelluru
-ms.openlocfilehash: f1f796f7dc0a5ca4e1143f07303c218117e745e7
-ms.sourcegitcommit: a08d1236f737915817815da299984461cc2ab07e
+ms.date: 01/23/2019
+ms.author: aschhab
+ms.openlocfilehash: b45b59775abd2db7cea9d0fa9b0cc23f7ce31277
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2018
-ms.locfileid: "52314325"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54848841"
 ---
 # <a name="message-sessions-first-in-first-out-fifo"></a>Сеансы сообщений и обработка в порядке очереди (FIFO) 
 

@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 01/11/2019
-ms.openlocfilehash: 43ee1cb33d5d747671cde7463c8f2fcb6e020662
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.date: 01/17/2019
+ms.openlocfilehash: 8d108df187e7d1fe549f284cffe3c5cbe4d56f7c
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54246523"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54389936"
 ---
 # <a name="managed-api-reference-for-azure-sql-database-managed-instances"></a>Справочник по API управления для Управляемых экземпляров Базы данных SQL Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "54246523"
 
 ## <a name="powershell-create-and-manage-a-managed-instance"></a>PowerShell: Создание Управляемого экземпляра и управление им
 
-Для создания сервера Azure SQL, баз данных и брандмауэров и управления ими с помощью Azure PowerShell используйте приведенные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+Для создания сервера Azure SQL, баз данных и брандмауэров и управления ими с помощью Azure PowerShell используйте приведенные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 > [!TIP]
 > Примеры сценариев PowerShell см. в [кратком руководстве по созданию Управляемого экземпляра SQL Azure с помощью библиотеки PowerShell](https://blogs.msdn.microsoft.com/sqlserverstorageengine/2018/06/27/quick-start-script-create-azure-sql-managed-instance-using-powershell/).

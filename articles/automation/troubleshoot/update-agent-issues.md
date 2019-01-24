@@ -7,20 +7,20 @@ ms.author: gwallace
 ms.date: 12/14/2018
 ms.topic: conceptual
 ms.service: automation
-ms.component: update-management
+ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: 9a16498c527af2d23840c53af11103f7580d80bb
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 5637d409233abc68983bd7cf1e55f406f15e3b59
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53582564"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54432994"
 ---
 # <a name="understand-the-windows-agent-check-results-in-update-management"></a>Общие сведения о результатах проверки агента Windows в службе "Управление обновлениями"
 
 Есть множество причин, по которым для компьютера не отображается состояние **Готово** в службе "Управление обновлениями". В службе "Управление обновлениями" можно проверить работоспособность агента гибридной рабочей роли, чтобы определить первоначальную проблему. В этой статье описывается, как запустить средство устранения неполадок для компьютеров Azure на портале Azure и сторонних компьютеров в [автономных сценариях](#troubleshoot-offline).
 
-В списке ниже приведены три состояния готовности, в которых может находиться компьютер.
+В списке ниже приведены три состояния готовности, в которых может находиться компьютер:
 
 * **Готово** — агент обновления развернут, последний просмотр был менее часа назад.
 * **Отключено** — агент обновления развернут, последний просмотр был более чем час назад.
@@ -201,3 +201,4 @@ CheckResultMessageArguments : {}
 ## <a name="next-steps"></a>Дополнительная информация
 
 Чтобы устранить другие неполадки, ознакомьтесь со статьей [Устранение неполадок с гибридными рабочими ролями Runbook](hybrid-runbook-worker.md).
+

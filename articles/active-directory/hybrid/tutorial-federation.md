@@ -4,7 +4,7 @@ description: Демонстрируется настройка гибридно�
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 08/16/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: b813a276c2047a41038408744637b3dd50aff863
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 9e13b6aca7fd6302fc521e549b0f5a587ead9ed5
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53163520"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54472472"
 ---
 # <a name="tutorial-federate-a-single-ad-forest-environment-to-the-cloud"></a>Руководство. Создание федерации среды одного леса AD в облаке с использованием PHS
 
@@ -87,7 +87,7 @@ Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
 5. Нажмите **Установить**.
 6. Введите ключ лицензии и нажмите кнопку **Далее**.
 7. Установите флажок "Я принимаю условия лицензии" и нажмите кнопку **Далее**.
-8. Выберите **Custom:  Install Windows Only (Advanced)** (Пользовательская: установить только Windows (расширенная)).
+8. Выберите **Custom:  Install Windows Only (Advanced)** (Пользовательская: установить только Windows (расширенная).
 9. Щелкните **Далее**
 10. Когда установка завершится, перезапустите виртуальную машину, выполните вход и запустите обновление Windows, чтобы обеспечить актуальность виртуальной машины.  Установите последние обновления.
 

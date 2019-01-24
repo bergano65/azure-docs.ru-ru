@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: kumud
-ms.openlocfilehash: a1fbe541d9cb2f9b5a839d90fcfa9c7b017efce9
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: bd40278015bf4580759c1b7b9522400b3dae31d6
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54198514"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54475668"
 ---
 # <a name="configure-load-balancing-and-outbound-rules-in-standard-load-balancer-using-azure-cli"></a>Настройка правил балансировки нагрузки и правил для исходящего трафика в Load Balancer (цен. категория "Стандартный") с использованием Azure CLI
 
@@ -32,7 +32,7 @@ ms.locfileid: "54198514"
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group#create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
+Создайте группу ресурсов с помощью команды [az group create](https://docs.microsoft.com/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими.
 
 В следующем примере создается группа ресурсов с именем *myresourcegroupoutbound* в расположении *eastus2*.
 
@@ -42,7 +42,7 @@ ms.locfileid: "54198514"
     --location eastus2
 ```
 ## <a name="create-virtual-network"></a>Создание виртуальной сети
-Создайте виртуальную сеть с именем *myvnetoutbound* и подсетью с именем *mysubnetoutbound* в группе ресурсов *myresourcegroupoutbound* с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet#create).
+Создайте виртуальную сеть с именем *myvnetoutbound* и подсетью с именем *mysubnetoutbound* в группе ресурсов *myresourcegroupoutbound* с помощью команды [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet).
 
 ```azurecli-interactive
   az network vnet create \
@@ -55,7 +55,7 @@ ms.locfileid: "54198514"
 
 ## <a name="create-inbound-public-ip-address"></a>Создание общедоступного входящего IP-адреса 
 
-Для доступа к веб-приложению через Интернет подсистеме балансировки нагрузки требуется общедоступный IP-адрес. Подсистема балансировки нагрузки уровня "Стандартный" поддерживает только стандартные общедоступные IP-адреса. С помощью команды [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip#create) создайте общедоступный IP-адрес ценовой категории "Стандартный" с именем *mypublicipinbound* в группе ресурсов *myresourcegroupoutbound*.
+Для доступа к веб-приложению через Интернет подсистеме балансировки нагрузки требуется общедоступный IP-адрес. Подсистема балансировки нагрузки уровня "Стандартный" поддерживает только стандартные общедоступные IP-адреса. С помощью команды [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip) создайте общедоступный IP-адрес ценовой категории "Стандартный" с именем *mypublicipinbound* в группе ресурсов *myresourcegroupoutbound*.
 
 ```azurecli-interactive
   az network public-ip create --resource-group myresourcegroupoutbound --name mypublicipinbound --sku standard
@@ -63,7 +63,7 @@ ms.locfileid: "54198514"
 
 ## <a name="create-outbound-public-ip-address"></a>Создание исходящего общедоступного IP-адреса 
 
-Создайте IP-адрес категории "Стандартный" для внешней исходящей конфигурации Load Balancer с помощью [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip#create).
+Создайте IP-адрес категории "Стандартный" для внешней исходящей конфигурации Load Balancer с помощью [az network public-ip create](https://docs.microsoft.com/cli/azure/network/public-ip).
 
 ```azurecli-interactive
   az network public-ip create --resource-group myresourcegroupoutbound --name mypublicipoutbound --sku standard
@@ -81,7 +81,7 @@ ms.locfileid: "54198514"
 
 ### <a name="create-load-balancer"></a>Создание балансировщика нагрузки
 
-С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest#create) создайте Load Balancer с именем *lb* с входящим IP address, входящей интерфейсной конфигурацией IP-адресов и внутренним пулом, который связан с общедоступным IP-адресом *mypublicipinbound*, созданным на предыдущем шаге.
+С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) создайте Load Balancer с именем *lb* с входящим IP address, входящей интерфейсной конфигурацией IP-адресов и внутренним пулом, который связан с общедоступным IP-адресом *mypublicipinbound*, созданным на предыдущем шаге.
 
 ```azurecli-interactive
   az network lb create \
@@ -95,7 +95,7 @@ ms.locfileid: "54198514"
   ```
 
 ### <a name="create-outbound-frontend-ip"></a>Создание IP-адреса исходящего внешнего интерфейса
-Создайте IP-конфигурацию исходящего внешнего интерфейса для Load Balancer с помощью команды [az network lb frontend-ip create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest#create) с исходящей интерфейсной конфигурацией IP-адресов с именем *myfrontendoutbound*, которая связана с общедоступным IP-адресом *mypublicipoutbound*
+Создайте IP-конфигурацию исходящего внешнего интерфейса для Load Balancer с помощью команды [az network lb frontend-ip create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с исходящей интерфейсной конфигурацией IP-адресов с именем *myfrontendoutbound*, которая связана с общедоступным IP-адресом *mypublicipoutbound*
 
 ```azurecli-interactive
   az network lb frontend-ip create \
@@ -107,7 +107,7 @@ ms.locfileid: "54198514"
 
 ### <a name="create-health-probe"></a>Создание пробы работоспособности
 
-Проба работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest#create), чтобы отслеживать работоспособность виртуальных машин. 
+Проба работоспособности проверяет все экземпляры виртуальной машины, чтобы убедиться, что они могут отправлять сетевой трафик. Экземпляр виртуальной машины с неудачной пробой удаляется из балансировщика нагрузки, пока не перейдет в оперативный режим и проба не определит его работоспособность. Создайте зонд работоспособности с помощью команды [az network lb probe create](https://docs.microsoft.com/cli/azure/network/lb/probe?view=azure-cli-latest), чтобы отслеживать работоспособность виртуальных машин. 
 
 ```azurecli-interactive
   az network lb probe create \
@@ -121,7 +121,7 @@ ms.locfileid: "54198514"
 
 ### <a name="create-load-balancing-rule"></a>Создание правила балансировки нагрузки
 
-Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул для приема трафика, а также порты источника и назначения. Создайте правило балансировки нагрузки *myinboundlbrule* с помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#create) для прослушивания порта 80 интерфейсным пулом *myfrontendinbound* и отправки сетевого трафика со сбалансированной нагрузкой на внутренний пул адресов *bepool*, также используя порт 80. 
+Правило подсистемы балансировки нагрузки определяет интерфейсную конфигурацию IP-адресов для входящего трафика и внутренний пул для приема трафика, а также порты источника и назначения. Создайте правило балансировки нагрузки *myinboundlbrule* с помощью команды [az network lb rule create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest) для прослушивания порта 80 интерфейсным пулом *myfrontendinbound* и отправки сетевого трафика со сбалансированной нагрузкой на внутренний пул адресов *bepool*, также используя порт 80. 
 
 >[!NOTE]
 >Параметр правила балансировки нагрузки --disable-outbound-snat запрещает автоматическое применение (S)NAT для исходящего трафика. NAT для исходящего трафика предоставляется только с помощью правила для исходящего трафика.

@@ -4,7 +4,7 @@ description: Рекомендации по устранению неполадо
 services: active-directory
 documentationcenter: ''
 author: barbkess
-manager: mtillman
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.component: app-mgmt
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/11/2017
 ms.author: barbkess
 ms.reviwer: japere,asteen
-ms.openlocfilehash: d2670d8f018fc26b7017fba40b5aff4310900dab
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 34a4da2c14b84b9e539fc2d3e755a523cf3574c9
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188697"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54847243"
 ---
 # <a name="problem-signing-in-to-the-access-panel-website"></a>Проблема при входе на веб-сайт панели доступа
 
@@ -159,7 +159,7 @@ ms.locfileid: "54188697"
 
 Чтобы включить самостоятельный сброс пароля, см. инструкции по развертыванию в следующих статьях.
 
--   [Разрешение пользователям сбрасывать пароли Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started#enable-users-to-reset-their-azure-ad-passwords)
+-   [Разрешение пользователям сбрасывать пароли Azure AD](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started)
 
 -   [Разрешение пользователям сбрасывать или изменять пароли AD](https://docs.microsoft.com/azure/active-directory/active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords)
 

@@ -3,19 +3,19 @@ title: Самостоятельный сброс пароля в Azure Active Di
 description: В этой статье объясняется, как настроить самостоятельный сброс пароля для пользователей в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 3d2019101abf1086a58d0224ab31f2aa27afe8de
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: dd44e9e7018bf585adb2e731c064109ffc95e4f6
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54350597"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54844081"
 ---
 # <a name="set-up-self-service-password-reset-for-your-customers"></a>Настройка самостоятельного сброса пароля для пользователей
 

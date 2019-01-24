@@ -1,5 +1,5 @@
 ---
-title: Соединение локальной сети с виртуальною сетью Azure с помощью подключения типа "сеть — сеть" и PowerShell | Документация Майкрософт
+title: 'Подключение локальной сети к виртуальной сети Azure. VPN-подключение "сеть – сеть": PowerShell | Документация Майкрософт'
 description: Сведения о создании подключения IPsec между локальной сетью и виртуальной сетью Azure через общедоступный Интернет. Они помогут вам создать подключение типа "сеть — сеть" с использованием VPN-шлюза и PowerShell.
 services: vpn-gateway
 author: cherylmc
@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 10/22/2018
 ms.author: cherylmc
-ms.openlocfilehash: 4df7353016f33e4525c27536ba862f0412ebf82f
-ms.sourcegitcommit: 5c00e98c0d825f7005cb0f07d62052aff0bc0ca8
+ms.openlocfilehash: 1501ebe2df1ff6fa3505bf637896f6f3e7c827aa
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49953575"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54427735"
 ---
 # <a name="create-a-vnet-with-a-site-to-site-vpn-connection-using-powershell"></a>Создание виртуальной сети с VPN-подключением типа "сеть — сеть" с помощью PowerShell
 
@@ -44,7 +44,7 @@ ms.locfileid: "49953575"
 
 Чтобы установить и использовать PowerShell локально, потребуется установить последнюю версию командлетов PowerShell для Azure Resource Manager. Командлеты PowerShell обновляются часто, и вам, как правило, необходимо обновить командлеты PowerShell, чтобы получить новейшие функциональные возможности. Если вы не обновите командлеты PowerShell, при указании значений может произойти сбой. 
 
-Чтобы определить, какая версия используется, выполните командлет Get-Module -ListAvailable AzureRM. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/overview).
+Чтобы определить, какая версия используется, выполните командлет Get-Module -ListAvailable AzureRM. Если необходимо выполнить обновление, см. статью об [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Подробнее: [Установка и настройка Azure PowerShell](/powershell/azure/overview).
 Если модуль PowerShell запущен локально, необходимо также выполнить командлет Connect-AzureRmAccount, чтобы создать подключение к Azure.
 
 
@@ -57,19 +57,19 @@ ms.locfileid: "49953575"
 
 VnetName                = VNet1
 ResourceGroup           = TestRG1
-Location                = East US 
-AddressSpace            = 10.1.0.0/16 
-SubnetName              = Frontend 
-Subnet                  = 10.1.0.0/24 
+Location                = East US 
+AddressSpace            = 10.1.0.0/16 
+SubnetName              = Frontend 
+Subnet                  = 10.1.0.0/24 
 GatewaySubnet           = 10.1.255.0/27
 LocalNetworkGatewayName = Site1
-LNG Public IP           = <On-premises VPN device IP address> 
+LNG Public IP           = <On-premises VPN device IP address> 
 Local Address Prefixes  = 10.101.0.0/24, 10.101.1.0/24
 Gateway Name            = VNet1GW
 PublicIP                = VNet1GWPIP
-Gateway IP Config       = gwipconfig1 
-VPNType                 = RouteBased 
-GatewayType             = Vpn 
+Gateway IP Config       = gwipconfig1 
+VPNType                 = RouteBased 
+GatewayType             = Vpn 
 ConnectionName          = VNet1toSite1
 
 ```

@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/17/2018
 ms.author: vinagara
-ms.component: alerts
-ms.openlocfilehash: a09dcfbffb6daa2ae2514c608e88c8dc475c9676
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.subservice: alerts
+ms.openlocfilehash: 3459ef4caa99a2147144354165bef7d2852e87cc
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53581442"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54433369"
 ---
 # <a name="alerts-on-activity-log"></a>Оповещения на основе журнала действий 
 
@@ -65,4 +65,5 @@ ms.locfileid: "53581442"
 - Узнайте, как [создавать и изменять оповещения для журнала действий](../../azure-monitor/platform/alerts-activity-log.md).
 - Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](activity-log-alerts-webhook.md).
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../../azure-monitor/platform/service-notifications.md).
+
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.date: 05/17/2017
-ms.openlocfilehash: 4b6eb0aa7011226fda667370f3e854081b795ae6
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: d336d659a15f5b4cb1cbc917a8ae10ab8224d029
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53744876"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54426324"
 ---
 # <a name="work-in-the-apache-hadoop-ecosystem-on-hdinsight-from-a-windows-pc"></a>Работа в экосистеме Apache Hadoop в HDInsight на компьютере с Windows
 
@@ -30,7 +30,7 @@ Azure PowerShell — это среда сценариев, которая по�
 * [выполнение запросов Apache Hive](hadoop/apache-hadoop-use-hive-powershell.md);
 * [управление кластерами](hdinsight-administer-use-powershell.md).
 
-Указания по установке и настройке последней версии Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-azurerm-ps). Если у вас есть сценарии, в которые нужно добавить новые командлеты для Azure Resource Manager, см. статью [Переход к средствам разработки на основе Azure Resource Manager для кластеров HDInsight](hdinsight-hadoop-development-using-azure-resource-manager.md).
+Указания по установке и настройке последней версии Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps). Если у вас есть сценарии, в которые нужно добавить новые командлеты для Azure Resource Manager, см. статью [Переход к средствам разработки на основе Azure Resource Manager для кластеров HDInsight](hdinsight-hadoop-development-using-azure-resource-manager.md).
 
 ## <a name="utilities-you-can-run-in-a-browser"></a>Браузерные служебные программы
 Ниже приведены примеры служебных программ с веб-интерфейсом, выполняемым в браузере.

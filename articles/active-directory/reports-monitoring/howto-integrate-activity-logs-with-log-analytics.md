@@ -4,7 +4,7 @@ description: Узнайте, как выполнять интеграцию жу
 services: active-directory
 documentationcenter: ''
 author: priyamohanram
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 2c3db9a8-50fa-475a-97d8-f31082af6593
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 7509081bbf43aeaf39570f84afef81b6dd5a39fe
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 8b9189ef3fff75023316d5272bd93c136106cf94
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51621672"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54824683"
 ---
 # <a name="integrate-azure-ad-logs-with-log-analytics-using-azure-monitor-preview"></a>Интеграция журналов Azure AD с Log Analytics с помощью Azure Monitor (предварительная версия)
 
@@ -41,8 +41,8 @@ Log Analytics позволяет выполнить запрос данных д
 
 Для дальнейшего анализа можно маршрутизировать журналы аудита и активности входа в Log Analytics. 
 
-* **Журналы аудита**. [Отчет о действиях журналов аудита](concept-audit-logs.md) предоставляет доступ к истории каждой задачи, выполняемой в клиенте.
-* **Журналы входов в систему**. [Отчет о действиях входов в систему](concept-sign-ins.md) позволяет определить, кто выполнил задачи, указанные в отчете журналов аудита.
+* **Журналы аудита**: [отчет о действиях журналов аудита](concept-audit-logs.md) предоставляет доступ к истории каждой задачи, выполняемой в клиенте.
+* **Журналы входов в систему**: [отчет о действиях входов в систему](concept-sign-ins.md) позволяет определить, кто выполнил задачи, указанные в отчете журналов аудита.
 
 > [!NOTE]
 > В настоящее время журналы действий аудита и входов в систему в клиенте B2C не поддерживаются.

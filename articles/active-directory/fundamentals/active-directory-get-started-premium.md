@@ -3,7 +3,7 @@ title: Регистрация для работы с выпусками Azure Ac
 description: Инструкции по регистрации для работы с выпусками Azure Active Directory Premium.
 services: active-directory
 author: eross-msft
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.component: fundamentals
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 09/07/2017
 ms.author: lizross
 ms.reviewer: piotrci
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: fd5f9567c92201b4dfa08c74574df97fa8c91ae2
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: 9a2c7ddc97bacf05cfcab14bffddb18e95c43d68
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54065568"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54446448"
 ---
 # <a name="sign-up-for-azure-active-directory-premium-editions"></a>Регистрация для работы с выпусками Azure Active Directory Premium
 Вы можете приобрести выпуски Azure Active Directory (Azure AD) Premium и связать их со своей подпиской Azure. Если вам нужно создать новую подписку Azure, нужно также активировать план лицензирования и доступ к службе Azure AD.

@@ -5,7 +5,7 @@ keywords: AD FS, ADFS, AD FS management, AAD Connect, Connect, Azure AD, trust, 
 services: active-directory
 documentationcenter: ''
 ms.reviewer: anandyadavmsft
-manager: mtillman
+manager: daveba
 ms.component: hybrid
 ms.assetid: 2593b6c6-dc3f-46ef-8e02-a8e2dc4e9fb9
 ms.service: active-directory
@@ -17,12 +17,12 @@ ms.date: 07/28/2018
 ms.author: billmath
 author: billmath
 ms.custom: ''
-ms.openlocfilehash: 5ac69c53a6b6c1e4695b88e5806f8e883cd52c66
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: bfdc58b8af9fc5c7c5e56e78b17d97aa60681239
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47432060"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54462374"
 ---
 # <a name="manage-ad-fs-trust-with-azure-ad-using-azure-ad-connect"></a>Управление доверием между AD FS и Azure AD с помощью Azure AD Connect
 
@@ -55,15 +55,15 @@ Azure AD Connect не обновляет все параметры для отн
 
 | Поток выполнения | Затронутые параметры |
 | :--- | :--- |
-| Установка первого цикла (экспресс) | None |
+| Установка первого цикла (экспресс) | Нет |
 | Установка первого цикла (новая ферма AD FS) | Создается ферма AD FS, и отношение доверия с Azure AD формируется с нуля. |
 | Установка первого цикла (имеющаяся ферма AD FS, имеющееся отношение доверия Azure AD) | Идентификатор доверия Azure AD, правила преобразования выдачи, конечные точки Azure AD, альтернативный идентификатор (если необходимо), автоматическое обновление метаданных |
 | Сброс отношения доверия Azure AD | Сертификат для подписи маркера, алгоритм для подписи маркеров, идентификатор доверия Azure AD, правила преобразования выдачи, конечные точки Azure AD, альтернативный идентификатор (если необходимо), автоматическое обновление метаданных |
-| Добавление сервера федерации | None |
-| Добавление WAP-сервера | None |
+| Добавление сервера федерации | Нет |
+| Добавление WAP-сервера | Нет |
 | Параметры устройств | Правила преобразования выдачи, IWA для регистрации устройств |
 | Добавление федеративного домена | Если домен добавляется в первый раз, то есть настройка меняется с федерации единого домена на федерацию нескольких доменов, Azure AD Connect повторно создает отношение доверия с нуля. Если отношение доверия с Azure AD уже настроено для нескольких доменов, изменяются только правила преобразования выдачи |
-| Обновление SSL | None |
+| Обновление SSL | Нет |
 
 При выполнении любых операций, когда изменяется какой-либо параметр, Azure AD Connect создает резервную копию текущих параметров отношения доверия в **%ProgramData%\AADConnect\ADFS**.
 

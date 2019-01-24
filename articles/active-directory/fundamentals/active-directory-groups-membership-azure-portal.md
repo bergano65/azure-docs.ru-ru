@@ -3,7 +3,7 @@ title: Добавление группы в другую группу или у�
 description: Узнайте, как добавить группу в другую группу или удалить из нее в Azure Active Directory.
 services: active-directory
 author: eross-msft
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.component: fundamentals
@@ -12,12 +12,12 @@ ms.date: 10/19/2018
 ms.author: lizross
 ms.custom: it-pro, seodec18
 ms.reviewer: krbain
-ms.openlocfilehash: c13be8cbe9c05b9dcf513588825a22722c66e529
-ms.sourcegitcommit: 3ab534773c4decd755c1e433b89a15f7634e088a
+ms.openlocfilehash: 8decffd25f8c29e6430b30d1bb634ac9add63cbb
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2019
-ms.locfileid: "54061901"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54450449"
 ---
 # <a name="add-or-remove-a-group-from-another-group-using-azure-active-directory"></a>Добавление группы в другую группу или удаление из нее с помощью Azure Active Directory
 В этой статье описано, как добавить или удалить группу из другой группы в Azure Active Directory.

@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 06/07/2018
 ms.author: johnkem
-ms.component: logs
-ms.openlocfilehash: 9714cb8ce1c3380ac74150148c8d84bd410e3fc4
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.subservice: logs
+ms.openlocfilehash: d9abfe90296b27918594c41a207befe2b59027b9
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53715225"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54461610"
 ---
 # <a name="archive-the-azure-activity-log"></a>Архивация журнала действий Azure
 В этой статье описано, как настроить архивацию [**журнала действий Azure**](../../azure-monitor/platform/activity-logs-overview.md) в учетной записи хранения с помощью портала Azure, командлетов PowerShell или кроссплатформенного интерфейса командной строки. Архивацию целесообразно применять, если вам нужно хранить данные журнала действий дольше 90 дней (с полным контролем над политикой хранения) для аудита, статического анализа или резервного копирования. Если вам требуется хранить события в течение не более 90 дней, не нужно настраивать архивацию в учетную запись хранения, так как события журнала действий можно хранить в течение этого периода на платформе Azure.
@@ -184,4 +184,5 @@ insights-operational-logs/name=default/resourceId=/SUBSCRIPTIONS/s1id1234-5679-0
 * [Скачивание больших двоичных объектов для анализа](../../storage/blobs/storage-quickstart-blobs-dotnet.md)
 * [Потоковая передача журнала действий в Центры событий](../../azure-monitor/platform/activity-logs-stream-event-hubs.md)
 * [Дополнительные сведения о журнале действий](../../azure-monitor/platform/activity-logs-overview.md)
+
 

@@ -4,7 +4,7 @@ description: Узнайте, как настроить единый вход м�
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 3b565c8d-35e2-482a-b2f4-bf8fd7d8731f
 ms.service: Azure-Active-Directory
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 12/18/2018
 ms.author: jeedes
-ms.openlocfilehash: 188405d110b164d2c83a2a25d0c8705cba04a9e3
-ms.sourcegitcommit: 9f87a992c77bf8e3927486f8d7d1ca46aa13e849
+ms.openlocfilehash: bc54df3ce727eedb5638ba8f43cc7489fd2497c5
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/28/2018
-ms.locfileid: "53810871"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54813245"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-box"></a>Руководство. Интеграция Azure Active Directory с Box
 
@@ -106,7 +106,7 @@ ms.locfileid: "53810871"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Box](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.account.box.com`
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.account.box.com`.
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес следующим образом: `box.net`
 

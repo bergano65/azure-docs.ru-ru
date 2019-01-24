@@ -8,13 +8,13 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 07/13/2017
 ms.author: robb
-ms.component: diagnostic-extension
-ms.openlocfilehash: ddef3ba2f1fa14445b0a06670d8f18abe76911ab
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.subservice: diagnostic-extension
+ms.openlocfilehash: c2d577bd4c89046136a3465ff554e9662dd0ce19
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54230362"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54478133"
 ---
 # <a name="streaming-azure-diagnostics-data-in-the-hot-path-by-using-event-hubs"></a>Потоковая передача данных системы диагностики Azure по критическому пути с помощью Центров событий
 Система диагностики Azure позволяет удобно собирать данные метрик и журналов от виртуальных машин облачных служб и передавать результаты в службу хранилища Azure. Начиная с марта 2016 года (пакет SDK версии 2.9) появилась возможность отправлять диагностические данные в пользовательские источники данных и передавать данные критического пути за несколько секунд с помощью [Центров событий Azure](https://azure.microsoft.com/services/event-hubs/).
@@ -514,3 +514,4 @@ namespace EventHubListener
 
 <!-- Images. -->
 [0]: ../../event-hubs/media/event-hubs-streaming-azure-diags-data/dashboard.png
+

@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 09/28/2018
 ms.author: danlep
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b9fed56746f5b26269f6a70aeedd06ba9b19548f
-ms.sourcegitcommit: 7bc4a872c170e3416052c87287391bc7adbf84ff
+ms.openlocfilehash: 2ff08b0f155be54ee57d2d9999c47aa56a366d09
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48018831"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54852207"
 ---
 # <a name="how-to-find-linux-vm-images-in-the-azure-marketplace-with-the-azure-cli"></a>Поиск образов виртуальных машин Linux в Azure Marketplace с помощью Azure CLI
 В этой статье описывается, как с помощью Azure CLI находить образы виртуальных машин в Azure Marketplace. При создании виртуальной машины программными средствами с помощью CLI, шаблонов диспетчера ресурсов или других средств, эти сведения можно использовать для указания образа Marketplace.
@@ -128,7 +128,7 @@ Debian   credativ     8                  credativ:Debian:8:8.0.201706210        
 ```
 
 ## <a name="navigate-the-images"></a>Переход к образам 
-Еще один способ поиска образа в определенном расположении — это выполнить по-очереди команды [az vm image list-publishers](/cli/azure/vm/image#az_vm_image_list_publishers), [az vm image list-offers](/cli/azure/vm/image#az_vm_image_list_offers) и [az vm image list-skus](/cli/azure/vm/image#az_vm_image_list_skus). С помощью этих команд определяются следующие значения:
+Еще один способ поиска образа в определенном расположении — это выполнить по-очереди команды [az vm image list-publishers](/cli/azure/vm/image#az_vm_image_list_publishers), [az vm image list-offers](/cli/azure/vm/image) и [az vm image list-skus](/cli/azure/vm/image#az_vm_image_list_skus). С помощью этих команд определяются следующие значения:
 
 1. Получить список издателей образов.
 2. Получить список предложений нужного издателя.

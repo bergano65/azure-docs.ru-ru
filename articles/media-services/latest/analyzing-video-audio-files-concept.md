@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: juliako
-ms.openlocfilehash: 95d3f0aac4acdfbd70dcadd8db5c13456e83a7e7
-ms.sourcegitcommit: edacc2024b78d9c7450aaf7c50095807acf25fb6
+ms.openlocfilehash: 20aef7f971b4c4bf8dcff98c633aa0b0aa69811a
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53344318"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54828185"
 ---
 # <a name="analyzing-video-and-audio-files"></a>Анализ видео- и аудиофайлов
 
@@ -148,7 +148,7 @@ ms.locfileid: "53344318"
 |name|Обозначение лица. Это может быть "Неизвестный № 0", идентифицированная знаменитость или заданный клиентом человек.|
 |confidence|Достоверности идентификации лица.|
 |description|Текстовое описание знаменитости. |
-|thumbnalId|Идентификатор эскиза лица.|
+|thumbnailId|Идентификатор эскиза лица.|
 |knownPersonId|Если это известный человек, значением будет внутренний идентификатор.|
 |referenceId|Если это знаменитость, найденная с помощью Bing, значением будет ее идентификатор Bing.|
 |referenceType|В настоящее время только Bing.|

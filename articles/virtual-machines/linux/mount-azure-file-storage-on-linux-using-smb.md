@@ -14,12 +14,13 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/28/2018
 ms.author: cynthn
-ms.openlocfilehash: fde8892f7a32d7b5405eef6661bbf29098325178
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.component: files
+ms.openlocfilehash: 21c903176b0de3e557d575c448e925cfc95fac15
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50958684"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54468682"
 ---
 # <a name="mount-azure-file-storage-on-linux-vms-using-smb"></a>Подключение хранилища файлов Azure на виртуальных машинах Linux с помощью протокола SMB
 
@@ -70,7 +71,7 @@ STORAGEKEY=$(az storage account keys list \
 
 Создайте общий ресурс хранилища файлов с помощью команды [az storage share create](/cli/azure/storage/share#create). 
 
-Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы. Также они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Naming and Referencing Shares, Directories, Files, and Metadata](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata) (Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них).
+Имена общих ресурсов должны содержать только строчные буквы, цифры и отдельные дефисы. Также они не могут начинаться с дефиса. Дополнительные сведения о присвоении имен общим папкам и файлам см. в статье [Именование общих ресурсов, каталогов, файлов и метаданных и ссылка на них](https://docs.microsoft.com/rest/api/storageservices/Naming-and-Referencing-Shares--Directories--Files--and-Metadata).
 
 В этом примере создается файловый ресурс с именем *myshare* и квотой на 10 ГиБ. 
 

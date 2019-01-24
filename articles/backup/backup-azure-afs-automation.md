@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/12/2018
 ms.author: pullabhk
 ms.assetid: 80da8ece-2cce-40dd-8dce-79960b6ae073
-ms.openlocfilehash: 4ead84ef415dcb85682b15414380055d8799b54c
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: bbeccd03fffb699c95d52d50ec5c45e38b43ef51
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54051226"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54430404"
 ---
 # <a name="use-powershell-to-back-up-and-restore-azure-file-shares"></a>Использование PowerShell для резервного копирования и восстановления файловых ресурсов Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "54051226"
 ## <a name="setup-and-registration"></a>Настройка и регистрация
 
 > [!NOTE]
-> Как отмечено [здесь](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.13.0), поддержка новых функций в модуле AzureRM заканчивается в ноябре 2018 года. Таким образом, мы предоставляем поддержку резервного копирования общих ресурсов файлов Azure с новым модулем PowerShell "Az" (сейчас в общедоступной версии).
+> Как отмечено [здесь](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.13.0), поддержка новых функций в модуле AzureRM заканчивается в ноябре 2018 года. Таким образом, мы предоставляем поддержку резервного копирования общих ресурсов файлов Azure с новым модулем PowerShell "Az" (сейчас в общедоступной версии).
 
 Чтобы начать работу, выполните следующие действия.
 

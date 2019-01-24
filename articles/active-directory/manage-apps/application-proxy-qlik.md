@@ -4,7 +4,7 @@ description: Сведения о включении прокси приложе�
 services: active-directory
 documentationcenter: ''
 author: barbkess
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
@@ -13,12 +13,12 @@ ms.date: 09/06/2018
 ms.author: barbkess
 ms.reviewer: japere
 ms.custom: it-pro
-ms.openlocfilehash: d382a71de34e6c1527d810b0576e518b9101cf7d
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 6d370f9fb7fc67c9df5e08a06de38db8e97c6fb0
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53132760"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54471911"
 ---
 # <a name="application-proxy-and-qlik-sense"></a>Прокси приложений и Qlik Sense 
 Совместное использование Azure Active Directory Application Proxy и Qlik Sense упрощает использование прокси приложения для предоставления удаленного доступа к развертыванию Qlik Sense.  

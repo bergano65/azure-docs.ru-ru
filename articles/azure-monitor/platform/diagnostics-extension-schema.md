@@ -8,13 +8,13 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 09/20/2018
 ms.author: robb
-ms.component: diagnostic-extension
-ms.openlocfilehash: 064c1b8100e165627d5227b9f24b87aefae2e769
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.subservice: diagnostic-extension
+ms.openlocfilehash: 92ae1e31a739486871ebff69740f31a495c7b780
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53790764"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54471656"
 ---
 # <a name="azure-diagnostics-extension-configuration-schema-versions-and-history"></a>Журнал и версии схемы конфигурации расширения системы диагностики Azure
 На этой странице приведен указатель версий схемы расширения системы диагностики Azure, которые поставляются в составе пакета Microsoft Azure SDK.  
@@ -210,3 +210,4 @@ ms.locfileid: "53790764"
 * **Диагностику для приложений облачной службы можно настроить только на уровне роли, а не на уровне экземпляра.**
 * **Конфигурация диагностики обновляется при каждом развертывании приложения.** Если изменить конфигурацию диагностики в обозревателе сервера и повторно развернуть приложение, могут возникнуть проблемы с контролем четности.
 * **В пакете SDK для Azure 2.5 и более поздних версиях аварийные дампы настраиваются в файле конфигурации диагностики, а не в коде.** Если вы настроили аварийные дампы в коде проекта, следует вручную перенести параметры из кода в файл конфигурации, так как при переходе на пакет SDK для Azure 2.6 аварийные дампы не переносятся.
+

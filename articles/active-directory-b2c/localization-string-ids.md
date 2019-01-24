@@ -3,19 +3,19 @@ title: Azure Active Directory B2C. Идентификаторы строк ло�
 description: Сведения об указании идентификаторов для определения содержимого с идентификатором api.signuporsignin в настраиваемой политике в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 7619ebf038e164c9e586118c70e34955ca7c4767
-ms.sourcegitcommit: ad08b2db50d63c8f550575d2e7bb9a0852efb12f
+ms.openlocfilehash: 72ed1f7f6d9fe9958bbd78b001d727feb5f8861c
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47222678"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54848416"
 ---
 # <a name="localization-string-ids"></a>Идентификаторы строк локализации
 

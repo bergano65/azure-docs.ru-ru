@@ -9,16 +9,16 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen
-ms.openlocfilehash: b9174d98dd6d4dfb5353d6976d074bb4c91373dc
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: 16455719f05688793e2aee6f10fa00a707d553c0
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52678327"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54469547"
 ---
 # <a name="interact-with-the-map---mouse-events"></a>Взаимодействие с картой — события мыши
 
-В этой статье показано, как использовать свойство [событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest#addeventlistener) [класса карты](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) для выделения событий на карте и на различных слоях карты. Здесь также показано, как использовать свойство событий класса карты для выделения событий при взаимодействии с маркером HTML.
+В этой статье показано, как использовать свойство [событий](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) [класса карты](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.map?view=azure-iot-typescript-latest) для выделения событий на карте и на различных слоях карты. Здесь также показано, как использовать свойство событий класса карты для выделения событий при взаимодействии с маркером HTML.
 
 ## <a name="interact-with-the-map"></a>Взаимодействие с картой
 

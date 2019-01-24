@@ -14,12 +14,13 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/08/2018
 ms.author: cynthn
-ms.openlocfilehash: 0f223660f8dc99b590f8aa80a03d60fcbf3aa5d3
-ms.sourcegitcommit: fbdfcac863385daa0c4377b92995ab547c51dd4f
+ms.component: disks
+ms.openlocfilehash: 9bc230846714264d514b7e15962a2c99c838c7de
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50232585"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54465111"
 ---
 # <a name="create-a-snapshot"></a>Создание моментального снимка
 
@@ -43,7 +44,7 @@ ms.locfileid: "50232585"
 
 Ниже показано, как скопировать диск VHD, создать конфигурацию моментального снимка и собственно моментальный снимок диска с помощью командлета [New-AzureRmSnapshot](/powershell/module/azurerm.compute/new-azurermsnapshot). 
 
-Прежде чем начать, убедитесь, что у вас установлена последняя версия модуля PowerShell AzureRM.Compute (5.7.0 или более поздняя). Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Если модуль PowerShell выполняется локально, выполните командлет [Connect-AzureRmAccount](https://docs.microsoft.com/powershell/module/azurerm.profile/connect-azurermaccount), чтобы подключиться к Azure.
+Прежде чем начать, убедитесь, что у вас установлена последняя версия модуля PowerShell AzureRM.Compute (5.7.0 или более поздняя). Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell выполняется локально, выполните командлет [Connect-AzureRmAccount](https://docs.microsoft.com/powershell/module/azurerm.profile/connect-azurermaccount), чтобы подключиться к Azure.
 
 1. Задайте некоторые параметры: 
 

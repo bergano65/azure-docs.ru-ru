@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 01/12/2019
 ms.author: spelluru
-ms.openlocfilehash: 9fe9952c3885e0e6145141bac7db13694dcdbd11
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 36f1b39ca4cef33a8cfcdb295b5c4d59e1128a0c
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54259671"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54426851"
 ---
 # <a name="quickstart-use-azure-powershell-to-create-a-service-bus-queue"></a>Краткое руководство. Создание очереди Служебной шины с помощью Azure PowerShell
 Служебная шина Microsoft Azure представляет собой брокер интеграции сообщений корпоративного уровня, который гарантирует защищенную и абсолютно надежную доставку сообщений. Типичный сценарий применения служебной шины подразумевает функциональное разделение двух или более приложений, служб либо процессов, которым нужно обмениваться данными или сведениями о состоянии. В таких сценариях часто требуется назначать несколько пакетных заданий для других приложений и служб или запускать обработку заказов. Например, розничная компания может отправлять данные из точек продаж во вспомогательный офис или региональный центр дистрибуции для пополнения запасов и сбора сведений о товарах. В этом сценарии клиентское приложение отправляет сообщения в очередь служебной шины и получает сообщения из нее.
@@ -263,4 +263,4 @@ static async Task ProcessMessagesAsync(Message message, CancellationToken token)
 > [Update inventory using Azure PowerShell](./service-bus-tutorial-topics-subscriptions-powershell.md) (Обновление информации о запасах с помощью Azure PowerShell)
 
 [бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
-[установке и настройке Azure PowerShell]: /powershell/azure/install-azurerm-ps
+[установке и настройке Azure PowerShell]: /powershell/azure/azurerm/install-azurerm-ps

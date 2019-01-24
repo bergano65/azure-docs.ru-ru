@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/15/2017
 ms.author: cynthn
-ms.openlocfilehash: a662a61d737dbb620d07fa6d114649e70c082796
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: b69cc0bcff8f791e0740b30f5521a2a7b36af3b1
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54329775"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54437663"
 ---
 # <a name="migrate-a-classic-vm-to-use-a-managed-disk"></a>Миграция классической виртуальной машины для использования Управляемого диска 
 
@@ -93,7 +93,7 @@ ms.locfileid: "54329775"
 
 Подготовьте приложение к простою. Чтобы выполнить чистый перенос, необходимо остановить все процессы, выполняющиеся в текущей системе. Только так вы получите стабильное состояние, которое можно перенести на новую платформу. Длительность простоя зависит от объема данных на переносимых дисках.
 
-Для этой части требуется модуль Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Кроме того, нужно выполнить команду `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+Для этой части требуется модуль Azure PowerShell 6.0.0 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Кроме того, нужно выполнить команду `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
 
 
 Создайте переменные для общих параметров.

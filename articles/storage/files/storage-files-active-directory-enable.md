@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 01/02/2019
 ms.author: tamram
-ms.openlocfilehash: fd635682d1b5dc7c3ab784208ac485872d5c7099
-ms.sourcegitcommit: da69285e86d23c471838b5242d4bdca512e73853
+ms.openlocfilehash: 8085f3855d58bc1ddb7b4529ac4799b8292cea53
+ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53999005"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54401781"
 ---
 # <a name="enable-azure-active-directory-authentication-over-smb-for-azure-files-preview"></a>Включение аутентификации Azure Active Directory по протоколу SMB для службы файлов Azure (предварительная версия)
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -153,14 +153,15 @@ az storage account update -n <storage-account-name> -g <resource-group-name> --f
   "IsCustom": true,
   "Description": "Allows for read, write and delete access to Azure File Share over SMB",
   "Actions": [
-    "Microsoft.Storage/storageAccounts/fileServices/fileshare/*"
+    "*"
+  ],
+  "NotActions": [
+    "Microsoft.Authorization/*/Delete",
+        "Microsoft.Authorization/*/Write",
+        "Microsoft.Authorization/elevateAccess/Action"
   ],
   "DataActions": [
-    "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/*"
-  ],
-  "NotDataActions": [
-    "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/modifypermission",
-    "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/actasadmin"
+    "*"
   ],
   "AssignableScopes": [
         "/subscriptions/<Subscription-ID>"
@@ -178,10 +179,10 @@ az storage account update -n <storage-account-name> -g <resource-group-name> --f
   "IsCustom": true,
   "Description": "Allows for read access to Azure File Share over SMB",
   "Actions": [
-    "Microsoft.Storage/storageAccounts/fileServices/fileshare/read"
+    "*/read"
   ],
   "DataActions": [
-    "Microsoft.Storage/storageAccounts/fileServices/fileshares/files/read"
+    "*/read"
   ],
   "AssignableScopes": [
         "/subscriptions/<Subscription-ID>"
@@ -240,7 +241,7 @@ New-AzRoleAssignment -SignInName <user-principal-name> -RoleDefinitionName $File
 #List the custom roles
 az role definition list --custom-role-only true --output json | jq '.[] | {"roleName":.roleName, "description":.description, "roleType":.roleType}'
 #Assign the custom role to the target identity
-az role assignment create --role "<custome-role-name>" --assignee <user-principal-name> --scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/fileServices/default/fileshare/<share-name>"
+az role assignment create --role "<custom-role-name>" --assignee <user-principal-name> --scope "/subscriptions/<subscription-id>/resourceGroups/<resource-group>/providers/Microsoft.Storage/storageAccounts/<storage-account>/fileServices/default/fileshare/<share-name>"
 ```
 
 ## <a name="configure-ntfs-permissions-over-smb"></a>Настройка разрешений NTFS по протоколу SMB 

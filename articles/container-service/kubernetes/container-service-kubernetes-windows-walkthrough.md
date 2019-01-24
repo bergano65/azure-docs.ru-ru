@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 07/18/2017
 ms.author: danlep
 ms.custom: H1Hack27Feb2017, mvc, devcenter
-ms.openlocfilehash: dfc1d2128e1cf3b4d6b4d9e5141116a2b2ff9c0d
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 90608e95cee6b5b7231419c2c65c39741f106b0f
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "53000603"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54412646"
 ---
 # <a name="deprecated-deploy-kubernetes-cluster-for-windows-containers"></a>Развертывание кластера Kubernetes для контейнеров Windows (не рекомендуется)
 
@@ -65,7 +65,7 @@ az acs create --orchestrator-type=kubernetes \
 
 Для подключения к кластеру Kubernetes с клиентского компьютера используйте [`kubectl`](https://kubernetes.io/docs/user-guide/kubectl/), клиент командной строки Kubernetes. 
 
-Если вы используете Azure CloudShell, установка `kubectl` уже выполнена. Для локальной установки можно использовать команду [az acs kubernetes install-cli](/cli/azure/acs/kubernetes#install-cli).
+Если вы используете Azure CloudShell, установка `kubectl` уже выполнена. Для локальной установки можно использовать команду [az acs kubernetes install-cli](/cli/azure/acs/kubernetes).
 
 В следующем примере `kubectl` устанавливается в систему с помощью Azure CLI. В Windows запустите следующую команду от имени администратора:
 

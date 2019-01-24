@@ -4,7 +4,7 @@ description: Пошаговые инструкции по созданию и у
 services: active-directory
 documentationcenter: ''
 author: daveba
-manager: mtillman
+manager: daveba
 editor: ''
 ms.service: active-directory
 ms.component: msi
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/16/2018
 ms.author: daveba
-ms.openlocfilehash: 9329695ed582a313ffdf1a83352e7b561b778654
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: 5270bcff74f8738bb8449a158e1da16c25157e61
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51298750"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54452859"
 ---
 # <a name="create-list-and-delete-a-user-assigned-managed-identity-using-azure-resource-manager"></a>Создание и удаление управляемых удостоверений, назначаемых пользователем, а также получение их списка с помощью Azure Resource Manager
 
@@ -49,7 +49,7 @@ ms.locfileid: "51298750"
 
 ## <a name="create-a-user-assigned-managed-identity"></a>Создание управляемого удостоверения, назначаемого пользователем 
 
-Чтобы создать назначаемое пользователем управляемое удостоверение, учетной записи должна быть назначена роль [Участника управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-contributor).
+Чтобы создать назначаемое пользователем управляемое удостоверение, учетной записи должна быть назначена роль [участника управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-contributor).
 
 Для создания управляемого удостоверения, назначаемого пользователем, используйте следующий шаблон. Замените `<USER ASSIGNED IDENTITY NAME>` собственным значением.
 
@@ -71,7 +71,7 @@ ms.locfileid: "51298750"
     {
       "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
       "name": "[parameters('resourceName')]",
-      "apiVersion": "2015-08-31-PREVIEW",
+      "apiVersion": "2018-11-30",
       "location": "[resourceGroup().location]"
     }
   ],

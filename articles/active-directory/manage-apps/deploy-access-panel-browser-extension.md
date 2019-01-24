@@ -4,7 +4,7 @@ description: Как применить групповую политику дл�
 services: active-directory
 documentationcenter: ''
 author: barbkess
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.component: app-mgmt
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.date: 11/08/2018
 ms.author: barbkess
 ms.reviewer: asteen
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: be3950d199b4362caa5fcd3f66b948802cfa1c49
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 3a48b2ce4689490b3a38917edfb776a6ea28c478
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52877482"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54463445"
 ---
 # <a name="how-to-deploy-the-access-panel-extension-for-internet-explorer-using-group-policy"></a>Развертывание расширения панели доступа для Internet Explorer с помощью групповой политики
 В этом руководстве описывается удаленная установка расширения панели доступа для Internet Explorer на компьютерах пользователей с помощью групповой политики. Это расширение является обязательным для пользователей Internet Explorer, выполняющих вход в приложения, для которых настроен [единый вход по паролю](what-is-single-sign-on.md#password-based-sso).

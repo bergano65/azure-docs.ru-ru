@@ -4,7 +4,7 @@ description: Как устранить ошибки, связанные с не�
 services: active-directory
 documentationcenter: ''
 author: barbkess
-manager: mtillman
+manager: daveba
 ms.assetid: ''
 ms.service: active-directory
 ms.component: app-mgmt
@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 09/10/2018
 ms.author: barbkess
 ms.reviewer: asteen
-ms.openlocfilehash: 382b484f5ed1e45863d24635554cd7c3a55176a4
-ms.sourcegitcommit: 5a9be113868c29ec9e81fd3549c54a71db3cec31
+ms.openlocfilehash: 65e903ee1ee8111d3d3b064d6018f49b2e96af47
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44378420"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54478014"
 ---
 # <a name="links-on-the-page-dont-work-for-an-application-proxy-application"></a>Ссылки на странице приложения прокси приложения не работают
 

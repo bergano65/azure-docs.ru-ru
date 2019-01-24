@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.topic: tutorial
 ms.date: 01/10/2018
 ms.author: douglasl
-ms.openlocfilehash: 34580687c047e842bfbfa12730c7c2d9868187b0
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: be9ed1d840eab5478dee4d212705211c0967bdbd
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54014154"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54427973"
 ---
 # <a name="transform-data-in-the-cloud-by-using-a-spark-activity-in-azure-data-factory"></a>Преобразование данных в облаке с помощью действия Spark в фабрике данных Azure
 В этом руководстве вы создадите конвейер фабрики данных Azure с помощью портала Azure. Конвейер преобразует данные с помощью действия Spark и связанной службы Azure HDInsight по запросу. 
@@ -37,7 +37,7 @@ ms.locfileid: "54014154"
 > [!NOTE]
 > HDInsight поддерживает только учетные записи хранения общего назначения с ценовой категорией "Стандартный". Убедитесь, что используете не учетную запись ценовой категории "Премиум" и не учетную запись только для большого двоичного объекта.
 
-* **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/install-azurerm-ps).
+* **Azure PowerShell**. Следуйте инструкциям по [установке и настройке Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 
 
 ### <a name="upload-the-python-script-to-your-blob-storage-account"></a>Отправка скрипта Python в учетную запись хранилища BLOB-объектов
@@ -250,7 +250,7 @@ ms.locfileid: "54014154"
 Чтобы узнать, как преобразовать данные, запустив сценарий Hive в кластере Azure HDInsight, который находится в виртуальной сети, ознакомьтесь со следующим руководством: 
 
 > [!div class="nextstepaction"]
-> [Руководство. Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure](tutorial-transform-data-hive-virtual-network-portal.md).
+> [Руководство Преобразование данных в виртуальной сети Azure с помощью действия Hive в фабрике данных Azure](tutorial-transform-data-hive-virtual-network-portal.md).
 
 
 

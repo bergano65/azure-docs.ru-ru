@@ -12,16 +12,16 @@ ms.author: joke
 ms.reviwer: sstein
 manager: craigg
 ms.date: 06/14/2018
-ms.openlocfilehash: 34277aaa6ad6c5b22fb1691af83091e49d3bf5c1
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 08571ac8b7e13bc0f414b481a481132793ba865d
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54021328"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54452757"
 ---
 # <a name="create-an-elastic-job-agent-using-powershell"></a>Создание агента заданий обработки эластичных баз данных с помощью PowerShell
 
-[Задания обработки эластичных баз данных](elastic-jobs-overview.md) позволяют выполнять скрипты Transact-SQL (T-SQL) в нескольких базах данных одновременно.
+[Задания обработки эластичных баз данных](sql-database-job-automation-overview.md#elastic-database-jobs) позволяют выполнять скрипты Transact-SQL (T-SQL) в нескольких базах данных одновременно.
 
 В рамках этого руководства вы узнаете, что необходимо сделать для выполнения запроса в нескольких базах данных:
 
@@ -65,7 +65,7 @@ ms.locfileid: "54021328"
 
 ## <a name="create-required-resources"></a>Создание необходимых ресурсов
 
-Для создания агента заданий обработки эластичных баз данных требуется база данных (S0 или более поздней версии). Она будет использоваться в качестве [базы данных заданий](elastic-jobs-overview.md#job-database). 
+Для создания агента заданий обработки эластичных баз данных требуется база данных (S0 или более поздней версии). Она будет использоваться в качестве [базы данных заданий](sql-database-job-automation-overview.md#job-database). 
 
 *Следующий скрипт позволяет создать группу ресурсов, сервер и базу данных, которые можно использовать в базе данных заданий. Следующий скрипт также создает второй сервер с двумя пустыми базами данных для выполнения заданий.*
 
@@ -210,7 +210,7 @@ $JobCred = $JobAgent | New-AzureRmSqlElasticJobCredential -Name "jobuser" -Crede
 
 ## <a name="define-the-target-databases-you-want-to-run-the-job-against"></a>Определение целевых баз данных, для которых нужно запустить задание
 
-[Целевая группа](elastic-jobs-overview.md#target-group) определяет набор из одной или нескольких баз данных, в которых будет выполняться шаг задания. 
+[Целевая группа](sql-database-job-automation-overview.md#target-group) определяет набор из одной или нескольких баз данных, в которых будет выполняться шаг задания. 
 
 В следующем фрагменте кода создаются две целевые группы: *ServerGroup* и *ServerGroupExcludingDb2*. *ServerGroup* охватывает все базы данных, имеющиеся на сервере во время выполнения, а *ServerGroupExcludingDb2* охватывает все базы данных сервера, за исключением *TargetDb2*:
 

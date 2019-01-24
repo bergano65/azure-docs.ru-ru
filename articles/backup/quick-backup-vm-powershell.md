@@ -11,19 +11,19 @@ ms.topic: quickstart
 ms.date: 2/14/2018
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 7971c1399cc905353e271e8774c0e7ad36ca79a9
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 873c6f8b815b99425efb578e5129099493e8c657
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52869273"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54437884"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-powershell"></a>Резервное копирование виртуальной машины в Azure с помощью PowerShell
 Модуль Azure PowerShell используется для создания и администрирования ресурсов Azure с помощью командной строки или скриптов. Для защиты данных можно создавать архивы с регулярным интервалом. Служба Azure Backup создает точки восстановления, которые могут храниться в геоизбыточных хранилищах служб восстановления. В этой статье объясняется, как создать резервную копию виртуальной машины с помощью модуля Azure PowerShell. Эти действия можно также выполнить с помощью [Azure CLI](quick-backup-vm-cli.md) или [портала Azure](quick-backup-vm-portal.md).
 
 В этом руководстве объясняется, как включить резервное копирование существующей виртуальной машины Azure. Если вам необходимо создать виртуальную машину, см. руководство по [созданию виртуальной машины с помощью Azure PowerShell](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fpowershell%2fmodule%2ftoc.json).
 
-Для работы с этим кратким руководством требуется модуль Azure PowerShell 4.4 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+Для работы с этим кратким руководством требуется модуль Azure PowerShell 4.4 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 
 
 ## <a name="log-in-to-azure"></a>Вход в Azure

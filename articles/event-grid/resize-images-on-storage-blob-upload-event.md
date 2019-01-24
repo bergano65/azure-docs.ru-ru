@@ -2,22 +2,22 @@
 title: Использование службы "Сетка событий Azure" для автоматического изменения размера переданных изображений | Документация Майкрософт
 description: Служба "Сетка событий Azure" может быть активирована при передаче больших двоичных объектов в службу хранилища Azure. Это можно использовать для отправки файлов изображений, которые передаются в службу хранилища Azure, в другие службы, например службу "Функции Azure", для изменения размера и других улучшений.
 services: event-grid, functions
-author: ggailey777
+author: spelluru
 manager: jpconnoc
 editor: ''
 ms.service: event-grid
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/29/2018
-ms.author: glenga
+ms.date: 01/19/2019
+ms.author: spelluru
 ms.custom: mvc
-ms.openlocfilehash: 4d35ab9df17055b798207aafd0e0bdf3b17426fb
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 4a7e6189914728fac24e51f3b2dee66cc0bd8a05
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188476"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54463717"
 ---
 # <a name="tutorial-automate-resizing-uploaded-images-using-event-grid"></a>Руководство. Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"
 

@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/30/2018
 ms.author: jdial
 ms.custom: ''
-ms.openlocfilehash: 27102f3523749802dc16a28e28f8859d35814990
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 3252395c7a511a00e8da0a31139fce3b2763decb
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46952755"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54461847"
 ---
 # <a name="filter-network-traffic-with-a-network-security-group-using-the-azure-cli"></a>Фильтрация сетевого трафика с помощью групп безопасности сети, используя Azure CLI
 
@@ -128,7 +128,7 @@ az network vnet create \
   --address-prefixes 10.0.0.0/16
 ```
 
-Добавьте подсеть в виртуальную сеть при помощи команды [az network vnet subnet create](/cli/azure/network/vnet/subnet#az_network_vnet_subnet_create). В следующем примере добавляется подсеть с именем *mySubnet* в виртуальную сеть и ей назначается группа безопасности сети *myNsg*:
+Добавьте подсеть в виртуальную сеть при помощи команды [az network vnet subnet create](/cli/azure/network/vnet/subnet). В следующем примере добавляется подсеть с именем *mySubnet* в виртуальную сеть и ей назначается группа безопасности сети *myNsg*:
 
 ```azurecli-interactive
 az network vnet subnet create \

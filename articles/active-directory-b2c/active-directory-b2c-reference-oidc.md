@@ -3,19 +3,19 @@ title: Вход в веб-приложения с помощью OpenID Connect 
 description: Построение веб-приложений с помощью реализации протокола проверки подлинности OpenID Connect в Azure Active Directory.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/30/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 41f6027378e48b525345e29e1d1e08dd2c48aaa5
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: f844cc0b798c035e31b45ef00370f95b1ec06d43
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52843756"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54846036"
 ---
 # <a name="azure-active-directory-b2c-web-sign-in-with-openid-connect"></a>Azure Active Directory B2C. Вход в веб-приложения с помощью OpenID Connect
 OpenID Connect — это протокол проверки подлинности на основе OAuth 2.0, который может использоваться для безопасного входа пользователей в веб-приложения. Используя реализацию OpenID Connect в Azure Active Directory B2C (Azure AD B2C), можно передать Azure Active Directory (Azure AD) регистрацию, вход в систему и другие действия по управлению пользователями в веб-приложениях. В этом руководстве показано, как это сделать (независимо от языка программирования). и описывает, как отправлять и получать сообщения HTTP, не используя ни одну из наших библиотек с открытым исходным кодом.
@@ -34,7 +34,7 @@ OpenID Connect — это протокол проверки подлинност
 
 В этом запросе клиент указывает разрешения, которые необходимо получить от пользователя в параметре `scope`, и поток пользователя, который нужно выполнить в параметре `p`. В следующих разделах приведены три примера для разных потоков пользователей (переносы строк добавлены для удобства чтения). Чтобы понять, как работает каждый запрос, попробуйте вставить его в браузер и запустить.
 
-#### <a name="use-a-sign-in-user-flow"></a>Использование потока пользователя входа
+#### <a name="use-a-sign-in-user-flow"></a>Использование потока пользователя для входа
 ```
 GET https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/oauth2/v2.0/authorize?
 client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
@@ -47,7 +47,7 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 &p=b2c_1_sign_in
 ```
 
-#### <a name="use-a-sign-up-user-flow"></a>Использование потока пользователя регистрации
+#### <a name="use-a-sign-up-user-flow"></a>Использование потока пользователя для регистрации
 ```
 GET https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/oauth2/v2.0/authorize?
 client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
@@ -60,7 +60,7 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 &p=b2c_1_sign_up
 ```
 
-#### <a name="use-an-edit-profile-user-flow"></a>Использование потока пользователя изменения профиля
+#### <a name="use-an-edit-profile-user-flow"></a>Использование потока пользователя для изменения профиля
 ```
 GET https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/oauth2/v2.0/authorize?
 client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6

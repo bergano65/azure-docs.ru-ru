@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/24/2017
 ms.author: cherylmc
-ms.openlocfilehash: d23ed383bee3346cfbb20c6935dd3630e137c179
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 72e990516ce6ae3276c6db6f12d1a5dda4d0386f
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45573912"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54432512"
 ---
 # <a name="reset-a-vpn-gateway"></a>Сброс VPN-шлюза
 
@@ -62,7 +62,7 @@ VPN-шлюз состоит из двух экземпляров виртуал�
 
 ### <a name="resource-manager-deployment-model"></a>Модель развертывания диспетчера ресурсов
 
-Командлет сброса шлюза — **Reset-AzureRmVirtualNetworkGateway**. Перед выполнением сброса убедитесь, что у вас установлена последняя версия командлетов [PowerShell для Azure Resource Manager](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-4.0.0). В следующем примере выполняется сброс шлюза виртуальной сети с именем VNet1GW в группе ресурсов TestRG1:
+Командлет сброса шлюза — **Reset-AzureRmVirtualNetworkGateway**. Перед выполнением сброса убедитесь, что у вас установлена последняя версия командлетов [PowerShell для Azure Resource Manager](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-4.0.0). В следующем примере выполняется сброс шлюза виртуальной сети с именем VNet1GW в группе ресурсов TestRG1:
 
 ```powershell
 $gw = Get-AzureRmVirtualNetworkGateway -Name VNet1GW -ResourceGroupName TestRG1

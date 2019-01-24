@@ -3,18 +3,19 @@ title: Обзор очередей сообщений, разделов и по�
 description: Общие сведения о сущностях обмена сообщениями в служебной шине.
 services: service-bus-messaging
 documentationcenter: na
-author: spelluru
+author: axisc
 manager: timlt
+editor: spelluru
 ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 09/18/2018
-ms.author: spelluru
-ms.openlocfilehash: c4899db41f9c60bf6efb40c4d53aaa35f22ad275
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.author: aschhab
+ms.openlocfilehash: 7cacabf4f171189810e943043b5513e20113d962
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53312890"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54847037"
 ---
 # <a name="service-bus-queues-topics-and-subscriptions"></a>Очереди, разделы и подписки служебной шины
 
@@ -73,7 +74,7 @@ ms.locfileid: "53312890"
 Дополнительные сведения и примеры использования обмена сообщениями в служебной шине Microsoft Azure см. в следующих дополнительных статьях:
 
 * [Основные сведения об обмене сообщениями через служебную шину](service-bus-messaging-overview.md)
-* [Краткое руководство [по отправке и получению сообщений Служебной шины Azure с помощью портала Azure и .NET](service-bus-quickstart-portal.md)
+* [Краткое руководство по отправке и получению сообщений Служебной шины Azure с помощью портала Azure и .NET](service-bus-quickstart-portal.md)
 * [Руководство. Обновление информации о запасах с помощью портала Azure, разделов и подписок](service-bus-tutorial-topics-subscriptions-portal.md)
 
 

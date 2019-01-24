@@ -3,7 +3,7 @@ title: Общие сведения об архитектуре Azure Active Dire
 description: Сведения о том, что такое клиент Azure Active Directory и как управлять Azure с помощью Azure Active Directory.
 services: active-directory
 author: eross-msft
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.component: fundamentals
 ms.workload: identity
@@ -12,12 +12,12 @@ ms.date: 08/23/2018
 ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
-ms.openlocfilehash: 6d53de431ea619dfc8865ef23439146517d37764
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 7667f7b52f9130c9793a86a185a15f8dec1ae063
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54013304"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54452162"
 ---
 # <a name="what-is-the-azure-active-directory-architecture"></a>Что такое архитектура Azure Active Directory?
 Azure Active Directory (Azure AD) позволяет безопасно управлять доступом к службам и ресурсам Azure пользователей, а также содержит полный набор возможностей управления удостоверениями. Дополнительные сведения о возможностях Azure AD см. в статье [Что такое Microsoft Azure Active Directory](active-directory-whatis.md).

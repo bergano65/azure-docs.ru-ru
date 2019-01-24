@@ -6,14 +6,14 @@ author: banisadr
 manager: darosa
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 10/01/2018
+ms.date: 01/01/2019
 ms.author: babanisa
-ms.openlocfilehash: 7d8ee60f033d824a3ff83a7c6948c72160e24c1d
-ms.sourcegitcommit: 5843352f71f756458ba84c31f4b66b6a082e53df
+ms.openlocfilehash: bb82ef542db09b3b7f864c4901107e1c5c0827f6
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47584291"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54464792"
 ---
 # <a name="receive-events-to-an-http-endpoint"></a>Получение событий через конечную точку HTTP
 
@@ -52,7 +52,7 @@ ms.locfileid: "47584291"
 
 Сначала нужно обработать событие `Microsoft.EventGrid.SubscriptionValidationEvent`. Каждый раз, когда пользователь подписывается на событие, служба "Сетка событий" отправляет событие проверки в конечную точку с `validationCode` в полезных данных. Конечная точка необходима для передачи этих данных обратно в тело ответа, чтобы [подтвердить, что конечная точка допустима и вы являетесь ее владельцем](security-authentication.md#webhook-event-delivery). При использовании [триггера Сетки событий](../azure-functions/functions-bindings-event-grid.md) вместо функции, активируемой веб-перехватчиком, проверка конечной точки выполняется автоматически. При использовании службы API сторонних производителей (например, [Zapier](https://zapier.com) или [IFTTT](https://ifttt.com/)), возможно, не удастся вывести на экран код проверки программными средствами. Для этих служб можно вручную проверить подписку с помощью URL-адреса проверки, который отправляется в событии проверки подписки. Скопируйте этот URL-адрес в свойство `validationUrl` и отправьте запрос GET через клиент REST или веб-браузер.
 
-Возможность выполнения проверки вручную реализована предварительной версии. Для ее использования необходимо установить [расширение службы "Сетка событий"](/cli/azure/azure-cli-extensions-list) для [Azure CLI](/cli/azure/install-azure-cli). Расширение можно установить с помощью `az extension add --name eventgrid`. В случае использования REST API, убедитесь, что его версия соответствует `api-version=2018-05-01-preview`.
+Возможность выполнения проверки вручную реализована предварительной версии. Для ее использования необходимо установить [расширение службы "Сетка событий"](/cli/azure/azure-cli-extensions-list) для [Azure CLI](/cli/azure/install-azure-cli). Расширение можно установить с помощью `az extension add --name eventgrid`. В случае использования REST API убедитесь, что его версия соответствует `api-version=2018-05-01-preview`.
 
 В C# функция `DeserializeEventGridEvents()` десериализует события в сетке. Он десериализует данные события в соответствующий тип, например StorageBlobCreatedEventData. Используйте класс `Microsoft.Azure.EventGrid.EventTypes` для получения поддерживаемых типов и имен событий.
 

@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: reference
 ms.date: 10/11/2018
 ms.author: johnkem
-ms.component: logs
-ms.openlocfilehash: e31c957e9ef24079d6917109ec9c5f85928bfbd7
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.subservice: logs
+ms.openlocfilehash: ebadf69d5740dc9b9907880917516419129db170
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54260981"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54468836"
 ---
 # <a name="supported-services-schemas-and-categories-for-azure-diagnostic-logs"></a>Поддерживаемые службы, схемы и категории для журналов диагностики Azure
 
@@ -209,3 +209,4 @@ ms.locfileid: "54260981"
 * [Потоковая передача журналов диагностики Azure в **Центры событий**](../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md)
 * [Создание или обновление диагностического параметра](https://docs.microsoft.com/rest/api/monitor/diagnosticsettings)
 * [Сбор журналов и метрик для служб Azure для использования в Log Analytics](../../azure-monitor/platform/collect-azure-metrics-logs.md)
+

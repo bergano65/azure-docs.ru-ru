@@ -11,13 +11,13 @@ author: oslake
 ms.author: moslake
 ms.reviewer: vanto, genemi
 manager: craigg
-ms.date: 1/16/2019
-ms.openlocfilehash: 2c022bd002700426eea2c6b38a667cd5a1381c02
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.date: 01/17/2019
+ms.openlocfilehash: 0a0a5a046bd1afefe3f4c72e713a0dafe0c856e4
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/17/2019
-ms.locfileid: "54359856"
+ms.locfileid: "54390400"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-azure-sql"></a>Использование конечных точек службы и правил виртуальной сети для SQL Azure
 
@@ -173,7 +173,7 @@ When searching for blogs about ASM, you probably need to use this old and now-fo
 PolyBase часто используют для загрузки данных в Хранилище данных SQL Azure из учетных записей службы хранилища Azure. Если учетная запись службы хранилища Azure, из которой загружаются данные, предоставляет доступ только к набору подсетей виртуальной сети, подключение из PolyBase к учетной записи будет прервано. Чтобы обеспечить возможность импорта и экспорта PolyBase в Хранилище данных SQL Azure, подключенное к службе хранилища Azure, прикрепленной к виртуальной сети, сделайте следующее:
 
 #### <a name="prerequisites"></a>Предварительные требования
-1.  Установите Azure PowerShell, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/powershell/azure/install-azurerm-ps).
+1.  Установите Azure PowerShell, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/powershell/azure/install-az-ps).
 2.  При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо сначала выполнить обновление до учетной записи хранения общего назначения версии 2, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
 3.  Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
  

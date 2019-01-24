@@ -16,14 +16,14 @@ ms.workload: infrastructure
 ms.date: 03/23/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 5605ac9f3ac4f9a1c85cfedf257cb721205564db
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.openlocfilehash: bc548ea23249f89fadcec481cc97b6ca3ed2b909
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51613432"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54466862"
 ---
-# <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство по созданию виртуальных машин Linux и управлению ими с помощью Azure CLI
+# <a name="tutorial-create-and-manage-linux-vms-with-the-azure-cli"></a>Руководство. Создание виртуальных машин Linux и управление ими с помощью Azure CLI
 
 Виртуальные машины Azure предоставляют полностью настраиваемую и гибкую вычислительную среду. В этом руководстве рассматриваются основные элементы развертывания виртуальной машины Azure, например выбор ее размера, образа и ее развертывание. Вы узнаете, как выполнять следующие задачи:
 
@@ -211,7 +211,7 @@ az vm create \
 
 ### <a name="resize-a-vm"></a>Изменение размера виртуальной машины
 
-После развертывания виртуальной машины ее размер можно изменить, чтобы увеличить или уменьшить выделенные ей ресурсы. Текущий размер виртуальной машины можно просмотреть с помощью команды [az vm show](/cli/azure/vm#az_vm_show):
+После развертывания виртуальной машины ее размер можно изменить, чтобы увеличить или уменьшить выделенные ей ресурсы. Текущий размер виртуальной машины можно просмотреть с помощью команды [az vm show](/cli/azure/vm):
 
 ```azurecli-interactive
 az vm show --resource-group myResourceGroupVM --name myVM --query hardwareProfile.vmSize
@@ -228,7 +228,7 @@ az vm list-vm-resize-options --resource-group myResourceGroupVM --name myVM --qu
 az vm resize --resource-group myResourceGroupVM --name myVM --size Standard_DS4_v2
 ```
 
-Если желаемый размер в текущем кластере недоступен, то перед изменением размера виртуальную машину нужно освободить. Используйте команду [az vm deallocate]( /cli/azure/vm#az_vm_deallocate), чтобы остановить и освободить виртуальную машину. Обратите внимание на то, что после повторного включения виртуальной машины все данные на временном диске могут быть удалены. Кроме того, изменится общедоступный IP-адрес, если только не используется статический IP-адрес. 
+Если желаемый размер в текущем кластере недоступен, то перед изменением размера виртуальную машину нужно освободить. Используйте команду [az vm deallocate]( /cli/azure/vm), чтобы остановить и освободить виртуальную машину. Обратите внимание на то, что после повторного включения виртуальной машины все данные на временном диске могут быть удалены. Кроме того, изменится общедоступный IP-адрес, если только не используется статический IP-адрес. 
 
 ```azurecli-interactive 
 az vm deallocate --resource-group myResourceGroupVM --name myVM

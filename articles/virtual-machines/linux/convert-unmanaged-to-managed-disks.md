@@ -15,12 +15,13 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 12/15/2017
 ms.author: rogarana
-ms.openlocfilehash: 62ac70134c1bdf9d178d59723ff73561049a4bbf
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.component: disks
+ms.openlocfilehash: ee3f24b7e7a0e4242337aabedc87515b7fabbb9a
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46993080"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54467965"
 ---
 # <a name="convert-a-linux-virtual-machine-from-unmanaged-disks-to-managed-disks"></a>Переключение виртуальной машины Linux с неуправляемых дисков на управляемые диски
 
@@ -37,7 +38,7 @@ ms.locfileid: "46993080"
 ## <a name="convert-single-instance-vms"></a>Преобразование одноэкземплярных виртуальных машин
 В этом разделе описывается, как преобразовать одноэкземплярные виртуальные машины Azure с неуправляемыми дисками, чтобы они могли использовать Управляемые диски. (Если виртуальные машины находятся в группе доступности, ознакомьтесь со следующим разделом.) Этот процесс позволяет переключить виртуальные машины с неуправляемых дисков уровня "Премиум" (SSD) на управляемые диски уровня "Премиум" или с неуправляемых дисков уровня "Стандартный" (жесткие диски) на управляемые диски уровня "Стандартный".
 
-1. Отмените выделение виртуальной машины с помощью команды [az vm deallocate](/cli/azure/vm#az_vm_deallocate). В следующем примере освобождается виртуальная машина `myVM`, входящая в группу ресурсов `myResourceGroup`.
+1. Отмените выделение виртуальной машины с помощью команды [az vm deallocate](/cli/azure/vm). В следующем примере освобождается виртуальная машина `myVM`, входящая в группу ресурсов `myResourceGroup`.
 
     ```azurecli
     az vm deallocate --resource-group myResourceGroup --name myVM
@@ -71,7 +72,7 @@ ms.locfileid: "46993080"
         --output table
     ```
 
-2. Отмените выделение всех виртуальных машин командой [az vm deallocate](/cli/azure/vm#az_vm_deallocate). В следующем примере освобождается виртуальная машина `myVM`, входящая в группу ресурсов `myResourceGroup`.
+2. Отмените выделение всех виртуальных машин командой [az vm deallocate](/cli/azure/vm). В следующем примере освобождается виртуальная машина `myVM`, входящая в группу ресурсов `myResourceGroup`.
 
     ```azurecli
     az vm deallocate --resource-group myResourceGroup --name myVM

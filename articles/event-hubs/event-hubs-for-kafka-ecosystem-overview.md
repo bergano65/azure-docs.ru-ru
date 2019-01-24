@@ -3,19 +3,19 @@ title: Использование концентратора событий из
 description: В этой статье содержатся сведения о поддержке Apache Kafka в службе "Центры событий Azure".
 services: event-hubs
 documentationcenter: .net
-author: basilhariri
+author: shvija
 manager: timlt
 ms.service: event-hubs
 ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: bahariri
-ms.openlocfilehash: 1c484b6418fd5a453713bc464fff690ef444f109
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: 8bf381e7c66e06bbaa140ed865f0f7c9b4f001af
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53091192"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54452349"
 ---
 # <a name="use-azure-event-hubs-from-apache-kafka-applications"></a>Использование Центров событий Azure из приложений Apache Kafka
 Центры событий предоставляют конечную точку Kafka, которую существующие приложения на основе Kafka могут использовать в качестве альтернативы запуска собственного кластера Kafka. Центры событий поддерживают [Apache Kafka 1.0](https://kafka.apache.org/documentation/) и более новые версии протокола и работают с имеющимися приложениями Kafka, в том числе с MirrorMaker.  
@@ -31,7 +31,7 @@ ms.locfileid: "53091192"
 | Понятия Kafka | Понятия Центров событий|
 | --- | --- |
 | HDInsight | Пространство имен |
-| Раздел | Центры событий; |
+| Раздел | Концентратор событий |
 | Секция | Секция|
 | Группа потребителей | Группа потребителей |
 | Offset | Offset|
@@ -76,6 +76,4 @@ ms.locfileid: "53091192"
 - [Использование Akka Streams с Центрами событий для Apache Kafka](event-hubs-kafka-akka-streams-tutorial.md)
 - [Migrating to Azure Event Hubs for Apache Kafka Ecosystems](https://github.com/Azure/azure-event-hubs-for-kafka) (Переход в Центры событий Azure для экосистем Apache Kafka)
 
- 
- 
 

@@ -3,18 +3,18 @@ title: Просмотр изменений содержимого файлов �
 description: Используйте функцию изменения содержимого файла в службе отслеживания изменений для просмотра содержимого файла, который был изменен.
 services: automation
 ms.service: automation
-ms.component: change-inventory-management
+ms.subservice: change-inventory-management
 author: georgewallace
 ms.author: gwallace
 ms.date: 07/03/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0582505d66bbef3064359fa4047676c4ba60b4e9
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: ad011d778ab575c146c202a7940e03a4451979fb
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37871126"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438007"
 ---
 # <a name="view-contents-of-a-file-that-is-being-tracked-with-change-tracking"></a>Просмотр содержимого файла, который отслеживается с помощью отслеживания изменений
 
@@ -76,3 +76,4 @@ ms.locfileid: "37871126"
 > [Устранение неполадок при изменениях в среде](automation-tutorial-troubleshoot-changes.md)
 
 * Используйте [Поиск по журналам в Log Analytics](../log-analytics/log-analytics-log-searches.md) для просмотра подробных данных по отслеживанию изменений.
+

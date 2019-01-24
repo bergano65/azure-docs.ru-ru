@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/15/2017
 ms.author: jdial
-ms.openlocfilehash: 7a981297c3b0d958761f0c802bbe9a75dc0220b4
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 0536c684e8a48cd7e4f8bc113c85e1b3f39c42ec
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46987795"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54468222"
 ---
 # <a name="add-network-interfaces-to-or-remove-network-interfaces-from-virtual-machines"></a>Добавление и удаление сетевых интерфейсов виртуальных машин
 
@@ -34,7 +34,7 @@ ms.locfileid: "46987795"
 
 - Если у вас нет учетной записи Azure, зарегистрируйтесь для получения [бесплатной пробной учетной записи](https://azure.microsoft.com/free).
 - При использовании портала перейдите по адресу https://portal.azure.com и войдите с использованием своей учетной записи Azure.
-- При использовании команд PowerShell для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/powershell) или в PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Для работы с этим руководством требуется модуль Azure PowerShell версии не ниже 5.2.0. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
+- При использовании команд PowerShell для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/powershell) или в PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка, с помощью которой можно выполнять действия, описанные в этой статье. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Для работы с этим руководством требуется модуль Azure PowerShell версии не ниже 5.2.0. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzureRmAccount`, чтобы создать подключение к Azure.
 - При использовании команд интерфейса командной строки Azure (CLI) для работы с этой статьей выполняйте их в [Azure Cloud Shell](https://shell.azure.com/bash) или в интерфейсе командной строки на своем компьютере. Для этого руководства требуется Azure CLI версии не ниже 2.0.26. Выполните командлет `az --version`, чтобы узнать установленную версию. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli). Если Azure CLI запущен локально, необходимо также выполнить командлет `az login`, чтобы создать подключение к Azure.
 
 ## <a name="add-existing-network-interfaces-to-a-new-vm"></a>Добавление имеющихся сетевых интерфейсов к новой виртуальной машине
@@ -45,9 +45,9 @@ ms.locfileid: "46987795"
 
 Перед созданием виртуальной машины создайте сетевой интерфейс, выполнив шаги, описанные в разделе [Создание сетевого интерфейса](virtual-network-network-interface.md#create-a-network-interface).
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
-|Интерфейс командной строки|[az vm create](/cli/azure/vm?toc=%2fazure%2fvirtual-network%2ftoc.json#az_vm_create)|
+|Интерфейс командной строки|[az vm create](/cli/azure/vm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 |PowerShell|[New-AzureRmVM](/powershell/module/azurerm.compute/new-azurermvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 
 ## <a name="vm-add-nic"></a>Добавление сетевого интерфейса к имеющейся виртуальной машине
@@ -67,7 +67,7 @@ ms.locfileid: "46987795"
 7. Выберите **Обзор** в разделе **Параметры**, а затем нажмите кнопку **Запустить**, чтобы запустить виртуальную машину.
 8. Настройте ОС виртуальной машины для использования нескольких сетевых интерфейсов. Дополнительные сведения см. в статьях о настройке виртуальных машин [Windows](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics) или [Linux](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-guest-os-for-multiple-nics).
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|az vm nic add — см. [раздел руководства](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az_vm_nic_add) или [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-a-vm)|
 |PowerShell|Add-AzureRmVMNetworkInterface — см. [раздел руководства](/powershell/module/azurerm.compute/add-azurermvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) или [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-an-existing-vm)|
@@ -83,7 +83,7 @@ ms.locfileid: "46987795"
 
 ### <a name="commands"></a>Команды
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az vm show](/cli/azure/vm?toc=%2fazure%2fvirtual-network%2ftoc.json#az_vm_show)|
 |PowerShell|[Get-AzureRmVM](/powershell/module/azurerm.compute/get-azurermvm?toc=%2fazure%2fvirtual-network%2ftoc.json)|
@@ -102,7 +102,7 @@ ms.locfileid: "46987795"
 
 ### <a name="commands"></a>Команды
 
-|Средство|Get-Help|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|az vm nic remove — см. [раздел руководства](/cli/azure/vm/nic?toc=%2fazure%2fvirtual-network%2ftoc.json#az_vm_nic_remove) или [подробные инструкции](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-a-vm)|
 |PowerShell|Remove-AzureRmVMNetworkInterface — см. [раздел руководства](/powershell/module/azurerm.compute/remove-azurermvmnetworkinterface?toc=%2fazure%2fvirtual-network%2ftoc.json) или [подробные инструкции](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#remove-a-nic-from-an-existing-vm)|

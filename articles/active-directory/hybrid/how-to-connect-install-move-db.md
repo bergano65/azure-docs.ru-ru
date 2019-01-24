@@ -3,19 +3,19 @@ title: Перемещение базы данных Azure AD Connect с SQL Serv
 description: В этом документе описано, как переместить базу данных Azure AD Connect с локального сервера SQL Server Express на удаленный сервер SQL Server.
 services: active-directory
 author: billmath
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: get-started-article
 ms.date: 03/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: cbc86405225cca0d5144b48b113cf41607ce16f4
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 8f9d530531d5f72e92bdb7362879199ce6a4853c
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53434126"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54474852"
 ---
 # <a name="move-azure-ad-connect-database-from-sql-server-express-to-sql-server"></a>Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server 
 

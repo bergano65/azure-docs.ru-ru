@@ -5,7 +5,7 @@ services: active-directory
 keywords: защита удостоверений Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности
 documentationcenter: ''
 author: MarkusVi
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 65ca79b9-4da1-4d5b-bebd-eda776cc32c7
 ms.service: active-directory
@@ -17,12 +17,12 @@ ms.topic: article
 ms.date: 12/07/2017
 ms.author: markvi
 ms.reviewer: nigu
-ms.openlocfilehash: 0a546acd05246e011fa66abea8a667d0b3513588
-ms.sourcegitcommit: d0ea925701e72755d0b62a903d4334a3980f2149
+ms.openlocfilehash: a105e6d85f1c62b166c08ae269928694d2fcb48e
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "40005904"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54465825"
 ---
 # <a name="azure-active-directory-identity-protection-notifications"></a>Уведомления защиты идентификации Azure Active Directory
 
@@ -57,7 +57,7 @@ ms.locfileid: "40005904"
 ## <a name="weekly-digest-email"></a>сообщение электронной почты еженедельного дайджеста.
 
 В электронном сообщении еженедельного дайджеста содержится сводка новых событий риска.  
-Сюда входят:
+ Сюда входят:
 
 - пользователи под угрозой;
 

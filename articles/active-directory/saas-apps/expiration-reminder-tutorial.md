@@ -4,7 +4,7 @@ description: Узнайте, как настроить единый вход м�
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 3df3d73e-80a4-4b35-bd3d-90bc4f6f6afd
 ms.service: Azure-Active-Directory
@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 12/6/2018
+ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 04874eff4375ac57a8c8e15a11399ca650bd5c15
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: aa5c8a69422c74efad74926cfaec544d5ee2f126
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53020777"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54811066"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-expiration-reminder"></a>Руководство. Интеграция Azure Active Directory с Expiration Reminder
 
@@ -78,8 +78,8 @@ ms.locfileid: "53020777"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в Expiration Reminder](#configure-expiration-reminder-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Создание тестового пользователя Expiration Reminder](#create-expiration-reminder-test-user)** требуется для того, чтобы в Expiration Reminder существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
-5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Expiration Reminder](#create-expiration-reminder-test-user)** требуется для того, чтобы в Expiration Reminder существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD

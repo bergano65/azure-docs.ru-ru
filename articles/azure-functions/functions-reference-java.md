@@ -11,12 +11,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: routlaw
-ms.openlocfilehash: c9a66036902f346a7a9fd337416cbe85acca7856
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: 429c7c266357b4808ab3ebbb7f346cf22d9f479c
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54200944"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54855404"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -272,7 +272,7 @@ public class Function {
 
 ## <a name="metadata"></a>Метаданные
 
-Несколько триггеров отправляют [метаданные триггеров](/azure/azure-functions/functions-triggers-bindings#trigger-metadata-properties) вместе с входными данными. Вы можете использовать заметки `@BindingName` для привязки к метаданным триггера.
+Несколько триггеров отправляют [метаданные триггеров](/azure/azure-functions/functions-triggers-bindings) вместе с входными данными. Вы можете использовать заметки `@BindingName` для привязки к метаданным триггера.
 
 
 ```Java

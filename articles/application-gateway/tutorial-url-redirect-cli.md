@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.date: 7/14/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 60dacaa6b8a813c3e77bbd2d661740510e903b26
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: eae26868e2684f6c95fb2860506c18d17096f98c
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54160001"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54465757"
 ---
 # <a name="tutorial-create-an-application-gateway-with-url-path-based-redirection-using-the-azure-cli"></a>Руководство. Создание шлюза приложений с перенаправлением на основе URL-пути при помощи Azure CLI
 
@@ -43,7 +43,7 @@ ms.locfileid: "54160001"
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#create).
+Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group).
 
 В следующем примере создается группа ресурсов с именем *myResourceGroupAG* в расположении *eastus*.
 
@@ -77,7 +77,7 @@ az network public-ip create \
 
 ## <a name="create-an-application-gateway"></a>Создание шлюза приложений
 
-Выполните команду [az network application-gateway create](/cli/azure/network/application-gateway#create), чтобы создать шлюз приложений myAppGateway. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myPublicIPAddressddress*, созданным ранее.
+Выполните команду [az network application-gateway create](/cli/azure/network/application-gateway), чтобы создать шлюз приложений myAppGateway. При создании шлюза приложений с помощью Azure CLI укажите такие сведения о конфигурации, как емкость, номер SKU и параметры HTTP. Шлюз приложений назначается подсети *myAGSubnet* и адресу *myPublicIPAddressddress*, созданным ранее.
 
 ```azurecli-interactive
 az network application-gateway create \
@@ -182,7 +182,7 @@ az network application-gateway url-path-map rule create \
 
 ### <a name="add-redirection-configuration"></a>Добавление конфигурации перенаправления
 
-Можно настроить перенаправление для прослушивателя с помощью команды [az network application-gateway redirect-config create](/cli/azure/network/application-gateway#az-network_application_gateway_redirect_config_create).
+Можно настроить перенаправление для прослушивателя с помощью команды [az network application-gateway redirect-config create](/cli/azure/network/application-gateway).
 
 ```azurecli-interactive
 az network application-gateway redirect-config create \

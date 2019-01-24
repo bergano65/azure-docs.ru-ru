@@ -2,21 +2,21 @@
 title: Схема событий службы "Сетка событий Azure" для хранилища больших двоичных объектов
 description: Описание свойств событий хранилища больших двоичных объектов в службе "Сетка событий Azure"
 services: event-grid
-author: tfitzmac
+author: spelluru
 ms.service: event-grid
 ms.topic: reference
-ms.date: 08/17/2018
-ms.author: tomfitz
-ms.openlocfilehash: 11524f8868a0102e30b06f3385a26b1bd06aae6e
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.date: 01/17/2019
+ms.author: spelluru
+ms.openlocfilehash: 401eb660d7e5ddc68bc7422ef9f2e600295d2aea
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42145926"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54469746"
 ---
 # <a name="azure-event-grid-event-schema-for-blob-storage"></a>Схема событий службы "Сетка событий Azure" для хранилища BLOB-объектов
 
-В этой статье описаны свойства и схема событий хранилища BLOB-объектов. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
+В этой статье описаны свойства и схема событий хранилища BLOB-объектов. Общие сведения о схемах событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
 Список примеров сценариев и руководств см. в статье [Источники событий в службе "Сетка событий Azure"](event-sources.md#storage).
 
@@ -83,7 +83,7 @@ ms.locfileid: "42145926"
   "metadataVersion": "1"
 }]
 ```
- 
+ 
 ## <a name="event-properties"></a>Свойства события
 
 Событие содержит следующие высокоуровневые данные:

@@ -4,7 +4,7 @@ description: Узнайте, как настроить единый вход м�
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 7f00799d-e3e9-4ba9-ae4a-fbca843ac5db
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/26/2017
 ms.author: jeedes
-ms.openlocfilehash: 8b8ff27413888e1745bd9a83e2e2e8c7b77fba34
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: ae38276e4ae3cd838a1cdb7f80712f80b0b928b8
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52847054"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54816472"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mcm"></a>Руководство. Интеграция Azure Active Directory с МСМ
 

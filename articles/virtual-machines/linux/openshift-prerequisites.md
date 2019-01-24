@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: ''
 ms.author: haroldw
-ms.openlocfilehash: bbc9ad4f15bdffa2c0f9b6f4b56f8b1701c83c47
-ms.sourcegitcommit: 542964c196a08b83dd18efe2e0cbfb21a34558aa
+ms.openlocfilehash: d4b706a088769530e3994d8813b28f99d5a56df5
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51636624"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54411974"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-in-azure"></a>Общие предварительные требования для развертывания OpenShift в Azure
 
@@ -101,7 +101,7 @@ az keyvault secret set --vault-name keyvault --name keysecret --file ~/.ssh/open
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы 
 OpenShift взаимодействует с Azure, используя имя пользователя и пароль или субъект-службу. Субъект-служба Azure является удостоверением безопасности, которое можно использовать с приложениями, службами и инструментами автоматизации, такими как OpenShift. Вы можете определять разрешения на то, какие операции может выполнять субъект-служба в Azure, и управлять ими. Рекомендуется ограничить область разрешений субъекта-службы определенными группами ресурсов, а не всей подпиской.
 
-Создайте субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp#az_ad_sp_create_for_rbac) и выведите учетные данные, необходимые для OpenShift:
+Создайте субъект-службу с помощью команды [az ad sp create-for-rbac](/cli/azure/ad/sp) и выведите учетные данные, необходимые для OpenShift:
 
 В следующем примере создается субъект-служба, а группе ресурсов с именем openshiftrg назначаются разрешения участника.
 

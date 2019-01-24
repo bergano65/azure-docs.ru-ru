@@ -3,18 +3,18 @@ title: Настройка сценариев предварительного и
 description: В этой статье описывается настройка сценариев предварительного и последующего выполнения, а также управление этими сценариями.
 services: automation
 ms.service: automation
-ms.component: update-management
+ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
 ms.date: 09/18/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: edbb953111fb4589539369bd9b2519b48b9b70eb
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 4c34c6c6e0a3f618cbd9337993aa6d176962fe6b
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121317"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54428245"
 ---
 # <a name="manage-pre-and-post-scripts-preview"></a>Управление сценариями предварительного и последующего выполнения (предварительная версия)
 
@@ -224,3 +224,4 @@ if ($summary.Type -eq "Error")
 
 > [!div class="nextstepaction"]
 > [Устранение неполадок при изменениях в среде](automation-tutorial-update-management.md)
+

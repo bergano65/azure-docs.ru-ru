@@ -3,22 +3,22 @@ title: Переход от авторизации с использование�
 description: Перенос приложений из службы контроля доступа в SAS
 services: service-bus-messaging
 documentationcenter: ''
-author: clemensv
+author: axisc
 manager: timlt
-editor: ''
+editor: spelluru
 ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/21/2018
-ms.author: spelluru
-ms.openlocfilehash: 7045172fcd3c64cb0d979f5e3e8381c49579f1d2
-ms.sourcegitcommit: 67abaa44871ab98770b22b29d899ff2f396bdae3
+ms.author: aschhab
+ms.openlocfilehash: 746b19062c3014caa37c6668e6c41df054a47e25
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48855261"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54846966"
 ---
 # <a name="migrate-from-azure-active-directory-access-control-service-to-shared-access-signature-authorization"></a>Переход от службы контроля доступа Azure Active Directory к авторизации подписанного URL-адреса
 

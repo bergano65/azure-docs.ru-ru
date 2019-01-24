@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/02/2019
 ms.author: jeffpatt
 ms.component: files
-ms.openlocfilehash: a7ab2e76280458326539fe83d3507dfb4e4a486e
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 8723d7f113a77266d1ee883e41bade1721fa1afa
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54023107"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54848960"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -61,7 +61,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 Чтобы проверить, не блокирует ли брандмауэр или поставщик услуг Интернета порт 445, используйте средство [AzFileDiagnostics](https://gallery.technet.microsoft.com/Troubleshooting-tool-for-a9fa1fe5) или командлет `Test-NetConnection`. 
 
-Для использования командлета `Test-NetConnection` должен быть установлен модуль AzureRM PowerShell. Дополнительные сведения см. в разделе, посвященном [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resoure-group-name>` соответствующими именами для вашей учетной записи хранения.
+Для использования командлета `Test-NetConnection` должен быть установлен модуль AzureRM PowerShell. Дополнительные сведения см. в разделе, посвященном [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resoure-group-name>` соответствующими именами для вашей учетной записи хранения.
 
    
     $resourceGroupName = "<your-resource-group-name>"
@@ -69,12 +69,12 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
     # This command requires you to be logged into your Azure account, run Login-AzureRmAccount if you haven't
     # already logged in.
-    $storageAccount = Get-AzureRmStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName
+    $storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName
 
     # The ComputerName, or host, is <storage-account>.file.core.windows.net for Azure Public Regions.
     # $storageAccount.Context.FileEndpoint is used because non-Public Azure regions, such as sovereign clouds
     # or Azure Stack deployments, will have different hosts for Azure file shares (and other storage resources).
-    Test-NetConnection -ComputerName [System.Uri]::new($storageAccount.Context.FileEndPoint).Host -Port 445
+    Test-NetConnection -ComputerName ([System.Uri]::new($storageAccount.Context.FileEndPoint).Host) -Port 445
   
     
 Если установка прошла успешно, отобразятся следующие выходные данные.

@@ -8,13 +8,13 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 07/12/2017
 ms.author: robb
-ms.component: diagnostic-extension
-ms.openlocfilehash: 8a8883989a731265fb358c119d44fa4243b54a5e
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.subservice: diagnostic-extension
+ms.openlocfilehash: 305aa28127e453c01de9b55ab6cb0ff3471afad9
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54103950"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54473815"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Устранение неполадок с помощью системы диагностики Azure
 Данная статья содержит сведения об устранении неполадок, относящихся к средствами диагностики Azure. Дополнительные сведения о системе диагностики Azure см. в [обзоре системы диагностики Azure](diagnostics-extension-overview.md).
@@ -293,3 +293,4 @@ System.IO.FileLoadException: Could not load file or assembly 'System.Threading.T
 - Указаны ли имена счетчиков в хранилище на английском. В противном случае диаграмма метрик на портале не сможет распознать их. **Устранение.** Измените язык системных учетных записей виртуальной машины на английский. Для этого выберите **Панель управления** > **Регион** > **Административный** > **Настройка копирования**. Далее отмените выделение параметра **Экран приветствия и системные учетные записи**, чтобы пользовательский язык не применялся к системной учетной записи.
 
 - Если вы используете подстановочные знаки (\*) в именах счетчиков производительности, портал не сможет отслеживать настроенные и собранные показатели счетчика, отправляемые в приемник службы хранилища Azure. **Устранение.** Чтобы убедиться в том, что вы можете использовать подстановочные знаки и что на портале развернут узел (\*), перенаправьте данные счетчиков производительности в [приемник Azure Monitor](diagnostics-extension-schema.md#diagnostics-extension-111).
+

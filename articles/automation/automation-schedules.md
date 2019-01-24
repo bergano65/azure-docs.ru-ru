@@ -3,18 +3,18 @@ title: Расписания в службе автоматизации Azure
 description: Расписания службы автоматизации используются для планирования автоматического выполнения модулей Runbook в службе автоматизации Azure. Рассматривается создание расписания, которое позволяет автоматически запускать модуль Runbook однократно или несколько раз в определенное время, а также управление этим расписанием.
 services: automation
 ms.service: automation
-ms.component: shared-capabilities
+ms.subservice: shared-capabilities
 author: georgewallace
 ms.author: gwallace
 ms.date: 09/18/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 3d8492d2a8982c9c85bfc91867f7eb6c2da04e58
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: c1c36736e9d023ab1bd2ed607638b600bc468f2c
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46294770"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54437222"
 ---
 # <a name="scheduling-a-runbook-in-azure-automation"></a>Создание расписания для Runbook в службе автоматизации Azure
 
@@ -129,3 +129,4 @@ Set-AzureRmAutomationSchedule –AutomationAccountName $automationAccountName `
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Сведения о том, как начать работу с модулями Runbook в службе автоматизации Azure, см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
+

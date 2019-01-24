@@ -3,19 +3,19 @@ title: Настройка входа в Azure Active Directory B2C с помощ
 description: Настройка входа в Azure Active Directory B2C с помощью учетной записи LinkedIn с использованием пользовательских политик.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: b5022e1475b9f15738dd015e16946b754fcd49c9
-ms.sourcegitcommit: 55952b90dc3935a8ea8baeaae9692dbb9bedb47f
+ms.openlocfilehash: d6f1f312e9f23a2996cf0e7604df20d4eb3c4064
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48887314"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54845759"
 ---
 # <a name="set-up-sign-in-with-a-linkedin-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи LinkedIn с использованием пользовательских политик
 
@@ -121,10 +121,10 @@ ms.locfileid: "48887314"
 
 ### <a name="upload-the-extension-file-for-verification"></a>Отправка файла расширения для проверки
 
-К этому моменту политика настроена, так что Azure AD B2C знает, как взаимодействовать с учетной записью LinkedIn. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
+К этому моменту политика настроена так, что Azure AD B2C знает как взаимодействовать с учетной записью LinkedIn. Попробуйте отправить файл расширения политики, чтобы убедиться, что все в порядке.
 
-1. На странице **Настраиваемые политики** в клиенте Azure AD B2C выберите **Отправить политику**.
-2. Включите функцию **Перезаписать политику, если она существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
+1. На странице **Пользовательские политики** в клиенте Azure AD B2C выберите **Отправить политику**.
+2. Включите функцию **Перезаписать политику, если она уже существует**, а затем найдите и выберите файл *TrustFrameworkExtensions.xml*.
 3. Щелкните **Отправить**.
 
 ## <a name="register-the-claims-provider"></a>Регистрация поставщика утверждений
@@ -134,7 +134,7 @@ ms.locfileid: "48887314"
 1. Откройте файл *TrustFrameworkBase.xml* из начального пакета.
 2. Найдите и скопируйте все содержимое элемента **UserJourney**, в котором присутствует запись `Id="SignUpOrSignIn"`.
 3. Откройте файл *TrustFrameworkExtensions.xml* и найдите элемент **UserJourneys**. Если элемент не существует, добавьте его.
-4. Вставьте все содержимое элемента **UserJourney**, скопированное в качестве дочернего элемента объекта **UserJourneys**.
+4. Вставьте все скопированное содержимое элемента **UserJourney** в качестве дочернего элемента в элемент **UserJourneys**.
 5. Переименуйте идентификатор пути взаимодействия пользователя. Например, `SignUpSignInLinkedIn`.
 
 ### <a name="display-the-button"></a>Отображение кнопки
@@ -142,7 +142,7 @@ ms.locfileid: "48887314"
 Элемент **ClaimsProviderSelection** является аналогом кнопки поставщика удостоверений на экране регистрации или входа. Если вы добавите для учетной записи LinkedIn элемент **ClaimsProviderSelection**, при переходе пользователя на страницу отобразится новая кнопка.
 
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="1"` в созданном пути взаимодействия пользователя.
-2. Добавьте следующий элемент для параметра **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `LinkedInExchange`:
+2. Добавьте следующий элемент в тэг **ClaimsProviderSelects**. Установите для параметра **TargetClaimsExchangeId** соответствующее значение, например `LinkedInExchange`:
 
     ```XML
     <ClaimsProviderSelection TargetClaimsExchangeId="LinkedInExchange" />
@@ -153,7 +153,7 @@ ms.locfileid: "48887314"
 Теперь, когда у вас есть кнопка, вам необходимо связать ее с действием. В нашем примере действие — это взаимодействие Azure AD B2C с учетной записью LinkedIn для получения маркера.
 
 1. Найдите элемент **OrchestrationStep**, содержащий `Order="2"` в пути взаимодействия пользователя.
-2. Добавьте следующий элемент **ClaimsExchange**, указав для **Id** то же значение, которое было использовано для **TargetClaimsExchangeId**:
+2. Добавьте следующий элемент **ClaimsExchange**, убедившись, что для **Id** можно использовать то же значение, которое было использовано для **TargetClaimsExchangeId**:
 
     ```XML
     <ClaimsExchange Id="LinkedInExchange" TechnicalProfileReferenceId="LinkedIn-OAUTH" />
@@ -171,15 +171,15 @@ ms.locfileid: "48887314"
 2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
 4. Щелкните **Приложения**, а затем выберите **Добавить**.
-5. Введите имя для приложения, например *testapp1*.
-6. В пункте **Веб-приложение или веб-интерфейс API** выберите `Yes`, а затем в поле **URL-адрес ответа** введите `https://jwt.ms`.
+5. Задайте имя для приложения, например *testapp1*.
+6. В пункте **Веб-приложение или веб-интерфейс API**выберите `Yes`, а затем в пункте **URL-адрес ответа** введите `https://jwt.ms`.
 7. Нажмите кнопку **Создать**.
 
 ## <a name="update-and-test-the-relying-party-file"></a>Обновление и тестирование файла проверяющей стороны
 
 Обновите файл проверяющей стороны, который активирует созданный путь взаимодействия пользователя.
 
-1. Создайте копию файла *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте ее в *SignUpSignInLinkedIn.xml*.
+1. Создайте копию *SignUpOrSignIn.xml* в рабочем каталоге и переименуйте ее. Например, переименуйте ее в *SignUpSignInLinkedIn.xml*.
 2. Откройте новый файл и обновите значение атрибута **PolicyId** для **TrustFrameworkPolicy**, указав уникальное значение. Например, `SignUpSignInLinkedIn`.
 3. Обновите значение **PublicPolicyUri**, указав URI для политики. Например, `http://contoso.com/B2C_1A_signup_signin_linkedin`.
 4. Обновите значение атрибута **ReferenceId** для элемента **DefaultUserJourney**, чтобы он соответствовал идентификатору созданного вами пути взаимодействия пользователя (SignUpSignLinkedIn).

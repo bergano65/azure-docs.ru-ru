@@ -4,7 +4,7 @@ description: Используйте прокси приложения Azure AD �
 services: active-directory
 documentationcenter: ''
 author: barbkess
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
@@ -15,12 +15,12 @@ ms.date: 09/05/2017
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: it-pro
-ms.openlocfilehash: 83f32cc18f1237d5d28e8340177fd6e2fae4e173
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 91273ad2a938dce693323f0c53b571eb112d3888
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53133644"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54478422"
 ---
 # <a name="access-your-on-premises-applications-through-microsoft-teams"></a>Доступ к приложениям в локальной среде через Microsoft Teams
 

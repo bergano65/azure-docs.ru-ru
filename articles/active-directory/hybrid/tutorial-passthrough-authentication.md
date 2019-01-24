@@ -3,19 +3,19 @@ title: Руководство.  Интеграция одного леса AD с
 description: Демонстрируется настройка гибридной среды идентификации со сквозной проверкой подлинности.
 services: active-directory
 author: billmath
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 09/18/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 140161e88ee572d728a7f9c923c9528ea6755cc1
-ms.sourcegitcommit: efcd039e5e3de3149c9de7296c57566e0f88b106
+ms.openlocfilehash: 6bbf9cbea0671aaa73ddc5402f3102eea3154e6c
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53165461"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54467925"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-pass-through-authentication-pta"></a>Руководство.  Интеграция одного леса AD с помощью сквозной аутентификации (PTA)
 
@@ -84,7 +84,7 @@ Set-VMFirmware -VMName $VMName -FirstBootDevice $DVDDrive
 5. Нажмите **Установить**.
 6. Введите ключ лицензии и нажмите кнопку **Далее**.
 7. Установите флажок "Я принимаю условия лицензии" и нажмите кнопку **Далее**.
-8. Выберите **Custom:  Install Windows Only (Advanced)** (Пользовательская: установить только Windows (расширенная)).
+8. Выберите **Custom:  Install Windows Only (Advanced)** (Пользовательская: установить только Windows (расширенная).
 9. Щелкните **Далее**
 10. Когда установка завершится, перезапустите виртуальную машину, выполните вход и запустите обновление Windows, чтобы обеспечить актуальность виртуальной машины.  Установите последние обновления.
 
