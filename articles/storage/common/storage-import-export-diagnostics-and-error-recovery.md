@@ -8,19 +8,19 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: muralikk
 ms.component: common
-ms.openlocfilehash: 2a54752f933b91265d0aa8add61ca0707615931b
-ms.sourcegitcommit: 9819e9782be4a943534829d5b77cf60dea4290a2
+ms.openlocfilehash: 8a5c25cd5836c3bde630684eff24da7dc8b62fc6
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/06/2018
-ms.locfileid: "39526333"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54855811"
 ---
 # <a name="diagnostics-and-error-recovery-for-azure-importexport-jobs"></a>Диагностика и восстановление после ошибок для заданий импорта и экспорта Azure
-Для каждого обрабатываемого диска служба импорта и экспорта Azure создает журнал ошибок в соответствующей учетной записи хранения. Можно также включить ведение подробного журнала, задав для свойства `LogLevel` значение `Verbose` при вызове операции [Put Job](/rest/api/storageimportexport/jobs#Jobs_CreateOrUpdate) или [Update Job Properties](/rest/api/storageimportexport/jobs#Jobs_Update).
+Для каждого обрабатываемого диска служба импорта и экспорта Azure создает журнал ошибок в соответствующей учетной записи хранения. Можно также включить ведение подробного журнала, задав для свойства `LogLevel` значение `Verbose` при вызове операции [Put Job](/rest/api/storageimportexport/jobs) или [Update Job Properties](/rest/api/storageimportexport/jobs).
 
  По умолчанию журналы записываются в контейнер `waimportexport`. При вызове операции `Put Job` или `Update Job Properties` в свойстве `DiagnosticsPath` можно указать другое имя. Журналы хранятся в виде блочных BLOB-объектов, для которых действует следующее соглашение об именовании: `waies/jobname_driveid_timestamp_logtype.xml`.
 
- Универсальный код ресурса (URI) журналов для задания можно получить, вызвав операцию [Get Job](/rest/api/storageimportexport/jobs#Jobs_Get). Универсальный код ресурса (URI) подробного журнала возвращается в свойство `VerboseLogUri` для каждого диска, а универсальный код ресурса (URI) журнала ошибок — в свойство `ErrorLogUri`.
+ Универсальный код ресурса (URI) журналов для задания можно получить, вызвав операцию [Get Job](/rest/api/storageimportexport/jobs). Универсальный код ресурса (URI) подробного журнала возвращается в свойство `VerboseLogUri` для каждого диска, а универсальный код ресурса (URI) журнала ошибок — в свойство `ErrorLogUri`.
 
 Данные журнала можно использовать для выявления следующих проблем.
 

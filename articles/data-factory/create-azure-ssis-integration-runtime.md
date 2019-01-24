@@ -12,12 +12,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
-ms.openlocfilehash: b772aa314316906a4079e3d6b8b4e0aeb0f54fba
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 4339782304f1bc175f1066954f1050bc00f25005
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54022994"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54434246"
 ---
 # <a name="create-azure-ssis-integration-runtime-in-azure-data-factory"></a>Создание среды выполнения интеграции Azure-SSIS в фабрике данных Azure
 В этой статье представлены шаги по подготовке среды выполнения интеграции Azure-SSIS в фабрике данных Azure. Затем можно использовать SQL Server Data Tools (SSDT) ​​или SQL Server Management Studio (SSMS) для запуска и развертывания пакетов служб SQL Server Integration Services (SSIS) в этой среде выполнения интеграции в Azure. 
@@ -50,7 +50,7 @@ ms.locfileid: "54022994"
     - Вы размещаете SSISDB на сервере базы данных SQL Azure с конечными точками виртуальной сети или управляемым экземпляром, который находится внутри виртуальной сети. 
     - Вы хотите подключиться к локальным хранилищам данных из пакетов SSIS, работающих в среде выполнения интеграции Azure-SSIS. 
 
-- **Azure PowerShell**. Если вы хотите выполнить подготовку среды выполнения интеграции Azure-SSIS с помощью скрипта PowerShell, следуйте инструкциям в разделе [Установка и настройка служб Azure PowerShell](/powershell/azure/install-azurerm-ps). 
+- **Azure PowerShell**. Если вы хотите выполнить подготовку среды выполнения интеграции Azure-SSIS с помощью скрипта PowerShell, следуйте инструкциям в разделе [Установка и настройка служб Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). 
 
 ### <a name="region-support"></a>Поддержка регионов
 Список регионов Azure, в которых сейчас доступны ADF и среда выполнения интеграции Azure-SSIS, см. на странице [Доступность ADF и среды выполнения интеграции Azure-SSIS по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory&regions=all). 
@@ -129,7 +129,7 @@ ms.locfileid: "54022994"
 
     Е. В раскрывающемся списке **Edition/License** (Выпуск/лицензия) выберите выпуск SQL Server или лицензию SQL Server для среды выполнения интеграции: Standard или Enterprise. Если в среде выполнения интеграции необходимо использовать дополнительные функции или функции, которые доступны в версии "Премиум", выберите SQL Server Enterprise. 
 
-    ж. В поле **Save Money** (Экономия средств) для параметра Azure Hybrid Benefit (AHB) (Преимущество гибридного использования Azure) выберите один из вариантов: Yes (Да) или No (Нет). Если для получения преимуществ и экономии затрат необходимо использовать собственную лицензию SQL Server вместе с программой Software Assurance, выберите "Да". 
+    ж. В поле **Экономия** для параметра "Преимущество гибридного использования Azure" выберите один из вариантов: "Да" или "Нет". Если для получения преимуществ и экономии затрат необходимо использовать собственную лицензию SQL Server вместе с программой Software Assurance, выберите "Да". 
 
     h. Щелкните **Далее**. 
 

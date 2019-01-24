@@ -11,12 +11,12 @@ ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.author: diberry
-ms.openlocfilehash: 241227270aeede93b74d3d94c782dfe7eaf1fbf2
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: af0629b8301fe6202c6a4325083cc69140bc7c2e
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121708"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438207"
 ---
 # <a name="publish-your-active-trained-app-to-a-staging-or-production-endpoint"></a>Публикация активного обученного приложения в промежуточной или рабочей конечной точке
 
@@ -62,6 +62,6 @@ ms.locfileid: "54121708"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Чтобы узнать, как добавить ключи подписки Azure в LUIS и настроить ключ проверки орфографии Bing, а также как включить все намерения в результаты, см. статью [Управление ключами конечной точки в LUIS](./luis-how-to-manage-keys.md).
+* Чтобы узнать, как добавить ключи подписки Azure в LUIS и настроить ключ проверки орфографии Bing, а также как включить все намерения в результаты, см. статью [Управление ключами конечной точки в LUIS](./luis-how-to-azure-subscription.md).
 * Инструкции по тестированию приложения с помощью консоли тестирования см. в статье [Test your LUIS app](luis-interactive-test.md) (Протестируйте свое приложение LUIS).
 

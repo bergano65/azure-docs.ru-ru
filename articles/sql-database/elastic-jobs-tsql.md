@@ -12,18 +12,18 @@ author: jaredmoo
 ms.reviewer: sstein
 manager: craigg
 ms.date: 06/14/2018
-ms.openlocfilehash: eda71351b0375789d41808f9351cf000945b5f4c
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: e00722259abaa02d3dce6ca26c8cd0ea7c42db29
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53606815"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54449407"
 ---
 # <a name="use-transact-sql-t-sql-to-create-and-manage-elastic-database-jobs"></a>Создание заданий эластичной базы данных и управление ими с помощью Transact-SQL (T-SQL)
 
 В этой статье приведено множество примеров сценариев, позволяющих приступить к использованию эластичных заданий с помощью T-SQL.
 
-В этих примерах используются [хранимые процедуры](#job-stored-procedures) и [представления](#job-views), доступные в [*базе данных задания*](elastic-jobs-overview.md#job-database).
+В этих примерах используются [хранимые процедуры](#job-stored-procedures) и [представления](#job-views), доступные в [*базе данных задания*](sql-database-job-automation-overview.md#job-database).
 
 Transact-SQL (T-SQL) используется для создания, настройки, выполнения заданий и управления ими. Создание агента заданий обработки эластичных баз данных в T-SQL не поддерживается, поэтому нужно сначала создать *агент заданий обработки эластичных баз данных* с помощью портала или [PowerShell](elastic-jobs-powershell.md#create-the-elastic-job-agent).
 
@@ -53,7 +53,7 @@ GO
 ## <a name="create-a-target-group-servers"></a>Создание целевой группы (серверов)
 
 В приведенном ниже примере показано, как выполнить задание со всеми базами данных на сервере.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 
 ```sql
@@ -78,7 +78,7 @@ SELECT * FROM jobs.target_group_members WHERE target_group_name='ServerGroup1';
 ## <a name="exclude-a-single-database"></a>Исключение отдельной базы данных
 
 В приведенном ниже примере показано, как выполнить задание со всеми базами данных на сервере, кроме базы данных *MappingDB*.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -121,7 +121,7 @@ SELECT * FROM [jobs].target_group_members WHERE target_group_name = N'ServerGrou
 ## <a name="create-a-target-group-pools"></a>Создание целевой группы (пулов)
 
 В примере ниже показано, как выбрать в качестве цели все базы данных в одном или нескольких эластичных пулах.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -146,7 +146,7 @@ SELECT * FROM jobs.target_group_members WHERE target_group_name = N'PoolGroup';
 ## <a name="deploy-new-schema-to-many-databases"></a>Развертывание новой схемы в нескольких базах данных
 
 В приведенном ниже примере показано, как развернуть новую схему во всех базах данных.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 
 ```sql
@@ -195,7 +195,7 @@ CREATE TABLE [dbo].[Test]([TestId] [int] NOT NULL);',
 2. Дополнительный столбец для internal_execution_id с типом данных uniqueidentifier.
 3. Некластеризованный индекс с именем "IX_<TableName>_Internal_Execution_ID" в столбце internal_execution_id.
 
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команды, приведенные ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команды, приведенные ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -266,7 +266,7 @@ SELECT elastic_pool_name , end_time, elastic_pool_dtu_limit, avg_cpu_percent, av
 ## <a name="view-job-definitions"></a>Просмотр определений заданий
 
 В следующем примере показано, как просмотреть определения текущих заданий.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -287,7 +287,7 @@ select * from jobs.jobsteps
 ## <a name="begin-ad-hoc-execution-of-a-job"></a>Немедленное выполнение задания
 
 В приведенном ниже примере показано, как запустить задание немедленно.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -310,7 +310,7 @@ exec jobs.sp_start_job 'CreateTableTest', 1
 ## <a name="schedule-execution-of-a-job"></a>Планирование выполнения задания
 
 В следующем примере показано, как запланировать выполнение задания в будущем.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -325,7 +325,7 @@ EXEC jobs.sp_update_job
 ## <a name="monitor-job-execution-status"></a>Отслеживание состояния выполнения задания
 
 В приведенном ниже примере показано, как просмотреть сведения о состоянии выполнения всех заданий.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -354,7 +354,7 @@ ORDER BY start_time DESC
 ## <a name="cancel-a-job"></a>Отмена задания
 
 В следующем примере показано, как отменить задание.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -373,7 +373,7 @@ EXEC jobs.sp_stop_job '01234567-89ab-cdef-0123-456789abcdef'
 ## <a name="delete-old-job-history"></a>Удаление старого журнала заданий
 
 В приведенном ниже примере показано, как удалить старый журнал заданий до определенной даты.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -387,7 +387,7 @@ EXEC jobs.sp_purge_jobhistory @job_name='ResultPoolsJob', @oldest_date='2016-07-
 ## <a name="delete-a-job-and-all-its-job-history"></a>Удаление задания и его журнала заданий
 
 В приведенном ниже примере показано, как удалить задание и связанный с ним журнал заданий.  
-Подключитесь к [*базе данных заданий*](elastic-jobs-overview.md#job-database) и выполните команду, приведенную ниже.
+Подключитесь к [*базе данных заданий*](sql-database-job-automation-overview.md#job-database) и выполните команду, приведенную ниже.
 
 ```sql
 --Connect to the job database specified when creating the job agent
@@ -402,7 +402,7 @@ EXEC jobs.sp_delete_job @job_name='ResultsPoolsJob'
 
 ## <a name="job-stored-procedures"></a>Хранимые процедуры задания
 
-В [базе данных заданий](elastic-jobs-overview.md#job-database) доступны следующие хранимые процедуры.
+В [базе данных заданий](sql-database-job-automation-overview.md#job-database) доступны следующие хранимые процедуры.
 
 
 
@@ -1190,7 +1190,7 @@ GO
 
 ## <a name="job-views"></a>Представления заданий
 
-Ниже приведены представления, доступные в [базе данных заданий](elastic-jobs-overview.md#job-database).
+Ниже приведены представления, доступные в [базе данных заданий](sql-database-job-automation-overview.md#job-database).
 
 
 |Просмотр  |ОПИСАНИЕ  |

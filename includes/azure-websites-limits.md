@@ -4,17 +4,17 @@ ms.service: billing
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: 6bb7db5d57508d448f88a30623b7f30e88a0a821
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: d66f36e737e100a0d8e60b85b51f6dcf632e6d3e
+ms.sourcegitcommit: c31a2dd686ea1b0824e7e695157adbc219d9074f
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53736799"
+ms.lasthandoff: 01/18/2019
+ms.locfileid: "54404687"
 ---
 | Ресурс | Free | Совмещаемая блокировка | базовая; | Стандартная | Премиум (версия 2) | Isolated </th> |
 | --- | --- | --- | --- | --- | --- | --- |
 | Количество [веб-приложений, мобильных приложений или приложений API](https://azure.microsoft.com/services/app-service/) на один [план службы приложений](../articles/app-service/overview-hosting-plans.md)<sup>1</sup> |10 |100 |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup> |Без ограничений<sup>2</sup>|
-| [План обслуживания приложения](../articles/app-service/overview-hosting-plans.md) |1 для каждого региона |10 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов|
+| [План обслуживания приложения](../articles/app-service/overview-hosting-plans.md) |10 для каждого региона |10 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов |100 шт. на одну группу ресурсов|
 | Тип вычислительной операции |Совмещаемая блокировка |Совмещаемая блокировка |Выделенный<sup>3</sup> |Выделенный<sup>3</sup> |Выделенный<sup>3</sup></p> |Выделенный<sup>3</sup>|
 | [Масштабирование](../articles/app-service/web-sites-scale.md) (максимальное количество экземпляров) |1 общедоступный |1 общедоступный |3 выделенных<sup>3</sup> |10 выделенных<sup>3</sup> |20 выделенных<sup>3</sup>|100 выделенных<sup>4</sup>|
 | Хранилище<sup>5</sup> |1 ГБ<sup>5</sup> |1 ГБ<sup>5</sup> |10 ГБ<sup>5</sup> |50 ГБ<sup>5</sup> |250 ГБ<sup>5</sup></p> |1 ТБ<sup>5</sup>|

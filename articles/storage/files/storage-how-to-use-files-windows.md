@@ -8,12 +8,12 @@ ms.topic: get-started-article
 ms.date: 06/07/2018
 ms.author: renash
 ms.component: files
-ms.openlocfilehash: 5e36a41c1678ac38c7ebee5b47fd88076fa3fb70
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
+ms.openlocfilehash: 4f9225f319eb4a2bbcbb5a79379fc46675ff4c04
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53629702"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54854741"
 ---
 # <a name="use-an-azure-file-share-with-windows"></a>Использование общей папки Azure в Windows
 [Файлы Azure](storage-files-introduction.md) — это простая в использовании облачная файловая система от корпорации Майкрософт. Общие папки Azure можно легко использовать в Windows и Windows Server. В этой статье рассматриваются рекомендации по использованию общей папки Azure в Windows и Windows Server.
@@ -40,14 +40,12 @@ ms.locfileid: "53629702"
 > [!Note]  
 > Мы всегда рекомендуем использовать последнюю версию KB для своей версии Windows.
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-
 ## <a name="prerequisites"></a>Предварительные требования 
 * **Имя учетной записи хранения**. Чтобы подключить общую папку Azure, вам понадобится имя учетной записи хранения.
 
 * **Ключ учетной записи хранения**. Чтобы подключить общую папку Azure, вам понадобится первичный (или вторичный) ключ учетной записи хранения. В настоящее время ключи SAS для подключения не поддерживаются.
 
-* **Открытый порт 445**. Для протокола SMB требуется, чтобы TCP-порт 445 был открыт. В противном случае установить подключение не получится. Вы можете проверить, блокирует ли ваш брандмауэр порт 445, с помощью командлета `Test-NetConnection`. Следующий код PowerShell предполагает, что модуль AzureRM PowerShell установлен. Дополнительные сведения см. в статье [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](/powershell/azure/install-azurerm-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resoure-group-name>` соответствующими именами для вашей учетной записи хранения.
+* **Открытый порт 445**. Для протокола SMB требуется, чтобы TCP-порт 445 был открыт. В противном случае установить подключение не получится. Вы можете проверить, блокирует ли ваш брандмауэр порт 445, с помощью командлета `Test-NetConnection`. Следующий код PowerShell предполагает, что модуль AzureRM PowerShell установлен. Дополнительные сведения см. в статье [Установка Azure PowerShell в ОС Windows с помощью PowerShellGet](https://docs.microsoft.com/powershell/azure/install-az-ps). Не забудьте заменить `<your-storage-account-name>` и `<your-resoure-group-name>` соответствующими именами для вашей учетной записи хранения.
 
     ```PowerShell
     $resourceGroupName = "<your-resource-group-name>"
@@ -55,12 +53,12 @@ ms.locfileid: "53629702"
 
     # This command requires you to be logged into your Azure account, run Login-AzureRmAccount if you haven't
     # already logged in.
-    $storageAccount = Get-AzureRmStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName
+    $storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName
 
     # The ComputerName, or host, is <storage-account>.file.core.windows.net for Azure Public Regions.
     # $storageAccount.Context.FileEndpoint is used because non-Public Azure regions, such as sovereign clouds
     # or Azure Stack deployments, will have different hosts for Azure file shares (and other storage resources).
-    Test-NetConnection -ComputerName [System.Uri]::new($storageAccount.Context.FileEndPoint).Host -Port 445
+    Test-NetConnection -ComputerName ([System.Uri]::new($storageAccount.Context.FileEndPoint).Host) -Port 445
     ```
 
     Если установка прошла успешно, отобразятся следующие выходные данные.

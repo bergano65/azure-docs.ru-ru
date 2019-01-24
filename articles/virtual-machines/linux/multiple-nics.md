@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/07/2018
 ms.author: zarhoads
-ms.openlocfilehash: 024cf099dd65db036ae0b68d7094a60427ffa69c
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 300391d9a5079eefc90ba06ba819fc6d8a91ca05
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54119890"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54851697"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-in-azure-with-multiple-network-interface-cards"></a>Как создать виртуальную машину Linux в Azure с несколькими сетевыми картами
 
@@ -67,7 +67,7 @@ az network nsg create \
 ```
 
 ## <a name="create-and-configure-multiple-nics"></a>Создание и настройка нескольких сетевых карт
-Создайте две сетевых карты с помощью команды [az network nic create](/cli/azure/network/nic#az_network_nic_create). В следующем примере создаются две сетевые карты — *myNic1* и *myNic2*, — подключенные к группе безопасности сети. Каждая из этих сетевых карт подключена к отдельной подсети.
+Создайте две сетевых карты с помощью команды [az network nic create](/cli/azure/network/nic). В следующем примере создаются две сетевые карты — *myNic1* и *myNic2*, — подключенные к группе безопасности сети. Каждая из этих сетевых карт подключена к отдельной подсети.
 
 ```azurecli
 az network nic create \
@@ -105,7 +105,7 @@ az vm create \
 ## <a name="add-a-nic-to-a-vm"></a>Добавление сетевой карты к виртуальной машине
 На предыдущих шагах вы создали виртуальную машину с несколькими сетевыми картами. С помощью Azure CLI можно также добавить сетевые адаптеры к существующей виртуальной машине. Различные [размеры виртуальных машин](sizes.md) поддерживают разное число сетевых карт, так что выбирайте соответствующий размер виртуальной машины. При необходимости вы можете [изменить размер виртуальной машины](change-vm-size.md).
 
-Создайте другую сетевую карту с помощью команды [az network nic create](/cli/azure/network/nic#az_network_nic_create). В следующем примере создается сетевая карта *myNic3*, подключенная к внутренней подсети и группе безопасности сети, созданных на предыдущих шагах:
+Создайте другую сетевую карту с помощью команды [az network nic create](/cli/azure/network/nic). В следующем примере создается сетевая карта *myNic3*, подключенная к внутренней подсети и группе безопасности сети, созданных на предыдущих шагах:
 
 ```azurecli
 az network nic create \
@@ -132,7 +132,7 @@ az vm nic add \
     --nics myNic3
 ```
 
-Запустите виртуальную машину, выполнив команду [az vm start](/cli/azure/vm#az_vm_start).
+Запустите виртуальную машину, выполнив команду [az vm start](/cli/azure/vm).
 
 ```azurecli
 az vm start --resource-group myResourceGroup --name myVM
@@ -156,7 +156,7 @@ az vm nic remove \
     --nics myNic3
 ```
 
-Запустите виртуальную машину, выполнив команду [az vm start](/cli/azure/vm#az_vm_start).
+Запустите виртуальную машину, выполнив команду [az vm start](/cli/azure/vm).
 
 ```azurecli
 az vm start --resource-group myResourceGroup --name myVM

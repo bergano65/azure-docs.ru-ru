@@ -9,12 +9,12 @@ manager: jeconnoc
 ms.author: tarcher
 ms.topic: tutorial
 ms.date: 11/13/2017
-ms.openlocfilehash: 9870eac87204f24993ab71e373dcab3a8ead3e89
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: a53fee8ee492de4d9eaa8b45a8d4a88e692da02d
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54075364"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54410376"
 ---
 # <a name="create-a-vm-cluster-with-terraform-and-hcl"></a>Создание кластера виртуальных машин с помощью Terraform и HCL
 
@@ -32,7 +32,7 @@ ms.locfileid: "54075364"
 ## <a name="1-set-up-azure-authentication"></a>1. Настройка аутентификации Azure
 
 > [!NOTE]
-> Если вы [используете переменные среды Terraform](/azure/virtual-machines/linux/terraform-install-configure#set-environment-variables) или выполняете это руководство в [Azure Cloud Shell](terraform-cloud-shell.md), пропустите этот раздел.
+> Если вы [используете переменные среды Terraform](/azure/virtual-machines/linux/terraform-install-configure) или выполняете это руководство в [Azure Cloud Shell](terraform-cloud-shell.md), пропустите этот раздел.
 
 В этом разделе вы создадите субъект-службу Azure и два файла конфигурации Terraform с учетными данными из субъекта безопасности.
 

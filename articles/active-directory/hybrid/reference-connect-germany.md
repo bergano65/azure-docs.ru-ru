@@ -5,7 +5,7 @@ keywords: введение в Azure AD Connect, обзор Azure AD Connect, ч�
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 2bcb0caf-5d97-46cb-8c32-bda66cc22dad
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.topic: get-started-article
 ms.date: 07/12/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 545ec1d4f5cd817b1fa02a135d305b997c9945bc
-ms.sourcegitcommit: 275eb46107b16bfb9cf34c36cd1cfb000331fbff
+ms.openlocfilehash: 9ea28e1215c989e7cb64c54dde7eac5363699089
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51705401"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54464244"
 ---
 # <a name="azure-ad-connect-in-microsoft-cloud-germany---public-preview"></a>Общедоступная предварительная версия Azure AD Connect в Microsoft Cloud для Германии
 ## <a name="introduction"></a>Введение
@@ -37,7 +37,7 @@ Azure AD Connect обеспечивает синхронизацию локал�
 * При входе в каталог Azure AD необходимо использовать учетную запись в домене onmicrosoft.de.
 
  
-## <a name="download"></a>Загрузка
+## <a name="download"></a>Download (Скачать)
 Вы можете загрузить Azure AD Connect из колонки Azure AD Connect на портале.  Чтобы найти колонку Azure AD Connect, следуйте указанным ниже инструкциям.
 
 ### <a name="the-azure-ad-connect-blade"></a>Колонка Azure AD Connect

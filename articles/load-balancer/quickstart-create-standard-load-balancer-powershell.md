@@ -16,19 +16,19 @@ ms.workload: infrastructure-services
 ms.date: 08/22/2018
 ms.author: kumud
 ms:custom: seodec18
-ms.openlocfilehash: b720e07b3da446d3b6fcb106e94e9cc36128bb8c
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.openlocfilehash: 62ccf86d138ff71706aca4c19f548f175e6c09ce
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54230651"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54447621"
 ---
 # <a name="get-started"></a>Краткое руководство. Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
 Из этого краткого руководства вы узнаете, как с помощью Azure PowerShell создать Load Balancer уровня "Стандартный" Чтобы проверить работу подсистемы балансировки нагрузки, вы развернете две виртуальные машины с Windows Server и распределите между ними нагрузку веб-приложения. См. дополнительные сведения о [Load Balancer уровня "Стандартный"](load-balancer-standard-overview.md).
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
-Чтобы установить и использовать PowerShell локально, для работы с этой статьей вам понадобится модуль Azure PowerShell 5.4.1 или более поздней версии. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure. 
+Чтобы установить и использовать PowerShell локально, для работы с этой статьей вам понадобится модуль Azure PowerShell 5.4.1 или более поздней версии. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzureRmAccount`, чтобы создать подключение к Azure. 
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -281,7 +281,7 @@ for ($i=1; $i -le 2; $i++)
  
 Установите IIS с пользовательской веб-страницей на обеих виртуальных машинах серверной части. Для этого сделайте следующее:
 
-1. Получите общедоступный IP-адрес Load Balancer. С помощью `Get-AzureRmPublicIPAdress` получите общедоступный IP-адрес Load Balancer.
+1. Получите общедоступный IP-адрес Load Balancer. С помощью `Get-AzureRmPublicIPAddress` получите общедоступный IP-адрес Load Balancer.
 
   ```azurepowershell-interactive
     Get-AzureRmPublicIPAddress `

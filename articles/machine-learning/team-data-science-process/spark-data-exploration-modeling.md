@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 03/15/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: ae498cc6aea573e1c610cb50d96552f30be4d75e
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 32b457858598ed3dec4a1398cb45310dba877bf3
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53140886"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54447910"
 ---
 # <a name="data-exploration-and-modeling-with-spark"></a>Исследование и моделирование данных с помощью Spark
 
@@ -72,7 +72,7 @@ ms.locfileid: "53140886"
 <!-- -->
 
 > [!NOTE]
-Выполнение записных книжек Spark 2.0 с наборами данных о поездках в такси по Нью-Йорку и задержке рейсов может занять примерно 10 минут или больше (в зависимости от размера кластера HDI). В первой записной книжке из приведенного выше списка представлены многие аспекты исследования данных, визуализации и обучения модели ML. Записная книжка быстро выполняется и содержит набор данных по Нью-Йорку с предварительно присоединенными файлами сведений о такси и тарифах. [Spark2.0-pySpark3-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb.](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark2.0/Spark2.0-pySpark3-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb) Эта записная книжка выполняется гораздо быстрее (2-3 минуты) и может стать хорошей отправной точкой для быстрого изучения кода, представленного для Spark 2.0. 
+Выполнение записных книжек Spark 2.0 с наборами данных о поездках в такси по Нью-Йорку и задержке рейсов может занять примерно 10 минут или больше (в зависимости от размера кластера HDI). В первой записной книжке из приведенного выше списка представлены многие аспекты исследования данных, визуализации и обучения модели ML. Записная книжка быстро выполняется и содержит набор данных по Нью-Йорку с предварительно присоединенными файлами сведений о такси и тарифах: [Spark2.0-pySpark3-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb.](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/Spark/pySpark/Spark2.0/Spark2.0-pySpark3-machine-learning-data-science-spark-advanced-data-exploration-modeling.ipynb) Эта записная книжка выполняется гораздо быстрее (2-3 минуты) и может стать хорошей отправной точкой для быстрого изучения кода, представленного для Spark 2.0. 
 
 <!-- -->
 
@@ -433,7 +433,7 @@ Spark может считывать данные и записывать их в
         labPt = LabeledPoint(line.tipped, features)
         return  labPt
 
-    # ONE-HOT ENCODING OF CATEGORICAL TEXT FEATURES FOR INPUT INTO LOGISTIC RERESSION MODELS
+    # ONE-HOT ENCODING OF CATEGORICAL TEXT FEATURES FOR INPUT INTO LOGISTIC REGRESSION MODELS
     def parseRowOneHotBinary(line):
         features = np.concatenate((np.array([line.pickup_hour, line.weekday, line.passenger_count,
                                             line.trip_time_in_secs, line.trip_distance, line.fare_amount]), 
@@ -636,7 +636,7 @@ Coefficients: [0.0082065285375, -0.0223675576104, -0.0183812028036, -3.481245780
 
 Intercept: -0.0111216486893
 
-Время выполнения кода выше. 14,43 секунды
+Время выполнения кода выше: 14,43 секунды
 
 **Оценка модели бинарной классификации со стандартными метриками**
 

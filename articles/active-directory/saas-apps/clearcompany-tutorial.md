@@ -4,7 +4,7 @@ description: Узнайте, как настроить единый вход м�
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 2819da18-c7eb-43cf-aac3-1403a540bf6e
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 9cf5092dabf5649f4d063ce05dae169b90228378
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 4d774ea47ae5b694c9699729ffd3af3d8df3e564
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52834100"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54818631"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-clearcompany"></a>Руководство. Интеграция Azure Active Directory с ClearCompany
 

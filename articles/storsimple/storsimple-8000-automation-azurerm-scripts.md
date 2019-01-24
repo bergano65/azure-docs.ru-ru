@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 10/03/2017
 ms.author: alkohli
-ms.openlocfilehash: d9c428e3fa8d9fe964b83ae345bb70fd49a6ce1a
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.openlocfilehash: 4184d3605c464b5da495de0698155dda1ae4e474
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54215309"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438717"
 ---
 # <a name="use-azure-resource-manager-sdk-based-scripts-to-manage-storsimple-devices"></a>Использование сценариев Azure Resource Manager для управления устройствами StorSimple на основе пакета SDK
 
@@ -62,7 +62,7 @@ ms.locfileid: "54215309"
 Перед началом работы убедитесь, что у вас есть следующие компоненты:
 
 *   Azure PowerShell установлен. Чтобы установить модули Azure PowerShell, сделайте следующее:
-    * В среде Windows следуйте инструкциям в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-4.4.0). Если необходимо, вы можете установить Azure PowerShell на узле Windows Server для StorSimple.
+    * В среде Windows следуйте инструкциям в статье [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-4.4.0). Если необходимо, вы можете установить Azure PowerShell на узле Windows Server для StorSimple.
     * В среде Linux или MacOS следуйте инструкциям в статье [Установка и настройка Azure PowerShell в macOS и Linux](https://docs.microsoft.com/powershell/azure/azurerm/install-azurermps-maclinux?view=azurermps-4.4.0).
 
 Дополнительные сведения об использовании Azure PowerShell см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps?view=azurermps-4.4.0).

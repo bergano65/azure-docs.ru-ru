@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 09/11/2018
 ms.author: celested
 ms.reviewer: zawad
-ms.openlocfilehash: e3e333594b32cff018f02cd1d3b32eaf44c11a65
-ms.sourcegitcommit: 7824e973908fa2edd37d666026dd7c03dc0bafd0
+ms.openlocfilehash: 3193e9ac6ac5e90584bbf548142b7573d61c310a
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/10/2018
-ms.locfileid: "48904045"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54413079"
 ---
 # <a name="understanding-azure-ad-application-consent-experiences"></a>Основные сведения о процедуре предоставления согласия для приложений Azure AD
 
@@ -84,4 +84,4 @@ ms.locfileid: "48904045"
 
 ## <a name="next-steps"></a>Дополнительная информация
 - Ознакомьтесь с пошаговым руководством по [реализации согласия в инфраструктуре согласия Azure AD](https://docs.microsoft.com/azure/active-directory/develop/active-directory-integrating-applications#overview-of-the-consent-framework).
-- Получите более подробные сведения об [использовании инфраструктуры согласия в мультитенантном приложении](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview#understanding-user-and-admin-consent), чтобы реализовать согласие пользователя и администратора, с поддержкой нескольких дополнительных шаблонов многоуровневого приложения.
+- Получите более подробные сведения об [использовании инфраструктуры согласия в мультитенантном приложении](https://docs.microsoft.com/azure/active-directory/develop/active-directory-devhowto-multi-tenant-overview), чтобы реализовать согласие пользователя и администратора, с поддержкой нескольких дополнительных шаблонов многоуровневого приложения.

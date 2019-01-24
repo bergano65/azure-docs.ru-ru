@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/17/2018
 ms.author: cynthn
-ms.openlocfilehash: 8acbb33b396aa617936eb0333bd68fea60532425
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: c452341567055e0272c8e6a90c43d6b886d6a928
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47404662"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54425600"
 ---
 # <a name="create-a-vm-from-a-managed-image"></a>Создание виртуальной машины из управляемого образа
 
@@ -43,7 +43,7 @@ ms.locfileid: "47404662"
 
 С помощью PowerShell можно создать виртуальную машину из образа, используя упрощенный набор параметров для командлета [New-AzureRmVm](/powershell/module/azurerm.compute/new-azurermvm). Образ должен находиться в той же группе ресурсов, где будет создана виртуальная машина.
 
-Для работы с этим примером требуется модуль AzureRM 5.6.0 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+Для работы с этим примером требуется модуль AzureRM 5.6.0 или более поздней версии. Чтобы узнать версию, выполните команду ` Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 
 Для создания виртуальной машины из образа в упрощенном наборе параметров для [New-AzureRmVm](/powershell/module/azurerm.compute/new-azurermvm) нужно указать только имя, группу ресурсов и имя образа. В качестве имени всех ресурсов, которые создаются автоматически, New-AzureRmVm будет использовать значение параметра **-Name**. В этом примере мы предоставим более подробные имена для каждого из ресурсов, которые автоматически создаются при помощи командлета. Также можно создать такие ресурсы, как виртуальная сеть, заранее и передать соответствующее имя ресурса в командлет. При этом New-AzureRmVm будет использовать существующие ресурсы, если их можно найти по имени.
 

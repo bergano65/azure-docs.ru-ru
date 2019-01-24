@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.date: 10/04/2018
 ms.author: tomfitz
-ms.openlocfilehash: a2e6e78268f97136533b4f72ce28373642b6c394
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 7e9db85fb91dd0c9a33cc8205bdb30a648dfd38a
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48801273"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438751"
 ---
 # <a name="create-and-publish-a-managed-application-definition"></a>Создание и публикация определения управляемого приложения
 
@@ -30,7 +30,7 @@ ms.locfileid: "48801273"
 
 Используемое в этой статье управляемое приложение имеет только учетную запись хранения. В этом руководстве мы покажем, как опубликовать управляемое приложение. Полные примеры приведены в статье [Примеры проектов для управляемых приложений Azure](sample-projects.md).
 
-Для работы примеров PowerShell в этой статье требуется Azure PowerShell 6.2 или более поздняя версия. [Обновите свою версию](/powershell/azure/install-azurerm-ps), если необходимо.
+Для работы примеров PowerShell в этой статье требуется Azure PowerShell 6.2 или более поздняя версия. [Обновите свою версию](/powershell/azure/azurerm/install-azurerm-ps), если необходимо.
 
 ## <a name="create-the-resource-template"></a>Создание шаблона ресурсов
 

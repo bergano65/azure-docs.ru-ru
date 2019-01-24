@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: reference
 ms.date: 1/16/2019
 ms.author: dukek
-ms.component: logs
-ms.openlocfilehash: d5e57442a163c8a93adc39517285bd88affab2fe
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.subservice: logs
+ms.openlocfilehash: 9ad3ca2233237c9cb4aea0a7bd0c476f48613a9c
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54353062"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438241"
 ---
 # <a name="azure-activity-log-event-schema"></a>Схема событий журнала действий Azure
 **Журнал действий Azure** — это журнал с подробными сведениями о событиях на уровне подписки, которые произошли в Azure. В этой статье описывается схема событий по категориям данных. Схема данных зависит от того, считываются ли данные через портал, PowerShell, CLI или напрямую через REST API и [передачу потока данных в хранилище или Центры событий с помощью профиля журнала](./../../azure-monitor/platform/activity-logs-overview.md#export-the-activity-log-with-a-log-profile). В примерах ниже приведена схема, доступная на портале, в PowerShell, CLI и REST API. Сопоставление этих свойств со [схемой журналов системы диагностики Azure](./tutorial-dashboards.md) приведено в конце статьи.
@@ -795,3 +795,4 @@ ms.locfileid: "54353062"
 ## <a name="next-steps"></a>Дополнительная информация
 * [Дополнительные сведения о журнале действий (прежнее название — журналы аудита)](../../azure-monitor/platform/activity-logs-overview.md)
 * [Потоковая передача журнала действий Azure в Центры событий](../../azure-monitor/platform/activity-logs-stream-event-hubs.md)
+

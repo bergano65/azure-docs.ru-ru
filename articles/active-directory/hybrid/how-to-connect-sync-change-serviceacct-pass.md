@@ -5,7 +5,7 @@ services: active-directory
 keywords: учетная запись службы синхронизации Azure AD, пароль
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 76b19162-8b16-4960-9e22-bd64e6675ecc
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: a0cdaa54d0da58a02cbe9fcda36cbaff6b1fab4a
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: 50b877e1c0ead8f840aecdb8da939a9626e13e1e
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53184905"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54461014"
 ---
 # <a name="changing-the-azure-ad-connect-sync-service-account-password"></a>Изменение пароля учетной записи Azure AD Connect Sync
 Если вы измените пароль учетной записи для Azure AD Connect Sync, служба синхронизации не сможет правильно запуститься, пока вы не сбросите ключ шифрования и не выполните повторную инициализацию пароля учетной записи для Azure AD Connect. 
@@ -44,7 +44,7 @@ Azure AD Connect входит в состав служб синхронизац
 Во-вторых, при некоторых условиях служба синхронизации после изменения пароля не может получить ключ шифрования через DPAPI. Без ключа шифрования служба синхронизации не может расшифровать пароли, необходимые для синхронизации между локальным экземпляром AD и Azure AD.
 Вы этом случае вы увидите такие ошибки.
 
-- Если попытаться запустить службу синхронизации, которая не может получить ключ шифрования, в диспетчере управления службами Windows возникает ошибка "<strong>Windows could not start the Microsoft Azure AD Sync on Local Computer. For more information, review the System Event log. If this is a non-Microsoft service, contact the service vendor, and refer to service-specific error code -21451857952</strong>" (Windows не может запустить синхронизацию Microsoft Azure AD на локальном компьютере. Дополнительные сведения см. в журнале системных событий. Если это не служба корпорации Майкрософт, обратитесь к разработчику и укажите код ошибки для этой службы -21451857952).
+- Если попытаться запустить службу синхронизации, которая не может получить ключ шифрования, в диспетчере управления службами Windows возникает ошибка "<strong>Windows could not start the Microsoft Azure AD Sync on Local Computer. Дополнительные сведения см. в журнале системных событий. If this is a non-Microsoft service, contact the service vendor, and refer to service-specific error code -21451857952</strong>" (Windows не может запустить синхронизацию Microsoft Azure AD на локальном компьютере. Дополнительные сведения см. в журнале системных событий. Если это не служба корпорации Майкрософт, обратитесь к разработчику и укажите код ошибки для этой службы -21451857952).
 - В средстве просмотра событий Windows журнал системных событий содержит ошибку с **идентификатором 6028** и сообщением *"**Невозможно получить ключ шифрования сервера**"*.
 
 Чтобы избежать появления этих ошибок, при изменении пароля выполните процедуры, описанные в разделе [Сброс ключа шифрования в службе синхронизации Azure AD Connect](#abandoning-the-azure-ad-connect-sync-encryption-key).

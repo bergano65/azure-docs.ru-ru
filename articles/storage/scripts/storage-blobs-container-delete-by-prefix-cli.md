@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.date: 06/22/2017
 ms.author: tamram
-ms.openlocfilehash: 9e93dc14a4729011f74c5eafe94528608b89116f
-ms.sourcegitcommit: 8c3267c34fc46c681ea476fee87f5fb0bf858f9e
+ms.openlocfilehash: 85ee6505adafab9587f3583cd4c7182efcc43c11
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/09/2018
-ms.locfileid: "29848293"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54853737"
 ---
 # <a name="delete-containers-based-on-container-name-prefix"></a>Удаление контейнеров на основе префикса имени
 
@@ -46,12 +46,12 @@ az group delete --name myResourceGroup
 
 Ниже приведены команды, с помощью которых скрипт удаляет контейнеры на основе префикса имени. Для каждого элемента в таблице приведены ссылки на документацию по команде.
 
-| Get-Help | Заметки |
+| Команда | Примечания |
 |---|---|
-| [az group create](/cli/azure/group#az_group_create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
+| [az group create](/cli/azure/group) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account create](/cli/azure/storage/account#az_storage_account_create) | Создает учетную запись хранения Azure в указанной группе ресурсов. |
 | [az storage container create](/cli/azure/storage/container#az_storage_container_create) | Создает контейнер в хранилище BLOB-объектов Azure. |
-| [az storage container list](/cli/azure/storage/container#az_storage_container_list) | Возвращает список контейнеров BLOB-объектов в учетной записи службы хранилища Azure. |
+| [az storage container list](/cli/azure/storage/container) | Возвращает список контейнеров BLOB-объектов в учетной записи службы хранилища Azure. |
 | [az storage container delete](/cli/azure/storage/container#az_storage_container_delete) | Удаляет контейнеры в учетной записи службы хранилища Azure. |
 
 ## <a name="next-steps"></a>Дополнительная информация

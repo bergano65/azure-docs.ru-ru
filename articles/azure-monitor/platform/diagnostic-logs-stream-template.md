@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 3/26/2018
 ms.author: johnkem
-ms.component: ''
-ms.openlocfilehash: 69959db83ba99989f7c701f94cf1b17e1721bb47
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.subservice: ''
+ms.openlocfilehash: e6185a7b62e3c599a7c3588824e3a9c4ac60cb53
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104443"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54467634"
 ---
 # <a name="automatically-enable-diagnostic-settings-at-resource-creation-using-a-resource-manager-template"></a>Автоматическое включение параметров диагностики при создании ресурса из шаблона Resource Manager
 В этой статье мы покажем, как применить [шаблон Azure Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md) для настройки параметров диагностики при создании ресурса. Это позволит автоматически запускать потоковую передачу журналов диагностики и метрик в Центры событий, архивировать их в учетной записи хранения ли отправлять в Log Analytics при создании ресурса.
@@ -268,4 +268,5 @@ ms.locfileid: "54104443"
 ## <a name="next-steps"></a>Дополнительная информация
 * [Дополнительные сведения о журналах диагностики Azure](../../azure-monitor/platform/diagnostic-logs-overview.md)
 * [Потоковая передача журналов диагностики Azure в Центры событий](../../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md)
+
 

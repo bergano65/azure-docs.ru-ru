@@ -2,21 +2,21 @@
 title: Схема событий подписки для службы "Сетка событий Azure"
 description: Описание свойств для событий подписки, используемых со службой "Сетка событий Azure"
 services: event-grid
-author: tfitzmac
+author: spelluru
 ms.service: event-grid
 ms.topic: reference
-ms.date: 10/12/2018
-ms.author: tomfitz
-ms.openlocfilehash: ae6513c503b930d9c953f5245a9c98ea096109bb
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.date: 01/12/2019
+ms.author: spelluru
+ms.openlocfilehash: 04bb19c074edff08677d759fb386608f6905e979
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49310244"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54473441"
 ---
 # <a name="azure-event-grid-event-schema-for-subscriptions"></a>Схема событий службы "Сетка событий Azure" для подписок
 
-В этой статье описаны свойства и схема для событий подписки Azure. Введение в схемы событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
+В этой статье описаны свойства и схема для событий подписки Azure. Введение в схемы событий см. в статье [Схема событий службы "Сетка событий Azure"](event-schema.md).
 
 Подписки и группы ресурсов Azure выдают одинаковые типы событий. Типы событий связаны с изменениями в ресурсах или действиями. Основное различие в том, что группы ресурсов выдают события для ресурсов в пределах группы ресурсов, а подписки Azure — для ресурсов во всей подписке.
 

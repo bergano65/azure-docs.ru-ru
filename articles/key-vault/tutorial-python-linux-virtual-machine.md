@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: pryerram
 ms.custom: mvc
-ms.openlocfilehash: 8c816d17807432d75b6102190fc37d25a525d7cf
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 1e364003093d5e37a75830386cafe855b0bdcad2
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54244177"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54467407"
 ---
 # <a name="tutorial-use-azure-key-vault-with-an-azure-virtual-machine-in-python"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Azure на языке Python
 
@@ -101,7 +101,7 @@ az keyvault secret set --vault-name "<YourKeyVaultName>" --name "AppSecret" --va
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
 
-Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az_vm_create).
+Создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm).
 
 В следующем примере создается виртуальная машина *myVM* и добавляется учетная запись пользователя *azureuser*. Параметр `--generate-ssh-keys` автоматически создает ключ SSH и отправляет его в расположение ключа по умолчанию (*~/.ssh*). Чтобы использовать определенный набор ключей, примените параметр `--ssh-key-value`.
 

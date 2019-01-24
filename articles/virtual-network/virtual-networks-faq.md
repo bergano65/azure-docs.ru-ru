@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/04/2018
 ms.author: jdial
-ms.openlocfilehash: 5a92f4543f865141d446f5b681674961f6fef046
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 769dcd3be33ec5dfecf0607ab3e45a11486c48d4
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54021039"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54412875"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Виртуальная сеть Azure: часто задаваемые вопросы
 
@@ -52,7 +52,12 @@ ms.locfileid: "54021039"
 * Файл конфигурации сети (netcfg — только для классических виртуальных сетей). См. статью [Настройка виртуальной сети с помощью файла конфигурации сети](virtual-networks-using-network-configuration-file.md).
 
 ### <a name="what-address-ranges-can-i-use-in-my-vnets"></a>Какие диапазоны адресов можно использовать в виртуальных сетях?
-Любой диапазон IP-адресов, определенный в [RFC 1918](http://tools.ietf.org/html/rfc1918). Например, 10.0.0.0/16.
+Любой диапазон IP-адресов, определенный в [RFC 1918](http://tools.ietf.org/html/rfc1918). Например, 10.0.0.0/16. Невозможно добавить следующий диапазон адресов:
+* 224.0.0.0/4 (многоадресная рассылка)
+* 255.255.255.255/32 (широковещательный адрес)
+* 127.0.0.0/8 (петлевой адрес);
+* 169.254.0.0/16 (локальный адрес канала);
+* 168.63.129.16/32 (внутренний DNS)
 
 ### <a name="can-i-have-public-ip-addresses-in-my-vnets"></a>Можно ли в виртуальных сетях использовать общедоступные IP-адреса?
 Да. Дополнительные сведения о диапазонах общедоступных IP-адресов см. в разделе [Create a virtual network](manage-virtual-network.md#create-a-virtual-network) (Создание виртуальной сети). Общедоступные IP-адреса не доступны непосредственно из Интернета.

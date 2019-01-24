@@ -13,12 +13,13 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 01/02/2018
 ms.author: cynthn
-ms.openlocfilehash: 8d537bdc882487784baef9f693e4677c76d3bd8d
-ms.sourcegitcommit: 2e540e6acb953b1294d364f70aee73deaf047441
+ms.component: files
+ms.openlocfilehash: a2ddaa28f7fbcc6b363ce2c636521fe54ea752f7
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2018
-ms.locfileid: "27577557"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54478184"
 ---
 # <a name="use-azure-file-shares-with-windows-vms"></a>Использование общих файловых ресурсов Azure с виртуальными машинами Windows 
 
@@ -43,7 +44,7 @@ ms.locfileid: "27577557"
 
 
 
-## <a name="create-a-file-share"></a>Создайте общую папку 
+## <a name="create-a-file-share"></a>Создание общей папки 
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. В меню слева выберите **Учетные записи хранения**.
 3. Выберите учетную запись хранения.

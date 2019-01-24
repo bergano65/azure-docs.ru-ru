@@ -11,12 +11,12 @@ ms.component: language-understanding
 ms.topic: conceptual
 ms.date: 01/02/2019
 ms.author: diberry
-ms.openlocfilehash: ae090a8cd812868f63c9805b2f5b59769a715090
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: 638020ab4f64d800bd9d42f226cb36701720f8d0
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53975276"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54427206"
 ---
 # <a name="understand-what-good-utterances-are-for-your-luis-app"></a>Выясните, какие фразы лучше подходят для вашего приложения LUIS
 
@@ -88,7 +88,7 @@ LUIS создает эффективные модели, если высказы
 
 ## <a name="testing-utterances"></a>Высказывания для тестирования 
 
-Разработчикам следует тестировать приложения LUIS по реальным данным, отправляя высказывания на URL-адрес [конечной точки прогнозирования](luis-how-to-manage-keys.md). Такие высказывания позволяют повысить эффективность поиска намерений и сущностей, используя интерфейс [просмотра высказываний](luis-how-to-review-endoint-utt.md). Тесты, выполняемые на панели тестирования веб-сайта LUIS, не отправляются через конечную точку и не способствуют активному обучению. 
+Разработчикам следует тестировать приложения LUIS по реальным данным, отправляя высказывания на URL-адрес [конечной точки прогнозирования](luis-how-to-azure-subscription.md). Такие высказывания позволяют повысить эффективность поиска намерений и сущностей, используя интерфейс [просмотра высказываний](luis-how-to-review-endoint-utt.md). Тесты, выполняемые на панели тестирования веб-сайта LUIS, не отправляются через конечную точку и не способствуют активному обучению. 
 
 ## <a name="review-utterances"></a>Просмотр высказываний
 

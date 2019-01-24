@@ -3,19 +3,19 @@ title: Примеры преобразования утверждений стр
 description: Примеры преобразования утверждений строк для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: f2823ec32b6658aa22c38294c09c9738c9121c39
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 1a382b845b621e47d30869a1081549b7f30348aa
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54121589"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54850745"
 ---
 # <a name="string-claims-transformations"></a>Преобразования утверждений строк
 

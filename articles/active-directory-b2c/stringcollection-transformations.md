@@ -3,19 +3,19 @@ title: Примеры преобразования утверждений String
 description: Примеры преобразования утверждений StringCollection для схемы инфраструктуры процедур идентификации Azure Active Directory B2C
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 924da8c92bad1c5345d5d1833723a0c4e8ad7d29
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 7bec6846a1bb22893beed8086b6d9e88babc1906
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47432670"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54847950"
 ---
 # <a name="stringcollection-claims-transformations"></a>Преобразования утверждений StringCollection
 
@@ -29,8 +29,8 @@ ms.locfileid: "47432670"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | item | строка | ClaimType, добавляемый к исходящему утверждению. |
-| InputClaim | collection | StringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
+| InputClaim | item | строка | Тип ClaimType, добавляемый к исходящему утверждению. |
+| InputClaim | collection | stringCollection | [Необязательно.] Если указано, преобразование утверждений копирует элементы из данной коллекции и добавляет элемент в конец исходящего утверждения коллекции. |
 | outputClaim | collection | StringCollection | Типы утверждений (ClaimType), создаваемые после вызова данного преобразования утверждений (ClaimsTransformation). |
 
 Используйте это преобразование утверждений, чтобы добавить строку в новый или существующий элемент stringCollection. Оно обычно используется в техническом профиле **AAD-UserWriteUsingAlternativeSecurityId**. Перед созданием новой учетной записи социальной сети преобразование утверждений **CreateOtherMailsFromEmail** считывает ClaimType и добавляет значение в элемент ClaimType **otherMails**. 
@@ -99,7 +99,7 @@ ms.locfileid: "47432670"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | collection | stringCollection | Параметр ClaimTypes, используемый в преобразовании утверждений для получения элемента. |
-| outputClaim | extractedItem | строка | Типы утверждений (ClaimType), создаваемые после вызова данного преобразования утверждений (ClaimsTransformation). Первый элемент в коллекции. |
+| outputClaim | extractedItem | строка | Типы ClaimType, создаваемые после вызова этого преобразования ClaimsTransformation. Первый элемент в коллекции. |
 
 В следующем примере считывается утверждение **otherMails** и возвращается первый элемент в утверждение **email**. 
 

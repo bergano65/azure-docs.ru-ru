@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/19/2018
 ms.author: rkarlin
-ms.openlocfilehash: f05c0469dffa074501a301802412901ead3d1e69
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 98ff96b70951cb289fe6a83ad59eb83a6522e42c
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53720821"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54433375"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
 В этой статье приведены сведения по началу работы, а также описаны действия, которые помогут максимально увеличить преимущества от использования центра безопасности Azure. Выполнив эти действия, вы получите сведения о всех подписках Azure, связанных с клиентом Azure Active Directory, а также сможете эффективно управлять системой безопасности организации, одновременно настроив соответствующие политики в нескольких подписках.
@@ -108,7 +108,7 @@ ms.locfileid: "53720821"
 
 
 #### <a name="assign-rbac-roles-to-users-with-powershell"></a>Назначение пользователям ролей RBAC с помощью PowerShell. 
-1. Установите [Azure PowerShell](/powershell/azure/install-azurerm-ps).
+1. Установите [Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 2. Выполните следующие команды: 
 
     ```azurepowershell

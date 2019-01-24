@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 12/14/2018
 ms.author: tamram
 ms.component: files
-ms.openlocfilehash: f1ebc059c66615ecf21054e85472b2a6d86dfce6
-ms.sourcegitcommit: 21466e845ceab74aff3ebfd541e020e0313e43d9
+ms.openlocfilehash: 17b44dcaf6731f3882ed417a94532c6d26c7454d
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53743193"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54818972"
 ---
 # <a name="develop-for-azure-files-with-python"></a>Разработка для файлов Azure с помощью Python
 [!INCLUDE [storage-selector-file-include](../../../includes/storage-selector-file-include.md)]
@@ -33,7 +33,7 @@ ms.locfileid: "53743193"
 
 ## <a name="download-and-install-azure-storage-sdk-for-python"></a>Скачивание и установка пакета SDK службы хранилища Azure для Python
 
-[Пакет SDK службы хранилища Azure для Python](https://github.com/azure/azure-storage-python) требует Python 2.7, 3.3, 3.4, 3.5 или 3.6.
+[Пакет SDK службы хранилища Azure для Python](https://github.com/azure/azure-storage-python) требует Python 2.7, 3.3, 3.4, 3.5 или 3.6.
  
 ## <a name="install-via-pypi"></a>Установка с помощью PyPI
 
@@ -125,7 +125,7 @@ file_service.get_file_to_path('myshare', None, 'myfile', 'out-sunset.png')
 file_service.delete_file('myshare', None, 'myfile')
 ```
 
-## <a name="create-share-snapshot-preview"></a>Создание моментального снимка общего ресурса (предварительная версия)
+## <a name="create-share-snapshot"></a>Создание моментального снимка общей папки
 Вы можете создать копию на момент времени всего общего файлового ресурса.
 
 ```python

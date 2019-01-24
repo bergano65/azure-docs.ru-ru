@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 12/21/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: aa4ea4e724ec383fc9f22bd56572d2fd0e844abc
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: e79b85a2dd47706ca83b6cbc2c59100b05574fab
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332444"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54425566"
 ---
 # <a name="quickstart-create-a-sql-server-windows-virtual-machine-with-azure-powershell"></a>Краткое руководство. Создание виртуальной машины SQL Server под управлением Windows с помощью Azure PowerShell
 
@@ -38,7 +38,7 @@ ms.locfileid: "54332444"
 
 ## <a id="powershell"></a> Установка Azure PowerShell
 
-Для работы с этим кратким руководством требуется модуль Azure PowerShell 3.6 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+Для работы с этим кратким руководством требуется модуль Azure PowerShell 3.6 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable AzureRM`. Если вам необходимо выполнить установку или обновление, см. статью [об установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 
 ## <a name="configure-powershell"></a>Настройка PowerShell
 
@@ -48,7 +48,7 @@ ms.locfileid: "54332444"
    Connect-AzureRmAccount
    ```
 
-1. Должно отобразиться окно для ввода своих учетных данных. Используйте тот же адрес электронной почты и пароль, который вы используете для входа на портал Azure.
+1. Должно отобразиться окно для ввода учетных данных. Используйте тот же адрес электронной почты и пароль, который вы используете для входа на портал Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 

@@ -3,18 +3,18 @@ title: Обновление целевых объектов с помощью к
 description: В этой статье показано, как настраивать System Center Configuration Manager с помощью этого решения для управления обновлениями компьютеров, управляемых SCCM.
 services: automation
 ms.service: automation
-ms.component: update-management
+ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
 ms.date: 03/19/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: f3ab50c4fdc080b157212bcc662a2acf6629483d
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: c3b595e9c4d4b98814d1b68adede97204bf3eb96
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53097970"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54422734"
 ---
 # <a name="integrate-system-center-configuration-manager-with-update-management"></a>Интеграция Integrate System Center Configuration Manager с решением "Управление обновлениями"
 
@@ -51,3 +51,4 @@ ms.locfileid: "53097970"
 После изменения конфигурации создайте развертывание, выполнив шаги, описанные в разделе [Создание развертывания обновлений](automation-tutorial-update-management.md#schedule-an-update-deployment), и выберите **Импортированные группы** в раскрывающемся списке **Тип**, чтобы выбрать соответствующую коллекцию Configuration Manager.
 
 ## <a name="next-steps"></a>Дополнительная информация
+

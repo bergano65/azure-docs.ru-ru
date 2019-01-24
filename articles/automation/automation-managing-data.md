@@ -3,18 +3,18 @@ title: Управление данными службы автоматизаци
 description: Эта статья содержит несколько разделов об управлении средой службы автоматизации Azure.  Сейчас включает в себя хранение данных и резервное копирование для аварийного восстановления службы автоматизации Azure.
 services: automation
 ms.service: automation
-ms.component: shared-capabilities
+ms.subservice: shared-capabilities
 author: georgewallace
 ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 05da900e9ddf4cbb99df5c6d62ddb569059e2c4b
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: b133947a7daf1977f084ee4008599882b51d9e8b
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42145171"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54428483"
 ---
 # <a name="managing-azure-automation-data"></a>Управление данными службы автоматизации Azure
 Эта статья содержит несколько разделов об управлении средой службы автоматизации Azure.
@@ -76,4 +76,5 @@ ms.locfileid: "42145171"
 | Восточная часть Японии |Западная часть Японии |
 
 В маловероятном случае потери данных основного региона корпорация Майкрософт попытается восстановить их. Если восстановить основные данные невозможно, выполняется географическая отработка отказа и затронутые клиенты получают уведомления об этом через свои подписки.
+
 

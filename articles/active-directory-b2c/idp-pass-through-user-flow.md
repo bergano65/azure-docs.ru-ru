@@ -3,19 +3,19 @@ title: Передача маркера доступа с помощью пото
 description: Сведения о передаче маркера доступа для поставщиков удостоверений OAuth2.0 в качестве утверждения через поток пользователя в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: b26605bd0b436d948fb1f62cbf32a17ea4f386d0
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 279e60d76d56cd139b4de991bc0434cbf129adee
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53602262"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54844676"
 ---
 # <a name="pass-an-access-token-through-a-user-flow-to-your-application-in-azure-active-directory-b2c"></a>Передача маркера доступа с помощью потока пользователя в приложение в Azure Active Directory B2C
 

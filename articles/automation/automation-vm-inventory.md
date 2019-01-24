@@ -3,19 +3,19 @@ title: Управление виртуальной машиной Azure с по�
 description: Управление виртуальной машиной с помощью сбора данных инвентаризации.
 services: automation
 ms.service: automation
-ms.component: change-inventory-management
+ms.subservice: change-inventory-management
 keywords: данные инвентаризации, автоматизация, отслеживание
 author: jennyhunter-msft
 ms.author: jehunte
 ms.date: 03/30/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 761bb1a6974afd5e7b851efb0c60101ab7d8958b
-ms.sourcegitcommit: 07a09da0a6cda6bec823259561c601335041e2b9
+ms.openlocfilehash: 9fabaa2be850e5b15f10fc78adb14dfd5c112906
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49403616"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54426052"
 ---
 # <a name="manage-an-azure-virtual-machine-with-inventory-collection"></a>Управление виртуальной машиной Azure с помощью сбора данных инвентаризации
 
@@ -65,7 +65,7 @@ ms.locfileid: "49403616"
 |Включено     | Определяет, применяется ли параметр        |
 |Имя элемента     | Понятное имя файла для отслеживания        |
 |Группа     | Имя группы для логического группирования файлов        |
-|Раздел реестра Windows   | Путь для проверки наличия файла. Например, HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\Common Startup.      |
+|Раздел реестра Windows   | Путь для проверки наличия файла. Например: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders\Common Startup      |
 
 ### <a name="windows-files"></a>файлы Windows.
 
@@ -126,3 +126,4 @@ ms.locfileid: "49403616"
 
 * Дополнительные сведения об управлении изменениями файлов и параметров реестра на виртуальных машинах см. в статье [Отслеживание изменений программного обеспечения в среде с помощью решения для отслеживания изменений](../log-analytics/log-analytics-change-tracking.md).
 * Дополнительные сведения об управлении Windows и пакетами обновлений на виртуальных машинах см. в статье [Решение для управления обновлениями в Azure](../operations-management-suite/oms-solution-update-management.md).
+

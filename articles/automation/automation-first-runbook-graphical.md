@@ -4,18 +4,18 @@ description: Учебник, в котором описывается созда
 keywords: Runbook, шаблон Runbook, служба автоматизации Runbook и Azure Runbook
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 04/13/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6a9e6bbf3bc507a4d45af03c791104c9490cd36f
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: be811d0dc2ce2eca0b20ca12165eaf0799bd6b5d
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34195902"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54426800"
 ---
 # <a name="my-first-graphical-runbook"></a>Первый графический Runbook
 
@@ -28,7 +28,7 @@ ms.locfileid: "34195902"
 
 В данном учебнике описана процедура создания [графического модуля Runbook](automation-runbook-types.md#graphical-runbooks) в службе автоматизации Azure. Сначала вы протестируете и опубликуете простой модуль runbook и узнаете, как отслеживать состояние его заданий. Затем мы изменим модуль runbook, настроив его для фактического управления ресурсами Azure (в нашем примере это запуск виртуальной машины Azure). Затем вы завершите работу с руководством, повысив надежность модуля runbook, а также добавив параметры и условные связи.
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Для работы с этим учебником требуется:
 
@@ -229,4 +229,5 @@ ms.locfileid: "34195902"
 * Дополнительные сведения о графической разработке см. в статье [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
 * Сведения о том, как начать работу с модулями Runbook, см. в статье [Мой первый модуль Runbook PowerShell](automation-first-runbook-textual-powershell.md).
 * Чтобы приступить к работе с модулями Runbook рабочих процессов PowerShell, обратитесь к статье [Мой первый модуль Runbook рабочего процесса PowerShell](automation-first-runbook-textual.md)
+
 

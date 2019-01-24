@@ -14,18 +14,18 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 11/29/2017
 ms.author: rclaus
-ms.openlocfilehash: e985111a28805f861242240a5c2e3d7b6664be4e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 140c542b71ff87f6b7a846888da06e58fa03ce10
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46996117"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54855335"
 ---
 # <a name="use-cloud-init-to-set-hostname-for-a-linux-vm-in-azure"></a>Задание имени узла с помощью cloud-init для виртуальной машины Linux в Azure
 В этой статье показано, как с помощью [cloud-init](https://cloudinit.readthedocs.io) настроить определенное имя узла на виртуальной машине или в масштабируемом наборе виртуальных машин при подготовке в Azure. Эти скрипты cloud-init выполняются при первой загрузке, если в Azure подготовлены все нужные ресурсы. Дополнительные сведения о встроенной поддержке cloud-init в Azure и поддерживаемых дистрибутивах Linux см. в [обзоре cloud-init](using-cloud-init.md).
 
 ## <a name="set-the-hostname-with-cloud-init"></a>Указание имени узла с помощью cloud-init
-По умолчанию имя узла совпадает с именем виртуальной машины при ее создании в Azure.  Для выполнения скрипта cloud-init, чтобы изменить имя узла по умолчанию при создании виртуальной машины в Azure с помощью команды [az vm create](/cli/azure/vm#az_vm_create), укажите файл cloud-init с параметром `--custom-data`.  
+По умолчанию имя узла совпадает с именем виртуальной машины при ее создании в Azure.  Для выполнения скрипта cloud-init, чтобы изменить имя узла по умолчанию при создании виртуальной машины в Azure с помощью команды [az vm create](/cli/azure/vm), укажите файл cloud-init с параметром `--custom-data`.  
 
 Чтобы увидеть процесс обновления в действии, создайте файл с именем *cloud_init_hostname.txt* в текущей оболочке и вставьте в него конфигурацию, приведенную ниже. Для этого примера создайте файл в Cloud Shell (не на локальном компьютере). Вы можете использовать любой редактор. Введите `sensible-editor cloud_init_hostname.txt`, чтобы создать файл и просмотреть список доступных редакторов. Выберите первый пункт, чтобы использовать редактор **nano**. Убедитесь, что весь файл cloud-init скопирован правильно, особенно первая строка.  
 
@@ -40,7 +40,7 @@ hostname: myhostname
 az group create --name myResourceGroup --location eastus
 ```
 
-Теперь создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm#az_vm_create) и укажите файл cloud-init с помощью `--custom-data cloud_init_hostname.txt`, как показано ниже.
+Теперь создайте виртуальную машину с помощью команды [az vm create](/cli/azure/vm) и укажите файл cloud-init с помощью `--custom-data cloud_init_hostname.txt`, как показано ниже.
 
 ```azurecli-interactive 
 az vm create \

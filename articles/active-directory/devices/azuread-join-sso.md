@@ -4,7 +4,7 @@ description: Сведения о настройке гибридных устр�
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 49fab25d772dba431bb2eb1ccac8a5e6daf41667
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: 871302a93fadd7c5931ad9403370badf0d0673af
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52276915"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54452706"
 ---
 # <a name="how-sso-to-on-premises-resources-works-on-azure-ad-joined-devices"></a>Как единый вход для локальных ресурсов работает на подключенных к Azure AD устройствах
 

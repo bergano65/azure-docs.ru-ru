@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 12/03/2018
-ms.openlocfilehash: 52caae38c21fe403735b8479ec2e721ef38f521e
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.date: 01/17/2019
+ms.openlocfilehash: f43c2cd5a3c155258cd698f6b55854bc0df9f861
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52845802"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54388596"
 ---
 # <a name="create-and-manage-logical-servers-and-single-databases-in-azure-sql-database"></a>Создание логических серверов и отдельных баз данных в Базе данных SQL Azure и управление ими
 
@@ -57,7 +57,7 @@ ms.locfileid: "52845802"
 
 ## <a name="powershell-manage-logical-servers-and-databases"></a>PowerShell: управление логическими серверами и базами данных
 
-Для создания и администрирования логических серверов Azure SQL, отдельных и включенных в пулы баз данных, а также брандмауэров логических серверов с помощью Azure PowerShell, используйте приведенные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps).
+Для создания и администрирования логических серверов Azure SQL, отдельных и включенных в пулы баз данных, а также брандмауэров логических серверов с помощью Azure PowerShell, используйте приведенные ниже командлеты PowerShell. Если вам нужно выполнить установку или обновление PowerShell, см. статью [об установке модуля Azure PowerShell](/powershell/azure/install-az-ps).
 
 > [!TIP]
 > Примеры скриптов PowerShell, см. в руководствах по [созданию отдельной базы данных Azure SQL и настройка правила брандмауэра логического сервера с помощью PowerShell](scripts/sql-database-create-and-configure-database-powershell.md) и [мониторингу и масштабированию отдельной базы данных SQL с помощью PowerShell](scripts/sql-database-monitor-and-scale-database-powershell.md).
@@ -114,11 +114,11 @@ ms.locfileid: "52845802"
 Для создания сервера Azure SQL, баз данных и брандмауэров и управления ими с помощью Transact-SQL используйте приведенные ниже команды T-SQL. Можно выполнить эти команды на портале Azure, в [SQL Server Management Studio](/sql/ssms/use-sql-server-management-studio), [Visual Studio Code](https://code.visualstudio.com/docs) или любой другой программе, которая может подключаться к серверу базы данных SQL Azure и передавать команды Transact-SQL. Ознакомьтесь с дополнительными сведениями об управлении [эластичными пулами](sql-database-elastic-pool.md).
 
 > [!TIP]
-> Инструкции по использованию SQL Server Management Studio в Microsoft Windows см. в руководстве по [подключению к Базе данных Azure SQL и созданию запросов к ней с помощью SQL Server Management Studio](sql-database-connect-query-ssms.md). Инструкции по использованию Visual Studio Code в macOS, Linux и Windows см. в руководстве по [подключению к Базе данных Azure SQL и созданию запросов к ней с помощью Visual Studio Code](sql-database-connect-query-vscode.md).
+> Инструкции по использованию SQL Server Management Studio в Microsoft Windows см. в руководстве по [подключению к Базе данных Azure SQL и созданию запросов к ней Подключение к базе данных SQL Azure и создание запросов к ней с помощью SQL Server Management Studio](sql-database-connect-query-ssms.md). Инструкции по использованию Visual Studio Code в macOS, Linux и Windows см. в статье [Краткое руководство. с помощью Visual Studio Code](sql-database-connect-query-vscode.md).
 > [!IMPORTANT]
 > С помощью Transact-SQL невозможно создать или удалить сервер.
 
-| Get-Help | ОПИСАНИЕ |
+| Команда | ОПИСАНИЕ |
 | --- | --- |
 |[CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-current)|Создает базу отдельную данных. Для создания базы данных требуется подключение к базе данных master.|
 | [ALTER DATABASE (база данных SQL Azure)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current) |Изменяет базу данных SQL Azure. |
@@ -139,7 +139,7 @@ ms.locfileid: "52845802"
 
 Для создания сервера Azure SQL Server, баз данных и брандмауэров и управления используются приведенные ниже запросы REST API.
 
-| Get-Help | ОПИСАНИЕ |
+| Команда | ОПИСАНИЕ |
 | --- | --- |
 |[Серверы: создание или обновление](https://docs.microsoft.com/rest/api/sql/servers/createorupdate)|Создает или обновляет сервер.|
 |[Серверы: удаление](https://docs.microsoft.com/rest/api/sql/servers/delete)|Удаляет сервер SQL Server.|

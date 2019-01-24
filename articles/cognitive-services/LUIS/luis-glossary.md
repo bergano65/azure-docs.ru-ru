@@ -8,14 +8,14 @@ manager: cgronlun
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 09/10/2018
+ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: b0bbd3300e48e82e44a7b7fac05f89c8d25e007f
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 8ab5000f1f50e10195c02b6198fa0bcffd0408b5
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53603503"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54844770"
 ---
 # <a name="language-understanding-glossary-of-common-vocabulary-and-concepts"></a>Основные понятия и определения глоссария Интеллектуальной службы распознавания речи (LUIS)
 В глоссарии Интеллектуальной службы распознавания речи (LUIS) объясняются термины, с которыми вы можете столкнуться при работе со службой API LUIS.
@@ -74,7 +74,7 @@ ms.locfileid: "53603503"
 
 ## <a name="endpoint"></a>Конечная точка
 
-На URL-адрес [конечной точки LUIS](https://aka.ms/luis-endpoint-apis) отправляются запросы LUIS после разработки и публикации [приложения LUIS](#luis-app). В URL-адресе конечной точки содержится регион опубликованного приложения, а также идентификатор приложения. Конечную точку можно найти на странице **[Keys and endpoints](luis-how-to-manage-keys.md)** (Ключи и конечные точки) вашего приложения. Кроме того, URL-адрес конечной точки можно получить из API [получения сведений о приложении](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c37).
+На URL-адрес [конечной точки LUIS](https://aka.ms/luis-endpoint-apis) отправляются запросы LUIS после разработки и публикации [приложения LUIS](#luis-app). В URL-адресе конечной точки содержится регион опубликованного приложения, а также идентификатор приложения. Конечную точку можно найти на странице **[Keys and endpoints](luis-how-to-azure-subscription.md)** (Ключи и конечные точки) вашего приложения. Кроме того, URL-адрес конечной точки можно получить из API [получения сведений о приложении](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c37).
 
 Пример конечной точки выглядит следующим образом:
 
@@ -177,7 +177,7 @@ ms.locfileid: "53603503"
 
 ## <a name="subscription-key"></a>Ключ подписки
 
-Ключ подписки — это ключ **конечной точки**, связанный со службой LUIS, [созданной в Azure](luis-how-to-azure-subscription.md). Этот ключ не является [ключом разработки](#programmatic-key). Имеющийся ключ конечной точки следует использовать для запросов конечной точки. Не используйте для этой цели ключ разработки. Текущий ключ конечной точки можно увидеть в URL-адресе конечной точки в нижней части страницы [**Keys and endpoints**](luis-how-to-manage-keys.md) (Ключи и конечные точки) на веб-сайте [LUIS](luis-reference-regions.md). Это значение **ключ-подписка** пары "имя-значение".
+Ключ подписки — это ключ **конечной точки**, связанный со службой LUIS, [созданной в Azure](luis-how-to-azure-subscription.md). Этот ключ не является [ключом разработки](#programmatic-key). Имеющийся ключ конечной точки следует использовать для запросов конечной точки. Не используйте для этой цели ключ разработки. Текущий ключ конечной точки можно увидеть в URL-адресе конечной точки в нижней части страницы [**Keys and endpoints**](luis-how-to-azure-subscription.md) (Ключи и конечные точки) на веб-сайте [LUIS](luis-reference-regions.md). Это значение **ключ-подписка** пары "имя-значение".
 
 ## <a name="test"></a>Тест
 

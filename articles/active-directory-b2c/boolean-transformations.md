@@ -3,19 +3,19 @@ title: Примеры преобразования логических утве
 description: Примеры преобразования логических утверждений для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: c6e9337fb5e336c506fc43e13eeb7fdbfaf636a7
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 1afbf8e8473e12992b7f031ac9835a58e1089b0d
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47432568"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54853278"
 ---
 # <a name="boolean-claims-transformations"></a>Преобразования логических утверждений
 
@@ -31,7 +31,7 @@ ms.locfileid: "47432568"
 |-------| ------------------------ | ---------- | ----- |
 | InputClaim | inputClaim1 | Логическое | Первый оцениваемый элемент ClaimType. |
 | InputClaim | inputClaim2  | Логическое | Второй оцениваемый элемент ClaimType. |
-|OutputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова этого преобразования утверждений (true или false). |
+|outputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова этого преобразования утверждений (true или false). |
 
 В следующем преобразовании утверждений показано, как выполнять операцию AND для двух логических элементов ClaimType: `isEmailNotExist` и `isSocialAccount`. Для исходящего утверждения `presentEmailSelfAsserted` присваивается значение `true`, если значения обоих входящих утверждений — `true`. На шаге оркестрации можно использовать необходимое условие для предварительной настройки страницы самоподтверждения, только если электронная почта учетной записи социальной сети пуста.
 
@@ -62,7 +62,7 @@ ms.locfileid: "47432568"
 
 | Элемент | TransformationClaimType  | Тип данных  | Примечания |
 | ---- | ------------------------ | ---------- | ----- |
-| inputClaim | inputClaim | Логическое | Элемент ClaimType, который необходимо подтвердить. |
+| InputClaim | InputClaim | Логическое | Элемент ClaimType, который необходимо подтвердить. |
 | InputParameter |valueToCompareTo | Логическое | Значение для сравнения (true или false). |
 
 Преобразование утверждений **AssertBooleanClaimIsEqualToValue** всегда выполняется с помощью [технического профиля проверки](validation-technical-profile.md), вызываемого через [самоподтвержденный технический профиль](self-asserted-technical-profile.md). Метаданные самоподтвержденного технического профиля **UserMessageIfClaimsTransformationBooleanValueIsNotEqual** управляют сообщением, поступающим пользователю из технического профиля.
@@ -119,8 +119,8 @@ ms.locfileid: "47432568"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputClaim | Логическое | Обрабатываемое утверждение. |
-| OutputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова данного ClaimsTransformation (true или false). |
+| InputClaim | InputClaim | Логическое | Обрабатываемое утверждение. |
+| outputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова данного ClaimsTransformation (true или false). |
 
 Это преобразование утверждений используется для выполнения логического отрицания утверждения.
 
@@ -149,7 +149,7 @@ ms.locfileid: "47432568"
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | Логическое | Первый оцениваемый элемент ClaimType. |
 | InputClaim | inputClaim2 | Логическое | Второй оцениваемый элемент ClaimType. |
-| OutputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова ClaimsTransformation (true или false). |
+| outputClaim | outputClaim | Логическое | Элементы ClaimType, создаваемые после вызова ClaimsTransformation (true или false). |
 
 В следующем преобразовании утверждений показано, как выполнять операцию `Or` для двух логических элементов ClaimType. На шаге оркестрации можно использовать необходимое условие для предварительной настройки страницы самоподтверждения, если значение одного из утверждений — `true`.
 

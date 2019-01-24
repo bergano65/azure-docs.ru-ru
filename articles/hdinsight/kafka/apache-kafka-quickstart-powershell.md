@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: mvc,hdinsightactive
 ms.topic: quickstart
 ms.date: 04/16/2018
-ms.openlocfilehash: 1dd80cffe64e6c93a0681400d067182f1a74afff
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 6883ebe1e103f9ed1f06aa4ee0e6281667fc46b8
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53581874"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54424937"
 ---
 # <a name="quickstart-create-an-apache-kafka-on-hdinsight-cluster"></a>Краткое руководство. Создание Apache Kafka в кластере HDInsight
 
@@ -33,7 +33,7 @@ ms.locfileid: "53581874"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-* Установите Azure PowerShell. Дополнительные сведения см. в документе [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps).
+* Установите Azure PowerShell. Дополнительные сведения см. в документе [Установка и настройка Azure PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps).
 
 * Клиент SSH. В инструкциях в данном документе для подключения к кластеру используется протокол SSH.
 

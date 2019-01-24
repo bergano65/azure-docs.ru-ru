@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 6bdb319eb89c3dad8b3602b0ec4561b962fcc868
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.openlocfilehash: 36a84618a998dd2e06f5563fb8706a1dc8400e59
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53608704"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54823357"
 ---
 # <a name="contoso-migration-rehost-an-on-premises-app-to-azure-vms"></a>Миграция Contoso. Повторное размещение локального приложения на виртуальных машинах Azure
 
@@ -66,7 +66,7 @@ ms.locfileid: "53608704"
 
 ## <a name="solution-design"></a>Архитектура решения
 
-Определив свои цели и требования, Contoso начинает разработку и анализ решения для развертывания и планирует процесс миграции, включая службы Azure, которые будут использоваться в ходе этой миграции.
+Определив свои цели и требования, специалисты компании Contoso начинают разработку и анализ решения для развертывания и планируют процесс миграции, включая службы Azure, которые будут использоваться в ходе этой миграции.
 
 ### <a name="current-app"></a>Текущее приложение
 

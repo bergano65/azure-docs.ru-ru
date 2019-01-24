@@ -4,7 +4,7 @@ description: При планировании гибридного решения
 documentationcenter: ''
 services: active-directory
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 40dc4baa-fe82-4ab6-a3e4-f36fa9dcd0df
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.date: 05/30/2018
 ms.component: hybrid
 ms.author: billmath
 ms.custom: seohack1
-ms.openlocfilehash: c317c2bab26a44fc78e42fe440744bd26add1f2e
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 34c284f3fdd78d8b2f56ec7c36e139f9ac9d78bf
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46310573"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54473509"
 ---
 # <a name="plan-for-enhancing-data-security-through-a-strong-identity-solution"></a>Планирование повышения безопасности данных благодаря надежному решению для идентификации
 Первым шагом в защите данных является определение того, кто может получить доступ к этим данным. Кроме того, у вас должно быть решение для идентификации, которое можно интегрировать с вашей системой для обеспечения возможностей аутентификации и авторизации. Проверку подлинности и авторизацию часто путают друг с другом, понимая их роли неправильно. На самом деле между ними есть различия, как показано на рисунке ниже.

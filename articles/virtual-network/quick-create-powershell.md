@@ -14,12 +14,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: jdial
-ms.openlocfilehash: 725e03ded6d6f2e3b5d7a41d2053f418a5933ef8
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: ade8329e6e42fae9f3232617488a6d4a69f8ef1f
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54023249"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54437391"
 ---
 # <a name="quickstart-create-a-virtual-network-using-powershell"></a>Краткое руководство. Создание виртуальной сети с помощью PowerShell
 
@@ -29,7 +29,7 @@ ms.locfileid: "54023249"
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-powershell.md)]
 
-Чтобы установить и использовать PowerShell локально, для работы с этим руководством вам понадобится модуль AzureRM PowerShell 5.4.1 или более поздней версии. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Сведения об установке или обновлении см. в [этой статье](/powershell/azure/install-azurerm-ps).
+Чтобы установить и использовать PowerShell локально, для работы с этим руководством вам понадобится модуль AzureRM PowerShell 5.4.1 или более поздней версии. Выполните командлет `Get-Module -ListAvailable AzureRM`, чтобы узнать установленную версию. Сведения об установке или обновлении см. в [этой статье](/powershell/azure/azurerm/install-azurerm-ps).
 
 Наконец, если модуль PowerShell запущен локально, необходимо также выполнить `Connect-AzureRmAccount`. Эта команда создает подключение к Azure.
 

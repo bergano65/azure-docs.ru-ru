@@ -3,12 +3,12 @@ layout: HubPage
 hide_bc: true
 title: Документация по Microsoft Azure
 description: Узнайте, как создавать мощные приложения и управлять ими с помощью облачных служб Microsoft Azure. Вы можете получить документацию, примеры кода, учебники и многое другое.
-ms.openlocfilehash: c8ba57b9173fbbfa4e00472972921073f32cb2f7
-ms.sourcegitcommit: 698ba3e88adc357b8bd6178a7b2b1121cb8da797
+ms.openlocfilehash: 936200f304a1c2f923797b3664e4b2ecd9799e65
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2018
-ms.locfileid: "53017791"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54425682"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -3318,7 +3318,7 @@ ms.locfileid: "53017791"
                                                     <a href="/powershell/azure/get-started-azureps">Начало работы</a>
                                                 </p>
                                                 <p>
-                                                    <a href="/powershell/azure/install-azurerm-ps">Скачать PowerShell</a>
+                                                    <a href="/powershell/azure/azurerm/install-azurerm-ps">Скачать PowerShell</a>
                                                 </p>
                                                 <p>
                                                     <a href="/powershell/azure/overview">Справочные материалы</a>

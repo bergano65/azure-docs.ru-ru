@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: mialdrid
 ms.custom: seodec18
-ms.openlocfilehash: 3df107f8854469b50c5e8483515388b5c93fb244
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: ab1098ca65ad92cffdbe1dfb24fd43fcc8f10eae
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53383278"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54431684"
 ---
 # <a name="configure-expressroute-global-reach-preview"></a>Настройка ExpressRoute Global Reach (предварительная версия)
 Эта статья поможет вам настроить ExpressRoute Global Reach с помощью PowerShell. Дополнительные сведения см. в разделе [Связывание каналов ExpressRoute для включения ExpressRoute Global Reach (предварительная версия)](expressroute-global-reach.md).
@@ -26,7 +26,7 @@ ms.locfileid: "53383278"
 
 Прежде чем начать настройку, проверьте следующее:
 
-* Установлена ли последняя версия Azure PowerShell. Дополнительные сведения см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/install-azurerm-ps).
+* Установлена ли последняя версия Azure PowerShell. Дополнительные сведения см. в статье [Установка и настройка Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 * Ознакомьтесь с [рабочими процессами](expressroute-workflows.md) подготовки канала ExpressRoute.
 * Подготовлены ли каналы ExpressRoute.
 * Настроен ли частный пиринг Azure для каналов ExpressRoute.  

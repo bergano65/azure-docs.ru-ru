@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: maghan
-ms.openlocfilehash: 94476486ed87662f3d6b989b8d5360dd792f8824
-ms.sourcegitcommit: 161d268ae63c7ace3082fc4fad732af61c55c949
+ms.openlocfilehash: caa877a265fb8665e062cc0069247bca0994c4bf
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43041186"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54857103"
 ---
 # <a name="embed-a-report-in-power-bi-workspace-collections"></a>Внедрение отчета в коллекции рабочих областей Power BI
 
@@ -84,7 +84,7 @@ using (var response = request.GetResponse() as System.Net.HttpWebResponse)
 
 В коллекциях рабочих областей Power BI используются маркеры внедрения, которые представляют собой маркеры JSON Web Token, подписанные HMAC. Маркеры подписываются с помощью ключа доступа из коллекции рабочих областей Power BI. По умолчанию маркеры внедрения используются для предоставления доступа к отчету с правами только для чтения, чтобы внедрить его в приложение. Маркеры внедрения выдаются для конкретного отчета и должны быть связаны с URL-адресом внедрения.
 
-Маркеры доступа должны создаваться на сервере, так как ключи доступа используются для подписания или шифрования маркеров. Дополнительные сведения о создании маркера доступа см. в разделе [Аутентификация и авторизация в коллекциях рабочих областей Power BI](app-token-flow.md). Вы также можете ознакомиться с методом [CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN#methods_). Здесь приведен пример с использованием пакета SDK для Power BI (.NET).
+Маркеры доступа должны создаваться на сервере, так как ключи доступа используются для подписания или шифрования маркеров. Дополнительные сведения о создании маркера доступа см. в разделе [Аутентификация и авторизация в коллекциях рабочих областей Power BI](app-token-flow.md). Вы также можете ознакомиться с методом [CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN). Здесь приведен пример с использованием пакета SDK для Power BI (.NET).
 
 Будет использоваться ранее полученный идентификатор отчета. После создания маркера внедрения воспользуйтесь ключом доступа для создания маркера, который вы сможете использовать в JavaScript. Для *класса PowerBIToken* необходимо установить [пакет NuGet для Power BI (Core)](https://www.nuget.org/packages/Microsoft.PowerBI.Core/).
 
@@ -147,7 +147,7 @@ var report = powerbi.embed($reportContainer.get(0), embedConfiguration);
 
 [Приступая к работе с примером Microsoft Power BI Embedded](get-started-sample.md)  
 [Аутентификация и авторизация в коллекциях рабочих областей Power BI](app-token-flow.md)  
-[CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN#methods_)  
+[CreateReportEmbedToken](https://docs.microsoft.com/dotnet/api/microsoft.powerbi.security.powerbitoken?redirectedfrom=MSDN)  
 [Пример внедрения JavaScript](https://microsoft.github.io/PowerBI-JavaScript/demo/)  
 [Пакет NuGet для Power BI (JavaScript)](https://www.nuget.org/packages/Microsoft.PowerBI.JavaScript/)  
 [Пакет NuGet для API Power BI](https://www.nuget.org/profiles/powerbi)

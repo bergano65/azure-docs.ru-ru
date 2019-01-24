@@ -3,7 +3,7 @@ title: 'Как войти с помощью двухфакторной пров�
 description: Узнайте, как войти в систему с использованием различных методов проверки личности в сведениях для защиты.
 services: active-directory
 author: eross-msft
-manager: mtillman
+manager: daveba
 ms.reviewer: sahenry
 ms.service: active-directory
 ms.workload: identity
@@ -11,12 +11,12 @@ ms.component: user-help
 ms.topic: conceptual
 ms.date: 07/30/2018
 ms.author: lizross
-ms.openlocfilehash: 9f7f06df2ab54e7ccb947362b6824097158166ce
-ms.sourcegitcommit: 30fd606162804fe8ceaccbca057a6d3f8c4dd56d
+ms.openlocfilehash: 4bd1ceb03ddce572e0571afb87ec2f0c36a49443
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39348080"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54810420"
 ---
 # <a name="sign-in-using-two-step-verification-or-security-info"></a>Вход с помощью двухфакторной проверки подлинности или сведений для защиты
 

@@ -4,7 +4,7 @@ description: Способы устранения ошибок в прокси-с
 services: active-directory
 documentationcenter: ''
 author: barbkess
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
@@ -15,12 +15,12 @@ ms.date: 06/26/2018
 ms.author: barbkess
 ms.reviewer: harshja
 ms.custom: H1Hack27Feb2017; it-pro
-ms.openlocfilehash: 2904de3243e37d7ee575a504934d5975789c00ef
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: b440965fa3acb6c08c4827dce941247b8921b98b
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53135072"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54473475"
 ---
 # <a name="troubleshoot-application-proxy-problems-and-error-messages"></a>Устранение неполадок и сообщения об ошибках прокси приложения
 Если во время доступа к опубликованному приложению или публикации приложений возникают ошибки, проверьте следующие параметры, чтобы выяснить, правильно ли работает прокси-сервер приложений Microsoft Azure AD.

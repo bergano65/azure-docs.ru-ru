@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: jdial
 ms.custom: ''
-ms.openlocfilehash: 0f98f815c0417d1ee8ad5708589b5402a033f83a
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 5fc5829744d3740f3484303ae009145106264fec
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46989544"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54470721"
 ---
 # <a name="connect-virtual-networks-with-virtual-network-peering-using-the-azure-cli"></a>Подключение виртуальных сетей с помощью пиринговой связи с использованием Azure CLI
 
@@ -47,7 +47,7 @@ ms.locfileid: "46989544"
 az group create --name myResourceGroup --location eastus
 ```
 
-Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet#az_network_vnet_create). В следующем примере создается виртуальная сеть с именем *myVirtualNetwork1* и префиксом адреса *10.0.0.0/16*.
+Создайте виртуальную сеть с помощью команды [az network vnet create](/cli/azure/network/vnet). В следующем примере создается виртуальная сеть с именем *myVirtualNetwork1* и префиксом адреса *10.0.0.0/16*.
 
 ```azurecli-interactive 
 az network vnet create \
@@ -88,7 +88,7 @@ vNet2Id=$(az network vnet show \
   --out tsv)
 ```
 
-Создайте пиринговую связь сети *myVirtualNetwork1* с сетью *myVirtualNetwork2*, выполнив команду [az network vnet peering create](/cli/azure/network/vnet/peering#az_network_vnet_peering_create). Если не указать параметр `--allow-vnet-access`, пиринговая связь будет создана, но не позволит обмениваться данными.
+Создайте пиринговую связь сети *myVirtualNetwork1* с сетью *myVirtualNetwork2*, выполнив команду [az network vnet peering create](/cli/azure/network/vnet/peering). Если не указать параметр `--allow-vnet-access`, пиринговая связь будет создана, но не позволит обмениваться данными.
 
 ```azurecli-interactive
 az network vnet peering create \

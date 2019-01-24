@@ -3,22 +3,22 @@ title: Срок действия сообщений служебной шины 
 description: Истечение срока действия и срок жизни сообщений служебной шины Azure.
 services: service-bus-messaging
 documentationcenter: ''
-author: clemensv
+author: axisc
 manager: timlt
-editor: ''
+editor: spelluru
 ms.service: service-bus-messaging
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 11/29/2018
-ms.author: spelluru
-ms.openlocfilehash: c5df5f43c4f01013cc44a2497203947f303f3e81
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.date: 01/23/2019
+ms.author: aschhab
+ms.openlocfilehash: 1ea645ee53f91a62bd49fb1da0d44e2962708b88
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52634835"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54856967"
 ---
 # <a name="message-expiration-time-to-live"></a>Срок действия сообщения (срок жизни)
 

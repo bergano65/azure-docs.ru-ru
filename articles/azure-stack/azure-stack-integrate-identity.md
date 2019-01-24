@@ -2,20 +2,20 @@
 title: 'Интеграция центра обработки данных Azure Stack: идентификация'
 description: Узнайте, как интегрировать AD FS Azure Stack с AD FS центра обработки данных.
 services: azure-stack
-author: jeffgilb
+author: PatAltimore
 manager: femila
 ms.service: azure-stack
 ms.topic: article
-ms.date: 01/08/19
-ms.author: jeffgilb
-ms.reviewer: wfayed
+ms.date: 01/23/19
+ms.author: patricka
+ms.reviewer: thoroet
 keywords: ''
-ms.openlocfilehash: 63ac30728cceae76f869f5529905cd6d3dde9ae2
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 4f599379de07a9628ee81425ddac2374411bdf97
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54263803"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54852768"
 ---
 # <a name="azure-stack-datacenter-integration---identity"></a>Интеграция центра обработки данных Azure Stack: идентификация
 Azure Stack можно развернуть с помощью Azure Active Directory (Azure AD) или служб федерации Active Directory (AD FS) в качестве поставщика удостоверений. Сделать выбор следует перед развертыванием Azure Stack. Развертывание с помощью AD FS также называется развертыванием Azure Stack в отключенном режиме.
@@ -193,16 +193,21 @@ Graph поддерживает только интеграцию с отдель
 
 Чтобы выполнить эту процедуру, используйте компьютер, который может взаимодействовать с привилегированной конечной точкой в Azure Stack и имеет доступ к файлу метаданных, созданному на предыдущем шаге.
 
-1. Откройте сеанс Windows PowerShell с повышенными привилегиями.
+1. Откройте сеанс Windows PowerShell с повышенными правами и подключитесь к привилегированной конечной точке.
 
    ```PowerShell  
    $federationMetadataFileContent = get-content c:\metadata.xml
    $creds=Get-Credential
    Enter-PSSession -ComputerName <IP Address of ERCS> -ConfigurationName PrivilegedEndpoint -Credential $creds
-   Register-CustomAdfs -CustomAdfsName Contoso -CustomADFSFederationMetadataFileContent $using:federationMetadataFileContent
    ```
 
-2. Выполните следующую команду, чтобы обновить владельца подписки поставщика по умолчанию, указав параметры, подходящие для используемой среды.
+2. Подключившись к привилегированной конечной точке, выполните следующую команду, указав параметры, подходящие для используемой среды.
+
+    ```PowerShell
+    Register-CustomAdfs -CustomAdfsName Contoso -CustomADFSFederationMetadataFileContent $using:federationMetadataFileContent
+    ```
+
+3. Выполните следующую команду, чтобы обновить владельца подписки поставщика по умолчанию, указав параметры, подходящие для используемой среды.
 
    ```PowerShell  
    Set-ServiceAdminOwner -ServiceAdminOwnerUpn "administrator@contoso.com"

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/05/2018
 ms.author: cynthn
-ms.openlocfilehash: 3eeaee9bc6320231f10aa85227e2f43756181806
-ms.sourcegitcommit: 7c4fd6fe267f79e760dc9aa8b432caa03d34615d
+ms.openlocfilehash: 22a800e65c0f64dfa897433d1ea983006ed62250
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47433486"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54412195"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Создание виртуальной машины Linux, в которой используется проверка подлинности по SSH с интерфейсом REST API
 
@@ -35,7 +35,7 @@ ms.locfileid: "47433486"
 Перед созданием и отправкой запроса вам потребуется:
 
 * `{subscription-id}` для вашей подписки.
-  * Если у вас несколько подписок, см. [эту статью](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest#working-with-multiple-subscriptions).
+  * Если у вас несколько подписок, см. [эту статью](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest).
 * Объект `{resourceGroupName}`, который вы создали заранее.
 * [Виртуальный сетевой интерфейс](../../virtual-network/virtual-network-network-interface.md) в той же группе ресурсов.
 * Пара ключей SSH (вы можете [создать ее](mac-create-ssh-keys.md), если у вас ее нет).
@@ -159,5 +159,5 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 - [Azure Compute](/rest/api/compute/) (Служба вычислений Azure)
 - [Начало работы с Azure REST API](/rest/api/azure/)
-- [интерфейс командной строки Azure](/cli/azure/)
+- [Интерфейс командной строки Azure](/cli/azure/)
 - [Overview of Azure PowerShell](/powershell/azure/overview) (Общие сведения об Azure PowerShell)

@@ -4,19 +4,19 @@ description: В этой статье содержатся общие сведе
 keywords: безопасность в службе автоматизации, обеспечение безопасности в службе автоматизации, проверка подлинности в службе автоматизации
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 03/19/2018
 ms.topic: conceptual
 manager: carmonm
 ROBOTS: NOINDEX
-ms.openlocfilehash: 327bb15ab8536dca85b4cbb07216080b135c769a
-ms.sourcegitcommit: eb75f177fc59d90b1b667afcfe64ac51936e2638
+ms.openlocfilehash: 60175a5b9309c08d5fdab997469a9d0526afaefe
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34194909"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54437969"
 ---
 # <a name="introduction-to-authentication-in-azure-automation"></a>Общие сведения о проверке подлинности в службе автоматизации Azure  
 С помощью службы автоматизации Azure можно автоматизировать задачи, выполняемые с ресурсами Azure (локально), а также с ресурсами других поставщиков облачных служб, например Amazon Web Services (AWS).  Для выполнения необходимых действий модуль Runbook должен иметь разрешения на безопасный доступ к ресурсам с минимальными правами, требуемыми в рамках подписки.
@@ -49,3 +49,4 @@ ms.locfileid: "34194909"
 | Классическая учетная запись запуска от имени Azure |Классическая модель Azure |[Проверка подлинности модулей Runbook в Azure с помощью учетной записи запуска от имени](automation-sec-configure-azure-runas-account.md) |
 | Проверка подлинности Windows |Локальный центр обработки данных |[Гибридные компоненты Runbook Worker в службе автоматизации Azure](automation-hybrid-runbook-worker.md) |
 | Учетные данные AWS |Amazon Web Services |[Authenticate Runbooks with Amazon Web Services (AWS) (Проверка подлинности модулей Runbook с помощью Amazon Web Services)](automation-config-aws-account.md) |
+

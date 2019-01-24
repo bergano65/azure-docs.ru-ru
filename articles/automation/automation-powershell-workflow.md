@@ -3,18 +3,18 @@ title: Рабочий процесс PowerShell для службы автома
 description: Данная статья предназначена для разработчиков, уже знакомых с PowerShell. В ней рассматриваются различия между PowerShell и рабочим процессом PowerShell, а также понятия, относящиеся к модулям Runbook службы автоматизации.
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 12/14/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: b60e1639a1c32763c4759720fe61b0e571fc9dd1
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 7ab6b387a28df06758e5e0c1ce197781fc4be3c5
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53437101"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54436813"
 ---
 # <a name="learning-key-windows-powershell-workflow-concepts-for-automation-runbooks"></a>Изучение основных понятий рабочего процесса Windows PowerShell для модулей Runbook службы автоматизации
 
@@ -296,3 +296,4 @@ workflow CreateTestVms
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Чтобы приступить к работе с модулями Runbook рабочих процессов PowerShell, обратитесь к статье [Мой первый модуль Runbook рабочего процесса PowerShell](automation-first-runbook-textual.md)
+

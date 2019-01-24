@@ -4,7 +4,7 @@ description: Общие сведения о вкладке "Metaverse Search" (�
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 20234dd4-3328-4817-b7ff-268f953d376d
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/13/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 77b487809d263aad96bcb1ff0a9bd0ca185fff5d
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 31a829cdba96e3948d5ed7d7d47d056781520771
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46304963"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54469361"
 ---
 # <a name="sync-service-manager-metaverse-search"></a>Поиск в метавселенной Synchronization Service Manager
 

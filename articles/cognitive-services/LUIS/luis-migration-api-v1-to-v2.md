@@ -11,12 +11,12 @@ ms.component: language-understanding
 ms.topic: article
 ms.date: 12/07/2018
 ms.author: diberry
-ms.openlocfilehash: 980470c0f1d24bde52f29c4cd3579e2337898f88
-ms.sourcegitcommit: 78ec955e8cdbfa01b0fa9bdd99659b3f64932bba
+ms.openlocfilehash: 9542fe14cc262731ca0f2ade65e6e4dfafbc34d7
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53138829"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54427514"
 ---
 # <a name="api-v1-to-v2-migration-guide-for-luis-apps"></a>Руководство по переходу с API версии 1 на API версии 2 для приложений на основе LUIS
 API-интерфейсы [конечных точек](https://aka.ms/v1-endpoint-api-docs) и [разработки](https://aka.ms/v1-authoring-api-docs) версии 1 объявлены устаревшими. Используйте это руководство, чтобы перейти на API [конечных точек](https://aka.ms/luis-endpoint-apis) и [разработки](https://aka.ms/luis-authoring-apis) версии 2. 
@@ -112,7 +112,7 @@ API ключей конечных точек подписок устарели, 
 |1|/luis/v1.0/prog/subscriptions|
 |1|/luis/v1.0/prog/subscriptions/{ключ_подписки}|
 
-[Ключи конечных точек](luis-how-to-azure-subscription.md) Azure создаются на портале Azure. Вы назначаете ключ приложению LUIS на странице **[Публикация](luis-how-to-manage-keys.md)**. Фактическое значение ключа знать не требуется. Для назначения LUIS использует имя подписки. 
+[Ключи конечных точек](luis-how-to-azure-subscription.md) Azure создаются на портале Azure. Вы назначаете ключ приложению LUIS на странице **[Публикация](luis-how-to-azure-subscription.md)**. Фактическое значение ключа знать не требуется. Для назначения LUIS использует имя подписки. 
 
 ## <a name="new-versioning-route"></a>Новый маршрут для управления версиями
 Модель версии 2 теперь содержится в параметре [version](luis-how-to-manage-versions.md). Длина имени версии в маршруте — 10 символов. Версия по умолчанию — "0.1".

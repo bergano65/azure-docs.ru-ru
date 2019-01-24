@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 02/27/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: bd1bb1dc6222e5abdc03bb9dc5da93751c54da77
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: 5459ba31d30a86efbe40239f9531298c10cf9d98
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37932312"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54413606"
 ---
 # <a name="troubleshoot-a-vms-operating-system-disk"></a>Устранение неполадок диска операционной системы виртуальных машин
 
@@ -39,12 +39,12 @@ ms.locfileid: "37932312"
 
 Для создания группы ресурсов, виртуальной машины и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Заметки |
+| Команда | Примечания |
 |---|---|
 | [az vm show](https://docs.microsoft.com/cli/azure/vm#az_vm_show) | Возвращает список виртуальных машин. В этом случае параметр запроса используется для возвращения диска операционной системы виртуальной машины. Это значение добавляется к имени переменной uri. |
 | [az vm delete](https://docs.microsoft.com/cli/azure/vm#az_vm_delete) | Удаляет виртуальную машину. |
-| [az vm create](https://docs.microsoft.com/cli/azure/vm#az_vm_create) | Создает виртуальную машину.  |
-| [az vm disk attach](https://docs.microsoft.com/cli/azure/vm/disk#az_vm_disk_attach) | Подключает диск к виртуальной машине. |
+| [az vm create](https://docs.microsoft.com/cli/azure/vm) | Создает виртуальную машину.  |
+| [az vm disk attach](https://docs.microsoft.com/cli/azure/vm/disk) | Подключает диск к виртуальной машине. |
 | [az vm list-ip-addresses](https://docs.microsoft.com/cli/azure/vm#az_vm_list_ip_addresses) | Возвращает IP-адреса виртуальной машины. |
 
 ## <a name="next-steps"></a>Дополнительная информация

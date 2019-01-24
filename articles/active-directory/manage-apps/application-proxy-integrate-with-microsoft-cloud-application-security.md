@@ -2,7 +2,7 @@
 title: Интеграция локальных приложений с Cloud App Security в Azure Active Directory | Документация Майкрософт
 description: Настройка локального приложения в Azure Active Directory для работы с Microsoft Cloud App Security (MCAS). Использование управления условным доступом к приложениям MCAS для мониторинга сеансов и управления ими в режиме реального времени на основе политик условного доступа. Эти политики можно применять к локальным приложениям, использующим Application Proxy в Azure Active Directory (Azure AD).
 author: barbkess
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.component: app-mgmt
 ms.workload: identity
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 12/19/2018
 ms.author: barbkess
 ms.reviewer: japere
-ms.openlocfilehash: 3be75f2fe004939eff6bf6cc960759db69bfb93a
-ms.sourcegitcommit: e7312c5653693041f3cbfda5d784f034a7a1a8f1
+ms.openlocfilehash: e5e83d928893c2937df8be55d72bb22869891492
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54215105"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54472489"
 ---
 # <a name="configure-real-time-application-access-monitoring-with-microsoft-cloud-app-security-and-azure-active-directory"></a>Настройка мониторинга доступа к приложениям в режиме реального времени с помощью Microsoft Cloud App Security и Azure Active Directory
 Настройте локальное приложение в Azure Active Directory (Azure AD) для использования Microsoft Cloud App Security (MCAS) в целях мониторинга в режиме реального времени. MCAS поддерживает функцию управления условным доступом к приложениям для мониторинга сеансов и управления ими в режиме реального времени на основе политик условного доступа. Эти политики можно применять к локальным приложениям, использующим Application Proxy в Azure Active Directory (Azure AD).
@@ -64,7 +64,7 @@ ms.locfileid: "54215105"
 
 ## <a name="test-conditional-access-app-control"></a>Тестирование управления условным доступом к приложениям
 
-Чтобы протестировать развертывание приложений Azure AD с функцией управления условным доступом к приложениям, следуйте инструкциям в разделе [Тестирование развертывания](/cloud-app-security/proxy-deployment-aad#test-the-deployment).
+Чтобы протестировать развертывание приложений Azure AD с функцией управления условным доступом к приложениям, следуйте инструкциям в разделе [Тестирование развертывания](/cloud-app-security/proxy-deployment-aad).
 
 
 

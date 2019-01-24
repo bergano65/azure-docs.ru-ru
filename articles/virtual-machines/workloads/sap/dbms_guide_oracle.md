@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/14/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8686130e3b10ece605a6e648badf9aa1dae5e071
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 65c685936fabab65698a077f22c2dfde17469055
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53435690"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54436422"
 ---
 # <a name="oracle-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на виртуальных машинах Azure в Oracle для рабочей нагрузки SAP
 
@@ -235,7 +235,7 @@ ms.locfileid: "53435690"
 [planning-guide-microsoft-azure-networking]:planning-guide.md#61678387-8868-435d-9f8c-450b2424f5bd 
 [planning-guide-storage-microsoft-azure-storage-and-data-disks]:planning-guide.md#a72afa26-4bf4-4a25-8cf7-855d6032157f 
 
-[powershell-install-configure]:https://docs.microsoft.com/powershell/azure/install-azurerm-ps
+[powershell-install-configure]:https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps
 [resource-group-authoring-templates]:../../../resource-group-authoring-templates.md
 [resource-group-overview]:../../../azure-resource-manager/resource-group-overview.md
 [resource-groups-networking]:../../../networking/networking-overview.md
@@ -322,7 +322,7 @@ Cведения о версиях Oracle и соответствующих ве�
 | Номер примечания | Название |
 | --- | --- |
 | [1928533] |Приложения SAP в Azure: поддерживаемые продукты и типы виртуальных машин Azure |
-| [2015553] |SAP в Microsoft Azure: требования |
+| [2015553] |SAP в Microsoft Azure: необходимые компоненты для поддержки |
 | [1999351] |Устранение неполадок, связанных с расширенным мониторингом Azure для SAP |
 | [2178632] |Ключевые метрики мониторинга для SAP в Microsoft Azure |
 | [2191498] |SAP на платформе Linux в Azure: расширенный мониторинг |

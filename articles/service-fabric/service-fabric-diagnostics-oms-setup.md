@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: 00fc04afd26da2ef5741eec308835bb8c897c26b
-ms.sourcegitcommit: 9fb6f44dbdaf9002ac4f411781bf1bd25c191e26
+ms.openlocfilehash: dc48194f4740216089f3daa869576596899e272b
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2018
-ms.locfileid: "53077347"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54439057"
 ---
 # <a name="set-up-log-analytics-for-a-cluster"></a>Настройка Log Analytics для кластера
 
@@ -95,7 +95,7 @@ Azure Resource Manager определит, что эта команда — эт
 
 ## <a name="deploy-log-analytics-with-azure-powershell"></a>Развертывание Log Analytics с помощью Azure PowerShell
 
-Ресурс Log Analytics можно также развернуть через PowerShell с помощью команды `New-AzureRmOperationalInsightsWorkspace`. Чтобы использовать этот метод, обязательно установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-5.1.1). Чтобы создать рабочую область Log Analytics и добавить в нее решение Service Fabric, используйте следующий сценарий: 
+Ресурс Log Analytics можно также развернуть через PowerShell с помощью команды `New-AzureRmOperationalInsightsWorkspace`. Чтобы использовать этот метод, обязательно установите [Azure Powershell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-5.1.1). Чтобы создать рабочую область Log Analytics и добавить в нее решение Service Fabric, используйте следующий сценарий: 
 
 ```PowerShell
 

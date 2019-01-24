@@ -3,18 +3,18 @@ title: Выходные данные и сообщения runbook в служб
 description: Описывает способы создания и извлечения выходных данных и сообщений об ошибках из модулей Runbook в службе автоматизации Azure.
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 12/04/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: cc1ef2a3ab09ec5b86d1dc0b4c139afd43ba356d
-ms.sourcegitcommit: 5d837a7557363424e0183d5f04dcb23a8ff966bb
+ms.openlocfilehash: 82382ecc3adf0d0621f51438a082f7807b031fc9
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52969130"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54431220"
 ---
 # <a name="runbook-output-and-messages-in-azure-automation"></a>Выходные данные и сообщения Runbook в службе автоматизации Azure
 В большинстве модулей runbook в службе автоматизации Azure используются выходные данные определенного типа. Например, сообщение об ошибке для пользователя или сложный объект, предназначенный для использования с другим модулем runbook. Windows PowerShell предоставляет [несколько потоков](/powershell/module/microsoft.powershell.core/about/about_redirection) для отправки выходных данных из сценария или рабочего процесса. Служба автоматизации Azure работает с каждым из этих потоков по-разному. Необходимо следовать рекомендациям по их использованию при создании модуля runbook.
@@ -234,4 +234,5 @@ Get-AzureRmAutomationJobOutput -ResourceGroupName "ResourceGroup01" `
 ## <a name="next-steps"></a>Дополнительная информация
 * Чтобы узнать больше о выполнении модулей Runbook, отслеживании заданий Runbook и других технических деталях, ознакомьтесь с [отслеживанием задания Runbook](automation-runbook-execution.md)
 * Дополнительные сведения о создании и использовании дочерних модулей Runbook см. в статье [Дочерние модули Runbook в службе автоматизации Azure](automation-child-runbooks.md).
+
 

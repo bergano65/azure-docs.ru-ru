@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/03/2018
 ms.author: cynthn
-ms.openlocfilehash: f84626c5a487d52f53a2c8bf492a124c87599ed0
-ms.sourcegitcommit: aa988666476c05787afc84db94cfa50bc6852520
+ms.openlocfilehash: e283f21b65706860e198e2deca933f1986073cab
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37932400"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54413232"
 ---
 # <a name="how-to-use-packer-to-create-linux-virtual-machine-images-in-azure"></a>Создание образов виртуальных машин Linux в Azure с помощью Packer
 Каждая виртуальная машина в Azure создается из образа, определяющего дистрибутив Linux и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием средства с открытым кодом [Packer](https://www.packer.io/).
@@ -201,7 +201,7 @@ ManagedImageLocation: eastus
 
 
 ## <a name="create-vm-from-azure-image"></a>Создание виртуальной машины на основе образа Azure
-Теперь можно создать виртуальную машину из образа с помощью команды [az vm create](/cli/azure/vm#az_vm_create). Укажите образ, созданный с помощью параметра `--image`. В следующем примере создаются виртуальная машина с именем *myVM* из образа *myPackerImage* и ключи SSH, если они еще не существуют.
+Теперь можно создать виртуальную машину из образа с помощью команды [az vm create](/cli/azure/vm). Укажите образ, созданный с помощью параметра `--image`. В следующем примере создаются виртуальная машина с именем *myVM* из образа *myPackerImage* и ключи SSH, если они еще не существуют.
 
 ```azurecli
 az vm create \

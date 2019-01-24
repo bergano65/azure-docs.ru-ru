@@ -11,13 +11,13 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein, carlrab
 manager: craigg
-ms.date: 12/05/2018
-ms.openlocfilehash: e0a5d6180c7dfa94abf8dd738c8017a3b332dfd8
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 01/17/2019
+ms.openlocfilehash: 9d7131c6ed1808725f59e53488bedb5ef81a77c3
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53598810"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54389413"
 ---
 # <a name="use-read-only-replicas-to-load-balance-read-only-query-workloads-preview"></a>Использование реплик только для чтения для распределения рабочих нагрузок запросов только для чтения (предварительная версия)
 
@@ -80,7 +80,7 @@ SELECT DATABASEPROPERTYEX(DB_NAME(), 'Updateability')
 
 ### <a name="powershell-enable-and-disable-read-scale-out"></a>PowerShell: Включение и отключение горизонтального масштабирования для чтения
 
-Для управления горизонтальным масштабированием для чтения в Azure PowerShell требуется выпуск Azure PowerShell за декабрь 2016 года или более поздней версии. Последнюю версию Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-azurerm-ps).
+Для управления горизонтальным масштабированием для чтения в Azure PowerShell требуется выпуск Azure PowerShell за декабрь 2016 года или более поздней версии. Последнюю версию Azure PowerShell см. [здесь](https://docs.microsoft.com/powershell/azure/install-az-ps).
 
 Чтобы включить или отключить горизонтальное масштабирование для чтения в Azure PowerShell, вызовите командлет [Set-AzureRmSqlDatabase](/powershell/module/azurerm.sql/set-azurermsqldatabase) и задайте нужное значение (`Enabled` или `Disabled`) для параметра `-ReadScale`. Кроме того, чтобы создать базу данных с поддержкой функции горизонтального масштабирования для чтения, можно использовать командлет [New-AzureRmSqlDatabase](/powershell/module/azurerm.sql/new-azurermsqldatabase).
 

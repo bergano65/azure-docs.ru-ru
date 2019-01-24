@@ -3,19 +3,19 @@ title: Руководство по созданию клиента Azure Active 
 description: Узнайте, как подготовить приложения к регистрации, создав клиент Azure Active Directory B2C с помощью портала Azure.
 services: B2C
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 982932f538f13ac3cb8f842a32f9439f717d971f
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 5f406242197c15348cfd557fb9c960ad7d4bed19
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54247781"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54846852"
 ---
 # <a name="tutorial-create-an-azure-active-directory-b2c-tenant"></a>Руководство. Создание клиента Azure Active Directory B2C
 
