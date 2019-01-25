@@ -3,18 +3,18 @@ title: Устранение неполадок с гибридными рабо�
 description: В этой статье приводятся сведения об устранении неполадок с гибридными рабочими ролями Runbook в службе автоматизации Azure
 services: automation
 ms.service: automation
-ms.component: ''
+ms.subservice: ''
 author: georgewallace
 ms.author: gwallace
 ms.date: 12/11/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 57897060e79ffbd750b47b21e97bb16d651f835c
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.openlocfilehash: 9f83a0cf97acfd0bed990cc832ac08eb23c29ef1
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53583516"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54434464"
 ---
 # <a name="troubleshoot-hybrid-runbook-workers"></a>Устранение неполадок с гибридными рабочими ролями Runbook
 
@@ -186,3 +186,4 @@ Start-Service -Name HealthService
 * Получите ответы специалистов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
 * Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).
 * Если вам нужна дополнительная помощь, отправьте запрос в службу поддержки Azure. Перейдите на [сайт поддержки Azure](https://azure.microsoft.com/support/options/) и щелкните **Получить поддержку**.
+

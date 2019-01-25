@@ -4,7 +4,7 @@ description: Общие сведения о выражениях деклара�
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 4f525ca0-be0e-4a2e-8da1-09b6b567ed5f
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 07/12/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: db427d0c171e164cb03d7280103fa85e5add4dd1
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: cad9cec83ac5cc75ba5b4e5fc395e7f68f7d2770
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54157485"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54471189"
 ---
 # <a name="azure-ad-connect-sync-functions-reference"></a>Синхронизация Azure AD Connect: Справочник по функциям
 В службе Azure AD Connect функции используются для обработки значения атрибута во время синхронизации.  

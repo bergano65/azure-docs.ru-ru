@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 04/03/2017
 ms.author: snmuvva
-ms.component: alerts
-ms.openlocfilehash: 2df24cfe217a9955a3abb08d042836821b083946
-ms.sourcegitcommit: 7cd706612a2712e4dd11e8ca8d172e81d561e1db
+ms.subservice: alerts
+ms.openlocfilehash: 264f3eb042a3c29523ed93df93dfa6d45c00ae87
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53580643"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54465672"
 ---
 # <a name="have-a-classic-metric-alert-notify-a-non-azure-system-using-a-webhook"></a>Уведомление с помощью веб-перехватчика и классического оповещения метрики для системы за пределами Azure
 С помощью веб-перехватчика можно направлять уведомления об оповещениях Azure в другие системы для постобработки или выполнения настраиваемых действий. Веб-перехватчик можно использовать, чтобы направить оповещение к службам, которые отправляют SMS-сообщения, ведут журналы об ошибках, уведомляют членов команды в чате или службах обмена сообщениями либо выполняют другие действия. 
@@ -106,3 +106,4 @@ ms.locfileid: "53580643"
 * Узнайте, как [использовать приложение логики для отправки сообщения SMS с помощью Twilio из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения Slack из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения в очередь Azure из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app).
+

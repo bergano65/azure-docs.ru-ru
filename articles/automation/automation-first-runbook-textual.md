@@ -4,18 +4,18 @@ description: Учебник, в котором рассказывается, к�
 keywords: рабочий процесс PowerShell, примеры рабочего процесса powershell, рабочие процессы powershell
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 09/24/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 90d2dcb81a6b54d1a8437f0d3ae01aa96cdac3db
-ms.sourcegitcommit: 51a1476c85ca518a6d8b4cc35aed7a76b33e130f
+ms.openlocfilehash: 137518aadaf2f1cd38dd18184992c8723a7da5c0
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47165405"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54435235"
 ---
 # <a name="my-first-powershell-workflow-runbook"></a>Первый Runbook рабочего процесса PowerShell
 
@@ -61,7 +61,7 @@ ms.locfileid: "47165405"
    }
    ```
 
-1. Введите *Write-Output "Привет, мир!"* между фигурными скобками.
+1. Введите *Write-Output "Привет, мир!"*  между фигурными скобками.
 
    ```powershell-interactive
    Workflow MyFirstRunbook-Workflow
@@ -205,3 +205,4 @@ ms.locfileid: "47165405"
 * Чтобы начать работу с модулями Runbook PowerShell, см. инструкции в статье [Мой первый модуль Runbook PowerShell](automation-first-runbook-textual-powershell.md).
 * Дополнительные сведения о типах модулей Runbook, их преимуществах и ограничениях см. в статье [Типы модулей Runbook в службе автоматизации Azure](automation-runbook-types.md).
 * Дополнительные сведения о функции поддержки скриптов PowerShell см. в статье [Announcing Native PowerShell Script Support in Azure Automation](https://azure.microsoft.com/blog/announcing-powershell-script-support-azure-automation-2/) (Встроенная поддержка скриптов PowerShell в службе автоматизации Azure).
+

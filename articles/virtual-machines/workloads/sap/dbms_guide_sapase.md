@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 07/1/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 243aecbe3627a6cc72de1bc98c301e8fa632ec36
-ms.sourcegitcommit: 0b05bdeb22a06c91823bd1933ac65b2e0c2d6553
+ms.openlocfilehash: 31008c61856801785f1277c7baee955ee3f5be60
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39075771"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54424733"
 ---
 # <a name="sap-ase-azure-virtual-machines-dbms-deployment-for-sap-workload"></a>Развертывание СУБД на виртуальных машинах Azure в SAP ASE для рабочей нагрузки SAP
 
@@ -43,18 +43,18 @@ ms.locfileid: "39075771"
 [1605680;]:https://launchpad.support.sap.com/#/notes/1605680
 [1619720]:https://launchpad.support.sap.com/#/notes/1619720
 [1619726]:https://launchpad.support.sap.com/#/notes/1619726
-[1619967;]:https://launchpad.support.sap.com/#/notes/1619967
+[1619967]:https://launchpad.support.sap.com/#/notes/1619967
 [1750510]:https://launchpad.support.sap.com/#/notes/1750510
 [1752266]:https://launchpad.support.sap.com/#/notes/1752266
-[1757924;]:https://launchpad.support.sap.com/#/notes/1757924
+[1757924]:https://launchpad.support.sap.com/#/notes/1757924
 [1757928]:https://launchpad.support.sap.com/#/notes/1757928
 [1758182]:https://launchpad.support.sap.com/#/notes/1758182
-[1758496;]:https://launchpad.support.sap.com/#/notes/1758496
+[1758496]:https://launchpad.support.sap.com/#/notes/1758496
 [1772688]:https://launchpad.support.sap.com/#/notes/1772688
-[1814258;]:https://launchpad.support.sap.com/#/notes/1814258
+[1814258]:https://launchpad.support.sap.com/#/notes/1814258
 [1882376.]:https://launchpad.support.sap.com/#/notes/1882376
 [1909114]:https://launchpad.support.sap.com/#/notes/1909114
-[1922555;]:https://launchpad.support.sap.com/#/notes/1922555
+[1922555]:https://launchpad.support.sap.com/#/notes/1922555
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
 [1941500]:https://launchpad.support.sap.com/#/notes/1941500
 [1956005.]:https://launchpad.support.sap.com/#/notes/1956005
@@ -235,7 +235,7 @@ ms.locfileid: "39075771"
 [planning-guide-microsoft-azure-networking]:planning-guide.md#61678387-8868-435d-9f8c-450b2424f5bd 
 [planning-guide-storage-microsoft-azure-storage-and-data-disks]:planning-guide.md#a72afa26-4bf4-4a25-8cf7-855d6032157f 
 
-[powershell-install-configure]:https://docs.microsoft.com/powershell/azure/install-azurerm-ps
+[powershell-install-configure]:https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps
 [resource-group-authoring-templates]:../../../resource-group-authoring-templates.md
 [resource-group-overview]:../../../azure-resource-manager/resource-group-overview.md
 [resource-groups-networking]:../../../networking/networking-overview.md
@@ -412,18 +412,18 @@ SAP в настоящее время поддерживает версию SAP A
 Для автоматического импорта всех доступных исправлений рекомендуется периодически применять примечания SAP, содержащие наборы исправлений, которые относятся к вашей версии SAP:
 
 * [1558958;]
-* [1619967;]
+* [1619967]
 * [1882376.]
 
 Дополнительные сведения о панели DBA для SAP ASE можно найти в следующих примечаниях SAP:
 
 * [1605680;]
-* [1757924;]
+* [1757924]
 * [1757928]
 * [1758182]
-* [1758496;]    
-* [1814258;]
-* [1922555;]
+* [1758496]    
+* [1814258]
+* [1922555]
 * [1956005.]
 
 #### <a name="backuprecovery-considerations-for-sap-ase"></a>Рекомендации по резервному копированию и восстановлению для SAP ASE
@@ -567,18 +567,18 @@ SAP в настоящее время поддерживает версию SAP A
 Для автоматического импорта всех доступных исправлений рекомендуется периодически применять примечания SAP, содержащие наборы исправлений, которые относятся к вашей версии SAP:
 
 * [1558958;]
-* [1619967;]
+* [1619967]
 * [1882376.]
 
 Дополнительные сведения о панели DBA для SAP ASE можно найти в следующих примечаниях SAP:
 
 * [1605680;]
-* [1757924;]
+* [1757924]
 * [1757928]
 * [1758182]
-* [1758496;]    
-* [1814258;]
-* [1922555;]
+* [1758496]    
+* [1814258]
+* [1922555]
 * [1956005.]
 
 #### <a name="backuprecovery-considerations-for-sap-ase"></a>Рекомендации по резервному копированию и восстановлению для SAP ASE
