@@ -29,10 +29,10 @@ items:
     href: cli-samples.md
 - name: Основные понятия
   items:
+  - name: Миграция из версии 2 в версию 3
+    href: migrate-from-v2-to-v3.md
   - name: учетные записи;
     items:
-    - name: Миграция из версии 2 в версию 3
-      href: migrate-from-v2-to-v3.md
     - name: Квоты и ограничения
       href: limits-quotas-constraints.md
     - name: учетные записи хранения;
@@ -40,13 +40,13 @@ items:
   - name: Сущности
     href: entities-overview.md
     items:
-    - name: Фильтры учетных записей и ресурсов-контейнеров
+    - name: Фильтры учетной записи и фильтры ресурсов
       href: filters-dynamic-manifest-overview.md
     - name: Активы
       href: assets-concept.md
     - name: Политики ключа содержимого
       href: content-key-policy-concept.md
-    - name: LiveEvents и LiveOutputs
+    - name: События и выходные данные прямой трансляции
       href: live-events-outputs-concept.md
     - name: Конечные точки потоковой передачи
       href: streaming-endpoint-concept.md
@@ -66,9 +66,8 @@ items:
   - name: Обработка событий Сетки событий
     href: reacting-to-media-services-events.md
   - name: Защита содержимого
+    href: content-protection-overview.md
     items:
-    - name: Обзор
-      href: content-protection-overview.md
     - name: Система с несколькими DRM и управлением доступом
       href: design-multi-drm-system-with-access-control.md
   - name: Анализ содержимого
@@ -204,9 +203,9 @@ items:
     href: frequently-asked-questions.md
   - name: Облака и регионы Azure
     href: azure-clouds-regions.md
-ms.openlocfilehash: ca6afadf1141e60d4436178ef45fccfdc48f97a5
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.openlocfilehash: c30302fa289ade85870db3e89fa70f5e79f61a99
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382101"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54881381"
