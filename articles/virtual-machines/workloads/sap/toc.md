@@ -63,9 +63,9 @@
 ### [Рабочие нагрузки SAP на виртуальных машинах Azure. Руководство по развертыванию СУБД SAP ASE](dbms_guide_sapase.md)
 ### [Развертывание SAP MaxDB, liveCache и сервера содержимого в Azure](dbms_guide_maxdb.md)
 ### Доступность SAP HANA в Виртуальных машинах Azure
-### [Общие сведения о доступности SAP HANA в Azure](sap-hana-availability-overview.md)
-### [Доступность SAP HANA в Azure в пределах одного региона Azure](sap-hana-availability-one-region.md)
-### [Доступность SAP HANA в Azure в разных регионах Azure](sap-hana-availability-across-regions.md)
+#### [Общие сведения о доступности SAP HANA в Azure](sap-hana-availability-overview.md)
+#### [Доступность SAP HANA в Azure в пределах одного региона Azure](sap-hana-availability-one-region.md)
+#### [Доступность SAP HANA в Azure в разных регионах Azure](sap-hana-availability-across-regions.md)
 ## [Использование SAP Business One на виртуальных машинах Azure](business-one-azure.md)
 ## [Руководство по развертыванию интегрированных сред разработки SAP и SAP CAL в Windows или SQL Server](cal-ides-erp6-erp7-sp3-sql.md)
 ## [Соединитель SAP LaMa для Azure](lama-installation.md)
