@@ -47,28 +47,22 @@ items:
       href: security-authenticating-apis.md
 - name: Практические руководства
   items:
-  - name: Включение мультитенантных приложений
+  - name: Как включить многопользовательские приложения
     href: how-to-multitenant-applications.md
-  - name: Создание функций, определяемых пользователем
+  - name: Как создать функции, определяемые пользователем
     href: how-to-user-defined-functions.md
-  - name: Маршрутизация событий и сообщений через конечные точки
+  - name: Как выполнять маршрутизацию событий и сообщений через конечные точки
     href: how-to-egress-endpoints.md
+  - name: Настройка Postman
+    href: how-to-configure-postman.md
   - name: Добавление больших двоичных объектов в другие объекты
     href: how-to-add-blobs.md
-  - name: Использование Swagger с Digital Twins
+  - name: Как использовать Swagger с Digital Twins
     href: how-to-use-swagger.md
-  - name: Отладка функций, определяемых пользователем
+  - name: Как отлаживать функции, определяемые пользователем
     href: how-to-diagnose-user-defined-functions.md
-  - name: Настройка мониторинга
+  - name: Как настроить мониторинг
     href: how-to-configure-monitoring.md
-  - name: Запрашивание API Digital Twins
-    items:
-    - name: Настройка Postman
-      href: how-to-configure-postman.md
-    - name: Использование API Digital Twins
-      href: how-to-navigate-apis.md
-    - name: Стандартные шаблоны запросов
-      href: how-to-query-common-apis.md
 - name: Справочные материалы
   items:
   - name: Клиентская библиотека определяемых пользователем функций
@@ -119,9 +113,9 @@ items:
     href: https://azure.microsoft.com/roadmap/?category=iot
   - name: Видеоролики
     href: https://channel9.msdn.com/Search?term=%22Azure%20Digital%20Twins%22&lang-en=true
-ms.openlocfilehash: 92d60cbe1de8d8f2b36d67e1a7ff2999a45e1a8e
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: 04716146653b833461b8230c2895fd1a8b6dcd42
+ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54102229"
+ms.lasthandoff: 01/03/2019
+ms.locfileid: "53993473"

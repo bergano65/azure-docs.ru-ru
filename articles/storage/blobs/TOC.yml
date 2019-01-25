@@ -30,20 +30,20 @@ items:
       items:
       - name: .NET
         href: storage-quickstart-blobs-dotnet.md
-      - name: Java (пакет SDK Службы хранилища версии 10)
+      - name: Java
         href: storage-quickstart-blobs-java-v10.md
+      - name: Node.js
+        href: storage-quickstart-blobs-nodejs-v10.md
       - name: Python
         href: storage-quickstart-blobs-python.md
-      - name: Go
-        href: storage-quickstart-blobs-go.md
-      - name: Ruby
-        href: storage-quickstart-blobs-ruby.md
-      - name: Node.js (пакет SDK Службы хранилища версии 10)
-        href: storage-quickstart-blobs-nodejs-v10.md
       - name: JS/HTML
         href: storage-quickstart-blobs-javascript-client-libraries.md
+      - name: Go
+        href: storage-quickstart-blobs-go.md
       - name: PHP
         href: storage-quickstart-blobs-php.md
+      - name: Ruby
+        href: storage-quickstart-blobs-ruby.md
   - name: Учебники
     items:
     - name: Передача и обработка изображения
@@ -74,13 +74,13 @@ items:
         href: storage-blob-static-website-host.md
       - name: 2. Включение личного домена с помощью протокола SSL
         href: storage-blob-static-website-custom-domain.md
-    - name: Проектирование высокого уровня доступности в облачном хранилище
+    - name: Создание приложений с высоким уровнем доступности
       items:
       - name: 1. Обеспечение высокого уровня доступности для приложения
         href: storage-create-geo-redundant-storage.md
       - name: 2. Имитация сбоя в хранилище RA-GRS
         href: storage-simulate-failure-ragrs-account-app.md
-    - name: Поиск неструктурированных данных в облачном хранилище
+    - name: Поиск неструктурированных данных
       href: storage-unstructured-search.md
   - name: Примеры
     items:
@@ -94,7 +94,7 @@ items:
       href: storage-samples-blobs-cli.md
   - name: Основные понятия
     items:
-    - name: учетные записи хранения;
+    - name: Управление учетными записями хранения
       href: ../common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
       items:
       - name: Управление учетной записью хранения
@@ -130,69 +130,16 @@ items:
         href: ../common/storage-redundancy-zrs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
       - name: Геоизбыточное хранилище
         href: ../common/storage-redundancy-grs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+      - name: Руководство по аварийному восстановлению
+        href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+      - name: Разработка высокодоступных приложений c помощью RA-GRS
+        href: ../common/storage-designing-ha-apps-with-ragrs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Уровни доступа
-      href: storage-blob-storage-tiers.md
-    - name: Управление жизненным циклом хранилища BLOB-объектов Azure
-      href: storage-lifecycle-management-concepts.md
-    - name: Реагирование на события
-      href: storage-blob-event-overview.md
-    - name: Целевые показатели масштабируемости и производительности хранилища
-      href: ../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Контрольный список производительности и масштабируемости
-      href: ../common/storage-performance-checklist.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Параллелизм
-      href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Руководство по аварийному восстановлению
-      href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Перемещение данных в хранилище и из него
-      href: ../common/storage-moving-data.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Возможности страничных BLOB-объектов
-      href: storage-blob-pageblob-overview.md
-    - name: Диски Azure
       items:
-      - name: Хранилище класса Premium
-        items:
-        - name: Linux
-          items:
-          - name: Высокопроизводительное хранилище класса Premium для дисков виртуальных машин
-            href: ../../virtual-machines/linux/premium-storage.md
-          - name: Переход на хранилище Azure класса Premium с помощью Azure Site Recovery
-            href: ../../virtual-machines/linux/migrate-to-premium-storage-using-azure-site-recovery.md
-          - name: Проектирование для обеспечения высокой производительности
-            href: ../../virtual-machines/linux/premium-storage-performance.md
-        - name: Windows
-          items:
-          - name: Высокопроизводительное хранилище класса Premium для дисков виртуальных машин
-            href: ../../virtual-machines/windows/premium-storage.md
-          - name: Переход на хранилище Azure класса Premium с помощью Azure Site Recovery
-            href: ../../virtual-machines/windows/migrate-to-premium-storage-using-azure-site-recovery.md
-          - name: Проектирование для обеспечения высокой производительности
-            href: ../../virtual-machines/windows/premium-storage-performance.md
-      - name: Стандартное хранилище
-        items:
-        - name: Linux
-          items:
-          - name: Хранилище уровня "Стандартный" для дисков виртуальной машины
-            href: ../../virtual-machines/linux/standard-storage.md
-        - name: Windows
-          items:
-          - name: Хранилище уровня "Стандартный" для дисков виртуальной машины
-            href: ../../virtual-machines/windows/standard-storage.md
-      - name: Устранение неполадок подключенных виртуальных жестких дисков
-        href: storage-troubleshoot-vhds.md
-        items:
-        - name: Linux
-          items:
-          - name: Ошибка удаления ресурса службы хранилища
-            href: ../../virtual-machines/linux/storage-resource-deletion-errors.md
-          - name: Непредвиденные перезагрузки виртуальных машин с подключенными VHD
-            href: ../../virtual-machines/linux/unexpected-reboots-attached-vhds.md
-        - name: Windows
-          items:
-          - name: Ошибка удаления ресурса службы хранилища
-            href: ../../virtual-machines/windows/storage-resource-deletion-errors.md
-          - name: Непредвиденные перезагрузки виртуальных машин с подключенными VHD
-            href: ../../virtual-machines/windows/unexpected-reboots-attached-vhds.md
+      - name: Уровни доступа
+        href: storage-blob-storage-tiers.md
+      - name: Управление жизненным циклом хранилища BLOB-объектов Azure
+        href: storage-lifecycle-management-concepts.md
     - name: Безопасность
       items:
       - name: Руководство по обеспечению безопасности
@@ -213,81 +160,95 @@ items:
         href: ../common/storage-advanced-threat-protection.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
       - name: Включение безопасного TLS для клиента службы хранилища Azure
         href: ../common/storage-security-tls.md
-      - name: Предложения для соответствия требованиям
-        href: ../common/storage-compliance-offerings.md
-    - name: Сравнение решений для передачи данных
-      href: ../common/storage-choose-data-transfer-solution.md
+    - name: Производительность и масштабируемость
       items:
-      - name: Большой набор данных, низкая пропускная способность сети
-        href: ../common/storage-solution-large-dataset-low-network.md
-      - name: Большой набор данных, средняя или высокая пропускная способность сети
-        href: ../common/storage-solution-large-dataset-moderate-high-network.md
-      - name: Небольшой набор данных, низкая или средняя пропускная способность сети
-        href: ../common/storage-solution-small-dataset-low-moderate-network.md
-      - name: Периодическая передача данных
-        href: ../common/storage-solution-periodic-data-transfer.md
-    - name: Мониторинг и устранение неполадок
+      - name: Целевые показатели масштабируемости и производительности хранилища
+        href: ../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+      - name: Контрольный список производительности и масштабируемости
+        href: ../common/storage-performance-checklist.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Параллелизм
+      href: ../common/storage-concurrency.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Перенос данных
       items:
-      - name: Руководство по устранению неполадок
-        href: ../common/storage-e2e-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-      - name: Мониторинг, диагностирование и устранение неполадок
-        href: ../common/storage-monitoring-diagnosing-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-      - name: Метрики и ведение журнала
+      - name: Сравнение решений для передачи данных
+        href: ../common/storage-choose-data-transfer-solution.md
         items:
-        - name: Метрики в Azure Monitor
-          href: ../common/storage-metrics-in-azure-monitor.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Переход на новые метрики
-          href: ../common/storage-metrics-migration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: аналитики хранилища
-          href: ../common/storage-analytics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Включение и просмотр метрик (классическая модель)
-          href: ../common/storage-enable-and-view-metrics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Импорт и экспорт данных
-      href: ../common/storage-import-export-service.md
-      items:
-      - name: Обзор требований
-        href: ../common/storage-import-export-requirements.md
-      - name: Импорт данных в большие двоичные объекты
-        href: ../common/storage-import-export-data-to-blobs.md
-      - name: Импорт данных в файлы
-        href: ../common/storage-import-export-data-to-files.md
-      - name: Экспорт данных из больших двоичных объектов
-        href: ../common/storage-import-export-data-from-blobs.md
-      - name: Инструкции
+        - name: Большой набор данных, низкая пропускная способность сети
+          href: ../common/storage-solution-large-dataset-low-network.md
+        - name: Большой набор данных, средняя или высокая пропускная способность сети
+          href: ../common/storage-solution-large-dataset-moderate-high-network.md
+        - name: Небольшой набор данных, низкая или средняя пропускная способность сети
+          href: ../common/storage-solution-small-dataset-low-moderate-network.md
+        - name: Периодическая передача данных
+          href: ../common/storage-solution-periodic-data-transfer.md
+      - name: Перемещение данных в хранилище и из него
+        href: ../common/storage-moving-data.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+      - name: Импорт и экспорт данных
+        href: ../common/storage-import-export-service.md
         items:
-        - name: Просмотр состояния диска
-          href: ../common/storage-import-export-view-drive-status.md
-        - name: Просмотр состояния задания
-          href: ../common/storage-import-export-tool-reviewing-job-status-v1.md
-        - name: Исправление задания импорта
-          href: ../common/storage-import-export-tool-repairing-an-import-job-v1.md
-        - name: Исправление задания экспорта
-          href: ../common/storage-import-export-tool-repairing-an-export-job-v1.md
-      - name: Часто задаваемые вопросы
-        href: ../common/storage-import-export-service-faq.md
-      - name: REST API
-        href: https://docs.microsoft.com/rest/api/storageimportexport/jobs
-      - name: Обратиться в службу поддержки
-        href: ../common/storage-import-export-contact-microsoft-support.md
-      - name: Архив
-        items:
-        - name: Подготовка дисков для импорта (версия 1)
-          href: ../common/storage-import-export-tool-preparing-hard-drives-import-v1.md
+        - name: Обзор требований
+          href: ../common/storage-import-export-requirements.md
+        - name: Импорт данных в большие двоичные объекты
+          href: ../common/storage-import-export-data-to-blobs.md
+        - name: Импорт данных в файлы
+          href: ../common/storage-import-export-data-to-files.md
+        - name: Экспорт данных из больших двоичных объектов
+          href: ../common/storage-import-export-data-from-blobs.md
+        - name: Инструкции
           items:
-          - name: Настройка свойств и метаданных
-            href: ../common/storage-import-export-tool-setting-properties-metadata-import-v1.md
-          - name: Пример. Подготовка дисков для импорта
-            href: ../common/storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow-v1.md
-          - name: Краткий справочник по командам импорта
-            href: ../common/storage-import-export-tool-quick-reference-v1.md
-        - name: Подготовка дисков для импорта (версия 2)
-          href: ../common/storage-import-export-tool-preparing-hard-drives-import.md
+          - name: Просмотр состояния диска
+            href: ../common/storage-import-export-view-drive-status.md
+          - name: Просмотр состояния задания
+            href: ../common/storage-import-export-tool-reviewing-job-status-v1.md
+          - name: Исправление задания импорта
+            href: ../common/storage-import-export-tool-repairing-an-import-job-v1.md
+          - name: Исправление задания экспорта
+            href: ../common/storage-import-export-tool-repairing-an-export-job-v1.md
+        - name: Часто задаваемые вопросы
+          href: ../common/storage-import-export-service-faq.md
+        - name: REST API
+          href: https://docs.microsoft.com/rest/api/storageimportexport/jobs
+        - name: Обратиться в службу поддержки
+          href: ../common/storage-import-export-contact-microsoft-support.md
+        - name: Архив
           items:
-          - name: Настройка свойств и метаданных
-            href: ../common/storage-import-export-tool-setting-properties-metadata-import-v1.md
-          - name: Пример. Подготовка дисков для импорта
-            href: ../common/storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow-v1.md
-          - name: Краткий справочник по командам импорта
+          - name: Подготовка дисков для импорта (версия 1)
+            href: ../common/storage-import-export-tool-preparing-hard-drives-import-v1.md
+            items:
+            - name: Настройка свойств и метаданных
+              href: ../common/storage-import-export-tool-setting-properties-metadata-import-v1.md
+            - name: Пример. Подготовка дисков для импорта
+              href: ../common/storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow-v1.md
+            - name: Краткий справочник по командам импорта
+              href: ../common/storage-import-export-tool-quick-reference-v1.md
+          - name: Подготовка дисков для импорта (версия 2)
+            href: ../common/storage-import-export-tool-preparing-hard-drives-import.md
+            items:
+            - name: Настройка свойств и метаданных
+              href: ../common/storage-import-export-tool-setting-properties-metadata-import-v1.md
+            - name: Пример. Подготовка дисков для импорта
+              href: ../common/storage-import-export-tool-sample-preparing-hard-drives-import-job-workflow-v1.md
+            - name: Краткий справочник по командам импорта
+              href: ../common/storage-import-export-tool-quick-reference-v1.md
+          - name: Создание задания импорта
+            href: ../common/storage-import-export-creating-an-import-job.md
+          - name: Создание задания экспорта
+            href: ../common/storage-import-export-creating-an-import-job.md
+          - name: Получение сведений о состоянии задания
+            href: ../common/storage-import-export-retrieving-state-info-for-a-job.md
+          - name: Создание задания экспорта
+            href: ../common/storage-import-export-creating-an-import-job.md
+          - name: Перечисление заданий
+            href: ../common/storage-import-export-enumerating-jobs.md
+          - name: Отмена и удаление заданий
+            href: ../common/storage-import-export-cancelling-and-deleting-jobs.md
+          - name: Резервное копирование манифеста диска
+            href: ../common/storage-import-export-backing-up-drive-manifests.md
+          - name: Перечисление заданий
+            href: ../common/storage-import-export-enumerating-jobs.md
+          - name: Диагностика и восстановление после ошибок
+            href: ../common/storage-import-export-diagnostics-and-error-recovery.md
+          - name: Команды для заданий импорта
             href: ../common/storage-import-export-tool-quick-reference-v1.md
         - name: Создание задания импорта
           href: ../common/storage-import-export-creating-an-import-job.md
@@ -309,34 +270,46 @@ items:
           href: ../common/storage-import-export-diagnostics-and-error-recovery.md
         - name: Команды для заданий импорта
           href: ../common/storage-import-export-tool-quick-reference-v1.md
-      - name: Создание задания импорта
-        href: ../common/storage-import-export-creating-an-import-job.md
-      - name: Создание задания экспорта
-        href: ../common/storage-import-export-creating-an-import-job.md
-      - name: Получение сведений о состоянии задания
-        href: ../common/storage-import-export-retrieving-state-info-for-a-job.md
-      - name: Создание задания экспорта
-        href: ../common/storage-import-export-creating-an-import-job.md
-      - name: Перечисление заданий
-        href: ../common/storage-import-export-enumerating-jobs.md
-      - name: Отмена и удаление заданий
-        href: ../common/storage-import-export-cancelling-and-deleting-jobs.md
-      - name: Резервное копирование манифеста диска
-        href: ../common/storage-import-export-backing-up-drive-manifests.md
-      - name: Перечисление заданий
-        href: ../common/storage-import-export-enumerating-jobs.md
-      - name: Диагностика и восстановление после ошибок
-        href: ../common/storage-import-export-diagnostics-and-error-recovery.md
-      - name: Команды для заданий импорта
-        href: ../common/storage-import-export-tool-quick-reference-v1.md
-      - name: Файл манифеста службы
-        href: ../common/storage-import-export-file-format-manifest.md
-      - name: Файл свойств и метаданных службы
-        href: ../common/storage-import-export-file-format-metadata-and-properties.md
-      - name: Файл журнала службы
-        href: ../common/storage-import-export-file-format-log.md
+        - name: Файл манифеста службы
+          href: ../common/storage-import-export-file-format-manifest.md
+        - name: Файл свойств и метаданных службы
+          href: ../common/storage-import-export-file-format-metadata-and-properties.md
+        - name: Файл журнала службы
+          href: ../common/storage-import-export-file-format-log.md
+    - name: Мониторинг и устранение неполадок
+      items:
+      - name: Руководство по устранению неполадок
+        href: ../common/storage-e2e-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+      - name: Мониторинг, диагностирование и устранение неполадок
+        href: ../common/storage-monitoring-diagnosing-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+      - name: Метрики и ведение журнала
+        items:
+        - name: Метрики в Azure Monitor
+          href: ../common/storage-metrics-in-azure-monitor.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Переход на новые метрики
+          href: ../common/storage-metrics-migration.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: аналитики хранилища
+          href: ../common/storage-analytics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Включение и просмотр метрик (классическая модель)
+          href: ../common/storage-enable-and-view-metrics.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+    - name: Обработка событий
+      href: storage-blob-event-overview.md
+    - name: Возможности страничных BLOB-объектов
+      href: storage-blob-pageblob-overview.md
   - name: Практическое руководство
     items:
+    - name: Авторизация запросов к службе хранилища
+      items:
+      - name: Проверка подлинности с помощью Azure AD
+        items:
+        - name: Управление правами доступа с помощью RBAC
+          href: ../common/storage-auth-aad-rbac.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Аутентификация из приложения
+          href: ../common/storage-auth-aad-app.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Аутентификация на основе управляемых удостоверений
+          href: ../common/storage-auth-aad-msi.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+        - name: Использование удостоверения Azure AD с CLI или PowerShell
+          href: ../common/storage-auth-aad-script.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Разработка с использованием большими двоичных объектов
       items:
       - name: REST
@@ -361,10 +334,6 @@ items:
         href: ../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
       - name: Классический Azure CLI
         href: ../common/storage-azure-cli-nodejs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-      - name: Управление BLOB-объектами с помощью обозревателя хранилищ
-        href: ../../vs-azure-tools-storage-explorer-blobs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-      - name: Служба автоматизации Azure
-        href: ../common/storage-manage-with-automation.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: шифрования на стороне клиента
       items:
       - name: .NET
@@ -375,8 +344,6 @@ items:
         href: ../common/storage-client-side-encryption-python.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Настройте строки подключения
       href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Разработка высокодоступных приложений c помощью RA-GRS
-      href: ../common/storage-designing-ha-apps-with-ragrs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Шифрование и расшифровка больших двоичных объектов с помощью Azure Key Vault
       href: storage-encrypt-decrypt-blobs-key-vault.md
     - name: Задание и получение свойств и метаданных
@@ -521,6 +488,8 @@ items:
           href: /rest/api/storagerp
         - name: Импорт и экспорт
           href: /rest/api/storageimportexport
+    - name: Предложения для соответствия требованиям
+      href: ../common/storage-compliance-offerings.md
 - name: Data Lake Storage Gen2
   items:
   - name: Документация по переходу к Data Lake Storage Gen1
@@ -631,9 +600,9 @@ items:
       href: http://stackoverflow.com/questions/tagged/windows-azure-storage
     - name: Видеоролики
       href: https://azure.microsoft.com/documentation/videos/index/?services=storage
-ms.openlocfilehash: 0b87fc2be7602e865693c2013cf18ea11e47e7c3
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: bba5e3bf1081d3141b3e754eb8c06e54f6528234
+ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54104256"
+ms.lasthandoff: 01/14/2019
+ms.locfileid: "54261661"
