@@ -1,7 +1,7 @@
 ---
 layout: LandingPage
-title: 'Справочные материалы для пользователей по управлению проверкой подлинности, приложениями и устройствами в Azure Active Directory | Документация Майкрософт'
-description: 'Эти справочные материалы предназначены для пользователей, которым требуется помощь при настройке и использовании сведений для защиты, двухфакторной проверки подлинности, самостоятельного сброса пароля, управления устройствами, приложения Microsoft Authenticator и портала "Мои приложения".'
+title: Справочные материалы для пользователей по управлению проверкой подлинности, приложениями и устройствами в Azure Active Directory | Документация Майкрософт
+description: Эти справочные материалы предназначены для пользователей, которым требуется помощь при настройке и использовании сведений для защиты, двухфакторной проверки подлинности, самостоятельного сброса пароля, управления устройствами, приложения Microsoft Authenticator и портала "Мои приложения".
 services: active-directory
 author: eross-msft
 manager: daveba
@@ -10,8 +10,13 @@ ms.component: user-help
 ms.topic: landing-page
 ms.date: 07/30/2018
 ms.author: lizross
+ms.openlocfilehash: c6fe14c9f67d6ce2f432b57b2cbbd0d026cebe85
+ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54901638"
 ---
-
 # <a name="user-help-for-authentication-apps-and-device-management"></a>Справка для пользователей по управлению проверкой подлинности, приложениями и устройствами
 
 Мы создали эти материалы, которые помогут вам настроить и использовать сведения для защиты и двухфакторную проверку подлинности, установить и использовать приложение Microsoft Authenticator и портал "Мои приложения", а также научиться сбрасывать собственные пароли, настраивать и присоединять устройства Azure Active Directory.
@@ -81,7 +86,10 @@ ms.author: lizross
                     <div class="cardText">
                         <h3>Справка по приложению Microsoft Authenticator</h3>
                         <p>
-                        <a href="/azure/active-directory/user-help/microsoft-authenticator-app-how-to">Начало работы</a><br/>
+                        <a href="/azure/active-directory/user-help/user-help-auth-app-overview">Обзор</a><br/>
+                        <a href="/azure/active-directory/user-help/microsoft-authenticator-app-how-to">Скачивание и установка приложения</a><br/>
+                        <a href="/azure/active-directory/user-help/microsoft-authenticator-app-add-accounts-overview">Добавление учетных записей</a><br/>
+                        <a href="/azure/active-directory/user-help/microsoft-authenticator-app-phone-signin-faq">Вход с использованием приложения</a><br/>
                         <a href="/azure/active-directory/user-help/microsoft-authenticator-app-backup-and-recovery">Резервное копирование и восстановление учетных данных</a>
                         </p>
                     </div>

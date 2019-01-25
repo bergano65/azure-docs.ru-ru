@@ -3,10 +3,8 @@ items:
   href: index.yml
 - name: Обзор
   items:
-  - name: Общие сведения о службе "Поиск Azure"
+  - name: Сведения о службе "Поиск Azure"
     href: search-what-is-azure-search.md
-  - name: Общие сведения о функции "Когнитивный поиск"
-    href: cognitive-search-concept-intro.md
 - name: Быстрое начало работы
   items:
   - name: создание службы;
@@ -54,6 +52,8 @@ items:
     href: https://azure.microsoft.com/resources/samples/?service=search
 - name: Основные понятия
   items:
+  - name: Поиск с помощью служб Cognitive Services (предварительная версия)
+    href: cognitive-search-concept-intro.md
   - name: Полнотекстовый поиск
     href: search-lucene-query-architecture.md
 - name: Практические руководства
@@ -289,9 +289,9 @@ items:
     href: https://azure.microsoft.com/pricing/details/search/
   - name: Видеоролики
     href: https://azure.microsoft.com/resources/videos/index/?services=search
-ms.openlocfilehash: fe70b70005de7f70d00c505adbce4665e41981dd
-ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
+ms.openlocfilehash: cc618fc015cc3b6596d9e5fca84fe943ebae45ae
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2019
-ms.locfileid: "54412154"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54199108"

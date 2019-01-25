@@ -18,13 +18,13 @@ items:
 - name: Основные понятия
   items:
   - name: Azure AD Connect с расширением Azure AD Connect Health
+    href: how-to-connect-syncservice-duplicate-attribute-resiliency.md
     items:
     - name: Что такое Azure AD Connect с расширением Azure AD Connect Health
       href: whatis-azure-ad-connect.md
     - name: Выбор правильного метода аутентификации
       href: https://docs.microsoft.com/azure/security/azure-ad-choose-authn
     - name: Синхронизация удостоверений и устойчивость повторяющихся атрибутов
-      href: how-to-connect-syncservice-duplicate-attribute-resiliency.md
   - name: Синхронизация хэша паролей
     items:
     - name: Что такое синхронизация хэша паролей
@@ -325,9 +325,9 @@ items:
     href: reference-connect-adsynctools.md
   - name: Справочник по ADConnectivityTools
     href: reference-connect-adconnectivitytools.md
-ms.openlocfilehash: 4e34d1cda9e905656a6eddd1f3e5ed3e21592d49
-ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
+ms.openlocfilehash: 45247405dd35835d95237bbb8773fa3bcf384812
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54888589"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54437204"
