@@ -181,14 +181,6 @@ items:
       href: virtual-machine-scale-sets-mvss-guest-based-autoscale-linux.md
   - name: Развертывание
     items:
-    - name: Ansible
-      items:
-      - name: Создание и администрирование масштабируемого набора
-        href: /azure/ansible/ansible-create-configure-vmss
-        maintainContext: true
-      - name: Развертывание приложений в масштабируемые наборы
-        href: /azure/ansible/ansible-deploy-app-vmss
-        maintainContext: true
     - name: Создание с помощью Visual Studio
       href: virtual-machine-scale-sets-vs-create.md
     - name: Использование зон доступности
@@ -251,6 +243,17 @@ items:
       href: virtual-machine-scale-sets-convert-template-to-md.md
     - name: Плановое техническое обслуживание
       href: virtual-machine-scale-sets-maintenance-notifications.md
+  - name: Использование Ansible
+    items:
+    - name: Создание и администрирование масштабируемых наборов
+      href: /azure/ansible/ansible-create-configure-vmss
+      maintainContext: true
+    - name: Развертывание приложений в масштабируемые наборы
+      href: /azure/ansible/ansible-deploy-app-vmss
+      maintainContext: true
+    - name: Автоматическое масштабирование масштабируемого набора
+      href: /azure/ansible/ansible-auto-scale-vmss
+      maintainContext: true
   - name: Устранение неполадок
     items:
     - name: Autoscale
@@ -267,6 +270,8 @@ items:
     href: ../virtual-machines/azure-cli-arm-commands.md
   - name: REST
     href: /rest/api/virtualmachinescalesets/
+  - name: Шаблоны Azure
+    href: /azure/templates/microsoft.compute/virtualmachinescalesets
 - name: Ресурсы
   items:
   - name: Стратегия развития Azure
@@ -275,15 +280,15 @@ items:
     items:
     - name: Linux
       href: https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/linux/
-    - name: " Windows"
+    - name: Windows
       href: https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/windows/
   - name: Калькулятор цен
     href: https://azure.microsoft.com/pricing/calculator/
   - name: Переполнение стека
     href: http://stackoverflow.com/questions/tagged/azure-vm-scale-set
-ms.openlocfilehash: 0f633c6ed77d20f5b2de78687297d4f9a8d5094a
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: e8239a2b9f4717e2483af2084b1ba07368361e88
+ms.sourcegitcommit: b4755b3262c5b7d546e598c0a034a7c0d1e261ec
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54189921"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54883336"

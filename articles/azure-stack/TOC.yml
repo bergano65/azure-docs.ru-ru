@@ -129,16 +129,8 @@ items:
       href: azure-stack-registration.md
     - name: Управление регионами
       href: azure-stack-region-management.md
-    - name: Подключение к Azure
-      items:
-      - name: Подключение с помощью виртуальной частной сети
-        href: azure-stack-connect-vpn.md
-      - name: Сведения о VPN-шлюзах
-        href: azure-stack-vpn-gateway-about-vpn-gateways.md
-      - name: Параметры VPN-шлюза
-        href: azure-stack-vpn-gateway-settings.md
-      - name: Подключение с помощью ExpressRoute
-        href: azure-stack-connect-expressroute.md
+    - name: Подключение к Azure с помощью ExpressRoute
+      href: azure-stack-connect-expressroute.md
     - name: Включение CLI для пользователей
       href: azure-stack-cli-admin.md
     - name: Настройка среды управления
@@ -403,9 +395,9 @@ items:
     href: https://stackoverflow.com/questions/tagged/azure-stack
   - name: Обучение и сертификация
     href: https://docs.microsoft.com/azure/azure-stack/azure-stack-train-and-cert
-ms.openlocfilehash: 03f8d00216ee555e0e7fddd946382577bb0c1904
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.openlocfilehash: 91c476e8e65642e490c3a42de7d5a340964f3ae5
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382146"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54411719"
