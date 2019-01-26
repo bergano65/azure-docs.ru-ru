@@ -29,10 +29,10 @@ items:
     href: cli-samples.md
 - name: Основные понятия
   items:
+  - name: Миграция из версии 2 в версию 3
+    href: migrate-from-v2-to-v3.md
   - name: учетные записи;
     items:
-    - name: Миграция из версии 2 в версию 3
-      href: migrate-from-v2-to-v3.md
     - name: Квоты и ограничения
       href: limits-quotas-constraints.md
     - name: учетные записи хранения;
@@ -66,9 +66,8 @@ items:
   - name: Обработка событий Сетки событий
     href: reacting-to-media-services-events.md
   - name: Защита содержимого
+    href: content-protection-overview.md
     items:
-    - name: Обзор
-      href: content-protection-overview.md
     - name: Система с несколькими DRM и управлением доступом
       href: design-multi-drm-system-with-access-control.md
   - name: Анализ содержимого
@@ -204,9 +203,9 @@ items:
     href: frequently-asked-questions.md
   - name: Облака и регионы Azure
     href: azure-clouds-regions.md
-ms.openlocfilehash: ca6afadf1141e60d4436178ef45fccfdc48f97a5
-ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
+ms.openlocfilehash: dfafe49ba2f520bdc44c5a3e3cad0201d6e56da5
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54382101"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54810862"

@@ -56,7 +56,7 @@ items:
   - name: 5. Отправка push-уведомлений на основе расположения
     items:
     - name: " Windows"
-      href: notification-hubs-push-bing-spatial-data-geofencing-notification.md
+      href: notification-hubs-push-bing-spartial-data-geofencing-notification.md
 - name: Примеры
   items:
   - name: Примеры кода
@@ -74,8 +74,6 @@ items:
       href: notification-hubs-tags-segment-push-message.md
     - name: Регистрация шаблонов
       href: notification-hubs-templates-cross-platform-push-messages.md
-  - name: Модель безопасности
-    href: notification-hubs-push-notification-security.md
 - name: Практические руководства
   items:
   - name: Отправка кроссплатформенных уведомлений
@@ -84,10 +82,6 @@ items:
     href: notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich.md
   - name: Отправка запланированных уведомлений
     href: notification-hubs-send-push-notifications-scheduled.md
-  - name: Развертывание центров уведомлений и управление ими с помощью Azure PowerShell
-    href: notification-hubs-deploy-and-manage-powershell.md
-  - name: Безопасная отправка push-уведомлений пользователям
-    href: notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification.md
   - name: Создание центра уведомлений с помощью пакетов SDK
     items:
     - name: Создание центра уведомлений — .NET
@@ -134,9 +128,9 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Варианты поддержки
     href: https://azure.microsoft.com/support/options/
-ms.openlocfilehash: f8a26954be5154e9d37970a3659fd28a22b615a5
-ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
+ms.openlocfilehash: dcfb667f92f044ae37b0c0c42af337a9c5af49f4
+ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54461456"
+ms.lasthandoff: 01/10/2019
+ms.locfileid: "54197714"

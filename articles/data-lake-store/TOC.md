@@ -28,7 +28,7 @@
 ### [Контроль доступа](data-lake-store-access-control.md)
 ### [Защита хранимых данных](data-lake-store-secure-data.md)
 ### [Шифрование](data-lake-store-encryption.md)
-### [Интеграция с виртуальной сетью](data-lake-store-network-security.md)
+### [Интеграция виртуальной сети (предварительная версия)](data-lake-store-network-security.md)
 
 ## Аутентификация с использованием Data Lake Storage Gen1
 ### [Параметры аутентификации](data-lakes-store-authentication-using-azure-active-directory.md)
