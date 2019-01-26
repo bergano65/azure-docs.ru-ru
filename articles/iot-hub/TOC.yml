@@ -9,30 +9,50 @@ items:
     href: about-iot-hub.md
 - name: Быстрое начало работы
   items:
-  - name: Отправка данных телеметрии (C)
-    href: quickstart-send-telemetry-c.md
-  - name: Отправка данных телеметрии (Node.js)
-    href: quickstart-send-telemetry-node.md
-  - name: Отправка данных телеметрии (.NET)
-    href: quickstart-send-telemetry-dotnet.md
-  - name: Отправка данных телеметрии (Java)
-    href: quickstart-send-telemetry-java.md
-  - name: Отправка данных телеметрии (Python)
-    href: quickstart-send-telemetry-python.md
-  - name: Отправка данных телеметрии (Android)
-    href: quickstart-send-telemetry-android.md
-  - name: Отправка данных телеметрии (iOS)
-    href: quickstart-send-telemetry-ios.md
-  - name: Управление устройством (Node.js)
-    href: quickstart-control-device-node.md
-  - name: Управление устройством (.NET)
-    href: quickstart-control-device-dotnet.md
-  - name: Управление устройством (Java)
-    href: quickstart-control-device-java.md
-  - name: Управление устройством (Python)
-    href: quickstart-control-device-python.md
-  - name: Управление устройством (Android)
-    href: quickstart-control-device-android.md
+  - name: Отправка данных телеметрии
+    items:
+    - name: C
+      href: quickstart-send-telemetry-c.md
+    - name: Node.js
+      href: quickstart-send-telemetry-node.md
+    - name: .NET
+      href: quickstart-send-telemetry-dotnet.md
+    - name: Java
+      href: quickstart-send-telemetry-java.md
+    - name: Python
+      href: quickstart-send-telemetry-python.md
+    - name: Android
+      href: quickstart-send-telemetry-android.md
+    - name: iOS
+      href: quickstart-send-telemetry-ios.md
+  - name: Управление устройством
+    items:
+    - name: Node.js
+      href: quickstart-control-device-node.md
+    - name: .NET
+      href: quickstart-control-device-dotnet.md
+    - name: Java
+      href: quickstart-control-device-java.md
+    - name: Python
+      href: quickstart-control-device-python.md
+    - name: Android
+      href: quickstart-control-device-android.md
+  - name: Обмен данными с помощью потоков устройств (предварительная версия)
+    items:
+    - name: C#
+      href: quickstart-device-streams-echo-csharp.md
+    - name: Node.js
+      href: quickstart-device-streams-echo-nodejs.md
+    - name: C
+      href: quickstart-device-streams-echo-c.md
+  - name: Подключение SSH и RDP с использованием потоков устройств (предварительная версия)
+    items:
+    - name: C#
+      href: quickstart-device-streams-proxy-csharp.md
+    - name: Node.js
+      href: quickstart-device-streams-proxy-nodejs.md
+    - name: C
+      href: quickstart-device-streams-proxy-c.md
 - name: Учебники
   items:
   - name: Маршрутизация сообщений
@@ -65,6 +85,8 @@ items:
     href: iot-hub-configuration-best-practices.md
   - name: Поддержка платформ пакетов SDK для устройств Azure IoT
     href: iot-hub-device-sdk-platform-support.md
+  - name: Общие сведения о потоках устройств Центра Интернета вещей (предварительная версия)
+    href: iot-hub-device-streams-overview.md
   - name: Руководство разработчика по центру Azure IoT (IoT — Интернет вещей)
     href: iot-hub-devguide.md
     items:
@@ -420,9 +442,9 @@ items:
     href: https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=iot-hub
-ms.openlocfilehash: 7ac517a2d2963993d40899183c020570b2934f80
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 84eae62600f5cb62bfd8941d90140c6150a983f0
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54247339"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54809128"
