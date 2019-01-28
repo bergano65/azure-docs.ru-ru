@@ -20,27 +20,45 @@ items:
   expanded: false
 - name: Практические руководства
   items:
-  - name: Включение Защиты идентификации Azure AD
-    href: enable.md
-  - name: Настройка политики регистрации многофакторной идентификации
-    href: howto-mfa-policy.md
-  - name: Настройка политики минимизации рисков при входе
-    href: howto-sign-in-risk-policy.md
-  - name: Настройка политики минимизации рисков для пользователей
-    href: howto-user-risk-policy.md
-  - name: Закрытие активных событий риска
-    href: howto-close-active-risk-events.md
-  - name: Разблокировка пользователей
-    href: howto-unblock-user.md
-  - name: Моделирование событий риска
-    href: playbook.md
-  - name: Использование API Microsoft Graph
-    href: graph-get-started.md
-  - name: Часто задаваемые вопросы
-    href: faqs.md
+  - name: Защита идентификации
+    items:
+    - name: Включение Защиты идентификации Azure AD
+      href: enable.md
+    - name: Настройка политики регистрации многофакторной идентификации
+      href: howto-mfa-policy.md
+    - name: Настройка политики минимизации рисков при входе
+      href: howto-sign-in-risk-policy.md
+    - name: Настройка политики минимизации рисков для пользователей
+      href: howto-user-risk-policy.md
+    - name: Закрытие активных событий риска
+      href: howto-close-active-risk-events.md
+    - name: Разблокировка пользователей
+      href: howto-unblock-user.md
+    - name: Моделирование событий риска
+      href: playbook.md
+    - name: Часто задаваемые вопросы
+      href: faqs.md
+  - name: Защита идентификации (обновление)
+    items:
+    - name: Обзор
+      href: overview-v2.md
+    - name: Обзор безопасности
+      href: security-overview.md
+    - name: Изучение действий пользователей и операций входа, которые могут представлять риск
+      href: howto-investigate-risky-users-signins.md
+    - name: Настройка политик риска
+      href: howto-configure-risk-policies.md
+    - name: Повышение точности обнаружения
+      href: howto-improve-detection-accuracy.md
+    - name: Часто задаваемые вопросы и известные проблемы
+      href: known-issues.md
   expanded: true
 - name: Справочные материалы
   items:
+  - name: Использование API Microsoft Graph
+    href: graph-get-started.md
+  - name: События риска
+    href: risk-events-reference.md
   - name: Глоссарий
     href: glossary.md
 - name: Ресурсы
@@ -57,9 +75,9 @@ items:
     href: https://stackoverflow.com/questions/tagged/azure-active-directory
   - name: Видеоролики
     href: https://azure.microsoft.com/documentation/videos/index/?services=active-directory
-ms.openlocfilehash: 8e684f77d25e4ee685b715e8394faf00e3998be9
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 8c48b383ccd2ac30dc9598cd2da0f043afae43dc
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52423302"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54910952"

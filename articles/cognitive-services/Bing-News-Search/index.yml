@@ -1,16 +1,16 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 0b934e7ac5b297b5c7349a9a9985f6c50d62d19f
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 17fac6455ca225363726b347c428d176e78a1ff9
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53791954"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54912805"
 documentType: LandingData
 title: Документация по API Bing для поиска новостей
 titleSuffix: Azure Cognitive Services
 metadata:
   title: Документация по API Bing для поиска новостей. Учебные материалы, краткие руководства и справочники по API | Документация Майкрософт
-  description: Узнайте, как с помощью API Bing для поиска новостей получить результаты из Интернета, соответствующие запросам пользователя. В руководствах описано, как создавать приложения, использующие эту службу.
+  description: Узнайте, как с помощью API Bing для поиска новостей искать новости в Интернете.
   services: cognitive-services
   author: mikedodaro
   manager: rosh
@@ -19,29 +19,50 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 11/02/2017
+  ms.date: 01/16/2019
   ms.author: v-gedod
 abstract:
-  description: API Bing для поиска новостей работает по тому же принципу, что и решение "Новости Bing", которое возвращает список новостных статей, определенных как соответствующие запросу пользователя.
+  description: API Bing для поиска новостей позволяет интегрировать возможности поиска новостей Bing в свои приложения. Отправляя запросы на поиск с помощью API, вы сможете получить релевантные новостные статьи из нескольких категорий и источников, как и при использовании bing.com/news.
 sections:
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: /azure/cognitive-services/bing-news-search/search-the-web
+      html: <p>Сведения об API Bing для поиска новостей</p>
+      image:
+        src: ../media/index/i_overview.svg
+      title: Общие сведения об API Bing для поиска новостей
+    - href: /azure/cognitive-services/bing-news-search/concepts/send-search-queries
+      html: <p>Узнайте, как отправлять запросы на поиск в API Bing для поиска новостей.</p>
+      image:
+        src: ../media/index/i_guidelines.svg
+      title: Отправка поисковых запросов
+    - href: /azure/cognitive-services/bing-news-search/concepts/search-for-news
+      html: <p>Узнайте, как искать новости нескольких типов и категорий.</p>
+      image:
+        src: ../media/index/i_guidelines.svg
+      title: Поиск новостей
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: 'Начните работу с API Bing для поиска новостей, составив запрос и просмотрев ответ в формате JSON:'
+    text: 'Поиск новостей в Интернете с помощью:'
   - type: list
     style: icon48
     items:
     - image:
         src: media/index/logo_csharp.svg
-      href: csharp
+      href: news-search-sdk-quickstart
       text: C&#35;
     - image:
         src: media/index/logo_java.svg
-      href: java
+      href: news-sdk-java-quickstart
       text: Java
     - image:
         src: media/index/logo_nodejs.svg
-      href: nodejs
+      href: news-search-sdk-node-quickstart
       text: Node.js
     - image:
         src: media/index/logo_php.svg
@@ -49,7 +70,7 @@ sections:
       text: PHP
     - image:
         src: media/index/logo_python.svg
-      href: python
+      href: news-sdk-python-quickstart
       text: Python
     - image:
         src: media/index/logo_ruby.svg
@@ -60,7 +81,7 @@ sections:
   - type: paragraph
     text: Разрабатывайте приложения с использованием API Bing для поиска новостей.
   - type: paragraph
-    text: <a href="tutorial-bing-news-search-single-page-app">Одностраничное веб-приложение</a> | <a href="tutorial-bing-news-search-single-page-app-source">Исходный код</a>
+    text: <a href="tutorial-bing-news-search-single-page-app">Одностраничное веб-приложение</a>
 - title: Примеры
   items:
   - type: paragraph

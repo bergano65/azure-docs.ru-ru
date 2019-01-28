@@ -1,16 +1,16 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 69fa31efe9044ca6dbbc2c6229fdaa328437a046
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 0dbbf1e5b3f80f1dce188e38f3e0ff2d12cce07b
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53792121"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54912260"
 documentType: LandingData
 title: Документация по API Bing для поиска в Интернете
 metadata:
   document_id: 6111ada8-aec2-11e7-abc4-cec278b6b50a
   title: Документация по API Bing для поиска в Интернете. Руководства, краткие руководства и справочники по API | Документация Майкрософт
-  description: Узнайте, как использовать Поиск в Интернете Bing для получения результатов из Интернета, соответствующих запросам пользователя. В руководствах описано, как создавать приложения, использующие эту службу.
+  description: Узнайте, как с помощью API Bing для поиска в Интернете найти нужные веб-страницы, изображения, видео, новости и многое другое.
   services: cognitive-services
   author: nitinme
   manager: cgronlun
@@ -22,7 +22,7 @@ metadata:
   ms.date: 9/24/2018
   ms.author: nitinme
 abstract:
-  description: API Bing для поиска в Интернете работает по тому же принципу, что и служба Bing, которая возвращает результаты поиска, определенные как соответствующие запросу пользователя. Результаты поиска содержат веб-страницы, но также могут содержать изображения, видео и многое другое.
+  description: API Bing для поиска в Интернете позволяет вам интегрировать возможности поиска Bing в свои приложения. Отправляя запросы на поиск с помощью API, вы сможете получить релевантные веб-страницы, изображения, видео, новости и многое другое.
 sections:
 - items:
   - type: list
@@ -48,13 +48,13 @@ sections:
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: Приступите к работе с API Bing для поиска в Интернете, создав запрос и просмотрев ответ в формате JSON.
+    text: 'Поиск в Интернете с помощью:'
   - type: list
     style: icon48
     items:
     - image:
         src: media/index/logo_csharp.svg
-      href: quickstarts/csharp
+      href: web-search-sdk-quickstart
       text: C&#35;
     - image:
         src: https://docs.microsoft.com/media/logos/logo_gopher.svg
@@ -62,11 +62,11 @@ sections:
       text: Go
     - image:
         src: media/index/logo_java.svg
-      href: quickstarts/java
+      href: web-sdk-java-quickstart
       text: Java
     - image:
         src: media/index/logo_nodejs.svg
-      href: quickstarts/nodejs
+      href: web-search-sdk-node-quickstart
       text: Node.js
     - image:
         src: media/index/logo_php.svg
@@ -74,7 +74,7 @@ sections:
       text: PHP
     - image:
         src: media/index/logo_python.svg
-      href: quickstarts/python
+      href: web-sdk-python-quickstart
       text: Python
     - image:
         src: media/index/logo_ruby.svg

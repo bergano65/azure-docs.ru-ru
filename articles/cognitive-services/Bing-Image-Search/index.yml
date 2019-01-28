@@ -1,16 +1,16 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: ef0bfc744e43491e6ac8c238904f4c1704cdeaba
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 516bd4c5edaaec2545be35032c4c87cb394ec0b3
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53793348"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54912019"
 documentType: LandingData
 title: Документация по API Bing для поиска изображений
 metadata:
   document_id: ce69fd12-adf8-11e7-abc4-cec278b6b50a
   title: Документация по API Bing для поиска изображений. Руководства, краткие руководства и справочники по API | Документация Майкрософт
-  description: Узнайте, как с помощью API Bing для поиска изображений получить изображения из Интернета, соответствующие запросам пользователя. В руководствах описано, как создавать приложения, использующие эту службу.
+  description: Узнайте, как с помощью API Bing для поиска изображений найти нужные изображения в Интернете.
   services: cognitive-services
   author: nitinme
   manager: cgronlun
@@ -19,10 +19,10 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 9/24/2018
+  ms.date: 1/16/2019
   ms.author: nitinme
 abstract:
-  description: API Bing для поиска изображений работает по тому же принципу, что и страница Bing.com/images, которая возвращает изображения, определенные как соответствующие запросу пользователя.
+  description: API Bing для поиска изображений позволяет вам интегрировать возможности поиска изображений Bing в свое приложение. Отправляя пользовательские поисковые запросы с помощью API, вы сможете получить и отобразить релевантные и высококачественные изображения, как и при использовании bing.com/images.
 sections:
 - items:
   - type: list
@@ -34,35 +34,35 @@ sections:
       html: <p>Узнайте об API Bing для поиска изображений.</p>
       image:
         src: ../media/index/i_overview.svg
-      title: Что такое API Bing для поиска изображений?
+      title: Знакомство с API Bing для поиска изображений
     - href: /azure/cognitive-services/bing-image-search/concepts/bing-image-search-sending-queries
-      html: <p>Узнайте, как отправлять запросы поиска изображений в Bing.</p>
+      html: <p>Узнайте, как отправлять запросы на поиск изображений в API Bing для поиска изображений</p>
       image:
         src: ../media/index/i_guidelines.svg
       title: Запросы к Поиску изображений
     - href: /azure/cognitive-services/bing-image-search/concepts/bing-image-search-get-images
-      html: <p>Ознакомьтесь с ответом API Bing для поиска изображений.</p>
+      html: <p>Основные сведения об ответе API Bing для поиска изображений</p>
       image:
         src: ../media/index/i_guidelines.svg
       title: Ответ Поиска изображений
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: Начните работу с API Bing для поиска изображений, составив запрос и просмотрев ответ в формате JSON.
+    text: 'Поиск изображений в Интернете с помощью:'
   - type: list
     style: icon48
     items:
     - image:
         src: media/index/logo_csharp.svg
-      href: quickstarts/csharp
+      href: image-search-sdk-quickstart
       text: C&#35;
     - image:
         src: media/index/logo_java.svg
-      href: quickstarts/java
+      href: image-sdk-java-quickstart
       text: Java
     - image:
         src: media/index/logo_nodejs.svg
-      href: quickstarts/nodejs
+      href: image-search-sdk-node-quickstart
       text: Node.js
     - image:
         src: media/index/logo_php.svg
@@ -70,7 +70,7 @@ sections:
       text: PHP
     - image:
         src: media/index/logo_python.svg
-      href: quickstarts/python
+      href: image-sdk-python-quickstart
       text: Python
     - image:
         src: media/index/logo_ruby.svg

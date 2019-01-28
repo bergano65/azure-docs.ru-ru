@@ -1,16 +1,16 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: 62bb4c70c2a5068c90196acc2a1898ceeaa6945c
-ms.sourcegitcommit: 295babdcfe86b7a3074fd5b65350c8c11a49f2f1
+ms.openlocfilehash: 337c48d96a2ee679eda24500d9cb1a8d2581b2c7
+ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53787685"
+ms.lasthandoff: 01/25/2019
+ms.locfileid: "54912907"
 documentType: LandingData
-title: Документация по API для визуального поиска
+title: Документация по API визуального поиска Bing
 metadata:
   document_id: 230494A6-34F9-416D-A6C0-57E69E1C2590
-  title: Документация по API визуального поиска Bing. Руководства и справочник по API
-  description: Узнайте, как с помощью API визуального поиска Bing получить аналитические сведения об изображении. В руководствах описано, как создавать приложения, использующие эту службу.
+  title: Документация по API визуального поиска Bing. Учебные материалы, краткие руководства и справочники по API | Документация Майкрософт
+  description: Узнайте, как с помощью API визуального поиска Bing получить аналитические сведения об изображении.
   services: cognitive-services
   author: swhite-msft
   manager: rosh
@@ -19,15 +19,36 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 04/24/2018
+  ms.date: 01/16/2019
   ms.author: scottwhi
 abstract:
-  description: API визуального поиска Bing работает по тому же принципу, что и страница Bing.com/images, возвращающая аналитические сведения об изображении, например визуально подобные изображения, ресурсы покупок, веб-страницы, которые содержат это изображение, и многое другое.
+  description: API визуального поиска Bing предоставляет примерно такие же сведения об изображении, что и в Bing.com/images. Путем передачи изображения или создания для него URL-адреса этот API позволяет определить различные сведения об изображении, включая визуально похожие изображения, ресурсы покупок, веб-страницы с этим изображением и многое другое.
 sections:
+- items:
+  - type: list
+    style: cards
+    className: cardsM
+    columns: 3
+    items:
+    - href: /azure/cognitive-services/bing-visual-search/overview
+      html: <p>Сведения об API визуального поиска Bing</p>
+      image:
+        src: ../media/index/i_overview.svg
+      title: Знакомство с API визуального поиска Bing
+    - href: /azure/cognitive-services/bing-visual-search/concepts/sending-queries
+      html: <p>Узнайте, как отправлять запросы на поиск в API визуального поиска Bing.</p>
+      image:
+        src: ../media/index/i_guidelines.svg
+      title: Отправка поисковых запросов
+    - href: /azure/cognitive-services/bing-visual-search/tutorial-visual-search-insights-token
+      html: <p>Отправка изображения в API визуального поиска Bing с помощью маркера аналитических сведений из API Bing для поиска изображений</p>
+      image:
+        src: ../media/index/i_guidelines.svg
+      title: Поиск новостей
 - title: 5-минутные руководства по началу работы
   items:
   - type: paragraph
-    text: Начните работу с API визуального поиска Bing, отправив изображение в Bing и получив аналитические сведения об этом изображении.
+    text: 'Получение аналитических сведений об изображении с помощью API визуального поиска Bing:'
   - type: table
     style: dataMatrix
     columns:
@@ -40,12 +61,12 @@ sections:
     - image:
         src: media/index/logo_python.svg
     rows:
-    - title: Первый запрос
+    - title: ''
       values:
-      - href: quickstarts/csharp
-      - href: quickstarts/java
-      - href: quickstarts/nodejs
-      - href: quickstarts/python
+      - href: visual-search-sdk-c-sharp
+      - href: java
+      - href: visual-search-sdk-node
+      - href: visual-search-sdk-python
 - title: Пошаговые руководства
   items:
   - type: paragraph
@@ -53,7 +74,7 @@ sections:
   - type: list
     style: unordered
     items:
-    - html: <a href="tutorial-bing-visual-search-single-page-app">Одностраничные веб-приложения</a> | <a href="tutorial-bing-visual-search-single-page-app-source">(исходный код)</a>
+    - html: <a href="tutorial-bing-visual-search-single-page-app">Одностраничное веб-приложение</a>
 - title: Справочные материалы
   items:
   - type: list
