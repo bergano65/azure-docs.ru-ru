@@ -21,7 +21,7 @@ items:
       href: notification-hubs-ios-apple-push-notification-apns-get-started.md
     - name: Kindle
       href: notification-hubs-kindle-amazon-adm-push-notification.md
-    - name: " Windows"
+    - name: Windows
       href: notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
     - name: Windows Phone
       href: notification-hubs-windows-mobile-push-notifications-mpns.md
@@ -35,7 +35,7 @@ items:
       href: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
     - name: iOS
       href: notification-hubs-ios-xplat-segmented-apns-push-notification.md
-    - name: " Windows"
+    - name: Windows
       href: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
     - name: Windows Phone
       href: notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md
@@ -43,7 +43,7 @@ items:
     items:
     - name: iOS
       href: notification-hubs-ios-xplat-localized-apns-push-notification.md
-    - name: " Windows"
+    - name: Windows
       href: notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md
   - name: 4. Отправка push-уведомлений конкретным адресатам.
     items:
@@ -51,12 +51,12 @@ items:
       href: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
     - name: iOS
       href: notification-hubs-aspnet-backend-ios-apple-apns-notification.md
-    - name: " Windows"
+    - name: Windows
       href: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md
   - name: 5. Отправка push-уведомлений на основе расположения
     items:
-    - name: " Windows"
-      href: notification-hubs-push-bing-spartial-data-geofencing-notification.md
+    - name: Windows
+      href: notification-hubs-push-bing-spatial-data-geofencing-notification.md
 - name: Примеры
   items:
   - name: Примеры кода
@@ -74,14 +74,22 @@ items:
       href: notification-hubs-tags-segment-push-message.md
     - name: Регистрация шаблонов
       href: notification-hubs-templates-cross-platform-push-messages.md
+  - name: Модель безопасности
+    href: notification-hubs-push-notification-security.md
 - name: Практические руководства
   items:
+  - name: Смена ценовой категории
+    href: change-pricing-tier.md
   - name: Отправка кроссплатформенных уведомлений
     href: notification-hubs-aspnet-cross-platform-notification.md
   - name: Широкие возможности отправки содержимого на устройства
     href: notification-hubs-aspnet-backend-ios-apple-push-notification-service-apns-rich.md
   - name: Отправка запланированных уведомлений
     href: notification-hubs-send-push-notifications-scheduled.md
+  - name: Развертывание центров уведомлений и управление ими с помощью Azure PowerShell
+    href: notification-hubs-deploy-and-manage-powershell.md
+  - name: Безопасная отправка push-уведомлений пользователям
+    href: notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification.md
   - name: Создание центра уведомлений с помощью пакетов SDK
     items:
     - name: Создание центра уведомлений — .NET
@@ -128,9 +136,9 @@ items:
     href: https://azure.microsoft.com/regions/services/
   - name: Варианты поддержки
     href: https://azure.microsoft.com/support/options/
-ms.openlocfilehash: dcfb667f92f044ae37b0c0c42af337a9c5af49f4
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: ce941c63797a14d8fb629c958ad3fb741f34fc0c
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54197714"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55196792"
