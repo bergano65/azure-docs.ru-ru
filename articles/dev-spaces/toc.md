@@ -28,6 +28,7 @@
 ### [Использование пользовательского веб-канала NuGet](how-to/use-custom-nuget-feed.md)
 ### [Использование kubectl с рабочими средам Azure для разработчиков](how-to/use-kubectl-with-azure-dev-spaces.md)
 ### [Обновление средств Azure Dev Spaces](how-to/upgrade-tools.md)
+### [Непрерывность бизнес-процессов и аварийное восстановление для Azure Dev Spaces](how-to/dev-spaces-business-continuity.md)
 
 ## [Устранение неполадок](troubleshooting.md)
 

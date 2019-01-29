@@ -35,7 +35,10 @@
 #### [Развитие бизнеса с помощью решений Майкрософт](./gtm-promote-your-business.md)
 #### [Предпочтительные решения](./preferred-solutions.md) 
 
-### [Поддержка Microsoft Azure Marketplace и AppSource](./support-azure-marketplace.md)  
+### [Поддержка Microsoft Azure Marketplace и AppSource](./support-azure-marketplace.md)
+#### [Часто задаваемые вопросы по Marketplace](./marketplace-faq-publisher-guide.md)
+#### [Условия использования Marketplace](./marketplace-terms.md)
+#### [Политика участия в Marketplace](./marketplace-participation-policy.md)
 
 
 <!-- Following section is for Cloud Partner Portal (CPP). -->
@@ -151,7 +154,6 @@
 #### [Публикация предложения](./cloud-partner-portal/saas-app/cpp-publish-offer.md)
 #### [Обновление имеющегося предложения](./cloud-partner-portal/saas-app/cpp-update-existing-offer.md)
 #### [API SaaS](./cloud-partner-portal-orig/cloud-partner-portal-saas-subscription-apis.md)
-#### [Клиент для самопроверки SaaS](./cloud-partner-portal/saas-app/cpp-selftest-client.md)
 
 ### [Предложение "Виртуальная машина"](./cloud-partner-portal/virtual-machine/cpp-virtual-machine-offer.md)
 #### [Предварительные требования](./cloud-partner-portal/virtual-machine/cpp-prerequisites.md)
@@ -176,6 +178,7 @@
 ###### [Шаблон развертывания VHD](./cloud-partner-portal/virtual-machine/cpp-deploy-json-template.md)
 ###### [Развертывание виртуальной машины из Marketplace](./cloud-partner-portal/virtual-machine/cpp-deploy-vm-marketplace.md)
 ##### [Сертификация образа виртуальной машины](./cloud-partner-portal/virtual-machine/cpp-certify-vm.md)
+##### [Клиент для самопроверки виртуальной машины](./cloud-partner-portal/virtual-machine/cpp-selftest-client.md)
 ##### [Получение универсального кода ресурса SAS](./cloud-partner-portal/virtual-machine/cpp-get-sas-uri.md)
 ##### [Распространенные проблемы с URL-адресом SAS](./cloud-partner-portal/virtual-machine/cpp-common-sas-url-issues.md)
 #### [Публикация предложения виртуальной машины](./cloud-partner-portal/virtual-machine/cpp-publish-offer.md)

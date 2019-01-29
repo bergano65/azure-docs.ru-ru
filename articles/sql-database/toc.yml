@@ -9,6 +9,8 @@ items:
     href: sql-database-paas-vs-sql-server-iaas.md
 - name: Быстрое начало работы
   items:
+  - name: Краткое руководство по работе с отдельной базой данных
+    href: sql-database-quickstart-guide.md
   - name: Руководство по быстрому началу работы с Управляемым экземпляром
     href: sql-database-managed-instance-quickstart-guide.md
   - name: Создание
@@ -121,7 +123,7 @@ items:
     items:
     - name: Общие сведения об отдельных базах данных
       href: sql-database-single-index.yml
-    - name: Создание и управление
+    - name: Справочник по API для управления
       href: sql-database-single-databases-manage.md
     - name: Логические серверы
       items:
@@ -131,8 +133,6 @@ items:
         href: sql-database-resource-limits-logical-server.md
       - name: Архитектура подключения
         href: sql-database-connectivity-architecture.md
-      - name: Отличия T-SQL
-        href: sql-database-transact-sql-information.md
     - name: Пулы эластичных БД
       items:
       - name: Пулы эластичных БД
@@ -151,6 +151,8 @@ items:
       href: sql-database-dtu-resource-limits-single-databases.md
     - name: Масштабирование ресурсов
       href: sql-database-single-database-scale.md
+    - name: Отличия T-SQL
+      href: sql-database-transact-sql-information.md
   - name: Управляемые экземпляры
     items:
     - name: Общие сведения об управляемых экземплярах
@@ -690,9 +692,9 @@ items:
       href: sql-database-elastic-jobs-getting-started.md
     - name: Удаление задания обработки эластичных баз данных (устарело)
       href: sql-database-elastic-jobs-uninstall.md
-ms.openlocfilehash: a991b2f6a7ac90d38c653b4daf12948b1b800638
-ms.sourcegitcommit: 58dc0d48ab4403eb64201ff231af3ddfa8412331
+ms.openlocfilehash: 7d7e85b3a7934b03395960d5dcbdc1141f0effd8
+ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2019
-ms.locfileid: "55078208"
+ms.lasthandoff: 01/28/2019
+ms.locfileid: "55101097"
