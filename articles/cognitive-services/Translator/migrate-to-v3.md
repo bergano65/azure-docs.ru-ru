@@ -47,7 +47,7 @@ ms.locfileid: "52682604"
 | GetLanguagesForTranslate     | [Языки](reference/v3-0-languages.md)       |
 | GetLanguagesForSpeak      | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/language-support#text-to-speech)         |
 | Speak     | [Служба распознавания речи (Майкрософт)](https://docs.microsoft.com/azure/cognitive-services/speech-service/text-to-speech)          |
-| Обнаружение     | [Detect](reference/v3-0-detect.md)         |
+| Detect     | [Detect](reference/v3-0-detect.md)         |
 | DetectArray     | [Detect](reference/v3-0-detect.md)         |
 | AddTranslation     | [API Microsoft Translator Hub](https://hub.microsofttranslator.com/Help/Download/Microsoft%20Translator%20Hub%20API%20Guide.pdf)         |
 | AddTranslationArray    | [API Microsoft Translator Hub](https://hub.microsofttranslator.com/Help/Download/Microsoft%20Translator%20Hub%20API%20Guide.pdf)          |
@@ -75,12 +75,12 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 | Метод версии 3   | Символы, учитываемые при выставлении счетов |
 |:----------- |:-------------|
-| Языки     | Если символы не отправляются, плата не взимается.          |
+| Languages     | Если символы не отправляются, плата не взимается.          |
 | Translate     | Подсчет выполняется на основе отправляемого количества символов для перевода и количества языков перевода. Если оправляется 50 символов на 5 языках, получается 250 символов (50 x 5).           |
 | Transliterate     | Количество символов, переданных для транслитерации, подсчитывается.         |
-| Dictionary lookup и Dictionary example     | Количество символов, отправленных для поиска по словарю и в примерах, подсчитывается.         |
+| Dictionary lookup & example     | Количество символов, отправленных для поиска по словарю и в примерах, подсчитывается.         |
 | BreakSentence     | Плата не взимается.       |
-| Обнаружение     | Плата не взимается.      |
+| Detect     | Плата не взимается.      |
 
 ## <a name="v3-end-points"></a>Конечные точки версии 3
 
