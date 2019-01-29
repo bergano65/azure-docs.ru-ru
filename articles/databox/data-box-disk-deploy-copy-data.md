@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 01/09/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 10750b5005810ec9034d2b4c7907578949ca6821
-ms.sourcegitcommit: 33091f0ecf6d79d434fa90e76d11af48fd7ed16d
+ms.openlocfilehash: 97c33a5dc2eb43644081579b5d1c0172ce953906
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54155207"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54449356"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-disk-and-verify"></a>Руководство. Копирование данных на Диск Microsoft Azure Data Box и проверка
 
@@ -161,7 +161,7 @@ ms.locfileid: "54155207"
     
     Дополнительные сведения о команде Robocopy см. в статье [Robocopy и несколько примеров](https://social.technet.microsoft.com/wiki/contents/articles/1073.robocopy-and-a-few-examples.aspx).
 
-6. Откройте папку назначения для просмотра и проверки скопированных файлов. При наличии ошибок во время копирования скачайте файлы журналов для устранения неполадок. Файлы журналов располагаются так, как указано в команде Robobopy.
+6. Откройте папку назначения для просмотра и проверки скопированных файлов. При наличии ошибок во время копирования скачайте файлы журналов для устранения неполадок. Файлы журналов располагаются так, как указано в команде Robocopy.
  
 > [!IMPORTANT]
 > - Вы несете ответственность за копирование данных в папки, соответствующие необходимому формату данных. Например, скопируйте данные блочного блока в соответствующую ему папку. Если формат данных не соответствует соответствующей папке (типу хранилища), то на более позднем этапе загрузка данных в Azure завершится с ошибкой.

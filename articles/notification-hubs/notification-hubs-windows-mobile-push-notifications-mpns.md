@@ -4,8 +4,8 @@ description: Из этого учебника вы узнаете, как исп
 services: notification-hubs
 documentationcenter: windows
 keywords: push-уведомление, push-уведомление, push-уведомление windows phone
-author: dimazaid
-manager: kpiteira
+author: jwargo
+manager: patniko
 editor: spelluru
 ms.assetid: d872d8dc-4658-4d65-9e71-fa8e34fae96e
 ms.service: notification-hubs
@@ -14,16 +14,17 @@ ms.tgt_pltfrm: mobile-windows-phone
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 04/14/2018
-ms.author: dimazaid
-ms.openlocfilehash: e055b51af19ad3958c0c9155490c598ed0f4a80e
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.date: 01/04/2019
+ms.author: jowargo
+ms.openlocfilehash: 40d962e2724b36f97923f10a8a462848b137873b
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51235213"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54452485"
 ---
-# <a name="tutorial-push-notifications-to-windows-phone-apps-by-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в конкретные приложения Windows Phone с помощью Центров уведомлений Azure
+# <a name="tutorial-push-notifications-to-windows-phone-apps-by-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений в конкретные приложения Windows Phone с помощью Центров уведомлений Azure
+
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
 В этом руководстве показано, как использовать Центры уведомлений Azure для отправки push-уведомлений в приложения Silverlight на Windows Phone 8 или Windows Phone 8.1. Если вы намерены использовать платформу Windows Phone 8.1 (без Silverlight), перейдите к версии этого руководства для [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
@@ -33,25 +34,26 @@ ms.locfileid: "51235213"
 > [!NOTE]
 > Центры уведомлений Windows Phone SDK не поддерживают использование службы push-уведомлений Windows (WNS) с приложениями Windows Phone 8.1 Silverlight. Использование WNS (вместо MPNS) с приложениями Windows Phone 8.1 Silverlight описано в статье [Центр уведомлений: учебник для Windows Phone Silverlight], в котором используются API REST.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи: 
+Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание концентратора уведомлений
 > * создание приложения для Windows Phone;
-> * тестовая отправка уведомления. 
+> * тестовая отправка уведомления.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
-- [Visual Studio 2015 Express с компонентами для разработки мобильных приложений](https://www.visualstudio.com/vs/older-downloads/).
+* **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* [Visual Studio 2015 Express с компонентами для разработки мобильных приложений](https://www.visualstudio.com/vs/older-downloads/).
 
 Завершение изучения этого учебника является необходимым условием для работы со всеми другими учебниками, посвященными Центрам уведомлений для приложений Windows Phone 8.
 
 ## <a name="create-your-notification-hub"></a>Создание центра уведомлений
+
 [!INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
 
-
 ### <a name="configure-windows-phone-mpns-settings"></a>Настройка параметров Windows Phone (MPNS)
+
 1. Выберите **Windows Phone (MPNS)** в разделе **Параметры уведомлений**.
 2. Выберите **Enable authentication push** (Включить push-уведомления для аутентификации).
 3. На панели инструментов щелкните **Сохранить**.
@@ -64,72 +66,70 @@ ms.locfileid: "51235213"
     > В этом учебнике используется MPNS в режиме без проверки подлинности. Режим MPNS без проверки подлинности налагает ограничения на использование уведомлений, отправляемых для каждого канала. Центры уведомлений поддерживают [Режим работы MPNS с проверкой подлинности](https://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx) , позволяя отправить ваш сертификат.
 
 ## <a name="create-a-windows-phone-application"></a>создание приложения для Windows Phone;
-В этом разделе объясняется, как создать приложение Windows Phone, которое регистрирует себя в Центре уведомлений. 
 
-1. В Visual Studio создайте новое консольное приложение Windows Phone 8. 
-   
+В этом разделе объясняется, как создать приложение Windows Phone, которое регистрирует себя в Центре уведомлений.
+
+1. В Visual Studio создайте новое консольное приложение Windows Phone 8.
+
     ![Visual Studio — новый проект — приложение для Windows Phone][13]
-   
+
     В Visual Studio 2013 с обновлением 2 вместо этого вы создаете приложение Windows Phone Silverlight.
-   
+
     ![Visual Studio — новый проект — пустое приложение — Windows Phone Silverlight][11]
 2. В Visual Studio щелкните решение правой кнопкой мыши, а затем выберите пункт **Управление пакетами NuGet**.
 3. Выполните поиск по запросу `WindowsAzure.Messaging.Managed` , щелкните **Установить**, а затем примите условия использования.
-   
+
     ![Visual Studio — диспетчер пакетов NuGet][20]
 4. Откройте файл App.xaml.cs и добавьте следующие инструкции `using` :
-   
+
         using Microsoft.Phone.Notification;
         using Microsoft.WindowsAzure.Messaging;
-5. Добавьте следующий код в верхнюю часть метода **Application_Launching** в файле App.xaml.cs:
-   
-        private void Application_Launching(object sender, LaunchingEventArgs e)
-        {
+5. Добавьте следующий код в начало метода `Application_Launching` в файле `App.xaml.cs`:
 
-            var channel = HttpNotificationChannel.Find("MyPushChannel");
-            if (channel == null)
-            {
-                channel = new HttpNotificationChannel("MyPushChannel");
-                channel.Open();
-                channel.BindToShellToast();
-            }
-       
-            channel.ChannelUriUpdated += new EventHandler<NotificationChannelUriEventArgs>(async (o, args) =>
-            {
-                var hub = new NotificationHub("<hub name>", "<connection string>");
-                var result = await hub.RegisterNativeAsync(args.ChannelUri.ToString());
-       
-                System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
-                {
-                    MessageBox.Show("Registration :" + result.RegistrationId, "Registered", MessageBoxButton.OK);
-                });
-            });
+    ```csharp
+    private void Application_Launching(object sender, LaunchingEventArgs e)
+    {
+
+        var channel = HttpNotificationChannel.Find("MyPushChannel");
+        if (channel == null)
+        {
+            channel = new HttpNotificationChannel("MyPushChannel");
+            channel.Open();
+            channel.BindToShellToast();
         }
-   
+
+        channel.ChannelUriUpdated += new EventHandler<NotificationChannelUriEventArgs>(async (o, args) =>
+        {
+            var hub = new NotificationHub("<hub name>", "<connection string>");
+            var result = await hub.RegisterNativeAsync(args.ChannelUri.ToString());
+
+            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                MessageBox.Show("Registration :" + result.RegistrationId, "Registered", MessageBoxButton.OK);
+            });
+        });
+    }
+    ```
+
    > [!NOTE]
-   > Значение **MyPushChannel** — это индекс, который используется для поиска существующего канала в коллекции [HttpNotificationChannel](https://msdn.microsoft.com/library/windows/apps/microsoft.phone.notification.httpnotificationchannel.aspx) . Если канал отсутствует, создайте новую запись с таким именем.
-   > 
-   > 
-   
-    Вставьте имя центра и строку подключения с именем **DefaultListenSharedAccessSignature**, которые вы сохранили в предыдущем разделе.
+   > Значение `MyPushChannel` — это индекс, который используется для поиска существующего канала в коллекции [HttpNotificationChannel](https://msdn.microsoft.com/library/windows/apps/microsoft.phone.notification.httpnotificationchannel.aspx). Если канал отсутствует, создайте новую запись с таким именем.
+
+    Вставьте имя центра и строку подключения с именем `DefaultListenSharedAccessSignature`, которые вы сохранили при работе с предыдущим разделом.
     Этот код получает универсальный код ресурса (URI) канала (ChannelURI) для приложения из MPNS, а затем регистрирует ChannelURI в вашем центре уведомлений. Он также гарантирует регистрацию ChannelURI в центре уведомлений при каждом запуске приложения.
-   
+
    > [!NOTE]
-   > В этом учебнике на устройство отправляется всплывающее уведомление. Когда вы отправляете всплывающее уведомление, необходимо вместо этого вызвать метод **BindToShellTile** в канале. Чтобы поддерживать одновременно и всплывающие уведомления, и уведомления на плитке, следует вызвать оба метода: **BindToShellTile** и **BindToShellToast**.
-   > 
-   > 
-6. В обозревателе решений разверните меню **Свойства**, откройте файл `WMAppManifest.xml`, перейдите на вкладку **Capabilities** (Возможности) и убедитесь, что установлен флажок **ID_CAP_PUSH_NOTIFICATION**. Теперь ваше приложение может получать push-уведомления. 
-   
-    ![Visual Studio — возможности приложений Windows Phone][14]    
-7. Нажмите клавишу `F5` , чтобы запустить приложение.
-   
-    В приложении отобразится сообщение о регистрации.
-8. Закройте приложение или перейдите на домашнюю страницу. 
-   
+   > В этом учебнике на устройство отправляется всплывающее уведомление. Когда вы отправляете уведомления на плитке, необходимо вместо этого вызвать метод `BindToShellTile` в канале. Для поддержки всплывающего уведомления и уведомления на плитке следует вызвать оба метода: `BindToShellTile` и `BindToShellToast`.
+
+6. В обозревателе решений разверните меню **Свойства**, откройте файл `WMAppManifest.xml`, перейдите на вкладку **Capabilities** (Возможности) и убедитесь, что установлен флажок **ID_CAP_PUSH_NOTIFICATION**. Теперь ваше приложение может получать push-уведомления.
+
+    ![Visual Studio — возможности приложений Windows Phone][14]
+7. Нажмите клавишу `F5` , чтобы запустить приложение. В приложении отобразится сообщение о регистрации.
+8. Закройте приложение или перейдите на домашнюю страницу.
+
    > [!NOTE]
    > Для получения всплывающего push-уведомления приложение не должно выполняться в фоновом режиме.
 
-## <a name="test-send-a-notification"></a>тестовая отправка уведомления. 
+## <a name="test-send-a-notification"></a>тестовая отправка уведомления.
 
 1. На портале Azure перейдите на вкладку "Обзор".
 2. Выберите **Тестовая отправка**.
@@ -137,22 +137,22 @@ ms.locfileid: "51235213"
     ![Кнопка "Тестовая отправка"](./media/notification-hubs-windows-phone-get-started/test-send-button.png)
 3. В окне **Тестовая отправка** выполните следующие действия.
 
-    1. В поле **Платформы** выберите значение **Windows Phone**. 
-    2. В поле **Тип уведомления** выберите значение **Всплывающее уведомление**. 
+    1. В поле **Платформы** выберите значение **Windows Phone**.
+    2. В поле **Тип уведомления** выберите значение **Всплывающее уведомление**.
     3. Выберите **Отправить**.
-    4. Проверьте **результат** в списке в нижней части окна. 
+    4. Проверьте **результат** в списке в нижней части окна.
 
-        ![Окно "Тестовая отправка"](./media/notification-hubs-windows-phone-get-started/test-send-window.png)    
-4. В эмуляторе Windows Phone или на телефоне под управлением Windows проверьте, что уведомление получено. 
+        ![Окно "Тестовая отправка"](./media/notification-hubs-windows-phone-get-started/test-send-window.png)
+4. В эмуляторе Windows Phone или на телефоне под управлением Windows проверьте, что уведомление получено.
 
     ![Уведомление на телефоне под управлением Windows](./media/notification-hubs-windows-phone-get-started/notification-on-windows-phone.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 В этом простом примере осуществляется широковещательная рассылка push-уведомлений на все устройства Windows Phone 8. Чтобы узнать, как отправлять push-уведомления на конкретные устройства, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
 >[Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md)
-
 
 <!-- Images. -->
 [6]: ./media/notification-hubs-windows-phone-get-started/notification-hub-create-console-app.png
@@ -162,16 +162,11 @@ ms.locfileid: "51235213"
 [10]: ./media/notification-hubs-windows-phone-get-started/notification-hub-select-from-portal2.png
 [11]: ./media/notification-hubs-windows-phone-get-started/notification-hub-create-wp-silverlight-app.png
 [12]: ./media/notification-hubs-windows-phone-get-started/notification-hub-connection-strings.png
-
 [13]: ./media/notification-hubs-windows-phone-get-started/notification-hub-create-wp-app.png
 [14]: ./media/notification-hubs-windows-phone-get-started/mobile-app-enable-push-wp8.png
 [15]: ./media/notification-hubs-windows-phone-get-started/notification-hub-pushauth.png
 [20]: ./media/notification-hubs-windows-phone-get-started/notification-hub-windows-universal-app-install-package.png
 [213]: ./media/notification-hubs-windows-phone-get-started/notification-hub-create-console-app.png
-
-
-
-
 
 <!-- URLs. -->
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
@@ -181,4 +176,3 @@ ms.locfileid: "51235213"
 [toast catalog]: http://msdn.microsoft.com/library/windowsphone/develop/jj662938(v=vs.105).aspx
 [tile catalog]: http://msdn.microsoft.com/library/windowsphone/develop/hh202948(v=vs.105).aspx
 [Центр уведомлений: учебник для Windows Phone Silverlight]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
-

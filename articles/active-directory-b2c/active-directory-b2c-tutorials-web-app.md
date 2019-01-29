@@ -3,19 +3,19 @@ title: Руководство. Включение в веб-приложении
 description: Руководство по предоставлению пользователю данных для входа в веб-приложение ASP.NET с помощью Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.author: davidmu
 ms.date: 11/30/2018
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.component: B2C
-ms.openlocfilehash: 8b482391dfafdda0e54b3f9e2b8a3a7de2f2d5cd
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 30a94cb5de2d618938f17c4e5733821ac7247785
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52834729"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54851527"
 ---
 # <a name="tutorial-enable-a-web-application-to-authenticate-with-accounts-using-azure-active-directory-b2c"></a>Руководство. Включение в веб-приложении аутентификации на основе учетных записей с помощью Azure Active Directory B2C
 
@@ -173,7 +173,7 @@ git clone https://github.com/Azure-Samples/active-directory-b2c-dotnet-webapp-an
 
 **Пример веб-приложения (TaskWebApp):** веб-приложение для создания и изменения списка задач. Веб-приложение использует поток пользователя **регистрации или входа** для регистрации пользователей или входа в систему.
 
-**Пример приложения веб-API (TaskService).** Веб-API, поддерживающий функции создания, чтения, обновления и удаления списка задач. Веб-API защищен с помощью Azure AD B2C и вызывается веб-приложением.
+**Пример приложения веб-API (TaskService):** веб-API, поддерживающий функции создания, чтения, обновления и удаления списка задач. Веб-API защищен с помощью Azure AD B2C и вызывается веб-приложением.
 
 Для использования регистрации приложения в клиенте необходимо изменить настройки приложения, в частности идентификатор приложения и ключ, записанные ранее. Кроме того, необходимо также настроить созданные потоки пользователя. Пример веб-приложения определяет значения конфигурации, такие как параметры приложения, в файле Web.config. Чтобы изменить параметры приложения:
 

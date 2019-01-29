@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 08/15/2018
 ms.author: sumeet.mittal
 ms.custom: ''
-ms.openlocfilehash: 77d21a9db54a34d3f9981929bb90dfd3b54e23dd
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 45a0c179677a0a2c144ea33dbfb031c88257e1cb
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54190601"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54382517"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки службы виртуальной сети
 
@@ -58,7 +58,8 @@ ms.locfileid: "54190601"
 
 - Функция доступна только для виртуальных сетей, развернутых посредством модели развертывания с помощью Azure Resource Manager.
 - Конечные точки включаются в подсетях, которые настроены в виртуальных сетях Azure. Конечные точки нельзя использовать для трафика, поступающего из локальной среды в службы Azure. Дополнительные сведения см. в разделе о [защите доступа к службам Azure из локальной среды](#securing-azure-services-to-virtual-networks).
-- В SQL Azure конечная точка службы применяется только к трафику службы Azure в пределах региона виртуальной сети. В службе хранилища Azure и Azure Data Lake Storage 1-го поколения для поддержки трафика RA-GRS и GRS конечные точки также применяются к сопряженным регионам, в которых развернута виртуальная сеть. См. дополнительные сведения о [парах регионов Azure](../best-practices-availability-paired-regions.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-paired-regions).
+- В SQL Azure конечная точка службы применяется только к трафику службы Azure в пределах региона виртуальной сети. В службе хранилища Azure для поддержки трафика RA-GRS и GRS конечные точки также применяются к сопряженным регионам, в которых развернута виртуальная сеть. См. дополнительные сведения о [парах регионов Azure](../best-practices-availability-paired-regions.md?toc=%2fazure%2fvirtual-network%2ftoc.json#what-are-paired-regions).
+- У Azure Data Lake Storage 1-го поколения возможность интеграции с виртуальной сетью доступна только для виртуальных сетей из одного региона.
 
 ## <a name="securing-azure-services-to-virtual-networks"></a>Защита служб Azure в виртуальных сетях
 

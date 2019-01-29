@@ -1,5 +1,5 @@
 ---
-title: Настройка подключения "виртуальная сеть — виртуальная сеть" между виртуальными сетями с помощью Azure CLI | Документация Майкрософт
+title: Настройка подключения "виртуальная сеть — виртуальная сеть" между виртуальными сетями с помощью Azure CLI | Документация Майкрософт
 description: Установка подключения "виртуальная сеть — виртуальная сеть" между виртуальными сетями с помощью Azure CLI.
 services: vpn-gateway
 documentationcenter: na
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: cherylmc
-ms.openlocfilehash: 2fc25235325db8a403c2b258dd5e4b3effc46ace
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: dda4f68046b81d96cfe92d5e8b09eab23df0003b
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46971966"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54846320"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-azure-cli"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью Azure CLI
 
@@ -29,9 +29,9 @@ ms.locfileid: "46971966"
 Приведенные в этой статье инструкции относятся к модели развертывания с помощью Resource Manager и выполняются с помощью Azure CLI. Эту конфигурацию также можно создать с помощью разных средств или моделей развертывания, выбрав вариант из следующего списка:
 
 > [!div class="op_single_selector"]
-> * [портала Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
+> * [портал Azure](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md)
 > * [PowerShell](vpn-gateway-vnet-vnet-rm-ps.md)
-> * [интерфейс командной строки Azure](vpn-gateway-howto-vnet-vnet-cli.md)
+> * [Интерфейс командной строки Azure](vpn-gateway-howto-vnet-vnet-cli.md)
 > * [Портал Azure (классический)](vpn-gateway-howto-vnet-vnet-portal-classic.md)
 > * [Подключение с использованием разных моделей развертывания — портал Azure](vpn-gateway-connect-different-deployment-models-portal.md)
 > * [Подключение с использованием разных моделей развертывания — PowerShell](vpn-gateway-connect-different-deployment-models-powershell.md)
@@ -74,11 +74,11 @@ ms.locfileid: "46971966"
 
 Для этого руководства вы можете объединить конфигурации или выбрать ту, с которой вы хотите работать. Во всех конфигурациях используется подключение "виртуальная сеть — виртуальная сеть". Сетевой трафик передается между виртуальными сетями, которые напрямую подключены друг к другу. В этом руководстве трафик не перенаправляется из TestVNet4 в TestVNet5.
 
-* [Виртуальные сети в рамках одной подписки:](#samesub) в инструкциях по работе с этой конфигурацией используются сети TestVNet1 и TestVNet4.
+* [Виртуальные сети в рамках одной подписки.](#samesub) Инструкции по работе с этой конфигурацией с использованием TestVNet1 и TestVNet4.
 
   ![Схема подключения между виртуальными сетями](./media/vpn-gateway-howto-vnet-vnet-cli/v2vrmps.png)
 
-* [Виртуальные сети в разных подписках:](#difsub) в инструкциях по работе с этой конфигурацией используются сети TestVNet1 и TestVNet5.
+* [Виртуальные сети в разных подписках.](#difsub) В инструкциях по работе с этой конфигурацией используются сети TestVNet1 и TestVNet5.
 
   ![Схема подключения между виртуальными сетями](./media/vpn-gateway-howto-vnet-vnet-cli/v2vdiffsub.png)
 
@@ -87,7 +87,7 @@ ms.locfileid: "46971966"
 
 ### <a name="before-you-begin"></a>Перед началом работы
 
-Перед началом работы установите последнюю версию команд интерфейса командной строки (версию 2.0 или более позднюю). Сведения об установке команд CLI см. в руководстве по [установке Azure CLI 2.0](/cli/azure/install-azure-cli).
+Перед началом работы установите последнюю версию команд интерфейса командной строки (версию 2.0 или более позднюю). Сведения об установке команд CLI см. в руководстве по [установке Azure](/cli/azure/install-azure-cli).
 
 ### <a name="Plan"></a>Планирование диапазонов IP-адресов
 
@@ -99,11 +99,11 @@ ms.locfileid: "46971966"
 
 * Имя виртуальной сети: TestVNet1
 * Группа ресурсов: TestRG1
-* Расположение: восточная часть США
+* Расположение. Восточная часть США
 * TestVNet1: 10.11.0.0/16 и 10.12.0.0/16
-* FrontEnd: 10.11.0.0/24
-* BackEnd: 10.12.0.0/24
-* GatewaySubnet: 10.12.255.0/27
+* Внешний интерфейс: 10.11.0.0/24
+* Серверная часть: 10.12.0.0/24
+* Подсеть шлюза: 10.12.255.0/27
 * Имя шлюза: VNet1GW
 * Общедоступный IP-адрес: VNet1GWIP
 * Тип VPN: RouteBased
@@ -114,11 +114,11 @@ ms.locfileid: "46971966"
 
 * Имя виртуальной сети: TestVNet4
 * TestVNet2: 10.41.0.0/16 и 10.42.0.0/16
-* FrontEnd: 10.41.0.0/24
-* BackEnd: 10.42.0.0/24
-* GatewaySubnet: 10.42.255.0/27
+* Внешний интерфейс: 10.41.0.0/24
+* Серверная часть: 10.42.0.0/24
+* Подсеть шлюза: 10.42.255.0/27
 * Группа ресурсов: TestRG4
-* Расположение: Запад США
+* Расположение. Запад США
 * Имя шлюза: VNet4GW
 * Общедоступный IP-адрес: VNet4GWIP
 * Тип VPN: RouteBased
@@ -133,7 +133,7 @@ ms.locfileid: "46971966"
 1. Создайте группу ресурсов.
 
   ```azurecli
-  az group create -n TestRG1  -l eastus
+  az group create -n TestRG1  -l eastus
   ```
 2. Создайте виртуальную сеть TestVNet1 и ее подсети. Пример ниже создает виртуальная сеть TestVNet1 и подсеть FrontEnd.
 
@@ -148,11 +148,11 @@ ms.locfileid: "46971966"
 4. Создайте внутреннюю подсеть.
   
   ```azurecli
-  az network vnet subnet create --vnet-name TestVNet1 -n BackEnd -g TestRG1 --address-prefix 10.12.0.0/24 
+  az network vnet subnet create --vnet-name TestVNet1 -n BackEnd -g TestRG1 --address-prefix 10.12.0.0/24 
   ```
 5. Создайте подсеть шлюза. Обратите внимание, что подсети шлюза присвоено имя GatewaySubnet. Это обязательное имя. В этом примере в подсети шлюза используется длина префикса /27. Хотя можно создать подсеть шлюза размером /29, рекомендуется создать подсеть большего размера, включающую несколько адресов, выбрав по крайней мере значение /28 или /27. Таким образом, у вас будет достаточно адресов, чтобы добавить дополнительные конфигурации в будущем.
 
-  ```azurecli 
+  ```azurecli 
   az network vnet subnet create --vnet-name TestVNet1 -n GatewaySubnet -g TestRG1 --address-prefix 10.12.255.0/27
   ```
 6. Запросите выделение общедоступного IP-адреса для шлюза, который будет создан для виртуальной сети. Учтите, что параметр AllocationMethod является динамическим. Указать необходимый IP-адрес нельзя. Он выделяется для шлюза динамически.
@@ -171,7 +171,7 @@ ms.locfileid: "46971966"
 1. Создайте группу ресурсов.
 
   ```azurecli
-  az group create -n TestRG4  -l westus
+  az group create -n TestRG4  -l westus
   ```
 2. Создайте TestVNet4.
 
@@ -182,13 +182,13 @@ ms.locfileid: "46971966"
 3. Создайте дополнительную подсеть для TestVNet4.
 
   ```azurecli
-  az network vnet update -n TestVNet4 --address-prefixes 10.41.0.0/16 10.42.0.0/16 -g TestRG4 
-  az network vnet subnet create --vnet-name TestVNet4 -n BackEnd -g TestRG4 --address-prefix 10.42.0.0/24 
+  az network vnet update -n TestVNet4 --address-prefixes 10.41.0.0/16 10.42.0.0/16 -g TestRG4 
+  az network vnet subnet create --vnet-name TestVNet4 -n BackEnd -g TestRG4 --address-prefix 10.42.0.0/24 
   ```
 4. Создайте подсеть шлюза.
 
   ```azurecli
-   az network vnet subnet create --vnet-name TestVNet4 -n GatewaySubnet -g TestRG4 --address-prefix 10.42.255.0/27
+   az network vnet subnet create --vnet-name TestVNet4 -n GatewaySubnet -g TestRG4 --address-prefix 10.42.255.0/27
   ```
 5. Запросите общедоступный IP-адрес.
 
@@ -218,18 +218,18 @@ ms.locfileid: "46971966"
   Выходные данные примера:
 
   ```
-  "activeActive": false, 
-  "bgpSettings": { 
-    "asn": 65515, 
-    "bgpPeeringAddress": "10.12.255.30", 
-    "peerWeight": 0 
-   }, 
-  "enableBgp": false, 
-  "etag": "W/\"ecb42bc5-c176-44e1-802f-b0ce2962ac04\"", 
-  "gatewayDefaultSite": null, 
-  "gatewayType": "Vpn", 
-  "id": "/subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW", 
-  "ipConfigurations":
+  "activeActive": false, 
+  "bgpSettings": { 
+    "asn": 65515, 
+    "bgpPeeringAddress": "10.12.255.30", 
+    "peerWeight": 0 
+   }, 
+  "enableBgp": false, 
+  "etag": "W/\"ecb42bc5-c176-44e1-802f-b0ce2962ac04\"", 
+  "gatewayDefaultSite": null, 
+  "gatewayType": "Vpn", 
+  "id": "/subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW", 
+  "ipConfigurations":
   ```
 
   Скопируйте значения в кавычках после **"id":**.
@@ -247,7 +247,7 @@ ms.locfileid: "46971966"
 3. Создайте подключение между TestVNet1 и TestVNet4. На этом шаге вы создадите подключение между TestVNet1 и TestVNet4. В этих примерах вы увидите ссылки на общий ключ. Можно использовать собственные значения для общего ключа. Важно, чтобы общий ключ в обоих подключениях был одинаковым. Создание подключения занимает некоторое время.
 
   ```azurecli
-  az network vpn-connection create -n VNet1ToVNet4 -g TestRG1 --vnet-gateway1 /subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW -l eastus --shared-key "aabbcc" --vnet-gateway2 /subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG4/providers/Microsoft.Network/virtualNetworkGateways/VNet4GW 
+  az network vpn-connection create -n VNet1ToVNet4 -g TestRG1 --vnet-gateway1 /subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW -l eastus --shared-key "aabbcc" --vnet-gateway2 /subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG4/providers/Microsoft.Network/virtualNetworkGateways/VNet4GW 
   ```
 4. Создайте подключение между TestVNet4 и TestVNet1. Этот шаг аналогичен приведенному выше, за исключением того, что создается подключение из сети TestVNet4 в сеть TestVNet1. Убедитесь, что общие ключи совпадают. Установка подключения занимает несколько минут.
 
@@ -286,11 +286,11 @@ ms.locfileid: "46971966"
 
 * Имя виртуальной сети: TestVNet5
 * Группа ресурсов: TestRG5
-* Расположение: восточная часть Японии
+* Расположение. Восточная часть Японии
 * TestVNet5: 10.51.0.0/16 и 10.52.0.0/16
-* FrontEnd: 10.51.0.0/24
-* BackEnd: 10.52.0.0/24
-* GatewaySubnet: 10.52.255.0.0/27
+* Внешний интерфейс: 10.51.0.0/24
+* Серверная часть: 10.52.0.0/24
+* Подсеть шлюза: 10.52.255.0.0/27
 * Имя шлюза: VNet5GW
 * Общедоступный IP-адрес: VNet5GWIP
 * Тип VPN: RouteBased
@@ -304,7 +304,7 @@ ms.locfileid: "46971966"
 1. Проверьте подключение к подписке 5, а затем создайте группу ресурсов.
 
   ```azurecli
-  az group create -n TestRG5  -l japaneast
+  az group create -n TestRG5  -l japaneast
   ```
 2. Создайте TestVNet5.
 
@@ -362,7 +362,7 @@ ms.locfileid: "46971966"
 
   Скопируйте значение "id":. Отправьте идентификатор и имя шлюза виртуальной сети (VNet5GW) администратору подписки 1 по электронной почте или другим способом.
 
-3. **[Подписка 1].** На этом шаге вы создадите подключение между TestVNet1 и TestVNet5. Вы можете использовать собственные значения общего ключа, но они должны совпадать для обоих подключений. Создание подключения может занять некоторое время. Обязательно подключитесь к подписке 1.
+3. **[Подписка 1].** На этом шаге вы создадите подключение между TestVNet1 и TestVNet5. Вы можете использовать собственные значения общего ключа, но они должны совпадать для обоих подключений. Создание подключения может занять некоторое время. Обязательно подключитесь к подписке 1.
 
   ```azurecli
   az network vpn-connection create -n VNet1ToVNet5 -g TestRG1 --vnet-gateway1 /subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW -l eastus --shared-key "eeffgg" --vnet-gateway2 /subscriptions/e7e33b39-fe28-4822-b65c-a4db8bbff7cb/resourceGroups/TestRG5/providers/Microsoft.Network/virtualNetworkGateways/VNet5GW

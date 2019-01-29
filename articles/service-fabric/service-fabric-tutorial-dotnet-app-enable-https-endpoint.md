@@ -12,15 +12,15 @@ ms.devlang: dotNet
 ms.topic: tutorial
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 04/12/2018
+ms.date: 01/17/2019
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: 2e631a0605385f8d55c652a26739b23a0945674f
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 541d1473b21056e24c6b04b86414936a02b7d9d5
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54077256"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54382582"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство. Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
@@ -158,7 +158,9 @@ serviceContext =>
         }))
 ```
 
-Кроме того, добавьте следующий метод, чтобы Kestrel мог найти сертификат в хранилище `Cert:\LocalMachine\My` с использованием субъекта.  Замените &lt;your_CN_value&gt; на mytestcert, если вы создали самозаверяющий сертификат с помощью предыдущей команды PowerShell или используете CN своего сертификата.
+Кроме того, добавьте следующий метод, чтобы Kestrel мог найти сертификат в хранилище `Cert:\LocalMachine\My` с использованием субъекта.  
+
+Замените &lt;your_CN_value&gt; на mytestcert, если вы создали самозаверяющий сертификат с помощью предыдущей команды PowerShell или используете CN своего сертификата.
 
 ```csharp
 private X509Certificate2 GetCertificateFromStore()
@@ -347,7 +349,7 @@ if ($cert -eq $null)
 
 ## <a name="install-certificate-on-cluster-nodes"></a>Установка сертификата на узлы кластера
 
-Перед развертыванием приложения в Azure установите сертификат в хранилище удаленных узлов кластера `Cert:\LocalMachine\My`.  Когда интерфейсная веб-служба запускается на узле кластера, скрипт запуска будет искать сертификат и настраивать разрешения доступа.
+Перед развертыванием приложения в Azure установите сертификат в хранилище всех удаленных узлов кластера `Cert:\LocalMachine\My`.  Службы можно переместить в различные узлы кластера.  Когда интерфейсная веб-служба запускается на узле кластера, скрипт запуска будет искать сертификат и настраивать разрешения доступа.
 
 Экспортируйте его в формате PFX-файла. Откройте приложение certlm.msc и щелкните **Личные**>**Сертификаты**.  В файле *mytestcert* щелкните сертификат правой кнопкой мыши и выберите **Все задачи**>**Экспорт**.
 

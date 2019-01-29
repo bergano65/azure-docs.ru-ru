@@ -1,5 +1,5 @@
 ---
-title: Быстрое начало. Добавление гостевых пользователей на портале Azure
+title: Краткое руководство. Добавление гостевых пользователей на портале Azure
 description: Из этого краткого руководства можно узнать, как администраторы Azure AD могут добавить гостевых пользователей B2B на портале Azure и описывается рабочий процесс приглашения B2B.
 services: active-directory
 ms.service: active-directory
@@ -8,16 +8,16 @@ ms.topic: quickstart
 ms.date: 07/02/2018
 ms.author: mimart
 author: msmimart
-manager: mtillman
+manager: daveba
 ms.reviewer: sasubram
-ms.openlocfilehash: ed49eed6dbfce9a71f13770e3ddcaec6557cf875
-ms.sourcegitcommit: 776b450b73db66469cb63130c6cf9696f9152b6a
+ms.openlocfilehash: 5e62d8679a76c024b0dcada5cfaad50659fcd4c8
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45986551"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54431696"
 ---
-# <a name="quickstart-add-guest-users-to-your-directory-in-the-azure-portal"></a>Быстрое начало. Добавление гостевых пользователей в каталог на портале Azure
+# <a name="quickstart-add-guest-users-to-your-directory-in-the-azure-portal"></a>Краткое руководство. Добавление гостевых пользователей в каталог на портале Azure
 
 Вы можете пригласить кого-либо для совместной работы в вашей организации, добавив его каталог в качестве гостевого пользователя. После этого можно отправить по электронной почте приглашение со ссылкой для активации или отправить прямую ссылку для приложения, доступ к которому вы хотите предоставить. Гостевые пользователи могут выполнять вход с использованием собственных рабочих, учебных учетных данных либо учетных данных из социальных сетей.
 

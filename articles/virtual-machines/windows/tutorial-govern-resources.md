@@ -14,20 +14,20 @@ ms.topic: tutorial
 ms.date: 10/12/2018
 ms.author: tomfitz
 ms.custom: mvc
-ms.openlocfilehash: 6377a54cc862bb5f62726c3ce91a41cc6eb0763d
-ms.sourcegitcommit: 3a02e0e8759ab3835d7c58479a05d7907a719d9c
+ms.openlocfilehash: 6b36cdecb178a7189773abbfe963411e19764401
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49311394"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438666"
 ---
-# <a name="tutorial-learn-about-windows-virtual-machine-governance-with-azure-powershell"></a>Руководство по управлению виртуальными машинами Windows с помощью Azure PowerShell
+# <a name="tutorial-learn-about-windows-virtual-machine-governance-with-azure-powershell"></a>Руководство. Управление виртуальными машинами Windows с помощью Azure PowerShell
 
 [!INCLUDE [Resource Manager governance introduction](../../../includes/resource-manager-governance-intro.md)]
 
 [!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
 
-Для работы примеров в этой статье требуется Azure PowerShell 6.0 или более поздней версии. Если вы работаете с PowerShell локально и у вас нет версии 6.0 (или более новой), [обновите свою версию](/powershell/azure/install-azurerm-ps). Кроме того, нужно выполнить команду `Connect-AzureRmAccount`, чтобы создать подключение к Azure. Для локальных установок также [скачайте модуль Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureAD/), чтобы создать новую группу Azure Active Directory.
+Для работы примеров в этой статье требуется Azure PowerShell 6.0 или более поздней версии. Если вы работаете с PowerShell локально и у вас нет версии 6.0 (или более новой), [обновите свою версию](/powershell/azure/azurerm/install-azurerm-ps). Кроме того, нужно выполнить команду `Connect-AzureRmAccount`, чтобы создать подключение к Azure. Для локальных установок также [скачайте модуль Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureAD/), чтобы создать новую группу Azure Active Directory.
 
 ## <a name="understand-scope"></a>Общие сведения об области
 

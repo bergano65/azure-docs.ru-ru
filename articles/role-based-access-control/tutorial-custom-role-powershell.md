@@ -13,16 +13,16 @@ ms.tgt_pltfrm: ''
 ms.workload: identity
 ms.date: 06/12/2018
 ms.author: rolyon
-ms.openlocfilehash: 1e3043a6053625f8363e9035e59b53275714a827
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: f49f6f03b6d9f1c51cada58ae782bbc364fc9d66
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43300615"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54427293"
 ---
 # <a name="tutorial-create-a-custom-role-using-azure-powershell"></a>Руководство. Создание пользовательских ролей с помощью Azure PowerShell
 
-Если встроенные роли не соответствуют потребностям вашей организации, вы можете создать собственные [настраиваемые роли](built-in-roles.md). С помощью этого руководства и Azure PowerShell вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в подписке, а также открывать запросы в службу поддержки.
+Если [встроенные роли](built-in-roles.md) не соответствуют потребностям вашей организации, вы можете создать собственные пользовательские роли. С помощью этого руководства и Azure PowerShell вы создадите настраиваемую роль с именем "Запросы в службу поддержки от читателя". Она позволяет пользователю просматривать все объекты в подписке, а также открывать запросы в службу поддержки.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -39,7 +39,7 @@ ms.locfileid: "43300615"
 Для работы с этим учебником требуется:
 
 - разрешения на создание пользовательских ролей, такие как [Владелец](built-in-roles.md#owner) или [Администратор доступа пользователя](built-in-roles.md#user-access-administrator);
-- Локальная установка [Azure PowerShell](/powershell/azure/install-azurerm-ps).
+- Локальная установка [Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps).
 
 ## <a name="sign-in-to-azure-powershell"></a>Вход в Azure PowerShell
 

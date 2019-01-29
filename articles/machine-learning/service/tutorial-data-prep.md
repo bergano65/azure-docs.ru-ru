@@ -11,12 +11,12 @@ ms.author: cforbe
 ms.reviewer: trbye
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 81afda4227484c19b49ffc4c399e52576629da34
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: eb4d94d93a72844cfa869bd74aef6eeb34b0f8e9
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54321880"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817509"
 ---
 # <a name="tutorial-prepare-data-for-regression-modeling"></a>Руководство. Подготовка данных для моделирования регрессии
 
@@ -37,7 +37,7 @@ ms.locfileid: "54321880"
 
 ## <a name="get-the-notebook"></a>Получение записной книжки
 
-Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/regression-part1-data-prep.ipynb). Запустите записную книжку **regression-part1-data-prep.ipynb** в Записных книжках Azure или на собственном сервере Jupyter Notebook.
+Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/regression-part1-data-prep.ipynb). Запустите записную книжку **regression-part1-data-prep.ipynb** в [Записных книжках Azure](https://notebooks.azure.com/) или на собственном сервере Jupyter Notebook.
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
 
@@ -1066,7 +1066,7 @@ package.save(file_path)
 
 Чтобы продолжить работу со второй частью руководства, вам потребуется файл **dflows.dprep** в текущем каталоге.
 
-Если вы не планируете переходить ко второй части, удалите файл **dflows.dprep** из текущего каталога. Удалите этот файл, независимо от того, где запущено выполнение: локально или в Записных книжках Azure.
+Если вы не планируете переходить ко второй части, удалите файл **dflows.dprep** из текущего каталога. Удалите этот файл, независимо от того, где запущено выполнение: локально или в [Записных книжках Azure](https://notebooks.azure.com/).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

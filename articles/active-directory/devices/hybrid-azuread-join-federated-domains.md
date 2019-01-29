@@ -4,7 +4,7 @@ description: Сведения о том, как настроить гибрид�
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 54e1b01b-03ee-4c46-bcf0-e01affc0419d
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 01/08/2019
 ms.author: markvi
 ms.reviewer: sandeo
-ms.openlocfilehash: 2f904690187f6f2b020cb9cc32f9a20712d8bb53
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: af1495af69255c7daa7de94da6ce0321c13d7599
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54107571"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54448217"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-federated-domains"></a>Руководство. Настройка гибридного присоединения к Azure Active Directory для федеративных доменов
 
@@ -73,11 +73,11 @@ ms.locfileid: "54107571"
 
 Для гибридного присоединения к Azure AD требуется, чтобы устройства имели доступ к следующим ресурсам Майкрософт из сети организации:  
 
-- https://enterpriseregistration.windows.net
-- https://login.microsoftonline.com
-- https://device.login.microsoftonline.com
+- https\://enterpriseregistration.windows.net;
+- https\://login.microsoftonline.com;
+- https\://device.login.microsoftonline.com;
 - служба токенов безопасности вашей организации (федеративные домены).
-- https://autologon.microsoftazuread-sso.com (если вы используете или планируете использовать простой единый вход).
+- https\://autologon.microsoftazuread-sso.com (если вы используете или планируете использовать простой единый вход).
 
 Начиная с Windows 10 версии 1803, если происходит сбой мгновенного гибридного присоединения к Azure AD для федеративного домена (такого как AD FS), мы используем Azure AD Connect для синхронизации объекта-компьютера в Azure AD, который затем используется для завершения регистрации устройств для такого гибридного присоединения.
 

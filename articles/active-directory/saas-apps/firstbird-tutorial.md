@@ -1,10 +1,10 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Firstbird | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Firstbird | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Firstbird.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: barbkess
 ms.assetid: acab1200-32d3-4f4b-953f-f2a7e812b6a3
 ms.service: Azure-Active-Directory
@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 12/03/2018
+ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 4de6323d3cf6c642ea7714eabf45200e1be0c269
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: d11674632599afa190237b2a4a516d7cce6e2150
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52883908"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54810250"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-firstbird"></a>Руководство. Интеграция Azure Active Directory с Firstbird
 
@@ -79,8 +79,8 @@ ms.locfileid: "52883908"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в Firstbird](#configure-firstbird-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Создание тестового пользователя Firstbird](#create-firstbird-test-user)** нужно для того, чтобы в Firstbird также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Firstbird](#create-firstbird-test-user)** нужно для того, чтобы в Firstbird также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -105,7 +105,7 @@ ms.locfileid: "52883908"
 
     ![Сведения о домене и URL-адресах единого входа приложения Firstbird](common/idp_intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<company-domain>.auth.1brd.com/saml/sp`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<company-domain>.auth.1brd.com/saml/sp`.
 
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<company-domain>.auth.1brd.com/saml/callback`.
 
@@ -114,7 +114,7 @@ ms.locfileid: "52883908"
     ![Сведения о домене и URL-адресах единого входа приложения Firstbird](common/metadata_upload_additional_signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в следующем формате: `https://<company-domain>.1brd.com/login`.
-    
+
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Firstbird](mailto:support@firstbird.com). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
 
@@ -154,7 +154,7 @@ ms.locfileid: "52883908"
 
 ### <a name="configure-firstbird-single-sign-on"></a>Настройка единого входа Firstbird
 
-Выполнив эти действия, отправьте Firstbird XML метаданные федерации в качестве запроса о поддержке по электронной почте на адрес [support@firstbird.com](mailto:support@firstbird.com) с темой: "Настройка единого входа".
+Выполнив эти действия, отправьте Firstbird XML метаданные федерации в качестве запроса о поддержке по электронной почте на адрес [support@firstbird.com](mailto:support@firstbird.com) с темой "Настройка единого входа".
 
 Firstbird соответствующим образом будет хранить конфигурацию в системе и активировать единый вход для учетной записи. После этого для проверки конфигурации с вами свяжется представитель службы поддержки.
 

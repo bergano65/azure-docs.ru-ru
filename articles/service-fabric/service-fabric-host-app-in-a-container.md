@@ -14,14 +14,14 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 05/18/2018
 ms.author: twhitney
-ms.openlocfilehash: 2b53b8a97f4e794110dc482db09a0d376247a678
-ms.sourcegitcommit: d372d75558fc7be78b1a4b42b4245f40f213018c
+ms.openlocfilehash: 1867702f0b33332ea4fa52374cd1452c3bc51a55
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/09/2018
-ms.locfileid: "51299645"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54436983"
 ---
-# <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Руководство по развертыванию приложения .NET в контейнере Windows в Azure Service Fabric
+# <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Руководство. Развертывание приложения .NET в контейнере Windows в Azure Service Fabric
 
 В этом руководстве рассматривается, как поместить имеющееся приложение ASP.NET в контейнер и упаковать его в качестве приложения Service Fabric.  Запустите контейнеры локально в кластере разработки Service Fabric, а затем разверните приложение в Azure.  Приложение сохраняет данные в [базе данных SQL Azure](/azure/sql-database/sql-database-technical-overview). 
 
@@ -164,7 +164,7 @@ $registry = New-AzureRMContainerRegistry -ResourceGroupName $acrresourcegroupnam
 
     a. Укажите имя кластера в поле **Имя кластера**, а также подписку и расположение, которые нужно использовать. Запишите имя группы ресурсов кластера.
 
-    b. Необязательно. Можно изменить количество узлов. По умолчанию у вас есть три узла — минимальное количество, необходимое для тестирования сценариев Service Fabric.
+    b. Необязательно: можно изменить количество узлов. По умолчанию у вас есть три узла — минимальное количество, необходимое для тестирования сценариев Service Fabric.
 
     c. Выберите вкладку **Сертификат**. На этой вкладке введите пароль, используемый для защиты сертификата кластера. С помощью этого сертификата вы защитите кластер. Также можно изменить путь, используемый для сохранения сертификата. Visual Studio также может импортировать сертификат автоматически, так как это необходимый шаг для публикации приложения в кластер.
 
@@ -237,7 +237,7 @@ $vnetRuleObject1 = New-AzureRmSqlServerVirtualNetworkRule `
 ![Веб-пример Fabrikam][fabrikam-web-page-deployed]
 
 ## <a name="set-up-continuous-integration-and-deployment-cicd-with-a-service-fabric-cluster"></a>Настройка непрерывной интеграции и развертывания (CI/CD) с помощью кластера Service Fabric
-Дополнительные сведения о том, как использовать Azure DevOps для настройки развертывания приложений с помощью CI/CD в кластере Service Fabric см. в статье [Tutorial: Deploy an application with CI/CD to a Service Fabric cluster](service-fabric-tutorial-deploy-app-with-cicd-vsts.md) (Руководство. Развертывание приложения с помощью CI/CD в кластере Service Fabric). Процесс, описанный в этом руководстве, такой же и для проекта (FabrikamFiber). Просто пропустите загрузку примера Voting и замените FabrikamFiber именем репозитория вместо Voting.
+Дополнительные сведения о том, как использовать Azure DevOps для настройки развертывания приложений с помощью CI/CD в кластере Service Fabric см. в статье [Руководство. Развертывание приложения с непрерывной интеграцией и развертыванием в кластере Service Fabric](service-fabric-tutorial-deploy-app-with-cicd-vsts.md). Процесс, описанный в этом руководстве, такой же и для проекта (FabrikamFiber). Просто пропустите загрузку примера Voting и замените FabrikamFiber именем репозитория вместо Voting.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 После завершения работы не забудьте удалить все созданные ресурсы.  Простейший способ — это удалить группы ресурсов, которые содержат кластер Service Fabric, базу данных SQL Azure и службу "Реестр контейнеров Azure".
@@ -269,7 +269,7 @@ Remove-AzureRmResourceGroup -Name $clusterresourcegroupname
 В следующей части этого руководства вы научитесь [развертывать приложение в контейнере с помощью CI/CD в кластере Service Fabric](service-fabric-tutorial-deploy-container-app-with-cicd-vsts.md).
 
 [link-fabrikam-github]: https://aka.ms/fabrikamcontainer
-[link-azure-powershell-install]: /powershell/azure/install-azurerm-ps
+[link-azure-powershell-install]: /powershell/azure/azurerm/install-azurerm-ps
 [link-servicefabric-create-secure-clusters]: service-fabric-cluster-creation-via-arm.md
 [link-visualstudio-cd-extension]: https://aka.ms/cd4vs
 [link-servicefabric-containers]: service-fabric-get-started-containers.md

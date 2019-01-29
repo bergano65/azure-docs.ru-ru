@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Talent Palette | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Talent Palette | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Talent Palette.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: barbkess
 ms.assetid: 839dbf54-b636-477b-9cf8-157374c78e7a
 ms.service: Azure-Active-Directory
@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 11/30/2018
+ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 7362b3279afc365db2a303de1b450c4e35e48874
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 7438480d046be6242829060ce8ee936dd1cfb588
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52883973"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54818852"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-talent-palette"></a>Руководство по интеграции Azure Active Directory с Talent Palette
+# <a name="tutorial-azure-active-directory-integration-with-talent-palette"></a>Руководство. Интеграция Azure Active Directory с Talent Palette
 
 В этом руководстве описано, как интегрировать Talent Palette с Azure Active Directory (Azure AD).
 Интеграция Talent Palette с Azure AD обеспечивает следующие преимущества.
@@ -79,8 +79,8 @@ ms.locfileid: "52883973"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в Talent Palette](#configure-talent-palette-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Создание тестового пользователя Talent Palette](#create-talent-palette-test-user)** требуется для того, чтобы в Talent Palette существовал соответствующий пользователь, связанный с пользователем Britta Simon в Azure AD.
-5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Talent Palette](#create-talent-palette-test-user)** требуется для того, чтобы в Talent Palette существовал соответствующий пользователь, связанный с пользователем Britta Simon в Azure AD.
 6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -110,7 +110,7 @@ ms.locfileid: "52883973"
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующее действие:
 
     ![Сведения о домене и URL-адресах единого входа в Talent Palette](common/both_signonurl.png)
-   
+
     В текстовом поле **URL-адрес входа** введите URL-адрес в следующем формате: `https://talent-p.net/saml/sso/<tenantID>`.
 
     > [!NOTE]

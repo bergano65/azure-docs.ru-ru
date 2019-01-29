@@ -4,7 +4,7 @@ description: Из этого руководства вы узнаете, как 
 services: active-directory
 documentationcenter: ''
 author: daveba
-manager: mtillman
+manager: daveba
 editor: daveba
 ms.service: active-directory
 ms.component: msi
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 08/20/2018
 ms.author: daveba
-ms.openlocfilehash: 6e8f7f18196eb23900c815048e12d57a238d08f7
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 4396ab093b20e4a7fb89ddbfe821be117bb8ebfb
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52423062"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438683"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-ad-graph-api"></a>Руководство. Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к API Graph в Azure AD
 
@@ -66,7 +66,7 @@ Add-AzureADGroupMember -ObjectId $AzureADGroup.ObjectID -RefObjectId $ManagedIde
 Azure AD Graph:
 - Идентификатор приложения субъекта-службы (используется при предоставлении разрешения приложения): 00000002-0000-0000-c000-000000000000
 - Идентификатор ресурса (используется при запрашивании маркера доступа из управляемых удостоверений для ресурсов Azure): https://graph.windows.net
-- Справочник по областям разрешений: [Справочник по разрешениям Azure AD Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)
+- Справочник по областям разрешений: [Области разрешений | Основные понятия API Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)
 
 ### <a name="grant-application-permissions-using-azure-ad-powershell"></a>Предоставление разрешений для приложений с помощью Azure AD PowerShell
 

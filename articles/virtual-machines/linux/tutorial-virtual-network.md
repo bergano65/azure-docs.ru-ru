@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/10/2017
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: daee5a2073e78ca5bb9e0eb0386617d7638ab930
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a0eb3ed26b0e8641cf4e1004c2c162c799dd8999
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46988530"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54463768"
 ---
 # <a name="tutorial-create-and-manage-azure-virtual-networks-for-linux-virtual-machines-with-the-azure-cli"></a>Руководство. Создание и администрирование виртуальных сетей Azure для виртуальных машин Linux с помощью Azure CLI
 
@@ -208,7 +208,7 @@ az network nsg rule create \
   --destination-port-range 80
 ```
 
-Интерфейсная виртуальная машина доступна только через порты *22* и *80*. Весь остальной входящий трафик блокируется группой безопасности сети. Иногда есть смысл визуализировать конфигурации правил NSG. Получите конфигурацию правила NSG с помощью команды [az network rule list](/cli/azure/network/nsg/rule#az_network_nsg_rule_list). 
+Интерфейсная виртуальная машина доступна только через порты *22* и *80*. Весь остальной входящий трафик блокируется группой безопасности сети. Иногда есть смысл визуализировать конфигурации правил NSG. Получите конфигурацию правила NSG с помощью команды [az network rule list](/cli/azure/network/nsg/rule). 
 
 ```azurecli-interactive 
 az network nsg rule list --resource-group myRGNetwork --nsg-name myFrontendNSG --output table
@@ -285,7 +285,7 @@ az vm create \
   --generate-ssh-keys
 ```
 
-Внутренняя виртуальная машина доступна только через порты *22* и *3306* из интерфейсной подсети. Весь остальной входящий трафик блокируется группой безопасности сети. Иногда есть смысл визуализировать конфигурации правил NSG. Получите конфигурацию правила NSG с помощью команды [az network rule list](/cli/azure/network/nsg/rule#az_network_nsg_rule_list). 
+Внутренняя виртуальная машина доступна только через порты *22* и *3306* из интерфейсной подсети. Весь остальной входящий трафик блокируется группой безопасности сети. Иногда есть смысл визуализировать конфигурации правил NSG. Получите конфигурацию правила NSG с помощью команды [az network rule list](/cli/azure/network/nsg/rule). 
 
 ```azurecli-interactive 
 az network nsg rule list --resource-group myRGNetwork --nsg-name myBackendNSG --output table

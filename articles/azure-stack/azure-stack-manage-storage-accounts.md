@@ -11,36 +11,27 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: get-started-article
-ms.date: 09/28/2018
+ms.date: 01/18/2019
 ms.author: mabrigg
 ms.reviewer: xiaofmao
-ms.openlocfilehash: 8eed0b4f2d14d22bdd9eddac9dbb4c0e02404975
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: 149da2c186ae1e0c3fa5af14a630a0edef7deb25
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54302720"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54470279"
 ---
 # <a name="manage-storage-accounts-in-azure-stack"></a>Управление учетными записями хранения в Azure Stack
+
 В этой статье приведены сведения об управлении учетными записями хранения, включая их поиск, восстановление и освобождение емкости хранилища в соответствии с бизнес-потребностями.
 
-## <a name="find"></a>Поиск учетной записи хранения
+## <a name="find-a-storage-account"></a>Поиск учетной записи хранения
 Чтобы просмотреть список учетных записей хранения в регионе в Azure Stack, сделайте следующее:
 
 1. Войдите на [портал администрирования](https://adminportal.local.azurestack.external).
 
-2. Выберите **Все службы** > **Управление регионами** в разделе **Администрирование**.
+2. Выберите **Все службы** > **Учетные записи хранения**.
 
-3. В списке **Поставщики ресурсов** выберите **Хранилище**.
-   
-   ![Поставщик ресурсов хранилища](media/azure-stack-manage-storage-accounts/image1.png)
-
-5. В рабочей области **Хранилище** выберите **Учетные записи хранения**.
-   
-   ![](media/azure-stack-manage-storage-accounts/image2.png)
-   
-   В колонке отобразятся учетные записи хранения в этом регионе.
-   
    ![](media/azure-stack-manage-storage-accounts/image4.png)
 
 По умолчанию отображаются первые 10 учетных записей. Чтобы просмотреть другие учетные записи, щелкните ссылку **Загрузить еще** в нижней части списка.

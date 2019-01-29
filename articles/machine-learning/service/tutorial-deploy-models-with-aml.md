@@ -11,12 +11,12 @@ ms.author: haining
 ms.reviewer: sgilley
 ms.date: 09/24/2018
 ms.custom: seodec18
-ms.openlocfilehash: a5f13bfa4d0e9962622565cc5ac9c80372b50123
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: cf83c99f562029fae932bc294cfc87750c908c99
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54107690"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54828219"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство. Развертывание модели классификации изображений в Экземплярах контейнеров Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "54107690"
 
 ## <a name="get-the-notebook"></a>Получение записной книжки
 
-Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part2-deploy.ipynb). Запустите записную книжку `tutorials/img-classification-part2-deploy.ipynb` в Записных книжках Azure или на своем сервере Jupyter Notebook.
+Для удобства это руководство доступно в формате [Jupyter Notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/tutorials/img-classification-part2-deploy.ipynb). Запустите записную книжку *tutorials/img-classification-part2-deploy.ipynb* в [Записных книжках Azure](https://notebooks.azure.com/) или на собственном сервере Jupyter Notebook.
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-in-azure-notebook.md)]
 

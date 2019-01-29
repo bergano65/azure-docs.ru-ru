@@ -1,128 +1,131 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Adobe Sign | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Adobe Sign | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Adobe Sign.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
+ms.reviewer: barbkess
 ms.assetid: f9385723-8fe7-4340-8afb-1508dac3e92b
-ms.service: active-directory
-ms.component: saas-app-tutorial
+ms.service: Azure-Active-Directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 04/26/2018
+ms.topic: tutorial
+ms.date: 12/19/2018
 ms.author: jeedes
-ms.openlocfilehash: d5cdc2ec0c6cfcf52f84629485d0dd879fbf6fa2
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 117cd2a546128499c1f9bbc75be40034875fa76e
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39054004"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54809375"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adobe-sign"></a>Руководство по интеграции Azure Active Directory с Adobe Sign
+# <a name="tutorial-azure-active-directory-integration-with-adobe-sign"></a>Руководство. Интеграция Azure Active Directory с Adobe Sign
 
 В этом руководстве описано, как интегрировать Adobe Sign с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с Adobe Sign обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Adobe Sign.
-- Вы можете включить автоматический вход пользователей в Adobe Sign (единый вход) с использованием учетных записей Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к Adobe Sign.
+* Вы можете включить автоматический вход пользователей в Adobe Sign (единый вход) с помощью учетной записи Azure AD.
+* Вы можете управлять учетными записями централизованно — на портале Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Подробнее узнать об интеграции приложений SaaS с Azure AD можно в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Adobe Sign, вам потребуется:
 
-- подписка Azure AD;
-- подписка Adobe Sign с поддержкой единого входа.
-
-При проверке действий в этом руководстве соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD; Если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* Подписка Adobe Sign с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Adobe Sign из коллекции.
-2. Настройка и проверка единого входа Azure AD.
+В рамках этого руководства проводится настройка и проверка единого входа Azure AD в тестовой среде.
 
-## <a name="add-adobe-sign-from-the-gallery"></a>Добавление Adobe Sign из коллекции
+* Adobe Sign поддерживает единый вход, инициированный **поставщиком услуг**.
+
+## <a name="adding-adobe-sign-from-the-gallery"></a>Добавление Adobe Sign из коллекции
+
 Чтобы настроить интеграцию Adobe Sign с Azure AD, необходимо добавить Adobe Sign из коллекции в список управляемых приложений SaaS.
 
-1. На [портале Azure](https://portal.azure.com) в области слева щелкните значок **Azure Active Directory**. 
+**Чтобы добавить Adobe Sign из коллекции, сделайте следующее.**
 
-    ![Снимок экрана значка Azure Active Directory][1]
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-2. Выберите **Корпоративные приложения** > **Все приложения**.
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
 
-    ![Снимок экрана меню Azure Active Directory с выделенными параметрами "Корпоративные приложения" и "Все приложения"][2]
-    
-3. Чтобы добавить новое приложение, в верхней части диалогового окна выберите **Новое приложение**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Снимок экрана параметра "Новое приложение" в верхней части диалогового окна][3]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-4. В поле поиска введите **Adobe Sign**.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Снимок экрана поля поиска](./media/adobe-echosign-tutorial/tutorial_adobesign_search.png)
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
-5. На панели результатов выберите **Adobe Sign**, а затем — **Добавить**.
+4. В поле поиска введите **Adobe Sign**, выберите **Adobe Sign** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Снимок экрана панели результатов](./media/adobe-echosign-tutorial/tutorial_adobesign_addfromgallery.png)
+     ![Adobe Sign в списке результатов](common/search-new-app.png)
 
-##  <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
-В этом разделе описана настройка и проверка единого входа Azure AD в Adobe Sign с использованием тестового пользователя Britta Simon.
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-Чтобы работать в режиме единого входа, Azure AD необходимо распознать связь между пользователем Azure AD и соответствующим пользователем в Adobe Sign.
+В этом разделе описана настройка и проверка единого входа Azure AD в Adobe Sign с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Adobe Sign.
 
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Adobe Sign.
+Чтобы настроить и проверить единый вход Azure AD в Adobe Sign, вам потребуется выполнить действия в следующих стандартных блоках.
 
-Чтобы настроить и проверить единый вход Azure AD в Adobe Sign, выполните инструкции ниже.
-
-1. [Настройка единого входа Azure AD](#configuring-azure-ad-single-sign-on) необходима, чтобы пользователи могли использовать эту функцию.
-2. [Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user) требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. [Создание тестового пользователя Adobe Sign](#creating-an-adobe-sign-test-user) нужно для того, чтобы в Adobe Sign также был пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-4. [Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user) необходимо, чтобы разрешить Britta Simon использовать единый вход Azure AD.
-5. [Проверка единого входа](#testing-single-sign-on) позволяет убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Adobe Sign](#configure-adobe-sign-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Adobe Sign](#create-adobe-sign-test-user)** нужно, чтобы в Adobe Sign также существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Adobe Sign.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-1. На портале Azure на странице интеграции с приложением **Adobe Sign** щелкните **Единый вход**.
+Чтобы настроить единый вход Azure AD в Adobe Sign, сделайте следующее.
 
-    ![Снимок экрана страницы интеграции с приложением Adobe Sign с выделенным единым входом][4]
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Adobe Sign** щелкните **Единый вход**.
 
-2. В диалоговом окне **Единый вход** в поле **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-    ![Снимок экрана диалогового окна единого входа с выделенным полем "Режим"](./media/adobe-echosign-tutorial/tutorial_adobesign_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-3. В разделе **Домены и URL-адреса приложения Adobe Sign** сделайте следующее.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Снимок экрана раздела доменов и URL-адресов приложения Adobe Sign](./media/adobe-echosign-tutorial/tutorial_adobesign_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+
+    ![Сведения о домене и URL-адресах для единого входа в приложении Adobe Sign](common/sp-identifier.png)
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.echosign.com/`.
 
-    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<companyname>.echosign.com`.
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<companyname>.echosign.com`.
 
-    > [!NOTE] 
-    > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Adobe Sign](https://helpx.adobe.com/in/contact/support.html).
+    > [!NOTE]
+    > Эти значения приведены в качестве примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки Adobe Sign](https://helpx.adobe.com/in/contact/support.html). Можно также обратиться к шаблонам, указанным в разделе **Базовая конфигурация SAML** на портале Azure.
 
-4. В разделе **Сертификат подписи SAML** выберите **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
-    ![Снимок экрана раздела "Сертификат подписи SAML"](./media/adobe-echosign-tutorial/tutorial_adobesign_certificate.png) 
+    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-5. Щелкните **Сохранить**.
+6. Требуемый URL-адрес вы можете скопировать из раздела **Настройка Adobe Sign**.
 
-    ![Снимок экрана кнопки "Сохранить"](./media/adobe-echosign-tutorial/tutorial_general_400.png)
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-6. В разделе **Adobe Sign Configuration** (Конфигурация Adobe Sign) щелкните **Configure Adobe Sign** (Настроить Adobe Sign), чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес выхода**, **идентификатор сущности SAML** и **URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+    a. URL-адрес входа.
 
-    ![Снимок экрана раздела Adobe Sign Configuration (Конфигурация Adobe Sign) с выделенным параметром Configure Adobe Sign (Настроить Adobe Sign)](./media/adobe-echosign-tutorial/tutorial_adobesign_configure.png)
+    b. Идентификатор Azure AD.
+
+    c. URL-адрес выхода
+
+### <a name="configure-adobe-sign-single-sign-on"></a>Настройка единого входа в Adobe Sign
 
 7. Перед настройкой необходимо связаться с [группой поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html), чтобы добавить домен в утвержденный список Adobe Sign. Домен можно добавить следующим образом:
 
@@ -153,52 +156,76 @@ ms.locfileid: "39054004"
   
     ![Снимок экрана параметров SAML](./media/adobe-echosign-tutorial/ic789521.png "Параметры SAML")
    
+    ![Снимок экрана параметров SAML](./media/adobe-echosign-tutorial/ic789522.png "Параметры SAML")
+
     a. В разделе **SAML Mode** (Режим SAML) выберите параметр **SAML Mandatory** (SAML обязательно).
    
     b. Установите флажок **Allow EchoSign Account Administrators to log in using their EchoSign Credentials** (Разрешить администраторам учетных записей EchoSign вход с использованием учетных данных EchoSign).
    
     c. В разделе **Создание пользователя** установите флажок **Automatically add users authenticated through SAML** (Автоматически добавлять пользователей, прошедших проверку подлинности с использованием SAML).
 
-    d. Вставьте **идентификатор сущности SAML**, скопированный на портале Azure, в текстовое поле **идентификатора сущности или URL-адреса издателя**.
+    d. Вставьте **идентификатор Azure AD**, скопированный на портале Azure, в текстовое поле **Idp Entity ID** (Идентификатор сущности поставщика удостоверений).
     
-    д. В текстовое поле **URL-адреса входа или конечной точки единого входа** вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure.
+    д. Вставьте **URL-адрес входа**, скопированный на портале Azure, в текстовое поле **Idp Login URL** (URL-адрес входа поставщика удостоверений).
    
-    f. В текстовое поле **URL-адреса выхода или конечной точки единого выхода** вставьте **URL-адрес выхода**, скопированный на портале Azure.
+    Е. Вставьте **URL-адрес выхода**, скопированный на портале Azure, в текстовое поле **Idp Logout URL** (URL-адрес выхода поставщика удостоверений).
 
     ж. Откройте скачанный файл **сертификата (Base64)** в Блокноте. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **сертификата поставщика удостоверений**.
 
     h. Щелкните **Save changes** (Сохранить изменения).
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-В этом разделе на портале Azure создается тестовый пользователь с именем Britta Simon.
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-![Снимок экрана имени тестового пользователя на портале Azure][100]
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На **портале Azure** в области слева щелкните значок **Azure Active Directory**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    ![Снимок экрана значка Azure AD](./media/adobe-echosign-tutorial/create_aaduser_01.png) 
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и выберите **Все пользователи**.
-    
-    ![Снимок экрана меню Azure AD с выделенными параметрами "Пользователи и группы" и "Все пользователи"](./media/adobe-echosign-tutorial/create_aaduser_02.png) 
+2. В верхней части экрана выберите **Новый пользователь**.
 
-3. Щелкните **Добавить**, чтобы открыть диалоговое окно **Пользователь**.
- 
-    ![Снимок экрана верхней области диалогового окна "Все пользователи" с выделенным параметром "Добавить"](./media/adobe-echosign-tutorial/create_aaduser_03.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-4. В диалоговом окне **Пользователь** сделайте следующее.
- 
-    ![Снимок экрана диалогового окна "Пользователь"](./media/adobe-echosign-tutorial/create_aaduser_04.png) 
+3. В разделе свойств пользователя сделайте следующее.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    b. В текстовом поле **Имя пользователя** введите адрес электронной почты пользователя BrittaSimon.
+    a. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    Например, BrittaSimon@contoso.com
 
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="create-an-adobe-sign-test-user"></a>Создание тестового пользователя Adobe Sign
+
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Adobe Sign.
+
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Adobe Sign**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. В списке приложений введите и выберите **Adobe Sign**.
+
+    ![Ссылка на Adobe Sign в списке приложений](common/all-applications.png)
+
+3. В меню слева выберите **Пользователи и группы**.
+
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Область "Добавление назначения"](common/add-assign-user.png)
+
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-adobe-sign-test-user"></a>Создание тестового пользователя Adobe Sign
 
 Чтобы пользователи Azure AD могли выполнять вход в Adobe Sign, они должны быть подготовлены в Adobe Sign. Этот процесс выполняется в ручную.
 
@@ -222,53 +249,17 @@ ms.locfileid: "39054004"
 >[!NOTE]
 >Владелец учетной записи Azure Active Directory получит электронное сообщение со ссылкой для подтверждения учетной записи перед ее активацией. 
 
-### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Adobe Sign.
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-![Снимок экрана единого входа портала Azure][200] 
-
-1. На портале Azure откройте представление "Приложения". Перейдите к представлению "Каталог", затем в колонку **Корпоративные приложения** и выберите **Все приложения**.
-
-    ![Снимок экрана представления приложений на портале Azure с выделенными параметрами "Корпоративные приложения" и "Все приложения"][201] 
-
-2. Из списка приложений выберите **Adobe Sign**.
-
-    ![Снимок экрана списка приложений с выделенным параметром Adobe Sign](./media/adobe-echosign-tutorial/tutorial_adobesign_app.png) 
-
-3. В меню слева выберите **Пользователи и группы**.
-
-    ![Снимок экрана меню с выделенным параметром "Пользователи и группы"][202] 
-
-4. Выберите **Добавить**. Затем в разделе **Добавление назначения** щелкните **Пользователи и группы**.
-
-    ![Снимок экрана страницы "Пользователи и группы" в разделе "Добавление назначения"][203]
-
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-
-6. В диалоговом окне **Пользователи и группы** щелкните **Выбрать**.
-
-7. В диалоговом окне **Добавление назначения** выберите **Назначить**.
-    
-### <a name="test-single-sign-on"></a>Проверка единого входа
-
-Щелкнув элемент Adobe Sign на панели доступа, вы автоматически войдете в приложение Adobe Sign. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Щелкнув плитку Adobe Sign на панели доступа, вы автоматически войдете в приложение Adobe Sign, для которого настроили единый вход. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/adobe-echosign-tutorial/tutorial_general_01.png
-[2]: ./media/adobe-echosign-tutorial/tutorial_general_02.png
-[3]: ./media/adobe-echosign-tutorial/tutorial_general_03.png
-[4]: ./media/adobe-echosign-tutorial/tutorial_general_04.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-[100]: ./media/adobe-echosign-tutorial/tutorial_general_100.png
-
-[200]: ./media/adobe-echosign-tutorial/tutorial_general_200.png
-[201]: ./media/adobe-echosign-tutorial/tutorial_general_201.png
-[202]: ./media/adobe-echosign-tutorial/tutorial_general_202.png
-[203]: ./media/adobe-echosign-tutorial/tutorial_general_203.png

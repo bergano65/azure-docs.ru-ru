@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Распознавание речи с использованием JavaScript в Node.js с помощью пакета SDK для службы "Речь"
+title: Краткое руководство. Распознавание речи с помощью Node.js в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как распознавать речь с использованием JavaScript в Node.js с помощью пакета SDK для службы "Речь"
+description: Сведения в этом руководстве помогут создать консольное приложение для преобразования речи в текст с помощью пакета SDK службы "Речь" для Node.js. После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.
 services: cognitive-services
 author: fmegen
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: quickstart
-ms.date: 12/18/2018
+ms.date: 1/16/2019
 ms.author: fmegen
-ms.openlocfilehash: 35652b169067bc545fa0d1fcc977bbaee79ec3aa
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: e0ae916687ca32835dd8daf6e5059b8f6eea0ff6
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53724441"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54382167"
 ---
-# <a name="quickstart-recognize-speech-in-javascript-in-nodejs-using-the-speech-service-sdk"></a>Краткое руководство. Распознавание речи с использованием JavaScript в Node.js с помощью пакета SDK для службы "Речь"
+# <a name="quickstart-recognize-speech-with-the-speech-sdk-for-nodejs"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Node.js
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
@@ -29,9 +29,9 @@ ms.locfileid: "53724441"
 * Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
 * Текущая версия [Node.js](https://nodejs.org).
 
-## <a name="create-a-new-project-folder"></a>Создание папки нового проекта
+## <a name="create-a-new-project"></a>Создание нового проекта
 
-Создайте новую пустую папку и инициализируйте ее в качестве нового проекта Node.js на основе JavaScript.
+Создайте папку и инициализируйте проект.
 
 ```sh
 npm init -f
@@ -39,13 +39,17 @@ npm init -f
 
 В результате инициализируются файлы package.json со значениями по умолчанию. Вы, вероятно, захотите изменить этот файл позже.
 
-## <a name="install-the-speech-sdk-for-javascript-into-that-folder"></a>Установка пакета SDK для службы "Речь" для JavaScript в созданную папку
+## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
-Добавьте пакет SDK для службы "Речь" в проект Node.js с помощью команды `npm install microsoft-cognitiveservices-speech-sdk`.
+Добавьте пакет SDK для службы "Речь" в проект Node.js.
+
+```
+npm install microsoft-cognitiveservices-speech-sdk
+```
 
 В результате будет скачана и установлена последняя версия пакета SDK для службы "Речь" и все необходимые компоненты из npmjs. Пакет SDK будет установлен в каталог `node_modules` внутри папки проекта.
 
-## <a name="using-the-speech-sdk"></a>Использование пакета SDK для службы "Речь"
+## <a name="use-the-speech-sdk"></a>Использование пакета SDK для службы "Речь"
 
 Создайте в папке файл `index.js` и откройте его в текстовом редакторе.
 
@@ -58,7 +62,7 @@ npm init -f
 
 [!code-javascript[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/js-node/index.js#code)]
 
-## <a name="running-the-sample-from-command-line"></a>Запуск примера из командной строки
+## <a name="run-the-sample"></a>Запуск примера
 
 Чтобы запустить приложение, адаптируйте `YourSubscriptionKey`, `YourServiceRegion` и `YourAudioFile.wav` для своей конфигурации. После этого его можно запустить, вызвав следующую команду:
 
@@ -88,7 +92,7 @@ SpeechRecognitionResult {
 }
 ```
 
-## <a name="running-the-sample-from-visual-studio-code"></a>Запуск примера Visual Studio Code
+## <a name="install-and-use-the-speech-sdk-with-visual-studio-code"></a>Установка и использование пакета SDK для службы "Речь" с помощью Visual Studio Code
 
 Вы также можете запустить пример из Visual Studio Code. Выполните следующие действия, чтобы установить, открыть и выполнить шаблон быстрого запуска:
 

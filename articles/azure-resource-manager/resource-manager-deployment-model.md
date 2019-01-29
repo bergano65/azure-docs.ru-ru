@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2017
 ms.author: tomfitz
-ms.openlocfilehash: 704bbe5cc566833ef1279e84f0fab9f363dfaa11
-ms.sourcegitcommit: 3d0295a939c07bf9f0b38ebd37ac8461af8d461f
+ms.openlocfilehash: 97dffa4952354864f90f75ffb909228eb4202e77
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43841634"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54382796"
 ---
-# <a name="azure-resource-manager-vs-classic-deployment-understand-deployment-models-and-the-state-of-your-resources"></a>Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов
+# <a name="azure-resource-manager-vs-classic-deployment-understand-deployment-models-and-the-state-of-your-resources"></a>Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов
 
 > [!NOTE]
 > Сведения в этой статье применимы только при миграции из классической модели развертывания в развертывание Azure Resource Manager.
@@ -153,6 +153,7 @@ Get-AzureRmVM -ResourceGroupName ExampleGroup
 Полный набор начальных шаблонов можно найти в разделе [шаблонов быстрого запуска для Azure Resource Manager](https://azure.microsoft.com/documentation/templates/).
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 * Пошаговые инструкции по созданию шаблона, который определяет виртуальную машину, учетную запись хранения и виртуальную сеть, см. в статье [Пошаговое руководство по созданию шаблона Resource Manager](resource-manager-template-walkthrough.md).
 * Команды для развертывания шаблонов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](resource-group-template-deploy.md).
 

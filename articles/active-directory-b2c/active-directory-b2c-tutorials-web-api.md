@@ -3,19 +3,19 @@ title: Руководство. Предоставление доступа к в
 description: Руководство по использованию Active Directory B2C для защиты веб-API ASP.NET и его вызова из веб-приложения ASP.NET.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.author: davidmu
 ms.date: 11/30/2018
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.component: B2C
-ms.openlocfilehash: bd900071bbcd894d4fe71e0f8a265d98348eb262
-ms.sourcegitcommit: 333d4246f62b858e376dcdcda789ecbc0c93cd92
+ms.openlocfilehash: 4051c0438cfb7c33f36cf49542e422e54e723cfc
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52726412"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54856066"
 ---
 # <a name="tutorial-grant-access-to-an-aspnet-web-api-from-a-web-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API ASP.NET из веб-приложения с помощью Azure Active Directory B2C
 
@@ -116,13 +116,13 @@ ms.locfileid: "52726412"
 
 Теперь, когда веб-API зарегистрирован и определены области, необходимо настроить код веб-API для использования клиента Azure AD B2C. В этом руководстве настройте пример веб-API. 
 
-Пример веб-API включен в проект, который вы скачали при работе с предыдущим руководством: [по использованию Azure Active Directory B2C для аутентификации пользователей в веб-приложении ASP.NET](active-directory-b2c-tutorials-web-app.md). Если вы еще не завершили работу с предыдущим руководством, сделайте это, прежде чем продолжить.
+Пример веб-API включен в проект, который вы скачали при работе с предыдущей статьей: [Руководство. Включение в веб-приложении аутентификации на основе учетных записей с помощью Azure Active Directory B2C](active-directory-b2c-tutorials-web-app.md). Если вы еще не завершили работу с предыдущим руководством, сделайте это, прежде чем продолжить.
 
 Пример решения состоит из двух проектов.
 
 **Пример веб-приложения (TaskWebApp):** веб-приложение для создания и изменения списка задач. Веб-приложение использует поток **регистрации или входа** пользователя для регистрации пользователей или их входа в систему с помощью адреса электронной почты.
 
-**Пример веб-API (TaskService):** веб-API, который поддерживает функции создания, чтения, обновления и удаления списка задач. Веб-API защищен с помощью Azure AD B2C и вызывается веб-приложением.
+**Пример приложения веб-API (TaskService):** веб-API, поддерживающий функции создания, чтения, обновления и удаления списка задач. Веб-API защищен с помощью Azure AD B2C и вызывается веб-приложением.
 
 Пример веб-приложения и веб-API определяют значения конфигурации, такие как параметры приложения, в файле Web.config каждого проекта.
 

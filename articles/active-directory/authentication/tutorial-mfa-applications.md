@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 07/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: michmcla
-ms.openlocfilehash: 098973e2ece3477ec87b154c0304c4ca7e0246d1
-ms.sourcegitcommit: 1478591671a0d5f73e75aa3fb1143e59f4b04e6a
+ms.openlocfilehash: 5bd27ed71e93edc10fd86395121c524cb54c98e7
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39163392"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54427616"
 ---
 # <a name="tutorial-complete-an-azure-multi-factor-authentication-pilot-roll-out"></a>Руководство. Выполнение пилотного развертывания Многофакторной идентификации Azure
 
@@ -23,13 +23,13 @@ ms.locfileid: "39163392"
 
 > [!div class="checklist"]
 > * Включение Многофакторной идентификации Azure
-> * Тестирование Многофакторной идентификации Azure
+> * Тестирование службы Многофакторной идентификации Azure
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 * Рабочий клиент Azure AD с как минимум включенной бесплатной пробной лицензией.
 * Учетная запись с правами глобального администратора.
-* Тестовый пользователь без прав администратора с известным паролем для тестирования. Если необходимо создать пользователя, см. статью [Краткое руководство по добавлению новых пользователей в Azure Active Directory](../add-users-azure-active-directory.md).
+* Тестовый пользователь без прав администратора с известным паролем. Если необходимо создать пользователя, см. статью [ Добавление или удаление пользователей в Azure Active Directory](../add-users-azure-active-directory.md).
 * Пилотная группа для тестирования, членом которой является пользователь без прав администратора. Если необходимо создать группу, см. статью [Создание группы и добавление в нее пользователей в Azure Active Directory](../active-directory-groups-create-azure-portal.md).
 
 ## <a name="enable-azure-multi-factor-authentication"></a>Включение Многофакторной идентификации Azure
@@ -53,7 +53,7 @@ ms.locfileid: "39163392"
 1. Для переключателя **Включить политику** установите значение **Вкл.**
 1. Нажмите кнопку **Создать**.
 
-## <a name="test-azure-multi-factor-authentication"></a>Тестирование Многофакторной идентификации Azure
+## <a name="test-azure-multi-factor-authentication"></a>Тестирование службы Многофакторной идентификации Azure
 
 Чтобы убедиться, что политика условного доступа работает, проверьте вход на ресурс, который не требует Многофакторной идентификации, а затем вход на портал Azure, который требует Многофакторную идентификацию.
 

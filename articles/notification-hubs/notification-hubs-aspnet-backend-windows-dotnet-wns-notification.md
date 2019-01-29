@@ -2,8 +2,8 @@
 title: Отправка уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure" | Документация Майкрософт
 description: Узнайте, как отправлять уведомления определенным пользователям, используя приложения универсальной платформы Windows (UWP).
 documentationcenter: windows
-author: dimazaid
-manager: kpiteira
+author: jwargo
+manager: patniko
 editor: spelluru
 services: notification-hubs
 ms.assetid: 012529f2-fdbc-43c4-8634-2698164b5880
@@ -13,23 +13,25 @@ ms.tgt_pltfrm: mobile-windows
 ms.devlang: dotnet
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 04/04/2018
-ms.author: dimazaid
-ms.openlocfilehash: d2d0e878aed5b200852e56a29ce0430305d4efc6
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.date: 01/04/2019
+ms.author: jowargo
+ms.openlocfilehash: e1df8b486a6e57d4c0a860652ef7e71e4dc76f9e
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51251548"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54451822"
 ---
-# <a name="tutorial-send-notifications-to-specific-users-by-using-azure-notification-hubs"></a>Руководство по отправке уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure"
+# <a name="tutorial-send-notifications-to-specific-users-by-using-azure-notification-hubs"></a>Руководство. Отправка уведомлений определенным пользователям с помощью службы "Центры уведомлений Azure"
+
 [!INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
 ## <a name="overview"></a>Обзор
-В этом учебнике показано, как использовать концентраторы уведомлений Azure для отправки push-уведомлений пользователю определенного приложения на конкретном устройстве. Для проверки подлинности клиентов используется серверная часть веб-API ASP.NET. Когда серверная часть проверяет подлинность пользователя клиентского приложения, к регистрации уведомления автоматически добавляется тег. Серверная часть использует этот тег для отправки уведомлений определенному пользователю. 
+
+В этом учебнике показано, как использовать концентраторы уведомлений Azure для отправки push-уведомлений пользователю определенного приложения на конкретном устройстве. Для проверки подлинности клиентов используется серверная часть веб-API ASP.NET. Когда серверная часть проверяет подлинность пользователя клиентского приложения, к регистрации уведомления автоматически добавляется тег. Серверная часть использует этот тег для отправки уведомлений определенному пользователю.
 
 > [!NOTE]
-> Полный код для этого руководства можно найти на [GitHub](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/NotifyUsers). 
+> Полный код для этого руководства можно найти на [GitHub](https://github.com/Azure/azure-notificationhubs-samples/tree/master/dotnet/NotifyUsers).
 
 При работе с этим руководством вы выполните следующие задачи:
 
@@ -42,31 +44,29 @@ ms.locfileid: "51251548"
 > * Обновите код для клиентского проекта
 > * Тестирование приложения
 
-
 ## <a name="prerequisites"></a>Предварительные требования
-Это руководство основано на Центре уведомлений и проекте Visual Studio, которые были созданы в руководстве [Начало работы с Центрами уведомлений для приложений универсальной платформы Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md). Выполните инструкции в том руководстве, прежде чем приступать к текущему. 
+
+В этом руководстве используется центр уведомлений и проект Visual Studio, который вы создали при работе с [руководством по отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md). Выполните инструкции в том руководстве, прежде чем приступать к текущему.
 
 > [!NOTE]
 > Если вы используете мобильные приложения в службе приложений Azure в качестве внутренней службы, то перейдите к [версии этого учебника для мобильных приложений](../app-service-mobile/app-service-mobile-windows-store-dotnet-get-started-push.md).
 
-
-&nbsp;
-
 [!INCLUDE [notification-hubs-aspnet-backend-notifyusers](../../includes/notification-hubs-aspnet-backend-notifyusers.md)]
 
 ## <a name="update-the-code-for-the-client-project"></a>Обновите код для клиентского проекта
-В этом разделе вы обновите код проекта, созданного согласно руководству [Начало работы с Центрами уведомлений для приложений универсальной платформы Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md). Проект уже должен быть связан с Магазином Windows. Он также должен использовать Центр уведомлений. В этом разделе вы добавляете код для вызова нового серверного веб-API и используете его для регистрации и отправки уведомлений.
 
-1. В Visual Studio откройте решение, созданное согласно инструкциям руководства [Начало работы с Центрами уведомлений для приложений универсальной платформы Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
+В этом разделе описано, как обновить код в проекте, который вы завершили при работе с [руководством по отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md). Проект уже должен быть связан с Магазином Windows. Он также должен использовать Центр уведомлений. В этом разделе вы добавляете код для вызова нового серверного веб-API и используете его для регистрации и отправки уведомлений.
+
+1. Откройте решение Visual Studio, созданное при работе с [руководством по отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md).
 2. В обозревателе решений щелкните правой кнопкой мыши проект **WindowsApp** и выберите **Управление пакетами NuGet**.
 3. В левой части окна выберите **В сети**.
 4. В текстовом поле **Поиск** введите **Клиент HTTP**.
 5. В списке результатов щелкните **System.Net.Http** и выберите **Установить**. Выполните установку.
 6. Вернитесь к полю NuGet **Поиск** и введите **Json.net**. Установите пакет **Newtonsoft.json**, а затем закройте окно диспетчера пакетов NuGet.
-8. В обозревателе решений в проекте **WindowsApp** дважды щелкните **MainPage.xaml**, чтобы открыть его в редакторе Visual Studio.
-9. В XML-коде **MainPage.xaml** замените раздел `<Grid>` следующим кодом. Этот код добавляет текстовые поля имени пользователя и пароля, которые используются для проверки подлинности. Он также добавляет текстовые поля для сообщения уведомления и тег имени пользователя, который должен получать уведомления:
+7. В обозревателе решений в проекте **WindowsApp** дважды щелкните **MainPage.xaml**, чтобы открыть его в редакторе Visual Studio.
+8. В коде XML-файла `MainPage.xaml` замените раздел `<Grid>` следующим кодом: Этот код добавляет текстовое поле имени пользователя и пароля, которые будут использоваться для проверки подлинности пользователя. Он также добавляет текстовые поля для сообщения уведомления и тег имени пользователя, который должен получать уведомления:
 
-    ```xml   
+    ```xml
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -116,9 +116,9 @@ ms.locfileid: "51251548"
         </StackPanel>
     </Grid>
     ```
-11. В обозревателе решений откройте файл **MainPage.xaml.cs** для проектов **(Windows 8.1)** и **(Windows Phone 8.1)**. В верхнюю часть каждого из файлов добавьте такие `using` операторы:
+9. В обозревателе решений откройте файл `MainPage.xaml.cs` для проектов **(Windows 8.1)** и **(Windows Phone 8.1)**. В верхнюю часть каждого из файлов добавьте такие `using` операторы:
 
-    ```csharp    
+    ```csharp
     using System.Net.Http;
     using Windows.Storage;
     using System.Net.Http.Headers;
@@ -126,15 +126,15 @@ ms.locfileid: "51251548"
     using Windows.UI.Popups;
     using System.Threading.Tasks;
     ```
-12. В файле **MainPage.xaml.cs** для проекта **WindowsApp** добавьте в класс `MainPage` следующий элемент. Обязательно замените `<Enter Your Backend Endpoint>` фактической конечной точкой серверной части, полученной ранее. Например, `http://mybackend.azurewebsites.net`.
-    
+10. В файле `MainPage.xaml.cs` для проекта **WindowsApp** добавьте в класс `MainPage` следующий элемент. Обязательно замените `<Enter Your Backend Endpoint>` фактической конечной точкой серверной части, полученной ранее. Например, `http://mybackend.azurewebsites.net`.
+
     ```csharp
     private static string BACKEND_ENDPOINT = "<Enter Your Backend Endpoint>";
     ```
-13. В файле **MainPage.xaml.cs** для проектов **(Windows 8.1)** и **(Windows Phone 8.1)** добавьте в класс MainPage приведенный ниже код.
-    
+11. В файле `MainPage.xaml.cs` для проектов **(Windows 8.1)** и **(Windows Phone 8.1)** добавьте в класс MainPage приведенный ниже код.
+
     Метод `PushClick` является обработчиком нажатия для кнопки **Отправить push-уведомление** . Он обеспечивает отправку серверной частью уведомлений на все устройства с тегом имени пользователя, который соответствует параметру `to_tag` . Сообщение уведомления отправляется в виде JSON-содержимого в теле запроса.
-    
+
     Метод `LoginAndRegisterClick` является обработчиком нажатия для кнопки **Вход и регистрация**. Он сохраняет маркер проверки подлинности (относится к любому маркеру, используемому в данной схеме проверки подлинности) в локальном хранилище, а затем с помощью `RegisterClient` подписывается на получение уведомлений, используя серверную часть.
 
     ```csharp
@@ -188,7 +188,7 @@ ms.locfileid: "51251548"
         // The tag passed here can be whatever other tags you may want to use.
         try
         {
-            // The device handle used is different depending on the device and PNS. 
+            // The device handle used is different depending on the device and PNS.
             // Windows devices use the channel uri as the PNS handle.
             await new RegisterClient(BACKEND_ENDPOINT).RegisterAsync(channel.Uri, new string[] { "myTag" });
 
@@ -213,19 +213,19 @@ ms.locfileid: "51251548"
         ApplicationData.Current.LocalSettings.Values["AuthenticationToken"] = token;
     }
     ```
-1. Откройте файл **App.xaml.cs**. В обработчике событий `OnLaunched()` найдите вызов `InitNotificationsAsync()`: Закомментируйте или удалите вызов `InitNotificationsAsync()`. Обработчик кнопки инициализирует регистрации уведомлений.
+12. В обработчике событий `InitNotificationsAsync()` откройте файл `App.xaml.cs` и найдите вызов `OnLaunched()`: Закомментируйте или удалите вызов `InitNotificationsAsync()`. Обработчик кнопки инициализирует регистрации уведомлений.
 
     ```csharp
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
         //InitNotificationsAsync();
     ```
-1. Щелкните правой кнопкой мыши проект **WindowsApp**, а затем выберите пункты **Добавить** и **Класс**. Присвойте классу имя **RegisterClient.cs**, затем нажмите кнопку **ОК**, чтобы создать класс.
-   
-   Этот класс инкапсулирует вызовы REST, необходимые для связи с серверной частью приложения с целью регистрации в службе push-уведомлений. В данном случае также происходит локальное сохранение идентификаторов *registrationId* , созданных концентратором уведомлений в соответствии с описанием в разделе [Регистрация из серверной части приложения](https://msdn.microsoft.com/library/dn743807.aspx). В данном случае используется маркер проверки подлинности, сохраненный в локальном хранилище при нажатии кнопки **Вход и регистрация**.
-2. Добавьте в начало файла RegisterClient.cs следующие операторы `using` :
+13. Щелкните правой кнопкой мыши проект **WindowsApp**, а затем выберите пункты **Добавить** и **Класс**. Присвойте классу имя `RegisterClient.cs`, а затем нажмите кнопку **ОК**, чтобы создать класс.
 
-    ```csharp   
+   Этот класс инкапсулирует вызовы REST, необходимые для связи с серверной частью приложения с целью регистрации в службе push-уведомлений. В данном случае также происходит локальное сохранение идентификаторов *registrationId* , созданных концентратором уведомлений в соответствии с описанием в разделе [Регистрация из серверной части приложения](https://msdn.microsoft.com/library/dn743807.aspx). В данном случае используется маркер проверки подлинности, сохраненный в локальном хранилище при нажатии кнопки **Вход и регистрация**.
+14. Добавьте в начало файла RegisterClient.cs следующие операторы `using` :
+
+    ```csharp
     using Windows.Storage;
     using System.Net;
     using System.Net.Http;
@@ -234,8 +234,8 @@ ms.locfileid: "51251548"
     using System.Threading.Tasks;
     using System.Linq;
     ```
-3. Добавьте в определение класса `RegisterClient` следующий код:
-   
+15. Добавьте в определение класса `RegisterClient` следующий код:
+
     ```csharp
     private string POST_URL;
 
@@ -321,24 +321,26 @@ ms.locfileid: "51251548"
 
     }
     ```
-4. Сохраните изменения.
+16. Сохраните изменения.
 
 ## <a name="test-the-application"></a>Тестирование приложения
+
 1. Запустите приложение в обоих Windows.
 2. Введите **Имя пользователя** и **Пароль**, как показано ниже. Они должны отличаться от имени пользователя и пароля, вводимых в Windows Phone.
 3. Щелкните **Вход и регистрация** и убедитесь, что в диалоговом окне отображается подтверждение выполнения входа. Таким образом, будет активирована кнопка **Отправить push-уведомление**.
-   
+
     ![][14]
 5. Затем в поле **Тег имени получателя** введите зарегистрированное имя пользователя. Введите сообщение уведомления и нажмите кнопку **Отправить push-уведомление**.
 6. Сообщения уведомления могут получать только устройства с зарегистрированным соответствующим тегом имени получателя.
-   
+
     ![][15]
 
 ## <a name="next-steps"></a>Дополнительная информация
-В этом руководстве вы узнали, как отправлять push-уведомления определенным пользователям, с регистрацией которых связаны теги. Чтобы узнать, как отправлять push-уведомления на основе расположения, перейдите к следующему руководству: 
+
+В этом руководстве вы узнали, как отправлять push-уведомления определенным пользователям, с регистрацией которых связаны теги. Чтобы узнать, как отправлять push-уведомления на основе расположения, перейдите к следующему руководству:
 
 > [!div class="nextstepaction"]
->[Отправка push-уведомлений с определением геозон с помощью Центров уведомлений Azure и Bing Spatial Data](notification-hubs-push-bing-spartial-data-geofencing-notification.md)
+>[Отправка push-уведомлений с определением геозон с помощью Центров уведомлений Azure и Bing Spatial Data](notification-hubs-push-bing-spatial-data-geofencing-notification.md)
 
 [9]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-secure-push9.png
 [10]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-secure-push10.png
@@ -348,8 +350,6 @@ ms.locfileid: "51251548"
 [14]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-windows-instance-username.png
 [15]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-notification-received.png
 [16]: ./media/notification-hubs-aspnet-backend-windows-dotnet-notify-users/notification-hubs-wp-send-message.png
-
-
 
 <!-- URLs. -->
 [Get started with Notification Hubs]: notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md

@@ -4,7 +4,7 @@ description: Узнайте, как настроить систему диагн
 services: active-directory
 documentationcenter: ''
 author: priyamohanram
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 045f94b3-6f12-407a-8e9c-ed13ae7b43a3
 ms.service: active-directory
@@ -16,14 +16,14 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 9d41c0ceeed2a69884b8ef481c79feb495fc89c0
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 35acd3fa4815be6d60738dd5f5cef9dc9b45d748
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51621214"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54824564"
 ---
-# <a name="tutorial-archive-azure-ad-logs-to-an-azure-storage-account-preview"></a>Руководство: архивация журналов Azure AD в учетную запись хранения Azure (предварительная версия)
+# <a name="tutorial-archive-azure-ad-logs-to-an-azure-storage-account-preview"></a>Руководство. Архивация журналов Azure AD в учетную запись хранения Azure (предварительная версия)
 
 В этом руководстве вы узнаете, как настроить параметры диагностики Azure Monitor для передачи журналов Azure Active Directory (Azure AD) в учетную запись хранения Azure.
 

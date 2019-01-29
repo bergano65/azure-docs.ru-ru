@@ -1,23 +1,23 @@
 ---
-title: Краткое руководство. Распознавание речи в Python с помощью пакета SDK для службы "Речь"
+title: Краткое руководство. Распознавание речи с помощью Python в службе "Речь"
 titleSuffix: Azure Cognitive Services
-description: Узнайте, как выполнять распознавание речи в Python с помощью пакета SDK для службы "Речь"
+description: В этом руководстве объясняется, как создать консольное приложение для преобразования речи в текст с помощью пакета SDK службы "Речь" для Python. После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.
 services: cognitive-services
 author: chlandsi
 manager: cgronlun
 ms.service: cognitive-services
 ms.component: speech-service
 ms.topic: quickstart
-ms.date: 12/18/2018
+ms.date: 1/16/2019
 ms.author: chlandsi
-ms.openlocfilehash: 7610b12b351b2652df7ade603711d4d92e587292
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: 40869457ce933368e17a2054dfca50fc4505fa22
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53723915"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54381574"
 ---
-# <a name="quickstart-using-the-speech-service-from-python"></a>Краткое руководство. Использование службы "Речь" из Python
+# <a name="quickstart-recognize-speech-with-the-speech-sdk-for-python"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Python
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
@@ -39,7 +39,7 @@ ms.locfileid: "53723915"
 
 * В Windows также необходим [Распространяемый компонент Visual C++ для Visual Studio 2017](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) для вашей платформы.
 
-## <a name="get-the-speech-sdk-python-package"></a>Получение пакета SDK службы "Речь" для Python
+## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
@@ -61,7 +61,7 @@ pip install azure-cognitiveservices-speech
 
 ## <a name="create-a-python-application-using-the-speech-sdk"></a>Создание приложения Python с помощью пакета SDK для службы "Речь"
 
-### <a name="running-the-sample-in-a-terminal"></a>Запуск примера в окне терминала
+### <a name="run-the-sample"></a>Запуск примера
 
 Вы можете скопировать [код](#quickstart-code) из этого краткого руководства в исходный файл `quickstart.py` и запустить его в интегрированной среде разработки или в консоли.
 
@@ -71,11 +71,11 @@ python quickstart.py
 
 Кроме того, можно скачать это краткое руководство как записную книжку [Jupyter](https://jupyter.org) из [репозитория примеров службы "Речь" в Cognitive Services](https://github.com/Azure-Samples/cognitive-services-speech-sdk/) и запустить как записную книжку.
 
-### <a name="quickstart-code"></a>Простой пример кода
+### <a name="sample-code"></a>Пример кода
 
 [!code-python[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/python/quickstart.py#code)]
 
-### <a name="installing-the-speech-sdk-python-package-and-running-the-sample-in-visual-studio-code"></a>Установка пакета SDK службы "Речь" для Python и выполнение примера в Visual Studio Code
+### <a name="install-and-use-the-speech-sdk-with-visual-studio-code"></a>Установка и использование пакета SDK для службы "Речь" с помощью Visual Studio Code
 
 1. [Скачайте](https://www.python.org/downloads/) и установите 64-разрядную версию Python (версия 3.5 или более поздняя) на компьютере.
 1. [Скачайте](https://code.visualstudio.com/Download) и установите Visual Studio Code.

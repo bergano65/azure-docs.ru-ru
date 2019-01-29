@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.date: 08/24/2018
 ms.author: zarhoads
 ms.custom: mvc
-ms.openlocfilehash: f7bf5e233307703dca522974d52a86bc193186b8
-ms.sourcegitcommit: 62759a225d8fe1872b60ab0441d1c7ac809f9102
+ms.openlocfilehash: 9391db9bf270511f734a31a621985f5b6ad31ec0
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49465837"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54848739"
 ---
-# <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-the-azure-cli"></a>Руководство. Создание и развертывание высокодоступных виртуальных машин с помощью Azure CLI
+# <a name="tutorial-create-and-deploy-highly-available-virtual-machines-with-the-azure-cli"></a>Руководство. Создание и развертывание виртуальных машин высокого уровня доступности с помощью Azure CLI
 
 В этом руководстве показано, как повысить доступность и надежность решений виртуальных машин в Azure с помощью групп доступности. При развертывании виртуальных машин в Azure группа доступности распределяет их между несколькими изолированными аппаратными кластерами. Таким образом, в случае сбоя оборудования или программного обеспечения в Azure затрагивается только группа виртуальных машин, а общее решение остается доступным для использования.
 
@@ -70,7 +70,7 @@ az vm availability-set create \
 
 Чтобы виртуальные машины правильно распределялись по оборудованию, их нужно создать внутри группы доступности. Существующую виртуальную машину невозможно добавить в группу доступности после создания.
 
-При создании виртуальной машины с помощью команды [az vm create](/cli/azure/vm#az_vm_create) можно использовать параметр `--availability-set`, чтобы указать имя группы доступности.
+При создании виртуальной машины с помощью команды [az vm create](/cli/azure/vm) можно использовать параметр `--availability-set`, чтобы указать имя группы доступности.
 
 ```azurecli-interactive
 for i in `seq 1 2`; do

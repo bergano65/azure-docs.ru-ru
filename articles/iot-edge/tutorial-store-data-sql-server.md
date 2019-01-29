@@ -5,16 +5,16 @@ services: iot-edge
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 01/04/2019
+ms.date: 01/18/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 426e4fe05890f1669859545db3d731943a12428a
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 2b99207f35bd83c9e02ad636a070ae538ae3472c
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54260181"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54412229"
 ---
 # <a name="tutorial-store-data-at-the-edge-with-sql-server-databases"></a>Руководство. Хранение данных в граничной системе с помощью баз данных SQL Server
 
@@ -36,7 +36,10 @@ ms.locfileid: "54260181"
 
 Устройство Azure IoT Edge.
 
-* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md). 
+* В качестве устройства Azure IoT Edge можно использовать компьютер, на котором ведется разработка, или виртуальную машину. Для этого выполните действия, описанные в кратком руководстве для устройств [Linux](quickstart-linux.md) или [Windows](quickstart.md).
+
+  > [!NOTE]
+  > SQL Server поддерживает только контейнеры Linux. Чтобы выполнить инструкции из этого руководства, используя устройство Windows в качестве устройства Edge, настройте это устройство так, чтобы оно использовало контейнеры Linux. Если вы хотите настроить среду выполнения IoT Edge в Windows для контейнеров Linux, предварительные условия и действия по установке см. в статье [Установка среды выполнения Azure IoT Edge в Windows](how-to-install-iot-edge-windows-with-linux.md).
 
 Облачные ресурсы.
 
@@ -227,15 +230,9 @@ ms.locfileid: "54260181"
 
 1. В обозревателе кода Visual Studio откройте файл **deployment.template.json**. 
 
-2. Перейдите в раздел **Модули**. Должно быть перечислено два модуля: **tempSensor**, создающий имитируемые данные, и модуль **sqlFunction**.
+1. Перейдите в раздел **Модули**. Должно быть перечислено два модуля: **tempSensor**, создающий имитируемые данные, и модуль **sqlFunction**.
 
-3. Если вы используете контейнеры Windows, измените раздел **sqlFunction.settings.image**.
-
-   ```json
-   "image": "${MODULES.sqlFunction.windows-amd64}"
-   ```
-
-4. Добавьте приведенный ниже код для объявления третьего модуля. Добавьте запятую после раздела sqlFunction и вставьте следующий код:
+1. Добавьте приведенный ниже код для объявления третьего модуля. Добавьте запятую после раздела sqlFunction и вставьте следующий код:
 
    ```json
    "sql": {
@@ -253,29 +250,7 @@ ms.locfileid: "54260181"
 
    ![Добавление модуля SQL Server в манифест](./media/tutorial-store-data-sql-server/view_json_sql.png)
 
-5. В зависимости от типа контейнеров Docker на устройстве IoT Edge обновите параметры модуля **sql**, используя следующий код:
-   * Контейнеры Windows:
-
-      ```json
-      "env": {
-        "ACCEPT_EULA": {"value": "Y"},
-        "SA_PASSWORD": {"value": "Strong!Passw0rd"}
-      },
-      "settings": {
-        "image": "microsoft/mssql-server-windows-developer",
-        "createOptions": {
-          "HostConfig": {
-            "Mounts": [{"Target": "C:\\mssql","Source": "sqlVolume","Type": "volume"}],
-            "PortBindings": {
-              "1433/tcp": [{"HostPort": "1401"}]
-            }
-          }
-        }
-      }
-      ```
-
-   * Контейнеры Linux:
-
+1. Обновите параметры модуля **sql**, используя следующий код:
       ```json
       "env": {
         "ACCEPT_EULA": {"value": "Y"},
@@ -295,9 +270,9 @@ ms.locfileid: "54260181"
       ```
 
    >[!Tip]
-   >Каждый раз при создании контейнера SQL Server в рабочей среде нужно [изменять стандартный пароль системного администратора](https://docs.microsoft.com/sql/linux/quickstart-install-connect-docker#change-the-sa-password).
+   >Каждый раз при создании контейнера SQL Server в рабочей среде нужно [изменять стандартный пароль системного администратора](https://docs.microsoft.com/sql/linux/quickstart-install-connect-docker).
 
-6. Сохраните файл **deployment.template.json**.
+1. Сохраните файл **deployment.template.json**.
 
 ## <a name="build-your-iot-edge-solution"></a>Сборка решения IoT Edge
 
@@ -353,42 +328,16 @@ ms.locfileid: "54260181"
 Выполните следующие команды на устройстве IoT Edge. Эти команды подключаются к модулю **sql**, запущенному на устройстве, и который создает базу данных и таблицу для хранения отправляемых ему данных температуры. 
 
 1. В программе командной строки устройства IoT Edge подключитесь к базе данных. 
-   * Контейнер Windows:
-   
-      ```cmd
-      docker exec -it sql cmd
-      ```
-    
-   * Контейнер Linux: 
-
       ```bash
       sudo docker exec -it sql bash
       ```
 
 2. Откройте программу командной строки для SQL.
-   * Контейнер Windows:
-
-      ```cmd
-      sqlcmd -S localhost -U SA -P "Strong!Passw0rd"
-      ```
-
-   * Контейнер Linux: 
-
       ```bash
       /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'Strong!Passw0rd'
       ```
 
 3. Создайте базу данных: 
-
-   * Контейнер Windows
-      ```sql
-      CREATE DATABASE MeasurementsDB
-      ON
-      (NAME = MeasurementsDB, FILENAME = 'C:\mssql\measurementsdb.mdf')
-      GO
-      ```
-
-   * Контейнер Linux
       ```sql
       CREATE DATABASE MeasurementsDB
       ON

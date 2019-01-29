@@ -3,7 +3,7 @@ title: Быстрое начало работы с Azure — настройка 
 description: Создание стека LAMP на виртуальной машине Linux с настройкой требуемого состояния
 services: automation
 ms.service: automation
-ms.component: dsc
+ms.subservice: dsc
 keywords: dsc, configuration, automation
 author: KrisBash
 ms.author: krbash
@@ -11,12 +11,12 @@ ms.date: 11/06/2018
 ms.topic: quickstart
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: 7a9e394213ef40b995cb048c71f14a190e5e7970
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: c0a7bb9dfe8553515816efd53785dbe661cee0fa
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51243698"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54431594"
 ---
 # <a name="configure-a-linux-virtual-machine-with-desired-state-configuration"></a>Настройка требуемого состояния на виртуальной машине Linux
 
@@ -108,7 +108,7 @@ configuration LAMPServer {
 
 ## <a name="compile-a-configuration"></a>Компиляция конфигурации
 
-Прежде чем назначать конфигурацию DSC узлу, ее нужно скомпилировать в конфигурации узла (документ MOF). В процессе компиляции проходит проверка конфигурации и предоставляется возможность ввести значения параметров. Дополнительные сведения о компиляции конфигурации см. в статье [Compiling Configurations in Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-compile) (Компиляция конфигурации в Azure Automation DSC).
+Прежде чем назначать конфигурацию DSC узлу, ее нужно скомпилировать в конфигурации узла (документ MOF). В процессе компиляции проходит проверка конфигурации и предоставляется возможность ввести значения параметров. Дополнительные сведения о компиляции конфигурации см. в статье [Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"](https://docs.microsoft.com/azure/automation/automation-dsc-compile).
 
 Чтобы скомпилировать конфигурацию, выполните следующие действия.
 
@@ -145,3 +145,4 @@ configuration LAMPServer {
 * Дополнительные сведения о настройке требуемого состояния для PowerShell см. в статье [Обзор платформы Desired State Configuration в Windows PowerShell](https://docs.microsoft.com/powershell/dsc/overview).
 * Дополнительные сведения об управлении Automation DSC из PowerShell см. в документации по [Azure PowerShell](https://docs.microsoft.com/powershell/module/azurerm.automation/?view=azurermps-5.0.0).
 * Чтобы научиться пересылать отчеты DSC в Log Analytics для создания отчетов и оповещений, изучите статью о [пересылке данных отчетов Azure Automation DSC в OMS Log Analytics](https://docs.microsoft.com/azure/automation/automation-dsc-diagnostics). 
+

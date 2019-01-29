@@ -9,12 +9,12 @@ ms.topic: include
 ms.date: 03/12/2018
 ms.author: tarcher
 ms.custom: Jenkins
-ms.openlocfilehash: d5a832909f060ad8c8b3f0e7c7ea4504e5e5aadb
-ms.sourcegitcommit: 828d8ef0ec47767d251355c2002ade13d1c162af
+ms.openlocfilehash: 4025dcc5824991baa9a52dbb912a5c07f4273d58
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36943476"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54383294"
 ---
 1. В браузере откройте [образ Azure Marketplace для Jenkins](https://azuremarketplace.microsoft.com/marketplace/apps/azure-oss.jenkins?tab=Overview).
 
@@ -53,6 +53,7 @@ ms.locfileid: "36943476"
     - **Общедоступный IP-адрес**. Для имени IP-адреса по умолчанию присваивается имя Jenkins, указанное на предыдущей странице с суффиксом IP. Вы можете изменить это значение по умолчанию.
     - **Метка доменного имени**. Укажите значение полного URL-адреса для виртуальной машины Jenkins.
     - **Тип выпуска Jenkins** — выберите нужный тип выпуска (доступны следующие варианты: `LTS`, `Weekly build` или `Azure Verified`). Варианты `LTS` и `Weekly build` описаны в статье [о строке выпуска Jenkins LTS](https://jenkins.io/download/lts/). Вариант `Azure Verified` указывает на [версию Jenkins LTS](https://jenkins.io/download/lts/), которая проверена на совместимость с Azure. 
+    - **Тип JDK**. Требуемый тип JDK для установки. По умолчанию используются протестированные и сертифицированные сборки Zulu OpenJDK.
 
     ![Введите параметры виртуальной машины Jenkins на вкладке "Параметры".](./media/jenkins-install-from-azure-marketplace-image/jenkins-configure-settings.png)
 

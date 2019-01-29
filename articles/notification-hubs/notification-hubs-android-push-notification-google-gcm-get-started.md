@@ -4,8 +4,8 @@ description: Из этого руководства вы узнаете, как 
 services: notification-hubs
 documentationcenter: android
 keywords: push-уведомления, push-уведомление, push-уведомление android
-author: dimazaid
-manager: kpiteira
+author: jwargo
+manager: patniko
 editor: spelluru
 ms.assetid: 8268c6ef-af63-433c-b14e-a20b04a0342a
 ms.service: notification-hubs
@@ -14,19 +14,21 @@ ms.tgt_pltfrm: mobile-android
 ms.devlang: java
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 04/05/2018
-ms.author: dimazaid
-ms.openlocfilehash: dc2535bb8cae91e5df4554cdbc4239a5e81a4d90
-ms.sourcegitcommit: b62f138cc477d2bd7e658488aff8e9a5dd24d577
+ms.date: 01/04/2019
+ms.author: jowargo
+ms.openlocfilehash: 05caf83ffbd75ffdc66f9e31e4b34f2303c2024c
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2018
-ms.locfileid: "51616271"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54448862"
 ---
-# <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-cloud-messaging"></a>Руководство по отправке push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging
+# <a name="tutorial-push-notifications-to-android-devices-by-using-azure-notification-hubs-and-google-cloud-messaging"></a>Руководство. Отправка push-уведомлений на устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging.
+
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
 ## <a name="overview"></a>Обзор
+
 В этом учебнике показано, как использовать Центры уведомлений Azure для отправки push-уведомлений в приложение на платформе Android.
 Вы создадите пустое приложение Android, которое получает push-уведомления с помощью Google Cloud Messaging (GCM).
 
@@ -35,7 +37,7 @@ ms.locfileid: "51616271"
 
 Полный код для этого руководства можно скачать на сайте [GitHub](https://github.com/Azure/azure-notificationhubs-samples/tree/master/Android/GetStarted).
 
-Вот какие действия выполняются в этом руководстве: 
+Вот какие действия выполняются в этом руководстве:
 
 > [!div class="checklist"]
 > * Создание проекта с поддержкой Google Cloud Messaging.
@@ -45,48 +47,54 @@ ms.locfileid: "51616271"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **Подписка Azure**. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу. 
-- [Android Studio](https://go.microsoft.com/fwlink/?LinkId=389797).
+* **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+* [Android Studio](https://go.microsoft.com/fwlink/?LinkId=389797).
 
 ## <a name="creating-a-project-that-supports-google-cloud-messaging"></a>Создание проекта с поддержкой Google Cloud Messaging
+
 [!INCLUDE [mobile-services-enable-Google-cloud-messaging](../../includes/mobile-services-enable-google-cloud-messaging.md)]
 
 ## <a name="create-a-notification-hub"></a>Создание концентратора уведомлений
+
 [!INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
 
 ### <a name="configure-gcm-setting-for-the-notification-hub"></a>Настройка параметра GCM для центра уведомлений
 
-1. В разделе **Параметры уведомлений** выберите **Google (GCM)**. 
-2. Введите **ключ API**, полученный из консоли Google Cloud. 
-3. На панели инструментов щелкните **Сохранить**. 
+1. В разделе **Параметры уведомлений** выберите **Google (GCM)**.
+2. Введите **ключ API**, полученный из консоли Google Cloud.
+3. На панели инструментов щелкните **Сохранить**.
 
     ![Центры уведомлений Azure — Google (GCM)](./media/notification-hubs-android-get-started/notification-hubs-gcm-api.png)
 
 Теперь центр уведомлений настроен для работы с GCM, а у вас есть строки подключения, с помощью которых вы можете зарегистрировать приложение для получения и отправки push-уведомлений.
 
 ## <a id="connecting-app"></a>Подключение приложения к центру уведомлений
+
 ### <a name="create-a-new-android-project"></a>Создание нового проекта Android
+
 1. В Android Studio создайте новый проект Android Studio.
-   
+
    ![Android Studio — новый проект][13]
 2. Выберите форм-фактор **Phone and Tablet** (Телефон и планшет) и минимальную версию пакета SDK (с помощью параметра **Minimum SDK**), которые нужно поддерживать. Нажмите кнопку **Далее**.
-   
+
    ![Android Studio — рабочий процесс создания проекта][14]
 3. Выберите для основного действия значение **Empty Activity** (Пустое действие), нажмите кнопку **Next** (Далее), а затем — **Finish** (Готово).
 
 ### <a name="add-google-play-services-to-the-project"></a>Добавление служб Google Play в проект
+
 [!INCLUDE [Add Play Services](../../includes/notification-hubs-android-studio-add-google-play-services.md)]
 
 ### <a name="adding-azure-notification-hubs-libraries"></a>Добавление библиотек Центров уведомлений Azure
+
 1. В файле `Build.Gradle` в классе **app** добавьте следующие строки в раздел **dependencies**.
-   
-    ```java
-        compile 'com.microsoft.azure:notification-hubs-android-sdk:0.4@aar'
-        compile 'com.microsoft.azure:azure-notifications-handler:1.0.1@aar'
+
+    ```text
+    compile 'com.microsoft.azure:notification-hubs-android-sdk:0.4@aar'
+    compile 'com.microsoft.azure:azure-notifications-handler:1.0.1@aar'
     ```
 2. После раздела **dependencies** добавьте следующий репозиторий:
-   
-    ```java
+
+    ```text
     repositories {
         maven {
             url "http://dl.bintray.com/microsoftazuremobile/SDK"
@@ -94,12 +102,13 @@ ms.locfileid: "51616271"
     }
     ```
 
-### <a name="updating-the-androidmanifestxml"></a>Обновление файла AndroidManifest.xml
-1. Чтобы обеспечить поддержку GCM, реализуйте службу прослушивания идентификаторов экземпляра в коде. Таким образом можно [получать маркеры регистрации](https://developers.google.com/cloud-messaging/android/client#sample-register) с помощью [API идентификаторов экземпляра Google](https://developers.google.com/instance-id/). В этом руководстве имя класса — `MyInstanceIDService`. 
-   
+### <a name="updating-the-projects-androidmanifestxml"></a>Обновление файла проекта AndroidManifest.xml
+
+1. Чтобы обеспечить поддержку GCM, реализуйте службу прослушивания идентификаторов экземпляра в коде. Таким образом можно [получать маркеры регистрации](https://developers.google.com/cloud-messaging/android/client#sample-register) с помощью [API идентификаторов экземпляра Google](https://developers.google.com/instance-id/). В этом руководстве имя класса — `MyInstanceIDService`.
+
     Добавьте приведенное ниже определение службы внутри тега `<application>` в файле AndroidManifest.xml. Замените заполнитель `<your package>` фактическим именем своего пакета, отображенным в верхней части файла `AndroidManifest.xml`.
   
-    ```xml 
+    ```xml
     <service android:name="<your package>.MyInstanceIDService" android:exported="false">
         <intent-filter>
             <action android:name="com.google.android.gms.iid.InstanceID"/>
@@ -107,9 +116,9 @@ ms.locfileid: "51616271"
     </service>
     ```
 2. После получения маркера регистрации в GCM из API идентификаторов экземпляра приложение использует его для [регистрации в центре уведомлений Azure](notification-hubs-push-notification-registration-management.md). Регистрация в фоновом режиме выполняется с помощью службы `IntentService` с именем `RegistrationIntentService`. Кроме того, эта служба отвечает за [обновление маркера регистрации в GCM](https://developers.google.com/instance-id/guides/android-implementation#refresh_tokens).
-   
-    Добавьте приведенное ниже определение службы внутри тега `<application>` в файле AndroidManifest.xml. Замените заполнитель `<your package>` фактическим именем своего пакета, отображенным в верхней части файла `AndroidManifest.xml`. 
-   
+
+    Добавьте приведенное ниже определение службы внутри тега `<application>` в файле AndroidManifest.xml. Замените заполнитель `<your package>` фактическим именем своего пакета, отображенным в верхней части файла `AndroidManifest.xml`.
+
     ```xml
     <service
         android:name="<your package>.RegistrationIntentService"
@@ -117,7 +126,7 @@ ms.locfileid: "51616271"
     </service>
     ```
 3. Определите получателя уведомлений. Добавьте следующее определение получателя внутри тега `<application>` в файле AndroidManifest.xml. Замените заполнитель `<your package>` фактическим именем своего пакета, отображенным в верхней части файла `AndroidManifest.xml`.
-   
+
     ```xml
     <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
         android:permission="com.google.android.c2dm.permission.SEND">
@@ -128,9 +137,9 @@ ms.locfileid: "51616271"
     </receiver>
     ```
 4. Добавьте следующие разрешения GCM под тегом `</application>`. Замените `<your package>` именем пакета, отображенным в верхней части файла `AndroidManifest.xml`.
-   
+
     Дополнительные сведения об этих разрешениях см. в статье [Setup a GCM Client app for Android](https://developers.google.com/cloud-messaging/android/client#manifest) (Настройка клиентского приложения GCM для Android).
-   
+
     ```xml
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
@@ -140,31 +149,32 @@ ms.locfileid: "51616271"
     <permission android:name="<your package>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
     <uses-permission android:name="<your package>.permission.C2D_MESSAGE"/>
     ```
+
 ### <a name="adding-code"></a>Добавление кода
-1. В представлении проекта разверните узел **app** > **src** > **main** > **java**. Щелкните правой кнопкой мыши папку пакета в **java**, щелкните **New** (Создать) и выберите **Java Class** (Класс Java). Добавьте новый класс с именем `NotificationSettings`. 
-   
+
+1. В представлении проекта разверните узел **app** > **src** > **main** > **java**. Щелкните правой кнопкой мыши папку пакета в **java**, щелкните **New** (Создать) и выберите **Java Class** (Класс Java). Добавьте новый класс с именем `NotificationSettings`.
+
     ![Android Studio — новый класс Java][6]
-   
+
     Обновите три заполнителя в следующем коде для класса `NotificationSettings`:
-   
-   * **SenderId**: укажите номер проекта, полученный ранее в [консоли Google Cloud](http://cloud.google.com/console).
-   * **HubListenConnectionString** — укажите для Центра строку подключения **DefaultListenAccessSignature**. Эту строку подключения можно скопировать, щелкнув **Политики доступа** на странице **Параметры** центра на [портале Azure].
-   * **HubName**: используйте имя центра уведомлений, которое отображается на [портале Azure] на странице центра.
-     
+
+   * `SenderId`: номер проекта, полученный ранее в [консоли Google Cloud](http://cloud.google.com/console).
+   * `HubListenConnectionString`: укажите для центра строку подключения `DefaultListenAccessSignature`. Эту строку подключения можно скопировать, щелкнув **Политики доступа** на странице **Параметры** центра на [портале Azure].
+   * `HubName`: используйте имя центра уведомлений, которое отображается на [портале Azure] на странице центра.
+
      `NotificationSettings` :
-     
+
     ```java
     public class NotificationSettings {
-    
         public static String SenderId = "<Your project number>";
         public static String HubName = "<Your HubName>";
         public static String HubListenConnectionString = "<Your default listen connection string>";
     }
     ```
 2. Добавьте еще один новый класс с именем `MyInstanceIDService`. Этот класс представляет собой реализацию службы прослушивания идентификаторов экземпляра.
-   
+
     Код для этого класса вызывает службу `IntentService`, чтобы [обновить маркер GCM](https://developers.google.com/instance-id/guides/android-implementation#refresh_tokens) в фоновом режиме.
-   
+
     ```java
     import android.content.Intent;
     import android.util.Log;
@@ -184,10 +194,10 @@ ms.locfileid: "51616271"
         }
     };
     ```
-1. Добавьте еще один новый класс в проект `RegistrationIntentService`. Этот класс реализует службу `IntentService`, которая [обновляет маркер GCM](https://developers.google.com/instance-id/guides/android-implementation#refresh_tokens) и [выполняет регистрацию в центре уведомлений](notification-hubs-push-notification-registration-management.md).
-   
+3. Добавьте еще один новый класс в проект `RegistrationIntentService`. Этот класс реализует службу `IntentService`, которая [обновляет маркер GCM](https://developers.google.com/instance-id/guides/android-implementation#refresh_tokens) и [выполняет регистрацию в центре уведомлений](notification-hubs-push-notification-registration-management.md).
+
     Используйте для этого класса следующий код:
-   
+
     ```java
     import android.app.IntentService;
     import android.content.Intent;
@@ -210,7 +220,7 @@ ms.locfileid: "51616271"
         }
 
         @Override
-        protected void onHandleIntent(Intent intent) {        
+        protected void onHandleIntent(Intent intent) {
             SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
             String resultString = null;
             String regID = null;
@@ -218,13 +228,13 @@ ms.locfileid: "51616271"
             try {
                 InstanceID instanceID = InstanceID.getInstance(this);
                 String token = instanceID.getToken(NotificationSettings.SenderId,
-                        GoogleCloudMessaging.INSTANCE_ID_SCOPE);        
+                        GoogleCloudMessaging.INSTANCE_ID_SCOPE);
                 Log.i(TAG, "Got GCM Registration Token: " + token);
 
                 // Storing the registration id that indicates whether the generated token has been
                 // sent to your server. If it is not stored, send the token to your server,
                 // otherwise your server should have already received the token.
-                if ((regID=sharedPreferences.getString("registrationID", null)) == null) {        
+                if ((regID=sharedPreferences.getString("registrationID", null)) == null) {
                     NotificationHub hub = new NotificationHub(NotificationSettings.HubName,
                             NotificationSettings.HubListenConnectionString, this);
                     Log.i(TAG, "Attempting to register with NH using token : " + token);
@@ -236,7 +246,7 @@ ms.locfileid: "51616271"
                     // regID = hub.register(token, "tag1", "tag2").getRegistrationId();
 
                     resultString = "Registered Successfully - RegId : " + regID;
-                    Log.i(TAG, resultString);        
+                    Log.i(TAG, resultString);
                     sharedPreferences.edit().putString("registrationID", regID ).apply();
                 } else {
                     resultString = "Previously Registered Successfully - RegId : " + regID;
@@ -254,9 +264,9 @@ ms.locfileid: "51616271"
         }
     }
     ```
-2. В начале класса `MainActivity` добавьте следующие операторы `import`.
+4. В начале класса `MainActivity` добавьте следующие операторы `import`.
 
-    ```java   
+    ```java
     import com.google.android.gms.common.ConnectionResult;
     import com.google.android.gms.common.GoogleApiAvailability;
     import com.google.android.gms.gcm.*;
@@ -266,17 +276,17 @@ ms.locfileid: "51616271"
     import android.widget.Toast;
     import android.content.Intent;
     ```
-3. В верхней части класса добавьте следующие частные члены. Этот код [проверяет доступность служб Google Play в соответствии с рекомендациями Google](https://developers.google.com/android/guides/setup#ensure_devices_have_the_google_play_services_apk).
-   
+5. В верхней части класса добавьте следующие частные члены. Этот код [проверяет доступность служб Google Play в соответствии с рекомендациями Google](https://developers.google.com/android/guides/setup#ensure_devices_have_the_google_play_services_apk).
+
     ```java
     public static MainActivity mainActivity;
-    public static Boolean isVisible = false;    
+    public static Boolean isVisible = false;
     private GoogleCloudMessaging gcm;
     private static final int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
     private static final String TAG = "MainActivity";
     ```
-4. В классе `MainActivity` добавьте следующий метод проверки доступности служб Google Play: 
-   
+6. В классе `MainActivity` добавьте следующий метод проверки доступности служб Google Play:
+
     ```java
     /**
         * Check the device to make sure it has the Google Play Services APK. If
@@ -300,8 +310,8 @@ ms.locfileid: "51616271"
         return true;
     }
     ```
-5. В классе `MainActivity` добавьте следующий код, который проверяет Сервисы Google Play, прежде чем вызывать службу `IntentService`. Таким образом вы получите маркер регистрации в GCM и выполните регистрацию в центре уведомлений.
-   
+7. В классе `MainActivity` добавьте следующий код, который проверяет Сервисы Google Play, прежде чем вызывать службу `IntentService`. Таким образом вы получите маркер регистрации в GCM и выполните регистрацию в центре уведомлений.
+
     ```java
     public void registerWithNotificationHubs()
     {
@@ -314,8 +324,8 @@ ms.locfileid: "51616271"
         }
     }
     ```
-6. В методе `OnCreate` класса `MainActivity` добавьте следующий код, чтобы начать регистрацию при создании действия:
-   
+8. В методе `OnCreate` класса `MainActivity` добавьте следующий код, чтобы начать регистрацию при создании действия:
+
     ```java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -327,8 +337,8 @@ ms.locfileid: "51616271"
         registerWithNotificationHubs();
     }
     ```
-7. Добавьте эти дополнительные методы в класс `MainActivity` , чтобы проверять состояние приложения и отображать в нем полученные данные.
-   
+9. Добавьте эти дополнительные методы в класс `MainActivity` , чтобы проверять состояние приложения и отображать в нем полученные данные.
+
     ```java
     @Override
     protected void onStart() {
@@ -365,14 +375,14 @@ ms.locfileid: "51616271"
         });
     }
     ```
-8. Метод `ToastNotify` использует элемент управления `TextView` *Hello World*, чтобы постоянно передавать в приложение сведения о состоянии и уведомления. В файле макета activity_main.xml добавьте следующий идентификатор для этого элемента управления.
-   
-    ```
+10. Метод `ToastNotify` использует элемент управления `TextView` *Hello World*, чтобы постоянно передавать в приложение сведения о состоянии и уведомления. В файле макета activity_main.xml добавьте следующий идентификатор для этого элемента управления.
+
+    ```xml
     android:id="@+id/text_hello"
     ```
-9. Добавьте подкласс для получателя, определенного в файле AndroidManifest.xml. Добавьте еще один новый класс в проект `MyHandler`.
-10. Добавьте в начало файла `MyHandler.java` следующие операторы импорта:
-    
+11. Добавьте подкласс для получателя, определенного в файле AndroidManifest.xml. Добавьте еще один новый класс в проект `MyHandler`.
+12. Добавьте в начало файла `MyHandler.java` следующие операторы импорта:
+
     ```java
     import android.app.NotificationManager;
     import android.app.PendingIntent;
@@ -384,10 +394,10 @@ ms.locfileid: "51616271"
     import android.net.Uri;
     import android.media.RingtoneManager;
     ```
-11. Добавьте в класс `MyHandler` следующий код, чтобы сделать его подклассом класса `com.microsoft.windowsazure.notifications.NotificationsHandler`.
-    
+13. Добавьте в класс `MyHandler` следующий код, чтобы сделать его подклассом класса `com.microsoft.windowsazure.notifications.NotificationsHandler`.
+
     Этот код переопределяет метод `OnReceive` так, чтобы обработчик сообщал о полученных уведомлениях. Кроме того, обработчик отправляет push-уведомление в диспетчер уведомлений Android с помощью метода `sendNotification()` . Метод `sendNotification()` должен выполняться, когда незапущенное приложение получает уведомление.
-    
+
     ```java
     public class MyHandler extends NotificationsHandler {
         public static final int NOTIFICATION_ID = 1;
@@ -431,44 +441,48 @@ ms.locfileid: "51616271"
         }
     }
     ```
-12. В Android Studio в строке меню щелкните **Build** (Сборка)  > **Rebuild Project** (Повторить сборку проекта), чтобы убедиться в отсутствии ошибок.
+14. В Android Studio в строке меню щелкните **Build** (Сборка)  > **Rebuild Project** (Повторить сборку проекта), чтобы убедиться в отсутствии ошибок.
 
 ## <a name="testing-your-app"></a>Тестирование приложения
+
 ### <a name="run-the-mobile-application"></a>Запуск мобильного приложения
+
 1. Запустите приложение и убедитесь, что для успешной регистрации сообщается идентификатор регистрации.
-   
+
       ![Тестирование на устройстве Android — регистрация канала][18]
 2. Введите сообщение уведомления для отправки на все устройства Android, которые зарегистрированы в центре.
-   
+
       ![Тестирование на устройстве Android — отправка сообщения][19]
 
 3. Нажмите кнопку **Send Notification**(Отправить уведомление). На всех устройствах с запущенным приложением отображается экземпляр `AlertDialog` с push-уведомлением. Устройства, на которых приложение не запущено, но которые были ранее зарегистрированы для приема push-уведомлений, получают уведомление в диспетчер уведомлений Android. Уведомления можно просматривать, проводя пальцем вниз от левого верхнего угла.
-   
+
       ![Тестирование на устройстве Android — уведомления][21]
 
 ### <a name="test-send-push-notifications-from-the-azure-portal"></a>Проверка отправки push-уведомлений с портала Azure
-Чтобы проверить получение push-уведомлений в приложении, отправьте уведомления на [портале Azure]. 
 
-1. В разделе **Устранение неполадок** выберите **Тестовая отправка**. 
+Чтобы проверить получение push-уведомлений в приложении, отправьте уведомления на [портале Azure].
+
+1. В разделе **Устранение неполадок** выберите **Тестовая отправка**.
 2. В качестве **платформы** выберите **Android**.
-3. Нажмите кнопку **Отправить**, чтобы отправить тестовое уведомление. 
-4. Проверьте получение уведомления на устройстве Android. 
+3. Нажмите кнопку **Отправить**, чтобы отправить тестовое уведомление.
+4. Проверьте получение уведомления на устройстве Android.
 
     ![Центры уведомлений Azure — тестовая отправка](./media/notification-hubs-android-get-started/notification-hubs-test-send.png)
 
 [!INCLUDE [notification-hubs-sending-notifications-from-the-portal](../../includes/notification-hubs-sending-notifications-from-the-portal.md)]
 
 #### <a name="push-notifications-in-the-emulator"></a>Тестирование push-уведомлений в эмуляторе
+
 Если вы хотите проверить отправку push-уведомлений в эмуляторе, убедитесь, что образ эмулятора поддерживает уровень API Google, выбранный для приложения. Если образ не поддерживает собственные API-интерфейсы Google, создается исключение **SERVICE\_NOT\_AVAILABLE**.
 
 Кроме того, добавьте учетную запись Google в запущенный эмулятор. Для этого щелкните **Параметры** > **Учетные записи**. В противном случае попытки регистрации в GCM могут привести к исключению **AUTHENTICATION\_FAILED**.
 
-
 ## <a name="optional-send-push-notifications-directly-from-the-app"></a>Отправка push-уведомлений непосредственно из приложения (необязательное действие) 
+
 Обычно уведомления отправляются с сервера базы данных. Но в некоторых случаях бывает удобно отправлять push-уведомления непосредственно из клиентского приложения. В этом разделе показано, как отправлять уведомления из клиента с помощью интерфейса [REST API центра уведомлений Azure](https://msdn.microsoft.com/library/azure/dn223264.aspx).
 
 1. В представлении проекта Android Studio разверните узел **App** > **src** > **main** > **res** > **layout**. Откройте файл макета `activity_main.xml` и щелкните вкладку **Text** (Текст), чтобы обновить текстовое содержимое файла. Поместите в него приведенный ниже код, который добавляет новые элементы управления `Button` и `EditText` для отправки push-уведомлений в центр уведомлений. Добавьте этот код в конец, непосредственно перед `</RelativeLayout>`.
-   
+
     ```xml
     <Button
     android:layout_width="wrap_content"
@@ -490,19 +504,19 @@ ms.locfileid: "51616271"
     ```
 2. В представлении проекта Android Studio разверните узел **App** > **src** > **main** > **res** > **values**. Откройте файл `strings.xml` и добавьте строковые параметры, на которые ссылаются новые элементы управления `Button` и `EditText`. Добавьте следующие строки в конец файла, непосредственно перед `</resources>`.
 
-    ```xml   
+    ```xml
     <string name="send_button">Send Notification</string>
     <string name="notification_message_hint">Enter notification message text</string>
     ```
 3. В файле `NotificationSetting.java` добавьте приведенный ниже параметр в класс `NotificationSettings`.
-   
+
     Добавьте в `HubFullAccess` следующую строку подключения к центру: **DefaultFullSharedAccessSignature** . Чтобы скопировать эту строку подключения на [портале Azure], щелкните **Политики доступа** на странице **Параметры** в центре уведомлений.
-   
+
     ```java
     public static String HubFullAccess = "<Enter Your DefaultFullSharedAccess Connection string>";
     ```
 4. В начале файла `MainActivity.java` добавьте следующие операторы `import`.
-   
+
     ```java
     import java.io.BufferedOutputStream;
     import java.io.BufferedReader;
@@ -517,17 +531,17 @@ ms.locfileid: "51616271"
     import android.view.View;
     import android.widget.EditText;
     ```
-5. В файле `MainActivity.java` в начало класса `MainActivity` добавьте следующие переменные:    
-   
+5. В файле `MainActivity.java` в начало класса `MainActivity` добавьте следующие переменные:
+
     ```java
     private String HubEndpoint = null;
     private String HubSasKeyName = null;
     private String HubSasKeyValue = null;
     ```
 6. Создайте токен подписи программного доступа (SAS) для аутентификации запроса POST для отправки сообщений в центр уведомлений. Проанализируйте данные ключа из строки подключения и создайте токен SAS, как упоминалось в справочнике по [основным понятиям](https://msdn.microsoft.com/library/azure/dn495627.aspx) REST API. Ниже приведен пример реализации.
-   
+
     В файле `MainActivity.java` добавьте в класс `MainActivity` следующий метод, который анализирует строку подключения:
-   
+
     ```java
     /**
         * Example code from http://msdn.microsoft.com/library/azure/dn495627.aspx
@@ -556,7 +570,7 @@ ms.locfileid: "51616271"
     }
     ```
 7. В файле `MainActivity.java` добавьте в класс `MainActivity` следующий метод, который создает маркер проверки подлинности SaS:
-   
+
     ```java
     /**
         * Example code from http://msdn.microsoft.com/library/azure/dn495627.aspx to
@@ -611,7 +625,7 @@ ms.locfileid: "51616271"
     }
     ```
 8. В файле `MainActivity.java` добавьте в класс `MainActivity` метод, который обрабатывает событие нажатия кнопки **Send Notification** (Отправить уведомление) и отправляет push-уведомление в Центр с помощью встроенного интерфейса REST API.
-   
+
     ```java
     /**
         * Send Notification button click handler. This method parses the
@@ -645,7 +659,7 @@ ms.locfileid: "51616271"
                         urlConnection.setDoOutput(true);
 
                         // Authenticate the POST request with the SaS token
-                        urlConnection.setRequestProperty("Authorization", 
+                        urlConnection.setRequestProperty("Authorization",
                             generateSasToken(url.toString()));
 
                         // Notification format should be GCM
@@ -654,7 +668,7 @@ ms.locfileid: "51616271"
                         // Include any tags
                         // Example below targets 3 specific tags
                         // Refer to : https://azure.microsoft.com/documentation/articles/notification-hubs-routing-tag-expressions/
-                        // urlConnection.setRequestProperty("ServiceBusNotification-Tags", 
+                        // urlConnection.setRequestProperty("ServiceBusNotification-Tags",
                         //        "tag1 || tag2 || tag3");
 
                         // Send notification message
@@ -693,39 +707,32 @@ ms.locfileid: "51616271"
     ```
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 В рамках этого руководства вы отправили широковещательные уведомления на все устройства Android, зарегистрированные в серверной части. Чтобы узнать, как отправлять push-уведомления на конкретные устройства Android, перейдите к следующему руководству:  
 
- > [!div class="nextstepaction"] 
- > [Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md) 
-
+ > [!div class="nextstepaction"]
+ > [Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md)
 
 <!-- Images. -->
 [6]: ./media/notification-hubs-android-get-started/notification-hub-android-new-class.png
-
 [12]: ./media/notification-hubs-android-get-started/notification-hub-connection-strings.png
-
 [13]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-new-project.png
 [14]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-choose-form-factor.png
 [15]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app4.png
 [16]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app5.png
 [17]: ./media/notification-hubs-android-get-started/notification-hub-create-android-app6.png
-
 [18]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-registered.png
 [19]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-set-message.png
-
 [20]: ./media/notification-hubs-android-get-started/notification-hub-create-console-app.png
 [21]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-received-message.png
 [22]: ./media/notification-hubs-android-get-started/notification-hub-scheduler1.png
 [23]: ./media/notification-hubs-android-get-started/notification-hub-scheduler2.png
 [29]: ./media/mobile-services-android-get-started-push/mobile-eclipse-import-Play-library.png
-
 [30]: ./media/notification-hubs-android-get-started/notification-hubs-debug-hub-gcm.png
-
 [31]: ./media/notification-hubs-android-get-started/notification-hubs-android-studio-add-ui.png
 
-
 <!-- URLs. -->
-[Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-android-get-started-push.md  
+[Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-android-get-started-push.md 
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [Referencing a library project]: http://go.microsoft.com/fwlink/?LinkId=389800
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx

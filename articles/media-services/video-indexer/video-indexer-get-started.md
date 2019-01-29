@@ -9,14 +9,14 @@ ms.service: media-services
 ms.topic: tutorial
 ms.date: 11/19/2018
 ms.author: juliako
-ms.openlocfilehash: 41f3e3fffba0dde5277a39f62ef13d4dfc21c67e
-ms.sourcegitcommit: beb4fa5b36e1529408829603f3844e433bea46fe
+ms.openlocfilehash: 72412956d231ea2696c05ba250302faf5f90c91d
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52291605"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54823289"
 ---
-# <a name="tutorial-how-to-sign-up-and-upload-your-first-video"></a>Руководство: как зарегистрироваться и отправить первое видео
+# <a name="tutorial-how-to-sign-up-and-upload-your-first-video"></a>Руководство. Как зарегистрироваться и отправить видео
 
 В этом руководстве по началу работы показано, как войти на веб-сайт Индексатора видео и отправить первое видео.
 

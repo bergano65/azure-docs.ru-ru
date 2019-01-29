@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 12/05/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: sahenry
-ms.openlocfilehash: 5c40e6c681a4f37c61519040eb32531d3c8f071c
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 640f03cd35ac74df9c7b25352ab294c35c4ec0ea
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53437152"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54430678"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD на экране входа
 
@@ -32,6 +32,7 @@ ms.locfileid: "53437152"
    * [компьютер, присоединенный к Azure AD](../device-management-azure-portal.md);
    * [компьютеры с гибридным присоединением к Azure AD](../device-management-hybrid-azuread-joined-devices-setup.md) и сетевым подключением к контроллеру домена.
 * Функция самостоятельного сброса пароля Azure AD должна быть включена.
+* Если компьютеры с Windows 10 защищены прокси-сервером или брандмауэром, следует разрешить HTTPS-трафик (443) к веб-сайтам `passwordreset.microsoftonline.com` и `ajax.aspnetcdn.com`.
 
 ## <a name="configure-reset-password-link-using-intune"></a>Настройка ссылки сброса пароля с помощью Intune
 
@@ -126,8 +127,6 @@ ms.locfileid: "53437152"
    * файл Explorer.exe, замененный на файл пользовательской оболочки.
 
 Эта функция не поддерживается для сетей с развернутым решением аутентификации 802.1X и заданным параметром "Выполнять непосредственно перед входом пользователя". Чтобы включить эту функцию для сетей с развернутыми решением аутентификации 802.1X, используйте аутентификацию компьютера.
-
-Если компьютеры с Windows 10 защищены прокси-сервером или брандмауэром, следует разрешить трафик HTTPS (443) на сайты passwordreset.microsoftonline.com и ajax.aspnetcdn.com.
 
 Сценарии гибридного присоединения к домену можно реализовать, если рабочий процесс SSPR будет выполниться без контроллера домена Active Directory. Подключение к контроллеру домена требуется при первом использовании нового пароля.
 

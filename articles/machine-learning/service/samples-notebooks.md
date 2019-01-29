@@ -11,12 +11,12 @@ ms.author: sgilley
 ms.reviewer: sgilley
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 0d74f731d0a7eca25238344e36838dc6c806c788
-ms.sourcegitcommit: c2e61b62f218830dd9076d9abc1bbcb42180b3a8
+ms.openlocfilehash: 6befe3a3fee80dd65fd3ac5be241c558707224e6
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2018
-ms.locfileid: "53434534"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54811100"
 ---
 # <a name="use-jupyter-notebooks-to-explore-azure-machine-learning-service"></a>Использование записных книжек Jupyter в Azure Machine Learning Workbench
 
@@ -31,7 +31,7 @@ ms.locfileid: "53434534"
 
 ## <a name="try-azure-notebooks-free-jupyter-notebooks-in-the-cloud"></a>Поработайте со службой "Записные книжки Azure": к вашим услугам бесплатные записные книжки на основе Jupyter в облаке Azure
 
-Начать работу с Записными книжками Azure очень просто. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) уже установлен и настроен в Записных книжках Azure. Службы Azure автоматически управляют установкой и последующими обновлениями.
+Начать работу с Записными книжками Azure очень просто. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) уже установлен и настроен в [Записных книжках Azure](https://notebooks.azure.com/). Службы Azure автоматически управляют установкой и последующими обновлениями.
   
 + Чтобы запустить **основные записные книжки руководств**, следуйте приведенным ниже действиям.
   1. Перейдите в [Записные книжки Azure](https://notebooks.azure.com/).

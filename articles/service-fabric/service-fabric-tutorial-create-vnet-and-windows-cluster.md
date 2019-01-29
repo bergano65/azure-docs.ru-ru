@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 09/27/2018
 ms.author: ryanwi
 ms.custom: mvc
-ms.openlocfilehash: a720bb906192731b8b636939e22b13a8e52bbe76
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.openlocfilehash: 76281113c0d1e7b3943e137accf7aa93c2863fe6
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52632897"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54435385"
 ---
 # <a name="tutorial-deploy-a-service-fabric-windows-cluster-into-an-azure-virtual-network"></a>Руководство. Развертывание кластера Service Fabric на платформе Windows в виртуальной сети Azure
 
@@ -51,7 +51,7 @@ ms.locfileid: "52632897"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [пакет SDK для Service Fabric и модуль PowerShell](service-fabric-get-started.md)
-* Установите модуль [Azure PowerShell версии 4.1 или более поздней](https://docs.microsoft.com/powershell/azure/install-azurerm-ps)
+* Установите модуль [Azure PowerShell версии 4.1 или более поздней](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps)
 
 Ниже приведены процедуры для создания кластера Service Fabric с пятью узлами. Чтобы рассчитать затраты, связанные с запуском кластера Service Fabric в Azure, используйте [калькулятор цен Azure](https://azure.microsoft.com/pricing/calculator/).
 
@@ -92,7 +92,7 @@ ms.locfileid: "52632897"
 
 * один тип узла;
 * пять узлов на первичном типе узла (можно настроить в параметрах шаблона);
-* ОС: Windows Server 2016 Datacenter с контейнерами (можно настроить в параметрах шаблона);
+* ОС: Windows Server 2016 Datacenter с контейнерами (можно настроить в параметрах шаблона);
 * защищенный сертификат (можно настроить в параметрах шаблона);
 * включенный [обратный прокси-сервер](service-fabric-reverseproxy.md);
 * [служба DNS](service-fabric-dnsservice.md) включена;
@@ -106,9 +106,9 @@ ms.locfileid: "52632897"
 В ресурсе **Microsoft.Network/loadBalancers** настроена подсистема балансировки нагрузки, а также указаны пробы и правила для следующих портов:
 
 * конечная точка подключения клиента: 19000;
-* конечная точка HTTP шлюза: 19080;
-* порт приложения: 80;
-* порт приложения: 443;
+* конечная точка HTTP-шлюза: 19080;
+* порт приложения: 80
+* порт приложения: 443
 * обратный прокси-сервер Service Fabric: 19081.
 
 Если нужны другие порты приложений, нужно настроить ресурсы **Microsoft.Network/loadBalancers** и **Microsoft.Network/networkSecurityGroups**, чтобы разрешить входящий трафик.
@@ -117,17 +117,17 @@ ms.locfileid: "52632897"
 
 Названия виртуальной сети, подсети и группы безопасности сети указаны в параметрах шаблона.  Адресные пространства виртуальной сети и подсети также объявляются в параметрах шаблона и настраиваются в ресурсе **Microsoft.Network/virtualNetworks**:
 
-* Адресное пространство виртуальной сети: 172.16.0.0/20.
-* Адресное пространство подсети Service Fabric: 172.16.2.0/23.
+* Диапазон адресов виртуальной сети: 172.16.0.0/20.
+* Диапазон адресов подсети Service Fabric: 172.16.2.0/23.
 
 Следующие правила входящего трафика включаются в ресурсе **Microsoft.Network/networkSecurityGroups** Значения порта можно изменить, изменив переменные шаблона.
 
-* ClientConnectionEndpoint (протокол TCP): 19000.
-* HttpGatewayEndpoint (HTTP или TCP): 19080.
-* SMB : 445.
+* ClientConnectionEndpoint (протокол TCP): 19000;
+* HttpGatewayEndpoint (HTTP/TCP): 19080;
+* SMB 445
 * Межузловая передача сообщений — 1025, 1026, 1027.
 * Диапазон временных портов — от 49152 до 65 534 (требуется минимум 256 портов).
-* Порты для использования в приложениях: 80 и 443.
+* Порты для использования в приложениях: 80 и 443
 * Диапазон портов приложений — от 49152 до 65 534 (используются для взаимодействия служб и не открыты в подсистеме балансировки нагрузки).
 * Блокировка остальных портов.
 
