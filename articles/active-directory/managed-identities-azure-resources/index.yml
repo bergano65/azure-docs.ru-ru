@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
-ms.openlocfilehash: c4613654e5f1da6ef55c1f648fff1687b21fe87d
-ms.sourcegitcommit: 644de9305293600faf9c7dad951bfeee334f0ba3
+ms.openlocfilehash: fd9c4513c2cda3fb6283e748f2458043b02ab482
+ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "54901944"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55203578"
 documentType: LandingData
 title: Документация по управляемым удостоверениям Azure AD для ресурсов Azure
 metadata:
@@ -12,7 +12,7 @@ metadata:
   title: Документация по управляемым удостоверениям Azure AD для ресурсов Azure
   description: Узнайте, как с помощью управляемых удостоверений для ресурсов Azure выполнять безопасную аутентификацию в облачных службах Azure без необходимости хранить учетные данные в исходном коде.
   services: active-directory
-  ms.component: msi
+  ms.subservice: msi
   author: priyamohanram
   manager: daveba
   ms.service: active-directory
