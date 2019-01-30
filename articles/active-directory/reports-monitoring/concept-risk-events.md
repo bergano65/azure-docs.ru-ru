@@ -4,7 +4,7 @@ description: В этой статье представлен подробный 
 services: active-directory
 keywords: защита идентификации azure active directory, безопасность, риск, уровень риска, уязвимость, политика безопасности
 author: priyamohanram
-manager: mtillman
+manager: daveba
 ms.assetid: fa2c8b51-d43d-4349-8308-97e87665400b
 ms.service: active-directory
 ms.workload: identity
@@ -15,12 +15,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: 4bca7ed2f10ce6b0231a260a9cf5b7468476343f
-ms.sourcegitcommit: e68df5b9c04b11c8f24d616f4e687fe4e773253c
+ms.openlocfilehash: 7c352b92edede8bb986a00d5db846bda7b299df2
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53652155"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54808091"
 ---
 # <a name="azure-active-directory-risk-events"></a>События риска Azure Active Directory
 
@@ -44,6 +44,9 @@ ms.locfileid: "53652155"
 - [Входы в систему из необычного расположения](#sign-in-from-unfamiliar-locations) 
 
 ![События риска](./media/concept-risk-events/91.png)
+
+> [!IMPORTANT]
+> В некоторых случаях для события риска не будет соответствующей записи входа в систему в [отчете о входе](concept-sign-ins.md). Это связано с тем, что защита удостоверений оценивает риски как для **интерактивных**, так и для **неинтерактивных** входов, тогда как в отчете о входе отображаются только интерактивные входы.
 
 Аналитические данные, которые вы получаете для обнаруженного события риска, привязаны к вашей подписке Azure AD. 
 

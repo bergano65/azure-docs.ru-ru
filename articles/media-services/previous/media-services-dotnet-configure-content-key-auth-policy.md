@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/09/2017
 ms.author: juliako;mingfeiy
-ms.openlocfilehash: 531b90b905df8549846c6027fe547521d16cf082
-ms.sourcegitcommit: ab3b2482704758ed13cccafcf24345e833ceaff3
+ms.openlocfilehash: 0c16369cca4fae89733ad281aa3332c393be2aff
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37868506"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54828423"
 ---
-# <a name="dynamic-encryption-configure-a-content-key-authorization-policy"></a>Динамическое шифрование: настройка политики для авторизации ключа содержимого
+# <a name="dynamic-encryption-configure-a-content-key-authorization-policy"></a>Динамическое шифрование: Настройка политики авторизации ключей содержимого
 [!INCLUDE [media-services-selector-content-key-auth-policy](../../../includes/media-services-selector-content-key-auth-policy.md)]
 
 ## <a name="overview"></a>Обзор
@@ -88,7 +88,7 @@ ms.locfileid: "37868506"
 
         policy.Options.Add(policyOption);
 
-        // Add ContentKeyAutorizationPolicy to ContentKey
+        // Add ContentKeyAuthorizationPolicy to ContentKey
         contentKey.AuthorizationPolicyId = policy.Id;
         IContentKey updatedKey = contentKey.UpdateAsync().Result;
         Console.WriteLine("Adding Key to Asset: Key ID is " + updatedKey.Id);
@@ -185,7 +185,7 @@ ms.locfileid: "37868506"
 
         policy.Options.Add(policyOption);
 
-        // Add ContentKeyAutorizationPolicy to ContentKey
+        // Add ContentKeyAuthorizationPolicy to ContentKey
         contentKey.AuthorizationPolicyId = policy.Id;
         IContentKey updatedKey = contentKey.UpdateAsync().Result;
         Console.WriteLine("Adding Key to Asset: Key ID is " + updatedKey.Id);
@@ -315,7 +315,7 @@ ms.locfileid: "37868506"
 
         policy.Options.Add(policyOption);
 
-        // Add ContentKeyAutorizationPolicy to ContentKey
+        // Add ContentKeyAuthorizationPolicy to ContentKey
         contentKeyAuthorizationPolicy.Options.Add(policyOption);
 
         // Associate the content key authorization policy with the content key

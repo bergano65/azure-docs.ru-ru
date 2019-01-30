@@ -1,10 +1,10 @@
 ---
-title: Доменные службы Azure Active Directory. Включение синхронизации хэшей паролей | Документация Майкрософт
+title: Доменные службы Azure Active Directory. Включение синхронизации хэша паролей | Документация Майкрософт
 description: Приступая к работе с доменными службами Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: 5a32a0df-a3ca-4ebe-b980-91f58f8030fc
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/02/2018
 ms.author: ergreenl
-ms.openlocfilehash: 9c37eb064fb12ff548763a9c70a2e79219113b67
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 01688ad0b72d931b950f98e90be5e98cab4ebe14
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51227371"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54856897"
 ---
 # <a name="enable-password-hash-synchronization-to-azure-active-directory-domain-services"></a>Включение синхронизации хэшей паролей с доменными службами Azure AD
 Выполняя предыдущие задачи, вы включили доменные службы Azure Active Directory для клиента Azure Active Directory (Azure AD). Следующая задача — включить синхронизацию необходимых хэшей паролей, чтобы проверить подлинность NTLM и Kerberos в доменных службах Azure AD. Когда синхронизация хэшей паролей настроена, пользователи могут входить в управляемый домен с помощью учетных данных организации.

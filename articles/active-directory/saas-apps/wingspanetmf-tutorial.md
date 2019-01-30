@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Wingspan eTMF | Документы Майкрософт
+title: Руководство. Интеграции Azure Active Directory с Wingspan eTMF | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Wingspan eTMF.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: ace320d3-521c-449c-992f-feabe7538de7
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
 ms.author: jeedes
-ms.openlocfilehash: d27d2c6a6c6bae2ebd13f78da308f32275993ec5
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 1573b7259134037a8e573c6a01588ad782505ea3
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39434070"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54821164"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wingspan-etmf"></a>Руководство. Интеграция Azure Active Directory с Wingspan eTMF
 
@@ -132,7 +132,7 @@ ms.locfileid: "39434070"
 1. Чтобы настроить единый вход на стороне **Wingspan eTMF**, отправьте в [службу поддержки Wingspan eTMF](http://www.wingspan.com/contact-us/) скачанный **XML-файл метаданных**. Специалисты службы поддержки правильно настроят подключение единого входа SAML для приложения на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
  
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -168,7 +168,7 @@ ms.locfileid: "39434070"
  
 ### <a name="creating-a-wingspan-etmf-test-user"></a>Создание тестового пользователя Wingspan eTMF
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Wingspan eTMF. Обратитесь в [службу поддержки Wingspan eTMF](http://www.wingspan.com/contact-us/), чтобы добавить пользователей в приложение Wingspan eTMF. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Wingspan eTMF. Обратитесь в  [службу поддержки Wingspan eTMF](http://www.wingspan.com/contact-us/), чтобы добавить пользователей в приложение Wingspan eTMF. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -204,7 +204,7 @@ ms.locfileid: "39434070"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа. 
 
-Щелкните плитку Wingspan eTMF на панели доступа. Вы будете перенаправлены на страницу входа организации. После успешного входа вы сможете войти в приложение Wingspan eTMF. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Щелкните плитку Wingspan eTMF на панели доступа. Вы будете перенаправлены на страницу входа организации. После успешного входа вы сможете войти в приложение Wingspan eTMF. Дополнительные сведения о панели доступа см. в статье [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

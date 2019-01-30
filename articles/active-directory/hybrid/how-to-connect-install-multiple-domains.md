@@ -4,7 +4,7 @@ description: В этом документе описываются процед�
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: 5595fb2f-2131-4304-8a31-c52559128ea4
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 05/31/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 8b5abe252ab9b3389680508537ea1d6f3823f910
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: abc01239a2bf61c39f99fe880bf17d7958a1597c
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46305763"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54477938"
 ---
 # <a name="multiple-domain-support-for-federating-with-azure-ad"></a>Поддержка нескольких доменов для федерации с Azure AD
 В следующей документации представлено руководство по использованию нескольких доменов верхнего уровня и поддоменов в федерации с Office 365 или доменами Azure AD.
@@ -168,7 +168,7 @@ ms.locfileid: "46305763"
 ## <a name="next-steps"></a>Дополнительная информация
 После установки Azure AD Connect можно [проверить установку и назначить лицензии](how-to-connect-post-installation.md).
 
-Дополнительные сведения о функциях, которые были включены в процессе установки, см. в следующих статьях: [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md), [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Использование Azure AD Connect Health для синхронизации](how-to-connect-health-sync.md).
+Подробные сведения об этих функциях, включенных при установке, см. в следующих статьях: [Azure AD Connect: автоматическое обновление](how-to-connect-install-automatic-upgrade.md), [Синхронизация Azure AD Connect: предотвращение случайного удаления](how-to-connect-sync-feature-prevent-accidental-deletes.md) и [Мониторинг синхронизации Azure AD Connect с помощью Azure AD Connect Health](how-to-connect-health-sync.md).
 
 Дополнительные сведения см. в статье [Синхронизация Azure AD Connect: планировщик](how-to-connect-sync-feature-scheduler.md).
 

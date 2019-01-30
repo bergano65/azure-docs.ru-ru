@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Panopto | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Panopto | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Panopto.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 89c88e23-93ce-4970-9baa-1104c4e8fe4a
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: 60d4b9f5343aac978c1e32aad39f237d565b2176
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 34764a0558aaf5a63c353eb1d1d7180c21ca49c8
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421480"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54818869"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-panopto"></a>Учебник. Интеграция Azure Active Directory с Panopto
+# <a name="tutorial-azure-active-directory-integration-with-panopto"></a>Руководство. Интеграция Azure Active Directory с Panopto
 
 В этом руководстве описано, как интегрировать Panopto с Azure Active Directory (Azure AD).
 
@@ -158,7 +158,7 @@ ms.locfileid: "39421480"
 1. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

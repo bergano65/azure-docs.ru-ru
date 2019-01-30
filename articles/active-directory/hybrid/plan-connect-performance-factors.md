@@ -3,7 +3,7 @@ title: Факторы, влияющие на производительност�
 description: В этом документе объясняется, как различные факторы влияют на модуль подготовки Azure AD Connect. Эти факторы помогут организациям спланировать развертывание Azure AD Connect для соответствия их требованиям синхронизации.
 services: active-directory
 author: billmath
-manager: mtillman
+manager: daveba
 tags: azuread
 ms.service: active-directory
 ms.topic: conceptual
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/06/2018
 ms.reviewer: martincoetzer
 ms.author: billmath
-ms.openlocfilehash: cdca1b31f9b6cf10113dc0dba70b8f8991bafa2b
-ms.sourcegitcommit: 4047b262cf2a1441a7ae82f8ac7a80ec148c40c4
+ms.openlocfilehash: 801082164a0110178034c5fbe050ebe8e02b2772
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49093975"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54474138"
 ---
 # <a name="factors-influencing-the-performance-of-azure-ad-connect"></a>Факторы, влияющие на производительность Azure AD Connect
 

@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с QPrism | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с QPrism | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и QPrism.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 72ab75ba-132b-4f83-a34b-d28b81b6d7bc
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: jeedes
-ms.openlocfilehash: ddf22491d7531daecf4448e62e8594c3326d7b77
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 8278b26f023ada109a8e6fa3965476e3dc4526c7
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39420280"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54828066"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-qprism"></a>Руководство по интеграции Azure Active Directory с QPrism
+# <a name="tutorial-azure-active-directory-integration-with-qprism"></a>Руководство. Интеграция Azure Active Directory с QPrism
 
 В этом руководстве описано, как интегрировать QPrism с Azure Active Directory (Azure AD).
 
@@ -112,7 +112,7 @@ ms.locfileid: "39420280"
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим идентификатором и URL-адресом для входа. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов QPrism](mailto:qsupport-ce@quatrro.com). 
 
-1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
+1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**, и вставьте его в Блокнот.
 
      ![Ссылка для скачивания сертификата](./media/qprism-tutorial/tutorial_qprism_certificate.png)
 
@@ -156,7 +156,7 @@ ms.locfileid: "39420280"
  
 ### <a name="create-a-qprism-test-user"></a>Создание тестового пользователя QPrism
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении QPrism. Обратитесь к [группе поддержки QPrism](mailto:qsupport-ce@quatrro.com), чтобы добавить пользователей на платформу QPrism. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении QPrism. Обратитесь к [группе поддержки QPrism](mailto:qsupport-ce@quatrro.com) , чтобы добавить пользователей на платформу QPrism. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -193,7 +193,7 @@ ms.locfileid: "39420280"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкните плитку QPrism на панели доступа, чтобы автоматически войти в приложение QPrism.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

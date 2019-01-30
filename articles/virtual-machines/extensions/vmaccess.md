@@ -15,12 +15,12 @@ ms.devlang: azurecli
 ms.topic: article
 ms.date: 05/10/2018
 ms.author: roiyz
-ms.openlocfilehash: 638ca5d1b1b68896ff5dcad70fedf27261ae96cb
-ms.sourcegitcommit: f31bfb398430ed7d66a85c7ca1f1cc9943656678
+ms.openlocfilehash: 20d806540b0aa814c88ef4ff69834283ba4a7722
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47452060"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54413844"
 ---
 # <a name="manage-administrative-users-ssh-and-check-or-repair-disks-on-linux-vms-using-the-vmaccess-extension-with-the-azure-cli"></a>Управление пользователями с правами администратора, SSH и проверка или восстановление дисков на виртуальных машинах Linux с помощью расширения VMAccess и Azure CLI
 ## <a name="overview"></a>Обзор
@@ -53,7 +53,7 @@ ms.locfileid: "47452060"
 * с помощью командной строки Azure и необходимых параметров;
 * [с помощью необработанных файлов JSON, которые расширение VMAccess обрабатывает](#use-json-files-and-the-vmaccess-extension) для выполнения операций.
 
-В следующих примерах используются команды [az vm user](/cli/azure/vm/user). Чтобы выполнить эти действия, нужно установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index#az_login).
+В следующих примерах используются команды [az vm user](/cli/azure/vm/user). Чтобы выполнить эти действия, нужно установить последнюю версию [Azure CLI](/cli/azure/install-az-cli2) и войти в учетную запись Azure с помощью команды [az login](/cli/azure/reference-index).
 
 ## <a name="update-ssh-key"></a>Обновление ключа SSH
 В следующем примере обновляется ключ SSH для пользователя `azureuser` на виртуальной машине `myVM`:
@@ -66,7 +66,7 @@ az vm user update \
   --ssh-key-value ~/.ssh/id_rsa.pub
 ```
 
-> **Примечание.** При использовании команды `az vm user update` в файл `~/.ssh/authorized_keys` на виртуальной машине добавляется новый текст открытого ключа для администратора. Существующие ключи SSH не заменяются и не удаляются. Предыдущий набор ключей не будет удален во время развертывания или последующих обновлений при помощи расширения VMAccess.
+> **Примечание**. При использовании команды `az vm user update` в файл `~/.ssh/authorized_keys` на виртуальной машине добавляется новый текст открытого ключа для администратора. Существующие ключи SSH не заменяются и не удаляются. Предыдущий набор ключей не будет удален во время развертывания или последующих обновлений при помощи расширения VMAccess.
 
 ## <a name="reset-password"></a>Сброс пароля
 В следующем примере сбрасывается пароль для пользователя `azureuser` на виртуальной машине `myVM`.

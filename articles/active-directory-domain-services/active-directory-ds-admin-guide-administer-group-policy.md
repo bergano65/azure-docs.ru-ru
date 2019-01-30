@@ -1,10 +1,10 @@
 ---
-title: 'Доменные службы Azure Active Directory: администрирование групповой политики в управляемых доменах | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Администрирование групповой политики в управляемых доменах | Документация Майкрософт
 description: Администрирование групповой политики в управляемых доменах доменных служб Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: ergreenl
-ms.openlocfilehash: 31805f7588a58eb1682ce50fd55dd14b967d6099
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: e92c153158bc53a143bbc4c4c90c6007937fcc8f
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158352"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54848178"
 ---
 # <a name="administer-group-policy-on-an-azure-ad-domain-services-managed-domain"></a>Администрирование групповой политики в управляемом домене доменных служб Azure AD
 Доменные службы Azure Active Directory включают встроенные объекты групповой политики (GPO) для контейнеров "Пользователи AADDC" и "Компьютеры AADDC". Вы можете изменять эти встроенные объекты групповой политики, чтобы настроить групповую политику для управляемого домена. Кроме того, участники группы "Администраторы контроллера домена AAD" могут создавать собственные пользовательские подразделения в управляемом домене. Они также могут создавать пользовательские объекты групповой политики и связывать их с этими пользовательскими подразделениями. Пользователи, принадлежащие к группе "Администраторы контроллера домена AAD", получают права на администрирование групповой политики в управляемом домене.

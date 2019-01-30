@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: reference
-ms.date: 11/30/2018
+ms.date: 01/23/2019
 ms.author: celested
 ms.reviewer: hirsin, justhu
 ms.custom: aaddev
-ms.openlocfilehash: 97f884a45a0a07e2b4c48f39483c70248e7a492e
-ms.sourcegitcommit: eba6841a8b8c3cb78c94afe703d4f83bf0dcab13
+ms.openlocfilehash: e550eeba9b154e271cdad9df5cdfe9a308efbbe9
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52620405"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54820314"
 ---
 # <a name="authentication-and-authorization-error-codes"></a>Коды ошибок проверки подлинности и авторизации
 
@@ -79,7 +79,7 @@ ms.locfileid: "52620405"
 | AADSTS50058 | UserInformationNotProvided — означает, что пользователь не выполнил вход. Это распространенная ошибка, которая возникает, когда пользователь не прошел проверку подлинности и не выполнил вход.</br>Если эта ошибка вызывается в контексте единого входа, когда пользователь уже выполнил вход, то сеанс единого входа не найден или является недопустимым.</br>Такая ошибка может возвращаться в приложении, если указан параметр prompt=none. |
 | AADSTS50059 | MissingTenantRealmAndNoUserInformationProvided — не найдены идентификационные сведения о клиенте в запросе или в предоставленных учетных данных. Пользователь может обратиться за помощью к администратору клиента. |
 | AADSTS50061 | SignoutInvalidRequest: недопустимый запрос на выход. |
-| AADSTS50064 | CredentialAuthenticationError: сбой проверки учетных данных. |
+| AADSTS50064 | CredentialAuthenticationError: сбой проверки учетных данных пользователя или пароля. |
 | AADSTS50068 | SignoutInitiatorNotParticipant: не удалось выйти. Приложение, которое инициировало выход, не является участником текущего сеанса. |
 | AADSTS50070 | SignoutUnknownSessionIdentifier: не удалось выйти. В запросе на выход указан идентификатор, который не соответствует существующим сеансам. |
 | AADSTS50071 | SignoutMessageExpired: срок действия запроса на выход истек. |
@@ -254,6 +254,7 @@ ms.locfileid: "52620405"
 | AADSTS221000 | DeviceOnlyTokensNotSupportedByResource — ресурс не настроен на принятие маркеров только для устройств. |
 | AADSTS240001 | BulkAADJTokenUnauthorized: пользователь не имеет права регистрировать устройства в Azure AD. |
 | AADSTS240002 | RequiredClaimIsMissing: id_token нельзя использовать в качестве параметра предоставления доступа `urn:ietf:params:oauth:grant-type:jwt-bearer`.|
+| AADSTS700016 | UnauthorizedClient_DoesNotMatchRequest — приложение не найдено в клиенте или каталоге. Это может произойти, если приложение установил не администратор клиента или если пользователь в клиенте не предоставил к нему разрешение. Возможно, вы неправильно настроили значение идентификатора для приложения или отправили запрос на проверку подлинности не в тот клиент. |
 | AADSTS700020 | InteractionRequired: для предоставления доступа требуется действие. |
 | AADSTS700022 | InvalidMultipleResourcesScope: указано недопустимое значение области входных параметров, так как оно содержит более одного ресурса. |
 | AADSTS700023 | InvalidResourcelessScope: указано недопустимое значение области входных параметров при запрашивании маркера доступа. |

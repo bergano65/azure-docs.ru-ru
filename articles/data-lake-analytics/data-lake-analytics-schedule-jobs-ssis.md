@@ -10,12 +10,12 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/17/2018
-ms.openlocfilehash: 6eb2452507c3adcb8532a0dd2e50ad701e35cd7f
-ms.sourcegitcommit: e2ea404126bdd990570b4417794d63367a417856
+ms.openlocfilehash: 7d5630c082c044ac936f555965aec5a2a00f3544
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45579239"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54448726"
 ---
 # <a name="schedule-u-sql-jobs-using-sql-server-integration-services-ssis"></a>Планирование заданий U-SQL с использованием служб Integration Services (SSIS)
 
@@ -40,13 +40,13 @@ ms.locfileid: "45579239"
 
 ## <a name="scenario-1-use-inline-script-call-tvfs-and-stored-procs"></a>Сценарий 1. Использование встроенного сценария вызова tvfs и хранимой процедуры
 
-Откройте редактор задач Azure Data Lake Analytics, настройте **SourceType** как **DiretInput**и поместите инструкции U-SQL в **USQLStatemnt**.
+В редакторе задач Azure Data Lake Analytics настройте **SourceType** как **DirectInput** и поместите инструкции U-SQL в **USQLStatement**.
 
-Для легкости управления и обслуживания кода поместите короткий сценарий U-SQL как встроенный сценарий, например, при вызове существующих таблично определенных функций и хранимых процедур базы данных U-SQL. 
+Чтобы управление и обслуживание кода были легкими, поместите короткий сценарий U-SQL как встроенные сценарии, например, при вызове существующих таблично определенных функций и хранимых процедур баз данных U-SQL. 
 
 ![Изменение встроенного сценария U-SQL в задаче служб MSSQL Integration Services](./media/data-lake-analytics-schedule-jobs-ssis/edit-inline-usql-script-in-ssis.png)
 
-Связанная статья о [способе передачи параметров для хранимых процедур](#scenario-6-pass-parameters-to-u-sql-script)
+Подробнее: [Сценарий 6. Передача параметров сценарию U-SQL](#scenario-6-pass-parameters-to-u-sql-script)
 
 ## <a name="scenario-2-use-u-sql-files-in-azure-data-lake-store"></a>Сценарий 2. Использование файлов U-SQL в хранилище Azure Data Lake Store
 
@@ -119,7 +119,7 @@ ms.locfileid: "45579239"
 
 Можно использовать файлы U-SQL в хранилище BLOB-объектов Azure с помощью **задачи загрузки BLOB-объектов Azure** в пакете дополнительных компонентов Azure. Такой подход позволяет использовать сценарии, хранимые в облаке.
 
-Действия будут похожими как для [Сценария 2. Использование файлов U-SQL в Azure Data Lake Store](#scenario-2-use-u-sql-files-in-azure-data-lake-store). Измените задачу файловой системы Azure Data Lake Store на задачу скачивания BLOB-объектов Azure. [Дополнительные сведения о задаче загрузки BLOB-объектов Azure](https://docs.microsoft.com/sql/integration-services/control-flow/azure-blob-download-task?view=sql-server-2017).
+Дальнейшее действия см. в разделе [Сценарий 2. Использование файлов U-SQL в хранилище Azure Data Lake Store](#scenario-2-use-u-sql-files-in-azure-data-lake-store) Измените задачу файловой системы Azure Data Lake Store на задачу скачивания BLOB-объектов Azure. [Дополнительные сведения о задаче загрузки BLOB-объектов Azure](https://docs.microsoft.com/sql/integration-services/control-flow/azure-blob-download-task?view=sql-server-2017).
 
 Поток управления такой как показано ниже.
 

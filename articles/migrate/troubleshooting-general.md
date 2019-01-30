@@ -6,12 +6,12 @@ ms.service: azure-migrate
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: raynew
-ms.openlocfilehash: f91f6386df01050cc67968d05a1e1562e0f9ed01
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 0c7d0980c928ecefebeabff555378230453c742f
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54261236"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54827947"
 ---
 # <a name="troubleshoot-azure-migrate"></a>Устранение неполадок в службе "Миграция Azure"
 
@@ -286,7 +286,7 @@ esourceGroups/ContosoDemo/providers/Microsoft.Migrate/projects/Demo/groups/conto
 | 751       | UnableToConnectToServer        | Не удалось подключиться к vCenter Server "%Имя;" из-за ошибки: %Сообщение_об_ошибке;     | Дополнительные сведения приводятся в сообщении об ошибке.                                                             | Устраните указанную проблему и повторите попытку.                                                                                                           |
 | 752       | InvalidvCenterEndpoint         | Сервер "%Имя;" не является сервером vCenter Server.                                  | Предоставьте сведения о vCenter Server.                                                                       | Повторите операцию с правильной информацией о vCenter Server.                                                                                   |
 | 753       | InvalidLoginCredentials        | Не удалось подключиться к vCenter Server "%Имя;" из-за ошибки: %Сообщение_об_ошибке; | Не удалось подключиться к vCenter Server, так как указаны недействительные учетные данные для входа.                             | Укажите правильные учетные данные для входа.                                                                                    |
-| 754       | NoPerfDataAvaialable           | Данные о производительности недоступны.                                               | Проверьте уровень статистики в vCenter Server. Чтобы предоставлялись данные производительности, здесь должен быть указан уровень 3. | Установите уровень статистики 3 (на 5 минут, 30 минут или на 2 часа) и повторите попытку примерно через сутки.                   |
+| 754       | NoPerfDataAvailable           | Данные о производительности недоступны.                                               | Проверьте уровень статистики в vCenter Server. Чтобы предоставлялись данные производительности, здесь должен быть указан уровень 3. | Установите уровень статистики 3 (на 5 минут, 30 минут или на 2 часа) и повторите попытку примерно через сутки.                   |
 | 756       | NullInstanceUUID               | Обнаружен компьютер со значением NULL для InstanceUUID                                  | Возможно, в vCenter Server существует недопустимый объект.                                                      | Устраните указанную проблему и повторите попытку.                                                                                                           |
 | 757       | VMNotFound                     | Виртуальная машине не найдена                                                  | Возможно, виртуальная машина %VMID; удалена                                                                | Убедитесь, что в период обнаружения существуют виртуальные машины, выбранные для области vCenter                                      |
 | 758       | GetPerfDataTimeout             | Истекло время ожидания запроса VCenter. Сообщение %Сообщение;                                  | Неправильные учетные данные для vCenter Server.                                                              | Проверьте учетные данные vCenter Server и убедитесь, что vCenter Server доступен. Повторите операцию. Если проблема не исчезла, обратитесь в службу поддержки. |

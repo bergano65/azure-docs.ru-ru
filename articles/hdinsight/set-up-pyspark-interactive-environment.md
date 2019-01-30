@@ -8,84 +8,51 @@ author: jejiang
 ms.author: jejiang
 ms.reviewer: jasonh
 ms.topic: conceptual
-ms.date: 10/27/2017
-ms.openlocfilehash: bf47915ba93a4a3a7dec338395cfe0ce6aa3cdf6
-ms.sourcegitcommit: fd488a828465e7acec50e7a134e1c2cab117bee8
+ms.date: 1/17/2019
+ms.openlocfilehash: ef33d8962848636ee53ac6fd3f084b9c2a59e29d
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/03/2019
-ms.locfileid: "53993847"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54820586"
 ---
 # <a name="set-up-the-pyspark-interactive-environment-for-visual-studio-code"></a>Настройка интерактивной среды PySpark для Visual Studio Code
 
-Ниже показано, как установить пакеты Python, запустив **интерактивную среду PySpark HDInsight**.
+Следующие шаги показывают, как настроить интерактивную среду PySpark в VS Code.
 
-## <a name="set-up-the-pyspark-interactive-environment-on-macos-and-linux"></a>Настройка интерактивной среды PySpark в MacOS и Linux
-Если вы используете **python 3.x**, выполните команду **pip3** для указанных ниже шагов.
+Мы используем команду **python или pip** для сборки виртуального окружения в основной папке. Если вы хотите использовать другую версию, вам нужно вручную изменить версию по умолчанию команды **python или pip**. Дополнительные сведения см. в статье о команде [update-alternatives](https://linux.die.net/man/8/update-alternatives).
 
-1. Убедитесь, что **Python** и **pip** установлены.
+1. Установите [Python](https://www.python.org/) и [pip](https://pip.pypa.io/en/stable/installing/).
+   
+   + Установите Python отсюда: [https://pip.pypa.io/en/stable/installing](https://www.python.org/).
+   + Установите pip отсюда: [https://pip.pypa.io/en/stable/installing](https://pip.pypa.io/en/stable/installing/). (Если он не установился при установке Python)
+   + Проверьте правильность установки Python и pip с помощью следующих команд. (необязательный параметр)
  
-    ![Версия pip для Python](./media/set-up-pyspark-interactive-environment/check-python-pip-version.png)
+        ![Версия pip для Python](./media/set-up-pyspark-interactive-environment/check-python-pip-version.png)
 
-2.  Установите пакет Jupyter.
-    ```
-    sudo pip install jupyter
-    ```
-   В Linux и MacOS может появляться следующее сообщение об ошибке:
+    > [!NOTE]
+    > Мы советуем вручную устанавливать Python вместо использования версии по умолчанию для MacOS.
 
-   ![Ошибка 1](./media/set-up-pyspark-interactive-environment/error1.png)
 
-   ```Resolve:
-    sudo pip uninstall asyncio
-    sudo pip install trollies
-    ```
+2. Установите **virtualenv**, выполнив команду, приведенную ниже.
+   
+   ```
+   pip install virtualenv
+   ```
 
-3. Установите **libkrb5-dev** (только для Linux). Может появиться следующее сообщение об ошибке:
-
-   ![Ошибка 2](./media/set-up-pyspark-interactive-environment/error2.png)
+3. Только для Linux: установите необходимые пакеты, выполнив команды, приведенные ниже, если вы столкнулись с сообщением об ошибке.
+   
+    ![Версия pip для Python](./media/set-up-pyspark-interactive-environment/install-libkrb5-package.png)
        
-   ```Resolve:
+   ```
    sudo apt-get install libkrb5-dev 
    ```
 
-3. Установите **sparkmagic**.
    ```
-   sudo pip install sparkmagic
-   ```
-
-4. Убедитесь, что мини-приложение **ipywidgets** установлено правильно. Для этого выполните следующую команду:
-   ```
-   sudo jupyter nbextension enable --py --sys-prefix widgetsnbextension
-   ```
-   ![Установка ядер программ-оболочек](./media/set-up-pyspark-interactive-environment/ipywidget-enable.png)
- 
-
-5. Установите ядра программ-оболочек. Выполните команду **pip show sparkmagic**. В выходных данных отобразится путь к установленному пакету **sparkmagic**. 
-
-    ![расположение sparkmagic](./media/set-up-pyspark-interactive-environment/sparkmagic-location.png)
-   
-6. Перейдите в нужное расположение и выполните следующую команду:
-
-   ```Python2
-   sudo jupyter-kernelspec install sparkmagic/kernels/pysparkkernel   
-   ```
-   ```Python3
-   sudo jupyter-kernelspec install sparkmagic/kernels/pyspark3kernel
+   sudo apt-get install python-dev
    ```
 
-   ![jupyter kernelspec install](./media/set-up-pyspark-interactive-environment/jupyter-kernelspec-install.png)
-7. Проверьте состояние установки.
-
-    ```
-    jupyter-kernelspec list
-    ```
-    ![jupyter kernelspec list](./media/set-up-pyspark-interactive-environment/jupyter-kernelspec-list.png)
-
-    Для доступных ядер: 
-    - **python2** и **pysparkkernel** соответствуют **python 2.x**. 
-    - **python3** и **pyspark3kernel** соответствуют **python 3.x**. 
-
-8. Перезапустите VS Code, а затем снова перейдите к редактору сценариев, который работает на базе **интерактивной среды PySpark HDInsight**.
+4. Перезапустите VS Code, а затем снова перейдите к редактору сценариев, который работает на базе **интерактивной среды PySpark HDInsight**.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

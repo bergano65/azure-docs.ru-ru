@@ -1,10 +1,10 @@
 ---
-title: 'Синхронизация Azure AD Connect: рабочие задачи и рекомендации | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect: рабочие задачи и рекомендации | Документация Майкрософт'
 description: В этой статье описываются рабочие задачи служб синхронизации Azure AD Connect и подготовка к работе с этим компонентом.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: b29c1790-37a3-470f-ab69-3cee824d220d
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.workload: identity
 ms.date: 07/13/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 11390f1ad777d20e31c263b4a694ae5cb31f3fd3
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: c4dc5ae107cc8babbd425edd6c5de428e130fc3a
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46305813"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54467542"
 ---
-# <a name="azure-ad-connect-sync-operational-tasks-and-consideration"></a>Службы синхронизации Azure AD Connect: рабочие задачи и рекомендации
+# <a name="azure-ad-connect-sync-operational-tasks-and-consideration"></a>Синхронизация Azure AD Connect: Рабочие задачи и рекомендации
 В этой статье описаны рабочие задачи служб синхронизации Azure AD Connect.
 
 ## <a name="staging-mode"></a>Промежуточный режим
@@ -74,8 +74,8 @@ ms.locfileid: "46305813"
 
 #### <a name="verify"></a>Проверка
 1. Откройте командную строку и перейдите в каталог `%ProgramFiles%\Microsoft Azure AD Sync\bin`.
-2. Выполните команду `csexport "Name of Connector" %temp%\export.xml /f:x`. Имя соединителя можно найти в службе синхронизации. Это будет имя наподобие "contoso.com — AAD" для Azure AD.
-3. Выполните команду `CSExportAnalyzer %temp%\export.xml > %temp%\export.csv`. Теперь в папке %temp% есть файл export.csv, который можно просмотреть в Microsoft Excel. Этот файл содержит все изменения, которые будут экспортированы.
+2. Выполните команду: `csexport "Name of Connector" %temp%\export.xml /f:x`. Имя соединителя можно найти в службе синхронизации. Это будет имя наподобие "contoso.com — AAD" для Azure AD.
+3. Выполните команду: `CSExportAnalyzer %temp%\export.xml > %temp%\export.csv`. Теперь в папке %temp% есть файл export.csv, который можно просмотреть в Microsoft Excel. Этот файл содержит все изменения, которые будут экспортированы.
 4. Внесите необходимые изменения в данные и конфигурацию и выполните описанные выше действия (импорт, синхронизация и проверка) повторно, чтобы привести изменения, которые предстоит экспортировать, в нужный вид.
 
 **Изучите файл export.csv**. Большая часть файла не нуждается в объяснении. Вот некоторые сокращения, которые помогут понять содержимое.
@@ -152,9 +152,9 @@ write-host "Importing XML" -ForegroundColor Yellow
 $resolvedXMLtoimport=Resolve-Path -Path ([Environment]::ExpandEnvironmentVariables($xmltoimport))
 
 #use an XmlReader to deal with even large files
-$result=$reader = [System.Xml.XmlReader]::Create($resolvedXMLtoimport) 
+$result=$reader = [System.Xml.XmlReader]::Create($resolvedXMLtoimport) 
 $result=$reader.ReadToDescendant('cs-object')
-do 
+do 
 {
     #create the object placeholder
     #adding them up here means we can enforce consistency
@@ -271,5 +271,5 @@ $objOutputUsers | Export-Csv -path processedusers${outputfilecount}.csv -NoTypeI
 ## <a name="next-steps"></a>Дополнительная информация
 **Обзорные статьи**  
 
-* [Службы синхронизации Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)  
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)  
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)  

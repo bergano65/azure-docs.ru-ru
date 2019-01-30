@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 10/11/2018
 ms.author: raynew
-ms.openlocfilehash: 6f894310157432a6e03e6ec4753f5efc2d8ac66d
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 149a15353a7fd1d698af306971ecb0949db4c165
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54267425"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817237"
 ---
 # <a name="contoso-migration-rearchitect-an-on-premises-app-to-an-azure-container-and-azure-sql-database"></a>Миграция Contoso. Повторное проектирование локального приложения на контейнеры Azure и Базу данных SQL Azure
 
@@ -282,7 +282,7 @@ ms.locfileid: "54267425"
 
 8. Для развертывания Azure DevOps Services необходимо определить значение сертификата в кодировке Base64. Они делают это на локальной рабочей станции разработчика с помощью PowerShell. Они вставляют выходные данные в текстовый файл для последующего использования.
 
-    ```
+    ```powershell
         [System.Convert]::ToBase64String([System.IO.File]::ReadAllBytes("C:\path\to\certificate.pfx")) 
     ```
 
@@ -386,7 +386,7 @@ ms.locfileid: "54267425"
 - Оно использует Entity Framework для интеграции с данными в базе данных SQL, предоставляя их через службу WCF.
 - Приложение WebForms взаимодействует со службой WCF.
 
-Администраторы Contoso преобразуют приложение в контейнер с помощью Visual Studio и инструментов SDK следующим образом:
+Администраторы Contoso преобразуют приложение в контейнер с помощью Visual Studio и SDK Tools следующим образом:
 
 
 1. Используя Visual Studio, они просматривают открытый файл решения (SmartHotel.Registration.sln) в каталоге **SmartHotel360-internal-booking-apps\src\Registration** локального репозитория.  Показаны два приложения. Веб-интерфейс SmartHotel.Registration.Web и приложение службы WCF SmartHotel.Registration.WCF.
@@ -530,7 +530,7 @@ ms.locfileid: "54267425"
 5. На портале открывается новая база данных > **Коллекция** > **Документы**, а затем — **Новый документ**.
 6. Далее в окно документа вставляется код JSON, приведенный ниже. Это пример данных в виде одного твита.
 
-    ```
+    ```json
     {
             "id": "2ed5e734-8034-bf3a-ac85-705b7713d911",
             "tweetId": 927750234331580911,
@@ -565,11 +565,11 @@ ms.locfileid: "54267425"
 
 2. Заполняются следующие два параметра:
 
-   ```
+   ```xml
    <Parameter Name="SentimentIntegration.CosmosDBEndpoint" Value="[URI]" />
    ```
    
-   ```
+   ```xml
    <Parameter Name="SentimentIntegration.CosmosDBAuthKey" Value="[Key]" />
    ```
 

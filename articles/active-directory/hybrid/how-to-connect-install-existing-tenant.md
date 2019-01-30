@@ -1,10 +1,10 @@
 ---
-title: Использование Azure AD Connect при наличии существующего клиента Azure AD | Документация Майкрософт
+title: 'Azure AD Connect выполняет следующие функции: при наличии существующего клиента Azure AD | Документация Майкрософт'
 description: В этом разделе описывается использование Connect при наличии существующего клиента Azure AD.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: ''
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 07/13/2017
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 6425c2cd77cc32e296c75504d3fd01a5b5e583e9
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 6f0c16a86d4e3dbe582f1471d2b94e1ec85b70b5
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46305793"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54475925"
 ---
-# <a name="azure-ad-connect-when-you-have-an-existent-tenant"></a>Azure AD Connect: если имеется существующий клиент
+# <a name="azure-ad-connect-when-you-have-an-existent-tenant"></a>Azure AD Connect выполняет следующие функции: при наличии существующего клиента Azure AD
 В большинстве разделов об использовании Azure AD Connect предполагается, что вы начинаете с нового клиента Azure AD, в котором отсутствуют какие-либо пользователи или другие объекты. Но если вы начали с клиента Azure AD, заполнили его пользователями и другими объектами, а теперь хотите использовать Connect, то этот раздел предназначен именно для вас.
 
 ## <a name="the-basics"></a>Основные сведения

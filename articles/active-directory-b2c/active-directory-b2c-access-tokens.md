@@ -3,21 +3,21 @@ title: Запрос маркеров доступа в Azure Active Directory B2
 description: В этой статье описывается, как настроить клиентское приложение и получить маркер доступа.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 08/09/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: 2043e0fc9fa63903073311856e7e8d31fb34c506
-ms.sourcegitcommit: 00dd50f9528ff6a049a3c5f4abb2f691bf0b355a
+ms.openlocfilehash: f3db56c7ce61960fca0e5347b2385bcc65a88354
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2018
-ms.locfileid: "51015355"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54845152"
 ---
-# <a name="azure-ad-b2c-requesting-access-tokens"></a>Azure AD B2C: запрос маркеров доступа
+# <a name="azure-ad-b2c-requesting-access-tokens"></a>Azure AD B2C. Запрос маркеров доступа
 
 Маркер доступа (в ответах Azure AD B2C обозначается как **access\_token**) является разновидностью маркера безопасности, с помощью которого клиенты могут получить доступ к ресурсам, защищенным  [сервером авторизации](active-directory-b2c-reference-protocols.md), таким как веб-API. Они представлены в виде [маркеров JWT](active-directory-b2c-reference-tokens.md) и содержат сведения о целевом сервере ресурсов и предоставленных разрешениях для сервера. При вызове сервера ресурсов маркер доступа должен присутствовать в HTTP-запросе.
 
@@ -105,8 +105,8 @@ scope=https%3A%2F%2Fcontoso.onmicrosoft.com%2Fnotes%2Fread%20openid%20offline_ac
 
 Стандартное утверждение OpenID Connect определяет несколько специальных значений scope. Следующие специальные области представляют право доступа к профилю пользователя:
 
-* **openid** — запрашивает маркер идентификатора;
-* **offline\_access** — запрашивает маркер обновления (с помощью [потоков кода аутентификации](active-directory-b2c-reference-oauth-code.md)).
+* **OpenId**: запрашивает маркер идентификатора.
+* **offline\_access**: запрашивает маркер обновления (с помощью [потоков кода аутентификации](active-directory-b2c-reference-oauth-code.md)).
 
 Если параметр `response_type` в запросе `/authorize` включает `token`, параметр `scope` должен содержать хотя бы одну область ресурса (отличную от `openid` и `offline_access`), которая будет предоставлена. В противном случае запрос `/authorize` завершится ошибкой.
 

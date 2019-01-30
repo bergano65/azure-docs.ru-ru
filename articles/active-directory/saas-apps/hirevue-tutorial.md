@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с HireVue | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с HireVue | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в HireVue.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: aadfc342-14db-4d74-a83d-f0c76f0cf63c
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: jeedes
-ms.openlocfilehash: f208a0c1a5f2fd0c07e6df9e96004d481fd06870
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b06e1bf28a50a0fdfd6dfe011ae88b0d72bbfe54
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39433758"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54827998"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hirevue"></a>Руководство. Интеграция Azure Active Directory с HireVue
 
@@ -144,7 +144,7 @@ ms.locfileid: "39433758"
 1. Чтобы настроить единый вход на стороне **HireVue**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки HireVue](mailto:samlsupport@hirevue.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

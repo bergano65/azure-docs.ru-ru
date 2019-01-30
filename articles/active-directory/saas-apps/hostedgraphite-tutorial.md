@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Hosted Graphite | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Hosted Graphite | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Hosted Graphite.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: a1ac4d7f-d079-4f3c-b6da-0f520d427ceb
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/22/2017
 ms.author: jeedes
-ms.openlocfilehash: c64e54b80b6295358036d054af14ebe85432d3f6
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 8aefa0580e6a9a1e446dd4861a5627ea2a4d36ce
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39437385"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54811882"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hosted-graphite"></a>Учебник. Интеграция Azure Active Directory с Hosted Graphite
+# <a name="tutorial-azure-active-directory-integration-with-hosted-graphite"></a>Руководство. Интеграция Azure Active Directory с Hosted Graphite
 
 В этом руководстве описано, как интегрировать Hosted Graphite с Azure Active Directory (Azure AD).
 
@@ -166,7 +166,7 @@ ms.locfileid: "39437385"
 1. Нажмите кнопку **Сохранить** .
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

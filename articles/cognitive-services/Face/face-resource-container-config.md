@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: text-analytics
 ms.topic: conceptual
-ms.date: 11/14/2018
+ms.date: 01/22/2019
 ms.author: diberry
-ms.openlocfilehash: eabbe8d771520d5b1d5360a3d86b96d27ea08277
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.openlocfilehash: a75f5ec11644bbd64a6bafeb8585371437eedc3b
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2019
-ms.locfileid: "54359448"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54476926"
 ---
 # <a name="configure-containers"></a>Настройка контейнеров
 
@@ -33,6 +33,7 @@ ms.locfileid: "54359448"
 * [CloudAI](#cloudai-configuration-settings)
 * [Eula](#eula-configuration-setting)
 * [Fluentd](#fluentd-configuration-settings)
+* [Параметры учетных данных прокси-сервера HTTP](#http-proxy-credentials-settings)
 * [ведению журналов](#logging-configuration-settings)
 * [Подключения](#mounts-configuration-settings)
 
@@ -162,6 +163,11 @@ ms.locfileid: "54359448"
 | `TlsConnectionEstablishmentTimeoutMs` | Целое число  | Время ожидания (в миллисекундах) до установки соединения по протоколу SSL/TLS с сервером Fluentd. Значение по умолчанию — 10 000 миллисекунд (10 секунд).<br/> Если для параметра `UseTLS` задано значение false, то это значение игнорируется. |
 | `UseTLS` | Логическое | Указывает, должен ли контейнер использовать протокол SSL/TLS для связи с сервером Fluentd. По умолчанию для этого параметра используется значение false. |
 
+
+## <a name="http-proxy-credentials-settings"></a>Параметры учетных данных прокси-сервера HTTP
+
+[!INCLUDE [Container shared configuration fluentd settings](../../../includes/cognitive-services-containers-configuration-shared-settings-http-proxy.md)]
+
 ## <a name="logging-configuration-settings"></a>Параметры конфигурации ведения журнала
 
 Параметры конфигурации `Logging` управляют поддержкой ведения журнала ASP.NET Core для контейнера. Вы можете использовать для контейнера те же параметры конфигурации и значения, что и для приложения ASP.NET Core. Контейнер распознавания лиц поддерживает указанных ниже поставщиков ведения журналов.
@@ -212,3 +218,7 @@ ms.locfileid: "54359448"
   ```
 
 Контейнер распознавания лиц не использует входные или выходные подключения для хранения данных обучения и баз данных. Вместо этого контейнер распознавания лиц предоставляет сценарии хранения для управления данными обучения и баз данных. Дополнительные сведения об использовании сценариев хранения см. в разделе [Параметры сценариев хранения](#storage-scenario-settings).
+
+## <a name="next-steps"></a>Дополнительная информация
+
+* [Поддержка контейнеров в Azure Cognitive Services](../cognitive-services-container-support.md)

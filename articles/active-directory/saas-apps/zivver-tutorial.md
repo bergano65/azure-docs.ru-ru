@@ -1,10 +1,10 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ZIVVER | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ZIVVER | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ZIVVER.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 64cb7ea0-df6c-4963-84d8-6f435980e2de
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: jeedes
-ms.openlocfilehash: b86a797fe092eccb097c6fbb34f1de7ee341c418
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 39d46b3fc4dfcc85d228019def0c26050d43b179
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39055785"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54824819"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zivver"></a>Руководство. Интеграция Azure Active Directory с ZIVVER
 
@@ -123,7 +123,7 @@ ms.locfileid: "39055785"
 6. Чтобы настроить единый вход на стороне **ZIVVER**, отправьте в [службу поддержки ZIVVER](https://support.zivver.com) скачанный **XML-файл метаданных**. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -196,7 +196,7 @@ ms.locfileid: "39055785"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку ZIVVER на панели доступа, вы автоматически войдете в приложение ZIVVER.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

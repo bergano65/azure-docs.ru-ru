@@ -3,19 +3,19 @@ title: Защита служб RESTful с использованием обыч�
 description: Сведения о защите пользовательского обмена утверждениями REST API в системе Azure AD B2C с помощью обычной аутентификации HTTP.
 services: active-directory-b2c
 author: davidmu1
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/25/2017
 ms.author: davidmu
 ms.component: B2C
-ms.openlocfilehash: e6cff4e2daf86b63bc0db0d4f2d537322d2841df
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: dcabcbbce78b83c0d4328e0f5b1088c172bcfedb
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47409309"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54850690"
 ---
 # <a name="secure-your-restful-services-by-using-http-basic-authentication"></a>Защита служб RESTful с использованием обычной проверки подлинности HTTP
 
@@ -30,9 +30,9 @@ ms.locfileid: "47409309"
 ## <a name="prerequisites"></a>Предварительные требования
 Выполните действия из статьи: [Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных](active-directory-b2c-custom-rest-api-netfw.md).
 
-## <a name="step-1-add-authentication-support"></a>Шаг 1. Добавление поддержки аутентификации
+## <a name="step-1-add-authentication-support"></a>Шаг 1. Добавление поддержки проверки подлинности
 
-### <a name="step-11-add-application-settings-to-your-projects-webconfig-file"></a>Шаг 1.1. Добавление параметров приложения в файл проекта web.config
+### <a name="step-11-add-application-settings-to-your-projects-webconfig-file"></a>Шаг 1.1. Добавление параметров приложения в файл web.config проекта
 1. Откройте ранее созданный проект Visual Studio. 
 
 2. Добавьте следующие параметры приложения в элемент `appSettings` в файле web.config:
@@ -54,7 +54,7 @@ ms.locfileid: "47409309"
     [System.Convert]::ToBase64String($bytes)
     ```
 
-### <a name="step-12-install-owin-libraries"></a>Шаг 1.2. Установка библиотек OWIN
+### <a name="step-12-install-owin-libraries"></a>Шаг 1.2. Установка библиотек OWIN
 Сначала добавьте в проект пакеты NuGet для ПО промежуточного слоя OWIN с помощью консоли диспетчера пакетов Visual Studio.
 
 ```
@@ -63,7 +63,7 @@ PM> Install-Package Owin
 PM> Install-Package Microsoft.Owin.Host.SystemWeb
 ```
 
-### <a name="step-13-add-an-authentication-middleware-class"></a>Шаг 1.3. Настройка класса ПО промежуточного слоя для аутентификации
+### <a name="step-13-add-an-authentication-middleware-class"></a>Шаг 1.3. Добавление класса ПО промежуточного слоя для аутентификации
 Добавьте класс `ClientAuthMiddleware.cs` в папку *App_Start*. Для этого выполните следующие действия:
 
 1. Щелкните правой кнопкой мыши папку *App_Start*, выберите **Добавить**, а затем — **Класс**.
@@ -186,7 +186,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
     }
     ```
 
-### <a name="step-14-add-an-owin-startup-class"></a>Шаг 1.4. Добавление класса запуска OWIN
+### <a name="step-14-add-an-owin-startup-class"></a>Шаг 1.4. Добавление класса запуска OWIN
 Добавьте класс запуска OWIN с именем `Startup.cs` в API. Для этого выполните следующие действия:
 1. Щелкните проект правой кнопкой мыши и выберите **Добавить** > **Новый элемент**, после чего найдите **OWIN**.
 
@@ -211,18 +211,18 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
     }
     ```
 
-### <a name="step-15-protect-the-identity-api-class"></a>Шаг 1.5. Защита класса API для идентификации
+### <a name="step-15-protect-the-identity-api-class"></a>Шаг 1.5. Защита класса API для идентификации
 Откройте файл Controllers\IdentityController.cs и добавьте в класс контроллера тег `[Authorize]`. Тег предоставляет доступ к контроллеру только тем пользователям, которые отвечают требованиям к авторизации.
 
 ![Добавление тега [Authorize] в контроллер](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-secure-basic-authorize.png)
 
-## <a name="step-2-publish-to-azure"></a>Шаг 2. Публикация в Azure
+## <a name="step-2-publish-to-azure"></a>Шаг 2. Публикация в Azure
 Чтобы опубликовать проект, в обозревателе решений щелкните правой кнопкой мыши проект **Contoso.AADB2C.API** и выберите **Опубликовать**.
 
-## <a name="step-3-add-the-restful-services-app-id-and-app-secret-to-azure-ad-b2c"></a>Шаг 3. Добавление идентификатора и секрета приложения службы RESTful в Azure AD B2C
+## <a name="step-3-add-the-restful-services-app-id-and-app-secret-to-azure-ad-b2c"></a>Шаг 3. Добавление идентификатора и секрета приложения службы RESTful в Azure AD B2C
 Защитив службу RESTful при помощи идентификатора (имя пользователя) и секрета клиента, следует сохранить эти учетные данные в клиенте Azure AD B2C. Пользовательская политика предоставляет учетные данные при вызове служб RESTful. 
 
-### <a name="step-31-add-a-restful-services-client-id"></a>Шаг 3.1. Добавление идентификатора клиента служб RESTful
+### <a name="step-31-add-a-restful-services-client-id"></a>Шаг 3.1. Добавление идентификатора клиента служб RESTful
 1. В клиенте Azure AD B2C выберите **B2C Settings** (Параметры B2C)  >  **Identity Experience Framework**.
 
 
@@ -243,7 +243,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 9. Убедитесь, что вы создали ключ `B2C_1A_B2cRestClientId`.
 
-### <a name="step-32-add-a-restful-services-client-secret"></a>Шаг 3.2. Добавление секрета клиента служб RESTful
+### <a name="step-32-add-a-restful-services-client-secret"></a>Шаг 3.2. Добавление секрета клиента служб RESTful
 1. В клиенте Azure AD B2C выберите **B2C Settings** (Параметры B2C)  >  **Identity Experience Framework**.
 
 2. Выберите **Policy Keys** (Ключи политики), чтобы просмотреть доступные в клиенте ключи.
@@ -263,7 +263,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
 
 9. Убедитесь, что вы создали ключ `B2C_1A_B2cRestClientSecret`.
 
-## <a name="step-4-change-the-technical-profile-to-support-basic-authentication-in-your-extension-policy"></a>Шаг 4. Изменение технического профиля для поддержки обычной проверки подлинности в политике расширения
+## <a name="step-4-change-the-technical-profile-to-support-basic-authentication-in-your-extension-policy"></a>Шаг 4. Изменение технического профиля для поддержки обычной аутентификации в политике расширения
 1. В рабочей папке откройте файл политики расширения (TrustFrameworkExtensions.xml).
 
 2. Найдите узел `<TechnicalProfile>`, содержащий `Id="REST-API-SignUp"`.
@@ -287,7 +287,7 @@ PM> Install-Package Microsoft.Owin.Host.SystemWeb
     
     ![Добавление XML-элементов для простой аутентификации](media/aadb2c-ief-rest-api-netfw-secure-basic/rest-api-netfw-secure-basic-add-1.png)
 
-## <a name="step-5-upload-the-policy-to-your-tenant"></a>Шаг 5. Отправка политики в клиент
+## <a name="step-5-upload-the-policy-to-your-tenant"></a>Шаг 5. Отправка политики в клиент
 
 1. На [портале Azure](https://portal.azure.com) переключитесь в [контекст клиента Azure AD B2C](active-directory-b2c-navigate-to-b2c-context.md) и откройте **Azure AD B2C**.
 

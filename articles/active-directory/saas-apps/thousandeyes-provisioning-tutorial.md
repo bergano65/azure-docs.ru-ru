@@ -1,11 +1,11 @@
 ---
-title: Руководство по настройке ThousandEyes для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка ThousandEyes для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отзыва учетных записей пользователей в ThousandEyes.
 services: active-directory
 documentationcenter: ''
 author: asmalser-msft
 writer: asmalser-msft
-manager: mtillman
+manager: daveba
 ms.assetid: d4ca2365-6729-48f7-bb7f-c0f5ffe740a3
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: asmalser-msft
-ms.openlocfilehash: d2912c687d4968a239d5af747df4115ffd71bbeb
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 2df899e6cb0078cdf949c3f8257719b00554e85b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44345766"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54815726"
 ---
-# <a name="tutorial-configure-thousandeyes-for-automatic-user-provisioning"></a>Руководство по настройке ThousandEyes для автоматической подготовки пользователей
+# <a name="tutorial-configure-thousandeyes-for-automatic-user-provisioning"></a>Руководство. Настройка ThousandEyes для автоматической подготовки пользователей
 
 
 Цель этого руководства — показать, как в ThousandEyes и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в ThousandEyes. 
@@ -74,7 +74,7 @@ ms.locfileid: "44345766"
 
     ![Подготовка ThousandEyes](./media/thousandeyes-provisioning-tutorial/ThousandEyes1.png)
 
-5. В разделе **Учетные данные администратора** введите **секретный токен**, созданный вашей учетной записью ThousandEyes (его можно найти в своей учетной записи ThousandEyes: **Security & Authentication** (Безопасность и аутентификация)). 
+5. В разделе **Учетные данные администратора** введите **Токен носителя OAuth**, созданный вашей учетной записью ThousandEyes (его можно найти и (или) сгенерировать в своей учетной записи ThousandEyes в разделе **Профиль**).
 
     ![Подготовка ThousandEyes](./media/thousandeyes-provisioning-tutorial/ThousandEyes2.png)
 

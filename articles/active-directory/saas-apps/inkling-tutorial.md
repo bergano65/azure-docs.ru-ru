@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Inkling | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Inkling | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Inkling.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 64c7ee45-ee8a-42f7-bf04-fd0e00833ea9
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/06/2017
 ms.author: jeedes
-ms.openlocfilehash: 339c924fc03faddae6326b79cc376b59c567829e
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 31e00c5810e33433d58820f4db300b935ad7baaf
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49116561"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54811287"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-inkling"></a>Руководство по интеграции Azure Active Directory с Inkling
+# <a name="tutorial-azure-active-directory-integration-with-inkling"></a>Руководство. Интеграция Azure Active Directory с Inkling
 
 В этом руководстве описано, как интегрировать приложение Inkling с Azure Active Directory (Azure AD).
 

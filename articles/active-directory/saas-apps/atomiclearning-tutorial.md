@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Atomic Learning | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Atomic Learning | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложение Atomic Learning.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 495f54a6-e6c4-41b0-aafa-a6283d33efc8
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/14/2017
 ms.author: jeedes
-ms.openlocfilehash: 57239be1b4976d1c42a9bbee5520c1149c7d5091
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 5a002357f179fd6ba866fbf288510e527daca682
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39425295"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54819413"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-atomic-learning"></a>Руководство. Интеграция Azure Active Directory с Atomic Learning
 
@@ -128,7 +128,7 @@ ms.locfileid: "39425295"
 1. Чтобы настроить единый вход на стороне **Atomic Learning**, отправьте скачанный **XML-файл метаданных** [группе поддержки Atomic Learning](mailto:cs@atomiclearning.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

@@ -4,7 +4,7 @@ description: Общие сведения об отчетах о действия
 services: active-directory
 documentationcenter: ''
 author: priyamohanram
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 4b18127b-d1d0-4bdc-8f9c-6a4c991c5f75
 ms.service: active-directory
@@ -16,12 +16,12 @@ ms.component: report-monitor
 ms.date: 11/13/2018
 ms.author: priyamo
 ms.reviewer: dhanyahk
-ms.openlocfilehash: e1b1102594e7e4470c08cb0f18068dd368c0fe7a
-ms.sourcegitcommit: f4b78e2c9962d3139a910a4d222d02cda1474440
+ms.openlocfilehash: 73f90d1df2c1a6a0655a61026112cc2a7a73cb1e
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54245095"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54808635"
 ---
 # <a name="sign-in-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях входа на портале Azure Active Directory
 
@@ -161,7 +161,7 @@ ms.locfileid: "54245095"
 
 Если вы хотите запустить сценарий на компьютере **Windows 10**, необходимо сначала выполнить несколько дополнительных действий. 
 
-1. Установите [модуль AzureRM](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-6.4.0l).
+1. Установите [модуль AzureRM](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-6.4.0l).
 2. Импортируйте этот модуль, открыв командную строку PowerShell и выполнив команду **Import-Module AzureRM**.
 3. Выполните команду **Set-ExecutionPolicy unrestricted** и выберите **Да, для всех**. 
 4. Теперь вы можете выполнить скачанный сценарий PowerShell с правами администратора, чтобы создать CSV-файл.
@@ -203,7 +203,10 @@ ms.locfileid: "54245095"
 - Дата
 - Требуется многофакторная идентификация
 - состояние входа.
- 
+
+> [!NOTE]
+> IP-адреса выдаются таким образом, что определенная связь между IP-адресом и физическим расположением компьютера с этим адресом отсутствует. Сопоставление IP-адресов осложняется тем, что поставщики мобильной связи и виртуальные частные сети выдают IP-адреса из центральных пулов, которые нередко находятся очень далеко от места, где фактически используется клиентское устройство. В настоящее время в отчетах Azure AD преобразование IP-адреса в физическое расположение не гарантируется и осуществляется на основе трассировок, данных реестра, обратных просмотров и других сведений.
+
 На странице **Пользователи** можно получить полный обзор всех входов пользователей, щелкнув **Вход в систему** в разделе **Действия**.
 
 ![Действие входа](./media/concept-sign-ins/08.png "Действие входа")

@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с приложением SAP Cloud Platform Identity Authentication | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication | Документация Майкрософт
 description: Сведения о настройке единого входа в Azure Active Directory и SAP Cloud Platform Identity Authentication.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 1c1320d1-7ba4-4b5f-926f-4996b44d9b5e
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/03/2018
 ms.author: jeedes
-ms.openlocfilehash: 266c9523f45294899e3cddbe782cbc54846eb119
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: ecd9df8efdcd6d7fd7da26ff5cf569ef7e63573f
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39422313"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54822065"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform-identity-authentication"></a>Руководство по интеграции Azure Active Directory с приложением SAP Cloud Platform Identity Authentication
+# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform-identity-authentication"></a>Руководство. Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication
 
 В этом руководстве описано, как интегрировать приложение SAP Cloud Platform Identity Authentication с Azure Active Directory (AAD). Приложение SAP Cloud Platform Identity Authentication используется в качестве "промежуточного" поставщика удостоверений для доступа к приложениям SAP, основным поставщиком удостоверений для которых является Azure AD.
 

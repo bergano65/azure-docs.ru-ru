@@ -6,12 +6,12 @@ author: vhorne
 ms.service: application-gateway
 ms.date: 1/8/2019
 ms.author: victorh
-ms.openlocfilehash: 1ada74f5c85ef327957ec4981e83f68bcafea858
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
+ms.openlocfilehash: 95d443eeebf2fe5a8fad185210f88576a5f21f6a
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188765"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54435301"
 ---
 # <a name="url-path-based-routing-overview"></a>Общие сведения о маршрутизации на основе URL-путей
 
@@ -23,7 +23,7 @@ ms.locfileid: "54188765"
 
 ![imageURLroute](./media/application-gateway-url-route-overview/figure1.png)
 
-Запросы для http://contoso.com/video/* направляются в VideoServerPool, а запросы для http://contoso.com/images/* — в ImageServerPool. Если ни один из шаблонов пути не подходит, выбирается пул DefaultServerPool.
+Запросы для http\://contoso.com/video/* направляются в VideoServerPool, а запросы для http\://contoso.com/images/* — в ImageServerPool. Если ни один из шаблонов пути не подходит, выбирается пул DefaultServerPool.
 
 > [!IMPORTANT]
 > Правила обрабатываются в том порядке, в котором они указаны на портале. Мы настоятельно рекомендуем в первую очередь настроить многосайтовые прослушиватели, чтобы настроить базовый прослушиватель.  Это гарантирует, что трафик будет перенаправляться на правильный внутренний сервер. Если базовый прослушиватель стоит первым в списке и совпадает с входящим запросом, он будет обрабатываться прослушивателем.

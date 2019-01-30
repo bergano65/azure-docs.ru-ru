@@ -3,8 +3,8 @@ title: Отправка локализованных уведомлений на
 description: Узнайте, как отправлять локализованные уведомления на устройства iOS с помощью службы "Центры уведомлений Azure".
 services: notification-hubs
 documentationcenter: ios
-author: dimazaid
-manager: kpiteira
+author: jwargo
+manager: patniko
 editor: spelluru
 ms.assetid: 484914b5-e081-4a05-a84a-798bbd89d428
 ms.service: notification-hubs
@@ -12,16 +12,16 @@ ms.workload: mobile
 ms.tgt_pltfrm: ios
 ms.devlang: objective-c
 ms.topic: article
-ms.date: 04/14/2018
-ms.author: dimazaid
-ms.openlocfilehash: d19fc4290f32359d3af66d96512f65abb17f5d34
-ms.sourcegitcommit: ebb460ed4f1331feb56052ea84509c2d5e9bd65c
+ms.date: 01/04/2019
+ms.author: jowargo
+ms.openlocfilehash: 56662a40df6abeb672992a2da4c04692e7280021
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42918629"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54451703"
 ---
-# <a name="tutorial-push-localized-notifications-to-ios-devices-using-azure-notification-hubs"></a>Руководство по отправке локализованных уведомлений на устройства iOS с помощью службы "Центры уведомлений Azure" 
+# <a name="tutorial-push-localized-notifications-to-ios-devices-using-azure-notification-hubs"></a>Руководство. Отправка локализованных уведомлений на устройства iOS с помощью службы "Центры уведомлений Azure"
 
 > [!div class="op_single_selector"]
 > * [C# в Магазине Windows](notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md)
@@ -63,7 +63,7 @@ ms.locfileid: "42918629"
 
 ```json
 {
-    aps:{
+    aps: {
         alert: "$(News_French)"
     }
 }
@@ -73,14 +73,14 @@ ms.locfileid: "42918629"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Выполните задания руководства [Отправка push-уведомлений на определенные устройства iOS с помощью инфраструктуры "Центры уведомлений Azure"](notification-hubs-ios-xplat-segmented-apns-push-notification.md) и подготовьте код, так как он используется в текущем руководстве.
-- Visual Studio 2017 является необязательным.
+* Выполните задания руководства [Отправка push-уведомлений на определенные устройства iOS с помощью инфраструктуры "Центры уведомлений Azure"](notification-hubs-ios-xplat-segmented-apns-push-notification.md) и подготовьте код, так как он используется в текущем руководстве.
+* Visual Studio 2017 является необязательным.
 
 ## <a name="update-the-app-user-interface"></a>обновление пользовательского интерфейса приложения;
 
 В этом разделе вы измените приложение Breaking News, созданное в разделе [Использование концентраторов уведомлений для передачи экстренных новостей] для отправки локализованных экстренных новостей с помощью шаблонов.
 
-В файл **MainStoryboard_iPhone.storyboard** добавьте Segmented Control для трех языков: английского, французского и китайского (мандаринский диалект).
+В `MainStoryboard_iPhone.storyboard` добавьте сегментированный элемент для трех языков: английского, французского и мандаринского диалекта китайского языка.
 
 ![Создание раскадровки пользовательского интерфейса для iOS][13]
 
@@ -90,7 +90,7 @@ ms.locfileid: "42918629"
 
 ## <a name="build-the-ios-app"></a>Выполнение сборки приложения iOS
 
-1. Добавьте в файл Notification.h метод *retrieveLocale* и измените методы store и subscribe, как показано в коде ниже.
+1. В `Notification.h` добавьте метод `retrieveLocale` и измените методы store и subscribe, как показано в коде,приведенном ниже.
 
     ```objc
     - (void) storeCategoriesAndSubscribeWithLocale:(int) locale categories:(NSSet*) categories completion: (void (^)(NSError* error))completion;
@@ -101,7 +101,7 @@ ms.locfileid: "42918629"
 
     - (int) retrieveLocale;
     ```
-    Измените в файле Notification.m метод *storeCategoriesAndSubscribe* , добавив параметр языка и сохранив его в пользовательских параметрах по умолчанию:
+    В `Notification.m` измените метод `storeCategoriesAndSubscribe` путем добавления параметра `locale` и сохранения его в качестве пользователя по умолчанию.
 
     ```objc
     - (void) storeCategoriesAndSubscribeWithLocale:(int) locale categories:(NSSet *)categories completion:(void (^)(NSError *))completion {
@@ -139,7 +139,7 @@ ms.locfileid: "42918629"
     }
     ```
 
-    Вы используете метод *registerTemplateWithDeviceToken*, а не *registerNativeWithDeviceToken*. При регистрации шаблона вам необходимо предоставить шаблон json, а также имя шаблона (так как для приложения может возникнуть необходимость зарегистрировать различные шаблоны). Убедитесь, что ваши категории регистрируются как теги, так как вы хотите получать уведомления об этих новостях.
+    Используйте метод `registerTemplateWithDeviceToken` вместо `registerNativeWithDeviceToken`. При регистрации шаблона вам необходимо предоставить шаблон json, а также имя шаблона (так как для приложения может возникнуть необходимость зарегистрировать различные шаблоны). Убедитесь, что ваши категории регистрируются как теги, поскольку вы хотите получать уведомления об этих новостях.
 
     Добавьте метод для извлечения языкового стандарта из пользовательских параметров по умолчанию.
 
@@ -153,13 +153,13 @@ ms.locfileid: "42918629"
     }
     ```
 
-2. Теперь, когда вы внесли изменения в класс Notifications, необходимо убедиться в том, что ViewController использует новый UISegmentControl. Добавьте следующую строку в метод *viewDidLoad* , чтобы убедиться в том, что отображается языковой стандарт, выбранный в данный момент:
+2. После изменения класса `Notifications` необходимо убедиться, что `ViewController` использует новый `UISegmentControl`. Добавьте следующую строку в метод `viewDidLoad`, чтобы убедиться в том, что отображается языковой стандарт, выбранный в данный момент.
 
     ```objc
     self.Locale.selectedSegmentIndex = [notifications retrieveLocale];
     ```
 
-    Затем в методе *subscribe* замените свой вызов *storeCategoriesAndSubscribe* следующим кодом.
+    Затем в своем методе `subscribe` измените вызов `storeCategoriesAndSubscribe` на следующий код.
 
     ```objc
     [notifications storeCategoriesAndSubscribeWithLocale: self.Locale.selectedSegmentIndex categories:[NSSet setWithArray:categories] completion: ^(NSError* error) {
@@ -174,7 +174,7 @@ ms.locfileid: "42918629"
     }];
     ```
 
-3. И наконец, необходимо обновить метод *didRegisterForRemoteNotificationsWithDeviceToken* в методе AppDelegate.m, чтобы правильно обновить регистрацию при запуске приложения. Замените вызов метода уведомления *subscribe* следующим кодом.
+3. И наконец, необходимо обновить метод `didRegisterForRemoteNotificationsWithDeviceToken` в методе AppDelegate.m, чтобы правильно обновить регистрацию при запуске приложения. Замените вызов метода уведомлений `subscribe` следующим кодом.
 
     ```obj-c
     NSSet* categories = [self.notifications retrieveCategories];
@@ -261,20 +261,14 @@ ms.locfileid: "42918629"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы отправили локализованные уведомления на устройства iOS. Чтобы узнать, как отправлять push-уведомления конкретным пользователям приложений iOS, перейдите к следующему руководству. 
+В этом руководстве вы отправили локализованные уведомления на устройства iOS. Чтобы узнать, как отправлять push-уведомления конкретным пользователям приложений iOS, перейдите к следующему руководству.
 
 > [!div class="nextstepaction"]
 >[Отправка push-уведомлений определенным пользователям](notification-hubs-aspnet-backend-ios-apple-apns-notification.md)
 
 <!-- Images. -->
-
 [13]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized1.png
 [14]: ./media/notification-hubs-ios-send-localized-breaking-news/ios_localized2.png
-
-
-
-
-
 
 <!-- URLs. -->
 [How To: Service Bus Notification Hubs (iOS Apps)]: http://msdn.microsoft.com/library/jj927168.aspx
@@ -292,7 +286,6 @@ ms.locfileid: "42918629"
 [Push notifications to app users]: /develop/mobile/tutorials/push-notifications-to-users-ios
 [Authorize users with scripts]: /develop/mobile/tutorials/authorize-users-in-scripts-ios
 [JavaScript and HTML]: ../get-started-with-push-js.md
-
 [Windows Developer Preview registration steps for Mobile Services]: ../mobile-services-windows-developer-preview-registration.md
 [wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx

@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 01/16/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.openlocfilehash: e11db0cacb14ab94c40ebbf6cac356a08cc016f1
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: 81a47a730978a9ecdda7a09bbad0707d436fb116
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54352688"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54388473"
 ---
 # <a name="add-kubernetes-to-the-azure-stack-marketplace"></a>Добавление Kubernetes в Azure Stack Marketplace
 
@@ -60,9 +60,9 @@ ms.locfileid: "54352688"
 
     д. Выберите **Предложение**. Выберите имя созданного предложения. Запишите идентификатор подписки.
 
-## <a name="create-a-service-principle-and-credentials-in-ad-fs"></a>Создание субъекта-службы и учетных данных в AD FS
+## <a name="create-a-service-principal-and-credentials-in-ad-fs"></a>Создание субъекта-службы и учетных данных в AD FS
 
-Если вы используете службы федерации Active Directory (AD FS) для службы управления удостоверениями, необходимо будет создать субъект-службу для пользователей, развертывающих кластер Kubernetes.
+Если вы используете службы федерации Active Directory (AD FS) для службы управления удостоверениями, необходимо будет создать субъект-службу для пользователей, развертывающих кластер Kubernetes.
 
 1. Создайте и экспортируйте сертификат, используемый для создания субъекта-службы. В следующем фрагменте кода показано, как создать самозаверяющий сертификат. 
 
@@ -117,7 +117,7 @@ ms.locfileid: "54352688"
     - Откройте PowerShell с помощью командной строки с повышенными привилегиями. Выполните следующий скрипт, используя параметры, обновленные в соответствии с вашими значениями:
 
         ```PowerShell  
-        #Create service principle using the certificate
+        #Create service principal using the certificate
         $privilegedendpoint="<ERCS IP>"
         $applicationName="<application name>"
         #certificate store location. Eg. Cert:\LocalMachine\My
@@ -132,7 +132,7 @@ ms.locfileid: "54352688"
         # Creating a PSSession to the ERCS PrivilegedEndpoint
         $session = New-PSSession -ComputerName $privilegedendpoint -ConfigurationName PrivilegedEndpoint -Credential $creds
 
-        # Get Service Principle Information
+        # Get Service principal Information
         $ServicePrincipal = Invoke-Command -Session $session -ScriptBlock { New-GraphApplication -Name "$using:applicationName" -ClientCertificates $using:cert}
 
         # Get Stamp information
@@ -167,7 +167,7 @@ ms.locfileid: "54352688"
         $ServicePrincipal
         ```
 
-    - Сведения о субъекте-службе выглядят как приведенный ниже фрагмент кода
+    - Сведения о субъекте-службе выглядят как приведенный ниже фрагмент кода.
 
         ```Text  
         ApplicationIdentifier : S-1-5-21-1512385356-3796245103-1243299919-1356

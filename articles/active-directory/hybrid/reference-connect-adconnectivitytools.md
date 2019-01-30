@@ -1,21 +1,21 @@
 ---
-title: 'Azure AD Connect: справочник по модулю PowerShell ADConnectivityTools | Документация Майкрософт'
+title: Azure AD Connect. Справочник по модулю PowerShell ADConnectivityTools | Документация Майкрософт
 description: Этот документ содержит справочные сведения о модуле PowerShell ADConnectivityTools.psm1.
 author: billmath
-manager: mtillman
+manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.date: 10/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 9d63c35d82a98d816c18dd299a8e0e81baa5bc8d
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: e398814e9ce8b98d8b1079d6f6c429e829c99d21
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52425230"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54462103"
 ---
-# <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect: справочник по модулю PowerShell ADConnectivityTools
+# <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect.  Справочник по модулю PowerShell ADConnectivityTools
 Приведенная ниже документация содержит справочные сведения о модуле PowerShell ADConnectivityTools.psm1, который входит в состав Azure AD Connect.
 
 ## <a name="confirm-dnsconnectivity"></a>Confirm-DnsConnectivity
@@ -693,9 +693,9 @@ Accept wildcard characters: False
 ```
 
 #### <a name="-autocreateconnectoraccount"></a>-AutoCreateConnectorAccount
-Для пользовательской установки: флаг, имеющий значение $True, если пользователь выбрал "Создайте учетную запись AD" в окне создания учетной записи леса AD в мастере AAD Connect.
+Для пользовательской установки: флаг со значением $True, если пользователь выбрал "Создайте учетную запись AD" в окне создания учетной записи леса AD в мастере AAD Connect.
 Имеет значение $False, если пользователь выбрал "Использовать существующую учетную запись AD".
-Для экспресс-установки: значение этой переменной должно быть $True.
+Для экспресс-установки: для этой переменной должно быть задано значение $True.
 
 ```yaml
 Type: Boolean

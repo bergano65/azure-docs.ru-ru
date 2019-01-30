@@ -13,14 +13,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 07/18/2018
+ms.date: 1/23/2019
 ms.author: cwatson
-ms.openlocfilehash: de5fd6e52ab93132920b1c98188cbea92b9900b5
-ms.sourcegitcommit: 56d20d444e814800407a955d318a58917e87fe94
+ms.openlocfilehash: 88ea3a5daa1a740ab545201bc48b612ea6a56a44
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52584355"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54810335"
 ---
 # <a name="cancel-your-subscription-for-azure"></a>Отмена подписки в Azure
 
@@ -37,10 +37,11 @@ ms.locfileid: "52584355"
 ## <a name="cancel-subscription-using-the-azure-portal"></a>Отмена подписки с помощью портала Azure
 
 1. Выберите свою подписку на [странице подписок](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade) на портале Azure.
-1. Выберите подписку, которую нужно отменить, и щелкните **Отменить подписку**.
+2. Выберите подписку, которую нужно отменить.
+3. Выберите **Обзор**, а затем — **Отменить подписку**.
 
     ![Снимок экрана, на котором показана кнопка "Отмена"](./media/billing-how-to-cancel-azure-subscription/cancel_ibiza.png)
-1. Следуйте инструкциям и завершите отмену.
+3. Следуйте инструкциям и завершите отмену.
 
 ## <a name="what-happens-after-i-cancel-my-subscription"></a>Что происходит после отмены подписки?
 
@@ -60,4 +61,4 @@ ms.locfileid: "52584355"
 
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
-Если у вас есть вопросы или нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).

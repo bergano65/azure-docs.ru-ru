@@ -1,11 +1,11 @@
 ---
-title: Сквозная аутентификация Azure AD Connect — как это работает? | Документация Майкрософт
+title: 'Azure AD Connect выполняет следующие функции: Сквозная аутентификация Azure AD Connect — принцип работы | Документация Майкрософт'
 description: В этой статье описывается процедура сквозной аутентификации Azure Active Directory.
 services: active-directory
 keywords: сквозная проверка подлинности azure ad connect, установка active directory, необходимые компоненты для azure ad, единый вход
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
 ms.workload: identity
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 07/19/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 437800483004cdbff89814579137f4057133d0fb
-ms.sourcegitcommit: 799a4da85cf0fec54403688e88a934e6ad149001
+ms.openlocfilehash: 423edfecb7bfd69de9ef004686db4a05824d0857
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50913809"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54465438"
 ---
-# <a name="azure-active-directory-pass-through-authentication-technical-deep-dive"></a>Сквозная аутентификация Azure Active Directory — подробное техническое руководство
+# <a name="azure-active-directory-pass-through-authentication-technical-deep-dive"></a>Сквозная проверка подлинности Azure Active Directory Подробное техническое руководство
 Эта статья содержит обзор принципов работы сквозной аутентификации Azure Active Directory (Azure AD). Подробные технические сведения и информацию о безопасности см. в [руководстве по безопасности](how-to-connect-pta-security-deep-dive.md).
 
 ## <a name="how-does-azure-active-directory-pass-through-authentication-work"></a>Как работает сквозная аутентификация Azure Active Directory?
@@ -50,13 +50,13 @@ ms.locfileid: "50913809"
 ![Сквозная проверка подлинности](./media/how-to-connect-pta-how-it-works/pta2.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Текущие ограничения](how-to-connect-pta-current-limitations.md). Сведения о том, какие сценарии поддерживаются, а какие нет.
-- [Краткое руководство по сквозной аутентификации Azure Active Directory](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
+- [Текущие ограничения](how-to-connect-pta-current-limitations.md). Узнайте, какие сценарии поддерживаются, а какие нет.
+- [Краткое руководство](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
 - [Migrate from AD FS to Pass-through Authentication](https://aka.ms/adfstoPTADP) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
-- [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Настройте возможность интеллектуальной блокировки на клиенте для защиты учетных записей пользователей.
-- [Часто задаваемые вопросы](how-to-connect-pta-faq.md). Найдите ответы на часто задаваемые вопросы.
-- [Устранение неполадок](tshoot-connect-pass-through-authentication.md). Узнайте, как устранять распространенные проблемы со сквозной аутентификации.
-- [Руководство по безопасности](how-to-connect-pta-security-deep-dive.md). Получите дополнительные технические сведения о сквозной аутентификации.
-- [Простой единый вход Azure Active Directory](how-to-connect-sso.md). Узнайте подробнее об этой дополнительной функции.
+- [Смарт-блокировка](../authentication/howto-password-smart-lockout.md). Настройка функций смарт-блокировки на клиенте для защиты учетных записей пользователей.
+- [Часто задаваемые вопросы](how-to-connect-pta-faq.md). Ответы на часто задаваемые вопросы.
+- [Устранение неполадок](tshoot-connect-pass-through-authentication.md). Способы устранения распространенных неполадок со сквозной аутентификацией.
+- [Руководство по безопасности](how-to-connect-pta-security-deep-dive.md). Получите детальные технические сведения о компоненте сквозной проверки подлинности.
+- [Простой единый вход Azure AD](how-to-connect-sso.md). Сведения об этой дополнительной функции.
 - [UserVoice](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Оставить запрос на новые функции можно на форуме по Azure Active Directory.
 

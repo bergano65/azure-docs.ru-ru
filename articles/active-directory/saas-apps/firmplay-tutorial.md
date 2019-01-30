@@ -1,10 +1,10 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с FirmPlay — Employee Advocacy for Recruiting | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с FirmPlay — Employee Advocacy for Recruiting | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в FirmPlay — Employee Advocacy for Recruiting.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: a6799629-7546-43f8-a966-956db32864b1
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/15/2017
 ms.author: jeedes
-ms.openlocfilehash: abc29480e5f5531857cbf973d5386727c3d7f2ac
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 929494d5d802dbc545c750386a286029c4bf962d
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49114534"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54809808"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-firmplay---employee-advocacy-for-recruiting"></a>Руководство. Интеграция Azure Active Directory с FirmPlay — Employee Advocacy for Recruiting
+# <a name="tutorial-azure-active-directory-integration-with-firmplay---employee-advocacy-for-recruiting"></a>Руководство. Интеграция Azure Active Directory с FirmPlay — Employee Advocacy for Recruiting
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением FirmPlay — Employee Advocacy for Recruiting.
 
@@ -95,7 +95,7 @@ ms.locfileid: "49114534"
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя FirmPlay — Employee Advocacy for Recruiting](#creating-a-firmplay---employee-advocacy-for-recruiting-test-user)** требуется для дублирования пользователя Britta Simon в FirmPlay, который связан с представлением этого пользователя в Azure AD.
+1. **[Создание тестового пользователя FirmPlay — Employee Advocacy for Recruiting](#creating-a-firmplay---employee-advocacy-for-recruiting-test-user)** требуется для создания в FirmPlay — Employee Advocacy for Recruiting пользователя Britta Simon, связанного с соответствующим представлением в Azure AD.
 1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
 1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 

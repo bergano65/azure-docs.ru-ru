@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 01/09/2019
 ms.author: alkohli
-ms.openlocfilehash: 02780a9e9702a41f677595d74b9861ea6a51b572
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: 887c1d554cd5bd2b935178a77a2de19e687ca3f2
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54260441"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54450410"
 ---
 # <a name="tutorial-connect-set-up-activate-azure-data-box-gateway-preview"></a>Руководство. Подключение, настройка, активация Шлюза Azure Data Box (предварительная версия) 
 

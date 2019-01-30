@@ -11,15 +11,15 @@ ms.workload: na
 pms.tgt_pltfrm: na
 ms.devlang: PowerShell
 ms.topic: article
-ms.date: 1/14/2019
+ms.date: 01/22/2019
 ms.author: mabrigg
 ms.reviewer: ppacent
-ms.openlocfilehash: 7e01feff1344557c90f23bb006520111f58e437a
-ms.sourcegitcommit: 70471c4febc7835e643207420e515b6436235d29
+ms.openlocfilehash: 90910580fd7fc766376569de3ce43fc5ce297e8b
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54302686"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54469208"
 ---
 # <a name="scale-unit-node-actions-in-azure-stack"></a>Действия с узлами единицы масштабирования в Azure Stack
 
@@ -148,10 +148,26 @@ ms.locfileid: "54302686"
 
 Чтобы выполнить действие восстановления, откройте командную строку PowerShell с повышенными привилегиями и выполните следующий командлет.
 
-  ````PowerShell
+  ```PowerShell
   Repair-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -BMCIPv4Address <BMCIPv4Address>
-  ````
+  ```
+
+## <a name="shutdown"></a>Shutdown
+
+Действие **Завершение работы** перемещает все активные рабочие нагрузки в другие узлы той же самой единицы масштабирования. Затем действие завершает работу узла единицы масштабирования должным образом.
+
+После повторного запуска узла вам нужно запустить действие [Возобновить](#resume). Для рабочих нагрузок, которые работали на узле до его остановки, восстановление размещения не выполняется.
+
+Если не удается выполнить операцию завершения работы, попытайтесь запустить операцию [Слив](#drain) с помощью последующего выполнения операции завершения работы.
+
+Чтобы выполнить действие выключения, откройте командную строку PowerShell с повышенными привилегиями и выполните следующий командлет.
+
+  ```PowerShell
+  Stop-AzsScaleUnitNode -Location <RegionName> -Name <NodeName> -Shutdown
+  ```
+
+
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о модуле для администраторов Fabric в Azure Stack см. [здесь](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.5.0).
+Дополнительные сведения о модуле для администраторов Fabric в Azure Stack см. [здесь](https://docs.microsoft.com/powershell/module/azs.fabric.admin/?view=azurestackps-1.6.0).

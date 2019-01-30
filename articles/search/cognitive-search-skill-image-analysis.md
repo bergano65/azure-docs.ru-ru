@@ -8,25 +8,24 @@ ms.service: search
 ms.devlang: NA
 ms.workload: search
 ms.topic: conceptual
-ms.date: 05/01/2018
+ms.date: 01/17/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: fc8780c5b99ce98a55a6cb08cfaa6585e5a4e89a
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: f658f6bb9e66eda13dbf4213e37dcd96b17f76e7
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53313315"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54411023"
 ---
 #   <a name="image-analysis-cognitive-skill"></a>Когнитивный навык анализа изображений
 
-Навык **анализа изображений** извлекает полноценный набор визуальных компонентов на основе содержимого изображения. Например, можно создать заголовок из изображения, сформировать теги, а также определить знаменитостей и ориентиры.
+Навык **анализа изображений** извлекает полноценный набор визуальных компонентов на основе содержимого изображения. Например, можно создать заголовок из изображения, сформировать теги, а также определить знаменитостей и ориентиры. Этот навык использует модели машинного обучения, предоставляемые [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/home) в Cognitive Services. 
 
 > [!NOTE]
-> С 21 декабря 2018 г. вы сможете связывать ресурсы Cognitive Services с набором навыков службы "Поиск Azure". Благодаря этому мы сможем начать начислять плату за выполнение набора навыков. С этой даты мы также начнем начислять плату за извлечение изображений при открытии документов. Извлечение текста из документов будет выполняться бесплатно, как и прежде.
+> Начиная с 21 декабря 2018 г. можно [связывать ресурсы Cognitive Services](cognitive-search-attach-cognitive-services.md) с набором навыков службы "Поиск Azure". Это позволяет нам взимать плату за выполнение набора навыков. С этого момента мы также начали начислять плату за извлечение изображений при открытии документов. Извлечение текста из документов будет выполняться бесплатно, как и прежде.
 >
-> За операции с применением встроенных навыков взимается [плата по мере использования по имеющимся тарифам для служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/). За извлечение изображений взимается плата по тарифам для предварительной версии, как описано на странице [цен на службу "Поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400). Дополнительные сведения см. [здесь](cognitive-search-attach-cognitive-services.md).
-
+> За операции с применением [встроенных навыков](cognitive-search-predefined-skills.md) взимается [плата по мере использования по тарифам для служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services), как если бы вы выполнили эту задачу непосредственно. Плата за извлечение изображения взимается по тарифам службы "Поиск Azure", которая сейчас предлагается по цене предварительной версии. Дополнительные сведения см. на странице [Цены на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400) и в разделе [Как работает выставление счетов](search-sku-tier.md#how-billing-works).
 
 ## <a name="odatatype"></a>@odata.type  
 Microsoft.Skills.Vision.ImageAnalysisSkill 

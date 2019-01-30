@@ -3,18 +3,18 @@ title: Интеграция системы управления версиями
 description: В этой статье описывается интеграция системы управления версиями с GitHub в службе автоматизации Azure.
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 09/25/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: a6ae91ba768f9aa002c2814133b26dd152c7ef25
-ms.sourcegitcommit: 4edf9354a00bb63082c3b844b979165b64f46286
+ms.openlocfilehash: 8316e571e97fce65b3f8308709d3300bc585663f
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48784816"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54434875"
 ---
 # <a name="source-control-integration-in-azure-automation---legacy"></a>Интеграция системы управления версиями со службой автоматизации Azure — старая версия
 
@@ -79,7 +79,7 @@ ms.locfileid: "48784816"
 
     ![Переменные](media/automation-source-control-integration-legacy/automation_04_Variables.png)  
 
-    * **Система управления версиями службы автоматизации** будет добавлена в вашу учетную запись GitHub в виде авторизованного приложения. Чтобы просмотреть приложение, на домашней странице GitHub последовательно выберите **profile** (Профиль)  > **Settings** (Параметры)  > **Applications** (Приложения). Это приложение позволяет службе автоматизации Azure синхронизировать репозиторий GitHub с учетной записью службы автоматизации.  
+    * **Система управления версиями службы автоматизации** будет добавлена в вашу учетную запись GitHub в виде авторизованного приложения. Чтобы просмотреть приложение, на домашней странице GitHub последовательно выберите **Профиль** > **Параметры** > **Приложения**. Это приложение позволяет службе автоматизации Azure синхронизировать репозиторий GitHub с учетной записью службы автоматизации.  
 
     ![Приложение Git](media/automation-source-control-integration-legacy/automation_05_GitApplication.png)
 
@@ -99,7 +99,7 @@ ms.locfileid: "48784816"
 1. После нажатия кнопки **Возврат** появится запрос подтверждения. Щелкните **Да**, чтобы продолжить.  
    
     ![Сообщение возврата](media/automation-source-control-integration-legacy/automation_07_CheckinMessage.png)
-2. Процедура возврата запустит модуль Runbook для управления источниками **Sync-MicrosoftAzureAutomationAccountToGitHubV1**. Этот модуль Runbook подключается к GitHub и передает изменения из службы автоматизации Azure в ваш репозиторий. Чтобы просмотреть журнал заданий возврата, вернитесь на вкладку **Интеграция системы управления версиями** и откройте страницу "Синхронизация репозитория". На этой странице будут показаны все задания из системы управления версиями.  Выберите задание, которое хотите просмотреть, и щелкните его.  
+2. Возврат запускает модуль runbook для управления исходным кодом: **Sync-MicrosoftAzureAutomationAccountToGitHubV1**. Этот модуль Runbook подключается к GitHub и передает изменения из службы автоматизации Azure в ваш репозиторий. Чтобы просмотреть журнал заданий возврата, вернитесь на вкладку **Интеграция системы управления версиями** и откройте страницу "Синхронизация репозитория". На этой странице будут показаны все задания из системы управления версиями.  Выберите задание, которое хотите просмотреть, и щелкните его.  
    
     ![Модуль Runbook для возврата](media/automation-source-control-integration-legacy/automation_08_CheckinRunbook.png)
    
@@ -110,7 +110,7 @@ ms.locfileid: "48784816"
 3. Имя измененного модуля Runbook передается в возвращаемый модуль в качестве входного параметра. Вы можете [просмотреть сведения о задании](automation-runbook-execution.md#viewing-job-status-from-the-azure-portal), развернув модуль Runbook на странице **Синхронизация репозитория**.  
    
     ![Входные данные для возврата](media/automation-source-control-integration-legacy/automation_09_CheckinInput.png)
-4. Когда задание будет завершено, обновите репозиторий GitHub, чтобы увидеть изменения.  Репозиторий должен содержать фиксацию со следующим сообщением: **Обновлено *имя модуля Runbook* в службе автоматизации Azure**.  
+4. Когда задание будет завершено, обновите репозиторий GitHub, чтобы увидеть изменения.  Репозиторий должен содержать фиксацию с сообщением фиксации **Обновлено *имя модуля Runbook* в службе автоматизации Azure**.  
 
 ### <a name="sync-runbooks-from-source-control-to-azure-automation"></a>Синхронизация модулей Runbook из системы управления версиями в службу автоматизации Azure
 Кнопка синхронизации на странице "Синхронизация репозитория" позволяет извлечь все модули Runbook из папки с модулями в вашем репозитории в учетную запись службы автоматизации. Один репозиторий можно синхронизировать с несколькими учетными записями службы автоматизации. Для синхронизации модуля Runbook сделайте следующее.
@@ -118,7 +118,7 @@ ms.locfileid: "48784816"
 1. В учетной записи службы автоматизации, где настроена система управления версиями, откройте страницу **Интеграция системы управления версиями/Синхронизация репозитория** и нажмите кнопку **Синхронизировать**.  Когда появится запрос на подтверждение, щелкните **Да**.  
    
     ![Кнопка "Синхронизация"](media/automation-source-control-integration-legacy/automation_10_SyncButtonwithMessage.png)
-2. Процедура синхронизации запустит модуль Runbook **Sync-MicrosoftAzureAutomationAccountFromGitHubV1**. Этот модуль подключается к GitHub и передает изменения из вашего репозитория в службу автоматизации Azure. Новое задание появится на странице **Синхронизация репозитория** , соответствующей этому действию. Для просмотра страницы сведений о задании синхронизации щелкните соответствующее задание.  
+2. Синхронизация запускает модуль runbook **Sync-MicrosoftAzureAutomationAccountFromGitHubV1**. Этот модуль подключается к GitHub и передает изменения из вашего репозитория в службу автоматизации Azure. Новое задание появится на странице **Синхронизация репозитория** , соответствующей этому действию. Для просмотра страницы сведений о задании синхронизации щелкните соответствующее задание.  
    
     ![Модуль Runbook для синхронизации](media/automation-source-control-integration-legacy/automation_11_SyncRunbook.png)
 
@@ -139,7 +139,8 @@ ms.locfileid: "48784816"
 ## <a name="next-steps"></a>Дополнительная информация
 Дополнительные сведения об интеграции системы управления версиями см. в следующих ресурсах:  
 
-* [Azure Automation: Source Control Integration in Azure Automation](https://azure.microsoft.com/blog/azure-automation-source-control-13/)  
+* [Служба автоматизации Azure: Интеграция системы управления версиями и службы автоматизации Azure](https://azure.microsoft.com/blog/azure-automation-source-control-13/)  
 * [Vote for your favorite source control system](https://www.surveymonkey.com/r/?sm=2dVjdcrCPFdT0dFFI8nUdQ%3d%3d)  
-* [Azure Automation: Integrating Runbook Source Control using Azure DevOps](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/) (Служба автоматизации Azure: интеграция системы управления версиями Runbook с использованием службы Azure DevOps).  
+* [Служба автоматизации Azure: Integrating Runbook Source Control using Visual Studio Online](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/) (Служба автоматизации Azure: интеграция системы управления версиями Runbook с использованием службы Visual Studio Online).  
+
 

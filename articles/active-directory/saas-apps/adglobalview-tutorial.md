@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ADP Globalview | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ADP Globalview | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в ADP Globalview.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: ffb6464f-714d-41a9-869a-2b7e5ae9f125
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/18/2017
 ms.author: jeedes
-ms.openlocfilehash: 11a3df06cbd1c3f34bfd5b04c1f6dfc41cab8187
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 8ac0856dcadb92b79090a6520ef29707fd7a3bae
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36223118"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54813684"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adp-globalview"></a>Руководство по интеграции Azure Active Directory с ADP Globalview
+# <a name="tutorial-azure-active-directory-integration-with-adp-globalview"></a>Руководство. Интеграция Azure Active Directory с ADP Globalview
 
 В этом руководстве описано, как интегрировать ADP Globalview с Azure Active Directory (Azure AD).
 
@@ -33,7 +33,7 @@ ms.locfileid: "36223118"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с ADP Globalview, вам потребуется:
 
@@ -141,7 +141,7 @@ ms.locfileid: "36223118"
 
     ![Настройка единого входа](./media/adglobalview-tutorial/tutorial_attribute_05.png)
 
-    Б. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
+    b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
     c. В списке **Значение** выберите значение атрибута, отображаемое для этой строки.
     
@@ -161,7 +161,7 @@ ms.locfileid: "36223118"
 10. Чтобы настроить единый вход на стороне **ADP Globalview**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки ADP Globalview](https://www.adp.com/contact-us/overview.aspx).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
@@ -188,7 +188,7 @@ ms.locfileid: "36223118"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 

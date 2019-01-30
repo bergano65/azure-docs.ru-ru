@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Shmoop For Schools | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Shmoop For Schools | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Shmoop For Schools.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 1d75560a-55b3-42e9-bda1-92b01c572d8e
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/23/2018
 ms.author: jeedes
-ms.openlocfilehash: b5826fd3067ac337808b9e27040dee808cd6a01c
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 5c1dbf6429387c02f226e4005164e8824abdc102
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39045963"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54818954"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-shmoop-for-schools"></a>Руководство по интеграции Azure Active Directory с Shmoop For Schools
+# <a name="tutorial-azure-active-directory-integration-with-shmoop-for-schools"></a>Руководство. Интеграция Azure Active Directory с Shmoop For Schools
 
 В этом руководстве описано, как интегрировать Shmoop For Schools с Azure Active Directory (Azure AD).
 
@@ -120,7 +120,7 @@ ms.locfileid: "39045963"
     ![Настройка единого входа](./media/shmoopforschools-tutorial/tutorial_attribute.png)
 
     > [!NOTE]
-    > Shmoop For Schools поддерживает две роли для пользователей — **Учитель** и **Ученик**. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Инструкции по настройке ролей в Azure AD см. в разделе [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
+    > Shmoop For Schools поддерживает две роли для пользователей: **Учитель** и **Ученик**. Настройте эти роли в Azure AD, чтобы пользователям можно было назначить соответствующие роли. Инструкции по настройке ролей в Azure AD см. в разделе [Управление доступом с помощью RBAC и портала Azure](../../role-based-access-control/role-assignments-portal.md).
     
 5. В разделе **Атрибуты пользователя** диалогового окна **Единый вход** настройте атрибут токена SAML, как показано на предыдущем рисунке.  Затем выполните следующие действия:
 
@@ -146,7 +146,7 @@ ms.locfileid: "39045963"
 
     ![Настройка единого входа](./media/shmoopforschools-tutorial/tutorial_general_400.png)
 
-7. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
+7. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**, и вставьте его в Блокнот.
 
     ![Ссылка для скачивания сертификата](./media/shmoopforschools-tutorial/tutorial_shmoopforschools_certificate.png)
 
@@ -227,7 +227,7 @@ ms.locfileid: "39045963"
 
 Выбрав плитку **Shmoop For Schools** на панели доступа, вы автоматически войдете в приложение Shmoop For Schools.
 
-Дополнительные сведения о панели доступа см. в статье [Что такое панель доступа?](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md) 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

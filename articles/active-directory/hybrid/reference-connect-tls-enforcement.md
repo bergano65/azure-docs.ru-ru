@@ -1,10 +1,10 @@
 ---
-title: 'Azure AD Connect: принудительное применение протокола TLS 1.2 для Azure Active Directory Connect | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: Принудительное применение протокола TLS 1.2 для Azure Active Directory Connect | Документация Майкрософт'
 description: В этой статье перечислены все выпуски Azure AD Connect и Azure AD Sync
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.service: active-directory
 ms.devlang: na
@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 10/28/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 657fe308217f93fbca847dd068a46fdb7713f1d4
-ms.sourcegitcommit: 6135cd9a0dae9755c5ec33b8201ba3e0d5f7b5a1
+ms.openlocfilehash: 7524acc8b5bb6468761440f2192b7366d1470488
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50669981"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54460759"
 ---
 # <a name="tls-12-enforcement-for-azure-ad-connect"></a>Принудительное применение TLS 1.2 для Azure AD Connect
 

@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с myPolicies | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с myPolicies | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении myPolicies.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: bf79e858-1dfb-4ab3-a6df-74b2d5a878d2
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/04/2017
 ms.author: jeedes
-ms.openlocfilehash: f4c34d224c65a6e339f12def01079a87247d2d60
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: f8d6db758f01e3ef46a8c770477e1231ee8a8c08
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39429120"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54809281"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-mypolicies"></a>Руководство по интеграции Azure Active Directory с myPolicies
+# <a name="tutorial-azure-active-directory-integration-with-mypolicies"></a>Руководство. Интеграция Azure Active Directory с myPolicies
 
 В этом руководстве описано, как интегрировать приложение myPolicies с Azure Active Directory (Azure AD).
 
@@ -155,7 +155,7 @@ ms.locfileid: "39429120"
 1. Чтобы настроить единый вход на стороне **myPolicies**, нужно отправить скачанный **сертификат в кодировке Base64** и **URL-адрес службы единого входа SAML** [группе поддержки myPolicies](mailto:support@mypolicies.com). 
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -191,7 +191,7 @@ ms.locfileid: "39429120"
  
 ### <a name="creating-a-mypolicies-test-user"></a>Создание тестового пользователя myPolicies
 
-В этом разделе описано, как создать пользователя Britta Simon в myPolicies. Обратитесь к [группе поддержки myPolicies](mailto:support@mypolicies.com), чтобы добавить пользователей на платформу myPolicies. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в myPolicies. Обратитесь к  [группе поддержки myPolicies](mailto:support@mypolicies.com) , чтобы добавить пользователей на платформу myPolicies. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

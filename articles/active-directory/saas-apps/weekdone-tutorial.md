@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Weekdone | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Weekdone | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Weekdone.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 34921f9a-5637-4420-ab4c-9beb34421909
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/18/2018
 ms.author: jeedes
-ms.openlocfilehash: 7f7946ece91013696969dafda17b02c972f4b780
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 869deb1b68d30041b6780151a5712099982bd9b7
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230409"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54807955"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-weekdone"></a>Руководство. Интеграция Azure Active Directory с Weekdone
 
@@ -33,7 +33,7 @@ ms.locfileid: "36230409"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Weekdone, вам потребуется:
 
@@ -115,7 +115,7 @@ ms.locfileid: "36230409"
     > [!NOTE]
     > Файл метаданных из Weekdone можно получить с помощью этого же URL-адреса.
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://weekdone.com/a/<tenantname>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://weekdone.com/a/<tenantname>`.
 
 4. Установите флажок **Показать дополнительные параметры URL-адресов**, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -165,7 +165,7 @@ ms.locfileid: "36230409"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 

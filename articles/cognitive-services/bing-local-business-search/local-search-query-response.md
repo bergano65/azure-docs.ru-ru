@@ -10,16 +10,16 @@ ms.component: bing-local-business
 ms.topic: article
 ms.date: 11/01/2018
 ms.author: rosh; v-gedod
-ms.openlocfilehash: a86db516e76a91d6e4bec378c47baf6eec13d032
-ms.sourcegitcommit: ada7419db9d03de550fbadf2f2bb2670c95cdb21
+ms.openlocfilehash: 73aa9756d7a3af4c6f7185533458e0e322b72666
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/02/2018
-ms.locfileid: "50959058"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54452383"
 ---
 # <a name="sending-and-using-bing-local-business-search-api-queries-and-responses"></a>Отправка и использование запросов и ответов API Bing Local Business Search
 
-Локальные результаты можно получить из API Bing Local Business Search, отправляя запрос поиска на конечную точку и включая обязательный заголовок `Ocp-Apim-Subscription-Key`. Вместе с [заголовками](local-search-reference.md#headers) и [параметрами](local-search-reference.md#query-parameters) можно настроить Поиск Azure, указав [географические границы](specify-geographic-search.md) для поиска области и [категории](local-search-query-response.md) возвращаемых знаков.
+Локальные результаты можно получить из API Bing Local Business Search, отправляя запрос поиска на конечную точку и включая обязательный заголовок `Ocp-Apim-Subscription-Key`. Вместе с доступными [заголовками](local-search-reference.md#headers) и [параметрами](local-search-reference.md#query-parameters) можно настроить Поиск Azure, указав [географические границы](specify-geographic-search.md) для поиска области и [категории](local-search-query-response.md) возвращаемых знаков.
 
 ## <a name="creating-a-request"></a>Создание запроса
 
@@ -145,7 +145,7 @@ Expires: Tue, 16 Oct 2018 16:25:15 GMT
 
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправить запрос в API Bing Local Business Search с помощью C#)
+- [Quickstart: Send a query to the Bing Local Business Search API in C#](quickstarts/local-quickstart.md) (Краткое руководство. Отправка запроса в API Bing Local Business Search с помощью C#)
 - [Quickstart: Send a query to the Bing Local Business Search API using Java](quickstarts/local-search-java-quickstart.md) (Краткое руководство. Отправить запрос в API Bing Local Business Search с помощью Java)
-- [Quickstart: Send a query to the Bing Local Business Search API using Node.js](quickstarts/local-search-node-quickstart.md) (Краткое руководство. Отправить запрос в API Bing Local Business Search с помощью Node.js)
-- [Quickstart: Send a query to the Bing Local Business Search API in Python](quickstarts/local-search-python-quickstart.md) (Краткое руководство. Отправить запрос в API Bing Local Business Search с помощью Python)
+- [Краткое руководство. Использование Local Business Search с помощью Node](quickstarts/local-search-node-quickstart.md)
+- [Краткое руководство. Использование Local Business Search с помощью Python](quickstarts/local-search-python-quickstart.md)

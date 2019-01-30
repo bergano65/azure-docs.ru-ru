@@ -1,10 +1,10 @@
 ---
-title: 'Доменные службы Azure Active Directory: включение ограниченного делегирования Kerberos | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Включение ограниченного делегирования Kerberos | Документация Майкрософт
 description: Включение ограниченного делегирования Kerberos в управляемых доменах доменных служб Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: 938a5fbc-2dd1-4759-bcce-628a6e19ab9d
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: ergreenl
-ms.openlocfilehash: da7909853d47f680726464d6d646ca87028fd311
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: fe0b5224bc266b7990e2f7b6a4b3fa6a1b19190d
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50158788"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54854825"
 ---
 # <a name="configure-kerberos-constrained-delegation-kcd-on-a-managed-domain"></a>Настройка ограниченного делегирования Kerberos в управляемом домене
 Многим приложениям требуется доступ к ресурсам в контексте пользователя. Active Directory поддерживает делегирование Kerberos — механизм, который позволяет использовать эту возможность. Кроме того, делегирование можно ограничить, чтобы разрешить доступ в контексте пользователя только к определенным ресурсам. Управляемые домены доменных служб Azure AD отличаются от традиционных доменов Active Directory, поскольку они безопаснее заблокированы.

@@ -1,11 +1,11 @@
 ---
-title: Текущие ограничения сквозной проверки подлинности Azure AD Connect | Документация Майкрософт
+title: 'Azure AD Connect выполняет следующие функции: Текущие ограничения сквозной аутентификации | Документация Майкрософт'
 description: Эта статья содержит сведения о текущих ограничениях сквозной аутентификации Azure Active Directory (Azure AD).
 services: active-directory
 keywords: сквозная проверка подлинности azure ad connect, установка active directory, необходимые компоненты для azure ad, единый вход
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 ms.assetid: 9f994aca-6088-40f5-b2cc-c753a4f41da7
 ms.service: active-directory
 ms.workload: identity
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 09/04/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: fabefcffdd7ee9a23d8989f897f30cbf027f42af
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: d0816aebc033a0ac1c5b8a8f52106a586d20a9af
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52426423"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54478286"
 ---
-# <a name="azure-active-directory-pass-through-authentication-current-limitations"></a>Текущие ограничения сквозной проверки подлинности Azure Active Directory
+# <a name="azure-active-directory-pass-through-authentication-current-limitations"></a>Сквозная проверка подлинности Azure Active Directory Текущие ограничения
 
 >[!IMPORTANT]
 >Функция сквозной аутентификации Azure Active Directory (Azure AD) является бесплатной, и для ее использования не требуются платные выпуски Azure AD. Сквозная аутентификация доступна только в доступном по всему миру экземпляре Azure AD, но не в [облаке Microsoft Azure — Германия](https://www.microsoft.de/cloud-deutschland) или [облаке Microsoft Azure для государственных организаций](https://azure.microsoft.com/features/gov/).
@@ -33,7 +33,7 @@ ms.locfileid: "52426423"
 
 - Вход пользователей в браузерные приложения.
 - Вход пользователей в клиенты Outlook с помощью устаревших протоколов, таких как Exchange ActiveSync, EAS, SMTP, POP и IMAP.
-- Вход пользователей в устаревшие клиентские приложения Office и приложения Office, поддерживающие [современную аутентификацию](https://aka.ms/modernauthga): Office 2010, Office 2013 и Office 2016.
+- Вход пользователей в устаревшие клиентские приложения Office и приложения Office, поддерживающие [современную аутентификацию](https://aka.ms/modernauthga): версии Office 2010, Office 2013 и Office 2016.
 - Вход пользователей в приложения на основе устаревших протоколов, такие как PowerShell версии 1.0 и пр.
 - Присоединение устройств Windows 10 к Azure AD.
 - Добавление паролей для Многофакторной идентификации.
@@ -53,12 +53,12 @@ ms.locfileid: "52426423"
 Включение синхронизации хэшей паролей позволяет выполнять отработку отказа для аутентификации при полном сбое локальной инфраструктуры. Отработка отказа сквозной аутентификации с переходом на синхронизацию хэшей паролей не выполняется автоматически. Необходимо вручную переключить метод входа с помощью Azure AD Connect. Если сервер под управлением Azure AD Connect вышел из строя, потребуется помощь службы поддержки Майкрософт, чтобы отключить сквозную аутентификацию.
 
 ## <a name="next-steps"></a>Дополнительная информация
-- [Краткое руководство](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе сквозной аутентификации Azure Active Directory.
+- [Быстрый запуск](how-to-connect-pta-quick-start.md). Настройка и подготовка к работе с помощью сквозной аутентификации Azure Active Directory.
 - [Migrate from AD FS to Pass-through Authentication](https://aka.ms/ADFSTOPTADPDownload) (Переход с AD FS на сквозную проверку подлинности). Подробное руководство по переходу с AD FS (или других технологии федерации) на сквозную проверку подлинности.
 - [Интеллектуальная блокировка](../authentication/howto-password-smart-lockout.md). Узнайте, как настроить возможность интеллектуальной блокировки в клиенте для защиты учетных записей пользователей.
-- [Подробное техническое руководство](how-to-connect-pta-how-it-works.md). Поймите, как работает функция сквозной аутентификации.
+- [Техническое руководство](how-to-connect-pta-how-it-works.md). Узнайте, как работает функция сквозной аутентификации.
 - [Часто задаваемые вопросы](how-to-connect-pta-faq.md). Найдите ответы на часто задаваемые вопросы о сквозной аутентификации.
-- [Устранение неполадок](tshoot-connect-pass-through-authentication.md). Узнайте, как устранять распространенные проблемы со сквозной аутентификации.
-- [Руководство по безопасности](how-to-connect-pta-security-deep-dive.md). Получите дополнительные технические сведения о сквозной аутентификации.
-- [Простой единый вход Azure Active Directory](how-to-connect-sso.md). Узнайте подробнее об этой дополнительной функции.
+- [Устранение неполадок](tshoot-connect-pass-through-authentication.md). Узнайте, как устранять распространенные неполадки со сквозной аутентификацией.
+- [Руководство по безопасности](how-to-connect-pta-security-deep-dive.md). Получите детальные технические сведения о компоненте сквозной проверки подлинности.
+- [Простой единый вход Azure AD](how-to-connect-sso.md). Сведения об этой дополнительной функции.
 - [UserVoice](https://feedback.azure.com/forums/169401-azure-active-directory/category/160611-directory-synchronization-aad-connect). Оставить запрос на новые функции можно на форуме по Azure Active Directory.

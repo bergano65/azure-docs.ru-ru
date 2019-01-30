@@ -10,12 +10,12 @@ ms.component: implement
 ms.date: 04/17/2018
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 50e70ab9be87c15816dc6471a2a29afd0f17d907
-ms.sourcegitcommit: 1fb353cfca800e741678b200f23af6f31bd03e87
+ms.openlocfilehash: c1a1da9fd0fff09bab027c4b4cc4e3085c5439f2
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43301251"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54411122"
 ---
 # <a name="data-warehouse-units-dwus-and-compute-data-warehouse-units-cdwus"></a>Единицы использования хранилища данных (DWU) и вычислительные единицы использования хранилища данных (cDWU)
 Рекомендации по выбору идеального количества единиц использования хранилища данных (DWU, cDWU) для оптимизации затрат и производительности, а также по изменению количества единиц. 
@@ -91,6 +91,8 @@ WITH
 
 Чтобы изменить единицы использования хранилища данных, требуются разрешения, описанные в статье об [инструкции ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql). 
 
+Встроенные роли для ресурсов Azure, такие как участник базы данных SQL и участник SQL Server, позволяют изменять параметры DWU. 
+
 ## <a name="view-current-dwu-settings"></a>для просмотра текущих параметров DWU;
 
 Чтобы просмотреть текущие параметры DWU, сделайте следующее:
@@ -134,7 +136,7 @@ Set-AzureRmSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -Requested
 Чтобы изменить параметры DWU или cDWU, сделайте следующее:
 
 1. Подключитесь к базе данных master, связанной с логическим сервером базы данных SQL.
-2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql). В приведенном ниже примере для базы данных MySQLDW устанавливается цель уровня обслуживания DW1000. 
+2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql) . В приведенном ниже примере для базы данных MySQLDW устанавливается цель уровня обслуживания DW1000. 
 
 ```Sql
 ALTER DATABASE MySQLDW

@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: hrasheed
-ms.openlocfilehash: da6435c6e3ea5fe88b605bd65c5d0e10f1772450
-ms.sourcegitcommit: 549070d281bb2b5bf282bc7d46f6feab337ef248
+ms.openlocfilehash: fca14eb5a51799e6d3c0e4f96cb956e4e6886cdb
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53717472"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54844829"
 ---
 # <a name="use-empty-edge-nodes-on-apache-hadoop-clusters-in-hdinsight"></a>Использование пустых граничных узлов в кластерах Apache Hadoop в HDInsight
 
@@ -65,8 +65,8 @@ ms.locfileid: "53717472"
 >
 > При использовании технологии Apache можно получить помощь на соответствующих сайтах для проектов Apache, например [Apache Hadoop](https://hadoop.apache.org/) на сайте [https://apache.org](https://apache.org).
 
-> [!NOTE]  
-> Граничные узлы, как и узлы кластера, также поддерживают установку исправлений.  Дополнительные сведения см. в статье [Обновление путем частичной замены ОС для кластеров HDInsight](./hdinsight-os-patching.md).
+> [!IMPORTANT]
+> Образы Ubuntu станут доступны для создания кластера HDInsight в течение 3 месяцев после публикации. По состоянию на январь 2019 года работающие кластеры (включая граничные узлы) **не** были автоматически исправлены. Клиенты должны использовать действия сценария или другие механизмы для исправления работающего кластера.  Дополнительные сведения см. в статье [Обновление путем частичной замены ОС для кластеров HDInsight](./hdinsight-os-patching.md).
 
 ## <a name="add-an-edge-node-to-an-existing-cluster"></a>Добавление граничного узла в имеющийся кластер
 В этом разделе описано, как использовать шаблон Resource Manager, чтобы добавить граничный узел в имеющийся кластер HDInsight.  Шаблон Resource Manager можно найти в [GitHub](https://azure.microsoft.com/resources/templates/101-hdinsight-linux-add-edge-node/). Шаблон диспетчера ресурсов вызывает действие скрипта, расположенное по адресу https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-hdinsight-linux-add-edge-node/scripts/EmptyNodeSetup.sh. Этот скрипт не выполняет никаких действий.  Он необходим для демонстрации вызова действия скрипта с помощью шаблона Resource Manager.

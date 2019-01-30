@@ -1,10 +1,10 @@
 ---
-title: 'Доменные службы Azure Active Directory: присоединение виртуальной машины Ubuntu к управляемому домену | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Присоединение виртуальной машины Ubuntu к управляемому домену | Документация Майкрософт
 description: Присоединение виртуальной машины Ubuntu Linux к управляемому домену Azure AD
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: 804438c4-51a1-497d-8ccc-5be775980203
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: ergreenl
-ms.openlocfilehash: 709c227c955aba6b31ce415767470fa18ff3684f
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 35b37a5c50346dc116b2f36394feecb82a0d88fd
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50155275"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54845768"
 ---
 # <a name="join-an-ubuntu-virtual-machine-in-azure-to-a-managed-domain"></a>Присоединение виртуальной машины Ubuntu к управляемому домену в Azure
 Из этой статьи вы узнаете, как присоединить виртуальную машину Ubuntu Linux к управляемому домену доменных служб Azure AD.
@@ -124,7 +124,7 @@ sudo systemctl start ntp
     ```
 
    > [!NOTE]
-   > **Устранение неполадок.** Если команда *realm discover* не может найти управляемый домен, сделайте следующее:
+   > **Устранение неполадок**. Если команда *realm discover* не может найти управляемый домен, сделайте следующее:
      * Проверьте подключение между доменом и виртуальной машиной (с помощью команды ping).
      * Убедитесь, что виртуальная машина развернута в одной виртуальной сети с управляемым доменом.
      * Проверьте, обновлены ли параметры DNS-сервера для виртуальной сети — должны быть указаны контроллеры управляемого домена.

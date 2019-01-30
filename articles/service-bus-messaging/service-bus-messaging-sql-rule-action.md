@@ -3,9 +3,9 @@ title: Справочник по синтаксису SQLRuleAction в Azure | �
 description: Сведения о грамматике SQLRuleAction.
 services: service-bus-messaging
 documentationcenter: na
-author: spelluru
+author: axisc
 manager: timlt
-editor: ''
+editor: spelluru
 ms.assetid: ''
 ms.service: service-bus-messaging
 ms.devlang: na
@@ -13,13 +13,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/05/2018
-ms.author: spelluru
-ms.openlocfilehash: cd5bc1fb959872cfb98236feb5c32517ac7472ac
-ms.sourcegitcommit: d1aef670b97061507dc1343450211a2042b01641
+ms.author: aschhab
+ms.openlocfilehash: 0f9365b72da1cec81eed82756097d32b1d72ca71
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47394188"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54847736"
 ---
 # <a name="sqlruleaction-syntax"></a>Синтаксис SQLRuleAction
 
@@ -123,9 +123,9 @@ ms.locfileid: "47394188"
   
  Свойство `<pattern>` должно быть выражением, которое будет вычисляться как строка. Оно используется в качестве шаблона для оператора LIKE.      Оно может содержать следующие подстановочные знаки:  
   
--   `%` — любая строка без символов или с несколькими символами.  
+-   `%`:  Любая строка без знаков или с несколькими знаками.  
   
--   `_` — любой один символ.  
+-   `_`: Любой отдельный знак.  
   
 ## <a name="escapechar"></a>escape_char  
   

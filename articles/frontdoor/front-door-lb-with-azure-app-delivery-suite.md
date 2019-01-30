@@ -11,17 +11,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
 ms.author: sharadag
-ms.openlocfilehash: 4c9f92481af1e69a111869cb6fc1305923bb0484
-ms.sourcegitcommit: f6050791e910c22bd3c749c6d0f09b1ba8fccf0c
+ms.openlocfilehash: 5403b5506a3758ede5ad06640335b873b6b9aa96
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50026013"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54820839"
 ---
 # <a name="load-balancing-with-azures-application-delivery-suite"></a>Балансировка нагрузки с помощью набора служб Azure для предоставления приложения
 
 ## <a name="introduction"></a>Введение
-Microsoft Azure предоставляет множество глобальных и региональных служб для управления распределением и балансировкой нагрузки трафика: диспетчер трафика, Front Door Service, Шлюз приложений и Load Balancer.  Совместное использование этих служб в множестве регионов Azure и разных зональных архитектурах позволяет создавать надежные, масштабируемые, высокопроизводительные приложения.
+Microsoft Azure включает несколько глобальных и региональных служб, управляющих распределением и балансировкой нагрузки сетевого трафика. Диспетчер трафика, Front Door Service, Шлюз приложений и Load Balancer.  Совместное использование этих служб в множестве регионов Azure и разных зональных архитектурах позволяет создавать надежные, масштабируемые, высокопроизводительные приложения.
 
 ![Набор служб для предоставления приложений ][1]
  

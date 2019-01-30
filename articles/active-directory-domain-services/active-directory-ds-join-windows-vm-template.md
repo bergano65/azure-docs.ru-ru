@@ -4,7 +4,7 @@ description: Присоединение виртуальной машины Wind
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: 4eabfd8e-5509-4acd-86b5-1318147fddb5
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: ergreenl
-ms.openlocfilehash: a083bd2fe730f9723330abf9bce03d760b7442d8
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 32b670a4b51c2dc60fe89bc2b9ad0ef18b0ac263
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50157264"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54856644"
 ---
 # <a name="join-a-windows-server-virtual-machine-to-a-managed-domain-using-a-resource-manager-template"></a>Присоединение виртуальной машины Windows Server к управляемому домену с помощью шаблона Resource Manager
 В этой статье показано, как с помощью шаблонов Azure Resource Manager присоединить виртуальную машину Windows Server к управляемому домену доменных служб Azure AD.
@@ -38,12 +38,12 @@ ms.locfileid: "50157264"
 
 ## <a name="install-and-configure-required-tools"></a>Установка и настройка необходимых инструментов
 Для выполнения действий, описанных в этом документе, можно использовать любой из следующих вариантов.
-* **Azure PowerShell**: [Установка и настройка](https://azure.microsoft.com/documentation/articles/powershell-install-configure/)
-* **Azure CLI**. [Установка и настройка](https://azure.microsoft.com/documentation/articles/xplat-cli-install/)
+* **Azure PowerShell** [Установка и настройка](https://azure.microsoft.com/documentation/articles/powershell-install-configure/)
+* **Azure CLI.** [Установка и настройка](https://azure.microsoft.com/documentation/articles/xplat-cli-install/)
 
 
-## <a name="option-1-provision-a-new-windows-server-vm-and-join-it-to-a-managed-domain"></a>Вариант 1. Подготовка новой виртуальной машины Windows Server и ее присоединение к управляемому домену
-**Имя шаблона быстрого запуска**: [201-vm-domain-join](https://azure.microsoft.com/resources/templates/201-vm-domain-join/)
+## <a name="option-1-provision-a-new-windows-server-vm-and-join-it-to-a-managed-domain"></a>Вариант 1. Подготовка новой виртуальной машины Windows Server и ее присоединение к управляемому домену
+**Имя шаблона быстрого запуска**. [201-vm-domain-join](https://azure.microsoft.com/resources/templates/201-vm-domain-join/)
 
 Чтобы развернуть виртуальную машину Windows Server и присоединить ее к управляемому домену, сделайте следующее.
 1. Перейдите к [шаблону быстрого запуска](https://azure.microsoft.com/resources/templates/201-vm-domain-join/).
@@ -59,7 +59,7 @@ ms.locfileid: "50157264"
 11. В поле **Domain To Join** (Домен для присоединения) укажите доменное имя DNS управляемого домена.
 12. В поле **Имя пользователя домена** укажите имя учетной записи пользователя в управляемом домене, которая должна использоваться для присоединения виртуальной машины к этому управляемому домену.
 13. В поле **Пароль домена** укажите пароль учетной записи пользователя домена, указанной в параметре domainUsername.
-14. (Необязательно.) С помощью параметра **OU Path** (Путь к подразделению) можно указать пользовательское подразделение для добавления виртуальной машины. Если значение этого параметра не указано, виртуальная машина добавляется в подразделение по умолчанию **AAD DC Computers** для управляемого домена.
+14. Необязательно: С помощью параметра **OU Path** (Путь к подразделению) можно указать пользовательское подразделение для добавления виртуальной машины. Если значение этого параметра не указано, виртуальная машина добавляется в подразделение по умолчанию **AAD DC Computers** для управляемого домена.
 15. В поле **VM Admin Username** (Имя администратора виртуальной машины) укажите имя учетной записи локального администратора виртуальной машины.
 16. В поле **VM Admin Password** (Пароль администратора виртуальной машины) укажите пароль локального администратора виртуальной машины. Укажите надежный пароль локального администратора виртуальной машины для защиты от атак методом подбора.
 17. Щелкните **Я принимаю указанные выше условия**.
@@ -73,8 +73,8 @@ ms.locfileid: "50157264"
 После успешного развертывания новая виртуальная машина Windows будет присоединена к управляемому домену.
 
 
-## <a name="option-2-join-an-existing-windows-server-vm-to-a-managed-domain"></a>Вариант 2. Присоединение существующей виртуальной машины Windows Server к управляемому домену
-**Шаблон быстрого запуска**: [201-vm-domain-join-existing](https://azure.microsoft.com/resources/templates/201-vm-domain-join-existing/)
+## <a name="option-2-join-an-existing-windows-server-vm-to-a-managed-domain"></a>Вариант 2. Присоединение существующей виртуальной машины Windows Server к управляемому домену
+**Шаблон быстрого запуска**. [201-vm-domain-join-existing](https://azure.microsoft.com/resources/templates/201-vm-domain-join-existing/)
 
 Чтобы присоединить существующую виртуальную машину Windows Server к управляемому домену, сделайте следующее.
 1. Перейдите к [шаблону быстрого запуска](https://azure.microsoft.com/resources/templates/201-vm-domain-join-existing/).
@@ -87,7 +87,7 @@ ms.locfileid: "50157264"
 8. В поле **Domain Join User Name** (Имя пользователя для присоединения к домену) укажите имя учетной записи пользователя в управляемом домене, которая должна использоваться для присоединения виртуальной машины к этому управляемому домену.
 9. В поле **Domain Join User Password** (Пароль пользователя для присоединения к домену) укажите пароль учетной записи пользователя домена, указанной в параметре domainUsername.
 10. В поле **Domain FQDN** (Полное доменное имя домена) укажите доменное имя DNS управляемого домена.
-11. (Необязательно.) С помощью параметра **OU Path** (Путь к подразделению) можно указать пользовательское подразделение для добавления виртуальной машины. Если значение этого параметра не указано, виртуальная машина добавляется в подразделение по умолчанию **AAD DC Computers** для управляемого домена.
+11. Необязательно: С помощью параметра **OU Path** (Путь к подразделению) можно указать пользовательское подразделение для добавления виртуальной машины. Если значение этого параметра не указано, виртуальная машина добавляется в подразделение по умолчанию **AAD DC Computers** для управляемого домена.
 12. Щелкните **Я принимаю указанные выше условия**.
 13. Щелкните **Приобрести**, чтобы подготовить виртуальную машину.
 

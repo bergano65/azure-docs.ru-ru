@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Soonr Workplace | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Soonr Workplace | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Soonr Workplace.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: b75f5f00-ea8b-4850-ae2e-134e5d678d97
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/11/2017
 ms.author: jeedes
-ms.openlocfilehash: af62db250a6d428797de0d39b852272326f2b6a8
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 7dd02aee83d42421cdda57f4feb54dde790db68c
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39442573"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54809162"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-soonr-workplace"></a>Учебник. Интеграция Azure Active Directory с Soonr Workplace
+# <a name="tutorial-azure-active-directory-integration-with-soonr-workplace"></a>Руководство. Интеграция Azure Active Directory с Soonr Workplace
 
 В этом руководстве описано, как интегрировать Soonr Workplace с Azure Active Directory (AAD).
 
@@ -145,7 +145,7 @@ ms.locfileid: "39442573"
     >Если вам требуется помощь по настройке Autotask Workplace и учетной записи Workplace, см. [эту страницу](https://awp.autotask.net/help/Content/0_HOME/Support_for_End_Clients.htm).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: michmcla
-ms.openlocfilehash: 3820aae1e926e51ffa88fabc94e3572b286162de
-ms.sourcegitcommit: 0b7fc82f23f0aa105afb1c5fadb74aecf9a7015b
+ms.openlocfilehash: 861dfacb556b646a288ce7cf7c749cec858f8bd5
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51634232"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54432665"
 ---
 # <a name="resolve-error-messages-from-the-nps-extension-for-azure-multi-factor-authentication"></a>Устранение ошибок, связанных с расширением NPS для Многофакторной идентификации Azure.
 
@@ -41,8 +41,8 @@ ms.locfileid: "51634232"
 | Код ошибки | Сообщение об ошибке | Действия по устранению неполадок |
 | ---------- | ------------- | --------------------- |
 | **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Сбой поиска userObjectSid. | Убедитесь, что такой пользователь существует в экземпляре локальной службы Active Directory. Если вы используете отношения доверия между лесами, [обратитесь в службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
-| **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Сбой поиска альтернативного имени пользователя. | Убедитесь, что для значения реестра LDAP_ALTERNATE_LOGINID_ATTRIBUTE указан [допустимый атрибут Active Directory](https://msdn.microsoft.com/library/ms675090(v=vs.85).aspx). <br><br> Если для LDAP_FORCE_GLOBAL_CATALOG задано значение True, а LDAP_LOOKUP_FORESTS имеет непустое значение, проверьте, настроен ли глобальный каталог и добавлен ли к нему атрибут AlternateLoginId. <br><br> Если LDAP_LOOKUP_FORESTS имеет непустое значение, убедитесь, что это значение правильно. Если указано несколько имен леса, такие имена должны быть разделены точками с запятой без пробелов. <br><br> Если с помощью этих шагов не удалось устранить проблему, обратитесь в [службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
-| **ALTERNATE_LOGIN_ID_ERROR** | Ошибка. Пустое значение альтернативного имени пользователя. | Убедитесь, что атрибут AlternateLoginId настроен для пользователя. |
+| **ALTERNATE_LOGIN_ID_ERROR** | Ошибка: сбой поиска альтернативного имени пользователя. | Убедитесь, что для значения реестра LDAP_ALTERNATE_LOGINID_ATTRIBUTE указан [допустимый атрибут Active Directory](https://msdn.microsoft.com/library/ms675090(v=vs.85).aspx). <br><br> Если для LDAP_FORCE_GLOBAL_CATALOG задано значение True, а LDAP_LOOKUP_FORESTS имеет непустое значение, проверьте, настроен ли глобальный каталог и добавлен ли к нему атрибут AlternateLoginId. <br><br> Если LDAP_LOOKUP_FORESTS имеет непустое значение, убедитесь, что это значение правильно. Если указано несколько имен леса, такие имена должны быть разделены точками с запятой без пробелов. <br><br> Если с помощью этих шагов не удалось устранить проблему, обратитесь в [службу поддержки](#contact-microsoft-support) для получения дополнительных сведений. |
+| **ALTERNATE_LOGIN_ID_ERROR** | Ошибка: пустое значение альтернативного имени пользователя. | Убедитесь, что атрибут AlternateLoginId настроен для пользователя. |
 
 ## <a name="errors-your-users-may-encounter"></a>Ошибки, с которыми могут столкнуться пользователи
 

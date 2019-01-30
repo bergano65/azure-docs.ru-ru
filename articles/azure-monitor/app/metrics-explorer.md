@@ -10,17 +10,20 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 03/08/2017
+ms.date: 01/22/2019
 ms.author: mbullwin
-ms.openlocfilehash: 752f28eed3a6be5f7f136999c66e405bf7785a42
-ms.sourcegitcommit: 818d3e89821d101406c3fe68e0e6efa8907072e7
+ms.openlocfilehash: 5c659ca2f40d47450227d16963499a6b27c9e313
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/09/2019
-ms.locfileid: "54120977"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817123"
 ---
 # <a name="exploring-metrics-in-application-insights"></a>Исследование метрик в Application Insights
 Метрики в [Application Insights][start] — это измеренные значения и счетчики событий, которые передаются как данные телеметрии из приложения. Они помогают обнаруживать проблемы производительности и отслеживать тенденции в использовании приложения. Существует широкий спектр стандартных метрик, и можно также создавать собственные пользовательские метрики и события.
+
+> [!NOTE]
+> В этой статье описываются возможности классического обозревателя метрик, который в данный момент является нерекомендуемым, и в конечном итоге мы прекратим его поддержку. Мы рекомендуем ознакомиться с новым обозревателем, описанным в [этой статье](../platform/metrics-charts.md).
 
 Метрики и счетчики событий отображаются в диаграммах агрегированных значений, например как сумма, среднее или количество.
 

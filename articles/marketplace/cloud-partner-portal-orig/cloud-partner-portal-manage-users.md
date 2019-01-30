@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pbutlerm
-ms.openlocfilehash: d24cf56a898a4f4f8317246cbc2317e926256a77
-ms.sourcegitcommit: 9eaf634d59f7369bec5a2e311806d4a149e9f425
+ms.openlocfilehash: 56c646c2ab1f733c37a20cf6e6a5945b223beec4
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2018
-ms.locfileid: "48807794"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54447281"
 ---
 <a name="managing-users-on-cloud-partner-portal"></a>Управление пользователями на облачном портале для партнеров
 ======================================
@@ -36,20 +36,20 @@ ms.locfileid: "48807794"
 <a name="step-2-click-add-user"></a>Шаг 2. Щелкните "Добавить пользователя".
 -----------------------
 
-![Выберите "Представитель"](./media/cloud-partner-portal-how-to-manage-users/adduser.png)
+![Выбор элемента "Добавить пользователя"](./media/cloud-partner-portal-how-to-manage-users/adduser.png)
 
 <a name="step-3-type-email-address-and-select-a-role-assignment"></a>Шаг 3. Введите адрес электронной почты и выберите назначение роли.
 --------------------------------------------------------
 
 Вы можете добавить пользователя в качестве владельца или участника.
 
-**Электронная почта.** Добавьте адрес электронной почты коллег, которые будут работать над публикацией предложения. Поддерживаются учетные записи Майкрософт (Outlook, Hotmail и Live) и идентификаторы организации.
+**Электронная почта:** Добавьте адреса электронной почты коллег, которые будут работать над публикацией предложения. Поддерживаются учетные записи Майкрософт (Outlook, Hotmail и Live) и идентификаторы организации.
 
 o Добавьте команду, групповой адрес электронной почты или группу безопасности, если пользователь, работающей над приложением, покинет организацию.
 
 o Убедитесь, что идентификаторы электронной почты на облачном портале для партнеров отслеживаются на предмет получения каких-либо сообщений от корпорации Майкрософт.
 
-**Роль.** Просмотрите указанную ниже таблицу, чтобы определить соответствующий тип роли пользователя.
+**Роль:** Просмотрите таблицу ниже, чтобы определить соответствующий тип роли пользователя.
 
 ![Назначение роли](./media/cloud-partner-portal-how-to-manage-users/assignrole.png)
 ![Уровни ролей](./media/cloud-partner-portal-how-to-manage-users/roleaccesslevel.png)
@@ -59,7 +59,8 @@ o Убедитесь, что идентификаторы электронной
 <a name="step-4-select-the-publisher-name-you-want-to-add-to-the-new-user-then-click-add-to-complete-user-addition"></a>Шаг 4. Выберите имя издателя, для которого необходимо добавить пользователя, а затем щелкните "Добавить", чтобы завершить добавление пользователя.
 ----------------------------------------------------------------------------------------------------------------------------
 
-> `NOTE: The ‘publisher names’ for which your email is added as an owner or contributor will show up in the drop-down list of Publisher for selection.`
+> [!NOTE]
+> Имена издателей, для которых добавляется адрес электронной почты в качестве владельца или участника, будут отображаться для выбора в раскрывающемся списке "Издатель".
 
 ![Назначение роли — выбор издателя](./media/cloud-partner-portal-how-to-manage-users/assignselectpublisher.png)
 

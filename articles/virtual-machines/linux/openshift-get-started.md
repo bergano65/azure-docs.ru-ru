@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: ''
 ms.author: haroldw
-ms.openlocfilehash: d68215359d50ac153d6df3bbcce5a9b6171698bb
-ms.sourcegitcommit: 5de9de61a6ba33236caabb7d61bee69d57799142
+ms.openlocfilehash: bf34d7e85632999056388eb74816140ce667ce10
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50085445"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54382365"
 ---
 # <a name="openshift-in-azure"></a>Использование OpenShift в Azure
 
@@ -35,12 +35,12 @@ OpenShift включает Kubernetes для оркестрации контей
 Существует несколько версий OpenShift.
 
 - Платформа контейнеров OpenShift
-- OpenShift в Azure (полностью управляемый OpenShift ожидается в начале CY2019)
+- OpenShift в Azure (полностью управляемый OpenShift ожидается в конце Q1 CY2019)
 - OKD (прежнее название — OpenShift Origin);
 - OpenShift Dedicated
 - OpenShift Online
 
-Из пяти версий, описанных в этой статье, пользователи могут использовать только две версии для развертывания в Azure: платформа контейнеров OpenShift и OKD.
+Из пяти версий, описанных в этой статье, пользователи могут использовать только две версии для развертывания в Azure: платформу контейнеров OpenShift и OKD.
 
 ## <a name="openshift-container-platform"></a>Платформа контейнеров OpenShift
 
@@ -50,7 +50,7 @@ OpenShift Container Platform — это [коммерческая версия](
 
 ## <a name="openshift-on-azure"></a>OpenShift в Azure
 
-OpenShift в Azure — это полностью управляемое предложение OpenShift, выполняемое в Azure. Эта служба управляется и поддерживается совместно корпорацией Майкрософт и Red Hat. Кластер будет развернут в подписку Azure клиента. В настоящий момент служба находится в закрытой предварительной версии, а в начале CY 2019 планируется выпустить общедоступную версию. Дополнительные сведения будут представлены, когда предложение будет ближе к общедоступной версии.
+OpenShift в Azure — это полностью управляемое предложение OpenShift, выполняемое в Azure. Эта служба управляется и поддерживается совместно корпорацией Майкрософт и Red Hat. Кластер будет развернут в подписку Azure клиента. Сейчас служба находится в закрытой предварительной версии, а в конце Q1 CY2019 планируется выпустить общедоступную версию. Пользователи, которые хотели би получить закрытую предварительную версию, должны заполнить форму предварительного утверждения [здесь](http://aka.ms/openshiftazureinterest).  Дополнительные сведения будут представлены, когда предложение будет ближе к общедоступной версии.
 
 ## <a name="okd-formerly-openshift-origin"></a>OKD (прежнее название — OpenShift Origin);
 

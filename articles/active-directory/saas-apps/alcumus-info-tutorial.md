@@ -1,10 +1,10 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Alcumus Info Exchange | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Alcumus Info Exchange | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Alcumus Info Exchange.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: d26034b8-f0d5-4f65-aa56-0fc168ceec8c
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/05/2017
 ms.author: jeedes
-ms.openlocfilehash: 66ce8bb16e6e291742841766069b076c46a01c69
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: d55aa873d0ad410b91dc678d1fe4784e00ed5487
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36224604"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54812477"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-alcumus-info-exchange"></a>Учебник. Интеграция Azure Active Directory с Alcumus Info Exchange
+# <a name="tutorial-azure-active-directory-integration-with-alcumus-info-exchange"></a>Руководство. Интеграция Azure Active Directory с Alcumus Info Exchange
 
 В этом руководстве описано, как интегрировать Alcumus Info Exchange с Azure Active Directory (Azure AD).
 
@@ -33,7 +33,7 @@ ms.locfileid: "36224604"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Alcumus Info Exchange, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36224604"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.info-exchange.com`
 
-    Б. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.info-exchange.com/Auth/`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.info-exchange.com/Auth/`.
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Обратитесь к [группе поддержки Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com), чтобы получить эти значения.
@@ -130,7 +130,7 @@ ms.locfileid: "36224604"
 6. Чтобы настроить единый вход на стороне **Alcumus Info Exchange**, отправьте скачанный **XML-файл метаданных** [группе поддержки Alcumus Info Exchange](mailto:helpdesk@alcumusgroup.com).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -158,7 +158,7 @@ ms.locfileid: "36224604"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 

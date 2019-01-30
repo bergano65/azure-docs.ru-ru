@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 10/30/2018
 ms.topic: conceptual
-ms.openlocfilehash: 5704cc21b14d83ebc30cd29f52102c751cfb11f2
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 61da17d1dc59a08128671da163d8b3ea27f83994
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51248016"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54463224"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-using-the-cli"></a>Развертывание акселератора решений для удаленного мониторинга с помощью CLI
 
@@ -70,7 +70,7 @@ pcs login
 |-------|--------------------------------|--------------|----------|
 | 1     | [Виртуальная машина Linux](https://azure.microsoft.com/services/virtual-machines/) | Standard D1 V2  | Размещение микрослужб |
 | 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                  | S1 — уровень "Стандартный" | Управление устройствами и обмен данными |
-| 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)              | Стандартная        | Хранение данных конфигурации, правил, предупреждений и других холодных данных |  
+| 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)              | Стандартная        | Хранение данных конфигурации, правил, оповещений и других холодных данных |  
 | 1     | [Учетная запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)  | Стандартная        | Хранилище для виртуальных машин и контрольных точек потоковой передачи |
 | 1     | [Веб-приложение](https://azure.microsoft.com/services/app-service/web/)        |                 | Размещение интерфейсных веб-приложений |
 | 1     | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)        |                 | Управление удостоверениями пользователей и безопасностью |
@@ -89,7 +89,7 @@ pcs login
 |-------|----------------------------------------------|-----------------|----------|
 | 1     | [Служба Azure Kubernetes (AKS)](https://azure.microsoft.com/services/kubernetes-service)| Используйте полностью управляемую службу оркестрации контейнеров Kubernetes; по умолчанию применяется 3 агента|
 | 1     | [Центр Интернета вещей Azure](https://azure.microsoft.com/services/iot-hub/)                     | S2 — уровень "Стандартный" | Команды и средства для управления устройствами |
-| 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)                 | Стандартная        | Хранение данных конфигурации и данных телеметрии, например правил, предупреждений и сообщений |
+| 1     | [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)                 | Стандартная        | Хранение данных конфигурации и данных телеметрии, например правил, оповещений и сообщений |
 | 5     | [Учетные записи хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-introduction#types-of-storage-accounts)    | Стандартная        | 4 для хранения виртуальных машин и 1 для контрольных точек потоковой передачи |
 | 1     | [Служба приложений](https://azure.microsoft.com/services/app-service/web/)             | Стандартный S1     | Шлюз приложений через SSL |
 | 1     | [Azure Active Directory](https://azure.microsoft.com/services/active-directory/)        |                 | Управление удостоверениями пользователей и безопасностью |
@@ -149,6 +149,6 @@ pcs -h
 > * развертывание акселератора решений;
 > * вход в акселератор решений.
 
-Теперь, когда вы развернули решение для удаленного мониторинга, ознакомьтесь со статьей [Краткое руководство. Использование облачного решения для удаленного мониторинга](./quickstart-remote-monitoring-deploy.md).
+Теперь, когда вы развернули решение для удаленного мониторинга, [изучите возможности панели мониторинга решения](./quickstart-remote-monitoring-deploy.md).
 
 <!-- Next how-to guides in the sequence -->

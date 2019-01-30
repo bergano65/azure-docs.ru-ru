@@ -1,10 +1,10 @@
 ---
-title: Руководство по настройке Box для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка Box для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Box.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 1c959595-6e57-4954-9c0d-67ba03ee212b
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2017
 ms.author: jeedes
-ms.openlocfilehash: 3dac1d18a021c8d6c1b6e3db370c60b9aa782f1c
-ms.sourcegitcommit: 1f9e1c563245f2a6dcc40ff398d20510dd88fd92
+ms.openlocfilehash: 58ab80b9cdf6fbcfa8aebeeac837687ded41ae39
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51625357"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54821848"
 ---
-# <a name="tutorial-configure-box-for-automatic-user-provisioning"></a>Руководство по настройке Box для автоматической подготовки пользователей
+# <a name="tutorial-configure-box-for-automatic-user-provisioning"></a>Руководство. Настройка Box для автоматической подготовки пользователей
 
 Цель этого руководства — показать, как настроить автоматическую подготовку и отмену подготовки учетных записей из Azure AD в Box.
 

@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 01/14/2019
 ms.author: juliako
-ms.openlocfilehash: 8543f00ccaecd8fd3f46132b05c2af925e6de10a
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: 3646c6167f901fe43080d39df42fdb127b1c7fc2
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54352365"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54828151"
 ---
 # <a name="using-a-cloud-dvr"></a>Использование средства цифровой видеозаписи в облаке
 
@@ -37,8 +37,7 @@ ms.locfileid: "54352365"
 > [!NOTE]
 > Компоненты **LiveOutput** запускаются при создании и останавливаются при удалении. При удалении компонента **LiveOutput** базовый компонент **Asset** и его содержимое не удаляются. 
 >
-> Если вы опубликовали **указатели потоковой передачи** в ресурсе для **LiveOutput**, событие (до окна DVR) будет по-прежнему доступно для просмотра до времени окончания **указателя потоковой передачи** или до тех пор, пока вы не удалите его, в зависимости от того, что произойдет раньше.   
-  
+> Если вы опубликовали ресурс **LiveOutput** с помощью **StreamingLocator**, **LiveEvent** (до длинны окна DVR) будет доступен для просмотра до истечения срока действия или удаления **StreamingLocator**, в зависимости от того, какое действие произойдет первым.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

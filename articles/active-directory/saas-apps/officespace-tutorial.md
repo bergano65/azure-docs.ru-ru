@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с OfficeSpace Software | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с OfficeSpace Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в OfficeSpace Software.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 95d8413f-db98-4e2c-8097-9142ef1af823
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/27/2017
 ms.author: jeedes
-ms.openlocfilehash: 7162645f41d26f1496bdec9c4d694e749bfec6a1
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 2f299b41e1def13c0d5e646cc515894c85e97a02
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39449535"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54826706"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-officespace-software"></a>Учебник. Интеграция Azure Active Directory с OfficeSpace Software
+# <a name="tutorial-azure-active-directory-integration-with-officespace-software"></a>Руководство. Интеграция Azure Active Directory с OfficeSpace Software
 
 В этом руководстве описано, как интегрировать OfficeSpace Software с Azure Active Directory (Azure AD).
 
@@ -178,7 +178,7 @@ ms.locfileid: "39449535"
 
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

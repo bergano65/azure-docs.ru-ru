@@ -3,18 +3,18 @@ title: Решение "Запуск и остановка виртуальных
 description: Решение по управлению виртуальными машинами запускает и останавливает виртуальные машины Azure Resource Manager по расписанию и осуществляет упреждающий мониторинг с помощью Log Analytics.
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 10/04/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5f5c86a90325c9a6dcd521a97cb899b88b55198d
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.openlocfilehash: d9dfc70c7158c5f808367b8b2041725b03b9060d
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53194272"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54846189"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Решение для запуска и остановки виртуальных машин в нерабочее время в службе автоматизации Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "53194272"
    ![Страница "Добавление решения" в решении по управлению виртуальными машинами](media/automation-solution-vm-management/azure-portal-add-solution-01.png)
 
 4. На странице **Добавление решения** выберите **Рабочая область**. Выберите рабочую область Log Analytics, связанную с подпиской Azure, в которой находится учетная запись службы автоматизации. Если у вас нет рабочей области, выберите **Создать рабочую область**. На странице **Рабочая область Log Analytics** сделайте следующее:
-   - Укажите имя новой **рабочей области Log Analytics**.
+   - Укажите имя для новой **рабочей области Log Analytics**, например ContosoLAWorkspace.
    - Выберите из раскрывающегося списка **подписку**, с которой нужно связать рабочую область, если выбранная по умолчанию подписка не подходит.
    - В качестве **группы ресурсов** можно использовать имеющуюся группу или создать новую.
    - Выберите **расположение**. В настоящее время можно выбрать только следующие расположения: **Юго-восточная Австралия**, **Центральная Канада**, **Центральная Индия**, **Восточная часть США**, **Восточная Япония**, **Юго-Восточная Азия**, **Южная часть Соединенного Королевства** и **Западная Европа**.

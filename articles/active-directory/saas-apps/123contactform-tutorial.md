@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с 123ContactForm | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с 123ContactForm | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении 123ContactForm.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 5211910a-ab96-4709-959a-524c4d57c43e
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/23/2017
 ms.author: jeedes
-ms.openlocfilehash: ecbe627697fc4f8b5fbfecf96c3cb65d9ffe4607
-ms.sourcegitcommit: 7208bfe8878f83d5ec92e54e2f1222ffd41bf931
+ms.openlocfilehash: 450fc8df69eb5ffb99cb6548e80cd4d3628e7419
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/14/2018
-ms.locfileid: "39054358"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54819447"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-123contactform"></a>Руководство по интеграции Azure Active Directory с 123ContactForm
+# <a name="tutorial-azure-active-directory-integration-with-123contactform"></a>Руководство. Интеграция Azure Active Directory с 123ContactForm
 
 В этом руководстве описано, как интегрировать 123ContactForm с Azure Active Directory (Azure AD).
 
@@ -156,7 +156,7 @@ ms.locfileid: "39054358"
     c. Если вы хотите настроить приложение в **режиме, инициируемом поставщиком услуг**, скопируйте значение **SIGN ON URL** (URL-адрес для входа) для своего экземпляра и вставьте его в текстовое поле **URL-адрес для входа** в разделе **Домены и URL-адреса приложения 123ContactForm** на портале Azure.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -229,7 +229,7 @@ ms.locfileid: "39054358"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "123ContactForm" на панели доступа, вы автоматически войдете в приложение 123ContactForm.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

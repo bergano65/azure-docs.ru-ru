@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Learning Seat LMS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Learning Seat LMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Learning Seat LMS.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: bb056fcf-4135-478e-85b1-5015d1f07b85
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/26/2017
 ms.author: jeedes
-ms.openlocfilehash: 1043c8f7468fd7775ff1e38d12a3dce0b379c915
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b0190cd84674abc62ee68f9d0a160a6cb0cd45c0
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39443282"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54815520"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-learning-seat-lms"></a>Руководство по интеграции Azure Active Directory с Learning Seat LMS
+# <a name="tutorial-azure-active-directory-integration-with-learning-seat-lms"></a>Руководство. Интеграция Azure Active Directory с Learning Seat LMS
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Learning Seat LMS.
 
@@ -135,7 +135,7 @@ ms.locfileid: "39443282"
 1. Чтобы настроить единый вход на стороне **Learning Seat LMS**, отправьте в [службу поддержки Learning Seat](http://help.learningseatlms.com/help) скачанный **XML-файл метаданных**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD](https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory](https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -207,7 +207,7 @@ ms.locfileid: "39443282"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа. 
 
-Щелкнув элемент Learning Seat LMS на панели доступа, вы автоматически войдете в приложение Learning Seat LMS. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Щелкнув элемент Learning Seat LMS на панели доступа, вы автоматически войдете в приложение Learning Seat LMS. Дополнительные сведения о панели доступа см. в статье [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

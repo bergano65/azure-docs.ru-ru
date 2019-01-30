@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 07/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: michmcla
-ms.openlocfilehash: afb28488fc47f018b6d192eb1b65a54499ac8ff9
-ms.sourcegitcommit: 31241b7ef35c37749b4261644adf1f5a029b2b8e
+ms.openlocfilehash: 868af1903623f612a7a987c1247bd138bcf26002
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43666369"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54430540"
 ---
 # <a name="securing-cloud-resources-with-azure-multi-factor-authentication-and-ad-fs"></a>Защита облачных ресурсов с помощью Многофакторной идентификации Azure и AD FS
 
@@ -63,7 +63,7 @@ ms.locfileid: "43666369"
    ![Облако](./media/howto-mfa-adfs/trustedip2.png)
 5. В мастере добавления правила преобразования утверждения выберите **Проход через входящее утверждение или его фильтрация** в раскрывающемся списке и нажмите кнопку **Далее**.
    ![Облако](./media/howto-mfa-adfs/trustedip3.png)
-6. В поле рядом с именем правила утверждения укажите имя правила. Пример: InsideCorpNet.
+6. В поле рядом с именем правила утверждения укажите имя правила. Например:  InsideCorpNet.
 7. В раскрывающемся списке "Тип входящего утверждения" выберите **В корпоративной сети**.
    ![Облако](./media/howto-mfa-adfs/trustedip4.png)
 8. Нажмите кнопку **Готово**

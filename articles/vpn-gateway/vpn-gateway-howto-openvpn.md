@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: conceptual
 ms.date: 01/16/2019
 ms.author: cherylmc
-ms.openlocfilehash: 1dad960b0877cddf3be9afc01e3e687ebe4702c0
-ms.sourcegitcommit: a408b0e5551893e485fa78cd7aa91956197b5018
+ms.openlocfilehash: 07dae60d1d4ab43194f88f44bde498d9fa19ce81
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 01/17/2019
-ms.locfileid: "54357833"
+ms.locfileid: "54388102"
 ---
 # <a name="configure-openvpn-for-azure-point-to-site-vpn-gateway-preview"></a>Настройка OpenVPN для подключения "точка — сеть" VPN-шлюза Azure (предварительная версия)
 
@@ -47,7 +47,10 @@ Register-AzureRmResourceProvider -ProviderNamespace Microsoft.Network
 
 ## <a name="vnet"></a>1. Создание VPN-подключения "— сеть"
 
-Если у вас нет работающей среды "точка — сеть", следуйте инструкциям, чтобы создать ее. См. дополнительные сведения о [создании и настройке VPN-подключения "точка — сеть" с использованием аутентификации на основе собственного сертификата Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md). Обратите внимание на то, что SKU уровня " Базовый" не поддерживает подключения типа "точка — сеть" по протоколу IKEv2.
+Если у вас нет работающей среды "точка — сеть", следуйте инструкциям, чтобы создать ее. См. дополнительные сведения о [создании и настройке VPN-подключения "точка — сеть" с использованием аутентификации на основе собственного сертификата Azure](vpn-gateway-howto-point-to-site-resource-manager-portal.md). 
+
+> [!IMPORTANT]
+> SKU уровня "Базовый" не поддерживается для OpenVPN.
 
 ## <a name="cmdlets"></a>2. Установка командлетов PowerShell
 

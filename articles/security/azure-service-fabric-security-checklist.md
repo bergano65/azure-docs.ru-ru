@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/04/2017
+ms.date: 01/16/2019
 ms.author: tomsh
-ms.openlocfilehash: d0826d60d766874ddd186bcf406ea987134dab16
-ms.sourcegitcommit: f20e43e436bfeafd333da75754cd32d405903b07
+ms.openlocfilehash: 49c043853cede0a20e3d61011ded40e57d7a0303
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49385874"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54389426"
 ---
 # <a name="azure-service-fabric-security-checklist"></a>Контрольный список для обеспечения безопасности Azure Service Fabric
 Эта статья содержит удобный контрольный список, который поможет обеспечить защиту среды Azure Service Fabric.
@@ -48,6 +48,8 @@ Azure Service Fabric — это платформа распределенных 
 
 
 ## <a name="next-steps"></a>Дополнительная информация
+
+- [Рекомендации по безопасности Azure Service Fabric](azure-service-fabric-security-best-practices.md)
 - [Обновление кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-upgrade)
 - [Управление приложениями Service Fabric в Visual Studio](https://docs.microsoft.com/azure/service-fabric/service-fabric-manage-application-in-visual-studio)
 - [Общие сведения о наблюдении за работоспособностью системы в Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction)

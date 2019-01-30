@@ -7,13 +7,13 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.author: bwren
-ms.component: alerts
-ms.openlocfilehash: 9cd745cedd6d870262e412709e4e104c1406558e
-ms.sourcegitcommit: a512360b601ce3d6f0e842a146d37890381893fc
+ms.subservice: alerts
+ms.openlocfilehash: 36be305e60806ba2cdea260fc46bc329c43284cb
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/11/2019
-ms.locfileid: "54234073"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54429792"
 ---
 # <a name="log-alert-queries-in-azure-monitor"></a>Запросы оповещений журналов в Azure Monitor
 [Правила генерации оповещений на основе журналов Azure Monitor](alerts-unified-log.md) выполняются с регулярными интервалами, поэтому следует убедиться, что они написаны так, чтобы минимизировать накладные расходы и задержку. В этой статье приводятся рекомендации по написанию эффективных запросов для оповещений журналов и по преобразованию существующих запросов. 
@@ -222,3 +222,4 @@ on Hour
 ## <a name="next-steps"></a>Дополнительная информация
 - Дополнительные сведения об [оповещениях журналов](alerts-log.md) в Azure Monitor.
 - Дополнительные сведения о [запросах журналов](../log-query/log-query-overview.md).
+

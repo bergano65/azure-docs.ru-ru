@@ -4,7 +4,7 @@ description: Пошаговые инструкции по настройке у�
 services: active-directory
 documentationcenter: ''
 author: daveba
-manager: mtillman
+manager: daveba
 editor: ''
 ms.service: active-directory
 ms.component: msi
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 06/25/2018
 ms.author: daveba
-ms.openlocfilehash: 6f147aa7066db19c1be451b0a5ac49bfce9f571b
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
+ms.openlocfilehash: 5240d46c1d754ec09f9d83a86424fdbd3cfaadb7
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52422939"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54433311"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-rest-api-calls"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью вызовов REST API
 
@@ -319,7 +319,7 @@ ms.locfileid: "52422939"
    az account get-access-token
    ``` 
 
-4. Создайте управляемое удостоверение, назначаемое пользователем, как описано в разделе [Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью вызовов REST API](how-to-manage-ua-identity-rest.md#create-a-user-assigned-managed-identity).
+4. Создайте пользовательское удостоверение, как описано в разделе [Создание управляемого удостоверения, назначаемого пользователем](how-to-manage-ua-identity-rest.md#create-a-user-assigned-managed-identity).
 
 5. Создайте виртуальную машину, используя CURL для вызова конечной точки REST Azure Resource Manager. Приведенный ниже пример создает в группе ресурсов *myResourceGroup* виртуальную машину *myVM* с управляемым удостоверением, назначаемым пользователем, `ID1` в соответствии со значением `"identity":{"type":"UserAssigned"}` в тексте запроса. Замените `<ACCESS TOKEN>` значением, полученным на предыдущем шаге при запросе маркера доступа носителя, а вместо `<SUBSCRIPTION ID>` укажите значение, подходящее для вашей среды.
  

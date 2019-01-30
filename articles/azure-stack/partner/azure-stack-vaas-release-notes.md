@@ -13,18 +13,28 @@ ms.topic: article
 ms.date: 11/26/2018
 ms.author: mabrigg
 ms.reviewer: johnhas
-ms.openlocfilehash: 735f1d7cce8621a29e5a582917d3eea8ee399b8f
-ms.sourcegitcommit: 3ba9bb78e35c3c3c3c8991b64282f5001fd0a67b
+ms.openlocfilehash: ce16ab3b723b9a6c87c7b980e3cc76c389609da6
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2019
-ms.locfileid: "54319654"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54847915"
 ---
 # <a name="release-notes-for-validation-as-a-service"></a>Заметки о выпуске для проверки как службы
 
 [!INCLUDE [Azure_Stack_Partner](./includes/azure-stack-partner-appliesto.md)]
 
 Эта статья содержит заметки о выпуске для проверки как службы Azure Stack.
+
+## <a name="version-405"></a>Версия 4.0.5
+17 января 2019 г.
+
+-  Тест на идентификацию диска обновлен для устранения несоответствий в пуле носителей. Версия: 5.1.14.0  -> 5.1.15.0
+-  Проверка ежемесячного обновления Azure Stack обновлена для устранения несоответствий в проверке утвержденного программного обеспечения и содержимого. Версия: 5.1.14.0  -> 5.1.15.0
+-  OEM Extension Package Verification (Проверка пакетов для расширения OEM) обновлена для выполнения необходимых процедур проверки *перед* шагом обновления Azure Stack. Версия: 5.1.14.0  -> 5.1.15.0
+-  Внутренние исправление ошибок
+
+
 
 ## <a name="version-402"></a>Версия 4.0.2
 

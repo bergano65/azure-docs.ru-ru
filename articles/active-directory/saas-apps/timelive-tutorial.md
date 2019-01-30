@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с TimeLive | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с TimeLive | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TimeLive.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 34123629-4ad5-465c-a4c1-8299f857e720
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/20/2017
 ms.author: jeedes
-ms.openlocfilehash: 26e70abc336b7cb13342873784aa2cb4048a47d9
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: e9be0417e56339fa5c56a72c1b2bd27d5f955ea4
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39437327"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54820756"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-timelive"></a>Руководство по интеграции Azure Active Directory с TimeLive
+# <a name="tutorial-azure-active-directory-integration-with-timelive"></a>Руководство. Интеграция Azure Active Directory с TimeLive
 
 В этом руководстве описано, как интегрировать TimeLive с Azure Active Directory (Azure AD).
 
@@ -154,7 +154,7 @@ ms.locfileid: "39437327"
     ж. Нажмите кнопку **Обновить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -227,7 +227,7 @@ ms.locfileid: "39437327"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув элемент "TimeLive" на панели доступа, вы автоматически войдете в приложение TimeLive.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -5,15 +5,15 @@ author: vgorbenko
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 12/20/2018
+ms.date: 01/22/2019
 ms.author: vitalyg
-ms.component: metrics
-ms.openlocfilehash: 457c7e8904797955854c4c3e16a631cf6537e2b8
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.subservice: metrics
+ms.openlocfilehash: 2b6d982f514f347dc2a59f9ca8f3c33b8c24849b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54330081"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54827454"
 ---
 # <a name="azure-monitor-metrics-explorer"></a>Обозреватель метрик Azure Monitor
 
@@ -139,6 +139,17 @@ ms.locfileid: "54330081"
 
 ![изображение метрики](./media/metrics-charts/00013.png)
 
+## <a name="troubleshooting"></a>Устранение неполадок
+
+*Данные не отображаются на диаграмме.*
+
+* Фильтры применяются ко всем диаграммам на панели. Убедитесь, что, рассматривая какую-либо диаграмму, вы не задали фильтр, исключающий все данные на другой диаграмме.
+
+* Если вы хотите задать разные фильтры для различных диаграмм, создайте их на разных колонках и по отдельности сохраните в избранное. Если необходимо, вы можете закрепить их на панели мониторинга, чтобы их можно было видеть вместе.
+
+* Если сегментировать диаграмму по свойству, которое не определено в метрике, то на диаграмме ничего не отобразится. Попробуйте очистить сегментацию (разбиение) или выберите другое свойство.
+
 ## <a name="next-steps"></a>Дополнительная информация
 
   Дополнительные сведения о рекомендациях по созданию готовых к работе панелей мониторинга с метриками см. в статье [Create custom KPI dashboards using Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-tutorial-dashboards) (Создание пользовательских панелей мониторинга KPI с помощью Azure Application Insights).
+

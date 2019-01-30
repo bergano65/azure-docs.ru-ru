@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: mbullwin
-ms.openlocfilehash: dbca662f38f13833a4b9e642a4d8f690017d999a
-ms.sourcegitcommit: c61777f4aa47b91fb4df0c07614fdcf8ab6dcf32
+ms.openlocfilehash: b7710b081668bf07d40718baf1d84314246861f5
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2019
-ms.locfileid: "54262138"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54412409"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
@@ -96,6 +96,23 @@ ms.locfileid: "54262138"
 
 > [!NOTE]
 > Файлы агента AI-Agent.xml и JAR-файл должны быть в одной папке. Они часто расположены вместе в папке `/resources` проекта. 
+
+### <a name="spring-rest-template"></a>Шаблон Spring Rest
+
+Для того чтобы Application Insights успешно обрабатывал HTTP-вызовы, сделанные с помощью шаблона Spring Rest, необходимо использовать клиент HTTP Apache. По умолчанию шаблон Spring Rest не настроен для использования клиента HTTP Apache. Указав [ HttpComponentsClientHttpRequestfactory ](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/http/client/HttpComponentsClientHttpRequestFactory.html) в конструкторе шаблона Spring Rest, он будет использовать Apache HTTP.
+
+Вот пример того, как это сделать с помощью Spring Beans. Это очень простой пример, использующий параметры по умолчанию для класса фабрики.
+
+```java
+@bean
+public ClientHttpRequestFactory httpRequestFactory() {
+return new HttpComponentsClientHttpRequestFactory()
+}
+@Bean(name = 'myRestTemplate')
+public RestTemplate dcrAccessRestTemplate() {
+    return new RestTemplate(httpRequestFactory())
+}
+```
 
 #### <a name="enable-w3c-distributed-tracing"></a>Активация распределенной трассировки W3C
 

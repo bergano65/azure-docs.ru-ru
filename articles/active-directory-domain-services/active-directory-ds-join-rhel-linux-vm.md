@@ -1,10 +1,10 @@
 ---
-title: 'Доменные службы Azure Active Directory: присоединение виртуальной машины RHEL к управляемому домену | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Присоединение виртуальной машины RHEL к управляемому домену | Документация Майкрософт
 description: Присоединение виртуальной машины Red Hat Enterprise Linux к доменным службам Azure AD
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: d76ae997-2279-46dd-bfc5-c0ee29718096
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: ergreenl
-ms.openlocfilehash: bfad3b8c8347b885fd713d30c620d6c86377fab3
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 44d6614c7e0f4f7a53a2f0579f8fe03c9d7847b7
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50155241"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54850915"
 ---
 # <a name="join-a-red-hat-enterprise-linux-7-virtual-machine-to-a-managed-domain"></a>Присоединение виртуальной машины Red Hat Enterprise Linux 7 к управляемому домену
 Эта статья покажет, как присоединить виртуальную машину Red Hat Enterprise Linux (RHEL) 7 к управляемому домену доменных служб Azure AD.
@@ -87,7 +87,7 @@ sudo vi /etc/hosts
     ```
 
      > [!NOTE]
-     > **Устранение неполадок.** Если команда *realm discover* не может найти управляемый домен, сделайте следующее:
+     > **Устранение неполадок**. Если команда *realm discover* не может найти управляемый домен, сделайте следующее:
      * Проверьте подключение между доменом и виртуальной машиной (с помощью команды ping).
      * Убедитесь, что виртуальная машина развернута в одной виртуальной сети с управляемым доменом.
      * Проверьте, обновлены ли параметры DNS-сервера для виртуальной сети — должны быть указаны контроллеры управляемого домена.

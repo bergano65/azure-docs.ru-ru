@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 2bd89432a15f6960b07102ede317acca5864b773
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: eac0c1f2f7ded35cf09eec12f0406c754621f49c
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53310901"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54465468"
 ---
 # <a name="indexing-csv-blobs-with-azure-search-blob-indexer"></a>Индексирование BLOB-объектов в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure
 По умолчанию [индексатор BLOB-объектов службы поиска Azure](search-howto-indexing-azure-blob-storage.md) анализирует текстовые BLOB-объекты (с разделителями) как один блок текста. Однако в больших двоичных объектах, содержащих CSV-данные, часто возникает необходимость обрабатывать каждую строку объекта как отдельный документ. Например, учитывая следующий разделительный текст, вы можете проанализировать его в двух документах, каждый из которых содержит поля "id", "datePublished" и "tags": 
@@ -27,7 +27,7 @@ ms.locfileid: "53310901"
 Из этой статьи вы узнаете, как анализировать большие двоичные объекты в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure. 
 
 > [!IMPORTANT]
-> Эта функция в настоящее время находится в общедоступной предварительной версии и не должна использоваться в рабочей среде. Дополнительные сведения см. в статье [REST api-version=2017-11-11-Preview](search-api-2017-11-11-preview.md) (REST API версии 2017-11-11-Preview). 
+> Функция индексирования BLOB-объектов в формате CSV сейчас находится в общедоступной предварительной версии и не должна использоваться в рабочей среде. Дополнительные сведения см. в статье [REST api-version=2017-11-11-Preview](search-api-2017-11-11-preview.md) (REST API версии 2017-11-11-Preview). 
 > 
 
 ## <a name="setting-up-csv-indexing"></a>Настройка индексирования CSV

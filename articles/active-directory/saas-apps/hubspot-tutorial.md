@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с HubSpot | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с HubSpot | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и HubSpot.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 57343ccd-53ea-4e62-9e54-dee2a9562ed5
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/18/2018
 ms.author: jeedes
-ms.openlocfilehash: 76a19668453b35b39359bef442f7f34a06623cbe
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 2806288378e5fa080164155b97a47a7046ecbba1
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49433489"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54814908"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hubspot"></a>Руководство по интеграции Azure Active Directory с HubSpot
+# <a name="tutorial-azure-active-directory-integration-with-hubspot"></a>Руководство. Интеграция Azure Active Directory с HubSpot
 
 Цель этого руководства — показать, как интегрировать Azure Active Directory (Azure AD) с приложением HubSpot.
 
@@ -164,7 +164,7 @@ ms.locfileid: "49433489"
 
     d. В текстовое поле **Identity Provider Single Sign-On URL** (URL-адрес единого входа для поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
 
-    д. Откройте скачанный файл **сертификата (Base64)** в Блокноте. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле **сертификата X.509**.
+    д. Откройте скачанный файл  **сертификата (Base64)** в Блокноте. Скопируйте его содержимое в буфер обмена и вставьте в текстовое поле  **сертификата X.509**.
 
     Е. Нажмите кнопку **Проверка**.
 

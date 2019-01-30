@@ -4,7 +4,7 @@ description: В этом разделе описаны необходимые у
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 91b88fda-bca6-49a8-898f-8d906a661f07
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 12/28/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: a36868e5bab64883036e0f93352bea5341ff7fe7
-ms.sourcegitcommit: 85d94b423518ee7ec7f071f4f256f84c64039a9d
+ms.openlocfilehash: eb5ad49a26631ca363737406f54b4c794e01ebda
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53384071"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54472846"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -79,7 +79,7 @@ ms.locfileid: "53384071"
   * Если вы используете платформу Microsoft Cloud в Германии или облако Microsoft Azure для государственных организаций, то сведения об URL-адресах см. в статье [Azure AD Connect: специальные рекомендации для экземпляров](reference-connect-instances.md).
 * Azure AD Connect (версия 1.1.614.0 и более поздние версии) по умолчанию использует TLS 1.2 для шифрования связи между модулем синхронизации и Azure AD. Если TLS 1.2 не поддерживается для базовой операционной системы, Azure AD Connect последовательно пытается перейти на более старые протоколы (TLS 1.1 и TLS 1.0).
 * До версии 1.1.614.0 Azure AD Connect по умолчанию использует TLS 1.0 для шифрования связи между модулем синхронизации и Azure AD. Чтобы перейти на использование TLS 1.2, нужно выполнить инструкции из раздела [Включение протокола TLS 1.2 для Azure AD Connect](#enable-tls-12-for-azure-ad-connect).
-* Если для подключения к Интернету используется прокси-сервер, то в файл **C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config** необходимо добавить приведенные ниже параметры, чтобы мастер установки и функция синхронизации Azure AD Connect могли подключаться к Интернету и Azure AD. Этот текст необходимо добавить в конец указанного файла. В этом коде &lt;PROXYADRESS&gt; означает фактический IP-адрес или имя узла прокси-сервера.
+* Если для подключения к Интернету используется прокси-сервер, то в файл **C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config** необходимо добавить приведенные ниже параметры, чтобы мастер установки и функция синхронизации Azure AD Connect могли подключаться к Интернету и Azure AD. Этот текст необходимо добавить в конец указанного файла. В этом коде &lt;PROXYADDRESS&gt; означает фактический IP-адрес или имя узла прокси-сервера.
 
 ```
     <system.net>

@@ -1,10 +1,10 @@
 ---
-title: 'Azure AD Connect: обновление до последней версии | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: обновление до последней версии | Документация Майкрософт'
 description: В этой статье описаны различные способы обновления Azure Active Directory Connect до последней версии, включая обновление на месте и обновление со сменой сервера.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 31f084d8-2b89-478c-9079-76cf92e6618f
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.workload: Identity
 ms.date: 07/18/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: 17333f6a5e78fb6da607e93cf696bfc766daf3ae
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 4ca1fc4677f0d9a5391973a965faae4e283c4710
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46309943"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54462544"
 ---
-# <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect: обновление до последней версии
+# <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect выполняет следующие функции: обновление до последней версии
 В этой статье описываются различные варианты обновления установленного экземпляра Azure Active Directory (Azure AD) Connect до последней версии. Мы рекомендуем устанавливать все новые выпуски Azure AD Connect. Действия, описанные в разделе [Обновление со сменой сервера](#swing-migration), можно также использовать при значительных изменениях конфигурации.
 
 Инструкции по обновлению DirSync см. в статье [Azure AD Connect: обновление DirSync](how-to-dirsync-upgrade-get-started.md).

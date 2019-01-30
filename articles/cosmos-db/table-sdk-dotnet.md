@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/17/2018
-ms.openlocfilehash: f2492e3d49f9b7e965c33ed4419f566e81dd62ed
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 469faeee4706c33b09f89bfbed1bb229a6aea20e
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54043470"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54848382"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблиц .NET для базы данных Azure Cosmos DB: скачивание и заметки о выпуске
 > [!div class="op_single_selector"]
@@ -36,6 +36,9 @@ ms.locfileid: "54043470"
 >
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+### <a name="a-name210210"></a><a name="2.1.0"/>2.1.0
+* Исправления ошибок
 
 ### <a name="a-name200200"></a><a name="2.0.0"/>2.0.0
 * Добавлена поддержка для операций записи в нескольких регионах
@@ -72,6 +75,8 @@ ms.locfileid: "54043470"
 
 | Version (версия) | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.1.0](#2.1.0) |22 января 2019 г.|--- |
+| [2.0.0](#2.0.0) |26 сентября 2018 г.|--- |
 | [1.1.3](#1.1.3) |17 июля 2018 г.|--- |
 | [1.1.1](#1.1.1) |26 марта 2018 г.|--- |
 | [1.1.0](#1.1.0) |21 февраля 2018 г.|--- |

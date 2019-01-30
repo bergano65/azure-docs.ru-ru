@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с RolePoint | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с RolePoint | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и RolePoint.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 68d37f40-15da-45f5-a9e1-d53f78e786d1
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/27/2017
 ms.author: jeedes
-ms.openlocfilehash: 1cefb855e089f540946dbd11005f384c33027df7
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: d16e2ebf6f2a170a65d9e471f0c4a19a3a31ded2
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39439702"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54827845"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-rolepoint"></a>Руководство по интеграции Azure Active Directory с RolePoint
+# <a name="tutorial-azure-active-directory-integration-with-rolepoint"></a>Руководство. Интеграция Azure Active Directory с RolePoint
 
 В этом руководстве описано, как интегрировать RolePoint с Azure Active Directory (Azure AD).
 
@@ -131,7 +131,7 @@ ms.locfileid: "39439702"
 1. Чтобы настроить единый вход на стороне **RolePoint**, отправьте скачанный **XML-файл метаданных** в [службу поддержки RolePoint](mailto:info@rolepoint.com).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

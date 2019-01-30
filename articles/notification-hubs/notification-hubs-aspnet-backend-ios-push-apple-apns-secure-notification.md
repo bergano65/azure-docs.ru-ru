@@ -2,8 +2,8 @@
 title: Безопасные push-уведомления посредством центров уведомлений Azure
 description: Узнайте, как отправлять безопасные push-уведомления в приложение iOS из Azure. Примеры кода написаны на Objective-C и C#.
 documentationcenter: ios
-author: dimazaid
-manager: kpiteira
+author: jwargo
+manager: patniko
 editor: spelluru
 services: notification-hubs
 ms.assetid: 17d42b0a-2c80-4e35-a1ed-ed510d19f4b4
@@ -12,25 +12,25 @@ ms.workload: mobile
 ms.tgt_pltfrm: ios
 ms.devlang: objective-c
 ms.topic: article
-ms.date: 04/25/2018
-ms.author: dimazaid
-ms.openlocfilehash: d3ba967a164a35af5bf66f7e74d5f95b5dc2a37f
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
+ms.date: 01/04/2019
+ms.author: jowargo
+ms.openlocfilehash: d88bdb1eaeb95413df84bf69ed4fc763b6d4901f
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38308577"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54449273"
 ---
 # <a name="azure-notification-hubs-secure-push"></a>Безопасные push-уведомления посредством центров уведомлений Azure
+
 > [!div class="op_single_selector"]
 > * [Windows Universal](notification-hubs-aspnet-backend-windows-dotnet-wns-secure-push-notification.md)
 > * [iOS](notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification.md)
 > * [Android](notification-hubs-aspnet-backend-android-secure-google-gcm-push-notification.md)
-> 
-> 
 
 ## <a name="overview"></a>Обзор
-Поддержка push-уведомлений в Microsoft Azure позволяет получить доступ к простой в использовании, многоплатформенной и масштабируемой инфраструктуре для отправки push-уведомлений, которая значительно упрощает реализацию push-уведомлений как для индивидуальных пользователей, так и для корпоративных приложений для мобильных платформ.
+
+Поддержка push-уведомлений в Microsoft Azure позволяет получить доступ к простой в использовании, многоплатформенной и масштабируемой инфраструктуре для отправки push-уведомлений. Она значительно упрощает реализацию push-уведомлений как для объекта-получателя, так и для корпоративных приложений для мобильных платформ.
 
 Из-за ограничений, связанных с правовыми нормами или обеспечением безопасности, иногда в уведомлении могут присутствовать данные, которые нельзя передать через стандартную инфраструктуру push-уведомлений. В этом учебнике рассказывается о том, как реализовать этот принцип при отправке важной информации через защищенное соединение с проверкой подлинности, установленное между устройством клиента и серверной частью приложения.
 
@@ -49,105 +49,110 @@ ms.locfileid: "38308577"
 
 > [!NOTE]
 > В этом учебнике подразумевается, что вы создали и настроили центр уведомлений, как описано в руководстве [Приступая к работе с центрами уведомлений (iOS)](notification-hubs-ios-apple-push-notification-apns-get-started.md).
-> 
-> 
 
 [!INCLUDE [notification-hubs-aspnet-backend-securepush](../../includes/notification-hubs-aspnet-backend-securepush.md)]
 
 ## <a name="modify-the-ios-project"></a>Внесение изменений в проект iOS
+
 После того, как вы изменили серверную часть приложения для отправки только *идентификатора* уведомления, необходимо внести изменения в приложение iOS для обработки этого уведомления и осуществления обратного вызова к серверной части для извлечения конфиденциального сообщения, которое должно быть отображено.
 
 Для достижения этой цели мы напишем логику извлечения безопасного содержимого из серверной части приложения.
 
-1. Убедитесь, что в **AppDelegate.m** приложение подписано на автоматические уведомления и обрабатывает отправленный из серверной части идентификатор уведомления. Добавьте параметр **UIRemoteNotificationTypeNewsstandContentAvailability** в didFinishLaunchingWithOptions:
-   
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeNewsstandContentAvailability];
-2. В файле **AppDelegate.m** добавьте в начало файла реализационную часть со следующим объявлением:
-   
-        @interface AppDelegate ()
-        - (void) retrieveSecurePayloadWithId:(int)payloadId completion: (void(^)(NSString*, NSError*)) completion;
-        @end
+1. Убедитесь, что в `AppDelegate.m` приложение регистрируется на автоматические уведомления и обрабатывает отправленный из серверной части идентификатор уведомления. Добавьте параметр `UIRemoteNotificationTypeNewsstandContentAvailability` в didFinishLaunchingWithOptions.
+
+    ```objc
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeNewsstandContentAvailability];
+    ```
+2. В начало файла `AppDelegate.m` добавьте раздел реализации со следующим объявлением:
+
+    ```objc
+    @interface AppDelegate ()
+    - (void) retrieveSecurePayloadWithId:(int)payloadId completion: (void(^)(NSString*, NSError*)) completion;
+    @end
+    ```
 3. Затем добавьте в реализационную часть следующий код, заменив заполнитель `{back-end endpoint}` на конечную точку серверной части, которая была получена ранее:
 
-```
-        NSString *const GetNotificationEndpoint = @"{back-end endpoint}/api/notifications";
+    ```objc
+    NSString *const GetNotificationEndpoint = @"{back-end endpoint}/api/notifications";
 
-        - (void) retrieveSecurePayloadWithId:(int)payloadId completion: (void(^)(NSString*, NSError*)) completion;
-        {
-            // check if authenticated
-            ANHViewController* rvc = (ANHViewController*) self.window.rootViewController;
-            NSString* authenticationHeader = rvc.registerClient.authenticationHeader;
-            if (!authenticationHeader) return;
+    - (void) retrieveSecurePayloadWithId:(int)payloadId completion: (void(^)(NSString*, NSError*)) completion;
+    {
+        // check if authenticated
+        ANHViewController* rvc = (ANHViewController*) self.window.rootViewController;
+        NSString* authenticationHeader = rvc.registerClient.authenticationHeader;
+        if (!authenticationHeader) return;
 
+        NSURLSession* session = [NSURLSession
+                                    sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
+                                    delegate:nil
+                                    delegateQueue:nil];
 
-            NSURLSession* session = [NSURLSession
-                                     sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
-                                     delegate:nil
-                                     delegateQueue:nil];
+        NSURL* requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%d", GetNotificationEndpoint, payloadId]];
+        NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:requestURL];
+        [request setHTTPMethod:@"GET"];
+        NSString* authorizationHeaderValue = [NSString stringWithFormat:@"Basic %@", authenticationHeader];
+        [request setValue:authorizationHeaderValue forHTTPHeaderField:@"Authorization"];
 
+        NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*) response;
+            if (!error && httpResponse.statusCode == 200)
+            {
+                NSLog(@"Received secure payload: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 
-            NSURL* requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%d", GetNotificationEndpoint, payloadId]];
-            NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:requestURL];
-            [request setHTTPMethod:@"GET"];
-            NSString* authorizationHeaderValue = [NSString stringWithFormat:@"Basic %@", authenticationHeader];
-            [request setValue:authorizationHeaderValue forHTTPHeaderField:@"Authorization"];
+                NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error: &error];
 
-            NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*) response;
-                if (!error && httpResponse.statusCode == 200)
-                {
-                    NSLog(@"Received secure payload: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-
-                    NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error: &error];
-
-                    completion([json objectForKey:@"Payload"], nil);
+                completion([json objectForKey:@"Payload"], nil);
+            }
+            else
+            {
+                NSLog(@"Error status: %ld, request: %@", (long)httpResponse.statusCode, error);
+                if (error)
+                    completion(nil, error);
+                else {
+                    completion(nil, [NSError errorWithDomain:@"APICall" code:httpResponse.statusCode userInfo:nil]);
                 }
-                else
-                {
-                    NSLog(@"Error status: %ld, request: %@", (long)httpResponse.statusCode, error);
-                    if (error)
-                        completion(nil, error);
-                    else {
-                        completion(nil, [NSError errorWithDomain:@"APICall" code:httpResponse.statusCode userInfo:nil]);
-                    }
-                }
-            }];
-            [dataTask resume];
-        }
-```
+            }
+        }];
+        [dataTask resume];
+    }
+    ```
 
-    This method calls your app back-end to retrieve the notification content using the credentials stored in the shared preferences.
+    Этот метод вызывает серверную часть вашего приложения для извлечения содержимого уведомления с помощью учетных данных, хранящихся в общих настройках.
 
-1. Теперь мы обработаем входящее уведомление и используем вышеуказанный метод для извлечения содержимого и его отображения. Во-первых, мы должны создать для приложения iOS возможность работы в фоновом режиме при получении push-уведомления. В **XCode** выберите проект приложения в панели слева, затем выберите основную платформу в разделе **Targets** (Целевые объекты) центральной панели.
-2. Затем щелкните вкладку **Capabilities** (Возможности) в верхней части центральной панели и установите флажок **Remote Notifications** (Удаленные уведомления).
-   
+4. Теперь мы обработаем входящее уведомление и используем вышеуказанный метод для извлечения содержимого и его отображения. Во-первых, мы должны создать для приложения iOS возможность работы в фоновом режиме при получении push-уведомления. В **XCode** выберите проект приложения в панели слева, затем выберите основную платформу в разделе **Targets** (Целевые объекты) центральной панели.
+5. Затем щелкните вкладку **Capabilities** (Возможности) в верхней части центральной панели и установите флажок **Remote Notifications** (Удаленные уведомления).
+
     ![][IOS1]
-3. В файле **AppDelegate.m** добавьте следующий метод для обработки push-уведомлений:
-   
-        -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
-        {
-            NSLog(@"%@", userInfo);
-   
-            [self retrieveSecurePayloadWithId:[[userInfo objectForKey:@"secureId"] intValue] completion:^(NSString * payload, NSError *error) {
-                if (!error) {
-                    // show local notification
-                    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-                    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:0];
-                    localNotification.alertBody = payload;
-                    localNotification.timeZone = [NSTimeZone defaultTimeZone];
-                    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-   
-                    completionHandler(UIBackgroundFetchResultNewData);
-                } else {
-                    completionHandler(UIBackgroundFetchResultFailed);
-                }
-            }];
-   
-        }
-   
+
+6. В файле `AppDelegate.m` добавьте следующий метод для обработки push-уведомлений.
+
+    ```objc
+    -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+    {
+        NSLog(@"%@", userInfo);
+
+        [self retrieveSecurePayloadWithId:[[userInfo objectForKey:@"secureId"] intValue] completion:^(NSString * payload, NSError *error) {
+            if (!error) {
+                // show local notification
+                UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+                localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:0];
+                localNotification.alertBody = payload;
+                localNotification.timeZone = [NSTimeZone defaultTimeZone];
+                [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+
+                completionHandler(UIBackgroundFetchResultNewData);
+            } else {
+                completionHandler(UIBackgroundFetchResultFailed);
+            }
+        }];
+
+    }
+    ```
+
     Обратите внимание, что случаи отсутствующего свойства заголовки проверки подлинности или отклонения предпочтительнее обрабатывать на серверной части. Обработка таких случаев в основном зависит от взаимодействия с пользователем на целевой платформе. Одним из вариантов является отображение уведомления с обычным предложением пользователю для проверки подлинности, чтобы получить текущее уведомление.
 
 ## <a name="run-the-application"></a>Запуск приложения
+
 Для запуска приложения выполните следующие действия:
 
 1. В XCode запустите приложение на физическом устройстве под управлением iOS (push-уведомления не будут работать в симуляторе).

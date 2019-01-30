@@ -3,18 +3,18 @@ title: Устранение неполадок с платформой Desired S
 description: В этой статье приводятся сведения об устранении неполадок с платформой Desired State Configuration (DSC).
 services: automation
 ms.service: automation
-ms.component: ''
+ms.subservice: ''
 author: georgewallace
 ms.author: gwallace
 ms.date: 06/19/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 5d2eae67fcff74a7016f7f6125e31a9c8c2bda97
-ms.sourcegitcommit: f06925d15cfe1b3872c22497577ea745ca9a4881
+ms.openlocfilehash: 997f332e14fd1accf32d8cc3f51557fe005acab5
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37064631"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54421651"
 ---
 # <a name="troubleshoot-desired-state-configuration-dsc"></a>Устранение неполадок с платформой Desired State Configuration (DSC)
 
@@ -22,7 +22,7 @@ ms.locfileid: "37064631"
 
 ## <a name="common-errors-when-working-with-desired-state-configuration-dsc"></a>Распространенные ошибки при настройке требуемого состояния (DSC)
 
-### <a name="failed-not-found"></a>Сценарий: узел находится в состоянии сбоя с ошибкой "Не найдено"
+### <a name="failed-not-found"></a>Сценарий. Узел находится в состоянии сбоя с ошибкой "Не найдено"
 
 #### <a name="issue"></a>Проблема
 
@@ -44,7 +44,7 @@ The attempt to get the action from server https://<url>//accounts/<account-id>/N
   * Чтобы назначить узлу конфигурацию узла с помощью портала Azure, откройте страницу **Узлы DSC**, затем выберите узел и нажмите кнопку **Назначить конфигурацию узла**.  
   * Чтобы назначить узлу конфигурацию узла с помощью PowerShell, используйте командлет **Set-AzureRmAutomationDscNode** .
 
-### <a name="no-mof-files"></a>Сценарий: при компиляции конфигурации не были созданы файлы конфигурации узла (MOF-файлы)
+### <a name="no-mof-files"></a>Сценарий. При компиляции конфигурации не были созданы файлы конфигурации узла (MOF-файлы)
 
 #### <a name="issue"></a>Проблема
 
@@ -65,7 +65,7 @@ Compilation completed successfully, but no node configuration.mofs were generate
 * Убедитесь, что выражение рядом с ключевым словом **Node** в определении конфигурации не равно $null.
 * Если при компиляции конфигурации вы передаете ConfigurationData, то убедитесь, что передаются ожидаемые значения из [ConfigurationData](../automation-dsc-compile.md#configurationdata), которые необходимы конфигурации.
 
-### <a name="dsc-in-progress"></a>Сценарий: отчет узла DSC зависает в состоянии "Выполняется"
+### <a name="dsc-in-progress"></a>Сценарий. Отчет узла DSC зависает в состоянии "Выполняется"
 
 #### <a name="issue"></a>Проблема
 
@@ -83,7 +83,7 @@ No instance found with given property values
 
 Чтобы решить эту проблему, выполните инструкции из статьи [Известные проблемы и ограничения настройки требуемого состояния (DSC)](https://msdn.microsoft.com/powershell/wmf/5.0/limitation_dsc).
 
-### <a name="issue-using-credential"></a>Сценарий: не удается использовать учетные данные в конфигурации DSC
+### <a name="issue-using-credential"></a>Сценарий. Не удается использовать учетные данные в конфигурации DSC
 
 #### <a name="issue"></a>Проблема
 
@@ -103,7 +103,7 @@ System.InvalidOperationException error processing property 'Credential' of type 
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Если данные о проблеме не отображаются или не удается решить проблему, воспользуйтесь одним из следующих каналов, чтобы получить дополнительную поддержку.
+Если вы не видите своего варианта проблемы или вам не удается ее решить, дополнительные сведения можно получить, посетив один из следующих каналов.
 
 * Получите ответы специалистов Azure на [форумах Azure](https://azure.microsoft.com/support/forums/).
 * Подключитесь к [@AzureSupport](https://twitter.com/azuresupport) — официальной учетной записи Microsoft Azure. Она помогает оптимизировать работу пользователей благодаря возможности доступа к ресурсам сообщества Azure (ответы на вопросы, поддержка и консультации специалистов).

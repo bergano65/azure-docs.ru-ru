@@ -11,12 +11,12 @@ ms.component: bing-image-search
 ms.topic: article
 ms.date: 04/15/2017
 ms.author: scottwhi
-ms.openlocfilehash: 280c646a3265ff7ab9a3d32412a2be2e3989e22e
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: bb17916fb4d9b9b3ae1481ead7508214f5956c70
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46297475"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54464278"
 ---
 # <a name="get-image-insights-with-the-bing-image-search-api"></a>Получение аналитических сведений об изображениях с помощью API Bing для поиска изображений
 
@@ -216,10 +216,10 @@ Host: api.cognitive.microsoft.com
 
 Значения прямоугольника относительны ширине и высоте исходного изображения и находятся в диапазоне от 0,0 до 1,0. Например, если изображение 300x200, верхний левый угол области находится в точке (10; 20), а нижний правый угол находится в точке (290; 150), тогда стандартный прямоугольник:  
 
--   По левому краю: 10 / 300 = 0,03333...  
--   Сверху: 20 / 200 = 0,1  
--   По правому краю: 290 / 300 = 0,9667...  
--   Снизу: 150 / 200 = 0,75  
+-   По левому краю: 10 / 300 = 0,03333...  
+-   Сверху:  20 / 200 = 0,1  
+-   По правому краю: 290 / 300 = 0,9667...  
+-   Снизу: 150 / 200 = 0,75  
 
 Вы можете использовать область, которую Bing возвращает при последующих вызовах аналитических сведений. Например, чтобы получить визуально похожие изображения распознанной сущности. Дополнительные сведения см. в разделе [Get insights about an image](#croppingimages) (Получение сведений об изображении). Ниже показано сопоставление полей области и параметров запроса, которые вы использовали для обрезки изображений.  
 
@@ -408,7 +408,7 @@ Host: api.cognitive.microsoft.com
 }
 ```
 
-Чтобы получить список продавцов, предлагающих продукт в Интернете (см. поле [offerCount](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#offer-offercount)), снова вызовите API и задайте `modules` для ShoppingSources. Затем задайте параметр запроса `insightsToken` в токен, найденный в сводном изображении продукта.  
+Чтобы получить список продавцов, предлагающих продукт в Интернете (см. поле [offerCount](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference)), снова вызовите API и задайте `modules` для ShoppingSources. Затем задайте параметр запроса `insightsToken` в токен, найденный в сводном изображении продукта.  
 
 ```
 GET https://api.cognitive.microsoft.com/bing/v7.0/images/details?modules=ShoppingSources&insightsToken=ccid_hb3uRvUk*mid_BF5C252A47F2C765...&mkt=en-us HTTP/1.1    

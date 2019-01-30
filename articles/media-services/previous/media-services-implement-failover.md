@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/17/2018
 ms.author: juliako
-ms.openlocfilehash: 618316b6b5979c65bc8906ea7d07c4f4fdf0930d
-ms.sourcegitcommit: f10653b10c2ad745f446b54a31664b7d9f9253fe
+ms.openlocfilehash: 1477242e10918a9836ceea15d418fb462e193b1b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46124616"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54811746"
 ---
 # <a name="implement-failover-streaming-with-azure-media-services"></a>Реализация потоковой передачи отработки отказа с помощью служб мультимедиа Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "46124616"
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Две учетные записи служб мультимедиа в новой или существующей подписке Azure. См. статью [Создание учетной записи служб мультимедиа](media-services-portal-create-account.md).
-* Операционные системы: Windows 7, Windows 2008 R2 или Windows 8.
+* Операционная система: Windows 7, Windows 2008 R2 или Windows 8.
 * .NET Framework 4.5 или .NET Framework 4.
 * Visual Studio 2010 с пакетом обновления 1 или более поздней версии (Professional, Premium, Ultimate или Express).
 
@@ -178,7 +178,7 @@ ms.locfileid: "46124616"
                 CreateFileInfosForAssetWithRest(_contextTarget, targetAsset, MediaServicesAccountNameTarget, MediaServicesAccountKeyTarget);
         
                 // Check if the AssetFiles are now  associated with the asset.
-                Console.WriteLine("Asset files assocated with the {0} asset:", targetAsset.Name);
+                Console.WriteLine("Asset files associated with the {0} asset:", targetAsset.Name);
                 foreach (var af in targetAsset.AssetFiles)
                 {
                     Console.WriteLine(af.Name);

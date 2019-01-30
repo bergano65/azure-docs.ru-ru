@@ -1,10 +1,10 @@
 ---
-title: 'Доменные службы Azure Active Directory: администрирование управляемого домена | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Администрирование управляемого домена | Документация Майкрософт
 description: Администрирование управляемых доменов доменных служб Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: d4fdbc75-3e6b-4e20-8494-5dcc3bf2220a
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: ergreenl
-ms.openlocfilehash: dab1547ca17acaeda3cb168d78b342661ebe4615
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: 81e7eb6a95dea5bf68af62e4eeae20f958ec4790
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51230484"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54844812"
 ---
 # <a name="administer-an-azure-active-directory-domain-services-managed-domain"></a>Администрирование управляемого домена доменных служб Azure Active Directory
 В этой статье показано, как администрировать управляемый домен доменных служб Azure Active Directory (AD).

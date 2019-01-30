@@ -1,10 +1,10 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с MaxxPoint | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с MaxxPoint | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в MaxxPoint
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 15ba026e-96fc-4ae8-b135-0169da810e99
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/13/2017
 ms.author: jeedes
-ms.openlocfilehash: ca10db225947fbd98b8d5919cdaa371710b0ce46
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b4cf7c8388b0a5a278298fff274ba49d542bae36
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39442672"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54806969"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-maxxpoint"></a>Руководство. Интеграция Azure Active Directory с MaxxPoint
 
@@ -135,7 +135,7 @@ ms.locfileid: "39442672"
 1. Чтобы настроить единый вход для приложения, позвоните в службу поддержки MaxxPoint по номеру **888-728-0950**. Вы получите дальнейшие указания по тому, как предоставить скачанный **XML-файл метаданных**. 
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

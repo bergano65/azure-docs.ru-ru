@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Datahug | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Datahug | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Datahug.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 5c0dc1ea-7ff4-4554-b60b-0f2fa9f5abaa
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/18/2017
 ms.author: jeedes
-ms.openlocfilehash: b3c67d794bd5947dc377cbdb7578e23ff3e05390
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: a7a7a9cffa2dab3cc50a393f15d7419728502f8e
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39441516"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54814229"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-datahug"></a>Руководство. Интеграция Azure Active Directory с Datahug
 
@@ -148,7 +148,7 @@ ms.locfileid: "39441516"
 1. Чтобы настроить единый вход на стороне **Datahug**, нужно отправить скачанный **XML-файл метаданных**, **идентификатор сущности SAML** и **URL-адрес службы единого входа SAML** в [службу поддержки Datahug](http://datahug.com/about/contact-us/). Это позволит службе поддержки правильно настроить подключение единого входа SAML для приложения на обоих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -240,7 +240,7 @@ ms.locfileid: "39441516"
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
-Щелкнув элемент Datahug на панели доступа, вы автоматически войдете в приложение Datahug. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Щелкнув элемент Datahug на панели доступа, вы автоматически войдете в приложение Datahug. Дополнительные сведения о панели доступа см. в статье  [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

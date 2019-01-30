@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с платформой 23 Video | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с 23 Video | Документация Майкрософт
 description: Узнайте, как настроить единый вход для Azure Active Directory и платформы 23 Video.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 5e73dd1d-3995-4a73-b9cf-1b2318d49cb3
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/26/2017
 ms.author: jeedes
-ms.openlocfilehash: 8b4b41551a1679948518846a63eee87bbd1bbfd9
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 6dc05b5ac26dfc9ef7eebf770d9f5378e8a85657
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36222671"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54823986"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-23-video"></a>Руководство по интеграции Azure Active Directory с платформой 23 Video
+# <a name="tutorial-azure-active-directory-integration-with-23-video"></a>Руководство. Интеграция Azure Active Directory с 23 Video
 
 В этом руководстве объясняется, как интегрировать приложение 23 Video с Azure Active Directory (Azure AD).
 
@@ -33,7 +33,7 @@ ms.locfileid: "36222671"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с 23 Video, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36222671"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<subdomain>.23video.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.23video.com/saml/trust/<uniqueid>`
+    b. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://www.23video.com/saml/trust/<uniqueid>`
 
     > [!NOTE] 
     > Эти значения приведены в качестве примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов 23 Video](mailto:support@23company.com). 
@@ -135,7 +135,7 @@ ms.locfileid: "36222671"
 
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
@@ -162,7 +162,7 @@ ms.locfileid: "36222671"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -192,7 +192,7 @@ ms.locfileid: "36222671"
 
     a. В текстовом поле **E-mail addresses** (Адреса электронной почты) введите адрес электронной почты пользователя Britta Simon в Azure AD.  
  
-    Б. Щелкните **Add the user**(Добавить пользователя).   
+    b. Щелкните **Add the user**(Добавить пользователя).   
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

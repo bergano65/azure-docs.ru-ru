@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с PolicyStat | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с PolicyStat | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении PolicyStat.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: af5eb0f1-1c8e-4809-b0c4-8ccfb915ca42
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/12/2017
 ms.author: jeedes
-ms.openlocfilehash: 571b1723c1c064415e4d8cbee3620799af14d508
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: f8dad5e3b5bfd908e8a3b3c1f1bcc78dd689757a
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39428270"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54823884"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство по интеграции Azure Active Directory с PolicyStat
+# <a name="tutorial-azure-active-directory-integration-with-policystat"></a>Руководство. Интеграция Azure Active Directory с PolicyStat
 
 В этом руководстве описано, как интегрировать PolicyStat с Azure Active Directory (Azure AD).
 
@@ -188,7 +188,7 @@ ms.locfileid: "39428270"
     b. Нажмите кнопку **Сохранить изменения**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

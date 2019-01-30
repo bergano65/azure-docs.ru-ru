@@ -3,18 +3,18 @@ title: Входные параметры Runbook
 description: Возможность настройки входных параметров увеличивает гибкость модулей Runbook, позволяя передавать данные в уже запущенный модуль. В этой статье описаны различные сценарии использования входных параметров в модулях Runbook.
 services: automation
 ms.service: automation
-ms.component: process-automation
+ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
 ms.date: 03/16/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 650effed388dde4419e2ff6aede2f0468551a959
-ms.sourcegitcommit: 8d88a025090e5087b9d0ab390b1207977ef4ff7c
+ms.openlocfilehash: d22a2de29e170979d9ab5d61c7f21a47d6aee99c
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52276692"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54433447"
 ---
 # <a name="runbook-input-parameters"></a>Входные параметры Runbook
 
@@ -151,7 +151,7 @@ Param
 
 #### <a name="start-a-published-runbook-by-using-powershell-cmdlets-and-assign-parameters"></a>Запуск опубликованного модуля Runbook с помощью командлетов PowerShell и назначение параметров
 
-* **Командлеты Azure Resource Manager**. Модуль Runbook службы автоматизации, созданный в группе ресурсов, можно запустить с помощью командлета [Start-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/start-azurermautomationrunbook).
+* **Командлеты Azure Resource Manager.** Модуль Runbook службы автоматизации, созданный в группе ресурсов, вы можете запустить с помощью командлета [Start-AzureRmAutomationRunbook](https://docs.microsoft.com/powershell/module/azurerm.automation/start-azurermautomationrunbook).
   
   **Пример.**
   
@@ -160,7 +160,7 @@ Param
   
   Start-AzureRmAutomationRunbook -AutomationAccountName “TestAutomation” -Name “Get-AzureVMGraphical” –ResourceGroupName $resourceGroupName -Parameters $params
   ```
-* **Командлеты для классической модели развертывания Azure.** Модуль runbook службы автоматизации, созданный в группе ресурсов по умолчанию, можно запустить с помощью командлета [Start-AzureAutomationRunbook](https://docs.microsoft.com/powershell/module/servicemanagement/azure/start-azureautomationrunbook).
+* **Командлеты классической модели развертывания Azure.** Модуль Runbook автоматизации, созданный в группе ресурсов по умолчанию, вы можете запустить с помощью командлета [Start-AzureAutomationRunbook](https://docs.microsoft.com/powershell/module/servicemanagement/azure/start-azureautomationrunbook).
   
   **Пример.**
   
@@ -177,7 +177,7 @@ Param
 
 #### <a name="start-a-runbook-by-using-an-sdk-and-assign-parameters"></a>Запуск Runbook с использованием пакета SDK и назначение параметров
 
-* **Метод, предусматривающий использование Azure Resource Manager.** Для запуска модуля Runbook можно использовать пакет SDK для языка программирования. Ниже приведен фрагмент кода C# для запуска модуля Runbook в вашей учетной записи службы автоматизации. Весь код можно просмотреть в нашем [репозитории GitHub](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ResourceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs).  
+* **Метод Azure Resource Manager.** Для запуска модуля Runbook можете использовать пакет SDK для языка программирования. Ниже приведен фрагмент кода C# для запуска модуля Runbook в вашей учетной записи службы автоматизации. Весь код можно просмотреть в нашем [репозитории GitHub](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ResourceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs).  
   
   ```csharp
    public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
@@ -196,7 +196,7 @@ Param
       return response.Job;
       }
   ```
-* **Метод для классической модели развертывания Azure.** Запустить модуль runbook можно с помощью пакета SDK для используемого языка программирования. Ниже приведен фрагмент кода C# для запуска модуля Runbook в вашей учетной записи службы автоматизации. Весь код можно просмотреть в нашем [репозитории GitHub](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ServiceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs).
+* **Метод классической модели развертывания Azure.** Для запуска модуля Runbook можете использовать пакет SDK для языка программирования. Ниже приведен фрагмент кода C# для запуска модуля Runbook в вашей учетной записи службы автоматизации. Весь код можно просмотреть в нашем [репозитории GitHub](https://github.com/Azure/azure-sdk-for-net/blob/master/src/ServiceManagement/Automation/Automation.Tests/TestSupport/AutomationTestBase.cs).
   
   ```csharp
   public Job StartRunbook(string runbookName, IDictionary<string, string> parameters = null)
@@ -235,15 +235,15 @@ Param
 
 В URI запроса замените следующие параметры:
 
-* **subscription-id** — идентификатором своей подписки Azure.  
-* **cloud-service-name** — именем облачной службы, в которую следует отправить запрос.  
-* **automation-account-name** — именем учетной записи службы автоматизации в указанной облачной службе.  
-* **job-id** — идентификатором GUID задания. Чтобы создать GUID в PowerShell, можно использовать команду **[GUID]::NewGuid().ToString()** .
+* **subscription-id** — идентификатор подписки Azure;  
+* **cloud-service-name** — имя облачной службы, в которую следует отправить запрос;  
+* **automation-account-name** — имя учетной записи службы автоматизации в указанной облачной службе;  
+* **job-id** — GUID для задания. Чтобы создать GUID в PowerShell, можно использовать команду **[GUID]::NewGuid().ToString()** .
 
 Чтобы передать параметры в задание модуля Runbook, используйте текст запроса. Он принимает следующие два свойства, представленные в формате JSON:
 
-* **Runbook Name** — обязательный параметр. Имя модуля Runbook для запуска задания.  
-* **Runbook Parameters** — необязательный параметр. Это словарь со списком параметров (именами и значениями) в формате, где имя должно быть строкового типа, а значение может быть любым допустимым значением JSON.
+* **Имя модуля Runbook.** Обязательный элемент. Имя модуля Runbook для запуска задания.  
+* **Параметры модуля Runbook.** Необязательный элемент. Это словарь со списком параметров (именами и значениями) в формате, где имя должно быть строкового типа, а значение может быть любым допустимым значением JSON.
 
 Если вы хотите запустить модуль Runbook **Get-AzureVMTextual**, созданный ранее с использованием параметров **VMName** и **resourceGroupName**, используйте следующий формат JSON в тексте запроса.
 
@@ -285,4 +285,5 @@ Param
 * Дополнительные сведения о различных способах запуска модуля Runbook см. в статье [Запуск модуля Runbook в службе автоматизации Azure](automation-starting-a-runbook.md).
 * Сведения об изменении текстового модуля Runbook см. в статье [Изменение текстовых модулей Runbook в службе автоматизации Azure](automation-edit-textual-runbook.md).
 * Сведения об изменении графического модуля Runbook см. в статье [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md).
+
 

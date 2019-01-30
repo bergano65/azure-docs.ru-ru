@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 12/09/2017
 ms.author: milanga;juliako;
-ms.openlocfilehash: 859e75819f96edd527fceb143faf8357738ce80e
-ms.sourcegitcommit: e221d1a2e0fb245610a6dd886e7e74c362f06467
+ms.openlocfilehash: 5aab8a5d48b7a7d17aa44b74d65ee70cb9322944
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33784463"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817560"
 ---
 # <a name="detect-face-and-emotion-with-azure-media-analytics"></a>Обнаружение лиц и определение эмоций с помощью медиа-аналитики Azure
 ## <a name="overview"></a>Обзор
@@ -42,7 +42,7 @@ ms.locfileid: "33784463"
 В этой статье приводятся сведения об обработчике **Azure Media Face Detector** и демонстрируется его использование с пакетом SDK служб мультимедиа для .NET.
 
 ## <a name="face-detector-input-files"></a>Входные файлы детектора лиц
-Видеофайлы. Сейчас поддерживаются следующие форматы: MP4, MOV и WMV.
+Видеофайлы. В настоящее время поддерживаются следующие форматы: MP4, MOV и WMV.
 
 ## <a name="face-detector-output-files"></a>Выходные файлы детектора лиц
 API обнаружения и отслеживания лиц обеспечивает высокую точность обнаружения и отслеживания лиц с возможностью определения до 64 человеческих лиц на видео. Лица в анфас позволяют получить лучшие результаты, тогда как значения по лицам в профиль или небольшим лицам (не более 24 x 24 пикселей) могут быть неточными.
@@ -152,7 +152,7 @@ API обнаружения и отслеживания лиц обеспечив
 #### <a name="attribute-descriptions"></a>Описания атрибутов
 | Имя атрибута | ОПИСАНИЕ |
 | --- | --- |
-| Mode |Faces: только обнаружение лиц.<br/>PerFaceEmotion: эмоции возвращаются отдельно для каждого обнаружения лиц.<br/>AggregateEmotion. Возвращаются средние значения эмоций для всех лиц в кадре. |
+| Mode |Faces: только определение лиц.<br/>PerFaceEmotion: эмоции возвращаются отдельно для каждого определения лиц.<br/>AggregateEmotion: возвращаются средние значения эмоций для всех лиц в кадре. |
 | AggregateEmotionWindowMs |Используется, если выбран режим AggregateEmotion. Указывает длину видео для получения каждого совокупного результата в миллисекундах. |
 | AggregateEmotionIntervalMs |Используется, если выбран режим AggregateEmotion. Указывает частоту для получения совокупных результатов. |
 
@@ -418,7 +418,7 @@ namespace FaceDetection
             task.InputAssets.Add(asset);
 
             // Add an output asset to contain the results of the job.
-            task.OutputAssets.AddNew("My Face Detectoion Output Asset", AssetCreationOptions.None);
+            task.OutputAssets.AddNew("My Face Detection Output Asset", AssetCreationOptions.None);
 
             // Use the following event handler to check job progress.  
             job.StateChanged += new EventHandler<JobStateChangedEventArgs>(StateChanged);

@@ -15,12 +15,12 @@ ms.date: 09/24/2018
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 281c426170985d43401a13988218126ea3951634
-ms.sourcegitcommit: b7e5bbbabc21df9fe93b4c18cc825920a0ab6fab
+ms.openlocfilehash: 17a2d1ac747b46ed9a55ceffeea3ba9f4b2f0bc7
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47405620"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54412054"
 ---
 # <a name="custom-roles-in-azure"></a>Пользовательские роли в Azure
 
@@ -84,7 +84,7 @@ ms.locfileid: "47405620"
 
     Создав пользовательскую роль, нужно проверить правильность ее работы. Если позже потребуется корректировка, вы можете обновить пользовательскую роль.
 
-Пошаговое руководство по созданию пользовательской роли см. в статье [Руководство. Создание пользовательских ролей с помощью Azure PowerShell](tutorial-custom-role-powershell.md) или [Руководство. Создание пользовательских ролей с помощью Azure CLI](tutorial-custom-role-cli.md).
+Пошаговые инструкции см. в статье [Руководство. Создание пользовательских ролей с помощью Azure PowerShell](tutorial-custom-role-powershell.md) или [Руководство. Создание пользовательских ролей с помощью Azure CLI](tutorial-custom-role-cli.md).
 
 ## <a name="custom-role-properties"></a>Свойства пользовательской роли
 
@@ -116,3 +116,4 @@ ms.locfileid: "47405620"
 - [Создание пользовательских ролей с помощью Azure PowerShell](custom-roles-powershell.md)
 - [Создание пользовательских ролей с помощью Azure CLI](custom-roles-cli.md)
 - [Understand role definitions](role-definitions.md) (Определения ролей)
+- [Устранение неполадок RBAC в Azure](troubleshooting.md)

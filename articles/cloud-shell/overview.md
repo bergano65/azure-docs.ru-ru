@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2018
 ms.author: juluk
-ms.openlocfilehash: 85d054be6b72c736ec66384b9caec71208f36802
-ms.sourcegitcommit: 0bb8db9fe3369ee90f4a5973a69c26bff43eae00
+ms.openlocfilehash: 1ad85a57762ae4fba30e1699b38eaa52d45ab26e
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48869369"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54447213"
 ---
 # <a name="overview-of-azure-cloud-shell"></a>Обзор Azure Cloud Shell
 Azure Cloud Shell — это интерактивная доступная браузеру оболочка для управления ресурсами Azure.
@@ -57,11 +57,16 @@ Cloud Shell предоставляет интегрированный графи
 
 [Подробнее о редакторе Cloud Shell.](using-cloud-shell-editor.md)
 
+### <a name="integrated-with-docsmicrosoftcom"></a>Интеграция с docs.microsoft.com
+
+Cloud Shell можно использовать непосредственно из документации, размещенной на сайте [docs.microsoft.com](https://docs.microsoft.com). Эта оболочка интегрирована с документацией по [Microsoft Learn](https://docs.microsoft.com/learn/), [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) и [Azure CLI](https://docs.microsoft.com/cli/azure). Нажмите кнопку "Попробуйте!" в блоке с фрагментом кода, чтобы открыть иммерсивный интерфейс оболочки. 
+
 ### <a name="multiple-access-points"></a>Доступность в нескольких расположениях
 Cloud Shell представляет собой гибкий инструмент, который можно использовать с помощью таких элементов:
 * [portal.azure.com](https://portal.azure.com);
 * [shell.azure.com](https://shell.azure.com);
-* [ознакомительная документация по Azure CLI](https://docs.microsoft.com/cli/azure?view=azure-cli-latest);
+* [документации по Azure CLI](https://docs.microsoft.com/cli/azure).
+* [Документация по Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview)
 * [мобильные приложения Azure](https://azure.microsoft.com/features/azure-portal/mobile-app/);
 * [расширение VS Code для учетной записи Azure](https://marketplace.visualstudio.com/items?itemName=ms-vscode.azure-account).
 

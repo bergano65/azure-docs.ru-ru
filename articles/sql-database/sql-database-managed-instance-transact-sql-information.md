@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: carlrab, bonova
 manager: craigg
 ms.date: 12/03/2018
-ms.openlocfilehash: 489eccf1b73e7f5df76a3ce681b4479893a9e0ac
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: 95a9f3d553bb3d8ca07ed90578861f6267058532
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52843212"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54463751"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -143,7 +143,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - `CREATE CRYPTOGRAPHIC PROVIDER` не поддерживается. См. статью [CREATE CRYPTOGRAPHIC PROVIDER (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-cryptographic-provider-transact-sql).
 - `ALTER CRYPTOGRAPHIC PROVIDER` не поддерживается. См. статью [ALTER CRYPTOGRAPHIC PROVIDER (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-cryptographic-provider-transact-sql).
 
-### <a name="collation"></a>Параметры сортировки
+### <a name="collation"></a>Collation
 
 Параметр сортировки экземпляра по умолчанию — `SQL_Latin1_General_CP1_CI_AS`. Этот параметр можно указать как параметр создания. См. статью [Параметры сортировки](https://docs.microsoft.com/sql/t-sql/statements/collations).
 
@@ -235,7 +235,7 @@ WITH PRIVATE KEY (<private_key_options>)
 Некоторые из целевых объектов Windows для XEvents не поддерживаются:
 
 - `etw_classic_sync target` не поддерживается. Храните файлы `.xel` в хранилище BLOB-объектов Azure. См. раздел [Целевой объект etw_classic_sync_target](https://docs.microsoft.com/sql/relational-databases/extended-events/targets-for-extended-events-in-sql-server#etwclassicsynctarget-target).
-- `event_file target` не поддерживается. Храните файлы `.xel` в хранилище BLOB-объектов Azure. См. раздел [Целевой объект event_file](https://docs.microsoft.com/sql/relational-databases/extended-events/targets-for-extended-events-in-sql-server#eventfile-target).
+- `event_file target` не поддерживается. Храните файлы `.xel` в хранилище BLOB-объектов Azure. См. раздел [Целевой объект event_file](https://docs.microsoft.com/sql/relational-databases/extended-events/targets-for-extended-events-in-sql-server#event_file-target).
 
 ### <a name="external-libraries"></a>Внешние библиотеки
 
@@ -274,11 +274,11 @@ WITH PRIVATE KEY (<private_key_options>)
 - Функцию `OPENROWSET` можно использовать для выполнения запросов только в экземплярах SQL Server (управляемом, локальном или на виртуальных машинах). См. статью [OPENROWSET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/openrowset-transact-sql).
 - Функцию `OPENDATASOURCE` можно использовать для выполнения запросов только в экземплярах SQL Server (управляемом, локальном или на виртуальных машинах). В качестве поставщика поддерживаются только значения `SQLNCLI`, `SQLNCLI11` и `SQLOLEDB`. Например, `SELECT * FROM OPENDATASOURCE('SQLNCLI', '...').AdventureWorks2012.HumanResources.Employee`. См. статью [OPENDATASOURCE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/opendatasource-transact-sql).
 
-### <a name="logins--users"></a>Имена для входа и пользователи
+### <a name="logins--users"></a>Имена входа и пользователи
 
-- Поддерживаются имена для входа SQL, созданные с помощью `FROM CERTIFICATE`, `FROM ASYMMETRIC KEY` и `FROM SID`. См. статью [CREATE LOGIN (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql).
+- Поддерживаются имена входа SQL, созданные с помощью `FROM CERTIFICATE`, `FROM ASYMMETRIC KEY` и `FROM SID`. См. статью [CREATE LOGIN (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql).
 - Имена для входа Azure Active Directory (AAD), созданные с помощью синтаксиса [CREATE LOGIN](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-mi-current) или [CREATE USER](https://docs.microsoft.com/sql/t-sql/statements/create-user-transact-sql?view=azuresqldb-mi-current), поддерживаются (**общедоступная предварительная версия**).
-- Имена для входа Windows, созданные с помощью синтаксиса `CREATE LOGIN ... FROM WINDOWS`, не поддерживаются. Используйте пользователей и имена для входа Azure Active Directory.
+- Имена входа Windows, созданные с помощью синтаксиса `CREATE LOGIN ... FROM WINDOWS`, не поддерживаются. Используйте пользователей и имена для входа Azure Active Directory.
 - Пользователь Azure Active Directory (Azure AD), создавший экземпляр, обладает [неограниченными правами доступа администратора](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins#unrestricted-administrative-accounts).
 - Пользователей уровня базы данных Azure Active Directory (Azure AD) без прав администратора можно создать, используя синтаксис `CREATE USER ... FROM EXTERNAL PROVIDER`. См. раздел [Пользователи без прав администратора](https://docs.microsoft.com/azure/sql-database/sql-database-manage-logins#non-administrator-users).
 
@@ -333,9 +333,9 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Компонент Service Broker между экземплярами не поддерживается:
 
-- `sys.routes`. Обязательно выберите адрес из sys.routes. Адрес должен быть ЛОКАЛЬНЫМ для каждого маршрута. См. статью [sys.routes (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
+- `sys.routes` — обязательный компонент: выберите адрес из sys.routes. Адрес должен быть ЛОКАЛЬНЫМ для каждого маршрута. См. статью [sys.routes (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-routes-transact-sql).
 - `CREATE ROUTE`. `CREATE ROUTE` можно использовать только с локальным (`LOCAL`) адресом `ADDRESS`. См. статью [CREATE ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-route-transact-sql).
-- `ALTER ROUTE`. Для `ALTER ROUTE` адрес `ADDRESS` может быть только локальным (`LOCAL`). См. статью [ALTER ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql).  
+- `ALTER ROUTE` — невозможно `ALTER ROUTE` с `ADDRESS`, отличным от `LOCAL`. См. статью [ALTER ROUTE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-route-transact-sql).  
 
 ### <a name="service-key-and-service-master-key"></a>Ключ службы и главный ключ службы
 
@@ -414,7 +414,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - `@@SERVERNAME` возвращает полное DNS-имя с возможностью подключения, например my-managed-instance.wcus17662feb9ce98.database.windows.net. См. статью [@SERVERNAME](https://docs.microsoft.com/sql/t-sql/functions/servername-transact-sql).  
 - `SYS.SERVERS` — возвращает полное DNS-имя с возможностью подключения, такое как `myinstance.domain.database.windows.net` для свойств name и data_source. См. статью [sys.servers (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-catalog-views/sys-servers-transact-sql).
 - `@@SERVICENAME` возвращает значение NULL, так как концепция службы в том виде, в котором она существует в SQL Server, не применяется к Управляемому экземпляру. См. статью [@SERVICENAME](https://docs.microsoft.com/sql/t-sql/functions/servicename-transact-sql).
-- `SUSER_ID` поддерживается. Возвращает значение NULL, если имя для входа AAD не содержится в sys.syslogins. См. статью [Идентификатор SUSER_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-id-transact-sql).  
+- `SUSER_ID` поддерживается. Возвращает значение NULL, если имя входа AAD не содержится в sys.syslogins. См. статью [Идентификатор SUSER_ID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-id-transact-sql).  
 - `SUSER_SID` не поддерживается. Возвращает неверные данные (временная известная проблема). См. статью [SUSER_SID (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/suser-sid-transact-sql).
 - `GETDATE()` и другие встроенные функции даты и времени всегда возвращают время в часовом поясе UTC. См. статью [GETDATE (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/functions/getdate-transact-sql).
 
@@ -428,7 +428,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Для каждого управляемого экземпляра в хранилище резервируется 35 ТБ для диска Azure уровня "Премиум", а каждый файл базы данных размещается на отдельном физическом диске. Поддерживаются диски размером 128 ГБ, 256 ГБ, 512 ГБ, 1 ТБ или 4 ТБ. Неиспользуемое пространство на диске не оплачивается, но суммарный размер дисков Azure уровня "Премиум" не может превышать 35 ТБ. В некоторых случаях из-за внутренней фрагментации размер Управляемого экземпляра, которому требуется не более 8 ТБ дискового пространства, может превысить ограничение в 35 ТБ.
 
-Например, Управляемый экземпляр использует один файл размером 1,2 ТБ, размещенный на диске объемом 4 ТБ, и 248 файлов по 1 ГБ каждый, размещенные на отдельных дисках объемом по 128 ГБ. В этом случае:
+Например, Управляемый экземпляр использует один файл размером 1,2 ТБ, размещенный на диске объемом 4 ТБ, и 248 файлов по 1 ГБ каждый, размещенные на отдельных дисках объемом по 128 ГБ. В данном примере:
 
 - общий размер выделенного дискового хранилища составляет 1 x 4 ТБ + 248 x 128 ГБ = 35 ТБ;
 - общий объем зарезервированного пространства для баз данных в экземпляре составляет 1 x 1,2 ТБ + 248 x 1 ГБ = 1,4 ТБ.
@@ -503,6 +503,12 @@ using (var scope = new TransactionScope())
 Модули среды CLR, помещенные в Управляемый экземпляр, связанные серверы и распределенные запросы, ссылающиеся на текущий экземпляр, иногда не могут разрешить IP-адрес локального экземпляра. Это временная ошибка.
 
 **Возможное решение**: если есть возможность, используйте в модуле среды CLR контекстные подключения.
+
+### <a name="tde-encrypted-databases-dont-support-user-initiated-backups"></a>Базы данных, зашифрованные с помощью TDE, не поддерживают резервные копии, инициированные пользователем
+
+Вы не можете выполнить `BACKUP DATABASE ... WITH COPY_ONLY` на базах данных, зашифрованных с использованием прозрачного шифрования данных (TDE). TDE вынуждает шифровать резервные копии с помощью внутренних ключей TDE. Поскольку ключ нельзя экспортировать, вы не сможете восстановить резервную копию.
+
+**Возможное решение**: Используйте автоматические резервные копии и восстановления до точки во времени или отключите шифрование для баз данных.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Tidemark | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Tidemark | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Tidemark.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 5cf80d4e-6e8b-48ec-81c8-27872af5e5d5
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/13/2017
 ms.author: jeedes
-ms.openlocfilehash: d99dc053849ef4e42db8486613c699de57a5c7c6
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 3df867e411f4a45c0a7da884cbba69bc72b443af
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39440615"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54820501"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tidemark"></a>Руководство. Интеграция Azure Active Directory с Tidemark
 
@@ -46,7 +46,7 @@ ms.locfileid: "39440615"
 При проверке действий в этом учебнике соблюдайте следующие рекомендации:
 
 - Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по этой ссылке: [пробная версия](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="scenario-description"></a>Описание сценария
 В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
@@ -142,7 +142,7 @@ ms.locfileid: "39440615"
 1. Чтобы настроить единый вход на стороне **Tidemark**, необходимо отправить скачанный **сертификат в кодировке Base64, идентификатор сущности SAML, URL-адрес выхода и URL-адрес службы единого входа SAML** [группе поддержки Tidemark](http://www.tidemark.com/contact-us). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

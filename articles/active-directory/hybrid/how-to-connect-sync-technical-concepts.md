@@ -1,10 +1,10 @@
 ---
-title: 'Синхронизация Azure AD Connect: технические понятия | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect: технические понятия | Документация Майкрософт'
 description: Эта статья содержит объяснение технических понятий службы синхронизации Azure AD Connect.
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 731cfeb3-beaf-4d02-aef4-b02a8f99fd11
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.topic: article
 ms.date: 01/15/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: df3f244b70b52b6145b664c4e575c66542ada5b9
-ms.sourcegitcommit: cf606b01726df2c9c1789d851de326c873f4209a
+ms.openlocfilehash: 2bf9876fc551b9ab0eb24c03a17f3d789c00530e
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46309583"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54463496"
 ---
-# <a name="azure-ad-connect-sync-technical-concepts"></a>Синхронизация Azure AD Connect: технические концепции
+# <a name="azure-ad-connect-sync-technical-concepts"></a>Синхронизация Azure AD Connect: Технические концепции
 В этой статье приводится сводка раздела [Основные сведения об архитектуре](how-to-connect-sync-technical-concepts.md).
 
 Служба синхронизации Azure AD Connect основана на устойчивой платформе синхронизации метакаталогов.
@@ -86,7 +86,7 @@ ms.locfileid: "46309583"
 Процесс, во время которого правило определяет, что необходимо создать новый объект пространства соединителя, называется подготовкой. Но поскольку эта операция происходит только в пространстве соединителя, она переносится в подключенный источник данных только в ходе экспорта.
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
-* [Azure AD Connect Sync: настройка параметров синхронизации](how-to-connect-sync-whatis.md)
+* [Службы синхронизации Azure AD Connect: общие сведения о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
 
 <!--Image references-->

@@ -14,12 +14,12 @@ ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/03/2019
 ms.author: pbutlerm
-ms.openlocfilehash: 62220104329e36fbb2e6f7d3b5b48bcaeaba3660
-ms.sourcegitcommit: fbf0124ae39fa526fc7e7768952efe32093e3591
+ms.openlocfilehash: 66119ffab8c6117e223468834b59e6d6b19409a0
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54082075"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54445068"
 ---
 # <a name="dynamics-365-for-customer-engagement-storefront-details-tab"></a>Вкладка сведений об онлайн-магазине для предложения Dynamics 365 for Customer Engagement
 
@@ -83,7 +83,7 @@ ms.locfileid: "54082075"
 |  |  |
 
 
-## <a name="legal-section"></a>Раздел "Юридические сведения"
+## <a name="legal-section"></a>Юридический раздел
 
 В этом разделе вы настроите *политику конфиденциальности* и укажете *условия использования* для приложения.
 
@@ -103,7 +103,7 @@ ms.locfileid: "54082075"
 В этом разделе вы предоставите **URL-адрес службы поддержки** для приложения.
 
 
-## <a name="lead-management-section"></a>Раздел "Управление потенциальными клиентами"
+## <a name="lead-management-section"></a>Раздел Lead Management (Управление потенциальными клиентами)
 
 В этом разделе вы предоставите механизм обработки потенциальных клиентов, созданных опубликованным предложением.  Обычно потенциальные клиенты сохраняются в системах управления связями с клиентами.  Поддерживаются следующие обозначения: **Нет**, **Таблица Azure**, **Dynamics CRM Online**, **Конечная точка HTTPS**, **Marketo** и **Salesforce**.  Дополнительные сведения см. в статье [о получении потенциальных клиентов](../../cloud-partner-portal-orig/cloud-partner-portal-get-customer-leads.md).
 

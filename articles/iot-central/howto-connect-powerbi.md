@@ -7,16 +7,16 @@ author: viv-liu
 ms.author: viviali
 ms.date: 07/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 6f8bed8aba43d77cdfad49f4fe62a4c7aa2c5ce3
-ms.sourcegitcommit: ce526d13cd826b6f3e2d80558ea2e289d034d48f
+ms.openlocfilehash: a37eb68d135d156c25c58bf91489d5b50ac2c170
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46368075"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54423126"
 ---
 # <a name="visualize-and-analyze-your-azure-iot-central-data-in-a-power-bi-dashboard"></a>Визуализация и анализ данных Azure IoT Central на панели мониторинга Power BI
 
-*Этот раздел предназначен для администраторов.*
+*Эта статья предназначена для администраторов.*
 
 ![Конвейер шаблона решения Power BI](media/howto-connect-powerbi/iot-continuous-data-export.png)
 
@@ -29,7 +29,7 @@ ms.locfileid: "46368075"
 
 Этот шаблон решения устанавливает конвейер, который принимает данные в учетной записи хранения больших двоичных объектов Azure из [непрерывного экспорта данных](howto-export-data.md). Этот поток данных проходит через функции Azure, фабрики данных Azure и базы данных SQL Azure для обработки и преобразования данных. Выходные данные можно визуализировать и проанализировать в отчете Power BI, который можно загрузить в виде PBIX-файла. Все эти ресурсы создаются в подписке Azure, поэтому можно настроить каждый компонент в соответствии с потребностями. Этот шаблон решения полностью открыт, поэтому можно получить дополнительные сведения об архитектуре и расширить решение, посетив [репозиторий GitHub](https://aka.ms/iotcentralgithubpowerbisolutiontemplate).
 
-## <a name="get-the-azure-iot-central-analytics-solution-templatehttpsakamsiotcentralpowerbisolutiontemplate-from-microsoft-appsource"></a>[Шаблон решения аналитики Azure IoT Central Analytics от Microsoft AppSource](https://aka.ms/iotcentralpowerbisolutiontemplate)
+## <a name="get-the-azure-iot-central-analytics-solution-templatehttpsbpsolutiontemplatescomnamemicrosoft-iotcontinuousdataexporttemplate-from-microsoft-appsource"></a>Получите [шаблон решения аналитики Azure IoT Central Analytics](https://bpsolutiontemplates.com/?name=Microsoft-IoTContinuousDataExportTemplate) из Microsoft AppSource.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Для настройки шаблона требуется следующее.
@@ -52,7 +52,7 @@ ms.locfileid: "46368075"
 
 ## <a name="resources"></a>Ресурсы
 
-Посетите AppSource, чтобы получить [шаблон решения Azure IoT Central Analytics](https://aka.ms/iotcentralpowerbisolutiontemplate).
+Посетите AppSource, чтобы получить [шаблон решения Azure IoT Central Analytics](https://bpsolutiontemplates.com/?name=Microsoft-IoTContinuousDataExportTemplate).
 
 Дополнительные сведения об архитектуре и расширении решения см. в [репозитории GitHub](https://aka.ms/iotcentralgithubpowerbisolutiontemplate).
 

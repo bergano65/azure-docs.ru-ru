@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/22/2018
 ms.author: willzhan;juliako;johndeu
-ms.openlocfilehash: d9d1fa7d8cf25057339e560c371deb939997b578
-ms.sourcegitcommit: 9e179a577533ab3b2c0c7a4899ae13a7a0d5252b
+ms.openlocfilehash: 17c25181709e6c75de2d23fb02fd55c0e6e41ae3
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49945083"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54818037"
 ---
 # <a name="use-azure-ad-authentication-to-access-the-azure-media-services-api-with-rest"></a>Использование аутентификации Azure AD для доступа к API служб мультимедиа Azure с помощью REST
 
@@ -50,7 +50,7 @@ ms.locfileid: "49945083"
 - Изучите статьею [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md).
 - Установите клиент REST [Postman](https://www.getpostman.com/) для выполнения REST API, как показано в этой статье. 
 
-    В этом руководстве мы используем **Postman**, но подойдет любое средство REST. Другие варианты включают **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
+    В этом руководстве мы используем **Postman**, но подойдет любой инструмент REST. Другие варианты включают: **Visual Studio Code** с подключаемым модулем REST или **Telerik Fiddler**. 
 
 ## <a name="get-the-authentication-information-from-the-azure-portal"></a>Получение сведений об аутентификации с портала Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "49945083"
 5. Выберите имеющееся **приложение Azure AD** или создайте новое (как показано ниже).
 
     > [!NOTE]
-    > Чтобы запрос REST служб мультимедиа Azure был успешно выполнен, у вызывающего пользователя должна быть роль **участника** или **владельца** для учетной записи служб мультимедиа, к которой он пытается получить доступ. Если вы получите сообщение The remote server returned an error: (401) Unauthorized (Удаленный сервер вернул ошибку: не авторизовано (401)), см. раздел [Управление доступом](media-services-use-aad-auth-to-access-ams-api.md#access-control).
+    > Чтобы запрос REST служб мультимедиа Azure был успешно выполнен, у вызывающего пользователя должна быть роль **участника** или **владельца** для учетной записи служб мультимедиа, к которой он пытается получить доступ. Если возникнет исключение "Удаленный сервер возвратил ошибку: не авторизовано (401)", см. раздел [Управление доступом](media-services-use-aad-auth-to-access-ams-api.md#access-control).
 
     Если необходимо создать новое приложение Azure AD, выполните следующее.
     
@@ -118,7 +118,7 @@ ms.locfileid: "49945083"
 
 ## <a name="get-the-access-token-using-postman"></a>Получение токена доступа с помощью Postman
 
-В этом разделе показано, как использовать **Postman** для выполнения REST API, который возвращает токен носителя JWT (токен доступа). Чтобы вызвать любой REST API служб мультимедиа, необходимо добавить заголовок Authorization к вызовам, а к каждому вызову — значение Bearer *токен_доступа* (как показано в следующем разделе этого руководства). 
+В этом разделе показано, как использовать **Postman** для выполнения REST API, который возвращает токен носителя JWT (токен доступа). Чтобы вызвать любой REST API служб мультимедиа, необходимо добавить заголовок Authorization к вызовам, а к каждому вызову — значение Bearer *токен_доступа* (как показано в следующем разделе этого руководства). 
 
 1. Откройте **Postman**.
 2. Выберите **POST**.
@@ -188,5 +188,5 @@ ms.locfileid: "49945083"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-* Пример кода доступен в разделе [Azure AD Authentication for Azure Media Services Access: Both via REST API](https://github.com/willzhan/WAMSRESTSoln) (Аутентификация Azure AD для доступа к службам мультимедиа Azure с помощью REST API)
+* Пример кода доступен в статье [Azure AD Authentication for Azure Media Services Access: Both via REST API](https://github.com/willzhan/WAMSRESTSoln) (Аутентификация Azure AD для доступа к службам мультимедиа Azure с помощью REST API)
 * [Передача файлов в учетную запись служб мультимедиа с помощью .NET](media-services-dotnet-upload-files.md)

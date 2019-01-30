@@ -5,7 +5,7 @@ services: active-directory
 keywords: Enterprise State Roaming, облака Windows, включение службы Enterprise State Roaming
 documentationcenter: ''
 author: tanning
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.component: devices
 ms.assetid: f71d66fd-7f9e-45eb-9cfe-5d989870f8a4
@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2018
 ms.author: markvi
-ms.openlocfilehash: 9dc223015f85d83278d48494bf05693c7932bdde
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.openlocfilehash: 3e6b2d09c2b3c204fc62428ab53a4d4e33d57eac
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50128989"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54448386"
 ---
 # <a name="enable-enterprise-state-roaming-in-azure-active-directory"></a>Включение службы Enterprise State Roaming в Azure Active Directory
 Enterprise State Roaming доступна для любой организации с лицензий Azure AD Premium или Enterprise Mobility + Security (EMS). Дополнительные сведения о том, как получить подписку Azure AD, см. на [странице продукта Azure Active Directory](https://azure.microsoft.com/services/active-directory).
@@ -41,7 +41,7 @@ Enterprise State Roaming доступна для любой организаци
 Службу Enterprise State Roaming могут использовать устройства Windows 10, которые прошли аутентификацию с удостоверением Azure AD. В качестве основного идентификатора для входа устройств, присоединенных к Azure AD, используется удостоверение Azure AD, поэтому дополнительная настройка не требуется. Если используются устройства с локальной версией службы Active Directory, ИТ-администратору следует изучить инструкции по [настройке устройств с гибридным присоединением к Azure Active Directory](https://docs.microsoft.com/azure/active-directory/devices/hybrid-azuread-join-manual-steps). 
 
 ## <a name="data-storage"></a>Хранилище данных
-Данные Enterprise State Roaming размещаются в одном или нескольких [регионах Azure](https://azure.microsoft.com/regions/), которые лучше всего сочетаются со страной и (или) регионом, выбранным в экземпляре Azure Active Directory. Данные Enterprise State Roaming разделяются на три основных географических региона: Северная Америка, EMEA (Европа, Ближний Восток и Африка) и APAC (Азия, Тихоокеанский регион и Австралия). Данные Enterprise State Roaming для клиента находятся локально в географическом регионе и не реплицируются между регионами.  Например: 
+Данные Enterprise State Roaming размещаются в одном или нескольких [регионах Azure](https://azure.microsoft.com/regions/), которые лучше всего сочетаются со страной и (или) регионом, выбранным в экземпляре Azure Active Directory. Данные Enterprise State Roaming разделяются на три основные географические региона: Северная Америка, EMEA (Европа, Ближний Восток и Африка) и APAC (Азиатско-тихоокеанский регион). Данные Enterprise State Roaming для клиента находятся локально в географическом регионе и не реплицируются между регионами.  Например: 
 
 Выбранная страна (или регион) | Где размещаются данные
 ---------------------|-------------------------
@@ -75,7 +75,7 @@ Enterprise State Roaming доступна для любой организаци
 ### <a name="explicit-deletion"></a>Явное удаление
 Данные удаляются, когда администратор Azure удаляет пользователя или каталог, или другим явным способом запрашивает удаление данных.
 
-* **Удаление пользователя**. В период от 90 до 180 дней после удаления пользователя из Azure AD удаляются все перемещаемые данные его учетной записи. 
+* **Удаление пользователя**. В период от 90 до 180 дней после удаления пользователя из Azure AD, удаляются все перемещаемые данные его учетной записи. 
 * **Удаление каталога**. Весь каталог в Azure AD можно удалить всего в несколько щелчков. Все данные о параметрах этого каталога удаляются в период от 90 до 180 дней. 
 * **Удаление по запросу**. Чтобы вручную удалить данные определенного пользователя или его данные параметров, администратору Azure AD необходимо отправить запрос в [службу поддержки Azure](https://azure.microsoft.com/support/). 
 

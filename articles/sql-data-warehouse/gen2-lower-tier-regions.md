@@ -9,12 +9,12 @@ ms.component: design
 ms.date: 12/03/2018
 ms.author: anvang
 ms.reviewer: igorstan
-ms.openlocfilehash: d3c42c13e58156013167b8570a8845ce9de08b3b
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
+ms.openlocfilehash: 2aa513617f24201dfb341f9ab72ab9e3a221450d
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52885455"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54819362"
 ---
 # <a name="azure-sql-data-warehouse-gen2-support-for-lower-compute-tiers"></a>Хранилище данных SQL Azure 2-го поколения. Поддержка более низких уровней вычислений
 
@@ -29,7 +29,7 @@ ms.locfileid: "52885455"
 Клиенты могут развернуть новый экземпляр 2-го поколения или обновить существующий экземпляр хранилища данных 1-го поколения, чтобы получить гибкость и производительность хранилища данных следующего поколения. 
 
 Испытайте [уровень Хранилища данных SQL Azure 2-го поколения, оптимизированный для вычислений.](https://azure.microsoft.com/services/sql-data-warehouse/?v=17.44)
-Обновите [Хранилище данных SQL Azure 1-го поколения, оптимизированное для вычислений, до 2-го поколения](https://docs.microsoft.com/azure/sql-data-warehouse/upgrade-to-latest-generation). Вы можете увидеть Хранилище данных SQL Azure 2-го поколения в действии в этом [видео Microsoft Mechanics](https://www.youtube.com/watch?v=Ap8I3UZonzI&feature=youtu.be).
+Обновите [Хранилище данных SQL Azure 1-го поколения, оптимизированное для вычислений, до 2-го поколения](https://docs.microsoft.com/azure/sql-data-warehouse/upgrade-to-latest-generation). Вы можете увидеть Хранилище данных SQL Azure 2-го поколения в действии в этом [видео Microsoft Mechanics](https://www.youtube.com/watch?v=Ap8I3UZonzI&feature=youtu.be).
 
 
 ## <a name="supported-regions-for-lower-compute-tiers"></a>Регионы, поддерживающие более низкие уровни вычислений
@@ -52,4 +52,4 @@ ms.locfileid: "52885455"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-- [Дополнительные сведения](upgrade-to-latest-generation.md) об оптимизации производительности путем обновления Хранилища данных SQL. 
+- [Дополнительные сведения](upgrade-to-latest-generation.md) о производительности, оптимизированной для вычислений путем обновления Хранилища данных SQL. 

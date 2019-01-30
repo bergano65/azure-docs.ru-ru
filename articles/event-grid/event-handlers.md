@@ -2,17 +2,17 @@
 title: Обработчики событий службы "Сетка событий Azure"
 description: Описание обработчиков событий, поддерживаемых в службе "Сетка событий Azure"
 services: event-grid
-author: tfitzmac
+author: spelluru
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 08/21/2018
-ms.author: tomfitz
-ms.openlocfilehash: 12cc5a918044e3bc74e34f2e05adc9773dee5421
-ms.sourcegitcommit: 8b694bf803806b2f237494cd3b69f13751de9926
+ms.date: 01/21/2019
+ms.author: spelluru
+ms.openlocfilehash: 33604a16f5895e20d4475d1dd8b27c34184feb72
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46498663"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54478473"
 ---
 # <a name="event-handlers-in-azure-event-grid"></a>Обработчики событий в службе "Сетка событий Azure"
 
@@ -26,7 +26,7 @@ ms.locfileid: "46498663"
 
 |Название  |ОПИСАНИЕ  |
 |---------|---------|
-|[Интеграция службы автоматизации Azure со службой "Сетка событий Azure" и Microsoft Teams](ensure-tags-exists-on-new-virtual-machines.md) |Создайте виртуальную машину, которая отправляет событие. Это событие вызывает модуль runbook службы автоматизации, который присваивает виртуальной машине тег и отправляет сообщение в канал Microsoft Teams. |
+|[Руководство по службе автоматизации Azure со службой "Сетка событий Azure" и Microsoft Teams](ensure-tags-exists-on-new-virtual-machines.md) |Создайте виртуальную машину, которая отправляет событие. Это событие вызывает модуль runbook службы автоматизации, который присваивает виртуальной машине тег и отправляет сообщение в канал Microsoft Teams. |
 
 ## <a name="azure-functions"></a>Функции Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "46498663"
 | [Триггер службы "Сетка событий" для Функций Azure](../azure-functions/functions-bindings-event-grid.md) | Общие сведения об использовании триггера службы "Сетка событий" в Функциях Azure. |
 | [Руководство. Автоматическое изменение размера переданных изображений с помощью службы "Сетка событий"](resize-images-on-storage-blob-upload-event.md) | Пользователи отправляют изображения в учетную запись хранения через веб-приложение. При создании большого двоичного объекта в хранилище служба "Сетка событий" отправляет событие приложению-функции, которое изменяет размер отправленного изображения. |
 | [Потоковая передача больших данных в хранилище данных](event-grid-event-hubs-integration.md) | Когда Центры событий создают файл сбора, служба "Сетка событий" отправляет событие приложению-функции. Это приложение извлекает файл сбора и переносит данные в хранилище данных. |
-| [Примеры интеграции служебной шины Azure со службой "Сетка событий Azure"](../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Служба "Сетка событий" отправляет сообщения из раздела служебной шины в приложение-функцию и приложение логики. |
+| [Руководство с примерами интеграции служебной шины Azure со службой "Сетка событий Azure"](../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Служба "Сетка событий" отправляет сообщения из раздела служебной шины в приложение-функцию и приложение логики. |
 
 ## <a name="event-hubs"></a>Центры событий;
 
@@ -70,7 +70,7 @@ ms.locfileid: "46498663"
 |---------|---------|
 | [Отслеживание изменений виртуальной машины с помощью Azure Logic Apps и службы "Сетка событий Azure"](monitor-virtual-machine-changes-event-grid-logic-app.md) | Приложение логики отслеживает изменения в виртуальной машине и отправляет сообщения электронной почты об этих изменениях. |
 | [Отправка уведомлений электронной почты о событиях в Центре Интернета вещей Azure с помощью Logic Apps](publish-iot-hub-events-to-logic-apps.md) | Приложение логики отправляет уведомление по электронной почте каждый раз, когда добавляется устройство в Центр Интернета вещей. |
-| [Примеры интеграции служебной шины Azure со службой "Сетка событий Azure"](../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Служба "Сетка событий" отправляет сообщения из раздела служебной шины в приложение-функцию и приложение логики. |
+| [Руководство с примерами интеграции служебной шины Azure со службой "Сетка событий Azure"](../service-bus-messaging/service-bus-to-event-grid-integration-example.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Служба "Сетка событий" отправляет сообщения из раздела служебной шины в приложение-функцию и приложение логики. |
 
 ## <a name="queue-storage"></a>Хранилище очередей
 

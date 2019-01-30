@@ -7,28 +7,28 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 01/14/2019
+ms.date: 01/18/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 5bffeacaa07f90a11c374061eb6c0d36fc8f86a9
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: bfa9bbb9816148182b79a8231f2ddb3e46433804
+ms.sourcegitcommit: 82cdc26615829df3c57ee230d99eecfa1c4ba459
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54351464"
+ms.lasthandoff: 01/19/2019
+ms.locfileid: "54413249"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Подключение ресурса Cognitive Services с набором навыков в службе "Поиск Azure" 
 
-Алгоритмы ИИ, управляющие [конвейером когнитивного поиска](cognitive-search-concept-intro.md) для обработки неструктурированных данных, основаны на [**ресурсах Cognitive Services**](https://azure.microsoft.com/services/cognitive-services/). Такие ресурсы, как [**Компьютерное зрение**](https://azure.microsoft.com/services/cognitive-services/computer-vision/), предоставляют анализ изображений и распознавание текста (OCR) для извлечения текста и структуры из файлов образов, в то время как [**Анализ текста**](https://azure.microsoft.com/services/cognitive-services/text-analytics/) обеспечивает обработку естественного языка, к примеру, производит распознавание сущностей и извлечение ключевых фраз.
+Алгоритмы ИИ управляют [конвейерами когнитивного поиска](cognitive-search-concept-intro.md), которые используются для обработки неструктурированных данных в операциях индексирования службы "Поиск Azure". Эти алгоритмы основаны на [ресурсах Cognitive Services](https://azure.microsoft.com/services/cognitive-services/), включая [API компьютерного зрения](https://azure.microsoft.com/services/cognitive-services/computer-vision/) для анализа изображений и оптического распознавания символов (OCR), а также [API анализа текста](https://azure.microsoft.com/services/cognitive-services/text-analytics/) для распознавания сущностей, извлечения ключевых фраз и других возможностей.
 
 Для увеличения рабочих нагрузок вы можете бесплатно расширить ограниченное число документов или присоединить оплачиваемый ресурс Cognitive Services для больших и более частых рабочих нагрузок. Из этой статьи вы узнаете, как связать ресурсы Cognitive Services с когнитивным набором навыков, чтобы дополнить данные во время [индексации службы "Поиск Azure"](search-what-is-an-index.md).
 
-Если ваш конвейер состоит исключительно из [настраиваемых навыков](cognitive-search-create-custom-skill-example.md), вам не нужно подсоединять ресурсы Cognitive Services.
+Если ваш конвейер состоит из навыков, не касающихся API-интерфейсов Cognitive Services, необходимо все равно вложить ресурс Cognitive Services. Это переопределяет **бесплатный** ресурс, который допускает только небольшое количество возможностей в день. Плата за навыки, которые не привязаны к API-интерфейсам Cognitive Services, не взимается. Эти навыки включают в себя: [пользовательские навыки](cognitive-search-create-custom-skill-example.md), [слияние текста](cognitive-search-skill-textmerger.md), [разделение текста](cognitive-search-skill-textsplit.md) и [формирователь](cognitive-search-skill-shaper.md).
 
 > [!NOTE]
 > С 21 декабря 2018 г. можно связывать ресурсы Cognitive Services с набором навыков службы "Поиск Azure". Это позволяет нам взимать плату за выполнение набора навыков. С этого момента мы также начали начислять плату за извлечение изображений при открытии документов. Извлечение текста из документов будет выполняться бесплатно, как и прежде.
 >
-> За операции с применением [встроенных навыков](cognitive-search-predefined-skills.md) взимается [плата по мере использования по тарифам для служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services), как если бы вы выполнили эту задачу непосредственно. Извлечение изображения — это оплачиваемое событие службы "Поиск Azure", которое сейчас предлагается по цене предварительной версии. Дополнительные сведения см. на странице [Цены на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400) и в разделе [Как работает выставление счетов](search-sku-tier.md#how-billing-works).
+> За операции с применением [встроенных когнитивных навыков](cognitive-search-predefined-skills.md) взимается [плата по мере использования по тарифам для служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services), как если бы вы выполнили эту задачу непосредственно. Плата за извлечение изображения — это оплата за службу "Поиск Azure", которая сейчас предлагается по цене предварительной версии. Дополнительные сведения см. на странице [Цены на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400) и в разделе [Как работает выставление счетов](search-sku-tier.md#how-billing-works).
 
 
 ## <a name="use-free-resources"></a>Использование бесплатных ресурсов
@@ -52,7 +52,9 @@ ms.locfileid: "54351464"
 
 ## <a name="use-billable-resources"></a>Использование ресурсов, которые подлежат оплате
 
-Для рабочих нагрузок, превышающих 20 документов ежедневно, вам понадобится оплачиваемый ресурс служб Cognitive Services.
+Для рабочих нагрузок, превышающих 20 возможностей ежедневно, вам необходимо вложить оплачиваемый ресурс Cognitive Services. 
+
+Плата взымается только за навыки, которые вызывают API-интерфейсы Cognitive Services. За навыки, которые основаны не на API, такие как [пользовательские навыки](cognitive-search-create-custom-skill-example.md), [слияние текста](cognitive-search-skill-textmerger.md), [разделение текста](cognitive-search-skill-textsplit.md) и [формирователь](cognitive-search-skill-shaper.md), плата не взымается.
 
 1. В мастере **Импорт данных** в области **Подключение Cognitive Services** выберите существующий ресурс или щелкните **Создать ресурс Cognitive Services**.
 

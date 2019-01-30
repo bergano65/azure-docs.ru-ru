@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с ThirdLight | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с ThirdLight | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении ThirdLight.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 168aae9a-54ee-4c2b-ab12-650a2c62b901
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 3ab87614e6c435abc5751b1da98f9ff3fb6cedb1
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 68d4984dc7754e159ae475991cbd23a30b918736
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39439598"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54809757"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-thirdlight"></a>Учебник. Интеграция Azure Active Directory с ThirdLight
+# <a name="tutorial-azure-active-directory-integration-with-thirdlight"></a>Руководство. Интеграция Azure Active Directory с ThirdLight
 
 В этом учебнике описано, как интегрировать ThirdLight с Azure Active Directory (Azure AD).
 
@@ -146,7 +146,7 @@ ms.locfileid: "39439598"
      d. Щелкните **Сохранить параметры SAML2**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

@@ -8,14 +8,14 @@ ms.topic: conceptual
 ms.date: 09/01/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: michmcla
-ms.openlocfilehash: bd2f796ab2feee4bb862d8de2c44efc742163f06
-ms.sourcegitcommit: c282021dbc3815aac9f46b6b89c7131659461e49
+ms.openlocfilehash: 1a5a5dc04f9ac663fe2e29fd81df5201435c1bc1
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49167534"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54430168"
 ---
 # <a name="deploy-cloud-based-azure-multi-factor-authentication"></a>Развертывание облачной службы Многофакторной идентификации Azure
 
@@ -80,7 +80,7 @@ ms.locfileid: "49167534"
    * Необязательно. На вкладке **Исключить** выберите облачные приложения в своей организации, для которых не требуется MFA.
    * Нажмите кнопку **Done**(Готово).
 1. В разделе **Условия** сделайте следующее.
-   * Необязательно. Если вы включили службу "Защита идентификации Azure", то вы можете включить оценку риска входа в политику.
+   * Необязательно. Если вы включили службу "Защита идентификации Azure", вы можете включить оценку риска входа как часть политики.
    * Необязательно. Если у вас настроены надежные расположения или именованные расположения, их можно включить в политику или исключить из нее.
 1. В разделе **Предоставление** убедитесь, что выбран переключатель **Предоставить доступ**.
     * Установите флажок **Требовать многофакторную проверку подлинности**.

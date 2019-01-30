@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: xpouyat;anilmur;juliako
-ms.openlocfilehash: 31bd3d54b085922de0ec822731eae79fe9a9943b
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: e2a856dbc3bdf72ad03601618a9d48bb54665f7b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51262103"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54812069"
 ---
 # <a name="using-multiple-input-files-and-component-properties-with-premium-encoder"></a>Использование нескольких входных файлов и свойств компонентов в кодировщике Premium
 ## <a name="overview"></a>Обзор
@@ -268,7 +268,7 @@ XML-файл со списком клипов можно указать в ра�
   </transcodeRequest>
 ```
 
-## <a name="example-1--overlay-an-image-on-top-of-the-video"></a>Пример 1. Наложение изображения поверх видео
+## <a name="example-1--overlay-an-image-on-top-of-the-video"></a>Пример 1. Наложение изображения поверх видео
 
 ### <a name="presentation"></a>Уровень представления
 Рассмотрим пример, в котором необходимо наложить изображение логотипа на входное видео во время кодирования. В этом примере используются входной видеофайл Microsoft_HoloLens_Possibilities_816p24.mp4 и логотип logo.png. Нужно выполнить следующие действия.
@@ -351,7 +351,7 @@ XML-файл со списком клипов можно указать в ра�
 *Положение наложения*
 
 Для кодирования видеопотока в стандарте H.264 добавьте в рабочую область конструктора компонент видеокодировщика AVC и кодировщика AAC. Присоедините их друг к другу.
-Настройте кодировщик AAC и выберите "Audio Format Conversion/Preset : 2.0 (L, R)" (Преобразование или предустановка формата аудио: 2.0 (левый, правый)).
+Настройте кодировщик AAC и выберите "Audio Format Conversion/Preset: 2.0 (L, R)" (Преобразование или предустановка формата аудио: 2.0 (левый, правый)).
 
 ![Кодировщики аудио и видео](./media/media-services-media-encoder-premium-workflow-multiplefilesinput/capture15_encoders.png)
 
@@ -428,7 +428,7 @@ public ITask AddNew(string taskName, IMediaProcessor mediaProcessor, string conf
 
 Вы можете скачать пример рабочего процесса с сайта [GitHub](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows/).
 
-## <a name="example-2--multiple-audio-language-encoding"></a>Пример 2. Кодирование нескольких аудиодорожек на разных языках
+## <a name="example-2--multiple-audio-language-encoding"></a>Пример 2. Кодирование нескольких аудиодорожек на разных языках
 
 Пример рабочего процесса кодирования нескольких аудиодорожек на разных языках доступен в [GitHub](https://github.com/Azure/azure-media-services-samples/tree/master/Encoding%20Presets/VoD/MediaEncoderPremiumWorkfows/MultilanguageAudioEncoding).
 

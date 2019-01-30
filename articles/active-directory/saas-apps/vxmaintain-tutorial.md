@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с vxMaintain | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с vxMaintain | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и vxMaintain.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 841a1066-593c-4603-9abe-f48496d73d10
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: 7e444692dfeab5ca14fbd896043cc28e2cbd8717
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 590c7961444a36c8958fd82aaf67b05ee2213e74
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39434000"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54819906"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-vxmaintain"></a>Учебник. Интеграция Azure Active Directory с vxMaintain
+# <a name="tutorial-azure-active-directory-integration-with-vxmaintain"></a>Руководство. Интеграция Azure Active Directory с vxMaintain
 
 В этом учебнике описано, как интегрировать vxMaintain с Azure Active Directory (Azure AD).
 
@@ -161,7 +161,7 @@ ms.locfileid: "39434000"
  
 ### <a name="create-a-vxmaintain-test-user"></a>Создание тестового пользователя vxMaintain
 
-В этом разделе вы создадите тестового пользователя Britta Simon в vxMaintain. Обратитесь к [группе поддержки vxMaintain](https://www.hubspot.com/company/contact), чтобы добавить пользователей на платформу vxMaintain. Прежде чем использовать единый вход, создайте и активируйте пользователей.
+В этом разделе вы создадите тестового пользователя Britta Simon в vxMaintain. Чтобы добавить пользователей на платформу vxMaintain, обратитесь к [группе поддержки vxMaintain](https://www.hubspot.com/company/contact). Прежде чем использовать единый вход, создайте и активируйте пользователей.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

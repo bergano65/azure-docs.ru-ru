@@ -3,18 +3,18 @@ title: Компилирование конфигураций в службе "Н
 description: В этой статье описывается, как компилировать конфигурации службы настройки требуемого состояния (DSC) для службы автоматизации Azure.
 services: automation
 ms.service: automation
-ms.component: dsc
+ms.subservice: dsc
 author: bobbytreed
 ms.author: robreed
 ms.date: 09/10/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: ca3c29101e17a7970ba782b5c49267bf9f18482e
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
+ms.openlocfilehash: d49ab32ace1ad0900c4867a41aba56900ef2bcaa
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51257162"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54423414"
 ---
 # <a name="compiling-dsc-configurations-in-azure-automation-state-configuration"></a>Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"
 
@@ -130,7 +130,7 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 
 ## <a name="composite-resources"></a>Составные ресурсы
 
-**Составные ресурсы** позволяют использовать конфигурации DSC в качестве вложенных ресурсов в рамках конфигурации. Благодаря этому можно применить несколько конфигураций к одному ресурсу. См. статью [Составные ресурсы: использование DSC как ресурса](/powershell/dsc/authoringresourcecomposite) для получения дополнительных сведений о **составных ресурсах**.
+**Составные ресурсы** позволяют использовать конфигурации DSC в качестве вложенных ресурсов в рамках конфигурации. Благодаря этому можно применить несколько конфигураций к одному ресурсу. См. статью [Composite resources: Using a DSC configuration as a resource ](/powershell/dsc/authoringresourcecomposite) (Составные ресурсы.Использование конфигурации DSC как ресурса) для получения дополнительных сведений о **составных ресурсах**.
 
 > [!NOTE]
 > Для правильной компиляции **составных ресурсов** убедитесь, что все ресурсы DSC, которые использует составной ресурс, установлены в репозитории модулей учетной записи службы автоматизации Azure. Иначе импорт не будет выполнен правильно.
@@ -197,7 +197,7 @@ Configuration ConfigurationDataSample
 }
 ```
 
-Вы можете компилировать конфигурацию DSC, показанную выше, с помощью PowerShell. Следующая команда PowerShell добавляет две конфигурации узла в опрашивающий сервер службы "Настройка состояния службы автоматизации Azure": **ConfigurationDataSample.MyVM1** и **ConfigurationDataSample.MyVM3**.
+Вы можете компилировать конфигурацию DSC, показанную выше, с помощью PowerShell. При помощи следующей команды PowerShell в опрашиваемый сервер конфигурации состояния службы автоматизации Azure добавляются две конфигурации узла: **CredentialSample.MyVM1** и **CredentialSample.MyVM3**.
 
 ```powershell
 $ConfigData = @{
@@ -261,7 +261,7 @@ Configuration CredentialSample
 }
 ```
 
-Вы можете компилировать конфигурацию DSC, показанную выше, с помощью PowerShell. При помощи следующей команды PowerShell в опрашивающий сервер службы "Настройка состояния службы автоматизации Azure" добавляются две конфигурации узла: **CredentialSample.MyVM1** и **CredentialSample.MyVM2**.
+Вы можете компилировать конфигурацию DSC, показанную выше, с помощью PowerShell. При помощи следующей команды PowerShell в опрашиваемый сервер конфигурации состояния службы автоматизации Azure добавляются две конфигурации узла: **CredentialSample.MyVM1** и **CredentialSample.MyVM2**.
 
 ```powershell
 $ConfigData = @{
@@ -283,7 +283,7 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 ```
 
 > [!NOTE]
-> После завершения компиляции может появиться следующее сообщение об ошибке: **The 'Microsoft.PowerShell.Management' module was not imported because the 'Microsoft.PowerShell.Management' snap-in was already imported** (Модуль Microsoft.PowerShell.Management не импортирован, так как уже импортирована оснастка Microsoft.PowerShell.Management). Это предупреждение можно спокойно проигнорировать.
+> После завершения компиляции может появиться следующее сообщение об ошибке: **Модуль Microsoft.PowerShell.Management не импортирован, так как уже импортирована оснастка Microsoft.PowerShell.Management**. Это предупреждение можно спокойно проигнорировать.
 
 ## <a name="importing-node-configurations"></a>Импорт конфигураций узлов
 

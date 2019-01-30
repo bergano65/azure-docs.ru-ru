@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.component: language-understanding
 ms.topic: article
-ms.date: 12/04/2018
+ms.date: 01/22/2019
 ms.author: diberry
-ms.openlocfilehash: 1398db59199c62e90f8cf5654586bda1c24f2541
-ms.sourcegitcommit: d61faf71620a6a55dda014a665155f2a5dcd3fa2
+ms.openlocfilehash: ac97cf3e269652dc33ce4211947b45631228a697
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54055053"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54463292"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -113,7 +113,8 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 |Промежуточная|Get, Post|Azure и контейнер|`{APPLICATION_ID}_STAGING.gz`|
 |Производство|Get, Post|Azure и контейнер|`{APPLICATION_ID}_PRODUCTION.gz`|
 
->**Важно!** Не переименовывайте, не изменяйте и не распаковывайте файлы пакетов LUIS.
+> [!IMPORTANT]
+> Не переименовывайте, не изменяйте и не распаковывайте файлы пакетов LUIS.
 
 ### <a name="packaging-prerequisites"></a>Необходимые условия для упаковки
 
@@ -377,9 +378,10 @@ curl -X GET \
 * При создании экземпляра контейнера нужно указать данные для выставления счетов.
 
 > [!IMPORTANT]
-> Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например, анализируемые изображения или тексты).
+> Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют в корпорацию Майкрософт данные клиента (например анализируемые изображения или тексты).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 * Ознакомьтесь со статьей о [конфигурации контейнеров](luis-container-configuration.md).
-* Чтобы решить проблемы, связанные с функциональностью API распознавания речи, ознакомьтесь с [часто задаваемыми вопросами](luis-resources-faq.md).
+* Чтобы решить проблемы, связанные с функциональностью LUIS, ознакомьтесь с [часто задаваемыми вопросами](luis-resources-faq.md).
+* [Поддержка контейнеров в Azure Cognitive Services](../cognitive-services-container-support.md)

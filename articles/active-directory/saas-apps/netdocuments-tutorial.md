@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с NetDocuments | Документация Майкрософт
+title: Руководство. Интеграции Azure Active Directory с NetDocuments | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении NetDocuments.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 1a47dc42-1a17-48a2-965e-eca4cfb2f197
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/30/2017
 ms.author: jeedes
-ms.openlocfilehash: 2da548b0d3a13dfac5d3928d8d692ac8e083bf58
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 279a5700b7d9934afa1f772a282f276580a168ec
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39421106"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817908"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-netdocuments"></a>Учебник. Интеграция Azure Active Directory с NetDocuments
+# <a name="tutorial-azure-active-directory-integration-with-netdocuments"></a>Руководство. Интеграция Azure Active Directory с NetDocuments
 
 В этом руководстве описано, как интегрировать приложение NetDocuments с Azure Active Directory (Azure AD).
 
@@ -150,7 +150,7 @@ ms.locfileid: "39421106"
     c. Последовательно выберите **ОК**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

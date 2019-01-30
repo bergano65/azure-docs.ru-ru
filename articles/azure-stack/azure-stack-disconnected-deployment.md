@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 12/11/2018
 ms.author: jeffgilb
 ms.reviewer: wfayed
-ms.openlocfilehash: 33512b47eff75421ce07b02f9c17ae3028152568
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
+ms.openlocfilehash: 3262720f52bc75ba5d430e941da25568a105fe0d
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53276259"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54391264"
 ---
 # <a name="azure-disconnected-deployment-planning-decisions-for-azure-stack-integrated-systems"></a>Планирование развертываний без подключения к Azure для интегрированных систем Azure Stack
 Когда вы решите, [как интегрировать Azure Stack с гибридной облачной средой](azure-stack-connection-models.md), вы сможете спланировать развертывание Azure Stack.

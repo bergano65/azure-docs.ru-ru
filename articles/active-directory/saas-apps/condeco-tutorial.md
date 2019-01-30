@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Condeco | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Condeco | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Condeco.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 4601c17d-ad93-4865-8885-b378c4bbe82b
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/16/2017
 ms.author: jeedes
-ms.openlocfilehash: 21ad32e19f627ec6502fee2d612b4ca1d3dbd9f4
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 8c94a79fda8c62dc27d2e5cfeb4d3134c67a08cc
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39437045"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54816953"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-condeco"></a>Учебник. Интеграция Azure Active Directory с Concur
+# <a name="tutorial-azure-active-directory-integration-with-condeco"></a>Руководство. Интеграция Azure Active Directory с Condeco
 
 В этом руководстве описано, как интегрировать Condeco с Azure Active Directory (Azure AD).
 
@@ -128,7 +128,7 @@ ms.locfileid: "39437045"
 1. Чтобы настроить единый вход на стороне **Condeco**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Condeco](mailTo:supportna@condecosoftware.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.

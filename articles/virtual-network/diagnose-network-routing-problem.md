@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/30/2018
 ms.author: jdial
-ms.openlocfilehash: 695d5f1507f766cf0a2ad96d7dcd25f45f98c20e
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 56dd13f5c2c0db4af65d8bc5d4ee5c072a161964
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46994723"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54429640"
 ---
 # <a name="diagnose-a-virtual-machine-routing-problem"></a>Диагностика проблем с маршрутизацией виртуальной машины
 
@@ -54,7 +54,7 @@ ms.locfileid: "46994723"
 
 ## <a name="diagnose-using-powershell"></a>Диагностика с помощью PowerShell
 
-Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы решили запустить PowerShell на своем компьютере, вам потребуется модуль PowerShell *AzureRM* 6.0.1 или более поздней версии. Выполните `Get-Module -ListAvailable AzureRM` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-azurerm-ps). Если PowerShell работает локально, необходимо также выполнить `Login-AzureRmAccount`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
+Вы можете выполнить приведенные ниже команды в [Azure Cloud Shell](https://shell.azure.com/powershell) или с помощью PowerShell на своем компьютере. Azure Cloud Shell — это бесплатная интерактивная оболочка. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Если вы решили запустить PowerShell на своем компьютере, вам потребуется модуль PowerShell *AzureRM* 6.0.1 или более поздней версии. Выполните `Get-Module -ListAvailable AzureRM` на компьютере, чтобы получить сведения об установленной версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/azurerm/install-azurerm-ps). Если PowerShell работает локально, необходимо также выполнить `Login-AzureRmAccount`, чтобы войти в Azure с учетной записью, предоставляющей [необходимые разрешения](virtual-network-network-interface.md#permissions).
 
 Получите действующие маршруты для сетевого интерфейса, выполнив командлет [Get-AzureRmEffectiveRouteTable](/powershell/module/azurerm.network/get-azurermeffectiveroutetable). В следующем примере извлекаются действующие маршруты для сетевого интерфейса *myVMVMNic*, который находится в группе ресурсов *myResourceGroup*.
 

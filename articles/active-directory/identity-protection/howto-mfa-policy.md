@@ -5,7 +5,7 @@ services: active-directory
 keywords: защита удостоверений Azure Active Directory, Cloud App Discovery, управление приложениями, безопасность, риск, уровень риска, уязвимость, политика безопасности
 documentationcenter: ''
 author: MarkusVi
-manager: mtillman
+manager: daveba
 ms.assetid: e7434eeb-4e98-4b6b-a895-b5598a6cccf1
 ms.service: active-directory
 ms.component: identity-protection
@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 09/13/2018
 ms.author: markvi
 ms.reviewer: raluthra
-ms.openlocfilehash: 792a1fc2403e672c973577efd7a05c9c81d45ad4
-ms.sourcegitcommit: 715813af8cde40407bd3332dd922a918de46a91a
+ms.openlocfilehash: 47c742e486c01d2861889419a56c252e74f1e316
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47054087"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54469837"
 ---
 # <a name="how-to-configure-the-multi-factor-authentication-registration-policy"></a>Практическое руководство. Настройка политики регистрации с многофакторной проверкой подлинности
 
@@ -67,7 +67,7 @@ ms.locfileid: "47054087"
     ![Принудительное применение политики](./media/howto-mfa-policy/14.png)
 
 
-Диалоговое окно настройки политики дает возможность оценить влияние настроенной конфигурации.
+Диалоговое окно настройки политики позволяет оценить влияние, оказываемое изменением конфигурации.
 
 ![Оценка влияния](./media/howto-mfa-policy/15.png)
 
@@ -86,4 +86,4 @@ ms.locfileid: "47054087"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Общие сведения о службе "Защита идентификации Azure Active Directory" см. в [этом обзоре](overview.md).
+См. дополнительные сведения о [защите идентификации Azure AD](overview.md).

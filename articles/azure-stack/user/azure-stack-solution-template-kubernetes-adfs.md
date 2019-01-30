@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 01/16/2019
 ms.author: mabrigg
 ms.reviewer: waltero
-ms.openlocfilehash: a161d2223dacb618f1e2eeb6443fffae18cc7259
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: 3ae0a67a8aa2d403a72b0e20471c2044dbf557bf
+ms.sourcegitcommit: 9f07ad84b0ff397746c63a085b757394928f6fc0
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54354869"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54389062"
 ---
 # <a name="deploy-kubernetes-to-azure-stack-using-active-directory-federated-services"></a>Развертывание Kubernetes в Azure Stack с помощью служб федерации Active Directory
 
@@ -42,7 +42,7 @@ ms.locfileid: "54354869"
 
     Кластер не может быть развернут в подписке **администратора** Azure Stack. Необходимо использовать подписку **пользователя**. 
 
-1. Если в marketplace нет кластера Kubernetes, обратитесь к администратору Azure Stack.
+1. Если в Marketplace нет кластера Kubernetes, обратитесь к администратору Azure Stack.
 
 ## <a name="create-a-service-principal"></a>Создание субъекта-службы
 

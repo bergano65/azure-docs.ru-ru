@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с HR2day by Merces | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с HR2day by Merces | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и HR2day от Merces.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 853d08c9-27b1-48d4-b8e7-3705140eb67f
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/24/2017
 ms.author: jeedes
-ms.openlocfilehash: 984e2e9999a2aba7a595034f1fec8bafb976f310
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 327e6d94cbabd679531935ba330d3096d73f8897
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39441621"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54821028"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hr2day-by-merces"></a>Руководство. Интеграция Azure Active Directory с HR2day от Merces
+# <a name="tutorial-azure-active-directory-integration-with-hr2day-by-merces"></a>Руководство. Интеграция Azure Active Directory с HR2day by Merces
 
 В этом руководстве описано, как интегрировать приложение HR2day от Merces с Azure Active Directory (Azure AD).
 
@@ -88,10 +88,10 @@ ms.locfileid: "39441621"
 
 Чтобы настроить и проверить единый вход Azure AD в HR2day от Merces, вам потребуется выполнить следующие действия.
 
-1. [Настройка единого входа Azure AD](#configuring-azure-ad-single-sign-on) необходима, чтобы пользователи могли использовать эту функцию.
-1. [Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user) требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. [Создание тестового пользователя HR2day от Merces](#creating-an-hr2day-by-merces-test-user) требуется для создания пользователя Britta Simon в HR2day от Merces, связанного с соответствующим представлением в Azure AD.
-1. [Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user) необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD.
+1. [Настройка единого входа Azure AD](#configuring-azure-ad-single-sign-on). Включите для пользователей такую возможность.
+1. [Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user). Проверьте работу единого входа Azure AD с помощью пользователя Britta Simon.
+1. [Создание тестового пользователя HR2day by Merces](#creating-an-hr2day-by-merces-test-user) требуется для создания пользователя Britta Simon в HR2day by Merces, связанного с соответствующим представлением в Azure AD.
+1. [Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user). Разрешите пользователю Britta Simon использовать единый вход Azure AD.
 1. [Проверка единого входа](#testing-single-sign-on) необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD

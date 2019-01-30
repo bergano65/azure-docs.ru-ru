@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с LinkedIn Elevate | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с LinkedIn Elevate | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и LinkedIn Elevate.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 2ad9941b-c574-42c3-bd0f-5d6ec68537ef
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/16/2018
 ms.author: jeedes
-ms.openlocfilehash: 8b11b5e3e420577590e95c6839673f54c52d078b
-ms.sourcegitcommit: 4eddd89f8f2406f9605d1a46796caf188c458f64
+ms.openlocfilehash: 209f87a77ff6e18fa08943385d9cf61bbf915089
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49116182"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54822643"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-linkedin-elevate"></a>Руководство по интеграции Azure Active Directory с LinkedIn Elevate
+# <a name="tutorial-azure-active-directory-integration-with-linkedin-elevate"></a>Руководство. Интеграция Azure Active Directory с LinkedIn Elevate
 
 В этом руководстве описано, как интегрировать приложение LinkedIn Elevate с Azure Active Directory (Azure AD).
 
@@ -240,7 +240,7 @@ ms.locfileid: "49116182"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Руководство по настройке LinkedIn Elevate для автоматической подготовки пользователей с помощью Azure Active Directory](linkedinelevate-provisioning-tutorial.md)
+* [Руководство по настройке LinkedIn Elevate для автоматической подготовки пользователей](linkedinelevate-provisioning-tutorial.md)
 * [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
 * [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
 * [Руководство по настройке Google Apps для автоматической подготовки пользователей](linkedinelevate-provisioning-tutorial.md)

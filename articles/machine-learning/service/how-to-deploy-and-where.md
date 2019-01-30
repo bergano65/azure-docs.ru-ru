@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 7fc40945588c272ae0ae80ba17b7b3752cab4306
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: 4d62885743a4e50ece1c032c7b3405d8766d95cd
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54353317"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54850592"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
@@ -245,7 +245,7 @@ image = ContainerImage.create(name = "myimage",
     **Примерное время**: приблизительно 3 минуты.
 
     > [!TIP]
-    > Если во время развертывания возникают ошибки, используйте `service.get_logs()` для просмотра журналов службы AKS. Информация в этих журналах может указывать на причину ошибки.
+    > Если во время развертывания возникают ошибки, используйте `service.get_logs()` для просмотра журналов службы. Информация в этих журналах может указывать на причину ошибки.
 
 Дополнительные сведения см. в справочной документации по классам [AciWebservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aciwebservice?view=azure-ml-py) и [Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice?view=azure-ml-py).
 
@@ -300,7 +300,7 @@ from azureml.core.compute import AksCompute, ComputeTarget
 resource_group = 'myresourcegroup'
 cluster_name = 'mycluster'
 
-# Attatch the cluster to your workgroup
+# Attach the cluster to your workgroup
 attach_config = AksCompute.attach_configuration(resource_group = resource_group,
                                          cluster_name = cluster_name)
 aks_target = ComputeTarget.attach(ws, 'mycompute', attach_config)
@@ -335,7 +335,7 @@ print(service.state)
 **Оценка времени**. приблизительно 3 минуты.
 
 > [!TIP]
-> Если во время развертывания возникают ошибки, используйте `service.get_logs()` для просмотра журналов службы AKS. Информация в этих журналах может указывать на причину ошибки.
+> Если во время развертывания возникают ошибки, используйте `service.get_logs()` для просмотра журналов службы. Информация в этих журналах может указывать на причину ошибки.
 
 Дополнительные сведения см. в справочной документации по классам [AksWebservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py) и [Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice.webservice?view=azure-ml-py).
 

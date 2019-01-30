@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 08420be7171df78babf62b262fef84fd29fb34ab
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
+ms.openlocfilehash: f341c7e4a56aacb35ee16cbae00115196325b46a
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39495069"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54855828"
 ---
 # <a name="implement-oracle-data-guard-on-an-azure-linux-virtual-machine"></a>Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux 
 
@@ -40,7 +40,7 @@ Azure CLI используется для создания ресурсов Azur
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure 
 
-Войдите в подписку Azure с помощью команды [az login](/cli/azure/reference-index#az_login) и следуйте инструкциям на экране.
+Войдите в подписку Azure с помощью команды [az login](/cli/azure/reference-index) и следуйте инструкциям на экране.
 
 ```azurecli
 az login
@@ -48,7 +48,7 @@ az login
 
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az_group_create). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
+Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group). Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. 
 
 В следующем примере создается группа ресурсов с именем `myResourceGroup` в расположении `westus`:
 
@@ -688,6 +688,6 @@ az group delete --name myResourceGroup
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Создание полной среды Linux с помощью Azure CLI 2.0](../../linux/create-cli-complete.md)
+[Руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
 
-[Примеры Azure CLI для виртуальных машин Linux](../../linux/cli-samples.md).
+[Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).

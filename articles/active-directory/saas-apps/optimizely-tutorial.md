@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Optimizely | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Optimizely | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Optimizely.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 28ef03e1-9aad-4301-af97-d94e853edc74
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/07/2018
 ms.author: jeedes
-ms.openlocfilehash: be56218e174e5d8b0e6bde394f2dfd40fc91e87d
-ms.sourcegitcommit: 1af4bceb45a0b4edcdb1079fc279f9f2f448140b
+ms.openlocfilehash: 72e0f19a665b1e8cc91939ae24cc71341b5f1674
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42143042"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54819022"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-optimizely"></a>Учебник. Интеграция Azure Active Directory с Optimizely
+# <a name="tutorial-azure-active-directory-integration-with-optimizely"></a>Руководство. Интеграция Azure Active Directory с Optimizely
 
 В этом учебнике описано, как интегрировать Optimizely с Azure Active Directory (Azure AD).
 

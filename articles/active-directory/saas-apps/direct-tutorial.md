@@ -1,10 +1,10 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с direct | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с direct | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и direct.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 7c2cd1f0-d14c-42f0-94a8-9b800008b285
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/06/2018
 ms.author: jeedes
-ms.openlocfilehash: 7e693a721e5556970607fafd8ff187d3b06c913e
-ms.sourcegitcommit: af60bd400e18fd4cf4965f90094e2411a22e1e77
+ms.openlocfilehash: 6bb197b820b9f4262eb5c93665c46c14f9497d0f
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44092892"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54822660"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-direct"></a>Руководство. Интеграция Azure Active Directory с direct
 
@@ -118,7 +118,7 @@ ms.locfileid: "44092892"
 
     ![Настройка единого входа](./media/direct-tutorial/tutorial_direct_url1.png)
 
-     В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://direct4b.com/sso` 
+     В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://direct4b.com/sso` 
 
 5. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
 
@@ -164,7 +164,7 @@ ms.locfileid: "44092892"
 
 ### <a name="creating-a-direct-test-user"></a>Создание тестового пользователя direct
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении direct. Обратитесь в [службу поддержки direct](https://direct4b.com/ja/support.html#inquiry), чтобы добавить пользователей на платформу direct. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении direct. Обратитесь к  [группе поддержки direct](https://direct4b.com/ja/support.html#inquiry) , чтобы добавить пользователей на платформу direct. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

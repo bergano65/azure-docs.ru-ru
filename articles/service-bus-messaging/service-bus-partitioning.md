@@ -2,18 +2,19 @@
 title: Создание секционированных очередей и разделов служебной шины Azure | Документация Майкрософт
 description: В этой статье описывается, как секционировать очереди и разделы служебной шины с помощью нескольких брокеров сообщений.
 services: service-bus-messaging
-author: spelluru
+author: axisc
 manager: timlt
+editor: spelluru
 ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 09/06/2018
-ms.author: spelluru
-ms.openlocfilehash: 049b6969b33290edf6ef8a2ea437808d914057a9
-ms.sourcegitcommit: 022cf0f3f6a227e09ea1120b09a7f4638c78b3e2
+ms.author: aschhab
+ms.openlocfilehash: 48b7d7450503b27b5515e655be3f048f57c2238d
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2018
-ms.locfileid: "52285073"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54856593"
 ---
 # <a name="partitioned-queues-and-topics"></a>Секционированные очереди и разделы
 
@@ -70,7 +71,7 @@ ns.CreateTopic(td);
 
 **SessionId**. Если для сообщения установлено свойство [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid), то служебная шина использует свойство **SessionID** в качестве ключа секции. Таким образом, все сообщения, которые относятся к одному сеансу, обрабатываются одним и тем же посредником сообщений. Сеансы позволяют служебной шине гарантировать порядок сообщений и согласованность состояний сеансов.
 
-**PartitionKey**. Если для сообщения установлено свойство [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey), но не установлено свойство [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid), то служебная шина использует значение свойства [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey) в качестве ключа секции. Если для сообщения установлены оба свойства [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid) и [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey), то их значения должны совпадать. Если значение свойства [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey) отличается от значения свойства [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid), служебная шина возвращает исключение недопустимой операции. Свойство [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey) нужно использовать, если отправитель отправляет транзакционные сообщения без учета сеансов. Ключ секции гарантирует, что все сообщения, отправленные в транзакции, будут обработаны одним и тем же посредником сообщений.
+**PartitionKey.** Если для сообщения установлено свойство [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey), но не установлено свойство [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid), то служебная шина использует значение свойства [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey) в качестве ключа секции. Если для сообщения установлены оба свойства [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid) и [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey), то их значения должны совпадать. Если значение свойства [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey) отличается от значения свойства [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid), служебная шина возвращает исключение недопустимой операции. Свойство [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey) нужно использовать, если отправитель отправляет транзакционные сообщения без учета сеансов. Ключ секции гарантирует, что все сообщения, отправленные в транзакции, будут обработаны одним и тем же посредником сообщений.
 
 **MessageId**. Если для свойства [RequiresDuplicateDetection](/dotnet/api/microsoft.azure.management.servicebus.models.sbqueue.requiresduplicatedetection) очереди или раздела задано значение **true**, а свойства [SessionId](/dotnet/api/microsoft.azure.servicebus.message.sessionid) или [PartitionKey](/dotnet/api/microsoft.azure.servicebus.message.partitionkey) не заданы, то в качестве ключа секции выступает значение свойства [MessageId](/dotnet/api/microsoft.azure.servicebus.message.messageid). (Библиотеки Microsoft .NET и AMQP назначают идентификатор сообщения автоматически, если отправляющее приложение этого не сделало.) В этом случае все копии одного сообщения обрабатываются одним и тем же посредником сообщений. Этот идентификатор позволяет служебной шине находить и исключать повторяющиеся сообщения. Если свойство [RequiresDuplicateDetection](/dotnet/api/microsoft.azure.management.servicebus.models.sbqueue.requiresduplicatedetection) не установлено в значение **true**, служебная шина не рассматривает свойство [MessageId](/dotnet/api/microsoft.azure.servicebus.message.messageid) в качестве ключа секции.
 

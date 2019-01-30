@@ -1,10 +1,10 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением Wdesk | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с приложением Wdesk | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Wdesk.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 06900a91-a326-4663-8ba6-69ae741a536e
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/22/2017
 ms.author: jeedes
-ms.openlocfilehash: 9ff4d38240bf44cdb3112730b6f6962feed09a6a
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: ee4e81d0af1648aa4ee61501c231585cf0b1cbfa
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39444442"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54811780"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wdesk"></a>Руководство. Интеграция Azure Active Directory с Wdesk
 
@@ -168,7 +168,7 @@ ms.locfileid: "39444442"
     ![Настройка единого входа](./media/wdesk-tutorial/tutorial_wdesk_ssoconfigsavebutton.png)
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
@@ -271,7 +271,7 @@ ms.locfileid: "39444442"
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
 Щелкнув плитку Wdesk на панели доступа, вы автоматически войдете в приложение Wdesk.
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Дополнительные сведения о панели доступа см. в статье [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md)
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

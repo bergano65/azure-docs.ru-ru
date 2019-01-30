@@ -5,7 +5,7 @@ services: active-directory
 keywords: что такое параметры групповой политики и MDM для службы Enterprise State Roaming, служба Enterprise State Roaming, облако Windows
 documentationcenter: ''
 author: MarkusVi
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.component: devices
 ms.assetid: 6471a9b3-8dd4-4237-89d1-bfbeca9f8252
@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/25/2018
 ms.author: markvi
-ms.openlocfilehash: c6ec20b7467998d221858dfd852461ad33a64494
-ms.sourcegitcommit: f0c2758fb8ccfaba76ce0b17833ca019a8a09d46
+ms.openlocfilehash: 5ce3597bb52a22cfba6103b1d6cc5d0ff6371579
+ms.sourcegitcommit: 9b6492fdcac18aa872ed771192a420d1d9551a33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51035219"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54447665"
 ---
 # <a name="group-policy-and-mdm-settings"></a>Параметры групповой политики и управления мобильными устройствами
 Используйте эти параметры групповой политики и управления мобильными устройствами (MDM) только на корпоративных устройствах, так как эти политики применяются ко всему устройству пользователя. Применение политики MDM для отключения синхронизации параметров на личном устройстве пользователя может негативно отразиться на использовании этого устройства. Кроме того, политика также влияет на другие учетные записи пользователей на устройстве.

@@ -4,21 +4,23 @@ description: В этом руководстве описывается испр�
 services: azure-policy
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 12/06/2018
+ms.date: 01/23/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 093b49bea167efb12b941f8f0baff6fbdae5be25
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.openlocfilehash: 054ce3d3483c3515e89c36eafc5d9a771e8e608d
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53312652"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54844149"
 ---
 # <a name="remediate-non-compliant-resources-with-azure-policy"></a>Исправление несоответствующих ресурсов с помощью службы "Политика Azure"
 
 Ресурсы, которые не соответствуют политике **deployIfNotExists**, могут быть переведены в состояние соответствия с помощью **исправления**. Исправление выполняется путем указания в политике запуска эффекта **deployIfNotExists** для назначенной политики на существующих ресурсах. В этой статье приведены шаги, необходимые для распознавания несоответствующих политике ресурсов и выполнения исправления с помощью политики.
+
+[!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
 ## <a name="how-remediation-security-works"></a>Как работает безопасность исправлений
 
@@ -51,7 +53,7 @@ az role definition list --name 'Contributor'
 ```
 
 ```azurepowershell-interactive
-Get-AzureRmRoleDefinition -Name 'Contributor'
+Get-AzRoleDefinition -Name 'Contributor'
 ```
 
 ## <a name="manually-configure-the-managed-identity"></a>Настройка управляемого удостоверения вручную
@@ -70,23 +72,23 @@ Get-AzureRmRoleDefinition -Name 'Contributor'
 Для создания управляемого удостоверения во время назначения политики необходимо определить свойство **Location** и использовать свойство **AssignIdentity**. Следующий пример получает определение встроенной политики **Развернуть прозрачное шифрование базы данных SQL**, задает целевую группу ресурсов, а затем создает назначение.
 
 ```azurepowershell-interactive
-# Login first with Connect-AzureRmAccount if not using Cloud Shell
+# Login first with Connect-Azccount if not using Cloud Shell
 
 # Get the built-in "Deploy SQL DB transparent data encryption" policy definition
-$policyDef = Get-AzureRmPolicyDefinition -Id '/providers/Microsoft.Authorization/policyDefinitions/86a912f6-9a06-4e26-b447-11b16ba8659f'
+$policyDef = Get-AzPolicyDefinition -Id '/providers/Microsoft.Authorization/policyDefinitions/86a912f6-9a06-4e26-b447-11b16ba8659f'
 
 # Get the reference to the resource group
-$resourceGroup = Get-AzureRmResourceGroup -Name 'MyResourceGroup'
+$resourceGroup = Get-AzResourceGroup -Name 'MyResourceGroup'
 
 # Create the assignment using the -Location and -AssignIdentity properties
-$assignment = New-AzureRmPolicyAssignment -Name 'sqlDbTDE' -DisplayName 'Deploy SQL DB transparent data encryption' -Scope $resourceGroup.ResourceId -PolicyDefinition $policyDef -Location 'westus' -AssignIdentity
+$assignment = New-AzPolicyAssignment -Name 'sqlDbTDE' -DisplayName 'Deploy SQL DB transparent data encryption' -Scope $resourceGroup.ResourceId -PolicyDefinition $policyDef -Location 'westus' -AssignIdentity
 ```
 
 Переменная `$assignment` теперь содержит идентификатор субъекта для управляемого удостоверения, а также стандартные значения, возвращаемые при создании назначения политики. Доступ может осуществляться через `$assignment.Identity.PrincipalId`.
 
 ### <a name="grant-defined-roles-with-powershell"></a>Предоставление определенных ролей с помощью PowerShell
 
-Новое управляемое удостоверение должно выполнить репликацию через Azure Active Directory, прежде чем ему можно будет предоставить необходимые роли. После завершения репликации приведенный ниже пример выполняет итерацию определения политики в `$policyDef` для **roleDefinitionIds** и использует командлет [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment), чтобы предоставить роли новому управляемому удостоверению.
+Новое управляемое удостоверение должно выполнить репликацию через Azure Active Directory, прежде чем ему можно будет предоставить необходимые роли. После завершения репликации приведенный ниже пример выполняет итерацию определения политики в `$policyDef` для **roleDefinitionIds** и использует командлет [New-AzRoleAssignment](/powershell/module/az.resources/new-azroleassignment), чтобы предоставить роли новому управляемому удостоверению.
 
 ```azurepowershell-interactive
 # Use the $policyDef to get to the roleDefinitionIds array
@@ -96,7 +98,7 @@ if ($roleDefinitionIds.Count -gt 0)
 {
     $roleDefinitionIds | ForEach-Object {
         $roleDefId = $_.Split("/") | Select-Object -Last 1
-        New-AzureRmRoleAssignment -Scope $resourceGroup.ResourceId -ObjectId $assignment.Identity.PrincipalId -RoleDefinitionId $roleDefId
+        New-AzRoleAssignment -Scope $resourceGroup.ResourceId -ObjectId $assignment.Identity.PrincipalId -RoleDefinitionId $roleDefId
     }
 }
 ```

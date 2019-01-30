@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с SD Elements | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с SD Elements | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и SD Elements.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: f0386307-bb3b-4810-8d4b-d0bfebda04f4
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/08/2017
 ms.author: jeedes
-ms.openlocfilehash: 4d5c830df47ff212d2f4d93eb48001ce3a3e2207
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 93f838ac846415de0f3caf14b36f4bdf36b241ee
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39446930"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54814806"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sd-elements"></a>Учебник. Интеграция Azure Active Directory с SD Elements
+# <a name="tutorial-azure-active-directory-integration-with-sd-elements"></a>Руководство. Интеграция Azure Active Directory с SD Elements
 
 В этом руководстве описано, как интегрировать SD Elements с Azure Active Directory (Azure AD).
 
@@ -176,7 +176,7 @@ ms.locfileid: "39446930"
     d. Выберите команду **Сохранить**.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

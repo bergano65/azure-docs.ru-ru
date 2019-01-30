@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: ramamill
-ms.openlocfilehash: 62a9fd6eee15618e7153fd84030840b429e214ed
-ms.sourcegitcommit: 11d8ce8cd720a1ec6ca130e118489c6459e04114
+ms.openlocfilehash: ee5cc1f185640c9ea22ceb80b1fabb20df245fe2
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52833522"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54823086"
 ---
 # <a name="manage-the-configuration-server-for-physical-server-disaster-recovery"></a>Управление сервером конфигурации для аварийного восстановления физических серверов
 
@@ -112,7 +112,7 @@ ms.locfileid: "52833522"
 |/InstallLocation|Обязательно|Папка для установки компонентов.| Любая папка на компьютере.|
 |/MySQLCredsFilePath|Обязательно|Путь к файлу, в котором хранятся учетные данные сервера MySQL.|Этот файл должен быть в формате, указанном ниже.|
 |/VaultCredsFilePath|Обязательно|Путь к файлу с учетными данными хранилища.|Допустимый путь к файлу.|
-|/EnvType|Обязательно|Тип среды, которую необходимо защитить. |VMware<br>NonVMware|
+|/EnvType|Обязательно|Тип среды, которую необходимо защитить |VMware<br>NonVMware|
 |/PSIP|Обязательно|IP-адрес сетевой карты для передачи данных репликации.| Любой допустимый IP-адрес|
 |/CSIP|Обязательно|IP-адрес сетевой карты, передачу данных через который ожидает сервер конфигурации.| Любой допустимый IP-адрес|
 |/PassphraseFilePath|Обязательно|Полный путь к расположению файла с парольной фразой.|Допустимый путь к файлу.|
@@ -264,7 +264,7 @@ ProxyPassword="Password"
 
 ## <a name="delete-or-unregister-a-configuration-server-powershell"></a>Отмена регистрации или удаление сервера конфигурации (PowerShell)
 
-1. [Установите](https://docs.microsoft.com/powershell/azure/install-azurerm-ps?view=azurermps-4.4.0) модуль Azure PowerShell.
+1. [Установите](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps?view=azurermps-4.4.0) модуль Azure PowerShell.
 2. Войдите в свою учетную запись Azure с помощью следующей команды.
     
     `Connect-AzureRmAccount`

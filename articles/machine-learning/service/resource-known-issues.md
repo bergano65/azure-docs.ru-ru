@@ -11,12 +11,12 @@ ms.component: core
 ms.topic: article
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: e143c0c8ef09af49aed656d479bcad4dd35e2211
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
+ms.openlocfilehash: 5634a1aae32b3e9895bf5c5b72837f29223bca27
+ms.sourcegitcommit: ba9f95cf821c5af8e24425fd8ce6985b998c2982
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54351804"
+ms.lasthandoff: 01/17/2019
+ms.locfileid: "54381828"
 ---
 # <a name="known-issues-and-troubleshooting-azure-machine-learning-service"></a>Устранение неполадок и описание известных проблем в службе "Машинное обучение Azure"
  
@@ -32,11 +32,16 @@ pip install --upgrade azureml-sdk[notebooks,automl] --ignore-installed PyYAML
 ```
 
 ## <a name="trouble-creating-azure-machine-learning-compute"></a>Проблема при создании Вычислительной среды Машинного обучения Azure
+
 Существую небольшая вероятность того, что некоторые пользователи, создавшие свою рабочую область Машинного обучения Azure на портале Azure до выпуска общедоступной версии, не смогут создать Вычислительную среду Машинного обучения Azure в этой рабочей области. Можно отправить соответствующий запрос в службу поддержки или создать новую рабочую область с помощью портала или пакета SDK, чтобы немедленно устранить эту проблему. 
 
 ## <a name="image-building-failure"></a>Сбой создания образа
 
 Сбой создания образа при развертывании веб-службы. Обходным решением является добавление "pynacl==1.2.1" в качестве зависимости пика для файла Conda для конфигурации изображения.  
+
+## <a name="deployment-failure"></a>Сбой развертывания
+
+Если вы обнаружили, что операция "DaskOnBatch:context_managers.DaskOnBatch", "setup.py"]" завершилась ошибкой <Signals.SIGKILL: 9>, измените номер SKU для виртуальных машин, используемых в развертывании, на другой с большим объемом памяти.
 
 ## <a name="fpgas"></a>FPGA
 Вы не сможете развернуть модели на FPGA до тех пор, пока не будет запрошена и одобрена квота FPGA. Чтобы запросить доступ, заполните форму запроса квоты: https://aka.ms/aml-real-time-ai

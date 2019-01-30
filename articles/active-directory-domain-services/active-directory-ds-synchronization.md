@@ -1,10 +1,10 @@
 ---
-title: 'Доменные службы Azure Active Directory: синхронизация в управляемых доменах | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Синхронизация в управляемых доменах | Документация Майкрософт
 description: Общие сведения о синхронизации в управляемом домене доменных служб Azure Active Directory.
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: 57cbf436-fc1d-4bab-b991-7d25b6e987ef
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: ergreenl
-ms.openlocfilehash: e0fc1b64514adb710ebcbdd417f65e9e3b3b3d66
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 40b66b85f88cde28cc6a1c52cb456157d8acd68c
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50155564"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54846955"
 ---
 # <a name="synchronization-in-an-azure-ad-domain-services-managed-domain"></a>Синхронизация в управляемом домене доменных служб Azure AD
 На следующей схеме показано, как работает синхронизация в управляемых доменах доменных служб Azure AD.

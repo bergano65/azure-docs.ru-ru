@@ -1,10 +1,10 @@
 ---
-title: Учебник. Интеграция Azure Active Directory с Insperity ExpensAble | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Insperity ExpensAble | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Insperity ExpensAble.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: c579c453-580e-417d-8a5e-9b6b352795c0
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/13/2017
 ms.author: jeedes
-ms.openlocfilehash: ba2d71a52b8b2367c6d292a9531cf5403f59242e
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b078f459faf4da468a0b0e4ec7c6e880627e4a4d
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39427872"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54821194"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-insperity-expensable"></a>Учебник. Интеграция Azure Active Directory с Insperity ExpensAble
+# <a name="tutorial-azure-active-directory-integration-with-insperity-expensable"></a>Руководство. Интеграция Azure Active Directory с Insperity ExpensAble
 
 В этом учебнике описано, как интегрировать Insperity ExpensAble с Azure Active Directory (Azure AD).
 
@@ -132,7 +132,7 @@ ms.locfileid: "39427872"
 1. Чтобы настроить единый вход на стороне **Insperity ExpensAble**, нужно отправить скачанный **XML-файл метаданных**, **URL-адрес службы единого входа SAML** и **идентификатор сущности SAML** в [службу поддержки Insperity ExpensAble](http://expensable.com/support/support-overview). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD

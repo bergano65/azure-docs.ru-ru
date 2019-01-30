@@ -1,10 +1,10 @@
 ---
-title: Руководство по настройке ServiceNow для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
+title: Руководство. Настройка ServiceNow для автоматической подготовки пользователей с помощью Azure Active Directory | Документация Майкрософт
 description: Узнайте, как настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в ServiceNow.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 4d6f06dd-a798-4c22-b84f-8a11f1b8592a
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/26/2018
 ms.author: jeedes
-ms.openlocfilehash: b3ef6e2a6b9b51c271372aa3c9342b52a4260788
-ms.sourcegitcommit: af9cb4c4d9aaa1fbe4901af4fc3e49ef2c4e8d5e
+ms.openlocfilehash: 7ee10bcd06877b33669b79e104f0d32f87301c28
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44348112"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54813276"
 ---
-# <a name="tutorial-configure-servicenow-for-automatic-user-provisioning-with-azure-active-directory"></a>Руководство по настройке ServiceNow для автоматической подготовки пользователей с помощью Azure Active Directory
+# <a name="tutorial-configure-servicenow-for-automatic-user-provisioning-with-azure-active-directory"></a>Руководство. Настройка ServiceNow для автоматической подготовки пользователей с помощью Azure Active Directory
 
 Цель этого руководства — показать, как в ServiceNow и Azure AD настроить автоматическую подготовку и отзыв учетных записей пользователей из Azure AD в ServiceNow.
 
@@ -50,7 +50,7 @@ ms.locfileid: "44348112"
 
 В Azure Active Directory для определения того, какие пользователи должны получать доступ к выбранным приложениям, используется концепция, называемая "назначение". В контексте автоматической подготовки учетной записи будут синхронизированы только те записи и группы, которые были "назначены" приложению в Azure AD.
 
-Перед настройкой и включением службы подготовки необходимо решить, какие пользователи или группы в Azure AD представляют пользователей, которым требуется доступ к приложению ServiceNow. После принятия решения можно назначить этих пользователей приложению ServiceNow, следуя инструкциям в статье [Назначение пользователя или группы корпоративному приложению в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal).
+Перед настройкой и включением службы подготовки необходимо решить, какие пользователи или группы в Azure AD представляют пользователей, которым требуется доступ к приложению ServiceNow. Когда данное решение будет принято, можно будет назначить этих пользователей приложению ServiceNow, следуя указаниям, приведенным ниже. [Назначение корпоративному приложению пользователя или группы](https://docs.microsoft.com/azure/active-directory/active-directory-coreapps-assign-user-azure-portal)
 
 
 > [!IMPORTANT]

@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
-manager: mtillman
+manager: daveba
 ms.reviewer: sahenry
-ms.openlocfilehash: 1465ba23f6fed85f0d4164f8e3fdc8c38be43ad3
-ms.sourcegitcommit: 707bb4016e365723bc4ce59f32f3713edd387b39
+ms.openlocfilehash: 1b488e938cf314eef18117ffd33f582319260162
+ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49427742"
+ms.lasthandoff: 01/22/2019
+ms.locfileid: "54438785"
 ---
-# <a name="how-to-enable-password-reset-from-windows-7-8-and-81"></a>Практическое руководство. Включение сброса пароля в Windows 7, 8 и 8.1
+# <a name="how-to-enable-password-reset-from-windows-7-8-and-81"></a>Практическое руководство: включение сброса пароля в Windows 7, 8 и 8.1
 
 Как администратор вы включили самостоятельный сброс пароля (SSPR), но пользователи продолжают обращаться в службу поддержки для сброса паролей, так как не могут открыть окно браузера для доступа к [порталу SSPR](https://aka.ms/sspr). Для компьютеров Windows 10 можно включить ссылку "Сбросить пароль" на экране входа в систему (см. руководство по [сбросу пароля Azure AD в окне входа](tutorial-sspr-windows.md)). Следующие рекомендации помогут разрешить пользователям Windows 7, 8 и 8.1 сбрасывать пароль с помощью SSPR на экране входа Windows.
 

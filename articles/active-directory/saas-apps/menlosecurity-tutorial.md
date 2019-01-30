@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Menlo Security | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Menlo Security | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Menlo Security.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 9e63fe6b-0ad0-405d-9e41-6a1a40a41df8
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2017
 ms.author: jeedes
-ms.openlocfilehash: a1f7458d52ffdee4cb48e4be0f553e3d57413249
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 70b6693afe1a57e8acd62500d74f860dffc7c692
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39428851"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54808703"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-menlo-security"></a>Руководство по интеграции Azure Active Directory с Menlo Security
+# <a name="tutorial-azure-active-directory-integration-with-menlo-security"></a>Руководство. Интеграция Azure Active Directory с Menlo Security
 
 В этом руководстве описано, как интегрировать Menlo Security с Azure Active Directory (Azure AD).
 
@@ -143,16 +143,16 @@ ms.locfileid: "39428851"
 
     c. В разделе **SAML Provider** (Поставщик SAML) выберите **Azure Active Directory**.
 
-    d. **SAML 2.0 Endpoint** (Конечная точка SAML 2.0). Вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure.
+    d. **SAML 2.0 Endpoint** (Конечная точка SAML 2.0): вставьте **URL-адрес службы единого входа SAML**, скопированный на портале Azure.
 
-    д. **Service Identifier (Issuer)** (Идентификатор службы (издатель)). Вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
+    д. **Service Identifier (Issuer)** (Идентификатор службы (издатель)): вставьте **идентификатор сущности SAML**, скопированный на портале Azure.
 
-    Е. **Сертификат X.509**. Откройте **сертификат (Base64)**, скачанный на портале Azure, в Блокноте и вставьте его в это поле.
+    Е. **Сертификат X.509**: Откройте **Сертификат (Base64)**, скачанный на портале Azure, в Блокноте и вставьте его в это поле.
 
     ж. Нажмите кнопку **Сохранить** , чтобы сохранить параметры.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
  
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
@@ -188,7 +188,7 @@ ms.locfileid: "39428851"
  
 ### <a name="creating-a-menlo-security-test-user"></a>Создание тестового пользователя Menlo Security
  
-В этом разделе описано, как создать пользователя Britta Simon в приложении Menlo Security. Обратитесь в [службу поддержки клиентов Menlo Security](https://www.menlosecurity.com/menlo-contact), чтобы добавить пользователей на платформу Menlo Security. Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в приложении Menlo Security. Обратитесь в  [техническую поддержку клиентов Menlo Security](https://www.menlosecurity.com/menlo-contact), чтобы добавить пользователей на платформу Menlo Security. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

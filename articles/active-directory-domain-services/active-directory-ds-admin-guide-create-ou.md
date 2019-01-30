@@ -1,10 +1,10 @@
 ---
-title: 'Доменные службы Azure Active Directory: руководство по администрированию | Документация Майкрософт'
+title: Доменные службы Azure Active Directory. Руководство по администрированию | Документация Майкрософт
 description: Создание подразделения в управляемых доменах доменных служб Azure AD
 services: active-directory-ds
 documentationcenter: ''
 author: eringreenlee
-manager: mtillman
+manager: daveba
 editor: curtand
 ms.assetid: 52602ad8-2b93-4082-8487-427bdcfa8126
 ms.service: active-directory
@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: ergreenl
-ms.openlocfilehash: cd4964939aa9b9ebd96a2fb29e1a6f7bf422d477
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
+ms.openlocfilehash: 49b915242ca0a4775236da3314eed816fde7ea6b
+ms.sourcegitcommit: 8115c7fa126ce9bf3e16415f275680f4486192c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50154834"
+ms.lasthandoff: 01/24/2019
+ms.locfileid: "54856270"
 ---
 # <a name="create-an-organizational-unit-ou-on-an-azure-ad-domain-services-managed-domain"></a>Создание подразделения в управляемом домене доменных служб Azure AD
 Управляемые домены доменных служб Azure AD включают два встроенных контейнера: "Компьютеры AADDC" и "Пользователи AADDC". Контейнер "Компьютеры AADDC" включает объекты-компьютеры для всех компьютеров, присоединенных к управляемому домену. Контейнер "Пользователи AADDC" включает пользователей и группы в клиенте Azure AD. В некоторых случаях в управляемом домене может потребоваться создать учетные записи служб для развертывания рабочих нагрузок. Для этой цели можно создать в управляемом домене пользовательское подразделение, а затем создать учетные записи служб в рамках этого подразделения. В этой статье демонстрируется создание подразделения в управляемом домене.
@@ -83,5 +83,5 @@ ms.locfileid: "50154834"
 ## <a name="related-content"></a>Похожий контент
 * [Administer an Azure AD Domain Services managed domain (Администрирование управляемого домена доменных служб Azure AD)](active-directory-ds-admin-guide-administer-domain.md)
 * [Администрирование групповой политики в управляемом домене доменных служб Azure AD](active-directory-ds-admin-guide-administer-group-policy.md)
-* [Центр администрирования Active Directory: приступая к работе](https://technet.microsoft.com/library/dd560651.aspx)
+* [Active Directory Administrative Center: Getting Started](https://technet.microsoft.com/library/dd560651.aspx) (Центр администрирования Active Directory: начало работы)
 * [Пошаговое руководство по использованию учетных записей служб](https://technet.microsoft.com/library/dd548356.aspx)

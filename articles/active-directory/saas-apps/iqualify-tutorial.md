@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с iQualify LMS | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с iQualify LMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении iQualify LMS.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.reviewer: joflore
 ms.assetid: 8a3caaff-dd8d-4afd-badf-a0fd60db3d2c
 ms.service: active-directory
@@ -15,14 +15,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 09/04/2017
 ms.author: jeedes
-ms.openlocfilehash: d1161480bfd7a4cfeeb81f02234586a515fdffed
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: fde32bd3929099a3a5b8baa8b03b898a6afbca26
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39446153"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54817594"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-iqualify-lms"></a>Руководство по интеграции Azure Active Directory с iQualify LMS
+# <a name="tutorial-azure-active-directory-integration-with-iqualify-lms"></a>Руководство. Интеграция Azure Active Directory с iQualify LMS
 
 В этом руководстве описано, как интегрировать приложение iQualify LMS с Azure Active Directory (Azure AD).
 
@@ -207,7 +207,7 @@ ms.locfileid: "39446153"
     Е. Нажмите кнопку **UPDATE** (Обновить).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -287,7 +287,7 @@ ms.locfileid: "39446153"
 
 Нажмите кнопку **Sign in with Azure AD** (Вход с помощью Azure AD), чтобы выполнить автоматический вход в приложение iQualify LMS.
 
-Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
+Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

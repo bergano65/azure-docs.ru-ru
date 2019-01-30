@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с Neota Logic Studio | Документы Майкрософт
+title: Руководство. Интеграция Azure Active Directory с Neota Logic Studio | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Neota Logic Studio.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 842605e6-a91d-42cc-a0bb-e23e67173ae2
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/03/2017
 ms.author: jeedes
-ms.openlocfilehash: 667d2a5217f5c2aa29432a99cd0e07fc8d7b3ca7
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: b6f2c91a9b94aeff1c0fa7ad7df137a30055230b
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39447042"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54827046"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-neota-logic-studio"></a>Руководство по интеграции Azure Active Directory с Neota Logic Studio
+# <a name="tutorial-azure-active-directory-integration-with-neota-logic-studio"></a>Руководство. Интеграция Azure Active Directory с Neota Logic Studio
 
 В этом руководстве описано, как интегрировать Neota Logic Studio и Azure Active Directory (Azure AD).
 
@@ -133,7 +133,7 @@ ms.locfileid: "39447042"
 1. Чтобы настроить единый вход для вашего приложения, отправьте скачанный **XML-файл метаданных** в [службу поддержки Neota Logic Studio](https://www.neotalogic.com/contact-us/).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
@@ -168,7 +168,7 @@ ms.locfileid: "39447042"
  
 ### <a name="creating-a-neota-logic-studio-test-user"></a>Создание тестового пользователя Neota Logic Studio
 
-В этом разделе описано, как создать пользователя Britta Simon в Neota Logic Studio. Чтобы добавить пользователей в Neota Logic Studio, обратитесь в [службу поддержки клиентов Neota Logic Studio](https://www.neotalogic.com/contact-us/). Перед использованием единого входа необходимо создать и активировать пользователей. 
+В этом разделе описано, как создать пользователя Britta Simon в Neota Logic Studio. Чтобы добавить пользователей в Neota Logic Studio, обратитесь в  [службу поддержки клиентов Neota Logic Studio](https://www.neotalogic.com/contact-us/) . Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -204,7 +204,7 @@ ms.locfileid: "39447042"
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкните элемент Neota Logic Studio на панели доступа. Вы будете перенаправлены на страницу входа организации. Выполнив вход на этой странице, вы войдете в приложение Neota Logic Studio. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+Щелкните элемент Neota Logic Studio на панели доступа. Вы будете перенаправлены на страницу входа организации. Выполнив вход на этой странице, вы войдете в приложение Neota Logic Studio. Дополнительные сведения о панели доступа см. в статье [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

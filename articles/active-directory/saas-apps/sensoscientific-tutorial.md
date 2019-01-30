@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и беспроводной системой мониторинга температуры SensoScientific.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: ee9a924d-ccde-45b0-ab40-877f82f5dfa2
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2017
 ms.author: jeedes
-ms.openlocfilehash: 139a40f339c2f403999f1c3b7fe65192d45c84fd
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 131d430217ca299698be6fb7e45a0c8270184864
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39426927"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54824481"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sensoscientific-wireless-temperature-monitoring-system"></a>Руководство по интеграции Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific
+# <a name="tutorial-azure-active-directory-integration-with-sensoscientific-wireless-temperature-monitoring-system"></a>Руководство. Интеграция Azure Active Directory с беспроводной системой мониторинга температуры SensoScientific
 
 Это руководство содержит сведения об интеграции беспроводной системы мониторинга температуры SensoScientific с Azure Active Directory (Azure AD).
 
@@ -145,7 +145,7 @@ ms.locfileid: "39426927"
     Е. Выберите команду **Сохранить**.
   
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD](https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory](https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
@@ -180,7 +180,7 @@ ms.locfileid: "39426927"
  
 ### <a name="creating-a-sensoscientific-wireless-temperature-monitoring-system-test-user"></a>Создание текстового пользователя беспроводной системы мониторинга температуры SensoScientific
 
-Чтобы пользователи Azure AD могли выполнять вход в беспроводную систему мониторинга температуры SensoScientific, они должны быть подготовлены для этой системы. Обратитесь в [службу поддержки беспроводной системы мониторинга температуры SensoScientific](https://www.sensoscientific.com/contact-us/), чтобы добавить пользователей на платформу беспроводной системы мониторинга температуры SensoScientific. Перед использованием единого входа необходимо создать и активировать пользователей. 
+Чтобы пользователи Azure AD могли выполнять вход в беспроводную систему мониторинга температуры SensoScientific, они должны быть подготовлены для этой системы. Обратитесь в  [службу поддержки беспроводной системы мониторинга температуры SensoScientific](https://www.sensoscientific.com/contact-us/) , чтобы добавить пользователей на платформу беспроводной системы мониторинга температуры SensoScientific. Перед использованием единого входа необходимо создать и активировать пользователей. 
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
@@ -214,7 +214,7 @@ ms.locfileid: "39426927"
     
 ### <a name="testing-single-sign-on"></a>Проверка единого входа
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа. Щелкните плитку беспроводной системы мониторинга температуры SensoScientific на панели доступа, чтобы автоматически выполнить вход в приложение беспроводной системы мониторинга температуры SensoScientific. Дополнительные сведения о панели доступа см. в статье [Общие сведения о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа. Щелкните плитку беспроводной системы мониторинга температуры SensoScientific на панели доступа, чтобы автоматически выполнить вход в приложение беспроводной системы мониторинга температуры SensoScientific. Дополнительные сведения о панели доступа см. в статье [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с 10,000ft Plans | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с 10,000ft Plans | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в 10,000ft Plans.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: b60c955e-8fa3-4872-a897-c4e81fd7beac
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,14 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/14/2017
 ms.author: jeedes
-ms.openlocfilehash: cc6b1036d98aca62360ed8a935d2d1719c7f4069
-ms.sourcegitcommit: 16ddc345abd6e10a7a3714f12780958f60d339b6
+ms.openlocfilehash: 91c485d17b12a973f08660687a4135ff140a84b9
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36230358"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54808057"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-10000ft-plans"></a>Учебник. Интеграция Azure Active Directory с 10,000ft Plans
+# <a name="tutorial-azure-active-directory-integration-with-10000ft-plans"></a>Руководство. Интеграция Azure Active Directory с 10,000ft Plans
 
 В этом учебнике описано, как интегрировать приложение 10,000ft Plans с Azure Active Directory (Azure AD).
 
@@ -33,7 +33,7 @@ ms.locfileid: "36230358"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>предварительным требованиям
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с 10,000ft Plans, вам потребуется:
 
@@ -114,7 +114,7 @@ ms.locfileid: "36230358"
 
     a. В текстовом поле **URL-адрес для входа** введите URL-адрес: `https://app.10000ft.com`
 
-    Б. В текстовом поле **Идентификатор** введите URL-адрес `https://app.10000ft.com/saml/metadata`.
+    b. В текстовом поле **Идентификатор** введите URL-адрес `https://app.10000ft.com/saml/metadata`.
 
     > [!NOTE] 
     > Значение для **идентификатора** отличается, если у вас есть личный домен. Чтобы получить это значение, обратитесь в [службу поддержки 10,000ft Plans](https://www.10000ft.com/plans/support). 
@@ -134,7 +134,7 @@ ms.locfileid: "36230358"
 7. Чтобы настроить единый вход на стороне **10,000ft Plans**, нужно отправить скачанный **сертификат (необработанный), URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки 10,000ft Plans](https://www.10000ft.com/plans/support).
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
@@ -161,7 +161,7 @@ ms.locfileid: "36230358"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    Б. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    b. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 

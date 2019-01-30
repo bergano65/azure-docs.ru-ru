@@ -1,10 +1,10 @@
 ---
-title: 'Azure AD Connect: параметры устройств | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: параметры устройств | Документация Майкрософт'
 description: В этом документе описаны параметры устройств, доступные в Azure AD Connect
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: billmath
 ms.assetid: c0ff679c-7ed5-4d6e-ac6c-b2b6392e7892
 ms.service: active-directory
@@ -15,17 +15,17 @@ ms.topic: article
 ms.date: 09/13/2018
 ms.component: hybrid
 ms.author: billmath
-ms.openlocfilehash: c21b4b8996d7dae62c2aa1937c2876a66f6f82bd
-ms.sourcegitcommit: 74941e0d60dbfd5ab44395e1867b2171c4944dbe
+ms.openlocfilehash: 95c631c38b975c71d5e026d33391792ee811bbc6
+ms.sourcegitcommit: cf88cf2cbe94293b0542714a98833be001471c08
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49320566"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54477079"
 ---
-# <a name="azure-ad-connect-device-options"></a>Azure AD Connect: параметры устройств
+# <a name="azure-ad-connect-device-options"></a>Azure AD Connect выполняет следующие функции: Параметры устройств
 
 В этом документе содержится сведения о различных параметрах устройств, доступных в Azure AD Connect. С помощью Azure AD Connect можно настроить две следующие операции: 
-* **Гибридное присоединение устройств к Azure AD**. Если в вашей среде действует локальная служба AD и вы хотите воспользоваться преимуществами Azure AD, можно применить гибридные устройства, присоединенные к Azure AD. Это устройства, которые присоединены и к локальной среде Active Directory, и к Azure Active Directory.
+* **Гибридное присоединение к Azure AD**. Если в вашей среде действует локальная служба AD и вы хотите воспользоваться преимуществами Azure AD, можно применить гибридные устройства, присоединенные к Azure AD. Это устройства, которые присоединены и к локальной среде Active Directory, и к Azure Active Directory.
 * **Обратная запись устройств**. Обратная запись устройств используется для включения условного доступа для устройств в AD FS (2012 R2 или более поздней версии).
 
 ## <a name="configure-device-options-in-azure-ad-connect"></a>Настройка параметров устройств в Azure AD Connect

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 463b2e8c7e349fa46737a9d630bd027fb28e7780
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: 2c8c8233e8d471b0f1934df9ff7e0f2b4b3e3860
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54199391"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54819141"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-status-monitor"></a>Инструментирование веб-приложений во время выполнения с помощью монитора состояний Application Insights
 
@@ -32,11 +32,13 @@ ms.locfileid: "54199391"
 
 ![Снимок экрана App Insights: графики, содержащие сведения о неудачных запросах, времени отклика сервера и запросов сервера](./media/monitor-performance-live-website-now/overview-graphs.png)
 
-Вы можете выбрать один из трех указанных ниже вариантов применения Application Insights для веб-приложений .NET.
+Вы можете выбрать один из двух указанных ниже вариантов применения Application Insights для веб-приложений .NET.
 
 * **Во время сборки.** [Добавьте пакет SDK для Application Insights][greenbrown] в код своего веб-приложения.
 * **Во время выполнения**. Инструментируйте веб-приложение на сервере, как описано ниже, без повторной сборки и развертывания кода.
-* **Оба варианта.** Включите пакет SDK в код веб-приложения и примените расширения во время выполнения, чтобы воспользоваться преимуществами двух вариантов.
+
+> [!NOTE]
+> Если вы используете инструментирование времени сборки, инструментирование времени выполнения не будет работать, даже если оно включено.
 
 Ниже представлено общее сравнение предлагаемых вариантов.
 

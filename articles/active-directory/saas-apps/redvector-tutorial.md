@@ -1,10 +1,10 @@
 ---
-title: Руководство по интеграции Azure Active Directory с RedVector | Документация Майкрософт
+title: Руководство. Интеграция Azure Active Directory с RedVector | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в RedVector.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: mtillman
+manager: daveba
 ms.assetid: 99042f39-0ab2-475b-8df8-3016d7f875e9
 ms.service: active-directory
 ms.component: saas-app-tutorial
@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/28/2017
 ms.author: jeedes
-ms.openlocfilehash: 2fa92644872706623dd969c96469eb2e5cd581a9
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: f73c4ce43ebdd60ab447c10e6dca50d6fbb59ccc
+ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39448613"
+ms.lasthandoff: 01/23/2019
+ms.locfileid: "54813463"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-redvector"></a>Руководство. Интеграция Azure Active Directory с RedVector
 
@@ -134,7 +134,7 @@ ms.locfileid: "39448613"
 1. Чтобы настроить единый вход на стороне **RedVector**, нужно отправить скачанный **сертификат (Base64)** и **URL-адрес службы единого входа SAML** в [службу поддержки RedVector](mailto:sso@redvector.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в разделе [Встроенная документация Azure AD]( https://go.microsoft.com/fwlink/?linkid=845985).
+> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
 > 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
