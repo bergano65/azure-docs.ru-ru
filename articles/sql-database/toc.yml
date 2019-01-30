@@ -79,8 +79,12 @@ items:
       href: ../dms/tutorial-sql-server-to-azure-sql.md?toc=/azure/sql-database/toc.json
     - name: Миграция в Управляемый экземпляр с помощью DMS
       href: ../dms/tutorial-sql-server-to-managed-instance.md?toc=/azure/sql-database/toc.json
-  - name: Защита базы данных
-    href: sql-database-security-tutorial.md
+  - name: Защита данных в Базе данных SQL Azure
+    items:
+    - name: Защита отдельных баз данных
+      href: sql-database-security-tutorial.md
+    - name: Защита Управляемого экземпляра с помощью имен для входа с Azure AD
+      href: sql-database-managed-instance-aad-security-tutorial.md
   - name: Реализация географически распределенной базы данных
     href: sql-database-implement-geo-distributed-database.md
   - name: Настройка синхронизации данных SQL Azure
@@ -692,9 +696,9 @@ items:
       href: sql-database-elastic-jobs-getting-started.md
     - name: Удаление задания обработки эластичных баз данных (устарело)
       href: sql-database-elastic-jobs-uninstall.md
-ms.openlocfilehash: 7d7e85b3a7934b03395960d5dcbdc1141f0effd8
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: b69adc5f54e2566f62049225ccb0fc438a33ca6e
+ms.sourcegitcommit: 95822822bfe8da01ffb061fe229fbcc3ef7c2c19
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55101097"
+ms.lasthandoff: 01/29/2019
+ms.locfileid: "55226814"
